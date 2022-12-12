@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
@@ -237,11 +237,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a JSON string to `Test-Json`.
+You can pipe a JSON string to to this cmdlet.
 
 ## OUTPUTS
 
 ### Boolean
+
+This cmdlet returns `$true` if the JSON is valid and otherwise `$false`.
 
 ## NOTES
 

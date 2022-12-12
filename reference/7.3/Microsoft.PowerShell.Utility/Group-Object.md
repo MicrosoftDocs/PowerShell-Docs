@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/03/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Group-Object
@@ -414,14 +414,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Group-Object`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.GroupInfo or System.Collections.Hashtable
+### Microsoft.PowerShell.Commands.GroupInfo
 
-When you use the **AsHashTable** parameter, `Group-Object` returns a **Hashtable** object.
-Otherwise, it returns a **GroupInfo** object.
+By default, this cmdlet returns a **GroupInfo** object.
+
+### System.Collections.Hashtable
+
+When you use the **AsHashTable** parameter, this cmdlet returns a **Hashtable** object.
 
 ## NOTES
 

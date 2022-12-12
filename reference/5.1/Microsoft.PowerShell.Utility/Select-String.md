@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/07/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -665,14 +665,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object that has a **ToString** method to `Select-String`.
+You can pipe any object that has a `ToString()` method to this cmdlet.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.MatchInfo or System.Boolean
+### Microsoft.PowerShell.Commands.MatchInfo
 
-By default, the output is a set of **MatchInfo** objects with one for each match found. If you use
-the **Quiet** parameter, the output is a Boolean value indicating whether the pattern was found.
+By default, this cmdlet returns a **MatchInfo** object for each match found.
+
+### System.Boolean
+
+When you use the **Quiet** parameter, this cmdlet returns a **Boolean** value indicating whether
+the pattern was found.
 
 ## NOTES
 

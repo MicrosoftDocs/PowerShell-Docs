@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/06/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/disable-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSBreakpoint
 ---
+
 # Disable-PSBreakpoint
 
 ## SYNOPSIS
@@ -189,14 +190,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.Breakpoint
 
-You can pipe a breakpoint object to `Disable-PSBreakpoint`.
+You can pipe a breakpoint object to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.Breakpoint
+### None
 
-When you use the **PassThru** parameter, `Disable-PSBreakpoint` returns an object that represents
-the disabled breakpoint. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.Breakpoint
+
+When you use the **PassThru** parameter, this cmdlet returns a breakpoint object representing the
+disabled breakpoint.
 
 ## NOTES
 

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-unique?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Unique
 ---
+
 # Get-Unique
 
 ## SYNOPSIS
@@ -177,13 +178,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any type of object to `Get-Unique`.
+You can pipe any type of object to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
-The type of object that `Get-Unique` returns is determined by the input.
+This cmdlet returns its input objects without duplicates.
 
 ## NOTES
 

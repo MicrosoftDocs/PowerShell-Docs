@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Variable
 ---
+
 # Get-Variable
 
 ## SYNOPSIS
@@ -171,19 +172,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains the variable name to `Get-Variable`.
+You can pipe a string that contains the variable name to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSVariable
 
-This cmdlet returns a **System.Management.AutomationPSVariable** object for each variable that it
-gets. The object type depends on the variable.
+By default, this cmdlet returns a **AutomationPSVariable** object for each variable that it gets.
+The object type depends on the variable.
 
 ### System.Object[]
 
-When you specify the **ValueOnly** parameter, if the specified variable's value is a collection,
-`Get-Variable` returns a `[System.Object[]]`. This behavior prevents normal pipeline operation from
+When you specify the **ValueOnly** parameter and the specified variable's value is a collection,
+this cmdlet returns a `[System.Object[]]`. This behavior prevents normal pipeline operation from
 processing the variable's values one at a time. A workaround to force collection enumeration is to
 enclose the `Get-Variable` command in parenthesis.
 

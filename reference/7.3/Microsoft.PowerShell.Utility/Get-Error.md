@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/12/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Error
@@ -161,14 +161,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### PSObject
 
-Supports input from any **PSObject**, but results vary unless either an **ErrorRecord** or
-**Exception** object are supplied.
+You can pipe any **PSObject** to this cmdlet, but results vary unless either an **ErrorRecord** or
+**Exception** object is supplied.
 
 ## OUTPUTS
 
 ### System.Management.Automation.ErrorRecord#PSExtendedError
 
-Output in a **PSExtendedError** object.
+This cmdlet returns a **PSExtendedError** object.
 
 ## NOTES
 

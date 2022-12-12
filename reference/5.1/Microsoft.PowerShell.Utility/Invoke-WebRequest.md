@@ -2,15 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/07/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
 ---
+
 # Invoke-WebRequest
 
 ## SYNOPSIS
-Gets content from a web page on the Internet.
+Gets content from a web page on the internet.
 
 ## SYNTAX
 
@@ -723,11 +724,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe the body of a web request to `Invoke-WebRequest`.
+You can pipe the body of a web request to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.HtmlWebResponseObject
+
+This cmdlet returns the response object representing the result of the web request.
 
 ## NOTES
 

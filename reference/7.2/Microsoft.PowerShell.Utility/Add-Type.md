@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/01/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
@@ -580,14 +580,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't send objects down the pipeline to `Add-Type`.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Type
+### None
 
-When you use the **PassThru** parameter, `Add-Type` returns a **System.Type** object that represents
-the new type. Otherwise, this cmdlet doesn't generate any output.
+By default, this cmdlet returns no output.
+
+### System.Type
+
+When you use the **PassThru** parameter, this cmdlet returns a **System.Type** object representing
+the new type.
 
 ## NOTES
 

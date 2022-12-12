@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/02/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
 ---
+
 # Get-Random
 
 ## SYNOPSIS
@@ -412,13 +413,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe one or more objects. `Get-Random` selects values randomly from the piped objects.
+You can pipe any object to this cmdlet. It selects values randomly from the piped objects.
 
 ## OUTPUTS
 
-### System.Int32, System.Int64, System.Double
+### System.Int32
 
-`Get-Random` returns an integer or floating-point number, or an object selected randomly from a
+### System.Int64
+
+### System.Double
+
+### System.Management.Automation.PSObject
+
+This cmdlet returns an integer or floating-point number, or an object selected randomly from a
 submitted collection.
 
 ## NOTES
@@ -454,4 +461,4 @@ an empty string or `$null`.
 
 [System.Security.Cryptography.RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
 
-[Sytem.Random](/dotnet/api/system.random)
+[System.Random](/dotnet/api/system.random)

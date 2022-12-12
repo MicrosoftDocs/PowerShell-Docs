@@ -506,13 +506,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can send any object down the pipeline to `Format-Table`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
-`Format-Table` returns format objects that represent the table.
+This cmdlet returns format objects that represent the table.
 
 ## NOTES
 

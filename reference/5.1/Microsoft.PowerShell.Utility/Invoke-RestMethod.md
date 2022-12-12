@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/28/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -691,18 +691,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe the body of a web request to `Invoke-RestMethod`.
+You can pipe the body of a web request to this cmdlet.
 
 ## OUTPUTS
 
-### System.Xml.XmlDocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System.String
+### System.Int64
 
-The output of the cmdlet depends upon the format of the content that is retrieved.
+When the request returns an integer, this cmdlet returns that integer.
+
+### System.String
+
+When the request returns a string, this cmdlet returns that string.
+
+### System.Xml.XmlDocument
+
+When the request returns valid XML, this cmdlet returns it as an **XmlDocument**.
 
 ### PSObject
 
-If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the
-strings.
+When the request returns JSON strings, this cmdlet returns a **PSObject** representing the data.
 
 ## NOTES
 

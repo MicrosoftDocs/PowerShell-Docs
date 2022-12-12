@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/05/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Alias
@@ -125,13 +125,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String[]
 
-You can pipe an alias object to `Remove-Alias`.
+You can pipe an alias object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet doesn't return any output.
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -155,4 +155,3 @@ For more information, see [about_Aliases](../microsoft.powershell.core/about/abo
 [Set-Alias](Set-Alias.md)
 
 [Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
-

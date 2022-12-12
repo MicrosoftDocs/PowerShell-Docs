@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/04/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-tracesource?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TraceSource
 ---
+
 # Get-TraceSource
 
 ## SYNOPSIS
@@ -74,13 +75,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains the name of a trace source to `Get-TraceSource`.
+You can pipe a string that contains the name of a trace source to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSTraceSource
 
-`Get-TraceSource` returns objects that represent the trace sources.
+This cmdlet returns objects representing the trace sources.
 
 ## NOTES
 

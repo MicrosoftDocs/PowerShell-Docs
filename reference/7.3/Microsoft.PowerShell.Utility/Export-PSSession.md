@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/18/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
@@ -468,13 +468,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to `Export-PSSession`.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.IO.FileInfo
 
-`Export-PSSession` returns a list of files that comprise the module that it created.
+This cmdlet returns a list of files that comprise the module that it created.
 
 ## NOTES
 

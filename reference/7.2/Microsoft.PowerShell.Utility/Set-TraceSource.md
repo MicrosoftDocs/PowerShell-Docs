@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/01/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-tracesource?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-TraceSource
 ---
+
 # Set-TraceSource
 
 ## SYNOPSIS
@@ -302,15 +303,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a name to `Set-TraceSource`.
+You can pipe a string that contains a name to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSTraceSource
+### None
 
-When you use the **PassThru** parameter, `Set-TraceSource` generates a
-**System.Management.Automation.PSTraceSource** object representing the trace session. Otherwise,
-this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSTraceSource
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSTraceSource** object
+representing the trace session.
 
 ## NOTES
 
@@ -346,4 +350,3 @@ this cmdlet does not generate any output.
 [Get-TraceSource](Get-TraceSource.md)
 
 [Trace-Command](Trace-Command.md)
-

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Csv
 ---
+
 # Import-Csv
 
 ## SYNOPSIS
@@ -442,11 +443,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a path to `Import-Csv`.
+You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### Object
+### System.Object
 
 This cmdlet returns the objects described by the content in the CSV file.
 

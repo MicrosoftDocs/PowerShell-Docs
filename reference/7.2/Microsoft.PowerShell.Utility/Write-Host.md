@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Host
@@ -246,14 +246,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe objects to be written to the host.
+You can pipe objects to be written to the host to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Write-Host` sends the objects to the host. It does not return any objects. However, the host
-displays the objects that `Write-Host` sends to it.
+This cmdlet returns no output. It sends the objects to the host. The host displays the objects this
+cmdlet sends to it.
 
 ## NOTES
 

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/01/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-xml?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Xml
 ---
+
 # ConvertTo-Xml
 
 ## SYNOPSIS
@@ -148,13 +149,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `ConvertTo-XML`.
+You can pipe any object to this cmdlet
 
 ## OUTPUTS
 
-### System.String or System.Xml.XmlDocument
+### System.String
 
-The value of the **As** parameter determines the type of object that `ConvertTo-XML` returns.
+When you use the **As** parameter and set the value to `string`, this cmdlet returns the XML as a
+string. When the value is `stream`, this cmdlet returns an array of strings.
+
+### System.Xml.XmlDocument
+
+By default, this cmdlet returns an XML document.
 
 ## NOTES
 

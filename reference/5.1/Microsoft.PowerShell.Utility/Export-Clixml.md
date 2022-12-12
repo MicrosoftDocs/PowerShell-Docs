@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/14/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-clixml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Clixml
@@ -285,13 +285,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipeline any object to `Export-Clixml`.
+You can pipeline any object to this cmdlet.
 
 ## OUTPUTS
 
 ### System.IO.FileInfo
 
-`Export-Clixml` creates a file that contains the XML.
+This cmdlet returns a **FileInfo** object representing the created file with the stored data.
 
 ## NOTES
 
