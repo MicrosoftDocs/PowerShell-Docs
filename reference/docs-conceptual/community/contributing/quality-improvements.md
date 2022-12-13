@@ -24,7 +24,7 @@ We're focusing on these quality areas:
 
 ## Project Tracking
 
-We're tracking contributions with the [PowerShell Docs Quality Contributions][23] Github Project.
+We're tracking contributions with the [PowerShell Docs Quality Contributions][23] GitHub Project.
 
 The project page has several views for the issues and PRs related to this effort:
 
