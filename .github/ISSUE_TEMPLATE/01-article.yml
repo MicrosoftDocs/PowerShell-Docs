@@ -33,9 +33,9 @@ body:
       multiple: true
       options:
         - "5.1"
-        - "7.0"
         - "7.2"
         - "7.3"
+        - "7.4"
   - type: textarea
     id: summary
     validations:
