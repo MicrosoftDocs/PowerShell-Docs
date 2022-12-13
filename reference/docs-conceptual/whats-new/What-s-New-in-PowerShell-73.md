@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3
 description: New features and changes released in PowerShell 7.3
-ms.date: 11/30/2022
+ms.date: 12/13/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -111,24 +111,33 @@ For a complete list of changes, see the [Change Log][11] in the GitHub repositor
 
 ## Experimental Features
 
-PowerShell 7.3 introduces the following experimental features:
+In PowerShell 7.3, following experimental features became mainstream:
 
-- [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec`
-  compatibility for non-Windows systems. In PowerShell 7.3-preview.8, this feature became
-  mainstream.
+- [PSNativeCommandArgumentPassing][08] - When this experimental feature is enabled PowerShell uses
+  the **ArgumentList** property of the **StartProcessInfo** object rather than our current mechanism
+  of reconstructing a string when invoking a native executable.
+- [PSAnsiRenderingFileInfo][13] - This feature adds the $PSStyle.FileInfo member and enables
+  coloring of specific file types.
 - [PSCleanBlock][04] - Adds `clean` block to script block as a peer to `begin`, `process`,
   and `end` to allow easy resource cleanup. In PowerShell 7.3-preview.8, this feature became
   mainstream.
-- [PSStrictModeAssignment][07] - Adds the **StrictMode** parameter to `Invoke-Command` to
-  allow specifying strict mode when invoking command locally. In PowerShell 7.3-preview.8, this
-  feature was removed.
-- [PSNativeCommandErrorActionPreference][06] - Adds the
-  `$PSNativeCommandUseErrorActionPreference` variable to enable errors produced by native commands
-  to be PowerShell errors.
+- [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec`
+  compatibility for non-Windows systems. In PowerShell 7.3-preview.8, this feature became
+  mainstream.
 - [PSAMSIMethodInvocationLogging][02] - Extends the data sent to AMSI for inspection to
   include all invocations of .NET method members. In PowerShell 7.3-preview.8, this feature became
   mainstream.
-- Remove [PSNativePSPathResolution][03] experimental feature.
+
+PowerShell 7.3 introduces the following experimental features:
+
+- [PSNativeCommandErrorActionPreference][06] - Adds the
+  `$PSNativeCommandUseErrorActionPreference` variable to enable errors produced by native commands
+  to be PowerShell errors.
+
+PowerShell 7.3 removed the following experimental features:
+
+- [PSNativePSPathResolution][03] experimental feature is no longer supported.
+- [PSStrictModeAssignment][07] experimental feature is no longer supported.
 
 For more information about the Experimental Features, see [Using Experimental Features][01].
 
@@ -141,6 +150,8 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [05]: ../learn/experimental-features.md#psexec
 [06]: ../learn/experimental-features.md#psnativecommanderroractionpreference
 [07]: ../learn/experimental-features.md#psstrictmodeassignment
+[08]: ../learn/experimental-features.md#psnativecommandargumentpassing
+[13]: ../learn/experimental-features.md#psansirenderingfileinfo
 [09]: https://github.com/dotnet/runtime/issues/66746
 [10]: https://github.com/PowerShell/PowerShell/issues/17018
 [11]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0
