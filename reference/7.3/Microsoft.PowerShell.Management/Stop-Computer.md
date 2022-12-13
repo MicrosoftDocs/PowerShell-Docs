@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/11/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Computer
@@ -255,11 +255,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
+
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -277,4 +279,3 @@ calls the native command `/sbin/shutdown`.
 [Restart-Computer](Restart-Computer.md)
 
 [Test-Connection](Test-Connection.md)
-

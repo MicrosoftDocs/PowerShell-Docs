@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-formatdata?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-FormatData
 ---
+
 # Export-FormatData
 
 ## SYNOPSIS
@@ -237,14 +238,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.ExtendedTypeDefinition
 
-You can pipe **ExtendedTypeDefinition** objects from `Get-FormatData` to `Export-FormatData`.
+You can pipe **ExtendedTypeDefinition** objects from `Get-FormatData` to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Export-FormatData` does not return any objects.
-It generates a file and saves it in the specified path.
+This cmdlet returns no output. It generates a file and saves it in the specified path.
 
 ## NOTES
 

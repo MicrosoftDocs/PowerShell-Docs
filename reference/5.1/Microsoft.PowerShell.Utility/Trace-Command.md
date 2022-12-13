@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/01/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/trace-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Trace-Command
@@ -332,13 +332,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe objects that represent input to the expression to `Trace-Command`.
+You can pipe objects that represent input to the expression to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
-Returns the command trace in the debug stream.
+This cmdlet returns no output of its own. The traced command may return output.
+This cmdlet writes the command trace to the debug stream.
 
 ## NOTES
 

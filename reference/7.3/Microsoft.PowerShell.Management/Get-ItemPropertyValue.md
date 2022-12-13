@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/07/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemPropertyValue
 ---
+
 # Get-ItemPropertyValue
 
 ## SYNOPSIS
@@ -246,11 +247,10 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.Boolean, System.String, System.DateTime
+### System.Management.Automation.PSObject
 
 This cmdlet returns an object for each item property value that it gets.
 The object type depends on the property value that is retrieved.
-For example, in a file system drive, the cmdlet might return a file or folder.
 
 ## NOTES
 
@@ -279,4 +279,3 @@ available in your session, run the `Get-PSProvider` cmdlet. For more information
 [Set-ItemProperty](Set-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

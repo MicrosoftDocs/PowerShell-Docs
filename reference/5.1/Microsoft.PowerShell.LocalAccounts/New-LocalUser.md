@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 06/09/2017
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-LocalUser
@@ -283,21 +283,33 @@ Accept wildcard characters: False
 ### CommonParameters
 
 This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`,
-`-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
-### System.String, System.DateTime, System.Boolean, System.Security.SecureString
+### System.String
 
-You can pipe a string, a **DateTime** object, a boolean value, or a secure string to this cmdlet.
+You can pipe a string to this cmdlet.
+
+### System.DateTime
+
+You can pipe a **DateTime** object to this cmdlet.
+
+### System.Boolean
+
+You can pipe a boolean value to this cmdlet.
+
+### System.Security.SecureString
+
+You can pipe a secure string to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.SecurityAccountsManager.LocalUser
 
-This cmdlet returns a **LocalUser** object.
-This object provides information about the user account.
+This cmdlet returns a **LocalUser** object representing the created user account.
 
 ## NOTES
 

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/29/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
 ---
+
 # Add-Member
 
 ## SYNOPSIS
@@ -445,14 +446,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object type to this cmdlet.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Object
+### None
 
-When you use the **PassThru** parameter, this cmdlet returns the newly extended object. Otherwise,
-this cmdlet doesn't generate any output.
+By default, this cmdlet returns no output.
+
+### System.Object
+
+When you use the **PassThru** parameter, this cmdlet returns the newly extended object.
 
 ## NOTES
 

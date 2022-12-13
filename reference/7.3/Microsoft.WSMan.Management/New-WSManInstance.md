@@ -7,6 +7,7 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.ma
 schema: 2.0.0
 title: New-WSManInstance
 ---
+
 # New-WSManInstance
 
 ## SYNOPSIS
@@ -391,7 +392,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
@@ -429,4 +430,3 @@ The `Set-WmiInstance` cmdlet, a Windows Management Instrumentation (WMI) cmdlet,
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

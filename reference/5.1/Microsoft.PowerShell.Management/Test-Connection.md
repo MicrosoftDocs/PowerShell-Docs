@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/09/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
@@ -482,17 +482,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.ManagementObject#root\cimv2\Win32_PingStatus, System.Management.Automation.RemotingJob, System.Boolean
+### System.Management.ManagementObject#root\cimv2\Win32_PingStatus
+
+By default, this cmdlet returns a **Win32_PingStatus** object for each ping reply.
+
+### System.Management.Automation.RemotingJob
 
 This cmdlet returns a job object, if you specify the **AsJob** parameter.
 
-If you specify the **Quiet** parameter, it returns a **Boolean** value. If multiple connections are
-tested, an array of **Boolean** values is returned. Otherwise, `Test-Connection` returns a
-**Win32_PingStatus** object for each ping.
+### System.Boolean
+
+When you use the **Quiet** parameter, this returns a **Boolean** value. If the cmdlet tests
+multiple connections, it returns an array of **Boolean** values.
 
 ## NOTES
 

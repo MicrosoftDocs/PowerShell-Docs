@@ -2,7 +2,7 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 08/20/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-WSManCredSSP
@@ -223,13 +223,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet doesn't accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Xml.XmlElement
 
-If CredSSP authentication is successfully enabled, this cmdlet generates an **XMLElement** object.
+If CredSSP authentication is successfully enabled, this cmdlet returns an **XMLElement** object.
 
 ## NOTES
 
@@ -260,4 +260,3 @@ To disable CredSSP authentication, use the `Disable-WSManCredSSP` cmdlet.
 [Set-WSManQuickConfig](Set-WSManQuickConfig.md)
 
 [Test-WSMan](Test-WSMan.md)
-

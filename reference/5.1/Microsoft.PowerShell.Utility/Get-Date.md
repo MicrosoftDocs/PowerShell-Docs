@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/28/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -452,16 +452,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Pipeline input
+### System.DateTime
 
-`Get-Date` accepts pipeline input. For example, `Get-ChildItem | Get-Date`.
+You can pipe a **DateTime** object to this cmdlet.
 
 ## OUTPUTS
 
-### System.DateTime or System.String
+### System.DateTime
 
-`Get-Date` returns a **DateTime** object except when the **Format** and **UFormat** parameters are
-used. The **Format** or **UFormat** parameters return **String** objects.
+By default, this cmdlet returns a **DateTime** object.
 
 When a **DateTime** object is sent down the pipeline to a cmdlet such as `Add-Content` that expects
 string input, PowerShell converts the object to a **String** object.
@@ -470,6 +469,10 @@ The method `(Get-Date).ToString()` converts a **DateTime** object a **String** o
 
 To display an object's properties and methods, send the object down the pipeline to `Get-Member`.
 For example, `Get-Date | Get-Member`.
+
+### System.String
+
+When you use the **Format** or **UFormat** parameters, this cmdlet returns **String** objects.
 
 ## NOTES
 

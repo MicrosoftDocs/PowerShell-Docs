@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
@@ -447,17 +447,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.ServiceProcess.ServiceController, System.String
+### System.ServiceProcess.ServiceController
 
-You can use the pipeline to send a service object or a string that contains a service name to
-`Set-Service`.
+You can pipe a service object to this cmdlet.
+
+### System.String
+
+You can pipe a string that contains a service name to this cmdlet.
 
 ## OUTPUTS
 
+### None
+
+By default, this cmdlet returns no output.
+
 ### System.ServiceProcess.ServiceController
 
-By default, `Set-Service` doesn't return any objects. Use the **PassThru** parameter to output a
-**ServiceController** object.
+When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object.
 
 ## NOTES
 

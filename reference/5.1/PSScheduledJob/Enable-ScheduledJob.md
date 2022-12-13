@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/enable-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-ScheduledJob
@@ -228,10 +228,13 @@ You can pipe a scheduled job to `Enable-ScheduledJob`.
 
 ## OUTPUTS
 
-### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+### None
 
-If you use the **Passthru** parameter, `Enable-ScheduledJob` returns the scheduled job that was
-enabled. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
+When you use the **PassThru** parameter, this cmdlet returns the scheduled job that it enabled.
 
 ## NOTES
 

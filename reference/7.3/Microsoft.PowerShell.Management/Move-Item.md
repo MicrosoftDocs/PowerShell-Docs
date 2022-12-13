@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/28/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/move-item?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Move-Item
 ---
+
 # Move-Item
 
 ## SYNOPSIS
@@ -350,10 +351,13 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### None or an object representing the moved item
+### None
 
-When you use the **PassThru** parameter, this cmdlet generates an object representing the moved
-item. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSObject
+
+When you use the **PassThru** parameter, this cmdlet returns an object representing the moved item.
 
 ## NOTES
 

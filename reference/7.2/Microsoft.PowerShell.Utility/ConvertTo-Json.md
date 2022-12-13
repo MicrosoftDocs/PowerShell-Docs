@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/05/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
 ---
+
 # ConvertTo-Json
 
 ## SYNOPSIS
@@ -294,11 +295,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe any object to `ConvertTo-Json`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
+
+This cmdlet returns a string representing the input object converted to a JSON string.
 
 ## NOTES
 

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/28/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/clear-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Item
 ---
+
 # Clear-Item
 
 ## SYNOPSIS
@@ -43,7 +44,8 @@ This command clears the value of the variable named `TestVar1`.
 The variable remains and is valid, but its value is set to `$null`.
 The variable name is prefixed with `Variable:` to indicate the PowerShell Variable provider.
 
-The alternate commands show that, to get the same result, you can switch to the PowerShell `Variable:` drive and then run the `Clear-Item` command.
+The alternate commands show that, to get the same result, you can switch to the PowerShell
+`Variable:` drive and then run the `Clear-Item` command.
 
 ```powershell
 Clear-Item Variable:TestVar1
@@ -56,9 +58,10 @@ PS Variable:\> Clear-Item TestVar1
 
 ### Example 2: Clear all registry entries
 
-This command clears all registry entries in the "MyKey" subkey, but only after prompting you to confirm your intent.
-It does not delete the "MyKey" subkey or affect any other registry keys or entries.
-You can use the **Include** and **Exclude** parameters to identify particular registry keys, but you cannot use them to identify registry entries.
+This command clears all registry entries in the "MyKey" subkey, but only after prompting you to
+confirm your intent. It does not delete the "MyKey" subkey or affect any other registry keys or
+entries. You can use the **Include** and **Exclude** parameters to identify particular registry
+keys, but you cannot use them to identify registry entries.
 
 - To delete particular registry entries, use the `Remove-ItemProperty` cmdlet.
 - To delete the value of a registry entry, use the `Clear-ItemProperty cmdlet`.
@@ -110,11 +113,13 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
-provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
-Filters are more efficient than other parameters, because the provider applies them when the cmdlet
-gets the objects rather than having PowerShell filter the objects after they are retrieved.
+Specifies a filter to qualify the **Path** parameter. The
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
+installed PowerShell provider that supports the use of filters. You can find the syntax for the
+**FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more
+efficient than other parameters, because the provider applies them when the cmdlet gets the objects
+rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: System.String
@@ -257,7 +262,7 @@ You can pipe a path string to this cmdlet.
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -266,10 +271,11 @@ PowerShell includes the following aliases for `Clear-Item`:
 - All platforms:
   - `cli`
 
-- The `Clear-Item` cmdlet is supported only by several PowerShell providers, including the **Alias**,
-  **Environment**, **Function**, **Registry**, and **Variable** providers. As such, you can use
-  `Clear-Item` to delete the content of items in the provider namespaces. To list the providers
-  available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+- The `Clear-Item` cmdlet is supported only by several PowerShell providers, including the
+  **Alias**, **Environment**, **Function**, **Registry**, and **Variable** providers. As such, you
+  can use `Clear-Item` to delete the content of items in the provider namespaces. To list the
+  providers available in your session, type `Get-PsProvider`. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 - You cannot use `Clear-Item` to delete the contents of a file, because the PowerShell FileSystem
   provider does not support this cmdlet. To clear files, use the `Clear-Content`.
 
@@ -292,4 +298,3 @@ PowerShell includes the following aliases for `Clear-Item`:
 [Set-Item](Set-Item.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/22/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
@@ -214,13 +214,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-`Get-ExecutionPolicy` doesn't accept input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.ExecutionPolicy
 
-The cmdlet always returns **Unrestricted** on Linux and macOS platforms.
+The cmdlet always returns **Unrestricted** on Linux and macOS platforms. On Windows platforms it
+returns the current execution policy.
 
 ## NOTES
 

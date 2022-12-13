@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/25/2020
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Acl
 ---
+
 # Get-Acl
 
 ## SYNOPSIS
@@ -294,14 +295,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a path to `Get-Acl`.
+You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.Security.AccessControl.FileSecurity, System.Security.AccessControl.DirectorySecurity, System.Security.AccessControl.RegistrySecurity
+### System.Security.AccessControl.FileSecurity
 
-`Get-Acl` returns an object that represents the ACLs that it gets. The object type depends upon the
-ACL type.
+### System.Security.AccessControl.DirectorySecurity
+
+### System.Security.AccessControl.RegistrySecurity
+
+This cmdlet returns an object that represents the ACLs that it gets. The object type depends upon
+the ACL type.
 
 ## NOTES
 

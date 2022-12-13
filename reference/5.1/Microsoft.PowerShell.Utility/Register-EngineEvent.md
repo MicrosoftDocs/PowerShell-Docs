@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/04/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
@@ -280,14 +280,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to `Register-EngineEvent`.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSEventJob
+### None
 
-If you use the **Action** parameter, `Register-EngineEvent` returns a
-**System.Management.Automation.PSEventJob** object. Otherwise, it does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSEventJob
+
+When you use the **Action** parameter, this cmdlet returns a **PSEventJob** object.
 
 ## NOTES
 

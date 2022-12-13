@@ -694,13 +694,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-`Find-Package` doesn't accept input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### SoftwareIdentify[]
 
-`Find-Package` outputs a **SoftwareIdentity** object.
+This cmdlet returns a **SoftwareIdentity** object.
 
 ## NOTES
 

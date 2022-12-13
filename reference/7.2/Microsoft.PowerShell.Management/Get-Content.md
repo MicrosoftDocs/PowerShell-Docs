@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
 ---
+
 # Get-Content
 
 ## SYNOPSIS
@@ -646,16 +647,28 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Int64, System.String[], System.Management.Automation.PSCredential
+### System.Int64
 
-You can pipe the read count, total count, paths, or credentials to `Get-Content`.
+You can pipe the read count or total count to this cmdlet.
+
+### System.String[]
+
+You can pipe paths to this cmdlet.
+
+### System.Management.Automation.PSCredential
+
+You can pipe credentials to this cmdlet.
 
 ## OUTPUTS
 
-### System.Byte, System.String
+### System.Byte
 
-`Get-Content` returns strings or bytes. The output type depends upon the type of content that you
-specify as input.
+When you use the **AsByteStream** parameter, this cmdlet returns the content as bytes.
+
+### System.String
+
+By default, this cmdlet returns the content as an array of strings, one per line. When you use the
+**Raw** parameter, it returns a single string containing every line in the file.
 
 ## NOTES
 

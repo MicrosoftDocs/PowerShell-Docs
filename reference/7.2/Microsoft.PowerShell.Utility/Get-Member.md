@@ -7,6 +7,7 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: Get-Member
 ---
+
 # Get-Member
 
 ## SYNOPSIS
@@ -488,13 +489,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Get-Member`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.MemberDefinition
 
-`Get-Member` returns an object for each property or method that its gets.
+This cmdlet returns a **MemberDefinition** for each property or method that its gets.
 
 ## NOTES
 

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/18/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-itemproperty?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-ItemProperty
 ---
+
 # Rename-ItemProperty
 
 ## SYNOPSIS
@@ -281,10 +282,14 @@ You can pipe a string that contains a path, but not a literal path, to this cmdl
 
 ## OUTPUTS
 
-### None, System.Management.Automation.PSCustomObject
+### None
 
-This cmdlet generates a **PSCustomObject** that represents the renamed item property, if you specify
-the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSCustomObject
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSCustomObject** representing the
+renamed item property.
 
 ## NOTES
 
@@ -316,4 +321,3 @@ providers available in your session, type `Get-PSProvider`. For more information
 [Set-ItemProperty](Set-ItemProperty.md)
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
-

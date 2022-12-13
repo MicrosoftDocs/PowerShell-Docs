@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 06/30/2020
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/psreadline/get-psreadlineoption?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSReadLineOption
 ---
+
 # Get-PSReadLineOption
 
 ## SYNOPSIS
@@ -89,14 +90,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.PSConsoleReadLineOptions
 
-An instance of the current options. Changing the property values of this object updates the settings
-in PSReadLine directly without invoking `Set-PSReadLineOption`.
+This cmdlet returns an instance of the current options. Changing the property values of this object
+updates the settings in PSReadLine directly without invoking `Set-PSReadLineOption`.
 
 ## NOTES
 

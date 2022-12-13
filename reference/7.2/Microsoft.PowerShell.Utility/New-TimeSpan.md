@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/01/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-timespan?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-TimeSpan
 ---
+
 # New-TimeSpan
 
 ## SYNOPSIS
@@ -229,13 +230,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.DateTime
 
-You can pipe a **DateTime** object that represents that start time to `New-TimeSpan`.
+You can pipe a **DateTime** object representing the start time to this cmdlet.
 
 ## OUTPUTS
 
 ### System.TimeSpan
 
-`New-TimeSpan` returns an object that represents the time span.
+This cmdlet returns an object representing the time span.
 
 ## NOTES
 

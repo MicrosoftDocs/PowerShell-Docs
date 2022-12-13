@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 03/29/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/packagemanagement/get-packagesource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PackageSource
@@ -282,9 +282,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### PackageSource[]
+### Microsoft.PackageManagement.Packaging.PackageSource
 
-Specifies one or more package sources.
+This cmdlet returns a **PackageSource** object for each registered package source that fulfills the
+criteria set by the parameters. By default, it returns every registered package source.
 
 ## NOTES
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 10/04/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/get-wsmaninstance?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WSManInstance
@@ -51,7 +51,8 @@ This cmdlet uses the WS-Management connection/transport layer to retrieve inform
 Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="winrm"} -ComputerName "Server01"
 ```
 
-This command returns all of the information that Windows Management Instrumentation (WMI) exposes about the **WinRM** service on the remote server01 computer.
+This command returns all of the information that Windows Management Instrumentation (WMI) exposes
+about the **WinRM** service on the remote server01 computer.
 
 ### Example 2: Get the status of the Spooler service
 
@@ -75,7 +76,8 @@ This command returns endpoint references that correspond to all the services on 
 Get-WSManInstance -Enumerate -ResourceURI wmicimv2/* -Filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName "Server01"
 ```
 
-This command lists all of the services that meet the following criteria on the remote Server01 computer:
+This command lists all of the services that meet the following criteria on the remote Server01
+computer:
 
 - The startup type of the service is Automatic.
 - The service is stopped.
@@ -86,7 +88,8 @@ This command lists all of the services that meet the following criteria on the r
 Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"}
 ```
 
-This command lists the WS-Management listener configuration on the local computer for the listener that matches the criteria in the selector set.
+This command lists the WS-Management listener configuration on the local computer for the listener
+that matches the criteria in the selector set.
 
 ### Example 6: Get listener configuration that matches criteria on a remote computer
 
@@ -94,7 +97,8 @@ This command lists the WS-Management listener configuration on the local compute
 Get-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{Address="*";Transport="http"} -ComputerName "Server01"
 ```
 
-This command lists the WS-Management listener configuration on the remote server01 computer for the listener that matches the criteria in the selector set.
+This command lists the WS-Management listener configuration on the remote server01 computer for the
+listener that matches the criteria in the selector set.
 
 ### Example 7: Get associated instances related to a specified instance
 
@@ -577,13 +581,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This command does not accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Xml.XmlElement
 
-This cmdlet generates an **XMLElement** object.
+This cmdlet returns an **XMLElement** object.
 
 ## NOTES
 

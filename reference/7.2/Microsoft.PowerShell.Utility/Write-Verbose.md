@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/14/2020
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-verbose?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Verbose
 ---
+
 # Write-Verbose
 
 ## SYNOPSIS
@@ -92,7 +93,7 @@ You can pipe a string that contains the message to `Write-Verbose`.
 
 ### None
 
-`Write-Verbose` writes only to the verbose message stream.
+This cmdlet returns no output. It only writes to the verbose message stream.
 
 ## NOTES
 

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/clear-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Variable
 ---
+
 # Clear-Variable
 
 ## SYNOPSIS
@@ -218,15 +219,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSVariable
+### None
 
-When you use the **PassThru** parameter, this cmdlet generates a
-**System.Management.Automation.PSVariable** object representing the cleared variable. Otherwise,
-this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSVariable
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSVariable** object representing
+the cleared variable.
 
 ## NOTES
 

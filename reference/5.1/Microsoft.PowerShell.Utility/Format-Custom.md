@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-custom?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Format-Custom
 ---
+
 # Format-Custom
 
 ## SYNOPSIS
@@ -23,9 +24,9 @@ Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>] [-Vi
 ## DESCRIPTION
 
 The `Format-Custom` cmdlet formats the output of a command as defined in an alternate view.
-`Format-Custom` is designed to display views that are not just tables or just lists. You can use
-the views defined in the `*format.PS1XML` files in the PowerShell directory, or you can create your
-own views in new PS1XML files and use the `Update-FormatData` cmdlet to add them to PowerShell.
+`Format-Custom` is designed to display views that are not just tables or just lists. You can use the
+views defined in PowerShell, or you can create your own views in a new `format.ps1xml` file and use
+the `Update-FormatData` cmdlet to add them to PowerShell.
 
 ## EXAMPLES
 
@@ -278,13 +279,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Format-Custom`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
-`Format-Custom` returns the format objects that represent the display.
+This cmdlet returns the format objects that represent the display.
 
 ## NOTES
 

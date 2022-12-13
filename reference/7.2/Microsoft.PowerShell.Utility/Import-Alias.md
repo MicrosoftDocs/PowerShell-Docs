@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/24/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-alias?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Alias
 ---
+
 # Import-Alias
 
 ## SYNOPSIS
@@ -187,14 +188,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a path to `Import-Alias`.
+You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.AliasInfo
+### None
 
-When you use the **Passthru** parameter, `Import-Alias` returns a **System.Management.Automation.AliasInfo** object that represents the alias.
-Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.AliasInfo
+
+When you use the **PassThru** parameter, this cmdlet returns an **AliasInfo** object representing
+the alias.
 
 ## NOTES
 
@@ -212,4 +217,3 @@ PowerShell includes the following aliases for `Import-Alias`:
 [New-Alias](New-Alias.md)
 
 [Set-Alias](Set-Alias.md)
-

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
@@ -521,20 +521,29 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### TestConnectionCommand+PingStatus, TestConnectionCommand+TraceStatus, Boolean, TestConnectionCommand+PingMtuStatus
+### TestConnectionCommand+PingStatus
 
-By default, `Test-Connection` returns a **TestConnectionCommand+PingStatus** object for each
+By default, this cmdlet returns a **TestConnectionCommand+PingStatus** object for each
 ping reply.
 
-If you specify the **Traceroute** parameter, the cmdlet will return a
+### TestConnectionCommand+TraceStatus
+
+When you use the **Traceroute** parameter, this cmdlet returns a
 **TestConnectionCommand+TraceStatus** object for each ping reply along the route.
 
-If you specify the **Quiet** or **TcpPort** parameters, it returns a **Boolean** value. If
-multiple connections are tested, an array of **Boolean** values is returned.
+### System.Boolean
+
+When you use the **Quiet** or **TcpPort** parameters, this cmdlet returns a **Boolean** value. If
+the cmdlet tests multiple connections, it returns an array of **Boolean** values.
+
+### TestConnectionCommand+PingMtuStatus
+
+When you use the **MtuSize** parameter, this cmdlet returns a
+**TestConnectionCommand+PingMtuStatus** object for each ping reply.
 
 ## NOTES
 
