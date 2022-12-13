@@ -819,27 +819,13 @@ The cmdlet outputs these types when accessing the `Function:` drives.
 
 The cmdlet outputs this type when accessing the Registry drives.
 
-### System.Management.Automation.QuestionMarkVariable
-
 ### System.Management.Automation.PSVariable
 
-### System.Management.Automation.LocalVariable
-
-### System.Management.Automation.NullVariable
-
-### System.Management.Automation.PSCultureVariable
-
-### System.Management.Automation.PSUICultureVariable
-
-The cmdlet outputs these typeswhen accessing the `Variable:` drives.
-
-### Microsoft.WSMan.Management.WSManConfigContainerElement#ComputerLevel
-
-### Microsoft.WSMan.Management.WSManConfigLeafElement
+The cmdlet outputs this type when accessing the `Variable:` drives.
 
 ### Microsoft.WSMan.Management.WSManConfigContainerElement
 
-### Microsoft.WSMan.Management.WSManConfigLeafElement#InitParams
+### Microsoft.WSMan.Management.WSManConfigLeafElement
 
 The cmdlet outputs these types when accessing the `WSMan:` drives.
 
