@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Variable
@@ -363,14 +363,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe a value to `New-Variable`.
+You can pipe any object to `New-Variable`.
 
 ## OUTPUTS
 
-### None, System.Management.Automation.PSVariable
+### None
 
-This cmdlet returns a **PSVariable** object representing the new variable, if you specify the
-**PassThru** parameter. Otherwise, it does not return any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSVariable
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSVariable** object representing
+the new variable.
 
 ## NOTES
 

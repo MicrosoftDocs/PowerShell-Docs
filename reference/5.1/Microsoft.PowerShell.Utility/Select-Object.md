@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/04/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
 ---
+
 # Select-Object
 
 ## SYNOPSIS
@@ -597,11 +598,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Select-Object`.
+You can pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSObject
+
+This cmdlet returns the input objects with only the selected properties.
 
 ## NOTES
 

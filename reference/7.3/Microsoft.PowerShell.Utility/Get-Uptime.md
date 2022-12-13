@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/27/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-uptime?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Uptime
@@ -94,15 +94,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
+You can't pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### System.TimeSpan
 
-This is the default return type when no parameters are used.
+By default, this cmdlet returns a **TimeSpan** object representing the elapsed time.
 
 ### System.DateTime
 
-This type is returned when using the **Since** parameter.
+When you use the **Since** parameter, this cmdlet returns a **DateTime** object representing the
+last boot time.
 
 > [!NOTE]
 > If Windows fast startup is enabled, Windows does not update the value stored in
@@ -119,4 +122,3 @@ On Windows, the value returned is the same as the **LastBootUpTime** property of
 ## RELATED LINKS
 
 [Win32_OperatingSystem](/windows/win32/cimwin32prov/win32-operatingsystem#properties)
-

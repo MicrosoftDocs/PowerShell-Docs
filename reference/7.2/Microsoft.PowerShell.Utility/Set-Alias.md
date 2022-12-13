@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/24/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Alias
@@ -375,15 +375,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-`Set-Alias` does not accept input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.AliasInfo
+### None
 
-When you use the **PassThru** parameter, `Set-Alias` generates a
-**System.Management.Automation.AliasInfo** object representing the alias. Otherwise, `Set-Alias`
-does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.AliasInfo
+
+When you use the **PassThru** parameter, this cmdlet returns a **AliasInfo** object representing
+the alias.
 
 ## NOTES
 
@@ -428,4 +431,3 @@ save an alias to a file, use `Export-Alias`. To add a saved alias to a new Power
 [Remove-Alias](Remove-Alias.md)
 
 [Remove-Item](../Microsoft.PowerShell.Management/Remove-Item.md)
-

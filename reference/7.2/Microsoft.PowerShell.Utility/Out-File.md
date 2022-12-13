@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-File
 ---
+
 # Out-File
 
 ## SYNOPSIS
@@ -390,13 +391,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Out-File`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Out-File` does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

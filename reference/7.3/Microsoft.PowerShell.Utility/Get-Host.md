@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/22/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Host
 ---
+
 # Get-Host
 
 ## SYNOPSIS
@@ -232,13 +233,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Internal.Host.InternalHost
 
-`Get-Host` returns a **System.Management.Automation.Internal.Host.InternalHost** object.
+This cmdlet returns an **InternalHost** object.
 
 ## NOTES
 

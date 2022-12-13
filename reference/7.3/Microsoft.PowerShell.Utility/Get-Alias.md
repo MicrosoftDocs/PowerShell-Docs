@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/24/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Alias
 ---
+
 # Get-Alias
 
 ## SYNOPSIS
@@ -203,13 +204,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe alias names to `Get-Alias`.
+You can pipe a string containing an alias name to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.AliasInfo
 
-`Get-Alias` returns an object that represents each alias. `Get-Alias` returns the same object for
+This cmdlet returns an object that represents each alias. It returns the same type of object for
 every alias, but PowerShell uses an arrow-based format to display the names of non-hyphenated
 aliases.
 

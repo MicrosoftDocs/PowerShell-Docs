@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/12/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-List
@@ -266,13 +266,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe the objects to be updated to `Update-List`.
+You can pipe the object to be updated to this cmdlet.
 
 ## OUTPUTS
 
-### Objects or System.Management.Automation.PSListModifier
+### System.Management.Automation.PSListModifier
 
-`Update-List` returns the updated object, or it returns an object that represents the update action.
+By default, this cmdlet returns an object representing the update action.
+
+### System.Object
+
+When you specify the **Property** parameter, this cmdlet returns the updated object.
 
 ## NOTES
 

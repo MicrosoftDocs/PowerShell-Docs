@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/03/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-error?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Error
@@ -342,13 +342,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains an error message to `Write-Error`.
+You can pipe a string that contains an error message to this cmdlet.
 
 ## OUTPUTS
 
-### Error object
+### None
 
-`Write-Error` writes only to the error stream. It does not return any objects.
+This cmdlet returns no output. It only writes to the errpr message stream.
 
 ## NOTES
 

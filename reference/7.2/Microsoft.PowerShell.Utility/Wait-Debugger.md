@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/30/2020
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/wait-debugger?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Debugger
 ---
+
 # Wait-Debugger
 
 ## SYNOPSIS
@@ -136,13 +137,16 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
+You can't pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### None
+
+This cmdlet returns no output.
 
 ## NOTES
 
 ## RELATED LINKS
 
 [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)
-

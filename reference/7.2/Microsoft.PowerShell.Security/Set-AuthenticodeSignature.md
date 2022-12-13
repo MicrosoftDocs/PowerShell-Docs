@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 07/19/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
 ---
+
 # Set-AuthenticodeSignature
 
 ## SYNOPSIS
@@ -360,11 +361,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains the file path to `Set-AuthenticodeSignature`.
+You can pipe a string that contains the file path to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Signature
+
+This cmdlet returns a **Signature** object representing the value it set.
 
 ## NOTES
 

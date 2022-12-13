@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Output
 ---
+
 # Write-Output
 
 ## SYNOPSIS
@@ -136,13 +137,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe objects to `Write-Output`.
+You can pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSObject
 
-`Write-Output` returns the objects that are submitted as input.
+This cmdlet returns the objects that are submitted as input.
 
 ## NOTES
 

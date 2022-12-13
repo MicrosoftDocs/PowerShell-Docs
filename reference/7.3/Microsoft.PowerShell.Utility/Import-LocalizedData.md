@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-localizeddata?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-LocalizedData
 ---
+
 # Import-LocalizedData
 
 ## SYNOPSIS
@@ -336,14 +337,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Collections.Hashtable
 
-`Import-LocalizedData` saves the hash table in the variable that is specified by the value of the
-**BindingVariable** parameter.
+This cmdlet saves the hash table in the variable specified by the value of the **BindingVariable**
+parameter.
 
 ## NOTES
 
@@ -386,4 +387,3 @@ You cannot pipe input to this cmdlet.
 [Write-Host](Write-Host.md)
 
 [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
-

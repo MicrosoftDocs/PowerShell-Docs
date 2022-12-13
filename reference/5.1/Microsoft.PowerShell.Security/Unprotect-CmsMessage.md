@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 02/03/2020
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
 ---
+
 # Unprotect-CmsMessage
 
 ## SYNOPSIS
@@ -196,15 +197,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Diagnostics.Eventing.Reader.EventLogRecord or System.String
+### System.Diagnostics.Eventing.Reader.EventLogRecord
 
-You can pipe an object containing encrypted content to `Unprotect-CmsMessage`.
+### System.String
+
+You can pipe an object containing encrypted content to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
 
-The unencrypted message.
+This cmdlet returns the unencrypted message.
 
 ## NOTES
 

@@ -7,6 +7,7 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: Format-Custom
 ---
+
 # Format-Custom
 
 ## SYNOPSIS
@@ -278,13 +279,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Format-Custom`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
-`Format-Custom` returns the format objects that represent the display.
+This cmdlet returns the format objects that represent the display.
 
 ## NOTES
 

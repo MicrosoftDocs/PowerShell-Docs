@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/16/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
 ---
+
 # Out-GridView
 
 ## SYNOPSIS
@@ -283,14 +284,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can send any object to this cmdlet.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-Normally, `Out-GridView` does not return any objects. When using the **PassThru** parameter, the
-objects representing the selected rows are returned to the pipeline.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSObject
+
+When you use the **PassThru** parameter, this cmdlet returns objects representing the selected
+rows.
 
 ## NOTES
 

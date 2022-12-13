@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/04/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -334,15 +334,15 @@ Content           : {
                         "Host": "httpbin.org",
                         "If-Match": "12345",
                         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.19044; en-US) PowerShell/7.2.5",
-                        "X-Amzn-Trace-Id": …
+                        "X-Amzn-Trace-Id": ï¿½
 RawContent        : HTTP/1.1 200 OK
                     Date: Mon, 08 Aug 2022 16:24:24 GMT
                     Connection: keep-alive
                     Server: gunicorn/19.9.0
                     Access-Control-Allow-Origin: *
                     Access-Control-Allow-Credentials: true
-                    Content-Type: application…
-Headers           : {[Date, System.String[]], [Connection, System.String[]], [Server, System.String[]], [Access-Control-Allow-Origin, System.String[]]…}
+                    Content-Type: applicationï¿½
+Headers           : {[Date, System.String[]], [Connection, System.String[]], [Server, System.String[]], [Access-Control-Allow-Origin, System.String[]]ï¿½}
 Images            : {}
 InputFields       : {}
 Links             : {}
@@ -1293,11 +1293,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe the body of a web request to `Invoke-WebRequest`.
+You can pipe the body of a web request to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.BasicHtmlWebResponseObject
+
+This cmdlet returns the response object representing the result of the web request.
 
 ## NOTES
 

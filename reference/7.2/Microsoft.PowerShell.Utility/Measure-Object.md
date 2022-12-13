@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/03/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Object
 ---
+
 # Measure-Object
 
 ## SYNOPSIS
@@ -533,16 +534,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe objects to `Measure-Object`.
+You can pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.GenericMeasureInfo
 
+By default, this cmdlet returns a **GenericMeasureInfo** object.
+
 ### Microsoft.PowerShell.Commands.TextMeasureInfo
 
-If you use the **Word** parameter, `Measure-Object` returns a **TextMeasureInfo** object.
-Otherwise, it returns a **GenericMeasureInfo** object.
+When you use the **Word** parameter, this cmdlet returns a **TextMeasureInfo** object.
 
 ## NOTES
 

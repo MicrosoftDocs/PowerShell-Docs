@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/25/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
@@ -321,13 +321,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object that has an Extended Type System (ETS) adapter to `ConvertTo-CSV`.
+You can pipe any object that has an Extended Type System (ETS) adapter to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
 
-The CSV output is returned as a collection of strings.
+This cmdlet returns one or more strings representing each converted object.
 
 ## NOTES
 

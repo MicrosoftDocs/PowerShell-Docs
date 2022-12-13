@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/27/2020
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-typedata?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TypeData
 ---
+
 # Get-TypeData
 
 ## SYNOPSIS
@@ -142,7 +143,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe type names to `Get-TypeData`.
+You can pipe strings containing type names to this cmdlet.
 
 ## OUTPUTS
 
@@ -161,4 +162,3 @@ types that are defined in modules that have not been imported into the current s
 [Remove-TypeData](Remove-TypeData.md)
 
 [Update-TypeData](Update-TypeData.md)
-

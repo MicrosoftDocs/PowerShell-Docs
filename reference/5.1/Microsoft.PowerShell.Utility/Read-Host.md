@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/18/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
 ---
+
 # Read-Host
 
 ## SYNOPSIS
@@ -96,14 +97,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept input from the PowerShell pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### System.String or System.Security.SecureString
+### System.String
 
-If the **AsSecureString** parameter is used, `Read-Host` returns a **SecureString**. Otherwise, it
-returns a string.
+By default, this cmdlet returns a string.
+
+### System.Security.SecureString
+
+When you use **AsSecureString** parameter, this cmdlet returns a **SecureString**.
 
 ## NOTES
 

@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
 ---
+
 # ConvertTo-Html
 
 ## SYNOPSIS
@@ -485,13 +486,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any .NET object to `ConvertTo-Html`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
-### System.String or System.Xml.XmlDocument
+### System.String
 
-`ConvertTo-Html` returns series of strings that comprise valid HTML.
+This cmdlet returns an array of strings of HTML representing the converted object.
 
 ## NOTES
 

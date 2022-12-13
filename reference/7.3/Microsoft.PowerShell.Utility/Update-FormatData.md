@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-formatdata?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-FormatData
@@ -180,13 +180,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains the append path to `Update-FormatData`.
+You can pipe a string that contains the append path to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-The cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
 

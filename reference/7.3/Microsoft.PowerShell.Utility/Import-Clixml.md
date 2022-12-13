@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/15/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-clixml?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Clixml
@@ -186,13 +186,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipeline a string that contains a path to `Import-Clixml`.
+You can pipe a string containing a path to this cmdlet.
 
 ## OUTPUTS
 
-### PSObject
+### System.Management.Automation.PSObject
 
-`Import-Clixml` returns objects that were deserialized from the stored XML files.
+This cmdlet returns objects that were deserialized from the stored XML files.
 
 ## NOTES
 
@@ -210,4 +210,3 @@ When specifying multiple values for a parameter, use commas to separate the valu
 [Securely Store Credentials on Disk](https://powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk)
 
 [Use PowerShell to Pass Credentials to Legacy Systems](https://devblogs.microsoft.com/scripting/use-powershell-to-pass-credentials-to-legacy-systems/)
-
