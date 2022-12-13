@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/28/2022
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
@@ -355,10 +355,61 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.Object
+### System.Management.Automation.AliasInfo
 
-This cmdlet returns the objects that it gets. The type is determined by the type of objects in the
-path.
+The cmdlet outputs this type when accessing the `Alias:` drive.
+
+### Microsoft.PowerShell.Commands.X509StoreLocation
+
+### System.Security.Cryptography.X509Certificates.X509Store
+
+### System.Security.Cryptography.X509Certificates.X509Certificate2
+
+The cmdlet outputs this type when accessing the `Cert:` drive.
+
+### System.Collections.DictionaryEntry
+
+The cmdlet outputs this type when accessing the `Env:` drive.
+
+### System.IO.DirectoryInfo
+
+### System.IO.FileInfo
+
+The cmdlet outputs this type when accessing the Filesystem drives.
+
+### System.Management.Automation.FunctionInfo
+
+### System.Management.Automation.FilterInfo
+
+The cmdlet outputs this type when accessing the `Function:` drives.
+
+### Microsoft.Win32.RegistryKey
+
+The cmdlet outputs this type when accessing the Registry drives.
+
+### System.Management.Automation.QuestionMarkVariable
+
+### System.Management.Automation.PSVariable
+
+### System.Management.Automation.LocalVariable
+
+### System.Management.Automation.NullVariable
+
+### System.Management.Automation.PSCultureVariable
+
+### System.Management.Automation.PSUICultureVariable
+
+The cmdlet outputs this type when accessing the `Variable:` drives.
+
+### Microsoft.WSMan.Management.WSManConfigContainerElement#ComputerLevel
+
+### Microsoft.WSMan.Management.WSManConfigLeafElement
+
+### Microsoft.WSMan.Management.WSManConfigContainerElement
+
+### Microsoft.WSMan.Management.WSManConfigLeafElement#InitParams
+
+The cmdlet outputs this type when accessing the `WSMan:` drives.
 
 ## NOTES
 
