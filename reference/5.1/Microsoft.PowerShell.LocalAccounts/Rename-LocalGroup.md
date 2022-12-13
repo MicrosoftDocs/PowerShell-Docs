@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 09/30/2021
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/rename-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-LocalGroup
@@ -160,15 +160,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
+### System.Management.Automation.SecurityAccountsManager.LocalGroup
 
-You can pipe a security group, a string, or a SID to this cmdlet.
+You can pipe a security group to this cmdlet.
+
+### System.String
+
+You can pipe a string to this cmdlet.
+
+### System.Security.Principal.SecurityIdentifier
+
+You can pipe a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

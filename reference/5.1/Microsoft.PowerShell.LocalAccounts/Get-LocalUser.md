@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 02/10/2020
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-LocalUser
@@ -126,9 +126,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String, System.Security.Principal.SecurityIdentifier
+### System.String
 
-You can pipe a string or SID to this cmdlet.
+You can pipe a string to this cmdlet.
+
+### System.Security.Principal.SecurityIdentifier
+
+You can pipe a SID to this cmdlet.
 
 ## OUTPUTS
 
