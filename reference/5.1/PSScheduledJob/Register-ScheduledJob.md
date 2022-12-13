@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/register-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ScheduledJob
@@ -581,11 +581,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't send input down the pipeline to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
+This cmdlet returns a **ScheduledJobDefinition** object representing the registered job.
 
 ## NOTES
 

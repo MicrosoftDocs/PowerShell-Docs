@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/enable-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-JobTrigger
@@ -184,13 +184,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
-You can pipe job triggers to `Enable-JobTrigger`.
+You can pipe a job trigger to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

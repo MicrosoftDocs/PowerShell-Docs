@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/get-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ScheduledJob
@@ -136,11 +136,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to `Get-ScheduledJob`.
+You cant pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
+This cmdlet returns the definition of a scheduled job.
 
 ## NOTES
 
