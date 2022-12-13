@@ -2,7 +2,7 @@
 external help file: ISE-help.xml
 Locale: en-US
 Module Name: ISE
-ms.date: 06/09/2017
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/ise/get-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-IseSnippet
@@ -122,15 +122,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### None
+
+You can't pipe objects to this cmdlet.
+
 ## OUTPUTS
 
 ### System.IO.FileInfo
 
-This cmdlet returns a file object that represents the snippet file.
+This cmdlet returns a file object representing the snippet file.
 
 ## NOTES
 
-* The `New-IseSnippet` cmdlet stores new user-created snippets in unsigned .ps1xml files. As such,
+- The `New-IseSnippet` cmdlet stores new user-created snippets in unsigned .ps1xml files. As such,
   Windows PowerShell cannot add them to a session in which the execution policy is **AllSigned** or
   **Restricted**. In a **Restricted** or **AllSigned** session, you can create, get, and import
   unsigned user-created snippets, but you cannot use them in the session.
