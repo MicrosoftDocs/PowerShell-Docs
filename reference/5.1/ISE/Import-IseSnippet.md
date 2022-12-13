@@ -2,7 +2,7 @@
 external help file: ISE-help.xml
 Locale: en-US
 Module Name: ISE
-ms.date: 05/17/2022
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/ise/import-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-IseSnippet
@@ -199,13 +199,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not take input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate output.
+This cmdlet returns no output.
 
 ## NOTES
 

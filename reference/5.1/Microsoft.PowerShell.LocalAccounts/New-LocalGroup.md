@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 09/28/2021
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-LocalGroup
@@ -119,7 +119,7 @@ You can pipe a string to this cmdlet.
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup
 
-This cmdlet returns a security group.
+This cmdlet returns a **LocalGroup** object representing the created security group.
 
 ## NOTES
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 10/04/2021
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
@@ -189,13 +189,13 @@ For more information, see
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

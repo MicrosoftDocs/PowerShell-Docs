@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
 Locale: en-US
 Module Name: PSWorkflow
-ms.date: 05/17/2022
+ms.date: 12/13/2022
 online version: https://learn.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSWorkflowSession
@@ -381,9 +381,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Management.Automation.Runspaces.PSSession[], System.String
+### System.Management.Automation.Runspaces.PSSession
 
-You can pipe a session or a computer name to this cmdlet.
+You can pipe a session to this cmdlet.
+
+### System.String
+
+You can pipe a computer name to this cmdlet.
 
 ## OUTPUTS
 
