@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 04/03/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/packagemanagement/set-packagesource?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PackageSource
 ---
+
 # Set-PackageSource
 
 ## SYNOPSIS
@@ -417,11 +418,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### `Set-PackageSource` doesn't accept pipeline input.
+### None
+
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### This cmdlet does not generate any output.
+### None
+
+This cmdlet returns no output.
 
 ## NOTES
 

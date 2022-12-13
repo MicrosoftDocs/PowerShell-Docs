@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 05/24/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/packagemanagement/unregister-packagesource?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-PackageSource
@@ -66,7 +66,7 @@ always managed by a package provider. To find package sources, use the `Get-Pack
 
 ## EXAMPLES
 
-### Example 1: Unregister a package source for the Nuget provider
+### Example 1: Unregister a package source for the NuGet provider
 
 The `Unregister-PackageSource` cmdlet unregisters a package source from the local computer. The
 **Location** and **Provider** parameters can be used to further specify the source to remove.
@@ -356,11 +356,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### `Unregister-PackageSource` accepts **PackageSource** objects from the pipeline as input.
+### Microsoft.PackageManagement.Packaging.PackageSource
+
+You can pipe a **PackageSource** object to this cmdlet
 
 ## OUTPUTS
 
-### `Unregister-PackageSource` doesn't generate any output.
+### None
+
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -379,4 +383,3 @@ and includes the provider's parameter set.
 [Register-PackageSource](Register-PackageSource.md)
 
 [Set-PackageSource](Set-PackageSource.md)
-

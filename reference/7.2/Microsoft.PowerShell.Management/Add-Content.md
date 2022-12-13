@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
 ---
+
 # Add-Content
 
 ## SYNOPSIS
@@ -501,16 +502,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Object, System.Management.Automation.PSCredential
+### System.Object
 
-You can pipe values, paths, or credentials to `Set-Content`.
+You can pipe values to `Set-Content`.
+
+### System.Management.Automation.PSCredential
+
+You can pipe credentials to `Set-Content`.
 
 ## OUTPUTS
 
-### None or System.String
+### None
 
-When you use the **PassThru** parameter, `Add-Content` generates a **System.String** object that
-represents the content. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.String
+
+When you use the **PassThru** parameter, this cmdlet returns a **System.String** object
+representing the content.
 
 ## NOTES
 

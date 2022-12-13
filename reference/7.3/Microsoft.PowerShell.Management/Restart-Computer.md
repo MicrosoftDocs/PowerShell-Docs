@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/17/2019
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Computer
@@ -361,13 +361,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-`Restart-Computer` accepts computer names from the pipeline or variables.
+You can pipe a string that contains a computer name to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Restart-Computer` doesn't generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

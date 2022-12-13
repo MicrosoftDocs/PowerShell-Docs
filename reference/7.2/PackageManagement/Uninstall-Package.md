@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 07/19/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/packagemanagement/uninstall-package?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Uninstall-Package
@@ -484,15 +484,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### SoftwareIdentity
+### Microsoft.PackageManagement.Packaging.SoftwareIdentity
 
-`Uninstall-Package` accepts **SoftwareIdentity** objects from the pipeline as input.
+You can pipe **SoftwareIdentity** objects to this cmdlet.
 
 ## OUTPUTS
 
-### SoftwareIdentity
+### Microsoft.PackageManagement.Packaging.SoftwareIdentity
 
-`Uninstall-Package` returns a **SoftwareIdentity** object for each package uninstalled.
+This cmdlet returns a **SoftwareIdentity** object for each package uninstalled.
 
 ## NOTES
 

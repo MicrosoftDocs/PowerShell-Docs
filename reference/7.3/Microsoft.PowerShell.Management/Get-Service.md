@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/17/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
 ---
+
 # Get-Service
 
 ## SYNOPSIS
@@ -312,9 +313,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.ServiceProcess.ServiceController, System.String
+### System.ServiceProcess.ServiceController
 
-You can pipe a service object or a service name to this cmdlet.
+You can pipe a service object to this cmdlet.
+
+### System.String
+
+You can pipe a service name to this cmdlet.
 
 ## OUTPUTS
 

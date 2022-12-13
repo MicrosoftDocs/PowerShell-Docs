@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/18/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-ItemProperty
 ---
+
 # Rename-ItemProperty
 
 ## SYNOPSIS
@@ -285,7 +286,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -295,10 +299,14 @@ You can pipe a string that contains a path, but not a literal path, to this cmdl
 
 ## OUTPUTS
 
-### None, System.Management.Automation.PSCustomObject
+### None
 
-This cmdlet generates a **PSCustomObject** that represents the renamed item property, if you specify the *PassThru* parameter.
-Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSCustomObject
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSCustomObject** representing the
+renamed item property.
 
 ## NOTES
 
@@ -306,7 +314,9 @@ Windows PowerShell includes the following aliases for `Rename-ItemProperty`:
 
 - `rnp`
 
-`Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+`Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the
+providers available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

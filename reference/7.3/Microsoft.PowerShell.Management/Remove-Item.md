@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/28/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
 ---
+
 # Remove-Item
 
 ## SYNOPSIS
@@ -425,7 +426,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
-
 ## INPUTS
 
 ### System.String
@@ -436,7 +436,7 @@ You can pipe a string that contains a path, but not a literal path, to this cmdl
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
 

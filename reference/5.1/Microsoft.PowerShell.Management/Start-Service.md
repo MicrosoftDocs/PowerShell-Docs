@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/16/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Service
 ---
+
 # Start-Service
 
 ## SYNOPSIS
@@ -255,17 +256,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.ServiceProcess.ServiceController, System.String
+### System.ServiceProcess.ServiceController
 
-You can pipe objects that represent the services or strings that contain the service names to this
-cmdlet.
+You can pipe a service object to this cmdlet.
+
+### System.String
+
+You can pipe a string that contains the service name to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.ServiceProcess.ServiceController
+### None
 
-This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
-service, if you specify **PassThru**. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.ServiceProcess.ServiceController
+
+When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object
+representing the service.
 
 ## NOTES
 

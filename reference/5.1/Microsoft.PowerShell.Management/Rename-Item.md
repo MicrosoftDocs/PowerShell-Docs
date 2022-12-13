@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-Item
 ---
+
 # Rename-Item
 
 ## SYNOPSIS
@@ -301,10 +302,14 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### None or an object that represents the renamed item.
+### None
 
-This cmdlet generates an object that represents the renamed item, if you specify the **PassThru**
-parameter. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSObject
+
+When you use the **PassThru** parameter, this cmdlet returns an object representing the renamed
+item.
 
 ## NOTES
 

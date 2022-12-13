@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.PackageManagement.dll-Help.xml
 Locale: en-US
 Module Name: PackageManagement
-ms.date: 10/04/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/packagemanagement/get-packageprovider?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PackageProvider
 ---
+
 # Get-PackageProvider
 
 ## SYNOPSIS
@@ -140,7 +141,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### PackageProvider[]
+### Microsoft.PackageManagement.Implementation.PackageProvider
+
+This cmdlet returns a **PackageProvider** object for each installed package provider matching the
+parameters. By default, it returns every installed package provider.
 
 ## NOTES
 

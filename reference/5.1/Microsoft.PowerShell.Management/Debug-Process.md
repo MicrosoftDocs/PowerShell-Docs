@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/debug-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Process
 ---
+
 # Debug-Process
 
 ## SYNOPSIS
@@ -225,16 +226,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Int32, System.Diagnostics.Process, System.String
+### System.Int32
 
-You can pipe a process ID (Int32), a process object (System.Diagnostics.Process), or a process name
-(String) to this cmdlet.
+You can pipe a process ID to this cmdlet.
+
+### System.Diagnostics.Process
+
+You can pipe a process object to this cmdlet.
+
+### System.String
+
+You can pipe a process name to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

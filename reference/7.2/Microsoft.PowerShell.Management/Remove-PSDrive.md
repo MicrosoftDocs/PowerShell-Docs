@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/16/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-psdrive?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-PSDrive
 ---
+
 # Remove-PSDrive
 
 ## SYNOPSIS
@@ -194,14 +195,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSDriveInfo
 
-You can pipe a drive object, such as one from the `Get-PSDrive` cmdlet, to the `Remove-PSDrive`
-cmdlet.
+You can pipe a drive object, such as from the `Get-PSDrive` cmdlet, to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
 

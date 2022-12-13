@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/07/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemPropertyValue
 ---
+
 # Get-ItemPropertyValue
 
 ## SYNOPSIS
@@ -248,7 +249,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -258,17 +262,16 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.Boolean, System.String, System.DateTime
+### System.Management.Automation.PSObject
 
-This cmdlet returns an object for each item property value that it gets. The object type depends on
-the property value that is retrieved. For example, in a file system drive, the cmdlet might return a
-file or folder.
+This cmdlet returns an object for each item property value that it gets.
+The object type depends on the property value that is retrieved.
 
 ## NOTES
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, run the `Get-PSProvider` cmdlet. For more information, see
-about_Providers.
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
@@ -277,6 +280,8 @@ about_Providers.
 [Clear-ItemProperty](Clear-ItemProperty.md)
 
 [Copy-ItemProperty](Copy-ItemProperty.md)
+
+[Get-PSProvider](Get-PSProvider.md)
 
 [Move-ItemProperty](Move-ItemProperty.md)
 
@@ -288,4 +293,4 @@ about_Providers.
 
 [Set-ItemProperty](Set-ItemProperty.md)
 
-[Get-PSProvider](Get-PSProvider.md)
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

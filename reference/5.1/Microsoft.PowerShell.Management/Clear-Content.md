@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/11/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/clear-content?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Content
 ---
+
 # Clear-Content
 
 ## SYNOPSIS
@@ -312,13 +313,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to `Clear-Content`.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any objects.
+This cmdlet returns no output.
 
 ## NOTES
 

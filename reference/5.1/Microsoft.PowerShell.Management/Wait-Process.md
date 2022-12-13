@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/11/2021
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
 ---
+
 # Wait-Process
 
 ## SYNOPSIS
@@ -177,7 +178,7 @@ You can pipe a process object to this cmdlet.
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

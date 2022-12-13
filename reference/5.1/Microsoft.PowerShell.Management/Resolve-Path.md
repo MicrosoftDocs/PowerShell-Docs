@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/22/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resolve-Path
 ---
+
 # Resolve-Path
 
 ## SYNOPSIS
@@ -215,10 +216,13 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.Automation.PathInfo, System.String
+### System.Management.Automation.PathInfo
 
-Returns a **PathInfo** object. Returns a string value for the resolved path if you specify the
-**Relative** parameter.
+By default, this cmdlet returns a **PathInfo** object.
+
+### System.String
+
+If you specify the **Relative** parameter, this cmdlet returns a string value for the resolved path.
 
 ## NOTES
 

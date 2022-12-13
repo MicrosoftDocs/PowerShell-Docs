@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/31/2022
+ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
 ---
+
 # Start-Process
 
 ## SYNOPSIS
@@ -529,14 +530,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Diagnostics.Process
+### None
 
-This cmdlet generates a **System.Diagnostics.Process** object, if you specify the **PassThru**
-parameter. Otherwise, this cmdlet doesn't return any output.
+By default, this cmdlet returns no output.
+
+### System.Diagnostics.Process
+
+When you use the **PassThru** parameter, this cmdlet returns a **Process** object.
 
 ## NOTES
 
