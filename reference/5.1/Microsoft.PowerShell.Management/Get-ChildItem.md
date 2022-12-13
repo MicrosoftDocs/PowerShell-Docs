@@ -743,7 +743,7 @@ The cmdlet outputs this type when accessing the `Alias:` drive.
 
 ### System.Security.Cryptography.X509Certificates.X509Certificate2
 
-The cmdlet outputs this type when accessing the `Cert:` drive.
+The cmdlet outputs these types when accessing the `Cert:` drive.
 
 ### System.Collections.DictionaryEntry
 
@@ -753,13 +753,13 @@ The cmdlet outputs this type when accessing the `Env:` drive.
 
 ### System.IO.FileInfo
 
-The cmdlet outputs this type when accessing the Filesystem drives.
+The cmdlet outputs these types when accessing the Filesystem drives.
 
 ### System.Management.Automation.FunctionInfo
 
 ### System.Management.Automation.FilterInfo
 
-The cmdlet outputs this type when accessing the `Function:` drives.
+The cmdlet outputs these types when accessing the `Function:` drives.
 
 ### Microsoft.Win32.RegistryKey
 
@@ -777,7 +777,7 @@ The cmdlet outputs this type when accessing the Registry drives.
 
 ### System.Management.Automation.PSUICultureVariable
 
-The cmdlet outputs this type when accessing the `Variable:` drives.
+The cmdlet outputs these typeswhen accessing the `Variable:` drives.
 
 ### Microsoft.WSMan.Management.WSManConfigContainerElement#ComputerLevel
 
@@ -787,7 +787,7 @@ The cmdlet outputs this type when accessing the `Variable:` drives.
 
 ### Microsoft.WSMan.Management.WSManConfigLeafElement#InitParams
 
-The cmdlet outputs this type when accessing the `WSMan:` drives.
+The cmdlet outputs these types when accessing the `WSMan:` drives.
 
 ### System.String
 
