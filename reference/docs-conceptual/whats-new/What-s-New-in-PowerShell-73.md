@@ -113,20 +113,17 @@ For a complete list of changes, see the [Change Log][11] in the GitHub repositor
 
 In PowerShell 7.3, following experimental features became mainstream:
 
-- [PSNativeCommandArgumentPassing][08] - When this experimental feature is enabled PowerShell uses
-  the **ArgumentList** property of the **StartProcessInfo** object rather than our current mechanism
-  of reconstructing a string when invoking a native executable.
-- [PSAnsiRenderingFileInfo][13] - This feature adds the $PSStyle.FileInfo member and enables
+- [PSNativeCommandArgumentPassing][08] - PowerShell now uses the **ArgumentList** property of the
+  **StartProcessInfo** object rather than the old mechanism of reconstructing a string when invoking
+  a native executable.
+- [PSAnsiRenderingFileInfo][13] - This feature adds the `$PSStyle.FileInfo` member and enables
   coloring of specific file types.
-- [PSCleanBlock][04] - Adds `clean` block to script block as a peer to `begin`, `process`,
-  and `end` to allow easy resource cleanup. In PowerShell 7.3-preview.8, this feature became
-  mainstream.
-- [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec`
-  compatibility for non-Windows systems. In PowerShell 7.3-preview.8, this feature became
-  mainstream.
-- [PSAMSIMethodInvocationLogging][02] - Extends the data sent to AMSI for inspection to
-  include all invocations of .NET method members. In PowerShell 7.3-preview.8, this feature became
-  mainstream.
+- [PSCleanBlock][04] - Adds `clean` block to script block as a peer to `begin`, `process`, and `end`
+  to allow easy resource cleanup.
+- [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec` compatibility
+  for non-Windows systems.
+- [PSAMSIMethodInvocationLogging][02] - Extends the data sent to AMSI for inspection to include all
+  invocations of .NET method members.
 
 PowerShell 7.3 introduces the following experimental features:
 
