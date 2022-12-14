@@ -663,5 +663,5 @@ methods.
 [Save-Help]: /powershell/module/microsoft.powershell.core/save-help
 [about_Updatable_Help]: /powershell/module/microsoft.powershell.core/about/about_updatable_help
 [about_Command_Syntax]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
-[PowerShell-Docs]: https://github.com/powershell/powershell
+[PowerShell-Docs]: https://github.com/MicrosoftDocs/PowerShell-Docs
 [Appendix A]: appendix-a.md
