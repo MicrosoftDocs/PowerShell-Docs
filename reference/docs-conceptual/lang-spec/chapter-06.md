@@ -85,7 +85,7 @@ The rules for converting any value to type float or double are as
 follows:
 
 - The bool value False is converted to zero; the bool value True is converted to 1.
-- A char value is represented is represented exactly.
+- A char value is represented exactly.
 - A numeric type value is represented exactly, if possible; however, for int, long, and decimal
   conversions to float, and for long and decimal conversions to double, some of the least
   significant bits of the integer value may be lost.
