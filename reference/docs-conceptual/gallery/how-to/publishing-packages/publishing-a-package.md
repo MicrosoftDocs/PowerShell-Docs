@@ -69,7 +69,7 @@ are:
   Authors and Owners below.
 - Description - this is a required primary key, used to briefly explain what this item does and any
   requirements for using it
-- ProjectURI - this is a strongly recommended URI field in PSData that provides a link to a Github
+- ProjectURI - this is a strongly recommended URI field in PSData that provides a link to a GitHub
   repo or similar location where you do development on the item
 - Tags - it is a strong recommendation to tag your package based on its compatibility with
   PSEditions and platforms. For details, see the
