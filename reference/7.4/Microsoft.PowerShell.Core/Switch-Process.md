@@ -1,8 +1,8 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
-online version: https://go.microsoft.com/fwlink/?linkid=2181448
-ms.date: 09/27/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/switch-process?view=powershell-7.4&WT.mc_id=ps-gethelp
+ms.date: 12/14/2022
 schema: 2.0.0
 ---
 
@@ -27,6 +27,10 @@ of AzCLI.
 
 Starting in PowerShell 7.3-preview.8, the `Switch-Process` cmdlet is aliased to `exec`. The cmdlet
 calls `execv()` function to provide similar behavior as POSIX shells.
+
+PowerShell 7.3.1 changed the `exec` alias to a function that wraps `Switch-Process`. The function
+allows you to pass parameters to the native command that might have erroneously bound to the
+**WithCommand** parameter.
 
 This cmdlet is only available for non-Windows systems.
 
@@ -82,11 +86,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-This feature is not intended to have parity with the built-in `exec` function in POSIX shells (like
+This feature isn't intended to have parity with the built-in `exec` function in POSIX shells (like
 how file descriptors are handled), but should cover most cases.
 
 The `Switch-Process` cmdlet was created to provide `exec` compatibility is other POSIX shells. Under
-normal conditions, the cmdlet was not intended to be used in PowerShell scripts.
+normal conditions, the cmdlet isn't intended to be used in PowerShell scripts.
 
 ## RELATED LINKS
 

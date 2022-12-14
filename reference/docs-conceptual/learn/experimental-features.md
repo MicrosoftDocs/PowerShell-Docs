@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 11/16/2022
+ms.date: 12/14/2022
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -225,6 +225,10 @@ calls `execv()` function to provide similar behavior as POSIX shells.
 The `PSExec` experimental feature must be enabled for this cmdlet to be available. This cmdlet is
 only available for non-Windows systems.
 
+PowerShell 7.3.1 changed the `exec` alias to a function that wraps `Switch-Process`. The function
+allows you to pass parameters to the native command that might have erroneously bound to the
+**WithCommand** parameter.
+
 ## PSImplicitRemotingBatching
 
 > [!NOTE]
@@ -301,6 +305,7 @@ use the `Legacy` style argument passing.
 - `find.exe`
 - `cscript.exe`
 - `wscript.exe`
+- `sqlcmd.exe` - Added in PowerShell 7.3.1
 - ending with `.bat`
 - ending with `.cmd`
 - ending with `.js`
