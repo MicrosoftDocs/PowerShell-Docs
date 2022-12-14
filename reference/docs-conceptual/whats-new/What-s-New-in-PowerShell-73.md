@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3
 description: New features and changes released in PowerShell 7.3
-ms.date: 12/13/2022
+ms.date: 12/14/2022
 ---
 
 # What's New in PowerShell 7.3
@@ -113,17 +113,24 @@ For a complete list of changes, see the [Change Log][11] in the GitHub repositor
 
 In PowerShell 7.3, following experimental features became mainstream:
 
-- [PSNativeCommandArgumentPassing][08] - PowerShell now uses the **ArgumentList** property of the
-  **StartProcessInfo** object rather than the old mechanism of reconstructing a string when invoking
-  a native executable.
 - [PSAnsiRenderingFileInfo][13] - This feature adds the `$PSStyle.FileInfo` member and enables
   coloring of specific file types.
 - [PSCleanBlock][04] - Adds `clean` block to script block as a peer to `begin`, `process`, and `end`
   to allow easy resource cleanup.
-- [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec` compatibility
-  for non-Windows systems.
 - [PSAMSIMethodInvocationLogging][02] - Extends the data sent to AMSI for inspection to include all
   invocations of .NET method members.
+- [PSNativeCommandArgumentPassing][08] - PowerShell now uses the **ArgumentList** property of the
+  **StartProcessInfo** object rather than the old mechanism of reconstructing a string when invoking
+  a native executable.
+
+  PowerShell 7.3.1 adds `sqlcmd.exe` to the list of native commands in Windows that use the `Legacy`
+  style of argument passing.
+- [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec` compatibility
+  for non-Windows systems.
+
+  PowerShell 7.3.1 changed the `exec` alias to a function that wraps `Switch-Process`. The function
+  allows you to pass parameters to the native command that might have erroneously bound to the
+  **WithCommand** parameter.
 
 PowerShell 7.3 introduces the following experimental features:
 
