@@ -12,7 +12,7 @@ PowerShell is a command-line shell and a scripting language in one. PowerShell s
 Windows. It was meant to help with task automation for administration tasks but has now grown to be
 cross platform and can be used for a variety of tasks.
 
-The thing that makes PowerShell unique is that accepts and returns .NET objects, rather than text.
+The thing that makes PowerShell unique is that it accepts and returns .NET objects, rather than text.
 This fact makes it easier to connect different commands in series, in a _pipeline_.
 
 Even then, you might need to _massage_ the results a little.
