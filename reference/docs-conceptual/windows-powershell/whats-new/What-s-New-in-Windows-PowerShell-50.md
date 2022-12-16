@@ -1,9 +1,8 @@
-
+---
 description: These release notes describe the new features and changes in Windows PowerShell 5.x.
 ms.date: 12/16/2022
 title: What's New in Windows PowerShell 5.0
 ---
-
 # What's New in Windows PowerShell 5.0
 
 Windows PowerShell 5.0 includes significant new features that extend its use, improve its usability,
