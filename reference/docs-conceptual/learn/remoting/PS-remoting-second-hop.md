@@ -335,7 +335,7 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 [PowerShell Remoting Security Considerations][20]
 
 <!-- link references -->
-[01]: /archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-can't-be-delegated-for-privileged-accounts
+[01]: /archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts
 [02]: /archive/blogs/sergey_babkins_blog/another-solution-to-multi-hop-powershell-remoting
 [03]: /archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount
 [06]: /powershell/module/Microsoft.PowerShell.Core/About/about_Remote_Variables

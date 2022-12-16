@@ -1,9 +1,8 @@
 ---
 description: These release notes describe the new features and changes in Windows PowerShell 5.x.
-ms.date: 10/07/2021
+ms.date: 12/16/2022
 title: What's New in Windows PowerShell 5.0
 ---
-
 # What's New in Windows PowerShell 5.0
 
 Windows PowerShell 5.0 includes significant new features that extend its use, improve its usability,
@@ -19,21 +18,21 @@ Windows PowerShell 5.0 is installed by default on Windows Server 2016 Technical 
 10.
 
 To install Windows PowerShell 5.0 on Windows Server 2012 R2, Windows 8.1 Enterprise, or Windows 8.1
-Pro, download and install [Windows Management Framework 5.0][69]. Be sure to read the download
+Pro, download and install [Windows Management Framework 5.0][66]. Be sure to read the download
 details, and meet all system requirements, before you install Windows Management Framework 5.0.
 
 ## In this topic
 
-- [Windows PowerShell 4.0 DSC updates in KB 3000850][65]
-- [New features in Windows PowerShell 5.0][43]
-- [New features in Windows PowerShell 4.0][42]
-- [New features in Windows PowerShell 3.0][41]
+- [Windows PowerShell 4.0 DSC updates in KB 3000850][62]
+- [New features in Windows PowerShell 5.0][40]
+- [New features in Windows PowerShell 4.0][39]
+- [New features in Windows PowerShell 3.0][38]
 
 ## Windows PowerShell 4.0 updates in November 2014 update rollup (KB 3000850)
 
 Many updates and improvements to Windows PowerShell Desired State Configuration (DSC) in Windows
 PowerShell 4.0 are available in the
-[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2][01]
+[November 2014 update rollup for Windows RT 8.1, Windows 8.1, and Windows Server 2012 R2][70]
 (KB3000850). You can determine if KB3000850 is installed on your system by running
 `Get-Hotfix -Id KB3000850` in Windows PowerShell.
 
@@ -47,9 +46,9 @@ PowerShell 4.0 are available in the
   - [New-DscChecksum][13] now supports UNC paths.
 
 - New cmdlets in the [PSDesiredStateConfiguration][13] module
-  - [Update-DscConfiguration][16]: Performs an on-demand pull server check.
-  - [Stop-DscConfiguration][15]: Stops a configuration that is already running.
-  - [Remove-DscConfigurationDocument][14]: Lets you remove configuration documents in various stages
+  - [Update-DscConfiguration][73]: Performs an on-demand pull server check.
+  - [Stop-DscConfiguration][74]: Stops a configuration that is already running.
+  - [Remove-DscConfigurationDocument][72]: Lets you remove configuration documents in various stages
     (pending, previous, or current).
 
 - Language enhancements
@@ -81,7 +80,7 @@ PowerShell 4.0 are available in the
     - StopConfiguration: Do not automatically resume a configuration after a node restarts.
   - A consistency run can now occur more often than a PULL operation, or vice-versa.
   - Versioning support: DSC can now recognize a document that was generated on a newer client
-    (included with [WMF 5.0][69]).
+    (included with [WMF 5.0][66]).
 
 - Error prevention improvements
   - Module version is now enforced before a configuration is applied.
@@ -98,23 +97,23 @@ PowerShell 4.0 are available in the
   - The Package resource
     - No longer installs the wrong package (either from local or web sources).
     - Now supports HTTPS.
-  - There is now support for HTTPS in the [Package resource][22].
-  - [Archive resource][21] now supports credentials.
+  - There is now support for HTTPS in the [Package resource][19].
+  - [Archive resource][18] now supports credentials.
 
 ## New features in Windows PowerShell 5.0
 
-- [New features in Windows PowerShell][39]
-- [New features in Windows PowerShell Desired State Configuration][44]
-- [New features in Windows PowerShell ISE][46]
-- [New features in Windows PowerShell Web Services][49]
-- [Notable bug fixes in Windows PowerShell 5.0][53]
+- [New features in Windows PowerShell][36]
+- [New features in Windows PowerShell Desired State Configuration][41]
+- [New features in Windows PowerShell ISE][43]
+- [New features in Windows PowerShell Web Services][46]
+- [Notable bug fixes in Windows PowerShell 5.0][50]
 
 ### New features in Windows PowerShell
 
 - Starting in Windows PowerShell 5.0, you can develop using classes, formal syntax, and semantics
   that are similar to other object-oriented programming languages. **Class**, **Enum**, and other
   keywords have been added to the Windows PowerShell language to support the new feature. For more
-  information about working with classes, see about_Classes.
+  information about working with classes, see [about_Classes][03].
 
 - Windows PowerShell 5.0 introduces a new, structured information stream that you can use to
   transmit structured data between a script and its callers (or hosting environment). You can now
@@ -135,7 +134,7 @@ PowerShell 4.0 are available in the
   - When you use the Format-Table command, table columns are now automatically formatted by
     evaluating the first 300ms of data that passes through the stream.
 
-- In collaboration with [Microsoft Research][71], a new cmdlet, ConvertFrom-String, has been added.
+- In collaboration with [Microsoft Research][68], a new cmdlet, ConvertFrom-String, has been added.
   ConvertFrom-String lets you extract and parse structured objects from the content of text strings.
   For more information, see ConvertFrom-String.
 - A new Convert-String cmdlet automatically formats text based on an example that you provide in an
@@ -148,7 +147,7 @@ PowerShell 4.0 are available in the
   package managers (also called package providers) to unify Windows package management with a single
   Windows PowerShell interface.
 - A new module, PowerShellGet, lets you find, install, publish, and update modules and DSC resources
-  on the [PowerShell Gallery][75], or on an internal module repository that you can set up by
+  on the [PowerShell Gallery][71], or on an internal module repository that you can set up by
   running the Register-PSRepository cmdlet.
 - A new language keyword, **Hidden**, has been added to specify that a member (a property or a
   method) is not shown by default in Get-Member results (unless you add the -Force parameter).
@@ -156,7 +155,7 @@ PowerShell 4.0 are available in the
   unless you are in a context where the member should be visible; for example, the automatic
   variable $This should show hidden members when in the class method.
 - New-Item, Remove-Item, and Get-ChildItem have been enhanced to support creating and managing
-  [symbolic links][70]. The **-ItemType** parameter for New-Item accepts a new value,
+  [symbolic links][67]. The **-ItemType** parameter for New-Item accepts a new value,
   **SymbolicLink**. Now you can create symbolic links in a single line by running the New-Item
   cmdlet.
 - Get-ChildItem also has a new -Depth parameter, which you use with the -Recurse parameter to limit
@@ -180,7 +179,7 @@ PowerShell 4.0 are available in the
   **Microsoft-Windows-PowerShell/Operational**.
 - Starting in Windows PowerShell 5.0, new Cryptographic Message Syntax cmdlets support encryption
   and decryption of content using the IETF standard format for cryptographically protecting messages
-  as documented by [RFC5652][73]. The Get-CmsMessage, Protect-CmsMessage, and Unprotect-CmsMessage
+  as documented by [RFC5652][69]. The Get-CmsMessage, Protect-CmsMessage, and Unprotect-CmsMessage
   cmdlets have been added to the [Microsoft.PowerShell.Security][11] module.
 - New cmdlets in the [Microsoft.PowerShell.Utility][12] module, Get-Runspace, Debug-Runspace,
   Get-RunspaceDebug, Enable-RunspaceDebug, and Disable-RunspaceDebug, let you set debug options on a
@@ -221,7 +220,7 @@ PowerShell 4.0 are available in the
 - The Windows PowerShell Workflow debugger now supports command or tab completion, and you can debug
   nested workflow functions. You can now press **Ctrl+Break** to enter the debugger in a running
   script, in both local and remote sessions, and in a workflow script.
-- A Debug-Job cmdlet has been added to the [Microsoft.PowerShell.Core][03] module to debug running
+- A Debug-Job cmdlet has been added to the [Microsoft.PowerShell.Core][02] module to debug running
   job scripts for Windows PowerShell Workflow, background, and jobs running in remote sessions.
 - A new state, AtBreakpoint, has been added for Windows PowerShell jobs. The AtBreakpoint state
   applies when a job is running a script that includes set breakpoints, and the script has hit a
@@ -322,7 +321,7 @@ PowerShell 4.0 are available in the
 - Just Enough Administration (JEA), a new delegation security feature, leverages DSC and Windows
   PowerShell constrained runspaces to help secure enterprises from data loss or compromise by
   employees, whether intentional or unintentional. For more information about JEA, including where
-  you can download the xJEA DSC resource, see [Just Enough Administration][23].
+  you can download the xJEA DSC resource, see [Just Enough Administration][20].
 - The following new cmdlets have been added to the PSDesiredStateConfiguration module.
   - A new Get-DscConfigurationStatus cmdlet gets high-level information about configuration status
     from a target node. You can obtain the status of the last, or of all configurations.
@@ -371,15 +370,15 @@ work in Windows PowerShell 4.0 without changes.
 
 Windows PowerShell 4.0 is installed by default on Windows 8.1 and Windows Server 2012 R2. To install
 Windows PowerShell 4.0 on Windows 7 with SP1, or Windows Server 2008 R2, download and install
-[Windows Management Framework 4.0][74]. Be sure to read the download details, and meet all system
+Windows Management Framework 4.0. Be sure to read the download details, and meet all system
 requirements, before you install Windows Management Framework 4.0.
 
-- [New features in Windows PowerShell][40]
-- [New features in Windows PowerShell Integrated Scripting Environment (ISE)][45]
-- [New features in Windows PowerShell Workflow][50]
-- [New features in Windows PowerShell Web Services][48]
-- [New features in Windows PowerShell Web Access][47]
-- [Notable bug fixes in Windows PowerShell 4.0][52]
+- [New features in Windows PowerShell][37]
+- [New features in Windows PowerShell Integrated Scripting Environment (ISE)][42]
+- [New features in Windows PowerShell Workflow][47]
+- [New features in Windows PowerShell Web Services][45]
+- [New features in Windows PowerShell Web Access][44]
+- [Notable bug fixes in Windows PowerShell 4.0][49]
 
 Windows PowerShell 4.0 includes the following new features.
 
@@ -388,7 +387,7 @@ Windows PowerShell 4.0 includes the following new features.
 - **Windows PowerShell Desired State Configuration** (DSC) is a new management system in Windows
   PowerShell 4.0 that enables the deployment and management of configuration data for software
   services and the environment in which these services run. For more information about DSC, see
-  [Get Started with Windows PowerShell Desired State Configuration][20].
+  [Get Started with Windows PowerShell Desired State Configuration][17].
 - **Save-Help** now lets you save help for modules that are installed on remote computers. You can
   use Save-Help to download module Help from an Internet-connected client (on which not all of the
   modules for which you want help are necessarily installed), and then copy the saved Help to a
@@ -474,7 +473,7 @@ Windows PowerShell 4.0 includes the following new features.
 
 - When an error occurs in Windows PowerShell Web Services (PSWS, also called Management OData IIS
   Extension), while a cmdlet is running, more detailed error messages are returned to the caller. In
-  addition, error codes follow [Windows Azure REST API error code guidelines][26].
+  addition, error codes follow [Windows Azure REST API error code guidelines][23].
 - An endpoint can now define the API version, as well as enforce the usage of a specific API
   version. Whenever version mismatches occur between client and server, errors are displayed to both
   the client and the server.
@@ -550,33 +549,33 @@ Windows PowerShell 4.0 includes the following new features.
 
 Windows PowerShell 3.0 includes the following new features.
 
-- [Windows PowerShell Workflow][68]
-- [Windows PowerShell Web Access][67]
-- [New Windows PowerShell ISE Features][51]
-- [Support for Microsoft .NET Framework 4.0][62]
-- [Support for Windows Preinstallation Environment][63]
-- [Disconnected Sessions][28]
-- [Robust Session Connectivity][56]
-- [Updatable Help System][64]
-- [Enhanced Online Help][30]
-- [CIM integration][27]
-- [Session Configuration Files][59]
-- [Scheduled Jobs and Task Scheduler Integration][58]
-- [Windows PowerShell Language Enhancements][66]
-- [New Core Cmdlets][38]
-- [Improvements to Existing Core Cmdlets and Providers][34]
-- [Remote module import and discovery][55]
-- [Enhanced Tab Completion][31]
-- [Module Auto-Loading][35]
-- [Module Experience Improvements][36]
-- [Simplified Command Discovery][60]
-- [Improved Logging, Diagnostics, and Group Policy Support][33]
-- [Formatting and Output Improvements][32]
-- [Enhanced Console Host Experience][29]
-- [New Cmdlet and Hosting APIs][37]
-- [Performance Improvements][54]
-- [RunAs and Shared Host Support][57]
-- [Special Character Handling Improvements][61]
+- [Windows PowerShell Workflow][65]
+- [Windows PowerShell Web Access][64]
+- [New Windows PowerShell ISE Features][48]
+- [Support for Microsoft .NET Framework 4.0][59]
+- [Support for Windows Preinstallation Environment][60]
+- [Disconnected Sessions][25]
+- [Robust Session Connectivity][53]
+- [Updatable Help System][61]
+- [Enhanced Online Help][27]
+- [CIM integration][24]
+- [Session Configuration Files][56]
+- [Scheduled Jobs and Task Scheduler Integration][55]
+- [Windows PowerShell Language Enhancements][63]
+- [New Core Cmdlets][35]
+- [Improvements to Existing Core Cmdlets and Providers][31]
+- [Remote module import and discovery][52]
+- [Enhanced Tab Completion][28]
+- [Module Auto-Loading][32]
+- [Module Experience Improvements][33]
+- [Simplified Command Discovery][57]
+- [Improved Logging, Diagnostics, and Group Policy Support][30]
+- [Formatting and Output Improvements][29]
+- [Enhanced Console Host Experience][26]
+- [New Cmdlet and Hosting APIs][34]
+- [Performance Improvements][51]
+- [RunAs and Shared Host Support][54]
+- [Special Character Handling Improvements][58]
 
 ### Windows PowerShell Workflow
 
@@ -627,7 +626,7 @@ not require Windows PowerShell, remote management software, or browser plug-in i
 that is required is a properly-configured Windows PowerShell Web Access gateway and a client device
 browser that supports JavaScript and accepts cookies.
 
-For more information, see [Deploy Windows PowerShell Web Access][25].
+For more information, see [Deploy Windows PowerShell Web Access][22].
 
 ### New Windows PowerShell ISE Features
 
@@ -719,7 +718,7 @@ for using the `Update-Help` cmdlet to download help files.
 Any module author can support Updatable Help for their module. You can include help files in the
 module and use Updatable Help to update them or omit the help files and use Updatable Help to
 install them. For more information about supporting Updatable Help, see
-[Supporting Updatable Help][19].
+[Supporting Updatable Help][16].
 
 ### Enhanced Online Help
 
@@ -752,7 +751,7 @@ begin with "http" or "https".
 You can also include a **HelpUri** value in the first related link of an XML-based cmdlet help file
 or the .Link directive of comment-based help in a function.
 
-For more information about supporting online help, see [Supporting Online Help][18].
+For more information about supporting online help, see [Supporting Online Help][15].
 
 ### CIM integration
 
@@ -807,7 +806,7 @@ In addition, scheduled jobs come with a customized set of cmdlets for managing t
 you create, edit, manage, disable, and re-enable scheduled jobs, create scheduled job triggers and
 set scheduled job options.
 
-For more information about scheduled jobs, see [about_Scheduled_Jobs][17].
+For more information about scheduled jobs, see [about_Scheduled_Jobs][14].
 
 ### Windows PowerShell Language Enhancements
 
@@ -1028,82 +1027,82 @@ cmdlets. The parser also includes special logic to improve handling of the backt
 
 ## See Also
 
-- [about_Windows_PowerShell_5.0][24]
-- [Windows PowerShell][02]
+- [about_Windows_PowerShell_5.0][21]
+- [Windows PowerShell][01]
 
 <!-- end of content -->
 <!-- link references -->
-[01]: https://www.microsoft.com/download/details.aspx?id=44975
-[02]: /powershell/
-[03]: /powershell/module/Microsoft.PowerShell.Core
+[01]: /powershell/
+[02]: /powershell/module/microsoft.powershell.core
+[03]: /powershell/module/microsoft.powershell.core/about/about_classes
 [04]: /powershell/module/microsoft.powershell.core/about/about_modules
-[05]: /powershell/module/microsoft.powershell.core/about/about_Preference_Variables
+[05]: /powershell/module/microsoft.powershell.core/about/about_preference_variables
 [06]: /powershell/module/microsoft.powershell.core/about/about_session_configuration_files
-[07]: /powershell/module/microsoft.powershell.core/about/about_Updatable_Help
+[07]: /powershell/module/microsoft.powershell.core/about/about_updatable_help
 [08]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise
-[09]: /powershell/module/Microsoft.PowerShell.Management
+[09]: /powershell/module/microsoft.powershell.management
 [10]: /powershell/module/microsoft.powershell.odatautils
-[11]: /powershell/module/Microsoft.PowerShell.Security
-[12]: /powershell/module/Microsoft.PowerShell.Utility
-[13]: /powershell/module/PSDesiredStateConfiguration
-[14]: /powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument
-[15]: /powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration
-[16]: /powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration
-[17]: /powershell/module/psscheduledjob/about/about_scheduled_jobs
-[18]: /powershell/scripting/developer/module/supporting-online-help
-[19]: /powershell/scripting/developer/module/supporting-updatable-help
-[20]: /powershell/scripting/dsc/getting-started/wingettingstarted
-[21]: /powershell/scripting/dsc/reference/resources/windows/archiveresource
-[22]: /powershell/scripting/dsc/reference/resources/windows/packageresource
-[23]: /powershell/scripting/learn/remoting/jea/overview
-[24]: /previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0
-[25]: /previous-versions/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access
-[26]: /rest/api/storageservices/Common-REST-API-Error-Codes
-[27]: #cim-integration
-[28]: #disconnected-sessions
-[29]: #enhanced-console-host-experience
-[30]: #enhanced-online-help
-[31]: #enhanced-tab-completion
-[32]: #formatting-and-output-improvements
-[33]: #improved-logging-diagnostics-and-group-policy-support
-[34]: #improvements-to-existing-core-cmdlets-and-providers
-[35]: #module-auto-loading
-[36]: #module-experience-improvements
-[37]: #new-cmdlet-and-hosting-apis
-[38]: #new-core-cmdlets
-[39]: #new-features-in-windows-powershell
-[40]: #new-features-in-windows-powershell-1
-[41]: #new-features-in-windows-powershell-30
-[42]: #new-features-in-windows-powershell-40
-[43]: #new-features-in-windows-powershell-50
-[44]: #new-features-in-windows-powershell-desired-state-configuration
-[45]: #new-features-in-windows-powershell-integrated-scripting-environment-ise
-[46]: #new-features-in-windows-powershell-ise
-[47]: #new-features-in-windows-powershell-web-access
-[48]: #new-features-in-windows-powershell-web-services
-[49]: #new-features-in-windows-powershell-web-services-management-odata-iis-extension
-[50]: #new-features-in-windows-powershell-workflow
-[51]: #new-windows-powershell-ise-features
-[52]: #notable-bug-fixes-in-windows-powershell-40
-[53]: #notable-bug-fixes-in-windows-powershell-50
-[54]: #performance-improvements
-[55]: #remote-module-import-and-discovery
-[56]: #robust-session-connectivity
-[57]: #runas-and-shared-host-support
-[58]: #scheduled-jobs-and-task-scheduler-integration
-[59]: #session-configuration-files
-[60]: #simplified-command-discovery
-[61]: #special-character-handling-improvements
-[62]: #support-for-microsoft-net-framework-4
-[63]: #support-for-windows-preinstallation-environment
-[64]: #updatable-help-system
-[65]: #windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850
-[66]: #windows-powershell-language-enhancements
-[67]: #windows-powershell-web-access
-[68]: #windows-powershell-workflow
-[69]: https://aka.ms/wmf5download
-[70]: https://en.wikipedia.org/wiki/Symbolic_link
-[71]: https://research.microsoft.com/
-[73]: https://tools.ietf.org/html/rfc5652
-[74]: https://www.microsoft.com/download/details.aspx?id=40855
-[75]: https://www.powershellgallery.com/
+[11]: /powershell/module/microsoft.powershell.security
+[12]: /powershell/module/microsoft.powershell.utility
+[13]: /powershell/module/psdesiredstateconfiguration
+[14]: /powershell/module/psscheduledjob/about/about_scheduled_jobs
+[15]: /powershell/scripting/developer/module/supporting-online-help
+[16]: /powershell/scripting/developer/module/supporting-updatable-help
+[17]: /powershell/scripting/dsc/getting-started/wingettingstarted
+[18]: /powershell/scripting/dsc/reference/resources/windows/archiveresource
+[19]: /powershell/scripting/dsc/reference/resources/windows/packageresource
+[20]: /powershell/scripting/learn/remoting/jea/overview
+[21]: /previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0
+[22]: /previous-versions/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access
+[23]: /rest/api/storageservices/common-rest-api-error-codes
+[24]: #cim-integration
+[25]: #disconnected-sessions
+[26]: #enhanced-console-host-experience
+[27]: #enhanced-online-help
+[28]: #enhanced-tab-completion
+[29]: #formatting-and-output-improvements
+[30]: #improved-logging-diagnostics-and-group-policy-support
+[31]: #improvements-to-existing-core-cmdlets-and-providers
+[32]: #module-auto-loading
+[33]: #module-experience-improvements
+[34]: #new-cmdlet-and-hosting-apis
+[35]: #new-core-cmdlets
+[36]: #new-features-in-windows-powershell
+[37]: #new-features-in-windows-powershell-1
+[38]: #new-features-in-windows-powershell-30
+[39]: #new-features-in-windows-powershell-40
+[40]: #new-features-in-windows-powershell-50
+[41]: #new-features-in-windows-powershell-desired-state-configuration
+[42]: #new-features-in-windows-powershell-integrated-scripting-environment-ise
+[43]: #new-features-in-windows-powershell-ise
+[44]: #new-features-in-windows-powershell-web-access
+[45]: #new-features-in-windows-powershell-web-services
+[46]: #new-features-in-windows-powershell-web-services-management-odata-iis-extension
+[47]: #new-features-in-windows-powershell-workflow
+[48]: #new-windows-powershell-ise-features
+[49]: #notable-bug-fixes-in-windows-powershell-40
+[50]: #notable-bug-fixes-in-windows-powershell-50
+[51]: #performance-improvements
+[52]: #remote-module-import-and-discovery
+[53]: #robust-session-connectivity
+[54]: #runas-and-shared-host-support
+[55]: #scheduled-jobs-and-task-scheduler-integration
+[56]: #session-configuration-files
+[57]: #simplified-command-discovery
+[58]: #special-character-handling-improvements
+[59]: #support-for-microsoft-net-framework-4
+[60]: #support-for-windows-preinstallation-environment
+[61]: #updatable-help-system
+[62]: #windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850
+[63]: #windows-powershell-language-enhancements
+[64]: #windows-powershell-web-access
+[65]: #windows-powershell-workflow
+[66]: https://aka.ms/wmf5download
+[67]: https://en.wikipedia.org/wiki/Symbolic_link
+[68]: https://research.microsoft.com/
+[69]: https://tools.ietf.org/html/rfc5652
+[70]: https://www.microsoft.com/download/details.aspx?id=44975
+[71]: https://www.powershellgallery.com/
+[72]: /powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument
+[73]: /powershell/module/psdesiredstateconfiguration/update-dscconfiguration
+[74]: /powershell/module/psdesiredstateconfiguration/stop-dscconfiguration
