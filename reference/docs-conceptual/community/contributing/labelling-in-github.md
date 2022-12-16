@@ -1,6 +1,6 @@
 ---
 description: This article explains how the PowerShell-Docs team uses labels in GitHub.
-ms.date: 11/09/2022
+ms.date: 12/16/2022
 ms.topic: conceptual
 title: Labelling in GitHub
 ---
@@ -153,7 +153,7 @@ Waiting labels indicate that a work item can't be resolved until an external con
 
 <!-- link references -->
 [01]: /powershell/module/cimcmdlets
-[02]: /powershell/module/crescendo
+[02]: /powershell/module/microsoft.powershell.crescendo
 [03]: /powershell/module/microsoft.powershell.archive
 [04]: /powershell/module/microsoft.powershell.core
 [05]: /powershell/module/microsoft.powershell.diagnostics

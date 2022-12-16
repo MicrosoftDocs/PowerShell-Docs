@@ -1,6 +1,6 @@
 ---
 description: Configure file encoding in VS Code and PowerShell
-ms.date: 11/16/2022
+ms.date: 12/16/2022
 title: Understanding file encoding in VS Code and PowerShell
 ---
 # Understanding file encoding in VS Code and PowerShell
@@ -351,5 +351,5 @@ read:
 [25]: https://wikipedia.org/wiki/UTF-16
 [26]: https://wikipedia.org/wiki/UTF-8
 [27]: https://wikipedia.org/wiki/Windows-1252
-[28]: https://www.i18nqa.com/debug/06-debug.html
+[28]: https://www.i18nqa.com/debug/utf8-debug.html
 [29]: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/

@@ -308,7 +308,7 @@ support those methods.
 ## Additional Resources
 
 - [Homebrew Web][brew]
-- [Homebrew Github Repository][GitHub]
+- [Homebrew GitHub Repository][GitHub]
 - [Homebrew-Cask][cask]
 
 <!-- Link refs -->
