@@ -1,7 +1,7 @@
 ---
 description: Describes how to use wildcard characters in PowerShell.
 Locale: en-US
-ms.date: 01/26/2022
+ms.date: 12/16/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Wildcards
@@ -34,13 +34,21 @@ information, see [about_Regular_Expressions](./about_Regular_Expressions.md).
 
 PowerShell supports the following wildcard characters:
 
-| Wildcard |                         Description                         |   Example   |      Match       | No Match |
-| -------- | ----------------------------------------------------------- | ----------- | ---------------- | -------- |
-| `*`      | Match zero or more characters                               | `a*`        | aA, ag, Apple    | banana   |
-| `?`      | Match one character in that position                        | `?n`        | an, in, on       | ran      |
-| `[ ]`    | Match a range of characters                                 | `[a-l\]ook` | book, cook, look | took     |
-| `[ ]`    | Match specific characters                                   | `[bc]ook`   | book, cook       | hook     |
-| `` `* `` | Match any character as a literal (not a wildcard character) | ``12`*4``   | 12*4             | 1234     |
+- `*` - Match zero or more characters
+  - `a*` matches `aA`, `ag`, and `Apple`
+  - `a*` doesn't match `banana`
+- `?` - Match one character in that position
+  - `?n` matches `an`, `in`, and `on`
+  - `?n` doesn't match `ran`
+- `[ ]` - Match a range of characters
+  - `[a-l]ook` matches `book`, `cook`, and `look`
+  - `[a-l]ook` doesn't match `took`
+- `[ ]` - Match specific characters
+  - `[bc]ook` matches `book` and `cook`
+  - `[bc]ook` doesn't matach `hook`
+- `` `* `` - Match any character as a literal (not a wildcard character)
+  - ``12`*4`` matches `12*4`
+  - ``12`*4`` doesn't match `1234`
 
 You can include multiple wildcard characters in the same word pattern. For
 example, to find text files with names that begin with the letters **a**
