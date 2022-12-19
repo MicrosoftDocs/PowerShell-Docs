@@ -1,7 +1,7 @@
 ---
 description: >
   This article shows how to configure PSReadLine color settings for a light themed terminal.
-ms.date: 12/07/2022
+ms.date: 12/17/2022
 title: Configuring a light colored theme
 ---
 # Configuring a light colored theme
@@ -99,7 +99,7 @@ $ISETheme = @{
 > In PowerShell 7.2 and higher you can use the `FromRGB()` method of `$PSStyle` to create the ANSI
 > escape sequences for the colors you want.
 >
-> For more information about `PSStyle`, see [about_ANSI_Terminals][01].
+> For more information about `$PSStyle`, see [about_ANSI_Terminals][01].
 >
 > For more information about ANSI escape sequences, see the [ANSI escape code][04] article in
 > Wikipedia.
@@ -114,6 +114,29 @@ Add the `$ISETheme` variable and the following `Set-PSReadLineOption` command to
 
 ```powershell
 Set-PSReadLineOption -Colors $ISETheme
+```
+
+Beginning in PowerShell 7.2, PowerShell adds colorized output to the default console experience. The
+colors used are defined in the `$PSStyle` variable and are designed for a dark background. The
+following settings work better for a light background terminal.
+
+```powershell
+$PSStyle.Formatting.FormatAccent       = "`e[32m"
+$PSStyle.Formatting.TableHeader        = "`e[32m"
+$PSStyle.Formatting.ErrorAccent        = "`e[36m"
+$PSStyle.Formatting.Error              = "`e[31m"
+$PSStyle.Formatting.Warning            = "`e[33m"
+$PSStyle.Formatting.Verbose            = "`e[33m"
+$PSStyle.Formatting.Debug              = "`e[33m"
+$PSStyle.Progress.Style                = "`e[33m"
+$PSStyle.FileInfo.Directory            = $PSStyle.FileInfo.Background.FromRgb(0x2f6aff) +
+                                         $PSStyle.FileInfo.Foreground.BrightWhite
+$PSStyle.FileInfo.SymbolicLink         = "`e[36m"
+$PSStyle.FileInfo.Executable           = "`e[95m"
+$PSStyle.FileInfo.Extension['.ps1']    = "`e[36m"
+$PSStyle.FileInfo.Extension['.ps1xml'] = "`e[36m"
+$PSStyle.FileInfo.Extension['.psd1']   = "`e[36m"
+$PSStyle.FileInfo.Extension['.psm1']   = "`e[36m"
 ```
 
 ## Choosing colors for accessibility
