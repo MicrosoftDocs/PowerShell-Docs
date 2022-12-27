@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 12/23/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -712,6 +712,10 @@ When the request returns valid XML, this cmdlet returns it as an **XmlDocument**
 When the request returns JSON strings, this cmdlet returns a **PSObject** representing the data.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Invoke-RestMethod`:
+
+- `irm`
 
 ## RELATED LINKS
 
