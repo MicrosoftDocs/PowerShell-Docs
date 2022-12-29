@@ -253,7 +253,7 @@ results would be incomplete. You can use the `Receive-Job` cmdlet repeatedly to
 get all of the results. Use the **State** property to determine when the job is
 complete.
 
-You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When use
+You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When you
 use this parameter, the cmdlet doesn't return the command prompt until the job
 is completed and all results are available.
 
