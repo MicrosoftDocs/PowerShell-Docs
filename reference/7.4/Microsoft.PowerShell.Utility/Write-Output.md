@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 12/30/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Output
@@ -146,6 +146,14 @@ You can pipe objects to this cmdlet.
 This cmdlet returns the objects that are submitted as input.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Write-Output`:
+
+- All platforms:
+  - `echo`
+
+- Windows:
+  - `write`
 
 ## RELATED LINKS
 
