@@ -89,7 +89,8 @@ This cmdlet returns no output.
  
 PowerShell includes the following aliases for `Clear-Host`:
 
-- `cls`
+- All platforms:
+  - `cls`
 
 `Clear-Host` is a simple function, not an advanced function. There are no parameters.
 
