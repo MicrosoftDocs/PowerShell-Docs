@@ -133,6 +133,10 @@ This cmdlet returns no output. It sends objects to the host for display.
 
 ## NOTES
 
+Windows PowerShell includes the following aliases for `Out-Host`:
+
+- `oh`
+
 The **Paging** parameter isn't supported by all PowerShell hosts. For example, if you use the
 **Paging** parameter in the PowerShell ISE, the following error is displayed:
 `out-lineoutput : The method or operation is not implemented.`
