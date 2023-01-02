@@ -15,7 +15,7 @@ following platforms:
 | Windows 11 Client Version 22000+   | Arm64         | [Windows][Windows-lifecycle]  |
 | macOS 11.5+                        | Arm64         | [macOS][macOS-lifecycle]      |
 | Debian 10+                         | Arm32, Arm64  | [Debian][Debian-lifecycle]    |
-| RaspberryPi 10+                    | Arm32         | [Raspberry Pi][rpi-lifecycle] |
+| RaspberryPi 10+                    | Arm32         | [Raspberry Pi][Rpi-lifecycle] |
 | Red Hat Enterprise Linux (RHEL) 7+ | Arm64         | [Red Hat][RHEL-lifecycle]     |
 | Ubuntu 18.04+                      | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]    |
 
@@ -28,7 +28,7 @@ following platforms:
 | Windows 11 Client Version 22000+   | Arm64         | [Windows][Windows-lifecycle]  |
 | macOS 11.5+                        | Arm64         | [macOS][macOS-lifecycle]      |
 | Debian 10+                         | Arm32, Arm64  | [Debian][Debian-lifecycle]    |
-| RaspberryPi 10+                    | Arm32         | [Raspberry Pi][rpi-lifecycle] |
+| RaspberryPi 10+                    | Arm32         | [Raspberry Pi][Rpi-lifecycle] |
 | Red Hat Enterprise Linux (RHEL) 7+ | Arm64         | [Red Hat][RHEL-lifecycle]     |
 | Ubuntu 18.04+                      | Arm32, Arm64  | [Ubuntu][Ubuntu-lifecycle]    |
 
