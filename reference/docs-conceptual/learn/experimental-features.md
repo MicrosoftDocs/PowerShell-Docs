@@ -310,7 +310,12 @@ Exposes an API to allow assembly loading from native code.
 
 ## PSModuleAutoLoadSkipOfflineFiles
 
-Module discovery will skip over files that are marked by cloud providers as not fully on disk.
+With this feature enabled, if a user's **PSModulePath** contains a folder from a cloud provider,
+such as OneDrive, PowerShell no longer triggers the download of all files contained within that
+folder. Any file marked as not downloaded are skipped. Users who use cloud providers to sync their
+modules between machines should mark the module folder as **Pinned** or the equivalent status for
+providers other than OneDrive. Marking the module folder as **Pinned** ensures that the files are
+always kept on disk.
 
 ## PSNativeCommandArgumentPassing
 
