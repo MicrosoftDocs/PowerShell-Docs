@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/23/2022
+ms.date: 01/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -90,6 +90,9 @@ variables. See the [Notes](#notes) section of this article.
 > domain used by Microsoft for examples. The examples are designed to show how to use the cmdlets.
 > However, since the `contoso.com` sites don't exist, the examples don't work. Adapt the examples
 > to hosts in your environment.
+
+Beginning in PowerShell 7.4, character encoding for requests defaults to UTF-8 instead of ASCII. If
+you need a different encoding, you must set the `charset` attribute in the `Content-Type` header.
 
 ## EXAMPLES
 
