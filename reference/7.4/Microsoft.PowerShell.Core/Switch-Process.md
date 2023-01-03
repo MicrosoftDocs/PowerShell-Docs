@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/switch-process?view=powershell-7.4&WT.mc_id=ps-gethelp
-ms.date: 12/14/2022
+ms.date: 01/03/2023
 schema: 2.0.0
 ---
 
@@ -31,6 +31,9 @@ calls `execv()` function to provide similar behavior as POSIX shells.
 PowerShell 7.3.1 changed the `exec` alias to a function that wraps `Switch-Process`. The function
 allows you to pass parameters to the native command that might have erroneously bound to the
 **WithCommand** parameter.
+
+Beginning in PowerShell 7.4, this cmdlet now copies the environment variables of the calling process
+to the new process to match the behavior of the POSIX shell `exec` command.
 
 This cmdlet is only available for non-Windows systems.
 
