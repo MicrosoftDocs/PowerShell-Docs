@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
@@ -31,9 +31,10 @@ Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PS
 
 ## DESCRIPTION
 
-The `Get-Hotfix` cmdlet gets hotfixes, or updates, that are installed on the local computer or
-specified remote computers. The updates can be installed by Windows Update, Microsoft Update,
-Windows Server Update Services, or manually installed.
+> **This cmdlet is only available on the Windows platform.**
+
+The `Get-Hotfix` cmdlet uses the **Win32_QuickFixEngineering** WMI class to list hotfixes that are
+installed on the local computer or specified remote computers.
 
 ## EXAMPLES
 
@@ -205,9 +206,10 @@ This cmdlet is only available on Windows platforms.
 The **Win32_QuickFixEngineering** [WMI class](/windows/desktop/WmiSdk/retrieving-a-class) represents
 a small system-wide update, commonly referred to as a quick-fix engineering (QFE) update, applied to
 the current operating system. This class returns only the updates supplied by Component Based
-Servicing (CBS). These updates are not listed in the registry. Updates supplied by Microsoft Windows
-Installer (MSI) or the [Windows Update](https://update.microsoft.com) site are not returned by
-**Win32_QuickFixEngineering**. For more information, see [Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).
+Servicing (CBS). These updates aren't listed in the registry. Updates supplied by Microsoft Windows
+Installer (MSI) or the [Windows Update](https://update.microsoft.com) site aren't returned by
+**Win32_QuickFixEngineering**. For more information, see
+[Win32_QuickFixEngineering class](/windows/desktop/CIMWin32Prov/win32-quickfixengineering).
 
 The `Get-HotFix` output might vary on different operating systems.
 

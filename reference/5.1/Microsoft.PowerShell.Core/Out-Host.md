@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 12/31/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/out-host?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Host
@@ -132,6 +132,10 @@ You can pipe any object to this cmdlet.
 This cmdlet returns no output. It sends objects to the host for display.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Out-Host`:
+
+- `oh`
 
 The **Paging** parameter isn't supported by all PowerShell hosts. For example, if you use the
 **Paging** parameter in the PowerShell ISE, the following error is displayed:

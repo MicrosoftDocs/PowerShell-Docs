@@ -12,7 +12,7 @@ title: PowerShell Support Lifecycle
 > [Product and Services Lifecycle Information](/lifecycle/products/).
 
 PowerShell is supported under the [Microsoft Modern Lifecycle Policy][modern], but support dates are
-linked to [.NET Core's support lifecycle][Long-Term]. In this servicing approach, customers can
+linked to [.NET and .NET Core Support Policy][Long-Term]. In this servicing approach, customers can
 choose Long Term Support (LTS) releases or current releases.
 
 An **LTS** release of PowerShell is built on an LTS release of .NET. Updates to an LTS release only

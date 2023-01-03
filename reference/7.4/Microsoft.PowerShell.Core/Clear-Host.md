@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 12/31/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/clear-host?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Host
@@ -86,6 +86,15 @@ You can't pipe objects to this cmdlet.
 This cmdlet returns no output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Clear-Host`:
+
+- Windows:
+  - `clear`
+  - `cls`
+
+- Linux and macOS:
+  - `cls`
 
 `Clear-Host` is a simple function, not an advanced function. There are no parameters.
 

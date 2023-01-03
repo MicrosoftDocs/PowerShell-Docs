@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 12/14/2022
+ms.date: 01/03/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -33,26 +33,29 @@ Legend
 - The ![Discontinued][D] icon indicates the version of PowerShell where the experimental feature was
   removed
 
-|                            Name                            |        7.0         |        7.1         |        7.2         |        7.3         |
-| ---------------------------------------------------------- | :----------------: | :----------------: | :----------------: | :----------------: |
-| PSNullConditionalOperators                                 | ![Experimental][X] |  ![Mainstream][M]  |                    |                    |
-| PSUnixFileStat (non-Windows only)                          | ![Experimental][X] |  ![Mainstream][M]  |                    |                    |
-| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace | ![Experimental][X] | ![Experimental][X] |  ![Mainstream][M]  |                    |
-| PSCultureInvariantReplaceOperator                          |                    | ![Experimental][X] |  ![Mainstream][M]  |                    |
-| PSNotApplyErrorActionToStderr                              |                    | ![Experimental][X] |  ![Mainstream][M]  |                    |
-| PSImplicitRemotingBatching                                 | ![Experimental][X] | ![Experimental][X] | ![Discontinued][D] |                    |
-| PSCommandNotFoundSuggestion                                | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
-| PSDesiredStateConfiguration.InvokeDscResource (DSC v2)     | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
-| PSNativePSPathResolution                                   |                    | ![Experimental][X] | ![Experimental][X] | ![Discontinued][D] |
-| PSSubsystemPluginModel                                     |                    | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
-| PSNativeCommandArgumentPassing                             |                    |                    | ![Experimental][X] |  ![Mainstream][M]  |
-| PSAnsiRenderingFileInfo                                    |                    |                    | ![Experimental][X] |  ![Mainstream][M]  |
-| PSLoadAssemblyFromNativeCode                               |                    |                    | ![Experimental][X] | ![Experimental][X] |
-| PSCleanBlock                                               |                    |                    |                    |  ![Mainstream][M]  |
-| PSExec                                                     |                    |                    |                    |  ![Mainstream][M]  |
-| PSNativeCommandErrorActionPreference                       |                    |                    |                    | ![Experimental][X] |
-| PSStrictModeAssignment                                     |                    |                    |                    | ![Discontinued][D] |
-| PSAMSIMethodInvocationLogging                              |                    |                    |                    |  ![Mainstream][M]  |
+|                            Name                            |        7.2         |        7.3         |        7.4         |
+| ---------------------------------------------------------- | :----------------: | :----------------: | :----------------: |
+| PSNullConditionalOperators                                 |                    |                    |                    |
+| PSUnixFileStat (non-Windows only)                          |                    |                    |                    |
+| Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |  ![Mainstream][M]  |                    |                    |
+| PSCultureInvariantReplaceOperator                          |  ![Mainstream][M]  |                    |                    |
+| PSNotApplyErrorActionToStderr                              |  ![Mainstream][M]  |                    |                    |
+| PSImplicitRemotingBatching                                 | ![Discontinued][D] |                    |                    |
+| PSCommandNotFoundSuggestion                                | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
+| PSDesiredStateConfiguration.InvokeDscResource (DSC v2)     | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
+| PSNativePSPathResolution                                   | ![Experimental][X] | ![Discontinued][D] |                    |
+| PSSubsystemPluginModel                                     | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
+| PSNativeCommandArgumentPassing                             | ![Experimental][X] |  ![Mainstream][M]  |                    |
+| PSAnsiRenderingFileInfo                                    | ![Experimental][X] |  ![Mainstream][M]  |                    |
+| PSLoadAssemblyFromNativeCode                               | ![Experimental][X] | ![Experimental][X] | ![Experimental][X] |
+| PSCleanBlock                                               |                    |  ![Mainstream][M]  |                    |
+| PSExec                                                     |                    |  ![Mainstream][M]  |                    |
+| PSNativeCommandErrorActionPreference                       |                    | ![Experimental][X] | ![Experimental][X] |
+| PSStrictModeAssignment                                     |                    | ![Discontinued][D] |                    |
+| PSAMSIMethodInvocationLogging                              |                    |  ![Mainstream][M]  |                    |
+| PSCustomTableHeaderLabelDecoration                         |                    |                    | ![Experimental][X] |
+| PSFeedbackProvider                                         |                    |                    | ![Experimental][X] |
+| PSModuleAutoLoadSkipOfflineFiles                           |                    |                    | ![Experimental][X] |
 
 ## Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -130,10 +133,10 @@ For more information, see [about_Automatic_Variables][04].
 > [!NOTE]
 > This feature became mainstream in PowerShell 7.3.
 
-The `clean` block is a convenient way for users to clean up resources that span across the `begin`,
-`process`, and `end` blocks. It's semantically similar to a `finally` block that covers all other
-named blocks of a script function or a script cmdlet. Resource cleanup is enforced for the following
-scenarios:
+The `clean` block is a convenient way for users to clean up resources created and used in the
+`begin`, `process`, and `end` blocks. It's semantically similar to a `finally` block that covers all
+other named blocks of a script function or a script cmdlet. Resource cleanup is enforced for the
+following scenarios:
 
 1. when the pipeline execution finishes normally without terminating error
 1. when the pipeline execution is interrupted due to terminating error
@@ -195,15 +198,40 @@ PS> 1.2 -replace ','
 1.2
 ```
 
+## PSCustomTableHeaderLabelDecoration
+
+When this feature is enabled, `$PSStyle` includes formatting differentiation for table header labels
+that aren't property members. For example, the default output from `Get-Process` includes the
+following columns: `NPM(K)`, `PM(M)`, `WS(M)`, and `CPU(s)`.
+
+```powershell
+Get-Process pwsh
+```
+
+```Output
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     99    84.57     170.50       5.89   48688   1 pwsh
+     73    87.75     133.08       3.09   49120   1 pwsh
+     98    70.31     158.56       4.23   91220   1 pwsh
+    125    70.19     171.33       4.84   92124   1 pwsh
+```
+
+These column names don't match any properties of the **System.Diagnostics.Process** object returned
+by the cmdlet. These are values calculated by the PowerShell formatting system.
+
+With this feature enabled these column headers are displayed in italics to distinguish these column
+names from property names.
+
 ## PSDesiredStateConfiguration.InvokeDscResource
 
 Enables compilation to MOF on non-Windows systems and enables the use of `Invoke-DSCResource`
 without an LCM.
 
 In earlier previews of PowerShell 7.2, this feature was enabled by default. Beginning with
-PowerShell 7.2-preview7, the **PSDesiredStateConfiguration** module was removed and this feature is
-disabled by default. To enable this feature you must install the **PSDesiredStateConfiguration**
-v2.0.5 module from the PowerShell Gallery and enable the feature using `Enable-ExperimentalFeature`.
+PowerShell 7.2, the **PSDesiredStateConfiguration** module was removed and this feature is disabled
+by default. To enable this feature you must install the **PSDesiredStateConfiguration** v2.0.5
+module from the PowerShell Gallery and enable the feature using `Enable-ExperimentalFeature`.
 
 DSC v3 doesn't have this experimental feature. DSC v3 only supports `Invoke-DSCResource` and doesn't
 use or support MOF compilation. For more information, see
@@ -228,6 +256,10 @@ only available for non-Windows systems.
 PowerShell 7.3.1 changed the `exec` alias to a function that wraps `Switch-Process`. The function
 allows you to pass parameters to the native command that might have erroneously bound to the
 **WithCommand** parameter.
+
+## PSFeedbackProvider
+
+Replace the hard-coded suggestion framework with the extensible feedback provider.
 
 ## PSImplicitRemotingBatching
 
@@ -275,6 +307,15 @@ de-serialization.
 ## PSLoadAssemblyFromNativeCode
 
 Exposes an API to allow assembly loading from native code.
+
+## PSModuleAutoLoadSkipOfflineFiles
+
+With this feature enabled, if a user's **PSModulePath** contains a folder from a cloud provider,
+such as OneDrive, PowerShell no longer triggers the download of all files contained within that
+folder. Any file marked as not downloaded are skipped. Users who use cloud providers to sync their
+modules between machines should mark the module folder as **Pinned** or the equivalent status for
+providers other than OneDrive. Marking the module folder as **Pinned** ensures that the files are
+always kept on disk.
 
 ## PSNativeCommandArgumentPassing
 
@@ -402,13 +443,13 @@ if ($LASTEXITCODE -ne 0) {
 }
 ```
 
-Simply relaying the errors through the error stream isn't the solution. The example itself doesn't
-support all cases where `$?` can be false from a cmdlet or function error, making `$LASTEXITCODE`
-stale.
+However, this example doesn't support all cases where `$?` can be false from a cmdlet or function
+error, making `$LASTEXITCODE` stale.
 
-This feature implements a preference variable to enable errors produced by native commands to be
-PowerShell errors. This allows native command failures to produce error objects that are added to
-the PowerShell error stream that may terminate execution of the script without extra handling.
+This feature implements the `$PSNativeCommandUseErrorActionPreference` preference variable that
+controls how native commands errors are handled in PowerShell. This allows native command failures
+to produce error objects that are added to the PowerShell error stream and may terminate execution
+of the script without extra handling.
 
 To enable this feature, run the following commands:
 
@@ -416,12 +457,14 @@ To enable this feature, run the following commands:
 Enable-ExperimentalFeature PSNativeCommandErrorActionPreference
 ```
 
-You must start a new PowerShell session for this change to be in effect. In the new session, you
-must set the new preference variable:
+You must start a new PowerShell session for this change to be in effect. Beginning in PowerShell
+7.4, `$PSNativeCommandUseErrorActionPreference` is set to `$true` by default. With the preference
+set to `$true` you get the following behavior:
 
-```powershell
-$PSNativeCommandUseErrorActionPreference = $true
-```
+- When `$ErrorActionPreference = 'Stop'`, scripts will break when a native command returns a
+  non-zero exit code.
+- When `$ErrorActionPreference = 'Continue'` (the default), you will see PowerShell error messages
+  for native command errors, but scripts won't break.
 
 ## PSNativePSPathResolution
 

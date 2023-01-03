@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 12/12/2022
+ms.date: 01/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Transcript
@@ -16,7 +16,7 @@ Stops a transcript.
 ## SYNTAX
 
 ```
-Stop-Transcript [<CommonParameters>]
+Stop-Transcript [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,6 +35,42 @@ Stop-Transcript
 This command stops all transcripts.
 
 ## PARAMETERS
+
+### -Confirm
+
+Prompts you for confirmation before running the cmdlet.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### CommonParameters
 

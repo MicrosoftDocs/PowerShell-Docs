@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/20/2022
+ms.date: 01/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
@@ -30,7 +30,7 @@ Get-Command [[-Name] <String[]>] [-Module <String[]>]
  [-FullyQualifiedModule <ModuleSpecification[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>]
  [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
  [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
- [-UseAbbreviationExpansion] [<CommonParameters>]
+ [-FuzzyMinimumDistance <UInt32>] [-UseAbbreviationExpansion] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -454,6 +454,25 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -FuzzyMinimumDistance
+
+This parameter allows filtering fuzzy results to be more or less accurate. The distance is
+calculated using the Damerau Levenshtein Distance algorithm, which indicates how many steps is the
+match from the original value. A lower distance is more accurate. A distance of zero is an exact
+match.
+
+```yaml
+Type: UInt32
+Parameter Sets: AllCommandSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
