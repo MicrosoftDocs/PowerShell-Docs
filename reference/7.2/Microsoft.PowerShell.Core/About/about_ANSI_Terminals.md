@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 12/05/2022
+ms.date: 01/03/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -47,14 +47,16 @@ The variable has the following properties:
 - **ItalicOff** - Turns Italic off
 - **Underline** - Turns underlining on
 - **UnderlineOff** - Turns underlining off
+- **Strikethrough** - Turns strike through on
+- **StrikethroughOff** - Turns strike through off
 - **OutputRendering** - Control when output rendering is used
-- **Background** - Nested object to control background coloring
-- **Foreground** - Nested object to control foreground coloring
 - **Formatting** - Nested object that controls default formatting for output
   streams
 - **Progress** - Nested object that controls the rendering of progress bars
 - **FileInfo** - (experimental) Nested object to control the coloring of
   **FileInfo** objects.
+- **Foreground** - Nested object to control foreground coloring
+- **Background** - Nested object to control background coloring
 
 The base members return strings of ANSI escape sequences mapped to their names.
 The values are settable to allow customization. For example, you could change
@@ -115,19 +117,20 @@ The following members control how or when ANSI formatting is used:
   ```
 
 - `$PSStyle.Formatting` is a nested object to control default formatting of
-  debug, error, verbose, and warning messages. You can also control attributes
-  like bolding and underlining. It replaces `$Host.PrivateData` as the way to
-  manage colors for formatting rendering. `$Host.PrivateData` continues to
-  exist for backwards compatibility but isn't connected to
-  `$PSStyle.Formatting`. `$PSStyle.Formatting` has the following members:
+  debug, error, verbose, warning messages, and list and table headers. You can
+  also control attributes like bolding and underlining. It replaces
+  `$Host.PrivateData` as the way to manage colors for formatting rendering.
+  `$Host.PrivateData` continues to exist for backwards compatibility but isn't
+  connected to `$PSStyle.Formatting`. `$PSStyle.Formatting` has the following
+  members:
 
-  - **FormatAccent**
-  - **TableHeader**
-  - **ErrorAccent**
-  - **Error**
-  - **Warning**
-  - **Verbose**
-  - **Debug**
+  - **FormatAccent** - formatting for list items
+  - **TableHeader** - formatting for table headers
+  - **ErrorAccent** - formatting for error metadata
+  - **Error** - formatting for error messages
+  - **Warning** - formatting for warning messages
+  - **Verbose** - formatting for verbose messages
+  - **Debug** - formatting for debug messages
 
 - `$PSStyle.Progress` allows you to control progress view bar rendering.
 
