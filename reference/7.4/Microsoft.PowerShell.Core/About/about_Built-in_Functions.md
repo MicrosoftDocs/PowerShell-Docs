@@ -39,6 +39,8 @@ In the Windows CMD shell it's common to run the `cd` command without any spaces
 between the command and the destination path. This function runs
 `Set-Location ~` to change to home folder.
 
+This function was added in PowerShell 7.4.
+
 ## `Pause`
 
 This function replicates the behavior of CMD's `pause` command. The script
