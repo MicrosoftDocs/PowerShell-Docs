@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 01/03/2023
+ms.date: 01/04/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -55,8 +55,7 @@ The variable has the following properties:
 - **Formatting** - Nested object that controls default formatting for output
   streams
 - **Progress** - Nested object that controls the rendering of progress bars
-- **FileInfo** - (experimental) Nested object to control the coloring of
-  **FileInfo** objects.
+- **FileInfo** - Nested object to control the coloring of **FileInfo** objects.
 - **Foreground** - Nested object to control foreground coloring
 - **Background** - Nested object to control background coloring
 
@@ -170,14 +169,6 @@ The following members control how or when ANSI formatting is used:
   - **Extension** - Use this member to define colors for different file
     extensions. The **Extension** member pre-includes extensions for archive
     and PowerShell files.
-
-  > [!NOTE]
-  > `$PSStyle.FileInfo` is only available when the `PSAnsiRenderingFileInfo`
-  > experimental feature ia enabled. For more information, see
-  > [about_Experimental_Features][3] and [Using experimental features][4].
-  >
-  > In PowerShell 7.3-preview.8, the `PSAnsiRenderingFileInfo` feature became
-  > mainstream and available by default.
 
 ## Cmdlets that generate ANSI output
 
