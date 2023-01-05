@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 01/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Help
@@ -94,18 +94,21 @@ Update-Help -Module Microsoft.PowerShell*
 ### Example 3: Updating help on a system not set to the en-US locale
 
 The `Update-Help` cmdlet is designed to download help in multiple languages. However, when there is
-no help available for the language your system uses, an error message is displayed for the module
-and UI culture.
+no help available for the language your system uses, `Update-Help` fails silently unless you use
+the **UICulture** parameter.
 
 In this example, `Update-Help` is being run on a system that's set to the `en-GB` locale.
 
 ```powershell
 Update-Help Microsoft.PowerShell.Utility -Force
+Update-Help Microsoft.PowerShell.Utility -Force -UICulture en-GB
 ```
 
 ```Output
-Update-Help : Failed to update Help for the module(s) 'Microsoft.PowerShell.Utility' with UI
-culture(s) {en-GB} No UI culture was found that matches the following pattern: en-GB.
+Update-Help: Failed to update Help for the module(s) 'Microsoft.PowerShell.Utility' with
+UI culture(s) {en-GB} : The specified culture is not supported: en-GB. Specify a culture
+from the following list: {en-US}..
+English-US help content is available and can be installed using: Update-Help -UICulture en-US.
 ```
 
 The help files are always published for the `en-US` locale. To download the English help, run
