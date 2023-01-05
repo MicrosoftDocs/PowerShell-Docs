@@ -1,47 +1,47 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 01/05/2022
+ms.date: 01/04/2023
 title: PowerShell scripting performance considerations
 ---
 
 # PowerShell scripting performance considerations
 
 PowerShell scripts that leverage .NET directly and avoid the pipeline tend to be faster than
-idiomatic PowerShell. Idiomatic PowerShell typically uses cmdlets and PowerShell functions heavily,
-often leveraging the pipeline, and dropping down into .NET only when necessary.
+idiomatic PowerShell. Idiomatic PowerShell uses cmdlets and PowerShell functions, often leveraging
+the pipeline, and resorting to .NET only when necessary.
 
 >[!NOTE]
-> Many of the techniques described here are not idiomatic PowerShell and may reduce the readability
+> Many of the techniques described here aren't idiomatic PowerShell and may reduce the readability
 > of a PowerShell script. Script authors are advised to use idiomatic PowerShell unless performance
 > dictates otherwise.
 
 ## Suppressing output
 
-There are many ways to avoid writing objects to the pipeline:
+There are many ways to avoid writing objects to the pipeline.
+
+Assignment to `$null` or casting to `[void]` are roughly equivalent and should be preferred where
+performance matters.
 
 ```powershell
 $null = $arrayList.Add($item)
 [void]$arrayList.Add($item)
 ```
 
-Assignment to `$null` or casting to `[void]` are roughly equivalent and should generally be
-preferred where performance matters.
+File redirection to `$null` is almost as fast as the previous alternatives. You won't notice a
+performance difference for most scripts. However, file redirection does introduce some overhead.
 
 ```powershell
 $arrayList.Add($item) > $null
 ```
 
-File redirection to `$null` is nearly as good as the previous alternatives, most scripts would never
-notice the difference. Depending on the scenario, file redirection does introduce a little bit of
-overhead though.
+You can also pipe to `Out-Null`. In PowerShell 7.x, this is a bit slower than redirection but
+probably not noticeable for most scripts.
 
 ```powershell
 $arrayList.Add($item) | Out-Null
 ```
 
-You can also pipe to `Out-Null`. In PowerShell 7.x, this is a bit slower than redirection but
-probably not noticeable for most scripts. However, calling `Out-Null` in a large loop is can be
-significantly slower, even in PowerShell 7.x.
+However, calling `Out-Null` in a large loop is can be significantly slower, even in PowerShell 7.x.
 
 ```powershell
 $d = Get-Date
@@ -61,10 +61,10 @@ TotalSeconds
    5.9572186
 ```
 
-Windows PowerShell 5.1 does not have the same optimizations for `Out-Null` as PowerShell 7.x, so you
+Windows PowerShell 5.1 doesn't have the same optimizations for `Out-Null` as PowerShell 7.x, so you
 should avoid using `Out-Null` in performance sensitive code.
 
-Introducing a script block and calling it (using dot sourcing or otherwise) then assigning the
+Creating a script block and calling it (using dot sourcing or `Invoke-Command`) then assigning the
 result to `$null` is a convenient technique for suppressing the output of a large block of script.
 
 ```powershell
@@ -74,7 +74,7 @@ $null = . {
 }
 ```
 
-This technique performs roughly as well as piping to `Out-Null` and should be avoided in performance
+This technique performs about the same as piping to `Out-Null` and should be avoided in performance
 sensitive script. The extra overhead in this example comes from the creation of and invoking a
 script block that was previously inline script.
 
@@ -89,10 +89,10 @@ $results += Do-SomethingElse
 $results
 ```
 
-This can be very inefficient because arrays are immutable. Each addition to the array actually
-creates a new array big enough to hold all elements of both the left and right operands, then copies
-the elements of both operands into the new array. For small collections, this overhead may not
-matter. For large collections, this can definitely be an issue.
+Array addition is inefficient because arrays are immutable. Each addition to the array creates a new
+array big enough to hold all elements of both the left and right operands. The elements of both
+operands are copied into the new array. For small collections, this overhead may not matter.
+Performance can suffer for large collections.
 
 There are a couple of alternatives. If you don't actually require an array, instead consider using
 an ArrayList:
@@ -104,9 +104,8 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-If you do require an array, you can use your own `ArrayList` and simply call `ArrayList.ToArray`
-when you want the array. Alternatively, you can let PowerShell create the `ArrayList` and `Array`
-for you:
+If you do require an array, you can call the `ToArray()` method or you can let PowerShell create the
+array for you:
 
 ```powershell
 $results = @(
@@ -124,7 +123,7 @@ inside the array expression. Just before assigning to `$results`, PowerShell con
 Like arrays, strings are immutable. Each addition to the string actually creates a new string big
 enough to hold the contents of both the left and right operands, then copies the elements of both
 operands into the new string. For small strings, this overhead may not matter. For large strings,
-this can definitely be an issue.
+this can affect performance and memory consumption.
 
 ```powershell
 $string = ''
@@ -156,7 +155,7 @@ TotalMilliseconds
           22.7069
 ```
 
-In this example, using the `-join` operator is nearly 30-times faster than string addition.
+In this example, using the `-join` operator is 30 times faster than string addition.
 
 You can also use the .NET **StringBuilder** class.
 
@@ -175,7 +174,7 @@ TotalMilliseconds
           13.4671
 ```
 
-In this example, using the **StringBuilder** is nearly 50-times faster than string addition.
+In this example, using the **StringBuilder** is 50 times faster than string addition.
 
 ## Processing large files
 
@@ -185,7 +184,7 @@ The idiomatic way to process a file in PowerShell might look something like:
 Get-Content $path | Where-Object { $_.Length -gt 10 }
 ```
 
-This can be nearly an order of magnitude slower than using .NET APIs directly:
+This can be an order of magnitude slower than using .NET APIs directly:
 
 ```powershell
 try
@@ -207,22 +206,21 @@ finally
 
 ## Avoid Write-Host
 
-It is generally considered poor practice to write output directly to the console, but when it makes
+It's generally considered poor practice to write output directly to the console, but when it makes
 sense, many scripts use `Write-Host`.
 
 If you must write many messages to the console, `Write-Host` can be an order of magnitude slower
-than `[Console]::WriteLine()`. However, be aware that `[Console]::WriteLine()` is only a suitable
-alternative for specific hosts like `pwsh.exe`, `powershell.exe`, or `powershell_ise.exe`. It's not
-guaranteed to work in all hosts. Also, output written using `[Console]::WriteLine()` does not get
-written to transcripts started by `Start-Transcript`.
+than `[Console]::WriteLine()` for specific hosts like `pwsh.exe`, `powershell.exe`, or
+`powershell_ise.exe`. However, `[Console]::WriteLine()` isn't guaranteed to work in all hosts. Also,
+output written using `[Console]::WriteLine()` doesn't get written to transcripts started by
+`Start-Transcript`.
 
-Instead of using `Write-Host`, consider using
-[Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output).
+Instead of using `Write-Host`, consider using [Write-Output][01].
 
 ### JIT compilation
 
-PowerShell compiles the script code to bytecode that is interpreted. Beginning in PowerShell 3, for
-code that is executed repeatedly in a loop, PowerShell can improve performance by Just-in-time (JIT)
+PowerShell compiles the script code to bytecode that's interpreted. Beginning in PowerShell 3, for
+code that's repeatedly executed in a loop, PowerShell can improve performance by Just-in-time (JIT)
 compiling the code into native code.
 
 Loops that have fewer than 300 instructions are eligible for JIT-compilation. Loops larger than that
@@ -270,7 +268,7 @@ $RepeatCount = 10000
 ```
 
 The **Basic for-loop** example is the base line for performance. The second example wraps the random
-number generator in a function that is called in a tight loop. The third example moves the loop
+number generator in a function that's called in a tight loop. The third example moves the loop
 inside the function. The function is only called once but the code still generates 10000 random
 numbers. Notice the difference in execution times for each example.
 
@@ -279,3 +277,55 @@ Basic for-loop = 47.8668ms
 Wrapped in a function = 820.1396ms
 For-loop in a function = 23.3193ms
 ```
+
+## Avoid wrapping cmdlet pipelines
+
+Most cmdlets are implemented for the pipeline, which is a sequential syntax and process. For
+example:
+
+```powershell
+cmdlet1 | cmdlet2 | cmdlet3
+```
+
+Initializing a new pipeline can be expensive, therefore you should avoid wrapping a cmdlet
+pipeline into another existing pipeline.
+
+Consider the following example. The `Input.csv` file contains 2100 lines. The `Export-Csv` command
+is wrapped inside the `ForEach-Object` pipeline. The `Export-Csv` cmdlet is invoked for every
+iteration of the `ForEach-Object` loop.
+
+```powershell
+'Wrapped = {0:N2} ms' -f (Measure-Command -Expression {
+    Import-Csv .\Input.csv | ForEach-Object -Begin { $Id = 1 } -Process {
+        [PSCustomObject]@{
+            Id = $Id
+            Name = $_.opened_by
+        } | Export-Csv .\Output1.csv -Append
+    }
+}).TotalMilliseconds
+
+Wrapped = 15,968.78 ms
+```
+
+For the next example, the `Export-Csv` command was moved outside of the `ForEach-Object` pipeline.
+In this case, `Export-Csv` is invoked only once, but still processes all objects passed out of
+`ForEach-Object`.
+
+```powershell
+'Unwrapped = {0:N2} ms' -f (Measure-Command -Expression {
+      Import-Csv .\Input.csv | ForEach-Object -Begin { $Id = 2 } -Process {
+          [PSCustomObject]@{
+              Id = $Id
+              Name = $_.opened_by
+          }
+      } | Export-Csv .\Output2.csv
+  }).TotalMilliseconds
+
+Unwrapped = 42.92 ms
+```
+
+The unwrapped example is 372 times faster. Also, notice that the first implementation requires the
+**Append** parameter, which isn't required for the later implementation.
+
+<!-- updated link references -->
+[01]: /powershell/module/Microsoft.PowerShell.Utility/Write-Output
