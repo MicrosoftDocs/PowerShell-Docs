@@ -10,7 +10,7 @@ PowerShell 7.4-preview.1 includes the following features, updates, and breaking 
 
 For a complete list of changes, see the [Change Log][07] in the GitHub repository.
 
-## Breaking Changes and Improvements
+## Breaking changes
 
 - Snap packages aren't available for this release
 - Nano server docker images aren't available for this release
@@ -30,9 +30,9 @@ For a complete list of changes, see the [Change Log][07] in the GitHub repositor
 
 ## Cmdlet and engine improvements
 
-Update to WebCmdlets
+Update to Web cmdlets
 
-- WebCmdlets get **Retry-After** interval from response headers if the status code is 429
+- Web cmdlets get **Retry-After** interval from response headers if the status code is 429
   ([#18717][18717]) (Thanks @CarloToso!)
 - Web cmdlets set default charset encoding to UTF8 ([#18219][18219]) (Thanks @CarloToso!)
 
@@ -40,7 +40,8 @@ Other cmdlets
 
 - `Update-Help` now reports an error when using implicit culture on non-US systems.
   ([#17780][17780]) (Thanks @dkaszews!)
-- `Stop-Transcript` now adds `SupportsShouldProcess` ([#18731][18731]) (Thanks @JohnLBevan!)
+- Add **Confirm** and **WhatIf** parameters to `Stop-Transcript`([#18731][18731]) (Thanks
+  @JohnLBevan!)
 - Add **FuzzyMinimumDistance** parameter to `Get-Command` ([#18261][18261])
 
 Updates to `$PSStyle`
