@@ -277,7 +277,7 @@ The PowerShell engine includes the following changes:
   hosts, like the [Windows Terminal][2], support this markup, which makes the
   rendered text clickable in the terminal.
 
-## Static methods of the **PSStyle** class
+## Static methods of the PSStyle class
 
 PowerShell 7.4 adds three new static methods to the
 `[System.Management.Automation.PSStyle]` class.
