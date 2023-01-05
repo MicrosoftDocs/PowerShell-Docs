@@ -10,13 +10,13 @@ title: about ANSI terminals
 Unlike newer versions of PowerShell, the Windows PowerShell 5.1 engine and core
 cmdlets don't output ANSI escape sequences to format the text displayed on your
 screen. However, that doesn't prevent you from using ANSI escape sequences for
-text formatting in terminal that support it.
+text formatting in terminals that support it.
 
 ## ANSI Terminal support
 
 On Windows 10 and higher, the Windows Console Host is [xterm][02] compatible.
-The [Windows Terminal][03] application is also xterm compatible. These terminal
-support ANSI escape sequences.
+The [Windows Terminal][03] application is also xterm compatible. These
+terminals support ANSI escape sequences.
 
 The PSReadLine module uses ANSI sequences to colorize PowerShell syntax
 elements on the command line. The colors can be managed using
