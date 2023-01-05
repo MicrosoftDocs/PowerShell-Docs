@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 01/04/2023
+ms.date: 01/05/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -276,6 +276,72 @@ The PowerShell engine includes the following changes:
   containing ANSI escape sequences used to decorate hyperlinks. Some terminal
   hosts, like the [Windows Terminal][2], support this markup, which makes the
   rendered text clickable in the terminal.
+
+## Static methods of the **PSStyle** class
+
+PowerShell 7.4 adds three new static methods to the
+`[System.Management.Automation.PSStyle]` class.
+
+```powershell
+[System.Management.Automation.PSStyle] | Get-Member -Static -MemberType Method
+```
+
+```Output
+   TypeName: System.Management.Automation.PSStyle
+
+Name                               MemberType Definition
+----                               ---------- ----------
+Equals                             Method     static bool Equals(System.Object objA, System.Object objB)
+MapBackgroundColorToEscapeSequence Method     static string MapBackgroundColorToEscapeSequence(System.ConsoleColor bac…
+MapColorPairToEscapeSequence       Method     static string MapColorPairToEscapeSequence(System.ConsoleColor foregroun…
+MapForegroundColorToEscapeSequence Method     static string MapForegroundColorToEscapeSequence(System.ConsoleColor for…
+ReferenceEquals                    Method     static bool ReferenceEquals(System.Object objA, System.Object objB)
+```
+
+These methods provide a way to convert **ConsoleColor** values to ANSI escape
+sequences for foreground and background colors or for a combination of both.
+
+The following examples show the ANSI escape sequences produced by these methods.
+
+```powershell
+using namespace System.Management.Automation
+[PSStyle]::MapBackgroundColorToEscapeSequence('Black') | Format-Hex
+```
+
+```Output
+   Label: String (System.String) <3A04954D>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 1B 5B 34 30 6D                                  �[40m
+```
+
+```powershell
+[PSStyle]::MapForegroundColorToEscapeSequence('Red') | Format-Hex
+```
+
+```Output
+   Label: String (System.String) <38B50F41>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 1B 5B 39 31 6D                                  �[91m
+```
+
+```powershell
+[PSStyle]::MapColorPairToEscapeSequence('Red','Black') | Format-Hex
+```
+
+```Output
+   Label: String (System.String) <365A5875>
+
+          Offset Bytes                                           Ascii
+                 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+          ------ ----------------------------------------------- -----
+0000000000000000 1B 5B 39 31 3B 34 30 6D                         �[91;40m
+```
 
 <!-- link references -->
 [1]: https://wikipedia.org/wiki/Xterm
