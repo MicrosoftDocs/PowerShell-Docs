@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
@@ -392,8 +392,13 @@ a **ProcessModule** object.
 
 ## NOTES
 
-- You can also refer to this cmdlet by its built-in aliases, `ps` and `gps`. For more information,
-  see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+PowerShell includes the following aliases for `Get-Process`:
+
+- All platforms:
+  - `gps`
+- Windows:
+  - `ps`
+
 - On computers that are running a 64-bit version of Windows, the 64-bit version of PowerShell gets
   only 64-bit process modules and the 32-bit version of PowerShell gets only 32-bit process modules.
 - You can use the properties and methods of the Windows Management Instrumentation (WMI)
