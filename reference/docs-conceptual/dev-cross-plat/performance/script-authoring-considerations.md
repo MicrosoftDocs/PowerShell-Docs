@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 01/05/2022
+ms.date: 01/04/2023
 title: PowerShell scripting performance considerations
 ---
 
@@ -11,7 +11,7 @@ idiomatic PowerShell. Idiomatic PowerShell typically uses cmdlets and PowerShell
 often leveraging the pipeline, and dropping down into .NET only when necessary.
 
 >[!NOTE]
-> Many of the techniques described here are not idiomatic PowerShell and may reduce the readability
+> Many of the techniques described here aren't idiomatic PowerShell and may reduce the readability
 > of a PowerShell script. Script authors are advised to use idiomatic PowerShell unless performance
 > dictates otherwise.
 
@@ -24,14 +24,14 @@ $null = $arrayList.Add($item)
 [void]$arrayList.Add($item)
 ```
 
-Assignment to `$null` or casting to `[void]` are roughly equivalent and should generally be
-preferred where performance matters.
+Assignment to `$null` or casting to `[void]` are roughly equivalent and should be preferred where
+performance matters.
 
 ```powershell
 $arrayList.Add($item) > $null
 ```
 
-File redirection to `$null` is nearly as good as the previous alternatives, most scripts would never
+File redirection to `$null` is nearly as fast as the previous alternatives, most scripts would never
 notice the difference. Depending on the scenario, file redirection does introduce a little bit of
 overhead though.
 
@@ -61,7 +61,7 @@ TotalSeconds
    5.9572186
 ```
 
-Windows PowerShell 5.1 does not have the same optimizations for `Out-Null` as PowerShell 7.x, so you
+Windows PowerShell 5.1 doesn't have the same optimizations for `Out-Null` as PowerShell 7.x, so you
 should avoid using `Out-Null` in performance sensitive code.
 
 Introducing a script block and calling it (using dot sourcing or otherwise) then assigning the
@@ -104,9 +104,8 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-If you do require an array, you can use your own `ArrayList` and simply call `ArrayList.ToArray`
-when you want the array. Alternatively, you can let PowerShell create the `ArrayList` and `Array`
-for you:
+If you do require an array, you can use your own `ArrayList` and call `ArrayList.ToArray()` when you
+want the array. Alternatively, you can let PowerShell create the `ArrayList` and `Array` for you:
 
 ```powershell
 $results = @(
@@ -124,7 +123,7 @@ inside the array expression. Just before assigning to `$results`, PowerShell con
 Like arrays, strings are immutable. Each addition to the string actually creates a new string big
 enough to hold the contents of both the left and right operands, then copies the elements of both
 operands into the new string. For small strings, this overhead may not matter. For large strings,
-this can definitely be an issue.
+this can affect performance and memory consumption.
 
 ```powershell
 $string = ''
@@ -207,22 +206,21 @@ finally
 
 ## Avoid Write-Host
 
-It is generally considered poor practice to write output directly to the console, but when it makes
+It's generally considered poor practice to write output directly to the console, but when it makes
 sense, many scripts use `Write-Host`.
 
 If you must write many messages to the console, `Write-Host` can be an order of magnitude slower
 than `[Console]::WriteLine()`. However, be aware that `[Console]::WriteLine()` is only a suitable
 alternative for specific hosts like `pwsh.exe`, `powershell.exe`, or `powershell_ise.exe`. It's not
-guaranteed to work in all hosts. Also, output written using `[Console]::WriteLine()` does not get
+guaranteed to work in all hosts. Also, output written using `[Console]::WriteLine()` doesn't get
 written to transcripts started by `Start-Transcript`.
 
-Instead of using `Write-Host`, consider using
-[Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output).
+Instead of using `Write-Host`, consider using [Write-Output][01].
 
 ### JIT compilation
 
-PowerShell compiles the script code to bytecode that is interpreted. Beginning in PowerShell 3, for
-code that is executed repeatedly in a loop, PowerShell can improve performance by Just-in-time (JIT)
+PowerShell compiles the script code to bytecode that's interpreted. Beginning in PowerShell 3, for
+code that's executed repeatedly in a loop, PowerShell can improve performance by Just-in-time (JIT)
 compiling the code into native code.
 
 Loops that have fewer than 300 instructions are eligible for JIT-compilation. Loops larger than that
@@ -270,7 +268,7 @@ $RepeatCount = 10000
 ```
 
 The **Basic for-loop** example is the base line for performance. The second example wraps the random
-number generator in a function that is called in a tight loop. The third example moves the loop
+number generator in a function that's called in a tight loop. The third example moves the loop
 inside the function. The function is only called once but the code still generates 10000 random
 numbers. Notice the difference in execution times for each example.
 
@@ -279,3 +277,54 @@ Basic for-loop = 47.8668ms
 Wrapped in a function = 820.1396ms
 For-loop in a function = 23.3193ms
 ```
+
+## Avoid wrapping cmdlet pipelines
+
+Most cmdlets are implemented for the pipeline, which is a sequential syntax and process. For
+example:
+
+```powershell
+cmdlet1 | cmdlet2 | cmdlet3
+```
+
+Initializing a new pipeline can be expensive, therefore you should avoid wrapping a cmdlet
+pipeline into another existing pipeline.
+
+Consider the following example. The `Input.csv` file contains 2100 lines. The `Export-Csv` command
+is wrapped inside the `ForEach-Object` pipeline. The `Export-Csv` command runs for every iteration
+of the `ForEach-Object` loop.
+
+```powershell
+'Wrapped = {0:N2} ms' -f (Measure-Command -Expression {
+    Import-Csv .\Input.csv | ForEach-Object -Begin { $Id = 1 } -Process {
+        [PSCustomObject]@{
+            Id = $Id
+            Name = $_.opened_by
+        } | Export-Csv .\Output1.csv -Append
+    }
+}).TotalMilliseconds
+
+Wrapped = 15,968.78 ms
+```
+
+For the next example, the `Export-Csv` command was moved outside of the `ForEach-Object` pipeline.
+In this case, `Export-Csv` command runs once.
+
+```powershell
+'Unwrapped = {0:N2} ms' -f (Measure-Command -Expression {
+      Import-Csv .\Input.csv | ForEach-Object -Begin { $Id = 2 } -Process {
+          [PSCustomObject]@{
+              Id = $Id
+              Name = $_.opened_by
+          }
+      } | Export-Csv .\Output2.csv
+  }).TotalMilliseconds
+
+Unwrapped = 42.92 ms
+```
+
+The unwrapped example is 372 times faster. Also, notice that the first implementation requires the
+**Append** parameter, which isn't required for the later implementation.
+
+<!-- updated link references -->
+[01]: /powershell/module/Microsoft.PowerShell.Utility/Write-Output
