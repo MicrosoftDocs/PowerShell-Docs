@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 11/29/2022
+ms.date: 01/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -959,14 +959,14 @@ Param(
 ### ValidateNotNull validation attribute
 
 The **ValidateNotNull** attribute specifies that the parameter value can't be
-`$null`. PowerShell generates an error if the parameter value is `$null`.
+`$null`. When the value is `$null`, PowerShell raises an exception.
 
 The **ValidateNotNull** attribute is designed to be used when the parameter is
 optional and the type is undefined or has a type converter that can't
 implicitly convert a null value like **object**. If you specify a type that
-that implicitly converts a null value, such as a **string**, the null value
-is converted to an empty string even when using the **ValidateNotNull**
-attribute. For this scenario use the **ValidateNotNullOrEmpty**
+that implicitly converts a null value, such as a **string**, the null value is
+converted to an empty string even when using the **ValidateNotNull** attribute.
+For this scenario use the **ValidateNotNullOrEmpty** attribute.
 
 In the following example, the value of the **ID** parameter can't be `$null`.
 
@@ -980,10 +980,14 @@ Param(
 
 ### ValidateNotNullOrEmpty validation attribute
 
-The **ValidateNotNullOrEmpty** attribute specifies that the parameter value
-can't be `$null` and can't be an empty string (`""`). PowerShell generates an
-error if the parameter is used in a function call, but its value is `$null`, an
-empty string (`""`), or an empty array `@()`.
+The **ValidateNotNullOrEmpty** attribute specifies that the assigned value
+can't be any of the following values:
+
+- `$null`
+- an empty string (`""`)
+- an empty array (`@()`)
+
+When the value is invalid, PowerShell raises an exception.
 
 ```powershell
 Param(
