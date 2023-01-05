@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/05/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Process
@@ -292,12 +292,16 @@ stopped process.
 
 ## NOTES
 
-- You can also refer to `Stop-Process` by its built-in aliases, `kill` and `spps` For more
-  information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+PowerShell includes the following aliases for `Stop-Process`:
 
-  You can also use the properties and methods of the Windows Management Instrumentation (WMI)
-  **Win32_Process** object in Windows PowerShell. For more information, see `Get-CimInstance` and
-  the WMI SDK.
+- All platforms:
+  - `spps`
+- Windows:
+  - `kill`
+
+You can also use the properties and methods of the Windows Management Instrumentation (WMI)
+**Win32_Process** object in Windows PowerShell. For more information, see `Get-CimInstance` and
+the WMI SDK.
 
 - When stopping processes, realize that stopping a process can stop process and services that depend
   on the process. In an extreme case, stopping a process can stop Windows.
