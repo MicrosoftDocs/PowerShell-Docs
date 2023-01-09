@@ -18,10 +18,10 @@ macOS. These versions remain supported until either the version of
 - When both the version of the OS and the version of PowerShell have a ![Supported][1] icon, that
   combination is supported
 
-[1]: ../media/shared/check-mark-button_2705.svg
-[2]: ../media/shared/construction-sign_1f6a7.svg
-[3]: ../media/shared/cross-mark_274c.svg
-[4]: ../media/shared/large-yellow-circle_1f7e1.svg
+[1]: ../../media/shared/check-mark-button_2705.svg
+[2]: ../../media/shared/construction-sign_1f6a7.svg
+[3]: ../../media/shared/cross-mark_274c.svg
+[4]: ../../media/shared/large-yellow-circle_1f7e1.svg
 
 |            macOS             | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
 | ---------------------------- | :---------------: | :-------------: | :-------------: |
