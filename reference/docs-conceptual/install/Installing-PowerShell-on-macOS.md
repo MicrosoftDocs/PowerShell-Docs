@@ -272,7 +272,7 @@ support those methods.
 - [Homebrew-Cask][14]
 
 <!-- link references -->
-[01]: ../includes/macos-support.md
+[01]: ../../includes/macos-support.md
 [02]: /dotnet/core/sdk
 [03]: /dotnet/core/tools/global-tools
 [04]: #binary-archives

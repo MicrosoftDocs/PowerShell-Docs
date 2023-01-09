@@ -3,7 +3,7 @@
     "content": [
       {
         "dest": "",
-        "exclude": [ "**/obj/**", "**/_themes/**", "README.md", "**/README.md" ],
+        "exclude": [ "**/includes/**", "**/obj/**", "**/_themes/**", "README.md", "**/README.md" ],
         "files": [ "index.yml", "module/index.md" ]
       },
 

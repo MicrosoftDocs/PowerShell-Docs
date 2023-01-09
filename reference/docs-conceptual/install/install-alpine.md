@@ -96,7 +96,7 @@ installation available from other third-party sources. While those tools and met
 Microsoft can't support those methods.
 
 <!-- link references -->
-[01]: ../includes/alpine-support.md
+[01]: ../../includes/alpine-support.md
 [02]: #supported-versions
 [03]: https://aka.ms/PowerShell-Release?tag=stable
 [04]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

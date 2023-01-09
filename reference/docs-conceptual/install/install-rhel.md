@@ -116,7 +116,7 @@ installation available from other third-party sources. While those tools and met
 Microsoft cannot support those methods.
 
 <!-- link references -->
-[01]: ../includes/rhel-support.md
+[01]: ../../includes/rhel-support.md
 [03]: #supported-versions
 [05]: https://aka.ms/PowerShell-Release?tag=stable
 [06]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
