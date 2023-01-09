@@ -1,19 +1,19 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 05/31/2022
+ms.date: 01/09/2023
 title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 ---
 # Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 
-All packages are available on our GitHub [releases][releases] page. After the package is installed,
-run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release. Before
-installing, check the list of [Supported versions](#supported-versions) below.
+All packages are available on our GitHub [releases][05] page. After the package is installed, run
+`pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release. Before installing,
+check the list of [Supported versions][03] below.
 
 > [!NOTE]
 > PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell.
 >
 > If you need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous
-> version using the [binary archive](install-other-linux.md#binary-archives) method.
+> version using the [binary archive][07] method.
 
 RHEL 7 uses yum and RHEL 8 uses the dnf package manager.
 
@@ -60,9 +60,8 @@ Starting with version 7.2, PowerShell is distributed as a universal RPM package.
 of PowerShell had separate package for each OS. Download the RPM package you need onto your CentOS
 machine.
 
-- PowerShell 7.3.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell-7.3.0-1.rh.x86_64.rpm`
-- PowerShell 7.2.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-lts-7.2.7-1.rh.x86_64.rpm`
-- PowerShell 7.0.13 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.13/powershell-lts-7.0.13-1.rhel.7.x86_64.rpm`
+- PowerShell 7.3.1 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.1/powershell-7.3.1-1.rh.x86_64.rpm`
+- PowerShell 7.2.8- `https://github.com/PowerShell/PowerShell/releases/download/v7.2.7/powershell-lts-7.2.7-1.rh.x86_64.rpm`
 
 Use the following shell command to install the latest RPM package on the target version of RHEL.
 Change the URL in the following shell commands to match the version you need.
@@ -70,13 +69,13 @@ Change the URL in the following shell commands to match the version you need.
 On RHEL 7:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell-7.3.0-1.rh.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.1/powershell-7.3.1-1.rh.x86_64.rpm
 ```
 
 On RHEL 8:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.0/powershell-7.3.0-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.1/powershell-7.3.1-1.rh.x86_64.rpm
 ```
 
 ## Uninstallation - Red Hat Enterprise Linux (RHEL) 7
@@ -89,7 +88,7 @@ sudo yum remove powershell
 
 PowerShell 7.2 and newer supports running on RHEL using a 64-bit Arm processor. Use the binary
 archive installation method of installing PowerShell that is described in
-[Alternate ways to install PowerShell on Linux](install-other-linux.md#binary-archives).
+[Alternate ways to install PowerShell on Linux][07].
 
 ## PowerShell paths
 
@@ -104,11 +103,11 @@ archive installation method of installing PowerShell that is described in
 The profiles respect PowerShell's per-host configuration, so the default host-specific profiles
 exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 
-PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.
+PowerShell respects the [XDG Base Directory Specification][06] on Linux.
 
 ## Supported versions
 
-[!INCLUDE [RHEL support](../../includes/rhel-support.md)]
+[!INCLUDE [RHEL support][01]]
 
 ## Installation support
 
@@ -117,7 +116,8 @@ installation available from other third-party sources. While those tools and met
 Microsoft cannot support those methods.
 
 <!-- link references -->
-[releases]: https://aka.ms/PowerShell-Release?tag=stable
-[xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-[lifecycle]: ../PowerShell-Support-Lifecycle.md
-[eol-rhel]: https://access.redhat.com/support/policy/updates/errata/
+[01]: ../../includes/rhel-support.md
+[03]: #supported-versions
+[05]: https://aka.ms/PowerShell-Release?tag=stable
+[06]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[07]: install-other-linux.md#binary-archives
