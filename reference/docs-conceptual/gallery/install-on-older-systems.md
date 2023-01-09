@@ -11,7 +11,7 @@ module requires **PowerShell 3.0 or newer**.
 **PowerShellGet** requires .NET Framework 4.5 or above. For more information, see
 [Install the .NET Framework for developers](/dotnet/framework/install/guide-for-developers).
 
-[!INCLUDE [TLS 1.2 Requirements](../../includes/tls-gallery.md)]
+[!INCLUDE [TLS 1.2 Requirements](../includes/tls-gallery.md)]
 
 ## For computers running PowerShell 3.0 or PowerShell 4.0
 

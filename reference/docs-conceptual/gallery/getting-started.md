@@ -145,7 +145,7 @@ Hosts required when using the PowerShell Gallery website:
 - `*.powershellgallery.com` - website
 - `go.microsoft.com` - redirection service
 
-[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
+[!INCLUDE [TLS 1.2 Requirement](../includes/tls-gallery.md)]
 
 ## Related links
 

@@ -72,10 +72,10 @@ also try deploying PowerShell binaries directly using the Linux `tar.gz`. For mo
 [Alternate ways to install PowerShell on Linux][15].
 
 <!-- link references -->
-[01]: ../../includes/alpine-support.md
-[02]: ../../includes/debian-support.md
-[03]: ../../includes/rhel-support.md
-[04]: ../../includes/ubuntu-support.md
+[01]: ../includes/alpine-support.md
+[02]: ../includes/debian-support.md
+[03]: ../includes/rhel-support.md
+[04]: ../includes/ubuntu-support.md
 [05]: ../PowerShell-Support-Lifecycle.md
 [06]: community-support.md
 [12]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md

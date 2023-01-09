@@ -161,12 +161,12 @@ for historical reference. It isn't intended for use to determine the support lif
 | Windows PowerShell 1.0       |   Nov-2006   | Optional component of Windows Server 2008                                       |
 
 <!-- link references -->
-[01]: ../../includes/alpine-support.md
-[02]: ../../includes/debian-support.md
-[03]: ../../includes/macos-support.md
-[04]: ../../includes/rhel-support.md
-[05]: ../../includes/ubuntu-support.md
-[06]: ../../includes/windows-support.md
+[01]: ../includes/alpine-support.md
+[02]: ../includes/debian-support.md
+[03]: ../includes/macos-support.md
+[04]: ../includes/rhel-support.md
+[05]: ../includes/ubuntu-support.md
+[06]: ../includes/windows-support.md
 [07]: /lifecycle/faq/windows
 [08]: /lifecycle/policies/modern
 [09]: /lifecycle/products/
