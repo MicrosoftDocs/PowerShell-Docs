@@ -56,8 +56,8 @@ ConstrainedLanguage
 ```
 
 However, in sessions with `RestrictedLanguage` and `NoLanguage` modes, you
-can't use the [member-access operator](about_member-access_enumeration.md) (`.`) to get property values. Instead, the error message
-reveals the language mode.
+can't use the [member-access operator][02] (`.`) to get property values.
+Instead, the error message reveals the language mode.
 
 When you run the `$ExecutionContext.SessionState.LanguageMode` command in a
 `RestrictedLanguage` session, PowerShell returns the
@@ -119,12 +119,11 @@ application control policy. For example, there are additional restrictions to
 dot-sourcing and module importing under a policy.
 
 When a PowerShell session is started under a policy, it runs in
-`ConstrainedLanguage` mode. Beginning in PowerShell 7.4, the start up banner
-display includes a message indicating it's running in that mode. This mode
-allows for a usable interactive shell experience while limiting access to
-features and APIs that could be abused by a malicious actor. Users can run
-cmdlets and native commands and have access to basic language elements. Access
-to PowerShell, .NET, and COM APIs is restricted.
+`ConstrainedLanguage` mode. This mode allows for a usable interactive shell
+experience while limiting access to features and APIs that could be abused by a
+malicious actor. Users can run cmdlets and native commands and have access to
+basic language elements. Access to PowerShell, .NET, and COM APIs is
+restricted.
 
 Any script or script-based module executed in this session runs in
 `ConstrainedLanguage` mode. However, any script or script-based module allowed
@@ -143,7 +142,7 @@ running a defined set of commands and can't directly access APIs, the file
 system, or other system resources.
 
 For more information, see [JEA Session configurations][01] and
-[New-PSSessionConfigurationFile][04].
+[New-PSSessionConfigurationFile][05].
 
 ## Language mode features and limitations
 
@@ -175,7 +174,7 @@ By default, only the following variables are permitted in
 - `$False`
 - `$Null`
 
-Module manifests that use `RestrictedLanguage` mode allow the following
+Module manifests for modules loaded in `RestrictedLanguage` mode may use these
 additional variables:
 
 - `$PSScriptRoot`
@@ -188,8 +187,7 @@ Only the following comparison operators are permitted:
 - `-gt` (greater-than)
 - `-lt` (less-than)
 
-Assignment statements, property references, and method calls aren't
-permitted.
+Assignment statements, property references, and method calls aren't permitted.
 
 ### ConstrainedLanguage mode
 
@@ -223,53 +221,101 @@ get properties, invoke methods, and convert objects to these types.
 
 Allowed Types:
 
-- `[AliasAttribute]`
-- `[AllowEmptyCollectionAttribute]`
-- `[AllowEmptyStringAttribute]`
-- `[AllowNullAttribute]`
-- `[Array]`
-- `[Bool]`
+- `[adsi]`
+- `[adsisearcher]`
+- `[Alias]`
+- `[AllowEmptyCollection]`
+- `[AllowEmptyString]`
+- `[AllowNull]`
+- `[ArgumentCompleter]`
+- `[ArgumentCompletions]`
+- `[array]`
+- `[bigint]`
+- `[bool]`
 - `[byte]`
 - `[char]`
-- `[CmdletBindingAttribute]`
-- `[DateTime]`
+- `[cimclass]`
+- `[cimconverter]`
+- `[ciminstance]`
+- `[CimSession]`
+- `[cimtype]`
+- `[CmdletBinding]`
+- `[cultureinfo]`
+- `[datetime]`
 - `[decimal]`
-- `[DirectoryEntry]`
-- `[DirectorySearcher]`
 - `[double]`
+- `[DscLocalConfigurationManager]`
+- `[DscProperty]`
+- `[DscResource]`
+- `[ExperimentAction]`
+- `[Experimental]`
+- `[ExperimentalFeature]`
 - `[float]`
-- `[Guid]`
-- `[Hashtable]`
+- `[guid]`
+- `[hashtable]`
 - `[int]`
-- `[Int16]`
+- `[int16]`
+- `[int32]`
+- `[int64]`
+- `[ipaddress]`
+- `[IPEndpoint]`
 - `[long]`
-- `[ManagementClass]`
-- `[ManagementObject]`
-- `[ManagementObjectSearcher]`
+- `[mailaddress]`
+- `[Microsoft.PowerShell.Commands.ModuleSpecification]`
+- `[NoRunspaceAffinity]`
 - `[NullString]`
-- `[OutputTypeAttribute]`
-- `[ParameterAttribute]`
-- `[PSCredential]`
-- `[PSDefaultValueAttribute]`
-- `[PSListModifier]`
-- `[PSObject]`
-- `[PSPrimitiveDictionary]`
-- `[PSReference]`
+- `[Object[]]`
+- `[ObjectSecurity]`
+- `[ordered]`
+- `[OutputType]`
+- `[Parameter]`
+- `[PhysicalAddress]`
+- `[pscredential]`
+- `[pscustomobject]`
+- `[PSDefaultValue]`
+- `[pslistmodifier]`
+- `[psobject]`
+- `[psprimitivedictionary]`
 - `[PSTypeNameAttribute]`
-- `[Regex]`
-- `[SByte]`
-- `[String]`
-- `[SupportsWildcardsAttribute]`
-- `[SwitchParameter]`
-- `[System.Globalization.CultureInfo]`
-- `[System.Net.IPAddress]`
-- `[System.Net.Mail.MailAddress]`
-- `[System.Numerics.BigInteger]`
-- `[System.Security.SecureString]`
-- `[TimeSpan]`
-- `[UInt16]`
-- `[UInt32]`
-- `[UInt64]`
+- `[ref]`
+- `[regex]`
+- `[sbyte]`
+- `[securestring]`
+- `[semver]`
+- `[short]`
+- `[single]`
+- `[string]`
+- `[SupportsWildcards]`
+- `[switch]`
+- `[timespan]`
+- `[uint]`
+- `[uint16]`
+- `[uint32]`
+- `[uint64]`
+- `[ulong]`
+- `[uri]`
+- `[ushort]`
+- `[ValidateCount]`
+- `[ValidateDrive]`
+- `[ValidateLength]`
+- `[ValidateNotNull]`
+- `[ValidateNotNullOrEmpty]`
+- `[ValidateNotNullOrWhiteSpace]`
+- `[ValidatePattern]`
+- `[ValidateRange]`
+- `[ValidateScript]`
+- `[ValidateSet]`
+- `[ValidateTrustedData]`
+- `[ValidateUserDrive]`
+- `[version]`
+- `[void]`
+- `[WildcardPattern]`
+- `[wmi]`
+- `[wmiclass]`
+- `[wmisearcher]`
+- `[X500DistinguishedName]`
+- `[X509Certificate]`
+- `[xml]`
 
 Only the following COM object types are permitted:
 
@@ -288,11 +334,12 @@ Beginning in PowerShell 7.2, the `New-Object` cmdlet is disabled in
 
 ## See also
 
-- [about_Session_Configuration_Files][02]
-- [about_Session_Configurations][03]
+- [about_Session_Configuration_Files][03]
+- [about_Session_Configurations][04]
 
 <!-- link references -->
 [01]: /powershell/scripting/learn/remoting/jea/session-configurations
-[02]: about_Session_Configuration_Files.md
-[03]: about_Session_Configurations.md
-[04]: xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
+[02]: about_member-access_enumeration.md
+[03]: about_Session_Configuration_Files.md
+[04]: about_Session_Configurations.md
+[05]: xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile

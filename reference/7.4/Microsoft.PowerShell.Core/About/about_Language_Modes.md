@@ -33,8 +33,8 @@ The language mode is a property of the session configuration (or "endpoint")
 that's used to create the session. All sessions that use a particular session
 configuration have the language mode of the session configuration.
 
-All PowerShell sessions have a language mode. Remote sessions are created using
-the session configurations on the remote computer. The language mode set in the
+All PowerShell sessions have a language mode. Sessions are created using the
+session configurations on the target computer. The language mode set in the
 session configuration determines the language mode of the session. To specify
 the session configuration of a PSSession, use the **ConfigurationName**
 parameter of cmdlets that create a session.
@@ -56,8 +56,8 @@ ConstrainedLanguage
 ```
 
 However, in sessions with `RestrictedLanguage` and `NoLanguage` modes, you
-can't use the dot method to get property values. Instead, the error message
-reveals the language mode.
+can't use the [member-access operator][02] (`.`) to get property values.
+Instead, the error message reveals the language mode.
 
 When you run the `$ExecutionContext.SessionState.LanguageMode` command in a
 `RestrictedLanguage` session, PowerShell returns the
@@ -93,7 +93,7 @@ configuration.
 
 ## Setting the language mode
 
-The language mode in a PowerShell session can be set through the built in
+The language mode in a PowerShell session can be set through the built-in
 `$ExecutionContext` variable.
 
 ```powershell
@@ -134,15 +134,15 @@ and run with few constraints.
 ### Using a session configuration
 
 PowerShell remoting optionally supports creating custom session configurations.
-configuration. You can set the language mode you want for that custom
-configuration. PowerShell Just Enough Administration (JEA) configurations use
-`NoLanguage` mode to restrict sessions to command invocation only. With JEA,
-the remote session can be restricted to specific users. The JEA users are
-limited to running a defined set of commands and can't directly access APIs,
-the file system, or other system resources.
+You can set the language mode you want for that custom configuration.
+PowerShell Just Enough Administration (JEA) configurations use `NoLanguage`
+mode to restrict sessions to command invocations only. With JEA, the remote
+session can be restricted to specific users. The JEA users are limited to
+running a defined set of commands and can't directly access APIs, the file
+system, or other system resources.
 
 For more information, see [JEA Session configurations][01] and
-[New-PSSessionConfigurationFile][04].
+[New-PSSessionConfigurationFile][05].
 
 ## Language mode features and limitations
 
@@ -174,7 +174,7 @@ By default, only the following variables are permitted in
 - `$False`
 - `$Null`
 
-Module manifests that use `RestrictedLanguage` mode allow the following
+Module manifests for modules loaded in `RestrictedLanguage` mode may use these
 additional variables:
 
 - `$PSScriptRoot`
@@ -187,8 +187,7 @@ Only the following comparison operators are permitted:
 - `-gt` (greater-than)
 - `-lt` (less-than)
 
-Assignment statements, property references, and method calls aren't
-permitted.
+Assignment statements, property references, and method calls aren't permitted.
 
 ### ConstrainedLanguage mode
 
@@ -222,53 +221,101 @@ get properties, invoke methods, and convert objects to these types.
 
 Allowed Types:
 
-- `[AliasAttribute]`
-- `[AllowEmptyCollectionAttribute]`
-- `[AllowEmptyStringAttribute]`
-- `[AllowNullAttribute]`
-- `[Array]`
-- `[Bool]`
+- `[adsi]`
+- `[adsisearcher]`
+- `[Alias]`
+- `[AllowEmptyCollection]`
+- `[AllowEmptyString]`
+- `[AllowNull]`
+- `[ArgumentCompleter]`
+- `[ArgumentCompletions]`
+- `[array]`
+- `[bigint]`
+- `[bool]`
 - `[byte]`
 - `[char]`
-- `[CmdletBindingAttribute]`
-- `[DateTime]`
+- `[cimclass]`
+- `[cimconverter]`
+- `[ciminstance]`
+- `[CimSession]`
+- `[cimtype]`
+- `[CmdletBinding]`
+- `[cultureinfo]`
+- `[datetime]`
 - `[decimal]`
-- `[DirectoryEntry]`
-- `[DirectorySearcher]`
 - `[double]`
+- `[DscLocalConfigurationManager]`
+- `[DscProperty]`
+- `[DscResource]`
+- `[ExperimentAction]`
+- `[Experimental]`
+- `[ExperimentalFeature]`
 - `[float]`
-- `[Guid]`
-- `[Hashtable]`
+- `[guid]`
+- `[hashtable]`
 - `[int]`
-- `[Int16]`
+- `[int16]`
+- `[int32]`
+- `[int64]`
+- `[ipaddress]`
+- `[IPEndpoint]`
 - `[long]`
-- `[ManagementClass]`
-- `[ManagementObject]`
-- `[ManagementObjectSearcher]`
+- `[mailaddress]`
+- `[Microsoft.PowerShell.Commands.ModuleSpecification]`
+- `[NoRunspaceAffinity]`
 - `[NullString]`
-- `[OutputTypeAttribute]`
-- `[ParameterAttribute]`
-- `[PSCredential]`
-- `[PSDefaultValueAttribute]`
-- `[PSListModifier]`
-- `[PSObject]`
-- `[PSPrimitiveDictionary]`
-- `[PSReference]`
+- `[Object[]]`
+- `[ObjectSecurity]`
+- `[ordered]`
+- `[OutputType]`
+- `[Parameter]`
+- `[PhysicalAddress]`
+- `[pscredential]`
+- `[pscustomobject]`
+- `[PSDefaultValue]`
+- `[pslistmodifier]`
+- `[psobject]`
+- `[psprimitivedictionary]`
 - `[PSTypeNameAttribute]`
-- `[Regex]`
-- `[SByte]`
-- `[String]`
-- `[SupportsWildcardsAttribute]`
-- `[SwitchParameter]`
-- `[System.Globalization.CultureInfo]`
-- `[System.Net.IPAddress]`
-- `[System.Net.Mail.MailAddress]`
-- `[System.Numerics.BigInteger]`
-- `[System.Security.SecureString]`
-- `[TimeSpan]`
-- `[UInt16]`
-- `[UInt32]`
-- `[UInt64]`
+- `[ref]`
+- `[regex]`
+- `[sbyte]`
+- `[securestring]`
+- `[semver]`
+- `[short]`
+- `[single]`
+- `[string]`
+- `[SupportsWildcards]`
+- `[switch]`
+- `[timespan]`
+- `[uint]`
+- `[uint16]`
+- `[uint32]`
+- `[uint64]`
+- `[ulong]`
+- `[uri]`
+- `[ushort]`
+- `[ValidateCount]`
+- `[ValidateDrive]`
+- `[ValidateLength]`
+- `[ValidateNotNull]`
+- `[ValidateNotNullOrEmpty]`
+- `[ValidateNotNullOrWhiteSpace]`
+- `[ValidatePattern]`
+- `[ValidateRange]`
+- `[ValidateScript]`
+- `[ValidateSet]`
+- `[ValidateTrustedData]`
+- `[ValidateUserDrive]`
+- `[version]`
+- `[void]`
+- `[WildcardPattern]`
+- `[wmi]`
+- `[wmiclass]`
+- `[wmisearcher]`
+- `[X500DistinguishedName]`
+- `[X509Certificate]`
+- `[xml]`
 
 Only the following COM object types are permitted:
 
@@ -287,11 +334,12 @@ Beginning in PowerShell 7.2, the `New-Object` cmdlet is disabled in
 
 ## See also
 
-- [about_Session_Configuration_Files][02]
-- [about_Session_Configurations][03]
+- [about_Session_Configuration_Files][03]
+- [about_Session_Configurations][04]
 
 <!-- link references -->
 [01]: /powershell/scripting/learn/remoting/jea/session-configurations
-[02]: about_Session_Configuration_Files.md
-[03]: about_Session_Configurations.md
-[04]: xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
+[02]: about_member-access_enumeration.md
+[03]: about_Session_Configuration_Files.md
+[04]: about_Session_Configurations.md
+[05]: xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
