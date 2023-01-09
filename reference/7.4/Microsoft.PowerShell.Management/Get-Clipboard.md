@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/08/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
@@ -83,6 +83,11 @@ This cmdlet returns a string containing the contents of the clipboard.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Get-Clipboard`:
+
+- All platforms:
+  - `gcb`
+  
 ## RELATED LINKS
 
 [Set-Clipboard](Set-Clipboard.md)

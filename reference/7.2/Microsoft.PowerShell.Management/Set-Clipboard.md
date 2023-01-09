@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/08/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
@@ -145,6 +145,11 @@ You can pipe a string containing the content to set to the clipboard to this cmd
 This cmdlet returns no output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Set-Clipboard`:
+
+- All platforms:
+  - `scb`
 
 In rare cases when using `Set-Clipboard` with a high number of values in rapid succession, like in a
 loop, you might sporadically get a blank value from the clipboard. This can be fixed by using
