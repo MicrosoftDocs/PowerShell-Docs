@@ -120,10 +120,11 @@ dot-sourcing and module importing under a policy.
 
 When a PowerShell session is started under a policy, it runs in
 `ConstrainedLanguage` mode. Beginning in PowerShell 7.4, the start up banner
-display includes a message indicating it's running in that mode. This allows
-users to have a usable interactive shell experience, running cmdlets and native
-commands, as well as access to basic language elements. But the user can't
-access PowerShell, .NET, or COM APIs that could be abused by a malicious actor.
+display includes a message indicating it's running in that mode. This mode
+allows for a usable interactive shell experience while limiting access to
+features and APIs that could be abused by a malicious actor. Users can run
+cmdlets and native commands and have access to basic language elements. Access
+to PowerShell, .NET, and COM APIs is restricted.
 
 Any script or script-based module executed in this session runs in
 `ConstrainedLanguage` mode. However, any script or script-based module allowed
