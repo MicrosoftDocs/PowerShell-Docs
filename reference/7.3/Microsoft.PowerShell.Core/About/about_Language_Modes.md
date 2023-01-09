@@ -33,8 +33,8 @@ The language mode is a property of the session configuration (or "endpoint")
 that's used to create the session. All sessions that use a particular session
 configuration have the language mode of the session configuration.
 
-All PowerShell sessions have a language mode. Remote sessions are created using
-the session configurations on the remote computer. The language mode set in the
+All PowerShell sessions have a language mode. Sessions are created using the
+session configurations on the target computer. The language mode set in the
 session configuration determines the language mode of the session. To specify
 the session configuration of a PSSession, use the **ConfigurationName**
 parameter of cmdlets that create a session.
@@ -56,7 +56,7 @@ ConstrainedLanguage
 ```
 
 However, in sessions with `RestrictedLanguage` and `NoLanguage` modes, you
-can't use the dot method to get property values. Instead, the error message
+can't use the [member-access operator](about_member-access_enumeration.md) (`.`) to get property values. Instead, the error message
 reveals the language mode.
 
 When you run the `$ExecutionContext.SessionState.LanguageMode` command in a
@@ -93,7 +93,7 @@ configuration.
 
 ## Setting the language mode
 
-The language mode in a PowerShell session can be set through the built in
+The language mode in a PowerShell session can be set through the built-in
 `$ExecutionContext` variable.
 
 ```powershell
@@ -134,12 +134,12 @@ and run with few constraints.
 ### Using a session configuration
 
 PowerShell remoting optionally supports creating custom session configurations.
-configuration. You can set the language mode you want for that custom
-configuration. PowerShell Just Enough Administration (JEA) configurations use
-`NoLanguage` mode to restrict sessions to command invocation only. With JEA,
-the remote session can be restricted to specific users. The JEA users are
-limited to running a defined set of commands and can't directly access APIs,
-the file system, or other system resources.
+You can set the language mode you want for that custom configuration.
+PowerShell Just Enough Administration (JEA) configurations use `NoLanguage`
+mode to restrict sessions to command invocations only. With JEA, the remote
+session can be restricted to specific users. The JEA users are limited to
+running a defined set of commands and can't directly access APIs, the file
+system, or other system resources.
 
 For more information, see [JEA Session configurations][01] and
 [New-PSSessionConfigurationFile][04].
