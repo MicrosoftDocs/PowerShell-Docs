@@ -211,9 +211,10 @@ Get-Content -Path .\Stream.txt -Stream NewStream
 Added a stream named NewStream to Stream.txt
 ```
 
-The **Stream** parameter is a dynamic parameter of the [FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-systemstring).
-By default `Get-Content` only retrieves data from the default, or `:$DATA` stream. **Streams** can
-be used to store hidden data such as attributes, security settings, or other data. They can also be
+The **Stream** parameter is a dynamic parameter of the
+[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-string).
+By default `Get-Content` only retrieves data from the default, or `:$DATA` stream. **Streams** can be
+used to store hidden data such as attributes, security settings, or other data. They can also be
 stored on directories without being child items.
 
 ### Example 6: Get raw content
