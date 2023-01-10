@@ -94,7 +94,7 @@ PowerShell respects the [XDG Base Directory Specification][05] on Linux.
 
 ## Supported versions
 
-[!INCLUDE [Debian support][01]]
+[!INCLUDE [Debian support](../../includes/debian-support.md)]
 
 ## Installation support
 
@@ -103,7 +103,6 @@ installation available from other third-party sources. While those tools and met
 Microsoft cannot support those methods.
 
 <!-- link references -->
-[01]: ../../includes/debian-support.md
 [03]: #supported-versions
 [04]: https://aka.ms/PowerShell-Release?tag=stable
 [05]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

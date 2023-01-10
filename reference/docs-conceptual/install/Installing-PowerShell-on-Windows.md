@@ -348,7 +348,7 @@ of Windows.
 
 ## Supported versions of Windows
 
-[!INCLUDE [Windows support][01]]
+[!INCLUDE [Windows support](../../includes/windows-support.md)]
 
 You can check the version that you are using by running `winver.exe`.
 
@@ -359,7 +359,6 @@ of installation available from other sources. While those tools and methods may 
 can't support those methods.
 
 <!-- link references -->
-[01]: ../../includes/windows-support.md
 [02]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [03]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [04]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register

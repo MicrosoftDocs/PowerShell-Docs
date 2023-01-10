@@ -257,7 +257,7 @@ Because macOS is a derivation of BSD, the prefix `/usr/local` is used instead of
 
 ## Supported versions
 
-[!INCLUDE [macOS support][01]]
+[!INCLUDE [macOS support](../../includes/macos-support.md)]
 
 ## Installation support
 
@@ -272,7 +272,6 @@ support those methods.
 - [Homebrew-Cask][14]
 
 <!-- link references -->
-[01]: ../../includes/macos-support.md
 [02]: /dotnet/core/sdk
 [03]: /dotnet/core/tools/global-tools
 [04]: #binary-archives

@@ -107,7 +107,7 @@ PowerShell respects the [XDG Base Directory Specification][06] on Linux.
 
 ## Supported versions
 
-[!INCLUDE [RHEL support][01]]
+[!INCLUDE [RHEL support](../../includes/rhel-support.md)]
 
 ## Installation support
 
@@ -116,7 +116,6 @@ installation available from other third-party sources. While those tools and met
 Microsoft cannot support those methods.
 
 <!-- link references -->
-[01]: ../../includes/rhel-support.md
 [03]: #supported-versions
 [05]: https://aka.ms/PowerShell-Release?tag=stable
 [06]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

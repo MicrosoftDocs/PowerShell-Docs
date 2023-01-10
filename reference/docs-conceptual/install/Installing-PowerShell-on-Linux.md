@@ -17,7 +17,7 @@ For the best compatibility, choose a long-term release (LTS) version.
 
 ## Alpine
 
-[!INCLUDE [Alpine support][01]]
+[!INCLUDE [Alpine support](../../includes/alpine-support.md)]
 
 For more information, see [Install PowerShell on Alpine][13].
 
@@ -25,7 +25,7 @@ For more information, see [Install PowerShell on Alpine][13].
 
 Debian uses APT (Advanced Package Tool) as a package manager.
 
-[!INCLUDE [Debian support][02]]
+[!INCLUDE [Debian support](../../includes/debian-support.md)]
 
 For more information, see [Install PowerShell on Debian][14].
 
@@ -33,7 +33,7 @@ For more information, see [Install PowerShell on Debian][14].
 
 RHEL 7 uses yum and RHEL 8 uses the dnf package manager.
 
-[!INCLUDE [RHEL support][03]]
+[!INCLUDE [RHEL support](../../includes/rhel-support.md)]
 
 For more information, see [Install PowerShell on RHEL][17].
 
@@ -41,7 +41,7 @@ For more information, see [Install PowerShell on RHEL][17].
 
 Ubuntu uses APT (Advanced Package Tool) as a package manager.
 
-[!INCLUDE [Ubuntu support][04]]
+[!INCLUDE [Ubuntu support](../../includes/ubuntu-support.md)]
 
 For more information, see [Install PowerShell on Ubuntu][18].
 
@@ -72,10 +72,6 @@ also try deploying PowerShell binaries directly using the Linux `tar.gz`. For mo
 [Alternate ways to install PowerShell on Linux][15].
 
 <!-- link references -->
-[01]: ../../includes/alpine-support.md
-[02]: ../../includes/debian-support.md
-[03]: ../../includes/rhel-support.md
-[04]: ../../includes/ubuntu-support.md
 [05]: ../PowerShell-Support-Lifecycle.md
 [06]: community-support.md
 [12]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md

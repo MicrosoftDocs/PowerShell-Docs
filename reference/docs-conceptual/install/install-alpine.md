@@ -87,7 +87,7 @@ PowerShell respects the [XDG Base Directory Specification][04] on Linux.
 
 ## Supported versions
 
-[!INCLUDE [Alpine support][01]]
+[!INCLUDE [Alpine support](../../includes/alpine-support.md)]
 
 ## Installation support
 
@@ -96,7 +96,6 @@ installation available from other third-party sources. While those tools and met
 Microsoft can't support those methods.
 
 <!-- link references -->
-[01]: ../../includes/alpine-support.md
 [02]: #supported-versions
 [03]: https://aka.ms/PowerShell-Release?tag=stable
 [04]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

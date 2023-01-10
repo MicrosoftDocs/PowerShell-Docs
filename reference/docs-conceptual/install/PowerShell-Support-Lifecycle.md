@@ -44,27 +44,27 @@ needing access but formal support and updates of any kind are no longer be provi
 
 ### Windows
 
-[!INCLUDE [Windows support][06]]
+[!INCLUDE [Windows support](../../includes/windows-support.md)]
 
 ### macOS
 
-[!INCLUDE [macOS support][03]]
+[!INCLUDE [macOS support](../../includes/macos-support.md)]
 
 ### Alpine Linux
 
-[!INCLUDE [Alpine support][01]]
+[!INCLUDE [Alpine support](../../includes/alpine-support.md)]
 
 ### Debian Linux
 
-[!INCLUDE [Debian support][02]]
+[!INCLUDE [Debian support](../../includes/debian-support.md)]
 
 ### Red Hat Enterprise Linux (RHEL)
 
-[!INCLUDE [RHEL support][04]]
+[!INCLUDE [RHEL support](../../includes/rhel-support.md)]
 
 ### Ubuntu Linux
 
-[!INCLUDE [Ubuntu support][05]]
+[!INCLUDE [Ubuntu support](../../includes/ubuntu-support.md)]
 
 ### Raspberry Pi OS
 
@@ -161,12 +161,6 @@ for historical reference. It isn't intended for use to determine the support lif
 | Windows PowerShell 1.0       |   Nov-2006   | Optional component of Windows Server 2008                                       |
 
 <!-- link references -->
-[01]: ../../includes/alpine-support.md
-[02]: ../../includes/debian-support.md
-[03]: ../../includes/macos-support.md
-[04]: ../../includes/rhel-support.md
-[05]: ../../includes/ubuntu-support.md
-[06]: ../../includes/windows-support.md
 [07]: /lifecycle/faq/windows
 [08]: /lifecycle/policies/modern
 [09]: /lifecycle/products/
