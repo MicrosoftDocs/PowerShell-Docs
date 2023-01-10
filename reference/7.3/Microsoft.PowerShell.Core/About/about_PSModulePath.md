@@ -1,7 +1,7 @@
 ---
 description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
 Locale: en-US
-ms.date: 01/05/2022
+ms.date: 01/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSModulePath
@@ -184,7 +184,7 @@ To add a path to the user setting, change the registry provider from `HKLM:\`
 to `HKCU:\`.
 
 ```powershell
-$key = (Get-Item 'HKCU:\SYSTEM\CurrentControlSet\Control\Session Manager').OpenSubKey('Environment', $true)
+$key = (Get-Item 'HKCU:\').OpenSubKey('Environment', $true)
 $path = $key.GetValue('PSModulePath','','DoNotExpandEnvironmentNames')
 $path += ';C:\Program Files\Fabrikam\Modules' # or '%ProgramFiles%\Fabrikam\Modules'
 $key.SetValue('PSModulePath',$path,[Microsoft.Win32.RegistryValueKind]::ExpandString)
