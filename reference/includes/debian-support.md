@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 12/01/2022
+ms.date: 01/09/2023
 ms.prod: powershell
 ms.topic: include
 ---
@@ -24,18 +24,16 @@ they're supported on. These versions remain supported until either the version o
 [3]: ../media/shared/cross-mark_274c.svg
 [4]: ../media/shared/large-yellow-circle_1f7e1.svg
 
-|        Debian         |      7.0 (LTS)       |         7.1          |  7.2 (LTS-current)   |         7.3          |
-| --------------------- | :------------------: | :------------------: | :------------------: | :------------------: |
-| ![Supported][1] 11    | ![Out of Support][4] | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
-| ![Supported][1] 10    | ![Out of Support][4] | ![Out of Support][4] |   ![Supported][1]    |   ![Supported][1]    |
-| ![Supported][1] 9     | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
-| ![Not Supported][3] 8 | ![Out of Support][4] | ![Not Supported][3]  | ![Not Supported][3]  | ![Not Supported][3]  |
+|       Debian       | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
+| ------------------ | :---------------: | :-------------: | :-------------: |
+| ![Supported][1] 11 |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+| ![Supported][1] 10 |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
 
 PowerShell is supported on Debian for the following processor architectures.
 
-|   Debian   | 7.2 (LTS-current) |        7.3        |
-| ---------- | :---------------: | :---------------: |
-| Version 9+ | x64, Arm32, Arm64 | x64, Arm32, Arm64 |
+|   Debian   | 7.2 (LTS-current) |  7.3  | 7.4 (preview) |
+| ---------- | :---------------: | :---: | :-----------: |
+| Version 9+ |        x64        |  x64  |      x64      |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-debian]: https://wiki.debian.org/DebianReleases
