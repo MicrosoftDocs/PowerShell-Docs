@@ -656,4 +656,4 @@ This modules is only available in Windows PowerShell.
 [04]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71
 [05]: what-s-new-in-powershell-72.md
 [06]: what-s-new-in-powershell-73.md
-[07]: what-s-new-in-powershell-75.md
+[07]: what-s-new-in-powershell-74.md
