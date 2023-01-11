@@ -837,23 +837,28 @@ class MyComparableBar : bar, System.IComparable
 
 ## NoRunspaceAffinity attribute
 
-By default, a PowerShell class is affiliated with the Runspace where it's
+A runspace is the operating environment for the commands invoked by PowerShell.
+This environment includes the commands and data that are currently present, and
+any language restrictions that currently apply.
+
+By default, a PowerShell class is affiliated with the **Runspace** where it's
 created. Using a PowerShell class in `ForEach-Object -Parallel` is not safe.
-Method invocations on the class are marshalled back to the Runspace where it
-was created, which can corrupt the state of the Runsapce or cause a deadlock.
+Method invocations on the class are marshalled back to the **Runspace** where
+it was created, which can corrupt the state of the **Runspace** or cause a
+deadlock.
 
 Adding the `NoRunspaceAffinity` attribute to the class definition ensures that
-the PowerShell class is not affiliated with a particular Runspace. Method
-invocations, both instance and static, use the Runspace of the running thread
-and the thread's current session state.
+the PowerShell class is not affiliated with a particular runspace. Method
+invocations, both instance and static, use the **Runspace** of the running
+thread and the thread's current session state.
 
 The attribute was added in PowerShell 7.4.
 
 ### Example - Class definition with Runspace affinity
 
-The `ShowRunspaceId()` method of `[UnsafeClass]` reports different thread ids
-but the same Runspace id. Eventually, the SessionState is corrupted causing an
-error, such as `Global scope cannot be removed`.
+The `ShowRunspaceId()` method of `[UnsafeClass]` reports different thread Ids
+but the same runspace Id. Eventually, the session state is corrupted causing
+an error, such as `Global scope cannot be removed`.
 
 ```powershell
 # Class definition with Runspace affinity (default behavior)
