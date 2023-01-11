@@ -220,7 +220,7 @@ New-AzVm `
 
 However, you should avoid using line continuation.
 
-- The backtick characters can be hard see and easy to forget.
+- The backtick characters can be hard to see and easy to forget.
 - An extra space after the backtick breaks the line continuation. Since the
   space is hard to see it can be difficult to find the error.
 

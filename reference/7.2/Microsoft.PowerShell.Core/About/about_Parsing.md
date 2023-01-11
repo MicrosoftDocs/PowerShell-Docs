@@ -220,7 +220,7 @@ New-AzVm `
 
 However, you should avoid using line continuation.
 
-- The backtick characters can be hard see and easy to forget.
+- The backtick characters can be hard to see and easy to forget.
 - An extra space after the backtick breaks the line continuation. Since the
   space is hard to see it can be difficult to find the error.
 
@@ -365,8 +365,7 @@ The output is the same for all examples:
 Arg 0 is <"C:\Program Files (x86)\Microsoft\">
 ```
 
-You can build `TestExe` from the source code. See
-[TestExe](https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs).
+You can build `TestExe` from the source code. See [TestExe][06].
 
 ## Passing arguments to PowerShell commands
 
