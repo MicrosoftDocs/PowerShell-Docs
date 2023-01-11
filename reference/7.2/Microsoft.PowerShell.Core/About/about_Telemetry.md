@@ -61,6 +61,9 @@ Microsoft, users shouldn't change this value.
 For more information about these environment variables, see
 [about_Environment_Variables][01].
 
+For more information about Microsoft's statement on privacy, see [Microsoft Privacy Statement][03]
+
 <!-- link references -->
 [01]: about_environment_variables.md#powershell-environment-variables
 [02]: /azure/azure-monitor/app/ip-collection?tabs=net
+[03]: https://privacy.microsoft.com/privacystatement

@@ -68,4 +68,4 @@ For more information about Microsoft's statement on privacy, see [Microsoft Priv
 <!-- link references -->
 [01]: about_environment_variables.md#powershell-environment-variables
 [02]: /azure/azure-monitor/app/ip-collection?tabs=net
-[03]: https://privacy.microsoft.com/en-us/privacystatement
+[03]: https://privacy.microsoft.com/privacystatement
