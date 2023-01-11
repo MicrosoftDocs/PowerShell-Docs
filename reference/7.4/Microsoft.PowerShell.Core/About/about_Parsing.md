@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 08/18/2022
+ms.date: 01/11/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -30,7 +30,7 @@ expression mode and argument mode.
 
 > [!NOTE]
 > As PowerShell parses command input it tries to resolve the command names to
-> cmdlets or native executables. If a command name does not have an exact
+> cmdlets or native executables. If a command name doesn't have an exact
 > match, PowerShell prepends `Get-` to the command as a default verb. For
 > example, PowerShell parses `Service` as `Get-Service`. It's not
 > recommended to use this feature for the following reasons:
@@ -40,7 +40,7 @@ expression mode and argument mode.
 >   execute the intended cmdlet.
 > - `Get-Help` and `Get-Command` don't recognize verb-less names.
 > - The command name may be a reserved word or a language keyword. `Process` is
->   both, and will not resolve to `Get-Process`.
+>   both, and can't be resolved to `Get-Process`.
 
 ## Expression mode
 
@@ -78,10 +78,10 @@ $input.Length -gt 1
   operators like `+` and `-gt`, are interpreted as operators and apply their
   respective operations on their arguments (operands).
 - _Attribute and conversion expressions_ are parsed as expressions and applied
-  to subordinate expressions, e.g. `[int] '7'`.
-- _Variable references_ are evaluated to their values but _splatting_ (i.e.
-  pasting prefilled parameter sets) is forbidden and causes a parser error.
-- Anything else will be treated as a command to be invoked.
+  to subordinate expressions. For example: `[int] '7'`.
+- _Variable references_ are evaluated to their values but _splatting_ is
+  forbidden and causes a parser error.
+- Anything else is treated as a command to be invoked.
 
 ## Argument mode
 
@@ -95,7 +95,7 @@ a shell environment. All input is treated as an expandable string unless it
 uses one of the following syntaxes:
 
 - Dollar sign (`$`) followed by a variable name begins a variable reference,
-  otherwise it is interpreted as part of the expandable string. The variable
+  otherwise it's interpreted as part of the expandable string. The variable
   reference can include member access or indexing.
   - Additional characters following simple variable references, such as
     `$HOME`, are considered part of the same argument. Enclose the variable
@@ -111,8 +111,8 @@ uses one of the following syntaxes:
 - Braces (`{}`) begin a new script blocks
 
 - Commas (`,`) introduce lists passed as arrays, except when the command to be
-  called is a native application, in which case they are interpreted as part of
-  the expandable string. Initial, consecutive or trailing commas are not
+  called is a native application, in which case they're interpreted as part of
+  the expandable string. Initial, consecutive or trailing commas aren't
   supported.
 
 - Parentheses (`()`) begin a new expression
@@ -124,18 +124,18 @@ uses one of the following syntaxes:
   - When followed by additional characters, the first additional character is
     considered the start of a new, separate argument.
   - When preceded by an unquoted literal `$()` works like an expandable string,
-    `()` starts a new argument that is an expression, and `@()` is taken as
-    literal `@` with `()` starting a new argument that is an expression.
+    `()` starts a new argument that's an expression, and `@()` is taken as
+    literal `@` with `()` starting a new argument that's an expression.
 
-- Everything else is treated as an expandable string, except
-  metacharacters that still need escaping.
+- Everything else is treated as an expandable string, except metacharacters
+  that still need escaping. See [Handling special characters][03].
   - The argument-mode metacharacters (characters with special syntactic
-    meaning) are: ``<space> ' " ` , ; ( ) { } | & < > @ #``. Of these, `< > @ #`
-    are only special at the start of a token.
+    meaning) are: ``<space> ' " ` , ; ( ) { } | & < > @ #``. Of these,
+    `< > @ #` are only special at the start of a token.
 
 - The stop-parsing token (`--%`) changes the interpretation of all remaining
-  arguments. For more information, see the
-  [stop-parsing token](#the-stop-parsing-token) section below.
+  arguments. For more information, see the [stop-parsing token][04] section
+  below.
 
 ### Examples
 
@@ -183,11 +183,75 @@ values returned by the expressions.
 | `CMD /CECHO $AB`      | expression | 'A B' (array)   |
 | `CMD /CECHO :$AB`     | argument   | ':A B' (string) |
 
+## Handling special characters
+
+The backtick character (`` ` ``) can be used to escape any special character in
+an expression. This is most useful for escaping the argument-mode
+metacharacters that you want to use as literal characters rather than as a
+metacharacter. For example, to use the dollar sign (`$`) as a literal in an
+expandable string:
+
+```powershell
+"The value of `$ErrorActionPreference is '$ErrorActionPreference'."
+```
+
+```Output
+The value of $ErrorActionPreference is 'Continue'.
+```
+
+## Line continuation
+
+The backtick character can also be used at the end of a line to allow you to
+continue the input on the next line. This is improve the readability of a
+command that takes several parameters with long names and argument values. For
+example:
+
+```powershell
+New-AzVm `
+    -ResourceGroupName "myResourceGroupVM" `
+    -Name "myVM" `
+    -Location "EastUS" `
+    -VirtualNetworkName "myVnet" `
+    -SubnetName "mySubnet" `
+    -SecurityGroupName "myNetworkSecurityGroup" `
+    -PublicIpAddressName "myPublicIpAddress" `
+    -Credential $cred
+```
+
+However, you should avoid using line continuation.
+
+- The backtick characters can be hard to see and easy to forget.
+- An extra space after the backtick breaks the line continuation. Since the
+  space is hard to see it can be difficult to find the error.
+
+PowerShell provides several ways break lines at natural points in the syntax.
+
+- After pipe characters (`|`)
+- After binary operators (`+`, `-`, `-eq`, etc.)
+- After commas (`,`) in an array
+- After opening characters such as `[`, `{`, `(`
+
+For large parameter set, use splatting instead. For example:
+
+```powershell
+$parameters = @{
+    ResourceGroupName = "myResourceGroupVM"
+    Name = "myVM"
+    Location = "EastUS"
+    VirtualNetworkName = "myVnet"
+    SubnetName = "mySubnet"
+    SecurityGroupName = "myNetworkSecurityGroup"
+    PublicIpAddressName = "myPublicIpAddress"
+    Credential = $cred
+}
+New-AzVm @parameters
+```
+
 ## Passing arguments to native commands
 
-When running native commands from PowerShell, the arguments are first parsed
-by PowerShell. The parsed arguments are then joined into a single string with
-each parameter separated by a space.
+When running native commands from PowerShell, the arguments are first parsed by
+PowerShell. The parsed arguments are then joined into a single string with each
+parameter separated by a space.
 
 For example, the following command calls the `icacls.exe` program.
 
@@ -228,16 +292,16 @@ PowerShell sends the following command string to the `icacls.exe` program:
 `X:\VMS /grant Dom\HVAdmin:(CI)(OI)F`
 
 The stop-parsing token is effective only until the next newline or pipeline
-character. You cannot use a continuation character (`` ` ``) to extend its
-effect or use a command delimiter (`;`) to terminate its effect.
+character. You can't use the line continuation character (`` ` ``) to extend
+its effect or use a command delimiter (`;`) to terminate its effect.
 
-Other than `%variable%` environment-variable references, you cannot embed any
+Other than `%variable%` environment-variable references, you can't embed any
 other dynamic elements in the command. Escaping a `%` character as `%%`, the
-way you can do inside batch files, is not supported. `%<name>%` tokens are
-invariably expanded. If `<name>` does not refer to a defined environment
+way you can do inside batch files, isn't supported. `%<name>%` tokens are
+invariably expanded. If `<name>` doesn't refer to a defined environment
 variable the token is passed through as-is.
 
-You cannot use stream redirection (like `>file.txt`) because they are passed
+You can't use stream redirection (like `>file.txt`) because they're passed
 verbatim as arguments to the target command.
 
 Using the stop-parsing token is also the best way to ensure that quoted strings
@@ -270,12 +334,12 @@ property of a `ProcessStartInfo` object. Quotes within the string must be
 escaped using extra quotes or backslash (`\`) characters.
 
 > [!NOTE]
-> The backslash (`\`) character is not recognized as an escape character by
-> PowerShell. It is the escape character used by the underlying API for
+> The backslash (`\`) character isn't recognized as an escape character by
+> PowerShell. It's the escape character used by the underlying API for
 > `ProcessStartInfo.Arguments`.
 
 For more information about the escape requirements, see the documentation for
-[ProcessStartInfo.Arguments](/dotnet/api/system.diagnostics.processstartinfo.arguments).
+[ProcessStartInfo.Arguments][01].
 
 The following examples use the `TestExe.exe` tool. This tool is used by the
 Pester tests in the PowerShell source repo. The goal of these examples is to
@@ -301,8 +365,7 @@ The output is the same for all examples:
 Arg 0 is <"C:\Program Files (x86)\Microsoft\">
 ```
 
-You can build `TestExe` from the source code. See
-[TestExe](https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs).
+You can build `TestExe` from the source code. See [TestExe][06].
 
 ## Passing arguments to PowerShell commands
 
@@ -354,14 +417,21 @@ Arg 3 is <-c>
 
 ## Experimental feature
 
-Powershell 7.2 includes the **PSNativeCommandArgumentPassing** experimental
+PowerShell 7.2 includes the **PSNativeCommandArgumentPassing** experimental
 feature. When this experimental feature is enabled PowerShell uses the
 **ArgumentList** property of the `StartProcessInfo` object rather than our
 current mechanism of reconstructing a string when invoking a native executable.
 
-For more information, see
-[PSNativeCommandArgumentPassing](/powershell/scripting/learn/experimental-features#psnativecommandargumentpassing).
+For more information, see [PSNativeCommandArgumentPassing][02].
 
 ## See also
 
-- [about_Command_Syntax](about_Command_Syntax.md)
+- [about_Command_Syntax][05]
+
+<!-- link references -->
+[01]: /dotnet/api/system.diagnostics.processstartinfo.arguments
+[02]: /powershell/scripting/learn/experimental-features#psnativecommandargumentpassing
+[03]: #handling-special-characters
+[04]: #the-stop-parsing-token
+[05]: about_Command_Syntax.md
+[06]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs
