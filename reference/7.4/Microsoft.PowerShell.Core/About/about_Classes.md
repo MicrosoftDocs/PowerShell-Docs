@@ -911,7 +911,7 @@ while ($true) {
 ```
 
 > [!NOTE]
-> This example runs in an infinite loop. Enter <kbd>Ctrl</kdb>+<kbd>C</kbd> to
+> This example runs in an infinite loop. Enter <kbd>Ctrl</kbd>+<kbd>C</kbd> to
 > stop the execution.
 
 ## Importing classes from a PowerShell module
