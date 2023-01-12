@@ -1,7 +1,7 @@
 ---
 description: Describes the special character sequences that control how PowerShell interprets the next characters in the sequence.
 Locale: en-US
-ms.date: 05/16/2022
+ms.date: 01/11/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Special Characters
@@ -121,7 +121,7 @@ In this example, the text before the carriage return is overwritten.
 Write-Host "These characters are overwritten.`rI want this text instead "
 ```
 
-Notice that the text before the `` `r `` character is not deleted, it is
+Notice that the text before the `` `r `` character isn't deleted, it's
 overwritten.
 
 ```Output
@@ -164,9 +164,9 @@ character with no extra spacing added.
 There is a vertical tab♂between the words.
 ```
 
-The [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701)
-renders the vertical tab character as a carriage return and line feed. The rest
-of the output is printed at the beginning of the next line.
+The [Windows Terminal][05] renders the vertical tab character as a carriage
+return and line feed. The rest of the output is printed at the beginning of the
+next line.
 
 ```Output
 There is a vertical tab
@@ -180,6 +180,12 @@ the next line and writes the remaining output at that point.
 There is a vertical tab
                        between the words.
 ```
+
+## Line continuation
+
+The backtick character can also be used at the end of a line as a signal to the
+PowerShell parser that the command continues on the next line. For more
+information, see [about_Parsing][01].
 
 ## The end-of-parameters token (`--`)
 
@@ -239,9 +245,15 @@ string "$HOME" is passed to the function without interpretation.
 $args = C:\Users\username|--%|$HOME
 ```
 
-For more information about the stop-parsing token, see
-[about_Parsing](about_Parsing.md).
+For more information about the stop-parsing token, see [about_Parsing][02].
 
 ## See also
 
-- [about_Quoting_Rules](about_Quoting_Rules.md)
+- [about_Quoting_Rules][03]
+
+<!-- link references -->
+[01]: about_Parsing.md#line-continuation
+[02]: about_Parsing.md#the-stop-parsing-token
+[03]: about_Quoting_Rules.md
+[04]: https://wikipedia.org/wiki/ANSI_escape_code
+[05]: https://www.microsoft.com/p/windows-terminal/9n0dx20hk701
