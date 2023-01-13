@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/04/2022
+ms.date: 01/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -219,7 +219,7 @@ process
 
 ### Example 9: Using ForEach-Object with more than two script blocks
 
-In this example, we pass two script blocks positionally. All the script blocks bind to the
+In this example, we pass four script blocks positionally. All the script blocks bind to the
 **Process** parameter. However, they are treated as if they had been passed to the **Begin**,
 **Process**, and **End** parameters.
 
