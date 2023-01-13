@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 01/04/2023
+ms.date: 01/13/2023
 title: PowerShell scripting performance considerations
 ---
 
@@ -41,7 +41,7 @@ probably not noticeable for most scripts.
 $arrayList.Add($item) | Out-Null
 ```
 
-However, calling `Out-Null` in a large loop is can be significantly slower, even in PowerShell 7.x.
+However, calling `Out-Null` in a large loop can be significantly slower, even in PowerShell 7.x.
 
 ```powershell
 $d = Get-Date
