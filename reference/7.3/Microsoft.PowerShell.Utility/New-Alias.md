@@ -45,7 +45,7 @@ Get-Alias -Name "C" | Format-List *
 ```
 
 This command creates an alias named `C` to represent the `Get-ChildItem` cmdlet. It creates a
-description "quick gci alias", for the alias and makes it read-only. The last line of the command
+description, `quick gci alias`, for the alias and makes it read-only. The last line of the command
 uses `Get-Alias` to get the new alias and pipes it to Format-List to display all of the information
 about it.
 
