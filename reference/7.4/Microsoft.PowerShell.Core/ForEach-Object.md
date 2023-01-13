@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/04/2022
+ms.date: 01/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
