@@ -1,5 +1,5 @@
 ---
-description: About topics cover a ranges of concepts about PowerShell.
+description: About topics cover a range of concepts about PowerShell.
 Help Version: 7.2.0.0
 Locale: en-US
 ms.date: 10/22/2021
@@ -9,7 +9,7 @@ title: About topics
 
 ## Description
 
-About topics cover a ranges of concepts about PowerShell.
+About topics cover a range of concepts about PowerShell.
 
 ## About Topics
 

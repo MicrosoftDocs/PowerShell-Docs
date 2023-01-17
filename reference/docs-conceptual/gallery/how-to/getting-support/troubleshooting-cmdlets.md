@@ -1,6 +1,6 @@
 ---
 description: This article provide information and steps for troubleshooting errors using the PowerShell Gallery
-ms.date: 11/16/2022
+ms.date: 01/17/2023
 title: Troubleshooting cmdlets
 ---
 # Troubleshooting cmdlets
@@ -25,15 +25,30 @@ The Install and Update cmdlets require internet access to connect to the network
 by the PowerShell Gallery. Ensure that your network access policies allow you to connect to the
 following endpoints.
 
+Hosts required for package discovery and download:
+
+- `onegetcdn.azureedge.net` - CDN hostname
+- `psg-prod-centralus.azureedge.net` - CDN hostname
 - `psg-prod-eastus.azureedge.net` - CDN hostname
 - `az818661.vo.msecnd.net` - CDN hostname
+
+> [!NOTE]
+> The CDN for the PowerShell gallery is active for one name, `psg-prod-eastus.azureedge.net` or
+> `psg-prod-centralus.azureedge.net`, at any given time. The inactive name becomes the valid, active
+> name if there is a need to failover the service. Therefore, both names should be included in your
+> allow lists.
+
+Hosts required when using the PowerShell Gallery website:
+
 - `devopsgallerystorage.blob.core.windows.net` - storage account hostname
 - `*.powershellgallery.com` - website
 - `go.microsoft.com` - redirection service
-- `onegetcdn.azureedge.net` - bootstrap the NuGet Provider in `PowerShellGet/PackageManagement`
 
 > [!NOTE]
 > Cmdlets that interact with the PowerShell Gallery can fail with unexpected errors when there is an
 > outage of the PowerShell Gallery services. To see the current status of the PowerShell Gallery,
-> see the [PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md)
+> see the [PowerShell Gallery Status][01]
 > page on GitHub.
+
+<!-- link references -->
+[01]: https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md

@@ -113,6 +113,13 @@ by the dollar sign (`$`).
 $function:more
 ```
 
+To retrieve the definition for a function that has a dash (`-`) in the name,
+wrap the value after the dollar sign in curly braces.
+
+```powershell
+${function:Clear-Host}
+```
+
 ### Getting selected functions
 
 This command gets the `man` function from the `Function:` drive. It uses the
