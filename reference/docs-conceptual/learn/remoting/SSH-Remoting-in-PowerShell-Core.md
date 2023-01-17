@@ -180,6 +180,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    Make sure SSH Remoting is enabled by following these steps:
 
    1. Open `System Preferences`.
+   1. Click on `General`
    1. Click on `Sharing`.
    1. Check `Remote Login` to set `Remote Login: On`.
    1. Allow access to the appropriate users.
