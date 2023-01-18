@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 12/06/2022
+ms.date: 01/18/2023
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -74,7 +74,7 @@ Same as `$PSItem`. Contains the current object in the pipeline object. You can
 use this variable in commands that perform an action on every object in a
 pipeline.
 
-For more information, see [about_PSItem](about_PSItem.md).
+For more information, see [about_PSItem][22].
 
 ### $args
 
@@ -100,6 +100,11 @@ When you use the `Export-Console` cmdlet without parameters, it automatically
 updates the console file that was most recently used in the session. You can
 use this automatic variable to determine the file to update.
 
+### $EnabledExperimentalFeatures
+
+Contains a list of names of the experimental features that are currently
+enabled.
+
 ### $Error
 
 Contains an array of error objects that represent the most recent errors. The
@@ -107,7 +112,7 @@ most recent error is the first error object in the array `$Error[0]`.
 
 To prevent an error from being added to the `$Error` array, use the
 **ErrorAction** common parameter with a value of **Ignore**. For more
-information, see [about_CommonParameters](about_CommonParameters.md).
+information, see [about_CommonParameters][08].
 
 ### $Event
 
@@ -148,13 +153,13 @@ non-zero integer.
 
 ### $foreach
 
-Contains the enumerator (not the resulting values) of a
-[ForEach](about_ForEach.md) loop. The `$ForEach` variable exists only while the
-`ForEach` loop is running; it's deleted after the loop is completed.
+Contains the enumerator (not the resulting values) of a [ForEach][11] loop. The
+`$ForEach` variable exists only while the `ForEach` loop is running; it's
+deleted after the loop is completed.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
-[Using Enumerators](#using-enumerators).
+[Using Enumerators][05].
 
 ### $HOME
 
@@ -201,7 +206,7 @@ to reuse the `$input` properties.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
-[Using Enumerators](#using-enumerators).
+[Using Enumerators][05].
 
 The `$input` variable is also available to the command specified by the
 `-Command` parameter of `pwsh` when invoked from the command line. The
@@ -241,10 +246,10 @@ was called and whether the `exit` keyword was used:
 
 - When a script uses the `exit` keyword, `$LASTEXITCODE` is set to the
   specified value, regardless of how the script was called. For more
-  information, see [about_Language_Keywords](about_language_keywords.md#exit).
+  information, see [about_Language_Keywords][19].
 - When a script is called directly, like `./Test.ps1`, or with the
-  [call operator](about_operators.md#call-operator-) (`&`) like `& ./Test.ps1`,
-  the value of `$LASTEXITCODE` isn't changed.
+  [call operator][20] (`&`) like `& ./Test.ps1`, the value of `$LASTEXITCODE`
+  isn't changed.
 - When a script is called with `pwsh` and the **File** parameter, the value of
   `$LASTEXITCODE` is set to `1` if the script terminated due to a thrown
   exception and `0` otherwise.
@@ -259,14 +264,13 @@ The `$Matches` hash table can also be populated with captures when you use
 regular expressions with the `-match` operator.
 
 For more information about the `-match` operator, see
-[about_Comparison_Operators](about_comparison_operators.md). For more
-information on regular expressions, see
-[about_Regular_Expressions](about_Regular_Expressions.md).
+[about_Comparison_Operators][09]. For more information on regular expressions,
+see [about_Regular_Expressions][23].
 
 The `$Matches` variable also works in a `switch` statement with the `-Regex`
 parameter. It's populated the same way as the `-match` and `-notmatch`
 operators. For more information about the `switch` statement, see
-[about_Switch](about_Switch.md).
+[about_Switch][25].
 
 > [!NOTE]
 > When `$Matches` is populated in a session, it retains the matched value until
@@ -462,8 +466,8 @@ property contains the name of the parameter set that's being used, and the
 cmdlet dynamically.
 
 For more information about the `$PSCmdlet` automatic variable, see
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-and [about_Functions_Advanced](about_Functions_Advanced.md).
+[about_Functions_CmdletBindingAttribute][15] and
+[about_Functions_Advanced][14].
 
 ### $PSCommandPath
 
@@ -491,6 +495,11 @@ properties. The **InvocationInfo** property has several useful properties,
 including the **Location** property. The **Location** property indicates the
 path of the script that's being debugged.
 
+### $PSEdition
+
+Contains the same value in `$PSVersionTable.PSEdition`. This variable is
+available for use in module manifest files, whereas `$PSVersionTable` is not.
+
 ### $PSHOME
 
 Contains the full path of the installation directory for PowerShell, typically,
@@ -507,7 +516,7 @@ Select-String -Pattern Variable -Path $pshome\*.txt
 Same as `$_`. Contains the current object in the pipeline object. You can use
 this variable in commands that perform an action on every object in a pipeline.
 
-For more information, see [about_PSItem](about_PSItem.md).
+For more information, see [about_PSItem][22].
 
 ### $PSScriptRoot
 
@@ -590,11 +599,11 @@ Contains a stack trace for the most recent error.
 Contains the enumerator not the resulting values of a `Switch` statement. The
 `$switch` variable exists only while the `Switch` statement is running; it's
 deleted when the `switch` statement completes execution. For more information,
-see [about_Switch](about_Switch.md).
+see [about_Switch][25].
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
-[Using Enumerators](#using-enumerators).
+[Using Enumerators][05].
 
 ### $this
 
@@ -618,11 +627,11 @@ Definition : System.Object BaseName {get=if ($this.Extension.Length -gt 0)
              )}else{$this.Name};}
 ```
 
-For more information, see [about_Types.ps1xml](./about_Types.ps1xml.md).
+For more information, see [about_Types.ps1xml][01].
 
 In a PowerShell class, the `$this` variable refers to the instance object of
 the class itself, allowing access to properties and methods defined in the
-class. For more information, see [about_Classes](about_Classes.md).
+class. For more information, see [about_Classes][07].
 
 The `$this` variable is also used by .NET event classes that take script blocks
 as delegates for the event handler. In this scenario, `$this` represents the
@@ -642,18 +651,17 @@ An enumerator contains properties and methods you can use to advance or reset
 iteration, or retrieve iteration values. Directly manipulating enumerators
 isn't considered best practice.
 
-- Within loops, flow control keywords [break](about_Break.md) and
-  [continue](about_Continue.md) should be preferred.
+- Within loops, flow control keywords [break][06] and [continue][10] should be
+  preferred.
 - Within functions that accept pipeline input, it's best practice to use
   parameters with the **ValueFromPipeline** or
   **ValueFromPipelineByPropertyName** attributes.
 
-  For more information, see
-  [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+  For more information, see [about_Functions_Advanced_Parameters][13].
 
 ### MoveNext
 
-The [MoveNext](/dotnet/api/system.collections.ienumerator.movenext) method
+The [MoveNext][03] method
 advances the enumerator to the next element of the collection. **MoveNext**
 returns `True` if the enumerator was successfully advanced, `False` if the
 enumerator has passed the end of the collection.
@@ -661,7 +669,7 @@ enumerator has passed the end of the collection.
 > [!NOTE]
 > The **Boolean** value returned by **MoveNext** is sent to the output stream.
 > You can suppress the output by typecasting it to `[void]` or piping it to
-> [Out-Null](xref:Microsoft.PowerShell.Core.Out-Null).
+> [Out-Null][27].
 >
 > ```powershell
 > $input.MoveNext() | Out-Null
@@ -673,15 +681,13 @@ enumerator has passed the end of the collection.
 
 ### Reset
 
-The [Reset](/dotnet/api/system.collections.ienumerator.reset) method sets the
-enumerator to its initial position, which is **before** the first element in
-the collection.
+The [Reset][04] method sets the enumerator to its initial position, which is
+**before** the first element in the collection.
 
 ### Current
 
-The [Current](/dotnet/api/system.collections.ienumerator.current) property gets
-the element in the collection, or pipeline, at the current position of the
-enumerator.
+The [Current][02] property gets the element in the collection, or pipeline, at
+the current position of the enumerator.
 
 The **Current** property continues to return the same property until
 **MoveNext** is called.
@@ -978,13 +984,42 @@ Default (Current): End
 
 ## See also
 
-- [about_Functions](about_Functions.md)
-- [about_Functions_Advanced](about_Functions_Advanced.md)
-- [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
-- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-- [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-- [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-- [about_Hash_Tables](about_Hash_Tables.md)
-- [about_Preference_Variables](about_Preference_Variables.md)
-- [about_Splatting](about_Splatting.md)
-- [about_Variables](about_Variables.md)
+- [about_Functions][17]
+- [about_Functions_Advanced][14]
+- [about_Functions_Advanced_Methods][12]
+- [about_Functions_Advanced_Parameters][13]
+- [about_Functions_OutputTypeAttribute][16]
+- [about_Functions_CmdletBindingAttribute][15]
+- [about_Hash_Tables][18]
+- [about_Preference_Variables][21]
+- [about_Splatting][24]
+- [about_Variables][26]
+
+<!-- link references -->
+[01]: ./about_Types.ps1xml.md
+[02]: /dotnet/api/system.collections.ienumerator.current
+[03]: /dotnet/api/system.collections.ienumerator.movenext
+[04]: /dotnet/api/system.collections.ienumerator.reset
+[05]: #using-enumerators
+[06]: about_Break.md
+[07]: about_Classes.md
+[08]: about_CommonParameters.md
+[09]: about_comparison_operators.md
+[10]: about_Continue.md
+[11]: about_ForEach.md
+[12]: about_Functions_Advanced_Methods.md
+[13]: about_Functions_Advanced_Parameters.md
+[14]: about_Functions_Advanced.md
+[15]: about_Functions_CmdletBindingAttribute.md
+[16]: about_Functions_OutputTypeAttribute.md
+[17]: about_Functions.md
+[18]: about_Hash_Tables.md
+[19]: about_language_keywords.md#exit
+[20]: about_operators.md#call-operator-
+[21]: about_Preference_Variables.md
+[22]: about_PSItem.md
+[23]: about_Regular_Expressions.md
+[24]: about_Splatting.md
+[25]: about_Switch.md
+[26]: about_Variables.md
+[27]: xref:Microsoft.PowerShell.Core.Out-Null
