@@ -28,7 +28,7 @@ values stored in the array are delimited with a comma and separated from the
 variable name by the assignment operator (`=`).
 
 For example, to create an array named `$A` that contains the seven numeric
-(int) values of 22, 5, 10, 8, 12, 9, and 80, type:
+(integer) values of 22, 5, 10, 8, 12, 9, and 80, type:
 
 ```powershell
 $A = 22,5,10,8,12,9,80
@@ -55,7 +55,7 @@ As a result, `$C` contains four values: 5, 6, 7, and 8.
 
 When no data type is specified, PowerShell creates each array as an object
 array (**System.Object[]**). To determine the data type of an array, use the
-**GetType()** method. For example:
+`GetType()` method. For example:
 
 ```powershell
 $A.GetType()
@@ -115,7 +115,7 @@ $b.Count
 ```
 
 The array operator is useful in scripts when you are getting objects, but don't
-know how many objects you get. For example:
+know how many to expect. For example:
 
 ```powershell
 $p = @(Get-Process Notepad)
@@ -129,8 +129,8 @@ For more information about the array sub-expression operator, see
 ### Reading an array
 
 You can refer to an array using its variable name. To display all the elements
-in the array, invoke the array name. For example, `$a` is an array the numbers
-0 through 9:
+in the array, invoke the array name. For example, `$a` is an array of the
+numbers 0 through 9:
 
 ```powershell
 $a
@@ -185,7 +185,7 @@ $a[1..4]
 4
 ```
 
-Negative numbers count from the end of the array. For example, "-1" refers to
+Negative numbers count from the end of the array. For example, `-1` refers to
 the last element of the array. To display the last three elements of the array,
 in index ascending order, type:
 
@@ -271,8 +271,8 @@ $a[+0..2+4..6+8]
 
 ### Iterations over array elements
 
-You can also use looping constructs, such as `ForEach`, `For`, and `While`
-loops, to refer to the elements in an array. For example, to use a `ForEach`
+You can also use looping constructs, such as `foreach`, `for`, and `while`
+loops, to refer to the elements in an array. For example, to use a `foreach`
 loop to display the elements in the `$a` array, type:
 
 ```powershell
@@ -295,11 +295,11 @@ foreach ($element in $a) {
 9
 ```
 
-The `Foreach` loop iterates through the array and returns each value in the
+The `foreach` loop iterates through the array and returns each value in the
 array until reaching the end of the array.
 
-The `For` loop is useful when you are incrementing counters while examining the
-elements in an array. For example, to use a `For` loop to return every other
+The `for` loop is useful when you are incrementing counters while examining the
+elements in an array. For example, to use a `for` loop to return every other
 value in an array, type:
 
 ```powershell
@@ -317,7 +317,7 @@ for ($i = 0; $i -le ($a.length - 1); $i += 2) {
 8
 ```
 
-You can use a `While` loop to display the elements in an array until a defined
+You can use a `while` loop to display the elements in an array until a defined
 condition is no longer true. For example, to display the elements in the `$a`
 array while the array index is less than 4, type:
 
@@ -481,12 +481,12 @@ $intA
 0
 ```
 
-### ForEach
+### ForEach()
 
 Allows to iterate over all elements in the array and perform a given operation
 for each element of the array.
 
-The `ForEach` method has several overloads that perform different operations.
+The `ForEach()` method has several overloads that perform different operations.
 
 ```
 ForEach(scriptblock expression)
@@ -509,7 +509,7 @@ This method was added in PowerShell v4.
 > the scriptblock is the only parameter. Also, there must not be a space
 > between the method and the opening parenthesis or brace.
 
-The following example shows how use the `ForEach` method. In this case the
+The following example shows how use the `ForEach()` method. In this case the
 intent is to generate the square value of the elements in the array.
 
 ```powershell
@@ -524,7 +524,7 @@ $a.ForEach({ $_ * $_})
 9
 ```
 
-Just like the `-ArgumentList` parameter of `ForEach-Object`, the `arguments`
+Just like the **ArgumentList** parameter of `ForEach-Object`, the `arguments`
 parameter allows the passing of an array of arguments to a script block
 configured to accept them.
 
@@ -533,8 +533,8 @@ For more information about the behavior of **ArgumentList**, see
 
 #### ForEach(type convertToType)
 
-The `ForEach` method can be used to swiftly cast the elements to a different
-type; the following example shows how to convert a list of string dates to
+The `ForEach()` method can be used to cast the elements to a different type;
+the following example shows how to convert a list of string dates to
 `[DateTime]` type.
 
 ```powershell
@@ -552,8 +552,8 @@ Wednesday, March 1, 2017 12:00:00 AM
 
 #### ForEach(string propertyName, object[] newValue)
 
-The `ForEach` method can also be used to quickly retrieve, or set property
-values for every item in the collection.
+The `ForEach()` method can also be used to retrieve, or set property values for
+every item in the collection.
 
 ```powershell
 # Set all LastAccessTime properties of files to the current date.
@@ -570,7 +570,7 @@ Wednesday, June 20, 2018 9:21:57 AM
 
 #### ForEach(string methodName, object[] arguments)
 
-Lastly, `ForEach` methods can be used to execute a method on every item in
+Lastly, `ForEach()` methods can be used to execute a method on every item in
 the collection.
 
 ```powershell
@@ -583,7 +583,7 @@ TWO
 THREE
 ```
 
-Just like the `-ArgumentList` parameter of `ForEach-Object`, the `Arguments`
+Just like the **ArgumentList** parameter of `ForEach-Object`, the `arguments`
 parameter allows the passing of an array of values to a script block configured
 to accept them.
 
@@ -591,16 +591,16 @@ to accept them.
 > Starting in Windows PowerShell 3.0 retrieving properties and executing
 > methods for each item in a collection can also be accomplished using "Methods
 > of scalar objects and collections". You can read more about that here
-> [about_methods][10].
+> [about_Methods][10].
 
-### Where
+### Where()
 
 Allows to filter or select the elements of the array. The script must evaluate
 to anything different than: zero (0), empty string, `$false` or `$null` for the
-element to show after the `Where`. For more information about boolean
+element to show after the `Where()`. For more information about boolean
 evaluation, see [about_Booleans][04].
 
-There is one definition for the `Where` method.
+There is one definition for the `Where()` method.
 
 ```
 Where(scriptblock expression[, WhereOperatorSelectionMode mode
@@ -619,13 +619,13 @@ are returned from the filter.
 
 The value of `mode` must be a [WhereOperatorSelectionMode][02] enum value:
 
-- Default (0) - Return all items
-- First (1) - Return the first item
-- Last (2) - Return the last item
-- SkipUntil (3) - Skip items until condition is true, return all the remaining
+- `Default` (`0`) - Return all items
+- `First` (`1`) - Return the first item
+- `Last` (`2`) - Return the last item
+- `SkipUntil` (`3`) - Skip items until condition is true, return all the remaining
   items (including the first item for which the condition is true)
-- Until (4) - Return all items until condition is true
-- Split (5) - Return an array of two elements
+- `Until` (`4`) - Return all items until condition is true
+- `Split` (`5`) - Return an array of two elements
   - The first element contains matching items
   - The second element contains the remaining items
 
@@ -662,7 +662,7 @@ If a `numberToReturn` is provided, it specifies the maximum number of items
 to return.
 
 ```powershell
-# Get the zip files in the current users profile, sorted by LastAccessTime.
+# Get the zip files in the current users profile, sorted by LastAccessTime
 $Zips = dir $env:userprofile -Recurse '*.zip' | Sort-Object LastAccessTime
 # Get the least accessed file over 100MB
 $Zips.Where({$_.Length -gt 100MB}, 'Default', 1)
@@ -677,7 +677,7 @@ $Zips.Where({$_.Length -gt 100MB}, 'Default', 1)
 ```powershell
 $h = (Get-Date).AddHours(-1)
 $logs = dir 'C:\' -Recurse '*.log' | Sort-Object CreationTime
-# Find the last 5 log files created in the past hour.
+# Find the last 5 log files created in the past hour
 $logs.Where({$_.CreationTime -gt $h}, 'Last', 5)
 ```
 
@@ -707,10 +707,12 @@ localhost
 
 The `Until` mode inverts the `SkipUntil` mode. It returns **ALL** items in a
 collection until an item passes the script block expression. Once an item
-_passes_ the scriptblock expression, the `Where` method stops processing items.
+_passes_ the scriptblock expression, the `Where()` method stops processing
+items.
 
 This means that you receive the first set of _non-passing_ items from the
-`Where` method. _After_ one item passes, the rest are _NOT_ tested or returned.
+`Where()` method. _After_ one item passes, the rest are _NOT_ tested or
+returned.
 
 The number of items returned can be limited by passing a value to the
 `numberToReturn` argument.
@@ -781,14 +783,14 @@ Stopped  AppIDSvc           Application Identity
 ```
 
 > [!NOTE]
-> Both `foreach` and `where` methods are intrinsic members. For more
+> Both `ForEach()` and `Where()` methods are intrinsic members. For more
 > information about intrinsic members, see [about_Instrinsic_Members][08].
 
 ## Get the members of an array
 
-To get the properties and methods of an array, such as the Length property and
-the **SetValue** method, use the **InputObject** parameter of the `Get-Member`
-cmdlet.
+To get the properties and methods of an array, such as the **Length** property
+and the **SetValue** method, use the **InputObject** parameter of the
+`Get-Member` cmdlet.
 
 When you pipe an array to `Get-Member`, PowerShell sends the items one at a
 time and `Get-Member` returns the type of each item in the array (ignoring
@@ -960,7 +962,8 @@ PS> [Collections.Generic.Dictionary[string, int]]::new()['nosuchkey']
 # No output ($null)
 
 PS> [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey')
-GetValueInvocationException: Exception getting "Item": "The given key 'nosuchkey' was not present in the dictionary."
+GetValueInvocationException: Exception getting "Item": "The given key 'nosuchkey'
+ was not present in the dictionary."
 ```
 
 ## Member-access enumeration
@@ -997,8 +1000,8 @@ $files.LastWriteTime = (Get-Date).AddDays(-1)
 ```
 
 ```Output
-InvalidOperation: The property 'LastWriteTime' cannot be found on this object. Verify that the
-property exists and can be set.
+InvalidOperation: The property 'LastWriteTime' cannot be found on this object.
+Verify that the property exists and can be set.
 ```
 
 To set the values you must use a method.
@@ -1043,7 +1046,7 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 ## See also
 
 - [about_For][05]
-- [about_Foreach][06]
+- [about_ForEach][06]
 - [about_Hash_Tables][07]
 - [about_Member-Access_Enumeration][09]
 - [about_Operators][11]
@@ -1056,11 +1059,11 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 [03]: about_Assignment_Operators.md
 [04]: about_Booleans.md
 [05]: about_For.md
-[06]: about_Foreach.md
+[06]: about_ForEach.md
 [07]: about_Hash_Tables.md
 [08]: about_Intrinsic_Members.md
 [09]: about_Member-Access_Enumeration.md
-[10]: about_methods.md
+[10]: about_Methods.md
 [11]: about_Operators.md
 [12]: about_Splatting.md#splatting-with-arrays
 [13]: about_While.md
