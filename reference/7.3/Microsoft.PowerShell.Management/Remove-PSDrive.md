@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-psdrive?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-PSDrive
@@ -204,6 +204,11 @@ You can pipe a drive object, such as from the `Get-PSDrive` cmdlet, to this cmdl
 This cmdlet returns no output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Remove-PSDrive`:
+
+- All platforms:
+  - `rdr`
 
 - The `Remove-PSDrive` cmdlet is designed to work with the data exposed by any PowerShell provider.
   To list the providers in your session, use the `Get-PSProvider` cmdlet. For more information, see
