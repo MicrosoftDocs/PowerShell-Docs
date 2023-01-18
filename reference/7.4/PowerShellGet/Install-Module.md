@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 12/09/2022
+ms.date: 01/17/2023
 online version: https://learn.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
@@ -522,6 +522,11 @@ When using the **PassThru** parameter, `Install-Module` outputs a **PSRepository
 for the module. This is the same information that you get from the `Find-Module` cmdlet.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Install-Module`:
+
+- All platforms:
+  - `inmo`
 
 `Install-Module` runs on PowerShell 5.0 or later releases, on Windows 7 or Windows 2008 R2 and later
 releases of Windows.
