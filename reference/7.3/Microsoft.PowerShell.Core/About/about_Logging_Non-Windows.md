@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 08/29/2022
+ms.date: 01/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Non-Windows
@@ -26,7 +26,7 @@ more information, refer to the Linux computer's local `man` pages. On
 
 ## Viewing PowerShell log output on Linux
 
-PowerShell logs to **syslog** on Linux and any of the tools commonly used to
+PowerShell logs to **syslog** on Linux. Any of the tools commonly used to
 view **syslog** contents may be used.
 
 The format of the log entries uses the following template:
@@ -55,43 +55,88 @@ TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
 
 ### Filtering PowerShell log entries using rsyslog
 
-Normally, PowerShell log entries are written to the default `location/file` for
-**syslog**. However, it's possible to redirect the entries to a custom file.
+By default, PowerShell log entries are written to the `/var/log/syslog` **syslog**.
+In the following example, use the `cat` Linux command in a terminal to query the
+**syslog** for PowerShell entries.
 
-1. Create a conf for PowerShell log configuration and provide a number that's
-   less than 50 (for `50-default.conf`), such as `40-powershell.conf`. The file
-   should be placed under `/etc/rsyslog.d`.
+```
+cat /var/log/syslog | grep -i powershell
+```
 
-1. Add the following entry to the file:
+It's also possible to redirect the PowerShell log entries to a separate file.
+
+> [!NOTE]
+> When the PowerShell log entries are redirected to a separate file, they are no
+> longer logged in the default syslog.
+
+1. Create a conf file for the PowerShell log configuration. Provide a number
+   for the file to begin with that's less than the default. For example,
+   `40-powershell.conf` where the default is `50-default.conf`.
+
+   Create the new conf file in the `/etc/rsyslog.d` directory using the `nano`
+   command.
+
+   ```
+   sudo nano /etc/rsyslog.d/40-powershell.conf
+   ```
+
+1. Add the following to the new conf file:
 
    ```
    :syslogtag, contains, "powershell[" /var/log/powershell.log
    & stop
    ```
 
-1. Make sure `/etc/rsyslog.conf` includes the new file. Often, it will have a
-   generic include statement that looks like following configuration:
+1. Verify `/etc/rsyslog.conf` includes the new file. It may have a
+   generic statement that includes it, such as the following:
 
    `$IncludeConfig /etc/rsyslog.d/*.conf`
 
    If it doesn't, you'll need to add an include statement manually.
 
-1. Make sure attributes and permissions are set appropriately.
+1. Verify the attributes and permissions are set appropriately.
 
    ```
+   sudo ls -l /etc/rsyslog.d/40-powershell.conf
+   ```
+
+   ```Output
    -rw-r--r-- 1 root root   67 Nov 28 12:51 40-powershell.conf
    ```
 
 1. Set ownership to **root**.
 
    ```
-   chown root:root /etc/rsyslog.d/40-powershell.conf
+   sudo chown root:root /etc/rsyslog.d/40-powershell.conf
    ```
 
 1. Set access permissions: **root** has read/write, **users** have read.
 
    ```
-   chmod 644 /etc/rsyslog.d/40-powershell.conf
+   sudo chmod 644 /etc/rsyslog.d/40-powershell.conf
+   ```
+
+1. Restart the rsyslog service.
+
+   ```
+   sudo systemctl restart rsyslog.service
+   ```
+
+1. Run `pwsh` to generate some information to log.
+
+   ```
+   pwsh
+   ```
+
+> [!NOTE]
+> The `/var/log/powershell.log` file isn't created until the rsyslog
+> service is restarted and PowerShell generates some information to log.
+
+1. Query the log file to verify PowerShell information is being logged to the
+   new file.
+
+   ```
+   cat /var/log/powershell.log
    ```
 
 ## Viewing PowerShell log output on macOS
