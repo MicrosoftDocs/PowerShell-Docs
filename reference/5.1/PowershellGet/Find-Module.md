@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 12/09/2022
+ms.date: 01/17/2023
 online version: https://learn.microsoft.com/powershell/module/powershellget/find-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
@@ -555,6 +555,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 such as `Install-Module`.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Find-Module`:
+
+- `fimo`
 
 > [!IMPORTANT]
 > As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS)

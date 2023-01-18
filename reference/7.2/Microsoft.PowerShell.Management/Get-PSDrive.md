@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-psdrive?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSDrive
@@ -292,6 +292,11 @@ You can't pipe objects to this cmdlet.
 This cmdlet returns objects representing the drives in the session.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-PSDrive`:
+
+- All platforms:
+  - `gdr`
 
 - This cmdlet is designed to work with the data exposed by any provider. To list the providers
   available in your session, use the `Get-PSProvider` cmdlet. For more information, see

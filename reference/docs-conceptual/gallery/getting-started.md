@@ -1,6 +1,6 @@
 ---
 description: This article explains how to get started using the PowerShell Gallery and the PowerShellGet cmdlets
-ms.date: 01/17/2023
+ms.date: 01/18/2023
 title: Get Started with the PowerShell Gallery
 ---
 # Getting Started with the PowerShell Gallery
@@ -148,7 +148,7 @@ Hosts required when using the PowerShell Gallery website:
 - `*.powershellgallery.com` - website
 - `go.microsoft.com` - redirection service
 
-[!INCLUDE [TLS 1.2 Requirement][01]]
+[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
 
 ## Related links
 
@@ -168,7 +168,6 @@ Hosts required when using the PowerShell Gallery website:
 - [Update-Script][17]
 
 <!-- link references -->
-[01]: ../../includes/tls-gallery.md
 [02]: /azure/automation
 [03]: /powershell/module/powershellget
 [04]: /powershell/module/powershellget/Find-DscResource

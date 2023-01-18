@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSDrive
@@ -507,6 +507,11 @@ You can't pipe objects to this cmdlet
 This cmdlet returns a **PSDriveInfo** object representing the created drive.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `New-PSDrive`:
+
+- `mount`
+- `ndr`
 
 `New-PSDrive` is designed to work with the data exposed by any provider. To list the providers
 available in your session, use `Get-PSProvider`. For more information about providers, see

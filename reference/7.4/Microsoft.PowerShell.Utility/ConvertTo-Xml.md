@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-xml?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Xml
@@ -28,13 +28,14 @@ of one or more .NET objects. To use this cmdlet, pipe one or more objects to the
 
 When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** parameter to submit
 multiple objects, `ConvertTo-Xml` returns a single, in-memory XML document that includes
-representations of all of the objects.
+representations of all the objects.
 
 This cmdlet is similar to [Export-Clixml](./Export-Clixml.md) except that `Export-Clixml` stores the
-resulting XML in a [Common Language Infrastructure(CLI) XML](https://www.ecma-international.org/publications/standards/Ecma-335.htm)
+resulting XML in a
+[Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/)
 file that can be reimported as objects with [Import-Clixml](./Import-Clixml.md). `ConvertTo-Xml`
 returns an in-memory representation of an XML document, so you can continue to process it in
-PowerShell. `ConvertTo-Xml` does not have an option to convert objects to CLI XML.
+PowerShell. `ConvertTo-Xml` doesn't have an option to convert objects to CLI XML.
 
 ## EXAMPLES
 
@@ -52,8 +53,8 @@ This command converts the current date (a **DateTime** object) to XML.
 ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
 ```
 
-This command converts the process objects that represent all of the processes on the computer into
-an XML document. The objects are expanded to a depth of three levels.
+This command converts the process objects that represent all the processes on the computer into an
+XML document. The objects are expanded to a depth of three levels.
 
 ## PARAMETERS
 
@@ -61,12 +62,9 @@ an XML document. The objects are expanded to a depth of three levels.
 
 Determines the output format. The acceptable values for this parameter are:
 
-- `String`
-  Returns a single string.
-- `Stream`
-  Returns an array of strings.
-- `Document`
- Returns an **XmlDocument** object.
+- `String` - Returns a single string.
+- `Stream` - Returns an array of strings.
+- `Document` - Returns an **XmlDocument** object.
 
 The default value is `Document`.
 
@@ -143,7 +141,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
