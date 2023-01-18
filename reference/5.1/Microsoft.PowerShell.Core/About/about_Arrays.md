@@ -28,7 +28,7 @@ values stored in the array are delimited with a comma and separated from the
 variable name by the assignment operator (`=`).
 
 For example, to create an array named `$A` that contains the seven numeric
-(int) values of 22, 5, 10, 8, 12, 9, and 80, type:
+(integer) values of 22, 5, 10, 8, 12, 9, and 80, type:
 
 ```powershell
 $A = 22,5,10,8,12,9,80
@@ -55,7 +55,7 @@ As a result, `$C` contains four values: 5, 6, 7, and 8.
 
 When no data type is specified, PowerShell creates each array as an object
 array (**System.Object[]**). To determine the data type of an array, use the
-**GetType()** method. For example:
+`GetType()` method. For example:
 
 ```powershell
 $A.GetType()
@@ -115,7 +115,7 @@ $b.Count
 ```
 
 The array operator is useful in scripts when you are getting objects, but don't
-know how many objects you get. For example:
+know how many to expect. For example:
 
 ```powershell
 $p = @(Get-Process Notepad)
@@ -129,7 +129,7 @@ For more information about the array sub-expression operator, see
 ### Reading an array
 
 You can refer to an array using its variable name. To display all the elements
-in the array, invoke the array name. For example, `$a` is an array the numbers
+in the array, invoke the array name. For example, `$a` is an array of the numbers
 0 through 9:
 
 ```powershell
@@ -619,7 +619,7 @@ are returned from the filter.
 
 The value of `mode` must be a [WhereOperatorSelectionMode][02] enum value:
 
-- Default (0) - Return all items
+- `Default` (`0`) - Return all items
 - First (1) - Return the first item
 - Last (2) - Return the last item
 - SkipUntil (3) - Skip items until condition is true, return all the remaining
