@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/19/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-powershelldatafile?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PowerShellDataFile
@@ -33,7 +33,8 @@ The `Import-PowerShellDataFile` cmdlet safely imports key-value pairs from hasht
 `.PSD1` file. The values could be imported using `Invoke-Expression` on the contents of the file.
 However, `Invoke-Expression` runs any code contained in the file. This could produce unwanted
 results or execute unsafe code. `Import-PowerShellDataFile` imports the data without invoking the
-code. By default there is a 500 key limit but can be bypassed with the **SkipLimitCheck** switch.
+code. By default there is a 500 key limit, but this can be bypassed with the **SkipLimitCheck**
+switch.
 
 ## EXAMPLES
 
@@ -72,7 +73,7 @@ NodeName                       DSC-02
 ### -LiteralPath
 
 The path to the file being imported. All characters in the path are treated as literal values.
-Wildcard characters are not processed.
+Wildcard characters aren't processed.
 
 ```yaml
 Type: System.String[]
@@ -124,7 +125,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -141,3 +143,5 @@ This cmdlet returns the data from the file as a hash table.
 [Invoke-Expression](Invoke-Expression.md)
 
 [Import-LocalizedData](Import-LocalizedData.md)
+
+[about_Data_Files](../Microsoft.PowerShell.Core/About/about_Data_Files.md)

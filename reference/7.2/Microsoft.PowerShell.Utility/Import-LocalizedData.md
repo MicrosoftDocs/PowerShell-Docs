@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/19/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-localizeddata?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-LocalizedData
@@ -11,7 +11,7 @@ title: Import-LocalizedData
 # Import-LocalizedData
 
 ## SYNOPSIS
-Imports language-specific data into scripts and functions based on the UI culture that is selected
+Imports language-specific data into scripts and functions based on the UI culture that's selected
 for the operating system.
 
 ## SYNTAX
@@ -24,18 +24,18 @@ Import-LocalizedData [[-BindingVariable] <String>] [[-UICulture] <String>] [-Bas
 ## DESCRIPTION
 
 The `Import-LocalizedData` cmdlet dynamically retrieves strings from a subdirectory whose name
-matches the UI language set for the current user of the operating system. It is designed to enable
+matches the UI language set for the current user of the operating system. It's designed to enable
 scripts to display user messages in the UI language selected by the current user.
 
 `Import-LocalizedData` imports data from `.psd1` files in language-specific subdirectories of the
-script directory and saves them in a local variable that is specified in the command. The cmdlet
+script directory and saves them in a local variable that's specified in the command. The cmdlet
 selects the subdirectory and file based on the value of the `$PSUICulture` automatic variable. When
 you use the local variable in the script to display a user message, the message appears in the
 user's UI language.
 
 You can use the parameters of `Import-LocalizedData` to specify an alternate UI culture, path, and
 filename, to add supported commands, and to suppress the error message that appears if the `.psd1`
-files are not found.
+files aren't found.
 
 The `Import-LocalizedData` cmdlet supports the script internationalization initiative that was
 introduced in Windows PowerShell 2.0. This initiative aims to better serve users worldwide by making
@@ -61,7 +61,7 @@ file in the `C:\test\zh-CN` directory into the `$Messages` variable.
 ### Example 2: Import localized data strings
 
 This example is run at the command line not in a script. It gets localized data strings from the
-Test.psd1 file and displays them at the command line. Because the command is not used in a script,
+Test.psd1 file and displays them at the command line. Because the command isn't used in a script,
 the **FileName** parameter is required. The command uses the **UICulture** parameter to specify the
 en-US culture.
 
@@ -70,14 +70,14 @@ Import-LocalizedData -FileName "Test.psd1" -UICulture "en-US"
 ```
 
 ```Output
-Name                           Value
-----                           -----
-Msg3                           "Use $_ to represent the object that is being processed."
-Msg2                           "This command requires the credentials of a member of the Administrators group on the...
-Msg1                           "The Name parameter is missing from the command."
+Name           Value
+----           -----
+Msg3           "Use $_ to represent the object that's being processed."
+Msg2           "This command requires the credentials of a member of the Administrators group on the...
+Msg1           "The Name parameter is missing from the command."
 ```
 
-`Import-LocalizedData` returns a hash table that contains the localized data strings.
+`Import-LocalizedData` returns a hashtable that contains the localized data strings.
 
 ### Example 3: Import UI culture strings
 
@@ -103,7 +103,7 @@ ConvertFrom-StringData @'
 
 Msg1 = "The Name parameter is missing from the command."
 Msg2 = "This command requires the credentials of a member of the Administrators group on the computer."
-Msg3 = "Use $_ to represent the object that is being processed."
+Msg3 = "Use $_ to represent the object that's being processed."
 '@
 
 # In C:\Test\Test.ps1
@@ -119,7 +119,7 @@ This command requires the credentials of a member of the Administrators group on
 ```
 
 The first part of the example shows the contents of the `Test.psd1` file. It contains a
-`ConvertFrom-StringData` command that converts a series of named text strings into a hash table. The
+`ConvertFrom-StringData` command that converts a series of named text strings into a hashtable. The
 `Test.psd1` file is located in the en-US subdirectory of the `C:\Test` directory that contains the
 script.
 
@@ -155,13 +155,13 @@ $UserMessages.Msg1...
 ```
 
 In this example, the DATA section of the TestScript.ps1 script contains a `ConvertFrom-StringData`
-command that converts the contents of the DATA section to a hash table and stores in the value of
-the `$UserMessages` variable.
+command that converts the contents of the DATA section to a hashtable and stores in the value of the
+`$UserMessages` variable.
 
-The script also includes an `Import-LocalizedData` command, which imports a hash table of translated
+The script also includes an `Import-LocalizedData` command, which imports a hashtable of translated
 text strings from the TestScript.psd1 file in the subdirectory specified by the value of the
 `$PsUICulture` variable. If the command finds the `.psd1` file, it saves the translated strings from
-the file in the value of the same `$UserMessages` variable, overwriting the hash table saved by the
+the file in the value of the same `$UserMessages` variable, overwriting the hashtable saved by the
 DATA section logic.
 
 The third command displays the first message in the `$UserMessages` variable.
@@ -170,11 +170,11 @@ If the `Import-LocalizedData` command finds a `.psd1` file for the `$PsUICulture
 value of the `$UserMessages` variable contains the translated text strings. If the command fails for
 any reason, the command displays the default text strings defined in the DATA section of the script.
 
-### Example 6: Suppress error messages if the UI culture is not found
+### Example 6: Suppress error messages if the UI culture isn't found
 
-This example shows how to suppress the error messages that appear when `Import-LocalizedData` cannot
-find the directories that match the user's UI culture or cannot find a `.psd1` file for the script
-in those directories.
+This example shows how to suppress the error messages that appear when `Import-LocalizedData` can't
+find the directories that match the user's UI culture or can't find a `.psd1` file for the script in
+those directories.
 
 ```powershell
 PS C:\> # In Day1.ps1
@@ -186,7 +186,8 @@ Import-LocalizedData -BindingVariable "Day"
 Import-LocalizedData -BindingVariable "Day" -ErrorAction:SilentlyContinue
 
 PS C:\> .\Day1.ps1
-Import-LocalizedData : Cannot find PowerShell data file 'Day1.psd1' in directory 'C:\ps-test\fr-BE\' or any parent culture directories.
+Import-LocalizedData : Can't find PowerShell data file 'Day1.psd1' in directory 'C:\ps-test\fr-BE\'
+or any parent culture directories.
 At C:\ps-test\Day1.ps1:17 char:21+ Import-LocalizedData <<<<  Day
 Today is Tuesday
 
@@ -210,9 +211,9 @@ message and English output. `Day2.ps1` just displays the English output.
 
 ### -BaseDirectory
 
-Specifies the base directory where the `.psd1` files are located. The default is the directory
-where the script is located. `Import-LocalizedData` searches for the `.psd1` file for the script
-in a language-specific subdirectory of the base directory.
+Specifies the base directory where the `.psd1` files are located. The default is the directory where
+the script is located. `Import-LocalizedData` searches for the `.psd1` file for the script in a
+language-specific subdirectory of the base directory.
 
 ```yaml
 Type: System.String
@@ -232,14 +233,14 @@ Specifies the variable into which the text strings are imported. Enter a variabl
 dollar sign (`$`).
 
 In Windows PowerShell 2.0, this parameter is required. In Windows PowerShell 3.0, this parameter is
-optional. If you omit this parameter, `Import-LocalizedData` returns a hash table of the text
-strings. The hash table is passed down the pipeline or displayed at the command line.
+optional. If you omit this parameter, `Import-LocalizedData` returns a hashtable of the text
+strings. The hashtable is passed down the pipeline or displayed at the command line.
 
 When using `Import-LocalizedData` to replace default text strings specified in the DATA section of a
 script, assign the DATA section to a variable and enter the name of the DATA section variable in the
 value of the **BindingVariable** parameter. Then, when `Import-LocalizedData` saves the imported
 content in the **BindingVariable**, the imported data will replace the default text strings. If you
-are not specifying default text strings, you can select any variable name.
+aren't specifying default text strings, you can select any variable name.
 
 ```yaml
 Type: System.String
@@ -255,16 +256,16 @@ Accept wildcard characters: False
 
 ### -FileName
 
-Specifies the name of the data file (`.psd1)` to be imported. Enter a file name. You can specify a
-file name that does not include its `.psd1` file name extension, or you can specify the file name
-including the `.psd1` file name extension. Data files should be saved as Unicode or UTF-8.
+Specifies the name of the data file (`.psd1)` to be imported. Enter a filename. You can specify a
+filename that doesn't include its `.psd1` filename extension, or you can specify the filename
+including the `.psd1` filename extension. Data files should be saved as Unicode or UTF-8.
 
-The **FileName** parameter is required when `Import-LocalizedData` is not used in a script.
+The **FileName** parameter is required when `Import-LocalizedData` isn't used in a script.
 Otherwise, the parameter is optional and the default value is the base name of the script. You can
 use this parameter to direct `Import-LocalizedData` to search for a different `.psd1` file.
 
-For example, if the **FileName** is omitted and the script name is FindFiles.ps1,
-`Import-LocalizedData` searches for the FindFiles.psd1 data file.
+For example, if the **FileName** is omitted and the script name is `FindFiles.ps1`,
+`Import-LocalizedData` searches for the `FindFiles.psd1` data file.
 
 ```yaml
 Type: System.String
@@ -300,19 +301,18 @@ Accept wildcard characters: False
 
 ### -UICulture
 
-Specifies an alternate UI culture.
-The default is the value of the `$PsUICulture` automatic variable.
-Enter a UI culture in `<language>-<region>` format, such as `en-US`, `de-DE`, or `ar-SA`.
+Specifies an alternate UI culture. The default is the value of the `$PsUICulture` automatic
+variable. Enter a UI culture in `<language>-<region>` format, such as `en-US`, `de-DE`, or `ar-SA`.
 
 The value of the **UICulture** parameter determines the language-specific subdirectory (within the
 base directory) from which `Import-LocalizedData` gets the `.psd1` file for the script.
 
 The cmdlet searches for a subdirectory with the same name as the value of the **UICulture**
-parameter or the `$PsUICulture` automatic variable, such as `de-DE` or `ar-SA`. If it cannot find
-the directory, or the directory does not contain a `.psd1` file for the script, it searches for a
-subdirectory with the name of the language code, such as de or ar. If it cannot find the
-subdirectory or `.psd1` file, the command fails and the data is displayed in the default language
-specified in the script.
+parameter or the `$PsUICulture` automatic variable, such as `de-DE` or `ar-SA`. If it can't find the
+directory, or the directory doesn't contain a `.psd1` file for the script, it searches for a
+subdirectory with the name of the language code, such as de or ar. If it can't find the subdirectory
+or `.psd1` file, the command fails and the data is displayed in the default language specified in
+the script.
 
 ```yaml
 Type: System.String
@@ -343,21 +343,21 @@ You can't pipe objects to this cmdlet.
 
 ### System.Collections.Hashtable
 
-This cmdlet saves the hash table in the variable specified by the value of the **BindingVariable**
+This cmdlet saves the hashtable in the variable specified by the value of the **BindingVariable**
 parameter.
 
 ## NOTES
 
 - Before using `Import-LocalizedData`, localize your user messages. Format the messages for each
-  locale (UI culture) in a hash table of key-value pairs, and save the hash table in a file with the
-  same name as the script and a `.psd1` file name extension. Create a directory under the script
-  directory for each supported UI culture, and then save the `.psd1` file for each UI culture in
-  the directory with the UI culture name.
+  locale (UI culture) in a hashtable of key-value pairs, and save the hashtable in a file with the
+  same name as the script and a `.psd1` filename extension. Create a directory under the script
+  directory for each supported UI culture, and then save the `.psd1` file for each UI culture in the
+  directory with the UI culture name.
 
-  For example, localize your user messages for the de-DE locale and format them in a hash table.
-  Save the hash table in a `<ScriptName>.psd1` file. Then create a `de-DE` subdirectory under the
-  script directory, and save the German `<ScriptName\>.psd1` file in the `de-DE` subdirectory.
-  Repeat this method for each locale that you support.
+  For example, localize your user messages for the de-DE locale and format them in a hashtable. Save
+  the hashtable in a `<ScriptName>.psd1` file. Then create a `de-DE` subdirectory under the script
+  directory, and save the German `<ScriptName>.psd1` file in the `de-DE` subdirectory. Repeat this
+  method for each locale that you support.
 
 - `Import-LocalizedData` performs a structured search for the localized user messages for a script.
 
@@ -367,17 +367,17 @@ parameter.
   **UICulture** parameter), such as `de-DE` or `ar-SA`. Then, it searches in that subdirectory for a
   `.psd1` file with the same name as the script (or the value of the **FileName** parameter).
 
-  If `Import-LocalizedData` cannot find a subdirectory with the name of the UI culture, or the
-  subdirectory does not contain a `.psd1` file for the script, it searches for a `.psd1` file
-  for the script in a subdirectory with the name of the language code, such as de or ar. If it
-  cannot find the subdirectory or `.psd1` file, the command fails, the data is displayed in the
-  default language in the script, and an error message is displayed explaining that the data could
-  not be imported. To suppress the message and fail gracefully, use the **ErrorAction** common
-  parameter with a value of SilentlyContinue.
+  If `Import-LocalizedData` can't find a subdirectory with the name of the UI culture, or the
+  subdirectory doesn't contain a `.psd1` file for the script, it searches for a `.psd1` file for the
+  script in a subdirectory with the name of the language code, such as de or ar. If it can't find
+  the subdirectory or `.psd1` file, the command fails, the data is displayed in the default language
+  in the script, and an error message is displayed explaining that the data could not be imported.
+  To suppress the message and fail gracefully, use the **ErrorAction** common parameter with a value
+  of SilentlyContinue.
 
-  If `Import-LocalizedData` finds the subdirectory and the `.psd1` file, it imports the hash table
-  of user messages into the value of the **BindingVariable** parameter in the command. Then, when
-  you display a message from the hash table in the variable, the localized message is displayed.
+  If `Import-LocalizedData` finds the subdirectory and the `.psd1` file, it imports the hashtable of
+  user messages into the value of the **BindingVariable** parameter in the command. Then, when you
+  display a message from the hashtable in the variable, the localized message is displayed.
 
   For more information, see
   [about_Script_Internationalization](../Microsoft.Powershell.Core/About/about_Script_Internationalization.md).
@@ -388,3 +388,4 @@ parameter.
 
 [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
 
+[about_Data_Files](../Microsoft.PowerShell.Core/About/about_Data_Files.md)
