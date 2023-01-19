@@ -27,7 +27,7 @@ values. You can't use code or PowerShell expressions.
 
 Module manifests are PowerShell data files. The data in the file must be
 contained in a hashtable. The structure of that hashtable only supports
-specific key name related to PowerShell modules.
+specific key names related to PowerShell modules.
 
 The values assigned to the settings in the manifest file can be expressions
 that are evaluated by PowerShell. This allows you to construct paths and
