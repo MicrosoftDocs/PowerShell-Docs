@@ -1,7 +1,7 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 01/09/2023
+ms.date: 01/19/2023
 no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -90,7 +90,7 @@ configuration.
 
 ## Setting the language mode
 
-The language mode in a PowerShell session can be set through the built in
+The language mode in a PowerShell session can be set through the built-in
 `$ExecutionContext` variable.
 
 ```powershell
@@ -154,7 +154,8 @@ versions of Windows.
 ### RestrictedLanguage mode
 
 The `RestrictedLanguage` mode was created for Windows RT, which is no longer
-supported. This mode still exists, but it's deprecated and no longer used.
+supported. This mode is also used to process modules manifests loaded by
+`Import-Module`.
 
 In `RestrictedLanguage` mode, users can run commands (cmdlets, functions, CIM
 commands, and workflows), but can't use script blocks.
@@ -171,7 +172,7 @@ By default, only the following variables are permitted in
 - `$False`
 - `$Null`
 
-Module manifests for modules loaded in `RestrictedLanguage` mode may use these
+Module manifests are loaded in `RestrictedLanguage` mode and may use these
 additional variables:
 
 - `$PSScriptRoot`
