@@ -154,7 +154,7 @@ For more information, see [Invoke-Item][9].
 <!-- link references -->
 [1]: /powershell/module/microsoft.powershell.core/about/about_parsing#passing-arguments-to-native
 [2]: /powershell/module/microsoft.powershell.core/about/about_quoting_rules
-[3]: ../experimental-features.md#psnativecommanderroractionpreference
+[3]: ../experimental-features.md#psnativecommandargumentpassing
 [4]: /powershell/module/microsoft.powershell.core/about/about_redirection
 [5]: /powershell/module/microsoft.powershell.core/about/about_output_streams
 [6]: ../experimental-features.md#psnativecommanderroractionpreference
