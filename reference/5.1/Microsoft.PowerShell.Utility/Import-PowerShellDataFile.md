@@ -18,13 +18,13 @@ Imports values from a `.PSD1` file without invoking its contents.
 ### ByPath (Default)
 
 ```
-Import-PowerShellDataFile [-Path] <String[]> [<CommonParameters>]
+Import-PowerShellDataFile [[-Path] <string[]>] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Import-PowerShellDataFile [-LiteralPath] <String[]> [<CommonParameters>]
+Import-PowerShellDataFile [-LiteralPath <string[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -75,7 +75,6 @@ NodeName                       DSC-02
 ### -LiteralPath
 
 The path to the file being imported. All characters in the path are treated as literal values.
-Wildcard characters aren't processed.
 
 ```yaml
 Type: System.String[]
@@ -83,7 +82,7 @@ Parameter Sets: ByLiteralPath
 Aliases: PSPath, LP
 
 Required: True
-Position: 0
+Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
