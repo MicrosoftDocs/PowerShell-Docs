@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/13/2023
+ms.date: 01/19/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Join-String
@@ -83,11 +83,11 @@ Get-ChildItem -Directory C:\ | Join-String -Property Name -DoubleQuote -Separato
 "PerfLogs", "Program Files", "Program Files (x86)", "Users", "Windows"
 ```
 
-`Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\`
-drive. The objects are sent down the pipeline to `Join-String`. The **Property** parameter
-specifies the directory names. The **DoubleQuote** parameter wraps the directory names with
-double-quote marks. The **Separator** parameter specifies to use a comma and space (`, `) to
-separate the directory names.
+`Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.
+The objects are sent down the pipeline to `Join-String`. The **Property** parameter specifies the
+directory names. The **DoubleQuote** parameter wraps the directory names with double-quote marks.
+The **Separator** parameter specifies to use a comma and space (`, `) to separate the directory
+names.
 
 The `Get-ChildItem` objects are **System.IO.DirectoryInfo** and `Join-String` converts the objects
 to **System.String**.
@@ -105,8 +105,8 @@ Get-ChildItem -Directory C:\ | Join-String -Property {$_.Name.SubString(0,4)} -S
 'Perf';'Prog';'Prog';'User';'Wind'
 ```
 
-`Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\`
-drive. The objects are sent down the pipeline to `Join-String`.
+`Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.
+The objects are sent down the pipeline to `Join-String`.
 
 The **Property** parameter script block uses automatic variable (`$_`) to specify each object's
 **Name** property substring. The substring gets the first four letters of each directory name. The
@@ -114,8 +114,9 @@ substring specifies the character start and end positions. The **SingleQuote** p
 directory names with single-quote marks. The **Separator** parameter specifies to use a semicolon
 (`;`) to separate the directory names.
 
-For more information about automatic variables and substrings, see [about_Automatic_Variables][02]
-and [Substring][07].
+For more information about automatic variables and substrings, see
+[about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md) and
+[Substring](/dotnet/api/system.string.substring).
 
 ### Example 3: Display join output on a separate line
 
@@ -143,19 +144,18 @@ asterisk (`*`) is a wildcard for any character.
 
 The objects are sent down the pipeline to `Join-String` that uses the **Property** parameter to
 specify the service names. The **Separator** parameter specifies three special characters that
-represent a carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``). The
-**OutputPrefix** inserts a label `Services:` with a new line and tab before the first line of
-output.
+represent a carriage return (`` `r ``), newline (`` `n ``), and tab (`` `t ``). The **OutputPrefix**
+inserts a label `Services:` with a new line and tab before the first line of output.
 
 For more information about special characters, see
-[about_Special_Characters][01].
+[about_Special_Characters](../microsoft.powershell.core/about/about_special_characters.md).
 
 ### Example 4: Create a class definition from an object
 
 This example generates a PowerShell class definition using an existing object as a template.
 
 This code sample uses splatting to reduce the line length and improve readability. For more
-information, see [about_Splatting][05].
+information, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
 
 ```powershell
 $obj = [pscustomobject] @{Name = "Joe"; Age = 42}
@@ -196,12 +196,13 @@ Accept wildcard characters: False
 
 ### -FormatString
 
-Specifies a format string that specifies how each pipeline object should be formatted before
-joining them. Use the `{0}` placeholder to represent the current object. If you need to keep the
-curly braces (`{}`) in the formatted string, you can escape them by doubling the curly braces (`{{`
-and `}}`).
+Specifies a format string that specifies how each pipeline object should be formatted before joining
+them. Use the `{0}` placeholder to represent the current object. If you need to keep the curly
+braces (`{}`) in the formatted string, you can escape them by doubling the curly braces (`{{` and
+`}}`).
 
-For more information, see the [String.Format][06] method and [Composite Formatting][08].
+For more information, see the [String.Format](/dotnet/api/system.string.format) method and
+[Composite Formatting](/dotnet/standard/base-types/composite-formatting).
 
 ```yaml
 Type: System.String
@@ -268,7 +269,7 @@ Accept wildcard characters: False
 
 ### -Property
 
-The name of a property, or a property expression, that will project the pipeline object to text.
+The name of a property, or a property expression, to be converted to text.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.PSPropertyExpression
@@ -288,8 +289,8 @@ Text or characters such as a comma or semicolon that's inserted between the text
 object.
 
 By default, the pipeline objects are joined without a separator. If the
-[Output Field Separator][03] preference variable (`$OFS`) is set, that value is used unless this
-parameter is specified.
+[Output Field Separator](../microsoft.powershell.core/about/about_preference_variables.md#ofs)
+preference variable (`$OFS`) is set, that value is used unless this parameter is specified.
 
 > [!NOTE]
 > When you set `$OFS` its value is used to join arrays when they're converted to strings until the
@@ -346,7 +347,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters][09].
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -360,19 +361,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_Automatic_Variables][02]
+[about_Automatic_Variables](../microsoft.powershell.core/about/about_automatic_variables.md)
 
-[about_Special_Characters][04]
+[about_Special_Characters](../microsoft.powershell.core/about/about_special_characters.md)
 
-[Substring][07]
-
-<!-- Link References -->
-[01]: ../microsoft.powershell.core/about/about_special_characters.md
-[02]: ../microsoft.powershell.core/about/about_automatic_variables.md
-[03]: ../microsoft.powershell.core/about/about_preference_variables.md#ofs
-[04]: ../microsoft.powershell.core/about/about_special_characters.md
-[05]: ../Microsoft.PowerShell.Core/About/about_Splatting.md
-[06]: /dotnet/api/system.string.format
-[07]: /dotnet/api/system.string.substring
-[08]: /dotnet/standard/base-types/composite-formatting
-[09]: https://go.microsoft.com/fwlink/?LinkID=113216
+[Substring](/dotnet/api/system.string.substring)
