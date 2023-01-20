@@ -1,7 +1,7 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 01/03/2018
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Methods
@@ -16,7 +16,7 @@ methods and properties that are available to compiled cmdlets.
 
 ## Long description
 
-Functions that specify the `CmdletBinding` attribute can access a number of
+Functions that specify the `CmdletBinding` attribute can access additional
 methods and properties through the `$PSCmdlet` variable. These methods include
 the following methods:
 
@@ -28,83 +28,83 @@ the following methods:
 
 All the methods and properties of the **PSCmdlet** class are available to
 advanced functions. For more information, see
-[System.Management.Automation.PSCmdlet](/dotnet/api/system.management.automation.pscmdlet).
+[System.Management.Automation.PSCmdlet][12].
 
 For more information about the `CmdletBinding` attribute, see
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
-For the **CmdletBindingAttribute** class, see
-[System.Management.Automation.Cmdlet.CmdletBindingAttribute](/dotnet/api/system.management.automation.cmdletbindingattribute).
+[about_Functions_CmdletBindingAttribute][18]. For the
+**CmdletBindingAttribute** class, see
+[System.Management.Automation.Cmdlet.CmdletBindingAttribute][11].
 
-### Input processing methods
+## Input processing methods
 
 The methods described in this section are referred to as the input processing
-methods. For functions, these three methods are represented by the `Begin`,
-`Process`, and `End` blocks of the function. You aren't required to use any of
+methods. For functions, these three methods are represented by the `begin`,
+`process`, and `end` blocks of the function. You aren't required to use any of
 these blocks in your functions.
 
 > [!NOTE]
 > These blocks are also available to functions that don't use the
 > `CmdletBinding` attribute.
 
-#### Begin
-
-This block is used to provide optional one-time preprocessing for the function.
-The PowerShell runtime uses the code in this block once for each instance of
-the function in the pipeline.
-
-#### Process
-
-This block is used to provide record-by-record processing for the function. You
-can use a `Process` block without defining the other blocks. The number of
-`Process` block executions depends on how you use the function and what input
-the function receives.
-
-The automatic variable `$_` or `$PSItem` contains the current object in the
-pipeline for use in the `Process` block. The `$input` automatic variable
-contains an enumerator that's only available to functions and script blocks.
-For more information, see [about_Automatic_Variables](about_Automatic_Variables.md).
-
-- Calling the function at the beginning, or outside of a pipeline, executes the
-  `Process` block once.
-- Within a pipeline, the `Process` block executes once for each input object
-  that reaches the function.
-- If the pipeline input that reaches the function is empty, the `Process` block
-  **does not** execute.
-  - The `Begin` and `End` blocks still execute.
-
-> [!IMPORTANT]
-> If a function parameter is set to accept pipeline input, and a `Process`
-> block isn't defined, record-by-record processing will fail. In this case,
-> your function will only execute once, regardless of the input.
-
-#### End
-
-This block is used to provide optional one-time post-processing for the
-function.
-
-The following example shows the outline of a function that contains a `Begin`
-block for one-time preprocessing, a `Process` block for multiple record
-processing, and an `End` block for one-time post-processing.
+The following example shows the outline of a function that contains a `begin`
+block for one-time preprocessing, a `process` block for multiple record
+processing, and an `end` block for one-time post-processing.
 
 ```powershell
 Function Test-ScriptCmdlet
 {
 [CmdletBinding(SupportsShouldProcess=$True)]
     Param ($Parameter1)
-    Begin{}
-    Process{}
-    End{}
+    begin{}
+    process{}
+    end{}
 }
 ```
 
 > [!NOTE]
-> Using either a `Begin` or `End` block requires that you define all three
-> blocks. When using all three blocks, all PowerShell code must be inside one
+> Using either a `begin` or `end` block requires that you define all three
+> blocks. When using any block, all PowerShell code must be inside one
 > of the blocks.
 
-### Confirmation methods
+### `begin`
 
-#### ShouldProcess
+This block is used to provide optional one-time preprocessing for the function.
+The PowerShell runtime uses the code in this block once for each instance of
+the function in the pipeline.
+
+### `process`
+
+This block is used to provide record-by-record processing for the function. You
+can use a `process` block without defining the other blocks. The number of
+`process` block executions depends on how you use the function and what input
+the function receives.
+
+The automatic variable `$_` or `$PSItem` contains the current object in the
+pipeline for use in the `process` block. The `$input` automatic variable
+contains an enumerator that's only available to functions and script blocks.
+For more information, see [about_Automatic_Variables][15].
+
+- Calling the function at the beginning, or outside of a pipeline, executes the
+  `process` block once.
+- Within a pipeline, the `process` block executes once for each input object
+  that reaches the function.
+- If the pipeline input that reaches the function is empty, the `process` block
+  **does not** execute.
+  - The `begin` and `end` blocks still execute.
+
+> [!IMPORTANT]
+> If a function parameter is set to accept pipeline input, and a `process`
+> block isn't defined, record-by-record processing will fail. In this case,
+> your function will only execute once, regardless of the input.
+
+### `end`
+
+This block is used to provide optional one-time post-processing for the
+function.
+
+## Confirmation methods
+
+### ShouldProcess
 
 This method is called to request confirmation from the user before the function
 performs an action that would change the system. The function can continue
@@ -114,112 +114,134 @@ called only from within the `Process{}` block of the function. The
 `ShouldProcess` (as shown in the previous example).
 
 For more information about this method, see
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/system.management.automation.cmdlet.shouldprocess).
+[System.Management.Automation.Cmdlet.ShouldProcess][02].
 
 For more information about how to request confirmation, see
-[Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
+[Requesting Confirmation][14].
 
-#### ShouldContinue
+### ShouldContinue
 
 This method is called to request a second confirmation message. It should be
 called when the `ShouldProcess` method returns `$true`. For more information
 about this method, see
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/system.management.automation.cmdlet.shouldcontinue).
+[System.Management.Automation.Cmdlet.ShouldContinue][01].
 
-### Error methods
+## Error methods
 
 Functions can call two different methods when errors occur. When a
 non-terminating error occurs, the function should call the `WriteError` method,
 which is described in the `Write` methods section. When a terminating error
 occurs and the function can't continue, it should call the
 `ThrowTerminatingError` method. You can also use the `Throw` statement for
-terminating errors and the [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
-cmdlet for non-terminating errors.
+terminating errors and the [Write-Error][22] cmdlet for non-terminating errors.
 
 For more information, see
-[System.Management.Automation.Cmdlet.ThrowTerminatingError](/dotnet/api/system.management.automation.cmdlet.throwterminatingerror).
+[System.Management.Automation.Cmdlet.ThrowTerminatingError][03].
 
-### Write methods
+## Write methods
 
 A function can call the following methods to return different types of output.
 Notice that not all the output goes to the next command in the pipeline. You
 can also use the various `Write` cmdlets, such as `Write-Error`.
 
-#### WriteCommandDetail
+### WriteCommandDetail
 
 For information about the `WriteCommandDetails` method, see
-[System.Management.Automation.Cmdlet.WriteCommandDetail](/dotnet/api/system.management.automation.cmdlet.writecommanddetail).
+[System.Management.Automation.Cmdlet.WriteCommandDetail][04].
 
-#### WriteDebug
+### WriteDebug
 
 To provide information that can be used to troubleshoot a function, make the
 function call the `WriteDebug` method. The `WriteDebug` method displays debug
 messages to the user. For more information, see
-[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/system.management.automation.cmdlet.writedebug).
+[System.Management.Automation.Cmdlet.WriteDebug][05].
 
-#### WriteError
+### WriteError
 
 Functions should call this method when non-terminating errors occur and the
 function is designed to continue processing records. For more information, see
-[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/system.management.automation.cmdlet.writeerror).
+[System.Management.Automation.Cmdlet.WriteError][06].
 
 > [!NOTE]
 > If a terminating error occurs, the function should call the
-> [ThrowTerminatingError](/dotnet/api/system.management.automation.cmdlet.throwterminatingerror)
-> method.
+> [ThrowTerminatingError][03] method.
 
-#### WriteObject
+### WriteObject
 
 The `WriteObject` method allows the function to send an object to the next
 command in the pipeline. In most cases, `WriteObject` is the method to use when
 the function returns data. For more information, see
-[System.Management.Automation.PSCmdlet.WriteObject](/dotnet/api/system.management.automation.cmdlet.writeobject).
+[System.Management.Automation.PSCmdlet.WriteObject][07].
 
-#### WriteProgress
+### WriteProgress
 
 For functions with actions that take a long time to complete, this method
 allows the function to call the `WriteProgress` method so that progress
 information is displayed. For example, you can display the percent completed.
 For more information, see
-[System.Management.Automation.PSCmdlet.WriteProgress](/dotnet/api/system.management.automation.cmdlet.writeprogress).
+[System.Management.Automation.PSCmdlet.WriteProgress][08].
 
-#### WriteVerbose
+### WriteVerbose
 
 To provide detailed information about what the function is doing, make the
 function call the `WriteVerbose` method to display verbose messages to the
 user. By default, verbose messages aren't displayed. For more information, see
-[System.Management.Automation.PSCmdlet.WriteVerbose](/dotnet/api/system.management.automation.cmdlet.writeverbose).
+[System.Management.Automation.PSCmdlet.WriteVerbose][09].
 
-#### WriteWarning
+### WriteWarning
 
 To provide information about conditions that may cause unexpected results, make
 the function call the WriteWarning method to display warning messages to the
 user. By default, warning messages are displayed. For more information, see
-[System.Management.Automation.PSCmdlet.WriteWarning](/dotnet/api/system.management.automation.cmdlet.writewarning).
+[System.Management.Automation.PSCmdlet.WriteWarning][10].
 
 > [!NOTE]
 > You can also display warning messages by configuring the `$WarningPreference`
 > variable or by using the `Verbose` and `Debug` command-line options. for more
-> information about the `$WarningPreference` variable, see [about_Preference_Variables](about_Preference_Variables.md).
+> information about the `$WarningPreference` variable, see
+> [about_Preference_Variables][21].
 
-### Other methods and properties
+## Other methods and properties
 
 For information about the other methods and properties that can be accessed
 through the `$PSCmdlet` variable, see
-[System.Management.Automation.PSCmdlet](/dotnet/api/system.management.automation.pscmdlet).
+[System.Management.Automation.PSCmdlet][12].
 
-For example, the
-[ParameterSetName](/dotnet/api/system.management.automation.pscmdlet.parametersetname)
-property allows you to see the parameter set that is being used. Parameter sets
-allow you to create a function that performs different tasks based on the
-parameters that are specified when the function is run.
+For example, the [ParameterSetName][13] property allows you to see the
+parameter set that's being used. Parameter sets allow you to create a function
+that performs different tasks based on the parameters that are specified when
+the function is run.
 
 ## See also
 
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Functions](about_Functions.md)
-- [about_Functions_Advanced](about_Functions_Advanced.md)
-- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-- [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-- [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-- [about_Preference_Variables](about_Preference_Variables.md)
+- [about_Automatic_Variables][15]
+- [about_Functions][20]
+- [about_Functions_Advanced][17]
+- [about_Functions_Advanced_Parameters][16]
+- [about_Functions_CmdletBindingAttribute][18]
+- [about_Functions_OutputTypeAttribute][19]
+- [about_Preference_Variables][21]
+
+<!-- link references -->
+[01]: /dotnet/api/system.management.automation.cmdlet.shouldcontinue
+[02]: /dotnet/api/system.management.automation.cmdlet.shouldprocess
+[03]: /dotnet/api/system.management.automation.cmdlet.throwterminatingerror
+[04]: /dotnet/api/system.management.automation.cmdlet.writecommanddetail
+[05]: /dotnet/api/system.management.automation.cmdlet.writedebug
+[06]: /dotnet/api/system.management.automation.cmdlet.writeerror
+[07]: /dotnet/api/system.management.automation.cmdlet.writeobject
+[08]: /dotnet/api/system.management.automation.cmdlet.writeprogress
+[09]: /dotnet/api/system.management.automation.cmdlet.writeverbose
+[10]: /dotnet/api/system.management.automation.cmdlet.writewarning
+[11]: /dotnet/api/system.management.automation.cmdletbindingattribute
+[12]: /dotnet/api/system.management.automation.pscmdlet
+[13]: /dotnet/api/system.management.automation.pscmdlet.parametersetname
+[14]: /powershell/scripting/developer/cmdlet/requesting-confirmation
+[15]: about_Automatic_Variables.md
+[16]: about_Functions_Advanced_Parameters.md
+[17]: about_Functions_Advanced.md
+[18]: about_Functions_CmdletBindingAttribute.md
+[19]: about_Functions_OutputTypeAttribute.md
+[20]: about_Functions.md
+[21]: about_Preference_Variables.md
+[22]: xref:Microsoft.PowerShell.Utility.Write-Error

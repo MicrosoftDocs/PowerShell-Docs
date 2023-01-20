@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.2
 description: New features and changes released in PowerShell 7.2
-ms.date: 11/16/2022
+ms.date: 01/20/2023
 ---
 
 # What's New in PowerShell 7.2
@@ -21,21 +21,21 @@ PowerShell 7.2 includes the following features, updates, and breaking changes.
 - Separating DSC from PowerShell 7 to enable future improvements
 - Several breaking changes to improve usability
 
-For a complete list of changes, see the [Change Log][18] in the GitHub repository.
+For a complete list of changes, see the [Change Log][11] in the GitHub repository.
 
 ## Installation updates
 
 Check the installation instructions for your preferred operating system:
 
-- [Windows][13]
-- [macOS][12]
-- [Linux][11]
+- [Windows][09]
+- [macOS][08]
+- [Linux][07]
 
 Additionally, PowerShell 7.2 supports ARM64 versions of Windows and macOS and ARM32 and ARM64
 versions of Debian and Ubuntu.
 
 For up-to-date information about supported operating systems and support lifecycle, see the
-[PowerShell Support Lifecycle][15].
+[PowerShell Support Lifecycle][10].
 
 ### New universal install packages for Linux distributions
 
@@ -64,24 +64,23 @@ The PowerShell 7.2 MSI package includes following command-line options:
 The following experimental features are now mainstream features in this release:
 
 - `Microsoft.PowerShell.Utility.PSImportPSDataFileSkipLimitCheck` - see
-  [Import-PowerShellDataFile][10]
-- `Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace` see
-  [Using experimental features][02]
-- `PSAnsiRendering` - see [about_ANSI_Terminals][09]
-- `PSAnsiProgress` - see [about_ANSI_Terminals][09]
-- `PSCultureInvariantReplaceOperator` - see [Using experimental features][04]
-- `PSNotApplyErrorActionToStderr` - see [Using experimental features][07]
-- `PSUnixFileStat` - see [Using experimental features][08]
+  [Import-PowerShellDataFile][06]
+- `Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace`
+- `PSAnsiRendering` - see [about_ANSI_Terminals][05]
+- `PSAnsiProgress` - see [about_ANSI_Terminals][05]
+- `PSCultureInvariantReplaceOperator`
+- `PSNotApplyErrorActionToStderr`
+- `PSUnixFileStat`
 
 The following experimental feature was added in this release:
 
-- [PSNativeCommandArgumentPassing][06] - When this experimental feature is enabled PowerShell uses
+- [PSNativeCommandArgumentPassing][04] - When this experimental feature is enabled PowerShell uses
   the **ArgumentList** property of the **StartProcessInfo** object rather than our current mechanism
   of reconstructing a string when invoking a native executable. This feature adds a new automatic
   variable `$PSNativeCommandArgumentPassing` that allows you to select the behavior at runtime.
 
-- [PSAnsiRenderingFileInfo][03] - Allow ANSI color customization of file information.
-- [PSLoadAssemblyFromNativeCode][05] - Exposes an API to allow assembly loading from native code.
+- [PSAnsiRenderingFileInfo][02] - Allow ANSI color customization of file information.
+- [PSLoadAssemblyFromNativeCode][03] - Exposes an API to allow assembly loading from native code.
 
 For more information about the Experimental Features, see [Using Experimental Features][01].
 
@@ -147,17 +146,13 @@ Install-Module -Name PSDesiredStateConfiguration -Repository PSGallery -MaximumV
 <!-- end of content -->
 <!-- link references -->
 [01]: ../learn/experimental-features.md
-[02]: ../learn/experimental-features.md#microsoftpowershellutilitypsmanagebreakpointsinrunspace
-[03]: ../learn/experimental-features.md#psansirenderingfileinfo
-[04]: ../learn/experimental-features.md#pscultureinvariantreplaceoperator
-[05]: ../learn/experimental-features.md#psloadassemblyfromnativecode
-[06]: ../learn/experimental-features.md#psnativecommandargumentpassing
-[07]: ../learn/experimental-features.md#psnotapplyerroractiontostderr
-[08]: ../learn/experimental-features.md#psunixfilestat
-[09]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals
-[10]: /powershell/module/microsoft.powershell.utility/import-powershelldatafile
-[11]: /powershell/scripting/install/installing-powershell-core-on-linux
-[12]: /powershell/scripting/install/installing-powershell-core-on-macos
-[13]: /powershell/scripting/install/installing-powershell-core-on-windows
-[15]: /powershell/scripting/powershell-support-lifecycle
-[18]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.2.md
+[02]: ../learn/experimental-features.md#psansirenderingfileinfo
+[03]: ../learn/experimental-features.md#psloadassemblyfromnativecode
+[04]: ../learn/experimental-features.md#psnativecommandargumentpassing
+[05]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals
+[06]: /powershell/module/microsoft.powershell.utility/import-powershelldatafile
+[07]: /powershell/scripting/install/installing-powershell-core-on-linux
+[08]: /powershell/scripting/install/installing-powershell-core-on-macos
+[09]: /powershell/scripting/install/installing-powershell-core-on-windows
+[10]: /powershell/scripting/powershell-support-lifecycle
+[11]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.2.md

@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 07/21/2022
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions
@@ -35,20 +35,19 @@ Functions can return values that can be displayed, assigned to variables, or
 passed to other functions or cmdlets. You can also specify a return value using
 the `return` keyword. The `return` keyword doesn't affect or suppress other
 output returned from your function. However, the `return` keyword exits the
-function at that line. For more information, see
-[about_Return](about_Return.md).
+function at that line. For more information, see [about_Return][16].
 
 The function's statement list can contain different types of statement lists
-with the keywords `Begin`, `Process`, and `End`. These statement lists handle
-input from the pipeline differently.
+with the keywords `begin`, `process`, `end`, and `clean`. These statement lists
+handle input from the pipeline differently.
 
-The [Filter](#filters) keyword is used to create a type of function that runs
-on each object in the pipeline. A filter resembles a function with all its
-statements in a `Process` block.
+The [filter][04] keyword is used to create a type of function that runs on each
+object in the pipeline. A filter resembles a function with all its statements
+in a `process` block.
 
 Functions can also act like cmdlets. You can create a function that works just
 like a cmdlet without using `C#` programming. For more information, see
-[about_Functions_Advanced](about_Functions_Advanced.md).
+[about_Functions_Advanced][11].
 
 > [!IMPORTANT]
 > Within script files and script-based modules, functions must be defined
@@ -64,6 +63,7 @@ function [<scope:>]<name> [([type]$parameter1[,[type]$parameter2])]
   begin {<statement list>}
   process {<statement list>}
   end {<statement list>}
+  clean {<statement list>}
 }
 ```
 
@@ -75,22 +75,22 @@ function [<scope:>]<name>
   begin {<statement list>}
   process {<statement list>}
   end {<statement list>}
+  clean {<statement list>}
 }
 ```
 
 A function includes the following items:
 
-- A `Function` keyword
+- A `function` keyword
 - A scope (optional)
 - A name that you select
 - Any number of named parameters (optional)
 - One or more PowerShell commands enclosed in braces `{}`
 
 For more information about the `Dynamicparam` keyword and dynamic parameters in
-functions, see
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+functions, see [about_Functions_Advanced_Parameters][10].
 
-## Simple Functions
+## Simple functions
 
 Functions don't have to be complicated to be useful. The simplest functions
 have the following format:
@@ -109,7 +109,7 @@ function Start-PSAdmin {Start-Process PowerShell -Verb RunAs}
 To use the function, type: `Start-PSAdmin`
 
 To add statements to the function, type each statement on a separate line, or
-use a semi-colon `;` to separate the statements.
+use a semicolon `;` to separate the statements.
 
 For example, the following function finds all `.jpg` files in the current
 user's directories that were changed after the start date.
@@ -124,8 +124,8 @@ function Get-NewPix
 ```
 
 You can create a toolbox of useful small functions. Add these functions to your
-PowerShell profile, as described in [about_Profiles](about_Profiles.md) and
-later in this topic.
+PowerShell profile, as described in [about_Profiles][15] and later in this
+topic.
 
 ## Function Names
 
@@ -142,14 +142,14 @@ PowerShell commands. These verbs help us to keep our command names consistent
 and easy for users to understand.
 
 For more information about the standard PowerShell verbs, see
-[Approved Verbs](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
+[Approved Verbs][02].
 
 ## Functions with Parameters
 
 You can use parameters with functions, including named parameters, positional
 parameters, switch parameters, and dynamic parameters. For more information
 about dynamic parameters in functions, see
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+[about_Functions_Advanced_Parameters][10].
 
 ### Named Parameters
 
@@ -252,7 +252,7 @@ function Get-SmallFiles {
 ```
 
 For more information about the **PSDefaultValue** attribute class, see
-[PSDefaultValue Attribute Members](/dotnet/api/system.management.automation.psdefaultvalueattribute).
+[PSDefaultValue Attribute Members][01].
 
 ### Positional Parameters
 
@@ -353,7 +353,7 @@ The following sample function calls the `Get-Command` cmdlet. The command uses
 function Get-MyCommand { Get-Command @Args }
 ```
 
-You can use all of the parameters of `Get-Command` when you call the
+You can use all the parameters of `Get-Command` when you call the
 `Get-MyCommand` function. The parameters and parameter values are passed to the
 command using `@Args`.
 
@@ -370,52 +370,48 @@ Cmdlet          Get-ChildItem       Microsoft.PowerShell.Management
 The `@Args` feature uses the `$Args` automatic parameter, which represents
 undeclared cmdlet parameters and values from remaining arguments.
 
-For more information, see [about_Splatting](about_Splatting.md).
+For more information, see [about_Splatting][19].
 
 ## Piping Objects to Functions
 
 Any function can take input from the pipeline. You can control how a function
-processes input from the pipeline using `Begin`, `Process`, and `End` keywords.
-The following sample syntax shows the three keywords:
+processes input from the pipeline using `begin`, `process`, `end`, and `clean`
+keywords. The following sample syntax shows these keywords:
 
 ```Syntax
 function <name> {
   begin {<statement list>}
   process {<statement list>}
   end {<statement list>}
+  clean {<statement list>}
 }
 ```
 
-The `Begin` statement list runs one time only, at the beginning of the
+> [!IMPORTANT]
+> If your function defines any one of these named statement lists, all your
+> code must be inside one of those blocks. Any code outside the blocks isn't
+> recognized. If your function doesn't use any of these blocks, all the
+> statements are treated like an `end` statement list.
+
+The `begin` statement list runs one time only, at the beginning of the
 function.
 
-> [!IMPORTANT]
-> If your function defines a `Begin`, `Process` or `End` block, all of your
-> code must reside inside those blocks. No code will be recognized outside the
-> blocks if *any* of the blocks are defined.
-
-The `Process` statement list runs one time for each object in the pipeline.
-While the `Process` block is running, each pipeline object is assigned to the
+The `process` statement list runs one time for each object in the pipeline.
+While the `process` block is running, each pipeline object is assigned to the
 `$_` automatic variable, one pipeline object at a time.
 
-After the function receives all the objects in the pipeline, the `End`
-statement list runs one time. If no `Begin`, `Process`, or `End` keywords are
-used, all the statements are treated like an `End` statement list.
+After the function receives all the objects in the pipeline, the `end`
+statement list runs one time.
 
-The following function uses the `Process` keyword. The function displays
-examples from the pipeline:
+The following function uses the `process` keyword. The function displays
+values from the pipeline:
 
 ```powershell
 function Get-Pipeline
 {
   process {"The value is: $_"}
 }
-```
 
-To demonstrate this function, enter an list of numbers separated by commas, as
-shown in the following example:
-
-```powershell
 1,2,4 | Get-Pipeline
 ```
 
@@ -427,18 +423,18 @@ The value is: 4
 
 When you use a function in a pipeline, the objects piped to the function are
 assigned to the `$input` automatic variable. The function runs statements with
-the `Begin` keyword before any objects come from the pipeline. The function
-runs statements with the `End` keyword after all the objects have been received
+the `begin` keyword before any objects come from the pipeline. The function
+runs statements with the `end` keyword after all the objects have been received
 from the pipeline.
 
-The following example shows the `$input` automatic variable with `Begin` and
-`End` keywords.
+The following example shows the `$input` automatic variable with `begin` and
+`end` keywords.
 
 ```powershell
 function Get-PipelineBeginEnd
 {
-  begin {"Begin: The input is $input"}
-  end {"End:   The input is $input" }
+    begin {"Begin: The input is $input"}
+    end   {"End:   The input is $input" }
 }
 ```
 
@@ -454,25 +450,25 @@ Begin: The input is
 End:   The input is 1 2 4
 ```
 
-When the `Begin` statement runs, the function doesn't have the input from the
-pipeline. The `End` statement runs after the function has the values.
+When the `begin` statement runs, the function doesn't have the input from the
+pipeline. The `end` statement runs after the function has the values.
 
-If the function has a `Process` keyword, each object in `$input` is removed
-from `$input` and assigned to `$_`. The following example has a `Process`
+If the function has a `process` keyword, each object in `$input` is removed
+from `$input` and assigned to `$_`. The following example has a `process`
 statement list:
 
 ```powershell
 function Get-PipelineInput
 {
-  process {"Processing:  $_ " }
-  end {"End:   The input is: $input" }
+    process {"Processing:  $_ " }
+    end     {"End:   The input is: $input" }
 }
 ```
 
 In this example, each object that's piped to the function is sent to the
-`Process` statement list. The `Process` statements run on each object, one
+`process` statement list. The `process` statements run on each object, one
 object at a time. The `$input` automatic variable is empty when the function
-reaches the `End` keyword.
+reaches the `end` keyword.
 
 ```powershell
 1,2,4 | Get-PipelineInput
@@ -485,12 +481,31 @@ Processing:  4
 End:   The input is:
 ```
 
-For more information, see [Using Enumerators](about_Automatic_Variables.md#using-enumerators)
+For more information, see [Using Enumerators][06]
+
+PowerShell 7.3 added the `clean` block. The `clean` block is a convenient way
+for users to clean up resources created and used in the `begin`, `process`, and
+`end` blocks. It's semantically similar to a `finally` block that covers all
+other named blocks of a script function or a script cmdlet. Resource cleanup is
+enforced for the following scenarios:
+
+1. when the pipeline execution finishes normally without terminating error
+1. when the pipeline execution is interrupted due to terminating error
+1. when the pipeline is halted by `Select-Object -First`
+1. when the pipeline is being stopped by <kbd>Ctrl+C</kbd> or
+   `StopProcessing()`
+
+> [!CAUTION]
+> Adding the `clean` block is a breaking change. Because `clean` is parsed as a
+> keyword, it prevents users from directly calling a command named `clean` as
+> the first statement in a script block. However, it's not likely to be a
+> problem. The command can still be invoked using the call operator
+> (`& clean`).
 
 ## Filters
 
 A filter is a type of function that runs on each object in the pipeline. A
-filter resembles a function with all its statements in a `Process` block.
+filter resembles a function with all its statements in a `process` block.
 
 The syntax of a filter is as follows:
 
@@ -520,8 +535,8 @@ Get-WinEvent -LogName System -MaxEvents 100 | Get-ErrorLog -Message
 A function exists in the scope in which it's created.
 
 If a function is part of a script, the function is available to statements
-within that script. By default, a function in a script isn't available at the
-command prompt.
+within that script. By default, a function in a script isn't available outside
+of that script.
 
 You can specify the scope of a function. For example, the function is added to
 the global scope in the following example:
@@ -538,7 +553,7 @@ in functions, and at the command line.
 Functions create a new scope. The items created in a function, such as
 variables, exist only in the function scope.
 
-For more information, see [about_Scopes](about_Scopes.md).
+For more information, see [about_Scopes][17].
 
 ## Finding and Managing Functions Using the Function: Drive
 
@@ -580,7 +595,7 @@ part of the current session. The function is available until the session ends.
 
 To use your function in all PowerShell sessions, add the function to your
 PowerShell profile. For more information about profiles, see
-[about_Profiles](about_Profiles.md).
+[about_Profiles][15].
 
 You can also save your function in a PowerShell script file. Type your function
 in a text file, and then save the file with the `.ps1` filename extension.
@@ -605,7 +620,7 @@ You can write help for a function using either of the two following methods:
   comment-based help for a function, the comments must be placed at the
   beginning or end of the function body or on the lines preceding the function
   keyword. For more information about comment-based help, see
-  [about_Comment_Based_Help](about_Comment_Based_Help.md).
+  [about_Comment_Based_Help][07].
 
 - XML-Based Help for Functions
 
@@ -614,26 +629,46 @@ You can write help for a function using either of the two following methods:
   multiple languages.
 
   To associate the function with the XML-based help topic, use the
-  `.ExternalHelp` comment-based help keyword. Without this keyword, `Get-Help`
+  `.EXTERNALHELP` comment-based help keyword. Without this keyword, `Get-Help`
   can't find the function help topic and calls to `Get-Help` for the function
   return only autogenerated help.
 
-  For more information about the `ExternalHelp` keyword, see
-  [about_Comment_Based_Help](about_Comment_Based_Help.md). For more information
-  about XML-based help, see
-  [How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
+  For more information about the `.EXTERNALHELP` keyword, see
+  [about_Comment_Based_Help][07]. For more information about XML-based help,
+  see [How to Write Cmdlet Help][03].
 
 ## See also
 
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Comment_Based_Help](about_Comment_Based_Help.md)
-- [about_Function_Provider](about_Function_provider.md)
-- [about_Functions_Advanced](about_Functions_Advanced.md)
-- [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
-- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-- [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-- [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-- [about_Parameters](about_Parameters.md)
-- [about_Profiles](about_Profiles.md)
-- [about_Scopes](about_Scopes.md)
-- [about_Script_Blocks](about_Script_Blocks.md)
+- [about_Automatic_Variables][05]
+- [about_Comment_Based_Help][07]
+- [about_Function_Provider][08]
+- [about_Functions_Advanced][11]
+- [about_Functions_Advanced_Methods][09]
+- [about_Functions_Advanced_Parameters][10]
+- [about_Functions_CmdletBindingAttribute][12]
+- [about_Functions_OutputTypeAttribute][13]
+- [about_Parameters][14]
+- [about_Profiles][15]
+- [about_Scopes][17]
+- [about_Script_Blocks][18]
+
+<!-- link references -->
+[01]: /dotnet/api/system.management.automation.psdefaultvalueattribute
+[02]: /powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands
+[03]: /powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets
+[04]: #filters
+[05]: about_Automatic_Variables.md
+[06]: about_Automatic_Variables.md#using-enumerators
+[07]: about_Comment_Based_Help.md
+[08]: about_Function_provider.md
+[09]: about_Functions_Advanced_Methods.md
+[10]: about_Functions_Advanced_Parameters.md
+[11]: about_Functions_Advanced.md
+[12]: about_Functions_CmdletBindingAttribute.md
+[13]: about_Functions_OutputTypeAttribute.md
+[14]: about_Parameters.md
+[15]: about_Profiles.md
+[16]: about_Return.md
+[17]: about_Scopes.md
+[18]: about_Script_Blocks.md
+[19]: about_Splatting.md

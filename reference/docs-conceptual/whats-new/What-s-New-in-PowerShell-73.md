@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.3
 description: New features and changes released in PowerShell 7.3
-ms.date: 12/14/2022
+ms.date: 01/20/2023
 ---
 
 # What's New in PowerShell 7.3
@@ -113,11 +113,11 @@ For a complete list of changes, see the [Change Log][11] in the GitHub repositor
 
 In PowerShell 7.3, following experimental features became mainstream:
 
-- [PSAnsiRenderingFileInfo][13] - This feature adds the `$PSStyle.FileInfo` member and enables
+- `PSAnsiRenderingFileInfo` - This feature adds the `$PSStyle.FileInfo` member and enables
   coloring of specific file types.
-- [PSCleanBlock][04] - Adds `clean` block to script block as a peer to `begin`, `process`, and `end`
+- `PSCleanBlock` - Adds `clean` block to script block as a peer to `begin`, `process`, and `end`
   to allow easy resource cleanup.
-- [PSAMSIMethodInvocationLogging][02] - Extends the data sent to AMSI for inspection to include all
+- `PSAMSIMethodInvocationLogging` - Extends the data sent to AMSI for inspection to include all
   invocations of .NET method members.
 - [PSNativeCommandArgumentPassing][08] - PowerShell now uses the **ArgumentList** property of the
   **StartProcessInfo** object rather than the old mechanism of reconstructing a string when invoking
@@ -125,8 +125,8 @@ In PowerShell 7.3, following experimental features became mainstream:
 
   PowerShell 7.3.1 adds `sqlcmd.exe` to the list of native commands in Windows that use the `Legacy`
   style of argument passing.
-- [PSExec][05] - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec` compatibility
-  for non-Windows systems.
+- `PSExec` - Adds the new `Switch-Process` cmdlet (alias `exec`) to provide `exec` compatibility for
+  non-Windows systems.
 
   PowerShell 7.3.1 changed the `exec` alias to a function that wraps `Switch-Process`. The function
   allows you to pass parameters to the native command that might have erroneously bound to the
@@ -140,22 +140,15 @@ PowerShell 7.3 introduces the following experimental features:
 
 PowerShell 7.3 removed the following experimental features:
 
-- [PSNativePSPathResolution][03] experimental feature is no longer supported.
-- [PSStrictModeAssignment][07] experimental feature is no longer supported.
+- `PSNativePSPathResolution` experimental feature is no longer supported.
+- `PSStrictModeAssignment` experimental feature is no longer supported.
 
 For more information about the Experimental Features, see [Using Experimental Features][01].
 
 <!-- end of content -->
 <!-- reference links -->
 [01]: ../learn/experimental-features.md
-[02]: ../learn/experimental-features.md?#psamsimethodinvocationlogging
-[03]: ../learn/experimental-features.md?#psnativepspathresolution
-[04]: ../learn/experimental-features.md#pscleanblock
-[05]: ../learn/experimental-features.md#psexec
-[06]: ../learn/experimental-features.md#psnativecommanderroractionpreference
-[07]: ../learn/experimental-features.md#psstrictmodeassignment
 [08]: ../learn/experimental-features.md#psnativecommandargumentpassing
-[13]: ../learn/experimental-features.md#psansirenderingfileinfo
 [09]: https://github.com/dotnet/runtime/issues/66746
 [10]: https://github.com/PowerShell/PowerShell/issues/17018
 [11]: https://github.com/PowerShell/PowerShell/releases/tag/v7.3.0

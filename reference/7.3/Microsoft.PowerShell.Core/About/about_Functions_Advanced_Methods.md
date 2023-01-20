@@ -1,7 +1,7 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 09/27/2022
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Methods
@@ -16,7 +16,7 @@ methods and properties that are available to compiled cmdlets.
 
 ## Long description
 
-Functions that specify the `CmdletBinding` attribute can access a number of
+Functions that specify the `CmdletBinding` attribute can access additional
 methods and properties through the `$PSCmdlet` variable. These methods include
 the following methods:
 
@@ -28,12 +28,12 @@ the following methods:
 
 All the methods and properties of the **PSCmdlet** class are available to
 advanced functions. For more information, see
-[System.Management.Automation.PSCmdlet](/dotnet/api/system.management.automation.pscmdlet).
+[System.Management.Automation.PSCmdlet][12].
 
 For more information about the `CmdletBinding` attribute, see
-[about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md).
-For the **CmdletBindingAttribute** class, see
-[System.Management.Automation.Cmdlet.CmdletBindingAttribute](/dotnet/api/system.management.automation.cmdletbindingattribute).
+[about_Functions_CmdletBindingAttribute][18]. For the
+**CmdletBindingAttribute** class, see
+[System.Management.Automation.Cmdlet.CmdletBindingAttribute][11].
 
 ## Input processing methods
 
@@ -66,8 +66,7 @@ Function Test-ScriptCmdlet
 > blocks. When using any block, all PowerShell code must be inside one
 > of the blocks.
 
-PowerShell 7.3 includes an experimental feature that adds a `clean` block
-process method.
+PowerShell 7.3 adds a `clean` block process method.
 
 ### `begin`
 
@@ -85,7 +84,7 @@ the function receives.
 The automatic variable `$_` or `$PSItem` contains the current object in the
 pipeline for use in the `process` block. The `$input` automatic variable
 contains an enumerator that's only available to functions and script blocks.
-For more information, see [about_Automatic_Variables](about_Automatic_Variables.md).
+For more information, see [about_Automatic_Variables][15].
 
 - Calling the function at the beginning, or outside of a pipeline, executes the
   `process` block once.
@@ -120,16 +119,12 @@ script cmdlet. Resource cleanup is enforced for the following scenarios:
 1. when the pipeline is being stopped by <kbd>Ctrl+c</kbd> or
    `StopProcessing()`
 
-> [!CAUTON]
+> [!CAUTION]
 > Adding the `clean` block is a breaking change. Because `clean` is parsed as a
 > keyword, it prevents users from directly calling a command named `clean` as
-> the first statement in a script block. However, it's likely a non-issue in
-> most practical cases, and when it is, the command can still be invoked with
-> the call operator (`& clean`).
-
-For more information about this experimental feature, see
-[RFC0059](https://github.com/PowerShell/PowerShell-RFC/blob/master/Archive/Experimental/RFC0059-Cleanup-Script-Block.md)
-in the PowerShell/PowerShell-RFC repository.
+> the first statement in a script block. However, it's not likely to be a
+> problem. The command can still be invoked using the call operator
+> (`& clean`).
 
 ## Confirmation methods
 
@@ -143,17 +138,17 @@ called only from within the `Process{}` block of the function. The
 `ShouldProcess` (as shown in the previous example).
 
 For more information about this method, see
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/system.management.automation.cmdlet.shouldprocess).
+[System.Management.Automation.Cmdlet.ShouldProcess][02].
 
 For more information about how to request confirmation, see
-[Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
+[Requesting Confirmation][14].
 
 ### ShouldContinue
 
 This method is called to request a second confirmation message. It should be
 called when the `ShouldProcess` method returns `$true`. For more information
 about this method, see
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/system.management.automation.cmdlet.shouldcontinue).
+[System.Management.Automation.Cmdlet.ShouldContinue][01].
 
 ## Error methods
 
@@ -162,11 +157,10 @@ non-terminating error occurs, the function should call the `WriteError` method,
 which is described in the `Write` methods section. When a terminating error
 occurs and the function can't continue, it should call the
 `ThrowTerminatingError` method. You can also use the `Throw` statement for
-terminating errors and the [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
-cmdlet for non-terminating errors.
+terminating errors and the [Write-Error][22] cmdlet for non-terminating errors.
 
 For more information, see
-[System.Management.Automation.Cmdlet.ThrowTerminatingError](/dotnet/api/system.management.automation.cmdlet.throwterminatingerror).
+[System.Management.Automation.Cmdlet.ThrowTerminatingError][03].
 
 ## Write methods
 
@@ -177,32 +171,31 @@ can also use the various `Write` cmdlets, such as `Write-Error`.
 ### WriteCommandDetail
 
 For information about the `WriteCommandDetails` method, see
-[System.Management.Automation.Cmdlet.WriteCommandDetail](/dotnet/api/system.management.automation.cmdlet.writecommanddetail).
+[System.Management.Automation.Cmdlet.WriteCommandDetail][04].
 
 ### WriteDebug
 
 To provide information that can be used to troubleshoot a function, make the
 function call the `WriteDebug` method. The `WriteDebug` method displays debug
 messages to the user. For more information, see
-[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/system.management.automation.cmdlet.writedebug).
+[System.Management.Automation.Cmdlet.WriteDebug][05].
 
 ### WriteError
 
 Functions should call this method when non-terminating errors occur and the
 function is designed to continue processing records. For more information, see
-[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/system.management.automation.cmdlet.writeerror).
+[System.Management.Automation.Cmdlet.WriteError][06].
 
 > [!NOTE]
 > If a terminating error occurs, the function should call the
-> [ThrowTerminatingError](/dotnet/api/system.management.automation.cmdlet.throwterminatingerror)
-> method.
+> [ThrowTerminatingError][03] method.
 
 ### WriteObject
 
 The `WriteObject` method allows the function to send an object to the next
 command in the pipeline. In most cases, `WriteObject` is the method to use when
 the function returns data. For more information, see
-[System.Management.Automation.PSCmdlet.WriteObject](/dotnet/api/system.management.automation.cmdlet.writeobject).
+[System.Management.Automation.PSCmdlet.WriteObject][07].
 
 ### WriteProgress
 
@@ -210,45 +203,69 @@ For functions with actions that take a long time to complete, this method
 allows the function to call the `WriteProgress` method so that progress
 information is displayed. For example, you can display the percent completed.
 For more information, see
-[System.Management.Automation.PSCmdlet.WriteProgress](/dotnet/api/system.management.automation.cmdlet.writeprogress).
+[System.Management.Automation.PSCmdlet.WriteProgress][08].
 
 ### WriteVerbose
 
 To provide detailed information about what the function is doing, make the
 function call the `WriteVerbose` method to display verbose messages to the
 user. By default, verbose messages aren't displayed. For more information, see
-[System.Management.Automation.PSCmdlet.WriteVerbose](/dotnet/api/system.management.automation.cmdlet.writeverbose).
+[System.Management.Automation.PSCmdlet.WriteVerbose][09].
 
 ### WriteWarning
 
 To provide information about conditions that may cause unexpected results, make
 the function call the WriteWarning method to display warning messages to the
 user. By default, warning messages are displayed. For more information, see
-[System.Management.Automation.PSCmdlet.WriteWarning](/dotnet/api/system.management.automation.cmdlet.writewarning).
+[System.Management.Automation.PSCmdlet.WriteWarning][10].
 
 > [!NOTE]
 > You can also display warning messages by configuring the `$WarningPreference`
 > variable or by using the `Verbose` and `Debug` command-line options. for more
-> information about the `$WarningPreference` variable, see [about_Preference_Variables](about_Preference_Variables.md).
+> information about the `$WarningPreference` variable, see
+> [about_Preference_Variables][21].
 
 ## Other methods and properties
 
 For information about the other methods and properties that can be accessed
 through the `$PSCmdlet` variable, see
-[System.Management.Automation.PSCmdlet](/dotnet/api/system.management.automation.pscmdlet).
+[System.Management.Automation.PSCmdlet][12].
 
-For example, the
-[ParameterSetName](/dotnet/api/system.management.automation.pscmdlet.parametersetname)
-property allows you to see the parameter set that is being used. Parameter sets
-allow you to create a function that performs different tasks based on the
-parameters that are specified when the function is run.
+For example, the [ParameterSetName][13] property allows you to see the
+parameter set that's being used. Parameter sets allow you to create a function
+that performs different tasks based on the parameters that are specified when
+the function is run.
 
 ## See also
 
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Functions](about_Functions.md)
-- [about_Functions_Advanced](about_Functions_Advanced.md)
-- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-- [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
-- [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
-- [about_Preference_Variables](about_Preference_Variables.md)
+- [about_Automatic_Variables][15]
+- [about_Functions][20]
+- [about_Functions_Advanced][17]
+- [about_Functions_Advanced_Parameters][16]
+- [about_Functions_CmdletBindingAttribute][18]
+- [about_Functions_OutputTypeAttribute][19]
+- [about_Preference_Variables][21]
+
+<!-- link references -->
+[01]: /dotnet/api/system.management.automation.cmdlet.shouldcontinue
+[02]: /dotnet/api/system.management.automation.cmdlet.shouldprocess
+[03]: /dotnet/api/system.management.automation.cmdlet.throwterminatingerror
+[04]: /dotnet/api/system.management.automation.cmdlet.writecommanddetail
+[05]: /dotnet/api/system.management.automation.cmdlet.writedebug
+[06]: /dotnet/api/system.management.automation.cmdlet.writeerror
+[07]: /dotnet/api/system.management.automation.cmdlet.writeobject
+[08]: /dotnet/api/system.management.automation.cmdlet.writeprogress
+[09]: /dotnet/api/system.management.automation.cmdlet.writeverbose
+[10]: /dotnet/api/system.management.automation.cmdlet.writewarning
+[11]: /dotnet/api/system.management.automation.cmdletbindingattribute
+[12]: /dotnet/api/system.management.automation.pscmdlet
+[13]: /dotnet/api/system.management.automation.pscmdlet.parametersetname
+[14]: /powershell/scripting/developer/cmdlet/requesting-confirmation
+[15]: about_Automatic_Variables.md
+[16]: about_Functions_Advanced_Parameters.md
+[17]: about_Functions_Advanced.md
+[18]: about_Functions_CmdletBindingAttribute.md
+[19]: about_Functions_OutputTypeAttribute.md
+[20]: about_Functions.md
+[21]: about_Preference_Variables.md
+[22]: xref:Microsoft.PowerShell.Utility.Write-Error

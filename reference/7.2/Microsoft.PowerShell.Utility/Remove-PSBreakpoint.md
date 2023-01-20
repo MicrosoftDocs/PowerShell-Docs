@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/remove-psbreakpoint?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-PSBreakpoint
@@ -76,7 +76,7 @@ Remove-PSBreakpoint -Id 2
 
 ### Example 4: Use a function to remove all breakpoints
 
-This simple function deletes all of the breakpoints in the current console.
+This simple function deletes all the breakpoints in the current session.
 
 ```powershell
 function del-psb { Get-PSBreakpoint | Remove-PSBreakpoint }
@@ -84,6 +84,24 @@ function del-psb { Get-PSBreakpoint | Remove-PSBreakpoint }
 
 It uses the `Get-PSBreakpoint` cmdlet to get the breakpoints. Then, it uses a pipeline operator
 (`|`) to send the breakpoints to the `Remove-PSBreakpoint` cmdlet, which deletes them.
+
+### Example 5: Remove a breakpoint in a runspace
+
+In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
+run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
+**Runspace** parameter. The output of `Get-PSBreakPoint` is piped to `Remove-PSBreakpoint` to
+remove the breakpoint in the runspace.
+
+```powershell
+Start-Job -ScriptBlock {
+    Set-PSBreakpoint -Command Start-Sleep
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+Get-PSBreakPoint -Runspace $runspace | Remove-Breakpoint -Runspace $runspace
+```
 
 ## PARAMETERS
 
@@ -125,6 +143,8 @@ Accept wildcard characters: False
 
 Specifies the Id of a **Runspace** object so you can interact with breakpoints in the specified
 runspace.
+
+This parameter was added in PowerShell 7.2.
 
 ```yaml
 Type: Runspace

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSBreakpoint
@@ -210,6 +210,21 @@ Script     : C:\ps-test\sample.ps1
 ScriptName : C:\ps-test\sample.ps1
 ```
 
+### Example 8: Set a breakpoint in a runspace
+
+In this example, a job is started. The runspace is stored in a variable and passed to the
+`Set-PSBreakPoint` command with the **Runspace** parameter.
+
+```powershell
+Start-Job -ScriptBlock {
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+Set-PSBreakpoint -Command Start-Sleep -Runspace $runspace
+```
+
 ## PARAMETERS
 
 ### -Action
@@ -335,7 +350,10 @@ Accept wildcard characters: False
 ```
 
 ### -Runspace
-{{ Fill Runspace Description }}
+Specifies the Id of a **Runspace** object so you can interact with breakpoints in the specified
+runspace.
+
+This parameter was added in PowerShell 7.2.
 
 ```yaml
 Type: Runspace
