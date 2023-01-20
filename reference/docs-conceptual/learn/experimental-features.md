@@ -26,26 +26,26 @@ This article describes the experimental features that are available and how to u
 
 Legend
 
-- The [Experimental][02] icon indicates that the experimental feature is available in the version of
+- The ![Experimental][02] icon indicates that the experimental feature is available in the version of
   PowerShell
-- The [Mainstream][01] icon indicates the version of PowerShell where the experimental feature
+- The ![Mainstream][01] icon indicates the version of PowerShell where the experimental feature
   became mainstream
-- The [Discontinued][03] icon indicates the version of PowerShell where the experimental feature was
+- The ![Discontinued][03] icon indicates the version of PowerShell where the experimental feature was
   removed
 
-|                            Name                            |        7.2         |        7.3         |        7.4         |
-| ---------------------------------------------------------- | :----------------: | :----------------: | :----------------: |
-| PSCommandNotFoundSuggestion                                | [Experimental][02] | [Experimental][02] | [Experimental][02] |
-| PSDesiredStateConfiguration.InvokeDscResource (DSC v2)     | [Experimental][02] | [Experimental][02] | [Experimental][02] |
-| PSNativePSPathResolution                                   | [Experimental][02] | [Discontinued][03] |                    |
-| PSSubsystemPluginModel                                     | [Experimental][02] | [Experimental][02] | [Experimental][02] |
-| PSNativeCommandArgumentPassing                             | [Experimental][02] |  [Mainstream][01]  |                    |
-| PSAnsiRenderingFileInfo                                    | [Experimental][02] |  [Mainstream][01]  |                    |
-| PSLoadAssemblyFromNativeCode                               | [Experimental][02] | [Experimental][02] | [Experimental][02] |
-| PSNativeCommandErrorActionPreference                       |                    | [Experimental][02] | [Experimental][02] |
-| PSCustomTableHeaderLabelDecoration                         |                    |                    | [Experimental][02] |
-| PSFeedbackProvider                                         |                    |                    | [Experimental][02] |
-| PSModuleAutoLoadSkipOfflineFiles                           |                    |                    | [Experimental][02] |
+|                          Name                          |         7.2         |         7.3         |         7.4         |
+| ------------------------------------------------------ | :-----------------: | :-----------------: | :-----------------: |
+| PSCommandNotFoundSuggestion                            | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| PSDesiredStateConfiguration.InvokeDscResource (DSC v2) | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| PSNativePSPathResolution                               | ![Experimental][02] | ![Discontinued][03] |                     |
+| PSSubsystemPluginModel                                 | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| PSNativeCommandArgumentPassing                         | ![Experimental][02] |  ![Mainstream][01]  |                     |
+| PSAnsiRenderingFileInfo                                | ![Experimental][02] |  ![Mainstream][01]  |                     |
+| PSLoadAssemblyFromNativeCode                           | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| PSNativeCommandErrorActionPreference                   |                     | ![Experimental][02] | ![Experimental][02] |
+| PSCustomTableHeaderLabelDecoration                     |                     |                     | ![Experimental][02] |
+| PSFeedbackProvider                                     |                     |                     | ![Experimental][02] |
+| PSModuleAutoLoadSkipOfflineFiles                       |                     |                     | ![Experimental][02] |
 
 ## PSAMSIMethodInvocationLogging
 
