@@ -18,18 +18,44 @@ PowerShell logs details of PowerShell operations, such as starting and stopping
 the engine and starting and stopping providers. It also logs details about
 PowerShell commands.
 
-The location of PowerShell logs is dependent on the target platform. On
-**Linux**, PowerShell logs to **syslog** and **rsyslog.conf** can be used. For
-more information, refer to the Linux computer's local `man` pages. On
-**macOS**, the **os_log** logging system is used. For more information, see
+The location of PowerShell logs is dependent on the target platform. On **Linux**,
+PowerShell logs to the **systemd journal** that can forward to a **syslog**
+server. For more information, see the `man` pages for your Linux distribution.
+On **macOS**, the **os_log** logging system is used. For more information, see
 [os_log developer documentation](https://developer.apple.com/documentation/os/os_log).
 
 ## Viewing PowerShell log output on Linux
 
-PowerShell logs to **syslog** on Linux. Any of the tools commonly used to
-view **syslog** contents may be used.
+PowerShell logs to the systemd journal in binary format using the journald daemon
+on Linux distributions such as Ubuntu and Red Hat. The logs can also be forwarded
+to a syslog server by the journald daemon and is the default configuration for
+many Linux distributions.
 
-The format of the log entries uses the following template:
+### Journald
+
+Unlike text based logs, tools for querying journal logs on Linux must be
+designed for reading their binary format.
+
+In the following example, the `journalctl` utility is used to query the journal log
+for PowerShell entries.
+
+```
+journalctl --grep powershell
+```
+
+The main configuration file for journald is `/etc/systemd/journald.conf`.
+Other configuration files for journald may exist. For more information, see
+the `man` pages for your Linux distribution.
+
+The `ForwardToSysLog` option to forward journald log messages to syslog is
+located in the journald configuration file.
+
+### Syslog
+
+Linux distributions such as Ubuntu and Red Hat preinstall the rsyslog System
+Logging Protocol (syslog) server by default. Syslog stores log messages in a
+standardized text format as shown in the following template. Any text file
+utility or tool commonly used to view syslog content can be used to read the logs.
 
 ```Syntax
 TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
@@ -49,46 +75,47 @@ TIMESTAMP MACHINENAME powershell[PID]: (COMMITID:TID:CID)
 - **LEVEL** - The log level for the event entry
 - **MESSAGE** - The message associated with the event entry
 
-> [!NOTE]
-> **EVENTID**, **TASK**, **OPCODE**, and **LEVEL** are the same values as used when
-> logging to the Windows event log.
+**EVENTID**, **TASK**, **OPCODE**, and **LEVEL** are the same values as used when
+logging to the Windows event log.
 
-### Filtering PowerShell log entries using rsyslog
+By default, PowerShell log entries are written to following default location for
+syslog messages:
 
-By default, PowerShell log entries are written to the `/var/log/syslog` **syslog**.
+- `/var/log/syslog` for Debian based distributions including Ubuntu
+- `var/log/messages` for Red Hat based distributions
+
 In the following example, use the `cat` Linux command in a terminal to query the
-**syslog** for PowerShell entries.
+**syslog** on Ubuntu for PowerShell entries.
 
 ```
 cat /var/log/syslog | grep -i powershell
 ```
 
 It's also possible to redirect the PowerShell log entries to a separate file.
+When the PowerShell log entries are redirected to a separate file, they're no
+longer logged to the default syslog.
 
-> [!NOTE]
-> When the PowerShell log entries are redirected to a separate file, they are no
-> longer logged in the default syslog.
+The following steps configure PowerShell log entries on Ubuntu to write to a
+log file named `powershell.log`.
 
-1. Create a conf file for the PowerShell log configuration. Provide a number
-   for the file to begin with that's less than the default. For example,
+1. Create a config (`conf`) file for the PowerShell log configuration in the
+   `/etc/rsyslog.d` directory using a text file editor such as `nano`. Prefix
+   the filename with a number that's less than the default. For example,
    `40-powershell.conf` where the default is `50-default.conf`.
-
-   Create the new conf file in the `/etc/rsyslog.d` directory using the `nano`
-   command.
 
    ```
    sudo nano /etc/rsyslog.d/40-powershell.conf
    ```
 
-1. Add the following to the new conf file:
+1. Add the following information to the `40-powershell.conf` file:
 
    ```
    :syslogtag, contains, "powershell[" /var/log/powershell.log
    & stop
    ```
 
-1. Verify `/etc/rsyslog.conf` includes the new file. It may have a
-   generic statement that includes it, such as the following:
+1. Verify that `/etc/rsyslog.conf` has an include statement for the new file.
+   It may have a generic statement that includes it, such as:
 
    `$IncludeConfig /etc/rsyslog.d/*.conf`
 
@@ -97,32 +124,35 @@ It's also possible to redirect the PowerShell log entries to a separate file.
 1. Verify the attributes and permissions are set appropriately.
 
    ```
-   sudo ls -l /etc/rsyslog.d/40-powershell.conf
+   ls -l /etc/rsyslog.d/40-powershell.conf
    ```
 
    ```Output
    -rw-r--r-- 1 root root   67 Nov 28 12:51 40-powershell.conf
    ```
 
-1. Set ownership to **root**.
+   If your `40-powershell.conf` file has different ownership or permissions,
+   complete the following steps:
 
-   ```
-   sudo chown root:root /etc/rsyslog.d/40-powershell.conf
-   ```
+   1. Set ownership to **root**.
 
-1. Set access permissions: **root** has read/write, **users** have read.
+      ```
+      sudo chown root:root /etc/rsyslog.d/40-powershell.conf
+      ```
 
-   ```
-   sudo chmod 644 /etc/rsyslog.d/40-powershell.conf
-   ```
+   1. Set access permissions: **root** has read/write, **users** have read.
 
-1. Restart the rsyslog service.
+      ```
+      sudo chmod 644 /etc/rsyslog.d/40-powershell.conf
+      ```
+
+1. Restart the **rsyslog** service.
 
    ```
    sudo systemctl restart rsyslog.service
    ```
 
-1. Run `pwsh` to generate some information to log.
+1. Run `pwsh` to generate PowerShell information to log.
 
    ```
    pwsh
@@ -130,10 +160,10 @@ It's also possible to redirect the PowerShell log entries to a separate file.
 
 > [!NOTE]
 > The `/var/log/powershell.log` file isn't created until the rsyslog
-> service is restarted and PowerShell generates some information to log.
+> service is restarted and PowerShell generates information to log.
 
-1. Query the log file to verify PowerShell information is being logged to the
-   new file.
+1. Query the `powershell.log` file to verify PowerShell information is being
+   logged to the new file.
 
    ```
    cat /var/log/powershell.log
