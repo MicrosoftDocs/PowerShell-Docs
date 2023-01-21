@@ -44,11 +44,10 @@ journalctl --grep powershell
 ```
 
 The main configuration file for journald is `/etc/systemd/journald.conf`.
-Other configuration files for journald may exist. For more information, see
-the `man` pages for your Linux distribution.
-
-The `ForwardToSysLog` option to forward journald log messages to syslog is
-located in the journald configuration file.
+Other configuration files for journald may exist. The `ForwardToSysLog` option
+to forward journald log messages to syslog is located in the journald
+configuration file.For more information, see the `man` pages for your Linux
+distribution.
 
 ### Syslog
 
@@ -82,7 +81,7 @@ By default, PowerShell log entries are written to following default location for
 syslog messages:
 
 - `/var/log/syslog` for Debian based distributions including Ubuntu
-- `var/log/messages` for Red Hat based distributions
+- `/var/log/messages` for Red Hat based distributions
 
 In the following example, use the `cat` Linux command in a terminal to query the
 **syslog** on Ubuntu for PowerShell entries.
