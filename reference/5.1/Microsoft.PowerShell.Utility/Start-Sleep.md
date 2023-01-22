@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 22/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Sleep
@@ -112,8 +112,10 @@ This cmdlet returns no output.
 
 ## NOTES
 
-- You can also refer to `Start-Sleep` by its built-in alias, `sleep`. For more information, see
-  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+Windows PowerShell includes the following aliases for `Start-Sleep`:
+
+- `sleep`
+
 - `Ctrl+C` breaks out of `Start-Sleep`.
 - `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
   [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
