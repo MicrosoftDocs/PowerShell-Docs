@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/trace-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Trace-Command
@@ -342,6 +342,10 @@ This cmdlet returns no output of its own. The traced command may return output.
 This cmdlet writes the command trace to the debug stream.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Trace-Command`:
+
+- `trcm`
 
 - Tracing is a method that developers use to debug and refine programs. When tracing, the program
   generates detailed messages about each step in its internal processing.
