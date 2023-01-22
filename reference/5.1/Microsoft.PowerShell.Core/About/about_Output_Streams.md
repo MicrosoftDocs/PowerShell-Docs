@@ -1,7 +1,7 @@
 ---
 description: Explains the availability and purpose of output streams in PowerShell.
 Locale: en-US
-ms.date: 09/12/2022
+ms.date: 01/22/2023
 no-loc: [Success, Error, Warning, Verbose, Debug, Information, Progress]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_output_streams?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -17,7 +17,7 @@ Explains the availability and purpose of output streams in PowerShell.
 PowerShell provides multiple output streams. The streams provide channels for
 different types of messages. You can write to these streams using the
 associated cmdlet or redirection. For more information, see
-[about_Redirection](about_Redirection.md).
+[about_Redirection][03].
 
 PowerShell supports the following output streams.
 
@@ -32,7 +32,7 @@ PowerShell supports the following output streams.
 | n/a      | **Progress** stream    | PowerShell 2.0 | `Write-Progress`    |
 
 > [!NOTE]
-> The **Progress** stream does not support redirection.
+> The **Progress** stream doesn't support redirection.
 
 ## Success stream
 
@@ -49,33 +49,31 @@ The **Error** stream is the default stream for error results. Use the
 is connected to the **stderr** stream for native applications. Under most
 conditions, these errors can terminate the execution pipeline. Errors written
 to this stream are also added the the `$Error` automatic variable. For more
-information, see [about_Automatic_Variables](about_Automatic_Variables.md).
+information, see [about_Automatic_Variables][01].
 
 ## Warning stream
 
 The **Warning** stream is intended for error conditions that are less severe
 than errors written to the **Error** stream. Under normal conditions, these
-warnings do not terminate execution. Warnings are not written to the `$Error`
+warnings don't terminate execution. Warnings aren't written to the `$Error`
 automatic variable. Use the `Write-Warning` cmdlet to explicitly write to this
 stream.
 
 ## Verbose stream
 
 The **Verbose** stream is intended for messages that help users troubleshoot
-commands as they are run interactively or from a script. Use the
-`Write-Verbose` cmdlet to explicitly write messages to this stream. Many
-cmdlets provide verbose output that is useful for understanding the internal
-workings of the cmdlet. The verbose messages are output only when you use the
-`-Verbose` common parameter. For more information, see
-[about_CommonParameters](about_CommonParameters.md).
+commands as they're run interactively or from a script. Use the `Write-Verbose`
+cmdlet to explicitly write messages to this stream. Many cmdlets provide
+verbose output that's useful for understanding the internal workings of the
+cmdlet. The verbose messages are output only when you use the `-Verbose` common
+parameter. For more information, see [about_CommonParameters][02].
 
 ## Debug stream
 
 The **Debug** stream is used for messages that help scripters understand why
 their code is failing. Use the `Write-Debug` cmdlet to explicitly write to this
 stream. The debug messages are output only when you use the `-Debug` common
-parameter. For more information, see
-[about_CommonParameters](about_CommonParameters.md).
+parameter. For more information, see [about_CommonParameters][02].
 
 Debug messages are intended for script and cmdlet developers more than end
 users. These debug messages can contain internal details necessary for deep
@@ -89,22 +87,40 @@ additional stream used to pass information through PowerShell. The developer
 can tag stream data and have specific handling for that stream. Use the
 `Write-Information` cmdlet to explicitly write to this stream.
 
+`Write-Host` also writes to the **Information** stream. This difference between
+the cmdlets is that `Write-Host` also writes to the host console unless you
+redirect **Information** stream. `Write-Information` only writes to the
+**Information** stream.
+
 ## Progress stream
 
 The **Progress** stream is used for messages that communicate progress in
 longer running commands and scripts. Use the `Write-Progress` cmdlet to
-explicitly write messages to this stream. The **Progress** stream does not
+explicitly write messages to this stream. The **Progress** stream doesn't
 support redirection.
 
 ## See also
 
-- [about_CommonParameters](about_CommonParameters.md)
-- [about_Redirection](about_Redirection.md)
-- [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
-- [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
-- [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
-- [Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
-- [Write-Output](xref:Microsoft.PowerShell.Utility.Write-Output)
-- [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress)
-- [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)
-- [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
+- [about_CommonParameters][02]
+- [about_Redirection][03]
+- [Write-Debug][04]
+- [Write-Error][05]
+- [Write-Host][06]
+- [Write-Information][07]
+- [Write-Output][08]
+- [Write-Progress][09]
+- [Write-Verbose][10]
+- [Write-Warning][11]
+
+<!-- link references -->
+[01]: about_Automatic_Variables.md
+[02]: about_CommonParameters.md
+[03]: about_Redirection.md
+[04]: xref:Microsoft.PowerShell.Utility.Write-Debug
+[05]: xref:Microsoft.PowerShell.Utility.Write-Error
+[06]: xref:Microsoft.PowerShell.Utility.Write-Host
+[07]: xref:Microsoft.PowerShell.Utility.Write-Information
+[08]: xref:Microsoft.PowerShell.Utility.Write-Output
+[09]: xref:Microsoft.PowerShell.Utility.Write-Progress
+[10]: xref:Microsoft.PowerShell.Utility.Write-Verbose
+[11]: xref:Microsoft.PowerShell.Utility.Write-Warning
