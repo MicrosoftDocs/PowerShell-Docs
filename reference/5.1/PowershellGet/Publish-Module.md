@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 12/09/2022
+ms.date: 01/17/2023
 online version: https://learn.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
@@ -411,6 +411,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Object
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Publish-Module`:
+
+- `pumo`
 
 `Publish-Module` runs on PowerShell 3.0 or later releases of PowerShell, on Windows 7 or Windows
 2008 R2 and later releases of Windows.

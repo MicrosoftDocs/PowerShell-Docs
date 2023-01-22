@@ -282,7 +282,7 @@ Hit Line breakpoint on 'C:\TestWFDemo1.ps1:8'
 
 At C:\TestWFDemo1.ps1:8 char:5
 +     Write-Output -InputObject "Now writing output:"
-# +!INCLUDE[]~~~~~
+# ~~~~~
 
 [WFDBG:localhost]: PS C:>> list
 

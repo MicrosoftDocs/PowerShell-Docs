@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 12/09/2022
+ms.date: 01/17/2023
 online version: https://learn.microsoft.com/powershell/module/powershellget/update-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
@@ -369,6 +369,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.Object
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Update-Module`:
+
+- `upmo`
 
 For PowerShell 5.1 or below, the default scope in an elevated session is **AllUsers**, and in a
 non-elevated session, **CurrentUser**. Module updates for **AllUsers**,

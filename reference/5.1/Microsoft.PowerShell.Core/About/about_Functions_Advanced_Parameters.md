@@ -300,6 +300,7 @@ syntax to declare two arguments of the **Parameter** attribute.
 Param(
     [Parameter(Argument1=value1,
     Argument2=value2)]
+    $ParameterName
 )
 ```
 

@@ -1,7 +1,7 @@
 ---
 description: FileSystem
 Locale: en-US
-ms.date: 04/28/2021
+ms.date: 01/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about FileSystem Provider
@@ -36,37 +36,47 @@ or physical drive, directory, or mapped network share.
 The **FileSystem** provider supports the following cmdlets, which are covered
 in this article.
 
-- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
-- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
-- [Invoke-Item](xref:Microsoft.PowerShell.Management.Invoke-Item)
-- [Move-Item](xref:Microsoft.PowerShell.Management.Move-Item)
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Get-ItemProperty](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
-- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
-- [Clear-Item](xref:Microsoft.PowerShell.Management.Clear-Item)
-- [Clear-ItemProperty](xref:Microsoft.PowerShell.Management.Clear-ItemProperty)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Remove-ItemProperty](xref:Microsoft.PowerShell.Management.Remove-ItemProperty)
-- [Get-Acl](xref:Microsoft.PowerShell.Security.Get-Acl)
-- [Set-Acl](xref:Microsoft.PowerShell.Security.Set-Acl)
-- [Get-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature)
-- [Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
+- [Get-Location][20]
+- [Set-Location][29]
+- [Get-Item][18]
+- [Get-ChildItem][16]
+- [Invoke-Item][22]
+- [Move-Item][23]
+- [New-Item][24]
+- [Remove-Item][25]
+- [Get-ItemProperty][19]
+- [Set-ItemProperty][28]
+- [Clear-Item][13]
+- [Clear-ItemProperty][14]
+- [Remove-Item][25]
+- [Remove-ItemProperty][26]
+- [Get-Acl][31]
+- [Set-Acl][33]
+- [Get-AuthenticodeSignature][32]
+- [Set-AuthenticodeSignature][34]
+- [Add-Content][11]
+- [Clear-Content][12]
+- [Get-Content][17]
+- [Set-Content][27]
 
 ## Types exposed by this provider
 
-Files are instances of the [System.IO.FileInfo](/dotnet/api/system.io.fileinfo)
-class. Directories are instances of the [System.IO.DirectoryInfo](/dotnet/api/system.io.directoryinfo)
-class.
+Files are instances of the [System.IO.FileInfo][04] class. Directories are
+instances of the [System.IO.DirectoryInfo][02] class.
+
+The PowerShell Extended Type System adds extra properties to these object types
+to provide additional information. Some information is platform specific. For
+example, the possible values of the **LinkType** property depend on the
+platform and filesystem being used. On Windows, NTFS supports `HardLink`,
+`SymLink`, and `Junction` values for **LinkType**. Linux and macOS filesystems
+only support `HardLink` and `SymLink`.
 
 ## Navigating the FileSystem drives
 
 The **FileSystem** provider exposes its data stores by mapping any logical
 drives on the computer as PowerShell drives. To work with a **FileSystem**
-drive you can change your location to a drive using the drive name followed
-by a colon (`:`).
+drive you can change your location to a drive using the drive name followed by
+a colon (`:`).
 
 ```powershell
 Set-Location C:
@@ -79,11 +89,8 @@ name (`C:`, `D:`, ...) in the path.
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem), `cd` is
-> an alias for
-> [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd`
-> is an alias for
-> [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
+> `Get-ChildItem`, `cd` is an alias for `Set-Location`. and `pwd` is an
+> alias for `Get-Location`.
 
 ## Getting files and directories
 
@@ -95,8 +102,7 @@ in parameters to filter and control the recursion depth.
 Get-ChildItem
 ```
 
-To read more about cmdlet usage, see
-[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem).
+To read more about cmdlet usage, see [Get-ChildItem][16].
 
 ## Copying files and directories
 
@@ -104,7 +110,7 @@ The `Copy-Item` cmdlet copies files and directories to a location you specify.
 Parameters are available to filter and recurse, similar to `Get-ChildItem`.
 
 The following command copies all of the files and directories under the path
-"C:\temp\" to the folder "C:\Windows\Temp".
+`C:\temp\` to the folder `C:\Windows\Temp`.
 
 ```powershell
 Copy-Item -Path C:\temp\* -Destination C:\Windows\Temp -Recurse -File
@@ -122,14 +128,13 @@ Copy-Item -Path C:\a\a.txt -Destination C:\a\bb\a.txt
 
 Copies all the directories and files in the `C:\a` directory to the `C:\c`
 directory. If any of the directories to copy already exist in the destination
-directory, the command will fail unless you specify the Force parameter.
+directory, the command fails unless you specify the **Force** parameter.
 
 ```powershell
 Copy-Item -Path C:\a\* -Destination C:\c -Recurse
 ```
 
-For more information, see
-[Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item).
+For more information, see [Copy-Item][15].
 
 ## Moving files and directories
 
@@ -140,11 +145,11 @@ directory:
 Move-Item -Path C:\a\c.txt -Destination C:\a\aa
 ```
 
-The command will not automatically overwrite an existing file that has the same
-name. To force the cmdlet to overwrite an existing file, specify the Force
+By default, the cmdlet doesn't overwrite an existing file that has the same
+name. To force the cmdlet to overwrite an existing file, specify the **Force**
 parameter.
 
-You cannot move a directory when that directory is the current location. When
+You can't move a directory when that directory is the current location. When
 you use `Move-Item` to move the directory at the current location, you see
 this error.
 
@@ -172,8 +177,7 @@ Get-Content -Path Test.txt
 
 You can pipe the contents of the file to another cmdlet. For example, the
 following command reads the contents of the `Test.txt` file and then supplies
-them as input to the
-[ConvertTo-Html](xref:Microsoft.PowerShell.Utility.ConvertTo-Html) cmdlet:
+them as input to the [ConvertTo-Html][35] cmdlet:
 
 ```powershell
 Get-Content -Path Test.txt | ConvertTo-Html
@@ -181,8 +185,7 @@ Get-Content -Path Test.txt | ConvertTo-Html
 
 You can also retrieve the content of a file by prefixing its provider path with
 the dollar sign (`$`). The path must be enclosed in curly braces due to
-variable naming restrictions. For more information, see
-[about_Variables](about_Variables.md).
+variable naming restrictions. For more information, see [about_Variables][09].
 
 ```powershell
 ${C:\Windows\System32\Drivers\etc\hosts}
@@ -196,7 +199,7 @@ This command appends the "test content" string to the `Test.txt` file:
 Add-Content -Path test.txt -Value "test content"
 ```
 
-The existing content in the `Test.txt` file is not deleted.
+The existing content in the `Test.txt` file isn't deleted.
 
 ### Replace the content of a file
 
@@ -208,8 +211,7 @@ Set-Content -Path test.txt -Value "test content"
 ```
 
 It overwrites the contents of `Test.txt`. You can use the **Value** parameter
-of the [New-Item](xref:Microsoft.PowerShell.Management.New-Item) cmdlet to
-add content to a file when you create it.
+of the `New-Item` cmdlet to add content to a file when you create it.
 
 ### Loop through the contents of a file
 
@@ -217,7 +219,7 @@ By default, the `Get-Content` cmdlet uses the end-of-line character as its
 delimiter, so it gets a file as a collection of strings, with each line as one
 string in the file.
 
-You can use the `-Delimiter` parameter to specify an alternate delimiter. If
+You can use the **Delimiter** parameter to specify an alternate delimiter. If
 you set it to the characters that denote the end of a section or the beginning
 of the next section, you can split the file into logical parts.
 
@@ -229,9 +231,9 @@ The second command uses array notation to get the first item in the collection
 in `$e`. It uses an index of 0, because PowerShell arrays are zero-based.
 
 For more information about `Get-Content` cmdlet, see the help topic for the
-[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content).
+`Get-Content`.
 
-For more information about arrays, see [about_Arrays](about_Arrays.md).
+For more information about arrays, see [about_Arrays][07].
 
 ```powershell
 $e = Get-Content c:\test\employees.txt -Delimited "End Of Employee Record"
@@ -242,21 +244,14 @@ $e[0]
 
 ### View the ACL for a file
 
-This command returns a
-[System.Security.AccessControl.FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity)
-object:
+This command returns a [System.Security.AccessControl.FileSecurity][06] object:
 
 ```powershell
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
 For more information about this object, pipe the command to the
-[Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) cmdlet. Or, see
-[FileSecurity](/dotnet/api/system.security.accesscontrol.filesecurity) Class.
-
-### Modify the ACL for a file
-
-### Create and set an ACL for a file
+[Get-Member][38] cmdlet or see the [FileSecurity][06] Class.
 
 ## Creating files and directories
 
@@ -269,8 +264,7 @@ New-Item -Path c:\ -Name logfiles -Type directory
 ```
 
 PowerShell also includes a `mkdir` function (alias `md`) that uses the
-[New-Item](xref:Microsoft.PowerShell.Management.New-Item) cmdlet to
-create a new directory.
+`New-Item` cmdlet to create a new directory.
 
 ### Create a file
 
@@ -331,17 +325,12 @@ Remove-Item -Path *.xml
 
 ### Invoke a file
 
-The first command uses the
-[Get-Service](xref:Microsoft.PowerShell.Management.Get-Service) cmdlet to
-get information about local services.
+The [Get-Service][21] cmdlet to get information about local services and pipes
+the information to the [Export-Csv][36] cmdlet to store the information in the
+`Services.csv` file.
 
-It pipes the information to the
-[Export-Csv](xref:Microsoft.PowerShell.Utility.Export-Csv) cmdlet and then
-stores that information in the `Services.csv` file.
-
-The second command uses
-[Invoke-Item](xref:Microsoft.PowerShell.Management.Invoke-Item) to open the
-`services.csv` file in the program associated with the `.csv` extension:
+Then [Invoke-Item][22] opens the `services.csv` file in the program associated
+with the `.csv` extension:
 
 ```powershell
 Get-Service | Export-Csv -Path services.csv
@@ -354,10 +343,10 @@ Invoke-Item -Path services.csv
 
 This command gets system files in the current directory and its subdirectories.
 
-It uses the `-File` parameter to get only files (not directories) and the
-`-System` parameter to get only items with the "system" attribute.
+It uses the **File** parameter to get only files (not directories) and the
+**System** parameter to get only items with the "system" attribute.
 
-It uses the `-Recurse` parameter to get the items in the current directory and
+It uses the **Recurse** parameter to get the items in the current directory and
 all subdirectories.
 
 ```powershell
@@ -382,7 +371,7 @@ Get-ChildItem -Attributes !Directory,!Directory+Hidden
 This command gets files in the current directory that are either compressed or
 encrypted.
 
-It uses the `-Attributes` parameter with two values, `Compressed` and
+It uses the **Attributes** parameter with two values, `Compressed` and
 `Encrypted`. The values are separated by a comma `,` which represents the "OR"
 operator.
 
@@ -396,46 +385,41 @@ Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
 provider-enabled drive.
 
-### Encoding \<Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding\>
+### Encoding \<FileSystemCmdletProviderEncoding\>
 
 Specifies the file encoding. The default is ASCII.
 
-- **ASCII**: Uses the encoding for the ASCII (7-bit) character set.
-- **BigEndianUnicode**: Encodes in UTF-16 format using the big-endian byte
-  order.
-- **String**: Uses the encoding type for a string.
-- **Unicode**: Encodes in UTF-16 format using the little-endian byte order.
-- **UTF7**: Encodes in UTF-7 format.
-- **UTF8**: Encodes in UTF-8 format.
-- **UTF8BOM**: Encodes in UTF-8 format with Byte Order Mark (BOM)
-- **UF8NOBOM**: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- **UTF32**: Encodes in UTF-32 format.
-- **Default**: Encodes in the default installed code page.
-- **OEM**: Uses the default encoding for MS-DOS and console programs.
-- **Unknown**: The encoding type is unknown or invalid. The data can be treated
-  as binary.
+- `Ascii` Uses ASCII (7-bit) character set.
+- `BigEndianUnicode` Uses UTF-16 with the big-endian byte order.
+- `BigEndianUTF32` Uses UTF-32 with the big-endian byte order.
+- `Byte` Encodes a set of characters into a sequence of bytes.
+- `Default` Uses the encoding that corresponds to the system's active code page (usually ANSI).
+- `Oem` Uses the encoding that corresponds to the system's current OEM code page.
+- `String` Same as `Unicode`.
+- `Unicode` Uses UTF-16 with the little-endian byte order.
+- `Unknown` Same as `Unicode`.
+- `UTF7` Uses UTF-7.
+- `UTF8` Uses UTF-8.
+- `UTF32` Uses UTF-32 with the little-endian byte order.
 
 #### Cmdlets supported
 
-- [Add-Content](xref:Microsoft.PowerShell.Management.Add-Content)
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
-- [Set-Content](xref:Microsoft.PowerShell.Management.Set-Content)
+- `Add-Content`
+- `Get-Content`
+- `Set-Content`
 
-### Delimiter \<System.String\>
+### Delimiter \<String\>
 
-Specifies the delimiter that
-[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) uses to
-divide the file into objects while it reads.
+Specifies the delimiter that `Get-Content` uses to divide the file into
+objects while it reads.
 
 The default is `\n`, the end-of-line character.
 
-When reading a text file,
-[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) returns a
-collection of string objects, each of which ends with the delimiter character.
+When reading a text file, `Get-Content` returns a collection of string
+objects, each of which ends with the delimiter character.
 
-Entering a delimiter that does not exist in the file,
-[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) returns the
-entire file as a single, un-delimited object.
+Entering a delimiter that doesn't exist in the file, `Get-Content` returns
+the entire file as a single, un-delimited object.
 
 You can use this parameter to split a large file into smaller files by
 specifying a file separator, such as "End of Example", as the delimiter. The
@@ -443,39 +427,36 @@ delimiter is preserved (not discarded) and becomes the last item in each file
 section.
 
 > [!NOTE]
-> Currently, when the value of the `-Delimiter` parameter is an empty string,
-> [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) does not
-> return anything. This is a known issue. To force
-> [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) to return the
-> entire file as a single, undelimited string, enter a value that does not
-> exist in the file.
+> Currently, when the value of the **Delimiter** parameter is an empty string,
+> `Get-Content` doesn't return anything. This is a known issue. To force
+> `Get-Content` to return the entire file as a single, undelimited string,
+> enter a value that doesn't exist in the file.
 
 #### Cmdlets supported
 
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
+- `Get-Content`
 
-### Wait \<System.Management.Automation.SwitchParameter\>
+### Wait \<SwitchParameter\>
 
 Waits for content to be appended to the file. If content is appended, it
 returns the appended content. If the content has changed, it returns the entire
 file.
 
-When waiting,
-[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content) checks the
-file once each second until you interrupt it, such as by pressing CTRL+C.
+When waiting, `Get-Content` checks the file once each second until you
+interrupt it, such as by pressing CTRL+C.
 
 #### Cmdlets supported
 
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
+- `Get-Content`
 
 ### Attributes \<FlagsExpression\>
 
 Gets files and folders with the specified attributes. This parameter supports
 all attributes and lets you specify complex combinations of attributes.
 
-The `-Attributes` parameter was introduced in Windows PowerShell 3.0.
+The **Attributes** parameter was introduced in Windows PowerShell 3.0.
 
-The `-Attributes` parameter supports the following attributes:
+The **Attributes** parameter supports the following attributes:
 
 - **Archive**
 - **Compressed**
@@ -492,8 +473,8 @@ The `-Attributes` parameter supports the following attributes:
 - **System**
 - **Temporary**
 
-For a description of these attributes, see the
-[FileAttributes](/dotnet/api/system.io.fileattributes) enumeration.
+For a description of these attributes, see the [FileAttributes][03]
+enumeration.
 
 Use the following operators to combine attributes.
 
@@ -506,125 +487,121 @@ are permitted before commas.
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- `Get-ChildItem`
 
-### Directory \<System.Management.Automation.SwitchParameter\>
+### Directory \<SwitchParameter\>
 
 Gets directories (folders).
 
-The `-Directory` parameter was introduced in Windows PowerShell 3.0.
+The **Directory** parameter was introduced in Windows PowerShell 3.0.
 
-To get only directories, use the `-Directory` parameter and omit the `-File`
-parameter. To exclude directories, use the `-File` parameter and omit the
-`-Directory` parameter, or use the `-Attributes` parameter.
+To get only directories, use the **Directory** parameter and omit the **File**
+parameter. To exclude directories, use the **File** parameter and omit the
+**Directory** parameter, or use the **Attributes** parameter.
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- `Get-ChildItem`
 
-### File \<System.Management.Automation.SwitchParameter\>
+### File \<SwitchParameter\>
 
 Gets files.
 
-The `-File` parameter was introduced in Windows PowerShell 3.0.
+The **File** parameter was introduced in Windows PowerShell 3.0.
 
-To get only files, use the `-File` parameter and omit the `-Directory`
-parameter. To exclude files, use the `-Directory` parameter and omit the
-`-File` parameter, or use the `-Attributes` parameter.
+To get only files, use the **File** parameter and omit the **Directory**
+parameter. To exclude files, use the **Directory** parameter and omit the
+**File** parameter, or use the **Attributes** parameter.
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- `Get-ChildItem`
 
-### Hidden \<System.Management.Automation.SwitchParameter\>
+### Hidden \<SwitchParameter\>
 
 Gets only hidden files and directories (folders). By default,
-[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem) gets only
+`Get-ChildItem` gets only
 non-hidden items.
 
-The `-Hidden` parameter was introduced in Windows PowerShell 3.0.
+The **Hidden** parameter was introduced in Windows PowerShell 3.0.
 
-To get only hidden items, use the `-Hidden` parameter, its `h` or `ah` aliases,
-or the **Hidden** value of the `-Attributes` parameter. To exclude hidden
-items, omit the `-Hidden` parameter or use the `-Attributes` parameter.
+To get only hidden items, use the **Hidden** parameter, its `h` or `ah` aliases,
+or the **Hidden** value of the **Attributes** parameter. To exclude hidden
+items, omit the **Hidden** parameter or use the **Attributes** parameter.
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- `Get-ChildItem`
 
-### ReadOnly \<System.Management.Automation.SwitchParameter\>
+### ReadOnly \<SwitchParameter\>
 
 Gets only read-only files and directories (folders).
 
-The `-ReadOnly` parameter was introduced in Windows PowerShell 3.0.
+The **ReadOnly** parameter was introduced in Windows PowerShell 3.0.
 
-To get only read-only items, use the `-ReadOnly` parameter, its `ar` alias, or
-the **ReadOnly** value of the `-Attributes` parameter. To exclude read-only
-items, use the `-Attributes` parameter.
+To get only read-only items, use the **ReadOnly** parameter, its `ar` alias, or
+the **ReadOnly** value of the **Attributes** parameter. To exclude read-only
+items, use the **Attributes** parameter.
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- `Get-ChildItem`
 
-### System \<System.Management.Automation.SwitchParameter\>
+### System \<SwitchParameter\>
 
 Gets only system files and directories (folders).
 
-The `-System` parameter was introduced in Windows PowerShell 3.0.
+The **System** parameter was introduced in Windows PowerShell 3.0.
 
-To get only system files and folders, use the `-System` parameter, its `as`
-alias, or the **System** value of the `-Attributes` parameter. To exclude
-system files and folders, use the `-Attributes` parameter.
+To get only system files and folders, use the **System** parameter, its `as`
+alias, or the **System** value of the **Attributes** parameter. To exclude
+system files and folders, use the **Attributes** parameter.
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- `Get-ChildItem`
 
-### NewerThan \<System.DateTime\>
+### NewerThan \<DateTime\>
 
 Returns `$True` when the `LastWriteTime` value of a file is greater than the
 specified date. Otherwise, it returns `$False`.
 
-Enter a [DateTime](/dotnet/api/system.datetime) object,
-such as one that the [Get-Date](xref:Microsoft.PowerShell.Utility.Get-Date)
-cmdlet returns, or a string that can be converted to a
-[DateTime](/dotnet/api/system.datetime) object, such as
+Enter a [DateTime][01] object, such as one that the [Get-Date][37] cmdlet
+returns, or a string that can be converted to a **DateTime** object, such as
 `"August 10, 2011 2:00 PM"`.
 
 #### Cmdlets supported
 
-- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path)
+- [Test-Path][30]
 
-### OlderThan \<System.DateTime\>
+### OlderThan \<DateTime\>
 
 Returns `$True` when the `LastWriteTime` value of a file is less than the
 specified date. Otherwise, it returns `$False`.
 
-Enter a [DateTime](/dotnet/api/system.datetime) object,
-such as one that the [Get-Date](xref:Microsoft.PowerShell.Utility.Get-Date)
-cmdlet returns, or a string that can be converted to a
-[DateTime](/dotnet/api/system.datetime) object, such as
+Enter a **DateTime** object, such as one that the `Get-Date` cmdlet
+returns, or a string that can be converted to a [DateTime][01] object, such as
 `"August 10, 2011 2:00 PM"`.
 
 #### Cmdlets supported
 
-- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path)
+- `Test-Path`
 
-### Stream \<System.String\>
+### Stream \<String\>
 
 Manages alternate data streams. Enter the stream name. Wildcards are permitted
-only in [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item) for and
-[Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item) commands in a
+only in `Get-Item` for and
+`Remove-Item` commands in a
 file system drive.
 
 #### Cmdlets supported
 
-- [Add-Content](xref:Microsoft.PowerShell.Management.Add-Content)
-- [Clear-Content](xref:Microsoft.PowerShell.Management.Clear-Content)
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Set-Content](xref:Microsoft.PowerShell.Management.Set-Content)
+- `Add-Content`
+- `Clear-Content`
+- `Get-Item`
+- `Get-Content`
+- `Remove-Item`
+- `Set-Content`
 
 ### Raw \<SwitchParameter\>
 
@@ -632,7 +609,7 @@ Ignores newline characters. Returns contents as a single item.
 
 #### Cmdlets supported
 
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
+- `Get-Content`
 
 ### ItemType \<String\>
 
@@ -651,14 +628,14 @@ In a `FileSystem` drive, the following values are allowed:
 
 ### Cmdlets supported
 
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
+- `New-Item`
 
 ## Using the pipeline
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
-task by sending provider data from one cmdlet to another provider cmdlet.
-To read more about how to use the pipeline with provider cmdlets, see the
-cmdlet references provided throughout this article.
+task by sending provider data from one cmdlet to another provider cmdlet. To
+read more about how to use the pipeline with provider cmdlets, see the cmdlet
+references provided throughout this article.
 
 ## Getting help
 
@@ -666,10 +643,8 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system
-drive or use the `-Path` parameter of
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system
-drive.
+[Get-Help][10] command in a file system drive or use the **Path** parameter of
+`Get-Help` to specify a file system drive.
 
 ```powershell
 Get-Help Get-ChildItem
@@ -681,4 +656,44 @@ Get-Help Get-ChildItem -Path c:
 
 ## See also
 
-- [about_Providers](about_Providers.md)
+- [about_Providers][08]
+
+<!-- updated link references -->
+[01]: /dotnet/api/system.datetime
+[02]: /dotnet/api/system.io.directoryinfo
+[03]: /dotnet/api/system.io.fileattributes
+[04]: /dotnet/api/system.io.fileinfo
+[05]: /dotnet/api/system.io.path.gettemppath
+[06]: /dotnet/api/system.security.accesscontrol.filesecurity
+[07]: about_Arrays.md
+[08]: about_Providers.md
+[09]: about_Variables.md
+[10]: xref:Microsoft.PowerShell.Core.Get-Help
+[11]: xref:Microsoft.PowerShell.Management.Add-Content
+[12]: xref:Microsoft.PowerShell.Management.Clear-Content
+[13]: xref:Microsoft.PowerShell.Management.Clear-Item
+[14]: xref:Microsoft.PowerShell.Management.Clear-ItemProperty
+[15]: xref:Microsoft.PowerShell.Management.Copy-Item
+[16]: xref:Microsoft.PowerShell.Management.Get-ChildItem
+[17]: xref:Microsoft.PowerShell.Management.Get-Content
+[18]: xref:Microsoft.PowerShell.Management.Get-Item
+[19]: xref:Microsoft.PowerShell.Management.Get-ItemProperty
+[20]: xref:Microsoft.PowerShell.Management.Get-Location
+[21]: xref:Microsoft.PowerShell.Management.Get-Service
+[22]: xref:Microsoft.PowerShell.Management.Invoke-Item
+[23]: xref:Microsoft.PowerShell.Management.Move-Item
+[24]: xref:Microsoft.PowerShell.Management.New-Item
+[25]: xref:Microsoft.PowerShell.Management.Remove-Item
+[26]: xref:Microsoft.PowerShell.Management.Remove-ItemProperty
+[27]: xref:Microsoft.PowerShell.Management.Set-Content
+[28]: xref:Microsoft.PowerShell.Management.Set-ItemProperty
+[29]: xref:Microsoft.PowerShell.Management.Set-Location
+[30]: xref:Microsoft.PowerShell.Management.Test-Path
+[31]: xref:Microsoft.PowerShell.Security.Get-Acl
+[32]: xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature
+[33]: xref:Microsoft.PowerShell.Security.Set-Acl
+[34]: xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature
+[35]: xref:Microsoft.PowerShell.Utility.ConvertTo-Html
+[36]: xref:Microsoft.PowerShell.Utility.Export-Csv
+[37]: xref:Microsoft.PowerShell.Utility.Get-Date
+[38]: xref:Microsoft.PowerShell.Utility.Get-Member

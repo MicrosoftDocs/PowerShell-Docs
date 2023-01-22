@@ -1,7 +1,7 @@
 ---
 description: Function
 Locale: en-US
-ms.date: 10/18/2018
+ms.date: 01/17/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_function_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Function Provider
@@ -112,6 +112,13 @@ by the dollar sign (`$`).
 
 ```powershell
 $function:more
+```
+
+To retrieve the definition for a function that has a dash (`-`) in the name,
+wrap the value after the dollar sign in curly braces.
+
+```powershell
+${function:Clear-Host}
 ```
 
 ### Getting selected functions

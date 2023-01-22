@@ -1,7 +1,7 @@
 ---
 description: Describes the settings and practices for writing module manifest files.
 Locale: en-US
-ms.date: 10/19/2022
+ms.date: 01/19/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Module Manifests
@@ -14,11 +14,11 @@ Describes the settings and practices for writing module manifest files.
 ## Long description
 
 A module manifest is a PowerShell data file (`.psd1`) containing a hash table.
-The keys/value pairs in the hash table describe the contents and attributes of
+The keys-value pairs in the hash table describe the contents and attributes of
 the module, define the prerequisites, and control how the components are
 processed.
 
-Manifests aren't required to load a module but they are required to publish a
+Manifests aren't required to load a module but they're required to publish a
 module to the PowerShell Gallery. Manifests also enable you to separate your
 module's implementation from how it loads. With a manifest, you can define
 requirements, compatibility, loading order, and more.
@@ -73,24 +73,49 @@ PrivateData = @{
 You can use `Test-ModuleManifest` to validate a module manifest before you
 publish your module. `Test-ModuleManifest` returns an error if the manifest is
 invalid or the module can't be imported into the current session because the
-session does not meet requirements set in the manifest.
+session doesn't meet requirements set in the manifest.
+
+## Using script code in a module manifest
+
+The values assigned the settings in the manifest file can be expressions that
+are evaluated by PowerShell. This allows you to construct paths and
+conditionally assign values based on variables.
+
+When you import a module using `Import-Module`, the manifest is evaluated in
+`Restricted` language mode. `Restricted` mode limits the commands and variables
+that can be used.
+
+Allowed commands
+
+- `Import-LocalizedData`
+- `ConvertFrom-StringData`
+- `Write-Host`
+- `Out-Host`
+- `Join-Path`
+
+Allowed variables
+
+- `$PSScriptRoot`
+- `$PSEdition`
+- `$EnabledExperimentalFeatures`
+
+For more information, see [about_Language_Modes](about_Language_Modes.md).
 
 ## Manifest settings
 
 The following sections detail every available setting in a module manifest and
 how you can use them. They start with a synopsis of the setting and are
-followed by a matrix which lists:
+followed by a matrix that lists:
 
 - **Input type**: The object type that you can specify for this setting in the
   manifest.
 - **Required**: If this value is `Yes`, the setting is required both to import
-  the module and to publish it to the PowerShell Gallery. If it is `No`, it is
-  required for neither. If it is `PowerShell Gallery`, it is only required for
+  the module and to publish it to the PowerShell Gallery. If it's `No`, it's
+  required for neither. If it's `PowerShell Gallery`, it's only required for
   publishing to the PowerShell Gallery.
 - **Value if unset**: The value this setting has when imported and not
   explicitly set.
-- **Accepts wildcards**: Whether this setting can take a wildcard
-  value or not.
+- **Accepts wildcards**: Whether this setting can take a wildcard value or not.
 
 ### RootModule
 
@@ -105,7 +130,7 @@ caller's session state.
 | **Value if unset**    | `$null`         |
 | **Accepts wildcards** | No              |
 
-The value must be the file path to one of the following:
+The value must be the path to one of the following:
 
 - a script (`.ps1`)
 - a script module (`.psm1`)
@@ -114,13 +139,12 @@ The value must be the file path to one of the following:
 - a cmdlet definition XML file (`.cdxml`)
 - a Windows PowerShell 5.1 Workflow (`.xaml`)
 
-The file path should be relative to the module manifest.
+The path should be relative to the module manifest.
 
-If a module has a manifest file and no root file was designated in the
-**RootModule** key, the manifest becomes the primary file for the module, and
-the module becomes a manifest module (ModuleType = Manifest). When
-**RootModule** is defined, the module's type is determined from the file
-extension used:
+If a module manifest has no root file was designated in the **RootModule** key,
+the manifest becomes the primary file for the module, and the module becomes a
+manifest module (ModuleType = Manifest). When **RootModule** is defined, the
+module's type is determined from the file extension used:
 
 - a `.ps1` or `.psm1` file makes the module type **Script**
 - a `.psd1` file makes the module type **Manifest**
@@ -133,7 +157,7 @@ By default, all module members in the **RootModule** are exported.
 > [!TIP]
 > Module loading speed differs between **Binary**, **Script**, and **CIM**
 > module types. For more information, see
-> [PowerShell module authoring considerations](/powershell/scripting/dev-cross-plat/performance/module-authoring-considerations)
+> [PowerShell module authoring considerations][03]
 
 For example, this module's **ModuleType** is **Manifest**. The only module
 members this module can export are those defined in the modules specified with
@@ -147,7 +171,7 @@ the **NestedModules** setting.
 
 > [!NOTE]
 > This setting may also be specified in module manifests as
-> **ModuleToProcess**. While that name for this setting is valid, it is best
+> **ModuleToProcess**. While that name for this setting is valid, it's best
 > practice to use **RootModule** instead.
 
 ### ModuleVersion
@@ -209,8 +233,8 @@ values.
 
 For information about PSEdition, see:
 
-- [about_PowerShell_Editions](/powershell/module/microsoft.powershell.core/about/about_powershell_editions)
-- [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support).
+- [about_PowerShell_Editions][02]
+- [Modules with compatible PowerShell Editions][05].
 
 When this setting is defined, the module can only be imported into a session
 where the `$PSEdition` automatic variable's value is included in the setting.
@@ -253,7 +277,7 @@ The value of this setting must be convertible to `System.Guid` when you run
 `Import-Module`.
 
 > [!CAUTION]
-> While it is not a required setting, not specifying a **GUID** in a manifest
+> While it's not a required setting, not specifying a **GUID** in a manifest
 > has no benefits and may lead to name collisions for modules.
 
 You can create a new guid to use in your manifest:
@@ -376,7 +400,7 @@ This setting specifies the minimum version of PowerShell this module requires.
 The value of this setting must be convertible to `System.Version` when you run
 `Import-Module`.
 
-If this setting is not set, PowerShell does not restrict the module's import
+If this setting isn't set, PowerShell doesn't restrict the module's import
 based on the current version.
 
 For example, this manifest declares that the module is compatible with every
@@ -636,7 +660,7 @@ A module specification is a hash table that has the following keys.
 > `RequiredVersion` was added in Windows PowerShell 5.0.
 > `MaximumVersion` was added in Windows PowerShell 5.1.
 
-For example, this manifest declares that its module does not require any other
+For example, this manifest declares that its module doesn't require any other
 modules for its functionality.
 
 ```powershell
@@ -647,7 +671,7 @@ modules for its functionality.
 
 This manifest declares that it requires the PSReadLine module. When you run
 `Import-Module` on this manifest, PowerShell imports the latest version of
-PSReadLine that is available to the session. If no version is available, the
+PSReadLine that's available to the session. If no version is available, the
 import returns an error.
 
 ```powershell
@@ -677,7 +701,7 @@ manifest, PowerShell imports the vendored PSReadLine from the specified path.
 
 This manifest declares that it specifically requires version 2.0.0 of the
 PSReadLine module. When you run `Import-Module` on this manifest, PowerShell
-imports version 2.0.0 of PSReadLine if it is available. If it is not available,
+imports version 2.0.0 of PSReadLine if it's available. If it's not available,
 `Import-Module` returns an error.
 
 ```powershell
@@ -739,7 +763,7 @@ to be imported at a version equal to or higher than 2.0.0 but no higher than
 
 This setting specifies the assembly (`.dll`) files that the module requires.
 PowerShell loads the specified assemblies before updating types or formats,
-importing nested modules, or importing the module file that is specified in the
+importing nested modules, or importing the module file that's specified in the
 value of the **RootModule** key.
 
 |                       |       Value       |
@@ -750,7 +774,7 @@ value of the **RootModule** key.
 | **Accepts wildcards** | No                |
 
 Entries for this setting can be the filename of an assembly or the path to one.
-List all required assemblies, even if they are also listed as binary modules in
+List all required assemblies, even if they're also listed as binary modules in
 the **NestedModules** setting.
 
 This manifest requires the `example.dll` assembly. Before loading any
@@ -844,8 +868,7 @@ When you import the module, PowerShell runs the `Update-TypeData` cmdlet with
 the specified files. Because type files aren't scoped, they affect all session
 states in the session.
 
-For more information on type files, see
-[about_Types.ps1xml](about_Types.ps1xml.md)
+For more information on type files, see [about_Types.ps1xml][08]
 
 For example, when you import this manifest, PowerShell loads the types
 specified in the `Example.ps1xml` file from the `Types` folder located in the
@@ -875,8 +898,7 @@ When you import a module, PowerShell runs the `Update-FormatData` cmdlet with
 the specified files. Because formatting files aren't scoped, they affect all
 session states in the session.
 
-For more information on type files, see
-[about_Format.ps1xml](about_Format.ps1xml.md)
+For more information on type files, see [about_Format.ps1xml][07]
 
 For example, when you import this module, PowerShell loads the formats
 specified in the `Example.ps1xml` file from the `Formats` folder located in the
@@ -1008,7 +1030,7 @@ no functions the root module or any nested modules export are available.
 
 > [!NOTE]
 > If you create your module manifest with the `New-ModuleManifest` command and
-> do not specify the **FunctionsToExport** parameter, the created manifest has
+> don't specify the **FunctionsToExport** parameter, the created manifest has
 > this setting specified as an empty array. Unless you edit the manifest, no
 > functions from the module are exported.
 
@@ -1087,7 +1109,7 @@ cmdlets the root module or any nested modules export are available.
 
 > [!NOTE]
 > If you create your module manifest with the `New-ModuleManifest` command and
-> do not specify the **CmdletsToExport** parameter, the created manifest has
+> don't specify the **CmdletsToExport** parameter, the created manifest has
 > this setting specified as an empty array. Unless you edit the manifest, no
 > cmdlets from the module is exported.
 
@@ -1157,7 +1179,7 @@ This manifest is functionally identical to not specifying the setting at all.
 
 > [!NOTE]
 > If you create your module manifest with the `New-ModuleManifest` command and
-> do not specify the **VariablesToExport** parameter, the created manifest has
+> don't specify the **VariablesToExport** parameter, the created manifest has
 > this setting specified as `'*'`. Unless you edit the manifest, all variables
 > from the module is exported.
 
@@ -1213,14 +1235,14 @@ You can specify entries in this setting with wildcards. All matching
 class-based DSC Resources in the module are exported.
 
 > [!TIP]
-> For discoverability, you should always explicitly list all of the DSC
-> Resources your module module exports.
+> For discoverability, you should always explicitly list all the DSC
+> Resources your module exports.
 
 For more information on authoring and using DSC Resources, see the
-[documentation for DSC](/powershell/dsc/overview).
+[documentation for DSC][01].
 
-This manifest exports all of the class-based and MOF-based DSC Resources
-defined in the root module and any nested modules.
+This manifest exports all the class-based and MOF-based DSC Resources defined
+in the root module and any nested modules.
 
 ```powershell
 @{
@@ -1228,7 +1250,7 @@ defined in the root module and any nested modules.
 }
 ```
 
-This manifest exports all of the MOF-based DSC Resources defined in the root
+This manifest exports all the MOF-based DSC Resources defined in the root
 module and any nested modules, but only one class-based DSC Resource,
 `ExampleClassResource`.
 
@@ -1240,8 +1262,8 @@ module and any nested modules, but only one class-based DSC Resource,
 }
 ```
 
-This manifest exports all of the DSC Resources it includes. Even if the
-MOF-Based resource was not listed, the module would still export it.
+This manifest exports all the DSC Resources it includes. Even if the MOF-Based
+resource wasn't listed, the module would still export it.
 
 ```powershell
 @{
@@ -1255,7 +1277,7 @@ MOF-Based resource was not listed, the module would still export it.
 ### ModuleList
 
 This setting is an informational inventory list of the modules included in this
-one. This list does not affect the behavior of the module.
+one. This list doesn't affect the behavior of the module.
 
 |                       |                        Value                        |
 | --------------------- | --------------------------------------------------- |
@@ -1288,10 +1310,10 @@ A module specification is a hash table that has the following keys.
 > `RequiredVersion` was added in Windows PowerShell 5.0.
 > `MaximumVersion` was added in Windows PowerShell 5.1.
 
-This manifest does not provide an informational list of the modules it
-includes. It may or may not have modules. Even though this setting is not
-specified, any modules listed in the **RootModule**, **ScriptsToProcess**, or
-**NestedModules** settings will still behave as normal.
+This manifest doesn't provide an informational list of the modules it includes.
+It may or may not have modules. Even though this setting isn't specified, any
+modules listed in the **RootModule**, **ScriptsToProcess**, or
+**NestedModules** settings still behave normally.
 
 ```powershell
 @{
@@ -1315,7 +1337,7 @@ the submodules `First.psm1` and `Second.psm1` in the `Submodules` folder.
 ### FileList
 
 This setting is an informational inventory list of the files included in this
-module. This list does not affect the behavior of the module.
+module. This list doesn't affect the behavior of the module.
 
 |                       |       Value       |
 | --------------------- | ----------------- |
@@ -1327,11 +1349,11 @@ module. This list does not affect the behavior of the module.
 Entries for this setting should be the relative path to a file from the folder
 containing the module manifest.
 
-When a user calls `Get-Module` against a manifest with this setting defined, the
-**FileList** property of the returned object will be the full path to these
-files, joining the module's path with each entry's relative path.
+When a user calls `Get-Module` against a manifest with this setting defined,
+the **FileList** property contains the full path to these files, joining the
+module's path with each entry's relative path.
 
-This manifest does not include a list of its files.
+This manifest doesn't include a list of its files.
 
 ```powershell
 @{
@@ -1357,7 +1379,7 @@ setting.
 
 ### PrivateData
 
-This setting defines a hash table of data that is available to any commands or
+This setting defines a hash table of data that's available to any commands or
 functions in the root module's scope.
 
 |                       |             Value              |
@@ -1371,12 +1393,12 @@ This setting has two primary effects:
 
 1. Any keys added to this setting are available to functions and cmdlets in the
    root module with `$MyInvocation.MyCommand.Module.PrivateData`. The hash
-   table is not available in the module scope itself, only in cmdlets you
+   table isn't available in the module scope itself, only in cmdlets you
    define in the module.
 1. You can add the **PSData** key with a hash table for metadata needed when
    publishing to the PowerShell Gallery. For more information on module
    manifests and the publishing to the PowerShell Gallery, see
-   [Package manifest values that impact the PowerShell Gallery UI](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui)
+   [Package manifest values that impact the PowerShell Gallery UI][06]
 
 For example, this manifest defines the **PublishedDate** key in
 **PrivateData**.
@@ -1450,10 +1472,8 @@ in PowerShell 3.0. It contains information about the location of downloadable
 help files for the module and the version numbers of the newest help files for
 each supported locale.
 
-For information about Updatable Help, see
-[about_Updatable_Help](about_Updatable_Help.md). For information about the
-HelpInfo XML file, see
-[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
+For information about Updatable Help, see [about_Updatable_Help][09]. For
+information about the HelpInfo XML file, see [Supporting Updatable Help][04].
 
 For example, this module supports updatable help.
 
@@ -1465,7 +1485,7 @@ For example, this module supports updatable help.
 
 ### DefaultCommandPrefix
 
-This setting specifies a prefix that is prepended to the nouns of all commands
+This setting specifies a prefix that's prepended to the nouns of all commands
 in the module when they're imported into a session. Prefixes help prevent
 command name conflicts in a user's session.
 
@@ -1493,9 +1513,22 @@ imported as `Get-ExampleItem`.
 
 ## See also
 
-- [about_PowerShell_Editions](/powershell/module/microsoft.powershell.core/about/about_powershell_editions)
-- [New-ModuleManifest](xref:Microsoft.PowerShell.Core.New-ModuleManifest)
-- [Test-ModuleManifest](xref:Microsoft.PowerShell.Core.Test-ModuleManifest)
-- [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support)
-- [Package manifest values that impact the PowerShell Gallery UI](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui)
-- [PowerShell module authoring considerations](/powershell/scripting/dev-cross-plat/performance/module-authoring-considerations)
+- [about_PowerShell_Editions][02]
+- [New-ModuleManifest][11]
+- [Test-ModuleManifest][12]
+- [Modules with compatible PowerShell Editions][05]
+- [Package manifest values that impact the PowerShell Gallery UI][06]
+- [PowerShell module authoring considerations][03]
+
+<!-- updated link references -->
+[01]: /powershell/dsc/overview
+[02]: /powershell/module/microsoft.powershell.core/about/about_powershell_editions
+[03]: /powershell/scripting/dev-cross-plat/performance/module-authoring-considerations
+[04]: /powershell/scripting/developer/module/supporting-updatable-help
+[05]: /powershell/scripting/gallery/concepts/module-psedition-support
+[06]: /powershell/scripting/gallery/concepts/package-manifest-affecting-ui
+[07]: about_Format.ps1xml.md
+[08]: about_Types.ps1xml.md
+[09]: about_Updatable_Help.md
+[11]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
+[12]: xref:Microsoft.PowerShell.Core.Test-ModuleManifest

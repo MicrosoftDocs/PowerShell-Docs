@@ -353,7 +353,7 @@ use the `Legacy` style argument passing.
 - ending with `.vbs`
 - ending with `.wsf`
 
-If the `$PSNativeArgumentPassing` is set to either `Legacy` or `Standard`, the check for these files
+If the `$PSNativeCommandArgumentPassing` is set to either `Legacy` or `Standard`, the check for these files
 doesn't occur. The default behavior is platform specific. On Windows platforms, the default setting
 is `Windows` and non-Windows platforms is `Standard`.
 
