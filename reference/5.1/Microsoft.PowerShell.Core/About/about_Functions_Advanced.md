@@ -55,8 +55,8 @@ attribute or with several other parameter validation attributes. For more
 information about how to declare parameters (including dynamic parameters that
 are added at runtime), see [about_Functions_Advanced_Parameters][02].
 
-The actual work of the previous function is performed in the Process block,
-which is equivalent to the ProcessingRecord method that's used by compiled
+The actual work of the previous function is performed in the `process` block,
+which is equivalent to the **ProcessingRecord** method that's used by compiled
 cmdlets to process the data that's passed to the cmdlet. This block, along with
 the `begin` and `end` blocks, is described in the
 [about_Functions_Advanced_Methods][01] topic.
@@ -65,7 +65,7 @@ Advanced functions differ from compiled cmdlets in the following ways:
 
 - Advanced function parameter binding doesn't throw an exception when an array
   of strings is bound to a **Boolean** parameter.
-- The ValidateSet attribute and the `ValidatePattern` attribute can't pass named
+- The `ValidateSet` attribute and the `ValidatePattern` attribute can't pass named
   parameters.
 - Advanced functions can't be used in transactions.
 
