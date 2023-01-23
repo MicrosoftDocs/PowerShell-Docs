@@ -805,9 +805,10 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-Supplies the values of parameters for the scriptblock. The parameters in the script block are passed
-by position from the array value supplied to **ArgumentList**. This is known as array splatting. For
-more information about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+Supplies the values of parameters for the scriptblock. The parameters in the script block are
+passed by position from the array value supplied to **ArgumentList**. This is known as array
+splatting. For more information about the behavior of **ArgumentList**, see
+[about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -1318,6 +1319,8 @@ Any values explicitly passed by parameters take precedence over values passed in
 hashtable. For example, using the **Port** parameter overrides any `Port` key-value pair passed in
 the **Options** hashtable.
 
+This parameter was added in PowerShell 7.3.
+
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: SSHHost, FilePathSSHHost
@@ -1544,26 +1547,6 @@ Accepted values: true
 Required: False
 Position: Named
 Default value: False
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -StrictMode
-
-The **StrictMode** parameter sets the provided version for the process. Once the process completes,
-the **StrictMode** version is set back to what it was before the `Invoke-Command`.
-
-This is an experimental feature added in PowerShell 7.3-preview.2. You must enable the
-**PSStrictModeAssignment** experiment to use this parameter.
-
-```yaml
-Type: System.Version
-Parameter Sets: InProcess
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

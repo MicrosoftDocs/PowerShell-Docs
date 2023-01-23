@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Module Name: Microsoft.PowerShell.Core
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/switch-process?view=powershell-7.3&WT.mc_id=ps-gethelp
-ms.date: 12/14/2022
+ms.date: 01/20/2023
 schema: 2.0.0
 ---
 
@@ -25,8 +25,8 @@ Some native Unix commands shell out to run something (like ssh) and use the `bas
 command in PowerShell. This is affecting some known scripts like `copy-ssh-id` and some subcommands
 of AzCLI.
 
-Starting in PowerShell 7.3-preview.8, the `Switch-Process` cmdlet is aliased to `exec`. The cmdlet
-calls `execv()` function to provide similar behavior as POSIX shells.
+The `Switch-Process` cmdlet calls the native `execv()` function to provide similar behavior as POSIX
+shells. This cmdlet and its alias, `exec`, were added in PowerShell 7.3.0.
 
 PowerShell 7.3.1 changed the `exec` alias to a function that wraps `Switch-Process`. The function
 allows you to pass parameters to the native command that might have erroneously bound to the
@@ -86,14 +86,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-This feature isn't intended to have parity with the built-in `exec` function in POSIX shells (like
-how file descriptors are handled), but should cover most cases.
-
 The `Switch-Process` cmdlet was created to provide `exec` compatibility is other POSIX shells. Under
-normal conditions, the cmdlet isn't intended to be used in PowerShell scripts.
+normal conditions, the cmdlet isn't intended to be used in PowerShell scripts. `Switch-Process`
+doesn't have feature parity with the built-in `exec` function in POSIX shells, such as like how file
+descriptors are handled, but should cover most cases.
 
 ## RELATED LINKS
-
-[Using experimental features](/powershell/scripting/learn/experimental-features)
-
-[about_Experimental_Features](/powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features)

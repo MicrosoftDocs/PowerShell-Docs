@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-psbreakpoint?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSBreakpoint
@@ -142,6 +142,23 @@ This command gets all line and variable breakpoints in the `Sample.ps1` script.
 Get-PSBreakpoint -Type Line, Variable -Script "Sample.ps1"
 ```
 
+### Example 9: Get the breakpoints set in a specific runspace
+
+In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
+run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
+**Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
+
+```powershell
+Start-Job -ScriptBlock {
+    Set-PSBreakpoint -Command Start-Sleep
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+$breakpoint = Get-PSBreakPoint -Runspace $runspace
+```
+
 ## PARAMETERS
 
 ### -Command
@@ -182,6 +199,8 @@ Accept wildcard characters: False
 
 Specifies the Id of a **Runspace** object so you can interact with breakpoints in the specified
 runspace.
+
+This parameter was added in PowerShell 7.2.
 
 ```yaml
 Type: Runspace

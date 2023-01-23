@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/19/2021
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/debug-job?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Job
@@ -93,6 +93,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 ### -BreakAll
 
 Allows you to break immediately in the current location when the debugger attaches.
+
+This parameter was added in PowerShell 7.2.
 
 ```yaml
 Type: SwitchParameter

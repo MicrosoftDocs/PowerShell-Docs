@@ -709,7 +709,7 @@ $parameters = @{
     ScriptBlock = { Get-MailBox * }
     KeyFilePath = '/UserA/UserAKey_rsa'
 }
-Invoke-Command 
+Invoke-Command
 ```
 
 ### Example 21: Run a script file on multiple remote computers using SSH as a job
@@ -978,7 +978,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: unlimited
+Default value: Unlimited
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1529,7 +1529,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: powershell
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
