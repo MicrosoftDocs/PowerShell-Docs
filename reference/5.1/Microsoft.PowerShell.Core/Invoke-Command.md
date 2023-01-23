@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 01/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -1394,6 +1394,10 @@ By default, this cmdlet returns the output of the invoked command, which is the 
 **ScriptBlock** parameter.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Invoke-Command`:
+
+- `icm`
 
 On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
 parameter of `Invoke-Command` to run a command on the local computer, you must run PowerShell using

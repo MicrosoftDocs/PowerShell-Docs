@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/enable-psbreakpoint?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSBreakpoint
@@ -115,6 +115,25 @@ Enable-PSBreakpoint -Breakpoint $B
 
 This example is equivalent to running `Enable-PSBreakpoint -Id 3, 5`.
 
+### Example 5: Enable a breakpoint in a runspace
+
+In this example, a job is started with a breakpoint is set to break then disabled. The runspace is
+stored in a variable and passed to the `Get-PSBreakPoint` command with the **Runspace** parameter.
+The output of `Get-PSBreakPoint` is piped to `Enable-PSBreakpoint` to enable the breakpoint in the
+runspace.
+
+```powershell
+Start-Job -ScriptBlock {
+    $bp = Set-PSBreakpoint -Command Start-Sleep
+    Disable-PSBreakpoint $bp
+    Start-Sleep -Seconds 10
+}
+
+$runspace = Get-Runspace -Id 1
+
+Get-PSBreakPoint -Runspace $runspace | Enable-Breakpoint -Runspace $runspace
+```
+
 ## PARAMETERS
 
 ### -Breakpoint
@@ -174,6 +193,8 @@ Accept wildcard characters: False
 
 Specifies the Id of a **Runspace** object so you can interact with breakpoints in the specified
 runspace.
+
+This parameter was added in PowerShell 7.2.
 
 ```yaml
 Type: Runspace

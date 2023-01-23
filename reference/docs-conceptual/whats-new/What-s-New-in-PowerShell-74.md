@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.4 (preview)
 description: New features and changes released in PowerShell 7.4 (preview)
-ms.date: 01/05/2023
+ms.date: 01/20/2023
 ---
 
 # What's New in PowerShell 7.4 (preview)
@@ -87,11 +87,11 @@ For more information about the Experimental Features, see [Using Experimental Fe
 <!-- reference links -->
 
 [01]: ../learn/experimental-features.md
-[02]: /powershell/scripting/learn/experimental-features#pscommandnotfoundsuggestion
-[03]: /powershell/scripting/learn/experimental-features#pscustomtableheaderlabeldecoration
-[04]: /powershell/scripting/learn/experimental-features#psfeedbackprovider
-[05]: /powershell/scripting/learn/experimental-features#psmoduleautoloadskipofflinefiles
-[06]: /powershell/scripting/learn/experimental-features#psnativecommanderroractionpreference
+[02]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
+[03]: ../learn/experimental-features.md#pscustomtableheaderlabeldecoration
+[04]: ../learn/experimental-features.md#psfeedbackprovider
+[05]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
+[06]: ../learn/experimental-features.md#psnativecommanderroractionpreference
 [07]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 [17191]: https://github.com/PowerShell/PowerShell/pull/17191
 [17654]: https://github.com/PowerShell/PowerShell/pull/17654

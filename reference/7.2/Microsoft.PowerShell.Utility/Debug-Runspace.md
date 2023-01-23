@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/debug-runspace?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Runspace
@@ -108,6 +108,8 @@ the **Id** parameter. Because there's a breakpoint in the script, the debugger o
 ### -BreakAll
 
 Allows you to break immediately in the current location when the debugger attaches.
+
+This parameter was added in PowerShell 7.2.
 
 ```yaml
 Type: SwitchParameter

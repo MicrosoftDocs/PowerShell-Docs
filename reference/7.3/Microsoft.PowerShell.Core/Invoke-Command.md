@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 01/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Command
@@ -18,149 +18,149 @@ Runs commands on local and remote computers.
 ### InProcess (Default)
 
 ```
-Invoke-Command [-StrictMode <Version>] [-ScriptBlock] <ScriptBlock> [-NoNewScope]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
-```
-
-### FilePathRunspace
-
-```
-Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-FilePath] <String> [-RemoteDebug] [-InputObject <PSObject>]
+Invoke-Command [-ScriptBlock] <scriptblock> [-NoNewScope] [-InputObject <psobject>]
  [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### Session
 
 ```
-Invoke-Command [[-Session] <PSSession[]>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-RemoteDebug] [-InputObject <PSObject>]
+Invoke-Command [[-Session] <PSSession[]>] [-ScriptBlock] <scriptblock> [-ThrottleLimit <int>]
+ [-AsJob] [-HideComputerName] [-JobName <string>] [-RemoteDebug] [-InputObject <psobject>]
  [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
-### FilePathComputerName
+### FilePathRunspace
 
 ```
-Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port <Int32>] [-UseSSL]
- [-ConfigurationName <String>] [-ApplicationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
- [-InDisconnectedSession] [-SessionName <String[]>] [-HideComputerName] [-JobName <String>]
- [-FilePath] <String> [-SessionOption <PSSessionOption>] [-Authentication <AuthenticationMechanism>]
- [-EnableNetworkAccess] [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [<CommonParameters>]
+Invoke-Command [[-Session] <PSSession[]>] [-FilePath] <string> [-ThrottleLimit <int>] [-AsJob]
+ [-HideComputerName] [-JobName <string>] [-RemoteDebug] [-InputObject <psobject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### ComputerName
 
 ```
-Invoke-Command [[-ComputerName] <String[]>] [-Credential <PSCredential>] [-Port <Int32>] [-UseSSL]
- [-ConfigurationName <String>] [-ApplicationName <String>] [-ThrottleLimit <Int32>] [-AsJob]
- [-InDisconnectedSession] [-SessionName <String[]>] [-HideComputerName] [-JobName <String>]
- [-ScriptBlock] <ScriptBlock> [-SessionOption <PSSessionOption>]
+Invoke-Command [[-ComputerName] <string[]>] [-ScriptBlock] <scriptblock>
+ [-Credential <pscredential>] [-Port <int>] [-UseSSL] [-ConfigurationName <string>]
+ [-ApplicationName <string>] [-ThrottleLimit <int>] [-AsJob] [-InDisconnectedSession]
+ [-SessionName <string[]>] [-HideComputerName] [-JobName <string>]
+ [-SessionOption <PSSessionOption>] [-Authentication <AuthenticationMechanism>]
+ [-EnableNetworkAccess] [-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+ [-CertificateThumbprint <string>] [<CommonParameters>]
+```
+
+### FilePathComputerName
+
+```
+Invoke-Command [[-ComputerName] <string[]>] [-FilePath] <string> [-Credential <pscredential>]
+ [-Port <int>] [-UseSSL] [-ConfigurationName <string>] [-ApplicationName <string>]
+ [-ThrottleLimit <int>] [-AsJob] [-InDisconnectedSession] [-SessionName <string[]>]
+ [-HideComputerName] [-JobName <string>] [-SessionOption <PSSessionOption>]
  [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-RemoteDebug]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-CertificateThumbprint <String>]
- [<CommonParameters>]
+ [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### Uri
 
 ```
-Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
- [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName]
- [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-AllowRedirection]
+Invoke-Command [[-ConnectionUri] <uri[]>] [-ScriptBlock] <scriptblock>
+ [-Credential <pscredential>] [-ConfigurationName <string>] [-ThrottleLimit <int>] [-AsJob]
+ [-InDisconnectedSession] [-HideComputerName] [-JobName <string>] [-AllowRedirection]
  [-SessionOption <PSSessionOption>] [-Authentication <AuthenticationMechanism>]
- [-EnableNetworkAccess] [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [-CertificateThumbprint <String>] [<CommonParameters>]
+ [-EnableNetworkAccess] [-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>]
+ [-CertificateThumbprint <string>] [<CommonParameters>]
 ```
 
 ### FilePathUri
 
 ```
-Invoke-Command [-Credential <PSCredential>] [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
- [[-ConnectionUri] <Uri[]>] [-AsJob] [-InDisconnectedSession] [-HideComputerName]
- [-JobName <String>] [-FilePath] <String> [-AllowRedirection] [-SessionOption <PSSessionOption>]
+Invoke-Command [[-ConnectionUri] <uri[]>] [-FilePath] <string> [-Credential <pscredential>]
+ [-ConfigurationName <string>] [-ThrottleLimit <int>] [-AsJob] [-InDisconnectedSession]
+ [-HideComputerName] [-JobName <string>] [-AllowRedirection] [-SessionOption <PSSessionOption>]
  [-Authentication <AuthenticationMechanism>] [-EnableNetworkAccess] [-RemoteDebug]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+ [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### VMId
 
 ```
-Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
- [-AsJob] [-HideComputerName] [-ScriptBlock] <ScriptBlock> [-RemoteDebug] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>] [-VMId] <Guid[]> [<CommonParameters>]
+Invoke-Command [-VMId] <guid[]> [-ScriptBlock] <scriptblock> -Credential <pscredential>
+ [-ConfigurationName <string>] [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-RemoteDebug]
+ [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### VMName
 
 ```
-Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
- [-AsJob] [-HideComputerName] [-ScriptBlock] <ScriptBlock> [-RemoteDebug] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>] -VMName <String[]> [<CommonParameters>]
+Invoke-Command [-ScriptBlock] <scriptblock> -Credential <pscredential> -VMName <string[]>
+ [-ConfigurationName <string>] [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-RemoteDebug]
+ [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathVMId
 
 ```
-Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
- [-AsJob] [-HideComputerName] [-FilePath] <String> [-RemoteDebug] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>] [-VMId] <Guid[]> [<CommonParameters>]
+Invoke-Command [-VMId] <guid[]> [-FilePath] <string> -Credential <pscredential>
+ [-ConfigurationName <string>] [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-RemoteDebug]
+ [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathVMName
 
 ```
-Invoke-Command -Credential <PSCredential> [-ConfigurationName <String>] [-ThrottleLimit <Int32>]
- [-AsJob] [-HideComputerName] [-FilePath] <String> [-RemoteDebug] [-InputObject <PSObject>]
- [-ArgumentList <Object[]>] -VMName <String[]> [<CommonParameters>]
+Invoke-Command [-FilePath] <string> -Credential <pscredential> -VMName <string[]>
+ [-ConfigurationName <string>] [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-RemoteDebug]
+ [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### SSHHost
 
 ```
-Invoke-Command [-Port <Int32>] [-AsJob] [-HideComputerName] [-JobName <String>]
- [-ScriptBlock] <ScriptBlock> -HostName <String[]> [-UserName <String>] [-KeyFilePath <String>]
- [-Subsystem <String>] [-ConnectingTimeout <Int32>] [-SSHTransport] [-Options <Hashtable>]
- [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+Invoke-Command [-ScriptBlock] <scriptblock> -HostName <string[]> [-Port <int>] [-AsJob]
+ [-HideComputerName] [-JobName <string>] [-UserName <string>] [-KeyFilePath <string>]
+ [-Subsystem <string>] [-ConnectingTimeout <int>] [-SSHTransport] [-Options <hashtable>]
+ [-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### ContainerId
 
 ```
-Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-ScriptBlock] <ScriptBlock> [-RunAsAdministrator] [-RemoteDebug]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] -ContainerId <String[]> [<CommonParameters>]
+Invoke-Command [-ScriptBlock] <scriptblock> -ContainerId <string[]> [-ConfigurationName <string>]
+ [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-JobName <string>] [-RunAsAdministrator]
+ [-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathContainerId
 
 ```
-Invoke-Command [-ConfigurationName <String>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName]
- [-JobName <String>] [-FilePath] <String> [-RunAsAdministrator] [-RemoteDebug]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] -ContainerId <String[]> [<CommonParameters>]
+Invoke-Command [-FilePath] <string> -ContainerId <string[]> [-ConfigurationName <string>]
+ [-ThrottleLimit <int>] [-AsJob] [-HideComputerName] [-JobName <string>] [-RunAsAdministrator]
+ [-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### SSHHostHashParam
 
 ```
-Invoke-Command [-AsJob] [-HideComputerName] [-JobName <String>] [-ScriptBlock] <ScriptBlock>
- -SSHConnection <Hashtable[]> [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>]
- [<CommonParameters>]
+Invoke-Command [-ScriptBlock] <scriptblock> -SSHConnection <hashtable[]> [-AsJob]
+ [-HideComputerName] [-JobName <string>] [-RemoteDebug] [-InputObject <psobject>]
+ [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathSSHHost
 
 ```
-Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -HostName <String[]>
- [-UserName <String>] [-KeyFilePath <String>] [-Subsystem <String>] [-ConnectingTimeout <Int32>]
- [-SSHTransport] [-Options <Hashtable>] [-RemoteDebug] [-InputObject <PSObject>]
+Invoke-Command -FilePath <string> -HostName <string[]> [-AsJob] [-HideComputerName]
+ [-UserName <string>] [-KeyFilePath <string>] [-Subsystem <string>] [-ConnectingTimeout <int>]
+ [-SSHTransport] [-Options <hashtable>] [-RemoteDebug] [-InputObject <psobject>]
  [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ### FilePathSSHHostHash
 
 ```
-Invoke-Command [-AsJob] [-HideComputerName] [-FilePath] <String> -SSHConnection <Hashtable[]>
- [-RemoteDebug] [-InputObject <PSObject>] [-ArgumentList <Object[]>] [<CommonParameters>]
+Invoke-Command -FilePath <string> -SSHConnection <hashtable[]> [-AsJob] [-HideComputerName]
+ [-RemoteDebug] [-InputObject <psobject>] [-ArgumentList <Object[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -710,7 +710,7 @@ $parameters = @{
     ScriptBlock = { Get-MailBox * }
     KeyFilePath = '/UserA/UserAKey_rsa'
 }
-Invoke-Command 
+Invoke-Command
 ```
 
 ### Example 21: Run a script file on multiple remote computers using SSH as a job
@@ -805,9 +805,10 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-Supplies the values of parameters for the scriptblock. The parameters in the script block are passed
-by position from the array value supplied to **ArgumentList**. This is known as array splatting. For
-more information about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+Supplies the values of parameters for the scriptblock. The parameters in the script block are
+passed by position from the array value supplied to **ArgumentList**. This is known as array
+splatting. For more information about the behavior of **ArgumentList**, see
+[about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -1318,6 +1319,8 @@ Any values explicitly passed by parameters take precedence over values passed in
 hashtable. For example, using the **Port** parameter overrides any `Port` key-value pair passed in
 the **Options** hashtable.
 
+This parameter was added in PowerShell 7.3.
+
 ```yaml
 Type: System.Collections.Hashtable
 Parameter Sets: SSHHost, FilePathSSHHost
@@ -1548,26 +1551,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StrictMode
-
-The **StrictMode** parameter sets the provided version for the process. Once the process completes,
-the **StrictMode** version is set back to what it was before the `Invoke-Command`.
-
-This is an experimental feature added in PowerShell 7.3-preview.2. You must enable the
-**PSStrictModeAssignment** experiment to use this parameter.
-
-```yaml
-Type: System.Version
-Parameter Sets: InProcess
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Subsystem
 
 Specifies the SSH subsystem used for the new **PSSession**.
@@ -1725,6 +1708,11 @@ By default, this cmdlet returns the output of the invoked command, which is the 
 **ScriptBlock** parameter.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Invoke-Command`:
+
+- All platforms:
+  - `icm`
 
 On Windows Vista, and later versions of the Windows operating system, to use the **ComputerName**
 parameter of `Invoke-Command` to run a command on the local computer, you must run PowerShell using

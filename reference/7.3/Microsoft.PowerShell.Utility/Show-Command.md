@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
@@ -326,6 +326,11 @@ When you use the **PassThru** parameter, this cmdlet returns a command string.
 When you use the **ErrorPopup** parameter, this cmdlet returns the command output (any object).
 
 ## NOTES
+
+PowerShell includes the following aliases for `Show-Command`:
+
+- Windows:
+  - `shcm`
 
 This cmdlet is only available on Windows platforms.
 
