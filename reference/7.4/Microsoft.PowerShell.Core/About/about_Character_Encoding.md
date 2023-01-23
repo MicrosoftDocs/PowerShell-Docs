@@ -117,7 +117,7 @@ For cmdlets that write output to files:
 
 - `New-Item -Type File -Value` creates a BOM-less UTF-8 file.
 
-- `Send-MailMessage` uses `Default` encoding by default.
+- `Send-MailMessage` uses `Ascii` encoding by default.
 
 - `Start-Transcript` creates `Utf8` files with a BOM. When the **Append**
   parameter is used, the encoding can be different (see below).

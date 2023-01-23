@@ -270,7 +270,7 @@ Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, OEM, Unicode, UTF7, UT
 
 Required: False
 Position: Named
-Default value: UTF8NoBOM
+Default value: ASCII
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
