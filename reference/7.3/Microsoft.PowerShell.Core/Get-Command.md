@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/20/2022
+ms.date: 01/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
@@ -728,6 +728,11 @@ Represents functions and filters.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Get-Command`:
+
+- All platforms:
+  - `gcm`
+  
 - When more than one command that has the same name is available to the session, `Get-Command`
   returns the command that runs when you type the command name. To get commands that have the same
   name, listed in run order, use the **All** parameter. For more information, see
