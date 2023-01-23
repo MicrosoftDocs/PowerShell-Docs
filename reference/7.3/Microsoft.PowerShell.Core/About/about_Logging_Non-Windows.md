@@ -90,7 +90,7 @@ value.
 PowerShell logs to the **systemd journal** using the **journald** daemon on
 Linux distributions such as Ubuntu and Red Hat.
 
-The **journald** daemon store log messages in a binary format. Use the
+The **journald** daemon stores log messages in a binary format. Use the
 `journalctl` utility to query the journal log for PowerShell entries.
 
 ```
