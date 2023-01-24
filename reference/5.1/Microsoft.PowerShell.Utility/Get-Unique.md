@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/23/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-unique?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Unique
@@ -188,8 +188,11 @@ This cmdlet returns its input objects without duplicates.
 
 ## NOTES
 
-You can also refer to `Get-Unique` by its built-in alias, `gu`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+Windows PowerShell includes the following aliases for `Get-Unique`:
+
+- `gu`
+
+For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 To sort a list, use `Sort-Object`. You can also use the **Unique** parameter of `Sort-Object` to
 find the unique items in a list.
