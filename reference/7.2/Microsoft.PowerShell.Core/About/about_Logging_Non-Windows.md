@@ -31,8 +31,9 @@ The location of PowerShell logs is dependent on the target platform.
 The configuration for logging on Linux and macOS is stored in the
 `powershell.config.json` file. The `powershell.config.json` file is a **JSON**
 formatted file residing in the PowerShell `$PSHOME` directory. If this
-configuration file doesn't exist, you'll need to create it to change the default
-settings. Each installation of PowerShell uses its own copy of this file.
+configuration file doesn't exist, you'll need to create it to change the
+default settings. Each installation of PowerShell uses its own copy of this
+file.
 
 By default, PowerShell enables `Informational` logging to the `Operational`
 channel. You can change the configuration if you require additional log output,
@@ -220,9 +221,9 @@ log file named `powershell.log`.
    pwsh
    ```
 
-> [!NOTE]
-> The `/var/log/powershell.log` file isn't created until the **rsyslog**
-> service is restarted and PowerShell generates information to log.
+   > [!NOTE]
+   > The `/var/log/powershell.log` file isn't created until the **rsyslog**
+   > service is restarted and PowerShell generates information to log.
 
 1. Query the `powershell.log` file to verify PowerShell information is being
    logged to the new file.
