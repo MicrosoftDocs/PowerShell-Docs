@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 01/09/2023
+ms.date: 01/24/2023
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -77,7 +77,7 @@ sudo apt-get install -f
 > If the `dpkg -i` command fails with unmet dependencies, the next command, `apt-get install -f`
 > resolves these issues then finishes configuring the PowerShell package.
 
-## Uninstallation - Ubuntu 16.04
+## Uninstallation
 
 ```sh
 sudo apt-get remove powershell
