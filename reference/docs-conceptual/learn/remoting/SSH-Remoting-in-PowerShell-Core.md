@@ -209,10 +209,6 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    > The default location of the PowerShell executable is `/usr/local/bin/pwsh`. The location can
    > vary depending on how you installed PowerShell.
 
-   > [!NOTE]
-   > Starting in PowerShell 7.3, you no longer need to use the `-nologo` parameter when running
-   > PowerShell in SSH server mode.
-
    Optionally, enable key authentication:
 
    ```
