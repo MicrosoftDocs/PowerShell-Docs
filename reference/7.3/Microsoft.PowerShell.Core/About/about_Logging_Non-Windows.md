@@ -175,7 +175,9 @@ log file named `powershell.log`.
 1. Verify that `/etc/rsyslog.conf` has an include statement for the new file.
    It may have a generic statement that includes it, such as:
 
-   `$IncludeConfig /etc/rsyslog.d/*.conf`
+   ```Text
+   $IncludeConfig /etc/rsyslog.d/*.conf
+   ```
 
    If it doesn't, you'll need to add an include statement manually.
 
