@@ -29,9 +29,10 @@ The location of PowerShell logs is dependent on the target platform.
 ## Configuring logging on Linux or macOS
 
 The configuration for logging on Linux and macOS is stored in the
-`powershell.config.json` file. The file `powershell.config.json` is a **JSON**
-formatted file residing in the PowerShell `$PSHOME` directory. Each
-installation of PowerShell uses its own copy of this file.
+`powershell.config.json` file. The `powershell.config.json` file is a **JSON**
+formatted file residing in the PowerShell `$PSHOME` directory. If this
+configuration file doesn't exist, you'll need to create it to change the default
+settings. Each installation of PowerShell uses its own copy of this file.
 
 By default, PowerShell enables `Informational` logging to the `Operational`
 channel. You can change the configuration if you require additional log output,
@@ -41,18 +42,16 @@ The following code is an example configuration:
 
 ```json
 {
-  "Microsoft.PowerShell:ExecutionPolicy": "RemoteSigned",
-    "ScriptBlockLogging": {
-      "EnableScriptBlockInvocationLogging": true,
-      "EnableScriptBlockLogging": true
-    },
-    "ModuleLogging": {
-      "EnableModuleLogging": false,
-      "ModuleNames": [
-        "PSReadLine",
-        "PowerShellGet"
-      ]
-    }
+  "ScriptBlockLogging": {
+    "EnableScriptBlockInvocationLogging": true,
+    "EnableScriptBlockLogging": true
+  },
+  "ModuleLogging": {
+    "EnableModuleLogging": false,
+    "ModuleNames": [
+      "PSReadLine",
+      "PowerShellGet"
+    ]
   },
   "LogLevel": "verbose"
 }
@@ -88,36 +87,39 @@ value.
 ## Viewing PowerShell log data in journald on Linux
 
 PowerShell logs to the **systemd journal** using the **journald** daemon on
-Linux distributions such as Ubuntu and Red Hat.
+Linux distributions such as Ubuntu and Red Hat Enterprise Linux (RHEL).
 
 The **journald** daemon stores log messages in a binary format. Use the
 `journalctl` utility to query the journal log for PowerShell entries.
 
-```
+```bash
 journalctl --grep powershell
 ```
 
-The **journald** daemon can forward log messages to a **syslog** server. This
-is the default configuration for many Linux distributions. See the
-`ForwardToSysLog` option in the **journald** configuration file
-`/etc/systemd/journald.conf`.
+The **journald** daemon can forward log messages to a System Logging Protocol
+(syslog) server. Enable the `ForwardToSysLog` option in the
+`/etc/systemd/journald.conf` **journald** configuration file if you want to
+use **syslog** logging on your Linux system. This is the default configuration
+for many Linux distributions.
 
 ## Viewing PowerShell log data in syslog on Linux
 
-Linux distributions such as Ubuntu and Red Hat preinstall a System Logging
-Protocol (syslog) server called **rsyslog**. The syslog protocol stores log
-messages in a standardized text format. You can use any text processing utility
-to query or view **syslog** content.
+Use the package manager for your Linux distribution to install a **syslog**
+server such as **rsyslog** if you want to use syslog logging on your Linux
+system. Some Linux distributions such as Ubuntu preinstall **rsyslog**.
 
-By default, **syslog** writes log entries to following default location:
+The syslog protocol stores log messages in a standardized text format. You
+can use any text processing utility to query or view **syslog** content.
+
+By default, **syslog** writes log entries to the following location:
 
 - On Debian-based distributions, including Ubuntu: `/var/log/syslog`
-- On Red Hat-based distributions: `/var/log/messages`
+- On RHEL-based distributions: `/var/log/messages`
 
 The following example uses the `cat` command to query for PowerShell **syslog**
 entries on Ubuntu.
 
-```powershell
+```bash
 cat /var/log/syslog | grep -i powershell
 ```
 
@@ -167,7 +169,7 @@ log file named `powershell.log`.
 
 1. Add the following information to the `40-powershell.conf` file:
 
-   ```
+   ```text
    :syslogtag, contains, "powershell[" /var/log/powershell.log
    & stop
    ```
@@ -175,7 +177,7 @@ log file named `powershell.log`.
 1. Verify that `/etc/rsyslog.conf` has an include statement for the new file.
    It may have a generic statement that includes it, such as:
 
-   ```Text
+   ```text
    $IncludeConfig /etc/rsyslog.d/*.conf
    ```
 
