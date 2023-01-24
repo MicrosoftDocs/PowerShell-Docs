@@ -45,7 +45,7 @@ PowerShell supports the following wildcard characters:
   - `[a-l]ook` doesn't match `took`
 - `[ ]` - Match specific characters
   - `[bc]ook` matches `book` and `cook`
-  - `[bc]ook` doesn't matach `hook`
+  - `[bc]ook` doesn't match `hook`
 - `` `* `` - Match any character as a literal (not a wildcard character)
   - ``12`*4`` matches `12*4`
   - ``12`*4`` doesn't match `1234`
