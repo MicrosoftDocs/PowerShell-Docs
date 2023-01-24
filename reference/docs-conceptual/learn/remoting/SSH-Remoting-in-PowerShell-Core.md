@@ -1,6 +1,6 @@
 ---
 description: Explains how to set up the SSH protocol for PowerShell remoting.
-ms.date: 08/29/2022
+ms.date: 01/24/2023
 title: PowerShell Remoting Over SSH
 ---
 
@@ -83,7 +83,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    ```
 
    > [!NOTE]
-   > Starting in PowerShell 7.3, you no longer need to use the `-nologo` parameter when running
+   > Starting in PowerShell 7.4, you no longer need to use the `-nologo` parameter when running
    > PowerShell in SSH server mode.
 
    > [!NOTE]
@@ -163,7 +163,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    > depending on how you installed PowerShell.
 
    > [!NOTE]
-   > Starting in PowerShell 7.3, you no longer need to use the `-nologo` parameter when running
+   > Starting in PowerShell 7.4, you no longer need to use the `-nologo` parameter when running
    > PowerShell in SSH server mode.
 
 1. Restart the **ssh** service.
@@ -210,7 +210,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    > vary depending on how you installed PowerShell.
 
    > [!NOTE]
-   > Starting in PowerShell 7.3, you no longer need to use the `-nologo` parameter when running
+   > Starting in PowerShell 7.4, you no longer need to use the `-nologo` parameter when running
    > PowerShell in SSH server mode.
 
    Optionally, enable key authentication:
