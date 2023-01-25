@@ -100,7 +100,7 @@ members were added to the object. Even though **Hashtable** objects don't
 guarantee the order of the key-value pairs, casting a literal hashtable to
 `[pscustomobject]` maintains the order.
 
-The hashtable must be a literal. Tf you wrap the hashtable in parentheses or if
+The hashtable must be a literal. If you wrap the hashtable in parentheses or if
 you cast a variable containing a hashtable, there is no guarantee that the
 order is preserved.
 
