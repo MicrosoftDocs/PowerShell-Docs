@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/23/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Error
@@ -171,6 +171,11 @@ You can pipe any **PSObject** to this cmdlet, but results vary unless either an 
 This cmdlet returns a **PSExtendedError** object.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-Error`:
+
+- All platforms:
+  - `gerr`
 
 `Get-Error` accepts pipeline input. For example, `$Error | Get-Error`.
 
