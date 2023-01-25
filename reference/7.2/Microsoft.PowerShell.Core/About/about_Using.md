@@ -1,7 +1,7 @@
 ---
 description: Allows you to indicate which namespaces are used in the session.
 Locale: en-US
-ms.date: 08/18/2022
+ms.date: 01/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Using
@@ -128,8 +128,8 @@ $hashfromstream.Hash.ToString()
 In this example, we have a PowerShell script module named **CardGames** that
 defines the following classes:
 
-- **CardGames.Deck**
-- **CardGames.Card**
+- **Deck**
+- **Card**
 
 `Import-Module` and the `#requires` statement only import the module functions,
 aliases, and variables, as defined by the module. Classes are not imported. The
@@ -137,7 +137,6 @@ aliases, and variables, as defined by the module. Classes are not imported. The
 
 ```powershell
 using module CardGames
-using namespace CardGames
 
 [Deck]$deck = [Deck]::new()
 $deck.Shuffle()
@@ -148,32 +147,31 @@ $deck.Shuffle()
 
 ### Example 3 - Load classes from an assembly
 
-This example loads an assembly so that its classes can be used to create new
-PowerShell classes. The following script creates a new PowerShell class that is
-derived from **DirectoryContext** class.
+This example loads an assembly so that its classes can be used when processing
+data. The following script converts data into a YAML format.
 
 ```powershell
-using assembly 'C:\Program Files\PowerShell\7\System.DirectoryServices.dll'
-using namespace System.DirectoryServices.ActiveDirectory
+using assembly './YamlDotNet.dll'
+using namespace YamlDotNet
 
-class myDirectoryClass : System.DirectoryServices.ActiveDirectory.DirectoryContext
-{
+$yamlSerializer = [Serialization.Serializer]::new()
 
-  [DirectoryContext]$domain
-
-  myDirectoryClass([DirectoryContextType]$ctx) : base($ctx)
-  {
-    $this.domain = [DirectoryContext]::new([DirectoryContextType]$ctx)
-  }
-
+$info = [ordered]@{
+  Inventory = @(
+    @{ Name = 'Apples' ; Count = 1234 }
+    @{ Name = 'Bagels' ; Count = 5678 }
+  )
+    CheckedAt = [datetime]'2023-01-01T01:01:01'
 }
 
-$myDomain = [myDirectoryClass]::new([DirectoryContextType]::Domain)
-$myDomain
+$yamlSerializer.Serialize($info)
 ```
 
 ```Output
-domain                                                    Name UserName ContextType
-------                                                    ---- -------- -----------
-System.DirectoryServices.ActiveDirectory.DirectoryContext                    Domain
+Inventory:
+- Name: Apples
+  Count: 1234
+- Name: Bagels
+  Count: 5678
+CheckedAt: 2023-01-01T01:01:01.0000000
 ```
