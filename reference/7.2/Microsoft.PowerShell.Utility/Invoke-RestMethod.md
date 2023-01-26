@@ -619,10 +619,7 @@ Accept wildcard characters: False
 
 Specifies the headers of the web request. Enter a hash table or dictionary.
 
-To set UserAgent headers, use the **UserAgent** parameter. You cannot use this parameter to specify
-`User-Agent` or cookie headers.
-
-Content related headers, such as `Content-Type` will be overridden when a `MultipartFormDataContent`
+Content related headers, such as `Content-Type` are overridden when a `MultipartFormDataContent`
 object is supplied for **Body**.
 
 ```yaml
