@@ -62,6 +62,11 @@ winget install --id Microsoft.Powershell --source winget
 winget install --id Microsoft.Powershell.Preview --source winget
 ```
 
+> [!NOTE]
+> On Windows systems using X86 or X64 processor, `winget` installs the MSI package. On systems using
+> the Arm64 processor, `winget` install the Microsoft Store (MSIX) package. For more information,
+> see [Installing from the Microsoft Store][17].
+
 ## <a id="msi" />Installing the MSI package
 
 To install PowerShell on Windows, use the following links to download the install package from
