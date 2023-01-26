@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/23/2022
+ms.date: 01/26/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -632,10 +632,7 @@ Accept wildcard characters: False
 
 Specifies the headers of the web request. Enter a hash table or dictionary.
 
-To set UserAgent headers, use the **UserAgent** parameter. You cannot use this parameter to specify
-`User-Agent` or cookie headers.
-
-Content related headers, such as `Content-Type` will be overridden when a `MultipartFormDataContent`
+Content related headers, such as `Content-Type` are overridden when a `MultipartFormDataContent`
 object is supplied for **Body**.
 
 ```yaml
