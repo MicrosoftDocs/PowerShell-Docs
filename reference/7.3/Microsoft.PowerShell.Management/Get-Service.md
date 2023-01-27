@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
@@ -329,14 +329,16 @@ This cmdlet returns objects that represent the services on the computer.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Get-Service`:
+
+- Windows:
+  - `gsv`
+
 This cmdlet is only available on Windows platforms.
 
 Beginning in PowerShell 6.0, the following properties are added to the **ServiceController**
 objects: **UserName**, **Description**, **DelayedAutoStart**, **BinaryPathName**, and
 **StartupType** .
-
-You can also refer to `Get-Service` by its built-in alias, `gsv`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 This cmdlet can display services only when the current user has permission to see them. If this
 cmdlet does not display services, you might not have permission to see them.
