@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/27/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Service
@@ -279,8 +279,9 @@ representing the service.
 
 ## NOTES
 
-You can also refer to `Stop-Service` by its built-in alias, **spsv**. For more information, see
-about_Aliases.
+Windows PowerShell includes the following aliases for `Stop-Service`:
+
+- `spsv`
 
 `Stop-Service` can control services only when the current user has permission to do this. If a
 command does not work correctly, you might not have the required permissions.
