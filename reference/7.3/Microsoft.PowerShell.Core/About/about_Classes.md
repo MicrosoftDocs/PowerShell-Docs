@@ -215,7 +215,7 @@ $rack.GetAvailableSlots()
 ```Output
 
 Slots     : 8
-Devices   : {$null, $null, Fabrikam, Inc.|Fbk5040|5072641000, $null…}
+Devices   : {$null, $null, Fabrikam, Inc.|Fbk5040|5072641000, $nullâ€¦}
 Brand     :
 Model     :
 VendorSku :
@@ -444,7 +444,7 @@ $r1.Slots
 ```Output
 Devices                       Brand          Model
 -------                       -----          -----
-{$null, $null, $null, $null…} Fabrikam, Inc. Fbk5040
+{$null, $null, $null, $nullâ€¦} Fabrikam, Inc. Fbk5040
 16
 16
 ```
