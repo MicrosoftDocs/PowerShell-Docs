@@ -62,7 +62,7 @@ Please note that before we can accept your pull request you must sign our
 [Contribution License Agreement](https://cla.microsoft.com/). This is a one-time requirement.
 
 For more information on contributing, read our
-[contributor's guide](https://aka.ms/PSDocsContributor). The contributor's guide contains detail
+[contributor's guide](https://aka.ms/PSDocsContributor). The contributor's guide contains detailed
 information about how to contribute documentation, suggested tools, and style and formatting
 requirements. Please use the Issue and Pull Request templates to help keep documentation consistent
 across versions.
