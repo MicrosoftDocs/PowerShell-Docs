@@ -23,7 +23,7 @@ list.
 Use the version picker at the top of the page to select the version of PowerShell you want. By
 default, the version selector is set to the most current release version of PowerShell. The version
 selector controls what cmdlet reference appears in the Table of Contents under the **Reference**
-node. Some cmdlets work differently in depending on the version of PowerShell you are using. Be sure
+node. Some cmdlets work differently depending on the version of PowerShell you are using. Be sure
 you are viewing the documentation for the correct version of PowerShell.
 
 The version selector does not filter conceptual documentation. The conceptual documents appear above
