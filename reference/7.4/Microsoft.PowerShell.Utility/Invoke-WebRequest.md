@@ -310,7 +310,7 @@ foreach ($job in $jobs) {
 ### Example 9: Skipping Header Validation
 
 By default, the `Invoke-WebRequest` cmdlet validates the values of well-known headers that have a
-standardards-defined value format. The following example shows how this validation can raise an
+standards-defined value format. The following example shows how this validation can raise an
 error and how you can use the **SkipHeaderValidation** parameter to avoid validating values for
 endpoints that tolerate invalidly formatted values.
 
