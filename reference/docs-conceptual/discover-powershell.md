@@ -17,7 +17,7 @@ text. This feature makes it easier to connect different commands in a _pipeline_
 ## What can PowerShell be used for?
 
 Usage of PowerShell has grown since the days when it was Windows-only. It's still used for Windows
-task automation, but today, you can use for tasks like:
+task automation, but today, you can use it for tasks like:
 
 - **Cloud management**. PowerShell can be used to manage cloud resources. For example, you can
   retrieve information about cloud resources, as well as update or deploy new resources.
@@ -111,7 +111,7 @@ CommandType     Name              Version    Source
 Cmdlet          Get-Process       7.0.0.0    Microsoft.PowerShell.Management
 ```
 
-What if you wanted to find all of the commands the work with processes. You can use a wildcard `*`
+What if you want to find all the commands that work with processes? You can use a wildcard `*`
 to match other forms of the string. For example:
 
 ```powershell
@@ -171,7 +171,7 @@ You can also use other cmdlets to filter results.
 
 - `Select-Object`. This versatile command helps you pick out specific properties from one or more
   objects. You can also limit the number of items you get back. The following example returns the
-  **Name** and **Source** module values for the first 5 commands available in the current session.
+  **Name** and **Source** property values for the first 5 commands available in the current session.
 
    ```powershell
    Get-Command | Select-Object -First 5 -Property Name, Source
@@ -189,7 +189,7 @@ You can also use other cmdlets to filter results.
 
    For more information, see [Select-Object][03].
 
-- `Where-Object`. This cmdlet lets you filter the objects returned based values of properties. The
+- `Where-Object`. This cmdlet lets you filter the objects returned based on the values of properties. The
   command takes an expression that can test the value of a property. The following example returns
   all processes where the `ProcessName` starts with `p`.
 
@@ -242,7 +242,7 @@ Get-Process | Get-Member | Select-Object Name, Definition
 
 ### Search by parameter type
 
-`Get-Member` showed us that `Get-Process` return **Process** type objects. The **ParameterType**
+`Get-Member` showed us that `Get-Process` returns **Process** type objects. The **ParameterType**
 parameter of `Get-Command` can be used to find other commands that take **Process** objects as
 input.
 
@@ -261,8 +261,7 @@ Cmdlet          Stop-Process                 7.0.0.0    Microsoft.PowerShell.Man
 Cmdlet          Wait-Process                 7.0.0.0    Microsoft.PowerShell.Managem…
 ```
 
-As you can see, knowing the output type of a command can help narrow down your search for related
-commands.
+Knowing the output type of a command can help narrow down your search for related commands.
 
 ### Additional resources
 
