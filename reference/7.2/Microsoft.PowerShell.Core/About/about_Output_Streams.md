@@ -48,7 +48,7 @@ The **Error** stream is the default stream for error results. Use the
 `Write-Error` cmdlet to explicitly write to this stream. The **Error** stream
 is connected to the **stderr** stream for native applications. Under most
 conditions, these errors can terminate the execution pipeline. Errors written
-to this stream are also added the the `$Error` automatic variable. For more
+to this stream are also added to the `$Error` automatic variable. For more
 information, see [about_Automatic_Variables][01].
 
 ## Warning stream
