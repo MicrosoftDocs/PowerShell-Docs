@@ -48,7 +48,7 @@ The **Error** stream is the default stream for error results. Use the
 `Write-Error` cmdlet to explicitly write to this stream. The **Error** stream
 is connected to the **stderr** stream for native applications. Under most
 conditions, these errors can terminate the execution pipeline. Errors written
-to this stream are also added the the `$Error` automatic variable. For more
+to this stream are also added to the `$Error` automatic variable. For more
 information, see [about_Automatic_Variables][01].
 
 ## Warning stream
@@ -81,15 +81,15 @@ troubleshooting.
 
 ## Information stream
 
-The **Information** stream is intended to provide message that help a user
+The **Information** stream is intended to provide messages that help a user
 understand what a script is doing. It can also be used by developers as an
 additional stream used to pass information through PowerShell. The developer
 can tag stream data and have specific handling for that stream. Use the
 `Write-Information` cmdlet to explicitly write to this stream.
 
-`Write-Host` also writes to the **Information** stream. This difference between
+`Write-Host` also writes to the **Information** stream. The difference between
 the cmdlets is that `Write-Host` also writes to the host console unless you
-redirect **Information** stream. `Write-Information` only writes to the
+redirect the **Information** stream. `Write-Information` only writes to the
 **Information** stream.
 
 ## Progress stream
