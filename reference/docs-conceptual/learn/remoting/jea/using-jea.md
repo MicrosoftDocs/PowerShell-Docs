@@ -1,6 +1,6 @@
 ---
 description: This article describes the various ways you can connect to and use a JEA endpoint.
-ms.date: 07/10/2019
+ms.date: 02/02/2023
 title: Using JEA
 ---
 
@@ -25,8 +25,12 @@ Given that information, you can start a JEA session using the [New-PSSession][05
 [Enter-PSSession][02] cmdlets.
 
 ```powershell
-$nonAdminCred = Get-Credential
-Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Credential $nonAdminCred
+$sessionParams = @{
+    ComputerName      = 'localhost'
+    ConfigurationName = 'JEAMaintenance'
+    Credential        = Get-Credential
+}
+Enter-PSSession @sessionParams
 ```
 
 If the current user account has access to the JEA endpoint, you can omit the **Credential**
@@ -37,10 +41,10 @@ the remote JEA session. You can run `Get-Command` to check which commands are av
 with your administrator to learn if there are any restrictions on the available parameters or
 allowed parameter values.
 
-Remember, JEA sessions operate in NoLanguage mode. Some of the ways you typically use PowerShell may
-not be available. For instance, you can't use variables to store data or inspect the properties on
-objects returned from cmdlets. The following example shows two approaches to get the same commands
-to work in NoLanguage mode.
+Remember, JEA sessions operate in `NoLanguage` mode. Some of the ways you typically use PowerShell
+may not be available. For instance, you can't use variables to store data or inspect the properties
+on objects returned from cmdlets. The following example shows two approaches to get the same
+commands to work in `NoLanguage` mode.
 
 ```powershell
 # Using variables is prohibited in NoLanguage mode. The following will not work:
@@ -58,15 +62,14 @@ Start-VM -VMName 'SQL01'
 ```
 
 For more complex command invocations that make this approach difficult, consider using
-[implicit remoting][09] or
-[creating custom functions][12] that wrap the
-functionality you require.
+[implicit remoting][09] or [creating custom functions][12] that wrap the functionality you require.
+For more information on `NoLanguageMode`, see [about_Language_Modes][13].
 
 ## Using JEA with implicit remoting
 
 PowerShell has an implicit remoting model that lets you import proxy cmdlets from a remote machine
-and interact with them as if they were local commands. Implicit remoting is explained in this **Hey,
-Scripting Guy!** [blog post][10]. Implicit remoting is useful when working with JEA because it
+and interact with them as if they were local commands. Implicit remoting is explained in this _Hey,
+Scripting Guy!_ [blog post][10]. Implicit remoting is useful when working with JEA because it
 allows you to work with JEA cmdlets in a full language mode. You can use tab completion, variables,
 manipulate objects, and even use local scripts to automate tasks against a JEA endpoint. Anytime you
 invoke a proxy command, the data is sent to the JEA endpoint on the remote machine and executed
@@ -79,10 +82,10 @@ all the proxy commands is created and imported for the duration of your local Po
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
-$jeasession = New-PSSession -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance'
+$jeaSession = New-PSSession -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance'
 
 # Import the entire PSSession and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA'
+Import-PSSession -Session $jeaSession -Prefix 'JEA'
 
 # Invoke "Get-Command" on the remote JEA endpoint using the proxy cmdlet
 Get-JEACommand
@@ -101,17 +104,27 @@ instead of the one imported from the remote JEA session.
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
-$jeasession = New-PSSession -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance'
+$jeaSession = New-PSSession -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance'
 
 # Get a list of all the commands on the JEA endpoint
-$commands = Invoke-Command -Session $jeasession -ScriptBlock { Get-Command }
+$commands = Invoke-Command -Session $jeaSession -ScriptBlock { Get-Command }
 
 # Filter out the default cmdlets
-$jeaDefaultCmdlets = 'Clear-Host', 'Exit-PSSession', 'Get-Command', 'Get-FormatData', 'Get-Help', 'Measure-Object', 'Out-Default', 'Select-Object'
+$jeaDefaultCmdlets = @(
+    'Clear-Host'
+    'Exit-PSSession'
+    'Get-Command'
+    'Get-FormatData'
+    'Get-Help'
+    'Measure-Object'
+    'Out-Default'
+    'Select-Object'
+)
 $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notcontains $_ }
 
-# Import only commands explicitly added in role capabilities and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
+# Import only commands explicitly added in role capabilities and prefix each
+# imported cmdlet with "JEA"
+Import-PSSession -Session $jeaSession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
 You can also persist the proxied cmdlets from implicit remoting using [Export-PSSession][06]. For
@@ -127,15 +140,24 @@ PowerShell endpoints. Ensure the program is designed to work with limitation imp
 For simple, one-off tasks, you can use [Invoke-Command][04] to run commands in a JEA session.
 
 ```powershell
-Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
+Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock {
+    Get-Process
+    Get-Service
+}
 ```
 
 To check which commands are available for use when you connect to a JEA session, run `Get-Command`
 and iterate through the results to check for the allowed parameters.
 
 ```powershell
-$allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Command }
-$allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
+$commandParameters = @{
+    ComputerName      = 'SERVER01' 
+    ConfigurationName = 'JEAMaintenance' 
+    ScriptBlock       = { Get-Command }
+}
+Invoke-Command @commandParameters |
+    Where-Object { $_.CommandType -in @('Function', 'Cmdlet') } |
+    Format-Table Name, Parameters
 ```
 
 If you're building a C# app, you can create a PowerShell runspace that connects to a JEA session by
@@ -154,8 +176,13 @@ WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
     5985,                  // WSMan Port
     "/wsman",              // WSMan Path
                            // Connection URI with config name
-    string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),
-    creds);                // Credentials
+    string.Format(
+        CultureInfo.InvariantCulture,
+        "http://schemas.microsoft.com/powershell/{0}",
+        configName
+    ),
+    creds                  // Credentials
+);
 
 // Now, use the connection info to create a runspace where you can run the commands
 using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
@@ -197,12 +224,16 @@ higher. The Hyper-V admin can connect to the JEA endpoint by using the `-VMName`
 parameters on PSRemoting cmdlets:
 
 ```powershell
+$sharedParams = @{
+    ConfigurationName = 'NICMaintenance'
+    Credential        = Get-Credential -UserName 'localhost\JEAformyHoster'
+}
 # Entering a JEA session using PowerShell Direct when the VM name is unique
-Enter-PSSession -VMName 'SQL01' -ConfigurationName 'NICMaintenance' -Credential 'localhost\JEAformyHoster'
+Enter-PSSession -VMName 'SQL01' @sharedParams
 
 # Entering a JEA session using PowerShell Direct using VM ids
 $vm = Get-VM -VMName 'MyVM' | Select-Object -First 1
-Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential 'localhost\JEAformyHoster'
+Enter-PSSession -VMId $vm.VMId @sharedParams
 ```
 
 It's recommended you create a dedicated user account with the minimum rights needed to manage the
@@ -224,3 +255,4 @@ Hyper-V admin's JEA account.
 [09]: #using-jea-with-implicit-remoting
 [10]: https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/
 [12]: role-capabilities.md#creating-custom-functions
+[13]: /powershell/module/microsoft.powershell.core/about/about_LanguageModes
