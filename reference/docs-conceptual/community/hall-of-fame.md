@@ -6,10 +6,10 @@ title: Community contributor Hall of Fame
 # Community Contributor Hall of Fame
 
 The PowerShell Community is a vibrant and collaborative group. We greatly appreciate all the help
-and support we get from the community. Read the [Contributor's Guide][contrib] to learn how you can
-contribute.
+and support we get from the community. You can be a contributor too. To learn how, read our
+[Contributor's Guide][contrib].
 
-As of the end of January 2023, these GitHub users are the All-Time Top Community Contributors.
+These GitHub users are the All-Time Top Community Contributors.
 
 ## Pull Requests merged
 

@@ -22,10 +22,39 @@ way.
 The PowerShell Standard Library allows us to create cross platform modules that work in both
 PowerShell and Windows PowerShell 5.1.
 
+## Why binary modules?
+
+When you are writing a module in C# you give up easy access to PowerShell cmdlets and functions. But
+if you are creating a module that doesn't depend on a lot of other PowerShell commands, the
+performance benefit can be significant. PowerShell was optimized for the administrator, not the
+computer. By switching to C#, you get to shed the overhead added by PowerShell.
+
+For example, we have a critical process that does a lot of work with JSON and hashtables. We
+optimized the PowerShell as much as we could but the process still takes 12 minutes to complete. The
+module already contained a lot of C# style PowerShell. This makes conversion to a binary module
+clean and simple. By converting to a binary module, we reduced the process time from over 12 minutes
+to under four minutes.
+
+### Hybrid modules
+
+You can mix binary cmdlets with PowerShell advanced functions. Everything you know about script
+modules applies the same way. The empty `psm1` file is included so you can add other PowerShell
+functions later.
+
+Almost all of the compiled cmdlets that I have created started out as PowerShell functions first.
+All of our binary modules are really hybrid modules.
+
+### Build scripts
+
+I kept the build script simple here. I generally use a large `Invoke-Build` script as part of my
+CI/CD pipeline. It does more magic like running Pester tests, running **PSScriptAnalyzer**, managing
+versioning, and publishing to the PSGallery. Once I started using a build script for my modules, I
+was able to find lots of things to add to it.
+
 ## Planning the module
 
 The plan for this module is to create a `src` folder for the C# code and structure the rest like I
-would for a script module. This includes using a build script to compile everything into an `output`
+would for a script module. This includes using a build script to compile everything into an `Output`
 folder. The folder structure looks like this:
 
 ```
@@ -39,35 +68,6 @@ MyModule
 │   └───Public
 └───Tests
 ```
-
-## Why binary modules?
-
-When you are writing a module in C# you give up easy access to PowerShell cmdlets and functions. But
-if you are creating a module that doesn't depend on a lot of other PowerShell commands, the
-performance benefit can be significant. PowerShell was optimized for the administrator, not the
-computer. By switching to C#, you get to shed the overhead added by PowerShell.
-
-For example, we have a critical process that does a lot of work with JSON and hashtables. We
-optimized the PowerShell as much as we could but the process still takes 12 minutes to complete. The
-module already contained a lot of C# style PowerShell. This made conversion to a binary module clean
-and easy to do. The conversion cut reduced the process time from over 12 minutes to under four
-minutes.
-
-### Hybrid modules
-
-You can mix binary cmdlets with PowerShell advanced functions. Everything you know about script
-modules applies the same way. The empty `psm1` file is included so you can add other PowerShell
-functions later.
-
-Almost all of the compiled cmdlets that we created started out as PowerShell functions first. All
-of our binary modules are really hybrid modules.
-
-### Build scripts
-
-I kept the build script simple here. I generally use a large `Invoke-Build` script as part of my
-CI/CD pipeline. It does more magic like running Pester tests, running **PSScriptAnalyzer**, managing
-versioning, and publishing to the PSGallery. Once I started using a build script for my modules, I
-was able to find lots of things to add to it.
 
 ## Getting Started
 

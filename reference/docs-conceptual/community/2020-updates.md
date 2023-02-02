@@ -6,8 +6,8 @@ title: What's New in PowerShell Docs for 2020
 
 # What's new in PowerShell Docs for 2020
 
-This article lists notable changes to docs during the previous month and celebrates the
-contributions from the community.
+This article lists notable changes made to docs each month and celebrates the contributions from the
+community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
