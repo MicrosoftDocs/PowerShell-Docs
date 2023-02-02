@@ -1,31 +1,60 @@
 ---
 description: The PowerShell Standard Library allows us to create cross platform modules that work in both PowerShell and with Windows PowerShell 5.1.
 ms.custom: contributor-KevinMarquette
-ms.date: 12/20/2021
+ms.date: 02/02/2023
 title: How to create a Standard Library Binary Module
 ---
 # How to create a Standard Library binary module
 
 I recently had an idea for module that I wanted to implement as a binary module. I have yet to
-create one using the [PowerShell Standard Library][psstd] so this felt like a good opportunity. I
-used the [Creating a cross-platform binary module][xplat] guide to create this module without any
+create one using the [PowerShell Standard Library][04] so this felt like a good opportunity. I used
+the [Creating a cross-platform binary module][03] guide to create this module without any
 roadblocks. We're going to walk that same process and I'll add a little extra commentary along the
 way.
 
 > [!NOTE]
-> The [original version][article] of this article appeared on the blog written by
-> [@KevinMarquette][KM]. The PowerShell team thanks Kevin for sharing this content with us. Please
-> check out his blog at [PowerShellExplained.com][kmblog].
+> The [original version][07] of this article appeared on the blog written by [@KevinMarquette][08].
+> The PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
+> [PowerShellExplained.com][05].
 
-## What is the PowerShell Standard Library?
+## What's the PowerShell Standard Library?
 
 The PowerShell Standard Library allows us to create cross platform modules that work in both
 PowerShell and Windows PowerShell 5.1.
 
-## Planning our module
+## Why binary modules?
+
+When you are writing a module in C# you give up easy access to PowerShell cmdlets and functions. But
+if you are creating a module that doesn't depend on a lot of other PowerShell commands, the
+performance benefit can be significant. PowerShell was optimized for the administrator, not the
+computer. By switching to C#, you get to shed the overhead added by PowerShell.
+
+For example, we have a critical process that does a lot of work with JSON and hashtables. We
+optimized the PowerShell as much as we could but the process still takes 12 minutes to complete. The
+module already contained a lot of C# style PowerShell. This makes conversion to a binary module
+clean and simple. By converting to a binary module, we reduced the process time from over 12 minutes
+to under four minutes.
+
+### Hybrid modules
+
+You can mix binary cmdlets with PowerShell advanced functions. Everything you know about script
+modules applies the same way. The empty `psm1` file is included so you can add other PowerShell
+functions later.
+
+Almost all of the compiled cmdlets that I have created started out as PowerShell functions first.
+All of our binary modules are really hybrid modules.
+
+### Build scripts
+
+I kept the build script simple here. I generally use a large `Invoke-Build` script as part of my
+CI/CD pipeline. It does more magic like running Pester tests, running **PSScriptAnalyzer**, managing
+versioning, and publishing to the PSGallery. Once I started using a build script for my modules, I
+was able to find lots of things to add to it.
+
+## Planning the module
 
 The plan for this module is to create a `src` folder for the C# code and structure the rest like I
-would for a script module. This includes using a build script to compile everything into an `output`
+would for a script module. This includes using a build script to compile everything into an `Output`
 folder. The folder structure looks like this:
 
 ```
@@ -41,9 +70,6 @@ MyModule
 ```
 
 ## Getting Started
-
-I normally use a Plaster template but my current template doesn't have any binary module support
-yet. Not a big deal. I'll create this one by hand this time.
 
 First I need to create the folder and create the git repo. I'm using `$module` as a placeholder for
 the module name. This should make it easier for you to reuse these examples if needed.
@@ -66,11 +92,11 @@ New-Item -Path $module -Type Directory
 
 ### Binary module setup
 
-This article is focused on the binary module so that is where we'll start. This section pulls
-examples from the [Creating a cross-platform binary module][xplat] guide. Review that guide if you
-need more details or have any issues.
+This article is focused on the binary module so that's where we'll start. This section pulls
+examples from the [Creating a cross-platform binary module][03] guide. Review that guide if you need
+more details or have any issues.
 
-First thing we want to do is check the version of the [dotnet core SDK][netsdk] that we installed.
+First thing we want to do is check the version of the [dotnet core SDK][09] that we have installed.
 I'm using 2.1.4, but you should have 2.0.0 or newer before continuing.
 
 ```powershell
@@ -98,14 +124,14 @@ Move-Item -Path .\$module\* -Destination .\
 Remove-Item $module -Recurse
 ```
 
-Set the .NET core SDK version for the project. I have the 2.1 SDK so I'm going to specify 2.1.0.
-Use 2.0.0 if you're using the 2.0 SDK.
+Set the .NET core SDK version for the project. I have the 2.1 SDK so I'm going to specify `2.1.0`.
+Use `2.0.0` if you're using the 2.0 SDK.
 
 ```powershell
 dotnet new globaljson --sdk-version 2.1.0
 ```
 
-Add the PowerShell Standard Library [NuGet package][nuget] to the project. Make sure you use the
+Add the **PowerShell Standard Library** [NuGet package][10] to the project. Make sure you use the
 most recent version available for the level of compatibility that you need. I would default to the
 latest version but I don't think this module leverages any features newer than PowerShell 3.0.
 
@@ -178,7 +204,7 @@ Build succeeded.
 Time Elapsed 00:00:02.19
 ```
 
-We can call `Import-Module` on the new dll to load our new CMDlet.
+We can call `Import-Module` on the new dll to load our new cmdlet.
 
 ```powershell
 PS> Import-Module .\bin\Debug\netstandard2.0\$module.dll
@@ -190,7 +216,7 @@ Cmdlet      Resolve-MyCmdlet        1.0.0.0 MyModule
 ```
 
 If the import fails on your system, try updating .NET to 4.7.1 or newer. The
-[Creating a cross-platform binary module][xplat] guide goes into more details on .NET support and
+[Creating a cross-platform binary module][03] guide goes into more details on .NET support and
 compatibility for older versions of .NET.
 
 ### Module manifest
@@ -217,7 +243,7 @@ I'm also going to create an empty root module for future PowerShell functions.
 Set-Content -Value '' -Path ".\$module\$module.psm1"
 ```
 
-This allows me to mix both normal PowerShell functions and binary Cmdlets in the same project.
+This allows me to mix both normal PowerShell functions and binary cmdlets in the same project.
 
 ### Building the full module
 
@@ -242,13 +268,12 @@ other module files into place.
 ```
 Output
 └───MyModule
-    │   MyModule.psd1
-    │   MyModule.psm1
-    │
+    ├───MyModule.psd1
+    ├───MyModule.psm1
     └───bin
-            MyModule.deps.json
-            MyModule.dll
-            MyModule.pdb
+        ├───MyModule.deps.json
+        ├───MyModule.dll
+        └───MyModule.pdb
 ```
 
 At this point, we can import our module with the psd1 file.
@@ -265,8 +290,8 @@ autoloads our command whenever we need it.
 I learned that the `dotnet` tool has a `PSModule` template.
 
 All the steps that I outlined above are still valid, but this template cuts many of them out. It's
-still a fairly new template that is still getting some polish placed on it. Expect it to keep
-getting better from here.
+still a fairly new template that's still getting some polish placed on it. Expect it to keep getting
+better from here.
 
 This is how you use install and use the PSModule template.
 
@@ -294,7 +319,7 @@ that loaded the DLL.
 
 ### VS Code reload window action
 
-I do most of my PowerShell dev work in [VS Code][vscode]. When I'm working on a binary module (or a
+I do most of my PowerShell dev work in [VS Code][02]. When I'm working on a binary module (or a
 module with classes), I've gotten into the habit of reloading VS Code every time I build.
 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> pops the command window and `Reload Window` is always
 at the top of my list.
@@ -313,55 +338,22 @@ PSGallery because module versioning places the new one in a different folder.
 You can set up a local PSGallery and publish to that as part of your build. Then do your local
 install from that PSGallery. This sounds like a lot of work, but this can be as simple as starting a
 docker container. I cover a way to do that in my post on
-[Using a NuGet server for a PSRepository][psrepo].
-
-## Why binary modules?
-
-I jumped right into how to make a binary module and didn't mention why you want to make one. In
-reality, you are writing C# and give up easy access to PowerShell Cmdlets and functions. That is the
-main reason why I have not shifted to binary modules sooner.
-
-But if you are creating a module that doesn't depend on a lot of other PowerShell commands, the
-performance benefit can be significant. By dropping into C#, you get to shed the overhead added by
-PowerShell. PowerShell was optimized for the administrator, not the computer, and that adds a little
-overhead.
-
-At work, we have a critical process that does a lot of work with JSON and Hashtables. We optimized
-the PowerShell as much as we could but this process was still running for 12 minutes. The module
-already contained a lot of C# style PowerShell. This made the conversion to a binary module clean
-and easy to do. Our conversion cut that process down from over 12 minutes to under four minutes.
-
-### Hybrid modules
-
-You can mix binary Cmdlets with PowerShell advanced functions. That is exactly what I'm doing in
-this guide. You can take everything you know about script modules and it all applies the same way.
-The empty `psm1` file that I created today is there just so you can drop in other PowerShell
-functions later.
-
-Almost all of the compiled cmdlets that we created started out as a PowerShell function first. All
-of our binary modules are really hybrid modules.
-
-### Build scripts
-
-I kept the build script simple here. I generally use a large `Invoke-Build` script as part of my
-CI/CD pipeline. It does more magic like running Pester tests, running PSScriptAnalyzer, managing
-versioning, and publishing to the PSGallery. Once I started using a build script for my modules, I
-was able to find lots of things to add to it.
+[Using a NuGet server for a PSRepository][06].
 
 ## Final thoughts
 
-Binary modules are easy to create. I didn't touch on the C# syntax for creating a Cmdlet, but there
-is plenty of documentation on it in the [Windows PowerShell SDK][pssdk]. It is definitely something
-worth experimenting with as a stepping stone into more serious C#.
+I didn't touch on the C# syntax for creating a cmdlet, but there is plenty of documentation on it
+in the [Windows PowerShell SDK][01]. It's definitely something worth experimenting with as a
+stepping stone into more serious C#.
 
 <!-- link references -->
-[article]: https://powershellexplained.com/2018-08-04-Powershell-Standard-Library-Binary-Module/
-[kmblog]: https://powershellexplained.com/
-[KM]: https://twitter.com/KevinMarquette
-[psstd]: https://github.com/PowerShell/PowerShellStandard
-[xplat]: https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md
-[netsdk]: https://www.microsoft.com/net/download/core
-[psrepo]: https://powershellexplained.com/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/
-[pssdk]: /powershell/scripting/developer/windows-powershell-reference
-[vscode]: https://code.visualstudio.com
-[nuget]: https://www.nuget.org/packages/PowerShellStandard.Library/
+[01]: /powershell/scripting/developer/windows-powershell-reference
+[02]: https://code.visualstudio.com
+[03]: https://github.com/PowerShell/PowerShell/blob/master/docs/cmdlet-example/command-line-simple-example.md
+[04]: https://github.com/PowerShell/PowerShellStandard
+[05]: https://powershellexplained.com/
+[06]: https://powershellexplained.com/2018-03-03-Powershell-Using-a-NuGet-server-for-a-PSRepository/
+[07]: https://powershellexplained.com/2018-08-04-Powershell-Standard-Library-Binary-Module/
+[08]: https://twitter.com/KevinMarquette
+[09]: https://www.microsoft.com/net/download/core
+[10]: https://www.nuget.org/packages/PowerShellStandard.Library/
