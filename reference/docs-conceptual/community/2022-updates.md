@@ -1,11 +1,11 @@
 ---
 description: List of changes to the PowerShell documentation for 2022
-ms.date: 01/03/2023
+ms.date: 02/02/2023
 title: What's New in PowerShell-Docs for 2022
 ---
 # What's new in PowerShell Docs for 2022
 
-This article lists some of the changes to docs during the previous month and celebrates the
+This article lists notable changes to docs during the previous month and celebrates the
 contributions from the community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
