@@ -1,12 +1,12 @@
 ---
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 02/01/2022
+ms.date: 02/02/2023
 title: What's New in PowerShell-Docs for 2021
 ---
 # What's new in PowerShell Docs for 2021
 
-This article lists some of the major changes to docs during this previous month and celebrates the
-contributions from the community.
+This article lists notable changes made to docs each month and celebrates the contributions from the
+community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
