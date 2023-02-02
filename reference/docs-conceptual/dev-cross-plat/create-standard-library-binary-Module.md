@@ -55,9 +55,9 @@ minutes.
 
 ### Hybrid modules
 
-You can mix binary cmdlets with PowerShell advanced functions. Take everything you know about script
-modules and it all applies the same way. The empty `psm1` file is there just so you can add other
-PowerShell functions later.
+You can mix binary cmdlets with PowerShell advanced functions. Everything you know about script
+modules applies the same way. The empty `psm1` file is included so you can add other PowerShell
+functions later.
 
 Almost all of the compiled cmdlets that we created started out as PowerShell functions first. All
 of our binary modules are really hybrid modules.
@@ -65,7 +65,7 @@ of our binary modules are really hybrid modules.
 ### Build scripts
 
 I kept the build script simple here. I generally use a large `Invoke-Build` script as part of my
-CI/CD pipeline. It does more magic like running Pester tests, running PSScriptAnalyzer, managing
+CI/CD pipeline. It does more magic like running Pester tests, running **PSScriptAnalyzer**, managing
 versioning, and publishing to the PSGallery. Once I started using a build script for my modules, I
 was able to find lots of things to add to it.
 
@@ -96,8 +96,8 @@ This article is focused on the binary module so that's where we'll start. This s
 examples from the [Creating a cross-platform binary module][03] guide. Review that guide if you need
 more details or have any issues.
 
-First thing we want to do is check the version of the [dotnet core SDK][09] that we installed. I'm
-using 2.1.4, but you should have 2.0.0 or newer before continuing.
+First thing we want to do is check the version of the [dotnet core SDK][09] that we have installed.
+I'm using 2.1.4, but you should have 2.0.0 or newer before continuing.
 
 ```powershell
 PS> dotnet --version
@@ -124,8 +124,8 @@ Move-Item -Path .\$module\* -Destination .\
 Remove-Item $module -Recurse
 ```
 
-Set the .NET core SDK version for the project. I have the 2.1 SDK so I'm going to specify 2.1.0. Use
-2.0.0 if you're using the 2.0 SDK.
+Set the .NET core SDK version for the project. I have the 2.1 SDK so I'm going to specify `2.1.0`.
+Use `2.0.0` if you're using the 2.0 SDK.
 
 ```powershell
 dotnet new globaljson --sdk-version 2.1.0
@@ -342,9 +342,9 @@ docker container. I cover a way to do that in my post on
 
 ## Final thoughts
 
-Binary modules are easy to create. I didn't touch on the C# syntax for creating a cmdlet, but there
-is plenty of documentation on it in the [Windows PowerShell SDK][01]. It's definitely something
-worth experimenting with as a stepping stone into more serious C#.
+I didn't touch on the C# syntax for creating a cmdlet, but there is plenty of documentation on it
+in the [Windows PowerShell SDK][01]. It's definitely something worth experimenting with as a
+stepping stone into more serious C#.
 
 <!-- link references -->
 [01]: /powershell/scripting/developer/windows-powershell-reference
