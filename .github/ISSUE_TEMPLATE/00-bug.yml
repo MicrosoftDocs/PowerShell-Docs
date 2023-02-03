@@ -2,7 +2,7 @@ name: "🐛 Report a documentation issue"
 description: >-
   Report an issue with current documentation.
 labels:
-  - doc-bug
+  - issue-doc-bug
   - needs-triage
 body:
   - type: markdown

@@ -2,7 +2,7 @@ name: "💡 Suggest a new document or idea"
 description: >-
   Suggest a new document or major rewrite of an existing one.
 labels:
-  - doc-idea
+  - issue-doc-idea
   - needs-triage
 body:
   - type: checkboxes
