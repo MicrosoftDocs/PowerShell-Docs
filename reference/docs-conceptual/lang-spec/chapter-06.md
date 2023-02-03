@@ -256,7 +256,7 @@ For information about parameter binding see [§8.14][§8.14].
 When the value of an expression is being bound to a parameter, there are extra conversion
 considerations, as described below:
 
-- If the parameter type is switch ([§8.10.5][§8.10.5]) and the parameter has no
+- If the parameter type is switch ([§4.2.5][§4.2.5], [§8.10.5][§8.10.5]) and the parameter has no
   argument, the value of the parameter in the called command is set to `$true`. If the parameter
   type is other than switch, a parameter having no argument is in error.
 - If the parameter type is switch and the argument value is `$null`, the parameter value is set to
