@@ -2,6 +2,8 @@ name: "🦾 Commit to a Quality Contribution"
 description: >-
   File an issue to take part in the PowerShell Docs Quality Contributions project.
 title: "Quality: "
+labels:
+  - project-quality
 body:
   - type: markdown
     attributes:
