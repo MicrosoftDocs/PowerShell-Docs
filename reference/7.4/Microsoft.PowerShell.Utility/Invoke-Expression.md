@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 02/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-Expression
@@ -160,6 +160,11 @@ automatic variable to represent the input objects in the command.
 This cmdlet returns no output of its own, but the invoked command may return output.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Invoke-Expression`:
+
+- All platforms:
+  - `iex`
 
 In most cases, you invoke expressions using PowerShell's call operator and achieve the same results.
 The call operator is a safer method. For more information, see
