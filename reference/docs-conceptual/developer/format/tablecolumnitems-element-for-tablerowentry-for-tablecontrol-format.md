@@ -21,7 +21,7 @@ Defines the properties or scripts whose values are displayed in a row.
 ## Syntax
 
 ```xml
-TableColumnItems>
+<TableColumnItems>
   <TableColumnItem>...</TableColumnItem>
 </TableColumnItems>
 ```

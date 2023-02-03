@@ -17,71 +17,71 @@ Labels always have a name and a description that is prefixed with their type.
 
 Area labels identify the parts of PowerShell or the documentation that the issue relates to.
 
-|        Label        |                                     Related Content                                      |
-| :------------------ | :--------------------------------------------------------------------------------------- |
-| `about`             | The `about_*` topic articles.                                                            |
-| `archive`           | The [Microsoft.PowerShell.Archive][03] module.                                           |
-| `cim`               | The [CimCmdlets][01] module.                                                             |
-| `community`         | Community-facing projects, including the contributor's guide and monthly updates.        |
-| `conceptual`        | Conceptual (non-reference) articles.                                                     |
-| `console`           | The console host                                                                         |
-| `core`              | The [Microsoft.PowerShell.Core][04] module.                                              |
-| `crescendo`         | The [Crescendo][02] module.                                                              |
-| `debugging`         | Debugging PowerShell.                                                                    |
-| `diagnostics`       | The [Microsoft.PowerShell.Diagnostics][05] module.                                       |
-| `dsc`               | PowerShell Desired State Configuration.                                                  |
-| `editorsvcs`        | The PowerShell editor services.                                                          |
-| `engine`            | The PowerShell engine.                                                                   |
-| `error-handling`    | Error handling in PowerShell                                                             |
-| `experimental`      | PowerShell's experimental features                                                       |
-| `gallery`           | The PowerShell Gallery.                                                                  |
-| `helpsystem`        | The Help services, including the pipeline and `*-Help` cmdlets.                          |
-| `host`              | The [Microsoft.PowerShell.Host][06] module.                                              |
-| `ise`               | The PowerShell ISE.                                                                      |
-| `jea`               | The Just Enough Administration feature.                                                  |
-| `language`          | The PowerShell syntax and keywords.                                                      |
-| `learn`             | The structured [training content][18] for PowerShell.                                    |
-| `localaccounts`     | The [Microsoft.PowerShell.LocalAccounts][07] module.                                     |
-| `localization`      | Localization problems or opportunities for the content.                                  |
-| `management`        | The [Microsoft.PowerShell.Management][08] module.                                        |
-| `native-cmds`       | Using native commands in PowerShell.                                                     |
-| `omi`               | Open Management Infrastructure & CDXML.                                                  |
-| `ops-issue`         | Building and rendering the content on the site.                                          |
-| `other`             | Miscellaneous modules. <!-- Should we keep this? -->                                     |
-| `overview`          | The overview section in the conceptual content.                                          |
-| `packagemanagement` | The [PackageManagement][11] module.                                                      |
-| `parallelism`       | Content covering parallel processing, such as using `ForEach-Object` or PowerShell Jobs. |
-| `platyps`           | The [PlatyPS][12] module.                                                                |
-| `portability`       | Cross-platform compatibility.                                                            |
-| `powershellget`     | The [PowerShellGet][13] module.                                                          |
-| `providers`         | PowerShell providers.                                                                    |
-| `psreadline`        | The [PSReadline][14] module.                                                             |
-| `release-notes`     | The PowerShell release notes.                                                            |
-| `remoting`          | The PowerShell remoting feature and cmdlets.                                             |
-| `scriptanalyzer`    | The [PSScriptAnalyzer][15] module.                                                       |
-| `sdk-docs`          | The conceptual documentation for the PowerShell SDK.                                     |
-| `sdk-ref`           | The .NET API reference documentation for the PowerShell SDK.                             |
-| `security`          | The [Microsoft.PowerShell.Security][09] module and security concepts in general.         |
-| `setup`             | Installing and configuring PowerShell.                                                   |
-| `threadjob`         | The [ThreadJob][16] module.                                                              |
-| `utility`           | The [Microsoft.PowerShell.Utility][10] module.                                           |
-| `versions`          | Issues with the versioning of the documentation.                                         |
-| `vscode`            | The VS Code PowerShell extension.                                                        |
-| `wincompat`         | The Windows Compatibility feature.                                                       |
-| `wmf`               | The Windows Management Framework.                                                        |
-| `workflow`          | The Windows PowerShell Workflow feature.                                                 |
+|          Label           |                                     Related Content                                      |
+| :----------------------- | :--------------------------------------------------------------------------------------- |
+| `area-about`             | The `about_*` topic articles.                                                            |
+| `area-archive`           | The [Microsoft.PowerShell.Archive][03] module.                                           |
+| `area-cim`               | The [CimCmdlets][01] module.                                                             |
+| `area-community`         | Community-facing projects, including the contributor's guide and monthly updates.        |
+| `area-conceptual`        | Conceptual (non-reference) articles.                                                     |
+| `area-console`           | The console host                                                                         |
+| `area-core`              | The [Microsoft.PowerShell.Core][04] module.                                              |
+| `area-crescendo`         | The [Crescendo][02] module.                                                              |
+| `area-debugging`         | Debugging PowerShell.                                                                    |
+| `area-diagnostics`       | The [Microsoft.PowerShell.Diagnostics][05] module.                                       |
+| `area-dsc`               | PowerShell Desired State Configuration.                                                  |
+| `area-editorsvcs`        | The PowerShell editor services.                                                          |
+| `area-engine`            | The PowerShell engine.                                                                   |
+| `area-error-handling`    | Error handling in PowerShell                                                             |
+| `area-experimental`      | PowerShell's experimental features                                                       |
+| `area-gallery`           | The PowerShell Gallery.                                                                  |
+| `area-helpsystem`        | The Help services, including the pipeline and `*-Help` cmdlets.                          |
+| `area-host`              | The [Microsoft.PowerShell.Host][06] module.                                              |
+| `area-ise`               | The PowerShell ISE.                                                                      |
+| `area-jea`               | The Just Enough Administration feature.                                                  |
+| `area-language`          | The PowerShell syntax and keywords.                                                      |
+| `area-learn`             | The structured [training content][18] for PowerShell.                                    |
+| `area-localaccounts`     | The [Microsoft.PowerShell.LocalAccounts][07] module.                                     |
+| `area-localization`      | Localization problems or opportunities for the content.                                  |
+| `area-management`        | The [Microsoft.PowerShell.Management][08] module.                                        |
+| `area-native-cmds`       | Using native commands in PowerShell.                                                     |
+| `area-omi`               | Open Management Infrastructure & CDXML.                                                  |
+| `area-ops-issue`         | Building and rendering the content on the site.                                          |
+| `area-other`             | Miscellaneous modules. <!-- Should we keep this? -->                                     |
+| `area-overview`          | The overview section in the conceptual content.                                          |
+| `area-packagemanagement` | The [PackageManagement][11] module.                                                      |
+| `area-parallelism`       | Content covering parallel processing, such as using `ForEach-Object` or PowerShell Jobs. |
+| `area-platyps`           | The [PlatyPS][12] module.                                                                |
+| `area-portability`       | Cross-platform compatibility.                                                            |
+| `area-powershellget`     | The [PowerShellGet][13] module.                                                          |
+| `area-providers`         | PowerShell providers.                                                                    |
+| `area-psreadline`        | The [PSReadline][14] module.                                                             |
+| `area-release-notes`     | The PowerShell release notes.                                                            |
+| `area-remoting`          | The PowerShell remoting feature and cmdlets.                                             |
+| `area-scriptanalyzer`    | The [PSScriptAnalyzer][15] module.                                                       |
+| `area-sdk-docs`          | The conceptual documentation for the PowerShell SDK.                                     |
+| `area-sdk-ref`           | The .NET API reference documentation for the PowerShell SDK.                             |
+| `area-security`          | The [Microsoft.PowerShell.Security][09] module and security concepts in general.         |
+| `area-setup`             | Installing and configuring PowerShell.                                                   |
+| `area-threadjob`         | The [ThreadJob][16] module.                                                              |
+| `area-utility`           | The [Microsoft.PowerShell.Utility][10] module.                                           |
+| `area-versions`          | Issues with the versioning of the documentation.                                         |
+| `area-vscode`            | The VS Code PowerShell extension.                                                        |
+| `area-wincompat`         | The Windows Compatibility feature.                                                       |
+| `area-wmf`               | The Windows Management Framework.                                                        |
+| `area-workflow`          | The Windows PowerShell Workflow feature.                                                 |
 
 ## Issue labels
 
 Issue labels distinguish issues by purpose.
 
-|       Label        |                       Issue Category                        |
-| :----------------- | :---------------------------------------------------------- |
-| `doc-bug`          | Errors or ambiguities in the content                        |
-| `doc-idea`         | Requests for new content                                    |
-| `kudos`            | Praise, positive feedback, or thanks rather than work items |
-| `product-feedback` | Feedback or problems with the product itself                |
-| `question`         | Support questions                                           |
+|          Label           |                       Issue Category                        |
+| :----------------------- | :---------------------------------------------------------- |
+| `issue-doc-bug`          | Errors or ambiguities in the content                        |
+| `issue-doc-idea`         | Requests for new content                                    |
+| `issue-kudos`            | Praise, positive feedback, or thanks rather than work items |
+| `issue-product-feedback` | Feedback or problems with the product itself                |
+| `issue-question`         | Support questions                                           |
 
 ## Priority labels
 
@@ -94,6 +94,15 @@ used when needed to manage large sets of work items.
 | `Pri1` | High           |
 | `Pri2` | Medium         |
 | `Pri3` | Low            |
+
+## Project Labels
+
+Project labels indicate what ongoing GitHub Project a work item is related to. These labels are
+used for automatically adding work items to a project on creation.
+
+|       Label       |                Project                |
+| ----------------: | :------------------------------------ |
+| `project-quality` | The [quality improvement project][19] |
 
 ## Quality labels
 
@@ -113,16 +122,14 @@ Quality labels categorize work items for the [quality improvement][19] effort.
 Status labels indicate why a work item was closed or shouldn't be merged. Issues are only given
 status labels when they're closed without a related PR.
 
-|         Label         |                          Status                          |
-| :-------------------- | :------------------------------------------------------- |
-| `code-of-conduct`     | Closed for spam, trolling, or code of conduct violations |
-| `do-not-merge`        | The PR isn't meant to be merged                          |
-| `doc-provided`        | Closed by existing documentation                         |
-| `duplicate`           | Closed as duplicate issue                                |
-| `moved-to-wiki`       | Closed by move to the wiki                               |
-| `referred-to-support` | Closed and referred to community or product support      |
-| `resolved-external`   | Closed by customer or outside resource                   |
-| `wont-fix`            | Closed as work that was declined for implementation      |
+|             Label             |                       Status                        |
+| :---------------------------- | :-------------------------------------------------- |
+| `resolution-answered`         | Closed by existing documentation                    |
+| `resolution-duplicate`        | Closed as duplicate issue                           |
+| `resolution-external`         | Closed by customer or outside resource              |
+| `resolution-no-repro`         | Unable to reproduce the reported issue              |
+| `resolution-refer-to-support` | Closed and referred to community or product support |
+| `resolution-wont-fix`         | Closed as won't fix                                 |
 
 ## Tag labels
 
@@ -137,19 +144,21 @@ Tag labels add independent context for work items.
 | `hacktoberfest-accepted`  | The PR is accepted for inclusion in [#hacktoberfest][17]                  |
 | `hacktoberfest-candidate` | The PR is a candidate for inclusion in [#hacktoberfest][17]               |
 | `needs-triage`            | The issue needs to be triaged by the team before it is ready to be worked |
+| `code-of-conduct`         | Closed for spam, trolling, or code of conduct violations                  |
+| `do-not-merge`            | The PR isn't meant to be merged                                           |
 
 ## Waiting labels
 
 Waiting labels indicate that a work item can't be resolved until an external condition is met.
 
-|       Label        |                        Waiting For                        |
-| :----------------- | :-------------------------------------------------------- |
-| `shiproom`         | Shiproom discussion with the PowerShell team              |
-| `needs-response`   | Response from work item author                            |
-| `needs-more-info`  | Additional details or clarification from work item author |
-| `needs-review`     | PR review                                                 |
-| `hold-for-pr`      | Upstream PR to be merged                                  |
-| `hold-for-release` | Upstream product to release                               |
+|         Label         |                        Waiting For                        |
+| :-------------------- | :-------------------------------------------------------- |
+| `hold-for-pr`         | Upstream PR to be merged                                  |
+| `hold-for-release`    | Upstream product to release                               |
+| `needs-investigation` | Waiting for team member to verify or research             |
+| `needs-more-info`     | Additional details or clarification from work item author |
+| `needs-response`      | Response from work item author                            |
+| `review-shiproom`     | Shiproom discussion with the PowerShell team              |
 
 <!-- link references -->
 [01]: /powershell/module/cimcmdlets
