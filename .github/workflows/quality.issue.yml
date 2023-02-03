@@ -19,17 +19,6 @@ jobs:
           regex: "Quality: Foo"
           flags: gm
 
-  project:
-    name: Add to project
-    needs: quality
-    if: needs.quality.outputs.check == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/add-to-project@v0.4.0
-        with:
-          project-url: https://github.com/orgs/MicrosoftDocs/projects/15/views/1
-          github-token: ${{ secrets.quality_token }}
-
   assign:
     name: Assign to author
     needs: quality
