@@ -253,7 +253,7 @@ PowerShell includes the following aliases for `New-Alias`:
   - `nal`
 
 - To create a new alias, use `Set-Alias` or `New-Alias`. To change an alias, use `Set-Alias`. To delete
-an alias, use `Remove-Item`.
+an alias, use `Remove-Alias`.
 
 ## RELATED LINKS
 
@@ -262,5 +262,7 @@ an alias, use `Remove-Item`.
 [Get-Alias](Get-Alias.md)
 
 [Import-Alias](Import-Alias.md)
+
+[Remove-Alias](Remove-Alias.md)
 
 [Set-Alias](Set-Alias.md)
