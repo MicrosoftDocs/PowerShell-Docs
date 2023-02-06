@@ -34,7 +34,12 @@ sections:
           If you need to deploy the update before it becomes available in Microsoft Update, download
           the update from the [Releases](https://github.com/PowerShell/PowerShell/releases) page on
           GitHub.
-
+      - question: I am on PowerShell 7.2, why have I not been upgraded to 7.3?
+        answer: |
+          Since PowerShell 7.2 is the latest long term supported (LTS) version, we will not be 
+          upgrading you from 7.2 to 7.3. PowerShell 7.3 is the latest stable version and will 
+          go out of support before 7.2. You can learn more about support cycles from 
+          [PowerShell Support Lifecycle](https://learn.microsoft.com/powershell/scripting/install/powershell-support-lifecycle).
   - name: Configuration
     questions:
       - question: What version of Windows is required to support the Microsoft Update feature?
