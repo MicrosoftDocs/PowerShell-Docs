@@ -66,6 +66,7 @@ aliases:
 - `Get-Alias` - Gets all the aliases in the current session.
 - `New-Alias` - Creates a new alias.
 - `Set-Alias` - Creates or changes an alias.
+- `Remove-Alias` - Deletes an alias.
 - `Export-Alias` - Exports one or more aliases to a file.
 - `Import-Alias` - Imports an alias file into PowerShell.
 
@@ -264,6 +265,7 @@ Get-Help Alias
 - [Get-Alias](xref:Microsoft.PowerShell.Utility.Get-Alias)
 - [Import-Alias](xref:Microsoft.PowerShell.Utility.Import-Alias)
 - [New-Alias](xref:Microsoft.PowerShell.Utility.New-Alias)
+- [Remove-Alias](xref:Microsoft.PowerShell.Utility.Remove-Alias)
 - [Set-Alias](xref:Microsoft.PowerShell.Utility.Set-Alias)
 - [Get-PSDrive](xref:Microsoft.PowerShell.Management.Get-PSDrive)
 - [Get-PSProvider](xref:Microsoft.PowerShell.Management.Get-PSProvider)

@@ -29,7 +29,7 @@ control view.
   <EnumerateCollection/>
   <ItemSelectionCondition>...</ItemSelectionCondition>
   <PropertyName>Nameof.NetTypeProperty</PropertyName>
-  <ScriptBlock>ScriptToEvaluate></ScriptBlock>
+  <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 </ExpressionBinding>
 ```
 

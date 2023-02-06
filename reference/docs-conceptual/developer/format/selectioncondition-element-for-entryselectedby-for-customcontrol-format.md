@@ -50,9 +50,9 @@ None.
 
 ### Parent Elements
 
-|Element|Description| |-------------|-----------------| |[EntrySelectedBy Element for CustomEntry for CustomControl for View](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines
-the .NET types that use this control definition or the condition that must exist for this definition
-to be used.|
+|Element|Description|
+|-------------|-----------------|
+|[EntrySelectedBy Element for CustomEntry for CustomControl for View](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|Defines the .NET types that use this control definition or the condition that must exist for this definition to be used.|
 
 ## Remarks
 
