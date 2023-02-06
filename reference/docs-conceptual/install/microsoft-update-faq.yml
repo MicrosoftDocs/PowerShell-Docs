@@ -38,8 +38,9 @@ sections:
         answer: |
           Since PowerShell 7.2 is the latest long term supported (LTS) version, we will not be 
           upgrading you from 7.2 to 7.3. PowerShell 7.3 is the latest stable version and will 
-          go out of support before 7.2. You can learn more about support cycles from 
-          [PowerShell Support Lifecycle](https://learn.microsoft.com/powershell/scripting/install/powershell-support-lifecycle).
+          go out of support before 7.2. We will continue to automatically update your patch 
+          versions for both 7.2 and 7.3, for example, 7.2.x to 7.2.y and 7.3.x to 7.3.y. You 
+          can learn more about support cycles from [PowerShell Support Lifecycle](/powershell/scripting/install/powershell-support-lifecycle).
   - name: Configuration
     questions:
       - question: What version of Windows is required to support the Microsoft Update feature?
