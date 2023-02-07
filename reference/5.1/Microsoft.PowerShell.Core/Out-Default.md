@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/12/2021
+ms.date: 02/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/out-default?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Default
@@ -27,7 +27,7 @@ object stream does not contain strings, `Out-Default` inspects the object to det
 First it looks at the object type and determines whether there is a registered _view_ for this
 object type.
 
-PowerShell defines XML schema and a mechanism (the `Update-FormatData` cmdlet) where anyone can
+PowerShell defines an XML schema and a mechanism (the `Update-FormatData` cmdlet) where anyone can
 register views for an object type. You can specify **wide**, **list**, **table**, or **custom**
 views for any object type. The views specify which properties to display and how they should be
 displayed. If a view is registered, it defines which formatter to use. So if the registered view is
