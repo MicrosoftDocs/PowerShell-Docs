@@ -160,7 +160,7 @@ setting can contain the following subkeys:
 - `UpdatableHelp`
 
 The `ScriptExecution` setting is used to set the PowerShell Execution Policy.
-This take precedence over the `ExecutionPolicy` setting described above.
+This takes precedence over the `ExecutionPolicy` setting described above.
 
 Example:
 
@@ -177,11 +177,11 @@ Example:
 For descriptions of the other policy settings, see the descriptions in the
 [Common configuration settings][06] section.
 
-On Windows, PowerShell looks for the settings in the registry. Any setting
+On Windows, PowerShell looks for the settings in the registry. Any settings
 found in the registry have precedence. Next PowerShell reads the JSON
-configuration. Any settings found under `PowerShellPolicies` as long as they
-are not found in the registry. Finally, any remaining settings found at the
-root level of the JSON configuration are used.
+configuration. Any settings found under `PowerShellPolicies`, and not defined
+in the registry, take precedence over settings found at the root level of the
+JSON configuration.
 
 For more information, see [about_Group_Policy_Settings][07].
 
@@ -216,15 +216,18 @@ The following settings are available on all supported platforms.
 
 ### ConsoleSessionConfiguration
 
+This setting specifies the session configuration to be used for all PowerShell
+sessions. This can be any endpoint registered on the local machine including
+the default PowerShell remoting endpoints or a custom endpoint having specific
+user role capabilities.
+
 This key contains two subkeys:
 
 - `EnableConsoleSessionConfiguration` - to enable session configurations, set
-  the value to `true`.
+  the value to `true`. By default, this value is `false`.
 
 - `ConsoleSessionConfigurationName` - Specifies the name of configuration
-  endpoint in which PowerShell is run. This can be any endpoint registered on
-  the local machine including the default PowerShell remoting endpoints or a
-  custom endpoint having specific user role capabilities.
+  endpoint in which PowerShell is run. By default, there is no session defined.
 
 ```json
 {
@@ -377,7 +380,7 @@ This setting controls logging of all PowerShell script input. This setting
 contains two subkeys:
 
 - `EnableScriptBlockLogging` - If you enable this policy setting, PowerShell
-  Core logs the processing of commands, script blocks, functions, and scripts
+  logs the processing of commands, script blocks, functions, and scripts
   whether invoked interactively, or through automation.
 - `EnableScriptBlockInvocationLogging` - enables logging of script block start
   and stop events.
@@ -400,7 +403,7 @@ PowerShell enables transcription for all PowerShell sessions.
 This setting controls how transcription works in PowerShell. This setting
 contains three subkeys:
 
-- `EnableTranscripting` - When this setting is enable, PowerShell creates
+- `EnableTranscripting` - When this setting is enabled, PowerShell creates
   transcription log files in the configured location.
 - `EnableInvocationHeader` - By default, PowerShell includes a header at the
   top of the transcription log file. You can disable the header using this

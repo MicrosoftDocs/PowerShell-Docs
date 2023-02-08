@@ -179,9 +179,9 @@ For descriptions of the other policy settings, see the descriptions in the
 
 On Windows, PowerShell looks for the settings in the registry. Any settings
 found in the registry have precedence. Next PowerShell reads the JSON
-configuration. Any settings found under `PowerShellPolicies` as long as they
-are not found in the registry. Finally, any remaining settings found at the
-root level of the JSON configuration are used.
+configuration. Any settings found under `PowerShellPolicies`, and not defined
+in the registry, take precedence over settings found at the root level of the
+JSON configuration.
 
 For more information, see [about_Group_Policy_Settings][07].
 
@@ -216,15 +216,18 @@ The following settings are available on all supported platforms.
 
 ### ConsoleSessionConfiguration
 
+This setting specifies the session configuration to be used for all PowerShell
+sessions. This can be any endpoint registered on the local machine including
+the default PowerShell remoting endpoints or a custom endpoint having specific
+user role capabilities.
+
 This key contains two subkeys:
 
 - `EnableConsoleSessionConfiguration` - to enable session configurations, set
-  the value to `true`.
+  the value to `true`. By default, this value is `false`.
 
 - `ConsoleSessionConfigurationName` - Specifies the name of configuration
-  endpoint in which PowerShell is run. This can be any endpoint registered on
-  the local machine including the default PowerShell remoting endpoints or a
-  custom endpoint having specific user role capabilities.
+  endpoint in which PowerShell is run. By default, there is no session defined.
 
 ```json
 {
