@@ -84,13 +84,13 @@ PS> Get-Content C:\windows\actsetup.log
 ```
 
 PSReadLine also has a menu completion feature. The default key binding on
-Windows is <kbd>Ctrl</kbd>-<kbd>Space</kbd>.
+Windows is <kbd>Ctrl</kbd>+<kbd>Space</kbd>.
 
 ```
 PS> fore<Ctrl-Space>
 ```
 
-When you press <kbd>Ctrl</kbd>-<kbd>Space</kbd>, PowerShell presents the full
+When you press <kbd>Ctrl</kbd>+<kbd>Space</kbd>, PowerShell presents the full
 list of matching values as a menu:
 
 ```

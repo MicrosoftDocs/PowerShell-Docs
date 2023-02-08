@@ -204,7 +204,7 @@ Now everything is ready to begin debugging.
 
 You can step through the source code, inspect variables, and inspect the call stack.
 
-To end debugging, click **Stop** in the debug toolbar or press <kbd>Shift</kbd>-<kbd>F5</kbd>. The
+To end debugging, click **Stop** in the debug toolbar or press <kbd>Shift</kbd>+<kbd>F5</kbd>. The
 shell used for debugging exits and releases the lock on the compiled DLL file.
 
 <!-- link references -->

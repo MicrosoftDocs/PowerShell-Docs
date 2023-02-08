@@ -13,7 +13,7 @@ entry. Command names, parameter names, argument values and file paths can all be
 pressing the <kbd>Tab</kbd> key.
 
 The <kbd>Tab</kbd> key is the default key binding on Windows. **PSReadLine** also provides a
-`MenuComplete` function that's bound to <kbd>Ctrl</kbd>-<kbd>Space</kbd>. The `MenuComplete`
+`MenuComplete` function that's bound to <kbd>Ctrl</kbd>+<kbd>Space</kbd>. The `MenuComplete`
 function displays a list of matching completions below the command line.
 
 These keybindings can be changed using **PSReadLine** cmdlets or the application that's hosting
