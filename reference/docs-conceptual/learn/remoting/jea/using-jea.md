@@ -151,8 +151,8 @@ and iterate through the results to check for the allowed parameters.
 
 ```powershell
 $commandParameters = @{
-    ComputerName      = 'SERVER01' 
-    ConfigurationName = 'JEAMaintenance' 
+    ComputerName      = 'SERVER01'
+    ConfigurationName = 'JEAMaintenance'
     ScriptBlock       = { Get-Command }
 }
 Invoke-Command @commandParameters |
@@ -255,4 +255,4 @@ Hyper-V admin's JEA account.
 [09]: #using-jea-with-implicit-remoting
 [10]: https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/
 [12]: role-capabilities.md#creating-custom-functions
-[13]: /powershell/module/microsoft.powershell.core/about/about_LanguageModes
+[13]: /powershell/module/microsoft.powershell.core/about/about_Language_Modes
