@@ -103,7 +103,7 @@ termination, the exit code is always `0`.
 
 Similar to `-Command`, when a script-terminating error occurs, the exit code is
 set to `1`. However, unlike with `-Command`, when the execution is interrupted
-with <kbd>Ctrl</kbd>-<kbd>C</kbd> the exit code is `0`.
+with <kbd>Ctrl</kbd>+<kbd>C</kbd> the exit code is `0`.
 
 > [!NOTE]
 > As of PowerShell 7.2, the **File** parameter only accepts `.ps1` files on
@@ -187,7 +187,7 @@ add `exit $LASTEXITCODE` to your command string or script block.
 
 Similarly, the value 1 is returned when a script-terminating
 (runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
-or when execution is interrupted with <kbd>Ctrl</kbd>-<kbd>C</kbd>.
+or when execution is interrupted with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 ### -ConfigurationName | -config
 

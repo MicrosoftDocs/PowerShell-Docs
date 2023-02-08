@@ -251,7 +251,7 @@ add `exit $LASTEXITCODE` to your command string or script block.
 
 Similarly, the value 1 is returned when a script-terminating
 (runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
-or when execution is interrupted with <kbd>Ctrl</kbd>-<kbd>C</kbd>.
+or when execution is interrupted with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 #### -Help, -?, /?
 
