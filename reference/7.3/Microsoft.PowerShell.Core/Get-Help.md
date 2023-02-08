@@ -112,13 +112,13 @@ Beginning with **PSReadLine** v2.2.2, the module ships with two functions that p
 to help while you are typing a command on the command line. The help is displayed in the terminal in
 an alternate screen buffer with paging.
 
-When you hit <kbd>F1</kbd> key, the **PSReadLine** `ShowCommandHelp` function invokes
+When you hit the <kbd>F1</kbd> key, the **PSReadLine** `ShowCommandHelp` function invokes
 `Get-Help -Full` for the cmdlet name closest to the left of the cursor. When the cursor is
 immediately to the left of a parameter, the function jumps to that parameter's description in the
 full help topic. When you hit <kbd>Q</kbd> to exit the help view, you are returned to the command
 line at the same cursor position so you can continue typing the command.
 
-When you hit <kbd>Alt</kbd>-<kbd>h</kbd> key, the **PSReadLine** `ShowParameterHelp` function
+When you use the key combination <kbd>Alt</kbd>+<kbd>h</kbd>, the **PSReadLine** `ShowParameterHelp` function
 displays help information for the parameter immediately to the left of the cursor. The help text is
 displayed below the command line. This allows you to see the description of the parameter and
 continue typing your command.
