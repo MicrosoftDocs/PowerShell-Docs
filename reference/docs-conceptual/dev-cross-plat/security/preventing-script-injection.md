@@ -141,7 +141,7 @@ Get-Process: Cannot bind parameter 'Id'. Cannot convert value "8064; Write-Host 
 "System.Int32". Error: "The input string '8064; Write-Host' was not in a correct format."
 ```
 
-Hover, this version of the function isn't yet completely safe from injection attacks. A malicious
+However, this version of the function isn't yet completely safe from injection attacks. A malicious
 user can still use single quotes in their input to inject code.
 
 ```powershell
@@ -161,9 +161,9 @@ pwnd!
 ### Use the `EscapeSingleQuotedStringContent()` method
 
 To protect against the user inserting their own single quote characters to exploit the function you
-can use the `EscapeSingleQuotedStringContent()` API. This is a public method of the PowerShell
-**System.Management.Automation.Language.CodeGeneration** class. This method make the user input safe
-by escaping the single quotes provided by the user.
+must use the `EscapeSingleQuotedStringContent()` API. This is a static public method of the PowerShell
+**System.Management.Automation.Language.CodeGeneration** class. This method makes the user input safe
+by escaping any single quotes included in the user input.
 
 ```powershell
 function Get-ProcessById
