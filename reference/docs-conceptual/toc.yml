@@ -434,6 +434,10 @@ items:
             href: dev-cross-plat/performance/script-authoring-considerations.md
           - name: Module performance considerations
             href: dev-cross-plat/performance/module-authoring-considerations.md
+      - name: Security considerations
+        items:
+          - name: Preventing script injection attacks
+            href: dev-cross-plat/security/preventing-script-injection.md
       - name: Developing modern modules
         items:
           - name: Writing portable modules
