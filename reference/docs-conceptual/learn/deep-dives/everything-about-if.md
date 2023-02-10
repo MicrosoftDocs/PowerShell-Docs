@@ -391,8 +391,11 @@ This one is a little unusual. `-xor` allows only one expression to evaluate to `
 items are `$false` or both items are `$true`, then the whole expression is `$false`. Another way to
 look at this is the expression is only `$true` when the results of the expression are different.
 
-It's rare that anyone would ever use this logical operator and I can't think up a good example as to
-why I would ever use it.
+
+You can imagine a scenario about what is `XOR` in order coffee.
+When you on the plane, a flight attendant ask you "What do you want,coffee or tea?"
+Of course you can say you want both,but sometimes what's your ticket plan just contain only one choice,so you can only pick one.
+In this scenario , you can choose A or B , but you can't choose both.
 
 ## Bitwise operators
 
