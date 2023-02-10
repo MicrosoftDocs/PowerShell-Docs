@@ -5,9 +5,9 @@ title: Preventing script injection attacks
 ---
 # Preventing script injection attacks
 
-PowerShell scripts, like other programming language, can be vulnerable to injection attacks. An
+PowerShell scripts, like other programming languages, can be vulnerable to injection attacks. An
 injection attack occurs when a user provides input to a vulnerable function that includes extra
-commands. The vulnerable function runs the extra commands, which is can be a serious security
+commands. The vulnerable function runs the extra commands, which can be a serious security
 vulnerability. For example, a malicious user could abuse the vulnerable function to run arbitrary
 code on a remote computer, possibly compromising that computer and gaining access to other machines
 on the network.
