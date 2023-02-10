@@ -45,11 +45,11 @@ However, the `$ProcId` parameter doesn't specify a type. It accepts any arbitrar
 can include other commands.
 
 ```powershell
-Get-ProcessById "$pid; Write-Host 'pwnd!"
+Get-ProcessById "$pid; Write-Host 'pwnd!'"
 ```
 
 In this example, the function correctly retrieved the process identified by `$pid`, but also ran the
-injected script `Write-Host 'pwnd!`.
+injected script `Write-Host 'pwnd!'`.
 
 ```Output
  NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
@@ -73,16 +73,16 @@ function Get-ProcessById
 
     Invoke-Expression -Command "Get-Process -Id $ProcId"
 }
-Get-ProcessById "$pid; Write-Host 'pwnd!"
+Get-ProcessById "$pid; Write-Host 'pwnd!'"
 ```
 
 ```Output
 Get-ProcessById:
 Line |
-   7 |  Get-ProcessById "$pid; Write-Host 'pwnd!"
+   7 |  Get-ProcessById "$pid; Write-Host 'pwnd!'"
      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~
      | Cannot process argument transformation on parameter 'ProcId'. Cannot convert value
-"8064; Write-Host 'pwnd!" to type "System.Int32". Error: "The input string '8064; Write-Host 'pwnd!'
+"8064; Write-Host 'pwnd!'" to type "System.Int32". Error: "The input string '8064; Write-Host 'pwnd!'
 was not in a correct format."
 ```
 
@@ -101,7 +101,7 @@ function Get-ProcessById
 
     Get-Process -Id $ProcId
 }
-Get-ProcessById "$pid; Write-Host 'pwnd!"
+Get-ProcessById "$pid; Write-Host 'pwnd!'"
 ```
 
 ```Output
@@ -109,7 +109,7 @@ Get-Process:
 Line |
    5 |      Get-Process -Id $ProcId
      |                      ~~~~~~~
-     | Cannot bind parameter 'Id'. Cannot convert value "8064; Write-Host 'pwnd!" to type
+     | Cannot bind parameter 'Id'. Cannot convert value "8064; Write-Host 'pwnd!'" to type
 "System.Int32". Error: "The input string '8064; Write-Host 'pwnd!' was not in a correct
 format."
 ```
@@ -133,7 +133,7 @@ function Get-ProcessById
     Invoke-Expression -Command "Get-Process -Id '$ProcId'"
 }
 
-Get-ProcessById "$pid; Write-Host 'pwnd!"
+Get-ProcessById "$pid; Write-Host 'pwnd!'"
 ```
 
 ```Output
