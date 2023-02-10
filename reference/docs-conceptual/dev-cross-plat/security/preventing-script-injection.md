@@ -182,7 +182,7 @@ Get-Process: Cannot bind parameter 'Id'. Cannot convert value "8064'; Write-Host
 "System.Int32". Error: "The input string '8064'; Write-Host 'pwnd!';'' was not in a correct format."
 ```
 
-For more information, see [EscapeSingleQuotedStringContent()][04].
+For more information, see [EscapeSingleQuotedStringContent()][01].
 
 ## Detecting vulnerable code with Injection Hunter
 
@@ -221,17 +221,17 @@ InjectionRisk.InvokeExpression      Warning      Invoke-Dan 3     Possible scrip
                                                                   e.CodeGeneration]::Escape* should be used.
 ```
 
-For more information, see [PSScriptAnalyzer][01].
+For more information, see [PSScriptAnalyzer][02].
 
 <!-- TODO: Add instructions for VS Code once it gets fixed -->
 
 ## Related links
 
-- [Lee Holmes' blog post about Injection Hunter][02]
-- [Injection Hunter][03]
+- [Lee Holmes' blog post about Injection Hunter][03]
+- [Injection Hunter][04]
 
 <!-- link references -->
-[01]: /powershell/utility-modules/psscriptanalyzer/overview
-[02]: https://devblogs.microsoft.com/powershell/powershell-injection-hunter-security-auditing-for-powershell-scripts/
-[03]: https://www.powershellgallery.com/packages/InjectionHunter
-[04]: xref:System.Management.Automation.Language.CodeGeneration.EscapeSingleQuotedStringContent
+[01]: /dotnet/api/system.management.automation.language.codegeneration.escapesinglequotedstringcontent
+[02]: /powershell/utility-modules/psscriptanalyzer/overview
+[03]: https://devblogs.microsoft.com/powershell/powershell-injection-hunter-security-auditing-for-powershell-scripts/
+[04]: https://www.powershellgallery.com/packages/InjectionHunter
