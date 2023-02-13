@@ -1,0 +1,33 @@
+{
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/powershell:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"darkriszty.markdown-table-prettify",
+				"davidanson.vscode-markdownlint",
+				"docsmsft.docs-authoring-pack",
+				"eamodio.gitlens",
+				"errata-ai.vale-server",
+				"marvhen.reflow-markdown",
+				"ms-vscode.powershell",
+				"ms-vscode.wordcount",
+				"nhoizey.gremlins",
+				"redhat.vscode-yaml",
+				"shuworks.vscode-table-formatter",
+				"streetsidesoftware.code-spell-checker",
+				"tyriar.sort-lines",
+				"usernamehw.errorlens",
+				"wmaurer.change-case",
+				"Acrolinx.vscode-sidebar",
+				"yzane.markdown-pdf"
+			]
+		}
+	}
+}
