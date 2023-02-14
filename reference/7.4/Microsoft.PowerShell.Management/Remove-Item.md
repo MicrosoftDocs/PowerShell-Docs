@@ -15,20 +15,36 @@ Deletes the specified items.
 
 ## SYNTAX
 
-### Path (Default)
+### Path (Default) - FileSystem provider
+
+```
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>]
+ [<CommonParameters>]
+```
+
+### LiteralPath - FileSystem provider
+
+```
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>]
+ [<CommonParameters>]
+```
+
+### Path (Default) - Certificate provider
 
 ```
 Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
  [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-DeleteKey]
- [-Stream <String[]>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
-### LiteralPath
+### LiteralPath - Certificate provider
 
 ```
 Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
  [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-DeleteKey]
- [-Stream <String[]>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
