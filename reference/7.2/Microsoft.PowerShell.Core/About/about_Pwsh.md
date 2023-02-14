@@ -313,7 +313,7 @@ Determines how output from PowerShell is formatted. Valid values are "Text"
 
 Example: `pwsh -o XML -c Get-Date`
 
-When called withing a PowerShell session, you get deserialized objects as
+When called within a PowerShell session, you get deserialized objects as
 output rather plain strings. When called from other shells, the output is
 string data formatted as CLIXML text.
 
