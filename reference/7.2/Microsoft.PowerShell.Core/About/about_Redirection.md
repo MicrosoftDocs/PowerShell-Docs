@@ -44,7 +44,7 @@ PowerShell supports redirection of the following output streams.
 | 3        | **Warning** Stream     | PowerShell 3.0 | `Write-Warning`     |
 | 4        | **Verbose** Stream     | PowerShell 3.0 | `Write-Verbose`     |
 | 5        | **Debug** Stream       | PowerShell 3.0 | `Write-Debug`       |
-| 6        | **Information** Stream | PowerShell 5.0 | `Write-Information` |
+| 6        | **Information** Stream | PowerShell 5.0 | `Write-Information`, `Write-Host` |
 | *        | All Streams            | PowerShell 3.0 |                     |
 
 There is also a **Progress** stream in PowerShell, but it does not support
