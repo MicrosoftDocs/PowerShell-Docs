@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 02/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Item
@@ -15,44 +15,76 @@ Deletes the specified items.
 
 ## SYNTAX
 
-### Path (Default)
+### Path (Default) - FileSystem provider
 
 ```
-Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>]
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-Stream <String[]>] [<CommonParameters>]
+```
+
+### LiteralPath - FileSystem provider
+
+```
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-Stream <String[]>] [<CommonParameters>]
+```
+
+### Path (Default) - Certificate provider
+
+```
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-DeleteKey] <CommonParameters>]
+```
+
+### LiteralPath - Certificate provider
+
+```
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-DeleteKey] [<CommonParameters>]
+```
+
+### Path (Default) - All providers
+
+```
+Remove-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
  [<CommonParameters>]
 ```
 
-### LiteralPath
+### LiteralPath - All providers
 
 ```
-Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
- [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-Stream <String[]>]
+Remove-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Remove-Item` cmdlet deletes one or more items. Because it is supported by many providers, it
+The `Remove-Item` cmdlet deletes one or more items. Because it's supported by many providers, it
 can delete many different types of items, including files, folders, registry keys, variables,
 aliases, and functions.
 
 ## EXAMPLES
 
-### Example 1: Delete files that have any file name extension
+### Example 1: Delete files that have any file extension
 
-This example deletes all of the files that have names that include a dot (`.`) from the `C:\Test`
-folder. Because the command specifies a dot, the command does not delete folders or files that have
-no file name extension.
+This example deletes all files with names that include a dot (`.`) from the `C:\Test` folder.
+Because the command specifies a dot, the command doesn't delete folders or files that have no
+file extension.
 
 ```powershell
 Remove-Item C:\Test\*.*
 ```
 
-### Example 2: Delete some of the document files in a folder
+### Example 2: Delete document files in a folder
 
-This example deletes from the current folder all files that have a `.doc` file name extension and a
-name that does not include `*1*`.
+This example deletes from the current folder all files that have a `.doc` file extension and a
+name that doesn't include `*1*`.
 
 ```powershell
 Remove-Item * -Include *.doc -Exclude *1*
@@ -63,19 +95,19 @@ It uses the wildcard character (`*`) to specify the contents of the current fold
 
 ### Example 3: Delete hidden, read-only files
 
-This command deletes a file that is both _hidden_ and _read-only_.
+This command deletes a file that's both _hidden_ and _read-only_.
 
 ```powershell
 Remove-Item -Path C:\Test\hidden-RO-file.txt -Force
 ```
 
 It uses the **Path** parameter to specify the file. It uses the **Force**
-parameter to delete it. Without **Force**, you cannot delete _read-only_ or
+parameter to delete it. Without **Force**, you can't delete _read-only_ or
 _hidden_ files.
 
 ### Example 4: Delete files in subfolders recursively
 
-This command deletes all of the CSV files in the current folder and all subfolders recursively.
+This command deletes all the CSV files in the current folder and all subfolders recursively.
 
 Because the **Recurse** parameter in `Remove-Item` has a known issue, the command in this example
 uses `Get-ChildItem` to get the desired files, and then uses the pipeline operator to pass them to
@@ -197,7 +229,7 @@ file. Finally, the `Get-Item` cmdlet shows that the `Zone.Identifier` stream was
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell.
+> This parameter isn't supported by any providers installed with PowerShell.
 > To impersonate another user, or elevate your credentials when running this cmdlet,
 > use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
@@ -210,6 +242,28 @@ Required: False
 Position: Named
 Default value: Current user
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -DeleteKey
+
+This is a dynamic parameter made available by the **Certificate** provider. The **Certificate**
+provider and this parameter are only available on Windows platforms.
+
+When provided, the cmdlet deletes the private key when the certificate is deleted.
+
+For more information, see
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -245,7 +299,7 @@ installed PowerShell provider that supports the use of filters. You can find the
 **FileSystem** filter language in
 [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more efficient
 than other parameters, because the provider applies them when the cmdlet gets the objects rather
-than having PowerShell filter the objects after they are retrieved.
+than having PowerShell filter the objects after they're retrieved.
 
 ```yaml
 Type: System.String
@@ -261,11 +315,11 @@ Accept wildcard characters: True
 
 ### -Force
 
-Forces the cmdlet to remove items that cannot otherwise be changed, such as hidden or read-only
-files or read-only aliases or variables. The cmdlet cannot remove constant aliases or variables.
+Forces the cmdlet to remove items that can't otherwise be changed, such as hidden or read-only
+files or read-only aliases or variables. The cmdlet can't remove constant aliases or variables.
 Implementation varies from provider to provider. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md). Even using the **Force**
-parameter, the cmdlet cannot override security restrictions.
+parameter, the cmdlet can't override security restrictions.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -301,7 +355,7 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it's
 typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
@@ -362,15 +416,18 @@ Accept wildcard characters: False
 
 ### -Stream
 
-The **Stream** parameter is a dynamic parameter that the FileSystem provider adds to `Remove-Item`.
-This parameter works only in file system drives.
+This is a dyanamic parameter made available by the **FileSystem** provider. This parameter is only
+available on Windows. This parameter can't be used in combination with the **Recurse** parameter.
 
 You can use `Remove-Item` to delete an alternative data stream, such as `Zone.Identifier`.
-However, it is not the recommended way to eliminate security checks that block files that are
+However, it isn't the recommended way to eliminate security checks that block files that are
 downloaded from the Internet. If you verify that a downloaded file is safe, use the `Unblock-File`
 cmdlet.
 
 This parameter was introduced in Windows PowerShell 3.0.
+
+For more information, see
+[about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
 
 ```yaml
 Type: System.String[]
@@ -424,7 +481,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -473,7 +530,7 @@ providers available in your session, type `Get-PsProvider`. For more information
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 When you try to delete a folder that contains items without using the **Recurse** parameter, the
-cmdlet prompts for confirmation. Using `-Confirm:$false` does not suppress the prompt. This is by
+cmdlet prompts for confirmation. Using `-Confirm:$false` doesn't suppress the prompt. This is by
 design.
 
 ## RELATED LINKS
