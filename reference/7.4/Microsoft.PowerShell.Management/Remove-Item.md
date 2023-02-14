@@ -232,7 +232,7 @@ provider and this parameter are only available on Windows platforms.
 When provided, the cmdlet deletes the private key when the certificate is deleted.
 
 For more information, see
-[about_Certificate_Provider](../Microsoft.PowerShell.Core/About/about_Certificate_Provider.md).
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
