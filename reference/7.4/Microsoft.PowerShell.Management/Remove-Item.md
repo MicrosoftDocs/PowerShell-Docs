@@ -47,6 +47,20 @@ Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-E
  [<CommonParameters>]
 ```
 
+### Path (Default) - All providers
+
+```
+Remove-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### LiteralPath - All providers
+
+```
+Remove-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 
 The `Remove-Item` cmdlet deletes one or more items. Because it's supported by many providers, it
@@ -91,7 +105,7 @@ _hidden_ files.
 
 ### Example 4: Delete files in subfolders recursively
 
-This command deletes all of the CSV files in the current folder and all subfolders recursively.
+This command deletes all the CSV files in the current folder and all subfolders recursively.
 
 Because the **Recurse** parameter in `Remove-Item` has a known issue, the command in this example
 uses `Get-ChildItem` to get the desired files, and then uses the pipeline operator to pass them to
@@ -405,6 +419,9 @@ cmdlet.
 
 This parameter was introduced in Windows PowerShell 3.0. As of Windows PowerShell 7.2, `Remove-Item`
 can remove alternative data streams from directories as well as files.
+
+For more information, see
+[about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
 
 ```yaml
 Type: System.String[]
