@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 02/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-item?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Item
@@ -15,19 +15,51 @@ Changes the value of an item to the value specified in the command.
 
 ## SYNTAX
 
-### Path (Default)
+### Path (Default) - All providers
 
 ```
 Set-Item [-Path] <String[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <String>] [-Include <String[]>]
  [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### LiteralPath
+### LiteralPath - All providers
 
 ```
 Set-Item -LiteralPath <String[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <String>]
  [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Path (Default) - Alias and Function providers
+
+```
+Set-Item [-Path] <string[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <string>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
+ [-Options <ScopedItemOptions>] [<CommonParameters>]
+```
+
+### LiteralPath - Alias and Function providers
+
+```
+Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru] [-Filter <string>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
+ [-Options <ScopedItemOptions>] [<CommonParameters>]
+```
+
+### Path (Default) - Registry provider
+
+```
+Set-Item [-Path] <string[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <string>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
+ [-Type <RegistryValueKind>] [<CommonParameters>]
+```
+
+### LiteralPath - Registry provider
+
+```
+Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru] [-Filter <string>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
+ [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -194,6 +226,35 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -Options
+
+This is a dynamic parameter made available by the **Alias** and **Function** providers. For more
+information, see [about_Alias_Provider](../Microsoft.PowerShell.Core/About/about_Alias_Provider.md)
+and [about_Function_Provider](../Microsoft.PowerShell.Core/About/about_Function_Provider.md).
+
+Specifies the value of the **Options** property of an alias.
+
+Valid values are:
+
+- `None`: The alias has no constraints (default value)
+- `ReadOnly`: The alias can be deleted but can't be changed without using the **Force** parameter
+- `Constant`: The alias can't be deleted or changed
+- `Private`: The alias is available only in the current scope
+- `AllScope`: The alias is copied to any new scopes that are created
+- `Unspecified`: The option isn't specified
+
+```yaml
+Type: System.Management.Automation.ScopedItemOptions
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
+Accept wildcard characters: False
+```
+
 ### -PassThru
 
 Passes an object that represents the item to the pipeline.
@@ -226,6 +287,36 @@ Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
+```
+
+### -Type
+
+This is a dynamic parameter made available by the **Registry** provider. The **Registry** provider
+and this parameter are only available on Windows.
+
+Specifies the type of property that this cmdlet adds. The acceptable values for this parameter are:
+
+- `String`: Specifies a null-terminated string. Used for **REG_SZ** values.
+- `ExpandString`: Specifies a null-terminated string that contains unexpanded references to
+  environment variables that are expanded when the value is retrieved. Used for **REG_EXPAND_SZ**
+  values.
+- `Binary`: Specifies binary data in any form. Used for **REG_BINARY** values.
+- `DWord`: Specifies a 32-bit binary number. Used for **REG_DWORD** values.
+- `MultiString`: Specifies an array of null-terminated strings terminated by two null characters.
+  Used for **REG_MULTI_SZ** values.
+- `Qword`: Specifies a 64-bit binary number. Used for **REG_QWORD** values.
+- `Unknown`: Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST** values.
+
+```yaml
+Type: Microsoft.Win32.RegistryValueKind
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (True)
+Accept wildcard characters: False
 ```
 
 ### -Value
@@ -279,9 +370,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS

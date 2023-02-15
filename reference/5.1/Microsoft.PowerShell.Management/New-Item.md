@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/11/2022
+ms.date: 02/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -14,18 +14,53 @@ Creates a new item.
 
 ## SYNTAX
 
-### pathSet (Default)
+### pathSet (Default) - All providers
 
 ```
-New-Item [-Path] <String[]> [-ItemType <String>] [-Value <Object>] [-Force] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+New-Item [-Path] <string[]> [-ItemType <string>] [-Value <Object>] [-Force]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+```
+
+### nameSet - All providers
+
+```
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+```
+
+### pathSet (Default) - WSMan provider
+
+```
+New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <Object>] [-Force]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-OptionSet <hashtable>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <string>]
+ [-SessionOption <SessionOption>] [-Port <int>] [<CommonParameters>]
+```
+
+### nameSet - WSMan provider
+
+```
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [-OptionSet <hashtable>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <string>]
+ [-SessionOption <SessionOption>] [-ApplicationName <string>] [-Port <int>] [-UseSSL]
+ [<CommonParameters>]
+```
+
+﻿### pathSet (Default)
+
+```
+New-Item [-Path] <string[]> [-ItemType <string>] [-Value <Object>] [-Force]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-Options <ScopedItemOptions>] [<CommonParameters>]
 ```
 
 ### nameSet
 
 ```
-New-Item [[-Path] <String[]>] -Name <String> [-ItemType <String>] [-Value <Object>] [-Force]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-Options <ScopedItemOptions>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -211,10 +246,96 @@ Mode                LastWriteTime         Length Name
 
 ## PARAMETERS
 
+### -ApplicationName
+
+This is a dynamic parameter made available by the **WSMan** provider. The **WSMan** provider and
+this parameter are only available on Windows.
+
+Specifies the application name in the connection. The default value of the **ApplicationName**
+parameter is **WSMAN**.
+
+For more information, see [New-WSManInstance](../Microsoft.WSMan.Management/New-WSManInstance.md).
+
+```yaml
+Type: System.String
+Parameter Sets: nameSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
+Accept wildcard characters: False
+```
+
+### -Authentication
+
+This is a dynamic parameter made available by the **WSMan** provider. The **WSMan** provider and
+this parameter are only available on Windows.
+
+Specifies the authentication mechanism to be used at the server.
+
+For more information, see [New-WSManInstance](../Microsoft.WSMan.Management/New-WSManInstance.md).
+
+```yaml
+Type: Microsoft.WSMan.Management.AuthenticationMechanism
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
+Accept wildcard characters: False
+```
+
+### -CertificateThumbprint
+
+This is a dynamic parameter made available by the **WSMan** provider. The **WSMan** provider and
+this parameter are only available on Windows.
+
+Specifies the digital public key certificate (X509) of a user account that has permission to perform
+this WSMan action. Enter the certificate thumbprint of the certificate.
+
+For more information, see [New-WSManInstance](../Microsoft.WSMan.Management/New-WSManInstance.md).
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
+Accept wildcard characters: False
+```
+
+### -ConnectionURI
+
+This is a dynamic parameter made available by the **WSMan** provider. The **WSMan** provider and
+this parameter are only available on Windows.
+
+Specifies the connection endpoint for WSMan.
+
+For more information, see [New-WSManInstance](../Microsoft.WSMan.Management/New-WSManInstance.md).
+
+```yaml
+Type: System.Uri
+Parameter Sets: pathSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
+Accept wildcard characters: False
+```
+
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell. To impersonate another
+> This parameter isn't supported by any providers installed with PowerShell. To impersonate another
 > user or elevate your credentials when running this cmdlet, use `Invoke-Command`.
 
 ```yaml
@@ -232,7 +353,7 @@ Accept wildcard characters: False
 ### -Force
 
 Forces this cmdlet to create an item that writes over an existing read-only item. Implementation
-varies from provider to provider. Even using the **Force** parameter, the cmdlet cannot override
+varies from provider to provider. Even using the **Force** parameter, the cmdlet can't override
 security restrictions.
 
 ```yaml
@@ -303,6 +424,55 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -Options
+
+This is a dynamic parameter made available by the **Alias** provider. For more information, see
+[New-Alias](../Microsoft.PowerShell.Utility/New-Alias.md).
+
+Specifies the value of the **Options** property of an alias.
+
+Valid values are:
+
+- `None`: The alias has no constraints (default value)
+- `ReadOnly`: The alias can be deleted but can't be changed without using the **Force** parameter
+- `Constant`: The alias can't be deleted or changed
+- `Private`: The alias is available only in the current scope
+- `AllScope`: The alias is copied to any new scopes that are created
+- `Unspecified`: The option isn't specified
+
+```yaml
+Type: System.Management.Automation.ScopedItemOptions
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
+Accept wildcard characters: False
+```
+
+### -OptionSet
+
+This is a dynamic parameter made available by the **WSMan** provider. The **WSMan** provider and
+this parameter are only available on Windows.
+
+Passes a set of switches to a service to modify or refine the nature of the request.
+
+For more information, see [New-WSManInstance](../Microsoft.WSMan.Management/New-WSManInstance.md).
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases: OS
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
+Accept wildcard characters: False
+```
+
 ### -Path
 
 Specifies the path of the location of the new item. The default is the current location when
@@ -312,7 +482,7 @@ Specifies the path of the location of the new item. The default is the current l
 
 For this cmdlet, the **Path** parameter works like the **LiteralPath** parameter of other cmdlets.
 Wildcard characters are not interpreted. All characters are passed to the location's provider. The
-provider may not support all characters. For example, you cannot create a filename that contains an
+provider may not support all characters. For example, you can't create a filename that contains an
 asterisk (`*`) character.
 
 ```yaml
@@ -324,6 +494,70 @@ Required: True (pathSet), False (nameSet)
 Position: 0
 Default value: Current location
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Port
+
+This is a dynamic parameter made available by the **WSMan** provider. The **WSMan** provider and
+this parameter are only available on Windows.
+
+Specifies the port to use when the client connects to the WinRM service.
+
+For more information, see [New-WSManInstance](../Microsoft.WSMan.Management/New-WSManInstance.md).
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (System.Object[]), ByName (System.Object[])
+Accept wildcard characters: False
+```
+
+### -SessionOption
+
+This is a dynamic parameter made available by the **WSMan** provider. The **WSMan** provider and
+this parameter are only available on Windows.
+
+Defines a set of extended options for the WS-Management session.
+
+For more information, see [New-WSManInstance](../Microsoft.WSMan.Management/New-WSManInstance.md).
+
+```yaml
+Type: Microsoft.WSMan.Management.SessionOption
+Parameter Sets: (All)
+Aliases: SO
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
+Accept wildcard characters: False
+```
+
+### -UseSSL
+
+This is a dynamic parameter made available by the **WSMan** provider. The **WSMan** provider and
+this parameter are only available on Windows.
+
+Specifies that the Secure Sockets Layer (SSL) protocol should be used to establish a connection to
+the remote computer. By default, SSL isn't used.
+
+For more information, see [New-WSManInstance](../Microsoft.WSMan.Management/New-WSManInstance.md).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: nameSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
 Accept wildcard characters: False
 ```
 
@@ -378,8 +612,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -395,9 +628,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
@@ -419,7 +652,8 @@ Windows PowerShell includes the following aliases for `New-Item`:
 - `ni`
 
 `New-Item` is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+available in your session, type `Get-PsProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
