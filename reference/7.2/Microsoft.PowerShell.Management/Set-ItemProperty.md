@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 02/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-itemproperty?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ItemProperty
@@ -15,35 +15,67 @@ Creates or changes the value of a property of an item.
 
 ## SYNTAX
 
-### propertyValuePathSet (Default)
+### propertyValuePathSet (Default) - All providers
 
 ```
-Set-ItemProperty [-Path] <String[]> [-Name] <String> [-Value] <Object> [-PassThru] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru] [-Force]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### propertyPSObjectPathSet - All providers
+
+```
+Set-ItemProperty [-Path] <string[]> -InputObject <psobject> [-PassThru] [-Force]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### propertyValueLiteralPathSet - All providers
+
+```
+Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru] [-Force]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### propertyPSObjectLiteralPathSet - All providers
+
+```
+Set-ItemProperty -LiteralPath <string[]> -InputObject <psobject> [-PassThru] [-Force]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### propertyValuePathSet (Default) - Registry provider
+
+```
+Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru] [-Force]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
  [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
-### propertyPSObjectPathSet
+### propertyPSObjectPathSet - Registry provider
 
 ```
-Set-ItemProperty [-Path] <String[]> -InputObject <PSObject> [-PassThru] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+Set-ItemProperty [-Path] <string[]> -InputObject <psobject> [-PassThru] [-Force]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
  [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
-### propertyValueLiteralPathSet
+### propertyValueLiteralPathSet - Registry provider
 
 ```
-Set-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Value] <Object> [-PassThru] [-Force]
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru] [-Force]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
  [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
-### propertyPSObjectLiteralPathSet
+### propertyPSObjectLiteralPathSet - Registry provider
 
 ```
-Set-ItemProperty -LiteralPath <String[]> -InputObject <PSObject> [-PassThru] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+Set-ItemProperty -LiteralPath <string[]> -InputObject <psobject> [-PassThru] [-Force]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
  [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
@@ -207,8 +239,8 @@ Accept wildcard characters: True
 ### -Force
 
 Forces the cmdlet to set a property on items that cannot otherwise be accessed by the user.
-Implementation varies from provider to provider.
-For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+Implementation varies by provider. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -333,11 +365,10 @@ Accept wildcard characters: True
 
 ### -Type
 
-**Type** is a dynamic parameter that the Registry provider adds to the `Set-ItemProperty` cmdlet.
-This parameter only works in the registry drives.
+This is a dynamic parameter made available by the **Registry** provider. The **Registry** provider
+and this parameter are only available on Windows.
 
-Specifies the type of property that this cmdlet adds.
-The acceptable values for this parameter are:
+Specifies the type of property that this cmdlet adds. The acceptable values for this parameter are:
 
 - `String`: Specifies a null-terminated string. Used for **REG_SZ** values.
 - `ExpandString`: Specifies a null-terminated string that contains unexpanded references to
@@ -358,7 +389,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: ByValue (False), ByName (True)
 Accept wildcard characters: False
 ```
 
