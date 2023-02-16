@@ -14,6 +14,12 @@ Creates a new item.
 
 ## SYNTAX
 
+### pathSet (Default) - All providers
+
+```
+New-Item [-Path] <string[]> [-ItemType <string>] [-Value <Object>] [-Force]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+```
 
 ### nameSet - All providers
 
@@ -41,7 +47,7 @@ New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Objec
  [<CommonParameters>]
 ```
 
-﻿### pathSet (Default)
+### pathSet (Default)
 
 ```
 New-Item [-Path] <string[]> [-ItemType <string>] [-Value <Object>] [-Force]
