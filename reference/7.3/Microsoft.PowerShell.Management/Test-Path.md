@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/13/2021
+ms.date: 02/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Path
@@ -14,7 +14,7 @@ Determines whether all elements of a path exist.
 
 ## SYNTAX
 
-### Path (Default)
+### Path (Default) - FileSystem provider
 
 ```
 Test-Path [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
@@ -22,12 +22,26 @@ Test-Path [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude 
  [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
 ```
 
-### LiteralPath
+### LiteralPath - FileSystem provider
 
 ```
 Test-Path -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
  [-PathType <TestPathType>] [-IsValid] [-Credential <PSCredential>]
  [-OlderThan <DateTime>] [-NewerThan <DateTime>] [<CommonParameters>]
+```
+
+### Path (Default) - All providers
+
+```
+Test-Path [-Path] <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>] [<CommonParameters>]
+```
+
+### LiteralPath - All providers
+
+```
+Test-Path -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-PathType <TestPathType>] [-IsValid] [-Credential <pscredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -202,7 +216,7 @@ False
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell. To impersonate another
+> This parameter isn't supported by any providers installed with PowerShell. To impersonate another
 > user, or elevate your credentials when running this cmdlet, use
 > [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
@@ -310,33 +324,43 @@ Accept wildcard characters: False
 
 ### -NewerThan
 
+This is a dynamic parameter made available by the **FileSystem** provider.
+
 Specify a time as a **DateTime** object.
 
+For more information, see
+[about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
+
 ```yaml
-Type: System.Nullable`1[System.DateTime]
+Type: System.Nullable`1[[System.DateTime]]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: ByValue (False), ByName (False)
 Accept wildcard characters: False
 ```
 
 ### -OlderThan
 
+This is a dynamic parameter made available by the **FileSystem** provider.
+
 Specify a time as a **DateTime** object.
 
+For more information, see
+[about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
+
 ```yaml
-Type: System.Nullable`1[System.DateTime]
+Type: System.Nullable`1[[System.DateTime]]
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: ByValue (False), ByName (False)
 Accept wildcard characters: False
 ```
 
@@ -362,12 +386,9 @@ Accept wildcard characters: True
 Specifies the type of the final element in the path. This cmdlet returns `$True` if the element is
 of the specified type and `$False` if it is not. The acceptable values for this parameter are:
 
-- Container.
-  An element that contains other elements, such as a directory or registry key.
-- Leaf.
-  An element that does not contain other elements, such as a file.
-- Any.
-  Either a container or a leaf.
+- `Container` - An element that contains other elements, such as a directory or registry key.
+- `Leaf` - An element that does not contain other elements, such as a file.
+- `Any` - Either a container or a leaf.
 
 Tells whether the final element in the path is of a particular type.
 
@@ -397,9 +418,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
