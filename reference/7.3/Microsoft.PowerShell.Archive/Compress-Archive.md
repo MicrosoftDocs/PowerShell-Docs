@@ -81,8 +81,8 @@ archive file because the **Path** only specifies file names.
 
 ```powershell
 $compress = @{
-  Path = "C:\Reference\Draftdoc.docx", "C:\Reference\Images\*.vsd"
-  CompressionLevel = "Fastest"
+  Path = "C:\Reference\Draftdoc.docx", "C:\Reference\Images\*.vsd";
+  CompressionLevel = "Fastest";
   DestinationPath = "C:\Archives\Draft.zip"
 }
 Compress-Archive @compress
