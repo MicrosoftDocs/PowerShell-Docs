@@ -101,8 +101,8 @@ structure in the archive file because the **Path** only specifies file names.
 
 ```powershell
 $compress = @{
-LiteralPath= "C:\Reference\Draft Doc.docx", "C:\Reference\Images\diagram2.vsd"
-CompressionLevel = "Fastest"
+LiteralPath= "C:\Reference\Draft Doc.docx", "C:\Reference\Images\diagram2.vsd";
+CompressionLevel = "Fastest";
 DestinationPath = "C:\Archives\Draft.zip"
 }
 Compress-Archive @compress
