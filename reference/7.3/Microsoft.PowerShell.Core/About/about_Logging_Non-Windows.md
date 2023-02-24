@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 01/23/2023
+ms.date: 02/23/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Non-Windows
@@ -23,8 +23,8 @@ The location of PowerShell logs is dependent on the target platform.
 - On Linux, PowerShell logs to the **systemd journal** that can forward to a
   **syslog** server. For more information, see the `man` pages for your Linux
   distribution.
-- On macOS, the **os_log** logging system is used. For more information, see
-  [os_log developer documentation][03].
+- On macOS, Apple's unified logging system is used. For more information, see
+  [Apple's developer documentation on logging][03].
 
 ## Configuring logging on Linux or macOS
 
@@ -232,83 +232,119 @@ log file named `powershell.log`.
    cat /var/log/powershell.log
    ```
 
-## Viewing PowerShell log output on macOS
+## Viewing PowerShell log data on macOS
 
-The easiest method for viewing PowerShell log output on macOS is using the
-**Console** application.
+PowerShell logs to Apple's unified logging system, a feature of macOS that
+allows for the collection and storage of system and application logs in a single
+centralized location.
+
+Apple's unified logging system stores log messages in binary format. Use the
+Console app or log tool to query the unified logging system for PowerShell
+entries.
+
+### Viewing PowerShell log data in the Console application on macOS
+
+The **Console** application on macOS is a utility that provides a graphical user
+interface for viewing log data. The **Console** application is included with
+macOS by default and can be accessed by opening the **Utilities** folder in the
+**Applications** folder.
+
+Use the following steps to view PowerShell log data in the Console application
+on macOS:
 
 1. Search for the **Console** application and launch it.
 1. Select the Machine name under **Devices**.
-1. In the **Search** field, enter `pwsh` for the PowerShell main binary.
+1. In the **Search** field, enter `pwsh` for the PowerShell main binary and
+   press <kbd>return</kbd>.
 1. Change the search filter from `Any` to `Process`.
-1. Perform the operations.
-1. Optionally, save the search for future use.
+1. Click **Start**.
+1. Run `pwsh` to generate PowerShell information to log.
 
-The process ID for a running instance of PowerShell is stored in the `$PID`.
+The process ID for a running instance of PowerShell is stored in the `$PID`
 variable. Use the following steps to filter on a specific process instance of
-PowerShell in the **Console**.
+PowerShell in the **Console** application.
 
-1. Enter the process ID for `pwsh` in the **Search** field.
-1. Change the search filter to `PID`.
-1. Perform the operations.
+1. Run an instance of `pwsh`.
+1. Run `$PID` in the instance of PowerShell started in the previous step to
+   determine its process ID.
+1. Enter the process ID for `pwsh` in the **Search** field and press
+   <kbd>return</kbd>.
+1. Change the search filter from `Any` to `PID`.
+1. Click **Start**.
+1. Generate PowerShell information to log from the instance of PowerShell
+   started in the first step.
 
-To view PowerShell log output from a command line, use the `log` command.
+For more information, see
+[view log messages in Console on Mac][5]
+
+### Viewing PowerShell log data from the command line on macOS
+
+To view PowerShell log data from a command line on macOS, use the `log` command
+in the **Terminal** or other shell host application. These commands can be run
+from **PowerShell**, **Z shell** (**Zsh**), or **Bash**.
+
+In the following example, the `log` command is used to show the log data on your
+system as it's occurring in realtime. The **process** parameter filters the log
+data for only the `pwsh` process. If you have more than one instance of `pwsh`
+running, the **process** parameter also accepts a process ID as its value. The
+**level** parameter show messages at the specified level and below.
 
 ```powershell
-sudo log stream --predicate 'process == "pwsh"' --info
+log stream --process pwsh --level info
 ```
 
-### Persisting PowerShell log output
+### Modes and levels of PowerShell log data on macOS
 
-By default, PowerShell uses the default memory-only logging on macOS. This
-behavior can be changed to enable persistence using the `log config` command.
+By default, the PowerShell subsystem logs info level messages to memory (mode)
+and default level messages to disk (persistence) on macOS. This behavior can be
+changed to enable a different mode and level of logging using the `log config`
+command.
 
-The following script enables info level logging and persistence:
+The following example enables info level logging and persistence for the
+PowerShell subsystem:
 
 ```powershell
-log config --subsystem com.microsoft.powershell --mode=persist:info,level:info
+sudo log config --subsystem com.microsoft.powershell --mode level:info,persist:info
 ```
 
-The following command reverts PowerShell logging to the default state:
+Use the **reset** parameter to revert the log settings to the defaults for the
+PowerShell subsystem:
 
 ```powershell
-log config --subsystem com.microsoft.powershell --mode=persist:default,level:default
+sudo log config --subsystem com.microsoft.powershell --reset
 ```
 
-After persistence is enabled, the `log show` command can be used to export log
-items. The command provides options for exporting the last N items, items since
-a given time, or items within a given time span.
+The `log show` command can be used to export log items. The `log show` command
+provides options for exporting the last `N` items, items since a given time, or
+items within a given time span.
 
 For example, the following command exports items since
-`9am on April 5 of 2018`:
+`9am on April 5 of 2022`:
 
 ```powershell
-log show --info --start "2018-04-05 09:00:00" --predicate "process = 'pwsh'"
+log show --info --start "2022-04-05 09:00:00" --process pwsh
 ```
 
-You can get help for `log` by running `log show --help` for additional details.
+For more information, run `log show --help` to view the help for the `log show`
+command.
 
-> [!TIP]
-> When executing any of the log commands from a PowerShell prompt or script,
-> use double quotes around the entire predicate string and single quotes
-> within. This avoids the need to escape double quote characters within the
-> predicate string.
-
-You may also want to consider saving the event logs to a more secure location
-such as [Security Information and Event Management (SIEM)][04] aggregator.
-Using Microsoft Defender for Cloud Apps, you can set up SIEM in Azure. For more
+You may also want to consider saving the logs to a more secure location such as
+[Security Information and Event Management (SIEM)][04] aggregator. Using
+Microsoft Defender for Cloud Apps, you can set up SIEM in Azure. For more
 information, see [Generic SIEM integration][01].
 
 ## See also
 
 - For Linux **syslog** and **rsyslog.conf** information, refer to the Linux
   computer's local `man` pages
-- For macOS **os_log** information, see [os_log developer documentation][03]
+- For macOS **logging** information, see
+  [Apple's developer documentation on logging][03]
 - For Windows, see [about_Logging_Windows][02]
 - [Generic SIEM integration][01]
 
 <!-- link references -->
 [01]: /defender-cloud-apps/siem
 [02]: about_Logging_Windows.md
-[03]: https://developer.apple.com/documentation/os/os_log
+[03]: https://developer.apple.com/documentation/os/logging
 [04]: https://wikipedia.org/wiki/Security_information_and_event_management
+[05]: https://support.apple.com/guide/console/log-messages-cnsl1012/mac
