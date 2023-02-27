@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 02/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/trace-command?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Trace-Command
@@ -19,16 +19,16 @@ Configures and starts a trace of the specified expression or command.
 
 ```
 Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Expression] <ScriptBlock> [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force] [-Debugger]
- [-PSHost] [<CommonParameters>]
+ [-Expression] <ScriptBlock> [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
+ [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
 ### commandSet
 
 ```
 Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Command] <String> [-ArgumentList <Object[]>] [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
- [-Debugger] [-PSHost] [<CommonParameters>]
+ [-Command] <String> [-ArgumentList <Object[]>] [-ListenerOption <TraceOptions>]
+ [-FilePath <String>] [-Force] [-Debugger] [-PSHost] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,7 +48,7 @@ Trace-Command -Name metadata,parameterbinding,cmdlet -Expression {Get-Process No
 ```
 
 It uses the **Name** parameter to specify the trace sources, the **Expression** parameter to specify
-the command, and the **PSHost** parameter to send the output to the console. Because it does not
+the command, and the **PSHost** parameter to send the output to the console. Because it doesn't
 specify any tracing options or listener options, the command uses the defaults:
 
 - All for the tracing options
@@ -64,7 +64,7 @@ $A = "i*"
 Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A
 ```
 
-In `Trace-Command`, the **InputObject** parameter passes an object to the expression that is being
+In `Trace-Command`, the **InputObject** parameter passes an object to the expression that's being
 processed during the trace.
 
 The first command stores the string `i*` in the `$A` variable. The second command uses the
@@ -76,12 +76,31 @@ the **InputObject** parameter. The **InputObject** parameter passes the variable
 expression. In effect, the command being processed during the trace is
 `Get-Alias -InputObject $A" or "$A | Get-Alias`.
 
+### Example 3: Trace ParameterBinding operations for native commands
+
+PowerShell 7.3 added the ability to trace parameter binding for native commands. The following
+example shows how PowerShell parses the command-line arguments for the native command `TestExe`.
+
+```powershell
+$a = 'a" "b'
+Trace-Command -PSHOST -Name ParameterBinding { TestExe -echoargs $a 'c" "d' e" "f }
+```
+
+```Output
+DEBUG: 2023-02-27 14:20:45.3975 ParameterBinding Information: 0 : BIND NAMED native application line args [C:\Public\Toolbox\TestExe\testexe.exe]
+DEBUG: 2023-02-27 14:20:45.3978 ParameterBinding Information: 0 :     BIND cmd line arg [-echoargs] to position [0]
+DEBUG: 2023-02-27 14:20:45.3979 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [1]
+DEBUG: 2023-02-27 14:20:45.3980 ParameterBinding Information: 0 :     BIND cmd line arg [c" "d] to position [2]
+DEBUG: 2023-02-27 14:20:45.3982 ParameterBinding Information: 0 :     BIND cmd line arg [e f] to position [3]
+DEBUG: 2023-02-27 14:20:47.6092 ParameterBinding Information: 0 : CALLING BeginProcessing
+```
+
 ## PARAMETERS
 
 ### -ArgumentList
 
 Specifies the parameters and parameter values for the command being traced. The alias for
-**ArgumentList** is **Args**. This feature is especially useful for debugging dynamic parameters.
+**ArgumentList** is **Args**. This feature is useful for debugging dynamic parameters.
 
 For more information about the behavior of **ArgumentList**, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md#splatting-with-arrays).
@@ -100,7 +119,11 @@ Accept wildcard characters: False
 
 ### -Command
 
-Specifies a command that is being processed during the trace.
+Specifies a command that's being processed during the trace.
+
+When you use this parameter, PowerShell processes the command just as it would be processed in a
+pipeline. For example, command discovery isn't repeated for each incoming object.
+
 
 ```yaml
 Type: System.String
@@ -134,7 +157,7 @@ Accept wildcard characters: False
 
 ### -Expression
 
-Specifies the expression that is being processed during the trace. Enclose the expression in braces
+Specifies the expression that's being processed during the trace. Enclose the expression in braces
 (`{}`).
 
 ```yaml
@@ -169,7 +192,7 @@ Accept wildcard characters: False
 ### -Force
 
 Forces the command to run without asking for user confirmation. Used with the **FilePath**
-parameter. Even using the **Force** parameter, the cmdlet cannot override security restrictions.
+parameter. Even using the **Force** parameter, the cmdlet can't override security restrictions.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -185,7 +208,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies input to the expression that is being processed during the trace. You can enter a variable
+Specifies input to the expression that's being processed during the trace. You can enter a variable
 that represents the input that the expression accepts, or pass an object through the pipeline.
 
 ```yaml
@@ -343,28 +366,19 @@ This cmdlet writes the command trace to the debug stream.
 
 ## NOTES
 
-- Tracing is a method that developers use to debug and refine programs. When tracing, the program
-  generates detailed messages about each step in its internal processing.
+Tracing is a method that developers use to debug and refine programs. When tracing, the program
+generates detailed messages about each step in its internal processing. The PowerShell tracing
+cmdlets are designed to help PowerShell developers, but they're available to all users. They let
+you monitor nearly every aspect of the functionality of the shell.
 
-- The PowerShell tracing cmdlets are designed to help PowerShell developers, but they are available
-  to all users. They let you monitor nearly every aspect of the functionality of the shell.
+A trace source is the part of each PowerShell component that manages tracing and generates trace
+messages for the component. To trace a component, you identify its trace source.
 
-- To find the PowerShell components that are enabled for tracing, type `Get-Help Get-TraceSource`.
+Use `Get-TraceSource` to see a list of PowerShell components that are enabled for tracing.
 
-  A trace source is the part of each PowerShell component that manages tracing and generates trace
-  messages for the component. To trace a component, you identify its trace source.
-
-  A trace listener receives the output of the trace and displays it to the user. You can elect to
-  send the trace data to a user-mode or kernel-mode debugger, to the host or console, to a file, or
-  to a custom listener derived from the **System.Diagnostics.TraceListener** class.
-
-- When you use the commandSet parameter set, PowerShell processes the command just as it would be
-  processed in a pipeline. For example, command discovery is not repeated for each incoming object.
-
-- The names of the **Name**, **Expression**, **Option**, and **Command** parameters are optional. If
-  you omit the parameter names, the unnamed parameter values must appear in this order: **Name**,
-  **Expression**, **Option** or **Name**, **Command**, **Option**. If you include the parameter
-  names, the parameters can appear in any order.
+A trace listener receives the output of the trace and displays it to the user. You can elect to send
+the trace data to a user-mode or kernel-mode debugger, to the host or console, to a file, or to a
+custom listener derived from the **System.Diagnostics.TraceListener** class.
 
 ## RELATED LINKS
 

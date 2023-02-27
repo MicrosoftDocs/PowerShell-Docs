@@ -285,8 +285,10 @@ Accept wildcard characters: True
 
 ### -PropertyType
 
-Specifies the type of property that this cmdlet adds.
-The acceptable values for this parameter are:
+This is a dynamic parameter made available by the **Registry** provider. The **Registry** provider
+and this parameter are only available on Windows.
+
+Specifies the type of property that this cmdlet adds. The acceptable values for this parameter are:
 
 - `String`: Specifies a null-terminated string. Used for **REG_SZ** values.
 - `ExpandString`: Specifies a null-terminated string that contains unexpanded references to
@@ -300,7 +302,7 @@ The acceptable values for this parameter are:
 - `Unknown`: Indicates an unsupported registry data type, such as **REG_RESOURCE_LIST** values.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Win32.RegistryValueKind
 Parameter Sets: (All)
 Aliases: Type
 

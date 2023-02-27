@@ -295,7 +295,7 @@ The **Include** parameter is applied to the contents of `D:\temp\tree` folder to
 match `ex*`. Notice that, without recursion, the `D:\temp\out\examples` folder is copied, but none
 of its contents are copied.
 
-### Example 15: Using filters to copy items with recursion
+### Example 14: Using filters to copy items with recursion
 
 This example shows the results using the **Include** parameter to select the items to be copied.
 
