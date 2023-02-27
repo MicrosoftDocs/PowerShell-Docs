@@ -15,7 +15,7 @@ breaking changes.
 > [!CAUTION]
 > Experimental features aren't intended to be used in production since the changes are allowed to be
 > breaking. Experimental features aren't officially supported. However, we appreciate any feedback
-> and bug reports. You can file issues in the [GitHub source repository][09].
+> and bug reports. You can file issues in the [GitHub source repository][10].
 
 For more information about enabling or disabling these features, see
 [about_Experimental_Features][06].
@@ -26,12 +26,12 @@ This article describes the experimental features that are available and how to u
 
 Legend
 
-- The ![Experimental][02] icon indicates that the experimental feature is available in the version of
-  PowerShell
+- The ![Experimental][02] icon indicates that the experimental feature is available in the version
+  of PowerShell
 - The ![Mainstream][01] icon indicates the version of PowerShell where the experimental feature
   became mainstream
-- The ![Discontinued][03] icon indicates the version of PowerShell where the experimental feature was
-  removed
+- The ![Discontinued][03] icon indicates the version of PowerShell where the experimental feature
+  was removed
 
 |                          Name                          |         7.2         |         7.3         |         7.4         |
 | ------------------------------------------------------ | :-----------------: | :-----------------: | :-----------------: |
@@ -53,7 +53,7 @@ Legend
 
 This experiment was added in PowerShell 7.3.
 
-For more information about AMSI, see [How AMSI helps][08].
+For more information about AMSI, see [How AMSI helps][09].
 
 ## PSAnsiRenderingFileInfo
 
@@ -160,7 +160,7 @@ a native executable.
 > The new behavior is a **breaking change** from current behavior. This may break scripts and
 > automation that work around the various issues when invoking native applications. Historically,
 > quotes must be escaped and it isn't possible to provide empty arguments to a native application.
-> Use the [stop-parsing token][07] (`--%`) or the [`Start-Process`][12] cmdlet to sidestep native
+> Use the [stop-parsing token][08] (`--%`) or the [`Start-Process`][12] cmdlet to sidestep native
 > argument passing when needed.
 
 This feature adds a new `$PSNativeCommandArgumentPassing` preference variable that controls this
@@ -216,10 +216,10 @@ New behaviors made available by this change:
   Arg 3 is <>
   ```
 
-For more examples of the new behavior, see [about_Parsing](about_Parsing.md).
+For more examples of the new behavior, see [about_Parsing][07].
 
 PowerShell 7.3 also added the ability to trace parameter binding for native commands. For more
-information, see [Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command).
+information, see [Trace-Command][13].
 
 ## PSNativeCommandErrorActionPreference
 
@@ -298,8 +298,10 @@ on the system.
 [04]: /powershell/dsc/overview?view=dsc-3.0&preserve-view=true
 [05]: /powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables
 [06]: /powershell/module/microsoft.powershell.core/about/about_experimental_features
-[07]: /powershell/module/Microsoft.PowerShell.Core/About/about_Parsing#the-stop-parsing-token
-[08]: /windows/win32/amsi/how-amsi-helps
-[09]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[07]: /powershell/module/microsoft.powershell.core/about/about_Parsing
+[08]: /powershell/module/Microsoft.PowerShell.Core/About/about_Parsing#the-stop-parsing-token
+[09]: /windows/win32/amsi/how-amsi-helps
+[10]: https://github.com/PowerShell/PowerShell/issues/new/choose
 [11]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
 [12]: xref:Microsoft.PowerShell.Management.Start-Process
+[13]: xref:Microsoft.PowerShell.Utility.Trace-Command
