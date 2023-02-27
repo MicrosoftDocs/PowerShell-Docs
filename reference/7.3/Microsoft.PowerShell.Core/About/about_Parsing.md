@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 01/11/2023
+ms.date: 02/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -110,7 +110,7 @@ uses one of the following syntaxes:
 
 - Braces (`{}`) begin a new script blocks
 
-- Commas (`,`) introduce lists passed as arrays, except when the command to be
+- Commas (`,`) introduce lists passed as arrays, unless the command being
   called is a native application, in which case they're interpreted as part of
   the expandable string. Initial, consecutive or trailing commas aren't
   supported.
@@ -128,13 +128,13 @@ uses one of the following syntaxes:
     literal `@` with `()` starting a new argument that's an expression.
 
 - Everything else is treated as an expandable string, except metacharacters
-  that still need escaping. See [Handling special characters][03].
+  that still need escaping. See [Handling special characters][02].
   - The argument-mode metacharacters (characters with special syntactic
     meaning) are: ``<space> ' " ` , ; ( ) { } | & < > @ #``. Of these,
     `< > @ #` are only special at the start of a token.
 
 - The stop-parsing token (`--%`) changes the interpretation of all remaining
-  arguments. For more information, see the [stop-parsing token][04] section
+  arguments. For more information, see the [stop-parsing token][03] section
   below.
 
 ### Examples
@@ -304,10 +304,6 @@ variable the token is passed through as-is.
 You can't use stream redirection (like `>file.txt`) because they're passed
 verbatim as arguments to the target command.
 
-Using the stop-parsing token is also the best way to ensure that quoted strings
-that are passed as parameters to `cmd.exe` or Windows batch (`.cmd` or `.bat`)
-files are handled properly.
-
 In the following example, the first step runs a command without using the
 stop-parsing token. PowerShell evaluates the quoted string and passes the value
 (without quotes) to `cmd.exe`, which results in an error.
@@ -326,52 +322,104 @@ PS> cmd /c --% echo "a|b"
 
 ### Passing arguments that contain quote characters
 
-Some native commands expect arguments that contain quote characters. Normally,
-PowerShell's command line parsing removes the quote character you provided. The
-parsed arguments are then joined into a single string with each parameter
-separated by a space. This string is then assigned to the **Arguments**
-property of a `ProcessStartInfo` object. Quotes within the string must be
-escaped using extra quotes or backslash (`\`) characters.
+Some native commands expect arguments that contain quote characters. PowerShell
+7.3 changed the way the command line is parsed for native commands.
+
+> [!CAUTION]
+> The new behavior is a **breaking change** from the Window PowerShell 5.1
+> behavior. This may break scripts and automation that work around the various
+> issues when invoking native applications. Use the stop-parsing token (`--%`)
+> or the [`Start-Process`][06] cmdlet to avoid the native argument passing when
+> needed.
+
+The new `$PSNativeCommandArgumentPassing` preference variable controls this
+behavior. This variable allows you to select the behavior at runtime. The valid
+values are `Legacy`, `Standard`, and `Windows`. The default behavior is
+platform specific. On Windows platforms, the default setting is `Windows` and
+non-Windows platforms default to `Standard`.
+
+`Legacy` is the historic behavior. The behavior of `Windows` and `Standard`
+mode are the same except, in `Windows` mode, invocations of the following files
+automatically use the `Legacy` style argument passing.
+
+- `cmd.exe`
+- `cscript.exe`
+- `wscript.exe`
+- ending with `.bat`
+- ending with `.cmd`
+- ending with `.js`
+- ending with `.vbs`
+- ending with `.wsf`
+
+If the `$PSNativeCommandArgumentPassing` is set to either `Legacy` or
+`Standard`, the parser doesn't check for these files.
 
 > [!NOTE]
-> The backslash (`\`) character isn't recognized as an escape character by
-> PowerShell. It's the escape character used by the underlying API for
-> `ProcessStartInfo.Arguments`.
+> The following examples use the `TestExe.exe` tool. You can build `TestExe`
+> from the source code. See [TestExe][05] in the PowerShell source repository.
 
-For more information about the escape requirements, see the documentation for
-[ProcessStartInfo.Arguments][01].
+New behaviors made available by this change:
 
-The following examples use the `TestExe.exe` tool. This tool is used by the
-Pester tests in the PowerShell source repo. The goal of these examples is to
-pass the directory path `"C:\Program Files (x86)\Microsoft\"` to a native
-command so that it received the path as a quoted string.
+- Literal or expandable strings with embedded quotes the quotes are now
+  preserved:
 
-The **echoargs** parameter of `TestExe` displays the values received as
-arguments to the executable. You can use this tool to verify that you have
-properly escaped the characters in your arguments.
+  ```powershell
+  PS> $a = 'a" "b'
+  PS> TestExe -echoargs $a 'c" "d' e" "f
+  Arg 0 is <a" "b>
+  Arg 1 is <c" "d>
+  Arg 2 is <e f>
+  ```
+
+- Empty strings as arguments are now preserved:
+
+  ```powershell
+  PS> TestExe -echoargs '' a b ''
+  Arg 0 is <>
+  Arg 1 is <a>
+  Arg 2 is <b>
+  Arg 3 is <>
+  ```
+
+The goal of these examples is to pass the directory path (with spaces and
+quotes) `"C:\Program Files (x86)\Microsoft\"` to a native command so that it
+received the path as a quoted string.
+
+In `Windows` or `Standard` mode, the following examples produce the expected
+results:
+
+```powershell
+TestExe -echoargs """${env:ProgramFiles(x86)}\Microsoft\"""
+TestExe -echoargs '"C:\Program Files (x86)\Microsoft\"'
+```
+
+To get the same results in `Legacy` mode, you must escape the quotes or use the
+stop-parsing token (`--%`):
 
 ```powershell
 TestExe -echoargs """""${env:ProgramFiles(x86)}\Microsoft\\"""""
-TestExe -echoargs """""C:\Program Files (x86)\Microsoft\\"""""
 TestExe -echoargs "\""C:\Program Files (x86)\Microsoft\\"""
-TestExe -echoargs --% "\"C:\Program Files (x86)\Microsoft\\"
+TestExe -echoargs --% ""\""C:\Program Files (x86)\Microsoft\\"\"""
 TestExe -echoargs --% """C:\Program Files (x86)\Microsoft\\""
 TestExe -echoargs --% """%ProgramFiles(x86)%\Microsoft\\""
 ```
 
-The output is the same for all examples:
+> [!NOTE]
+> The backslash (`\`) character isn't recognized as an escape character by
+> PowerShell. It's the escape character used by the underlying API for
+> [ProcessStartInfo.ArgumentList][01].
 
-```Output
-Arg 0 is <"C:\Program Files (x86)\Microsoft\">
-```
-
-You can build `TestExe` from the source code. See [TestExe][06].
+PowerShell 7.3 also added the ability to trace parameter binding for native
+commands. For more information, see
+[Trace-Command][07].
 
 ## Passing arguments to PowerShell commands
 
 Beginning in PowerShell 3.0, you can use the _end-of-parameters_ token (`--`)
 to stop PowerShell from interpreting input as PowerShell parameters. This is a
 convention specified in the POSIX Shell and Utilities specification.
+
+### The end-of-parameters token
 
 The end-of-parameters token (`--`) indicates that all arguments following it
 are to be passed in their actual form as though double quotes were placed
@@ -415,23 +463,15 @@ Arg 2 is <-->
 Arg 3 is <-c>
 ```
 
-## Experimental feature
-
-PowerShell 7.2 includes the **PSNativeCommandArgumentPassing** experimental
-feature. When this experimental feature is enabled PowerShell uses the
-**ArgumentList** property of the `StartProcessInfo` object rather than our
-current mechanism of reconstructing a string when invoking a native executable.
-
-For more information, see [PSNativeCommandArgumentPassing][02].
-
 ## See also
 
-- [about_Command_Syntax][05]
+- [about_Command_Syntax][04]
 
 <!-- link references -->
-[01]: /dotnet/api/system.diagnostics.processstartinfo.arguments
-[02]: /powershell/scripting/learn/experimental-features#psnativecommandargumentpassing
-[03]: #handling-special-characters
-[04]: #the-stop-parsing-token
-[05]: about_Command_Syntax.md
-[06]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs
+[01]: /dotnet/api/system.diagnostics.processstartinfo.argumentlist
+[02]: #handling-special-characters
+[03]: #the-stop-parsing-token
+[04]: about_Command_Syntax.md
+[05]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs
+[06]: xref:Microsoft.PowerShell.Management.Start-Process
+[07]: xref:Microsoft.PowerShell.Utility.Trace-Command

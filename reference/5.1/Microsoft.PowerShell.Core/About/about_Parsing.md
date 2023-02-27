@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 01/11/2023
+ms.date: 02/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -110,7 +110,7 @@ uses one of the following syntaxes:
 
 - Braces (`{}`) begin a new script blocks
 
-- Commas (`,`) introduce lists passed as arrays, except when the command to be
+- Commas (`,`) introduce lists passed as arrays, unless the command being
   called is a native application, in which case they're interpreted as part of
   the expandable string. Initial, consecutive or trailing commas aren't
   supported.
@@ -128,13 +128,13 @@ uses one of the following syntaxes:
     literal `@` with `()` starting a new argument that's an expression.
 
 - Everything else is treated as an expandable string, except metacharacters
-  that still need escaping. See [Handling special characters][03].
+  that still need escaping. See [Handling special characters][02].
   - The argument-mode metacharacters (characters with special syntactic
     meaning) are: ``<space> ' " ` , ; ( ) { } | & < > @ #``. Of these,
     `< > @ #` are only special at the start of a token.
 
 - The stop-parsing token (`--%`) changes the interpretation of all remaining
-  arguments. For more information, see the [stop-parsing token][04] section
+  arguments. For more information, see the [stop-parsing token][03] section
   below.
 
 ### Examples
@@ -304,10 +304,6 @@ variable the token is passed through as-is.
 You can't use stream redirection (like `>file.txt`) because they're passed
 verbatim as arguments to the target command.
 
-Using the stop-parsing token is also the best way to ensure that quoted strings
-that are passed as parameters to `cmd.exe` or Windows batch (`.cmd` or `.bat`)
-files are handled properly.
-
 In the following example, the first step runs a command without using the
 stop-parsing token. PowerShell evaluates the quoted string and passes the value
 (without quotes) to `cmd.exe`, which results in an error.
@@ -341,10 +337,13 @@ escaped using extra quotes or backslash (`\`) characters.
 For more information about the escape requirements, see the documentation for
 [ProcessStartInfo.Arguments][01].
 
-The following examples use the `TestExe.exe` tool. This tool is used by the
-Pester tests in the PowerShell source repo. The goal of these examples is to
-pass the directory path `"C:\Program Files (x86)\Microsoft\"` to a native
-command so that it received the path as a quoted string.
+> [!NOTE]
+> The following examples use the `TestExe.exe` tool. You can build `TestExe`
+> from the source code. See [TestExe][05] in the PowerShell source repository.
+
+The goal of these examples is to pass the directory path
+`"C:\Program Files (x86)\Microsoft\"` to a native command so that it received
+the path as a quoted string.
 
 The **echoargs** parameter of `TestExe` displays the values received as
 arguments to the executable. You can use this tool to verify that you have
@@ -364,13 +363,13 @@ The output is the same for all examples:
 Arg 0 is <"C:\Program Files (x86)\Microsoft\">
 ```
 
-You can build `TestExe` from the source code. See [TestExe][06].
-
 ## Passing arguments to PowerShell commands
 
 Beginning in PowerShell 3.0, you can use the _end-of-parameters_ token (`--`)
 to stop PowerShell from interpreting input as PowerShell parameters. This is a
 convention specified in the POSIX Shell and Utilities specification.
+
+### The end-of-parameters token
 
 The end-of-parameters token (`--`) indicates that all arguments following it
 are to be passed in their actual form as though double quotes were placed
@@ -416,11 +415,11 @@ Arg 3 is <-c>
 
 ## See also
 
-- [about_Command_Syntax][05]
+- [about_Command_Syntax][04]
 
 <!-- link references -->
 [01]: /dotnet/api/system.diagnostics.processstartinfo.arguments
-[03]: #handling-special-characters
-[04]: #the-stop-parsing-token
-[05]: about_Command_Syntax.md
-[06]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs
+[02]: #handling-special-characters
+[03]: #the-stop-parsing-token
+[04]: about_Command_Syntax.md
+[05]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs
