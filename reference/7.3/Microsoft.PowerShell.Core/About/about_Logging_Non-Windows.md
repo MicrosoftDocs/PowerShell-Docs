@@ -274,8 +274,7 @@ PowerShell in the **Console** application.
 1. Generate PowerShell information to log from the instance of PowerShell
    started in the first step.
 
-For more information, see
-[view log messages in Console on Mac][5]
+For more information, see [view log messages in Console on Mac][5].
 
 ### Viewing PowerShell log data from the command line on macOS
 
