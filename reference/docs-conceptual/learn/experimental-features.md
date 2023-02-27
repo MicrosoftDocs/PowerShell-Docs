@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 01/03/2023
+ms.date: 02/27/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -60,7 +60,7 @@ For more information about AMSI, see [How AMSI helps][08].
 > [!NOTE]
 > This feature became mainstream in PowerShell 7.3.
 
-This experiment was added in PowerShell 7.2. This feature adds the $PSStyle.FileInfo member and
+This experiment was added in PowerShell 7.2. This feature adds the `$PSStyle.FileInfo` member and
 enables coloring of specific file types.
 
 - `$PSStyle.FileInfo.Directory` - Built-in member to specify color for directories
@@ -160,17 +160,18 @@ a native executable.
 > The new behavior is a **breaking change** from current behavior. This may break scripts and
 > automation that work around the various issues when invoking native applications. Historically,
 > quotes must be escaped and it isn't possible to provide empty arguments to a native application.
->
 > Use the [stop-parsing token][07] (`--%`) or the [`Start-Process`][12] cmdlet to sidestep native
 > argument passing when needed.
 
-This feature adds a new automatic variable `$PSNativeCommandArgumentPassing` that allows you to
-select the behavior at runtime. The valid values are `Legacy`, `Standard`, and `Windows`. `Legacy`
-is the historic behavior. The default when the experimental feature is enabled is the new `Standard`
-behavior.
+This feature adds a new `$PSNativeCommandArgumentPassing` preference variable that controls this
+behavior. This variable allows you to select the behavior at runtime. The valid values are `Legacy`,
+`Standard`, and `Windows`. The default behavior is platform specific. On Windows platforms, the
+default setting is `Windows` and non-Windows platforms default to `Standard`.
 
-When the preference variable is set to `Windows`, invocations of the following files automatically
-use the `Legacy` style argument passing.
+`Legacy` is the historic behavior. The behavior of `Windows` and `Standard` mode are the same
+except, in `Windows` mode, invocations of the following files automatically use the `Legacy` style
+argument passing.
+
 
 - `cmd.exe`
 - `find.exe`
@@ -183,80 +184,42 @@ use the `Legacy` style argument passing.
 - ending with `.vbs`
 - ending with `.wsf`
 
-If the `$PSNativeCommandArgumentPassing` is set to either `Legacy` or `Standard`, the check for
-these files doesn't occur. The default behavior is platform specific. On Windows platforms, the
-default setting is `Windows` and non-Windows platforms is `Standard`.
+If the `$PSNativeCommandArgumentPassing` is set to either `Legacy` or `Standard`, the parser doesn't
+check for these files.
+
+The default behavior is platform specific. On Windows platforms, the default setting is `Windows`
+and non-Windows platforms is `Standard`.
+
+> [!NOTE]
+> The following examples use the `TestExe.exe` tool. You can build `TestExe` from the source code.
+> See [TestExe][06] in the PowerShell source repository.
 
 New behaviors made available by this change:
 
-- Literal or expandable strings with embedded quotes the quotes are now preserved:
+- Literal or expandable strings with embedded quotes the quotes are preserved:
 
   ```powershell
-  PS > $a = 'a" "b'
-  PS > $PSNativeCommandArgumentPassing = "Legacy"
-  PS > testexe -echoargs $a 'a" "b' a" "b
-  Arg 0 is <a b>
-  Arg 1 is <a b>
-  Arg 2 is <a b>
-  PS > $PSNativeCommandArgumentPassing = "Standard"
-  PS > testexe -echoargs $a 'a" "b' a" "b
+  PS> $a = 'a" "b'
+  PS> TestExe -echoargs $a 'c" "d' e" "f
   Arg 0 is <a" "b>
-  Arg 1 is <a" "b>
-  Arg 2 is <a b>
+  Arg 1 is <c" "d>
+  Arg 2 is <e f>
   ```
 
-- Empty strings as arguments are now preserved:
+- Empty strings as arguments are preserved:
 
   ```powershell
-  PS>  $PSNativeCommandArgumentPassing = "Legacy"
-  PS> testexe -echoargs '' a b ''
-  Arg 0 is <a>
-  Arg 1 is <b>
-  PS> $PSNativeCommandArgumentPassing = "Standard"
-  PS> testexe -echoargs '' a b ''
+  PS> TestExe -echoargs '' a b ''
   Arg 0 is <>
   Arg 1 is <a>
   Arg 2 is <b>
   Arg 3 is <>
   ```
 
-The new behavior doesn't change invocations that look like this:
+For more examples of the new behavior, see [about_Parsing](about_Parsing.md).
 
-```powershell
-PS> $PSNativeCommandArgumentPassing = "Legacy"
-PS> testexe -echoargs -k com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect
-Arg 0 is <-k>
-Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
-PS> $PSNativeCommandArgumentPassing = "Standard"
-PS> testexe -echoargs -k com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect
-Arg 0 is <-k>
-Arg 1 is <com:port=\\devbox\pipe\debug,pipe,resets=0,reconnect>
-```
-
-Additionally, parameter tracing is now provided so `Trace-Command` provides useful information
-for debugging.
-
-```powershell
-PS> $PSNativeCommandArgumentPassing = "Legacy"
-PS> trace-command -PSHOST -Name ParameterBinding { testexe -echoargs $a 'a" "b' a" "b }
-DEBUG: 2021-02-01 17:19:53.6438 ParameterBinding Information: 0 : BIND NAMED native application line args [/Users/james/src/github/forks/jameswtruher/PowerShell-1/test/tools/TestExe/bin/testexe]
-DEBUG: 2021-02-01 17:19:53.6440 ParameterBinding Information: 0 :     BIND argument [-echoargs a" "b a" "b "a b"]
-DEBUG: 2021-02-01 17:19:53.6522 ParameterBinding Information: 0 : CALLING BeginProcessing
-Arg 0 is <a b>
-Arg 1 is <a b>
-Arg 2 is <a b>
-PS> $PSNativeCommandArgumentPassing = "Standard"
-PS> trace-command -PSHOST -Name ParameterBinding { testexe -echoargs $a 'a" "b' a" "b }
-DEBUG: 2021-02-01 17:20:01.9829 ParameterBinding Information: 0 : BIND NAMED native application line args [/Users/james/src/github/forks/jameswtruher/PowerShell-1/test/tools/TestExe/bin/testexe]
-DEBUG: 2021-02-01 17:20:01.9829 ParameterBinding Information: 0 :     BIND cmd line arg [-echoargs] to position [0]
-DEBUG: 2021-02-01 17:20:01.9830 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [1]
-DEBUG: 2021-02-01 17:20:01.9830 ParameterBinding Information: 0 :     BIND cmd line arg [a" "b] to position [2]
-DEBUG: 2021-02-01 17:20:01.9831 ParameterBinding Information: 0 :     BIND cmd line arg [a b] to position [3]
-DEBUG: 2021-02-01 17:20:01.9908 ParameterBinding Information: 0 : CALLING BeginProcessing
-Arg 0 is <a" "b>
-Arg 1 is <a" "b>
-Arg 2 is <a b>
-```
+PowerShell 7.3 also added the ability to trace parameter binding for native commands. For more
+information, see [Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command).
 
 ## PSNativeCommandErrorActionPreference
 
