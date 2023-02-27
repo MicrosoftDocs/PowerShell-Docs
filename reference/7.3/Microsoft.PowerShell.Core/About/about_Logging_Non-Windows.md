@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 02/23/2023
+ms.date: 02/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Non-Windows
@@ -274,7 +274,7 @@ PowerShell in the **Console** application.
 1. Generate PowerShell information to log from the instance of PowerShell
    started in the first step.
 
-For more information, see [view log messages in Console on Mac][5].
+For more information, see [view log messages in Console on Mac][05].
 
 ### Viewing PowerShell log data from the command line on macOS
 
@@ -286,7 +286,7 @@ In the following example, the `log` command is used to show the log data on your
 system as it's occurring in realtime. The **process** parameter filters the log
 data for only the `pwsh` process. If you have more than one instance of `pwsh`
 running, the **process** parameter also accepts a process ID as its value. The
-**level** parameter show messages at the specified level and below.
+**level** parameter shows messages at the specified level and below.
 
 ```powershell
 log stream --process pwsh --level info
