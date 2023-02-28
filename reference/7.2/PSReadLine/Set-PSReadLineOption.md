@@ -255,6 +255,8 @@ The valid keys include:
 - **Number**: The number token color.
 - **Member**: The member name token color.
 - **InlinePrediction**: The color for the inline view of the predictive suggestion.
+- **ListPrediction**: The color for the leading `>` character and prediction source name.
+- **ListPredictionSelected**: The color for the selected prediction in list view.
 
 ```yaml
 Type: System.Collections.Hashtable
