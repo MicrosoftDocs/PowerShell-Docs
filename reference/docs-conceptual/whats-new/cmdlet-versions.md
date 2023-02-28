@@ -651,8 +651,8 @@ This modules is only available in Windows PowerShell.
 | Start-ThreadJob |     | ![Included][01] | ![Included][01] | ![Included][01] | Can be installed in PowerShell 5.1 |
 
 <!-- link references -->
-[01]: ../../media/shared/check-mark-button_2705.svg
-[02]: ../../media/shared/cross-mark_274c.svg
+[01]: ../../media/shared/check-mark-button-2705.svg
+[02]: ../../media/shared/cross-mark-274c.svg
 [03]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-70
 [04]: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71
 [05]: #cimcmdlets
