@@ -292,9 +292,9 @@ when the feature is enabled. This cmdlet returns information about the subsystem
 on the system.
 
 <!-- link references -->
-[01]: ../../media/shared/check-mark-button_2705.svg
-[02]: ../../media/shared/construction-sign_1f6a7.svg
-[03]: ../../media/shared/cross-mark_274c.svg
+[01]: ../../media/shared/check-mark-button-2705.svg
+[02]: ../../media/shared/construction-sign-1f6a7.svg
+[03]: ../../media/shared/cross-mark-274c.svg
 [04]: /powershell/dsc/overview?view=dsc-3.0&preserve-view=true
 [05]: /powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables
 [06]: /powershell/module/microsoft.powershell.core/about/about_experimental_features
