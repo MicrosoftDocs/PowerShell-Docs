@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 02/02/2023
+ms.date: 03/01/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,49 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-February
+
+New Content
+
+- [Preventing script injection attacks](/powershell/scripting/dev-cross-plat/security/preventing-script-injection)
+
+Content updates
+
+- Major update to
+  [about_PowerShel_ Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config)
+- Update to
+  [about_Logging_Non-Windows](/powershell/module/microsoft.powershell.core/about/about_logging_non-windows)
+  for macOS instructions
+- Major update to [Class-based DSC Resources](/powershell/dsc/concepts/class-based-resources) and
+  other related articles for DSC v2
+
+Quality project updates from the community
+
+- Added alias information to 4 cmdlet articles (Thanks @ehmiiz!)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 35 PRs merged (8 from Community)
+- 20 issues opened (14 from Community)
+- 17 issues closed (10 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|   GitHub Id    | PRs merged | Issues opened |
+| -------------- | :--------: | :-----------: |
+| joshua-russell |     4      |       1       |
+| 1NF053C        |     1      |               |
+| doctordns      |     1      |               |
+| Hrxn           |     1      |               |
+| KyleMit        |     1      |               |
+| VertigoRay     |     1      |               |
+| ehmiiz         |     1      |               |
+| ArmaanMcleod   |            |       2       |
+| mklement0      |            |       2       |
 
 ## 2023-January
 
