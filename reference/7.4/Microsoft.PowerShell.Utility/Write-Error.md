@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 03/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-error?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Error
@@ -18,24 +18,27 @@ Writes an object to the error stream.
 ### NoException (Default)
 
 ```
-Write-Error [-Message] <String> [-Category <ErrorCategory>] [-ErrorId <String>] [-TargetObject <Object>]
- [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
- [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
+Write-Error [-Message] <string> [-Category <ErrorCategory>] [-ErrorId <string>]
+ [-TargetObject <Object>] [-RecommendedAction <string>] [-CategoryActivity <string>]
+ [-CategoryReason <string>] [-CategoryTargetName <string>] [-CategoryTargetType <string>]
+ [<CommonParameters>]
 ```
 
 ### WithException
 
 ```
-Write-Error [-Exception] <Exception> [[-Message] <String>] [-Category <ErrorCategory>] [-ErrorId <String>]
- [-TargetObject <Object>] [-RecommendedAction <String>] [-CategoryActivity <String>] [-CategoryReason <String>]
- [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
+Write-Error [-Exception] <Exception> [-Message <string>] [-Category <ErrorCategory>]
+ [-ErrorId <string>] [-TargetObject <Object>] [-RecommendedAction <string>]
+ [-CategoryActivity <string>] [-CategoryReason <string>] [-CategoryTargetName <string>]
+ [-CategoryTargetType <string>] [<CommonParameters>]
 ```
 
 ### ErrorRecord
 
 ```
-Write-Error [-ErrorRecord] <ErrorRecord> [-RecommendedAction <String>] [-CategoryActivity <String>]
- [-CategoryReason <String>] [-CategoryTargetName <String>] [-CategoryTargetType <String>] [<CommonParameters>]
+Write-Error [-ErrorRecord] <ErrorRecord> [-RecommendedAction <string>]
+ [-CategoryActivity <string>] [-CategoryReason <string>] [-CategoryTargetName <string>]
+ [-CategoryTargetType <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,7 +49,7 @@ stream to the host program to be displayed, along with output.
 To write a non-terminating error, enter an error message string, an **ErrorRecord** object, or an
 **Exception** object. Use the other parameters of `Write-Error` to populate the error record.
 
-Non-terminating errors write an error to the error stream, but they do not stop command processing.
+Non-terminating errors write an error to the error stream, but they don't stop command processing.
 If a non-terminating error is declared on one item in a collection of input items, the command
 continues to process the other items in the collection.
 
@@ -95,7 +98,7 @@ This command declares a non-terminating error and specifies an error category.
 
 ```powershell
 $E = [System.Exception]@{Source="Get-ParameterNames.ps1";HelpLink="https://go.microsoft.com/fwlink/?LinkID=113425"}
-Write-Error -Exception $E -Message "Files not found. The $Files location does not contain any XML files."
+Write-Error -Exception $E -Message "Files not found. The $Files location doesn't contain any XML files."
 ```
 
 This command uses an **Exception** object to declare a non-terminating error.
@@ -348,12 +351,12 @@ You can pipe a string that contains an error message to this cmdlet.
 
 ### None
 
-This cmdlet returns no output. It only writes to the errpr message stream.
+This cmdlet returns no output. It only writes to the error message stream.
 
 ## NOTES
 
-`Write-Error` does not change the value of the `$?` automatic variable, therefore it does not signal
-a terminating error condition. To signal a terminating error, use the
+`Write-Error` doesn't change the value of the `$?` automatic variable, therefore it doesn't signal a
+terminating error condition. To signal a terminating error, use the
 [$PSCmdlet.WriteError()](/dotnet/api/system.management.automation.cmdlet.writeerror) method.
 
 ## RELATED LINKS
