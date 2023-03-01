@@ -15,7 +15,7 @@ Writes an object to the error stream.
 
 ## SYNTAX
 
-﻿### NoException (Default)
+### NoException (Default)
 
 ```
 Write-Error [-Message] <string> [-Category <ErrorCategory>] [-ErrorId <string>]
