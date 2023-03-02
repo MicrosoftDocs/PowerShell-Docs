@@ -1,13 +1,16 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 01/04/2023
+ms.date: 03/01/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
 # about_ANSI_Terminals
 
-## Support for ANSI escape sequences
+## Short description
+Describes the support available for ANSI escape sequences in Windows PowerShell.
+
+## Long description
 
 PowerShell has many features that support the use of ANSI escape sequences to
 control the rendering of output in the terminal application that's hosting
@@ -16,7 +19,7 @@ PowerShell.
 PowerShell 7.2 added a new automatic variable, `$PSStyle`, and changes to the
 PowerShell engine to support the output of ANSI-decorated text.
 
-## Terminal support
+## ANSI Terminal support
 
 The ANSI features are designed to be compatible with the xterm-based terminals.
 For more information, see [xterm][1] in Wikipedia.

@@ -1,11 +1,16 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 01/05/2023
+ms.date: 03/01/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
 # about_ANSI_Terminals
+
+## Short description
+Describes the support available for ANSI escape sequences in Windows PowerShell.
+
+## Long description
 
 Unlike newer versions of PowerShell, the Windows PowerShell 5.1 engine and core
 cmdlets don't output ANSI escape sequences to format the text displayed on your
