@@ -1,12 +1,17 @@
 ---
 description: Describes how boolean expressions are evaluated.
 Locale: en-US
-ms.date: 06/10/2021
+ms.date: 03/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_booleans?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Booleans
 ---
 # about_Booleans
+
+## Short description
+Describes how boolean expressions are evaluated.
+
+## Long description
 
 PowerShell can implicitly treat any type as a **Boolean**. It is important to
 understand the rules that PowerShell uses to convert other types to **Boolean**

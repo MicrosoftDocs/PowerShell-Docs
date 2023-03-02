@@ -1,7 +1,7 @@
 ---
 description: Both integer and real numeric literals can have type and multiplier suffixes.
 Locale: en-US
-ms.date: 09/12/2022
+ms.date: 03/01/2023
 no-loc: [482gb]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -9,6 +9,10 @@ title: about Numeric Literals
 ---
 # about_Numeric_Literals
 
+## Short description
+This article describes the syntax and usage of numeric values in PowerShell.
+
+## Long description
 There are two kinds of numeric literals: integer and real. Both can have type
 and multiplier suffixes.
 

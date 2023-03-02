@@ -1,7 +1,7 @@
 ---
 description: Describes a statement you can use to immediately exit `foreach`, `for`, `while`, `do`, `switch`, or `trap` statements.
 Locale: en-US
-ms.date: 06/04/2020
+ms.date: 03/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_break?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Break
@@ -9,9 +9,8 @@ title: about Break
 # about_Break
 
 ## Short description
-
-Describes a statement you can use to immediately exit `foreach`, `for`,
-`while`, `do`, `switch`, or `trap` statements.
+Describes a the `break` statement, which provides a way to exit the current
+control block.
 
 ## Long description
 
