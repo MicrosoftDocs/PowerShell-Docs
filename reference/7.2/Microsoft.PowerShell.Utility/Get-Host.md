@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 03/02/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Host
@@ -33,9 +33,11 @@ features of the host program user interface, such as the text and background col
 
 ### Example 1: Get information about the PowerShell console host
 
-```
+```powershell
 Get-Host
+```
 
+```Output
 Name             : ConsoleHost
 Version          : 2.0
 InstanceId       : e4e0ab54-cc5e-4261-9117-4081f20ce7a2
@@ -70,14 +72,13 @@ This command resizes the Windows PowerShell window to 10 lines by 10 characters.
 ### Example 3: Get the PowerShell version for the host
 
 ```powershell
-(Get-Host).Version | Format-List -Property *
+(Get-Host).Version
+```
 
-Major         : 2
-Minor         : 0
-Build         : -1
-Revision      : -1
-MajorRevision : -1
-MinorRevision : -1
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+7      2      10     -1
 ```
 
 This command gets detailed information about the version of Windows PowerShell running in the host.
@@ -91,8 +92,10 @@ and property values of the version object.
 ### Example 4: Get the current culture for the host
 
 ```powershell
-(Get-Host).CurrentCulture | Format-List -Property *
+(Get-Host).CurrentCulture | Format-List
+```
 
+```Output
 Parent                         : en
 LCID                           : 1033
 KeyboardLayoutId               : 1033
@@ -104,16 +107,16 @@ EnglishName                    : English (United States)
 TwoLetterISOLanguageName       : en
 ThreeLetterISOLanguageName     : eng
 ThreeLetterWindowsLanguageName : ENU
-CompareInfo                    : CompareInfo - 1033
-TextInfo                       : TextInfo - 1033
+CompareInfo                    : CompareInfo - en-US
+TextInfo                       : TextInfo - en-US
 IsNeutralCulture               : False
-CultureTypes                   : SpecificCultures, InstalledWin32Cultures, FrameworkCultures
+CultureTypes                   : SpecificCultures, InstalledWin32Cultures
 NumberFormat                   : System.Globalization.NumberFormatInfo
 DateTimeFormat                 : System.Globalization.DateTimeFormatInfo
 Calendar                       : System.Globalization.GregorianCalendar
-OptionalCalendars              : {System.Globalization.GregorianCalendar, System.Globalization.GregorianCalendar}
+OptionalCalendars              : {System.Globalization.GregorianCalendar}
 UseUserOverride                : True
-IsReadOnly                     : False
+IsReadOnly                     : True
 ```
 
 This command gets detailed information about the current culture set for Windows PowerShell running
@@ -129,8 +132,10 @@ object. This command uses a pipeline operator (`|`) to send the **CultureInfo** 
 ### Example 5: Get the DateTimeFormat for the current culture
 
 ```powershell
-(Get-Host).CurrentCulture.DateTimeFormat | Format-List -Property *
+(Get-Host).CurrentCulture.DateTimeFormat | Format-List
+```
 
+```Output
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -171,54 +176,43 @@ display the property values of the object, use the `Format-List` cmdlet.
 
 ### Example 6: Get the RawUI property for the host
 
-```
-(Get-Host).UI.RawUI | Format-List -Property *
-
-ForegroundColor       : DarkYellow
-BackgroundColor       : DarkBlue
-CursorPosition        : 0,390
-WindowPosition        : 0,341
-CursorSize            : 25
-BufferSize            : 120,3000
-WindowSize            : 120,50
-MaxWindowSize         : 120,81
-MaxPhysicalWindowSize : 182,81
-KeyAvailable          : False
-WindowTitle           : Windows PowerShell 2.0 (04/11/2008 00:08:14)
-```
-
 This command displays the properties of the **RawUI** property of the host object. By changing these
 values, you can change the appearance of the host program.
 
+```powershell
+(Get-Host).UI.RawUI
+```
+
+```Output
+ForegroundColor       : Gray
+BackgroundColor       : Black
+CursorPosition        : 0,28
+WindowPosition        : 0,0
+CursorSize            : 25
+BufferSize            : 120,29
+WindowSize            : 120,29
+MaxWindowSize         : 120,29
+MaxPhysicalWindowSize : 1904,69
+KeyAvailable          : True
+WindowTitle           : PowerShell 7.3.3
+```
+
+> [!NOTE]
+> On non-Windows platforms, **ForegroundColor** and **BackgroundColor** default to `-1` because
+> there is no consistent way to get these on non-Windows platforms.
+
 ### Example 7: Set the background color for the PowerShell console
+
+These commands change the background color of the Windows PowerShell console to black. The
+`Clear-Host` command clears the screen to reset the console window to the new color.
 
 ```powershell
 (Get-Host).UI.RawUI.BackgroundColor = "Black"
-cls
+Clear-Host
 ```
-
-These commands change the background color of the Windows PowerShell console to black. The **cls**
-command is an alias for the `Clear-Host` function, which clears the screen and changes the whole
-screen to the new color.
 
 This change is effective only in the current session. To change the background color of the console
 for all sessions, add the command to your PowerShell profile.
-
-### Example 8: Set the background color for error messages
-
-```powershell
-$Host.PrivateData.ErrorBackgroundColor = "white"
-```
-
-This command changes the background color of error messages to white.
-
-This command uses the `$Host` automatic variable, which contains the host object for the current
-host program. `Get-Host` returns the same object that `$Host` contains, so you can use them
-interchangeably.
-
-This command uses the **PrivateData** property of `$Host` as its ErrorBackgroundColor property. To
-see all of the properties of the object in the `$Host`.PrivateData property, type
-`$host.PrivateData | format-list *`.
 
 ## PARAMETERS
 
@@ -247,6 +241,11 @@ The `$Host` automatic variable contains the same object that `Get-Host` returns,
 in the same way. Similarly, the `$PSCulture` and `$PSUICulture` automatic variables contain the same
 objects that the CurrentCulture and CurrentUICulture properties of the host object contain. You can
 use these features interchangeably.
+
+> [!NOTE]
+> The color settings in `$Host.PrivateData` have been replaced by the `$PSStyle` preference
+> variable. For more information, see
+> [about_ANSI_Terminals](../Microsoft.PowerShell.Core/About/about_ANSI_Terminals.md).
 
 For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 

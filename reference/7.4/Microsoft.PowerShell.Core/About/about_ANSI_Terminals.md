@@ -1,14 +1,14 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 03/01/2023
+ms.date: 03/02/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
 # about_ANSI_Terminals
 
 ## Short description
-Describes the support available for ANSI escape sequences in Windows PowerShell.
+Describes the support available for ANSI escape sequences in PowerShell.
 
 ## Long description
 
@@ -77,6 +77,13 @@ The following members control how or when ANSI formatting is used:
   `System.Management.Automation.OutputRendering` enum with the values:
 
   - `ANSI`: ANSI escape sequences are always passed through as-is.
+
+    > [!IMPORTANT]
+    > You should use **ANSI** mode when redirecting output to a file or the
+    > pipeline that's intended to be executed downstream. This ensures that
+    > the output isn't altered. Using any other mode alters the output by
+    > removing ANSI escape sequences, which may change the execution behavior.
+
   - `PlainText`: ANSI escape sequences are always stripped so that it's only
     plain text.
   - `Host`: This is the default behavior. The ANSI escape sequences are removed
@@ -121,12 +128,12 @@ The following members control how or when ANSI formatting is used:
   ```
 
 - `$PSStyle.Formatting` is a nested object to control default formatting of
-  debug, error, verbose, warning messages, list and table headers, and feedback
-  messages. You can also control attributes like bolding and underlining. It
-  replaces `$Host.PrivateData` as the way to manage colors for formatting
-  rendering. `$Host.PrivateData` continues to exist for backwards compatibility
-  but isn't connected to `$PSStyle.Formatting`. `$PSStyle.Formatting` has the
-  following members:
+  debug, error, verbose, warning messages, and list and table headers. You can
+  also control attributes like bolding and underlining. It replaces
+  `$Host.PrivateData` as the way to manage colors for formatting rendering.
+  `$Host.PrivateData` continues to exist for backwards compatibility but isn't
+  connected to `$PSStyle.Formatting`. `$PSStyle.Formatting` has the following
+  members:
 
   - **FormatAccent** - formatting for list items
   - **ErrorAccent** - formatting for error metadata
