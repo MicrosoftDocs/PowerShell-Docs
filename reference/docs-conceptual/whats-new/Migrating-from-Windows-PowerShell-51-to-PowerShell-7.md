@@ -1,6 +1,6 @@
 ---
 description: Update from PowerShell 5.1 to PowerShell 7 for your Windows platforms.
-ms.date: 12/01/2022
+ms.date: 03/01/2023
 title: Migrating from Windows PowerShell 5.1 to PowerShell 7
 ---
 
@@ -23,7 +23,7 @@ editions before deployment. Migration is simple, quick, and safe.
 PowerShell 7 is supported on the following Windows operating systems:
 
 - Windows 8.1, 10, and 11
-- Windows Server 2012, 2012 R2, 2016, and 2019
+- Windows Server 2012, 2012 R2, 2016, 2019, and 2022
 
 PowerShell 7 also runs on macOS and several Linux distributions. For a list of supported operating
 systems and information about the support lifecycle, see the [PowerShell Support Lifecycle][04].

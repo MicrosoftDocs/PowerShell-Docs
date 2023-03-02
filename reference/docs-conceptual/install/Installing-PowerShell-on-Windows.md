@@ -293,7 +293,7 @@ include the package in the workarea and add _OPENSRC_POWERSHELL_ feature to your
 ## Deploying on Nano Server
 
 These instructions assume that the Nano Server is a "headless" OS that has a version of PowerShell
-is already running on it. For more information, see the [Nano Server Image Builder][11]
+already running on it. For more information, see the [Nano Server Image Builder][11]
 documentation.
 
 PowerShell binaries can be deployed using two different methods.

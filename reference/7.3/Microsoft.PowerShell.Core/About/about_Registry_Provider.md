@@ -1,7 +1,7 @@
 ---
 description: Registry
 Locale: en-US
-ms.date: 04/28/2022
+ms.date: 03/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_registry_provider?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Registry Provider
@@ -47,10 +47,11 @@ in this article.
 - [Move-Item](xref:Microsoft.PowerShell.Management.Move-Item)
 - [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 - [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Get-ItemProperty](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
-- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
-- [Remove-ItemProperty](xref:Microsoft.PowerShell.Management.Remove-ItemProperty)
 - [Clear-ItemProperty](xref:Microsoft.PowerShell.Management.Clear-ItemProperty)
+- [Get-ItemProperty](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
+- [New-ItemProperty](xref:Microsoft.PowerShell.Management.New-ItemProperty)
+- [Remove-ItemProperty](xref:Microsoft.PowerShell.Management.Remove-ItemProperty)
+- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
 - [Get-Acl](xref:Microsoft.PowerShell.Security.Get-Acl)
 - [Set-Acl](xref:Microsoft.PowerShell.Security.Set-Acl)
 
@@ -337,7 +338,7 @@ ContosoCompany registry key.
 
 ```powershell
 $path = "HKLM:\SOFTWARE\ContosoCompany"
-New-ItemProperty -Path  -Name Test -Type DWORD -Value 1
+New-ItemProperty -Path $path -Name Test -Type DWORD -Value 1
 ```
 
 > [!NOTE]
