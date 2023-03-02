@@ -1733,7 +1733,7 @@ At line:1 char:1
 [56]: xref:System.Management.Automation.ConfirmImpact
 [57]: xref:System.Management.Automation.ErrorCategoryInfo
 [58]: xref:System.Management.Automation.ErrorView
-[59]: xref:System.Management.Automation.PSModuleAutoloadingPreference
+[59]: xref:System.Management.Automation.PSModuleAutoLoadingPreference
 [60]: xref:System.Management.Automation.PSStyle
 [61]: xref:System.Management.Automation.Remoting.PSSessionOption
 [62]: xref:System.Text.ASCIIEncoding
