@@ -1,14 +1,14 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 03/01/2023
+ms.date: 03/02/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
 # about_ANSI_Terminals
 
 ## Short description
-Describes the support available for ANSI escape sequences in Windows PowerShell.
+Describes the support available for ANSI escape sequences in PowerShell.
 
 ## Long description
 
@@ -75,6 +75,13 @@ The following members control how or when ANSI formatting is used:
   `System.Management.Automation.OutputRendering` enum with the values:
 
   - `ANSI`: ANSI escape sequences are always passed through as-is.
+
+    > [!IMPORTANT]
+    > You should use **ANSI** mode when redirecting output to a file or the
+    > pipeline that's intended to be executed downstream. This ensures that
+    > the output isn't altered. Using any other mode alters the output by
+    > removing ANSI escape sequences, which may change the execution behavior.
+
   - `PlainText`: ANSI escape sequences are always stripped so that it's only
     plain text.
   - `Host`: This is the default behavior. The ANSI escape sequences are removed
@@ -164,14 +171,6 @@ The following members control how or when ANSI formatting is used:
   - **Extension** - Use this member to define colors for different file
     extensions. The **Extension** member pre-includes extensions for archive
     and PowerShell files.
-
-  > [!NOTE]
-  > `$PSStyle.FileInfo` is only available when the `PSAnsiRenderingFileInfo`
-  > experimental feature is enabled. For more information, see
-  > [about_Experimental_Features][3] and [Using experimental features][4].
-  >
-  > In PowerShell 7.3, the `PSAnsiRenderingFileInfo` feature became
-  > mainstream and available by default.
 
 ## Cmdlets that generate ANSI output
 
