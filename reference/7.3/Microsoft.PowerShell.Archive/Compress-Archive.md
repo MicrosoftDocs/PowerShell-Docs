@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 12/09/2022
+ms.date: 03/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compress-Archive
@@ -67,6 +67,13 @@ the compression algorithm specified by the **CompressionLevel** parameter.
 The `Compress-Archive` cmdlet uses the Microsoft .NET API
 [System.IO.Compression.ZipArchive](/dotnet/api/system.io.compression.ziparchive) to compress files.
 The maximum file size is 2 GB because there's a limitation of the underlying API.
+
+> [!NOTE]
+> The `Compress-Archive` cmdlet ignores hidden files and folders when creating or updating the
+> archive file. On non-Windows machines, this includes files and folders with name that begins with
+> the `.` character.
+>
+> To ensure hidden files and folders are compressed into the archive, use the .NET API instead.
 
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
