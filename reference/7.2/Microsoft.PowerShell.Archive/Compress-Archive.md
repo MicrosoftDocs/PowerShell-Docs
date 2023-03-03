@@ -71,7 +71,7 @@ The maximum file size is 2 GB because there's a limitation of the underlying API
 > [!NOTE]
 > The `Compress-Archive` cmdlet ignores hidden files and folders when creating or updating the
 > archive file. On non-Windows machines, this includes files and folders with name that begins with
-> the `.` character.
+> the period (`.`) character.
 >
 > To ensure hidden files and folders are compressed into the archive, use the .NET API instead.
 
