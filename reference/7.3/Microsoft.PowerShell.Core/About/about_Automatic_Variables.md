@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 03/02/2023
+ms.date: 03/07/2023
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -45,11 +45,21 @@ executed, but won't set `$?` to **False** for a function calling it:
 function Test-WriteError
 {
     Write-Error "Bad"
-    $? # $false
+    "The `$? variable is: $?"
 }
 
 Test-WriteError
-$? # $true
+"Now the `$? variable is: $?"
+```
+
+```Output
+Test-WriteError: 
+Line |
+   7 |  Test-WriteError
+     |  ~~~~~~~~~~~~~~~
+     | Bad
+The $? variable is: False
+Now the $? variable is: True
 ```
 
 For the latter purpose, `$PSCmdlet.WriteError()` should be used instead.
