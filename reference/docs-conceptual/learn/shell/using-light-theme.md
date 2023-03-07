@@ -129,8 +129,8 @@ $PSStyle.Formatting.Warning            = "`e[33m"
 $PSStyle.Formatting.Verbose            = "`e[33m"
 $PSStyle.Formatting.Debug              = "`e[33m"
 $PSStyle.Progress.Style                = "`e[33m"
-$PSStyle.FileInfo.Directory            = $PSStyle.FileInfo.Background.FromRgb(0x2f6aff) +
-                                         $PSStyle.FileInfo.Foreground.BrightWhite
+$PSStyle.FileInfo.Directory            = $PSStyle.Background.FromRgb(0x2f6aff) +
+                                         $PSStyle.Foreground.BrightWhite
 $PSStyle.FileInfo.SymbolicLink         = "`e[36m"
 $PSStyle.FileInfo.Executable           = "`e[95m"
 $PSStyle.FileInfo.Extension['.ps1']    = "`e[36m"
