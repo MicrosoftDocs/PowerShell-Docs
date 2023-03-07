@@ -6,10 +6,10 @@ title: Loading and Exporting Formatting Data
 ---
 # Loading and Exporting Formatting Data
 
-Once you have created your formatting file, you need to update the format data of the session by
+Once you've created your formatting file, you need to update the format data of the session by
 loading your files into the current session. PowerShell loads a predefined set of formats. Once the
 format data of the current session is updated, PowerShell uses that data to display the .NET objects
-associated with the views defined in the loaded formats. There is no limit to the number of formats
+associated with the views defined in the loaded formats. There's no limit to the number of formats
 that you can load into the current session. You can also export the format data in the current
 session back to a formatting file.
 
@@ -21,17 +21,17 @@ Formatting files can be loaded into the current session using the following meth
   [Update-FormatData][06] cmdlet as described in the following procedure.
 
 - You can create a module manifest that references your formatting file. Modules allow you to
-  package you formatting files for distribution. Use the [New-ModuleManifest][03] cmdlet to create
+  package your formatting files for distribution. Use the [New-ModuleManifest][03] cmdlet to create
   the manifest, and the [Import-Module][02] cmdlet to load the module into the current session. For
   more information about modules, see [Writing a Windows PowerShell Module][01].
 
 - You can create a snap-in that references your formatting file. Use the
   [System.Management.Automation.PSSnapIn.Formats][07] to reference your formatting files. However,
-  you are strongly encouraged to use modules to package cmdlets, and any associated formatting and
-  types files for distribution.
+  best practice recommendation is to use modules to package cmdlets and associated formatting and
+  types files.
 
-- If you are invoking commands programmatically, you can add a formatting files to the initial
-  session state of the runspace where the commands are run. For more information, see the
+- If you're invoking commands programmatically, you can add formatting files to the initial session
+  state of the runspace where the commands are run. For more information, see the
   [System.Management.Automation.Runspaces.SessionStateFormatEntry][08] class.
 
 When a formatting file is loaded, it's added to an internal list that PowerShell uses to choose the
@@ -40,17 +40,17 @@ of the list, or you can append it to the end of the list.
 
 Knowing where your formatting file is added to this list is important.
 
-- If you are loading a formatting file that defines the only view for an object, you can use any of
+- If you're loading a formatting file that defines the only view for an object, you can use any of
   the methods described previously.
 
-- If you are loading a formatting file that defines a view for an object that has an existing view
+- If you're loading a formatting file that defines a view for an object that has an existing view
   defined, it must be added to the beginning of the list. You must use the [Update-FormatData][06]
   cmdlet and prepend your file to the beginning of the list.
 
 ## Storing Your Formatting File
 
-You can store formatting files anywhere on disk. However, it's strongly suggested that you store
-them in the same folder as your profile script.
+You can store formatting files anywhere on disk. However, it's recommended that you store them in
+the same folder as your profile script.
 
 Use the following command to determine the location of your profile script.
 
@@ -64,14 +64,14 @@ Split-Path -Path $PROFILE -Parent
 
 1. Run the [Update-FormatData][06] cmdlet using one of the following commands.
 
-   To add your formatting file to the front of the list use this command. Use this command if you
-   are changing how an object is displayed.
+   If you're changing how an object is displayed, use the following command to add your formatting
+   file to the front of the list.
 
    ```powershell
    Update-FormatData -PrependPath PathToFormattingFile
    ```
 
-   To add your formatting file to the end of the list use this command.
+   Use the following command to add your formatting file to the end of the list.
 
    ```powershell
    Update-FormatData -AppendPath PathToFormattingFile
