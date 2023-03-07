@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 03/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Alias
@@ -52,7 +52,8 @@ Get-Alias | Where-Object { $_.Options -NE "Constant" } | Remove-Alias -Force
 `Where-Object` uses a script block, and the automatic variable (`$_`) and **Options** property
 represent the current pipeline object. The parameter **NE** (not equal), selects objects that don't
 have an **Options** value set to **Constant**. `Remove-Alias` uses the **Force** parameter to remove
-aliases, including read-only aliases, from the PowerShell session.
+aliases, including read-only aliases, from the PowerShell session. The **Force** parameter can't
+remove **Constant** aliases.
 
 ## PARAMETERS
 
@@ -119,7 +120,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

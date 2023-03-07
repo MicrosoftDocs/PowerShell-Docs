@@ -52,7 +52,8 @@ Get-Alias | Where-Object { $_.Options -NE "Constant" } | Remove-Alias -Force
 `Where-Object` uses a script block, and the automatic variable (`$_`) and **Options** property
 represent the current pipeline object. The parameter **NE** (not equal), selects objects that don't
 have an **Options** value set to **Constant**. `Remove-Alias` uses the **Force** parameter to remove
-aliases, including read-only aliases, from the PowerShell session.
+aliases, including read-only aliases, from the PowerShell session. The **Force** parameter can't
+remove **Constant** aliases.
 
 ## PARAMETERS
 
@@ -119,7 +120,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
