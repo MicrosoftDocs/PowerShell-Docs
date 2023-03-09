@@ -154,18 +154,19 @@ For cmdlets that read string data in the absence of a BOM:
 
 ## Character encoding in PowerShell
 
-In PowerShell (v6 and higher), the **Encoding** parameter supports the
+In PowerShell (v7.1 and higher), the **Encoding** parameter supports the
 following values:
 
 - `ascii`: Uses the encoding for the ASCII (7-bit) character set.
 - `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
+- `bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.
 - `oem`: Uses the default encoding for MS-DOS and console programs.
 - `unicode`: Encodes in UTF-16 format using the little-endian byte order.
 - `utf7`: Encodes in UTF-7 format.
 - `utf8`: Encodes in UTF-8 format (no BOM).
 - `utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)
 - `utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)
-- `utf32`: Encodes in UTF-32 format.
+- `utf32`: Encodes in UTF-32 format using the little-endian byte order.
 
 PowerShell defaults to `utf8NoBOM` for all output.
 
