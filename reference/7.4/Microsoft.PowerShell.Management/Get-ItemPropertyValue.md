@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 03/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ItemPropertyValue
@@ -253,6 +253,11 @@ This cmdlet returns an object for each item property value that it gets.
 The object type depends on the property value that is retrieved.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Get-ItemPropertyValue`:
+
+- All platforms:
+  - `gpv`
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, run the `Get-PSProvider` cmdlet. For more information, see
