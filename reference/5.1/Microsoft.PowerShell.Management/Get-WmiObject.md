@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/14/2022
+ms.date: 03/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-wmiobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WmiObject
@@ -618,6 +618,10 @@ When you use the **AsJob** parameter, the cmdlet returns a job object. Otherwise
 `Get-WmiObject` returns depends on the value of the **Class** parameter.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-WmiObject`:
+
+- `gwmi`
 
 To access WMI information on a remote computer, the cmdlet must run under an account that is a
 member of the local administrators group on the remote computer. Or, the default access control on
