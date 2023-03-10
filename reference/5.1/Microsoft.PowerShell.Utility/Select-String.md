@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 03/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -680,9 +680,11 @@ the pattern was found.
 
 ## NOTES
 
-`Select-String` is similar to `grep` in UNIX or `findstr.exe` in Windows.
+Windows PowerShell includes the following aliases for `Select-String`:
 
-The `sls` alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
+- `sls`
+
+`Select-String` is similar to `grep` in UNIX or `findstr.exe` in Windows.
 
 > [!NOTE]
 > According to

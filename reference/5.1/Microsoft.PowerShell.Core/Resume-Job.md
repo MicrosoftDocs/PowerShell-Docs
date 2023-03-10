@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 03/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/resume-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resume-Job
@@ -393,6 +393,10 @@ This cmdlet returns the jobs that it tries to resume, if you use the **PassThru*
 Otherwise, this cmdlet does not generate any output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Resume-Job`:
+
+- `rujb`
 
 - `Resume-Job` can only resume jobs that are suspended. If you submit a job in a different state,
   `Resume-Job` runs the resume operation on the job, but generates a warning to notify you that the

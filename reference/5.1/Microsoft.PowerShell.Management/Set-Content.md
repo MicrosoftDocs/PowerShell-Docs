@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/16/2023
+ms.date: 03/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
@@ -498,6 +498,10 @@ By default, this cmdlet returns no output.
 When you use the **PassThru** parameter, this cmdlet returns a string representing the content.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Set-Content`:
+
+- `sc`
 
 - `Set-Content` is designed for string processing. If you pipe non-string objects to `Set-Content`,
   it converts the object to a string before writing it. To write objects to files, use `Out-File`.
