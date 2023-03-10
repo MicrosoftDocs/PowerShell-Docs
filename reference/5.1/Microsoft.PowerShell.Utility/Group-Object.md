@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 03/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Group-Object
@@ -345,8 +345,10 @@ Accept wildcard characters: False
 
 ### -Property
 
-Specifies the properties for grouping. The objects are arranged into groups based on the value of
-the specified property.
+Specifies the properties for grouping. The objects are arranged into named groups based on the value
+of the specified properties. When no property is specified, objects are grouped by their value or
+the `ToString()` representation of their value. The output is sorted in ascending order by the group
+names.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
 can be a script block or a hash table. Valid key-value pairs are:
@@ -402,28 +404,30 @@ You can use the **GroupBy** parameter of the formatting cmdlets, such as `Format
 each property value, the **GroupBy** parameters create a table for each property value with a row
 for each item that has the property value.
 
-`Group-Object` doesn't require that the objects being grouped are of the same Microsoft .NET
-Framework type. When grouping objects of different .NET Framework types, `Group-Object` uses the
-following rules:
+`Group-Object` doesn't require that the objects being grouped are of the same Microsoft .NET type.
+When grouping objects of different .NET types, `Group-Object` uses the following rules:
 
 - Same Property Names and Types.
 
-  If the objects have a property with the specified name, and the property values have the same .NET
-  Framework type, the property values are grouped the same rules that would be used for
-  objects of the same type.
+  If the objects have a property with the specified name, and the property values have the same
+  .NET type, the property values are grouped by the same rules that would be used for objects
+  of the same type.
 
 - Same Property Names, Different Types.
 
   If the objects have a property with the specified name, but the property values have a different
-  .NET Framework type in different objects, `Group-Object` uses the .NET Framework type of the first
-  occurrence of the property as the .NET Framework type for that property group. When an object has
-  a property with a different type, the property value is converted to the type for that group. If
-  the type conversion fails, the object isn't included in the group.
+  .NET type in different objects, `Group-Object` uses the .NET type of the first occurrence of the
+  property as the .NET type for that property group. When an object has a property with a different
+  type, the property value is converted to the type for that group. If the type conversion fails,
+  the object isn't included in the group.
 
 - Missing Properties.
 
   Objects that don't have a specified property can't be grouped. Objects that aren't grouped appear
   in the final **GroupInfo** object output in a group named `AutomationNull.Value`.
+
+The output is sorted in ascending order by the group names. The items belonging to each group are
+not sorted. They are listed in the order in which they were received.
 
 ## RELATED LINKS
 
