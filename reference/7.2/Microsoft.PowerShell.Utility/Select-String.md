@@ -806,6 +806,11 @@ pattern.
 
 ## NOTES
 
+PowerShell includes the following aliases for `Select-String`:
+
+- All platforms:
+  - `sls`
+
 `Select-String` is similar to `grep` in UNIX or `findstr.exe` in Windows.
 
 The `sls` alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
