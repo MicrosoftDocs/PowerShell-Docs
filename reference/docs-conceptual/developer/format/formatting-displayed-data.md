@@ -1,6 +1,6 @@
 ---
 description: Formatting Displayed Data
-ms.date: 08/23/2021
+ms.date: 03/13/2023
 ms.topic: reference
 title: Formatting Displayed Data
 ---
@@ -12,12 +12,16 @@ can use the `FormatString` element when defining the items of your view, or you 
 
 ## Using the FormatString Element
 
-In the following example the value of the `TotalProcessorTime` property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)
-object is formatted using the FormatString element. the `TotalProcessorTime` property
+In the following example the value of the **TotalProcessorTime** property of the
+[System.Diagnostics.Process][01] object is formatted using the FormatString element. the
+**TotalProcessorTime** property
 
-```
+```xml
 <TableColumnItem>
   <PropertyName>TotalProcessorTime</PropertyName>
   <FormatString>{0:MMM}{0:dd}{0:HH}:{0:mm}</FormatString>
 </TableColumnItem>
 ```
+
+<!-- link references -->
+[01]: xref:System.Diagnostics.Process

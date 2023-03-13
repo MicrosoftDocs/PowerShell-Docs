@@ -1,6 +1,6 @@
 ---
 description: Formatting File Overview
-ms.date: 08/23/2021
+ms.date: 03/13/2023
 ms.topic: reference
 title: Formatting File Overview
 ---
@@ -9,10 +9,9 @@ title: Formatting File Overview
 The display format for the objects that are returned by commands (cmdlets, functions, and scripts)
 are defined by using formatting files (format.ps1xml files). Several of these files are provided by
 PowerShell to define the display format for those objects returned by PowerShell-provided commands,
-such as the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object returned by
-the `Get-Process` cmdlet. However, you can also create your own custom formatting files to overwrite
-the default display formats or you can write a custom formatting file to define the display of
-objects returned by your own commands.
+such as the [System.Diagnostics.Process][12] object returned by the `Get-Process` cmdlet. However,
+you can also create your own custom formatting files to overwrite the default display formats or you
+can write a custom formatting file to define the display of objects returned by your own commands.
 
 > [!IMPORTANT]
 > Formatting files do not determine the elements of an object that are returned to the pipeline.
@@ -35,16 +34,15 @@ defined by the file:
 
 - Default configuration setting, such as whether the data displayed in the rows of tables will be
   displayed on the next line if the data is longer than the width of the column. For more
-  information about these settings, see
-  [Wrap Element for TableRowEntry](./wrap-element-for-tablerowentry-for-tablecontrol-format.md).
+  information about these settings, see [Wrap Element for TableRowEntry][10].
 
 - Sets of objects that can be displayed by any of the views of the formatting file. For more
   information about these sets (referred to as **selection sets**), see
-  [Defining Sets of Objects](./defining-selection-sets.md).
+  [Defining Sets of Objects][05].
 
 - Common controls that can be used by all the views of the formatting file. Controls give you finer
   control on how data is displayed. For more information about controls, see
-  [Defining Custom Controls](./creating-custom-controls.md).
+  [Defining Custom Controls][04].
 
 ## Formatting Views
 
@@ -55,25 +53,25 @@ the view, such as the column and row information for a table view.
 
 ### Table View
 
-Lists the properties of an object or a script block value in one or more columns. Each
-column represents a single property of the object or a script value. You can define a table view
-that displays all the properties of an object, a subset of the properties of an object, or a
-combination of properties and script values. Each row of the table represents a returned object.
-Creating a table view is very similar to when you pipe an object to the `Format-Table` cmdlet. For
-more information about this view, see [Table View](./creating-a-table-view.md).
+Lists the properties of an object or a script block value in one or more columns. Each column
+represents a single property of the object or a script value. You can define a table view that
+displays all the properties of an object, a subset of the properties of an object, or a combination
+of properties and script values. Each row of the table represents a returned object. Creating a
+table view is very similar to when you pipe an object to the `Format-Table` cmdlet. For more
+information about this view, see [Table View][02].
 
 ### List View
 
-Lists the properties of an object or a script value in a single column. Each row of the
-list displays an optional label or the property name followed by the value of the property or
-script. Creating a list view is very similar to piping an object to the `Format-List` cmdlet. For
-more information about this view, see [List View](./creating-a-list-view.md).
+Lists the properties of an object or a script value in a single column. Each row of the list
+displays an optional label or the property name followed by the value of the property or script.
+Creating a list view is very similar to piping an object to the `Format-List` cmdlet. For more
+information about this view, see [List View][01].
 
 ### Wide View
 
 Lists a single property of an object or a script value in one or more columns. There is no label or
 header for this view. Creating a wide view is very similar to piping an object to the `Format-Wide`
-cmdlet. For more information about this view, see [Wide View](./creating-a-wide-view.md).
+cmdlet. For more information about this view, see [Wide View][03].
 
 ### Custom View
 
@@ -81,7 +79,7 @@ Displays a customizable view of object properties or script values that does not
 structure of table views, list views, or wide views. You can define a stand-alone custom view, or
 you can define a custom view that is used by another view, such as a table view or list view.
 Creating a custom view is very similar to piping an object to the `Format-Custom` cmdlet. For more
-information about this view, see [Custom View](./creating-custom-controls.md).
+information about this view, see [Custom View][04].
 
 ## Components of a View
 
@@ -128,18 +126,17 @@ only one definition, is needed for each control.
     <ListEntry>
       <EntrySelectedBy>...</EntrySelectedBy>
       <ListItems>...</ListItems>
-    <ListEntry>
-    <ListEntry>
-        <EntrySelectedBy>...</EntrySelectedBy>
-      <ListItems>...</ListItems>
-    <ListEntry>
+    </ListEntry>
     <ListEntry>
         <EntrySelectedBy>...</EntrySelectedBy>
       <ListItems>...</ListItems>
+    </ListEntry>
     <ListEntry>
+        <EntrySelectedBy>...</EntrySelectedBy>
+      <ListItems>...</ListItems>
+    </ListEntry>
   </ListEntries>
 </ListControl>
-
 ```
 
 Within each entry element of a view, you specify the **item** elements that define the .NET
@@ -160,10 +157,10 @@ contain multiple definitions, and each definition can contain multiple items.
 
 ## Example of a Table View
 
-The following example shows the XML tags used to define a table view that contains two columns. The [ViewDefinitions](./viewdefinitions-element-format.md)
-element is the container element for all the views defined in the formatting file. The [View](./view-element-format.md)
-element defines the specific table, list, wide, or custom view. Within each [View](./view-element-format.md)
-element, the [Name](./name-element-for-view-format.md) element specifies the name of the view, the [ViewSelectedBy](./viewselectedby-element-format.md)
+The following example shows the XML tags used to define a table view that contains two columns. The
+[ViewDefinitions][08] element is the container element for all the views defined in the formatting
+file. The [View][07] element defines the specific table, list, wide, or custom view. Within each
+[View][07] element, the [Name][06] element specifies the name of the view, the [ViewSelectedBy][09]
 element defines the objects that use the view, and the different control elements (such as the
 `TableControl` element shown in the following example) define the type of the view.
 
@@ -204,12 +201,26 @@ element defines the objects that use the view, and the different control element
 
 ## See Also
 
-[Creating a List View](./creating-a-list-view.md)
+[Creating a List View][01]
 
-[Creating a Table View](./creating-a-table-view.md)
+[Creating a Table View][02]
 
-[Creating a Wide View](./creating-a-wide-view.md)
+[Creating a Wide View][03]
 
-[Creating Custom Controls](./creating-custom-controls.md)
+[Creating Custom Controls][04]
 
-[Writing a PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)
+[Writing a PowerShell Formatting and Types File][11]
+
+<!-- link references -->
+[01]: ./creating-a-list-view.md
+[02]: ./creating-a-table-view.md
+[03]: ./creating-a-wide-view.md
+[04]: ./creating-custom-controls.md
+[05]: ./defining-selection-sets.md
+[06]: ./name-element-for-view-format.md
+[07]: ./view-element-format.md
+[08]: ./viewdefinitions-element-format.md
+[09]: ./viewselectedby-element-format.md
+[10]: ./wrap-element-for-tablerowentry-for-tablecontrol-format.md
+[11]: ./writing-a-powershell-formatting-file.md
+[12]: xref:System.Diagnostics.Process
