@@ -489,6 +489,9 @@ call.
 **ContentType** will be overridden when a `MultipartFormDataContent` object is supplied for
 **Body**.
 
+Starting in PowerShell 7.4, if you use this both this parameter and the **Headers** parameter to
+define the `Content-Type` header, the value specified in the **ContentType** parameter is used.
+
 ```yaml
 Type: System.String
 Parameter Sets: (All)
@@ -658,6 +661,9 @@ Specifies the headers of the web request. Enter a hash table or dictionary.
 
 Content related headers, such as `Content-Type` are overridden when a `MultipartFormDataContent`
 object is supplied for **Body**.
+
+Starting in PowerShell 7.4, if you use this parameter to define the `Content-Type` header and use
+**ContentType** parameter, the value specified in the **ContentType** parameter is used.
 
 ```yaml
 Type: System.Collections.IDictionary
