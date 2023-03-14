@@ -560,9 +560,9 @@ format, the default encoding format is used instead. An example of a **ContentTy
 encoding format is `text/plain; charset=iso-8859-5`, which specifies the
 [Latin/Cyrillic](https://www.iso.org/standard/28249.html) alphabet.
 
-If this parameter is omitted and the request method is POST, `Invoke-WebRequest` sets the content
-type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in the
-call.
+If this parameter is omitted and the request method is POST or PUT, `Invoke-WebRequest` sets the
+content type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in
+the call.
 
 **ContentType** is overridden when a **MultipartFormDataContent** object is supplied for **Body**.
 
