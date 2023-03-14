@@ -1,7 +1,7 @@
 ---
 description: Prevents a script from running without the required elements.
 Locale: en-US
-ms.date: 08/18/2022
+ms.date: 03/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Requires
@@ -23,10 +23,8 @@ the script or provide other runtime features, such as tab completion.
 
 ```
 #Requires -Version <N>[.<n>]
-#Requires -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -Modules { <Module-Name> | <Hashtable> }
 #Requires -PSEdition <PSEdition-Name>
-#Requires -ShellId <ShellId> -PSSnapin <PSSnapin-Name> [-Version <N>[.<n>]]
 #Requires -RunAsAdministrator
 ```
 
@@ -93,17 +91,6 @@ For example:
 
 ```powershell
 #Requires -Version 6.0
-```
-
-#### -PSSnapin \<PSSnapin-Name\> [-Version \<N\>[.\<n\>]]
-
-Specifies a PowerShell snap-in that the script requires. Enter the snap-in name
-and an optional version number.
-
-For example:
-
-```powershell
-#Requires -PSSnapin DiskSnapin -Version 1.2
 ```
 
 #### -Modules \<Module-Name\> | \<Hashtable\>
@@ -187,22 +174,6 @@ For example:
 ```powershell
 #Requires -PSEdition Core
 ```
-
-#### -ShellId
-
-Specifies the shell that the script requires. Enter the shell ID. If you use
-the **ShellId** parameter, you must also include the **PSSnapin** parameter.
-You can find the current **ShellId** by querying the `$ShellId` automatic
-variable.
-
-For example:
-
-```powershell
-#Requires -ShellId MyLocalShell -PSSnapin Microsoft.PowerShell.Core
-```
-
-> [!NOTE]
-> This parameter is intended for use in mini-shells, which have been deprecated.
 
 #### -RunAsAdministrator
 
