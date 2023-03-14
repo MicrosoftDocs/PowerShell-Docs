@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/05/2023
+ms.date: 03/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -19,7 +19,7 @@ Gets content from a web page on the internet.
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-SessionVariable <String>] [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
@@ -34,7 +34,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-Web
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-SessionVariable <String>] [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
@@ -49,7 +49,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-Web
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-SessionVariable <String>] [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
@@ -64,7 +64,7 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-Web
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-WebSession <WebRequestSession>]
- [-SessionVariable <String>] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-SessionVariable <String>] [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
@@ -380,6 +380,27 @@ link.
 ```
 
 ## PARAMETERS
+
+### -AllowInsecureRedirect
+
+Allows redirecting from HTTPS to HTTP. By default, any request that is redirected from HTTPS to
+HTTP results in an error and the request is aborted to prevent unintentionally communicating in
+plain text over unencrypted connections. To override this behavior at your own risk, use the
+**AllowInsecureRedirect** parameter.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AllowUnencryptedAuthentication
 
