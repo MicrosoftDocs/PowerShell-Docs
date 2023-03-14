@@ -153,6 +153,10 @@ any output.
 
 ## NOTES
 
+Windows PowerShell includes the following aliases for `Remove-PSSnapin`:
+
+- `rsnp`
+
 - `Remove-PSSnapin` does not check the version of Windows PowerShell before removing a snap-in from
   the session. If a snap-in cannot be removed, a warning appears and the command fails.
 - `Remove-PSSnapin` affects only the current session. If you have added an `Add-PSSnapin` command to
