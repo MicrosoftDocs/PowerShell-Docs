@@ -23,6 +23,7 @@ Usage: pwsh[.exe]
     [[-File] <filePath> [args]]
     [-Command { - | <script-block> [-args <arg-array>]
                   | <string> [<CommandParameters>] } ]
+    [-CommandWithArgs <string>] [<CommandParameters>]
     [-ConfigurationFile <filePath>]
     [-ConfigurationName <string>]
     [-CustomPipeName <string>]
@@ -189,6 +190,29 @@ add `exit $LASTEXITCODE` to your command string or script block.
 Similarly, the value 1 is returned when a script-terminating
 (runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
 or when execution is interrupted with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+
+### -CommandWithArgs | -cwa
+
+This is an experimental feature added in 7.4.0-preview.2.
+
+Executes a PowerShell command with arguments. Unlike `-Command`, this parameter
+populates the `$args built-in variable which can be used by the command.
+
+The first string is the command and subsequent strings delimited by whitespace
+are the arguments.
+
+For example:
+
+```powershell
+pwsh -CommandWithArgs '$args | % { "arg: $_" }' arg1 arg2
+```
+
+This example produces the following output:
+
+```Output
+arg: arg1
+arg: arg2
+```
 
 ### -ConfigurationName | -config
 
