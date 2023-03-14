@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/05/2023
+ms.date: 03/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -21,7 +21,7 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
  [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
  [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
@@ -29,8 +29,8 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-RetryIntervalSec <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
- [<CommonParameters>]
+ [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-PreserveHttpMethodOnRedirect]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
@@ -47,7 +47,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
  [-RetryIntervalSec <Int32>] -NoProxy [-Body <Object>] [-Form <IDictionary>]
  [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
  [-PassThru] [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect]
- [-SkipHeaderValidation] [<CommonParameters>]
+ [-PreserveHttpMethodOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethod
@@ -56,7 +56,7 @@ Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowR
 Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
  [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
  [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
@@ -64,8 +64,8 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-RetryIntervalSec <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
- [<CommonParameters>]
+ [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-PreserveHttpMethodOnRedirect]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
@@ -74,7 +74,7 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
 Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
  [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
  [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
  [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
  [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
@@ -82,7 +82,7 @@ Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink
  [-RetryIntervalSec <Int32>] -NoProxy [-Body <Object>] [-Form <IDictionary>]
  [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
  [-PassThru] [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect]
- [-SkipHeaderValidation] [<CommonParameters>]
+ [-PreserveHttpMethodOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -302,6 +302,27 @@ Invoke-RestMethod -Uri $uri -HttpVersion 2.0 -SkipCertificateCheck
 
 ## PARAMETERS
 
+### -AllowInsecureRedirect
+
+Allows redirecting from HTTPS to HTTP. By default, any request that is redirected from HTTPS to
+HTTP results in an error and the request is aborted to prevent unintentionally communicating in
+plain text over unencrypted connections. To override this behavior at your own risk, use the
+**AllowInsecureRedirect** parameter.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AllowUnencryptedAuthentication
 
 Allows sending of credentials and secrets over unencrypted connections. By default, supplying
@@ -461,12 +482,15 @@ format, the default encoding format is used instead. An example of a **ContentTy
 encoding format is `text/plain; charset=iso-8859-5`, which specifies the
 [Latin/Cyrillic](https://www.iso.org/standard/28249.html) alphabet.
 
-If this parameter is omitted and the request method is POST, `Invoke-RestMethod` sets the content
-type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in the
-call.
+If this parameter is omitted and the request method is POST or PUT, `Invoke-WebRequest` sets the
+content type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in
+the call.
 
 **ContentType** will be overridden when a `MultipartFormDataContent` object is supplied for
 **Body**.
+
+Starting in PowerShell 7.4, if you use this both this parameter and the **Headers** parameter to
+define the `Content-Type` header, the value specified in the **ContentType** parameter is used.
 
 ```yaml
 Type: System.String
@@ -637,6 +661,9 @@ Specifies the headers of the web request. Enter a hash table or dictionary.
 
 Content related headers, such as `Content-Type` are overridden when a `MultipartFormDataContent`
 object is supplied for **Body**.
+
+Starting in PowerShell 7.4, if you use this parameter to define the `Content-Type` header and use
+**ContentType** parameter, the value specified in the **ContentType** parameter is used.
 
 ```yaml
 Type: System.Collections.IDictionary
@@ -847,6 +874,27 @@ parameter disables this logic for cases where the header needs to be sent to the
 location.
 
 This feature was added in PowerShell 6.0.0.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PreserveHttpMethodOnRedirect
+
+Indicates the cmdlet should preserve the method of the request across redirections.
+
+By default, the cmdlet changes the method to `GET` when redirected. Specifying this parameter
+disables this logic to ensure that the intended method can be used with redirection.
+
+This feature was added in PowerShell 7.4.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

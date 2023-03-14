@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 03/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
@@ -19,14 +19,15 @@ Converts .NET objects into a series of character-separated value (CSV) strings.
 
 ```
 ConvertTo-Csv [-InputObject] <PSObject> [[-Delimiter] <Char>] [-IncludeTypeInformation]
- [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [<CommonParameters>]
+ [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader]
+ [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
 ConvertTo-Csv [-InputObject] <PSObject> [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
- [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [<CommonParameters>]
+ [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -202,8 +203,8 @@ Accept wildcard characters: False
 
 ### -IncludeTypeInformation
 
-When this parameter is used the first line of the output contains **#TYPE** followed by the fully
-qualified name of the object type. For example, **#TYPE System.Diagnostics.Process**.
+When this parameter is used the first line of the output contains `#TYPE` followed by the fully
+qualified name of the object type. For example, `#TYPE System.Diagnostics.Process`.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -214,7 +215,7 @@ Aliases: ITI
 
 Required: False
 Position: Named
-Default value: #TYPE <Object>
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -236,9 +237,28 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
+### -NoHeader
+
+When this parameter is used, the cmdlet doesn't write a header row containing the column names to
+the output.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -NoTypeInformation
 
-Removes the **#TYPE** information header from the output. This parameter became the default in
+Removes the `#TYPE` information header from the output. This parameter became the default in
 PowerShell 6.0 and is included for backwards compatibility.
 
 ```yaml
@@ -248,7 +268,7 @@ Aliases: NTI
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -282,7 +302,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
