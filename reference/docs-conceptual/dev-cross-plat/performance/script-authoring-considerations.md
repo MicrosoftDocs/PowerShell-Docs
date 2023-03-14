@@ -204,6 +204,72 @@ finally
 }
 ```
 
+### Use a HashTable to lookup values or objects
+
+Search value or object in a large list is a quiet common task in PowerShell
+if only for e.g. joining objects.
+Assume a large list of employees, with the properties (columns) `Id` and `Name`:
+
+```PowerShell
+$Employees =
+for ($i = 1; $i -lt 10000; $i++) {
+    [PSCustomObject]@{ Id = $i; Name = "Name$i" }
+}
+```
+
+and another large account list, with properties as the `Name`
+of the employees and `Email` addresses:
+
+```PowerShell
+$Accounts =
+for ($i = 2500; $i -lt 7500; $i++) {
+    [PSCustomObject]@{ Name = "Name$i"; Email = "Name$i@fabrikam.com"  }
+}
+```
+
+(Both lists are ordered, but in the real world them might be unordered as well)
+The obvious approach to make this a this a single list with 3 properties (`Id`, `Name` and `Email`)
+is to lookup the `name` property and compare it with the `name` property in the other list.
+This would require an embedded loop like:
+
+```PowerShell
+$Results =
+foreach ($Employee in $Employees) {
+    foreach ($Account in $Accounts) {
+        $Email = if ($Account.Name -eq $Employee.Name) { $Account.Email }
+            [PSCustomObject]@{
+                Id    = $Employee.Id
+                Name  = $Employee.Name
+                Email = $Email
+            }
+        }
+    }
+}
+```
+
+And takes up to a minute to complete.
+If you use a [hash table](https://learn.microsoft.com/powershell/scripting/learn/deep-dives/everything-about-hashtable)
+(an associative dictionary which uses a hash function to compute an index)  instead,
+it would require just two separate loops:
+
+```PowerShell
+$HashTable = @{}
+foreach ($Account in $Accounts) {
+    $HashTable[$Account.Name] = $Account
+}
+$Results =
+foreach ($Employee in $Employees) {
+    $Email = $HashTable[$Employee.Name].Email
+    [PSCustomObject]@{
+        Id    = $Employee.Id
+        Name  = $Employee.Name
+        Email = $Email
+    }
+}
+```
+
+And it will take far less than a second to complete.
+
 ## Avoid Write-Host
 
 It's generally considered poor practice to write output directly to the console, but when it makes
