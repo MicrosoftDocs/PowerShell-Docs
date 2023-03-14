@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 02/27/2023
+ms.date: 03/14/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -46,6 +46,7 @@ Legend
 | PSCustomTableHeaderLabelDecoration                     |                     |                     | ![Experimental][02] |
 | PSFeedbackProvider                                     |                     |                     | ![Experimental][02] |
 | PSModuleAutoLoadSkipOfflineFiles                       |                     |                     | ![Experimental][02] |
+| PSCommandWithArgs                                      |                     |                     | ![Experimental][02] |
 
 ## PSAMSIMethodInvocationLogging
 
@@ -90,6 +91,29 @@ that the path is correct and try again.
 Suggestion [4,General]: The most similar commands are: set, del, ft, gal, gbp, gc, gci,
 gcm, gdr, gcs.
 ```
+
+## PSCommandWithArgs
+
+This feature enables the `-CommandWithArgs` parameter for `pwsh`. This parameter allows you to
+execute a PowerShell command with arguments. Unlike `-Command`, this parameter populates the `$args`
+built-in variable that can be used by the command.
+
+The first string is the command and subsequent strings delimited by whitespace are the arguments.
+
+For example:
+
+```powershell
+pwsh -CommandWithArgs '$args | % { "arg: $_" }' arg1 arg2
+```
+
+This example produces the following output:
+
+```Output
+arg: arg1
+arg: arg2
+```
+
+This feature was added in PowerShell 7.4-preview.2.
 
 ## PSCustomTableHeaderLabelDecoration
 
