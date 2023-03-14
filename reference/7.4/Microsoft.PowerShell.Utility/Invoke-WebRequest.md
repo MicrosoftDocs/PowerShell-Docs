@@ -27,7 +27,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-Web
  [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
+ [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-PreserveHttpMethodOnRedirect]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
@@ -41,8 +42,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-Web
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
  [-RetryIntervalSec <Int32>] [-Method <WebRequestMethod>] -NoProxy [-Body <Object>] [-Form <IDictionary>]
  [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
- [<CommonParameters>]
+ [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-PreserveHttpMethodOnRedirect]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethod
@@ -57,7 +58,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-Web
  [-RetryIntervalSec <Int32>] -CustomMethod <String> [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
  [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
+ [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-PreserveHttpMethodOnRedirect]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
@@ -71,8 +73,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>] [-Web
  [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
  [-RetryIntervalSec <Int32>] -CustomMethod <String> -NoProxy [-Body <Object>] [-Form <IDictionary>]
  [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru]
- [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-SkipHeaderValidation]
- [<CommonParameters>]
+ [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-PreserveHttpMethodOnRedirect]
+ [-SkipHeaderValidation] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -887,6 +889,27 @@ parameter disables this logic for cases where the header needs to be sent to the
 location.
 
 This feature was added in PowerShell 6.0.0.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PreserveHttpMethodOnRedirect
+
+Indicates the cmdlet should preserve the method of the request across redirections.
+
+By default, the cmdlet changes the method to `GET` when redirected. Specifying this parameter
+disables this logic to ensure that the intended method can be used with redirection.
+
+This feature was added in PowerShell 7.4.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
