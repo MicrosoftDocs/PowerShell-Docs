@@ -717,10 +717,10 @@ The Confirm response options are as follows:
 | ------------------ | --------------------------------------------------- |
 | `Yes` (`Y`)        | Perform the action.                                 |
 | `Yes to All` (`A`) | Perform all actions and suppress subsequent Confirm |
-|                    | queriesfor this command.                            |
+|                    | queries for this command.                            |
 | `No` (`N`):        | Don't perform the action.                           |
 | `No to All` (`L`): | Don't perform any actions and suppress subsequent   |
-|                    | Confirmqueries for this command.                    |
+|                    | Confirm queries for this command.                    |
 | `Suspend` (`S`):   | Pause the command and create a temporary session.   |
 | `Help` (`?`)       | Display help for these options.                     |
 

@@ -196,7 +196,7 @@ or when execution is interrupted with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 This is an experimental feature added in 7.4.0-preview.2.
 
 Executes a PowerShell command with arguments. Unlike `-Command`, this parameter
-populates the `$args built-in variable which can be used by the command.
+populates the `$args` built-in variable which can be used by the command.
 
 The first string is the command and subsequent strings delimited by whitespace
 are the arguments.
