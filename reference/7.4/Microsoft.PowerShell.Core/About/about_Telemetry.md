@@ -47,6 +47,8 @@ PowerShell sends the following information during the session:
 - The count of calls to the `PowerShell.Create()` API
 - The names and versions of Microsoft-owned modules loaded
 - The names of enabled experimental features
+- The names of disabled experimental features
+- Value of `PSNativeCommandUseErrorActionPreference` experimental feature, either `true`, `false` or `unset`
 - The count of remote session open operations
 
 This information is sent periodically during the lifetime of the session. This
