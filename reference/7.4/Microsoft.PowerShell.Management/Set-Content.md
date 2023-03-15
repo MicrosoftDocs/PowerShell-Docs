@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/16/2023
+ms.date: 03/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-content?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Content
@@ -218,6 +218,8 @@ works only in file system drives.
 The acceptable values for this parameter are as follows:
 
 - `ascii`: Uses the encoding for the ASCII (7-bit) character set.
+- `ansi`: Uses the encoding for the for the current culture's ANSI code page. This option was added
+  in PowerShell 7.4.
 - `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
 - `bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.
 - `oem`: Uses the default encoding for MS-DOS and console programs.
@@ -232,6 +234,9 @@ Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric ID
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+
+Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
+the numeric ID for the current culture's ANSI code page without having to specify it manually.
 
 > [!NOTE]
 > **UTF-7*** is no longer recommended to use. As of PowerShell 7.1, a warning is written if you
