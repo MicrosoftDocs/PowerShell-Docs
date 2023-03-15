@@ -115,7 +115,7 @@ PowerShell 7.4 changed the following experimental features:
 - [PSNativeCommandErrorActionPreference][06] - `$PSNativeCommandUseErrorActionPreference` is set to
   `$true` when feature is enabled ([#18695][18695])
 - [PSCommandNotFoundSuggestion][02] - This feature now uses an extensible feedback provider rather
-  than hard-coded suggestions ([#18726)][18726])
+  than hard-coded suggestions ([#18726][18726])
 
 For more information about the Experimental Features, see [Using Experimental Features][01].
 
