@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 03/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -18,31 +18,28 @@ Selects objects or object properties.
 ### DefaultParameter (Default)
 
 ```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>]
- [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-Last <Int32>
- [-First <Int32>] [-Skip <Int32>] [-Wait] [<CommonParameters>]
+Select-Object [[-Property] <Object[]>] [-InputObject <psobject>] [-ExcludeProperty <string[]>]
+ [-ExpandProperty <string>] [-Unique] [-Last <int>] [-First <int>] [-Skip <int>] [-Wait]
+ [<CommonParameters>]
 ```
 
 ### SkipLastParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>]
- [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-SkipLast <Int32>]
- [<CommonParameters>]
+Select-Object [[-Property] <Object[]>] [-InputObject <psobject>] [-ExcludeProperty <string[]>]
+ [-ExpandProperty <string>] [-Unique] [-SkipLast <int>] [<CommonParameters>]
 ```
 
 ### IndexParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>]
- [<CommonParameters>]
+Select-Object [-InputObject <psobject>] [-Unique] [-Wait] [-Index <int[]>] [<CommonParameters>]
 ```
 
 ### SkipIndexParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [-Unique] [-SkipIndex <Int32[]>]
- [<CommonParameters>]
+Select-Object [-InputObject <psobject>] [-Unique] [-SkipIndex <int[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,11 +55,9 @@ properties, `Select-Object` returns new objects that have only the specified pro
 Beginning in Windows PowerShell 3.0, `Select-Object` includes an optimization feature that prevents
 commands from creating and processing objects that aren't used.
 
-When you include a `Select-Object` command with the **First** or **Index** parameters in a command
-pipeline, PowerShell stops the command that generates the objects as soon as the selected number of
-objects is generated, even when the command that generates the objects appears before the
-`Select-Object` command in the pipeline. To turn off this optimizing behavior, use the **Wait**
-parameter.
+When you use `Select-Object` with the **First** or **Index** parameters in a command pipeline,
+PowerShell stops the command that generates the objects as soon as the selected number of objects is
+reached. To turn off this optimizing behavior, use the **Wait** parameter.
 
 ## EXAMPLES
 
@@ -379,7 +374,8 @@ Accept wildcard characters: True
 ### -ExpandProperty
 
 Specifies a property to select, and indicates that an attempt should be made to expand that
-property.
+property. If the input object pipeline doesn't have the property named, `Select-Object` returns an
+error.
 
 - If the specified property is an array, each value of the array is included in the output.
 - If the specified property is an object, the objects properties are expanded for every
@@ -485,7 +481,8 @@ Accept wildcard characters: False
 ### -Property
 
 Specifies the properties to select. These properties are added as **NoteProperty** members to the
-output objects. Wildcards are permitted.
+output objects. Wildcards are permitted. If the input object doesn't have the property named, the
+value of the new **NoteProperty** is set to `$null`.
 
 The value of the **Property** parameter can be a new calculated property. To create a calculated,
 property, use a hash table.
@@ -512,9 +509,9 @@ Accept wildcard characters: True
 
 ### -Skip
 
-Skips (doesn't select) the specified number of items. By default, the **Skip** parameter counts
-from the beginning of the array or list of objects, but if the command uses the **Last** parameter,
-it counts from the end of the list or array.
+Skips (doesn't select) the specified number of items. By default, the **Skip** parameter counts from
+the beginning of the collection of objects. If the command uses the **Last** parameter, it counts
+from the end of the collection.
 
 Unlike the **Index** parameter, which starts counting at 0, the **Skip** parameter begins at 1.
 
