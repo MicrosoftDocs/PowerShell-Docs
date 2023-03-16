@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/26/2023
+ms.date: 03/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -1005,10 +1005,15 @@ When you specify a session variable, `Invoke-RestMethod` creates a web request s
 assigns it to a variable with the specified name in your PowerShell session. You can use the
 variable in your session as soon as the command completes.
 
-Unlike a remote session, the web request session isn't a persistent connection. It's an object that
+Before PowerShell 7.4, the web request session isn't a persistent connection. It's an object that
 contains information about the connection and the request, including cookies, credentials, the
 maximum redirection value, and the user agent string. You can use it to share state and data among
 web requests.
+
+Starting in PowerShell 7.4, the web request session is persistent as long as the properties of the
+session aren't overridden in a subsequent request. When they are, the cmdlet recreates the session
+with the new values. The persistent sessions reduce the overhead for repeated requests, making them
+much faster.
 
 To use the web request session in subsequent web requests, specify the session variable in the value
 of the **WebSession** parameter. PowerShell uses the data in the web request session object when
