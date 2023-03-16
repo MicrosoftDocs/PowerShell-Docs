@@ -16,11 +16,12 @@ to get started.
 New Content
 
 - [Preventing script injection attacks](/powershell/scripting/dev-cross-plat/security/preventing-script-injection)
+  (Thanks [@PaulHigin][PaulHigin])
 
 Content updates
 
 - Major update to
-  [about_PowerShel_ Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config)
+  [about_PowerShell_Config](/powershell/module/microsoft.powershell.core/about/about_powershell_config)
 - Update to
   [about_Logging_Non-Windows](/powershell/module/microsoft.powershell.core/about/about_logging_non-windows)
   for macOS instructions
@@ -29,7 +30,7 @@ Content updates
 
 Quality project updates from the community
 
-- Added alias information to 4 cmdlet articles (Thanks @ehmiiz!)
+- Added alias information to 4 cmdlet articles (Thanks [@ehmiiz][ehmiiz]!)
 
 ### Top Community Contributors
 
@@ -69,8 +70,8 @@ Content updates
 
 Quality project updates from the community
 
-- Added alias information to 40 cmdlet articles (Thanks @ehmiiz!)
-- Added alias information to 52 cmdlet articles (Thanks @szabolevo!)
+- Added alias information to 40 cmdlet articles (Thanks [@ehmiiz][ehmiiz]!)
+- Added alias information to 52 cmdlet articles (Thanks [@szabolevo][szabolevo]!)
 
 ### Top Community Contributors
 
@@ -103,3 +104,6 @@ issues. Thank you!
 
 <!-- Link references -->
 [contrib]: contributing/overview.md
+[ehmiiz]: https://github.com/ehmiiz
+[szabolevo]: https://github.com/szabolevo
+[PaulHigin]: https://github.com/PaulHigin
