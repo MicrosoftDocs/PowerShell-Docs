@@ -24,18 +24,18 @@ Many thanks to [@MartinGC94][02] for all the work on improving tab completion.
 - Fix issue when completing the first command in a script with an empty array expression
   ([[#18355][18355])
 - Fix positional argument completion ([#17796][17796])
+- Prioritize the default parameter set when completing positional arguments ([#18755][18755])
+- Improve pseudo binding for dynamic parameters ([#18030][18030])
 - Improve type inference of hashtable keys ([#17907][17907])
 - Fix type inference error for empty return statements ([#18351][18351])
-- Improve enumeration of inferred types in pipeline ([#17799][17799])
-- Fix member completion in attribute argument ([#17902][17902])
-- Improve pseudo binding for dynamic parameters ([#18030][18030])
-- Add completion for values in comparisons when comparing Enums ([#17654][17654])
-- Fix completion for PSCustomObject variable properties ([#18682][18682])
 - Improve type inference for Get-Random ([#18972][18972])
-- Add property assignment completion for enums ([#19178][19178])
-- Fix class member completion for classes with base types ([#19179][19179])
-- Prioritize the default parameter set when completing positional arguments ([#18755][18755])
 - Fix type inference for all scope variables ([#18758][18758])
+- Improve enumeration of inferred types in pipeline ([#17799][17799])
+- Add completion for values in comparisons when comparing Enums ([#17654][17654])
+- Add property assignment completion for enums ([#19178][19178])
+- Fix completion for PSCustomObject variable properties ([#18682][18682])
+- Fix member completion in attribute argument ([#17902][17902])
+- Fix class member completion for classes with base types ([#19179][19179])
 - Add completion for Using keywords ([#16514][18758])
 
 ## Cmdlet and engine improvements
@@ -68,16 +68,18 @@ Update to Web cmdlets - Many thanks to [@CarloToso][03] for all the work on impr
 
 Other cmdlets
 
-- `Update-Help` now reports an error when using implicit culture on non-US systems.
-  ([#17780][17780]) (Thanks @dkaszews!)
+- Add **Path** and **LiteralPath** parameters to `Test-Json` cmdlet ([#19042][19042]) (Thanks
+  @ArmaanMcleod!)
+- Add **NoHeader** parameter to `ConvertTo-Csv` and `Export-Csv` cmdlets ([#19108][19108]) (Thanks
+  @ArmaanMcleod!)
 - Add **Confirm** and **WhatIf** parameters to `Stop-Transcript`([#18731][18731]) (Thanks
   @JohnLBevan!)
 - Add **FuzzyMinimumDistance** parameter to `Get-Command` ([#18261][18261])
-- Make -Encoding parameter able to take ANSI encoding in PowerShell ([#19298][19298]) (Thanks
+- Make **Encoding** parameter able to take `ANSI` encoding in PowerShell ([#19298][19298]) (Thanks
   @CarloToso!)
-- Add -Path and -LiteralPath parameters to Test-Json cmdlet ([#19042][19042]) (Thanks @ArmaanMcleod!)
-- Add -NoHeader parameter to ConvertTo-Csv and Export-Csv cmdlets ([#19108][19108]) (Thanks @ArmaanMcleod!)
-- Add progress to Copy-Item ([#18735][18735])
+- Add progress to `Copy-Item` ([#18735][18735])
+- `Update-Help` now reports an error when using implicit culture on non-US systems.
+  ([#17780][17780]) (Thanks @dkaszews!)
 
 Updates to `$PSStyle`
 
