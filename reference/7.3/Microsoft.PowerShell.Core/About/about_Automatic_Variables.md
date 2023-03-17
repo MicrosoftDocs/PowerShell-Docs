@@ -301,8 +301,7 @@ invoked, such as the name of the script that called the current command.
 
 `$MyInvocation` is populated only for scripts, function, and script blocks. You
 can use the information in the **System.Management.Automation.InvocationInfo**
-object that `$MyInvocation` returns in the current script, such as the path and
-filename of the script (`$MyInvocation.MyCommand.Path`) or the name of a
+object that `$MyInvocation` returns in the current script, such as the name of a
 function (`$MyInvocation.MyCommand.Name`) to identify the current command. This
 is useful for finding the name of the current script.
 
