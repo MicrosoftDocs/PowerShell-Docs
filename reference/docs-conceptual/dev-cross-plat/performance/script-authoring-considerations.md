@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 01/13/2023
+ms.date: 03/17/2023
 title: PowerShell scripting performance considerations
 ---
 
@@ -204,63 +204,71 @@ finally
 }
 ```
 
-### Use a HashTable to lookup values or objects
+### Looking up entries by property in large collections
 
-Search value or object in a large list is a quiet common task in PowerShell
-if only for e.g. joining objects.
-Assume a large list of employees, with the properties (columns) `Id` and `Name`:
+It's common to need to use a shared property to identify the same record in different collections,
+like a user name from to retrieve an ID from one list and an email from another. Iterating over the
+first list to find the matching record in the second collection is slow. In particular, the
+repeated filtering of the second collection has a large overhead.
+
+Given two collections, one with an **ID** and **Name**, the other with **Name** and **Email:
 
 ```PowerShell
-$Employees =
-for ($i = 1; $i -lt 10000; $i++) {
-    [PSCustomObject]@{ Id = $i; Name = "Name$i" }
+$Employees = 1..10000 | ForEach-Object {
+    [PSCustomObject]@{
+        Id   = $_
+        Name = "Name$_"
+    }
 }
-```
 
-and another large account list, with properties as the `Name`
-of the employees and `Email` addresses:
-
-```PowerShell
-$Accounts =
-for ($i = 2500; $i -lt 7500; $i++) {
-    [PSCustomObject]@{ Name = "Name$i"; Email = "Name$i@fabrikam.com"  }
-}
-```
-
-(Both lists are ordered, but in the real world them might be unordered as well)
-The obvious approach to make this a this a single list with 3 properties (`Id`, `Name` and `Email`)
-is to lookup the `name` property and compare it with the `name` property in the other list.
-This would require an embedded loop like:
-
-```PowerShell
-$Results =
-foreach ($Employee in $Employees) {
-    foreach ($Account in $Accounts) {
-        $Email = if ($Account.Name -eq $Employee.Name) { $Account.Email }
-            [PSCustomObject]@{
-                Id    = $Employee.Id
-                Name  = $Employee.Name
-                Email = $Email
-            }
-        }
+$Accounts = 2500..7500 | ForEach-Object {
+    [PSCustomObject]@{
+        Name = "Name$_"
+        Email = "Name$_@fabrikam.com"
     }
 }
 ```
 
-And takes up to a minute to complete.
-If you use a [hash table](https://learn.microsoft.com/powershell/scripting/learn/deep-dives/everything-about-hashtable)
-(an associative dictionary which uses a hash function to compute an index)  instead,
-it would require just two separate loops:
+The usual way to reconcile these collections to return a list of objects with the **ID**, **Name**,
+and **Email** properties might look like this:
 
 ```PowerShell
-$HashTable = @{}
-foreach ($Account in $Accounts) {
-    $HashTable[$Account.Name] = $Account
+$Results = $Employees | ForEach-Object -Process {
+    $Employee = $_
+
+    $Account = $Accounts | Where-Object -FilterScript {
+        $_.Name -eq $Employee.Name
+    }
+
+    [pscustomobject]@{
+        Id    = $Employee.Id
+        Name  = $Employee.Name
+        Email = $Account.Email
+    }
 }
-$Results =
-foreach ($Employee in $Employees) {
+```
+
+However, that implementation has to filter all 5000 items in the `$Accounts` collection once for
+every item in the `$Employee` collection. That can take minutes, even for this single-value lookup.
+
+Instead, you can make a [hash table][02] that uses the shared **Name** property as a key and the
+matching account as the value.
+
+```powershell
+$LookupHash = @{}
+foreach ($Account in $Accounts) {
+    $LookupHash[$Account.Name] = $Account
+}
+```
+
+Looking up keys in a hash table is much faster than filtering a collection by property values.
+Instead of checking every item in the collection, PowerShell can check if the key is defined and
+use its value.
+
+```powershell
+$Results = $Employees | ForEach-Object -Process {
     $Email = $HashTable[$Employee.Name].Email
-    [PSCustomObject]@{
+    [pscustomobject]@{
         Id    = $Employee.Id
         Name  = $Employee.Name
         Email = $Email
@@ -268,7 +276,8 @@ foreach ($Employee in $Employees) {
 }
 ```
 
-And it will take far less than a second to complete.
+This is much faster. While the looping filter took minutes to complete, the hash lookup takes less
+than a second.
 
 ## Avoid Write-Host
 
@@ -393,5 +402,6 @@ Unwrapped = 42.92 ms
 The unwrapped example is 372 times faster. Also, notice that the first implementation requires the
 **Append** parameter, which isn't required for the later implementation.
 
-<!-- updated link references -->
+<!-- Link reference definitions -->
 [01]: /powershell/module/Microsoft.PowerShell.Utility/Write-Output
+[02]: /powershell/scripting/learn/deep-dives/everything-about-hashtable
