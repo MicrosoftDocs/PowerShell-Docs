@@ -207,13 +207,13 @@ finally
 ### Looking up entries by property in large collections
 
 It's common to need to use a shared property to identify the same record in different collections,
-like a user name from to retrieve an ID from one list and an email from another. Iterating over the
+like using a name to retrieve an ID from one list and an email from another. Iterating over the
 first list to find the matching record in the second collection is slow. In particular, the
 repeated filtering of the second collection has a large overhead.
 
-Given two collections, one with an **ID** and **Name**, the other with **Name** and **Email:
+Given two collections, one with an **ID** and **Name**, the other with **Name** and **Email**:
 
-```PowerShell
+```powershell
 $Employees = 1..10000 | ForEach-Object {
     [PSCustomObject]@{
         Id   = $_
@@ -232,7 +232,7 @@ $Accounts = 2500..7500 | ForEach-Object {
 The usual way to reconcile these collections to return a list of objects with the **ID**, **Name**,
 and **Email** properties might look like this:
 
-```PowerShell
+```powershell
 $Results = $Employees | ForEach-Object -Process {
     $Employee = $_
 
