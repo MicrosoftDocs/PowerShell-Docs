@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 01/13/2023
+ms.date: 03/17/2023
 title: PowerShell scripting performance considerations
 ---
 
@@ -204,6 +204,81 @@ finally
 }
 ```
 
+### Looking up entries by property in large collections
+
+It's common to need to use a shared property to identify the same record in different collections,
+like using a name to retrieve an ID from one list and an email from another. Iterating over the
+first list to find the matching record in the second collection is slow. In particular, the
+repeated filtering of the second collection has a large overhead.
+
+Given two collections, one with an **ID** and **Name**, the other with **Name** and **Email**:
+
+```powershell
+$Employees = 1..10000 | ForEach-Object {
+    [PSCustomObject]@{
+        Id   = $_
+        Name = "Name$_"
+    }
+}
+
+$Accounts = 2500..7500 | ForEach-Object {
+    [PSCustomObject]@{
+        Name = "Name$_"
+        Email = "Name$_@fabrikam.com"
+    }
+}
+```
+
+The usual way to reconcile these collections to return a list of objects with the **ID**, **Name**,
+and **Email** properties might look like this:
+
+```powershell
+$Results = $Employees | ForEach-Object -Process {
+    $Employee = $_
+
+    $Account = $Accounts | Where-Object -FilterScript {
+        $_.Name -eq $Employee.Name
+    }
+
+    [pscustomobject]@{
+        Id    = $Employee.Id
+        Name  = $Employee.Name
+        Email = $Account.Email
+    }
+}
+```
+
+However, that implementation has to filter all 5000 items in the `$Accounts` collection once for
+every item in the `$Employee` collection. That can take minutes, even for this single-value lookup.
+
+Instead, you can make a [hash table][02] that uses the shared **Name** property as a key and the
+matching account as the value.
+
+```powershell
+$LookupHash = @{}
+foreach ($Account in $Accounts) {
+    $LookupHash[$Account.Name] = $Account
+}
+```
+
+Looking up keys in a hash table is much faster than filtering a collection by property values.
+Instead of checking every item in the collection, PowerShell can check if the key is defined and
+use its value.
+
+```powershell
+$Results = $Employees | ForEach-Object -Process {
+    $Email = $HashTable[$Employee.Name].Email
+    [pscustomobject]@{
+        Id    = $Employee.Id
+        Name  = $Employee.Name
+        Email = $Email
+    }
+}
+```
+
+This is much faster. While the looping filter took minutes to complete, the hash lookup takes less
+than a second.
+
 ## Avoid Write-Host
 
 It's generally considered poor practice to write output directly to the console, but when it makes
@@ -327,5 +402,6 @@ Unwrapped = 42.92 ms
 The unwrapped example is 372 times faster. Also, notice that the first implementation requires the
 **Append** parameter, which isn't required for the later implementation.
 
-<!-- updated link references -->
+<!-- Link reference definitions -->
 [01]: /powershell/module/Microsoft.PowerShell.Utility/Write-Output
+[02]: /powershell/scripting/learn/deep-dives/everything-about-hashtable
