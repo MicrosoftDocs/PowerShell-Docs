@@ -5,10 +5,9 @@ title: Working with software installations
 ---
 # Working with software installations
 
-Applications that are install using the Windows Installer can be found through WMI's queries, but
-not all applications in use today use the Windows Installer. Applications that use alternate setup
-routines aren't usually managed by the Windows Installer. The specific techniques for working with
-those applications depends on the installer software.
+Applications installed with the Windows Installer can be found through WMI's queries, but not all
+applications use the Windows Installer. The specific techniques for find applications installed
+with other tools depends on the installer software.
 
 For example, applications installed by copying the files to a folder on the computer usually can't
 be managed using techniques discussed here. You can manage these applications as files and folders
@@ -52,7 +51,7 @@ $UninstallPath = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall'
 We can search this list of applications further using a variety of techniques. To display the values
 of the registry values in the registry keys under `Uninstall`, use the `GetValue()` method of the
 registry keys. The value of the method is the name of the registry entry. For example, to find the
-display names of applications in the Uninstall key, use the following command:
+display names of applications in the `Uninstall` key, use the following command:
 
 ```powershell
 Get-ChildItem -Path $UninstallPath |
