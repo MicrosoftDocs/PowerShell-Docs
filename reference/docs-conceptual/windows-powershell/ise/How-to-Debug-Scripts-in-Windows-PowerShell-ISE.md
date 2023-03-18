@@ -251,7 +251,7 @@ display its value.
 
 ```powershell
 # In C:\ps-test\MyScript.ps1
-$scriptName = $MyInvocation.MyCommand.Path
+$scriptName = $MyInvocation.PSCommandPath
 ```
 
 ```PowerShell

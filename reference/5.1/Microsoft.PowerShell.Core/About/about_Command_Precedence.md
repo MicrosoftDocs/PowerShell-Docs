@@ -9,6 +9,7 @@ title: about Command Precedence
 # about_Command_Precedence
 
 ## Short description
+
 Describes how PowerShell determines which command to run.
 
 ## Long description
@@ -51,7 +52,7 @@ For example, to run the FindDocs.ps1 file in the current directory, type:
 ### Using wildcards in execution
 
 You may use wildcards in command execution. Using wildcard characters is
-also known as *globbing*.
+also known as _globbing_.
 
 PowerShell executes a file that has a wildcard match, before a literal match.
 
@@ -70,7 +71,7 @@ Mode                LastWriteTime         Length Name
 -a----        5/20/2019   2:29 PM             28 [a1].ps1
 ```
 
-Both script files have the same content: `$MyInvocation.MyCommand.Path`.
+Both script files have the same content: `$MyInvocation.PSCommandPath`.
 This command displays the name of the script that is invoked.
 
 When you run `[a1].ps1`, the file `a.ps1` is executed even though the file
@@ -111,9 +112,9 @@ If you do not specify a path, PowerShell uses the following precedence order
 when it runs commands for all items loaded in the current session:
 
 1. Alias
-2. Function
-3. Cmdlet
-4. External executable files (programs and non-PowerShell scripts)
+1. Function
+1. Cmdlet
+1. External executable files (programs and non-PowerShell scripts)
 
 Therefore, if you type "help", PowerShell first looks for an alias named
 `help`, then a function named `Help`, and finally a cmdlet named `Help`. It
