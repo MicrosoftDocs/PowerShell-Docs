@@ -216,7 +216,7 @@ and non-Windows platforms is `Standard`.
 
 > [!NOTE]
 > The following examples use the `TestExe.exe` tool. You can build `TestExe` from the source code.
-> See [TestExe][06] in the PowerShell source repository.
+> See [TestExe](https://github.com/PowerShell/PowerShell/tree/master/test/tools/TestExe) in the PowerShell source repository.
 
 New behaviors made available by this change:
 
