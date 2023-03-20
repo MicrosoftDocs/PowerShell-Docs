@@ -9,6 +9,7 @@ title: about Debuggers
 # about_Debuggers
 
 ## Short description
+
 Describes the PowerShell debugger.
 
 ## Long description
@@ -156,7 +157,7 @@ In the example in this topic, the value of the `$MyInvocation` variable is
 reassigned as follows:
 
 ```powershell
-$scriptname = $MyInvocation.MyCommand.Path
+$scriptname = $MyInvocation.PSCommandPath
 ```
 
 ## The Debugger Environment
@@ -381,7 +382,7 @@ function psversion {
   }
 }
 
-$scriptName = $MyInvocation.MyCommand.Path
+$scriptName = $MyInvocation.PSCommandPath
 psversion
 "Done $scriptName."
 ```
@@ -446,7 +447,7 @@ and file name of the script file.
 
 ```powershell
 DBG> s
-test.ps1:11  $scriptName = $MyInvocation.MyCommand.Path
+test.ps1:11  $scriptName = $MyInvocation.PSCommandPath
 ```
 
 At this point, the `$scriptName` variable is not populated, but you can verify
@@ -552,7 +553,7 @@ PS C:\ps-test> .\test.ps1
 Hit Variable breakpoint on 'C:\ps-test\test.ps1:$scriptName'
 (Write access)
 
-test.ps1:11  $scriptName = $MyInvocation.MyCommand.Path
+test.ps1:11  $scriptName = $MyInvocation.PSCommandPath
 # DBG>
 ```
 
