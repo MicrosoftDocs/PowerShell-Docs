@@ -56,9 +56,9 @@ in this article.
 The Certificate drive exposes the following types.
 
 - Store locations (**Microsoft.PowerShell.Commands.X509StoreLocation**), which
-  are high-level containers that group the certificates for the current user and
-  for all users. Each system has a `CurrentUser` and `LocalMachine` (all users)
-  store location.
+  are high-level containers that group the certificates for the current user,
+  for all users, and for all services. Each system has a `CurrentUser`,
+  `LocalMachine` (all users), and `Service` (all services) store location.
 - Certificates stores
   (**System.Security.Cryptography.X509Certificates.X509Store**), which are
   physical stores in which certificates are saved and managed.
@@ -192,6 +192,32 @@ Get-ChildItem -Path cert:\* -Recurse -DNSName "*fabrikam*" `
                                      $_.NotAfter -gt $ValidThrough
                                    }
 ```
+
+## Service Certificate Location
+
+PowerShell 7.4 introduced the ability to manage certificate stores for an
+installed Windows service. Unlike the `CurrentUser` and `LocalMachine` store
+locations, the `Service` location must include the service name in the path.
+Unlike the `CurrentUser` and `LocalMachine`, the path includes an extra element
+being the service name, e.g.
+`cert:\Service\$ServiceName\$StoreName\$Thumbprint`.
+
+This command finds all certificates in the `NTDS\My` store.
+
+```powershell
+Get-Item -Path cert:\Service\NTDS\My\*
+```
+
+### Finding all service stores
+
+This command displays all the service store locations that have been created on
+the host
+
+```powershell
+(Get-Item -Path cert:\Service).StoreNames.Keys
+```
+
+A service store must exist before it can be used and enumerated in PowerShell.
 
 ## Opening the Certificates MMC Snap-in
 
@@ -358,6 +384,14 @@ This command creates a new certificate store named `CustomStore` in the
 
 ```powershell
 New-Item -Path cert:\LocalMachine\CustomStore
+```
+
+The same syntax can be used to create a certificate store for a service. This
+command creates a new certificate store named `CustomStore` in the `WinRM`
+service location.
+
+```powershell
+New-Item -Path cert:\Service\WinRM\CustomStore
 ```
 
 ### Create a new certificate store on a remote computer
