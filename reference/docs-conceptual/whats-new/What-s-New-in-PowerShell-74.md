@@ -1,12 +1,14 @@
 ---
 title: What's New in PowerShell 7.4 (preview)
 description: New features and changes released in PowerShell 7.4 (preview)
-ms.date: 01/20/2023
+ms.date: 03/21/2023
 ---
 
 # What's New in PowerShell 7.4 (preview)
 
-PowerShell 7.4-preview.2 includes the following features, updates, and breaking changes.
+PowerShell 7.4-preview.2 includes the following features, updates, and breaking changes. PowerShell
+7.4 is now built on .NET 8.0.0-preview.2.
+
 
 For a complete list of changes, see the [Change Log][01] in the GitHub repository.
 
@@ -16,6 +18,11 @@ For a complete list of changes, see the [Change Log][01] in the GitHub repositor
 - Add the **ProgressAction** parameter to the common parameters
 - Update some PowerShell APIs to throw **ArgumentException** instead of **ArgumentNullException**
   when the argument is an empty string ([#19215][19215]) (Thanks @xtqqczze!)
+
+## Installer updates
+
+The Windows MSI package now provides an option to disable PowerShell telemetry during installation.
+For more information, see [Install the msi package from the command line][11].
 
 ## Tab completion improvements
 
@@ -133,6 +140,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [08]: ../learn/experimental-features.md#psnativecommanderroractionpreference
 [09]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
 [10]: ../learn/experimental-features.md
+[11]: ../install/installing-powershell-on-windows.md
 [17191]: https://github.com/PowerShell/PowerShell/pull/17191
 [17654]: https://github.com/PowerShell/PowerShell/pull/17654
 [17780]: https://github.com/PowerShell/PowerShell/pull/17780

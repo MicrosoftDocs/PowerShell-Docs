@@ -24,7 +24,7 @@ jobs:
         run: |
           $Check = "${{ contains(github.event.pull_request.title, 'Quality:') }}"
           "Check: $Check"
-          "::set-output name=check::$Check"
+          "check=$Check" >> $env:GITHUB_OUTPUT
 
   project:
     name: Add pull request to project

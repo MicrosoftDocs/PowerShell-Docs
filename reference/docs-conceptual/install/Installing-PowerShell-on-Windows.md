@@ -132,6 +132,8 @@ installation options:
   Logging manifest.
 - `ADD_PATH` - This property controls the option for adding PowerShell to the Windows PATH
   environment variable.
+- `DISABLE_TELEMETRY` - This property controls the option for disabling PowerShell's telemetry by
+  setting the `POWERSHELL_TELEMETRY_OPTOUT` environment variable.
 
 The following example shows how to silently install PowerShell with all the install options enabled.
 

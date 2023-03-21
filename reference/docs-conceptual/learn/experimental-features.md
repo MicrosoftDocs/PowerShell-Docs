@@ -216,7 +216,7 @@ and non-Windows platforms is `Standard`.
 
 > [!NOTE]
 > The following examples use the `TestExe.exe` tool. You can build `TestExe` from the source code.
-> See [TestExe][06] in the PowerShell source repository.
+> See [TestExe][14] in the PowerShell source repository.
 
 New behaviors made available by this change:
 
@@ -329,3 +329,4 @@ on the system.
 [11]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
 [12]: xref:Microsoft.PowerShell.Management.Start-Process
 [13]: xref:Microsoft.PowerShell.Utility.Trace-Command
+[14]: https://github.com/PowerShell/PowerShell/tree/master/test/tools/TestExe
