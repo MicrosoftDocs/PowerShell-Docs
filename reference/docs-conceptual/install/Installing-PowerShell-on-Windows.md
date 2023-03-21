@@ -3,6 +3,7 @@ description: Information about installing PowerShell on Windows
 ms.date: 01/09/2023
 title: Installing PowerShell on Windows
 ---
+
 # Installing PowerShell on Windows
 
 There are multiple ways to install PowerShell in Windows. Each install method is designed to support
@@ -13,7 +14,7 @@ different scenarios and workflows. Choose the method that best suits your needs.
 - [ZIP package][20] - Easiest way to "side load" or install multiple versions
   - Use this method for Windows Nano Server, Windows IoT, and Arm-based systems
 - [.NET Global tool][15] - A good choice for .NET developers that install and use other global tools
-- [Microsoft Store package][17] - An easy way to install for casual users of PowerShell but has
+- - [Microsoft Store package][17] - An easy way to install for casual users of PowerShell but has
   limitations
 
 > [!NOTE]
@@ -44,8 +45,9 @@ The following commands can be used to install PowerShell using the published `wi
 
 Search for the latest version of PowerShell
 
+
 ```powershell
-winget search Microsoft.PowerShell
+winget search Microsoft.PS
 ```
 
 ```Output
@@ -56,6 +58,7 @@ PowerShell Preview Microsoft.PowerShell.Preview 7.4.1.0 winget
 ```
 
 Install PowerShell or PowerShell Preview using the `id` parameter
+
 
 ```powershell
 winget install --id Microsoft.Powershell --source winget
@@ -96,15 +99,16 @@ The installer creates a shortcut in the Windows Start Menu.
 ### Support for Microsoft Update in PowerShell 7.2 and newer
 
 PowerShell 7.2 and newer has support for Microsoft Update. When you enable this feature, you'll get
-the latest PowerShell 7 updates in your traditional Microsoft Update (MU) management flow, whether
+the latest PowerShell 7 updates in your traditional [Microsoft Update (MU) management](https://https://learn.microsoft.com/azure/update-center/overview) flow, whether
+
 that's with Windows Update for Business, WSUS, Microsoft Endpoint Configuration Manager, or the
 interactive MU dialog in Settings.
 
 The PowerShell 7.3 MSI package includes following command-line options:
 
-- `USE_MU` - This property has two possible values:
-  - `1` (default) - Opts into updating through Microsoft Update, WSUS, or Configuration Manager
-  - `0` -  Don't opt into updating through Microsoft Update, WSUS, or Configuration Manager
+- - `USE_MU` - This property has two possible values:
+   -   - `1` (default) - Opts into updating through Microsoft Update, WSUS, or Configuration Manager
+   -   - `0` -  Don't opt into updating through Microsoft Update, WSUS, or Configuration Manager
 - `ENABLE_MU`
   - `1` (default) - Opts into using Microsoft Update for Automatic Updates
   - `0` - Don't opt into using Microsoft Update
@@ -366,30 +370,59 @@ can't support those methods.
 
 <!-- link references -->
 [02]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+
 [03]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
+
 [04]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
+
 [05]: /dotnet/core/sdk
+
 [06]: /dotnet/core/tools/global-tools
+
 [10]: /powershell/scripting/wmf/overview
+
 [11]: /windows-server/get-started/deploy-nano-server
+
 [12]: /windows/desktop/Msi/command-line-options
+
 [13]: /windows/msix/desktop/desktop-to-uwp-behind-the-scenes
+
 [14]: /windows/package-manager/winget
+
 [15]: #dotnet
+
 [16]: #msi
+
 [17]: #msstore
+
 [18]: #powershell-remoting
+
 [19]: #winget
+
 [20]: #zip
+
 [21]: https://aka.ms/powershell-release?tag=lts
+
 [22]: https://aka.ms/powershell-release?tag=preview
+
 [23]: https://aka.ms/powershell-release?tag=stable
+
 [24]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
+
 [27]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-arm64.zip
+
 [28]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.msi
+
 [29]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x64.zip
+
 [30]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x86.msi
+
 [31]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/PowerShell-7.3.3-win-x86.zip
+
 [32]: https://www.microsoft.com/download/details.aspx?id=50410
+
 [33]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
+
 [34]: microsoft-update-faq.yml
+
+
