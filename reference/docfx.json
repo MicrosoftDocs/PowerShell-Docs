@@ -41,7 +41,7 @@
         "docs-conceptual/dsc/**/**.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332",
         "docs-conceptual/gallery/**/**.md": "https://github.com/powershell/powershellgallery/issues/new",
         "docs-conceptual/learn/remoting/jea/**.md": "https://github.com/powershell/jea/issues/new",
-        "docs-conceptual/windows-powershell/wmf/**/**.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332"
+        "docs-conceptual/windows-powershell/**.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332"
       },
       "manager": {
         "**/**": "mkluck"
