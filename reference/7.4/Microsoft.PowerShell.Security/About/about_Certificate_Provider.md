@@ -199,7 +199,7 @@ PowerShell 7.4 introduced the ability to manage certificate stores for an
 installed Windows service. Unlike the `CurrentUser` and `LocalMachine` store
 locations, the `Service` location must include the service name in the path.
 Unlike the `CurrentUser` and `LocalMachine`, the path includes an extra element
-being the service name, e.g.
+being the service name, like
 `cert:\Service\$ServiceName\$StoreName\$Thumbprint`.
 
 This command finds all certificates in the `NTDS\My` store.
@@ -211,7 +211,7 @@ Get-Item -Path cert:\Service\NTDS\My\*
 ### Finding all service stores
 
 This command displays all the service store locations that have been created on
-the host
+the host.
 
 ```powershell
 (Get-Item -Path cert:\Service).StoreNames.Keys
@@ -386,7 +386,7 @@ This command creates a new certificate store named `CustomStore` in the
 New-Item -Path cert:\LocalMachine\CustomStore
 ```
 
-The same syntax can be used to create a certificate store for a service. This
+You can use the same syntax to create a certificate store for a service. This
 command creates a new certificate store named `CustomStore` in the `WinRM`
 service location.
 
