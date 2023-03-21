@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 03/17/2023
+ms.date: 03/21/2023
 title: PowerShell scripting performance considerations
 ---
 
@@ -267,10 +267,10 @@ use its value.
 
 ```powershell
 $Results = $Employees | ForEach-Object -Process {
-    $Email = $HashTable[$Employee.Name].Email
+    $Email = $LookupHash[$_.Name].Email
     [pscustomobject]@{
-        Id    = $Employee.Id
-        Name  = $Employee.Name
+        Id    = $_.Id
+        Name  = $_.Name
         Email = $Email
     }
 }
