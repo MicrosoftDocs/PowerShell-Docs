@@ -21,7 +21,7 @@ For a complete list of changes, see the [Change Log][01] in the GitHub repositor
 
 ## Installer updates
 
-The Windows MSI package no provides an option to disable PowerShell telemetry during installation.
+The Windows MSI package now provides an option to disable PowerShell telemetry during installation.
 For more information, see [Install the msi package from the command line][11].
 
 ## Tab completion improvements
