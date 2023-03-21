@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 03/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSRoleCapabilityFile
@@ -16,12 +16,12 @@ Creates a file that defines a set of capabilities to be exposed through a sessio
 
 ```
 New-PSRoleCapabilityFile [-Path] <String> [-Guid <Guid>] [-Author <String>] [-Description <String>]
- [-CompanyName <String>] [-Copyright <String>] [-ModulesToImport <Object[]>] [-VisibleAliases <String[]>]
- [-VisibleCmdlets <Object[]>] [-VisibleFunctions <Object[]>] [-VisibleExternalCommands <String[]>]
- [-VisibleProviders <String[]>] [-ScriptsToProcess <String[]>] [-AliasDefinitions <IDictionary[]>]
- [-FunctionDefinitions <IDictionary[]>] [-VariableDefinitions <Object>] [-EnvironmentVariables <IDictionary>]
- [-TypesToProcess <String[]>] [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>]
- [<CommonParameters>]
+ [-CompanyName <String>] [-Copyright <String>] [-ModulesToImport <Object[]>]
+ [-VisibleAliases <String[]>] [-VisibleCmdlets <Object[]>] [-VisibleFunctions <Object[]>]
+ [-VisibleExternalCommands <String[]>] [-VisibleProviders <String[]>] [-ScriptsToProcess <String[]>]
+ [-AliasDefinitions <IDictionary[]>] [-FunctionDefinitions <IDictionary[]>]
+ [-VariableDefinitions <Object>] [-EnvironmentVariables <IDictionary>] [-TypesToProcess <String[]>]
+ [-FormatsToProcess <String[]>] [-AssembliesToLoad <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,10 +33,10 @@ that contains a hash table of session configuration properties and values. The f
 name extension, and can be used by more than one session configuration.
 
 All the parameters of `New-PSRoleCapabilityFile` are optional except for the **Path** parameter,
-which specifies the file path for the file. If you do not include a parameter when you run the
-cmdlet, the corresponding key in the session configuration file is commented-out, except where
-noted in the parameter description. For example, if you do not include the **AssembliesToLoad**
-parameter then that section of the session configuration file is commented out.
+which specifies the path for the file. If you don't include a parameter when you run the cmdlet, the
+corresponding key in the session configuration file is commented-out, except where noted in the
+parameter description. For example, if you don't include the **AssembliesToLoad** parameter then
+that section of the session configuration file is commented out.
 
 To use the role capability file in a session configuration, first place the file in a
 **RoleCapabilities** subfolder of a valid PowerShell module folder. Then reference the file by name
@@ -155,7 +155,7 @@ Accept wildcard characters: False
 ### -Copyright
 
 Specifies a copyright for the role capability file. If you omit this parameter,
-`New-PSRoleCapabilityFile` generates a copyright statement by using the value of the **Author**
+`New-PSRoleCapabilityFile` generates a copyright statement using the value of the **Author**
 parameter.
 
 ```yaml
@@ -208,8 +208,8 @@ Accept wildcard characters: False
 
 ### -FormatsToProcess
 
-Specifies the formatting files (.ps1xml) that run in sessions that use the role capability file. The
-value of this parameter must be a full or absolute path of the formatting files.
+Specifies the formatting files (`.ps1xml`) that run in sessions that use the role capability file.
+The value of this parameter must be a full or absolute path of the formatting files.
 
 ```yaml
 Type: System.String[]
@@ -252,8 +252,8 @@ Accept wildcard characters: False
 ### -Guid
 
 Specifies a unique identifier for the role capability file. If you omit this parameter,
-`New-PSRoleCapabilityFile` generates a GUID for the file. To create a new GUID in PowerShell,
-type `[guid]::NewGuid()`.
+`New-PSRoleCapabilityFile` generates a GUID for the file. To create a new GUID in PowerShell, type
+`[guid]::NewGuid()`.
 
 ```yaml
 Type: System.Guid
@@ -270,9 +270,8 @@ Accept wildcard characters: False
 ### -ModulesToImport
 
 Specifies the modules that are automatically imported into sessions that use the role capability
-file. By default, all the commands in listed modules are visible. When used with
-**VisibleCmdlets** or **VisibleFunctions**, the commands visible from the specified modules can be
-restricted.
+file. By default, all the commands in listed modules are visible. When used with **VisibleCmdlets**
+or **VisibleFunctions**, the commands visible from the specified modules can be restricted.
 
 Each module used in the value of this parameter can be represented by a string or by a hash table. A
 module string consists only of the name of the module. A module hash table can include
@@ -332,8 +331,8 @@ Accept wildcard characters: False
 
 ### -TypesToProcess
 
-Specifies type files (.ps1xml) to add to sessions that use the role capability file. Enter the type
-filenames. The value of this parameter must be a full or absolute path of the type filenames.
+Specifies type files (`.ps1xml`) to add to sessions that use the role capability file. Enter the
+type filenames. The value of this parameter must be a full or absolute path of the type filenames.
 
 ```yaml
 Type: System.String[]
@@ -354,10 +353,8 @@ the following keys:
 
 - Name. Name of the variable. This key is required.
 - Value. Variable value. This key is required.
-- Options. Variable options. This key is optional. The default value is None. The acceptable values
-  for this parameter are: are None, ReadOnly, Constant, Private, or AllScope.
 
-For example: `@{Name="WarningPreference";Value="SilentlyContinue";Options="AllScope"}`
+For example: `@{Name="WarningPreference";Value="SilentlyContinue"}`
 
 ```yaml
 Type: System.Object
@@ -496,7 +493,8 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
