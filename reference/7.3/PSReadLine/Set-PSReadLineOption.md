@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 12/13/2022
+ms.date: 03/24/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -148,8 +148,17 @@ For more information, see
 
 Specifies a **ScriptBlock** that controls which commands get added to **PSReadLine** history.
 
-The **ScriptBlock** receives the command line as input. If the **ScriptBlock** returns `$True`, the
-command line is added to the history.
+The **ScriptBlock** receives the command line as input.
+
+The output of the **ScripBlock** may be a member of the **AddToHistoryOption** enum, the string
+name of one of those members, or a boolean value. The list below describes the possible values and
+their effect.
+
+- `MemoryAndFile` - Add the command to the history file and the current session.
+- `MemoryOnly` - Add the command to history for the current session only.
+- `SkipAdding` - Don't add the command to the history file for current session.
+- `$false` - Same as if the value was `SkipAdding`.
+- `$true` - Same as if the value was `MemoryAndFile`.
 
 ```yaml
 Type: System.Func`2[System.String,System.Object]
