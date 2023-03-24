@@ -320,4 +320,4 @@ are available in `$s`.
 [07]: about_Signing.md
 [08]: xref:Microsoft.PowerShell.Core.Invoke-Command
 [09]: xref:Microsoft.PowerShell.Security.Set-ExecutionPolicy
-[10]: /powershell/learn/shell/creating-profiles
+[10]: /powershell/scripting/learn/shell/creating-profiles
