@@ -149,9 +149,9 @@ Specifies a **ScriptBlock** that controls which commands get added to **PSReadLi
 
 The **ScriptBlock** receives the command line as input.
 
-The output of the **ScripBlock** may be a member of the **AddToHistoryOption** enum, the string
-name of one of those members, or a boolean value. The list below describes the possible values and
-their effect.
+The  **ScripBlock** should return a member of the **AddToHistoryOption** enum, the string name of
+one of those members, or a boolean value. The list below describes the possible values and their
+effects.
 
 - `MemoryAndFile` - Add the command to the history file and the current session.
 - `MemoryOnly` - Add the command to history for the current session only.
