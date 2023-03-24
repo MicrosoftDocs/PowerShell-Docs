@@ -1,7 +1,7 @@
 ---
 description: PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
 Locale: en-US
-ms.date: 08/07/2020
+ms.date: 03/24/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calculated_properties?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Calculated Properties
@@ -15,11 +15,11 @@ the formatting of objects output to the pipeline.
 
 ## Long description
 
-A number of PowerShell cmdlets transform, aggregate, or process input objects
-into output objects using parameters that allow the addition of new properties
-to those output objects. These parameters can be used to generate new,
-calculated properties on output objects based on the values of input objects.
-The calculated property is defined by a [hashtable](about_hash_tables.md)
+Several PowerShell cmdlets transform, group, or process input objects into
+output objects using parameters that allow the addition of new properties to
+those output objects. You can use these parameters to generate new, calculated
+properties on output objects based on the values of input objects. The
+calculated property is defined by a [hashtable](about_hash_tables.md)
 containing key-value pairs that specify the name of the new property, an
 expression to calculate the value, and optional formatting information.
 
@@ -30,7 +30,7 @@ parameter. The `Format-*` cmdlets also support calculated values for the
 **GroupBy** parameter.
 
 The following list itemizes the cmdlets that support calculated properties and
-the key-value pairs that are supported by each cmdlet.
+the key-value pairs that each cmdlet supports.
 
 - `Compare-Object`
   - `expression`
@@ -87,7 +87,10 @@ the key-value pairs that are supported by each cmdlet.
 
 - `name`/`label` - Specifies the name of the property being created. You can
   use `name` or its alias, `label`, interchangeably.
-- `expression` - A script block used to calculate the value of the new property.
+- `expression` - A string or script block used to calculate the value of the
+  new property. If the `expression` is a string, the value is interpreted as a
+  property name on the input object. This is a shorter option than
+  `expression = { $_.<PropertyName> }`.
 - `alignment` - Used by cmdlets that produce tabular output to define how the
   values are displayed in a column. The value must be `'left'`, `'center'`, or
   `'right'`.
@@ -102,9 +105,9 @@ the key-value pairs that are supported by each cmdlet.
 - `ascending` / `descending` - Allows you to specify the order of sorting for
   one or more properties. These are boolean values.
 
-The hashtable keys need not be spelled out as long as the specified name prefix
-is unambiguous. For example, `n` can be used in lieu of `Name` and `e` can be
-used in lieu of `Expression`.
+You don't need to spell out the hashtable keys as long as the specified name
+prefix is unambiguous. For example, you can use `n` instead of `Name` and `e`
+instead of `Expression`.
 
 ## Examples
 
@@ -303,7 +306,7 @@ The `Format-Wide` cmdlet allows you to display the value of one property for
 objects in a collection as a multi-column list.
 
 For this example, we want to see the filename and the size (in kilobytes) as a
-wide listing. Since `Format-Wide` does not display more than one property, we
+wide listing. Since `Format-Wide` doesn't display more than one property, we
 use a calculated property to combine the value of two properties into a single
 value.
 
@@ -376,13 +379,13 @@ Property          : ($_ % 3) -eq 0
 ```
 
 > [!NOTE]
-> Unlike the other cmdlets, `Measure-Object` does not accept a hashtable for
+> Unlike the other cmdlets, `Measure-Object` doesn't accept a hashtable for
 > calculated properties. You must use a script block.
 
 ### Select-Object
 
 You can use calculated properties to add additional members to the objects
-output with the `Select-Object` cmdlet. In this example, we are listing the
+output with the `Select-Object` cmdlet. In this example, we're listing the
 PowerShell aliases that begin with the letter `C`. Using `Select-Object`, we
 output the alias, the cmdlet it's mapped to, and a count for the number of
 parameters defined for the cmdlet. Using a calculated property, we can create
@@ -475,7 +478,7 @@ Date       Salesperson UnitsSold
   '1', '10', '2' | Sort-Object { [int] $_ }
   ```
 
-  This example is convenient for cmdlets that do not require (or support)
+  This example is convenient for cmdlets that don't require (or support)
   naming a property via the `Name` key, such as `Sort-Object`, `Group-Object`,
   and `Measure-Object`.
 
@@ -483,7 +486,7 @@ Date       Salesperson UnitsSold
   to a string and used as the name of the property in the output.
 
 - `Expression` script blocks run in _child_ scopes, meaning that the caller's
-  variables cannot be directly modified.
+  variables can't be directly modified.
 
 - Pipeline logic is applied to the output from `Expression` script blocks. This
   means that outputting a single-element array causes that array to be
@@ -491,7 +494,7 @@ Date       Salesperson UnitsSold
 
 - For most cmdlets, errors inside expression script blocks are quietly ignored.
   For `Sort-Object`, statement-terminating and script-terminating errors are
-  _output_ but they do not terminate the statement.
+  _output_ but they don't terminate the statement.
 
 ## See also
 
