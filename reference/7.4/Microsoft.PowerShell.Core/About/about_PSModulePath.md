@@ -9,8 +9,8 @@ title: about PSModulePath
 # about_PSModulePath
 
 ## Short description
-This article the purpose and usage of the `$env:PSModulePath` environment
-variable.
+This article describes the purpose and usage of the `$env:PSModulePath`
+environment variable.
 
 ## Long description
 
