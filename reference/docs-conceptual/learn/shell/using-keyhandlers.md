@@ -5,7 +5,7 @@ ms.date: 03/27/2023
 ---
 # Using PSReadLine key handlers
 
-In **PSReadLine**, key handlers are configuration settings that map **PSReadLine** functions to
+The **PSReadLine** module in provides key handlers that map **PSReadLine** functions to
 keyboard chords. Keyboard chords are a sequence of one or more keystrokes that are pressed at the
 same time. For example, the chord <kbd>Ctrl</kbd>+<kbd>Spacebar</kbd> is the combination of the
 <kbd>Ctrl</kbd> and <kbd>Spacebar</kbd> keys pressed at the same time. A **PSReadLine** function is
@@ -21,7 +21,7 @@ defined.
 Get-PSReadLineKeyHandler
 ```
 
-You can also get a list of all unbound functions that are available to be bound by a key handler.
+You can also get a list of all unbound **PSReadLine** functions that are available to be bound to a key chord.
 
 ```powershell
 Get-PSReadLineKeyHandler -Unbound
