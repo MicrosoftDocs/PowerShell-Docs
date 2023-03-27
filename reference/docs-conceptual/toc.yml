@@ -86,6 +86,8 @@ items:
             href: learn/shell/using-aliases.md
           - name: Customizing your shell environment
             href: learn/shell/creating-profiles.md
+          - name: Using PSReadLine key handlers
+            href: learn/shell/using-keyhandlers.md
           - name: Configuring a light colored theme
             href: learn/shell/using-light-theme.md
       - name: Deep dives
