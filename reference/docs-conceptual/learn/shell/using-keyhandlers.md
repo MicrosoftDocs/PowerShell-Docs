@@ -107,19 +107,19 @@ treat it as an <kbd>Alt</kbd> key.
 
 #### Configuring the Terminal application
 
-Open the **Settings** windows from the App bar in Terminal.app. Select **Profiles** and choose the
+Open the **Settings** window from the App bar in Terminal.app. Select **Profiles** and choose the
 profile you want to configure. Select the **Keyboard** tab of the configuration options. Below the
-list of keys, select the **Use Option as Meta Key**. This setting allows the <kbd>&#x2325;
+list of keys, select the **Use Option as Meta Key** setting. This setting allows the <kbd>&#x2325;
 Option</kbd> key to act as <kbd>Alt</kbd> in the Terminal application.
 
 ![Screenshot of Terminal.app settings.][02]
 
 #### Configuring the iTerm2 application
 
-Open the **Settings** windows from the App Bar in iTerm.app. Select **Profiles** and choose the
+Open the **Settings** window from the App Bar in iTerm.app. Select **Profiles** and choose the
 profile you want to configure. Select the **Keys** tab of the configuration options. Select the
-**ESC+** option for both the **Left Option Key** and **Right Option Key** settings. This setting
-allows the <kbd>&#x2325; Option</kbd> key to act as <kbd>Alt</kbd> in the Terminal application.
+**Esc+** option for both the **Left Option Key** and **Right Option Key** settings. This setting
+allows the <kbd>&#x2325; Option</kbd> key to act as <kbd>Alt</kbd> in the iTerm application.
 
 ![Screenshot of iTerm.app settings.][03]
 
