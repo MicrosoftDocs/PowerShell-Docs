@@ -5,13 +5,12 @@ ms.date: 03/27/2023
 ---
 # Using PSReadLine key handlers
 
-The **PSReadLine** module in provides key handlers that map **PSReadLine** functions to
-keyboard chords. Keyboard chords are a sequence of one or more keystrokes that are pressed at the
-same time. For example, the chord <kbd>Ctrl</kbd>+<kbd>Spacebar</kbd> is the combination of the
-<kbd>Ctrl</kbd> and <kbd>Spacebar</kbd> keys pressed at the same time. A **PSReadLine** function is
-a predefined action that can be performed on a command line. For example, the `MenuComplete`
-function allows you to choose from a list of options from a menu complete the input on the command
-line.
+The **PSReadLine** module provides key handlers that map **PSReadLine** functions to keyboard
+chords. Keyboard chords are a sequence of one or more keystrokes that are pressed at the same time.
+For example, the chord <kbd>Ctrl</kbd>+<kbd>Spacebar</kbd> is the combination of the <kbd>Ctrl</kbd>
+and <kbd>Spacebar</kbd> keys pressed at the same time. A **PSReadLine** function is a predefined
+action that can be performed on a command line. For example, the `MenuComplete` function allows you
+to choose from a list of options from a menu complete the input on the command line.
 
 **PSReadLine** has several predefined key handlers that are bound by default. You can also define
 your own custom key handlers. Run the following command to list the key handlers that are currently
@@ -110,19 +109,19 @@ treat it as an <kbd>Alt</kbd> key.
 
 Open the **Settings** windows from the App bar in Terminal.app. Select **Profiles** and choose the
 profile you want to configure. Select the **Keyboard** tab of the configuration options. Below the
-list of keys, select the **Use Option as Meta Key**. This setting allows the <kdb>&#x2325;
-Option</kdb> key to act as <kbd>Alt</kbd> in the Terminal application.
+list of keys, select the **Use Option as Meta Key**. This setting allows the <kbd>&#x2325;
+Option</kbd> key to act as <kbd>Alt</kbd> in the Terminal application.
 
-![Screenshot of Terminal.app settings][02]
+![Screenshot of Terminal.app settings.][02]
 
 #### Configuring the iTerm2 application
 
 Open the **Settings** windows from the App Bar in iTerm.app. Select **Profiles** and choose the
 profile you want to configure. Select the **Keys** tab of the configuration options. Select the
 **ESC+** option for both the **Left Option Key** and **Right Option Key** settings. This setting
-allows the <kdb>&#x2325; Option</kdb> key to act as <kbd>Alt</kbd> in the Terminal application.
+allows the <kbd>&#x2325; Option</kbd> key to act as <kbd>Alt</kbd> in the Terminal application.
 
-![Screenshot of Terminal.app settings][03]
+![Screenshot of iTerm.app settings.][03]
 
 > [!NOTE]
 > The exact steps may vary depending on the versions of macOS and the terminal applications. These
