@@ -22,11 +22,11 @@ For a complete list of changes, see the [Change Log][01] in the GitHub repositor
 ## Installer updates
 
 The Windows MSI package now provides an option to disable PowerShell telemetry during installation.
-For more information, see [Install the msi package from the command line][11].
+For more information, see [Install the msi package from the command line][02].
 
 ## Tab completion improvements
 
-Many thanks to [@MartinGC94][02] for all the work on improving tab completion.
+Many thanks to [@MartinGC94][03] for all the work on improving tab completion.
 
 - Fix issue when completing the first command in a script with an empty array expression
   ([[#18355][18355])
@@ -47,7 +47,7 @@ Many thanks to [@MartinGC94][02] for all the work on improving tab completion.
 
 ## Cmdlet and engine improvements
 
-Update to Web cmdlets - Many thanks to [@CarloToso][03] for all the work on improving web cmdlets.
+Update to Web cmdlets - Many thanks to [@CarloToso][04] for all the work on improving web cmdlets.
 
 - Web cmdlets get **Retry-After** interval from response headers if the status code is 429
   ([#18717][18717])
@@ -107,40 +107,40 @@ Other Engine updates
 
 PowerShell 7.4 introduces the following experimental features:
 
-- [PSCustomTableHeaderLabelDecoration][04] - Add formatting differentiation for table header labels
+- [PSCustomTableHeaderLabelDecoration][05] - Add formatting differentiation for table header labels
   that aren't property members.
   - This feature also adds the **CustomTableHeaderLabel** property to `$PSStyle.Formatting` that
     allows you to change the formatting of the header label.
-- [PSFeedbackProvider][05] - Replaces the hard-coded suggestion framework with an extensible
+- [PSFeedbackProvider][06] - Replaces the hard-coded suggestion framework with an extensible
   feedback provider.
   - This feature also adds the **FeedbackProvider** and **FeedbackText** properties to
     `$PSStyle.Formatting` that allow you to change the formatting of feedback messages.
-- [PSModuleAutoLoadSkipOfflineFiles][06] - Module discovery now skips over files that are marked by
+- [PSModuleAutoLoadSkipOfflineFiles][07] - Module discovery now skips over files that are marked by
   cloud providers as not fully on disk.
-- [PSCommandWithArgs][07] - Add support for passing arguments to commands as a single string
+- [PSCommandWithArgs][08] - Add support for passing arguments to commands as a single string
 
 PowerShell 7.4 changed the following experimental features:
 
-- [PSNativeCommandErrorActionPreference][08] - `$PSNativeCommandUseErrorActionPreference` is set to
+- [PSNativeCommandErrorActionPreference][09] - `$PSNativeCommandUseErrorActionPreference` is set to
   `$true` when feature is enabled ([#18695][18695])
-- [PSCommandNotFoundSuggestion][09] - This feature now uses an extensible feedback provider rather
+- [PSCommandNotFoundSuggestion][10] - This feature now uses an extensible feedback provider rather
   than hard-coded suggestions ([#18726][18726])
 
-For more information about the Experimental Features, see [Using Experimental Features][10].
+For more information about the Experimental Features, see [Using Experimental Features][11].
 
 <!-- end of content -->
 <!-- reference links -->
-[01]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
-[02]: https://github.com/MartinGC94
-[03]: https://github.com/CarloToso
-[04]: ../learn/experimental-features.md#pscustomtableheaderlabeldecoration
-[05]: ../learn/experimental-features.md#psfeedbackprovider
-[06]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
-[07]: ../learn/experimental-features.md#pscommandwithargs
+[01]: ../install/installing-powershell-on-windows.md
+[02]: ../learn/experimental-features.md
+[03]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
+[04]: ../learn/experimental-features.md#pscommandwithargs
+[05]: ../learn/experimental-features.md#pscustomtableheaderlabeldecoration
+[06]: ../learn/experimental-features.md#psfeedbackprovider
+[07]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
 [08]: ../learn/experimental-features.md#psnativecommanderroractionpreference
-[09]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
-[10]: ../learn/experimental-features.md
-[11]: ../install/installing-powershell-on-windows.md
+[09]: https://github.com/CarloToso
+[10]: https://github.com/MartinGC94
+[11]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 [17191]: https://github.com/PowerShell/PowerShell/pull/17191
 [17654]: https://github.com/PowerShell/PowerShell/pull/17654
 [17780]: https://github.com/PowerShell/PowerShell/pull/17780

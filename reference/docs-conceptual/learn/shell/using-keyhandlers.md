@@ -210,9 +210,9 @@ For example, typing <kbd>Alt</kbd>+<kbd>4</kbd>+<kbd>#</kbd> enters `####` on th
 - [Get-PSReadLineKeyHandler][04]
 - [Set-PSReadLineKeyHandler][05]
 
-<!-- updated link references -->
-[01]: xref:System.ConsoleKey
+<!-- link references -->
+[01]: ./media/using-keyhandlers/macos-iterm2-settings.png
 [02]: ./media/using-keyhandlers/macos-terminal-settings.png
-[03]: ./media/using-keyhandlers/macos-iterm2-settings.png
-[04]: xref:PSReadLine.Get-PSReadLineKeyHandler
-[05]: xref:PSReadLine.Set-PSReadLineKeyHandler
+[03]: xref:PSReadLine.Get-PSReadLineKeyHandler
+[04]: xref:PSReadLine.Set-PSReadLineKeyHandler
+[05]: xref:System.ConsoleKey
