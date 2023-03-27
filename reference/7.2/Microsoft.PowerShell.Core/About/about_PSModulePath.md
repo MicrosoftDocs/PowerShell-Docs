@@ -33,7 +33,7 @@ By default, the effective locations assigned to `$env:PSModulePath` are:
     stored in `/usr/local/share/powershell/Modules`.
 
 - **User-installed modules**: On Windows, modules installed in the
-  **CurrentUser** scope are typically stored the
+  **CurrentUser** scope are typically stored in the
   `$HOME\Documents\WindowsPowerShell\Modules` folder. The specific location of
   the `Documents` folder varies by version of Windows and when you use folder
   redirection. Also, Microsoft OneDrive can change the location of your
