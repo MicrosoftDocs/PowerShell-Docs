@@ -213,7 +213,7 @@ For example, typing <kbd>Alt</kbd>+<kbd>4</kbd>+<kbd>#</kbd> enters `####` on th
 
 <!-- updated link references -->
 [01]: xref:System.ConsoleKey
-[02]: ./media/using-keybindings/macos-terminal-settings.png
-[03]: ./media/using-keybindings/macos-iterm2-settings.png
+[02]: ./media/using-keyhandlers/macos-terminal-settings.png
+[03]: ./media/using-keyhandlers/macos-iterm2-settings.png
 [04]: xref:PSReadLine.Get-PSReadLineKeyHandler
 [05]: xref:PSReadLine.Set-PSReadLineKeyHandler
