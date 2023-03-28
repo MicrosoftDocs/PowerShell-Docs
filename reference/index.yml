@@ -73,7 +73,7 @@ productDirectory:
           text: FAQs
     # Card 3
     - title: PowerShell DSC
-      imageSrc: /media/common/i_config-tools.svg
+      imageSrc: /media/common/i_dev-ops.svg
       links:
         - url: /powershell/scripting/dsc/overview
           text: DSC Overview
@@ -87,7 +87,7 @@ productDirectory:
           text: DSC Community
     # Card 4
     - title: PowerShell Utility modules
-      imageSrc: /media/common/i_config-tools.svg
+      imageSrc: /media/common/ih_tools.svg
       links:
         - url: /powershell/utility-modules/overview?view=ps-modules
           text: PowerShell utility modules
@@ -113,10 +113,10 @@ productDirectory:
           text: PowerShell SDK API reference
     # Card 6
     - title: Related technologies
-      imageSrc: /media/common/i_tools.svg
+      imageSrc: /media/common/i_link.svg
       links:
-        - url: https://aka.ms/cloudshell/powershell-docs
-          text: PowerShell in Azure Cloud Shell
+        - url: /azure/cloud-shell/quickstart?tabs=powershell
+          text: Quickstart for Azure Cloud Shell
         - url: /powershell/azure/overview
           text: Azure PowerShell modules
         - url: /azure/automation/automation-runbook-types
