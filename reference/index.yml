@@ -60,17 +60,19 @@ productDirectory:
         - url: /powershell/scripting/whats-new/what-s-new-in-powershell-73
           text: What's new in PowerShell
     # Card 2
-    - title: PowerShell Gallery
-      imageSrc: ./media/index/avatar_128.svg
+    - title: PowerShell Utility modules
+      imageSrc: /media/common/ih_tools.svg
       links:
-        - url: https://www.powershellgallery.com/
-          text: PowerShell Gallery
-        - url: /powershell/scripting/gallery/overview
-          text: What is the PowerShell Gallery
-        - url: /powershell/scripting/gallery/concepts/publishing-guidelines
-          text: Best practices
-        - url: /powershell/scripting/gallery/faqs
-          text: FAQs
+        - url: /powershell/utility-modules/overview?view=ps-modules
+          text: PowerShell utility modules
+        - url: /powershell/utility-modules/crescendo/overview?view=ps-modules
+          text: Crescendo overview
+        - url: /powershell/utility-modules/platyps/overview?view=ps-modules
+          text: PlatyPS overview
+        - url: /powershell/utility-modules/psscriptanalyzer/overview?view=ps-modules
+          text: PSScriptAnalyzer overview
+        - url: /powershell/utility-modules/secretmanagement/overview?view=ps-modules
+          text: SecretManagement overview
     # Card 3
     - title: PowerShell DSC
       imageSrc: /media/common/i_dev-ops.svg
@@ -86,19 +88,17 @@ productDirectory:
         - url: https://dsccommunity.org/
           text: DSC Community
     # Card 4
-    - title: PowerShell Utility modules
-      imageSrc: /media/common/ih_tools.svg
+    - title: PowerShell Gallery
+      imageSrc: ./media/index/avatar_128.svg
       links:
-        - url: /powershell/utility-modules/overview?view=ps-modules
-          text: PowerShell utility modules
-        - url: /powershell/utility-modules/crescendo/overview?view=ps-modules
-          text: Crescendo overview
-        - url: /powershell/utility-modules/platyps/overview?view=ps-modules
-          text: PlatyPS overview
-        - url: /powershell/utility-modules/psscriptanalyzer/overview?view=ps-modules
-          text: PSScriptAnalyzer overview
-        - url: /powershell/utility-modules/secretmanagement/overview?view=ps-modules
-          text: SecretManagement overview
+        - url: https://www.powershellgallery.com/
+          text: PowerShell Gallery
+        - url: /powershell/scripting/gallery/overview
+          text: What is the PowerShell Gallery
+        - url: /powershell/scripting/gallery/concepts/publishing-guidelines
+          text: Best practices
+        - url: /powershell/scripting/gallery/faqs
+          text: FAQs
     # Card 5
     - title: Developer resources
       imageSrc: /media/common/i_code-edit.svg
