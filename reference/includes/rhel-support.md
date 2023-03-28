@@ -24,10 +24,11 @@ they're supported on. These versions remain supported until either the version o
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|       RHEL        | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
-| ----------------- | :---------------: | :-------------: | :-------------: |
-| ![Supported][1] 8 |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] 7 |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+|       RHEL        | 7.2 (LTS-current) |       7.3       |  7.4 (preview)      |
+| ----------------- | :---------------: | :-------------: | :-----------------: |
+| ![Supported][1] 9 |  ![Supported][1]  | ![Supported][1] | ![Supported][1]     |
+| ![Supported][1] 8 |  ![Supported][1]  | ![Supported][1] | ![Supported][1]     |
+| ![Supported][1] 7 |  ![Supported][1]  | ![Supported][1] | ![Not Supported][3] |
 
 PowerShell is supported on RHEL for the following processor architectures.
 
