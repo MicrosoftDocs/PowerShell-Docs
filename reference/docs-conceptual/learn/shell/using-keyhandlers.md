@@ -36,7 +36,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+Spacebar' -Function MenuComplete
 ## Finding key names and chord bindings
 
 The names of the keys in the chord are defined by the `[System.ConsoleKey]` enumeration. For more
-information, see [System.ConsoleKey][01] documentation. For example, the name of the <kbd>2</kbd>
+information, see [System.ConsoleKey][05] documentation. For example, the name of the <kbd>2</kbd>
 key in `[System.ConsoleKey]` is `D2`, whereas the name of the <kbd>2</kbd> key on the numeric keypad
 is `NumPad2`. You can use the `[System.Console]::ReadKey()` method to find the name of the key you
 pressed.
@@ -121,7 +121,7 @@ profile you want to configure. Select the **Keys** tab of the configuration opti
 **Esc+** option for both the **Left Option Key** and **Right Option Key** settings. This setting
 allows the <kbd>&#x2325; Option</kbd> key to act as <kbd>Alt</kbd> in the iTerm application.
 
-![Screenshot of iTerm.app settings.][03]
+![Screenshot of iTerm.app settings.][01]
 
 > [!NOTE]
 > The exact steps may vary depending on the versions of macOS and the terminal applications. These
@@ -207,8 +207,8 @@ For example, typing <kbd>Alt</kbd>+<kbd>4</kbd>+<kbd>#</kbd> enters `####` on th
 
 ## See also
 
-- [Get-PSReadLineKeyHandler][04]
-- [Set-PSReadLineKeyHandler][05]
+- [Get-PSReadLineKeyHandler][03]
+- [Set-PSReadLineKeyHandler][04]
 
 <!-- link references -->
 [01]: ./media/using-keyhandlers/macos-iterm2-settings.png
