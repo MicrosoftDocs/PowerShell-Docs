@@ -189,9 +189,9 @@ You can also use other cmdlets to filter results.
 
    For more information, see [Select-Object][03].
 
-- `Where-Object`. This cmdlet lets you filter the objects returned based on the values of properties. The
-  command takes an expression that can test the value of a property. The following example returns
-  all processes where the `ProcessName` starts with `p`.
+- `Where-Object`. This cmdlet lets you filter the objects returned based on the values of
+  properties. The command takes an expression that can test the value of a property. The following
+  example returns all processes where the `ProcessName` starts with `p`.
 
   ```powershell
   Get-Process | Where-Object {$_.ProcessName -like "p*"}
@@ -206,8 +206,8 @@ You can also use other cmdlets to filter results.
 ## Explore objects with Get-Member
 
 Once you've been able to locate the cmdlet you want, you want to know more about what output it
-produces. the output. The `Get-Member` cmdlet displays the type, properties, and methods of an
-object. Pipe the output you want to inspect to `Get-Member`.
+produces. The `Get-Member` cmdlet displays the type, properties, and methods of an object. Pipe the
+output you want to inspect to `Get-Member`.
 
 ```powershell
 Get-Process | Get-Member
