@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 03/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
@@ -123,7 +123,7 @@ the **MaximumReceivedObjectSizeMB** parameter to increase the object size limit.
 **StartupScript** parameter to specify a script that configures the session.
 
 ```powershell
-$sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FA;SA;GWGX;;WD)"
+$sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FASA;GWGX;;;WD)"
 $sessionParams = @{
     Name="AdminShell"
     SecurityDescriptorSDDL=$sddl
