@@ -1,7 +1,7 @@
 ---
 description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements.
 Locale: en-US
-ms.date: 06/09/2022
+ms.date: 03/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Scopes
@@ -16,46 +16,42 @@ the scope of elements.
 
 PowerShell protects access to variables, aliases, functions, and PowerShell
 drives (PSDrives) by limiting where they can be read and changed. PowerShell
-uses scope rules to ensure that you do not inadvertently change an item that
-should not be changed.
+uses scope rules to ensure that you don't inadvertently change an item that
+shouldn't be changed.
 
 The following are the basic rules of scope:
 
 - Scopes may nest. An outer scope is referred to as a parent scope. Any nested
   scopes are child scopes of that parent.
 
-- An item is visible in the scope in which it was created and in any child
+- An item is visible in the scope that it was created in and in any child
   scopes, unless you explicitly make it private.
-
 - You can declare variables, aliases, functions, and PowerShell drives for a
   scope outside of the current scope.
-
 - An item that you created within a scope can be changed only in the scope in
   which it was created, unless you explicitly specify a different scope.
 
 If you create an item in a scope, and the item shares its name with an item in
-a different scope, the original item might be hidden under the new item, but
-it is not overridden or changed.
+a different scope, the original item might be hidden by the new item, but it
+isn't overridden or changed.
 
-## PowerShell Scopes
+## PowerShell scopes
 
 PowerShell supports the following scopes:
 
-- Global: The scope that is in effect when PowerShell starts or when you create
-  a new session or runspace. Variables and functions that are present when
-  PowerShell starts have been created in the global scope, such as automatic
-  variables and preference variables. The variables, aliases, and functions in
-  your PowerShell profiles are also created in the global scope. The global
-  scope is the root parent scope in a session.
-
-- Local: The current scope. The local scope can be the global scope or any
+- **Global**: The scope that's in effect when PowerShell starts or when you
+  create a new session or runspace. Variables and functions that are present
+  when PowerShell starts have been created in the global scope, such as
+  automatic variables and preference variables. The variables, aliases, and
+  functions in your PowerShell profiles are also created in the global scope.
+  The global scope is the root parent scope in a session.
+- **Local**: The current scope. The local scope can be the global scope or any
   other scope.
+- **Script**: The scope that's created while a script file runs. Only the
+  commands in the script run in the script scope. To the commands in a script,
+  the script scope is the local scope.
 
-- Script: The scope that is created while a script file runs. Only the commands
-  in the script run in the script scope. To the commands in a script, the
-  script scope is the local scope.
-
-## Parent and Child Scopes
+## Parent and child scopes
 
 You can create a new child scope by calling a script or function. The calling
 scope is the parent scope. The called script or function is the child scope.
@@ -64,21 +60,21 @@ hierarchy of child scopes whose root scope is the global scope.
 
 Unless you explicitly make the items private, the items in the parent scope
 are available to the child scope. However, items that you create and change in
-the child scope do not affect the parent scope, unless you explicitly specify
+the child scope don't affect the parent scope, unless you explicitly specify
 the scope when you create the items.
 
 > [!NOTE]
-> Functions from a module do not run in a child scope of the calling scope.
-> Modules have their own session state that is linked to the global scope.
+> Functions from a module don't run in a child scope of the calling scope.
+> Modules have their own session state that's linked to the global scope.
 > All module code runs in a module-specific hierarchy of scopes that has its
 > own root scope.
 
 ## Inheritance
 
-A child scope does not inherit the variables, aliases, and functions from the
+A child scope doesn't inherit the variables, aliases, and functions from the
 parent scope. Unless an item is private, the child scope can view the items in
 the parent scope. And, it can change the items by explicitly specifying the
-parent scope, but the items are not part of the child scope.
+parent scope, but the items aren't part of the child scope.
 
 However, a child scope is created with a set of items. Typically, it includes
 all the aliases that have the **AllScope** option. This option is discussed
@@ -100,7 +96,7 @@ To get all the variables in the global scope, type:
 Get-Variable -Scope global
 ```
 
-## Scope Modifiers
+## Scope modifiers
 
 A variable, alias, or function name can include any one of the following
 optional scope modifiers:
@@ -112,8 +108,8 @@ optional scope modifiers:
   current scope.
 
   > [!NOTE]
-  > `private` is not a scope. It is an [option](#private-option) that changes
-  > the visibility of an item outside of the scope where the item is defined.
+  > `private` isn't a scope. It's an [option][02] that changes the visibility
+  > of an item outside of the scope where the item is defined.
 
 - `script:` - Specifies that the name exists in the **Script** scope.
   **Script** scope is the nearest ancestor script file's scope or **Global** if
@@ -121,9 +117,9 @@ optional scope modifiers:
 - `using:` - Used to access variables defined in another scope while running
   scripts via cmdlets like `Start-Job` and `Invoke-Command`.
 - `workflow:` - Specifies that the name exists within a workflow. Note:
-  Workflows are not supported in PowerShell v6 and higher.
-- `<variable-namespace>` - A modifier created by a PowerShell PSDrive provider.
-  For example:
+  Workflows aren't supported in PowerShell v6 and higher.
+- `<variable-namespace>` - A modifier created by a PowerShell **PSDrive**
+  provider. For example:
 
   |  Namespace  |                    Description                     |
   | ----------- | -------------------------------------------------- |
@@ -133,7 +129,7 @@ optional scope modifiers:
   | `Variable:` | Variables defined in the current scope             |
 
 The default scope for scripts is the script scope. The default scope for
-functions and aliases is the local scope, even if they are defined in a
+functions and aliases is the local scope, even if they're defined in a
 script.
 
 ### Using scope modifiers
@@ -153,7 +149,7 @@ The syntax for a scope modifier in a function is:
 function [<scope-modifier>:]<name> {<function-body>}
 ```
 
-The following command, which does not use a scope modifier, creates a variable
+The following command, which doesn't use a scope modifier, creates a variable
 in the current or **local** scope:
 
 ```powershell
@@ -226,17 +222,17 @@ $test
 $global:test
 ```
 
-### The `Using:` scope modifier
+### The `using:` scope modifier
 
 Using is a special scope modifier that identifies a local variable in a remote
-command. Without a modifier, PowerShell expects variables in remote commands
-to be defined in the remote session.
+command. Without a modifier, PowerShell expects variables in remote commands to
+be defined in the remote session.
 
-The `Using` scope modifier is introduced in PowerShell 3.0.
+The `using` scope modifier is introduced in PowerShell 3.0.
 
-For any script or command that executes out of session, you need the `Using`
+For any script or command that executes out of session, you need the `using`
 scope modifier to embed variable values from the calling session scope, so that
-out of session code can access them. The `Using` scope modifier is supported in
+out of session code can access them. The `using` scope modifier is supported in
 the following contexts:
 
 - Remotely executed commands, started with `Invoke-Command` using the
@@ -248,20 +244,20 @@ the following contexts:
 
 Depending on the context, embedded variable values are either independent
 copies of the data in the caller's scope or references to it. In remote and
-out-of-process sessions, they are always independent copies.
+out-of-process sessions, they're always independent copies.
 
-For more information, see [about_Remote_Variables](about_Remote_Variables.md).
+For more information, see [about_Remote_Variables][06].
 
-In thread sessions, they are passed by reference. This means it is possible to
-modify call scope variables in a different thread. To safely modify variables
+In thread sessions, they're passed by reference. This means it's possible to
+modify child scope variables in a different thread. To safely modify variables
 requires thread synchronization.
 
 For more information see:
 
-- [Start-ThreadJob](xref:ThreadJob.Start-ThreadJob)
-- [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
+- [Start-ThreadJob][10]
+- [ForEach-Object][09]
 
-#### Serialization of variable values
+### Serialization of variable values
 
 Remotely executed commands and background jobs run out-of-process.
 Out-of-process sessions use XML-based serialization and deserialization to make
@@ -273,7 +269,7 @@ For a limited set of types, deserialization rehydrates objects back to the
 original type. The rehydrated object is a copy of the original object instance.
 It has the type properties and methods. For simple types, such as
 **System.Version**, the copy is exact. For complex types, the copy is
-imperfect. For example, rehydrated certificate objects do not include the
+imperfect. For example, rehydrated certificate objects don't include the
 private key.
 
 Instances of all other types are **PSObject** instances. The **PSTypeNames**
@@ -284,14 +280,14 @@ example, **Deserialized.System.Data.DataTable**
 
 Variables and aliases have an **Option** property that can take a value of
 **AllScope**. Items that have the **AllScope** property become part of any child
-scopes that you create, although they are not retroactively inherited by parent
+scopes that you create, although they aren't retroactively inherited by parent
 scopes.
 
 An item that has the **AllScope** property is visible in the child scope, and
-it is part of that scope. Changes to the item in any scope affect all the
+it's part of that scope. Changes to the item in any scope affect all the
 scopes in which the variable is defined.
 
-### Managing Scope
+### Managing scope
 
 Several cmdlets have a **Scope** parameter that lets you get or set (create and
 change) items in a particular scope. Use the following command to find all the
@@ -329,7 +325,7 @@ New-Alias -Scope global -Name np -Value Notepad.exe
 ```
 
 To get the functions in a particular scope, use the `Get-Item` cmdlet when you
-are in the scope. The `Get-Item` cmdlet does not have a **Scope** parameter.
+are in the scope. The `Get-Item` cmdlet doesn't have a **Scope** parameter.
 
 > [!NOTE]
 > For the cmdlets that use the **Scope** parameter, you can also refer to
@@ -339,52 +335,52 @@ are in the scope. The `Get-Item` cmdlet does not have a **Scope** parameter.
 > and so on. Numbered scopes are useful if you have created many recursive
 > scopes.
 
-### Using Dot Source Notation with Scope
+### Using dot-source notation with scope
 
-Scripts and functions follow all the rules of scope. You create them in a
+Scripts and functions follow the rules of scope. You create them in a
 particular scope, and they affect only that scope unless you use a cmdlet
 parameter or a scope modifier to change that scope.
 
-But, you can add a script or function to the current scope by using dot source
-notation. Then, when a script runs in the current scope, any functions,
-aliases, and variables that the script creates are available in the current
-scope.
+But, you can add the contents of a script or function to the current scope
+using dot-source notation. When you run a script or function using dot-source
+notation, it runs in the current scope. Any functions, aliases, and variables
+in the script or function are added to the current scope.
 
-To add a function to the current scope, type a dot (.) and a space before the
-path and name of the function in the function call.
-
-For example, to run the Sample.ps1 script from the C:\Scripts directory in the
-script scope (the default for scripts), use the following command:
+For example, to run the `Sample.ps1` script from the `C:\Scripts` directory in
+the script scope (the default for scripts), just enter the full path to the
+script file on the command line.
 
 ```powershell
 c:\scripts\sample.ps1
 ```
 
-To run the Sample.ps1 script in the local scope, use the following command:
+Also, using the call operator (`&`) to run a function or script runs it in
+script scope. Using the call operator is no different than running the script by name.
 
 ```powershell
-. c:\scripts.sample.ps1
+& c:\scripts\sample.ps1
 ```
 
-When you use the call operator (&) to run a function or script, it is not
-added to the current scope. The following example uses the call operator:
+You can read more about the call operator in [about_operators][05].
+
+To run the `Sample.ps1` script in the local scope type a dot and a space (`. `)
+before the path to the script:
 
 ```powershell
-& c:\scripts.sample.ps1
+. c:\scripts\sample.ps1
 ```
 
-You can read more about the call operator in [about_operators](about_operators.md).
+Now, any functions, aliases, or variables defined in the script are added to
+the current scope.
 
-Any aliases, functions, or variables that the Sample.ps1 script creates are
-not available in the current scope.
+## Restricting without scope
 
-## Restricting Without Scope
+PowerShell has some options and features that are similar to scope and may
+interact with scopes. These feature may be confused with scope or the behavior
+of scope.
 
-A few PowerShell concepts are similar to scope or interact with scope. These
-concepts may be confused with scope or the behavior of scope.
-
-Sessions, modules, and nested prompts are self-contained environments, but
-they are not child scopes of the global scope in the session.
+Sessions, modules, and nested prompts are self-contained environments, not
+child scopes of the global scope in the session.
 
 ### Sessions
 
@@ -394,7 +390,7 @@ remote computer. The persistent connection lets you use the session for
 multiple related commands.
 
 Because a session is a contained environment, it has its own scope, but a
-session is not a child scope of the session in which it was created. The
+session isn't a child scope of the session in which it was created. The
 session starts with its own global scope. This scope is independent of the
 global scope of the session. You can create child scopes in the session. For
 example, you can run a script to create a child scope in a session.
@@ -403,7 +399,7 @@ example, you can run a script to create a child scope in a session.
 
 You can use a PowerShell module to share and deliver PowerShell tools. A module
 is a unit that can contain cmdlets, scripts, functions, variables, aliases, and
-other useful items. Unless explicitly defined, the items in a module are not
+other useful items. Unless explicitly defined, the items in a module aren't
 accessible outside the module. Therefore, you can add the module to your
 session and use the public items without worrying that the other items might
 override the cmdlets, scripts, functions, and other items in your session.
@@ -452,26 +448,26 @@ $a = Hello
 $global:a = Goodbye
 ```
 
-### Nested Prompts
+### Nested prompts
 
-Nested prompts do not have their own scope. When you enter a nested
-prompt, the nested prompt is a subset of the environment. But, you remain
-within the local scope.
+Nested prompts don't have their own scope. When you enter a nested prompt, the
+nested prompt is a subset of the environment. But, you remain within the local
+scope.
 
 Scripts do have their own scope. If you are debugging a script, and you reach a
 breakpoint in the script, you enter the script scope.
 
-### Private Option
+### Private option
 
 Aliases and variables have an **Option** property that can take a value of
-`Private`. Items that have the `Private` option can be viewed and changed
-in the scope in which they are created, but they cannot be viewed or changed
-outside that scope.
+`Private`. Items that have the `Private` option can be viewed and changed in
+the scope in which they're created, but they can't be viewed or changed outside
+that scope.
 
 For example, if you create a variable that has a private option in the global
-scope and then run a script, `Get-Variable` commands in the script do not
+scope and then run a script, `Get-Variable` commands in the script don't
 display the private variable. Using the global scope modifier in this instance
-does not display the private variable.
+doesn't display the private variable.
 
 You can use the **Option** parameter of the `New-Variable`, `Set-Variable`,
 `New-Alias`, and `Set-Alias` cmdlets to set the value of the Option property to
@@ -485,15 +481,15 @@ be a module, script, or snap-in. Visibility is designed for containers in the
 same way that the `Private` value of the **Option** property is designed for
 scopes.
 
-The **Visibility** property takes the `Public` and `Private` values. Items
-that have private visibility can be viewed and changed only in the container in
+The **Visibility** property takes the `Public` and `Private` values. Items that
+have private visibility can be viewed and changed only in the container in
 which they were created. If the container is added or imported, the items that
-have private visibility cannot be viewed or changed.
+have private visibility can't be viewed or changed.
 
 Because visibility is designed for containers, it works differently in a scope.
 
 - If you create an item that has private visibility in the global scope, you
-  cannot view or change the item in any scope.
+  can't view or change the item in any scope.
 - If you try to view or change the value of a variable that has private
   visibility, PowerShell returns an error message.
 
@@ -502,10 +498,10 @@ that has private visibility.
 
 ## Examples
 
-### Example 1: Change a Variable Value Only in a Script
+### Example 1: Change a variable value only in a script
 
 The following command changes the value of the `$ConfirmPreference` variable in
-a script. The change does not affect the global scope.
+a script. The change doesn't affect the global scope.
 
 First, to display the value of the `$ConfirmPreference` variable in the local
 scope, use the following command:
@@ -539,9 +535,9 @@ High
 ```
 
 This example shows that changes to the value of a variable in the script scope
-does not affect the variable`s value in the parent scope.
+doesn't affect the variable`s value in the parent scope.
 
-### Example 2: View a Variable Value in Different Scopes
+### Example 2: View a variable value in different scopes
 
 You can use scope modifiers to view the value of a variable in the local scope
 and in a parent scope.
@@ -552,11 +548,11 @@ First, define a `$test` variable in the global scope.
 $test = "Global"
 ```
 
-Next, create a Sample.ps1 script that defines the `$test` variable. In the
-script, use a scope modifier to refer to either the global or local versions
-of the `$test` variable.
+Next, create a `Sample.ps1` script that defines the `$test` variable. In the
+script, use a scope modifier to refer to either the global or local versions of
+the `$test` variable.
 
-In Sample.ps1:
+In `Sample.ps1`:
 
 ```powershell
 $test = "Local"
@@ -564,7 +560,7 @@ $test = "Local"
 "The global value of `$test is $global:test."
 ```
 
-When you run Sample.ps1, the output should resemble the following output:
+When you run `Sample.ps1`, the output should resemble the following output:
 
 ```output
 The local value of $test is Local.
@@ -575,14 +571,14 @@ When the script is complete, only the global value of `$test` is defined in the
 session.
 
 ```
-PS>  $test
+PS> $test
 Global
 ```
 
-### Example 3: Change the Value of a Variable in a Parent Scope
+### Example 3: Change the value of a variable in a parent scope
 
-Unless you protect an item by using the Private option or another method, you
-can view and change the value of a variable in a parent scope.
+Unless you protect an item using the Private option or another method, you can
+view and change the value of a variable in a parent scope.
 
 First, define a `$test` variable in the global scope.
 
@@ -591,8 +587,8 @@ $test = "Global"
 ```
 
 Next, create a Sample.ps1 script that defines the `$test` variable. In the
-script, use a scope modifier to refer to either the global or local versions
-of the `$test` variable.
+script, use a scope modifier to refer to either the global or local versions of
+the `$test` variable.
 
 In Sample.ps1:
 
@@ -604,15 +600,15 @@ $global:test = "Local"
 When the script is complete, the global value of `$test` is changed.
 
 ```
-PS>  $test
+PS> $test
 Local
 ```
 
-### Example 4: Creating a Private Variable
+### Example 4: Creating a private variable
 
 A private variable is a variable that has an **Option** property that has a
-value of `Private`. `Private` variables are inherited by the child scope,
-but they can only be viewed or changed in the scope in which they were created.
+value of `Private`. `Private` variables are inherited by the child scope, but
+they can only be viewed or changed in the scope in which they were created.
 
 The following command creates a private variable called `$ptest` in the local
 scope.
@@ -624,11 +620,11 @@ New-Variable -Name ptest -Value 1 -Option Private
 You can display and change the value of `$ptest` in the local scope.
 
 ```
-PS>  $ptest
+PS> $ptest
 1
 
-PS>  $ptest = 2
-PS>  $ptest
+PS> $ptest = 2
+PS> $ptest
 2
 ```
 
@@ -642,24 +638,23 @@ In Sample.ps1:
 "The value of `$Ptest is $global:Ptest."
 ```
 
-The `$ptest` variable is not visible in the script scope, the output is
-empty.
+The `$ptest` variable isn't visible in the script scope, the output is empty.
 
 ```powershell
 "The value of $Ptest is ."
 "The value of $Ptest is ."
 ```
 
-### Example 5: Using a Local Variable in a Remote Command
+### Example 5: Using a local variable in a remote command
 
-For variables in a remote command created in the local session, use the `Using`
+For variables in a remote command created in the local session, use the `using`
 scope modifier. PowerShell assumes that the variables in remote commands were
 created in the remote session.
 
 The syntax is:
 
 ```
-$Using:<VariableName>
+$using:<VariableName>
 ```
 
 For example, the following commands create a `$Cred` variable in the local
@@ -667,25 +662,27 @@ session and then use the `$Cred` variable in a remote command:
 
 ```powershell
 $Cred = Get-Credential
-Invoke-Command $s {Remove-Item .\Test*.ps1 -Credential $Using:Cred}
+Invoke-Command $s {Remove-Item .\Test*.ps1 -Credential $using:Cred}
 ```
 
-The Using scope was introduced in PowerShell 3.0. In PowerShell 2.0, to
-indicate that a variable was created in the local session, use the following
-command format.
-
-```powershell
-$Cred = Get-Credential
-Invoke-Command $s {
-  param($c)
-  Remove-Item .\Test*.ps1 -Credential $c
-} -ArgumentList $Cred
-```
+The `using` scope modifier was introduced in PowerShell 3.0.
 
 ## See also
 
-- [about_Variables](about_Variables.md)
-- [about_Environment_Variables](about_Environment_Variables.md)
-- [about_Functions](about_Functions.md)
-- [about_Script_Blocks](about_Script_Blocks.md)
-- [Start-ThreadJob](/powershell/module/ThreadJob/Start-ThreadJob)
+- [about_Variables][08]
+- [about_Environment_Variables][03]
+- [about_Functions][04]
+- [about_Script_Blocks][07]
+- [Start-ThreadJob][01]
+
+<!-- link references -->
+[01]: /powershell/module/ThreadJob/Start-ThreadJob
+[02]: #private-option
+[03]: about_Environment_Variables.md
+[04]: about_Functions.md
+[05]: about_operators.md
+[06]: about_Remote_Variables.md
+[07]: about_Script_Blocks.md
+[08]: about_Variables.md
+[09]: xref:Microsoft.PowerShell.Core.ForEach-Object
+[10]: xref:ThreadJob.Start-ThreadJob
