@@ -1,7 +1,7 @@
 ---
 description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements.
 Locale: en-US
-ms.date: 03/29/2023
+ms.date: 03/31/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Scopes
@@ -354,14 +354,20 @@ script file on the command line.
 c:\scripts\sample.ps1
 ```
 
-Also, using the call operator (`&`) to run a function or script runs it in
-script scope. Using the call operator is no different than running the script by name.
+A script file must have a `.ps1` file extension to be executable. Files that
+have spaces in their path must be enclosed in quotes. If you try to execute the
+quoted path, PowerShell displays the contents of the quoted string in stead of
+running the script. The call operator (`&`) allows you to execute the contents
+of the string containing the filename.
+
+Using the call operator to run a function or script runs it in script scope.
+Using the call operator is no different than running the script by name.
 
 ```powershell
 & c:\scripts\sample.ps1
 ```
 
-You can read more about the call operator in [about_operators][05].
+You can read more about the call operator in [about_Operators][05].
 
 To run the `Sample.ps1` script in the local scope type a dot and a space (`. `)
 before the path to the script:
@@ -673,14 +679,13 @@ The `using` scope modifier was introduced in PowerShell 3.0.
 - [about_Environment_Variables][03]
 - [about_Functions][04]
 - [about_Script_Blocks][07]
-- [Start-ThreadJob][01]
+- [Start-ThreadJob][10]
 
 <!-- link references -->
-[01]: /powershell/module/ThreadJob/Start-ThreadJob
 [02]: #private-option
 [03]: about_Environment_Variables.md
 [04]: about_Functions.md
-[05]: about_operators.md
+[05]: about_Operators.md
 [06]: about_Remote_Variables.md
 [07]: about_Script_Blocks.md
 [08]: about_Variables.md

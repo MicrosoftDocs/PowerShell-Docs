@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 12/02/2022
+ms.date: 03/31/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -263,7 +263,7 @@ PS> $c = "Get-Service -Name Spooler"
 PS> $c
 Get-Service -Name Spooler
 PS> & $c
-& : The term 'Get-Service -Name Spooler' isn't recognized as the name of a
+& : The term 'Get-Service -Name Spooler' is not recognized as the name of a
 cmdlet, function, script file, or operable program. Check the spelling of
 the name, or if a path was included, verify that the path is correct and
 try again.
@@ -291,11 +291,12 @@ PS> Invoke-Expression "1+1"
 2
 ```
 
-You can use the call operator to execute scripts using their filenames. The
-example below shows a script filename that contains spaces. When you try to
-execute the script, PowerShell instead displays the contents of the quoted
-string containing the filename. The call operator allows you to execute the
-contents of the string containing the filename.
+You can execute a script using its filename. A script file must have a `.ps1`
+file extension to be executable. Files that have spaces in their path must be
+enclosed in quotes. If you try to execute the quoted path, PowerShell displays
+the contents of the quoted string in stead of running the script. The call
+operator allows you to execute the contents of the string containing the
+filename.
 
 ```
 PS C:\Scripts> Get-ChildItem
