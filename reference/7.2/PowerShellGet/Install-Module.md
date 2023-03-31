@@ -425,8 +425,8 @@ When no **Scope** is defined, the default is set based on the PowerShellGet vers
 
 - In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
 - For PowerShellGet versions 2.0.0 and above in PowerShell 6 or higher:
-  - The default is **CurrentUser**, which doesn't require  elevation for install
-  - If you are running in an elevated session, the default is **AllUsers**
+  - The default is **CurrentUser**, which doesn't require  elevation for install.
+  - If you are running in an elevated session, the default is **AllUsers**.
 
 ```yaml
 Type: System.String
