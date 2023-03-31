@@ -1,15 +1,4 @@
 items:
-  - name: Docs
-    tocHref: /
-    topicHref: /
-    items:
-      - name: PowerShell
-        tocHref: /powershell/
-        topicHref: /powershell
-        items:
-          - name: Scripting
-            tocHref: /powershell/scripting/
-            topicHref: /powershell/scripting/index
-          - name: Scripting
-            tocHref: /powershell/module/
-            topicHref: /powershell/scripting/index
+  - name: PowerShell
+    tocHref: /powershell/
+    topicHref: /powershell/index
