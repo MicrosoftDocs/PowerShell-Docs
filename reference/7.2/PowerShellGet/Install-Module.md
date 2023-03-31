@@ -2,7 +2,7 @@
 external help file: PSModule-help.xml
 Locale: en-US
 Module Name: PowerShellGet
-ms.date: 01/17/2023
+ms.date: 03/31/2023
 online version: https://learn.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
@@ -423,9 +423,10 @@ the computer. For example:
 
 When no **Scope** is defined, the default is set based on the PowerShellGet version.
 
-- In PowerShellGet versions 2.0.0 and above, the default is **CurrentUser**, which doesn't require
-  elevation for install.
 - In PowerShellGet 1.x versions, the default is **AllUsers**, which requires elevation for install.
+- For PowerShellGet versions 2.0.0 and above in PowerShell 6 or higher:
+  - The default is **CurrentUser**, which doesn't require  elevation for install
+  - If you are running in an elevated session, the default is **AllUsers**
 
 ```yaml
 Type: System.String
