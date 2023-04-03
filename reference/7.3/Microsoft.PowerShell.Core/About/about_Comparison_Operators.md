@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 01/20/2023
+ms.date: 04/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -60,6 +60,9 @@ case-sensitive operator. To make a comparison operator case-sensitive, add a
 To make the case-insensitivity explicit, add an `i` after `-`. For example,
 `-ieq` is the explicitly case-insensitive version of `-eq`.
 
+String comparisons use the [InvariantCulture][01] for both case-sensitive and
+case-insensitive comparisons.
+
 When the input of an operator is a scalar value, the operator returns a
 **Boolean** value. When the input is a collection, the operator returns the
 elements of the collection that match the right-hand value of the expression.
@@ -89,9 +92,9 @@ There are a few exceptions:
 ### -eq and -ne
 
 When the left-hand side is scalar, `-eq` returns **True** if the right-hand
-side is an exact match, otherwise, `-eq` returns **False**. `-ne` does the
-opposite; it returns **False** when both sides match; otherwise, `-ne` returns
-**True**.
+side is equivalent, otherwise, `-eq` returns **False**. `-ne` does the
+opposite; it returns **False** when both sides are equivalent; otherwise, `-ne`
+returns **True**.
 
 Example:
 
@@ -752,6 +755,7 @@ $a -isnot $b.GetType() # Output: True
 - [Where-Object][13]
 
 <!-- link references -->
+[01]: /dotnet/api/system.globalization.cultureinfo.invariantculture
 [02]: /dotnet/api/system.icomparable
 [03]: /dotnet/api/system.iequatable-1
 [04]: /dotnet/api/system.text.regularexpressions.match
