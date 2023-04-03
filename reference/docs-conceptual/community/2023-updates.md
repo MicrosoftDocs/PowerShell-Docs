@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 03/01/2023
+ms.date: 04/03/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,51 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-March
+
+New content
+
+- [Create a class-based DSC Resource for Machine Configuration](/powershell/dsc/tutorials/create-dsc-resource-machine-config)
+- [Using PSReadLine key handlers](/powershell/scripting/learn/shell/using-keyhandlers)
+
+Updated content
+
+- Release notes for [PowerShell 7.4-preview.2](/powershell/scripting/whats-new/what-s-new-in-powershell-74)
+
+Quality project updates from the community
+
+- One of our top contributors [@ehmiiz][ehmiiz] blogged about contributing to Docs
+  - [How to Learn Git, Markdown and PowerShell by Contributing to the PowerShell-Docs Repository](https://ehmiiz.tech/blog/ps_docs_contributions/)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 60 PRs merged (13 from Community)
+- 44 issues opened (31 from Community)
+- 50 issues closed (36 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|   GitHub Id    | PRs merged | Issues opened |
+| -------------- | :--------: | :-----------: |
+| skycommand     |     2      |               |
+| martincostello |     1      |               |
+| iRon7          |     1      |       4       |
+| chrullrich     |     1      |               |
+| FlintyLemming  |     1      |               |
+| ehmiiz         |     1      |               |
+| vvavrychuk     |     1      |               |
+| bb-froggy      |     1      |               |
+| BenjamimCS     |     1      |               |
+| kirillkrylov   |     1      |               |
+| bergmeister    |     1      |               |
+| lizy14         |     1      |               |
+| CarloToso      |            |       5       |
+| MartinGC94     |            |       2       |
+| rgl            |            |       2       |
 
 ## 2023-February
 
