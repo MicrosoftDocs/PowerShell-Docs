@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 04/03/2023
+ms.date: 04/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -354,9 +354,14 @@ The syntax is:
 ```
 
 When the input of these operators is a scalar value, they return a **Boolean**
-value. When the input is a collection of values, the operators return any
-matching members. If there are no matches in a collection, the operators return
-an empty array.
+value.
+
+When the input is a collection of values, each item in the collection is
+converted to a string for comparison. The `-match` and `-notmatch` operators
+return any matching and non-matching members respectively. However, the `-like`
+and `-notlike` operators return the members as strings. The string returned for
+a member of the collection by `-like` and `-notlike` is the string the operator
+used for the comparison and is obtained by casting the member to a string.
 
 ### -like and -notlike
 
