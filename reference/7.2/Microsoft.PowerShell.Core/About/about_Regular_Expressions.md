@@ -1,7 +1,7 @@
 ---
 description: Describes regular expressions in PowerShell.
 Locale: en-US
-ms.date: 08/29/2022
+ms.date: 04/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Regular Expressions
@@ -113,13 +113,14 @@ any character except a newline (`\n`).
 
 ### Whitespace
 
-Whitespace is matched using the `\s` character class. Any non-whitespace
-character is matched using `\S`. Literal space characters `' '` can also be
-used.
+You can match any whitespace character with the `\s` character class. You can
+match any non-whitespace character with `\S`. You can match literal space
+characters with ` `.
 
 ```powershell
 # This expression returns true.
-# The pattern uses both methods to match the space.
+# The pattern uses the whitespace character class to match the leading
+# space and a literal space to matching the trailing space.
 ' - ' -match '\s- '
 ```
 
