@@ -76,6 +76,7 @@
     ".openpublishing.redirection.51.json",
     ".openpublishing.redirection.71.json",
     ".openpublishing.redirection.72.json",
+    ".openpublishing.redirection.gallery.json",
     ".openpublishing.redirection.virtual.json"
   ],
   "skip_source_output_uploading": false,
