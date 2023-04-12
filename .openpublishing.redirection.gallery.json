@@ -2,16 +2,6 @@
   "redirections": [
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/gallery/overview",
-      "source_path": "reference/docs-conceptual/gallery/index.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/gallery/overview",
-      "source_path": "reference/docs-conceptual/gallery/overview.md"
-    },
-    {
-      "redirect_document_id": false,
       "redirect_url": "/powershell/gallery/faqs",
       "source_path": "reference/docs-conceptual/gallery/faqs.yml"
     },
@@ -22,13 +12,13 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/gallery/install-on-older-systems",
-      "source_path": "reference/docs-conceptual/gallery/powershellget/install-on-older-systems.md"
+      "redirect_url": "/powershell/gallery/powershellget/install-on-older-systems",
+      "source_path": "reference/docs-conceptual/gallery/install-on-older-systems.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/gallery/installing-psget",
-      "source_path": "reference/docs-conceptual/gallery/powershellget/install-powershellget.md"
+      "redirect_url": "/powershell/gallery/powershellget/install-powershellget.md",
+      "source_path": "reference/docs-conceptual/gallery/installing-psget.md"
     },
     {
       "redirect_document_id": false,

@@ -397,7 +397,7 @@ items:
   - name: Desired State Configuration (DSC)
     href: dsc/overview.md
   - name: PowerShell Gallery
-    href: gallery/overivew.md
+    href: gallery/overview.md
   - name: Community
     items:
       - name: Community update
