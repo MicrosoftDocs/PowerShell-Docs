@@ -722,11 +722,6 @@
     },
     {
       "redirect_document_id": true,
-      "redirect_url": "/powershell/scripting/gallery/overview",
-      "source_path": "reference/docs-conceptual/gallery/index.md"
-    },
-    {
-      "redirect_document_id": true,
       "redirect_url": "/powershell/scripting/windows-powershell/wmf/overview",
       "source_path": "reference/docs-conceptual/wmf/index.md"
     },
