@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/16/2023
+ms.date: 04/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -169,14 +169,14 @@ applied to `"a","a"` and returns `a` as the unique value.
 
 This example gets the first (newest) and last (oldest) events in the Windows PowerShell event log.
 
-`Get-EventLog` gets all events in the Windows PowerShell log and saves them in the `$a` variable.
+`Get-WinEvent` gets all events in the Windows PowerShell log and saves them in the `$a` variable.
 Then, `$a` is piped to the `Select-Object` cmdlet. The `Select-Object` command uses the **Index**
 parameter to select events from the array of events in the `$a` variable. The index of the first
 event is 0. The index of the last event is the number of items in `$a` minus 1.
 
 ```powershell
-$a = Get-EventLog -LogName "Windows PowerShell"
-$a | Select-Object -Index 0, ($A.count - 1)
+$a = Get-WinEvent -LogName "Windows PowerShell"
+$a | Select-Object -Index 0, ($a.count - 1)
 ```
 
 ### Example 7: Select all but the first object
