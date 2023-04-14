@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 03/24/2023
+ms.date: 04/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -231,7 +231,7 @@ $env:COMPUTERNAME + "\" + (Get-Location) + "> "
 }
 ```
 
-For more information about the PowerShell prompt, see [about_Prompts][07].
+For more information about the PowerShell prompt, see [about_Prompts][04].
 
 For other profile examples, see [Customizing your shell environment][10].
 
