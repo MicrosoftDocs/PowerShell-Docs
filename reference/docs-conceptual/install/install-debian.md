@@ -22,8 +22,8 @@ Debian uses APT (Advanced Package Tool) as a package manager.
 PowerShell 7.2 introduced a universal package that makes installation easier. Download the universal
 package from the [releases][04] page onto the Debian 10 machine. The link to the current version is:
 
-- PowerShell 7.3.3 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/powershell_7.3.3-1.deb_amd64.deb`
-- PowerShell 7.2.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.10/powershell-lts_7.2.10-1.deb_amd64.deb`
+- PowerShell 7.3.4 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell_7.3.4-1.deb_amd64.deb`
+- PowerShell 7.2.11 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.11/powershell-lts_7.2.11-1.deb_amd64.deb`
 
 ## Installation on Debian 11 via Package Repository
 
