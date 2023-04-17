@@ -40,7 +40,7 @@ sudo apt-get install -y wget apt-transport-https software-properties-common
 wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-# Delete the the Microsoft repository GPG keys file 
+# Delete the the Microsoft repository GPG keys file
 rm packages-microsoft-prod.deb
 # Update the list of packages after we added packages.microsoft.com
 sudo apt-get update
@@ -59,17 +59,17 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][04] page onto the Ubuntu machine. The link to the current
 version is:
 
-- PowerShell 7.3.3 (universal package) for any supported version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.3/powershell_7.3.3-1.deb_amd64.deb`
-- PowerShell 7.2.10 (universal package) for any supported version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.10/powershell-lts_7.2.10-1.deb_amd64.deb`
+- PowerShell 7.3.4 (universal package) for any supported version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell_7.3.4-1.deb_amd64.deb`
+- PowerShell 7.2.11 (universal package) for any supported version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.11/powershell-lts_7.2.11-1.deb_amd64.deb`
 
 Use the following shell commands to install the package. Change the filename of the package to match
 the version you downloaded.
 
 ```sh
 # Install the downloaded package
-sudo dpkg -i powershell-lts_7.3.3-1.deb_amd64.deb
+sudo dpkg -i powershell-lts_7.3.4-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
