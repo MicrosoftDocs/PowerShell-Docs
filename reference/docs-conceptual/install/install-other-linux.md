@@ -182,5 +182,5 @@ from a new shell by typing `pwsh`.
 [13]: https://aka.ms/powershell-release?tag=preview
 [14]: https://aka.ms/PowerShell-Release?tag=stable
 [15]: https://docs.snapcraft.io/core/install
-[16]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
+[16]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/unstable/amazonlinux/docker/Dockerfile
 [17]: https://snapcraft.io/store
