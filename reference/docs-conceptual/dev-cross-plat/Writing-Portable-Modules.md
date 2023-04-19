@@ -341,7 +341,7 @@ managed.dll folder
 [07]: /dotnet/standard/net-standard
 [08]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [09]: /powershell/scripting/developer/cmdlet/modules-and-snap-ins
-[10]: /powershell/scripting/gallery/concepts/module-psedition-support
+[10]: /powershell/gallery/concepts/module-psedition-support
 [11]: https://github.com/Microsoft/dotnet-apiport
 [12]: https://github.com/PowerShell/PowerShellStandard
 [13]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
