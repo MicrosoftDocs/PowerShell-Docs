@@ -93,11 +93,11 @@ productDirectory:
       links:
         - url: https://www.powershellgallery.com/
           text: PowerShell Gallery
-        - url: /powershell/scripting/gallery/overview
+        - url: /powershell/gallery/overview
           text: What is the PowerShell Gallery
-        - url: /powershell/scripting/gallery/concepts/publishing-guidelines
+        - url: /powershell/gallery/concepts/publishing-guidelines
           text: Best practices
-        - url: /powershell/scripting/gallery/faqs
+        - url: /powershell/gallery/faqs
           text: FAQs
     # Card 5
     - title: Developer resources

@@ -1525,8 +1525,8 @@ imported as `Get-ExampleItem`.
 [02]: /powershell/module/microsoft.powershell.core/about/about_powershell_editions
 [03]: /powershell/scripting/dev-cross-plat/performance/module-authoring-considerations
 [04]: /powershell/scripting/developer/module/supporting-updatable-help
-[05]: /powershell/scripting/gallery/concepts/module-psedition-support
-[06]: /powershell/scripting/gallery/concepts/package-manifest-affecting-ui
+[05]: /powershell/gallery/concepts/module-psedition-support
+[06]: /powershell/gallery/concepts/package-manifest-affecting-ui
 [07]: about_Format.ps1xml.md
 [08]: about_Types.ps1xml.md
 [09]: about_Updatable_Help.md
