@@ -91,7 +91,7 @@ $composers = @("Antonio Vivaldi", "Richard Wagner ", "Franz Schubert", "Johannes
 $composers | Convert-String -Example "Patti Fuller = Fuller, P."
 ```
 
-```)utput
+```Output
  Wagner, R.
  Brahms, J.
 ```
@@ -195,7 +195,7 @@ examples:
 - `-Example "Hello World=World: Hello",'"Hello","1"=1: Hello'`
 
 > [!NOTE]
->T he second example uses a list of patterns
+> The second example uses a list of patterns
 
 Alternatively, specify a list of hash tables that contain **Before** and
 **After** properties.
