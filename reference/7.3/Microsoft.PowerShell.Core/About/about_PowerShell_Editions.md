@@ -239,7 +239,7 @@ to catch possible behavioral differences between editions. For this you must sti
 - [about_Automatic_Variables](about_Automatic_Variables.md)
 - [Get-Module](xref:Microsoft.PowerShell.Core.Get-Module)
 - [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
-- [Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support)
+- [Modules with compatible PowerShell Editions](/powershell/gallery/concepts/module-psedition-support)
 
 [Pester]: https://github.com/pester/Pester/wiki/Pester
 [pssa]: https://www.powershellgallery.com/packages/PSScriptAnalyzer/

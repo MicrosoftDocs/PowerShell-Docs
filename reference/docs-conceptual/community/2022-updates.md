@@ -351,9 +351,9 @@ New content
 
 Content updates
 
-- Rewrote the install instructions for [PowerShellGet](/powershell/scripting/gallery/installing-psget)
+- Rewrote the install instructions for [PowerShellGet](//powershell/gallery/powershellget/install-powershellget)
 - Created separate article for
-  [Installing PowerShellGet on older Windows systems](/powershell/scripting/gallery/install-on-older-systems)
+  [Installing PowerShellGet on older Windows systems](/powershell/gallery/powershellget/install-on-older-systems)
 
 Other projects
 

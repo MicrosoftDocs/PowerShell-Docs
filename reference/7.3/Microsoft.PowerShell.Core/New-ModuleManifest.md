@@ -61,7 +61,7 @@ aren't specified in the command, in addition to required parameter values. Begin
 
 If you are planning to publish your module in the PowerShell Gallery, the manifest must contain
 values for certain properties. For more information, see
-[Required metadata for items published to the PowerShell Gallery](/powershell/scripting/gallery/how-to/publishing-packages/publishing-a-package#required-metadata-for-items-published-to-the-powershell-gallery)
+[Required metadata for items published to the PowerShell Gallery](/powershell/gallery/how-to/publishing-packages/publishing-a-package#required-metadata-for-items-published-to-the-powershell-gallery)
 in the Gallery documentation.
 
 ## EXAMPLES
@@ -435,7 +435,7 @@ Accept wildcard characters: False
 ### -CompatiblePSEditions
 
 Specifies the module's compatible PSEditions. For information about PSEdition, see
-[Modules with compatible PowerShell Editions](/powershell/scripting/gallery/concepts/module-psedition-support).
+[Modules with compatible PowerShell Editions](/powershell/gallery/concepts/module-psedition-support).
 
 ```yaml
 Type: System.String[]
