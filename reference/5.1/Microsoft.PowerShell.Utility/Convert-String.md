@@ -195,7 +195,7 @@ examples:
 - `-Example "Hello World=World: Hello",'"Hello","1"=1: Hello'`
 
 > [!NOTE]
->The second example uses a list of patterns
+> The second example uses a list of patterns
 
 Alternatively, specify a list of hash tables that contain **Before** and
 **After** properties.
