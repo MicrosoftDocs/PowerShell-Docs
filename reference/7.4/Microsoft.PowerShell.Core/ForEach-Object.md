@@ -149,9 +149,9 @@ Each subkey in the **Network** key represents a mapped network drive that reconn
 drive to `\\Server\Share`, an **E** subkey is created in `HKCU:\Network` with the **RemotePath**
 registry value set to `\\Server\Share`.
 
-The command uses the `Get-ItemProperty` cmdlet to get all the subkeys of the **Net****work** key and
-the `Set-ItemProperty` cmdlet to change the value of the **RemotePath** registry entry in each key.
-In the `Set-ItemProperty` command, the path is the value of the **PSPath** property of the registry
+The command uses the `Get-ItemProperty` cmdlet to get all the subkeys of the **Network** key and the
+`Set-ItemProperty` cmdlet to change the value of the **RemotePath** registry entry in each key. In
+the `Set-ItemProperty` command, the path is the value of the **PSPath** property of the registry
 key. This is a property of the Microsoft .NET Framework object that represents the registry key, not
 a registry entry. The command uses the **ToUpper()** method of the **RemotePath** value, which is a
 string **REG_SZ**.
