@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 04/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -15,22 +15,20 @@ Starts one or more processes on the local computer.
 
 ## SYNTAX
 
-### Default (Default)
-
 ```
-Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-Credential <PSCredential>]
- [-WorkingDirectory <String>] [-LoadUserProfile] [-NoNewWindow] [-PassThru]
- [-RedirectStandardError <String>] [-RedirectStandardInput <String>]
- [-RedirectStandardOutput <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [-UseNewEnvironment]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-Credential <pscredential>]
+ [-WorkingDirectory <string>] [-LoadUserProfile] [-NoNewWindow] [-PassThru]
+ [-RedirectStandardError <string>] [-RedirectStandardInput <string>]
+ [-RedirectStandardOutput <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait]
+ [-UseNewEnvironment] [-Environment <hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseShellExecute
 
 ```
-Start-Process [-FilePath] <String> [[-ArgumentList] <String[]>] [-WorkingDirectory <String>]
- [-PassThru] [-Verb <String>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-WorkingDirectory <string>]
+ [-PassThru] [-Verb <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait]
+ [-Environment <hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -176,6 +174,35 @@ In this example, `Start-Process` is running the Linux `nohup` command, which lau
 detached process. For more information, see the [nohup](https://wikipedia.org/wiki/Nohup) article on
 Wikipedia.
 
+### Example 10: Overriding an environment variable for a process
+
+By default, when you use `Start-Process`, the new process is created with the same environment
+variables as the current session. You can use the **Environment** parameter to override the values
+of those variables.
+
+In this example, the environment variable `FOO` is added to the session with `foo` as the value.
+
+The example runs `Start-Process` three times, returning the value of `FOO` each time. The first
+command doesn't override the environment variable. In the second command, `FOO` is set to `bar`. In
+the third command, `FOO` is set to `$null`, which removes it.
+
+```powershell
+$env:FOO = 'foo'
+Start-Process pwsh -NoNewWindow -ArgumentList '-c', '$env:FOO'
+Start-Process pwsh -NoNewWindow -ArgumentList '-c', '$env:FOO' -Environment @{
+    FOO  = 'bar'
+}
+Start-Process pwsh -NoNewWindow -ArgumentList '-c', '$env:FOO' -Environment @{
+    FOO  = $null
+}
+```
+
+```Output
+foo
+bar
+
+```
+
 ## PARAMETERS
 
 ### -ArgumentList
@@ -230,6 +257,31 @@ Required: False
 Position: Named
 Default value: Current user
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Environment
+
+Specifies one or more environment variables to override for the process as a hash table. Specify
+the name of an environment variable as a key in the hash table and the desired value. To unset an
+environment variable, specify its value as `$null`.
+
+The specified variables are replaced in the process. When you specify the `PATH` environment
+variable it's replaced with the value of `$PSHOME` followed by the specified value from this
+parameter. On Windows, the command appends the values for `PATH` in the Machine and User scopes
+after the new value.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
 Accept wildcard characters: False
 ```
 
