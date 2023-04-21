@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/16/2023
+ms.date: 04/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -856,6 +856,12 @@ Names that contain brackets (`[]`) must be enclosed in single quotes (`'`).
 
 By default, `Invoke-WebRequest` returns the results to the pipeline. To send the results to a file
 and to the pipeline, use the **Passthru** parameter.
+
+Starting in PowerShell 7.4, you can specify a folder path without the filename. When you do, the
+file's name is the taken from either the
+[Content-Disposition](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition)
+of the response or the last segment of the resolved URI after any redirections. When you specify a
+folder path for **OutFile**, you can't use the **Resume** parameter.
 
 ```yaml
 Type: System.String
