@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/13/2023
+ms.date: 04/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -56,7 +56,7 @@ command.
   [about_functions](about/about_functions.md#piping-objects-to-functions).
 
   > [!NOTE]
-  > The script blocks run in the caller's scope. Therefore the blocks have access to variables in
+  > The script blocks run in the caller's scope. Therefore, the blocks have access to variables in
   > that scope and can create new variables that persist in that scope after the cmdlet completes.
 
 - **Operation statement**. You can also write an operation statement, which is much more like
@@ -77,9 +77,9 @@ command.
   In PowerShell 7, a new runspace is created for each loop iteration to ensure maximum isolation.
   This can be a large performance and resource hit if the work you are doing is small compared to
   creating new runspaces or if there are a lot of iterations performing significant work. As of
-  PowerShell 7.1, runspaces from a runspace pool are reused by default. The runspace pool size is
-  specified by the **ThrottleLimit** parameter. The default runspace pool size is 5. You can still
-  create a new runspace for each iteration using the **UseNewRunspace** switch.
+  PowerShell 7.1, runspaces from a runspace pool are reused by default. The **ThrottleLimit**
+  parameter sets the runspace pool size. The default runspace pool size is 5. You can still create a
+  new runspace for each iteration using the **UseNewRunspace** switch.
 
   By default, the parallel scriptblocks use the current working directory of the caller that started
   the parallel tasks.
@@ -111,7 +111,7 @@ Get-ChildItem $PSHOME |
   ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; " " }}
 ```
 
-If the object is not a directory, the script block gets the name of the file, divides the value of
+If the object isn't a directory, the script block gets the name of the file, divides the value of
 its **Length** property by 1024, and adds a space (" ") to separate it from the next entry. The
 cmdlet uses the **PSISContainer** property to determine whether an object is a directory.
 
@@ -128,7 +128,7 @@ $events | ForEach-Object -Begin {Get-Date} -Process {Out-File -FilePath Events.t
 `Get-EventLog` gets the 1000 most recent events from the System event log and stores them in the
 `$Events` variable. `$Events` is then piped to the `ForEach-Object` cmdlet. The **Begin** parameter
 displays the current date and time. Next, the **Process** parameter uses the `Out-File` cmdlet to
-create a text file that is named events.txt and stores the message property of each of the events in
+create a text file that's named events.txt and stores the message property of each of the events in
 that file. Last, the **End** parameter is used to display the date and time after all the processing
 has completed.
 
@@ -154,7 +154,7 @@ The command uses the `Get-ItemProperty` cmdlet to get all the subkeys of the **N
 the `Set-ItemProperty` command, the path is the value of the **PSPath** property of the registry
 key. This is a property of the Microsoft .NET Framework object that represents the registry key, not
 a registry entry. The command uses the **ToUpper()** method of the **RemotePath** value, which is a
-string (REG_SZ).
+string **REG_SZ**.
 
 Because `Set-ItemProperty` is changing the property of each key, the `ForEach-Object` cmdlet is
 required to access the property.
@@ -180,7 +180,7 @@ a value for `$null` as it does for other objects piped to it.
 
 ### Example 6: Get property values
 
-This example gets the value of the **Path** property of all installed PowerShell modules by using
+This example gets the value of the **Path** property of all installed PowerShell modules using
 the **MemberName** parameter of the `ForEach-Object` cmdlet.
 
 ```powershell
@@ -229,7 +229,7 @@ the **MemberName** and **ArgumentList** parameters, which are optional.
 ### Example 8: Using ForEach-Object with two script blocks
 
 In this example, we pass two script blocks positionally. All the script blocks bind to the
-**Process** parameter. However, they are treated as if they had been passed to the **Begin** and
+**Process** parameter. However, they're treated as if they had been passed to the **Begin** and
 **Process** parameters.
 
 ```powershell
@@ -245,7 +245,7 @@ process
 ### Example 9: Using ForEach-Object with more than two script blocks
 
 In this example, we pass four script blocks positionally. All the script blocks bind to the
-**Process** parameter. However, they are treated as if they had been passed to the **Begin**,
+**Process** parameter. However, they're treated as if they had been passed to the **Begin**,
 **Process**, and **End** parameters.
 
 ```powershell
@@ -329,7 +329,7 @@ $logEntries.Count
 50000
 ```
 
-The **Parallel** parameter specifies the script block that is run in parallel for each input log
+The **Parallel** parameter specifies the script block that's run in parallel for each input log
 name. The **ThrottleLimit** parameter ensures that all five script blocks run at the same time.
 
 ### Example 13: Run in parallel as a job
@@ -383,13 +383,13 @@ $threadSafeDictionary["pwsh"]
 ```
 
 A single instance of a **ConcurrentDictionary** object is passed to each script block to collect the
-objects. Since the **ConcurrentDictionary** is thread safe, it is safe to be modified by each
+objects. Since the **ConcurrentDictionary** is thread safe, it's safe to be modified by each
 parallel script. A non-thread-safe object, such as **System.Collections.Generic.Dictionary**, would
 not be safe to use here.
 
 > [!NOTE]
 > This example is a very inefficient use of **Parallel** parameter. The script simply adds the input
-> object to a concurrent dictionary object. It is trivial and not worth the overhead of invoking
+> object to a concurrent dictionary object. It's trivial and not worth the overhead of invoking
 > each script in a separate thread. Running `ForEach-Object` normally without the **Parallel**
 > switch is much more efficient and faster. This example is only intended to demonstrate how to use
 > thread safe variables.
@@ -473,7 +473,8 @@ $test1 = 'TestA'
 Line |
    2 |  1..2 | Foreach-Object -Parallel {
      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | The value of the using variable '$using:test2' cannot be retrieved because it has not been set in the local session.
+     | The value of the using variable '$using:test2' can't be retrieved because it has not been
+     | set in the local session.
 ```
 
 The nested scriptblock can't access the `$test2` variable and an error is thrown.
@@ -481,8 +482,8 @@ The nested scriptblock can't access the `$test2` variable and an error is thrown
 ### Example 18: Creating multiple jobs that run scripts in parallel
 
 The ThrottleLimit parameter limits the number of parallel scripts running during each instance of
-`ForEach-Object -Parallel`. It does not limit the number of jobs that can be created when using the
-**AsJob** parameter. Since jobs themselves run concurrently, it is possible to create a number of
+`ForEach-Object -Parallel`. It doesn't limit the number of jobs that can be created when using the
+**AsJob** parameter. Since jobs themselves run concurrently, it's possible to create a number of
 parallel jobs, each running up to the throttle limit number of concurrent scriptblocks.
 
 ```powershell
@@ -585,8 +586,8 @@ the objects.
 
 When you use the **InputObject** parameter with `ForEach-Object`, instead of piping command results
 to `ForEach-Object`, the **InputObject** value is treated as a single object. This is true even if
-the value is a collection that is the result of a command, such as `-InputObject (Get-Process)`.
-Because **InputObject** cannot return individual properties from an array or collection of objects,
+the value is a collection that's the result of a command, such as `-InputObject (Get-Process)`.
+Because **InputObject** can't return individual properties from an array or collection of objects,
 we recommend that if you use `ForEach-Object` to perform operations on a collection of objects for
 those objects that have specific values in defined properties, you use `ForEach-Object` in the
 pipeline, as shown in the examples in this topic.
@@ -646,7 +647,7 @@ Accept wildcard characters: False
 
 ### -Process
 
-Specifies the operation that is performed on each input object. This script block is run for every
+Specifies the operation that's performed on each input object. This script block is run for every
 object in the pipeline. For more information about the `process` block, see
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
@@ -670,7 +671,7 @@ Accept wildcard characters: False
 
 ### -RemainingScripts
 
-Specifies all script blocks that are not taken by the **Process** parameter.
+Specifies all script blocks that aren't taken by the **Process** parameter.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -688,12 +689,12 @@ Accept wildcard characters: False
 
 ### -ThrottleLimit
 
-Specifies the number of script blocks that in parallel. Input objects are blocked until
+Specifies the number of script blocks that run in parallel. Input objects are blocked until
 the running script block count falls below the **ThrottleLimit**. The default value is `5`.
 
 The ThrottleLimit parameter limits the number of parallel scripts running during each instance of
-`ForEach-Object -Parallel`. It does not limit the number of jobs that can be created when using the
-**AsJob** parameter. Since jobs themselves run concurrently, it is possible to create a number of
+`ForEach-Object -Parallel`. It doesn't limit the number of jobs that can be created when using the
+**AsJob** parameter. Since jobs themselves run concurrently, it's possible to create a number of
 parallel jobs, each running up to the throttle limit number of concurrent scriptblocks.
 
 This parameter was introduced in PowerShell 7.0.
@@ -716,8 +717,7 @@ Specifies the number of seconds to wait for all input to be processed in paralle
 specified timeout time, all running scripts are stopped. And any remaining input objects to be
 processed are ignored. Default value of `0` disables the timeout, and `ForEach-Object -Parallel` can
 run indefinitely. Typing <kbd>Ctrl</kbd>+<kbd>C</kbd> at the command line stops a running
-`ForEach-Object -Parallel` command. This parameter cannot be used along with the **AsJob**
-parameter.
+`ForEach-Object -Parallel` command. This parameter can't be used along with the **AsJob** parameter.
 
 This parameter was introduced in PowerShell 7.0.
 
@@ -770,7 +770,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -811,7 +811,7 @@ PowerShell includes the following aliases for `ForEach-Object`:
   - `%`
   - `foreach`
 
-The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you cannot pipe
+The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you can't pipe
 input to a **Foreach** statement. For more information about the **Foreach** statement, see
 [about_Foreach](./About/about_Foreach.md).
 
@@ -822,7 +822,7 @@ Using `ForEach-Object -Parallel`:
 
 - The `ForEach-Object -Parallel` parameter set uses PowerShell's internal API to run each script
   block in a new runspace. This is significantly more overhead than running `ForEach-Object`
-  normally with sequential processing. It is important to use **Parallel** where the overhead of
+  normally with sequential processing. It's important to use **Parallel** where the overhead of
   running in parallel is small compared to work the script block performs. For example:
 
   - Compute intensive scripts on multi-core machines
@@ -832,8 +832,8 @@ Using `ForEach-Object -Parallel`:
   the parallel scripts are trivial. Experiment with **Parallel** to discover where it can be
   beneficial.
 
-- When running in parallel, objects decorated with **ScriptProperties** or **ScriptMethods** cannot
-  be guaranteed to function correctly if they are run in a different runspace than the scripts were
+- When running in parallel, objects decorated with **ScriptProperties** or **ScriptMethods** can't
+  be guaranteed to function correctly if they're run in a different runspace than the scripts were
   originally attached to them.
 
   Scriptblock invocation always attempts to run in its _home_ runspace, regardless of where it's
@@ -865,7 +865,7 @@ Using `ForEach-Object -Parallel`:
   > The `ForEach-Object -Parallel` parameter set runs script blocks in parallel on separate process
   > threads. The `$using:` keyword allows passing variable references from the cmdlet invocation
   > thread to each running script block thread. Since the script blocks run in different threads,
-  > the object variables passed by reference must be used safely. Generally it is safe to read from
+  > the object variables passed by reference must be used safely. Generally it's safe to read from
   > referenced objects that don't change. But if the object state is being modified then you must
   > used thread safe objects, such as .NET **System.Collection.Concurrent** types (See Example 11).
 
