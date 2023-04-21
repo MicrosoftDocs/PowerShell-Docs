@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 04/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resolve-Path
@@ -18,13 +18,27 @@ Resolves the wildcard characters in a path, and displays the path contents.
 ### Path (Default)
 
 ```
-Resolve-Path [-Path] <String[]> [-Relative] [-Credential <PSCredential>] [<CommonParameters>]
+Resolve-Path [-Path] <string[]> [-Relative] [-Credential <pscredential>] [<CommonParameters>]
+```
+
+### PathWithRelativeBase
+
+```
+Resolve-Path [-Path] <string[]> -RelativeBasePath <string> [-Credential <pscredential>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Resolve-Path -LiteralPath <String[]> [-Relative] [-Credential <PSCredential>] [<CommonParameters>]
+Resolve-Path -LiteralPath <string[]> [-Relative] [-Credential <pscredential>] [<CommonParameters>]
+```
+
+### LiteralPathWithRelativeBase
+
+```
+Resolve-Path -LiteralPath <string[]> -RelativeBasePath <string> [-Credential <pscredential>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -106,6 +120,20 @@ expression.
 PS C:\> Resolve-Path -LiteralPath 'test[xml]'
 ```
 
+### Example 7: Resolve a path relative to another folder
+
+This example uses the **RelativeBasePath** parameter to resolve the path of the `pwsh` executable
+relative to `$env:TEMP`.
+
+```powershell
+$ExecutablePath = Get-Command -Name pwsh | Select-Object -ExpandProperty Source
+Resolve-Path -Path $ExecutablePath -RelativeBasePath $env:TEMP
+```
+
+```Output
+..\..\..\..\..\Program Files\PowerShell\7-preview\pwsh.exe
+```
+
 ## PARAMETERS
 
 ### -Credential
@@ -140,7 +168,7 @@ any characters as escape sequences.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: LiteralPath
+Parameter Sets: LiteralPath, LiteralPathWithRelativeBase
 Aliases: PSPath, LP
 
 Required: True
@@ -157,7 +185,7 @@ string to `Resolve-Path`. Wildcard characters are permitted.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Path
+Parameter Sets: Path, PathWithRelativeBase
 Aliases:
 
 Required: True
@@ -173,10 +201,29 @@ Indicates that this cmdlet returns a relative path.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: Path, LiteralPath
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RelativeBasePath
+
+Specifies a path to resolve the relative path from. When you use this parameter, the cmdlet returns
+a string representing the relative path from **RelativeBasePath** to **Path**.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: System.String
+Parameter Sets: PathWithRelativeBase, LiteralPathWithRelativeBase
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
