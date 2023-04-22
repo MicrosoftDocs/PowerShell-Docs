@@ -17,7 +17,7 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/gallery/powershellget/install-powershellget.md",
+      "redirect_url": "/powershell/gallery/powershellget/install-powershellget",
       "source_path": "reference/docs-conceptual/gallery/installing-psget.md"
     },
     {
