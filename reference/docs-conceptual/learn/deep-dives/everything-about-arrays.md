@@ -1200,7 +1200,8 @@ TypeName: System.Object[]
 ```
 
 I have a second way that's more of a hack (and I try to avoid hacks like this). You can place a
-comma in front of the array before you pipe it.
+comma in front of the array before you pipe it. This wraps `$data` into another array where it 
+is the only element, so after the unwrapping the outer array we get back `$data` unwrapped.
 
 ```powershell
 PS> ,$data | Get-Member
