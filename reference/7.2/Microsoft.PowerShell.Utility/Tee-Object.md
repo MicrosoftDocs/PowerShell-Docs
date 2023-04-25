@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 04/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/tee-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Tee-Object
@@ -97,6 +97,58 @@ drive. A pipeline operator (`|`) sends the list to `Tee-Object`, which appends t
 AllSystemFiles.txt file and passes the list down the pipeline to the `Out-File` cmdlet, which saves
 the list in the `NewSystemFiles.txt file`.
 
+### Example 4: Print output to console and use in the pipeline
+
+This example gets the files in a folder, prints them to the console, then filters the files for
+those that have a defined front matter metadata block. Finally, it lists the names of the articles
+that have front matter.
+
+```powershell
+$consoleDevice = if ($IsWindows) {
+    '\\.\CON'
+} else {
+    '/dev/tty'
+}
+$frontMatterPattern = '(?s)^---(?<FrontMatter>.+)---'
+
+$articles = Get-ChildItem -Path .\reference\7.4\PSReadLine\About\ |
+    Tee-Object -FilePath $consoleDevice |
+    Where-Object {
+        (Get-Content $_ -Raw) -match $frontMatterPattern
+    }
+
+$articles.Name
+```
+
+```Output
+    Directory: C:\code\docs\PowerShell-Docs\reference\7.4\PSReadLine\About
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---          12/13/2022 11:37 AM            384 .markdownlint.yaml
+-a---           4/25/2023 11:28 AM          40194 about_PSReadLine_Functions.md
+-a---           4/25/2023 10:58 AM          10064 about_PSReadLine.md
+
+about_PSReadLine_Functions.md
+about_PSReadLine.md
+```
+
+The example sets the `$consoleDevice` variable to the value of the current terminal's console
+device. On Windows, you can write to the current console device by redirecting your output to the
+`\\.\CON` filepath. On non-Windows systems, you use the `/dev/tty` filepath.
+
+Then it sets the `$frontMatterPattern` variable to a regular expression that matches when a string
+starts with three dashes (`---`) and has any content before another three dashes. When this pattern
+matches an article's content, the article has a defined front matter metadata block.
+
+Next, the example uses `Get-ChildItem` to retrieve every file in the `About` folder. `Tee-Object`
+prints the piped results to the console using the **FileName** parameter. `Where-Object` filters
+the files by getting their content as a single string with the **Raw** parameter of `Get-Content`
+and comparing that string to `$frontMatterPattern`.
+
+Finally, the example prints the names of the files in the folder that have a defined front matter
+metadata block.
+
 ## PARAMETERS
 
 ### -Append
@@ -162,6 +214,11 @@ Accept wildcard characters: False
 
 Specifies a file that this cmdlet saves the object to Wildcard characters are permitted, but must
 resolve to a single file.
+
+Starting in PowerShell 7, when you specify the **FilePath** as `\\.\CON` on Windows or `/dev/tty`
+on non-Windows systems, the **InputObject** is printed in the console. Those file paths correspond
+to the current terminal's console device on the system, enabling you to print the **InputObject**
+and send it to the output stream with one command.
 
 ```yaml
 Type: System.String
