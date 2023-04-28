@@ -13,8 +13,8 @@ extension is the recommended editor for writing PowerShell scripts.
 
 It supports the following PowerShell versions:
 
-- PowerShell 7.0 and higher (Windows, macOS, and Linux)
-- Windows PowerShell 5.1 (Windows-only)
+- PowerShell 7.2 and higher (Windows, macOS, and Linux)
+- Windows PowerShell 5.1 (Windows-only) with .NET Framework 4.8
 
 > [!NOTE]
 > Visual Studio Code isn't the same as [Visual Studio][03].
