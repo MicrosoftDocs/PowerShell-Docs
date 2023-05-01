@@ -98,8 +98,11 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Reconnect to a session
 
+```powershell
+Connect-PSSession -ComputerName Server01 -Name ITTask
 ```
-PS C:\> Connect-PSSession -ComputerName Server01 -Name ITTask
+
+```Output
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  4 ITTask          Server01        Opened        ITTasks                  Available
@@ -112,23 +115,31 @@ The output shows that the command was successful. The **State** of the session i
 
 ### Example 2: Effect of disconnecting and reconnecting
 
+```powershell
+Get-PSSession
 ```
-PS C:\> Get-PSSession
 
+```Output
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 Backups         Localhost       Opened        Microsoft.PowerShell     Available
+```
 
+```powershell
+Get-PSSession | Disconnect-PSSession
+```
 
-PS C:\> Get-PSSession | Disconnect-PSSession
-
+```Output
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 Backups         Localhost       Disconnected  Microsoft.PowerShell          None
+```
 
+```powershell
+Get-PSSession | Connect-PSSession
+```
 
-PS C:\> Get-PSSession | Connect-PSSession
-
+```Output
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 Backups         Localhost       Opened        Microsoft.PowerShell     Available
@@ -190,45 +201,64 @@ session. The command saves the results in the `$BackupSpecs` variable.The eighth
 `Invoke-Command` cmdlet to runs another script in the session. The command uses the value of the
 `$BackupSpecs` variable in the session as input to the script.
 
+```powershell
+$s = New-PSSession -ComputerName Server01 -Name ITTask -ConfigurationName ITTasks
+Invoke-Command -Session $s {Start-Job -FilePath \\Server30\Scripts\Backup-SQLDatabase.ps1}
 ```
-PS C:\> $s = New-PSSession -ComputerName Server01 -Name ITTask -ConfigurationName ITTasks
-PS C:\> Invoke-Command -Session $s {Start-Job -FilePath \\Server30\Scripts\Backup-SQLDatabase.ps1}
 
+```Output
 Id     Name            State         HasMoreData     Location             Command
 --     ----            -----         -----------     --------             -------
 2      Job2            Running       True            Server01             \\Server30\Scripts\Backup...
+```
 
-PS C:\> Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
+```powershell
+Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
+```
 
+```Output
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 ITTask          Server01        Disconnected  ITTasks               None
+```
 
-PS C:\> Get-PSSession -ComputerName Server01 -Name ITTask
+```powershell
+Get-PSSession -ComputerName Server01 -Name ITTask
+```
 
+```Output
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 ITTask          Server01        Disconnected  ITTasks               None
+```
 
+```powershell
+$s = Connect-PSSession -ComputerName Server01 -Name ITTask
+```
 
-PS C:\> $s = Connect-PSSession -ComputerName Server01 -Name ITTask
-
-
+```Output
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 ITTask          Server01        Opened        ITTasks               Available
+```
 
-PS C:\> Invoke-Command -Session $s {Get-Job}
+```powershell
+Invoke-Command -Session $s {Get-Job}
+```
 
+```Output
 Id     Name            State         HasMoreData     Location             Command
 --     ----            -----         -----------     --------             -------
 2      Job2            Completed     True            Server01             \\Server30\Scripts\Backup...
+```
 
-PS C:\> Invoke-Command -Session $s {$BackupSpecs = Receive-Job -JobName Job2}
+```powershell
+Invoke-Command -Session $s {$BackupSpecs = Receive-Job -JobName Job2}
+Invoke-Command -Session $s {\\Server30\Scripts\New-SQLDatabase.ps1 -InitData $BackupSpecs.Initialization}
+Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
+```
 
-PS C:\> Invoke-Command -Session $s {\\Server30\Scripts\New-SQLDatabase.ps1 -InitData $BackupSpecs.Initialization}
-
-PS C:\> Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
+```Output
 Id Name            ComputerName    State         ConfigurationName     Availability
 -- ----            ------------    -----         -----------------     ------------
  1 ITTask          Server01        Disconnected  ITTasks               None
