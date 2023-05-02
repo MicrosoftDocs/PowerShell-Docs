@@ -263,8 +263,8 @@ In this example, the **InputObject** parameter specifies an array that contains 
 Get-Random -InputObject @('a','',$null)
 ```
 
-`Get-Random` will return either `a`, empty string, or `$null`. The empty sting displays as a blank
-line and `$null` returns to a PowerShell prompt.
+`Get-Random` returns either `a`, empty string, or `$null`. The empty sting displays as a blank line
+and `$null` returns to a PowerShell prompt.
 
 ## PARAMETERS
 
@@ -273,7 +273,7 @@ line and `$null` returns to a PowerShell prompt.
 Specifies the number of random objects or numbers to return. The default is 1.
 
 When used with `InputObject`, if the value of **Count** exceeds the number of objects in the
-collection, `Get-Random` returns all of the objects in random order.
+collection, `Get-Random` returns all the objects in random order.
 
 ```yaml
 Type: System.Int32
@@ -311,7 +311,7 @@ Accept wildcard characters: False
 
 ### -Maximum
 
-Specifies a maximum value for the random number. `Get-Random` returns a value that is less than the
+Specifies a maximum value for the random number. `Get-Random` returns a value that's less than the
 maximum (not equal). Enter an integer, a double-precision floating-point number, or an object that
 can be converted to an integer or double, such as a numeric string ("100").
 
@@ -361,9 +361,8 @@ Accept wildcard characters: False
 
 ### -SetSeed
 
-Specifies a seed value for the random number generator. When you use **SetSeed**, the cmdlet uses
-the [System.Random](/dotnet/api/system.random) method to generate pseudorandom numbers, which is not
-cryptographically secure.
+Specifies a seed value for the random number generator. When you use **SetSeed**, the cmdlet
+generates pseudorandom numbers, which isn't cryptographically secure.
 
 > [!CAUTION]
 > Setting the seed results in non-random behavior. It should only be used when trying to reproduce
@@ -432,7 +431,7 @@ submitted collection.
 By default, `Get-Random` generates cryptographically secure randomness using the
 [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
 
-`Get-Random` does not alway return the same data type as the input value. The following table shows
+`Get-Random` doesn't always return the same data type as the input value. The following table shows
 the output type for each of the numeric input types.
 
 | Input Type | Output Type |
@@ -457,7 +456,3 @@ versions, only the **Maximum** parameter in the **RandomNumberParameterSet** par
 an empty string or `$null`.
 
 ## RELATED LINKS
-
-[System.Security.Cryptography.RandomNumberGenerator()](/dotnet/api/system.security.cryptography.randomnumbergenerator)
-
-[System.Random](/dotnet/api/system.random)
