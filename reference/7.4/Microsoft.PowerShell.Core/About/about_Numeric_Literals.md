@@ -311,7 +311,7 @@ features.
 ### Parsing real numeric literals
 
 If the literal contains a decimal point or the e-notation, the literal string
-is parsed a real number.
+is parsed as a real number.
 
 - If the decimal-suffix is present then directly into `[decimal]`.
 - Else, parse as `[Double]` and apply multiplier to the value. Then check the
