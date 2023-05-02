@@ -42,21 +42,18 @@ The `Get-Random` cmdlet gets a randomly selected number. If you submit a collect
 Without parameters or input, a `Get-Random` command returns a randomly selected 32-bit unsigned
 integer between 0 (zero) and `[int32]::MaxValue`.
 
-By default, `Get-Random` generates randomness using the
-[RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
-
 You can use the parameters of `Get-Random` to specify the minimum and maximum values, the number of
 objects returned from a collection, or a seed number.
 
 > [!CAUTION]
-> Be aware that the seed value could be set by other code in the same session, such as an imported
-> module. This seed value is used for the current command and for all subsequent `Get-Random`
-> commands in the current session until you use **SetSeed** again or close the session. You can't
-> reset the seed to its default value.
+> This seed value is used for the current command and for all subsequent `Get-Random` commands in
+> the current session until you use **SetSeed** again or close the session. You can't reset the seed
+> to its default value.
 >
 > Deliberately setting the seed results in non-random, repeatable behavior. It should only be used
 > when trying to reproduce behavior, such as when debugging or analyzing a script that includes
-> `Get-Random` commands.
+> `Get-Random` commands. Be aware that the seed value could be set by other code in the same
+> session, such as an imported module.
 
 ## EXAMPLES
 
