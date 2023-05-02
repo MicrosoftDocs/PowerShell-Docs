@@ -13,6 +13,7 @@ title: about Numeric Literals
 This article describes the syntax and usage of numeric values in PowerShell.
 
 ## Long description
+
 There are two kinds of numeric literals: integer and real. Both can have type
 and multiplier suffixes.
 
@@ -111,14 +112,14 @@ For convenience, integer and real literals can contain a numeric multiplier,
 which indicates one of a set of commonly used powers of 2. The numeric
 multiplier can be written in any combination of upper or lowercase letters.
 
-The multiplier suffixes can be used in combination with any type suffixes,
-but must be present after the type suffix. For example, the literal
-`100gbL` is malformed, but the literal `100Lgb` is valid.
+The multiplier suffixes can be used in combination with any type suffixes, but
+must be present after the type suffix. For example, the literal `100gbL` is
+malformed, but the literal `100Lgb` is valid.
 
 If a multiplier creates a value that exceeds the possible values for the
-numeric type that the suffix specifies, the literal is malformed. For
-example, the literal `1usgb` is malformed, because the value `1gb` is larger
-than what is permitted for the `[ushort]` type specified by the `us` suffix.
+numeric type that the suffix specifies, the literal is malformed. For example,
+the literal `1usgb` is malformed, because the value `1gb` is larger than what
+is permitted for the `[ushort]` type specified by the `us` suffix.
 
 ### Multiplier examples
 
@@ -202,8 +203,8 @@ their type and value:
 ### Working with binary or hexadecimal numbers
 
 Overly large binary or hexadecimal literals can return as `[bigint]` rather
-than failing the parse, if and only if the `n` suffix is specified. Sign
-bits are still respected above even `[decimal]` ranges, however:
+than failing the parse, if and only if the `n` suffix is specified. Sign bits
+are still respected above even `[decimal]` ranges, however:
 
 - If a binary string is some multiple of 8 bits long, the highest bit is
   treated as the sign bit.
@@ -215,8 +216,8 @@ example, `0xFFFFFFFF` returns `-1`, but `0xFFFFFFFFu` returns the
 `[uint]::MaxValue` of 4294967295.
 
 In PowerShell 7.1, using a type suffix on a hex literal now returns a signed
-value of that type. For example, in PowerShell 7.0 the expression `0xFFFFs` returns
-an error because the positive value is too large for an `[int16]` type.
+value of that type. For example, in PowerShell 7.0 the expression `0xFFFFs`
+returns an error because the positive value is too large for an `[int16]` type.
 PowerShell 7.1 interprets this as `-1` that is an `[int16]` type.
 
 Prefixing the literal with a `0` will bypass this and be treated as unsigned.
@@ -236,8 +237,8 @@ Sign bits are accepted for BigInteger-suffixed numerals:
 
 ### Numeric type conversion
 
-When strings are converted to numbers, additional hexadecimal format indicators are
-supported. Those additional formats are not recognized as literals.
+When strings are converted to numbers, additional hexadecimal format indicators
+are supported. Those additional formats are not recognized as literals.
 
 ```powershell
 [int] '0xF' -eq 0xF
@@ -263,9 +264,9 @@ The numeric constant 1usgb is not valid.
 + FullyQualifiedErrorId : BadNumericConstant
 ```
 
-However, malformed literals with invalid syntax like `1gbus` will be interpreted
-as a standard bare string, and can be interpreted as a valid command name in
-contexts where commands may be called.
+However, malformed literals with invalid syntax like `1gbus` will be
+interpreted as a standard bare string, and can be interpreted as a valid
+command name in contexts where commands may be called.
 
 ### Access properties and methods of numeric objects
 
@@ -310,26 +311,27 @@ features.
 
 ### Parsing real numeric literals
 
-If the literal contains a decimal point or the e-notation, the literal string is parsed a real number.
+If the literal contains a decimal point or the e-notation, the literal string
+is parsed as a real number.
 
 - If the decimal-suffix is present then directly into `[decimal]`.
 - Else, parse as `[Double]` and apply multiplier to the value. Then check the
   type suffixes and attempt to cast into appropriate type.
 - If the string has no type suffix, then parse as `[Double]`.
 
-### Paring integer numeric literals
+### Parsing integer numeric literals
 
 Integer type literals are parsed using the following steps:
 
 1. Determine the radix format
    - For binary formats, parse into `[BigInteger]`.
    - For hexidecimal formats, parse into `[BigInteger]` using special casies to
-     retain original behaviours when the value is in the `[int]` or `[long]`
+     retain original behaviors when the value is in the `[int]` or `[long]`
      range.
    - If neither binary nor hex, parse normally as a `[BigInteger]`.
-2. Apply the multiplier value before attempting any casts to ensure type bounds
+1. Apply the multiplier value before attempting any casts to ensure type bounds
    can be appropriately checked without overflows.
-3. Check type suffixes.
+1. Check type suffixes.
    - Check type bounds and attempt to parse into that type.
    - If no suffix is used, then the value is bounds-checked in the following
      order, resulting in the first successful test determining the type of the
@@ -347,8 +349,9 @@ Integer type literals are parsed using the following steps:
 
 ### Parsing large value literals
 
-Previously, higher integer values were parsed as double before being cast to any
-other type. This results in a loss of precision in the higher ranges. For example:
+Previously, higher integer values were parsed as double before being cast to
+any other type. This results in a loss of precision in the higher ranges. For
+example:
 
 ```
 PS> [bigint]111111111111111111111111111111111111111111111111111111
