@@ -26,8 +26,8 @@ Updated content
 
 PowerShell Summit 2023 - Hack-a-Doc event
 
-- We hosted a Hack-a-Doc event on April 27th. Special thanks to the following 19 people contributed
-  62 PRs to update 204 files in the
+- We hosted a Hack-a-Doc event on April 27th. Special thanks to the following 19 people. They
+  contributed 62 PRs to update 204 files in the
   [MicrosoftDocs/windows-powershell-docs](https://github.com/MicrosoftDocs/windows-powershell-docs)
   repository.
 
@@ -62,8 +62,8 @@ GitHub stats
 - 16 issues opened (14 from Community)
 - 17 issues closed (15 Community issues closed)
 
-The following people have contributed to PowerShell docs by submitting pull requests or filing
-issues. Thank you!
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
 
 |    GitHub Id     | PRs merged | Issues opened |
 | ---------------- | :--------: | :-----------: |
