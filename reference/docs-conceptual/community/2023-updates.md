@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 04/03/2023
+ms.date: 05/03/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,65 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-April
+
+New content
+
+- [Handling errors in Crescendo](/powershell/utility-modules/crescendo/advanced/handling-errors)
+- [Transforming arguments in Crescendo](/powershell/utility-modules/crescendo/advanced/transforming-arguments)
+
+Updated content
+
+- Updated release notes for PowerShell 7.4-preview.3
+- Migrated the PowerShell Gallery and PowerShellGet docs to new location to enable version selectors
+  for [PowerShellGet](/powershell/gallery/overview)
+
+PowerShell Summit 2023 - Hack-a-Doc event
+
+- We hosted a Hack-a-Doc event on April 27th. Special thanks to the following 19 people contributed
+  62 PRs to update 204 files in the
+  [MicrosoftDocs/windows-powershell-docs](https://github.com/MicrosoftDocs/windows-powershell-docs)
+  repository.
+
+|     GitHub Id     |       name       | Count of PRs | Count of file |
+| ----------------- | ---------------- | -----------: | ------------: |
+| RobBiddle         | Robert Biddle    |           28 |            48 |
+| pbossman          | Phil Bossman     |            1 |            27 |
+| ThomasNieto       | Thomas Nieto     |            1 |            24 |
+| kevinCefalu       | Kevin Cefalu     |            1 |            24 |
+| robderickson      | Rob Derickson    |            4 |            17 |
+| Snozzberries      | Michael Soule    |           13 |            16 |
+| Spoonsk           |                  |            1 |            12 |
+| thedavecarroll    | Dave Carroll     |            1 |            11 |
+| raynbowbrite      | Vanda Paladino   |            2 |             7 |
+| majst32           | Melissa Januszko |            1 |             6 |
+| XXLMandalorian013 | Drew McClellan   |            1 |             4 |
+| ThePoShWolf       | Anthony Howell   |            1 |             1 |
+| mdowst            | Matthew Dowst    |            1 |             1 |
+| thepowerstring    |                  |            1 |             1 |
+| KevinMarquette    | Kevin Marquette  |            1 |             1 |
+| 53883             |                  |            1 |             1 |
+| zockan            | Michael Svegmar  |            1 |             1 |
+| lanwench          | Paula Kingsley   |            1 |             1 |
+| stevenjudd        | Steven Judd      |            1 |             1 |
+| Grand Total       |                  |           62 |           204 |
+
+### Top Community Contributors
+
+GitHub stats
+
+- 23 PRs merged (2 from Community)
+- 16 issues opened (14 from Community)
+- 17 issues closed (15 Community issues closed)
+
+The following people have contributed to PowerShell docs by submitting pull requests or filing
+issues. Thank you!
+
+|    GitHub Id     | PRs merged | Issues opened |
+| ---------------- | :--------: | :-----------: |
+| NLZ              |     1      |               |
+| Jonathan-Quilter |     1      |               |
 
 ## 2023-March
 
