@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
-ms.date: 04/03/2023
+ms.date: 05/03/2023
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -17,7 +17,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |   PRs Merged    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |  122 |   42 |        1850 |
+| Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |  122 |   44 |        1852 |
 | matt9ucci       |      |      |  157 |   80 |   30 |    1 |    6 |      |      |         274 |
 | nschonni        |      |      |      |   14 |  138 |   10 |      |      |      |         162 |
 | kiazhi          |      |   25 |   79 |   12 |      |      |      |      |      |         116 |
@@ -45,8 +45,8 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |  Issues Opened  | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |   54 |   95 |  212 |  564 |  561 |  366 |  227 |   78 |        2160 |
-| mklement0       |      |      |   19 |   60 |   56 |   61 |   28 |    8 |    6 |         238 |
+| Community       |    3 |   54 |   95 |  212 |  564 |  561 |  366 |  227 |   91 |        2173 |
+| mklement0       |      |      |   19 |   60 |   56 |   61 |   28 |    8 |    7 |         239 |
 | iSazonov        |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |          30 |
 | ehmiiz          |      |      |      |      |      |      |      |   20 |    7 |          27 |
 | jszabo98        |      |      |      |    2 |   15 |    6 |    1 |      |    1 |          25 |
@@ -55,16 +55,17 @@ GitHub issues help us identify errors and gaps in our documentation.
 | vexx32          |      |      |      |    3 |   11 |      |      |    3 |      |          17 |
 | KirkMunro       |      |      |      |    7 |    7 |    1 |      |      |      |          15 |
 | alexandair      |      |    9 |    4 |    2 |      |      |      |      |      |          15 |
+| peetrike        |      |      |      |    1 |      |    4 |    2 |    6 |    1 |          14 |
 | clamb123        |      |      |      |      |      |      |   14 |      |      |          14 |
-| peetrike        |      |      |      |    1 |      |    4 |    2 |    6 |      |          13 |
 | trollyanov      |      |      |      |      |      |      |   11 |    1 |      |          12 |
-| iRon7           |      |      |      |      |      |    2 |    2 |    2 |    6 |          12 |
+| rkeithhill      |      |      |    1 |    2 |    2 |    2 |    3 |    1 |    1 |          12 |
 | JustinGrote     |      |      |      |    1 |    3 |    6 |    1 |    1 |      |          12 |
-| rkeithhill      |      |      |    1 |    2 |    2 |    2 |    3 |    1 |      |          11 |
+| iRon7           |      |      |      |      |      |    2 |    2 |    2 |    6 |          12 |
+| CarloToso       |      |      |      |      |      |      |      |      |   10 |          10 |
 | UberKluger      |      |      |      |      |      |    1 |    7 |    2 |      |          10 |
 | vors            |    1 |    6 |    2 |    1 |      |      |      |      |      |          10 |
-| kilasuit        |      |      |      |      |    3 |    2 |    1 |    4 |      |          10 |
 | LaurentDardenne |      |      |    3 |    2 |      |      |      |    5 |      |          10 |
+| kilasuit        |      |      |      |      |    3 |    2 |    1 |    4 |      |          10 |
 
 <!-- Link references -->
 [contrib]: contributing/overview.md
