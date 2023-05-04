@@ -55,7 +55,7 @@ objects returned from a collection, or a seed number.
 > `Get-Random` commands. Be aware that the seed value could be set by other code in the same
 > session, such as an imported module.
 >
-> For a secure option, use [Get-SecureRandom](Get-SecureRandom.md).
+> `Get-Random` does not ensure cryptographically secure randomness and it is recommended to use [Get-SecureRandom](Get-SecureRandom.md) instead.
 
 ## EXAMPLES
 

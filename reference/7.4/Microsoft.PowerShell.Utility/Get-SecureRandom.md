@@ -44,7 +44,7 @@ unsigned integer between 0 (zero) and `[int32]::MaxValue`.
 You can use the parameters of `Get-SecureRandom` to specify the minimum and maximum values and the
 number of objects returned from a collection.
 
-By default, `Get-SecureRandom` generates cryptographically secure randomness using the
+`Get-SecureRandom` generates cryptographically secure randomness using the
 [RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
 
 ## EXAMPLES
