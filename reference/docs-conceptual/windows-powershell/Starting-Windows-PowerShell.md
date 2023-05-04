@@ -52,11 +52,7 @@ Windows PowerShell 4.0, where applicable.
 ### At the Command Prompt
 
 In Windows Command shell, Windows PowerShell, or Windows PowerShell ISE, to start Windows
-PowerShell, type:
-
-```
-PowerShell
-```
+PowerShell, type: `PowerShell`.
 
 You can also use the parameters of the `powershell.exe` program to customize the session. For more
 information, see [PowerShell.exe Command-Line Help][03].
@@ -79,13 +75,7 @@ Use any of the following methods to start Windows PowerShell ISE.
 ### At the Command Prompt
 
 In Windows Command shell, Windows PowerShell, or Windows PowerShell ISE, to start Windows
-PowerShell, type:
-
-```
-PowerShell_ISE
-```
-
-In PowerShell, you can use the alias `ise`.
+PowerShell, type: `PowerShell_ISE`. In Windows PowerShell, you can use the alias `ise`.
 
 ### With Administrative privileges (Run as administrator)
 
