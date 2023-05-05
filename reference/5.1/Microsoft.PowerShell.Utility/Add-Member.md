@@ -262,15 +262,23 @@ $addMemberSplat = @{
     SecondValue = { $this.Position.Role = $args[0] } # setter
 }
 $user | Add-Member @addMemberSplat
-$user
+$user | Get-Member
 ```
 
 ```Output
-Name      : User1
-Age       : 29
-StartDate : 5/5/2019 12:00:00 AM
-Position  : @{DepartmentName=IT; Role=Manager}
-Title     : Manager
+   TypeName: System.Management.Automation.PSCustomObject
+
+Name        MemberType     Definition
+----        ----------     ----------
+Equals      Method         bool Equals(System.Object obj)
+GetHashCode Method         int GetHashCode()
+GetType     Method         type GetType()
+ToString    Method         string ToString()
+Age         NoteProperty   int Age=29
+Name        NoteProperty   string Name=User1
+Position    NoteProperty   System.Management.Automation.PSCustomObject Position=@{DepartmentName=IT; Role=Manager}
+StartDate   NoteProperty   datetime StartDate=5/5/2019 12:00:00 AM
+Title       ScriptProperty System.Object Title {get= $this.Position.Role ;set= $this.Position.Role = $args[0] ;}
 ```
 
 ```powershell
@@ -284,6 +292,10 @@ StartDate : 5/5/2019 12:00:00 AM
 Position  : @{DepartmentName=IT; Role=Dev Manager}
 Title     : Dev Manager
 ```
+
+Notice that the **Title** property is a **ScriptProperty** that has a **Get** and **Set** method.
+When we assign a new value to the **Title** property, the **Set** method is called and changes the
+value of the **Role** property in the **Position** property.
 
 ## PARAMETERS
 
