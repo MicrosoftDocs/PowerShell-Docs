@@ -603,4 +603,4 @@ methods are being added. For more information about the `$this` variable, see
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
-[System.Type.GetMethod()](xref:System.Type.GetMethod)
+[System.Type.GetMethod()](/dotnet/api/system.type.getmethod)
