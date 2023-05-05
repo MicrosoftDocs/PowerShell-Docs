@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 05/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
@@ -194,6 +194,109 @@ System    Server Core
 PSVersion 4.0
 ```
 
+### Example 6: Add an AliasProperty to an object
+
+In this example we create a custom object that contains two **NoteProperty** members. The type for a
+**NoteProperty** reflects the type of the value stored in the property. In this case, the **Age**
+property is a string.
+
+```powershell
+$obj = [pscustomobject]@{
+      Name = 'Doris'
+      Age = '20'
+}
+$obj | Add-Member -MemberType AliasProperty -Name 'intAge' -Value age -SecondValue uint32
+$obj | Get-Member
+$obj
+```
+
+```Output
+   TypeName: System.Management.Automation.PSCustomObject
+
+Name        MemberType    Definition
+----        ----------    ----------
+intAge      AliasProperty intAge = (System.UInt32)age
+Equals      Method        bool Equals(System.Object obj)
+GetHashCode Method        int GetHashCode()
+GetType     Method        type GetType()
+ToString    Method        string ToString()
+Age         NoteProperty  string Age=20
+Name        NoteProperty  string Name=Doris
+
+Name   : Doris
+Age    : 20
+intAge : 20
+```
+
+```powershell
+$obj.Age + 1
+$obj.intAge + 1
+```
+
+```Output
+201
+21
+```
+
+The **intAge** property is an **AliasProperty** for the **Age** property, but the type is guaranteed
+to be **uint32**.
+
+### Example 7: Add get and set methods to a custom object
+
+This examples shows how to define **Get** and **Set** methods that access a deeply nested property.
+
+```powershell
+$user = [pscustomobject]@{
+    Name      = 'User1'
+    Age       = 29
+    StartDate = [datetime]'2019-05-05'
+    Position  = [pscustomobject]@{
+        DepartmentName = 'IT'
+        Role = 'Manager'
+    }
+}
+$addMemberSplat = @{
+    MemberType = 'ScriptProperty'
+    Name = 'Title'
+    Value = { $this.Position.Role }                  # getter
+    SecondValue = { $this.Position.Role = $args[0] } # setter
+}
+$user | Add-Member @addMemberSplat
+$user | Get-Member
+```
+
+```Output
+   TypeName: System.Management.Automation.PSCustomObject
+
+Name        MemberType     Definition
+----        ----------     ----------
+Equals      Method         bool Equals(System.Object obj)
+GetHashCode Method         int GetHashCode()
+GetType     Method         type GetType()
+ToString    Method         string ToString()
+Age         NoteProperty   int Age=29
+Name        NoteProperty   string Name=User1
+Position    NoteProperty   System.Management.Automation.PSCustomObject Position=@{DepartmentName=IT; Role=Manager}
+StartDate   NoteProperty   datetime StartDate=5/5/2019 12:00:00 AM
+Title       ScriptProperty System.Object Title {get= $this.Position.Role ;set= $this.Position.Role = $args[0] ;}
+```
+
+```powershell
+$user.Title = 'Dev Manager'
+```
+
+```Output
+Name      : User1
+Age       : 29
+StartDate : 5/5/2019 12:00:00 AM
+Position  : @{DepartmentName=IT; Role=Dev Manager}
+Title     : Dev Manager
+```
+
+Notice that the **Title** property is a **ScriptProperty** that has a **Get** and **Set** method.
+When we assign a new value to the **Title** property, the **Set** method is called and changes the
+value of the **Role** property in the **Position** property.
+
 ## PARAMETERS
 
 ### -Force
@@ -235,16 +338,15 @@ Accept wildcard characters: False
 Specifies the type of the member to add. This parameter is required. The acceptable values for this
 parameter are:
 
-- NoteProperty
 - AliasProperty
-- ScriptProperty
-- CodeProperty
-- ScriptMethod
 - CodeMethod
+- CodeProperty
+- NoteProperty
+- ScriptMethod
+- ScriptProperty
 
 For information about these values, see
-[PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes) in the
-PowerShell SDK.
+[PSMemberTypes Enumeration](xref:System.Management.Automation.PSMemberTypes) in the PowerShell SDK.
 
 Not all objects have every type of member. If you specify a member type that the object doesn't
 have, PowerShell returns an error.
@@ -253,7 +355,7 @@ have, PowerShell returns an error.
 Type: System.Management.Automation.PSMemberTypes
 Parameter Sets: MemberSet
 Aliases: Type
-Accepted values: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, Event, Dynamic, All
+Accepted values: AliasProperty, CodeMethod, CodeProperty, NoteProperty, ScriptMethod, ScriptProperty
 
 Required: True
 Position: 0
@@ -280,10 +382,9 @@ Accept wildcard characters: False
 
 ### -NotePropertyMembers
 
-Specifies a hashtable or ordered dictionary in which the keys are note property names and the values
-are note property values.
-
-For more information about hash tables and ordered dictionaries in PowerShell, see
+Specifies a hashtable or ordered dictionary that contains key-value pair representing
+**NoteProperty** names and their values. For more information about hash tables and ordered
+dictionaries in PowerShell, see
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md).
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -367,21 +468,22 @@ Accept wildcard characters: False
 
 ### -SecondValue
 
-Specifies optional additional information about **AliasProperty**, **ScriptProperty**,
-**CodeProperty**, or **CodeMethod** members.
+Specifies optional additional information about **AliasProperty**, **ScriptProperty**, or
+**CodeProperty** members.
 
 If used when adding an **AliasProperty**, this parameter must be a data type. A conversion to the
-specified data type is added to the value of the **AliasProperty**.
+specified data type is added to the value of the **AliasProperty**. For example, if you add an
+**AliasProperty** that provides an alternate name for a string property, you can also specify a
+**SecondValue** parameter of **System.Int32** to indicate that the value of that string property
+should be converted to an integer when accessed using the corresponding **AliasProperty**.
 
-For example, if you add an **AliasProperty** that provides an alternate name for a string property,
-you can also specify a **SecondValue** parameter of **System.Int32** to indicate that the value of
-that string property should be converted to an integer when accessed using the corresponding
-**AliasProperty**.
+For a **CodeProperty**, the value must be a reference to a method that implements a **Set**
+accessor. Use the `GetMethod()` method of a type reference to get a reference to a method. The
+method must take a single parameter that's a **PSObject**. The **Get** accessor is assigned using
+the **Value** parameter.
 
-You can use the **SecondValue** parameter to specify an additional **ScriptBlock** when adding a
-**ScriptProperty** member. The first **ScriptBlock**, specified in the **Value** parameter, is used
-to get the value of a variable. The second **ScriptBlock**, specified in the **SecondValue**
-parameter, is used to set the value of a variable.
+For a **ScriptProperty**, the value must be a script block that implements a **Set** accessor. The
+**Get** accessor is assigned using the **Value** parameter.
 
 ```yaml
 Type: System.Object
@@ -420,8 +522,19 @@ Accept wildcard characters: False
 ### -Value
 
 Specifies the initial value of the added member. If you add an **AliasProperty**, **CodeProperty**,
-**ScriptProperty** or **CodeMethod** member, you can supply additional information using the
-**SecondValue** parameter.
+or **ScriptProperty** member, you can supply additional information using the **SecondValue**
+parameter.
+
+- For an **AliasProperty**, the value must be the name of the property being aliased.
+- For a **CodeMethod**, the value must be a reference to a method. Use the `GetMethod()` method of
+  a type reference to get a reference to a method.
+- For a **CodeProperty**, the value must be a reference to a method that implements a **Get**
+  accessor. Use the `GetMethod()` method of a type reference to get a reference to a method.
+  reference. The method must take a single parameter that's a **PSObject**. The **Set** accessor is
+  assigned using the **SecondValue** parameter.
+- For a **ScriptMethod**, the value must be a script block.
+- For a **ScriptProperty**, the value must be a script block that implements a **Get** accessor. The
+  **Set** accessor is assigned using the **SecondValue** parameter.
 
 ```yaml
 Type: System.Object
@@ -461,12 +574,11 @@ When you use the **PassThru** parameter, this cmdlet returns the newly extended 
 ## NOTES
 
 You can add members only to **PSObject** type objects. To determine whether an object is a
-**PSObject** object, use the `-is` operator.
+**PSObject** object, use the `-is` operator. For instance, to test an object stored in the `$obj`
+variable, type `$obj -is [psobject]`.
 
 **PSObject** type objects maintain their list of members in the order that the members were added to
 the object.
-
-For instance, to test an object stored in the `$obj` variable, type `$obj -is [psobject]`.
 
 The names of the **MemberType**, **Name**, **Value**, and **SecondValue** parameters are optional.
 If you omit the parameter names, the unnamed parameter values must appear in this order:
@@ -490,3 +602,5 @@ methods are being added. For more information about the `$this` variable, see
 [New-Object](New-Object.md)
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+
+[System.Type.GetMethod()](/dotnet/api/system.type.getmethod)
