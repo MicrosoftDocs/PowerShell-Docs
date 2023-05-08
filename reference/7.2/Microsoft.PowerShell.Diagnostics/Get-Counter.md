@@ -481,7 +481,7 @@ Accept wildcard characters: False
 
 ### -Continuous
 
-When the **Continuous** is specified, `Get-Counter` gets samples until you press
+When **Continuous** is specified, `Get-Counter` gets samples until you press
 <kbd>CTRL</kbd>+<kbd>C</kbd>. Samples are obtained every second for each specified performance
 counter. Use the **SampleInterval** parameter to increase the interval between continuous samples.
 
