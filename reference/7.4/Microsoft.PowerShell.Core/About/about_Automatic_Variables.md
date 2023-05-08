@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 03/07/2023
+ms.date: 05/08/2023
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -12,14 +12,14 @@ title: about Automatic Variables
 
 ## Short description
 
-Describes variables that store state information for PowerShell. These
-variables are created and maintained by PowerShell.
+Describes variables that store state information for and are created and
+maintained by PowerShell.
 
 ## Long description
 
-Conceptually, these variables are considered to be read-only. Even though they
-**can** be written to, for backward compatibility they **should not** be
-written to.
+Conceptually, most of these variables are considered to be read-only. Even
+though they _can_ be written to, for backward compatibility they _should not_
+be written to.
 
 Here is a list of the automatic variables in PowerShell:
 
@@ -53,7 +53,7 @@ Test-WriteError
 ```
 
 ```Output
-Test-WriteError: 
+Test-WriteError:
 Line |
    7 |  Test-WriteError
      |  ~~~~~~~~~~~~~~~
@@ -68,11 +68,11 @@ For native commands (executables), `$?` is set to **True** when `$LASTEXITCODE`
 is 0, and set to **False** when `$LASTEXITCODE` is any other value.
 
 > [!NOTE]
-> Until PowerShell 7, containing a statement within parentheses `(...)`,
-> subexpression syntax `$(...)` or array expression `@(...)` always reset `$?`
-> to **True**, so that `(Write-Error)` shows `$?` as **True**. This has been
-> changed in PowerShell 7, so that `$?` always reflects the actual success of
-> the last command run in these expressions.
+> Until PowerShell 7, wrapping a statement within parentheses `(...)`,
+> subexpression syntax `$(...)`, or an array expression `@(...)` always reset
+> `$?` to **True**. For example, `(Write-Error)` shows `$?` as **True**. This
+> behavior changed in PowerShell 7, so that `$?` always reflects the actual
+> success of the last command run in these expressions.
 
 ### $^
 
@@ -112,8 +112,7 @@ use this automatic variable to determine the file to update.
 
 ### $EnabledExperimentalFeatures
 
-Contains a list of names of the experimental features that are currently
-enabled.
+Contains a list of names of the experimental features that are enabled.
 
 ### $Error
 
@@ -205,8 +204,8 @@ are unnamed functions).
 
 - In the `begin` block, the `$input` variable contains no data.
 
-- In the `process` block, the `$input` variable contains the object that's
-  currently in the pipeline.
+- In the `process` block, the `$input` variable contains the current object in
+  the pipeline.
 
 - In the `end` block, the `$input` variable enumerates the collection of all
   input to the function.
@@ -253,21 +252,43 @@ system. Otherwise contains `$FALSE`.
 
 ### $LASTEXITCODE
 
-Contains the exit code of the last native program or PowerShell script that was
-run.
+Contains the exit code of the last native program or PowerShell script that
+ran.
 
 For PowerShell scripts, the value of `$LASTEXITCODE` depends on how the script
 was called and whether the `exit` keyword was used:
 
-- When a script uses the `exit` keyword, `$LASTEXITCODE` is set to the
-  specified value, regardless of how the script was called. For more
+- When a script uses the `exit` keyword:
+
+  `$LASTEXITCODE` is set to value the specified by the `exit` keyword. For more
   information, see [about_Language_Keywords][16].
+
 - When a script is called directly, like `./Test.ps1`, or with the
-  [call operator][17] (`&`) like `& ./Test.ps1`, the value of `$LASTEXITCODE`
-  isn't changed.
-- When a script is called with `pwsh` and the **File** parameter, the value of
-  `$LASTEXITCODE` is set to `1` if the script terminated due to a thrown
-  exception and `0` otherwise.
+  [call operator][17] (`&`) like `& ./Test.ps1`:
+
+  The value of `$LASTEXITCODE` isn't changed unless:
+
+  - The script calls another script that uses the `exit` keyword
+  - The script calls a native command
+  - The script uses the `exit` keyword
+
+- When a script is called with `pwsh` using the **File** parameter,
+  `$LASTEXITCODE` is set to:
+
+  - `1` if the script terminated due to an exception
+  - The value specified by the `exit` keyword, if used in the script
+  - `0` if the script completed successfully
+
+- When a script is called with `pwsh` using the **Command** parameter,
+  `$LASTEXITCODE` is set to:
+
+  - `1` if the script terminated due to an exception or if the result of the
+    last command set `$?` to `$false`
+  - `0` if the script completed successfully and the result of the last command
+    set `$?` to `$true`
+
+For more information on the **File** and **Command** parameters, see
+[about_Pwsh][20].
 
 ### $Matches
 
@@ -280,12 +301,12 @@ regular expressions with the `-match` operator.
 
 For more information about the `-match` operator, see
 [about_Comparison_Operators][06]. For more information on regular expressions,
-see [about_Regular_Expressions][20].
+see [about_Regular_Expressions][21].
 
 The `$Matches` variable also works in a `switch` statement with the `-Regex`
 parameter. It's populated the same way as the `-match` and `-notmatch`
 operators. For more information about the `switch` statement, see
-[about_Switch][22].
+[about_Switch][23].
 
 > [!NOTE]
 > When `$Matches` is populated in a session, it retains the matched value until
@@ -301,9 +322,9 @@ invoked, such as the name of the script that called the current command.
 
 `$MyInvocation` is populated only for scripts, function, and script blocks. You
 can use the information in the **System.Management.Automation.InvocationInfo**
-object that `$MyInvocation` returns in the current script, such as the name of a
-function (`$MyInvocation.MyCommand.Name`) to identify the current command. This
-is useful for finding the name of the current script.
+object that `$MyInvocation` returns in the current script, such as the name of
+a function (`$MyInvocation.MyCommand.Name`) to identify the current command.
+This is useful for finding the name of the current script.
 
 Beginning in PowerShell 3.0, `MyInvocation` has the following new properties.
 
@@ -344,9 +365,8 @@ that it's always visible.
 can use this variable to represent an absent or undefined value in commands and
 scripts.
 
-PowerShell treats `$null` as an object with a value, that is, as an explicit
-placeholder, so you can use `$null` to represent an empty value in a series of
-values.
+PowerShell treats `$null` as an object with a value, or a placeholder, so you
+can use `$null` to represent an empty value in a collection of values.
 
 For example, when `$null` is included in a collection, it's counted as one of
 the objects.
@@ -512,7 +532,7 @@ path of the script that's being debugged.
 ### $PSEdition
 
 Contains the same value in `$PSVersionTable.PSEdition`. This variable is
-available for use in module manifest files, whereas `$PSVersionTable` is not.
+available for use in module manifest files, whereas `$PSVersionTable` isn't.
 
 ### $PSHOME
 
@@ -553,8 +573,8 @@ property, use the **ApplicationArguments** parameter of the
 
 ### $PSUICulture
 
-Contains the name of the user interface (UI) culture that's currently in use in
-the operating system. The UI culture determines which text strings are used for
+Contains the name of the user interface (UI) culture that's configured in the
+operating system. The UI culture determines which text strings are used for
 user interface elements, such as menus and messages. This is the value of the
 **System.Globalization.CultureInfo.CurrentUICulture.Name** property of the
 system. To get the **System.Globalization.CultureInfo** object for the system,
@@ -613,7 +633,7 @@ Contains a stack trace for the most recent error.
 Contains the enumerator not the resulting values of a `Switch` statement. The
 `$switch` variable exists only while the `Switch` statement is running; it's
 deleted when the `switch` statement completes execution. For more information,
-see [about_Switch][22].
+see [about_Switch][23].
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
@@ -641,7 +661,7 @@ Definition : System.Object BaseName {get=if ($this.Extension.Length -gt 0)
              )}else{$this.Name};}
 ```
 
-For more information, see [about_Types.ps1xml][23].
+For more information, see [about_Types.ps1xml][24].
 
 In a PowerShell class, the `$this` variable refers to the instance object of
 the class itself, allowing access to properties and methods defined in the
@@ -675,7 +695,7 @@ isn't considered best practice.
 
 ### MoveNext
 
-The [MoveNext][27] method
+The [MoveNext][28] method
 advances the enumerator to the next element of the collection. **MoveNext**
 returns `True` if the enumerator was successfully advanced, `False` if the
 enumerator has passed the end of the collection.
@@ -683,7 +703,7 @@ enumerator has passed the end of the collection.
 > [!NOTE]
 > The **Boolean** value returned by **MoveNext** is sent to the output stream.
 > You can suppress the output by typecasting it to `[void]` or piping it to
-> [Out-Null][25].
+> [Out-Null][26].
 >
 > ```powershell
 > $input.MoveNext() | Out-Null
@@ -695,12 +715,12 @@ enumerator has passed the end of the collection.
 
 ### Reset
 
-The [Reset][28] method sets the enumerator to its initial position, which is
+The [Reset][29] method sets the enumerator to its initial position, which is
 **before** the first element in the collection.
 
 ### Current
 
-The [Current][26] property gets the element in the collection, or pipeline, at
+The [Current][27] property gets the element in the collection, or pipeline, at
 the current position of the enumerator.
 
 The **Current** property continues to return the same property until
@@ -894,7 +914,7 @@ foreach ($num in ("one","two","three"))
         "Before MoveNext (Current): $($foreach.Current)"
         $foreach.MoveNext() | Out-Null
         "After MoveNext (Current): $($foreach.Current)"
-        "Num has not changed: $num"
+        "Num hasn't changed: $num"
     }
 }
 ```
@@ -908,7 +928,7 @@ Iteration: 1
         Current: two
 Before MoveNext (Current): two
 After MoveNext (Current): three
-Num has not changed: two
+Num hasn't changed: two
 ```
 
 Using the **Reset** method resets the current element in the collection. The
@@ -1006,8 +1026,8 @@ Default (Current): End
 - [about_Functions_CmdletBindingAttribute][12]
 - [about_Hash_Tables][15]
 - [about_Preference_Variables][18]
-- [about_Splatting][21]
-- [about_Variables][24]
+- [about_Splatting][22]
+- [about_Variables][25]
 
 <!-- link references -->
 [01]: #using-enumerators
@@ -1029,12 +1049,13 @@ Default (Current): End
 [17]: about_operators.md#call-operator-
 [18]: about_Preference_Variables.md
 [19]: about_PSItem.md
-[20]: about_Regular_Expressions.md
-[21]: about_Splatting.md
-[22]: about_Switch.md
-[23]: about_Types.ps1xml.md
-[24]: about_Variables.md
-[25]: xref:Microsoft.PowerShell.Core.Out-Null
-[26]: xref:System.Collections.IEnumerator.Current
-[27]: xref:System.Collections.IEnumerator.MoveNext
-[28]: xref:System.Collections.IEnumerator.Reset
+[20]: about_Pwsh.md
+[21]: about_Regular_Expressions.md
+[22]: about_Splatting.md
+[23]: about_Switch.md
+[24]: about_Types.ps1xml.md
+[25]: about_Variables.md
+[26]: xref:Microsoft.PowerShell.Core.Out-Null
+[27]: xref:System.Collections.IEnumerator.Current
+[28]: xref:System.Collections.IEnumerator.MoveNext
+[29]: xref:System.Collections.IEnumerator.Reset
