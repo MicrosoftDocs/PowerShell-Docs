@@ -251,7 +251,7 @@ was called and whether the `exit` keyword was used:
   - The value specified by the `exit` keyword, if used in the script
   - `0` if the script completed successfully
 
-- When a script is called with `ppowershell.exewsh` using the **Command**
+- When a script is called with `powershell.exe` using the **Command**
   parameter, `$LASTEXITCODE` is set to:
 
   - `1` if the script terminated due to an exception or if the result of the
