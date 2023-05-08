@@ -364,11 +364,11 @@ Get-ChildItem | where { $_.PSIsContainer }
 ```
 
 ```powershell
-# Finally, use the Not operator (!) to get objects that are not containers.
+# Finally, use the -not operator (!) to get objects that are not containers.
 # This gets objects that do have the **PSIsContainer** property and those
 # that have a value of $False for the **PSIsContainer** property.
 Get-ChildItem | where { !$_.PSIsContainer }
-# You cannot use the Not operator (!) in the comparison statement format
+# You cannot use the -not operator (!) in the comparison statement format
 # of the command.
 Get-ChildItem | where PSIsContainer -eq $False
 ```
@@ -387,11 +387,11 @@ This command gets non-core modules that support the Updatable Help feature. The 
 **ListAvailable** parameter of the `Get-Module` cmdlet to get all modules on the computer. A
 pipeline operator (`|`) sends the modules to the `Where-Object` cmdlet, which gets modules whose
 names don't begin with `Microsoft` or `PS`, and have a value for the **HelpInfoURI** property,
-which tells PowerShell where to find updated help files for the module. The **And** logical operator
+which tells PowerShell where to find updated help files for the module. The `-and` logical operator
 connects the comparison statements.
 
-The example uses the script block command format. Logical operators, such as **And** and **Or**,
-are valid only in script blocks. You can't use them in the comparison statement format of a
+The example uses the script block command format. Logical operators, such as `-and`,`-or`, and
+`-not` are valid only in script blocks. You can't use them in the comparison statement format of a
 `Where-Object` command.
 
 - For more information about PowerShell logical operators, see
@@ -1120,7 +1120,7 @@ wildcard characters when used with the following comparison parameters:
 This parameter was introduced in Windows PowerShell 3.0.
 
 ```yaml
-Type: System.Object
+Type: System.Management.Automation.PSObject
 Parameter Sets: EqualSet, MatchSet, CaseSensitiveEqualSet, NotEqualSet, CaseSensitiveNotEqualSet, GreaterThanSet, CaseSensitiveGreaterThanSet, LessThanSet, CaseSensitiveLessThanSet, GreaterOrEqualSet, CaseSensitiveGreaterOrEqualSet, LessOrEqualSet, CaseSensitiveLessOrEqualSet, LikeSet, CaseSensitiveLikeSet, NotLikeSet, CaseSensitiveNotLikeSet, CaseSensitiveMatchSet, NotMatchSet, CaseSensitiveNotMatchSet, ContainsSet, CaseSensitiveContainsSet, NotContainsSet, CaseSensitiveNotContainsSet, InSet, CaseSensitiveInSet, NotInSet, CaseSensitiveNotInSet, IsSet, IsNotSet
 Aliases:
 
@@ -1146,7 +1146,7 @@ You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
-### Object
+### System.Object
 
 This cmdlet returns the selected items from the input object set.
 
