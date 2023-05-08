@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 12/12/2022
+ms.date: 05/08/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
@@ -481,7 +481,7 @@ Accept wildcard characters: False
 
 ### -Continuous
 
-When the **Continuous** is specified, `Get-Counter` gets samples until you press
+When **Continuous** is specified, `Get-Counter` gets samples until you press
 <kbd>CTRL</kbd>+<kbd>C</kbd>. Samples are obtained every second for each specified performance
 counter. Use the **SampleInterval** parameter to increase the interval between continuous samples.
 
