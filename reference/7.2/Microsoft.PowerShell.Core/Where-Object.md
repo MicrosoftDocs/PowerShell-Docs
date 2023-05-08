@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 05/08/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Where-Object
@@ -344,28 +344,27 @@ for a specified property. Each example shows both the script block and compariso
 for the command.
 
 ```powershell
-# Use Where-Object to get commands that have any value for the OutputType property of the command.
-# This omits commands that do not have an OutputType property and those that have an OutputType
-# property, but no property value.
+# Use Where-Object to get commands that have any value for the OutputType
+# property of the command. This omits commands that do not have an OutputType
+# property and those that have an OutputType property, but no property value.
 Get-Command | where OutputType
-Get-Command | where {$_.OutputType}
+Get-Command | where { $_.OutputType }
 ```
 
 ```powershell
-# Use Where-Object to get objects that are containers.
-# This gets objects that have the **PSIsContainer** property with a value of $True and excludes all
+# Use Where-Object to get objects that are containers. This gets objects that
+# have the **PSIsContainer** property with a value of $True and excludes all
 # others.
 Get-ChildItem | where PSIsContainer
-Get-ChildItem | where {$_.PSIsContainer}
+Get-ChildItem | where { $_.PSIsContainer }
 ```
 
 ```powershell
 # Finally, use the Not operator (!) to get objects that are not containers.
-# This gets objects that do have the **PSIsContainer** property and those that have a value of
-# $False for the **PSIsContainer** property.
-Get-ChildItem | where {!$_.PSIsContainer}
-# You cannot use the Not operator (!) in the comparison statement format of the command.
-Get-ChildItem | where PSIsContainer -eq $False
+# This gets objects that do have the **PSIsContainer** property and those
+# that have a value of $False for the **PSIsContainer** property.
+Get-ChildItem | where -Not PSIsContainer
+Get-ChildItem | where { !$_.PSIsContainer }
 ```
 
 ### Example 6: Use multiple conditions
