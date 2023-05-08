@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 08/23/2022
+ms.date: 05/08/2023
 no-loc: [-File, -f, -Command, -c, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -40,7 +40,8 @@ Usage: pwsh[.exe]
     [-SettingsFile <filePath>]
     [-SSHServerMode]
     [-STA]
-    [-Version] [-WindowStyle <style>]
+    [-Version]
+    [-WindowStyle <style>]
     [-WorkingDirectory <directoryPath>]
 
 pwsh[.exe] -h | -Help | -? | /?
@@ -59,10 +60,10 @@ session. This is the same as not specifying the `File` parameter at all.
 This is the default parameter if no parameters are present but values are
 present in the command line. The specified script runs in the local scope
 ("dot-sourced"), so that the functions and variables that the script creates
-are available in the current session. Enter the script file path and any
+are available in the current session. Enter the script filepath and any
 parameters. File must be the last parameter in the command, because all
 characters typed after the File parameter name are interpreted as the script
-file path followed by the script parameters.
+filepath followed by the script parameters.
 
 Typically, the switch parameters of a script are either included or omitted.
 For example, the following command uses the All parameter of the
@@ -76,31 +77,33 @@ colon and the boolean value, such as the following:
 
 Parameters passed to the script are passed as literal strings, after
 interpretation by the current shell. For example, if you are in `cmd.exe` and
-want to pass an environment variable value, you would use the `cmd.exe`
-syntax: `pwsh -File .\test.ps1 -TestParam %windir%`
+want to pass an environment variable value, you would use the `cmd.exe` syntax:
+`pwsh -File .\test.ps1 -TestParam %windir%`
 
 In contrast, running `pwsh -File .\test.ps1 -TestParam $env:windir` in
 `cmd.exe` results in the script receiving the literal string `$env:windir`
 because it has no special meaning to the current `cmd.exe` shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
-**Command** parameter, since there it is interpreted as PowerShell code.
+**Command** parameter, since there it's interpreted as PowerShell code.
 
 Similarly, if you want to execute the same command from a _Batch script_, you
 would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current
 execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. If you
-instead used `.\test.ps1`, PowerShell would throw an error because it cannot
+instead used `.\test.ps1`, PowerShell would throw an error because it can't
 find the literal path `.\test.ps1`
 
 > [!NOTE]
-> The **File** parameter cannot support scripts using a parameter that expects
+> The **File** parameter can't support scripts using a parameter that expects
 > an array of argument values. This, unfortunately, is a limitation of how a
 > native command gets argument values. When you call a native executable (such
-> as `powershell` or `pwsh`), it does not know what to do with an array, so
+> as `powershell` or `pwsh`), it doesn't know what to do with an array, so
 > it's passed as a string.
 
 When the script file terminates with an `exit` command, the process exit code
 is set to the numeric argument used with the `exit` command. With normal
 termination, the exit code is always `0`.
+
+For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][01].
 
 Similar to `-Command`, when a script-terminating error occurs, the exit code is
 set to `1`. However, unlike with `-Command`, when the execution is interrupted
@@ -141,8 +144,7 @@ contents of the script block back out to you.
 A string passed to **Command** is still executed as PowerShell code, so the
 script block curly braces are often not required in the first place when
 running from `cmd.exe`. To execute an inline script block defined inside a
-string, the [call operator](about_operators.md#special-operators) `&` can be
-used:
+string, the [call operator][02] `&` can be used:
 
 ```
 pwsh -Command "& {Get-WinEvent -LogName security}"
@@ -185,6 +187,8 @@ within the script block. The exit code is `0` when `$?` is `$true` or `1` when
 script that explicitly sets an exit code other than `0` or `1`, that exit code
 is converted to `1` for process exit code. To preserve the specific exit code,
 add `exit $LASTEXITCODE` to your command string or script block.
+
+For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][01].
 
 Similarly, the value 1 is returned when a script-terminating
 (runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
@@ -245,7 +249,7 @@ Sets the default execution policy for the current session and saves it in the
 not change the persistently configured execution policies.
 
 This parameter only applies to Windows computers. The
-`$env:PSExecutionPolicyPreference` environment variable does not exist on
+`$env:PSExecutionPolicyPreference` environment variable doesn't exist on
 non-Windows platforms.
 
 ### -InputFormat | -inp | -if
@@ -274,9 +278,9 @@ To set up `pwsh` as the login shell on UNIX-like operating systems:
   - This path is usually something like `/usr/bin/pwsh` on Linux or
     `/usr/local/bin/pwsh` on macOS
   - With some installation methods, this entry will be added automatically at installation time
-  - If `pwsh` is not present in `/etc/shells`, use an editor to append the path
+  - If `pwsh` isn't present in `/etc/shells`, use an editor to append the path
     to `pwsh` on the last line. This requires elevated privileges to edit.
-- Use the [chsh](https://linux.die.net/man/1/chsh) utility to set your current
+- Use the [chsh][03] utility to set your current
   user's shell to `pwsh`:
 
   ```sh
@@ -295,7 +299,7 @@ available on Windows.
 
 ### -NoExit | -noe
 
-Does not exit after running startup commands.
+Doesn't exit after running startup commands.
 
 Example: `pwsh -NoExit -Command Get-Date`
 
@@ -312,7 +316,7 @@ result in statement terminating errors rather than hanging.
 
 ### -NoProfile | -nop
 
-Does not load the PowerShell profiles.
+Doesn't load the PowerShell profiles.
 
 ### -NoProfileLoadTime
 
@@ -336,14 +340,14 @@ Overrides the system-wide `powershell.config.json` settings file for the
 session. By default, system-wide settings are read from the
 `powershell.config.json` in the `$PSHOME` directory.
 
-Note that these settings are not used by the endpoint specified by the
+Note that these settings aren't used by the endpoint specified by the
 `-ConfigurationName` argument.
 
 Example: `pwsh -SettingsFile c:\myproject\powershell.config.json`
 
 ### -SSHServerMode | -sshs
 
-Used in sshd_config for running PowerShell as an SSH subsystem. It is not
+Used in sshd_config for running PowerShell as an SSH subsystem. It isn't
 intended or supported for any other use.
 
 ### -STA
@@ -371,3 +375,8 @@ To start PowerShell in your home directory, use: `pwsh -WorkingDirectory ~`
 
 Displays help for `pwsh`. If you are typing a pwsh command in PowerShell,
 prepend the command parameters with a hyphen (`-`), not a forward slash (`/`).
+
+<!-- link references -->
+[01]: about_Automatic_Variables.md#lastexitcode
+[02]: about_operators.md#special-operators
+[03]: https://linux.die.net/man/1/chsh
