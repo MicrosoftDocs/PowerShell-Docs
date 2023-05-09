@@ -61,7 +61,7 @@ landingContent:
       links:
         - text: Digital art
           url: digital-art.md
-    - linkListType: architecture
+    - linkListType: reference
       links:
         - text: PowerShell 7 usage stats
           url: https://msit.powerbi.com/view?r=eyJrIjoiM2E3MDllNDMtNGE4OS00NjdkLWI1ODEtZGI2MGNiYjA1ZmI1IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9&pageName=ReportSection
