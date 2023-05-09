@@ -49,15 +49,15 @@ The following table lists the preference variables and their default values.
 | [`$PSSessionApplicationName`][18]                | `'wsman'`                                                        |
 | [`$PSSessionConfigurationName`][19]              | `'http://schemas.microsoft.com/powershell/Microsoft.PowerShell'` |
 | [`$PSSessionOption`][20]                         | [`PSSessionOption`][58] object                                   |
-| [`$PSStyle`][12]                                 | [`PSStyle`][57] object                                           |
-| [`$Transcript`][21]                              | `$Null` (none)                                                   |
-| [`$VerbosePreference`][22]                       | [`SilentlyContinue`][52]                                         |
-| [`$WarningPreference`][23]                       | [`Continue`][52]                                                 |
-| [`$WhatIfPreference`][24]                        | `$False`                                                         |
+| [`$PSStyle`][21]                                 | [`PSStyle`][57] object                                           |
+| [`$Transcript`][22]                              | `$Null` (none)                                                   |
+| [`$VerbosePreference`][23]                       | [`SilentlyContinue`][52]                                         |
+| [`$WarningPreference`][24]                       | [`Continue`][52]                                                 |
+| [`$WhatIfPreference`][25]                        | `$False`                                                         |
 
 PowerShell includes the following environment variables that store user
 preferences. For more information about these environment variables, see
-[about_Environment_Variables][27].
+[about_Environment_Variables][28].
 
 - `env:PSExecutionPolicyPreference`
 - `$env:PSModulePath`
@@ -243,7 +243,7 @@ changing the value of `$DebugPreference`.
 
 You can use the **Debug** common parameter of a cmdlet to display or hide the
 debugging messages for a specific command. For more information, see
-[about_CommonParameters][26].
+[about_CommonParameters][27].
 
 The valid values are as follows:
 
@@ -398,7 +398,7 @@ The valid values are as follows:
 `$ErrorActionPreference` and the **ErrorAction** parameter don't affect how
 PowerShell responds to terminating errors that stop cmdlet processing. For more
 information about the **ErrorAction** common parameter, see
-[about_CommonParameters][26].
+[about_CommonParameters][27].
 
 Many native commands write to `stderr` as an alternative stream for additional
 information. This behavior can cause confusion when looking through errors or
@@ -587,7 +587,7 @@ ObjectNotFound: (C:\nofile.txt:String) [Get-ChildItem], ItemNotFoundException
 This example demonstrates that the value of `$ErrorView` only affects the error
 display. It doesn't change the structure of the error object that's stored in
 the `$Error` automatic variable. For information about the `$Error` automatic
-variable, see [about_automatic_variables][25].
+variable, see [about_automatic_variables][26].
 
 The following command takes the **ErrorRecord** object associated with the most
 recent error in the error array, **element 0**, and formats the properties of
@@ -1223,7 +1223,7 @@ The valid values are as follows:
 
 You can use the **Verbose** common parameter of a cmdlet to display or hide the
 verbose messages for a specific command. For more information, see
-[about_CommonParameters][26].
+[about_CommonParameters][27].
 
 ### Examples
 
@@ -1343,7 +1343,7 @@ The valid values are as follows:
 
 You can use the **WarningAction** common parameter of a cmdlet to determine how
 PowerShell responds to warnings from a particular command. For more
-information, see [about_CommonParameters][26].
+information, see [about_CommonParameters][27].
 
 ### Examples
 
@@ -1638,9 +1638,9 @@ At line:1 char:1
 
 ## See also
 
-- [about_automatic_variables][25]
-- [about_CommonParameters][26]
-- [about_Environment_Variables][27]
+- [about_automatic_variables][26]
+- [about_CommonParameters][27]
+- [about_Environment_Variables][28]
 - [about_Profiles][34]
 - [about_Remote][37]
 - [about_Scopes][38]
@@ -1667,13 +1667,14 @@ At line:1 char:1
 [18]: #pssessionapplicationname
 [19]: #pssessionconfigurationname
 [20]: #pssessionoption
-[21]: #transcript
-[22]: #verbosepreference
-[23]: #warningpreference
-[24]: #whatifpreference
-[25]: about_Automatic_Variables.md
-[26]: about_CommonParameters.md
-[27]: about_Environment_Variables.md
+[21]: #psstyle
+[22]: #transcript
+[23]: #verbosepreference
+[24]: #warningpreference
+[25]: #whatifpreference
+[26]: about_Automatic_Variables.md
+[27]: about_CommonParameters.md
+[28]: about_Environment_Variables.md
 [29]: about_Hash_Tables.md
 [30]: about_History.md
 [31]: about_Modules.md
