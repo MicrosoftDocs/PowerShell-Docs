@@ -31,7 +31,8 @@ PowerShell 7.2 added the `$PSStyle` automatic variable that's used to control ho
 displays certain information using ANSI escape sequences. The `$PSStyle.Progress` member allows you
 to control progress view bar rendering.
 
-- `$PSStyle.Progress.Style` - An ANSI string setting the rendering style.
+- `$PSStyle.Progress.Style` - An [ANSI string](../Microsoft.PowerShell.Core/About/about_ANSI_Terminals.md)
+   setting the rendering style.
 - `$PSStyle.Progress.MaxWidth` - Sets the max width of the view. Defaults to `120`. The minimum
   value is 18.
 - `$PSStyle.Progress.View` - An enum with values, `Minimal` and `Classic`. `Classic` is the existing
