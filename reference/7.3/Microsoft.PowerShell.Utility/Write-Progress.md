@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 05/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
@@ -31,12 +31,14 @@ PowerShell 7.2 added the `$PSStyle` automatic variable that's used to control ho
 displays certain information using ANSI escape sequences. The `$PSStyle.Progress` member allows you
 to control progress view bar rendering.
 
-- `$PSStyle.Progress.Style` - An [ANSI string](../Microsoft.PowerShell.Core/About/about_ANSI_Terminals.md)
-   setting the rendering style.
+- `$PSStyle.Progress.Style` - An ANSI string setting the rendering style.
 - `$PSStyle.Progress.MaxWidth` - Sets the max width of the view. Defaults to `120`. The minimum
   value is 18.
 - `$PSStyle.Progress.View` - An enum with values, `Minimal` and `Classic`. `Classic` is the existing
   rendering with no changes. `Minimal` is a single line minimal rendering. `Minimal` is the default.
+
+For more information about `$PSStyle`, see
+[about_ANSI_Terminals.md](../Microsoft.PowerShell.Core/About/about_ANSI_Terminals.md).
 
 > [!NOTE]
 > If the host doesn't support Virtual Terminal, `$PSStyle.Progress.View` is automatically set to
