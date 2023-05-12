@@ -74,10 +74,10 @@ To download the documentation as a PDF, click the **Download PDF** button at the
 
 ![Screenshot of the Download PDF button.][03]
 
-- If you are viewing a conceptual article, the PDF will contain all the conceptual content for the
-  selected version.
-- If you are viewing a reference article, the PDF will contain all the reference content for the
-  selected version.
+- If you are viewing a conceptual article, the Learn platform creates a PDF containing all the
+  conceptual content for the selected version.
+- If you are viewing a reference article, the Learn platform creates a PDF containing all the
+  reference content for the selected version.
 
 ## Finding articles for previous versions
 
