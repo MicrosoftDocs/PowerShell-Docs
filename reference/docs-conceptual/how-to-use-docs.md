@@ -1,6 +1,6 @@
 ---
 description: This articles explains how to use the features of this site including search filtering and version selection.
-ms.date: 12/01/2022
+ms.date: 05/12/2023
 ms.topic: how-to
 title: How to use the PowerShell documentation
 ---
@@ -9,28 +9,44 @@ title: How to use the PowerShell documentation
 Welcome to the PowerShell online documentation. This site contains cmdlet reference for the
 following versions of PowerShell:
 
+- PowerShell 7.4 (preview)
 - PowerShell 7.3
 - PowerShell 7.2 (LTS-current)
 - PowerShell 5.1
 
-## Finding articles and selecting a version
+## Navigating the documentation
 
-There are two ways to search for content in Docs. The simplest way is to use the filter box under
-the version selector. Just enter a word that appears in the title of an article. The page displays
-a list of matching articles. You can also select the option to search the entire site from that
-list.
+![Screenshot showing the various elements of the web page.][02]
 
-Use the version picker at the top of the page to select the version of PowerShell you want. By
-default, the version selector is set to the most current release version of PowerShell. The version
-selector controls what cmdlet reference appears in the Table of Contents under the **Reference**
-node. Some cmdlets work differently depending on the version of PowerShell you are using. Be sure
-you are viewing the documentation for the correct version of PowerShell.
+The web page contains multiple elements that help you navigate the documentation.
 
-The version selector does not filter conceptual documentation. The conceptual documents appear above
-the **Reference** node in the Table of Contents. The same documents appear for any version selected.
+- **Site level navigation** - The site level navigation appears at the top of the page. It contains
+  links to other content on the Microsoft Learn platform.
+- **Related content navigation** - The related content bar is immediately below the site level
+  navigation. It contains links to content related to the current docuemntation set, which is
+  PowerShell in this case.
+- **Version selector** - The version selector appears about the Table of Contents (TOC) controls
+  which version of the cmdlet reference appears in the TOC.
+- **Table of Contents** - The TOC on the left side of the page is divided into two sections:
+  conceptual and reference. Notice the line between the **Reference** node of the TOC. The
+  conceptual documents appear above the line. Reference content is listed in **Reference** node
+  below the line.
+- **Action buttons** - The action buttons provide a way to add content to a collection, provide
+  feedback, edit the content, or share the content with others.
+
+## Selecting the version of PowerShell
+
+Use the version selector located above the TOC to select the version of PowerShell you want. By
+default, the page loads with the most current stable release version selected. The version selector
+controls which version of the cmdlet reference appears in the TOC under the **Reference** node. Some
+cmdlets work differently in different versions of PowerShell you are using. Be sure you are viewing
+the documentation for the correct version of PowerShell.
+
+The version selector doesn't affect conceptual documentation. The conceptual documents appear above
+the **Reference** node in the TOC. The same conceptual articles appear for every version selected.
 If there are version-specific differences, the documentation makes note of those differences.
 
-![Using the version picker][01]
+![Animation showing how to use the version selector.][04]
 
 You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
 value. The following example shows the output for Windows PowerShell 5.1.
@@ -42,16 +58,33 @@ $PSVersionTable.PSVersion
 ```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
-5      1      19041  1237
+5      1      22621  963
 ```
 
-If you are new to PowerShell and need help understanding the command syntax, see
-[about_Command_Syntax][02].
+## Finding articles
+
+There are two ways to search for content in Docs. The simplest way is to use the filter box under
+the version selector. Just enter a word that appears in the title of an article. The filter displays
+a list of matching articles. You can also select the option to search the entire site from that
+list.
+
+## Downloading the documentation as a PDF
+
+To download the documentation as a PDF, click the **Download PDF** button at the bottom of the TOC.
+
+![Screenshot of the Download PDF button.][03]
+
+- If you are viewing a conceptual article, the PDF will contain all the conceptual content for the
+  selected version.
+- If you are viewing a reference article, the PDF will contain all the reference content for the
+  selected version.
 
 ## Finding articles for previous versions
 
-Documentation for older versions of PowerShell has been archived in our [Previous Versions][03]
-site.
+Documentation for older versions of PowerShell is archived in our [Previous Versions][01] site. You
+can choose **Previous Versions** from the version selector.
+
+![Screenshot of the Previous Versions option.](media/how-to-use-docs/previous-versions.gif)
 
 This site contains documentation for the following topics:
 
@@ -65,6 +98,7 @@ This site contains documentation for the following topics:
 - PowerShell Web Access
 
 <!-- link references -->
-[01]: media/how-to-use-docs/version-search.gif
-[02]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
-[03]: https://aka.ms/PSLegacyDocs
+[01]: https://aka.ms/PSLegacyDocs
+[02]: media/how-to-use-docs/how-to-use.gif
+[03]: media/how-to-use-docs/pdf-button.gif
+[04]: media/how-to-use-docs/version-search.gif
