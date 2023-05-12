@@ -49,6 +49,9 @@ cnotlike
 cnotmatch
 codepage
 codepages
+codespace
+codespaces
+Codespaces
 computername
 coreclr
 CoreOS
@@ -63,6 +66,8 @@ deserialization
 deserialize
 deserialized
 deserializes
+devcontainer
+devcontainers
 devlang
 DHCP
 differentiators

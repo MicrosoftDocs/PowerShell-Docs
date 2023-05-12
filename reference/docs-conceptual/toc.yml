@@ -498,6 +498,8 @@ items:
         href: community/contributing/overview.md
       - name: Get started writing docs
         href: community/contributing/get-started-writing.md
+      - name: Contribute using GitHub Codespaces
+        href: community/contributing/using-github-codespaces.md
       - name: Markdown best practices
         href: community/contributing/general-markdown.md
       - name: PowerShell-Docs style guide
