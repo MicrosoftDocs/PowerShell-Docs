@@ -25,8 +25,8 @@ The web page contains multiple elements that help you navigate the documentation
 - **Related content navigation** - The related content bar is immediately below the site level
   navigation. It contains links to content related to the current docuemntation set, which is
   PowerShell in this case.
-- **Version selector** - The version selector appears about the Table of Contents (TOC) controls
-  which version of the cmdlet reference appears in the TOC.
+- **Version selector** - The version selector appears above the Table of Contents (TOC) and
+  controls which version of the cmdlet reference appears in the TOC.
 - **Table of Contents** - The TOC on the left side of the page is divided into two sections:
   conceptual and reference. Notice the line between the **Reference** node of the TOC. The
   conceptual documents appear above the line. Reference content is listed in **Reference** node
