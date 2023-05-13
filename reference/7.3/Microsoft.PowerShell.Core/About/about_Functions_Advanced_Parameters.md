@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 01/05/2023
+ms.date: 05/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -489,38 +489,30 @@ Param(
 )
 ```
 
-Consider an implementation of the above:
+Consider an implementation of a function using this argument:
 
 ```powershell
 function Test-ValueFromPipelineByPropertyName{
   param(
-      [Parameter(Mandatory,ValueFromPipelineByPropertyName)]
+      [Parameter(Mandatory, ValueFromPipelineByPropertyName)]
       [string[]]
       $ComputerName
   )
-  Write-Output -InputObject "Saw that `$ComputerName was '$ComputerName'"
+  Write-Output -InputObject "Saw that ComputerName was '$ComputerName'"
 }
 ```
-Then a simple demonstration of piping the ComputerName argument would be:
+
+Then a demonstration of piping an object with the **ComputerName** property
+would be:
 
 ```powershell
-PS C:\> [pscustomobject]@{ ComputerName = "HelloWorld" } | Test-ValueFromPipelineByPropertyName # Send parameter using a pscustomobject
-Saw that $ComputerName was 'HelloWorld'
+[pscustomobject]@{ ComputerName = "HelloWorld" } |
+    Test-ValueFromPipelineByPropertyName
 ```
 
-> [!TIP]
-> Notice we need to cast the hashtable object `@{ ComputerName = "HelloWorld" }`
-> as a `[pscustomobject]` to convert the hashtable with key-value pair
-> into an object with a `NoteProperty` field named `ComputerName`.
-> Using the same function, the following explicitly illustrates
-> what is happening:
-> 
-> ```powershell
-> PS C:\> $genericObject = New-Object Object  # Bare object with no fields
-> PS C:\> $genericObject | Add-Member -MemberType NoteProperty -Name ComputerName -Value "FooBar"
-> PS C:\> $genericObject | Test-ValueFromPipelineByPropertyName
-> Saw that $ComputerName was 'FooBar'
-> ```
+```output
+Saw that ComputerName was 'HelloWorld'
+```
 
 > [!NOTE]
 > A typed parameter that accepts pipeline input (`by Value`) or
