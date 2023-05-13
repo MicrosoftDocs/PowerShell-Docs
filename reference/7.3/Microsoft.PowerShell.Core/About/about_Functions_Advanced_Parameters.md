@@ -503,7 +503,7 @@ function Test-ValueFromPipelineByPropertyName{
 ```
 Then a simple demonstration of piping the ComputerName argument would be:
 
-```
+```powershell
 PS C:\> [pscustomobject]@{ ComputerName = "HelloWorld" } | Test-ValueFromPipelineByPropertyName # Send parameter using a pscustomobject
 Saw that $ComputerName was 'HelloWorld'
 ```
