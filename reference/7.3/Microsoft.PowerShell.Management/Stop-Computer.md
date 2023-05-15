@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 05/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Computer
@@ -265,9 +265,11 @@ This cmdlet returns no output.
 
 ## NOTES
 
-This cmdlet uses the **Win32Shutdown** method of the **Win32_OperatingSystem** WMI class. This
-method requires the **SeShutdownPrivilege** privilege be enabled for the user account used to
-restart the machine.
+This cmdlet uses the
+[`Win32Shutdown`](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+method of the [`Win32_OperatingSystem`](/windows/desktop/CIMWin32Prov/win32-operatingsystem) WMI
+class. This method requires the `SeShutdownPrivilege` privilege be enabled for the user account
+used to shutdown the machine.
 
 In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. For these platorms, the cmdlet
 calls the native command `/sbin/shutdown`.

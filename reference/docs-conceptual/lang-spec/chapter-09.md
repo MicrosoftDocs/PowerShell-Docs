@@ -25,7 +25,7 @@ with each row having *N* columns, can be accessed using the expressions
 `B[0,0], B[0,1], ..., B[0,N-1], B[1,0], B[1,1], ..., B[1,N-1], ..., B[M-1,0], B[M-1,1], ..., B[M-1,N-1]`.
 And so on for arrays with three or more dimensions.
 
-By default, an array is *polymorphic*; i.e., its elements need not all have the same type. For
+By default, an array is *polymorphic*; i.e., its elements do not need to all have the same type. For
 example,
 
 ```powershell
