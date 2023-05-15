@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 01/05/2023
+ms.date: 05/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -487,6 +487,31 @@ Param(
     [string[]]
     $ComputerName
 )
+```
+
+Consider an implementation of a function using this argument:
+
+```powershell
+function Test-ValueFromPipelineByPropertyName{
+  param(
+      [Parameter(Mandatory, ValueFromPipelineByPropertyName)]
+      [string[]]
+      $ComputerName
+  )
+  Write-Output -InputObject "Saw that ComputerName was '$ComputerName'"
+}
+```
+
+Then a demonstration of piping an object with the **ComputerName** property
+would be:
+
+```powershell
+[pscustomobject]@{ ComputerName = "HelloWorld" } |
+    Test-ValueFromPipelineByPropertyName
+```
+
+```output
+Saw that ComputerName was 'HelloWorld'
 ```
 
 > [!NOTE]
