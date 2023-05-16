@@ -35,13 +35,13 @@ For example, the following command runs the FindDocs.ps1 script in the
 C:\TechDocs\FindDocs.ps1
 ```
 
-As a security feature, PowerShell doesn't run executable (native) commands,
-including PowerShell scripts, unless the command is located in a path that's
-listed in the `$env:Path` environment variable or unless you specify the path
-to the script file.
+You can run any executable command using its full path. As a security feature,
+PowerShell doesn't run executable commands, including PowerShell scripts and
+native commands, unless the command is located in a path listed in the
+`$env:Path` environment variable.
 
-To run a script that's in the current directory, specify the full path or
-use the relative path `.\` to represent the current directory.
+To run an executable file that's in the current directory, specify the full
+path or use the relative path `.\` to represent the current directory.
 
 For example, to run the `FindDocs.ps1` file in the current directory, type:
 
@@ -55,7 +55,7 @@ when it runs commands.
 1. Alias
 1. Function
 1. Cmdlet (see [Cmdlet name resolution][04])
-1. External executable files (programs and non-PowerShell scripts)
+1. External executable files (including PowerShell script files)
 
 Therefore, if you type `help`, PowerShell first looks for an alias named
 `help`, then a function named `Help`, and finally a cmdlet named `Help`. It
@@ -68,10 +68,9 @@ For example, if your session contains a cmdlet and a function, both named
 > This only applies to loaded commands. If there is a `build` executable and an
 > Alias `build` for a function with the name of `Invoke-Build` inside a module
 > that is not loaded into the current session, PowerShell runs the `build`
-> executable instead. It does not auto-load modules if it finds the external
-> executable in this case. It is only when no external executable is found that
-> an alias, function, or cmdlet with the given name is invoked, thereby
-> triggering auto-loading of its module.
+> executable instead. It doesn't auto-load modules if it finds the external
+> executable. It's only when no external executable is found that an alias,
+> function, or cmdlet with the given name is invoked.
 
 ## Resolving items with the same names
 
@@ -85,8 +84,8 @@ For example, if you import a function that has the same name as a cmdlet in the
 session, the cmdlet is _hidden_, but not replaced. You can run the cmdlet by
 specifying its module-qualified name.
 
-Items are _replaced_ or _overwritten_ if you can no longer access the original
-item.
+When items are _replaced_ or _overwritten_, you can no longer access the
+original item.
 
 For example, if you import a variable that has the same name as a variable in
 the session, the original variable is replaced. You can't qualify a variable
@@ -246,11 +245,10 @@ first module found alphabetically.
 
 If the cmdlet isn't loaded, PowerShell searches the installed modules and
 autoloads the first module that contains the cmdlet and runs that cmdlet.
-PowerShell searches for modules in each path that is defined in the
-`$env:PSModulePath` environment variable. The paths are searched in the order
-that they're listed in the variable. Within each path, the modules are
-searched in alphabetical order. PowerShell uses the cmdlet from the first
-match it finds.
+PowerShell searches for modules in each path defined in the `$env:PSModulePath`
+environment variable. The paths are searched in the order that they're listed
+in the variable. Within each path, the modules are searched in alphabetical
+order. PowerShell uses the cmdlet from the first match it finds.
 
 ## Avoiding name conflicts
 
