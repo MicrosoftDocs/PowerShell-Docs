@@ -35,8 +35,7 @@ New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description 
 
 ## DESCRIPTION
 
-The `New-LocalUser` cmdlet creates a local user account. This cmdlet creates a local user account
-or a local user account that's connected to a Microsoft account.
+The `New-LocalUser` cmdlet creates a local user account. This cmdlet creates a local user account.
 
 > [!NOTE]
 > The Microsoft.PowerShell.LocalAccounts module isn't available in 32-bit PowerShell on a 64-bit
@@ -173,8 +172,8 @@ Accept wildcard characters: False
 
 Specifies the user name for the user account.
 
-If you create a local user account for the local system, the user name can contain up to 20
-uppercase characters or lowercase characters. A user name can't contain the following characters:
+A user name can contain up to 20 uppercase characters or lowercase characters. A user name can't
+contain the following characters:
 
 `"`, `/`, `\`, `[`, `]`, `:`, `;`, `|`, `=`, `,`, `+`, `*`, `?`, `<`, `>`, `@`
 
