@@ -45,11 +45,11 @@
       },
       "docset_name": "PowerShell_PowerShell-docs_reference",
       "locale": "en-us",
-      "monikerPath": [
-        "mapping/monikerMapping.json"
-      ],
       "moniker_ranges": [
         ">=powershell-5.1"
+      ],
+      "monikerPath": [
+        "mapping/monikerMapping.json"
       ],
       "monikers": [],
       "open_to_public_contributors": true,
@@ -74,11 +74,10 @@
   "redirection_files": [
     ".openpublishing.redirection.json",
     ".openpublishing.redirection.51.json",
-    ".openpublishing.redirection.71.json",
     ".openpublishing.redirection.72.json",
-    ".openpublishing.redirection.73.json",
-    ".openpublishing.redirection.74.json",
+    ".openpublishing.redirection.dsc.json",
     ".openpublishing.redirection.gallery.json",
+    ".openpublishing.redirection.psget.json",
     ".openpublishing.redirection.virtual.json"
   ],
   "skip_source_output_uploading": false,
