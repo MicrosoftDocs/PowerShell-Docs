@@ -1,0 +1,119 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/about/about_classes_and_dsc.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/disable-dscdebug?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/disable-dscdebug.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/enable-dscdebug?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/enable-dscdebug.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/get-dscconfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/get-dscconfiguration.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/get-dscconfigurationstatus?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/get-dscconfigurationstatus.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/get-dsclocalconfigurationmanager?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/get-dsclocalconfigurationmanager.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/get-dscresource?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/get-dscresource.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/invoke-dscresource.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/new-dscchecksum?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/new-dscchecksum.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/psdesiredstateconfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/psdesiredstateconfiguration.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/publish-dscconfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/remove-dscconfigurationdocument.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/restore-dscconfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/restore-dscconfiguration.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/set-dsclocalconfigurationmanager.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/start-dscconfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/start-dscconfiguration.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/stop-dscconfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/stop-dscconfiguration.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/test-dscconfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/test-dscconfiguration.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/update-dscconfiguration?view=dsc-1.1",
+      "source_path": "reference/5.1/psdesiredstateconfiguration/update-dscconfiguration.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/about_classes_and_dsc?view=dsc-2.0",
+      "source_path": "reference/7.2/psdesiredstateconfiguration/about/about_classes_and_dsc.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/get-dscresource?view=dsc-2.0",
+      "source_path": "reference/7.2/psdesiredstateconfiguration/get-dscresource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=dsc-2.0",
+      "source_path": "reference/7.2/psdesiredstateconfiguration/invoke-dscresource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/new-dscchecksum?view=dsc-2.0",
+      "source_path": "reference/7.2/psdesiredstateconfiguration/new-dscchecksum.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psdesiredstateconfiguration/psdesiredstateconfiguration?view=dsc-2.0",
+      "source_path": "reference/7.2/psdesiredstateconfiguration/psdesiredstateconfiguration.md"
+    }
+  ]
+}
