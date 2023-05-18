@@ -39,7 +39,7 @@ PowerShell Summit 2023 - Hack-a-Doc event
 | kevinCefalu       | Kevin Cefalu     |            1 |            24 |
 | robderickson      | Rob Derickson    |            4 |            17 |
 | Snozzberries      | Michael Soule    |           13 |            16 |
-| Spoonsk           |                  |            1 |            12 |
+| Spoonsk           | Joseph Gast      |            1 |            12 |
 | thedavecarroll    | Dave Carroll     |            1 |            11 |
 | raynbowbrite      | Vanda Paladino   |            2 |             7 |
 | majst32           | Melissa Januszko |            1 |             6 |
