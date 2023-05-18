@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 12/13/2022
+ms.date: 05/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-LocalUser
@@ -19,64 +19,77 @@ Creates a local user account.
 ### Password (Default)
 
 ```
-New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-Disabled]
- [-FullName <String>] [-Name] <String> -Password <SecureString> [-PasswordNeverExpires]
- [-UserMayNotChangePassword] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>]
+ [-Disabled] [-FullName <String>] [-Name] <String> -Password <SecureString>
+ [-PasswordNeverExpires] [-UserMayNotChangePassword] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### NoPassword
 
 ```
-New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>] [-Disabled]
- [-FullName <String>] [-Name] <String> [-NoPassword] [-UserMayNotChangePassword] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-LocalUser [-AccountExpires <DateTime>] [-AccountNeverExpires] [-Description <String>]
+ [-Disabled] [-FullName <String>] [-Name] <String> [-NoPassword]
+ [-UserMayNotChangePassword] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `New-LocalUser` cmdlet creates a local user account. This cmdlet creates a local user account
-or a local user account that is connected to a Microsoft account.
+The `New-LocalUser` cmdlet creates a local user account. This cmdlet creates a local user account.
 
 > [!NOTE]
-> The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+> The Microsoft.PowerShell.LocalAccounts module isn't available in 32-bit PowerShell on a 64-bit
 > system.
 
 ## EXAMPLES
 
 ### Example 1: Create a user account
 
+```powershell
+New-LocalUser -Name 'User02' -Description 'Description of this account.' -NoPassword
 ```
-PS C:\> New-LocalUser -Name "User02" -Description "Description of this account." -NoPassword
+
+```output
 Name    Enabled  Description
 ----    -------  -----------
 User02  True     Description of this account.
 ```
 
-This command creates a local user account and does not specify the **AccountExpires** or **Password**
-parameters. Therefore, the account doesn't expire or have a password by default.
+This command creates a local user account and doesn't specify the **AccountExpires** or
+**Password** parameters. The account doesn't expire or have a password.
 
 ### Example 2: Create a user account that has a password
 
+```powershell
+$Password = Read-Host -AsSecureString
+$params = @{
+    Name        = 'User03'
+    Password    = $Password
+    FullName    = 'Third User'
+    Description = 'Description of this account.'
+}
+New-LocalUser @params
 ```
-PS C:\> $Password = Read-Host -AsSecureString
-PS C:\> New-LocalUser "User03" -Password $Password -FullName "Third User" -Description "Description of this account."
+
+```output
 Name    Enabled  Description
 ----    -------  -----------
 User03  True     Description of this account.
 ```
 
-The first command prompts you for a password by using the `Read-Host` cmdlet. The command stores the
+The first command uses the `Read-Host` cmdlet to prompts you for a password. The command stores the
 password as a secure string in the `$Password` variable.
 
-The second command creates a local user account by using the password stored in `$Password`. The
-command specifies a user name, full name, and description for the user account.
+The second command creates a local user account and sets the new account's password to the secure
+string stored in `$Password`. The command specifies a user name, full name, and description for the
+user account.
 
 ## PARAMETERS
 
 ### -AccountExpires
 
-Specifies when the user account expires. To obtain a **DateTime** object, use the `Get-Date` cmdlet.
-If you do not specify this parameter, the account does not expire.
+Specifies when the user account expires. You can use the `Get-Date` cmdlet to get a **DateTime**
+object. If you don't specify this parameter, the account doesn't expire.
 
 ```yaml
 Type: System.DateTime
@@ -92,7 +105,7 @@ Accept wildcard characters: False
 
 ### -AccountNeverExpires
 
-Indicates that the account does not expire.
+Indicates that the account doesn't expire.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -108,8 +121,7 @@ Accept wildcard characters: False
 
 ### -Description
 
-Specifies a comment for the user account.
-The maximum length is 48 characters.
+Specifies a comment for the user account. The maximum length is 48 characters.
 
 ```yaml
 Type: System.String
@@ -160,12 +172,12 @@ Accept wildcard characters: False
 
 Specifies the user name for the user account.
 
-If you create a local user account for the local system, the user name can contain up to 20
-uppercase characters or lowercase characters. A user name cannot contain the following characters:
+A user name can contain up to 20 uppercase characters or lowercase characters. A user name can't
+contain the following characters:
 
 `"`, `/`, `\`, `[`, `]`, `:`, `;`, `|`, `=`, `,`, `+`, `*`, `?`, `<`, `>`, `@`
 
-A user name cannot consist only of periods `.` or spaces.
+A user name can't consist only of periods `.` or spaces.
 
 ```yaml
 Type: System.String
@@ -181,7 +193,7 @@ Accept wildcard characters: False
 
 ### -NoPassword
 
-Indicates that the user account does not have a password.
+Indicates that the user account doesn't have a password.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -197,8 +209,8 @@ Accept wildcard characters: False
 
 ### -Password
 
-Specifies a password for the user account. You can use `Read-Host -AsSecureString`, `Get-Credential`,
-or `ConvertTo-SecureString` to create a **SecureString** object for the password.
+Specifies a password for the user account. You can use `Read-Host -AsSecureString`,
+`Get-Credential`, or `ConvertTo-SecureString` to create a **SecureString** object for the password.
 
 If you omit the **Password** and **NoPassword** parameters, `New-LocalUser` prompts you for the new
 user's password.
@@ -217,7 +229,7 @@ Accept wildcard characters: False
 
 ### -PasswordNeverExpires
 
-Indicates whether the password expires.
+Indicates whether the new user's password expires.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -233,7 +245,7 @@ Accept wildcard characters: False
 
 ### -UserMayNotChangePassword
 
-Indicates that the user cannot change the password on the user account.
+Indicates that the user can't change the password on the user account.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -265,8 +277,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -313,9 +324,9 @@ This cmdlet returns a **LocalUser** object representing the created user account
 
 ## NOTES
 
-- A user name cannot be identical to any other user name or group name on the computer. A user name
-  cannot consist only of periods `.` or spaces. A user name can contain up to 20 uppercase
-  characters or lowercase characters. A user name cannot contain the following characters:
+- A user name can't be identical to any other user name or group name on the computer. A user name
+  can't consist only of periods `.` or spaces. A user name can contain up to 20 uppercase
+  characters or lowercase characters. A user name can't contain the following characters:
 
 `"`, `/`, `\`, `[`, `]`, `:`, `;`, `|`, `=`, `,`, `+`, `*`, `?`, `<`, `>`, `@`
 
@@ -324,14 +335,14 @@ This cmdlet returns a **LocalUser** object representing the created user account
   **LocalPrincipal** objects that describes the source of the object. The possible sources are as
   follows:
 
-  - Local
-  - Active Directory
-  - Azure Active Directory group
-  - Microsoft Account
+  - `Local`
+  - `Active Directory`
+  - `Azure Active Directory group`
+  - `Microsoft Account`
 
 > [!NOTE]
-> **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
-> Windows operating system. For earlier versions, the property is blank.
+> **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of
+> the Windows operating system. For earlier versions, the property is blank.
 
 ## RELATED LINKS
 
