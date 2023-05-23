@@ -1,5 +1,5 @@
 ---
-description: PowerShell has several features designed to improve the security of your scripting environment.
+description: You can secure your PowerShell environments on Windows using Windows Defender Application Control (WDAC).
 ms.date: 05/23/2023
 title: Using Windows Defender Application Control
 ---
