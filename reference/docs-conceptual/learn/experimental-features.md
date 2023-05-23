@@ -126,10 +126,10 @@ untrusted scripts attempt to perform disallowed actions. It's difficult to know 
 to run correctly Constrained Language mode.
 
 PowerShell 7.4-preview.4 added a new experimental feature, `PSConstrainedAuditLogging`. When you
-enable this feature, PowerShell supports WDAC policies is in **Audit** mode. In audit mode,
-PowerShell runs the untrusted scripts in Constrained Language mode without error, but logs messages
-to the event log instead of throwing errors. The log messages describe what restrictions would apply
-if the policy was in **Enforce** mode.
+enable this feature, PowerShell supports WDAC policies in **Audit** mode. In audit mode, PowerShell
+runs the untrusted scripts in Constrained Language mode without error, but logs messages to the
+event log instead of throwing errors. The log messages describe what restrictions would apply if the
+policy was in **Enforce** mode.
 
 This feature was added in PowerShell 7.4-preview.4.
 
