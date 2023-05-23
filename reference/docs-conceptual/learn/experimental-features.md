@@ -119,17 +119,16 @@ This feature was added in PowerShell 7.4-preview.2.
 ## PSConstrainedAuditLogging
 
 On Windows, when PowerShell runs under a Windows Defender Application Control (WDAC) policy, it
-changes its behavior to based on the defined security policy. Under a WDAC policy, PowerShell runs
+changes its behavior based on the defined security policy. Under a WDAC policy, PowerShell runs
 trusted scripts and modules allowed by the policy in Full Language mode. All other scripts and
 script blocks are untrusted and run in Constrained Language mode. PowerShell throws errors when the
 untrusted scripts attempt to perform disallowed actions. It's difficult to know why a script fails
-to run correctly Constrained Language mode.
+to run correctly in Constrained Language mode.
 
-PowerShell 7.4-preview.4 added a new experimental feature, `PSConstrainedAuditLogging`. When you
-enable this feature, PowerShell supports WDAC policies in **Audit** mode. In audit mode, PowerShell
-runs the untrusted scripts in Constrained Language mode without error, but logs messages to the
-event log instead of throwing errors. The log messages describe what restrictions would apply if the
-policy was in **Enforce** mode.
+When you enable the `PSConstrainedAuditLogging` experimental feature, PowerShell supports WDAC
+policies in **Audit** mode. In audit mode, PowerShell runs the untrusted scripts in Constrained
+Language mode but logs messages to the event log instead of throwing errors. The log messages
+describe what restrictions would apply if the policy was in **Enforce** mode.
 
 This feature was added in PowerShell 7.4-preview.4.
 
