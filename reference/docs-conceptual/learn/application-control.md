@@ -32,8 +32,8 @@ For more information about AppLocker and WDAC, see [Application Controls for Win
 When PowerShell runs under a WDAC policy, it changes its behavior based on the defined security
 policy. Under a WDAC policy, PowerShell runs trusted scripts and modules allowed by the policy in
 Full Language mode. All other scripts and script blocks are untrusted and run in Constrained
-Language mode. PowerShell throws errors when the untrusted scripts attempt to perform action that
-are not allowed in Constrained Language mode. It can be difficult to know why a script fails to run
+Language mode. PowerShell throws errors when the untrusted scripts attempt to perform actions that
+aren't allowed in Constrained Language mode. It can be difficult to know why a script failed to run
 correctly in Constrained Language mode.
 
 ## WDAC policy auditing
