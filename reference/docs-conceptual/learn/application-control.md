@@ -13,7 +13,7 @@ experience to meet your organization's specific scenarios and requirements.
 > When [choosing between WDAC or AppLocker][03], it's generally recommended that customers
 > implement application control using WDAC rather than AppLocker. Microsoft is continually
 > improving WDAC and Microsoft management platforms are extending their support for WDAC. Although
-> AppLocker will continue to receive security fixes, it won't receive feature enhancements.
+> AppLocker may continue to receive security fixes, it won't receive feature enhancements.
 
 **WDAC** was introduced with Windows 10 and allows organizations to control which drivers and
 applications are allowed to run on their Windows 10 devices. WDAC is designed as a security feature
