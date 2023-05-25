@@ -52,7 +52,7 @@ used in a PowerShell session. For a full description, see [about_Language_Modes]
 
 Windows 10 includes two technologies, [Windows Defender Application Control (WDAC)][10] and
 [AppLocker][07] that you can use to control applications. They allow you to create a lockdown
-experience to meet your organization's specific scenarios and requirements.
+experience to help secure your PowerShell environment.
 
 For more information about how PowerShell supports AppLocker and WDAC, see
 [Using Windows Defender Application Control][01].
