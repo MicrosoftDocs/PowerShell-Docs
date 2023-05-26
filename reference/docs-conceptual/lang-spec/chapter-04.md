@@ -1,6 +1,6 @@
 ---
 description: In PowerShell, each value has a type, and types fall into one of two main categories - value types and reference types.
-ms.date: 10/05/2021
+ms.date: 05/26/2023
 title: Types
 ---
 # 4. Types
@@ -30,19 +30,19 @@ making a copy of the object as well.
 
 A **numeric** type is one that allows representation of integer or fractional values, and that
 supports arithmetic operations on those values. The set of numerical types includes the integer
-([§4.2.3][§4.2.3]) and real number ([§4.2.4][§4.2.4]) types, but does not include bool ([§4.2.1][§4.2.1]) or char
-([§4.2.2][§4.2.2]). An implementation may provide other numeric types (such as signed byte, unsigned
-integer, and integers of other sizes).
+([§4.2.3][§4.2.3]) and real number ([§4.2.4][§4.2.4]) types, but does not include bool
+([§4.2.1][§4.2.1]) or char ([§4.2.2][§4.2.2]). An implementation may provide other numeric types
+(such as signed byte, unsigned integer, and integers of other sizes).
 
-A **collection** is a group of one or more related items, which need not have the same type. Examples
-of collection types are arrays, stacks, queues, lists, and hash tables. A program can *enumerate*
-(or *iterate*) over the elements in a collection, getting access to each element one at a time.
-Common ways to do this are with the foreach statement ([§8.4.4][§8.4.4]) and the
+A **collection** is a group of one or more related items, which need not have the same type.
+Examples of collection types are arrays, stacks, queues, lists, and hash tables. A program can
+_enumerate_ (or _iterate_) over the elements in a collection, getting access to each element one at
+a time. Common ways to do this are with the foreach statement ([§8.4.4][§8.4.4]) and the
 [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object) cmdlet. The type of an object that
 represents an enumerator is described in [§4.5.16][§4.5.16].
 
 In this chapter, there are tables that list the accessible members for a given type. For methods,
-the **Type** is written with the following form: *returnType*/*argumentTypeList*. If the argument
+the **Type** is written with the following form: _returnType_/_argumentTypeList_. If the argument
 type list is too long to fit in that column, it is shown in the **Purpose** column instead.
 
 Other integer types are `SByte`, `Int16`, `UInt16`, `UInt32`, and `UInt64`, all in the namespace
@@ -53,6 +53,9 @@ Many collection classes are defined as part of the **System.Collections** or
 `ICollection`, `IComparer`, `IEnumerable`, `IList`, `IDictionary`, and `IDictionaryEnumerator` and
 their generic equivalents.
 
+You can also use shorthand names for some types. For more information, see
+[about_Type_Accelerators](/powershell/module/microsoft.powershell.core/about/about_type_accelerators).
+
 ## 4.1 Special types
 
 ### 4.1.1 The void type
@@ -62,15 +65,16 @@ operator ([§7.2.9][§7.2.9]).
 
 ### 4.1.2 The null type
 
-The *null type* has one instance, the automatic variable $null ([§2.3.2.2][§2.3.2.2]), also known as the
-null value. This value provides a means for expressing "nothingness" in reference contexts. The
+The _null type_ has one instance, the automatic variable $null ([§2.3.2.2][§2.3.2.2]), also known as
+the null value. This value provides a means for expressing "nothingness" in reference contexts. The
 characteristics of this type are unspecified.
 
 ### 4.1.3 The object type
 
-Every type in PowerShell except the null type ([§4.1.2][§4.1.2]) is derived directly or indirectly from
-the type object, so object is the ultimate base type of all non-null types. A variable constrained
-([§5.3][§5.3]) to type object is really not constrained at all, as it can contain a value of any type.
+Every type in PowerShell except the null type ([§4.1.2][§4.1.2]) is derived directly or indirectly
+from the type object, so object is the ultimate base type of all non-null types. A variable
+constrained ([§5.3][§5.3]) to type object is really not constrained at all, as it can contain a
+value of any type.
 
 ## 4.2 Value types
 
@@ -181,8 +185,8 @@ In PowerShell, `float` and `double` map to `System.Single` and `System.Double`, 
 
 #### 4.2.4.2 decimal
 
-Type decimal uses a 128-bit representation. At a minimum it must support a scale **s** such that 0 <=
-*s* <= at least 28, and a value range -79228162514264337593543950335 to
+Type decimal uses a 128-bit representation. At a minimum it must support a scale **s** such that 0
+<= _s_ <= at least 28, and a value range -79228162514264337593543950335 to
 79228162514264337593543950335. The actual representation of decimal is implementation defined.
 
 Type decimal has the following accessible members:
@@ -193,8 +197,7 @@ Type decimal has the following accessible members:
 | MinValue   | Static property (read-only) | decimal  | The smallest possible value of type decimal |
 
 > [!NOTE]
-
-> Decimal real numbers have a characteristic called *scale*, which represents the number of digits
+> Decimal real numbers have a characteristic called _scale_,  which represents the number of digits
 > to the right of the decimal point. For example, the value 2.340 has a scale of 3 where trailing
 > zeros are significant. When two decimal real numbers are added or subtracted, the scale of the
 > result is the larger of the two scales. For example, 1.0 + 2.000 is 3.000, while 5.0 - 2.00 is
@@ -218,9 +221,9 @@ In PowerShell, `decimal` maps to `System.Decimal`. The representation of decimal
 
 ### 4.2.5 The switch type
 
-This type is used to constrain the type of a parameter in a command ([§8.10.5][§8.10.5]). If an argument
-having the corresponding parameter name is present the parameter tests $true; otherwise, it tests
-`$false`.
+This type is used to constrain the type of a parameter in a command ([§8.10.5][§8.10.5]). If an
+argument having the corresponding parameter name is present the parameter tests $true; otherwise, it
+tests `$false`.
 
 In PowerShell, `switch` maps to `System.Management.Automation.SwitchParameter`.
 
@@ -229,8 +232,8 @@ In PowerShell, `switch` maps to `System.Management.Automation.SwitchParameter`.
 An enumeration type is one that defines a set of named constants representing all the possible
 values that can be assigned to an object of that enumeration type. In some cases, the set of values
 are such that only one value can be represented at a time. In other cases, the set of values are
-distinct powers of two, and by using the -bor operator ([§7.8.5][§7.8.5]), multiple values can be encoded
-in the same object.
+distinct powers of two, and by using the -bor operator ([§7.8.5][§7.8.5]), multiple values can be
+encoded in the same object.
 
 The PowerShell environment provides a number of enumeration types, as described in the following
 sections.
@@ -397,8 +400,8 @@ In PowerShell, `xml` maps to `System.Xml.XmlDocument`.
 ### 4.3.5 The regex type
 
 Type `regex` provides machinery for supporting regular expression processing. It is used to
-constrain the type of a parameter ([§5.3][§5.3]) whose corresponding argument might contain a regular
-expression.
+constrain the type of a parameter ([§5.3][§5.3]) whose corresponding argument might contain a
+regular expression.
 
 In PowerShell, `regex` maps to `System.Text.RegularExpressions.Regex`.
 
@@ -442,8 +445,8 @@ In PowerShell, `ref` maps to `System.Management.Automation.PSReference`.
 
 ### 4.3.7 The scriptblock type
 
-Type `scriptblock` represents a precompiled block of script text ([§7.1.8][§7.1.8]) that can be used as a
-single unit. It has the following accessible members:
+Type `scriptblock` represents a precompiled block of script text ([§7.1.8][§7.1.8]) that can be used
+as a single unit. It has the following accessible members:
 
 <table>
 <thead>
@@ -503,7 +506,7 @@ single unit. It has the following accessible members:
 </table>
 
 In PowerShell, `scriptblock` maps to `System.Management.Automation.ScriptBlock`. `Invoke` returns a
-collection of `PsObject`.
+collection of `PSObject`.
 
 ### 4.3.8 The math type
 
@@ -670,15 +673,15 @@ Type `pscustomobject` is a pseudo type used only for conversions.
 
 ## 4.4 Generic types
 
-A number of programming languages and environments provide types that can be *specialized*. Many of
-these types are referred to as *container types*, as instances of them are able to contain objects
+A number of programming languages and environments provide types that can be _specialized_.  Many of
+these types are referred to as _container types_,  as instances of them are able to contain objects
 of some other type. Consider a type called Stack that can represent a stack of values, which can be
 pushed on and popped off. Typically, the user of a stack wants to store only one kind of object on
 that stack. However, if the language or environment does not support type specialization, multiple
 distinct variants of the type Stack must be implemented even though they all perform the same task,
 just with different type elements.
 
-Type specialization allows a *generic type* to be implemented such that it can be constrained to
+Type specialization allows a _generic type_ to be implemented such that it can be constrained to
 handling some subset of types when it is used. For example,
 
 - A generic stack type that is specialized to hold strings might be written as `Stack[string]`.
@@ -966,8 +969,8 @@ In PowerShell, this type is System.Management.Automation.PSScriptCmdlet.
 ### 4.5.15 Error record description type
 
 The automatic variable `$Error` contains a collection of error records that represent recent errors
-([§3.12][§3.12]). Although the type of this collection is unspecified, it does support subscripting to get
-access to individual error records.
+([§3.12][§3.12]). Although the type of this collection is unspecified, it does support subscripting
+to get access to individual error records.
 
 In PowerShell, the collection type is `System.Collections.ArrayList`. The type of an individual
 error record in the collection is `System.Management.Automation.ErrorRecord`. This type has the
@@ -1131,7 +1134,7 @@ following accessible members:
 | ---------- | --------------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Invoke     | Instance method | object/variable number and type | Takes a variable number of arguments, and indirectly calls the method referred to by the parent method designator, passing in the arguments. |
 
-An object of this type can be created by an *invocation-expression* ([§7.1.3][§7.1.3]).
+An object of this type can be created by an _invocation-expression_ ([§7.1.3][§7.1.3]).
 
 In PowerShell, this type is System.Management.Automation.PSMethod.
 
@@ -1151,23 +1154,23 @@ In PowerShell, this type is `Microsoft.PowerShell.Commands.MemberDefinition`.
 ## 4.6 Type extension and adaptation
 
 A PowerShell implementation includes a family of core types (which are documented in this chapter)
-that each contain their own set of *base members*. Those members can be methods or properties, and
+that each contain their own set of _base members_.  Those members can be methods or properties, and
 they can be instance or static members. For example, the base members of the type string
 ([§4.3.1][§4.3.1]) are the instance property Length and the instance methods ToLower and ToUpper.
 
 When an object is created, it contains all the instance properties of that object's type, and the
 instance methods of that type can be called on that object. An object may be customized via the
-addition of instance members at runtime. The result is called a *custom object*. Any members added
+addition of instance members at runtime. The result is called a _custom object_.  Any members added
 to an instance exist only for the life of that instance; other instances of the same core type are
 unaffected.
 
 The base member set of a type can be augmented by the addition of the following kinds of members:
 
-- *adapted members*, via the *Extended Type System* (ETS), most details of which are unspecified.
-- *extended members*, via the cmdlet [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member).
+- _adapted members_,  via the _Extended Type System_ (ETS), most details of which are unspecified.
+- _extended members_,  via the cmdlet [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member).
 
 In PowerShell, extended members can also be added via `types.ps1xml` files. Adapted and extended
-members are collectively called **synthetic** *members*.
+members are collectively called **synthetic** _members_.
 
 The ETS adds the following members to all PowerShell objects: **psbase**, **psadapted**,
 **psextended**, and **pstypenames**. See the **Force** and **View** parameters in the cmdlet
@@ -1185,23 +1188,23 @@ There are three ways create a custom object having a new member M:
 1. This approach can be used to add one or more NoteProperty members.
 
    ```powershell
-   $x = New-Object PsObject -Property @{M = 123}`
+   $x = New-Object PSObject -Property @{M = 123}
    ```
 
 1. This approach can be used to add NoteProperty or ScriptMethod members.
 
    ```powershell
-   $x = New-Module -AsCustomObject {$M = 123 ; Export-ModuleMember --Variable M}`
+   $x = New-Module -AsCustomObject {$M = 123 ; Export-ModuleMember --Variable M}
    ```
 
 1. This approach can be used to add any kind of member.
 
    ```powershell
-   $x = New-Object PsObject
+   $x = New-Object PSObject
    Add-Member -InputObject $x -Name M -MemberType NoteProperty -Value 123
    ```
 
-`PsObject` is the base type of all PowerShell types.
+`PSObject` is the base type of all PowerShell types.
 
 <!-- reference links -->
 [§12.3.5]: chapter-12.md#1235-the-cmdletbinding-attribute
