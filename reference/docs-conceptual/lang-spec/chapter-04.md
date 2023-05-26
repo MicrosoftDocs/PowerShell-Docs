@@ -54,7 +54,7 @@ Many collection classes are defined as part of the **System.Collections** or
 their generic equivalents.
 
 You can also use shorthand names for some types. For more information, see
-[about_Type_Accelerators](/powershell/module/microsoft.powershell.core/about_type_accelerators).
+[about_Type_Accelerators](/powershell/module/microsoft.powershell.core/about/about_type_accelerators).
 
 ## 4.1 Special types
 
