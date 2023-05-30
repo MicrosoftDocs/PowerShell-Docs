@@ -381,6 +381,7 @@ This modules is only available in Windows PowerShell.
 | Get-Random                | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                           |
 | Get-Runspace              | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                           |
 | Get-RunspaceDebug         | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                           |
+| Get-SecureRandom          |                 |                 |                 | ![Included][01] | Added in 7.4                              |
 | Get-TraceSource           | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                           |
 | Get-TypeData              | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                           |
 | Get-UICulture             | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                           |
