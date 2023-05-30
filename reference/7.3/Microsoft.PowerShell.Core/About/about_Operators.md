@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 03/31/2023
+ms.date: 05/30/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -752,6 +752,7 @@ In the following example, the right-hand operand won't be evaluated.
 ```powershell
 [string] $todaysDate = '1/10/2020'
 $todaysDate ??= (Get-Date).ToShortDateString()
+$todaysDate
 ```
 
 ```Output
