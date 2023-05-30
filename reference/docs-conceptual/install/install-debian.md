@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Debian Linux
-ms.date: 01/09/2023
+ms.date: 05/30/2023
 title: Installing PowerShell on Debian Linux
 ---
 # Installing PowerShell on Debian Linux
@@ -35,11 +35,11 @@ The preferred method is as follows:
 # Install system components
 sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
 
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+# Save the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/microsoft.gpg
 
 # Register the Microsoft Product feed
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
 
 # Install PowerShell
 sudo apt update && sudo apt install -y powershell
