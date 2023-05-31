@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 05/31/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
@@ -131,6 +131,28 @@ function Test-Info
 }
 Test-Info 6> Info.txt
 ```
+
+### Example 4: Write in color
+Because `Write-Host` was rewritten as a wrapper for `Write-Information`, you too can do
+what it does by passing a **System.Management.Automation.HostInformationMessage** object to it
+to get colored output or no new line.
+```powershell
+$colorMsg = [System.Management.Automation.HostInformationMessage]@{
+    Message         = "I'm Blue"
+    NoNewLine       = $false
+    ForegroundColor = [ConsoleColor]::Blue
+    BackgroundColor = [ConsoleColor]::DarkBlue
+}
+Write-Information -MessageData $colorMsg -InformationAction Continue
+```
+
+One benefit of this approach is that `Write-Host` still outputs when **InformationAction** is
+**SilentlyContinue** (default) and only stops when set to **Ignore**.
+
+> [!NOTE]
+> Since PowerShell 6.0 you can also use the escape (`` `e ``) character to color the output,
+> which can also change the color mid-line among other things, see
+> [about_Special_Characters](../Microsoft.PowerShell.Core/About/about_Special_Characters.md#escape-e)
 
 ## PARAMETERS
 
