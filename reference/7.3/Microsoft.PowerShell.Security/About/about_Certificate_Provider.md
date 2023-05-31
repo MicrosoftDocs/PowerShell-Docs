@@ -1,7 +1,7 @@
 ---
 description: Information about the Certificate provider.
 Locale: en-US
-ms.date: 05/16/2022
+ms.date: 05/31/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/about/about_certificate_provider?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Certificate Provider
@@ -31,40 +31,38 @@ Provides access to X.509 certificate stores and certificates in PowerShell.
 The PowerShell **Certificate** provider lets you get, add, change, clear, and
 delete certificates and certificate stores in PowerShell.
 
-The **Certificate** drive is a hierarchical namespace containing the certificate
-stores and certificates on your computer.
+The **Certificate** drive is a hierarchical namespace containing the
+certificate stores and certificates on your computer.
 
-The **Certificate** provider supports the following cmdlets, which are covered
-in this article.
+The **Certificate** provider supports the following cmdlets.
 
-- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
-- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
-- [Invoke-Item](xref:Microsoft.PowerShell.Management.Invoke-Item)
-- [Move-Item](xref:Microsoft.PowerShell.Management.Move-Item)
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Get-ItemProperty](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
-- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
-- [Clear-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
-- [Get-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature)
-- [Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
+- [Get-Location][09]
+- [Set-Location][15]
+- [Get-Item][07]
+- [Get-ChildItem][06]
+- [Invoke-Item][10]
+- [Move-Item][11]
+- [New-Item][12]
+- [Remove-Item][13]
+- [Get-ItemProperty][08]
+- [Set-ItemProperty][14]
+- [Clear-ItemProperty][14]
+- [Get-AuthenticodeSignature][16]
+- [Set-AuthenticodeSignature][18]
 
 ## Types exposed by this provider
 
 The Certificate drive exposes the following types.
 
-- Store locations (**Microsoft.PowerShell.Commands.X509StoreLocation**), which
-  are high-level containers that group the certificates for the current user and
-  for all users. Each system has a `CurrentUser` and `LocalMachine` (all users)
-  store location.
-- Certificates stores
-  (**System.Security.Cryptography.X509Certificates.X509Store**), which are
-  physical stores in which certificates are saved and managed.
-- X.509 **System.Security.Cryptography.X509Certificates.X509Certificate2**
-  certificates, each of which represent an X.509 certificate on the computer.
-  Certificates are identified by their thumbprints.
+- **Microsoft.PowerShell.Commands.X509StoreLocation**, which are high-level
+  containers that group the certificates for the current user and for all
+  users. Each system has a `CurrentUser` and `LocalMachine` (all users) store
+  location.
+- **System.Security.Cryptography.X509Certificates.X509Store**, which are
+  physical stores where certificates are saved and managed.
+- **System.Security.Cryptography.X509Certificates.X509Certificate2**, each
+  representing an X.509 certificate on the computer. Certificates are
+  identified by their thumbprints.
 
 ## Navigating the Certificate drive
 
@@ -78,9 +76,9 @@ the `Cert:` drive.
 Set-Location Cert:
 ```
 
-You can also work with the certificate provider from any other PowerShell drive.
-To reference an alias from another location, use the `Cert:` drive name in the
-path.
+You can also work with the certificate provider from any other PowerShell
+drive. To reference an alias from another location, use the `Cert:` drive name
+in the path.
 
 ```powershell
 PS Cert:\> Set-Location -Path LocalMachine\Root
@@ -95,18 +93,15 @@ Set-Location C:
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem), `cd` is
-> an alias for
-> [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd`
-> is an alias for
-> [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
+> [Get-ChildItem][06], `cd` is an alias for [Set-Location][15], and `pwd` is an
+> alias for [Get-Location][09].
 
 ## Displaying the Contents of the Cert: drive
 
 This command uses the `Get-ChildItem` cmdlet to display the certificate stores
 in the `CurrentUser` certificate store location.
 
-If you are not in the `Cert:` drive, use an absolute path.
+If you aren't in the `Cert:` drive, use an absolute path.
 
 ```powershell
 PS Cert:\CurrentUser\> Get-ChildItem
@@ -114,8 +109,8 @@ PS Cert:\CurrentUser\> Get-ChildItem
 
 ### Displaying certificate properties within the Cert: drive
 
-This example gets a certificate with `Get-Item` and stores it in a variable. The
-example shows the new certificate script properties (**DnsNameList**,
+This example gets a certificate with `Get-Item` and stores it in a variable.
+The example shows the new certificate script properties (**DnsNameList**,
 **EnhancedKeyUsageList**, **SendAsTrustedIssuer**) using `Select-Object`.
 
 ```powershell
@@ -133,7 +128,7 @@ SendAsTrustedIssuer  : False
 ### Find all CodeSigning certificates
 
 This command uses the **CodeSigningCert** and **Recurse** parameters of the
-`Get-ChildItem` cmdlet to get all of the certificates on the computer that have
+`Get-ChildItem` cmdlet to get all the certificates on the computer that have
 code-signing authority.
 
 ```powershell
@@ -142,8 +137,8 @@ Get-ChildItem -Path cert: -CodeSigningCert -Recurse
 
 ### Find expired certificates
 
-This command uses the **ExpiringInDays** parameter of the `Get-ChildItem` cmdlet
-to get certificates that will expire within the next 30 days.
+This command uses the **ExpiringInDays** parameter of the `Get-ChildItem`
+cmdlet to get certificates that expire within the next 30 days.
 
 ```powershell
 Get-ChildItem -Path cert:\LocalMachine\WebHosting -ExpiringInDays 30
@@ -156,8 +151,11 @@ This command uses the **SSLServerAuthentication** parameter of the
 `WebHosting` stores.
 
 ```powershell
-Get-ChildItem -Path cert:\LocalMachine\My, cert:\LocalMachine\WebHosting `
-  -SSLServerAuthentication
+$getChildItemSplat = @{
+    Path = 'cert:\LocalMachine\My', 'cert:\LocalMachine\WebHosting'
+    SSLServerAuthentication = $true
+}
+Get-ChildItem @getChildItemSplat
 ```
 
 ### Find expired certificates on remote computers
@@ -168,8 +166,13 @@ on the Srv01 and Srv02 computers. A value of zero (`0`) in the
 that have expired.
 
 ```powershell
-Invoke-Command -ComputerName Srv01, Srv02 {Get-ChildItem -Path cert:\* `
-  -Recurse -ExpiringInDays 0}
+$invokeCommandSplat = @{
+    ComputerName = 'Srv01', 'Srv02'
+    ScriptBlock = {
+        Get-ChildItem -Path cert:\* -Recurse -ExpiringInDays 0
+    }
+}
+Invoke-Command @invokeCommandSplat
 ```
 
 ### Combining filters to find a specific set of certificates
@@ -180,22 +183,25 @@ have the following attributes:
 - `fabrikam` in their DNS name
 - `Client Authentication` in their EKU
 - a value of `$true` for the **SendAsTrustedIssuer** property
-- do not expire within the next 30 days.
+- don't expire within the next 30 days.
 
 The **NotAfter** property stores the certificate expiration date.
 
 ```powershell
 [DateTime] $ValidThrough = (Get-Date) + (New-TimeSpan -Days 30)
-Get-ChildItem -Path cert:\* -Recurse -DNSName "*fabrikam*" `
-  -EKU "*Client Authentication*" | Where-Object {
-                                     $_.SendAsTrustedIssuer -and `
-                                     $_.NotAfter -gt $ValidThrough
-                                   }
+$getChildItemSplat = @{
+    Path = 'cert:\*'
+    Recurse = $true
+    DnsName = "*fabrikam*"
+    Eku = "*Client Authentication*"
+}
+Get-ChildItem @getChildItemSplat |
+    Where-Object {$_.SendAsTrustedIssuer -and $_.NotAfter -gt $ValidThrough }
 ```
 
 ## Opening the Certificates MMC Snap-in
 
-The `Invoke-Item` cmdlet will use the default application to open a path you
+The `Invoke-Item` cmdlet uses the default application to open a path you
 specify. For certificates, the default application is the Certificates MMC
 snap-in.
 
@@ -208,13 +214,16 @@ Invoke-Item cert:\CurrentUser\my\6B8223358119BB08840DEE50FD8AF9EA776CE66B
 
 ## Copying Certificates
 
-Copying certificates is not supported by the **Certificate** provider. When you
+Copying certificates isn't supported by the **Certificate** provider. When you
 attempt to copy a certificate, you see this error.
 
-```
+```powershell
 $path = "Cert:\LocalMachine\Root\E2C0F6662D3C569705B4B31FE2CBF3434094B254"
 PS Cert:\LocalMachine\> Copy-Item -Path $path -Destination .\CA\
-Copy-Item : Provider operation stopped because the provider does not support
+```
+
+```Output
+Copy-Item : Provider operation stopped because the provider doesn't support
 this operation.
 At line:1 char:1
 + Copy-Item -Path $path -Destination .\CA\
@@ -232,32 +241,32 @@ At line:1 char:1
 This command uses the `Move-Item` cmdlet to move a certificate from the `My`
 store to the `WebHosting` store.
 
-`Move-Item` will not move certificate stores and it will not move certificates
-to a different store location, such as moving a certificate from `LocalMachine`
-to `CurrentUser`. The `Move-Item` cmdlet moves certificates, but it does not
-move private keys.
+`Move-Item` can't move certificate stores and it can't move certificates to a
+different store location, such as moving a certificate from `LocalMachine` to
+`CurrentUser`. The `Move-Item` cmdlet can move certificates within a store, but
+it doesn't move private keys.
 
 This command uses the **SSLServerAuthentication** parameter of the
-`Get-ChildItem` cmdlet to get SSL server authentication certificates in the `My`
-certificate store.
+`Get-ChildItem` cmdlet to get SSL server authentication certificates in the
+`My` certificate store.
 
 The returned certificates are piped to the `Move-Item` cmdlet, which moves the
 certificates to the `WebHosting` store.
 
 ```powershell
-Get-ChildItem cert:\LocalMachine\My -SSLServerAuthentication | Move-Item `
-  -Destination cert:\LocalMachine\WebHosting
+Get-ChildItem cert:\LocalMachine\My -SSLServerAuthentication |
+    Move-Item -Destination cert:\LocalMachine\WebHosting
 ```
 
 ## Deleting Certificates and Private Keys
 
-The `Remove-Item` cmdlet will remove certificates that you specify. The
+The `Remove-Item` cmdlet deletes certificates that you specify. The
 **DeleteKey** dynamic parameter deletes the private key.
 
 ### Delete a Certificate from the CA store
 
-This command deletes a certificate from the CA certificate store, but leaves the
-associated private key intact.
+This command deletes a certificate from the CA certificate store, but leaves
+the associated private key intact.
 
 In the `Cert:` drive, the `Remove-Item` cmdlet supports only the **DeleteKey**,
 **Path**, **WhatIf**, and **Confirm** parameters. All other parameters are
@@ -291,9 +300,9 @@ CredSSP permits delegated authentication.
 Enable-WSManCredSSP -Role Client -DelegateComputer S1
 ```
 
-Use the `Connect-WSMan` cmdlet to connect the S1 computer to the WinRM service on
-the local computer. When this command completes, the S1 computer appears in the
-local `WSMan:` drive in PowerShell.
+Use the `Connect-WSMan` cmdlet to connect the S1 computer to the WinRM service
+on the local computer. When this command completes, the S1 computer appears in
+the local `WSMan:` drive in PowerShell.
 
 ```powershell
 Connect-WSMan -ComputerName S1 -Credential Domain01\Admin01
@@ -318,17 +327,20 @@ session in the `$s` variable. The `Remove-Item` command uses the **DeleteKey**
 parameter to remove the private key along with the specified certificate.
 
 ```powershell
-Invoke-Command -Session $s { Remove-Item `
-  -Path cert:\LocalMachine\My\D2D38EBA60CAA1C12055A2E1C83B15AD450110C2 `
-  -DeleteKey
-  }
+Invoke-Command -Session $s {
+    $removeItemSplat = @{
+        Path = 'cert:\LocalMachine\My\D2D38EBA60CAA1C12055A2E1C83B15AD450110C2'
+        DeleteKey = $true
+    }
+    Remove-Item @removeItemSplat
+}
 ```
 
 ### Delete expired Certificates
 
-This command uses the **ExpiringInDays** parameter of the `Get-ChildItem` cmdlet
-with a value of `0` to get certificates in the `WebHosting` store that have
-expired.
+This command uses the **ExpiringInDays** parameter of the `Get-ChildItem`
+cmdlet with a value of `0` to get certificates in the `WebHosting` store that
+have expired.
 
 The variable containing the returned certificates is piped to the `Remove-Item`
 cmdlet, which deletes them. The command uses the **DeleteKey** parameter to
@@ -341,9 +353,9 @@ $expired | Remove-Item -DeleteKey
 
 ## Creating Certificates
 
-The `New-Item` cmdlet does not create new certificates in the **Certificate**
-provider. Use the [New-SelfSignedCertificate](/powershell/module/pki/new-selfsignedcertificate)
-cmdlet to create a certificate for testing purposes.
+The `New-Item` cmdlet doesn't create new certificates in the **Certificate**
+provider. Use the [New-SelfSignedCertificate][03] cmdlet to create a
+certificate for testing purposes.
 
 ## Creating Certificate Stores
 
@@ -371,23 +383,27 @@ Server01 computer. The command returns a
 new certificate store.
 
 ```powershell
-Invoke-Command { New-Item -Path cert:\LocalMachine\CustomStore } `
-  -ComputerName Server01
+Invoke-Command -ComputerName Server01 -ScriptBlock {
+    New-Item -Path cert:\LocalMachine\CustomStore
+}
 ```
 
 ## Creating Client Certificates for WS-Man
 
 This command creates **ClientCertificate** entry that can be used by the
-**WS-Management** client. The new **ClientCertificate** will show up under the
-**ClientCertificate** directory as `ClientCertificate_1234567890`. All of the
+**WS-Management** client. The new **ClientCertificate** shows up under the
+**ClientCertificate** directory as `ClientCertificate_1234567890`. All the
 parameters are mandatory. The **Issuer** needs to be thumbprint of the issuer's
 certificate.
 
 ```powershell
-$cred = Get-Credential
-New-Item -Path WSMan:\localhost\ClientCertificate `
-         -Issuer 1b3fd224d66c6413fe20d21e38b304226d192dfe `
-         -URI wmicimv2/* -Credential $cred
+$newItemSplat = @{
+    Path = 'WSMan:\localhost\ClientCertificate'
+    Credential = Get-Credential
+    Issuer = '1b3fd224d66c6413fe20d21e38b304226d192dfe'
+    URI = 'wmicimv2/*'
+}
+New-Item @newItemSplat
 ```
 
 ## Deleting Certificate Stores
@@ -400,22 +416,23 @@ parameter, which deletes the certificates in the store before it deletes the
 store.
 
 ```powershell
-Invoke-Command { Remove-Item -Path cert:\LocalMachine\TestStore -Recurse } `
-  -ComputerName S1, S2
+Invoke-Command -ComputerName S1, S2 -ScriptBlock {
+    Remove-Item -Path cert:\LocalMachine\TestStore -Recurse
+}
 ```
 
 ## Dynamic parameters
 
-Dynamic parameters are cmdlet parameters that are added by a PowerShell provider
-and are available only when the cmdlet is being used in the provider-enabled
-drive. These parameters are valid in all subdirectories of the **Certificate**
-provider, but are effective only on certificates.
+Dynamic parameters are cmdlet parameters that are added by a PowerShell
+provider and are available only when the cmdlet is being used in the
+provider-enabled drive. These parameters are valid in all subdirectories of the
+**Certificate** provider, but are effective only on certificates.
 
 > [!NOTE]
 > Parameters that perform filtering against the **EnhancedKeyUsageList**
-> property also return items with an empty **EnhancedKeyUsageList**
-> property value. Certificates that have an empty **EnhancedKeyUsageList** can
-> be used for all purposes.
+> property also return items with an empty **EnhancedKeyUsageList** property
+> value. Certificates that have an empty **EnhancedKeyUsageList** can be used
+> for all purposes.
 
 The following Certificate provider parameters were reintroduced in PowerShell
 7.1.
@@ -430,8 +447,8 @@ The following Certificate provider parameters were reintroduced in PowerShell
 
 #### Cmdlets supported
 
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [Get-Item][07]
+- [Get-ChildItem][06]
 
 This parameter gets certificates that have `Code Signing` in their
 **EnhancedKeyUsageList** property value.
@@ -440,17 +457,17 @@ This parameter gets certificates that have `Code Signing` in their
 
 #### Cmdlets supported
 
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
+- [Remove-Item][13]
 
 This parameter deletes the associated private key when it deletes the
 certificate.
 
 > [!IMPORTANT]
-> To delete a private key that is associated with a user certificate in the
+> To delete a private key that's associated with a user certificate in the
 > `Cert:\CurrentUser` store on a remote computer, you must use delegated
 > credentials. The `Invoke-Command` cmdlet supports credential delegation using
-> the **CredSSP** parameter. You should consider any security risks before using
-> `Remove-Item` with `Invoke-Command` and credential delegation.
+> the **CredSSP** parameter. You should consider any security risks before
+> using `Remove-Item` with `Invoke-Command` and credential delegation.
 
 This parameter was reintroduced in PowerShell 7.1
 
@@ -458,7 +475,7 @@ This parameter was reintroduced in PowerShell 7.1
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [Get-ChildItem][06]
 
 This parameter gets certificates that have the specified domain name or name
 pattern in the **DNSNameList** property of the certificate. The value of this
@@ -471,8 +488,8 @@ This parameter was reintroduced in PowerShell 7.1
 
 #### Cmdlets supported
 
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [Get-Item][07]
+- [Get-ChildItem][06]
 
 This parameter gets certificates that have `Document Encryption` in their
 **EnhancedKeyUsageList** property value.
@@ -481,10 +498,10 @@ This parameter gets certificates that have `Document Encryption` in their
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [Get-ChildItem][06]
 
-This parameter gets certificates that have the specified text or text pattern in
-the **EnhancedKeyUsageList** property of the certificate. Wildcard
+This parameter gets certificates that have the specified text or text pattern
+in the **EnhancedKeyUsageList** property of the certificate. Wildcard
 characters (`*`) are permitted. The **EnhancedKeyUsageList** property contains
 the friendly name and the OID fields of the EKU.
 
@@ -494,7 +511,7 @@ This parameter was reintroduced in PowerShell 7.1
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [Get-ChildItem][06]
 
 This parameter gets certificates that are expiring in or before the specified
 number of days. A value of zero (0) gets certificates that have expired.
@@ -503,28 +520,23 @@ This parameter was reintroduced in PowerShell 7.1
 
 ### ItemType <System.String>
 
-This parameter allows you to specify the type of item created by `New-Item`.
-
-In a `Certificate` drive, the following values are allowed:
-
-- `Certificate Provider`
-- `Certificate`
-- `Store`
-- `StoreLocation`
+This parameter is used to specify the type of item created by `New-Item`. The
+`New-Item` cmdlet only supports the value `Store`. `New-Item` cmdlet can't
+create new certificates.
 
 #### Cmdlets Supported
 
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
+- [New-Item][12]
 
 ### SSLServerAuthentication <System.Management.Automation.SwitchParameter>
 
 #### Cmdlets supported
 
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+- [Get-ChildItem][06]
 
 Gets only server certificates for SSL web hosting. This parameter gets
-certificates that have `Server Authentication` in their **EnhancedKeyUsageList**
-property value.
+certificates that have `Server Authentication` in their
+**EnhancedKeyUsageList** property value.
 
 This parameter was reintroduced in PowerShell 7.1
 
@@ -541,10 +553,10 @@ certificates.
 - **EnhancedKeyUsageList**: To populate the **EnhancedKeyUsageList** property,
   the Certificate provider copies the OID properties of the EnhancedKeyUsage
   (EKU) field in the certificate and creates a friendly name for it.
-- **SendAsTrustedIssuer**: To populate the **SendAsTrustedIssuer** property, the
-  Certificate provider copies the **SendAsTrustedIssuer** property from the
-  certificate.  For more information see
-  [Management of trusted issuers for client authentication](/windows-server/security/tls/what-s-new-in-tls-ssl-schannel-ssp-overview#BKMK_TrustedIssuers).
+- **SendAsTrustedIssuer**: To populate the **SendAsTrustedIssuer** property,
+  the Certificate provider copies the **SendAsTrustedIssuer** property from the
+  certificate. For more information see
+  [Management of trusted issuers for client authentication][04].
 
 These new features let you search for certificates based on their DNS names and
 expiration dates, and distinguish client and server authentication certificates
@@ -553,18 +565,18 @@ by the value of their Enhanced Key Usage (EKU) properties.
 ## Using the pipeline
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
-tasks by sending provider data from one cmdlet to another provider cmdlet.
-To read more about how to use the pipeline with provider cmdlets, see the
-cmdlet references provided throughout this article.
+tasks by sending provider data from one cmdlet to another provider cmdlet. To
+read more about how to use the pipeline with provider cmdlets, see the cmdlet
+references provided throughout this article.
 
 ## Getting help
 
-Beginning in PowerShell 3.0, you can get customized help topics for
-provider cmdlets that explain how those cmdlets behave in a file system drive.
+Beginning in PowerShell 3.0, you can get customized help topics for provider
+cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system
-drive or use the `-Path` parameter of `Get-Help` to specify a file system drive.
+[Get-Help][05] command in a file system drive or use the `-Path` parameter of
+`Get-Help` to specify a file system drive.
 
 ```powershell
 Get-Help Get-ChildItem
@@ -576,8 +588,28 @@ Get-Help Get-ChildItem -Path cert:
 
 ## See also
 
-- [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)
-- [about_Signing](../../Microsoft.PowerShell.Core/About/about_Signing.md)
-- [Get-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature)
-- [Set-AuthenticodeSignature](xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature)
-- [Get-PfxCertificate](xref:Microsoft.PowerShell.Security.Get-PfxCertificate)
+- [about_Providers][01]
+- [about_Signing][02]
+- [Get-AuthenticodeSignature][16]
+- [Set-AuthenticodeSignature][18]
+- [Get-PfxCertificate][17]
+
+<!-- link references -->
+[01]: ../../Microsoft.PowerShell.Core/About/about_Providers.md
+[02]: ../../Microsoft.PowerShell.Core/About/about_Signing.md
+[03]: /powershell/module/pki/new-selfsignedcertificate
+[04]: /windows-server/security/tls/what-s-new-in-tls-ssl-schannel-ssp-overview#BKMK_TrustedIssuers
+[05]: xref:Microsoft.PowerShell.Core.Get-Help
+[06]: xref:Microsoft.PowerShell.Management.Get-ChildItem
+[07]: xref:Microsoft.PowerShell.Management.Get-Item
+[08]: xref:Microsoft.PowerShell.Management.Get-ItemProperty
+[09]: xref:Microsoft.PowerShell.Management.Get-Location
+[10]: xref:Microsoft.PowerShell.Management.Invoke-Item
+[11]: xref:Microsoft.PowerShell.Management.Move-Item
+[12]: xref:Microsoft.PowerShell.Management.New-Item
+[13]: xref:Microsoft.PowerShell.Management.Remove-Item
+[14]: xref:Microsoft.PowerShell.Management.Set-ItemProperty
+[15]: xref:Microsoft.PowerShell.Management.Set-Location
+[16]: xref:Microsoft.PowerShell.Security.Get-AuthenticodeSignature
+[17]: xref:Microsoft.PowerShell.Security.Get-PfxCertificate
+[18]: xref:Microsoft.PowerShell.Security.Set-AuthenticodeSignature
