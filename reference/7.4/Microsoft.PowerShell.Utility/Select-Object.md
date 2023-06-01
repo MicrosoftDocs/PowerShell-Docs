@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/14/2023
+ms.date: 06/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -18,28 +18,28 @@ Selects objects or object properties.
 ### DefaultParameter (Default)
 
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <psobject>] [-ExcludeProperty <string[]>]
- [-ExpandProperty <string>] [-Unique] [-Last <int>] [-First <int>] [-Skip <int>] [-Wait]
+Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
+ [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
  [<CommonParameters>]
 ```
 
 ### SkipLastParameter
 
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <psobject>] [-ExcludeProperty <string[]>]
- [-ExpandProperty <string>] [-Unique] [-SkipLast <int>] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
+ [-ExpandProperty <String>] [-Unique] [-Skip <Int32>] [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
 ### IndexParameter
 
 ```
-Select-Object [-InputObject <psobject>] [-Unique] [-Wait] [-Index <int[]>] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
 ```
 
 ### SkipIndexParameter
 
 ```
-Select-Object [-InputObject <psobject>] [-Unique] [-SkipIndex <int[]>] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [-Unique] [-SkipIndex <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -515,6 +515,9 @@ from the end of the collection.
 
 Unlike the **Index** parameter, which starts counting at 0, the **Skip** parameter begins at 1.
 
+Beginning in PowerShell 7.4, you can use the **Skip** parameter with the **SkipLast** parameter to
+skip items from both the beginning and end of the collection.
+
 ```yaml
 Type: System.Int32
 Parameter Sets: DefaultParameter
@@ -547,6 +550,9 @@ Skips (doesn't select) the specified number of items from the end of the list or
 the same way as using **Skip** together with **Last** parameter.
 
 Unlike the **Index** parameter, which starts counting at 0, the **SkipLast** parameter begins at 1.
+
+Beginning in PowerShell 7.4, you can use the **Skip** parameter with the **SkipLast** parameter to
+skip items from both the beginning and end of the collection.
 
 ```yaml
 Type: System.Int32
