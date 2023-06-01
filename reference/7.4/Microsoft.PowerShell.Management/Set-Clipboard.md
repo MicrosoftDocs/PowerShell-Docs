@@ -44,6 +44,31 @@ ssh key so that it can be pasted into another application, like GitHub.
 Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
+### Example 3: Copy text to the clipboard of the local host over an SSH remote session
+
+The **AsOSC52** parameter allows you to set the clipboard of the local machine when connected to a
+remote session over SSH.
+
+```powershell
+Set-Clipboard -Value "This is a test string" -AsOSC52
+```
+
+### Example 4: Set the default value of the **AsOSC52** parameter
+
+You can detect if you are connected to a remote session over SSH by checking the value of the
+`$env:SSH_CLIENT` or `$env:SSH_TTY` environment variables. If either of these variables are set,
+then you are connected to a remote session over SSH. You can use this information to set the default
+value of the **AsOSC52** parameter. Add one of the following lines to your PowerShell profile
+script.
+
+```powershell
+$PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $env:SSH_CLIENT
+$PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $env:SSH_TTY
+```
+
+For more information about `$PSDefaultParameterValues`, see
+[about_Parameters_Default_Values](/powershell/module/microsoft.powershell.core/about/about_parameters_default_values).
+
 ## PARAMETERS
 
 ### -Append
@@ -179,19 +204,6 @@ PowerShell includes the following aliases for `Set-Clipboard`:
 In rare cases when using `Set-Clipboard` with a high number of values in rapid succession, like in a
 loop, you might sporadically get a blank value from the clipboard. This can be fixed by adding a
 `Start-Sleep -Milliseconds 1` command to the loop.
-
-You can detect if you are connected to a remote session over SSH by checking the value of the
-`$env:SSH_CLIENT` or `$env:SSH_TTY` environment variables. If either of these variables are set,
-then you are connected to a remote session over SSH. You can use this information to set the default
-value of the `-AsOSC52` parameter. Add one of the following lines to your PowerShell profile script.
-
-```powershell
-$PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $env:SSH_CLIENT
-$PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $env:SSH_TTY
-```
-
-For more information about `$PSDefaultParameterValues`, see
-[about_Parameters_Default_Values](/powershell/module/microsoft.powershell.core/about/about_parameters_default_values).
 
 ## RELATED LINKS
 
