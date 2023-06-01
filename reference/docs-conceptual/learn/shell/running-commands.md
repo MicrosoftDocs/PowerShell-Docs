@@ -60,7 +60,7 @@ sdwheeler:x:1000:1000:,,,:/home/sdwheeler:/bin/bash
 ### Passing arguments to native commands
 
 Most shells include features for using variables, evaluating expressions, and handling strings. But
-each shell does these differently. In PowerShell, all parameters are start with a hyphen (`-`)
+each shell does these things differently. In PowerShell, all parameters start with a hyphen (`-`)
 character. In `cmd.exe`, most parameters use a slash (`/`) character. Other command-line tools may
 not have a special character for parameters.
 
