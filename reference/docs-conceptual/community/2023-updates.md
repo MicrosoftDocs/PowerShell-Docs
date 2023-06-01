@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 05/03/2023
+ms.date: 06/01/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,55 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-May
+
+New content
+
+- New cmdlet in 7.4 - [Get-SecureRandom](xref:Microsoft.PowerShell.Utility.Get-SecureRandom)
+- [Using Windows Defender Application Control](/powershell/scripting/learn/application-control)
+
+Updated content
+
+- [How to use the PowerShell documentation](/powershell/scripting/how-to-use-docs)
+  - Added descriptions for various navigation elements on the site
+  - Added information about how to use the new **Download PDF** feature
+- [Exploring the Windows PowerShell ISE](/powershell/scripting/windows-powershell/ise/exploring-the-windows-powershell-ise)
+  - Added screenshots for the ISE user interface elements
+- Update documentation for [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member)
+  - Corrected some parameter values
+  - Improved the description and added examples for the **SecondValue** parameter
+
+Quality Project contributions
+
+- @robderickson contributed 1 PR to update 10 files in the MicrosoftDocs/windows-docs-powershell
+  repository
+
+### Top Community Contributors
+
+GitHub stats
+
+- 38 PRs merged (7 from Community)
+- 24 issues opened (18 from Community)
+- 20 issues closed (17 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+| GitHub Id  | PRs merged | Issues opened |
+| ---------- | :--------: | :-----------: |
+| rwp0       |     1      |               |
+| pronichkin |     1      |               |
+| Ooggle     |     1      |               |
+| mavaddat   |     1      |               |
+| IanKemp    |     1      |               |
+| mcdonaldjc |     1      |               |
+| Brizio     |     1      |               |
+| dotnvo     |     1      |               |
+| r0bfr      |     1      |               |
+| mklement0  |            |       3       |
+| aksarben   |            |       2       |
+| crisman    |            |       2       |
 
 ## 2023-April
 
