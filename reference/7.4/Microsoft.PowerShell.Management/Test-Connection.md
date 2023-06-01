@@ -282,6 +282,8 @@ Accept wildcard characters: False
 When you use the **Detailed** parameter, this cmdlet returns a detailed information about the status
 of the TCP connection attempts.
 
+This parameter was added in PowerShell 7.4.
+
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
