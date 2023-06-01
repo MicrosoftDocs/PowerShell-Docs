@@ -6,14 +6,14 @@ title: Everything you wanted to know about arrays
 ---
 # Everything you wanted to know about arrays
 
-[Arrays][Arrays] are a fundamental language feature of most programming languages. They're a
-collection of values or objects that are difficult to avoid. Let's take a close look at arrays and
-everything they have to offer.
+[Arrays][02] are a fundamental language feature of most programming languages. They're a collection
+of values or objects that are difficult to avoid. Let's take a close look at arrays and everything
+they have to offer.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by
-> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
-> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][12] of this article appeared on the blog written by [@KevinMarquette][13].
+> The PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
+> [PowerShellExplained.com][09].
 
 ## What is an array?
 
@@ -394,9 +394,8 @@ for ( $index = 0; $index -lt $data.count; $index++)
 ```
 
 The first thing we do is initialize an `$index` to `0`. Then we add the condition that `$index` must
-be less than `$data.count`. Finally, we specify that every time we loop that me must increase the
-index by `1`. In this case `$index++` is short for `$index = $index + 1`. The
-[format operator](/powershell/module/microsoft.powershell.core/about/about_operators#format-operator--f)
+be less than `$data.count`. Finally, we specify that every time we loop that we must increase the
+index by `1`. In this case `$index++` is short for `$index = $index + 1`. The [format operator][03]
 (`-f`) is used to insert the value of `$data[$index]` in the output string.
 
 Whenever you're using a `for` loop, pay special attention to the condition. I used
@@ -407,8 +406,8 @@ classic off-by-one error.
 
 #### Switch loop
 
-This is one that is easy to overlook. If you provide an array to a [switch statement][switch statement], it
-checks each item in the array.
+This is one that is easy to overlook. If you provide an array to a [switch statement][06], it checks
+each item in the array.
 
 ```powershell
 $data = 'Zero','One','Two','Three'
@@ -439,7 +438,7 @@ Tock
 There are a lot of cool things that we can do with the switch statement. I have another article
 dedicated to this.
 
-- [Everything you ever wanted to know about the switch statement][switch statement]
+- [Everything you ever wanted to know about the switch statement][06]
 
 #### Updating values
 
@@ -723,7 +722,8 @@ red
 blue
 ```
 
-When you use this in an `if()` statement, a value that is returned is a `True` value. If no value is returned, then it's a `False` value. Both of these next statements evaluate to `True`.
+When you use this in an `if()` statement, a value that is returned is a `True` value. If no value is
+returned, then it's a `False` value. Both of these next statements evaluate to `True`.
 
 ```powershell
 $data = @('red','green','blue')
@@ -765,7 +765,7 @@ $servers | Select-String SQL
 ```
 
 I take a closer look at `Select-String`,`-match` and the `$matches` variable in another post called
-[The many ways to use regex][The many ways to use regex].
+[The many ways to use regex][10].
 
 ### $null or empty
 
@@ -842,8 +842,8 @@ if ( $null -ne $array -and @($array).count -gt 0 )
 
 ### All -eq
 
-I recently saw someone ask [how to verify that every value in an array matches a given value][how to verify that every value in an array matches a given value].
-Reddit user **/u/bis** had this clever [solution][solution] that checks for any incorrect values and then
+I recently saw someone ask [how to verify that every value in an array matches a given value][14].
+Reddit user **/u/bis** had this clever [solution][15] that checks for any incorrect values and then
 flips the result.
 
 ```powershell
@@ -864,7 +864,7 @@ implements the addition operator (`+`) for arrays.
 
 > [!NOTE]
 > PowerShell does not implement a subtraction operation. If you want a flexible alternative to an
-> array, you need to use a [generic `List`](#generic-list) object.
+> array, you need to use a [generic `List`][04] object.
 
 ### Array addition
 
@@ -968,11 +968,11 @@ $myarray = [System.Collections.ArrayList]::new()
 We are calling into .NET to get this type. In this case, we are using the default constructor to
 create it. Then we call the `Add` method to add an item to it.
 
-The reason I'm using `[void]` at the beginning of the line is to suppress the return code. Some
-.NET calls do this and can create unexpected output.
+The reason I'm using `[void]` at the beginning of the line is to suppress the return code. Some .NET
+calls do this and can create unexpected output.
 
 If the only data that you have in your array is strings, then also take a look at using
-[StringBuilder][StringBuilder]. It's almost the same thing but has some methods that are just for dealing with
+[StringBuilder][11]. It's almost the same thing but has some methods that are just for dealing with
 strings. The `StringBuilder` is specially designed for performance.
 
 It's common to see people move to `ArrayList` from arrays. But it comes from a time where C# didn't
@@ -981,8 +981,8 @@ have generic support. The `ArrayList` is deprecated in support for the generic `
 ### Generic List
 
 A generic type is a special type in C# that defines a generalized class and the user specifies the
-data types it uses when created. So if you want a list of numbers or strings, you would define
-that you want list of `int` or `string` types.
+data types it uses when created. So if you want a list of numbers or strings, you would define that
+you want list of `int` or `string` types.
 
 Here is how you create a List for strings.
 
@@ -1049,9 +1049,9 @@ One
 Three
 ```
 
-When working with value types, it removes the first one from the list. You can call it over and
-over again to keep removing that value. If you have reference types, you have to provide the object
-that you want removed.
+When working with value types, it removes the first one from the list. You can call it over and over
+again to keep removing that value. If you have reference types, you have to provide the object that
+you want removed.
 
 ```powershell
 [list[System.Management.Automation.PSDriveInfo]]$drives = Get-PSDrive
@@ -1068,9 +1068,8 @@ The remove method returns `true` if it was able to find and remove the item from
 ### More collections
 
 There are many other collections that can be used but these are the good generic array replacements.
-If you're interested in learning about more of these options, take a look at this
-[Gist](https://gist.github.com/kevinblumenfeld/4a698dbc90272a336ed9367b11d91f1c) that
-[Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) put together.
+If you're interested in learning about more of these options, take a look at this [Gist][08] that
+[Mark Kraus][07] put together.
 
 ## Other nuances
 
@@ -1200,8 +1199,8 @@ TypeName: System.Object[]
 ```
 
 I have a second way that's more of a hack (and I try to avoid hacks like this). You can place a
-comma in front of the array before you pipe it. This wraps `$data` into another array where it 
-is the only element, so after the unwrapping the outer array we get back `$data` unwrapped.
+comma in front of the array before you pipe it. This wraps `$data` into another array where it is
+the only element, so after the unwrapping the outer array we get back `$data` unwrapped.
 
 ```powershell
 PS> ,$data | Get-Member
@@ -1219,21 +1218,24 @@ The catch is that you have a new array. If that is ever a problem, you can use
 
 ## Anything else?
 
-I know this is all a lot to take in. My hope is that you learn something from this article
-every time you read it and that it turns out to be a good reference for you for a long time to
-come. If you found this to be helpful, please share it with others you think may get value out
-of it.
+I know this is all a lot to take in. My hope is that you learn something from this article every
+time you read it and that it turns out to be a good reference for you for a long time to come. If
+you found this to be helpful, please share it with others you think may get value out of it.
 
-From here, I would recommend you check out a similar post that I wrote about [hashtables][hashtables].
+From here, I would recommend you check out a similar post that I wrote about [hashtables][05].
 
 <!-- link references -->
-[original version]: https://powershellexplained.com/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/
-[powershellexplained.com]: https://powershellexplained.com/
-[@KevinMarquette]: https://twitter.com/KevinMarquette
-[Arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[switch statement]: everything-about-switch.md
-[hashtables]: everything-about-hashtable.md
-[The many ways to use regex]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
-[how to verify that every value in an array matches a given value]: https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition
-[solution]: https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition/e7iizca
-[StringBuilder]: https://powershellexplained.com/2017-11-20-Powershell-StringBuilder/
+[02]: /powershell/module/microsoft.powershell.core/about/about_arrays
+[03]: /powershell/module/microsoft.powershell.core/about/about_operators#format-operator--f
+[04]: #generic-list
+[05]: everything-about-hashtable.md
+[06]: everything-about-switch.md
+[07]: https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html
+[08]: https://gist.github.com/kevinblumenfeld/4a698dbc90272a336ed9367b11d91f1c
+[09]: https://powershellexplained.com/
+[10]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
+[11]: https://powershellexplained.com/2017-11-20-Powershell-StringBuilder/
+[12]: https://powershellexplained.com/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/
+[13]: https://twitter.com/KevinMarquette
+[14]: https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition
+[15]: https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition/e7iizca
