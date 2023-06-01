@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 06/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
@@ -18,38 +18,40 @@ Sends ICMP echo request packets, or pings, to one or more computers.
 ### DefaultPing (Default)
 
 ```
-Test-Connection [-TargetName] <string[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <string>] [-MaxHops <int>] [-Count <int>] [-Delay <int>] [-BufferSize <int>]
- [-DontFragment] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-Ping] [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
+ [-Count <Int32>] [-Delay <Int32>] [-BufferSize <Int32>] [-DontFragment] [-Quiet]
+ [-TimeoutSeconds <Int32>] [-TargetName] <String[]> [-Detailed] [<CommonParameters>]
 ```
 
 ### RepeatPing
 
 ```
-Test-Connection [-TargetName] <string[]> -Repeat [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <string>] [-MaxHops <int>] [-Delay <int>] [-BufferSize <int>] [-DontFragment]
- [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
-```
-
-### MtuSizeDetect
-
-```
-Test-Connection [-TargetName] <string[]> -MtuSize [-IPv4] [-IPv6] [-ResolveDestination]
- [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-Ping] [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
+ [-Delay <Int32>] [-BufferSize <Int32>] [-DontFragment] [-Repeat] [-Quiet] [-TimeoutSeconds <Int32>]
+ [-TargetName] <String[]> [-Detailed] [<CommonParameters>]
 ```
 
 ### TraceRoute
 
 ```
-Test-Connection [-TargetName] <string[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <string>] [-MaxHops <int>] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
+ [-Quiet] [-TimeoutSeconds <Int32>] [-TargetName] <String[]> [-Traceroute] [-Detailed]
+ [<CommonParameters>]
+```
+
+### MtuSizeDetect
+
+```
+Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-Quiet] [-TimeoutSeconds <Int32>]
+ [-TargetName] <String[]> [-MtuSize] [-Detailed] [<CommonParameters>]
 ```
 
 ### TcpPort
 
 ```
-Test-Connection [-TargetName] <string[]> -TcpPort <int> [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <string>] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
+Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-Count <Int32>]
+ [-Delay <Int32>] [-Repeat] [-Quiet] [-TimeoutSeconds <Int32>] [-TargetName] <String[]>
+ -TcpPort <Int32> [-Detailed] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -205,6 +207,26 @@ The `Test-Connection` command is called with the **Traceroute** parameter. The r
 `[Microsoft.PowerShell.Commands.TestConnectionCommand+TraceStatus]` objects, are output to
 the **Success** output stream.
 
+### Example 7: Get detailed output for a TCP connection test
+
+When you use the **Detailed** parameter, this cmdlet returns a detailed information about the status
+of the TCP connection attempts.
+
+```powershell
+Test-Connection bing.com -TCPPort 443 -Detailed -Count 4
+```
+
+```Output
+   Target: bing.com
+
+Id Source     Address           Port Latency(ms) Connected Status
+-- ------     -------           ---- ----------- --------- ------
+ 1 circumflex 2620:1ec:c11::200  443          12 True      Success
+ 2 circumflex 2620:1ec:c11::200  443          14 True      Success
+ 3 circumflex 2620:1ec:c11::200  443          17 True      Success
+ 4 circumflex 2620:1ec:c11::200  443          17 True      Success
+```
+
 ## PARAMETERS
 
 ### -BufferSize
@@ -245,12 +267,29 @@ Specifies the interval between pings, in seconds.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: DefaultPing, RepeatPing
+Parameter Sets: DefaultPing, RepeatPing, TcpPort
 Aliases:
 
 Required: False
 Position: Named
 Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Detailed
+
+When you use the **Detailed** parameter, this cmdlet returns a detailed information about the status
+of the TCP connection attempts.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -390,9 +429,9 @@ Type: System.Management.Automation.SwitchParameter
 Parameter Sets: RepeatPing
 Aliases: Continuous
 
-Required: True
+Required: True (RepeatPing), False (TcpPort)
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -525,12 +564,12 @@ You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### TestConnectionCommand+PingStatus
+### Microsoft.PowerShell.Commands.TestConnectionCommand+PingStatus
 
 By default, this cmdlet returns a **TestConnectionCommand+PingStatus** object for each
 ping reply.
 
-### TestConnectionCommand+TraceStatus
+### Microsoft.PowerShell.Commands.TestConnectionCommand+TraceStatus
 
 When you use the **Traceroute** parameter, this cmdlet returns a
 **TestConnectionCommand+TraceStatus** object for each ping reply along the route.
@@ -540,10 +579,15 @@ When you use the **Traceroute** parameter, this cmdlet returns a
 When you use the **Quiet** or **TcpPort** parameters, this cmdlet returns a **Boolean** value. If
 the cmdlet tests multiple connections, it returns an array of **Boolean** values.
 
-### TestConnectionCommand+PingMtuStatus
+### Microsoft.PowerShell.Commands.TestConnectionCommand+PingMtuStatus
 
 When you use the **MtuSize** parameter, this cmdlet returns a
 **TestConnectionCommand+PingMtuStatus** object for each ping reply.
+
+### Microsoft.PowerShell.Commands.TestConnectionCommand+TcpPortStatus
+
+When you use the **Detailed** parameter, this cmdlet returns a
+**TestConnectionCommand+TcpPortStatus** object that shows the status of the TCP connection.
 
 ## NOTES
 
