@@ -15,7 +15,7 @@ to get started.
 
 New content
 
-- New cmdlet in 7.4 - [Get-SecureRandom](xref:Microsoft.PowerShell.Utility/Get-SecureRandom)
+- New cmdlet in 7.4 - [Get-SecureRandom](xref:Microsoft.PowerShell.Utility.Get-SecureRandom)
 - [Using Windows Defender Application Control](/powershell/scripting/learn/application-control)
 
 Updated content
