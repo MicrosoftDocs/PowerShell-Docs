@@ -183,7 +183,7 @@ Name Count
 
 ### Example 11: Use the Count parameter
 
-You can now use the **Count** parameter without piping objects to `Get-SecureRandom`. The following
+You can use the **Count** parameter without piping objects to `Get-SecureRandom`. The following
 example gets three random numbers less than 10.
 
 ```powershell
@@ -236,7 +236,7 @@ from the collection up to the number specified by **Count**. Enter the objects, 
 contains the objects, or a command or expression that gets the objects. You can also pipe a
 collection of objects to `Get-SecureRandom`.
 
-Beginning in PowerShell 7, the **InputObject** parameter accepts arrays that can contain an empty
+The **InputObject** parameter accepts arrays that can contain an empty
 string or `$null`. The array can be sent down the pipeline or as an **InputObject** parameter value.
 
 ```yaml
@@ -360,14 +360,6 @@ shows the output type for each of the numeric input types.
 |   UInt64   |   Double    |
 |   Double   |   Double    |
 |   Single   |   Double    |
-
-Beginning in Windows PowerShell 3.0, `Get-SecureRandom` supports 64-bit integers. In Windows
-PowerShell 2.0, all values are cast to **System.Int32**.
-
-Beginning in PowerShell 7, the **InputObject** parameter in the **RandomListItemParameterSet**
-parameter set accepts arrays that contain an empty string or `$null`. In earlier PowerShell
-versions, only the **Maximum** parameter in the **RandomNumberParameterSet** parameter set accepted
-an empty string or `$null`.
 
 ## RELATED LINKS
 
