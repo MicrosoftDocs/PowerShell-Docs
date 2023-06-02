@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/14/2023
+ms.date: 06/02/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
@@ -334,13 +334,17 @@ This cmdlet returns `$true` if the JSON is valid and otherwise `$false`.
 
 ## NOTES
 
-The `Test-Json` cmdlet is implemented using the
-[NJsonSchema Class](https://github.com/RSuter/NJsonSchema).
-
-Since PowerShell 6, PowerShell uses the Newtonsoft.Json assemblies for all JSON functions.
-Newtonsoft's implementation includes several extensions to the JSON standard, such as support for
-comments and use of single quotes. For a full list of features, see the Newtonsoft documentation at
+Since PowerShell 6, PowerShell uses the Newtonsoft.Json assemblies for JSON functions. Newtonsoft's
+implementation includes several extensions to the JSON standard, such as support for comments and
+use of single quotes. For a full list of features, see the Newtonsoft documentation at
 [https://www.newtonsoft.com/json](https://www.newtonsoft.com/json).
+
+Beginning in PowerShell 7.4, `Test-Json` uses
+[JsonSchema.NET](https://www.nuget.org/packages/JsonSchema.Net) for schema validation. With this
+change, `Test-Json` no longer supports Draft 4 schemas. For more information about JSON schema
+specifications, see the documentation at
+[JSON-Schema.org](https://json-schema.org/specification.html).
+
 
 ## RELATED LINKS
 
