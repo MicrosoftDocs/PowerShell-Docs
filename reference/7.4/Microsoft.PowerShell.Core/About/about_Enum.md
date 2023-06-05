@@ -1,7 +1,7 @@
 ---
 description: The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
 Locale: en-US
-ms.date: 06/21/2021
+ms.date: 06/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_enum?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Enum
@@ -218,4 +218,79 @@ True
 
 PS > ($file2 -band [FileAttributes]::Archive) -eq [FileAttributes]::Archive
 False
+```
+
+## Enumerations as parameters
+
+You can define cmdlet parameters that use an enum as their type. When you
+specify an enum as the type for a parameter, users get automatic completion for
+and validation of the parameter's value. The argument completion suggests the
+list of valid labels for the enum.
+
+When a parameter has an enum as its type, you can specify any of:
+
+- An enumeration, like `[<EnumType>]::<Label>`
+- The label for an enumeration as a string
+- The numerical value of an enumeration
+
+## Enumeration parameter example
+
+In the following example, the function `ConvertTo-LineEndingRegex` defines the
+**InputObject** parameter with the type **EndOfLine**.
+
+```powershell
+enum EndOfLine {
+    CR   = 1
+    LF   = 2
+    CRLF = 3
+}
+
+function ConvertTo-LineEndingRegex {
+    [CmdletBinding()]
+    param (
+        [Parameter(ValueFromPipeline)]
+        [EndOfLine[]]$InputObject
+    )
+
+    process {
+        switch ($InputObject) {
+            CR   {  '\r'  }
+            LF   {  '\n'  }
+            CRLF { '\r\n' }
+        }
+    }
+}
+
+[EndOfLine]::CR | ConvertTo-LineEndingRegex
+
+'CRLF' | ConvertTo-LineEndingRegex
+
+ConvertTo-LineEndingRegex 2
+```
+
+In the example, the first statement calling `ConvertTo-LineEndingRegex` passes
+the enumeration value for `CR`. The second statement passes the string
+`'CRLF'`, which is cast to a **LineEnding**. The third statement specifies the
+value `2` for the parameter, which maps to the `LF` label.
+
+You can see the argument completion options by typing the following text into
+your PowerShell prompt:
+
+```powershell
+ConvertTo-LineEndingRegex -InputObject <Tab>
+```
+
+When you specify an invalid label name or numerical value for the parameter,
+the function raises an error.
+
+```powershell
+ConvertTo-LineEndingRegex -InputObject 0
+```
+
+```output
+ConvertTo-LineEndingRegex: Cannot process argument transformation on
+parameter 'InputObject'. Cannot convert value "0" to type "EndOfLine" due
+to enumeration values that are not valid. Specify one of the following
+enumeration values and try again. The possible enumeration values are
+"CR,LF,CRLF".
 ```
