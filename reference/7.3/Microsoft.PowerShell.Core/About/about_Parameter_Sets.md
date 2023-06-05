@@ -1,7 +1,7 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
 Locale: en-US
-ms.date: 03/11/2022
+ms.date: 06/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.3&WT.mc_id=ps-gethelp
 title: about Parameter Sets
 ---
@@ -125,10 +125,10 @@ function Measure-Lines {
         }
 
         if ($Path) {
-            $Files = Get-ChildItem -Path $Path -Recurse:$Recurse
+            $Files = Get-ChildItem -Path $Path -Recurse:$Recurse -File
         }
         else {
-            $Files = Get-ChildItem -LiteralPath $LiteralPath
+            $Files = Get-ChildItem -LiteralPath $LiteralPath -File
         }
     }
     process {
