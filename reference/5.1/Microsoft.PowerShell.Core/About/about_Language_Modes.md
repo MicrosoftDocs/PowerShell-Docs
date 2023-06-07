@@ -1,7 +1,7 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 01/19/2023
+ms.date: 06/07/2023
 no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -175,6 +175,7 @@ additional variables:
 - `$PSScriptRoot`
 - `$PSEdition`
 - `$EnabledExperimentalFeatures`
+- Any environment variables, like `$ENV:TEMP`
 
 Only the following comparison operators are permitted:
 

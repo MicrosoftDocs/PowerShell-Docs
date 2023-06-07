@@ -1,7 +1,7 @@
 ---
 description: Describes the settings and practices for writing module manifest files.
 Locale: en-US
-ms.date: 01/30/2023
+ms.date: 06/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Module Manifests
@@ -98,6 +98,7 @@ Allowed variables
 - `$PSScriptRoot`
 - `$PSEdition`
 - `$EnabledExperimentalFeatures`
+- Any environment variables, like `$ENV:TEMP`
 
 For more information, see [about_Language_Modes](about_Language_Modes.md).
 
