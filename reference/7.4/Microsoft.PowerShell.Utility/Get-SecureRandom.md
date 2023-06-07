@@ -121,7 +121,7 @@ This command gets three randomly selected numbers in random order from an array.
 
 ### Example 7: Randomize an entire collection
 
-Starting in PowerShell 7.1, you can use the **Shuffle** parameter to return the entire collection in
+You can use the **Shuffle** parameter to return the entire collection in
 a random order.
 
 ```powershell

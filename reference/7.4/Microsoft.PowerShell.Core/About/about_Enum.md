@@ -1,7 +1,7 @@
 ---
 description: The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
 Locale: en-US
-ms.date: 06/05/2023
+ms.date: 06/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_enum?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Enum
@@ -132,6 +132,9 @@ the alphabetically-first name.
 
 ```powershell
 [MediaTypes].GetEnumName(15)
+```
+
+```Output
 oga
 ```
 
@@ -160,6 +163,19 @@ mpg        41
 mpeg       41
 avi        42
 m4v        43
+```
+
+You can specify a single enum value by its label with the syntax
+`[<enum-name>]::<label>`.
+
+```powershell
+[MediaTypes]::png
+[MediaTypes]::png -eq 22
+```
+
+```Output
+png
+True
 ```
 
 ## Enumerations as flags
