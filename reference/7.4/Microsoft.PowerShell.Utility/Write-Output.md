@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/30/2022
+ms.date: 06/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Output
@@ -11,8 +11,7 @@ title: Write-Output
 # Write-Output
 
 ## SYNOPSIS
-Writes the specified objects to the pipeline. If `Write-Output` is the last command in the pipeline,
-the objects are displayed in the console.
+Writes the specified objects to the pipeline.
 
 ## SYNTAX
 
@@ -25,8 +24,8 @@ Write-Output [-InputObject] <PSObject[]> [-NoEnumerate] [<CommonParameters>]
 Writes the specified objects to the pipeline. If `Write-Output` is the last command in the pipeline,
 the objects are displayed in the console.
 
-`Write-Output` sends objects to the primary pipeline, also known as the "output stream" or the
-"success pipeline." To send error objects to the error pipeline, use `Write-Error`.
+`Write-Output` sends objects to the primary pipeline, also known as the _success stream_. To send
+error objects to the error stream, use `Write-Error`.
 
 This cmdlet is typically used in scripts to display strings and other objects on the console. One of
 the built-in aliases for `Write-Output` is `echo` and similar to other shells that use `echo`. The
@@ -35,8 +34,8 @@ not necessary to use the cmdlet in instances where the output is displayed by de
 `Get-Process | Write-Output` is equivalent to `Get-Process`. Or, `echo "Home directory: $HOME"` can
 be written, `"Home directory: $HOME"`.
 
-By default, `Write-Output` enumerates through collection objects. However, `Write-Output` can also
-be used to pass collections down the pipeline as a single object with the **NoEnumerate** parameter.
+By default, `Write-Output` enumerates objects in a collection. However, `Write-Output` can also
+pass collections down the pipeline as a single object with the **NoEnumerate** parameter.
 
 ## EXAMPLES
 
