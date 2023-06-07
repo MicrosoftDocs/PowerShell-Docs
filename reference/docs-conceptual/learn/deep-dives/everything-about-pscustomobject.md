@@ -1,7 +1,7 @@
 ---
 description: PSCustomObject is a simple way to create structured data.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/16/2022
+ms.date: 06/07/2023
 title: Everything you wanted to know about PSCustomObject
 ---
 # Everything you wanted to know about PSCustomObject
@@ -305,9 +305,8 @@ Now when my object just falls to the shell, it will only show those properties b
 
 ### Update-TypeData with DefaultPropertySet
 
-This is nice but I recently saw a better way when watching
-[PowerShell unplugged 2016 with Jeffrey Snover & Don Jones][psunplugged]. Jeffrey was using
-[Update-TypeData][Update-TypeData] to specify the default properties.
+This is nice but I recently saw a better way using [Update-TypeData][Update-TypeData] to specify
+the default properties.
 
 ```powershell
 $TypeData = @{
@@ -407,5 +406,4 @@ something and can find a way to work this into your scripts.
 [post by /u/markekraus]: https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/
 [Adam Bertram]: http://www.adamtheautomator.com/
 [Mike Shepard]: https://powershellstation.com/2016/05/22/custom-objects-and-pstypename/
-[psunplugged]: https://www.youtube.com/watch?v=Ab46gHXNm8Q
 [Update-TypeData]: /powershell/module/microsoft.powershell.utility/update-typedata
