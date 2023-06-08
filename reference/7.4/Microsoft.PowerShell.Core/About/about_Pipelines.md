@@ -412,17 +412,17 @@ save it to disk using redirection.
 $uri = 'https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-linux-arm64.tar.gz'
 
 # native command redirected to a file
-curl.exe -s -L $uri > powershell.tar.gz
+curl -s -L $uri > powershell.tar.gz
 ```
 
 You can also pipe the byte-stream data to the **stdin** stream of another
 native command. The following example download a zipped TAR file using
-`curl.exe`. The downloaded file data is streamed to the `tar` command to
+`curl`. The downloaded file data is streamed to the `tar` command to
 extract the contents of the archive.
 
 ```powershell
 # native command output piped to a native command
-curl.exe -s -L $uri | tar -xzvf - -C .
+curl -s -L $uri | tar -xzvf - -C .
 ```
 
 You can also pipe the byte-stream output of a PowerShell command to the input
