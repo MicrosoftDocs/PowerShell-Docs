@@ -416,7 +416,7 @@ curl -s -L $uri > powershell.tar.gz
 ```
 
 You can also pipe the byte-stream data to the **stdin** stream of another
-native command. The following example download a zipped TAR file using
+native command. The following example downloads a zipped TAR file using
 `curl`. The downloaded file data is streamed to the `tar` command to
 extract the contents of the archive.
 
