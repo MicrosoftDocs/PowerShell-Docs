@@ -223,7 +223,7 @@ value of the **InformationAction** parameter. For more information about
 
 ```yaml
 Type: ActionPreference
-Aliases: ia
+Aliases: infa
 Accepted values: Break, Suspend, Ignore, Inquire, Continue, Stop, SilentlyContinue
 
 Required: False
