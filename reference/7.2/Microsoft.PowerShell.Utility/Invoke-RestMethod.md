@@ -691,8 +691,8 @@ Accept wildcard characters: False
 ### -MaximumRetryCount
 
 Specifies how many times PowerShell retries a connection when a failure code between 400 and 599,
-inclusive or 304 is received. Also see **RetryIntervalSec** parameter for specifying number of
-retries.
+inclusive or 304 is received. Also, see the **RetryIntervalSec** parameter for specifying the number
+of seconds between retries.
 
 ```yaml
 Type: System.Int32
@@ -945,8 +945,9 @@ Accept wildcard characters: False
 ### -RetryIntervalSec
 
 Specifies the interval between retries for the connection when a failure code between 400 and 599,
-inclusive or 304 is received. Also see **MaximumRetryCount** parameter for specifying number of
-retries. The value must be between `1` and `[int]::MaxValue`.
+inclusive or 304 is received. The value must be between `1` and `[int]::MaxValue`.
+
+Also, see the **MaximumRetryCount** parameter for specifying number of retries.
 
 ```yaml
 Type: System.Int32

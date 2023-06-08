@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 05/23/2023
+ms.date: 06/08/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -48,14 +48,7 @@ Legend
 | PSModuleAutoLoadSkipOfflineFiles                       |                     |                     | ![Experimental][02] |
 | PSCommandWithArgs                                      |                     |                     | ![Experimental][02] |
 | PSConstrainedAuditLogging                              |                     |                     | ![Experimental][02] |
-
-## PSAMSIMethodInvocationLogging
-
-> [!NOTE]
-
-This experiment was added in PowerShell 7.3.
-
-For more information about AMSI, see [How AMSI helps][09].
+| PSNativeCommandPreserveBytePipe                        |                     |                     | ![Experimental][02] |
 
 ## PSAnsiRenderingFileInfo
 
@@ -299,6 +292,46 @@ set to `$true` you get the following behavior:
   non-zero exit code.
 - When `$ErrorActionPreference = 'Continue'` (the default), you will see PowerShell error messages
   for native command errors, but scripts won't break.
+
+## PSNativeCommandPreserveBytePipe
+
+This feature preserves the byte-stream data when redirecting the **stdout** stream of a native
+command to a file or when piping byte-stream data to the **stdin** stream of a native command.
+
+For example, using the native command `curl` you can download a binary file and save it to disk
+using redirection.
+
+```powershell
+$uri = 'https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-linux-arm64.tar.gz'
+
+# native command redirected to a file
+curl -s -L $uri > powershell.tar.gz
+```
+
+You can also pipe the byte-stream data to the **stdin** stream of another native command. The
+following example downloads a zipped TAR file using `curl`. The downloaded file data is streamed
+to the `tar` command to extract the contents of the archive.
+
+```powershell
+# native command output piped to a native command
+curl -s -L $uri | tar -xzvf - -C .
+```
+
+You can also pipe the byte-stream output of a PowerShell command to the input of native command. The
+following examples use `Invoke-WebRequest` to download the same TAR file as the previous example.
+
+```powershell
+# byte stream piped to a native command
+(Invoke-WebRequest $uri).Content | tar -xzvf - -C .
+
+# bytes piped to a native command (all at once as byte[])
+,(Invoke-WebRequest $uri).Content | tar -xzvf - -C .
+```
+
+This feature doesn't support byte-stream data when redirecting **stderr** output to **stdout**. When
+you combine the **stderr** and **stdout** streams, the combined streams are treated as string data.
+
+This experimental feature was introduced in PowerShell 7.4-preview.4.
 
 ## PSNativePSPathResolution
 
