@@ -85,7 +85,7 @@ Get-Random -Minimum -100 -Maximum 100
 
 ### Example 4: Get a random floating-point number
 
-This command gets a random floating-point number greater than or equal to 10.7 and less than 20.92.
+This command gets a random floating-point number greater than or equal to 10.7 and less than 20.93.
 
 ```powershell
 Get-Random -Minimum 10.7 -Maximum 20.93
