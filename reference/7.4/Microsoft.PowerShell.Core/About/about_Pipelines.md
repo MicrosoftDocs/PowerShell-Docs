@@ -1,7 +1,7 @@
 ---
 description: Combining commands into pipelines in the PowerShell
 Locale: en-US
-ms.date: 01/27/2022
+ms.date: 06/08/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Pipelines
@@ -400,8 +400,46 @@ Piping or redirecting output from a native program that outputs raw byte data
 converts the output to .NET strings. This conversion can cause corruption of
 the raw data output.
 
-As a workaround, call the native commands using `cmd.exe /c` or `sh -c` and use
-of the `|` and `>` operators provided by the native shell.
+However, PowerShell 7.4-preview.4 added the `PSNativeCommandPreserveBytePipe`
+experimental feature that preserves byte-stream data when redirecting the
+**stdout** stream of a native command to a file or when piping byte-stream data
+to the **stdin** stream of a native command.
+
+For example, using the native command `curl` you can download a binary file and
+save it to disk using redirection.
+
+```powershell
+$uri = 'https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-linux-arm64.tar.gz'
+
+# native command redirected to a file
+curl.exe -s -L $uri > powershell.tar.gz
+```
+
+You can also pipe the byte-stream data to the **stdin** stream of another
+native command. The following example download a zipped TAR file using
+`curl.exe`. The downloaded file data is streamed to the `tar` command to
+extract the contents of the archive.
+
+```powershell
+# native command output piped to a native command
+curl.exe -s -L $uri | tar -xzvf - -C .
+```
+
+You can also pipe the byte-stream output of a PowerShell command to the input
+of native command. The following examples use `Invoke-WebRequest` to download
+the same TAR file as the previous example.
+
+```powershell
+# byte stream piped to a native command
+(Invoke-WebRequest $uri).Content | tar -xzvf - -C .
+
+# bytes piped to a native command (all at once as byte[])
+,(Invoke-WebRequest $uri).Content | tar -xzvf - -C .
+```
+
+This feature doesn't support byte-stream data when redirecting **stderr**
+output to **stdout**. When you combine the **stderr** and **stdout** streams,
+the combined streams are treated as string data.
 
 ## Investigating pipeline errors
 
