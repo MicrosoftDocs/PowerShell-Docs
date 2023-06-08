@@ -482,9 +482,9 @@ format, the default encoding format is used instead. An example of a **ContentTy
 encoding format is `text/plain; charset=iso-8859-5`, which specifies the
 [Latin/Cyrillic](https://www.iso.org/standard/28249.html) alphabet.
 
-If this parameter is omitted and the request method is POST or PUT, `Invoke-WebRequest` sets the
-content type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in
-the call.
+If this parameter is omitted and the request method is POST, `Invoke-RestMethod` sets the content
+type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in the
+call.
 
 **ContentType** will be overridden when a `MultipartFormDataContent` object is supplied for
 **Body**.
@@ -757,8 +757,8 @@ Accept wildcard characters: False
 ### -MaximumRetryCount
 
 Specifies how many times PowerShell retries a connection when a failure code between 400 and 599,
-inclusive or 304 is received. Also see **RetryIntervalSec** parameter for specifying number of
-retries.
+inclusive or 304 is received. Also, see the **RetryIntervalSec** parameter for specifying the number
+of seconds between retries.
 
 ```yaml
 Type: System.Int32
@@ -1032,11 +1032,11 @@ Accept wildcard characters: False
 ### -RetryIntervalSec
 
 Specifies the interval between retries for the connection when a failure code between 400 and 599,
-inclusive or 304 is received. Also see **MaximumRetryCount** parameter for specifying number of
-retries. The value must be between `1` and `[int]::MaxValue`.
-
+inclusive or 304 is received. The value must be between `1` and `[int]::MaxValue`.
 When the failure code is 429 and the response includes the **Retry-After** property in its headers,
 the cmdlet uses that value for the retry interval, even if this parameter is specified.
+
+Also, see the **MaximumRetryCount** parameter for specifying number of retries.
 
 ```yaml
 Type: System.Int32
