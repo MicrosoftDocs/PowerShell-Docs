@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 06/09/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/save-help?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Help
@@ -398,13 +398,15 @@ Accept wildcard characters: False
 
 Specifies UI culture values for which this cmdlet gets updated help files. Enter one or more
 language codes, such as `es-ES`, a variable that contains culture objects, or a command that gets
-culture objects, such as a `Get-Culture` or `Get-UICulture` command.
+culture objects, such as a `Get-Culture` or `Get-UICulture` command. Wildcard characters are not
+permitted.
 
-Wildcard characters are not permitted. Do not specify a partial language code, such as "de".
+By default, `Save-Help` gets help files in the UI culture set for the operating system or its
+fallback culture. If you specify the **UICulture** parameter, `Save-Help` only looks for help for
+the specified language.
 
-By default, `Save-Help` gets help files in the UI culture set for Windows or its fallback culture.
-If you specify the **UICulture** parameter, `Save-Help` looks for help only for the specified UI
-culture, not in any fallback culture.
+Beginning in PowerShell 7.4-preview.4, you can use a partial language code, such as `en` to download
+help in English for any region.
 
 ```yaml
 Type: System.Globalization.CultureInfo[]
