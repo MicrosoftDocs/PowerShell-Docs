@@ -103,7 +103,7 @@ sections:
             doesn't show the check box options. To enable MU updates run the following command:
 
             ```powershell
-            msiexec.exe /fmu .\PowerShell-7.3.0-win-x64.msi USE_MU=1 ENABLE_MU=1
+            msiexec.exe /fmu .\PowerShell-7.3.4-win-x64.msi USE_MU=1 ENABLE_MU=1
             ```
 
             For more information about running `msiexec.exe` from the command line, see
