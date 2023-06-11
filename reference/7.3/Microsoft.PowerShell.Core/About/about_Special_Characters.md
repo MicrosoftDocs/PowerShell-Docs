@@ -42,6 +42,7 @@ PowerShell recognizes these escape sequences:
 | `` `u{x} `` | Unicode escape sequence (added in PowerShell 6) |
 |  `` `v ``   | Vertical tab                                    |
 | ``` `` ```  | Backtick                                        |
+|  `` `$ ``   | Dollar sign                                     |
 
 PowerShell also has a special token to mark where you want parsing to stop. All
 characters that follow this token are used as literal values that aren't
