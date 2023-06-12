@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/05/2023
+ms.date: 06/09/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Help
@@ -463,22 +463,22 @@ Accept wildcard characters: False
 
 ### -UICulture
 
-Specifies UI culture values that `Update-Help` uses to get updated help files. Enter one or more
-language codes, such as **es-ES**, a variable containing culture objects, or a command that gets
-culture objects, such as a `Get-Culture` or `Get-UICulture` command. Wildcard characters aren't
-permitted and you can't submit a partial language code, such as **de**.
+Specifies UI culture values for which this cmdlet gets updated help files. Enter one or more
+language codes, such as `es-ES`, a variable that contains culture objects, or a command that gets
+culture objects, such as a `Get-Culture` or `Get-UICulture` command. Wildcard characters are not
+permitted.
 
-By default, `Update-Help` gets help files in the UI culture set for the operating system. If you
-specify the **UICulture** parameter, `Update-Help` looks for help only for the specified UI culture.
+By default, `Update-Help` gets help files in the UI culture set for the operating system or its
+fallback culture. If you specify the **UICulture** parameter, `Update-Help` only looks for help for
+the specified language.
+
+Beginning in PowerShell 7.4-preview.4, you can use a partial language code, such as `en` to download
+help in English for any region.
 
 > [!NOTE]
 > Ubuntu 18.04 changed the default locale setting to `C.UTF.8`, which isn't a recognized UI
 > culture. `Update-Help` silently fails to download help unless you use this parameter with a
 > supported locale like `en-US`. This could occur on any platform that uses an unsupported value.
-
-Commands that use the **UICulture** parameter succeed only when the module provides help files for
-the specified UI culture. If the command fails because the specified UI culture isn't supported, an
-error message is displayed.
 
 ```yaml
 Type: System.Globalization.CultureInfo[]
