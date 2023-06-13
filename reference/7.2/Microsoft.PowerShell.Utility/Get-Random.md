@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/02/2023
+ms.date: 06/12/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
@@ -173,10 +173,10 @@ Get-Random -Maximum 100
 ```
 
 ```Output
-74
-56
-84
-46
+32
+25
+93
+95
 ```
 
 ```powershell
@@ -187,9 +187,9 @@ Get-Random -Maximum 100 -SetSeed 23
 ```
 
 ```Output
-74
-74
-74
+32
+32
+32
 ```
 
 ```powershell
@@ -201,10 +201,10 @@ Get-Random -Maximum 100
 ```
 
 ```Output
-74
-56
-84
-46
+32
+25
+93
+95
 ```
 
 ### Example 10: Get random files
