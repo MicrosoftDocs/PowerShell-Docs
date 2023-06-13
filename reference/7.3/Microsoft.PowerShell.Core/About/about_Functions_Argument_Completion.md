@@ -141,7 +141,7 @@ function Test-ArgumentCompletions {
         $Fruit,
 
         [Parameter()]
-        [ArgumentCompletions('Tomato', 'Corn', 'Squash')]
+        [ArgumentCompletions('Onion', 'Carrot', 'Lettuce')]
         $Vegetable
     )
 }
@@ -227,7 +227,7 @@ function MyArgumentCompleter{
 
     $possibleValues = @{
         Fruits = @('Apple', 'Orange', 'Banana')
-        Vegetables = @('Tomato', 'Squash', 'Corn')
+        Vegetables = @('Onion', 'Carrot', 'Lettuce')
     }
 
     if ($fakeBoundParameters.ContainsKey('Type')) {
