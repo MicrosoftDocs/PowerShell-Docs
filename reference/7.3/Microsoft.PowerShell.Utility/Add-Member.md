@@ -130,7 +130,7 @@ note property value, **Display**.
 
 ```powershell
 $A = "A string"
-$A = $A | Add-Member -NotePropertyMembers @{StringUse="Display"} -PassThru
+$A | Add-Member -NotePropertyMembers @{StringUse="Display"}
 $A.StringUse
 ```
 
@@ -166,7 +166,7 @@ $A.SizeInMB()
 This example creates an **Asset** custom object.
 
 The `New-Object` cmdlet creates a **PSObject** that is saved in the `$Asset` variable. The
-`[ordered]` type accelerator creates an ordered dictionary that is store in the `$d` variable.
+`[ordered]` type accelerator creates an ordered dictionary that is stored in the `$d` variable.
 Piping `$Asset` to `Add-Member` adds the key-value pairs in the dictionary to the object as
 **NoteProperty** members. **TypeName** parameter assigns the type `Asset` to the **PSObject**. The
 `Get-Member` cmdlet shows the type and properties of the object. However, the properties are listed

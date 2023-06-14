@@ -165,17 +165,17 @@ $A.SizeInMB()
 
 This example creates an **Asset** custom object.
 
-The `New-Object` cmdlet creates a **PSObject** that is saved in the `$Asset` variable. The
-`[ordered]` type accelerator creates an ordered dictionary that is store in the `$d` variable.
-Piping `$Asset` to `Add-Member` adds the key-value pairs in the dictionary to the object as
-**NoteProperty** members. **TypeName** parameter assigns the type `Asset` to the **PSObject**. The
-`Get-Member` cmdlet shows the type and properties of the object. However, the properties are listed
-in alphabetical order, not in the order that they were added.
+The `New-Object` cmdlet creates a **PSObject** that is saved in the `$Asset` variable. Piping
+`$Asset` to `Add-Member` adds the key-value pair to the object as a **NoteProperty** member. The
+**TypeName** parameter assigns the type `Asset` to the **PSObject**. The `Get-Member` cmdlet shows
+the type and properties of the object. However, the properties are listed in alphabetical order, not
+in the order that they were added.
 
 ```powershell
 $Asset = New-Object -TypeName PSObject
-$d = [ordered]@{Name="Server30"; System="Server Core"; PSVersion="4.0"}
-$Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
+$Asset | Add-Member -NotePropertyMembers @{Name="Server30"} -TypeName Asset
+$Asset | Add-Member -NotePropertyMembers @{System="Server Core"}
+$Asset | Add-Member -NotePropertyMembers @{PSVersion="4.0"}
 $Asset | Get-Member -MemberType Properties
 ```
 
