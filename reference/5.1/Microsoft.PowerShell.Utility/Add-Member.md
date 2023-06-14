@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/05/2023
+ms.date: 06/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
@@ -165,34 +165,44 @@ $A.SizeInMB()
 
 This example creates an **Asset** custom object.
 
-The `New-Object` cmdlet creates a **PSObject**. The example saves the **PSObject** in the `$Asset`
-variable.
-
-The second command uses the `[ordered]` type accelerator to create an ordered dictionary of names
-and values. The command saves the result in the `$D` variable.
-
-The third command uses the **NotePropertyMembers** parameter of the `Add-Member` cmdlet to add the
-dictionary in the `$D` variable to the **PSObject**. The **TypeName** property assigns a new name,
-**Asset**, to the **PSObject**.
-
-The last command pipes the new **Asset** object to the `Get-Member` cmdlet. The output shows that
-the object has a type name of **Asset** and the note properties that we defined in the ordered
-dictionary.
+The `New-Object` cmdlet creates a **PSObject** that is saved in the `$Asset` variable. Piping
+`$Asset` to `Add-Member` adds the key-value pair to the object as a **NoteProperty** member. The
+**TypeName** parameter assigns the type `Asset` to the **PSObject**. The `Get-Member` cmdlet shows
+the type and properties of the object. However, the properties are listed in alphabetical order, not
+in the order that they were added.
 
 ```powershell
 $Asset = New-Object -TypeName PSObject
-$d = [ordered]@{Name="Server30";System="Server Core";PSVersion="4.0"}
-$Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
-$Asset.PSObject.Properties | Select-Object Name, Value
+$Asset | Add-Member -NotePropertyMembers @{Name="Server30"} -TypeName Asset
+$Asset | Add-Member -NotePropertyMembers @{System="Server Core"}
+$Asset | Add-Member -NotePropertyMembers @{PSVersion="4.0"}
+$Asset | Get-Member -MemberType Properties
 ```
 
 ```Output
-Name      Value
-----      -----
-Name      Server30
-System    Server Core
-PSVersion 4.0
+   TypeName: Asset
+
+Name        MemberType   Definition
+----        ----------   ----------
+Name        NoteProperty string Name=Server30
+PSVersion   NoteProperty string PSVersion=4.0
+System      NoteProperty string System=Server Core
 ```
+
+```powershell
+$Asset.PSObject.Properties | Format-Table Name, MemberType, TypeNameOfValue, Value
+```
+
+```Output
+Name        MemberType TypeNameOfValue Value
+----        ---------- --------------- -----
+Name      NoteProperty System.String   Server30
+System    NoteProperty System.String   Server Core
+PSVersion NoteProperty System.String   4.0
+```
+
+Inspecting the the raw list of properties shows the properties in the order that they were added to
+the object. `Format-Table` is used in this example to create output similar to `Get-Member`.
 
 ### Example 6: Add an AliasProperty to an object
 
