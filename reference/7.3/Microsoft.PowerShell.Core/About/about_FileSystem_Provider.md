@@ -1,7 +1,7 @@
 ---
 description: FileSystem
 Locale: en-US
-ms.date: 01/10/2023
+ms.date: 06/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about FileSystem Provider
@@ -73,9 +73,27 @@ instances of the [System.IO.DirectoryInfo][02] class.
 The PowerShell Extended Type System adds extra properties to these object types
 to provide additional information. Some information is platform specific. For
 example, the possible values of the **LinkType** property depend on the
-platform and filesystem being used. On Windows, NTFS supports `HardLink`,
-`SymLink`, and `Junction` values for **LinkType**. Linux and macOS filesystems
-only support `HardLink` and `SymLink`.
+platform and filesystem being used. Linux and macOS filesystems support
+`HardLink` and `SymLink`. Windows NTFS supports `HardLink`, `SymLink`,
+`Junction`, and several other values for **LinkType**.
+
+When you use `Get-Item` or `Get-ChildItem` to information about a linked item,
+the **Mode** property contains an `l` to indicate that the item is a link. The
+**LinkType** property contains the type of link.
+
+`AppExecLink` links are created when you install an application from the
+Microsoft Store. For `AppExecLink` links, Windows doesn't provide values for
+the **LinkType** or **LinkTarget** properties.
+
+```powershell
+Get-Item ~\AppData\Local\Microsoft\WindowsApps\winget.exe
+
+    Directory: C:\Users\user1\AppData\Local\Microsoft\WindowsApps
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+la---            6/8/2023 12:20 PM              0 winget.exe ->
+```
 
 ## Navigating the FileSystem drives
 

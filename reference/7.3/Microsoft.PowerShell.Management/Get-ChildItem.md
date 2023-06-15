@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/13/2022
+ms.date: 06/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
@@ -121,7 +121,7 @@ as follows:
 - `a` (archive)
 - `r` (read-only)
 - `h` (hidden)
-- `s` (system).
+- `s` (system)
 
 For more information about the mode flags, see
 [about_Filesystem_Provider](../microsoft.powershell.core/about/about_filesystem_provider.md#attributes-flagsexpression).
@@ -429,7 +429,7 @@ The new properties that are now part of the output are:
 > [!NOTE]
 > This feature was moved from experimental to mainstream in PowerShell 7.1.
 
-### Example 11 - Get the link target for a junction point
+### Example 11: Get the link target for a junction point
 
 The `dir` command in the Windows Command Shell shows the target location of a filesystem junction
 point. In PowerShell, this information is available from the **LinkTarget** property of the
@@ -437,7 +437,7 @@ filesystem object returned by `Get-ChildItem` and is displayed in the default ou
 
 ```powershell
 PS D:\> New-Item -ItemType Junction -Name tmp -Target $env:TEMP
-PS D:\> Get-ChildItem | select name,LinkTarget
+PS D:\> Get-ChildItem | Select-Object name,LinkTarget
 
 Name     LinkTarget
 ----     ----------
@@ -451,6 +451,25 @@ Mode          LastWriteTime    Length Name
 ----          -------------    ------ ----
 l----   12/16/2021  9:29 AM           tmp -> C:\Users\user1\AppData\Local\Temp
 ```
+
+### Example 12: Get the link target for an AppX reparse point
+
+This example attempts to get the target information for an AppX reparse point. Microsoft Store
+applications create AppX reparse points in the user's AppData directory.
+
+```powershell
+Get-ChildItem ~\AppData\Local\Microsoft\WindowsApps\MicrosoftEdge.exe |
+    Select-Object Mode, LinkTarget, LinkType, Name
+```
+
+```Output
+Mode  LinkTarget LinkType Name
+----  ---------- -------- ----
+la---                     MicrosoftEdge.exe
+```
+
+At this time, Windows doesn't provide a way to get the target information for an AppX reparse point.
+The **LinkTarget** and **LinkType** properties of the filesystem object are empty.
 
 ## PARAMETERS
 
