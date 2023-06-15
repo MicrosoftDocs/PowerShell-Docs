@@ -64,7 +64,7 @@ winget install --id Microsoft.Powershell.Preview --source winget
 
 > [!NOTE]
 > On Windows systems using X86 or X64 processor, `winget` installs the MSI package. On systems using
-> the Arm64 processor, `winget` install the Microsoft Store (MSIX) package. For more information,
+> the Arm64 processor, `winget` installs the Microsoft Store (MSIX) package. For more information,
 > see [Installing from the Microsoft Store][17].
 
 ## <a id="msi" />Installing the MSI package
