@@ -458,8 +458,6 @@ This example attempts to get the target information for an AppX reparse point. M
 applications create AppX reparse points in the user's AppData directory.
 
 ```powershell
-
-```powershell
 Get-ChildItem ~\AppData\Local\Microsoft\WindowsApps\MicrosoftEdge.exe |
     Select-Object Mode, LinkTarget, LinkType, Name
 ```

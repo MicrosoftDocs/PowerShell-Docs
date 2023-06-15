@@ -29,9 +29,46 @@ Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>] [-
 
 ```
 Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
- [-Exclude <string[]>] [-Recurse] [-Depth <uint32>] [-Force] [-Name] [-UseTransaction]
- [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System]
+ [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
  [<CommonParameters>]
+```
+
+### Items (Default) - Certificate provider
+
+```
+Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
+ [-CodeSigningCert] [-DocumentEncryptionCert] [-SSLServerAuthentication]
+ [-DnsName <string>] [-Eku <string[]>] [-ExpiringInDays <int>]
+ [<CommonParameters>]
+```
+
+### LiteralItems - Certificate provider
+
+```
+Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
+ [-CodeSigningCert] [-DocumentEncryptionCert] [-SSLServerAuthentication]
+ [-DnsName <string>] [-Eku <string[]>] [-ExpiringInDays <int>]
+ [<CommonParameters>]
+```
+
+### Items (Default) - Filesystem provider
+
+```
+Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
+ [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory]
+ [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+```
+
+### LiteralItems - FileSystem provider
+
+```
+Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
+ [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory]
+ [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -346,7 +383,7 @@ d-----        2/14/2019     10:22                SubDir_Level3
 -a----        2/13/2019     08:55             26 file.txt
 ```
 
-The `Get-ChildItem` cmdlet uses the **Path** parameter to specify **C:\Parent**. The **Depth**
+The `Get-ChildItem` cmdlet uses the **Path** parameter to specify `C:\Parent`. The **Depth**
 parameter specifies two levels of recursion. `Get-ChildItem` displays the contents of the directory
 specified by the **Path** parameter and the two levels of subdirectories.
 
@@ -369,8 +406,6 @@ tmp      {C:\Users\user1\AppData\Local\Temp}
 
 This example attempts to get the target information for an AppX reparse point. Microsoft Store
 applications create AppX reparse points in the user's AppData directory.
-
-```powershell
 
 ```powershell
 Get-ChildItem ~\AppData\Local\Microsoft\WindowsApps\MicrosoftEdge.exe |
