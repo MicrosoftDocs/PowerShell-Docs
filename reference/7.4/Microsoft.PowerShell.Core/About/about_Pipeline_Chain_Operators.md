@@ -1,7 +1,7 @@
 ---
 description: Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 Locale: en-US
-ms.date: 12/08/2022
+ms.date: 06/21/2023
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/about/about_pipeline_chain_operators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Pipeline Chain Operators
@@ -17,10 +17,8 @@ Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 
 Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to
 conditionally chain pipelines. These operators are known in PowerShell as
-_pipeline chain operators_, and are similar to
-[AND-OR lists](https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_09_03)
-in POSIX shells like bash, zsh and sh, as well as
-[conditional processing symbols](/previous-versions/windows/it-pro/windows-xp/bb490954(v=technet.10)#using-multiple-commands-and-conditional-processing-symbols)
+_pipeline chain operators_, and are similar to [AND-OR lists][05] in POSIX
+shells like bash, zsh and sh, as well as [conditional processing symbols][01]
 in the Windows Command Shell (cmd.exe).
 
 The `&&` operator executes the right-hand pipeline, if the left-hand pipeline
@@ -152,11 +150,10 @@ semicolons (`;`). This means that pipelines within a pipeline chain can be
 individually redirected, and that entire pipeline chains can be backgrounded,
 assigned to variables, or separated as statements.
 
-To use lower precedence syntax within a pipeline chain,
-consider the use of parentheses `(...)`.
-Similarly, to embed a statement within a pipeline chain,
-a subexpression `$(...)` can be used.
-This can be useful for combining native commands with control flow:
+To use lower precedence syntax within a pipeline chain, consider the use of
+parentheses `(...)`. Similarly, to embed a statement within a pipeline chain, a
+subexpression `$(...)` can be used. This can be useful for combining native
+commands with control flow:
 
 ```powershell
 foreach ($file in 'file1','file2','file3')
@@ -172,15 +169,15 @@ file2
 Found file2
 ```
 
-As of PowerShell 7, the behaviour of these syntaxes has been changed
-so that `$?` is set as expected when a command succeeds or fails
-within parentheses or a subexpression.
+As of PowerShell 7, the behaviour of these syntaxes has been changed so that
+`$?` is set as expected when a command succeeds or fails within parentheses or
+a subexpression.
 
 Like most other operators in PowerShell, `&&` and `||` are also
 _left-associative_, meaning they group from the left. For example:
 
 ```powershell
-Get-ChildItem -Path ./file.txt |
+Get-ChildItem -Path ./file.txt ||
     Write-Error "file.txt doesn't exist" &&
     Get-Content -Raw ./file.txt
 ```
@@ -312,6 +309,13 @@ deemed to have failed after generating the non-terminating error.
 
 ## See also
 
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Operators](about_Operators.md)
-- [about_Pipelines](about_Pipelines.md)
+- [about_Automatic_Variables][02]
+- [about_Operators][03]
+- [about_Pipelines][04]
+
+<!-- link references -->
+[01]: /previous-versions/windows/it-pro/windows-xp/bb490954(v=technet.10)#using-multiple-commands-and-conditional-processing-symbols
+[02]: about_Automatic_Variables.md
+[03]: about_Operators.md
+[04]: about_Pipelines.md
+[05]: https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_09_03
