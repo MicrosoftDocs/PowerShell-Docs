@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Raspberry Pi OS
-ms.date: 01/09/2023
+ms.date: 06/21/2023
 title: Installing PowerShell on Raspberry Pi OS
 ---
 # Installing PowerShell on Raspberry Pi OS
@@ -40,9 +40,8 @@ PowerShell version that you want to install.
 # Update package lists
 sudo apt-get update
 
-# Install libunwind8 and libssl1.0 - Regex is used to ensure that we don't
-# install libssl1.0-dev, as it is a variant that is not required
-sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
+# Install dependencies
+sudo apt-get install libssl1.1 libunwind8 -y
 
 ###################################
 # Download and extract PowerShell
@@ -73,7 +72,7 @@ sudo ~/powershell/pwsh -command 'New-Item -ItemType SymbolicLink -Path "/usr/bin
 # Now to start PowerShell you can just run "pwsh"
 ```
 
-### Uninstallation - Raspbian
+### Uninstallation - Raspberry Pi OS
 
 ```sh
 rm -rf ~/powershell
@@ -99,6 +98,9 @@ PowerShell respects the [XDG Base Directory Specification][02] on Linux.
 Microsoft supports the installation methods in this document. There may be other methods of
 installation available from other third-party sources. While those tools and methods may work,
 Microsoft can't support those methods.
+
+The Raspberry Pi OS is available for Arm 64 procoessors. PowerShell has not been tested on Arm 64
+for the Raspberry Pi OS.
 
 <!-- link references -->
 [01]: https://aka.ms/PowerShell-Release?tag=stable
