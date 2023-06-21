@@ -99,7 +99,7 @@ Microsoft supports the installation methods in this document. There may be other
 installation available from other third-party sources. While those tools and methods may work,
 Microsoft can't support those methods.
 
-The Raspberry Pi OS is available for Arm 64 procoessors. PowerShell has not been tested on Arm 64
+The Raspberry Pi OS is available for Arm 64 processors. PowerShell hasn't been tested on Arm 64
 for the Raspberry Pi OS.
 
 <!-- link references -->
