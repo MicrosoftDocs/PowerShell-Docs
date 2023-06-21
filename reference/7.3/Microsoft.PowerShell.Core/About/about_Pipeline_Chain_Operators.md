@@ -180,7 +180,7 @@ Like most other operators in PowerShell, `&&` and `||` are also
 _left-associative_, meaning they group from the left. For example:
 
 ```powershell
-Get-ChildItem -Path ./file.txt |
+Get-ChildItem -Path ./file.txt ||
     Write-Error "file.txt doesn't exist" &&
     Get-Content -Raw ./file.txt
 ```
