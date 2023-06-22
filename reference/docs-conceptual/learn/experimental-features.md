@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 06/08/2023
+ms.date: 06/22/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -166,7 +166,20 @@ use or support MOF compilation. For more information, see
 
 ## PSFeedbackProvider
 
-Replace the hard-coded suggestion framework with the extensible feedback provider.
+When you enable this feature, PowerShell uses a new feedback provider to give you feedback when a
+command can't be found. The feedback provider is extensible, and can be implemented by third-party
+modules. The feedback provider can be used by other subsystems, such as the predictor subsystem, to
+provide predictive IntelliSense results.
+
+This feature includes two built-in feedback providers:
+
+- **GeneralCommandErrorFeedback** serves the same suggestion functionality existing today
+- **UnixCommandNotFound**, available on Linux, provides feedback similar to bash.
+
+  The **UnixCommandNotFound** serves as both a feedback provider and a predictor. The suggestion
+  from command-not-found command is used both for providing the feedback when command can't be found
+  in an interactive run, and for providing predictive IntelliSense results for the next command
+  line.
 
 ## PSLoadAssemblyFromNativeCode
 
