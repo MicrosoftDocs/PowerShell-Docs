@@ -49,6 +49,7 @@ Legend
 | PSCommandWithArgs                                      |                     |                     | ![Experimental][02] |
 | PSConstrainedAuditLogging                              |                     |                     | ![Experimental][02] |
 | PSNativeCommandPreserveBytePipe                        |                     |                     | ![Experimental][02] |
+| PSWindowsNativeCommandArgPassing                       |                     |                     | ![Experimental][02] |
 
 ## PSAnsiRenderingFileInfo
 
@@ -127,7 +128,7 @@ This feature was added in PowerShell 7.4-preview.4.
 
 ## PSCustomTableHeaderLabelDecoration
 
-When this feature is enabled, `$PSStyle` includes formatting differentiation for table header labels
+When you enable this feature, `$PSStyle` includes formatting differentiation for table header labels
 that aren't property members. For example, the default output from `Get-Process` includes the
 following columns: `NPM(K)`, `PM(M)`, `WS(M)`, and `CPU(s)`.
 
@@ -378,6 +379,19 @@ The experimental feature includes a new cmdlet, [Get-PSSubsystem][11]. This cmdl
 when the feature is enabled. This cmdlet returns information about the subsystems that are available
 on the system.
 
+## PSWindowsNativeCommandArgPassing
+
+The feature changes the default values of the `$PSNativeCommandArgumentPassing` variable.
+
+- When you enable this feature on Windows, `$PSNativeCommandArgumentPassing` is set to `Windows`.
+- When you enable this feature on non-Windows platforms, `$PSNativeCommandArgumentPassing` is set to
+  `Standard`.
+- When you disable this feature on Windows, `$PSNativeCommandArgumentPassing` is set to `Legacy`.
+- When you disable this feature on non-Windows platforms, `$PSNativeCommandArgumentPassing` is set
+  to `Standard`.
+
+Also, this feature adds new telemetry metrics to inform us how the feature is being used.
+
 <!-- link references -->
 [01]: ../../media/shared/check-mark-button-2705.svg
 [02]: ../../media/shared/construction-sign-1f6a7.svg
@@ -387,7 +401,6 @@ on the system.
 [06]: /powershell/module/microsoft.powershell.core/about/about_experimental_features
 [07]: /powershell/module/microsoft.powershell.core/about/about_Parsing
 [08]: /powershell/module/Microsoft.PowerShell.Core/About/about_Parsing#the-stop-parsing-token
-[09]: /windows/win32/amsi/how-amsi-helps
 [10]: https://github.com/PowerShell/PowerShell/issues/new/choose
 [11]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
 [12]: xref:Microsoft.PowerShell.Management.Start-Process
