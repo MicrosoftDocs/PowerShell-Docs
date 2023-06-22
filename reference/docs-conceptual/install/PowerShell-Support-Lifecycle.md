@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 01/09/2023
+ms.date: 06/22/2023
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -8,10 +8,10 @@ title: PowerShell Support Lifecycle
 > [!NOTE]
 > This document is about support for PowerShell. Windows PowerShell (1.0 - 5.1) is a component of
 > the Windows operating system. Components receive the same support as their parent product or
-> platform. For more information, see [Product and Services Lifecycle Information][09].
+> platform. For more information, see [Product and Services Lifecycle Information][03].
 
-PowerShell is supported under the [Microsoft Modern Lifecycle Policy][08], but support dates are
-linked to [.NET and .NET Core Support Policy][13]. In this servicing approach, customers can choose
+PowerShell is supported under the [Microsoft Modern Lifecycle Policy][02], but support dates are
+linked to [.NET and .NET Core Support Policy][06]. In this servicing approach, customers can choose
 Long Term Support (LTS) releases or current releases.
 
 An **LTS** release of PowerShell is built on an LTS release of .NET. Updates to an LTS release only
@@ -68,41 +68,40 @@ needing access but formal support and updates of any kind are no longer be provi
 
 ### Raspberry Pi OS
 
-[Raspberry Pi OS][24] (formerly Raspbian) is a free operating system based on Debian.
+[Raspberry Pi OS][15] (formerly Raspbian) is a free operating system based on Debian.
 
 > [!IMPORTANT]
-> .NET is not supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
+> .NET isn't supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
 > devices prior to Raspberry Pi 2.
 
 ## Windows PowerShell Compatibility
 
 The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell
 release package. For example, using the `ActiveDirectory` module that ships as part of Windows
-Server is supported under the [Windows Support Lifecycle][07].
+Server is supported under the [Windows Support Lifecycle][01].
 
 ## Experimental features
 
-[Experimental features][11] are limited to community support.
+[Experimental features][05] are limited to community support.
 
 ## Notes on licensing
 
-PowerShell is released under the [MIT license][18]. Under this license, and without a paid support
-agreement, users are limited to [community support][10]. With community support, Microsoft makes no
+PowerShell is released under the [MIT license][09]. Under this license, and without a paid support
+agreement, users are limited to [community support][04]. With community support, Microsoft makes no
 guarantees of responsiveness or fixes.
 
 ## Getting support
 
 Support for PowerShell is delivered via traditional Microsoft support agreements, including
-[paid support][20], [Microsoft Enterprise Agreements][22], and [Microsoft Software Assurance][23].
-You can also pay for [assisted support][19] for PowerShell by filing a support request for your
+[paid support][11], [Microsoft Enterprise Agreements][13], and [Microsoft Software Assurance][14].
+You can also pay for [assisted support][10] for PowerShell by filing a support request for your
 problem.
 
-There are also [community support][10] options. You can file an issue, bug, or feature request on
-GitHub. Also, you may find help from other members of the community in the Microsoft
-[PowerShell Tech Community][21] or any of the forums listed in the community section of
-[PowerShell][10] hub page. We offer no guarantee there that the community will address or resolve
-your issue in a timely manner. If you have a problem that requires immediate attention, you should
-use the traditional, paid support options.
+There are also [community support][04] options. You can file an issue, bug, or feature request on
+GitHub. Also, you can get help from other members of the community in the Microsoft
+[PowerShell Tech Community][12] or any of the community forums listed on the [PowerShell][04] hub
+page. If you have a problem that requires immediate attention, you should use the traditional, paid
+support options.
 
 > [!IMPORTANT]
 > You must have the latest patch update installed to qualify for support. For example, if you're
@@ -111,8 +110,8 @@ use the traditional, paid support options.
 
 ## PowerShell End-of-support dates
 
-Based on these lifecycle policies, the following table lists the dates when currently supported
-version will no longer be supported:
+Based on these lifecycle policies, the following table lists the dates when support for the current
+versions of PowerShell end:
 
 |      Version      |   Release Date    |  End-of-support  |
 | ----------------- | ----------------- | ---------------- |
@@ -120,13 +119,11 @@ version will no longer be supported:
 | 7.3 (Stable)      | November 9, 2022  | May 8, 2024      |
 | 7.2 (LTS-current) | November 8, 2021  | November 8, 2024 |
 
-Support for PowerShell on a specific platforms is based on the support policy of the version of .NET
+Support for PowerShell on a specific platform is based on the support policy of the version of .NET
 used.
 
-- PowerShell 7.3 (Stable) is based on the [.NET 7.0 Supported OS Lifecycle Policy][15]
-- PowerShell 7.2 (LTS-current) is based on the [.NET 6.0 Supported OS Lifecycle Policy][14]
-- PowerShell 7.1 (Stable) is based on the [.NET 5.0 Supported OS Lifecycle Policy][17]
-- PowerShell 7.0 (LTS) is based on the [.NET Core 3.1 Supported OS Lifecycle Policy][16]
+- PowerShell 7.3 (Stable) is based on the [.NET 7.0 Supported OS Lifecycle Policy][08]
+- PowerShell 7.2 (LTS-current) is based on the [.NET 6.0 Supported OS Lifecycle Policy][07]
 
 End of support dates for already retired versions were:
 
@@ -145,12 +142,12 @@ for historical reference. It isn't intended for use to determine the support lif
 
 |           Version            | Release Date |                                      Note                                       |
 | ---------------------------- | :----------: | ------------------------------------------------------------------------------- |
-| PowerShell 7.4 (preview)     |   Dec-2022   | Currently built on .NET 7.0                                                     |
+| PowerShell 7.4 (preview)     |   Dec-2022   | Built on .NET 8.0.0-preview                                                     |
 | PowerShell 7.3               |   Nov-2022   | Built on .NET 7.0                                                               |
 | PowerShell 7.2 (LTS-current) |   Nov-2021   | Built on .NET 6.0 (LTS-current)                                                 |
 | PowerShell 7.1               |   Nov-2020   | Built on .NET 5.0                                                               |
 | PowerShell 7.0 (LTS)         |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                    |
-| PowerShell 6.2               |   Mar-2019   |                                                                                 |
+| PowerShell 6.2               |   Mar-2019   | Built on .NET Core 2.1                                                          |
 | PowerShell 6.1               |   Sep-2018   | Built on .NET Core 2.1                                                          |
 | PowerShell 6.0               |   Jan-2018   | First release, built on .NET Core 2.0. Installable on Windows, Linux, and macOS |
 | Windows PowerShell 5.1       |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016, WMF 5.1      |
@@ -160,21 +157,26 @@ for historical reference. It isn't intended for use to determine the support lif
 | Windows PowerShell 2.0       |   Jul-2009   | Integrated in Windows 7 and Windows Server 2008 R2, WMF 2.0                     |
 | Windows PowerShell 1.0       |   Nov-2006   | Optional component of Windows Server 2008                                       |
 
+Run the following command to see the full version number of .NET used by the version of PowerShell
+you're running:
+
+```powershell
+[System.Runtime.InteropServices.RuntimeInformation]::FrameworkDescription
+```
+
 <!-- link references -->
-[07]: /lifecycle/faq/windows
-[08]: /lifecycle/policies/modern
-[09]: /lifecycle/products/
-[10]: /powershell/scripting/community/community-support
-[11]: /powershell/scripting/learn/experimental-features
-[13]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
-[14]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
-[15]: https://github.com/dotnet/core/blob/main/release-notes/7.0/supported-os.md
-[16]: https://github.com/dotnet/core/blob/master/release-notes/3.1/3.1-supported-os.md
-[17]: https://github.com/dotnet/core/blob/master/release-notes/5.0/5.0-supported-os.md
-[18]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[19]: https://support.microsoft.com/supportforbusiness/productselection
-[20]: https://support.serviceshub.microsoft.com/supportforbusiness
-[21]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[22]: https://www.microsoft.com/licensing/licensing-programs/enterprise
-[23]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default
-[24]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+[01]: /lifecycle/faq/windows
+[02]: /lifecycle/policies/modern
+[03]: /lifecycle/products/
+[04]: /powershell/scripting/community/community-support
+[05]: /powershell/scripting/learn/experimental-features
+[06]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
+[07]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
+[08]: https://github.com/dotnet/core/blob/main/release-notes/7.0/supported-os.md
+[09]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[10]: https://support.microsoft.com/supportforbusiness/productselection
+[11]: https://support.serviceshub.microsoft.com/supportforbusiness
+[12]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[13]: https://www.microsoft.com/licensing/licensing-programs/enterprise
+[14]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default
+[15]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md

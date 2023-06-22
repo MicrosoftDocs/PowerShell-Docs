@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 02/07/2023
+ms.date: 06/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Help
@@ -556,6 +556,11 @@ help articles.
 
 For more information about PowerShell providers, see [about_Providers](./About/about_Providers.md).
 
+> [!NOTE]
+> The provider for the path specified must have a PowerShell provider help file installed. If no
+> provider help file is available, no help information is returned. There are no provider help files
+> available for the providers included with this version of PowerShell.
+
 ```yaml
 Type: System.String
 Parameter Sets: (All)
@@ -596,7 +601,7 @@ feature and a **Settings** box that lets you set options for the display, includ
 display only selected sections of a help topic.
 
 The **ShowWindow** parameter supports help topics for commands (cmdlets, functions, CIM commands,
-workflows, scripts) and conceptual **About** articles. It does not support provider help.
+workflows, scripts) and conceptual **About** articles. It doesn't support provider help.
 
 This parameter was introduced in PowerShell 3.0.
 
