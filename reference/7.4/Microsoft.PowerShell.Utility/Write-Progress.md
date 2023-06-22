@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/10/2023
+ms.date: 06/22/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
@@ -16,9 +16,9 @@ Displays a progress bar within a PowerShell command window.
 ## SYNTAX
 
 ```
-Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-PercentComplete <Int32>]
- [-SecondsRemaining <Int32>] [-CurrentOperation <String>] [-ParentId <Int32>] [-Completed]
- [-SourceId <Int32>] [<CommonParameters>]
+Write-Progress [[-Activity] <String>] [[-Status] <String>] [[-Id] <Int32>]
+ [-PercentComplete <Int32>] [-SecondsRemaining <Int32>] [-CurrentOperation <String>]
+ [-ParentId <Int32>] [-Completed] [-SourceId <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -189,7 +189,7 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 0
 Default value: None
 Accept pipeline input: False
