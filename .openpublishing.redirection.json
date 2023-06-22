@@ -1264,6 +1264,11 @@
       "redirect_document_id": true,
       "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/sil-overview",
       "source_path": "reference/docs-conceptual/wmf/whats-new/sil-overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/cmdlet/requesting-confirmation-from-cmdlets",
+      "source_path": "reference/docs-conceptual/developer/cmdlet/how-to-request-confirmations.md"
     }
   ]
 }
