@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 01/09/2023
+ms.date: 06/22/2023
 title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 ---
 # Installing PowerShell on Red Hat Enterprise Linux (RHEL)
@@ -22,21 +22,21 @@ RHEL 7 uses yum and RHEL 8 uses the dnf package manager.
 PowerShell for Linux is published to official Microsoft repositories for easy installation and
 updates.
 
-On RHEL 7:
+On RHEL 9:
 
 ```sh
 # Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
+curl https://packages.microsoft.com/config/rhel/9.0/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
 
 # Install PowerShell
-sudo yum install --assumeyes powershell
+sudo dnf install --assumeyes powershell
 
 # Start PowerShell
 pwsh
 ```
 
 As superuser, register the Microsoft repository once. After registration, you can update PowerShell
-with `sudo yum update powershell`.
+with `sudo dnf upgrade powershell`.
 
 On RHEL 8:
 
@@ -54,6 +54,22 @@ pwsh
 As superuser, register the Microsoft repository once. After registration, you can update PowerShell
 with `sudo dnf upgrade powershell`.
 
+On RHEL 7:
+
+```sh
+# Register the Microsoft RedHat repository
+curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
+
+# Install PowerShell
+sudo yum install --assumeyes powershell
+
+# Start PowerShell
+pwsh
+```
+
+As superuser, register the Microsoft repository once. After registration, you can update PowerShell
+with `sudo yum update powershell`.
+
 ### Installation via direct download
 
 Starting with version 7.2, PowerShell is distributed as a universal RPM package. Previous versions
@@ -66,16 +82,22 @@ machine.
 Use the following shell command to install the latest RPM package on the target version of RHEL.
 Change the URL in the following shell commands to match the version you need.
 
-On RHEL 7:
+On RHEL 9:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-1.rh.x86_64.rpm
 ```
 
 On RHEL 8:
 
 ```sh
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-1.rh.x86_64.rpm
+```
+
+On RHEL 7:
+
+```sh
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-1.rh.x86_64.rpm
 ```
 
 ## Uninstallation - Red Hat Enterprise Linux (RHEL) 7
