@@ -533,8 +533,8 @@ function Test-Remainder {
     )
 
     "Found $($Remaining.Count) elements"
-    for ($i = 0; $i -lt $Remaining.Count; $i++)
-    {
+
+    for ($i = 0; $i -lt $Remaining.Count; $i++) {
         "${i}: $($Remaining[$i])"
     }
 }
@@ -689,15 +689,15 @@ TestType $ping
 
 ### System.Obsolete attribute
 
-Use the **System.Obsolete** attribute to mark parameters that are no longer in
-use. This can be useful when you want to remove a parameter from a function but
-you don't want to break existing scripts that use the function.
+Use the **System.Obsolete** attribute to mark parameters that are no longer
+supported. This can be useful when you want to remove a parameter from a
+function but you don't want to break existing scripts that use the function.
 
-For example, consider you have a function that has a **NoTypeInformation**
-switch parameter that controls whether type information is included in the
-output. You want to make that behavior the default and remove the parameter
-from the function. However, you don't want to break existing scripts that use
-the function. You can mark the parameter as obsolete and add a message that
+For example, consider a function that has a **NoTypeInformation** switch
+parameter that controls whether type information is included in the output. You
+want to make that behavior the default and remove the parameter from the
+function. However, you don't want to break existing scripts that use the
+function. You can mark the parameter as obsolete and add a message that
 explains the change.
 
 ```powershell
