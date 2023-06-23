@@ -270,7 +270,7 @@ the contents of both the left and right operands, then copies the elements of bo
 the new string. For small strings, this overhead may not matter. For large strings, this can affect
 performance and memory consumption.
 
-There are at least two of alternatives:
+There are at least two alternatives:
 
 - The `-join` operator concatenates strings
 - The .NET **StringBuilder** class provides a mutable string
