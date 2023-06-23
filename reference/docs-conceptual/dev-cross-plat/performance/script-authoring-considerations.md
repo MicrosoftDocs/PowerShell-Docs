@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 04/11/2023
+ms.date: 06/23/2023
 title: PowerShell scripting performance considerations
 ---
 
@@ -19,64 +19,89 @@ the pipeline, and resorting to .NET only when necessary.
 
 There are many ways to avoid writing objects to the pipeline.
 
-Assignment to `$null` or casting to `[void]` are roughly equivalent and should be preferred where
-performance matters.
+- Assigning to `$null`
+- Casting to `[void]`
+- File redirection to `$null`
+- Pipe to `Out-Null`
+
+The speeds of assigning to `$null`, casting to `[void]`, and file redirection to `$null` are almost
+identical. However, calling `Out-Null` in a large loop can be significantly slower, especially in
+PowerShell 5.1.
 
 ```powershell
-$null = $arrayList.Add($item)
-[void]$arrayList.Add($item)
-```
+$tests = @{
+    'Assign to $null' = {
+        $arrayList = [System.Collections.ArrayList]::new()
+        foreach ($i in 0..$args[0]) {
+            $null = $arraylist.Add($i)
+        }
+    }
+    'Cast to [void]' = {
+        $arrayList = [System.Collections.ArrayList]::new()
+        foreach ($i in 0..$args[0]) {
+            [void]$arraylist.Add($i)
+        }
+    }
+    'Redirect to $null' = {
+        $arrayList = [System.Collections.ArrayList]::new()
+        foreach ($i in 0..$args[0]) {
+            $arraylist.Add($i) > $null
+        }
+    }
+    'Pipe to Out-Null' = {
+        $arrayList = [System.Collections.ArrayList]::new()
+        foreach ($i in 0..$args[0]) {
+            $arraylist.Add($i) | Out-Null
+        }
+    }
+}
 
-File redirection to `$null` is almost as fast as the previous alternatives. You won't notice a
-performance difference for most scripts. However, file redirection does introduce some overhead.
+10kb, 50kb, 100kb | ForEach-Object {
+    $groupResult = foreach ($test in $tests.GetEnumerator()) {
+        $ms = (Measure-Command { & $test.Value $_ }).TotalMilliseconds
 
-```powershell
-$arrayList.Add($item) > $null
-```
+        [pscustomobject]@{
+            Iterations        = $_
+            Test              = $test.Key
+            TotalMilliseconds = [math]::Round($ms, 2)
+        }
 
-You can also pipe to `Out-Null`. In PowerShell 7.x, this is a bit slower than redirection but
-probably not noticeable for most scripts.
+        [GC]::Collect()
+        [GC]::WaitForPendingFinalizers()
+    }
 
-```powershell
-$arrayList.Add($item) | Out-Null
-```
-
-However, calling `Out-Null` in a large loop can be significantly slower, even in PowerShell 7.x.
-
-```powershell
-$d = Get-Date
-Measure-Command { for($i=0; $i -lt 1mb; $i++) { $null=$d } } |
-    Select-Object TotalSeconds
-
-TotalSeconds
-------------
-   1.0549325
-
-$d = Get-Date
-Measure-Command { for($i=0; $i -lt 1mb; $i++) { $d | Out-Null } } |
-    Select-Object TotalSeconds
-
-TotalSeconds
-------------
-   5.9572186
-```
-
-Windows PowerShell 5.1 doesn't have the same optimizations for `Out-Null` as PowerShell 7.x, so you
-should avoid using `Out-Null` in performance sensitive code.
-
-Creating a script block and calling it (using dot sourcing or `Invoke-Command`) then assigning the
-result to `$null` is a convenient technique for suppressing the output of a large block of script.
-
-```powershell
-$null = . {
-    $arrayList.Add($item)
-    $arrayList.Add(42)
+    $groupResult = $groupResult | Sort-Object TotalMilliseconds
+    $groupResult | Select-Object *, @{
+        Name       = 'RelativeSpeed'
+        Expression = {
+            $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
+            [math]::Round($relativeSpeed, 2).ToString() + 'x'
+        }
+    }
 }
 ```
 
-This technique performs about the same as piping to `Out-Null` and should be avoided in performance
-sensitive script. The extra overhead in this example comes from the creation of and invoking a
-script block that was previously inline script.
+These tests were run on a Windows 11 machine in PowerShell 7.3.4. The results are shown below:
+
+```Output
+Iterations Test              TotalMilliseconds RelativeSpeed
+---------- ----              ----------------- -------------
+     10240 Assign to $null               36.74 1x
+     10240 Redirect to $null             55.84 1.52x
+     10240 Cast to [void]                62.96 1.71x
+     10240 Pipe to Out-Null              81.65 2.22x
+     51200 Assign to $null              193.92 1x
+     51200 Cast to [void]               200.77 1.04x
+     51200 Redirect to $null            219.69 1.13x
+     51200 Pipe to Out-Null             329.62 1.7x
+    102400 Redirect to $null            386.08 1x
+    102400 Assign to $null              392.13 1.02x
+    102400 Cast to [void]               405.24 1.05x
+    102400 Pipe to Out-Null             572.94 1.48x
+```
+
+The times and relative speeds can vary depending on the hardware, the version of PowerShell, and the
+current workload on the system.
 
 ## Array addition
 
@@ -136,7 +161,7 @@ $tests = @{
     }
 }
 
-5000, 10000, 100000 | ForEach-Object {
+5kb, 10kb, 100kb | ForEach-Object {
     $groupResult = foreach($test in $tests.GetEnumerator()) {
         $ms = (Measure-Command { & $test.Value -Count $_ }).TotalMilliseconds
 
@@ -161,18 +186,20 @@ $tests = @{
 }
 ```
 
+These tests were run on a Windows 11 machine in PowerShell 7.3.4.
+
 ```Output
 CollectionSize Test                           TotalMilliseconds RelativeSpeed
 -------------- ----                           ----------------- -------------
-          5000 PowerShell Explicit Assignment              0.56 1x
-          5000 .Add(..) to List<T>                         7.56 13.5x
-          5000 += Operator to Array                     1357.74 2424.54x
-         10000 PowerShell Explicit Assignment              0.77 1x
-         10000 .Add(..) to List<T>                        18.20 23.64x
-         10000 += Operator to Array                     5411.23 7027.57x
-        100000 PowerShell Explicit Assignment             14.85 1x
-        100000 .Add(..) to List<T>                       177.13 11.93x
-        100000 += Operator to Array                   473824.71 31907.39x
+          5120 PowerShell Explicit Assignment             26.65 1x
+          5120 .Add(..) to List<T>                       110.98 4.16x
+          5120 += Operator to Array                      402.91 15.12x
+         10240 PowerShell Explicit Assignment              0.49 1x
+         10240 .Add(..) to List<T>                       137.67 280.96x
+         10240 += Operator to Array                     1678.13 3424.76x
+        102400 PowerShell Explicit Assignment             11.18 1x
+        102400 .Add(..) to List<T>                      1384.03 123.8x
+        102400 += Operator to Array                   201991.06 18067.18x
 ```
 
 When you're working with large collections, array addition is dramatically slower than adding to
@@ -243,56 +270,84 @@ the contents of both the left and right operands, then copies the elements of bo
 the new string. For small strings, this overhead may not matter. For large strings, this can affect
 performance and memory consumption.
 
-```powershell
-$string = ''
-Measure-Command {
-      foreach( $i in 1..10000)
-      {
-          $string += "Iteration $i`n"
-      }
-      $string
-  } | Select-Object TotalMilliseconds
+There are at least two of alternatives:
 
-TotalMilliseconds
------------------
-         641.8168
-```
+- The `-join` operator concatenates strings
+- The .NET **StringBuilder** class provides a mutable string
 
-There are a couple of alternatives. You can use the `-join` operator to concatenate strings.
+The following example compares the performance of these three methods of building a string.
 
 ```powershell
-Measure-Command {
-      $string = @(
-          foreach ($i in 1..10000) { "Iteration $i" }
-      ) -join "`n"
-      $string
-  } | Select-Object TotalMilliseconds
+$tests = @{
+    'StringBuilder' = {
+        $sb = [System.Text.StringBuilder]::new()
+        foreach ($i in 0..$args[0]) {
+            $sb = $sb.AppendLine("Iteration $i")
+        }
+        $sb.ToString()
+    }
+    'Join operator' = {
+        $string = @(
+            foreach ($i in 0..$args[0]) {
+                "Iteration $i"
+            }
+        ) -join "`n"
+        $string
+    }
+    'Addition Assignment +=' = {
+        $string = ''
+        foreach ($i in 0..$args[0]) {
+            $string += "Iteration $i`n"
+        }
+        $string
+    }
+}
 
-TotalMilliseconds
------------------
-          22.7069
+10kb, 50kb, 100kb | ForEach-Object {
+    $groupResult = foreach ($test in $tests.GetEnumerator()) {
+        $ms = (Measure-Command { & $test.Value $_ }).TotalMilliseconds
+
+        [pscustomobject]@{
+            Iterations        = $_
+            Test              = $test.Key
+            TotalMilliseconds = [math]::Round($ms, 2)
+        }
+
+        [GC]::Collect()
+        [GC]::WaitForPendingFinalizers()
+    }
+
+    $groupResult = $groupResult | Sort-Object TotalMilliseconds
+    $groupResult | Select-Object *, @{
+        Name       = 'RelativeSpeed'
+        Expression = {
+            $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
+            [math]::Round($relativeSpeed, 2).ToString() + 'x'
+        }
+    }
+}
 ```
 
-In this example, using the `-join` operator is 30 times faster than string addition.
 
-You can also use the .NET **StringBuilder** class.
+These tests were run on a Windows 10 machine in PowerShell 7.3.4. The output shows that the `-join`
+operator is the fastest, followed by the **StringBuilder** class.
 
-```powershell
-$sb = [System.Text.StringBuilder]::new()
-Measure-Command {
-      foreach( $i in 1..10000)
-      {
-          [void]$sb.Append("Iteration $i`n")
-      }
-      $sb.ToString()
-  } | Select-Object TotalMilliseconds
-
-TotalMilliseconds
------------------
-          13.4671
+```Output
+Iterations Test                   TotalMilliseconds RelativeSpeed
+---------- ----                   ----------------- -------------
+     10240 Join operator                       7.08 1x
+     10240 StringBuilder                      54.10 7.64x
+     10240 Addition Assignment +=            724.16 102.28x
+     51200 Join operator                      41.76 1x
+     51200 StringBuilder                     318.06 7.62x
+     51200 Addition Assignment +=          17693.06 423.68x
+    102400 Join operator                     106.98 1x
+    102400 StringBuilder                     543.84 5.08x
+    102400 Addition Assignment +=          90693.13 847.76x
 ```
 
-In this example, using the **StringBuilder** is 50 times faster than string addition.
+The times and relative speeds can vary depending on the hardware, the version of PowerShell, and the
+current workload on the system.
 
 ## Processing large files
 
