@@ -461,7 +461,7 @@ A static property is always available, independent of class instantiation. A
 static property is shared across all instances of the class. A static method is
 available always. All static properties live for the entire session span.
 
-### Example using static keywords and methods
+### Example using static properties and methods
 
 Assume the racks instantiated here exist in your data center and you want to
 keep track of the racks in your code.
@@ -575,7 +575,7 @@ At C:\tmp\Untitled-5.ps1:11 char:1
     + FullyQualifiedErrorId : ExceptionWhenSetting
 ```
 
-For a complete list of available attributes, see
+For more information on available attributes, see
 [about_Functions_Advanced_Parameters][03].
 
 ## Inheritance in PowerShell classes
