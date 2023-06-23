@@ -251,8 +251,7 @@ function Get-Sample {
 }
 ```
 
-For more information, see the documentation for the
-[RuntimeDefinedParameter][02] type.
+For more information, see the documentation for the [RuntimeDefinedParameter][02] type.
 
 ## Attributes of parameters
 
@@ -506,9 +505,7 @@ Saw that ComputerName was 'HelloWorld'
 > **ParameterBinding**. The result is bound to the parameter. Delay binding
 > doesn't work for parameters defined as type **ScriptBlock** or
 > **System.Object**. The script block is passed through _without_ being
-> invoked.
->
-> You can read about _delay-bind_ script blocks here
+> invoked. For more information about _delay-bind_ script blocks, see
 > [about_Script_Blocks][16].
 
 #### ValueFromRemainingArguments argument
@@ -517,7 +514,7 @@ The `ValueFromRemainingArguments` argument indicates that the parameter accepts
 all the parameter's values in the command that aren't assigned to other
 parameters of the function.
 
-There's a known issue for using collections with 
+There's a known issue for using collections with
 **ValueFromRemainingArguments** where the passed-in collection is treated as a
 single element.
 
@@ -616,11 +613,6 @@ param(
     [PSCredential]$Credential
 )
 ```
-
-### Experimental attribute
-
-Use the **Experimental** attribute to declare some code as experimental. For a
-full description of the attribute, see [about_Experimental_Features][07].
 
 ### PSDefaultValue attribute
 
@@ -790,7 +782,7 @@ can define validation for any variable within a script.
 > [ValidateLength(1,5)] [string]$TicketIDAttributeFirst = 43
 > ```
 >
-> ```output
+> ```Output
 > The attribute cannot be added because variable TicketIDFromInt with
 > value 43 would no longer be valid.
 > At line:1 char:1
@@ -1187,15 +1179,11 @@ True
 <!-- link references -->
 [01]: ./about_comment_based_help.md
 [02]: /dotnet/api/system.management.automation.runtimedefinedparameter
-[03]: /dotnet/standard/base-types/composite-formatting#composite-format-string
-[04]: /dotnet/standard/base-types/composite-formatting#format-string-component
 [05]: about_Automatic_Variables.md
 [06]: about_CommonParameters.md
-[07]: about_Experimental_Features.md
 [08]: about_Functions_Advanced_Methods.md
 [09]: about_Functions_Advanced.md
 [10]: about_Functions_Argument_Completion.md#argumentcompleter-attribute
-[11]: about_Functions_Argument_Completion.md#argumentcompletions-attribute
 [12]: about_Functions_CmdletBindingAttribute.md
 [13]: about_Functions_OutputTypeAttribute.md
 [14]: about_Functions.md

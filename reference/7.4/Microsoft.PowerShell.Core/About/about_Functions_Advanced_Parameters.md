@@ -246,8 +246,7 @@ function Get-Sample {
 }
 ```
 
-For more information, see the documentation for the
-[RuntimeDefinedParameter][02] type.
+For more information, see the documentation for the [RuntimeDefinedParameter][02] type.
 
 ## Attributes of parameters
 
@@ -501,9 +500,7 @@ Saw that ComputerName was 'HelloWorld'
 > **ParameterBinding**. The result is bound to the parameter. Delay binding
 > doesn't work for parameters defined as type **ScriptBlock** or
 > **System.Object**. The script block is passed through _without_ being
-> invoked.
->
-> You can read about _delay-bind_ script blocks here
+> invoked. For more information about _delay-bind_ script blocks, see
 > [about_Script_Blocks][16].
 
 #### ValueFromRemainingArguments argument
