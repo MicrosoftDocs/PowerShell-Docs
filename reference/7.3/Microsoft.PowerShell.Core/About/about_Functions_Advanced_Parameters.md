@@ -698,8 +698,6 @@ the function. You can mark the parameter as obsolete and add a message that
 explains the change.
 
 ```powershell
-
-```powershell
 param(
     [System.Obsolete("The NoTypeInformation parameter is obsolete.")]
     [SwitchParameter]$NoTypeInformation
