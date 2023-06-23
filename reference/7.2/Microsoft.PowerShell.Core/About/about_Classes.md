@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 07/06/2022
+ms.date: 06/23/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes
@@ -31,7 +31,7 @@ properties.
   semantics like classes, properties, methods, inheritance, etc.
 - Debug types using the PowerShell language.
 - Generate and handle exceptions using formal mechanisms.
-- Define DSC resources and their associated types by using the PowerShell
+- Define DSC resources and their associated types using the PowerShell
   language.
 
 ## Syntax
@@ -171,7 +171,7 @@ class Device {
     [string]$VendorSku
 
     [string]ToString(){
-        return ("{0}|{1}|{2}" -f $this.Brand, $this.Model, $this.VendorSku)
+      return ('{0}|{1}|{2}' -f $this.Brand, $this.Model, $this.VendorSku)
     }
 }
 
@@ -184,18 +184,18 @@ class Rack {
     [Device[]]$Devices = [Device[]]::new($this.Slots)
 
     [void] AddDevice([Device]$dev, [int]$slot){
-        ## Add argument validation logic here
-        $this.Devices[$slot] = $dev
+      ## Add argument validation logic here
+      $this.Devices[$slot] = $dev
     }
 
     [void]RemoveDevice([int]$slot){
-        ## Add argument validation logic here
-        $this.Devices[$slot] = $null
+      ## Add argument validation logic here
+      $this.Devices[$slot] = $null
     }
 
     [int[]] GetAvailableSlots(){
-        [int]$i = 0
-        return @($this.Devices.foreach{ if($_ -eq $null){$i}; $i++})
+      [int]$i = 0
+      return @($this.Devices.foreach{ if($_ -eq $null){$i}; $i++})
     }
 }
 
@@ -245,7 +245,7 @@ code.
 > where everything goes to the pipeline.
 
 Non-terminating errors written to the error stream from inside a class method
-are not passed through. You must use `throw` to surface a terminating error.
+aren't passed through. You must use `throw` to surface a terminating error.
 Using the `Write-*` cmdlets, you can still write to PowerShell's output streams
 from within a class method. However, this should be avoided so that the method
 emits objects using only the `return` statement.
@@ -351,8 +351,8 @@ Fabrikam, Inc. Fbk5040 5072641000
 In this example, the **Device** class is defined with properties, a default
 constructor, and a constructor to initialize the instance.
 
-The default constructor sets the **brand** to **Undefined**, and leaves **model**
-and **vendor-sku** with null values.
+The default constructor sets the **brand** to **Undefined**, and leaves
+**model** and **vendor-sku** with null values.
 
 ```powershell
 class Device {
@@ -392,22 +392,22 @@ Undefined
 Fabrikam, Inc. Fbk5040 5072641000
 ```
 
-## Hidden attribute
+## Hidden keyword
 
-The `hidden` attribute hides a property or method. The property or method is
+The `hidden` keyword hides a property or method. The property or method is
 still accessible to the user and is available in all scopes in which the object
 is available. Hidden members are hidden from the `Get-Member` cmdlet and can't
 be displayed using tab completion or IntelliSense outside the class definition.
 
-For more information, see [About_hidden](About_hidden.md).
+For more information, see [about_Hidden][04].
 
-### Example using hidden attributes
+### Example using hidden keywords
 
 When a **Rack** object is created, the number of slots for devices is a fixed
 value that shouldn't be changed at any time. This value is known at creation
 time.
 
-Using the hidden attribute allows the developer to keep the number of slots
+Using the hidden keyword allows the developer to keep the number of slots
 hidden and prevents unintentional changes to the size of the rack.
 
 ```powershell
@@ -452,19 +452,19 @@ Devices                       Brand          Model
 Notice **Slots** property isn't shown in `$r1` output. However, the size was
 changed by the constructor.
 
-## Static attribute
+## Static keyword
 
-The `static` attribute defines a property or a method that exists in the class
+The `static` keyword defines a property or a method that exists in the class
 and needs no instance.
 
 A static property is always available, independent of class instantiation. A
 static property is shared across all instances of the class. A static method is
 available always. All static properties live for the entire session span.
 
-### Example using static attributes and methods
+### Example using static properties and methods
 
-Assume the racks instantiated here exist in your data center. So, you would
-like to keep track of the racks in your code.
+Assume the racks instantiated here exist in your data center and you want to
+keep track of the racks in your code.
 
 ```powershell
 class Device {
@@ -539,18 +539,17 @@ WARNING: Turning off rack: Std0010
 
 Notice that the number of racks increases each time you run this example.
 
-## Property validation attributes
+## Using property attributes
 
-Validation attributes allow you to test that values given to properties meet
-defined requirements. Validation is triggered the moment that the value is
-assigned. See [about_functions_advanced_parameters](about_functions_advanced_parameters.md).
-
-### Example using validation attributes
+PowerShell includes several attribute classes that you can use to enhance data
+type information and validate the data assigned to a property. Validation
+attributes allow you to test that values given to properties meet defined
+requirements. Validation is triggered the moment that the value is assigned.
 
 ```powershell
 class Device {
-    [ValidateNotNullOrEmpty()][string]$Brand
-    [ValidateNotNullOrEmpty()][string]$Model
+    [ValidateNotNullOrEmpty()] [string]$Brand
+    [ValidateNotNullOrEmpty()] [string]$Model
 }
 
 [Device]$dev = [Device]::new()
@@ -568,7 +567,7 @@ Brand Model
 ----- -----
 
 Exception setting "Brand": "The argument is null or empty. Provide an
-argument that is not null or empty, and then try the command again."
+argument that isn't null or empty, and then try the command again."
 At C:\tmp\Untitled-5.ps1:11 char:1
 + $dev.Brand = ""
 + ~~~~~~~~~~~~~~~
@@ -576,22 +575,23 @@ At C:\tmp\Untitled-5.ps1:11 char:1
     + FullyQualifiedErrorId : ExceptionWhenSetting
 ```
 
+For more information on available attributes, see
+[about_Functions_Advanced_Parameters][03].
+
 ## Inheritance in PowerShell classes
 
 You can extend a class by creating a new class that derives from an existing
 class. The derived class inherits the properties of the base class. You can add
 or override methods and properties as required.
 
-PowerShell does not support multiple inheritance. Classes cannot inherit from
+PowerShell doesn't support multiple inheritance. Classes can't inherit from
 more than one class. However, you can use interfaces for that purpose.
 
-Inheritance implementation is defined by the `:` operator; which means to
-extend this class or implements these interfaces. The derived class should
-always be leftmost in the class declaration.
+An inheritance implementation is defined using the `:` syntax to extend the
+class or implement interfaces. The derived class should always be leftmost in
+the class declaration.
 
-### Example using simple inheritance syntax
-
-This example shows the simple PowerShell class inheritance syntax.
+This example shows the basic PowerShell class inheritance syntax.
 
 ```powershell
 Class Derived : Base {...}
@@ -604,18 +604,16 @@ base class.
 Class Derived : Base, Interface {...}
 ```
 
-### Example of simple inheritance in PowerShell classes
+### Example of inheritance in PowerShell classes
 
 In this example the **Rack** and **Device** classes used in the previous
 examples are better defined to: avoid property repetitions, better align common
 properties, and reuse common business logic.
 
 Most objects in the data center are company assets, which makes sense to start
-tracking them as assets. Device types are defined by the `DeviceType`
-enumeration, see [about_Enum](about_Enum.md) for details on enumerations.
-
-In our example, we're only defining `Rack` and `ComputeServer`; both extensions
-to the `Device` class.
+tracking them as assets. The `DeviceType` enumerateion defines device types
+used by the class. For more information about enumerations, see
+[about_Enum][02].
 
 ```powershell
 enum DeviceType {
@@ -627,7 +625,12 @@ enum DeviceType {
     Power = 16
     Rack = 32
 }
+```
 
+In our example, we're defining `Rack` and `ComputeServer` as extensions to the
+`Device` class.
+
+```powershell
 class Asset {
     [string]$Brand
     [string]$Model
@@ -759,8 +762,8 @@ $littleOne.Age
 
 ### Invoke base class methods
 
-To override existing methods in subclasses, declare methods using the same
-name and signature.
+To override existing methods in subclasses, declare methods using the same name
+and signature.
 
 ```powershell
 class BaseClass
@@ -780,8 +783,8 @@ class ChildClass1 : BaseClass
 2
 ```
 
-To call base class methods from overridden implementations, cast to the
-base class ([baseclass]$this) on invocation.
+To call base class methods from overridden implementations, cast to the base
+class (`[baseclass]$this`) on invocation.
 
 ```powershell
 class BaseClass
@@ -815,8 +818,7 @@ interface. Omitting the implemention interface members causes a parse-time
 error in the script.
 
 > [!NOTE]
-> PowerShell does not currently support declaring new interfaces in PowerShell
-> script.
+> PowerShell doesn't support declaring new interfaces in PowerShell script.
 
 ```powershell
 class MyComparable : System.IComparable
@@ -839,23 +841,23 @@ class MyComparableBar : bar, System.IComparable
 ## Importing classes from a PowerShell module
 
 `Import-Module` and the `#requires` statement only import the module functions,
-aliases, and variables, as defined by the module. Classes are not imported. The
+aliases, and variables, as defined by the module. Classes aren't imported. The
 `using module` statement imports the classes defined in the module. If the
 module isn't loaded in the current session, the `using` statement fails. For
-more information about the `using` statement, see [about_Using](about_Using.md).
+more information about the `using` statement, see [about_Using][07].
 
 The `using module` statement imports classes from the root module
-(`ModuleToProcess`) of a script module or binary module. It does not
+(`ModuleToProcess`) of a script module or binary module. It doesn't
 consistently import classes defined in nested modules or classes defined in
 scripts that are dot-sourced into the module. Classes that you want to be
 available to users outside of the module should be defined in the root module.
 
 ## Loading newly changed code during development
 
-During development of a script module, it is common to make changes to the code
+During development of a script module, it's common to make changes to the code
 then load the new version of the module using `Import-Module` with the
 **Force** parameter. This works for changes to functions in the root module
-only. `Import-Module` does not reload any nested modules. Also, there is no way
+only. `Import-Module` doesn't reload any nested modules. Also, there is no way
 to load any updated classes.
 
 To ensure that you are running the latest version, you must unload the module
@@ -868,20 +870,29 @@ files. If you have function in one file that use classes defined in another
 module, you should using the `using module` statement to ensure that the
 functions have the class definitions that are needed.
 
-## The PSReference type is not supported with class members
+## The PSReference type isn't supported with class members
 
-Using the `[ref]` type-cast with a class member silently fails. APIs that use
-`[ref]` parameters cannot be used with class members. The **PSReference** class
-was designed to support COM objects. COM objects have cases where you need to
-pass a value in by reference.
+The `[ref]` type accelerator is shorthand for the **PSReference** class. Using
+`[ref]` to type-cast a class member fails silently. APIs that use `[ref]`
+parameters can't be used with class members. The **PSReference** class was
+designed to support COM objects. COM objects have cases where you need to pass
+a value in by reference.
 
-For more information about the `[ref]` type, see
-[PSReference Class](/dotnet/api/system.management.automation.psreference).
+For more information, see [PSReference Class][01].
 
 ## See also
 
-- [about_Enum](about_Enum.md)
-- [About_Hidden](About_Hidden.md)
-- [about_Language_Keywords](about_language_keywords.md)
-- [about_Methods](about_methods.md)
-- [about_Using](about_using.md)
+- [about_Enum][02]
+- [about_Hidden][04]
+- [about_Language_Keywords][05]
+- [about_Methods][06]
+- [about_Using][07]
+
+<!-- link references -->
+[01]: /dotnet/api/system.management.automation.psreference
+[02]: about_Enum.md
+[03]: about_functions_advanced_parameters.md
+[04]: about_Hidden.md
+[05]: about_language_keywords.md
+[06]: about_methods.md
+[07]: about_Using.md
