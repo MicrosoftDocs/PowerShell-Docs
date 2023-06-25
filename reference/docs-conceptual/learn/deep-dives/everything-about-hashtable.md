@@ -1,20 +1,20 @@
 ---
 description: Hashtables are really important in PowerShell so it's good to have a solid understanding of them.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/16/2022
+ms.date: 06/25/2023
 title: Everything you wanted to know about hashtables
 ---
 # Everything you wanted to know about hashtables
 
-I want to take a step back and talk about [hashtables][hashtables]. I use them all the time now. I was
-teaching someone about them after our user group meeting last night and I realized I had the same
-confusion about them as he had. Hashtables are really important in PowerShell so it's good to have a
-solid understanding of them.
+I want to take a step back and talk about [hashtables][hashtables]. I use them all the time now. I
+was teaching someone about them after our user group meeting last night and I realized I had the
+same confusion about them as he had. Hashtables are really important in PowerShell so it's good to
+have a solid understanding of them.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
-> PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][original version] of this article appeared on the blog written by
+> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
+> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
 
 ## Hashtable as a collection of things
 
@@ -24,8 +24,8 @@ for more advanced stuff later. Skipping this understanding is often a source of 
 
 ## What is an array?
 
-Before I jump into what a **Hashtable** is, I need to mention [arrays][arrays] first. For the purpose of
-this discussion, an array is a list or collection of values or objects.
+Before I jump into what a **Hashtable** is, I need to mention [arrays][arrays] first. For the
+purpose of this discussion, an array is a list or collection of values or objects.
 
 ```powershell
 $array = @(1,2,3,5,7,11)
@@ -242,8 +242,10 @@ $environments.Keys | ForEach-Object {
     $environments[$_] = 'SrvDev03'
 }
 
-An error occurred while enumerating through a collection: Collection was modified; enumeration operation may not execute.
-+ CategoryInfo          : InvalidOperation: tableEnumerator:HashtableEnumerator) [], RuntimeException
+An error occurred while enumerating through a collection: Collection was modified;
+enumeration operation may not execute.
++ CategoryInfo          : InvalidOperation: tableEnumerator:HashtableEnumerator) [],
+ RuntimeException
 + FullyQualifiedErrorId : BadEnumeration
 ```
 
@@ -432,7 +434,7 @@ either add the data to the object before you sort it or create a custom expressi
 `Sort-Object`.
 
 ```powershell
-Get-ADUser | Sort-Object -Parameter @{ e={ Get-TotalSales $_.Name } }
+Get-ADUser | Sort-Object -Property @{ e={ Get-TotalSales $_.Name } }
 ```
 
 In this example I'm taking a list of users and using some custom cmdlet to get additional
@@ -458,30 +460,30 @@ $data | Sort-Object -Property @{e={$_.name}}
 
 ## Splatting hashtables at cmdlets
 
-This is one of my favorite things about hashtables that many people don't discover early on.
-The idea is that instead of providing all the properties to a cmdlet on one line, you can instead
-pack them into a hashtable first. Then you can give the hashtable to the function in a special way.
-Here is an example of creating a DHCP scope the normal way.
+This is one of my favorite things about hashtables that many people don't discover early on. The
+idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack
+them into a hashtable first. Then you can give the hashtable to the function in a special way. Here
+is an example of creating a DHCP scope the normal way.
 
 ```powershell
-Add-DhcpServerv4Scope -Name 'TestNetwork' -StartRange'10.0.0.2' -EndRange '10.0.0.254' -SubnetMask '255.255.255.0' -Description 'Network for testlab A' -LeaseDuration (New-TimeSpan -Days 8) -Type "Both"
+Add-DhcpServerV4Scope -Name 'TestNetwork' -StartRange '10.0.0.2' -EndRange '10.0.0.254' -SubnetMask '255.255.255.0' -Description 'Network for testlab A' -LeaseDuration (New-TimeSpan -Days 8) -Type "Both"
 ```
 
-Without using [splatting][splatting], all those things need to be defined on a single line. It either scrolls
-off the screen or will wrap where ever it feels like. Now compare that to a command that uses
-splatting.
+Without using [splatting][splatting], all those things need to be defined on a single line. It
+either scrolls off the screen or will wrap where ever it feels like. Now compare that to a command
+that uses splatting.
 
 ```powershell
 $DHCPScope = @{
-    Name        = 'TestNetwork'
-    StartRange  = '10.0.0.2'
-    EndRange    = '10.0.0.254'
-    SubnetMask  = '255.255.255.0'
-    Description = 'Network for testlab A'
+    Name          = 'TestNetwork'
+    StartRange    = '10.0.0.2'
+    EndRange      = '10.0.0.254'
+    SubnetMask    = '255.255.255.0'
+    Description   = 'Network for testlab A'
     LeaseDuration = (New-TimeSpan -Days 8)
-    Type = "Both"
+    Type          = "Both"
 }
-Add-DhcpServerv4Scope @DHCPScope
+Add-DhcpServerV4Scope @DHCPScope
 ```
 
 The use of the `@` sign instead of the `$` is what invokes the splat operation.
