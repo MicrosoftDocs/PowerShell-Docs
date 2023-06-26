@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/12/2023
+ms.date: 06/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
@@ -270,10 +270,13 @@ and `$null` returns to a PowerShell prompt.
 
 ### -Count
 
-Specifies the number of random objects or numbers to return. The default is 1.
+Specifies the number of random objects to return. The default is 1.
 
-When used with `InputObject`, if the value of **Count** exceeds the number of objects in the
-collection, `Get-Random` returns all the objects in random order.
+When used with `InputObject` containing a collection:
+
+- Each randomly selected item is returned only once.
+- If the value of **Count** exceeds the number of objects in the collection, all objects in the
+  collection are returned in random order.
 
 ```yaml
 Type: System.Int32
@@ -427,9 +430,6 @@ This cmdlet returns an integer or floating-point number, or an object selected r
 submitted collection.
 
 ## NOTES
-
-By default, `Get-Random` generates cryptographically secure randomness using the
-[RandomNumberGenerator](/dotnet/api/system.security.cryptography.randomnumbergenerator) class.
 
 `Get-Random` doesn't always return the same data type as the input value. The following table shows
 the output type for each of the numeric input types.
