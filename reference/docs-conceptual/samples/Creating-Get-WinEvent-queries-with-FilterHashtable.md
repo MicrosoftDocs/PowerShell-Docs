@@ -1,6 +1,6 @@
 ---
 description: This article how to use the FilterHashtable of Get-WinEvent to query the Windows Event logs.
-ms.date: 12/08/2022
+ms.date: 06/28/2023
 title: Creating Get-WinEvent queries with FilterHashtable
 ---
 
@@ -326,7 +326,7 @@ Get-WinEvent -FilterHashtable @{
 [04]: /dotnet/api/system.diagnostics.eventing.reader.standardeventlevel
 [05]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [06]: /powershell/module/microsoft.powershell.diagnostics/Get-WinEvent
-[07]: https://devblogs.microsoft.com/scripting/?s=about+enumeration
+[07]: https://devblogs.microsoft.com/scripting/tag/enum/
 [08]: https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values
 [09]: https://devblogs.microsoft.com/scripting/use-filterhashtable-to-filter-event-log-with-powershell/
 [10]: https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors
