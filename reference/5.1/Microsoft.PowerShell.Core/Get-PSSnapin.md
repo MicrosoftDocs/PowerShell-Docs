@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSSnapin
@@ -127,6 +127,10 @@ You cannot pipe input to this cmdlet.
 
 ## NOTES
 
+Windows PowerShell includes the following aliases for `Get-PSSnapin`:
+
+- `gsnp`
+
 Starting in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell are
 packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style
 sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins
@@ -134,9 +138,9 @@ sessions in later versions of Windows PowerShell, the core commands are packaged
 remote sessions, such as those started by the `New-PSSession` cmdlet, are older-style sessions that
 include core snap-ins.
 
- For information about the **CreateDefault2** method that creates newer-style sessions with core
- modules, see
- [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2).
+For information about the **CreateDefault2** method that creates newer-style sessions with core
+modules, see
+[CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2).
 
 ## RELATED LINKS
 

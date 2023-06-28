@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/suspend-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Suspend-Job
@@ -402,24 +402,31 @@ unsupported type, it returns a terminating error.
 ## OUTPUTS
 
 ### System.Management.Automation.Job
+
 This cmdlet returns the jobs that it suspended.
 
 ## NOTES
 
-- The mechanism and location for saving a suspended job might vary depending on the job type. For
-  example, suspended workflow jobs are saved in a flat file store by default, but can also be saved
-  in a database.
-- If you submit a workflow job that is not in the Running state, `Suspend-Job` displays a warning
-  message. To suppress the warning, use the **WarningAction** common parameter with a value of
-  SilentlyContinue.
+Windows PowerShell includes the following aliases for `Suspend-Job`:
 
-  If a job is not of a type that supports suspending, `Suspend-Job` returns a terminating error.
+- `sujb`
 
-- To find the workflow jobs that are suspended, including those that were suspended by this cmdlet,
-  use the **State** parameter of the `Get-Job` cmdlet to get workflow jobs in the Suspended state.
-- Some job types have options or properties that prevent Windows PowerShell from suspending the job.
-  If attempts to suspend the job fail, verify that the job options and properties allow for
-  suspending.
+The mechanism and location for saving a suspended job might vary depending on the job type. For
+example, suspended workflow jobs are saved in a flat file store by default, but can also be saved in
+a database.
+
+If you submit a workflow job that is not in the Running state, `Suspend-Job` displays a warning
+message. To suppress the warning, use the **WarningAction** common parameter with a value of
+SilentlyContinue.
+
+If a job is not of a type that supports suspending, `Suspend-Job` returns a terminating error.
+
+To find the workflow jobs that are suspended, including those that were suspended by this cmdlet,
+use the **State** parameter of the `Get-Job` cmdlet to get workflow jobs in the Suspended state.
+
+Some job types have options or properties that prevent Windows PowerShell from suspending the job.
+If attempts to suspend the job fail, verify that the job options and properties allow for
+suspending.
 
 ## RELATED LINKS
 

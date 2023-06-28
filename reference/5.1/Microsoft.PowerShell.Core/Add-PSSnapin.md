@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/add-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-PSSnapin
@@ -159,29 +159,37 @@ This cmdlet returns a PSSnapInInfo object that represents the snap-in if you spe
 
 ## NOTES
 
-- Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell
-  are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style
-  sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins
-  (PSSnapins). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also,
-  remote sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that
-  include core snap-ins.
+Windows PowerShell includes the following aliases for `Add-PSSnapin`:
 
-  For information about the **CreateDefault2** method that creates newer-style sessions with core
-  modules, see
-  [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2).
+- `asnp`
 
-- For more information about snap-ins, see [about_PSSnapins](About/about_PSSnapins.md) and
-  [How to Create a Windows PowerShell Snap-in](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in).
-- `Add-PSSnapin` adds the snap-in only to the current session. To add the snap-in to all Windows
-  PowerShell sessions, add it to your Windows PowerShell profile. For more information, see
-  [about_Profiles](About/about_Profiles.md).
-- You can add any snap-in that has been registered using the Microsoft .NET Framework install
-  utility. For more information, see
-  [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
-- To get a list of snap-ins that are registered on your computer, type `Get-PSSnapin -Registered`.
-- Before adding a snap-in, `Add-PSSnapin` checks the version of the snap-in to verify that it is
-  compatible with the current version of Windows PowerShell. If the snap-in fails the version check,
-  Windows PowerShell reports an error.
+Beginning in Windows PowerShell 3.0, the core commands that are installed with Windows PowerShell
+are packaged in modules. In Windows PowerShell 2.0, and in host programs that create older-style
+sessions in later versions of Windows PowerShell, the core commands are packaged in snap-ins
+(PSSnapins). The exception is **Microsoft.PowerShell.Core**, which is always a snap-in. Also, remote
+sessions, such as those started by the New-PSSession cmdlet, are older-style sessions that include
+core snap-ins.
+
+For information about the **CreateDefault2** method that creates newer-style sessions with core
+modules, see
+[CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2).
+
+For more information about snap-ins, see [about_PSSnapins](About/about_PSSnapins.md) and
+[How to Create a Windows PowerShell Snap-in](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in).
+
+`Add-PSSnapin` adds the snap-in only to the current session. To add the snap-in to all Windows
+PowerShell sessions, add it to your Windows PowerShell profile. For more information, see
+[about_Profiles](About/about_Profiles.md).
+
+You can add any snap-in that has been registered using the Microsoft .NET Framework install utility.
+For more information, see
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
+
+To get a list of snap-ins that are registered on your computer, type `Get-PSSnapin -Registered`.
+
+Before adding a snap-in, `Add-PSSnapin` checks the version of the snap-in to verify that it is
+compatible with the current version of Windows PowerShell. If the snap-in fails the version check,
+Windows PowerShell reports an error.
 
 ## RELATED LINKS
 

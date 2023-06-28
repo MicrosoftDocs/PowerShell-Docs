@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-GridView
@@ -290,6 +290,10 @@ When you use the **PassThru** parameter, this cmdlet returns objects representin
 rows.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Out-GridView`:
+
+- `ogv`
 
 You cannot use a remote command to open a grid view window on another computer.
 

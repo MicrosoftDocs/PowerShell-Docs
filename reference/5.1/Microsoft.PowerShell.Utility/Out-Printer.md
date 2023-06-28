@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Printer
@@ -120,6 +120,10 @@ You can pipe any object to this cmdlet.
 This cmdlet returns no output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Out-Printer`:
+
+- `lp`
 
 The cmdlets that contain the `Out` verb do not format objects. They just render them and send them
 to the specified display destination. If you send an unformatted object to an `Out` cmdlet, the

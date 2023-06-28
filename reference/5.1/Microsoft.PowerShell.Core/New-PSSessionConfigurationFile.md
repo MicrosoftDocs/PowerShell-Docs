@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
@@ -1068,24 +1068,29 @@ This cmdlet returns no output.
 
 ## NOTES
 
-- Parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the
-  session. Instead, they select from among the items imported into the session. For example, if the
-  value of the **VisibleProviders** parameter is the Certificate provider, but the
-  **ModulesToImport** parameter does not specify the **Microsoft.PowerShell.Security** module that
-  contains the Certificate provider, the Certificate provider is not visible in the session.
-- `New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name
-  extension in the path that you specify in the **Path** parameter. When you use the session
-  configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet
-  copies the configuration file and saves an active copy of the file in the **SessionConfig**
-  subdirectory of the `$PSHOME` directory.
+Windows PowerShell includes the following aliases for `New-PSSessionConfigurationFile`:
 
-  The **ConfigFilePath** property of the session configuration contains the fully qualified path of
-  the active session configuration file. You can modify the active configuration file in the
-  `$PSHOME` directory at any time using any text editor. The changes that you make affect all new
-  sessions that use the session configuration, but not existing sessions.
+- `npssc`
 
-  Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile`
-  cmdlet to verify that the configuration file entries are valid.
+Parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the
+session. Instead, they select from among the items imported into the session. For example, if the
+value of the **VisibleProviders** parameter is the Certificate provider, but the **ModulesToImport**
+parameter does not specify the **Microsoft.PowerShell.Security** module that contains the
+Certificate provider, the Certificate provider is not visible in the session.
+
+`New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name
+extension in the path that you specify in the **Path** parameter. When you use the session
+configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet
+copies the configuration file and saves an active copy of the file in the **SessionConfig**
+subdirectory of the `$PSHOME` directory.
+
+The **ConfigFilePath** property of the session configuration contains the fully qualified path of
+the active session configuration file. You can modify the active configuration file in the `$PSHOME`
+directory at any time using any text editor. The changes that you make affect all new sessions that
+use the session configuration, but not existing sessions.
+
+Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile` cmdlet
+to verify that the configuration file entries are valid.
 
 ## RELATED LINKS
 

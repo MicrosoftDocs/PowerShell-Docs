@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 01/21/2020
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/invoke-cimmethod?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-CimMethod
@@ -466,6 +466,13 @@ You can pipe a CIM instance to this cmdlet.
 This cmdlet returns an object.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Invoke-CimMethod`:
+
+- Windows:
+  - `icim`
+
+This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 

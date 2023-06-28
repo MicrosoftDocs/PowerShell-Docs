@@ -2,39 +2,39 @@
 author: sdwheeler
 description: Download PowerShell related artwork and posters
 ms.author: sewhee
-ms.date: 05/05/2022
+ms.date: 06/28/2023
 title: PowerShell Digital Art
 ---
 # PowerShell Digital Art
 
-*The legends are true! The powerful shell that ensures safe passage to the cloud. But how?*
+_The legends are true! The powerful shell that ensures safe passage to the cloud. But how?_
 
-Please enjoy the digital artwork linked below. Demonstrate to your peers that *you have been
-entrusted with the Scrolls of Monad!*
+Please enjoy the digital artwork linked below. Demonstrate to your peers that _you have been
+entrusted with the Scrolls of Monad!_
 
-## PowerShell Infographic
+## PowerShell Infographics
 
-- [PowerShell Infographic](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/main/assets/PowerShell_7_Infographic.pdf)
+- [PowerShell Infographic][09]
 
 ## Comic
 
-- [PowerShell Hero Comic (High resolution)](https://aka.ms/powershellherocomic_highres)
-- [PowerShell Hero Comic (Print resolution)](https://aka.ms/powershellherocomic_print)
-- [PowerShell Hero Comic (Web resolution)](https://aka.ms/powershellherocomic_web)
+- [PowerShell Hero Comic (High resolution)][02]
+- [PowerShell Hero Comic (Print resolution)][03]
+- [PowerShell Hero Comic (Web resolution)][04]
 
 ## Wallpaper
 
-- [PowerShell Hero Comic Wallpaper (4k resolution)](https://aka.ms/powershellherowallpaper)
-- [PowerShell Hero Pink Wallpaper (4k resolution)](https://aka.ms/powershellherowallpaper1)
-- [PowerShell Hero White Wallpaper (4k resolution)](https://aka.ms/powershellherowallpaper2)
+- [PowerShell Hero Comic Wallpaper (4k resolution)][06]
+- [PowerShell Hero Pink Wallpaper (4k resolution)][07]
+- [PowerShell Hero White Wallpaper (4k resolution)][08]
 
 ## Poster
 
-- [PowerShell Hero Poster](https://aka.ms/powershellheroposter)
+- [PowerShell Hero Poster][05]
 
 ## PowerShell Hero
 
-- [PowerShell Hero Image](https://aka.ms/powershellhero)
+- [PowerShell Hero Image][01]
 
 ### Microsoft PowerShell Logo and Digital Art Guidelines
 
@@ -49,7 +49,18 @@ Any uses outside of these guidelines as determined by Microsoft is strictly proh
 the Microsoft PowerShell logo or artwork in products, product packaging, or other business services
 for which a formal license is required.
 
-Microsoft reserves the right in its sole discretion to terminate or modify permission to display
-the logo or artwork, and may request that third parties modify or delete any use of the logo or
-artwork that, in Microsoft's sole judgment, does not comply with these guidelines or might
-otherwise impair Microsoft's rights in the logo.
+Microsoft reserves the right in its sole discretion to terminate or modify permission to display the
+logo or artwork, and may request that third parties modify or delete any use of the logo or artwork
+that, in Microsoft's sole judgment, does not comply with these guidelines or might otherwise impair
+Microsoft's rights in the logo.
+
+<!-- link references -->
+[01]: https://aka.ms/powershellhero
+[02]: https://aka.ms/powershellherocomic_highres
+[03]: https://aka.ms/powershellherocomic_print
+[04]: https://aka.ms/powershellherocomic_web
+[05]: https://aka.ms/powershellheroposter
+[06]: https://aka.ms/powershellherowallpaper
+[07]: https://aka.ms/powershellherowallpaper1
+[08]: https://aka.ms/powershellherowallpaper2
+[09]: https://github.com/MicrosoftDocs/PowerShell-Docs/blob/main/assets/PowerShell_7_Infographic.pdf
