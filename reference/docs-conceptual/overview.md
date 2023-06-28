@@ -1,10 +1,10 @@
 ---
 description: This article is an introduction to the PowerShell scripting environment and its features.
 ms.date: 06/28/2023
-title: what's PowerShell?
+title: What is PowerShell?
 ---
 
-# what's PowerShell?
+# What is PowerShell?
 
 PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting
 language, and a configuration management framework. PowerShell runs on Windows, Linux, and macOS.
