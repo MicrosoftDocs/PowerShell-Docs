@@ -1,7 +1,7 @@
 ---
 description: >-
     This article describes the process for contributing quality improvements to the documentation.
-ms.date: 11/03/2022
+ms.date: 06/28/2023
 ms.topic: conceptual
 title: Contributing quality improvements
 ---
@@ -15,7 +15,7 @@ documentation.
 
 We're focusing on these quality areas:
 
-- [Aliases][04]
+<!-- - [Aliases][04] -->
 - [Formatting code samples][05]
 - [Formatting command syntax][06]
 - [Link References][07]
@@ -42,7 +42,7 @@ The project page has several views for the issues and PRs related to this effort
 
 <!-- markdownlint-enable MD044 -->
 
-## Aliases
+<!-- ## Aliases
 
 We're working through documenting the aliases for every cmdlet.
 
@@ -79,7 +79,7 @@ For Windows PowerShell, use one of these formats instead:
    ```md
    Windows Powershell includes no aliases for `<Cmdlet-Name>`.
    ```
-
+-->
 ## Formatting code samples
 
 All code samples should follow the [style guidelines][03] for PowerShell content. Those rules are
@@ -209,7 +209,7 @@ steps:
 [01]: /powershell/scripting/community/contributing/overview#prepare-to-make-a-contribution
 [02]: /powershell/scripting/community/contributing/powershell-style-guide#formatting-command-syntax-elements
 [03]: /powershell/scripting/community/contributing/powershell-style-guide#markdown-for-code-samples
-[04]: #aliases
+<!-- [04]: #aliases -->
 [05]: #formatting-code-samples
 [06]: #formatting-command-syntax
 [07]: #link-references
