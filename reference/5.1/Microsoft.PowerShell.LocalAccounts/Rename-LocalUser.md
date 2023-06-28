@@ -178,9 +178,13 @@ This cmdlet returns no output.
 
 ## NOTES
 
-- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
-  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
-  follows:
+Windows PowerShell includes the following aliases for `Rename-LocalUser`:
+
+- `rnlu`
+
+The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+**LocalPrincipal** objects that describes the source of the object. The possible sources are as
+follows:
 
 - Local
 - Active Directory

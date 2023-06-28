@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/17/2022
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/invoke-wmimethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WmiMethod
@@ -560,6 +560,10 @@ This cmdlet does not accept any input.
 This cmdlet does not generate any output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Invoke-WmiMethod`:
+
+- `iwmi`
 
 ## RELATED LINKS
 

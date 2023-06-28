@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 12/13/2022
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-LocalUser
@@ -141,6 +141,10 @@ You can pipe a SID to this cmdlet.
 This cmdlet returns local user accounts.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-LocalUser`:
+
+- `glu`
 
 The **PrincipalSource** property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects
 describes the source of the object. The possible sources are as follows:

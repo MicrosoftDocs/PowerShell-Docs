@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 05/18/2023
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-LocalUser
@@ -324,16 +324,21 @@ This cmdlet returns a **LocalUser** object representing the created user account
 
 ## NOTES
 
-- A user name can't be identical to any other user name or group name on the computer. A user name
-  can't consist only of periods `.` or spaces. A user name can contain up to 20 uppercase
-  characters or lowercase characters. A user name can't contain the following characters:
+Windows PowerShell includes the following aliases for `New-LocalUser`:
+
+- `nlu`
+
+A user name can't be identical to any other user name or group name on the computer. A user name
+can't consist only of periods `.` or spaces. A user name can contain up to 20 uppercase characters
+or lowercase characters. A user name can't contain the following characters:
 
 `"`, `/`, `\`, `[`, `]`, `:`, `;`, `|`, `=`, `,`, `+`, `*`, `?`, `<`, `>`, `@`
 
-- A password can contain up to 127 characters.
-- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
-  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
-  follows:
+A password can contain up to 127 characters.
+
+The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+**LocalPrincipal** objects that describes the source of the object. The possible sources are as
+follows:
 
   - `Local`
   - `Active Directory`

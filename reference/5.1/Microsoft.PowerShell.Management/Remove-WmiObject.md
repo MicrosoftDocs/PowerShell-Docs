@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/30/2021
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-wmiobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-WmiObject
@@ -439,6 +439,10 @@ This cmdlet returns a job object, if you specify the **AsJob** parameter. Otherw
 generate any output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Remove-WmiObject`:
+
+- `rwmi`
 
 ## RELATED LINKS
 
