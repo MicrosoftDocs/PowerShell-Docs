@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 01/24/2023
+ms.date: 06/28/2023
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -59,17 +59,17 @@ PowerShell 7.2 introduced a universal package that makes installation easier. Do
 package from the [releases][04] page onto the Ubuntu machine. The link to the current
 version is:
 
-- PowerShell 7.3.4 (universal package) for any supported version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell_7.3.4-1.deb_amd64.deb`
-- PowerShell 7.2.11 (universal package) for any supported version of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.11/powershell-lts_7.2.11-1.deb_amd64.deb`
+- PowerShell 7.3.5 (universal package) for any supported version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.5/powershell_7.3.5-1.deb_amd64.deb`
+- PowerShell 7.2.12 (universal package) for any supported version of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.12/powershell-lts_7.2.12-1.deb_amd64.deb`
 
 Use the following shell commands to install the package. Change the filename of the package to match
 the version you downloaded.
 
 ```sh
 # Install the downloaded package
-sudo dpkg -i powershell-lts_7.3.4-1.deb_amd64.deb
+sudo dpkg -i powershell-lts_7.3.5-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
