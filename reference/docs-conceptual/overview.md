@@ -1,6 +1,6 @@
 ---
 description: This article is an introduction to the PowerShell scripting environment and its features.
-ms.date: 05/17/2022
+ms.date: 06/28/2023
 title: What is PowerShell?
 ---
 
@@ -23,7 +23,7 @@ includes the following features:
 
 ## Scripting language
 
-As a scripting language, PowerShell is commonly used for automating the management of systems. It is
+As a scripting language, PowerShell is commonly used for automating the management of systems. It's
 also used to build, test, and deploy solutions, often in CI/CD environments. PowerShell is built on
 the .NET Common Language Runtime (CLR). All inputs and outputs are .NET objects. No need to parse
 text output to extract information from output. The PowerShell scripting language includes the
