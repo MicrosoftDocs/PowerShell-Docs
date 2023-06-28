@@ -57,7 +57,7 @@ issues. Thank you!
 
 - Blog posts
   - [You've got Help!](https://devblogs.microsoft.com/powershell/youve-got-help/)
-  - [Updating help for the PSReadLine module](https://devblogs.microsoft.com/powershell/updating-help-for-the-psreadline-module/)
+  - [Updating help for the PSReadLine module](https://devblogs.microsoft.com/powershell/updating-help-for-the-psreadline-module-in-windows-powershell-5-1/)
 
 - Documentation maintenance
   - Updated 137 articles to remove MSDN and TechNet references
