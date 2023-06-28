@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 12/09/2022
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/set-ciminstance?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-CimInstance
@@ -414,6 +414,13 @@ By default, this cmdlet returns no output.
 When you use the **Passthru** parameter, this cmdlet returns the modified CIM instance object.
 
 ## NOTES
+
+PowerShell includes the following aliases for `Set-CimInstance`:
+
+- Windows:
+  - `scim`
+
+This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 

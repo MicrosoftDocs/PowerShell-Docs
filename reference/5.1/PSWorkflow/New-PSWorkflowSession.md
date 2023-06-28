@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml
 Locale: en-US
 Module Name: PSWorkflow
-ms.date: 12/13/2022
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSWorkflowSession
@@ -394,6 +394,10 @@ You can pipe a computer name to this cmdlet.
 ### System.Management.Automation.Runspaces.PSSession
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `New-PSWorkflowSession`:
+
+- `nwsn`
 
 A `New-PSWorkflowSession` command is equivalent to the following command:
 

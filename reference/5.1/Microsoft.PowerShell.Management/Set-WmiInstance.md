@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/30/2021
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-wmiinstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-WmiInstance
@@ -576,7 +576,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -591,6 +592,10 @@ This cmdlet does not accept input.
 This cmdlet does not generate output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Set-WmiInstance`:
+
+- `swmi`
 
 ## RELATED LINKS
 

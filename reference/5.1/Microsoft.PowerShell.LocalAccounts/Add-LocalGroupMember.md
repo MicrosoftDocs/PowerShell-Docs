@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 12/13/2022
+ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/add-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-LocalGroupMember
@@ -189,6 +189,10 @@ You can pipe a SID to this cmdlet.
 This cmdlet returns no output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Add-LocalGroupMember`:
+
+- `algm`
 
 The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 system.
