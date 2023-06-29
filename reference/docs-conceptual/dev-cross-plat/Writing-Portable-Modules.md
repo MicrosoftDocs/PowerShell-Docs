@@ -53,33 +53,13 @@ dotnet new install Microsoft.PowerShell.Standard.Module.Template
 ```
 
 ```output
-  Restoring packages for C:\Users\Steve\.templateengine\dotnetcli\v2.1.302\scratch\restore.csproj...
-  Installing Microsoft.PowerShell.Standard.Module.Template 0.1.3.
-  Generating MSBuild file C:\Users\Steve\.templateengine\dotnetcli\v2.1.302\scratch\obj\restore.csproj.nuget.g.props.
-  Generating MSBuild file C:\Users\Steve\.templateengine\dotnetcli\v2.1.302\scratch\obj\restore.csproj.nuget.g.targets.
-  Restore completed in 1.66 sec for C:\Users\Steve\.templateengine\dotnetcli\v2.1.302\scratch\restore.csproj.
+The following template packages will be installed:
+   Microsoft.PowerShell.Standard.Module.Template
 
-Usage: new [options]
-
-Options:
-  -h, --help          Displays help for this command.
-  -l, --list          Lists templates containing the specified name. If no name is specified, lists all templates.
-  -n, --name          The name for the output being created. If no name is specified, the name of the current directory is used.
-  -o, --output        Location to place the generated output.
-  -i, --install       Installs a source or a template pack.
-  -u, --uninstall     Uninstalls a source or a template pack.
-  --nuget-source      Specifies a NuGet source to use during install.
-  --type              Filters templates based on available types. Predefined values are "project", "item" or "other".
-  --force             Forces content to be generated even if it would change existing files.
-  -lang, --language   Filters templates based on language and specifies the language of the template to create.
-
-
-Templates                        Short Name         Language          Tags
------------------------------------------------------------------------------------------------
-Console Application              console            [C#], F#, VB      Common/Console
-Class library                    classlib           [C#], F#, VB      Common/Library
-PowerShell Standard Module       psmodule           [C#]              Library/PowerShell/Module
-...
+Success: Microsoft.PowerShell.Standard.Module.Template::0.1.3 installed the following templates:
+Template Name               Short Name  Language  Tags
+--------------------------  ----------  --------  -------------------------
+PowerShell Standard Module  psmodule    [C#]      Library/PowerShell/Module
 ```
 
 ### Creating a new module project
@@ -98,17 +78,12 @@ d----- 8/3/2018 2:41 PM myModule
 
 PS> cd myModule
 PS C:\Users\Steve\myModule> dotnet new psmodule
-
 The template "PowerShell Standard Module" was created successfully.
 
 Processing post-creation actions...
-Running 'dotnet restore' on C:\Users\Steve\myModule\myModule.csproj...
-  Restoring packages for C:\Users\Steve\myModule\myModule.csproj...
-  Installing PowerShellStandard.Library 5.1.0.
-  Generating MSBuild file C:\Users\Steve\myModule\obj\myModule.csproj.nuget.g.props.
-  Generating MSBuild file C:\Users\Steve\myModule\obj\myModule.csproj.nuget.g.targets.
-  Restore completed in 1.76 sec for C:\Users\Steve\myModule\myModule.csproj.
-
+Restoring  C:\Users\Steve\myModule\myModule.csproj:
+  Determining projects to restore...
+  Restored C:\Users\Steve\myModule\myModule.csproj (in 184 ms).
 Restore succeeded.
 ```
 
@@ -122,17 +97,16 @@ dotnet build
 
 ```output
 PS C:\Users\Steve\myModule> dotnet build
-Microsoft (R) Build Engine version 15.7.179.6572 for .NET Core
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-  Restore completed in 76.85 ms for C:\Users\Steve\myModule\myModule.csproj.
-  myModule -> C:\Users\Steve\myModule\bin\Debug\netstandard2.0\myModule.dll
+MSBuild version 17.6.3+07e294721 for .NET
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  PowerShellPG -> C:\Users\Steve\myModule\bin\Debug\netstandard2.0\myModule.dll
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:05.40
+Time Elapsed 00:00:02.36
 ```
 
 ### Testing the module
