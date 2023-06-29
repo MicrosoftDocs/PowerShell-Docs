@@ -49,7 +49,7 @@ The module will be compatible with Windows PowerShell, PowerShell Core, Windows,
 The following example shows how to install the template:
 
 ```powershell
-dotnet new -i Microsoft.PowerShell.Standard.Module.Template
+dotnet new install Microsoft.PowerShell.Standard.Module.Template
 ```
 
 ```output
