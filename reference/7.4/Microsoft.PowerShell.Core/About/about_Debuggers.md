@@ -1,7 +1,7 @@
 ---
 description: Describes the PowerShell debugger.
 Locale: en-US
-ms.date: 08/06/2019
+ms.date: 06/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_debuggers?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Debuggers
@@ -14,7 +14,7 @@ Describes the PowerShell debugger.
 
 ## Long description
 
-Debugging is the process of examining a script while it is running to identify
+Debugging is the process of examining a script while it's running to identify
 and correct errors in the script instructions. The PowerShell debugger can help
 you examine and identify errors and inefficiencies in your scripts, functions,
 commands, PowerShell Desired State Configuration (DSC) configurations, or
@@ -22,23 +22,16 @@ expressions.
 
 Starting in PowerShell 5.0, the PowerShell debugger has been updated to debug
 scripts, functions, commands, configurations, or expressions that are running
-in either the console or Windows PowerShell ISE on remote computers. You can
-run `Enter-PSSession` to start an interactive remote PowerShell session in
-which you can set breakpoints and debug script files and commands on the remote
-computer. `Enter-PSSession` functionality has been updated to let you reconnect
-to and enter a disconnected session that is running a script or command on a
-remote computer. If the running script hits a breakpoint, your client session
-automatically starts the debugger. If the disconnected session that is running
-a script has already hit a breakpoint, and is stopped at the breakpoint,
-`Enter-PSSession` automatically starts the command-line debugger, after you
-reconnect to the session.
+in either the console or Windows PowerShell Integrated Scripting Environment
+(ISE) on remote computers.
 
-You can use the features of the PowerShell debugger to examine a PowerShell
-script, function, command, or expression while it is running. The PowerShell
-debugger includes a set of cmdlets that let you set breakpoints, manage
-breakpoints, and view the call stack.
+> [!NOTE]
+> The Windows PowerShell ISE only support Windows PowerShell. For PowerShell 6
+> and higher you must use the Visual Studio Code with the extension for
+> PowerShell. For more information, see
+> [Debugging with Visual Studio Code][01].
 
-## Debugger Cmdlets
+## Debugger cmdlets
 
 The PowerShell debugger includes the following set of cmdlets:
 
@@ -49,25 +42,26 @@ The PowerShell debugger includes the following set of cmdlets:
 - `Remove-PSBreakpoint`: Deletes breakpoints from the current session.
 - `Get-PSCallStack`: Displays the current call stack.
 
-## Starting and Stopping the Debugger
+## Starting and stopping the debugger
 
-To start the debugger, set one or more breakpoints. Then, run the script,
+To start the debugger, set one or more breakpoints then run the script,
 command, or function that you want to debug.
 
 When you reach a breakpoint, execution stops, and control is turned over to the
 debugger.
 
-To stop the debugger, run the script, command, or function until it is
-complete. Or, type `stop` or `t`.
+To stop the debugger, run the script, command, or function until it's complete.
+Or, type `stop` or `t`.
 
-### Debugger Commands
+## Debugger commands
 
 When you use the debugger in the PowerShell console, use the following commands
 to control the execution. In Windows PowerShell ISE, use commands on the Debug
 menu.
 
-Note: For information about how to use the debugger in other host applications,
-see the host application documentation.
+> [!NOTE]
+> For information about how to use the debugger in other host applications, see
+> the host application documentation.
 
 - `s`, `StepInto`: Executes the next statement and then stops.
 
@@ -88,9 +82,9 @@ see the host application documentation.
   next breakpoint is reached. The skipped statements are executed, but not
   stepped through.
 
-- `l`, `List`: Displays the part of the script that is executing. By default,
-  it displays the current line, five previous lines, and 10 subsequent lines.
-  To continue listing the script, press ENTER.
+- `l`, `List`: Displays the part of the script that's executing. By default, it
+  displays the current line, five previous lines, and 10 subsequent lines. To
+  continue listing the script, press ENTER.
 
 - `l <m>`, `List`: Displays 16 lines of the script beginning with the line
   number specified by `<m>`.
@@ -104,31 +98,31 @@ see the host application documentation.
 
 - `k`, `Get-PsCallStack`: Displays the current call stack.
 
-- `<Enter>`: Repeats the last command if it was Step (s), StepOver (v), or
-  List (l). Otherwise, represents a submit action.
+- `<Enter>`: Repeats the last command if it was `Step` (`s`), `StepOver` (`v`),
+  or `List` (`l`). Otherwise, represents a submit action.
 
 - `?`, `h`: Displays the debugger command Help.
 
-To exit the debugger, you can use Stop (q).
+To exit the debugger, you can use `Stop` (`q`).
 
-Starting in PowerShell 5.0, you can run the Exit command to exit a
-nested debugging session that you started by running either `Debug-Job` or
+Starting in PowerShell 5.0, you can run the Exit command to exit a nested
+debugging session that you started by running either `Debug-Job` or
 `Debug-Runspace`.
 
-By using these debugger commands, you can run a script, stop on a point of
+Using these debugger commands, you can run a script, stop on a point of
 concern, examine the values of variables and the state of the system, and
 continue running the script until you have identified a problem.
 
-NOTE: If you step into a statement with a redirection operator, such as ">",
-the PowerShell debugger steps over all remaining statements in the script.
+> [!NOTE]
+> If you step into a statement with a redirection operator, such as `>`, the
+> PowerShell debugger steps over all remaining statements in the script.
 
-Displaying the Values of script Variables
+## Displaying the values of script variables
 
 While you are in the debugger, you can also enter commands, display the value
-of variables, use cmdlets, and run scripts at the command line.
-
-You can display the current value of all variables in the script that is being
-debugged, except for the following automatic variables:
+of variables, use cmdlets, and run scripts at the command line. You can display
+the current value of all variables in the script that's being debugged, except
+for the following automatic variables:
 
 ```powershell
 $_
@@ -138,53 +132,36 @@ $MyInvocation
 $PSBoundParameters
 ```
 
-If you try to display the value of any of these variables, you get the value of
-that variable for in an internal pipeline the debugger uses, not the value of
-the variable in the script.
+When you display the value of any of these variables, you get the value of that
+variable for an internal pipeline the debugger uses, not the value of the
+variable in the script.
 
-To display the value these variables for the script that is being debugged, in
-the script, assign the value of the automatic variable to a new variable. Then
-you can display the value of the new variable.
+To display the value these variables for the script that's being debugged, add
+lines to your script to save these values to a new variable. Set your
+breakpoint after these new lines. Then you can display the value of the new
+variable.
 
 For example,
 
 ```powershell
 $scriptArgs = $Args
-$scriptArgs
-```
-
-In the example in this topic, the value of the `$MyInvocation` variable is
-reassigned as follows:
-
-```powershell
 $scriptname = $MyInvocation.PSCommandPath
 ```
 
-## The Debugger Environment
+## The debugger environment
 
 When you reach a breakpoint, you enter the debugger environment. The command
-prompt changes so that it begins with "[DBG]:".
+prompt changes so that it begins with "[DBG]:". Also, in some host
+applications, such as the PowerShell console, a nested prompt opens for
+debugging. You can detect the nested prompt by the repeating greater-than
+characters (ASCII 62) that appear at the command prompt.
 
-For more information about customizing the prompt, see [about_Prompts](about_prompts.md).
-
-Also, in some host applications, such as the PowerShell console, (but not in
-Windows PowerShell Integrated Scripting Environment [ISE]), a nested prompt
-opens for debugging. You can detect the nested prompt by the repeating
-greater-than characters (ASCII 62) that appear at the command prompt.
-
-For example, the following is the default debugging prompt in the PowerShell
-console:
-
-```
-[DBG]: PS (get-location)>>>
-```
+For more information about customizing the prompt, see [about_Prompts][02].
 
 You can find the nesting level by using the `$NestedPromptLevel` automatic
-variable.
-
-Additionally, an automatic variable, `$PSDebugContext`, is defined in the local
-scope. You can use the presence of the `$PsDebugContext` variable to determine
-whether you are in the debugger.
+variable. The automatic variable, `$PSDebugContext`, is defined in the local
+scope. You can use the presence of the `$PSDebugContext` variable to determine
+whether you are running within the debugger.
 
 For example:
 
@@ -202,12 +179,11 @@ Name   CommandLineParameters  UnboundArguments  Location
 =      {}                     {}                C:\ps-test\vote.ps1 (1)
 ```
 
-## Debugging and Scope
+## Debugging and scope
 
-Breaking into the debugger does not change the scope in which you are
-operating, but when you reach a breakpoint in a script, you move into the
-script scope. The script scope is a child of the scope in which you ran the
-debugger.
+Breaking into the debugger doesn't change the scope in which you are operating,
+but when you reach a breakpoint in a script, you move into the script scope.
+The script scope is a child of the scope in which you ran the debugger.
 
 To find the variables and aliases that are defined in the script scope, use the
 Scope parameter of the `Get-Alias` or `Get-Variable` cmdlets.
@@ -219,16 +195,10 @@ scope:
 Get-Variable -scope 0
 ```
 
-You can abbreviate the command as:
-
-```powershell
-gv -s 0
-```
-
 This is a useful way to see only the variables that you defined in the script
 and that you defined while debugging.
 
-Debugging at the Command Line
+## Debugging at the command line
 
 When you set a variable breakpoint or a command breakpoint, you can set the
 breakpoint only in a script file. However, by default, the breakpoint is set on
@@ -242,12 +212,12 @@ This allows you to debug your scripts in a more realistic context in which they
 might be affected by functions, variables, and other scripts in the session and
 in the user's profile.
 
-Line breakpoints are specific to script files, so they are set only in script
+Line breakpoints are specific to script files, so they're set only in script
 files.
 
-## Debugging Functions
+## Debugging functions
 
-When you set a breakpoint on a function that has `Begin`, `Process`, and `End`
+When you set a breakpoint on a function that has `begin`, `process`, and `end`
 sections, the debugger breaks at the first line of each section.
 
 For example:
@@ -292,26 +262,29 @@ Hit Command breakpoint on 'prompt:test-cmdlet'
 
 test-cmdlet
 
-# [DBG]: C:\PS>
+[DBG]: C:\PS>
 ```
 
-## Debugging Remote Scripts
+## Debugging remote scripts
 
-Starting in PowerShell 5.0, you can run the PowerShell debugger in a
-remote session, in either the console, or Windows PowerShell ISE.
-`Enter-PSSession` functionality has been updated to let you reconnect to and
-enter a disconnected session that is running on a remote computer, and
-currently running a script. If the running script hits a breakpoint, your
-client session automatically starts the debugger.
+You can run `Enter-PSSession` to start an interactive remote PowerShell session
+in which you can set breakpoints and debug script files and commands on the
+remote computer. `Enter-PSSession` lets you reconnect a disconnected session
+that's running a script or command on a remote computer. If the running script
+hits a breakpoint, your client session automatically starts the debugger. If
+the disconnected session that's running a script has already hit a breakpoint,
+`Enter-PSSession` automatically starts the command-line debugger, when you
+reconnect to the session.
 
-The following is an example that shows how this works, with breakpoints set in
-a script at lines 6, 11, 22, and 25. Note that in the example, when the
-debugger starts, there are two identifying prompts: the name of the computer on
-which the session is running, and the DBG prompt that lets you know you are in
-debugging mode.
+The following example shows how this works. Breakpoints have been set at lines
+6, 11, 22, and 25 of the script. When the debugger starts, there are two
+identifying changes to the prompt:
+
+- The name of the computer on which the session is running
+- The DBG prompt that lets you know you are in debugging mode
 
 ```powershell
-Enter-Pssession -Cn localhost
+Enter-PSSession -Cn localhost
 [localhost]: PS C:\psscripts> Set-PSBreakpoint .\ttest19.ps1 6,11,22,25
 
 ID Script          Line     Command          Variable          Action
@@ -363,8 +336,8 @@ PS C:\psscripts>
 
 ## Examples
 
-This test script detects the version of the operating system and displays a
-system-appropriate message. It includes a function, a function call, and a
+This test script detects the version of PowerShell and displays a
+version-appropriate message. It includes a function, a function call, and a
 variable.
 
 The following command displays the contents of the test script file:
@@ -374,8 +347,8 @@ PS C:\PS-test>  Get-Content test.ps1
 
 function psversion {
   "PowerShell " + $PSVersionTable.PSVersion
-  if ($PSVersionTable.PSVersion.Major -lt 6) {
-    "Upgrade to PowerShell 6.0!"
+  if ($PSVersionTable.PSVersion.Major -lt 7) {
+    "Upgrade to PowerShell 7!"
   }
   else {
     "Have you run a background job today (start-job)?"
@@ -397,16 +370,9 @@ the current directory.
 PS C:\ps-test> Set-PSBreakpoint -line 1 -script test.ps1
 ```
 
-You can abbreviate this command as:
+The command returns a **System.Management.Automation.LineBreakpoint** object.
 
-```powershell
-PS C:\ps-test> spb 1 -s test.ps1
-```
-
-The command returns a line-breakpoint object
-(**System.Management.Automation.LineBreakpoint**).
-
-```
+```Output
 Column     : 0
 Line       : 1
 Action     :
@@ -437,7 +403,7 @@ Entering debug mode. Use h or ? for help.
 Hit Line breakpoint on 'C:\ps-test\test.ps1:1'
 
 test.ps1:1   function psversion {
-# DBG>
+DBG>
 ```
 
 Use the Step command (s) to execute the first statement in the script and to
@@ -450,18 +416,18 @@ DBG> s
 test.ps1:11  $scriptName = $MyInvocation.PSCommandPath
 ```
 
-At this point, the `$scriptName` variable is not populated, but you can verify
+At this point, the `$scriptName` variable isn't populated, but you can verify
 the value of the variable by displaying its value. In this case, the value is
 `$null`.
 
 ```powershell
 DBG> $scriptname
-# DBG>
+DBG>
 ```
 
-Use another Step command (s) to execute the current statement and to preview
-the next statement in the script. The next statement calls the PsVersion
-function.
+Use another `Step` command (`s`) to execute the current statement and to
+preview the next statement in the script. The next statement calls the
+`psversion` function.
 
 ```powershell
 DBG> s
@@ -498,7 +464,7 @@ Have you run a background job today (start-job)?
 test.ps1:13  "Done $scriptName"
 ```
 
-Because we are on the last statement in the script, the Step, StepOut, and
+Because we're on the last statement in the script, the Step, StepOut, and
 Continue commands have the same effect. In this case, use StepOut (o).
 
 ```powershell
@@ -554,23 +520,23 @@ Hit Variable breakpoint on 'C:\ps-test\test.ps1:$scriptName'
 (Write access)
 
 test.ps1:11  $scriptName = $MyInvocation.PSCommandPath
-# DBG>
+DBG>
 ```
 
 Display the current value of the `$scriptName` variable, which is `$null`.
 
 ```powershell
 DBG> $scriptName
-# DBG>
+DBG>
 ```
 
-Use a Step command (s) to execute the statement that populates the variable.
-Then, display the new value of the `$scriptName` variable.
+Use a `Step` command (`s`) to execute the statement that populates the
+variable. Then, display the new value of the `$scriptName` variable.
 
 ```powershell
 DBG> $scriptName
 C:\ps-test\test.ps1
-```powershell
+```
 
 Use a Step command (s) to preview the next statement in the script.
 
@@ -579,10 +545,10 @@ DBG> s
 test.ps1:12  psversion
 ```
 
-The next statement is a call to the PsVersion function. To skip the function
-but still execute it, use a StepOver command (v). If you are already in the
-function when you use StepOver, it is not effective. The function call is
-displayed, but it is not executed.
+The next statement is a call to the `psversion` function. To skip the function
+but still execute it, use a `StepOver` command (`v`). If you are already in the
+function when you use `StepOver`, it isn't effective. The function call is
+displayed, but it isn't executed.
 
 ```powershell
 DBG> v
@@ -591,11 +557,11 @@ Have you run a background job today (start-job)?
 test.ps1:13  "Done $scriptName"
 ```
 
-The StepOver command executes the function, and it previews the next statement
+The `StepOver` command executes the function, and it previews the next statement
 in the script, which prints the final line.
 
-Use a Stop command (t) to exit the debugger. The command prompt reverts to the
-standard command prompt.
+Use a `Stop` command (`t`) to exit the debugger. The command prompt reverts to
+the standard command prompt.
 
 ```powershell
 C:\ps-test>
@@ -608,7 +574,7 @@ cmdlets.
 PS C:\ps-test> Get-PSBreakpoint| Remove-PSBreakpoint
 ```
 
-Create a new command breakpoint on the PsVersion function.
+Create a new command breakpoint on the `psversion` function.
 
 ```powershell
 PS C:\ps-test> Set-PSBreakpoint -command psversion -script test.ps1
@@ -627,18 +593,18 @@ PS C:\ps-test> .\test.ps1
 Hit Command breakpoint on 'C:\ps-test\test.ps1:psversion'
 
 test.ps1:12  psversion
-# DBG>
+DBG>
 ```
 
 The script reaches the breakpoint at the function call. At this point, the
-function has not yet been called. This gives you the opportunity to use the
+function hasn't yet been called. This gives you the opportunity to use the
 Action parameter of `Set-PSBreakpoint` to set conditions for the execution of
 the breakpoint or to perform preparatory or diagnostic tasks, such as starting
 a log or invoking a diagnostic or security script.
 
 To set an action, use a Continue command (c) to exit the script, and a
 `Remove-PsBreakpoint` command to delete the current breakpoint. (Breakpoints
-are read-only, so you cannot add an action to the current breakpoint.)
+are read-only, so you can't add an action to the current breakpoint.)
 
 ```powershell
 DBG> c
@@ -652,9 +618,9 @@ PS C:\ps-test>
 
 Now, create a new command breakpoint with an action. The following command sets
 a command breakpoint with an action that logs the value of the `$scriptName`
-variable when the function is called. Because the Break keyword is not used in
-the action, execution does not stop. (The backtick (`` ` ``) is the
-line-continuation character.)
+variable when the function is called. Because the `break` keyword isn't used in
+the action, execution doesn't stop. The backtick (`` ` ``) is the
+line-continuation character.
 
 ```powershell
 PS C:\ps-test> Set-PSBreakpoint -command psversion -script test.ps1  `
@@ -665,17 +631,17 @@ PS C:\ps-test> Set-PSBreakpoint -command psversion -script test.ps1  `
 You can also add actions that set conditions for the breakpoint. In the
 following command, the command breakpoint is executed only if the execution
 policy is set to RemoteSigned, the most restrictive policy that still permits
-you to run scripts. (The backtick (`` ` ``) is the continuation character.)
+you to run scripts.
 
 ```powershell
 PS C:\ps-test> Set-PSBreakpoint -script test.ps1 -command psversion `
 -action { if ((Get-ExecutionPolicy) -eq "RemoteSigned") { break }}
 ```
 
-The Break keyword in the action directs the debugger to execute the breakpoint.
-You can also use the Continue keyword to direct the debugger to execute without
-breaking. Because the default keyword is Continue, you must specify Break to
-stop execution.
+The `break` keyword in the action directs the debugger to execute the
+breakpoint. You can also use the `continue` keyword to direct the debugger to
+execute without breaking. Because the default keyword is `continue`, you must
+specify `break` to stop execution.
 
 Now, run the script.
 
@@ -690,7 +656,7 @@ Because the execution policy is set to **RemoteSigned**, execution stops at the
 function call.
 
 At this point, you might want to check the call stack. Use the
-`Get-PsCallStack` cmdlet or the `Get-PsCallStack` debugger command (k). The
+`Get-PsCallStack` cmdlet or the `Get-PsCallStack` debugger command (`k`). The
 following command gets the current call stack.
 
 ```powershell
@@ -703,32 +669,17 @@ DBG> k
 This example demonstrates just a few of the many ways to use the PowerShell
 debugger.
 
-For more information about the debugger cmdlets, type the following command:
-
-```powershell
-help <cmdlet-name> -full
-```
-
-For example, type:
-
-```powershell
-help Set-PSBreakpoint -full
-```
-
 ## Other Debugging Features in PowerShell
 
 In addition to the PowerShell debugger, PowerShell includes several other
 features that you can use to debug scripts and functions.
-
-- Windows PowerShell ISE includes an interactive graphical debugger. For more
-  information, start Windows PowerShell ISE and press F1.
 
 - The `Set-PSDebug` cmdlet offers very basic script debugging features,
   including stepping and tracing.
 
 - Use the `Set-StrictMode` cmdlet to detect references to uninitialized
   variables, to references to non-existent properties of an object, and to
-  function syntax that is not valid.
+  function syntax that isn't valid.
 
 - Add diagnostic statements to a script, such as statements that display the
   value of variables, statements that read input from the command line, or
@@ -738,11 +689,23 @@ features that you can use to debug scripts and functions.
 
 ## See also
 
-- [Disable-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Disable-PSBreakpoint)
-- [Enable-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Enable-PSBreakpoint)
-- [Get-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Get-PSBreakpoint)
-- [Remove-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Remove-PSBreakpoint)
-- [Set-PSBreakpoint](xref:Microsoft.PowerShell.Utility.Set-PSBreakpoint)
-- [Get-PSCallStack](xref:Microsoft.PowerShell.Utility.Get-PSCallStack)
-- [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
-- [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)
+- [Disable-PSBreakpoint][05]
+- [Enable-PSBreakpoint][06]
+- [Get-PSBreakpoint][07]
+- [Remove-PSBreakpoint][09]
+- [Set-PSBreakpoint][10]
+- [Get-PSCallStack][08]
+- [Write-Debug][11]
+- [Write-Verbose][12]
+
+<!-- link references -->
+[01]: /powershell/scripting/dev-cross-plat/vscode/using-vscode#debugging-with-visual-studio-code
+[02]: about_prompts.md
+[05]: xref:Microsoft.PowerShell.Utility.Disable-PSBreakpoint
+[06]: xref:Microsoft.PowerShell.Utility.Enable-PSBreakpoint
+[07]: xref:Microsoft.PowerShell.Utility.Get-PSBreakpoint
+[08]: xref:Microsoft.PowerShell.Utility.Get-PSCallStack
+[09]: xref:Microsoft.PowerShell.Utility.Remove-PSBreakpoint
+[10]: xref:Microsoft.PowerShell.Utility.Set-PSBreakpoint
+[11]: xref:Microsoft.PowerShell.Utility.Write-Debug
+[12]: xref:Microsoft.PowerShell.Utility.Write-Verbose
