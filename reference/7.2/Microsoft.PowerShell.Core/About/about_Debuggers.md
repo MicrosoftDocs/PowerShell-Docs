@@ -26,7 +26,7 @@ in either the console or Windows PowerShell Integrated Scripting Environment
 (ISE) on remote computers.
 
 > [!NOTE]
-> The Windows PowerShell ISE only support Windows PowerShell. For PowerShell 6
+> The Windows PowerShell ISE only supports Windows PowerShell. For PowerShell 6
 > and higher you must use the Visual Studio Code with the extension for
 > PowerShell. For more information, see
 > [Debugging with Visual Studio Code][01].

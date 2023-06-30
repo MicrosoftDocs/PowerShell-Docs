@@ -26,7 +26,7 @@ in either the console or Windows PowerShell Integrated Scripting Environment
 (ISE) on remote computers.
 
 > [!NOTE]
-> The Windows PowerShell ISE only support Windows PowerShell. For PowerShell 6
+> The Windows PowerShell ISE only supports Windows PowerShell. For PowerShell 6
 > and higher you must use the Visual Studio Code with the extension for
 > PowerShell. For more information, see
 > [Debugging with Visual Studio Code][01].
@@ -214,6 +214,91 @@ in the user's profile.
 
 Line breakpoints are specific to script files, so they're set only in script
 files.
+
+## Debugging workflows
+
+The debugger can be used to debug PowerShell workflows, either in the
+PowerShell console, or in Windows PowerShell ISE. There are some limitations
+with using the PowerShell debugger to debug workflows.
+
+- You can view workflow variables while you are in the debugger, but setting
+  workflow variables from within the debugger isn't supported.
+- Tab completion when stopped in the workflow debugger isn't available.
+- Workflow debugging works only with synchronous running of workflows from a
+  PowerShell script. You can't debug workflows if they're running as a job
+  (with the **AsJob** parameter).
+- Other nested debugging scenarios, such as a workflow calling another workflow
+  or a workflow calling a script, aren't implemented.
+
+The following example demonstrates debugging a workflow. When the debugger
+steps into the workflow function, the debugger prompt changes to `[WFDBG]`.
+
+```powershell
+PS C:> Set-PSBreakpoint -Script C:\TestWFDemo1.ps1 -Line 8
+ID Script           Line Command    Variable     Action
+-- ------           ---- -------    --------     ------
+0 TestWFDemo1.ps1   8
+PS C:> C:\TestWFDemo1.ps1
+Entering debug mode. Use h or ? for help.
+Hit Line breakpoint on 'C:\TestWFDemo1.ps1:8'
+At C:\TestWFDemo1.ps1:8 char:5
++     Write-Output -InputObject "Now writing output:"
+# ~~~~~
+[WFDBG:localhost]: PS C:>> list
+# 3:
+4:  workflow SampleWorkflowTest
+5:  {
+6:      param ($MyOutput)
+# 7:
+8:*     Write-Output -InputObject "Now writing output:"
+9:      Write-Output -Input $MyOutput
+# 10:
+11:      Write-Output -InputObject "Get PowerShell process:"
+12:      Get-Process -Name powershell
+# 13:
+
+14:      Write-Output -InputObject "Workflow function complete."
+15:  }
+# 16:
+17:  # Call workflow function
+18:  SampleWorkflowTest -MyOutput "Hello"
+[WFDBG:localhost]: PS C:>> $MyOutput
+Hello
+[WFDBG:localhost]: PS C:>> stepOver
+Now writing output:
+At C:\TestWFDemo1.ps1:9 char:5
++     Write-Output -Input $MyOutput
+# +!INCLUDE[]~
+[WFDBG:localhost]: PS C:>> list
+4:  workflow SampleWorkflowTest
+5:  {
+6:      param ($MyOutput)
+# 7:
+8:      Write-Output -InputObject "Now writing output:"
+9:*     Write-Output -Input $MyOutput
+# 10:
+11:      Write-Output -InputObject "Get PowerShell process:"
+12:      Get-Process -Name powershell
+# 13:
+14:      Write-Output -InputObject "Workflow function complete."
+15:  }
+# 16:
+17:  # Call workflow function
+18:  SampleWorkflowTest -MyOutput "Hello"
+# 19:
+[WFDBG:localhost]: PS C:>> stepOver
+Hello
+At C:\TestWFDemo1.ps1:11 char:5
++     Write-Output -InputObject "Get PowerShell process:"
+# +!INCLUDE[]~~~~~~~~~
+[WFDBG:localhost]: PS C:>> stepOut
+Get PowerShell process:
+Handles  NPM(K)    PM(K)    WS(K) VM(M)   CPU(s)     Id ProcessName
+-------  ------    -----    ----- -----   ------     -- -----------
+    433      35   106688   128392   726     2.67   7124 powershell
+    499      44   134244   172096   787     2.79   7452 powershell
+Workflow function complete.
+```
 
 ## Debugging functions
 
