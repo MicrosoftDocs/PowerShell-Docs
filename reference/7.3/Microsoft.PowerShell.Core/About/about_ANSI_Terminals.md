@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 03/02/2023
+ms.date: 06/30/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -22,10 +22,10 @@ PowerShell engine to support the output of ANSI-decorated text.
 ## ANSI Terminal support
 
 The ANSI features are designed to be compatible with the xterm-based terminals.
-For more information, see [xterm][1] in Wikipedia.
+For more information, see [xterm][05] in Wikipedia.
 
 On Windows 10 and higher, the Windows Console Host is xterm compatible. The
-[Windows Terminal][2] application is also xterm compatible.
+[Windows Terminal][06] application is also xterm compatible.
 
 On macOS, the default terminal application is xterm compatible.
 
@@ -86,7 +86,7 @@ The following members control how or when ANSI formatting is used:
     plain text.
   - `Host`: This is the default behavior. The ANSI escape sequences are removed
     from redirected or piped output. For more information, see
-    [Redirecting output][14].
+    [Redirecting output][02].
 
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
@@ -174,16 +174,17 @@ The following members control how or when ANSI formatting is used:
 
 ## Cmdlets that generate ANSI output
 
-- The markdown cmdlets - the [Show-Markdown][5] cmdlet displays the contents of
-  a file containing markdown text. The output is rendered using ANSI sequences
-  to represent different styles. You can manage the definitions of the styles
-  using the [Get-MarkdownOption][6] and [Set-MarkdownOption][7] cmdlets.
+- The markdown cmdlets - the [Show-Markdown][11] cmdlet displays the contents
+  of a file containing markdown text. The output is rendered using ANSI
+  sequences to represent different styles. You can manage the definitions of
+  the styles using the [Get-MarkdownOption][08] and [Set-MarkdownOption][10]
+  cmdlets.
 - PSReadLine cmdlets - the PSReadLine module uses ANSI sequences to colorize
   PowerShell syntax elements on the command line. The colors can be managed
-  using [Get-PSReadLineOption][8] and [Set-PSReadLineOption][9].
-- `Get-Error` - the [Get-Error][10] cmdlet returns a detailed view of an
+  using [Get-PSReadLineOption][13] and [Set-PSReadLineOption][14].
+- `Get-Error` - the [Get-Error][07] cmdlet returns a detailed view of an
   **Error** object, formatted to make it easier to read.
-- `Select-String` - Beginning with PowerShell 7.0, [Select-String][11] uses
+- `Select-String` - Beginning with PowerShell 7.0, [Select-String][09] uses
   ANSI sequences to highlight the matching patterns in the output.
 - `Write-Progress` - ANSI output is managed using `$PSStyle.Progress`, as
   described above. For more information, see [Write-Progress][12]
@@ -216,7 +217,7 @@ in the `bash` process, outside of the PowerShell host, the output isn't
 affected by **OutputRendering**.
 
 ```bash
-$ pwsh -noprofile -command 'Get-Childitem' > out.txt
+pwsh -noprofile -command 'Get-Childitem' > out.txt
 ```
 
 When you inspect the contents of `out.txt` you see the ANSI escape sequences.
@@ -225,7 +226,7 @@ By contrast, when redirection occurs within the PowerShell session,
 **OutputRendering** affects the redirected output.
 
 ```bash
-$ pwsh -noprofile -command 'Get-Childitem > out.txt'
+pwsh -noprofile -command 'Get-Childitem > out.txt'
 ```
 
 When you inspect the contents of `out.txt` there are no ANSI escape sequences.
@@ -243,7 +244,7 @@ The following values of `$env:TERM` change the behavior as follows:
 
 If `$env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
 **PlainText**. For more information about the **NO_COLOR** environment
-variable, see [https://no-color.org/][13].
+variable, see [https://no-color.org/][04].
 
 ## Using `$PSStyle` from C\#
 
@@ -276,21 +277,26 @@ The PowerShell engine includes the following changes:
   escape sequences removed is returned.
 - The `FormatHyperlink(string text, uri link)` method returns a string
   containing ANSI escape sequences used to decorate hyperlinks. Some terminal
-  hosts, like the [Windows Terminal][2], support this markup, which makes the
+  hosts, like the [Windows Terminal][06], support this markup, which makes the
   rendered text clickable in the terminal.
 
+## See also
+
+- [about_Experimental_Features][03]
+- [Using Experimental Features][01]
+
 <!-- link references -->
-[1]: https://wikipedia.org/wiki/Xterm
-[2]: https://www.microsoft.com/p/windows-terminal/9n0dx20hk701
-[3]: about_Experimental_Features.md
-[4]: /powershell/scripting/learn/experimental-features
-[5]: xref:Microsoft.PowerShell.Utility.Show-Markdown
-[6]: xref:Microsoft.PowerShell.Utility.Get-MarkdownOption
-[7]: xref:Microsoft.PowerShell.Utility.Set-MarkdownOption
-[8]: xref:PSReadLine.Get-PSReadLineOption
-[9]: xref:PSReadLine.Set-PSReadLineOption
-[10]: xref:Microsoft.PowerShell.Utility.Get-Error
-[11]: xref:Microsoft.PowerShell.Utility.Select-String
+[01]: /powershell/scripting/learn/experimental-features
+[02]: #redirecting-output-in-host-mode
+[03]: about_Experimental_Features.md
+[04]: https://no-color.org/
+[05]: https://wikipedia.org/wiki/Xterm
+[06]: https://www.microsoft.com/p/windows-terminal/9n0dx20hk701
+[07]: xref:Microsoft.PowerShell.Utility.Get-Error
+[08]: xref:Microsoft.PowerShell.Utility.Get-MarkdownOption
+[09]: xref:Microsoft.PowerShell.Utility.Select-String
+[10]: xref:Microsoft.PowerShell.Utility.Set-MarkdownOption
+[11]: xref:Microsoft.PowerShell.Utility.Show-Markdown
 [12]: xref:Microsoft.PowerShell.Utility.Write-Progress
-[13]: https://no-color.org/
-[14]: #redirecting-output-in-host-mode
+[13]: xref:PSReadLine.Get-PSReadLineOption
+[14]: xref:PSReadLine.Set-PSReadLineOption

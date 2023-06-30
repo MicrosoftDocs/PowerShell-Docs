@@ -18,40 +18,39 @@ Sends ICMP echo request packets, or pings, to one or more computers.
 ### DefaultPing (Default)
 
 ```
-Test-Connection [-Ping] [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
- [-Count <Int32>] [-Delay <Int32>] [-BufferSize <Int32>] [-DontFragment] [-Quiet]
- [-TimeoutSeconds <Int32>] [-TargetName] <String[]> [-Detailed] [<CommonParameters>]
+Test-Connection [-TargetName] <string[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Source <string>] [-MaxHops <int>] [-Count <int>] [-Delay <int>] [-BufferSize <int>]
+ [-DontFragment] [-Quiet] [-TimeoutSeconds <int>] [<CommonParameters>]
 ```
 
 ### RepeatPing
 
 ```
-Test-Connection [-Ping] [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
- [-Delay <Int32>] [-BufferSize <Int32>] [-DontFragment] [-Repeat] [-Quiet] [-TimeoutSeconds <Int32>]
- [-TargetName] <String[]> [-Detailed] [<CommonParameters>]
+Test-Connection [-TargetName] <string[]> -Repeat [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Source <string>] [-MaxHops <int>] [-Delay <int>] [-BufferSize <int>] [-DontFragment] [-Quiet]
+ [-TimeoutSeconds <int>] [<CommonParameters>]
 ```
 
 ### TraceRoute
 
 ```
-Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-MaxHops <Int32>]
- [-Quiet] [-TimeoutSeconds <Int32>] [-TargetName] <String[]> [-Traceroute] [-Detailed]
- [<CommonParameters>]
+Test-Connection [-TargetName] <string[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Source <string>] [-MaxHops <int>] [-Quiet] [-TimeoutSeconds <int>] [<CommonParameters>]
 ```
 
 ### MtuSizeDetect
 
 ```
-Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-Quiet] [-TimeoutSeconds <Int32>]
- [-TargetName] <String[]> [-MtuSize] [-Detailed] [<CommonParameters>]
+Test-Connection [-TargetName] <string[]> -MtuSize [-IPv4] [-IPv6] [-ResolveDestination] [-Quiet]
+ [-TimeoutSeconds <int>] [<CommonParameters>]
 ```
 
 ### TcpPort
 
 ```
-Test-Connection [-IPv4] [-IPv6] [-ResolveDestination] [-Source <String>] [-Count <Int32>]
- [-Delay <Int32>] [-Repeat] [-Quiet] [-TimeoutSeconds <Int32>] [-TargetName] <String[]>
- -TcpPort <Int32> [-Detailed] [<CommonParameters>]
+Test-Connection [-TargetName] <string[]> -TcpPort <int> [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Source <string>] [-Count <int>] [-Delay <int>] [-Repeat] [-Quiet] [-TimeoutSeconds <int>]
+ [-Detailed] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -251,7 +250,7 @@ Specifies the number of echo requests to send. The default value is 4.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: DefaultPing
+Parameter Sets: DefaultPing, TcpPort
 Aliases:
 
 Required: False
@@ -286,7 +285,7 @@ This parameter was added in PowerShell 7.4.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: TcpPort
 Aliases:
 
 Required: False
@@ -428,7 +427,7 @@ Causes the cmdlet to send ping requests continuously. This parameter can't be us
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: RepeatPing
+Parameter Sets: RepeatPing, TcpPort
 Aliases: Continuous
 
 Required: True (RepeatPing), False (TcpPort)
@@ -496,12 +495,12 @@ Accept wildcard characters: False
 
 ### -TcpPort
 
-Specifies the TCP port number on the target to be used in the TCP connection test. The cmdlet will
-attempt to make a TCP connection to the specified port on the target.
+Specifies the TCP port number on the target to be used in the TCP connection test.
 
-If a connection can be made, `$True` will be returned.
+The cmdlet attempts to make a TCP connection to the specified port on the target.
 
-If a connection cannot be made, `$False` will be returned.
+- The cmdlet returns `$True` if a connection is made.
+- The cmdlet returns `$False` if a connection is not made.
 
 ```yaml
 Type: System.Int32
