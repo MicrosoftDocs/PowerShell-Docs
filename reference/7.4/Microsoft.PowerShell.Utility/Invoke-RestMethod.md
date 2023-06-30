@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/16/2023
+ms.date: 06/30/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -18,71 +18,75 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 ### StandardMethod (Default)
 
 ```
-Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
- [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+Invoke-RestMethod [-Uri] <uri> [-FollowRelLink] [-MaximumFollowRelLink <int>]
+ [-ResponseHeadersVariable <string>] [-StatusCodeVariable <string>] [-UseBasicParsing]
+ [-HttpVersion <version>] [-WebSession <WebRequestSession>] [-SessionVariable <string>]
+ [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <pscredential>] [-UseDefaultCredentials] [-CertificateThumbprint <string>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
- [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
- [-RetryIntervalSec <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-PreserveHttpMethodOnRedirect]
- [-SkipHeaderValidation] [<CommonParameters>]
+ [-Token <securestring>] [-UserAgent <string>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <int>] [-OperationTimeoutSeconds <int>] [-Headers <IDictionary>]
+ [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <int>]
+ [-MaximumRetryCount <int>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <int>]
+ [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect] [-Proxy <uri>]
+ [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
+ [-Form <IDictionary>] [-ContentType <string>] [-TransferEncoding <string>] [-InFile <string>]
+ [-OutFile <string>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
 
 ```
-Invoke-RestMethod [-Method <WebRequestMethod>] [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
- [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
+Invoke-RestMethod [-Uri] <uri> -NoProxy [-FollowRelLink] [-MaximumFollowRelLink <int>]
+ [-ResponseHeadersVariable <string>] [-StatusCodeVariable <string>] [-UseBasicParsing]
+ [-HttpVersion <version>] [-WebSession <WebRequestSession>] [-SessionVariable <string>]
  [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Credential <pscredential>] [-UseDefaultCredentials] [-CertificateThumbprint <string>]
  [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
- [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
- [-RetryIntervalSec <Int32>] -NoProxy [-Body <Object>] [-Form <IDictionary>]
- [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
- [-PassThru] [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect]
- [-PreserveHttpMethodOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
+ [-Token <securestring>] [-UserAgent <string>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <int>] [-OperationTimeoutSeconds <int>] [-Headers <IDictionary>]
+ [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <int>]
+ [-MaximumRetryCount <int>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <int>]
+ [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect] [-Body <Object>]
+ [-Form <IDictionary>] [-ContentType <string>] [-TransferEncoding <string>] [-InFile <string>]
+ [-OutFile <string>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### CustomMethod
 
 ```
-Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
- [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
- [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
- [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
- [-RetryIntervalSec <Int32>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect] [-PreserveHttpMethodOnRedirect]
- [-SkipHeaderValidation] [<CommonParameters>]
+Invoke-RestMethod [-Uri] <uri> -CustomMethod <string> [-FollowRelLink]
+ [-MaximumFollowRelLink <int>] [-ResponseHeadersVariable <string>] [-StatusCodeVariable <string>]
+ [-UseBasicParsing] [-HttpVersion <version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <string>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <pscredential>] [-UseDefaultCredentials]
+ [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
+ [-SslProtocol <WebSslProtocol>] [-Token <securestring>] [-UserAgent <string>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <int>] [-OperationTimeoutSeconds <int>] [-Headers <IDictionary>]
+ [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <int>]
+ [-MaximumRetryCount <int>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <int>]
+ [-PreserveHttpMethodOnRedirect] [-Proxy <uri>] [-ProxyCredential <pscredential>]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <string>]
+ [-TransferEncoding <string>] [-InFile <string>] [-OutFile <string>] [-PassThru] [-Resume]
+ [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
 
 ```
-Invoke-RestMethod -CustomMethod <String> [-FollowRelLink] [-MaximumFollowRelLink <Int32>]
- [-ResponseHeadersVariable <String>] [-StatusCodeVariable <String>] [-UseBasicParsing] [-Uri] <Uri>
- [-HttpVersion <Version>] [-WebSession <WebRequestSession>] [-SessionVariable <String>]
- [-AllowInsecureRedirect] [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
- [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
- [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive] [-TimeoutSec <Int32>]
- [-Headers <IDictionary>] [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
- [-RetryIntervalSec <Int32>] -NoProxy [-Body <Object>] [-Form <IDictionary>]
- [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
- [-PassThru] [-Resume] [-SkipHttpErrorCheck] [-PreserveAuthorizationOnRedirect]
- [-PreserveHttpMethodOnRedirect] [-SkipHeaderValidation] [<CommonParameters>]
+Invoke-RestMethod [-Uri] <uri> -CustomMethod <string> -NoProxy [-FollowRelLink]
+ [-MaximumFollowRelLink <int>] [-ResponseHeadersVariable <string>] [-StatusCodeVariable <string>]
+ [-UseBasicParsing] [-HttpVersion <version>] [-WebSession <WebRequestSession>]
+ [-SessionVariable <string>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <pscredential>] [-UseDefaultCredentials]
+ [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
+ [-SslProtocol <WebSslProtocol>] [-Token <securestring>] [-UserAgent <string>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <int>] [-OperationTimeoutSeconds <int>] [-Headers <IDictionary>]
+ [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <int>]
+ [-MaximumRetryCount <int>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <int>]
+ [-PreserveHttpMethodOnRedirect] [-Body <Object>] [-Form <IDictionary>] [-ContentType <string>]
+ [-TransferEncoding <string>] [-InFile <string>] [-OutFile <string>] [-PassThru] [-Resume]
+ [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -472,6 +476,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ConnectionTimeoutSeconds
+
+Specifies how long the request can be pending before it times out. Enter a value in seconds. The
+default value, 0, specifies an indefinite time-out.
+
+A Domain Name System (DNS) query can take up to 15 seconds to return or time out. If your request
+contains a host name that requires resolution, and you set **ConnectionTimeoutSeconds** to a value
+greater than zero, but less than 15 seconds, it can take 15 seconds or more before a
+**WebException** is thrown, and your request times out.
+
+This parameter replaced the **TimeoutSec** parameter in PowerShell 7.4-preview.4. You can use
+**TimeoutSec** as an alias for **ConnectionTimeoutSeconds**.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: TimeoutSec
+
+Required: False
+Position: Named
+Default value: 0
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ContentType
 
 Specifies the content type of the web request.
@@ -551,7 +580,7 @@ This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: System.String
-Parameter Sets: CustomMethodNoProxy, CustomMethod
+Parameter Sets: CustomMethod, CustomMethodNoProxy
 Aliases: CM
 
 Required: True
@@ -819,6 +848,27 @@ Aliases:
 Required: True
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OperationTimeoutSeconds
+
+This timeout applies to data reads within a stream, not to the stream time as a whole. The default
+value, 0, specifies an indefinite timeout.
+
+Setting the value to 30 seconds means that any delay of longer than 30 seconds between data in the
+stream terminates the request. A large file that takes several minutes to download won't terminate
+unless the stream stalls for more than 30 seconds.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1214,28 +1264,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TimeoutSec
-
-Specifies how long the request can be pending before it times out. Enter a value in seconds. The
-default value, 0, specifies an indefinite time-out.
-
-A Domain Name System (DNS) query can take up to 15 seconds to return or time out. If your request
-contains a host name that requires resolution, and you set **TimeoutSec** to a value greater than
-zero, but less than 15 seconds, it can take 15 seconds or more before a WebException is thrown, and
-your request times out.
-
-```yaml
-Type: System.Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Token
 
 The OAuth or Bearer token to include in the request. **Token** is required by certain
@@ -1398,7 +1426,7 @@ Accept wildcard characters: False
 ### CommonParameters
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
--InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -ProgressAction, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
