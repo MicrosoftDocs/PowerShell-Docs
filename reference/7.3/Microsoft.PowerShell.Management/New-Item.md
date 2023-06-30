@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/16/2023
+ms.date: 06/30/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -355,6 +355,10 @@ Accept wildcard characters: False
 Forces this cmdlet to create an item that writes over an existing read-only item. Implementation
 varies from provider to provider. Even using the **Force** parameter, the cmdlet can't override
 security restrictions.
+
+You can't use **Force** to overwrite an existing Junction. Attempts to overwrite an existing
+Junction fail with a "cannot be removed because it is not empty" error. You must remove the
+existing Junction before creating a new one.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
