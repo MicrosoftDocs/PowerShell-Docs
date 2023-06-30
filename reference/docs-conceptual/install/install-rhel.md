@@ -24,19 +24,8 @@ updates.
 
 On RHEL 9:
 
-```sh
-# Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/9.0/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-
-# Install PowerShell
-sudo dnf install --assumeyes powershell
-
-# Start PowerShell
-pwsh
-```
-
-As superuser, register the Microsoft repository once. After registration, you can update PowerShell
-with `sudo dnf upgrade powershell`.
+The PowerShell RPMs aren't published to the RHEL 9 repository yet. For RHEL 9, you need to
+[install PowerShell via direct download](#installation-via-direct-download).
 
 On RHEL 8:
 
