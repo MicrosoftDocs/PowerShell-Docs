@@ -27,6 +27,14 @@ For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository
 The Windows MSI package now provides an option to disable PowerShell telemetry during installation.
 For more information, see [Install the msi package from the command line][01].
 
+## PowerShellGet v3
+
+As of PowerShell 7.4-preview.4, **Microsoft.PowerShell.PSResourceGet** (also known as PowerShellGet
+v3) is now included in PowerShell 7.4. This module is installed side-by-side with **PowerShellGet**
+v2.2.5 and **PackageManagement** v1.4.8.1.
+
+For more information, see the documentation for [Microsoft.PowerShell.PSResourceGet][14].
+
 ## Tab completion improvements
 
 Many thanks to **@MartinGC94** and others for all the work on improving tab completion.
@@ -201,6 +209,8 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [09]: ../learn/experimental-features.md#psconstrainedauditlogging
 [10]: ../learn/experimental-features.md#psnativecommandpreservebytepipe
 [11]: ../learn/experimental-features.md#pswindowsnativecommandargpassing
+
+[14]: /powershell/module/microsoft.powershell.psresourceget
 [15]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 [14953]: https://github.com/PowerShell/PowerShell/pull/14953
 [17191]: https://github.com/PowerShell/PowerShell/pull/17191
