@@ -1,32 +1,35 @@
 ---
 title: What's New in PowerShell 7.4 (preview)
 description: New features and changes released in PowerShell 7.4 (preview)
-ms.date: 03/21/2023
+ms.date: 06/30/2023
 ---
 
 # What's New in PowerShell 7.4 (preview)
 
-PowerShell 7.4-preview.2 includes the following features, updates, and breaking changes. PowerShell
-7.4 is now built on .NET 8.0.0-preview.2.
+PowerShell 7.4-preview.4 includes the following features, updates, and breaking changes. PowerShell
+7.4 is now built on .NET 8.0.0-preview.4.
 
-
-For a complete list of changes, see the [Change Log][01] in the GitHub repository.
+For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository.
 
 ## Breaking changes
 
 - Nano server docker images aren't available for this release
-- Add the **ProgressAction** parameter to the common parameters
+- Added the **ProgressAction** parameter to the Common Parameters
 - Update some PowerShell APIs to throw **ArgumentException** instead of **ArgumentNullException**
   when the argument is an empty string ([#19215][19215]) (Thanks @xtqqczze!)
+- Remove code related to #requires -pssnapin ([#19320][19320])
+- `Test-Json` now uses Json.Schema.Net instead of Newtonsoft.Json.Schema. With this change,
+  `Test-Json` no longer supports the older Draft 4 schemas. ([#18141][18141]) (Thanks @gregsdennis!)
+- Output from`Test-Connection` now includes more detailed information about TCP connection tests
 
 ## Installer updates
 
 The Windows MSI package now provides an option to disable PowerShell telemetry during installation.
-For more information, see [Install the msi package from the command line][02].
+For more information, see [Install the msi package from the command line][01].
 
 ## Tab completion improvements
 
-Many thanks to [@MartinGC94][03] for all the work on improving tab completion.
+Many thanks to **@MartinGC94** and others for all the work on improving tab completion.
 
 - Fix issue when completing the first command in a script with an empty array expression
   ([[#18355][18355])
@@ -42,13 +45,31 @@ Many thanks to [@MartinGC94][03] for all the work on improving tab completion.
 - Add property assignment completion for enums ([#19178][19178])
 - Fix completion for PSCustomObject variable properties ([#18682][18682])
 - Fix member completion in attribute argument ([#17902][17902])
+- Exclude redundant parameter aliases from completion results ([#19382][19382])
 - Fix class member completion for classes with base types ([#19179][19179])
 - Add completion for Using keywords ([#16514][18758])
+- Fix TabExpansion2 variable leak when completing variables ([#18763][18763])
+- Enable completion of variables across ScriptBlock scopes ([#19819][19819])
+- Fix completion of the foreach statement variable ([#19814][19814])
+- Fix variable type inference precedence ([#18691][18691])
+- Fix member completion for PowerShell Enum class ([#19740][19740])
+- Fix parsing for array literals in index expressions in method calls ([#19224][19224])
+- Improve path completion ([#19489][19489])
+- Fix an indexing out of bound error in CompleteInput for empty script input ([#19501][19501])
+- Improve variable completion performance ([#19595][19595])
+- Improve Hashtable key completion for type constrained variable assignments, nested Hashtables and
+  more ([#17660][17660])
+- Infer external application output as strings ([#19193][19193])
+- Update parameter completion for enums to exclude values not allowed by `ValidateRange` attributes
+  ([#17750][17750]) (Thanks @fflaten!).
 
-## Cmdlet and engine improvements
+## Web cmdlet improvements
 
-Update to Web cmdlets - Many thanks to [@CarloToso][04] for all the work on improving web cmdlets.
+Many thanks to **@CarloToso** and others for all the work on improving web cmdlets.
 
+- Webcmdlets add 308 to redirect codes and small cleanup ([#18536][18536])
+- Complete the progress bar rendering in Invoke-WebRequest when downloading is complete or cancelled
+  ([#18130][18130])
 - Web cmdlets get **Retry-After** interval from response headers if the status code is 429
   ([#18717][18717])
 - Web cmdlets set default charset encoding to UTF8 ([#18219][18219])
@@ -57,24 +78,36 @@ Update to Web cmdlets - Many thanks to [@CarloToso][04] for all the work on impr
 - Fix using xml -Body in webcmdlets without an encoding ([#19281][19281])
 - Adjust PUT method behavior to POST one for default content type in WebCmdlets ([#19152][19152])
 - Take into account ContentType from Headers in WebCmdlets ([#19227][19227])
-- Allow to preserve the original HTTP method by adding -PreserveHttpMethodOnRedirect to Web cmdlets
-  ([#18894][18894])
+- Allow to preserve the original HTTP method by adding **-PreserveHttpMethodOnRedirect** to Web
+  cmdlets ([#18894][18894])
 - Webcmdlets display an error on https to http redirect ([#18595][18595])
-- Add AllowInsecureRedirect switch to Web cmdlets ([#18546][18546])
+- Add **AllowInsecureRedirect** switch to Web cmdlets ([#18546][18546])
 - Improve verbose message in web cmdlets when content length is unknown ([#19252][19252])
-- Build the relative URI for links from the response in Invoke-WebRequest ([#19092][19092])
-- Fix redirection for -CustomMethod POST in WebCmdlets ([#19111][19111])
+- Build the relative URI for links from the response in `Invoke-WebRequest` ([#19092][19092])
+- Fix redirection for `-CustomMethod POST` in WebCmdlets ([#19111][19111])
 - Dispose previous response in Webcmdlets ([#19117][19117])
-- Improve Invoke-WebRequest xml and json errors format ([#18837][18837])
-- Add ValidateNotNullOrEmpty to OutFile and InFile parameters of WebCmdlets ([#19044][19044])
+- Improve `Invoke-WebRequest` xml and json errors format ([#18837][18837])
+- Add ValidateNotNullOrEmpty to **OutFile** and **InFile** parameters of WebCmdlets
+  ([#19044][19044])
 - HttpKnownHeaderNames update headers list ([#18947][18947])
-- Invoke-RestMethod -FollowRelLink fix links containing commas ([#18829][18829])
+- `Invoke-RestMethod -FollowRelLink` fix links containing commas ([#18829][18829])
 - Fix bug with managing redirection and KeepAuthorization in Web cmdlets ([#18902][18902])
-- Add StatusCode to HttpResponseException ([#18842][18842])
+- Add **StatusCode** to **HttpResponseException** ([#18842][18842])
 - Support HTTP persistent connections in Web Cmdlets ([#19249][19249]) (Thanks @stevenebutler!)
+- Small cleanup `Invoke-RestMethod` ([#19490][19490])
+- Improve the verbose message of WebCmdlets to show correct HTTP version ([#19616][19616])
+- Add **FileNameStar** to **MultipartFileContent** in WebCmdlets ([#19467][19467])
+- Fix HTTP status from 409 to 429 for WebCmdlets to get retry interval from Retry-After header.
+  ([#19622][19622]) (Thanks @mkht!)
+- Change `-TimeoutSec` to `-ConnectionTimeoutSeconds` and add `-OperationTimeoutSeconds` to web
+  cmdlets ([#19558][19558]) (Thanks @stevenebutler!) Other cmdlets
+- Support Ctrl+c when connection hangs while reading data in WebCmdlets ([#19330][19330]) (Thanks
+  @stevenebutler!)
 
-Other cmdlets
+## Other cmdlet improvements
 
+- Add output types to Format commands ([#18746][18746]) (Thanks @MartinGC94!)
+- Add output type attributes for `Get-WinEvent` ([#17948][17948]) (Thanks @MartinGC94!)
 - Add **Path** and **LiteralPath** parameters to `Test-Json` cmdlet ([#19042][19042]) (Thanks
   @ArmaanMcleod!)
 - Add **NoHeader** parameter to `ConvertTo-Csv` and `Export-Csv` cmdlets ([#19108][19108]) (Thanks
@@ -87,6 +120,19 @@ Other cmdlets
 - Add progress to `Copy-Item` ([#18735][18735])
 - `Update-Help` now reports an error when using implicit culture on non-US systems.
   ([#17780][17780]) (Thanks @dkaszews!)
+- Do not require activity when creating a completed progress record ([#18474][18474]) (Thanks
+  @MartinGC94!)
+- Disallow negative values for `Get-Content` cmdlet parameters `-Head` and `-Tail`
+  ([#19715][19715]) (Thanks @CarloToso!)
+- Make `Update-Help` throw proper error when current culture is not associated with a language
+  ([#19765][19765]) (Thanks @josea!)
+- Allow combining of `-Skip` and `-SkipLast` parameters in `Select-Object` cmdlet.
+  ([#18849][18849]) (Thanks @ArmaanMcleod!)
+- Add `Get-SecureRandom` cmdlet ([#19587][19587])
+- `Set-Clipboard -AsOSC52` for remote usage ([#18222][18222]) (Thanks @dkaszews!)
+- Speed up `Resolve-Path` relative path resolution ([#19171][19171]) (Thanks @MartinGC94!)
+
+## Engine improvements
 
 Updates to `$PSStyle`
 
@@ -94,6 +140,7 @@ Updates to `$PSStyle`
 - Added static methods to the **PSStyle** class that map foreground and background **ConsoleColor**
   values to ANSI escape sequences ([#17938][17938])
 - New formatting properties added by experimental features
+- Add support of respecting `$PSStyle.OutputRendering` on the remote host ([#19601][19601])
 
 Other Engine updates
 
@@ -102,6 +149,12 @@ Other Engine updates
 - Add the `ValidateNotNullOrWhiteSpace` attribute ([#17191][17191]) (Thanks @wmentha!)
 - Add `sqlcmd` to the list for legacy argument passing ([#18559][18559])
 - Add the function `cd~` ([#18308][18308]) (Thanks @GigaScratch!)
+- Fix array type parsing in generic types ([#19205][19205]) (Thanks @MartinGC94!)
+- Fix wildcard globbing in root of device paths ([#19442][19442]) (Thanks @MartinGC94!)
+- Add a public API for getting locations of PSModulePath elements ([#19422][19422])
+- Fix incorrect string to type conversion ([#19560][19560]) (Thanks @MartinGC94!)
+- Fix slow execution when many breakpoints are used ([#14953][14953]) (Thanks @nohwnd!)
+- Remove code related to `#requires -pssnapin` ([#19320][19320])
 
 ## Experimental Features
 
@@ -117,16 +170,23 @@ PowerShell 7.4 introduces the following experimental features:
     `$PSStyle.Formatting` that allow you to change the formatting of feedback messages.
 - [PSModuleAutoLoadSkipOfflineFiles][07] - Module discovery now skips over files that are marked by
   cloud providers as not fully on disk.
-- [PSCommandWithArgs][08] - Add support for passing arguments to commands as a single string
+- [PSCommandWithArgs][04] - Add support for passing arguments to commands as a single string
+- [PSConstrainedAuditLogging][09] - Add support for logging message about code that would not be
+  allowed in Constrained language mode
+- [PSNativeCommandPreserveBytePipe][10] - Preserves the byte-stream data when redirecting the
+  **stdout** stream of a native command to a file or when piping byte-stream data to the stdin
+  stream of a native command.
+- [PSWindowsNativeCommandArgPassing][11] - Changes the default value of
+  `$PSNativeCommandArgumentPassing` on Windows
 
 PowerShell 7.4 changed the following experimental features:
 
-- [PSNativeCommandErrorActionPreference][09] - `$PSNativeCommandUseErrorActionPreference` is set to
+- [PSNativeCommandErrorActionPreference][08] - `$PSNativeCommandUseErrorActionPreference` is set to
   `$true` when feature is enabled ([#18695][18695])
-- [PSCommandNotFoundSuggestion][10] - This feature now uses an extensible feedback provider rather
+- [PSCommandNotFoundSuggestion][03] - This feature now uses an extensible feedback provider rather
   than hard-coded suggestions ([#18726][18726])
 
-For more information about the Experimental Features, see [Using Experimental Features][11].
+For more information about the Experimental Features, see [Using Experimental Features][02].
 
 <!-- end of content -->
 <!-- reference links -->
@@ -138,40 +198,54 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [06]: ../learn/experimental-features.md#psfeedbackprovider
 [07]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
 [08]: ../learn/experimental-features.md#psnativecommanderroractionpreference
-[09]: https://github.com/CarloToso
-[10]: https://github.com/MartinGC94
-[11]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
+[09]: ../learn/experimental-features.md#psconstrainedauditlogging
+[10]: ../learn/experimental-features.md#psnativecommandpreservebytepipe
+[11]: ../learn/experimental-features.md#pswindowsnativecommandargpassing
+[15]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
+[14953]: https://github.com/PowerShell/PowerShell/pull/14953
 [17191]: https://github.com/PowerShell/PowerShell/pull/17191
 [17654]: https://github.com/PowerShell/PowerShell/pull/17654
+[17660]: https://github.com/PowerShell/PowerShell/pull/17660
+[17750]: https://github.com/PowerShell/PowerShell/pull/17750
 [17780]: https://github.com/PowerShell/PowerShell/pull/17780
 [17796]: https://github.com/PowerShell/PowerShell/pull/17796
 [17799]: https://github.com/PowerShell/PowerShell/pull/17799
 [17902]: https://github.com/PowerShell/PowerShell/pull/17902
 [17907]: https://github.com/PowerShell/PowerShell/pull/17907
 [17938]: https://github.com/PowerShell/PowerShell/pull/17938
+[17948]: https://github.com/PowerShell/PowerShell/pull/17948
 [18030]: https://github.com/PowerShell/PowerShell/pull/18030
+[18130]: https://github.com/PowerShell/PowerShell/pull/18130
 [18138]: https://github.com/PowerShell/PowerShell/pull/18138
+[18141]: https://github.com/PowerShell/PowerShell/pull/18141
 [18219]: https://github.com/PowerShell/PowerShell/pull/18219
+[18222]: https://github.com/PowerShell/PowerShell/pull/18222
 [18261]: https://github.com/PowerShell/PowerShell/pull/18261
 [18308]: https://github.com/PowerShell/PowerShell/pull/18308
 [18351]: https://github.com/PowerShell/PowerShell/pull/18351
 [18355]: https://github.com/PowerShell/PowerShell/pull/18355
+[18474]: https://github.com/PowerShell/PowerShell/pull/18474
+[18536]: https://github.com/PowerShell/PowerShell/pull/18536
 [18546]: https://github.com/PowerShell/PowerShell/pull/18546
 [18559]: https://github.com/PowerShell/PowerShell/pull/18559
 [18595]: https://github.com/PowerShell/PowerShell/pull/18595
 [18653]: https://github.com/PowerShell/PowerShell/pull/18653
 [18682]: https://github.com/PowerShell/PowerShell/pull/18682
+[18691]: https://github.com/PowerShell/PowerShell/pull/18691
 [18695]: https://github.com/PowerShell/PowerShell/pull/18695
 [18717]: https://github.com/PowerShell/PowerShell/pull/18717
 [18726]: https://github.com/PowerShell/PowerShell/pull/18726
 [18731]: https://github.com/PowerShell/PowerShell/pull/18731
 [18735]: https://github.com/PowerShell/PowerShell/pull/18735
+[18746]: https://github.com/PowerShell/PowerShell/pull/18746
 [18748]: https://github.com/PowerShell/PowerShell/pull/18748
 [18755]: https://github.com/PowerShell/PowerShell/pull/18755
 [18758]: https://github.com/PowerShell/PowerShell/pull/18758
+[18763]: https://github.com/PowerShell/PowerShell/pull/18763
 [18829]: https://github.com/PowerShell/PowerShell/pull/18829
 [18837]: https://github.com/PowerShell/PowerShell/pull/18837
 [18842]: https://github.com/PowerShell/PowerShell/pull/18842
+[18849]: https://github.com/PowerShell/PowerShell/pull/18849
 [18894]: https://github.com/PowerShell/PowerShell/pull/18894
 [18902]: https://github.com/PowerShell/PowerShell/pull/18902
 [18947]: https://github.com/PowerShell/PowerShell/pull/18947
@@ -183,12 +257,37 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [19111]: https://github.com/PowerShell/PowerShell/pull/19111
 [19117]: https://github.com/PowerShell/PowerShell/pull/19117
 [19152]: https://github.com/PowerShell/PowerShell/pull/19152
+[19171]: https://github.com/PowerShell/PowerShell/pull/19171
 [19178]: https://github.com/PowerShell/PowerShell/pull/19178
 [19179]: https://github.com/PowerShell/PowerShell/pull/19179
 [19190]: https://github.com/PowerShell/PowerShell/pull/19190
+[19193]: https://github.com/PowerShell/PowerShell/pull/19193
+[19205]: https://github.com/PowerShell/PowerShell/pull/19205
 [19215]: https://github.com/PowerShell/PowerShell/pull/19215
+[19224]: https://github.com/PowerShell/PowerShell/pull/19224
 [19227]: https://github.com/PowerShell/PowerShell/pull/19227
 [19249]: https://github.com/PowerShell/PowerShell/pull/19249
 [19252]: https://github.com/PowerShell/PowerShell/pull/19252
 [19281]: https://github.com/PowerShell/PowerShell/pull/19281
 [19298]: https://github.com/PowerShell/PowerShell/pull/19298
+[19320]: https://github.com/PowerShell/PowerShell/pull/19320
+[19330]: https://github.com/PowerShell/PowerShell/pull/19330
+[19382]: https://github.com/PowerShell/PowerShell/pull/19382
+[19422]: https://github.com/PowerShell/PowerShell/pull/19422
+[19442]: https://github.com/PowerShell/PowerShell/pull/19442
+[19467]: https://github.com/PowerShell/PowerShell/pull/19467
+[19489]: https://github.com/PowerShell/PowerShell/pull/19489
+[19490]: https://github.com/PowerShell/PowerShell/pull/19490
+[19501]: https://github.com/PowerShell/PowerShell/pull/19501
+[19558]: https://github.com/PowerShell/PowerShell/pull/19558
+[19560]: https://github.com/PowerShell/PowerShell/pull/19560
+[19587]: https://github.com/PowerShell/PowerShell/pull/19587
+[19595]: https://github.com/PowerShell/PowerShell/pull/19595
+[19601]: https://github.com/PowerShell/PowerShell/pull/19601
+[19616]: https://github.com/PowerShell/PowerShell/pull/19616
+[19622]: https://github.com/PowerShell/PowerShell/pull/19622
+[19715]: https://github.com/PowerShell/PowerShell/pull/19715
+[19740]: https://github.com/PowerShell/PowerShell/pull/19740
+[19765]: https://github.com/PowerShell/PowerShell/pull/19765
+[19814]: https://github.com/PowerShell/PowerShell/pull/19814
+[19819]: https://github.com/PowerShell/PowerShell/pull/19819
