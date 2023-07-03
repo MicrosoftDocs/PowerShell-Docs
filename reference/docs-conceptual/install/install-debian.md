@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Debian Linux
-ms.date: 06/28/2023
+ms.date: 07/03/2023
 title: Installing PowerShell on Debian Linux
 ---
 # Installing PowerShell on Debian Linux
@@ -32,9 +32,6 @@ PowerShell for Linux is published to package repositories for easy installation 
 The preferred method is as follows:
 
 ```sh
-# Install system components
-sudo apt update  && sudo apt install -y curl gnupg apt-transport-https
-
 # Save the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --yes --dearmor --output /usr/share/keyrings/microsoft.gpg
 
