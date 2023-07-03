@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/05/2023
+ms.date: 07/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
@@ -53,7 +53,7 @@ Get-Process -InputObject <Process[]> -IncludeUserName [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Get-Process` cmdlet gets the processes on a local or remote computer.
+The `Get-Process` cmdlet gets the processes on a local computer.
 
 Without parameters, this cmdlet gets all of the processes on the local computer. You can also
 specify a particular process by process name or process ID (PID) or pass a process object through
@@ -246,8 +246,6 @@ process.
 On Windows Vista and later versions of Windows, you must open PowerShell with the **Run as
 administrator** option to use this parameter on processes that you do not own.
 
-To get file version information for a process on a remote computer, use the `Invoke-Command` cmdlet.
-
 Using this parameter is equivalent to getting the **MainModule.FileVersionInfo** property of each
 process object. When you use this parameter, `Get-Process` returns a **FileVersionInfo** object
 **System.Diagnostics.FileVersionInfo**, not a process object. So, you cannot pipe the output of the
@@ -260,7 +258,7 @@ Aliases: FV, FVI
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -322,15 +320,12 @@ Indicates that this cmdlet gets the modules that have been loaded by the process
 On Windows Vista and later versions of Windows, you must open PowerShell with the **Run as
 administrator** option to use this parameter on processes that you do not own.
 
-To get the modules that have been loaded by a process on a remote computer, use the `Invoke-Command`
-cmdlet.
-
 This parameter is equivalent to getting the **Modules** property of each process object. When you
 use this parameter, this cmdlet returns a **ProcessModule** object
 **System.Diagnostics.ProcessModule**, not a process object. So, you cannot pipe the output of the
 command to a cmdlet that expects a process object, such as `Stop-Process`.
 
-When you use both the *Module* and **FileVersionInfo** parameters in the same command, this cmdlet
+When you use both the **Module** and **FileVersionInfo** parameters in the same command, this cmdlet
 returns a **FileVersionInfo** object with information about the file version of all modules.
 
 ```yaml
@@ -340,7 +335,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -399,29 +394,34 @@ PowerShell includes the following aliases for `Get-Process`:
 - Windows:
   - `ps`
 
-- You can also refer to this cmdlet by its built-in aliases, `ps` and `gps`. For more information,
-  see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-- On computers that are running a 64-bit version of Windows, the 64-bit version of PowerShell gets
-  only 64-bit process modules and the 32-bit version of PowerShell gets only 32-bit process modules.
-- You can use the properties and methods of the Windows Management Instrumentation (WMI)
-  **Win32_Process** object in PowerShell. For information, see `Get-WmiObject` and the WMI SDK.
-- The default display of a process is a table that includes the following columns. For a description
-  of all of the properties of process objects, see
-  [Process Properties](/dotnet/api/system.diagnostics.process).
-  - **Handles**: The number of handles that the process has opened.
-  - **NPM(K)**: The amount of non-paged memory that the process is using, in kilobytes.
-  - **PM(K)**: The amount of pageable memory that the process is using, in kilobytes.
-  - **WS(K)**: The size of the working set of the process, in kilobytes. The working set consists of
-    the pages of memory that were recently referenced by the process.
-  - **VM(M)**: The amount of virtual memory that the process is using, in megabytes. Virtual memory
-    includes storage in the paging files on disk.
-  - **CPU(s)**: The amount of processor time that the process has used on all processors, in
-    seconds.
-  - **ID**: The process ID (PID) of the process.
-  - **ProcessName**: The name of the process. For explanations of the concepts related to processes,
-    see the Glossary in Help and Support Center and the Help for Task Manager.
-- You can also use the built-in alternate views of the processes available with `Format-Table`, such
-  as **StartTime** and **Priority**, and you can design your own views.
+On computers that are running a 64-bit version of Windows, the 64-bit version of PowerShell gets
+only 64-bit process modules and the 32-bit version of PowerShell gets only 32-bit process modules.
+
+To get process information from a remote computer, use the `Invoke-Command` cmdlet. For more
+information, see [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command).
+
+You can use the properties and methods of the Windows Management Instrumentation (WMI)
+**Win32_Process** object in PowerShell. For information, see
+[Win32_Process](/windows/win32/cimwin32prov/win32-process).
+
+The default display of a process is a table that includes the following columns. For a description
+of all of the properties of process objects, see
+[Process Properties](/dotnet/api/system.diagnostics.process).
+
+- **Handles**: The number of handles that the process has opened.
+- **NPM(K)**: The amount of non-paged memory that the process is using, in kilobytes.
+- **PM(K)**: The amount of pageable memory that the process is using, in kilobytes.
+- **WS(K)**: The size of the working set of the process, in kilobytes. The working set consists of
+  the pages of memory that were recently referenced by the process.
+- **VM(M)**: The amount of virtual memory that the process is using, in megabytes. Virtual memory
+  includes storage in the paging files on disk.
+- **CPU(s)**: The amount of processor time that the process has used on all processors, in seconds.
+- **ID**: The process ID (PID) of the process.
+- **ProcessName**: The name of the process. For explanations of the concepts related to processes,
+  see the Glossary in Help and Support Center and the Help for Task Manager.
+
+You can also use the built-in alternate views of the processes available with `Format-Table`, such
+as **StartTime** and **Priority**, and you can design your own views.
 
 ## RELATED LINKS
 
