@@ -54,7 +54,7 @@ Exit-PSSession
 
 For more information, see [Enter-PSSession][09].
 
-## How to use cmdlets that have a computername parameter
+## How to use cmdlets that have a ComputerName parameter
 
 Several cmdlets have a **ComputerName** parameter that lets you get objects
 from remote computers.

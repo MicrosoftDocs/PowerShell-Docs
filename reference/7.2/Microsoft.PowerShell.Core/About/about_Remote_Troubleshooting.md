@@ -693,7 +693,7 @@ command again.
 ## Linux and macOS limitations
 
 PowerShell remoting is Linux and macOS using remoting over SSH. For more
-information [PowerShell Remoting Over SSH][02].
+information, see [PowerShell Remoting Over SSH][02].
 
 ## See also
 
