@@ -1,11 +1,12 @@
 ---
 description: Describes the system requirements and configuration requirements for running remote commands in PowerShell.
 Locale: en-US
-ms.date: 07/27/2021
+ms.date: 07/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Remote Requirements
 ---
+
 # about_Remote_Requirements
 
 ## Short description
@@ -20,24 +21,24 @@ in PowerShell. It also provides instructions for configuring remote
 operations.
 
 > [!NOTE]
-> Many cmdlets (including the `Get-Service`, `Get-Process`, `Get-WMIObject`,
-> `Get-EventLog`, and `Get-WinEvent` cmdlets) get objects from remote computers
-> by using Microsoft .NET Framework methods to retrieve the objects. They do
-> not use the PowerShell remoting infrastructure. The requirements in this
-> document do not apply to these cmdlets.
+> Some cmdlets get objects from remote computers RPC connections or WMI
+> sessions for remote connections. They don't use the PowerShell remoting
+> infrastructure. The requirements in this document don't apply to these
+> cmdlets.
 
-To find the cmdlets that have a **ComputerName** parameter but do not use
-PowerShell remoting, read the description of the **ComputerName**
-parameter of the cmdlets.
+To find the cmdlets that have a **ComputerName** parameter but don't use
+PowerShell remoting, read the description of the **ComputerName** parameter of
+the cmdlets.
 
 ## System requirements
 
-To run remote sessions on Windows PowerShell 3.0, the local and remote computers
-must have the following:
+In Windows, PowerShell remoting uses Windows Remote Management (WinRM), which
+is provided by the Windows Management Framework (WMF). To run remote sessions
+on PowerShell, the local and remote computers must have the following:
 
-- Windows PowerShell 3.0 or later
-- The Microsoft .NET Framework 4 or later
-- Windows Remote Management 3.0
+- Windows PowerShell 3.0 or higher
+- The Microsoft .NET Framework 4 or higher
+- Windows Remote Management 3.0 or higher
 
 To run remote sessions on Windows PowerShell 2.0, the local and remote
 computers must have the following:
@@ -46,74 +47,71 @@ computers must have the following:
 - The Microsoft .NET Framework 2.0 or later
 - Windows Remote Management 2.0
 
-You can create remote sessions between computers running Windows PowerShell
-2.0 and Windows PowerShell 3.0. However, features that run only on Windows
-PowerShell 3.0, such as the ability to disconnect and reconnect to sessions,
-are available only when both computers are running Windows PowerShell 3.0.
+To be fully supported, you should be using WMF 5.1. For more information about
+WMF support, see [Windows Management Framework (WMF)][02].
 
-To find the version number of an installed version of PowerShell,
-use the `$PSVersionTable` automatic variable.
+You can create a remote session between a computer running Windows PowerShell
+2.0 and one running a newer version of PowerShell. However, features that run
+only on new versions of PowerShell, such as the ability to disconnect and
+reconnect to sessions, are only available when both computers are running
+Windows PowerShell 3.0 and higher.
 
-Windows Remote Management (WinRM) 3.0 and Microsoft .NET Framework 4 are
-included in Windows 8, Windows Server 2012, and newer releases of the Windows
-operating system. WinRM 3.0 is included in Windows Management Framework 3.0
-for older operating systems. If the computer does not have the required
-version of WinRM or the Microsoft .NET Framework, the installation fails.
+To find the version number of an installed version of PowerShell, use the
+`$PSVersionTable` automatic variable.
+
+PowerShell 7 and higher also supports PowerShell remoting over SSH. PowerShell
+remoting over SSH allows you to connect to any Windows, macOS, or Linux host
+that is running SSH. For more information, see
+[PowerShell Remoting Over SSH][01].
 
 ## User permissions
 
-To create remote sessions and run remote commands, by default, the current
-user must be a member of the **Administrators** group on the remote computer or
+To create remote sessions and run remote commands, by default, the current user
+must be a member of the **Administrators** group on the remote computer or
 provide the credentials of an administrator. Otherwise, the command fails.
 
 The permissions required to create sessions and run commands on a remote
-computer (or in a remote session on the local computer) are established by the
-session configuration (also known as an **endpoint**) on the remote computer to
-which the session connects. Specifically, the security descriptor on the
-session configuration determines who has access to the session configuration
-and who can use it to connect.
+computer are established by the session configuration. The session
+configuration defines the configuration options for the connection _endpoint_
+on the remote computer. Specifically, the security descriptor on the session
+configuration determines who has access to the session configuration and who
+can use it to connect.
 
 The security descriptors on the default session configurations,
-**Microsoft.PowerShell**, **Microsoft.PowerShell32**, and
-**Microsoft.PowerShell.Workflow**, allow access only to members of the
-**Administrators** group.
-
-If the current user doesn't have permission to use the session configuration,
-the command to run a command (which uses a temporary session) or create a
-persistent session on the remote computer fails. The user can use the
-ConfigurationName parameter of cmdlets that create sessions to select a
-different session configuration, if one is available.
+**Microsoft.PowerShell** and **Microsoft.PowerShell32**, only allow access to
+members of the **Administrators** group.
 
 Members of the **Administrators** group on a computer can determine who has
 permission to connect to the computer remotely by changing the security
-descriptors on the default session configurations and by creating new session
-configurations with different security descriptors.
+descriptors on the default session configurations or create new session
+configurations with different security descriptors. Users can use the
+**ConfigurationName** parameter of `*-PSSession` cmdlets to connect to
+different endpoints.
 
 For more information about session configurations, see
-[about_Session_Configurations](about_Session_Configurations.md).
+[about_Session_Configurations][07].
 
 ## Windows network locations
 
 Beginning in Windows PowerShell 3.0, the `Enable-PSRemoting` cmdlet can enable
-remoting on client and server versions of Windows on private, domain, and
-public networks.
+remoting on client and server versions of Windows.
 
 On server versions of Windows with private and domain networks, the
-Enable-PSRemoting cmdlet creates firewall rules that allow unrestricted remote
-access. It also creates a firewall rule for public networks that allows remote
-access only from computers in the same local subnet. This local subnet
+`Enable-PSRemoting` cmdlet creates firewall rules that allow unrestricted
+remote access. It also creates a firewall rule for public networks that allows
+remote access only from computers in the same local subnet. This local subnet
 firewall rule is enabled by default on server versions of Windows on public
 networks, but `Enable-PSRemoting` reapplies the rule in case it was changed or
 deleted.
 
-On client versions of Windows with private and domain networks, by default,
-the `Enable-PSRemoting` cmdlet creates firewall rules that allow unrestricted
-remote access.
+On client versions of Windows with private and domain networks,
+`Enable-PSRemoting` creates firewall rules that allow unrestricted remote
+access.
 
 To enable remoting on client versions of Windows with public networks, use the
-**SkipNetworkProfileCheck** parameter of the `Enable-PSRemoting` cmdlet. It creates
-a firewall rule that allows remote access only from computers in the same
-local subnet.
+**SkipNetworkProfileCheck** parameter of the `Enable-PSRemoting` cmdlet. This
+option creates a firewall rule that allows remote access only from computers in
+the same local subnet.
 
 To remove the local subnet restriction on public networks and allow remote
 access from all locations on client and server versions of Windows, use the
@@ -126,8 +124,8 @@ Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any
 
 > [!NOTE]
 > The name of the firewall rule can be different for different versions of
-> Windows. Use `Get-NetFirewallRule` to see a list of rules. Before enabling the
-> firewall rule, view the security settings in the rule to verify that the
+> Windows. Use `Get-NetFirewallRule` to see a list of rules. Before enabling
+> the firewall rule, view the security settings in the rule to verify that the
 > configuration is appropriate for your environment.
 
 In Windows PowerShell 2.0, on server versions of Windows, `Enable-PSRemoting`
@@ -143,57 +141,32 @@ Administrator privileges are required for the following remoting operations:
 
 - Establishing a remote connection to the local computer. This is commonly
   known as a "loopback" scenario.
-
 - Managing session configurations on the local computer.
-
 - Viewing and changing WS-Management settings on the local computer. These are
   the settings in the LocalHost node of the WSMAN: drive.
 
-To perform these tasks, you must start PowerShell with the "Run as
-administrator" option even if you are a member of the **Administrators** group on
-the local computer.
+You must start PowerShell with the **Run as administrator** option even if you
+are a member of the **Administrators** group on the local computer.
 
-In Windows 7 and in Windows Server 2008 R2, to start PowerShell with
-the **Run as administrator** option:
-
-1. Click Start, click All Programs, click Accessories, and then click
-   the PowerShell folder.
-1. Right-click PowerShell, and then click **Run as administrator**.
-
-To start Windows PowerShell with the **Run as administrator** option:
-
-1. Click Start, click All Programs, and then click the PowerShell
-   folder.
-1. Right-click PowerShell, and then click **Run as administrator**.
-
-The **Run as administrator** option is also available in other Windows Explorer
-entries for PowerShell, including shortcuts. Just right-click the
-item, and then click **Run as administrator**.
-
-When you start PowerShell from another program such as Cmd.exe, use
+When you start Windows PowerShell from another program such as `cmd.exe`, use
 the **Run as administrator** option to start the program.
 
 ## How to configure your computer for remoting
 
-Computers running all supported versions of Windows can establish remote
-connections to and run remote commands in PowerShell without any
-configuration. However, to receive connections, and allow users to create
-local and remote user-managed PowerShell sessions ("PSSessions") and
-run commands on the local computer, you must enable PowerShell
-remoting on the computer.
+Computers running any supported version of Windows can establish remote
+connections and run remote commands in PowerShell without any configuration.
+However, to receive remote connections you must enable PowerShell remoting on
+the computer.
 
 Windows Server 2012 and newer releases of Windows Server are enabled for
 PowerShell remoting by default. If the settings are changed, you can
 restore the default settings by running the `Enable-PSRemoting` cmdlet.
 
-On all other supported versions of Windows, you need to run the
-`Enable-PSRemoting` cmdlet to enable PowerShell remoting.
-
-The remoting features of PowerShell are supported by the WinRM
+By default, the remoting features of PowerShell are supported by the WinRM
 service, which is the Microsoft implementation of the Web Services for
-Management (WS-Management) protocol. When you enable PowerShell
-remoting, you change the default configuration of WS-Management and add system
-configuration that allow users to connect to WS-Management.
+Management (WS-Management) protocol. When you enable PowerShell remoting, you
+change the default configuration of WS-Management and add system configuration
+that allow users to connect to WS-Management.
 
 To configure PowerShell to receive remote commands:
 
@@ -207,9 +180,8 @@ the following command, which creates a remote session on the local computer.
 New-PSSession
 ```
 
-If remoting is configured correctly, the command will create a session on the
-local computer and return an object that represents the session. The output
-should resemble the following sample output:
+If remoting is configured correctly, the command creates a session on the local
+computer and returns an object that represents the session.
 
 ```Output
 Id Name        ComputerName    State    ConfigurationName
@@ -217,77 +189,35 @@ Id Name        ComputerName    State    ConfigurationName
 1  Session1    localhost       Opened   Microsoft.PowerShell
 ```
 
-If the command fails, for assistance, see
-[about_Remote_Troubleshooting](about_Remote_Troubleshooting.md).
+If the command fails, see [about_Remote_Troubleshooting][04].
 
 ## Understand policies
 
-When you work remotely, you use two instances of PowerShell, one on
-the local computer and one on the remote computer. As a result, your work is
-affected by the Windows policies and the PowerShell policies on the
-local and remote computers.
+When you work remotely, you use two instances of PowerShell, one on the local
+computer and one on the remote computer. As a result, your work is affected by
+the Windows and PowerShell policies on both the local and remote computers.
 
-In general, before you connect and as you are establishing the connection, the
-policies on the local computer are in effect. When you are using the
-connection, the policies on the remote computer are in effect.
-
-## Basic authentication limitations on Linux and macOS
-
-When connecting from a Linux or macOS system to Windows, Basic Authentication
-over HTTP is not supported. Basic Authentication can be used over HTTPS by
-installing a certificate on the target server. The certificate must have a
-CN name that matches the hostname, is not expired or revoked. A self-signed
-certificate may be used for testing purposes.
-
-See [How To: Configure WINRM for HTTPS](https://support.microsoft.com/help/2019527/how-to-configure-winrm-for-https)
-for additional details.
-
-The following command, run from an elevated command prompt, will configure the
-HTTPS listener on Windows with the installed certificate.
-
-```powershell
-$hostinfo = '@{Hostname="<DNS_NAME>"; CertificateThumbprint="<THUMBPRINT>"}'
-winrm create winrm/config/Listener?Address=*+Transport=HTTPS $hostinfo
-```
-
-On the Linux or macOS side, select Basic for authentication and -UseSSl.
-
-> [!NOTE]
-> Basic authentication cannot be used with domain accounts; a local account is
-> required and the account must be in the **Administrators** group.
-
-```powershell
-# The specified local user must have administrator rights on the target machine.
-# Specify the unqualified username.
-$cred = Get-Credential username
-$session = New-PSSession -Computer <hostname> -Credential $cred `
-  -Authentication Basic -UseSSL
-```
-
-An alternative to **Basic Authentication** over HTTPS is **Negotiate**. This
-results in NTLM authentication between the client and server and payload is
-encrypted over HTTP.
-
-The following illustrates using **Negotiate** with `New-PSSession`:
-
-```powershell
-# The specified user must have administrator rights on the target machine.
-$cred = Get-Credential username@hostname
-$session = New-PSSession -Computer <hostname> -Credential $cred `
-  -Authentication Negotiate
-```
-
-> [!NOTE]
-> Windows Server requires an additional registry setting to enable
-> administrators, other than the built in administrator, to connect using NTLM.
-> Refer to the **LocalAccountTokenFilterPolicy** registry setting under
-> **Negotiate** Authentication in [Authentication for Remote Connections](/windows/win32/winrm/authentication-for-remote-connections)
+Before you connect and while establishing the connection, the policies on
+the local computer are in effect. When you are using the connection, the
+policies on the remote computer are in effect.
 
 ## See also
 
-- [about_Remote](about_Remote.md)
-- [about_Remote_Variables](about_Remote_Variables.md)
-- [about_PSSessions](about_PSSessions.md)
-- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
-- [Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
-- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
+- [about_Remote][06]
+- [about_Remote_Variables][05]
+- [about_PSSessions][03]
+- [Invoke-Command][09]
+- [Enter-PSSession][08]
+- [New-PSSession][10]
+
+<!-- link references -->
+[01]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
+[02]: /powershell/scripting/windows-powershell/wmf/overview
+[03]: about_PSSessions.md
+[04]: about_Remote_Troubleshooting.md
+[05]: about_Remote_Variables.md
+[06]: about_Remote.md
+[07]: about_Session_Configurations.md
+[08]: xref:Microsoft.PowerShell.Core.Enter-PSSession
+[09]: xref:Microsoft.PowerShell.Core.Invoke-Command
+[10]: xref:Microsoft.PowerShell.Core.New-PSSession
