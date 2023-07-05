@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 06/23/2023
+ms.date: 07/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes
@@ -611,7 +611,7 @@ examples are better defined to: avoid property repetitions, better align common
 properties, and reuse common business logic.
 
 Most objects in the data center are company assets, which makes sense to start
-tracking them as assets. The `DeviceType` enumerateion defines device types
+tracking them as assets. The `DeviceType` enumeration defines device types
 used by the class. For more information about enumerations, see
 [about_Enum][02].
 
