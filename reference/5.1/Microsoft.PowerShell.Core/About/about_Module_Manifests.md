@@ -1,7 +1,7 @@
 ---
 description: Describes the settings and practices for writing module manifest files.
 Locale: en-US
-ms.date: 06/07/2023
+ms.date: 07/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Module Manifests
@@ -100,7 +100,7 @@ Allowed variables
 - `$EnabledExperimentalFeatures`
 - Any environment variables, like `$ENV:TEMP`
 
-For more information, see [about_Language_Modes](about_Language_Modes.md).
+For more information, see [about_Language_Modes][08].
 
 ## Manifest settings
 
@@ -158,7 +158,7 @@ By default, all module members in the **RootModule** are exported.
 > [!TIP]
 > Module loading speed differs between **Binary**, **Script**, and **CIM**
 > module types. For more information, see
-> [PowerShell module authoring considerations][03]
+> [PowerShell module authoring considerations][05]
 
 For example, this module's **ModuleType** is **Manifest**. The only module
 members this module can export are those defined in the modules specified with
@@ -234,8 +234,8 @@ values.
 
 For information about PSEdition, see:
 
-- [about_PowerShell_Editions][02]
-- [Modules with compatible PowerShell Editions][05].
+- [about_PowerShell_Editions][04]
+- [Modules with compatible PowerShell Editions][02].
 
 When this setting is defined, the module can only be imported into a session
 where the `$PSEdition` automatic variable's value is included in the setting.
@@ -869,7 +869,7 @@ When you import the module, PowerShell runs the `Update-TypeData` cmdlet with
 the specified files. Because type files aren't scoped, they affect all session
 states in the session.
 
-For more information on type files, see [about_Types.ps1xml][08]
+For more information on type files, see [about_Types.ps1xml][09]
 
 For example, when you import this manifest, PowerShell loads the types
 specified in the `Example.ps1xml` file from the `Types` folder located in the
@@ -1386,20 +1386,20 @@ functions in the root module's scope.
 |                       |             Value              |
 | --------------------- | ------------------------------ |
 | **Input Type**        | `System.Collections.Hashtable` |
-| **Required**          | PowerShell Gallery             |
+| **Required**          | PowerShell Gallery, Crescendo  |
 | **Value if unset**    | `$null`                        |
 | **Accepts wildcards** | No                             |
 
-This setting has two primary effects:
+When you export a Crescendo manifest to create a new module,
+`Export-CrescendoModule` adds two keys to **PrivateData**
 
-1. Any keys added to this setting are available to functions and cmdlets in the
-   root module with `$MyInvocation.MyCommand.Module.PrivateData`. The hash
-   table isn't available in the module scope itself, only in cmdlets you
-   define in the module.
-1. You can add the **PSData** key with a hash table for metadata needed when
-   publishing to the PowerShell Gallery. For more information on module
-   manifests and the publishing to the PowerShell Gallery, see
-   [Package manifest values that impact the PowerShell Gallery UI][06]
+- **CrescendoGenerated** - timestamp when the module was exported
+- **CrescendoVersion** - the version of Crescendo used to export the module
+
+You can add your own keys to hold metadata that you want to track. Any keys
+added to this setting are available to functions and cmdlets in the root module
+using `$MyInvocation.MyCommand.Module.PrivateData`. The hash table isn't
+available in the module scope itself, only in cmdlets you define in the module.
 
 For example, this manifest defines the **PublishedDate** key in
 **PrivateData**.
@@ -1453,6 +1453,32 @@ This module will be stale in 16 days
 WARNING: This module version was published more than 30 days ago.
 ```
 
+#### PrivateData.PSData
+
+The **PSData** child property defines a hash table of values that support
+specific extension scenarios.
+
+|                       |                            Value                             |
+| --------------------- | ------------------------------------------------------------ |
+| **Input Type**        | `System.Collections.Hashtable`                               |
+| **Required**          | PowerShell Gallery, Experimental features, Crescendo modules |
+| **Value if unset**    | `$null`                                                      |
+| **Accepts wildcards** | No                                                           |
+
+The **PSData** child property is used for the following scenarios:
+
+- PowerShell Gallery - When you create a module manifest using
+  `New-ModuleManifest` the cmdlet prepopulates the **PSData** hashtable with
+  place holder keys that are needed when publishing the module to the
+  PowerShell Gallery. For more information on module manifests and the
+  publishing to the PowerShell Gallery, see
+  [Package manifest values that impact the PowerShell Gallery UI][03].
+- Crescendo modules - When you export a Crescendo manifest to create a new
+  module, `Export-CrescendoModule` adds the value `CrescendoBuilt` to the
+  **PSData.Tags** property. You can use this tag to find modules in the
+  PowerShell Gallery that were created using Crescendo. For more information,
+  see [Export-CrescendoModule][14].
+
 ### HelpInfoURI
 
 This setting specifies the internet address of the HelpInfo XML file for the
@@ -1473,8 +1499,8 @@ in PowerShell 3.0. It contains information about the location of downloadable
 help files for the module and the version numbers of the newest help files for
 each supported locale.
 
-For information about Updatable Help, see [about_Updatable_Help][09]. For
-information about the HelpInfo XML file, see [Supporting Updatable Help][04].
+For information about Updatable Help, see [about_Updatable_Help][10]. For
+information about the HelpInfo XML file, see [Supporting Updatable Help][06].
 
 For example, this module supports updatable help.
 
@@ -1514,22 +1540,24 @@ imported as `Get-ExampleItem`.
 
 ## See also
 
-- [about_PowerShell_Editions][02]
-- [New-ModuleManifest][11]
-- [Test-ModuleManifest][12]
-- [Modules with compatible PowerShell Editions][05]
-- [Package manifest values that impact the PowerShell Gallery UI][06]
-- [PowerShell module authoring considerations][03]
+- [about_PowerShell_Editions][04]
+- [New-ModuleManifest][12]
+- [Test-ModuleManifest][13]
+- [Modules with compatible PowerShell Editions][02]
+- [Package manifest values that impact the PowerShell Gallery UI][03]
+- [PowerShell module authoring considerations][05]
 
-<!-- updated link references -->
+<!-- link references -->
 [01]: /powershell/dsc/overview
-[02]: /powershell/module/microsoft.powershell.core/about/about_powershell_editions
-[03]: /powershell/scripting/dev-cross-plat/performance/module-authoring-considerations
-[04]: /powershell/scripting/developer/module/supporting-updatable-help
-[05]: /powershell/gallery/concepts/module-psedition-support
-[06]: /powershell/gallery/concepts/package-manifest-affecting-ui
+[02]: /powershell/gallery/concepts/module-psedition-support
+[03]: /powershell/gallery/concepts/package-manifest-affecting-ui
+[04]: /powershell/module/microsoft.powershell.core/about/about_powershell_editions
+[05]: /powershell/scripting/dev-cross-plat/performance/module-authoring-considerations
+[06]: /powershell/scripting/developer/module/supporting-updatable-help
 [07]: about_Format.ps1xml.md
-[08]: about_Types.ps1xml.md
-[09]: about_Updatable_Help.md
-[11]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
-[12]: xref:Microsoft.PowerShell.Core.Test-ModuleManifest
+[08]: about_Language_Modes.md
+[09]: about_Types.ps1xml.md
+[10]: about_Updatable_Help.md
+[12]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
+[13]: xref:Microsoft.PowerShell.Core.Test-ModuleManifest
+[14]: xref:Microsoft.PowerShell.Crescendo.Export-CrescendoModule
