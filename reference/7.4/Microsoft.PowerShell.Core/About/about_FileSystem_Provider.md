@@ -1,7 +1,7 @@
 ---
 description: FileSystem
 Locale: en-US
-ms.date: 06/14/2023
+ms.date: 07/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about FileSystem Provider
@@ -635,7 +635,8 @@ Ignores newline characters. Returns contents as a single item.
 
 ### ItemType \<String\>
 
-This parameter allows you to specify the tye of item to create with `New-Item`
+This parameter allows you to specify the type of item to create with
+`New-Item`.
 
 The available values of this parameter depend on the current provider you are
 using.
