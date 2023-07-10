@@ -1,17 +1,15 @@
 ---
-description: How to Update Help Files
-ms.date: 09/12/2016
+description: How to update help files
+ms.date: 07/10/2023
 ms.topic: reference
-title: How to Update Help Files
+title: How to update help files
 ---
-# How to Update Help Files
+# How to update help files
 
-This topic explains how to update help files for a module that supports Updatable Help.
-
-## Updating Help Files
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
 
 There are many reasons to update help files, such as correcting errors, clarifying a concept,
-answering a frequently-asked question, adding new files, or adding new and better examples.
+answering a frequently asked question, adding new files, or adding new and better examples.
 
 To update a help file:
 
@@ -21,7 +19,7 @@ To update a help file:
 1. Validate the files against the XML schema.
 1. Rebuild the CAB files for each UI culture.
 1. In the HelpInfo XML file, increment the version numbers of the CAB file for each UI culture.
-1. Upload the new CAB files to the location that is specified by the value of the **HelpContentUri**
+1. Upload the new CAB files to the location that's specified by the value of the **HelpContentUri**
    element in the HelpInfo XML file. Replace the older CAB files with the new CAB files.
-1. Upload the updated HelpInfo XML file to the location that is specified by the **HelpInfoUri** key
+1. Upload the updated HelpInfo XML file to the location that's specified by the **HelpInfoUri** key
    in the module manifest. Replace the older HelpInfo XML file with the new file.

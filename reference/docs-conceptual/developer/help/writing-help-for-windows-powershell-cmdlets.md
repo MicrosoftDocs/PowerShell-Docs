@@ -1,6 +1,6 @@
 ---
 description: Writing Help for PowerShell Cmdlets
-ms.date: 09/13/2016
+ms.date: 07/10/2023
 ms.topic: reference
 title: Writing Help for PowerShell Cmdlets
 ---
@@ -12,14 +12,13 @@ XML-based cmdlet Help file format enhances consistency, but great help requires 
 
 If you have never written cmdlet Help, review the following guidelines. The XML schema required to
 author the cmdlet Help topic is described in the following section. Start with
-[Creating the Cmdlet Help File](./how-to-create-the-cmdlet-help-file.md). That topic includes a
-description of the top-level XML nodes.
+[Creating the Cmdlet Help File][11]. That topic includes a description of the top-level XML nodes.
 
 ## Writing Guidelines for Cmdlet Help
 
 ### Write well
 
-Nothing replaces a well-written topic. If you are not a professional writer, find a writer or editor
+Nothing replaces a well-written topic. If you aren't a professional writer, find a writer or editor
 to help you. Another alternative is to copy your Help text into Microsoft Word and use the grammar
 and spelling checks to improve your work.
 
@@ -30,14 +29,14 @@ foreign-language dictionary and your Help topic.
 
 ### Write consistently
 
-Help for related cmdlets should be similar (for example, get-x and set-x). Use the standard
-descriptions for standard parameters, like **Force** and **InputObject**. (Copy them from Help for
-the core cmdlets.) Use standard terms. For example, use "parameter", not "argument", and use
-"cmdlet" not "command" or "command-let."
+Help for related cmdlets should be similar (for example, `Get-Content` and `Set-Content`). Use the
+standard descriptions for standard parameters, like **Force** and **InputObject**. (Copy them from
+Help for the core cmdlets.) Use standard terms. For example, use "parameter", not "argument", and
+use "cmdlet" not "command" or "command-let."
 
 ### Start the synopsis with a verb
 
-The synopsis field informs the user what the cmdlet does, not what it is or how it works. Verbs
+The synopsis field informs the user what the cmdlet does, not what it's or how it works. Verbs
 create a task-based statement that informs users if this cmdlet meets their requirements. Use simple
 verbs like "get", "create", and "change." Avoid "set", which can be vague and fancy words like
 "modify".
@@ -88,24 +87,27 @@ provide feedback. You can also solicit feedback from newsgroups.
 
 ## See Also
 
- [How to Create the Cmdlet Help File](./how-to-create-the-cmdlet-help-file.md)
+- [How to Create the Cmdlet Help File][11]
+- [How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic][10]
+- [How to Add the Detailed Description to a Cmdlet Help Topic][02]
+- [How to Add Syntax to a Cmdlet Help Topic][09]
+- [How to Add Parameters to a Cmdlet Help Topic][06]
+- [How to add Input Types to a Cmdlet Help Topic][04]
+- [How to Add Return Values to a Cmdlet Help Topic][08]
+- [How to Add Notes to a Cmdlet Help Topic][05]
+- [How to Add Examples to a Cmdlet Help Topic][03]
+- [How to Add Related Links to a Cmdlet Help Topic][07]
+- [Windows PowerShell SDK][01]
 
- [How to Add the Cmdlet Name and Synopsis to a Cmdlet Help Topic](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
-
- [How to Add the Detailed Description to a Cmdlet Help Topic](./how-to-add-a-cmdlet-description.md)
-
- [How to Add Syntax to a Cmdlet Help Topic](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
-
- [How to Add Parameters to a Cmdlet Help Topic](./how-to-add-parameter-information.md)
-
- [How to add Input Types to a Cmdlet Help Topic](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
-
- [How to Add Return Values to a Cmdlet Help Topic](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
-
- [How to Add Notes to a Cmdlet Help Topic](./how-to-add-notes-to-a-cmdlet-help-topic.md)
-
- [How to Add Examples to a Cmdlet Help Topic](./how-to-add-examples-to-a-cmdlet-help-topic.md)
-
- [How to Add Related Links to a Cmdlet Help Topic](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
-
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+<!-- link references -->
+[01]: ../windows-powershell-reference.md
+[02]: ./how-to-add-a-cmdlet-description.md
+[03]: ./how-to-add-examples-to-a-cmdlet-help-topic.md
+[04]: ./how-to-add-input-types-to-a-cmdlet-help-topic.md
+[05]: ./how-to-add-notes-to-a-cmdlet-help-topic.md
+[06]: ./how-to-add-parameter-information.md
+[07]: ./how-to-add-related-links-to-a-cmdlet-help-topic.md
+[08]: ./how-to-add-return-values-to-a-cmdlet-help-topic.md
+[09]: ./how-to-add-syntax-to-a-cmdlet-help-topic.md
+[10]: ./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
+[11]: ./how-to-create-the-cmdlet-help-file.md

@@ -1,14 +1,16 @@
 ---
-description: How to Add Dynamic Parameters to a Provider Help Topic
-ms.date: 09/13/2016
+description: How to add dynamic parameters to a provider help topic
+ms.date: 07/10/2023
 ms.topic: reference
-title: How to Add Dynamic Parameters to a Provider Help Topic
+title: How to add dynamic parameters to a provider help topic
 ---
-# How to Add Dynamic Parameters to a Provider Help Topic
+# How to add dynamic parameters to a provider help topic
+
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
 
 This section explains how to populate the **DYNAMIC PARAMETERS** section of a provider help topic.
 
-*Dynamic parameters* are parameters of a cmdlet or function that are available only under specified
+_Dynamic parameters_ are parameters of a cmdlet or function that are available only under specified
 conditions.
 
 The dynamic parameters that are documented in a provider help topic are the dynamic parameters that
@@ -19,10 +21,10 @@ Dynamic parameters can also be documented in custom cmdlet help for a provider. 
 provider help and custom cmdlet help for a provider, include the dynamic parameter documentation in
 both documents.
 
-If a provider does not implement any dynamic parameters, the provider help topic contains an empty
+If a provider doesn't implement any dynamic parameters, the provider help topic contains an empty
 `DynamicParameters` element.
 
-### To Add Dynamic Parameters
+### To add dynamic parameters
 
 1. In the `<AssemblyName>.dll-help.xml` file, within the `providerHelp` element, add a
    `DynamicParameters` element. The `DynamicParameters` element should appear after the `Tasks`
@@ -41,7 +43,7 @@ If a provider does not implement any dynamic parameters, the provider help topic
     </providerHelp>
     ```
 
-   If the provider does not implement any dynamic parameters, the `DynamicParameters` element can be
+   If the provider doesn't implement any dynamic parameters, the `DynamicParameters` element can be
    empty.
 
 1. Within the `DynamicParameters` element, for each dynamic parameter, add a `DynamicParameter`
@@ -78,7 +80,7 @@ If a provider does not implement any dynamic parameters, the provider help topic
    the `Name` element which contains the .NET type of the value of the dynamic parameter.
 
    For example, the following XML shows that the .NET type of the `Encoding` dynamic parameter is
-   the [FileSystemCmdletProviderEncoding](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding)
+   the [FileSystemCmdletProviderEncoding][02]
    enumeration.
 
     ```xml
@@ -95,7 +97,7 @@ If a provider does not implement any dynamic parameters, the provider help topic
 
 1. Add the `Description` element, which contains a brief description of the dynamic parameter. When
    composing the description, use the guidelines prescribed for all cmdlet parameters in
-   [How to Add Parameter Information](./how-to-add-parameter-information.md).
+   [How to Add Parameter Information][01].
 
    For example, the following XML includes the description of the `Encoding` dynamic parameter.
 
@@ -114,8 +116,8 @@ If a provider does not implement any dynamic parameters, the provider help topic
 
 1. Add the `PossibleValues` element and its child elements. Together, these elements describe the
    values of the dynamic parameter. This element is designed for enumerated values. If the dynamic
-   parameter does not take a value, such as is the case with a switch parameter, or the values
-   cannot be enumerated, add an empty `PossibleValues` element.
+   parameter doesn't take a value, such as is the case with a switch parameter, or the values can't
+   be enumerated, add an empty `PossibleValues` element.
 
    The following table lists and describes the `PossibleValues` element and its child elements.
 
@@ -125,7 +127,7 @@ If a provider does not implement any dynamic parameters, the provider help topic
      `PossibleValue` element for each value of the dynamic parameter.
    - Value - Specifies the value name.
    - Description - This element contains a `Para` element. The text in the `Para` element describes
-     the value that is named in the `Value` element.
+     the value that's named in the `Value` element.
 
    For example, the following XML shows one `PossibleValue` element of the `Encoding` dynamic
    parameter.
@@ -176,3 +178,7 @@ The following example shows the `DynamicParameters` element of the `Encoding` dy
         </PossibleValues>
 </DynamicParameters>
 ```
+
+<!-- link references -->
+[01]: ./how-to-add-parameter-information.md
+[02]: /dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding

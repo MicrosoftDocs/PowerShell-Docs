@@ -1,17 +1,19 @@
 ---
-description: How to Add Parameter Information
-ms.date: 12/08/2021
+description: How to add parameter information
+ms.date: 07/10/2023
 ms.topic: reference
-title: How to Add Parameter Information
+title: How to add parameter information
 ---
-# How to Add Parameter Information
+# How to add parameter information
 
-This section describes how to add content that is displayed in the **PARAMETERS** section of the
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
+
+This section describes how to add content that's displayed in the **PARAMETERS** section of the
 cmdlet Help topic. The **PARAMETERS** section of the Help topic lists each of the parameters of the
 cmdlet and provides a detailed description of each parameter.
 
 The content of the **PARAMETERS** section should be consistent with the content of the **SYNTAX**
-section of the Help topic. It is the responsibility of the Help author to make sure that both the
+section of the Help topic. It's the responsibility of the Help author to make sure that both the
 **Syntax** and **Parameters** node contain similar XML elements.
 
 > [!NOTE]
@@ -19,7 +21,7 @@ section of the Help topic. It is the responsibility of the Help author to make s
 > installation directory. For example, the `Microsoft.PowerShell.Commands.Management.dll-Help.xml`
 > file contains content for several of the PowerShell cmdlets.
 
-### To Add Parameters
+### To add parameters
 
 1. Open the cmdlet Help file and locate the **Command** node for the cmdlet you are documenting. If
    you are adding a new cmdlet you will need to create a new **Command** node. Your Help file will
@@ -170,8 +172,8 @@ section of the Help topic. It is the responsibility of the Help author to make s
 
 Here are some things to remember when adding parameters.
 
-- The attributes of the parameter are not displayed in all views of the cmdlet Help topic. However,
-  they are displayed in a table following the parameter description when the user asks for the
+- The attributes of the parameter aren't displayed in all views of the cmdlet Help topic. However,
+  they're displayed in a table following the parameter description when the user asks for the
   **Full** (`Get-Help <cmdletname> -Full`) or **Parameter** (`Get-Help <cmdletname> -Parameter`)
   view of the topic.
 
@@ -190,21 +192,21 @@ Here are some things to remember when adding parameters.
   these values than they would in a traditional command-line Help. Tell the user what type of data
   the parameter is designed to accept, and include examples.
 
-The default value of the parameter is the value that is used if the parameter is not specified on
-the command line. Note that the default value is optional, and is not needed for some parameters,
+The default value of the parameter is the value that's used if the parameter isn't specified on
+the command line. Note that the default value is optional, and isn't needed for some parameters,
 such as required parameters. However, you should specify a default value for most optional
 parameters.
 
 The default value helps the user to understand the effect of not using the parameter. Describe the
 default value very specifically, such as the "Current directory" or the "PowerShell installation
 directory (`$PSHOME`)" for an optional path. You can also write a sentence that describes the
-default, such as the following sentence used for the **PassThru** parameter: "If PassThru is not
-specified, the cmdlet does not pass objects down the pipeline." Also, because the value is displayed
-opposite the field name **Default value**, you do not need to include the term "default value" in
+default, such as the following sentence used for the **PassThru** parameter: "If PassThru isn't
+specified, the cmdlet doesn't pass objects down the pipeline." Also, because the value is displayed
+opposite the field name **Default value**, you don't need to include the term "default value" in
 the entry.
 
-The default value of the parameter is not displayed in all views of the cmdlet Help topic. However,
-it is displayed in a table (along with the parameter attributes) following the parameter description
+The default value of the parameter isn't displayed in all views of the cmdlet Help topic. However,
+it's displayed in a table (along with the parameter attributes) following the parameter description
 when the user asks for the **Full** (`Get-Help <cmdletname> -Full`) or **Parameter**
 (`Get-Help <cmdletname> -Parameter`) view of the topic.
 
@@ -235,7 +237,7 @@ If the parameter has multiple values or values of an enumerated type, you can us
 `<dev:possibleValues>` node. This node allows you to specify a name and description for multiple
 values.
 
-Be aware that the descriptions of the enumerated values do not appear in any of the default Help
+Be aware that the descriptions of the enumerated values don't appear in any of the default Help
 views displayed by the `Get-Help` cmdlet, but other Help viewers may display this content in their
 views.
 

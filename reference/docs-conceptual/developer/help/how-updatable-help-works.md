@@ -1,6 +1,6 @@
 ---
 description: How Updatable Help Works
-ms.date: 09/13/2016
+ms.date: 07/10/2023
 ms.topic: reference
 title: How Updatable Help Works
 ---
@@ -11,14 +11,13 @@ module, and installs updated help for users.
 
 ## The Update-Help Process
 
-The following list describes the actions of the
-[Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet when a user runs a
-command to update the help files for a module in a particular UI culture.
+The following list describes the actions of the [Update-Help][03] cmdlet when a user runs a command
+to update the help files for a module in a particular UI culture.
 
 1. `Update-Help` gets the remote HelpInfo XML file from the location specified by the value of the
    **HelpInfoURI** key in the module manifest and validates the file against the schema. (To view
-   the schema, see [HelpInfo XML Schema](./helpinfo-xml-schema.md).) Then `Update-Help` looks for a
-   local HelpInfo XML file for the module in the module directory on the user's computer.
+   the schema, see [HelpInfo XML Schema][01].) Then `Update-Help` looks for a local HelpInfo XML
+   file for the module in the module directory on the user's computer.
 
 1. `Update-Help` compares the version number of the help files for the specified UI culture in the
    remote and local HelpInfo XML files for the module. If the version number on the remote file is
@@ -39,20 +38,18 @@ command to update the help files for a module in a particular UI culture.
 
 ## The Save-Help Process
 
-The following list describes the actions of the
-[Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) and
-[Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlets when a user runs
-commands to update the help files in a file share, and then use those files to update the help files
-on the user's computer.
+The following list describes the actions of the [Save-Help][02] and [Update-Help][03] cmdlets when a
+user runs commands to update the help files in a file share, and then use those files to update the
+help files on the user's computer.
 
 The `Save-Help` cmdlet performs the following actions in response to a command to save the help
-files for a module in a file share that is specified by the **DestinationPath** parameter.
+files for a module in a file share that's specified by the **DestinationPath** parameter.
 
 1. `Save-Help` gets the remote HelpInfo XML file from the location specified by the value of the
    **HelpInfoURI** key in the module manifest and validates the file against the schema. (To view
-   the schema, see [HelpInfo XML Schema](./helpinfo-xml-schema.md).) Then `Save-Help` looks for a
-   local HelpInfo XML file in the directory that is specified by the **DestinationPath** parameter
-   in the `Save-Help` command.
+   the schema, see [HelpInfo XML Schema][01].) Then `Save-Help` looks for a local HelpInfo XML file
+   in the directory that's specified by the **DestinationPath** parameter in the `Save-Help`
+   command.
 
 1. `Save-Help` compares the version number of the help files for the specified UI culture in the
    remote and local HelpInfo XML files for the module. If the version number on the remote file is
@@ -72,7 +69,7 @@ files for a module in a file share that is specified by the **DestinationPath** 
    update.
 
    The `Update-Help` cmdlet performs the following actions in response to a command to update the
-   help files on a user's computer from the files in a file share that is specified by the
+   help files on a user's computer from the files in a file share that's specified by the
    **SourcePath** parameter.
 
 1. `Update-Help` gets the remote HelpInfo XML file from the **SourcePath** directory. Then it looks
@@ -92,3 +89,8 @@ files for a module in a file share that is specified by the **DestinationPath** 
 1. `Update-Help` creates a local HelpInfo XML file by copying the remote HelpInfo XML file. It edits
    the local HelpInfo XML file so that it includes elements only for the CAB file that it installed.
    Then it saves the local HelpInfo XML file in the module directory and concludes the update.
+
+<!-- link references -->
+[01]: ./helpinfo-xml-schema.md
+[02]: /powershell/module/Microsoft.PowerShell.Core/Save-Help
+[03]: /powershell/module/Microsoft.PowerShell.Core/Update-Help

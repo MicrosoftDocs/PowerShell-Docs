@@ -1,10 +1,12 @@
 ---
 description: Supporting Online Help
-ms.date: 09/13/2016
+ms.date: 07/10/2023
 ms.topic: reference
 title: Supporting Online Help
 ---
 # Supporting Online Help
+
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
 
 Beginning in PowerShell 3.0, there are two ways to support the `Get-Help` Online feature for
 PowerShell commands. This topic explains how to implement this feature for different command types.
@@ -18,8 +20,8 @@ importantly, before the advent of Updatable Help, online help provided the most 
 of the help files.
 
 With the advent of Updatable Help in PowerShell 3.0, online help still plays a vital role. In
-addition to the flexible user experience, online help provides help to users who do not or cannot
-use Updatable Help to download help topics.
+addition to the flexible user experience, online help provides help to users who don't or can't use
+Updatable Help to download help topics.
 
 ## How Get-Help -Online Works
 
@@ -40,7 +42,7 @@ for the online version help topic in the following locations.
   must be installed on the user's computer. This feature was introduced in PowerShell 2.0.
 
 - The **HelpUri** property of any command. The **HelpUri** property is accessible even when the help
-  topic for the command is not installed on the user's computer. This feature was introduced in
+  topic for the command isn't installed on the user's computer. This feature was introduced in
   PowerShell 3.0.
 
   `Get-Help` looks for a URI in the first entry in the **Related Links** section before getting the
@@ -60,7 +62,7 @@ To support this feature, the URI must appear in the `maml:uri` element under the
 `maml:relatedLinks/maml:navigationLink` element in the `maml:relatedLinks` element.
 
 The following XML shows the correct placement of the URI. The `Online version:` text in the
-`maml:linkText` element is a best practice, but it is not required.
+`maml:linkText` element is a best practice, but it's not required.
 
 ```xml
 <maml:relatedLinks>
@@ -77,7 +79,7 @@ The following XML shows the correct placement of the URI. The `Online version:` 
 
 ## Adding the HelpUri property to a command
 
-This section shows how to add the HelpUri property to commands of different types.
+This section shows how to add the **HelpUri** property to commands of different types.
 
 ### Adding a HelpUri Property to a Cmdlet
 
@@ -90,7 +92,7 @@ The following code shows the **HelpUri** attribute of the `Get-History` cmdlet c
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
-### Adding a HelpUri Property to an Advanced Function
+### Adding a HelpUri property to an advanced function
 
 For advanced functions, add a **HelpUri** property to the **CmdletBinding** attribute. The value of
 the property must be a URI that begins with "http" or "https".
@@ -103,7 +105,7 @@ function New-Calendar {
     HelpURI="https://go.microsoft.com/fwlink/?LinkID=01122")]
 ```
 
-### Adding a HelpUri Attribute to a CIM Command
+### Adding a HelpUri attribute to a cim command
 
 For CIM commands, add a **HelpUri** attribute to the **CmdletMetadata** element in the CDXML file.
 The value of the attribute must be a URI that begins with `http` or `https`.
@@ -114,14 +116,13 @@ The following code shows the HelpUri attribute of the `Start-Debug` CIM command
 <CmdletMetadata Verb="Debug" HelpUri="https://go.microsoft.com/fwlink/?LinkID=001122"/>
 ```
 
-### Adding a HelpUri Attribute to a Workflow
+### Adding a HelpUri attribute to a workflow
 
-For workflows that are written in the PowerShell language, add an **.ExternalHelp** comment
-directive to the workflow code. The value of the directive must be a URI that begins with `http` or
-`https`.
+For workflows that are written in the PowerShell language, add an `.ExternalHelp` comment directive
+to the workflow code. The value of the directive must be a URI that begins with `http` or `https`.
 
 > [!NOTE]
-> The HelpUri property is not supported for XAML-based workflows in PowerShell.
+> The HelpUri property isn't supported for XAML-based workflows in PowerShell.
 
 The following code shows the .ExternalHelp directive in a workflow file.
 
