@@ -211,9 +211,9 @@ Create a new PowerShell module project by following these steps:
    `bin/Debug/net6.0` location of your project folder.
 
    > [!NOTE]
-   > In order to not add any sort of lag to the user experience, the ICommandPredictor interface
-   > has a 20ms time out for responses from the Predictors. This means any predictor results must
-   > return in less than 20ms to get displayed.
+   > To ensure a responsive user experience, the ICommandPredictor interface  has a 20ms time out
+   > for responses from the Predictors. Your predictor code must return results in less than 20ms
+   > to be displayed.
 
 ## Using your predictor plugin
 
