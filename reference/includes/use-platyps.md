@@ -11,4 +11,4 @@ ms.topic: include
 > help in Markdown and then convert it to XML-based help. This makes it much easier to write and
 > maintain help. **PlatyPS** can also create the Updateable Help packages for you. For more
 > information, see
-> [Create XML-based help using PlatyPS](/powershell/utility-modules/platyps/create-help-using-platypsdules).
+> [Create XML-based help using PlatyPS](/powershell/utility-modules/platyps/create-help-using-platyps).
