@@ -1,30 +1,32 @@
 ---
-description: How to Add Syntax to a Cmdlet Help Topic
-ms.date: 09/12/2016
+description: How to add syntax to a cmdlet help topic
+ms.date: 07/10/2023
 ms.topic: reference
-title: How to Add Syntax to a Cmdlet Help Topic
+title: How to add syntax to a cmdlet help topic
 ---
-# How to Add Syntax to a Cmdlet Help Topic
+# How to add syntax to a cmdlet help topic
+
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
 
 Before you start to code the XML for the syntax diagram in the cmdlet Help file, read this section
 to get a clear picture of the kind of data you need to provide, such as the parameter attributes,
 and how that data is displayed in the syntax diagram..
 
-## Parameter Attributes
+## Parameter attributes
 
 - Required
   - If true, the parameter must appear in all commands that use the parameter set.
   - If false, the parameter is optional in all commands that use the parameter set.
 - Position
   - If named, the parameter name is required.
-  - If positional, the parameter name is optional. When it is omitted, the parameter value must be
+  - If positional, the parameter name is optional. When it's omitted, the parameter value must be
     in the specified position in the command. For example, if the value is position="1", the
     parameter value must be the first or only unnamed parameter value in the command.
 - Pipeline Input
   - If true (ByValue), you can pipe input to the parameter. The input is associated with ("bound
-    to") the parameter even if the property name and the object type do not match the expected type.
+    to") the parameter even if the property name and the object type don't match the expected type.
     The PowerShell parameter binding components try to convert the input to the correct
-    type and fail the command only when the type cannot be converted. Only one parameter in a
+    type and fail the command only when the type can't be converted. Only one parameter in a
     parameter set can be associated by value.
   - If true (ByPropertyName), you can pipe input to the parameter. However, the input is associated
     with the parameter only when the parameter name matches the name of a property of the input
@@ -32,17 +34,17 @@ and how that data is displayed in the syntax diagram..
     with that parameter only when the object has a property named path.
   - If true (ByValue, ByPropertyName), you can pipe input to the parameter either by property name
     or by value. Only one parameter in a parameter set can be associated by value.
-  - If false, you cannot pipe input to this parameter.
+  - If false, you can't pipe input to this parameter.
 - Globbing
   - If true, the text that the user types for the parameter value can include wildcard characters.
-  - If false, the text that the user types for the parameter value cannot include wildcard
+  - If false, the text that the user types for the parameter value can't include wildcard
     characters.
 
-### Parameter Value Attributes
+### Parameter value attributes
 
 - Required
   - If true, the specified value must be used whenever using the parameter in a command.
-  - If false, the parameter value is optional. Typically, a value is optional only when it is one of
+  - If false, the parameter value is optional. Typically, a value is optional only when it's one of
     several valid values for a parameter, such as in an enumerated type.
 
 The **Required** attribute of a parameter value is different from the **Required** attribute of a
@@ -54,9 +56,9 @@ only when the parameter is included in the command. It indicates whether that pa
 be used with the parameter.
 
 Typically, parameter values that are placeholders are required and parameter values that are literal
-are not required, because they are one of several values that might be used with the parameter.
+aren't required, because they're one of several values that might be used with the parameter.
 
-### Gathering Syntax Information
+### Gathering syntax information
 
 1. Start with the cmdlet name.
 
@@ -65,9 +67,9 @@ are not required, because they are one of several values that might be used with
        Get-Tech
    ```
 
-1. List all the parameters of the cmdlet. Type a hyphen (`-`) (ASCII 45) before each parameter name.
-   Separate the parameters into parameter sets (some cmdlets may have only one parameter set). In
-   this example the Get-Tech cmdlet has two parameter sets.
+1. List all the parameters of the cmdlet. Type a hyphen (`-`) before each parameter name. Separate
+   the parameters into parameter sets (some cmdlets may have only one parameter set). In this
+   example the Get-Tech cmdlet has two parameter sets.
 
    ```
    SYNTAX
@@ -81,16 +83,16 @@ are not required, because they are one of several values that might be used with
 
    For each parameter set, list its unique parameter first, unless there are positional parameters
    that must appear first. In the previous example, the Name and ID parameters are unique parameters
-   for the two parameter sets (each parameter set must have one parameter that is unique to that
+   for the two parameter sets (each parameter set must have one parameter that's unique to that
    parameter set). This makes it easier for users to identify what parameter they need to supply for
    the parameter set.
 
-   List the parameters in the order that they should appear in the command. If the order does not
+   List the parameters in the order that they should appear in the command. If the order doesn't
    matter, list related parameters together, or list the most frequently used parameters first.
 
    Be sure to list the WhatIf and Confirm parameters if the cmdlet supports ShouldProcess.
 
-   Do not list the common parameters (such as Verbose, Debug, and ErrorAction) in your syntax
+   Don't list the common parameters (such as Verbose, Debug, and ErrorAction) in your syntax
    diagram. The `Get-Help` cmdlet adds that information for you when it displays the Help topic.
 
 1. Add the parameter values. In PowerShell, parameter values are represented by their .NET type.
@@ -108,7 +110,7 @@ are not required, because they are one of several values that might be used with
    List all values of enumerations, such as the `-type` parameter in the previous example, which can
    be set to **basic** or **advanced**.
 
-   Switch parameters, such as `-list` in the previous example, do not have values.
+   Switch parameters, such as `-list` in the previous example, don't have values.
 
 1. Add angle brackets to parameters values that are placeholder, as compared to parameter values
    that are literals.
@@ -128,7 +130,7 @@ are not required, because they are one of several values that might be used with
    ```
 
 1. Enclose optional parameters names (for positional parameters) in square brackets. The name for
-   parameters that are positional, such as the Name parameter in the following example, do not have
+   parameters that are positional, such as the Name parameter in the following example, don't have
    to be included in the command.
 
    ```
@@ -164,13 +166,13 @@ are not required, because they are one of several values that might be used with
        Get-Tech -ID <int[]> [-list] [-type {basic | advanced}]
    ```
 
-## Coding the Syntax Diagram XML
+## Coding the syntax diagram XML
 
 The syntax node of the XML begins immediately after the description node, which ends with the
 `</maml:description>` tag. For information about gathering the data used in the syntax diagram, see
-[Gathering Syntax Information](#gathering-syntax-information).
+[Gathering Syntax Information][01].
 
-### Adding a Syntax Node
+### Adding a syntax node
 
 The syntax diagram displayed in the cmdlet Help topic is generated from the data in the syntax node
 of the XML. The syntax node is enclosed in a pair of `<command:syntax>` tags. With each parameter
@@ -194,7 +196,7 @@ The following example shows a syntax node that has syntax item nodes for two par
 </command:syntax>
 ```
 
-### Adding the Cmdlet Name to the Parameter Set Data
+### Adding the cmdlet name to the parameter set data
 
 Each parameter set of the cmdlet is specified in a syntax item node. Each syntax item node begins
 with a pair of `<maml:name>` tags that include the name of the cmdlet.
@@ -212,15 +214,14 @@ The following example includes a syntax node that has syntax item nodes for two 
 </command:syntax>
 ```
 
-### Adding Parameters
+### Adding parameters
 
 Each parameter added to the syntax item node is specified within a pair of `<command:parameter>`
 tags. You need a pair of `<command:parameter>` tags for each parameter included in the parameter
 set, with the exception of the common parameters that are provided by PowerShell.
 
 The attributes of the opening `<command:parameter>` tag determine how the parameter appears in the
-syntax diagram. For information on parameter attributes, see
-[Parameter Attributes](#parameter-attributes).
+syntax diagram. For information on parameter attributes, see [Parameter Attributes][02].
 
 > [!NOTE]
 > The `<command:parameter>` tag supports a child element `<maml:description>` whose content is never
@@ -249,3 +250,7 @@ The following example includes a syntax item node for a parameter set with two p
   </command:parameter>
 </command:syntaxItem>
 ```
+
+<!-- link references -->
+[01]: #gathering-syntax-information
+[02]: #parameter-attributes

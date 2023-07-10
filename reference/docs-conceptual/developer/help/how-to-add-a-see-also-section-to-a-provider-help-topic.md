@@ -1,10 +1,12 @@
 ---
 description: How to Add a See Also Section to a Provider Help Topic
-ms.date: 09/12/2016
+ms.date: 07/10/2023
 ms.topic: reference
 title: How to Add a See Also Section to a Provider Help Topic
 ---
 # How to Add a See Also Section to a Provider Help Topic
+
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
 
 This section explains how to populate the **SEE ALSO** section of a provider help topic.
 
@@ -14,8 +16,8 @@ help and conceptual ("about") help topics in Windows PowerShell. It can also inc
 books, paper, and online topics, including an online version of the current provider help topic.
 
 When you refer to online topics, provide the URI or a search term in plain text. The `Get-Help`
-cmdlet does not link or redirect to any of the topics in the list. Also, the `Online` parameter of
-the `Get-Help` cmdlet does not work with provider help.
+cmdlet doesn't link or redirect to any of the topics in the list. Also, the `Online` parameter of
+the `Get-Help` cmdlet doesn't work with provider help.
 
 The **See Also** section is created from the `RelatedLinks` element and the tags that it contains.
 The following XML shows how to add the tags.
@@ -37,7 +39,7 @@ The following XML shows how to add the tags.
 
 1. For each topic in the **SEE ALSO** section, within the `RelatedLinks` element, add a
    `navigationLink` element. Then, within each `navigationLink` element, add one `linkText` element
-   and one `uri` element. If you are not using the `uri` element, you can add it as an empty element
+   and one `uri` element. If you aren't using the `uri` element, you can add it as an empty element
    (\<uri/>).
 
    For example:

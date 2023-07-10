@@ -1,10 +1,10 @@
 ---
-description: How to Add Return Values to a Cmdlet Help Topic
-ms.date: 09/12/2016
+description: How to add return values to a cmdlet help topic
+ms.date: 07/10/2023
 ms.topic: reference
-title: How to Add Return Values to a Cmdlet Help Topic
+title: How to add return values to a cmdlet help topic
 ---
-# How to Add Return Values to a Cmdlet Help Topic
+# How to add return values to a cmdlet help topic
 
 This section describes how to add an OUTPUTS section to a PowerShell cmdlet Help topic. The
 **OUTPUTS** section lists the .NET classes of objects that the cmdlet returns or passes down the
@@ -14,7 +14,7 @@ There is no limit to the number of classes that you can add to the **OUTPUTS** s
 types of a cmdlet are enclosed in a `<command:returnValues>` node, with each class enclosed in a
 `<command:returnValue>` element.
 
-If a cmdlet does not generate any output, use this section to indicate that there is no output. For
+If a cmdlet doesn't generate any output, use this section to indicate that there is no output. For
 example, in place of the class name, write **None** and provide a brief explanation. If the cmdlet
 generates output conditionally, use this node to explain the conditions and describe the conditional
 output.

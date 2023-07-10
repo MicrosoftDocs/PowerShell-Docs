@@ -1,6 +1,6 @@
 ---
 description: Placing Comment-Based Help in Functions
-ms.date: 09/12/2016
+ms.date: 07/10/2023
 ms.topic: reference
 title: Placing Comment-Based Help in Functions
 ---
@@ -15,7 +15,7 @@ associates the comment-based help topic with the correct function.
 
 - At the end of the function body.
 
-- Before the `Function` keyword. When the function is in a script or script module, there cannot be
+- Before the `Function` keyword. When the function is in a script or script module, there can't be
   more than one blank line between the last line of the comment-based help and the `Function`
   keyword. Otherwise, `Get-Help` associates the help with the script, not with the function.
 

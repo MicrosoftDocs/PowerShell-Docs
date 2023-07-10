@@ -1,6 +1,6 @@
 ---
 description: Examples of Comment-Based Help
-ms.date: 01/11/2021
+ms.date: 07/10/2023
 ms.topic: reference
 title: Examples of Comment-Based Help
 ---
@@ -36,7 +36,7 @@ function Add-Extension
         Specifies the extension. "Txt" is the default.
 
         .INPUTS
-        None. You cannot pipe objects to Add-Extension.
+        None. You can't pipe objects to Add-Extension.
 
         .OUTPUTS
         System.String. Add-Extension returns a string with the extension or file name.
@@ -108,7 +108,7 @@ PS> Get-Help Add-Extension -full
                "get-help about_commonparameters".
 
         INPUTS
-            None. You cannot pipe objects to Add-Extension.
+            None. You can't pipe objects to Add-Extension.
 
         OUTPUTS
             System.String. Add-Extension returns a string with the extension or file name.
@@ -137,10 +137,10 @@ PS> Get-Help Add-Extension -full
 
 The following sample function includes comment-based Help.
 
-Notice the blank lines between the closing **#>** and the `Param` statement. In a script that does
-not have a `Param` statement, there must be at least two blank lines between the final comment in
-the Help topic and the first function declaration. Without these blank lines, `Get-Help` associates
-the Help topic with the function, instead of the script.
+Notice the blank lines between the closing `#>` and the `Param` statement. In a script that does not
+have a `Param` statement, there must be at least two blank lines between the final comment in the
+Help topic and the first function declaration. Without these blank lines, `Get-Help` associates the
+Help topic with the function, instead of the script.
 
 ```powershell
 <#
@@ -160,10 +160,10 @@ the Help topic with the function, instead of the script.
   saves the output in the local directory.
 
   .INPUTS
-  None. You cannot pipe objects to Update-Month.ps1.
+  None. You can't pipe objects to Update-Month.ps1.
 
   .OUTPUTS
-  None. Update-Month.ps1 does not generate any output.
+  None. Update-Month.ps1 doesn't generate any output.
 
   .EXAMPLE
   PS> .\Update-Month.ps1
@@ -180,8 +180,8 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-The following command gets the script Help. Because the script is not in a directory that is listed
-in the Path environment variable, the `Get-Help` command that gets the script Help must specify the
+The following command gets the script Help. Because the script isn't in a directory that's listed in
+the Path environment variable, the `Get-Help` command that gets the script Help must specify the
 script path.
 
 ```powershell
@@ -231,10 +231,10 @@ PS> Get-Help c:\ps-test\update-month.ps1 -full
                    "get-help about_commonparameters".
 
             INPUTS
-                   None. You cannot pipe objects to Update-Month.ps1.
+                   None. You can't pipe objects to Update-Month.ps1.
 
             OUTPUTS
-                   None. Update-Month.ps1 does not generate any output.
+                   None. Update-Month.ps1 doesn't generate any output.
 
             -------------------------- EXAMPLE 1 --------------------------
 
