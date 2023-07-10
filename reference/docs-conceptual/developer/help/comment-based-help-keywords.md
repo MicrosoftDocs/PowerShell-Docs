@@ -1,6 +1,6 @@
 ---
 description: Comment-Based Help Keywords
-ms.date: 02/03/2022
+ms.date: 07/10/2023
 ms.topic: reference
 no-loc: [FAQ, Function, General, Glossary, Provider, Component, Functionality, Role]
 title: Comment-Based Help Keywords
@@ -11,14 +11,13 @@ This topic lists and describes the keywords in comment-based help.
 
 ## Keywords in Comment-Based Help
 
-The following are valid comment-based Help keywords. They are listed in the order in which they
+The following are valid comment-based Help keywords. They're listed in the order in which they
 typically appear in a Help topic along with their intended use. These keywords can appear in any
-order in the comment-based Help, and they are not case-sensitive.
+order in the comment-based Help, and they're not case-sensitive.
 
 Note that the `.EXTERNALHELP` keyword takes precedence over all other comment-based help keywords.
-When `.EXTERNALHELP` is present, the
-[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet does not display
-comment-based help, even when it cannot find a help file that matches the value of the keyword.
+When `.EXTERNALHELP` is present, the [Get-Help][02] cmdlet doesn't display comment-based help, even
+when it can't find a help file that matches the value of the keyword.
 
 ## `.SYNOPSIS`
 
@@ -73,7 +72,7 @@ version of the same Help topic. The online version opens when you use the `Onlin
 
 ## `.COMPONENT`
 
-The name of the technology or feature that the function or script uses, or to which it is related.
+The name of the technology or feature that the function or script uses, or to which it's related.
 The **Component** parameter of `Get-Help` uses this value to filter the search results returned by
 `Get-Help`.
 
@@ -121,27 +120,28 @@ keyword is used by the `Export-PSSession` cmdlet to find the Help topics for the
 
 Specifies the path and/or name of an XML-based Help file for the script or function.
 
-The `.EXTERNALHELP` keyword tells the
-[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet to get help for the script
-or function in an XML-based file. The `.EXTERNALHELP` keyword is required when using an XML-based
-help file for a script or function. Without it, `Get-Help` will not find a help file for the
-function or script.
+The `.EXTERNALHELP` keyword tells the [Get-Help][02] cmdlet to get help for the script or function
+in an XML-based file. The `.EXTERNALHELP` keyword is required when using an XML-based help file for
+a script or function. Without it, `Get-Help` will not find a help file for the function or script.
 
 The `.EXTERNALHELP` keyword takes precedence over all other comment-based help keywords. When
-`.EXTERNALHELP` is present, the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)
-cmdlet does not display comment-based help, even when it cannot find a help file that matches the
-value of the keyword.
+`.EXTERNALHELP` is present, the [Get-Help][02] cmdlet doesn't display comment-based help, even when
+it can't find a help file that matches the value of the keyword.
 
 When the function is exported by a script module, the value of `.EXTERNALHELP` should be a filename
 without a path. `Get-Help` looks for the file in a locale-specific subdirectory of the module
 directory. There are no requirements for the filename, but a best practice is to use the following
 filename format: `<ScriptModule>.psm1-help.xml`.
 
-When the function is not associated with a module, include a path and filename in the value of the
+When the function isn't associated with a module, include a path and filename in the value of the
 `.EXTERNALHELP` keyword. If the specified path to the XML file contains UI-culture-specific
 subdirectories, `Get-Help` searches the subdirectories recursively for an XML file with the name of
 the script or function in accordance with the language fallback standards established for Windows,
 just as it does for all XML-based Help topics.
 
 For more information about the cmdlet Help XML-based Help file format, see
-[Writing Windows PowerShell Cmdlet Help](./writing-help-for-windows-powershell-cmdlets.md).
+[Writing Windows PowerShell Cmdlet Help][01].
+
+<!-- link references -->
+[01]: ./writing-help-for-windows-powershell-cmdlets.md
+[02]: /powershell/module/Microsoft.PowerShell.Core/Get-Help

@@ -1,13 +1,15 @@
 ---
-description: How to Add Notes to a Cmdlet Help Topic
-ms.date: 10/20/2020
+description: How to add notes to a cmdlet help topic
+ms.date: 07/10/2023
 ms.topic: reference
-title: How to Add Notes to a Cmdlet Help Topic
+title: How to add notes to a cmdlet help topic
 ---
-# How to Add Notes to a Cmdlet Help Topic
+# How to add notes to a cmdlet help topic
+
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
 
 This section describes how to add a **NOTES** section to a PowerShell cmdlet Help topic. The
-**NOTES** section is used to explain details that do not fit easily into the other structured
+**NOTES** section is used to explain details that don't fit easily into the other structured
 sections, such as a more detailed explanation of a parameter. This content could include comments on
 how the cmdlet works with a specific provider, some unique, yet important, uses of the cmdlet, or
 ways to avoid possible error conditions.

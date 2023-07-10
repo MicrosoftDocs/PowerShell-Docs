@@ -1,13 +1,15 @@
 ---
 description: How to Add a Cmdlet Description
-ms.date: 09/13/2016
+ms.date: 07/10/2023
 ms.topic: reference
 title: How to Add a Cmdlet Description
 ---
 # How to Add a Cmdlet Description
 
-This section describes how to add content that is displayed in the **DESCRIPTION** section of the cmdlet
-Help. In the Help file, this content is added to the **Command** node for each cmdlet.
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
+
+This section describes how to add content that's displayed in the **DESCRIPTION** section of the
+cmdlet Help. In the Help file, this content is added to the **Command** node for each cmdlet.
 
 > [!NOTE]
 > For a complete view of a Help file, open one of the `dll-Help.xml` files located in the PowerShell
@@ -35,9 +37,12 @@ Help. In the Help file, this content is added to the **Command** node for each c
   resource. The security descriptor contains the access control lists (ACLs) of the resource. The
   ACL specifies the permissions that users and user groups have to access the resource."
 
-- The detailed description should describe the cmdlet, but it should not describe concepts that the
+- The detailed description should describe the cmdlet, but it shouldn't describe concepts that the
   cmdlet uses. Place concept definitions in Additional Notes.
 
 ## See Also
 
-[Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK][01]
+
+<!-- link references -->
+[01]: ../windows-powershell-reference.md

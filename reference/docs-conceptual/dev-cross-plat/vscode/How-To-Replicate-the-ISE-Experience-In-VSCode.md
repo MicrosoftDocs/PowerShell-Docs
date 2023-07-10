@@ -140,11 +140,15 @@ ISE Mode makes the following changes to VS Code settings.
 
   For more information, see [the VS Code documentation][03].
 
-- Disable the Debug Console
+- Hide the Debug Console panel
 
-  If you only plan on using VS Code for PowerShell scripting, you can hide the **Debug Console**
-  since it'sn't used by the PowerShell extension. To do so, right click on **Debug Console** then
-  click on the check mark to hide it.
+  The PowerShell extension uses the built-in debugging interface of VS Code to allow for debugging
+  of PowerShell scripts and modules. However, the extension does not use the Debug Console panel. To
+  hide the Debug Console, right-click on **Debug Console** and select **Hide 'Debug Console'**.
+
+  ![Screenshot show how to hide the Debug Console panel.][10]
+
+  For more information about debugging PowerShell with Visual Studio Code, see [Using VS Code][11].
 
 ## More settings
 
@@ -164,4 +168,5 @@ We're always happy to accept PRs and contributions as well!
 [07]: media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png
 [08]: media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png
 [09]: media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png
-
+[10]: media/How-To-Replicate-the-ISE-Experience-In-VSCode/4-debug-console.png
+[11]: using-vscode.md#debugging-with-visual-studio-code

@@ -1,6 +1,6 @@
 ---
 description: Updatable Help Authoring - Step-by-Step
-ms.date: 11/29/2022
+ms.date: 07/10/2023
 ms.topic: reference
 title: Updatable Help Authoring - Step-by-Step
 ---
@@ -31,7 +31,7 @@ You can place help content files for different modules in the same location.
 Add a **HelpInfoURI** key to your module manifest. The value of the key is the Uniform Resource
 Identifier (URI) of the location of the HelpInfo XML information file for your module. For security,
 the address must begin with `http:` or `https:`. The URI should specify an internet location for the
-HelpInfo XML file. Do not include the HelpInfo XML filename.
+HelpInfo XML file. Don't include the HelpInfo XML filename.
 
 For example:
 

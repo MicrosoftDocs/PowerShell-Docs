@@ -210,6 +210,11 @@ Create a new PowerShell module project by following these steps:
 1. Run `dotnet build` to produce the assembly. You can find the compiled assembly in the
    `bin/Debug/net6.0` location of your project folder.
 
+   > [!NOTE]
+   > To ensure a responsive user experience, the ICommandPredictor interface has a 20ms time out
+   > for responses from the Predictors. Your predictor code must return results in less than 20ms
+   > to be displayed.
+
 ## Using your predictor plugin
 
 To try out your new predictor, open a new PowerShell 7.2 session and run the following commands:
