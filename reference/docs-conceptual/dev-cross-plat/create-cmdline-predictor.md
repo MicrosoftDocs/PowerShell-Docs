@@ -211,7 +211,7 @@ Create a new PowerShell module project by following these steps:
    `bin/Debug/net6.0` location of your project folder.
 
    > [!NOTE]
-   > To ensure a responsive user experience, the ICommandPredictor interface  has a 20ms time out
+   > To ensure a responsive user experience, the ICommandPredictor interface has a 20ms time out
    > for responses from the Predictors. Your predictor code must return results in less than 20ms
    > to be displayed.
 
