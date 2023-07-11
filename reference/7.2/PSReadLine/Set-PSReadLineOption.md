@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 03/24/2023
+ms.date: 07/11/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -32,6 +32,11 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
 
 The `Set-PSReadLineOption` cmdlet customizes the behavior of the **PSReadLine** module when you're
 editing the command line. To view the **PSReadLine** settings, use `Get-PSReadLineOption`.
+
+The options set by this command only apply to the current session. To persist any options, add them
+to a profile script. For more information, see
+[about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md) and
+[Customizing your shell environment](/powershell/scripting/learn/shell/creating-profiles).
 
 ## EXAMPLES
 
@@ -141,6 +146,29 @@ block object.
 
 For more information, see
 [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
+
+### Example 7: Use HistoryHandler to filter commands added to history
+
+The following example shows how to use the `AddToHistoryHandler` to prevent saving any git commands
+to history.
+
+```powershell
+$ScriptBlock = {
+    Param([string]$line)
+
+    if ($line -match "^git") {
+        return $false
+    } else {
+        return $true
+    }
+}
+
+Set-PSReadLineOption -AddToHistoryHandler $ScriptBlock
+```
+
+The scriptblock returns `$false` if the command started with `git`. This has the same effect as
+returning the `SkipAdding` **AddToHistory** enum. If the command doesn't start with `git`, the
+handler returns `$true` and PSReadLine saves the command in history.
 
 ## PARAMETERS
 
