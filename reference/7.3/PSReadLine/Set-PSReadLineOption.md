@@ -148,7 +148,22 @@ For more information, see
 
 Specifies a **ScriptBlock** that controls which commands get added to **PSReadLine** history.
 
-The **ScriptBlock** receives the command line as input.
+The **ScriptBlock** receives the command line as input. The following example shows how to 
+use the `AddToHistoryHandler` and does not save any git commands to history.
+
+```powershell
+$ScriptBlock = { 
+    Param([string]$line) 
+  
+    if ($line -match "^git") {
+        return $False
+    }
+    else {
+        return $True
+    } 
+}
+Set-PSReadLineOption -AddToHistoryHandler $ScriptBlock
+```
 
 The  **ScripBlock** should return a member of the **AddToHistoryOption** enum, the string name of
 one of those members, or a boolean value. The list below describes the possible values and their
