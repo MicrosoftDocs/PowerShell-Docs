@@ -130,6 +130,7 @@ remoting endpoints or a custom endpoint having specific user role capabilities.
 Accepts a Base64-encoded string version command arguments. Use this parameter
 to submit arguments that require complex, nested quoting. The Base64
 representation must be a UTF-16LE encoded string.
+
 ### -EncodedCommand \<Base64EncodedCommand\>
 
 Accepts a base-64-encoded string version of a command. Use this parameter to
