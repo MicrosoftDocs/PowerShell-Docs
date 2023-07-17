@@ -57,7 +57,7 @@ This function has been deprecated. It is an empty function that does nothing.
 This function provides a short hand way to run `New-Item -Type Directory` with
 your parameters.
 
-## more
+## `more`
 
 This function is a wrapper around the `more.com` native command.
 
