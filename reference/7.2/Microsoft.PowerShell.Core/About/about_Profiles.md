@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 04/14/2023
+ms.date: 07/17/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -28,27 +28,27 @@ doesn't create the profiles for you.
 ## Profile types and locations
 
 PowerShell supports several profile files that are scoped to users and
-PowerShell hosts. You can have any or all of these profiles on your computer.
+PowerShell hosts. You can have any or all these profiles on your computer.
 
 For example, the PowerShell console supports the following basic profile files.
 The profiles are listed in order that they're executed.
 
 - All Users, All Hosts
   - Windows - `$PSHOME\Profile.ps1`
-  - Linux - `/usr/local/microsoft/powershell/7/profile.ps1`
+  - Linux - `/opt/microsoft/powershell/7/profile.ps1`
   - macOS - `/usr/local/microsoft/powershell/7/profile.ps1`
 - All Users, Current Host
   - Windows - `$PSHOME\Microsoft.PowerShell_profile.ps1`
-  - Linux - `/usr/local/microsoft/powershell/7/Microsoft.Powershell_profile.ps1`
-  - macOS - `/usr/local/microsoft/powershell/7/Microsoft.Powershell_profile.ps1`
+  - Linux - `/opt/microsoft/powershell/7/Microsoft.PowerShell_profile.ps1`
+  - macOS - `/usr/local/microsoft/powershell/7/Microsoft.PowerShell_profile.ps1`
 - Current User, All Hosts
   - Windows - `$HOME\Documents\PowerShell\Profile.ps1`
   - Linux - `~/.config/powershell/profile.ps1`
   - macOS - `~/.config/powershell/profile.ps1`
 - Current user, Current Host
   - Windows - `$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`
-  - Linux - `~/.config/powershell/Microsoft.Powershell_profile.ps1`
-  - macOS - `~/.config/powershell/Microsoft.Powershell_profile.ps1`
+  - Linux - `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
+  - macOS - `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
 
 The profile scripts are executed in the order listed. This means that changes
 made in the **AllUsersAllHosts** profile can be overridden by any of the other
@@ -103,7 +103,7 @@ in each PowerShell host application that you use.
 To see the current values of the `$PROFILE` variable, type:
 
 ```powershell
-$PROFILE | Get-Member -Type NoteProperty
+$PROFILE | Select-Object *
 ```
 
 You can use the `$PROFILE` variable in many commands. For example, the
@@ -236,9 +236,8 @@ CustomizeConsole
 ### Add a customized PowerShell prompt
 
 ```powershell
-function Prompt
-{
-$env:COMPUTERNAME + "\" + (Get-Location) + "> "
+function Prompt {
+    $env:COMPUTERNAME + "\" + (Get-Location) + "> "
 }
 ```
 
