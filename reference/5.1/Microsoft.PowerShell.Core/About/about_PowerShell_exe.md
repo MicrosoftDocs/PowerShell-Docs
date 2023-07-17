@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 05/08/2023
+ms.date: 07/17/2023
 no-no-loc: [-Command, -ConfigurationName , -EncodedCommand, -ExecutionPolicy, -File, -Help, -InputFormat, -Mta, -NoExit, -NoLogo, -NonInteractive, -NoProfile, -OutputFormat, -PSConsoleFile, -Sta, -Version, -WindowStyle]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -27,6 +27,7 @@ PowerShell[.exe]
     [-InputFormat {Text | XML}]
     [-OutputFormat {Text | XML}]
     [-WindowStyle <style>]
+    [-EncodedArguments <Base64EncodedArguments>]
     [-EncodedCommand <Base64EncodedCommand>]
     [-ConfigurationName <string>]
     [-File - | <filePath> <args>]
@@ -123,6 +124,12 @@ or when execution is interrupted with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 Specifies a configuration endpoint in which PowerShell is run. This can be any
 endpoint registered on the local machine including the default PowerShell
 remoting endpoints or a custom endpoint having specific user role capabilities.
+
+### -EncodedArguments \<Base64EncodedArguments\>
+
+Accepts a Base64-encoded string version command arguments. Use this parameter
+to submit arguments that require complex, nested quoting. The Base64
+representation must be a UTF-16LE encoded string.
 
 ### -EncodedCommand \<Base64EncodedCommand\>
 
