@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 05/08/2023
+ms.date: 07/17/2023
 no-loc: [-File, -f, -Command, -c, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -19,11 +19,13 @@ command-line parameters and describes the syntax.
 
 ```
 Usage: pwsh[.exe]
+    [-Login]
     [[-File] <filePath> [args]]
     [-Command { - | <script-block> [-args <arg-array>]
-                 | <string> [<CommandParameters>] } ]
+                  | <string> [<CommandParameters>] } ]
     [-ConfigurationName <string>]
     [-CustomPipeName <string>]
+    [-EncodedArguments <Base64EncodedArguments>]
     [-EncodedCommand <Base64EncodedCommand>]
     [-ExecutionPolicy <ExecutionPolicy>]
     [-InputFormat {Text | XML}]
@@ -35,7 +37,7 @@ Usage: pwsh[.exe]
     [-NonInteractive]
     [-NoProfile]
     [-OutputFormat {Text | XML}]
-    [-SettingsFile <SettingsFilePath>]
+    [-SettingsFile <filePath>]
     [-SSHServerMode]
     [-STA]
     [-Version]
@@ -218,6 +220,12 @@ pwsh -CustomPipeName mydebugpipe
 Enter-PSHostProcess -CustomPipeName mydebugpipe
 ```
 
+### -EncodedArguments | -encodeda | -ea
+
+Accepts a Base64-encoded string version command arguments. Use this parameter
+to submit arguments that require complex, nested quoting. The Base64
+representation must be a UTF-16LE encoded string.
+
 ### -EncodedCommand | -e | -ec
 
 Accepts a Base64-encoded string version of a command. Use this parameter to
@@ -239,9 +247,8 @@ Sets the default execution policy for the current session and saves it in the
 `$env:PSExecutionPolicyPreference` environment variable. This parameter does
 not change the persistently configured execution policies.
 
-This parameter only applies to Windows computers. The
-`$env:PSExecutionPolicyPreference` environment variable doesn't exist on
-non-Windows platforms.
+This parameter only applies to Windows computers. On non-Windows platforms, the
+parameter and the value provided are ignored.
 
 ### -InputFormat | -inp | -if
 
@@ -260,8 +267,8 @@ using /bin/sh to execute login profiles such as /etc/profile and ~/.profile.
 On Windows, this switch does nothing.
 
 > [!IMPORTANT]
-> This parameter must come first to start PowerShell as a login shell.
-> Passing this parameter in another position will be ignored.
+> This parameter must come first to start PowerShell as a login shell. This
+> parameter is ignored if it is passed in another position.
 
 To set up `pwsh` as the login shell on UNIX-like operating systems:
 
@@ -286,7 +293,8 @@ To set up `pwsh` as the login shell on UNIX-like operating systems:
 ### -MTA
 
 Start PowerShell using a multi-threaded apartment. This switch is only
-available on Windows.
+available on Windows. Using this parameter on non-Windows platforms results in
+an error.
 
 ### -NoExit | -noe
 
@@ -339,7 +347,8 @@ intended or supported for any other use.
 ### -STA
 
 Start PowerShell using a single-threaded apartment. This is the default. This
-switch is only available on the Windows platform.
+switch is only available on the Windows platform. Using this parameter on
+non-Windows platforms results in an error.
 
 ### -Version | -v
 
@@ -348,9 +357,10 @@ Displays the version of PowerShell. Additional parameters are ignored.
 ### -WindowStyle | -w
 
 Sets the window style for the session. Valid values are Normal, Minimized,
-Maximized and Hidden.
+Maximized and Hidden. This parameter only applies to Windows. Using this
+parameter on non-Windows platforms results in an error.
 
-### -WorkingDirectory | -wd
+### -WorkingDirectory | -wd | -wo
 
 Sets the initial working directory by executing at startup. Any valid
 PowerShell file path is supported.
