@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 05/08/2023
+ms.date: 07/17/2023
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -15,13 +15,61 @@ title: about Automatic Variables
 Describes variables that store state information for and are created and
 maintained by PowerShell.
 
-## Long description
-
 Conceptually, most of these variables are considered to be read-only. Even
 though they _can_ be written to, for backward compatibility they _should not_
 be written to.
 
 Here is a list of the automatic variables in PowerShell:
+
+- [$$](#section)
+- [$?](#section-1)
+- [$^](#section-2)
+- [$_](#_)
+- [$args](#args)
+- [$ConsoleFileName](#consolefilename)
+- [$EnabledExperimentalFeatures](#enabledexperimentalfeatures)
+- [$Error](#error)
+- [$Event](#event)
+- [$EventArgs](#eventargs)
+- [$EventSubscriber](#eventsubscriber)
+- [$ExecutionContext](#executioncontext)
+- [$false](#false)
+- [$foreach](#foreach)
+- [$HOME](#home)
+- [$Host](#host)
+- [$input](#input)
+- [$IsCoreCLR](#iscoreclr)
+- [$IsLinux](#islinux)
+- [$IsMacOS](#ismacos)
+- [$IsWindows](#iswindows)
+- [$LASTEXITCODE](#lastexitcode)
+- [$Matches](#matches)
+- [$MyInvocation](#myinvocation)
+- [$NestedPromptLevel](#nestedpromptlevel)
+- [$null](#null)
+- [$PID](#pid)
+- [$PROFILE](#profile)
+- [$PSBoundParameters](#psboundparameters)
+- [$PSCmdlet](#pscmdlet)
+- [$PSCommandPath](#pscommandpath)
+- [$PSCulture](#psculture)
+- [$PSDebugContext](#psdebugcontext)
+- [$PSEdition](#psedition)
+- [$PSHOME](#pshome)
+- [$PSItem](#psitem)
+- [$PSScriptRoot](#psscriptroot)
+- [$PSSenderInfo](#pssenderinfo)
+- [$PSUICulture](#psuiculture)
+- [$PSVersionTable](#psversiontable)
+- [$PWD](#pwd)
+- [$Sender](#sender)
+- [$ShellId](#shellid)
+- [$StackTrace](#stacktrace)
+- [$switch](#switch)
+- [$this](#this)
+- [$true](#true)
+
+## Long description
 
 ### $$
 
@@ -179,7 +227,7 @@ typically `C:\Users\<UserName>`. On Unix, this variable uses the value of the
 
 > [!IMPORTANT]
 > Windows can redirect the location of the user's profile. This means that
-> `$HOME` may not have the same value as `$env:HOMEDRIVE$env:HOMEPATH`.
+> `$HOME` may not have the same value as `"$env:HOMEDRIVE$env:HOMEPATH"`.
 
 ### $Host
 
