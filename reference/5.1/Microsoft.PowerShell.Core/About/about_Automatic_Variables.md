@@ -219,7 +219,7 @@ value of the `"$env:USERPROFILE"` Windows environment variable, typically
 
 > [!IMPORTANT]
 > Windows can redirect the location of the user's profile. This means that
-> `$HOME` may not have the same value as `$env:HOMEDRIVE$env:HOMEPATH`.
+> `$HOME` may not have the same value as `"$env:HOMEDRIVE$env:HOMEPATH"`.
 
 ### $Host
 

@@ -227,7 +227,7 @@ typically `C:\Users\<UserName>`. On Unix, this variable uses the value of the
 
 > [!IMPORTANT]
 > Windows can redirect the location of the user's profile. This means that
-> `$HOME` may not have the same value as `$env:HOMEDRIVE$env:HOMEPATH`.
+> `$HOME` may not have the same value as `"$env:HOMEDRIVE$env:HOMEPATH"`.
 
 ### $Host
 
