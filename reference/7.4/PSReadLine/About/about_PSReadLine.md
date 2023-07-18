@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 11/14/2022
+ms.date: 07/18/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -204,9 +204,10 @@ Invoke-WebRequest -Token xxx # Expr-value as argument to '-Token'.
 Get-ResultFromTwo -Secret1 (Get-Secret -Name blah -AsPlainText) -Secret2 sdv87ysdfayf798hfasd8f7ha # '-Secret2' has expr-value argument.
 ```
 
-If there is other commands you do not want written to history, you can use the 
-`AddToHistoryHandler` parameter for `Set-PSReadLineOption` cmdlet. There are 
-documented examples of how to use that in the [`Set-PSReadLineOption`](MicrosoftDocs/PowerShell-Docs/reference/7.4/PSReadLine/Set-PSReadLineOption.md) doc page.
+If there are other commands you don't want written to the history files, you
+can use the **AddToHistoryHandler** parameter of the `Set-PSReadLineOption`
+cmdlet. For an example of how to use **AddToHistoryHandler**, see Example 7 of
+[Set-PSReadLineOption](../Set-PSReadLineOption.md#example-7-use-historyhandler-to-filter-commands-added-to-history).
 
 ### PSReadLine release history
 
