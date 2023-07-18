@@ -170,6 +170,38 @@ The scriptblock returns `$false` if the command started with `git`. This has the
 returning the `SkipAdding` **AddToHistory** enum. If the command doesn't start with `git`, the
 handler returns `$true` and PSReadLine saves the command in history.
 
+### Example 8: Use CommandValidationHandler to validate a command before its executed
+
+This example shows how to use the `CommandValidationHandler` parameter to run a validate a command 
+before it is executed. The example specifically checks for using `git` and then the sub command 
+`cmt` and replace that with the full qualified name of `commit`. This way you can create short hands 
+for subcommands but there are many other applications for validating a script before its execution.
+
+```powershell
+# You will need to be using this namespace in order to use the [CommandAst] object
+using namespace System.Management.Automation.Language
+
+Set-PSReadLineOption -CommandValidationHandler {
+    param([CommandAst]$CommandAst)
+
+    switch ($CommandAst.GetCommandName())
+    {
+        'git' {
+            $gitCmd = $CommandAst.CommandElements[1].Extent
+            switch ($gitCmd.Text)
+            {
+                'cmt' {
+                    [Microsoft.PowerShell.PSConsoleReadLine]::Replace(
+                        $gitCmd.StartOffset, $gitCmd.EndOffset - $gitCmd.StartOffset, 'commit')
+                }
+            }
+        }
+    }
+}
+# This checks the validation script when you hit enter
+Set-PSReadLineKeyHandler -Chord Enter -Function ValidateAndAcceptLine
+```
+
 ## PARAMETERS
 
 ### -AddToHistoryHandler
