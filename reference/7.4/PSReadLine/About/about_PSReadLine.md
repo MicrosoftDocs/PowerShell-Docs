@@ -204,6 +204,10 @@ Invoke-WebRequest -Token xxx # Expr-value as argument to '-Token'.
 Get-ResultFromTwo -Secret1 (Get-Secret -Name blah -AsPlainText) -Secret2 sdv87ysdfayf798hfasd8f7ha # '-Secret2' has expr-value argument.
 ```
 
+If there is other commands you do not want written to history, you can use the 
+`AddToHistoryHandler` parameter for `Set-PSReadLineOption` cmdlet. There are 
+documented examples of how to use that in the [`Set-PSReadLineOption`](MicrosoftDocs/PowerShell-Docs/reference/7.4/PSReadLine/Set-PSReadLineOption.md) doc page.
+
 ### PSReadLine release history
 
 There have been many updates to PSReadLine since the version that ships in
