@@ -207,7 +207,7 @@ Get-ResultFromTwo -Secret1 (Get-Secret -Name blah -AsPlainText) -Secret2 sdv87ys
 If there are other commands you don't want written to the history files, you
 can use the **AddToHistoryHandler** parameter of the `Set-PSReadLineOption`
 cmdlet. For an example of how to use **AddToHistoryHandler**, see Example 7 of
-[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoptionmd#example-7-use-historyhandler-to-filter-commands-added-to-history).
+[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption#example-7-use-historyhandler-to-filter-commands-added-to-history).
 
 ### PSReadLine release history
 
