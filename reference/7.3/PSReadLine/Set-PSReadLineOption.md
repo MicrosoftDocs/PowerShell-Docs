@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 07/11/2023
+ms.date: 07/19/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -172,24 +172,22 @@ handler returns `$true` and PSReadLine saves the command in history.
 
 ### Example 8: Use CommandValidationHandler to validate a command before its executed
 
-This example shows how to use the `CommandValidationHandler` parameter to run a validate a command 
-before it is executed. The example specifically checks for using `git` and then the sub command 
-`cmt` and replace that with the full qualified name of `commit`. This way you can create short hands 
-for subcommands but there are many other applications for validating a script before its execution.
+This example shows how to use the **CommandValidationHandler** parameter to run a validate a command
+before it's executed. The example specifically checks for the command `git` with the sub command
+`cmt` and replaces that with the full name `commit`. This way you can create shorthand aliases for
+subcommands.
 
 ```powershell
-# You will need to be using this namespace in order to use the [CommandAst] object
+# Load the namespace so you can use the [CommandAst] object type
 using namespace System.Management.Automation.Language
 
 Set-PSReadLineOption -CommandValidationHandler {
     param([CommandAst]$CommandAst)
 
-    switch ($CommandAst.GetCommandName())
-    {
+    switch ($CommandAst.GetCommandName()) {
         'git' {
             $gitCmd = $CommandAst.CommandElements[1].Extent
-            switch ($gitCmd.Text)
-            {
+            switch ($gitCmd.Text) {
                 'cmt' {
                     [Microsoft.PowerShell.PSConsoleReadLine]::Replace(
                         $gitCmd.StartOffset, $gitCmd.EndOffset - $gitCmd.StartOffset, 'commit')
