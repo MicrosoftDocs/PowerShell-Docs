@@ -73,7 +73,6 @@ Some strange character sequences that you might see include:
 
 <!-- markdownlint-disable MD038 -->
 - `â&euro;"` instead of `–`
-- `â&euro;"` instead of `—`
 - `Ã„2` instead of `Ä`
 - `Â` instead of ` `  (a non-breaking space)
 - `Ã&copy;` instead of `é`
