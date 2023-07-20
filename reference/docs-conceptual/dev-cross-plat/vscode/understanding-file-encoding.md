@@ -72,11 +72,11 @@ characters `â&euro;"`.
 Some strange character sequences that you might see include:
 
 <!-- markdownlint-disable MD038 -->
-- `â&euro;"` instead of `–`
-- `â&euro;"` instead of `—`
+- `â€“` instead of `–` (an en-dash)
+- `â€”` instead of `—` (an em-dash)
 - `Ã„2` instead of `Ä`
 - `Â` instead of ` `  (a non-breaking space)
-- `Ã&copy;` instead of `é`
+- `Ã©` instead of `é`
 <!-- markdownlint-enable MD038 -->
 
 This handy [reference][28] lists the common patterns that indicate a UTF-8/Windows-1252 encoding
