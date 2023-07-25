@@ -68,8 +68,10 @@ Run the following function:
 
 ```powershell
 function Enable-PSScriptBlockLogging {
-    $basePath = 'HKLM:\Software\Policies\Microsoft\Windows' +
-      '\PowerShell\ScriptBlockLogging'
+    $basePath = @(
+        'HKLM:\Software\Policies\Microsoft\Windows'
+        'PowerShell\ScriptBlockLogging'
+    ) -join '\'
 
     if (-not (Test-Path $basePath)) {
         $null = New-Item $basePath -Force
