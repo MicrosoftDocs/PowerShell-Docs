@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 12/14/2018
+ms.date: 07/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging
@@ -22,8 +22,8 @@ stopping the engine and providers, and executing PowerShell commands.
 > Windows PowerShell versions 3.0, 4.0, 5.0, and 5.1 include **EventLog**
 > cmdlets for the Windows event logs. In those versions, to display the list of
 > **EventLog** cmdlets type: `Get-Command -Noun EventLog`. For more
-> information, see the cmdlet documentation and [about_EventLogs](about_Eventlogs.md) for your
-> version of Windows PowerShell.
+> information, see the cmdlet documentation and
+> [about_EventLogs](about_Eventlogs.md) for your version of Windows PowerShell.
 
 ## Viewing the PowerShell event log entries on Windows
 
@@ -145,13 +145,11 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 ## See also
 
-- [about_Logging_Non-Windows][02]
 - [PowerShell the Blue Team][03]
 - [Generic SIEM integration][01]
 
 <!-- link references -->
 [01]: /cloud-app-security/siem
-[02]: about_Logging_Non-Windows.md
 [03]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
 [04]: https://en.wikipedia.org/wiki/Public-key_cryptography
 [05]: https://wikipedia.org/wiki/Security_information_and_event_management
