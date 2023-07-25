@@ -79,7 +79,7 @@ Script Block Logging can be enabled via Group Policy or a registry setting.
 
 To enable automatic transcription, enable the **Turn on PowerShell Script Block
 Logging** feature in Group Policy through **Administrative Templates** ->
-**Windows Components** -> **Windows PowerShell**.
+**PowerShell Core**.
 
 ### Using the Registry
 
@@ -87,8 +87,10 @@ Run the following function:
 
 ```powershell
 function Enable-PSScriptBlockLogging {
-    $basePath = 'HKLM:\Software\Policies\Microsoft\' +
+    $basePath = @(
+        'HKLM:\Software\Policies\Microsoft'
         'PowerShellCore\ScriptBlockLogging'
+    ) -join '\'
 
     if (-not (Test-Path $basePath)) {
         $null = New-Item $basePath -Force
