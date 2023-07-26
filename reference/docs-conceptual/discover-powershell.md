@@ -234,7 +234,7 @@ Get-Process | Get-Member -MemberType Method
 
 By default PowerShell only displays a few properties. The previous example displayed the `Name`,
 `MemberType` and `Definition` members. You can use `Select-Object` to specify properties you want to
-see. You For example, you want to display only the `Name` and `Definition` properties:
+see. For example, you want to display only the `Name` and `Definition` properties:
 
 ```powershell
 Get-Process | Get-Member | Select-Object Name, Definition
