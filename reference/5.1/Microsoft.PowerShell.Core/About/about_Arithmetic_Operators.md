@@ -341,7 +341,7 @@ examples use the `+=` assignment operator to add items to an array:
 
 ```powershell
 $array = @()
-(0..9).foreach{ $array += $_ }
+(0..2).foreach{ $array += $_ }
 $array
 ```
 
