@@ -65,6 +65,7 @@ Function Test-ScriptCmdlet
 > Using either a `begin` or `end` block requires that you define all three
 > blocks. When using any block, all PowerShell code must be inside one
 > of the blocks.
+> When using a runbook,posh 5.1, if you use begin-process-end block the script only executes the begin part.
 
 PowerShell 7.3 adds a `clean` block process method.
 
