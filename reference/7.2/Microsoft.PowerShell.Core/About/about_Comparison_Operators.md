@@ -131,7 +131,7 @@ zzz
 ```
 
 The equality operator can compare objects of different types. It's important to
-understand that the value is on the right-hand side of the comparison can be
+understand that the value on the right-hand side of the comparison can be
 converted to the type of the left-hand side value for comparison.
 
 For example, the string `'1.0'` is converted to an integer to be compared to
