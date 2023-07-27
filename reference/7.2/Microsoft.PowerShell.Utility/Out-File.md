@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 07/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-File
@@ -95,15 +95,15 @@ Out-File -FilePath .\Process.txt -InputObject $Procs -Encoding ASCII -Width 50
 ```
 
 The `Get-Process` cmdlet gets the list of processes running on the local computer. The **Process**
-objects are stored in the variable, `$Procs`. `Out-File` uses the **FilePath** parameter and creates
-a file in the current directory named **Process.txt**. The **InputObject** parameter passes the
-process objects in `$Procs` to the file **Process.txt**. The **Encoding** parameter converts the
-output to **ASCII** format. The **Width** parameter limits each line in the file to 50 characters so
-some data might be truncated.
+objects are stored in the variable, `$Procs`. `Out-File` uses the **FilePath** parameter and
+creates a file in the current directory named **Process.txt**. The **InputObject** parameter passes
+the process objects in `$Procs` to the file **Process.txt**. The **Encoding** parameter converts
+the output to **ASCII** format. The **Width** parameter limits each line in the file to 50
+characters so some data might be truncated.
 
 ### Example 4: Use a provider and send output to a file
 
-This example shows how to use the `Out-File` cmdlet when you are not in a **FileSystem** provider
+This example shows how to use the `Out-File` cmdlet when you aren't in a **FileSystem** provider
 drive. Use the `Get-PSProvider` cmdlet to view the providers on your local computer. For more
 information, see [about_Providers](../Microsoft.Powershell.Core/About/about_Providers.md).
 
@@ -132,8 +132,8 @@ The `Set-Location` command uses the **Path** parameter to set the current locati
 provider `Alias:`. The `Get-Location` cmdlet displays the complete path for `Alias:`.
 `Get-ChildItem` sends objects down the pipeline to the `Out-File` cmdlet. `Out-File` uses the
 **FilePath** parameter to specify the complete path and filename for the output,
-**C:\TestDir\AliasNames.txt**. The `Get-Content` cmdlet uses the **Path** parameter and displays the
-file's content in the PowerShell console.
+**C:\TestDir\AliasNames.txt**. The `Get-Content` cmdlet uses the **Path** parameter and displays
+the file's content in the PowerShell console.
 
 ### Example 5: Set file output width for entire scope
 
@@ -151,7 +151,9 @@ function DemoDefaultOutFileWidth() {
 
         Get-ChildItem Env:\ > $logFile
 
-        Get-Service -ErrorAction Ignore | Format-Table -AutoSize | Out-File $logFile -Append
+        Get-Service -ErrorAction Ignore |
+            Format-Table -AutoSize |
+            Out-File $logFile -Append
 
         Get-Process | Format-Table Id,SI,Name,Path,MainWindowTitle >> $logFile
     }
@@ -201,8 +203,8 @@ The acceptable values for this parameter are as follows:
 - `utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)
 - `utf32`: Encodes in UTF-32 format.
 
-Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
-pages (like `-Encoding 1251`) or string names of registered code pages (like
+Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered
+code pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
 [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
 
@@ -241,8 +243,8 @@ Accept wildcard characters: False
 
 ### -Force
 
-Overrides the read-only attribute and overwrites an existing read-only file. The **Force** parameter
-does not override security restrictions.
+Overrides the read-only attribute and overwrites an existing read-only file. The **Force**
+parameter doesn't override security restrictions.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -275,10 +277,11 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the path to the output file. The **LiteralPath** parameter is used exactly as it is typed.
-Wildcard characters are not accepted. If the path includes escape characters, enclose it in single
+Specifies the path to the output file. The **LiteralPath** parameter is used exactly as it's typed.
+Wildcard characters aren't accepted. If the path includes escape characters, enclose it in single
 quotation marks. Single quotation marks tell PowerShell not to interpret any characters as escape
-sequences. For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+sequences. For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String
@@ -312,7 +315,7 @@ Accept wildcard characters: False
 
 ### -NoNewline
 
-Specifies that the content written to the file does not end with a newline character. The string
+Specifies that the content written to the file doesn't end with a newline character. The string
 representations of the input objects are concatenated to form the output. No spaces or newlines are
 inserted between the output strings. No newline is added after the last output string.
 
@@ -330,11 +333,11 @@ Accept wildcard characters: False
 
 ### -Width
 
-Specifies the number of characters in each line of output. Any additional characters are truncated,
-not wrapped. If this parameter is not used, the width is determined by the characteristics of the
-host. The default for the PowerShell console is 80 characters. If you want to control the width for
-all invocations of `Out-File` as well as the redirection operators (`>` and `>>`), set
-`$PSDefaultParameterValues['out-file:width'] = 2000` before using `Out-File`.
+Specifies the maximum number of characters in each line of output. Any additional characters are
+truncated, not wrapped. If this parameter isn't used, the width is determined by the
+characteristics of the host. The default for the PowerShell console is 80 characters. If you want
+to control the width for all invocations of `Out-File` as well as the redirection operators (`>`
+and `>>`), set `$PSDefaultParameterValues['out-file:width'] = 2000` before using `Out-File`.
 
 ```yaml
 Type: System.Int32
@@ -366,7 +369,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -409,10 +412,10 @@ To send a PowerShell command's output to the `Out-File` cmdlet, use the pipeline
 can store data in a variable and use the **InputObject** parameter to pass data to the `Out-File`
 cmdlet.
 
-`Out-File` saves data to a file but it does not produce any output objects to the pipeline.
+`Out-File` saves data to a file but it doesn't produce any output objects to the pipeline.
 
 PowerShell 7.2 added the ability to control how ANSI escape sequences are rendered. ANSI-decorated
-output that is passed to `Out-File` can be altered based on the setting of the
+output that's passed to `Out-File` can be changed based on the setting of the
 `$PSStyle.OutputRendering` property. For more information, see
 [about_ANSI_Terminals](/powershell/module/microsoft.powershell.core/about/about_ansi_terminals).
 
