@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 07/31/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/split-path?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Split-Path
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 ### -Leaf
 
 Indicates that this cmdlet returns only the last item or container in the path. For example, in the
-path `C:\Test\Logs\Pass1.log`, it returns only Pass1.log.
+path `C:\Test\Logs\Pass1.log`, it returns only `Pass1.log`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
