@@ -522,7 +522,7 @@ The bitwise NOT operator is a unary operator that produces the binary
 complement of the value. A bit of 1 is set to 0 and a bit of 0 is set to 1.
 
 For example, the binary complement of 0 is -1, the maximum unsigned integer
-(0xffffffff), and the binary complement of -1 is 0.
+(0xFFFFFFFF), and the binary complement of -1 is 0.
 
 ```powershell
 -bNot 10
@@ -535,7 +535,7 @@ For example, the binary complement of 0 is -1, the maximum unsigned integer
 ```
 0000 0000 0000 1010  (10)
 ------------------------- bNOT
-1111 1111 1111 0101  (-11, xfffffff5)
+1111 1111 1111 0101  (-11, 0xFFFFFFF5)
 ```
 
 In a bitwise shift-left operation, all bits are moved "n" places to the left,
