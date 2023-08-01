@@ -23,7 +23,7 @@ assignment.
 
 The syntax of the assignment operators is as follows:
 
-`<assignable-expression>` `<assignment-operator>` `<value>`
+- `<assignable-expression><assignment-operator><value>`
 
 Assignable expressions include variables and properties. The value can be a
 single value, an array of values, or a command, expression, or statement.
@@ -31,8 +31,8 @@ single value, an array of values, or a command, expression, or statement.
 The increment and decrement operators are unary operators. Each has prefix and
 postfix versions.
 
-`<assignable-expression><operator>`
-`<operator><assignable-expression>`
+- `<assignable-expression><operator>`
+- `<operator><assignable-expression>`
 
 The assignable expression must be a number or it must be convertible to a
 number.
