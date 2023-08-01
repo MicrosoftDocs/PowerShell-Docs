@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 06/01/2023
+ms.date: 08/01/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,87 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-Jul
+
+Updated content
+
+- 7.4-preview.4 [release notes](../whats-new/What-s-New-in-PowerShell-74.md)
+- Add publish information to [Supported repository configurations](/powershell/gallery/powershellget/supported-repositories)
+- Updated the release notes shipped with [Get-WhatsNew](https://www.powershellgallery.com/packages/Microsoft.PowerShell.WhatsNew)
+- Fixed invalid ///-comments in SDK API reference
+- Updated the man page that ships in PowerShell for Linux and macOS
+
+### Top Community Contributors
+
+GitHub stats
+
+- 31 PRs merged (10 from Community)
+- 21 issues opened (17 from Community)
+- 17 issues closed (13 Community issues closed)
+
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|   GitHub Id   | PRs merged | Issues opened |
+| ------------- | :--------: | :-----------: |
+| crisman       |     2      |       3       |
+| TSanzo-BLE    |     2      |               |
+| MilekJakub    |     1      |               |
+| Atman-Shastri |     1      |               |
+| BraveJhawk    |     1      |               |
+| coolhome      |     1      |               |
+| johndward01   |     1      |               |
+| lor3k         |     1      |               |
+
+## 2023-Jun
+
+New Azure Cloud Shell content
+
+- [Using Cloud Shell in an Azure virtual network](/azure/cloud-shell/private-vnet)
+- [Deploy Azure Cloud Shell in a VNET with quickstart templates](/azure/cloud-shell/quickstart-deploy-vnet)
+
+New PowerShellGet v3 content
+
+- [Supported repository configurations](/powershell/gallery/powershellget/supported-repositories)
+- Cmdlet reference for [Microsoft.PowerShell.PSResourceGet](/powershell/module/microsoft.powershell.psresourceget/?view=powershellget-3.x&preserve-view=true)
+- Cmdlet reference for the [PowerShellGet compatibility module](/powershell/module/powershellget/?view=powershellget-3.x&preserve-view=true)
+
+Lot of updates for the PowerShell 7.4-preview.4 release
+
+- [What's New in PowerShell 7.4 (preview)](../whats-new/What-s-New-in-PowerShell-74.md)
+- [Using Experimental Features in PowerShell](../learn/experimental-features.md)
+- New features for 12 cmdlets
+
+Quality Project contributions
+
+- @XXLMandalorian013 contributed 3 PRs to update 2 files in the
+  MicrosoftDocs/windows-docs-powershell repository
+
+### Top Community Contributors
+
+GitHub stats
+
+- 59 PRs merged (15 from Community)
+- 44 issues opened (30 from Community)
+- 47 issues closed (31 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| thegraffix  |     4      |               |
+| crisman     |     4      |       3       |
+| RAJU2529    |     1      |               |
+| dstreefkerk |     1      |               |
+| vontompers  |     1      |               |
+| mubed       |     1      |               |
+| Frederisk   |     1      |               |
+| khaffner    |     1      |               |
+| noamper     |     1      |               |
+| aksarben    |            |       4       |
 
 ## 2023-May
 
