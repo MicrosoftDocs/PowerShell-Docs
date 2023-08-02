@@ -1,7 +1,7 @@
 ---
 description: Describes how to use operators to assign values to variables.
 Locale: en-US
-ms.date: 08/24/2022
+ms.date: 08/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Assignment Operators
@@ -23,7 +23,7 @@ assignment.
 
 The syntax of the assignment operators is as follows:
 
-`<assignable-expression>` `<assignment-operator>` `<value>`
+- `<assignable-expression>` `<assignment-operator>` `<value>`
 
 Assignable expressions include variables and properties. The value can be a
 single value, an array of values, or a command, expression, or statement.
@@ -31,11 +31,11 @@ single value, an array of values, or a command, expression, or statement.
 The increment and decrement operators are unary operators. Each has prefix and
 postfix versions.
 
-`<assignable-expression><operator>`
-`<operator><assignable-expression>`
+- `<assignable-expression><operator>`
+- `<operator><assignable-expression>`
 
-The assignable expression must be a number or it must be convertible to a
-number.
+The value of the assignable expression must be a number or it must be
+convertible to a number.
 
 ## Using the assignment operator
 
