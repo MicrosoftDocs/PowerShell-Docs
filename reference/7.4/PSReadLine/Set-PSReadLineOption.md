@@ -24,8 +24,9 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
  [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
  [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
- [-ViModeChangeHandler <ScriptBlock>] [-PredictionSource <PredictionSource>]
- [-PredictionViewStyle <PredictionViewStyle>] [-Colors <Hashtable>] [<CommonParameters>]
+ [-ViModeChangeHandler <ScriptBlock>]  [-ViClipboardMode <ViClipboardMode>] 
+ [-PredictionSource <PredictionSource>] [-PredictionViewStyle <PredictionViewStyle>] 
+ [-Colors <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -744,6 +745,29 @@ Aliases:
 Required: False
 Position: Named
 Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ViClipboardMode
+
+This option determines whether the local clipboard or system clipboard is used for copy and paste
+operations while in the **Vi Edit Mode**.
+
+The valid values are as follows:
+- **ViRegister**: The default value. Copy and paste with **Vi** keys is isolated to the current prompt. 
+  Using **Vi** keys, text cannot be copied and pasted between windows, panes, or external applications.
+- **SystemClipboard**: Copy and paste with **Vi** keys uses the system clipboard. Using **Vi** keys, 
+  text can be copied and pasted between windows, panes, and external applications.
+
+```yaml
+Type: Microsoft.PowerShell.ViClipboardMode
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

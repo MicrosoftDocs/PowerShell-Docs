@@ -56,6 +56,7 @@ CompletionQueryItems                   : 100
 MaximumKillRingCount                   : 10
 ShowToolTips                           : True
 ViModeIndicator                        : None
+ViClipboardMode                        : ViRegister
 WordDelimiters                         : ;:,.[]{}()/\|^&*-=+'"---
 AnsiEscapeTimeout                      : 100
 CommandColor                           : "`e[93m"
