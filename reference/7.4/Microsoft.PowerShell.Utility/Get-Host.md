@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/02/2023
+ms.date: 08/02/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Host
@@ -200,19 +200,6 @@ WindowTitle           : PowerShell 7.3.3
 > [!NOTE]
 > On non-Windows platforms, **ForegroundColor** and **BackgroundColor** default to `-1` because
 > there is no consistent way to get these on non-Windows platforms.
-
-### Example 7: Set the background color for the PowerShell console
-
-These commands change the background color of the Windows PowerShell console to black. The
-`Clear-Host` command clears the screen to reset the console window to the new color.
-
-```powershell
-(Get-Host).UI.RawUI.BackgroundColor = "Black"
-Clear-Host
-```
-
-This change is effective only in the current session. To change the background color of the console
-for all sessions, add the command to your PowerShell profile.
 
 ## PARAMETERS
 
