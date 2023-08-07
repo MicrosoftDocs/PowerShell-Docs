@@ -754,11 +754,14 @@ Accept wildcard characters: False
 This option determines whether the local clipboard or system clipboard is used for copy and paste
 operations while in the **Vi Edit Mode**.
 
-The valid values are as follows:
-- **ViRegister**: The default value. Copy and paste with **Vi** keys is isolated to the current prompt. 
-  Using **Vi** keys, text cannot be copied and pasted between windows, panes, or external applications.
-- **SystemClipboard**: Copy and paste with **Vi** keys uses the system clipboard. Using **Vi** keys, 
+The valid values are:
+
+- **ViRegister**: The default value. Copy and paste with **Vi** keys are isolated to the current
+  prompt. Using **Vi** keys, text cannot be copied and pasted between windows, panes, or external
+  applications.
+- **SystemClipboard**: Copy and paste with **Vi** keys use the system clipboard. Using **Vi** keys,
   text can be copied and pasted between windows, panes, and external applications.
+
 
 ```yaml
 Type: Microsoft.PowerShell.ViClipboardMode
@@ -767,7 +770,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: ViRegister
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
