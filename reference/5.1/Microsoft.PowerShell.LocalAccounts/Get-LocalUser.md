@@ -151,7 +151,7 @@ describes the source of the object. The possible sources are as follows:
 
 - Local
 - Active Directory
-- Azure Active Directory group
+- Microsoft Entra ID group
 - Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the

@@ -342,7 +342,7 @@ follows:
 
   - `Local`
   - `Active Directory`
-  - `Azure Active Directory group`
+  - `Microsoft Entra ID group`
   - `Microsoft Account`
 
 > [!NOTE]
