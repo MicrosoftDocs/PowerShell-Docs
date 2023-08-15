@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 08/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-type?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Type
@@ -284,8 +284,6 @@ revision.
 This parameter allows you to direct the compiler to generate an executable file, embed resources, or
 set command-line options, such as the `/unsafe` option.
 
-You can't use the **CompilerOptions** and **ReferencedAssemblies** parameters in the same command.
-
 ```yaml
 Type: System.String[]
 Parameter Sets: FromSource, FromMember, FromPath, FromLiteralPath
@@ -510,8 +508,6 @@ referenced in addition to the default assemblies.
 
 Beginning in PowerShell 6, **ReferencedAssemblies** doesn't include the default .NET assemblies. You
 must include a specific reference to them in the value passed to this parameter.
-
-You can't use the **CompilerOptions** and **ReferencedAssemblies** parameters in the same command.
 
 ```yaml
 Type: System.String[]
