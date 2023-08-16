@@ -1,7 +1,7 @@
 ---
-description: Allows you to indicate which namespaces are used in the session.
+description: Allows you to specify namespaces to use in the session.
 Locale: en-US
-ms.date: 01/25/2023
+ms.date: 08/17/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Using
@@ -9,26 +9,27 @@ title: about Using
 # about_Using
 
 ## Short description
-Allows you to indicate which namespaces are used in the session.
+
+Allows you to specify namespaces to use in the session.
 
 ## Long description
 
-The `using` statement allows you to specify which namespaces are used in the
-session. Adding namespaces simplifies usage of .NET classes and member and
-allows you to import classes from script modules and assemblies.
+The `using` statement allows you to specify namespaces to use in the session.
+Adding namespaces simplifies usage of .NET classes and members and allows you
+to import classes from script modules and assemblies.
 
 The `using` statements must come before any other statements in a script or
 module. No uncommented statement can precede it, including parameters.
 
 The `using` statement must not contain any variables.
 
-The `using` statement should not be confused with the `using:` scope modifier
-for variables. For more information, see
+The `using` statement isn't the same as the `using:` scope modifier for
+variables. For more information, see
 [about_Remote_Variables](about_Remote_Variables.md).
 
 ## Namespace syntax
 
-To specify .NET namespaces from which to resolve types:
+To resolve types from a .NET namespace:
 
 ```
 using namespace <.NET-namespace>
@@ -38,7 +39,7 @@ Specifying a namespace makes it easier to reference types by their short names.
 
 ## Module syntax
 
-To load classes from a PowerShell module:
+To load classes and enumerations from a PowerShell module:
 
 ```
 using module <module-name>
@@ -48,8 +49,7 @@ The value of `<module-name>` can be a module name, a full module specification,
 or a path to a module file.
 
 When `<module-name>` is a path, the path can be fully qualified or relative. A
-relative path is resolved relative to the script that contains the using
-statement.
+relative path resolves relative to the script that has the `using` statement.
 
 When `<module-name>` is a name or module specification, PowerShell searches the
 **PSModulePath** for the specified module.
@@ -64,22 +64,26 @@ A module specification is a hashtable that has the following keys.
   - `RequiredVersion` - Specifies an exact, required version of the module.
     This can't be used with the other Version keys.
 
-The `using module` statement imports classes from the root module
-(`ModuleToProcess`) of a script module or binary module. It does not
-consistently import classes defined in nested modules or classes defined in
-scripts that are dot-sourced into the module. Classes that you want to be
-available to users outside of the module should be defined in the root module.
+`Import-Module` and the `#requires` statement only import the module functions,
+aliases, and variables, as defined by the module. Classes and enumerations
+aren't imported.
 
-During development of a script module, it is common to make changes to the code
+The `using module` statement imports classes and enumerations from the root
+module (`ModuleToProcess`) of a script module or binary module. It doesn't
+consistently import classes or enumerations defined in nested modules or in
+scripts that are dot-sourced into the root module. Define classes and
+enumerations that you want to be available to users outside of the module
+directly in the root module.
+
+During development of a script module, it's common to make changes to the code
 then load the new version of the module using `Import-Module` with the
 **Force** parameter. This works for changes to functions in the root module
-only. `Import-Module` does not reload any nested modules. Also, there is no way
-to load any updated classes.
+only. `Import-Module` doesn't reload any nested modules. Also, there's no way
+to load any updated classes or enumerations.
 
-To ensure that you are running the latest version, you must unload the module
-using the `Remove-Module` cmdlet. `Remove-Module` removes the root module, all
-nested modules, and any classes defined in the modules. Then you can reload the
-module and the classes using `Import-Module` and the `using module` statement.
+To ensure that you're running the latest version, you must start a new session.
+Classes and enumerations defined in PowerShell and imported with a `using`
+statement can't be unloaded.
 
 ## Assembly syntax
 
@@ -98,7 +102,7 @@ In Windows PowerShell 5.1 you can load the assembly by path name or by
 name. When you use the name, PowerShell searches the .NET Global Assembly
 Cache (GAC) for the associated assembly.
 
-If you are not creating new PowerShell classes, use the `Add-Type` cmdlet
+If you aren't creating new PowerShell classes, use the `Add-Type` cmdlet
 instead. For more information, see
 [Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type).
 
@@ -110,7 +114,7 @@ The following script gets the cryptographic hash for the "Hello World" string.
 
 Note how the `using namespace System.Text` and `using namespace System.IO`
 simplify the references to `[UnicodeEncoding]` in `System.Text` and `[Stream]`
-and to `[MemoryStream]` in `System.IO`.
+and `[MemoryStream]` in `System.IO`.
 
 ```powershell
 using namespace System.Text
@@ -130,14 +134,14 @@ $hashfromstream.Hash.ToString()
 
 ### Example 2 - Load classes from a script module
 
-In this example, we have a PowerShell script module named **CardGames** that
-defines the following classes:
+In this example, a PowerShell script module named **CardGames** defines the
+following classes:
 
 - **Deck**
 - **Card**
 
 `Import-Module` and the `#requires` statement only import the module functions,
-aliases, and variables, as defined by the module. Classes are not imported. The
+aliases, and variables, as defined by the module. Classes aren't imported. The
 `using module` command imports the module and also loads the class definitions.
 
 ```powershell
