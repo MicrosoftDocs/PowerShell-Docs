@@ -339,8 +339,9 @@ more information about the `using` statement, see [about_Using][01].
 The `using module` statement imports enums from the root module
 (`ModuleToProcess`) of a script module or binary module. It doesn't
 consistently import enums defined in nested modules or enums defined in
-scripts that are dot-sourced into the module's .psm1 file. Enums that you want
-to be available to users outside of the module should be defined in the root
-module.
+scripts that are dot-sourced into the module. Enums that you want to be
+available to users outside of the module should be defined in the root module.
+For script modules, this means they should be defined directly in the psm1
+file.
 
 [01]: about_Using.md
