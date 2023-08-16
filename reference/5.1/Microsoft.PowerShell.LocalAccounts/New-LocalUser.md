@@ -340,10 +340,10 @@ The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**,
 **LocalPrincipal** objects that describes the source of the object. The possible sources are as
 follows:
 
-  - `Local`
-  - `Active Directory`
-  - `Microsoft Entra ID group`
-  - `Microsoft Account`
+- `Local`
+- `Active Directory`
+- `AzureAD`
+- `MicrosoftAccount`
 
 > [!NOTE]
 > **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of

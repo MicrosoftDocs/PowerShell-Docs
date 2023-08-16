@@ -55,7 +55,7 @@ accounts from that domain and from trusted domains to a local group.
 ### Example 1: Add members to the Administrators group
 
 This command adds several members to the local Administrators group. The new members include a local
-user account, a Microsoft account, an Microsoft Entra ID account, and a domain group. This
+user account, a Microsoft account, an Microsoft Entra account, and a domain group. This
 example uses a placeholder value for the user name of an account at Outlook.com.
 
 ```powershell
@@ -203,7 +203,7 @@ follows:
 
 - Local
 - Active Directory
-- Microsoft Entra ID group
+- Microsoft Entra group
 - Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
