@@ -183,7 +183,7 @@ follows:
 
 - Local
 - Active Directory
-- Microsoft Entra ID group
+- Microsoft Entra group
 - Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the

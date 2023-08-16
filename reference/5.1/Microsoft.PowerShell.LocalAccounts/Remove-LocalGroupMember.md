@@ -53,7 +53,7 @@ Remove-LocalGroupMember -Group "Administrators" -Member $members
 ```
 
 This command removes several members from the local Administrators group. The members that this
-cmdlet removes include a local user account, a Microsoft account, an Microsoft Entra ID account,
+cmdlet removes include a local user account, a Microsoft account, an Microsoft Entra account,
 and a domain group. This example uses a placeholder value for the user name of an account at
 Outlook.com.
 
@@ -196,7 +196,7 @@ follows:
 
 - Local
 - Active Directory
-- Microsoft Entra ID group
+- Microsoft Entra group
 - Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
