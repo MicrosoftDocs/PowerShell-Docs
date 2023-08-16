@@ -327,3 +327,20 @@ to enumeration values that are not valid. Specify one of the following
 enumeration values and try again. The possible enumeration values are
 "CR,LF,CRLF".
 ```
+
+## Importing enums from a PowerShell module
+
+`Import-Module` and the `#requires` statement only import the module functions,
+aliases, and variables, as defined by the module. Enums aren't imported. The
+`using module` statement imports the enums defined in the module. If the
+module isn't loaded in the current session, the `using` statement fails. For
+more information about the `using` statement, see [about_Using][01].
+
+The `using module` statement imports enums from the root module
+(`ModuleToProcess`) of a script module or binary module. It doesn't
+consistently import enums defined in nested modules or enums defined in
+scripts that are dot-sourced into the module's .psm1 file. Enums that you want
+to be available to users outside of the module should be defined in the root
+module.
+
+[01]: about_Using.md
