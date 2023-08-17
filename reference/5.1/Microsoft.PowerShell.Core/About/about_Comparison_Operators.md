@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 04/05/2023
+ms.date: 08/17/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -597,22 +597,18 @@ comparing as soon as they detect the first match, whereas the equality
 operators evaluate all input members. In a very large collection, these
 operators return quicker than the equality operators.
 
-Syntax:
-
-```
-<Collection> -contains <Test-object>
-<Collection> -notcontains <Test-object>
-<Test-object> -in <Collection>
-<Test-object> -notin <Collection>
-```
-
 ### -contains and -notcontains
 
+Syntax:
+
+```Syntax
+<Collection> -contains <scalar-object>
+<Collection> -notcontains <scalar-object>
+```
+
 These operators tell whether a set includes a certain element. `-contains`
-returns **True** when the right-hand side (test object) matches one of the
-elements in the set. `-notcontains` returns False instead. When the test object
-is a collection, these operators use reference equality, i.e. they check
-whether one of the set's elements is the same instance of the test object.
+returns **True** when the right-hand side (scalar-object) matches one of the
+elements in the set. `-notcontains` returns False instead.
 
 Examples:
 
@@ -634,20 +630,35 @@ $thisComputer  = "ContosoDC2"
 
 $DomainServers -contains $thisComputer
 # Output: True
+```
 
+When the right-hand side operand is a collection, these operators convert the
+value to its string representation before comparing it to the left-hand side
+collection.
+
+```powershell
 $a = "abc", "def"
 "abc", "def", "ghi" -contains $a # Output: False
+
+# The following statements are equivalent
 $a, "ghi" -contains $a           # Output: True
+"$a", "ghi" -contains $a         # Output: True
+"abc def", "ghi" -contains $a    # Output: True
 ```
 
 ### -in and -notin
 
+Syntax:
+
+```Syntax
+<scalar-object> -in <Collection>
+<scalar-object> -notin <Collection>
+```
+
 The `-in` and `-notin` operators were introduced in PowerShell 3 as the
 syntactic reverse of the of `-contains` and `-notcontains` operators. `-in`
-returns **True** when the left-hand side `<test-object>` matches one of the
-elements in the set. `-notin` returns **False** instead. When the test object
-is a set, these operators use reference equality to check whether one of the
-set's elements is the same instance of the test object.
+returns **True** when the left-hand side `<scalar-object>` matches one of the
+elements in the collection. `-notin` returns **False** instead.
 
 The following examples do the same thing that the examples for `-contains` and
 `-notcontains` do, but they're written with `-in` and `-notin` instead.
@@ -670,10 +681,20 @@ $thisComputer  = "ContosoDC2"
 
 $thisComputer -in $DomainServers
 # Output: True
+```
 
+When the left-hand side operand is a collection, these operators convert the
+value to its string representation before comparing it to the right-hand side
+collection.
+
+```powershell
 $a = "abc", "def"
 $a -in "abc", "def", "ghi" # Output: False
+
+# The following statements are equivalent
 $a -in $a, "ghi"           # Output: True
+$a -in "$a", "ghi"         # Output: True
+$a -in "abc def", "ghi"    # Output: True
 ```
 
 ## Type comparison
