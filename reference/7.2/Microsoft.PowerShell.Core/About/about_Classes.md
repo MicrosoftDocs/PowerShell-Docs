@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 07/05/2023
+ms.date: 08/17/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes
@@ -841,29 +841,27 @@ class MyComparableBar : bar, System.IComparable
 ## Importing classes from a PowerShell module
 
 `Import-Module` and the `#requires` statement only import the module functions,
-aliases, and variables, as defined by the module. Classes aren't imported. The
-`using module` statement imports the classes defined in the module. If the
-module isn't loaded in the current session, the `using` statement fails. For
-more information about the `using` statement, see [about_Using][07].
+aliases, and variables, as defined by the module. Classes aren't imported.
 
-The `using module` statement imports classes from the root module
-(`ModuleToProcess`) of a script module or binary module. It doesn't
+The `using module` statement imports classes and enumerations from the root
+module (`ModuleToProcess`) of a script module or binary module. It doesn't
 consistently import classes defined in nested modules or classes defined in
-scripts that are dot-sourced into the module. Classes that you want to be
-available to users outside of the module should be defined in the root module.
+scripts that are dot-sourced into the root module. Define classes that you want
+to be available to users outside of the module directly in the root module.
+
+For more information about the `using` statement, see [about_Using][07].
 
 ## Loading newly changed code during development
 
 During development of a script module, it's common to make changes to the code
 then load the new version of the module using `Import-Module` with the
 **Force** parameter. This works for changes to functions in the root module
-only. `Import-Module` doesn't reload any nested modules. Also, there is no way
+only. `Import-Module` doesn't reload any nested modules. Also, there's no way
 to load any updated classes.
 
-To ensure that you are running the latest version, you must unload the module
-using the `Remove-Module` cmdlet. `Remove-Module` removes the root module, all
-nested modules, and any classes defined in the modules. Then you can reload the
-module and the classes using `Import-Module` and the `using module` statement.
+To ensure that you're running the latest version, you must start a new session.
+Classes and enumerations defined in PowerShell and imported with a `using`
+statement can't be unloaded.
 
 Another common development practice is to separate your code into different
 files. If you have function in one file that use classes defined in another

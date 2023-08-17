@@ -1,7 +1,7 @@
 ---
 description: The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
 Locale: en-US
-ms.date: 06/07/2023
+ms.date: 08/17/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_enum?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Enum
@@ -327,3 +327,35 @@ to enumeration values that are not valid. Specify one of the following
 enumeration values and try again. The possible enumeration values are
 "CR,LF,CRLF".
 ```
+
+## Importing enumerations from a PowerShell module
+
+`Import-Module` and the `#requires` statement only import the module functions,
+aliases, and variables, as defined by the module. Enumerations aren't imported.
+
+The `using module` statement imports classes and enumerations from the root
+module (`ModuleToProcess`) of a script module or binary module. It doesn't
+consistently import classes defined in nested modules or classes defined in
+scripts that are dot-sourced into the root module. Define classes that you want
+to be available to users outside of the module directly in the root module.
+
+For more information about the `using` statement, see [about_Using][01].
+
+## Loading newly changed code during development
+
+During development of a script module, it's common to make changes to the code
+then load the new version of the module using `Import-Module` with the
+**Force** parameter. This works for changes to functions in the root module
+only. `Import-Module` doesn't reload any nested modules. Also, there's no way
+to load any updated classes.
+
+To ensure that you're running the latest version, you must start a new session.
+Classes and enumerations defined in PowerShell and imported with a `using`
+statement can't be unloaded.
+
+Another common development practice is to separate your code into different
+files. If you have function in one file that use enumerations defined in
+another module, you should using the `using module` statement to ensure that
+the functions have the enumeration definitions that are needed.
+
+[01]: about_Using.md
