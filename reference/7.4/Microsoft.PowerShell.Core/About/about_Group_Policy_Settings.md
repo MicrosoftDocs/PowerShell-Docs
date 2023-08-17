@@ -1,7 +1,7 @@
 ---
 description: Describes the Group Policy settings for PowerShell
 Locale: en-US
-ms.date: 10/22/2021
+ms.date: 08/17/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_group_policy_settings?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Group Policy Settings
@@ -9,6 +9,7 @@ title: about Group Policy Settings
 # about_Group_Policy_Settings
 
 ## Short description
+
 Describes the Group Policy settings for PowerShell
 
 ## Long description
@@ -28,8 +29,8 @@ User Configuration\
     PowerShell Core
 ```
 
-Group policy settings in the User Configuration path take precedence over Group
-Policy settings in the Computer Configuration path.
+Group policy settings in the Computer Configuration path take precedence over
+Group Policy settings in the User Configuration path.
 
 PowerShell 7 includes Group Policy templates and an installation script in
 `$PSHOME`.
@@ -59,21 +60,22 @@ editor (`gpedit.msc`).
 
 The policies are as follows:
 
-- Console session configuration: Sets a configuration endpoint in which
-  PowerShell is run.
-- Turn on Module Logging: Sets the **LogPipelineExecutionDetails** property of
-  modules.
-- Turn on PowerShell Script Block Logging: Enables detailed logging of all
+- **Console session configuration**: Sets a configuration endpoint that
+  PowerShell runs in.
+- **Turn on Module Logging**: Sets the **LogPipelineExecutionDetails** property
+  of modules.
+- **Turn on PowerShell Script Block Logging**: Enables detailed logging of all
   PowerShell scripts.
-- Turn on Script Execution: Sets the PowerShell execution policy.
-- Turn on PowerShell Transcription: enables capturing of input and output of
-  PowerShell commands into text-based transcripts.
-- Set the default source path for `Update-Help`: Sets the source for Updatable
-  Help to a directory, not the Internet.
+- **Turn on Script Execution**: Sets the PowerShell execution policy.
+- **Turn on PowerShell Transcription**: Enables capturing of input and output
+  of PowerShell commands into text-based transcripts.
+- **Set the default source path for `Update-Help`**: Sets the source for
+  Updatable Help to a directory, not the Internet.
 
-Each PowerShell Group Policy setting has an option ('Use Windows PowerShell
-Policy setting' field) to use the value from a similar Windows PowerShell Group
-Policy setting that is located in the following Group Policy paths:
+Each PowerShell Group Policy setting has the 'Use Windows PowerShell Policy
+setting' field. This option enables using the value from a similar Windows
+PowerShell Group Policy setting that's located in the following Group Policy
+paths:
 
 ```
 Computer Configuration\
@@ -88,7 +90,7 @@ User Configuration\
 ```
 
 > [!NOTE]
-> These **PowerShell Core Administrative Templates** do not include settings
+> These **PowerShell Core Administrative Templates** don't include settings
 > for Windows PowerShell. For more information about acquiring other templates
 > and configuring Group policy, see
 > [How to create and manage the Central Store for Group Policy Administrative Templates in Windows][gpstore].
@@ -96,7 +98,7 @@ User Configuration\
 ## Console session configuration
 
 The **Console session configuration** policy setting specifies a configuration
-endpoint in which PowerShell is run. This can be any endpoint registered on the
+endpoint that PowerShell runs in. This can be any endpoint registered on the
 local machine including the default PowerShell remoting endpoints or a custom
 endpoint having specific user role capabilities.
 
@@ -106,17 +108,17 @@ The **Turn on Module Logging** policy setting turns on logging for selected
 PowerShell modules. The setting is effective in all sessions on all affected
 computers.
 
-If you enable this policy setting and specify one or more modules, pipeline
-execution events for the specified modules are recorded in the Windows
+If you enable this policy setting and specify one or more modules, PowerShell
+records pipeline execution events for the specified modules in the Windows
 PowerShell log in Event Viewer.
 
-If you disable this policy setting, logging of execution events is disabled for
-all PowerShell modules.
+If you disable this policy setting, PowerShell doesn't log execution events for
+any PowerShell modules.
 
-If this policy setting is not configured, the **LogPipelineExecutionDetails**
-property of each module determines whether the execution events of a module are
-logged. By default, the **LogPipelineExecutionDetails** property of all modules
-is set to False.
+If this policy setting isn't configured, the **LogPipelineExecutionDetails**
+property of each module determines whether PowerShell logs the execution events
+of that module. By default, the **LogPipelineExecutionDetails** property of all
+modules is set to `$False`.
 
 To turn on module logging for a module, use the following command format. The
 module must be imported into the session and the setting is effective only in
@@ -131,71 +133,71 @@ To turn on module logging for all sessions on a particular computer, add the
 previous commands to the 'All Users' PowerShell profile
 (`$Profile.AllUsersAllHosts`).
 
-For more information about module logging, see [about_Modules](about_Modules.md).
+For more information about module logging, see
+[about_Modules](about_Modules.md).
 
 ## Turn on PowerShell script block logging
 
-The **Turn on PowerShell Script Block Logging** policy setting enables logging of
-all PowerShell script input to the Microsoft-Windows-PowerShell/Operational
-event log. If you enable this policy setting, PowerShell Core will log the
-processing of commands, script blocks, functions, and scripts - whether invoked
+The **Turn on PowerShell Script Block Logging** policy setting enables logging
+of all PowerShell script input to the Microsoft-Windows-PowerShell/Operational
+event log. If you enable this policy setting, PowerShell logs the processing of
+commands, script blocks, functions, and scripts - whether invoked
 interactively, or through automation.
 
-If you disable this policy setting, logging of PowerShell script input is
-disabled. If you enable the Script Block Invocation Logging, PowerShell
-additionally logs events when invocation of a command, script block, function,
-or script starts or stops. Enabling Invocation Logging generates a high volume
-of event logs.
+If you disable this policy setting, PowerShell script input isn't logged. If
+you enable the Script Block Invocation Logging, PowerShell also logs events
+when invocation of a command, script block, function, or script starts or
+stops. Enabling Invocation Logging generates a high volume of event logs.
 
 ## Turn on script execution
 
 The **Turn on Script Execution** policy setting sets the execution policy for
-computers and users, which determines which scripts are permitted to run.
+computers and users. The execution policy determines whether to permit scripts
+to run.
 
 If you enable the policy setting, you can select from among the following
 policy settings.
 
-- **Allow only signed scripts** allows scripts to execute only if they are
+- **Allow only signed scripts** allows scripts to execute only if they're
   signed by a trusted publisher. This policy setting is equivalent to the
-  AllSigned execution policy.
+  `AllSigned` execution policy.
 
 - **Allow local scripts and remote signed scripts** allows all local scripts to
   run. Scripts that originate from the Internet must be signed by a trusted
-  publisher. This policy setting is equivalent to the RemoteSigned execution
+  publisher. This policy setting is equivalent to the `RemoteSigned` execution
   policy.
 
 - **Allow all scripts** allows all scripts to run. This policy setting is
-  equivalent to the Unrestricted execution policy.
+  equivalent to the `Unrestricted` execution policy.
 
 If you disable this policy setting, no scripts are allowed to run. This policy
-setting is equivalent to the Restricted execution policy.
+setting is equivalent to the `Restricted` execution policy.
 
-If you disable or do not configure this policy setting, the execution policy
-that is set for the computer or user by the `Set-ExecutionPolicy` cmdlet
-determines whether scripts are permitted to run. The default value is
-Restricted.
+If you don't configure this policy setting, the execution policy that's set for
+the computer or user by the `Set-ExecutionPolicy` cmdlet determines whether
+scripts are permitted to run. The default value is `Restricted`.
 
-For more information, see [about_Execution_Policies](about_Execution_Policies.md).
+For more information, see
+[about_Execution_Policies](about_Execution_Policies.md).
 
 ## Turn on PowerShell transcription
 
 The **Turn on PowerShell Transcription** policy setting lets you capture the
-input and output of PowerShell Core commands into text-based transcripts. If
-you enable this policy setting, PowerShell Core will enable transcription
-logging for PowerShell Core and any other applications that leverage the
-PowerShell Core engine. By default, PowerShell Core will record transcript
-output to each users' My Documents directory, with a file name that includes
-'PowerShell_transcript', along with the computer name and time started.
-Enabling this policy is equivalent to calling the Start-Transcript cmdlet on
-each PowerShell Core session.
+input and output of PowerShell commands into text-based transcripts. If you
+enable this policy setting, PowerShell enables transcription logging for
+PowerShell and any other applications that leverage the PowerShell engine. By
+default, PowerShell records transcript output to each users' `My Documents`
+directory, with a filename that includes `PowerShell_transcript`, along with
+the computer name and time started. Enabling this policy has the same effect as
+calling the `Start-Transcript` cmdlet on each PowerShell session.
 
-If you disable this policy setting, transcription logging of PowerShell-based
-applications is disabled by default, although transcripting can still be
-enabled through the Start-Transcript cmdlet.
+If you disable this policy setting, PowerShell-based applications don't write
+transcript logs by default. The `Start-Transcript` cmdlet can still enable
+transcription logging.
 
-If you use the OutputDirectory setting to enable transcription logging to a
-shared location, be sure to limit access to that directory to prevent users
-from viewing the transcripts of other users or computers.
+Limit access to the directory when setting **OutputDirectory** to a shared
+location for transcript logging to prevent users from viewing the transcripts
+of other users or computers.
 
 ## Set the default source path for Update-Help
 
@@ -224,7 +226,7 @@ By providing a default value for the **SourcePath** parameter, this Group
 Policy setting implicitly adds the **SourcePath** parameter to all
 `Update-Help` commands. Users can override the particular file system location
 specified as the default value by entering a different file system location.
-But they cannot remove the **SourcePath** parameter from the `Update-Help`
+But they can't remove the **SourcePath** parameter from the `Update-Help`
 command.
 
 If you enable this policy setting, you can specify a default value for the
