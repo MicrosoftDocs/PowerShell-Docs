@@ -307,7 +307,7 @@ $uri = 'https://api.github.com/repos/microsoftdocs/powershell-docs/issues'
 Invoke-RestMethod -Uri $uri -HttpVersion 2.0 -SkipCertificateCheck
 ```
 
-### Example 9: Send a request a Unix socket application
+### Example 9: Send a request to a Unix socket application
 
 Some applications, such as Docker, expose a Unix socket for communication. This example queries for
 a list of Docker images using the Docker API. The cmdlet connects to the Docker daemon using the
@@ -1329,7 +1329,7 @@ Accept wildcard characters: False
 
 Specifies the name of the Unix socket to connect to. This parameter is supported on Unix-based
 systems and Windows version 1803 and later. For more information about Windows support of Unix
-sockets, see
+sockets, see the
 [Windows/WSL Interop with AF_UNIX](https://devblogs.microsoft.com/commandline/windowswsl-interop-with-af_unix/)
 blog post.
 
