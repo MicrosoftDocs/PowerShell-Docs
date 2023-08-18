@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/30/2023
+ms.date: 08/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -18,67 +18,69 @@ Gets content from a web page on the internet.
 ### StandardMethod (Default)
 
 ```
-Invoke-WebRequest [-Uri] <uri> [-UseBasicParsing] [-HttpVersion <version>]
- [-WebSession <WebRequestSession>] [-SessionVariable <string>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <pscredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <securestring>] [-UserAgent <string>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <int>] [-OperationTimeoutSeconds <int>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <int>]
- [-MaximumRetryCount <int>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <int>]
- [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect] [-Proxy <uri>]
- [-ProxyCredential <pscredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
- [-Form <IDictionary>] [-ContentType <string>] [-TransferEncoding <string>] [-InFile <string>]
- [-OutFile <string>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
+ [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
+ [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
+ [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
+ [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
+ [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
+ [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect]
+ [-UnixSocket <UnixDomainSocketEndPoint>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
 
 ```
-Invoke-WebRequest [-Uri] <uri> -NoProxy [-UseBasicParsing] [-HttpVersion <version>]
- [-WebSession <WebRequestSession>] [-SessionVariable <string>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <pscredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <securestring>] [-UserAgent <string>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <int>] [-OperationTimeoutSeconds <int>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <int>]
- [-MaximumRetryCount <int>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <int>]
- [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect] [-Body <Object>]
- [-Form <IDictionary>] [-ContentType <string>] [-TransferEncoding <string>] [-InFile <string>]
- [-OutFile <string>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
+ [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
+ [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
+ [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
+ [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
+ [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
+ [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect]
+ [-UnixSocket <UnixDomainSocketEndPoint>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
+ [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### CustomMethod
 
 ```
-Invoke-WebRequest [-Uri] <uri> -CustomMethod <string> [-UseBasicParsing] [-HttpVersion <version>]
- [-WebSession <WebRequestSession>] [-SessionVariable <string>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <pscredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <string>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <securestring>] [-UserAgent <string>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <int>] [-OperationTimeoutSeconds <int>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <int>]
- [-MaximumRetryCount <int>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <int>]
- [-PreserveHttpMethodOnRedirect] [-Proxy <uri>] [-ProxyCredential <pscredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <string>]
- [-TransferEncoding <string>] [-InFile <string>] [-OutFile <string>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [<CommonParameters>]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
+ [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
+ [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
+ [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
+ [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
+ [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
+ -CustomMethod <String> [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
+ [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
+ [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
 
 ```
-Invoke-WebRequest [-Uri] <uri> -CustomMethod <string> -NoProxy [-UseBasicParsing]
- [-HttpVersion <version>] [-WebSession <WebRequestSession>] [-SessionVariable <string>]
- [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
- [-Credential <pscredential>] [-UseDefaultCredentials] [-CertificateThumbprint <string>]
- [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
- [-Token <securestring>] [-UserAgent <string>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <int>] [-OperationTimeoutSeconds <int>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <int>]
- [-MaximumRetryCount <int>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <int>]
- [-PreserveHttpMethodOnRedirect] [-Body <Object>] [-Form <IDictionary>] [-ContentType <string>]
- [-TransferEncoding <string>] [-InFile <string>] [-OutFile <string>] [-PassThru] [-Resume]
+Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
+ [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
+ [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
+ [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
+ [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
+ [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
+ [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
+ -CustomMethod <String> [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
+ [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
  [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
@@ -384,6 +386,16 @@ link.
 
 ```powershell
 (Invoke-WebRequest -Uri 'https://aka.ms/pscore6-docs' -HttpVersion 2.0).Links.Href
+```
+
+### Example 11: Send a request to a Unix socket application
+
+Some applications, such as Docker, expose a Unix socket for communication. This example queries for
+a list of Docker images using the Docker API. The cmdlet connects to the Docker daemon using the
+Unix socket.
+
+```powershell
+Invoke-WebRequest -Uri "http://localhost/v1.40/images/json/" -UnixSocket "/var/run/docker.sock"
 ```
 
 ## PARAMETERS
@@ -1285,6 +1297,27 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 Accepted values: chunked, compress, deflate, gzip, identity
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UnixSocket
+Specifies the name of the Unix socket to connect to. This parameter is supported on Unix-based
+systems and Windows version 1803 and later. For more information about Windows support of Unix
+sockets, see the
+[Windows/WSL Interop with AF_UNIX](https://devblogs.microsoft.com/commandline/windowswsl-interop-with-af_unix/)
+blog post.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: System.Net.Sockets.UnixDomainSocketEndPoint
+Parameter Sets: (All)
+Aliases:
 
 Required: False
 Position: Named
