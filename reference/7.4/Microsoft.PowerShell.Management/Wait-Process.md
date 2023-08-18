@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 08/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
@@ -18,24 +18,27 @@ Waits for the processes to be stopped before accepting more input.
 ### Name (Default)
 
 ```
-Wait-Process [-Name] <String[]> [[-Timeout] <Int32>] [<CommonParameters>]
+Wait-Process [-Name] <String[]> [[-Timeout] <Int32>] [-Any] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### Id
 
 ```
-Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [<CommonParameters>]
+Wait-Process [-Id] <Int32[]> [[-Timeout] <Int32>] [-Any] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Wait-Process [[-Timeout] <Int32>] -InputObject <Process[]> [<CommonParameters>]
+Wait-Process [[-Timeout] <Int32>] [-Any] [-PassThru] -InputObject <Process[]>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-> **This cmdlet does not work on Linux or macOS.**
+> **This cmdlet doesn't work on Linux or macOS.**
 
 The `Wait-Process` cmdlet waits for one or more running processes to be stopped before accepting
 input. In the PowerShell console, this cmdlet suppresses the command prompt until the processes are
@@ -89,6 +92,24 @@ Wait-Process -Name outlook, winword -Timeout 30
 
 ## PARAMETERS
 
+### -Any
+
+When multiple processes are passed into `Wait-Process`, the cmdlet waits for all processes to exit
+before returning. With this parameter, the cmdlet returns when any of the processes exits. The
+remaining processes continue to run.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
 
 Specifies the process IDs of the processes. To specify multiple IDs, use commas to separate the IDs.
@@ -141,6 +162,23 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -PassThru
+
+By default, this cmdlet doesn't output anything. With this parameter, the cmdlet returns objects
+representing the processes that were waited on.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Timeout
 
 Specifies the maximum time, in seconds, that this cmdlet waits for the specified processes to stop.
@@ -176,7 +214,11 @@ You can pipe a process object to this cmdlet.
 
 ### None
 
-This cmdlet returns no output.
+By default, this cmdlet returns no output.
+
+### System.Diagnostics.Process
+
+The cmdlet returns process objects when you use the **PassThru** parameter.
 
 ## NOTES
 
