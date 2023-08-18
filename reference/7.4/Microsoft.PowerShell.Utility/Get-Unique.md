@@ -32,8 +32,8 @@ Get-Unique [-InputObject <PSObject>] [-OnType] [-CaseInsensitive] [<CommonParame
 The `Get-Unique` cmdlet compares each item in a sorted list to the next item, eliminates duplicates,
 and returns only one instance of each item. The list must be sorted for the cmdlet to work properly.
 
-`Get-Unique` is case-sensitive. As a result, strings that differ only in character casing are
-considered to be unique.
+By default, `Get-Unique` is case-sensitive. As a result, strings that differ only in character
+casing are considered to be unique.
 
 ## EXAMPLES
 

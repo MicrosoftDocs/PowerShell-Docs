@@ -610,7 +610,8 @@ member of the subset should be selected.
 **Unique** selects values _after_ other filtering parameters are applied.
 
 This parameter is case-sensitive. As a result, strings that differ only in character casing are
-considered to be unique.
+considered to be unique. Add the **CaseInsensitive** parameter to perform case-insensitive
+comparisons.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
