@@ -31,7 +31,7 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
 ## DESCRIPTION
 
 The `Set-PSReadLineOption` cmdlet customizes the behavior of the **PSReadLine** module when you're
-editing the command line. To view the **PSReadLine** settings, use `Get-PSReadLineOption`.
+editing the command line. To view the **PSReadLine** settings, use `Get-PSReadLineOption`. test
 
 The options set by this command only apply to the current session. To persist any options, add them
 to a profile script. For more information, see
