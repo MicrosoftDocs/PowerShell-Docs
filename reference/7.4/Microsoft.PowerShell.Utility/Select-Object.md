@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/01/2023
+ms.date: 08/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -19,27 +19,30 @@ Selects objects or object properties.
 
 ```
 Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait]
- [<CommonParameters>]
+ [-ExpandProperty <String>] [-Unique] [-CaseInsensitive] [-Last <Int32>] [-First <Int32>] [-Skip <Int32>]
+ [-Wait] [<CommonParameters>]
 ```
 
 ### SkipLastParameter
 
 ```
 Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-Skip <Int32>] [-SkipLast <Int32>] [<CommonParameters>]
+ [-ExpandProperty <String>] [-Unique] [-CaseInsensitive] [-Skip <Int32>] [-SkipLast <Int32>]
+ [<CommonParameters>]
 ```
 
 ### IndexParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [-Unique] [-Wait] [-Index <Int32[]>] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [-Unique] [-CaseInsensitive] [-Wait] [-Index <Int32[]>]
+ [<CommonParameters>]
 ```
 
 ### SkipIndexParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [-Unique] [-SkipIndex <Int32[]>] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [-Unique] [-CaseInsensitive] [-SkipIndex <Int32[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -139,13 +142,14 @@ This example uses the **Unique** parameter of `Select-Object` to get unique char
 of characters.
 
 ```powershell
-"a","b","c","a","a","a" | Select-Object -Unique
+"a","b","c","a","A","a" | Select-Object -Unique
 ```
 
 ```Output
 a
 b
 c
+A
 ```
 
 ### Example 5: Using `-Unique` with other parameters
@@ -165,7 +169,20 @@ a
 In this example, **First** selects `"a","a"` as the first 2 items in the array. **Unique** is
 applied to `"a","a"` and returns `a` as the unique value.
 
-### Example 6: Select newest and oldest events in the event log
+### Example 6: Select unique strings using the `-CaseInsensitive` parameter
+
+This example uses case-insensitive comparisons to get unique strings from an array of strings.
+
+```powershell
+"aa", "Aa", "Bb", "bb" | Select-Object -Unique -CaseInsensitive
+```
+
+```Output
+aa
+Bb
+```
+
+### Example 7: Select newest and oldest events in the event log
 
 This example gets the first (newest) and last (oldest) events in the Windows PowerShell event log.
 
@@ -179,7 +196,7 @@ $a = Get-WinEvent -LogName "Windows PowerShell"
 $a | Select-Object -Index 0, ($a.count - 1)
 ```
 
-### Example 7: Select all but the first object
+### Example 8: Select all but the first object
 
 This example creates a new PSSession on each of the computers listed in the Servers.txt files,
 except for the first one.
@@ -191,7 +208,7 @@ of computers is set as the value of the **ComputerName** parameter of the `New-P
 New-PSSession -ComputerName (Get-Content Servers.txt | Select-Object -Skip 1)
 ```
 
-### Example 8: Rename files and select several to review
+### Example 9: Rename files and select several to review
 
 This example adds a "-ro" suffix to the base names of text files that have the read-only attribute
 and then displays the first five files so the user can see a sample of the effect.
@@ -211,7 +228,7 @@ Get-ChildItem *.txt -ReadOnly |
     Select-Object -First 5 -Wait
 ```
 
-### Example 9: Show the intricacies of the -ExpandProperty parameter
+### Example 10: Show the intricacies of the -ExpandProperty parameter
 
 This example shows the intricacies of the **ExpandProperty** parameter.
 
@@ -269,7 +286,7 @@ ToUInt64    Method       uint64 IConvertible.ToUInt64(System.IFormatProvider pro
 Name        NoteProperty string Name=CustomObject
 ```
 
-### Example 10: Create custom properties on objects
+### Example 11: Create custom properties on objects
 
 The following example demonstrates using `Select-Object` to add a custom property to any object.
 When you specify a property name that doesn't exist, `Select-Object` creates that property as a
@@ -287,7 +304,7 @@ MyCustomProperty
 New Custom Property
 ```
 
-### Example 11: Create calculated properties for each InputObject
+### Example 12: Create calculated properties for each InputObject
 
 This example demonstrates using `Select-Object` to add calculated properties to your input. Passing
 a **ScriptBlock** to the **Property** parameter causes `Select-Object` to evaluate the expression on
@@ -334,7 +351,7 @@ Diagnostics.Format.ps1xml   4.955078125     223
 DotNetTypes.format.ps1xml   134.9833984375  223
 ```
 
-### Example 12: Select hashtable keys without using calculated properties
+### Example 13: Select hashtable keys without using calculated properties
 
 Beginning in PowerShell 6, `Select-Object` supports selecting the keys of **hashtable** input as
 properties. The following example selects the `weight` and `name` keys on an input hashtable and
@@ -351,6 +368,25 @@ a         7
 ```
 
 ## PARAMETERS
+
+### -CaseInsensitive
+
+By default, when you use the **Unique** parameter the cmdlet uses case-sensitive comparisons. When
+you use this parameter, the cmdlet uses case-insensitive comparisons.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -ExcludeProperty
 
