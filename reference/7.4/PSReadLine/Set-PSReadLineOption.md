@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 07/19/2023
+ms.date: 08/20/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -25,7 +25,8 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
  [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
  [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
  [-ViModeChangeHandler <ScriptBlock>] [-PredictionSource <PredictionSource>]
- [-PredictionViewStyle <PredictionViewStyle>] [-Colors <Hashtable>] [<CommonParameters>]
+ [-PredictionViewStyle <PredictionViewStyle>] [-Colors <Hashtable>] [-TerminateOrphanedConsoleApps]
+ [-ProgressAction <ActionPreference>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -744,6 +745,32 @@ Aliases:
 Required: False
 Position: Named
 Default value: True
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TerminateOrphanedConsoleApps
+
+This parameter sets the **TerminateOrphanedConsoleApps** option to `$true`.
+
+On Windows, when you press <kbd>Ctrl</kbd>+<kbd>c</kbd> to terminate a process, each process
+attached to a console receives a terminate signal, as opposed to just the active shell. Sometimes,
+when a shell has launched some large tree of child processes, (imagine a build system, for example)
+some processes may exit, leaving multiple processes concurrently trying to consume console input.
+
+When the **TerminateOrphanedConsoleApps** option is set to `$true`, tracks child processes and
+properly terminates them after receiving a <kbd>Ctrl</kbd>+<kbd>c</kbd> signal.
+
+This parameter and option were added in PSReadLine 2.3.2-beta2.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
