@@ -1,7 +1,7 @@
 ---
 description: Describes automatic members in all PowerShell objects
 Locale: en-US
-ms.date: 01/24/2023
+ms.date: 08/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Inrinsic_Members?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Intrinsic_Members
@@ -163,9 +163,20 @@ information on how to use these methods, see [about_Arrays][01].
 ## Properties
 
 The **Count** and **Length** properties are available to all PowerShell
-objects. These are similar to each other but may work differently depending on
-the data type. For more information about these properties, see
-[about_Properties][04].
+objects, not just collections. These are similar to each other but may work
+differently depending on the data type. For example, the **Length** of a string
+is the number of characters in the string. The **Count** property is the number
+of instances of the object.
+
+```powershell
+PS> $str = 'string'
+PS> $str.Length
+6
+PS> $str.Count
+1
+```
+
+For more information about these properties, see [about_Properties][04].
 
 ## Array indexing scalar types
 
