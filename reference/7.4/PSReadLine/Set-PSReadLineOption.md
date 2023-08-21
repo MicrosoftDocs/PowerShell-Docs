@@ -758,8 +758,7 @@ attached to a console receives a terminate signal, as opposed to just the active
 when a shell has launched some large tree of child processes, (imagine a build system, for example)
 some processes may exit, leaving multiple processes concurrently trying to consume console input.
 
-When the **TerminateOrphanedConsoleApps** option is set to `$true`, tracks child processes and
-properly terminates them after receiving a <kbd>Ctrl</kbd>+<kbd>c</kbd> signal.
+When setting the **TerminateOrphanedConsoleApps** option to `$true`, PSReadLine records the list of processes that are currently attached to the console. Afterwards, whenever PSReadLine runs, it will get a new list of processes attached to the console, and terminate those that are not in the original list.
 
 This parameter and option were added in PSReadLine 2.3.2-beta2.
 
