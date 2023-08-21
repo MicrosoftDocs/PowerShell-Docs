@@ -1,7 +1,7 @@
 ---
 description: Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function.
 Locale: en-US
-ms.date: 01/26/2022
+ms.date: 08/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Prompts
@@ -21,9 +21,8 @@ command:
 PS C:\>
 ```
 
-The PowerShell prompt is determined by the built-in `Prompt` function. You can
-customize the prompt by creating your own `Prompt` function and saving it in
-your PowerShell profile.
+PowerShell has a built-in `Prompt` function. You can define your own customized
+`Prompt` function in your PowerShell profile script.
 
 ## About the Prompt function
 
@@ -38,7 +37,7 @@ function Prompt { <function-body> }
 ```
 
 The `Prompt` function must return an object. As a best practice, return a
-string or an object that is formatted as a string. The maximum recommended
+string or an object that's formatted as a string. The maximum recommended
 length is 80 characters.
 
 For example, the following `Prompt` function returns a "Hello, World" string
@@ -90,7 +89,7 @@ To display the script that creates the current `Prompt` function, type:
 ### The default prompt
 
 The default prompt appears only when the `Prompt` function generates an error
-or does not return an object.
+or doesn't return an object.
 
 The default PowerShell prompt is:
 
@@ -106,7 +105,7 @@ PS C:\> function prompt {$null}
 PS>
 ```
 
-Because PowerShell comes with a built-in prompt, you usually do not see the
+Because PowerShell comes with a built-in prompt, you usually don't see the
 default prompt.
 
 ### Built-in prompt
@@ -115,22 +114,22 @@ PowerShell includes a built-in `Prompt` function.
 
 ```powershell
 function prompt {
-    $(if (Test-Path variable:/PSDebugContext) { '[DBG]: ' }
-      else { '' }) + 'PS ' + $(Get-Location) +
-        $(if ($NestedPromptLevel -ge 1) { '>>' }) + '> '
+  "PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) ";
+  # .Link
+  # https://go.microsoft.com/fwlink/?LinkID=225750
+  # .ExternalHelp System.Management.Automation.dll-help.xml
 }
 ```
 
-The function uses the `Test-Path` cmdlet to determine whether the
-`$PSDebugContext` automatic variable is populated. If `$PSDebugContext` is
-populated, you are in debugging mode, and `[DBG]:` is added to the prompt, as
-follows:
+The function uses the `Test-Path` cmdlet to test whether the `$PSDebugContext`
+automatic variable has a value. If `$PSDebugContext` has a value, you are
+running in debugging mode, and `[DBG]:` is added to the prompt, as follows:
 
 ```Output
 [DBG]: PS C:\ps-test>
 ```
 
-If `$PSDebugContext` is not populated, the function adds `PS` to the prompt.
+If `$PSDebugContext` isn't populated, the function adds `PS` to the prompt.
 And, the function uses the `Get-Location` cmdlet to get the current file system
 directory location. Then, it adds a right angle bracket (`>`).
 
@@ -167,11 +166,11 @@ Other PowerShell host applications and alternate shells might have their own
 custom command prompts.
 
 For more information about the `$PSDebugContext` and `$NestedPromptLevel`
-automatic variables, see [about_Automatic_Variables](about_Automatic_Variables.md).
+automatic variables, see [about_Automatic_Variables][01].
 
 ### How to customize the prompt
 
-To customize the prompt, write a new `Prompt` function. The function is not
+To customize the prompt, write a new `Prompt` function. The function isn't
 protected, so you can overwrite it.
 
 To write a `Prompt` function, type the following:
@@ -210,8 +209,7 @@ The prompt resembles the following prompt:
 You can also change the default `Prompt` function:
 
 For example, the following modified `Prompt` function adds `[ADMIN]:` to the
-built-in PowerShell prompt when PowerShell is opened by using the
-**Run as administrator** option:
+built-in PowerShell prompt when running in an elevated session.
 
 ```powershell
 function prompt {
@@ -227,8 +225,8 @@ function prompt {
 }
 ```
 
-When you start PowerShell by using the **Run as administrator** option, a
-prompt that resembles the following prompt appears:
+When you start PowerShell using the **Run as administrator** option, a prompt
+that resembles the following prompt appears:
 
 ```Output
 [ADMIN]: PS C:\ps-test>
@@ -255,7 +253,7 @@ function prompt {
 
 The following prompt uses the `Write-Host` and `Get-Random` cmdlets to create a
 prompt that changes color randomly. Because `Write-Host` writes to the current
-host application but does not return an object, this function includes a
+host application but doesn't return an object, this function includes a
 `Return` statement. Without it, PowerShell uses the default prompt, `PS>`.
 
 ```powershell
@@ -271,17 +269,29 @@ function prompt {
 
 Like any function, the `Prompt` function exists only in the current session. To
 save the `Prompt` function for future sessions, add it to your PowerShell
-profiles. For more information about profiles, see [about_Profiles](about_Profiles.md).
+profiles. For more information about profiles, see [about_Profiles][04].
 
 ## See also
 
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Debuggers](about_Debuggers.md)
-- [about_Functions](about_Functions.md)
-- [about_Profiles](about_Profiles.md)
-- [about_Scopes](about_Scopes.md)
-- [Get-History](xref:Microsoft.PowerShell.Core.Get-History)
-- [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
-- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
-- [Enter-PSSession](xref:Microsoft.PowerShell.Core.Enter-PSSession)
-- [Get-Random](xref:Microsoft.PowerShell.Utility.Get-Random)
+- [about_Automatic_Variables][01]
+- [about_Debuggers][02]
+- [about_Functions][03]
+- [about_Profiles][04]
+- [about_Scopes][05]
+- [Get-History][09]
+- [Write-Host][12]
+- [Get-Location][10]
+- [Enter-PSSession][08]
+- [Get-Random][11]
+
+<!-- link references -->
+[01]: about_Automatic_Variables.md
+[02]: about_Debuggers.md
+[03]: about_Functions.md
+[04]: about_Profiles.md
+[05]: about_Scopes.md
+[08]: xref:Microsoft.PowerShell.Core.Enter-PSSession
+[09]: xref:Microsoft.PowerShell.Core.Get-History
+[10]: xref:Microsoft.PowerShell.Management.Get-Location
+[11]: xref:Microsoft.PowerShell.Utility.Get-Random
+[12]: xref:Microsoft.PowerShell.Utility.Write-Host
