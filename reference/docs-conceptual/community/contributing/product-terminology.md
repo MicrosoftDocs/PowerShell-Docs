@@ -2,6 +2,7 @@
 description: This article contains guidelines for the proper use of product names and terms.
 ms.date: 11/14/2022
 ms.topic: conceptual
+ms.custom: has-azure-ad-ps-ref
 title: Product terminology and branding guidelines
 ---
 # Product terminology and branding guidelines
