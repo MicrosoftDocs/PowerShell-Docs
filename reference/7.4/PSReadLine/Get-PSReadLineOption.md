@@ -44,9 +44,9 @@ HistorySaveStyle                       : SaveIncrementally
 HistorySearchCaseSensitive             : False
 HistorySearchCursorMovesToEnd          : False
 MaximumHistoryCount                    : 4096
-ContinuationPrompt                     :
+ContinuationPrompt                     : >>
 ExtraPromptLineCount                   : 0
-PromptText                             :
+PromptText                             : >
 BellStyle                              : Audible
 DingDuration                           : 50
 DingTone                               : 1221
@@ -74,9 +74,9 @@ ListPredictionSelectedColor            : "`e[48;5;238m"
 ListPredictionTooltipColor             : "`e[97;2;3m"
 MemberColor                            : "`e[37m"
 NumberColor                            : "`e[97m"
-OperatorColor                          : "`e[95m"
-ParameterColor                         : "`e[95m"
-SelectionColor                         : "`e[92m`e[100m"
+OperatorColor                          : "`e[90m"
+ParameterColor                         : "`e[90m"
+SelectionColor                         : "`e[30;47m"
 StringColor                            : "`e[36m"
 TypeColor                              : "`e[37m"
 VariableColor                          : "`e[92m"

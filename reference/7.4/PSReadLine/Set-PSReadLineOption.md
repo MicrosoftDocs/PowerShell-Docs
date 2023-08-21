@@ -26,7 +26,7 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
  [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
  [-ViModeChangeHandler <ScriptBlock>] [-PredictionSource <PredictionSource>]
  [-PredictionViewStyle <PredictionViewStyle>] [-Colors <Hashtable>] [-TerminateOrphanedConsoleApps]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -209,8 +209,8 @@ Specifies a **ScriptBlock** that controls which commands get added to **PSReadLi
 
 The **ScriptBlock** receives the command line as input.
 
-The  **ScripBlock** should return a member of the **AddToHistoryOption** enum, the string name of
-one of those members, or a boolean value. The list below describes the possible values and their
+The **ScripBlock** should return a member of the **AddToHistoryOption** enum, the string name of one
+of those members, or a boolean value. The list below describes the possible values and their
 effects.
 
 - `MemoryAndFile` - Add the command to the history file and the current session.
@@ -237,8 +237,8 @@ This option is specific to Windows when input is redirected, for example, when r
 or `screen`.
 
 With redirected input on Windows, many keys are sent as a sequence of characters starting with the
-escape character. It's impossible to distinguish between a single escape character followed by
-more characters and a valid escape sequence.
+escape character. It's impossible to distinguish between a single escape character followed by more
+characters and a valid escape sequence.
 
 The assumption is that the terminal can send the characters faster than a user types. **PSReadLine**
 waits for this timeout before concluding that it has received a complete escape sequence.
@@ -284,7 +284,8 @@ Accept wildcard characters: False
 The **Colors** parameter specifies various colors used by **PSReadLine**.
 
 The argument is a hash table where the keys specify which element and the values specify the color.
-For more information, see [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+For more information, see
+[about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
 Colors can be either a value from **ConsoleColor**, for example `[ConsoleColor]::Red`, or a valid
 ANSI escape sequence. Valid escape sequences depend on your terminal. In PowerShell 5.0, an example
@@ -303,7 +304,8 @@ Two color settings were added to support customization of the `ListView` in PSRe
 - Foreground, background, or both
 - Inverse, bold
 
-For more information about ANSI color codes, see [ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code#Colors_) in Wikipedia.
+For more information about ANSI color codes, see the Wikipedia article
+[ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code#Colors_).
 
 The valid keys include:
 
@@ -728,10 +730,9 @@ When displaying possible completions, tooltips are shown in the list of completi
 This option is enabled by default. This option wasn't enabled by default in prior versions of
 **PSReadLine**. To disable, set this option to `$False`.
 
-By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions**
-object is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change
-the property value, you must specify the value of the **SwitchParameter** as follows:
-`-ShowToolTips:$False`.
+By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions** object is set
+to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the property
+value, you must specify the value of the **SwitchParameter** as follows: `-ShowToolTips:$False`.
 
 Using the following command, you can set the property value directly:
 
@@ -758,7 +759,10 @@ attached to a console receives a terminate signal, as opposed to just the active
 when a shell has launched some large tree of child processes, (imagine a build system, for example)
 some processes may exit, leaving multiple processes concurrently trying to consume console input.
 
-When setting the **TerminateOrphanedConsoleApps** option to `$true`, PSReadLine records the list of processes that are currently attached to the console. Afterwards, whenever PSReadLine runs, it will get a new list of processes attached to the console, and terminate those that are not in the original list.
+When setting the **TerminateOrphanedConsoleApps** option to `$true`, PSReadLine records the list of
+processes that are currently attached to the console. Afterwards, whenever PSReadLine runs, it will
+get a new list of processes attached to the console, and terminate those that aren't in the original
+list.
 
 This parameter and option were added in PSReadLine 2.3.2-beta2.
 
