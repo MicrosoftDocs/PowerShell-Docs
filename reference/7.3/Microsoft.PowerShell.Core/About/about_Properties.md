@@ -253,8 +253,8 @@ the collection.
 176
 ```
 
-Starting in PowerShell 3.0, if you request the **Count** or **Length** property
-of singleton objects that aren't collections.
+Starting in PowerShell 3.0, you can get the **Count** or **Length** property of
+singleton objects that aren't collections.
 
 ```powershell
 (Get-Service Audiosrv).Count
