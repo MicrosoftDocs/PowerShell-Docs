@@ -15,8 +15,7 @@ title: PSReadLine
 The PSReadLine module contains cmdlets that let you customize the command-line editing environment
 in PowerShell.
 
-There have been many updates to PSReadLine since the version that ships in
-Windows PowerShell 5.1.
+There have been many updates to PSReadLine since the version that ships in Windows PowerShell 5.1.
 
 - PowerShell 7.3.0 ships with PSReadLine 2.2.6
 - PowerShell 7.2.5 ships with PSReadLine 2.1.0
@@ -47,4 +46,3 @@ Binds keys to user-defined or PSReadLine key handler functions.
 
 ### [Set-PSReadLineOption](Set-PSReadLineOption.md)
 Customizes the behavior of command line editing in **PSReadLine**.
-
