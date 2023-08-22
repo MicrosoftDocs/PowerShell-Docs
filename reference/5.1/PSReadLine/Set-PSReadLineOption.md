@@ -1,8 +1,8 @@
 ---
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
-Module Name: PSReadline
-ms.date: 07/19/2023
+Module Name: PSReadLine
+ms.date: 08/22/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -199,11 +199,28 @@ Set-PSReadLineOption -CommandValidationHandler {
 Set-PSReadLineKeyHandler -Chord Enter -Function ValidateAndAcceptLine
 ```
 
+### Example 9: Using the PromptText parameter
+
+When there's a parse error, **PSReadLine** changes a part of the prompt red. The **PromptText**
+parameter tells **PSReadLine** the part of the prompt string to make red.
+
+For example, the following example creates a prompt that contains the current path followed by the
+greater-than character (`>`) and a space.
+
+```powershell
+function prompt { "PS $pwd> " }`
+Set-PSReadLineOption -PromptText '> ' # change the '>' character red
+Set-PSReadLineOption -PromptText '> ', 'X ' # replace the '>' character with a red 'X'
+```
+
+The first string is the portion of your prompt string that you want to make red when there is a
+parse error. The second string is an alternate string to use for when there is a parse error.
+
 ## PARAMETERS
 
 ### -AddToHistoryHandler
 
-Specifies a **ScriptBlock** that controls which commands get added to **PSReadLine** history.
+Specifies a **ScriptBlock** that controls how commands get added to **PSReadLine** history.
 
 The **ScriptBlock** receives the command line as input.
 
@@ -281,12 +298,13 @@ Accept wildcard characters: False
 
 The **Colors** parameter specifies various colors used by **PSReadLine**.
 
-The argument is a hash table where the keys specify which element and the values specify the color.
-For more information, see [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+The argument is a hash table where the keys specify the elements and the values specify the color.
+For more information, see
+[about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
 Colors can be either a value from **ConsoleColor**, for example `[ConsoleColor]::Red`, or a valid
 ANSI escape sequence. Valid escape sequences depend on your terminal. In PowerShell 5.0, an example
-escape sequence for red text is `$([char]0x1b)[91m`. In PowerShell 6 and above, the same escape
+escape sequence for red text is `$([char]0x1b)[91m`. In PowerShell 6 and newer, the same escape
 sequence is `` `e[91m``. You can specify other escape sequences including the following types:
 
 - 256 color
@@ -294,7 +312,8 @@ sequence is `` `e[91m``. You can specify other escape sequences including the fo
 - Foreground, background, or both
 - Inverse, bold
 
-For more information about ANSI color codes, see [ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code#Colors_) in Wikipedia.
+For more information about ANSI color codes, see the Wikipedia article
+[ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code#Colors_).
 
 The valid keys include:
 
@@ -332,8 +351,8 @@ Specifies a **ScriptBlock** that is called from **ValidateAndAcceptLine**. If an
 thrown, validation fails and the error is reported.
 
 Before throwing an exception, the validation handler can place the cursor at the point of the error
-to make it easier to fix. A validation handler can also change the command line, such as to correct
-common typographical errors.
+to make it easier to fix. A validation handler can also change the command line to correct common
+typographical errors.
 
 **ValidateAndAcceptLine** is used to avoid cluttering your history with commands that can't work.
 
@@ -627,20 +646,15 @@ Accept wildcard characters: False
 
 ### -PromptText
 
-When there's a parse error, **PSReadLine** changes a part of the prompt red. **PSReadLine** analyzes
-your prompt function to determine how to change only the color of part of your prompt. This analysis
-isn't 100% reliable.
+This parameter sets the value of the **PromptText** property. The default value is `"> "`.
 
-Use this option if **PSReadLine** is changing your prompt in unexpected ways. Include any trailing
-whitespace.
+**PSReadLine** analyzes your prompt function to determine how to change only the color of part of
+your prompt. This analysis isn't 100% reliable. Use this option if **PSReadLine** is changing your
+prompt in unexpected ways. Include any trailing whitespace.
 
-For example, if your prompt function looked like the following example:
-
-`function prompt { Write-Host -NoNewLine -ForegroundColor Yellow "$pwd"; return "# " }`
-
-Then set:
-
-`Set-PSReadLineOption -PromptText "# "`
+The value of this parameter can be a single string or an array of two strings. The first string is
+the portion of your prompt string that you want to be changed to red when there is a parse error.
+The second string is an alternate string to use for when there is a parse error.
 
 ```yaml
 Type: System.String[]
@@ -661,10 +675,9 @@ When displaying possible completions, tooltips are shown in the list of completi
 This option is enabled by default. This option wasn't enabled by default in prior versions of
 **PSReadLine**. To disable, set this option to `$False`.
 
-By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions**
-object is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change
-the property value, you must specify the value of the **SwitchParameter** as follows:
-`-ShowToolTips:$False`.
+By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions** object is set
+to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the property
+value, you must specify the value of the **SwitchParameter** as follows: `-ShowToolTips:$False`.
 
 Using the following command, you can set the property value directly:
 
@@ -703,12 +716,12 @@ Accept wildcard characters: False
 
 ### -ViModeIndicator
 
-This option sets the visual indication for the current **Vi** mode. Either insert mode or command
+This option sets the visual indicator for the current **Vi** mode. Either insert mode or command
 mode.
 
 The valid values are as follows:
 
-- **None**: There's no indication.
+- **None**: There's no indicator.
 - **Prompt**: The prompt changes color.
 - **Cursor**: The cursor changes size.
 - **Script**: User-specified text is printed.
