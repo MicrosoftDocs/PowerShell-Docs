@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/21/2023
+ms.date: 08/22/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resolve-Path
@@ -123,11 +123,23 @@ PS C:\> Resolve-Path -LiteralPath 'test[xml]'
 ### Example 7: Resolve a path relative to another folder
 
 This example uses the **RelativeBasePath** parameter to resolve the path of the `pwsh` executable
-relative to `$env:TEMP`.
+relative to `$env:TEMP`, returning the **System.Management.Automation.PathInfo** object for the
+resolved path. When the command includes the **Relative** switch parameter, it returns a **String**
+representing the relative path from `$env:TEMP` to the `pwsh` executable.
 
 ```powershell
 $ExecutablePath = Get-Command -Name pwsh | Select-Object -ExpandProperty Source
 Resolve-Path -Path $ExecutablePath -RelativeBasePath $env:TEMP
+```
+
+```Output
+Path
+----
+C:\Program Files\PowerShell\7-preview\pwsh.exe
+```
+
+```powershell
+Resolve-Path -Path $ExecutablePath -RelativeBasePath $env:TEMP -Relative
 ```
 
 ```Output
@@ -214,7 +226,10 @@ Accept wildcard characters: False
 ### -RelativeBasePath
 
 Specifies a path to resolve the relative path from. When you use this parameter, the cmdlet returns
-a string representing the relative path from **RelativeBasePath** to **Path**.
+the **System.Management.Automation.PathInfo** object for the resolved path.
+
+When you use this parameter with the **Relative** switch parameter, the cmdlet returns a string
+representing the relative path from **RelativeBasePath** to **Path**.
 
 This parameter was added in PowerShell 7.4.
 
