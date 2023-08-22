@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.4 (preview)
 description: New features and changes released in PowerShell 7.4 (preview)
-ms.date: 06/30/2023
+ms.date: 08/22/2023
 ---
 
 # What's New in PowerShell 7.4 (preview)
 
-PowerShell 7.4-preview.4 includes the following features, updates, and breaking changes. PowerShell
-7.4 is now built on .NET 8.0.0-preview.4.
+PowerShell 7.4-preview.5 includes the following features, updates, and breaking changes. PowerShell
+7.4 is now built on .NET 8.0.0-preview.7.
 
 For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository.
 
@@ -70,6 +70,8 @@ Many thanks to **@MartinGC94** and others for all the work on improving tab comp
 - Infer external application output as strings ([#19193][19193])
 - Update parameter completion for enums to exclude values not allowed by `ValidateRange` attributes
   ([#17750][17750]) (Thanks @fflaten!).
+- Fix dynamic parameter completion ([#19510][19510])
+- Add completion for variables assigned by the Data statement ([#19831][19831])
 
 ## Web cmdlet improvements
 
@@ -111,6 +113,7 @@ Many thanks to **@CarloToso** and others for all the work on improving web cmdle
   cmdlets ([#19558][19558]) (Thanks @stevenebutler!) Other cmdlets
 - Support Ctrl+c when connection hangs while reading data in WebCmdlets ([#19330][19330]) (Thanks
   @stevenebutler!)
+- Support Unix domain socket in WebCmdlets ([#19343][19343])
 
 ## Other cmdlet improvements
 
@@ -139,6 +142,10 @@ Many thanks to **@CarloToso** and others for all the work on improving web cmdle
 - Add `Get-SecureRandom` cmdlet ([#19587][19587])
 - `Set-Clipboard -AsOSC52` for remote usage ([#18222][18222]) (Thanks @dkaszews!)
 - Speed up `Resolve-Path` relative path resolution ([#19171][19171]) (Thanks @MartinGC94!)
+- Added the switch parameter `-CaseInsensitive` to `Select-Object` and `Get-Unique` cmdlets
+  ([#19683][19683]) (Thanks @ArmaanMcleod!)
+- `Restart-Computer` and `Stop-Computer` should fail with error when not running via sudo on Unix
+  ([#19824][19824])
 
 ## Engine improvements
 
@@ -282,6 +289,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [19298]: https://github.com/PowerShell/PowerShell/pull/19298
 [19320]: https://github.com/PowerShell/PowerShell/pull/19320
 [19330]: https://github.com/PowerShell/PowerShell/pull/19330
+[19343]: https://github.com/PowerShell/PowerShell/pull/19343
 [19382]: https://github.com/PowerShell/PowerShell/pull/19382
 [19422]: https://github.com/PowerShell/PowerShell/pull/19422
 [19442]: https://github.com/PowerShell/PowerShell/pull/19442
@@ -289,6 +297,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [19489]: https://github.com/PowerShell/PowerShell/pull/19489
 [19490]: https://github.com/PowerShell/PowerShell/pull/19490
 [19501]: https://github.com/PowerShell/PowerShell/pull/19501
+[19510]: https://github.com/PowerShell/PowerShell/pull/19510
 [19558]: https://github.com/PowerShell/PowerShell/pull/19558
 [19560]: https://github.com/PowerShell/PowerShell/pull/19560
 [19587]: https://github.com/PowerShell/PowerShell/pull/19587
@@ -301,3 +310,6 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [19765]: https://github.com/PowerShell/PowerShell/pull/19765
 [19814]: https://github.com/PowerShell/PowerShell/pull/19814
 [19819]: https://github.com/PowerShell/PowerShell/pull/19819
+[19831]: https://github.com/PowerShell/PowerShell/pull/19831
+[19683]: https://github.com/PowerShell/PowerShell/pull/19683
+[19824]: https://github.com/PowerShell/PowerShell/pull/19824
