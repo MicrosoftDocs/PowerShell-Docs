@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/23/2023
+ms.date: 08/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-unique?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Unique
@@ -18,13 +18,13 @@ Returns unique items from a sorted list.
 ### AsString (Default)
 
 ```
-Get-Unique [-InputObject <PSObject>] [-AsString] [<CommonParameters>]
+Get-Unique [-InputObject <PSObject>] [-AsString] [-CaseInsensitive] [<CommonParameters>]
 ```
 
 ### UniqueByType
 
 ```
-Get-Unique [-InputObject <PSObject>] [-OnType] [<CommonParameters>]
+Get-Unique [-InputObject <PSObject>] [-OnType] [-CaseInsensitive] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,8 +32,8 @@ Get-Unique [-InputObject <PSObject>] [-OnType] [<CommonParameters>]
 The `Get-Unique` cmdlet compares each item in a sorted list to the next item, eliminates duplicates,
 and returns only one instance of each item. The list must be sorted for the cmdlet to work properly.
 
-`Get-Unique` is case-sensitive. As a result, strings that differ only in character casing are
-considered to be unique.
+By default, `Get-Unique` is case-sensitive. As a result, strings that differ only in character
+casing are considered to be unique.
 
 ## EXAMPLES
 
@@ -110,6 +110,34 @@ The **AsString** parameter tells `Get-Unique` to treat the **ProcessName** value
 Without this parameter, `Get-Unique` treats the **ProcessName** values as objects and returns only
 one instance of the object, that is, the first process name in the list.
 
+### Example 5: Use case-sensitive comparisons to get unique strings
+
+This example uses case-insensitive comparisons to get unique strings from an array of strings.
+
+```powershell
+"aa", "Aa", "Bb", "bb", "aa" | Sort-Object -CaseSensitive | Get-Unique
+```
+
+```Output
+aa
+Aa
+bb
+Bb
+```
+
+### Example 6: Use case-insensitive comparisons to get unique strings
+
+This example uses case-insensitive comparisons to get unique strings from an array of strings.
+
+```powershell
+"aa", "Aa", "Bb", "bb", "aa" | Sort-Object | Get-Unique -CaseInsensitive
+```
+
+```Output
+aa
+Bb
+```
+
 ## PARAMETERS
 
 ### -AsString
@@ -126,7 +154,26 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CaseInsensitive
+
+By default, `Get-Unique` is case-sensitive. When you use this parameter, the cmdlet uses
+case-insensitive comparisons.
+
+This parameter was added in PowerShell 7.4.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -136,9 +183,9 @@ Accept wildcard characters: False
 Specifies input for `Get-Unique`. Enter a variable that contains the objects or type a command or
 expression that gets the objects.
 
-This cmdlet treats the input submitted by using **InputObject** as a collection. it does not
+This cmdlet treats the input submitted using **InputObject** as a collection. It doesn't
 enumerate individual items in the collection. Because the collection is a single item, input
-submitted by using **InputObject** is always returned unchanged.
+submitted using **InputObject** is always returned unchanged.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -172,7 +219,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
