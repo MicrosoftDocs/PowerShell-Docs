@@ -98,6 +98,8 @@ When multiple processes are passed into `Wait-Process`, the cmdlet waits for all
 before returning. With this parameter, the cmdlet returns when any of the processes exits. The
 remaining processes continue to run.
 
+This parameter was added in PowerShell 7.4.
+
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
@@ -166,6 +168,8 @@ Accept wildcard characters: False
 
 By default, this cmdlet doesn't output anything. With this parameter, the cmdlet returns objects
 representing the processes that were waited on.
+
+This parameter was added in PowerShell 7.4.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
