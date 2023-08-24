@@ -25,23 +25,29 @@ To create and use a feedback provider, you must be using the following software 
 
 A feedback provider is a PowerShell binary module. The module must implement the
 `using System.Management.Automation.Subsystem.Feedback` interface. This interface
-declares the methods used to get feedback based on the given command line and error record.
+declares the methods used to get feedback based on the command line input. Currently it can trigger on success and errors of execution and provide the necessary information for 
 
 ![Architecture](media/create-feedback-provider/feedbackproviderarch.png)
 
 ## Creating the code
 
 You must have .NET 8 SDK installed to create a feedback provider. For more information on the SDK
-see [Download .NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). In this example we will be creating a simple feedback provider and will also register with the command predictor interface to give the feedback to the predictive experience. You can read more about predictors in [Using predictors in PSReadLine](https://learn.microsoft.com/powershell/scripting/learn/shell/using-predictors), and [How to create a command line predictor](./create-command-line-predictor.md).
+see [Download .NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). In this example we
+will be creating a simple feedback provider and will also register with the command predictor
+interface to give the feedback to the predictive experience. You can read more about predictors in
+[Using predictors in PSReadLine](https://learn.microsoft.com/powershell/scripting/learn/shell/using-predictors),
+and [How to create a command line predictor](./create-command-line-predictor.md).
 
-First, you will need to create a new .NET class library project. You can do this by running the following in the project directory:
+First, you will need to create a new .NET class library project. You can do this by running the
+following in the project directory:
 
 ```powershell
 
 dotnet new classlib --name MyFeedbackProvider
 ```
 
-You will need to add an `ItemGroup`` to include the `System.Management.Automation` package to your .csproj file. Your .csproj file should look like the following:
+You will need to add an `ItemGroup`` to include the `System.Management.Automation` package to your
+.csproj file. Your .csproj file should look like the following:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -68,26 +74,20 @@ You will need to add an `ItemGroup`` to include the `System.Management.Automatio
 
 You can delete the default `Class.cs` file that is created with the project. You will need to add a
 new class file to the project. You can name this file whatever you want. For this example we will
-name it `MyFeedbackProvider.cs`. You will need to add the following using statements to the top of
-the file:
+name it `MyFeedbackProvider.cs`.
 
 ```csharp
-
-- import SMA namespace
-- inherit from IFeedbackProvider
-- implement the interface methods
-- init the feedback provider
-
-```csharp
-TODO Add full code 
+TODO ADD CODE 
 ```
-
 
 ### Breaking down the code
 
 There is a lot going on in the code above, lets break it down and explain what each part is doing.
 
-You are going to first need and `Init` class that inherits from the `IModuleAssemblyInitializer` and `IModuleAssemblyCleanup` interfaces. This will allow you to register and unregister your feedback provider with the subsystem manager. `OnImport` runs when the binary module is registered with the subsystem and `OnRemove` runs when the binary module is unregistered from the subsystem. 
+You are going to first need and `Init` class that inherits from the `IModuleAssemblyInitializer` and
+`IModuleAssemblyCleanup` interfaces. This will allow you to register and unregister your feedback
+provider with the subsystem manager. `OnImport` runs when the binary module is registered with the
+subsystem and `OnRemove` runs when the binary module is unregistered from the subsystem.
 
 ```csharp
 public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
@@ -109,15 +109,26 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 }
 ```
 
-You will need to replace `<ADD YOUR GUID HERE>` with a unique GUID. You can generate a GUID by running the following command in PowerShell:
+You will need to replace `<ADD YOUR GUID HERE>` with a unique GUID. You can generate a GUID by
+running the following command in PowerShell:
 
 ```powershell
 New-Guid
 ```
 
-This is required to maintain a unique identifier for your feedback provider. It is passed to the constructor of the `myFeedbackProvider` class.
+This is required to maintain a unique identifier for your feedback provider. It is passed to the
+constructor of the `myFeedbackProvider` class. Above the init code, add your main feedback provider class. This inherits from the `IFeedbackProvider` and `ICommandPredictor` interface. 
 
-That constructor will only need to assign the passed GUID to a private variable that can be seen here:
+```csharp
+namespace myFeedbackProvider;
+
+public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor{
+    // more code to go here.
+}
+```
+
+That constructor will only need to assign the passed GUID to a private variable that can be seen
+here:
 
 ```csharp 
 private readonly Guid _guid;
@@ -130,7 +141,9 @@ internal myFeedbackProvider(string guid)
 }
 ```
 
-You will need to implement a number of required methods and variables in your feedback provider class.
+You will need to implement a number of required methods and variables in your feedback provider
+class. Most of these are self explanatory, `_candidates` is a list of strings that will be passed to
+the predictor interface later in this tutorial to enhance the feedback provider experience.å
 
 ```csharp
 public FeedbackTrigger Trigger => FeedbackTrigger.All;
@@ -140,14 +153,34 @@ Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
 // Descriptive values of the feedback provider
 public string Name => "myFeedbackProvider"; // is the display name when triggered
 public string Description => "This is very simple feedback provider";
+
+// List of candidates from the feedback provider to be passed as predictor results
+private List<string>? _candidates;
 ```
 
 Now you are ready to implement the main `GetFeedback` method that will be the main trigger for
 feedback.
 
 ```csharp
+ public FeedbackItem? GetFeedback(FeedbackContext context, CancellationToken token)
+    {
 
+        var target = context.Trigger;
+        var commandLine = context.CommandLine;
+
+        // defining the header and footer variables
+        string header;
+        string footer;
+
+        List<string>? actions = new List<string>();
+
+        
+        // TRIGGERS WILL GO HERE
+
+        return null;
+    }
 ```
+
 
 ## Using a feedback provider
 
@@ -155,7 +188,9 @@ Feedback providers will trigger after the defined action has taken place. So if 
 your feedback provider to trigger on a success and after a certain command, you will have to have
 the module imported and then run the command to verify it is working.
 
-We suggest importing feedback providers in your `$PROFILE` so that they are always available. You can edit your `$PROFILE` by opening it in any text editor or if you have Visual Studio Code installed you can run the following command:
+We suggest importing feedback providers in your `$PROFILE` so that they are always available. You
+can edit your `$PROFILE` by opening it in any text editor or if you have Visual Studio Code
+installed you can run the following command:
 
 ```powershell
 code $PROFILE
@@ -185,5 +220,66 @@ ICommandPredictor interface so the feedback can be given to the users predictor 
 read more about creating a command line predictor in the
 [How to create a command line predictor](./create-command-line-predictor.md) article. 
 
-Additionally you can refer to the command-not-found feedback provider repository to see an example
-of a feedback provider that utilizes the command line predictor interface.
+You can add this functionality to your feedback provider by adding the following code to your class
+to get predictor behavior for your feedback provider.
+
+```csharp
+#region ICommandPredictor
+
+
+// Gets a value indicating whether the predictor accepts a specific kind of feedback.
+// client - Represents the client that initiates the call.
+// feedback - the specific kind of feedback 
+public bool CanAcceptFeedback(PredictionClient client, PredictorFeedbackKind feedback)
+{
+    return feedback switch
+    {
+        PredictorFeedbackKind.CommandLineAccepted => true,
+        _ => false,
+    };
+}
+
+// Get the predictive suggestions. It indicates the start of a suggestion rendering session.
+// client - Represents the client that initiates the call. 
+// context - The PredictionContext object to be used for prediction.
+// cancellationToken - The cancellation token to cancel the prediction.
+public SuggestionPackage GetSuggestion(PredictionClient client, PredictionContext context, CancellationToken cancellationToken)
+{
+    if (_candidates is not null)
+    {
+        string input = context.InputAst.Extent.Text;
+        List<PredictiveSuggestion>? result = null;
+
+        foreach (string c in _candidates)
+        {
+            if (c.StartsWith(input, StringComparison.OrdinalIgnoreCase))
+            {
+                result ??= new List<PredictiveSuggestion>(_candidates.Count);
+                result.Add(new PredictiveSuggestion(c));
+            }
+        }
+
+        if (result is not null)
+        {
+            return new SuggestionPackage(result);
+        }
+    }
+
+    return default;
+}
+
+// A command line was accepted to execute. The predictor can start processing early as needed with the latest history.
+public void OnCommandLineAccepted(PredictionClient client, IReadOnlyList<string> history)
+{
+    // Reset the candidate state once the command is accepted.
+    _candidates = null;
+}
+
+public void OnSuggestionDisplayed(PredictionClient client, uint session, int countOrIndex) { }
+
+public void OnSuggestionAccepted(PredictionClient client, uint session, string acceptedSuggestion) { }
+
+public void OnCommandLineExecuted(PredictionClient client, string commandLine, bool success) { }
+
+#endregion;
+```
