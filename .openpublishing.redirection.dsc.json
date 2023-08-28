@@ -1,11 +1,6 @@
 {
   "redirections": [
     {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc?view=dsc-1.1",
-      "source_path": "reference/5.1/psdesiredstateconfiguration/about/about_classes_and_dsc.md"
-    },
-    {
       "redirect_document_id": true,
       "redirect_url": "/powershell/module/psdesiredstateconfiguration/disable-dscdebug?view=dsc-1.1",
       "source_path": "reference/5.1/psdesiredstateconfiguration/disable-dscdebug.md"
@@ -89,11 +84,6 @@
       "redirect_document_id": true,
       "redirect_url": "/powershell/module/psdesiredstateconfiguration/update-dscconfiguration?view=dsc-1.1",
       "source_path": "reference/5.1/psdesiredstateconfiguration/update-dscconfiguration.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/module/psdesiredstateconfiguration/about_classes_and_dsc?view=dsc-2.0",
-      "source_path": "reference/7.2/psdesiredstateconfiguration/about/about_classes_and_dsc.md"
     },
     {
       "redirect_document_id": false,
