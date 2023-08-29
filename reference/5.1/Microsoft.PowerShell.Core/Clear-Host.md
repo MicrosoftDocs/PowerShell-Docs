@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/31/2022
+ms.date: 08/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/functions/clear-host?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-Host
@@ -37,10 +37,8 @@ might work differently in different host programs.
 
 ### Example 1
 
-```
-# Before
-
-PS C:\> Get-Process
+```powershell
+PS> Get-Process
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -65,10 +63,10 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     258      15     6804      12156    50     2.65    536 services
 ...
 
-PS C:\> cls
-#After
+PS> cls
 
-PS C:>
+
+PS>
 ```
 
 This command uses the `cls` alias of `Clear-Host` to clear the current display.
