@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 07/17/2023
+ms.date: 08/30/2023
 no-no-loc: [-Command, -ConfigurationName , -EncodedCommand, -ExecutionPolicy, -File, -Help, -InputFormat, -Mta, -NoExit, -NoLogo, -NonInteractive, -NoProfile, -OutputFormat, -PSConsoleFile, -Sta, -Version, -WindowStyle]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -152,11 +152,11 @@ Running `powershell -File -` without redirected standard input starts a regular
 session. This is the same as not specifying the **File** parameter at all.
 
 If the value of **File** is a filepath, the script runs in the local scope
-("dot-sourced"), so that the functions and variables that the script creates
-are available in the current session. Enter the script filepath and any
-parameters. **File** must be the last parameter in the command. All values
-typed after the **File** parameter are interpreted as the script filepath and
-parameters passed to that script.
+("dot-sourced") of the new session, so that the functions and variables that
+the script creates are available in that new session. Enter the script filepath
+and any parameters. **File** must be the last parameter in the command. All
+values typed after the **File** parameter are interpreted as the script
+filepath and parameters passed to that script.
 
 Parameters passed to the script are passed as literal strings, after
 interpretation by the current shell. For example, if you are in **cmd.exe** and

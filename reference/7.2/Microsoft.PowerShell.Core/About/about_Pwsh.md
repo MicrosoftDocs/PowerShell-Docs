@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 07/17/2023
+ms.date: 08/30/2023
 no-loc: [-File, -f, -Command, -c, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -59,9 +59,9 @@ session. This is the same as not specifying the `File` parameter at all.
 
 This is the default parameter if no parameters are present but values are
 present in the command line. The specified script runs in the local scope
-("dot-sourced"), so that the functions and variables that the script creates
-are available in the current session. Enter the script filepath and any
-parameters. File must be the last parameter in the command, because all
+("dot-sourced") of the new session, so that the functions and variables that
+the script creates are available in at new session. Enter the script filepath
+and any parameters. File must be the last parameter in the command, because all
 characters typed after the File parameter name are interpreted as the script
 filepath followed by the script parameters.
 
