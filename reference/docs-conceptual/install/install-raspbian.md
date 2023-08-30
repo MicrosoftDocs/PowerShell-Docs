@@ -44,16 +44,23 @@ sudo apt-get update
 sudo apt-get install libssl1.1 libunwind8 -y
 
 ###################################
+
+# Get Raspberry Pi OS kernel mode
+uname_string=$(uname -m | tail -c 3)
+kernel_mode="${uname_string/71/32}"
+echo "Detected kernel mode: ${kernel_mode}-bit"
+
 # Download and extract PowerShell
 
-# Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-linux-arm32.tar.gz
+# Grab the latest tar.gz for the detected kernel mode
+latest_build=$(curl -sL https://api.github.com/repos/PowerShell/PowerShell/releases/latest | jq -r ".assets[].browser_download_url" | grep "linux-arm${kernel_mode}.tar.gz")
+wget $latest_build
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-7.3.6-linux-arm32.tar.gz -C ~/powershell
+tar -xvf "./${latest_build##*/}" -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
