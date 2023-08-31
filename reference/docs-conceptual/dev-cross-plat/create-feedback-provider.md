@@ -97,7 +97,6 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
 
 }
 
-
 public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 {
 
@@ -107,7 +106,7 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 First we are going to work on the `Init` class. This class will be used to register and unregister
 your feedback provider with the subsystem manager. `OnImport` runs when the binary module is
 registered with the subsystem and `OnRemove` runs when the binary module is unregistered from the
-subsystem.
+subsystem. We register both a Feedback Provider and Command Predictor subsystem.
 
 ```csharp
 public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
@@ -142,42 +141,39 @@ main feedback provider class. This inherits from the `IFeedbackProvider` and `IC
 interface.
 
 Next we are going to add some necessary variables to describe the feedback provider and get some
-variables ready.
+variables ready. The following code needs to be added to the `myFeedbackProvider` class.
 
 ```csharp 
-    // Gets the trigger that causes the feedback provider to be invoked. In this case, it gets All triggers.
-    // See FeedbackTrigger enum for more details
-    public FeedbackTrigger Trigger => FeedbackTrigger.All;
+// Gets the trigger that causes the feedback provider to be invoked. In this case, it gets All triggers.
+// See FeedbackTrigger enum for more details
+public FeedbackTrigger Trigger => FeedbackTrigger.All;
 
-    // Gets a dictionary that contains the functions to be defined at the global scope of a PowerShell session.
-    Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
+// Gets a dictionary that contains the functions to be defined at the global scope of a PowerShell session.
+Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
 
-    // Gets the name of a subsystem implementation, this will be the name displayed when triggered
-    public string Name => "myFeedbackProvider";
+// Gets the name of a subsystem implementation, this will be the name displayed when triggered
+public string Name => "myFeedbackProvider";
 
-    // Gets the description of a subsystem implementation.
-    public string Description => "This is very simple feedback provider";
+// Gets the description of a subsystem implementation.
+public string Description => "This is very simple feedback provider";
 
-    // Gets the global unique identifier for the subsystem implementation.
-    private readonly Guid _guid;
-    public Guid Id => _guid;
+// Gets the global unique identifier for the subsystem implementation.
+private readonly Guid _guid;
+public Guid Id => _guid;
 
-    // List of candidates from the feedback provider to be passed as predictor results (will be used later)
-    private List<string>? _candidates;
+// List of candidates from the feedback provider to be passed as predictor results (will be used later)
+private List<string>? _candidates;
 
-    // PowerShell session to get run PowerShell commands to help populate our feedback provider.
-    private PowerShell _powershell;
+// PowerShell session to get run PowerShell commands to help populate our feedback provider.
+private PowerShell _powershell;
 
-    // Constructor
-    internal myFeedbackProvider(string guid)
-    {
-        _guid = new Guid(guid); // Save guid
-        _powershell = PowerShell.Create(); // Create PowerShell instance
-    }
+// Constructor
+internal myFeedbackProvider(string guid)
+{
+    _guid = new Guid(guid); // Save guid
+    _powershell = PowerShell.Create(); // Create PowerShell instance
+}
 ```
-
-You will need to implement a number of required methods and variables in your feedback provider
-class. <TODO EXPLANATIONS?>
 
 Now lets start building out the feedback provider, we will do so by creating a `GetFeedback` method.
 This has two parameters, `context` which is where we will get most of the information we need for
@@ -186,10 +182,16 @@ EXPLANATIONs>. This function returns a `FeedbackItem` that takes passed in conte
 displayed to the user. <TODO check>
 
 ```csharp
+#region IFeedbackProvider
+
+// Gets feedback based on the given commandline and error record.
+// context - The context for the feedback call.
+// token - The cancellation token to cancel the operation.
 public FeedbackItem? GetFeedback(FeedbackContext context, CancellationToken token)
 {
     
 }
+#endregion
 ```
 
 We then will add some variables that we will use to populate the feedback.
@@ -227,6 +229,7 @@ commands are aliases and give feedback that the user is using an alias and with 
 name.
 
 ```csharp
+// Trigger on success
 if (target == FeedbackTrigger.Success){
     // Getting the commands from the AST and only finding those that are Commands
     var astCmds = ast.FindAll((cAst) => cAst is CommandAst, true);
@@ -293,6 +296,7 @@ this case, when a command fails, we will give feedback that the user can run
 `Get-Help <Cmd that errored>` to get more insight into how to use the command.
 
 ```csharp
+// Trigger on error
 if (target == FeedbackTrigger.Error){
     // Gets the command that caused the error.
     var erroredCommand = context.LastError?.InvocationInfo.MyCommand;  
@@ -302,8 +306,9 @@ if (target == FeedbackTrigger.Error){
     
     header = "You have triggered an error with the command " + erroredCommand + ". Try using the following command to get help:";
     actions.Add("Get-Help " + erroredCommand);
-    footer = "You can also check online docs at learn.microsoft.com";
+    footer = "You can also check online docs at https://learn.microsoft.com/search/?terms=" + erroredCommand;
 
+    _candidates = actions;
     return new FeedbackItem(header, actions, footer, FeedbackDisplayLayout.Portrait);
 }  
 ```
@@ -415,7 +420,11 @@ In order to pass the `actions` we have definted to the predictor code, we will n
 
 Congratulations you have now created your first feedback provider! We hope this article was helpful
 to build out your own feedback provider and are excited to see what other things you can build with
-this! You can find the fully completed code file for this project below:
+this! This is what the final feedback provider results should look like:
+
+![Screenshot of success and error feedback provider triggers](./media/create-feedback-provider/feedbackproviderfinal.png)
+
+You can find the fully completed code file for this project below:
 
 ```csharp
 using System.Management.Automation;
@@ -522,7 +531,7 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
             
             header = "You have triggered an error with the command " + erroredCommand + ". Try using the following command to get help:";
             actions.Add("Get-Help " + erroredCommand);
-            footer = "You can also check online docs at learn.microsoft.com";
+            footer = "You can also check online docs at https://learn.microsoft.com/search/?terms=" + erroredCommand;
 
             _candidates = actions;
             return new FeedbackItem(header, actions, footer, FeedbackDisplayLayout.Portrait);
@@ -551,8 +560,6 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
 
 
     #region ICommandPredictor
-
-
     // Gets a value indicating whether the predictor accepts a specific kind of feedback.
     // client - Represents the client that initiates the call.
     // feedback - the specific kind of feedback 
