@@ -19,7 +19,7 @@ based on that information, trigger and provide feedback to the user.
 To create and use a feedback provider, you must be using the following software versions:
 
 - PowerShell 7.4-preview.3 or higher - includes the feedback provider interface
-- .NET 8 SDK TODO CHECK VERSION
+- .NET 8 SDK - 8.0.100-preview.3.23178.7 or higher
 
 ## Overview of a feedback provider
 
@@ -28,9 +28,10 @@ A feedback provider is a PowerShell binary module. The module must implement the
 methods used to get feedback based on the command line input. Currently it can trigger on success
 and errors of execution and provide the necessary information for assisting the user. Feedback can
 be anything the module owner decides, it can be suggestions on better practices or remediation
-commands to fix the error. We have created a good blog post you can read [here][TODO] that highlights some
-of the built in feedback providers and capabilities of them. The architecture of a feedback provider
-is shown below:
+commands to fix the error. We have created a good blog post you can read,
+[What are Feedback Providers?](https://devblogs.microsoft.com/powershell/what-are-feedback-providers/),
+to learn more about what they are and some of the built in feedback providers. The architecture of a
+feedback provider is shown below:
 
 ![Architecture](media/create-feedback-provider/feedbackproviderarch.png)
 
@@ -177,9 +178,8 @@ internal myFeedbackProvider(string guid)
 
 Now lets start building out the feedback provider, we will do so by creating a `GetFeedback` method.
 This has two parameters, `context` which is where we will get most of the information we need for
-the feedback provider to trigger and then `token` which is tokens for cancellation. <TODO GET BETTER
-EXPLANATIONs>. This function returns a `FeedbackItem` that takes passed in content and will be
-displayed to the user. <TODO check>
+the feedback provider to trigger and then `token` which is tokens for cancellation. This function
+returns a `FeedbackItem` that takes passed in content and will be displayed to the user.
 
 ```csharp
 #region IFeedbackProvider
