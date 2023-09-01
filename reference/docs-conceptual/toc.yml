@@ -458,6 +458,8 @@ items:
             href: dev-cross-plat/resolving-dependency-conflicts.md
           - name: Creating a command-line predictor
             href: dev-cross-plat/create-cmdline-predictor.md
+          - name: Creating a feedback provider
+            href: dev-cross-plat/create-feedback-provider.md
           - name: Creating module help using PlatyPS
             href: /powershell/utility-modules/platyps/create-help-using-platyps
       - name: PowerShell Language Specification 3.0
