@@ -1,59 +1,57 @@
 ---
 description: This article describes how to create a feedback provider.
-ms.date: 07/18/2023
+ms.date: 09/01/2023
 title: How to create a feedback provider
 ---
 # How to create a feedback provider
 
-PowerShell 7.4-preview.3 introduces the concept of feedback providers. A feedback provider is a
-PowerShell module that utilizes the `IFeedbackProvider` interface that will trigger on a user action
-and give feedback to the user.
+PowerShell 7.4-preview.3 introduced the concept of feedback providers. A feedback provider is a
+PowerShell module that implements the `IFeedbackProvider` interface to provide command suggestions
+based on user command execution attempts. The provider is triggered when there's a success or
+failure execution. Feedback providers use information from the success or failure to provide
+feedback.
 
-Feedback providers are PowerShell modules that can give suggestions to the user based on what they
-are trying to execute in the shell. They currently trigger when there is a success or failure of
-execution. Feedback providers can take the specific information from successes and failures and
-based on that information, trigger and provide feedback to the user.
+## Prerequisites
 
-## System requirements
+To create a feedback provider, you must satisfy the following prerequisites:
 
-To create and use a feedback provider, you must be using the following software versions:
-
-- PowerShell 7.4-preview.3 or higher - includes the feedback provider interface
-- .NET 8 SDK - 8.0.100-preview.3.23178.7 or higher
+- Install PowerShell 7.4-preview.3 or higher
+  - You must enable the `PSSubsystemPluginModel` experimental feature to enable support for feedback
+    providers and predictors. For more information, see [Using Experimental Features][01].
+- Install .NET 8 SDK - 8.0-preview.3 or higher
 
 ## Overview of a feedback provider
 
-A feedback provider is a PowerShell binary module. The module must implement the
-`using System.Management.Automation.Subsystem.Feedback` interface. This interface declares the
-methods used to get feedback based on the command line input. Currently it can trigger on success
-and errors of execution and provide the necessary information for assisting the user. Feedback can
-be anything the module owner decides, it can be suggestions on better practices or remediation
-commands to fix the error. We have created a good blog post you can read,
-[What are Feedback Providers?](https://devblogs.microsoft.com/powershell/what-are-feedback-providers/),
-to learn more about what they are and some of the built in feedback providers. The architecture of a
-feedback provider is shown below:
+A feedback provider is a PowerShell binary module that implements the
+`System.Management.Automation.Subsystem.Feedback` interface. This interface declares the methods to
+get feedback based on the command line input. The feedback interface can provide suggestions based
+on the success or failure of the command invoked by the user. The suggestions can be anything that
+you want. For example, you might suggest ways to address an error or better practices, like avoiding
+the use of aliases. For more information, see the [What are Feedback Providers?][07] blog post.
 
-![Architecture](media/create-feedback-provider/feedbackproviderarch.png)
+The following diagram shows the architecture of a feedback provider:
 
-## Creating the code
+![Diagram of the feedback provider architecture.][04]
 
-You must have .NET 8 SDK installed to create a feedback provider. For more information on the SDK
-see [Download .NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0). In this example we
-will be creating a simple feedback provider and will also register with the command predictor
-interface to give the feedback to the predictive experience. You can read more about predictors in
-[Using predictors in PSReadLine](https://learn.microsoft.com/powershell/scripting/learn/shell/using-predictors),
-and [How to create a command line predictor](./create-command-line-predictor.md).
+PowerShell 7.4 is built on .NET 8. To create a feedback provider, you must have the .NET 8.0 SDK
+(Preview.3 or higher) installed. For more information on the SDK. See the [Download .NET 8.0][08]
+page to get the latest version of the SDK.
 
-First, you will need to create a new .NET class library project. You can do this by running the
-following in the project directory:
+The following examples walk you through the process of creating a simple feedback provider. Also,
+you can register the provider with the command predictor interface to add feedback suggestions to
+the command-line predictor experience. For more information about predictors, see
+[Using predictors in PSReadLine][02] and [How to create a command line predictor][03].
+
+## Step 1 - Create a new class library project
+
+Use the following command to create a new project in the project directory:
 
 ```powershell
-
 dotnet new classlib --name MyFeedbackProvider
 ```
 
-You will need to add an `ItemGroup` to include the `System.Management.Automation` package to your
-.csproj file. Your .csproj file should look like the following:
+Add a package reference for the `System.Management.Automation` package to your
+`.csproj` file. The following example shows the updated `.csproj` file:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -73,16 +71,16 @@ You will need to add an `ItemGroup` to include the `System.Management.Automation
 </Project>
 ```
 
-> [!NOTE] 
-> Since we are still in preview you may need to change the version of the
-> System.Management.Automation to a greater package version. The minimum version is 7.4.0-preview.3.
+> [!NOTE]
+> You should change the version of the `System.Management.Automation` assembly to match the version
+> of the PowerShell preview that you are targeting. The minimum version is 7.4.0-preview.3.
 
 
-### Building the feedback provider
+## Step 2 - Add the class definition for your provider
 
-You can change the name of your `Class1.cs` file to `myFeedbackProvider.cs`, this file will contain
-two main classes that will be used to create your feedback provider. Add the two following classes
-and namespaces to to your file.
+Change the name of the `Class1.cs` file to match the name of your provider. This example uses
+`myFeedbackProvider.cs`. This file contains the two main classes that define the feedback provider.
+The following example shows the basic template for the class definitions.
 
 ```csharp
 using System.Management.Automation;
@@ -104,10 +102,12 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 }
 ```
 
-First we are going to work on the `Init` class. This class will be used to register and unregister
-your feedback provider with the subsystem manager. `OnImport` runs when the binary module is
-registered with the subsystem and `OnRemove` runs when the binary module is unregistered from the
-subsystem. We register both a Feedback Provider and Command Predictor subsystem.
+## Step 3 - Implement the Init class
+
+The `Init` class registers and unregisters the feedback provider with the subsystem manager. The
+`OnImport()` method runs when the binary module is registered with the subsystem. The `OnRemove()`
+method runs when the binary module is unregistered from the subsystem. This example registers both
+the feedback provider and command predictor subsystem.
 
 ```csharp
 public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
@@ -129,30 +129,32 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 }
 ```
 
-You will need to replace `<ADD YOUR GUID HERE>` with a unique GUID. You can generate a GUID by
-running the following command in PowerShell:
+Replace the `<ADD YOUR GUID HERE>` placeholder value with a unique Guid. You can generate a Guid
+using the `New-Guid` cmdlet.
 
 ```powershell
 New-Guid
 ```
 
-This is required to maintain a unique identifier for your feedback provider. It is passed to the
-constructor of the `myFeedbackProvider` class which we will make next. Above the init code, add your
-main feedback provider class. This inherits from the `IFeedbackProvider` and `ICommandPredictor`
-interface.
+The Guid is a unique identifier for your provider. The provider must have a unique Id to be
+registered with the subsystem.
 
-Next we are going to add some necessary variables to describe the feedback provider and get some
-variables ready. The following code needs to be added to the `myFeedbackProvider` class.
+## Step 4 - Add class members and define the constructor
 
-```csharp 
-// Gets the trigger that causes the feedback provider to be invoked. In this case, it gets All triggers.
-// See FeedbackTrigger enum for more details
+The following code adds and initializes variables that describe the provider the constructor for the
+`myFeedbackProvider` class.
+
+```csharp
+// Gets the trigger that causes the feedback provider to be invoked. In this case,
+// it gets All triggers. See FeedbackTrigger enum for more details
 public FeedbackTrigger Trigger => FeedbackTrigger.All;
 
-// Gets a dictionary that contains the functions to be defined at the global scope of a PowerShell session.
+// Gets a dictionary that contains the functions to be defined at the global scope
+// of a PowerShell session.
 Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
 
-// Gets the name of a subsystem implementation, this will be the name displayed when triggered
+// Gets the name of a subsystem implementation, this will be the name displayed
+// when triggered
 public string Name => "myFeedbackProvider";
 
 // Gets the description of a subsystem implementation.
@@ -162,10 +164,10 @@ public string Description => "This is very simple feedback provider";
 private readonly Guid _guid;
 public Guid Id => _guid;
 
-// List of candidates from the feedback provider to be passed as predictor results (will be used later)
+// List of candidates from the feedback provider to be passed as predictor results
 private List<string>? _candidates;
 
-// PowerShell session to get run PowerShell commands to help populate our feedback provider.
+// PowerShell session used to run PowerShell commands that help create suggestions.
 private PowerShell _powershell;
 
 // Constructor
@@ -176,27 +178,17 @@ internal myFeedbackProvider(string guid)
 }
 ```
 
-Now lets start building out the feedback provider, we will do so by creating a `GetFeedback` method.
-This has two parameters, `context` which is where we will get most of the information we need for
-the feedback provider to trigger and then `token` which is tokens for cancellation. This function
-returns a `FeedbackItem` that takes passed in content and will be displayed to the user.
+## Step 5 - Create the GetFeedback() method
+
+The `GetFeedback` method takes two parameters, `context` and `token`. The `context` parameter
+receives the information about the trigger so you can decide how to respond with suggestions. The
+`token` parameter is used for cancellation. This function returns a `FeedbackItem` containing the
+suggestion. The function also contains some variables that are used to construct the feedback.
 
 ```csharp
-#region IFeedbackProvider
-
 // Gets feedback based on the given commandline and error record.
 // context - The context for the feedback call.
 // token - The cancellation token to cancel the operation.
-public FeedbackItem? GetFeedback(FeedbackContext context, CancellationToken token)
-{
-    
-}
-#endregion
-```
-
-We then will add some variables that we will use to populate the feedback.
-
-```csharp
 public FeedbackItem? GetFeedback(FeedbackContext context, CancellationToken token)
 {
     // Target describes the different kinds of triggers to activate on,
@@ -205,28 +197,30 @@ public FeedbackItem? GetFeedback(FeedbackContext context, CancellationToken toke
     var ast = context.CommandLineAst;
 
     // defining the header and footer variables
-    string header; 
+    string header;
     string footer;
 
-    // List of the actions 
+    // List of the actions
     List<string>? actions = new List<string>();
 
     // Trigger on success code goes here
-    
+
     // Trigger on error code goes here
-    
+
     return null;
 }
 ```
 
-Visually this is what each of these fields look like:
+The following image shows how these fields are used in the suggestions that are displayed to the
+user.
 
-![Screenshot of example feedback providers](./media/create-feedback-provider/feedbackproviderfields.png)
+![Screenshot of example feedback providers][05]
 
-For triggering on success, we are going to expand any aliased command used in the last execution. We
-are going to navigate through the `CommandLineAst` and identify any commands, and check if those
-commands are aliases and give feedback that the user is using an alias and with the fully qualified
-name.
+### Create suggestions for a Success trigger
+
+For a successful invocation, we want to expand any aliases used in the last execution. Using the
+`CommandLineAst`, we identify any aliased commands and create a suggestion to use the fully
+qualified command name instead.
 
 ```csharp
 // Trigger on success
@@ -239,18 +233,18 @@ if (target == FeedbackTrigger.Success){
         return null;
     }
 
-    // Navigate through each of the commands
+    // Inspect each of the commands
     foreach(var command in astCmds){
-        
+
         // Get the command name
         var aliasedCmd = ((CommandAst) command).GetCommandName();
 
         // Check if its an alias or not, if so then add it to the list of actions
         if(TryGetAlias(aliasedCmd, out string commandString)){
             actions.Add(aliasedCmd + " --> " + commandString);
-            
+
         }
-        
+
     }
 
     // If no aliases were found return null
@@ -258,26 +252,32 @@ if (target == FeedbackTrigger.Success){
         return null;
     }
 
-    // If some aliases were found then set the header to a description and return a new FeedbackItem.
+    // If aliases are found, set the header to a description and return a new FeedbackItem.
     header = "You have used an aliased command:";
-    
-    return new FeedbackItem(header, actions);         
+    // Copy actions to _candidates for the predictor
+    _candidates = actions;
+
+    return new FeedbackItem(header, actions);
 }
 ```
 
-To check whether a command is an aliased command or not, we will be using the PowerShell instance we
-created in the constructor to get the command to create a runspace and invoke the command GetCommand
-and check if its an `Alias` type. If so then we will get an `AliasInfo` object that will be used to
-get the full name of the command. The parameters this function takes are `command` which is the
-command to be checked for it alias and then `targetCommand` which is the variable we will be saving
-the full name of the aliased command to.
+### Implement the TryGetAlias() method
 
+The `TryGetAlias()` method is a private helper function that returns a boolean value to indicate
+whether the command is an alias. In the class constructor, we created a PowerShell instance that we
+can use to run PowerShell commands. The `TryGetAlias()` method uses this PowerShell instance to
+invoke the `GetCommand` method to determine if the command is an alias. The `AliasInfo` object
+returned by `GetCommand` contains full name of the aliased command. The parameters of
+`TryGetAlias()` are: `command`, which is the command to be checked, and `targetCommand`, which is
+the output variable to contain the full name of the aliased command.
 
 ```csharp
 private bool TryGetAlias(string command, out string targetCommand){
-    // Create PowerShell runspace, session state proxy to run Get Command and check if its an alias
-    AliasInfo? pwshAliasInfo = _powershell.Runspace.SessionStateProxy.InvokeCommand.GetCommand(command, CommandTypes.Alias) as AliasInfo;
-    
+    // Create PowerShell runspace as a session state proxy to run GetCommand and check
+    // if its an alias
+    AliasInfo? pwshAliasInfo =
+        _powershell.Runspace.SessionStateProxy.InvokeCommand.GetCommand(command, CommandTypes.Alias) as AliasInfo;
+
     // if its null then it is not an aliased command so just return false
     if(pwshAliasInfo is null){
         targetCommand = String.Empty;
@@ -290,76 +290,55 @@ private bool TryGetAlias(string command, out string targetCommand){
 }
 ```
 
+### Create suggestions for a Failure trigger
 
-That is all that is needed to trigger on success! Now lets add some code to trigger on error. In
-this case, when a command fails, we will give feedback that the user can run
-`Get-Help <Cmd that errored>` to get more insight into how to use the command.
+When a command execution fails, we want to suggest that the user `Get-Help` to get more information
+about how to use the command.
 
 ```csharp
 // Trigger on error
 if (target == FeedbackTrigger.Error){
     // Gets the command that caused the error.
-    var erroredCommand = context.LastError?.InvocationInfo.MyCommand;  
+    var erroredCommand = context.LastError?.InvocationInfo.MyCommand;
     if (erroredCommand is null){
         return null;
     }
-    
-    header = "You have triggered an error with the command " + erroredCommand + ". Try using the following command to get help:";
-    actions.Add("Get-Help " + erroredCommand);
-    footer = "You can also check online docs at https://learn.microsoft.com/search/?terms=" + erroredCommand;
 
+    header = "You have triggered an error with the command " + erroredCommand +
+        ". Try using the following command to get help:";
+    actions.Add("Get-Help " + erroredCommand);
+    footer = "You can also check online documentation at https://learn.microsoft.com/en-us/powershell/module/?term=" +
+        erroredCommand;
+
+    // Copy actions to _candidates for the predictor
     _candidates = actions;
     return new FeedbackItem(header, actions, footer, FeedbackDisplayLayout.Portrait);
-}  
+}
 ```
 
-## Using a feedback provider
+## Step 6 - Send suggestions to the command line predictor
 
-Feedback providers will trigger after the defined action has taken place. So if you have designed
-your feedback provider to trigger on a success and after a certain command, you will have to have
-the module imported and then run the command to verify it is working.
+Another way your feedback provider can enhance the user experience is to provide command suggestions
+to the **ICommandPredictor** interface. For more information about creating a command line
+predictor, see [How to create a command line predictor][03].
 
-We suggest importing feedback providers in your `$PROFILE` so that they are always available. You
-can edit your `$PROFILE` by opening it in any text editor or if you have Visual Studio Code
-installed you can run the following command:
+The following code implements the methods necessary to add predictor behavior to your feedback
+provider.
 
-```powershell
-code $PROFILE
-```
-
-You can get a list of installed feedback providers, using the following command:
-
-```powershell
-Get-PSSubsystem -Kind FeedbackProvider
-```
-
-```Output
-Kind              SubsystemType      IsRegistered Implementations
-----              -------------      ------------ ---------------
-FeedbackProvider  IFeedbackProvider          True {general}
-```
-
-> [!NOTE]
-> `Get-PSSubsystem` is an experimental cmdlet that was introduced in PowerShell 7.1 You must enable
-> the `PSSubsystemPluginModel` experimental feature to use this cmdlet. For more information, see
-> [Using Experimental Features](../learn/experimental-features.md#pssubsystempluginmodel).
-
-## Enhancing feedback provider experience
-
-Another way to enhance users experience with your feedback provider is to make it utilize the
-ICommandPredictor interface so the feedback can be given to the users predictor experience. You can
-read more about creating a command line predictor in the
-[How to create a command line predictor](./create-command-line-predictor.md) article. 
-
-You can add this functionality to your feedback provider by adding the following code to your
-feedback provider class to get predictor behavior for your feedback provider.
+- `CanAcceptFeedback()` - Overloads the method of the **ICommandPredictor** interface. This method
+  returns a boolean value that indicates whether the predictor accepts a specific type of feedback.
+- `GetSuggestion()` - Overloads the method of the **ICommandPredictor** interface. This method
+  returns a `SuggestionPackage` object that contains the suggestions to be displayed by the
+  predictor.
+- `OnCommandLineAccepted()` - Overloads the method of the **ICommandPredictor** interface. This
+  method is called when a command line is accepted to execute.
 
 ```csharp
 #region ICommandPredictor
 
 // Gets a value indicating whether the predictor accepts a specific kind of feedback.
 // client - Represents the client that initiates the call.
-// feedback - the specific kind of feedback 
+// feedback - the specific kind of feedback
 public bool CanAcceptFeedback(PredictionClient client, PredictorFeedbackKind feedback)
 {
     return feedback switch
@@ -370,10 +349,11 @@ public bool CanAcceptFeedback(PredictionClient client, PredictorFeedbackKind fee
 }
 
 // Get the predictive suggestions. It indicates the start of a suggestion rendering session.
-// client - Represents the client that initiates the call. 
+// client - Represents the client that initiates the call.
 // context - The PredictionContext object to be used for prediction.
 // cancellationToken - The cancellation token to cancel the prediction.
-public SuggestionPackage GetSuggestion(PredictionClient client, PredictionContext context, CancellationToken cancellationToken)
+public SuggestionPackage GetSuggestion(PredictionClient client, PredictionContext context,
+    CancellationToken cancellationToken)
 {
     if (_candidates is not null)
     {
@@ -398,7 +378,8 @@ public SuggestionPackage GetSuggestion(PredictionClient client, PredictionContex
     return default;
 }
 
-// A command line was accepted to execute. The predictor can start processing early as needed with the latest history.
+// A command line was accepted to execute. The predictor can start processing early as needed
+// with the latest history.
 public void OnCommandLineAccepted(PredictionClient client, IReadOnlyList<string> history)
 {
     // Reset the candidate state once the command is accepted.
@@ -414,17 +395,41 @@ public void OnCommandLineExecuted(PredictionClient client, string commandLine, b
 #endregion;
 ```
 
-In order to pass the `actions` we have definted to the predictor code, we will need to populate
-`_candidates` with `actions`. So before we return any new `FeedbackItem`s, we need to
-`_candidates = actions`.
+## Step 7 - Build the feedback provider
 
-Congratulations you have now created your first feedback provider! We hope this article was helpful
-to build out your own feedback provider and are excited to see what other things you can build with
-this! This is what the final feedback provider results should look like:
+<!-- TODO - Steven to add build and import steps -->
 
-![Screenshot of success and error feedback provider triggers](./media/create-feedback-provider/feedbackproviderfinal.png)
+## Using a feedback provider
 
-You can find the fully completed code file for this project below:
+To use your new feedback provider, you must import the compiled module into your PowerShell session.
+You can add the `Import-Module` command to your `$PROFILE` so the module is available in PowerShell
+session.
+
+You can get a list of installed feedback providers, using the following command:
+
+```powershell
+Get-PSSubsystem -Kind FeedbackProvider
+```
+
+```Output
+Kind              SubsystemType      IsRegistered Implementations
+----              -------------      ------------ ---------------
+FeedbackProvider  IFeedbackProvider          True {general}
+```
+
+> [!NOTE]
+> `Get-PSSubsystem` is an experimental cmdlet that was introduced in PowerShell 7.1 You must enable
+> the `PSSubsystemPluginModel` experimental feature to use this cmdlet. For more information, see
+> [Using Experimental Features][01].
+
+The following screenshot shows some example suggestions from the new provider.
+
+![Screenshot of success and error feedback provider triggers][06]
+
+## Appendix - Full implementation code
+
+The following code combines the previous examples into the find full implementation of the provider
+class.
 
 ```csharp
 using System.Management.Automation;
@@ -438,14 +443,16 @@ namespace myFeedbackProvider;
 public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
 {
 
-    // Gets the trigger that causes the feedback provider to be invoked. In this case, it gets All triggers.
-    // See FeedbackTrigger enum for more details
+    // Gets the trigger that causes the feedback provider to be invoked. In this case,
+    // it gets All triggers. See FeedbackTrigger enum for more details
     public FeedbackTrigger Trigger => FeedbackTrigger.All;
 
-    // Gets a dictionary that contains the functions to be defined at the global scope of a PowerShell session.
+    // Gets a dictionary that contains the functions to be defined at the global scope
+    // of a PowerShell session.
     Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
 
-    // Gets the name of a subsystem implementation, this will be the name displayed when triggered
+    // Gets the name of a subsystem implementation, this will be the name displayed
+    // when triggered
     public string Name => "myFeedbackProvider";
 
     // Gets the description of a subsystem implementation.
@@ -455,10 +462,10 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
     private readonly Guid _guid;
     public Guid Id => _guid;
 
-    // List of candidates from the feedback provider to be passed as predictor results (will be used later)
+    // List of candidates from the feedback provider to be passed as predictor results
     private List<string>? _candidates;
 
-    // PowerShell session to get run PowerShell commands to help populate our feedback provider.
+    // PowerShell session used to run PowerShell commands that help create suggestions.
     private PowerShell _powershell;
 
     // Constructor
@@ -481,7 +488,7 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         var ast = context.CommandLineAst;
 
         // defining the header and footer variables
-        string header; 
+        string header;
         string footer;
 
         List<string>? actions = new List<string>();
@@ -498,16 +505,16 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
 
             // Navigate through each of the commands
             foreach(var command in astCmds){
-                
+
                 // Get the command name
                 var aliasedCmd = ((CommandAst) command).GetCommandName();
 
                 // Check if its an alias or not, if so then add it to the list of actions
                 if(TryGetAlias(aliasedCmd, out string commandString)){
                     actions.Add(aliasedCmd + " --> " + commandString);
-                    
+
                 }
-                
+
             }
 
             // If no aliases were found return null
@@ -515,37 +522,44 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
                 return null;
             }
 
-            // If some aliases were found then set the header to a description and return a new FeedbackItem.
+            // If aliases are found, set the header to a description and return a new FeedbackItem.
             header = "You have used an aliased command:";
-            
-            return new FeedbackItem(header, actions);         
+            // Copy actions to _candidates for the predictor
+            _candidates = actions;
+
+            return new FeedbackItem(header, actions);
         }
 
         // Trigger on error
         if (target == FeedbackTrigger.Error){
             // Gets the command that caused the error.
-            var erroredCommand = context.LastError?.InvocationInfo.MyCommand;  
+            var erroredCommand = context.LastError?.InvocationInfo.MyCommand;
             if (erroredCommand is null){
                 return null;
             }
-            
-            header = "You have triggered an error with the command " + erroredCommand + ". Try using the following command to get help:";
-            actions.Add("Get-Help " + erroredCommand);
-            footer = "You can also check online docs at https://learn.microsoft.com/search/?terms=" + erroredCommand;
 
+            header = "You have triggered an error with the command " + erroredCommand +
+                ". Try using the following command to get help:";
+            actions.Add("Get-Help " + erroredCommand);
+            footer = "You can also check online documentation at https://learn.microsoft.com/en-us/powershell/module/?term=" +
+                erroredCommand;
+
+            // Copy actions to _candidates for the predictor
             _candidates = actions;
             return new FeedbackItem(header, actions, footer, FeedbackDisplayLayout.Portrait);
-        }  
-        
+        }
+
         return null;
 
     }
 
     // function to check whether a command is an alias
     private bool TryGetAlias(string command, out string targetCommand){
-        // Create PowerShell runspace, session state proxy to run Get Command and check if its an alias
-        AliasInfo? pwshAliasInfo = _powershell.Runspace.SessionStateProxy.InvokeCommand.GetCommand(command, CommandTypes.Alias) as AliasInfo;
-        
+        // Create PowerShell runspace as a session state proxy to run GetCommand and check
+        // if its an alias
+        AliasInfo? pwshAliasInfo =
+            _powershell.Runspace.SessionStateProxy.InvokeCommand.GetCommand(command, CommandTypes.Alias) as AliasInfo;
+
         // if its null then it is not an aliased command so just return false
         if(pwshAliasInfo is null){
             targetCommand = String.Empty;
@@ -562,7 +576,7 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
     #region ICommandPredictor
     // Gets a value indicating whether the predictor accepts a specific kind of feedback.
     // client - Represents the client that initiates the call.
-    // feedback - the specific kind of feedback 
+    // feedback - the specific kind of feedback
     public bool CanAcceptFeedback(PredictionClient client, PredictorFeedbackKind feedback)
     {
         return feedback switch
@@ -573,10 +587,11 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
     }
 
     // Get the predictive suggestions. It indicates the start of a suggestion rendering session.
-    // client - Represents the client that initiates the call. 
+    // client - Represents the client that initiates the call.
     // context - The PredictionContext object to be used for prediction.
     // cancellationToken - The cancellation token to cancel the prediction.
-    public SuggestionPackage GetSuggestion(PredictionClient client, PredictionContext context, CancellationToken cancellationToken)
+    public SuggestionPackage GetSuggestion(PredictionClient client, PredictionContext context,
+        CancellationToken cancellationToken)
     {
         if (_candidates is not null)
         {
@@ -601,7 +616,8 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         return default;
     }
 
-    // A command line was accepted to execute. The predictor can start processing early as needed with the latest history.
+    // A command line was accepted to execute. The predictor can start processing early as
+    // needed with the latest history.
     public void OnCommandLineAccepted(PredictionClient client, IReadOnlyList<string> history)
     {
         // Reset the candidate state once the command is accepted.
@@ -636,3 +652,13 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
     }
 }
 ```
+
+<!-- link references -->
+[01]: ../learn/experimental-features.md#pssubsystempluginmodel
+[02]: ../learn/shell/using-predictors.md
+[03]: ./create-cmdline-predictor.md
+[04]: ./media/create-feedback-provider/feedback-provider-arch.png
+[05]: ./media/create-feedback-provider/feedback-provider-fields.png
+[06]: ./media/create-feedback-provider/feedback-provider-output.png
+[07]: https://devblogs.microsoft.com/powershell/what-are-feedback-providers/
+[08]: https://dotnet.microsoft.com/download/dotnet/8.0
