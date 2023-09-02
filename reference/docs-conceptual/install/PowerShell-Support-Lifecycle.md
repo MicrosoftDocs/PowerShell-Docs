@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 06/22/2023
+ms.date: 09/02/2023
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -66,14 +66,6 @@ needing access but formal support and updates of any kind are no longer be provi
 
 [!INCLUDE [Ubuntu support](../../includes/ubuntu-support.md)]
 
-### Raspberry Pi OS
-
-[Raspberry Pi OS][15] (formerly Raspbian) is a free operating system based on Debian.
-
-> [!IMPORTANT]
-> .NET isn't supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
-> devices prior to Raspberry Pi 2.
-
 ## Windows PowerShell Compatibility
 
 The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell
@@ -82,7 +74,8 @@ Server is supported under the [Windows Support Lifecycle][01].
 
 ## Experimental features
 
-[Experimental features][05] are limited to community support.
+[Experimental features][05] aren't intended to be used in production environments. We appreciate
+feedback on experimental features and we provide best-effort support for them.
 
 ## Notes on licensing
 
@@ -97,7 +90,7 @@ Support for PowerShell is delivered via traditional Microsoft support agreements
 You can also pay for [assisted support][10] for PowerShell by filing a support request for your
 problem.
 
-There are also [community support][04] options. You can file an issue, bug, or feature request on
+There are multiple [community support][04] options. You can file an issue, bug, or feature request on
 GitHub. Also, you can get help from other members of the community in the Microsoft
 [PowerShell Tech Community][12] or any of the community forums listed on the [PowerShell][04] hub
 page. If you have a problem that requires immediate attention, you should use the traditional, paid
@@ -179,4 +172,3 @@ you're running:
 [12]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [13]: https://www.microsoft.com/licensing/licensing-programs/enterprise
 [14]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default
-[15]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
