@@ -16,8 +16,9 @@ feedback.
 To create a feedback provider, you must satisfy the following prerequisites:
 
 - Install PowerShell 7.4-preview.3 or higher
-  - You must enable the `PSSubsystemPluginModel` experimental feature to enable support for feedback
-    providers and predictors. For more information, see [Using Experimental Features][01].
+  - You must enable the `PSSubsystemPluginModel` and the `PSFeedbackProvider` experimental feature 
+    to enable support for feedback providers and predictors. For more information, see
+    [Using Experimental Features][01].
 - Install .NET 8 SDK - 8.0-preview.3 or higher
 
 ## Overview of a feedback provider
@@ -397,11 +398,26 @@ public void OnCommandLineExecuted(PredictionClient client, string commandLine, b
 
 ## Step 7 - Build the feedback provider
 
-<!-- TODO - Steven to add build and import steps -->
+Now you are ready to build and begin using your feedback provider! To build the project run:
+
+```shell
+dotnet build
+```
+
+This will create a PowerShell module that is published to a path similiar to this in your project's 
+directory.
+
+`bin/Debug/net8.0/myFeedbackProvider`
 
 ## Using a feedback provider
 
 To use your new feedback provider, you must import the compiled module into your PowerShell session.
+This can be done by importing the folder described after building has succeeded:
+
+```powershell
+Import-Module ./bin/Debug/net8.0/myFeedbackProvider
+```
+
 You can add the `Import-Module` command to your `$PROFILE` so the module is available in PowerShell
 session.
 
