@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 05/30/2023
+ms.date: 09/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -88,8 +88,8 @@ For more information, see [about_Split][20] and [about_Join][11].
 
 ## Type Operators
 
-Use the type operators (`-is`, `-isnot`, `-as`) to find or change the .NET
-Framework type of an object.
+Use the type operators (`-is`, `-isnot`, `-as`) to find or change the .NET type
+of an object.
 
 For more information, see [about_Type_Operators][21].
 
@@ -687,8 +687,8 @@ see [about_Member-Access_Enumeration][13].
 
 ### Static member operator `::`
 
-Calls the static properties and methods of a .NET Framework class. To find the
-static properties and methods of an object, use the Static parameter of the
+Calls the static properties and methods of a .NET class. To find the static
+properties and methods of an object, use the Static parameter of the
 `Get-Member` cmdlet. The member name may be an expression.
 
 ```powershell
