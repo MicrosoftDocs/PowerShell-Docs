@@ -5,8 +5,8 @@ title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
 
-There are many distributions of Linux that aren't officially supported by Microsoft. In some cases,
-PowerShell may be supported by the community for these releases.
+PowerShell can be installed on some distributions of Linux that aren't supported by Microsoft. In
+those cases, you may find support from the community for PowerShell on those platforms.
 
 To be supported by Microsoft, the Linux distribution must meet the following criteria:
 
@@ -44,7 +44,8 @@ from the AUR, see the [Arch Linux wiki][06] or [Using PowerShell in Docker][09].
 
 ## Kali
 
-Kali support isn't officially supported by Microsoft and is maintained by the community.
+> [!NOTE]
+> Kali support isn't officially supported by Microsoft and is maintained by the community.
 
 ### Installation - Kali
 
@@ -63,6 +64,70 @@ pwsh
 apt -y remove powershell
 ```
 
+## Raspberry Pi OS
+
+[Raspberry Pi OS][13] (formerly Raspbian) is a free operating system based on Debian.
+
+> [!IMPORTANT]
+> .NET isn't supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
+> devices prior to Raspberry Pi 2.
+
+### Install on Raspberry Pi OS
+
+Download the tar.gz package from the [releases][12] page onto your Raspberry Pi computer. The links
+to the current versions are:
+
+- PowerShell 7.3.6 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-linux-arm32.tar.gz`
+- PowerShell 7.2.13 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.13/powershell-7.2.13-linux-arm32.tar.gz`
+
+Use the following shell commands to download and install the package. Change the URL to match the
+PowerShell version that you want to install.
+
+```sh
+###################################
+# Prerequisites
+
+# Update package lists
+sudo apt-get update
+
+# Install dependencies
+sudo apt-get install libssl1.1 libunwind8 -y
+
+###################################
+# Download and extract PowerShell
+
+# Grab the latest tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-linux-arm32.tar.gz
+
+# Make folder to put powershell
+mkdir ~/powershell
+
+# Unpack the tar.gz file
+tar -xvf ./powershell-7.3.6-linux-arm32.tar.gz -C ~/powershell
+
+# Start PowerShell
+~/powershell/pwsh
+```
+
+Optionally, you can create a symbolic link to start PowerShell without specifying the path to the
+`pwsh` binary.
+
+```sh
+# Start PowerShell from bash with sudo to create a symbolic link
+sudo ~/powershell/pwsh -command 'New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "$PSHOME/pwsh" -Force'
+
+# alternatively you can run following to create a symbolic link
+# sudo ln -s ~/powershell/pwsh /usr/bin/pwsh
+
+# Now to start PowerShell you can just run "pwsh"
+```
+
+### Uninstallation - Raspberry Pi OS
+
+```sh
+rm -rf ~/powershell
+```
+
 <!-- link references -->
 [01]: ../community/community-support.md
 [02]: https://aur.archlinux.org/packages/powershell-bin/
@@ -74,3 +139,5 @@ apt -y remove powershell
 [08]: install-ubuntu.md
 [09]: powershell-in-docker.md
 [10]: powershell-support-lifecycle.md
+[12]: install-other-linux.md#binary-archives
+[13]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md

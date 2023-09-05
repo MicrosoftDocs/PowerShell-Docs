@@ -32,6 +32,11 @@
     },
     {
       "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/install/community-support",
+      "source_path": "reference/docs-conceptual/install/install-raspbian.md"
+    },
+    {
+      "redirect_document_id": true,
       "redirect_url": "/powershell/scripting/install/installing-powershell-on-linux",
       "source_path": "reference/docs-conceptual/install/Installing-PowerShell-Core-on-Linux.md"
     },
