@@ -1,6 +1,6 @@
 ---
 description: PowerShell may run on Linux distributions that aren't officially supported by Microsoft.
-ms.date: 06/28/2023
+ms.date: 09/06/2023
 title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
@@ -77,11 +77,16 @@ apt -y remove powershell
 Download the tar.gz package from the [releases][12] page onto your Raspberry Pi computer. The links
 to the current versions are:
 
-- PowerShell 7.3.6 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-linux-arm32.tar.gz`
-- PowerShell 7.2.13 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.13/powershell-7.2.13-linux-arm32.tar.gz`
+- PowerShell 7.3.6 - latest stable release
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-linux-arm64.tar.gz`
+- PowerShell 7.2.13 - LTS release
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.13/powershell-7.2.13-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.13/powershell-7.2.13-linux-arm64.tar.gz`
 
-Use the following shell commands to download and install the package. Change the URL to match the
-PowerShell version that you want to install.
+Use the following shell commands to download and install the package. This script detects whether
+you are running a 32 or 64-bit OS and installs the latest stable version of PowerShell for that
+processor type.
 
 ```sh
 ###################################
@@ -97,13 +102,16 @@ sudo apt-get install libssl1.1 libunwind8 -y
 # Download and extract PowerShell
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-linux-arm32.tar.gz
+bits=$(getconf LONG_BIT)
+release=$(curl -sL https://api.github.com/repos/PowerShell/PowerShell/releases/latest)
+package=$(echo $release | jq -r ".assets[].browser_download_url" | grep "linux-arm${bits}.tar.gz")
+wget $package
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-7.3.6-linux-arm32.tar.gz -C ~/powershell
+tar -xvf "./${package##*/}" -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
