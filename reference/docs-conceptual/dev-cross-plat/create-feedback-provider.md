@@ -16,9 +16,9 @@ feedback.
 To create a feedback provider, you must satisfy the following prerequisites:
 
 - Install PowerShell 7.4-preview.3 or higher
-  - You must enable the `PSSubsystemPluginModel` and the `PSFeedbackProvider` experimental feature 
+  - You must enable the `PSSubsystemPluginModel` and the `PSFeedbackProvider` experimental feature
     to enable support for feedback providers and predictors. For more information, see
-    [Using Experimental Features][01].
+    [Using Experimental Features][02].
 - Install .NET 8 SDK - 8.0-preview.3 or higher
 
 ## Overview of a feedback provider
@@ -28,20 +28,20 @@ A feedback provider is a PowerShell binary module that implements the
 get feedback based on the command line input. The feedback interface can provide suggestions based
 on the success or failure of the command invoked by the user. The suggestions can be anything that
 you want. For example, you might suggest ways to address an error or better practices, like avoiding
-the use of aliases. For more information, see the [What are Feedback Providers?][07] blog post.
+the use of aliases. For more information, see the [What are Feedback Providers?][08] blog post.
 
 The following diagram shows the architecture of a feedback provider:
 
-![Diagram of the feedback provider architecture.][04]
+![Diagram of the feedback provider architecture.][05]
 
 PowerShell 7.4 is built on .NET 8. To create a feedback provider, you must have the .NET 8.0 SDK
-(Preview.3 or higher) installed. For more information on the SDK. See the [Download .NET 8.0][08]
+(Preview.3 or higher) installed. For more information on the SDK. See the [Download .NET 8.0][09]
 page to get the latest version of the SDK.
 
 The following examples walk you through the process of creating a simple feedback provider. Also,
 you can register the provider with the command predictor interface to add feedback suggestions to
 the command-line predictor experience. For more information about predictors, see
-[Using predictors in PSReadLine][02] and [How to create a command line predictor][03].
+[Using predictors in PSReadLine][03] and [How to create a command line predictor][04].
 
 ## Step 1 - Create a new class library project
 
@@ -215,7 +215,7 @@ public FeedbackItem? GetFeedback(FeedbackContext context, CancellationToken toke
 The following image shows how these fields are used in the suggestions that are displayed to the
 user.
 
-![Screenshot of example feedback providers][05]
+![Screenshot of example feedback providers][06]
 
 ### Create suggestions for a Success trigger
 
@@ -321,7 +321,7 @@ if (target == FeedbackTrigger.Error){
 
 Another way your feedback provider can enhance the user experience is to provide command suggestions
 to the **ICommandPredictor** interface. For more information about creating a command line
-predictor, see [How to create a command line predictor][03].
+predictor, see [How to create a command line predictor][04].
 
 The following code implements the methods necessary to add predictor behavior to your feedback
 provider.
@@ -398,28 +398,29 @@ public void OnCommandLineExecuted(PredictionClient client, string commandLine, b
 
 ## Step 7 - Build the feedback provider
 
-Now you are ready to build and begin using your feedback provider! To build the project run:
+Now you are ready to build and begin using your feedback provider! To build the project, run the
+following command:
 
-```shell
+```powershell
 dotnet build
 ```
 
-This will create a PowerShell module that is published to a path similiar to this in your project's 
-directory.
-
-`bin/Debug/net8.0/myFeedbackProvider`
+This command create the PowerShell module as a DLL file in the following path of your project
+folder: `bin/Debug/net8.0/myFeedbackProvider`
 
 ## Using a feedback provider
 
-To use your new feedback provider, you must import the compiled module into your PowerShell session.
-This can be done by importing the folder described after building has succeeded:
+To test your new feedback provider, import the compiled module into your PowerShell session. This
+can be done by importing the folder described after building has succeeded:
 
 ```powershell
 Import-Module ./bin/Debug/net8.0/myFeedbackProvider
 ```
 
-You can add the `Import-Module` command to your `$PROFILE` so the module is available in PowerShell
-session.
+Once you're satisfied with your module, you should create a module manifest, publish it to the
+PowerShell Gallery, and install it in your `$env:PSModulePath`. For more information, see
+[How to create a module manifest][01]. You can add the `Import-Module` command to your `$PROFILE`
+script so the module is available in PowerShell session.
 
 You can get a list of installed feedback providers, using the following command:
 
@@ -436,11 +437,11 @@ FeedbackProvider  IFeedbackProvider          True {general}
 > [!NOTE]
 > `Get-PSSubsystem` is an experimental cmdlet that was introduced in PowerShell 7.1 You must enable
 > the `PSSubsystemPluginModel` experimental feature to use this cmdlet. For more information, see
-> [Using Experimental Features][01].
+> [Using Experimental Features][02].
 
 The following screenshot shows some example suggestions from the new provider.
 
-![Screenshot of success and error feedback provider triggers][06]
+![Screenshot of success and error feedback provider triggers][07]
 
 ## Appendix - Full implementation code
 
@@ -670,11 +671,12 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 ```
 
 <!-- link references -->
-[01]: ../learn/experimental-features.md#pssubsystempluginmodel
-[02]: ../learn/shell/using-predictors.md
-[03]: ./create-cmdline-predictor.md
-[04]: ./media/create-feedback-provider/feedback-provider-arch.png
-[05]: ./media/create-feedback-provider/feedback-provider-fields.png
-[06]: ./media/create-feedback-provider/feedback-provider-output.png
-[07]: https://devblogs.microsoft.com/powershell/what-are-feedback-providers/
-[08]: https://dotnet.microsoft.com/download/dotnet/8.0
+[01]: ../developer/module/how-to-write-a-powershell-module-manifest.md
+[02]: ../learn/experimental-features.md#pssubsystempluginmodel
+[03]: ../learn/shell/using-predictors.md
+[04]: ./create-cmdline-predictor.md
+[05]: ./media/create-feedback-provider/feedback-provider-arch.png
+[06]: ./media/create-feedback-provider/feedback-provider-fields.png
+[07]: ./media/create-feedback-provider/feedback-provider-output.png
+[08]: https://devblogs.microsoft.com/powershell/what-are-feedback-providers/
+[09]: https://dotnet.microsoft.com/download/dotnet/8.0
