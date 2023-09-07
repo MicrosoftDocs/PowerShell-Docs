@@ -635,7 +635,6 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
             _candidates = actions;
             return new FeedbackItem(header, actions, footer, FeedbackDisplayLayout.Portrait);
         }
-
         return null;
     }
 
