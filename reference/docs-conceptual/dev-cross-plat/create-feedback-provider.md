@@ -432,6 +432,23 @@ dotnet build
 This command create the PowerShell module as a DLL file in the following path of your project
 folder: `bin/Debug/net8.0/myFeedbackProvider`
 
+You may run into the error `error NU1101: Unable to find package System.Management.Automation.` 
+when building on Windows machines. To fix this add a `nuget.config` file to your project directory
+and add the following:
+
+```yaml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+  </packageSources>
+  <disabledPackageSources>
+    <clear />
+  </disabledPackageSources>
+</configuration>
+```
+
 ## Using a feedback provider
 
 To test your new feedback provider, import the compiled module into your PowerShell session. This
