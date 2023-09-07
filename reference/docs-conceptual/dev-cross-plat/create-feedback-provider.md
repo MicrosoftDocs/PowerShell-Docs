@@ -353,7 +353,9 @@ public bool CanAcceptFeedback(PredictionClient client, PredictorFeedbackKind fee
 // client - Represents the client that initiates the call.
 // context - The PredictionContext object to be used for prediction.
 // cancellationToken - The cancellation token to cancel the prediction.
-public SuggestionPackage GetSuggestion(PredictionClient client, PredictionContext context,
+public SuggestionPackage GetSuggestion(
+    PredictionClient client,
+    PredictionContext context,
     CancellationToken cancellationToken)
 {
     if (_candidates is not null)
