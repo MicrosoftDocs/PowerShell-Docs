@@ -244,7 +244,6 @@ if (target == FeedbackTrigger.Success){
         if(TryGetAlias(aliasedCmd, out string commandString))
         {
             actions.Add(aliasedCmd + " --> " + commandString);
-
         }
 
     }
