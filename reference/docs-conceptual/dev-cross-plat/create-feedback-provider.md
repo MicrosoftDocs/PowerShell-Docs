@@ -142,8 +142,7 @@ registered with the subsystem.
 
 ## Step 4 - Add class members and define the constructor
 
-The following code adds and initializes variables that describe the provider the constructor for the
-`myFeedbackProvider` class.
+The following code implements the properties defined in the interfaces, adds needed class members, and creates the constructor for the `myFeedbackProvider` class.
 
 ```csharp
 // Gets the trigger that causes the feedback provider to be invoked. In this case,
