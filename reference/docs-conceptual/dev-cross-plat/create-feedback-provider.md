@@ -484,6 +484,10 @@ The following screenshot shows some example suggestions from the new provider.
 
 ![Screenshot of success and error feedback provider triggers][07]
 
+The following is a GIF showing how the predictor integration works from the new provider.
+
+![GIF of predictor system working with feedback provider][10] 
+
 ## Appendix - Full implementation code
 
 The following code combines the previous examples into the find full implementation of the provider
@@ -746,3 +750,4 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 [07]: ./media/create-feedback-provider/feedback-provider-output.png
 [08]: https://devblogs.microsoft.com/powershell/what-are-feedback-providers/
 [09]: https://dotnet.microsoft.com/download/dotnet/8.0
+[10]: ./media/create-feedback-provider/feedback-provider-predictor.gif
