@@ -325,7 +325,7 @@ Another way your feedback provider can enhance the user experience is to provide
 to the **ICommandPredictor** interface. For more information about creating a command line
 predictor, see [How to create a command line predictor][04].
 
-The following code implements the methods necessary to add predictor behavior to your feedback
+The following code implements the methods necessary from the **ICommandPredictor** interface to add predictor behavior to your feedback
 provider.
 
 - `CanAcceptFeedback()` - This method returns a Boolean value that indicates whether the predictor accepts a specific type of feedback.
