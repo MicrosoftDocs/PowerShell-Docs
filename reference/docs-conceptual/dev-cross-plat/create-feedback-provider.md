@@ -254,7 +254,6 @@ if (target == FeedbackTrigger.Success)
         {
             actions.Add($"{aliasedCmd} --> {commandString}");
         }
-
     }
 
     // If no alias was found return null
