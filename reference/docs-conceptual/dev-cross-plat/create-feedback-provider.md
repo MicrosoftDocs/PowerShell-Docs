@@ -331,7 +331,7 @@ provider.
 - `GetSuggestion()` - Overloads the method of the **ICommandPredictor** interface. This method
   returns a `SuggestionPackage` object that contains the suggestions to be displayed by the
   predictor.
-- `OnCommandLineAccepted()` - Overloads the method of the **ICommandPredictor** interface. This
+- `OnCommandLineAccepted()` - This
   method is called when a command line is accepted to execute.
 
 ```csharp
