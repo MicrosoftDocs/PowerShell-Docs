@@ -145,13 +145,9 @@ registered with the subsystem.
 The following code implements the properties defined in the interfaces, adds needed class members, and creates the constructor for the `myFeedbackProvider` class.
 
 ```csharp
-// Gets the trigger that causes the feedback provider to be invoked. In this case,
-// it gets All triggers. See FeedbackTrigger enum for more details
-public FeedbackTrigger Trigger => FeedbackTrigger.All;
-
-// Gets a dictionary that contains the functions to be defined at the global scope
-// of a PowerShell session.
-Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
+// Gets the global unique identifier for the subsystem implementation.
+private readonly Guid _guid;
+public Guid Id => _guid;
 
 // Gets the name of a subsystem implementation, this will be the name displayed
 // when triggered
@@ -160,9 +156,13 @@ public string Name => "myFeedbackProvider";
 // Gets the description of a subsystem implementation.
 public string Description => "This is very simple feedback provider";
 
-// Gets the global unique identifier for the subsystem implementation.
-private readonly Guid _guid;
-public Guid Id => _guid;
+// Gets a dictionary that contains the functions to be defined at the global scope
+// of a PowerShell session.
+Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
+
+// Gets the trigger that causes the feedback provider to be invoked. In this case,
+// it gets All triggers. See FeedbackTrigger enum for more details
+public FeedbackTrigger Trigger => FeedbackTrigger.All;
 
 // List of candidates from the feedback provider to be passed as predictor results
 private List<string>? _candidates;
