@@ -241,7 +241,8 @@ if (target == FeedbackTrigger.Success){
         var aliasedCmd = ((CommandAst) command).GetCommandName();
 
         // Check if its an alias or not, if so then add it to the list of actions
-        if(TryGetAlias(aliasedCmd, out string commandString)){
+        if(TryGetAlias(aliasedCmd, out string commandString))
+        {
             actions.Add(aliasedCmd + " --> " + commandString);
 
         }
