@@ -248,7 +248,7 @@ if (target == FeedbackTrigger.Success){
 
     }
 
-    // If no aliases were found return null
+    // If no alias was found return null
     if(actions.Count == 0){
         return null;
     }
