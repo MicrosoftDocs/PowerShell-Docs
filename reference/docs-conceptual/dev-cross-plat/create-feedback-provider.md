@@ -106,8 +106,8 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 ## Step 3 - Implement the Init class
 
 The `Init` class registers and unregisters the feedback provider with the subsystem manager. The
-`OnImport()` method runs when the binary module is registered with the subsystem. The `OnRemove()`
-method runs when the binary module is unregistered from the subsystem. This example registers both
+`OnImport()` method runs when the binary module is being loaded. The `OnRemove()`
+method runs when the binary module is being removed. This example registers both
 the feedback provider and command predictor subsystem.
 
 ```csharp
