@@ -17,8 +17,7 @@ To create a feedback provider, you must satisfy the following prerequisites:
 
 - Install PowerShell 7.4-preview.3 or higher
   - You must enable the `PSFeedbackProvider` experimental feature to enable support for feedback 
-  providers and predictors. For more information, see
-    [Using Experimental Features][02].
+  providers and predictors. For more information, see [Using Experimental Features][02].
 - Install .NET 8 SDK - 8.0-preview.3 or higher
   - See the [Download .NET 8.0][09] page to get the latest version of the SDK.
 
@@ -35,7 +34,6 @@ error or better practices, like avoiding the use of aliases. For more informatio
 The following diagram shows the architecture of a feedback provider:
 
 ![Diagram of the feedback provider architecture.][05]
-
 
 The following examples walk you through the process of creating a simple feedback provider. Also,
 you can register the provider with the command predictor interface to add feedback suggestions to
@@ -733,7 +731,7 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
 
 public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 {
-    private const string Id = "47013747-CB9D-4EBC-9F02-F32B8AB19D48";
+    private const string Id = "<ADD YOUR GUID HERE>";
 
     public void OnImport()
     {
