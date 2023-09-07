@@ -145,29 +145,43 @@ registered with the subsystem.
 The following code implements the properties defined in the interfaces, adds needed class members, and creates the constructor for the `myFeedbackProvider` class.
 
 ```csharp
-// Gets the global unique identifier for the subsystem implementation.
+/// <summary>
+/// Gets the global unique identifier for the subsystem implementation.
+/// </summary>
 private readonly Guid _guid;
 public Guid Id => _guid;
 
-// Gets the name of a subsystem implementation, this will be the name displayed
-// when triggered
+/// <summary>
+/// Gets the name of a subsystem implementation, this will be the name displayed when triggered
+/// </summary>
 public string Name => "myFeedbackProvider";
 
-// Gets the description of a subsystem implementation.
+/// <summary>
+/// Gets the description of a subsystem implementation.
+/// </summary>
 public string Description => "This is very simple feedback provider";
 
-// Gets a dictionary that contains the functions to be defined at the global scope
-// of a PowerShell session.
+/// <summary>
+/// Default implementation. No function is required for a feedback provider.
+/// </summary>
 Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
 
-// Gets the trigger that causes the feedback provider to be invoked. In this case,
-// it gets All triggers. See FeedbackTrigger enum for more details
+/// <summary>
+/// Gets the types of trigger for this feedback provider.
+/// </summary>
+/// <remarks>
+/// The default implementation triggers a feedback provider by <see cref="FeedbackTrigger.CommandNotFound"/> only.
+/// </remarks>
 public FeedbackTrigger Trigger => FeedbackTrigger.All;
 
-// List of candidates from the feedback provider to be passed as predictor results
+/// <summary>
+/// List of candidates from the feedback provider to be passed as predictor results
+/// </summary>
 private List<string>? _candidates;
 
-// PowerShell session used to run PowerShell commands that help create suggestions.
+/// <summary>
+/// PowerShell session used to run PowerShell commands that help create suggestions.
+/// </summary>
 private PowerShell _powershell;
 
 // Constructor
@@ -183,12 +197,15 @@ internal myFeedbackProvider(string guid)
 The `GetFeedback` method takes two parameters, `context` and `token`. The `context` parameter
 receives the information about the trigger so you can decide how to respond with suggestions. The
 `token` parameter is used for cancellation. This function returns a `FeedbackItem` containing the
-suggestion. The function also contains some variables that are used to construct the feedback.
+suggestion. 
 
 ```csharp
-// Gets feedback based on the given commandline and error record.
-// context - The context for the feedback call.
-// token - The cancellation token to cancel the operation.
+/// <summary>
+/// Gets feedback based on the given commandline and error record.
+/// </summary>
+/// <param name="context">The context for the feedback call.</param>
+/// <param name="token">The cancellation token to cancel the operation.</param>
+/// <returns>The feedback item.</returns>
 public FeedbackItem? GetFeedback(FeedbackContext context, CancellationToken token)
 {
     // Target describes the different kinds of triggers to activate on,
@@ -227,11 +244,6 @@ qualified command name instead.
 if (target == FeedbackTrigger.Success){
     // Getting the commands from the AST and only finding those that are Commands
     var astCmds = ast.FindAll((cAst) => cAst is CommandAst, true);
-
-    // Check to see if there are any command returned
-    if(astCmds is null || astCmds.Count() == 0){
-        return null;
-    }
 
     // Inspect each of the commands
     foreach(var command in astCmds)
@@ -274,6 +286,12 @@ returned by `GetCommand` contains full name of the aliased command. The paramete
 the output variable to contain the full name of the aliased command.
 
 ```csharp
+/// <summary>
+/// Checks if a command is an alias.
+/// </summary>
+/// <param name="command">The command to check if alias</param>
+/// <param name="targetCommand">The referenced command by the aliased command</param>
+/// <returns>True if an alias and false if not</returns>
 private bool TryGetAlias(string command, out string targetCommand)
 {
     // Create PowerShell runspace as a session state proxy to run GetCommand and check
@@ -282,7 +300,8 @@ private bool TryGetAlias(string command, out string targetCommand)
         _powershell.Runspace.SessionStateProxy.InvokeCommand.GetCommand(command, CommandTypes.Alias) as AliasInfo;
 
     // if its null then it is not an aliased command so just return false
-    if(pwshAliasInfo is null){
+    if(pwshAliasInfo is null)
+    {
         targetCommand = String.Empty;
         return false;
     }
@@ -300,18 +319,19 @@ about how to use the command.
 
 ```csharp
 // Trigger on error
-if (target == FeedbackTrigger.Error){
+if (target == FeedbackTrigger.Error)
+{
     // Gets the command that caused the error.
     var erroredCommand = context.LastError?.InvocationInfo.MyCommand;
-    if (erroredCommand is null){
+    if (erroredCommand is null)
+    {
         return null;
     }
 
-    header = "You have triggered an error with the command " + erroredCommand +
-        ". Try using the following command to get help:";
+    header = $"You have triggered an error with the command {erroredCommand}. Try using the following command to get help:";
+
     actions.Add("Get-Help " + erroredCommand);
-    footer = "You can also check online documentation at https://learn.microsoft.com/en-us/powershell/module/?term=" +
-        erroredCommand;
+    footer = $"You can also check online documentation at https://learn.microsoft.com/en-us/powershell/module/?term={erroredCommand}";
 
     // Copy actions to _candidates for the predictor
     _candidates = actions;
@@ -329,18 +349,18 @@ The following code implements the methods necessary from the **ICommandPredictor
 provider.
 
 - `CanAcceptFeedback()` - This method returns a Boolean value that indicates whether the predictor accepts a specific type of feedback.
-- `GetSuggestion()` - Overloads the method of the **ICommandPredictor** interface. This method
-  returns a `SuggestionPackage` object that contains the suggestions to be displayed by the
-  predictor.
-- `OnCommandLineAccepted()` - This
-  method is called when a command line is accepted to execute.
+- `GetSuggestion()` - This method returns a `SuggestionPackage` object that contains the suggestions to be displayed by the predictor.
+- `OnCommandLineAccepted()` - This method is called when a command line is accepted to execute.
 
 ```csharp
 #region ICommandPredictor
 
-// Gets a value indicating whether the predictor accepts a specific kind of feedback.
-// client - Represents the client that initiates the call.
-// feedback - the specific kind of feedback
+/// <summary>
+/// Gets a value indicating whether the predictor accepts a specific kind of feedback.
+/// </summary>
+/// <param name="client">Represents the client that initiates the call.</param>
+/// <param name="feedback">A specific type of feedback.</param>
+/// <returns>True or false, to indicate whether the specific feedback is accepted.</returns>
 public bool CanAcceptFeedback(PredictionClient client, PredictorFeedbackKind feedback)
 {
     return feedback switch
@@ -350,10 +370,13 @@ public bool CanAcceptFeedback(PredictionClient client, PredictorFeedbackKind fee
     };
 }
 
-// Get the predictive suggestions. It indicates the start of a suggestion rendering session.
-// client - Represents the client that initiates the call.
-// context - The PredictionContext object to be used for prediction.
-// cancellationToken - The cancellation token to cancel the prediction.
+/// <summary>
+/// Get the predictive suggestions. It indicates the start of a suggestion rendering session.
+/// </summary>
+/// <param name="client">Represents the client that initiates the call.</param>
+/// <param name="context">The <see cref="PredictionContext"/> object to be used for prediction.</param>
+/// <param name="cancellationToken">The cancellation token to cancel the prediction.</param>
+/// <returns>An instance of <see cref="SuggestionPackage"/>.</returns>
 public SuggestionPackage GetSuggestion(
     PredictionClient client,
     PredictionContext context,
@@ -382,19 +405,17 @@ public SuggestionPackage GetSuggestion(
     return default;
 }
 
-// A command line was accepted to execute. The predictor can start processing early as needed
-// with the latest history.
+/// <summary>
+/// A command line was accepted to execute.
+/// The predictor can start processing early as needed with the latest history.
+/// </summary>
+/// <param name="client">Represents the client that initiates the call.</param>
+/// <param name="history">History command lines provided as references for prediction.</param>
 public void OnCommandLineAccepted(PredictionClient client, IReadOnlyList<string> history)
 {
     // Reset the candidate state once the command is accepted.
     _candidates = null;
 }
-
-public void OnSuggestionDisplayed(PredictionClient client, uint session, int countOrIndex) { }
-
-public void OnSuggestionAccepted(PredictionClient client, uint session, string acceptedSuggestion) { }
-
-public void OnCommandLineExecuted(PredictionClient client, string commandLine, bool success) { }
 
 #endregion;
 ```
@@ -462,30 +483,43 @@ namespace myFeedbackProvider;
 
 public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
 {
-
-    // Gets the trigger that causes the feedback provider to be invoked. In this case,
-    // it gets All triggers. See FeedbackTrigger enum for more details
-    public FeedbackTrigger Trigger => FeedbackTrigger.All;
-
-    // Gets a dictionary that contains the functions to be defined at the global scope
-    // of a PowerShell session.
-    Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
-
-    // Gets the name of a subsystem implementation, this will be the name displayed
-    // when triggered
-    public string Name => "myFeedbackProvider";
-
-    // Gets the description of a subsystem implementation.
-    public string Description => "This is very simple feedback provider";
-
-    // Gets the global unique identifier for the subsystem implementation.
+    /// <summary>
+    /// Gets the global unique identifier for the subsystem implementation.
+    /// </summary>
     private readonly Guid _guid;
     public Guid Id => _guid;
 
-    // List of candidates from the feedback provider to be passed as predictor results
+    /// <summary>
+    /// Gets the name of a subsystem implementation, this will be the name displayed when triggered
+    /// </summary>
+    public string Name => "myFeedbackProvider";
+
+    /// <summary>
+    /// Gets the description of a subsystem implementation.
+    /// </summary>
+    public string Description => "This is very simple feedback provider";
+
+    /// <summary>
+    /// Default implementation. No function is required for a feedback provider.
+    /// </summary>
+    Dictionary<string, string>? ISubsystem.FunctionsToDefine => null;
+
+    /// <summary>
+    /// Gets the types of trigger for this feedback provider.
+    /// </summary>
+    /// <remarks>
+    /// The default implementation triggers a feedback provider by <see cref="FeedbackTrigger.CommandNotFound"/> only.
+    /// </remarks>
+    public FeedbackTrigger Trigger => FeedbackTrigger.All;
+
+    /// <summary>
+    /// List of candidates from the feedback provider to be passed as predictor results
+    /// </summary>
     private List<string>? _candidates;
 
-    // PowerShell session used to run PowerShell commands that help create suggestions.
+    /// <summary>
+    /// PowerShell session used to run PowerShell commands that help create suggestions.
+    /// </summary>
     private PowerShell _powershell;
 
     // Constructor
@@ -496,13 +530,15 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
     }
 
     #region IFeedbackProvider
-
-    // Gets feedback based on the given commandline and error record.
-    // context - The context for the feedback call.
-    // token - The cancellation token to cancel the operation.
+    /// <summary>
+    /// Gets feedback based on the given commandline and error record.
+    /// </summary>
+    /// <param name="context">The context for the feedback call.</param>
+    /// <param name="token">The cancellation token to cancel the operation.</param>
+    /// <returns>The feedback item.</returns>
     public FeedbackItem? GetFeedback(FeedbackContext context, CancellationToken token)
     {
-
+        // Target describes the different kinds of triggers to activate on,
         var target = context.Trigger;
         var commandLine = context.CommandLine;
         var ast = context.CommandLineAst;
@@ -511,34 +547,32 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         string header;
         string footer;
 
+        // List of the actions
         List<string>? actions = new List<string>();
 
         // Trigger on success
-       if (target == FeedbackTrigger.Success){
+        if (target == FeedbackTrigger.Success){
             // Getting the commands from the AST and only finding those that are Commands
             var astCmds = ast.FindAll((cAst) => cAst is CommandAst, true);
 
-            // Check to see if there are any command returned
-            if(astCmds is null || astCmds.Count() == 0){
-                return null;
-            }
-
-            // Navigate through each of the commands
-            foreach(var command in astCmds){
+            // Inspect each of the commands
+            foreach(var command in astCmds)
+            {
 
                 // Get the command name
                 var aliasedCmd = ((CommandAst) command).GetCommandName();
 
                 // Check if its an alias or not, if so then add it to the list of actions
-                if(TryGetAlias(aliasedCmd, out string commandString)){
+                if(TryGetAlias(aliasedCmd, out string commandString))
+                {
                     actions.Add(aliasedCmd + " --> " + commandString);
-
                 }
 
             }
 
-            // If no aliases were found return null
-            if(actions.Count == 0){
+            // If no alias was found return null
+            if(actions.Count == 0)
+            {
                 return null;
             }
 
@@ -551,18 +585,19 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         }
 
         // Trigger on error
-        if (target == FeedbackTrigger.Error){
+        if (target == FeedbackTrigger.Error)
+        {
             // Gets the command that caused the error.
             var erroredCommand = context.LastError?.InvocationInfo.MyCommand;
-            if (erroredCommand is null){
+            if (erroredCommand is null)
+            {
                 return null;
             }
 
-            header = "You have triggered an error with the command " + erroredCommand +
-                ". Try using the following command to get help:";
+            header = $"You have triggered an error with the command {erroredCommand}. Try using the following command to get help:";
+
             actions.Add("Get-Help " + erroredCommand);
-            footer = "You can also check online documentation at https://learn.microsoft.com/en-us/powershell/module/?term=" +
-                erroredCommand;
+            footer = $"You can also check online documentation at https://learn.microsoft.com/en-us/powershell/module/?term={erroredCommand}";
 
             // Copy actions to _candidates for the predictor
             _candidates = actions;
@@ -570,18 +605,24 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         }
 
         return null;
-
     }
 
-    // function to check whether a command is an alias
-    private bool TryGetAlias(string command, out string targetCommand){
+    /// <summary>
+    /// Checks if a command is an alias.
+    /// </summary>
+    /// <param name="command">The command to check if alias</param>
+    /// <param name="targetCommand">The referenced command by the aliased command</param>
+    /// <returns>True if an alias and false if not</returns>
+    private bool TryGetAlias(string command, out string targetCommand)
+    {
         // Create PowerShell runspace as a session state proxy to run GetCommand and check
         // if its an alias
         AliasInfo? pwshAliasInfo =
             _powershell.Runspace.SessionStateProxy.InvokeCommand.GetCommand(command, CommandTypes.Alias) as AliasInfo;
 
         // if its null then it is not an aliased command so just return false
-        if(pwshAliasInfo is null){
+        if(pwshAliasInfo is null)
+        {
             targetCommand = String.Empty;
             return false;
         }
@@ -590,13 +631,16 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         targetCommand = pwshAliasInfo.ReferencedCommand.Name;
         return true;
     }
-    #endregion
-
+    #endregion IFeedbackProvider
 
     #region ICommandPredictor
-    // Gets a value indicating whether the predictor accepts a specific kind of feedback.
-    // client - Represents the client that initiates the call.
-    // feedback - the specific kind of feedback
+
+    /// <summary>
+    /// Gets a value indicating whether the predictor accepts a specific kind of feedback.
+    /// </summary>
+    /// <param name="client">Represents the client that initiates the call.</param>
+    /// <param name="feedback">A specific type of feedback.</param>
+    /// <returns>True or false, to indicate whether the specific feedback is accepted.</returns>
     public bool CanAcceptFeedback(PredictionClient client, PredictorFeedbackKind feedback)
     {
         return feedback switch
@@ -606,11 +650,16 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         };
     }
 
-    // Get the predictive suggestions. It indicates the start of a suggestion rendering session.
-    // client - Represents the client that initiates the call.
-    // context - The PredictionContext object to be used for prediction.
-    // cancellationToken - The cancellation token to cancel the prediction.
-    public SuggestionPackage GetSuggestion(PredictionClient client, PredictionContext context,
+    /// <summary>
+    /// Get the predictive suggestions. It indicates the start of a suggestion rendering session.
+    /// </summary>
+    /// <param name="client">Represents the client that initiates the call.</param>
+    /// <param name="context">The <see cref="PredictionContext"/> object to be used for prediction.</param>
+    /// <param name="cancellationToken">The cancellation token to cancel the prediction.</param>
+    /// <returns>An instance of <see cref="SuggestionPackage"/>.</returns>
+    public SuggestionPackage GetSuggestion(
+        PredictionClient client,
+        PredictionContext context,
         CancellationToken cancellationToken)
     {
         if (_candidates is not null)
@@ -636,23 +685,20 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         return default;
     }
 
-    // A command line was accepted to execute. The predictor can start processing early as
-    // needed with the latest history.
+    /// <summary>
+    /// A command line was accepted to execute.
+    /// The predictor can start processing early as needed with the latest history.
+    /// </summary>
+    /// <param name="client">Represents the client that initiates the call.</param>
+    /// <param name="history">History command lines provided as references for prediction.</param>
     public void OnCommandLineAccepted(PredictionClient client, IReadOnlyList<string> history)
     {
         // Reset the candidate state once the command is accepted.
         _candidates = null;
     }
 
-    public void OnSuggestionDisplayed(PredictionClient client, uint session, int countOrIndex) { }
-
-    public void OnSuggestionAccepted(PredictionClient client, uint session, string acceptedSuggestion) { }
-
-    public void OnCommandLineExecuted(PredictionClient client, string commandLine, bool success) { }
-
     #endregion;
 }
-
 
 public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 {
