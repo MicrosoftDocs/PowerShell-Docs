@@ -20,6 +20,7 @@ To create a feedback provider, you must satisfy the following prerequisites:
   providers and predictors. For more information, see
     [Using Experimental Features][02].
 - Install .NET 8 SDK - 8.0-preview.3 or higher
+  - See the [Download .NET 8.0][09] page to get the latest version of the SDK.
 
 ## Overview of a feedback provider
 
@@ -35,8 +36,6 @@ The following diagram shows the architecture of a feedback provider:
 
 ![Diagram of the feedback provider architecture.][05]
 
-PowerShell 7.4 is built on .NET 8. For more information on the SDK. See the [Download .NET 8.0][09]
-page to get the latest version of the SDK.
 
 The following examples walk you through the process of creating a simple feedback provider. Also,
 you can register the provider with the command predictor interface to add feedback suggestions to
@@ -184,7 +183,6 @@ private List<string>? _candidates;
 /// </summary>
 private PowerShell _powershell;
 
-// Constructor
 internal myFeedbackProvider(string guid)
 {
     _guid = new Guid(guid); // Save guid
@@ -241,7 +239,8 @@ qualified command name instead.
 
 ```csharp
 // Trigger on success
-if (target == FeedbackTrigger.Success){
+if (target == FeedbackTrigger.Success)
+{
     // Getting the commands from the AST and only finding those that are Commands
     var astCmds = ast.FindAll((cAst) => cAst is CommandAst, true);
 
@@ -255,7 +254,7 @@ if (target == FeedbackTrigger.Success){
         // Check if its an alias or not, if so then add it to the list of actions
         if(TryGetAlias(aliasedCmd, out string commandString))
         {
-            actions.Add(aliasedCmd + " --> " + commandString);
+            actions.Add($"{aliasedCmd} --> {commandString}");
         }
 
     }
@@ -281,9 +280,7 @@ The `TryGetAlias()` method is a private helper function that returns a boolean v
 whether the command is an alias. In the class constructor, we created a PowerShell instance that we
 can use to run PowerShell commands. The `TryGetAlias()` method uses this PowerShell instance to
 invoke the `GetCommand` method to determine if the command is an alias. The `AliasInfo` object
-returned by `GetCommand` contains full name of the aliased command. The parameters of
-`TryGetAlias()` are: `command`, which is the command to be checked, and `targetCommand`, which is
-the output variable to contain the full name of the aliased command.
+returned by `GetCommand` contains full name of the aliased command. 
 
 ```csharp
 /// <summary>
@@ -330,7 +327,7 @@ if (target == FeedbackTrigger.Error)
 
     header = $"You have triggered an error with the command {erroredCommand}. Try using the following command to get help:";
 
-    actions.Add("Get-Help " + erroredCommand);
+    actions.Add($"Get-Help {erroredCommand}");
     footer = $"You can also check online documentation at https://learn.microsoft.com/en-us/powershell/module/?term={erroredCommand}";
 
     // Copy actions to _candidates for the predictor
@@ -353,8 +350,6 @@ provider.
 - `OnCommandLineAccepted()` - This method is called when a command line is accepted to execute.
 
 ```csharp
-#region ICommandPredictor
-
 /// <summary>
 /// Gets a value indicating whether the predictor accepts a specific kind of feedback.
 /// </summary>
@@ -416,8 +411,6 @@ public void OnCommandLineAccepted(PredictionClient client, IReadOnlyList<string>
     // Reset the candidate state once the command is accepted.
     _candidates = null;
 }
-
-#endregion;
 ```
 
 ## Step 7 - Build the feedback provider
@@ -590,7 +583,8 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
         List<string>? actions = new List<string>();
 
         // Trigger on success
-        if (target == FeedbackTrigger.Success){
+        if (target == FeedbackTrigger.Success)
+        {
             // Getting the commands from the AST and only finding those that are Commands
             var astCmds = ast.FindAll((cAst) => cAst is CommandAst, true);
 
@@ -604,9 +598,8 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
                 // Check if its an alias or not, if so then add it to the list of actions
                 if(TryGetAlias(aliasedCmd, out string commandString))
                 {
-                    actions.Add(aliasedCmd + " --> " + commandString);
+                    actions.Add($"{aliasedCmd} --> {commandString}");
                 }
-
             }
 
             // If no alias was found return null
@@ -635,7 +628,7 @@ public sealed class myFeedbackProvider : IFeedbackProvider, ICommandPredictor
 
             header = $"You have triggered an error with the command {erroredCommand}. Try using the following command to get help:";
 
-            actions.Add("Get-Help " + erroredCommand);
+            actions.Add($"Get-Help {erroredCommand}");
             footer = $"You can also check online documentation at https://learn.microsoft.com/en-us/powershell/module/?term={erroredCommand}";
 
             // Copy actions to _candidates for the predictor
