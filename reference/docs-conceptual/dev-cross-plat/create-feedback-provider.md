@@ -488,6 +488,24 @@ The following is a GIF showing how the predictor integration works from the new 
 
 ![GIF of predictor system working with feedback provider][10] 
 
+## Other feedback providers
+
+We have created other feedback provider that can be used as a good reference for deeper examples.
+
+### command-not-found
+
+The `command-not-found` feedback provider utilizes the `command-not-found` utility tool on Linux systems 
+to provide suggestions when native commands are attempted to run but are missing. You can find the code 
+in the [GitHub Repository][11] or can download for yourself on the [PowerShell Gallery][12].
+
+### PowerShell Adapter
+
+The `Microsoft.PowerShell.PowerShellAdapter` is a feedback provider that helps you convert text outputs 
+from native commands into PowerShell objects. It detects "adapters" on your system and suggests you to use
+them when you use the native command. You can learn more about PowerShell Adapters from, 
+[PowerShell Adapter Feedback Provider][13] blog post. You can also find teh code in the [GitHub Repository][14] 
+or can download for yourself on the [PowerShell Gallery][15]. 
+
 ## Appendix - Full implementation code
 
 The following code combines the previous examples into the find full implementation of the provider
@@ -751,3 +769,9 @@ public class Init : IModuleAssemblyInitializer, IModuleAssemblyCleanup
 [08]: https://devblogs.microsoft.com/powershell/what-are-feedback-providers/
 [09]: https://dotnet.microsoft.com/download/dotnet/8.0
 [10]: ./media/create-feedback-provider/feedback-provider-predictor.gif
+[11]: https://github.com/PowerShell/command-not-found
+[12]: https://www.powershellgallery.com/packages/command-not-found
+[13]: https://devblogs.microsoft.com/powershell/powershell-adapter-feedback-provider/
+[14]: https://github.com/PowerShell/JsonAdapter
+[15]: https://www.powershellgallery.com/packages/Microsoft.PowerShell.PSAdapter
+
