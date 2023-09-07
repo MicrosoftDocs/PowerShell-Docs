@@ -326,8 +326,7 @@ predictor, see [How to create a command line predictor][04].
 The following code implements the methods necessary to add predictor behavior to your feedback
 provider.
 
-- `CanAcceptFeedback()` - Overloads the method of the **ICommandPredictor** interface. This method
-  returns a boolean value that indicates whether the predictor accepts a specific type of feedback.
+- `CanAcceptFeedback()` - This method returns a Boolean value that indicates whether the predictor accepts a specific type of feedback.
 - `GetSuggestion()` - Overloads the method of the **ICommandPredictor** interface. This method
   returns a `SuggestionPackage` object that contains the suggestions to be displayed by the
   predictor.
