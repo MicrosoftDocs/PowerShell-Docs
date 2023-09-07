@@ -16,26 +16,26 @@ feedback.
 To create a feedback provider, you must satisfy the following prerequisites:
 
 - Install PowerShell 7.4-preview.3 or higher
-  - You must enable the `PSSubsystemPluginModel` and the `PSFeedbackProvider` experimental feature
-    to enable support for feedback providers and predictors. For more information, see
+  - You must enable the `PSFeedbackProvider` experimental feature to enable support for feedback 
+  providers and predictors. For more information, see
     [Using Experimental Features][02].
 - Install .NET 8 SDK - 8.0-preview.3 or higher
 
 ## Overview of a feedback provider
 
 A feedback provider is a PowerShell binary module that implements the
-`System.Management.Automation.Subsystem.Feedback` interface. This interface declares the methods to
-get feedback based on the command line input. The feedback interface can provide suggestions based
-on the success or failure of the command invoked by the user. The suggestions can be anything that
-you want. For example, you might suggest ways to address an error or better practices, like avoiding
-the use of aliases. For more information, see the [What are Feedback Providers?][08] blog post.
+`System.Management.Automation.Subsystem.Feedback.IFeedbackProvider` interface. This interface 
+declares the methods to get feedback based on the command line input. The feedback interface can 
+provide suggestions based on the success or failure of the command invoked by the user. The 
+suggestions can be anything that you want. For example, you might suggest ways to address an 
+error or better practices, like avoiding the use of aliases. For more information, see the 
+[What are Feedback Providers?][08] blog post.
 
 The following diagram shows the architecture of a feedback provider:
 
 ![Diagram of the feedback provider architecture.][05]
 
-PowerShell 7.4 is built on .NET 8. To create a feedback provider, you must have the .NET 8.0 SDK
-(Preview.3 or higher) installed. For more information on the SDK. See the [Download .NET 8.0][09]
+PowerShell 7.4 is built on .NET 8. For more information on the SDK. See the [Download .NET 8.0][09]
 page to get the latest version of the SDK.
 
 The following examples walk you through the process of creating a simple feedback provider. Also,
