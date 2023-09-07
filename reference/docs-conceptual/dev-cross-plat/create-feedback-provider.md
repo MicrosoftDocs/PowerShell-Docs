@@ -274,7 +274,8 @@ returned by `GetCommand` contains full name of the aliased command. The paramete
 the output variable to contain the full name of the aliased command.
 
 ```csharp
-private bool TryGetAlias(string command, out string targetCommand){
+private bool TryGetAlias(string command, out string targetCommand)
+{
     // Create PowerShell runspace as a session state proxy to run GetCommand and check
     // if its an alias
     AliasInfo? pwshAliasInfo =
