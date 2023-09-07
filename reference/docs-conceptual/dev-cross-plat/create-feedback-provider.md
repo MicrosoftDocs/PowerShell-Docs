@@ -234,7 +234,8 @@ if (target == FeedbackTrigger.Success){
     }
 
     // Inspect each of the commands
-    foreach(var command in astCmds){
+    foreach(var command in astCmds)
+    {
 
         // Get the command name
         var aliasedCmd = ((CommandAst) command).GetCommandName();
