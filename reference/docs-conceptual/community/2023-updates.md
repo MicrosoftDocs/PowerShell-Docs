@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 08/01/2023
+ms.date: 09/08/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,43 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-Aug
+
+New content
+
+66 New articles for DSC v3 (alpha)
+- See [Microsoft Desired State Configuration v3 overview](/powershell/dsc/overview?view=dsc-3.0&preserve-view=true)
+  to get started with the new documentation
+
+Updated Content
+
+- Crescendo 1.1-RC1 release updates
+  - [What's new in Crescendo 1.1](/powershell/utility-modules/crescendo/whats-new/whats-new-in-crescendo-11)
+
+- New PSResourceGet beta24 content updates
+  - See [Supported repository configurations](/powershell/gallery/powershellget/supported-repositories)
+
+- Lots updates for the PowerShell 7.4-preview.5 release
+  - [What's New in PowerShell 7.4 (preview)](../whats-new/what-s-new-in-powershell-74.md)
+  - New features for 10 cmdlets
+
+### Top Community Contributors
+
+GitHub stats
+
+- 29 PRs merged (3 from Community)
+- 16 issues opened (12 from Community)
+- 21 issues closed (17 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+| GitHub Id | PRs merged | Issues opened |
+| --------- | :--------: | :-----------: |
+| ehmiiz    |     1      |       1       |
+| deadlydog |     1      |               |
+| crisman   |     1      |               |
 
 ## 2023-Jul
 
