@@ -251,7 +251,7 @@ Updated content
 Quality project updates from the community
 
 - One of our top contributors [@ehmiiz][ehmiiz] blogged about contributing to Docs
-  - [How to Learn Git, Markdown and PowerShell by Contributing to the PowerShell-Docs Repository](https://ehmiiz.tech/blog/ps_docs_contributions/)
+  - [How to Learn Git, Markdown and PowerShell by Contributing to the PowerShell-Docs Repository](https://www.ehmiiz.se/blog/ps_docs_contributions/)
 
 ### Top Community Contributors
 
