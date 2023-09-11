@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Checkout Repository
         id: checkout_repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Write Report
         uses: ./.github/actions/reporting/stale-content/v1
         with:

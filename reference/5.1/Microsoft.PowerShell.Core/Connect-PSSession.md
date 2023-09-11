@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/02/2022
+ms.date: 09/09/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
@@ -203,7 +203,7 @@ session. The command saves the results in the `$BackupSpecs` variable.The eighth
 
 ```powershell
 $s = New-PSSession -ComputerName Server01 -Name ITTask -ConfigurationName ITTasks
-Invoke-Command -Session $s {Start-Job -FilePath \\Server30\Scripts\Backup-SQLDatabase.ps1}
+Invoke-Command -Session $s -ScriptBlock {Start-Job -FilePath \\Server30\Scripts\Backup-SQLDatabase.ps1}
 ```
 
 ```Output
@@ -243,7 +243,7 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 ```
 
 ```powershell
-Invoke-Command -Session $s {Get-Job}
+Invoke-Command -Session $s -ScriptBlock {Get-Job}
 ```
 
 ```Output
@@ -253,8 +253,8 @@ Id     Name            State         HasMoreData     Location             Comman
 ```
 
 ```powershell
-Invoke-Command -Session $s {$BackupSpecs = Receive-Job -JobName Job2}
-Invoke-Command -Session $s {\\Server30\Scripts\New-SQLDatabase.ps1 -InitData $BackupSpecs.Initialization}
+Invoke-Command -Session $s -ScriptBlock {$BackupSpecs = Receive-Job -JobName Job2}
+Invoke-Command -Session $s -ScriptBlock {\\Server30\Scripts\New-SQLDatabase.ps1 -InitData $BackupSpecs.Initialization}
 Disconnect-PSSession -Session $s -OutputBufferingMode Drop -IdleTimeoutSec 60*60*15
 ```
 
