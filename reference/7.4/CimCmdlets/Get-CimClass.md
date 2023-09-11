@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/28/2023
+ms.date: 09/11/2023
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/get-cimclass?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CimClass
@@ -268,7 +268,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -QualifierName
