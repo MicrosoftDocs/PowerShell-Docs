@@ -37,8 +37,8 @@ Set-Clipboard -Value "This is a test string"
 
 ### Example 2: Copy the contents of a file to the clipboard
 
-This example pipes the contents of a file to the clipboard. In this example, we are getting a public
-ssh key so that it can be pasted into another application, like GitHub.
+This example pipes the contents of a file, a public ssh key, to the clipboard. Then, the key can be
+pasted into another application, like GitHub.
 
 ```powershell
 Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
