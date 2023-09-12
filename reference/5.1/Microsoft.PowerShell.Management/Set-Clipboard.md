@@ -61,7 +61,7 @@ Set-Clipboard -Path "C:\Staging\"
 
 ### Example 3: Copy the contents of a file to the clipboard
 
-This example pipes the contents of a file,a public ssh key, to the clipboard. Then, the key can be
+This example pipes the contents of a file, a public ssh key, to the clipboard. Then, the key can be
 pasted into another application, like GitHub.
 
 ```powershell
@@ -72,7 +72,9 @@ Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 
 ### -Append
 
-Indicates that the cmdlet doesn't clear the clipboard and appends content to it.
+Indicates that the cmdlet should add to the clipboard instead of replacing it. By default, the
+cmdlet clears the current content from the clipboard and sets it to the new content. When this
+parameter is specified, the cmdlet appends the new content after a newline to the current content.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
