@@ -1,0 +1,68 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Gets the current UI culture settings in the operating system.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  You can also use the `$PSCulture` and `$PSUICulture` variables. The `$PSCulture` variable stores the
+  name of the current culture, and the `$PSUICulture` variable stores the name of the current UI
+  culture.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="System.Globalization.CultureInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns an object representing the current UI culture. In PowerShell 3.0 and later,
+    it returns a **CultureInfo** object.
+- name: <xref href="Microsoft.PowerShell.VistaCultureInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    In Windows PowerShell 2.0 and earlier, this cmdlet returns a **VistaCultureInfo** object.
+syntaxes:
+- Get-UICulture [<CommonParameters>]
+examples:
+- title: 'Example 1: Get the UI culture'
+  code: |-
+    Get-UICulture
+  description: |-
+    This command gets the current UI culture information.
+  summary: ""
+- title: 'Example 2: Get the UI culture and format the results'
+  code: |-
+    Get-UICulture | Format-List *
+  description: |-
+    This command displays the values of all of the properties of the current UI culture in a list.
+  summary: ""
+- title: 'Example 3: Get the value of the Calendar property'
+  code: |-
+    (Get-UICulture).Calendar
+  description: |-
+    This command displays the current values for the Calendar property of the current UI culture.
+    Calendar is just one property of UI culture. To see all of the properties, type
+    `Get-UICulture | Get-Member`.
+  summary: ""
+- title: 'Example 4: Get the short date pattern'
+  code: |-
+    (Get-UICulture).DateTimeFormat.ShortDatePattern
+  description: |-
+    This command displays the short date pattern for the current UI culture. To see all of the
+    subproperties of the **DateTimeFormat** property of the UI culture, type
+    `(Get-UICulture).DateTimeFormat | Get-Member`.
+  summary: ""
+uid: Microsoft.PowerShell.Utility.Get-UICulture
+name: Get-UICulture
+description: |-
+  The `Get-UICulture` cmdlet gets information about the current user interface (UI) culture settings
+  for Windows. The UI culture determines which text strings are used for user interface elements, such
+  as menus and messages.
+
+  You can also use the `Get-Culture` cmdlet, which gets the current culture on the system. The culture
+  determines the display format of items such as numbers, currency, and dates.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 12/12/2022
+  online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-uiculture?view=powershell-7.3&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Get-UICulture

@@ -1,0 +1,101 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Suspends the activity in a script or session for the specified period of time.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  PowerShell includes the following aliases for `Start-Sleep`:
+
+  - Windows:
+    - `sleep`
+
+  - `Ctrl+C` breaks out of `Start-Sleep`.
+  - `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
+    [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).
+inputs:
+- name: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe the number of seconds to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+syntaxes:
+- Start-Sleep [-Seconds] <Double> [<CommonParameters>]
+- Start-Sleep -Milliseconds <Int32> [<CommonParameters>]
+- Start-Sleep -Duration <TimeSpan> [<CommonParameters>]
+examples:
+- title: 'Example 1: Pause execution for 1.5 seconds'
+  code: |-
+    Start-Sleep -Seconds 1.5
+  description: ""
+  summary: |+
+    In this example, the execution of commands pauses for one and one-half seconds.
+
+- title: 'Example 2: Pause execution at the command line'
+  code: |-
+    PS> Get-Date; Start-Sleep -Seconds 5; Get-Date
+
+    Friday, May 13, 2022 9:38:15 AM
+    Friday, May 13, 2022 9:38:20 AM
+  description: |-
+    PowerShell cannot execute the second `Get-Date` command until the sleep timer expires.
+  summary: |+
+    This example shows that execution is paused for 5 seconds when run from the command line.
+
+- title: 'Example 3: Sleep commands using a **TimeSpan**'
+  code: |-
+    Start-Sleep -Duration (New-TimeSpan -Seconds 30)
+  description: ""
+  summary: |+
+    This example makes all the commands in the session sleep for 30 seconds.
+
+parameters:
+- type: <xref href="System.TimeSpan" data-throw-if-not-resolved="False" />
+  name: Duration
+  isRequired: true
+  description: |+
+    Uses a **TimeSpan** object to specify how long the resource sleeps in milliseconds. The value must
+    not be a negative **TimeSpan** and must not exceed `[int]::MaxValue` milliseconds.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ts
+  parameterValueGroup: ""
+- type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  name: Milliseconds
+  isRequired: true
+  description: |+
+    Specifies how long the resource sleeps in milliseconds. The parameter can be abbreviated as **m**.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ms
+  parameterValueGroup: ""
+- type: <xref href="System.Double" data-throw-if-not-resolved="False" />
+  name: Seconds
+  isRequired: true
+  description: |+
+    Specifies how long the resource sleeps in seconds. You can omit the parameter name or you can
+    abbreviate it as **s**. Beginning in PowerShell 6.2.0, this parameter now accepts fractional values.
+
+  defaultValue: None
+  pipelineInput: true
+  position: "0"
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.Start-Sleep
+name: Start-Sleep
+description: |-
+  The `Start-Sleep` cmdlet suspends the activity in a script or session for the specified period of
+  time. You can use it for many tasks, such as waiting for an operation to complete or pausing before
+  repeating an operation.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 01/22/2023
+  online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-7.3&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Start-Sleep

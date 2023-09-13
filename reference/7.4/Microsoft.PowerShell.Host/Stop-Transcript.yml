@@ -1,0 +1,62 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Stops a transcript.
+module: Microsoft.PowerShell.Host
+notes: |-
+  - If a transcript has not been started, the command fails.
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a string that contains a status message and the path to the output file.
+links:
+- text: Start-Transcript
+  href: Start-Transcript.yml
+syntaxes:
+- Stop-Transcript [-WhatIf] [-Confirm] [<CommonParameters>]
+examples:
+- title: 'Example 1: Stop all transcripts'
+  code: |-
+    Stop-Transcript
+  description: |-
+    This command stops all transcripts.
+  summary: ""
+parameters:
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Confirm
+  description: |+
+    Prompts you for confirmation before running the cmdlet.
+
+    This parameter was added in PowerShell 7.4.
+
+  defaultValue: None
+  position: Named
+  aliases: cf
+  parameterValueGroup: ""
+- type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+  name: WhatIf
+  description: |+
+    Shows what would happen if the cmdlet runs. The cmdlet isn't run.
+
+    This parameter was added in PowerShell 7.4.
+
+  defaultValue: None
+  position: Named
+  aliases: wi
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Host.Stop-Transcript
+name: Stop-Transcript
+description: |-
+  The `Stop-Transcript` cmdlet stops a transcript that was started by the `Start-Transcript` cmdlet.
+  Alternatively, you can end a session to stop a transcript.
+metadata:
+  external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Host
+  ms.date: 01/03/2023
+  online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-7.4&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: Stop-Transcript

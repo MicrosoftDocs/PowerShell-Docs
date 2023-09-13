@@ -1,0 +1,95 @@
+### YamlMime:PowershellCmdlet
+summary: |-
+  Creates a GUID.
+module: Microsoft.PowerShell.Utility
+notes: |-
+  The cmdlet passes string input to the constructor of the **System.Guid** class. The constructor
+  support strings in several formats. For more information, see
+  [System.Guid(String)](/dotnet/api/system.guid.-ctor?view=net-7.0#system-guid-ctor(system-string)).
+outputs:
+- name: <xref href="System.Guid" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a GUID.
+syntaxes:
+- New-Guid [<CommonParameters>]
+- New-Guid [-Empty] [<CommonParameters>]
+- New-Guid [-InputObject <String>] [<CommonParameters>]
+examples:
+- title: 'Example 1: Create a new GUID'
+  code: |-
+    New-Guid
+  description: |-
+    This command creates a random GUID. Alternatively, you could store the output of this cmdlet in a
+    variable to use elsewhere in a script.
+  summary: ""
+- title: 'Example 2: Create an empty GUID'
+  code: |-
+    New-Guid -Empty
+
+    Guid
+    ----
+    00000000-0000-0000-0000-000000000000
+  description: ""
+  summary: ""
+- title: 'Example 3: Create a GUID from a string'
+  code: |-
+    New-Guid -InputObject "d61bbeca-0186-48fa-90e1-ff7aa5d33e2d"
+
+    Guid
+    ----
+    d61bbeca-0186-48fa-90e1-ff7aa5d33e2d
+  description: ""
+  summary: |+
+    This example converts a string that contains a GUID to a GUID object.
+
+- title: 'Example 4: Convert strings from the pipeline to GUIDs'
+  code: |-
+    $guidStrings = (
+    '11c43ee8-b9d3-4e51-b73f-bd9dda66e29c',
+    '0f8fad5bd9cb469fa16570867728950e',
+    '{0x01234567, 0x89ab, 0xcdef,{0x01,0x23,0x45,0x67,0x89,0xab,0xcd,0xef}}'
+    )
+    $guidStrings | New-Guid
+
+    Guid
+    ----
+    11c43ee8-b9d3-4e51-b73f-bd9dda66e29c
+    0f8fad5b-d9cb-469f-a165-70867728950e
+    01234567-89ab-cdef-0123-456789abcdef
+  description: ""
+  summary: |+
+    This examples converts strings from the pipeline to GUID objects.
+
+parameters:
+- type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+  name: Empty
+  description: |+
+    Indicates that this cmdlet creates an empty GUID. An empty GUID has all zeros in its string.
+
+  defaultValue: None
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+- type: <xref href="System.String" data-throw-if-not-resolved="False" />
+  name: InputObject
+  description: |+
+    This parameter accepts a string representing a GUID and converts it to a GUID object.
+
+  defaultValue: None
+  pipelineInput: true
+  position: Named
+  aliases: ""
+  parameterValueGroup: ""
+uid: Microsoft.PowerShell.Utility.New-Guid
+name: New-Guid
+description: |-
+  The `New-Guid` cmdlet creates a random globally unique identifier (GUID). If you need a unique ID in
+  a script, you can create a GUID, as needed.
+metadata:
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 08/28/2023
+  online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-7.4&WT.mc_id=ps-gethelp
+  schema: 2.0.0
+  title: New-Guid
