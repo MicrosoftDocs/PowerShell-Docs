@@ -37,11 +37,37 @@
         "docs-conceptual/learn/ps101/**.md": "mikefrobbins",
         "docs-conceptual/learn/remoting/jea/**.md": "rpsqrd"
       },
+      "feedback_system": {
+        "**/*": "OpenSource"
+      },
       "feedback_product_url": {
         "docs-conceptual/dsc/**/**.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332",
         "docs-conceptual/gallery/**/**.md": "https://github.com/powershell/powershellgallery/issues/new",
         "docs-conceptual/learn/remoting/jea/**.md": "https://github.com/powershell/jea/issues/new",
         "docs-conceptual/windows-powershell/**.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332"
+      },
+      "open_source_feedback_contributorGuideUrl": {
+        "**/*.md": "https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide",
+        "**/*.yml": "https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide"
+      },
+      "open_source_feedback_issueTemplateName": {
+        "**/*.md": "04-customer-feedback",
+        "**/*.yml": "04-customer-feedback"
+      },
+      "open_source_feedback_issueTitle": {
+        "**/**": "Customer feedback - "
+      },
+      "open_source_feedback_productName": {
+        "**/**": "PowerShell"
+      },
+      "open_source_feedback_productDescription": {
+        "**/**": "A cross-platform task automation solution made up of a command-line shell and a scripting language."
+      },
+      "open_source_feedback_productLogoLightUrl": {
+        "**/**": "https://learn.microsoft.com/media/logos/logo-powershell-core.svg"
+      },
+      "open_source_feedback_productLogoDarkUrl": {
+        "**/**": "https://learn.microsoft.com/media/logos/logo-powershell-core.svg"
       },
       "manager": {
         "**/**": "jasongroce"
