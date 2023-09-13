@@ -49,7 +49,7 @@ body:
       required: false
     attributes:
       label: Environment
-      description: >-
+      description: |
         Run the following command and paste the results in the textbox below.
 
         ```powershell
