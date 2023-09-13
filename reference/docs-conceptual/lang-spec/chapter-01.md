@@ -21,7 +21,7 @@ and minor errors have been corrected.
 
 ## 1. Introduction
 
-PowerShell is a command-line *shell* and scripting language, designed especially for system
+PowerShell is a command-line _shell_ and scripting language, designed especially for system
 administrators.
 
 Most shells operate by executing a command or utility in a new process, and presenting the results
@@ -31,11 +31,11 @@ supplement them. PowerShell is very different. Instead of processing text, the s
 objects. PowerShell also includes a large set of built-in commands with each having a consistent
 interface and these can work with user-written commands.
 
-An *object* is a data entity that has *properties* (i.e., characteristics) and *methods* (i.e.,
+An _object_ is a data entity that has _properties_ (i.e., characteristics) and _methods_ (i.e.,
 actions that can be performed on the object). All objects of the same type have the same base set of
-properties and methods, but each *instance* of an object can have different property values.
+properties and methods, but each _instance_ of an object can have different property values.
 
-A major advantage of using objects is that it is much easier to *pipeline* commands; that is, to
+A major advantage of using objects is that it is much easier to _pipeline_ commands; that is, to
 write the output of one command to another command as input. (In a traditional command-line
 environment, the text output from one command needs to be manipulated to meet the input format of
 another.)
@@ -47,20 +47,20 @@ those used in the C# programming language ([§C.][§C.]).
 There are four kinds of commands in PowerShell: scripts, functions and methods, cmdlets, and native
 commands.
 
-- A file of commands is called a *script*. By convention, a script has a filename extension of .ps1.
+- A file of commands is called a _script_. By convention, a script has a filename extension of .ps1.
   The top-most level of a PowerShell program is a script, which, in turn, can invoke other commands.
 
 - PowerShell supports modular programming via named procedures. A procedure written in PowerShell is
-  called a *function*, while an external procedure made available by the execution environment (and
-  typically written in some other language) is called a *method*.
+  called a _function_, while an external procedure made available by the execution environment (and
+  typically written in some other language) is called a _method_.
 
-- A *cmdlet* (pronounced "command-let") is a simple, single-task command-line tool. Although a
+- A _cmdlet_ (pronounced "command-let") is a simple, single-task command-line tool. Although a
   cmdlet can be used on its own, the full power of cmdlets is realized when they are used in
   combination to perform complex tasks.
 
-- A *native command* is a command that is built in to the host environment.
+- A _native command_ is a command that is built into the host environment.
 
-Each time the PowerShell runtime environment begins execution, it begins what is called a *session*.
+Each time the PowerShell runtime environment begins execution, it begins what is called a _session_.
 Commands then execute within the context of that session.
 
 This specification defines the PowerShell language, the built-in cmdlets, and the use of objects via
