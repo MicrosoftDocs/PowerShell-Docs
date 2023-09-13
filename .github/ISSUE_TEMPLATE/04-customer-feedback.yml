@@ -1,0 +1,58 @@
+name: Feedback from live site
+title: "[Documentation feedback] - "
+description: |
+  This template is intended to be used by the feedback control on the bottom of every page on the live site. The feedback control automatically fills in several fields for you. If you are not using the feedback control we recommend that you choose one of the other templates.
+labels:
+  - "needs-triage"
+body:
+  - type: input
+    id: pageUrl
+    validations:
+      required: true
+    attributes:
+      label: Page URL
+  - type: input
+    id: contentSourceUrl
+    validations:
+      required: true
+    attributes:
+      label: Content source URL
+  - type: input
+    id: documentId
+    validations:
+      required: true
+    attributes:
+      label: Document Id
+  - type: textarea
+    id: summary
+    validations:
+      required: true
+    attributes:
+      label: Summary
+      description: |
+        Write a short description of the problem or feedback.
+  - type: textarea
+    id: details
+    validations:
+      required: false
+    attributes:
+      label: Details
+      description: >-
+        If possible, please provide extended details that will add context and help the team update
+        the documentation. Additional details may not be useful for typos, grammar, formatting, etc.
+        For technical or factual errors, please include code snippets and output to show how the
+        documentation is incorrect.
+  - type: textarea
+    id: environment
+    validations:
+      required: false
+    attributes:
+      label: Environment
+      description: >-
+        Run the following command and paste the results in the textbox below.
+
+        ```powershell
+        $PSVersionTable
+        Get-Module
+        ```
+      render: console
