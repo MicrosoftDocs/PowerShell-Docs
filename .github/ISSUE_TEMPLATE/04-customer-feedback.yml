@@ -57,7 +57,7 @@ body:
         Get-Module
         ```
       render: console
-      placeholder: >-
+      placeholder: |
         PS> $PSVersionTable
 
         Name                           Value
