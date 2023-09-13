@@ -50,8 +50,7 @@ body:
     attributes:
       label: Environment
       description: |
-        Provide information about your environment. For example, copy the output from the
-        following commands (as appropriate) to show the configuration of your environment.
+        Provide information about your environment. For example, copy the output from the following commands (as appropriate) to show the configuration of your environment.
 
         ```powershell
         $PSVersionTable
