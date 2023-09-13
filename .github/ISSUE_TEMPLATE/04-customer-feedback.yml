@@ -50,10 +50,34 @@ body:
     attributes:
       label: Environment
       description: |
-        Run the following command and paste the results in the textbox below.
+        Provide information about your environment. For example, copy the output from the
+        following commands (as appropriate) to show the configuration of your environment.
 
         ```powershell
         $PSVersionTable
         Get-Module
         ```
       render: console
+      placeholder: >-
+        PS> $PSVersionTable
+
+        Name                           Value
+        ----                           -----
+        PSVersion                      7.4.0-preview.5
+        PSEdition                      Core
+        GitCommitId                    7.4.0-preview.5
+        OS                             Microsoft Windows 10.0.22621
+        Platform                       Win32NT
+        PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
+        PSRemotingProtocolVersion      2.3
+        SerializationVersion           1.1.0.1
+        WSManStackVersion              3.0
+
+        PS> Get-Module
+
+        ModuleType Version    PreRelease Name                                ExportedCommands
+        ---------- -------    ---------- ----                                ----------------
+        Manifest   7.0.0.0               Microsoft.PowerShell.Management     {Add-Content, Clear-Content, Clear-Item, Clear-It…
+        Binary     0.9.0      rc1        Microsoft.PowerShell.PSResourceGet  {Find-PSResource, Get-InstalledPSResource, Get-PS…
+        Manifest   7.0.0.0               Microsoft.PowerShell.Utility        {Add-Member, Add-Type, Clear-Variable, Compare-Ob…
+        Script     2.3.2      beta2      PSReadLine                          {Get-PSReadLineKeyHandler, Get-PSReadLineOption, …
