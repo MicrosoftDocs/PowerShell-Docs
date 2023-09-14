@@ -47,12 +47,10 @@
         "docs-conceptual/windows-powershell/**.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332"
       },
       "open_source_feedback_contributorGuideUrl": {
-        "**/*.md": "https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide",
-        "**/*.yml": "https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide"
+        "**/*": "https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide"
       },
       "open_source_feedback_issueTemplateName": {
-        "**/*.md": "04-customer-feedback",
-        "**/*.yml": "04-customer-feedback"
+        "**/*": "https://github.com/MicrosoftDocs/PowerShell-Docs/issues/new?template=04-customer-feedback.yml"
       },
       "open_source_feedback_issueTitle": {
         "**/**": "Customer feedback - "
