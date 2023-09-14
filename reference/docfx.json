@@ -49,7 +49,7 @@
       "open_source_feedback_contributorGuideUrl": {
         "**/*": "https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide"
       },
-      "open_source_feedback_issueTemplateName": {
+      "open_source_feedback_issueUrl": {
         "**/*": "https://github.com/MicrosoftDocs/PowerShell-Docs/issues/new?template=04-customer-feedback.yml"
       },
       "open_source_feedback_issueTitle": {
