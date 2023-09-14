@@ -19,11 +19,19 @@ body:
     attributes:
       label: Content source URL
   - type: input
-    id: documentId
+    id: author
+    validations:
+      required: true
+    attributes:
+      label: Author
+      description: GitHub Id of the author
+  - type: input
+    id: documentVersionIndependentId
     validations:
       required: true
     attributes:
       label: Document Id
+      description: Version independent document Id
   - type: textarea
     id: summary
     validations:
