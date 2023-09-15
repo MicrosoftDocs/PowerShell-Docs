@@ -15,7 +15,7 @@ process input objects. With non-terminating errors, the user is typically notifi
 but the cmdlet continues to process the next input object.
 
 Unless specified otherwise, all classes and methods mentioned in this document come from the
-[System.Management.Automation](./dotnet/api/system.management.automation) namespace.
+[System.Management.Automation](/dotnet/api/system.management.automation) namespace.
 
 ## Terminating and non-terminating errors
 
