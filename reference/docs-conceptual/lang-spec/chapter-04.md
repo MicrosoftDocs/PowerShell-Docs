@@ -837,14 +837,14 @@ This type encapsulates the state of a cmdlet. It has the following accessible me
 | Parameters          | Instance property (read-only)  | Implementation defined collection    | The parameters of the cmdlet.                                                                                                     |
 | ParameterSets       | Instance property (read-only)  | Implementation defined collection    | Information about the parameter sets associated with the cmdlet.                                                                  |
 | Verb                | Instance property (read-only)  | string                               | The verb name of the cmdlet.                                                                                                      |
-| PSSnapIn            | Instance property (read-only)  | Implementation defined               | Windows PowerShell: Information about the Windows Powershell snap-in that is used to register the cmdlet.                         |
+| PSSnapIn            | Instance property (read-only)  | Implementation defined               | Windows PowerShell: Information about the Windows PowerShell snap-in that is used to register the cmdlet.                         |
 
 In PowerShell, this type is `System.Management.Automation.CmdletInfo`.
 
 ### 4.5.9 External script description type
 
 This type encapsulates the state of an external script (one that is directly executable by
-PowerShell, but is not built in). It has the following accessible members:
+PowerShell, but is not built-in). It has the following accessible members:
 
 |    **Member**    |        **Member Kind**        |               **Type**               |                                 **Purpose**                                  |
 | ---------------- | ----------------------------- | ------------------------------------ | ---------------------------------------------------------------------------- |

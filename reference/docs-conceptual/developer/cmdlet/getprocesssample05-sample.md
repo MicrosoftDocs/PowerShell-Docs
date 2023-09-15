@@ -10,31 +10,34 @@ This sample shows a complete version of the Get-Proc cmdlet.
 
 ## How to build the sample using Visual Studio.
 
-1. Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.
+1. Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples
+   directory.
 
-   With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.
+   With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder. The
+   default location is
+   `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05`.
 
-2. Double-click the icon for the solution (.sln) file. This opens the sample project in Visual Studio.
+1. Double-click the icon for the solution (.sln) file. This opens the sample project in Visual
+   Studio.
 
-3. In the **Build** menu, select **Build Solution**.
-
-   The library for the sample will be built in the default \bin or \bin\debug directories.
+1. In the **Build** menu, select **Build Solution** to build the library for the sample in the
+   default `\bin` or `\bin\debug` folders.
 
 ### How to run the sample
 
 1. Create the following module folder:
 
-   `[user]/documents/windowspowershell/modules/GetProcessSample05`
+   `[user]\Documents\WindowsPowerShell\Modules\GetProcessSample05`
 
-2. Copy the sample assembly to the module folder.
+1. Copy the sample assembly to the module folder.
 
-3. Start Windows PowerShell.
+1. Start Windows PowerShell.
 
-4. Run the following command to load the assembly into Windows PowerShell:
+1. Run the following command to load the assembly into Windows PowerShell:
 
-   `Import-module getprossessample05`
+   `Import-Module getprossessample05`
 
-5. Run the following command to run the cmdlet:
+1. Run the following command to run the cmdlet:
 
    `get-proc`
 
@@ -52,7 +55,8 @@ This sample demonstrates the following.
 
 - Specifying positions for parameters.
 
-- Specifying that parameters can take input from the pipeline. The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.
+- Specifying that parameters can take input from the pipeline. The input can be taken from an object
+  or a value from a property of an object whose property name is the same as the parameter name.
 
 - Declaring a validation attribute for the parameter input.
 
@@ -204,7 +208,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
       /// <summary>
       /// Retrieves the list of all processes matching the ProcessName
-      /// parameter and generates a nonterminating error for each
+      /// parameter and generates a non-terminating error for each
       /// specified process name which is not found even though the name
       /// contains no wildcards.
       /// </summary>
@@ -361,7 +365,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
       /// <summary>
       /// Retrieves the list of all processes matching the Id
-      /// parameter and generates a nonterminating error for
+      /// parameter and generates a non-terminating error for
       /// each specified process identifier which is not found.
       /// </summary>
       /// <returns>
@@ -470,4 +474,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## See Also
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

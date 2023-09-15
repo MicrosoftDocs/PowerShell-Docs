@@ -58,7 +58,7 @@ commands.
   cmdlet can be used on its own, the full power of cmdlets is realized when they are used in
   combination to perform complex tasks.
 
-- A *native command* is a command that is built in to the host environment.
+- A *native command* is part of the host environment.
 
 Each time the PowerShell runtime environment begins execution, it begins what is called a *session*.
 Commands then execute within the context of that session.

@@ -6,35 +6,40 @@ title: StopProcessSample02 Sample
 ---
 # StopProcessSample02 Sample
 
-This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer. This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.
+This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and
+warning (WriteWarning) messages while stopping processes on the local computer. This cmdlet is
+similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.
 
-### How to build the sample by using Visual Studio.
+## How to build the sample by using Visual Studio
 
-1. Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.
+1. Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the
+   Samples directory.
 
-    With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.
+    With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder. The
+    default location is
+    `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02`.
 
-2. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
+1. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft
+   Visual Studio.
 
-3. In the **Build** menu, select **Build Solution**.
-
-    The library for the sample will be built in the default \bin or \bin\debug folders.
+1. In the **Build** menu, select **Build Solution** to build the library for the sample in the
+   default `\bin` or `\bin\debug` folders.
 
 ### How to run the sample
 
 1. Create the following module folder:
 
-    `[user]/documents/windowspowershell/modules/StopProcessSample02`
+    `[user]\Documents\WindowsPowerShell\Modules\StopProcessSample02`
 
-2. Copy the sample assembly to the module folder.
+1. Copy the sample assembly to the module folder.
 
-3. Start Windows PowerShell.
+1. Start Windows PowerShell.
 
-4. Run the following command to load the assembly into Windows PowerShell:
+1. Run the following command to load the assembly into Windows PowerShell:
 
-    `import-module stopprossessample02`
+    `Import-Module stopprossessample02`
 
-5. Run the following command to run the cmdlet:
+1. Run the following command to run the cmdlet:
 
     `stop-proc`
 
@@ -50,15 +55,19 @@ This sample demonstrates the following.
 
 - Declaring a cmdlet parameters by using the Parameter attribute.
 
-- Writing verbose messages. For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+- Writing verbose messages. For more information about the method used to write verbose messages,
+  see [System.Management.Automation.Cmdlet.WriteVerbose][1].
 
-- Writing error messages. For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).
+- Writing error messages. For more information about the method used to write error messages, see
+  [System.Management.Automation.Cmdlet.WriteError][2].
 
-- Writing warning messages. For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).
+- Writing warning messages. For more information about the method used to write warning messages,
+  see [System.Management.Automation.Cmdlet.WriteWarning][3].
 
 ## Example
 
-This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.
+This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`,
+`WriteVerbose`, and `WriteWarning` methods.
 
 ```csharp
 using System;
@@ -143,7 +152,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
                // For every process name passed to the cmdlet, get the associated
                // processes.
-               // Write a nonterminating error for failure to retrieve
+               // Write a non-terminating error for failure to retrieve
                // a process.
 
                // Write a user-friendly verbose message to the pipeline. These
@@ -245,7 +254,7 @@ namespace Microsoft.Samples.PowerShell.Commands
                            (e is InvalidOperationException))
                        {
                            // This process could not be stopped so write
-                           // a nonterminating error.
+                           // a non-terminating error.
                            WriteError(new ErrorRecord(
                                             e,
                                             "CouldNotStopProcess",
@@ -301,4 +310,8 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## See Also
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+
+[1]: /dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose
+[2]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
+[3]: /dotnet/api/System.Management.Automation.Cmdlet.WriteWarning
