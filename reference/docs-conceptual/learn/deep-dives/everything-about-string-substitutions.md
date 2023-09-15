@@ -129,7 +129,7 @@ This is not splatting because I'm passing the whole array in, but the idea is si
 ## Advanced formatting
 
 I intentionally called these out as coming from .NET because there are lots of formatting options
-already well [documented][01] on it. There are built in ways to format various data types.
+already well [documented][01] on it. There are built-in ways to format various data types.
 
 ```powershell
 "{0:yyyyMMdd}" -f (Get-Date)

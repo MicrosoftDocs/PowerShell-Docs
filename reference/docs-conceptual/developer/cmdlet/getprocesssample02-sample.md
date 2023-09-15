@@ -6,33 +6,37 @@ title: GetProcessSample02 Sample
 ---
 # GetProcessSample02 Sample
 
-This sample shows how to write a cmdlet that retrieves the processes on the local computer. It provides a `Name` parameter that can be used to specify the processes to be retrieved. This cmdlet is a simplified version of the `Get-Process` cmdlet provided by Windows PowerShell 2.0.
+This sample shows how to write a cmdlet that retrieves the processes on the local computer. It
+provides a `Name` parameter that can be used to specify the processes to be retrieved. This cmdlet
+is a simplified version of the `Get-Process` cmdlet provided by Windows PowerShell 2.0.
 
-## How to build the sample using Visual Studio.
+## How to build the sample using Visual Studio
 
-1. With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample02 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02.
+1. With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample02 folder. The
+   default location is
+   `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02`.
 
-2. Double-click the icon for the solution (.sln) file. This opens the sample project in Visual Studio.
+1. Double-click the icon for the solution (.sln) file. This opens the sample project in Visual
+   Studio.
 
-3. In the **Build** menu, select **Build Solution**.
+1. In the **Build** menu, select **Build Solution** to build the library for the sample in the
+   default `\bin` or `\bin\debug` folders.
 
-    The library for the sample will be built in the default \bin or \bin\debug folders.
-
-### How to run the sample
+## How to run the sample
 
 1. Create the following module folder:
 
-    `[user]/documents/windowspowershell/modules/GetProcessSample02`
+    `[user]\Documents\WindowsPowerShell\Modules\GetProcessSample02`
 
-2. Copy the sample assembly to the module folder.
+1. Copy the sample assembly to the module folder.
 
-3. Start Windows PowerShell.
+1. Start Windows PowerShell.
 
-4. Run the following command to load the assembly into Windows PowerShell:
+1. Run the following command to load the assembly into Windows PowerShell:
 
-    `import-module getprossessample02`
+    `Import-Module getprossessample02`
 
-5. Run the following command to run the cmdlet:
+1. Run the following command to run the cmdlet:
 
     `get-proc`
 
@@ -126,4 +130,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## See Also
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

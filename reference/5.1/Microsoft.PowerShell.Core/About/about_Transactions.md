@@ -63,7 +63,7 @@ get-help use-transaction -detailed
 ## TRANSACTION-ENABLED ELEMENTS
 
 To participate in a transaction, both the cmdlet and the provider must support
-transactions. This feature is built in to the objects that are affected by the
+transactions. This feature is built into the objects that are affected by the
 transaction.
 
 The PowerShell Registry provider supports transactions in Windows Vista. The
