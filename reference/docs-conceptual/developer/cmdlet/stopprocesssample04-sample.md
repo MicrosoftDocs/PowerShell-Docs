@@ -6,33 +6,37 @@ title: StopProcessSample04 Sample
 ---
 # StopProcessSample04 Sample
 
-This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object. This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.
+This sample shows how to write a cmdlet that declares parameter sets, specifies the default
+parameter set, and can accept an input object. This cmdlet is similar to the `Stop-Process` cmdlet
+provided by Windows PowerShell 2.0.
 
-### How to build the sample by using Visual Studio.
+## How to build the sample by using Visual Studio
 
-1. With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.
+1. With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder. The
+   default location is
+   `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04`.
 
-2. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft Visual Studio.
+1. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft
+   Visual Studio.
 
-3. In the **Build** menu, select **Build Solution**.
-
-    The library for the sample will be built in the default \bin or \bin\debug folders.
+1. In the **Build** menu, select **Build Solution** to build the library for the sample in the
+   default `\bin` or `\bin\debug` folders.
 
 ### How to run the sample
 
 1. Create the following module folder:
 
-    `[user]/documents/windowspowershell/modules/StopProcessSample04`
+    `[user]\Documents\WindowsPowerShell\Modules\StopProcessSample04`
 
-2. Copy the sample assembly to the module folder.
+1. Copy the sample assembly to the module folder.
 
-3. Start Windows PowerShell.
+1. Start Windows PowerShell.
 
-4. Run the following command to load the assembly into Windows PowerShell:
+1. Run the following command to load the assembly into Windows PowerShell:
 
-    `import-module stopprossessample04`
+    `Import-Module stopprossessample04`
 
-5. Run the following command to run the cmdlet:
+1. Run the following command to run the cmdlet:
 
     `stop-proc`
 
@@ -56,9 +60,11 @@ This sample demonstrates the following.
 
 ## Example
 
-The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.
+The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets,
+specifies the default parameter set, and can accept an input object.
 
-This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.
+This sample shows the input object, how to declare parameter sets, and how to specify the default
+parameter set to use.
 
 ```csharp
 using System;
@@ -388,7 +394,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
            // If a process name is passed to the cmdlet, get
            // the associated processes.
-           // Write a nonterminating error for failure to
+           // Write a non-terminating error for failure to
            // retrieve a process.
            foreach (string name in processNames)
            {
@@ -481,4 +487,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## See Also
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

@@ -75,7 +75,7 @@
     Because neither **RelativePathWidth** nor **VersionWidth** were passed to the cmdlet, it
     calculates the required column withs dynamically.
     
-    The final command displays the string built in the third command.
+    The final command displays the string the third command has built.
 #>
 function Add-VersionedContentTable {
     [CmdletBinding()]

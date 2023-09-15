@@ -9,46 +9,44 @@ title: Events01 Sample
 This sample shows how to create a cmdlet that allows the user to register for events that are raised
 by [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher). With this cmdlet, users
 can register an action to execute when a file is created under a specific directory. This sample
-derives from the
-[Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)
-base class.
+derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase][1] base class.
 
-## How to build the sample by using Visual Studio.
+## How to build the sample by using Visual Studio
 
 1. With the Windows PowerShell 2.0 SDK installed, navigate to the Events01 folder. The default
    location is
    `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft
+1. Double-click the icon for the solution (.sln) file. This opens the sample project in Microsoft
    Visual Studio.
 
-3. In the **Build** menu, select **Build Solution**. The library for the sample will be built in the
+1. In the **Build** menu, select **Build Solution** to build the library for the sample in the
    default `\bin` or `\bin\debug` folders.
 
-### How to run the sample
+## How to run the sample
 
 1. Create the following module folder:
 
-    `[user]/documents/windowspowershell/modules/events01`
+    `[user]\Documents\WindowsPowerShell\Modules\events01`
 
-2. Copy the library file for the sample to the module folder.
+1. Copy the library file for the sample to the module folder.
 
-3. Start Windows PowerShell.
+1. Start Windows PowerShell.
 
-4. Run the following command to load the cmdlet into Windows PowerShell:
+1. Run the following command to load the cmdlet into Windows PowerShell:
 
     ```powershell
-    import-module events01
+    Import-Module events01
     ```
 
-5. Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a
+1. Use the Register-FileSystemEvent cmdlet to register an action that will write a message when a
    file is created under the TEMP directory.
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
     ```
 
-6. Create a file under the TEMP directory and note that the action is executed (the message is
+1. Create a file under the TEMP directory and note that the action is executed (the message is
    displayed).
 
 This is a sample output that results by following these steps.
@@ -78,13 +76,11 @@ This sample demonstrates the following.
 
 ### How to write a cmdlet for event registration
 
-The cmdlet derives from the
-[Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)
-class, which provides support for parameters common to the `Register-*Event` cmdlets. Cmdlets that
-are derived from
-[Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)
-need only to define their particular parameters and override the `GetSourceObject` and
-`GetSourceObjectEventName` abstract methods.
+The cmdlet derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase][1] class,
+which provides support for parameters common to the `Register-*Event` cmdlets. Cmdlets that are
+derived from [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase][1] need only to define
+their particular parameters and override the `GetSourceObject` and `GetSourceObjectEventName`
+abstract methods.
 
 ## Example
 
@@ -190,4 +186,6 @@ namespace Sample
 
 ## See Also
 
-[Writing a Windows PowerShell Cmdlet](writing-a-windows-powershell-cmdlet.md)
+- [Writing a Windows PowerShell Cmdlet](writing-a-windows-powershell-cmdlet.md)
+
+[1]: /dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase

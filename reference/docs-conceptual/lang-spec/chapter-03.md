@@ -53,7 +53,7 @@ command.
 The provider Alias is a flat namespace that contains only objects that represent the aliases. The
 variables have no child items.
 
-Some aliases are built in to PowerShell.
+PowerShell comes with a set of built-in aliases.
 
 The following cmdlets deal with aliases:
 

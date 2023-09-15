@@ -6,33 +6,37 @@ title: GetProcessSample04 Sample
 ---
 # GetProcessSample04 Sample
 
-This sample shows how to implement a cmdlet that retrieves the processes on the local computer. It generates a nonterminating error if an error occurs while retrieving a process. This cmdlet is a simplified version of the `Get-Process` cmdlet provided by Windows PowerShell 2.0.
+This sample shows how to implement a cmdlet that retrieves the processes on the local computer. It
+generates a non-terminating error if an error occurs while retrieving a process. This cmdlet is a
+simplified version of the `Get-Process` cmdlet provided by Windows PowerShell 2.0.
 
-## How to build the sample using Visual Studio.
+## How to build the sample using Visual Studio
 
-1. With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample04 folder. The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample04.
+1. With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample04 folder. The
+   default location is
+   `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample04`.
 
-2. Double-click the icon for the solution (.sln) file. This opens the sample project in Visual Studio.
+1. Double-click the icon for the solution (.sln) file. This opens the sample project in Visual
+   Studio.
 
-3. In the **Build** menu, select **Build Solution**.
-
-    The library for the sample will be built in the default \bin or \bin\debug folders.
+1. In the **Build** menu, select **Build Solution** to build the library for the sample in the
+   default `\bin` or `\bin\debug` folders.
 
 ### How to run the sample
 
 1. Create the following module folder:
 
-    `[user]/documents/windowspowershell/modules/GetProcessSample04`
+    `[user]\Documents\WindowsPowerShell\Modules\GetProcessSample04`
 
-2. Copy the sample assembly to the module folder.
+1. Copy the sample assembly to the module folder.
 
-3. Start Windows PowerShell.
+1. Start Windows PowerShell.
 
-4. Run the following command to load the assembly into Windows PowerShell:
+1. Run the following command to load the assembly into Windows PowerShell:
 
-    `Import-module getprossessample04`
+    `Import-Module getprossessample04`
 
-5. Run the following command to run the cmdlet:
+1. Run the following command to run the cmdlet:
 
     `get-proc`
 
@@ -50,15 +54,17 @@ This sample demonstrates the following.
 
 - Specifying the position of the parameter.
 
-- Specifying that the parameter takes input from the pipeline. The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.
+- Specifying that the parameter takes input from the pipeline. The input can be taken from an object
+  or a value from a property of an object whose property name is the same as the parameter name.
 
 - Declaring a validation attribute for the parameter input.
 
-- Trapping a nonterminating error and writing an error message to the error stream.
+- Trapping a non-terminating error and writing an error message to the error stream.
 
 ## Example
 
-This sample shows how to create a cmdlet that handles nonterminating errors and writes error messages to the error stream.
+This sample shows how to create a cmdlet that handles non-terminating errors and writes error
+messages to the error stream.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -118,7 +124,7 @@ namespace Microsoft.Samples.PowerShell.Commands
           {
               // If process names are passed to the cmdlet, get and write
               // the associated processes.
-              // If a nonterminating error occurs while retrieving processes,
+              // If a non-terminating error occurs while retrieving processes,
               // call the WriteError method to send an error record to the
               // error stream.
               foreach (string name in this.processNames)
@@ -153,4 +159,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## See Also
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+- [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
