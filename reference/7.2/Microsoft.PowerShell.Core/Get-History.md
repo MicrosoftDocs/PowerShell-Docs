@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/01/2022
+ms.date: 09/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-History
@@ -62,7 +62,7 @@ saves it in the History.csv file. The file includes the data that is displayed w
 history as a list. This includes the status and start and end times of the command.
 
 ```powershell
-Get-History -ID 7 -Count 5 | Export-Csv History.csv
+Get-History -ID 7 -Count 5 | Export-Csv -Path History.csv
 ```
 
 ### Example 4: Display the most recent command
