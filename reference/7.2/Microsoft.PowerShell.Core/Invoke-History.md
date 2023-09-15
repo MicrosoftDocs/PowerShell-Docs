@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 09/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-History
@@ -69,7 +69,7 @@ This example runs commands 16 through 24. Because you can list only one **Id** v
 uses the `ForEach-Object` cmdlet to run the `Invoke-History` command one time for each **Id** value.
 
 ```powershell
-16..24 | ForEach {Invoke-History -Id $_ }
+16..24 | ForEach-Object {Invoke-History -Id $_ }
 ```
 
 ### Example 5
@@ -80,7 +80,7 @@ the command uses the `ForEach-Object` cmdlet to run the `Invoke-History` command
 **Id** value.
 
 ```powershell
-Get-History -Id 255 -Count 7 | ForEach {Invoke-History -Id $_.Id}
+Get-History -Id 255 -Count 7 | ForEach-Object {Invoke-History -Id $_.Id}
 ```
 
 ## PARAMETERS

@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 09/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/add-history?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-History
@@ -46,8 +46,8 @@ This example add the commands typed in one PowerShell session to the history of 
 PowerShell session.
 
 ```powershell
-Get-History | Export-Csv c:\testing\history.csv -IncludeTypeInformation
-Import-Csv c:\testing\history.csv | Add-History
+Get-History | Export-Csv -Path C:\testing\history.csv -IncludeTypeInformation
+Import-Csv -Path C:\testing\history.csv | Add-History
 ```
 
 The first command gets objects representing the commands in the history and exports them to the
@@ -64,7 +64,7 @@ This example imports commands from the `History.xml` file, adds them to the curr
 and then runs the commands in the combined history.
 
 ```powershell
-Import-Clixml c:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
+Import-Clixml -Path C:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
 ```
 
 The first command uses the `Import-Clixml` cmdlet to import a command history that was exported to
@@ -94,7 +94,7 @@ pipeline with the **InputObject** parameter of `Add-History`.
 This example add the commands in the `History.csv` file to the current session history.
 
 ```powershell
-$a = Import-Csv c:\testing\history.csv
+$a = Import-Csv -Path C:\testing\history.csv
 Add-History -InputObject $a -PassThru
 ```
 
@@ -111,7 +111,7 @@ current session history. It uses the **InputObject** parameter to specify the `$
 This example adds the commands in the `history.xml` file to the current session history.
 
 ```powershell
-Add-History -InputObject (Import-Clixml c:\temp\history.xml)
+Add-History -InputObject (Import-Clixml -Path C:\temp\history.xml)
 ```
 
 The **InputObject** parameter passes the results of the command in parentheses to the `Add-History`
