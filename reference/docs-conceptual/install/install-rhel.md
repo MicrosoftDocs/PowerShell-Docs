@@ -65,8 +65,8 @@ Starting with version 7.2, PowerShell is distributed as a universal RPM package.
 of PowerShell had separate package for each OS. Download the RPM package you need onto your CentOS
 machine.
 
-- PowerShell 7.3.6 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-1.rh.x86_64.rpm`
-- PowerShell 7.2.13- `https://github.com/PowerShell/PowerShell/releases/download/v7.2.13/powershell-lts-7.2.13-1.rh.x86_64.rpm`
+- PowerShell 7.3.7 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/powershell-7.3.7-1.rh.x86_64.rpm`
+- PowerShell 7.2.14- `https://github.com/PowerShell/PowerShell/releases/download/v7.2.14/powershell-lts-7.2.14-1.rh.x86_64.rpm`
 
 Use the following shell command to install the latest RPM package on the target version of RHEL.
 Change the URL in the following shell commands to match the version you need.
@@ -74,19 +74,19 @@ Change the URL in the following shell commands to match the version you need.
 On RHEL 9:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/powershell-7.3.7-1.rh.x86_64.rpm
 ```
 
 On RHEL 8:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/powershell-7.3.7-1.rh.x86_64.rpm
 ```
 
 On RHEL 7:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.6/powershell-7.3.6-1.rh.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/powershell-7.3.7-1.rh.x86_64.rpm
 ```
 
 ## Uninstallation - Red Hat Enterprise Linux (RHEL) 7
