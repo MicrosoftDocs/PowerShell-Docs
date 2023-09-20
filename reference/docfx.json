@@ -58,6 +58,9 @@
       "open_source_feedback_productName": {
         "**/**": "PowerShell"
       },
+      "open_source_feedback_issueLabels": {
+        "**/**": "needs-triage,Pri2"
+      },
       "open_source_feedback_productDescription": {
         "**/**": "A cross-platform task automation solution made up of a command-line shell and a scripting language."
       },
