@@ -422,7 +422,7 @@ other values.
 if ( Get-Process Notepad* )
 ```
 
-It evaluates to `$true` if there's a returned process and `$false` if there'sn'thing. It's
+It evaluates to `$true` if there's a returned process and `$false` if there isn't. It's
 perfectly valid to use pipeline expressions or other PowerShell statements like this:
 
 ```powershell
