@@ -2,7 +2,7 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 12/12/2022
+ms.date: 09/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/remove-wsmaninstance?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-WSManInstance
@@ -19,9 +19,9 @@ Deletes a management resource instance.
 
 ```
 Remove-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-OptionSet <Hashtable>]
- [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>] [-UseSSL]
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
- [<CommonParameters>]
+ [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>]
+ [-UseSSL] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
 ### URI
@@ -36,17 +36,20 @@ Remove-WSManInstance [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-ResourceU
 
 > **This cmdlet is only available on the Windows platform.**
 
-The `Remove-WSManInstance` cmdlet deletes an instance of a management resource that is specified in
+The `Remove-WSManInstance` cmdlet deletes an instance of a management resource that's specified in
 the **ResourceURI** and **SelectorSet** parameters.
 
-This cmdlet uses the WinRM connection/transport layer to delete the management resource instance.
+This cmdlet uses the WinRM connection transport layer to delete the management resource instance.
 
 ## EXAMPLES
 
 ### Example 1: Delete a listener
 
 ```powershell
-Remove-WSManInstance -ResourceUri winrm/config/Listener -SelectorSet Address=test.fabrikam.com;Transport=http
+Remove-WSManInstance -ResourceUri winrm/config/Listener -SelectorSet @{
+    Address   = 'test.fabrikam.com'
+    Transport = 'http'
+}
 ```
 
 This command deletes the WS-Management HTTP listener on a computer.
@@ -124,10 +127,10 @@ Specifies the digital public key certificate (X509) of a user account that has p
 this action. Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication. They can be mapped only to local
-user accounts; they do not work with domain accounts.
+user accounts. Certificates don't work with domain accounts.
 
-To get a certificate thumbprint, use the Get-Item or Get-ChildItem command in the Windows PowerShell
-Cert: drive.
+To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the PowerShell
+`Cert:` drive.
 
 ```yaml
 Type: System.String

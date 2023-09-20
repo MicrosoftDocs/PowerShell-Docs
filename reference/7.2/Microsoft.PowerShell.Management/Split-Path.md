@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/31/2023
+ms.date: 09/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/split-path?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Split-Path
@@ -72,7 +72,7 @@ Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>] [<Com
 ## DESCRIPTION
 
 The `Split-Path` cmdlet returns only the specified part of a path, such as the parent folder, a
-subfolder, or a file name. It can also get items that are referenced by the split path and tell
+subfolder, or a filename. It can also get items that are referenced by the split path and tell
 whether the path is relative or absolute.
 
 You can use this cmdlet to get or submit only a selected part of a path.
@@ -91,7 +91,7 @@ HKCU:
 
 This command returns only the qualifier of the path. The qualifier is the drive.
 
-### Example 2: Display file names
+### Example 2: Display filenames
 
 ```powershell
 Split-Path -Path "C:\Test\Logs\*.log" -Leaf -Resolve
@@ -104,25 +104,25 @@ Pass2.log
 ```
 
 This command displays the files that are referenced by the split path. Because this path is split to
-the last item, also known as the leaf, the command displays only the file names.
+the last item, also known as the leaf, the command displays only the filenames.
 
 The **Resolve** parameter tells `Split-Path` to display the items that the split path references,
 instead of displaying the split path.
 
-Like all `Split-Path` commands, this command returns strings. It does not return **FileInfo**
-objects that represent the files.
+Like all `Split-Path` commands, this command returns strings. It doesn't return **FileInfo** objects
+that represent the files.
 
 ### Example 3: Get the parent container
 
 ```powershell
-Split-Path -Path "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
+Split-Path -Parent "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
 ```
 
 ```Output
 C:\WINDOWS\system32\WindowsPowerShell\V1.0
 ```
 
-This command returns only the parent containers of the path. Because it does not include any
+This command returns only the parent containers of the path. Because it doesn't include any
 parameters to specify the split, `Split-Path` uses the split location default, which is **Parent**.
 
 ### Example 4: Determines whether a path is absolute
@@ -152,7 +152,7 @@ built-in `$Profile` variable. The **Parent** parameter is the default split loca
 Therefore, you can omit it from the command. The parentheses direct PowerShell to run the command
 first. This is a useful way to move to a folder that has a long path name.
 
-### Example 6: Split a path by using the pipeline
+### Example 6: Split a path using the pipeline
 
 ```powershell
 'C:\Documents and Settings\User01\My Documents\My Pictures' | Split-Path
@@ -163,15 +163,16 @@ C:\Documents and Settings\User01\My Documents
 ```
 
 This command uses a pipeline operator (`|`) to send a path to `Split-Path`. The path is enclosed in
-quotation marks to indicate that it is a single token.
+quotation marks to indicate that it's a single token.
 
 ## PARAMETERS
 
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell. To impersonate another
-> user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
+> This parameter isn't supported by any providers installed with PowerShell. To impersonate another
+> user, or elevate your credentials when running this cmdlet, use
+> [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -206,8 +207,8 @@ Accept wildcard characters: False
 
 ### -IsAbsolute
 
-Indicates that this cmdlet returns `$True` if the path is absolute and `$False` if it is relative. An
-absolute path has a length greater than zero and does not use a dot (`.`) to indicate the current
+Indicates that this cmdlet returns `$True` if the path is absolute and `$False` if it's relative. An
+absolute path has a length greater than zero and doesn't use a dot (`.`) to indicate the current
 path.
 
 ```yaml
@@ -382,7 +383,7 @@ You can pipe a string that contains a path to this cmdlet.
 ### System.String
 
 This cmdlet returns text strings. When you specify the **Resolve** parameter, it returns a
-string that describes the location of the items. It does not return objects that represent the
+string that describes the location of the items. It doesn't return objects that represent the
 items, such as a **FileInfo** or **RegistryKey** object.
 
 ### System.Boolean
@@ -395,7 +396,7 @@ When you specify the **IsAbsolute** parameter, this cmdlet returns a **Boolean**
   and **NoQualifier**) are exclusive. You can use only one in each command.
 
 - The cmdlets that contain the **Path** noun (the **Path** cmdlets) work with path names and return
-  the names in a concise format that all PowerShell providers can interpret. They are designed for
+  the names in a concise format that all PowerShell providers can interpret. They're designed for
   use in programs and scripts where you want to display all or part of a path name in a particular
   format. Use them in the way that you would use **Dirname**, **Normpath**, **Realpath**, **Join**,
   or other path manipulators.

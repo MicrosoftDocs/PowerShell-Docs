@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 07/17/2023
+ms.date: 09/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Environment Variables
@@ -198,6 +198,12 @@ Foo                            Bar
 
 VERBOSE: Performing the operation "Remove Item" on target "Item: Foo2".
 VERBOSE: Performing the operation "Remove Item" on target "Item: Foo".
+```
+
+Use the `Get-ChildItem` cmdlet to see a full list of environment variables:
+
+```powershell
+Get-ChildItem Env:
 ```
 
 For more information on using the **Environment** provider to manage
