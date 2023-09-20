@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 09/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
@@ -202,6 +202,24 @@ The **SecurityDescriptor** is stored in the `$SDDL` variable. `Set-Service` uses
 parameter to specify the **BITS** service. The **SecurityDescriptorSddl** parameter uses
 `$SDDL` to change the **SecurityDescriptor** for the **BITS** service.
 
+### Example 10: Set the startup type for multiple services
+
+The `Set-Service` cmdlet only accepts one service name at a time. However, you can pipe multiple
+services to `Set-Service` to change the configuration of multiple services.
+
+```powershell
+Get-Service SQLWriter,spooler |
+    Set-Service -StartupType Automatic -PassThru |
+    Select-Object Name, StartType
+```
+
+```Output
+Name      StartType
+----      ---------
+spooler   Automatic
+SQLWriter Automatic
+```
+
 ## PARAMETERS
 
 ### -Credential
@@ -341,7 +359,10 @@ Accept wildcard characters: False
 
 ### -SecurityDescriptorSddl
 
-Specifies the **SecurityDescriptor** for the service in **Sddl** format.
+Specifies the **SecurityDescriptor** for the service in **Sddl** format. The account calling
+`Set-Service` with this parameter must have the WRITE_DAC and WRITE_OWNER permissions. For more
+information, see
+[Service security and access rights](/windows/win32/services/service-security-and-access-rights).
 
 ```yaml
 Type: System.String
@@ -443,7 +464,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

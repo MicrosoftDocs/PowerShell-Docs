@@ -151,6 +151,23 @@ Set-Service -InputObject $S -Status Stopped
 in the variable, `$S`. `Set-Service` uses the **InputObject** parameter and specifies the object
 stored `$S`. The **Status** parameter sets the service to **Stopped**.
 
+### Example 7: Set the startup type for multiple services
+
+The `Set-Service` cmdlet only accepts one service name at a time. However, you can pipe multiple
+services to `Set-Service` to change the configuration of multiple services.
+
+```powershell
+Get-Service SQLWriter,spooler |
+    Set-Service -StartupType Automatic -PassThru |
+    Select-Object Name, StartType
+```
+
+```Output
+Name      StartType
+----      ---------
+spooler   Automatic
+SQLWriter Automatic
+```
 ## PARAMETERS
 
 ### -ComputerName
@@ -351,7 +368,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
