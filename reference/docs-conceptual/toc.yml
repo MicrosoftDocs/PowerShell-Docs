@@ -24,8 +24,6 @@ items:
             href: install/install-alpine.md
           - name: Installing on Debian
             href: install/install-debian.md
-          - name: Installing on Raspberry Pi OS
-            href: install/install-raspbian.md
           - name: Installing on RHEL
             href: install/install-rhel.md
           - name: Installing on Ubuntu
