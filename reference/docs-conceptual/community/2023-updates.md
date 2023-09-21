@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 09/08/2023
+ms.date: 09/21/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -31,6 +31,9 @@ Updated Content
   - [What's New in PowerShell 7.4 (preview)](../whats-new/what-s-new-in-powershell-74.md)
   - New features for 10 cmdlets
 
+- Updated support status and installation notes for Raspberry Pi
+  - [Community support for PowerShell on Linux - PowerShell](/powershell/scripting/install/community-support#raspberry-pi-os)
+
 ### Top Community Contributors
 
 GitHub stats
@@ -42,11 +45,12 @@ GitHub stats
 The following people contributed to PowerShell docs this month by submitting pull requests or
 filing issues. Thank you!
 
-| GitHub Id | PRs merged | Issues opened |
-| --------- | :--------: | :-----------: |
-| ehmiiz    |     1      |       1       |
-| deadlydog |     1      |               |
-| crisman   |     1      |               |
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| ehmiiz          |     1      |       1       |
+| crisman         |     1      |               |
+| deadlydog       |     1      |               |
+| JamesDBartlett3 |     1      |               |
 
 ## 2023-Jul
 
