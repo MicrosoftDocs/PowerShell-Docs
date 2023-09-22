@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/12/2022
+ms.date: 09/22/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-job?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Job
@@ -88,8 +88,14 @@ the documentation of the custom job type feature.
 This command gets all background jobs started in the current session. It does not include jobs
 created in other sessions, even if the jobs run on the local computer.
 
+```powershell
+Get-Job
 ```
-PS C:\> Get-Job
+
+```Output
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+1      Job1            BackgroundJob   Completed     True            localhost             $env:COMPUTERNAME 
 ```
 
 ### Example 2: Stop a job by using an instance ID
@@ -105,16 +111,20 @@ displays the value of the `$ID` variable. The fourth command uses `Stop-Job` cmd
 It uses the **InstanceId** parameter to identify the job and `$ID` variable to represent the
 instance ID of the job.
 
+```powershell
+$j = Get-Job -Name Job1
+$ID = $j.InstanceID
+$ID
 ```
-PS C:\> $j = Get-Job -Name Job1
-PS C:\> $ID = $j.InstanceID
-PS C:\> $ID
 
+```Output
 Guid
 ----
 03c3232e-1d23-453b-a6f4-ed73c9e29d55
+```
 
-PS C:\> Stop-Job -InstanceId $ID
+```powershell
+Stop-Job -InstanceId $ID
 ```
 
 ### Example 3: Get jobs that include a specific command
@@ -123,18 +133,29 @@ This command gets the jobs on the system that include a `Get-Process` command. T
 **Command** parameter of `Get-Job` to limit the jobs retrieved. The command uses wildcard characters
 (`*`) to get jobs that include a `Get-Process` command anywhere in the command string.
 
+```powershell
+Get-Job -Command "*Get-Process*"
 ```
-PS C:\> Get-Job -Command "*get-process*"
+
+```Output
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+3      Job3            BackgroundJob   Running       True            localhost            Get-Process
 ```
 
 ### Example 4: Get jobs that include a specific command by using the pipeline
 
 Like the command in the previous example, this command gets the jobs on the system that include a
-`Get-Process` command. The command uses a pipeline operator (`|`) to send a string, in quotation
-marks, to the `Get-Job` cmdlet. It is the equivalent of the previous command.
+`Get-Process` command. The command uses a pipeline operator (`|`) to send a PSCustomObject with the NoteProperty **Command**, to the `Get-Job` cmdlet. It is the equivalent of the previous command.
 
+```powershell
+[pscustomobject]@{Command='*Get-Process*'} | Get-Job
 ```
-PS C:\> "*get-process*" | Get-Job
+
+```Output
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+3      Job3            BackgroundJob   Running       True            localhost            Get-Process
 ```
 
 ### Example 5: Get jobs that have not been started
@@ -142,8 +163,8 @@ PS C:\> "*get-process*" | Get-Job
 This command gets only those jobs that have been created but have not yet been started. This
 includes jobs that are scheduled to run in the future and those not yet scheduled.
 
-```
-PS C:\> Get-Job -State NotStarted
+```powershell
+Get-Job -State NotStarted
 ```
 
 ### Example 6: Get jobs that have not been assigned a name
@@ -151,8 +172,14 @@ PS C:\> Get-Job -State NotStarted
 This command gets all jobs that have job names that begin with job. Because `job<number>` is the
 default name for a job, this command gets all jobs that do not have an explicitly assigned name.
 
+```powershell
+Get-Job -Name Job*
 ```
-PS C:\> Get-Job -Name Job*
+
+```Output
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
+--     ----            -------------   -----         -----------     --------             -------
+1      Job1            BackgroundJob   Completed     True            localhost             $env:COMPUTERNAME 
 ```
 
 ### Example 7: Use a job object to represent the job in a command
@@ -171,15 +198,23 @@ command uses the `Receive-Job` cmdlet to get the results of the job. It uses the
 `$j` variable to represent the job. You can also use a pipeline operator to send a job object to
 `Receive-Job`.
 
+```powershell
+Start-Job -ScriptBlock {Get-Process} -Name MyJob
+$j = Get-Job -Name MyJob
+$j
 ```
-PS C:\> Start-Job -ScriptBlock {Get-Process} -Name MyJob
-PS C:\> $j = Get-Job -Name MyJob
-PS C:\> $j
+
+```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 6      MyJob           BackgroundJob   Completed     True            localhost            Get-Process
+```
 
-PS C:\> Receive-Job -Job $j
+```powershell
+Receive-Job -Job $j
+```
+
+```Output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     124       4    13572      12080    59            1140 audiodg
@@ -203,26 +238,39 @@ job object is created on the remote computer, so you use remote commands to mana
 fourth command uses `Get-Job` to get the jobs stored on the local computer. The **PSJobTypeName**
 property of jobs, introduced in Windows PowerShell 3.0, shows that the local job started by using
 the `Start-Job` cmdlet is a background job and the job started in a remote session by using the
-`Invoke-Command` cmdlet is a remote job. The fifth command uses `Invoke-Command` to run a `Get-Job`
-command on the S2 computer.The sample output shows the results of the `Get-Job` command. On the S2
-computer, the job appears to be a local job. The computer name is localhost and the job type is a
-background job.For more information about how to run background jobs on remote computers, see
+`Invoke-Command` cmdlet is a remote job. The fifth, sixth and seventh command uses the
+`New-PSSession` cmdlet to create a PSSession that is connected to the S2 computer, it uses
+`Invoke-Command` to start a job on the remote computer using the PSSession and the **Session**
+parameter. It then gets the job using the `Get-Job` command on the S2 computer using the PSSession.
+The sample output shows the results of the `Get-Job` command. On the S2 computer, the job
+appears to be a local job. The computer name is localhost and the job type is a background job.
+For more information about how to run background jobs on remote computers, see
 [about_Remote_Jobs](./about/about_Remote_Jobs.md).
 
+```powershell
+Start-Job -ScriptBlock {Get-EventLog -LogName System}
+Invoke-Command -ComputerName S1 -ScriptBlock {Get-EventLog -LogName System} -AsJob
+Invoke-Command -ComputerName S2 -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog -LogName System}}
+Get-Job
 ```
-PS C:\> Start-Job -ScriptBlock {Get-EventLog System}
-PS C:\> Invoke-Command -ComputerName S1 -ScriptBlock {Get-EventLog System} -AsJob
-PS C:\> Invoke-Command -ComputerName S2 -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
-PS C:\> Get-Job
+
+```Output
 Id     Name       PSJobTypeName   State         HasMoreData     Location        Command
 --     ----       -------------   -----         -----------     --------        -------
 1      Job1       BackgroundJob   Running       True            localhost       Get-EventLog System
 2      Job2       RemoteJob       Running       True            S1              Get-EventLog System
+```
 
-PS C:\> Invoke-Command -ComputerName S2 -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
-Id    Name     PSJobTypeName  State      HasMoreData   Location   Command
---    ----     -------------  -----      -----------   -------    -------
-4     Job4     BackgroundJob  Running    True          localhost  Get-Eventlog System
+```powershell
+$Session = New-PSSession -ComputerName S2
+Invoke-Command -Session $Session -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog -LogName System}}
+Invoke-Command -Session $Session -ScriptBlock {Get-Job}
+```
+
+```Output
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command                   PSComputerName
+--     ----            -------------   -----         -----------     --------             -------                   --------------
+1      Job1            BackgroundJob   Running       True            localhost            Get-EventLog -LogName Sy… S2
 ```
 
 ### Example 9: Investigate a failed job
@@ -254,17 +302,17 @@ information about requirements for remoting in Windows PowerShell, see
 [about_Remote_Requirements](./about/about_Remote_Requirements.md). For troubleshooting tips, see
 [about_Remote_Troubleshooting](./about/about_Remote_Troubleshooting.md).
 
-```
-PS C:\> Start-Job -ScriptBlock {Get-Process}
+```powershell
+PS> Start-Job -ScriptBlock {Get-Process}
 Id     Name       PSJobTypeName   State       HasMoreData     Location             Command
 --     ----       -------------   -----       -----------     --------             -------
 1      Job1       BackgroundJob   Failed      False           localhost            Get-Process
 
-PS C:\> (Get-Job).JobStateInfo | Format-List -Property *
+PS> (Get-Job).JobStateInfo | Format-List -Property *
 State  : Failed
 Reason :
 
-PS C:\> Get-Job | Format-List -Property *
+PS> Get-Job | Format-List -Property *
 HasMoreData   : False
 StatusMessage :
 Location      : localhost
@@ -283,7 +331,7 @@ Debug         : {}
 Warning       : {}
 StateChanged  :
 
-PS C:\> (Get-Job -Name job2).JobStateInfo.Reason
+PS> (Get-Job -Name job2).JobStateInfo.Reason
 Connecting to remote server using WSManCreateShellEx api failed. The async callback gave the
 following error message: Access is denied.
 ```
@@ -301,10 +349,10 @@ uses the **JobName** parameter of the workflow to specify a name for the job, an
 **Filter** parameter of `Get-Job` to get the job by custom ID that was specified in the
 **PSPrivateMetadata** parameter.
 
-```
-PS C:\> Workflow WFProcess {Get-Process}
-PS C:\> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107}
-PS C:\> Get-Job -Filter @{MyCustomId = 92107}
+```powershell
+PS> Workflow WFProcess {Get-Process}
+PS> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107}
+PS> Get-Job -Filter @{MyCustomId = 92107}
 Id     Name            State         HasMoreData     Location             Command
 --     ----            -----         -----------     --------             -------
 1      WFProcessJob    Completed     True            localhost            WFProcess
@@ -323,8 +371,9 @@ child job of Job4 failed. The third command uses the **ChildJobState** parameter
 Failed.The output includes all parent jobs and only the child jobs that failed. The fifth command
 uses the **JobStateInfo** property of jobs and its **Reason** property to discover why Job5 failed.
 
-```
-PS C:\> Get-Job
+```powershell
+PS> Get-Job
+
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 2      Job2            BackgroundJob   Completed     True            localhost            .\Get-Archive.ps1
@@ -334,7 +383,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 9      UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 10     UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 
-PS C:\> Get-Job -IncludeChildJob
+PS> Get-Job -IncludeChildJob
+
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 2      Job2            BackgroundJob   Completed     True            localhost           .\Get-Archive.ps1
@@ -347,7 +397,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 9      UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 10     UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 
-PS C:\> Get-Job -Name Job4 -ChildJobState Failed
+PS> Get-Job -Name Job4 -ChildJobState Failed
+
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
 2      Job2            BackgroundJob   Completed     True            localhost           .\Get-Archive.ps1
@@ -358,7 +409,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 9      UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 10     UpdateHelpJob   PSScheduledJob  Completed     True            localhost            Update-Help
 
-PS C:\> (Get-Job -Name Job5).JobStateInfo.Reason
+PS> (Get-Job -Name Job5).JobStateInfo.Reason
+
 Connecting to remote server Server01 failed with the following error message:
 Access is denied.
 ```
