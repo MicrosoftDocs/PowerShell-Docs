@@ -96,7 +96,7 @@ processor type.
 sudo apt-get update
 
 # Install dependencies
-sudo apt-get install libssl1.1 libunwind8 -y
+sudo apt-get install jq libssl1.1 libunwind8 -y
 
 ###################################
 # Download and extract PowerShell
