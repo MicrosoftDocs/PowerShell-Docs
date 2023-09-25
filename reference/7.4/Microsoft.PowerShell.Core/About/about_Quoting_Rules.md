@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 05/03/2022
+ms.date: 09/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -19,7 +19,7 @@ in single quotation marks (`'`) or double quotation marks (`"`).
 Quotation marks are also used to create a _here-string_. A here-string is a
 single-quoted or double-quoted string in which quotation marks are interpreted
 literally. A here-string can span multiple lines. All the lines in a
-here-string are interpreted as strings, even though they are not enclosed in
+here-string are interpreted as strings, even though they're not enclosed in
 quotation marks.
 
 In commands to remote computers, quotation marks define the parts of the
@@ -59,7 +59,7 @@ The output of this command is:
 The value of 5 is 5.
 ```
 
-Only simple variable references can be directly embedded in an expandable
+Only basic variable references can be directly embedded in an expandable
 string. Variables references using array indexing or member access must be
 enclosed in a subexpression. For example:
 
@@ -113,7 +113,7 @@ The output of this command is:
 The value $i is $i.
 ```
 
-Similarly, expressions in single-quoted strings are not evaluated. They are
+Similarly, expressions in single-quoted strings aren't evaluated. They're
 interpreted as string literals. For example:
 
 ```powershell
@@ -213,19 +213,19 @@ A here-string:
   string
 
 Like regular strings, variables are replaced by their values in double-quoted
-here-strings. In single-quoted here-strings, variables are not replaced by
-their values.
+here-strings. In single-quoted here-strings, variables aren't replaced by their
+values.
 
-You can use here-strings for any text, but they are particularly useful for
-the following kinds of text:
+You can use here-strings for any text, but they're particularly useful for the
+following kinds of text:
 
 - Text that contains literal quotation marks
 - Multiple lines of text, such as the text in an HTML or XML block
 - The Help text for a script or function document
 
 A here-string can have either of the following formats, where `<Enter>`
-represents the linefeed or newline hidden character that is added when you
-press the <kbd>ENTER</kbd> key.
+represents the linefeed or newline hidden character that's added when you press
+the <kbd>ENTER</kbd> key.
 
 Double-quotes:
 
@@ -244,7 +244,7 @@ Single-quotes:
 ```
 
 > [!NOTE]
-> The final newline character is part of the closing mark. It is not added to
+> The final newline character is part of the closing mark. It's not added to
 > the here-string.
 
 A here-string contains all the text between the opening and closing marks. In
@@ -266,14 +266,14 @@ Using a here-string can simplify using a string in a command. For example:
 
 ```powershell
 @"
-Use a quotation mark (') to begin a string.
+Use a quotation mark, like ' or ", to begin a string.
 "@
 ```
 
 The output of this command is:
 
 ```Output
-Use a quotation mark (') to begin a string.
+Use a quotation mark, like ' or ", to begin a string.
 ```
 
 In single-quoted here-strings, variables are interpreted literally and
@@ -356,7 +356,7 @@ can be specified by setting preference variable `$OFS`. For more information,
 see the [`$OFS` preference variable](about_preference_variables.md#ofs).
 
 Instances of any other type are converted to strings by calling the
-`ToString()` method which may not give a meaningful representation. For
+`ToString()` method, which may not give a meaningful representation. For
 example:
 
 ```powershell
