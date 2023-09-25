@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 03/31/2023
+ms.date: 09/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -190,6 +190,27 @@ When used as the first segment of a pipeline, wrapping a command or expression
 in parentheses invariably causes _enumeration_ of the expression result. If the
 parentheses wrap a _command_, it's run to completion with all output _collected
 in memory_ before the results are sent through the pipeline.
+
+For example, the outputs for these statements are different:
+
+```powershell
+PS> ConvertFrom-Json '["a", "b"]'   | ForEach-Object { "The value is '$_'" }
+
+The value is 'a b'
+
+PS> (ConvertFrom-Json '["a", "b"]') | ForEach-Object { "The value is '$_'" }
+
+The value is 'a'
+The value is 'b'
+```
+
+Grouping an expression before piping also ensures that subsequent
+object-by-object processing can't interfere with the enumeration the command
+uses to produce its output.
+
+For example, piping the output from `Get-ChildItem` to `Rename-Item` can have
+unexpected effects where an item is renamed, then discovered again and renamed
+a second time.
 
 ### Subexpression operator `$( )`
 
