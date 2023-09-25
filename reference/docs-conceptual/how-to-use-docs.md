@@ -67,12 +67,12 @@ There are two ways to search for content in Docs.
 
 - The search box in the site-level navigation bar searches the entire site. It returns a list of
   matching articles from all documentation sets.
-- The TOC filter box under the version selector allows filter by words that appear in
-  the title of an article. The filter displays a list of matching articles as you type. You can also
-  select the option to search for the words in an article. When you search from here, the search is
+- The TOC filter box under the version selector allows filtering by words that appear in the title
+  of an article. The filter displays a list of matching articles as you type. You can also select
+  the option to search for the words in an article. When you search from here, the search is
   limited to the PowerShell documentation.
 
-In the following example, the search in the site-level navigation bar returns 840 result for the
+In the following example, the search in the site-level navigation bar returns 840 results for the
 word `idempotent`. Entering the word `invoke` in the TOC filter box shows a list of articles that
 contain the word `invoke` in the title. Entering the word `idempotent` in the TOC filter shows no
 articles. Clicking the search link searches for `idempotent` in the PowerShell documentation. This
