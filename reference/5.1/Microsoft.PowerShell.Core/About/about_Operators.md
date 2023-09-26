@@ -128,8 +128,7 @@ True
 > Wrapping a command in parentheses causes the automatic variable `$?` to be
 > set to `$true`, even when the enclosed command itself set `$?` to `$false`.
 > For example, `(Get-Item /Nosuch); $?` unexpectedly yields **True**. For
-> more information about `$?`, see
-> [about_Automatic_Variables][06].
+> more information about `$?`, see [about_Automatic_Variables][06].
 
 #### Piping grouped expressions
 
