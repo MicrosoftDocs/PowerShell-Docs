@@ -39,7 +39,7 @@ sudo apt-get update
 # Install pre-requisite packages.
 sudo apt-get install -y wget apt-transport-https software-properties-common
 
-# Get the version of Debian
+# Get the version of Ubuntu
 source /etc/os-release
 
 # Download the Microsoft repository keys
@@ -90,7 +90,7 @@ sudo apt-get update
 sudo apt-get install -y wget
 
 # Download the PowerShell package file
-wget wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-preview.5/powershell-preview_7.4.0-preview.5-1.deb_amd64.deb
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-preview.5/powershell-preview_7.4.0-preview.5-1.deb_amd64.deb
 
 ###################################
 # Install the PowerShell package
