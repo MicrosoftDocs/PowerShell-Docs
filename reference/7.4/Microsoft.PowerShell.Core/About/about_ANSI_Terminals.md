@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 06/30/2023
+ms.date: 09/26/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -95,22 +95,22 @@ The following members control how or when ANSI formatting is used:
 - The `$PSStyle.Background` and `$PSStyle.Foreground` members are strings that
   contain the ANSI escape sequences for the 16 standard console colors.
 
-  - **Black**
-  - **BrightBlack**
-  - **White**
-  - **BrightWhite**
-  - **Red**
-  - **BrightRed**
-  - **Magenta**
-  - **BrightMagenta**
-  - **Blue**
-  - **BrightBlue**
-  - **Cyan**
-  - **BrightCyan**
-  - **Green**
-  - **BrightGreen**
-  - **Yellow**
-  - **BrightYellow**
+  - `Black`
+  - `BrightBlack`
+  - `White`
+  - `BrightWhite`
+  - `Red`
+  - `BrightRed`
+  - `Magenta`
+  - `BrightMagenta`
+  - `Blue`
+  - `BrightBlue`
+  - `Cyan`
+  - `BrightCyan`
+  - `Green`
+  - `BrightGreen`
+  - `Yellow`
+  - `BrightYellow`
 
   The values are settable and can contain any number of ANSI escape sequences.
   There is also a `FromRgb()` method to specify 24-bit color. There are two
@@ -122,7 +122,7 @@ The following members control how or when ANSI formatting is used:
   ```
 
   Either of the following examples set the background color the 24-bit color
-  **Beige**.
+  `Beige`.
 
   ```powershell
   $PSStyle.Background.FromRgb(245, 245, 220)
