@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Debian Linux
-ms.date: 09/22/2023
+ms.date: 09/26/2023
 title: Installing PowerShell on Debian
 ---
 # Installing PowerShell on Debian
@@ -106,7 +106,7 @@ rm powershell-preview_7.4.0-preview.5-1.deb_amd64.deb
 pwsh-preview
 ```
 
-## Uninstallation
+## Uninstall PowerShell
 
 ```sh
 sudo apt-get remove powershell

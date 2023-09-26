@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 09/22/2023
+ms.date: 09/26/2023
 title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 ---
 # Installing PowerShell on Red Hat Enterprise Linux (RHEL)
@@ -29,7 +29,7 @@ published to the RHEL 9 repository yet. For RHEL 9, you need to
 [install PowerShell via direct download](#installation-via-direct-download).
 
 > [!NOTE]
-> This script only works for supported versions of Debian.
+> This script only works for supported versions of RHEL.
 
 ```sh
 ###################################
@@ -37,9 +37,15 @@ published to the RHEL 9 repository yet. For RHEL 9, you need to
 
 # Get version of RHEL
 source /etc/os-release
+if [ $(bc<<<"$VERSION_ID < 8") = 1 ]
+then majorver=7
+elif [ $(bc<<<"$VERSION_ID < 9") = 1 ]
+then majorver=8
+else majorver=9
+fi
 
 # Register the Microsoft RedHat repository
-curl -sSL -O https://packages.microsoft.com/config/rhel/$VERSION_ID/packages-microsoft-prod.rpm
+curl -sSL -O https://packages.microsoft.com/config/rhel/$majorver/packages-microsoft-prod.rpm
 
 # Register the Microsoft repository keys
 sudo rpm -i packages-microsoft-prod.rpm
@@ -48,21 +54,18 @@ sudo rpm -i packages-microsoft-prod.rpm
 rm packages-microsoft-prod.rpm
 
 # RHEL 7.x uses yum and RHEL 8+ uses dnf
-if [ $(bc<<<"$VERSION_ID < 8") ]
+if [ $(bc<<<"$majorver < 8") ]
 then
     # Update package index files
     sudo yum update
     # Install PowerShell
-    sudo yum install powershell
+    sudo yum install powershell -y
 else
     # Update package index files
     sudo dnf update
     # Install PowerShell
-    sudo dnf install powershell
+    sudo dnf install powershell -y
 fi
-
-# Start PowerShell
-pwsh
 ```
 
 ## Installation via direct download
@@ -94,7 +97,15 @@ On RHEL 7:
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/powershell-7.3.7-1.rh.x86_64.rpm
 ```
 
-## Uninstallation - Red Hat Enterprise Linux (RHEL) 7
+## Uninstall PowerShell
+
+On RHEL 8 or 9:
+
+```sh
+sudo dnf remove powershell
+```
+
+On RHEL 7:
 
 ```sh
 sudo yum remove powershell
