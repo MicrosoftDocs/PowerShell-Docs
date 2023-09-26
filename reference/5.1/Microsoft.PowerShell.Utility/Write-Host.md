@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 09/26/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Host
@@ -24,10 +24,10 @@ Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundC
 ## DESCRIPTION
 
 The `Write-Host` cmdlet's primary purpose is to produce for-(host)-display-only output, such as
-printing colored text like when prompting the user for input in conjunction with [Read-Host](Read-Host.md).
-`Write-Host` uses the [ToString()](/dotnet/api/system.object.tostring) method to write the
-output. By contrast, to output data to the pipeline, use [Write-Output](Write-Output.md) or implicit
-output.
+printing colored text like when prompting the user for input in conjunction with
+[Read-Host](Read-Host.md). `Write-Host` uses the [ToString()](/dotnet/api/system.object.tostring)
+method to write the output. By contrast, to output data to the pipeline, use
+[Write-Output](Write-Output.md) or implicit output.
 
 You can specify the color of text by using the `ForegroundColor` parameter, and you can specify the
 background color by using the `BackgroundColor` parameter. The Separator parameter lets you specify
@@ -122,22 +122,22 @@ thereby suppresses it. For more information, see
 
 Specifies the background color. There is no default. The acceptable values for this parameter are:
 
-- Black
-- DarkBlue
-- DarkGreen
-- DarkCyan
-- DarkRed
-- DarkMagenta
-- DarkYellow
-- Gray
-- DarkGray
-- Blue
-- Green
-- Cyan
-- Red
-- Magenta
-- Yellow
-- White
+- `Black`
+- `DarkBlue`
+- `DarkGreen`
+- `DarkCyan`
+- `DarkRed`
+- `DarkMagenta`
+- `DarkYellow`
+- `Gray`
+- `DarkGray`
+- `Blue`
+- `Green`
+- `Cyan`
+- `Red`
+- `Magenta`
+- `Yellow`
+- `White`
 
 ```yaml
 Type: System.ConsoleColor
@@ -156,22 +156,22 @@ Accept wildcard characters: False
 
 Specifies the text color. There is no default. The acceptable values for this parameter are:
 
-- Black
-- DarkBlue
-- DarkGreen
-- DarkCyan
-- DarkRed
-- DarkMagenta
-- DarkYellow
-- Gray
-- DarkGray
-- Blue
-- Green
-- Cyan
-- Red
-- Magenta
-- Yellow
-- White
+- `Black`
+- `DarkBlue`
+- `DarkGreen`
+- `DarkCyan`
+- `DarkRed`
+- `DarkMagenta`
+- `DarkYellow`
+- `Gray`
+- `DarkGray`
+- `Blue`
+- `Green`
+- `Cyan`
+- `Red`
+- `Magenta`
+- `Yellow`
+- `White`
 
 ```yaml
 Type: System.ConsoleColor
