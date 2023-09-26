@@ -24,11 +24,11 @@ Ubuntu they're supported on. These versions remain supported until either the ve
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|           Ubuntu            | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
-| --------------------------- | :---------------: | :-------------: | :-------------: |
-| ![Supported][1] 22.04 (LTS) |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] 20.04 (LTS) |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] 18.04 (LTS) |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+|              Ubuntu              |  7.2 (LTS-current)   |         7.3          |    7.4 (preview)     |
+| -------------------------------- | :------------------: | :------------------: | :------------------: |
+| ![Supported][1] 22.04 (LTS)      |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |
+| ![Supported][1] 20.04 (LTS)      |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |
+| ![Out of Support][4] 18.04 (LTS) | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
 
 Only the LTS releases of Ubuntu are officially supported. Microsoft does not support
 [interim releases][interim] or their equivalent. Interim releases are community supported. For more

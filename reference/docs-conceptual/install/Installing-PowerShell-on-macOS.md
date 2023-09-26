@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 06/28/2023
+ms.date: 09/26/2023
 title: Installing PowerShell on macOS
 ---
 
@@ -11,10 +11,10 @@ PowerShell 7.0 or higher require macOS 10.13 and higher. All packages are availa
 check the list of [Supported versions][07] below.
 
 > [!NOTE]
-> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell.
->
-> If you need to run an older version of PowerShell side-by-side with PowerShell 7.3, install
-> the version you want using the [binary archive][04] method.
+> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
+> versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
+> need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous version
+> using the [binary archive][05] method.
 
 ## Installation of latest stable release via Homebrew on macOS 10.13 or higher
 
