@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 09/25/2023
+ms.date: 09/26/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -114,6 +114,8 @@ expressions. For example: `(1 + 2) / 3`
 
 However, in PowerShell, there are additional behaviors.
 
+#### Grouping result expressions
+
 `(...)` allows you to let output from a _command_ participate in an expression.
 For example:
 
@@ -121,6 +123,17 @@ For example:
 PS> (Get-Item *.txt).Count -gt 10
 True
 ```
+
+#### Piping grouped expressions
+
+When used as the first segment of a pipeline, wrapping a command or expression
+in parentheses invariably causes _enumeration_ of the expression result. If the
+parentheses wrap a _command_, it's run to completion with all output _collected
+in memory_ before the results are sent through the pipeline.
+
+Grouping an expression before piping also ensures that subsequent
+object-by-object processing can't interfere with the enumeration the command
+uses to produce its output.
 
 #### Grouping assignment statements
 
@@ -176,17 +189,6 @@ in the body of the `if` statement.
 > While this technique is convenient and concise, it can lead to confusion
 > between the assignment operator (`=`) and the equality-comparison operator
 > (`-eq`).
-
-#### Piping grouped expressions
-
-When used as the first segment of a pipeline, wrapping a command or expression
-in parentheses invariably causes _enumeration_ of the expression result. If the
-parentheses wrap a _command_, it's run to completion with all output _collected
-in memory_ before the results are sent through the pipeline.
-
-Grouping an expression before piping also ensures that subsequent
-object-by-object processing can't interfere with the enumeration the command
-uses to produce its output.
 
 ### Subexpression operator `$( )`
 

@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 06/30/2023
+ms.date: 09/26/2023
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -84,11 +84,12 @@ The installer creates a shortcut in the Windows Start Menu.
 
 > [!NOTE]
 > PowerShell 7.3 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
-> PowerShell 7.3 is an in-place upgrade that replaces PowerShell 7.0 and lower.
+> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
+> versions of PowerShell can be installed side-by-side with other versions of PowerShell.
 >
 > - PowerShell 7.3 is installed to `$env:ProgramFiles\PowerShell\7`
 > - The `$env:ProgramFiles\PowerShell\7` folder is added to `$env:PATH`
-> - Folders for previously released versions are deleted
+> - Folders for previously released versions PowerShell are deleted
 >
 > If you need to run PowerShell 7.3 side-by-side with other versions, use the [ZIP install][20]
 > method to install the other version to a different folder.
