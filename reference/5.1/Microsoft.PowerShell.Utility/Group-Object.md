@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/10/2023
+ms.date: 09/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Group-Object
@@ -347,8 +347,8 @@ Accept wildcard characters: False
 
 Specifies the properties for grouping. The objects are arranged into named groups based on the value
 of the specified properties. When no property is specified, objects are grouped by their value or
-the `ToString()` representation of their value. The output is sorted in ascending order by the group
-names.
+the `ToString()` representation of their value. The output is presented in order the group objects
+were created.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
 can be a script block or a hash table. Valid key-value pairs are:
@@ -426,8 +426,8 @@ When grouping objects of different .NET types, `Group-Object` uses the following
   Objects that don't have a specified property can't be grouped. Objects that aren't grouped appear
   in the final **GroupInfo** object output in a group named `AutomationNull.Value`.
 
-The output is sorted in ascending order by the group names. The items belonging to each group are
-not sorted. They are listed in the order in which they were received.
+The output groups are presented in order the group were created. The items belonging to each group
+are not sorted. They are listed in the order in which they were received.
 
 ## RELATED LINKS
 
