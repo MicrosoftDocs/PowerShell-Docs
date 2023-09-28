@@ -59,7 +59,7 @@
         "**/*": "https://github.com/MicrosoftDocs/PowerShell-Docs/issues/new?template=04-customer-feedback.yml"
       },
       "open_source_feedback_productDescription": {
-        "**/*": "A cross-platform task automation solution made up of a command-line shell and a scripting language."
+        "**/*": "PowerShell is an open source project. Select a link to provide feedback:"
       },
       "open_source_feedback_productLogoLightUrl": {
         "**/*": "https://learn.microsoft.com/media/logos/logo-powershell-core.svg"
@@ -68,7 +68,7 @@
         "**/*": "https://learn.microsoft.com/media/logos/logo-powershell-core.svg"
       },
       "open_source_feedback_productName": {
-        "**/*": "PowerShell"
+        "**/*": "PowerShell feedback"
       },
       "manager": {
         "**/*": "jasongroce"
