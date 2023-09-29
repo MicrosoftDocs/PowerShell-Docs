@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/12/2022
+ms.date: 09/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/wait-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Job
@@ -123,8 +123,8 @@ to determine how many of the jobs are finished.
 ### Example 3: Determine when the first job finishes
 
 ```powershell
-$s = New-PSSession (Get-Content Machines.txt)
-$c = 'Get-EventLog -LogName System | where {$_.EntryType -eq "error" --and $_.Source -eq "LSASRV"} | Out-File Errors.txt'
+$s = New-PSSession -ComputerName (Get-Content -Path .\Machines.txt)
+$c = 'Get-EventLog -LogName System | Where-Object {$PSItem.EntryType -eq "error" --and $PSItem.Source -eq "LSASRV"} | Out-File -FilePath Errors.txt'
 Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$Using:c}
 Invoke-Command -Session $s -ScriptBlock {Wait-Job -Any}
 ```
@@ -155,7 +155,7 @@ The fourth command uses `Invoke-Command` to run a `Wait-Job` command in the sess
 ### Example 4: Set a wait time for jobs on remote computers
 
 ```powershell
-PS> $s = New-PSSession Server01, Server02, Server03
+PS> $s = New-PSSession -ComputerName Server01, Server02, Server03
 PS> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
 PS> $done = Invoke-Command -Session $s -ScriptBlock {Wait-Job -Timeout 30}
 PS>
@@ -211,7 +211,7 @@ This command uses the job name to identify the job for which to wait.
 ### Example 8: Wait for jobs on local computer started with Start-Job
 
 ```powershell
-$j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_.lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
+$j = Start-Job -ScriptBlock {Get-ChildItem -Filter *.ps1| Where-Object {$PSItem.LastWriteTime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
 $j | Wait-Job
 ```
 
@@ -231,7 +231,7 @@ finishes, the command displays the job object, which contains information about 
 ### Example 9: Wait for jobs started on remote computers by using Invoke-Command
 
 ```powershell
-$s = New-PSSession Server01, Server02, Server03
+$s = New-PSSession -ComputerName Server01, Server02, Server03
 $j = Invoke-Command -Session $s -ScriptBlock {Get-Process} -AsJob
 $j | Wait-Job
 ```

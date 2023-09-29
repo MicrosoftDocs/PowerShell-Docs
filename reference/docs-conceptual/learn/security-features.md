@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 05/23/2023
+ms.date: 09/29/2023
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -57,6 +57,24 @@ experience to help secure your PowerShell environment.
 For more information about how PowerShell supports AppLocker and WDAC, see
 [Using Windows Defender Application Control][01].
 
+### Changes in PowerShell 7.4
+
+On Windows, when PowerShell runs under a Windows Defender Application Control (WDAC) policy, it
+changes its behavior based on the defined security policy. Under a WDAC policy, PowerShell runs
+trusted scripts and modules allowed by the policy in Full Language mode. All other scripts and
+script blocks are untrusted and run in Constrained Language mode. PowerShell throws errors when the
+untrusted scripts attempt to perform disallowed actions. It's difficult to know why a script fails
+to run correctly in Constrained Language mode.
+
+PowerShell 7.4 now supports WDAC policies in **Audit** mode. In audit mode, PowerShell runs the
+untrusted scripts in Constrained Language mode but logs messages to the event log instead of
+throwing errors. The log messages describe what restrictions would apply if the policy was in
+**Enforce** mode.
+
+### Changes in PowerShell 7.3
+
+- PowerShell 7.3 now supports the ability to block or allow PowerShell script files via the WDAC API.
+
 ### Changes in PowerShell 7.2
 
 - There was a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
@@ -69,10 +87,6 @@ For more information about how PowerShell supports AppLocker and WDAC, see
 
 - PowerShell 7.2 now disallows scripts from using COM objects in AppLocker system lock down
   conditions. Cmdlet that use COM or DCOM internally aren't affected.
-
-### Changes in PowerShell 7.3
-
-- PowerShell 7.3 now supports the ability to block or allow PowerShell script files via the WDAC API.
 
 ### Security Servicing Criteria
 
