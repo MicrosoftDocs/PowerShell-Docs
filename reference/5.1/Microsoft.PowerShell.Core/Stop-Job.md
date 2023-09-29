@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/12/2022
+ms.date: 09/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/stop-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Job
@@ -76,7 +76,7 @@ feature.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01 -Credential Domain01\Admin02
-$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
+$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog -LogName System}}
 Invoke-Command -Session $s -ScriptBlock { Stop-job -Job $Using:j }
 ```
 
@@ -168,14 +168,14 @@ selected job.
 ### Example 7: Stop a job on a remote computer
 
 ```powershell
-$j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog System} -AsJob
+$j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog -LogName System} -AsJob
 $j | Stop-Job -PassThru
 ```
 
 ```Output
 Id    Name    State      HasMoreData     Location         Command
 --    ----    ----       -----------     --------         -------
-5     Job5    Stopped    True            user01-tablet    get-eventlog system
+5     Job5    Stopped    True            user01-tablet    Get-EventLog -LogName Sy...
 ```
 
 This example shows how to use the `Stop-Job` cmdlet to stop a job that is running on a remote
