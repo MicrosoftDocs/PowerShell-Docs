@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/12/2022
+ms.date: 09/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Job
@@ -180,7 +180,7 @@ This example starts a job that collects a large amount of map data and then save
 file.
 
 ```powershell
-Start-Job -Name GetMappingFiles -InitializationScript {Import-Module MapFunctions} -ScriptBlock {
+Start-Job -Name GetMappingFiles -InitializationScript {Import-Module -Name MapFunctions} -ScriptBlock {
    Get-Map -Name * | Set-Content -Path D:\Maps.tif } -RunAs32
 ```
 
@@ -196,7 +196,7 @@ This example uses the `$input` automatic variable to process an input object. Us
 view the job's output.
 
 ```powershell
-Start-Job -ScriptBlock { Get-Content $input } -InputObject "C:\Servers.txt"
+Start-Job -ScriptBlock { Get-Content -Path $input } -InputObject "C:\Servers.txt"
 Receive-Job -Name Job45 -Keep
 ```
 

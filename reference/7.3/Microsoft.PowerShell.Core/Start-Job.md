@@ -220,7 +220,7 @@ This example starts a job that collects a large amount of map data and then save
 file.
 
 ```powershell
-Start-Job -Name GetMappingFiles -InitializationScript {Import-Module MapFunctions} -ScriptBlock {
+Start-Job -Name GetMappingFiles -InitializationScript {Import-Module -Name MapFunctions} -ScriptBlock {
    Get-Map -Name * | Set-Content -Path D:\Maps.tif }
 ```
 
@@ -235,7 +235,7 @@ This example uses the `$input` automatic variable to process an input object. Us
 view the job's output.
 
 ```powershell
-Start-Job -ScriptBlock { Get-Content $input } -InputObject "C:\Servers.txt"
+Start-Job -ScriptBlock { Get-Content -Path $input } -InputObject "C:\Servers.txt"
 Receive-Job -Name Job45 -Keep
 ```
 
@@ -309,8 +309,8 @@ Major  Minor  Patch  PreReleaseLabel BuildLabel
 ```
 
 ```powershell
-$job = Start-Job { $PSVersionTable.PSVersion } -PSVersion 5.1
-Receive-Job $job
+$job = Start-Job -ScriptBlock { $PSVersionTable.PSVersion } -PSVersion 5.1
+Receive-Job -Job $job
 ```
 
 ```Output
