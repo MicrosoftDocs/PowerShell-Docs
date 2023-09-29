@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 06/22/2023
+ms.date: 09/29/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -42,14 +42,14 @@ Legend
 | PSNativeCommandArgumentPassing                         | ![Experimental][02] |  ![Mainstream][01]  |                     |
 | PSAnsiRenderingFileInfo                                | ![Experimental][02] |  ![Mainstream][01]  |                     |
 | PSLoadAssemblyFromNativeCode                           | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| PSNativeCommandErrorActionPreference                   |                     | ![Experimental][02] | ![Experimental][02] |
-| PSCustomTableHeaderLabelDecoration                     |                     |                     | ![Experimental][02] |
+| PSNativeCommandErrorActionPreference                   |                     | ![Experimental][02] |  ![Mainstream][01]  |
+| PSCustomTableHeaderLabelDecoration                     |                     |                     |  ![Mainstream][01]  |
 | PSFeedbackProvider                                     |                     |                     | ![Experimental][02] |
 | PSModuleAutoLoadSkipOfflineFiles                       |                     |                     | ![Experimental][02] |
 | PSCommandWithArgs                                      |                     |                     | ![Experimental][02] |
-| PSConstrainedAuditLogging                              |                     |                     | ![Experimental][02] |
-| PSNativeCommandPreserveBytePipe                        |                     |                     | ![Experimental][02] |
-| PSWindowsNativeCommandArgPassing                       |                     |                     | ![Experimental][02] |
+| PSConstrainedAuditLogging                              |                     |                     |  ![Mainstream][01]  |
+| PSNativeCommandPreserveBytePipe                        |                     |                     |  ![Mainstream][01]  |
+| PSWindowsNativeCommandArgPassing                       |                     |                     |  ![Mainstream][01]  |
 
 ## PSAnsiRenderingFileInfo
 
@@ -112,6 +112,9 @@ This feature was added in PowerShell 7.4-preview.2.
 
 ## PSConstrainedAuditLogging
 
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.4-preview.6.
+
 On Windows, when PowerShell runs under a Windows Defender Application Control (WDAC) policy, it
 changes its behavior based on the defined security policy. Under a WDAC policy, PowerShell runs
 trusted scripts and modules allowed by the policy in Full Language mode. All other scripts and
@@ -127,6 +130,9 @@ describe what restrictions would apply if the policy was in **Enforce** mode.
 This feature was added in PowerShell 7.4-preview.4.
 
 ## PSCustomTableHeaderLabelDecoration
+
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.4-preview.6.
 
 When you enable this feature, `$PSStyle` includes formatting differentiation for table header labels
 that aren't property members. For example, the default output from `Get-Process` includes the
@@ -271,6 +277,9 @@ information, see [Trace-Command][13].
 
 ## PSNativeCommandErrorActionPreference
 
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.4-preview.6.
+
 Native commands usually return an exit code to the calling application that's zero for success or
 non-zero for failure. However, native commands currently don't participate in the PowerShell error
 stream. Redirected **stderr** output isn't interpreted the same as the PowerShell error stream. Many
@@ -308,6 +317,9 @@ set to `$true` you get the following behavior:
   for native command errors, but scripts won't break.
 
 ## PSNativeCommandPreserveBytePipe
+
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.4-preview.6.
 
 This feature preserves the byte-stream data when redirecting the **stdout** stream of a native
 command to a file or when piping byte-stream data to the **stdin** stream of a native command.
@@ -380,6 +392,9 @@ when the feature is enabled. This cmdlet returns information about the subsystem
 on the system.
 
 ## PSWindowsNativeCommandArgPassing
+
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.4-preview.6.
 
 The feature changes the default values of the `$PSNativeCommandArgumentPassing` variable.
 
