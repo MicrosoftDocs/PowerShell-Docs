@@ -193,7 +193,7 @@ Get-Item: C:\temp\test.ps1:3
 Line |
    3 |  get-item /not-here 2>&1 >> log.txt
      |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | Can't find path 'C:\not-here' because it doesn't exist.
+     | Cannot find path 'C:\not-here' because it does not exist.
 
 SilentlyContinue
 Stop
