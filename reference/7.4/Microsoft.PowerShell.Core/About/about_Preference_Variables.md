@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 03/02/2023
+ms.date: 09/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -59,7 +59,6 @@ The following table lists the preference variables and their default values.
 PowerShell includes the following environment variables that store user
 preferences. For more information about these environment variables, see
 [about_Environment_Variables][31].
-
 
 - `env:PSExecutionPolicyPreference`
 - `$env:PSModulePath`
@@ -1004,7 +1003,7 @@ For more information about automatic importing of modules, see
 
 ## $PSNativeCommandArgumentPassing
 
-PowerShell 7.3 changed the way the command line is parsed for native commands.
+PowerShell 7.3 changed the way it parses the command line for native commands.
 The new `$PSNativeCommandArgumentPassing` preference variable controls this
 behavior.
 
@@ -1015,42 +1014,43 @@ behavior.
 
 The automatic variable `$PSNativeCommandArgumentPassing` allows you to select
 the behavior at runtime. The valid values are `Legacy`, `Standard`, and
-`Windows`. The default behavior is platform specific. On Windows platforms, the
-default setting is `Windows` and non-Windows platforms default to `Standard`.
+`Windows`. `Legacy` is the historic behavior.
 
-`Legacy` is the historic behavior. The behavior of `Windows` and `Standard`
-mode are the same except, in `Windows` mode, invocations of the following files
-automatically use the `Legacy` style argument passing.
+The `$PSNativeCommandArgumentPassing` variable is defined by default but the
+value is platform specific.
+
+- On Windows, the preference is set to `Windows`.
+- On non-Windows platforms, the preference is set to `Standard`.
+- If you have removed the `$PSNativeCommandArgumentPassing` variable,
+  PowerShell uses the `Standard` behavior.
+
+The behavior of `Windows` and `Standard` mode are the same except, in `Windows`
+mode, PowerShell uses the `Legacy` behavior of argument passing when you run
+the following files.
 
 - `cmd.exe`
 - `cscript.exe`
+- `find.exe`
+- `sqlcmd.exe`
 - `wscript.exe`
-- ending with `.bat`
-- ending with `.cmd`
-- ending with `.js`
-- ending with `.vbs`
-- ending with `.wsf`
+- Files ending with:
+  - `.bat`
+  - `.cmd`
+  - `.js`
+  - `.vbs`
+  - `.wsf`
 
 If the `$PSNativeCommandArgumentPassing` is set to either `Legacy` or
 `Standard`, the parser doesn't check for these files. For examples of the new
 behavior, see [about_Parsing][36].
 
 PowerShell 7.3 also added the ability to trace parameter binding for native
-commands. For more information, see
-[Trace-Command][50].
+commands. For more information, see [Trace-Command][50].
 
 ## $PSNativeCommandUseErrorActionPreference
 
-This preference variable is available in PowerShell 7.3 and later with the
-`PSNativeCommandErrorActionPreference` feature enabled.
-
-With this feature enabled, native commands with non-zero exit codes issue
-errors according to `$ErrorActionPreference` when
-`$PSNativeCommandUseErrorActionPreference` is `$true`.
-
-> [!NOTE]
-> `PSNativeCommandUseErrorActionPreference` is an experimental feature added in
-> PowerShell 7.3. For more information, see [Using experimental features][01].
+When `$PSNativeCommandUseErrorActionPreference` is `$true`, native commands
+with non-zero exit codes issue errors according to `$ErrorActionPreference`.
 
 Some native commands, like [robocopy][02] use non-zero exit codes to represent
 information other than errors. In these cases, you can temporarily disable the

@@ -1,12 +1,12 @@
 ---
 title: What's New in PowerShell 7.4 (preview)
 description: New features and changes released in PowerShell 7.4 (preview)
-ms.date: 08/22/2023
+ms.date: 09/29/2023
 ---
 
 # What's New in PowerShell 7.4 (preview)
 
-PowerShell 7.4-preview.5 includes the following features, updates, and breaking changes. PowerShell
+PowerShell 7.4-preview.6 includes the following features, updates, and breaking changes. PowerShell
 7.4 is now built on .NET 8.0.0-preview.7.
 
 For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository.
@@ -17,7 +17,7 @@ For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository
 - Added the **ProgressAction** parameter to the Common Parameters
 - Update some PowerShell APIs to throw **ArgumentException** instead of **ArgumentNullException**
   when the argument is an empty string ([#19215][19215]) (Thanks @xtqqczze!)
-- Remove code related to #requires -pssnapin ([#19320][19320])
+- Remove code related to `#requires -pssnapin` ([#19320][19320])
 - `Test-Json` now uses Json.Schema.Net instead of Newtonsoft.Json.Schema. With this change,
   `Test-Json` no longer supports the older Draft 4 schemas. ([#18141][18141]) (Thanks @gregsdennis!)
 - Output from`Test-Connection` now includes more detailed information about TCP connection tests
@@ -27,17 +27,17 @@ For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository
 The Windows MSI package now provides an option to disable PowerShell telemetry during installation.
 For more information, see [Install the msi package from the command line][01].
 
-## PowerShellGet v3
+## Inclusion of PSResourceGet
 
-As of PowerShell 7.4-preview.4, **Microsoft.PowerShell.PSResourceGet** (also known as PowerShellGet
-v3) is now included in PowerShell 7.4. This module is installed side-by-side with **PowerShellGet**
-v2.2.5 and **PackageManagement** v1.4.8.1.
+As of PowerShell 7.4-preview.6, **Microsoft.PowerShell.PSResourceGet** v0.9.0-rc1 is now included.
+This module is installed side-by-side with **PowerShellGet** v2.2.5 and **PackageManagement**
+v1.4.8.1.
 
 For more information, see the documentation for [Microsoft.PowerShell.PSResourceGet][14].
 
 ## Tab completion improvements
 
-Many thanks to **@MartinGC94** and others for all the work on improving tab completion.
+Many thanks to **@MartinGC94** and others for all their work to improve tab completion.
 
 - Fix issue when completing the first command in a script with an empty array expression
   ([[#18355][18355])
@@ -154,7 +154,7 @@ Updates to `$PSStyle`
 - Adds **Dim** and **DimOff** properties ([#18653][18653])
 - Added static methods to the **PSStyle** class that map foreground and background **ConsoleColor**
   values to ANSI escape sequences ([#17938][17938])
-- New formatting properties added by experimental features
+- Table headers for calculated fields are formatted in italics by default
 - Add support of respecting `$PSStyle.OutputRendering` on the remote host ([#19601][19601])
 
 Other Engine updates
@@ -175,29 +175,32 @@ Other Engine updates
 
 PowerShell 7.4 introduces the following experimental features:
 
+- [PSFeedbackProvider][06] - Replaces the hard-coded suggestion framework with an extensible
+  feedback provider.
+  - This feature also adds the **FeedbackName**, **FeedbackText**, and **FeedbackAction** properties
+    to `$PSStyle.Formatting` that allow you to change the formatting of feedback messages.
+- [PSModuleAutoLoadSkipOfflineFiles][07] - Module discovery now skips over files that are marked by
+  cloud providers as not fully on disk.
+- [PSCommandWithArgs][04] - Add support for passing arguments to commands as a single string
+
+The following experimental features became mainstream:
+
+- [PSConstrainedAuditLogging][09] - Add support for logging message about code that would not be
+  allowed in Constrained language mode
 - [PSCustomTableHeaderLabelDecoration][05] - Add formatting differentiation for table header labels
   that aren't property members.
   - This feature also adds the **CustomTableHeaderLabel** property to `$PSStyle.Formatting` that
     allows you to change the formatting of the header label.
-- [PSFeedbackProvider][06] - Replaces the hard-coded suggestion framework with an extensible
-  feedback provider.
-  - This feature also adds the **FeedbackProvider** and **FeedbackText** properties to
-    `$PSStyle.Formatting` that allow you to change the formatting of feedback messages.
-- [PSModuleAutoLoadSkipOfflineFiles][07] - Module discovery now skips over files that are marked by
-  cloud providers as not fully on disk.
-- [PSCommandWithArgs][04] - Add support for passing arguments to commands as a single string
-- [PSConstrainedAuditLogging][09] - Add support for logging message about code that would not be
-  allowed in Constrained language mode
+- [PSNativeCommandErrorActionPreference][08] - `$PSNativeCommandUseErrorActionPreference` is set to
+  `$true` when feature is enabled ([#18695][18695])
 - [PSNativeCommandPreserveBytePipe][10] - Preserves the byte-stream data when redirecting the
   **stdout** stream of a native command to a file or when piping byte-stream data to the stdin
   stream of a native command.
 - [PSWindowsNativeCommandArgPassing][11] - Changes the default value of
-  `$PSNativeCommandArgumentPassing` on Windows
+  `$PSNativeCommandArgumentPassing` to `Windows` on Windows.
 
 PowerShell 7.4 changed the following experimental features:
 
-- [PSNativeCommandErrorActionPreference][08] - `$PSNativeCommandUseErrorActionPreference` is set to
-  `$true` when feature is enabled ([#18695][18695])
 - [PSCommandNotFoundSuggestion][03] - This feature now uses an extensible feedback provider rather
   than hard-coded suggestions ([#18726][18726])
 
