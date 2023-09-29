@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 01/30/2023
+ms.date: 09/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -19,8 +19,8 @@ behavior. These preference variables work like the options in GUI-based
 systems.
 
 The preference variables affect the PowerShell operating environment and all
-commands run in the environment. In many cases, the cmdlets have parameters
-that you can use to override the preference behavior for a specific command.
+commands run in the environment. Some cmdlets have parameters that allow you to
+override the preference behavior for a specific command.
 
 The following table lists the preference variables and their default values.
 
@@ -1007,36 +1007,44 @@ line is parsed for native commands. The new `$PSNativeCommandArgumentPassing`
 preference variable controls this behavior.
 
 > [!CAUTION]
-> The new behavior is a **breaking change** from the current behavior. This may
-> break scripts and automation that work around the various issues when
-> invoking native applications. Historically, quotes must be escaped and it's
-> not possible to provide empty arguments to a native application.
+> The new behavior is a **breaking change** from the previous behavior. This
+> may break scripts and automation that work around the various issues when
+> invoking native applications.
 
 The automatic variable `$PSNativeCommandArgumentPassing` allows you to select
 the behavior at runtime. The valid values are `Legacy`, `Standard`, and
-`Windows`. The default behavior is platform specific. On Windows platforms, the
-default setting is `Windows` and non-Windows platforms default to `Standard`.
+`Windows`. `Legacy` is the historic behavior.
 
-`Legacy` is the historic behavior. The behavior of `Windows` and `Standard`
-mode are the same except, in `Windows` mode, invocations of the following files
-automatically use the `Legacy` style argument passing.
+The `$PSNativeCommandArgumentPassing` variable is defined by default but the
+value is platform specific.
+
+- On Windows, the preference is set to `Windows`.
+- On non-Windows platforms, the preference is set to `Standard`.
+- If you have removed the `$PSNativeCommandArgumentPassing` variable,
+  PowerShell uses the `Standard` behavior.
+
+The behavior of `Windows` and `Standard` mode are the same except, in `Windows`
+mode, PowerShell uses the `Legacy` behavior of argument passing when you run
+the following files.
 
 - `cmd.exe`
 - `cscript.exe`
+- `find.exe`
+- `sqlcmd.exe`
 - `wscript.exe`
-- ending with `.bat`
-- ending with `.cmd`
-- ending with `.js`
-- ending with `.vbs`
-- ending with `.wsf`
+- Files ending with:
+  - `.bat`
+  - `.cmd`
+  - `.js`
+  - `.vbs`
+  - `.wsf`
 
 If the `$PSNativeCommandArgumentPassing` is set to either `Legacy` or
 `Standard`, the parser doesn't check for these files. For examples of the new
 behavior, see [about_Parsing][33].
 
 This experimental feature also added the ability to trace parameter binding for
-native commands. For more information, see
-[Trace-Command][47].
+native commands. For more information, see [Trace-Command][47].
 
 ## $PSSessionApplicationName
 

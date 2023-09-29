@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 09/26/2023
+ms.date: 09/29/2023
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -145,11 +145,13 @@ The following members control how or when ANSI formatting is used:
   - **Debug** - formatting for debug messages
   - **TableHeader** - formatting for table headers
   - **CustomTableHeaderLabel** - formatting for table headers that are
-    calculated values (added as an experimental feature in PowerShell 7.4)
-  - **FeedbackProvider** - formatting for the feedback provider label (added as
-    an experimental feature in PowerShell 7.4)
+    calculated values
+  - **FeedbackName** - formatting for the feedback provider name (added as an
+    experimental feature in PowerShell 7.4)
   - **FeedbackText** - formatting for feedback messages (added as an
     experimental feature in PowerShell 7.4)
+  - **FeedbackAction** - formatting for the feedback provider suggested actions
+    (added as an experimental feature in PowerShell 7.4)
 
 - `$PSStyle.Progress` allows you to control progress view bar rendering.
 

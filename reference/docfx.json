@@ -96,7 +96,7 @@
       "feedback_product_url": "https://github.com/PowerShell/PowerShell/issues/new/choose",
       "feedback_system": "OpenSource",
       "open_source_feedback_contributorGuideUrl": "https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide",
-      "open_source_feedback_issueTitle": "Customer feedback - ",
+      "open_source_feedback_issueTitle": "",
       "open_source_feedback_issueLabels": "needs-triage",
       "open_source_feedback_issueUrl": "https://github.com/MicrosoftDocs/PowerShell-Docs/issues/new?template=04-customer-feedback.yml",
       "open_source_feedback_productDescription": "PowerShell is an open source project. Select a link to provide feedback:",

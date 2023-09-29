@@ -1,7 +1,7 @@
 ---
 description: Explains how to redirect output from PowerShell to text files.
 Locale: en-US
-ms.date: 05/04/2021
+ms.date: 09/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Redirection
@@ -30,8 +30,7 @@ You can use the following methods to redirect output:
   a file target is functionally equivalent to piping to `Out-File` with no
   extra parameters.
 
-For more information about streams, see
-[about_Output_Streams](about_Output_Streams.md).
+For more information about streams, see [about_Output_Streams][04].
 
 ### Redirectable output streams
 
@@ -47,12 +46,12 @@ PowerShell supports redirection of the following output streams.
 | 6        | **Information** Stream | PowerShell 5.0 | `Write-Information`, `Write-Host` |
 | *        | All Streams            | PowerShell 3.0 |                     |
 
-There is also a **Progress** stream in PowerShell, but it does not support
+There is also a **Progress** stream in PowerShell, but it doesn't support
 redirection.
 
 > [!IMPORTANT]
 > The **Success** and **Error** streams are similar to the stdout and stderr
-> streams of other shells. However, stdin is not connected to the PowerShell
+> streams of other shells. However, stdin isn't connected to the PowerShell
 > pipeline for input.
 
 ### PowerShell redirection operators
@@ -75,10 +74,10 @@ is specified.
 
 ### Example 1: Redirect errors and output to a file
 
-This example runs `dir` on one item that will succeed, and one that will error.
+This example runs `dir` on one item that succeeds, and one that fails.
 
 ```powershell
-dir 'C:\', 'fakepath' 2>&1 > .\dir.log
+dir C:\, fakepath 2>&1 > .\dir.log
 ```
 
 It uses `2>&1` to redirect the **Error** stream to the **Success** stream, and
@@ -109,12 +108,12 @@ desired result.
 - `2>&1` redirects the **Error** stream to the **Success** stream (which also
   now includes all **Warning** stream data)
 - `>` redirects the **Success** stream (which now contains both **Warning**
-  and **Error** streams) to a file called `C:\temp\redirection.log`)
+  and **Error** streams) to a file called `C:\temp\redirection.log`.
 
 ### Example 4: Redirect all streams to a file
 
 This example sends all streams output from a script called `script.ps1` to a
-file called `script.log`
+file called `script.log`.
 
 ```powershell
 .\script.ps1 *> script.log
@@ -124,8 +123,8 @@ file called `script.log`
 
 This example suppresses all information stream data. To read more about
 **Information** stream cmdlets, see
-[Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host) and
-[Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
+[Write-Host][11] and
+[Write-Information][12]
 
 ```powershell
 &{
@@ -175,7 +174,7 @@ When we run this script we get prompted when `$ErrorActionPreference` is set to
 PS C:\temp> .\test.ps1
 
 Confirm
-Cannot find path 'C:\not-here' because it does not exist.
+Can't find path 'C:\not-here' because it doesn't exist.
 [Y] Yes  [A] Yes to All  [H] Halt Command  [S] Suspend  [?] Help (default is "Y"): H
 Get-Item: C:\temp\test.ps1:23
 Line |
@@ -186,7 +185,7 @@ Line |
 
 When we examine the log file we see the following:
 
-```
+```powershell
 PS C:\temp> Get-Content .\log.txt
 Continue
 
@@ -205,11 +204,11 @@ Inquire
 
 ## Notes
 
-The redirection operators that do not append data (`>` and `n>`) overwrite the
+The redirection operators that don't append data (`>` and `n>`) overwrite the
 current contents of the specified file without warning.
 
 However, if the file is a read-only, hidden, or system file, the redirection
-**fails**. The append redirection operators (`>>` and `n>>`) do not write to a
+**fails**. The append redirection operators (`>>` and `n>>`) don't write to a
 read-only file, but they append content to a system or hidden file.
 
 To force the redirection of content to a read-only, hidden, or system file,
@@ -224,7 +223,7 @@ formatted correctly. To write to files with a different encoding, use the
 
 When you are writing to a file using either `Out-File` or the redirection
 operators, PowerShell formats table output to the file based on the width of
-the console it is running within. For instance, when logging table output
+the console it's running within. For instance, when logging table output
 to file using a command like `Get-ChildItem Env:\Path > path.log` on a system
 where the console width is set to 80 columns, the output in the file is
 truncated to 80 characters:
@@ -267,16 +266,21 @@ Get-Service | Format-Table -AutoSize > services.log
 ```
 
 For more information about `$PSDefaultParameterValues`, see
-[about_Preference_Variables](about_preference_variables.md#psdefaultparametervalues).
+[about_Preference_Variables][06].
+
+### Redirecting binary data
+
+PowerShell doesn't support the redirection of binary data. If you redirect
+byte-stream data, PowerShell treats the data as strings. This redirection
+results in corrupted data.
 
 ### Potential confusion with comparison operators
 
-The `>` operator is not to be confused with the
-[Greater-than](about_Comparison_Operators.md#-gt--ge--lt-and--le) comparison
+The `>` operator isn't to be confused with the [Greater-than][02] comparison
 operator (often denoted as `>` in other programming languages).
 
 Depending on the objects being compared, the output using `>` can appear to be
-correct (because 36 is not greater than 42).
+correct (because 36 isn't greater than 42).
 
 ```powershell
 PS> if (36 > 42) { "true" } else { "false" }
@@ -310,21 +314,39 @@ Line |
 
 If numeric comparison is the required operation, `-lt` and `-gt` should be
 used. For more information, see the `-gt` operator in
-[about_Comparison_Operators](about_Comparison_Operators.md#-gt--ge--lt-and--le).
+[about_Comparison_Operators][02].
 
 ## See also
 
-- [about_Command_Syntax](about_Command_Syntax.md)
-- [about_Operators](about_Operators.md)
-- [about_Output_Streams](about_Output_Streams.md)
-- [about_Path_Syntax](about_Path_Syntax.md)
-- [Out-File](xref:Microsoft.PowerShell.Utility.Out-File)
-- [Tee-Object](xref:Microsoft.PowerShell.Utility.Tee-Object)
-- [Write-Debug](xref:Microsoft.PowerShell.Utility.Write-Debug)
-- [Write-Error](xref:Microsoft.PowerShell.Utility.Write-Error)
-- [Write-Host](xref:Microsoft.PowerShell.Utility.Write-Host)
-- [Write-Information](xref:Microsoft.PowerShell.Utility.Write-Information)
-- [Write-Output](xref:Microsoft.PowerShell.Utility.Write-Output)
-- [Write-Progress](xref:Microsoft.PowerShell.Utility.Write-Progress)
-- [Write-Verbose](xref:Microsoft.PowerShell.Utility.Write-Verbose)
-- [Write-Warning](xref:Microsoft.PowerShell.Utility.Write-Warning)
+- [about_Command_Syntax][01]
+- [about_Operators][03]
+- [about_Output_Streams][04]
+- [about_Path_Syntax][05]
+- [Out-File][07]
+- [Tee-Object][08]
+- [Write-Debug][09]
+- [Write-Error][10]
+- [Write-Host][11]
+- [Write-Information][12]
+- [Write-Output][13]
+- [Write-Progress][14]
+- [Write-Verbose][15]
+- [Write-Warning][16]
+
+<!-- link references -->
+[01]: about_Command_Syntax.md
+[02]: about_Comparison_Operators.md#-gt--ge--lt-and--le
+[03]: about_Operators.md
+[04]: about_Output_Streams.md
+[05]: about_Path_Syntax.md
+[06]: about_preference_variables.md#psdefaultparametervalues
+[07]: xref:Microsoft.PowerShell.Utility.Out-File
+[08]: xref:Microsoft.PowerShell.Utility.Tee-Object
+[09]: xref:Microsoft.PowerShell.Utility.Write-Debug
+[10]: xref:Microsoft.PowerShell.Utility.Write-Error
+[11]: xref:Microsoft.PowerShell.Utility.Write-Host
+[12]: xref:Microsoft.PowerShell.Utility.Write-Information
+[13]: xref:Microsoft.PowerShell.Utility.Write-Output
+[14]: xref:Microsoft.PowerShell.Utility.Write-Progress
+[15]: xref:Microsoft.PowerShell.Utility.Write-Verbose
+[16]: xref:Microsoft.PowerShell.Utility.Write-Warning
