@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadline
-ms.date: 12/13/2022
+ms.date: 10/02/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
@@ -32,7 +32,7 @@ Set-PSReadLineKeyHandler [-Chord] <String[]> [-ViMode <ViMode>] [-Function] <Str
 ## DESCRIPTION
 
 The `Set-PSReadLineKeyHandler` cmdlet customizes the result when a key or sequence of keys is
-pressed. With user-defined key bindings, you can do almost anything that is possible from within a
+pressed. With user-defined key bindings, you can do almost anything that's possible from within a
 PowerShell script.
 
 ## EXAMPLES
@@ -48,11 +48,11 @@ Set-PSReadLineKeyHandler -Chord UpArrow -Function HistorySearchBackward
 
 ### Example 2: Bind a key to a script block
 
-This example shows how a single key can be used to run a command. The command binds the key `Ctrl+B`
+This example shows how a single key can be used to run a command. The command binds the key `Ctrl+b`
 to a script block that clears the line, inserts the word "build", and then accepts the line.
 
 ```powershell
-Set-PSReadLineKeyHandler -Chord Ctrl+B -ScriptBlock {
+Set-PSReadLineKeyHandler -Chord Ctrl+b -ScriptBlock {
     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert('build')
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
@@ -81,14 +81,12 @@ Accept wildcard characters: False
 ### -Chord
 
 The key or sequence of keys to be bound to a function or script block. Use a single string to
-specify a single binding. If the binding is a sequence of keys, separate the keys by a comma, as in
-the following example:
+specify a single binding. If the binding is a sequence of keys, separate the keys by a comma. For
+example: `Ctrl+x,Ctrl+l`
 
-`Ctrl+X,Ctrl+L`
-
-> [!NOTE]
-> As of PSReadLine 2.0.0, the **Chord** parameter is **case-sensitive**. Meaning,
-> <kbd>Ctrl</kbd>+<kbd>X</kbd> and <kbd>Ctrl</kbd>+<kbd>x</kbd> create different bindings.
+Letter key references are defined using lowercase letters. If you want to define a chord that uses
+an uppercase letter, the chord must include the **Shift** key. For example, `Ctrl+Shift+x` and
+`Ctrl+x` create different bindings.
 
 This parameter accepts an array of strings. Each string is a separate binding, not a sequence of
 keys for a single binding.
@@ -107,7 +105,7 @@ Accept wildcard characters: False
 
 ### -Description
 
-Specifies a more detailed description of the key binding that is visible in the output of the
+Specifies a more detailed description of the key binding that's visible in the output of the
 `Get-PSReadLineKeyHandler` cmdlet.
 
 ```yaml
@@ -125,7 +123,7 @@ Accept wildcard characters: False
 ### -Function
 
 Specifies the name of an existing key handler provided by PSReadLine. This parameter lets you rebind
-existing key bindings, or bind a handler that is currently unbound.
+existing key bindings, or bind a handler that's currently unbound.
 
 ```yaml
 Type: System.String
@@ -180,10 +178,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction,
--ErrorVariable, -InformationAction, -InformationVariable, -OutVariable,
--OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
-For more information, see
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
