@@ -564,8 +564,8 @@ Valid values are as follows:
 - **SaveNothing**: Don't use a history file.
 
 > [!NOTE]
-> If you set `HistorySaveStyle` to `SaveNothing` in a session and then later set `SaveIncrementally`, 
-> the commands previously run in the same session will be saved to history. 
+> If you set **HistorySaveStyle** to `SaveNothing` and then set it to `SaveIncrementally` later in
+> the same session, PSReadLine saves all the commands previously run in the session.
 
 ```yaml
 Type: Microsoft.PowerShell.HistorySaveStyle
