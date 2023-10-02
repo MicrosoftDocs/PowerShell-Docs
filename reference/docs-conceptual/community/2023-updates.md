@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 09/21/2023
+ms.date: 10/02/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,52 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-Sep
+
+New content
+
+- [How to create a feedback provider](../dev-cross-plat/create-feedback-provider.md)
+
+Updated Content
+
+- Updated [What's new in PowerShell 7.4](../whats-new/What-s-New-in-PowerShell-74.md) for PowerShell
+  7.4-preview.6
+- Documented the changes to search scope in [How to use the documentation](../how-to-use-docs.md)
+- Updated
+  [What's new in Crescendo 1.1](/powershell/utility-modules/crescendo/whats-new/whats-new-in-crescendo-11)
+  for the GA release
+- Updated the setup scripts for supported Linux distributions
+- Updated DSC v3 content for the alpha.3 release
+
+Quality improvement project contributions
+
+- @ehmiiz contributed 5 PRs to update 35 files
+
+New Learn platform features
+
+- Deployed the new feedback experience at that bottom of each page
+
+### Top Community Contributors
+
+GitHub stats
+
+- 52 PRs merged (9 from Community)
+- 24 issues opened (22 from Community)
+- 24 issues closed (23 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| ehmiiz          |     5      |       5       |
+| bubbletroubles  |     1      |               |
+| JamesDBartlett3 |     1      |               |
+| not-not-kevin   |     1      |               |
+| skycommand      |     1      |               |
+| jsilverm        |            |       3       |
+| mklement0       |            |       2       |
 
 ## 2023-Aug
 
