@@ -564,6 +564,10 @@ Valid values are as follows:
 - **SaveAtExit**: Append history file when PowerShell exits.
 - **SaveNothing**: Don't use a history file.
 
+> [!NOTE]
+> If you set `HistorySaveStyle` to `SaveNothing` in a session and then later set `SaveIncrementally`, 
+> the commands previously run in the same session will be saved to history. 
+
 ```yaml
 Type: Microsoft.PowerShell.HistorySaveStyle
 Parameter Sets: (All)
