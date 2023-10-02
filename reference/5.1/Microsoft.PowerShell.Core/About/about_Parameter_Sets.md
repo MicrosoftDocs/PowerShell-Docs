@@ -1,7 +1,7 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
 Locale: en-US
-ms.date: 06/05/2023
+ms.date: 10/02/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-5.1&WT.mc_id=ps-gethelp
 title: about Parameter Sets
 ---
@@ -46,7 +46,7 @@ of the **CmdletBinding** attribute specifies the default parameter set.
 PowerShell uses the default parameter set when it can't determine the parameter
 set to use based on the information provided to the command. For more
 information about the **CmdletBinding** attribute, see
-[about_functions_cmdletbindingattribute](about_functions_cmdletbindingattribute.md).
+[about_Functions_CmdletBindingAttribute][01].
 
 ## Declaring parameter sets
 
@@ -79,21 +79,13 @@ defined:
 function Measure-Lines {
     [CmdletBinding(DefaultParameterSetName = 'Path')]
     param (
-        [Parameter(Mandatory = $true,
-            ParameterSetName = 'Path',
-            HelpMessage = 'Enter one or more filenames',
-            Position = 0)]
-        [Parameter(Mandatory = $true,
-            ParameterSetName = 'PathAll',
-            Position = 0)]
+        [Parameter(Mandatory, ParameterSetName = 'Path', Position = 0)]
+        [Parameter(Mandatory, ParameterSetName = 'PathAll', Position = 0)]
         [string[]]$Path,
 
-        [Parameter(Mandatory = $true, ParameterSetName = 'LiteralPathAll')]
-        [Parameter(Mandatory = $true,
-            ParameterSetName = 'LiteralPath',
-            HelpMessage = 'Enter a single filename',
-            ValueFromPipeline = $true)]
-        [string]$LiteralPath,
+        [Parameter(Mandatory, ParameterSetName = 'LiteralPathAll', ValueFromPipeline)]
+        [Parameter(Mandatory, ParameterSetName = 'LiteralPath', ValueFromPipeline)]
+        [string[]]$LiteralPath,
 
         [Parameter(ParameterSetName = 'Path')]
         [Parameter(ParameterSetName = 'LiteralPath')]
@@ -107,8 +99,8 @@ function Measure-Lines {
         [Parameter(ParameterSetName = 'LiteralPath')]
         [switch]$Characters,
 
-        [Parameter(Mandatory = $true, ParameterSetName = 'PathAll')]
-        [Parameter(Mandatory = $true, ParameterSetName = 'LiteralPathAll')]
+        [Parameter(Mandatory, ParameterSetName = 'PathAll')]
+        [Parameter(Mandatory, ParameterSetName = 'LiteralPathAll')]
         [switch]$All,
 
         [Parameter(ParameterSetName = 'Path')]
@@ -121,17 +113,16 @@ function Measure-Lines {
             $Lines = $Words = $Characters = $true
         }
         elseif (($Words -eq $false) -and ($Characters -eq $false)) {
-            $Lines = $true
+            $Lines  = $true
         }
-
+    }
+    process {
         if ($Path) {
             $Files = Get-ChildItem -Path $Path -Recurse:$Recurse -File
         }
         else {
             $Files = Get-ChildItem -LiteralPath $LiteralPath -File
         }
-    }
-    process {
         foreach ($file in $Files) {
             $result = [ordered]@{ }
             $result.Add('File', $file.fullname)
@@ -166,7 +157,7 @@ with the `LiteralPath` and `LiteralPathAll` parameter sets. Even though the
 the **Path** and **LiteralPath** parameters differentiate them.
 
 Use `Get-Command -Syntax` shows you the syntax of each parameter set. However
-it does not show the name of the parameter set. The following example shows
+it doesn't show the name of the parameter set. The following example shows
 which parameters can be used in each parameter set.
 
 ```powershell
@@ -180,13 +171,13 @@ ParameterSetName Parameters
 ---------------- ----------
 Path             [-Path] <string[]> [-Lines] [-Words] [-Characters] [-Recurse] [<CommonParameters>]
 PathAll          [-Path] <string[]> -All [-Recurse] [<CommonParameters>]
-LiteralPath      -LiteralPath <string> [-Lines] [-Words] [-Characters] [<CommonParameters>]
-LiteralPathAll   -LiteralPath <string> -All [<CommonParameters>]
+LiteralPath      -LiteralPath <string[]> [-Lines] [-Words] [-Characters] [<CommonParameters>]
+LiteralPathAll   -LiteralPath <string[]> -All [<CommonParameters>]
 ```
 
 ### Parameter sets in action
 
-In this example, we are using the `PathAll` parameter set.
+The example uses the `PathAll` parameter set.
 
 ```powershell
 Measure-Lines test* -All
@@ -210,7 +201,7 @@ Get-ChildItem -Path $PSHOME -LiteralPath $PSHOME
 ```
 
 ```Output
-Get-ChildItem : Parameter set cannot be resolved using the specified named parameters.
+Get-ChildItem : Parameter set can't be resolved using the specified named parameters.
 At line:1 char:1
 + Get-ChildItem -Path $PSHOME -LiteralPath $PSHOME
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -222,3 +213,6 @@ The **Path** and **LiteralPath** parameters are unique to different parameter
 sets of the `Get-ChildItem` cmdlet. When the parameters are run together in the
 same cmdlet, an error is thrown. Only one parameter set can be used per cmdlet
 call at a time.
+
+<!-- link references -->
+[01]: about_functions_cmdletbindingattribute.md
