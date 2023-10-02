@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 08/22/2023
+ms.date: 10/02/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -558,10 +558,10 @@ Specifies how **PSReadLine** saves history.
 
 Valid values are as follows:
 
-- **SaveIncrementally**: Save history after each command is executed and share across multiple
+- `SaveIncrementally`: Save history after each command is executed and share across multiple
   instances of PowerShell.
-- **SaveAtExit**: Append history file when PowerShell exits.
-- **SaveNothing**: Don't use a history file.
+- `SaveAtExit`: Append history file when PowerShell exits.
+- `SaveNothing`: Don't use a history file.
 
 > [!NOTE]
 > If you set **HistorySaveStyle** to `SaveNothing` and then set it to `SaveIncrementally` later in
