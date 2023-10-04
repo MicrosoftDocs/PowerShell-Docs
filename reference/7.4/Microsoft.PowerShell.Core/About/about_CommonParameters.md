@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 07/21/2023
+ms.date: 10/04/2023
 no-loc: [Debug, Verbose, Confirm]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -496,7 +496,7 @@ The valid values are as follows:
 
 ```yaml
 Type: ActionPreference
-Aliases: ea
+Aliases: proga
 Accepted values: Break, Suspend, Ignore, Inquire, Continue, Stop, SilentlyContinue
 
 Required: False
