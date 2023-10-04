@@ -32,11 +32,11 @@
     },
     {
       "redirect_document_id": true,
-      "redirect_url": "//powershell/scripting/learn/remoting/ssh-remoting-in-powershell",
+      "redirect_url": "/powershell/scripting/learn/remoting/ssh-remoting-in-powershell",
       "source_path": "reference/docs-conceptual/learn/remoting/ssh-remoting-in-powershell-core.md"
     },
     {
-      "redirect_document_id": true,
+      "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/learn/remoting/wsman-remoting-in-powershell",
       "source_path": "reference/docs-conceptual/learn/remoting/wsman-unsupported-for-nonwindows.md"
     },
