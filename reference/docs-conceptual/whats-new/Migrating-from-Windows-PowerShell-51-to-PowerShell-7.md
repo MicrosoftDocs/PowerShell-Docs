@@ -39,7 +39,7 @@ the following methods:
 
 > [!NOTE]
 > The MSI package can be deployed and updated with management products such as
-> [System Center Configuration Manager (SCCM)][06]. Download the packages from
+> [Microsoft Configuration Manager][06]. Download the packages from
 > [GitHub Release page][23].
 
 Deploying the MSI package requires Administrator permission. The ZIP package can be deployed by any
@@ -148,8 +148,10 @@ The path to the location of the profile has changed in PowerShell 7.
 The profile filenames have also changed:
 
    ```powershell
-   PS> $PROFILE | Select-Object *Host* | Format-List
+   $PROFILE | Select-Object *Host* | Format-List
+  ```
 
+  ```Output
    AllUsersAllHosts       : C:\Program Files\PowerShell\7\profile.ps1
    AllUsersCurrentHost    : C:\Program Files\PowerShell\7\Microsoft.PowerShell_profile.ps1
    CurrentUserAllHosts    : C:\Users\<user>\Documents\PowerShell\profile.ps1
