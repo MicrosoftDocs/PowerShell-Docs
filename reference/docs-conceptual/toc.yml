@@ -219,9 +219,9 @@ items:
           - name: Running remote commands
             href: learn/remoting/running-remote-commands.md
           - name: PowerShell remoting over SSH
-            href: learn/remoting/ssh-remoting-in-powershell-core.md
-          - name: WS-Management (WSMan) remoting in PowerShell Core
-            href: learn/remoting/wsman-remoting-in-powershell-core.md
+            href: learn/remoting/ssh-remoting-in-powershell.md
+          - name: WS-Management (WSMan) remoting in PowerShell
+            href: learn/remoting/wsman-remoting-in-powershell.md
           - name: WSMan remoting is not supported on non-Windows platforms
             href: learn/remoting/wsman-unsupported-for-nonwindows.md
           - name: WinRM Security

@@ -26,6 +26,21 @@
       "source_path": "reference/docs-conceptual/learn/tutorials/01-discover-powershell.md"
     },
     {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/remoting/wsman-remoting-in-powershell",
+      "source_path": "reference/docs-conceptual/learn/remoting/wsman-remoting-in-powershell-core.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "//powershell/scripting/learn/remoting/ssh-remoting-in-powershell",
+      "source_path": "reference/docs-conceptual/learn/remoting/ssh-remoting-in-powershell-core.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/remoting/wsman-remoting-in-powershell",
+      "source_path": "reference/docs-conceptual/learn/remoting/wsman-unsupported-for-nonwindows.md"
+    },
+    {
       "redirect_document_id": false,
       "redirect_url": "/powershell/utility-modules/platyps/create-help-using-platyps",
       "source_path": "reference/docs-conceptual/dev-cross-plat/create-help-using-platyps.md"
