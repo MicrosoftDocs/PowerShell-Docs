@@ -1,16 +1,16 @@
 ---
-description: Examples of Comment-Based Help
-ms.date: 07/10/2023
+description: Examples of Comment-based Help
+ms.date: 10/05/2023
 ms.topic: reference
-title: Examples of Comment-Based Help
+title: Examples of Comment-based Help
 ---
 
-# Examples of Comment-Based Help
+# Examples of Comment-based Help
 
-This topic includes example that demonstrate how to use comment-based help for scripts and
+This topic includes examples that demonstrate how to use comment-based help for scripts and
 functions.
 
-## Example 1: Comment-Based Help for a Function
+## Example 1: Comment-based Help for a Function
 
  The following sample function includes comment-based Help.
 
@@ -42,19 +42,19 @@ function Add-Extension
         System.String. Add-Extension returns a string with the extension or file name.
 
         .EXAMPLE
-        PS> extension -name "File"
+        PS> Add-Extension -name "File"
         File.txt
 
         .EXAMPLE
-        PS> extension -name "File" -extension "doc"
+        PS> Add-Extension -name "File" -extension "doc"
         File.doc
 
         .EXAMPLE
-        PS> extension "File" "doc"
+        PS> Add-Extension "File" "doc"
         File.doc
 
         .LINK
-        Online version: http://www.fabrikam.com/extension.html
+        Online version: http://www.fabrikam.com/add-extension.html
 
         .LINK
         Set-Item
@@ -70,74 +70,74 @@ PS> Get-Help Add-Extension -full
 ```
 
 ```Output
-        NAME
-            Add-Extension
+NAME
+    Add-Extension
 
-        SYNOPSIS
-            Adds a file name extension to a supplied name.
+SYNOPSIS
+    Adds a file name extension to a supplied name.
 
-        SYNTAX
-            Add-Extension [[-Name] <String>] [[-Extension] <String>] [<CommonParameters>]
+SYNTAX
+    Add-Extension [[-Name] <String>] [[-Extension] <String>] [<CommonParameters>]
 
-        DESCRIPTION
-            Adds a file name extension to a supplied name. Takes any strings for the file name or extension.
+DESCRIPTION
+    Adds a file name extension to a supplied name. Takes any strings for the file name or extension.
 
-        PARAMETERS
-           -Name
-               Specifies the file name.
+PARAMETERS
+    -Name
+        Specifies the file name.
 
-               Required?                    false
-               Position?                    0
-               Default value
-               Accept pipeline input?       false
-               Accept wildcard characters?
+        Required?                    false
+        Position?                    0
+        Default value
+        Accept pipeline input?       false
+        Accept wildcard characters?
 
-           -Extension
-               Specifies the extension. "Txt" is the default.
+    -Extension
+        Specifies the extension. "Txt" is the default.
 
-               Required?                    false
-               Position?                    1
-               Default value
-               Accept pipeline input?       false
-               Accept wildcard characters?
+        Required?                    false
+        Position?                    1
+        Default value
+        Accept pipeline input?       false
+        Accept wildcard characters?
 
-            <CommonParameters>
-               This cmdlet supports the common parameters: -Verbose, -Debug,
-               -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,
-               -OutBuffer and -OutVariable. For more information, type
-               "get-help about_commonparameters".
+    <CommonParameters>
+        This cmdlet supports the common parameters: -Verbose, -Debug,
+        -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,
+        -OutBuffer and -OutVariable. For more information, type
+        "get-help about_commonparameters".
 
-        INPUTS
-            None. You can't pipe objects to Add-Extension.
+INPUTS
+    None. You can't pipe objects to Add-Extension.
 
-        OUTPUTS
-            System.String. Add-Extension returns a string with the extension or file name.
+OUTPUTS
+    System.String. Add-Extension returns a string with the extension or file name.
 
-            -------------------------- EXAMPLE 1 --------------------------
+    -------------------------- EXAMPLE 1 --------------------------
 
-            PS> extension -name "File"
-            File.txt
+    PS> Add-Extension -name "File"
+    File.txt
 
-            -------------------------- EXAMPLE 2 --------------------------
+    -------------------------- EXAMPLE 2 --------------------------
 
-            PS> extension -name "File" -extension "doc"
-            File.doc
+    PS> Add-Extension -name "File" -extension "doc"
+    File.doc
 
-            -------------------------- EXAMPLE 3 --------------------------
+    -------------------------- EXAMPLE 3 --------------------------
 
-            PS> extension "File" "doc"
-            File.doc
+    PS> Add-Extension "File" "doc"
+    File.doc
 
-        RELATED LINKS
-            Online version: http://www.fabrikam.com/extension.html
-            Set-Item
+RELATED LINKS
+    Online version: http://www.fabrikam.com/add-extension.html
+    Set-Item
 ```
 
-## Example 2: Comment-Based Help for a Script
+## Example 2: Comment-based Help for a Script
 
 The following sample function includes comment-based Help.
 
-Notice the blank lines between the closing `#>` and the `Param` statement. In a script that does not
+Notice the blank lines between the closing `#>` and the `Param` statement. In a script that doesn't
 have a `Param` statement, there must be at least two blank lines between the final comment in the
 Help topic and the first function declaration. Without these blank lines, `Get-Help` associates the
 Help topic with the function, instead of the script.
@@ -189,67 +189,67 @@ PS> Get-Help c:\ps-test\update-month.ps1 -full
 ```
 
 ```Output
-            NAME
-                C:\ps-test\Update-Month.ps1
+NAME
+    C:\ps-test\Update-Month.ps1
 
-            SYNOPSIS
-                Performs monthly data updates.
+SYNOPSIS
+    Performs monthly data updates.
 
-            SYNTAX
-                C:\ps-test\Update-Month.ps1 [-InputPath] <String> [[-OutputPath]
-                <String>] [<CommonParameters>]
+SYNTAX
+    C:\ps-test\Update-Month.ps1 [-InputPath] <String> [[-OutputPath]
+    <String>] [<CommonParameters>]
 
-            DESCRIPTION
-                The Update-Month.ps1 script updates the registry with new data
-                generated during the past month and generates a report.
+DESCRIPTION
+    The Update-Month.ps1 script updates the registry with new data
+    generated during the past month and generates a report.
 
-            PARAMETERS
-               -InputPath
-                   Specifies the path to the CSV-based input file.
+PARAMETERS
+    -InputPath
+        Specifies the path to the CSV-based input file.
 
-                   Required?                    true
-                   Position?                    0
-                   Default value
-                   Accept pipeline input?       false
-                   Accept wildcard characters?
+        Required?                    true
+        Position?                    0
+        Default value
+        Accept pipeline input?       false
+        Accept wildcard characters?
 
-               -OutputPath
-                   Specifies the name and path for the CSV-based output file. By
-                   default, MonthlyUpdates.ps1 generates a name from the date
-                   and time it runs, and saves the output in the local directory.
+    -OutputPath
+        Specifies the name and path for the CSV-based output file. By
+        default, MonthlyUpdates.ps1 generates a name from the date
+        and time it runs, and saves the output in the local directory.
 
-                   Required?                    false
-                   Position?                    1
-                   Default value
-                   Accept pipeline input?       false
-                   Accept wildcard characters?
+        Required?                    false
+        Position?                    1
+        Default value
+        Accept pipeline input?       false
+        Accept wildcard characters?
 
-               <CommonParameters>
-                   This cmdlet supports the common parameters: -Verbose, -Debug,
-                   -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,
-                   -OutBuffer and -OutVariable. For more information, type,
-                   "get-help about_commonparameters".
+    <CommonParameters>
+        This cmdlet supports the common parameters: -Verbose, -Debug,
+        -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,
+        -OutBuffer and -OutVariable. For more information, type,
+        "get-help about_commonparameters".
 
-            INPUTS
-                   None. You can't pipe objects to Update-Month.ps1.
+INPUTS
+        None. You can't pipe objects to Update-Month.ps1.
 
-            OUTPUTS
-                   None. Update-Month.ps1 doesn't generate any output.
+OUTPUTS
+        None. Update-Month.ps1 doesn't generate any output.
 
-            -------------------------- EXAMPLE 1 --------------------------
+-------------------------- EXAMPLE 1 --------------------------
 
-            PS> .\Update-Month.ps1
+PS> .\Update-Month.ps1
 
-            -------------------------- EXAMPLE 2 --------------------------
+-------------------------- EXAMPLE 2 --------------------------
 
-            PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
 
-            -------------------------- EXAMPLE 3 --------------------------
+-------------------------- EXAMPLE 3 --------------------------
 
-            PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
-            C:\Reports\2009\January.csv
+PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
+C:\Reports\2009\January.csv
 
-            RELATED LINKS
+RELATED LINKS
 ```
 
 ## Example 3: Parameter Descriptions in a Param Statement
@@ -278,6 +278,7 @@ function Add-Extension
         Adds a file name extension to a supplied name.
 ...
     #>
+}
 ```
 
 The results are the same as the results for Example 1. `Get-Help` interprets the parameter
@@ -292,7 +293,7 @@ lines of the `Update-Month.ps1` script. The script uses the `.ExternalHelp` keyw
 path to an XML-based Help topic for the script.
 
 ```powershell
-#  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
+# .ExternalHelp C:\MyScripts\Update-Month-Help.xml
 
     param ([string]$InputPath, [string]$OutPutPath)
 
@@ -322,7 +323,6 @@ describes the Help function, the Help function uses the `.ForwardHelpTargetName`
 ```powershell
 function help
 {
-
     <#
       .FORWARDHELPTARGETNAME Get-Help
       .FORWARDHELPCATEGORY Cmdlet
@@ -333,6 +333,7 @@ function help
             [System.String]
             ${Name},
     ...
+}
 ```
 
 The following command uses this feature. When a user types a `Get-Help` command for the `Help`
@@ -343,10 +344,10 @@ PS> get-help help
 ```
 
 ```Output
-            NAME
-                Get-Help
+NAME
+    Get-Help
 
-            SYNOPSIS
-                Displays information about Windows PowerShell cmdlets and concepts.
-            ...
+SYNOPSIS
+    Displays information about Windows PowerShell cmdlets and concepts.
+...
 ```
