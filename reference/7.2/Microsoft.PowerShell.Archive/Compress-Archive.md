@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 03/03/2023
+ms.date: 10/06/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compress-Archive
@@ -25,15 +25,15 @@ Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLev
 ### PathWithUpdate
 
 ```
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] -Update
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
+ -Update [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithForce
 
 ```
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] -Force
- [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
+ -Force [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithUpdate
@@ -61,12 +61,12 @@ Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Compressi
 
 The `Compress-Archive` cmdlet creates a compressed, or zipped, archive file from one or more
 specified files or directories. An archive packages multiple files, with optional compression, into
-a single zipped file for easier distribution and storage. An archive file can be compressed by using
+a single zipped file for easier distribution and storage. An archive file can be compressed using
 the compression algorithm specified by the **CompressionLevel** parameter.
 
-The `Compress-Archive` cmdlet uses the Microsoft .NET API
-[System.IO.Compression.ZipArchive](/dotnet/api/system.io.compression.ziparchive) to compress files.
-The maximum file size is 2 GB because there's a limitation of the underlying API.
+The `Compress-Archive` cmdlet uses the **System.IO.Compression.ZipArchive** API to compress files.
+The API limits the maximum file size to 2GB. For more information, see
+[System.IO.Compression.ZipArchive](xref:System.IO.Compression.ZipArchive).
 
 > [!NOTE]
 > The `Compress-Archive` cmdlet ignores hidden files and folders when creating or updating the
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces the command to run without asking for user confirmation.
+Use this parameter to overwrite an existing archive file.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -452,12 +452,10 @@ Using recursion and sending objects down the pipeline can duplicate files in you
 example, if you use `Get-ChildItem` with the **Recurse** parameter, each **FileInfo** and
 **DirectoryInfo** object that's sent down the pipeline is added to the archive.
 
-The [ZIP file specification](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) does not
-specify a standard way of encoding filenames that contain non-ASCII characters. The
-`Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different encoding
-scheme. When extracting files with filenames not stored using UTF-8 encoding, `Expand-Archive` uses
-the raw value found in the archive. This can result in a filename that is different than the source
-filename stored in the archive.
+The `Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different
+encoding scheme. When extracting files with filenames not stored using UTF-8 encoding,
+`Expand-Archive` uses the raw value found in the archive. This can result in a filename that's
+different than the source filename stored in the archive.
 
 ## RELATED LINKS
 
