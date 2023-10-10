@@ -61,7 +61,7 @@ have restricted proxies:
 - `Select-Object`
 
 If you create your own implementation of these commands, you may inadvertently allow users to run
-code that prohibited by the JEA proxy commands.
+code prohibited by the JEA proxy commands.
 
 You can run the following command to get a list of restricted commands:
 

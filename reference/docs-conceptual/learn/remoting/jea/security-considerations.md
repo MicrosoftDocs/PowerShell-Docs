@@ -29,7 +29,7 @@ Remote Desktop or an unconstrained PowerShell endpoint.
 
 By default, virtual accounts are members of the local **Administrators** group on the machine. This
 membership gives them full rights to manage anything on the system, but no rights to manage
-resources on the network. When the user connects to another machines from the JEA session, the user
+resources on the network. When the user connects to other machines from the JEA session, the user
 context is that of the local computer account, not the virtual account.
 
 Domain controllers are a special case since there isn't a local **Administrators** group. Instead,
@@ -41,7 +41,7 @@ object instead.
 In both cases, you may assign the virtual account to specific security groups, especially when the
 task can be done without local or domain administrator privileges. If you already have a security
 group defined for your administrators, grant the virtual account membership to that group. Group
-membership for Virtual accounts is limited to local security groups on workstation and member
+membership for virtual accounts is limited to local security groups on workstation and member
 servers. On domain controllers, virtual accounts must be members of domain security groups. Once the
 virtual account has been added to one or more security groups, it no longer belongs to the default
 groups (local or domain administrators).
@@ -209,7 +209,7 @@ have restricted proxies:
 - `Select-Object`
 
 If you create your own implementation of these commands, you may inadvertently allow users to run
-code that prohibited by the JEA proxy commands.
+code prohibited by the JEA proxy commands.
 
 ## JEA doesn't protect against admins
 
