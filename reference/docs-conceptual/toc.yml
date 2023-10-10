@@ -442,6 +442,8 @@ items:
         items:
           - name: Preventing script injection attacks
             href: dev-cross-plat/security/preventing-script-injection.md
+          - name: Securing a restricted PowerShell remoting session
+            href: dev-cross-plat/security/securing-restricted-sessions.md
       - name: Developing modern modules
         items:
           - name: Writing portable modules
