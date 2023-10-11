@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 09/26/2023
+ms.date: 10/11/2023
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -227,10 +227,27 @@ release.
 ## Upgrading an existing installation
 
 For best results when upgrading, you should use the same install method you used when you first
-installed PowerShell. Each installation method installs PowerShell in a different location. If you
-aren't sure how PowerShell was installed, you can compare the installed location with the package
-information in this article. If you installed via the MSI package, that information appears in the
+installed PowerShell. If you aren't sure how PowerShell was installed, you can check the value of
+the `$PSHOME` variable, which always points to the directory containing PowerShell that the current
+session is running.
+
+- If the value is `$HOME\.dotnet\tools`, PowerShell was installed with the [.NET Global tool][15].
+- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was installed as an
+  [MSI package][16] or with [Winget][19] on a computer with an X86 or x64 processor.
+- If the value starts with `$Env:ProgramFiles\WindowsApps\`, PowerShell was installed as a
+  [Microsoft Store package][17] or with [Winget][19] on computer with an ARM processor.
+- If the value is anything else, it's likely that PowerShell was installed as a [ZIP package][20].
+
+If you installed via the MSI package, that information also appears in the
 **Programs and Features** Control Panel.
+
+To determine whether PowerShell may be upgraded with Winget, run the following command:
+
+```powershell
+winget list --name PowerShell --upgrade-available
+```
+
+If there is an available upgrade, the output indicates the latest available version.
 
 > [!NOTE]
 > When upgrading, PowerShell won't upgrade from an LTS version to a non-LTS version. It only
