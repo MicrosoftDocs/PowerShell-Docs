@@ -69,10 +69,10 @@ package from the [releases][02] page onto your Debian machine.
 
 The link to the current version is:
 
-- PowerShell 7.3.7 universal package for supported versions of Debian
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/powershell_7.3.7-1.deb_amd64.deb`
-- PowerShell 7.2.14 universal package for supported versions of Debian
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.14/powershell-lts_7.2.14-1.deb_amd64.deb`
+- PowerShell 7.3.8 universal package for supported versions of Debian
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.8/powershell_7.3.8-1.deb_amd64.deb`
+- PowerShell 7.2.15 universal package for supported versions of Debian
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.15/powershell-lts_7.2.15-1.deb_amd64.deb`
 - PowerShell 7.4-preview.5  universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-preview.5/powershell-preview_7.4.0-preview.5-1.deb_amd64.deb`
 
