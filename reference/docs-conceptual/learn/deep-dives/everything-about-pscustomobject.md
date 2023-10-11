@@ -1,7 +1,7 @@
 ---
 description: PSCustomObject is a simple way to create structured data.
 ms.custom: contributor-KevinMarquette
-ms.date: 06/07/2023
+ms.date: 10/11/2023
 title: Everything you wanted to know about PSCustomObject
 ---
 # Everything you wanted to know about PSCustomObject
@@ -128,6 +128,10 @@ We can get this same list off of the `psobject` property too.
 ```powershell
 $myobject.psobject.properties.name
 ```
+
+> [!NOTE]
+> `Get-Member` returns the properties in alphabetical order. Using the member-access operator to
+> enumerate the property names returns the properties in the order they were defined on the object.
 
 ### Dynamically accessing properties
 
