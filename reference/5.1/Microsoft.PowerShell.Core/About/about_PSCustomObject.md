@@ -1,7 +1,7 @@
 ---
 description: Explains the differences between the [psobject] and [pscustomobject] type accelerators.
 Locale: en-US
-ms.date: 12/05/2022
+ms.date: 10/11/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSCustomObject
@@ -219,7 +219,7 @@ have subtle side effects.
 ## Notes
 
 In Windows PowerShell, objects created by casting a **Hashtable** to
-`[pscustomobject]` do not have the **Length** or **Count** properties.
+`[pscustomobject]` don't have the **Length** or **Count** properties.
 Attempting to access these members returns `$null`.
 
 For example:
@@ -235,6 +235,10 @@ value
 PS> $object.Count
 PS> $object.Length
 ```
+
+Starting in PowerShell 6, objects created by casting a **Hashtable** to
+`[pscustomobject]` always have a value of `1` for the **Length** and **Count**
+properties.
 
 ## See also
 
