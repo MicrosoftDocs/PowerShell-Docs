@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 09/26/2023
+ms.date: 10/11/2023
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -51,7 +51,7 @@ winget search Microsoft.PowerShell
 ```Output
 Name               Id                           Version Source
 --------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.3.7.0 winget
+PowerShell         Microsoft.PowerShell         7.3.8.0 winget
 PowerShell Preview Microsoft.PowerShell.Preview 7.4.0.3 winget
 ```
 
@@ -72,8 +72,8 @@ winget install --id Microsoft.Powershell.Preview --source winget
 To install PowerShell on Windows, use the following links to download the install package from
 GitHub.
 
-- [PowerShell-7.3.7-win-x64.msi][28]
-- [PowerShell-7.3.7-win-x86.msi][30]
+- [PowerShell-7.3.8-win-x64.msi][28]
+- [PowerShell-7.3.8-win-x86.msi][30]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -139,7 +139,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.3.7-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1
+msiexec.exe /package PowerShell-7.3.8-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -150,9 +150,9 @@ For a full list of command-line options for `Msiexec.exe`, see
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [current release][23] page.
 
-- [PowerShell-7.3.7-win-x64.zip][29]
-- [PowerShell-7.3.7-win-x86.zip][31]
-- [PowerShell-7.3.7-win-arm64.zip][27]
+- [PowerShell-7.3.8-win-x64.zip][29]
+- [PowerShell-7.3.8-win-x86.zip][31]
+- [PowerShell-7.3.8-win-arm64.zip][27]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -227,14 +227,31 @@ release.
 ## Upgrading an existing installation
 
 For best results when upgrading, you should use the same install method you used when you first
-installed PowerShell. Each installation method installs PowerShell in a different location. If you
-aren't sure how PowerShell was installed, you can compare the installed location with the package
-information in this article. If you installed via the MSI package, that information appears in the
+installed PowerShell. If you aren't sure how PowerShell was installed, you can check the value of
+the `$PSHOME` variable, which always points to the directory containing PowerShell that the current
+session is running.
+
+- If the value is `$HOME\.dotnet\tools`, PowerShell was installed with the [.NET Global tool][15].
+- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was installed as an
+  [MSI package][16] or with [Winget][19] on a computer with an X86 or x64 processor.
+- If the value starts with `$Env:ProgramFiles\WindowsApps\`, PowerShell was installed as a
+  [Microsoft Store package][17] or with [Winget][19] on computer with an ARM processor.
+- If the value is anything else, it's likely that PowerShell was installed as a [ZIP package][20].
+
+If you installed via the MSI package, that information also appears in the
 **Programs and Features** Control Panel.
+
+To determine whether PowerShell may be upgraded with Winget, run the following command:
+
+```powershell
+winget list --name PowerShell --upgrade-available
+```
+
+If there is an available upgrade, the output indicates the latest available version.
 
 > [!NOTE]
 > When upgrading, PowerShell won't upgrade from an LTS version to a non-LTS version. It only
-> upgrades to the latest version of LTS, for example, from 7.2.3 to 7.2.14. To upgrade from an
+> upgrades to the latest version of LTS, for example, from 7.2.3 to 7.2.15. To upgrade from an
 > LTS release to a newer stable version or the next LTS, you need to install the new version with
 > the MSI for that release.
 >
@@ -248,7 +265,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
 ```powershell
 # Replace the placeholder information for the following variables:
 $deviceip = '<device ip address'
-$zipfile = 'PowerShell-7.3.7-win-arm64.zip'
+$zipfile = 'PowerShell-7.3.8-win-arm64.zip'
 $downloadfolder = 'u:\users\administrator\Downloads'  # The download location is local to the device.
     # There should be enough  space for the zip file and the unzipped contents.
 
@@ -261,10 +278,10 @@ Copy-Item $zipfile -Destination $downloadfolder -ToSession $S
 #Connect to the device and expand the archive
 Enter-PSSession $S
 Set-Location u:\users\administrator\Downloads
-Expand-Archive .\PowerShell-7.3.7-win-arm64.zip
+Expand-Archive .\PowerShell-7.3.8-win-arm64.zip
 
 # Set up remoting to PowerShell 7
-Set-Location .\PowerShell-7.3.7-win-arm64
+Set-Location .\PowerShell-7.3.8-win-arm64
 # Be sure to use the -PowerShellHome parameter otherwise it tries to create a new
 # endpoint with Windows PowerShell 5.1
 .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -276,7 +293,7 @@ PowerShell has to restart WinRM. Now you can connect to PowerShell 7 endpoint on
 ```powershell
 
 # Be sure to use the -Configuration parameter. If you omit it, you connect to Windows PowerShell 5.1
-Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.3.7
+Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.3.8
 ```
 
 ## Deploying on Windows 10 IoT Core
@@ -325,7 +342,7 @@ Deploy PowerShell to Nano Server using the following steps.
 # Replace the placeholder information for the following variables:
 $ipaddr = '<Nano Server IP address>'
 $credential = Get-Credential # <An Administrator account on the system>
-$zipfile = 'PowerShell-7.3.7-win-x64.zip'
+$zipfile = 'PowerShell-7.3.8-win-x64.zip'
 # Connect to the built-in instance of Windows PowerShell
 $session = New-PSSession -ComputerName $ipaddr -Credential $credential
 # Copy the file to the Nano Server instance
@@ -333,7 +350,7 @@ Copy-Item $zipfile c:\ -ToSession $session
 # Enter the interactive remote session
 Enter-PSSession $session
 # Extract the ZIP file
-Expand-Archive -Path C:\PowerShell-7.3.7-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
+Expand-Archive -Path C:\PowerShell-7.3.8-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
 ```
 
 If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the
@@ -388,11 +405,11 @@ can't support those methods.
 [22]: https://aka.ms/powershell-release?tag=preview
 [23]: https://aka.ms/powershell-release?tag=stable
 [24]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
-[27]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/PowerShell-7.3.7-win-arm64.zip
-[28]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/PowerShell-7.3.7-win-x64.msi
-[29]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/PowerShell-7.3.7-win-x64.zip
-[30]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/PowerShell-7.3.7-win-x86.msi
-[31]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.7/PowerShell-7.3.7-win-x86.zip
+[27]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.8/PowerShell-7.3.8-win-arm64.zip
+[28]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.8/PowerShell-7.3.8-win-x64.msi
+[29]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.8/PowerShell-7.3.8-win-x64.zip
+[30]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.8/PowerShell-7.3.8-win-x86.msi
+[31]: https://github.com/PowerShell/PowerShell/releases/download/v7.3.8/PowerShell-7.3.8-win-x86.zip
 [32]: https://www.microsoft.com/download/details.aspx?id=50410
 [33]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [34]: microsoft-update-faq.yml
