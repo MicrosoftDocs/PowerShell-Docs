@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 10/02/2023
+ms.date: 10/10/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -16,17 +16,16 @@ Customizes the behavior of command line editing in **PSReadLine**.
 ## SYNTAX
 
 ```
-Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-HistoryNoDuplicates]
- [-AddToHistoryHandler <System.Func`2[System.String,System.Object]>]
- [-CommandValidationHandler <System.Action`1[System.Management.Automation.Language.CommandAst]>]
- [-HistorySearchCursorMovesToEnd] [-MaximumHistoryCount <Int32>] [-MaximumKillRingCount <Int32>]
- [-ShowToolTips] [-ExtraPromptLineCount <Int32>] [-DingTone <Int32>] [-DingDuration <Int32>]
- [-BellStyle <BellStyle>] [-CompletionQueryItems <Int32>] [-WordDelimiters <String>]
- [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <String>]
- [-AnsiEscapeTimeout <Int32>] [-PromptText <String[]>] [-ViModeIndicator <ViModeStyle>]
- [-ViModeChangeHandler <ScriptBlock>] [-PredictionSource <PredictionSource>]
- [-PredictionViewStyle <PredictionViewStyle>] [-Colors <Hashtable>] [-TerminateOrphanedConsoleApps]
- [<CommonParameters>]
+Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <string>] [-HistoryNoDuplicates]
+ [-AddToHistoryHandler <Func[string,Object]>] [-CommandValidationHandler <Action[CommandAst]>]
+ [-HistorySearchCursorMovesToEnd] [-MaximumHistoryCount <int>] [-MaximumKillRingCount <int>]
+ [-ShowToolTips] [-ExtraPromptLineCount <int>] [-DingTone <int>] [-DingDuration <int>]
+ [-BellStyle <BellStyle>] [-CompletionQueryItems <int>] [-WordDelimiters <string>]
+ [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <string>]
+ [-AnsiEscapeTimeout <int>] [-PromptText <string[]>] [-ViModeIndicator <ViModeStyle>]
+ [-ViModeChangeHandler <scriptblock>] [-PredictionSource <PredictionSource>]
+ [-PredictionViewStyle <PredictionViewStyle>] [-Colors <hashtable>]
+ [-TerminateOrphanedConsoleApps] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -746,6 +745,8 @@ When displaying possible completions, tooltips are shown in the list of completi
 This option is enabled by default. This option wasn't enabled by default in prior versions of
 **PSReadLine**. To disable, set this option to `$False`.
 
+This parameter and option were added in PSReadLine 2.3.4.
+
 By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions** object is set
 to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the property
 value, you must specify the value of the **SwitchParameter** as follows: `-ShowToolTips:$False`.
@@ -780,7 +781,7 @@ processes that are currently attached to the console. Afterwards, whenever PSRea
 get a new list of processes attached to the console, and terminate those that aren't in the original
 list.
 
-This parameter and option were added in PSReadLine 2.3.2-beta2.
+This parameter and option were added in PSReadLine 2.3.4.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

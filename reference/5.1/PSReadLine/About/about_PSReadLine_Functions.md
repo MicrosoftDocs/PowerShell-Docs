@@ -3,7 +3,7 @@ description: >
     This article documents the functions provided by PSReadLine. These functions
     can be bound to keystrokes for easy access and invocation.
 Locale: en-US
-ms.date: 07/14/2022
+ms.date: 10/10/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine Functions
@@ -17,8 +17,8 @@ PowerShell console.
 
 ## Long Description
 
-PowerShell 5.1 ships with PSReadLine 2.0.0. There are newer versions available.
-The current version of PSReadLine can be installed and used on Windows
+PowerShell 5.1 ships with PSReadLine 2.0.0. The current version is PSReadLine
+2.3.4. The current version of PSReadLine can be installed and used on Windows
 PowerShell 5.1 and newer. For some features, you need to be running PowerShell
 7.2 or higher.
 
