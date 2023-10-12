@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 10/12/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Content
@@ -35,8 +35,9 @@ Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <st
 
 ## DESCRIPTION
 
-The `Add-Content` cmdlet appends content to a specified item or file. You can specify the content
-by typing the content in the command or by specifying an object that contains the content.
+The `Add-Content` cmdlet appends content to a specified item or file. Content can be passed in from
+the pipeline or specified by using the **Value** parameter. By default, `Add-Content` overwrites the
+existing content of an item. To append content to a file, use the **Append** parameter.
 
 If you need to create files or directories for the following examples, see [New-Item](New-Item.md).
 
@@ -504,11 +505,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe values to `Set-Content`.
+You can pipe values to `Add-Content`.
 
 ### System.Management.Automation.PSCredential
 
-You can pipe credentials to `Set-Content`.
+You can pipe credentials to `Add-Content`.
 
 ## OUTPUTS
 
