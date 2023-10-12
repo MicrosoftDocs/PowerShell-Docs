@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 09/26/2023
+ms.date: 10/12/2023
 title: Installing PowerShell on macOS
 ---
 
@@ -16,7 +16,7 @@ check the list of [Supported versions][07] below.
 > need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous version
 > using the [binary archive][05] method.
 
-## Installation of latest stable release via Homebrew on macOS 10.13 or higher
+## Install the latest stable release of PowerShell
 
 There are several ways to install PowerShell on macOS. Choose one of the following methods:
 
@@ -24,17 +24,18 @@ There are several ways to install PowerShell on macOS. Choose one of the followi
 - Install PowerShell via [Direct Download][05]
 - Install from [binary archives][04].
 
-If the `brew` command isn't found, you need to install Homebrew following
-[their instructions][11].
+If the `brew` command isn't found, you need to install Homebrew following [their instructions][11].
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Now, you can install PowerShell:
+One `brew` is installed you can install PowerShell.
+
+The following command installs the latest stable release of PowerShell:
 
 ```sh
-brew install --cask powershell
+brew install powershell/tap/powershell
 ```
 
 Finally, verify that your install is working properly:
@@ -47,7 +48,7 @@ When new versions of PowerShell are released, update Homebrew's formulae and upg
 
 ```sh
 brew update
-brew upgrade powershell --cask
+brew upgrade powershell
 ```
 
 > [!NOTE]
@@ -57,22 +58,15 @@ brew upgrade powershell --cask
 
 [brew]: https://brew.sh/
 
-## Installation of latest preview release via Homebrew on macOS 10.13 or higher
+## Install the latest preview release of PowerShell
 
-After you've installed Homebrew, you can install PowerShell. First, install the [Cask-Versions][15]
-package that lets you install alternative versions of cask packages:
-
-```sh
-brew tap homebrew/cask-versions
-```
-
-Now, you can install PowerShell:
+After you've installed Homebrew, you can install PowerShell.
 
 ```sh
-brew install --cask powershell-preview
+brew install powershell/tap/powershell-preview
 ```
 
-Finally, verify that your install is working properly:
+Run the following command to start the preview version of PowerShell:
 
 ```sh
 pwsh-preview
@@ -82,7 +76,7 @@ When new versions of PowerShell are released, update Homebrew's formulae and upg
 
 ```sh
 brew update
-brew upgrade powershell-preview --cask
+brew upgrade powershell-preview
 ```
 
 > [!NOTE]
@@ -90,10 +84,10 @@ brew upgrade powershell-preview --cask
 > shell must be exited and restarted to complete the upgrade. and refresh the values shown in
 > `$PSVersionTable`.
 
-Installing PowerShell using the Homebrew tap method is also supported for stable and LTS versions.
+## Install the latest LTS release of PowerShell
 
 ```sh
-brew install powershell/tap/powershell
+brew install powershell/tap/powershell-lts
 ```
 
 You can now verify your install
@@ -105,7 +99,7 @@ pwsh
 When new versions of PowerShell are released, run the following command.
 
 ```sh
-brew upgrade powershell
+brew upgrade powershell-lts
 ```
 
 > [!NOTE]
@@ -124,7 +118,7 @@ from the [releases][10] page onto your computer. The links to the current versio
 - PowerShell 7.3.8
   - x64 processors - [powershell-7.3.8-osx-x64.pkg][22]
   - M1 processors - [powershell-7.3.8-osx-arm64.pkg][20]
-- PowerShell 7.2.15
+- PowerShell 7.2.15 (LTS)
   - x64 processors - [powershell-7.2.15-osx-x64.pkg][18]
   - M1 processors - [powershell-7.2.15-osx-arm64.pkg][16]
 
@@ -151,8 +145,9 @@ Using the Finder
 
 From the command line
 
-1. Run `sudo xattr -rd com.apple.quarantine powershell-7.3.8-osx-x64.pkg`. Include the full path to
-   the `.pkg` file.
+1. Run `sudo xattr -rd com.apple.quarantine powershell-7.3.8-osx-x64.pkg`. If you are using
+   PowerShell 7 or higher, you can use the `Unblock-File` cmdlet. Include the full path to the
+   `.pkg` file.
 1. Install the package as you normally would.
 
 > [!NOTE]
@@ -285,7 +280,6 @@ support those methods.
 [12]: https://docs.brew.sh/Manpage#link-ln-options-formula
 [13]: https://github.com/Homebrew
 [14]: https://github.com/Homebrew/homebrew-cask
-[15]: https://github.com/Homebrew/homebrew-cask-versions
 [16]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.15/powershell-7.2.15-osx-arm64.pkg
 [17]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.15/powershell-7.2.15-osx-arm64.tar.gz
 [18]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.15/powershell-7.2.15-osx-x64.pkg
