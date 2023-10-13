@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/21/2023
+ms.date: 10/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -286,6 +286,12 @@ introduced in Windows PowerShell 6.0.
 A warning occurs when you use the **AsByteStream** parameter with the **Encoding** parameter. The
 **AsByteStream** parameter ignores any encoding and the output is returned as a stream of bytes.
 
+When reading from and writing to binary files, use the **AsByteStream** parameter and a value of 0
+for the **ReadCount** parameter. A **ReadCount** value of 0 reads the entire file in a single read
+operation. The default **ReadCount** value, 1, reads one byte in each read operation and converts
+each byte into a separate object. Piping single-byte output to `Set-Content` causes errors unless
+you use the **AsByteStream** parameter with `Set-Content`.
+
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
@@ -370,12 +376,6 @@ The acceptable values for this parameter are as follows:
 
 Encoding is a dynamic parameter that the **FileSystem** provider adds to the `Get-Content` cmdlet.
 This parameter is available only in file system drives.
-
-When reading from and writing to binary files, use the **AsByteStream** parameter and a value of 0
-for the **ReadCount** parameter. A **ReadCount** value of 0 reads the entire file in a single read
-operation. The default **ReadCount** value, 1, reads one byte in each read operation and converts
-each byte into a separate object, which causes errors when you use the `Set-Content` cmdlet to write
-the bytes to a file unless you use **AsByteStream** parameter.
 
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
@@ -548,7 +548,7 @@ Accept wildcard characters: False
 ### -ReadCount
 
 Specifies how many lines of content are sent through the pipeline at a time. The default value is 1.
-A value of 0 (zero) sends all the content at one time.
+A value of 0 (zero) or negative numbers sends all the content at one time.
 
 This parameter doesn't change the content displayed, but it does affect the time it takes to
 display the content. As the value of **ReadCount** increases, the time it takes to return the first
@@ -596,7 +596,8 @@ Accept wildcard characters: False
 ### -Tail
 
 Specifies the number of lines from the end of a file or other item. You can use the **Tail**
-parameter name or its alias, **Last**. Negative numbers aren't supported.
+parameter name or its alias, **Last**. Negative values cause the cmdlet to return the entire
+contents.
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -614,8 +615,8 @@ Accept wildcard characters: False
 
 ### -TotalCount
 
-Specifies the number of lines from the beginning of a file or other item. Negative numbers aren't
-supported.
+Specifies the number of lines from the beginning of a file or other item. Negative values cause the
+cmdlet to return the entire contents.
 
 You can use the **TotalCount** parameter name or its aliases, **First** or **Head**.
 

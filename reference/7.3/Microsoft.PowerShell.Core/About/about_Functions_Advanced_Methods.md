@@ -1,7 +1,7 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 01/20/2023
+ms.date: 10/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Methods
@@ -39,12 +39,13 @@ For more information about the `CmdletBinding` attribute, see
 
 The methods described in this section are referred to as the input processing
 methods. For functions, these three methods are represented by the `begin`,
-`process`, and `end` blocks of the function. You aren't required to use any of
-these blocks in your functions.
+`process`, and `end` blocks of the function. PowerShell 7.3 adds a `clean`
+block process method.
 
-> [!NOTE]
-> These blocks are also available to functions that don't use the
-> `CmdletBinding` attribute.
+You aren't required to use any of these blocks in your functions. If you don't
+use a named block, then PowerShell puts the code in the `end` block of the
+function. However, if you use any of these named blocks, or define a
+`dynamicparam` block, you must put all code in a named block.
 
 The following example shows the outline of a function that contains a `begin`
 block for one-time preprocessing, a `process` block for multiple record
@@ -62,11 +63,8 @@ Function Test-ScriptCmdlet
 ```
 
 > [!NOTE]
-> Using either a `begin` or `end` block requires that you define all three
-> blocks. When using any block, all PowerShell code must be inside one
-> of the blocks.
-
-PowerShell 7.3 adds a `clean` block process method.
+> These blocks apply to all functions, not just functions that use the
+> `CmdletBinding` attribute.
 
 ### `begin`
 

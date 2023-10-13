@@ -29,8 +29,8 @@
     "externalReference": [],
     "fileMetadata": {
       "feedback_product_url": {
-        "docs-conceptual/*.md": "https://github.com/powershell/powershellgallery/issues/new",
-        "docs-conceptual/**/*": "https://github.com/powershell/powershellgallery/issues/new",
+        "docs-conceptual/*.md": "https://github.com/powershell/powershell/issues/new",
+        "docs-conceptual/**/*": "https://github.com/powershell/powershell/issues/new",
         "docs-conceptual/learn/remoting/jea/*.md": "https://github.com/powershell/jea/issues/new",
         "docs-conceptual/windows-powershell/*.md": "https://support.microsoft.com/windows/send-feedback-to-microsoft-with-the-feedback-hub-app-f59187f8-8739-22d6-ba93-f66612949332"
       },
@@ -94,6 +94,8 @@
       "breadcrumb_path": "/powershell/scripting/bread/toc.json",
       "feedback_github_repo": "MicrosoftDocs/PowerShell-Docs",
       "feedback_product_url": "https://github.com/PowerShell/PowerShell/issues/new/choose",
+      "feedback_help_link_url": "https://learn.microsoft.com/powershell/scripting/community/community-support",
+      "feedback_help_link_type": "ask-the-community",
       "feedback_system": "OpenSource",
       "open_source_feedback_contributorGuideUrl": "https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide",
       "open_source_feedback_issueTitle": "",
