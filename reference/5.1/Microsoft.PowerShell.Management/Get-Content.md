@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/21/2023
+ms.date: 10/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -515,7 +515,7 @@ Accept wildcard characters: False
 ### -ReadCount
 
 Specifies how many lines of content are sent through the pipeline at a time. The default value is 1.
-A value of 0 (zero) sends all the content at one time.
+A value of 0 (zero) or negative numbers sends all the content at one time.
 
 This parameter doesn't change the content displayed, but it does affect the time it takes to
 display the content. As the value of **ReadCount** increases, the time it takes to return the first
