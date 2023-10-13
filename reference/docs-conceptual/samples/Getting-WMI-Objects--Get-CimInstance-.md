@@ -23,7 +23,9 @@ dozens of properties.
 classes available on the local computer by typing:
 
 ```powershell
-Get-CimClass -Namespace root/CIMV2 | Where-Object CimClassName -like Win32* | Select-Object CimClassName
+Get-CimClass -Namespace root/CIMV2 | 
+    Where-Object CimClassName -like Win32* | 
+    Select-Object CimClassName
 ```
 
 ```Output
@@ -54,9 +56,9 @@ computer is running and the particular WMI extensions are added by installed app
 
 > [!NOTE]
 > When using CIM cmdlets to connect to a remote computer, the remote computer must be running WMI
-> and the account you are using must be in the local administrator's group on the remote computer.
-> The remote system doesn't need to have PowerShell installed. This allows you to administer
-> operating systems that aren't running PowerShell, but do have WMI available.
+> and the account you are using must be in the local **Administrators** group on the remote
+> computer. The remote system doesn't need to have PowerShell installed. This allows you to
+> administer operating systems that aren't running PowerShell, but do have WMI available.
 
 ## Displaying WMI class details
 
