@@ -5,7 +5,7 @@ title: Getting WMI objects with Get-CimInstance
 ---
 # Getting WMI objects with Get-CimInstance
 
-> This sample only applies to Windows plaforms.
+> This sample only applies to Windows platforms.
 
 Windows Management Instrumentation (WMI) is a core technology for Windows system administration
 because it exposes a wide range of information in a uniform manner. Because of how much WMI makes
@@ -23,8 +23,8 @@ dozens of properties.
 classes available on the local computer by typing:
 
 ```powershell
-Get-CimClass -Namespace root/CIMV2 |
-  Where-Object CimClassName -like Win32* |
+Get-CimClass -Namespace root/CIMV2 | 
+    Where-Object CimClassName -like Win32* | 
     Select-Object CimClassName
 ```
 
@@ -52,13 +52,13 @@ Get-CimClass -Namespace root/CIMV2 -ComputerName 192.168.1.29
 ```
 
 The class listing returned by remote computers may vary due to the specific operating system the
-computer is running and the particular WMI extensions added by installed applications.
+computer is running and the particular WMI extensions are added by installed applications.
 
 > [!NOTE]
 > When using CIM cmdlets to connect to a remote computer, the remote computer must be running WMI
-> and the account you are using must be in the local administrators group on the remote computer.
-> The remote system doesn't need to have PowerShell installed. This allows you to administer
-> operating systems that aren't running PowerShell, but do have WMI available.
+> and the account you are using must be in the local **Administrators** group on the remote
+> computer. The remote system doesn't need to have PowerShell installed. This allows you to
+> administer operating systems that aren't running PowerShell, but do have WMI available.
 
 ## Displaying WMI class details
 
@@ -73,7 +73,7 @@ Get-CimInstance -Class Win32_OperatingSystem
 ```Output
 SystemDirectory     Organization BuildNumber RegisteredUser SerialNumber            Version
 ---------------     ------------ ----------- -------------- ------------            -------
-C:\WINDOWS\system32 Microsoft    18362       USER1          00330-80000-00000-AA175 10.0.18362
+C:\WINDOWS\system32 Microsoft    22621       USER1          00330-80000-00000-AA175 10.0.22621
 ```
 
 Although we're showing all of the parameters, the command can be expressed in a more succinct way.
@@ -109,7 +109,7 @@ CreationClassName                         Property   string CreationClassName {g
 CSCreationClassName                       Property   string CSCreationClassName {get;}
 CSDVersion                                Property   string CSDVersion {get;}
 CSName                                    Property   string CSName {get;}
-CurrentTimeZone                           Property   short CurrentTimeZone {get;}
+CurrentTimeZone                           Property   int16 CurrentTimeZone {get;}
 DataExecutionPrevention_32BitApplications Property   bool DataExecutionPrevention_32BitApplications {get;}
 DataExecutionPrevention_Available         Property   bool DataExecutionPrevention_Available {get;}
 ...
@@ -117,20 +117,18 @@ DataExecutionPrevention_Available         Property   bool DataExecutionPreventio
 
 ## Displaying non-default properties with Format cmdlets
 
-If you want information contained in the **Win32_OperatingSystem** class that isn't displayed by
+If you want the information contained in the **Win32_OperatingSystem** class that isn't displayed by
 default, you can display it by using the **Format** cmdlets. For example, if you want to display
 available memory data, type:
 
 ```powershell
-Get-CimInstance -Class Win32_OperatingSystem |
-  Format-Table -Property TotalVirtualMemorySize, TotalVisibleMemorySize,
-    FreePhysicalMemory, FreeVirtualMemory, FreeSpaceInPagingFiles
+Get-CimInstance -Class Win32_OperatingSystem | Format-Table -Property TotalVirtualMemorySize, TotalVisibleMemorySize, FreePhysicalMemory, FreeVirtualMemory, FreeSpaceInPagingFiles
 ```
 
 ```Output
 TotalVirtualMemorySize TotalVisibleMemorySize FreePhysicalMemory FreeVirtualMemory FreeSpaceInPagingFiles
 ---------------------- ---------------------- ------------------ ----------------- ----------------------
-              33449088               16671872            6451868          18424496               16285032
+              41787920               16622096            9537952          33071884               25056628
 ```
 
 > [!NOTE]
@@ -144,10 +142,10 @@ Get-CimInstance -Class Win32_OperatingSystem | Format-List Total*Memory*, Free*
 ```
 
 ```Output
-TotalVirtualMemorySize : 33449088
-TotalVisibleMemorySize : 16671872
-FreePhysicalMemory     : 6524456
-FreeSpaceInPagingFiles : 16285808
-FreeVirtualMemory      : 18393668
-Name                   : Microsoft Windows 10 Pro|C:\WINDOWS|\Device\Harddisk0\Partition2
+TotalVirtualMemorySize : 41787920
+TotalVisibleMemorySize : 16622096
+FreePhysicalMemory     : 9365296
+FreeSpaceInPagingFiles : 25042952
+FreeVirtualMemory      : 33013484
+Name                   : Microsoft Windows 11 Pro|C:\Windows|\Device\Harddisk0\Partition2
 ```
