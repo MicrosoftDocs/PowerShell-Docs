@@ -61,12 +61,11 @@ Function Test-ScriptCmdlet
 }
 ```
 
-> [!NOTE]
-> Using either a `begin` or `end` block requires that you define all three
-> blocks. When using any block, all PowerShell code must be inside one
-> of the blocks.
-
 PowerShell 7.3 adds a `clean` block process method.
+
+> [!NOTE]
+> Using any of the three named block above, or `dynamicparam` and `clean`,
+> requires that all code in a function must reside in a named block.
 
 ### `begin`
 
