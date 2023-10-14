@@ -64,7 +64,7 @@ Get-CimInstance -ClassName Win32_ComputerSystem | Select-Object -Property System
 
 SystemType
 ----------
-X86-based PC
+X64-based PC
 ```
 
 ## Listing computer manufacturer and model
@@ -77,9 +77,9 @@ Get-CimInstance -ClassName Win32_ComputerSystem
 ```
 
 ```Output
-Name PrimaryOwnerName Domain    TotalPhysicalMemory Model                   Manufacturer
----- ---------------- ------    ------------------- -----                   ------------
-MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Compaq Presario 06
+Name            PrimaryOwnerName   Domain      TotalPhysicalMemory   Model    Manufacturer
+----            ----------------   -------     -------------------   -----    ------------
+LAPTOP-X542UQ   RAJU               WORKGROUP   17021026304           X542UQ   ASUSTeK COMPUTER INC
 ```
 
 Your output from commands such as this, which return information directly from some hardware, is
@@ -97,9 +97,11 @@ Get-CimInstance -ClassName Win32_QuickFixEngineering
 This class returns a list of hotfixes that looks like this:
 
 ```Output
-Source Description     HotFixID  InstalledBy   InstalledOn PSComputerName
------- -----------     --------  -----------   ----------- --------------
-       Security Update KB4048951 Administrator 12/16/2017  .
+Source        Description      HotFixID      InstalledBy          InstalledOn
+------        -----------      --------      -----------          -----------
+              Update           KB5030651     NT AUTHORITY\SYSTEM  09/16/2023 
+              Update           KB5031455     NT AUTHORITY\SYSTEM  10/12/2023 
+              Update           KB5031893     NT AUTHORITY\SYSTEM  10/12/2023 
 ```
 
 For more succinct output, you may want to exclude some properties. Although you can use the
@@ -119,17 +121,17 @@ Name                  :
 Status                :
 CSName                :
 FixComments           :
-HotFixID              : KB4533002
+HotFixID              : KB5030651
 InstalledBy           :
 ServicePackInEffect   :
 PSComputerName        :
 CimClass              : root/cimv2:Win32_QuickFixEngineering
-CimInstanceProperties : {Caption, Description, InstallDate, Name…}
+CimInstanceProperties : {Caption, Description, InstallDate, Name...}
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-The additional data is returned, because the **Property** parameter in `Get-CimInstance` restricts
+The additional data is returned because the **Property** parameter in `Get-CimInstance` restricts
 the properties returned from WMI class instances, not the object returned to PowerShell. To reduce
 the output, use `Select-Object`:
 
@@ -141,7 +143,9 @@ Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId |
 ```Output
 HotFixId
 --------
-KB4048951
+KB5030651
+KB5031455
+KB5031893
 ```
 
 ## Listing operating system version information
@@ -165,7 +169,7 @@ Get-CimInstance -ClassName Win32_OperatingSystem |
 ```
 
 ```Output
-BuildNumber             : 18362
+BuildNumber             : 22621
 BuildType               : Multiprocessor Free
 OSType                  : 18
 ServicePackMajorVersion : 0
@@ -245,16 +249,16 @@ Get-CimInstance -ClassName Win32_LocalTime
 ```
 
 ```Output
-Day            : 23
-DayOfWeek      : 1
-Hour           : 8
+Day            : 14
+DayOfWeek      : 6
+Hour           : 19
 Milliseconds   :
-Minute         : 52
-Month          : 12
+Minute         : 20
+Month          : 10
 Quarter        : 4
-Second         : 55
-WeekInMonth    : 4
-Year           : 2019
+Second         : 5
+WeekInMonth    : 2
+Year           : 2023
 PSComputerName :
 ```
 
