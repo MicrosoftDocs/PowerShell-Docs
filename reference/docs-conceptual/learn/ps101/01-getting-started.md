@@ -135,10 +135,10 @@ $PSVersionTable
 ```Output
 Name                           Value
 ----                           -----
-PSVersion                      5.1.19041.1
+PSVersion                      5.1.22621.2428
 PSEdition                      Desktop
 PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}
-BuildVersion                   10.0.19041.1
+BuildVersion                   10.0.22621.2428
 CLRVersion                     4.0.30319.42000
 WSManStackVersion              3.0
 PSRemotingProtocolVersion      2.3
