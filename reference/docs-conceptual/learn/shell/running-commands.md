@@ -28,7 +28,7 @@ For any shell in any operating system there are three types of commands:
   other shells to work properly. For example, if you run a Windows batch script (`.cmd` file) in
   PowerShell, PowerShell runs `cmd.exe` and passes in the batch file for execution.
 
-- **Shell environment-specifc commands** are commands defined in external files that can only be
+- **Shell environment-specific commands** are commands defined in external files that can only be
   used within the runtime environment of the shell. These include scripts and functions, or they can
   be specially compiled modules that add commands to the shell runtime. In PowerShell, these
   commands are known as _cmdlets_ (pronounced "command-lets").

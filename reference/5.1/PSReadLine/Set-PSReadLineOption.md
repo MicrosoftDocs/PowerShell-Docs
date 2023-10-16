@@ -492,9 +492,9 @@ commands are added to history to preserve ordering during recall. However, you t
 to see the command multiple times when recalling or searching the history.
 
 By default, the **HistoryNoDuplicates** property of the global **PSConsoleReadLineOptions** object
-is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the
-property value, you must specify the value of the **SwitchParameter** as follows:
-`-HistoryNoDuplicates:$False`.
+is set to `True`. To change the property value, you must specify the value of the 
+**SwitchParameter** as follows: `-HistoryNoDuplicates:$False`. You can set back to `True` by using
+just the **SwitchParameter**, `-HistoryNoDuplicates`.
 
 Using the following command, you can set the property value directly:
 
