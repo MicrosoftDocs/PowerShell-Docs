@@ -1,6 +1,6 @@
 ---
 description: This article discusses how to deal with specific file and folder manipulation tasks using PowerShell.
-ms.date: 12/08/2022
+ms.date: 10/18/2023
 title: Working with files and folders
 ---
 # Working with files and folders
@@ -43,17 +43,23 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe |
 
 ## Copying files and folders
 
-Copying is done with `Copy-Item`. The following command backs up `C:\boot.ini` to `C:\boot.bak`:
+Copying is done with `Copy-Item`. The following command backs up your PowerShell profile script:
 
 ```powershell
-Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
+if (Test-Path -Path $PROFILE) {
+    Copy-Item -Path $PROFILE -Destination $($PROFILE -replace 'ps1$', 'bak')
+}
 ```
+
+The `Test-Path` command checks whether the profile script exists.
 
 If the destination file already exists, the copy attempt fails. To overwrite a pre-existing
 destination, use the **Force** parameter:
 
 ```powershell
-Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
+if (Test-Path -Path $PROFILE) {
+    Copy-Item -Path $PROFILE -Destination $($PROFILE -replace 'ps1$', 'bak') -Force
+}
 ```
 
 This command works even when the destination is read-only.
@@ -72,13 +78,7 @@ anywhere in `C:\data` to `C:\temp\text`:
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-You can still use other tools to perform file system copies. XCOPY, ROBOCOPY, and COM objects, such
-as the **Scripting.FileSystemObject,** all work in PowerShell. For example, you can use the Windows
-Script Host **Scripting.FileSystem** COM class to back up `C:\boot.ini` to `C:\boot.bak`:
-
-```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
-```
+You can still run native commands like `xcopy.exe` and `robocopy.exe` to copy files.
 
 ## Creating files and folders
 
@@ -111,9 +111,11 @@ removal if the item contains anything else. For example, if you attempt to delet
 `C:\temp\DeleteMe` that contains other items, PowerShell prompts you for confirmation before
 deleting the folder:
 
-```
+```powershell
 Remove-Item -Path C:\temp\DeleteMe
+```
 
+```Output
 Confirm
 The item at C:\temp\DeleteMe has children and the Recurse parameter wasn't
 specified. If you continue, all children will be removed with the item. Are you
@@ -148,24 +150,19 @@ One of the more common storage formats for text data is in a file with separate 
 distinct data elements. The `Get-Content` cmdlet can be used to read an entire file in one step,
 as shown here:
 
-```
-PS> Get-Content -Path C:\boot.ini
-[boot loader]
-timeout=5
-default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
-[operating systems]
-multi(0)disk(0)rdisk(0)partition(1)\WINDOWS="Microsoft Windows XP Professional"
- /noexecute=AlwaysOff /fastdetect
-multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
-with Data Execution Prevention" /noexecute=optin /fastdetect
+```powershell
+Get-Content -Path $PROFILE
+# Load modules and change to the PowerShell-Docs repository folder
+Import-Module posh-git
+Set-Location C:\Git\PowerShell-Docs
 ```
 
 `Get-Content` treats the data read from the file as an array, with one element per line of file
 content. You can confirm this by checking the **Length** of the returned content:
 
-```
-PS> (Get-Content -Path C:\boot.ini).Length
-6
+```powershell
+PS> (Get-Content -Path $PROFILE).Length
+3
 ```
 
 This command is most useful for getting lists of information into PowerShell. For example, you might
