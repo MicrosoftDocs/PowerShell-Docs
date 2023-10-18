@@ -254,7 +254,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [What's New in Kerberos Authentication][10]
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1][16]
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2][17]
-- [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication][14]
+- [Understanding Kerberos Constrained Delegation for Microsoft Entra application proxy deployments with Integrated Windows Authentication][14]
 - [[MS-ADA2] Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity][MS-ADA2]
 - [[MS-SFU] Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2proxy][MS-SFU]
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount][03]
