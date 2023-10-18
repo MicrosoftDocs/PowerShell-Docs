@@ -54,8 +54,7 @@ accounts from that domain and from trusted domains to a local group.
 
 ### Example 1: Add members to the Administrators group
 
-This command adds several members to the local Administrators group. The new members include a local
-user account, a Microsoft account, an Microsoft Entra account, and a domain group. This
+This command adds several members to the local Administrators group. The new members include a local user account, a Microsoft account, a Microsoft Entra account, and a domain group. This
 example uses a placeholder value for the user name of an account at Outlook.com.
 
 ```powershell
