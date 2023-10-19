@@ -234,19 +234,84 @@ function Get-Sample {
       $attributeCollection = [System.Collections.ObjectModel.Collection[System.Attribute]]::new()
       $attributeCollection.Add($parameterAttribute)
 
-      $dynParam1 = [System.Management.Automation.RuntimeDefinedParameter]::new(
+      [System.Management.Automation.RuntimeDefinedParameter]::new(
         'KeyCount', [Int32], $attributeCollection
       )
-
-      $paramDictionary = [System.Management.Automation.RuntimeDefinedParameterDictionary]::new()
-      $paramDictionary.Add('KeyCount', $dynParam1)
-      return $paramDictionary
     }
   }
 }
 ```
 
 For more information, see the documentation for the [RuntimeDefinedParameter][02] type.
+Certainly! Here's a suggested documentation update to reflect the change in the PowerShell language specification regarding `RuntimeDefinedParameters`.
+
+---
+
+## Update to Dynamic Parameters
+
+### Previous Behavior
+
+Prior to this change, when defining dynamic parameters in PowerShell functions or cmdlets, you had to wrap `RuntimeDefinedParameter` objects inside a `RuntimeDefinedParameterCollection`. Here's an example of how this was done:
+
+```powershell
+function Test-DynamicParam {
+    [CmdletBinding()]
+    param()
+
+    dynamicparam {
+        $paramDictionary = [System.Management.Automation.RuntimeDefinedParameterDictionary]::new()
+
+        $attributes = [System.Collections.ObjectModel.Collection[System.Attribute]]::new()
+        $attribute = [System.Management.Automation.ParameterAttribute]::new()
+        $attribute.Mandatory = $true
+        $attributes.Add($attribute)
+
+        $dynParam1 = [System.Management.Automation.RuntimeDefinedParameter]::new('DynamicParam1', [string], $attributes)
+        $dynParam2 = [System.Management.Automation.RuntimeDefinedParameter]::new('DynamicParam2', [string], $attributes)
+        $paramDictionary.Add('DynamicParam1', $dynParam)
+        $paramDictionary.Add('DynamicParam2', $dynParam)
+
+        return $paramDictionary
+    }
+
+    process {
+        $PSBoundParameters['DynamicParam1']
+        $PSBoundParameters['DynamicParam2']
+    }
+}
+```
+
+### New Behavior 7.5+
+
+With the updated specification, there's no longer a need to wrap `RuntimeDefinedParameter` objects inside a `RuntimeDefinedParameterCollection`. This streamlines the process of defining dynamic parameters. Here's how the same functionality can be achieved with the updated behavior:
+
+```powershell
+function Test-DynamicParam {
+    [CmdletBinding()]
+    param()
+
+    dynamicparam {
+        $attributes = [System.Collections.ObjectModel.Collection[System.Attribute]]::new()
+        $attribute = [System.Management.Automation.ParameterAttribute]::new()
+        $attribute.Mandatory = $true
+        $attributes.Add($attribute)
+
+        [System.Management.Automation.RuntimeDefinedParameter]::new('DynamicParam1', [string], $attributes)
+        [System.Management.Automation.RuntimeDefinedParameter]::new('DynamicParam2', [string], $attributes)
+    }
+
+    process {
+        $PSBoundParameters['DynamicParam']
+    }
+}
+```
+
+### Benefits
+
+This change simplifies the process of creating dynamic parameters, making scripts and functions more concise and easier to read.
+
+---
+
 
 ## Attributes of parameters
 
