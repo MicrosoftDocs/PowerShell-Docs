@@ -43,6 +43,8 @@ adding the **InformationAction** common parameter to your command. For more info
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md) and
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
+To make use of the `-Tag` parameter, you should also use the [common parameter](../Microsoft.PowerShell.Core/About/about_CommonParameters.md) `-InformationVariable`. Fore more information see [Information Stream](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/wmf/whats-new/informationstream-overview).
+
 > [!NOTE]
 > Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information` This allows
 > you to use `Write-Host` to emit output to the information stream. This enables the capture or
