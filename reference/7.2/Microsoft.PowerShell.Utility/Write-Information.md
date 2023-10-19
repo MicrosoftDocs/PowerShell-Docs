@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 10/19/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
@@ -139,7 +139,7 @@ through multiple pipelines.
 ```powershell
 Get-Process | Sort-Object CPU -Descending |
     Select-Object Id, ProcessName, CPU -First 10 |
-        Write-Information -InformationAction Continue
+    Write-Information -InformationAction Continue
 ```
 
 ```Output
@@ -153,6 +153,30 @@ Get-Process | Sort-Object CPU -Descending |
 @{Id=498388; ProcessName=chrome; CPU=3062.453125}
 @{Id=6900; ProcessName=chrome; CPU=2546.9375}
 @{Id=9044; ProcessName=explorer; CPU=2358.765625}
+```
+
+### Example 5: Saving information records to a variable
+
+Using the **InformationVariable** parameter, you can save information records to a variable. This
+allows you to inspect the information stream messages later in the script.
+
+```powershell
+Get-Process -Id $PID |
+    Select-Object ProcessName, CPU, Path |
+    Write-Information -Tags 'PowerShell' -InformationVariable 'InfoMsg'
+$InfoMsg | Select-Object *
+```
+
+```Output
+MessageData     : @{ProcessName=pwsh; CPU=12.36; Path=/opt/microsoft/powershell/7/pwsh}
+Source          : Write-Information
+TimeGenerated   : 10/19/2023 11:28:15
+Tags            : {PowerShell}
+User            : sdwheeler
+Computer        : circumflex
+ProcessId       : 237
+NativeThreadId  : 261
+ManagedThreadId : 10
 ```
 
 ## PARAMETERS
@@ -170,13 +194,13 @@ Aliases: Msg, Message
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: True (ByValue)
+Accept pipeline input: ByValue (True), ByName (False)
 Accept wildcard characters: False
 ```
 
 ### -Tags
 
-Specifies a simple string that you can use to sort and filter messages that you have added to the
+One or more strings that you can use to sort and filter messages that you have added to the
 information stream with `Write-Information`. This parameter works similarly to the **Tags**
 parameter in `New-ModuleManifest`.
 
@@ -188,7 +212,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: ByValue (False), ByName (False)
 Accept wildcard characters: False
 ```
 

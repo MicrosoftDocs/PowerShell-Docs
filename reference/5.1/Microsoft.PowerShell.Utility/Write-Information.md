@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 10/19/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
@@ -130,6 +130,30 @@ function Test-Info
     Write-Information "Here you go"
 }
 Test-Info 6> Info.txt
+```
+
+### Example 4: Saving information records to a variable
+
+Using the **InformationVariable** parameter, you can save information records to a variable. This
+allows you to inspect the information stream messages later in the script.
+
+```powershell
+$psproc = Get-Process -Id $PID | Select-Object ProcessName, CPU, Path
+Write-Information -MessageData $psproc -Tags 'PowerShell' -InformationVariable 'InfoMsg'
+$InfoMsg | Select-Object *
+```
+
+```Output
+MessageData     : @{ProcessName=powershell; CPU=1.609375;
+                  Path=C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe}
+Source          : Write-Information
+TimeGenerated   : 10/19/2023 11:28:15
+Tags            : {PowerShell}
+User            : sdwheeler
+Computer        : circumflex
+ProcessId       : 237
+NativeThreadId  : 261
+ManagedThreadId : 10
 ```
 
 ## PARAMETERS
