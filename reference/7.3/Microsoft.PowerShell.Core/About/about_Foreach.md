@@ -98,7 +98,7 @@ foreach ($file in Get-ChildItem)
 }
 ```
 
-You can also variables from outside a `foreach` loop. The following example
+You can also use variables from outside a `foreach` loop. The following example
 counts files over 100 KB in size:
 
 ```powershell
