@@ -30,7 +30,7 @@ If the `brew` command isn't found, you need to install Homebrew following [their
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-One `brew` is installed you can install PowerShell.
+Once `brew` is installed you can install PowerShell.
 
 The following command installs the latest stable release of PowerShell:
 
