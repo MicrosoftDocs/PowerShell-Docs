@@ -168,12 +168,6 @@ This is the content of the Stream.txt file
 ```
 
 ```powershell
-# The primary stream doesn't need to be specified to get the primary stream of the file.
-# This gets the same data as the prior two examples.
-Get-Content -Path .\Stream.txt
-```
-
-```powershell
 # Use the Stream parameter of Add-Content to create a new Stream containing sample content.
 $addContentSplat = @{
     Path = '.\Stream.txt'
