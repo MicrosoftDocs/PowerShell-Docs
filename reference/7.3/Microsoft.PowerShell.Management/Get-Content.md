@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/13/2023
+ms.date: 10/23/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -165,12 +165,6 @@ Get-Content -Path .\Stream.txt
 
 ```Output
 This is the content of the Stream.txt file
-```
-
-```powershell
-# The primary stream doesn't need to be specified to get the primary stream of the file.
-# This gets the same data as the prior two examples.
-Get-Content -Path .\Stream.txt
 ```
 
 ```powershell

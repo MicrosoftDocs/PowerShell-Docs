@@ -1,6 +1,6 @@
 ---
 description: This article explains the various methods for configuring second-hop authentication for PowerShell remoting, including the security implications and recommendations.
-ms.date: 11/16/2022
+ms.date: 10/23/2023
 title: Making the second hop in PowerShell Remoting
 ---
 
@@ -114,8 +114,8 @@ credentials.
 
 Let's look at a PowerShell example that configures resource-based constrained delegation on
 _ServerC_ to allow delegated credentials from a _ServerB_. This example assumes that all servers are
-running Windows Server 2012 or later, and that there is at least one Windows Server 2012 domain
-controller each domain to which any of the servers belong.
+running supported versions of Windows Server, and that there is at least one Windows domain
+controller for each trusted domain.
 
 Before you can configure constrained delegation, you must add the `RSAT-AD-PowerShell` feature to
 install the Active Directory PowerShell module, and then import that module into your session:

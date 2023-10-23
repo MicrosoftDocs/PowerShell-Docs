@@ -1,6 +1,6 @@
 ---
 description: This article describes the prerequisites that must be satisfied to start using JEA.
-ms.date: 11/16/2022
+ms.date: 10/23/2023
 title: JEA Prerequisites
 ---
 # JEA Prerequisites
@@ -73,7 +73,7 @@ PowerShell Remoting provides the foundation on which JEA is built. It's necessar
 PowerShell Remoting is enabled and properly secured before you can use JEA. For more information,
 see [WinRM Security][01].
 
-PowerShell Remoting is enabled by default on Windows Server 2012, 2012 R2, and 2016. You can enable
+PowerShell Remoting is enabled by default on Windows Server 2012 and higher. You can enable
 PowerShell Remoting by running the following command in an elevated PowerShell window.
 
 ```powershell

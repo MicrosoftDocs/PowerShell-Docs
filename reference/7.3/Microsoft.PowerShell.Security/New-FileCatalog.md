@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 12/12/2022
+ms.date: 10/23/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
@@ -31,9 +31,7 @@ paths. Users can then distribute the catalog with their files so that users can 
 changes have been made to the folders since catalog creation time.
 
 Catalog versions 1 and 2 are supported. Version 1 uses the (deprecated) SHA1 hashing algorithm to
-create file hashes, and version 2 uses SHA256. Catalog version 2 is not supported on Windows Server
-2008 R2 or Windows 7. You should use catalog version 2 on Windows 8, Windows Server 2012, and later
-operating systems.
+create file hashes, and version 2 uses SHA256.
 
 ## EXAMPLES
 
