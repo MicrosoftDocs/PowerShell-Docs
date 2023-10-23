@@ -18,7 +18,7 @@ Sends ICMP echo request packets, or pings, to one or more computers.
 ### DefaultPing (Default)
 
 ```
-Test-Connection [-TargetName] <string[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
+Test-Connection [-ComputerName] <string[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
  [-Source <string>] [-MaxHops <int>] [-Count <int>] [-Delay <int>] [-BufferSize <int>]
  [-DontFragment] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
 ```
@@ -26,7 +26,7 @@ Test-Connection [-TargetName] <string[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestin
 ### RepeatPing
 
 ```
-Test-Connection [-TargetName] <string[]> -Repeat [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
+Test-Connection [-ComputerName] <string[]> -Repeat [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
  [-Source <string>] [-MaxHops <int>] [-Delay <int>] [-BufferSize <int>] [-DontFragment]
  [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
 ```
@@ -34,21 +34,21 @@ Test-Connection [-TargetName] <string[]> -Repeat [-Ping] [-IPv4] [-IPv6] [-Resol
 ### MtuSizeDetect
 
 ```
-Test-Connection [-TargetName] <string[]> -MtuSize [-IPv4] [-IPv6] [-ResolveDestination]
+Test-Connection [-ComputerName] <string[]> -MtuSize [-IPv4] [-IPv6] [-ResolveDestination]
  [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
 ```
 
 ### TraceRoute
 
 ```
-Test-Connection [-TargetName] <string[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDestination]
+Test-Connection [-ComputerName] <string[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDestination]
  [-Source <string>] [-MaxHops <int>] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
 ```
 
 ### TcpPort
 
 ```
-Test-Connection [-TargetName] <string[]> -TcpPort <int> [-IPv4] [-IPv6] [-ResolveDestination]
+Test-Connection [-ComputerName] <string[]> -TcpPort <int> [-IPv4] [-IPv6] [-ResolveDestination]
  [-Source <string>] [-TimeoutSeconds <int>] [-Quiet] [<CommonParameters>]
 ```
 
@@ -74,7 +74,7 @@ multiple connections are tested, an array of **Boolean** values is returned.
 This example sends echo request packets from the local computer to the Server01 computer.
 
 ```powershell
-Test-Connection -TargetName Server01 -IPv4
+Test-Connection -ComputerName Server01 -IPv4
 ```
 
 ```Output
@@ -89,7 +89,7 @@ Ping Source           Address                   Latency BufferSize Status
    4 ADMIN1           10.59.137.44                   28         32 Success
 ```
 
-`Test-Connection` uses the **TargetName** parameter to specify the Server01 computer. The **IPv4**
+`Test-Connection` uses the **ComputerName** parameter to specify the Server01 computer. The **IPv4**
 parameter specifies the protocol for the test.
 
 A series of **TestConnectionCommand+PingStatus** objects are sent to the output stream, one
@@ -100,7 +100,7 @@ object per ping reply from the target machine.
 This example sends pings from the local computer to several remote computers.
 
 ```powershell
-Test-Connection -TargetName Server01, Server02, Server12
+Test-Connection -ComputerName Server01, Server02, Server12
 ```
 
 ### Example 3: Use parameters to customize the test command
@@ -109,10 +109,10 @@ This example uses the parameters of `Test-Connection` to customize the command. 
 sends a ping test to a remote computer.
 
 ```powershell
-Test-Connection -TargetName Server01 -Count 3 -Delay 2 -MaxHops 255 -BufferSize 256
+Test-Connection -ComputerName Server01 -Count 3 -Delay 2 -MaxHops 255 -BufferSize 256
 ```
 
-`Test-Connection` uses the **TargetName** parameter to specify Server01. The **Count** parameter
+`Test-Connection` uses the **ComputerName** parameter to specify Server01. The **Count** parameter
 specifies three pings are sent to the Server01 computer with a **Delay** of 2-second intervals.
 
 You might use these options when the ping response is expected to take longer than usual, either
@@ -123,12 +123,12 @@ because of an extended number of hops or a high-traffic network condition.
 This example shows how to run a `Test-Connection` command as a PowerShell background job.
 
 ```powershell
-$job = Start-Job -ScriptBlock { Test-Connection -TargetName (Get-Content -Path "Servers.txt") }
+$job = Start-Job -ScriptBlock { Test-Connection -ComputerName (Get-Content -Path "Servers.txt") }
 $Results = Receive-Job $job -Wait
 ```
 
 The `Start-Job` command uses the `Test-Connection` cmdlet to ping many computers in an enterprise.
-The value of the **TargetName** parameter is a `Get-Content` command that reads a list of computer
+The value of the **ComputerName** parameter is a `Get-Content` command that reads a list of computer
 names from the `Servers.txt` file. The command uses the `Start-Job` cmdlet to run the command as a
 background job and it saves the job in the `$job` variable.
 
@@ -141,7 +141,7 @@ This example creates a session on the Server01 computer only if at least one of 
 the computer succeeds.
 
 ```powershell
-if (Test-Connection -TargetName Server01 -Quiet) { New-PSSession -ComputerName Server01 }
+if (Test-Connection -ComputerName Server01 -Quiet) { New-PSSession -ComputerName Server01 }
 ```
 
 The `Test-Connection` cmdlet pings the `Server01` computer, with the **Quiet** parameter provided.
@@ -154,10 +154,10 @@ cmdlet to create the **PSSession**.
 ### Example 6: Use the Traceroute parameter
 
 Introduced in PowerShell 6.0, the **Traceroute** parameter maps a route between the local computer
-and the remote destination you specify with the **TargetName** parameter.
+and the remote destination you specify with the **ComputerName** parameter.
 
 ```powershell
-Test-Connection -TargetName www.google.com -Traceroute
+Test-Connection -ComputerName www.google.com -Traceroute
 ```
 
 ```Output
@@ -361,7 +361,7 @@ Accept wildcard characters: False
 The **Quiet** parameter returns a **Boolean** value. Using this parameter suppresses all
 errors.
 
-Each connection that's tested returns a **Boolean** value. If the **TargetName** parameter
+Each connection that's tested returns a **Boolean** value. If the **ComputerName** parameter
 specifies multiple computers, an array of **Boolean** values is returned.
 
 If **any** ping to a given target succeeds, `$True` is returned.
@@ -436,7 +436,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetName
+### -ComputerName
 
 Specifies the computer(s) to test. Type the computer names or type IP addresses in IPv4 or IPv6
 format.
