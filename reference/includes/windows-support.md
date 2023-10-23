@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 01/09/2023
+ms.date: 10/23/2023
 ms.prod: powershell
 ms.topic: include
 ---
@@ -24,14 +24,12 @@ on. These versions are supported until either the version of
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|                         Windows                         | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
-| ------------------------------------------------------- | :---------------: | :-------------: | :-------------: |
-| ![Supported][1] Windows Server 2016, 2019, or 2022      |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] Windows Server 2012 R2                  |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] Windows Server Core (2012 R2 or higher) |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] Windows Server Nano (1809 or higher)    |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] Windows 11                              |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] Windows 10 1607+                        |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+|                       Windows                        | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
+| ---------------------------------------------------- | :---------------: | :-------------: | :-------------: |
+| ![Supported][1] Windows Server 2016, 2019, or 2022   |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+| ![Supported][1] Windows Server Nano (1809 or higher) |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+| ![Supported][1] Windows 11                           |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+| ![Supported][1] Windows 10 1607+                     |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
 
 > [!NOTE]
 > Support for a specific version of Windows is determined by the Microsoft Support Lifecycle
@@ -42,12 +40,13 @@ on. These versions are supported until either the version of
 
 PowerShell is supported on Windows for the following processor architectures.
 
-|           Windows            | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
-| ---------------------------- | :---------------: | :-------------: | :-------------: |
-| Nano Server Version 1803+    |        x64        |       x64       |       x64       |
-| Windows Server 2012 R2+      |     x64, x86      |    x64, x86     |    x64, x86     |
-| Windows Server Core 2012 R2+ |     x64, x86      |    x64, x86     |    x64, x86     |
-| Windows 10 or 11 Client      |  x64, x86, Arm64  | x64, x86, Arm64 | x64, x86, Arm64 |
+|          Windows          | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
+| ------------------------- | :---------------: | :-------------: | :-------------: |
+| Windows Server 2016+      |     x64, x86      |    x64, x86     |    x64, x86     |
+| Windows Server Core 2016+ |     x64, x86      |    x64, x86     |    x64, x86     |
+| Nano Server Version 1803+ |        x64        |       x64       |       x64       |
+| Windows 11 Client         |    x64, Arm64     |   x64, Arm64    |   x64, Arm64    |
+| Windows 10 Client         |  x64, x86, Arm64  | x64, x86, Arm64 | x64, x86, Arm64 |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-windows]: /lifecycle/products/?terms=Windows%20Server&products=windows

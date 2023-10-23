@@ -1,7 +1,7 @@
 ---
 description: Explains how to sign scripts so that they comply with the PowerShell execution policies.
 Locale: en-US
-ms.date: 06/05/2023
+ms.date: 10/23/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Signing
@@ -142,9 +142,8 @@ topic.
 ## Create a self-signed certificate
 
 To create a self-signed certificate, use the [New-SelfSignedCertificate][04]
-cmdlet in the PKI module. This module is introduced in PowerShell 3.0 and is
-included in Windows 8 and Windows Server 2012. For more information, see the
-help topic for the `New-SelfSignedCertificate` cmdlet.
+cmdlet in the PKI module. This module is introduced in PowerShell 3.0. For more
+information, see the help topic for the `New-SelfSignedCertificate` cmdlet.
 
 ```powershell
 $params = @{

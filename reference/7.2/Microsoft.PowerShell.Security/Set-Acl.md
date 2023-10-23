@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 12/12/2022
+ms.date: 10/23/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Acl

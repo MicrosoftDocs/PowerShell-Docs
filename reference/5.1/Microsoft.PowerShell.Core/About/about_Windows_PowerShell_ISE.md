@@ -48,15 +48,8 @@ Windows PowerShell ISE introduces two new features in Windows PowerShell 4.0.
 Windows PowerShell ISE is installed, enabled, and ready to use in all
 supported versions of Windows.
 
-- In Windows 8.1, Windows 8, Windows Server 2012 R2, and Windows Server 2012,
-  on the Start screen, type PowerShell_ISE, and then click PowerShell_ISE or
+- In the Start menu, type PowerShell_ISE, and then click PowerShell_ISE or
   Windows PowerShell ISE.
-
-- In Windows Server 2012 R2 and Windows Server 2012, in Server Manager, on the
-  Tools menu, click Windows PowerShell ISE.
-
-- In earlier versions of Windows, click Start, All Programs, Accessories,
-  Windows PowerShell, and then click Windows PowerShell ISE.
 
 - In a Windows PowerShell console, Cmd.exe, or the Run or Search box in
   Windows, type "PowerShell_ise.exe". You can also use the command-line
