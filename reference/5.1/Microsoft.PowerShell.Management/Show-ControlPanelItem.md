@@ -43,8 +43,7 @@ user interface. You can pipe control panel items from the `Get-ControlPanelItem`
 computers that do not have **Control Panel** or **File Explorer**, `Show-ControlPanelItem` searches
 only control panel items that can open without these components.
 
-This cmdlet was introduced in Windows PowerShell 3.0 and works on Windows 8, Windows Server 2012,
-and higher versions.
+This cmdlet was introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 

@@ -1,17 +1,14 @@
 ---
 description: This article explains the ways of starting various versions of PowerShell.
-ms.date: 05/04/2023
+ms.date: 10/23/2023
 title: Starting Windows PowerShell
 ---
 
 # Starting Windows PowerShell
 
-Windows PowerShell is a scripting engine `.DLL` that's embedded into multiple hosts. The most common
-hosts you'll start are the interactive command-line `powershell.exe` and the Interactive Scripting
+Windows PowerShell is a scripting engine that's embedded into multiple hosts. The most common hosts
+you'll start are the interactive command-line `powershell.exe` and the Interactive Scripting
 Environment `powershell_ise.exe`.
-
-To start Windows PowerShell on Windows Server 2012 R2, Windows 8.1, Windows Server 2012, and Windows
-8, see [Common Management Tasks and Navigation in Windows][08].
 
 ## PowerShell has renamed binary
 
@@ -82,53 +79,16 @@ PowerShell, type: `PowerShell_ISE`. In Windows PowerShell, you can use the alias
 Click **Start**, type **ISE**, right-click **Windows PowerShell ISE**, and then click **Run as
 administrator**.
 
-## How to Enable Windows PowerShell ISE on Earlier Releases of Windows
-
-In Windows PowerShell 4.0 and Windows PowerShell 3.0, Windows PowerShell ISE is enabled by default
-on all versions of Windows. If it isn't already enabled, Windows Management Framework 4.0 or Windows
-Management Framework 3.0 enables it.
-
-In Windows PowerShell 2.0, Windows PowerShell ISE is enabled by default on Windows 7. However, on
-Windows Server 2008 R2 and Windows Server 2008, it's an optional feature.
-
-To enable Windows PowerShell ISE in Windows PowerShell 2.0 on Windows Server 2008 R2 or Windows
-Server 2008, use the following procedure.
-
-### To enable Windows PowerShell Integrated Scripting Environment (ISE)
-
-1. Start Server Manager.
-1. Click **Features** and then click **Add Features**.
-1. In Select Features, click Windows PowerShell Integrated Scripting Environment (ISE).
-
 ## Starting the 32-Bit Version of Windows PowerShell
 
-When you install Windows PowerShell on a 64-bit computer, **Windows PowerShell (x86)**, a 32-bit
-version of Windows PowerShell is installed in addition to the 64-bit version. When you run Windows
-PowerShell, the 64-bit version runs by default.
+When using a 64-bit computer, **Windows PowerShell (x86)**, a 32-bit version of Windows PowerShell
+is installed in addition to the 64-bit version. When you run Windows PowerShell, the 64-bit version
+runs by default.
 
 However, you might occasionally need to run **Windows PowerShell (x86)**, such as when you're using
 a module that requires the 32-bit version or when you're connecting remotely to a 32-bit computer.
 
 To start a 32-bit version of Windows PowerShell, use any of the following procedures.
-
-### In Windows Server 2012 R2
-
-- On the **Start** screen, type **Windows PowerShell (x86)**. Click the **Windows PowerShell x86**
-  tile.
-- In **Server Manager**, from the **Tools** menu, select **Windows PowerShell (x86)**.
-- On the desktop, move the cursor to the upper right corner, click **Search**, type **PowerShell
-  x86** and then click **Windows PowerShell (x86)**.
-- Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
-
-### In Windows 8.1
-
-- On the **Start** screen, type **Windows PowerShell (x86)**. Click the **Windows PowerShell x86**
-  tile.
-- If you're running [Remote Server Administration Tools][09] for Windows 8.1, you can also open
-  Windows PowerShell x86 from the **Server ManagerTools** menu. Select **Windows PowerShell (x86)**.
-- On the desktop, move the cursor to the upper right corner, click **Search**, type **PowerShell
-  x86** and then click **Windows PowerShell (x86)**.
-- Via command line, enter: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 <!-- link references -->
 [01]: ../how-to-use-docs.md
@@ -138,5 +98,3 @@ To start a 32-bit version of Windows PowerShell, use any of the following proced
 [05]: /powershell/scripting/install/installing-powershell-on-linux
 [06]: /powershell/scripting/install/installing-powershell-on-macos
 [07]: /powershell/scripting/install/installing-powershell-on-windows
-[08]: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831491(v=ws.11)
-[09]: https://go.microsoft.com/fwlink/?LinkID=304145

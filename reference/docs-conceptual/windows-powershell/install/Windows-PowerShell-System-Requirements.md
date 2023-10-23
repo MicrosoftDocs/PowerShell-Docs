@@ -1,6 +1,6 @@
 ---
 description: This article lists the system requirements for Windows PowerShell 3.0, Windows PowerShell 4.0, Windows PowerShell 5.0, and Windows PowerShell 5.1.
-ms.date: 10/25/2022
+ms.date: 10/23/2023
 title: Windows PowerShell System Requirements
 ---
 

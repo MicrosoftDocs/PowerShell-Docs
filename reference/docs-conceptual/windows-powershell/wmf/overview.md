@@ -1,6 +1,6 @@
 ---
 description: WMF is a prerequisite for Windows PowerShell. This articles shows the history of WMF versions and provides information about how to find and install WMF.
-ms.date: 09/11/2023
+ms.date: 10/23/2023
 title: Windows Management Framework (WMF)
 ---
 
@@ -32,23 +32,23 @@ to the links below to review the release notes:
 
 ## WMF availability across Windows operating systems
 
-|         OS Version         |     End of Support     |      WMF 5.1      |            WMF 5.0             | WMF 4.0  | WMF 3.0  | WMF 2.0  |
-| -------------------------- | ---------------------- | ----------------- | ------------------------------ | -------- | -------- | -------- |
-| Windows Server 2022        | [2031-10-14][04]       | Included          |                                |          |          |          |
-| Windows Server 2019        | [2029-01-09][04]       | Included          |                                |          |          |          |
-| Windows Server 2016        | [2027-01-11][04]       | Included          |                                |          |          |          |
-| Windows 11                 | [2025-10-14][03]       | Included          |                                |          |          |          |
-| Windows 10                 | [2025-10-14][03]       | Included in 1607+ | Included<br>(replaced in 1607) |          |          |          |
-| Windows Server 2012 R2     | [2023-10-10][02]       | [Yes][05]         | Yes                            | Included |          |          |
-| Windows 8.1                | [_Out of support_][02] | [Yes][05]         | Yes                            | Included |          |          |
-| Windows Server 2012        | [2023-10-10][02]       | [Yes][05]         | Yes                            | Yes      | Included |          |
-| Windows 8                  | [_Out of support_][01] |                   |                                |          | Included |          |
-| Windows Server 2008 R2 SP1 | [_Out of support_][01] | [Yes][05]         | Yes                            | Yes      | Yes      | Included |
-| Windows 7 SP1              | [_Out of support_][01] | [Yes][05]         | Yes                            | Yes      | Yes      | Included |
-| Windows Server 2008 SP2    | [_Out of support_][01] |                   |                                |          | Yes      | Yes      |
-| Windows Vista              | [_Out of support_][01] |                   |                                |          |          | Yes      |
-| Windows Server 2003        | [_Out of support_][01] |                   |                                |          |          | Yes      |
-| Windows XP                 | [_Out of support_][01] |                   |                                |          | Yes      | Yes      |
+|         OS Version         |     End of Support     |      WMF 5.1      | WMF 5.0  | WMF 4.0  | WMF 3.0  | WMF 2.0  |
+| -------------------------- | ---------------------- | ----------------- | -------- | -------- | -------- | -------- |
+| Windows Server 2022        | [2031-10-14][04]       | Included          |          |          |          |          |
+| Windows Server 2019        | [2029-01-09][04]       | Included          |          |          |          |          |
+| Windows Server 2016        | [2027-01-11][04]       | Included          |          |          |          |          |
+| Windows 11                 | [2025-10-14][03]       | Included          |          |          |          |          |
+| Windows 10                 | [2025-10-14][03]       | Included in 1607+ | Included |          |          |          |
+| Windows Server 2012 R2     | [_Out of support_][02] | [Yes][05]         | Yes      | Included |          |          |
+| Windows 8.1                | [_Out of support_][02] | [Yes][05]         | Yes      | Included |          |          |
+| Windows Server 2012        | [_Out of support_][02] | [Yes][05]         | Yes      | Yes      | Included |          |
+| Windows 8                  | [_Out of support_][01] |                   |          |          | Included |          |
+| Windows Server 2008 R2 SP1 | [_Out of support_][01] | [Yes][05]         | Yes      | Yes      | Yes      | Included |
+| Windows 7 SP1              | [_Out of support_][01] | [Yes][05]         | Yes      | Yes      | Yes      | Included |
+| Windows Server 2008 SP2    | [_Out of support_][01] |                   |          |          | Yes      | Yes      |
+| Windows Vista              | [_Out of support_][01] |                   |          |          |          | Yes      |
+| Windows Server 2003        | [_Out of support_][01] |                   |          |          |          | Yes      |
+| Windows XP                 | [_Out of support_][01] |                   |          |          | Yes      | Yes      |
 
 - **Included**: The features of the specified version of WMF were shipped in the indicated version
   of Windows client or Windows Server.

@@ -1,21 +1,21 @@
 ---
 description: This document covers security concerns, recommendations, and best practices when using PowerShell Remoting.
-ms.date: 11/16/2022
+ms.date: 10/23/2023
 title: Security considerations for PowerShell Remoting using WinRM
 ---
 
 # Security Considerations for PowerShell Remoting using WinRM
 
 PowerShell Remoting is the recommended way to manage Windows systems. PowerShell Remoting is enabled
-by default in Windows Server 2012 R2. This document covers security concerns, recommendations, and
-best practices when using PowerShell Remoting.
+by default in Windows Server 2012 R2 and higher. This document covers security concerns,
+recommendations, and best practices when using PowerShell Remoting.
 
 ## What is PowerShell Remoting?
 
-PowerShell Remoting uses [Windows Remote Management (WinRM)][04], which is the Microsoft
-implementation of the [Web Services for Management (WS-Management)][05] protocol, to allow users to
-run PowerShell commands on remote computers. You can find more information about using PowerShell
-Remoting at [Running Remote Commands][08].
+PowerShell Remoting uses [Windows Remote Management (WinRM)][04] to allow users to run PowerShell
+commands on remote computers. WinRM is the Microsoft implementation of the
+[Web Services for Management (WS-Management)][05] protocol. You can find more information about
+using PowerShell Remoting at [Running Remote Commands][08].
 
 PowerShell Remoting isn't the same as using the **ComputerName** parameter of a cmdlet to run it on
 a remote computer, which uses Remote Procedure Call (RPC) as its underlying protocol.
