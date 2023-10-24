@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 09/26/2023
+ms.date: 10/24/2023
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -61,6 +61,18 @@ sudo apt-get install -y powershell
 # Start PowerShell
 pwsh
 ```
+
+> [!IMPORTANT]
+> Ubuntu comes preconfigured with a package repository that includes .NET packages, but not
+> PowerShell. Using these instructions to install PowerShell registers the Microsoft repository as a
+> package source. You can install PowerShell and some versions of .NET from this repository.
+> However, the Ubuntu package repository has different versions of the .NET packages. This can cause
+> problems when installing .NET for other purposes. For more information about these problems, see
+> [Troubleshoot .NET package mix ups on Linux][07].
+>
+> You must choose the feed you want to use to install .NET. You can set the priority of the package
+> repositories to favor one over the other. For instructions on how to set the priorities, see
+> [My Linux distribution provides .NET packages, and I want to use them][06].
 
 ## Installation via direct download
 
@@ -150,3 +162,5 @@ Microsoft can't support those methods.
 [03]: https://packages.microsoft.com
 [04]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [05]: install-other-linux.md#binary-archives
+[06]: /dotnet/core/install/linux-package-mixup?pivots=os-linux-ubuntu#my-linux-distribution-provides-net-packages-and-i-want-to-use-them
+[07]: /dotnet/core/install/linux-package-mixup?pivots=os-linux-ubuntu#whats-going-on
