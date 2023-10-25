@@ -188,7 +188,7 @@ be changed without using the **Force** parameter and is only available in the cu
 ### -Description
 
 Specifies a description of the alias. You can type any string. If the description includes spaces,
-enclose it single quotation marks.
+enclose it in single quotation marks.
 
 ```yaml
 Type: System.String
