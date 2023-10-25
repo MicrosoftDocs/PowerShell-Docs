@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.4 (preview)
 description: New features and changes released in PowerShell 7.4 (preview)
-ms.date: 09/29/2023
+ms.date: 10/25/2023
 ---
 
 # What's New in PowerShell 7.4 (preview)
 
-PowerShell 7.4-preview.6 includes the following features, updates, and breaking changes. PowerShell
-7.4 is now built on .NET 8.0.0-preview.7.
+PowerShell 7.4-rc.1 includes the following features, updates, and breaking changes. PowerShell
+7.4 is now built on .NET 8.0.0-rc.2.
 
 For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository.
 
@@ -20,27 +20,28 @@ For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository
 - Remove code related to `#requires -pssnapin` ([#19320][19320])
 - `Test-Json` now uses Json.Schema.Net instead of Newtonsoft.Json.Schema. With this change,
   `Test-Json` no longer supports the older Draft 4 schemas. ([#18141][18141]) (Thanks @gregsdennis!)
-- Output from`Test-Connection` now includes more detailed information about TCP connection tests
+- Output from `Test-Connection` now includes more detailed information about TCP connection tests
 
 ## Installer updates
 
 The Windows MSI package now provides an option to disable PowerShell telemetry during installation.
 For more information, see [Install the msi package from the command line][01].
 
-## Inclusion of PSResourceGet
+## Updated versions of PSResourceGet and PSReadLine
 
-As of PowerShell 7.4-preview.6, **Microsoft.PowerShell.PSResourceGet** v0.9.0-rc1 is now included.
-This module is installed side-by-side with **PowerShellGet** v2.2.5 and **PackageManagement**
-v1.4.8.1.
+PowerShell 7.4-rc.1 now includes **Microsoft.PowerShell.PSResourceGet** v1.0.0. This module is
+installed side-by-side with **PowerShellGet** v2.2.5 and **PackageManagement** v1.4.8.1. For more
+information, see the documentation for [Microsoft.PowerShell.PSResourceGet][14].
 
-For more information, see the documentation for [Microsoft.PowerShell.PSResourceGet][14].
+PowerShell 7.4-rc.1 now includes **PSReadLine** v2.3.4. For more information, see the documentation
+for [PSReadLine][13].
 
 ## Tab completion improvements
 
 Many thanks to **@MartinGC94** and others for all their work to improve tab completion.
 
 - Fix issue when completing the first command in a script with an empty array expression
-  ([[#18355][18355])
+  ([#18355][18355])
 - Fix positional argument completion ([#17796][17796])
 - Prioritize the default parameter set when completing positional arguments ([#18755][18755])
 - Improve pseudo binding for dynamic parameters ([#18030][18030])
@@ -117,6 +118,8 @@ Many thanks to **@CarloToso** and others for all the work on improving web cmdle
 
 ## Other cmdlet improvements
 
+- `Test-Connection` now returns error about the need to use `sudo` on Linux platforms when using a
+  custom buffer size ([#20369][20369])
 - Add output types to Format commands ([#18746][18746]) (Thanks @MartinGC94!)
 - Add output type attributes for `Get-WinEvent` ([#17948][17948]) (Thanks @MartinGC94!)
 - Add **Path** and **LiteralPath** parameters to `Test-Json` cmdlet ([#19042][19042]) (Thanks
@@ -156,6 +159,7 @@ Updates to `$PSStyle`
   values to ANSI escape sequences ([#17938][17938])
 - Table headers for calculated fields are formatted in italics by default
 - Add support of respecting `$PSStyle.OutputRendering` on the remote host ([#19601][19601])
+- Updated telemetry data to include use of `CrescendoBuilt` modules ([#20371][20371])
 
 Other Engine updates
 
@@ -220,6 +224,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [10]: ../learn/experimental-features.md#psnativecommandpreservebytepipe
 [11]: ../learn/experimental-features.md#pswindowsnativecommandargpassing
 
+[13]: /powershell/module/psreadline
 [14]: /powershell/module/microsoft.powershell.psresourceget
 [15]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 [14953]: https://github.com/PowerShell/PowerShell/pull/14953
@@ -316,3 +321,5 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [19831]: https://github.com/PowerShell/PowerShell/pull/19831
 [19683]: https://github.com/PowerShell/PowerShell/pull/19683
 [19824]: https://github.com/PowerShell/PowerShell/pull/19824
+[20369]: https://github.com/PowerShell/PowerShell/pull/20369
+[20371]: https://github.com/PowerShell/PowerShell/pull/20371
