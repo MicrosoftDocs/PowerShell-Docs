@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 10/23/2023
+ms.date: 10/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
@@ -36,7 +36,12 @@ create file hashes, and version 2 uses SHA256.
 ### Example 1: Create a file catalog for `Microsoft.PowerShell.Utility`
 
 ```powershell
-New-FileCatalog -Path $PSHOME\Modules\Microsoft.PowerShell.Utility -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -CatalogVersion 2.0
+$parameters = @{
+    Path            = "$PSHOME\Modules\Microsoft.PowerShell.Utility"
+    CatalogFilePath = "\temp\Microsoft.PowerShell.Utility.cat"
+    CatalogVersion  = 2
+}
+New-FileCatalog @parameters
 ```
 
 ```Output
@@ -66,9 +71,9 @@ Accept wildcard characters: False
 
 ### -CatalogVersion
 
-Accepts `1.0` or `2.0` as possible values for specifying the catalog version. `1.0` should be used
-avoided whenever possible, as it uses the insecure SHA-1 hash algorithm, while `2.0` uses the secure
-SHA-256 algorithm However, `1.0` is the only supported algorithm on Windows 7 and Server 2008R2.
+Accepts `1` or `2` as possible values for specifying the catalog version. `1` should be avoided
+whenever possible, as it uses the insecure SHA-1 hash algorithm, while `2` uses the secure SHA-256
+algorithm.
 
 ```yaml
 Type: System.Int32
@@ -84,8 +89,8 @@ Accept wildcard characters: False
 
 ### -Path
 
-Accepts a path or array of paths to files or folders that should be included in the catalog file. If
-a folder is specified, all the files in the folder will be included as well.
+Accepts a path or array of paths to files or folders to include in the catalog file. If
+this value is a folder, the catalog also includes all files in the folder.
 
 ```yaml
 Type: System.String[]
@@ -117,7 +122,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -142,7 +147,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that is used as the catalog filename to this cmdlet.
+You can pipe a string that's used as the catalog filename to this cmdlet.
 
 ## OUTPUTS
 
