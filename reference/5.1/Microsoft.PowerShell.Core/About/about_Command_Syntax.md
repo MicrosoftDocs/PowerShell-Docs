@@ -120,7 +120,7 @@ they appear in separate parameter sets.
 
 For example, the [Get-Random][05] cmdlet has the following parameter sets:
 
-```powershell
+```powershell-interactive
 $cmd = Get-Command Get-Random
 $cmd.ParameterSets |
     Select-Object Name, IsDefault, @{n='Parameters';e={$_.ToString()}} |
