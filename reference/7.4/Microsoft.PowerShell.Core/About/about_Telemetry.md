@@ -1,7 +1,7 @@
 ---
 description: Describes the telemetry collected in PowerShell and how to opt-out.
 Locale: en-US
-ms.date: 11/30/2022
+ms.date: 10/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Telemetry
@@ -44,8 +44,8 @@ host application.
 PowerShell sends the following information during the session:
 
 - The count of calls to the `PowerShell.Create()` API
-- The names and versions of Microsoft-owned modules loaded
-- The count of loaded modules that have the `CrescendoBuilt` tag
+- The names and versions of Microsoft-owned modules imported
+- The count of imported modules that have the `CrescendoBuilt` tag
 - The names of enabled experimental features
 - The names of disabled experimental features
 - Value of `$PSNativeCommandUseErrorActionPreference` preference variable,
@@ -53,7 +53,7 @@ PowerShell sends the following information during the session:
 - The count of remote session open operations
 
 PowerShell sends this information periodically during the lifetime of the
-session in all host applications.
+session for all host applications.
 
 To opt-out of this telemetry, set the environment variable
 `$env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`.

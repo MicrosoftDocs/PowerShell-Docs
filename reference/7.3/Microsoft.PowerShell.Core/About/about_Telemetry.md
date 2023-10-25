@@ -1,7 +1,7 @@
 ---
 description: Describes the telemetry collected in PowerShell and how to opt-out.
 Locale: en-US
-ms.date: 11/30/2022
+ms.date: 10/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Telemetry
@@ -15,10 +15,9 @@ Describes the telemetry collected in PowerShell and how to opt-out.
 ## Long description
 
 PowerShell sends basic telemetry data to Microsoft using Application Insights.
-This data allows us to better understand the environments where PowerShell is
-used and enables us to prioritize new features and fixes. The telemetry
-includes anonymized information about the host running PowerShell, and
-information about how PowerShell is used.
+This data allows us to better understand the environments using PowerShell and
+enables us to prioritize new features and fixes. PowerShell anonymizes the
+telemetry information before sending.
 
 PowerShell sends the following information at startup:
 
@@ -45,12 +44,12 @@ host application.
 PowerShell sends the following information during the session:
 
 - The count of calls to the `PowerShell.Create()` API
-- The names and versions of Microsoft-owned modules loaded
+- The names and versions of Microsoft-owned modules imported
 - The names of enabled experimental features
 - The count of remote session open operations
 
-This information is sent periodically during the lifetime of the session. This
-information is sent regardless of the host application.
+PowerShell sends this information periodically during the lifetime of the
+session for all host applications.
 
 To opt-out of this telemetry, set the environment variable
 `$env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`.
@@ -63,7 +62,8 @@ Microsoft, users shouldn't change this value.
 For more information about these environment variables, see
 [about_Environment_Variables][01].
 
-For more information about Microsoft's statement on privacy, see [Microsoft Privacy Statement][03]
+For more information about Microsoft's statement on privacy, see
+[Microsoft Privacy Statement][03]
 
 <!-- link references -->
 [01]: about_environment_variables.md#powershell-environment-variables
