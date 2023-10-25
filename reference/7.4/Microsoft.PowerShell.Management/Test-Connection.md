@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/01/2023
+ms.date: 10/25/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
@@ -591,6 +591,11 @@ When you use the **Detailed** parameter, this cmdlet returns a
 **TestConnectionCommand+TcpPortStatus** object that shows the status of the TCP connection.
 
 ## NOTES
+
+On Linux, using the **BufferSize** parameter or any combination of parameters with the
+**MtuSizeDetect** parameter set that results in a non-default buffer size of 32 bytes may require
+`sudo`. In those cases, `Test-Command` raises an exception with a message indicating that `sudo` is
+required.
 
 ## RELATED LINKS
 
