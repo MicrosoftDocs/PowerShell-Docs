@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 01/09/2023
+ms.date: 10/26/2023
 ms.prod: powershell
 ms.topic: include
 ---
@@ -24,13 +24,13 @@ Ubuntu they're supported on. These versions remain supported until either the ve
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|              Ubuntu              |  7.2 (LTS-current)   |         7.3          |    7.4 (preview)     |
-| -------------------------------- | :------------------: | :------------------: | :------------------: |
-| ![Supported][1] 22.04 (LTS)      |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |
-| ![Supported][1] 20.04 (LTS)      |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |
-| ![Out of Support][4] 18.04 (LTS) | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
+|                 Ubuntu                  |  7.2 (LTS-current)   |         7.3          |    7.4 (preview)     |
+| --------------------------------------- | :------------------: | :------------------: | :------------------: |
+| ![Supported][1] 22.04 LTS (Jammy)       |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |
+| ![Supported][1] 20.04 LTS (Focal)       |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |
+| ![Out of Support][4] 18.04 LTS (Bionic) | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
 
-Only the LTS releases of Ubuntu are officially supported. Microsoft does not support
+Only the LTS releases of Ubuntu are officially supported. Microsoft doesn't support
 [interim releases][interim] or their equivalent. Interim releases are community supported. For more
 information, see [Community supported distributions][community].
 
@@ -40,7 +40,7 @@ PowerShell is supported on Ubuntu for the following processor architectures.
 | ---------------------- | :---------------: | :--------: | :-----------: |
 | All supported versions |    x64, Arm32     | x64, Arm32 |  x64, Arm32   |
 
-[eol-ubuntu]: https://wiki.ubuntu.com/Releases
+[eol-ubuntu]: https://endoflife.date/ubuntu
 [interim]: https://ubuntu.com/about/release-cycle
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [community]: /powershell/scripting/install/community-support

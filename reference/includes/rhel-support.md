@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 01/09/2023
+ms.date: 10/26/2023
 ms.prod: powershell
 ms.topic: include
 ---
@@ -30,6 +30,9 @@ they're supported on. These versions remain supported until either the version o
 | ![Supported][1] 8 |  ![Supported][1]  | ![Supported][1] | ![Supported][1]     |
 | ![Supported][1] 7 |  ![Supported][1]  | ![Supported][1] | ![Not Supported][3] |
 
+PowerShell is tested on Red Hat Universal Base Images (UBI). For more information, see the
+[UBI information page][ubi].
+
 PowerShell is supported on RHEL for the following processor architectures.
 
 |          RHEL          | 7.2 (LTS-current) |  7.3  | 7.4 (preview) |
@@ -38,3 +41,4 @@ PowerShell is supported on RHEL for the following processor architectures.
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/
+[ubi]: https://developers.redhat.com/products/rhel/ubi
