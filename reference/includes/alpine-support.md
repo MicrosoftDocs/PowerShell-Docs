@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 01/09/2023
+ms.date: 10/26/2023
 ms.prod: powershell
 ms.topic: include
 ---
@@ -24,12 +24,13 @@ supported on. These versions are supported until either the version of
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|        Alpine        | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
-| :------------------: | :---------------: | :-------------: | :-------------: |
-| ![Supported][1] 3.15 |   ![In Test][2]   |  ![In Test][2]  |  ![In Test][2]  |
-| ![Supported][1] 3.14 |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-
-Alpine 3.15 is in the process of being tested.
+|          Alpine           |  7.2 (LTS-current)   |         7.3          |    7.4 (preview)     |
+| :-----------------------: | :------------------: | :------------------: | :------------------: |
+|   ![Supported][1] 3.18    | ![Not Supported][3]  | ![Not Supported][3]  | ![Not Supported][3]  |
+|   ![Supported][1] 3.17    |    ![In Test][2]     |    ![In Test][2]     |    ![In Test][2]     |
+|   ![Supported][1] 3.16    |    ![In Test][2]     |    ![In Test][2]     |    ![In Test][2]     |
+| ![Out of Support][4] 3.15 |    ![In Test][2]     |    ![In Test][2]     |    ![In Test][2]     |
+| ![Out of Support][4] 3.14 | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
 
 PowerShell is supported on Alpine for the following processor architectures.
 

@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 01/09/2023
+ms.date: 10/26/2023
 ms.prod: powershell
 ms.topic: include
 ---
@@ -23,13 +23,14 @@ macOS. These versions remain supported until either the version of
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|            macOS             | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
-| ---------------------------- | :---------------: | :-------------: | :-------------: |
-| ![Supported][1] Big Sur 11.5 |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+|             macOS             | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
+| ----------------------------- | :---------------: | :-------------: | :-------------: |
+| ![Supported][1] 14 (Sonoma)   |   ![In Test][2]   |  ![In Test][2]  |  ![In Test][2]  |
+| ![Supported][1] 13 (Ventura)  |   ![In Test][2]   |  ![In Test][2]  |  ![In Test][2]  |
+| ![Supported][1] 12 (Monterey) |   ![In Test][2]   |  ![In Test][2]  |  ![In Test][2]  |
+| ![Supported][1] 11 (Big Sur)  |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
 
-macOS 12 (Monterey) and macOS 13 (Ventura) have not been tested.
-
-Support of macOS is defined by Apple. For more information, see:
+Support of macOS is defined by Apple. For more information, see the following:
 
 - [macOS release notes](https://developer.apple.com/documentation/macos-release-notes)
 - [Apple Security Updates](https://support.apple.com/HT201222)
