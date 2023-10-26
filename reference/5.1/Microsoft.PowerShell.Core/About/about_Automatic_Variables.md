@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 07/17/2023
+ms.date: 10/26/2023
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -955,7 +955,7 @@ foreach ($num in ("one","two", "three"))
 
     if ($num -eq "two" -and $stopLoop -lt 2)
     {
-        $foreach.Reset() | Out-Null
+        $foreach.Reset()
         ("`t" * $stopLoop) + "Reset Loop: $stopLoop"
         $stopLoop++
     }
