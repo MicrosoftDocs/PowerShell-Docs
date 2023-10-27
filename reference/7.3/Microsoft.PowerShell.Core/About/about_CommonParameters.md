@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 07/21/2023
+ms.date: 10/27/2023
 no-loc: [Debug, Verbose, Confirm]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -93,13 +93,9 @@ Accept wildcard characters: False
 By default, debugging messages aren't displayed because the value of the
 `$DebugPreference` variable is **SilentlyContinue**.
 
-In interactive mode, the **Debug** parameter overrides the value of the
-`$DebugPreference` variable for the current command, setting the value of
-`$DebugPreference` to **Continue**.
-
-In non-interactive mode, the **Debug** parameter overrides the value of the
-`$DebugPreference` variable for the current command, setting the value of
-`$DebugPreference` to **Continue**.
+The **Debug** parameter overrides the value of the `$DebugPreference` variable
+for the current command, setting the value of `$DebugPreference` to
+**Continue**.
 
 `-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to
 suppress the display of debugging messages when `$DebugPreference` isn't
