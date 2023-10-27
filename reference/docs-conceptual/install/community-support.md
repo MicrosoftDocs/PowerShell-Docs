@@ -77,12 +77,12 @@ apt -y remove powershell
 Download the tar.gz package from the [releases][12] page onto your Raspberry Pi computer. The links
 to the current versions are:
 
-- PowerShell 7.3.8 - latest stable release
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.8/powershell-7.3.8-linux-arm32.tar.gz`
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.8/powershell-7.3.8-linux-arm64.tar.gz`
-- PowerShell 7.2.15 - LTS release
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.15/powershell-7.2.15-linux-arm32.tar.gz`
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.15/powershell-7.2.15-linux-arm64.tar.gz`
+- PowerShell 7.3.9 - latest stable release
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.9/powershell-7.3.9-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.9/powershell-7.3.9-linux-arm64.tar.gz`
+- PowerShell 7.2.16 - LTS release
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.16/powershell-7.2.16-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.16/powershell-7.2.16-linux-arm64.tar.gz`
 
 Use the following shell commands to download and install the package. This script detects whether
 you are running a 32 or 64-bit OS and installs the latest stable version of PowerShell for that
