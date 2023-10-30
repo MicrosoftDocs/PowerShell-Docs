@@ -24,9 +24,7 @@ available via Linux packaging clients (apt, dnf, yum, etc). These Linux software
 on the _Linux package repository for Microsoft products_, [https://packages.microsoft.com][03], also
 known as _PMC_.
 
-Installing PowerShell from PMC is the preferred method of installation. The PowerShell RPMs aren't
-published to the RHEL 9 repository yet. For RHEL 9, you need to
-[install PowerShell via direct download](#installation-via-direct-download).
+Installing PowerShell from PMC is the preferred method of installation.
 
 > [!NOTE]
 > This script only works for supported versions of RHEL.
