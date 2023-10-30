@@ -132,7 +132,7 @@ verbs.
 
 |                                        Verb (alias)                                        |                                          Action                                           |     Synonyms to avoid     |
 | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------- |
-| [Connect](/dotnet/api/System.Management.Automation.VerbsCommunications.Connect) (cc)       | Creates a link between a source and a destination. This verb is paired with `Disconnect`. | Join, Telnet              |
+| [Connect](/dotnet/api/System.Management.Automation.VerbsCommunications.Connect) (cc)       | Creates a link between a source and a destination. This verb is paired with `Disconnect`. | Join, Telnet, Login       |
 | [Disconnect](/dotnet/api/System.Management.Automation.VerbsCommunications.Disconnect) (dc) | Breaks the link between a source and a destination. This verb is paired with `Connect`.   | Break, Logoff             |
 | [Read](/dotnet/api/System.Management.Automation.VerbsCommunications.Read) (rd)             | Acquires information from a source. This verb is paired with `Write`.                     | Acquire, Prompt, Get      |
 | [Receive](/dotnet/api/System.Management.Automation.VerbsCommunications.Receive) (rc)       | Accepts information sent from a source. This verb is paired with `Send`.                  | Read, Accept, Peek        |
