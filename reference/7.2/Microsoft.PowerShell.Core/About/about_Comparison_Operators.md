@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 08/17/2023
+ms.date: 10/30/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -61,7 +61,9 @@ To make the case-insensitivity explicit, add an `i` after `-`. For example,
 `-ieq` is the explicitly case-insensitive version of `-eq`.
 
 String comparisons use the [InvariantCulture][01] for both case-sensitive and
-case-insensitive comparisons.
+case-insensitive comparisons. The comparisons are between unicode code points
+and don't use culture-specific collation ordering. The results are the same
+regardless of the current culture.
 
 When the input of an operator is a scalar value, the operator returns a
 **Boolean** value. When the input is a collection, the operator returns the
