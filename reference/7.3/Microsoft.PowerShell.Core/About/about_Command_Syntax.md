@@ -1,7 +1,7 @@
 ---
 description: Describes the syntax diagrams that are used in PowerShell.
 Locale: en-US
-ms.date: 05/30/2023
+ms.date: 10/31/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Command Syntax
@@ -14,8 +14,8 @@ Describes the syntax diagrams that are used in PowerShell.
 ## Long description
 
 The [Get-Help][03] and [Get-Command][02] cmdlets display syntax diagrams to
-help you construct commands correctly. This article explains how to interpret the
-syntax diagrams.
+help you construct commands correctly. This article explains how to interpret
+the syntax diagrams.
 
 ## Get the syntax for a command
 
@@ -103,7 +103,7 @@ Some of the cmdlet parameters are unique to a parameter set, and others appear
 in multiple parameter sets. Each parameter set represents the format for a
 valid command. A parameter set includes only parameters that can be used
 together in a command. When parameters can't be used in the same command, they
-listed in separate parameter sets.
+are listed in separate parameter sets.
 
 For example, the [Get-Random][05] cmdlet has the following parameter sets:
 
@@ -159,7 +159,7 @@ The syntax diagrams use the following symbols:
   `Get-Command -Name`.
 
 <!-- `< >` - also known as chi-hua-huas -->
-- Angle brackets `<>` indicate placeholder text. You don't type the angle
+- Angle brackets `< >` indicate placeholder text. You don't type the angle
   brackets or the placeholder text in a command. Instead, you replace it with
   the item that it describes.
 
@@ -257,7 +257,7 @@ The syntax diagrams use the following symbols:
   ```
 
   The braces and vertical bars indicate that you can choose any one of the
-  listed values for the **Option** parameter, such as "ReadOnly" or "AllScope".
+  listed values for the **Option** parameter, such as `ReadOnly` or `AllScope`.
 
   ```powershell
   New-Alias -Option ReadOnly
@@ -275,4 +275,3 @@ The syntax diagrams use the following symbols:
 [03]: xref:Microsoft.PowerShell.Core.Get-Help
 [04]: xref:Microsoft.PowerShell.Management.Get-Process
 [05]: xref:Microsoft.PowerShell.Utility.Get-Random
-[06]: xref:Microsoft.PowerShell.Utility.New-Alias
