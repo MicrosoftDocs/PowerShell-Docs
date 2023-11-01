@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 10/25/2023
+ms.date: 11/01/2023
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -49,10 +49,10 @@ winget search Microsoft.PowerShell
 ```
 
 ```Output
-Name               Id                           Version Source
---------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.3.8.0 winget
-PowerShell Preview Microsoft.PowerShell.Preview 7.4.0.6 winget
+Name               Id                           Version   Source
+-----------------------------------------------------------------
+PowerShell         Microsoft.PowerShell         7.3.9.0   winget
+PowerShell Preview Microsoft.PowerShell.Preview 7.4.0.101 winget
 ```
 
 Install PowerShell or PowerShell Preview using the `id` parameter
@@ -135,6 +135,11 @@ installation options:
   environment variable.
 - `DISABLE_TELEMETRY` - This property controls the option for disabling PowerShell's telemetry by
   setting the `POWERSHELL_TELEMETRY_OPTOUT` environment variable.
+- `INSTALLFOLDER` - This property controls the installation directory. The default is
+  `$env:ProgramFiles\PowerShell\`. This is the location where the installer creates the versioned
+  subfolder. You can't change the name of the versioned subfolder.
+  - For current releases, the versioned subfolder is `7`
+  - For preview releases, the versioned subfolder is `7-preview`
 
 The following example shows how to silently install PowerShell with all the install options enabled.
 
