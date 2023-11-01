@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 10/02/2023
+ms.date: 11/01/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,51 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-Oct
+
+New content
+
+- [Securing a restricted PowerShell remoting session](/powershell/scripting/dev-cross-plat/security/securing-restricted-sessions)
+
+Updated content
+
+- Updated release notes for PowerShell 7.4-rc.1
+- Updated release notes for PSReadLine GA 2.3.4
+- Updated release notes for PSResourceGet 1.0.0
+
+Docs platform changes
+
+- Released new feedback experience at the bottom of each page
+
+### Top Community Contributors
+
+GitHub stats
+
+- 55 PRs merged (11 from Community)
+- 41 issues opened (37 from Community)
+- 37 issues closed (33 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|      GitHub Id      | PRs merged | Issues opened |
+| ------------------- | :--------: | :-----------: |
+| baardhermansen      |     1      |               |
+| diecknet            |     1      |               |
+| dipstar             |     1      |               |
+| ehmiiz              |     1      |       1       |
+| G2-Games            |     1      |               |
+| indented-automation |     1      |               |
+| jhribal             |     1      |               |
+| Joeselorm           |     1      |               |
+| matziq              |     1      |               |
+| RAJU2529            |     1      |               |
+| ThomasNieto         |     1      |       2       |
+| iRon7               |            |       2       |
+| JustinWebDev        |            |       2       |
+| o-l-a-v             |            |       2       |
+| tabad               |            |       4       |
 
 ## 2023-Sep
 
