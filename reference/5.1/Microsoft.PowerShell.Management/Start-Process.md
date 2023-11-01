@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 11/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
@@ -134,26 +134,6 @@ array.
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%SystemDrive%\Program Files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%SystemDrive%\Program Files`""
 ```
-
-### Example 8: Run a command as an Administrator using alternate credentials
-
-On Windows, you can run `Start-Process -Verb RunAs` to start a process with elevated permissions.
-This elevates the current user's context. The **Credential** parameter allows you to specify an
-alternate username and password, allowing you to start a process in a different user content.
-However, the **Credential** and **Verb** parameters can't be used together.
-
-To start a process with elevated rights, using alternate credentials, you must first start
-PowerShell using the alternate credentials, then use `Start-Process` to start the process with
-elevated rights.
-
-```powershell
-$cred = Get-Credential
-$args = '-noprofile -command "Start-Process cmd.exe -Verb RunAs -args /k"'
-Start-Process pwsh.exe -Credential $cred -WindowStyle Hidden -ArgumentList $args
-```
-
-The example starts `cmd.exe` with elevated permissions from a PowerShell session that is running
-under alternate credentials.
 
 ## PARAMETERS
 
