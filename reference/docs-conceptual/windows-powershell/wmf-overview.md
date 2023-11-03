@@ -72,4 +72,4 @@ to the links below to review the release notes:
 [05]: https://aka.ms/wmf51download
 [06]: https://support.microsoft.com/lifecycle
 [07]: /previous-versions/powershell/scripting/windows-powershell/wmf/whats-new/release-notes#wmf-50-changes
-[08]: /previous-versions/owershell/scripting/windows-powershell/wmf/whats-new/release-notes#wmf-51-changes
+[08]: /previous-versions/powershell/scripting/windows-powershell/wmf/whats-new/release-notes#wmf-51-changes
