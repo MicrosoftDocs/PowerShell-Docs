@@ -78,7 +78,8 @@
     ".openpublishing.redirection.dsc.json",
     ".openpublishing.redirection.gallery.json",
     ".openpublishing.redirection.psget.json",
-    ".openpublishing.redirection.virtual.json"
+    ".openpublishing.redirection.virtual.json",
+    ".openpublishing.redirection.wmf.json"
   ],
   "skip_source_output_uploading": false,
   "sync_notification_subscribers": [],
