@@ -269,7 +269,7 @@ items:
     items:
       - name: ISE
         items:
-          - name: Introducing the windows PowerShell ISE
+          - name: Introducing the Windows PowerShell ISE
             href: windows-powershell/ise/introducing-the-windows-powershell-ise.md
           - name: Using the Windows PowerShell ISE
             items:
