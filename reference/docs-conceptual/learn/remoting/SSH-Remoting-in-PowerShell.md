@@ -1,6 +1,6 @@
 ---
 description: Explains how to set up the SSH protocol for PowerShell remoting.
-ms.date: 05/01/2023
+ms.date: 11/06/2023
 title: PowerShell Remoting Over SSH
 ---
 
@@ -36,7 +36,7 @@ a password. You can also use SSH key authentication using a private key file wit
 PowerShell 6 or higher, and SSH must be installed on all computers. Install both the SSH client
 (`ssh.exe`) and server (`sshd.exe`) so that you can remote to and from the computers. OpenSSH for
 Windows is now available in Windows 10 build 1809 and Windows Server 2019. For more information, see
-[Manage Windows with OpenSSH][1]. For Linux, install SSH, including sshd server, that's appropriate
+[Manage Windows with OpenSSH][06]. For Linux, install SSH, including sshd server, that's appropriate
 for your platform. You also need to install PowerShell from GitHub to get the SSH remoting feature.
 The SSH server must be configured to create an SSH subsystem to host a PowerShell process on the
 remote computer. And, you must enable **password** or **key-based** authentication.
@@ -44,7 +44,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
 ## Install the SSH service on a Windows computer
 
 1. Install the latest version of PowerShell. For more information, see
-   [Installing PowerShell on Windows][2].
+   [Installing PowerShell on Windows][03].
 
    You can confirm that PowerShell has SSH remoting support by listing the `New-PSSession` parameter
    sets. You'll notice there are parameter set names that begin with **SSH**. Those parameter sets
@@ -62,11 +62,11 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    ```
 
 1. Install the latest Win32 OpenSSH. For installation instructions, see
-   [Getting started with OpenSSH][3].
+   [Getting started with OpenSSH][04].
 
    > [!NOTE]
    > If you want to set PowerShell as the default shell for OpenSSH, see
-   > [Configuring Windows for OpenSSH][4].
+   > [Configuring Windows for OpenSSH][07].
 
 1. Edit the `sshd_config` file located at `$env:ProgramData\ssh`.
 
@@ -92,7 +92,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    >
    > You must use the 8.3 short name for any file paths that contain spaces. There's a bug in
    > OpenSSH for Windows that prevents spaces from working in subsystem executable paths. For more
-   > information, see this [GitHub issue][5].
+   > information, see this [GitHub issue][09].
    >
    > The 8.3 short name for the `Program Files` folder in Windows is usually `Progra~1`. However,
    > you can use the following command to make sure:
@@ -114,7 +114,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    PubkeyAuthentication yes
    ```
 
-   For more information, see [Managing OpenSSH Keys][6].
+   For more information, see [Managing OpenSSH Keys][05].
 
 1. Restart the **sshd** service.
 
@@ -127,8 +127,8 @@ remote computer. And, you must enable **password** or **key-based** authenticati
 
 ## Install the SSH service on an Ubuntu Linux computer
 
-1. Install the latest version of PowerShell, see [Installing PowerShell on Ubuntu][7].
-1. Install [Ubuntu OpenSSH Server][8].
+1. Install the latest version of PowerShell, see [Installing PowerShell on Ubuntu][01].
+1. Install [Ubuntu OpenSSH Server][10].
 
    ```bash
    sudo apt install openssh-client
@@ -150,7 +150,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    ```
 
    For more information about creating SSH keys on Ubuntu, see the manpage for
-   [ssh-keygen][9].
+   [ssh-keygen][08].
 
    Add a PowerShell subsystem entry:
 
@@ -175,7 +175,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
 ## Install the SSH service on a macOS computer
 
 1. Install the latest version of PowerShell. For more information,
-   [Installing PowerShell on macOS][10].
+   [Installing PowerShell on macOS][02].
 
    Make sure SSH Remoting is enabled by following these steps:
 
@@ -226,6 +226,10 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    sudo launchctl start com.openssh.sshd
    ```
 
+> [!NOTE]
+> When you upgrade your operating system, the SSH configuration file might be overwritten. Make sure
+> you check the configuration file after an upgrade.
+
 ## Authentication
 
 PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH
@@ -239,7 +243,7 @@ with PowerShell remoting.
 
 > [!NOTE]
 > Users retain the same privileges in remote sessions. Meaning, Administrators have access to an
-> elevated shell, and normal users will not.
+> elevated shell, and normal users do not.
 
 ## PowerShell remoting example
 
@@ -384,28 +388,21 @@ GitCommitId                    v6.0.0-alpha.17
 
 ## See also
 
-- [Installing PowerShell on Linux][11]
-- [Installing PowerShell on macOS][10]
-- [Installing PowerShell on Windows][2]
-- [Manage Windows with OpenSSH][1]
-- [Managing OpenSSH Keys][6]
-- [Ubuntu SSH][16]
-
+- [Installing PowerShell on Linux][01]
+- [Installing PowerShell on macOS][02]
+- [Installing PowerShell on Windows][03]
+- [Manage Windows with OpenSSH][06]
+- [Managing OpenSSH Keys][05]
+- [Ubuntu SSH][10]
 
 <!-- link references -->
-[1]: /windows-server/administration/openssh/openssh_overview
-[2]: ../../install/installing-powershell-on-windows.md#msi
-[3]: /windows-server/administration/openssh/openssh_install_firstuse
-[4]: /windows-server/administration/openssh/openssh_server_configuration
-[5]: https://github.com/PowerShell/Win32-OpenSSH/issues/784
-[6]: /windows-server/administration/openssh/openssh_keymanagement
-[7]: ../../install/install-ubuntu.md
-[8]: https://ubuntu.com/server/docs/service-openssh
-[9]: http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html
-[10]: ../../install/installing-powershell-on-macos.md
-[11]: ../../install/install-ubuntu.md
-[12]: ../../install/installing-powershell-on-macos.md
-[13]: ../../install/installing-powershell-on-windows.md#msi
-[14]: /windows-server/administration/openssh/openssh_overview
-[15]: /windows-server/administration/openssh/openssh_keymanagement
-[16]: https://ubuntu.com/server/docs/service-openssh
+[01]: ../../install/install-ubuntu.md
+[02]: ../../install/installing-powershell-on-macos.md
+[03]: ../../install/installing-powershell-on-windows.md#msi
+[04]: /windows-server/administration/openssh/openssh_install_firstuse
+[05]: /windows-server/administration/openssh/openssh_keymanagement
+[06]: /windows-server/administration/openssh/openssh_overview
+[07]: /windows-server/administration/openssh/openssh_server_configuration
+[08]: http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html
+[09]: https://github.com/PowerShell/Win32-OpenSSH/issues/784
+[10]: https://ubuntu.com/server/docs/service-openssh
