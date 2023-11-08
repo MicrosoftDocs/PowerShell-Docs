@@ -78,6 +78,7 @@ Many thanks to **@MartinGC94** and others for all their work to improve tab comp
 
 Many thanks to **@CarloToso** and others for all the work on improving web cmdlets.
 
+- Fix decompression in web cmdlets to include Brotli ([#17955][17955]) (Thanks @iSazonov!)
 - Webcmdlets add 308 to redirect codes and small cleanup ([#18536][18536])
 - Complete the progress bar rendering in Invoke-WebRequest when downloading is complete or cancelled
   ([#18130][18130])
@@ -134,11 +135,11 @@ Many thanks to **@CarloToso** and others for all the work on improving web cmdle
 - Add progress to `Copy-Item` ([#18735][18735])
 - `Update-Help` now reports an error when using implicit culture on non-US systems.
   ([#17780][17780]) (Thanks @dkaszews!)
-- Do not require activity when creating a completed progress record ([#18474][18474]) (Thanks
+- Don't require activity when creating a completed progress record ([#18474][18474]) (Thanks
   @MartinGC94!)
 - Disallow negative values for `Get-Content` cmdlet parameters `-Head` and `-Tail`
   ([#19715][19715]) (Thanks @CarloToso!)
-- Make `Update-Help` throw proper error when current culture is not associated with a language
+- Make `Update-Help` throw proper error when current culture isn't associated with a language
   ([#19765][19765]) (Thanks @josea!)
 - Allow combining of `-Skip` and `-SkipLast` parameters in `Select-Object` cmdlet.
   ([#18849][18849]) (Thanks @ArmaanMcleod!)
@@ -323,3 +324,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [19824]: https://github.com/PowerShell/PowerShell/pull/19824
 [20369]: https://github.com/PowerShell/PowerShell/pull/20369
 [20371]: https://github.com/PowerShell/PowerShell/pull/20371
+[17955]: https://github.com/PowerShell/PowerShell/pull/17955
