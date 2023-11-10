@@ -2,7 +2,7 @@
 description: About topics cover a range of concepts about PowerShell.
 Help Version: 6.0
 Locale: en-US
-ms.date: 03/18/2022
+ms.date: 11/10/2023
 title: About topics
 ---
 # About topics
@@ -57,6 +57,18 @@ Describes a **CimSession** object and the difference between CIM sessions and Po
 
 ### [about_Classes](about_Classes.md)
 Describes how you can use classes to create your own custom types.
+
+### [about_Classes_Constructors](about_Classes_Constructors.md)
+Describes how to define constructors for PowerShell classes.
+
+### [about_Classes_Inheritance](about_Classes_Inheritance.md)
+Describes how you can define classes that extend other types.
+
+### [about_Classes_Methods](about_Classes_Methods.md)
+Describes how to define methods for PowerShell classes.
+
+### [about_Classes_Properties](about_Classes_Properties.md)
+Describes how to define properties for PowerShell classes.
 
 ### [about_Command_Precedence](about_Command_Precedence.md)
 Describes how PowerShell determines which command to run.
