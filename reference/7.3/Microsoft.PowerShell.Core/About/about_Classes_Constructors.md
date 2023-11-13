@@ -1,7 +1,7 @@
 ---
 description: Describes how to define constructors for PowerShell classes.
 Locale: en-US
-ms.date: 11/10/2023
+ms.date: 11/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes_constructors?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes Constructors
@@ -104,6 +104,13 @@ Name Author Pages PublishedOn
                 0 1/1/0001 12:00:00 AM
 ```
 
+> [!NOTE]
+> The default value for the **Name** and **Author** properties is `$null`
+> because they're typed as strings, which is a reference type. The other
+> properties have the default value for their defined type, because they're
+> value type properties. For more information on the default values for
+> properties, see ["Default property values" in about_Classes_Properties][03].
+
 ### Example 2 - Overriding the default constructor
 
 **ExampleBook2** explicitly defines the default constructor, setting the values
@@ -203,6 +210,12 @@ any constructors. Because **ExampleBook3** defines multiple overloads, the
 default constructor isn't automatically added to the class.
 
 ### Example 4 - Chaining constructors with a shared method
+
+This example shows how you can write reusable shared code for constructors.
+PowerShell classes can't use constructor chaining, so this example class
+defines an `Init()` method instead. The method has several overloads. The
+overloads with fewer parameters call the more explicit overloads with default
+values for the unspecified parameters.
 
 ```powershell
 class ExampleBook4 {
@@ -389,7 +402,7 @@ For derived classes that inherit from another class, the ordering is:
 
 In all cases, static constructors only run once in a session.
 
-For an example of constructor behavior and ordering, see [Example 5][05].
+For an example of constructor behavior and ordering, see [Example 5][06].
 
 ## Hidden constructors
 
@@ -410,7 +423,7 @@ keyword. Hidden class constructors are:
 > When you hide any constructor, the `new()` option is removed from
 > IntelliSense and completion results.
 
-For more information about the `hidden` keyword, see [about_Hidden][03].
+For more information about the `hidden` keyword, see [about_Hidden][04].
 
 ## Static constructors
 
@@ -448,13 +461,13 @@ can be any of the following items:
 - Any static value.
 - Any expression that evaluates to a value of the parameter type.
 
-For an example of constructors on a derived class, see [Example 5][05].
+For an example of constructors on a derived class, see [Example 5][06].
 
 ## Chaining constructors
 
 Unlike C#, PowerShell class constructors can't use chaining with the
 `: this(<parameters>)` syntax. To reduce code duplication, use a hidden
-`Init()` method with multiple overloads to the same effect. [Example 4][04]
+`Init()` method with multiple overloads to the same effect. [Example 4][05]
 shows a class using this pattern.
 
 ## Adding instance properties and methods with Update-TypeData
@@ -495,8 +508,8 @@ class <class-name> {
 > be defined with `Update-TypeData`, like read-only properties.
 
 For more information about defining instance methods with `Update-TypeData`,
-see [about_Classes_Methods][06]. For more information about defining instance
-properties with `Update-TypeData`, see [about_Classes_Properties][07].
+see [about_Classes_Methods][07]. For more information about defining instance
+properties with `Update-TypeData`, see [about_Classes_Properties][08].
 
 ## Limitations
 
@@ -522,19 +535,20 @@ PowerShell class constructors have the following limitations:
 
 ## See also
 
-- [about_Classes][09]
-- [about_Classes_Inheritance][10]
+- [about_Classes][10]
+- [about_Classes_Inheritance][11]
 - [about_Classes_Methods][01]
-- [about_Classes_Properties][08]
+- [about_Classes_Properties][09]
 
 <!-- Link reference definitions -->
 [01]: about_Classes_Methods.md
 [02]: #static-constructors
-[03]: about_Hidden.md
-[04]: #example-4---chaining-constructors-with-a-shared-method
-[05]: #example-5---derived-class-constructors
-[06]: about_Classes_Methods.md#defining-instance-methods-with-update-typedata
-[07]: about_Classes_Properties.md#defining-instance-properties-with-update-typedata
-[08]: about_Classes_Properties.md
-[09]: about_Classes.md
-[10]: about_Classes_Inheritance.md
+[03]: about_Classes_Properties.md#default-property-values
+[04]: about_Hidden.md
+[05]: #example-4---chaining-constructors-with-a-shared-method
+[06]: #example-5---derived-class-constructors
+[07]: about_Classes_Methods.md#defining-instance-methods-with-update-typedata
+[08]: about_Classes_Properties.md#defining-instance-properties-with-update-typedata
+[09]: about_Classes_Properties.md
+[10]: about_Classes.md
+[11]: about_Classes_Inheritance.md
