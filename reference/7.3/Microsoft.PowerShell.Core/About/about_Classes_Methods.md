@@ -1,7 +1,7 @@
 ---
 description: Describes how to define methods for PowerShell classes.
 Locale: en-US
-ms.date: 11/10/2023
+ms.date: 11/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes_methods?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes Methods
@@ -387,6 +387,65 @@ parameters:
    For more information, see the
    [Defining instance methods with Update-TypeData][06] section.
 
+## Automatic variables in methods
+
+Not all automatic variables are available in methods. The following list
+includes automatic variables and suggestions for whether and how to use them in
+PowerShell class methods. Automatic variables not included in the list aren't
+available to class methods.
+
+- `$_` - Access as normal.
+- `$args` - Use the explicit parameter variables instead.
+- `$ConsoleFileName` - Access as `$Script:ConsoleFileName` instead.
+- `$Error` - Access as normal.
+- `$EnabledExperimentalFeatures` - Access as
+  `$Script:EnabledExperimentalFeatures` instead.
+- `$Event` - Access as normal.
+- `$EventArgs` - Access as normal.
+- `$EventSubscriber` - Access as normal.
+- `$ExecutionContext` - Access as `$Script:ExecutionContext` instead.
+- `$false` - Access as normal.
+- `$foreach` - Access as normal.
+- `$HOME` - Access as `$Script:HOME` instead.
+- `$Host` - Access as `$Script:Host` instead.
+- `$input` - Use the explicit parameter variables instead.
+- `$IsCoreCLR` - Access as `$Script:IsCoreCLR` instead.
+- `$IsLinux` - Access as `$Script:IsLinux` instead.
+- `$IsMacOS` - Access as `$Script:IsMacOS` instead.
+- `$IsWindows` - Access as `$Script:IsWindows` instead.
+- `$LASTEXITCODE` - Access as normal.
+- `$Matches` - Access as normal.
+- `$MyInvocation` - Access as normal.
+- `$NestedPromptLevel` - Access as normal.
+- `$null` - Access as normal.
+- `$PID` - Access as `$Script:PID` instead.
+- `$PROFILE` - Access as `$Script:PROFILE` instead.
+- `$PSBoundParameters` - Don't use this variable. It's intended for cmdlets and
+  functions. Using it in a class may have unexpected side effects.
+- `$PSCmdlet` - Don't use this variable. It's intended for cmdlets and
+  functions. Using it in a class may have unexpected side effects.
+- `$PSCommandPath` - Access as normal.
+- `$PSCulture` - Access as `$Script:PSCulture` instead.
+- `$PSEdition` - Access as `$Script:PSEdition` instead.
+- `$PSHOME` - Access as `$Script:PSHOME` instead.
+- `$PSItem` - Access as normal.
+- `$PSScriptRoot` - Access as normal.
+- `$PSSenderInfo` - Access as `$Script:PSSenderInfo` instead.
+- `$PSUICulture` - Access as `$Script:PSUICulture` instead.
+- `$PSVersionTable` - Access as `$Script:PSVersionTable` instead.
+- `$PWD` - Access as normal.
+- `$Sender` - Access as normal.
+- `$ShellId` - Access as `$Script:ShellId` instead.
+- `$StackTrace` - Access as normal.
+- `$switch` - Access as normal.
+- `$this` - Access as normal. In a class method, `$this` is always the current
+  instance of the class. You can access the class properties and methods with
+  it. It's not available in static methods.
+- `$true` - Access as normal.
+
+For more information about automatic variables, see
+[about_Automatic_Variables][07].
+
 ## Hidden methods
 
 You can hide methods of a class by declaring them with the `hidden` keyword.
@@ -405,7 +464,7 @@ Hidden class methods are:
 > When you hide any overload for a method, that method is removed from
 > IntelliSense, completion results, and the default output for `Get-Member`.
 
-For more information about the `hidden` keyword, see [about_Hidden][07].
+For more information about the `hidden` keyword, see [about_Hidden][08].
 
 ## Static methods
 
@@ -729,11 +788,12 @@ PowerShell class methods have the following limitations:
 
 ## See also
 
-- [about_Classes][08]
-- [about_Classes_Constructors][09]
-- [about_Classes_Inheritance][10]
-- [about_Classes_Properties][11]
-- [about_Using][12]
+- [about_Automatic_Variables][07]
+- [about_Classes][09]
+- [about_Classes_Constructors][10]
+- [about_Classes_Inheritance][11]
+- [about_Classes_Properties][12]
+- [about_Using][13]
 
 <!-- Link reference definitions -->
 [01]: about_Preference_Variables.md
@@ -742,9 +802,10 @@ PowerShell class methods have the following limitations:
 [04]: about_functions_advanced_parameters.md#parameter-and-variable-validation-attributes
 [05]: #example-4---static-method-with-overloads
 [06]: #defining-instance-methods-with-update-typedata
-[07]: about_Hidden.md
-[08]: about_Classes.md
-[09]: about_Classes_Constructors.md
-[10]: about_Classes_Inheritance.md
-[11]: about_Classes_Properties.md
-[12]: about_Using.md
+[07]: about_Automatic_Variables.md
+[08]: about_Hidden.md
+[09]: about_Classes.md
+[10]: about_Classes_Constructors.md
+[11]: about_Classes_Inheritance.md
+[12]: about_Classes_Properties.md
+[13]: about_Using.md

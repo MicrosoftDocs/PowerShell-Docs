@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/13/2022
+ms.date: 11/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
@@ -640,6 +640,10 @@ parameter are displayed. More details are included in Example 5 and the Notes se
 The **Include** and **Exclude** parameters can be used together. However, the exclusions are applied
 after the inclusions, which can affect the final output.
 
+> [!NOTE]
+> The **Include** and **Exclude** parameters have no effect when used with the **LiteralPath**
+> parameter. This is fixed in PowerShell 7.
+
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
@@ -794,6 +798,10 @@ contents of the `C:\Windows` directory.
 The **Include** and **Exclude** parameters can be used together. However, the exclusions are applied
 after the inclusions, which can affect the final output.
 
+> [!NOTE]
+> The **Include** and **Exclude** parameters have no effect when used with the **LiteralPath**
+> parameter. This is fixed in PowerShell 7.
+
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
@@ -814,6 +822,10 @@ it in single quotation marks. Single quotation marks tell PowerShell to not inte
 as escape sequences.
 
 For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+> [!NOTE]
+> The **Include** and **Exclude** parameters have no effect when used with the **LiteralPath**
+> parameter. This is fixed in PowerShell 7.
 
 ```yaml
 Type: System.String[]

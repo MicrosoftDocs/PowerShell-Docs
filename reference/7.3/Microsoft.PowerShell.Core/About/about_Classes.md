@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 11/10/2023
+ms.date: 11/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes
@@ -643,12 +643,12 @@ workaround for those limitations, if any.
 - Directly declared properties can't define custom getter and setter
   implementations.
 
-  Workaround: Define a hidden property and use `Add-Member` to define the
+  Workaround: Define a hidden property and use `Update-TypeData` to define the
   visible getter and setter logic.
 - Properties can't use the **Alias** attribute. The attribute only applies to
   parameters, cmdlets, and functions.
 
-  Workaround: Use the `Add-Member` cmdlet to define aliases in the class
+  Workaround: Use the `Update-TypeData` cmdlet to define aliases in the class
   constructors.
 - When a PowerShell class is converted to JSON with the `ConvertTo-Json`
   cmdlet, the output JSON includes all hidden properties and their values.
