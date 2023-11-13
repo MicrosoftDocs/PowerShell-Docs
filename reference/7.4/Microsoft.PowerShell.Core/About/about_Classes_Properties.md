@@ -1,7 +1,7 @@
 ---
 description: Describes how to define properties for PowerShell classes.
 Locale: en-US
-ms.date: 11/10/2023
+ms.date: 11/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes_properties?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes Properties
@@ -650,7 +650,7 @@ text in angle brackets as needed.
 class <ClassName> {
     static [hashtable[]] $MemberDefinitions = @(
         @{
-            Name       = '<PropertyName>'
+            MemberName = '<PropertyName>'
             MemberType = '<PropertyType>'
             Value      = <ValueDefinition>
         }
@@ -680,7 +680,7 @@ The **Alias** attribute has no effect when used on a class property
 declaration. PowerShell only uses that attribute to define aliases for cmdlet,
 parameter, and function names.
 
-To define an alias for a class property, use `Add-Member` with the
+To define an alias for a class property, use `Update-TypeData` with the
 `AliasProperty` **MemberType**.
 
 For example, this definition of the **OperablePair** class defines two integer
@@ -749,12 +749,12 @@ $pair.RightHandSide = 2
 ### Defining calculated properties
 
 To define a property that references the values of other properties, use the
-`Add-Member` cmdlet with the `ScriptProperty` **MemberType**.
+`Update-TypeData` cmdlet with the `ScriptProperty` **MemberType**.
 
 For example, this definition of the **Budget** class defines the **Expenses**
 and **Revenues** properties as arrays of floating-point numbers. It uses the
-`Add-Member` cmdlet to define calculated properties for total expenses, total
-revenues, and net income.
+`Update-TypeData` cmdlet to define calculated properties for total expenses,
+total revenues, and net income.
 
 ```powershell
 class Budget {
@@ -820,8 +820,8 @@ Revenues      : {2400, 2100, 4150}
 
 PowerShell class properties can't define custom getter and setter logic
 directly. You can approximate this functionality by defining a backing property
-with the `hidden` keyword and using `Add-Member` to define a visible property
-with custom logic for getting and setting the value.
+with the `hidden` keyword and using `Update-TypeData` to define a visible
+property with custom logic for getting and setting the value.
 
 By convention, define the hidden backing property name with an underscore
 prefix and use camel casing. For example, instead of `TaskCount`, name the
@@ -925,12 +925,12 @@ PowerShell class properties have the following limitations:
 - Directly declared properties can't define custom getter and setter
   implementations.
 
-  Workaround: Define a hidden property and use `Add-Member` to define the
+  Workaround: Define a hidden property and use `Update-TypeData` to define the
   visible getter and setter logic.
 - Properties can't use the **Alias** attribute. The attribute only applies to
   parameters, cmdlets, and functions.
 
-  Workaround: Use the `Add-Member` cmdlet to define aliases in the class
+  Workaround: Use the `Update-TypeData` cmdlet to define aliases in the class
   constructors.
 - When a PowerShell class is converted to JSON with the `ConvertTo-Json`
   cmdlet, the output JSON includes all hidden properties and their values.
@@ -939,10 +939,10 @@ PowerShell class properties have the following limitations:
 
 ## See also
 
-- [about_Classes][09]
-- [about_Classes_Constructors][10]
-- [about_Classes_Inheritance][11]
-- [about_Classes_Methods][12]
+- [about_Classes][10]
+- [about_Classes_Constructors][11]
+- [about_Classes_Inheritance][12]
+- [about_Classes_Methods][13]
 
 [01]: #hidden-properties
 [02]: #static-properties
@@ -951,9 +951,9 @@ PowerShell class properties have the following limitations:
 [05]: /dotnet/csharp/language-reference/builtin-types/value-types
 [06]: /dotnet/csharp/language-reference/builtin-types/default-values
 [07]: about_Hidden.md
-[09]: about_functions_advanced_parameters.md#parameter-and-variable-validation-attributes
 [08]: about_Classes_Inheritance.md
-[09]: about_Classes.md
-[10]: about_Classes_Constructors.md
-[11]: about_Classes_Inheritance.md
-[12]: about_Classes_Methods.md
+[09]: about_functions_advanced_parameters.md#parameter-and-variable-validation-attributes
+[10]: about_Classes.md
+[11]: about_Classes_Constructors.md
+[12]: about_Classes_Inheritance.md
+[13]: about_Classes_Methods.md
