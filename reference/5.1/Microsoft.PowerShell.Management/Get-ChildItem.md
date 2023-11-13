@@ -640,8 +640,9 @@ parameter are displayed. More details are included in Example 5 and the Notes se
 The **Include** and **Exclude** parameters can be used together. However, the exclusions are applied
 after the inclusions, which can affect the final output.
 
-When you use the **Include** and **Exclude** parameters with the **LiteralPath** parameter, they
-have no effect. This is fixed in PowerShell 7.
+> [!NOTE]
+> The **Include** and **Exclude** parameters have no effect when used with the **LiteralPath**
+> parameter. This is fixed in PowerShell 7.
 
 ```yaml
 Type: System.String[]
@@ -797,10 +798,9 @@ contents of the `C:\Windows` directory.
 The **Include** and **Exclude** parameters can be used together. However, the exclusions are applied
 after the inclusions, which can affect the final output.
 
-When you use the **Include** and **Exclude** parameters with the **LiteralPath** parameter, they
-have no effect. This is fixed in PowerShell 7.
-
-```yaml
+> [!NOTE]
+> The **Include** and **Exclude** parameters have no effect when used with the **LiteralPath**
+> parameter. This is fixed in PowerShell 7.
 
 ```yaml
 Type: System.String[]
@@ -823,8 +823,9 @@ as escape sequences.
 
 For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
-When you use the **Include** and **Exclude** parameters with the **LiteralPath** parameter, they
-have no effect. This is fixed in PowerShell 7.
+> [!NOTE]
+> The **Include** and **Exclude** parameters have no effect when used with the **LiteralPath**
+> parameter. This is fixed in PowerShell 7.
 
 ```yaml
 Type: System.String[]
