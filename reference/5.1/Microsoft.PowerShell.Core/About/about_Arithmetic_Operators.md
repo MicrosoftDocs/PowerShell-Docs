@@ -178,7 +178,7 @@ PS> [int]( 7 / 2 )  # Result is rounded up
 You can use the `[Math]` class to get different rounding behavior.
 
 ```powershell
-PS> [int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero
+PS> [int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero)
 3
 
 PS> [int][Math]::Ceiling(5 / 2)
