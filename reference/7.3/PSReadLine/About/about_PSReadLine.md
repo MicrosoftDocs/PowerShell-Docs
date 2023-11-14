@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 10/11/2023
+ms.date: 11/14/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -251,7 +251,7 @@ There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
 - Current release is PSReadLine 2.3.4
-- PowerShell 7.4-preview ships with PSReadLine 2.2.6
+- PowerShell 7.4 ships with PSReadLine 2.3.4
 - PowerShell 7.3 ships with PSReadLine 2.2.6
 - PowerShell 7.2 ships with PSReadLine 2.1.0
 - PowerShell 7.0.11 shipped with PSReadLine 2.0.4

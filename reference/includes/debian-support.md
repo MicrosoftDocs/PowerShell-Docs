@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 10/26/2023
+ms.date: 11/14/2023
 ms.prod: powershell
 ms.topic: include
 ---
@@ -24,7 +24,7 @@ they're supported on. These versions remain supported until either the version o
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|              Debian              |  7.2 (LTS-current)   |         7.3          |    7.4 (preview)     |
+|              Debian              |  7.2 (LTS-previous)  |         7.3          |  7.4 (LTS-current)   |
 | -------------------------------- | :------------------: | :------------------: | :------------------: |
 | ![Supported][1] 12 (Bookworm)    |    ![In Test][2]     |    ![In Test][2]     |    ![In Test][2]     |
 | ![Supported][1] 11 (Bullseye)    |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |

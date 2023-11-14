@@ -24,7 +24,7 @@ Ubuntu they're supported on. These versions remain supported until either the ve
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|                 Ubuntu                  |  7.2 (LTS-current)   |         7.3          |    7.4 (preview)     |
+|                 Ubuntu                  |  7.2 (LTS-previous)  |         7.3          |  7.4 (LTS-current)   |
 | --------------------------------------- | :------------------: | :------------------: | :------------------: |
 | ![Supported][1] 22.04 LTS (Jammy)       |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |
 | ![Supported][1] 20.04 LTS (Focal)       |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |

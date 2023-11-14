@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2023
+ms.date: 11/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Help
@@ -472,8 +472,8 @@ By default, `Update-Help` gets help files in the UI culture set for the operatin
 fallback culture. If you specify the **UICulture** parameter, `Update-Help` only looks for help for
 the specified language.
 
-Beginning in PowerShell 7.4-preview.4, you can use a partial language code, such as `en` to download
-help in English for any region.
+Beginning in PowerShell 7.4, you can use a partial language code, such as `en` to download help in
+English for any region.
 
 > [!NOTE]
 > Ubuntu 18.04 changed the default locale setting to `C.UTF.8`, which isn't a recognized UI

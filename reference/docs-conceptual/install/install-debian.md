@@ -1,13 +1,13 @@
 ---
 description: Information about installing PowerShell on Debian Linux
-ms.date: 10/25/2023
+ms.date: 11/14/2023
 title: Installing PowerShell on Debian
 ---
 # Installing PowerShell on Debian
 
 All packages are available on our GitHub [releases][02] page. Before installing,
 check the list of [Supported versions][01] below. After the package is installed, run
-`pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
+`pwsh` from a terminal. Run `pwsh-lts` if you installed a preview release.
 
 > [!NOTE]
 > PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
@@ -69,12 +69,12 @@ package from the [releases][02] page onto your Debian machine.
 
 The link to the current version is:
 
+- PowerShell 7.4 universal package for supported versions of Debian
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-lts_7.4.0-1.deb_amd64.deb`
 - PowerShell 7.3.9 universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.9/powershell_7.3.9-1.deb_amd64.deb`
 - PowerShell 7.2.16 universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.16/powershell-lts_7.2.16-1.deb_amd64.deb`
-- PowerShell 7.4-rc.1  universal package for supported versions of Debian
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-rc.1/powershell-preview_7.4.0-rc.1-1.deb_amd64.deb`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
 change the URL to download a the version of PowerShell you want to install.
@@ -90,20 +90,20 @@ sudo apt-get update
 sudo apt-get install -y wget
 
 # Download the PowerShell package file
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.0-rc.1/powershell-preview_7.4.0-rc.1-1.deb_amd64.deb
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-lts_7.4.0-1.deb_amd64.deb
 
 ###################################
 # Install the PowerShell package
-sudo dpkg -i powershell-preview_7.4.0-rc.1-1.deb_amd64.deb
+sudo dpkg -i powershell-lts_7.4.0-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
 
 # Delete the downloaded package file
-rm powershell-preview_7.4.0-rc.1-1.deb_amd64.deb
+rm powershell-lts_7.4.0-1.deb_amd64.deb
 
 # Start PowerShell Preview
-pwsh-preview
+pwsh-lts
 ```
 
 ## Uninstall PowerShell

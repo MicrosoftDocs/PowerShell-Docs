@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 08/30/2023
+ms.date: 11/14/2023
 no-loc: [-File, -f, -Command, -c, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -198,7 +198,7 @@ or when execution is interrupted with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 ### -CommandWithArgs | -cwa
 
-This is an experimental feature added in 7.4.0-preview.2.
+This is an experimental feature added in 7.4.
 
 Executes a PowerShell command with arguments. Unlike `-Command`, this parameter
 populates the `$args` built-in variable that can be used by the command.
