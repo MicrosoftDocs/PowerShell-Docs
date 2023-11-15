@@ -1,7 +1,7 @@
 ---
 description: Defines what a script block is and explains how to use script blocks in the PowerShell programming language.
 Locale: en-US
-ms.date: 11/29/2022
+ms.date: 11/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Script Blocks
@@ -15,9 +15,11 @@ the PowerShell programming language.
 
 ## Long description
 
-In the PowerShell programming language, a script block is a
-collection of statements or expressions that can be used as a single unit.
-A script block can accept arguments and return values.
+In the PowerShell programming language, a script block is a collection of
+statements or expressions that can be used as a single unit. The collection of
+statements can be enclosed in braces (`{}`), defined as a function, or saved in
+a script file. You can also pass a script block to a A script block can accept
+arguments and return values.
 
 Syntactically, a script block is a statement list in braces, as shown in
 the following syntax:
@@ -30,27 +32,27 @@ A script block returns the output of all the commands in the script block,
 either as a single object or as an array.
 
 You can also specify a return value using the `return` keyword. The `return`
-keyword does not affect or suppress other output returned from your script
+keyword doesn't affect or suppress other output returned from your script
 block. However, the `return` keyword exits the script block at that line. For
-more information, see [about_Return](about_Return.md).
+more information, see [about_Return][04].
 
 Like functions, a script block can include parameters. Use the Param
 keyword to assign named parameters, as shown in the following syntax:
 
 ```
 {
-Param([type]$Parameter1 [,[type]$Parameter2])
-<statement list>
+    Param([type]$Parameter1 [,[type]$Parameter2])
+    <statement list>
 }
 ```
 
 > [!NOTE]
-> In a script block, unlike a function, you cannot specify parameters outside
+> In a script block, unlike a function, you can't specify parameters outside
 > the braces.
 
 Like functions, script blocks can include the `DynamicParam`, `Begin`,
-`Process`, and `End` keywords. For more information, see [about_Functions](about_Functions.md)
-and [about_Functions_Advanced](about_Functions_Advanced.md).
+`Process`, and `End` keywords. For more information, see [about_Functions][02]
+and [about_Functions_Advanced][01].
 
 ## Using Script Blocks
 
@@ -92,7 +94,7 @@ create a parameters `$p1` and `$p2`. The string "First" is bound to the
 first parameter (`$p1`) and "Second" is bound to (`$p2`).
 
 For more information about the behavior of **ArgumentList**, see
-[about_Splatting](about_Splatting.md#splatting-with-arrays).
+[about_Splatting][05].
 
 You can use variables to store and execute script blocks. The example below
 stores a script block in a variable and passes it to `Invoke-Command`.
@@ -143,7 +145,7 @@ PS>  $b
 2
 ```
 
-For more information about the call operator, see [about_Operators](about_Operators.md).
+For more information about the call operator, see [about_Operators][03].
 
 ## Using delay-bind script blocks with parameters
 
@@ -171,7 +173,7 @@ Notes on delay-bind script blocks as parameters:
 
 - You must explicitly specify any parameter names you use with delay-bind
   script blocks.
-- The parameter must not be untyped, and the parameter's type cannot be
+- The parameter must not be untyped, and the parameter's type can't be
   `[scriptblock]` or `[object]`.
 - You receive an error if you use a delay-bind script block without providing
   pipeline input.
@@ -195,6 +197,13 @@ Notes on delay-bind script blocks as parameters:
 
 ## See also
 
-- [about_Functions](about_Functions.md)
-- [about_Functions_Advanced](about_Functions_Advanced.md)
-- [about_Operators](about_Operators.md)
+- [about_Functions][02]
+- [about_Functions_Advanced][01]
+- [about_Operators][03]
+
+<!-- link references -->
+[01]: about_Functions_Advanced.md
+[02]: about_Functions.md
+[03]: about_Operators.md
+[04]: about_Return.md
+[05]: about_Splatting.md#splatting-with-arrays

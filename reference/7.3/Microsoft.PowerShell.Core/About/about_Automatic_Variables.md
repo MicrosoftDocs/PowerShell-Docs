@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 10/26/2023
+ms.date: 11/15/2023
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -244,8 +244,8 @@ display or change the properties of the host, such as `$Host.version` or
 ### $input
 
 Contains an enumerator that enumerates all input that's passed to a function.
-The `$input` variable is available only to functions and script blocks (which
-are unnamed functions).
+The `$input` variable is available only to functions, script blocks (which
+are unnamed functions), and script files (which are saved script blocks).
 
 - In a function without a `begin`, `process`, or `end` block, the `$input`
   variable enumerates the collection of all input to the function.
