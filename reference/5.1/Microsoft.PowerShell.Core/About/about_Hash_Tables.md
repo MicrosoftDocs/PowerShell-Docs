@@ -1,7 +1,7 @@
 ---
 description: Describes how to create, use, and sort hashtables in PowerShell.
 Locale: en-US
-ms.date: 12/16/2022
+ms.date: 11/15/2023
 no-loc: [iDictionary, Hashtable, OrderedDictionary, System.Collections.IDictionary, System.Collections.Hashtable]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -369,54 +369,58 @@ The following statement creates a hashtable of process name strings and process
 object values and saves it in the `$p` variable.
 
 ```powershell
-$p = @{"PowerShell" = (Get-Process PowerShell);
-"Notepad" = (Get-Process notepad)}
+$p = @{
+    "PowerShell" = (Get-Process PowerShell)
+    "Notepad" = (Get-Process notepad)
+}
 ```
 
 You can display the hashtable in `$p` and use the key-name properties to
 display the values.
 
 ```powershell
-$p
+PS> $p
 
 Name                           Value
 ----                           -----
 PowerShell                     System.Diagnostics.Process (PowerShell)
 Notepad                        System.Diagnostics.Process (notepad)
 
-$p.PowerShell
+PS> $p.PowerShell
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     441      24    54196      54012   571     5.10   1788 PowerShell
 
-$p.keys | foreach {$p.$_.handles}
+PS> $p.keys | ForEach-Object {$p.$_.handles}
 441
 251
 ```
 
-The keys in a hashtable can also be any .NET type. The following statement adds
-a key-value pair to the hashtable in the `$p` variable. The key is a
-**Service** object that represents the WinRM service, and the value is the
-current status of the service.
+The keys in a hashtable can be any .NET type. The following statement adds a
+key-value pair to the hashtable in the `$p` variable. The key is a **Service**
+object that represents the WinRM service, and the value is the current status
+of the service.
 
 ```powershell
-$p = $p + @{(Get-Service WinRM) = ((Get-Service WinRM).Status)}
+$p = $p + @{
+    (Get-Service WinRM) = ((Get-Service WinRM).Status)
+}
 ```
 
 You can display and access the new key-value pair using the same methods that
 you use for other pairs in the hashtable.
 
 ```powershell
-$p
+PS> $p
 
 Name                           Value
 ----                           -----
-PowerShell                     System.Diagnostics.Process (PowerShell)
-Notepad                        System.Diagnostics.Process (notepad)
-System.ServiceProcess.Servi... Running
+PowerShell                     System.Diagnostics.Process (powershell)
+Notepad                        System.Diagnostics.Process (Notepad)
+WinRM                          Running
 
-$p.keys
+PS> $p.keys
 PowerShell
 Notepad
 
@@ -424,8 +428,8 @@ Status   Name               DisplayName
 ------   ----               -----------
 Running  winrm              Windows Remote Management (WS-Manag...
 
-$p.keys | foreach {$_.name}
-winrm
+PS> $p.keys | ForEach-Object {$_.name}
+WinRM
 ```
 
 The keys and values in a hashtable can also be Hashtable objects. The following
@@ -434,30 +438,32 @@ the key is a string, Hash2, and the value is a hashtable with three key-value
 pairs.
 
 ```powershell
-$p = $p + @{"Hash2"= @{a=1; b=2; c=3}}
+$p = $p + @{
+    "Hash2"= @{a=1; b=2; c=3}
+}
 ```
 
 You can display and access the new values using the same methods.
 
 ```powershell
-$p
+PS> $p
 
 Name                           Value
 ----                           -----
-PowerShell                     System.Diagnostics.Process (PowerShell)
-Notepad                        System.Diagnostics.Process (notepad)
-System.ServiceProcess.Servi... Running
-Hash2                          {a, b, c}
+PowerShell                     System.Diagnostics.Process (powershell)
+Notepad                        System.Diagnostics.Process (Notepad)
+WinRM                          Running
+Hash2                          {c, b, a}
 
-$p.Hash2
+PS> $p.Hash2
 
 Name                           Value
 ----                           -----
-a                              1
-b                              2
 c                              3
+b                              2
+a                              1
 
-$p.Hash2.b
+PS> $p.Hash2.b
 2
 ```
 
@@ -474,26 +480,28 @@ For example, the following commands enumerate the keys and values in the hash
 table in the `$p` variable and then sort the keys in alphabetical order.
 
 ```powershell
-$p.GetEnumerator() | Sort-Object -Property key
+PS> $p.GetEnumerator() | Sort-Object -Property key
 
 Name                           Value
 ----                           -----
-Notepad                        System.Diagnostics.Process (notepad)
-PowerShell                     System.Diagnostics.Process (PowerShell)
-System.ServiceProcess.Servi... Running
+Hash2                          {c, b, a}
+Notepad                        System.Diagnostics.Process (Notepad)
+PowerShell                     System.Diagnostics.Process (powershell)
+WinRM                          Running
 ```
 
 The following command uses the same procedure to sort the hash values in
 descending order.
 
 ```powershell
-$p.getenumerator() | Sort-Object -Property Value -Descending
+PS> $p.GetEnumerator() | Sort-Object -Property Value -Descending
 
 Name                           Value
 ----                           -----
-PowerShell                     System.Diagnostics.Process (PowerShell)
-Notepad                        System.Diagnostics.Process (notepad)
-System.ServiceProcess.Servi... Running
+PowerShell                     System.Diagnostics.Process (powershell)
+Notepad                        System.Diagnostics.Process (Notepad)
+Hash2                          {c, b, a}
+WinRM                          Running
 ```
 
 ## Creating Objects from hashtables
