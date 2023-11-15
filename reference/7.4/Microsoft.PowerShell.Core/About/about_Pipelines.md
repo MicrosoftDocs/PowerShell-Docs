@@ -1,7 +1,7 @@
 ---
 description: Combining commands into pipelines in the PowerShell
 Locale: en-US
-ms.date: 06/08/2023
+ms.date: 11/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Pipelines
@@ -400,7 +400,7 @@ Piping or redirecting output from a native program that outputs raw byte data
 converts the output to .NET strings. This conversion can cause corruption of
 the raw data output.
 
-However, PowerShell 7.4-preview.4 added the `PSNativeCommandPreserveBytePipe`
+However, PowerShell 7.4 added the `PSNativeCommandPreserveBytePipe`
 experimental feature that preserves byte-stream data when redirecting the
 **stdout** stream of a native command to a file or when piping byte-stream data
 to the **stdin** stream of a native command.

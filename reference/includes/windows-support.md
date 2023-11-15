@@ -24,12 +24,12 @@ on. These versions are supported until either the version of
 [3]: ../media/shared/cross-mark-274c.svg
 [4]: ../media/shared/large-yellow-circle-1f7e1.svg
 
-|                       Windows                        | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
-| ---------------------------------------------------- | :---------------: | :-------------: | :-------------: |
-| ![Supported][1] Windows Server 2016, 2019, or 2022   |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] Windows Server Nano (1809 or higher) |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] Windows 11                           |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
-| ![Supported][1] Windows 10 1607+                     |  ![Supported][1]  | ![Supported][1] | ![Supported][1] |
+|                       Windows                        | 7.2 (LTS-previous) |       7.3       | 7.4 (LTS-current) |
+| ---------------------------------------------------- | :----------------: | :-------------: | :---------------: |
+| ![Supported][1] Windows Server 2016, 2019, or 2022   |  ![Supported][1]   | ![Supported][1] |  ![Supported][1]  |
+| ![Supported][1] Windows Server Nano (1809 or higher) |  ![Supported][1]   | ![Supported][1] |  ![Supported][1]  |
+| ![Supported][1] Windows 11                           |  ![Supported][1]   | ![Supported][1] |  ![Supported][1]  |
+| ![Supported][1] Windows 10 1607+                     |  ![Supported][1]   | ![Supported][1] |  ![Supported][1]  |
 
 > [!NOTE]
 > Support for a specific version of Windows is determined by the Microsoft Support Lifecycle

@@ -1,6 +1,6 @@
 ---
 description: You can secure your PowerShell environments on Windows using Windows Defender Application Control (WDAC).
-ms.date: 05/23/2023
+ms.date: 11/14/2023
 title: Using Windows Defender Application Control
 ---
 # Using Windows Defender Application Control
@@ -38,11 +38,11 @@ correctly in Constrained Language mode.
 
 ## WDAC policy auditing
 
-PowerShell 7.4-preview.4 added a new experimental feature, `PSConstrainedAuditLogging`. When you
-enable this feature, PowerShell supports WDAC policies in **Audit** mode. In audit mode, PowerShell
-runs the untrusted scripts in Constrained Language mode without errors, but logs messages to the
-event log instead. The log messages describe what restrictions would apply if the policy was in
-**Enforce** mode.
+PowerShell 7.4 added a new experimental feature, `PSConstrainedAuditLogging`. When you enable this
+feature, PowerShell supports WDAC policies in **Audit** mode. In audit mode, PowerShell runs the
+untrusted scripts in Constrained Language mode without errors, but logs messages to the event log
+instead. The log messages describe what restrictions would apply if the policy was in **Enforce**
+mode.
 
 ### Viewing audit events
 

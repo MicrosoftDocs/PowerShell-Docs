@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 09/29/2023
+ms.date: 11/14/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -112,8 +112,10 @@ This feature was added in PowerShell 7.4-preview.2.
 
 ## PSConstrainedAuditLogging
 
+<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
+
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.4-preview.6.
+> This feature became mainstream in PowerShell 7.4.
 
 On Windows, when PowerShell runs under a Windows Defender Application Control (WDAC) policy, it
 changes its behavior based on the defined security policy. Under a WDAC policy, PowerShell runs
@@ -131,8 +133,10 @@ This feature was added in PowerShell 7.4-preview.4.
 
 ## PSCustomTableHeaderLabelDecoration
 
+<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
+
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.4-preview.6.
+> This feature became mainstream in PowerShell 7.4.
 
 When you enable this feature, `$PSStyle` includes formatting differentiation for table header labels
 that aren't property members. For example, the default output from `Get-Process` includes the
@@ -188,6 +192,8 @@ This feature includes two built-in feedback providers:
   in an interactive run, and for providing predictive IntelliSense results for the next command
   line.
 
+This feature was added in PowerShell 7.4-preview.3.
+
 ## PSLoadAssemblyFromNativeCode
 
 Exposes an API to allow assembly loading from native code.
@@ -200,6 +206,8 @@ folder. Any file marked as not downloaded are skipped. Users who use cloud provi
 modules between machines should mark the module folder as **Pinned** or the equivalent status for
 providers other than OneDrive. Marking the module folder as **Pinned** ensures that the files are
 always kept on disk.
+
+This feature was added in PowerShell 7.4-preview.1.
 
 ## PSNativeCommandArgumentPassing
 
@@ -277,8 +285,10 @@ information, see [Trace-Command][13].
 
 ## PSNativeCommandErrorActionPreference
 
+<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
+
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.4-preview.6.
+> This feature became mainstream in PowerShell 7.4.
 
 Native commands usually return an exit code to the calling application that's zero for success or
 non-zero for failure. However, native commands currently don't participate in the PowerShell error
@@ -318,8 +328,10 @@ set to `$true` you get the following behavior:
 
 ## PSNativeCommandPreserveBytePipe
 
+<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
+
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.4-preview.6.
+> This feature became mainstream in PowerShell 7.4.
 
 This feature preserves the byte-stream data when redirecting the **stdout** stream of a native
 command to a file or when piping byte-stream data to the **stdin** stream of a native command.
@@ -357,7 +369,7 @@ following examples use `Invoke-WebRequest` to download the same TAR file as the 
 This feature doesn't support byte-stream data when redirecting **stderr** output to **stdout**. When
 you combine the **stderr** and **stdout** streams, the combined streams are treated as string data.
 
-This experimental feature was introduced in PowerShell 7.4-preview.4.
+This experimental feature was added in PowerShell 7.4-preview.4.
 
 ## PSNativePSPathResolution
 
@@ -393,8 +405,10 @@ on the system.
 
 ## PSWindowsNativeCommandArgPassing
 
+<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
+
 > [!NOTE]
-> This feature became mainstream in PowerShell 7.4-preview.6.
+> This feature became mainstream in PowerShell 7.4.
 
 The feature changes the default values of the `$PSNativeCommandArgumentPassing` variable.
 

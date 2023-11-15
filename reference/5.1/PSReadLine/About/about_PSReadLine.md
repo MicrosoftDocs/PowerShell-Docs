@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 10/11/2023
+ms.date: 11/14/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSReadLine
@@ -47,8 +47,8 @@ Install-Module -Name PSReadLine -AllowClobber -Force
 ## Custom Key Bindings
 
 PSReadLine supports custom key bindings using the `Set-PSReadLineKeyHandler`
-cmdlet. Most custom key bindings call one of the
-[bindable functions](about_PSReadLine_Functions.md), for example
+cmdlet. Most custom key bindings call one of the [bindable functions][02], for
+example
 
 ```powershell
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -104,7 +104,7 @@ You can see many more examples in the file `SamplePSReadLineProfile.ps1`, which
 is installed in the **PSReadLine** module folder.
 
 Most key bindings use some helper functions for editing the command line. Those
-APIs are documented in [about_PSReadLine_Functions](about_PSReadLine_Functions.md).
+APIs are documented in [about_PSReadLine_Functions][02].
 
 ## Notes
 
@@ -164,7 +164,7 @@ Get-ResultFromTwo -Secret1 (Get-Secret -Name blah -AsPlainText) -Secret2 sdv87ys
 If there are other commands you don't want written to the history files, you
 can use the **AddToHistoryHandler** parameter of the `Set-PSReadLineOption`
 cmdlet. For an example of how to use **AddToHistoryHandler**, see Example 7 of
-[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption#example-7-use-historyhandler-to-filter-commands-added-to-history).
+[Set-PSReadLineOption][01].
 
 #### PSReadLine 2.3.4 improves the filtering of sensitive data
 
@@ -208,14 +208,13 @@ There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
 - Current release is PSReadLine 2.3.4
-- PowerShell 7.4-preview ships with PSReadLine 2.2.6
+- PowerShell 7.4 ships with PSReadLine 2.3.4
 - PowerShell 7.3 ships with PSReadLine 2.2.6
 - PowerShell 7.2 ships with PSReadLine 2.1.0
 - PowerShell 7.0.11 shipped with PSReadLine 2.0.4
 - PowerShell 5.1 ships with PSReadLine 2.0.0
 
-For a full list of changes, see the PSReadLine
-[ChangeLog](https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/Changes.txt).
+For a full list of changes, see the PSReadLine [ChangeLog][04].
 
 - **PSReadLine 2.3.4**
 
@@ -286,11 +285,17 @@ enhancements:
 
 ### Feedback & contributing to PSReadLine
 
-[PSReadLine on GitHub](https://github.com/PowerShell/PSReadLine)
+[PSReadLine on GitHub][03]
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
 ## See Also
 
-- PSReadLine is heavily influenced by the GNU
-  [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.
+- PSReadLine is heavily influenced by the GNU [readline][05] library.
+
+<!-- link references -->
+[01]: /powershell/module/psreadline/set-psreadlineoption#example-7-use-historyhandler-to-filter-commands-added-to-history
+[02]: about_PSReadLine_Functions.md
+[03]: https://github.com/PowerShell/PSReadLine
+[04]: https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/Changes.txt
+[05]: https://tiswww.case.edu/php/chet/readline/rltop.html

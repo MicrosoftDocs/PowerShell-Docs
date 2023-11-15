@@ -1,11 +1,11 @@
 ---
 description: This article describes how to create a feedback provider.
-ms.date: 09/01/2023
+ms.date: 11/14/2023
 title: How to create a feedback provider
 ---
 # How to create a feedback provider
 
-PowerShell 7.4-preview.3 introduced the concept of feedback providers. A feedback provider is a
+PowerShell 7.4 introduced the concept of feedback providers. A feedback provider is a
 PowerShell module that implements the `IFeedbackProvider` interface to provide command suggestions
 based on user command execution attempts. The provider is triggered when there's a success or
 failure execution. Feedback providers use information from the success or failure to provide
@@ -15,20 +15,20 @@ feedback.
 
 To create a feedback provider, you must satisfy the following prerequisites:
 
-- Install PowerShell 7.4-preview.3 or higher
-  - You must enable the `PSFeedbackProvider` experimental feature to enable support for feedback 
+- Install PowerShell 7.4 or higher
+  - You must enable the `PSFeedbackProvider` experimental feature to enable support for feedback
   providers and predictors. For more information, see [Using Experimental Features][02].
-- Install .NET 8 SDK - 8.0-preview.3 or higher
+- Install .NET 8 SDK - 8.0.0 or higher
   - See the [Download .NET 8.0][09] page to get the latest version of the SDK.
 
 ## Overview of a feedback provider
 
 A feedback provider is a PowerShell binary module that implements the
-`System.Management.Automation.Subsystem.Feedback.IFeedbackProvider` interface. This interface 
-declares the methods to get feedback based on the command line input. The feedback interface can 
-provide suggestions based on the success or failure of the command invoked by the user. The 
-suggestions can be anything that you want. For example, you might suggest ways to address an 
-error or better practices, like avoiding the use of aliases. For more information, see the 
+`System.Management.Automation.Subsystem.Feedback.IFeedbackProvider` interface. This interface
+declares the methods to get feedback based on the command line input. The feedback interface can
+provide suggestions based on the success or failure of the command invoked by the user. The
+suggestions can be anything that you want. For example, you might suggest ways to address an
+error or better practices, like avoiding the use of aliases. For more information, see the
 [What are Feedback Providers?][08] blog post.
 
 The following diagram shows the architecture of a feedback provider:
@@ -193,7 +193,7 @@ internal myFeedbackProvider(string guid)
 The `GetFeedback` method takes two parameters, `context` and `token`. The `context` parameter
 receives the information about the trigger so you can decide how to respond with suggestions. The
 `token` parameter is used for cancellation. This function returns a `FeedbackItem` containing the
-suggestion. 
+suggestion.
 
 ```csharp
 /// <summary>
@@ -277,7 +277,7 @@ The `TryGetAlias()` method is a private helper function that returns a boolean v
 whether the command is an alias. In the class constructor, we created a PowerShell instance that we
 can use to run PowerShell commands. The `TryGetAlias()` method uses this PowerShell instance to
 invoke the `GetCommand` method to determine if the command is an alias. The `AliasInfo` object
-returned by `GetCommand` contains full name of the aliased command. 
+returned by `GetCommand` contains full name of the aliased command.
 
 ```csharp
 /// <summary>
@@ -422,7 +422,7 @@ dotnet build
 This command create the PowerShell module as a DLL file in the following path of your project
 folder: `bin/Debug/net8.0/myFeedbackProvider`
 
-You may run into the error `error NU1101: Unable to find package System.Management.Automation.` 
+You may run into the error `error NU1101: Unable to find package System.Management.Automation.`
 when building on Windows machines. To fix this add a `nuget.config` file to your project directory
 and add the following:
 
@@ -476,7 +476,7 @@ The following screenshot shows some example suggestions from the new provider.
 
 The following is a GIF showing how the predictor integration works from the new provider.
 
-![GIF of predictor system working with feedback provider][10] 
+![GIF of predictor system working with feedback provider][10]
 
 ## Other feedback providers
 
@@ -484,17 +484,17 @@ We have created other feedback provider that can be used as a good reference for
 
 ### command-not-found
 
-The `command-not-found` feedback provider utilizes the `command-not-found` utility tool on Linux systems 
-to provide suggestions when native commands are attempted to run but are missing. You can find the code 
+The `command-not-found` feedback provider utilizes the `command-not-found` utility tool on Linux systems
+to provide suggestions when native commands are attempted to run but are missing. You can find the code
 in the [GitHub Repository][11] or can download for yourself on the [PowerShell Gallery][12].
 
 ### PowerShell Adapter
 
-The `Microsoft.PowerShell.PowerShellAdapter` is a feedback provider that helps you convert text outputs 
+The `Microsoft.PowerShell.PowerShellAdapter` is a feedback provider that helps you convert text outputs
 from native commands into PowerShell objects. It detects "adapters" on your system and suggests you to use
-them when you use the native command. You can learn more about PowerShell Adapters from, 
-[PowerShell Adapter Feedback Provider][13] blog post. You can also find teh code in the [GitHub Repository][14] 
-or can download for yourself on the [PowerShell Gallery][15]. 
+them when you use the native command. You can learn more about PowerShell Adapters from,
+[PowerShell Adapter Feedback Provider][13] blog post. You can also find teh code in the [GitHub Repository][14]
+or can download for yourself on the [PowerShell Gallery][15].
 
 ## Appendix - Full implementation code
 

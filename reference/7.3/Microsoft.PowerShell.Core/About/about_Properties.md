@@ -1,7 +1,7 @@
 ---
 description: Describes how to use object properties in PowerShell.
 Locale: en-US
-ms.date: 08/21/2023
+ms.date: 11/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Properties
@@ -133,21 +133,21 @@ Get-ChildItem $PSHOME\pwsh.exe | Format-List -Property *
 ```
 
 ```Output
-PSPath              : Microsoft.PowerShell.Core\FileSystem::C:\Program Files\PowerShell\7-preview\pwsh.exe
-PSParentPath        : Microsoft.PowerShell.Core\FileSystem::C:\Program Files\PowerShell\7-preview
+PSPath              : Microsoft.PowerShell.Core\FileSystem::C:\Program Files\PowerShell\7\pwsh.exe
+PSParentPath        : Microsoft.PowerShell.Core\FileSystem::C:\Program Files\PowerShell\7
 PSChildName         : pwsh.exe
 PSDrive             : C
 PSProvider          : Microsoft.PowerShell.Core\FileSystem
 PSIsContainer       : False
 Mode                : -a---
 ModeWithoutHardLink : -a---
-VersionInfo         : File:             C:\Program Files\PowerShell\7-preview\pwsh.exe
+VersionInfo         : File:             C:\Program Files\PowerShell\7\pwsh.exe
                       InternalName:     pwsh.dll
                       OriginalFilename: pwsh.dll
-                      FileVersion:      7.3.0.5
+                      FileVersion:      7.3.9.500
                       FileDescription:  pwsh
                       Product:          PowerShell
-                      ProductVersion:   7.3.0-preview.5 SHA: cfc237ac85cf24fa760923ace568201c8f3256aa
+                      ProductVersion:   7.3.9 SHA: 116d193ed28dcc6914653c799846bbf379cea0fb
                       Debug:            False
                       Patched:          False
                       PreRelease:       False
@@ -156,24 +156,25 @@ VersionInfo         : File:             C:\Program Files\PowerShell\7-preview\pw
                       Language:         Language Neutral
 
 BaseName            : pwsh
-ResolvedTarget      : C:\Program Files\PowerShell\7-preview\pwsh.exe
+ResolvedTarget      : C:\Program Files\PowerShell\7\pwsh.exe
 Target              :
 LinkType            :
-Length              : 285088
-DirectoryName       : C:\Program Files\PowerShell\7-preview
-Directory           : C:\Program Files\PowerShell\7-preview
+Length              : 293312
+DirectoryName       : C:\Program Files\PowerShell\7
+Directory           : C:\Program Files\PowerShell\7
 IsReadOnly          : False
-FullName            : C:\Program Files\PowerShell\7-preview\pwsh.exe
+FullName            : C:\Program Files\PowerShell\7\pwsh.exe
 Extension           : .exe
 Name                : pwsh.exe
 Exists              : True
-CreationTime        : 6/14/2022 5:17:14 PM
-CreationTimeUtc     : 6/14/2022 10:17:14 PM
-LastAccessTime      : 7/18/2022 11:32:06 AM
-LastAccessTimeUtc   : 7/18/2022 4:32:06 PM
-LastWriteTime       : 6/14/2022 5:17:14 PM
-LastWriteTimeUtc    : 6/14/2022 10:17:14 PM
+CreationTime        : 10/25/2023 7:00:18 PM
+CreationTimeUtc     : 10/26/2023 12:00:18 AM
+LastAccessTime      : 11/14/2023 5:14:36 PM
+LastAccessTimeUtc   : 11/14/2023 11:14:36 PM
+LastWriteTime       : 10/25/2023 7:00:18 PM
+LastWriteTimeUtc    : 10/26/2023 12:00:18 AM
 LinkTarget          :
+UnixFileMode        : -1
 Attributes          : Archive
 ```
 
