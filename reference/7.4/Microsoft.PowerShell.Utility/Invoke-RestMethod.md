@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/08/2023
+ms.date: 11/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -499,8 +499,8 @@ contains a host name that requires resolution, and you set **ConnectionTimeoutSe
 greater than zero, but less than 15 seconds, it can take 15 seconds or more before a
 **WebException** is thrown, and your request times out.
 
-This parameter replaced the **TimeoutSec** parameter in PowerShell 7.4-preview.4. You can use
-**TimeoutSec** as an alias for **ConnectionTimeoutSeconds**.
+This parameter replaced the **TimeoutSec** parameter in PowerShell 7.4. You can use **TimeoutSec**
+as an alias for **ConnectionTimeoutSeconds**.
 
 ```yaml
 Type: System.Int32

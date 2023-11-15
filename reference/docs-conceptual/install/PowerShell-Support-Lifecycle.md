@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 09/02/2023
+ms.date: 11/14/2023
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -24,7 +24,7 @@ the next release (current or LTS).
 
 > [!IMPORTANT]
 > You must have the latest patch update installed to qualify for support. For example, if you're
-> running PowerShell 7.3 and 7.3.1 has been released, you must update to 7.3.1 to qualify for
+> running PowerShell 7.4.0 and 7.4.1 has been released, you must update to 7.4.1 to qualify for
 > support.
 
 ## Supported platforms
@@ -106,11 +106,11 @@ support options.
 Based on these lifecycle policies, the following table lists the dates when support for the current
 versions of PowerShell end:
 
-|      Version      |   Release Date   |  End-of-support  |
-| ----------------- | ---------------- | ---------------- |
-| 7.4 (preview)     | TBD              | TBD              |
-| 7.3 (Stable)      | November 9, 2022 | May 8, 2024      |
-| 7.2 (LTS-current) | November 8, 2021 | November 8, 2024 |
+|      Version       |   Release Date    |  End-of-support  |
+| ------------------ | ----------------- | ---------------- |
+| 7.4 (LTS-current)  | November 16, 2023 | May 15, 2025     |
+| 7.3 (Stable)       | November 9, 2022  | May 8, 2024      |
+| 7.2 (LTS-previous) | November 8, 2021  | November 8, 2024 |
 
 Support for PowerShell on a specific platform is based on the support policy of the version of .NET
 used.
@@ -135,7 +135,7 @@ for historical reference. It isn't intended for use to determine the support lif
 
 |           Version            | Release Date |                                      Note                                       |
 | ---------------------------- | :----------: | ------------------------------------------------------------------------------- |
-| PowerShell 7.4 (preview)     |              | Built on .NET 8.0.0-preview                                                     |
+| PowerShell 7.4 (preview)     |   Nov-2023   | Built on .NET 8.0.0                                                             |
 | PowerShell 7.3               |   Nov-2022   | Built on .NET 7.0                                                               |
 | PowerShell 7.2 (LTS-current) |   Nov-2021   | Built on .NET 6.0 (LTS-current)                                                 |
 | PowerShell 7.1               |   Nov-2020   | Built on .NET 5.0                                                               |

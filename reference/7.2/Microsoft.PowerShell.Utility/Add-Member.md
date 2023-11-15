@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/14/2023
+ms.date: 11/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
@@ -130,7 +130,7 @@ note property value, **Display**.
 
 ```powershell
 $A = "A string"
-$A | Add-Member -NotePropertyMembers @{StringUse="Display"}
+$A = $A | Add-Member -NotePropertyMembers @{StringUse="Display"} -PassThru
 $A.StringUse
 ```
 
@@ -165,8 +165,8 @@ $A.SizeInMB()
 
 This example creates an **Asset** custom object.
 
-The `New-Object` cmdlet creates a **PSObject** that is saved in the `$Asset` variable. The
-`[ordered]` type accelerator creates an ordered dictionary that is stored in the `$d` variable.
+The `New-Object` cmdlet creates a **PSObject** that's saved in the `$Asset` variable. The
+`[ordered]` type accelerator creates an ordered dictionary that's stored in the `$d` variable.
 Piping `$Asset` to `Add-Member` adds the key-value pairs in the dictionary to the object as
 **NoteProperty** members. **TypeName** parameter assigns the type `Asset` to the **PSObject**. The
 `Get-Member` cmdlet shows the type and properties of the object. However, the properties are listed
@@ -201,7 +201,7 @@ System    NoteProperty System.String   Server Core
 PSVersion NoteProperty System.String   4.0
 ```
 
-Inspecting the the raw list of properties shows the properties in the order that they were added to
+Inspecting the raw list of properties shows the properties in the order that they were added to
 the object. `Format-Table` is used in this example to create output similar to `Get-Member`.
 
 ### Example 6: Add an AliasProperty to an object
@@ -211,16 +211,13 @@ In this example we create a custom object that contains two **NoteProperty** mem
 property is a string.
 
 ```powershell
-$obj = [pscustomobject]@{
+PS> $obj = [pscustomobject]@{
       Name = 'Doris'
       Age = '20'
 }
-$obj | Add-Member -MemberType AliasProperty -Name 'intAge' -Value age -SecondValue uint32
-$obj | Get-Member
-$obj
-```
+PS> $obj | Add-Member -MemberType AliasProperty -Name 'intAge' -Value age -SecondValue uint32
+PS> $obj | Get-Member
 
-```Output
    TypeName: System.Management.Automation.PSCustomObject
 
 Name        MemberType    Definition
@@ -233,18 +230,18 @@ ToString    Method        string ToString()
 Age         NoteProperty  string Age=20
 Name        NoteProperty  string Name=Doris
 
-Name   : Doris
-Age    : 20
-intAge : 20
-```
+PS> $obj
 
-```powershell
-$obj.Age + 1
-$obj.intAge + 1
-```
+Name  Age intAge
+----  --- ------
+Doris 20      20
 
-```Output
+PS> $obj.Age + 1
+
 201
+
+PS> $obj.intAge + 1
+
 21
 ```
 
