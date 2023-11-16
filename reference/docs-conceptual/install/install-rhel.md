@@ -1,18 +1,18 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 11/14/2023
+ms.date: 11/16/2023
 title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 ---
 # Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 
-All packages are available on our GitHub [releases][02] page. Before installing,
-check the list of [Supported versions][01] below. After the package is installed, run
-`pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
+All packages are available on our GitHub [releases][02] page. Before installing, check the list of
+[Supported versions][01] below. After the package is installed, run `pwsh` from a terminal. Run
+`pwsh-preview` if you installed a preview release.
 
 > [!NOTE]
-> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
+> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
 > versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
-> need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous version
+> need to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version
 > using the [binary archive][05] method.
 
 RHEL 7 uses `yum` and RHEL 8 and higher uses the `dnf` package manager.
@@ -74,11 +74,11 @@ package from the [releases][02] page onto your RHEL machine.
 The link to the current version is:
 
 - PowerShell 7.4 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-lts-7.4.0-1.rh.x86_64.rpm`
-- PowerShell 7.3.9 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.9/powershell-7.3.9-1.rh.x86_64.rpm`
-- PowerShell 7.2.16 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.16/powershell-lts-7.2.16-1.rh.x86_64.rpm`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-7.4.0-1.rh.x86_64.rpm`
+- PowerShell 7.3.10 universal package for supported versions of RHEL
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.10/powershell-7.3.10-1.rh.x86_64.rpm`
+- PowerShell 7.2.17 universal package for supported versions of RHEL
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.17/powershell-7.2.17-1.rh.x86_64.rpm`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
 change the URL to download a the version of PowerShell you want to install.
@@ -86,13 +86,13 @@ change the URL to download a the version of PowerShell you want to install.
 On RHEL 8 or 9:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.3.9/powershell-7.3.9-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-7.4.0-1.rh.x86_64.rpm
 ```
 
 On RHEL 7:
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.3.9/powershell-7.3.9-1.rh.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-7.4.0-1.rh.x86_64.rpm
 ```
 
 ## Uninstall PowerShell

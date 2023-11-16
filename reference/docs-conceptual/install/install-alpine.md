@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Alpine Linux
-ms.date: 09/26/2023
+ms.date: 11/16/2023
 title: Installing PowerShell on Alpine Linux
 ---
 # Installing PowerShell on Alpine Linux
@@ -10,9 +10,9 @@ All packages are available on our GitHub [releases][03] page. After the package 
 check the list of [Supported versions][02] below.
 
 > [!NOTE]
-> PowerShell 7.3 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
+> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
 > versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
-> need to run PowerShell 7.3 side-by-side with a previous version, reinstall the previous version
+> need to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version
 > using the [binary archive][05] method.
 
 ## Installation steps
@@ -20,8 +20,9 @@ check the list of [Supported versions][02] below.
 Installation on Alpine is based on downloading tar.gz package from the [releases][03] page. The URL
 to the package depends on the version of PowerShell you want to install.
 
-- PowerShell 7.3.9 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.9/powershell-7.3.9-linux-alpine-x64.tar.gz`
-- PowerShell 7.2.16 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.16/powershell-7.2.16-linux-alpine-x64.tar.gz`
+- PowerShell 7.4.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-7.4.0-linux-musl-x64.tar.gz`
+- PowerShell 7.3.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.10/powershell-7.3.10-linux-alpine-x64.tar.gz`
+- PowerShell 7.2.17 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.17/powershell-7.2.17-linux-alpine-x64.tar.gz`
 
 Then, in the terminal, execute the following shell commands to install PowerShell 7.3:
 
@@ -46,7 +47,7 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.3.9/powershell-7.3.9-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-7.4.0-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
