@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/21/2023
+ms.date: 11/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -31,8 +31,8 @@ ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <
 ### ParallelParameterSet
 
 ```
-ForEach-Object [-InputObject <PSObject>] -Parallel <ScriptBlock> [-ThrottleLimit <Int32>]
- [-TimeoutSeconds <Int32>] [-AsJob] [-WhatIf] [-Confirm] [<CommonParameters>]
+ForEach-Object -Parallel <scriptblock> [-InputObject <psobject>] [-ThrottleLimit <int>]
+ [-TimeoutSeconds <int>] [-AsJob] [-UseNewRunspace] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -867,7 +867,7 @@ Using `ForEach-Object -Parallel`:
   > thread to each running script block thread. Since the script blocks run in different threads,
   > the object variables passed by reference must be used safely. Generally it's safe to read from
   > referenced objects that don't change. But if the object state is being modified then you must
-  > used thread safe objects, such as .NET **System.Collection.Concurrent** types (See Example 11).
+  > used thread safe objects, such as .NET **System.Collection.Concurrent** types (See Example 14).
 
 ## RELATED LINKS
 
