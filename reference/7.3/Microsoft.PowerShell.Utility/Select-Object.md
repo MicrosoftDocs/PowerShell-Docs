@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/14/2023
+ms.date: 11/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -528,6 +528,12 @@ Accept wildcard characters: False
 ```
 
 ### -SkipIndex
+
+Skips (doesn't select) the objects from an array based on their index values. Enter the indexes in
+a comma-separated list. Indexes in an array begin with 0, where 0 represents the first value and
+(n-1) represents the last value.
+
+This parameter was introduced in Windows PowerShell 6.0.
 
 ```yaml
 Type: System.Int32[]
