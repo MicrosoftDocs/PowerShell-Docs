@@ -21,7 +21,9 @@ landingContent:
     linkLists:
       - linkListType: whats-new
         links:
-          - text: What's new in PowerShell 7.3 (preview)
+          - text: What's new in PowerShell 7.4 (LTS)
+            url: ./What-s-New-in-PowerShell-74.md
+          - text: What's new in PowerShell 7.3
             url: ./What-s-New-in-PowerShell-73.md
           - text: What's new in PowerShell 7.2 (LTS)
             url: ./What-s-New-in-PowerShell-72.md
@@ -52,7 +54,7 @@ landingContent:
           - text: Module compatibility
             url: ./module-compatibility.md
 
-  - title: What's new in previous versions of PowerShell
+  - title: What's new in PowerShell 6
     linkLists:
       - linkListType: whats-new
         links:
