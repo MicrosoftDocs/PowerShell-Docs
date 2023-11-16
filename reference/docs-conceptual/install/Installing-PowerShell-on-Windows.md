@@ -198,7 +198,7 @@ By default, Windows Store packages run in an application sandbox that virtualize
 filesystem and registry locations. Changes to virtualized file and registry locations don't persist
 outside of the application sandbox.
 
-This sandbox all blocks any changes to the application's root folder. Any system-level configuration
+This sandbox blocks all changes to the application's root folder. Any system-level configuration
 settings stored in `$PSHOME` can't be modified. This includes the WSMAN configuration. This prevents
 remote sessions from connecting to Store-based installs of PowerShell. User-level configurations and
 SSH remoting are supported.
