@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/08/2023
+ms.date: 11/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Where-Object
@@ -259,9 +259,9 @@ command.
   For example, the following commands also get processes that have a priority class of `Normal`.
   These commands are equivalent and you can use them interchangeably.
 
-  `Get-Process | Where-Object -Property PriorityClass -eq -Value "Normal"`
+  `Get-Process | Where-Object -Property PriorityClass -EQ -Value "Normal"`
 
-  `Get-Process | Where-Object PriorityClass -eq "Normal"`
+  `Get-Process | Where-Object PriorityClass -EQ "Normal"`
 
   Starting in Windows PowerShell 3.0, `Where-Object` adds comparison operators as parameters in a
   `Where-Object` command. Unless specified, all operators are case-insensitive. Before Windows
@@ -293,7 +293,7 @@ is different.
 
 ```powershell
 Get-Service | Where-Object { $_.Status -eq "Stopped" }
-Get-Service | where Status -eq "Stopped"
+Get-Service | Where-Object Status -EQ "Stopped"
 ```
 
 ### Example 2: Get processes based on working set
@@ -351,32 +351,32 @@ different.
 # Use Where-Object to get commands that have any value for the OutputType
 # property of the command. This omits commands that do not have an OutputType
 # property and those that have an OutputType property, but no property value.
-Get-Command | where OutputType
-Get-Command | where { $_.OutputType }
+Get-Command | Where-Object OutputType
+Get-Command | Where-Object { $_.OutputType }
 ```
 
 ```powershell
 # Use Where-Object to get objects that are containers. This gets objects that
 # have the **PSIsContainer** property with a value of $True and excludes all
 # others.
-Get-ChildItem | where PSIsContainer
-Get-ChildItem | where { $_.PSIsContainer }
+Get-ChildItem | Where-Object PSIsContainer
+Get-ChildItem | Where-Object { $_.PSIsContainer }
 ```
 
 ```powershell
 # Finally, use the -not operator (!) to get objects that are not containers.
 # This gets objects that do have the **PSIsContainer** property and those
 # that have a value of $False for the **PSIsContainer** property.
-Get-ChildItem | where { !$_.PSIsContainer }
+Get-ChildItem | Where-Object { !$_.PSIsContainer }
 # You cannot use the -not operator (!) in the comparison statement format
 # of the command.
-Get-ChildItem | where PSIsContainer -eq $False
+Get-ChildItem | Where-Object PSIsContainer -eq $False
 ```
 
 ### Example 6: Use multiple conditions
 
 ```powershell
-Get-Module -ListAvailable | where {
+Get-Module -ListAvailable | Where-Object {
     ($_.Name -notlike "Microsoft*" -and $_.Name -notlike "PS*") -and $_.HelpInfoUri
 }
 ```
@@ -406,7 +406,7 @@ The example uses the script block command format. Logical operators, such as `-a
 Indicates that this cmdlet gets objects from a collection if the property value of the object is an
 exact match for the specified value. This operation is case-sensitive.
 
-For example: `Get-Process | where ProcessName -CContains "svchost"`
+For example: `Get-Process | Where-Object ProcessName -CContains "svchost"`
 
 **CContains** refers to a collection of values and is true if the collection contains an item that
 is an exact match for the specified value. If the input is a single object, PowerShell converts it
@@ -488,7 +488,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value includes the specified value. This
 operation is case-sensitive.
 
-For example: `Get-Process | where -Value "svchost" -CIn ProcessName`
+For example: `Get-Process | Where-Object -Value "svchost" -CIn ProcessName`
 
 **CIn** resembles **CContains**, except that the property and value positions are reversed. For
 example, the following statements are both true.
@@ -535,7 +535,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value matches a value that includes wildcard
 characters (`*`). This operation is case-sensitive.
 
-For example: `Get-Process | where ProcessName -CLike "*host"`
+For example: `Get-Process | Where-Object ProcessName -CLike "*host"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -576,7 +576,7 @@ Indicates that this cmdlet gets objects if the property value matches the specif
 expression. This operation is case-sensitive. When the input is a single object, the matched value
 is saved in the `$Matches` automatic variable.
 
-For example: `Get-Process | where ProcessName -CMatch "Shell"`
+For example: `Get-Process | Where-Object ProcessName -CMatch "Shell"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -616,7 +616,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value of the object isn't an exact match
 for the specified value. This operation is case-sensitive.
 
-For example: `Get-Process | where ProcessName -CNotContains "svchost"`
+For example: `Get-Process | Where-Object ProcessName -CNotContains "svchost"`
 
 **NotContains** and **CNotContains** refer to a collection of values and are true when the
 collection doesn't contain any items that are an exact match for the specified value. If the input
@@ -641,7 +641,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value isn't an exact match for the
 specified value. This operation is case-sensitive.
 
-For example: `Get-Process | where -Value "svchost" -CNotIn -Property ProcessName`
+For example: `Get-Process | Where-Object -Value "svchost" -CNotIn -Property ProcessName`
 
 **NotIn** and **CNotIn** operators resemble **NotContains** and **CNotContains**, except that the
 property and value positions are reversed. For example, the following statements are true.
@@ -667,7 +667,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value doesn't match a value that includes
 wildcard characters. This operation is case-sensitive.
 
-For example: `Get-Process | where ProcessName -CNotLike "*host"`
+For example: `Get-Process | Where-Object ProcessName -CNotLike "*host"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -689,7 +689,7 @@ Indicates that this cmdlet gets objects if the property value doesn't match the 
 expression. This operation is case-sensitive. When the input is a single object, the matched value
 is saved in the `$Matches` automatic variable.
 
-For example: `Get-Process | where ProcessName -CNotMatch "Shell"`
+For example: `Get-Process | Where-Object ProcessName -CNotMatch "Shell"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -710,7 +710,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if any item in the property value of the object is an exact
 match for the specified value.
 
-For example: `Get-Process | where ProcessName -Contains "Svchost"`
+For example: `Get-Process | Where-Object ProcessName -Contains "Svchost"`
 
 If the input is a single object, PowerShell converts it to a collection of one object.
 
@@ -807,7 +807,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value matches any of the specified values.
 For example:
 
-`Get-Process | where -Property ProcessName -in -Value "Svchost", "TaskHost", "WsmProvHost"`
+`Get-Process | Where-Object -Property ProcessName -in -Value "Svchost", "TaskHost", "WsmProvHost"`
 
 If the input is a single object, PowerShell converts it to a collection of one object.
 
@@ -859,7 +859,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value is an instance of the specified .NET
 type. Enclose the type name in square brackets.
 
-For example, `Get-Process | where StartTime -Is [DateTime]`
+For example, `Get-Process | Where-Object StartTime -Is [DateTime]`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -920,7 +920,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value matches a value that includes wildcard
 characters (`*`).
 
-For example: `Get-Process | where ProcessName -Like "*host"`
+For example: `Get-Process | Where-Object ProcessName -Like "*host"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -960,7 +960,7 @@ Indicates that this cmdlet gets objects if the property value matches the specif
 expression. When the input is a single object, the matched value is saved in the `$Matches`
 automatic variable.
 
-For example: `Get-Process | where ProcessName -Match "shell"`
+For example: `Get-Process | Where-Object ProcessName -Match "shell"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -999,7 +999,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if none of the items in the property value is an exact match
 for the specified value.
 
-For example: `Get-Process | where ProcessName -NotContains "Svchost"`
+For example: `Get-Process | Where-Object ProcessName -NotContains "Svchost"`
 
 **NotContains** refers to a collection of values and is true if the collection doesn't contain any
 items that are an exact match for the specified value. If the input is a single object, PowerShell
@@ -1024,7 +1024,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value isn't an exact match for any of the
 specified values.
 
-For example: `Get-Process | where -Value "svchost" -NotIn -Property ProcessName`
+For example: `Get-Process | Where-Object -Value "svchost" -NotIn -Property ProcessName`
 
 If the value of **Value** is a single object, PowerShell converts it to a collection of one object.
 
@@ -1051,7 +1051,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value doesn't match a value that includes
 wildcard characters (`*`).
 
-For example: `Get-Process | where ProcessName -NotLike "*host"`
+For example: `Get-Process | Where-Object ProcessName -NotLike "*host"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -1073,7 +1073,7 @@ Indicates that this cmdlet gets objects when the property value doesn't match th
 expression. When the input is a single object, the matched value is saved in the `$Matches`
 automatic variable.
 
-For example: `Get-Process | where ProcessName -NotMatch "PowerShell"`
+For example: `Get-Process | Where-Object ProcessName -NotMatch "PowerShell"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
