@@ -1,10 +1,10 @@
 ---
-title: What's New in PowerShell 7.4 (preview)
-description: New features and changes released in PowerShell 7.4 (preview)
-ms.date: 11/14/2023
+title: What's New in PowerShell 7.4
+description: New features and changes released in PowerShell 7.4
+ms.date: 11/16/2023
 ---
 
-# What's New in PowerShell 7.4 (preview)
+# What's New in PowerShell 7.4
 
 PowerShell 7.4 includes the following features, updates, and breaking changes. PowerShell 7.4 is
 built on .NET 8.0.0.
