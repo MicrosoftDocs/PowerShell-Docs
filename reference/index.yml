@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 03/27/2023
+  ms.date: 11/16/2023
 
 # highlightedContent section (optional)
 # Maximum of 8 items
@@ -57,7 +57,7 @@ productDirectory:
           text: Install PowerShell on Linux
         - url: /powershell/scripting/install/installing-powershell-on-macos
           text: Install PowerShell on macOS
-        - url: /powershell/scripting/whats-new/what-s-new-in-powershell-73
+        - url: /powershell/scripting/whats-new/what-s-new-in-powershell-74
           text: What's new in PowerShell
     # Card 2
     - title: PowerShell Utility modules
@@ -109,7 +109,7 @@ productDirectory:
           text: Using VSCode for remote editing and debugging
         - url: /powershell/scripting/developer/windows-powershell
           text: Windows PowerShell SDK documentation
-        - url: /dotnet/api/?view=powershellsdk-7.3.0
+        - url: /dotnet/api/?view=powershellsdk-7.4.0
           text: PowerShell SDK API reference
     # Card 6
     - title: Related technologies
