@@ -34,9 +34,9 @@ supported on. These versions are supported until either the version of
 
 PowerShell is supported on Alpine for the following processor architectures.
 
-|         Alpine         | 7.2 (LTS-current) |  7.3  | 7.4 (preview) |
-| ---------------------- | :---------------: | :---: | :-----------: |
-| All supported versions |        x64        |  x64  |      x64      |
+|         Alpine         | 7.2 (LTS-current) |  7.3  | 7.4 (LTS-current) |
+| ---------------------- | :---------------: | :---: | :---------------: |
+| All supported versions |        x64        |  x64  |        x64        |
 
 PowerShell hasn't been tested on Alpine using Arm processors.
 

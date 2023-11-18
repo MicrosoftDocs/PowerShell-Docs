@@ -35,9 +35,9 @@ PowerShell is tested on Red Hat Universal Base Images (UBI). For more informatio
 
 PowerShell is supported on RHEL for the following processor architectures.
 
-|          RHEL          | 7.2 (LTS-current) |  7.3  | 7.4 (preview) |
-| ---------------------- | :---------------: | :---: | :-----------: |
-| All supported versions |        x64        |  x64  |      x64      |
+|          RHEL          | 7.2 (LTS-current) |  7.3  | 7.4 (LTS-current) |
+| ---------------------- | :---------------: | :---: | :---------------: |
+| All supported versions |        x64        |  x64  |        x64        |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/

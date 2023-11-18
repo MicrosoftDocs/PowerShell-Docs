@@ -32,9 +32,9 @@ they're supported on. These versions remain supported until either the version o
 
 PowerShell is supported on Debian for the following processor architectures.
 
-|   Debian   | 7.2 (LTS-current) |  7.3  | 7.4 (preview) |
-| ---------- | :---------------: | :---: | :-----------: |
-| Version 9+ |        x64        |  x64  |      x64      |
+|   Debian   | 7.2 (LTS-current) |  7.3  | 7.4 (LTS-current) |
+| ---------- | :---------------: | :---: | :---------------: |
+| Version 9+ |        x64        |  x64  |        x64        |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-debian]: https://wiki.debian.org/DebianReleases

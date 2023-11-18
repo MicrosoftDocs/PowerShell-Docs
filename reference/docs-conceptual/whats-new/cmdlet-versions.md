@@ -9,7 +9,7 @@ This article lists the modules and cmdlets that are included in various versions
 is a summary of information found in the release notes. More detailed information can be found in
 the release notes:
 
-- [What's new in PowerShell 7.4 (preview)][31]
+- [What's new in PowerShell 7.4][31]
 - [What's new in PowerShell 7.3][30]
 - [What's new in PowerShell 7.2][29]
 - [What's new in PowerShell 7.1][04]
@@ -19,7 +19,7 @@ This is a work in progress. Please help us keep this information fresh.
 
 ## Module release history
 
-|             ModuleName / PSVersion              |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |                    Note                     |
+|             ModuleName / PSVersion              |       5.1       |       7.2       |       7.3       |       7.4       |                    Note                     |
 | ----------------------------------------------- | --------------- | --------------- | --------------- | --------------- | ------------------------------------------- |
 | [CimCmdlets][05]                                | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] | Windows only                                |
 | [ISE (introduced in 2.0)][06]                   | ![Included][01] |                 |                 |                 | Windows only                                |
@@ -52,7 +52,7 @@ This is a work in progress. Please help us keep this information fresh.
 
 ### CimCmdlets
 
-|         Cmdlet name         |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |     Note     |
+|         Cmdlet name         |       5.1       |       7.2       |       7.3       |       7.4       |     Note     |
 | --------------------------- | --------------- | --------------- | --------------- | --------------- | ------------ |
 | Export-BinaryMiLog          | ![Included][01] |                 |                 |                 | Windows only |
 | Get-CimAssociatedInstance   | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] | Windows only |
@@ -81,14 +81,14 @@ This modules is only available in Windows PowerShell.
 
 ### Microsoft.PowerShell.Archive
 
-|   Cmdlet name    |       5.1       |       7.2       |       7.3       |  7.4 (preview)  | Note |
+|   Cmdlet name    |       5.1       |       7.2       |       7.3       |       7.4       | Note |
 | ---------------- | --------------- | --------------- | --------------- | --------------- | ---- |
 | Compress-Archive | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
 | Expand-Archive   | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
 
 ### Microsoft.PowerShell.Core
 
-|            Cmdlet name            |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |                    Note                    |
+|            Cmdlet name            |       5.1       |       7.2       |       7.3       |       7.4       |                    Note                    |
 | --------------------------------- | --------------- | --------------- | --------------- | --------------- | ------------------------------------------ |
 | Add-History                       | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                            |
 | Add-PSSnapin                      | ![Included][01] |                 |                 |                 | Windows only                               |
@@ -161,7 +161,7 @@ This modules is only available in Windows PowerShell.
 
 ### Microsoft.PowerShell.Diagnostics
 
-|  Cmdlet name   |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |     Note     |
+|  Cmdlet name   |       5.1       |       7.2       |       7.3       |       7.4       |     Note     |
 | -------------- | --------------- | --------------- | --------------- | --------------- | ------------ |
 | Export-Counter | ![Included][01] |                 |                 |                 | Windows only |
 | Get-Counter    | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] | Windows only |
@@ -171,7 +171,7 @@ This modules is only available in Windows PowerShell.
 
 ### Microsoft.PowerShell.Host
 
-|   Cmdlet name    |       5.1       |       7.2       |       7.3       |  7.4 (preview)  | Note |
+|   Cmdlet name    |       5.1       |       7.2       |       7.3       |       7.4       | Note |
 | ---------------- | --------------- | --------------- | --------------- | --------------- | ---- |
 | Start-Transcript | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
 | Stop-Transcript  | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
@@ -200,7 +200,7 @@ This modules is only available in Windows PowerShell.
 
 ### Microsoft.PowerShell.Management
 
-|          Cmdlet name          |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |               Note               |
+|          Cmdlet name          |       5.1       |       7.2       |       7.3       |       7.4       |               Note               |
 | ----------------------------- | --------------- | --------------- | --------------- | --------------- | -------------------------------- |
 | Add-Computer                  | ![Included][01] |                 |                 |                 | Windows only                     |
 | Add-Content                   | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                  |
@@ -313,7 +313,7 @@ This modules is only available in Windows PowerShell.
 
 ### Microsoft.PowerShell.Security
 
-|        Cmdlet name        |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |                  Note                   |
+|        Cmdlet name        |       5.1       |       7.2       |       7.3       |       7.4       |                  Note                   |
 | ------------------------- | --------------- | --------------- | --------------- | --------------- | --------------------------------------- |
 | ConvertFrom-SecureString  | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                         |
 | ConvertTo-SecureString    | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                         |
@@ -333,7 +333,7 @@ This modules is only available in Windows PowerShell.
 
 ### Microsoft.PowerShell.Utility
 
-|        Cmdlet name        |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |                   Note                    |
+|        Cmdlet name        |       5.1       |       7.2       |       7.3       |       7.4       |                   Note                    |
 | ------------------------- | --------------- | --------------- | --------------- | --------------- | ----------------------------------------- |
 | Add-Member                | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                           |
 | Add-Type                  | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                           |
@@ -456,7 +456,7 @@ This modules is only available in Windows PowerShell.
 
 ### Microsoft.WsMan.Management
 
-|      Cmdlet name       |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |     Note     |
+|      Cmdlet name       |       5.1       |       7.2       |       7.3       |       7.4       |     Note     |
 | ---------------------- | --------------- | --------------- | --------------- | --------------- | ------------ |
 | Connect-WSMan          | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] | Windows only |
 | Disable-WSManCredSSP   | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] | Windows only |
@@ -474,7 +474,7 @@ This modules is only available in Windows PowerShell.
 
 ### PackageManagement
 
-|       Cmdlet name        |       5.1       |       7.2       |       7.3       |  7.4 (preview)  | Note |
+|       Cmdlet name        |       5.1       |       7.2       |       7.3       |       7.4       | Note |
 | ------------------------ | --------------- | --------------- | --------------- | --------------- | ---- |
 | Find-Package             | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
 | Find-PackageProvider     | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
@@ -492,7 +492,7 @@ This modules is only available in Windows PowerShell.
 
 ### PowershellGet 2.x
 
-|           Cmdlet name           |       5.1       |       7.2       |       7.3       |  7.4 (preview)  | Note |
+|           Cmdlet name           |       5.1       |       7.2       |       7.3       |       7.4       | Note |
 | ------------------------------- | --------------- | --------------- | --------------- | --------------- | ---- |
 | Find-Command                    | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
 | Find-DscResource                | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
@@ -588,7 +588,7 @@ This modules is only available from the PowerShell Gallery.
 
 ### PSDiagnostics
 
-|         Cmdlet name          |       5.1       |       7.2       |       7.3       |  7.4 (preview)  |     Note     |
+|         Cmdlet name          |       5.1       |       7.2       |       7.3       |       7.4       |     Note     |
 | ---------------------------- | --------------- | --------------- | --------------- | --------------- | ------------ |
 | Disable-PSTrace              | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] | Windows only |
 | Disable-PSWSManCombinedTrace | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] | Windows only |
@@ -603,7 +603,7 @@ This modules is only available from the PowerShell Gallery.
 
 ### PSReadLine
 
-|         Cmdlet name         |       5.1       |       7.2       |       7.3       |  7.4 (preview)  | Note |
+|         Cmdlet name         |       5.1       |       7.2       |       7.3       |       7.4       | Note |
 | --------------------------- | --------------- | --------------- | --------------- | --------------- | ---- |
 | Get-PSReadLineKeyHandler    | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
 | Get-PSReadLineOption        | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
@@ -647,7 +647,7 @@ This modules is only available in Windows PowerShell.
 
 ### ThreadJob
 
-|   Cmdlet name   | 5.1 |       7.2       |       7.3       |  7.4 (preview)  |                Note                |
+|   Cmdlet name   | 5.1 |       7.2       |       7.3       |       7.4       |                Note                |
 | --------------- | --- | --------------- | --------------- | --------------- | ---------------------------------- |
 | Start-ThreadJob |     | ![Included][01] | ![Included][01] | ![Included][01] | Can be installed in PowerShell 5.1 |
 

@@ -40,13 +40,13 @@ on. These versions are supported until either the version of
 
 PowerShell is supported on Windows for the following processor architectures.
 
-|          Windows          | 7.2 (LTS-current) |       7.3       |  7.4 (preview)  |
-| ------------------------- | :---------------: | :-------------: | :-------------: |
-| Windows Server 2016+      |     x64, x86      |    x64, x86     |    x64, x86     |
-| Windows Server Core 2016+ |     x64, x86      |    x64, x86     |    x64, x86     |
-| Nano Server Version 1803+ |        x64        |       x64       |       x64       |
-| Windows 11 Client         |    x64, Arm64     |   x64, Arm64    |   x64, Arm64    |
-| Windows 10 Client         |  x64, x86, Arm64  | x64, x86, Arm64 | x64, x86, Arm64 |
+|          Windows          | 7.2 (LTS-current) |       7.3       | 7.4 (LTS-current) |
+| ------------------------- | :---------------: | :-------------: | :---------------: |
+| Windows Server 2016+      |     x64, x86      |    x64, x86     |     x64, x86      |
+| Windows Server Core 2016+ |     x64, x86      |    x64, x86     |     x64, x86      |
+| Nano Server Version 1803+ |        x64        |       x64       |        x64        |
+| Windows 11 Client         |    x64, Arm64     |   x64, Arm64    |    x64, Arm64     |
+| Windows 10 Client         |  x64, x86, Arm64  | x64, x86, Arm64 |  x64, x86, Arm64  |
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-windows]: /lifecycle/products/?terms=Windows%20Server&products=windows
