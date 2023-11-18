@@ -41,6 +41,7 @@ Core, see
 Each new release of PowerShell is built on a newer version of .NET. There can be breaking changes in
 .NET that affect PowerShell.
 
+- PowerShell 7.4 - Built on .NET 8.0
 - PowerShell 7.3 - Built on .NET 7.0
 - PowerShell 7.2 (LTS-current) - Built on .NET 6.0 (LTS-current)
 - PowerShell 7.1 - Built on .NET 5.0
