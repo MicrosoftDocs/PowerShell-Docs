@@ -133,22 +133,22 @@ End of support dates for already retired versions were:
 The following table contains a timeline of the major releases of PowerShell. This table is provided
 for historical reference. It isn't intended for use to determine the support lifecycle.
 
-|           Version            | Release Date |                                      Note                                       |
-| ---------------------------- | :----------: | ------------------------------------------------------------------------------- |
-| PowerShell 7.4 (preview)     |   Nov-2023   | Built on .NET 8.0.0                                                             |
-| PowerShell 7.3               |   Nov-2022   | Built on .NET 7.0                                                               |
-| PowerShell 7.2 (LTS-current) |   Nov-2021   | Built on .NET 6.0 (LTS-current)                                                 |
-| PowerShell 7.1               |   Nov-2020   | Built on .NET 5.0                                                               |
-| PowerShell 7.0 (LTS)         |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                    |
-| PowerShell 6.2               |   Mar-2019   | Built on .NET Core 2.1                                                          |
-| PowerShell 6.1               |   Sep-2018   | Built on .NET Core 2.1                                                          |
-| PowerShell 6.0               |   Jan-2018   | First release, built on .NET Core 2.0. Installable on Windows, Linux, and macOS |
-| Windows PowerShell 5.1       |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016, WMF 5.1      |
-| Windows PowerShell 5.0       |   Feb-2016   | Released in Windows Management Framework (WMF) 5.0                              |
-| Windows PowerShell 4.0       |   Oct-2013   | Integrated in Windows 8.1 and with Windows Server 2012 R2, WMF 4.0              |
-| Windows PowerShell 3.0       |   Oct-2012   | Integrated in Windows 8 and with Windows Server 2012 WMF 3.0                    |
-| Windows PowerShell 2.0       |   Jul-2009   | Integrated in Windows 7 and Windows Server 2008 R2, WMF 2.0                     |
-| Windows PowerShell 1.0       |   Nov-2006   | Optional component of Windows Server 2008                                       |
+|            Version            | Release Date |                                      Note                                       |
+| ----------------------------- | :----------: | ------------------------------------------------------------------------------- |
+| PowerShell 7.4 (LTS-current)  |   Nov-2023   | Built on .NET 8.0.0                                                             |
+| PowerShell 7.3                |   Nov-2022   | Built on .NET 7.0                                                               |
+| PowerShell 7.2 (LTS-previous) |   Nov-2021   | Built on .NET 6.0 (LTS-previous)                                                |
+| PowerShell 7.1                |   Nov-2020   | Built on .NET 5.0                                                               |
+| PowerShell 7.0 (LTS)          |   Mar-2020   | Built on .NET Core 3.1 (LTS)                                                    |
+| PowerShell 6.2                |   Mar-2019   | Built on .NET Core 2.1                                                          |
+| PowerShell 6.1                |   Sep-2018   | Built on .NET Core 2.1                                                          |
+| PowerShell 6.0                |   Jan-2018   | First release, built on .NET Core 2.0. Installable on Windows, Linux, and macOS |
+| Windows PowerShell 5.1        |   Aug-2016   | Released in Windows 10 Anniversary Update and Windows Server 2016, WMF 5.1      |
+| Windows PowerShell 5.0        |   Feb-2016   | Released in Windows Management Framework (WMF) 5.0                              |
+| Windows PowerShell 4.0        |   Oct-2013   | Integrated in Windows 8.1 and with Windows Server 2012 R2, WMF 4.0              |
+| Windows PowerShell 3.0        |   Oct-2012   | Integrated in Windows 8 and with Windows Server 2012 WMF 3.0                    |
+| Windows PowerShell 2.0        |   Jul-2009   | Integrated in Windows 7 and Windows Server 2008 R2, WMF 2.0                     |
+| Windows PowerShell 1.0        |   Nov-2006   | Optional component of Windows Server 2008                                       |
 
 Run the following command to see the full version number of .NET used by the version of PowerShell
 you're running:
