@@ -36,9 +36,9 @@ information, see [Community supported distributions][community].
 
 PowerShell is supported on Ubuntu for the following processor architectures.
 
-|         Ubuntu         | 7.2 (LTS-current) |    7.3     | 7.4 (preview) |
-| ---------------------- | :---------------: | :--------: | :-----------: |
-| All supported versions |    x64, Arm32     | x64, Arm32 |  x64, Arm32   |
+|         Ubuntu         | 7.2 (LTS-current) |    7.3     | 7.4 (LTS-current) |
+| ---------------------- | :---------------: | :--------: | :---------------: |
+| All supported versions |    x64, Arm32     | x64, Arm32 |    x64, Arm32     |
 
 [eol-ubuntu]: https://endoflife.date/ubuntu
 [interim]: https://ubuntu.com/about/release-cycle

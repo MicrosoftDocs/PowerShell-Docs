@@ -9,7 +9,7 @@ title: How to use the PowerShell documentation
 Welcome to the PowerShell online documentation. This site contains cmdlet reference for the
 following versions of PowerShell:
 
-- PowerShell 7.4 (preview)
+- PowerShell 7.4 (LTS-current)
 - PowerShell 7.3
 - PowerShell 7.2 (LTS-current)
 - PowerShell 5.1

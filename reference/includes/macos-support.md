@@ -37,7 +37,7 @@ Support of macOS is defined by Apple. For more information, see the following:
 
 PowerShell is supported on macOS for the following processor architectures:
 
-|       macOS        | 7.2 (LTS-current) |    7.3     | 7.4 (preview) |
+|       macOS        | 7.2 (LTS-current) |    7.3     | 7.4 (LTS-current) |
 | ------------------ | :---------------: | :--------: | :-----------: |
 | macOS Big Sur 11.5 |    x64, Arm64     | x64, Arm64 |  x64, Arm64   |
 
