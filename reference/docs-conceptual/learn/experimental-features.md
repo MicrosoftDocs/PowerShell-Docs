@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 11/14/2023
+ms.date: 11/20/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -317,9 +317,9 @@ To enable this feature, run the following commands:
 Enable-ExperimentalFeature PSNativeCommandErrorActionPreference
 ```
 
-You must start a new PowerShell session for this change to be in effect. Beginning in PowerShell
-7.4, `$PSNativeCommandUseErrorActionPreference` is set to `$true` by default. With the preference
-set to `$true` you get the following behavior:
+You must start a new PowerShell session for this change to be in effect.
+`$PSNativeCommandUseErrorActionPreference` is set to `$true` by default. With the preference set to
+`$true` you get the following behavior:
 
 - When `$ErrorActionPreference = 'Stop'`, scripts will break when a native command returns a
   non-zero exit code.
