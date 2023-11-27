@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/23/2023
+ms.date: 11/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -628,9 +628,16 @@ Accept wildcard characters: False
 
 ### -Wait
 
-Keeps the file open after all existing lines have been output. While waiting, `Get-Content` checks
-the file once each second and outputs new lines if present. You can interrupt **Wait** by pressing
-**CTRL+C**. Waiting also ends if the file gets deleted, which also causes a non-terminating error.
+Causes the cmdlet to wait indefinitely, keeping the file open, until interrupted. While waiting,
+`Get-Content` checks the file once per second and outputs new lines if present. When used with the
+**TotalCount** parameter, `Get-Content` waits until the specified number of lines are available in
+the specified file. For example, if you specify a **TotalCount** of 10 and the file already has 10
+or more lines, `Get-Content` returns the 10 lines and exits. If the file has fewer than 10 lines,
+`Get-Content` outputs each line as it arrives, but waits until the tenth line arrives before
+exiting.
+
+You can interrupt **Wait** by pressing <kbd>Ctrl</kbd>+<kbd>C</kbd>. Deleting the file causes a
+non-terminating error that also interrupts the waiting.
 
 **Wait** is a dynamic parameter that the FileSystem provider adds to the `Get-Content` cmdlet. This
 parameter works only in file system drives. **Wait** can't be combined with **Raw**.
