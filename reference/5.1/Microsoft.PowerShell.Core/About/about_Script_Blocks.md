@@ -1,7 +1,7 @@
 ---
 description: Defines what a script block is and explains how to use script blocks in the PowerShell programming language.
 Locale: en-US
-ms.date: 11/15/2023
+ms.date: 11/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Script Blocks
@@ -18,8 +18,8 @@ the PowerShell programming language.
 In the PowerShell programming language, a script block is a collection of
 statements or expressions that can be used as a single unit. The collection of
 statements can be enclosed in braces (`{}`), defined as a function, or saved in
-a script file. You can also pass a script block to a A script block can accept
-arguments and return values.
+a script file. A script block can return values and accept parameters and
+arguments.
 
 Syntactically, a script block is a statement list in braces, as shown in
 the following syntax:
