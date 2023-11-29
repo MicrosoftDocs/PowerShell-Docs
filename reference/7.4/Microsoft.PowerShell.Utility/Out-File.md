@@ -35,11 +35,11 @@ The `Out-File` cmdlet sends output to a file. It implicitly uses PowerShell's fo
 write to the file. The file receives the same display representation as the terminal. This means
 that the output may not be ideal for programmatic processing unless all input objects are strings.
 
-When you use the redirection operator (`>`) to redirect output to a file, internally, PowerShell
-adds `Out-File` to the end of the pipeline. If you need to change how PowerShell writes to the file,
-use `Out-File` with parameters rather than the redirection operator (`>`). PowerShell 7.4 also
-changed the behavior when redirecting from a native command. For more information about redirection,
-see [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
+Redirecting the output of a PowerShell command (cmdlet, function, script) using the redirection
+operator (`>`) is functionally equivalent to piping to `Out-File` with no extra parameters.
+PowerShell 7.4 changed the behavior of the redirection operator when used to redirect the **stdout**
+stream of a native command. For more information about redirection, see
+[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
 
 ## EXAMPLES
 
