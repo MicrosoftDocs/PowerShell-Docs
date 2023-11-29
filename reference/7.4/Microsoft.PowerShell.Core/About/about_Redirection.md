@@ -75,10 +75,10 @@ is specified.
 ## Redirecting output from native commands
 
 PowerShell 7.4 changed the behavior of the redirection operators when used to
-redirect the **stdout** stream of a native command. PowerShell 7.4 changed the
-behavior. The redirection operators now preserve the byte-stream data when
-redirecting output from a native command. PowerShell doesn't interpret the
-redirected data or add any additional formatting. For more information, see
+redirect the **stdout** stream of a native command. The redirection operators
+now preserve the byte-stream data when redirecting output from a native
+command. PowerShell doesn't interpret the redirected data or add any additional
+formatting. For more information, see
 [Example #7](#example-7-redirecting-binary-data-from-a-native-command).
 
 ## Examples
