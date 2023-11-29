@@ -28,6 +28,7 @@ For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository
   file or when piping byte-stream data to the stdin stream of a native command.
 - Change how relative paths in `Resolve-Path` are handled when using the **RelativeBasePath**
   parameter ([#19755][19755]) (Thanks @MartinGC94!)
+- Remove unused PSv2 code - removes TabExpansion function ([#18337][18337])
 
 ## Installer updates
 
