@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 11/16/2023
+ms.date: 11/29/2023
 ---
 
 # What's New in PowerShell 7.4
@@ -21,6 +21,13 @@ For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository
 - `Test-Json` now uses Json.Schema.Net instead of Newtonsoft.Json.Schema. With this change,
   `Test-Json` no longer supports the older Draft 4 schemas. ([#18141][18141]) (Thanks @gregsdennis!)
 - Output from `Test-Connection` now includes more detailed information about TCP connection tests
+- .NET introduced changes that affected `Test-Connection`. The cmdlet now returns error about the
+  need to use `sudo` on Linux platforms when using a custom buffer size ([#20369][20369])
+- Experimental feature [PSNativeCommandPreserveBytePipe][10] is now mainstream. PowerShell now
+  preserves the byte-stream data when redirecting the **stdout** stream of a native command to a
+  file or when piping byte-stream data to the stdin stream of a native command.
+- Change how relative paths in `Resolve-Path` are handled when using the **RelativeBasePath**
+  parameter ([#19755][19755]) (Thanks @MartinGC94!)
 
 ## Installer updates
 
@@ -325,3 +332,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [20369]: https://github.com/PowerShell/PowerShell/pull/20369
 [20371]: https://github.com/PowerShell/PowerShell/pull/20371
 [17955]: https://github.com/PowerShell/PowerShell/pull/17955
+[19755]: https://github.com/PowerShell/PowerShell/pull/19755

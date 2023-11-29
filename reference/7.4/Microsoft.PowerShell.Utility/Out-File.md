@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/27/2023
+ms.date: 11/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-file?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-File
@@ -34,9 +34,12 @@ Out-File [[-Encoding] <Encoding>] -LiteralPath <string> [-Append] [-Force] [-NoC
 The `Out-File` cmdlet sends output to a file. It implicitly uses PowerShell's formatting system to
 write to the file. The file receives the same display representation as the terminal. This means
 that the output may not be ideal for programmatic processing unless all input objects are strings.
-When you need to specify parameters for the output, use `Out-File` rather than the redirection
-operator (`>`). For more information about redirection, see
-[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
+
+When you use the redirection operator (`>`) to redirect output to a file, internally, PowerShell
+adds `Out-File` to the end of the pipeline. If you need to change how PowerShell writes to the file,
+use `Out-File` with parameters rather than the redirection operator (`>`). PowerShell 7.4 also
+changed the behavior when redirecting from a native command. For more information about redirection,
+see [about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md).
 
 ## EXAMPLES
 
