@@ -21,8 +21,8 @@ For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository
 - `Test-Json` now uses Json.Schema.Net instead of Newtonsoft.Json.Schema. With this change,
   `Test-Json` no longer supports the older Draft 4 schemas. ([#18141][18141]) (Thanks @gregsdennis!)
 - Output from `Test-Connection` now includes more detailed information about TCP connection tests
-- .NET introduced changes that affected `Test-Connection`. The cmdlet now returns error about the
-  need to use `sudo` on Linux platforms when using a custom buffer size ([#20369][20369])
+- .NET introduced changes that affected `Test-Connection`. The cmdlet now returns an error about
+  the need to use `sudo` on Linux platforms when using a custom buffer size ([#20369][20369])
 - Experimental feature [PSNativeCommandPreserveBytePipe][10] is now mainstream. PowerShell now
   preserves the byte-stream data when redirecting the **stdout** stream of a native command to a
   file or when piping byte-stream data to the stdin stream of a native command.
