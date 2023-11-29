@@ -1,7 +1,7 @@
 ---
 description: Explains how to redirect output from PowerShell to text files.
 Locale: en-US
-ms.date: 09/29/2023
+ms.date: 11/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Redirection
@@ -26,13 +26,15 @@ You can use the following methods to redirect output:
 - Use the `Tee-Object` cmdlet, which sends command output to a text file and
   then sends it to the pipeline.
 
-- Use the PowerShell redirection operators. Using the redirection operator with
-  a file target is functionally equivalent to piping to `Out-File` with no
-  extra parameters.
+- Use the PowerShell redirection operators. Redirecting the output of a
+  PowerShell command (cmdlet, function, script) using the redirection operator
+  (`>`) is functionally equivalent to piping to `Out-File` with no extra
+  parameters. PowerShell 7.4 changed the behavior of the redirection operator
+  when used to redirect the **stdout** stream of a native command.
 
 For more information about streams, see [about_Output_Streams][04].
 
-### Redirectable output streams
+## Redirectable output streams
 
 PowerShell supports redirection of the following output streams.
 
@@ -54,7 +56,7 @@ redirection.
 > streams of other shells. However, stdin isn't connected to the PowerShell
 > pipeline for input.
 
-### PowerShell redirection operators
+## PowerShell redirection operators
 
 The PowerShell redirection operators are as follows, where `n` represents
 the stream number. The **Success** stream ( `1` ) is the default if no stream
@@ -69,6 +71,15 @@ is specified.
 > [!NOTE]
 > Unlike some Unix shells, you can only redirect other streams to the
 > **Success** stream.
+
+## Redirecting output from native commands
+
+PowerShell 7.4 changed the behavior of the redirection operators when used to
+redirect the **stdout** stream of a native command. PowerShell 7.4 changed the
+behavior. The redirection operators now preserve the byte-stream data when
+redirecting output from a native command. PowerShell doesn't interpret the
+redirected data or add any additional formatting. For more information, see
+[Example #7](#example-7-redirecting-binary-data-from-a-native-command).
 
 ## Examples
 

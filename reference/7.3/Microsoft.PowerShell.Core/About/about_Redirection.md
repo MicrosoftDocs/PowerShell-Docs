@@ -32,7 +32,7 @@ You can use the following methods to redirect output:
 
 For more information about streams, see [about_Output_Streams][04].
 
-### Redirectable output streams
+## Redirectable output streams
 
 PowerShell supports redirection of the following output streams.
 
@@ -54,7 +54,7 @@ redirection.
 > streams of other shells. However, stdin isn't connected to the PowerShell
 > pipeline for input.
 
-### PowerShell redirection operators
+## PowerShell redirection operators
 
 The PowerShell redirection operators are as follows, where `n` represents
 the stream number. The **Success** stream ( `1` ) is the default if no stream
