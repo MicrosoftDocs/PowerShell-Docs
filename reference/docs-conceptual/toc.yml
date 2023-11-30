@@ -247,14 +247,12 @@ items:
     items:
       - name: Overview
         href: whats-new/overview.yml
-      - name: What's new in PowerShell 7.x
-        items:
-          - name: What's new in PowerShell 7.4
-            href: whats-new/what-s-new-in-powershell-74.md
-          - name: What's new in PowerShell 7.3
-            href: whats-new/what-s-new-in-powershell-73.md
-          - name: What's new in PowerShell 7.2
-            href: whats-new/what-s-new-in-powershell-72.md
+      - name: What's new in PowerShell 7.4
+        href: whats-new/what-s-new-in-powershell-74.md
+      - name: What's new in PowerShell 7.3
+        href: whats-new/what-s-new-in-powershell-73.md
+      - name: What's new in PowerShell 7.2
+        href: whats-new/what-s-new-in-powershell-72.md
       - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
         href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
       - name: Differences between Windows PowerShell 5.1 and PowerShell 7.x
