@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 11/20/2023
+ms.date: 11/30/2023
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -15,10 +15,56 @@ breaking changes.
 > [!CAUTION]
 > Experimental features aren't intended to be used in production since the changes are allowed to be
 > breaking. Experimental features aren't officially supported. However, we appreciate any feedback
-> and bug reports. You can file issues in the [GitHub source repository][10].
+> and bug reports. You can file issues in the [GitHub source repository][24].
 
 For more information about enabling or disabling these features, see
 [about_Experimental_Features][06].
+
+## Experimental feature lifecycle
+
+The [Get-ExperimentalFeature][28] cmdlet returns all experimental features available to PowerShell.
+Experimental features can come from modules or the PowerShell engine. Module-based experimental
+features are only available when the module is imported.
+
+```powershell
+Get-ExperimentalFeature
+```
+
+```Output
+Name                             Enabled Source   Description
+----                             ------- ------   -----------
+PSCommandNotFoundSuggestion        False PSEngine Recommend potential commands based on fuzzy searc…
+PSCommandWithArgs                  False PSEngine Enable `-CommandWithArgs` parameter for pwsh
+PSFeedbackProvider                  True PSEngine Replace the hard-coded suggestion framework with …
+PSLoadAssemblyFromNativeCode       False PSEngine Expose an API to allow assembly loading from nati…
+PSModuleAutoLoadSkipOfflineFiles    True PSEngine Module discovery will skip over files that are ma…
+PSSubsystemPluginModel              True PSEngine A plugin model for registering and un-registering…
+```
+
+Use the [Enable-ExperimentalFeature][27] and [Disable-ExperimentalFeature][26] cmdlets to enable or
+disable a feature. You must start a new PowerShell session for this change to be in effect. For
+example, to enable the `PSCommandNotFoundSuggestion` feature, run the following command:
+
+```powershell
+Enable-ExperimentalFeature PSCommandNotFoundSuggestion
+```
+
+```Output
+WARNING: Enabling and disabling experimental features do not take effect until next start
+of PowerShell.
+```
+
+When an experimental feature becomes mainstream, it's no longer available as an experimental feature
+because the functionality is now part of the PowerShell engine or module. For example, the
+`PSAnsiRenderingFileInfo` feature became mainstream in PowerShell 7.3. You get the functionality of
+the feature automatically.
+
+> [!NOTE]
+> Some features have configuration requirements, such as preference variables, that must be set to
+> get the desired results from the feature.
+
+When an experimental feature is discontinued, that feature is no longer available in the PowerShell.
+For example, the `PSNativePSPathResolution` feature was discontinued in PowerShell 7.3.
 
 ## Available features
 
@@ -33,25 +79,25 @@ Legend
 - The ![Discontinued][03] icon indicates the version of PowerShell where the experimental feature
   was removed
 
-|                          Name                          |         7.2         |         7.3         |         7.4         |
-| ------------------------------------------------------ | :-----------------: | :-----------------: | :-----------------: |
-| PSCommandNotFoundSuggestion                            | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| PSDesiredStateConfiguration.InvokeDscResource (DSC v2) | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| PSNativePSPathResolution                               | ![Experimental][02] | ![Discontinued][03] |                     |
-| PSSubsystemPluginModel                                 | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| PSNativeCommandArgumentPassing                         | ![Experimental][02] |  ![Mainstream][01]  |                     |
-| PSAnsiRenderingFileInfo                                | ![Experimental][02] |  ![Mainstream][01]  |                     |
-| PSLoadAssemblyFromNativeCode                           | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| PSNativeCommandErrorActionPreference                   |                     | ![Experimental][02] |  ![Mainstream][01]  |
-| PSCustomTableHeaderLabelDecoration                     |                     |                     |  ![Mainstream][01]  |
-| PSFeedbackProvider                                     |                     |                     | ![Experimental][02] |
-| PSModuleAutoLoadSkipOfflineFiles                       |                     |                     | ![Experimental][02] |
-| PSCommandWithArgs                                      |                     |                     | ![Experimental][02] |
-| PSConstrainedAuditLogging                              |                     |                     |  ![Mainstream][01]  |
-| PSNativeCommandPreserveBytePipe                        |                     |                     |  ![Mainstream][01]  |
-| PSWindowsNativeCommandArgPassing                       |                     |                     |  ![Mainstream][01]  |
+|                        Name                         |         7.2         |         7.3         |         7.4         |
+| --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: |
+| [PSCommandNotFoundSuggestion][10]                   | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSDesiredStateConfiguration.InvokeDscResource][14] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativePSPathResolution][21]                      | ![Experimental][02] | ![Discontinued][03] |                     |
+| [PSSubsystemPluginModel][22]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeCommandArgumentPassing][18]                | ![Experimental][02] |  ![Mainstream][01]  |                     |
+| [PSAnsiRenderingFileInfo][09]                       | ![Experimental][02] |  ![Mainstream][01]  |                     |
+| [PSLoadAssemblyFromNativeCode][16]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeCommandErrorActionPreference][19]          |                     | ![Experimental][02] |  ![Mainstream][01]  |
+| [PSCustomTableHeaderLabelDecoration][13]            |                     |                     |  ![Mainstream][01]  |
+| [PSFeedbackProvider][15]                            |                     |                     | ![Experimental][02] |
+| [PSModuleAutoLoadSkipOfflineFiles][17]              |                     |                     | ![Experimental][02] |
+| [PSCommandWithArgs][11]                             |                     |                     | ![Experimental][02] |
+| [PSConstrainedAuditLogging][12]                     |                     |                     |  ![Mainstream][01]  |
+| [PSNativeCommandPreserveBytePipe][20]               |                     |                     |  ![Mainstream][01]  |
+| [PSWindowsNativeCommandArgPassing][23]              |                     |                     |  ![Mainstream][01]  |
 
-## PSAnsiRenderingFileInfo
+### PSAnsiRenderingFileInfo
 
 > [!NOTE]
 > This feature became mainstream in PowerShell 7.3.
@@ -70,7 +116,7 @@ For more information, see [about_Automatic_Variables][05].
 > [!NOTE]
 > This feature is dependent on the **PSAnsiRendering** feature that's now a standard feature.
 
-## PSCommandNotFoundSuggestion
+### PSCommandNotFoundSuggestion
 
 Recommends potential commands based on fuzzy matching search after a **CommandNotFoundException**.
 
@@ -87,7 +133,7 @@ Suggestion [4,General]: The most similar commands are: set, del, ft, gal, gbp, g
 gcm, gdr, gcs.
 ```
 
-## PSCommandWithArgs
+### PSCommandWithArgs
 
 This feature enables the `-CommandWithArgs` parameter for `pwsh`. This parameter allows you to
 execute a PowerShell command with arguments. Unlike `-Command`, this parameter populates the `$args`
@@ -110,7 +156,7 @@ arg: arg2
 
 This feature was added in PowerShell 7.4-preview.2.
 
-## PSConstrainedAuditLogging
+### PSConstrainedAuditLogging
 
 <!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
 
@@ -131,7 +177,7 @@ describe what restrictions would apply if the policy was in **Enforce** mode.
 
 This feature was added in PowerShell 7.4-preview.4.
 
-## PSCustomTableHeaderLabelDecoration
+### PSCustomTableHeaderLabelDecoration
 
 <!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
 
@@ -161,21 +207,20 @@ by the cmdlet. These are values calculated by the PowerShell formatting system.
 With this feature enabled these column headers are displayed in italics to distinguish these column
 names from property names.
 
-## PSDesiredStateConfiguration.InvokeDscResource
+### PSDesiredStateConfiguration.InvokeDscResource
 
 Enables compilation to MOF on non-Windows systems and enables the use of `Invoke-DSCResource`
 without an LCM.
 
-In earlier previews of PowerShell 7.2, this feature was enabled by default. Beginning with
-PowerShell 7.2, the **PSDesiredStateConfiguration** module was removed and this feature is disabled
-by default. To enable this feature you must install the **PSDesiredStateConfiguration** v2.0.5
-module from the PowerShell Gallery and enable the feature using `Enable-ExperimentalFeature`.
+Beginning with PowerShell 7.2, the **PSDesiredStateConfiguration** module was removed and this
+feature is disabled by default. To enable this feature you must install the
+**PSDesiredStateConfiguration** v2.0.5 module from the PowerShell Gallery and enable the feature.
 
 DSC v3 doesn't have this experimental feature. DSC v3 only supports `Invoke-DSCResource` and doesn't
 use or support MOF compilation. For more information, see
 [PowerShell Desired State Configuration v3][04].
 
-## PSFeedbackProvider
+### PSFeedbackProvider
 
 When you enable this feature, PowerShell uses a new feedback provider to give you feedback when a
 command can't be found. The feedback provider is extensible, and can be implemented by third-party
@@ -194,11 +239,11 @@ This feature includes two built-in feedback providers:
 
 This feature was added in PowerShell 7.4-preview.3.
 
-## PSLoadAssemblyFromNativeCode
+### PSLoadAssemblyFromNativeCode
 
 Exposes an API to allow assembly loading from native code.
 
-## PSModuleAutoLoadSkipOfflineFiles
+### PSModuleAutoLoadSkipOfflineFiles
 
 With this feature enabled, if a user's **PSModulePath** contains a folder from a cloud provider,
 such as OneDrive, PowerShell no longer triggers the download of all files contained within that
@@ -209,7 +254,7 @@ always kept on disk.
 
 This feature was added in PowerShell 7.4-preview.1.
 
-## PSNativeCommandArgumentPassing
+### PSNativeCommandArgumentPassing
 
 > [!NOTE]
 > This feature became mainstream in PowerShell 7.3.
@@ -222,7 +267,7 @@ a native executable.
 > The new behavior is a **breaking change** from current behavior. This may break scripts and
 > automation that work around the various issues when invoking native applications. Historically,
 > quotes must be escaped and it isn't possible to provide empty arguments to a native application.
-> Use the [stop-parsing token][08] (`--%`) or the [`Start-Process`][12] cmdlet to sidestep native
+> Use the [stop-parsing token][08] (`--%`) or the [`Start-Process`][30] cmdlet to sidestep native
 > argument passing when needed.
 
 This feature adds a new `$PSNativeCommandArgumentPassing` preference variable that controls this
@@ -254,7 +299,7 @@ and non-Windows platforms is `Standard`.
 
 > [!NOTE]
 > The following examples use the `TestExe.exe` tool. You can build `TestExe` from the source code.
-> See [TestExe][14] in the PowerShell source repository.
+> See [TestExe][25] in the PowerShell source repository.
 
 New behaviors made available by this change:
 
@@ -281,9 +326,9 @@ New behaviors made available by this change:
 For more examples of the new behavior, see [about_Parsing][07].
 
 PowerShell 7.3 also added the ability to trace parameter binding for native commands. For more
-information, see [Trace-Command][13].
+information, see [Trace-Command][31].
 
-## PSNativeCommandErrorActionPreference
+### PSNativeCommandErrorActionPreference
 
 <!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
 
@@ -311,13 +356,6 @@ controls how native commands errors are handled in PowerShell. This allows nativ
 to produce error objects that are added to the PowerShell error stream and may terminate execution
 of the script without extra handling.
 
-To enable this feature, run the following commands:
-
-```powershell
-Enable-ExperimentalFeature PSNativeCommandErrorActionPreference
-```
-
-You must start a new PowerShell session for this change to be in effect.
 `$PSNativeCommandUseErrorActionPreference` is set to `$true` by default. With the preference set to
 `$true` you get the following behavior:
 
@@ -326,7 +364,7 @@ You must start a new PowerShell session for this change to be in effect.
 - When `$ErrorActionPreference = 'Continue'` (the default), you will see PowerShell error messages
   for native command errors, but scripts won't break.
 
-## PSNativeCommandPreserveBytePipe
+### PSNativeCommandPreserveBytePipe
 
 <!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
 
@@ -371,7 +409,7 @@ you combine the **stderr** and **stdout** streams, the combined streams are trea
 
 This experimental feature was added in PowerShell 7.4-preview.4.
 
-## PSNativePSPathResolution
+### PSNativePSPathResolution
 
 > [!NOTE]
 > This experimental feature was removed in PowerShell 7.3 and is no longer supported.
@@ -387,7 +425,7 @@ operating system.
 - If the path isn't a PSDrive or `~` (on Windows), then path normalization doesn't occur
 - If the path is in single quotes, then it's not resolved and treated as literal
 
-## PSSubsystemPluginModel
+### PSSubsystemPluginModel
 
 This feature enables the subsystem plugin model in PowerShell. The feature makes it possible to
 separate components of `System.Management.Automation.dll` into individual subsystems that reside in
@@ -399,11 +437,11 @@ the PSReadLine module to provide custom prediction plugins. In future, **Job**,
 **CommandCompleter**, **Remoting** and other components could be separated into subsystem assemblies
 outside of `System.Management.Automation.dll`.
 
-The experimental feature includes a new cmdlet, [Get-PSSubsystem][11]. This cmdlet is only available
+The experimental feature includes a new cmdlet, [Get-PSSubsystem][29]. This cmdlet is only available
 when the feature is enabled. This cmdlet returns information about the subsystems that are available
 on the system.
 
-## PSWindowsNativeCommandArgPassing
+### PSWindowsNativeCommandArgPassing
 
 <!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
 
@@ -426,12 +464,30 @@ Also, this feature adds new telemetry metrics to inform us how the feature is be
 [02]: ../../media/shared/construction-sign-1f6a7.svg
 [03]: ../../media/shared/cross-mark-274c.svg
 [04]: /powershell/dsc/overview?view=dsc-3.0&preserve-view=true
-[05]: /powershell/module/Microsoft.PowerShell.Core/About/about_Automatic_Variables
+[05]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [06]: /powershell/module/microsoft.powershell.core/about/about_experimental_features
-[07]: /powershell/module/microsoft.powershell.core/about/about_Parsing
-[08]: /powershell/module/Microsoft.PowerShell.Core/About/about_Parsing#the-stop-parsing-token
-[10]: https://github.com/PowerShell/PowerShell/issues/new/choose
-[11]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
-[12]: xref:Microsoft.PowerShell.Management.Start-Process
-[13]: xref:Microsoft.PowerShell.Utility.Trace-Command
-[14]: https://github.com/PowerShell/PowerShell/tree/master/test/tools/TestExe
+[07]: /powershell/module/microsoft.powershell.core/about/about_parsing
+[08]: /powershell/module/microsoft.powershell.core/about/about_parsing#the-stop-parsing-token
+[09]: #psansirenderingfileinfo
+[10]: #pscommandnotfoundsuggestion
+[11]: #pscommandwithargs
+[12]: #psconstrainedauditlogging
+[13]: #pscustomtableheaderlabeldecoration
+[14]: #psdesiredstateconfigurationinvokedscresource
+[15]: #psfeedbackprovider
+[16]: #psloadassemblyfromnativecode
+[17]: #psmoduleautoloadskipofflinefiles
+[18]: #psnativecommandargumentpassing
+[19]: #psnativecommanderroractionpreference
+[20]: #psnativecommandpreservebytepipe
+[21]: #psnativepspathresolution
+[22]: #pssubsystempluginmodel
+[23]: #pswindowsnativecommandargpassing
+[24]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[25]: https://github.com/PowerShell/PowerShell/tree/master/test/tools/TestExe
+[26]: xref:Microsoft.PowerShell.Core.Disable-ExperimentalFeature
+[27]: xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature
+[28]: xref:Microsoft.PowerShell.Core.Get-ExperimentalFeature
+[29]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
+[30]: xref:Microsoft.PowerShell.Management.Start-Process
+[31]: xref:Microsoft.PowerShell.Utility.Trace-Command
