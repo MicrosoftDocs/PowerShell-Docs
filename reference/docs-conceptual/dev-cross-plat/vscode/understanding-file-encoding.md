@@ -1,6 +1,6 @@
 ---
 description: Configure file encoding in VS Code and PowerShell
-ms.date: 12/16/2022
+ms.date: 11/29/2023
 title: Understanding file encoding in VS Code and PowerShell
 ---
 # Understanding file encoding in VS Code and PowerShell
@@ -72,11 +72,11 @@ characters `â&euro;"`.
 Some strange character sequences that you might see include:
 
 <!-- markdownlint-disable MD038 -->
-- `â€“` instead of `–` (an en-dash)
-- `â€”` instead of `—` (an em-dash)
+- `â&euro;"` instead of `–` (an en-dash)
+- `â&euro;"` instead of `—` (an em-dash)
 - `Ã„2` instead of `Ä`
 - `Â` instead of ` `  (a non-breaking space)
-- `Ã©` instead of `é`
+- `Ã&copy;` instead of `é`
 <!-- markdownlint-enable MD038 -->
 
 This handy [reference][28] lists the common patterns that indicate a UTF-8/Windows-1252 encoding
@@ -180,8 +180,8 @@ like other normal characters.
 PowerShell's default encoding varies depending on version:
 
 - In PowerShell 6+, the default encoding is UTF-8 without BOM on all platforms.
-- In Windows PowerShell, the default encoding is usually Windows-1252, an extension of
-  [latin-1][24], also known as ISO 8859-1.
+- In Windows PowerShell, the default encoding is usually Windows-1252, which is an extension of
+  [latin-1][24] (also known as ISO 8859-1).
 
 In PowerShell 5+ you can find your default encoding with this:
 
