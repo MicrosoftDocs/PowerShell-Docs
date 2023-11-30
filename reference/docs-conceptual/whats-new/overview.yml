@@ -9,7 +9,7 @@ metadata:
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 11/16/2023
+  ms.date: 11/30/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
 #               overview | quickstart | reference | tutorial | video | whats-new
@@ -38,8 +38,8 @@ landingContent:
     linkLists:
       - linkListType: whats-new
         links:
-          - text: What's new in PowerShell 5.1
-            url: ../windows-powershell/whats-new/what-s-new-in-windows-powershell-50.md
+          - text: What is Windows PowerShell?
+            url: ../windows-powershell/overview.md
           - text: Differences between Windows PowerShell 5.1 and PowerShell 7
             url: ./differences-from-windows-powershell.md
           - text: Migrating from Windows PowerShell 5.1 to PowerShell 7
