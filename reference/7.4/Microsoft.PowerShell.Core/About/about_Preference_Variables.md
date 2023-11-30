@@ -1057,15 +1057,19 @@ information other than errors. In these cases, you can temporarily disable the
 behavior and prevent non-zero exit codes from issuing errors.
 
 ```powershell
-$definedPreference = $PSNativeCommandUseErrorActionPreference
-$PSNativeCommandUseErrorActionPreference = $false
-robocopy.exe D:\reports\operational "\\reporting\ops" CY2022Q4.md
-$robocopyExitCode = $LASTEXITCODE
-if ($robocopyExitCode -gt 8) {
-    throw "robocopy failed with exit code $robocopyExitCode"
+& {
+    # Disable $PSNativeCommandUseErrorActionPreference for this scriptblock
+    $PSNativeCommandUseErrorActionPreference = $false
+    robocopy.exe D:\reports\operational "\\reporting\ops" CY2022Q4.md
+    if ($LASTEXITCODE -gt 8) {
+        throw "robocopy failed with exit code $LASTEXITCODE"
+    }
 }
-$PSNativeCommandUseErrorActionPreference = $definedPreference
 ```
+
+In this example, the `$PSNativeCommandUseErrorActionPreference` variable is
+changed inside a scriptblock. The change is local to the scriptblock. When the
+scriptblock exits, the variable reverts to its previous value.
 
 ## $PSSessionApplicationName
 

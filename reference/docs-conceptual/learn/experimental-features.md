@@ -107,16 +107,13 @@ Legend
 The ANSI formatting features were added in PowerShell 7.2. This feature adds the `$PSStyle.FileInfo`
 member and enables coloring of specific file types.
 
-- `$PSStyle.FileInfo.Directory` - Built-in member to specify color for directories
-- `$PSStyle.FileInfo.SymbolicLink` - Built-in member to specify color for symbolic links
-- `$PSStyle.FileInfo.Executable` - Built-in member to specify color for executables.
-- `$PSStyle.FileInfo.Extension` - Use this member to define colors for different file extensions.
-  The **Extension** member pre-includes extensions for archive and PowerShell files.
+- `$PSStyle.FileInfo.Directory` - Built-in member to specify the color for directories
+- `$PSStyle.FileInfo.SymbolicLink` - Built-in member to specify the color for symbolic links
+- `$PSStyle.FileInfo.Executable` - Built-in member to specify the color for executables.
+- `$PSStyle.FileInfo.Extension` - Use this member to define the colors for different file
+  extensions. The **Extension** member pre-includes extensions for archive and PowerShell files.
 
 For more information, see [about_Automatic_Variables][05].
-
-> [!NOTE]
-> This feature is dependent on the **PSAnsiRendering** feature that's now a standard feature.
 
 ### PSCommandNotFoundSuggestion
 
