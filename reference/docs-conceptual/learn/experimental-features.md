@@ -24,7 +24,9 @@ For more information about enabling or disabling these features, see
 
 The [Get-ExperimentalFeature][28] cmdlet returns all experimental features available to PowerShell.
 Experimental features can come from modules or the PowerShell engine. Module-based experimental
-features are only available when the module is imported.
+features are only available after you import the module. In the following example, the
+**PSDesiredStateConfiguration** isn't loaded, so the `PSDesiredStateConfiguration.InvokeDscResource`
+feature isn't available.
 
 ```powershell
 Get-ExperimentalFeature
@@ -42,8 +44,8 @@ PSSubsystemPluginModel              True PSEngine A plugin model for registering
 ```
 
 Use the [Enable-ExperimentalFeature][27] and [Disable-ExperimentalFeature][26] cmdlets to enable or
-disable a feature. You must start a new PowerShell session for this change to be in effect. For
-example, to enable the `PSCommandNotFoundSuggestion` feature, run the following command:
+disable a feature. You must start a new PowerShell session for this change to be in effect. Run the
+following command to enable the `PSCommandNotFoundSuggestion` feature:
 
 ```powershell
 Enable-ExperimentalFeature PSCommandNotFoundSuggestion
@@ -54,8 +56,8 @@ WARNING: Enabling and disabling experimental features do not take effect until n
 of PowerShell.
 ```
 
-When an experimental feature becomes mainstream, it's no longer available as an experimental feature
-because the functionality is now part of the PowerShell engine or module. For example, the
+When an experimental feature becomes _mainstream_, it's no longer available as an experimental
+feature because the functionality is now part of the PowerShell engine or module. For example, the
 `PSAnsiRenderingFileInfo` feature became mainstream in PowerShell 7.3. You get the functionality of
 the feature automatically.
 
@@ -63,8 +65,8 @@ the feature automatically.
 > Some features have configuration requirements, such as preference variables, that must be set to
 > get the desired results from the feature.
 
-When an experimental feature is discontinued, that feature is no longer available in the PowerShell.
-For example, the `PSNativePSPathResolution` feature was discontinued in PowerShell 7.3.
+When an experimental feature is _discontinued_, that feature is no longer available in the
+PowerShell. For example, the `PSNativePSPathResolution` feature was discontinued in PowerShell 7.3.
 
 ## Available features
 
@@ -102,8 +104,8 @@ Legend
 > [!NOTE]
 > This feature became mainstream in PowerShell 7.3.
 
-This experiment was added in PowerShell 7.2. This feature adds the `$PSStyle.FileInfo` member and
-enables coloring of specific file types.
+The ANSI formatting features were added in PowerShell 7.2. This feature adds the `$PSStyle.FileInfo`
+member and enables coloring of specific file types.
 
 - `$PSStyle.FileInfo.Directory` - Built-in member to specify color for directories
 - `$PSStyle.FileInfo.SymbolicLink` - Built-in member to specify color for symbolic links
