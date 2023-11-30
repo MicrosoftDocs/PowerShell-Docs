@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 11/29/2023
+ms.date: 11/30/2023
 ---
 
 # What's New in PowerShell 7.4
@@ -9,7 +9,7 @@ ms.date: 11/29/2023
 PowerShell 7.4 includes the following features, updates, and breaking changes. PowerShell 7.4 is
 built on .NET 8.0.0.
 
-For a complete list of changes, see the [CHANGELOG][15] in the GitHub repository.
+For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
 ## Breaking changes
 
@@ -39,7 +39,7 @@ For more information, see [Install the msi package from the command line][01].
 
 PowerShell 7.4 includes **Microsoft.PowerShell.PSResourceGet** v1.0.1. This module is installed
 side-by-side with **PowerShellGet** v2.2.5 and **PackageManagement** v1.4.8.1. For more information,
-see the documentation for [Microsoft.PowerShell.PSResourceGet][14].
+see the documentation for [Microsoft.PowerShell.PSResourceGet][12].
 
 PowerShell 7.4 now includes **PSReadLine** v2.3.4. For more information, see the documentation for
 [PSReadLine][13].
@@ -194,49 +194,40 @@ PowerShell 7.4 introduces the following experimental features:
     to `$PSStyle.Formatting` that allow you to change the formatting of feedback messages.
 - [PSModuleAutoLoadSkipOfflineFiles][07] - Module discovery now skips over files that are marked by
   cloud providers as not fully on disk.
-- [PSCommandWithArgs][04] - Add support for passing arguments to commands as a single string
+- [PSCommandWithArgs][05] - Add support for passing arguments to commands as a single string
 
 The following experimental features became mainstream:
 
-- [PSConstrainedAuditLogging][09] - Add support for logging message about code that would not be
-  allowed in Constrained language mode
-- [PSCustomTableHeaderLabelDecoration][05] - Add formatting differentiation for table header labels
-  that aren't property members.
-  - This feature also adds the **CustomTableHeaderLabel** property to `$PSStyle.Formatting` that
-    allows you to change the formatting of the header label.
-- [PSNativeCommandErrorActionPreference][08] - `$PSNativeCommandUseErrorActionPreference` is set to
-  `$true` when feature is enabled ([#18695][18695])
-- [PSNativeCommandPreserveBytePipe][10] - Preserves the byte-stream data when redirecting the
-  **stdout** stream of a native command to a file or when piping byte-stream data to the stdin
-  stream of a native command.
-- [PSWindowsNativeCommandArgPassing][11] - Changes the default value of
-  `$PSNativeCommandArgumentPassing` to `Windows` on Windows.
+- [PSConstrainedAuditLogging][02]
+- [PSCustomTableHeaderLabelDecoration][08]
+- [PSNativeCommandErrorActionPreference][10]
+- [PSNativeCommandPreserveBytePipe][11]
+- [PSWindowsNativeCommandArgPassing][09]
 
 PowerShell 7.4 changed the following experimental features:
 
-- [PSCommandNotFoundSuggestion][03] - This feature now uses an extensible feedback provider rather
+- [PSCommandNotFoundSuggestion][04] - This feature now uses an extensible feedback provider rather
   than hard-coded suggestions ([#18726][18726])
 
-For more information about the Experimental Features, see [Using Experimental Features][02].
+For more information about the Experimental Features, see [Using Experimental Features][03].
 
 <!-- end of content -->
 <!-- reference links -->
 [01]: ../install/installing-powershell-on-windows.md
-[02]: ../learn/experimental-features.md
-[03]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
-[04]: ../learn/experimental-features.md#pscommandwithargs
-[05]: ../learn/experimental-features.md#pscustomtableheaderlabeldecoration
+[02]: ../learn/application-control.md#wdac-policy-auditing
+[03]: ../learn/experimental-features.md
+[04]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
+[05]: ../learn/experimental-features.md#pscommandwithargs
 [06]: ../learn/experimental-features.md#psfeedbackprovider
 [07]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
-[08]: ../learn/experimental-features.md#psnativecommanderroractionpreference
-[09]: ../learn/experimental-features.md#psconstrainedauditlogging
-[10]: ../learn/experimental-features.md#psnativecommandpreservebytepipe
-[11]: ../learn/experimental-features.md#pswindowsnativecommandargpassing
-
+[08]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals
+[09]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommandargumentpassing
+[10]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommanduseerroractionpreference
+[11]: /powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.4&preserve-view=true#redirecting-output-from-native-commands
+[12]: /powershell/module/microsoft.powershell.psresourceget
 [13]: /powershell/module/psreadline
-[14]: /powershell/module/microsoft.powershell.psresourceget
-[15]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 
+[chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 [14953]: https://github.com/PowerShell/PowerShell/pull/14953
 [17191]: https://github.com/PowerShell/PowerShell/pull/17191
 [17654]: https://github.com/PowerShell/PowerShell/pull/17654
