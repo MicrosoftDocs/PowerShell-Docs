@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2023
+ms.date: 12/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
@@ -422,8 +422,9 @@ Accept wildcard characters: False
 
 ### -Repeat
 
-Causes the cmdlet to send ping requests continuously. This parameter can't be used with the
-**Count** parameter.
+Causes the cmdlet to send ping requests continuously. When the value of **TargetName** is an array
+of targets, the cmdlet repeats the ping requests for the first target only. It ignores the
+remaining targets. This parameter can't be used with the **Count** parameter.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
