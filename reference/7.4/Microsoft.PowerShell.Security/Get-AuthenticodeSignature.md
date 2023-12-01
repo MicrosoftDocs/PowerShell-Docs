@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 12/12/2022
+ms.date: 12/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
@@ -97,9 +97,9 @@ example, the file extension is specified along with the content of the file.
 
 ### -Content
 
-Contents of a file as a byte array for which the Authenticode signature is retrieved. This parameter
-must be used with **SourcePathOrExtension** parameter. The contents of the file must be in Unicode
-(UTF-16LE) format.
+Contents of a file as a byte array for which the Authenticode signature is retrieved. This
+parameter must be used with **SourcePathOrExtension** parameter. Prior to PowerShell 7.4, the
+contents of the file must be in Unicode (UTF-16LE) format.
 
 ```yaml
 Type: System.Byte[]
