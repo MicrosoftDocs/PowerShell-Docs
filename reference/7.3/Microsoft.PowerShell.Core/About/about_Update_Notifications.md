@@ -47,7 +47,7 @@ You must set this environment variable before PowerShell starts. For more
 information about setting environment variables, see
 [about_Environment_Variables][01].
 
-## Update notification endpoints
+## Notification endpoints
 
 PowerShell uses the following endpoints for determining the latest version
 available for each channel:
