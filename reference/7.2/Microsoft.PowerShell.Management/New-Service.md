@@ -36,7 +36,7 @@ dependencies of the service.
 ### Example 1: Create a service
 
 ```powershell
-New-Service -Name "TestService" -BinaryPathName '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
+New-Service -Name "TestService" -BinaryPathName 'C:\WINDOWS\System32\svchost.exe -k netsvcs'
 ```
 
 This command creates a service named TestService.
@@ -46,7 +46,7 @@ This command creates a service named TestService.
 ```powershell
 $params = @{
   Name = "TestService"
-  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
+  BinaryPathName = 'C:\WINDOWS\System32\svchost.exe -k netsvcs'
   DependsOn = "NetLogon"
   DisplayName = "Test Service"
   StartupType = "Manual"
@@ -83,7 +83,7 @@ This example adds the **SecurityDescriptor** of the service being created.
 ```powershell
 $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
 $params = @{
-  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
+  BinaryPathName = 'C:\WINDOWS\System32\svchost.exe -k netsvcs'
   DependsOn = "NetLogon"
   DisplayName = "Test Service"
   StartupType = "Manual"
@@ -107,7 +107,7 @@ so that it is correctly interpreted. For example, `d:\my share\myservice.exe` sh
 `'"d:\my share\myservice.exe"'`.
 
 The path can also include arguments for an auto-start service. For example,
-`'"d:\myshare\myservice.exe arg1 arg2"'`. These arguments are passed to the service entry point.
+`'"d:\my share\myservice.exe" arg1 arg2'`. These arguments are passed to the service entry point.
 
 For more information, see the **lpBinaryPathName** parameter of
 [CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) API.
