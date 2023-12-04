@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 11/01/2023
+ms.date: 12/04/2023
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,28 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-Nov
+
+Updated content
+
+- Updated release notes for PowerShell 7.4.0 GA
+  - [What's New in PowerShell 7.4 - PowerShell](powershell/scripting/whats-new/what-s-new-in-powershell-74)
+  - [PowerShell Gallery - Microsoft.PowerShell.WhatsNew 0.5.4](https://www.powershellgallery.com/packages/Microsoft.PowerShell.WhatsNew)
+  - [PowerShell SDK 7.4 reference - .NET API browser](/dotnet/api/?view=powershellsdk-7.4.0&preserve-view=true)
+- Retired Windows PowerShell content to archive site
+  - Added [What is Windows PowerShell?](/powershell/scripting/windows-powershell/overview)
+- Major updates to:
+  [about Classes](/powershell/module/microsoft.powershell.core/about/about_classes) and
+  [about_Enum](/powershell/module/microsoft.powershell.core/about/about_classes)
+
+New content
+
+- New Class articles added
+  - [about Classes Constructors](/powershell/module/microsoft.powershell.core/about/about_classes_constructors)
+  - [about Classes Inheritance](/powershell/module/microsoft.powershell.core/about/about_classes_inheritance)
+  - [about Classes Methods](/powershell/module/microsoft.powershell.core/about/about_classes_methods)
+  - [about Classes Properties](/powershell/module/microsoft.powershell.core/about/about_classes_properties)
 
 ## 2023-Oct
 
