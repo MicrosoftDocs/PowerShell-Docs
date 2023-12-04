@@ -1,7 +1,7 @@
 ---
 description: The Experimental Features support in PowerShell provides a mechanism for experimental features to coexist with existing stable features in PowerShell or PowerShell modules.
 Locale: en-US
-ms.date: 11/15/2021
+ms.date: 12/04/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Experimental Features
@@ -193,3 +193,4 @@ if ([ExperimentalFeature]::IsEnabled("MyModule.MyExperimentalFeature"))
 - [Disable-ExperimentalFeature](xref:Microsoft.PowerShell.Core.Disable-ExperimentalFeature)
 - [Enable-ExperimentalFeature](xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature)
 - [Get-ExperimentalFeature](xref:Microsoft.PowerShell.Core.Get-ExperimentalFeature)
+- [Using Experimental Features](/powershell/scripting/learn/experimental-features)
