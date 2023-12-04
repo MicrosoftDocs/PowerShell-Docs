@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 12/04/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/enable-experimentalfeature?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-ExperimentalFeature
@@ -140,3 +140,7 @@ Changes to state of an experimental feature only take effect on restart of Power
 [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 
 [Get-ExperimentalFeature](Get-ExperimentalFeature.md)
+
+[about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features)
+
+[Using Experimental Features](/powershell/scripting/learn/experimental-features)
