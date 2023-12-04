@@ -22,7 +22,7 @@ Updated content
 - Retired Windows PowerShell content to archive site
   - Added [What is Windows PowerShell?](/powershell/scripting/windows-powershell/overview)
 - Major updates to:
-  [about Classes](/powershell/module/microsoft.powershell.core/about/about_classes) and
+  [about_Classes](/powershell/module/microsoft.powershell.core/about/about_classes) and
   [about_Enum](/powershell/module/microsoft.powershell.core/about/about_classes)
 
 New content
