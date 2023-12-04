@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Debian Linux
-ms.date: 11/16/2023
+ms.date: 12/04/2023
 title: Installing PowerShell on Debian
 ---
 # Installing PowerShell on Debian
@@ -90,20 +90,20 @@ sudo apt-get update
 sudo apt-get install -y wget
 
 # Download the PowerShell package file
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.0//powershell_7.4.0-1.deb_amd64.deb
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell_7.4.0-1.deb_amd64.deb
 
 ###################################
 # Install the PowerShell package
-sudo dpkg -i /powershell_7.4.0-1.deb_amd64.deb
+sudo dpkg -i powershell_7.4.0-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
 
 # Delete the downloaded package file
-rm /powershell_7.4.0-1.deb_amd64.deb
+rm powershell_7.4.0-1.deb_amd64.deb
 
-# Start PowerShell Preview
-pwsh-lts
+# Start PowerShell
+pwsh
 ```
 
 ## Uninstall PowerShell
