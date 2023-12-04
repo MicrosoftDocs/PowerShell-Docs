@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
-ms.date: 11/01/2023
+ms.date: 12/04/2023
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -17,7 +17,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |   PRs Merged    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |  122 |   98 |        1906 |
+| Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |  122 |  104 |        1912 |
 | matt9ucci       |      |      |  157 |   80 |   30 |    1 |    6 |      |      |         274 |
 | nschonni        |      |      |      |   14 |  138 |   10 |      |      |      |         162 |
 | kiazhi          |      |   25 |   79 |   12 |      |      |      |      |      |         116 |
@@ -27,8 +27,8 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | ehmiiz          |      |      |      |      |      |      |      |   22 |   14 |          36 |
 | yecril71pl      |      |      |      |      |      |   21 |    3 |    3 |      |          27 |
 | Dan1el42        |      |   20 |      |      |      |      |      |      |      |          20 |
+| skycommand      |      |      |    1 |    3 |    3 |    6 |      |    1 |    4 |          18 |
 | NReilingh       |      |    2 |      |   13 |    3 |      |      |      |      |          18 |
-| skycommand      |      |      |    1 |    3 |    3 |    6 |      |    1 |    3 |          17 |
 | it-praktyk      |      |      |      |   16 |    1 |      |      |      |      |          17 |
 | vors            |      |   15 |    1 |      |      |      |      |      |      |          16 |
 | markekraus      |      |      |   11 |    5 |      |      |      |      |      |          16 |
@@ -45,8 +45,8 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |  Issues Opened  | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |   54 |   95 |  212 |  563 |  559 |  365 |  226 |  226 |        2303 |
-| mklement0       |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   14 |         246 |
+| Community       |    3 |   54 |   95 |  212 |  563 |  559 |  365 |  226 |  248 |        2325 |
+| mklement0       |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   16 |         248 |
 | ehmiiz          |      |      |      |      |      |      |      |   20 |   14 |          34 |
 | iSazonov        |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |          30 |
 | jszabo98        |      |      |      |    2 |   15 |    6 |    1 |      |    1 |          25 |
@@ -57,15 +57,17 @@ GitHub issues help us identify errors and gaps in our documentation.
 | KirkMunro       |      |      |      |    7 |    7 |    1 |      |      |      |          15 |
 | iRon7           |      |      |      |      |      |    2 |    2 |    2 |    9 |          15 |
 | alexandair      |      |    9 |    4 |    2 |      |      |      |      |      |          15 |
+| JustinGrote     |      |      |      |    1 |    3 |    6 |    1 |    1 |    2 |          14 |
 | clamb123        |      |      |      |      |      |      |   14 |      |      |          14 |
-| JustinGrote     |      |      |      |    1 |    3 |    6 |    1 |    1 |    1 |          13 |
 | trollyanov      |      |      |      |      |      |      |   11 |    1 |      |          12 |
 | rkeithhill      |      |      |    1 |    2 |    2 |    2 |    3 |    1 |    1 |          12 |
 | jsilverm        |      |      |      |      |      |    8 |      |      |    4 |          12 |
 | CarloToso       |      |      |      |      |      |      |      |      |   11 |          11 |
+| tabad           |      |      |      |      |      |      |      |      |   11 |          11 |
 | kilasuit        |      |      |      |      |    3 |    2 |    1 |    4 |    1 |          11 |
 | UberKluger      |      |      |      |      |      |    1 |    7 |    2 |      |          10 |
 | vors            |    1 |    6 |    2 |    1 |      |      |      |      |      |          10 |
+| matt9ucci       |      |      |    2 |    5 |      |      |    2 |      |    1 |          10 |
 | LaurentDardenne |      |      |    3 |    2 |      |      |      |    5 |      |          10 |
 
 <!-- Link references -->

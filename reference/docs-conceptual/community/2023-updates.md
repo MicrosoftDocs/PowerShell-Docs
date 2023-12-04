@@ -33,6 +33,30 @@ New content
   - [about Classes Methods](/powershell/module/microsoft.powershell.core/about/about_classes_methods)
   - [about Classes Properties](/powershell/module/microsoft.powershell.core/about/about_classes_properties)
 
+### Top Community Contributors
+
+GitHub stats
+
+- 37 PRs merged (7 from Community)
+- 32 issues opened (31 from Community)
+- 33 issues closed (31 Community issues closed)
+
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| jmiller76   |     2      |               |
+| VShrubowich |     1      |               |
+| TEBandCo    |     1      |               |
+| skycommand  |     1      |               |
+| darthwalsh  |     1      |               |
+| diecknet    |     1      |               |
+| tabad       |            |       7       |
+| mklement0   |            |       2       |
+| radkedan    |            |       2       |
+
 ## 2023-Oct
 
 New content
