@@ -16,7 +16,7 @@ to get started.
 Updated content
 
 - Updated release notes for PowerShell 7.4.0 GA
-  - [What's New in PowerShell 7.4 - PowerShell](powershell/scripting/whats-new/what-s-new-in-powershell-74)
+  - [What's New in PowerShell 7.4 - PowerShell](/powershell/scripting/whats-new/what-s-new-in-powershell-74)
   - [PowerShell Gallery - Microsoft.PowerShell.WhatsNew 0.5.4](https://www.powershellgallery.com/packages/Microsoft.PowerShell.WhatsNew)
   - [PowerShell SDK 7.4 reference - .NET API browser](/dotnet/api/?view=powershellsdk-7.4.0&preserve-view=true)
 - Retired Windows PowerShell content to archive site
