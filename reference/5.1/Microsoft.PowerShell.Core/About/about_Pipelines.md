@@ -1,7 +1,7 @@
 ---
 description: Combining commands into pipelines in the PowerShell
 Locale: en-US
-ms.date: 01/27/2022
+ms.date: 12/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Pipelines
@@ -20,7 +20,7 @@ to the next command.
 
 The output of the first command can be sent for processing as input to the
 second command. And that output can be sent to yet another command. The result
-is a complex command chain or _pipeline_ that is composed of a series of
+is a complex command chain or _pipeline_ that's composed of a series of
 simple commands.
 
 For example,
@@ -152,9 +152,9 @@ PS> ipconfig.exe | Select-String -Pattern 'IPv4'
 
 > [!IMPORTANT]
 > The **Success** and **Error** streams are similar to the stdin and stderr
-> streams of other shells. However, stdin is not connected to the PowerShell
+> streams of other shells. However, stdin isn't connected to the PowerShell
 > pipeline for input. For more information, see
-> [about_Redirection](about_Redirection.md).
+> [about_Redirection][07].
 
 With a bit of practice, you'll find that combining simple commands into
 pipelines saves time and typing, and makes your scripting more efficient.
@@ -260,8 +260,7 @@ suggest or force the PowerShell to bind to a specific parameter. The command
 fails if PowerShell can't bind the piped objects.
 
 For more information about troubleshooting binding errors, see
-[Investigating Pipeline Errors](#investigating-pipeline-errors) later in this
-article.
+[Investigating Pipeline Errors][02] later in this article.
 
 ### One-at-a-time processing
 
@@ -276,7 +275,7 @@ Get-Service | Format-Table -Property Name, DependentServices
 Functionally, this is like using the **InputObject** parameter of `Format-Table`
 to submit the object collection.
 
-For example, we can save the collection of services to a variable that is
+For example, we can save the collection of services to a variable that's
 passed using the **InputObject** parameter.
 
 ```powershell
@@ -296,14 +295,22 @@ use a command parameter, the objects are sent as a single array object. This
 minor difference has significant consequences.
 
 When executing a pipeline, PowerShell automatically enumerates any type that
-implements the `IEnumerable` interface and sends the members through the
-pipeline one at a time. The exception is `[hashtable]`, which requires a call
-to the `GetEnumerator()` method.
+implements the `IEnumerable` interface or its generic counterpart. Enumerated
+items are sent through the pipeline one at a time. PowerShell also enumerates
+[System.Data.DataTable][08] types through the `Rows` property.
 
-In the following examples, an array and a hashtable are piped to the `Measure-Object`
-cmdlet to count the number of objects received from the pipeline. The array
-has multiple members, and the hashtable has multiple key-value pairs. Only the
-array is enumerated one at a time.
+There are a few exceptions to automatic enumeration.
+
+- You must call the `GetEnumerator()` method for hash tables, types that
+  implement the `IDictionary` interface or its generic counterpart, and
+  **System.Xml.XmlNode** types.
+- The **System.String** class implements `IEnumerable`, however PowerShell
+  doesn't enumerate string objects.
+
+In the following examples, an array and a hashtable are piped to the
+`Measure-Object` cmdlet to count the number of objects received from the
+pipeline. The array has multiple members, and the hashtable has multiple
+key-value pairs. Only the array is enumerated one at a time.
 
 ```powershell
 @(1,2,3) | Measure-Object
@@ -357,8 +364,8 @@ NPM       AliasProperty  NPM = NonpagedSystemMemorySize
 
 However, if you use the **InputObject** parameter of `Get-Member`, then
 `Get-Member` receives an array of **System.Diagnostics.Process** objects as a
-single unit. It displays the properties of an array of objects. (Note the
-array symbol (`[]`) after the **System.Object** type name.)
+single unit. It displays the properties of an array of objects. (Note the array
+symbol (`[]`) after the **System.Object** type name.)
 
 For example,
 
@@ -393,8 +400,8 @@ one at a time.
 ## Using native commands in the pipeline
 
 PowerShell allows you to include native external commands in the pipeline.
-However, it is important to note that PowerShell's pipeline is object-oriented
-and does not support raw byte data.
+However, it's important to note that PowerShell's pipeline is object-oriented
+and doesn't support raw byte data.
 
 Piping or redirecting output from a native program that outputs raw byte data
 converts the output to .NET strings. This conversion can cause corruption of
@@ -408,10 +415,10 @@ and `>` operators provided by the native shell.
 When PowerShell can't associate the piped objects with a parameter of the
 receiving cmdlet, the command fails.
 
-In the following example, we try to move a registry entry from one registry
-key to another. The `Get-Item` cmdlet gets the destination path, which
-is then piped to the `Move-ItemProperty` cmdlet. The `Move-ItemProperty`
-command specifies the current path and name of the registry entry to be moved.
+In the following example, we try to move a registry entry from one registry key
+to another. The `Get-Item` cmdlet gets the destination path, which is then
+piped to the `Move-ItemProperty` cmdlet. The `Move-ItemProperty` command
+specifies the current path and name of the registry entry to be moved.
 
 ```powershell
 Get-Item -Path HKLM:\Software\MyCompany\sales |
@@ -473,7 +480,8 @@ COERCION
 ...
 ```
 
-Use the `Get-Help` cmdlet to view the attributes of the **Destination** parameter.
+Use the `Get-Help` cmdlet to view the attributes of the **Destination**
+parameter.
 
 ```Output
 Get-Help Move-ItemProperty -Parameter Destination
@@ -529,10 +537,10 @@ Move-ItemProperty -Destination HKLM:\Software\MyCompany\sales -Name product
 ## Intrinsic line continuation
 
 As already discussed, a pipeline is a series of commands connected by pipeline
-operators (`|`), usually written on a single line. However, for
-readability, PowerShell allows you to split the pipeline across multiple lines.
-When a pipe operator is the last token on the line, the PowerShell parser joins
-the next line to current command to continue the construction of the pipeline.
+operators (`|`), usually written on a single line. However, for readability,
+PowerShell allows you to split the pipeline across multiple lines. When a pipe
+operator is the last token on the line, the PowerShell parser joins the next
+line to current command to continue the construction of the pipeline.
 
 For example, the following single-line pipeline:
 
@@ -544,17 +552,25 @@ can be written as:
 
 ```powershell
 Command-1 |
-  Command-2 |
+    Command-2 |
     Command-3
 ```
 
-The leading spaces on the subsequent lines are not significant. The indentation
+The leading spaces on the subsequent lines aren't significant. The indentation
 enhances readability.
 
 ## See also
 
-- [about_Command_Syntax](about_command_syntax.md)
-- [about_ForEach](about_foreach.md)
-- [about_Objects](about_objects.md)
-- [about_Parameters](about_parameters.md)
-- [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
+- [about_Objects][05]
+- [about_Parameters][06]
+- [about_Command_Syntax][03]
+- [about_ForEach][04]
+
+<!-- link references -->
+[02]: #investigating-pipeline-errors
+[03]: about_command_syntax.md
+[04]: about_foreach.md
+[05]: about_objects.md
+[06]: about_parameters.md
+[07]: about_Redirection.md
+[08]: xref:System.Data.DataTable.Rows
