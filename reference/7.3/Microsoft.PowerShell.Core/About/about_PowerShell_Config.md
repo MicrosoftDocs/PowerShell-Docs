@@ -1,7 +1,7 @@
 ---
 description: Configuration files for PowerShell, replacing Registry configuration.
 Locale: en-US
-ms.date: 02/07/2023
+ms.date: 12/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PowerShell Config
@@ -325,7 +325,7 @@ the configuration is for all users, sets the **AllUsers** module path.
 
 If no value is set, PowerShell uses the default value for the respective module
 path setting. For more information about these defaults, see
-[about_Modules][03].
+[about_PSModulePath][03].
 
 This setting allows environment variables to be used by embedding them between
 `%` characters, like `"%HOME%\Documents\PowerShell\Modules"`, in the same way
@@ -444,7 +444,7 @@ Example:
 <!-- link references -->
 [01]: ./about_Execution_Policies.md
 [02]: ./about_Logging_Non-Windows.md
-[03]: ./about_Modules.md#module-and-dsc-resource-locations-and-psmodulepath
+[03]: ./about_PSModulePath.md
 [04]: /powershell/module/powershellget/install-module
 [05]: /powershell/scripting/learn/experimental-features
 [06]: #common-configuration-settings
