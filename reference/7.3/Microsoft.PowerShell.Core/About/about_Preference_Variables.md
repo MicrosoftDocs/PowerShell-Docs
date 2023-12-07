@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 11/30/2023
+ms.date: 12/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -976,27 +976,22 @@ preference variable is used by cmdlets that send email, such as the
 
 ## $PSModuleAutoloadingPreference
 
-Enables and disables automatic importing of modules in the session. **All** is
-the default. To import a module, get or use any command in the module. For
-example, use `Get-Command`. The `$PSModuleAutoloadingPreference` variable does
-not exist by default. The default behavior when the variable isn't defined is
-the same as `$PSModuleAutoloadingPreference = 'All'`.
+Enables and disables automatic importing of modules in the session. The
+`$PSModuleAutoloadingPreference` variable doesn't exist by default. The default
+behavior when the variable isn't defined is the same as
+`$PSModuleAutoloadingPreference = 'All'`.
 
-Regardless of the variable's value, you can use [Import-Module][44] to import a
-module.
+To automatically import a module, get or use a command contained in the module.
 
 The `$PSModuleAutoloadingPreference` variable takes one of the
-[`PSModuleAutoLoadingPreference`][59] enumeration values: **None**,
-**ModuleQualified**, or **All**.
+[`PSModuleAutoLoadingPreference`][58] enumeration values:
 
-Valid values are:
-
-- **All**: Modules are imported automatically on first-use.
-- **ModuleQualified**: Modules are imported automatically only when a user uses
+- `All`: Modules are imported automatically on first-use.
+- `ModuleQualified`: Modules are imported automatically only when a user uses
   the module-qualified name of a command in the module. For example, if the
   user types `MyModule\MyCommand`, PowerShell imports the **MyModule** module.
-- **None**: Automatic importing of modules is disabled in the session. To
-  import a module, use the `Import-Module` cmdlet.
+- `None`: Disables the automatic importing of modules. To import a module, use
+  the `Import-Module` cmdlet.
 
 For more information about automatic importing of modules, see
 [about_Modules][34].
@@ -1731,7 +1726,6 @@ At line:1 char:1
 [41]: about_Scopes.md
 [42]: about_Variables.md
 [43]: xref:Microsoft.PowerShell.Core.Enter-PSSession
-[44]: xref:Microsoft.PowerShell.Core.Import-Module
 [45]: xref:Microsoft.PowerShell.Core.Invoke-Command
 [46]: xref:Microsoft.PowerShell.Core.New-PSSession
 [47]: xref:Microsoft.PowerShell.Core.New-PSSessionOption
@@ -1746,7 +1740,6 @@ At line:1 char:1
 [56]: xref:System.Management.Automation.ConfirmImpact
 [57]: xref:System.Management.Automation.ErrorCategoryInfo
 [58]: xref:System.Management.Automation.ErrorView
-[59]: xref:System.Management.Automation.PSModuleAutoLoadingPreference
 [60]: xref:System.Management.Automation.PSStyle
 [61]: xref:System.Management.Automation.Remoting.PSSessionOption
 [62]: xref:System.Text.ASCIIEncoding
