@@ -18,9 +18,9 @@ variables, and aliases:
 
 - Snap-ins
 
-  Beginning in PowerShell 3.0 the Microsoft.PowerShell.Core snap-in is added to
-  every session by default. This is the only snap-in remaining in PowerShell.
-  All other snap-ins were converted to modules.
+  Beginning in PowerShell 3.0, the **Microsoft.PowerShell.Core** snap-in is
+  added to every session by default. This is the only snap-in remaining in
+  PowerShell. All other snap-ins were converted to modules.
 
 - Modules
 
@@ -34,7 +34,7 @@ PowerShell modules. For information about how to write PowerShell modules, see
 
 ## Install a published module
 
-A published module is a module that is available from a registered repository,
+A published module is a module that is available from a registerd repository,
 such as the PowerShell Gallery. The **PowerShellGet** and
 **Microsoft.PowerShell.PSResourceGet** modules provide cmdlets for finding,
 installing, and publishing PowerShell modules to a registered repository.
@@ -69,21 +69,23 @@ many Windows features include modules for managing the feature. Those modules
 get installed when the feature is installed. Other modules may come in an
 installer or setup program that installs the module.
 
-Use the following command to create a **Modules** directory for the current
-user:
+By default, the `Modules` folder for the current user doesn't exist. If you
+installed a module in the `CurrentUser` scope using `Install-Module` or
+`Install-PSResource`, those cmdlets create the `Modules` folder for the current
+user. If the folder doesn't exist, you can create it manually.
+
+Use the following command to create a `Modules` folder for the current user:
 
 ```powershell
-New-Item -Type Directory -Path $HOME\Documents\PowerShell\Modules
+$folder = New-Item -Type Directory -Path $HOME\Documents\WindowsPowerShell\Modules
 ```
 
-Copy the entire module folder into the Modules directory. You can use any
-method to copy the folder, including Windows Explorer and Cmd.exe, as well as
-PowerShell. In PowerShell use the `Copy-Item` cmdlet. For example, to copy the
-MyModule folder from `C:\ps-test\MyModule` to the Modules directory, type:
+Copy the entire module folder into the new created folder. In PowerShell use the
+`Copy-Item` cmdlet. For example, run the following command to copy the
+`MyModule` folder from `C:\PSTest` to the folder you just created:
 
 ```powershell
-Copy-Item -Path C:\ps-test\MyModule -Destination `
-    $HOME\Documents\PowerShell\Modules
+Copy-Item -Path C:\PSTest\MyModule -Destination $folder
 ```
 
 You can install a module in any location, but installing your modules in a

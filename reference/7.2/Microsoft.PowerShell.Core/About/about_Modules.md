@@ -18,7 +18,7 @@ variables, and aliases:
 
 - Snap-ins
 
-  Beginning in PowerShell 3.0 the **Microsoft.PowerShell.Core** snap-in is
+  Beginning in PowerShell 3.0, the **Microsoft.PowerShell.Core** snap-in is
   added to every session by default. This is the only snap-in remaining in
   PowerShell. All other snap-ins were converted to modules.
 
@@ -67,23 +67,25 @@ your computer before you can use it in PowerShell.
 PowerShell comes with several preinstalled modules. On Windows-based computers,
 many Windows features include modules for managing the feature. Those modules
 get installed when the feature is installed. Other modules may come in an
-installer or Setup program that installs the module.
+installer or setup program that installs the module.
 
-Use the following command to create a **Modules** directory for the current
-user:
+By default, the `Modules` folder for the current user doesn't exist. If you
+installed a module in the `CurrentUser` scope using `Install-Module` or
+`Install-PSResource`, those cmdlets create the `Modules` folder for the current
+user. If the folder doesn't exist, you can create it manually.
+
+Use the following command to create a `Modules` folder for the current user:
 
 ```powershell
-New-Item -Type Directory -Path $HOME\Documents\PowerShell\Modules
+$folder = New-Item -Type Directory -Path $HOME\Documents\PowerShell\Modules
 ```
 
-Copy the entire module folder into the Modules directory. You can use any
-method to copy the folder, including Windows Explorer and Cmd.exe, as well as
-PowerShell. In PowerShell use the `Copy-Item` cmdlet. For example, to copy the
-MyModule folder from `C:\ps-test\MyModule` to the Modules directory, type:
+Copy the entire module folder into the new created folder. In PowerShell use the
+`Copy-Item` cmdlet. For example, run the following command to copy the
+`MyModule` folder from `C:\PSTest` to the folder you just created:
 
 ```powershell
-Copy-Item -Path C:\ps-test\MyModule -Destination `
-    $HOME\Documents\PowerShell\Modules
+Copy-Item -Path C:\PSTest\MyModule -Destination $folder
 ```
 
 You can install a module in any location, but installing your modules in a
@@ -101,7 +103,7 @@ Module autoloading allows you to use commands in a module without any setup or
 profile configuration. There's no need to manage modules after you install them
 on your computer.
 
-Each of the following examples cause the CimCmdlets module, which contains
+Each of the following examples cause the **CimCmdlets** module, which contains
 `Get-CimInstance`, to be imported into your session.
 
 - Run the Command
@@ -143,14 +145,14 @@ automatic importing of modules. For more information, see
 
 Manually importing a module is required when a module isn't installed in the
 locations specified by the `$env:PSModulePath` environment variable, or when
-the module is provided as a standalone `.dll` or `.psm1` file, rather than an
+the module is provided as a standalone `.dll` or `.psm1` file, rather than a
 packaged module.
 
 You might also want to change how the module is imported in your session. For
 example, the **Prefix** parameter of `Import-Module` adds a distinctive prefix
 to the noun portion of the cmdlets imported from the module. The **NoClobber**
 parameter prevents the module from adding commands that would hide or replace
-existing commands in the session. Form more information, see
+existing commands in the session. For more information, see
 [Manage name conflicts][03].
 
 You can import a module that's installed in your `$env:PSModulePath` by
@@ -161,7 +163,7 @@ specifying the module name. For example, the following command imports the
 Import-Module BitsTransfer
 ```
 
-To import a module that isn't in your `$env:PSModulePath``, use the fully
+To import a module that isn't in your `$env:PSModulePath`, use the fully
 qualified path to the module folder. For example, to add the **TestCmdlets**
 module in the `C:\ps-test` directory to your session, type:
 
@@ -225,7 +227,7 @@ To find all commands in a module, type:
 Get-Command -Module <module-name>
 ```
 
-For example, to find the commands in the BitsTransfer module, type:
+For example, to find the commands in the **BitsTransfer** module, type:
 
 ```powershell
 Get-Command -Module BitsTransfer
