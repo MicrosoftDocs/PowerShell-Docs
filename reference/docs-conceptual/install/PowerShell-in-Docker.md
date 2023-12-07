@@ -20,7 +20,7 @@ Docker without `sudo` or local administrative rights. Please follow Docker's off
 The release containers derive from the official distribution image, then install dependencies, and
 finally install the PowerShell package.
 
-These containers live at [hub.docker.com/r/microsoft/powershell][05].
+These containers live at [Microsoft Artifact Registry][05].
 
 For more information about these Docker images, visit the [PowerShell-Docker][02] repository on
 GitHub.
@@ -46,7 +46,7 @@ docker rmi mcr.microsoft.com/powershell
 
 PowerShell is licensed under the [MIT license][03].
 
-### Windows Docker File and Image Licenses
+### Windows Docker file and image licenses
 
 By requesting and using the Container OS Image for Windows containers, you acknowledge, understand,
 and consent to the Supplemental License Terms available on Docker hub:
@@ -66,7 +66,7 @@ PowerShell from the installed location. The telemetry we collect falls under the
 [01]: https://docs.docker.com/engine/installation/
 [02]: https://github.com/PowerShell/PowerShell-Docker
 [03]: https://github.com/PowerShell/PowerShell/tree/master/LICENSE.txt
-[04]: https://hub.docker.com/r/microsoft/nanoserver/
-[05]: https://hub.docker.com/r/microsoft/powershell/
-[06]: https://hub.docker.com/r/microsoft/windowsservercore/
+[04]: https://mcr.microsoft.com/product/windows/nanoserver
+[05]: https://mcr.microsoft.com/product/powershell
+[06]: https://mcr.microsoft.com/product/windows/servercore
 [07]: https://privacy.microsoft.com/privacystatement/
