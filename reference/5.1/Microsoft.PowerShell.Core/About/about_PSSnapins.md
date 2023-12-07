@@ -15,8 +15,8 @@ Describes  Windows PowerShell snap-ins and shows how to use and manage them.
 ## Long description
 
 A Windows PowerShell snap-in is a Microsoft .NET Framework assembly that can
-contains Windows PowerShell providers and cmdlets. Windows PowerShell includes
-a set of basic snap-ins, but you can extend the power and value of Windows
+contain Windows PowerShell providers and cmdlets. Windows PowerShell includes a
+set of basic snap-ins, but you can extend the power and value of Windows
 PowerShell by adding snap-ins that contain providers and cmdlets that you
 create or get from others.
 
@@ -125,7 +125,7 @@ session.
 ## Remove a snap-in
 
 To remove a Windows PowerShell snap-in from the current session, use the
-Remove-PsSnapin cmdlet. For example, to remove the SQL Server snap-in from the
+`Remove-PsSnapin` cmdlet. For example, to remove the SQL Server snap-in from the
 current session, type:
 
 ```powershell

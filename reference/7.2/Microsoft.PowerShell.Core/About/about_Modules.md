@@ -18,9 +18,9 @@ variables, and aliases:
 
 - Snap-ins
 
-  Beginning in PowerShell 3.0 the Microsoft.PowerShell.Core snap-in is added to
-  every session by default. This is the only snap-in remaining in PowerShell.
-  All other snap-ins were converted to modules.
+  Beginning in PowerShell 3.0 the **Microsoft.PowerShell.Core** snap-in is
+  added to every session by default. This is the only snap-in remaining in
+  PowerShell. All other snap-ins were converted to modules.
 
 - Modules
 
