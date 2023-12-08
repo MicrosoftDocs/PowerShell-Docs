@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 02/27/2023
+ms.date: 12/08/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Non-Windows
@@ -24,7 +24,44 @@ The location of PowerShell logs is dependent on the target platform.
   **syslog** server. For more information, see the `man` pages for your Linux
   distribution.
 - On macOS, Apple's unified logging system is used. For more information, see
-  [Apple's developer documentation on logging][03].
+  [Apple's developer documentation on logging][01].
+
+PowerShell supports configuring two categories of logging:
+
+- Module logging - Record the pipeline execution events for members of
+  specified modules. Module logging must be enabled for both the session and
+  specific modules. For more information about configuring this logging, see
+  [about_PowerShell_Config][02].
+
+  If module logging is enabled through configuration, you can enable and
+  disable logging for specific modules in a session by setting the value of the
+  **LogPipelineExecutionDetails** property of the module.
+
+  For example, to enable module logging for the **PSReadLine** module:
+
+  ```powershell
+  $psrl = Get-Module PSReadLine
+  $psrl.LogPipelineExecutionDetails = $true
+  Get-Module PSReadline | Select-Object Name, LogPipelineExecutionDetails
+  ```
+
+  ```Output
+  Name       LogPipelineExecutionDetails
+  ----       ---------------------------
+  PSReadLine                        True
+  ```
+
+- Script block logging - Record the processing of commands, script blocks,
+  functions, and scripts whether invoked interactively, or through automation.
+
+  When you enable Script Block Logging, PowerShell records the content of all
+  script blocks that it processes. Once enabled, any new PowerShell session
+  logs this information.
+
+  > [!NOTE]
+  > It's recommended to enable Protected Event Logging, when using Script Block
+  > Logging for anything other than diagnostics purposes. For more information,
+  > see [about_PowerShell_Config][03].
 
 ## Configuring logging on Linux or macOS
 
@@ -43,18 +80,18 @@ The following code is an example configuration:
 
 ```json
 {
-  "ScriptBlockLogging": {
-    "EnableScriptBlockInvocationLogging": true,
-    "EnableScriptBlockLogging": true
-  },
-  "ModuleLogging": {
-    "EnableModuleLogging": false,
-    "ModuleNames": [
-      "PSReadLine",
-      "PowerShellGet"
-    ]
-  },
-  "LogLevel": "verbose"
+    "ModuleLogging": {
+        "EnableModuleLogging": false,
+        "ModuleNames": [
+            "PSReadLine",
+            "PowerShellGet"
+        ]
+    },
+    "ScriptBlockLogging": {
+        "EnableScriptBlockInvocationLogging": true,
+        "EnableScriptBlockLogging": true
+    },
+    "LogLevel": "verbose"
 }
 ```
 
@@ -84,6 +121,10 @@ value.
   - Description: Keywords provide the ability to limit logging to specific
     components within PowerShell. By default, all keywords are enabled and
     change this value is only useful for specialized troubleshooting.
+- **PowerShellPolicies**
+  - Description: The **PowerShellPolicies** setting contains the
+    **ModuleLogging**, **ProtectedEventLogging**, and **ScriptBlockLogging**
+    options. For more information, see [Common configuration settings][04].
 
 ## Viewing PowerShell log data in journald on Linux
 
@@ -328,22 +369,25 @@ For more information, run `log show --help` to view the help for the `log show`
 command.
 
 You may also want to consider saving the logs to a more secure location such as
-[Security Information and Event Management (SIEM)][04] aggregator. Using
+[Security Information and Event Management (SIEM)][06] aggregator. Using
 Microsoft Defender for Cloud Apps, you can set up SIEM in Azure. For more
-information, see [Generic SIEM integration][01].
+information, see [Generic SIEM integration][07].
 
 ## See also
 
 - For Linux **syslog** and **rsyslog.conf** information, refer to the Linux
   computer's local `man` pages
 - For macOS **logging** information, see
-  [Apple's developer documentation on logging][03]
-- For Windows, see [about_Logging_Windows][02]
-- [Generic SIEM integration][01]
+  [Apple's developer documentation on logging][01]
+- For Windows, see [about_Logging_Windows][08]
+- [Generic SIEM integration][07]
 
 <!-- link references -->
-[01]: /defender-cloud-apps/siem
-[02]: about_Logging_Windows.md
-[03]: https://developer.apple.com/documentation/os/logging
-[04]: https://wikipedia.org/wiki/Security_information_and_event_management
+[01]: https://developer.apple.com/documentation/os/logging
+[02]: about_PowerShell_Config.md#modulelogging
+[03]: about_PowerShell_Config.md#protectedeventlogging
+[04]: about_PowerShell_Config.md#common-configuration-settings
 [05]: https://support.apple.com/guide/console/log-messages-cnsl1012/mac
+[06]: https://wikipedia.org/wiki/Security_information_and_event_management
+[07]: /defender-cloud-apps/siem
+[08]: about_Logging_Windows.md
