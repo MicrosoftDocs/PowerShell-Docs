@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/25/2023
+ms.date: 12/11/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Random
@@ -46,14 +46,16 @@ You can use the parameters of `Get-Random` to specify the minimum and maximum va
 objects returned from a collection, or a seed number.
 
 > [!CAUTION]
-> This seed value is used for the current command and for all subsequent `Get-Random` commands in
-> the current session until you use **SetSeed** again or close the session. You can't reset the seed
-> to its default value.
+> `Get-Random` doesn't ensure cryptographically secure randomness. The seed value is used for the
+> current command and for all subsequent `Get-Random` commands in the current session until you use
+> **SetSeed** again or close the session. You can't reset the seed to its default value.
 >
 > Deliberately setting the seed results in non-random, repeatable behavior. It should only be used
 > when trying to reproduce behavior, such as when debugging or analyzing a script that includes
 > `Get-Random` commands. Be aware that the seed value could be set by other code in the same
 > session, such as an imported module.
+>
+> PowerShell 7.4 includes `Get-SecureRandom`, which ensures cryptographically secure randomness.
 
 ## EXAMPLES
 
@@ -180,7 +182,7 @@ Get-Random -Maximum 100
 ```
 
 ```powershell
-# Commands with the same seed are not random
+# Commands with the same seed aren't random
 Get-Random -Maximum 100 -SetSeed 23
 Get-Random -Maximum 100 -SetSeed 23
 Get-Random -Maximum 100 -SetSeed 23
