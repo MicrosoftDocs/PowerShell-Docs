@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/16/2023
+ms.date: 12/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -337,30 +337,38 @@ name. The **ThrottleLimit** parameter ensures that all five script blocks run at
 This example creates a job that runs a script block in parallel, two at a time.
 
 ```powershell
-$job = 1..10 | ForEach-Object -Parallel {
+PS> $job = 1..10 | ForEach-Object -Parallel {
     "Output: $_"
     Start-Sleep 1
 } -ThrottleLimit 2 -AsJob
 
-$job | Receive-Job -Wait
+PS> $job
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location      Command
+--     ----            -------------   -----         -----------     --------      -------
+23     Job23           PSTaskJob       Running       True            PowerShell    …
+
+PS> $job.ChildJobs
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location      Command
+--     ----            -------------   -----         -----------     --------      -------
+24     Job24           PSTaskChildJob  Completed     True            PowerShell    …
+25     Job25           PSTaskChildJob  Completed     True            PowerShell    …
+26     Job26           PSTaskChildJob  Running       True            PowerShell    …
+27     Job27           PSTaskChildJob  Running       True            PowerShell    …
+28     Job28           PSTaskChildJob  NotStarted    False           PowerShell    …
+29     Job29           PSTaskChildJob  NotStarted    False           PowerShell    …
+30     Job30           PSTaskChildJob  NotStarted    False           PowerShell    …
+31     Job31           PSTaskChildJob  NotStarted    False           PowerShell    …
+32     Job32           PSTaskChildJob  NotStarted    False           PowerShell    …
+33     Job33           PSTaskChildJob  NotStarted    False           PowerShell    …
 ```
 
-```Output
-Output: 1
-Output: 2
-Output: 3
-Output: 4
-Output: 5
-Output: 6
-Output: 7
-Output: 8
-Output: 9
-Output: 10
-```
-
-the `$job` variable receives the job object that collects output data and monitors running state.
-The job object is piped to `Receive-Job` with the **Wait** switch parameter, which streams output to
-the console as if `ForEach-Object -Parallel` was run without **AsJob**.
+The **ThrottleLimit** parameter limits the number of parallel script blocks running at a time. The
+**AsJob** parameter causes the `ForEach-Object` cmdlet to return a job object instead of streaming
+output to the console. The `$job` variable receives the job object that collects output data and
+monitors running state. The `$job.ChildJobs` property contains the child jobs that run the parallel
+script blocks.
 
 ### Example 14: Using thread safe variable references
 
