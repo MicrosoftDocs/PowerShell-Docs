@@ -16,7 +16,8 @@ Converts a JSON-formatted string to a custom object or a hash table.
 ## SYNTAX
 
 ```
-ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-Depth <Int32>] [-NoEnumerate] [<CommonParameters>]
+ConvertFrom-Json [-InputObject] <String> [-AsHashtable]
+  [-DateKind <JsonDateKind>] [-Depth <Int32>] [-NoEnumerate] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -163,6 +164,47 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DateKind
+
+Specifies the method used when parsing date time values in the JSON string. The acceptable values for this parameter are:
+
+- `Default`
+- `Local`
+- `Utc`
+- `Offset`
+- `String`
+
+`Default` will convert the value as a `[datetime]` instance with a `Kind` property set as follows:
+
+- `Unspecified`, if there is no time zone information in the input string.
+- `Utc`, if the time zone information is a trailing `Z`.
+- `Local`, if the time zone information is given as a trailing UTC _offset_ like `+02:00`. The
+  offset is properly converted to the caller's configured time zone. The default output formatting
+  doesn't indicate the original time zone offset.
+
+`Local` will convert the value as a `[datetime]` instance with a `Kind` property set as `Local`. If a timezone offset was in the converted string the **DateTime** value will be converted to the equivalent local time.
+
+`Utc` will convert the value as a `[datetime]` instance with a `Kind` property set as `Utc`.
+
+`Offset` will convert the value as a `[DateTimeOffset]` instance with the timezone offset of the original string preserved in that instance. If the raw string did not contain a timezone offset, the **DateTimeOffset** value will be specified in the local timezone.
+
+`String` will preserve the value as a `[string]` instance. This ensures the value is round-trippable and any custom parsing logic not exposed by the other `-DateKind` options can be applied to the raw string value.
+
+This parameter was introduced in PowerShell 7.5.
+
+```yaml
+Type: Microsoft.PowerShell.Commands.JsonDateKind
+Parameter Sets: (All)
+Aliases:
+Accepted values: Default, Local, Utc, Offset, String
+
+Required: False
+Position: Named
+Default value: Default
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Depth
 
 Gets or sets the maximum depth the JSON input is allowed to have. The default is 1024.
@@ -246,14 +288,7 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 This cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
 
 Beginning in PowerShell 6, `ConvertTo-Json` attempts to convert strings formatted as timestamps to
-**DateTime** values. The converted value is a `[datetime]` instance with a `Kind` property set as
-follows:
-
-- `Unspecified`, if there is no time zone information in the input string.
-- `Utc`, if the time zone information is a trailing `Z`.
-- `Local`, if the time zone information is given as a trailing UTC _offset_ like `+02:00`. The
-  offset is properly converted to the caller's configured time zone. The default output formatting
-  doesn't indicate the original time zone offset.
+**DateTime** values. See the `-DateKind` parameter for more information on the default rules for this conversion.
 
 The **PSObject** type maintains the order of the properties as presented in the JSON string.
 Beginning with PowerShell 7.3, The **AsHashtable** parameter creates an **OrderedHashtable**. The
