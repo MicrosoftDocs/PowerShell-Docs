@@ -389,7 +389,7 @@ as a **NoteProperty** to every outputted object.
 > [!WARNING]
 > If you receive an error that a property can't be processed because a property with that name
 > already exists, consider the following. Note that when using **ExpandProperty**, `Select-Object`
-> can not replace an existing property. This means:
+> can't replace an existing property. This means:
 >
 > - If the expanded object has a property of the same name, the command returns an error.
 > - If the _Selected_ object has a property of the same name as an _Expanded_ object's property, the

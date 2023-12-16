@@ -64,7 +64,7 @@ When you are defining a selection condition, the following requirements apply:
 - The selection condition can specify any number of .NET types or selection sets, but cannot specify
   both.
 
-For more information about how to use selection conditions, see [Defining Conditions for Diplaying Data](./defining-conditions-for-displaying-data.md).
+For more information about how to use selection conditions, see [Defining Conditions for Displaying Data](./defining-conditions-for-displaying-data.md).
 
 For more information about other components of a wide view, see [Wide View](./creating-a-wide-view.md).
 

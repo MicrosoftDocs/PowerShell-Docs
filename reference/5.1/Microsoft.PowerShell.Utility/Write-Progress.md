@@ -100,7 +100,7 @@ $Events | ForEach-Object -Begin {
     Clear-Host
     # Set the $i counter variable to zero.
     $i = 0
-    # Set the $out variable to a empty string.
+    # Set the $out variable to an empty string.
     $out = ""
 } -Process {
     # In the Process script block search the message property of each incoming object for "bios".

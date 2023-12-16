@@ -144,7 +144,7 @@ rightmost part of a command is the noun part. A noun can be anything.
    This example lists all commands that use the verb `Get`.
 
 - **Filter on noun**. In the command `Get-Process`, the noun part is `Process`. To filter on the
-  noun, use the **Noun** parameter. The following example returns all cmdlets the have nouns
+  noun, use the **Noun** parameter. The following example returns all cmdlets that have nouns
   starting with the letter `U`.
 
    ```powershell

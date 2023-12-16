@@ -186,7 +186,7 @@ The object type depends on the variable.
 When you specify the **ValueOnly** parameter and the specified variable's value is a collection,
 this cmdlet returns a `[System.Object[]]`. This behavior prevents normal pipeline operation from
 processing the variable's values one at a time. A workaround to force collection enumeration is to
-enclose the `Get-Variable` command in parenthesis.
+enclose the `Get-Variable` command in parentheses.
 
 ## NOTES
 

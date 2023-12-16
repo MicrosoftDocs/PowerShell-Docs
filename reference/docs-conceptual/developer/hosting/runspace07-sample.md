@@ -65,7 +65,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
       Collection<PSObject> result;     // Will hold the result
                                        // of running the cmdlets.
 
-      // Create a runspace. We can not use the RunspaceInvoke class
+      // Create a runspace. We can't use the RunspaceInvoke class
       // because we need to get at the underlying runspace to
       // explicitly add the commands. Notice that no PSHost object is
       // supplied to the CreateRunspace method so the default host is
