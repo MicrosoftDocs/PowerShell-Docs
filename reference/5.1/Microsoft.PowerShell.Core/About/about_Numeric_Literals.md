@@ -198,7 +198,7 @@ supported. Those additional formats are not recognized as literals.
 
 ### Commands that look like numeric literals
 
-Any command that looks like a numeric literal must be executed using the the
+Any command that looks like a numeric literal must be executed using the
 call operator (`&`), otherwise it is interpreted as a number of the associated
 type.
 

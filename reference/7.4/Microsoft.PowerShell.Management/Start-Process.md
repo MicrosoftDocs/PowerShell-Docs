@@ -589,7 +589,7 @@ from any command-line shell, like PowerShell. Usually you run the command exactl
 only be used when you need to control how the command is executed.
 
 `Start-Process` is useful for running GUI programs on non-Windows platforms. For example, run
-`Start-Proces gedit` to launch the graphical text editor common the GNOME Desktop environments.
+`Start-Process gedit` to launch the graphical text editor common the GNOME Desktop environments.
 
 By default, `Start-Process` launches a process _asynchronously_. Control is instantly returned to
 PowerShell even if the new process is still running.
