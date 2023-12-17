@@ -358,7 +358,7 @@ ContinueForEach1:
 
 #Region "PowerShell snap-in" '
     ''' <summary>
-    ''' Create this sample as an PowerShell snap-in
+    ''' Create this sample as a PowerShell snap-in
     ''' </summary>
     <RunInstaller(True)> _
     Public Class GetProcPSSnapIn05

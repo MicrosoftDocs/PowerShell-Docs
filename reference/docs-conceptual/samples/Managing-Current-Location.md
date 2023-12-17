@@ -122,7 +122,7 @@ sl -Path HKLM:\SOFTWARE -PassThru
 ## Saving and recalling recent locations (Push-Location and Pop-Location)
 
 When changing locations, it's helpful to keep track of where you have been and to be able to return
-to your previous location. The `Push-Location` cmdlet in PowerShell creates a ordered history (a
+to your previous location. The `Push-Location` cmdlet in PowerShell creates an ordered history (a
 "stack") of directory paths where you have been, and you can step back through the history of
 directory paths using the `Pop-Location` cmdlet.
 
@@ -194,7 +194,7 @@ Path
 C:\Documents and Settings\PowerUser
 ```
 
-You can also use the Location cmdlets with network paths. If you have a server named FS01 with an
+You can also use the Location cmdlets with network paths. If you have a server named FS01 with a
 share named Public, you can change your location by typing
 
 ```powershell

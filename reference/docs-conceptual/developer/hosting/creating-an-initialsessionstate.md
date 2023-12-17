@@ -8,7 +8,7 @@ title: Creating an InitialSessionState
 
 PowerShell commands run in a runspace.
 To host PowerShell in your application, you must create a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
-Every runspace has an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.
+Every runspace has a [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object associated with it.
 The InitialSessionState specifies characteristics of the runspace, such as which commands, variables, and modules are available for that runspace.
 
 ## Create a default InitialSessionState

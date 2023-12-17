@@ -102,7 +102,7 @@ properties.
 #### Use Consistent Parameter Types
 
 When the same parameter is used by multiple cmdlets, always use the same parameter type. For
-example, if the `Process` parameter is an [System.Int16](/dotnet/api/System.Int16) type for one
+example, if the `Process` parameter is a [System.Int16](/dotnet/api/System.Int16) type for one
 cmdlet, do not make the `Process` parameter for another cmdlet a
 [System.Uint16](/dotnet/api/System.UInt16) type.
 

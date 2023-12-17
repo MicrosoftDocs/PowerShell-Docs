@@ -79,7 +79,7 @@ following scripting example.
 # Clear the Add-ons menu if any entries currently exist
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
-# Add an Add-ons menu item with an shortcut and fast access key.
+# Add an Add-ons menu item with a shortcut and fast access key.
 # Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
