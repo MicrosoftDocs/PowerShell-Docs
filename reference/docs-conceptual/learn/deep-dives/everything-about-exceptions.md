@@ -336,7 +336,7 @@ It's important to realize that exceptions can inherit from other exceptions. In 
 `FileNotFoundException` inherits from `IOException`. So if the `IOException` was first, then it
 would get called instead. Only one catch block is invoked even if there are multiple matches.
 
-If we had a `System.IO.PathTooLongException`, the `IOException` would match but if we had a
+If we had a `System.IO.PathTooLongException`, the `IOException` would match but if we had an
 `InsufficientMemoryException` then nothing would catch it and it would propagate up the stack.
 
 ### Catch multiple types at once

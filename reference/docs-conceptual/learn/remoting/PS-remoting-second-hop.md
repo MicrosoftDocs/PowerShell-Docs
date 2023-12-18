@@ -318,7 +318,7 @@ You can pass credentials inside the **ScriptBlock** parameter of a call to the
 
 ### Example
 
-The following example shows how to pass credentials in an  script block:
+The following example shows how to pass credentials in a script block:
 
 ```powershell
 # This works without delegation, passing fresh creds

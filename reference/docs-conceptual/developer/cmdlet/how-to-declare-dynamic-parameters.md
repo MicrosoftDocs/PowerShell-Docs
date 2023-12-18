@@ -96,7 +96,7 @@ namespace SendGreeting
    }
    private SendGreetingCommandDynamicParameters context;
 
-    // Overide the ProcessRecord method to process the
+    // Override the ProcessRecord method to process the
     // supplied user name and write out a greeting to
     // the user by calling the WriteObject method.
     protected override void ProcessRecord()

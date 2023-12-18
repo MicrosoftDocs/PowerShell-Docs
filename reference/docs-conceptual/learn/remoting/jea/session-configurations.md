@@ -16,7 +16,7 @@ To register a JEA endpoint, you must specify how that endpoint is configured. Th
 to consider. The most important options are:
 
 - Who has access to the JEA endpoint
-- Which roles they be assigned
+- Which roles they may be assigned
 - Which identity JEA uses under the covers
 - The name of the JEA endpoint
 

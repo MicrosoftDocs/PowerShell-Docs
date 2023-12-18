@@ -68,7 +68,7 @@ of this functionality that is provided by Windows PowerShell.
 To get access to the data store, the provider must implement the methods of the
 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)
 base class. For more information about implementing these methods, see
-[Creating an Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
+[Creating a Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
 
 To manipulate the items of a data store, such as getting, setting, and clearing items, the provider
 must implement the methods provided by the
