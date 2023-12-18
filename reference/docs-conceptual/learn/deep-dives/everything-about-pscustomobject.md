@@ -345,7 +345,7 @@ Update-TypeData @TypeData
 ```
 
 You can do this before your object is created or after and it will still work. This is what makes
-this different then using `Add-Member` with a script property. When you use `Add-Member` the way I
+this different than using `Add-Member` with a script property. When you use `Add-Member` the way I
 referenced earlier, it only exists on that specific instance of the object. This one applies to all
 objects with this `TypeName`.
 

@@ -356,7 +356,7 @@ c:\scripts\sample.ps1
 
 A script file must have a `.ps1` file extension to be executable. Files that
 have spaces in their path must be enclosed in quotes. If you try to execute the
-quoted path, PowerShell displays the contents of the quoted string in stead of
+quoted path, PowerShell displays the contents of the quoted string instead of
 running the script. The call operator (`&`) allows you to execute the contents
 of the string containing the filename.
 

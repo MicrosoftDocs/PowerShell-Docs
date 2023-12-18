@@ -48,7 +48,7 @@ wget -q https://packages.microsoft.com/config/debian/$VERSION_ID/packages-micros
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
 
-# Delete the the Microsoft repository GPG keys file
+# Delete the Microsoft repository GPG keys file
 rm packages-microsoft-prod.deb
 
 # Update the list of packages after we added packages.microsoft.com
@@ -77,7 +77,7 @@ The link to the current version is:
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.17/powershell_7.2.17-1.deb_amd64.deb`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
-change the URL to download a the version of PowerShell you want to install.
+change the URL to download the version of PowerShell that you want to install.
 
 ```sh
 ###################################

@@ -82,7 +82,7 @@ members as well as any type-based extended members.
 
 The **PSObject** object provides the following mechanisms:
 
-- The ability to construct an **PSObject** with or without a base-object.
+- The ability to construct a **PSObject** with or without a base-object.
 - The ability to access of all members of each constructed **PSObject** object through a common
   lookup algorithm and the ability to override that algorithm when required.
 - The ability to get and set the type-names of the constructed **PSObject** objects so that scripts
@@ -117,7 +117,7 @@ extended-members with other **PSObject** objects of the same type-name.
   on a supplied object.
 
   If the supplied object is of type System.Object, the supplied object is used as the base-object
-  for the new **PSObject** object. If the supplied object is already an **PSObject** object, the
+  for the new **PSObject** object. If the supplied object is already a **PSObject** object, the
   supplied object is returned as is.
 
 ### Base, adapted, and extended members
@@ -142,7 +142,7 @@ are accessed through the Members property.
 #### Extended members
 
 In addition to the members made available from the base-object or those adapted members created by
-PowerShell, an **PSObject** may also define extended members that extend the original base-object
+PowerShell, a **PSObject** may also define extended members that extend the original base-object
 with additional information that is useful in the scripting environment.
 
 For example, all the core cmdlets provided by PowerShell, such as the Get-Content and Set-Content

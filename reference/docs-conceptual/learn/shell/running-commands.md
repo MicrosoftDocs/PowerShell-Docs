@@ -82,11 +82,11 @@ PowerShell also has several more output streams than other shells. The `bash` an
 have **stdout** and **stderr**. PowerShell has six output streams. For more information, see
 [about_Redirection][4] and [about_Output_Streams][5].
 
-In general, the output sent to **stdout** by an native command is sent to the **Success** stream in
-PowerShell. Output sent to **stderr** by an native command is sent to the **Error** stream in
+In general, the output sent to **stdout** by a native command is sent to the **Success** stream in
+PowerShell. Output sent to **stderr** by a native command is sent to the **Error** stream in
 PowerShell.
 
-When an native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
+When a native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
 `$?` is set to `$true`.
 
 However, this changed in PowerShell 7.2. Error records redirected from native commands, like when
@@ -112,7 +112,7 @@ the PowerShell scripting language itself.
 The PowerShell **call operator** (`&`) lets you run commands that are stored in variables and
 represented by strings or script blocks. You can use this to run any native command or PowerShell
 command. This is useful in a script when you need to dynamically construct the command-line
-parameters for an native command. For more information, see the [call operator][7].
+parameters for a native command. For more information, see the [call operator][7].
 
 The `Start-Process` cmdlet can be used to run native commands, but should only be used when you need
 to control how the command is executed. The cmdlet has parameters to support the following

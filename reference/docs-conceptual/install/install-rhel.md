@@ -81,7 +81,7 @@ The link to the current version is:
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.17/powershell-7.2.17-1.rh.x86_64.rpm`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
-change the URL to download a the version of PowerShell you want to install.
+change the URL to download the version of PowerShell that you want to install.
 
 On RHEL 8 or 9:
 

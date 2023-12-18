@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/22/2023
+ms.date: 12/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resolve-Path
@@ -18,27 +18,15 @@ Resolves the wildcard characters in a path, and displays the path contents.
 ### Path (Default)
 
 ```
-Resolve-Path [-Path] <string[]> [-Relative] [-Credential <pscredential>] [<CommonParameters>]
-```
-
-### PathWithRelativeBase
-
-```
-Resolve-Path [-Path] <string[]> -RelativeBasePath <string> [-Credential <pscredential>]
- [<CommonParameters>]
+Resolve-Path [-Path] <string[]> [-Relative] [-RelativeBasePath <string>]
+ [-Credential <pscredential>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Resolve-Path -LiteralPath <string[]> [-Relative] [-Credential <pscredential>] [<CommonParameters>]
-```
-
-### LiteralPathWithRelativeBase
-
-```
-Resolve-Path -LiteralPath <string[]> -RelativeBasePath <string> [-Credential <pscredential>]
- [<CommonParameters>]
+Resolve-Path -LiteralPath <string[]> [-Relative] [-RelativeBasePath <string>]
+ [-Credential <pscredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,7 +43,7 @@ The tilde character (`~`) is shorthand notation for the current user's home fold
 shows `Resolve-Path` returning the fully qualified path value.
 
 ```powershell
-PS C:\> Resolve-Path ~
+Resolve-Path ~
 ```
 
 ```Output
@@ -67,7 +55,7 @@ C:\Users\User01
 ### Example 2: Resolve the path of the Windows folder
 
 ```powershell
-PS C:\> Resolve-Path -Path "windows"
+Resolve-Path -Path "windows"
 ```
 
 ```Output
@@ -82,7 +70,7 @@ the `C:` drive.
 ### Example 3: Get all paths in the Windows folder
 
 ```powershell
-PS C:\> "C:\windows\*" | Resolve-Path
+"C:\windows\*" | Resolve-Path
 ```
 
 This command returns all the files and folders in the `C:\Windows` folder. The command uses a
@@ -91,7 +79,7 @@ pipeline operator (`|`) to send a path string to `Resolve-Path`.
 ### Example 4: Resolve a UNC path
 
 ```powershell
-PS C:\> Resolve-Path -Path "\\Server01\public"
+Resolve-Path -Path "\\Server01\public"
 ```
 
 This command resolves a Universal Naming Convention (UNC) path and returns the shares in the path.
@@ -99,7 +87,7 @@ This command resolves a Universal Naming Convention (UNC) path and returns the s
 ### Example 5: Get relative paths
 
 ```powershell
-PS C:\> Resolve-Path -Path "c:\prog*" -Relative
+Resolve-Path -Path "c:\prog*" -Relative
 ```
 
 ```Output
@@ -117,33 +105,22 @@ Using **LiteralPath** causes the brackets to be treated as normal characters rat
 expression.
 
 ```powershell
-PS C:\> Resolve-Path -LiteralPath 'test[xml]'
+Resolve-Path -LiteralPath 'test[xml]'
 ```
 
 ### Example 7: Resolve a path relative to another folder
 
 This example uses the **RelativeBasePath** parameter to resolve the path of the `pwsh` executable
-relative to `$env:TEMP`, returning the **System.Management.Automation.PathInfo** object for the
-resolved path. When the command includes the **Relative** switch parameter, it returns a **String**
-representing the relative path from `$env:TEMP` to the `pwsh` executable.
+relative to `$env:TEMP`. When the command includes the **Relative** switch parameter, it returns a
+**String** representing the relative path from `$env:TEMP` to the `pwsh` executable.
 
 ```powershell
 $ExecutablePath = Get-Command -Name pwsh | Select-Object -ExpandProperty Source
-Resolve-Path -Path $ExecutablePath -RelativeBasePath $env:TEMP
-```
-
-```Output
-Path
-----
-C:\Program Files\PowerShell\7-preview\pwsh.exe
-```
-
-```powershell
 Resolve-Path -Path $ExecutablePath -RelativeBasePath $env:TEMP -Relative
 ```
 
 ```Output
-..\..\..\..\..\Program Files\PowerShell\7-preview\pwsh.exe
+..\..\..\..\..\Program Files\PowerShell\7\pwsh.exe
 ```
 
 ## PARAMETERS
@@ -163,6 +140,7 @@ This parameter is not supported by any providers installed with PowerShell.
 Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
 Aliases:
+Accepted values:
 
 Required: False
 Position: Named
@@ -180,8 +158,9 @@ any characters as escape sequences.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: LiteralPath, LiteralPathWithRelativeBase
+Parameter Sets: LiteralPath
 Aliases: PSPath, LP
+Accepted values:
 
 Required: True
 Position: Named
@@ -197,8 +176,9 @@ string to `Resolve-Path`. Wildcard characters are permitted.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: Path, PathWithRelativeBase
+Parameter Sets: Path
 Aliases:
+Accepted values:
 
 Required: True
 Position: 0
@@ -215,10 +195,11 @@ Indicates that this cmdlet returns a relative path.
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: Path, LiteralPath
 Aliases:
+Accepted values:
 
-Required: False
+Required: True (None) False (Path, LiteralPath)
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -235,10 +216,11 @@ This parameter was added in PowerShell 7.4.
 
 ```yaml
 Type: System.String
-Parameter Sets: PathWithRelativeBase, LiteralPathWithRelativeBase
+Parameter Sets: (All)
 Aliases:
+Accepted values:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -53,7 +53,7 @@ the other letters from "a" through "f."
 
 ## Handling Literal Characters in Wildcard Patterns
 
-If the wildcard pattern you specify contains literal characters that should not be interpretted as
+If the wildcard pattern you specify contains literal characters that should not be interpreted as
 wildcard characters, use the backtick character (`` ` ``) as an escape character. When you specify
 literal characters int the PowerShell API, use a single backtick. When you specify literal
 characters at the PowerShell command prompt, use two backticks.

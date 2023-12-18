@@ -18,7 +18,7 @@ The [System.Management.Automation.Cmdlet.Invoke*](/dotnet/api/System.Management.
 This variant invokes the cmdlet object and returns a collection of "T" type objects.
 
 [System.Management.Automation.Cmdlet.Invoke](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)
-This variant invokes the cmdlet object and returns a strongly typed emumerator. This variant allows the user to use the objects in the collection to perform custom operations.
+This variant invokes the cmdlet object and returns a strongly typed enumerator. This variant allows the user to use the objects in the collection to perform custom operations.
 
 ## Examples
 

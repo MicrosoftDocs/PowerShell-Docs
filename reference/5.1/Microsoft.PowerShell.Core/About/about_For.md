@@ -62,7 +62,7 @@ The following syntaxes are supported for multiple assignment operations in the
 **Init** statement:
 
 ```powershell
-# Comma separated assignment expressions enclosed in parenthesis.
+# Comma separated assignment expressions enclosed in parentheses.
 for (($i = 0), ($j = 0); $i -lt 10; $i++)
 {
     "`$i:$i"
@@ -88,7 +88,7 @@ for (($i = 0), ($j = 0); $i -lt 10; $i++, $j++)
     "`$j:$j"
 }
 
-# Comma separated assignment expressions enclosed in parenthesis.
+# Comma separated assignment expressions enclosed in parentheses.
 for (($i = 0), ($j = 0); $i -lt 10; ($i++), ($j++))
 {
     "`$i:$i"

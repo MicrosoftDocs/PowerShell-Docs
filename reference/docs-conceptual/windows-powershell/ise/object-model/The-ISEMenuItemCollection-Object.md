@@ -32,7 +32,7 @@ The keyboard shortcut for the action.
 The **ISEMenuItem** object that was just added.
 
 ```powershell
-# Create an Add-ons menu with an fast access key and a shortcut.
+# Create an Add-ons menu with a fast access key and a shortcut.
 # Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, 'Alt+P')
 ```

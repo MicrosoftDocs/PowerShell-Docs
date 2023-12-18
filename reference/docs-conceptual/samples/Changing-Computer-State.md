@@ -53,7 +53,7 @@ Get-CimInstance -ClassName Win32_OperatingSystem | Invoke-CimMethod -MethodName 
 
 ## Shutting down or restarting a computer
 
-Shutting down and restarting computers are are similar tasks. Most command-line tools support both
+Shutting down and restarting computers are similar tasks. Most command-line tools support both
 actions. Windows includes two command-line tools for restarting a computer. Use either
 `tsshutdn.exe` or `shutdown.exe` with appropriate arguments. You can get detailed usage information
 from `tsshutdn.exe /?` or `shutdown.exe /?`.

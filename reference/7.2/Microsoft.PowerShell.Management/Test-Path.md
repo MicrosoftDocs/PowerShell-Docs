@@ -197,7 +197,7 @@ At line:1 char:11
 
 ### Example 8: Test a path with whitespace as the value
 
-When a whitespace string is provided for the the **Path** parameter, it returns **False**. This is a
+When a whitespace string is provided for the **Path** parameter, it returns **False**. This is a
 change from Windows PowerShell 5.1. When an empty string is provided, `Test-Path` returns an error.
 The following example shows whitespace and empty string.
 

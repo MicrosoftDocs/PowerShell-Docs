@@ -23,7 +23,7 @@ The web page contains multiple elements that help you navigate the documentation
 - **Site level navigation** - The site level navigation appears at the top of the page. It contains
   links to other content on the Microsoft Learn platform.
 - **Related content navigation** - The related content bar is immediately below the site level
-  navigation. It contains links to content related to the current docuemntation set, which is
+  navigation. It contains links to content related to the current documentation set, which is
   PowerShell in this case.
 - **Version selector** - The version selector appears above the Table of Contents (TOC) and
   controls which version of the cmdlet reference appears in the TOC.
