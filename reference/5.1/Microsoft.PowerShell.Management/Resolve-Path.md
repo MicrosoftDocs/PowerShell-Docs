@@ -18,7 +18,8 @@ Resolves the wildcard characters in a path, and displays the path contents.
 ### Path (Default)
 
 ```
-Resolve-Path [-Path] <String[]> [-Relative] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
+Resolve-Path [-Path] <String[]> [-Relative] [-Credential <PSCredential>] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
@@ -42,7 +43,7 @@ The tilde character (`~`) is shorthand notation for the current user's home fold
 shows `Resolve-Path` returning the fully qualified path value.
 
 ```powershell
-PS C:\> Resolve-Path ~
+Resolve-Path ~
 ```
 
 ```Output
@@ -54,7 +55,7 @@ C:\Users\User01
 ### Example 2: Resolve the path of the Windows folder
 
 ```powershell
-PS C:\> Resolve-Path -Path "windows"
+Resolve-Path -Path "windows"
 ```
 
 ```Output
@@ -69,7 +70,7 @@ the `C:` drive.
 ### Example 3: Get all paths in the Windows folder
 
 ```powershell
-PS C:\> "C:\windows\*" | Resolve-Path
+"C:\windows\*" | Resolve-Path
 ```
 
 This command returns all the files and folders in the `C:\Windows` folder. The command uses a
@@ -78,7 +79,7 @@ pipeline operator (`|`) to send a path string to `Resolve-Path`.
 ### Example 4: Resolve a UNC path
 
 ```powershell
-PS C:\> Resolve-Path -Path "\\Server01\public"
+Resolve-Path -Path "\\Server01\public"
 ```
 
 This command resolves a Universal Naming Convention (UNC) path and returns the shares in the path.
@@ -86,7 +87,7 @@ This command resolves a Universal Naming Convention (UNC) path and returns the s
 ### Example 5: Get relative paths
 
 ```powershell
-PS C:\> Resolve-Path -Path "c:\prog*" -Relative
+Resolve-Path -Path "c:\prog*" -Relative
 ```
 
 ```Output
@@ -104,7 +105,7 @@ Using **LiteralPath** causes the brackets to be treated as normal characters rat
 expression.
 
 ```powershell
-PS C:\> Resolve-Path -LiteralPath 'test[xml]'
+Resolve-Path -LiteralPath 'test[xml]'
 ```
 
 ## PARAMETERS
