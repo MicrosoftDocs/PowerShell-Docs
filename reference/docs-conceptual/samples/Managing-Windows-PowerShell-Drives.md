@@ -37,7 +37,7 @@ HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
 ```
 
-Although the drives in the display vary with the drives on your system, the listing looks similar to
+Although the drives in the display vary with the drives on your system, yours should look similar to
 the output of the `Get-PSDrive` command shown above.
 
 filesystem drives are a subset of the PowerShell drives. You can identify the filesystem drives by
