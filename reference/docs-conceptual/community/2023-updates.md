@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2023
-ms.date: 12/04/2023
+ms.date: 01/02/2024
 title: What's New in PowerShell-Docs for 2023
 ---
 # What's new in PowerShell Docs for 2023
@@ -10,6 +10,29 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
+
+## 2023-Dec
+
+Lots of minor updates but no new content. The Docs team is taking a break for the holidays.
+
+### Top Community Contributors
+
+GitHub stats
+
+- 24 PRs merged (4 from Community)
+- 21 issues opened (18 from Community)
+- 18 issues closed (15 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id   | PRs merged | Issues opened |
+| ------------ | :--------: | :-----------: |
+| Blake-Madden |     2      |               |
+| shyguyCreate |     1      |               |
+| ryanperrymba |     1      |               |
+| jp2images    |     1      |               |
+| mklement0    |            |       2       |
 
 ## 2023-Nov
 
