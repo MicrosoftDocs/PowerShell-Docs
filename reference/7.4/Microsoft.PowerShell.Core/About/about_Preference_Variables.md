@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 12/07/2023
+ms.date: 01/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -32,29 +32,29 @@ The following table lists the preference variables and their default values.
 | [`$ErrorView`][06]                               | [`ConciseView`][57]                                              |
 | [`$FormatEnumerationLimit`][07]                  | `4`                                                              |
 | [`$InformationPreference`][08]                   | [`SilentlyContinue`][54]                                         |
-| [`$LogCommandHealthEvent`][09]                   | `$False` (not logged)                                            |
-| [`$LogCommandLifecycleEvent`][09]                | `$False` (not logged)                                            |
-| [`$LogEngineHealthEvent`][09]                    | `$True` (logged)                                                 |
-| [`$LogEngineLifecycleEvent`][09]                 | `$True` (logged)                                                 |
-| [`$LogProviderHealthEvent`][09]                  | `$True` (logged)                                                 |
-| [`$LogProviderLifecycleEvent`][09]               | `$True` (logged)                                                 |
+| [`$LogCommandHealthEvent`][09]                   | `$false` (not logged)                                            |
+| [`$LogCommandLifecycleEvent`][09]                | `$false` (not logged)                                            |
+| [`$LogEngineHealthEvent`][09]                    | `$true` (logged)                                                 |
+| [`$LogEngineLifecycleEvent`][09]                 | `$true` (logged)                                                 |
+| [`$LogProviderHealthEvent`][09]                  | `$true` (logged)                                                 |
+| [`$LogProviderLifecycleEvent`][09]               | `$true` (logged)                                                 |
 | [`$MaximumHistoryCount`][10]                     | `4096`                                                           |
 | [`$OFS`][11]                                     | Space character (`" "`)                                          |
 | [`$OutputEncoding`][12]                          | [`UTF8Encoding`][65] object                                      |
 | [`$ProgressPreference`][13]                      | [`Continue`][54]                                                 |
 | [`$PSDefaultParameterValues`][14]                | `@{}` (empty hash table)                                         |
-| [`$PSEmailServer`][15]                           | `$Null` (none)                                                   |
+| [`$PSEmailServer`][15]                           | `$null` (none)                                                   |
 | [`$PSModuleAutoLoadingPreference`][16]           | `All`                                                            |
 | [`$PSNativeCommandArgumentPassing`][17]          | `Windows` on Windows, `Standard` on Non-Windows                  |
-| [`$PSNativeCommandUseErrorActionPreference`][18] | `$True`                                                          |
+| [`$PSNativeCommandUseErrorActionPreference`][18] | `$false`                                                         |
 | [`$PSSessionApplicationName`][19]                | `'wsman'`                                                        |
 | [`$PSSessionConfigurationName`][20]              | `'http://schemas.microsoft.com/powershell/Microsoft.PowerShell'` |
 | [`$PSSessionOption`][21]                         | [`PSSessionOption`][60] object                                   |
 | [`$PSStyle`][22]                                 | [`PSStyle`][59] object                                           |
-| [`$Transcript`][23]                              | `$Null` (none)                                                   |
+| [`$Transcript`][23]                              | `$null` (none)                                                   |
 | [`$VerbosePreference`][24]                       | [`SilentlyContinue`][54]                                         |
 | [`$WarningPreference`][25]                       | [`Continue`][54]                                                 |
-| [`$WhatIfPreference`][26]                        | `$False`                                                         |
+| [`$WhatIfPreference`][26]                        | `$false`                                                         |
 
 PowerShell includes the following environment variables that store user
 preferences. For more information about these environment variables, see

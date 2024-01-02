@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-List
@@ -25,7 +25,8 @@ Update-List [-Add <Object[]>] [-Remove <Object[]>] [-InputObject <PSObject>] [[-
 ### ReplaceSet
 
 ```
-Update-List -Replace <Object[]> [-InputObject <PSObject>] [[-Property] <String>] [<CommonParameters>]
+Update-List -Replace <Object[]> [-InputObject <PSObject>] [[-Property] <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,16 +38,12 @@ objects.
 The **Add** and **Remove** parameters add individual items to and remove them from the collection.
 The **Replace** parameter replaces the entire collection.
 
-If you do not specify a property in the command, `Update-List` returns an object that describes the
-update instead of updating the object. You can submit the update object to cmdlets that change
-objects, such as `Set` cmdlets.
+If you don't specify a property in the command, `Update-List` returns a hashtable that describes the
+update instead of updating the object. Later, you can use this change set to update a list object.
 
-This cmdlet works only when the property that is being updated supports the **IList** interface that
+This cmdlet works only when the property that's being updated supports the **IList** interface that
 `Update-List` uses. Also, any `Set` cmdlets that accept an update must support the **IList**
 interface.
-
-The core cmdlets that are installed with PowerShell do not support this interface. To
-determine whether a cmdlet supports `Update-List`, see the cmdlet Help topic.
 
 This cmdlet was reintroduced in PowerShell 7.
 
@@ -172,6 +169,36 @@ Deck :  2♣ K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣ Q♣ A♥
         8♥
 ```
 
+### Example 4: Apply a change set to a list object
+
+If you don't specify a property, `Update-List` returns a hashtable that describes the update instead
+of updating the object. You can cast the hashtable to a **System.PSListModifier** object and use the
+`ApplyTo()` method to apply the change set to a list.
+
+```powershell
+$list = [System.Collections.ArrayList] (1, 43, 2)
+$changeInstructions = Update-List -Remove 43 -Add 42
+$changeInstructions
+```
+
+```Output
+Name                           Value
+----                           -----
+Add                            {42}
+Remove                         {43}
+```
+
+```powershell
+([PSListModifier]($changeInstructions)).ApplyTo($list)
+$list
+```
+
+```Output
+1
+2
+42
+```
+
 ## PARAMETERS
 
 ### -Add
@@ -209,7 +236,7 @@ Accept wildcard characters: False
 
 ### -Property
 
-Specifies the property that contains the collection that is being updated. If you omit this
+Specifies the property that contains the collection that's being updated. If you omit this
 parameter, `Update-List` returns an object that represents the change instead of changing the
 object.
 
@@ -262,7 +289,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -272,9 +300,9 @@ You can pipe the object to be updated to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.Automation.PSListModifier
+### System.Collections.Hashtable
 
-By default, this cmdlet returns an object representing the update action.
+By default, this cmdlet returns a hashtable that describes the update.
 
 ### System.Object
 
