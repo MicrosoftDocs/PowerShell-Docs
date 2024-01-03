@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/14/2023
+ms.date: 01/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -546,11 +546,11 @@ Accept wildcard characters: False
 Specifies the digital public key certificate (X509) of a user account that has permission to send
 the request. Enter the certificate thumbprint of the certificate.
 
-Certificates are used in client certificate-based authentication. They can be mapped only to local
-user accounts; they don't work with domain accounts.
+Certificates are used in client certificate-based authentication. Certificates can only be mapped
+only to local user accounts, not domain accounts.
 
-To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the PowerShell
-`Cert:` drive.
+To see the certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command to find the
+certficate in `Cert:\CurrentUser\My`.
 
 > [!NOTE]
 > This feature is only supported on Windows OS platforms.
