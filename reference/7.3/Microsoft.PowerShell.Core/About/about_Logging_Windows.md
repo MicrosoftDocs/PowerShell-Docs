@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets to the Windows event log.
 Locale: en-US
-ms.date: 12/08/2023
+ms.date: 01/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Windows
@@ -18,12 +18,15 @@ the Windows event log.
 PowerShell logs details about PowerShell operations, such as starting and
 stopping the engine and providers, and executing PowerShell commands.
 
+For information about logging in Windows PowerShell 5.1, see
+[about_Logging][02].
+
 PowerShell supports configuring two categories of logging:
 
 - Module logging - Record the pipeline execution events for members of
   specified modules. Module logging must be enabled for both the session and
   specific modules. For more information about configuring this logging, see
-  [about_PowerShell_Config][01].
+  [about_PowerShell_Config][05].
 
   If module logging is enabled through configuration, you can enable and
   disable logging for specific modules in a session by setting the value of the
@@ -49,7 +52,7 @@ PowerShell supports configuring two categories of logging:
   When you enable Script Block Logging, PowerShell records the content of all
   script blocks that it processes. Once enabled, any new PowerShell session
   logs this information. For more information, see
-  [Enabling Script Block Logging](#enabling-script-block-logging).
+  [Enabling Script Block Logging][03].
 
 ## Registering the PowerShell event provider on Windows
 
@@ -137,7 +140,7 @@ function Enable-PSScriptBlockLogging {
 
 You can set the `ScriptBlockLogging` option in the `powershell.config.json`
 file that controls how PowerShell behaves. For more information, see
-[about_PowerSHell_Config][02].
+[about_PowerSHell_Config][06].
 
 ## Protected Event Logging
 
@@ -159,13 +162,13 @@ content and decrypt content are kept separate.
 The public key can be shared widely and isn't sensitive data. Any content
 encrypted with this public key can only be decrypted by the private key. For
 more information about Public Key Cryptography, see
-[Wikipedia - Public Key Cryptography][03].
+[Wikipedia - Public Key Cryptography][08].
 
 To enable a Protected Event Logging policy, deploy a public key to all machines
 that have event log data to protect. The corresponding private key is used to
 post-process the event logs at a more secure location such as a central event
-log collector, or [SIEM][04] aggregator. You can set up SIEM in Azure. For more
-information, see [Generic SIEM integration][05].
+log collector, or [SIEM][09] aggregator. You can set up SIEM in Azure. For more
+information, see [Generic SIEM integration][01].
 
 ### Enabling Protected Event Logging via Group Policy
 
@@ -205,15 +208,17 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 ## See also
 
-- [about_Logging_Non-Windows][06]
+- [about_Logging_Non-Windows][04]
 - [PowerShell the Blue Team][07]
-- [Generic SIEM integration][05]
+- [Generic SIEM integration][01]
 
 <!-- link references -->
-[01]: about_PowerShell_Config.md#modulelogging
-[02]: about_PowerShell_Config.md#scriptblocklogging
-[03]: https://en.wikipedia.org/wiki/Public-key_cryptography
-[04]: https://wikipedia.org/wiki/Security_information_and_event_management
-[05]: /cloud-app-security/siem
-[06]: about_Logging_Non-Windows.md
+[01]: /cloud-app-security/siem
+[02]: /powershell/module/microsoft.powershell.core/about/about_logging?view=powershell-5.1&preserve-view=true
+[03]: #enabling-script-block-logging
+[04]: about_Logging_Non-Windows.md
+[05]: about_PowerShell_Config.md#modulelogging
+[06]: about_PowerShell_Config.md#scriptblocklogging
 [07]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
+[08]: https://en.wikipedia.org/wiki/Public-key_cryptography
+[09]: https://wikipedia.org/wiki/Security_information_and_event_management

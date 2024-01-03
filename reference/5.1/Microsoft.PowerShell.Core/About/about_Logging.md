@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 07/25/2023
+ms.date: 01/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging
@@ -19,11 +19,17 @@ PowerShell logs details about PowerShell operations, such as starting and
 stopping the engine and providers, and executing PowerShell commands.
 
 > [!NOTE]
-> Windows PowerShell versions 3.0, 4.0, 5.0, and 5.1 include **EventLog**
-> cmdlets for the Windows event logs. In those versions, to display the list of
-> **EventLog** cmdlets type: `Get-Command -Noun EventLog`. For more
-> information, see the cmdlet documentation and
-> [about_EventLogs](about_Eventlogs.md) for your version of Windows PowerShell.
+
+> Windows PowerShell 5.1 (and older) include **EventLog** cmdlets for the
+> Windows event logs. In those versions, to display the list of **EventLog**
+> cmdlets type: `Get-Command -Noun EventLog`. For more information, see the
+> cmdlet documentation and [about_EventLogs][02] for your
+> version of Windows PowerShell.
+
+For information about logging in PowerShell 7, see the following articles:
+
+- [about_Logging_Windows][04]
+- [about_Logging_Non-Windows][03]
 
 ## Viewing the PowerShell event log entries on Windows
 
@@ -51,8 +57,8 @@ script blocks that it processes. Once enabled, any new PowerShell session logs
 this information.
 
 > [!NOTE]
-> It's recommended to enable Protected Event Logging, as described below, when
-> using Script Block Logging for anything other than diagnostics purposes.
+> To ensure that sensitive data is protected, enable Protected Event Logging
+> when using Script Block Logging for anything other than diagnostics purposes.
 
 Script Block Logging can be enabled via Group Policy or a registry setting.
 
@@ -101,12 +107,12 @@ content and decrypt content are kept separate.
 The public key can be shared widely and isn't sensitive data. Any content
 encrypted with this public key can only be decrypted by the private key. For
 more information about Public Key Cryptography, see
-[Wikipedia - Public Key Cryptography][04].
+[Wikipedia - Public Key Cryptography][06].
 
 To enable a Protected Event Logging policy, deploy a public key to all machines
 that have event log data to protect. The corresponding private key is used to
 post-process the event logs at a more secure location such as a central event
-log collector, or [SIEM][05] aggregator. You can set up SIEM in Azure. For more
+log collector, or [SIEM][07] aggregator. You can set up SIEM in Azure. For more
 information, see [Generic SIEM integration][01].
 
 ### Enabling Protected Event Logging via Group Policy
@@ -147,11 +153,14 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 ## See also
 
-- [PowerShell the Blue Team][03]
+- [PowerShell the Blue Team][05]
 - [Generic SIEM integration][01]
 
 <!-- link references -->
 [01]: /cloud-app-security/siem
-[03]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
-[04]: https://en.wikipedia.org/wiki/Public-key_cryptography
-[05]: https://wikipedia.org/wiki/Security_information_and_event_management
+[02]: about_Eventlogs.md
+[03]: about_Logging_Non-Windows.md
+[04]: about_Logging_Windows.md
+[05]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
+[06]: https://wikipedia.org/wiki/Public-key_cryptography
+[07]: https://wikipedia.org/wiki/Security_information_and_event_management
