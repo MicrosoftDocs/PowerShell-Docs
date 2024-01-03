@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 08/30/2023
+ms.date: 01/03/2024
 no-no-loc: [-Command, -ConfigurationName , -EncodedCommand, -ExecutionPolicy, -File, -Help, -InputFormat, -Mta, -NoExit, -NoLogo, -NonInteractive, -NoProfile, -OutputFormat, -PSConsoleFile, -Sta, -Version, -WindowStyle]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -12,6 +12,11 @@ title: about PowerShell exe
 ## Short description
 Explains how to use the `powershell.exe` command-line interface. Displays the
 command-line parameters and describes the syntax.
+
+## Long description
+
+For information about the command-line options for PowerShell 7, see
+[about_Pwsh][01].
 
 ## SYNTAX
 
@@ -69,7 +74,7 @@ the contents of the script block back out to you.
 A string passed to **Command** is still executed as PowerShell code, so the
 script block curly braces are often not required in the first place when
 running from `cmd.exe`. To execute an inline script block defined inside a
-string, the [call operator][04] `&` can be used:
+string, the [call operator][05] `&` can be used:
 
 ```cmd
 powershell.exe -Command "& {Get-WinEvent -LogName security}"
@@ -113,7 +118,7 @@ script that explicitly sets an exit code other than `0` or `1`, that exit code
 is converted to `1` for process exit code. To preserve the specific exit code,
 add `exit $LASTEXITCODE` to your command string or script block.
 
-For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][02].
+For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][03].
 
 Similarly, the value 1 is returned when a script-terminating
 (runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
@@ -143,7 +148,7 @@ Sets the default execution policy for the current session and saves it in the
 `$env:PSExecutionPolicyPreference` environment variable. This parameter does
 not change the PowerShell execution policy that's set in the registry. For
 information about PowerShell execution policies, including a list of valid
-values, see [about_Execution_Policies][03].
+values, see [about_Execution_Policies][04].
 
 ### -File - | \<filePath\> \<args\>
 
@@ -202,7 +207,7 @@ When the script file terminates with an `exit` command, the process exit code
 is set to the numeric argument used with the `exit` command. With normal
 termination, the exit code is always `0`.
 
-For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][02].
+For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][03].
 
 ### -InputFormat {Text | XML}
 
@@ -258,7 +263,7 @@ Starts the specified version of PowerShell. Valid values are 2.0 and 3.0. The
 version that you specify must be installed on the system. If Windows PowerShell
 3.0 is installed on the computer, "3.0" is the default version. Otherwise,
 "2.0" is the default version. For more information, see
-[Installing PowerShell][01].
+[Installing PowerShell][02].
 
 ### -WindowStyle \<Window style\>
 
@@ -303,7 +308,8 @@ powershell.exe -encodedCommand $encodedCommand
 ```
 
 <!-- link references -->
-[01]: /powershell/scripting/install/installing-windows-powershell
-[02]: about_Automatic_Variables.md#lastexitcode
-[03]: about_Execution_Policies.md
-[04]: about_operators.md#special-operators
+[01]: /powershell/module/microsoft.powershell.core/about/about_pwsh
+[02]: /powershell/scripting/install/installing-windows-powershell
+[03]: about_Automatic_Variables.md#lastexitcode
+[04]: about_Execution_Policies.md
+[05]: about_operators.md#special-operators

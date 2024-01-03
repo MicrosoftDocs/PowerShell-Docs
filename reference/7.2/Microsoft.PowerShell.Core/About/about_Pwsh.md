@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 08/30/2023
+ms.date: 01/03/2024
 no-loc: [-File, -f, -Command, -c, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -14,6 +14,9 @@ Explains how to use the `pwsh` command-line interface. Displays the
 command-line parameters and describes the syntax.
 
 ## Long description
+
+For information about the command-line options for Windows PowerShell 5.1, see
+[about_PowerShell_exe][01].
 
 ## Syntax
 
@@ -103,7 +106,7 @@ When the script file terminates with an `exit` command, the process exit code
 is set to the numeric argument used with the `exit` command. With normal
 termination, the exit code is always `0`.
 
-For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][01].
+For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][02].
 
 Similar to `-Command`, when a script-terminating error occurs, the exit code is
 set to `1`. However, unlike with `-Command`, when the execution is interrupted
@@ -144,7 +147,7 @@ contents of the script block back out to you.
 A string passed to **Command** is still executed as PowerShell code, so the
 script block curly braces are often not required in the first place when
 running from `cmd.exe`. To execute an inline script block defined inside a
-string, the [call operator][02] `&` can be used:
+string, the [call operator][03] `&` can be used:
 
 ```
 pwsh -Command "& {Get-WinEvent -LogName security}"
@@ -188,7 +191,7 @@ script that explicitly sets an exit code other than `0` or `1`, that exit code
 is converted to `1` for process exit code. To preserve the specific exit code,
 add `exit $LASTEXITCODE` to your command string or script block.
 
-For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][01].
+For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][02].
 
 Similarly, the value 1 is returned when a script-terminating
 (runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
@@ -278,7 +281,7 @@ To set up `pwsh` as the login shell on UNIX-like operating systems:
   - With some installation methods, this entry will be added automatically at installation time
   - If `pwsh` isn't present in `/etc/shells`, use an editor to append the path
     to `pwsh` on the last line. This requires elevated privileges to edit.
-- Use the [chsh][03] utility to set your current
+- Use the [chsh][04] utility to set your current
   user's shell to `pwsh`:
 
   ```sh
@@ -373,6 +376,7 @@ Displays help for `pwsh`. If you are typing a pwsh command in PowerShell,
 prepend the command parameters with a hyphen (`-`), not a forward slash (`/`).
 
 <!-- link references -->
-[01]: about_Automatic_Variables.md#lastexitcode
-[02]: about_operators.md#special-operators
-[03]: https://linux.die.net/man/1/chsh
+[01]: /powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&preserve-view=true
+[02]: about_Automatic_Variables.md#lastexitcode
+[03]: about_operators.md#special-operators
+[04]: https://linux.die.net/man/1/chsh
