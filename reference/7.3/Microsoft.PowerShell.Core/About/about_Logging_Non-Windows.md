@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 12/08/2023
+ms.date: 01/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging Non-Windows
@@ -18,20 +18,23 @@ PowerShell logs details of PowerShell operations, such as starting and stopping
 the engine and starting and stopping providers. It also logs details about
 PowerShell commands.
 
+For information about logging in Windows PowerShell 5.1, see
+[about_Logging][02].
+
 The location of PowerShell logs is dependent on the target platform.
 
 - On Linux, PowerShell logs to the **systemd journal** that can forward to a
   **syslog** server. For more information, see the `man` pages for your Linux
   distribution.
 - On macOS, Apple's unified logging system is used. For more information, see
-  [Apple's developer documentation on logging][01].
+  [Apple's developer documentation on logging][07].
 
 PowerShell supports configuring two categories of logging:
 
 - Module logging - Record the pipeline execution events for members of
   specified modules. Module logging must be enabled for both the session and
   specific modules. For more information about configuring this logging, see
-  [about_PowerShell_Config][02].
+  [about_PowerShell_Config][05].
 
   If module logging is enabled through configuration, you can enable and
   disable logging for specific modules in a session by setting the value of the
@@ -61,7 +64,7 @@ PowerShell supports configuring two categories of logging:
   > [!NOTE]
   > It's recommended to enable Protected Event Logging, when using Script Block
   > Logging for anything other than diagnostics purposes. For more information,
-  > see [about_PowerShell_Config][03].
+  > see [about_PowerShell_Config][06].
 
 ## Configuring logging on Linux or macOS
 
@@ -315,7 +318,7 @@ PowerShell in the **Console** application.
 1. Generate PowerShell information to log from the instance of PowerShell
    started in the first step.
 
-For more information, see [view log messages in Console on Mac][05].
+For more information, see [view log messages in Console on Mac][08].
 
 ### Viewing PowerShell log data from the command line on macOS
 
@@ -369,25 +372,26 @@ For more information, run `log show --help` to view the help for the `log show`
 command.
 
 You may also want to consider saving the logs to a more secure location such as
-[Security Information and Event Management (SIEM)][06] aggregator. Using
+[Security Information and Event Management (SIEM)][09] aggregator. Using
 Microsoft Defender for Cloud Apps, you can set up SIEM in Azure. For more
-information, see [Generic SIEM integration][07].
+information, see [Generic SIEM integration][01].
 
 ## See also
 
 - For Linux **syslog** and **rsyslog.conf** information, refer to the Linux
   computer's local `man` pages
 - For macOS **logging** information, see
-  [Apple's developer documentation on logging][01]
-- For Windows, see [about_Logging_Windows][08]
-- [Generic SIEM integration][07]
+  [Apple's developer documentation on logging][07]
+- For Windows, see [about_Logging_Windows][03]
+- [Generic SIEM integration][01]
 
 <!-- link references -->
-[01]: https://developer.apple.com/documentation/os/logging
-[02]: about_PowerShell_Config.md#modulelogging
-[03]: about_PowerShell_Config.md#protectedeventlogging
+[01]: /defender-cloud-apps/siem
+[02]: /powershell/module/microsoft.powershell.core/about/about_logging?view=powershell-5.1&preserve-view=true
+[03]: about_Logging_Windows.md
 [04]: about_PowerShell_Config.md#common-configuration-settings
-[05]: https://support.apple.com/guide/console/log-messages-cnsl1012/mac
-[06]: https://wikipedia.org/wiki/Security_information_and_event_management
-[07]: /defender-cloud-apps/siem
-[08]: about_Logging_Windows.md
+[05]: about_PowerShell_Config.md#modulelogging
+[06]: about_PowerShell_Config.md#protectedeventlogging
+[07]: https://developer.apple.com/documentation/os/logging
+[08]: https://support.apple.com/guide/console/log-messages-cnsl1012/mac
+[09]: https://wikipedia.org/wiki/Security_information_and_event_management
