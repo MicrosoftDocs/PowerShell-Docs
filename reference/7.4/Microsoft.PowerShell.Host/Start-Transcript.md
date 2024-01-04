@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 09/20/2023
+ms.date: 01/04/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
@@ -41,12 +41,19 @@ The `Start-Transcript` cmdlet creates a record of all or part of a PowerShell se
 file. The transcript includes all command that the user types and all output that appears on the
 console.
 
+By default, `Start-Transcript` stores the transcript in the following location using the default
+name:
+
+- On Window: `$HOME\Documents`
+- On Linux or macOS: `$HOME`
+
+The default filename is `PowerShell_transcript.<computername>.<random>.<timestamp>.txt`.
+
 Starting in Windows PowerShell 5.0, `Start-Transcript` includes the hostname in the generated file
-name of all transcripts. This is especially useful when your enterprise's logging is centralized.
-Files that are created by the `Start-Transcript` cmdlet include random characters in names to
-prevent potential overwrites or duplication when two or more transcripts are started simultaneously.
-This also prevents unauthorized discovery of transcripts that are stored in a centralized file
-share.
+name of all transcripts. The filename also includes random characters in names to prevent potential
+overwrites or duplication when two or more transcripts are started simultaneously. Including the
+computer name is useful if you store your transcripts in a centralized location. The random
+character string prevents guessing of the filename to gain unauthorized access to the file.
 
 If the target file doesn't have a Byte Order Mark (BOM), `Start-Transcript` defaults to `Utf8NoBom`
 encoding in the target file.
@@ -202,13 +209,11 @@ Accept wildcard characters: False
 ### -Path
 
 Specifies a location to the transcript file. Enter a path to a `.txt` file. Wildcards aren't
-permitted.
+permitted. If any of the directories in the path don't exist, the command fails.
 
 If you don't specify a path, `Start-Transcript` uses the path in the value of the `$Transcript`
 global variable. If you haven't created this variable, `Start-Transcript` stores the transcripts in
-the `$HOME\My Documents directory as \PowerShell_transcript.<time-stamp>.txt` files.
-
-If any of the directories in the path don't exist, the command fails.
+the default location and filename.
 
 ```yaml
 Type: System.String

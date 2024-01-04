@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 01/03/2023
+ms.date: 01/04/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Transcript
@@ -93,7 +93,7 @@ This cmdlet returns a string that contains a status message and the path to the 
 
 ## NOTES
 
-- If a transcript has not been started, the command fails.
+If a transcript hasn't been started, the command fails.
 
 ## RELATED LINKS
 

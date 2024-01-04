@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 01/02/2024
+ms.date: 01/04/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -1223,8 +1223,13 @@ Used by `Start-Transcript` to specify the name and location of the transcript
 file. If you don't specify a value for the **Path** parameter,
 `Start-Transcript` uses the path in the value of the `$Transcript` global
 variable. If you haven't created this variable, `Start-Transcript` stores the
-transcripts in the `$HOME\My Documents` directory as
-`\PowerShell_transcript.<time-stamp>.txt` files.
+transcripts in the following location using the default name:
+
+- On Windows: `$HOME\Documents`
+- On Linux or macOS: `$HOME`
+
+The default filename is:
+`PowerShell_transcript.<computername>.<random>.<timestamp>.txt`.
 
 ## $VerbosePreference
 
