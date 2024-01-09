@@ -1,7 +1,7 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 01/03/2024
+ms.date: 01/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Logging
@@ -159,8 +159,8 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 <!-- link references -->
 [01]: /cloud-app-security/siem
 [02]: about_Eventlogs.md
-[03]: about_Logging_Non-Windows.md
-[04]: about_Logging_Windows.md
+[03]: /powershell/module/microsoft.powershell.core/about/about_logging_non-windows
+[04]: /powershell/module/microsoft.powershell.core/about/about_logging_windows
 [05]: https://devblogs.microsoft.com/powershell/powershell-the-blue-team/
 [06]: https://wikipedia.org/wiki/Public-key_cryptography
 [07]: https://wikipedia.org/wiki/Security_information_and_event_management
