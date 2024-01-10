@@ -1,7 +1,7 @@
 ---
 description: Describes automatic members in all PowerShell objects
 Locale: en-US
-ms.date: 08/21/2023
+ms.date: 01/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Inrinsic_Members?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Intrinsic_Members
@@ -59,7 +59,12 @@ The **Force** parameter of `Get-Member` shows us the intrinsic members of the
 object.
 
 ```powershell
-$hash | Get-Member -Force -Type MemberSet, CodeProperty
+$hash = @{
+    Age  = 33
+    Name = 'Bob'
+}
+
+$hash | Get-Member -Force -MemberType MemberSet, CodeProperty
 ```
 
 ```Output
@@ -114,7 +119,7 @@ the **PSCustomObject**. The new properties are now part of the `psextended`
 **MemberSet**.
 
 ```powershell
-$user | Get-Member -Force -Type MemberSet, CodeProperty
+$user | Get-Member -Force -MemberType MemberSet, CodeProperty
 ```
 
 ```Output
