@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 01/03/2024
+ms.date: 01/10/2024
 no-loc: [-File, -f, -Command, -c, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -30,7 +30,6 @@ Usage: pwsh[.exe]
     [-ConfigurationFile <filePath>]
     [-ConfigurationName <string>]
     [-CustomPipeName <string>]
-    [-EncodedArguments <Base64EncodedArguments>]
     [-EncodedCommand <Base64EncodedCommand>]
     [-ExecutionPolicy <ExecutionPolicy>]
     [-InputFormat {Text | XML}]
@@ -254,12 +253,6 @@ pwsh -CustomPipeName mydebugpipe
 # PowerShell instance 2
 Enter-PSHostProcess -CustomPipeName mydebugpipe
 ```
-
-### -EncodedArguments | -encodeda | -ea
-
-Accepts a Base64-encoded string version command arguments. Use this parameter
-to submit arguments that require complex, nested quoting. The Base64
-representation must be a UTF-16LE encoded string.
 
 ### -EncodedCommand | -e | -ec
 
