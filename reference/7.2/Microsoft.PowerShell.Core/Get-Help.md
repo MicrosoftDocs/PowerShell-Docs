@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/21/2023
+ms.date: 01/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Help
@@ -603,7 +603,7 @@ display only selected sections of a help topic.
 The **ShowWindow** parameter supports help topics for commands (cmdlets, functions, CIM commands,
 scripts) and conceptual **About** articles. It doesn't support provider help.
 
-This parameter was reintroduced in PowerShell 7.0.
+This parameter was reintroduced in PowerShell 7.0. This parameter is only available on Windows.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
