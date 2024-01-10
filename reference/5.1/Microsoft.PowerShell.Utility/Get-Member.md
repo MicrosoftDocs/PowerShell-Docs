@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-member?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Member
@@ -424,9 +424,9 @@ Indicates that this cmdlet gets only the static properties and methods of the ob
 properties and methods are defined on the class of objects, not on any particular instance of the
 class.
 
-If you use the **Static** parameter with the **View** parameter, the **View** parameter is ignored.
-If you use the **Static** parameter with the **MemberType** parameter, `Get-Member` gets only the
-members that belong to both sets.
+If you use the **Static** parameter with the **View** or **Force** parameters, the cmdlet ignores
+those parameters. If you use the **Static** parameter with the **MemberType** parameter,
+`Get-Member` gets only the members that belong to both sets.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
