@@ -52,8 +52,8 @@ Or install using the new [PowerShellGet v3][PSGetv3] module:
 Install-PSResource -Name PSReadLine
 ```
 
-**PSReadLine** can be installed in Window PowerShell 5.1 or in PowerShell 7 or higher. To use
-predictor plug-ins you must be running in PowerShell 7.2 or higher. Window PowerShell 5.1 can use
+**PSReadLine** can be installed in Windows PowerShell 5.1 or in PowerShell 7 or higher. To use
+predictor plug-ins you must be running in PowerShell 7.2 or higher. Windows PowerShell 5.1 can use
 the history-based predictor.
 
 In **PSReadLine** 2.2.6, Predictive IntelliSense is enabled by default depending on the following
