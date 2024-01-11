@@ -128,7 +128,7 @@ sudo apt-get remove powershell
 
 PowerShell 7.2 and newer supports running on Ubuntu using 32-bit Arm processors. Use the binary
 archive installation method of installing PowerShell that's described in
-[Alternate ways to install PowerShell on Linux][07].
+[Alternate ways to install PowerShell on Linux][08].
 
 ## PowerShell paths
 
@@ -164,3 +164,4 @@ Microsoft can't support those methods.
 [05]: install-other-linux.md#binary-archives
 [06]: /dotnet/core/install/linux-package-mixup?pivots=os-linux-ubuntu#my-linux-distribution-provides-net-packages-and-i-want-to-use-them
 [07]: /dotnet/core/install/linux-package-mixup?pivots=os-linux-ubuntu#whats-going-on
+[08]: /powershell/scripting/install/install-other-linux
