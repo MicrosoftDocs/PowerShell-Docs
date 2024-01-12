@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Alpine Linux
-ms.date: 11/16/2023
+ms.date: 01/12/2024
 title: Installing PowerShell on Alpine Linux
 ---
 # Installing PowerShell on Alpine Linux
@@ -20,9 +20,9 @@ check the list of [Supported versions][02] below.
 Installation on Alpine is based on downloading tar.gz package from the [releases][03] page. The URL
 to the package depends on the version of PowerShell you want to install.
 
-- PowerShell 7.4.0 - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-7.4.0-linux-musl-x64.tar.gz`
-- PowerShell 7.3.10 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.10/powershell-7.3.10-linux-alpine-x64.tar.gz`
-- PowerShell 7.2.17 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.17/powershell-7.2.17-linux-alpine-x64.tar.gz`
+- PowerShell 7.4.1 - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.1/powershell-7.4.1-linux-musl-x64.tar.gz`
+- PowerShell 7.3.11 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.11/powershell-7.3.11-linux-alpine-x64.tar.gz`
+- PowerShell 7.2.18 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.18/powershell-7.2.18-linux-alpine-x64.tar.gz`
 
 Then, in the terminal, execute the following shell commands to install PowerShell 7.3:
 
@@ -47,7 +47,7 @@ sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.4.0/powershell-7.4.0-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.4.1/powershell-7.4.1-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
