@@ -170,6 +170,24 @@ The **CommandNotFoundException** error type inherits from the
 **System.Exception** type. This statement traps any errors raised by unknown
 commands. It also traps other error types.
 
+You can find the exception type for an error by inspecting the error object.
+The following example shows how to get the full name of the exception for the
+last error in a session:
+
+```powershell
+nonsenseString
+$Error[0].Exception.GetType().FullName
+```
+
+```Output
+nonsenseString: The term 'nonsenseString' is not recognized as a name of a
+cmdlet, function, script file, or executable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct
+and try again.
+
+System.Management.Automation.CommandNotFoundException
+```
+
 You can have more than one `trap` statement in a script. Only one `trap`
 statement can trap each error type. When a terminating error occurs, PowerShell
 searches for the `trap` with the most specific match, starting in the current
