@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/03/2024
+ms.date: 01/17/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -921,10 +921,8 @@ By default, `Invoke-WebRequest` returns the results to the pipeline. To send the
 and to the pipeline, use the **Passthru** parameter.
 
 Starting in PowerShell 7.4, you can specify a folder path without the filename. When you do, the
-file's name is the taken from either the
-[Content-Disposition](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition)
-of the response or the last segment of the resolved URI after any redirections. When you specify a
-folder path for **OutFile**, you can't use the **Resume** parameter.
+file's name is the taken from the last segment of the resolved URI after any redirections. When you
+specify a folder path for **OutFile**, you can't use the **Resume** parameter.
 
 ```yaml
 Type: System.String
