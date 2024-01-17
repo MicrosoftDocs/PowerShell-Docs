@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/03/2024
+ms.date: 01/17/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -888,11 +888,15 @@ Accept wildcard characters: False
 
 ### -OutFile
 
-Saves the response body in the specified output file. Enter a path and file name. If you omit the
+Saves the response body in the specified output file. Enter a path and filename. If you omit the
 path, the default is the current location. The name is treated as a literal path. Names that contain
 brackets (`[]`) must be enclosed in single quotes (`'`).
 
 By default, `Invoke-RestMethod` returns the results to the pipeline.
+
+Starting in PowerShell 7.4, you can specify a folder path without the filename. When you do, the
+file's name is the taken from the last segment of the resolved URI after any redirections. When you
+specify a folder path for **OutFile**, you can't use the **Resume** parameter.
 
 ```yaml
 Type: System.String

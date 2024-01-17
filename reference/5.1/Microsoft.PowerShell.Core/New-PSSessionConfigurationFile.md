@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/28/2023
+ms.date: 01/17/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
@@ -910,10 +910,8 @@ the following keys:
 
 - Name - Name of the variable. This key is required.
 - Value - Variable value. This key is required.
-- Options - Variable options. This key is optional. The default value is **None**. The acceptable
-  values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
-For example: `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`
+For example: `@{Name='WarningPreference';Value='SilentlyContinue'}`
 
 ```yaml
 Type: System.Object
