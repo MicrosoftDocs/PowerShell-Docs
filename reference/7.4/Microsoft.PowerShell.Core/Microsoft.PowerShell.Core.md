@@ -1,6 +1,6 @@
 ---
 Download Help Link: https://aka.ms/powershell74-help
-Help Version: 7.2.0.0
+Help Version: 7.4.0.0
 Locale: en-US
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Microsoft.PowerShell.Core
