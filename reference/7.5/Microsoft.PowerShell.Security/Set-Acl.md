@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 10/23/2023
+ms.date: 01/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Acl
@@ -213,7 +213,7 @@ This parameter was introduced in Windows PowerShell 3.0.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ByPath, ByLiteralPath
-Aliases:
+Aliases: PSPath, LP
 
 Required: False
 Position: Named

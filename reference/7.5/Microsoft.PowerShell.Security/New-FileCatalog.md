@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 10/23/2023
+ms.date: 01/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
@@ -17,8 +17,8 @@ authenticity of a file.
 ## SYNTAX
 
 ```
-New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -68,9 +68,9 @@ Accept wildcard characters: False
 
 ### -CatalogVersion
 
-Accepts `1.0` or `2.0` as possible values for specifying the catalog version. `1.0` should be used
-avoided whenever possible, as it uses the insecure SHA-1 hash algorithm, while `2.0` uses the secure
-SHA-256 algorithm However, `1.0` is the only supported algorithm on Windows 7 and Server 2008R2.
+Accepts `1` or `2` as possible values for specifying the catalog version. `1` should be avoided
+whenever possible, as it uses the insecure SHA-1 hash algorithm, while `2` uses the secure SHA-256
+algorithm.
 
 ```yaml
 Type: System.Int32
@@ -79,7 +79,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: 2
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

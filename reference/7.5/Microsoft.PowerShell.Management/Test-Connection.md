@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/01/2023
+ms.date: 01/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection

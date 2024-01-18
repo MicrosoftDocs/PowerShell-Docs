@@ -940,7 +940,7 @@ Gets the items in the specified locations and in all child items of the location
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases: s
+Aliases: s, r
 
 Required: False
 Position: Named

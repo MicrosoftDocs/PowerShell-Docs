@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 06/09/2017
+ms.date: 01/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-pfxcertificate?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PfxCertificate
@@ -92,7 +92,7 @@ quotation marks tell PowerShell not to interpret any characters as escape sequen
 ```yaml
 Type: System.String[]
 Parameter Sets: ByLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named

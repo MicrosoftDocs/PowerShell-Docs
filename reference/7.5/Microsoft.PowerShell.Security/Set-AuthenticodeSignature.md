@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 12/12/2022
+ms.date: 01/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-authenticodesignature?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-AuthenticodeSignature
@@ -242,7 +242,7 @@ quotation marks tell PowerShell not to interpret any characters as escape sequen
 ```yaml
 Type: System.String[]
 Parameter Sets: ByLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
