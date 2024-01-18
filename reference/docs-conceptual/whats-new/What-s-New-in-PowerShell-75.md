@@ -6,7 +6,7 @@ ms.date: 01/18/2024
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.preview.1 includes the following features, updates, and breaking changes. PowerShell
+PowerShell 7.5-preview.1 includes the following features, updates, and breaking changes. PowerShell
 7.5 is built on .NET 8.0.1.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
