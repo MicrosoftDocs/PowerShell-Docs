@@ -69,7 +69,7 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 ## Engine improvements
 
 - Add telemetry to check for specific tags when importing a module ([#20371][20371])
-- Add `PSAdapter` and `ConsoleGuiTools` to module load telemetry whitelist ([#20641][20641])
+- Add `PSAdapter` and `ConsoleGuiTools` to module load telemetry allowlist ([#20641][20641])
 - Add Winget module to track usage ([#21040][21040])
 - Ensure the filename is not null when logging WDAC ETW events ([#20910][20910]) (Thanks
   @jborean93!)
