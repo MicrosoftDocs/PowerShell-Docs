@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 11/13/2023
+ms.date: 01/19/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes
@@ -129,7 +129,7 @@ class Book {
             $this.$Property = $Properties.$Property
         }
     }
-    # Method to calculate reading time as 30 seconds per page
+    # Method to calculate reading time as 2 minutes per page
     [timespan] GetReadingTime() {
         if ($this.PageCount -le 0) {
             throw 'Unable to determine reading time from page count.'
