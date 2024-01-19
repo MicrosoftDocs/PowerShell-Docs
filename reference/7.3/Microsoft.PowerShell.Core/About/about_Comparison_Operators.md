@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 10/30/2023
+ms.date: 01/19/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Comparison Operators
@@ -65,7 +65,7 @@ case-insensitive comparisons. The comparisons are between unicode code points
 and don't use culture-specific collation ordering. The results are the same
 regardless of the current culture.
 
-When the input of an operator is a scalar value, the operator returns a
+When the input of an operator is a [scalar][15] value, the operator returns a
 **Boolean** value. When the input is a collection, the operator returns the
 elements of the collection that match the right-hand value of the expression.
 If there are no matches in the collection, comparison operators return an empty
@@ -797,3 +797,4 @@ $a -isnot $b.GetType() # Output: True
 [12]: xref:Microsoft.PowerShell.Core.ForEach-Object
 [13]: xref:Microsoft.PowerShell.Core.Where-Object
 [14]: xref:Microsoft.PowerShell.Utility.Compare-Object
+[15]: /powershell/scripting/learn/glossary#scalar-value
