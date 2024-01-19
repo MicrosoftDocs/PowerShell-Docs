@@ -1,6 +1,6 @@
 ---
 description: A glossary of PowerShell-related terminology.
-ms.date: 10/13/2022
+ms.date: 01/19/2024
 title: PowerShell Glossary
 ms.custom: template-glossary-pattern
 ---
@@ -103,7 +103,8 @@ in this session state isn't available to the user of a PowerShell session.
 
 ### non-terminating error
 
-An error that doesn't stop PowerShell from continuing to process the command.
+An error that doesn't stop PowerShell from continuing to process the command. See also,
+[terminating error][03].
 
 ### noun
 
@@ -168,6 +169,15 @@ In PowerShell, the operating environment in which each command in a pipeline is 
 
 ## S
 
+### scalar value
+
+In PowerShell, a scalar value is any value type that is not enumerable. This includes the .NET
+primitive types, such as boolens and numbers, and other value types such as **String**, **DateTime**
+and **Guid**.
+
+For a list of .NET primitive types, see the _Remarks_ section of
+[System.Type.IsPrimitive Property][01].
+
 ### script block
 
 In the PowerShell programming language, a collection of statements or expressions that can be used
@@ -195,7 +205,7 @@ When a switch parameter is used, its value becomes `$true`.
 
 ### terminating error
 
-An error that stops PowerShell from processing the command.
+An error that stops PowerShell from processing the command. See also, [non-terminating error][02].
 
 ### transaction
 
@@ -225,7 +235,7 @@ Unicode-compliant environment.
 ### Windows PowerShell snap-in
 
 A resource that defines a set of cmdlets, providers, and Microsoft .NET Framework types that can be
-added to the Windows PowerShell environment.
+added to the Windows PowerShell environment. PowerShell snap-ins have been replaced by modules.
 
 ### Windows PowerShell Workflow
 
@@ -233,4 +243,10 @@ A workflow is a sequence of programmed, connected steps that perform long-runnin
 the coordination of multiple steps across multiple devices or managed nodes. Windows PowerShell
 Workflow lets IT pros and developers author sequences of multi-device management activities, or
 single tasks within a workflow, as workflows. Windows PowerShell Workflow lets you adapt and run
-both PowerShell scripts and XAML files as workflows. 
+both PowerShell scripts and XAML files as workflows. Windows PowerShell Workflow is built on the
+Windows Workflow Foundation, which has been deprecated.
+
+<!-- link references -->
+[01]: /dotnet/api/system.type.isprimitive#remarks
+[02]: #non-terminating-error
+[03]: #terminating-error

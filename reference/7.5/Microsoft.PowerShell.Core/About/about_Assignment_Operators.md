@@ -1,7 +1,7 @@
 ---
 description: Describes how to use operators to assign values to variables.
 Locale: en-US
-ms.date: 08/01/2023
+ms.date: 01/19/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_assignment_operators?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Assignment Operators
@@ -50,10 +50,10 @@ $MyShell = "PowerShell"
 ```
 
 When you assign a value to a variable in PowerShell, the variable is created if
-it didn't already exist. For example, the first of the following two
-assignment statements creates the `$a` variable and assigns a value of 6 to
-`$a`. The second assignment statement assigns a value of 12 to `$a`. The first
-statement creates a new variable. The second statement changes only its value:
+it didn't already exist. For example, the first of the following two assignment
+statements creates the `$a` variable and assigns a value of 6 to `$a`. The
+second assignment statement assigns a value of 12 to `$a`. The first statement
+creates a new variable. The second statement changes only its value:
 
 ```powershell
 $a = 6
@@ -255,7 +255,7 @@ assignments fail.
 
 For example, the following command assigns a hash table to the `$a` variable.
 Then, it uses the `+=` operator to append another hash table to the existing
-hash table, effectively adding a new key/value pair to the existing hash table.
+hash table, effectively adding a new key-value pair to the existing hash table.
 This command succeeds, as shown in the output:
 
 ```powershell
@@ -293,8 +293,8 @@ Line |
 
 The assignment by subtraction operator `-=` decrements the value of a variable
 by the value that's specified on the right side of the operator. This operator
-can't be used with string variables, and it can't be used to remove an
-element from a collection.
+can't be used with string variables, and it can't be used to remove an element
+from a collection.
 
 The `-=` operator combines two operations. First, it subtracts, and then it
 assigns. Therefore, the following statements are equivalent:
@@ -335,10 +335,9 @@ $a
 ```
 
 You can't use the `-=` operator to delete the values of a variable. To delete
-all the values that are assigned to a variable, use the
-[Clear-Item](xref:Microsoft.PowerShell.Management.Clear-Item) or
-[Clear-Variable](xref:Microsoft.PowerShell.Utility.Clear-Variable) cmdlets
-to assign a value of `$null` or `""` to the variable.
+all the values that are assigned to a variable, use the [Clear-Item][06] or
+[Clear-Variable][07] cmdlets to assign a value of `$null` or `""` to the
+variable.
 
 ```powershell
 $a = $null
@@ -369,11 +368,9 @@ $a
 3
 ```
 
-To delete a variable, use the
-[Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable)
-cmdlet. This method is useful when the variable is explicitly cast to a
-particular data type, and you want an untyped variable. The following command
-deletes the `$a` variable:
+To delete a variable, use the [Remove-Variable][08] cmdlet. This method is
+useful when the variable is explicitly cast to a particular data type, and you
+want an untyped variable. The following command deletes the `$a` variable:
 
 ```powershell
 Remove-Variable -Name a
@@ -430,8 +427,8 @@ $a[0] *= 2
 ### The assignment by division operator
 
 The assignment by division operator `/=` divides a numeric value by the value
-that's specified on the right side of the operator. The operator can't be
-used with string variables.
+that's specified on the right side of the operator. The operator can't be used
+with string variables.
 
 The `/=` operator combines two operations. First, it divides, and then it
 assigns. Therefore, the following two statements are equivalent:
@@ -649,7 +646,7 @@ $x
 ```
 
 For more information, see
-[Null-coalescing operator](about_operators.md#null-coalescing-operator-).
+[Null-coalescing operator][04].
 
 
 ## Microsoft .NET types
@@ -716,10 +713,10 @@ $a
 9
 ```
 
-You can cast a new scalar variable as any .NET type by placing the type name in
-brackets that precede either the variable name or the first assignment value.
-When you cast a variable, you are defining the type of data that can be stored
-in the variable.
+You can cast a new [scalar][01] variable as any .NET type by placing the type
+name in brackets that precede either the variable name or the first assignment
+value. When you cast a variable, you are defining the type of data that can be
+stored in the variable.
 
 For example, the following command casts the variable as a string type:
 
@@ -846,9 +843,9 @@ $d, $e, $f = $c
 This command assigns the value 3 to the `$d` variable, the value 4 to the `$e`
 variable, and the value 5 to the `$f` variable.
 
-If the assignment value contains fewer elements than variables, the
-remaining variables are assigned the value `$null`. For example, the
-following command contains three variables and two values:
+If the assignment value contains fewer elements than variables, the remaining
+variables are assigned the value `$null`. For example, the following command
+contains three variables and two values:
 
 ```powershell
 $a, $b, $c = 1, 2
@@ -867,11 +864,9 @@ $a = $b = $c = $d = "three"
 
 ## Variable-related cmdlets
 
-In addition to using an assignment operation to set a variable value, you
-can also use the
-[Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable) cmdlet. For
-example, the following command uses `Set-Variable` to assign an array of 1,
-2, 3 to the `$a` variable.
+In addition to using an assignment operation to set a variable value, you can
+also use the [Set-Variable][09] cmdlet. For example, the following command uses
+`Set-Variable` to assign an array of 1, 2, 3 to the `$a` variable.
 
 ```powershell
 Set-Variable -Name a -Value 1, 2, 3
@@ -879,9 +874,20 @@ Set-Variable -Name a -Value 1, 2, 3
 
 ## See also
 
-- [about_Arrays](about_Arrays.md)
-- [about_Hash_Tables](about_Hash_Tables.md)
-- [about_Variables](about_Variables.md)
-- [Clear-Variable](xref:Microsoft.PowerShell.Utility.Clear-Variable)
-- [Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable)
-- [Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable)
+- [about_Arrays][02]
+- [about_Hash_Tables][03]
+- [about_Variables][05]
+- [Clear-Variable][07]
+- [Remove-Variable][08]
+- [Set-Variable][09]
+
+<!-- link references -->
+[01]: /powershell/scripting/learn/glossary#scalar-value
+[02]: about_Arrays.md
+[03]: about_Hash_Tables.md
+[04]: about_operators.md#null-coalescing-operator-
+[05]: about_Variables.md
+[06]: xref:Microsoft.PowerShell.Management.Clear-Item
+[07]: xref:Microsoft.PowerShell.Utility.Clear-Variable
+[08]: xref:Microsoft.PowerShell.Utility.Remove-Variable
+[09]: xref:Microsoft.PowerShell.Utility.Set-Variable
