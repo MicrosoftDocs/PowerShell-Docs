@@ -159,15 +159,17 @@ Test-Path -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerS
 False
 ```
 
-### Example 6: Test if a file is newer than a specified date
+### Example 6: Test if a file is in a date range
 
-This command uses the **NewerThan** dynamic parameter to determine whether the "PowerShell.exe" file
-on the computer is newer than "July 13, 2009".
+This command uses the **NewerThan** and **OlderThan** dynamic parameters to determine whether the
+`pwsh.exe` file on the computer is newer than `July 13, 2009` and older than last week.
 
-The NewerThan parameter works only in file system drives.
+The **NewerThan** and **OlderThan** parameters only work in file system drives.
 
 ```powershell
-Test-Path $pshome\pwsh.exe -NewerThan "July 13, 2009"
+Get-Command pwsh |
+    Select-Object -ExpandProperty Path |
+    Test-Path -NewerThan "July 13, 2009" -OlderThan (Get-Date).AddDays(-7)
 ```
 
 ```Output
@@ -328,6 +330,16 @@ This is a dynamic parameter made available by the **FileSystem** provider.
 
 Specify a time as a **DateTime** object.
 
+Before PowerShell 7.5, the cmdlet ignores:
+
+- This parameter when you specify **PathType** as any value other than `Any`.
+- The **OlderThan** parameter when used with this parameter.
+- This parameter when **Path** points to a directory.
+
+Starting with PowerShell 7.5, you can use this parameter with any value for the **PathType**
+parameter, to test a date range with the **OlderThan** parameter, and to test the age of
+directories.
+
 For more information, see
 [about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
 
@@ -348,6 +360,16 @@ Accept wildcard characters: False
 This is a dynamic parameter made available by the **FileSystem** provider.
 
 Specify a time as a **DateTime** object.
+
+Before PowerShell 7.5, the cmdlet ignores:
+
+- This parameter when you specify **PathType** as any value other than `Any`.
+- This parameter when used with the **NewerThan** parameter.
+- This parameter when **Path** points to a directory.
+
+Starting with PowerShell 7.5, you can use this parameter with any value for the **PathType**
+parameter, to test a date range with the **NewerThan** parameter, and to test the age of
+directories.
 
 For more information, see
 [about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
