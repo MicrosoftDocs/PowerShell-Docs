@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 11/30/2023
+ms.date: 01/18/2024
 ---
 
 # What's New in PowerShell 7.4
@@ -227,7 +227,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [12]: /powershell/module/microsoft.powershell.psresourceget
 [13]: /powershell/module/psreadline
 
-[chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
+[chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.4.md
 [14953]: https://github.com/PowerShell/PowerShell/pull/14953
 [17191]: https://github.com/PowerShell/PowerShell/pull/17191
 [17654]: https://github.com/PowerShell/PowerShell/pull/17654

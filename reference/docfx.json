@@ -22,6 +22,9 @@
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.4", "src": "7.4" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.4", "src": "7.4" },
 
+      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.5", "src": "7.5" },
+      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.5", "src": "7.5" },
+
       { "dest": "scripting", "files": [ "**/*.md" ], "src": "virtual-directory" },
       { "dest": "module", "files": [ "**/*.md" ], "src": "virtual-directory-module" }
     ],
@@ -43,6 +46,8 @@
         "7.3/*.yml": "cmdlets",
         "7.4/*.md": "conceptual",
         "7.4/*.yml": "cmdlets",
+        "7.5/*.md": "conceptual",
+        "7.5/*.yml": "cmdlets",
         "docs-conceptual/**/*.md": "conceptual"
       },
       "ms.topic": {
@@ -50,6 +55,7 @@
         "7.2/**/*": "managed-reference",
         "7.3/**/*": "managed-reference",
         "7.4/**/*": "managed-reference",
+        "7.5/**/*": "managed-reference",
         "docs-conceptual/**/*.md": "conceptual",
         "docs-conceptual/dev-cross-plat/**/*.md": "reference",
         "docs-conceptual/developer/**/*.md": "reference",
@@ -74,6 +80,10 @@
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ],
         "7.4/**/*": [
+          "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
+          "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
+        ],
+        "7.5/**/*": [
           "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ],
@@ -123,7 +133,8 @@
       "powershell-5.1": { "moniker_range": "powershell-5.1" },
       "powershell-7.2": { "moniker_range": "powershell-7.2" },
       "powershell-7.3": { "moniker_range": "powershell-7.3" },
-      "powershell-7.4": { "moniker_range": "powershell-7.4" }
+      "powershell-7.4": { "moniker_range": "powershell-7.4" },
+      "powershell-7.5": { "moniker_range": "powershell-7.5" }
     },
     "markdownEngineName": "markdig",
     "overwrite": [],

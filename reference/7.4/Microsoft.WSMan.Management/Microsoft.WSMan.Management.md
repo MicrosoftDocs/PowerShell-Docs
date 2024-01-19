@@ -1,6 +1,6 @@
 ---
 Download Help Link: https://aka.ms/powershell74-help
-Help Version: 7.2.0.0
+Help Version: 7.4.0.0
 Locale: en-US
 Module Guid: 766204a6-330e-4263-a7ab-46c87afc366c
 Module Name: Microsoft.WSMan.Management
