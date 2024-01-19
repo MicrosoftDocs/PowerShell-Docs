@@ -129,7 +129,7 @@ class Book {
             $this.$Property = $Properties.$Property
         }
     }
-    # Method to calculate reading time as 30 seconds per page
+    # Method to calculate reading time as 2 minutes per page
     [timespan] GetReadingTime() {
         if ($this.PageCount -le 0) {
             throw 'Unable to determine reading time from page count.'
