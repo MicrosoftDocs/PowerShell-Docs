@@ -34,7 +34,7 @@ PowerShell modules. For information about how to write PowerShell modules, see
 
 ## Install a published module
 
-A published module is a module that is available from a registerd repository,
+A published module is a module that is available from a registered repository,
 such as the PowerShell Gallery. The **PowerShellGet** and
 **Microsoft.PowerShell.PSResourceGet** modules provide cmdlets for finding,
 installing, and publishing PowerShell modules to a registered repository.

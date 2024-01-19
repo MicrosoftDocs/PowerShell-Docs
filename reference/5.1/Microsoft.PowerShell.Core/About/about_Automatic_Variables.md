@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 11/15/2023
+ms.date: 01/19/2024
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -21,48 +21,48 @@ be written to.
 
 Here is a list of the automatic variables in PowerShell:
 
-- [$$](#section)
-- [$?](#section-1)
-- [$^](#section-2)
-- [$_](#_)
-- [$args](#args)
-- [$ConsoleFileName](#consolefilename)
-- [$Error](#error)
-- [$Event](#event)
-- [$EventArgs](#eventargs)
-- [$EventSubscriber](#eventsubscriber)
-- [$ExecutionContext](#executioncontext)
-- [$false](#false)
-- [$foreach](#foreach)
-- [$HOME](#home)
-- [$Host](#host)
-- [$input](#input)
-- [$LASTEXITCODE](#lastexitcode)
-- [$Matches](#matches)
-- [$MyInvocation](#myinvocation)
-- [$NestedPromptLevel](#nestedpromptlevel)
-- [$null](#null)
-- [$PID](#pid)
-- [$PROFILE](#profile)
-- [$PSBoundParameters](#psboundparameters)
-- [$PSCmdlet](#pscmdlet)
-- [$PSCommandPath](#pscommandpath)
-- [$PSCulture](#psculture)
-- [$PSDebugContext](#psdebugcontext)
-- [$PSEdition](#psedition)
-- [$PSHOME](#pshome)
-- [$PSItem](#psitem)
-- [$PSScriptRoot](#psscriptroot)
-- [$PSSenderInfo](#pssenderinfo)
-- [$PSUICulture](#psuiculture)
-- [$PSVersionTable](#psversiontable)
-- [$PWD](#pwd)
-- [$Sender](#sender)
-- [$ShellId](#shellid)
-- [$StackTrace](#stacktrace)
-- [$switch](#switch)
-- [$this](#this)
-- [$true](#true)
+- [$$][40]
+- [$?][41]
+- [$^][42]
+- [$_][02]
+- [$args][03]
+- [$ConsoleFileName][04]
+- [$Error][06]
+- [$Event][07]
+- [$EventArgs][08]
+- [$EventSubscriber][09]
+- [$ExecutionContext][10]
+- [$false][11]
+- [$foreach][12]
+- [$HOME][13]
+- [$Host][14]
+- [$input][15]
+- [$LASTEXITCODE][20]
+- [$Matches][21]
+- [$MyInvocation][22]
+- [$NestedPromptLevel][23]
+- [$null][24]
+- [$PID][25]
+- [$PROFILE][26]
+- [$PSBoundParameters][27]
+- [$PSCmdlet][28]
+- [$PSCommandPath][29]
+- [$PSCulture][30]
+- [$PSDebugContext][31]
+- [$PSEdition][32]
+- [$PSHOME][33]
+- [$PSItem][34]
+- [$PSScriptRoot][35]
+- [$PSSenderInfo][36]
+- [$PSUICulture][37]
+- [$PSVersionTable][38]
+- [$PWD][39]
+- [$Sender][43]
+- [$ShellId][44]
+- [$StackTrace][45]
+- [$switch][46]
+- [$this][47]
+- [$true][48]
 
 ## Long description
 
@@ -129,7 +129,7 @@ Same as `$PSItem`. Contains the current object in the pipeline object. You can
 use this variable in commands that perform an action on every object in a
 pipeline.
 
-For more information, see [about_PSItem][19].
+For more information, see [about_PSItem][67].
 
 ### $args
 
@@ -162,7 +162,7 @@ most recent error is the first error object in the array `$Error[0]`.
 
 To prevent an error from being added to the `$Error` array, use the
 **ErrorAction** common parameter with a value of **Ignore**. For more
-information, see [about_CommonParameters][04].
+information, see [about_CommonParameters][53].
 
 ### $Event
 
@@ -203,13 +203,13 @@ non-zero integer.
 
 ### $foreach
 
-Contains the enumerator (not the resulting values) of a [ForEach][07] loop. The
+Contains the enumerator (not the resulting values) of a [ForEach][56] loop. The
 `$ForEach` variable exists only while the `ForEach` loop is running; it's
 deleted after the loop is completed.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
-[Using Enumerators][01].
+[Using Enumerators][49].
 
 ### $HOME
 
@@ -255,7 +255,7 @@ to reuse the `$input` properties.
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
-[Using Enumerators][01].
+[Using Enumerators][49].
 
 The `$input` variable is also available to the command specified by the
 `-Command` parameter of `powershell.exe` when invoked from the command line.
@@ -276,10 +276,10 @@ was called and whether the `exit` keyword was used:
 - When a script uses the `exit` keyword:
 
   `$LASTEXITCODE` is set to value the specified by the `exit` keyword. For more
-  information, see [about_Language_Keywords][16].
+  information, see [about_Language_Keywords][64].
 
 - When a script is called directly, like `./Test.ps1`, or with the
-  [call operator][16] (`&`) like `& ./Test.ps1`:
+  [call operator][65] (`&`) like `& ./Test.ps1`:
 
   The value of `$LASTEXITCODE` isn't changed unless:
 
@@ -303,25 +303,25 @@ was called and whether the `exit` keyword was used:
     set `$?` to `$true`
 
 For more information on the **File** and **Command** parameters, see
-[about_PowerShell_exe][17].
+[about_PowerShell_exe][68].
 
 ### $Matches
 
 The `$Matches` variable works with the `-match` and `-notmatch` operators. When
-you submit scalar input to the `-match` or `-notmatch` operator, and either one
-detects a match, they return a Boolean value and populate the `$Matches`
-automatic variable with a hash table of any string values that were matched.
-The `$Matches` hash table can also be populated with captures when you use
-regular expressions with the `-match` operator.
+you submit [scalar][01] input to the `-match` or `-notmatch` operator, and
+either one detects a match, they return a Boolean value and populate the
+`$Matches` automatic variable with a hash table of any string values that were
+matched. The `$Matches` hash table can also be populated with captures when you
+use regular expressions with the `-match` operator.
 
 For more information about the `-match` operator, see
-[about_Comparison_Operators][05]. For more information on regular expressions,
-see [about_Regular_Expressions][20].
+[about_Comparison_Operators][54]. For more information on regular expressions,
+see [about_Regular_Expressions][69].
 
 The `$Matches` variable also works in a `switch` statement with the `-Regex`
 parameter. It's populated the same way as the `-match` and `-notmatch`
 operators. For more information about the `switch` statement, see
-[about_Switch][22].
+[about_Switch][71].
 
 > [!NOTE]
 > When `$Matches` is populated in a session, it retains the matched value until
@@ -515,8 +515,8 @@ property contains the name of the parameter set that's being used, and the
 cmdlet dynamically.
 
 For more information about the `$PSCmdlet` automatic variable, see
-[about_Functions_CmdletBindingAttribute][11] and
-[about_Functions_Advanced][10].
+[about_Functions_CmdletBindingAttribute][60] and
+[about_Functions_Advanced][59].
 
 ### $PSCommandPath
 
@@ -562,7 +562,7 @@ Select-String -Pattern Variable -Path $pshome\*.txt
 Same as `$_`. Contains the current object in the pipeline object. You can use
 this variable in commands that perform an action on every object in a pipeline.
 
-For more information, see [about_PSItem][19].
+For more information, see [about_PSItem][67].
 
 ### $PSScriptRoot
 
@@ -641,11 +641,11 @@ Contains a stack trace for the most recent error.
 Contains the enumerator not the resulting values of a `Switch` statement. The
 `$switch` variable exists only while the `Switch` statement is running; it's
 deleted when the `switch` statement completes execution. For more information,
-see [about_Switch][22].
+see [about_Switch][71].
 
 Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
-[Using Enumerators][01].
+[Using Enumerators][49].
 
 ### $this
 
@@ -669,11 +669,11 @@ Definition : System.Object BaseName {get=if ($this.Extension.Length -gt 0)
              )}else{$this.Name};}
 ```
 
-For more information, see [about_Types.ps1xml][23].
+For more information, see [about_Types.ps1xml][72].
 
 In a PowerShell class, the `$this` variable refers to the instance object of
 the class itself, allowing access to properties and methods defined in the
-class. For more information, see [about_Classes][03].
+class. For more information, see [about_Classes][52].
 
 The `$this` variable is also used by .NET event classes that take script blocks
 as delegates for the event handler. In this scenario, `$this` represents the
@@ -693,17 +693,17 @@ An enumerator contains properties and methods you can use to advance or reset
 iteration, or retrieve iteration values. Directly manipulating enumerators
 isn't considered best practice.
 
-- Within loops, flow control keywords [break][02] and [continue][06] should be
+- Within loops, flow control keywords [break][51] and [continue][55] should be
   preferred.
 - Within functions that accept pipeline input, it's best practice to use
   parameters with the **ValueFromPipeline** or
   **ValueFromPipelineByPropertyName** attributes.
 
-  For more information, see [about_Functions_Advanced_Parameters][09].
+  For more information, see [about_Functions_Advanced_Parameters][58].
 
 ### MoveNext
 
-The [MoveNext][27] method
+The [MoveNext][76] method
 advances the enumerator to the next element of the collection. **MoveNext**
 returns `True` if the enumerator was successfully advanced, `False` if the
 enumerator has passed the end of the collection.
@@ -711,7 +711,7 @@ enumerator has passed the end of the collection.
 > [!NOTE]
 > The **Boolean** value returned by **MoveNext** is sent to the output stream.
 > You can suppress the output by typecasting it to `[void]` or piping it to
-> [Out-Null][25].
+> [Out-Null][74].
 >
 > ```powershell
 > $input.MoveNext() | Out-Null
@@ -723,12 +723,12 @@ enumerator has passed the end of the collection.
 
 ### Reset
 
-The [Reset][28] method sets the enumerator to its initial position, which is
+The [Reset][77] method sets the enumerator to its initial position, which is
 **before** the first element in the collection.
 
 ### Current
 
-The [Current][26] property gets the element in the collection, or pipeline, at
+The [Current][75] property gets the element in the collection, or pipeline, at
 the current position of the enumerator.
 
 The **Current** property continues to return the same property until
@@ -1026,42 +1026,92 @@ Default (Current): End
 
 ## See also
 
-- [about_Functions][13]
-- [about_Functions_Advanced][10]
-- [about_Functions_Advanced_Methods][08]
-- [about_Functions_Advanced_Parameters][09]
-- [about_Functions_OutputTypeAttribute][12]
-- [about_Functions_CmdletBindingAttribute][11]
-- [about_Hash_Tables][14]
-- [about_Preference_Variables][18]
-- [about_Splatting][21]
-- [about_Variables][24]
+- [about_Functions][62]
+- [about_Functions_Advanced][59]
+- [about_Functions_Advanced_Methods][57]
+- [about_Functions_Advanced_Parameters][58]
+- [about_Functions_OutputTypeAttribute][61]
+- [about_Functions_CmdletBindingAttribute][60]
+- [about_Hash_Tables][63]
+- [about_Preference_Variables][66]
+- [about_Splatting][70]
+- [about_Variables][73]
 
 <!-- link references -->
-[01]: #using-enumerators
-[02]: about_Break.md
-[03]: about_Classes.md
-[04]: about_CommonParameters.md
-[05]: about_comparison_operators.md
-[06]: about_Continue.md
-[07]: about_ForEach.md
-[08]: about_Functions_Advanced_Methods.md
-[09]: about_Functions_Advanced_Parameters.md
-[10]: about_Functions_Advanced.md
-[11]: about_Functions_CmdletBindingAttribute.md
-[12]: about_Functions_OutputTypeAttribute.md
-[13]: about_Functions.md
-[14]: about_Hash_Tables.md
-[16]: about_operators.md#call-operator-
-[17]: about_PowerShell_exe.md
-[18]: about_Preference_Variables.md
-[19]: about_PSItem.md
-[20]: about_Regular_Expressions.md
-[21]: about_Splatting.md
-[22]: about_Switch.md
-[23]: about_Types.ps1xml.md
-[24]: about_Variables.md
-[25]: xref:Microsoft.PowerShell.Core.Out-Null
-[26]: xref:System.Collections.IEnumerator.Current
-[27]: xref:System.Collections.IEnumerator.MoveNext
-[28]: xref:System.Collections.IEnumerator.Reset
+[01]: /powershell/scripting/learn/glossary#scalar-value
+[02]: #_
+[03]: #args
+[04]: #consolefilename
+[05]: #enabledexperimentalfeatures
+[06]: #error
+[07]: #event
+[08]: #eventargs
+[09]: #eventsubscriber
+[10]: #executioncontext
+[11]: #false
+[12]: #foreach
+[13]: #home
+[14]: #host
+[15]: #input
+
+
+
+
+[20]: #lastexitcode
+[21]: #matches
+[22]: #myinvocation
+[23]: #nestedpromptlevel
+[24]: #null
+[25]: #pid
+[26]: #profile
+[27]: #psboundparameters
+[28]: #pscmdlet
+[29]: #pscommandpath
+[30]: #psculture
+[31]: #psdebugcontext
+[32]: #psedition
+[33]: #pshome
+[34]: #psitem
+[35]: #psscriptroot
+[36]: #pssenderinfo
+[37]: #psuiculture
+[38]: #psversiontable
+[39]: #pwd
+[40]: #section
+[41]: #section-1
+[42]: #section-2
+[43]: #sender
+[44]: #shellid
+[45]: #stacktrace
+[46]: #switch
+[47]: #this
+[48]: #true
+[49]: #using-enumerators
+
+[51]: about_Break.md
+[52]: about_Classes.md
+[53]: about_CommonParameters.md
+[54]: about_comparison_operators.md
+[55]: about_Continue.md
+[56]: about_ForEach.md
+[57]: about_Functions_Advanced_Methods.md
+[58]: about_Functions_Advanced_Parameters.md
+[59]: about_Functions_Advanced.md
+[60]: about_Functions_CmdletBindingAttribute.md
+[61]: about_Functions_OutputTypeAttribute.md
+[62]: about_Functions.md
+[63]: about_Hash_Tables.md
+[64]: about_language_keywords.md#exit
+[65]: about_operators.md#call-operator-
+[66]: about_Preference_Variables.md
+[67]: about_PSItem.md
+[68]: about_PowerShell_exe.md
+[69]: about_Regular_Expressions.md
+[70]: about_Splatting.md
+[71]: about_Switch.md
+[72]: about_Types.ps1xml.md
+[73]: about_Variables.md
+[74]: xref:Microsoft.PowerShell.Core.Out-Null
+[75]: xref:System.Collections.IEnumerator.Current
+[76]: xref:System.Collections.IEnumerator.MoveNext
+[77]: xref:System.Collections.IEnumerator.Reset

@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 09/26/2023
+ms.date: 01/19/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -31,7 +31,7 @@ operators on any .NET type that implements them, such as: `Int`, `String`,
 Bitwise operators (`-band`, `-bor`, `-bxor`, `-bnot`, `-shl`, `-shr`)
 manipulate the bit patterns in values.
 
-For more information, see [about_Arithmetic_Operators][04].
+For more information, see [about_Arithmetic_Operators][05].
 
 ## Assignment Operators
 
@@ -39,7 +39,7 @@ Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign, change,
 or append values to variables. You can combine arithmetic operators with
 assignment to assign the result of the arithmetic operation to a variable.
 
-For more information, see [about_Assignment_Operators][05].
+For more information, see [about_Assignment_Operators][06].
 
 ## Comparison Operators
 
@@ -88,8 +88,8 @@ For more information, see [about_Split][21] and [about_Join][12].
 
 ## Type Operators
 
-Use the type operators (`-is`, `-isnot`, `-as`) to find or change the .NET
-Framework type of an object.
+Use the type operators (`-is`, `-isnot`, `-as`) to find or change the .NET type
+of an object.
 
 For more information, see [about_Type_Operators][22].
 
@@ -99,7 +99,7 @@ Use the unary `++`  and `--` operators to increment or decrement values and
 `-` for negation. For example, to increment the variable `$a` from `9` to
 `10`, you type `$a++`.
 
-For more information, see [about_Arithmetic_Operators][04].
+For more information, see [about_Arithmetic_Operators][05].
 
 ## Special Operators
 
@@ -216,9 +216,9 @@ in the body of the `if` statement.
 ### Subexpression operator `$( )`
 
 Returns the result of one or more statements. For a single result, returns a
-scalar. For multiple results, returns an array. Use this when you want to use
-an expression within another expression. For example, to embed the results of
-command in a string expression.
+[scalar][04]. For multiple results, returns an array. Use this when you want to
+use an expression within another expression. For example, to embed the results
+of command in a string expression.
 
 ```powershell
 PS> "Today is $(Get-Date)"
@@ -301,8 +301,8 @@ when using the call operator.
 
 ```
 PS> & "1+1"
-& : The term '1+1' is not recognized as the name of a cmdlet, function, script
-file, or operable program. Check the spelling of the name, or if a path was
+&: The term '1+1' is not recognized as a name of a cmdlet, function, script
+file, or executable program. Check the spelling of the name, or if a path was
 included, verify that the path is correct and try again.
 At line:1 char:2
 + & "1+1"
@@ -567,8 +567,8 @@ see [about_Member-Access_Enumeration][14].
 
 ### Static member operator `::`
 
-Calls the static properties and methods of a .NET Framework class. To find the
-static properties and methods of an object, use the Static parameter of the
+Calls the static properties and methods of a .NET class. To find the static
+properties and methods of an object, use the Static parameter of the
 `Get-Member` cmdlet. The member name may be an expression.
 
 ```powershell
@@ -578,8 +578,8 @@ static properties and methods of an object, use the Static parameter of the
 
 ## See also
 
-- [about_Arithmetic_Operators][04]
-- [about_Assignment_Operators][05]
+- [about_Arithmetic_Operators][05]
+- [about_Assignment_Operators][06]
 - [about_Comparison_Operators][07]
 - [about_Logical_Operators][13]
 - [about_Operator_Precedence][15]
@@ -593,9 +593,9 @@ static properties and methods of an object, use the Static parameter of the
 [01]: /dotnet/api/system.string.format
 [02]: /dotnet/standard/base-types/composite-formatting
 [03]: /dotnet/standard/base-types/custom-numeric-format-strings#Specifier0
-[04]: about_Arithmetic_Operators.md
-[05]: about_Assignment_Operators.md
-[06]: about_Automatic_Variables.md
+[04]: /powershell/scripting/learn/glossary#scalar-value
+[05]: about_Arithmetic_Operators.md
+[06]: about_Assignment_Operators.md
 [07]: about_Comparison_Operators.md
 [09]: about_Hash_Tables.md
 [12]: about_Join.md
