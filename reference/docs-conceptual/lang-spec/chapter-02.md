@@ -98,7 +98,7 @@ Syntax:
 
 ```Syntax
 comment:
-single-line-comment
+    single-line-comment
     requires-comment
     delimited-comment
 
