@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 01/19/2024
+ms.date: 01/23/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Classes
@@ -359,6 +359,66 @@ Line |
      | Book 'The Hobbit by J.R.R. Tolkien (1937)' already in list
 ```
 
+### Example 4 - Class definition with and without Runspace affinity
+
+The `ShowRunspaceId()` method of `[UnsafeClass]` reports different thread Ids
+but the same runspace ID. Eventually, the session state is corrupted causing
+an error, such as `Global scope cannot be removed`.
+
+```powershell
+# Class definition with Runspace affinity (default behavior)
+class UnsafeClass {
+    static [object] ShowRunspaceId($val) {
+        return [PSCustomObject]@{
+            ThreadId   = [Threading.Thread]::CurrentThread.ManagedThreadId
+            RunspaceId = [runspace]::DefaultRunspace.Id
+        }
+    }
+}
+
+$unsafe = [UnsafeClass]::new()
+
+while ($true) {
+    1..10 | ForEach-Object -Parallel {
+        Start-Sleep -ms 100
+        ($using:unsafe)::ShowRunspaceId($_)
+    }
+}
+```
+
+> [!NOTE]
+> This example runs in an infinite loop. Enter <kbd>Ctrl</kbd>+<kbd>C</kbd> to
+> stop the execution.
+
+The `ShowRunspaceId()` method of `[SafeClass]` reports different thread and
+Runspace ids.
+
+```powershell
+# Class definition with NoRunspaceAffinity attribute
+[NoRunspaceAffinity()]
+class SafeClass {
+    static [object] ShowRunspaceId($val) {
+        return [PSCustomObject]@{
+            ThreadId   = [Threading.Thread]::CurrentThread.ManagedThreadId
+            RunspaceId = [runspace]::DefaultRunspace.Id
+        }
+    }
+}
+
+$safe = [SafeClass]::new()
+
+while ($true) {
+    1..10 | ForEach-Object -Parallel {
+        Start-Sleep -ms 100
+        ($using:safe)::ShowRunspaceId($_)
+    }
+}
+```
+
+> [!NOTE]
+> This example runs in an infinite loop. Enter <kbd>Ctrl</kbd>+<kbd>C</kbd> to
+> stop the execution.
+
 ## Class properties
 
 Properties are variables declared in the class scope. A property can be of any
@@ -451,6 +511,29 @@ class can be used like any other class implementing that interface.
 For more information about deriving classes that inherit from a base class or
 implement interfaces, see
 [about_Classes_Inheritance][11].
+
+## NoRunspaceAffinity attribute
+
+A runspace is the operating environment for the commands invoked by PowerShell.
+This environment includes the commands and data that are currently present, and
+any language restrictions that currently apply.
+
+By default, a PowerShell class is affiliated with the **Runspace** where it's
+created. Using a PowerShell class in `ForEach-Object -Parallel` isn't safe.
+Method invocations on the class are marshalled back to the **Runspace** where
+it was created, which can corrupt the state of the **Runspace** or cause a
+deadlock.
+
+Adding the `NoRunspaceAffinity` attribute to the class definition ensures that
+the PowerShell class isn't affiliated with a particular runspace. Method
+invocations, both instance and static, use the **Runspace** of the running
+thread and the thread's current session state.
+
+The attribute was added in PowerShell 7.4.
+
+For an illustration of the difference in behavior for classes with and without
+the `NoRunspaceAffinity` attribute, see
+[Example 4](#example-4---class-definition-with-and-without-runspace-affinity).
 
 ## Exporting classes with type accelerators
 
@@ -586,6 +669,12 @@ workaround for those limitations, if any.
   definition.
 
   Workaround: None.
+- By default, PowerShell classes aren't safe to use in parallel execution
+  across runspaces. When you Invoke methods on a class, PowerShell marshalls
+  the invocations back to the **Runspace** where the class was created, which
+  can corrupt the state of the **Runspace** or cause a deadlock.
+
+  Workaround: Add the `NoRunspaceAffinity` attribute to the class declaration.
 
 ### Constructor limitations
 
