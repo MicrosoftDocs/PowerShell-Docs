@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/04/2021
+ms.date: 01/24/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Guid
@@ -51,5 +51,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 This cmdlet returns a GUID.
 
 ## NOTES
+
+The cmdlet creates a Version 4 Universally Unique Identifier (UUID). For more information, see
+[System.Guid.NewGuid](xref:System.Guid.NewGuid).
 
 ## RELATED LINKS
