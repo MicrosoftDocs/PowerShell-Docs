@@ -2,7 +2,6 @@
 author: sdwheeler
 ms.author: sewhee
 ms.date: 11/14/2023
-ms.prod: powershell
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
