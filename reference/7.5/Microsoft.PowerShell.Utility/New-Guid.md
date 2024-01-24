@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/18/2024
+ms.date: 01/24/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Guid
@@ -146,5 +146,9 @@ This cmdlet returns a GUID.
 The cmdlet passes string input to the constructor of the **System.Guid** class. The constructor
 support strings in several formats. For more information, see
 [System.Guid(String)](/dotnet/api/system.guid.-ctor#system-guid-ctor(system-string)).
+
+When used without string input or the **Empty** parameter, the cmdlet creates a Version 4
+Universally Unique Identifier (UUID). For more information, see
+[System.Guid.NewGuid](xref:System.Guid.NewGuid).
 
 ## RELATED LINKS
