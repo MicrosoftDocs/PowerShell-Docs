@@ -16,42 +16,34 @@ the scope of elements.
 
 PowerShell protects access to variables, aliases, functions, and PowerShell
 drives (PSDrives) by limiting where they can be read and changed. PowerShell
-uses scope rules to ensure that you don't inadvertently change an item that
+uses scope rules to ensure that you don't accidentally change an item that
 shouldn't be changed.
+
+## Scope rules
+
+When you start PowerShell, the host (`pwsh.exe`) creates a PowerShell runspace.
+Host processes can have multiple runspaces. Each runspace has its own session
+state and scope containers. Session state and scopes can't be accessed across
+runspace instances.
 
 The following are the basic rules of scope:
 
 - Scopes may nest. An outer scope is referred to as a parent scope. Any nested
   scopes are child scopes of that parent.
-
-- An item is visible in the scope that it was created in and in any child
-  scopes, unless you explicitly make it private.
+- An item is visible in the scope that it was created and in any child scopes,
+  unless you explicitly make it private.
 - You can declare variables, aliases, functions, and PowerShell drives for a
   scope outside of the current scope.
 - An item that you created within a scope can be changed only in the scope in
   which it was created, unless you explicitly specify a different scope.
+- When code running in a runspace references a scoped item, PowerShell searches
+  the scope hierarchy it has access to looking for a name match. If it doesn't
+  exist, a new item is created in the current scope. If it finds a match, the
+  item is copied to the current scope. If you create an item in a scope, and
+  the item shares its name with an item in a different scope, the original item
+  might be hidden by the new item, but it isn't overridden or changed.
 
-If you create an item in a scope, and the item shares its name with an item in
-a different scope, the original item might be hidden by the new item, but it
-isn't overridden or changed.
-
-## PowerShell scopes
-
-PowerShell supports the following scopes:
-
-- **Global**: The scope that's in effect when PowerShell starts or when you
-  create a new session or runspace. Variables and functions that are present
-  when PowerShell starts have been created in the global scope, such as
-  automatic variables and preference variables. The variables, aliases, and
-  functions in your PowerShell profiles are also created in the global scope.
-  The global scope is the root parent scope in a session.
-- **Local**: The current scope. The local scope can be the global scope or any
-  other scope.
-- **Script**: The scope that's created while a script file runs. Only the
-  commands in the script run in the script scope. To the commands in a script,
-  the script scope is the local scope.
-
-## Parent and child scopes
+### Parent and child scopes
 
 You can create a new child scope by calling a script or function. The calling
 scope is the parent scope. The called script or function is the child scope.
@@ -69,17 +61,12 @@ the scope when you create the items.
 > All module code runs in a module-specific hierarchy of scopes that has its
 > own root scope.
 
-## Inheritance
+### Inheritance
 
-A child scope doesn't inherit the variables, aliases, and functions from the
-parent scope. Unless an item is private, the child scope can view the items in
-the parent scope. And, it can change the items by explicitly specifying the
-parent scope, but the items aren't part of the child scope.
-
-However, a child scope is created with a set of items. Typically, it includes
-all the aliases that have the **AllScope** option. This option is discussed
-later in this article. It includes all the variables that have the **AllScope**
-option, plus some automatic variables.
+A child scope is created with a set of items. Typically, it includes all the
+aliases that have the **AllScope** option. This option is discussed later in
+this article. It includes all the variables that have the **AllScope** option,
+plus some automatic variables.
 
 To find the items in a particular scope, use the Scope parameter of
 `Get-Variable` or `Get-Alias`.
@@ -95,6 +82,34 @@ To get all the variables in the global scope, type:
 ```powershell
 Get-Variable -Scope global
 ```
+
+A child scope doesn't inherit the variables, aliases, and functions from the
+parent scope. However, unless an item is private, the child scope can view the
+items in the parent scope. And, it can change the items by explicitly
+specifying the parent scope, but the items aren't part of the child scope.
+
+## PowerShell scopes names
+
+PowerShell defines names for some scopes to allow easier access to that scope.
+PowerShell defines the following named scopes:
+
+- **Global**: The scope that's in effect when PowerShell starts or when you
+  create a new session or runspace. Variables and functions that are present
+  when PowerShell starts, such as automatic variables and preference variables,
+  are created in the global scope. The variables, aliases, and functions in
+  your PowerShell profiles are also created in the global scope. The global
+  scope is the root parent scope in a runspace.
+- **Local**: The current scope. The local scope can be the global scope or any
+  other scope.
+- **Script**: The scope that's created while a script file runs. The commands
+  in the script run in the script scope. For the commands in a script, the
+  script scope is the local scope.
+
+For cmdlets that support scopes, scopes can be referred to by a number that
+describes the relative position of one scope to another. Scope 0 denotes the
+current (local) scope, scope 1 is the current scope's parent, scope 2 is the
+current scope's grandparent. This pattern continues until you reach the root
+scope.
 
 ## Scope modifiers
 
@@ -405,28 +420,14 @@ example, you can run a script to create a child scope in a session.
 
 You can use a PowerShell module to share and deliver PowerShell tools. A module
 is a unit that can contain cmdlets, scripts, functions, variables, aliases, and
-other useful items. Unless explicitly defined, the items in a module aren't
+other useful items. Unless explicitly exported, the items in a module aren't
 accessible outside the module. Therefore, you can add the module to your
 session and use the public items without worrying that the other items might
 override the cmdlets, scripts, functions, and other items in your session.
 
-By default, modules are loaded into the top-level of the current _session
-state_ not the current _scope_. The current session state could be a module
-session state or the global session state. Adding a module to a session does
-not change the scope. If you are in the global scope, then modules are loaded
-into the global session state. Any exports are placed into the global tables.
-If you load module2 from _within_ module1, module2 is loaded into the session
-state of module1 not the global session state. Any exports from module2 are
-placed at the top of the module1 session state. If you use
-`Import-Module -Scope local`, then the exports are placed into the current
-scope object rather than at the top level. If you are _in a module_ and use
-`Import-Module -Scope global` (or `Import-Module -Global`) to load another
-module, that module and its exports are loaded into the global session state
-instead of the module's local session state. This feature was designed for
-writing module that manipulate modules. The **WindowsCompatibility** module
-does this to import proxy modules into the global session state.
-
-Within the session state, modules have their own scope. Consider the following
+By default, modules are loaded into the root-level (global) scope of the
+runspace. Importing a module doesn't change the scope.
+Within the session, modules have their own scope. Consider the following
 module `C:\temp\mod1.psm1`:
 
 ```powershell
@@ -453,6 +454,23 @@ The module declares the variable `$a` in the module scope then the function
 $a = Hello
 $global:a = Goodbye
 ```
+
+Modules create parallel scope containers linked to the scope in which they were
+imported. Items exported by the module are available starting at the
+scope-level in which they are imported. Items not exported from the module are
+only available within the module's scope container. Functions in the module can
+access items in the scope in which they were imported as well as items in the
+module's scope container.
+
+If you load **Module2** from _within_ **Module1**, **Module2** is loaded into
+the scope container of Module1. Any exports from **Module2** are placed in the
+current module scope of **Module1**. If you use `Import-Module -Scope local`,
+then the exports are placed into the current scope object rather than at the
+top level. If you are _in a module_ and load another module using
+`Import-Module -Scope global` (or `Import-Module -Global`), that module and its
+exports are loaded into the global scope instead of the module's local scope.
+The **WindowsCompatibility** feature does this to import proxy modules into the
+global session state.
 
 ### Nested prompts
 
