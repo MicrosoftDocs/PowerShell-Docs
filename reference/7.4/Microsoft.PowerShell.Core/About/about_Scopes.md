@@ -668,9 +668,21 @@ function funcC {
 }
 
 function funcD {
-    "In funcD -> '$funcAVar1' - should be the value from funcC."
+    "In funcD before set -> '$funcAVar1' - should be the value from funcC."
+    $funcAVar1 = "Value set in funcD"
+    "In funcD after set  -> '$funcAVar1'"
+    '-------------------'
+    ShowScopes
 }
 
+function ShowScopes {
+    $funcAVar1 = "Value set in ShowScopes"
+    "Scope [0] (local)  `$funcAVar1 = '$(Get-Variable funcAVar1 -Scope 0 -ValueOnly)'"
+    "Scope [1] (parent) `$funcAVar1 = '$(Get-Variable funcAVar1 -Scope 1 -ValueOnly)'"
+    "Scope [2] (parent) `$funcAVar1 = '$(Get-Variable funcAVar1 -Scope 2 -ValueOnly)'"
+    "Scope [3] (parent) `$funcAVar1 = '$(Get-Variable funcAVar1 -Scope 3 -ValueOnly)'"
+    "Scope [4] (parent) `$funcAVar1 = '$(Get-Variable funcAVar1 -Scope 4 -ValueOnly)'"
+}
 funcA
 # End of ScopeExample.ps1
 PS> .\ScopeExample.ps1
@@ -685,8 +697,19 @@ In funcB before set -> 'Value set in funcA'
 In funcB after set  -> 'Locally overwrite the value - child scopes can't see me!'
 In funcC before set -> 'Value set in funcA' - should be the value set in funcA
 In funcC after set  -> 'Value set in funcC - Child scopes can see this change.'
-In funcD -> 'Value set in funcC - Child scopes can see this change.' - should be the value from funcC.
+In funcD before set -> 'Value set in funcC - Child scopes can see this change.' - should be the value from funcC.
+In funcD after set  -> 'Value set in funcD'
+-------------------
+Scope [0] (local)  $funcAVar1 = 'Value set in ShowScopes'
+Scope [1] (parent) $funcAVar1 = 'Value set in funcD'
+Scope [2] (parent) $funcAVar1 = 'Value set in funcC - Child scopes can see this change.'
+Scope [3] (parent) $funcAVar1 = 'Locally overwrite the value - child scopes can't see me!'
+Scope [4] (parent) $funcAVar1 = 'Value set in funcA'
 ```
+
+As shown by the output from `ShowScopes`, you can access variables from other
+scopes using `Get-Variable` and specifying a`` scope number relative to the
+current scope.
 
 ### Example 5: Using a local variable in a remote command
 
