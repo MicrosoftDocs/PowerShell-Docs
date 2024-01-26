@@ -16,8 +16,8 @@ the scope of elements.
 
 PowerShell protects access to variables, aliases, functions, and PowerShell
 drives (PSDrives) by limiting where they can be read and changed. PowerShell
-uses scope rules to ensure that you don't accidentally change an item that
-shouldn't be changed.
+uses scope rules to ensure that you don't make unintentional changes to items
+in other scopes.
 
 ## Scope rules
 
@@ -65,9 +65,9 @@ have the **AllScope** option, and some automatic variables. This option is
 discussed later in this article.
 
 Unless you explicitly make the items private, the items in the parent scope are
-available to the child scope. Items that you create and change in the child
-scope don't affect the parent scope, unless you explicitly specify the scope
-when you create the items.
+available to the child scope. Items that you create or change in a child scope
+don't affect the parent scope, unless you explicitly specify the scope when you
+create the items.
 
 To find the items in a particular scope, use the Scope parameter of
 `Get-Variable` or `Get-Alias`.
@@ -126,8 +126,8 @@ optional scope modifiers:
   current scope.
 
   > [!NOTE]
-  > `private` isn't a scope. It's an [option][03] that changes the visibility
-  > of an item outside of the scope where the item is defined.
+  > `private:` isn't a scope. It's an [option][03] that changes the
+  > accessibility of an item outside of the scope in which it's defined.
 
 - `script:` - Specifies that the name exists in the **Script** scope.
   **Script** scope is the nearest ancestor script file's scope or **Global** if
@@ -635,11 +635,11 @@ Local
 ### Example 4: Creating a private variable
 
 A variable can be made private by using the `private:` scope modifier or by
-creating the variable withe **Option** property set to `Private`. Private
+creating the variable with the **Option** property set to `Private`. Private
 variables can only be viewed or changed in the scope in which they were
 created.
 
-In this example, the `ScopeExample.ps1` script creates four functions. The
+In this example, the `ScopeExample.ps1` script creates five functions. The
 first function calls the next function, which creates a child scope. One of the
 functions has a private variable that can only be seen in the scope in which it
 was created.
@@ -708,8 +708,7 @@ Scope [4] (parent) $funcAVar1 = 'Value set in funcA'
 ```
 
 As shown by the output from `ShowScopes`, you can access variables from other
-scopes using `Get-Variable` and specifying a`` scope number relative to the
-current scope.
+scopes using `Get-Variable` and specifying a scope number.
 
 ### Example 5: Using a local variable in a remote command
 
