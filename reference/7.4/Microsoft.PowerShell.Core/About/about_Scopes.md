@@ -420,7 +420,7 @@ example, you can run a script to create a child scope in a session.
 
 You can use a PowerShell module to share and deliver PowerShell tools. A module
 is a unit that can contain cmdlets, scripts, functions, variables, aliases, and
-other useful items. Unless explicitly exported, the items in a module aren't
+other useful items. Unless explicitly exported (with `Export-ModuleMember`), the items in a module aren't
 accessible outside the module. Therefore, you can add the module to your
 session and use the public items without worrying that the other items might
 override the cmdlets, scripts, functions, and other items in your session.
