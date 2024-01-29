@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/30/2023
+ms.date: 01/29/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -221,7 +221,7 @@ Mode                LastWriteTime         Length Name
 ### Example 9: Use the -Force parameter to overwrite existing files
 
 This example creates a file with a value and then recreates the file using `-Force`. This overwrites
-The existing file and it will lose it's content as you can see by the length property
+the existing file, as you can see by the length property.
 
 ```powershell
 PS> New-Item ./TestFile.txt -ItemType File -Value 'This is just a test file'
