@@ -1,7 +1,7 @@
 ---
 description: Describes how to use splatting to pass parameters to commands in PowerShell.
 Locale: en-US
-ms.date: 12/12/2022
+ms.date: 01/29/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Splatting
@@ -274,6 +274,26 @@ foreach ($vm in $allVms)
 }
 ```
 
+### Example 4: Using multiple splatted objects in a single command
+
+You can use multiple splatted objects in a single command. In this example,
+different parameters are defined in separate hashtables. The hashtables are
+splatted in a single `Write-Host` command.
+
+```powershell
+$a = @{
+    Message         = 'Hello', 'World!'
+}
+$b = @{
+    Separator       = '|'
+}
+$c = @{
+    BackgroundColor = 'Cyan'
+    ForegroundColor = 'Black'
+}
+Write-Host @a @b @c
+```
+
 ## Splatting command parameters
 
 You can use splatting to represent the parameters of a command. This technique
@@ -333,13 +353,15 @@ Get-MyCommand -P -C -Name PowerShell
 ```
 
 ```Output
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-408      28    75568      83176   620     1.33   1692 powershell
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     50   112.76      78.52      16.64    6880   1 powershell
 
-Path               : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.e
+Path               : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 Extension          : .exe
-Definition         : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.e
+Definition         : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Source             : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Version            : 10.0.22621.3085
 Visibility         : Public
 OutputType         : {System.String}
 Name               : powershell.exe
@@ -350,14 +372,13 @@ RemotingCapability : PowerShell
 Parameters         :
 ParameterSets      :
 HelpUri            :
-FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell
-                     \v1.0\powershell.exe
+FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
                      InternalName:     POWERSHELL
                      OriginalFilename: PowerShell.EXE.MUI
-                     FileVersion:      10.0.14393.0 (rs1_release.160715-1616
+                     FileVersion:      10.0.22621.1 (WinBuild.160101.0800)
                      FileDescription:  Windows PowerShell
-                     Product:          Microsoft Windows Operating System
-                     ProductVersion:   10.0.14393.0
+                     Product:          Microsoft&reg; Windows&reg; Operating System
+                     ProductVersion:   10.0.22621.1
                      Debug:            False
                      Patched:          False
                      PreRelease:       False
@@ -375,11 +396,18 @@ parameter definition.
 
 PowerShell Desired State Configuration (DSC) was not designed to use splatting.
 You cannot use splatting to pass values into a DSC resource. For more
-information, see Gael Colas' article [Pseudo-Splatting DSC Resources](https://gaelcolas.com/2017/11/05/pseudo-splatting-dsc-resources/).
+information, see Gael Colas' article [Pseudo-Splatting DSC Resources][05].
 
 ## See also
 
-- [about_Arrays](about_Arrays.md)
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Hash_Tables](about_Hash_Tables.md)
-- [about_Parameters](about_Parameters.md)
+- [about_Arrays][01]
+- [about_Automatic_Variables][02]
+- [about_Hash_Tables][03]
+- [about_Parameters][04]
+
+<!-- link references -->
+[01]: about_Arrays.md
+[02]: about_Automatic_Variables.md
+[03]: about_Hash_Tables.md
+[04]: about_Parameters.md
+[05]: https://gaelcolas.com/2017/11/05/pseudo-splatting-dsc-resources/
