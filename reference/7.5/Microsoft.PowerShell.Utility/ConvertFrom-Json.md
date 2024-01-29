@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/29/2023
+ms.date: 01/29/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -16,8 +16,8 @@ Converts a JSON-formatted string to a custom object or a hash table.
 ## SYNTAX
 
 ```
-ConvertFrom-Json [-InputObject] <String> [-AsHashtable]
-  [-DateKind <JsonDateKind>] [-Depth <Int32>] [-NoEnumerate] [<CommonParameters>]
+ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-DateKind <JsonDateKind>] [-Depth <Int32>]
+ [-NoEnumerate] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,32 +54,38 @@ Get-Date | Select-Object -Property * | ConvertTo-Json | ConvertFrom-Json
 
 ```Output
 DisplayHint : 2
-DateTime    : Friday, January 13, 2012 8:06:31 PM
-Date        : 1/13/2012 8:00:00 AM
-Day         : 13
-DayOfWeek   : 5
-DayOfYear   : 13
-Hour        : 20
+DateTime    : Monday, January 29, 2024 3:10:26 PM
+Date        : 1/29/2024 12:00:00 AM
+Day         : 29
+DayOfWeek   : 1
+DayOfYear   : 29
+Hour        : 15
 Kind        : 2
-Millisecond : 400
-Minute      : 6
+Millisecond : 931
+Microsecond : 47
+Nanosecond  : 600
+Minute      : 10
 Month       : 1
-Second      : 31
-Ticks       : 634620819914009002
-TimeOfDay   : @{Ticks=723914009002; Days=0; Hours=20; Milliseconds=400; Minutes=6; Seconds=31; TotalDays=0.83786343634490734; TotalHours=20.108722472277776; TotalMilliseconds=72391400.900200009; TotalMinutes=1206.5233483366667;TotalSeconds=72391.4009002}
-Year        : 2012
+Second      : 26
+Ticks       : 638421378269310476
+TimeOfDay   : @{Ticks=546269310476; Days=0; Hours=15; Milliseconds=931; Microseconds=47;
+              Nanoseconds=600; Minutes=10; Seconds=26; TotalDays=0.632256146384259;
+              TotalHours=15.1741475132222; TotalMilliseconds=54626931.0476;
+              TotalMicroseconds=54626931047.6; TotalNanoseconds=54626931047600;
+              TotalMinutes=910.448850793333; TotalSeconds=54626.9310476}
+Year        : 2024
 ```
 
-The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime**
-object. It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a string
-formatted as a JSON object and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string
-to a **PSCustomObject** object.
+The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime** object.
+It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a string formatted as a
+JSON object and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string to a
+**PSCustomObject** object.
 
 ### Example 2: Get JSON strings from a web service and convert them to PowerShell objects
 
-This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service
-and then it uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects
-that can be managed in PowerShell.
+This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service and then it
+uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects that can be managed in
+PowerShell.
 
 ```powershell
 # Ensures that Invoke-WebRequest uses TLS 1.2
@@ -99,9 +105,9 @@ custom object.
 Get-Content -Raw JsonFile.JSON | ConvertFrom-Json
 ```
 
-The command uses Get-Content cmdlet to get the strings in a JSON file. The **Raw** parameter
-returns the whole file as a single JSON object. Then it uses the pipeline operator to send the
-delimited string to the `ConvertFrom-Json` cmdlet, which converts it to a custom object.
+The command uses Get-Content cmdlet to get the strings in a JSON file. The **Raw** parameter returns
+the whole file as a single JSON object. Then it uses the pipeline operator to send the delimited
+string to the `ConvertFrom-Json` cmdlet, which converts it to a custom object.
 
 ### Example 4: Convert a JSON string to a hash table
 
@@ -166,7 +172,8 @@ Accept wildcard characters: False
 
 ### -DateKind
 
-Specifies the method used when parsing date time values in the JSON string. The acceptable values for this parameter are:
+Specifies the method used when parsing date time values in the JSON string. The acceptable values
+for this parameter are:
 
 - `Default`
 - `Local`
@@ -174,21 +181,7 @@ Specifies the method used when parsing date time values in the JSON string. The 
 - `Offset`
 - `String`
 
-`Default` will convert the value as a `[datetime]` instance with a `Kind` property set as follows:
-
-- `Unspecified`, if there is no time zone information in the input string.
-- `Utc`, if the time zone information is a trailing `Z`.
-- `Local`, if the time zone information is given as a trailing UTC _offset_ like `+02:00`. The
-  offset is properly converted to the caller's configured time zone. The default output formatting
-  doesn't indicate the original time zone offset.
-
-`Local` will convert the value as a `[datetime]` instance with a `Kind` property set as `Local`. If a timezone offset was in the converted string the **DateTime** value will be converted to the equivalent local time.
-
-`Utc` will convert the value as a `[datetime]` instance with a `Kind` property set as `Utc`.
-
-`Offset` will convert the value as a `[DateTimeOffset]` instance with the timezone offset of the original string preserved in that instance. If the raw string did not contain a timezone offset, the **DateTimeOffset** value will be specified in the local timezone.
-
-`String` will preserve the value as a `[string]` instance. This ensures the value is round-trippable and any custom parsing logic not exposed by the other `-DateKind` options can be applied to the raw string value.
+For information about how these values affect conversion, see the details in the [NOTES](#notes).
 
 This parameter was introduced in PowerShell 7.5.
 
@@ -288,7 +281,28 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 This cmdlet is implemented using [Newtonsoft Json.NET](https://www.newtonsoft.com/json).
 
 Beginning in PowerShell 6, `ConvertTo-Json` attempts to convert strings formatted as timestamps to
-**DateTime** values. See the `-DateKind` parameter for more information on the default rules for this conversion.
+**DateTime** values.
+
+PowerShell 7.5 added the **DateKind** parameter, which allows you to control how timestamp string
+are converted. The parameter accepts the following values:
+
+- `Default` - Converts the timestamp to a `[datetime]` instance according to the following rules:
+  - If there is no time zone information in the input string, the Json.NET serializer converts the
+    value as an unspecified time value.
+  - If the time zone information is a trailing `Z`, the Json.NET serializer converts the timestamp
+    to a _UTC_ value.
+  - If the timestamp includes a UTC offset like `+02:00`, the offset is converted to the caller's
+    configured time zone. The default output formatting doesn't indicate the original time zone
+    offset.
+- `Local` - Converts the timestamp to a `[datetime]` instance in the _local_ time. If the timestamp
+  includes a UTC offset, the offset is converted to the caller's configured time zone. The default
+  output formatting doesn't indicate the original time zone offset.
+- `Utc` - Converts the value to a `[datetime]` instance in UTC time.
+- `Offset` - Converts the timestamp to a `[DateTimeOffset]` instance with the timezone offset of the
+  original string preserved in that instance. If the raw string did not contain a timezone offset,
+  the **DateTimeOffset** value will be specified in the local timezone.
+- `String` - Preserves the value the `[string]` instance. This ensures that any custom parsing logic
+  can be applied to the raw string value.
 
 The **PSObject** type maintains the order of the properties as presented in the JSON string.
 Beginning with PowerShell 7.3, The **AsHashtable** parameter creates an **OrderedHashtable**. The
@@ -304,3 +318,7 @@ preserves that order.
 [Invoke-WebRequest](Invoke-WebRequest.md)
 
 [Invoke-RestMethod](Invoke-RestMethod.md)
+
+[DateTime](xref:System.DateTime)
+
+[DateTimeOffset](xref:System.DateTimeOffset)
