@@ -1436,11 +1436,11 @@ as there is no current collection object.
 The statements in an *end block* (i.e.; one marked with the keyword end) are executed once, after
 the last pipeline object has been delivered.
 
-### 8.10.8 dynamicParam block
+### 8.10.8 dynamicparam block
 
 The subsections of [§8.10][§8.10] thus far deal with *static parameters*, which are defined as part of
-the source code. It is also possible to define *dynamic parameters* via a *dynamicParam block*,
-another form of named block ([§8.10.7][§8.10.7]), which is marked with the keyword `dynamicParam`. Much of
+the source code. It is also possible to define *dynamic parameters* via a *dynamicparam block*,
+another form of named block ([§8.10.7][§8.10.7]), which is marked with the keyword `dynamicparam`. Much of
 this machinery is implementation defined.
 
 Dynamic parameters are parameters of a cmdlet, function, filter, or script that are available under
@@ -1461,7 +1461,7 @@ registry drive.
 ```powershell
 function Sample {
     Param ([String]$Name, [String]$Path)
-    DynamicParam {
+    dynamicparam {
         if ($path -match "*HKLM*:") {
             $dynParam1 = New-Object System.Management.Automation.RuntimeDefinedParameter("dp1", [Int32], $attributeCollection)
 
