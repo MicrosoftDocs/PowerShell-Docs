@@ -1,7 +1,7 @@
 ---
 description: Defines what a script block is and explains how to use script blocks in the PowerShell programming language.
 Locale: en-US
-ms.date: 11/28/2023
+ms.date: 01/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Script Blocks
@@ -50,8 +50,8 @@ keyword to assign named parameters, as shown in the following syntax:
 > In a script block, unlike a function, you can't specify parameters outside
 > the braces.
 
-Like functions, script blocks can include the `DynamicParam`, `Begin`,
-`Process`, and `End` keywords. For more information, see [about_Functions][02]
+Like functions, script blocks can include the `dynamicparam`, `begin`,
+`process`, and `end` keywords. For more information, see [about_Functions][02]
 and [about_Functions_Advanced][01].
 
 ## Using Script Blocks
