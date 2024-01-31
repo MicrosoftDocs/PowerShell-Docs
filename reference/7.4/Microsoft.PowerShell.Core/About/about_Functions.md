@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 01/20/2023
+ms.date: 01/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions
@@ -87,7 +87,7 @@ A function includes the following items:
 - Any number of named parameters (optional)
 - One or more PowerShell commands enclosed in braces `{}`
 
-For more information about the `Dynamicparam` keyword and dynamic parameters in
+For more information about the `dynamicparam` keyword and dynamic parameters in
 functions, see [about_Functions_Advanced_Parameters][10].
 
 ## Simple functions
