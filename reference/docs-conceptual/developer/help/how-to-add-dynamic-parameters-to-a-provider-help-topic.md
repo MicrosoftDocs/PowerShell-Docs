@@ -180,5 +180,5 @@ The following example shows the `DynamicParameters` element of the `Encoding` dy
 ```
 
 <!-- link references -->
-[01]: ./how-to-add-parameter-information.md
-[02]: /dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding
+[01]: how-to-add-parameter-information.md
+[02]: xref:Microsoft.PowerShell.Commands.FileSystemCmdletProviderEncoding
