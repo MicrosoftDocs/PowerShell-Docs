@@ -311,7 +311,7 @@ specific provider cmdlets:
 [55]: xref:System.Management.Automation.Provider.ItemCmdletProvider.GetItem*
 [56]: xref:System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters*
 [57]: xref:System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction*
-[58]: xref:system.management.automation.provider.itemcmdletprovider.InvokeDefaultActionDynamicParameters*
+[58]: xref:System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters*
 [59]: xref:System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath*
 [60]: xref:System.Management.Automation.Provider.ItemCmdletProvider.ItemExists*
 [61]: xref:System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters*

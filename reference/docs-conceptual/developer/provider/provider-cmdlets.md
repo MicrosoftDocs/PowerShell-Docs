@@ -333,7 +333,7 @@ overwrite any methods to support this cmdlet.
 [44]: xref:System.Management.Automation.Provider.ItemCmdletProvider.ClearItem*
 [45]: xref:System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters*
 [46]: xref:System.Management.Automation.Provider.ItemCmdletProvider.GetItem*
-[47]: xref:System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters
+[47]: xref:System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters*
 [48]: xref:System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction*
 [49]: xref:System.Management.Automation.Provider.ItemCmdletProvider.ItemExists*
 [50]: xref:System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters*
