@@ -178,6 +178,7 @@ The acceptable values for this parameter are as follows:
 
 - `ascii`: Uses the encoding for the ASCII (7-bit) character set.
 - `ansi`: Uses the encoding for the for the current culture's ANSI code page. This option was added
+  in 7.4.
 - `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
 - `bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.
 - `oem`: Uses the default encoding for MS-DOS and console programs.

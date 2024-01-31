@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-clixml?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Clixml
@@ -42,7 +42,7 @@ aren't a live objects. They are a snapshot of the objects at the time of seriali
 deserialized objects include properties but no methods.
 
 The **TypeNames** property contains the original type name prefixed with `Deserialized`.
-[Example #3](#example-3-inspect-the-type-names-property-of-a-deserialized-object) show the
+[Example #3](#example-3-inspect-the-typenames-property-of-a-deserialized-object) show the
 **TypeNames** property of a deserialized object.
 
 `Import-Clixml` uses the byte-order-mark (BOM) to detect the encoding format of the file. If the
