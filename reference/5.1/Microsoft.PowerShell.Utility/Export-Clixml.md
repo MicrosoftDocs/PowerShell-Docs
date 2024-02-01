@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-clixml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Clixml
@@ -31,10 +31,10 @@ Export-Clixml -LiteralPath <String> -InputObject <PSObject> [-Depth <Int32>] [-F
 
 ## DESCRIPTION
 
-The `Export-Clixml` cmdlet creates a Common Language Infrastructure (CLI) XML-based representation
-of an object or objects and stores it in a file. You can then use the `Import-Clixml` cmdlet to
-recreate the saved object based on the contents of that file.
-For more information about CLI, see [Language independence](/dotnet/standard/language-independence).
+The `Export-Clixml` cmdlet serialized an object into a Common Language Infrastructure (CLI)
+XML-based representation stores it in a file. You can then use the `Import-Clixml` cmdlet to
+recreate the saved object based on the contents of that file. For more information about CLI, see
+[Language independence](/dotnet/standard/language-independence).
 
 This cmdlet is similar to `ConvertTo-Xml`, except that `Export-Clixml` stores the resulting XML in a
 file. `ConvertTo-XML` returns the XML, so you can continue to process it in PowerShell.
@@ -53,7 +53,7 @@ string **This is a test**.
 "This is a test" | Export-Clixml -Path .\sample.xml
 ```
 
-The string **This is a test** is sent down the pipeline. `Export-Clixml` uses the **Path** parameter
+The string `This is a test` is sent down the pipeline. `Export-Clixml` uses the **Path** parameter
 to create an XML file named `sample.xml` in the current directory.
 
 ### Example 2: Export an object to an XML file
@@ -80,7 +80,8 @@ In this example, given a credential that you've stored in the `$Credential` vari
 
 > [!IMPORTANT]
 > `Export-Clixml` only exports encrypted credentials on Windows. On non-Windows operating systems
-> such as macOS and Linux, credentials are exported in plain text.
+> such as macOS and Linux, credentials are exported as a plain text stored as a Unicode character
+> array. This provides some obfuscation but does not provide encryption.
 
 ```powershell
 $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
@@ -89,10 +90,10 @@ $Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
 $Credential = Import-Clixml $Credxmlpath
 ```
 
-The `Export-Clixml` cmdlet encrypts credential objects by using the Windows [Data Protection API](/previous-versions/windows/apps/hh464970(v=win.10)).
-The encryption ensures that only your user account on only that computer can decrypt the contents of
-the credential object. The exported `CLIXML` file can't be used on a different computer or by a
-different user.
+The `Export-Clixml` cmdlet encrypts credential objects by using the Windows
+[Data Protection API](/previous-versions/windows/apps/hh464970(v=win.10)). The encryption ensures
+that only your user account on only that computer can decrypt the contents of the credential object.
+The exported `CLIXML` file can't be used on a different computer or by a different user.
 
 In the example, the file in which the credential is stored is represented by
 `TestScript.ps1.credential`. Replace **TestScript** with the name of the script with which you're
@@ -279,7 +280,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

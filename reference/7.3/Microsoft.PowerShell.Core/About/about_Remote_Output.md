@@ -1,7 +1,7 @@
 ---
 description: Describes how to interpret and format the output of remote commands.
 Locale: en-US
-ms.date: 07/03/2023
+ms.date: 01/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_output?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Remote Output
@@ -95,10 +95,9 @@ Monday, July 21, 2008 7:16:58 PM    Server02
 When you run remote commands that generate output, the command output is
 transmitted across the network back to the local computer.
 
-Because most live Microsoft .NET objects, like the objects that PowerShell
-cmdlets return, can't be transmitted over the network. The live objects are
-_serialized_ or converted into XML representations of the object and its
-properties. Then, PowerShell transmits the serialized object across the
+Since live .NET objects can't be transmitted over the network, the live objects
+are _serialized_ or converted into XML representations of the object and its
+properties. PowerShell transmits the serialized object across the
 network.
 
 On the local computer, PowerShell receives the serialized object and

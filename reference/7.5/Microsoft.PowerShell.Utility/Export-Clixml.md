@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/15/2023
+ms.date: 01/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-clixml?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Clixml
@@ -31,10 +31,10 @@ Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-F
 
 ## DESCRIPTION
 
-The `Export-Clixml` cmdlet creates a Common Language Infrastructure (CLI) XML-based representation
-of an object or objects and stores it in a file. You can then use the `Import-Clixml` cmdlet to
-recreate the saved object based on the contents of that file.
-For more information about CLI, see [Language independence](/dotnet/standard/language-independence).
+The `Export-Clixml` cmdlet serialized an object into a Common Language Infrastructure (CLI)
+XML-based representation stores it in a file. You can then use the `Import-Clixml` cmdlet to
+recreate the saved object based on the contents of that file. For more information about CLI, see
+[Language independence](/dotnet/standard/language-independence).
 
 This cmdlet is similar to `ConvertTo-Xml`, except that `Export-Clixml` stores the resulting XML in a
 file. `ConvertTo-XML` returns the XML, so you can continue to process it in PowerShell.
@@ -178,6 +178,7 @@ The acceptable values for this parameter are as follows:
 
 - `ascii`: Uses the encoding for the ASCII (7-bit) character set.
 - `ansi`: Uses the encoding for the for the current culture's ANSI code page. This option was added
+  in 7.4.
 - `bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.
 - `bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.
 - `oem`: Uses the default encoding for MS-DOS and console programs.
@@ -337,7 +338,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
