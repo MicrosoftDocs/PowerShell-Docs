@@ -27,12 +27,14 @@ GitHub.
 
 ## Using PowerShell in a container
 
-The following steps show the Docker commands required to download the image and start an interactive
+The following steps show the Docker commands required to download the latest PowerShell image and start an interactive
 PowerShell session.
 
 ```console
 docker run -it mcr.microsoft.com/powershell
 ```
+
+This version corresponding to the latest PowerShell image may differ from the version of PowerShell targetted by this documentation.  
 
 ### Remove the image when no longer needed
 
