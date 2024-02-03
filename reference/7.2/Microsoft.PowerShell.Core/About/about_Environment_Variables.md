@@ -36,11 +36,11 @@ add, change, clear, and delete environment variables in the current console.
 > case-sensitive. For example, `$env:Path` and `$env:PATH` are different
 > environment variables on non-Windows platforms.
 
-Environment variables, unlike other types of variables in PowerShell, are
-always stored as a string and can't be empty. Also unlike other variables,
-they're inherited by child processes, such as local background jobs and the
-sessions in which module members run. This makes environment variables well
-suited to storing values that are needed in both parent and child processes.
+Environment variables, unlike other types of variables in PowerShell, are always
+stored as strings. Also unlike other variables, they're inherited by child
+processes, such as local background jobs and the sessions in which module
+members run. This makes environment variables well suited to storing values that
+are needed in both parent and child processes.
 
 On Windows, environment variables can be defined in three scopes:
 
@@ -121,7 +121,7 @@ The 'Foo' environment variable is set to: An example
 An example!
 ```
 
-Because an environment variable can't be an empty string, setting one to
+Because environment variables aren't usually empty strings, setting one to
 `$null` or an empty string removes it. For example:
 
 ```powershell
