@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell
-ms.date: 12/08/2023
+ms.date: 02/05/2024
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
@@ -79,20 +79,20 @@ feedback on experimental features and we provide best-effort support for them.
 
 ## Notes on licensing
 
-PowerShell is released under the [MIT license][09]. Under this license, and without a paid support
+PowerShell is released under the [MIT license][10]. Under this license, and without a paid support
 agreement, users are limited to [community support][04]. With community support, Microsoft makes no
 guarantees of responsiveness or fixes.
 
 ## Getting support
 
 Support for PowerShell is delivered via traditional Microsoft support agreements, including
-[paid support][11], [Microsoft Enterprise Agreements][13], and [Microsoft Software Assurance][14].
-You can also pay for [assisted support][10] for PowerShell by filing a support request for your
+[paid support][12], [Microsoft Enterprise Agreements][14], and [Microsoft Software Assurance][15].
+You can also pay for [assisted support][11] for PowerShell by filing a support request for your
 problem.
 
 There are multiple [community support][04] options. You can file an issue, bug, or feature request on
 GitHub. Also, you can get help from other members of the community in the Microsoft
-[PowerShell Tech Community][12] or any of the community forums listed on the [PowerShell][04] hub
+[PowerShell Tech Community][13] or any of the community forums listed on the [PowerShell][04] hub
 page. If you have a problem that requires immediate attention, you should use the traditional, paid
 support options.
 
@@ -115,8 +115,9 @@ versions of PowerShell end:
 Support for PowerShell on a specific platform is based on the support policy of the version of .NET
 used.
 
+- PowerShell 7.4 (LTS-current) is based on the [.NET 8.0 Supported OS Lifecycle Policy][09]
 - PowerShell 7.3 (Stable) is based on the [.NET 7.0 Supported OS Lifecycle Policy][08]
-- PowerShell 7.2 (LTS-current) is based on the [.NET 6.0 Supported OS Lifecycle Policy][07]
+- PowerShell 7.2 (LTS-previous) is based on the [.NET 6.0 Supported OS Lifecycle Policy][07]
 
 End of support dates for already retired versions were:
 
@@ -135,6 +136,7 @@ for historical reference. It isn't intended for use to determine the support lif
 
 |            Version            | Release Date |                                      Note                                       |
 | ----------------------------- | :----------: | ------------------------------------------------------------------------------- |
+| PowerShell 7.5 (preview)      |     TBA      | Built on .NET 8.0.1                                                             |
 | PowerShell 7.4 (LTS-current)  |   Nov-2023   | Built on .NET 8.0.0                                                             |
 | PowerShell 7.3                |   Nov-2022   | Built on .NET 7.0                                                               |
 | PowerShell 7.2 (LTS-previous) |   Nov-2021   | Built on .NET 6.0 (LTS-previous)                                                |
@@ -166,9 +168,10 @@ you're running:
 [06]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
 [07]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
 [08]: https://github.com/dotnet/core/blob/main/release-notes/7.0/supported-os.md
-[09]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[10]: https://support.microsoft.com/supportforbusiness/productselection
-[11]: https://support.serviceshub.microsoft.com/supportforbusiness
-[12]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[13]: https://www.microsoft.com/licensing/licensing-programs/enterprise
-[14]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default
+[09]: https://github.com/dotnet/core/blob/main/release-notes/8.0/supported-os.md
+[10]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[11]: https://support.microsoft.com/supportforbusiness/productselection
+[12]: https://support.serviceshub.microsoft.com/supportforbusiness
+[13]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[14]: https://www.microsoft.com/licensing/licensing-programs/enterprise
+[15]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default
