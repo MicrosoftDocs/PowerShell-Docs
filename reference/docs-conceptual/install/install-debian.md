@@ -42,6 +42,9 @@ sudo apt-get install -y wget
 # Get the version of Debian
 source /etc/os-release
 
+#If above command doesn't work try:
+cat /etc/os-release
+
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/debian/$VERSION_ID/packages-microsoft-prod.deb
 
