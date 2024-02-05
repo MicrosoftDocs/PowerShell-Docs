@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/28/2023
+ms.date: 02/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/invoke-wmimethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WmiMethod
@@ -27,8 +27,8 @@ Invoke-WmiMethod [-Class] <String> [-Name] <String> [-ArgumentList <Object[]>] [
 ### object
 
 ```
-Invoke-WmiMethod -InputObject <ManagementObject> [-Name] <String> [-ArgumentList <Object[]>] [-AsJob]
- [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-WmiMethod -InputObject <ManagementObject> [-Name] <String> [-ArgumentList <Object[]>]
+ [-AsJob] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### path
@@ -44,27 +44,27 @@ Invoke-WmiMethod -Path <String> [-Name] <String> [-ArgumentList <Object[]>] [-As
 
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
- [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
- [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges]
+ [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
+ [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### query
 
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
- [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
- [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges]
+ [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
+ [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### list
 
 ```
 Invoke-WmiMethod [-Name] <String> [-AsJob] [-Impersonation <ImpersonationLevel>]
- [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
- [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges]
+ [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
+ [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -80,60 +80,38 @@ those running other operating systems. Instead of using `Invoke-WmiMethod`, cons
 
 ## EXAMPLES
 
-### Example 1: List the required order of WMI objects
+### Example 1: List the required order of WMI method parameters
+
+This command lists the required order of the objects.
 
 ```powershell
-([wmiclass]'Win32_Volume').GetMethodParameters('Format')
+Get-WmiObject Win32_Volume |
+    Get-Member -MemberType Method -Name Format |
+    Select-Object -ExpandProperty Definition
 ```
 
 ```Output
-__GENUS           : 2
-__CLASS           : __PARAMETERS
-__SUPERCLASS      :
-__DYNASTY         : __PARAMETERS
-__RELPATH         :
-__PROPERTY_COUNT  : 6
-__DERIVATION      : {}
-__SERVER          :
-__NAMESPACE       :
-__PATH            :
-ClusterSize       : 0
-EnableCompression : False
-FileSystem        : NTFS
-Label             :
-QuickFormat       : False
-Version           : 0
-PSComputerName    :
+System.Management.ManagementBaseObject Format(System.String FileSystem, System.Boolean QuickFormat,
+ System.UInt32 ClusterSize, System.String Label, System.Boolean EnableCompression,
+ System.UInt32 Version)
 ```
 
-This command lists the required order of the objects. To invoke WMI in PowerShell 3.0 differs from
-alternate methods, and requires that object values are entered in a specific order.
+To invoke WMI in PowerShell 3.0 differs from alternate methods, and requires that object values are
+entered in a specific order.
 
 ### Example 2: Start an instance of an application
 
 ```powershell
-([Wmiclass]'Win32_Process').GetMethodParameters('Create')
+([Wmiclass]'Win32_Process').Create.OverloadDefinitions
 ```
 
 ```Output
-__GENUS                   : 2
-__CLASS                   : __PARAMETERS
-__SUPERCLASS              :
-__DYNASTY                 : __PARAMETERS
-__RELPATH                 :
-__PROPERTY_COUNT          : 3
-__DERIVATION              : {}
-__SERVER                  :
-__NAMESPACE               :
-__PATH                    :
-CommandLine               :
-CurrentDirectory          :
-ProcessStartupInformation :
-PSComputerName            :
+System.Management.ManagementBaseObject Create(System.String CommandLine, System.String CurrentDirectory,
+ System.Management.ManagementObject#Win32_ProcessStartup ProcessStartupInformation)
 ```
 
 ```powershell
-Invoke-WmiMethod -Path win32_process -Name create -ArgumentList notepad.exe
+Invoke-WmiMethod -Path Win32_Process -Name Create -ArgumentList C:\Windows\system32\notepad.exe
 ```
 
 ```Output
@@ -161,7 +139,12 @@ with an integer (the next process ID number) if the command is completed.
 ### Example 3: Rename a file
 
 ```powershell
-Invoke-WmiMethod -Path "CIM_DataFile.Name='C:\scripts\test.txt'" -Name Rename -ArgumentList "C:\scripts\test_bu.txt"
+$invokeWmiMethodSplat = @{
+    Path = "CIM_DataFile.Name='C:\scripts\test.txt'"
+    Name = 'Rename'
+    ArgumentList = 'C:\scripts\test_bu.txt'
+}
+Invoke-WmiMethod @invokeWmiMethodSplat
 ```
 
 ```Output
@@ -188,9 +171,14 @@ The **ReturnValue** property is populated with a `0` if the command is completed
 An example using an array of objects `$binSD` followed by a `$null` value.
 
 ```powershell
-$acl = get-acl test.txt
+$acl = Get-Acl test.txt
 $binSD = $acl.GetSecurityDescriptorBinaryForm()
-Invoke-WmiMethod -class Win32_SecurityDescriptorHelper -Name BinarySDToSDDL -ArgumentList $binSD, $null
+$invokeWmiMethodSplat = @{
+    Class = 'Win32_SecurityDescriptorHelper'
+    Name = 'BinarySDToSDDL'
+    ArgumentList = $binSD, $null
+}
+Invoke-WmiMethod @invokeWmiMethodSplat
 ```
 
 ## PARAMETERS
