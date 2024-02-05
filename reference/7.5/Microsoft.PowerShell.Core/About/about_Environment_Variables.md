@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 09/20/2023
+ms.date: 02/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Environment Variables
@@ -37,10 +37,10 @@ add, change, clear, and delete environment variables in the current console.
 > environment variables on non-Windows platforms.
 
 Environment variables, unlike other types of variables in PowerShell, are
-always stored as a string and can't be empty. Also unlike other variables,
-they're inherited by child processes, such as local background jobs and the
-sessions in which module members run. This makes environment variables well
-suited to storing values that are needed in both parent and child processes.
+always stored as strings. Also unlike other variables, they're inherited by
+child processes, such as local background jobs and the sessions in which module
+members run. This makes environment variables well suited to storing values
+that are needed in both parent and child processes.
 
 On Windows, environment variables can be defined in three scopes:
 
@@ -54,8 +54,8 @@ parent process and is constructed from the variables in the _Machine_ and
 _User_ scopes.
 
 When you change environment variables in PowerShell, the change affects only
-the current session. This behavior resembles the behavior of the `Set` command
-in the Windows Command Shell and the `Setenv` command in UNIX-based
+the current session. This behavior resembles the behavior of the `set` command
+in the Windows Command Shell and the `setenv` command in UNIX-based
 environments. To change values in the Machine or User scopes, you must use the
 methods of the **System.Environment** class.
 
@@ -121,8 +121,9 @@ The 'Foo' environment variable is set to: An example
 An example!
 ```
 
-Because an environment variable can't be an empty string, setting one to
-`$null` or an empty string removes it. For example:
+In PowerShell, an environment variable can't be set to an empty string. Setting
+an environment variable to `$null` or an empty string removes it from the
+current session. For example:
 
 ```powershell
 $Env:Foo = ''

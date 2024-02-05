@@ -123,7 +123,7 @@ parameter are:
 > credentials are passed to it, the credentials can be used to control the network session.
 
 > [!IMPORTANT]
-> If you do not specify the **Authentication** parameter,, the `Test-WSMan` request is sent to the
+> If you do not specify the **Authentication** parameter, the `Test-WSMan` request is sent to the
 > remote computer anonymously, without using authentication. If the request is made anonymously, it
 > returns no information that is specific to the operating-system version. Instead, this cmdlet
 > displays null values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
