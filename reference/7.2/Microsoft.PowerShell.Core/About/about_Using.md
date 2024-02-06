@@ -31,7 +31,7 @@ variables. For more information, see
 
 To resolve types from a .NET namespace:
 
-```
+```Syntax
 using namespace <.NET-namespace>
 ```
 
@@ -68,7 +68,7 @@ $hashFromStream.Hash.ToString()
 
 To load classes and enumerations from a PowerShell module:
 
-```
+```Syntax
 using module <module-name>
 ```
 
@@ -136,8 +136,8 @@ $deck.Shuffle()
 
 ## Assembly syntax
 
-The following syntax preloads .NET types from that assembly into a script at
-the beginning of execution. You must use a fully-qualified path to the assembly
+The following syntax loads .NET types from an assembly into a script at the
+beginning of execution. You must use a fully-qualified path to the assembly
 file.
 
 ```Syntax
