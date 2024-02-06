@@ -284,4 +284,4 @@ PrivateData = @{
 [08]: xref:Microsoft.PowerShell.Core.Import-Module
 [09]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
 [10]: xref:Microsoft.PowerShell.Core.Test-ModuleManifest
-[11]: xref:PowerShellGet/Update-ModuleManifest
+[11]: xref:PowerShellGet.Update-ModuleManifest

@@ -465,8 +465,8 @@ The `Send-MailMessage` cmdlet is obsolete. For more information, see
 [Platform Compatibility note DE0005](https://aka.ms/SendMailMessage). This cmdlet doesn't guarantee
 secure connections to SMTP servers.
 
-_DE0005_ suggests using the third-party library, [MailKit](http://www.mimekit.net/). If you are
-using Exchange Online, you can use the
+_DE0005_ suggests using the third-party library, [MailKit](https://github.com/jstedfast/MimeKit). If
+you are using Exchange Online, you can use the
 [Send-MgUserMail](/powershell/module/microsoft.graph.users.actions/send-mgusermail) from the
 Microsoft Graph PowerShell SDK.
 

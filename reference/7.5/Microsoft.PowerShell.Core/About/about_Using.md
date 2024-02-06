@@ -1,7 +1,7 @@
 ---
 description: Allows you to specify namespaces to use in the session.
 Locale: en-US
-ms.date: 08/17/2023
+ms.date: 02/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Using
@@ -36,6 +36,33 @@ using namespace <.NET-namespace>
 ```
 
 Specifying a namespace makes it easier to reference types by their short names.
+
+### Example - Add namespaces for typename resolution
+
+The following script gets the cryptographic hash for the "Hello World" string.
+
+Note how the `using namespace System.Text` and `using namespace System.IO`
+simplify the references to `[UnicodeEncoding]` in `System.Text` and `[Stream]`
+and `[MemoryStream]` in `System.IO`.
+
+```powershell
+using namespace System.Text
+using namespace System.IO
+
+[string]$string = "Hello World"
+## Valid values are "SHA1", "SHA256", "SHA384", "SHA512", "MD5"
+[string]$algorithm = "SHA256"
+
+[byte[]]$stringBytes = [UnicodeEncoding]::Unicode.GetBytes($string)
+
+[Stream]$memoryStream = [MemoryStream]::new($stringBytes)
+$getFileHashSplat = @{
+    InputStream = $memoryStream
+    Algorithm   = $algorithm
+}
+$hashFromStream = Get-FileHash @getFileHashSplat
+$hashFromStream.Hash.ToString()
+```
 
 ## Module syntax
 
@@ -85,49 +112,7 @@ To ensure that you're running the latest version, you must start a new session.
 Classes and enumerations defined in PowerShell and imported with a `using`
 statement can't be unloaded.
 
-## Assembly syntax
-
-To preload types from a .NET assembly:
-
-```
-using assembly <.NET-assembly-path>
-```
-
-Loading an assembly preloads .NET types from that assembly into a script at
-parse time. This allows you to create new PowerShell classes that use types
-from the preloaded assembly.
-
-If you aren't creating new PowerShell classes, use the `Add-Type` cmdlet
-instead. For more information, see
-[Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type).
-
-## Examples
-
-### Example 1 - Add namespaces for typename resolution
-
-The following script gets the cryptographic hash for the "Hello World" string.
-
-Note how the `using namespace System.Text` and `using namespace System.IO`
-simplify the references to `[UnicodeEncoding]` in `System.Text` and `[Stream]`
-and `[MemoryStream]` in `System.IO`.
-
-```powershell
-using namespace System.Text
-using namespace System.IO
-
-[string]$string = "Hello World"
-## Valid values are "SHA1", "SHA256", "SHA384", "SHA512", "MD5"
-[string]$algorithm = "SHA256"
-
-[byte[]]$stringbytes = [UnicodeEncoding]::Unicode.GetBytes($string)
-
-[Stream]$memorystream = [MemoryStream]::new($stringbytes)
-$hashfromstream = Get-FileHash -InputStream $memorystream `
-  -Algorithm $algorithm
-$hashfromstream.Hash.ToString()
-```
-
-### Example 2 - Load classes from a script module
+### Example - Load classes from a script module
 
 In this example, a PowerShell script module named **CardGames** defines the
 following classes:
@@ -149,7 +134,22 @@ $deck.Shuffle()
 [Card[]]$hand3 = $deck.Deal(5)
 ```
 
-### Example 3 - Load classes from an assembly
+## Assembly syntax
+
+The following syntax preloads .NET types from that assembly into a script at
+the beginning of execution. You must use a fully-qualified path to the assembly
+file.
+
+```Syntax
+using assembly <.NET-assembly-path>
+```
+
+The `using assembly` statement is similar to using the `Add-Type` cmdlet.
+However, the `Add-Type` cmdlet adds the type at the time that `Add-Type` is
+executed, rather than at the start of execution of the script. For more
+information, see [Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type).
+
+### Example - Load types from an assembly
 
 This example loads an assembly so that its classes can be used when processing
 data. The following script converts data into a YAML format.
