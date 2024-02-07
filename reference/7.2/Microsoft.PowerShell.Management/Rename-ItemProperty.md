@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 02/07/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-itemproperty?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-ItemProperty
@@ -298,7 +298,7 @@ PowerShell includes the following aliases for `Rename-ItemProperty`:
 - All platforms:
   - `rnp`
 
-`Remove-ItemProperty` is designed to work with the data exposed by any provider. To list the
+`Rename-ItemProperty` is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
