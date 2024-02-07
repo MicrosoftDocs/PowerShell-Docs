@@ -162,9 +162,9 @@ The Gregorian calendar has 365 days, except for leap years that have 366 days. F
 `Get-Date` uses three parameters to specify the date: **Year**, **Month**, and **Day**. The command
 is wrapped with parentheses so that the result is evaluated by the **DayofYear** property.
 
-### Example 6: Check if a date is adjusted for daylight savings time
+### Example 6: Check if a date is adjusted for daylight saving time
 
-This example uses a boolean method to verify if a date is adjusted by daylight savings time.
+This example uses a boolean method to verify if a date is adjusted by daylight saving time.
 
 ```powershell
 $DST = Get-Date
@@ -176,7 +176,7 @@ True
 ```
 
 A variable, `$DST` stores the result of `Get-Date`. `$DST` uses the **IsDaylightSavingTime** method
-to test if the date is adjusted for daylight savings time.
+to test if the date is adjusted for daylight saving time.
 
 ### Example 7: Convert the current time to UTC time
 
