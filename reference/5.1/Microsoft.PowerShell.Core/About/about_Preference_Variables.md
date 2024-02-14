@@ -978,12 +978,12 @@ Remove-Variable OFS
 
 ## $OutputEncoding
 
-Determines the character encoding method that PowerShell uses when it sends
-text to other applications.
+Determines the character encoding method that PowerShell uses when piping data
+into native applications.
 
-For example, if an application returns Unicode strings to PowerShell, you might
-need to change the value to **UnicodeEncoding** to send the characters
-correctly.
+> [!NOTE]
+> In the majority of scenarios, the value for `$OutputEncoding` should align
+> to the value of `[Console]::InputEncoding`.
 
 The valid values are as follows: Objects derived from an Encoding class, such
 as [**ASCIIEncoding**][60],
@@ -996,10 +996,6 @@ as [**ASCIIEncoding**][60],
 
 ### Examples
 
-This example shows how to make the Windows `findstr.exe` command work in
-PowerShell on a computer that's localized for a language that uses Unicode
-characters, such as Chinese.
-
 The first command finds the value of `$OutputEncoding`. Because the value is an
 encoding object, display only its **EncodingName** property.
 
@@ -1007,40 +1003,50 @@ encoding object, display only its **EncodingName** property.
 $OutputEncoding.EncodingName
 ```
 
-In this example, a `findstr.exe` command is used to search for two Chinese
-characters that are present in the `Test.txt` file. When this `findstr.exe`
-command is run in the Windows Command Prompt (`cmd.exe`), `findstr.exe` finds
-the characters in the text file. However, when you run the same `findstr.exe`
-command in PowerShell, the characters aren't found because the PowerShell sends
-them to `findstr.exe` in ASCII text, instead of in Unicode text.
+The remaining examples use the following PowerShell script saved as
+`hexdump.ps1` to illustrate the behavior of `$OutputEncoding`.
 
 ```powershell
-findstr <Unicode-characters>
+$inputStream = [Console]::OpenStandardInput()
+try {
+    $buffer = [byte[]]::new(1024)
+    $read = $inputStream.Read($buffer, 0, $buffer.Length)
+    $actual = [byte[]]::new($read)
+    [Array]::Copy($buffer, $actual, $read)
+    Format-Hex -InputObject $actual
+} finally {
+    $inputStream.Dispose()
+}
 ```
 
-To make the command work in PowerShell, set the value of `$OutputEncoding` to
-the value of the **OutputEncoding** property of the console, that's based on
-the locale selected for Windows. Because **OutputEncoding** is a static
-property of the console, use double-colons (`::`) in the command.
+The following example shows how the string value `café` is encoded to bytes
+when piped into `hexdump.ps1` created above. It demonstrates that the string
+value is encoded using the `windows-1252` encoding scheme which is the default
+encoding on the system tested in question.
 
 ```powershell
-$OutputEncoding = [console]::OutputEncoding
-$OutputEncoding.EncodingName
+'café' | powershell.exe -File .\hexdump.ps1
 ```
 
 ```Output
-OEM United States
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+00000000   63 61 66 3F 0D 0A                                caf?..
 ```
 
-After the encoding change, the `findstr.exe` command finds the Unicode
-characters.
+The following example shows how the bytes change when changing the encoding
+to UTF-8. The `é` instead of being encoded to `0x3F` as done by `windows-1252`
+it will now become `0xC3 0xA9` due to the UTF-8 encoding being used.
 
 ```powershell
-findstr <Unicode-characters>
+$OutputEncoding = [System.Text.UTF8Encoding]::new()
+'café' | powershell.exe -File .\hexdump.ps1
 ```
 
 ```Output
-test.txt:         <Unicode-characters>
+           00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+
+00000000   63 61 66 C3 A9 0D 0A                             cafÃ©..
 ```
 
 ## $ProgressPreference
