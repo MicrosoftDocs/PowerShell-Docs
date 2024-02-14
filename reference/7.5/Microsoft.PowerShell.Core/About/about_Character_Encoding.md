@@ -182,11 +182,12 @@ without having to specify it manually.
 
 ## Changing the default encoding
 
-PowerShell has two default variables that can be used to change the default
+PowerShell has three default variables that can be used to change the default
 encoding behavior.
 
 - `$PSDefaultParameterValues`
 - `$OutputEncoding`
+- `$PSApplicationOutputEncoding`
 
 For more information, see [about_Preference_Variables][05].
 
@@ -215,8 +216,9 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 > behave the same way even when run by another user, on a different computer,
 > or in a different version of PowerShell.
 
-The automatic variable `$OutputEncoding` affects the encoding PowerShell uses
-to communicate with external programs. It has no effect on the encoding that
+The automatic variables `$OutputEncoding` and `$PSApplicationOutputEncoding`
+affects the encoding PowerShell uses to when sending data into and reading
+from external programs respectively. They have no effect on the encoding that
 the output redirection operators and PowerShell cmdlets use to save to files.
 
 ## See also
