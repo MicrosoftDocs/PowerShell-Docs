@@ -1,5 +1,5 @@
 ---
-ms.date: 04/05/2023
+ms.date: 02/13/2024
 ---
 # PowerShell Documentation
 
@@ -39,6 +39,7 @@ The following list describes the main folders in this repository.
   - `7.2` - contains the cmdlet reference and about topics for PowerShell 7.2
   - `7.3` - contains the cmdlet reference and about topics for PowerShell 7.3
   - `7.4` - contains the cmdlet reference and about topics for PowerShell 7.4
+  - `7.5` - contains the cmdlet reference and about topics for PowerShell 7.5
   - `bread` - contains the TOC used for breadcrumb navigation
   - `docs-conceptual` - contains the conceptual articles that are published to the Docs site. In
     general, the folder structure mirrors the Table of Contents (TOC).
