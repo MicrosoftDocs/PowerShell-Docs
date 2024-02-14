@@ -40,6 +40,7 @@ PSCommandWithArgs                  False PSEngine Enable `-CommandWithArgs` para
 PSFeedbackProvider                  True PSEngine Replace the hard-coded suggestion framework with …
 PSLoadAssemblyFromNativeCode       False PSEngine Expose an API to allow assembly loading from nati…
 PSModuleAutoLoadSkipOfflineFiles    True PSEngine Module discovery will skip over files that are ma…
+PSSerializeJSONLongEnumAsNumber     True PSEngine Serialize enums based on long or ulong as an nume…
 PSSubsystemPluginModel              True PSEngine A plugin model for registering and un-registering…
 ```
 
@@ -95,6 +96,8 @@ Legend
 | [PSModuleAutoLoadSkipOfflineFiles][17]              |                     |                     | ![Experimental][02] | ![Experimental][02] |
 | [PSCommandWithArgs][11]                             |                     |                     | ![Experimental][02] | ![Experimental][02] |
 | [PSNativeWindowsTildeExpansion][22]                 |                     |                     |                     | ![Experimental][02] |
+| [PSCustomTableHeaderLabelDecoration][13]            |                     |                     |  ![Mainstream][01]  |                     |
+| [PSSerializeJSONLongEnumAsNumber][24]               |                     |                     |                     | ![Experimental][02] |
 
 ### PSAnsiRenderingFileInfo
 
@@ -364,6 +367,36 @@ This feature only applies to Windows. On non-Windows platforms, tilde expansion 
 
 This feature was added in PowerShell 7.5-preview.2.
 
+### PSSerializeJSONLongEnumAsNumber
+
+This feature enables the cmdlet [ConvertTo-Json][33] to serialize any enum values based on
+`Int64/long` or `UInt64/ulong` as a numeric value rather than the string representation of that
+enum value. This aligns the behaviour of enum serialization with other enum base types where the
+cmdlet serializes enums as their numeric value. The `-EnumsAsStrings` parameter can use the previous
+behaviour to serialize as the string representation.
+
+For example:
+
+```powershell
+# PSSerializeJSONLongEnumAsNumber disabled
+@{
+    Key = [System.Management.Automation.Tracing.PowerShellTraceKeywords]::Cmdlets
+} | ConvertTo-Json
+# { "Key": "Cmdlets" }
+
+# PSSerializeJSONLongEnumAsNumber enabled
+@{
+    Key = [System.Management.Automation.Tracing.PowerShellTraceKeywords]::Cmdlets
+} | ConvertTo-Json
+# { "Key": 32 }
+
+# -EnumsAsStrings to revert back to the old behaviour
+@{
+    Key = [System.Management.Automation.Tracing.PowerShellTraceKeywords]::Cmdlets
+} | ConvertTo-Json -EnumsAsStrings
+# { "Key": "Cmdlets" }
+```
+
 <!-- link references -->
 [01]: ../../media/shared/check-mark-button-2705.svg
 [02]: ../../media/shared/construction-sign-1f6a7.svg
@@ -385,6 +418,7 @@ This feature was added in PowerShell 7.5-preview.2.
 [21]: #psnativepspathresolution
 [22]: #psnativewindowstildeexpansion
 [23]: #pssubsystempluginmodel
+[24]: #psserializejsonlongenumasnumber
 [25]: https://github.com/PowerShell/PowerShell/issues/new/choose
 [26]: https://github.com/PowerShell/PowerShell/tree/master/test/tools/TestExe
 [27]: xref:Microsoft.PowerShell.Core.Disable-ExperimentalFeature
