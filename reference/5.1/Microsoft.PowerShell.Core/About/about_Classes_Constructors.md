@@ -484,7 +484,7 @@ text in angle brackets as needed.
 class <class-name> {
     static [hashtable[]] $MemberDefinitions = @(
         @{
-            Name       = '<member-name>'
+            MemberName = '<member-name>'
             MemberType = '<member-type>'
             Value      = <member-definition>
         }
