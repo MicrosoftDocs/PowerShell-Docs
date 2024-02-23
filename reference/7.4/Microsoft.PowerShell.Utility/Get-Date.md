@@ -23,7 +23,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
  [-Format <String>] [-AsUTC] [<CommonParameters>]
 ```
 
-### DateUFormat
+### DateAndUFormat
 
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
@@ -31,7 +31,7 @@ Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-
  -UFormat <String> [<CommonParameters>]
 ```
 
-### UnixTimeSeconds
+### UnixTimeSecondsAndFormat
 
 ```
 Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
@@ -39,7 +39,7 @@ Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>
  [-Format <String>] [-AsUTC] [<CommonParameters>]
 ```
 
-### UnixTimeSecondsUFormat
+### UnixTimeSecondsAndUFormat
 
 ```
 Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
