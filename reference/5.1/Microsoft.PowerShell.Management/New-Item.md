@@ -668,6 +668,7 @@ The cmdlet returns a **FunctionInfo** object when creating a new function.
 ### System.Management.Automation.PSVariable
 
 The cmdlet returns a **PSVariable** object when creating a new variable.
+
 ## NOTES
 
 Windows PowerShell includes the following aliases for `New-Item`:
