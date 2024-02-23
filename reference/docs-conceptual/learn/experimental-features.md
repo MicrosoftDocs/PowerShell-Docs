@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 11/30/2023
+ms.date: 02/23/2024
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -15,14 +15,14 @@ breaking changes.
 > [!CAUTION]
 > Experimental features aren't intended to be used in production since the changes are allowed to be
 > breaking. Experimental features aren't officially supported. However, we appreciate any feedback
-> and bug reports. You can file issues in the [GitHub source repository][24].
+> and bug reports. You can file issues in the [GitHub source repository][25].
 
 For more information about enabling or disabling these features, see
 [about_Experimental_Features][06].
 
 ## Experimental feature lifecycle
 
-The [Get-ExperimentalFeature][28] cmdlet returns all experimental features available to PowerShell.
+The [Get-ExperimentalFeature][29] cmdlet returns all experimental features available to PowerShell.
 Experimental features can come from modules or the PowerShell engine. Module-based experimental
 features are only available after you import the module. In the following example, the
 **PSDesiredStateConfiguration** isn't loaded, so the `PSDesiredStateConfiguration.InvokeDscResource`
@@ -43,7 +43,7 @@ PSModuleAutoLoadSkipOfflineFiles    True PSEngine Module discovery will skip ove
 PSSubsystemPluginModel              True PSEngine A plugin model for registering and un-registering…
 ```
 
-Use the [Enable-ExperimentalFeature][27] and [Disable-ExperimentalFeature][26] cmdlets to enable or
+Use the [Enable-ExperimentalFeature][28] and [Disable-ExperimentalFeature][27] cmdlets to enable or
 disable a feature. You must start a new PowerShell session for this change to be in effect. Run the
 following command to enable the `PSCommandNotFoundSuggestion` feature:
 
@@ -81,23 +81,20 @@ Legend
 - The ![Discontinued][03] icon indicates the version of PowerShell where the experimental feature
   was removed
 
-|                        Name                         |         7.2         |         7.3         |         7.4         |
-| --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: |
-| [PSCommandNotFoundSuggestion][10]                   | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSDesiredStateConfiguration.InvokeDscResource][14] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSNativePSPathResolution][21]                      | ![Experimental][02] | ![Discontinued][03] |                     |
-| [PSSubsystemPluginModel][22]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSNativeCommandArgumentPassing][18]                | ![Experimental][02] |  ![Mainstream][01]  |                     |
-| [PSAnsiRenderingFileInfo][09]                       | ![Experimental][02] |  ![Mainstream][01]  |                     |
-| [PSLoadAssemblyFromNativeCode][16]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSNativeCommandErrorActionPreference][19]          |                     | ![Experimental][02] |  ![Mainstream][01]  |
-| [PSCustomTableHeaderLabelDecoration][13]            |                     |                     |  ![Mainstream][01]  |
-| [PSFeedbackProvider][15]                            |                     |                     | ![Experimental][02] |
-| [PSModuleAutoLoadSkipOfflineFiles][17]              |                     |                     | ![Experimental][02] |
-| [PSCommandWithArgs][11]                             |                     |                     | ![Experimental][02] |
-| [PSConstrainedAuditLogging][12]                     |                     |                     |  ![Mainstream][01]  |
-| [PSNativeCommandPreserveBytePipe][20]               |                     |                     |  ![Mainstream][01]  |
-| [PSWindowsNativeCommandArgPassing][23]              |                     |                     |  ![Mainstream][01]  |
+|                        Name                         |         7.2         |         7.3         |         7.4         |    7.5 (preview)    |
+| --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: | :-----------------: |
+| [PSCommandNotFoundSuggestion][10]                   | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSDesiredStateConfiguration.InvokeDscResource][14] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativePSPathResolution][21]                      | ![Experimental][02] | ![Discontinued][03] |                     |                     |
+| [PSSubsystemPluginModel][23]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeCommandArgumentPassing][18]                | ![Experimental][02] |  ![Mainstream][01]  |                     |                     |
+| [PSAnsiRenderingFileInfo][09]                       | ![Experimental][02] |  ![Mainstream][01]  |                     |                     |
+| [PSLoadAssemblyFromNativeCode][16]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeCommandErrorActionPreference][19]          |                     | ![Experimental][02] |  ![Mainstream][01]  |                     |
+| [PSFeedbackProvider][15]                            |                     |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSModuleAutoLoadSkipOfflineFiles][17]              |                     |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSCommandWithArgs][11]                             |                     |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeWindowsTildeExpansion][22]                 |                     |                     |                     | ![Experimental][02] |
 
 ### PSAnsiRenderingFileInfo
 
@@ -154,57 +151,6 @@ arg: arg2
 ```
 
 This feature was added in PowerShell 7.4-preview.2.
-
-### PSConstrainedAuditLogging
-
-<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
-
-> [!NOTE]
-> This feature became mainstream in PowerShell 7.4.
-
-On Windows, when PowerShell runs under a Windows Defender Application Control (WDAC) policy, it
-changes its behavior based on the defined security policy. Under a WDAC policy, PowerShell runs
-trusted scripts and modules allowed by the policy in Full Language mode. All other scripts and
-script blocks are untrusted and run in Constrained Language mode. PowerShell throws errors when the
-untrusted scripts attempt to perform disallowed actions. It's difficult to know why a script fails
-to run correctly in Constrained Language mode.
-
-When you enable the `PSConstrainedAuditLogging` experimental feature, PowerShell supports WDAC
-policies in **Audit** mode. In audit mode, PowerShell runs the untrusted scripts in Constrained
-Language mode but logs messages to the event log instead of throwing errors. The log messages
-describe what restrictions would apply if the policy was in **Enforce** mode.
-
-This feature was added in PowerShell 7.4-preview.4.
-
-### PSCustomTableHeaderLabelDecoration
-
-<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
-
-> [!NOTE]
-> This feature became mainstream in PowerShell 7.4.
-
-When you enable this feature, `$PSStyle` includes formatting differentiation for table header labels
-that aren't property members. For example, the default output from `Get-Process` includes the
-following columns: `NPM(K)`, `PM(M)`, `WS(M)`, and `CPU(s)`.
-
-```powershell
-Get-Process pwsh
-```
-
-```Output
- NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
- ------    -----      -----     ------      --  -- -----------
-     99    84.57     170.50       5.89   48688   1 pwsh
-     73    87.75     133.08       3.09   49120   1 pwsh
-     98    70.31     158.56       4.23   91220   1 pwsh
-    125    70.19     171.33       4.84   92124   1 pwsh
-```
-
-These column names don't match any properties of the **System.Diagnostics.Process** object returned
-by the cmdlet. These are values calculated by the PowerShell formatting system.
-
-With this feature enabled these column headers are displayed in italics to distinguish these column
-names from property names.
 
 ### PSDesiredStateConfiguration.InvokeDscResource
 
@@ -266,7 +212,7 @@ a native executable.
 > The new behavior is a **breaking change** from current behavior. This may break scripts and
 > automation that work around the various issues when invoking native applications. Historically,
 > quotes must be escaped and it isn't possible to provide empty arguments to a native application.
-> Use the [stop-parsing token][08] (`--%`) or the [`Start-Process`][30] cmdlet to sidestep native
+> Use the [stop-parsing token][08] (`--%`) or the [`Start-Process`][31] cmdlet to sidestep native
 > argument passing when needed.
 
 This feature adds a new `$PSNativeCommandArgumentPassing` preference variable that controls this
@@ -298,7 +244,7 @@ and non-Windows platforms is `Standard`.
 
 > [!NOTE]
 > The following examples use the `TestExe.exe` tool. You can build `TestExe` from the source code.
-> See [TestExe][25] in the PowerShell source repository.
+> See [TestExe][26] in the PowerShell source repository.
 
 New behaviors made available by this change:
 
@@ -325,7 +271,7 @@ New behaviors made available by this change:
 For more examples of the new behavior, see [about_Parsing][07].
 
 PowerShell 7.3 also added the ability to trace parameter binding for native commands. For more
-information, see [Trace-Command][31].
+information, see [Trace-Command][32].
 
 ### PSNativeCommandErrorActionPreference
 
@@ -363,51 +309,6 @@ of the script without extra handling.
 - When `$ErrorActionPreference = 'Continue'` (the default), you will see PowerShell error messages
   for native command errors, but scripts won't break.
 
-### PSNativeCommandPreserveBytePipe
-
-<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
-
-> [!NOTE]
-> This feature became mainstream in PowerShell 7.4.
-
-This feature preserves the byte-stream data when redirecting the **stdout** stream of a native
-command to a file or when piping byte-stream data to the **stdin** stream of a native command.
-
-For example, using the native command `curl` you can download a binary file and save it to disk
-using redirection.
-
-```powershell
-$uri = 'https://github.com/PowerShell/PowerShell/releases/download/v7.3.4/powershell-7.3.4-linux-arm64.tar.gz'
-
-# native command redirected to a file
-curl -s -L $uri > powershell.tar.gz
-```
-
-You can also pipe the byte-stream data to the **stdin** stream of another native command. The
-following example downloads a zipped TAR file using `curl`. The downloaded file data is streamed
-to the `tar` command to extract the contents of the archive.
-
-```powershell
-# native command output piped to a native command
-curl -s -L $uri | tar -xzvf - -C .
-```
-
-You can also pipe the byte-stream output of a PowerShell command to the input of native command. The
-following examples use `Invoke-WebRequest` to download the same TAR file as the previous example.
-
-```powershell
-# byte stream piped to a native command
-(Invoke-WebRequest $uri).Content | tar -xzvf - -C .
-
-# bytes piped to a native command (all at once as byte[])
-,(Invoke-WebRequest $uri).Content | tar -xzvf - -C .
-```
-
-This feature doesn't support byte-stream data when redirecting **stderr** output to **stdout**. When
-you combine the **stderr** and **stdout** streams, the combined streams are treated as string data.
-
-This experimental feature was added in PowerShell 7.4-preview.4.
-
 ### PSNativePSPathResolution
 
 > [!NOTE]
@@ -436,27 +337,32 @@ the PSReadLine module to provide custom prediction plugins. In future, **Job**,
 **CommandCompleter**, **Remoting** and other components could be separated into subsystem assemblies
 outside of `System.Management.Automation.dll`.
 
-The experimental feature includes a new cmdlet, [Get-PSSubsystem][29]. This cmdlet is only available
+The experimental feature includes a new cmdlet, [Get-PSSubsystem][30]. This cmdlet is only available
 when the feature is enabled. This cmdlet returns information about the subsystems that are available
 on the system.
 
-### PSWindowsNativeCommandArgPassing
+### PSNativeWindowsTildeExpansion
 
-<!-- Keep this until 7.4.1 then remove since it's already in the mainstream docs -->
+When this feature is enabled, PowerShell expands unquoted tilde (`~`) to the user's current home
+folder before invoking native commands. The following examples show how the feature works.
 
-> [!NOTE]
-> This feature became mainstream in PowerShell 7.4.
+With the feature disabled, the tilde is passed to the native command as a literal string.
 
-The feature changes the default values of the `$PSNativeCommandArgumentPassing` variable.
+```powershell
+PS> cmd.exe /c echo ~
+~
+```
 
-- When you enable this feature on Windows, `$PSNativeCommandArgumentPassing` is set to `Windows`.
-- When you enable this feature on non-Windows platforms, `$PSNativeCommandArgumentPassing` is set to
-  `Standard`.
-- When you disable this feature on Windows, `$PSNativeCommandArgumentPassing` is set to `Legacy`.
-- When you disable this feature on non-Windows platforms, `$PSNativeCommandArgumentPassing` is set
-  to `Standard`.
+With the feature enabled, PowerShell expands the tilde before it's passed to the native command.
 
-Also, this feature adds new telemetry metrics to inform us how the feature is being used.
+```powershell
+PS> cmd.exe /c echo ~
+C:\Users\username
+```
+
+This feature only applies to Windows. On non-Windows platforms, tilde expansion is handled natively.
+
+This feature was added in PowerShell 7.5-preview.2.
 
 <!-- link references -->
 [01]: ../../media/shared/check-mark-button-2705.svg
@@ -470,23 +376,20 @@ Also, this feature adds new telemetry metrics to inform us how the feature is be
 [09]: #psansirenderingfileinfo
 [10]: #pscommandnotfoundsuggestion
 [11]: #pscommandwithargs
-[12]: #psconstrainedauditlogging
-[13]: #pscustomtableheaderlabeldecoration
 [14]: #psdesiredstateconfigurationinvokedscresource
 [15]: #psfeedbackprovider
 [16]: #psloadassemblyfromnativecode
 [17]: #psmoduleautoloadskipofflinefiles
 [18]: #psnativecommandargumentpassing
 [19]: #psnativecommanderroractionpreference
-[20]: #psnativecommandpreservebytepipe
 [21]: #psnativepspathresolution
-[22]: #pssubsystempluginmodel
-[23]: #pswindowsnativecommandargpassing
-[24]: https://github.com/PowerShell/PowerShell/issues/new/choose
-[25]: https://github.com/PowerShell/PowerShell/tree/master/test/tools/TestExe
-[26]: xref:Microsoft.PowerShell.Core.Disable-ExperimentalFeature
-[27]: xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature
-[28]: xref:Microsoft.PowerShell.Core.Get-ExperimentalFeature
-[29]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
-[30]: xref:Microsoft.PowerShell.Management.Start-Process
-[31]: xref:Microsoft.PowerShell.Utility.Trace-Command
+[22]: #psnativewindowstildeexpansion
+[23]: #pssubsystempluginmodel
+[25]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[26]: https://github.com/PowerShell/PowerShell/tree/master/test/tools/TestExe
+[27]: xref:Microsoft.PowerShell.Core.Disable-ExperimentalFeature
+[28]: xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature
+[29]: xref:Microsoft.PowerShell.Core.Get-ExperimentalFeature
+[30]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
+[31]: xref:Microsoft.PowerShell.Management.Start-Process
+[32]: xref:Microsoft.PowerShell.Utility.Trace-Command

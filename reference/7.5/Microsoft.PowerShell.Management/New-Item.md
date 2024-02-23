@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/29/2024
+ms.date: 02/23/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Item
@@ -629,9 +629,29 @@ You can pipe a value for the new item to this cmdlet.
 
 ## OUTPUTS
 
-### System.Object
+### System.Collections.DictionaryEntry
 
-This cmdlet returns the item that it creates.
+The cmdlet returns a **DictionaryEntry** object when creating a new environment variable.
+
+### System.IO.DirectoryInfo
+
+The cmdlet returns a **DirectoryInfo** object when creating a new directory in the filesystem.
+
+### System.IO.FileInfo
+
+The cmdlet returns a **FileInfo** object when creating a new file in the filesystem.
+
+### System.Management.Automation.AliasInfo
+
+The cmdlet returns a **AliasInfo** object when creating a new alias.
+
+### System.Management.Automation.FunctionInfo
+
+The cmdlet returns a **FunctionInfo** object when creating a new function.
+
+### System.Management.Automation.PSVariable
+
+The cmdlet returns a **PSVariable** object when creating a new variable.
 
 ## NOTES
 

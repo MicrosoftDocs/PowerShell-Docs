@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 01/18/2024
+ms.date: 02/23/2024
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5-preview.1 includes the following features, updates, and breaking changes. PowerShell
-7.5 is built on .NET 8.0.1.
+PowerShell 7.5-preview.2 includes the following features, updates, and breaking changes. PowerShell
+7.5 is built on .NET 9.0.0-preview.1.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
@@ -65,6 +65,10 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 - Fix `Copy-Item` progress to only show completed when all files are copied ([#20517][20517])
 - Fix UNC path completion regression ([#20419][20419]) (Thanks @MartinGC94!)
 - Report error if invalid `-ExecutionPolicy` is passed to `pwsh` ([#20460][20460])
+- Add **WinGetCommandNotFound** and **CompletionPredictor** modules to track usage ([#21040][21040])
+- Add **DateKind** parameter to `ConvertFrom-Json` ([#20925][20925]) (Thanks @jborean93!)
+- Add **DirectoryInfo** to the OutputType for New-Item ([#21126][21126]) (Thanks @MartinGC94!)
+- Fix 1 serialization of array values ([#21085][21085]) (Thanks @jborean93!)
 
 ## Engine improvements
 
@@ -79,10 +83,21 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 - Include the module version in error messages when module is not found ([#20144][20144]) (Thanks
   @ArmaanMcleod!)
 - Fix `unixmode` to handle `setuid` and `sticky` when file is not an executable ([#20366][20366])
+- Fix using assembly to use Path.Combine when constructing assembly paths ([#21169][21169])
+- Validate the value for using namespace during semantic checks to prevent declaring invalid
+  namespaces ([#21162][21162])
+
+## Experimental features
+
+- Add tilde expansion for windows native executables ([#20402][20402]) (Thanks @domsleee!)
+  For more information, see [PSNativeWindowsTildeExpansion][01]
 
 <!-- end of content -->
 <!-- reference links -->
 [chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
+
+[01]: ../learn/experimental-features.md#psnativewindowstildeexpansion
+
 [19896]: https://github.com/PowerShell/PowerShell/pull/19896
 [20014]: https://github.com/PowerShell/PowerShell/pull/20014
 [20084]: https://github.com/PowerShell/PowerShell/pull/20084
@@ -118,4 +133,10 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 [20913]: https://github.com/PowerShell/PowerShell/pull/20913
 [20942]: https://github.com/PowerShell/PowerShell/pull/20942
 [20994]: https://github.com/PowerShell/PowerShell/pull/20994
+[20402]: https://github.com/PowerShell/PowerShell/pull/20402
+[20925]: https://github.com/PowerShell/PowerShell/pull/20925
 [21040]: https://github.com/PowerShell/PowerShell/pull/21040
+[21085]: https://github.com/PowerShell/PowerShell/pull/21085
+[21126]: https://github.com/PowerShell/PowerShell/pull/21126
+[21162]: https://github.com/PowerShell/PowerShell/pull/21162
+[21169]: https://github.com/PowerShell/PowerShell/pull/21169
