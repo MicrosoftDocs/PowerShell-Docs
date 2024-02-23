@@ -15,7 +15,7 @@ Gets the current date and time.
 
 ## SYNTAX
 
-### Date (Default)
+### DateAndFormat (Default)
 
 ```
 Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
