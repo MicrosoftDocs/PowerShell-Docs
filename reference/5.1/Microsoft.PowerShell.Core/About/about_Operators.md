@@ -523,8 +523,8 @@ You can also create ranges in reverse order.
 The start and end values of the range can be any pair of expressions that
 evaluate to an integer or a character. The endpoints of the range must be
 convertible to signed 32-bit integers (`[int32]`). Larger values cause an
-error. Also, if the range is captured in an array, the count of resulting is
-limited to maximum size of an array in .NET, which is `[int]::MaxValue - 56`.
+error. Also, if the range is captured in an array, the size of resulting array
+is limited to `[int]::MaxValue - 56`. This is maximum size of an array in .NET.
 
 For example, you could use the members of an enumeration for your start and end
 values.
