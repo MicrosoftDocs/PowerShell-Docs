@@ -51,7 +51,7 @@ PS C:\> Join-Path -Path "path\" -ChildPath "\childpath"
 path\childpath
 ```
 
-Existing directory separators `\` and handled so there is only one separator between `Path` and
+Existing directory separators `\` are handled so there is only one separator between `Path` and
 `ChildPath`
 
 ### Example 3: Display files and folders by joining a path with a child path
@@ -111,12 +111,12 @@ C:\Subdir
 D:\Subdir
 ```
 
-This command combines the roots of each PowerShell file system drive in the console with the Subdir
+This command combines the roots of each PowerShell file system drive in the console with the `Subdir`
 child path.
 
 The command uses the `Get-PSDrive` cmdlet to get the PowerShell drives supported by the FileSystem
-provider. The `ForEach-Object` statement selects only the Root property of the `PSDriveInfo` objects
-and combines it with the specified child path.
+provider. The `ForEach-Object` statement selects only the **Root** property of the **PSDriveInfo**
+objects and combines it with the specified child path.
 
 The output shows that the PowerShell drives on the computer included a drive mapped to the
 `C:\Program Files` directory.
