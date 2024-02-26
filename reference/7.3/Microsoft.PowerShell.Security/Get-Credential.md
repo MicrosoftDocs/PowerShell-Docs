@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 12/12/2022
+ms.date: 02/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Credential
@@ -33,7 +33,10 @@ The `Get-Credential` cmdlet creates a credential object for a specified user nam
 can use the credential object in security operations.
 
 The `Get-Credential` cmdlet prompts the user for a password or a user name and password. You can use
-the **Message** parameter to specify a customized message in the command line prompt.
+the **Message** parameter to specify a customized message for the prompt.
+
+In Windows PowerShell 5.1 and earlier, Windows presents a dialog box to prompt for a user name and
+password. In PowerShell 6.0 and later, the prompt is presented in the console for all platforms.
 
 ## EXAMPLES
 
@@ -130,8 +133,8 @@ Invoke-Command -ComputerName Server01 {Get-Credential Domain01\User02}
 
 ```Output
 PowerShell Credential Request : PowerShell Credential Request
-Warning: This credential is being requested by a script or application on the SERVER01 remote computer. Enter your credentials only if you
- trust the remote computer and the application or script requesting it.
+Warning: This credential is being requested by a script or application on the SERVER01 remote computer.
+Enter your credentials only if you trust the remote computer and the application or script requesting it.
 
 Enter your credentials.
 Password for user Domain01\User02: ***************
