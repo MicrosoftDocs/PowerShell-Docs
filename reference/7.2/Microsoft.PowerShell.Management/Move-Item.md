@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 02/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/move-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Move-Item
@@ -18,15 +18,17 @@ Moves an item from one location to another.
 ### Path (Default)
 
 ```
-Move-Item [-Path] <String[]> [[-Destination] <String>] [-Force] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Move-Item [-Path] <String[]> [[-Destination] <String>] [-Force] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,7 +155,7 @@ Accept wildcard characters: False
 ### -Destination
 
 Specifies the path to the location where the items are being moved. The default is the current
-directory. Wildcards are permitted, but the result must specify a single location.
+directory. Wildcards aren't permitted.
 
 To rename the item being moved, specify a new name in the value of the **Destination** parameter.
 
