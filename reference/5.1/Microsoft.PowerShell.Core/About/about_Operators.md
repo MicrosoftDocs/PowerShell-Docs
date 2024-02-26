@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 01/19/2024
+ms.date: 02/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -521,8 +521,13 @@ You can also create ranges in reverse order.
 ```
 
 The start and end values of the range can be any pair of expressions that
-evaluate to an integer. For example, you could use the members of an
-enumeration for your start and end values.
+evaluate to an integer or a character. The endpoints of the range must be
+convertible to signed 32-bit integers (`[int32]`). Larger values cause an
+error. Also, if the range is captured in an array, the count of resulting is
+limited to maximum size of an array in .NET, which is `[int]::MaxValue - 56`.
+
+For example, you could use the members of an enumeration for your start and end
+values.
 
 ```powershell
 PS> enum Food {
