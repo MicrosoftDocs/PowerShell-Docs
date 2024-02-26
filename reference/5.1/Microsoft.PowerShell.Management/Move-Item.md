@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 02/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/move-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Move-Item
@@ -18,17 +18,17 @@ Moves an item from one location to another.
 ### Path (Default)
 
 ```
-Move-Item [-Path] <String[]> [[-Destination] <String>] [-Force] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+Move-Item [-Path] <String[]> [[-Destination] <String>] [-Force] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
- [<CommonParameters>]
+Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -149,13 +149,13 @@ Required: False
 Position: Named
 Default value: Current user
 Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -Destination
 
 Specifies the path to the location where the items are being moved. The default is the current
-directory. Wildcards are permitted, but the result must specify a single location.
+directory. Wildcards are permitted, but the result must resolve to a single location.
 
 To rename the item being moved, specify a new name in the value of the **Destination** parameter.
 

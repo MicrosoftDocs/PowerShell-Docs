@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 07/17/2023
+ms.date: 02/26/2024
 online version: https://learn.microsoft.com/powershell/module/Microsoft.PowerShell.core/about/about_profiles?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -70,10 +70,12 @@ The profile paths include the following variables:
 - The `$HOME` variable stores the current user's home directory
 
 > [!NOTE]
-> In Windows, the location of the Documents folder can be changed by folder
-> redirection or OneDrive. We don't recommend redirecting the Documents folder
-> to a network share or including it in OneDrive. Redirecting the folder can
-> cause modules to fail to load and create errors in your profile scripts.
+> In Windows, the location of the `Documents` folder can be changed by folder
+> redirection or OneDrive. We don't recommend redirecting the `Documents`
+> folder to a network share or including it in OneDrive. Redirecting the folder
+> can cause modules to fail to load and create errors in your profile scripts.
+> For information about removing the `Documents` folder from OneDrive
+> management, consult the [OneDrive documentation](/onedrive/).
 
 ## The $PROFILE variable
 
