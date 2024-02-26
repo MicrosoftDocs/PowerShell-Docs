@@ -64,7 +64,7 @@ The profile paths include the following variables:
 > to a network share or including it in OneDrive. Redirecting the folder can
 > cause modules to fail to load and create errors in your profile scripts. For
 > information about removing the `Documents` folder from OneDrive management,
-> consult the [OneDrive documentation](https://learn.microsoft.com/onedrive/).
+> consult the [OneDrive documentation](/onedrive/).
 
 ## The $PROFILE variable
 
