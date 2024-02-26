@@ -1,7 +1,7 @@
 ---
 description: Describes the special character sequences that control how PowerShell interprets the next characters in the sequence.
 Locale: en-US
-ms.date: 01/11/2023
+ms.date: 02/23/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Special Characters
@@ -225,24 +225,20 @@ PowerShell sends the following string to `Icacls`.
 X:\VMS /grant Dom\HVAdmin:(CI)(OI)F
 ```
 
-Here is another example. The **showArgs** function outputs the values passed to
-it. In this example, we pass the variable named `$HOME` to the function twice.
+In this second example, we pass the variable `$HOME` to the `cmd.exe /c echo`
+command twice.
 
 ```powershell
-function showArgs {
-  "`$args = " + ($args -join '|')
-}
-
-showArgs $HOME --% $HOME
+cmd.exe /c echo $HOME --% $HOME
 ```
 
-You can see in the output that, for the first parameter, the variable `$HOME`
-is interpreted by PowerShell so that the value of the variable is passed to the
-function. The second use of `$HOME` comes after the stop-parsing token, so the
-string "$HOME" is passed to the function without interpretation.
+The output shows that the first instance of `$HOME` is interpreted by
+PowerShell so that the value of the variable is passed to `cmd`. The second
+instance of `$HOME` comes after the stop-parsing token, so it is passed as a
+literal string.
 
 ```Output
-$args = C:\Users\username|--%|$HOME
+C:\Users\username  $HOME
 ```
 
 For more information about the stop-parsing token, see [about_Parsing][02].
