@@ -71,11 +71,11 @@ The profile paths include the following variables:
 
 > [!NOTE]
 > In Windows, the location of the `Documents` folder can be changed by folder
-> redirection or OneDrive. We don't recommend redirecting the Documents folder
-> to a network share or including it in OneDrive. Redirecting the folder can
-> cause modules to fail to load and create errors in your profile scripts. For
-> information about removing the `Documents` folder from OneDrive management,
-> consult the [OneDrive documentation](/onedrive/).
+> redirection or OneDrive. We don't recommend redirecting the `Documents`
+> folder to a network share or including it in OneDrive. Redirecting the folder
+> can cause modules to fail to load and create errors in your profile scripts.
+> For information about removing the `Documents` folder from OneDrive
+> management, consult the [OneDrive documentation](/onedrive/).
 
 ## The $PROFILE variable
 
