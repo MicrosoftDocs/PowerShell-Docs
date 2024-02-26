@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 01/19/2024
+ms.date: 02/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -575,6 +575,8 @@ values of the range.
 > [!NOTE]
 > Support for character ranges was added in PowerShell 6.
 
+#### Number ranges
+
 ```powershell
 1..10
 $max = 10
@@ -587,6 +589,42 @@ You can also create ranges in reverse order.
 10..1
 5..-5 | ForEach-Object {Write-Output $_}
 ```
+
+The start and end values of the range can be any pair of expressions that
+evaluate to an integer or a character. The endpoints of the range must be
+convertible to signed 32-bit integers (`[int32]`). Larger values cause an
+error. Also, if the range is captured in an array, the count of resulting is
+limited to maximum size of an array in .NET, which is `[int]::MaxValue - 56`.
+
+For example, you could use the members of an enumeration for your start and end
+values.
+
+```powershell
+PS> enum Food {
+      Apple
+      Banana = 3
+      Kiwi = 10
+    }
+PS> [Food]::Apple..[Food]::Kiwi
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+> [!IMPORTANT]
+> The resulting range isn't limited to the values of the enumeration. Instead
+> it represents the range of values between the two values provided. You can't
+> use the range operator to reliably represent the members of an enumeration.
+
+#### Character ranges
 
 To create a range of characters, enclose the characters in quotes.
 
@@ -645,35 +683,6 @@ Z
 Y
 X
 ```
-
-The start and end values of the range can be any pair of expressions that
-evaluate to an integer or a character. For example, you could use the members
-of an enumeration for your start and end values.
-
-```powershell
-PS> enum Food {
-      Apple
-      Banana = 3
-      Kiwi = 10
-    }
-PS> [Food]::Apple..[Food]::Kiwi
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-```
-
-> [!IMPORTANT]
-> The resulting range isn't limited to the values of the enumeration. Instead
-> it represents the range of values between the two values provided. You can't
-> use the range operator to reliably represent the members of an enumeration.
 
 ### Member-access operator `.`
 
