@@ -182,7 +182,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -251,7 +251,7 @@ Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, OEM, Unicode, UTF7, UT
 Required: False
 Position: Named
 Default value: utf8NoBOM
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -374,7 +374,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -439,7 +439,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -515,7 +515,6 @@ By default, this cmdlet returns no output.
 When you use the **PassThru** parameter, this cmdlet returns a string representing the content.
 
 ## NOTES
-
 
 - `Set-Content` is designed for string processing. If you pipe non-string objects to `Set-Content`,
   it converts the object to a string before writing it. To write objects to files, use `Out-File`.
