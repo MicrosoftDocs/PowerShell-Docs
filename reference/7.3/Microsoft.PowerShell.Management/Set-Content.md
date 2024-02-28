@@ -182,7 +182,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -246,7 +246,7 @@ Accepted values: ASCII, BigEndianUnicode, BigEndianUTF32, OEM, Unicode, UTF7, UT
 Required: False
 Position: Named
 Default value: utf8NoBOM
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -369,7 +369,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -434,7 +434,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 

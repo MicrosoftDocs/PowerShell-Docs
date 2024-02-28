@@ -194,7 +194,7 @@ Aliases: Msg, Message
 Required: True
 Position: 0
 Default value: None
-Accept pipeline input: ByValue (True), ByName (False)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -212,7 +212,7 @@ Aliases:
 Required: False
 Position: 1
 Default value: None
-Accept pipeline input: ByValue (False), ByName (False)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
