@@ -1,7 +1,7 @@
 ---
 description: Explains how to use a switch to handle multiple `if` statements.
 Locale: en-US
-ms.date: 01/27/2022
+ms.date: 02/28/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Switch
@@ -221,6 +221,26 @@ switch (4, 2)
 
 ```Output
 It is four.
+```
+
+In this example, the `switch` statement is testing for the type of the value in
+the hashtable. You must use and expression that returns a boolean value to
+select the scriptblock to execute.
+
+```powershell
+$var = @{A = 10; B = 'abc'}
+
+foreach ($key in $var.Keys) {
+    switch ($var[$key].GetType()) {
+        { $_ -eq [int32]  }  { "$key + 10 = $($var[$key] + 10)" }
+        { $_ -eq [string] }  { "$key = $($var[$key])"           }
+    }
+}
+```
+
+```Output
+A + 10 = 20
+B = abc
 ```
 
 In this example, an object that's not a string or numerical data is passed to
