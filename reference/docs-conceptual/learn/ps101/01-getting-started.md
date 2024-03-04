@@ -182,6 +182,11 @@ PowerShell scripts can't be run at all when the execution policy is set to **Res
 the default setting on all Windows client operating systems. To demonstrate the problem, save the
 following code as a `.ps1` file named `Stop-TimeService.ps1`.
 
+> [!TIP]
+> A PowerShell script is a plaintext file with a `.ps1` extension that contains the commands you
+> want to run. To create a PowerShell script, use a code editor like Visual Studio Code (VS Code) or
+> any text editor such as Notepad.
+
 ```powershell
 Get-Service -Name W32Time | Stop-Service -PassThru
 ```
