@@ -1,6 +1,6 @@
 ---
 description: This article explains the ways of starting various versions of PowerShell.
-ms.date: 10/23/2023
+ms.date: 03/04/2024
 title: Starting Windows PowerShell
 ---
 
@@ -30,21 +30,10 @@ To find cmdlet reference and installation documentation for PowerShell 7, use th
 
 To view content for other PowerShell versions, see [How to use the PowerShell documentation][01].
 
-## How to Start Windows PowerShell on Earlier Versions of Windows
-
-This section explains how to start Windows PowerShell and Windows PowerShell Integrated Scripting
-Environment (ISE) on Windows 7, Windows Server 2008 R2, and Windows Server 2008. It also explains
-how to enable the optional feature for Windows PowerShell ISE in Windows PowerShell 2.0 on Windows
-Server 2008 R2 and Windows Server 2008.
-
-Use any of the following methods to start the installed version of Windows PowerShell 3.0, or
-Windows PowerShell 4.0, where applicable.
-
 ### From the Start Menu
 
-- Click **Start**, type **PowerShell**, and then click **Windows PowerShell**.
-- From the **Start** menu, click **Start**, click **All Programs**, click **Accessories**, click the
-  **Windows PowerShell** folder, and then click **Windows PowerShell**.
+- Open the **Start** menu, type **Windows PowerShell**, select **Windows PowerShell**, then select
+  **Open**.
 
 ### At the Command Prompt
 
@@ -56,8 +45,8 @@ information, see [PowerShell.exe Command-Line Help][03].
 
 ### With Administrative privileges (Run as administrator)
 
-Click **Start**, type **PowerShell**, right-click **Windows PowerShell**, and then click **Run as
-administrator**.
+Open the **Start** menu, type **Windows PowerShell**, select **Windows PowerShell**, and then
+select **Run as administrator**.
 
 ## How to Start Windows PowerShell ISE on Earlier Releases of Windows
 
@@ -65,9 +54,7 @@ Use any of the following methods to start Windows PowerShell ISE.
 
 ### From the Start Menu
 
-- Click **Start**, type **ISE**, and then click **Windows PowerShell ISE**.
-- From the **Start** menu, click **Start**, click **All Programs**, click **Accessories**, click the
-  **Windows PowerShell** folder, and then click **Windows PowerShell ISE**.
+- Open the **Start** menu, type **ISE**, select **Windows PowerShell ISE**, then select **Open**.
 
 ### At the Command Prompt
 
@@ -89,6 +76,9 @@ However, you might occasionally need to run **Windows PowerShell (x86)**, such a
 a module that requires the 32-bit version or when you're connecting remotely to a 32-bit computer.
 
 To start a 32-bit version of Windows PowerShell, use any of the following procedures.
+
+- Click **Start**, type **Windows PowerShell**, select **Windows PowerShell (x86)**, then select
+  **Open**.
 
 <!-- link references -->
 [01]: ../how-to-use-docs.md
