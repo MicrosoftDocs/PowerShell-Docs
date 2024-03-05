@@ -392,7 +392,7 @@ Zone check which avoids the problem.
 
 - [about_Environment_Variables][01]
 - [about_Group_Policy_Settings][02]
-- [about_Pwsh][03]
+- [about_PowerShell_exe][03]
 - [about_Signing][04]
 - [Get-ExecutionPolicy][06]
 - [Set-ExecutionPolicy][07]
@@ -402,7 +402,7 @@ Zone check which avoids the problem.
 <!-- link references -->
 [01]: about_Environment_Variables.md
 [02]: about_Group_Policy_Settings.md
-[03]: about_pwsh.md
+[03]: about_PowerShell_exe.md
 [04]: about_Signing.md
 [05]: xref:Microsoft.PowerShell.Management.Get-Item
 [06]: xref:Microsoft.PowerShell.Security.Get-ExecutionPolicy
