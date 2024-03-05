@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 01/03/2024
+ms.date: 03/04/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ExecutionPolicy
@@ -35,9 +35,8 @@ The `Set-ExecutionPolicy` cmdlet's default scope is `LocalMachine`, which affect
 uses the computer. To change the execution policy for `LocalMachine`, start PowerShell with **Run
 as Administrator**.
 
-To display the execution policies for each scope in the order of precedence, use
-`Get-ExecutionPolicy -List`. To see the effective execution policy for your PowerShell session use
-`Get-ExecutionPolicy` with no parameters.
+To display the execution policies for each scope, use `Get-ExecutionPolicy -List`. To see the
+effective execution policy for your PowerShell session use `Get-ExecutionPolicy` with no parameters.
 
 ## EXAMPLES
 
@@ -304,11 +303,11 @@ Specifies the scope that is affected by an execution policy. The default scope i
 
 The effective execution policy is determined by the order of precedence as follows:
 
-- `MachinePolicy`. Set by a Group Policy for all users of the computer.
-- `UserPolicy`. Set by a Group Policy for the current user of the computer.
-- `Process`. Affects only the current PowerShell session.
-- `CurrentUser`. Affects only the current user.
-- `LocalMachine`. Default scope that affects all users of the computer.
+- `MachinePolicy` - Set by a Group Policy for all users of the computer
+- `UserPolicy` - Set by a Group Policy for the current user of the computer
+- `Process` - Affects only the current PowerShell session
+- `LocalMachine` - Default scope that affects all users of the computer
+- `CurrentUser` - Affects only the current user
 
 The `Process` scope only affects the current PowerShell session. The execution policy is saved in
 the environment variable `$env:PSExecutionPolicyPreference`, rather than the registry. When the
