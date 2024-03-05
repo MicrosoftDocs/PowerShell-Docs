@@ -125,7 +125,7 @@ Get-Command Get-Date -All
 CommandType     Name                 Version    Source
 -----------     ----                 -------    ------
 Function        Get-Date
-Cmdlet          Get-Date             7.0.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Get-Date             3.1.0.0    Microsoft.PowerShell.Utility
 ```
 
 ```powershell
