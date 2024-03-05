@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell determines which command to run.
 Locale: en-US
-ms.date: 05/16/2023
+ms.date: 03/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Command Precedence
@@ -129,7 +129,7 @@ Cmdlet          Get-Date             3.1.0.0    Microsoft.PowerShell.Utility
 ```
 
 ```powershell
-Get-Command where -all
+Get-Command where -All
 ```
 
 ```Output
@@ -145,15 +145,27 @@ For cmdlets, you can use the module-qualified name. For executables, you can
 include the file extension. For example, to run the executable version of
 `where` use `where.exe`.
 
-### Using module-qualified names
+### Use module-qualified names
 
 Using the module-qualified name of a cmdlet allows you to run commands hidden
 by an item with the same name. For example, you can run the `Get-Date` cmdlet
-by qualifying it with its module name **Microsoft.PowerShell.Utility**.
+by qualifying it with its module name **Microsoft.PowerShell.Utility** or full
+path. When you use module-qualified names, the module is automatically imported
+into the session.
 
-Use this preferred method when writing scripts that you intend to distribute.
-You can't predict which commands might be present in the session in which the
-script runs.
+> [!NOTE]
+> You can't use module names to qualify variables or aliases.
+
+Using module-qualified names ensures that you are running the command that you
+intend to run. This is the recommended method of calling cmdlets when writing
+scripts that you intend to distribute.
+
+The following example illustrates how to qualify a command by including its
+module name.
+
+> [!IMPORTANT]
+> Module qualification uses the backslash character (`\`) to separate the
+> module name from the command name, regardless of the platform.
 
 ```powershell
 New-Alias -Name "Get-Date" -Value "Get-ChildItem"
@@ -188,12 +200,27 @@ For example, to find the source of the `Get-Date` cmdlet, type:
 Microsoft.PowerShell.Utility
 ```
 
-> [!NOTE]
-> You can't qualify variables or aliases.
+If you want to qualify the name of the command using the path to the module,
+you must use the forward slash (`/`) as the path separator and the backslash
+character (`\`) before the command name. Use the following example to run the
+`Get-Date` cmdlet:
 
-### Using the call operator
+```powershell
+//localhost/c$/Progra~1/PowerShell/7-preview/Modules/Microsoft.PowerShell.Utility\Get-Date
+```
 
-You can also use the `Call` operator `&` to run hidden commands by combining it
+The path can be a full path or a path that is relative to the current location.
+On Windows, you can't use a drive-qualified path. You must use a UNC path, as
+shown in the previous example, or a path that's relative to the current drive.
+The following example assumes that your current location is in the `C:` drive.
+
+```powershell
+/Progra~1/PowerShell/7-preview/Modules/Microsoft.PowerShell.Utility\Get-Date
+```
+
+### Use the call operator
+
+You can also use the call operator (`&`) to run hidden commands by combining it
 with a call to [Get-ChildItem][12] (the alias is `dir`), `Get-Command` or
 [Get-Module][10].
 
