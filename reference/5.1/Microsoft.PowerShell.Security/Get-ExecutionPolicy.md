@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 01/03/2024
+ms.date: 03/04/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
@@ -164,8 +164,8 @@ to run because it was unblocked by the `Unblock-File` cmdlet.
 
 ### -List
 
-Gets all execution policy values for the session listed in precedence order. By default,
-`Get-ExecutionPolicy` gets only the effective execution policy.
+Gets all execution policy values for the session. By default, `Get-ExecutionPolicy` gets only the
+effective execution policy.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -188,8 +188,8 @@ The effective execution policy is determined by the order of precedence as follo
 - `MachinePolicy`. Set by a Group Policy for all users of the computer.
 - `UserPolicy`. Set by a Group Policy for the current user of the computer.
 - `Process`. Affects only the current PowerShell session.
-- `CurrentUser`. Affects only the current user.
 - `LocalMachine`. Default scope that affects all users of the computer.
+- `CurrentUser`. Affects only the current user.
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicyScope

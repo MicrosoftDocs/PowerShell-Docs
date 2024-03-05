@@ -1,6 +1,6 @@
 ---
 description: This article is a list of the keyboard shortcuts used in the PowerShell ISE.
-ms.date: 10/25/2022
+ms.date: 03/04/2024
 title: Keyboard Shortcuts for the Windows PowerShell ISE
 ---
 
@@ -116,13 +116,13 @@ You can use the following keyboard shortcuts when you use Windows PowerShell tab
 
 ## Keyboard shortcuts for starting and exiting
 
-You can use the following keyboard shortcuts to start the Windows PowerShell console
-(PowerShell.exe) or to exit Windows PowerShell ISE.
+You can use the following keyboard shortcuts to exit the Windows PowerShell ISE or to start a new
+Windows PowerShell session outside of the ISE.
 
-|                        Action                        |               Keyboard Shortcut               |
-| ---------------------------------------------------- | --------------------------------------------- |
-| **Exit**                                             | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
-| **Start PowerShell.exe**(Windows PowerShell console) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> |
+|          Action          |                                            Keyboard Shortcut                                             |
+| ------------------------ | -------------------------------------------------------------------------------------------------------- |
+| **Exit**                 | <kbd>ALT</kbd>+<kbd>F4</kbd> closes the ISE.                                                             |
+| **Start PowerShell.exe** | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> opens a new Windows PowerShell session outside of the ISE. |
 
 ## See Also
 
