@@ -189,7 +189,8 @@ Handles      WS(K)   CPU(s)     Id UserName            ProcessName
 
 This command shows how to find the owner of a process.
 On Windows, the **IncludeUserName** parameter requires elevated user rights
-(**Run as Administrator**).
+(**Run as Administrator**) to view the users of processes that are not running
+as the current user.
 The output reveals that the owner is `Domain01\user01`.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
