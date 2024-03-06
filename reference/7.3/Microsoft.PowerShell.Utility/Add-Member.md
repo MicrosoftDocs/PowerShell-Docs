@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/15/2023
+ms.date: 03/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
@@ -308,7 +308,8 @@ value of the **Role** property in the **Position** property.
 
 ### -Force
 
-Indicates that this cmdlet adds a new member even the object has a custom member with the same name.
+By default, `Add-Member` can't add a new member if the object already has a member with the same.
+When you use the **Force** parameter, `Add-Member` replaces the existing member with the new member.
 You can't use the **Force** parameter to replace a standard member of a type.
 
 ```yaml

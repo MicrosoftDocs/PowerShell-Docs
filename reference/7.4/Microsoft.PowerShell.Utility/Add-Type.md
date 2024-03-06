@@ -186,7 +186,7 @@ class and that it includes a member called `Multiply`.
 
 ### Example 3: Add types from an assembly
 
-This example adds the classes from the `NJsonSchema.dll` assembly to the current session.
+This example adds the classes from the `JsonSchema.NET.dll` assembly to the current session.
 
 ```powershell
 Set-Location -Path $PSHOME
@@ -213,7 +213,13 @@ $Signature = @"
 [DllImport("user32.dll")]public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
 "@
 
-$ShowWindowAsync = Add-Type -MemberDefinition $Signature -Name "Win32ShowWindowAsync" -Namespace Win32Functions -PassThru
+$addTypeSplat = @{
+    MemberDefinition = $Signature
+    Name = "Win32ShowWindowAsync"
+    Namespace = 'Win32Functions'
+    PassThru = $true
+}
+$ShowWindowAsync = Add-Type @addTypeSplat
 
 # Minimize the PowerShell console
 
@@ -227,7 +233,7 @@ $ShowWindowAsync::ShowWindowAsync((Get-Process -Id $Pid).MainWindowHandle, 4)
 The `$Signature` variable stores the C# signature of the `ShowWindowAsync` function. To ensure that
 the resulting method is visible in a PowerShell session, the `public` keyword was added to the
 standard signature. For more information, see
-[ShowWindowAsync function](/windows/win32/api/winuser/nf-winuser-showwindowasync).
+[ShowWindowAsync](/windows/win32/api/winuser/nf-winuser-showwindowasync) function.
 
 The `$ShowWindowAsync` variable stores the object created by the `Add-Type` **PassThru** parameter.
 The `Add-Type` cmdlet adds the `ShowWindowAsync` function to the PowerShell session as a static
@@ -261,8 +267,17 @@ Enter the full or simple name, also known as the partial name, of an assembly. W
 are permitted in the assembly name. If you enter a simple or partial name, `Add-Type` resolves it to
 the full name, and then uses the full name to load the assembly.
 
-This parameter doesn't accept a path or a filename. To enter the path to the assembly dynamic-link
-library (DLL) file, use the **Path** parameter.
+Using the **Path** or **LiteralPath** parameters guarantees that you are loading the assembly that
+you intended to load. When you use the **AssemblyName** parameter, PowerShell asks .NET to resolve
+the assembly name using the standard .NET assembly resolution process. Since .NET searches the
+application folder first, `Add-Type` might load an assembly from `$PSHOME` instead of the version in
+the current folder. For more information, see
+[Assembly location](/dotnet/standard/assembly/location).
+
+If .NET fails to resolve the name, PowerShell then looks in the current location to find the
+assembly. When you use wildcards in the **AssemblyName** parameter, the .NET assembly resolution
+process fails causing PowerShell to look in the current location.
+
 
 ```yaml
 Type: System.String[]
@@ -316,7 +331,7 @@ Accept wildcard characters: False
 ### -Language
 
 Specifies the language that is used in the source code. The acceptable value for this parameter is
-- `CSharp`
+`CSharp`.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.Language
@@ -337,6 +352,9 @@ Specifies the path to source code files or assembly DLL files that contain the t
 **Path**, the value of the **LiteralPath** parameter is used exactly as it's typed. No characters
 are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation
 marks. Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+
+Using the **Path** or **LiteralPath** parameters guarantees that you are loading the assembly that
+you intended to load.
 
 ```yaml
 Type: System.String[]
@@ -485,8 +503,8 @@ If you submit source code files, `Add-Type` compiles the code in the files and c
 assembly of the types. The file extension specified in the value of **Path** determines the compiler
 that `Add-Type` uses.
 
-If you submit an assembly file, `Add-Type` takes the types from the assembly. To specify an
-in-memory assembly or the global assembly cache, use the **AssemblyName** parameter.
+Using the **Path** or **LiteralPath** parameters guarantees that you are loading the assembly that
+you intended to load.
 
 ```yaml
 Type: System.String[]
@@ -601,7 +619,7 @@ Otherwise, the command fails.
 
 In Windows PowerShell (version 5.1 and below), you need to use `Add-Type` for anything that isn't
 already loaded. Most commonly, this applies to assemblies found in the Global Assembly Cache (GAC).
-In PowerShell 6 and higher, there is no GAC, so PowerShell installs its own assemblies in `$PSHome`.
+In PowerShell 6 and higher, there is no GAC, so PowerShell installs its own assemblies in `$PSHOME`.
 These assemblies are automatically loaded on request, so there's no need to use `Add-Type` to load
 them. However, using `Add-Type` is still permitted to allow scripts to be implicitly compatible with
 any version of PowerShell.
