@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 01/12/2024
+ms.date: 01/12/2023
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
