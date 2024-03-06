@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/28/2023
+ms.date: 03/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-String
@@ -24,8 +24,8 @@ ConvertFrom-String [-Delimiter <String>] [-PropertyNames <String[]>] [-InputObje
 ### TemplateParsing
 
 ```
-ConvertFrom-String [-TemplateFile <String[]>] [-TemplateContent <String[]>] [-IncludeExtent] [-UpdateTemplate]
- [-InputObject] <String> [<CommonParameters>]
+ConvertFrom-String [-TemplateFile <String[]>] [-TemplateContent <String[]>] [-IncludeExtent]
+ [-UpdateTemplate] [-InputObject] <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -393,6 +393,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ### System.String
 
 ## OUTPUTS
+
+### System.Management.Automation.PSCustomObject
 
 ## NOTES
 
