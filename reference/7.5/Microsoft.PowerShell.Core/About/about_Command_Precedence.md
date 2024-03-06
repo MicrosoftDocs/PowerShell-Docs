@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell determines which command to run.
 Locale: en-US
-ms.date: 05/16/2023
+ms.date: 03/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Command Precedence
@@ -54,7 +54,7 @@ when it runs commands.
 
 1. Alias
 1. Function
-1. Cmdlet (see [Cmdlet name resolution][04])
+1. Cmdlet (see [Cmdlet name resolution][05])
 1. External executable files (including PowerShell script files)
 
 Therefore, if you type `help`, PowerShell first looks for an alias named
@@ -96,13 +96,13 @@ the same name, the original function is replaced.
 
 ## Finding hidden commands
 
-The **All** parameter of the [Get-Command][09] cmdlet gets all commands with
+The **All** parameter of the [Get-Command][10] cmdlet gets all commands with
 the specified name, even if they're hidden or replaced. Beginning in PowerShell
 3.0, by default, `Get-Command` gets only the commands that run when you type
 the command name.
 
 In the following examples, the session includes a `Get-Date` function and a
-[Get-Date][13] cmdlet. You can use `Get-Command` to determine which command is
+[Get-Date][14] cmdlet. You can use `Get-Command` to determine which command is
 chosen first.
 
 ```powershell
@@ -129,7 +129,7 @@ Cmdlet          Get-Date             7.0.0.0    Microsoft.PowerShell.Utility
 ```
 
 ```powershell
-Get-Command where -all
+Get-Command where -All
 ```
 
 ```Output
@@ -145,15 +145,28 @@ For cmdlets, you can use the module-qualified name. For executables, you can
 include the file extension. For example, to run the executable version of
 `where` use `where.exe`.
 
-### Using module-qualified names
+### Use module-qualified names
 
 Using the module-qualified name of a cmdlet allows you to run commands hidden
 by an item with the same name. For example, you can run the `Get-Date` cmdlet
-by qualifying it with its module name **Microsoft.PowerShell.Utility**.
+by qualifying it with its module name **Microsoft.PowerShell.Utility** or its
+path. When you use module-qualified names, the module can be automatically
+imported into the session depending on the value of
+[`$PSModuleAutoLoadingPreference`][03].
 
-Use this preferred method when writing scripts that you intend to distribute.
-You can't predict which commands might be present in the session in which the
-script runs.
+> [!NOTE]
+> You can't use module names to qualify variables or aliases.
+
+Using module-qualified names ensures that you are running the command that you
+intend to run. This is the recommended method of calling cmdlets when writing
+scripts that you intend to distribute.
+
+The following example illustrates how to qualify a command by including its
+module name.
+
+> [!IMPORTANT]
+> Module qualification uses the backslash character (`\`) to separate the
+> module name from the command name, regardless of the platform.
 
 ```powershell
 New-Alias -Name "Get-Date" -Value "Get-ChildItem"
@@ -188,17 +201,32 @@ For example, to find the source of the `Get-Date` cmdlet, type:
 Microsoft.PowerShell.Utility
 ```
 
-> [!NOTE]
-> You can't qualify variables or aliases.
+If you want to qualify the name of the command using the path to the module,
+you must use the forward slash (`/`) as the path separator and the backslash
+character (`\`) before the command name. Use the following example to run the
+`Get-Date` cmdlet:
 
-### Using the call operator
+```powershell
+//localhost/c$/Progra~1/PowerShell/7-preview/Modules/Microsoft.PowerShell.Utility\Get-Date
+```
 
-You can also use the `Call` operator `&` to run hidden commands by combining it
-with a call to [Get-ChildItem][12] (the alias is `dir`), `Get-Command` or
-[Get-Module][10].
+The path can be a full path or a path that is relative to the current location.
+On Windows, you can't use a drive-qualified path. You must use a UNC path, as
+shown in the previous example, or a path that's relative to the current drive.
+The following example assumes that your current location is in the `C:` drive.
+
+```powershell
+/Progra~1/PowerShell/7-preview/Modules/Microsoft.PowerShell.Utility\Get-Date
+```
+
+### Use the call operator
+
+You can also use the call operator (`&`) to run hidden commands by combining it
+with a call to [Get-ChildItem][13] (the alias is `dir`), `Get-Command` or
+[Get-Module][11].
 
 The call operator executes strings and script blocks in a child scope. For more
-information, see [about_Operators][07].
+information, see [about_Operators][08].
 
 For example, use the following command to run the function named `Map` that's
 hidden by an alias named `Map`.
@@ -257,8 +285,8 @@ your commands, use a unique name. For example, add your initials or company
 name acronym to the nouns in your commands.
 
 When you import commands into your session from a PowerShell module or from
-another session, you can use the `Prefix` parameter of the [Import-Module][11]
-or [Import-PSSession][14] cmdlet to add a prefix to the nouns in the names of
+another session, you can use the `Prefix` parameter of the [Import-Module][12]
+or [Import-PSSession][15] cmdlet to add a prefix to the nouns in the names of
 commands.
 
 For example, the following command avoids any conflict with the `Get-Date` and
@@ -281,34 +309,35 @@ with the system.
 You can register the executable engine for a file extension using the `ftype`
 and `assoc` commands of the CMD command shell. PowerShell has no direct method
 to register the file handler. For more information, see the documentation for
-the [ftype][03] command.
+the [ftype][04] command.
 
 For PowerShell to see a file extension as executable in the current session,
 you must add the extension to the `$env:PATHEXT` environment variable.
 
 ## See also
 
-- [about_Aliases][05]
-- [about_Functions][06]
-- [about_Path_Syntax][08]
+- [about_Aliases][06]
+- [about_Functions][07]
+- [about_Path_Syntax][09]
 - [Alias-Provider][01]
 - [Function-Provider][02]
-- [Get-Command][09]
-- [Import-Module][11]
-- [Import-PSSession][14]
+- [Get-Command][10]
+- [Import-Module][12]
+- [Import-PSSession][15]
 
 <!-- link references -->
-[01]: ../../Microsoft.PowerShell.Core/About/about_Alias_Provider.md
-[02]: ../../Microsoft.PowerShell.Core/About/about_Function_Provider.md
-[03]: /windows-server/administration/windows-commands/ftype
-[04]: #cmdlet-name-resolution
-[05]: about_Aliases.md
-[06]: about_Functions.md
-[07]: about_Operators.md
-[08]: about_Path_Syntax.md
-[09]: xref:Microsoft.PowerShell.Core.Get-Command
-[10]: xref:Microsoft.PowerShell.Core.Get-Module
-[11]: xref:Microsoft.PowerShell.Core.Import-Module
-[12]: xref:Microsoft.PowerShell.Management.Get-ChildItem
-[13]: xref:Microsoft.PowerShell.Utility.Get-Date
-[14]: xref:Microsoft.PowerShell.Utility.Import-PSSession
+[01]: ./about_Alias_Provider.md
+[02]: ./about_Function_Provider.md
+[03]: ./about_preference_variables.md#psmoduleautoloadingpreference
+[04]: /windows-server/administration/windows-commands/ftype
+[05]: #cmdlet-name-resolution
+[06]: about_Aliases.md
+[07]: about_Functions.md
+[08]: about_Operators.md
+[09]: about_Path_Syntax.md
+[10]: xref:Microsoft.PowerShell.Core.Get-Command
+[11]: xref:Microsoft.PowerShell.Core.Get-Module
+[12]: xref:Microsoft.PowerShell.Core.Import-Module
+[13]: xref:Microsoft.PowerShell.Management.Get-ChildItem
+[14]: xref:Microsoft.PowerShell.Utility.Get-Date
+[15]: xref:Microsoft.PowerShell.Utility.Import-PSSession
