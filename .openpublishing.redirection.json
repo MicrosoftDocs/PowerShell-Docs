@@ -2,6 +2,11 @@
   "redirections": [
     {
       "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/what-is-windows-powershell",
+      "source_path": "reference/docs-conceptual/windows-powershell/overview.md"
+    },
+    {
+      "redirect_document_id": true,
       "redirect_url": "/powershell/scripting/learn/shell/optimize-shell",
       "source_path": "reference/docs-conceptual/windows-powershell/install/Creating-a-Custom-PowerShell-Shortcut.md"
     },
