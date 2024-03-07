@@ -6,6 +6,8 @@ items:
     items:
       - name: What is PowerShell?
         href: overview.md
+      - name: What is Windows PowerShell?
+        href: what-is-windows-powershell.md
       - name: What is a PowerShell command?
         href: powershell-commands.md
       - name: Discover PowerShell
@@ -325,8 +327,6 @@ items:
                 href: windows-powershell/ise/object-model/the-powershelltab-object.md
               - name: Other useful scripting objects
                 href: windows-powershell/ise/object-model/other-useful-scripting-objects.md
-      - name: What is Windows PowerShell?
-        href: windows-powershell/overview.md
       - name: Starting Windows PowerShell
         href: windows-powershell/starting-windows-powershell.md
       - name: Windows Management Framework (WMF)

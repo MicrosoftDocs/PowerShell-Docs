@@ -1,7 +1,7 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 01/17/2023
+ms.date: 03/07/2024
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -889,35 +889,73 @@ Beginning in Windows PowerShell 3.0, a collection of zero or one object has the
 object. This feature helps you to avoid scripting errors that occur when a
 command that expects a collection gets fewer than two items.
 
-The following examples demonstrate this feature.
-
-### Zero objects
+The following example shows that a variable that contains no objects has a
+**Count** and **Length** of 0.
 
 ```powershell
-$a = $null
-$a.Count
-$a.Length
-```
-
-```Output
+PS> $a = $null
+PS> $a.Count
 0
+PS> $a.Length
 0
 ```
 
-### One object
+The following example shows that a variable that contains one object has a
+**Count** and **Length** of 1. You can also use array indexing to access the
+value of the object.
 
 ```powershell
-$a = 4
-$a.Count
-$a.Length
-$a[0]
-$a[-1]
-```
-
-```Output
+PS> $a = 4
+PS> $a.Count
 1
+PS> $a.Length
 1
+PS> $a[0]
 4
+PS> $a[-1]
+4
+```
+
+When you run a command that could return a collection or a single object, you
+can use array indexing to access the value of the object without having to test
+the **Count** or **Length** properties. However, if the result is a single
+object (singleton), and that object has a **Count** or **Length** property, the
+value of those properties belong to the singleton object and don't represent
+the number of items in the collection.
+
+In the following example, the command returns a single string object. The
+**Length** of that string is `4`.
+
+```powershell
+PS> $result = 'one','two','three','four' | Where-Object {$_ -like 'f*'}
+PS> $result.GetType().FullName
+System.String
+PS> $result
+four
+PS> $result.Count
+1
+PS❯ $result.Length
+4
+```
+
+If you want `$result` to be an array of strings, you need to declare the
+variable as an array.
+
+In this example, `$result` is an array of strings. The **Count** and **Length**
+of the array is `1`, and the **Length** of the first element is `4`.
+
+```powershell
+PS> [string[]]$result = 'one','two','three','four' |
+    Where-Object {$_ -like 'f*'}
+PS> $result.GetType().FullName
+System.String[]
+PS> $result
+four
+PS> $result.Count
+1
+PS> $result.Length
+1
+PS> $result[0].Length
 4
 ```
 

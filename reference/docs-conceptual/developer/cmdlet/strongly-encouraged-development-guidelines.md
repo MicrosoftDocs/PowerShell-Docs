@@ -1,7 +1,7 @@
 ---
 description: Strongly Encouraged Development Guidelines
 ms.date: 10/05/2021
-ms.topic: reference
+ms.topic: design-pattern
 title: Strongly Encouraged Development Guidelines
 ---
 # Strongly Encouraged Development Guidelines

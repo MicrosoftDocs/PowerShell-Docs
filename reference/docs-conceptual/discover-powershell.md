@@ -1,7 +1,7 @@
 ---
 description: Learn what PowerShell is and some essential commands used to discover more about PowerShell.
 ms.date: 01/31/2023
-ms.reviewer: sewhee
+ms.topic: overview
 title: Discover PowerShell
 ---
 

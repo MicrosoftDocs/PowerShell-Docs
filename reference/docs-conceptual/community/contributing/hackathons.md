@@ -1,7 +1,6 @@
 ---
 description: This article describes how we manage and support hack-a-thon events like Hacktoberfest.
 ms.date: 10/04/2022
-ms.topic: conceptual
 title: Hacktoberfest and other hack-a-thon events
 ---
 # Hacktoberfest and other hack-a-thon events
