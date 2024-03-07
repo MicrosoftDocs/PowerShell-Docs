@@ -1,6 +1,7 @@
 ---
 description: >-
-    This article describes the process for contributing quality improvements to the documentation.
+    This article describes the process for contributing to the documentation using GitHub
+    Codespaces as an authoring environment.
 ms.date: 05/10/2023
 title: Contribute using GitHub Codespaces
 ---
