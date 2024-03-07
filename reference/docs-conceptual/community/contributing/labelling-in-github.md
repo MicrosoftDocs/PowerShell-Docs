@@ -1,7 +1,6 @@
 ---
 description: This article explains how the PowerShell-Docs team uses labels in GitHub.
 ms.date: 12/16/2022
-ms.topic: conceptual
 title: Labelling in GitHub
 ---
 

@@ -1,6 +1,7 @@
 ---
 description: This article describes how to debug scripts on a local computer by using the Windows PowerShell ISE visual debugging features.
 ms.date: 10/07/2021
+ms.topic: ui-reference
 title: How to Debug Scripts in Windows PowerShell ISE
 ---
 

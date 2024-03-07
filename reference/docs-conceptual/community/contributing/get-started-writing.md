@@ -1,7 +1,6 @@
 ---
 description: This article is an overview of how to get started as a contributor to the PowerShell documentation.
 ms.date: 07/26/2022
-ms.topic: conceptual
 title: Get started contributing to PowerShell documentation
 ---
 # Get started contributing to PowerShell documentation

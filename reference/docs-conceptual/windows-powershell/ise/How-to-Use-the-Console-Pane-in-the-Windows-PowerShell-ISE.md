@@ -1,6 +1,7 @@
 ---
 description: How to Use the Console Pane in the Windows PowerShell ISE
 ms.date: 01/02/2020
+ms.topic: ui-reference
 title: How to Use the Console Pane in the Windows PowerShell ISE
 ---
 

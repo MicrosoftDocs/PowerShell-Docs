@@ -1,6 +1,7 @@
 ---
 description: Tabs in the Windows PowerShell Integrated Scripting Environment (ISE) allow you to simultaneously create and use several execution environments within the same application. Each PowerShell tab corresponds to a separate execution environment or session.
 ms.date: 10/07/2021
+ms.topic: ui-reference
 title: How to Create a PowerShell Tab in Windows PowerShell ISE
 ---
 

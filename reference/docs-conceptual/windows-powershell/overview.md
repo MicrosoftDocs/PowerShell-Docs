@@ -1,7 +1,7 @@
 ---
 description: This article explains the difference between Windows PowerShell and PowerShell.
 ms.date: 11/03/2023
-ms.topic: conceptual
+ms.topic: overview
 title: What is Windows PowerShell?
 ---
 # What is Windows PowerShell?

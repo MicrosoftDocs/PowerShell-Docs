@@ -1,6 +1,7 @@
 ---
 description: WMF is a prerequisite for Windows PowerShell. This articles shows the history of WMF versions and provides information about how to find and install WMF.
 ms.date: 11/03/2023
+ms.topic: overview
 title: Windows Management Framework (WMF)
 ---
 

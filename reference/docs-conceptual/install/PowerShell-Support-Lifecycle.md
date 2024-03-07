@@ -1,6 +1,7 @@
 ---
 description: Details the policies governing support for PowerShell
 ms.date: 02/23/2024
+ms.topic: lifecycle
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
