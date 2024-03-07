@@ -1,7 +1,6 @@
 ---
 description: This article explains how the PowerShell-Docs team manages pull requests.
 ms.date: 07/25/2022
-ms.topic: conceptual
 title: How we manage pull requests
 ---
 # Managing pull requests

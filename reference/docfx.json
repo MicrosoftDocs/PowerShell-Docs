@@ -56,15 +56,17 @@
         "7.3/**/*": "managed-reference",
         "7.4/**/*": "managed-reference",
         "7.5/**/*": "managed-reference",
+        "docs-conceptual/community/contributing/**/*.md": "contributor-guide",
         "docs-conceptual/**/*.md": "conceptual",
         "docs-conceptual/dev-cross-plat/**/*.md": "reference",
         "docs-conceptual/developer/**/*.md": "reference",
-        "docs-conceptual/lang-spec/**/*.md": "reference",
+        "docs-conceptual/lang-spec/**/*.md": "language-reference",
         "docs-conceptual/learn/*.md": "tutorial",
         "docs-conceptual/learn/deep-dives/*.md": "tutorial",
         "docs-conceptual/learn/ps101/*.md": "conceptual",
         "docs-conceptual/learn/remoting/*.md": "tutorial",
-        "docs-conceptual/samples/**/*.md": "sample"
+        "docs-conceptual/samples/**/*.md": "sample",
+        "docs-conceptual/whats-new/**/*.md": "whats-new"
       },
       "products": {
         "5.1/**/*": [

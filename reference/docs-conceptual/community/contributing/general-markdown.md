@@ -1,7 +1,6 @@
 ---
 description: This article provides specific guidance for using Markdown in our documentation.
 ms.date: 07/26/2022
-ms.topic: conceptual
 title: Markdown best practices
 ---
 # Markdown best practices

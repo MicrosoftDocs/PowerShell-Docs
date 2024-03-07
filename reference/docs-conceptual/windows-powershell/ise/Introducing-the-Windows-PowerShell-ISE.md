@@ -1,6 +1,7 @@
 ---
 description: The PowerShell ISE is a host application for Windows PowerShell that allows you to run commands and write, test, and debug scripts in a single Windows-based graphic user interface.
 ms.date: 10/07/2021
+ms.topic: overview
 title: Introducing the Windows PowerShell ISE
 ---
 

@@ -1,7 +1,6 @@
 ---
 description: This article provides the rules of style for writing PowerShell documentation.
 ms.date: 11/14/2022
-ms.topic: conceptual
 title: PowerShell-Docs style guide
 ---
 # PowerShell-Docs style guide
