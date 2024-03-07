@@ -1,5 +1,6 @@
 ---
 description: >-
+    This article describes the process for contributing quality improvements to the documentation.
 ms.date: 06/28/2023
 title: Contributing quality improvements
 ---

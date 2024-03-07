@@ -1,5 +1,6 @@
 ---
 description: >-
+    This article describes the process for contributing quality improvements to the documentation.
 ms.date: 05/10/2023
 title: Contribute using GitHub Codespaces
 ---
