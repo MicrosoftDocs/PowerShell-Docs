@@ -96,12 +96,13 @@ For more information, see [about_Automatic_Variables][15].
 > block isn't defined, record-by-record processing will fail. In this case,
 > your function will only execute once, regardless of the input.
 
-When you create a function accepts pipeline input and uses `CmdletBinding`, the
-`process` block should use the parameter variable you defined for pipeline
-input instead of `$_` or `$PSItem`. For example:
+When you create a function that accepts pipeline input and uses
+`CmdletBinding`, the `process` block should use the parameter variable you
+defined for pipeline input instead of `$_` or `$PSItem`. For example:
 
 ```powershell
 function Get-SumOfNumbers {
+    [CmdletBinding()]
     param (
         [Parameter(Mandatory, Position=0, ValueFromPipeline)]
         [int[]]$Numbers
