@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/02/2023
+ms.date: 03/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
@@ -90,7 +90,7 @@ This cmdlet was introduced in PowerShell 6.1
 This example tests whether the input string is a valid JSON document.
 
 ```powershell
-"{'name': 'Ashley', 'age': 25}" | Test-Json
+'{"name": "Ashley", "age": 25}' | Test-Json
 ```
 
 ```Output
@@ -136,17 +136,11 @@ $schema = @'
   }
 }
 '@
-"{'name': 'Ashley', 'age': '25'}" | Test-Json -Schema $schema
+'{"name": "Ashley", "age": "25"}' | Test-Json -Schema $schema
 ```
 
 ```Output
-Test-Json : IntegerExpected: #/age
-At line:1 char:37
-+ "{'name': 'Ashley', 'age': '25'}" | Test-Json -Schema $schema
-+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : InvalidData: (:) [Test-Json], Exception
-+ FullyQualifiedErrorId : InvalidJsonAgainstSchema,Microsoft.PowerShell.Commands.TestJsonCommand
-False
+Test-Json: The JSON is not valid with the schema: Value is "string" but should be "integer" at '/age'
 ```
 
 In this example, we get an error because the schema expects an integer for **age** but the JSON
@@ -339,12 +333,19 @@ implementation includes several extensions to the JSON standard, such as support
 use of single quotes. For a full list of features, see the Newtonsoft documentation at
 [https://www.newtonsoft.com/json](https://www.newtonsoft.com/json).
 
-Beginning in PowerShell 7.4, `Test-Json` uses
-[JsonSchema.NET](https://www.nuget.org/packages/JsonSchema.Net) for schema validation. With this
-change, `Test-Json` no longer supports Draft 4 schemas. For more information about JSON schema
-specifications, see the documentation at
-[JSON-Schema.org](https://json-schema.org/specification.html).
+Beginning in PowerShell 7.4, `Test-Json` uses [System.Text.Json](xref:System.Text.Json) for JSON
+parsing and [JsonSchema.NET](https://www.nuget.org/packages/JsonSchema.Net) for schema validation.
+With these changes, `Test-Json`:
 
+- No longer supports Draft 4 schemas
+- Only supports strictly conformant JSON
+
+For a complete list of differences between Newtonsoft.Json and System.Text.Json, see the
+_Table of differences_ in
+[Migrate from Newtonsoft.Json to System.Text.Json](/dotnet/standard/serialization/system-text-json/migrate-from-newtonsoft?pivots=dotnet-8-0#table-of-differences).
+
+For more information about JSON schema specifications, see the documentation at
+[JSON-Schema.org](https://json-schema.org/specification.html).
 
 ## RELATED LINKS
 
