@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/27/2023
+ms.date: 03/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Content
@@ -590,8 +590,8 @@ Accept wildcard characters: False
 ### -Tail
 
 Specifies the number of lines from the end of a file or other item. You can use the **Tail**
-parameter name or its alias, **Last**. Negative values cause the cmdlet to return the entire
-contents.
+parameter name or its alias, **Last**. A value of `0` returns no lines. Negative values cause an
+error.
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -609,8 +609,8 @@ Accept wildcard characters: False
 
 ### -TotalCount
 
-Specifies the number of lines from the beginning of a file or other item. Negative values cause the
-cmdlet to return the entire contents.
+Specifies the number of lines from the beginning of a file or other item. A value of `0` returns no
+lines. Negative values cause an error.
 
 You can use the **TotalCount** parameter name or its aliases, **First** or **Head**.
 
