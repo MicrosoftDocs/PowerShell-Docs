@@ -1,7 +1,7 @@
 ---
 description: Explains how to install, import, and use PowerShell modules.
 Locale: en-US
-ms.date: 12/07/2023
+ms.date: 03/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Modules
@@ -13,24 +13,36 @@ Explains how to install, import, and use PowerShell modules.
 
 ## Long description
 
-PowerShell provides two ways to package cmdlets, providers, functions,
-variables, and aliases:
+PowerShell is a scripting language and a command shell. The language is
+comprised of [keywords][07], which provide the structure and logic of
+processing, and commands that perform the work. Commands in PowerShell are
+implemented as scripts, functions, or cmdlets.
 
-- Snap-ins
+A module is a self-contained reusable unit that can contain cmdlets, providers,
+functions, variables, and other types of resources that can be imported as a
+single unit.
 
-  Beginning in PowerShell 3.0, the **Microsoft.PowerShell.Core** snap-in is
-  added to every session by default. This is the only snap-in remaining in
-  PowerShell. All other snap-ins were converted to modules.
+PowerShell comes with a base set of modules. You can also install more modules
+as needed. By default, installed modules are loaded automatically the first
+time you use a command from a module. Use the `$PSModuleAutoloadingPreference`
+variable to enable, disable and configure automatic importing of modules. For
+more information, see [about_Preference_Variables][08].
 
-- Modules
-
-  Modules are loaded automatically on first-use and, unlike snap-ins, modules
-  can be unloaded or reloaded during a session.
+You can unload or reload during a session. Use the `Remove-Module` cmdlet to
+unload a module from your session. Use the `Import-Module` cmdlet to load a
+module.
 
 Modules can be created as compiled .NET assemblies written in C#, or
 script-based modules written in PowerShell. This topic explains how to use
 PowerShell modules. For information about how to write PowerShell modules, see
 [Writing a PowerShell Module][02].
+
+> [!NOTE]
+> Prior to PowerShell 3.0, cmdlets and providers were packaged in PowerShell
+> snap-ins. Beginning in PowerShell 3.0, the **Microsoft.PowerShell.Core**
+> snap-in is added to every session by default. This is the only snap-in
+> remaining in PowerShell. All other snap-ins were converted to modules.
+> Creation of new snap-ins is no longer supported.
 
 ## Install a published module
 
@@ -90,7 +102,7 @@ Copy-Item -Path C:\PSTest\MyModule -Destination $folder
 
 You can install a module in any location, but installing your modules in a
 default module location makes them easier to manage. For more information about
-the default module locations, see [about_PSModulePath][09].
+the default module locations, see [about_PSModulePath][10].
 
 ## Module autoloading
 
@@ -136,11 +148,6 @@ such as the `Get-PSSessionConfiguration` cmdlet, you might need to run the
 `Import-Module` cmdlet to import the **Microsoft.WSMan.Management** module that
 includes the `WSMan:` drive.
 
-You can still run the `Import-Module` command to import a module and use the
-`$PSModuleAutoloadingPreference` variable to enable, disable and configure
-automatic importing of modules. For more information, see
-[about_Preference_Variables][07].
-
 ## Manually import a module
 
 Manually importing a module is required when a module isn't installed in the
@@ -180,7 +187,7 @@ Import-Module C:\ps-test\TestCmdlets.dll
 ```
 
 For more information about adding modules to your session, see
-[Import-Module][13].
+[Import-Module][14].
 
 ## Import a module at the start of every session
 
@@ -188,7 +195,7 @@ The `Import-Module` command imports modules into your current PowerShell
 session. To import a module into every PowerShell session that you start, add
 the `Import-Module` command to your PowerShell profile.
 
-For more information about profiles, see [about_Profiles][08].
+For more information about profiles, see [about_Profiles][09].
 
 ## Find installed modules
 
@@ -213,7 +220,7 @@ This command gets all modules that are installed in `$env:PSModulePath`, not
 just the modules that are imported into the current session. This command
 doesn't list modules that are installed in other locations.
 
-For more information, see [Get-Module][12].
+For more information, see [Get-Module][13].
 
 ## List the commands in a module
 
@@ -234,7 +241,7 @@ Get-Command -Module BitsTransfer
 ```
 
 For more information about the `Get-Command` cmdlet, see
-[Get-Command][10].
+[Get-Command][11].
 
 ## Remove a module
 
@@ -248,7 +255,7 @@ Remove-Module BitsTransfer
 
 Removing a module reverses the operation of importing a module. Removing a
 module doesn't uninstall the module. For more information, see
-[Remove-Module][14].
+[Remove-Module][15].
 
 Commands can be added to your session from modules and snap-ins. Modules can
 add all types of commands, including cmdlets, providers, and functions, and
@@ -345,13 +352,13 @@ The value of the **Prefix** parameter takes precedence over the value of
 
 - [about_Command_Precedence][04]
 - [about_Group_Policy_Settings][06]
-- [Get-Command][10]
-- [Get-Help][11]
-- [Get-Module][12]
-- [Import-Module][13]
-- [Remove-Module][14]
-- [Install-Module][16]
-- [Install-PSResource][15]
+- [Get-Command][11]
+- [Get-Help][12]
+- [Get-Module][13]
+- [Import-Module][14]
+- [Remove-Module][15]
+- [Install-Module][17]
+- [Install-PSResource][16]
 
 <!-- link references -->
 [01]: /powershell/gallery/powershellget/overview
@@ -360,13 +367,14 @@ The value of the **Prefix** parameter takes precedence over the value of
 [04]: about_Command_Precedence.md
 [05]: about_Function_Provider.md
 [06]: about_Group_Policy_Settings.md
-[07]: about_Preference_Variables.md
-[08]: about_Profiles.md
-[09]: about_PSModulePath.md
-[10]: xref:Microsoft.PowerShell.Core.Get-Command
-[11]: xref:Microsoft.PowerShell.Core.Get-Help
-[12]: xref:Microsoft.PowerShell.Core.Get-Module
-[13]: xref:Microsoft.PowerShell.Core.Import-Module
-[14]: xref:Microsoft.PowerShell.Core.Remove-Module
-[15]: xref:Microsoft.PowerShell.PSResourceGet.Install-PSResource
-[16]: xref:PowerShellGet.Install-Module
+[07]: about_Language_Keywords.md
+[08]: about_Preference_Variables.md
+[09]: about_Profiles.md
+[10]: about_PSModulePath.md
+[11]: xref:Microsoft.PowerShell.Core.Get-Command
+[12]: xref:Microsoft.PowerShell.Core.Get-Help
+[13]: xref:Microsoft.PowerShell.Core.Get-Module
+[14]: xref:Microsoft.PowerShell.Core.Import-Module
+[15]: xref:Microsoft.PowerShell.Core.Remove-Module
+[16]: xref:Microsoft.PowerShell.PSResourceGet.Install-PSResource
+[17]: xref:PowerShellGet.Install-Module
