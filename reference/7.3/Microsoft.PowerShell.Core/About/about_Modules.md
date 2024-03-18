@@ -25,7 +25,7 @@ single unit.
 PowerShell comes with a base set of modules. You can also install more modules
 as needed. By default, installed modules are loaded automatically the first
 time you use a command from a module. Use the `$PSModuleAutoloadingPreference`
-variable to enable, disable and configure automatic importing of modules. For
+variable to enable, disable and configure automatic loading of modules. For
 more information, see [about_Preference_Variables][08].
 
 You can unload or reload during a session. Use the `Remove-Module` cmdlet to
@@ -107,9 +107,9 @@ the default module locations, see [about_PSModulePath][10].
 ## Module autoloading
 
 The first time that you run a command from an installed module, PowerShell
-automatically imports that module. The module must be stored in the locations
-specified in the `$env:PSModulePath` environment variable. Modules in other
-locations must be imported using the `Import-Module` cmdlet.
+automatically imports (loads) that module. The module must be stored in the
+locations specified in the `$env:PSModulePath` environment variable. Modules in
+other locations must be imported using the `Import-Module` cmdlet.
 
 Module autoloading allows you to use commands in a module without any setup or
 profile configuration. There's no need to manage modules after you install them
