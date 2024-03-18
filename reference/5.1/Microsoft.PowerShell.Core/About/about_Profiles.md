@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 02/26/2024
+ms.date: 03/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -30,14 +30,22 @@ doesn't create the profiles for you.
 PowerShell supports several profile files that are scoped to users and
 PowerShell hosts. You can have any or all these profiles on your computer.
 
-For example, the PowerShell console supports the following basic profile files.
-The profiles are listed in order that they're executed.
+The PowerShell console supports the following basic profile files. These file
+paths are the default locations.
 
 - All Users, All Hosts - `$PSHOME\Profile.ps1`
 - All Users, Current Host - `$PSHOME\Microsoft.PowerShell_profile.ps1`
 - Current User, All Hosts - `$HOME\Documents\WindowsPowerShell\Profile.ps1`
 - Current user, Current Host -
   `$HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
+
+> [!NOTE]
+> In Windows, the location of the `Documents` folder can be changed by folder
+> redirection or OneDrive. We don't recommend redirecting the `Documents`
+> folder to a network share or including it in OneDrive. Redirecting the folder
+> can cause modules to fail to load and create errors in your profile scripts.
+> For information about removing the `Documents` folder from OneDrive
+> management, consult the [OneDrive documentation](/onedrive/).
 
 The profile scripts are executed in the order listed. This means that changes
 made in the **AllUsersAllHosts** profile can be overridden by any of the other
@@ -57,14 +65,6 @@ The profile paths include the following variables:
 
 - The `$PSHOME` variable stores the installation directory for PowerShell
 - The `$HOME` variable stores the current user's home directory
-
-> [!NOTE]
-> In Windows, the location of the `Documents` folder can be changed by folder
-> redirection or OneDrive. We don't recommend redirecting the `Documents`
-> folder to a network share or including it in OneDrive. Redirecting the folder
-> can cause modules to fail to load and create errors in your profile scripts.
-> For information about removing the `Documents` folder from OneDrive
-> management, consult the [OneDrive documentation](/onedrive/).
 
 ## The $PROFILE variable
 
