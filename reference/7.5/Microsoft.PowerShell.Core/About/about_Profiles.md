@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a PowerShell profile.
 Locale: en-US
-ms.date: 02/26/2024
+ms.date: 03/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Profiles
@@ -30,8 +30,8 @@ doesn't create the profiles for you.
 PowerShell supports several profile files that are scoped to users and
 PowerShell hosts. You can have any or all these profiles on your computer.
 
-For example, the PowerShell console supports the following basic profile files.
-The profiles are listed in order that they're executed.
+The PowerShell console supports the following basic profile files. These file
+paths are the default locations.
 
 - All Users, All Hosts
   - Windows - `$PSHOME\Profile.ps1`
