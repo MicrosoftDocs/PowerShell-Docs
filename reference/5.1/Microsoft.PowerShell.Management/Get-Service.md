@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/27/2023
+ms.date: 03/20/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
@@ -250,7 +250,7 @@ Aliases: DS
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -354,7 +354,7 @@ Aliases: SDO, ServicesDependedOn
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: True
 ```
@@ -395,10 +395,21 @@ To find the service name and display name of each service on your system, type `
 service names appear in the **Name** column, and the display names appear in the **DisplayName**
 column.
 
+> [!NOTE]
+> Typically, `Get-Service` returns information about services and not driver. However, if you
+> specify the name of a driver, `Get-Service` returns information about the driver.
+>
+> - Enumeration doesn't include device driver services
+> - When a wildcard is specified, the cmdlet only returns Windows services
+> - If you specify the **Name** or **DisplayName** that is an exact match to a device service name,
+>   then the device instance is returned
+
 When you sort in ascending order by status value, `Stopped` services appear before `Running`
 services. The **Status** property of a service is an enumerated value in which the names of the
 statuses represent integer values. The sort is based on the integer value, not the name. `Running`
-appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value of `4`.
+appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value of `4`. For
+more information, see
+[ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
 
 ## RELATED LINKS
 
