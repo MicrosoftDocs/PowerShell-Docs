@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 03/19/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -54,8 +54,8 @@ specify. `Get-Date` can format the date and time in several .NET and UNIX format
 `Get-Date` to generate a date or time character string, and then send the string to other cmdlets or
 programs.
 
-`Get-Date` uses the computer's culture settings to determine how the output is formatted. To view
-your computer's settings, use `(Get-Culture).DateTimeFormat`.
+`Get-Date` uses the current culture settings of the operating system to determine how the output is
+formatted. To view your computer's settings, use `(Get-Culture).DateTimeFormat`.
 
 ## EXAMPLES
 
@@ -114,7 +114,7 @@ The .NET format specifiers used in this example are defined as follows:
 | `K`       | Time zone offset from Universal Time Coordinate (UTC) |
 
 For more information about .NET format specifiers, see
-[Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).
+[Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings).
 
 ### Example 4: Get the date and time with a UFormat specifier
 
@@ -199,7 +199,7 @@ Wednesday, June 26, 2019 17:45:26
 `Get-Date` uses the **UFormat** parameter with format specifiers to display the current system date
 and time. The format specifier **%Z** represents the UTC offset of **-07**.
 
-The `$Time` variable stores the current system date and time. `$Time` uses the **ToUniversalTime()**
+The `$Time` variable stores the current system date and time. `$Time` uses the `ToUniversalTime()`
 method to convert the time based on the computer's UTC offset.
 
 ### Example 8: Create a timestamp
@@ -232,7 +232,8 @@ directory is created.
 
 ### Example 9: Convert a Unix timestamp
 
-This example converts a Unix time (represented by the number of seconds since 1970-01-01 0:00:00) to DateTime.
+This example converts a Unix time (represented by the number of seconds since 1970-01-01 0:00:00) to
+DateTime.
 
 ```powershell
 Get-Date -UnixTimeSeconds 1577836800
@@ -273,6 +274,32 @@ PS> Get-Date -Date "2020-01-01T00:00:00" -AsUTC
 Wednesday, January 1, 2020 8:00:00 AM
 ```
 
+### Example 11: Show invariant culture
+
+The `ToString()` converts a **DateTime** object a **String** using the current culture setting.
+However, PowerShell expression interpretation always uses the invariant culture setting.
+
+For example, on a system with the `en-US` culture in effect, the `ToString()` method formats the
+date using the `en-US` culture settings.
+
+```powershell
+# Get date using current culture en-US
+(Get-Date 2024-03-19).ToString()
+```
+
+```Output
+3/19/2024 12:00:00 AM
+```
+
+```powershell
+# Get date using invariant culture
+"$(Get-Date 2024-03-19)"
+```
+
+```Output
+03/19/2024 00:00:00
+```
+
 ## PARAMETERS
 
 ### -AsUTC
@@ -295,13 +322,13 @@ Accept wildcard characters: False
 
 ### -Date
 
-Specifies a date and time. Time is optional and if not specified, returns 00:00:00.
-
-Enter the date and time in a format that is standard for the system locale.
+Specifies a date and time. Time is optional and if not specified, returns 00:00:00. Enter the date
+and time in a format that is standard for the currently selected locale. You can change the
+current locale using the `Set-Culture` cmdlet.
 
 For example, in US English:
 
-`Get-Date -Date "6/25/2019 12:30:22"` returns Tuesday, June 25, 2019 12:30:22
+`Get-Date -Date "6/25/2019 12:30:22"` returns **Tuesday, June 25, 2019 12:30:22**
 
 ```yaml
 Type: System.DateTime
@@ -320,7 +347,7 @@ Accept wildcard characters: False
 Specifies the day of the month that is displayed. Enter a value from 1 to 31.
 
 If the specified value is greater than the number of days in a month, PowerShell adds the number of
-days to the month. For example, `Get-Date -Month 2 -Day 31` displays **March 3**, not **February 31**.
+days to the month. For example, `Get-Date -Month 4 -Day 31` displays **May 1**, not **April 31**.
 
 ```yaml
 Type: System.Int32
@@ -363,7 +390,7 @@ Displays the date and time in the Microsoft .NET Framework format indicated by t
 The **Format** parameter outputs a **String** object.
 
 For a list of available .NET format specifiers, see
-[Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8).
+[Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings).
 
 When the **Format** parameter is used, `Get-Date` only gets the **DateTime** object's properties
 necessary to display the date. As a result, some of the properties and methods of **DateTime**
@@ -489,8 +516,8 @@ Accept wildcard characters: False
 
 Displays the date and time in UNIX format. The **UFormat** parameter outputs a string object.
 
-**UFormat** specifiers are preceded by a percent sign (`%`), for example, `%m`, `%d`, and `%Y`. The [Notes](#notes)
-section contains a table of valid **UFormat specifiers**.
+**UFormat** specifiers are preceded by a percent sign (`%`), for example, `%m`, `%d`, and `%Y`. The
+[Notes](#notes) section contains a table of valid **UFormat specifiers**.
 
 When the **UFormat** parameter is used, `Get-Date` only gets the **DateTime** object's properties
 necessary to display the date. As a result, some of the properties and methods of **DateTime**
@@ -564,7 +591,9 @@ By default, this cmdlet returns a **DateTime** object.
 When a **DateTime** object is sent down the pipeline to a cmdlet such as `Add-Content` that expects
 string input, PowerShell converts the object to a **String** object.
 
-The method `(Get-Date).ToString()` converts a **DateTime** object a **String** object.
+The `ToString()` converts a **DateTime** object to a **String** using the current culture setting.
+However, PowerShell expression interpretation always uses the invariant culture setting. To see how
+invariant culture is different, see [Example 11](#example-11-show-invariant-culture).
 
 To display an object's properties and methods, send the object down the pipeline to `Get-Member`.
 For example, `Get-Date | Get-Member`.
@@ -575,7 +604,8 @@ When you use the **Format** or **UFormat** parameters, this cmdlet returns **Str
 
 ## NOTES
 
-**DateTime** objects are in long-date and long-time formats for the system locale.
+The default formats for the output of **DateTime** objects are long-date and long-time formats for
+the currently selected locale.
 
 The valid **UFormat specifiers** are displayed in the following table:
 
@@ -645,3 +675,5 @@ The valid **UFormat specifiers** are displayed in the following table:
 [New-TimeSpan](New-TimeSpan.md)
 
 [Set-Date](Set-Date.md)
+
+[Set-Culture](Set-Culture.md)
