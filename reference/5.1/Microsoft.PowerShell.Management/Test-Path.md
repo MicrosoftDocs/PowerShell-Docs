@@ -314,7 +314,7 @@ Accept wildcard characters: True
 Indicates that this cmdlet tests the syntax of the path, regardless of whether the elements of the
 path exist. This cmdlet returns `$true` if the path syntax is valid and `$false` if it's not. If the
 path being tested includes a drive specification, the cmdlet returns false when the drive does not
-exist. This is caused because PowerShell doesn't know which drive provider to test.
+exist. PowerShell returns false because it doesn't know which drive provider to test.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
