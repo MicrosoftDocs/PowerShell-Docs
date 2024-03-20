@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/19/2024
+ms.date: 03/20/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-path?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Path
@@ -218,6 +218,22 @@ At line:1 char:11
     + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,Microsoft.PowerShell.Commands.TestPathCommand
 ```
 
+### Example 9: Test a path that may have an invalid drive
+
+When you test a path that includes a drive specification, testing the validity of the path fails if
+the drive doesn't exist. You can prefix the drive with the provider name to work around this
+problem.
+
+```powershell
+Test-Path -IsValid Z:\abc.txt
+Test-Path -IsValid FileSystem::Z:\abc.txt
+```
+
+```Output
+False
+True
+```
+
 ## PARAMETERS
 
 ### -Credential
@@ -296,7 +312,9 @@ Accept wildcard characters: True
 ### -IsValid
 
 Indicates that this cmdlet tests the syntax of the path, regardless of whether the elements of the
-path exist. This cmdlet returns `$true` if the path syntax is valid and `$false` if it's not.
+path exist. This cmdlet returns `$true` if the path syntax is valid and `$false` if it's not. If the
+path being tested includes a drive specification, the cmdlet returns false when the drive does not
+exist. This is caused because PowerShell doesn't know which drive provider to test.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
