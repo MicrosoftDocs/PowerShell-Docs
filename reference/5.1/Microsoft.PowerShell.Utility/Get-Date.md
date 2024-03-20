@@ -214,6 +214,32 @@ replaced by periods.
 includes the `$timestamp` variable as the directory name. The **Type** parameter specifies that a
 directory is created.
 
+### Example 9: Show invariant culture
+
+The `ToString()` converts a **DateTime** object a **String** using the current culture setting.
+However, PowerShell expression interpretation always uses the invariant culture setting.
+
+For example, on a system with the `en-US` culture in effect, the `ToString()` method formats the
+date using the `en-US` culture settings.
+
+```powershell
+# Get date using current culture en-US
+(Get-Date 2024-03-19).ToString()
+```
+
+```Output
+3/19/2024 12:00:00 AM
+```
+
+```powershell
+# Get date using invariant culture
+"$(Get-Date 2024-03-19)"
+```
+
+```Output
+03/19/2024 00:00:00
+```
+
 ## PARAMETERS
 
 ### -Date
@@ -467,7 +493,7 @@ string input, PowerShell converts the object to a **String** object.
 
 The `ToString()` converts a **DateTime** object to a **String** using the current culture setting.
 However, PowerShell expression interpretation always uses the invariant culture setting. To see how
-invariant culture is different, see [Example 11](#example-11-show-invariant-culture).
+invariant culture is different, see [Example 9](#example-9-show-invariant-culture).
 
 To display an object's properties and methods, send the object down the pipeline to `Get-Member`.
 For example, `Get-Date | Get-Member`.
