@@ -552,4 +552,4 @@ The valid **UFormat specifiers** are displayed in the following table:
 
 [Set-Date](Set-Date.md)
 
-[Set-Culture](Set-Culture.md)
+[Set-Culture](xref:International.Set-Culture)

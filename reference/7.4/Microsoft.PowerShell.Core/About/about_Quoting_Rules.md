@@ -385,7 +385,7 @@ key                            value
 ## Culture settings affect string interpretation
 
 The `ToString()` methods uses the current configured culture settings to
-convert values to strings. For example, the culutre of the following PowerShell
+convert values to strings. For example, the culture of the following PowerShell
 session is set to `de-DE`. When the `ToString()` method converts the value of
 `$x` to a string it uses a comma (`,`) for the decimal separator. Also, the
 `ToString()` method converts the date to a string using the appropriate format
