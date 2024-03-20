@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/20/2023
+ms.date: 03/20/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
@@ -275,6 +275,10 @@ Accept wildcard characters: False
 
 Specifies a new display name for the service.
 
+> [!NOTE]
+> Typically, `Set-Service` only operates on Windows services and not drivers. However, if you
+> specify the name of a driver, `Set-Service` can target the driver.
+
 ```yaml
 Type: System.String
 Parameter Sets: (All)
@@ -327,6 +331,10 @@ Accept wildcard characters: False
 
 Specifies the service name of the service to be changed. Wildcard characters aren't permitted. You
 can use the pipeline to send a service name to `Set-Service`.
+
+> [!NOTE]
+> Typically, `Set-Service` only operates on Windows services and not drivers. However, if you
+> specify the name of a driver, `Set-Service` can target the driver.
 
 ```yaml
 Type: System.String

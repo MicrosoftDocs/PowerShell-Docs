@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 09/25/2023
+ms.date: 03/20/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Quoting Rules
@@ -71,11 +71,11 @@ enclosed in a subexpression. For example:
 PS version: 7.2.0
 ```
 
-To separate a variable name from subsequent characters in the string,
-enclose it in braces (`{}`). This is especially important if the variable name
-is followed by a colon (`:`). PowerShell considers everything between the `$`
-and the `:` a scope specifier, typically causing the interpretation to fail.
-For example, `"$HOME: where the heart is."` throws an error, but
+To separate a variable name from subsequent characters in the string, enclose
+it in braces (`{}`). This is especially important if the variable name is
+followed by a colon (`:`). PowerShell considers everything between the `$` and
+the `:` a scope specifier, typically causing the interpretation to fail. For
+example, `"$HOME: where the heart is."` throws an error, but
 `"${HOME}: where the heart is."` works as intended.
 
 To prevent the substitution of a variable value in a double-quoted string, use
@@ -353,7 +353,7 @@ see in the console.
 Collections, including arrays, are converted to strings by placing a single
 space between the string representations of the elements. A different separator
 can be specified by setting preference variable `$OFS`. For more information,
-see the [`$OFS` preference variable](about_preference_variables.md#ofs).
+see the [`$OFS` preference variable][03].
 
 Instances of any other type are converted to strings by calling the
 `ToString()` method, which may not give a meaningful representation. For
@@ -382,18 +382,58 @@ Name                           Value
 key                            value
 ```
 
+## Culture settings affect string interpretation
+
+The `ToString()` methods uses the current configured culture settings to
+convert values to strings. For example, the culture of the following PowerShell
+session is set to `de-DE`. When the `ToString()` method converts the value of
+`$x` to a string it uses a comma (`,`) for the decimal separator. Also, the
+`ToString()` method converts the date to a string using the appropriate format
+for the German locale settings.
+
+```powershell
+PS> Get-Culture
+
+LCID             Name             DisplayName
+----             ----             -----------
+1031             de-DE            German (Germany)
+
+PS> $x = 1.2
+PS> $x.ToString()
+1,2
+
+PS> (Get-Date 2024-03-19).ToString()
+19.03.2024 00:00:00
+```
+
+However, PowerShell uses the invariant culture when interpreting expandable
+string expressions.
+
+```powershell
+PS? "$x"
+1.2
+
+PS> "$(Get-Date 2024-03-19)"
+03/19/2024 00:00:00
+```
+
 ## Passing quoted strings to external commands
 
 Some native commands expect arguments that contain quote characters. PowerShell
 interprets the quoted string before passing it to the external command. This
 interpretation removes the outer quote characters.
 
-For more information about this behavior, see the
-[about_Parsing](about_Parsing.md#passing-arguments-that-contain-quote-characters)
-article.
+For more information about this behavior, see the [about_Parsing][02] article.
 
 ## See also
 
-- [about_Parsing](about_Parsing.md)
-- [about_Special_Characters](about_Special_Characters.md)
-- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
+- [about_Parsing][01]
+- [about_Special_Characters][04]
+- [ConvertFrom-StringData][05]
+
+<!-- link references -->
+[01]: about_Parsing.md
+[02]: about_Parsing.md#passing-arguments-that-contain-quote-characters
+[03]: about_preference_variables.md#ofs
+[04]: about_Special_Characters.md
+[05]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
