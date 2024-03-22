@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 02/02/2024
+ms.date: 03/22/2024
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,38 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-Feb
+
+- PowerShell 7.5.0-preview.2 release
+  - See [What's New in PowerShell 7.5](../whats-new/What-s-New-in-PowerShell-75.md)
+- Lots of updates for the DSC v3-alpha.5 release including 6 new articles
+  - See [Desired State Configuration changelog](/powershell/dsc/changelog?view=dsc-3.0&preserve-view=true)
+- Worked with the Windows team to publish preview content for
+  [Windows Server 2025](/powershell/module/?view=windowsserver2025-ps&preserve-view=true)
+  - This work included changes to the reference content and to the module source code to resolve
+    errors reported by `Update-Help`
+
+### Top Community Contributors
+
+GitHub stats
+
+- 31 PRs merged (6 from Community)
+- 26 issues opened (23 from Community)
+- 27 issues closed (25 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id   | PRs merged | Issues opened |
+| ------------ | :--------: | :-----------: |
+| Certezalito  |     1      |               |
+| sethvs       |     1      |               |
+| chrisdent-de |     1      |               |
+| jborean93    |     1      |               |
+| brucificus   |     1      |               |
+| XPlantefeve  |     1      |               |
+| mklement0    |            |       4       |
 
 ## 2024-Jan
 
