@@ -42,6 +42,11 @@ sections:
           versions for both 7.2 and 7.3. For example, 7.2.x to 7.2.y and 7.3.x to 7.3.y. For more
           information about support lifecycles, see
           [PowerShell Support Lifecycle](/powershell/scripting/install/powershell-support-lifecycle).
+      - question: Why is the latest LTS version not marked as LTS?
+        answer: |
+          We mark the earliest minor version LTS until it goes out of support. For example, both PowerShell
+          7.2 and 7.4 are LTS releases and have a year of overlapping support. PowerShell 7.2 will be
+          marked as the latest LTS in MU until it reaches end of support in November 2024.
   - name: Configuration
     questions:
       - question: What version of Windows is required to support the Microsoft Update feature?
