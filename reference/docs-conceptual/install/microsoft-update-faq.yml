@@ -44,9 +44,9 @@ sections:
           [PowerShell Support Lifecycle](/powershell/scripting/install/powershell-support-lifecycle).
       - question: Why is the latest LTS version not marked as LTS?
         answer: |
-          For the LTS version we will continue to mark the earliest minor version LTS until it goes out
-          of support. For example 7.2 and 7.4, both LTS, have overlapping support time by a year. In 
-          this case we will not be marking 7.4.x as the latest LTS in MU until 7.2.x goes out of support.
+          We mark the earliest minor version LTS until it goes out of support. For example, both PowerShell
+          7.2 and 7.4 are LTS releases and have a year of overlapping support. PowerShell 7.2 will be
+          marked as the latest LTS in MU until it reaches end of support in November 2024.
   - name: Configuration
     questions:
       - question: What version of Windows is required to support the Microsoft Update feature?
