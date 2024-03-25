@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/28/2023
+ms.date: 03/25/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/suspend-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Suspend-Job
@@ -96,33 +96,39 @@ The second command uses the **AsJob** parameter that is common to all workflows 
 `Get-SystemLog` workflow as a background job. The command uses the **JobName** workflow common
 parameter to specify a friendly name for the workflow job.
 
-The third command uses the `Get-Job` cmdlet to get the `Get-SystemLogJob` workflow job. The output
+The third command uses the `Get-Job` cmdlet to get the `LogflowJob` workflow job. The output
 shows that the value of the **PSJobTypeName** property is PSWorkflowJob.
 
-The fourth command uses the `Suspend-Job` cmdlet to suspend the `Get-SystemLogJob` job. The job runs
-to the checkpoint and then suspends.
+The fourth command uses the `Suspend-Job` cmdlet to suspend the `LogflowJob` job. The job runs to
+the checkpoint and then suspends.
 
-```
-#Sample WorkflowWorkflow Get-SystemLog
+```powershell
+#Sample Workflow
+Workflow Get-SystemLog
 {
     $Events = Get-WinEvent -LogName System
     CheckPoint-Workflow
     InlineScript {\\Server01\Scripts\Analyze-SystemEvents.ps1 -Events $Events}
 }
-
-PS C:\> Get-SystemLog -AsJob -JobName "Get-SystemLogJob"
-
-PS C:\> Get-Job -Name Get-SystemLogJob
-Id     Name              PSJobTypeName   State       HasMoreData     Location   Command
---     ----              -------------   -----       -----------     --------   -------
-4      Get-SystemLogJob  PSWorkflowJob   Running     True            localhost   Get-SystemLog
-
-PS C:\> Suspend-Job -Name Get-SystemLogJob
-Id     Name              PSJobTypeName   State       HasMoreData     Location   Command
---     ----              -------------   -----       -----------     --------   -------
-4      Get-SystemLogJob  PSWorkflowJob   Suspended   True            localhost   Get-SystemLog
+Get-SystemLog -AsJob -JobName "LogflowJob"
+Get-Job -Name LogflowJob
 ```
 
+```Output
+Id   Name          PSJobTypeName   State       HasMoreData     Location   Command
+--   ----          -------------   -----       -----------     --------   -------
+4    LogflowJob    PSWorkflowJob   Running     True            localhost   Get-SystemLog
+```
+
+```powershell
+Suspend-Job -Name LogflowJob
+```
+
+```Output
+Id   Name          PSJobTypeName   State       HasMoreData     Location   Command
+--   ----          -------------   -----       -----------     --------   -------
+4    LogflowJob    PSWorkflowJob   Suspended   True            localhost   Get-SystemLog
+```
 
 ### Example 2: Suspend and resume a workflow job
 
@@ -137,28 +143,41 @@ the workflow job suspended successfully.
 The third command uses the `Get-Job` cmdlet to get the LogWorkflowJob job and the `Resume-Job`
 cmdlet to resume it. The output shows that the workflow job resumed successfully and is now running.
 
+```powershell
+Suspend-Job -Name LogWorkflowJob
 ```
-PS C:\> Suspend-Job -Name LogWorkflowJob
-Id     Name          PSJobTypeName      State         HasMoreData     Location             Command
---     ----          -------------      -----         -----------     --------             -------
-67     LogflowJob    PSWorkflowJob      Running       True            localhost            LogWorkflow
 
-PS C:\> Get-Job -Name LogWorkflowJob
-Id     Name          PSJobTypeName      State         HasMoreData     Location             Command
---     ----          -------------      -----         -----------     --------             -------
-67     LogflowJob    PSWorkflowJob      Suspended     True            localhost            LogWorkflow
+```Output
+Id   Name          PSJobTypeName      State         HasMoreData     Location      Command
+--   ----          -------------      -----         -----------     --------      -------
+67   LogflowJob    PSWorkflowJob      Running       True            localhost     LogWorkflow
+```
 
-PS C:\> Get-Job -Name LogWorkflowJob | Resume-Job
-Id     Name          PSJobTypeName      State         HasMoreData     Location             Command
---     ----          -------------      -----         -----------     --------             -------
-67     LogflowJob    PSWorkflowJob      Running       True            localhost            LogWorkflow
+```powershell
+Get-Job -Name LogWorkflowJob
+```
+
+```Output
+Id   Name          PSJobTypeName      State         HasMoreData     Location      Command
+--   ----          -------------      -----         -----------     --------      -------
+67   LogflowJob    PSWorkflowJob      Suspended     True            localhost     LogWorkflow
+```
+
+```powershell
+Get-Job -Name LogWorkflowJob | Resume-Job
+```
+
+```Output
+Id     Name          PSJobTypeName      State       HasMoreData     Location      Command
+--     ----          -------------      -----       -----------     --------      -------
+67     LogflowJob    PSWorkflowJob      Running     True            localhost     LogWorkflow
 ```
 
 
 ### Example 3: Suspend a workflow job on a remote computer
 
-```
-PS C:\> Invoke-Command -ComputerName Srv01 -Scriptblock {Suspend-Job -Filter @{CustomID="031589"}
+```powershell
+Invoke-Command -ComputerName Srv01 -Scriptblock {Suspend-Job -Filter @{CustomID="031589"}
 ```
 
 This command uses the `Invoke-Command` cmdlet to suspend a workflow job on the Srv01 remote
@@ -167,11 +186,14 @@ This **CustomID** is job metadata (**PSPrivateMetadata**).
 
 ### Example 4: Wait for the workflow job to suspend
 
+```powershell
+Suspend-Job VersionCheck -Wait
 ```
-PS C:\> Suspend-Job VersionCheck -Wait
-Id     Name          PSJobTypeName      State         HasMoreData     Location             Command
---     ----          -------------      -----         -----------     --------             -------
- 5     VersionCheck  PSWorkflowJob      Suspended     True            localhost            LogWorkflow
+
+```Output
+Id     Name          PSJobTypeName      State         HasMoreData     Location      Command
+--     ----          -------------      -----         -----------     --------      -------
+ 5     VersionCheck  PSWorkflowJob      Suspended     True            localhost     LogWorkflow
 ```
 
 This command suspends the VersionCheck workflow job. The command uses the **Wait** parameter to wait
@@ -180,8 +202,8 @@ suspended, the command finishes and returns the job object.
 
 ### Example 5: Force a workflow job to suspend
 
-```
-PS C:\> Suspend-Job Maintenance -Force
+```powershell
+Suspend-Job Maintenance -Force
 ```
 
 This command suspends the Maintenance workflow job forcibly. The Maintenance job does not have
