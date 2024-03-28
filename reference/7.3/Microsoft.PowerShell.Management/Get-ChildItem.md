@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/14/2023
+ms.date: 03/28/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
@@ -152,7 +152,7 @@ This example displays `.txt` files that are located in the current directory and
 subdirectories.
 
 ```powershell
-Get-ChildItem -Path C:\Test\*.txt -Recurse -Force
+Get-ChildItem -Path .\*.txt -Recurse -Force
 ```
 
 ```Output
