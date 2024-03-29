@@ -198,44 +198,6 @@ items:
                 href: samples/multiple-selection-list-boxes.md
               - name: Selecting items from a list box
                 href: samples/selecting-items-from-a-list-box.md
-      - name: PowerShell remoting
-        items:
-          - name: Just Enough Administration (JEA)
-            items:
-              - name: Overview
-                href: learn/remoting/jea/overview.md
-              - name: Prerequisites
-                href: learn/remoting/jea/prerequisites.md
-              - name: Role Capabilities
-                href: learn/remoting/jea/role-capabilities.md
-              - name: Session Configurations
-                href: learn/remoting/jea/session-configurations.md
-              - name: Registering JEA
-                href: learn/remoting/jea/register-jea.md
-              - name: Using JEA
-                href: learn/remoting/jea/using-jea.md
-              - name: Security Considerations
-                href: learn/remoting/jea/security-considerations.md
-              - name: Audit and Report on JEA
-                href: learn/remoting/jea/audit-and-report.md
-          - name: Running remote commands
-            href: learn/remoting/running-remote-commands.md
-          - name: PowerShell remoting over SSH
-            href: learn/remoting/ssh-remoting-in-powershell.md
-          - name: WS-Management (WSMan) remoting in PowerShell
-            href: learn/remoting/wsman-remoting-in-powershell.md
-          - name: WinRM Security
-            href: learn/remoting/winrmsecurity.md
-          - name: Making the second hop in PowerShell Remoting
-            href: learn/remoting/ps-remoting-second-hop.md
-          - name: PowerShell Remoting FAQ
-            href: learn/remoting/powershell-remoting-faq.yml
-      - name: PowerShell security
-        items:
-          - name: PowerShell security features
-            href: learn/security-features.md
-          - name: Using Application Control
-            href: learn/application-control.md
       - name: Using Experimental Features
         href: learn/experimental-features.md
       - name: Compatibility aliases
@@ -331,6 +293,50 @@ items:
         href: windows-powershell/starting-windows-powershell.md
       - name: Windows Management Framework (WMF)
         href: windows-powershell/wmf-overview.md
+  - name: Security
+    items:
+      - name: Overview
+        href: security/overview.yml
+      - name: PowerShell security features
+        href: security/security-features.md
+      - name: Using Application Control
+        href: security/application-control.md
+      - name: Preventing script injection attacks
+        href: security/preventing-script-injection.md
+      - name: Securing a restricted PowerShell remoting session
+        href: security/securing-restricted-sessions.md
+      - name: PowerShell remoting
+        items:
+          - name: Just Enough Administration (JEA)
+            items:
+              - name: Overview
+                href: security/remoting/jea/overview.md
+              - name: Prerequisites
+                href: security/remoting/jea/prerequisites.md
+              - name: Role Capabilities
+                href: security/remoting/jea/role-capabilities.md
+              - name: Session Configurations
+                href: security/remoting/jea/session-configurations.md
+              - name: Registering JEA
+                href: security/remoting/jea/register-jea.md
+              - name: Using JEA
+                href: security/remoting/jea/using-jea.md
+              - name: Security Considerations
+                href: security/remoting/jea/security-considerations.md
+              - name: Audit and Report on JEA
+                href: security/remoting/jea/audit-and-report.md
+          - name: Running remote commands
+            href: security/remoting/running-remote-commands.md
+          - name: PowerShell remoting over SSH
+            href: security/remoting/ssh-remoting-in-powershell.md
+          - name: WS-Management (WSMan) remoting in PowerShell
+            href: security/remoting/wsman-remoting-in-powershell.md
+          - name: WinRM Security
+            href: security/remoting/winrm-security.md
+          - name: Making the second hop in PowerShell Remoting
+            href: security/remoting/ps-remoting-second-hop.md
+          - name: PowerShell Remoting FAQ
+            href: security/remoting/powershell-remoting-faq.yml
   - name: Desired State Configuration (DSC)
     href: dsc/overview.md
   - name: PowerShell Gallery
@@ -375,12 +381,6 @@ items:
             href: dev-cross-plat/performance/script-authoring-considerations.md
           - name: Module performance considerations
             href: dev-cross-plat/performance/module-authoring-considerations.md
-      - name: Security considerations
-        items:
-          - name: Preventing script injection attacks
-            href: dev-cross-plat/security/preventing-script-injection.md
-          - name: Securing a restricted PowerShell remoting session
-            href: dev-cross-plat/security/securing-restricted-sessions.md
       - name: Developing modern modules
         items:
           - name: Writing portable modules

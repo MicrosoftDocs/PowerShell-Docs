@@ -380,10 +380,9 @@ multiple commands against the same remote computer.
 - [PowerShell Remoting FAQ][PowerShell Remoting FAQ]
 
 <!-- link references -->
-[PowerShell Remoting FAQ]: ../remoting/powershell-remoting-faq.yml
+[PowerShell Remoting FAQ]: ../../security/remoting/powershell-remoting-faq.yml
 [about_Remote]: /powershell/module/microsoft.powershell.core/about/about_remote
 [about_Remote_Output]: /powershell/module/microsoft.powershell.core/about/about_remote_output
 [about_Remote_Requirements]: /powershell/module/microsoft.powershell.core/about/about_remote_requirements
 [about_Remote_Troubleshooting]: /powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting
 [about_Remote_Variables]: /powershell/module/microsoft.powershell.core/about/about_remote_variables
-[Breaking changes in PowerShell 6.0]: /powershell/scripting/whats-new/breaking-changes-ps6#remove--protocol-from--computer-cmdlets-5277

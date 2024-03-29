@@ -2,6 +2,96 @@
   "redirections": [
     {
       "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/preventing-script-injection",
+      "source_path": "reference/docs-conceptual/dev-cross-plat/security/preventing-script-injection.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/securing-restricted-sessions",
+      "source_path": "reference/docs-conceptual/dev-cross-plat/security/securing-restricted-sessions.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/application-control",
+      "source_path": "reference/docs-conceptual/learn/application-control.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/ps-remoting-second-hop",
+      "source_path": "reference/docs-conceptual/learn/remoting/PS-remoting-second-hop.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/running-remote-commands",
+      "source_path": "reference/docs-conceptual/learn/remoting/Running-Remote-Commands.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/ssh-remoting-in-powershell",
+      "source_path": "reference/docs-conceptual/learn/remoting/SSH-Remoting-in-PowerShell.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/wsman-remoting-in-powershell",
+      "source_path": "reference/docs-conceptual/learn/remoting/WSMan-Remoting-in-PowerShell.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/winrm-security",
+      "source_path": "reference/docs-conceptual/learn/remoting/WinRMSecurity.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/audit-and-report",
+      "source_path": "reference/docs-conceptual/learn/remoting/jea/audit-and-report.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/overview",
+      "source_path": "reference/docs-conceptual/learn/remoting/jea/overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/prerequisites",
+      "source_path": "reference/docs-conceptual/learn/remoting/jea/prerequisites.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/register-jea",
+      "source_path": "reference/docs-conceptual/learn/remoting/jea/register-jea.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/role-capabilities",
+      "source_path": "reference/docs-conceptual/learn/remoting/jea/role-capabilities.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/security-considerations",
+      "source_path": "reference/docs-conceptual/learn/remoting/jea/security-considerations.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/session-configurations",
+      "source_path": "reference/docs-conceptual/learn/remoting/jea/session-configurations.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/using-jea",
+      "source_path": "reference/docs-conceptual/learn/remoting/jea/using-jea.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/powershell-remoting-faq",
+      "source_path": "reference/docs-conceptual/learn/remoting/powershell-remoting-faq.yml"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/security-features",
+      "source_path": "reference/docs-conceptual/learn/security-features.md"
+    },
+    {
+      "redirect_document_id": true,
       "redirect_url": "/powershell/scripting/what-is-windows-powershell",
       "source_path": "reference/docs-conceptual/windows-powershell/overview.md"
     },
@@ -31,18 +121,18 @@
       "source_path": "reference/docs-conceptual/learn/tutorials/01-discover-powershell.md"
     },
     {
-      "redirect_document_id": true,
-      "redirect_url": "/powershell/scripting/learn/remoting/wsman-remoting-in-powershell",
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/security/remoting/wsman-remoting-in-powershell",
       "source_path": "reference/docs-conceptual/learn/remoting/wsman-remoting-in-powershell-core.md"
     },
     {
-      "redirect_document_id": true,
-      "redirect_url": "/powershell/scripting/learn/remoting/ssh-remoting-in-powershell",
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/security/remoting/ssh-remoting-in-powershell",
       "source_path": "reference/docs-conceptual/learn/remoting/ssh-remoting-in-powershell-core.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/learn/remoting/wsman-remoting-in-powershell",
+      "redirect_url": "/powershell/scripting/security/remoting/wsman-remoting-in-powershell",
       "source_path": "reference/docs-conceptual/learn/remoting/wsman-unsupported-for-nonwindows.md"
     },
     {
