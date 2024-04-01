@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 03/22/2024
+ms.date: 04/01/2024
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,34 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-Mar
+
+- DSC v3.0-alpha.5 release
+  - See the updated [Changelog](/powershell/dsc/changelog?view=dsc-3.0&preserve-view=true)
+- PSScriptAnalyzer 1.22.0 release - 3 new rules
+  - [AvoidMultipleTypeAttributes](/powershell/utility-modules/psscriptanalyzer/rules/avoidmultipletypeattributes)
+  - [AvoidSemicolonsAsLineTerminators](/powershell/utility-modules/psscriptanalyzer/rules/avoidsemicolonsaslineterminators)
+  - [AvoidUsingBrokenHashAlgorithms](/powershell/utility-modules/psscriptanalyzer/rules/avoidusingbrokenhashalgorithms)
+  - See the [CHANGELOG](https://github.com/PowerShell/PSScriptAnalyzer/blob/master/CHANGELOG.MD) for
+    a complete list of updates
+
+### Top Community Contributors
+
+GitHub stats
+
+- 30 PRs merged (1 from Community)
+- 31 issues opened (28 from Community)
+- 30 issues closed (26 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| Hrxn        |     3      |               |
+| muzimuzhi   |     1      |               |
+| bergmeister |     1      |               |
 
 ## 2024-Feb
 
