@@ -1,10 +1,10 @@
 ### YamlMime:Landing
 title: PowerShell Security
-summary: Learn about PowerShell's best practices and features for security.
+summary: Learn about PowerShell's security features and best practices.
 
 metadata:
   title: PowerShell Security
-  description: Learn about PowerShell's best practices and features for security.
+  description: Learn about PowerShell's security features and best practices.
   ms.topic: landing-page
   ms.date: 03/28/2024
 
