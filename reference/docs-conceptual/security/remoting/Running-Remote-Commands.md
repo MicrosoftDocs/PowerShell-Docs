@@ -185,8 +185,8 @@ For help with remoting errors, see [about_Remote_Troubleshooting][05].
 [06]: /powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets
 [07]: /powershell/module/microsoft.wsman.management/about/about_wsman_provider
 [08]: powershell-remoting-faq.yml
-[09]: SSH-Remoting-in-PowerShell-Core.md
-[10]: WSMan-Remoting-in-PowerShell-Core.md
+[09]: ssh-remoting-in-powershell.md
+[10]: wsman-remoting-in-powershell.md
 [11]: xref:Microsoft.PowerShell.Core.Enter-PSSession
 [12]: xref:Microsoft.PowerShell.Core.Exit-PSSession
 [13]: xref:Microsoft.PowerShell.Core.Invoke-Command

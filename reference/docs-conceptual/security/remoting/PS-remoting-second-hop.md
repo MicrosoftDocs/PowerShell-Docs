@@ -352,6 +352,6 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 [17]: https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2
 [18]: https://www.microsoft.com/download/details.aspx?id=36036
 [19]: https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp
-[20]: WinRMSecurity.md
+[20]: winrm-security.md
 [MS-ADA2]: /openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405
 [MS-SFU]: /openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a

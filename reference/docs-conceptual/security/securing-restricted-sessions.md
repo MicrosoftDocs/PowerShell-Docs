@@ -95,6 +95,6 @@ By default, the PowerShell debugger runs code in `FullLanguage` mode. Set the
 For more information, see [UseFullLanguageModeInDebugger][02].
 
 <!-- link references -->
-[01]: ../../learn/remoting/jea/overview.md
+[01]: remoting/jea/overview.md
 [02]: /dotnet/api/system.management.automation.sessionstate.usefulllanguagemodeindebugger?#system-management-automation-sessionstate-usefulllanguagemodeindebugger
 [03]: /powershell/module/microsoft.powershell.core/about/about_language_modes

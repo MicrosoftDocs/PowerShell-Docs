@@ -215,7 +215,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 <!-- end of content -->
 <!-- reference links -->
 [01]: ../install/installing-powershell-on-windows.md
-[02]: ../learn/application-control.md#wdac-policy-auditing
+[02]: ../security/application-control.md#wdac-policy-auditing
 [03]: ../learn/experimental-features.md
 [04]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
 [05]: ../learn/experimental-features.md#pscommandwithargs
