@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 03/25/2024
+ms.date: 04/02/2024
 no-loc: [Debug, Verbose, Confirm]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -128,22 +128,20 @@ The **ErrorAction** parameter has no effect on terminating errors (such as
 missing data, parameters that aren't valid, or insufficient permissions) that
 prevent a command from completing successfully.
 
-- `-ErrorAction:Break` Enters the debugger when an error occurs or an exception
-  is raised.
-- `-ErrorAction:Continue` displays the error message and continues executing
-  the command. `Continue` is the default.
-- `-ErrorAction:Ignore` suppresses the error message and continues executing
-  the command. Unlike **SilentlyContinue**, **Ignore** doesn't add the error
-  message to the `$Error` automatic variable. The **Ignore** value is
-  introduced in PowerShell 3.0.
-- `-ErrorAction:Inquire` displays the error message and prompts you for
-  confirmation before continuing execution. This value is rarely used.
-- `-ErrorAction:SilentlyContinue` suppresses the error message and continues
-  executing the command.
-- `-ErrorAction:Stop` displays the error message and stops executing the
+- `Break` Enters the debugger when an error occurs or an exception is raised.
+- `Continue` displays the error message and continues executing the command.
+  `Continue` is the default.
+- `Ignore` suppresses the error message and continues executing the command.
+  Unlike **SilentlyContinue**, **Ignore** doesn't add the error message to the
+  `$Error` automatic variable. The **Ignore** value is introduced in PowerShell
+  3.0.
+- `Inquire` displays the error message and prompts you for confirmation before
+  continuing execution. This value is rarely used.
+- `SilentlyContinue` suppresses the error message and continues executing the
   command.
-- `-ErrorAction:Suspend` is only available for workflows which aren't supported
-  in PowerShell 6 and beyond.
+- `Stop` displays the error message and stops executing the command.
+- `Suspend` is only available for workflows which aren't supported in
+  PowerShell 6 and beyond.
 
 > [!NOTE]
 > The **ErrorAction** parameter overrides, but doesn't replace the value of the
@@ -223,23 +221,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-- `-InformationAction:Break` Enters the debugger at an occurrence of the
-  `Write-Information` command.
-- `-InformationAction:Stop` stops a command or script at an occurrence of the
-  `Write-Information` command.
-- `-InformationAction:Ignore` suppresses the informational message and
-  continues running the command. Unlike **SilentlyContinue**, **Ignore**
-  completely forgets the informational message; it doesn't add the
-  informational message to the information stream.
-- `-InformationAction:Inquire` displays the informational message that you
-  specify in a `Write-Information` command, then asks whether you want to
-  continue.
-- `-InformationAction:Continue` displays the informational message, and
-  continues running.
-- `-InformationAction:Suspend` isn't supported on PowerShell 6 and higher as it
-  is only available for workflows.
-- `-InformationAction:SilentlyContinue` no effect as the informational message
-  aren't (Default) displayed, and the script continues without interruption.
+- `Break` Enters the debugger at an occurrence of the `Write-Information`
+  command.
+- `Stop` stops a command or script at an occurrence of the `Write-Information`
+  command.
+- `Ignore` suppresses the informational message and continues running the
+  command. Unlike **SilentlyContinue**, **Ignore** completely forgets the
+  informational message; it doesn't add the informational message to the
+  information stream.
+- `Inquire` displays the informational message that you specify in a
+  `Write-Information` command, then asks whether you want to continue.
+- `Continue` displays the informational message, and continues running.
+- `Suspend` isn't supported on PowerShell 6 and higher as it is only available
+  for workflows.
+- `SilentlyContinue` no effect as the informational message aren't (Default)
+  displayed, and the script continues without interruption.
 
 > [!NOTE]
 > The **InformationAction** parameter overrides, but doesn't replace the
@@ -474,6 +470,7 @@ enumeration values: `SilentlyContinue`, `Stop`, `Continue`, `Inquire`,
 
 The valid values are as follows:
 
+- `Break` Enters the debugger at an occurrence of the `Write-Progress` command.
 - `Stop`: Doesn't display the progress bar. Instead, it displays an error
   message and stops executing.
 - `Inquire`: Doesn't display the progress bar. Prompts for permission to
@@ -543,15 +540,14 @@ variable for the current command. Because the default value of the
 `$WarningPreference` variable is **Continue**, warnings are displayed and
 execution continues unless you use the **WarningAction** parameter.
 
-- `-WarningAction:Break` enters the debugger when a warning occurs.
-- `-WarningAction:Continue` displays the warning messages and continues
-  executing the command. `Continue` is the default.
-- `-WarningAction:Inquire` displays the warning message and prompts you for
-  confirmation before continuing execution. This value is rarely used.
-- `-WarningAction:SilentlyContinue` suppresses the warning message and
-  continues executing the command.
-- `-WarningAction:Stop` displays the warning message and stops executing the
+- `Break` enters the debugger when a warning occurs.
+- `Continue` displays the warning messages and continues executing the command.
+  `Continue` is the default.
+- `Inquire` displays the warning message and prompts you for confirmation
+  before continuing execution. This value is rarely used.
+- `SilentlyContinue` suppresses the warning message and continues executing the
   command.
+- `Stop` displays the warning message and stops executing the command.
 
 > [!NOTE]
 > The **WarningAction** parameter overrides, but doesn't replace the value of
@@ -629,9 +625,9 @@ variable for the current command. Because the default value of the
 without the **WhatIf** parameter. For more information, see
 [about_Preference_Variables][03].
 
-- `-WhatIf:$true` has the same effect as `-WhatIf`.
-- `-WhatIf:$false` suppresses the automatic WhatIf behavior that results when
-  the value of the `$WhatIfPreference` variable is 1.
+- `$true` has the same effect as `-WhatIf`.
+- `$false` suppresses the automatic WhatIf behavior that results when the value
+  of the `$WhatIfPreference` variable is 1.
 
 For example, the following command uses the `-WhatIf` parameter in a
 `Remove-Item` command:
@@ -666,10 +662,10 @@ The **Confirm** parameter overrides the value of the `$ConfirmPreference`
 variable for the current command. The default value is true. For more
 information, see [about_Preference_Variables][03].
 
-- `-Confirm:$true` has the same effect as `-Confirm`.
-- `-Confirm:$false` suppresses automatic confirmation, which occurs when the
-  value of `$ConfirmPreference` is less than or equal to the estimated risk of
-  the cmdlet.
+- `$true` has the same effect as `-Confirm`.
+- `$false` suppresses automatic confirmation, which occurs when the value of
+  `$ConfirmPreference` is less than or equal to the estimated risk of the
+  cmdlet.
 
 For example, the following command uses the **Confirm** parameter with a
 `Remove-Item` command. Before removing the item, PowerShell lists the
