@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 01/04/2024
+ms.date: 04/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -248,6 +248,8 @@ debugging messages for a specific command. For more information, see
 
 The valid values are as follows:
 
+- **Break** - Enter the debugger when an error occurs or when an exception is
+  raised.
 - **Stop**: Displays the debug message and stops executing. Writes an error to
   the console.
 - **Inquire**: Displays the debug message and asks you whether you want to
@@ -741,13 +743,12 @@ The `$InformationPreference` variable takes one of the
 
 The valid values are as follows:
 
+- **Break** - Enter the debugger when you write to the Information stream.
 - **Stop**: Stops a command or script at an occurrence of the
   `Write-Information` command.
 - **Inquire**: Displays the informational message that you specify in a
   `Write-Information` command, then asks whether you want to continue.
 - **Continue**: Displays the informational message, and continues running.
-- **Suspend** is only available for workflows which aren't supported in
-  PowerShell 6 and beyond.
 - **SilentlyContinue**: (Default) No effect. The informational messages aren't
   displayed, and the script continues without interruption.
 
@@ -955,6 +956,7 @@ enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
 
 The valid values are as follows:
 
+- **Break** - Enter the debugger when you write to the Progress stream.
 - **Stop**: Doesn't display the progress bar. Instead, it displays an error
   message and stops executing.
 - **Inquire**: Doesn't display the progress bar. Prompts for permission to
@@ -1262,6 +1264,7 @@ enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
 
 The valid values are as follows:
 
+- **Break** - Enter the debugger when you write to the Verbose stream.
 - **Stop**: Displays the verbose message and an error message and then stops
   executing.
 - **Inquire**: Displays the verbose message and then displays a prompt that
@@ -1381,6 +1384,7 @@ enumeration values: **SilentlyContinue**, **Stop**, **Continue**, **Inquire**,
 
 The valid values are as follows:
 
+- **Break** - Enter the debugger when a warning message is written.
 - **Stop**: Displays the warning message and an error message and then stops
   executing.
 - **Inquire**: Displays the warning message and then prompts for permission to
