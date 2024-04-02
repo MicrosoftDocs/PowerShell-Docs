@@ -1375,6 +1375,8 @@ The valid values are as follows:
 
 - **Stop**: Displays the warning message and an error message and then stops
   executing.
+- **Break** - Enter the debugger when an error occurs or when an exception is
+  raised.
 - **Inquire**: Displays the warning message and then prompts for permission to
   continue.
 - **Continue**: (Default) Displays the warning message and then continues
