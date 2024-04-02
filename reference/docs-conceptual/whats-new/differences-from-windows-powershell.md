@@ -1,5 +1,5 @@
 ---
-ms.date: 06/28/2023
+ms.date: 04/02/2024
 title: Differences between Windows PowerShell 5.1 and PowerShell 7.x
 description: This article summarizes the differences and breaking changes from Windows PowerShell 5.1 and the current version of PowerShell that is based on .NET Core.
 ---
@@ -22,6 +22,7 @@ article is to present the current state of PowerShell and how that is different 
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
 
+- [What's new in PowerShell 7.5][36]
 - [What's new in PowerShell 7.4][35]
 - [What's new in PowerShell 7.3][34]
 - [What's new in PowerShell 7.2][33]
@@ -35,12 +36,12 @@ PowerShell on Linux and macOS uses .NET core, which is a subset of the full .NET
 Microsoft Windows. This is significant because PowerShell provides direct access to the underlying
 framework types and methods. As a result, scripts that run on Windows may not run on non-Windows
 platforms because of the differences in the frameworks. For more information about changes in .NET
-Core, see
-[Breaking changes for migration from .NET Framework to .NET Core][03].
+Core, see [Breaking changes for migration from .NET Framework to .NET Core][03].
 
 Each new release of PowerShell is built on a newer version of .NET. There can be breaking changes in
 .NET that affect PowerShell.
 
+- PowerShell 7.5 - Built on .NET 9.0
 - PowerShell 7.4 - Built on .NET 8.0
 - PowerShell 7.3 - Built on .NET 7.0
 - PowerShell 7.2 (LTS-current) - Built on .NET 6.0 (LTS-current)
@@ -59,6 +60,74 @@ For more information see:
 
 - [about_Windows_PowerShell_Compatibility][09]
 - [PowerShell 7 module compatibility][29]
+
+### Be aware of .NET method changes
+
+While .NET method changes are not specific to PowerShell, they can affect your scripts, especially
+if you are calling .NET methods directly. Also, there might be new overloads for constructors. This
+can have an impact on how you create objects using `New-Object` or the `[type]::new()` method.
+
+For example, .NET added overloads to the `[System.String]::Split()` method that aren't available in
+.NET Framework 4.5. The following list shows the overloads for the `Split()` method available in
+Windows PowerShell 5.1:
+
+```powershell
+PS> "".Split
+
+OverloadDefinitions
+-------------------
+string[] Split(Params char[] separator)
+string[] Split(char[] separator, int count)
+string[] Split(char[] separator, System.StringSplitOptions options)
+string[] Split(char[] separator, int count, System.StringSplitOptions options)
+string[] Split(string[] separator, System.StringSplitOptions options)
+string[] Split(string[] separator, int count, System.StringSplitOptions options)
+```
+
+The following list shows the overloads for the `Split()` method available in PowerShell 7:
+
+```powershell
+"".Split
+
+OverloadDefinitions
+-------------------
+string[] Split(char separator, System.StringSplitOptions options)
+string[] Split(char separator, int count, System.StringSplitOptions options)
+string[] Split(Params char[] separator)
+string[] Split(char[] separator, int count)
+string[] Split(char[] separator, System.StringSplitOptions options)
+string[] Split(char[] separator, int count, System.StringSplitOptions options)
+string[] Split(string separator, System.StringSplitOptions options)
+string[] Split(string separator, int count, System.StringSplitOptions options)
+string[] Split(string[] separator, System.StringSplitOptions options)
+string[] Split(string[] separator, int count, System.StringSplitOptions options)
+```
+
+In Windows PowerShell 5.1, you could pass a character array (`char[]`) to the `Split()` method as a
+`string`. The method splits the target string at any occurrence of a character in the array. The
+following command splits the target string in Windows PowerShell 5.1, but not in PowerShell 7:
+
+```powershell
+# PowerShell 7 example
+"1111p2222q3333".Split('pq')
+```
+
+```Output
+1111p2222q3333
+```
+
+To bind to the correct overload, you must typecast the string to a character array:
+
+```powershell
+# PowerShell 7 example
+"1111p2222q3333".Split([char[]]'pq')
+```
+
+```Output
+1111
+2222
+3333
+```
 
 ## Modules no longer shipped with PowerShell
 
@@ -1182,3 +1251,4 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 [33]: What-s-New-in-PowerShell-72.md
 [34]: What-s-New-in-PowerShell-73.md
 [35]: What-s-New-in-PowerShell-74.md
+[36]: What-s-New-in-PowerShell-75.md
