@@ -64,8 +64,8 @@ For more information see:
 ### Be aware of .NET method changes
 
 While .NET method changes are not specific to PowerShell, they can affect your scripts, especially
-if you are calling .NET method directly. Also, there might be new overloads for constructors. This
-can have an impact on how you create objects using `New-Object` or the `[type]::new() method.
+if you are calling .NET methods directly. Also, there might be new overloads for constructors. This
+can have an impact on how you create objects using `New-Object` or the `[type]::new()` method.
 
 For example, .NET added overloads to the `[System.String]::Split()` method that aren't available in
 .NET Framework 4.5. The following list shows the overloads for the `Split()` method available in
