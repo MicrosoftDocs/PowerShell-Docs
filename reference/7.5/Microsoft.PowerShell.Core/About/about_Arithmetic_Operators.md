@@ -251,7 +251,7 @@ RuntimeException: Value was either too large or too small for a Decimal.
 
 Anytime you have a result that exceeds the range of the type, you risk losing
 precision due to type conversion. For example, adding a sufficiently large
-`[long]` and `[int]` results in the operand being converted to `[double]`. In
+`[long]` and `[int]` results in the operands being converted to `[double]`. In
 this example, `9223372036854775807` is the maximum value of a `[long]` integer.
 Adding to value overflows the range of `[long]`.
 
