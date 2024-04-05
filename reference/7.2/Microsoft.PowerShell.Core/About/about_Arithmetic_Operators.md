@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that perform arithmetic in PowerShell.
 Locale: en-US
-ms.date: 08/01/2023
+ms.date: 04/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Arithmetic Operators
@@ -191,6 +191,123 @@ PS> [int][Math]::Floor(5 / 2)
 For more information, see the [Math.Round](/dotnet/api/system.math.round)
 method.
 
+## Type conversion to accommodate result
+
+PowerShell automatically selects the .NET numeric type that best expresses the
+result without losing precision. For example:
+
+```powershell
+2 + 3.1
+(2).GetType().FullName
+(2 + 3.1).GetType().FullName
+```
+
+```output
+5.1
+System.Int32
+System.Double
+```
+
+If the result of an operation is too large for the type, the type of the result
+is widened to accommodate the result, as in the following example:
+
+```powershell
+(512MB).GetType().FullName
+(512MB * 512MB).GetType().FullName
+```
+
+```output
+System.Int32
+System.Double
+```
+
+The type of the result isn't always the same as one of the operands. In the
+following example, the negative value can't be cast to an unsigned integer, and
+the unsigned integer is too large to be cast to `Int32`:
+
+```powershell
+([int32]::minvalue + [uint32]::maxvalue).gettype().fullname
+```
+
+```output
+System.Int64
+```
+
+In this example, `Int64` can accommodate both types.
+
+The `System.Decimal` type is an exception. If either operand has the
+**Decimal** type, the result is **Decimal** type. Any result too large for the
+**Decimal** value is an error.
+
+```powershell
+PS> [Decimal]::maxvalue
+79228162514264337593543950335
+
+PS> [Decimal]::maxvalue + 1
+RuntimeException: Value was either too large or too small for a Decimal.
+```
+
+### Potential loss of precision
+
+Anytime you have a result that exceeds the range of the type, you risk losing
+precision due to type conversion. For example, adding a sufficiently large
+`[long]` and `[int]` results in the operands being converted to `[double]`. In
+this example, `9223372036854775807` is the maximum value of a `[long]` integer.
+Adding to value overflows the range of `[long]`.
+
+```powershell
+PS> (9223372036854775807 + 2).GetType().FullName
+System.Double
+```
+
+Casting the result to `[ulong]` yields an inaccurate result, because the
+operands were coerced to `[double]` first.
+
+```powershell
+PS> [ulong](9223372036854775807 + 2)
+9223372036854775808
+```
+
+Defining the larger value as `[ulong]` first avoids the problem and produces the
+correct result.
+
+```powershell
+PS> 9223372036854775807ul + 2
+9223372036854775809
+```
+
+However, exceeding the range of `[ulong]` results in a `[double]`.
+
+```powershell
+PS> ([ulong]::MaxValue + 1).GetType().FullName
+System.Double
+```
+
+### Bigint arithmetic
+
+When you perform arithmetic operations on `[bigint]` numbers, PowerShell uses
+converts all operands to `[bigint]`, which results in truncation of non-integer
+values. For example, the `[double]` value `1.9` is truncated to `1` when when
+converted to `[bigint]`.
+
+```powershell
+PS> [bigint]1 / 1.9
+1
+PS> 1 / [bigint]1.9
+1
+```
+
+This behavior is different from the behavior of other numeric types. In this
+example, an `[int]` divided by a `[double]` results in a `[double]`. Casting
+`1.9` to an `[int]` rounds the value up to `2`.
+
+```powershell
+PS> 1 / 1.9
+0.526315789473684
+PS> 1 / [int]1.9
+0.5
+```
+
 ## Adding and multiplying non numeric types
 
 You can add numbers, strings, arrays, and hash tables. And, you can multiply
@@ -351,62 +468,6 @@ $array
 2
 ```
 
-## Type conversion to accommodate result
-
-PowerShell automatically selects the .NET numeric type that best expresses the
-result without losing precision. For example:
-
-```powershell
-2 + 3.1
-(2).GetType().FullName
-(2 + 3.1).GetType().FullName
-```
-
-```output
-5.1
-System.Int32
-System.Double
-```
-
-If the result of an operation is too large for the type, the type of the result
-is widened to accommodate the result, as in the following example:
-
-```powershell
-(512MB).GetType().FullName
-(512MB * 512MB).GetType().FullName
-```
-
-```output
-System.Int32
-System.Double
-```
-
-The type of the result isn't always the same as one of the operands. In the
-following example, the negative value can't be cast to an unsigned integer, and
-the unsigned integer is too large to be cast to `Int32`:
-
-```powershell
-([int32]::minvalue + [uint32]::maxvalue).gettype().fullname
-```
-
-```output
-System.Int64
-```
-
-In this example, `Int64` can accommodate both types.
-
-The `System.Decimal` type is an exception. If either operand has the
-**Decimal** type, the result is **Decimal** type. Any result too large for the
-**Decimal** value is an error.
-
-```powershell
-PS> [Decimal]::maxvalue
-79228162514264337593543950335
-
-PS> [Decimal]::maxvalue + 1
-RuntimeException: Value was either too large or too small for a Decimal.
-```
-
 ## Arithmetic operators and variables
 
 You can also use arithmetic operators with variables. The operators act on the
@@ -435,7 +496,7 @@ The following examples show how to use the arithmetic operators in expressions
 with PowerShell commands:
 
 ```powershell
-(get-date) + (new-timespan -day 1)
+(Get-Date) + (New-TimeSpan -day 1)
 ```
 
 The parenthesis operator forces the evaluation of the `Get-Date` cmdlet and the
