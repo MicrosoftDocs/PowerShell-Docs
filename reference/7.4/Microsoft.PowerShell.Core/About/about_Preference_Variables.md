@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 04/02/2024
+ms.date: 04/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -253,12 +253,14 @@ The valid values are as follows:
 - **Stop**: Displays the debug message and stops executing. Writes an error to
   the console.
 - **Inquire**: Displays the debug message and asks you whether you want to
-  continue. Adding the **Debug** common parameter to a command, when the
-  command is configured to generate a debugging message, changes the value of
-  the `$DebugPreference` variable to **Inquire**.
+  continue.
 - **Continue**: Displays the debug message and continues with execution.
 - **SilentlyContinue**: (Default) No effect. The debug message isn't displayed
   and execution continues without interruption.
+
+Adding the **Debug** common parameter to a command, when the command is
+configured to generate a debugging message, changes the value of the
+`$DebugPreference` variable to **Continue**.
 
 ### Examples
 
