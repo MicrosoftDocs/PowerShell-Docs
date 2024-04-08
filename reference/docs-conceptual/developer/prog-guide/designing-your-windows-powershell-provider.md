@@ -154,10 +154,10 @@ more than one container. This class derives from the
 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
 base class. The following table list the cmdlets exposed by this class.
 
-|    Cmdlet    |                                                                      Definition                                                                      |
-| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Combine-Path | Combines two paths into a single path, using a provider-specific delimiter between paths. This cmdlet streams strings.                               |
-| `Move-Item`  | Moves items to the specified location. This cmdlet does not pass an output object through the pipeline unless its `PassThru` parameter is specified. |
+|     Cmdlet     |                                                                      Definition                                                                      |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Combine-Path` | Combines two paths into a single path, using a provider-specific delimiter between paths. This cmdlet streams strings.                               |
+| `Move-Item`    | Moves items to the specified location. This cmdlet does not pass an output object through the pipeline unless its `PassThru` parameter is specified. |
 
 A related cmdlet is the basic Parse-Path cmdlet furnished by Windows PowerShell. This cmdlet can be
 used to parse a Windows PowerShell path to support the `Parent` parameter. It streams the parent
