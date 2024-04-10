@@ -73,7 +73,7 @@ Set-Location C:
 ```
 
 You can also work with the **Function** provider from any other PowerShell
-drive. To reference an function from another location, use the drive name
+drive. To reference a function from another location, use the drive name
 `Function:` in the path.
 
 > [!NOTE]

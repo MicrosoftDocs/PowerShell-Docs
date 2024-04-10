@@ -68,7 +68,7 @@ To manipulate the items of a data store, such as getting, setting, and clearing 
 must implement the methods provided by the
 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 base class. For more information about implementing these methods, see
-[Creating an Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
+[Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
 
 To get to the child items, or their names, of the data store, as well as methods that create, copy,
 rename, and remove items, you must implement the methods provided by the

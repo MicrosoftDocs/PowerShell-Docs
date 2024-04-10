@@ -8,7 +8,7 @@ title: How to name an Updatable Help CAB file
 
 [!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
 
-A updatable cabinet (`.CAB`) file must have a name with the following format.
+An updatable cabinet (`.CAB`) file must have a name with the following format.
 
 `<ModuleName>_<ModuleGUID>_<UICulture>_HelpContent.cab`
 

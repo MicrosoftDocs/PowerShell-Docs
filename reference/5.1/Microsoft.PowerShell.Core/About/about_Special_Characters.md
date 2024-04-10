@@ -147,7 +147,7 @@ Column1         Column2         Column3
 ## Vertical tab (`v)
 
 The vertical tab (`` `v ``) character advances to the next vertical tab stop
-and writes the remaining output at that point. The rendering of the the
+and writes the remaining output at that point. The rendering of the
 vertical tab is device and terminal dependent.
 
 ```powershell

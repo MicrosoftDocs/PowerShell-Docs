@@ -172,7 +172,7 @@ In PowerShell, the operating environment in which each command in a pipeline is 
 ### scalar value
 
 In PowerShell, a scalar value is any value type that is not enumerable. This includes the .NET
-primitive types, such as boolens and numbers, and other value types such as **String**, **DateTime**
+primitive types, such as booleans and numbers, and other value types such as **String**, **DateTime**
 and **Guid**.
 
 For a list of .NET primitive types, see the _Remarks_ section of

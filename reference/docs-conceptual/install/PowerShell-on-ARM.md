@@ -73,7 +73,7 @@ macOS
 
 - [Installing PowerShell on macOS][11]
 
-Raspbery Pi
+Raspberry Pi
 
 - [Raspberry Pi OS][01]
 
