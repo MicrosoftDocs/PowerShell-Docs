@@ -548,7 +548,7 @@ $i++                  # $i now holds a value of type double because
 
 [int]$k = 0           # $k is constrained to int
 $k = [int]::MaxValue  # $k is set to 2147483647
-$k++                  # 2147483648 is too big to fit, imp-def bahavior
+$k++                  # 2147483648 is too big to fit, imp-def behavior
 
 $x = $null            # target is unconstrained, $null goes to [int]0
 $x++                  # value treated as int, 0->1

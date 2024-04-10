@@ -380,7 +380,7 @@ Accept wildcard characters: True
 
 ### -Scope
 
-This paramater does nothing in this cmdlet.
+This parameter does nothing in this cmdlet.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.UpdateHelpScope

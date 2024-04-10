@@ -409,7 +409,7 @@ Accept wildcard characters: False
 
 ### -Stream
 
-This is a dyanamic parameter made available by the **FileSystem** provider. This parameter is only
+This is a dynamic parameter made available by the **FileSystem** provider. This parameter is only
 available on Windows. This parameter can't be used in combination with the **Recurse** parameter.
 
 You can use `Remove-Item` to delete an alternative data stream, such as `Zone.Identifier`.
