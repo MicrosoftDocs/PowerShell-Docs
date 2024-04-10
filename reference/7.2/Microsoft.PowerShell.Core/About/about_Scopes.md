@@ -88,7 +88,7 @@ When a reference is made to a variable, alias, or function, PowerShell searches
 the current scope. If the item isn't found, the parent scope is searched. This
 search is repeated all they way up to the global scope. If a variable is
 private in a parent scope, the search through continues through the scope
-chain. [Example 4][01] shows the the effect of a private variable in a scope
+chain. [Example 4][01] shows the effect of a private variable in a scope
 search.
 
 ## PowerShell scopes names

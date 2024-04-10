@@ -122,7 +122,7 @@ namespace Microsoft.Samples.PowerShell.Commands
    #region PowerShell snap-in
 
    /// <summary>
-   /// Create this sample as an PowerShell snap-in
+   /// Create this sample as a PowerShell snap-in
    /// </summary>
    [RunInstaller(true)]
    public class GetProcPSSnapIn01 : PSSnapIn

@@ -107,7 +107,7 @@ This example saves cmdlet output in a variable then sends it to `Out-GridView`.
 ```
 
 `Get-ChildItem` gets all the files in the PowerShell installation directory and its subdirectories
-using the the `$PSHOME` automatic variable. The parentheses in the command establish the order of
+using the `$PSHOME` automatic variable. The parentheses in the command establish the order of
 operations. As a result, the output from the `Get-ChildItem` command is saved in the `$A` variable
 before it is sent to `Out-GridView`.
 

@@ -82,7 +82,7 @@ of the property for each item that has that property. If no items have the
 specified property, the operator returns `$null`.
 
 During member-access enumeration for a method, the operator attempts to call the
-method on each item in the collection. If any item in the collection does does
+method on each item in the collection. If any item in the collection does
 not have the specified method, the operator returns the **MethodNotFound**
 exception.
 

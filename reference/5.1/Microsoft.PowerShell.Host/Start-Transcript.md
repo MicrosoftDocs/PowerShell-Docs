@@ -55,7 +55,7 @@ character string prevents guessing of the filename to gain unauthorized access t
 
 When using the **Append** parameter, if the target file doesn't have a Byte Order Mark (BOM)
 `Start-Transcript` defaults to `ASCII` encoding in the target file. This behavior can result in
-improper encoding of mulitbyte characters in the transcript.
+improper encoding of multibyte characters in the transcript.
 
 ## EXAMPLES
 

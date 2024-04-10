@@ -119,7 +119,7 @@ namespace Microsoft.Samples.PowerShell.Host
                     powershell.Invoke(script);
                 }
 
-                // Check the flags and see if they were set propertly.
+                // Check the flags and see if they were set properly.
                 Console.WriteLine(
                     "ShouldExit={0} (should be True); ExitCode={1} (should be 4)",
                     me.ShouldExit,

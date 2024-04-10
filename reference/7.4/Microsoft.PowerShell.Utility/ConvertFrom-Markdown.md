@@ -40,7 +40,7 @@ This cmdlet converts the specified content into a **MarkdownInfo**. When a file 
 for the **Path** parameter, the contents on the file are converted. The output object has three
 properties:
 
-- The **Token** property has the abstract syntax tree (AST) of the the converted object
+- The **Token** property has the abstract syntax tree (AST) of the converted object
 - The **Html** property has the HTML conversion of the specified input
 - The **VT100EncodedString** property has the converted string with ANSI (VT100) escape sequences if
   the **AsVT100EncodedString** parameter was specified

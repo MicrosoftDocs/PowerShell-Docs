@@ -183,7 +183,7 @@ You can use the static properties of .NET classes in PowerShell. Static
 properties are properties of class, unlike standard properties, which are
 properties of an object.
 
-To get the static properties of an class, use the **Static** parameter of the
+To get the static properties of a class, use the **Static** parameter of the
 `Get-Member` cmdlet. For example, the following command gets the static
 properties of the `System.DateTime` class.
 
