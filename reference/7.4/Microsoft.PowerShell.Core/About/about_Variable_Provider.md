@@ -102,7 +102,7 @@ Set-Location C:
 ```
 
 You can also work with the **Variable** provider from any other PowerShell
-drive. To reference an variable from another location, use the drive name
+drive. To reference a variable from another location, use the drive name
 `Variable:` in the path.
 
 > [!NOTE]

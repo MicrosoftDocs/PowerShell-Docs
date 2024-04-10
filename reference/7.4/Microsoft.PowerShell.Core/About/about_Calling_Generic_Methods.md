@@ -47,7 +47,7 @@ method:
 $object.MethodName[generic_type_arguments](method_arguments)
 ```
 
-The `generic_type_arguments` can be a a single type or comma-separated list of
+The `generic_type_arguments` can be a single type or comma-separated list of
 types, like `[string, int]`, including other generic types like
 `$obj.MethodName[string, System.Collections.Generic.Dictionary[string, int]]()`
 

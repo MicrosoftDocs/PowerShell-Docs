@@ -144,7 +144,7 @@ integer.
 
 ### -AsHashtable
 
-Converts the JSON to an hash table object. This switch was introduced in PowerShell 6.0. Starting
+Converts the JSON to a hash table object. This switch was introduced in PowerShell 6.0. Starting
 with PowerShell 7.3, the object is an **OrderedHashtable** and preserves the ordering of the keys
 from the JSON. In prior versions, the object is a **Hashtable**.
 
