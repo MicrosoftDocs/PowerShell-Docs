@@ -135,11 +135,11 @@ By default, many cmdlets that modify the system, such as the
 parameter to force the cmdlet to return an object. When the `PassThru` parameter is specified, the
 cmdlet returns an object by using a call to the
 [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
-method. For example, the following command stops the Calc process and passes the resultant process
+method. For example, the following command stops the Calc (CalculatorApp.exe) and passes the resultant process
 to the pipeline.
 
 ```powershell
-Stop-Process calc -passthru
+Stop-Process -Name CalculatorApp -PassThru
 ```
 
 In most cases, Add, Set, and New cmdlets should support a `PassThru` parameter.
