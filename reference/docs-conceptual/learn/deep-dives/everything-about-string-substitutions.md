@@ -300,7 +300,7 @@ The call to `.InvokeCommand.ExpandString` on the current execution context uses 
 the current scope for substitution. The key thing here is that the `$message` can be defined very
 early before the variables even exist.
 
-If we expand on that just a little bit, we can perform this substitution over and over wih different
+If we expand on that just a little bit, we can perform this substitution over and over with different
 values.
 
 ```powershell
