@@ -88,7 +88,7 @@ following properties.
 - **TypeNameOfValue** property: The fully-qualified name of the property value type. For example,
   for a property whose value is a string, its property value type is **System.String**.
 - **Value** property: The value of the property. If the get or set operation is called on a property
-  that does not support that operation, an **GetValueException** or **SetValueException** exception
+  that does not support that operation, a **GetValueException** or **SetValueException** exception
   is thrown
 
 ## PowerShell Script property
@@ -101,7 +101,7 @@ includes the following properties.
 - **GetterScript** property: The script used to retrieve the script property value.
 - **IsGettable** property: Indicates whether the **GetterScript** property exposes a script block.
 - **IsSettable** property: Indicates whether the **SetterScript** property exposes a script block.
-- **MemberType** property: An ScriptProperty enumeration constant that identifies this property as a
+- **MemberType** property: A ScriptProperty enumeration constant that identifies this property as a
   script property.
 - **SetterScript** property: The script used to set the script property value.
 - **TypeNameOfValue** property: The fully-qualified type name of the object returned by the getter

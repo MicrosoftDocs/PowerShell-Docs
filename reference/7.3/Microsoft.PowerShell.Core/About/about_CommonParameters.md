@@ -244,7 +244,7 @@ Accept wildcard characters: False
 ### -InformationVariable
 
 Introduced in PowerShell 5.0. When you use the **InformationVariable** common
-parameter, information records are stored in a the variable specify by the
+parameter, information records are stored in a variable specified by the
 parameter. And PowerShell cmdlet can write information records to the
 **Information** stream. You can also use the `Write-Information` cmdlet to
 write information records.

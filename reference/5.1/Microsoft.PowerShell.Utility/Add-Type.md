@@ -330,7 +330,7 @@ $FSharpType::loop(4)
 `New-Object` creates an instance of the F# code provider and saves the result in the `$Provider`
 variable. The `$FSharpCode` variable saves the F# code that defines the **Loop** method.
 
-The the `$FSharpType` variable stores the results of the `Add-Type` cmdlet that saves the public
+The `$FSharpType` variable stores the results of the `Add-Type` cmdlet that saves the public
 types defined in `$FSharpCode`. The **TypeDefinition** parameter specifies the source code that
 defines the types. The **CodeDomProvider** parameter specifies the source code compiler. The
 **PassThru** parameter directs `Add-Type` to return a **Runtime** object that represents the types.

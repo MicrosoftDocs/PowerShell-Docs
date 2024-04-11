@@ -118,7 +118,7 @@ starts a job every other Monday at 9:00 PM.
 
 The `$path` variable stores the path to the `UpdateVersion.ps1` script file.
 
-`Register-ScheduledJob` uses the **Name** paramter to create the **UpdateVersion** scheduled job.
+`Register-ScheduledJob` uses the **Name** parameter to create the **UpdateVersion** scheduled job.
 The **FilePath** parameter uses `$path` to specify the script that the job runs. The
 **ScheduledJobOption** parameter uses the job options stored in `$O`. The **Trigger** parameter uses
 the job triggers stored in `$T`.
