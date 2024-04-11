@@ -55,7 +55,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// </summary>
     /// <param name="args">Parameter not used.</param>
     /// <remarks>
-    /// This sample assumes that user has coppied the GetProcessSample02.dll
+    /// This sample assumes that user has copied the GetProcessSample02.dll
     /// that is produced by the GetProcessSample02 sample to the current
     /// directory.
     /// This sample demonstrates the following:

@@ -144,7 +144,7 @@ section.
 ### Example 5: Use the pipeline operator to pass a string
 
 This example shows that you can use a pipeline operator (`|`) to send a string to
-`ConvertFrom-StringData`. The the value of the `$Here` variable is piped to `ConvertFrom-StringData`
+`ConvertFrom-StringData`. The value of the `$Here` variable is piped to `ConvertFrom-StringData`
 and the result in the `$Hash` variable.
 
 ```powershell

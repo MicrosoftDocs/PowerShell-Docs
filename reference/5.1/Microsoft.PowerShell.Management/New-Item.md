@@ -659,7 +659,7 @@ The cmdlet returns a **FileInfo** object when creating a new file in the filesys
 
 ### System.Management.Automation.AliasInfo
 
-The cmdlet returns a **AliasInfo** object when creating a new alias.
+The cmdlet returns an **AliasInfo** object when creating a new alias.
 
 ### System.Management.Automation.FunctionInfo
 

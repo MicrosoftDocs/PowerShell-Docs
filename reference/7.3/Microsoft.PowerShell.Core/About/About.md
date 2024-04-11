@@ -38,7 +38,7 @@ Describes variables that store state information for PowerShell. These variables
 Describes how boolean expressions are evaluated.
 
 ### [about_Break](about_Break.md)
-Describes a the `break` statement, which provides a way to exit the current control block.
+Describes the `break` statement, which provides a way to exit the current control block.
 
 ### [about_Built-in_Functions](about_Built-in_Functions.md)
 Describes the built-in functions in PowerShell.
