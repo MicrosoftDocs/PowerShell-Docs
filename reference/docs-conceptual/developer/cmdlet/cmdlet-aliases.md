@@ -40,7 +40,7 @@ Follow these guidelines when you create built-in aliases for your cmdlets:
   make the alias unique.
 
 - For cmdlet written in C# (or any other compiled .NET language), the alias can be defined using the
-  [Alias attibute](alias-attribute-declaration.md). For example:
+  [Alias attribute](alias-attribute-declaration.md). For example:
 
   ```csharp
   [Cmdlet("Get", "SomeObject")]

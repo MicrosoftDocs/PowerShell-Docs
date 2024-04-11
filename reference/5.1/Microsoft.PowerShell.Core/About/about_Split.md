@@ -217,7 +217,7 @@ The RegexMatch options are:
 - **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
   operator is specified.
 - **CultureInvariant**: Ignores cultural differences in language
-  when evaluting the delimiter. Valid only with RegexMatch.
+  when evaluating the delimiter. Valid only with RegexMatch.
 - **IgnorePatternWhitespace**: Ignores unescaped whitespace and
   comments marked with the number sign (#). Valid only with
   RegexMatch.

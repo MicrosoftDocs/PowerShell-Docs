@@ -8,7 +8,7 @@ title: about Type Accelerators
 ---
 # about_Type_Accelerators
 
-## SHORT DESRIPTION
+## SHORT DESCRIPTION
 Describes the Type accelerators available for .NET framework classes
 
 ## Long description

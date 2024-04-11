@@ -664,7 +664,7 @@ Accept wildcard characters: False
 
 Specifies the network port on the remote computer that is used for this command.
 
-In PowerShell 6.0 this parameter was inlcuded in the **HostName** parameter set which supports
+In PowerShell 6.0 this parameter was included in the **HostName** parameter set which supports
 Secure Shell (SSH) connections.
 
 **WinRM (ComputerName parameter set)**

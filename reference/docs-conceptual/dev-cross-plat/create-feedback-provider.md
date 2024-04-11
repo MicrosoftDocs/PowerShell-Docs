@@ -493,7 +493,7 @@ in the [GitHub Repository][11] or can download for yourself on the [PowerShell G
 The `Microsoft.PowerShell.PowerShellAdapter` is a feedback provider that helps you convert text outputs
 from native commands into PowerShell objects. It detects "adapters" on your system and suggests you to use
 them when you use the native command. You can learn more about PowerShell Adapters from,
-[PowerShell Adapter Feedback Provider][13] blog post. You can also find teh code in the [GitHub Repository][14]
+[PowerShell Adapter Feedback Provider][13] blog post. You can also find the code in the [GitHub Repository][14]
 or can download for yourself on the [PowerShell Gallery][15].
 
 ## Appendix - Full implementation code

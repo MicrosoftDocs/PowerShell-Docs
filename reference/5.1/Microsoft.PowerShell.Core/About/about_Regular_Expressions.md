@@ -225,7 +225,7 @@ input strings.
 '3.141' -match '3\.\d{2,}'
 ```
 
-There`s a static method of the regex class that can escape text for you.
+There's a static method of the regex class that can escape text for you.
 
 ```powershell
 [regex]::escape('3.\d{2,}')
