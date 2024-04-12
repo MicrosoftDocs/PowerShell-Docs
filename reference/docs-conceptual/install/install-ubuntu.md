@@ -82,11 +82,11 @@ package from the [releases][02] page onto your Ubuntu machine.
 The link to the current version is:
 
 - PowerShell 7.4 (LTS) universal package for supported versions of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.1/powershell_7.4.1-1.deb_amd64.deb`
-- PowerShell 7.3.11 (stable) universal package for supported versions of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.11/powershell_7.3.11-1.deb_amd64.deb`
-- PowerShell 7.2.18 (LTS) universal package for supported versions of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.18/powershell_7.2.18-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell_7.4.2-1.deb_amd64.deb`
+- PowerShell 7.3.12 (stable) universal package for supported versions of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.12/powershell_7.3.12-1.deb_amd64.deb`
+- PowerShell 7.2.19 (LTS) universal package for supported versions of Ubuntu
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.19/powershell_7.2.19-1.deb_amd64.deb`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
 change the URL to download the version of PowerShell that you want to install.
@@ -102,17 +102,17 @@ sudo apt-get update
 sudo apt-get install -y wget
 
 # Download the PowerShell package file
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.1/powershell_7.4.1-1.deb_amd64.deb
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell_7.4.2-1.deb_amd64.deb
 
 ###################################
 # Install the PowerShell package
-sudo dpkg -i powershell_7.4.1-1.deb_amd64.deb
+sudo dpkg -i powershell_7.4.2-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
 
 # Delete the downloaded package file
-rm powershell_7.4.1-1.deb_amd64.deb
+rm powershell_7.4.2-1.deb_amd64.deb
 
 # Start PowerShell Preview
 pwsh-lts

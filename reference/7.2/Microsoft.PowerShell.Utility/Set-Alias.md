@@ -403,7 +403,7 @@ By default, this cmdlet returns no output.
 
 ### System.Management.Automation.AliasInfo
 
-When you use the **PassThru** parameter, this cmdlet returns a **AliasInfo** object representing
+When you use the **PassThru** parameter, this cmdlet returns an **AliasInfo** object representing
 the alias.
 
 ## NOTES

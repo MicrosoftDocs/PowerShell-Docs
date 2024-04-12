@@ -9,7 +9,7 @@ title: about Break
 # about_Break
 
 ## Short description
-Describes a the `break` statement, which provides a way to exit the current
+Describes the `break` statement, which provides a way to exit the current
 control block.
 
 ## Long description

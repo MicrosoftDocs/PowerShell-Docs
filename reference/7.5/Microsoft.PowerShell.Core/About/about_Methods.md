@@ -125,7 +125,7 @@ the `C:\Bin` directory.
 > Unlike PowerShell's _argument_ mode, object methods execute in _expression_
 > mode, which is a pass-through to the .NET framework that PowerShell is built
 > on. In _expression_ mode **bareword** arguments (unquoted strings) are not
-> allowed. You can see this difference when using a the path as a parameter,
+> allowed. You can see this difference when using the path as a parameter,
 > versus the path as an argument. You can read more about parsing modes in
 > [about_Parsing](about_Parsing.md)
 

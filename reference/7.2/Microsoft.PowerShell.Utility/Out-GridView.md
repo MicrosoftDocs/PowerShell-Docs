@@ -119,7 +119,7 @@ This example displays the processes that are running on the Server01 computer in
 Get-Process -ComputerName "Server01" | ogv -Title "Processes - Server01"
 ```
 
-The examle uses `ogv`, which is the alias for the `Out-GridView` cmdlet. The **Title** parameter
+The example uses `ogv`, which is the alias for the `Out-GridView` cmdlet. The **Title** parameter
 specifies the window title.
 
 ### Example 6: Output data from remote computers to a grid view
