@@ -301,7 +301,7 @@ controls how native commands errors are handled in PowerShell. This allows nativ
 to produce error objects that are added to the PowerShell error stream and may terminate execution
 of the script without extra handling.
 
-`$PSNativeCommandUseErrorActionPreference` is set to `$true` by default. With the preference set to
+`$PSNativeCommandUseErrorActionPreference` is set to `$false` by default. With the preference set to
 `$true` you get the following behavior:
 
 - When `$ErrorActionPreference = 'Stop'`, scripts will break when a native command returns a
