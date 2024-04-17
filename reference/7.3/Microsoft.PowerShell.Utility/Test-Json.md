@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/14/2023
+ms.date: 03/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
@@ -51,7 +51,7 @@ This cmdlet was introduced in PowerShell 6.1
 This example tests whether the input string is a valid JSON document.
 
 ```powershell
-"{'name': 'Ashley', 'age': 25}" | Test-Json
+'{"name": "Ashley", "age": 25}' | Test-Json
 ```
 
 ```Output
@@ -97,16 +97,15 @@ $schema = @'
   }
 }
 '@
-"{'name': 'Ashley', 'age': '25'}" | Test-Json -Schema $schema
+'{"name": "Ashley", "age": "25"}' | Test-Json -Schema $schema
 ```
 
 ```Output
-Test-Json : IntegerExpected: #/age
-At line:1 char:37
-+ "{'name': 'Ashley', 'age': '25'}" | Test-Json -Schema $schema
-+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~
-+ CategoryInfo          : InvalidData: (:) [Test-Json], Exception
-+ FullyQualifiedErrorId : InvalidJsonAgainstSchema,Microsoft.PowerShell.Commands.TestJsonCommand
+Test-Json:
+Line |
+  35 |  '{"name": "Ashley", "age": "25"}' | Test-Json -Schema $schema
+     |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~
+     | IntegerExpected: #/age
 False
 ```
 
