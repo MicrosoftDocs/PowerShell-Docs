@@ -321,7 +321,7 @@ The environment variables that store preferences include:
     a value of `Process`.
 
   - Manually set the environment variable. Changing the value of this variable
-    changes the execution policy current process.
+    changes the execution policy of the current process.
 
   This information only applies to the Windows platform. For more information,
   see [about_Execution_Policies][05].
@@ -382,7 +382,7 @@ The environment variables that store preferences include:
   example:
 
   ```powershell
-  # `NUL` here is a special device on Windows that cannot be written to
+  # `NUL` here is a special device on Windows that can't be written to
   $env:PSModuleAnalysisCachePath = 'NUL'
   ```
 
