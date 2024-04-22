@@ -314,12 +314,21 @@ System Control Panel:
 ## Create persistent environment variables on non-Windows platforms
 
 Linux and macOS have configuration files and scripts that the operating system
-uses to set environment variables before starting an application. For example
-on Linux, you can add environment variables to the `/etc/environment` file or
-create a script that sets environment variables and put it in the
-`/etc/profile.d` folder. On macOS, you can add environment variables to the
-`/etc/zshrc` file. For more information, see the documentation for your
-operating system.
+uses to set environment variables before starting an application.
+
+When running PowerShell as the default (login) shell, you can define
+environment variables in the global initialization files supported by the
+operating system. For example on Linux, you can add environment variables to
+the `/etc/environment` file or create a script that sets environment variables
+and put it in the `/etc/profile.d` folder. On macOS, you can add environment
+variables to the `/etc/profile` file.
+
+When starting PowerShell from another shell, you can define environment
+variables in the shell-specific initialization files used by non-login shells,
+such as `~/.bashrc` for `bash` or `~/.zshrc` for `zsh`.
+
+For more information, see the documentation for your operating system and
+default shell.
 
 ## PowerShell environment variables
 
