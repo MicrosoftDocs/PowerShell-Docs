@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 02/05/2024
+ms.date: 04/22/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Environment Variables
@@ -70,7 +70,7 @@ environment variables.
 - The Environment provider and Item cmdlets
 - The .NET **System.Environment** class
 
-## Using the variable syntax
+## Use the variable syntax
 
 You can display and change the values of environment variables with the
 following syntax:
@@ -157,7 +157,7 @@ Length Property   int Length {get;}
 
 For more information about variables in PowerShell, see [about_Variables][11].
 
-## Using the Environment provider and Item cmdlets
+## Use the Environment provider and Item cmdlets
 
 PowerShell's **Environment** provider gives you an interface for interacting
 with environment variables in a format that resembles a file system drive. It
@@ -210,10 +210,10 @@ Get-ChildItem Env:
 For more information on using the **Environment** provider to manage
 environment variables, see [about_Environment_Provider][04].
 
-## Using the System.Environment methods
+## Use the System.Environment methods
 
-The **System.Environment** class provides the **GetEnvironmentVariable** and
-**SetEnvironmentVariable** methods to get and modify environment variables.
+The **System.Environment** class provides the `GetEnvironmentVariable()` and
+`SetEnvironmentVariable()` methods to get and modify environment variables.
 
 The following example creates a new environment variable, `Foo`, with a value
 of `Bar` and then returns its value.
@@ -227,7 +227,7 @@ of `Bar` and then returns its value.
 Bar
 ```
 
-You can remove an environment variable with the **SetEnvironmentVariable**
+You can remove an environment variable with the `SetEnvironmentVariable()`
 method by specifying an empty string for the variable's value. For example,
 to remove the `Foo` environment variable:
 
@@ -243,13 +243,16 @@ to remove the `Foo` environment variable:
 For more information about the methods of the **System.Environment** class, see
 [Environment Methods][01].
 
-## Saving changes to environment variables
+## Create persistent environment variables in Windows
 
 On Windows, there are three methods for making a persistent change to an
-environment variable: setting them in your profile, using the
-**SetEnvironmentVariable** method, and using the System Control Panel.
+environment variable:
 
-### Saving environment variables in your profile
+- Set them in your profile
+- Using the `SetEnvironmentVariable()` method
+- Use the System Control Panel
+
+### Set environment variables in your profile
 
 Any environment variable you add or change in your PowerShell profile is
 available in any session that loads your profile. This method works for any
@@ -271,9 +274,9 @@ $Env:Path += ';C:\Tools'
 You can get the path to your PowerShell profile with the `$PROFILE` automatic
 variable. For more information on profiles, see [about_Profiles][07].
 
-### Saving environment variables with SetEnvironmentVariable
+### Set environment variables with SetEnvironmentVariable()
 
-On Windows, you can specify a scope for the **SetEnvironmentVariable** method
+On Windows, you can specify a scope for the `SetEnvironmentVariable()` method
 as the third parameter to set the environment variable in that scope. The
 machine and user scopes both persist outside of the current process, allowing
 you to save a new or changed environment variable.
@@ -292,7 +295,7 @@ setting the variable's value to an empty string.
 [Environment]::SetEnvironmentVariable('Foo', '', 'Machine')
 ```
 
-### Saving environment variables with the System Control Panel
+### Set environment variables in the System Control Panel
 
 In the System Control Panel, you can add or edit existing environment variables
 in the **User** and **System** (Machine) scopes. Windows writes these values to
@@ -308,6 +311,25 @@ System Control Panel:
 1. Select **Environment Variables...**.
 1. Make your changes.
 
+## Create persistent environment variables on non-Windows platforms
+
+Linux and macOS have configuration files and scripts that the operating system
+uses to set environment variables before starting an application.
+
+When running PowerShell as the default (login) shell, you can define
+environment variables in the global initialization files supported by the
+operating system. For example on Linux, you can add environment variables to
+the `/etc/environment` file or create a script that sets environment variables
+and put it in the `/etc/profile.d` folder. On macOS, you can add environment
+variables to the `/etc/profile` file.
+
+When starting PowerShell from another shell, you can define environment
+variables in the shell-specific initialization files used by non-login shells,
+such as `~/.bashrc` for `bash` or `~/.zshrc` for `zsh`.
+
+For more information, see the documentation for your operating system and
+default shell.
+
 ## PowerShell environment variables
 
 PowerShell features can use environment variables to store user preferences.
@@ -320,9 +342,11 @@ The environment variables that store preferences include:
 - **POWERSHELL_TELEMETRY_OPTOUT**
 
   To opt-out of telemetry, set the environment variable to `true`, `yes`, or
-  `1`.
+  `1`. For more information, see [about_Telemetry][09].
 
-  For more information, see [about_Telemetry][09].
+  For this environment variable to have effect, it must be set before
+  starting the PowerShell process. See the previous sections for information
+  about creating persistent environment variables.
 
 - **POWERSHELL_DISTRIBUTION_CHANNEL**
 
@@ -336,8 +360,10 @@ The environment variables that store preferences include:
 - **POWERSHELL_UPDATECHECK**
 
   The update notification behavior can be changed using the
-  `POWERSHELL_UPDATECHECK` environment variable. The following values are
-  supported:
+  `POWERSHELL_UPDATECHECK` environment variable. For more information, see
+  [about_Update_Notifications][10].
+
+  The following values are supported:
 
   - `Off` turns off the update notification feature
   - `Default` is the same as not defining `POWERSHELL_UPDATECHECK`:
@@ -345,7 +371,9 @@ The environment variables that store preferences include:
     - Preview/RC releases notify of updates to GA and preview releases
   - `LTS` only notifies of updates to long-term-servicing (LTS) GA releases
 
-  For more information, see [about_Update_Notifications][10].
+  Non-default values of environment variable must be set before starting the
+  PowerShell process. See the previous sections for information about creating
+  persistent environment variables.
 
 - **PSExecutionPolicyPreference**
 
@@ -359,7 +387,11 @@ The environment variables that store preferences include:
   - Use the `Set-ExecutionPolicy` cmdlet. Use the **Scope** parameter with
     a value of `Process`.
 
-    For more information, see [about_Execution_Policies][05].
+  - Manually set the environment variable. Changing the value of this variable
+    changes the execution policy of the current process.
+
+  This information only applies to the Windows platform. For more information,
+  see [about_Execution_Policies][05].
 
 - **PSModulePath**
 
@@ -416,9 +448,12 @@ The environment variables that store preferences include:
   > is recreated the next time you start PowerShell.
 
   To change the default location of the cache, set the environment variable
-  before starting PowerShell. Changes to this environment variable only affect
-  child processes. The value should name a full path (including filename) that
-  PowerShell has permission to create and write files.
+  before starting PowerShell. The value should name a full path (including
+  filename) that PowerShell has permission to create and write files.
+
+  Changes to this environment variable only affect child processes. See the
+  previous sections for information about creating persistent environment
+  variables.
 
   To disable the file cache, set this value to an invalid location, for
   example:
@@ -446,8 +481,11 @@ The environment variables that store preferences include:
   checks aren't desirable, in which case you can turn them off by setting this
   environment variable value to `1`.
 
-  Setting this environment variable takes effect immediately in the current
-  process.
+  Setting this environment variable takes effect for subsequent cleanup events
+  in the current process. To ensure that cleanup is disabled at startup, you
+  must set the environment variable before starting PowerShell. See the
+  previous sections for information about creating persistent environment
+  variables.
 
 ## Other environment variables used by PowerShell
 
