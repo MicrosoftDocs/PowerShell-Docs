@@ -38,7 +38,11 @@ Windows 11 and modern versions of Windows 10 by default as the **App Installer**
 
 > [!NOTE]
 > See the [winget documentation][14] for a list of system requirements and install instructions.
-> `Winget` doesn't currently run on Windows servers.
+> `Winget` isn't available on Windows Server 2022 or earlier versions.
+>
+> Windows Server 2025 Preview Build 26085 and later includes `winget` for **Windows Server with
+> Desktop Experience** only. For more information, see
+> [Announcing Windows Server Preview Build 26085][35].
 
 The following commands can be used to install PowerShell using the published `winget` packages:
 
@@ -417,3 +421,4 @@ can't support those methods.
 [32]: https://www.microsoft.com/download/details.aspx?id=50410
 [33]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [34]: microsoft-update-faq.yml
+[35]: https://techcommunity.microsoft.com/t5/windows-server-insiders/announcing-windows-server-preview-build-26085/m-p/4098829
