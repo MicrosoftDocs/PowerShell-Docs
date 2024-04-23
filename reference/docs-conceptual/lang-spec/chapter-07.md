@@ -9,7 +9,21 @@ Syntax:
 
 ```Syntax
 expression:
+    primary-expression
+    bitwise-expression
     logical-expression
+    comparison-expression
+    additive-expression
+    multiplicative-expression
+
+dash: one of
+    - (U+002D)
+    EnDash character (U+2013)
+    EmDash character (U+2014)
+    Horizontal bar character (U+2015)
+
+dashdash:
+    dash dash
 ```
 
 Description:
@@ -204,10 +218,12 @@ The result is written to the pipeline, as the top-level expression has no side e
 Syntax:
 
 ```Syntax
-member-access: Note no whitespace is allowed after primary-expression. 
+member-access:
     primary-expression . member-name
     primary-expression :: member-name
 ```
+
+Note that no whitespace is allowed after *primary-expression*.
 
 Description:
 
@@ -268,13 +284,15 @@ $a.ID                        # get ID from each element in the array
 Syntax:
 
 ```Syntax
-invocation-expression: Note no whitespace is allowed after primary-expression. 
+invocation-expression:
     primary-expression . member-name argument-list
     primary-expression :: member-name argument-list
 
 argument-list:
     ( argument-expression-list~opt~ new-lines~opt~ )
 ```
+
+Note that no whitespace is allowed after *primary-expression*.
 
 Description:
 
@@ -316,7 +334,7 @@ $a.Invoke("X")               # call ToLower via the descriptor
 Syntax:
 
 ```Syntax
-element-access: Note no whitespace is allowed between primary-expression and [.
+element-access:
     primary-expression [ new-lines~opt~ expression new-lines~opt~ ]
 ```
 
@@ -454,7 +472,7 @@ $x = [xml]@"
 
 $x['Name']                # refers to the element Name
 $x['Name']['FirstName']   # refers to the element FirstName within Name
-$x['FirstName']           # No such child element at the top level, result is `$null`
+$x['FirstName']           # No such child element at the top level, result is $null
 ```
 
 The type of the result is `System.Xml.XmlElement` or `System.String`.
@@ -503,9 +521,6 @@ post-increment-expression:
 
 post-decrement-expression:
     primary-expression dashdash
-
-dashdash:
-    --
 ```
 
 Description:
@@ -747,10 +762,15 @@ Type literals are used in a number of contexts:
 
 Examples:
 
-Examples of type literals are `[int]`, `[object[]`, and `[int[,,]]`. A generic stack type ([§4.4][§4.4])
-that is specialized to hold strings might be written as `[Stack[string]]`, and a generic dictionary
-type that is specialized to hold `int` keys with associated string values might be written as
-`[Dictionary[int,string]]`.
+```powershell
+[int].IsPrimitive        # $true
+[Object[]].FullName      # "System.Object[]"
+[int[,,]].GetArrayRank() # 3
+```
+
+A generic stack type ([§4.4][§4.4]) that is specialized to hold strings might be written as
+`[Stack[string]]`, and a generic dictionary type that is specialized to hold `int` keys with
+associated string values might be written as `[Dictionary[int,string]]`.
 
 The type of a *type-literal* is `System.Type`. The complete name for the type `Stack[string]`
 suggested above is `System.Collections.Generic.Stack[int]`. The complete name for the type
@@ -778,12 +798,6 @@ expression-with-unary-operator:
     -split new-lines~opt~ unary-expression
     -join new-lines~opt~ unary-expression
 
-dash:*
-    - (U+002D)
-    EnDash character (U+2013)
-    EmDash character (U+2014)
-    Horizontal bar character (U+2015)
-
 pre-increment-expression:
     ++ new-lines~opt~ unary-expression
 
@@ -792,9 +806,6 @@ pre-decrement-expression:
 
 cast-expression:
     type-literal unary-expression
-
-dashdash:
-    dash dash
 ```
 
 ### 7.2.1 Unary comma operator
@@ -892,9 +903,11 @@ This operator is right associative.
 
 Examples:
 
--$true # type int, value -1
--123L # type long, value -123
--0.12340D # type decimal, value -0.12340
+```powershell
+-$true     # type int, value -1
+-123L      # type long, value -123
+-0.12340D  # type decimal, value -0.12340
+```
 
 ### 7.2.6 Prefix increment and decrement operators
 
@@ -941,7 +954,7 @@ $k = [int]::MinValue  # $k is set to -2147483648
 $--k                  # -2147483649 is too small to fit, imp-def behavior
 
 $x = $null            # target is unconstrained, $null goes to [int]0
-$--x                  # value treated as int, 0->-1
+$--x                  # value treated as int, 0 becomes -1
 ```
 
 ### 7.2.7 The unary -join operator
@@ -982,7 +995,7 @@ array of 1 string, which is empty.
 Examples:
 
 ```powershell
--split " red\`tblue\`ngreen " # 3 strings: "red", "blue", "green"
+-split " red&#96;tblue&#96;ngreen " # 3 strings: "red", "blue", "green"
 -split ("yes no", "up down") # 4 strings: "yes", "no", "up", "down"
 -split " " # 1 (empty) string
 ```
@@ -1044,9 +1057,8 @@ Syntax:
 
 ```Syntax
 range-expression:
-array-literal-expression
-range-expression *..* new-lines~opt~
-array-literal-expression
+    array-literal-expression
+    range-expression *..* new-lines~opt~ array-literal-expression
 ```
 
 Description:
@@ -1088,16 +1100,7 @@ Syntax:
 ```Syntax
 format-expression:
     range-expression
-    format-expression format-operator new-lines~opt~ range-expression
-
-format-operator:
-    dash f
-
-dash:
-    - (U+002D)
-    EnDash character (U+2013)
-    EmDash character (U+2014)
-    Horizontal bar character (U+2015)
+    format-expression -f new-lines~opt~ range-expression
 ```
 
 Description:
@@ -1127,18 +1130,20 @@ Technical Report TR/84.
 Examples:
 
 ```powershell
-`$i` = 10; $j = 12
-"{2} <= {0} + {1}\`n" -f $i,$j,($i+$j)  # 22 <= 10 + 12
-">{0,3}<" -f 5                          # > 5<
-">{0,-3}<" -f 5                         # >5 <
-">{0,3:000}<" -f 5                      # >005<
-">{0,5:0.00}<" -f 5.0                   # > 5.00<
-">{0:C}<" -f 1234567.888                # >$1,234,567.89<
-">{0:C}<" -f -1234.56                   # >($1,234.56)<
-">{0,12:e2}<" -f 123.456e2              # > 1.23e+004<
-">{0,-12:p}<" -f -0.252                 # >-25.20 % <
-$format = ">{0:x8}<"
-$format -f 123455                       # >0001e23f<
+"__{0,3}__" -f 5                         # __ 5__
+"__{0,-3}__" -f 5                        # __5 __
+"__{0,3:000}__" -f 5                     # __005__
+"__{0,5:0.00}__" -f 5.0                  # __ 5.00__
+"__{0:C}__" -f 1234567.888               # __$1,234,567.89__
+"__{0:C}__" -f -1234.56                  # __($1,234.56)__
+"__{0,12:e2}__" -f 123.456e2             # __ 1.23e+004__
+"__{0,-12:p}__" -f -0.252                # __-25.20 % __
+
+$i = 5; $j = 3
+"__{0} + {1} <= {2}__" -f $i,$j,($i+$j)  # __5 + 3 <= 8__
+
+$format = "__0x{0:X8}__"
+$format -f 65535                         # __0x0000FFFF__
 ```
 
 In a format specification if *N* refers to a non-existent position, a **FormatError** is raised.
@@ -1149,7 +1154,6 @@ Syntax:
 
 ```Syntax
 multiplicative-expression:
-    format-expression
     multiplicative-expression * new-lines~opt~ format-expression
     multiplicative-expression / new-lines~opt~ format-expression
     multiplicative-expression % new-lines~opt~ format-expression
@@ -1198,7 +1202,7 @@ Examples:
 Description:
 
 When the left operand designates an array the binary `*` operator creates a new unconstrained
-1‑dimensional array that contains the value designated by the left operand replicated the number of
+1-dimensional array that contains the value designated by the left operand replicated the number of
 times designated by the value of the right operand as converted to integer type ([§6.4][§6.4]). A
 replication count of zero results in an array of length 1. If the left operand designates a
 multidimensional array, it is flattened ([§9.12][§9.12]) before being used.
@@ -1271,9 +1275,8 @@ Syntax:
 
 ```Syntax
 additive-expression:
-    multiplicative-expression
-    additive-expression + new-lines~opt~ multiplicative-expression
-    additive-expression dash new-lines~opt~ multiplicative-expression
+    primary-expression + new-lines~opt~ expression
+    primary-expression dash new-lines~opt~ expression
 ```
 
 ### 7.7.1 Addition
@@ -1319,7 +1322,7 @@ Examples:
 Description:
 
 When the left operand designates an array the binary `+` operator creates a new unconstrained
-1‑dimensional array that contains the elements designated by the left operand followed immediately
+1-dimensional array that contains the elements designated by the left operand followed immediately
 by the value(s) designated by the right operand. Multidimensional arrays present in either operand
 are flattened ([§9.12][§9.12]) before being used.
 
@@ -1381,30 +1384,15 @@ Examples:
 Syntax:
 
 ```Syntax
-comparison-operator: one of
-    dash as           dash ccontains     dash ceq
-    dash cge          dash cgt           dash cle
-    dash clike        dash clt           dash cmatch
-    dash cne          dash cnotcontains  dash cnotlike
-    dash cnotmatch    dash contains      dash creplace
-    dash csplit       dash eq            dash ge
-    dash gt           dash icontains     dash ieq
-    dash ige          dash igt           dash ile
-    dash ilike        dash ilt           dash imatch
-    dash in           dash ine           dash inotcontains
-    dash inotlike     dash inotmatch     dash ireplace
-    dash is           dash isnot         dash isplit
-    dash join         dash le            dash like
-    dash lt           dash match         dash ne
-    dash notcontains  dash notin         dash notlike
-    dash notmatch     dash replace       dash shl
-    dash shr          dash split
+comparison-expression:
+    primary-expression comparison-operator new-lines~opt~ expression
 
-dash:
-    - (U+002D)
-    EnDash character (U+2013)
-    EmDash character (U+2014)
-    Horizontal bar character (U+2015)
+comparison-operator:
+    equality-operator
+    relational-operator
+    containment-operator
+    like-operator
+    match-operator
 ```
 
 Description:
@@ -1421,10 +1409,24 @@ These operators are left associative.
 
 ### 7.8.1 Equality and relational operators
 
+Syntax:
+
+```Syntax
+equality-operator: one of
+    -eq         -ceq        -ieq
+    -ne         -cne        -ine
+
+relational-operator: one of
+    -lt         -clt        -ilt
+    -le         -cle        -ile
+    -gt         -cgt        -igt
+    -ge         -cge        -ige
+```
+
 Description:
 
-There are two *equality* *operators*: equality (`-eq`) and inequality (`-ne`); and four *relational
-operators*: less-than (`-lt`), less-than-or-equal-to (`-le`), greater-than (`-gt`), and
+There are two *equality-operator*s: equality (`-eq`) and inequality (`-ne`); and four *relational
+operator*s: less-than (`-lt`), less-than-or-equal-to (`-le`), greater-than (`-gt`), and
 greater-than-or-equal-to (`-ge`). Each of these has two variants ([§7.8][§7.8]).
 
 For two strings to compare equal, they must have the same length and contents, and letter case, if
@@ -1453,13 +1455,23 @@ Examples:
 
 ### 7.8.2 Containment operators
 
+Syntax:
+
+```Syntax
+containment-operator: one of
+    -contains       -ccontains      -icontains
+    -notcontains    -cnotcontains   -inotcontains
+    -in             -cin            -iin
+    -notin          -cnotin         -inotin
+```
+
 Description:
 
-There are four *containment* *operators*: contains (`-contains`), does-not-contain (`‑notcontains`),
+There are four *containment-operator*s: contains (`-contains`), does-not-contain (`-notcontains`),
 in (`-in`) and not-in (`-notin`). Each of these has two variants ([§7.8][§7.8]).
 
 The containment operators return a result of type bool that indicates whether a value occurs (or
-does not occur) at least once in the elements of an array. With `-contains` and `‑notcontains`, the
+does not occur) at least once in the elements of an array. With `-contains` and `-notcontains`, the
 value is designated by the right operand and the array is designated by the left operand. With -in
 and `-notin`, the operands are reversed. The value is designated by the left operand and the array
 is designated by the right operand.
@@ -1521,6 +1533,14 @@ foreach ($t in [int],$x,[decimal],"string") {
 
 #### 7.8.4.1 The -like and -notlike operators
 
+Syntax:
+
+```Syntax
+like-operator: one of
+    -like       -clike      -ilike
+    -notlike    -cnotlike   -inotlike
+```
+
 Description:
 
 If the left operand does not designate a collection, the result has type `bool`. Otherwise, the
@@ -1548,6 +1568,14 @@ Examples:
 ```
 
 #### 7.8.4.2 The -match and -notmatch operators
+
+Syntax:
+
+```Syntax
+match-operator: one of
+    -match      -cmatch     -imatch
+    -notmatch   -cnotmatch  -inotmatch
+```
 
 Description:
 
@@ -1578,6 +1606,13 @@ Examples:
 
 #### 7.8.4.3 The -replace operator
 
+Syntax:
+
+```Syntax
+binary-replace-operator: one of
+    -replace    -creplace   -ireplace
+```
+
 Description:
 
 The `-replace` operator allows text replacement in one or more strings designated by the left
@@ -1589,7 +1624,7 @@ operand using the values designated by the right operand. This operator has two 
 - An array of 2 objects containing the string to be located, followed by the replacement string.
 
 If the left operand designates a string, the result has type string. If the left operand designates
-a 1‑dimensional array of string, the result is an unconstrained 1-dimensional array, whose length is
+a 1-dimensional array of string, the result is an unconstrained 1-dimensional array, whose length is
 the same as for left operand's array, containing the input strings after replacement has completed.
 
 This operator supports submatches ([§7.8.4.6][§7.8.4.6]).
@@ -1623,6 +1658,13 @@ Examples:
 ```
 
 #### 7.8.4.5 The binary -split operator
+
+Syntax:
+
+```Syntax
+binary-split-operator: one of
+    -split      -csplit     -isplit
+```
 
 Description:
 
@@ -1768,10 +1810,9 @@ Syntax:
 
 ```Syntax
 bitwise-expression:
-    comparison-expression
-    bitwise-expression -band new-lines~opt~ comparison-expression
-    bitwise-expression -bor new-lines~opt~ comparison-expression
-    bitwise-expression -bxor new-lines~opt~ comparison-expression
+    primary-expression -band new-lines~opt~ expression
+    primary-expression -bor new-lines~opt~ expression
+    primary-expression -bxor new-lines~opt~ expression
 ```
 
 Description:
@@ -1810,10 +1851,9 @@ Syntax:
 
 ```Syntax
 logical-expression:
-    bitwise-expression
-    logical-expression -and new-lines~opt~ bitwise-expression
-    logical-expression -or new-lines~opt~ bitwise-expression
-    logical-expression -xor new-lines~opt~ bitwise-expression
+    primary-expression -and new-lines~opt~ expression
+    primary-expression -or new-lines~opt~ expression
+    primary-expression -xor new-lines~opt~ expression
 ```
 
 Description:
