@@ -128,7 +128,7 @@ Finally, we run the `Enable-ProcessCreationEvent` function in the remote session
 ### Example 4: Use the dynamic module in the PSEventJob object
 
 This example shows how to use the dynamic module in the **PSEventJob** object that is created when
-you include an **Action** in an event registration. First we createand and enable a timer object,
+you include an **Action** in an event registration. First we create and enable a timer object,
 then set the interval of the timer to 500 (milliseconds). The `Register-ObjectEvent` cmdlet
 registers the **Elapsed** event of the timer object. The **PSEventJob** object is saved in the
 `$Job` variable and is also available in the **Action** property of the event subscriber. For more

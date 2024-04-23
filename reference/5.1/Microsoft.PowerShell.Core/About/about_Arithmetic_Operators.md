@@ -287,7 +287,7 @@ System.Double
 
 When you perform arithmetic operations on `[bigint]` numbers, PowerShell uses
 converts all operands to `[bigint]`, which results in truncation of non-integer
-values. For example, the `[double]` value `1.9` is truncated to `1` when when
+values. For example, the `[double]` value `1.9` is truncated to `1` when
 converted to `[bigint]`.
 
 ```powershell

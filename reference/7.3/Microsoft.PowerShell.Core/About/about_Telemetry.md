@@ -1,7 +1,7 @@
 ---
 description: Describes the telemetry collected in PowerShell and how to opt-out.
 Locale: en-US
-ms.date: 10/25/2023
+ms.date: 04/22/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Telemetry
@@ -52,7 +52,9 @@ PowerShell sends this information periodically during the lifetime of the
 session for all host applications.
 
 To opt-out of this telemetry, set the environment variable
-`$env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`.
+`$env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`. For this
+environment variable to have effect, it must be set before starting the
+PowerShell process. For more information, see [about_Environment_Variables][01].
 
 The `$env:POWERSHELL_DISTRIBUTION_CHANNEL` environment variable is set by the
 installer packages to record the method and source of installation for

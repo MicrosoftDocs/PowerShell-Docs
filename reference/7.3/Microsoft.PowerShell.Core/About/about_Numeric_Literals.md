@@ -325,7 +325,7 @@ Integer type literals are parsed using the following steps:
 
 1. Determine the radix format
    - For binary formats, parse into `[BigInteger]`.
-   - For hexidecimal formats, parse into `[BigInteger]` using special casies to
+   - For hexadecimal formats, parse into `[BigInteger]` using special casies to
      retain original behaviors when the value is in the `[int]` or `[long]`
      range.
    - If neither binary nor hex, parse normally as a `[BigInteger]`.

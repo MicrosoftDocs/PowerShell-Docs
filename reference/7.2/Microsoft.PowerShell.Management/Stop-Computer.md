@@ -271,7 +271,7 @@ method of the [`Win32_OperatingSystem`](/windows/desktop/CIMWin32Prov/win32-oper
 class. This method requires the `SeShutdownPrivilege` privilege be enabled for the user account
 used to shutdown the machine.
 
-In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. For these platorms, the cmdlet
+In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. For these platforms, the cmdlet
 calls the native command `/sbin/shutdown`.
 
 ## RELATED LINKS

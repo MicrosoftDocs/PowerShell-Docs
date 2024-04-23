@@ -140,7 +140,12 @@ $schema = @'
 ```
 
 ```Output
-Test-Json: The JSON is not valid with the schema: Value is "string" but should be "integer" at '/age'
+Test-Json:
+Line |
+  35 |  '{"name": "Ashley", "age": "25"}' | Test-Json -Schema $schema
+     |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~
+     | The JSON is not valid with the schema: Value is "string" but should be "integer" at '/age'
+False
 ```
 
 In this example, we get an error because the schema expects an integer for **age** but the JSON

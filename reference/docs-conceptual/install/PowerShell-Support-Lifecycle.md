@@ -25,7 +25,7 @@ the next release (current or LTS).
 
 > [!IMPORTANT]
 > You must have the latest patch update installed to qualify for support. For example, if you're
-> running PowerShell 7.4.0 and 7.4.1 has been released, you must update to 7.4.1 to qualify for
+> running PowerShell 7.4.0 and 7.4.2 has been released, you must update to 7.4.2 to qualify for
 > support.
 
 ## Supported platforms

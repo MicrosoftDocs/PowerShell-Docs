@@ -37,7 +37,7 @@ PowerShell console. It provides:
   command line
 
 PSReadLine requires PowerShell 5.1, or newer. PSReadLine works with the default
-Windows console host, Window Terminal, and Visual Studio Code. It doesn't work
+Windows console host, Windows Terminal, and Visual Studio Code. It doesn't work
 in the Windows PowerShell ISE.
 
 PSReadLine can be installed from the PowerShell Gallery. To install PSReadLine

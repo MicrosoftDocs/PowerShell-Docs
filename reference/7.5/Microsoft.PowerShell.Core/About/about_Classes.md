@@ -73,7 +73,7 @@ To instantiate an instance of a class, use one of the following syntaxes:
 > The hashtable syntax only works for classes that have a default constructor
 > that doesn't expect any parameters. It creates an instance of the class with
 > the default constructor and then assigns the key-value pairs to the instance
-> properties. If any key in the hastable isn't a valid property name,
+> properties. If any key in the hashtable isn't a valid property name,
 > PowerShell raises an error.
 
 ## Examples

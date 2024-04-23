@@ -624,7 +624,7 @@ excessive resource use, both accidental and malicious. When timeouts are set on
 both the local and remote computer, PowerShell uses the shortest timeout
 settings.
 
-When a timeout value does not permit a operation to complete, PowerShell
+When a timeout value does not permit an operation to complete, PowerShell
 terminates the operation and generates the following error.
 
 > ERROR: The WS-Management service cannot complete the operation within the

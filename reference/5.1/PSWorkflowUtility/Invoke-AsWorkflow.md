@@ -185,7 +185,7 @@ For information, see [about_WorkflowCommonParameters](../PSWorkflow/About/about_
 
 ### System.Object
 
-You can pipe any object to the this cmdlet.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 

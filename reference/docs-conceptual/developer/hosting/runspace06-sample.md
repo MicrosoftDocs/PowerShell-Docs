@@ -6,7 +6,7 @@ title: Runspace06 Sample
 ---
 # Runspace06 Sample
 
-This sample shows how to add a module to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the module is loaded when the runspace is opened. The module provides a Get-Proc cmdlet (defined by the [GetProcessSample02 Sample](../cmdlet/getprocesssample02-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+This sample shows how to add a module to a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the module is loaded when the runspace is opened. The module provides a Get-Proc cmdlet (defined by the [GetProcessSample02 Sample](../cmdlet/getprocesssample02-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ This sample demonstrates the following.
 
 ## Example
 
-This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened. In this sample, a module that defines a Get-Proc cmdlet is added to the initial session state.
+This sample creates a runspace that uses a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened. In this sample, a module that defines a Get-Proc cmdlet is added to the initial session state.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -55,7 +55,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// </summary>
     /// <param name="args">Parameter not used.</param>
     /// <remarks>
-    /// This sample assumes that user has coppied the GetProcessSample02.dll
+    /// This sample assumes that user has copied the GetProcessSample02.dll
     /// that is produced by the GetProcessSample02 sample to the current
     /// directory.
     /// This sample demonstrates the following:

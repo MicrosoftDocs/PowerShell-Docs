@@ -418,7 +418,7 @@ Certificates are used in client certificate-based authentication. Certificates c
 only to local user accounts, not domain accounts.
 
 To see the certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command to find the
-certficate in `Cert:\CurrentUser\My`.
+certificate in `Cert:\CurrentUser\My`.
 
 > [!NOTE]
 > This feature is currently only supported on Windows OS platforms.

@@ -38,7 +38,7 @@ Describes variables that store state information for PowerShell. These variables
 Describes how boolean expressions are evaluated.
 
 ### [about_Break](about_Break.md)
-Describes a the `break` statement, which provides a way to exit the current control block.
+Describes the `break` statement, which provides a way to exit the current control block.
 
 ### [about_Built-in_Functions](about_Built-in_Functions.md)
 Describes the built-in functions in PowerShell.
@@ -47,7 +47,7 @@ Describes the built-in functions in PowerShell.
 PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
 
 ### [about_Calling_Generic_Methods](about_Calling_Generic_Methods.md)
-A generic method is a method with two parameter lists: a list of generic types and a list of method arguments.  The following examples show the new PowerShell syntax for accessing a generic method:  ```Syntax # static generic methods [type_name]::MethodName[generic_type_arguments](method_arguments)  # instance generic methods $object.MethodName[generic_type_arguments](method_arguments) ```  The `generic_type_arguments` can be a a single type or comma-separated list of types, like `[string, int]`, including other generic types like `$obj.MethodName[string, System.Collections.Generic.Dictionary[string, int]]()`  The `method_arguments` can be zero or more items.  For more information, see [Generics in .NET](/dotnet/standard/generics/).
+A generic method is a method with two parameter lists: a list of generic types and a list of method arguments.  The following examples show the new PowerShell syntax for accessing a generic method:  ```Syntax # static generic methods [type_name]::MethodName[generic_type_arguments](method_arguments)  # instance generic methods $object.MethodName[generic_type_arguments](method_arguments) ```  The `generic_type_arguments` can be a single type or comma-separated list of types, like `[string, int]`, including other generic types like `$obj.MethodName[string, System.Collections.Generic.Dictionary[string, int]]()`  The `method_arguments` can be zero or more items.  For more information, see [Generics in .NET](/dotnet/standard/generics/).
 
 ### [about_Case-Sensitivity](about_Case-Sensitivity.md)
 PowerShell is as case-insensitive as possible while preserving case.
