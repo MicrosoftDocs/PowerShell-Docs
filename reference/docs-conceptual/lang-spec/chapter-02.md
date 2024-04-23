@@ -7,10 +7,10 @@ title: Lexical structure
 
 ## 2.1 Grammars
 
-This specification shows the syntax of the PowerShell language using two grammars. The *lexical
-grammar* ([§B.1][§B.1]) shows how Unicode characters are combined to form line terminators, comments,
-white space, and tokens. The *syntactic grammar* ([§B.2][§B.2]) shows how the tokens resulting from the
-lexical grammar are combined to form PowerShell scripts.
+This specification shows the syntax of the PowerShell language using two grammars. The _lexical
+grammar_ ([§B.1][§B.1]) shows how Unicode characters are combined to form line terminators,
+comments, white space, and tokens. The _syntactic grammar_ ([§B.2][§B.2]) shows how the tokens
+resulting from the lexical grammar are combined to form PowerShell scripts.
 
 For convenience, fragments of these grammars are replicated in appropriate places throughout this
 specification.
@@ -58,11 +58,11 @@ signature-end:
 
 Description:
 
-The input source stream to a PowerShell translator is the *input* in a script, which contains a
+The input source stream to a PowerShell translator is the _input_ in a script, which contains a
 sequence of Unicode characters. The lexical processing of this stream involves the reduction of
 those characters into a sequence of tokens, which go on to become the input of syntactic analysis.
 
-A script is a group of PowerShell commands stored in a *script-file*. The script itself has no name,
+A script is a group of PowerShell commands stored in a _script-file_. The script itself has no name,
 per se, and takes its name from its source file. The end of that file indicates the end of the
 script.
 
@@ -145,11 +145,11 @@ not-greater-than-or-hash:
 
 Description:
 
-Source code can be annotated by the use of *comments*.
+Source code can be annotated by the use of _comments_.
 
-A *single-line-comment* begins with the character `#` and ends with a *new-line-character*.
+A _single-line-comment_ begins with the character `#` and ends with a _new-line-character_.
 
-A *delimited-comment* begins with the character pair `<#` and ends with the character pair `#>`.
+A _delimited-comment_ begins with the character pair `<#` and ends with the character pair `#>`.
 It can occur as part of a source line, as a whole source line, or it can span any number of source
 lines.
 
@@ -166,15 +166,15 @@ The lexical grammar implies that comments cannot occur inside tokens.
 (See §A for information about creating script files that contain special-valued comments that are
 used to generate documentation from script files.)
 
-A *requires-comment* specifies the criteria that have to be met for its containing script to be
+A _requires-comment_ specifies the criteria that have to be met for its containing script to be
 allowed to run. The primary criterion is the version of PowerShell being used to run the script. The
 minimum version requirement is specified as follows:
 
 `#requires -Version N[.n]`
 
-Where *N* is the (required) major version and *n* is the (optional) minor version.
+Where _N_ is the (required) major version and _n_ is the (optional) minor version.
 
-A *requires-comment* can be present in any script file; however, it cannot be present inside a
+A _requires-comment_ can be present in any script file; however, it cannot be present inside a
 function or cmdlet. It must be the first item on a source line. A script can contain multiple
 *requires-comment*s.
 
@@ -184,9 +184,9 @@ followed by a single-line comment. As well as following white space, the comment
 also be preceded by any expression-terminating or statement-terminating character (such as `)`, `}`,
 `]`, `'`, `"`, or `;`).
 
-A *requires-comment* cannot be present inside a snap-in.
+A _requires-comment_ cannot be present inside a snap-in.
 
-There are four other forms of a *requires-comment*:
+There are four other forms of a _requires-comment_:
 
 ```Syntax
 #requires --Assembly AssemblyId
@@ -210,7 +210,7 @@ whitespace:
 
 Description:
 
-*White space* consists of any sequence of one or more *whitespace* characters.
+_White space_ consists of any sequence of one or more _whitespace_ characters.
 
 Except for the fact that white space may act as a separator for tokens, it is ignored.
 
@@ -258,9 +258,9 @@ token:
 
 Description:
 
-A *token* is the smallest lexical element within the PowerShell language.
+A _token_ is the smallest lexical element within the PowerShell language.
 
-Tokens can be separated by *new-lines*, comments, white space, or any combination thereof.
+Tokens can be separated by _new-lines_, comments, white space, or any combination thereof.
 
 ### 2.3.1 Keywords
 
@@ -281,10 +281,10 @@ keyword: one of
 
 Description:
 
-A *keyword* is a sequence of characters that has a special meaning when used in a context-dependent
-place. Most often, this is as the first token in a *statement*; however, there are other locations,
+A _keyword_ is a sequence of characters that has a special meaning when used in a context-dependent
+place. Most often, this is as the first token in a _statement_; however, there are other locations,
 as indicated by the grammar. (A token that looks like a keyword, but is not being used in a keyword
-context, is a *command-name* or a *command-argument*.)
+context, is a _command-name_ or a _command-argument_.)
 
 The keywords `class`, `define`, `from`, `using`, and `var` are reserved for future use.
 
@@ -353,9 +353,9 @@ discussed in [§3.5][§3.5].
 The variables `$$` and `$^` are reserved for use in an interactive environment, which is outside the
 scope of this specification.
 
-There are two ways of writing a variable name: A *braced variable name*, which begins with `$`,
+There are two ways of writing a variable name: A _braced variable name_, which begins with `$`,
 followed by a curly bracket-delimited set of one or more almost-arbitrary characters; and an
-*ordinary variable name*, which also begins with `$`, followed by a set of one or more characters
+_ordinary variable name_, which also begins with `$`, followed by a set of one or more characters
 from a more restrictive set than a braced variable name allows. Every ordinary variable name can be
 expressed using a corresponding braced variable name.
 
@@ -373,7 +373,7 @@ ${E:\\File.txt}
 ```
 
 There is no limit on the length of a variable name, all characters in a variable name are
-significant, and letter case is *not* distinct.
+significant, and letter case is _not_ distinct.
 
 There are several different kinds of variables: user-defined ([§2.3.2.1][§2.3.2.1]), automatic
 ([§2.3.2.2][§2.3.2.2]), and preference ([§2.3.2.3][§2.3.2.3]). They can all coexist in the same scope ([§3.5][§3.5]).
@@ -389,7 +389,7 @@ Get-Power -exponent 3 -base 5 # " " "
 
 Each argument is passed by position or name, one at a time. However, a set of arguments can be
 passed as a group with expansion into individual arguments being handled by the runtime environment.
-This automatic argument expansion is known as *splatting*. For example,
+This automatic argument expansion is known as _splatting_. For example,
 
 ```powershell
 $values = 5,3 # put arguments into an array
@@ -411,7 +411,7 @@ This notation can only be used in an argument to a command.
 Names are partitioned into various namespaces each of which is stored on a virtual drive
 ([§3.1][§3.1]). For example, variables are stored on `Variable:`, environment variables are stored on
 `Env:`, functions are stored on `Function:`, and aliases are stored on `Alias:`. All of these names
-can be accessed as variables using the *variable-namespace* production within *variable-scope*. For
+can be accessed as variables using the _variable-namespace_ production within _variable-scope_. For
 example,
 
 ```powershell
@@ -548,14 +548,14 @@ non-double-quote-char:
 
 Description:
 
-When a command is invoked, information may be passed to it via one or more *arguments* whose values
-are accessed from within the command through a set of corresponding *parameters*. The process of
-matching parameters to arguments is called *parameter binding*.
+When a command is invoked, information may be passed to it via one or more _arguments_ whose values
+are accessed from within the command through a set of corresponding _parameters_. The process of
+matching parameters to arguments is called _parameter binding_.
 
 There are three kinds of argument:
 
-- Switch parameter ([§8.10.5][§8.10.5]) -- This has the form *command-parameter* where
-  *first-parameter-char* and *parameter-chars* together make up the switch name, which corresponds
+- Switch parameter ([§8.10.5][§8.10.5]) -- This has the form _command-parameter_ where
+  _first-parameter-char_ and _parameter-chars_ together make up the switch name, which corresponds
   to the name of a parameter (without its leading `-`) in the command being invoked. If the trailing
   colon is omitted, the presence of this argument indicates that the corresponding parameter be set
   to `$true`. If the trailing colon is present, the argument immediately following must designate a
@@ -567,8 +567,8 @@ There are three kinds of argument:
   Set-MyProcess -Strict: $true
   ```
 
-- Parameter with argument ([§8.10.2][§8.10.2]) -- This has the form *command-parameter* where
-  *first-parameter-char* and *parameter-chars* together make up the parameter name, which
+- Parameter with argument ([§8.10.2][§8.10.2]) -- This has the form _command-parameter_ where
+  _first-parameter-char_ and _parameter-chars_ together make up the parameter name, which
   corresponds to the name of a parameter (without its leading -) in the command being invoked. There
   must be no trailing colon. The argument immediately following designates an associated value. For
   example, given a command `Get-Power`, which has parameters `$base` and `$exponent`, the following
@@ -657,16 +657,16 @@ numeric-multiplier: one of
 Description:
 
 The type of an integer literal is determined by its value, the presence or absence of
-*long-type-suffix*, and the presence of a *numeric-multiplier* ([§2.3.5.1.3][§2.3.5.1.3]).
+_long-type-suffix_, and the presence of a _numeric-multiplier_ ([§2.3.5.1.3][§2.3.5.1.3]).
 
-For an integer literal with no *long-type-suffix*
+For an integer literal with no _long-type-suffix_
 
 - If its value can be represented by type int ([§4.2.3][§4.2.3]), that is its type;
 - Otherwise, if its value can be represented by type long ([§4.2.3][§4.2.3]), that is its type.
 - Otherwise, if its value can be represented by type decimal ([§2.3.5.1.2][§2.3.5.1.2]), that is its type.
 - Otherwise, it is represented by type double ([§2.3.5.1.2][§2.3.5.1.2]).
 
-For an integer literal with *long-type-suffix*
+For an integer literal with _long-type-suffix_
 
 - If its value can be represented by type long ([§4.2.3][§4.2.3]), that is its type;
 - Otherwise, that literal is ill formed.
@@ -717,19 +717,19 @@ dash:
 
 Description:
 
-A real literal may contain a *numeric-multiplier* ([§2.3.5.1.3][§2.3.5.1.3]).
+A real literal may contain a _numeric-multiplier_ ([§2.3.5.1.3][§2.3.5.1.3]).
 
-There are two kinds of real literal: *double* and *decimal*. These are indicated by the absence or
-presence, respectively, of *decimal-type-suffix*. (There is no such thing as a *float real
-literal*.)
+There are two kinds of real literal: _double_ and _decimal_. These are indicated by the absence or
+presence, respectively, of _decimal-type-suffix_. (There is no such thing as a _float real
+literal_.)
 
 A double real literal has type double ([§4.2.4.1][§4.2.4.1]). A decimal real literal has type decimal
 ([§4.2.4.2][§4.2.4.2]). Trailing zeros in the fraction part of a decimal real literal are significant.
 
-If the value of *exponent-part*'s *decimal-digits* in a double real literal is less than the
-minimum supported, the value of that double real literal is 0. If the value of *exponent-part*'s
-*decimal-digits* in a decimal real literal is less than the minimum supported, that literal is ill
-formed. If the value of *exponent-part*'s *decimal-digits* in a double or decimal real literal is
+If the value of _exponent-part_'s _decimal-digits_ in a double real literal is less than the
+minimum supported, the value of that double real literal is 0. If the value of _exponent-part_'s
+_decimal-digits_ in a decimal real literal is less than the minimum supported, that literal is ill
+formed. If the value of _exponent-part_'s _decimal-digits_ in a double or decimal real literal is
 greater than the maximum supported, that literal is ill formed.
 
 Some examples of double real literals are 1., 1.23, .45e35, 32.e+12, and 123.456E-231.
@@ -768,8 +768,8 @@ numeric-multiplier: *one of*
 
 Description:
 
-For convenience, integer and real literals can contain a *numeric-multiplier*, which indicates one
-of a set of commonly used powers of 10. *numeric-multiplier* can be written in any combination of
+For convenience, integer and real literals can contain a _numeric-multiplier_, which indicates one
+of a set of commonly used powers of 10. _numeric-multiplier_ can be written in any combination of
 upper- or lowercase letters.
 
 | **Multiplier** | **Meaning**                                 | **Example**                    |
@@ -894,13 +894,13 @@ Description:
 
 There are four kinds of string literals:
 
-- *verbatim-string-literal* (single-line single-quoted), which is a sequence of zero or more
+- _verbatim-string-literal_ (single-line single-quoted), which is a sequence of zero or more
   characters delimited by a pair of *single-quote-character*s. Examples are '' and 'red'.
-- *expandable-string-literal* (single-line double-quoted), which is a sequence of zero or more
+- _expandable-string-literal_ (single-line double-quoted), which is a sequence of zero or more
   characters delimited by a pair of *double-quote-character*s. Examples are "" and "red".
-- *verbatim-here-string-literal* (multi-line single-quoted), which is a sequence of zero or more
-  characters delimited by the character pairs @*single-quote-character* and
-  *single-quote-character*@, respectively, all contained on two or more source lines. Examples are:
+- _verbatim-here-string-literal_ (multi-line single-quoted), which is a sequence of zero or more
+  characters delimited by the character pairs @_single-quote-character_ and
+  _single-quote-character_@, respectively, all contained on two or more source lines. Examples are:
 
   ```powershell
   @'
@@ -916,9 +916,9 @@ There are four kinds of string literals:
   '@
   ```
 
-- *expandable-here-string-literal* (multi-line double-quoted), which is a sequence of zero or more
-  characters delimited by the character pairs @*double-quote-character* and
-  *double-quote-character*@, respectively, all contained on two or more source lines. Examples are:
+- _expandable-here-string-literal_ (multi-line double-quoted), which is a sequence of zero or more
+  characters delimited by the character pairs @_double-quote-character_ and
+  _double-quote-character_@, respectively, all contained on two or more source lines. Examples are:
 
   ```powershell
   @"
@@ -939,20 +939,20 @@ For *verbatim-here-string-literal*s and *expandable-here-string-literal*s, excep
 delimiter-character pair, and no characters may precede on the same source line as the closing
 delimiter character pair.
 
-The *body* of a *verbatim-here-string-literal* or an *expandable-here-string-literal* begins at the
+The _body_ of a _verbatim-here-string-literal_ or an _expandable-here-string-literal_ begins at the
 start of the first source line following the opening delimiter, and ends at the end of the last
 source line preceding the closing delimiter. The body may be empty. The line terminator on the last
 source line preceding the closing delimiter is not part of that literal's body.
 
 A literal of any of these kinds has type string ([§4.3.1][§4.3.1]).
 
-The character used to delimit a *verbatim-string-literal* or *expandable-string-literal* can be
+The character used to delimit a _verbatim-string-literal_ or _expandable-string-literal_ can be
 contained in such a string literal by writing that character twice, in succession. For example,
-`'What''s the time?'` and `"I said, ""Hello""."`. However, a *single-quote-character* has no
-special meaning inside an *expandable-string-literal*, and a *double-quote-character* has no special
-meaning inside a *verbatim-string-literal*.
+`'What''s the time?'` and `"I said, ""Hello""."`. However, a _single-quote-character_ has no
+special meaning inside an _expandable-string-literal_, and a _double-quote-character_ has no special
+meaning inside a _verbatim-string-literal_.
 
-An *expandable-string-literal* and an *expandable-here-string-literal* may contain
+An _expandable-string-literal_ and an _expandable-here-string-literal_ may contain
 *escaped-character*s ([§2.3.7][§2.3.7]). For example, when the following string literal is written to the
 pipeline, the result is as shown below:
 
@@ -965,9 +965,9 @@ column1<horizontal-tab>column2<new-line>
 second line, "Hello", `Q5!
 ```
 
-If an *expandable-string-literal* or *expandable-here-string-literal* contains the name of a
+If an _expandable-string-literal_ or _expandable-here-string-literal_ contains the name of a
 variable, unless that name is preceded immediately by an escape character, it is replaced by the
-string representation of that variable's value ([§6.7][§6.7]). This is known as *variable substitution*.
+string representation of that variable's value ([§6.7][§6.7]). This is known as _variable substitution_.
 
 > [!NOTE]
 > If the variable name is part of some larger expression, only the variable name is replaced. For
@@ -981,7 +981,7 @@ $count = 10
 "The value of `$count is $count"
 ```
 
-results in the *expandable-string-literal*
+results in the _expandable-string-literal_
 
 ```Output
 The value of $count is 10.
@@ -1001,10 +1001,10 @@ $a[0] is red blue[0], $a[0] is red
 ```
 
 *expandable-string-literal*s and *expandable-here-string-literal*s also support a kind of
-substitution called *sub-expression expansion*, by treating text of the form `$( ... )` as a
-*sub-expression* ([§7.1.6][§7.1.6]). Such text is replaced by the string representation of that
-expression's value ([§6.8][§6.8]). Any white space used to separate tokens within *sub-expression*'s
-*statement-list* is ignored as far as the result string's construction is concerned.
+substitution called _sub-expression expansion_, by treating text of the form `$( ... )` as a
+_sub-expression_ ([§7.1.6][§7.1.6]). Such text is replaced by the string representation of that
+expression's value ([§6.8][§6.8]). Any white space used to separate tokens within _sub-expression_'s
+_statement-list_ is ignored as far as the result string's construction is concerned.
 
 The examples,
 
@@ -1030,7 +1030,7 @@ $i = 5; $j = 10; $k = 15
 "`$i, `$j, and `$k have the values $( $i; $j; $k )"
 ```
 
-results in the following *expandable-string-literal*:
+results in the following _expandable-string-literal_:
 
 ```Output
 $i, $j, and $k have the values 5 10 15
@@ -1048,18 +1048,18 @@ In the following example,
 "First 10 squares: $(for ($i = 1; $i -le 10; ++$i) { "$i $($i*$i) " })"
 ```
 
-the resulting *expandable-string-literal* is as follows:
+the resulting _expandable-string-literal_ is as follows:
 
 ```Output
 First 10 squares: 1 1 2 4 3 9 4 16 5 25 6 36 7 49 8 64 9 81 10 100
 ```
 
-As shown, a *sub-expression* can contain string literals having both variable substitution and
-sub-expression expansion. Note also that the inner *expandable-string-literal*'s delimiters need
-not be escaped; the fact that they are inside a *sub-expression* means they cannot be terminators
-for the outer *expandable-string-literal*.
+As shown, a _sub-expression_ can contain string literals having both variable substitution and
+sub-expression expansion. Note also that the inner _expandable-string-literal_'s delimiters need
+not be escaped; the fact that they are inside a _sub-expression_ means they cannot be terminators
+for the outer _expandable-string-literal_.
 
-An *expandable-string-literal* or *expandable-here-string-literal* containing a variable
+An _expandable-string-literal_ or _expandable-here-string-literal_ containing a variable
 substitution or sub-expression expansion is evaluated each time that literal is used; for example,
 
 ```powershell
@@ -1080,7 +1080,7 @@ $s2 = >$a = 11<
 $s2 = >$a = 10<
 ```
 
-The contents of a *verbatim-here-string-literal* are taken verbatim, including any leading or
+The contents of a _verbatim-here-string-literal_ are taken verbatim, including any leading or
 trailing white space within the body. As such, embedded *single-quote-character*s need not be
 doubled-up, and there is no substitution or expansion. For example,
 
@@ -1098,7 +1098,7 @@ That's it!
 2 * 3 = $(2*3)
 ```
 
-The contents of an *expandable-here-string-literal* are subject to substitution and expansion, but
+The contents of an _expandable-here-string-literal_ are subject to substitution and expansion, but
 any leading or trailing white space within the body but outside any *sub-expression*s is taken
 verbatim, and embedded *double-quote-character*s need not be doubled-up. For example,
 
@@ -1128,7 +1128,7 @@ xyz
 ```
 
 the second line of the body has two leading spaces, and the first and second lines of the body have
-line terminators; however, the terminator for the second line of the body is *not* part of that
+line terminators; however, the terminator for the second line of the body is _not_ part of that
 body. The resulting literal is equivalent to:
 `"abc<implementation-defined character sequence>xyz"`.
 
@@ -1156,13 +1156,13 @@ See the automatic variables `$false` and `$true` ([§2.3.2.2][§2.3.2.2]).
 #### 2.3.5.5 Array literals
 
 PowerShell allows expressions of array type (§9) to be written using the unary comma operator
-([§7.2.1][§7.2.1]), *array-expression* ([§7.1.7][§7.1.7]), the binary comma operator ([§7.3][§7.3]), and the range
+([§7.2.1][§7.2.1]), _array-expression_ ([§7.1.7][§7.1.7]), the binary comma operator ([§7.3][§7.3]), and the range
 operator ([§7.4][§7.4]).
 
 #### 2.3.5.6 Hash literals
 
 PowerShell allows expressions of type Hashtable (§10) to be written using a
-*hash-literal-expression* ([§7.1.9][§7.1.9])
+_hash-literal-expression_ ([§7.1.9][§7.1.9])
 
 #### 2.3.5.7 Type names
 
@@ -1250,9 +1250,9 @@ Description:
 > Editor's Note: The pipeline chain operators `&&` and `||` were introduced in PowerShell 7. See
 > [about_Pipeline_Chain_Operators](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators).
 
-The name following *dash* in an operator is reserved for that purpose only in an operator context.
+The name following _dash_ in an operator is reserved for that purpose only in an operator context.
 
-An operator that begins with *dash* must not have any white space between that *dash* and the token
+An operator that begins with _dash_ must not have any white space between that _dash_ and the token
 that follows it.
 
 ### 2.3.7 Escaped characters
@@ -1266,9 +1266,9 @@ escaped-character:
 
 Description:
 
-An *escaped character* is a way to assign a special interpretation to a character by giving it a
+An _escaped character_ is a way to assign a special interpretation to a character by giving it a
 prefix Backtick character (U+0060). The following table shows the meaning of each
-*escaped-character*:
+_escaped-character_:
 
 | Escaped Character |                                                           Meaning                                                            |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -1313,7 +1313,7 @@ written as ``Test` Data.txt`` (as well as `'Test Data.txt'` or `"Test Data.txt"`
 [§7.2.1]: chapter-07.md#721-unary-comma-operator
 [§7.3]: chapter-07.md#73-binary-comma-operator
 [§7.4]: chapter-07.md#74-range-operator
-[§7.7.2]: chapter-07.md#772-string-concatentaion
+[§7.7.2]: chapter-07.md#772-string-concatenation
 [§8.10.2]: chapter-08.md#8102-workflow-functions
 [§8.10.5]: chapter-08.md#8105-the-switch-type-constraint
 [§8.14]: chapter-08.md#814-parameter-binding

@@ -2286,7 +2286,7 @@ dir -Verbose 4>&2 2> error2.txt
 [§7.6.4]: chapter-07.md#764-division
 [§7.6.5]: chapter-07.md#765-remainder
 [§7.7.1]: chapter-07.md#771-addition
-[§7.7.2]: chapter-07.md#772-string-concatentaion
+[§7.7.2]: chapter-07.md#772-string-concatenation
 [§7.7.3]: chapter-07.md#773-array-concatenation
 [§7.7.5]: chapter-07.md#775-subtraction
 [§7.7]: chapter-07.md#77-additive-operators
