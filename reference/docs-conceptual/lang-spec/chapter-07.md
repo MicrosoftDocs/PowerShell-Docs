@@ -995,7 +995,7 @@ array of 1 string, which is empty.
 Examples:
 
 ```powershell
--split " red&#96;tblue&#96;ngreen " # 3 strings: "red", "blue", "green"
+-split " red`tblue`ngreen " # 3 strings: "red", "blue", "green"
 -split ("yes no", "up down") # 4 strings: "yes", "no", "up", "down"
 -split " " # 1 (empty) string
 ```
