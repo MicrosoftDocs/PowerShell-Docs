@@ -6,7 +6,7 @@ title: Markdown best practices
 # Markdown best practices
 
 This article provides specific guidance for using Markdown in our documentation. This is not a
-tutorial for Markdown, but list specific rules and best practice for Markdown in the PowerShell
+tutorial for Markdown, but lists specific rules and best practices for Markdown in the PowerShell
 docs. If you need a tutorial for Markdown, see this [Markdown cheatsheet][12].
 
 ## Markdown specifics
@@ -93,7 +93,7 @@ List should be surrounded by a single blank line.
 For example:
 
 ```Markdown
-This is a list that contain child elements under a bullet item.
+This is a list that contains child elements under a bullet item.
 
 - First bullet item
 
@@ -240,7 +240,7 @@ The delimiter row consists of cells whose only content are hyphens (`-`), and op
 or trailing colon (`:`), or both, to indicate left, right, or center alignment respectively.
 
 For small tables, consider using a list instead. Lists are easier to maintain and read, can be
-reflowed to fit within the 100-character line limit, and are more accessible for uses that use
+reflowed to fit within the 100-character line limit, and are more accessible for users that use
 screen readers for visual assistance.
 
 For more information, see _Tables_ section of [Markdown reference for Microsoft Learn][05].
@@ -328,26 +328,26 @@ code span. For example:
 PowerShell cmdlet names use the `Verb-Noun` naming convention.
 ```
 
-This examples renders as:
+This example renders as:
 
 PowerShell cmdlet names use the `Verb-Noun` naming convention.
 
 ### Code blocks
 
-Code blocks are used for command example, multi-line code samples, query languages, and outputs.
+Code blocks are used for command examples, multi-line code samples, query languages, and outputs.
 There are two ways to indicate a section of text in an article file is a code block: by fencing it
 in triple-backticks (` ``` `) or by indenting it.
 
-Never use indentation because it's too easy to get wrong and it may be hard for another writer to
+Never use indentation because it's too easy to get wrong and it may be difficult for another writer to
 understand your intent when they need to edit your article.
 
 Fenced code blocks can include an optional tag that indicates the language syntax contained in the
 block. The publishing platform supports a list of [language tags][04]. The language tag is used to
 provide syntax highlighting when the article is rendered on the webpage. The language tag is not
-case-sensitive, but except for a few special cases, you should use lowercase.
+case-sensitive, but you should use lowercase except for a few special cases.
 
-- Untagged code fences can be used for syntax blocks or other content that you don't have syntax
-  highlighting.
+- Code fences without tags can be used for syntax blocks or other types of content where syntax
+highlighting is not required.
 - When showing output from a command, use a tagged code fence with the language tag `Output`. The
   rendered box is labeled as **Output** and doesn't have syntax highlighting.
 - If the output is in a specific supported language, use the appropriate language tag. For example,
