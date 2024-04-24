@@ -9,8 +9,6 @@ This article provides specific guidance for using Markdown in our documentation.
 tutorial for Markdown, but lists specific rules and best practices for Markdown in the PowerShell
 docs. If you need a tutorial for Markdown, see this [Markdown cheatsheet][12].
 
-## Markdown specifics
-
 The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig][06] to
 process the Markdown documents. Markdig parses the documents based on the rules of the latest
 [CommonMark][10] specification. OPS follows the CommonMark specification and adds some extensions
@@ -22,7 +20,7 @@ close attention to the details provided in this document.
 We use the [markdownlint][08] extension in VS Code to enforce our style and formatting rules. This
 extension is installed as part of the **Learn Authoring Pack**.
 
-### Blank lines, spaces, and tabs
+## Blank lines, spaces, and tabs
 
 Blank lines also signal the end of a block in Markdown.
 
@@ -37,7 +35,7 @@ Spacing is significant in Markdown.
 - Remove extra spaces at the end of lines. Trailing spaces can change how Markdown renders.
 - Always use spaces instead of tabs (hard tabs).
 
-### Titles and headings
+## Titles and headings
 
 Only use [ATX headings][07] (`#` style, as opposed to `=` or `-` style headers).
 
@@ -50,7 +48,7 @@ Only use [ATX headings][07] (`#` style, as opposed to `=` or `-` style headers).
 - Limit depth to H3 or H4
 - Avoid using bold or other markup in headers
 
-### Limit line length to 100 characters
+## Limit line length to 100 characters
 
 This applies to conceptual articles and cmdlet reference. Limiting the line length improves the
 readability of `git` diffs and history. It also makes it easier for other writers to make
@@ -64,7 +62,7 @@ difficult to reflow, depending on the content and the code language. And you can
 In these cases, use your best judgment to keep the content as close to the 100-character limit as
 possible.
 
-### Emphasis
+## Emphasis
 
 For emphasis, Markdown supports bold and italics. Markdown allows you to use either `*` or `_` to
 mark the emphasis. However, to be consistent and show intent:
@@ -75,14 +73,14 @@ mark the emphasis. However, to be consistent and show intent:
 Following this pattern makes it easier for others to understand the intent of the markup when there
 is a mix of bold and italics in a document.
 
-### Lists
+## Lists
 
 If your list has multiple sentences or paragraphs, consider using a sublevel header rather than a
 list.
 
 List should be surrounded by a single blank line.
 
-#### Unordered lists
+### Unordered lists
 
 - Don't end list items with a period unless they contain multiple sentences.
 - Use the hyphen character (`-`) for list item bullets. This avoids confusion with emphasis markup
@@ -120,9 +118,9 @@ This is a list that contains child elements under a bullet item.
 - Second bullet item
 - Third bullet item
 
-#### Ordered lists
+### Ordered lists
 
-- All items in a numbered listed should use the number `1.` rather than incrementing each item.
+- All items in a numbered list should use the number `1.` rather than incrementing each item.
   - Markdown rendering increments the value automatically.
   - This makes reordering items easier and standardizes the indentation of subordinate content.
 - To include a paragraph or other elements under a numbered item, align indentation with the first
@@ -152,7 +150,7 @@ The resulting Markdown is rendered as follows:
 
 1. The next numbered item starts here.
 
-### Images
+## Images
 
 The syntax to include an image is:
 
@@ -173,11 +171,11 @@ image.
     images for that article to that new folder.
 - Don't share images between articles.
   - If an image is used by multiple articles, each folder must have a copy of that image.
-  - This prevents a change to an image in one article affecting another article.
+  - This prevents a change to an image in one article from affecting another article.
 
 The following image file types are supported: `*.png`, `*.gif`, `*.jpeg`, `*.jpg`, `*.svg`
 
-### Markdown extension - Alert boxes
+## Markdown extension - Alert boxes
 
 The [Learn Authoring Pack][01] contains tools that support features unique to our publishing
 system. Alerts are a Markdown extension to create blockquotes that render with colors and icons
@@ -227,7 +225,7 @@ Warning block
 > [!WARNING]
 > Dangerous certain consequences of an action.
 
-### Markdown extension - Tables
+## Markdown extension - Tables
 
 A table is an arrangement of data with rows and columns, consisting of a single header row, a
 delimiter row separating the header from the data, and zero or more data rows.
@@ -245,7 +243,7 @@ screen readers for visual assistance.
 
 For more information, see _Tables_ section of [Markdown reference for Microsoft Learn][05].
 
-### Hyperlinks
+## Hyperlinks
 
 - Hyperlinks must use Markdown syntax `[friendlyname](url-or-path)`.
 - The publishing system supports three types of links:
@@ -270,7 +268,7 @@ For more information, see _Tables_ section of [Markdown reference for Microsoft 
   - the link reference - `[friendlyname][id]`
   - the link definition - `[id]: url-or-path`
 
-#### URL-type Links
+### URL-type Links
 
 - URL links to other articles on `learn.microsoft.com` must use site-relative paths. The simplest
   way to create a site-relative link is to copy the URL from your browser then remove
@@ -285,7 +283,7 @@ For more information, see _Tables_ section of [Markdown reference for Microsoft 
   parameter to the query string. For example: `?view=powershell-5.1&preserve-view=true`
 - On Microsoft sites, URL links don't contain file extensions (for example, no `.md`)
 
-#### File-type links
+### File-type links
 
 - A file link is used to link from one reference article to another, or from one conceptual
   article to another in the same docset.
@@ -296,7 +294,7 @@ For more information, see _Tables_ section of [Markdown reference for Microsoft 
 - All file paths use forward-slash (`/`) characters
 - Include the file extension (for example, `.md`)
 
-#### Cross-reference links
+### Cross-reference links
 
 Cross-reference links are a special feature supported by the publishing system. You can use
 cross-reference links in conceptual articles to link to .NET API or cmdlet reference.
@@ -308,7 +306,7 @@ cross-reference links in conceptual articles to link to .NET API or cmdlet refer
 
   `[Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)`
 
-#### Deep linking
+### Deep linking
 
 Deep linking is allowed on both URL and file links.
 
@@ -319,7 +317,7 @@ Deep linking is allowed on both URL and file links.
 
 For more information, see [Use links in documentation][02].
 
-### Code spans
+## Code spans
 
 Code spans are used for inline code snippets within a paragraph. Use single backticks to indicate a
 code span. For example:
@@ -332,7 +330,7 @@ This example renders as:
 
 PowerShell cmdlet names use the `Verb-Noun` naming convention.
 
-### Code blocks
+## Code blocks
 
 Code blocks are used for command examples, multi-line code samples, query languages, and outputs.
 There are two ways to indicate a section of text in an article file is a code block: by fencing it
