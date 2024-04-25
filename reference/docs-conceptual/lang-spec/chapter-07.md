@@ -988,10 +988,10 @@ $i = 2147483647       # $i holds a value of type int
 
 [int]$k = 0           # $k is constrained to int
 $k = [int]::MinValue  # $k is set to -2147483648
-$--k                  # -2147483649 is too small to fit, imp-def behavior
+--$k                  # -2147483649 is too small to fit, imp-def behavior
 
 $x = $null            # target is unconstrained, $null goes to [int]0
-$--x                  # value treated as int, 0 becomes -1
+--$x                  # value treated as int, 0 becomes -1
 ```
 
 ### 7.2.7 The unary -join operator
