@@ -972,7 +972,7 @@ Examples:
 
 ```powershell
 $i = 0                # $i = 0
-$++i                  # $i is incremented by 1
+++$i                  # $i is incremented by 1
 $j = --$i             # $i is decremented then $j takes on the value of $i
 
 $a = 1,2,3
