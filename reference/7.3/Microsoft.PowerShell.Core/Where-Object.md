@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/16/2023
+ms.date: 04/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Where-Object
@@ -1117,7 +1117,8 @@ Accept wildcard characters: False
 
 ### -Property
 
-Specifies the name of an object property. The parameter name, **Property**, is optional.
+Specifies the name of a property of the input object. The property must be an instance property, not
+a static property. This is a positional parameter, so the name, **Property**, is optional.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

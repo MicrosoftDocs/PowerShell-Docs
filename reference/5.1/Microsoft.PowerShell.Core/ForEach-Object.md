@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/13/2023
+ms.date: 04/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -49,7 +49,7 @@ command.
   [about_functions](about/about_functions.md#piping-objects-to-functions).
 
   > [!NOTE]
-  > The script blocks run in the caller's scope. Therefore the blocks have access to variables in
+  > The script blocks run in the caller's scope. Therefore, the blocks have access to variables in
   > that scope and can create new variables that persist in that scope after the cmdlet completes.
 
 - **Operation statement**. You can also write an operation statement, which is much more like
@@ -86,7 +86,7 @@ Get-ChildItem $PSHOME |
   ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; " " }}
 ```
 
-If the object is not a directory, the script block gets the name of the file, divides the value of
+If the object isn't a directory, the script block gets the name of the file, divides the value of
 its **Length** property by 1024, and adds a space (" ") to separate it from the next entry. The
 cmdlet uses the **PSISContainer** property to determine whether an object is a directory.
 
@@ -96,16 +96,17 @@ This example writes the 1000 most recent events from the System event log to a t
 current time is displayed before and after processing the events.
 
 ```powershell
-$Events = Get-EventLog -LogName System -Newest 1000
-$events | ForEach-Object -Begin {Get-Date} -Process {Out-File -FilePath Events.txt -Append -InputObject $_.Message} -End {Get-Date}
+Get-EventLog -LogName System -Newest 1000 |
+    ForEach-Object -Begin {Get-Date} -Process {
+        Out-File -FilePath Events.txt -Append -InputObject $_.Message
+    } -End {Get-Date}
 ```
 
-`Get-EventLog` gets the 1000 most recent events from the System event log and stores them in the
-`$Events` variable. `$Events` is then piped to the `ForEach-Object` cmdlet. The **Begin** parameter
-displays the current date and time. Next, the **Process** parameter uses the `Out-File` cmdlet to
-create a text file that is named events.txt and stores the message property of each of the events in
-that file. Last, the **End** parameter is used to display the date and time after all the processing
-has completed.
+`Get-EventLog` gets the 1000 most recent events from the System event log and pipes them to the
+`ForEach-Object` cmdlet. The **Begin** parameter displays the current date and time. Next, the
+**Process** parameter uses the `Out-File` cmdlet to create a text file that's named events.txt and
+stores the message property of each of the events in that file. Last, the **End** parameter is used
+to display the date and time after all the processing has completed.
 
 ### Example 4: Change the value of a Registry key
 
@@ -114,13 +115,15 @@ This example changes the value of the **RemotePath** registry entry in all the s
 
 ```powershell
 Get-ItemProperty -Path HKCU:\Network\* |
-  ForEach-Object {Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper();}
+  ForEach-Object {
+    Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper()
+  }
 ```
 
 You can use this format to change the form or content of a registry entry value.
 
 Each subkey in the **Network** key represents a mapped network drive that reconnects at sign on. The
-**RemotePath** entry contains the UNC path of the connected drive. For example, if you map the E:
+**RemotePath** entry contains the UNC path of the connected drive. For example, if you map the `E:`
 drive to `\\Server\Share`, an **E** subkey is created in `HKCU:\Network` with the **RemotePath**
 registry value set to `\\Server\Share`.
 
@@ -129,7 +132,7 @@ The command uses the `Get-ItemProperty` cmdlet to get all the subkeys of the **N
 the `Set-ItemProperty` command, the path is the value of the **PSPath** property of the registry
 key. This is a property of the Microsoft .NET Framework object that represents the registry key, not
 a registry entry. The command uses the **ToUpper()** method of the **RemotePath** value, which is a
-string (REG_SZ).
+string **REG_SZ**.
 
 Because `Set-ItemProperty` is changing the property of each key, the `ForEach-Object` cmdlet is
 required to access the property.
@@ -155,7 +158,7 @@ a value for `$null` as it does for other objects piped to it.
 
 ### Example 6: Get property values
 
-This example gets the value of the **Path** property of all installed PowerShell modules by using
+This example gets the value of the **Path** property of all installed PowerShell modules using
 the **MemberName** parameter of the `ForEach-Object` cmdlet.
 
 ```powershell
@@ -177,9 +180,12 @@ The commands call the **Split** method of strings. The three commands use differ
 are equivalent and interchangeable. The output is the same for all three cases.
 
 ```powershell
-"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object {$_.Split(".")}
-"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object -MemberName Split -ArgumentList "."
-"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | Foreach Split "."
+"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" |
+    ForEach-Object {$_.Split(".")}
+"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" |
+    ForEach-Object -MemberName Split -ArgumentList "."
+"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" |
+    Foreach Split "."
 ```
 
 ```Output
@@ -204,7 +210,7 @@ the **MemberName** and **ArgumentList** parameters, which are optional.
 ### Example 8: Using ForEach-Object with two script blocks
 
 In this example, we pass two script blocks positionally. All the script blocks bind to the
-**Process** parameter. However, they are treated as if they had been passed to the **Begin** and
+**Process** parameter. However, they're treated as if they had been passed to the **Begin** and
 **Process** parameters.
 
 ```powershell
@@ -220,7 +226,7 @@ process
 ### Example 9: Using ForEach-Object with more than two script blocks
 
 In this example, we pass four script blocks positionally. All the script blocks bind to the
-**Process** parameter. However, they are treated as if they had been passed to the **Begin**,
+**Process** parameter. However, they're treated as if they had been passed to the **Begin**,
 **Process**, and **End** parameters.
 
 ```powershell
@@ -238,7 +244,7 @@ end
 
 > [!NOTE]
 > The first script block is always mapped to the `begin` block, the last block is mapped to the
-> `end` block, and the blocks in between are all mapped to the `process` block.
+> `end` block, and the two middle blocks are mapped to the `process` block.
 
 ### Example 10: Run multiple script blocks for each pipeline item
 
@@ -324,8 +330,8 @@ the objects.
 
 When you use the **InputObject** parameter with `ForEach-Object`, instead of piping command results
 to `ForEach-Object`, the **InputObject** value is treated as a single object. This is true even if
-the value is a collection that is the result of a command, such as `-InputObject (Get-Process)`.
-Because **InputObject** cannot return individual properties from an array or collection of objects,
+the value is a collection that's the result of a command, such as `-InputObject (Get-Process)`.
+Because **InputObject** can't return individual properties from an array or collection of objects,
 we recommend that if you use `ForEach-Object` to perform operations on a collection of objects for
 those objects that have specific values in defined properties, you use `ForEach-Object` in the
 pipeline, as shown in the examples in this topic.
@@ -344,7 +350,8 @@ Accept wildcard characters: False
 
 ### -MemberName
 
-Specifies the property to get or the method to call.
+Specifies the name of the member property to get or the member method to call. The members must be
+instance members, not static members.
 
 Wildcard characters are permitted, but work only if the resulting string resolves to a unique value.
 For example, if you run `Get-Process | ForEach -MemberName *Name`, the wildcard pattern matches more
@@ -366,15 +373,15 @@ Accept wildcard characters: True
 
 ### -Process
 
-Specifies the operation that is performed on each input object. This script block is run for every
+Specifies the operation that's performed on each input object. This script block is run for every
 object in the pipeline. For more information about the `process` block, see
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
 When you provide multiple script blocks to the **Process** parameter, the first script block is
 always mapped to the `begin` block. If there are only two script blocks, the second block is mapped
 to the `process` block. If there are three or more script blocks, first script block is always
-mapped to the `begin` block, the last block is mapped to the `end` block, and the blocks in between
-are all mapped to the `process` block.
+mapped to the `begin` block, the last block is mapped to the `end` block, and the middle blocks are
+mapped to the `process` block.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock[]
@@ -390,7 +397,7 @@ Accept wildcard characters: False
 
 ### -RemainingScripts
 
-Specifies all script blocks that are not taken by the **Process** parameter.
+Specifies all script blocks that aren't taken by the **Process** parameter.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -424,7 +431,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
