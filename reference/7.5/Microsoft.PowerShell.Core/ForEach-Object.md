@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/13/2023
+ms.date: 04/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -18,21 +18,23 @@ Performs an operation against each item in a collection of input objects.
 
 ```
 ForEach-Object [-InputObject <PSObject>] [-Begin <ScriptBlock>] [-Process] <ScriptBlock[]>
- [-End <ScriptBlock>] [-RemainingScripts <ScriptBlock[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-End <ScriptBlock>] [-RemainingScripts <ScriptBlock[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### PropertyAndMethodSet
 
 ```
-ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <Object[]>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ForEach-Object [-InputObject <PSObject>] [-MemberName] <String> [-ArgumentList <Object[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ParallelParameterSet
 
 ```
 ForEach-Object -Parallel <scriptblock> [-InputObject <psobject>] [-ThrottleLimit <int>]
- [-TimeoutSeconds <int>] [-AsJob] [-UseNewRunspace] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-TimeoutSeconds <int>] [-AsJob] [-UseNewRunspace] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -121,16 +123,17 @@ This example writes the 1000 most recent events from the System event log to a t
 current time is displayed before and after processing the events.
 
 ```powershell
-$Events = Get-EventLog -LogName System -Newest 1000
-$events | ForEach-Object -Begin {Get-Date} -Process {Out-File -FilePath Events.txt -Append -InputObject $_.Message} -End {Get-Date}
+Get-EventLog -LogName System -Newest 1000 |
+    ForEach-Object -Begin {Get-Date} -Process {
+        Out-File -FilePath Events.txt -Append -InputObject $_.Message
+    } -End {Get-Date}
 ```
 
-`Get-EventLog` gets the 1000 most recent events from the System event log and stores them in the
-`$Events` variable. `$Events` is then piped to the `ForEach-Object` cmdlet. The **Begin** parameter
-displays the current date and time. Next, the **Process** parameter uses the `Out-File` cmdlet to
-create a text file that's named events.txt and stores the message property of each of the events in
-that file. Last, the **End** parameter is used to display the date and time after all the processing
-has completed.
+`Get-EventLog` gets the 1000 most recent events from the System event log and pipes them to the
+`ForEach-Object` cmdlet. The **Begin** parameter displays the current date and time. Next, the
+**Process** parameter uses the `Out-File` cmdlet to create a text file that's named events.txt and
+stores the message property of each of the events in that file. Last, the **End** parameter is used
+to display the date and time after all the processing has completed.
 
 ### Example 4: Change the value of a Registry key
 
@@ -139,13 +142,15 @@ This example changes the value of the **RemotePath** registry entry in all the s
 
 ```powershell
 Get-ItemProperty -Path HKCU:\Network\* |
-  ForEach-Object {Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper();}
+  ForEach-Object {
+    Set-ItemProperty -Path $_.PSPath -Name RemotePath -Value $_.RemotePath.ToUpper()
+  }
 ```
 
 You can use this format to change the form or content of a registry entry value.
 
 Each subkey in the **Network** key represents a mapped network drive that reconnects at sign on. The
-**RemotePath** entry contains the UNC path of the connected drive. For example, if you map the E:
+**RemotePath** entry contains the UNC path of the connected drive. For example, if you map the `E:`
 drive to `\\Server\Share`, an **E** subkey is created in `HKCU:\Network` with the **RemotePath**
 registry value set to `\\Server\Share`.
 
@@ -202,9 +207,12 @@ The commands call the **Split** method of strings. The three commands use differ
 are equivalent and interchangeable. The output is the same for all three cases.
 
 ```powershell
-"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object {$_.Split(".")}
-"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | ForEach-Object -MemberName Split -ArgumentList "."
-"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" | Foreach Split "."
+"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" |
+    ForEach-Object {$_.Split(".")}
+"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" |
+    ForEach-Object -MemberName Split -ArgumentList "."
+"Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" |
+    Foreach Split "."
 ```
 
 ```Output
@@ -249,7 +257,7 @@ In this example, we pass four script blocks positionally. All the script blocks 
 **Process**, and **End** parameters.
 
 ```powershell
-1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
+1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' } { 'end' }
 ```
 
 ```Output
@@ -263,7 +271,7 @@ end
 
 > [!NOTE]
 > The first script block is always mapped to the `begin` block, the last block is mapped to the
-> `end` block, and the blocks in between are all mapped to the `process` block.
+> `end` block, and the two middle blocks are mapped to the `process` block.
 
 ### Example 10: Run multiple script blocks for each pipeline item
 
@@ -316,7 +324,8 @@ The `$using:` keyword is used to pass the `$Message` variable into each parallel
 This example retrieves 50,000 log entries from 5 system logs on a local Windows machine.
 
 ```powershell
-$logNames = 'Security','Application','System','Windows PowerShell','Microsoft-Windows-Store/Operational'
+$logNames = 'Security', 'Application', 'System', 'Windows PowerShell',
+    'Microsoft-Windows-Store/Operational'
 
 $logEntries = $logNames | ForEach-Object -Parallel {
     Get-WinEvent -LogName $_ -MaxEvents 10000
@@ -396,11 +405,10 @@ parallel script. A non-thread-safe object, such as **System.Collections.Generic.
 not be safe to use here.
 
 > [!NOTE]
-> This example is a very inefficient use of **Parallel** parameter. The script simply adds the input
-> object to a concurrent dictionary object. It's trivial and not worth the overhead of invoking
-> each script in a separate thread. Running `ForEach-Object` normally without the **Parallel**
-> switch is much more efficient and faster. This example is only intended to demonstrate how to use
-> thread safe variables.
+> This example is an inefficient use of **Parallel** parameter. The script adds the input object to
+> a concurrent dictionary object. It's trivial and not worth the overhead of invoking each script in
+> a separate thread. Running `ForEach-Object` without the **Parallel** switch is more efficient and
+> faster. This example is only intended to demonstrate how to use thread safe variables.
 
 ### Example 15: Writing errors with parallel execution
 
@@ -481,8 +489,8 @@ $test1 = 'TestA'
 Line |
    2 |  1..2 | Foreach-Object -Parallel {
      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | The value of the using variable '$using:test2' can't be retrieved because it has not been
-     | set in the local session.
+     | The value of the using variable '$using:test2' can't be retrieved because it has
+     | not been set in the local session.
 ```
 
 The nested scriptblock can't access the `$test2` variable and an error is thrown.
@@ -491,7 +499,7 @@ The nested scriptblock can't access the `$test2` variable and an error is thrown
 
 The ThrottleLimit parameter limits the number of parallel scripts running during each instance of
 `ForEach-Object -Parallel`. It doesn't limit the number of jobs that can be created when using the
-**AsJob** parameter. Since jobs themselves run concurrently, it's possible to create a number of
+**AsJob** parameter. Since jobs themselves run concurrently, it's possible to create multiple
 parallel jobs, each running up to the throttle limit number of concurrent scriptblocks.
 
 ```powershell
@@ -533,8 +541,8 @@ Accept wildcard characters: False
 
 Causes the parallel invocation to run as a PowerShell job. A single job object is returned instead
 of output from the running script blocks. The job object contains child jobs for each parallel
-script block that runs. The job object can be used by all PowerShell job cmdlets, to monitor running
-state and retrieve data.
+script block that runs. You can use the job object with any of the PowerShell job cmdlets to see the
+running state and retrieve data.
 
 This parameter was introduced in PowerShell 7.0.
 
@@ -614,7 +622,8 @@ Accept wildcard characters: False
 
 ### -MemberName
 
-Specifies the property to get or the method to call.
+Specifies the name of the member property to get or the member method to call. The members must be
+instance members, not static members.
 
 Wildcard characters are permitted, but work only if the resulting string resolves to a unique value.
 For example, if you run `Get-Process | ForEach -MemberName *Name`, the wildcard pattern matches more
@@ -662,8 +671,8 @@ object in the pipeline. For more information about the `process` block, see
 When you provide multiple script blocks to the **Process** parameter, the first script block is
 always mapped to the `begin` block. If there are only two script blocks, the second block is mapped
 to the `process` block. If there are three or more script blocks, first script block is always
-mapped to the `begin` block, the last block is mapped to the `end` block, and the blocks in between
-are all mapped to the `process` block.
+mapped to the `begin` block, the last block is mapped to the `end` block, and the middle blocks are
+mapped to the `process` block.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock[]
@@ -828,10 +837,10 @@ can read more about these new methods here [about_arrays](./About/about_Arrays.m
 
 Using `ForEach-Object -Parallel`:
 
-- The `ForEach-Object -Parallel` parameter set uses PowerShell's internal API to run each script
-  block in a new runspace. This is significantly more overhead than running `ForEach-Object`
-  normally with sequential processing. It's important to use **Parallel** where the overhead of
-  running in parallel is small compared to work the script block performs. For example:
+- `ForEach-Object -Parallel` runs each script block in a new runspace. The new runspaces create
+  significantly more overhead than running `ForEach-Object` with sequential processing. It's
+  important to use **Parallel** where the overhead of running in parallel is small compared to work
+  the script block performs. For example:
 
   - Compute intensive scripts on multi-core machines
   - Scripts that spend time waiting for results or doing file operations
@@ -874,8 +883,8 @@ Using `ForEach-Object -Parallel`:
   > threads. The `$using:` keyword allows passing variable references from the cmdlet invocation
   > thread to each running script block thread. Since the script blocks run in different threads,
   > the object variables passed by reference must be used safely. Generally it's safe to read from
-  > referenced objects that don't change. But if the object state is being modified then you must
-  > used thread safe objects, such as .NET **System.Collection.Concurrent** types (See Example 14).
+  > referenced objects that don't change. If you need to modify the object state then you must
+  > use thread safe objects, such as .NET **System.Collection.Concurrent** types (See Example 14).
 
 ## RELATED LINKS
 
