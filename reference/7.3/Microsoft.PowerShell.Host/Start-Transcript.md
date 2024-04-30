@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 01/04/2024
+ms.date: 04/30/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
@@ -44,14 +44,14 @@ console.
 By default, `Start-Transcript` stores the transcript in the following location using the default
 name:
 
-- On Window: `$HOME\Documents`
+- On Windows: `$HOME\Documents`
 - On Linux or macOS: `$HOME`
 
 The default filename is `PowerShell_transcript.<computername>.<random>.<timestamp>.txt`.
 
 Starting in Windows PowerShell 5.0, `Start-Transcript` includes the hostname in the generated file
 name of all transcripts. The filename also includes random characters in names to prevent potential
-overwrites or duplication when two or more transcripts are started simultaneously. Including the
+overwrites or duplication when you start two or more transcripts simultaneously. Including the
 computer name is useful if you store your transcripts in a centralized location. The random
 character string prevents guessing of the filename to gain unauthorized access to the file.
 
@@ -74,9 +74,9 @@ This command starts a transcript in the default file location.
 Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 ```
 
-This command starts a transcript in the `Transcript0.txt` file in `C:\transcripts`. Since the
-**NoClobber** parameter is used, the command prevents any existing files from being overwritten. If
-the `Transcript0.txt` file already exists, the command fails.
+This command starts a transcript in the `Transcript0.txt` file in `C:\transcripts`. **NoClobber**
+parameter prevents any existing files from being overwritten. If the `Transcript0.txt` file already
+exists, the command fails.
 
 ### Example 3: Start a transcript file with a unique name and store it on a file share
 
