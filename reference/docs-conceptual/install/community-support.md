@@ -42,6 +42,44 @@ PowerShell is available from the [Arch Linux][07] User Repository (AUR).
 Packages in the AUR are maintained by the community. For more information on installing packages
 from the AUR, see the [Arch Linux wiki][06] or [Using PowerShell in Docker][09].
 
+## Gentoo
+
+> [!NOTE]
+> Gentoo support isn't officially supported by Microsoft and is maintained by the community.
+
+### Installation - Gentoo
+
+In Gentoo, PowerShell is provided by either the `app-shells/pwsh-bin`
+or `app-shells/pwsh` package. The first one is the official binary package from
+Microsoft that supports generic Linux systems, the second one is built from
+source on a given Gentoo system. Both of those packages can be installed
+simultaneously on the system. The selection between PowerShell versions
+and flavors ("bin" vs "from-source") on Gentoo systems is managed by
+the "pwsh" eselect module from the `app-eselect/eselect-pwsh` package.
+
+There also exists a generic pwsh "provider" package `virtual/pwsh` that will
+default to the "bin" package first if it is possible to install it on
+the current system's architecture.
+
+```sh
+# Install PowerShell package ("bin" version)
+emerge virtual/pwsh
+
+# Start PowerShell
+pwsh
+```
+
+### Uninstallation - Gentoo
+
+To completely remove all packages related with PowerShell on Gentoo systems
+the support packages listed in above section have to be uninstalled as well as
+the main PowerShell provider package.
+
+```sh
+# Uninstall PowerShell package ("bin" version)
+emerge --depclean app-eselect/eselect-pwsh app-shells/pwsh-bin virtual/pwsh
+```
+
 ## Kali
 
 > [!NOTE]
