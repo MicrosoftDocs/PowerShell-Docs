@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 04/01/2024
+ms.date: 05/02/2024
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,47 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-Apr
+
+New content for PSResourceGet
+
+- [Supported repository configurations](/powershell/gallery/powershellget/supported-repositories#azure-container-registry)
+  - Added Azure Container Registry information
+- [Use ACR repositories with PSResourceGet](/powershell/gallery/powershellget/how-to/use-acr-repository)
+
+Refreshed and reorganized Security content to be more discoverable
+
+- [PowerShell Security](/powershell/scripting/security/overview)
+
+New content for DSC v3 alpha.7 release
+
+- See [Desired State Configuration changelog](/powershell/dsc/changelog?view=dsc-3.0&preserve-view=true)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 31 PRs merged (11 from Community)
+- 22 issues opened (21 from Community)
+- 19 issues closed (18 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|     GitHub Id      | PRs merged | Issues opened |
+| ------------------ | :--------: | :-----------: |
+| Blake-Madden       |     3      |               |
+| Hrxn               |     2      |               |
+| aberus             |     1      |               |
+| nickcox            |     1      |               |
+| kilasuit           |     1      |               |
+| glenn-slayden      |     1      |               |
+| darthwalsh         |     1      |               |
+| landon-l8          |     1      |               |
+| joshooaj           |     1      |               |
+| mklement0          |            |       5       |
+| RokeJulianLockhart |            |       2       |
 
 ## 2024-Mar
 
