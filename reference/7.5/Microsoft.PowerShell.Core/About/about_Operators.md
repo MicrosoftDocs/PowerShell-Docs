@@ -243,6 +243,12 @@ Runs a command, script, or script block. The call operator, also known as the
 represented by strings or script blocks. The call operator executes in a child
 scope. For more about scopes, see [about_Scopes][19].
 
+> [!CAUTION]
+> The default argument passing behavior has changed since version 7.3.
+> For a detailed description of the change and its impact see the description of
+> preference variable `PSNativeCommandArgumentPassing` in
+> [Using Experimental Features in PowerShell][26].
+
 This example stores a command in a string and executes it using the call
 operator.
 
@@ -868,3 +874,4 @@ ${a}?[0]
 [23]: about_Variables.md
 [24]: about_Variables.md#variable-names-that-include-special-characters
 [25]: xref:Microsoft.PowerShell.Utility.Invoke-Expression
+[26]: ../../../docs-conceptual/learn/experimental-features.md#psnativecommandargumentpassing
