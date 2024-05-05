@@ -35,7 +35,6 @@ sudo apk add --no-cache \
     krb5-libs \
     libgcc \
     libintl \
-    libssl1.1 \
     libstdc++ \
     tzdata \
     userspace-rcu \
@@ -45,6 +44,9 @@ sudo apk add --no-cache \
 
 sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
     lttng-ust
+
+sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/testing add --no-cache \
+    libssl1.1
 
 # Download the powershell '.tar.gz' archive
 curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell-7.4.2-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz
