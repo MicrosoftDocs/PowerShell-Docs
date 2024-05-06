@@ -308,7 +308,7 @@ For more information about the stop-parsing token, see [about_Parsing][03].
 <!-- link references -->
 [01]: about_Parsing.md#line-continuation
 [02]: about_Parsing.md#the-stop-parsing-token
-[03]: about_Parsing.md#tilde-~
+[03]: about_Parsing.md#tilde-
 [04]: about_Quoting_Rules.md
 [05]: https://wikipedia.org/wiki/ANSI_escape_code
 [06]: https://www.microsoft.com/p/windows-terminal/9n0dx20hk701
