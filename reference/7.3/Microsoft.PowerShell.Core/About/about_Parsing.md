@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 02/26/2024
+ms.date: 05/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -463,6 +463,74 @@ Arg 0 is <-a>
 Arg 1 is <-b>
 Arg 2 is <-->
 Arg 3 is <-c>
+```
+
+## Tilde (~)
+
+The tilde character (`~`) has special meaning in PowerShell. When it's used
+with PowerShell commands at the beginning of a path, the tilde character is
+expanded to the user's home directory. If the tilde character is used anywhere
+else in a path, it's treated as a literal character.
+
+```powershell
+PS D:\temp> $PWD
+
+Path
+----
+D:\temp
+
+PS D:\temp> Set-Location ~
+PS C:\Users\user2> $PWD
+
+Path
+----
+C:\Users\user2
+```
+
+In this example, the **Name** parameter of the `New-Item` expects a string. The
+tilde character is treated as a literal character. To change to the newly
+created directory, you must qualify the path with the tilde character.
+
+```powershell
+PS D:\temp> Set-Location ~
+PS C:\Users\user2> New-Item -Type Directory -Name ~
+
+    Directory: C:\Users\user2
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----            5/6/2024  2:08 PM                ~
+
+PS C:\Users\user2> Set-Location ~
+PS C:\Users\user2> Set-Location .\~
+PS C:\Users\user2\~> $PWD
+
+Path
+----
+C:\Users\user2\~
+```
+
+When you use the tilde character with native commands, PowerShell passes the
+tilde as a literal character. Using the tilde in a path causes errors for
+native commands on Windows that don't support the tilde character.
+
+```powershell
+PS D:\temp> $PWD
+
+Path
+----
+D:\temp
+
+PS D:\temp> Get-Item ~\repocache.clixml
+
+    Directory: C:\Users\user2
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           4/29/2024  3:42 PM          88177 repocache.clixml
+
+PS D:\temp> more.com ~\repocache.clixml
+Cannot access file D:\temp\~\repocache.clixml
 ```
 
 ## See also
