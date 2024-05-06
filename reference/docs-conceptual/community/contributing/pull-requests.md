@@ -18,10 +18,10 @@ is published to `learn.microsoft.com`.
 
 Before starting any changes, create a working branch in your local copy of the PowerShell-Docs
 repository. When working locally, be sure to synchronize your local repository before creating your
-working branch. The working branch should be created from an update-to-date copy of the `main`
+working branch. The working branch should be created from an up-to-date copy of the `main`
 branch.
 
-All pull requests should target the `main` branch. Don't submit change to the `live` branch. Changes
+All pull requests should target the `main` branch. Don't submit changes to the `live` branch. Changes
 made in the `main` branch get merged into `live`, overwriting any changes made to `live`.
 
 ## Make the pull request process work better for everyone
@@ -41,7 +41,7 @@ changed files. Large PRs are difficult to review and are more prone to contain e
 When renaming or deleting files, there must be an issue associated with the PR. That issue must
 discuss the need to rename or delete the files.
 
-Avoid mixing content additions or change with file renames and deletes. Any file that's renamed or
+Avoid mixing content additions or changes with file renames and deletes. Any file that's renamed or
 deleted must be added to the global redirection file. When possible, update any files that link to
 the renamed or deleted content, including any TOC files.
 
