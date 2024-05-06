@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 02/26/2024
+ms.date: 05/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Parsing
@@ -128,13 +128,13 @@ uses one of the following syntaxes:
     literal `@` with `()` starting a new argument that's an expression.
 
 - Everything else is treated as an expandable string, except metacharacters
-  that still need escaping. See [Handling special characters][02].
+  that still need escaping. See [Handling special characters][03].
   - The argument-mode metacharacters (characters with special syntactic
     meaning) are: ``<space> ' " ` , ; ( ) { } | & < > @ #``. Of these,
     `< > @ #` are only special at the start of a token.
 
 - The stop-parsing token (`--%`) changes the interpretation of all remaining
-  arguments. For more information, see the [stop-parsing token][03] section
+  arguments. For more information, see the [stop-parsing token][04] section
   below.
 
 ### Examples
@@ -331,7 +331,7 @@ Some native commands expect arguments that contain quote characters. PowerShell
 > The new behavior is a **breaking change** from the Window PowerShell 5.1
 > behavior. This may break scripts and automation that work around the various
 > issues when invoking native applications. Use the stop-parsing token (`--%`)
-> or the [`Start-Process`][06] cmdlet to avoid the native argument passing when
+> or the [`Start-Process`][07] cmdlet to avoid the native argument passing when
 > needed.
 
 The new `$PSNativeCommandArgumentPassing` preference variable controls this
@@ -358,7 +358,7 @@ If the `$PSNativeCommandArgumentPassing` is set to either `Legacy` or
 
 > [!NOTE]
 > The following examples use the `TestExe.exe` tool. You can build `TestExe`
-> from the source code. See [TestExe][05] in the PowerShell source repository.
+> from the source code. See [TestExe][06] in the PowerShell source repository.
 
 New behaviors made available by this change:
 
@@ -413,7 +413,7 @@ TestExe -echoargs --% """%ProgramFiles(x86)%\Microsoft\\""
 
 PowerShell 7.3 also added the ability to trace parameter binding for native
 commands. For more information, see
-[Trace-Command][07].
+[Trace-Command][08].
 
 ## Passing arguments to PowerShell commands
 
@@ -465,15 +465,87 @@ Arg 2 is <-->
 Arg 3 is <-c>
 ```
 
+## Tilde (~)
+
+The tilde character (`~`) has special meaning in PowerShell. When it's used
+with PowerShell commands at the beginning of a path, PowerShell expands the
+tilde character to the user's home directory. If you use the tilde character
+anywhere else in a path, it's treated as a literal character.
+
+```powershell
+PS D:\temp> $PWD
+
+Path
+----
+D:\temp
+
+PS D:\temp> Set-Location ~
+PS C:\Users\user2> $PWD
+
+Path
+----
+C:\Users\user2
+```
+
+In this example, the **Name** parameter of the `New-Item` expects a string. The
+tilde character is treated as a literal character. To change to the newly
+created directory, you must qualify the path with the tilde character.
+
+```powershell
+PS D:\temp> Set-Location ~
+PS C:\Users\user2> New-Item -Type Directory -Name ~
+
+    Directory: C:\Users\user2
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----            5/6/2024  2:08 PM                ~
+
+PS C:\Users\user2> Set-Location ~
+PS C:\Users\user2> Set-Location .\~
+PS C:\Users\user2\~> $PWD
+
+Path
+----
+C:\Users\user2\~
+```
+
+PowerShell 7.5-preview.2 add an experimental feature to expand the tilde to the
+user's home directory for native commands. For more information, see the
+`PSNativeWindowsTildeExpansion` feature in
+[Using Experimental Features in PowerShell][02].
+
+The expanded string is passed to the native command. By expanding the tilde,
+PowerShell prevents error for native commands on Windows that don't support the
+tilde character. You can see the resulting string by tracing parameter binding
+using `Trace-Command`.
+
+```powershell
+Trace-Command -Name ParameterBinding -Expression {
+    findstr /c:"foo" ~\repocache.clixml
+} -PSHost
+```
+
+```Output
+DEBUG: 2024-05-06 15:13:46.8268 ParameterBinding Information: 0 : BIND NAMED native application line args [C:\Windows\system32\findstr.exe]
+DEBUG: 2024-05-06 15:13:46.8270 ParameterBinding Information: 0 :     BIND cmd line arg [/c:foo] to position [0]
+DEBUG: 2024-05-06 15:13:46.8271 ParameterBinding Information: 0 :     BIND cmd line arg [C:\Users\user2\repocache.clixml] to position [1]
+DEBUG: 2024-05-06 15:13:46.8322 ParameterBinding Information: 0 : CALLING BeginProcessing
+```
+
+Notice that `~\repocache.clixml` was expanded to
+`C:\Users\user2\repocache.clixml`.
+
 ## See also
 
-- [about_Command_Syntax][04]
+- [about_Command_Syntax][05]
 
 <!-- link references -->
 [01]: /dotnet/api/system.diagnostics.processstartinfo.argumentlist
-[02]: #handling-special-characters
-[03]: #the-stop-parsing-token
-[04]: about_Command_Syntax.md
-[05]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs
-[06]: xref:Microsoft.PowerShell.Management.Start-Process
-[07]: xref:Microsoft.PowerShell.Utility.Trace-Command
+[02]: /powershell/scripting/learn/experimental-features#psnativewindowstildeexpansion
+[03]: #handling-special-characters
+[04]: #the-stop-parsing-token
+[05]: about_Command_Syntax.md
+[06]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs
+[07]: xref:Microsoft.PowerShell.Management.Start-Process
+[08]: xref:Microsoft.PowerShell.Utility.Trace-Command
