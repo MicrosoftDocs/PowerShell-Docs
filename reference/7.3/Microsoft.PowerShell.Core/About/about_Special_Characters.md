@@ -1,7 +1,7 @@
 ---
 description: Describes the special character sequences that control how PowerShell interprets the next characters in the sequence.
 Locale: en-US
-ms.date: 02/23/2024
+ms.date: 05/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.3&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Special Characters
@@ -52,6 +52,7 @@ Special parsing tokens:
 | -------- | ------------------------------------------------------ |
 | `--`     | Treat the remaining values as arguments not parameters |
 | `--%`    | Stop parsing anything that follows                     |
+| `~`      | Tilde                                                  |
 
 ## Null (`0)
 
@@ -101,7 +102,7 @@ virtual terminal sequences. You can check the boolean value of
 supported.
 
 For more information about ANSI escape sequences, see the
-[ANSI escape code][04] article in Wikipedia.
+[ANSI escape code][05] article in Wikipedia.
 
 The following example outputs text with a green foreground color.
 
@@ -212,7 +213,7 @@ character with no extra spacing added.
 There is a vertical tab♂between the words.
 ```
 
-The [Windows Terminal][05] renders the vertical tab character as a carriage
+The [Windows Terminal][06] renders the vertical tab character as a carriage
 return and line feed. The rest of the output is printed at the beginning of the
 next line.
 
@@ -291,13 +292,23 @@ C:\Users\username  $HOME
 
 For more information about the stop-parsing token, see [about_Parsing][02].
 
+## Tilde (~)
+
+The tilde character (`~`) has special meaning in PowerShell. When it's used
+with PowerShell commands at the beginning of a path, PowerShell expands the
+tilde character to the user's home directory. If you use the tilde character
+anywhere else in a path, it's treated as a literal character.
+
+For more information about the stop-parsing token, see [about_Parsing][03].
+
 ## See also
 
-- [about_Quoting_Rules][03]
+- [about_Quoting_Rules][04]
 
 <!-- link references -->
 [01]: about_Parsing.md#line-continuation
 [02]: about_Parsing.md#the-stop-parsing-token
-[03]: about_Quoting_Rules.md
-[04]: https://wikipedia.org/wiki/ANSI_escape_code
-[05]: https://www.microsoft.com/p/windows-terminal/9n0dx20hk701
+[03]: about_Parsing.md#tilde-
+[04]: about_Quoting_Rules.md
+[05]: https://wikipedia.org/wiki/ANSI_escape_code
+[06]: https://www.microsoft.com/p/windows-terminal/9n0dx20hk701
