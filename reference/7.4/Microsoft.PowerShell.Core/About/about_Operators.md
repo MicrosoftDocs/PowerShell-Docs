@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 02/26/2024
+ms.date: 05/07/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Operators
@@ -239,15 +239,13 @@ table. For more information, see [about_Hash_Tables][09].
 ### Call operator `&`
 
 Runs a command, script, or script block. The call operator, also known as the
-"invocation operator", lets you run commands that are stored in variables and
+_invocation operator_, lets you run commands that are stored in variables and
 represented by strings or script blocks. The call operator executes in a child
-scope. For more about scopes, see [about_Scopes][19].
-
-> [!CAUTION]
-> The default argument passing behavior has changed since version 7.3.
-> For a detailed description of the change and its impact see the description of
-> preference variable `PSNativeCommandArgumentPassing` in
-> [Using Experimental Features in PowerShell][26].
+scope. For more about scopes, see [about_Scopes][19]. You can use this to build
+strings containing the command, parameters, and arguments you need, and then
+invoke the string as if it were a command. The strings that you create must
+follow the same parsing rules as a command that you type at the command line.
+For more information, see [about_Parsing][08].
 
 This example stores a command in a string and executes it using the call
 operator.
@@ -857,6 +855,7 @@ ${a}?[0]
 [05]: about_Arithmetic_Operators.md
 [06]: about_Assignment_Operators.md
 [07]: about_Comparison_Operators.md
+[08]: about_Parsing.md
 [09]: about_Hash_Tables.md
 [10]: about_If.md
 [11]: about_Jobs.md
@@ -874,4 +873,3 @@ ${a}?[0]
 [23]: about_Variables.md
 [24]: about_Variables.md#variable-names-that-include-special-characters
 [25]: xref:Microsoft.PowerShell.Utility.Invoke-Expression
-[26]: ../../../docs-conceptual/learn/experimental-features.md#psnativecommandargumentpassing
