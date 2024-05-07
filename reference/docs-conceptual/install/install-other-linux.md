@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 01/12/2024
+ms.date: 05/07/2024
 title: Alternate ways to install PowerShell on Linux
 ---
 # Alternate ways to install PowerShell on Linux
@@ -32,9 +32,10 @@ installed.
 
 ### Installation via Snap
 
-PowerShell for Linux is published to the [Snap store][17] for easy installation and updates.
+There are two PowerShell for Linux is published to the [Snap store][17]: `powershell` and
+`powershell-preview`.
 
-The preferred method is as follows:
+Use the following command to install the latest stable version of PowerShell:
 
 ```sh
 # Install PowerShell
@@ -44,7 +45,8 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-To install the latest LTS version, use the following method:
+If you don't specify the `--channel` parameter, Snap installs the latest stable version. To install
+the latest LTS version, use the following method:
 
 ```sh
 # Install PowerShell
@@ -53,6 +55,10 @@ sudo snap install powershell --channel=lts/stable --classic
 # Start PowerShell
 pwsh
 ```
+
+> [!NOTE]
+> Microsoft only supports the `latest/stable` and `lts/stable` channels for the `powershell`
+> package. Do not install packages from the other channels.
 
 To install a preview version, use the following method:
 
@@ -63,6 +69,10 @@ sudo snap install powershell-preview --classic
 # Start PowerShell
 pwsh-preview
 ```
+
+> [!NOTE]
+> Microsoft only supports the `latest/stable` channel for the `powershell-preview` package. Do not
+> install packages from the other channels.
 
 After installation, Snap will automatically upgrade. You can trigger an upgrade using
 `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.
