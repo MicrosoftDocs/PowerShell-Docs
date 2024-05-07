@@ -643,23 +643,21 @@ the **Append** parameter, which isn't required for the later implementation.
 - [`[StreamReader]`][15]
 - [`[File]::ReadLines()` method][16]
 - [Write-Host][17]
-- [Write-Output][01]
 
 <!-- Link reference definitions -->
-[01]: /powershell/module/Microsoft.PowerShell.Utility/Write-Output
-[02]: /powershell/scripting/learn/deep-dives/everything-about-hashtable
-[03]: /powershell/scripting/learn/deep-dives/everything-about-null
-[04]: /dotnet/api/system.void
-[05]: /powershell/module/microsoft.powershell.core/out-null
-[06]: /dotnet/api/system.collections.generic.list-1
-[07]: /dotnet/api/system.collections.generic.list-1.add#system-collections-generic-list-1-add(-0)
-[08]: /dotnet/api/system.string
-[09]: /dotnet/api/system.int32
-[10]: /dotnet/api/system.object
-[11]: /dotnet/api/system.collections.generic.list-1.toarray#system-collections-generic-list-1-toarray
-[12]: /dotnet/api/system.collections.arraylist
+[02]: ../../learn/deep-dives/everything-about-hashtable.md
+[03]: ../../learn/deep-dives/everything-about-null.md
+[04]: xref:System.Void
+[05]: xref:Microsoft.PowerShell.Core.Out-Null
+[06]: xref:System.Collections.Generic.List`1
+[07]: System.Collections.Generic.List`1.Add*
+[08]: xref:System.String
+[09]: xref:System.Int32
+[10]: xref:System.Object
+[11]: xref:System.Collections.Generic.List`1.ToArray*#system-collections-generic-list-1-toarray
+[12]: xref:System.Collections.ArrayList
 [13]: /powershell/module/microsoft.powershell.core/about/about_join
-[14]: /dotnet/api/system.text.stringbuilder
-[15]: /dotnet/api/system.io.streamreader
-[16]: /dotnet/api/system.io.file.readlines
-[17]: /powershell/module/microsoft.powershell.utility/write-host
+[14]: xref:System.Text.StringBuilder
+[15]: xref:System.IO.StreamReader
+[16]: xref:System.IO.File.ReadLines*
+[17]: xref:Microsoft.PowerShell.Utility.Write-Host
