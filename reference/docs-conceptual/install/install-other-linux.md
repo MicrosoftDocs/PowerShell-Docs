@@ -57,9 +57,8 @@ pwsh
 ```
 
 > [!NOTE]
-> Information the user should notice even if skimmingMicrosoft only supports the `latest/stable` and
-> `lts/stable` channels for the `powershell` package. Do not install packages from the other
-> channels.
+> Microsoft only supports the `latest/stable` and `lts/stable` channels for the `powershell`
+> package. Do not install packages from the other channels.
 
 To install a preview version, use the following method:
 
@@ -72,8 +71,8 @@ pwsh-preview
 ```
 
 > [!NOTE]
-> Information the user should notice even if skimmingMicrosoft only supports the `latest/stable`
-> channel for the `powershell-preview` package. Do not install packages from the other channels.
+> Microsoft only supports the `latest/stable` channel for the `powershell-preview` package. Do not
+> install packages from the other channels.
 
 After installation, Snap will automatically upgrade. You can trigger an upgrade using
 `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.
