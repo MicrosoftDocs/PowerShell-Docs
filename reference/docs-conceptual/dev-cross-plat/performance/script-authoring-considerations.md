@@ -650,7 +650,7 @@ the **Append** parameter, which isn't required for the later implementation.
 [04]: xref:System.Void
 [05]: xref:Microsoft.PowerShell.Core.Out-Null
 [06]: xref:System.Collections.Generic.List`1
-[07]: System.Collections.Generic.List`1.Add*
+[07]: xref:System.Collections.Generic.List`1.Add*
 [08]: xref:System.String
 [09]: xref:System.Int32
 [10]: xref:System.Object
