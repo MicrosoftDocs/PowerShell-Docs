@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 06/23/2023
+ms.date: 05/07/2024
 title: PowerShell scripting performance considerations
 ---
 
@@ -19,9 +19,9 @@ the pipeline, and resorting to .NET only when necessary.
 
 There are many ways to avoid writing objects to the pipeline.
 
-- Assignment or File Redirection to [`$null`][03]
-- Casting to [`[void]`][04]
-- Pipe to [`Out-Null`][05]
+- Assignment or file redirection to `$null`
+- Casting to `[void]`
+- Pipe to `Out-Null`
 
 The speeds of assigning to `$null`, casting to `[void]`, and file redirection to `$null` are almost
 identical. However, calling `Out-Null` in a large loop can be significantly slower, especially in
@@ -119,7 +119,7 @@ both operands are copied into the new array. For small collections, this overhea
 Performance can suffer for large collections.
 
 There are a couple of alternatives. If you don't actually require an array, instead consider using
-a typed generic list (**[`List<T>`][06]**):
+a typed generic list (`[List<T>]`):
 
 ```powershell
 $results = [System.Collections.Generic.List[object]]::new()
@@ -130,8 +130,8 @@ $results
 
 The performance impact of using array addition grows exponentially with the size of the collection
 and the number additions. This code compares explicitly assigning values to an array with using
-array addition and using the [`.Add(T)` Method][07] on a **`List<T>`**. It defines explicit assignment as
-the baseline for performance.
+array addition and using the `Add(T)` method on a `[List<T>]` object. It defines explicit assignment
+as the baseline for performance.
 
 ```powershell
 $tests = @{
@@ -204,9 +204,9 @@ CollectionSize Test                           TotalMilliseconds RelativeSpeed
 When you're working with large collections, array addition is dramatically slower than adding to
 a **`List<T>`**.
 
-When using a **`List<T>`**, you need to create the list with a specific type, like [**`String`**][08] or
-[**`Int`**][09]. When you add objects of a different type to the list, they are cast to the specified type.
-If they can't be cast to the specified type, the method raises an exception.
+When using a `[List<T>]` object, you need to create the list with a specific type, like `[String]`
+or `[Int]`. When you add objects of a different type to the list, they are cast to the specified
+type. If they can't be cast to the specified type, the method raises an exception.
 
 ```powershell
 $intList = [System.Collections.Generic.List[int]]::new()
@@ -231,7 +231,7 @@ Line |
 3
 ```
 
-When you need the list to be a collection of different types of objects, create it with [**`Object`**][10]
+When you need the list to be a collection of different types of objects, create it with `[Object]`
 as the list type. You can enumerate the collection inspect the types of the objects in it.
 
 ```powershell
@@ -248,7 +248,7 @@ $objectList | ForEach-Object { "$_ is $($_.GetType())" }
 3 is double
 ```
 
-If you do require an array, you can call the [`.ToArray()` Method][11] on the list or you can let
+If you do require an array, you can call the `ToArray()` method on the list or you can let
 PowerShell create the array for you:
 
 ```powershell
@@ -258,9 +258,9 @@ $results = @(
 )
 ```
 
-In this example, PowerShell creates an [**`ArrayList`**][12] to hold the results written to the pipeline
+In this example, PowerShell creates an `[ArrayList]` to hold the results written to the pipeline
 inside the array expression. Just before assigning to `$results`, PowerShell converts the
-**`ArrayList`** to an **`object[]`**.
+`[ArrayList]` to an `[Object[]]`.
 
 ## String addition
 
@@ -272,7 +272,7 @@ performance and memory consumption.
 There are at least two alternatives:
 
 - The [`-join` operator][13] concatenates strings
-- The .NET [**`StringBuilder`** Class][14] provides a mutable string
+- The .NET `[StringBuilder]` class provides a mutable string
 
 The following example compares the performance of these three methods of building a string.
 
@@ -327,21 +327,21 @@ $tests = @{
 }
 ```
 
-These tests were run on a Windows 10 machine in PowerShell 7.3.4. The output shows that the `-join`
-operator is the fastest, followed by the **`StringBuilder`** Class.
+These tests were run on a Windows 11 machine in PowerShell 7.4.2. The output shows that the `-join`
+operator is the fastest, followed by the `[StringBuilder]` class.
 
 ```Output
 Iterations Test                   TotalMilliseconds RelativeSpeed
 ---------- ----                   ----------------- -------------
-     10240 Join operator                       7.08 1x
-     10240 StringBuilder                      54.10 7.64x
-     10240 Addition Assignment +=            724.16 102.28x
-     51200 Join operator                      41.76 1x
-     51200 StringBuilder                     318.06 7.62x
-     51200 Addition Assignment +=          17693.06 423.68x
-    102400 Join operator                     106.98 1x
-    102400 StringBuilder                     543.84 5.08x
-    102400 Addition Assignment +=          90693.13 847.76x
+     10240 Join operator                      14.75 1x
+     10240 StringBuilder                      62.44 4.23x
+     10240 Addition Assignment +=            619.64 42.01x
+     51200 Join operator                      43.15 1x
+     51200 StringBuilder                     304.32 7.05x
+     51200 Addition Assignment +=          14225.13 329.67x
+    102400 Join operator                      85.62 1x
+    102400 StringBuilder                     499.12 5.83x
+    102400 Addition Assignment +=          67640.79 790.01x
 ```
 
 The times and relative speeds can vary depending on the hardware, the version of PowerShell, and the
@@ -355,7 +355,8 @@ The idiomatic way to process a file in PowerShell might look something like:
 Get-Content $path | Where-Object Length -GT 10
 ```
 
-This can be an order of magnitude slower than using .NET APIs directly, for example [`StreamReader`][15]:
+This can be an order of magnitude slower than using .NET APIs directly. For example, you can use the
+.NET `[StreamReader]` class:
 
 ```powershell
 try {
@@ -374,7 +375,8 @@ finally {
 }
 ```
 
-Or [`File.ReadLines` Method][16], which wraps `StreamReader` making the reading process simpler:
+You could also use the `ReadLines` method of `[System.IO.File]`, which wraps `StreamReader`,
+simplifies the reading process:
 
 ```powershell
 foreach ($line in [System.IO.File]::ReadLines($path)) {
@@ -391,7 +393,7 @@ like using a name to retrieve an ID from one list and an email from another. Ite
 first list to find the matching record in the second collection is slow. In particular, the
 repeated filtering of the second collection has a large overhead.
 
-Given two collections, one with an **`ID`** and **`Name`**, the other with **`Name`** and **`Email`**:
+Given two collections, one with an **ID** and **Name**, the other with **Name** and **Email**:
 
 ```powershell
 $Employees = 1..10000 | ForEach-Object {
@@ -409,8 +411,8 @@ $Accounts = 2500..7500 | ForEach-Object {
 }
 ```
 
-The usual way to reconcile these collections to return a list of objects with the **`ID`**, **`Name`**,
-and **`Email`** properties might look like this:
+The usual way to reconcile these collections to return a list of objects with the **ID**, **Name**,
+and **Email** properties might look like this:
 
 ```powershell
 $Results = $Employees | ForEach-Object -Process {
@@ -431,7 +433,7 @@ $Results = $Employees | ForEach-Object -Process {
 However, that implementation has to filter all 5000 items in the `$Accounts` collection once for
 every item in the `$Employee` collection. That can take minutes, even for this single-value lookup.
 
-Instead, you can make a [Hash Table][02] that uses the shared **`Name`** property as a key and the
+Instead, you can make a [Hash Table][02] that uses the shared **Name** property as a key and the
 matching account as the value.
 
 ```powershell
@@ -459,18 +461,15 @@ $Results = $Employees | ForEach-Object -Process {
 This is much faster. While the looping filter took minutes to complete, the hash lookup takes less
 than a second.
 
-## Avoid Write-Host
+## Use Write-Host carefully
 
-It's generally considered poor practice to write output directly to the console, but when it makes
-sense, many scripts use [`Write-Host`][17].
+The `Write-Host` command should only be used when you need to write formatted text to the host
+console, rather than writing objects to the **Success** pipeline.
 
-If you must write many messages to the console, `Write-Host` can be an order of magnitude slower
-than `[Console]::WriteLine()` for specific hosts like `pwsh.exe`, `powershell.exe`, or
-`powershell_ise.exe`. However, `[Console]::WriteLine()` isn't guaranteed to work in all hosts. Also,
-output written using `[Console]::WriteLine()` doesn't get written to transcripts started by
-`Start-Transcript`.
-
-Instead of using `Write-Host`, consider using [`Write-Output`][01].
+`Write-Host` can be an order of magnitude slower than `[Console]::WriteLine()` for specific hosts
+like `pwsh.exe`, `powershell.exe`, or `powershell_ise.exe`. However, `[Console]::WriteLine()` isn't
+guaranteed to work in all hosts. Also, output written using `[Console]::WriteLine()` doesn't get
+written to transcripts started by `Start-Transcript`.
 
 ### JIT compilation
 
@@ -484,8 +483,8 @@ background. When the JIT-compilation completes, execution is transferred to the 
 
 ## Avoid repeated calls to a function
 
-Calling a function can be an expensive operation. If you're calling a function in a long running tight
-loop, consider moving the loop inside the function.
+Calling a function can be an expensive operation. If you're calling a function in a long running
+tight loop, consider moving the loop inside the function.
 
 Consider the following examples:
 
@@ -553,22 +552,22 @@ $tests = @{
 ```
 
 The **Basic for-loop** example is the base line for performance. The second example wraps the random
-number generator in a function that is called in a tight loop. The third example moves the loop
-inside the function. The function is only called once but the code still generates the same amount of random
-numbers. Notice the difference in execution times for each example.
+number generator in a function that's called in a tight loop. The third example moves the loop
+inside the function. The function is only called once but the code still generates the same amount
+of random numbers. Notice the difference in execution times for each example.
 
 ```Output
-Iterations Test                   TotalMilliseconds RelativeSpeed
----------- ----                   ----------------- -------------
-      5120 Simple for-loop                     9.99 1x
-      5120 for-loop in a function             23.19 2.32x        
-      5120 Wrapped in a function             348.34 34.87x       
-     10240 Simple for-loop                     5.03 1x
-     10240 for-loop in a function              8.26 1.64x        
-     10240 Wrapped in a function             621.09 123.48x      
-    102400 Simple for-loop                    24.19 1x
-    102400 for-loop in a function             43.38 1.79x  
-    102400 Wrapped in a function            3522.96 145.64x
+CollectionSize Test                   TotalMilliseconds RelativeSpeed
+-------------- ----                   ----------------- -------------
+          5120 for-loop in a function              9.62 1x
+          5120 Simple for-loop                    10.55 1.1x
+          5120 Wrapped in a function              62.39 6.49x
+         10240 Simple for-loop                    17.79 1x
+         10240 for-loop in a function             18.48 1.04x
+         10240 Wrapped in a function             127.39 7.16x
+        102400 for-loop in a function            179.19 1x
+        102400 Simple for-loop                   181.58 1.01x
+        102400 Wrapped in a function            1155.57 6.45x
 ```
 
 ## Avoid wrapping cmdlet pipelines
@@ -598,9 +597,10 @@ $measure = Measure-Command -Expression {
 }
 
 'Wrapped = {0:N2} ms' -f $measure.TotalMilliseconds
+```
 
-# Outputs:
-# Wrapped = 15.968,78 ms
+```Output
+Wrapped = 15,968.78 ms
 ```
 
 For the next example, the `Export-Csv` command was moved outside of the `ForEach-Object` pipeline.
@@ -618,13 +618,32 @@ $measure = Measure-Command -Expression {
 }
 
 'Unwrapped = {0:N2} ms' -f $measure.TotalMilliseconds
-
-# Outputs:
-# Unwrapped = 42.92 ms
 ```
 
-The unwrapped example is **372 times faster**. Also, notice that the first implementation requires the
-**`-Append`** Parameter, which isn't required for the later implementation.
+```Output
+Unwrapped = 42.92 ms
+```
+
+The unwrapped example is **372 times faster**. Also, notice that the first implementation requires
+the **Append** parameter, which isn't required for the later implementation.
+
+## Related links
+
+- [`$null`][03]
+- [`[void]`][04]
+- [Out-Null][05]
+- [`List<T>`][06]
+- [`Add(T)` method][07]
+- [`[String]`][08]
+- [`[Int]`][09]
+- [`[Object]`][10]
+- [`ToArray()` method][11]
+- [`[ArrayList]`][12]
+- [`[StringBuilder]`][14]
+- [`[StreamReader]`][15]
+- [`[File]::ReadLines()` method][16]
+- [Write-Host][17]
+- [Write-Output][01]
 
 <!-- Link reference definitions -->
 [01]: /powershell/module/Microsoft.PowerShell.Utility/Write-Output
