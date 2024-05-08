@@ -12,7 +12,7 @@ topics.
 
 Over time, namespaces appeared as:
 
-|         Module Name / PS Version          |  5.1  |  7.0  |  7.2  |  7.3  |
+|         Module Name / PS Version          |  5.1  |  7.2  |  7.4  |  7.5  |
 | ----------------------------------------- | :---: | :---: | :---: | :---: |
 | CimCmdlets                                |   X   |   X   |   X   |   X   |
 | ISE (introduced in 2.0)                   |   X   |       |       |       |
@@ -29,7 +29,7 @@ Over time, namespaces appeared as:
 | Microsoft.WsMan.Management                |   X   |   X   |   X   |   X   |
 | PackageManagement                         |   X   |   X   |   X   |   X   |
 | PowershellGet                             |   X   |   X   |   X   |   X   |
-| PSDesiredStateConfiguration               |   X   |   X   |   X   |       |
+| PSDesiredStateConfiguration               |   X   |   X   |       |       |
 | PSDiagnostics                             |   X   |   X   |   X   |   X   |
 | PSReadLine                                |   X   |   X   |   X   |   X   |
 | PSScheduledJob                            |   X   |       |       |       |
