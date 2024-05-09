@@ -637,7 +637,7 @@ collections. In that case, the recommended approach is to use an
 [`OrderedDictionary` (`[ordered]` type accelerator)][19] and later on casting the
 [`pscustomobject` type accelerator][20] to it to instantiate them.
 
-Take this [sample API response][21] as an example:
+Assume you have the following API response stored in the variable `$json`.
 
 ```json
 {
