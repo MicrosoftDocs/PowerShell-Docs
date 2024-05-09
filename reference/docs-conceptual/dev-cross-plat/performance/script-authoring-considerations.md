@@ -834,5 +834,3 @@ Iterations Test                                 TotalMilliseconds RelativeSpeed
 [17]: xref:Microsoft.PowerShell.Utility.Write-Host
 [18]: /powershell/module/microsoft.powershell.utility/add-member
 [19]: /powershell/module/microsoft.powershell.core/about/about_hash_tables#creating-ordered-dictionaries
-[20]: /powershell/scripting/learn/deep-dives/everything-about-pscustomobject#converting-a-hashtable
-[21]: /rest/api/loganalytics/query/get#cross-workspace
