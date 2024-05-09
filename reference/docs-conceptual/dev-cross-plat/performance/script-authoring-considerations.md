@@ -629,45 +629,46 @@ the **Append** parameter, which isn't required for the later implementation.
 
 ## Use OrderedDictionary to dynamically create new objects
 
-There are situations where we may need to dynamically create objects based on some input,
-the perhaps most commonly used way to create a new **PSObject** and then add new properties using
-the [Add-Member][18] cmdlet. The performance cost for small
-collections using this technique may be negligible however it can become very noticeable for big
-collections. In that case, the recommended approach is to use an
-[`OrderedDictionary` (`[ordered]` type accelerator)][19] and later on casting the
-[`pscustomobject` type accelerator][20] to it to instantiate them.
+There are situations where we may need to dynamically create objects based on some input, the
+perhaps most commonly used way to create a new **PSObject** and then add new properties using the
+`Add-Member` cmdlet. The performance cost for small collections using this technique may be
+negligible however it can become very noticeable for big collections. In that case, the recommended
+approach is to use an `[OrderedDictionary]` and then convert it to a **PSObject** using the
+`[pscustomobject]` type accelerator. For more information, see the _Creating ordered dictionaries_
+section of [about_Hash_Tables][19].
 
 Assume you have the following API response stored in the variable `$json`.
 
 ```json
 {
-    "tables": [
-      {
-        "name": "PrimaryResult",
-        "columns": [
-          { "name": "Type", "type": "string" },
-          { "name": "TenantId", "type": "string" },
-          { "name": "count_", "type": "long" }
-        ],
-        "rows": [
-          [ "Usage", "63613592-b6f7-4c3d-a390-22ba13102111", "1" ],
-          [ "Usage", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "1" ],
-          [ "BillingFact", "63613592-b6f7-4c3d-a390-22ba13102111", "1" ],
-          [ "BillingFact", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "1" ],
-          [ "Operation", "63613592-b6f7-4c3d-a390-22ba13102111", "7" ],
-          [ "Operation", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "5" ]
-        ]
-      }
-    ]
-  }
+  "tables": [
+    {
+      "name": "PrimaryResult",
+      "columns": [
+        { "name": "Type", "type": "string" },
+        { "name": "TenantId", "type": "string" },
+        { "name": "count_", "type": "long" }
+      ],
+      "rows": [
+        [ "Usage", "63613592-b6f7-4c3d-a390-22ba13102111", "1" ],
+        [ "Usage", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "1" ],
+        [ "BillingFact", "63613592-b6f7-4c3d-a390-22ba13102111", "1" ],
+        [ "BillingFact", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "1" ],
+        [ "Operation", "63613592-b6f7-4c3d-a390-22ba13102111", "7" ],
+        [ "Operation", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "5" ]
+      ]
+    }
+  ]
+}
 ```
 
-And let's suppose we wanted to export this data to a CSV, for this we would first need
-to create new objects out of it, using `Add-Member` the code would look like this:
+Now, suppose you want to export this data to a CSV. First you need to create new objects and add the
+properties and values using the `Add-Member` cmdlet.
 
 ```powershell
-$columns = $json.tables[0].columns
-$result = foreach ($row in $json.tables[0].rows) {
+$data = $json | ConvertFrom-Json
+$columns = $data.tables.columns
+$result = foreach ($row in $data.tables.rows) {
     $obj = [psobject]::new()
     $index = 0
 
@@ -679,11 +680,12 @@ $result = foreach ($row in $json.tables[0].rows) {
 }
 ```
 
-And using `OrderedDictionary` the code can be translated to:
+Using an `OrderedDictionary`, the code can be translated to:
 
 ```powershell
-$columns = $json.tables[0].columns
-$result = foreach ($row in $json.tables[0].rows) {
+$data = $json | ConvertFrom-Json
+$columns = $data.tables.columns
+$result = foreach ($row in $data.tables.rows) {
     $obj = [ordered]@{}
     $index = 0
 
@@ -711,7 +713,7 @@ Operation   d436f322-a9f4-4aad-9a7d-271fbf66001c 5
 The latter approach becomes exponentially more efficient as the number of objects and member
 properties increases.
 
-Here is a performance comparison of both techniques for objects with 5 properties:
+Here is a performance comparison of three techniques for creating objects with 5 properties:
 
 ```powershell
 $tests = @{
@@ -787,15 +789,15 @@ And these are the results:
 ```output
 Iterations Test                                 TotalMilliseconds RelativeSpeed
 ---------- ----                                 ----------------- -------------
-      1024 [ordered] into [pscustomobject] cast             29.70 1x
-      1024 PSObject.Properties.Add                          91.91 3.09x
-      1024 Add-Member                                      682.94 22.99x
-     10240 [ordered] into [pscustomobject] cast             67.63 1x
-     10240 PSObject.Properties.Add                         251.98 3.73x
-     10240 Add-Member                                     3522.60 52.09x
-    102400 [ordered] into [pscustomobject] cast            861.16 1x
-    102400 PSObject.Properties.Add                        3534.21 4.1x
-    102400 Add-Member                                    23122.54 26.85x
+      1024 [ordered] into [pscustomobject] cast             22.00 1x
+      1024 PSObject.Properties.Add                         153.17 6.96x
+      1024 Add-Member                                      261.96 11.91x
+     10240 [ordered] into [pscustomobject] cast             65.24 1x
+     10240 PSObject.Properties.Add                        1293.07 19.82x
+     10240 Add-Member                                     2203.03 33.77x
+    102400 [ordered] into [pscustomobject] cast            639.83 1x
+    102400 PSObject.Properties.Add                       13914.67 21.75x
+    102400 Add-Member                                    23496.08 36.72x
 ```
 
 ## Related links
@@ -814,6 +816,7 @@ Iterations Test                                 TotalMilliseconds RelativeSpeed
 - [`[StreamReader]`][15]
 - [`[File]::ReadLines()` method][16]
 - [Write-Host][17]
+- [Add-Member][18]
 
 <!-- Link reference definitions -->
 [02]: ../../learn/deep-dives/everything-about-hashtable.md
