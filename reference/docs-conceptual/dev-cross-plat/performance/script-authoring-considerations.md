@@ -630,8 +630,8 @@ the **Append** parameter, which isn't required for the later implementation.
 ## Use OrderedDictionary to dynamically create new objects
 
 There are situations where we may need to dynamically create objects based on some input,
-the perhaps most commonly used way to instantiate them is first creating a new `psobject` and later
-on, adding new properties via the [`Add-Member` cmdlet][18]. The performance cost for small
+the perhaps most commonly used way to create a new **PSObject** and then add new properties using
+the [Add-Member][18] cmdlet. The performance cost for small
 collections using this technique may be negligible however it can become very noticeable for big
 collections. In that case, the recommended approach is to use an
 [`OrderedDictionary` (`[ordered]` type accelerator)][19] and later on casting the
