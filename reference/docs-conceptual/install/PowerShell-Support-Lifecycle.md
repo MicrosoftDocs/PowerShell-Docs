@@ -8,36 +8,52 @@ title: PowerShell Support Lifecycle
 
 > [!NOTE]
 > This document is about support for PowerShell. Windows PowerShell (1.0 - 5.1) is a component of
-> the Windows operating system. Components receive the same support as their parent product or
-> platform. For more information, see [Product and Services Lifecycle Information][03].
+> the Windows operating system. For more information, see
+> [Product and Services Lifecycle Information][03].
 
-PowerShell is supported under the [Microsoft Modern Lifecycle Policy][02], but support dates are
-linked to [.NET and .NET Core Support Policy][06]. In this servicing approach, customers can choose
-Long Term Support (LTS) releases or current releases.
+PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. Support dates follow the
+[.NET Support Policy][06]. In this servicing approach, customers can choose Long Term Support (LTS)
+releases or current releases.
 
-An **LTS** release of PowerShell is built on an LTS release of .NET. Updates to an LTS release only
-contain critical security updates and servicing fixes that are designed to minimize impact on
-existing workloads. LTS releases of PowerShell are supported until the end-of-support for .NET.
+An **LTS** release of PowerShell is built on an **LTS** release of .NET. Updates to an **LTS**
+release only contain critical security updates and servicing fixes that are designed to minimize
+impact on existing workloads.
 
-A **current** release is a release that occurs between LTS releases. Current releases can contain
-critical fixes, innovations, and new features. A current release is supported for six months after
-the next release (current or LTS).
+A **current** release is a release that occurs between **LTS** releases. Current releases can
+contain critical fixes, innovations, and new features. Microsoft supports a **current** release for
+six months after the next **LTS** release.
 
-> [!IMPORTANT]
-> You must have the latest patch update installed to qualify for support. For example, if you're
-> running PowerShell 7.4.0 and 7.4.2 has been released, you must update to 7.4.2 to qualify for
-> support.
+Both **LTS** and **current** versions of PowerShell receive security updates and bug fixes.
+Microsoft only supports the latest update version of a release.
+
+## Getting support
+
+Microsoft provides support for PowerShell on a best-effort basis. Support for Windows PowerShell 5.1
+is provided through Windows support channels. You can use the standard paid support channels to get
+support for PowerShell.
+
+- [Support for business][18]
+- [Contact support][17]
+
+There are many free support options available from the PowerShell community. The most active
+community support channels are available through **Discord** or **Slack**. The discussion channels
+are mirrored on both platforms, so you can choose the platform that you prefer. These channels can
+help you troubleshoot issues, answer questions, and provide guidance on how to use PowerShell.
+
+If you think that you found a bug, you can file an issue on [GitHub][16]. The PowerShell team can't
+provide support through GitHub, but they welcome bug reports. The [community support][04] page
+provides links to the most popular community support channels.
 
 ## Supported platforms
 
-PowerShell runs on multiple operating systems (OS) and processor architectures. For support, the
+PowerShell runs on multiple operating systems (OS) and processor architecture platforms. The
 platform must meet the following criteria:
 
 - The target platform (OS version and processor architecture) is supported by .NET.
+- Microsoft has tested and approved PowerShell on the target platform.
 - The OS version is supported by the distributor for at least one year.
 - The OS version isn't an interim release or equivalent.
 - The OS version is currently supported by the distributor.
-- Microsoft has tested and approved PowerShell on the target platform.
 
 Support for PowerShell ends when either of the following conditions are met:
 
@@ -72,13 +88,13 @@ continue receiving updates and support.
 
 [!INCLUDE [Ubuntu support](../../includes/ubuntu-support.md)]
 
-## Windows PowerShell Compatibility
+### Support for PowerShell modules
 
 The support lifecycle for PowerShell doesn't cover modules that ship outside of the PowerShell
 release package. For example, using the `ActiveDirectory` module that ships as part of Windows
 Server is supported under the [Windows Support Lifecycle][01].
 
-## Experimental features
+## Support for experimental features
 
 [Experimental features][05] aren't intended to be used in production environments. We appreciate
 feedback on experimental features and we provide best-effort support for them.
@@ -89,27 +105,9 @@ PowerShell is released under the [MIT license][15]. Under this license, and with
 agreement, users are limited to [community support][04]. With community support, Microsoft makes no
 guarantees of responsiveness or fixes.
 
-## Getting support
-
-Support for PowerShell is provided on a best-effort basis. Support for Windows PowerShell 5.1 is
-provided through Windows support channels. You can use the standard paid support channels to get
-support for PowerShell.
-
-- [Support for business][18]
-- [Contact support][17]
-
-There are many free support options available from the PowerShell community. The most active
-community support channels are available through **Discord** or **Slack**. The discussion channels
-are mirrored on both platforms, so you can choose the platform that you prefer. These channels can
-help you troubleshoot issues, answer questions, and provide guidance on how to use PowerShell.
-
-If you think that you found a bug, you can file an issue on [GitHub][16]. The PowerShell team can't
-provide support through GitHub, but they welcome bug reports. The [community support][04] page
-provides links to the most popular community support channels.
-
 ## PowerShell end-of-support dates
 
-The PowerShell support lifecycle is tied to the [support lifecycle of .NET][06]. The following table
+The PowerShell support lifecycle follows the [support lifecycle of .NET][06]. The following table
 lists the end-of-support dates for the current versions of PowerShell:
 
 |      Version       |   Release Date    |  End-of-support   |
