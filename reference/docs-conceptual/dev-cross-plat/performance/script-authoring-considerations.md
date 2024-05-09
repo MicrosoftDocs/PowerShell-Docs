@@ -627,6 +627,211 @@ Unwrapped = 42.92 ms
 The unwrapped example is **372 times faster**. Also, notice that the first implementation requires
 the **Append** parameter, which isn't required for the later implementation.
 
+## Use OrderedDictionary to dynamically create new objects
+
+There are situations where we may need to dynamically create objects based on some input,
+the perhaps most commonly used way to instantiate them is first creating a new `psobject` and later
+on, adding new properties via the [`Add-Member` cmdlet][18]. The performance cost for small
+collections using this technique may be negligible however it can become very noticeable for big
+collections. In that case, the recommended approach is to use an
+[`OrderedDictionary` (`[ordered]` type accelerator)][19] and later on casting the
+[`pscustomobject` type accelerator][20] to it to instantiate them.
+
+Take this [sample API response][21] as an example:
+
+```json
+{
+  "tables": [
+    {
+      "name": "PrimaryResult",
+      "columns": [
+        {
+          "name": "Type",
+          "type": "string"
+        },
+        {
+          "name": "TenantId",
+          "type": "string"
+        },
+        {
+          "name": "count_",
+          "type": "long"
+        }
+      ],
+      "rows": [
+        [
+          "Usage",
+          "63613592-b6f7-4c3d-a390-22ba13102111",
+          "1"
+        ],
+        [
+          "Usage",
+          "d436f322-a9f4-4aad-9a7d-271fbf66001c",
+          "1"
+        ],
+        [
+          "BillingFact",
+          "63613592-b6f7-4c3d-a390-22ba13102111",
+          "1"
+        ],
+        [
+          "BillingFact",
+          "d436f322-a9f4-4aad-9a7d-271fbf66001c",
+          "1"
+        ],
+        [
+          "Operation",
+          "63613592-b6f7-4c3d-a390-22ba13102111",
+          "7"
+        ],
+        [
+          "Operation",
+          "d436f322-a9f4-4aad-9a7d-271fbf66001c",
+          "5"
+        ]
+      ]
+    }
+  ]
+}
+```
+
+And let's suppose we wanted to export this data to a CSV, for this we would first need
+to create new objects out of it, using `Add-Member` the code would look like this:
+
+```powershell
+$columns = $json.tables[0].columns
+$result = foreach ($row in $json.tables[0].rows) {
+    $obj = [psobject]::new()
+    $index = 0
+
+    foreach ($column in $columns) {
+        $obj | Add-Member -MemberType NoteProperty -Name $column.name -Value $row[$index++]
+    }
+
+    $obj
+}
+```
+
+And using `OrderedDictionary` the code can be translated to:
+
+```powershell
+$columns = $json.tables[0].columns
+$result = foreach ($row in $json.tables[0].rows) {
+    $obj = [ordered]@{}
+    $index = 0
+
+    foreach ($column in $columns) {
+        $obj[$column.name] = $row[$index++]
+    }
+
+    [pscustomobject] $obj
+}
+```
+
+In both cases the `$result` output would be same:
+
+```output
+Type        TenantId                             count_
+----        --------                             ------
+Usage       63613592-b6f7-4c3d-a390-22ba13102111 1
+Usage       d436f322-a9f4-4aad-9a7d-271fbf66001c 1
+BillingFact 63613592-b6f7-4c3d-a390-22ba13102111 1
+BillingFact d436f322-a9f4-4aad-9a7d-271fbf66001c 1
+Operation   63613592-b6f7-4c3d-a390-22ba13102111 7
+Operation   d436f322-a9f4-4aad-9a7d-271fbf66001c 5
+```
+
+However the latter approach becomes exponentally more efficient by the number of
+objects we would need to create. **It's also worth noting that the latter approach also becomes
+exponentially more efficient depending on the number of members (properties) we may need to add.**
+
+Here is a performance comparison of both techniques for objects with 5 properties:
+
+```powershell
+$tests = @{
+    '[ordered] into [pscustomobject] cast' = {
+        param([int] $iterations, [string[]] $props)
+
+        foreach ($i in 1..$iterations) {
+            $obj = [ordered]@{}
+            foreach ($prop in $props) {
+                $obj[$prop] = $i
+            }
+            [pscustomobject] $obj
+        }
+    }
+    'Add-Member'                           = {
+        param([int] $iterations, [string[]] $props)
+
+        foreach ($i in 1..$iterations) {
+            $obj = [psobject]::new()
+            foreach ($prop in $props) {
+                $obj | Add-Member -MemberType NoteProperty -Name $prop -Value $i
+            }
+            $obj
+        }
+    }
+    'PSObject.Properties.Add'              = {
+        param([int] $iterations, [string[]] $props)
+
+        # this is how, behind the scenes, `Add-Member` attaches
+        # new properties to our PSObject.
+        # Worth having it here for performance comparison
+
+        foreach ($i in 1..$iterations) {
+            $obj = [psobject]::new()
+            foreach ($prop in $props) {
+                $obj.PSObject.Properties.Add(
+                    [psnoteproperty]::new($prop, $i))
+            }
+            $obj
+        }
+    }
+}
+
+$properties = 'Prop1', 'Prop2', 'Prop3', 'Prop4', 'Prop5'
+
+1kb, 10kb, 100kb | ForEach-Object {
+    $groupResult = foreach ($test in $tests.GetEnumerator()) {
+        $ms = Measure-Command { & $test.Value -iterations $_ -props $properties }
+
+        [pscustomobject]@{
+            Iterations        = $_
+            Test              = $test.Key
+            TotalMilliseconds = [math]::Round($ms.TotalMilliseconds, 2)
+        }
+
+        [GC]::Collect()
+        [GC]::WaitForPendingFinalizers()
+    }
+
+    $groupResult = $groupResult | Sort-Object TotalMilliseconds
+    $groupResult | Select-Object *, @{
+        Name       = 'RelativeSpeed'
+        Expression = {
+            $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
+            [math]::Round($relativeSpeed, 2).ToString() + 'x'
+        }
+    }
+}
+```
+
+And these are the results:
+
+```output
+Iterations Test                                 TotalMilliseconds RelativeSpeed
+---------- ----                                 ----------------- -------------
+      1024 [ordered] into [pscustomobject] cast             29.70 1x
+      1024 PSObject.Properties.Add                          91.91 3.09x
+      1024 Add-Member                                      682.94 22.99x
+     10240 [ordered] into [pscustomobject] cast             67.63 1x
+     10240 PSObject.Properties.Add                         251.98 3.73x
+     10240 Add-Member                                     3522.60 52.09x
+    102400 [ordered] into [pscustomobject] cast            861.16 1x
+    102400 PSObject.Properties.Add                        3534.21 4.1x
+    102400 Add-Member                                    23122.54 26.85x
+```
+
 ## Related links
 
 - [`$null`][03]
@@ -661,3 +866,7 @@ the **Append** parameter, which isn't required for the later implementation.
 [15]: xref:System.IO.StreamReader
 [16]: xref:System.IO.File.ReadLines*
 [17]: xref:Microsoft.PowerShell.Utility.Write-Host
+[18]: /powershell/module/microsoft.powershell.utility/add-member
+[19]: /powershell/module/microsoft.powershell.core/about/about_hash_tables#creating-ordered-dictionaries
+[20]: /powershell/scripting/learn/deep-dives/everything-about-pscustomobject#converting-a-hashtable
+[21]: /rest/api/loganalytics/query/get#cross-workspace
