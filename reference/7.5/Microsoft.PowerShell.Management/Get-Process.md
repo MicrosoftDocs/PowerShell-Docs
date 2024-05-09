@@ -55,9 +55,9 @@ Get-Process -InputObject <Process[]> -IncludeUserName [<CommonParameters>]
 
 The `Get-Process` cmdlet gets the processes on a local computer.
 
-Without parameters, this cmdlet gets all of the processes on the local computer. You can also
-specify a particular process by process name or process ID (PID) or pass a process object through
-the pipeline to this cmdlet.
+Without parameters, this cmdlet gets all the processes on the local computer. You can also specify a
+particular process by process name or process ID (PID) or pass a process object through the pipeline
+to this cmdlet.
 
 By default, this cmdlet returns a process object that has detailed information about the process and
 supports methods that let you start and stop the process. You can also use the parameters of the
@@ -99,7 +99,7 @@ This command gets all processes that have a working set greater than 20 MB. It u
 objects to the `Where-Object` cmdlet, which selects only the object with a value greater than
 20,000,000 bytes for the **WorkingSet** property.
 
-**WorkingSet** is one of many properties of process objects. To see all of the properties, type
+**WorkingSet** is one of many properties of process objects. To see all the properties, type
 `Get-Process | Get-Member`. By default, the values of all amount properties are in bytes, even
 though the default display lists them in kilobytes and megabytes.
 
@@ -158,9 +158,9 @@ ProductVersion   FileVersion      FileName
 ```
 
 This command uses the **FileVersionInfo** parameter to get the version information for the
-`pwsh.exe` file that is the main module for the PowerShell process.
+`pwsh.exe` file that's the main module for the PowerShell process.
 
-To run this command with processes that you do not own on Windows Vista and later versions of
+To run this command with processes that you don't own on Windows Vista and later versions of
 Windows, you must open PowerShell with the **Run as administrator** option.
 
 ### Example 7: Get modules loaded with the specified process
@@ -172,7 +172,7 @@ Get-Process SQL* -Module
 This command uses the **Module** parameter to get the modules that have been loaded by the process.
 This command gets the modules for the processes that have names that begin with `SQL`.
 
-To run this command on Windows Vista and later versions of Windows with processes that you do not
+To run this command on Windows Vista and later versions of Windows with processes that you don't
 own, you must start PowerShell with the **Run as administrator** option.
 
 ### Example 8: Find the owner of a process
@@ -189,7 +189,7 @@ Handles      WS(K)   CPU(s)     Id UserName            ProcessName
 
 This command shows how to find the owner of a process.
 On Windows, the **IncludeUserName** parameter requires elevated user rights
-(**Run as Administrator**) to view the users of processes that are not running
+(**Run as Administrator**) to view the users of processes that aren't running
 as the current user.
 The output reveals that the owner is `Domain01\user01`.
 
@@ -216,13 +216,13 @@ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
     83    96.21      77.53       4.39    1192  10 pwsh
 ```
 
-These commands show how to use the `$PID` automatic variable to identify the process that is hosting
+These commands show how to use the `$PID` automatic variable to identify the process that's hosting
 the current PowerShell session. You can use this method to distinguish the host process from other
 PowerShell processes that you might want to stop or close.
 
-The first command gets all of the PowerShell processes in the current session.
+The first command gets all the PowerShell processes in the current session.
 
-The second command gets the PowerShell process that is hosting the current session.
+The second command gets the PowerShell process that's hosting the current session.
 
 ### Example 10: Get all processes that have a main window title and display them in a table
 
@@ -234,7 +234,7 @@ This command gets all the processes that have a main window title, and it displa
 with the process ID and the process name.
 
 The **mainWindowTitle** property is just one of many useful properties of the **Process** object
-that `Get-Process` returns. To view all of the properties, pipe the results of a `Get-Process`
+that `Get-Process` returns. To view all the properties, pipe the results of a `Get-Process`
 command to the `Get-Member` cmdlet `Get-Process | Get-Member`.
 
 ## PARAMETERS
@@ -244,13 +244,13 @@ command to the `Get-Member` cmdlet `Get-Process | Get-Member`.
 Indicates that this cmdlet gets the file version information for the program that runs in the
 process.
 
-On Windows Vista and later versions of Windows, you must open PowerShell with the **Run as
-administrator** option to use this parameter on processes that you do not own.
+On Windows, you must open PowerShell with the **Run as administrator** option to use this parameter
+on processes that you don't own.
 
 Using this parameter is equivalent to getting the **MainModule.FileVersionInfo** property of each
 process object. When you use this parameter, `Get-Process` returns a **FileVersionInfo** object
-**System.Diagnostics.FileVersionInfo**, not a process object. So, you cannot pipe the output of the
-command to a cmdlet that expects a process object, such as `Stop-Process`.
+**System.Diagnostics.FileVersionInfo**, not a process object. Therefore, you can't pipe the output
+of the command to a cmdlet that expects a process object, such as `Stop-Process`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -319,12 +319,12 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets the modules that have been loaded by the processes.
 
 On Windows Vista and later versions of Windows, you must open PowerShell with the **Run as
-administrator** option to use this parameter on processes that you do not own.
+administrator** option to use this parameter on processes that you don't own.
 
 This parameter is equivalent to getting the **Modules** property of each process object. When you
-use this parameter, this cmdlet returns a **ProcessModule** object
-**System.Diagnostics.ProcessModule**, not a process object. So, you cannot pipe the output of the
-command to a cmdlet that expects a process object, such as `Stop-Process`.
+use this parameter, this cmdlet returns a **System.Diagnostics.ProcessModule** object , not a
+process object. Therefore, you can't pipe the output of the command to a cmdlet that expects a
+process object, such as `Stop-Process`.
 
 When you use both the **Module** and **FileVersionInfo** parameters in the same command, this cmdlet
 returns a **FileVersionInfo** object with information about the file version of all modules.
@@ -406,7 +406,7 @@ You can use the properties and methods of the Windows Management Instrumentation
 [Win32_Process](/windows/win32/cimwin32prov/win32-process).
 
 The default display of a process is a table that includes the following columns. For a description
-of all of the properties of process objects, see
+of all the properties of process objects, see
 [Process Properties](/dotnet/api/system.diagnostics.process).
 
 - **Handles**: The number of handles that the process has opened.
