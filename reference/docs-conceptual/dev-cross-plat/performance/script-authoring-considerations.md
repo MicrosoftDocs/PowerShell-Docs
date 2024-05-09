@@ -832,5 +832,5 @@ Iterations Test                                 TotalMilliseconds RelativeSpeed
 [15]: xref:System.IO.StreamReader
 [16]: xref:System.IO.File.ReadLines*
 [17]: xref:Microsoft.PowerShell.Utility.Write-Host
-[18]: /powershell/module/microsoft.powershell.utility/add-member
+[18]: xref:Microsoft.PowerShell.Utility.Add-Member
 [19]: /powershell/module/microsoft.powershell.core/about/about_hash_tables#creating-ordered-dictionaries
