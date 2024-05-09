@@ -641,58 +641,25 @@ Take this [sample API response][21] as an example:
 
 ```json
 {
-  "tables": [
-    {
-      "name": "PrimaryResult",
-      "columns": [
-        {
-          "name": "Type",
-          "type": "string"
-        },
-        {
-          "name": "TenantId",
-          "type": "string"
-        },
-        {
-          "name": "count_",
-          "type": "long"
-        }
-      ],
-      "rows": [
-        [
-          "Usage",
-          "63613592-b6f7-4c3d-a390-22ba13102111",
-          "1"
+    "tables": [
+      {
+        "name": "PrimaryResult",
+        "columns": [
+          { "name": "Type", "type": "string" },
+          { "name": "TenantId", "type": "string" },
+          { "name": "count_", "type": "long" }
         ],
-        [
-          "Usage",
-          "d436f322-a9f4-4aad-9a7d-271fbf66001c",
-          "1"
-        ],
-        [
-          "BillingFact",
-          "63613592-b6f7-4c3d-a390-22ba13102111",
-          "1"
-        ],
-        [
-          "BillingFact",
-          "d436f322-a9f4-4aad-9a7d-271fbf66001c",
-          "1"
-        ],
-        [
-          "Operation",
-          "63613592-b6f7-4c3d-a390-22ba13102111",
-          "7"
-        ],
-        [
-          "Operation",
-          "d436f322-a9f4-4aad-9a7d-271fbf66001c",
-          "5"
+        "rows": [
+          [ "Usage", "63613592-b6f7-4c3d-a390-22ba13102111", "1" ],
+          [ "Usage", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "1" ],
+          [ "BillingFact", "63613592-b6f7-4c3d-a390-22ba13102111", "1" ],
+          [ "BillingFact", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "1" ],
+          [ "Operation", "63613592-b6f7-4c3d-a390-22ba13102111", "7" ],
+          [ "Operation", "d436f322-a9f4-4aad-9a7d-271fbf66001c", "5" ]
         ]
-      ]
-    }
-  ]
-}
+      }
+    ]
+  }
 ```
 
 And let's suppose we wanted to export this data to a CSV, for this we would first need
