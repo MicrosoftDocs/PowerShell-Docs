@@ -708,9 +708,8 @@ Operation   63613592-b6f7-4c3d-a390-22ba13102111 7
 Operation   d436f322-a9f4-4aad-9a7d-271fbf66001c 5
 ```
 
-However the latter approach becomes exponentally more efficient by the number of
-objects we would need to create. **It's also worth noting that the latter approach also becomes
-exponentially more efficient depending on the number of members (properties) we may need to add.**
+The latter approach becomes exponentially more efficient as the number of objects and member
+properties increases.
 
 Here is a performance comparison of both techniques for objects with 5 properties:
 
