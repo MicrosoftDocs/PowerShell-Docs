@@ -37,7 +37,6 @@ The following list describes the main folders in this repository.
   reference and conceptual content.
   - `5.1` - contains the cmdlet reference and about topics for PowerShell 5.1
   - `7.2` - contains the cmdlet reference and about topics for PowerShell 7.2
-  - `7.3` - contains the cmdlet reference and about topics for PowerShell 7.3
   - `7.4` - contains the cmdlet reference and about topics for PowerShell 7.4
   - `7.5` - contains the cmdlet reference and about topics for PowerShell 7.5
   - `bread` - contains the TOC used for breadcrumb navigation
