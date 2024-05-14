@@ -1,7 +1,7 @@
 ---
 description: Describes how to use wildcard characters in PowerShell.
 Locale: en-US
-ms.date: 12/16/2022
+ms.date: 05/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Wildcards
@@ -30,16 +30,19 @@ In this case, the asterisk (`*`) wildcard character represents any characters
 that appear before the `.ppt` file name extension.
 
 Wildcard expressions are simpler than regular expressions. For more
-information, see [about_Regular_Expressions](./about_Regular_Expressions.md).
+information, see [about_Regular_Expressions][01].
 
 PowerShell supports the following wildcard characters:
 
 - `*` - Match zero or more characters
   - `a*` matches `aA`, `ag`, and `Apple`
   - `a*` doesn't match `banana`
-- `?` - Match one character in that position
+- `?` - For strings, match one character in that position
   - `?n` matches `an`, `in`, and `on`
   - `?n` doesn't match `ran`
+- `?` - For files and directories, match zero or one character in that position
+  - `?.txt` matches `a.txt` and `b.txt`
+  - `?.txt` doesn't match `ab.txt`
 - `[ ]` - Match a range of characters
   - `[a-l]ook` matches `book`, `cook`, and `look`
   - `[a-l]ook` doesn't match `took`
@@ -57,6 +60,11 @@ through **l**, type:
 ```powershell
 Get-ChildItem C:\Techdocs\[a-l]*.txt
 ```
+
+> [!NOTE]
+> Wildcard matching for filesystem items works differently than for strings.
+> For more information, see the _Remarks_ section of the
+> [DirectoryInfo.GetFiles(String, EnumerationOptions)][05] method.
 
 There may be cases where you want to match the literal character rather than
 treat it as a wildcard character. In those cases you can use the backtick
@@ -93,6 +101,13 @@ foreach ($point in $p) {
 
 ## See also
 
-- [about_If](about_If.md)
-- [about_Language_Keywords](about_Language_Keywords.md)
-- [about_Script_Blocks](about_Script_Blocks.md)
+- [about_If][02]
+- [about_Language_Keywords][03]
+- [about_Script_Blocks][04]
+
+<!-- link references -->
+[01]: ./about_Regular_Expressions.md
+[02]: about_If.md
+[03]: about_Language_Keywords.md
+[04]: about_Script_Blocks.md
+[05]: xref:System.IO.DirectoryInfo.GetFiles*#system-io-directoryinfo-getfiles(system-string-system-io-enumerationoptions)
