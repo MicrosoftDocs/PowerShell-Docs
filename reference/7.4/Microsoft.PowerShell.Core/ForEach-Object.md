@@ -653,7 +653,7 @@ This parameter was introduced in PowerShell 7.0.
 
 > [!NOTE]
 > The **-Parallel** Parameter is not supported in **Foreach ($item in $array)** scenarios
-> You have to directly pipe an array like **$array | foreach -parallel**
+> You have to directly pipe an array like **$array | Foreach-Object -parallel**
 
 
 ```yaml
