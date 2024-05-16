@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Alpine Linux
-ms.date: 01/12/2024
+ms.date: 05/16/2024
 title: Installing PowerShell on Alpine Linux
 ---
 # Installing PowerShell on Alpine Linux
@@ -21,10 +21,10 @@ Installation on Alpine is based on downloading tar.gz package from the [releases
 to the package depends on the version of PowerShell you want to install.
 
 - PowerShell 7.4.2 - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell-7.4.2-linux-musl-x64.tar.gz`
-- PowerShell 7.3.12 - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.12/powershell-7.3.12-linux-alpine-x64.tar.gz`
 - PowerShell 7.2.19 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.19/powershell-7.2.19-linux-alpine-x64.tar.gz`
+- PowerShell 7.5-preview.2 - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-preview.2/powershell-7.5.0-preview.2-linux-musl-x64.tar.gz`
 
-Then, in the terminal, execute the following shell commands to install PowerShell 7.3:
+Then, in the terminal, execute the following shell commands to install PowerShell 7.4:
 
 ```sh
 # install the requirements
