@@ -1,43 +1,27 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 11/14/2023
+ms.date: 05/16/2024
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
-The following table is a list of currently supported versions of PowerShell and the versions of RHEL
-they're supported on. These versions remain supported until either the version of
-[PowerShell reaches end-of-support][lifecycle] or the version of
+Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycle] or the version of
 [RHEL reaches end-of-support][eol-rhel].
 
-- The ![Supported][1] icon indicates that the version of the OS or PowerShell is still supported
-- The ![Out of Support][4] icon indicates the version of PowerShell is no longer supported on that
-  version of the OS
-- The ![In Test][2] icon indicates that we haven't finished testing PowerShell on that OS
-- The ![Not Supported][3] icon indicates that the version of the OS or PowerShell isn't supported
-- When both the version of the OS and the version of PowerShell have a ![Supported][1] icon, that
-  combination is supported
+RHEL 8 - OS support ends on 2029-05-31
 
-[1]: ../media/shared/check-mark-button-2705.svg
-[2]: ../media/shared/construction-sign-1f6a7.svg
-[3]: ../media/shared/cross-mark-274c.svg
-[4]: ../media/shared/large-yellow-circle-1f7e1.svg
+- Docker images containing PowerShell 7.2, PowerShell 7.4, and PowerShell 7.5-preview for x64 are
+  available from the [Microsoft Artifact Registry][mcr]
 
-|       RHEL        | 7.2 (LTS-previous) |       7.3       |  7.4 (LTS-current)  |
-| ----------------- | :----------------: | :-------------: | :-----------------: |
-| ![Supported][1] 9 |  ![Supported][1]   | ![Supported][1] |   ![Supported][1]   |
-| ![Supported][1] 8 |  ![Supported][1]   | ![Supported][1] |   ![Supported][1]   |
-| ![Supported][1] 7 |  ![Supported][1]   | ![Supported][1] | ![Not Supported][3] |
+RHEL 9 - OS support ends on 2032-05-31
+
+- Docker images containing PowerShell 7.2, PowerShell 7.4, and PowerShell 7.5-preview for x64 are
+  available from the [Microsoft Artifact Registry][mcr]
 
 PowerShell is tested on Red Hat Universal Base Images (UBI). For more information, see the
 [UBI information page][ubi].
 
-PowerShell is supported on RHEL for the following processor architectures.
-
-|          RHEL          | 7.2 (LTS-current) |  7.3  | 7.4 (LTS-current) |
-| ---------------------- | :---------------: | :---: | :---------------: |
-| All supported versions |        x64        |  x64  |        x64        |
-
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/
 [ubi]: https://developers.redhat.com/products/rhel/ubi
+[mcr]: https://mcr.microsoft.com/en-us/product/powershell/tags

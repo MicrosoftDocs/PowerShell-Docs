@@ -1,39 +1,25 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 11/14/2023
+ms.date: 05/16/2024
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
-The following table is a list of currently supported PowerShell releases and the versions of Debian
-they're supported on. These versions remain supported until either the version of
-[PowerShell reaches end-of-support][lifecycle] or the version of
+Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycle] or the version of
 [Debian reaches end-of-life][eol-debian].
 
-- The ![Supported][1] icon indicates that the version of the OS or PowerShell is still supported
-- The ![Out of Support][4] icon indicates the version of PowerShell is no longer supported on that
-  version of the OS
-- The ![In Test][2] icon indicates that we haven't finished testing PowerShell on that OS
-- The ![Not Supported][3] icon indicates that the version of the OS or PowerShell isn't supported
-- When both the version of the OS and the version of PowerShell have a ![Supported][1] icon, that
-  combination is supported
+Debian 11 (Bullseye) - OS support ends on 2024-07-31
 
-[1]: ../media/shared/check-mark-button-2705.svg
-[2]: ../media/shared/construction-sign-1f6a7.svg
-[3]: ../media/shared/cross-mark-274c.svg
-[4]: ../media/shared/large-yellow-circle-1f7e1.svg
+- Docker images containing PowerShell 7.2, PowerShell 7.4, and PowerShell 7.5-preview for x64 are
+  available from the [Microsoft Artifact Registry][mcr]
 
-|              Debian              |  7.2 (LTS-previous)  |         7.3          |  7.4 (LTS-current)   |
-| -------------------------------- | :------------------: | :------------------: | :------------------: |
-| ![Supported][1] 12 (Bookworm)    |    ![In Test][2]     |    ![In Test][2]     |    ![In Test][2]     |
-| ![Supported][1] 11 (Bullseye)    |   ![Supported][1]    |   ![Supported][1]    |   ![Supported][1]    |
-| ![Out of Support][4] 10 (Buster) | ![Out of Support][4] | ![Out of Support][4] | ![Out of Support][4] |
+Debian 12 (Bookworm) - OS support ends on 2026-06-10
 
-PowerShell is supported on Debian for the following processor architectures.
+- Docker images containing PowerShell 7.2, PowerShell 7.4, and PowerShell 7.5-preview for x64 are
+  available from the [Microsoft Artifact Registry][mcr]
 
-|   Debian   | 7.2 (LTS-current) |  7.3  | 7.4 (LTS-current) |
-| ---------- | :---------------: | :---: | :---------------: |
-| Version 9+ |        x64        |  x64  |        x64        |
+Preview versions of PowerShell are provided for testing and feedback only.
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-debian]: https://wiki.debian.org/DebianReleases
+[mcr]: https://mcr.microsoft.com/en-us/product/powershell/tags
