@@ -1,7 +1,7 @@
 ---
 description: PSCustomObject is a simple way to create structured data.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/11/2023
+ms.date: 05/06/2024
 title: Everything you wanted to know about PSCustomObject
 ---
 # Everything you wanted to know about PSCustomObject
@@ -12,9 +12,9 @@ have a simple way to create structured data. Take a look at the first example an
 better idea of what that means.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by
-> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
-> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][10] of this article appeared on the blog written by
+> [@KevinMarquette][13]. The PowerShell team thanks Kevin for sharing this content with
+> us. Please check out his blog at [PowerShellExplained.com][09].
 
 ## Creating a PSCustomObject
 
@@ -60,7 +60,7 @@ properties. One important note is that while this method works, it isn't an exac
 biggest difference is that the order of the properties isn't preserved.
 
 If you want to preserve the order, see
-[Ordered hashtables](everything-about-hashtable.md#ordered-hashtables).
+[Ordered hashtables][05].
 
 ### Legacy approach
 
@@ -89,7 +89,7 @@ $myObject = Get-Content -Path $Path | ConvertFrom-Json
 ```
 
 I cover more ways to save objects to a file in my article on
-[The many ways to read and write to files][The many ways to read and write to files].
+[The many ways to read and write to files][11].
 
 ## Working with properties
 
@@ -113,7 +113,7 @@ $myObject.psobject.properties.remove('ID')
 
 The `.psobject` is an intrinsic member that gives you access to base object metadata. For more
 information about intrinsic members, see
-[about_Intrinsic_Members](/powershell/module/microsoft.powershell.core/about/about_intrinsic_members).
+[about_Intrinsic_Members][03].
 
 ### Enumerating property names
 
@@ -271,9 +271,8 @@ $myObject.PSObject.TypeNames.Insert(0,"My.Object")
 ```
 
 I recently discovered another way to do this from this
-[post by /u/markekraus][post by /u/markekraus]. I did a little digging and more posts about the idea
-from [Adam Bertram][Adam Bertram] and [Mike Shepard][Mike Shepard] where they talk about this
-approach that allows you to define it inline.
+[post by /u/markekraus][14]. He talks about this approach that allows you to
+define it inline.
 
 ```powershell
 $myObject = [PSCustomObject]@{
@@ -289,13 +288,13 @@ name, we can do some more things.
 
 > [!NOTE]
 > You can also create custom PowerShell types using PowerShell classes. For more information, see
-> [PowerShell Class Overview](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes).
+> [PowerShell Class Overview][01].
 
 ## Using DefaultPropertySet (the long way)
 
 PowerShell decides for us what properties to display by default. A lot of the native commands have a
-`.ps1xml` [formatting file][formatting file] that does all the heavy lifting. From this
-[post by Boe Prox][post by Boe Prox], there's another way for us to do this on our custom object
+`.ps1xml` [formatting file][08] that does all the heavy lifting. From this
+[post by Boe Prox][07], there's another way for us to do this on our custom object
 using just PowerShell. We can give it a `MemberSet` for it to use.
 
 ```powershell
@@ -309,7 +308,7 @@ Now when my object just falls to the shell, it will only show those properties b
 
 ### Update-TypeData with DefaultPropertySet
 
-This is nice but I recently saw a better way using [Update-TypeData][Update-TypeData] to specify
+This is nice but I recently saw a better way using [Update-TypeData][04] to specify
 the default properties.
 
 ```powershell
@@ -382,7 +381,7 @@ code or compared to the actual function output.
 The main reason you would use an output type is so that meta information about your function
 reflects your intentions. Things like `Get-Command` and `Get-Help` that your development environment
 can take advantage of. If you want more information, then take a look at the help for it:
-[about_Functions_OutputTypeAttribute][about_Functions_OutputTypeAttribute].
+[about_Functions_OutputTypeAttribute][02].
 
 With that said, if you're using Pester to unit test your functions then it would be a good idea
 to validate the output objects match your **OutputType**. This could catch variables that just fall
@@ -400,14 +399,15 @@ the bigger picture and be aware of them when you have an opportunity to use them
 something and can find a way to work this into your scripts.
 
 <!-- link references -->
-[original version]: https://powershellexplained.com/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/
-[powershellexplained.com]: https://powershellexplained.com/
-[@KevinMarquette]: https://twitter.com/KevinMarquette
-[post by Boe Prox]: https://learn-PowerShell.net/2013/08/03/quick-hits-set-the-default-property-display-in-PowerShell-on-custom-objects/
-[formatting file]: https://mcpmag.com/articles/2014/05/13/PowerShell-properties-part-3.aspx
-[about_Functions_OutputTypeAttribute]: /powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute
-[The many ways to read and write to files]: https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files
-[post by /u/markekraus]: https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/
-[Adam Bertram]: http://www.adamtheautomator.com/
-[Mike Shepard]: https://powershellstation.com/2016/05/22/custom-objects-and-pstypename/
-[Update-TypeData]: /powershell/module/microsoft.powershell.utility/update-typedata
+[01]: /powershell/module/Microsoft.PowerShell.Core/About/about_Classes
+[02]: /powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute
+[03]: /powershell/module/microsoft.powershell.core/about/about_intrinsic_members
+[04]: /powershell/module/microsoft.powershell.utility/update-typedata
+[05]: everything-about-hashtable.md#ordered-hashtables
+[07]: https://learn-PowerShell.net/2013/08/03/quick-hits-set-the-default-property-display-in-PowerShell-on-custom-objects/
+[08]: https://mcpmag.com/articles/2014/05/13/PowerShell-properties-part-3.aspx
+[09]: https://powershellexplained.com/
+[10]: https://powershellexplained.com/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/
+[11]: https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files
+[13]: https://twitter.com/KevinMarquette
+[14]: https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/

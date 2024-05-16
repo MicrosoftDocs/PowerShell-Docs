@@ -63,9 +63,9 @@ the Windows PowerShell prompt: `C:\PS>`.
 <command:examples>
   <command:example>
     <maml:title>----------  EXAMPLE 1  ----------</maml:title>
-    <maml:Introduction>
-      <maml:paragraph>C:\PS></maml:paragraph>
-    </maml:Introduction>
+    <maml:introduction>
+      <maml:para>C:\PS></maml:para>
+    </maml:introduction>
 </command:example>
 </command:examples>
 ```
@@ -80,9 +80,9 @@ whenever possible.
 <command:examples>
   <command:example>
     <maml:title>----------  EXAMPLE 1  ----------</maml:title>
-    <maml:Introduction>
-      <maml:paragraph>C:\PS></maml:paragraph>
-    </maml:Introduction>
+    <maml:introduction>
+      <maml:para>C:\PS></maml:para>
+    </maml:introduction>
     <dev:code> command </dev:code>
 </command:example>
 </command:examples>
@@ -97,9 +97,9 @@ The following XML shows how to add a description for the example. PowerShell use
 <command:examples>
   <command:example>
     <maml:title>----------  EXAMPLE 1  ----------</maml:title>
-    <maml:Introduction>
-      <maml:paragraph>C:\PS></maml:paragraph>
-    </maml:Introduction>
+    <maml:introduction>
+      <maml:para>C:\PS></maml:para>
+    </maml:introduction>
     <dev:code> command </dev:code>
     <dev:remarks>
       <maml:para> command description </maml:para>
@@ -119,9 +119,9 @@ command.
 <command:examples>
   <command:example>
     <maml:title>----------  EXAMPLE 1  ----------</maml:title>
-    <maml:Introduction>
-      <maml:paragraph>C:\PS></maml:paragraph>
-    </maml:Introduction>
+    <maml:introduction>
+      <maml:para>C:\PS></maml:para>
+    </maml:introduction>
     <dev:code> command </dev:code>
     <dev:remarks>
       <maml:para> command description </maml:para>

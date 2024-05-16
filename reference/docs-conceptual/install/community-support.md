@@ -1,51 +1,39 @@
 ---
-description: PowerShell may run on Linux distributions that aren't officially supported by Microsoft.
-ms.date: 01/12/2024
+description: PowerShell can run on Linux distributions that aren't officially supported by Microsoft.
+ms.date: 05/07/2024
 title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
 
-PowerShell can be installed on some distributions of Linux that aren't supported by Microsoft. In
-those cases, you may find support from the community for PowerShell on those platforms.
+You can install PowerShell on some distributions of Linux that aren't supported by Microsoft. In
+those cases, you might find support from the community for PowerShell on those platforms.
 
-To be supported by Microsoft, the Linux distribution must meet the following criteria:
+Supported Linux distributions must meet the following criteria:
 
 - The version and architecture of the distribution is supported by .NET Core.
 - The version of the distribution is supported for at least one year.
 - The version of the distribution isn't an interim release or equivalent.
 - The PowerShell team has tested the version of the distribution.
 
-For more information, see the [PowerShell Support Lifecycle][10]
-documentation.
+For more information, see the [PowerShell Support Lifecycle][11] documentation.
 
-The following distributions are supported by the community. Each distribution has its own community
-support mechanisms. Consult the distribution's website to find their community resources. You may
-also get help from these [PowerShell Community][01] resources.
+The following distributions are examples of distributions supported by the community. Each
+distribution has its own community support mechanisms. Consult the distribution's website to find
+their community resources. You can also get help from these [PowerShell Community][01] resources.
 
 ## Ubuntu interim releases
 
-The documented steps to install PowerShell on [Ubuntu][08] may work on Ubuntu interim releases.
-However, PowerShell is only supported on the LTS releases of Ubuntu. Microsoft doesn't support
-[interim releases][05] of Ubuntu.
+The documented steps to install PowerShell on [Ubuntu][09] might work on Ubuntu interim releases.
+However, Microsoft only supports PowerShell on the Long Term Servicing (LTS) releases of Ubuntu.
+Microsoft doesn't support [interim releases][03] of Ubuntu.
 
 ## Arch Linux
 
-> [!NOTE]
-> Arch support isn't officially supported by Microsoft and is maintained by the community.
-
-PowerShell is available from the [Arch Linux][07] User Repository (AUR).
-
-- It can be compiled with the [latest tagged release][04]
-- It can be compiled from the [latest commit to master][03]
-- It can be installed using the [latest release binary][02]
-
-Packages in the AUR are maintained by the community. For more information on installing packages
-from the AUR, see the [Arch Linux wiki][06] or [Using PowerShell in Docker][09].
+PowerShell is available from the [Arch Linux][06] User Repository (AUR). Packages in the AUR are
+maintained by the Arch community. To install the [latest release binary][02], see the
+[Arch Linux wiki][04] or [Using PowerShell in Docker][10].
 
 ## Kali
-
-> [!NOTE]
-> Kali support isn't officially supported by Microsoft and is maintained by the community.
 
 ### Installation - Kali
 
@@ -64,17 +52,22 @@ pwsh
 apt -y remove powershell
 ```
 
+## Gentoo
+
+You can install PowerShell on Gentoo Linux using packages from the Gentoo package repository. For
+information about installing these packages, see the [PowerShell][05] page in the Gentoo wiki.
+
 ## Raspberry Pi OS
 
-[Raspberry Pi OS][13] (formerly Raspbian) is a free operating system based on Debian.
+[Raspberry Pi OS][07] (formerly Raspbian) is a free operating system based on Debian.
 
 > [!IMPORTANT]
 > .NET isn't supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
-> devices prior to Raspberry Pi 2.
+> devices released before Raspberry Pi 2.
 
 ### Install on Raspberry Pi OS
 
-Download the tar.gz package from the [releases][12] page onto your Raspberry Pi computer. The links
+Download the tar.gz package from the [releases][08] page onto your Raspberry Pi computer. The links
 to the current versions are:
 
 - PowerShell 7.4.2 - latest LTS release
@@ -85,7 +78,7 @@ to the current versions are:
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.12/powershell-7.3.12-linux-arm64.tar.gz`
 
 Use the following shell commands to download and install the package. This script detects whether
-you are running a 32 or 64-bit OS and installs the latest stable version of PowerShell for that
+you're running a 32-bit or 64-bit OS and installs the latest stable version of PowerShell for that
 processor type.
 
 ```sh
@@ -139,13 +132,12 @@ rm -rf ~/powershell
 <!-- link references -->
 [01]: ../community/community-support.md
 [02]: https://aur.archlinux.org/packages/powershell-bin/
-[03]: https://aur.archlinux.org/packages/powershell-git/
-[04]: https://aur.archlinux.org/packages/powershell/
-[05]: https://ubuntu.com/about/release-cycle
-[06]: https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages
-[07]: https://www.archlinux.org/download/
-[08]: install-ubuntu.md
-[09]: powershell-in-docker.md
-[10]: powershell-support-lifecycle.md
-[12]: install-other-linux.md#binary-archives
-[13]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+[03]: https://ubuntu.com/about/release-cycle
+[04]: https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages
+[05]: https://wiki.gentoo.org/wiki/PowerShell
+[06]: https://www.archlinux.org/download/
+[07]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+[08]: install-other-linux.md#binary-archives
+[09]: install-ubuntu.md
+[10]: powershell-in-docker.md
+[11]: powershell-support-lifecycle.md

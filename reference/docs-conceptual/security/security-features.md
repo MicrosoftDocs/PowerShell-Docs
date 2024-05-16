@@ -86,7 +86,7 @@ throwing errors. The log messages describe what restrictions would apply if the 
   session on a locked down machine.
 
 - PowerShell 7.2 now disallows scripts from using COM objects in AppLocker system lock down
-  conditions. Cmdlet that use COM or DCOM internally aren't affected.
+  conditions. Cmdlets that use COM or DCOM internally aren't affected.
 
 ### Security Servicing Criteria
 

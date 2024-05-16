@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 01/19/2024
+ms.date: 05/07/2024
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -585,12 +585,12 @@ available for use in module manifest files, whereas `$PSVersionTable` isn't.
 ### $PSHOME
 
 Contains the full path of the installation directory for PowerShell, typically,
-`$env:windir\System32\PowerShell\v1.0` in Windows systems. You can use this
-variable in the paths of PowerShell files. For example, the following command
-searches the conceptual Help topics for the word **variable**:
+`C:\Program Files\PowerShell\7` in Windows systems. You can use this variable
+in the paths of PowerShell files. For example, the following command searches
+the conceptual Help topics for the word **Help**:
 
 ```powershell
-Select-String -Pattern Variable -Path $pshome\*.txt
+Select-String -Pattern Help -Path $PSHOME\en-US\*.txt
 ```
 
 ### $PSItem

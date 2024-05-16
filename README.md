@@ -7,14 +7,12 @@ Welcome to the PowerShell-Docs repository, the home of the official PowerShell d
 
 ## Microsoft Open Source Code of Conduct
 
-This project has adopted the [Microsoft Open Source Code of Conduct][04]. For more information see
-the [Code of Conduct FAQ][05] or contact [opencode@microsoft.com][06] with any additional questions
-or comments.
+This project has adopted the [Microsoft Open Source Code of Conduct][04].
+
+## Build Status
 
 [live-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=live
 [main-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=main
-
-## Build Status
 
 |          live branch          |          main branch          |
 | :---------------------------- | :---------------------------- |
@@ -22,7 +20,10 @@ or comments.
 
 ## PowerShell Updatable Help (CabGen) CI Build Status
 
-[![Build Status](https://apidrop.visualstudio.com/Content%20CI/_apis/build/status/PROD/CabGen(PowerShell_Updatable_Help)/GitHub_MicrosoftDocs_PowerShell-Docs/6ff7e8c3-dfc6-3ebd-da5a-d5e2ff43de8f_cabgen_Publish-Updatable-Help?repoName=MicrosoftDocs%2FPowerShell-Docs&branchName=live)](https://apidrop.visualstudio.com/Content%20CI/_build/latest?definitionId=5076&repoName=MicrosoftDocs%2FPowerShell-Docs&branchName=live)
+[![Build Status][cabgen-status]][cabgen-log]
+
+[cabgen-status]: https://apidrop.visualstudio.com/Content%20CI/_apis/build/status/PROD/CabGen(PowerShell_Updatable_Help)/GitHub_MicrosoftDocs_PowerShell-Docs/6ff7e8c3-dfc6-3ebd-da5a-d5e2ff43de8f_cabgen_Publish-Updatable-Help?repoName=MicrosoftDocs%2FPowerShell-Docs&branchName=live
+[cabgen-log]: https://apidrop.visualstudio.com/Content%20CI/_build/latest?definitionId=5076&repoName=MicrosoftDocs%2FPowerShell-Docs&branchName=live
 
 ## Repository Structure
 
@@ -37,7 +38,6 @@ The following list describes the main folders in this repository.
   reference and conceptual content.
   - `5.1` - contains the cmdlet reference and about topics for PowerShell 5.1
   - `7.2` - contains the cmdlet reference and about topics for PowerShell 7.2
-  - `7.3` - contains the cmdlet reference and about topics for PowerShell 7.3
   - `7.4` - contains the cmdlet reference and about topics for PowerShell 7.4
   - `7.5` - contains the cmdlet reference and about topics for PowerShell 7.5
   - `bread` - contains the TOC used for breadcrumb navigation
@@ -76,6 +76,4 @@ repo. The Creative Commons license applies to the documentation.
 [01]: https://learn.microsoft.com/powershell/scripting/
 [02]: https://aka.ms/PSDocsContributor
 [03]: https://cla.microsoft.com/
-[04]: https://opensource.microsoft.com/codeofconduct/
-[05]: https://opensource.microsoft.com/codeofconduct/faq/
-[06]: mailto:opencode@microsoft.com
+[04]: CODE_OF_CONDUCT.md

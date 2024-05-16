@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 03/12/2024
+ms.date: 05/16/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions
@@ -38,8 +38,8 @@ output returned from your function. However, the `return` keyword exits the
 function at that line. For more information, see [about_Return][16].
 
 The function's statement list can contain different types of statement lists
-with the keywords `begin`, `process`, `end`, and `clean`. These statement lists
-handle input from the pipeline differently.
+with the keywords `begin`, `process`, and `end`. These statement lists handle
+input from the pipeline differently.
 
 The [filter][04] keyword is used to create a type of function that runs on each
 object in the pipeline. A filter resembles a function with all its statements
@@ -138,7 +138,7 @@ For more information, see [about_Automatic_Variables][15].
   that reaches the function.
 - If the pipeline input that reaches the function is empty, the `process` block
   **does not** execute.
-  - The `begin`, `end`, and `clean` blocks still execute.
+  - The `begin` and `end` blocks still execute.
 
 > [!IMPORTANT]
 > If a function parameter is set to accept pipeline input, and a `process`

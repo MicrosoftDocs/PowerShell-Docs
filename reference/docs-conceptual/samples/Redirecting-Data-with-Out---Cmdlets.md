@@ -118,7 +118,7 @@ For example, if you have the Microsoft Office document imaging tools installed, 
 data to an image file by typing:
 
 ```powershell
-Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
+Get-Command -Name Get-* | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
 ## Saving data
