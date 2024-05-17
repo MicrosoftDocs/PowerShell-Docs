@@ -91,7 +91,7 @@ Trace-Command -PSHost -Name ParameterBinding -Expression {
 The output shows every step of the parameter binding process for the commands
 in the **Expression**. The output can be verbose, but it can help you
 understand why a parameter isn't being bound as expected. For a complete
-example, see [Visualize parameter binding][01]:
+example, see the [Visualize parameter binding][01] article.
 
 <!-- link references -->
 [01]: /powershell/scripting/learn/deep-dives/visualize-parameter-binding
