@@ -22,11 +22,11 @@ following attributes:
   parameter or one of its aliases. The type of the property must match or be convertible to the type
   of the parameter.
 
-For more information about parameter binding, see [about_Parameter_Binding][04].
+For more information about parameter binding, see [about_Parameter_Binding][03].
 
 ## Use `Trace-Command` to visualize parameter binding
 
-Troubleshooting parameter binding issues can be challenging. You can use the [Trace-Command][03]
+Troubleshooting parameter binding issues can be challenging. You can use the [Trace-Command][04]
 cmdlet to visualize the parameter binding process.
 
 Consider the following scenario: You have a directory with two text files, `file1.txt` and
@@ -253,7 +253,7 @@ CALLING EndProcessing
 ```
 
 <!-- link references -->
-[01]: about_functions_advanced_parameters.md#valuefrompipeline-argument
-[02]: about_functions_advanced_parameters.md#valuefrompipelinebypropertyname-argument
-[03]: xref:Microsoft.PowerShell.Utility.Trace-Command
-[04]: /powershell/modules/microsoft.powershell.core/about/about_parameter_binding
+[01]: /powershell/modules/microsoft.powershell.core/about/about_functions_advanced_parameters#valuefrompipeline-argument
+[02]: /powershell/modules/microsoft.powershell.core/about/about_functions_advanced_parameters#valuefrompipelinebypropertyname-argument
+[03]: /powershell/modules/microsoft.powershell.core/about/about_parameter_binding
+[04]: xref:Microsoft.PowerShell.Utility.Trace-Command

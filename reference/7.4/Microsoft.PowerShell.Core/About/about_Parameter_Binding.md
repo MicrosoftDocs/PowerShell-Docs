@@ -35,10 +35,10 @@ After binding command-line arguments, PowerShell tries to bind any pipeline
 input. There are two ways that values are bound from the pipeline. Parameters
 that accept pipeline input have one or both of the following attributes:
 
-- [ValueFromPipeline][01] - The value from the pipeline is bound to the
+- [ValueFromPipeline][02] - The value from the pipeline is bound to the
   parameter based on its type. The type of the argument must match the type of
   the parameter.
-- [ValueFromPipelineByPropertyName][02] - The value from the pipeline is bound
+- [ValueFromPipelineByPropertyName][03] - The value from the pipeline is bound
   to the parameter based on its name. The object in the pipeline must have a
   property that matches the name of the parameter or one of its aliases. The
   type of the property must match or be convertible to the type of the
@@ -78,7 +78,7 @@ PowerShell tries to bind pipeline input in the following order:
 ## Visualize parameter binding
 
 Troubleshooting parameter binding issues can be challenging. You can use the
-[Trace-Command][03] cmdlet to visualize the parameter binding process. The
+[Trace-Command][04] cmdlet to visualize the parameter binding process. The
 following example shows how to trace the parameter binding for a simple
 pipeline.
 
@@ -91,10 +91,10 @@ Trace-Command -PSHost -Name ParameterBinding -Expression {
 The output shows every step of the parameter binding process for the commands
 in the **Expression**. The output can be verbose, but it can help you
 understand why a parameter isn't being bound as expected. For a complete
-example, see [Visualize parameter binding][04]:
+example, see [Visualize parameter binding][01]:
 
 <!-- link references -->
-[01]: about_functions_advanced_parameters.md#valuefrompipeline-argument
-[02]: about_functions_advanced_parameters.md#valuefrompipelinebypropertyname-argument
-[03]: xref:Microsoft.PowerShell.Utility.Trace-Command
-[04]: /powershell/scripting/learn/deep-dives/visualize-parameter-binding
+[01]: /powershell/scripting/learn/deep-dives/visualize-parameter-binding
+[02]: about_functions_advanced_parameters.md#valuefrompipeline-argument
+[03]: about_functions_advanced_parameters.md#valuefrompipelinebypropertyname-argument
+[04]: xref:Microsoft.PowerShell.Utility.Trace-Command
