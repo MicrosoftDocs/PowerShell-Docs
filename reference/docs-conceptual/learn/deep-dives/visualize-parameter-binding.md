@@ -7,8 +7,8 @@ title: Visualize parameter binding
 # Visualize parameter binding
 
 Parameter binding is the process that PowerShell uses to determine which parameter set is being used
-and to bind values to the parameters of a command. These values can come from the command line or
-the pipeline.
+and to associate (bind) values to the parameters of a command. These values can come from the
+command line and the pipeline.
 
 The parameter binding process starts by binding named and positional command-line arguments. After
 binding command-line arguments, PowerShell tries to bind any pipeline input. There are two ways that
@@ -29,7 +29,7 @@ For more information about parameter binding, see [about_Parameter_Binding][03].
 Troubleshooting parameter binding issues can be challenging. You can use the [Trace-Command][04]
 cmdlet to visualize the parameter binding process.
 
-Consider the following scenario: You have a directory with two text files, `file1.txt` and
+Consider the following scenario. You have a directory with two text files, `file1.txt` and
 `[file2].txt`.
 
 ```powershell
@@ -43,7 +43,8 @@ Mode                 LastWriteTime         Length Name
 -a---           5/17/2024 12:59 PM              0 file1.txt
 ```
 
-You want to delete the files by passing the filenames to the `Remove-Item` cmdlet.
+You want to delete the files by passing the filenames, through the pipeline, to the `Remove-Item`
+cmdlet.
 
 ```powershell
 PS> 'file1.txt', '[file2].txt' | Remove-Item
@@ -61,7 +62,9 @@ square brackets, which is treated as a wildcard expression. Using `Trace-Command
 the filename is being bound to the **Path** parameter of `Remove-Item`.
 
 ```powershell
-Trace-Command -PSHost -Name ParameterBinding -Expression { '[file2].txt' | Remove-Item }
+Trace-Command -PSHost -Name ParameterBinding -Expression {
+    '[file2].txt' | Remove-Item
+}
 ```
 
 The output from `Trace-Command` can be verbose. Each line of output is prefix with a timestamp and
@@ -147,24 +150,14 @@ expression. However, that expression doesn't match any files in the directory. Y
 `ByPropertyName` or `ByValue`. And, that it has two aliases, `PSPath` and `LP`.
 
 ```powershell
-PS> (Get-Command Remove-Item).Parameters.LiteralPath.Attributes
+PS> (Get-Command Remove-Item).Parameters.LiteralPath.Attributes |
+>> Select-Object ValueFrom*, Alias* | Format-List
 
-ExperimentName                  :
-ExperimentAction                : None
-Position                        : -2147483648
-ParameterSetName                : LiteralPath
-Mandatory                       : True
 ValueFromPipeline               : False
 ValueFromPipelineByPropertyName : True
 ValueFromRemainingArguments     : False
-HelpMessage                     :
-HelpMessageBaseName             :
-HelpMessageResourceId           :
-DontShow                        : False
-TypeId                          : System.Management.Automation.ParameterAttribute
 
 AliasNames : {PSPath, LP}
-TypeId     : System.Management.Automation.AliasAttribute
 ```
 
 In this next example, `Get-Item` is used to retrieve a **FileInfo** object. That object has a

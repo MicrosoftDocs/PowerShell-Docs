@@ -11,8 +11,8 @@ title: about Parameter Binding
 ## Short description
 
 Parameter binding is the process that PowerShell uses to determine which
-parameter set is being used and to associate (bind) values to the parameters of a command.
-These values can come from the command line or the pipeline.
+parameter set is being used and to associate (bind) values to the parameters of
+a command. These values can come from the command line and the pipeline.
 
 ## Long description
 
@@ -22,13 +22,13 @@ The parameter binding process starts by binding command-line arguments.
 
    Find unquoted tokens on the command line that start with a dash. If the
    token ends with a colon, an argument is required. If there's no colon, look
-   at the type of the parameter and see if an argument is required. If a value is required, attempt to convert the
-   type of argument to the type required by the parameter, and the conversion is successful, bind the
-   parameter.
+   at the type of the parameter and see if an argument is required. If a value
+   is required, attempt to convert the type of argument to the type required by
+   the parameter, and the conversion is successful, bind the parameter.
 
 1. Bind positional parameters
 
-   If there are any unused command-line arguments, look for unused parameters
+   If there are any unused command-line arguments, look for unbound parameters
    that take positional parameters and try to bind them.
 
 After binding command-line arguments, PowerShell tries to bind any pipeline
@@ -63,17 +63,15 @@ PowerShell tries to bind pipeline input in the following order:
 1. If the pipeline input hasn't been bound, try to bind `ValueFromPipeline`
    parameters with type conversion:
 
-   For parameters that take pipeline input by value (type), convert the
-   pipeline input to the required type. If the conversion fails, the parameter
-   isn't bound.
+   Attempt to convert the pipeline input to the required type. If the
+   conversion fails, the parameter isn't bound.
 
 1. If the pipeline input hasn't been bound, try to bind
    `ValueFromPipelineByPropertyName` parameters with type conversion:
 
-   The name of the property must match the name of the
-   parameter or one of its aliases. If the input type doesn't match, attempt to convert
-   the input to the matching type. If the conversion fails, the parameter isn't
-   bound.
+   The name of the property must match the name of the parameter or one of its
+   aliases. If the input type doesn't match, attempt to convert the input to
+   the matching type. If the conversion fails, the parameter isn't bound.
 
 ## Visualize parameter binding
 
