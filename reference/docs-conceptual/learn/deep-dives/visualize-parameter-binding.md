@@ -253,7 +253,7 @@ CALLING EndProcessing
 ```
 
 <!-- link references -->
-[01]: /powershell/modules/microsoft.powershell.core/about/about_functions_advanced_parameters#valuefrompipeline-argument
-[02]: /powershell/modules/microsoft.powershell.core/about/about_functions_advanced_parameters#valuefrompipelinebypropertyname-argument
-[03]: /powershell/modules/microsoft.powershell.core/about/about_parameter_binding
+[01]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters#valuefrompipeline-argument
+[02]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters#valuefrompipelinebypropertyname-argument
+[03]: /powershell/module/microsoft.powershell.core/about/about_parameter_binding
 [04]: xref:Microsoft.PowerShell.Utility.Trace-Command
