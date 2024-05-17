@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 05/16/2024
+ms.date: 05/17/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions
@@ -308,6 +308,9 @@ function Get-SmallFiles {
       [PSDefaultValue(Help = '100')]
       $Size = 100
   )
+  Get-ChildItem $HOME | Where-Object {
+    $_.Length -lt $Size -and !$_.PSIsContainer
+  }
 }
 ```
 
