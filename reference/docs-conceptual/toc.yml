@@ -114,6 +114,8 @@ items:
                 href: learn/deep-dives/everything-about-null.md
               - name: Everything you want to know about ShouldProcess
                 href: learn/deep-dives/everything-about-shouldprocess.md
+              - name: Visualize parameter binding
+                href: learn/deep-dives/visualize-parameter-binding.md
           - name: Write-Progress while multithreading
             href: learn/deep-dives/write-progress-across-multiple-threads.md
           - name: Add Credential support to PowerShell functions
