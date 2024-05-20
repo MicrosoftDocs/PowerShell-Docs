@@ -67,9 +67,9 @@ Trace-Command -PSHost -Name ParameterBinding -Expression {
 }
 ```
 
-The output from `Trace-Command` can be verbose. Each line of output is prefix with a timestamp and
-trace provider information. For the output of this example, the prefix information has been removed
-to make it easier to read.
+The output from `Trace-Command` can be verbose. Each line of output is prefixed with a timestamp
+and trace provider information. For the output of this example, the prefix information has been
+removed to make it easier to read.
 
 ```Output
 BIND NAMED cmd line args [Remove-Item]
