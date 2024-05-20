@@ -168,9 +168,7 @@ script cmdlet. Resource cleanup is enforced for the following scenarios:
 1. when the pipeline is being stopped by <kbd>Ctrl+c</kbd> or
    `StopProcessing()`
 
-The clean block doesn't allow pipeline output. Any output that's written to the
-pipeline is discarded. Output from `Write-Host` is still sent displayed by the
-host process.
+The clean block discards any output that's written to the **Success** stream.
 
 > [!CAUTION]
 > Adding the `clean` block is a breaking change. Because `clean` is parsed as a
