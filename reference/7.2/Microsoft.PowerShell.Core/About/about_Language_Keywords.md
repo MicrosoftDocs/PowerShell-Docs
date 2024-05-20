@@ -1,7 +1,7 @@
 ---
 description: Describes the keywords in the PowerShell scripting language.
 Locale: en-US
-ms.date: 05/25/2022
+ms.date: 05/20/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_keywords?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Language Keywords
@@ -16,43 +16,43 @@ Describes the keywords in the PowerShell scripting language.
 PowerShell has the following language keywords. For more information, see the
 about topic for the keyword and the information that follows the table.
 
-|   Keyword    |                                                     Reference                                                     |
-| ------------ | ----------------------------------------------------------------------------------------------------------------- |
-| `begin`        | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
-| `break`        | [about_Break](about_Break.md), [about_Trap](about_Trap.md)                                                        |
-| `catch`        | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
-| `class`        | [about_Classes](about_Classes.md)                                                                                 |
-| `continue`     | [about_Continue](about_Continue.md), [about_Trap](about_Trap.md)                                                  |
-| `data`         | [about_Data_Sections](about_Data_Sections.md)                                                                     |
-| `define`       | Reserved for future use                                                                                           |
-| `do`           | [about_Do](about_Do.md), [about_While](about_While.md)                                                            |
-| `dynamicparam` | [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)                                     |
-| `else`         | [about_If](about_If.md)                                                                                           |
-| `elseif`       | [about_If](about_If.md)                                                                                           |
-| `end`          | [about_Functions](about_Functions.md), [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)    |
-| `enum`         | [about_Enum](about_Enum.md)                                                                                       |
-| `exit`         | [Described in this topic](#exit)                                                                                  |
-| `filter`       | [about_Functions](about_Functions.md)                                                                             |
-| `finally`      | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
-| `for`          | [about_For](about_For.md)                                                                                         |
-| `foreach`      | [about_ForEach](about_ForEach.md)                                                                                 |
-| `from`         | Reserved for future use                                                                                           |
-| `function`     | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
-| `hidden`       | [about_Hidden](about_Hidden.md)                                                                                   |
-| `if`           | [about_If](about_If.md)                                                                                           |
-| `in`           | [about_ForEach](about_ForEach.md)                                                                                 |
-| `param`        | [about_Functions](about_Functions.md)                                                                             |
-| `process`      | [about_Functions](about_Functions.md), [about_Functions_Advanced](about_Functions_Advanced.md)                    |
-| `return`       | [about_Return](about_Return.md)                                                                                   |
-| `static`       | [about_Classes](about_Classes.md)                                                                                 |
-| `switch`       | [about_Switch](about_Switch.md)                                                                                   |
-| `throw`        | [about_Throw](about_Throw.md), [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)            |
-| `trap`         | [about_Trap](about_Trap.md), [about_Break](about_Break.md), [about_Try_Catch_Finally](about_Try_Catch_Finally.md) |
-| `try`          | [about_Try_Catch_Finally](about_Try_Catch_Finally.md)                                                             |
-| `until`        | [about_Do](about_Do.md)                                                                                           |
-| `using`        | [about_Using](about_Using.md), [about_Classes](about_Classes.md)                                                  |
-| `var`          | Reserved for future use                                                                                           |
-| `while`        | [about_While](about_While.md), [about_Do](about_Do.md)                                                            |
+|    Keyword     |                             Reference                              |
+| -------------- | ------------------------------------------------------------------ |
+| `begin`        | [about_Functions][14], [about_Functions_Advanced][13]              |
+| `break`        | [about_Break][03], [about_Trap][21]                                |
+| `catch`        | [about_Try_Catch_Finally][22]                                      |
+| `class`        | [about_Classes][04]                                                |
+| `continue`     | [about_Continue][05], [about_Trap][21]                             |
+| `data`         | [about_Data_Sections][06]                                          |
+| `define`       | Reserved for future use                                            |
+| `do`           | [about_Do][07], [about_While][24]                                  |
+| `dynamicparam` | [about_Functions_Advanced_Parameters][12]                          |
+| `else`         | [about_If][16]                                                     |
+| `elseif`       | [about_If][16]                                                     |
+| `end`          | [about_Functions][14], [about_Functions_Advanced_Methods][11]      |
+| `enum`         | [about_Enum][08]                                                   |
+| `exit`         | [Described in this topic][02]                                      |
+| `filter`       | [about_Functions][14]                                              |
+| `finally`      | [about_Try_Catch_Finally][22]                                      |
+| `for`          | [about_For][09]                                                    |
+| `foreach`      | [about_ForEach][10]                                                |
+| `from`         | Reserved for future use                                            |
+| `function`     | [about_Functions][14], [about_Functions_Advanced][13]              |
+| `hidden`       | [about_Hidden][15]                                                 |
+| `if`           | [about_If][16]                                                     |
+| `in`           | [about_ForEach][10]                                                |
+| `param`        | [about_Functions][14]                                              |
+| `process`      | [about_Functions][14], [about_Functions_Advanced][13]              |
+| `return`       | [about_Return][17]                                                 |
+| `static`       | [about_Classes][04]                                                |
+| `switch`       | [about_Switch][19]                                                 |
+| `throw`        | [about_Throw][20], [about_Functions_Advanced_Methods][11]          |
+| `trap`         | [about_Trap][21], [about_Break][03], [about_Try_Catch_Finally][22] |
+| `try`          | [about_Try_Catch_Finally][22]                                      |
+| `until`        | [about_Do][07]                                                     |
+| `using`        | [about_Using][23], [about_Classes][04]                             |
+| `var`          | Reserved for future use                                            |
+| `while`        | [about_While][24], [about_Do][07]                                  |
 
 The following keywords are used by PowerShell workflows:
 
@@ -63,7 +63,7 @@ The following keywords are used by PowerShell workflows:
 
 PowerShell workflows are only supported in PowerShell 5.1. For more information
 about workflows, see
-[Running PowerShell Commands in a Workflow](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574197(v=ws.11)).
+[Running PowerShell Commands in a Workflow][01].
 
 ## `begin`
 
@@ -574,7 +574,7 @@ Assembly syntax:
 using assembly <.NET-assembly-path>
 ```
 
-For more information, see [about_Using](about_Using.md).
+For more information, see [about_Using][23].
 
 ## `while`
 
@@ -601,5 +601,32 @@ do {<statement list>} while (<condition>)
 
 ## See also
 
-- [about_Special_Characters](about_Special_Characters.md)
-- [about_Wildcards](about_Wildcards.md)
+- [about_Special_Characters][18]
+- [about_Wildcards][25]
+
+<!-- link references -->
+[01]: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574197(v=ws.11)
+[02]: #exit
+[03]: about_Break.md
+[04]: about_Classes.md
+[05]: about_Continue.md
+[06]: about_Data_Sections.md
+[07]: about_Do.md
+[08]: about_Enum.md
+[09]: about_For.md
+[10]: about_ForEach.md
+[11]: about_Functions_Advanced_Methods.md
+[12]: about_Functions_Advanced_Parameters.md
+[13]: about_Functions_Advanced.md
+[14]: about_Functions.md
+[15]: about_Hidden.md
+[16]: about_If.md
+[17]: about_Return.md
+[18]: about_Special_Characters.md
+[19]: about_Switch.md
+[20]: about_Throw.md
+[21]: about_Trap.md
+[22]: about_Try_Catch_Finally.md
+[23]: about_Using.md
+[24]: about_While.md
+[25]: about_Wildcards.md
