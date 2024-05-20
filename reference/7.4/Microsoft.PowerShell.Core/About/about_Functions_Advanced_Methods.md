@@ -1,7 +1,7 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 03/12/2024
+ms.date: 05/20/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Methods
@@ -145,6 +145,8 @@ script cmdlet. Resource cleanup is enforced for the following scenarios:
 1. when the pipeline is halted by `Select-Object -First`
 1. when the pipeline is being stopped by <kbd>Ctrl+c</kbd> or
    `StopProcessing()`
+
+The clean block discards any output that's written to the **Success** stream.
 
 > [!CAUTION]
 > Adding the `clean` block is a breaking change. Because `clean` is parsed as a
