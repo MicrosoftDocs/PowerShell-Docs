@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 05/07/2024
+ms.date: 05/22/2024
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -78,7 +78,8 @@ Contains the last token in the last line received by the session.
 ### $?
 
 Contains the execution status of the last command. It contains **True** if the
-last command succeeded and **False** if it failed.
+last command succeeded and **False** if it failed. Parse errors don't result in
+execution, so they don't affect the value of `$?`.
 
 For cmdlets and advanced functions that are run at multiple stages in a
 pipeline, for example in both `process` and `end` blocks, calling
