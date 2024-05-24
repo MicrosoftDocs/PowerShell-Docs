@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Tab Expansion feature in PowerShell.
 Locale: en-US
-ms.date: 12/05/2023
+ms.date: 05/16/2024
 no-loc: [<kbd>Tab</kbd>, <kbd>Ctrl</kbd>, <kbd>Space</kbd>]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_tab_expansion?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -36,12 +36,21 @@ information, see [about_PSReadLine][02].
 > contain tabs. If it does, the results will be unpredictable and will almost
 > certainly not be what you intended.
 
-## File and cmdlet name completion
+## File and path name completion
 
 To fill in a filename or path from the available choices automatically, type
 part of the name and press the <kbd>Tab</kbd> key. PowerShell automatically
 expands the name to the first match that it finds. Pressing the <kbd>Tab</kbd>
 key repeatedly cycles through all the available choices.
+
+When the tilde character (`~`) appears at the beginning of a path, PowerShell
+interprets it as the user's home directory. This interpretation is common on
+Linux and macOS systems. However, many native commands on Windows don't use
+this interpretation. Beginning in PowerShell 7.5-preview.3 on Windows, the
+tilde character is character is expanded to `$HOME` when using tab completion.
+This expansion works with Windows native commands.
+
+## Cmdlet name completion
 
 The tab expansion of cmdlet names is slightly different. To use tab expansion
 on a cmdlet name, type the entire first part of the name (the verb) and the

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 05/16/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
@@ -40,6 +40,9 @@ web-based apps.
 
 As of PowerShell 7.1, `ConvertTo-Json` emits a warning if the depth of the input object exceeds
 the depth specified for the command. This prevents unwanted data loss when converting objects.
+
+As of PowerShell 7.5-preview.3, `ConvertTo-Json` can serialize **BigInteger** values as raw JSON
+numbers.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
