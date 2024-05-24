@@ -1,3 +1,6 @@
 {
-    "import": "./cspell/psdocs/cspell.yaml"
+    "import": "./cspell/psdocs/cspell.yaml",
+    "words": [
+        "devcontainers"
+    ]
 }
