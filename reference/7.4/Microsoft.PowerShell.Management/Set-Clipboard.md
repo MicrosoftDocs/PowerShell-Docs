@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ### -AsOSC52
 
 When connected to a remote session over SSH, `Set-Clipboard` sets the clipboard of the remote
-machine, not the local host. When you use this parameter, `Set-Clipboard` the OSC52 ANSI escape
+machine, not the local host. When you use this parameter, `Set-Clipboard` uses the OSC52 ANSI escape
 sequence to set the clipboard of the local machine.
 
 For this feature to work, your terminal application must support the OSC52 ANSI escape sequence. The
