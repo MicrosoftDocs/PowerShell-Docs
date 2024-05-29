@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 01/18/2024
+ms.date: 05/29/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
@@ -11,8 +11,8 @@ title: New-FileCatalog
 # New-FileCatalog
 
 ## SYNOPSIS
-`New-FileCatalog` creates a catalog file of file hashes that can be used to validate the
-authenticity of a file.
+Creates a Windows catalog file containing cryptographic hashes for files and folders in the
+specified paths.
 
 ## SYNTAX
 
@@ -38,7 +38,12 @@ create file hashes, and version 2 uses SHA256.
 ### Example 1: Create a file catalog for `Microsoft.PowerShell.Utility`
 
 ```powershell
-New-FileCatalog -Path $PSHOME\Modules\Microsoft.PowerShell.Utility -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -CatalogVersion 2.0
+$newFileCatalogSplat = @{
+    Path = "$PSHOME\Modules\Microsoft.PowerShell.Utility"
+    CatalogFilePath = '\temp\Microsoft.PowerShell.Utility.cat'
+    CatalogVersion = 2.0
+}
+New-FileCatalog @newFileCatalogSplat
 ```
 
 ```Output
@@ -51,8 +56,8 @@ Mode                LastWriteTime         Length Name
 
 ### -CatalogFilePath
 
-A path to a file or folder where the catalog file (.cat) should be placed. If a folder path is
-specified, the default filename `catalog.cat` will be used.
+The location and name of the catalog file (`.cat`) you are creating. If you specify only a folder
+path, the command creates a file named `catalog.cat` in that location.
 
 ```yaml
 Type: System.String
@@ -68,9 +73,9 @@ Accept wildcard characters: False
 
 ### -CatalogVersion
 
-Accepts `1` or `2` as possible values for specifying the catalog version. `1` should be avoided
-whenever possible, as it uses the insecure SHA-1 hash algorithm, while `2` uses the secure SHA-256
-algorithm.
+Accepts `1.0` or `2.0` as possible values for specifying the catalog version. `1.0` should be
+avoided whenever possible because it uses the insecure SHA-1 hash algorithm. Version `2.0` uses the
+secure SHA-256 algorithm.
 
 ```yaml
 Type: System.Int32
@@ -79,7 +84,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 2
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -87,7 +92,7 @@ Accept wildcard characters: False
 ### -Path
 
 Accepts a path or array of paths to files or folders that should be included in the catalog file. If
-a folder is specified, all the files in the folder will be included as well.
+a folder is specified, the command includes all files in the folder.
 
 ```yaml
 Type: System.String[]
@@ -144,7 +149,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that is used as the catalog filename to this cmdlet.
+You can pipe a string that's used as the catalog filename to this cmdlet.
 
 ## OUTPUTS
 
