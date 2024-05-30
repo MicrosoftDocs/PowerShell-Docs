@@ -31,7 +31,7 @@ You can use the `Export-Alias` cmdlet to save your alias information to a file. 
 
 ### Example 1: Create an alias for a cmdlet
 
-```
+```powershell
 New-Alias -Name "List" Get-ChildItem
 ```
 
@@ -39,15 +39,28 @@ This command creates an alias named List to represent the Get-ChildItem cmdlet.
 
 ### Example 2: Create a read-only alias for a cmdlet
 
-```
+```powershell
 New-Alias -Name "C" -Value Get-ChildItem -Description "quick gci alias" -Option ReadOnly
 Get-Alias -Name "C" | Format-List *
 ```
 
 This command creates an alias named `C` to represent the `Get-ChildItem` cmdlet. It creates a
-description, quick wmi alias, for the alias and makes it read-only. The last line of the command
+description of "quick gci alias" for the alias and makes it read-only. The last line of the command
 uses `Get-Alias` to get the new alias and pipes it to Format-List to display all of the information
 about it.
+
+### Example 3: Create an alias for a command with parameters
+
+```powershell
+function Set-ParentDirectory {Set-Location -Path ..}
+New-Alias -Name .. -Value Set-ParentDirectory
+```
+
+The first command creates the function `Set-ParentDirectory`, which uses `Set-Location` to set the
+working location to the parent directory. The second command uses `New-Alias` to create an alias
+of `..` to call the `Set-ParentDirectory` function. Since the Value parameter requires a cmdlet,
+function, or executable value, you must create a custom function to create an alias that uses
+parameters. Running the alias `..` will set the working location to the parent directory.
 
 ## PARAMETERS
 
