@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/28/2023
+ms.date: 05/31/2024
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/get-cimassociatedinstance?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CimAssociatedInstance
@@ -41,7 +41,7 @@ instance, called the source instance, by an association.
 In an association, each CIM instance has a named role and the same CIM instance can participate in
 an association in different roles.
 
-If the InputObject parameter is not specified, the cmdlet works in one of the following ways:
+If the **InputObject** parameter isn't specified, the cmdlet works in one of the following ways:
 
 - If neither the **ComputerName** parameter nor the **CimSession** parameter is specified, then this
   cmdlet works on local Windows Management Instrumentation (WMI) using a Component Object Model
@@ -71,43 +71,38 @@ $disk = Get-CimInstance -ClassName Win32_LogicalDisk -KeyOnly
 Get-CimAssociatedInstance -InputObject $disk[1] -ResultClass Win32_DiskPartition
 ```
 
-This set of commands retrieves all the instances of the **Win32_LogicalDisk** class and stores
-them in a variable named `$disk`. The first logical disk instance in the variable is then used as the
+This set of commands retrieves all the instances of the **Win32_LogicalDisk** class and stores them
+in a variable named `$disk`. The first logical disk instance in the variable is then used as the
 input object for the `Get-CimAssociatedInstance` cmdlet to get all the associated instances that are
 associated through the specified association class **Win32_DiskPartition**.
 
 ### Example 3: Get all the associated instances through qualifier of a specific class
 
+This set of commands retrieves the services that depend on the **Winmgmt** service and stores them
+in a variable named `$s`. `Get-CimAssociatedInstance` gets the associated instances of the retrieved
+association class.
+
 ```powershell
 $s = Get-CimInstance -Query "Select * from Win32_Service where name like 'Winmgmt'"
-Get-CimClass -ClassName *Service* -Qualifier "Association"
-$c.CimClasName
-```
-
-```Output
-Win32_LoadOrderGroupServiceDependencies
-Win32_DependentService
-Win32_SystemServices
-Win32_LoadOrderGroupServiceMembers
-Win32_ServiceSpecificationService
-```
-
-```powershell
 Get-CimAssociatedInstance -InputObject $s -Association Win32_DependentService
 ```
 
-This set of commands retrieves the services that depend on WMI service and stores them in a variable
-named `$s`. The association class name for the **Win32_DependentService** is retrieved using the
-`Get-CimClass` cmdlet by specifying **Association** as the qualifier and is then passed with $s to
-the `Get-CimAssociatedInstance` cmdlet to get all the associated instances of the retrieved
-association class.
+```Output
+ProcessId Name            StartMode State   Status ExitCode
+--------- ----            --------- -----   ------ --------
+1716      RpcSs           Auto      Running OK     0
+9964      CcmExec         Auto      Running OK     0
+0         HgClientService Manual    Stopped OK     1077
+0         smstsmgr        Manual    Stopped OK     1077
+3396      vmms            Auto      Running OK     0
+```
 
 ## PARAMETERS
 
 ### -Association
 
-Specifies the name of the association class. If you do not specify this parameter, the cmdlet
-returns all existing association objects of any type.
+Specifies the name of the association class. If you don't specify this parameter, the cmdlet returns
+all existing association objects of any type.
 
 For example, if class A is associated with class B through two associations, AB1 and AB2, then this
 parameter can be used to specify the type of association, either AB1 or AB2.
@@ -150,7 +145,7 @@ fully qualified domain name (FQDN) or a NetBIOS name.
 If you specify this parameter, the cmdlet creates a temporary session to the specified computer
 using the WsMan protocol.
 
-If you do not specify this parameter, the cmdlet performs the operation on the local computer using
+If you don't specify this parameter, the cmdlet performs the operation on the local computer using
 Component Object Model (COM).
 
 If multiple operations are being performed on the same computer, connecting using a CIM session
@@ -190,7 +185,7 @@ Accept wildcard characters: False
 
 ### -KeyOnly
 
-Returns objects with only key properties populated. This reduces the amount of data that is
+Returns objects with only key properties populated. This reduces the amount of data that's
 transferred over the network.
 
 ```yaml
@@ -210,8 +205,8 @@ Accept wildcard characters: False
 Specifies the namespace for the CIM operation. The default namespace is root/cimv2.
 
 > [!NOTE]
-> You can use tab completion to browse the list of namespaces, because PowerShell gets a
-> list of namespaces from the local WMI server to provide the list of namespaces.
+> You can use tab completion to browse the list of namespaces, because PowerShell gets a list of
+> namespaces from the local WMI server to provide the list of namespaces.
 
 ```yaml
 Type: System.String
@@ -233,7 +228,7 @@ server.
 
 If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
 timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
-parameter are not recoverable, because the operation on the server times out before the client can
+parameter aren't recoverable, because the operation on the server times out before the client can
 reconnect.
 
 ```yaml
@@ -258,13 +253,13 @@ A URI consists of a prefix and a path to a resource. For example:
 - `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
 - `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
 
-By default, if you do not specify this parameter, the DMTF standard resource URI
+By default, if you don't specify this parameter, the DMTF standard resource URI
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
 **ResourceURI** can only be used with CIM sessions created using the WSMan protocol, or when
 specifying the **ComputerName** parameter, which creates a CIM session using WSMan. If you specify
 this parameter without specifying the **ComputerName** parameter, or if you specify a CIM session
-created using DCOM protocol, you get an error, because the DCOM protocol does not support the
+created using DCOM protocol, you get an error, because the DCOM protocol doesn't support the
 **ResourceURI** parameter.
 
 If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**
@@ -285,13 +280,13 @@ Accept wildcard characters: False
 ### -ResultClassName
 
 Specifies the class name of the associated instances. A CIM instance can be associated with one or
-more CIM instances. All associated CIM instances are returned if you do not specify the result class
+more CIM instances. All associated CIM instances are returned if you don't specify the result class
 name.
 
 By default, the value of this parameter is null, and all associated CIM instances are returned.
 
 You can filter the association results to match a specific class name. Filtering happens on the
-server. If this parameter is not specified, `Get-CIMAssociatedInstance` returns all existing
+server. If this parameter isn't specified, `Get-CIMAssociatedInstance` returns all existing
 associations. For example, if class A is associated with classes B, C and D, then this parameter can
 be used to restrict the output to a specific type (B, C or D).
 
@@ -328,7 +323,7 @@ This cmdlet returns a CIM instance object.
 
 ## NOTES
 
-PowerShell includes the following aliases for ``:
+PowerShell includes the following aliases for `Get-CimAssociatedInstance`:
 
 - Windows:
   - `gcai`
