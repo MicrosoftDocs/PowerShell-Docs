@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/11/2023
+ms.date: 05/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 ### -AsOSC52
 
 When connected to a remote session over SSH, `Set-Clipboard` sets the clipboard of the remote
-machine, not the local host. When you use this parameter, `Set-Clipboard` the OSC52 ANSI escape
+machine, not the local host. When you use this parameter, `Set-Clipboard` uses the OSC52 ANSI escape
 sequence to set the clipboard of the local machine.
 
 For this feature to work, your terminal application must support the OSC52 ANSI escape sequence. The
