@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/04/2024
+ms.date: 06/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -487,7 +487,9 @@ Specifies the body of the request. The body is the content of the request that f
 You can also pipe a body value to `Invoke-WebRequest`.
 
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
-the response.
+the response. For query parameters, the cmdlet uses the **System.Net.WebUtility.UrlEncode** method
+method to encode the key-value pairs. For more information about encoding strings for URLs, see
+[the UrlEncode() method reference](xref:System.Net.WebUtility.UrlEncode).
 
 When the input is a POST request and the body is a **String**, the value to the left of the first
 equals sign (`=`) is set as a key in the form data and the remaining text is set as the value. To
