@@ -408,7 +408,7 @@ You can also pipe a body value to `Invoke-RestMethod`.
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
 the response. For query parameters, the cmdlet uses the **System.Net.WebUtility.UrlEncode** method
 method to encode the key-value pairs. For more information about encoding strings for URLs, see
-[the UrlEncode() method reference](xref:System.Net.WebUtility.UrlEncode).
+[the UrlEncode() method reference](xref:System.Net.WebUtility.UrlEncode*).
 
 When the input is a POST request and the body is a **String**, the value to the left of the first
 equals sign (`=`) is set as a key in the form data and the remaining text is set as the value. To
