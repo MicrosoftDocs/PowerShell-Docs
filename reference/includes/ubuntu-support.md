@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 05/16/2024
+ms.date: 06/04/2024
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -23,7 +23,8 @@ Ubuntu 24.04 (Noble Numbat) - OS support ends on 2029-04-25
 - Docker images containing PowerShell 7.2, PowerShell 7.4, and PowerShell 7.5-preview for x64 and
   Arm32 are available from the [Microsoft Artifact Registry][mcr]
 
-Microsoft doesn't support [interim releases][interim] of Ubuntu. For more information, see
+Ubuntu 23.10 (Mantic Minotaur) is an interim release. Microsoft doesn't support
+[interim releases][interim] of Ubuntu. For more information, see
 [Community supported distributions][community].
 
 [eol-ubuntu]: https://endoflife.date/ubuntu
