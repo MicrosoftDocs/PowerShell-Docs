@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/29/2023
+ms.date: 06/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
@@ -389,14 +389,9 @@ Accept wildcard characters: False
 
 ### -NoServiceRestart
 
-Does not restart the **WinRM** service, and suppresses the prompt to restart the service.
-
-By default, when you run a `Register-PSSessionConfiguration` command, you are prompted to restart
-the **WinRM** service to make the new session configuration effective. Until the **WinRM** service
-is restarted, the new session configuration is not effective.
-
-To restart the **WinRM** service without prompting, specify the **Force** parameter. To restart the
-**WinRM** service manually, use the `Restart-Service` cmdlet.
+The intent of this parameter is to prevent the restart the **WinRM** service. This functionality
+isn't implemented. This will be fixed in PowerShell 7.5, but there is no plan to back port this
+change to Windows PowerShell 5.1.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
