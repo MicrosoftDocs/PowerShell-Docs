@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/29/2023
+ms.date: 06/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
@@ -397,6 +397,8 @@ is restarted, the new session configuration is not effective.
 
 To restart the **WinRM** service without prompting, specify the **Force** parameter. To restart the
 **WinRM** service manually, use the `Restart-Service` cmdlet.
+
+This functionality isn't implemented yet. This will be fixed in a future release of PowerShell 7.5.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
