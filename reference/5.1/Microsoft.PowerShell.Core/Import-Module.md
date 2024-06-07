@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/17/2023
+ms.date: 06/07/2024
 no-loc: [Import-Module, -Scope]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -764,7 +764,10 @@ Accept wildcard characters: False
 
 ### -Force
 
-This parameter causes a module to be loaded, or reloaded, over top of the current one.
+This parameter causes a module to be loaded, or reloaded, over top of the current one. Some modules
+load external assemblies. The import fails if you are importing a module that loads a newer version
+of an assembly. The **Force** parameter can't override the error. You must start a new session to
+load the new version.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
