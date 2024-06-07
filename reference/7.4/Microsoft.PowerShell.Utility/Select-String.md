@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/15/2023
+ms.date: 06/07/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-String
@@ -721,8 +721,9 @@ Accept wildcard characters: False
 
 ### -Quiet
 
-Indicates that the cmdlet returns a Boolean value (True or False), instead of a **MatchInfo**
-object. The value is True if the pattern is found; otherwise the value is False.
+Indicates that the cmdlet returns a simple response instead of a **MatchInfo**
+object. The returned value is `$true` if the pattern is found or `$null` if the
+pattern is not found.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
