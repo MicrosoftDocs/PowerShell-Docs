@@ -42,8 +42,8 @@ The following are the basic rules of scope:
   - If the item isn't found, a new item is created in the current scope.
   - If it finds a match, the value of the item is retrieved from the scope
     where is was found.
-  - If you change value, the item is copied to the current scope so that the
-    change only affects the current scope.
+  - If you change the value, the item is copied to the current scope so that
+    the change only affects the current scope.
 - If you explicitly create an item that shares its name with an item in a
   different scope, the original item might be hidden by the new item, but it
   isn't overridden or changed.
