@@ -144,7 +144,7 @@ when no properties are specified. Because the type data is not specified in a `T
 is effective only in the current session.
 
 ```powershell
-Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet "DateTime, DayOfYear, Quarter"
+Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet "DateTime", "DayOfYear", "Quarter"
 Get-Date | Format-List
 ```
 
