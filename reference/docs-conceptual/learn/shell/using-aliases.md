@@ -1,6 +1,6 @@
 ---
 description: This article describe how to use aliases in PowerShell.
-ms.date: 11/16/2022
+ms.date: 06/10/2024
 title: Using aliases
 ---
 # Using aliases
@@ -11,7 +11,8 @@ executable name.
 
 ## Managing command aliases
 
-PowerShell provides cmdlets for managing command aliases.
+PowerShell provides cmdlets for managing command aliases. The following command shows the cmdlets
+that manage aliases.
 
 ```powershell
 Get-Command -Noun Alias
@@ -55,6 +56,14 @@ Get-Alias -Name gci
 CommandType     Name
 -----------     ----
 Alias           gci -> Get-ChildItem
+```
+
+To create an alias, use the `Set-Alias` command. You can create aliases for cmdlets, functions,
+scripts, and native executables files.
+
+```powershell
+Set-Alias -Name np -Value Notepad.exe
+Set-Alias -Name cmpo  -Value Compare-Object
 ```
 
 ## Compatibility aliases in Windows

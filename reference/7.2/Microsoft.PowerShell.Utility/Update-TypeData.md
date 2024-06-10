@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-typedata?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-TypeData
@@ -144,7 +144,7 @@ when no properties are specified. Because the type data is not specified in a `T
 is effective only in the current session.
 
 ```powershell
-Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet "DateTime, DayOfYear, Quarter"
+Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet "DateTime", "DayOfYear", "Quarter"
 Get-Date | Format-List
 ```
 
