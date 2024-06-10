@@ -113,9 +113,9 @@ Tuesday, June 11, 2024 2:05:48 PM
 
 ### -Adjust
 
-Specifies the value for which this cmdlet adds or subtracts from the current date and time. can type
-an adjustment in standard date and time format for your locale or use the **Adjust** parameter to
-pass a **TimeSpan** object from `New-TimeSpan` to `Set-Date`.
+Specifies the value for which this cmdlet adds or subtracts from the current date and time. You can
+type an adjustment in standard date and time format for your locale or use the **Adjust** parameter
+to pass a **TimeSpan** object from `New-TimeSpan` to `Set-Date`.
 
 ```yaml
 Type: System.TimeSpan
