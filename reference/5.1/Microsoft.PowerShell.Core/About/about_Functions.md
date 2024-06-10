@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 05/17/2024
+ms.date: 06/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions
@@ -23,6 +23,19 @@ Functions can be as simple as:
 
 ```powershell
 function Get-PowerShellProcess { Get-Process PowerShell }
+```
+
+Once a function is defined, you can use it like the built-in cmdlets. For
+example, to call the newly defined `Get-PowerShellProcess` function:
+
+```powershell
+Get-PowerShellProcess
+```
+
+```Output
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+    110    78.72     172.39      10.62   10936   1 powershell
 ```
 
 A function can also be as complex as a cmdlet or an application.
