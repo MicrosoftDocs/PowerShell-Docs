@@ -1,7 +1,7 @@
 ---
 description: Function
 Locale: en-US
-ms.date: 01/17/2023
+ms.date: 06/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_function_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Function Provider
@@ -162,10 +162,10 @@ in the `Function:` drive, you can omit the drive name.
 
 ## Deleting a function
 
-This command deletes the `more:` function from the current session.
+This command deletes the `more` function from the current session.
 
 ```powershell
-Remove-Item Function:more:
+Remove-Item Function:more
 ```
 
 ## Changing a function
