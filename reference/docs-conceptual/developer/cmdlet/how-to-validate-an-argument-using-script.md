@@ -1,6 +1,6 @@
 ---
 description: How to validate an argument using a script
-ms.date: 09/16/2021
+ms.date: 06/11/2024
 ms.topic: reference
 title: How to validate an argument using a script
 ---
@@ -16,8 +16,8 @@ must return `$true` for every value piped to it.
 
 ## To validate an argument using a script
 
-- Add the ValidateScript attribute as shown in the following code. This example specifies a set of
-  three possible values for the `UserName` parameter.
+- Add the ValidateScript attribute as shown in the following code. This example specifies a script
+  to validate that the input value is an odd number.
 
    ```csharp
    [ValidateScript("$_ % 2", ErrorMessage = "The item '{0}' did not pass validation of script '{1}'")]
