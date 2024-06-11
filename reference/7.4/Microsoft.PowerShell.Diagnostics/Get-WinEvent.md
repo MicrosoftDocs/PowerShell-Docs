@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 12/12/2022
+ms.date: 06/11/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WinEvent
@@ -558,14 +558,14 @@ $xmlQuery = @'
 <QueryList>
   <Query Id="0" Path="Windows PowerShell">
     <Select Path="System">*[System[(Level=3) and
-        TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]</Select>
+        TimeCreated[timediff(@SystemTime) \&lt;= 86400000]]]</Select>
   </Query>
 </QueryList>
 '@
 Get-WinEvent -FilterXML $xmlQuery
 
 # Using the FilterXPath parameter:
-$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]'
+$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) \&lt;= 86400000]]]'
 Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 ```
 
