@@ -553,19 +553,30 @@ Get-WinEvent -LogName 'Windows PowerShell' | Where-Object { $_.TimeCreated -ge $
 $Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
 Get-WinEvent -FilterHashtable @{ LogName='Windows PowerShell'; Level=3; StartTime=$Yesterday }
 
+#Matt test values
+&lt;
+/</gi
+\<\gi
+/</g
+\,\g
+'text &lt; text'
+'text /</gi text'
+'text `&lt;` text'
+'text '&lt;' text'
+
 # Using the FilterXML parameter:
 $xmlQuery = @'
 <QueryList>
   <Query Id="0" Path="Windows PowerShell">
     <Select Path="System">*[System[(Level=3) and
-        TimeCreated[timediff(@SystemTime) \<\gi= 86400000]]]</Select>
+        TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]</Select>
   </Query>
 </QueryList>
 '@
 Get-WinEvent -FilterXML $xmlQuery
 
 # Using the FilterXPath parameter:
-$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) /</gi= 86400000]]]'
+$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]'
 Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 ```
 
