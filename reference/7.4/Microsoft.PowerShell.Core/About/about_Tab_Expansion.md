@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Tab Expansion feature in PowerShell.
 Locale: en-US
-ms.date: 12/05/2023
+ms.date: 06/13/2024
 no-loc: [<kbd>Tab</kbd>, <kbd>Ctrl</kbd>, <kbd>Space</kbd>]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_tab_expansion?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -203,6 +203,7 @@ EXAMPLE        FORWARDHELPTARGETNAME  LINK              PARAMETER     SYNOPSIS
 
 ## See also
 
+- [TabExpansion2][06]
 - [about_Comment_Based_Help][03]
 - [about_Functions_Argument_Completion][04]
 - [about_Requires][05]
@@ -213,3 +214,4 @@ EXAMPLE        FORWARDHELPTARGETNAME  LINK              PARAMETER     SYNOPSIS
 [03]: about_Comment_Based_Help.md
 [04]: about_Functions_Argument_Completion.md
 [05]: about_Requires.md
+[06]: xref:Microsoft.PowerShell.Core.TabExpansion2
