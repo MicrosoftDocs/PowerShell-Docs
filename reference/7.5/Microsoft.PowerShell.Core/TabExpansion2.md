@@ -31,7 +31,7 @@ TabExpansion2 [-ast] <Ast> [-tokens] <Token[]> [-positionOfCursor] <IScriptPosit
 ## DESCRIPTION
 
 `TabExpansion2` is a built-in function that provides tab completion for user input. PowerShell calls
-this function when the user presses <kbd>Tab</kbd> or <kbd>Ctrl</kbd>+<kbd>Space</kbd> key while
+this function when the user presses the <kbd>Tab</kbd> or <kbd>Ctrl</kbd>+<kbd>Space</kbd> key while
 typing a command. The function returns a list of possible completions for the current input.
 
 `TabExpansion2` isn't normally called directly by users. However, it can be useful for testing tab
