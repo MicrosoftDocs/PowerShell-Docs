@@ -1,7 +1,7 @@
 ---
 description: Describes the built-in functions in PowerShell.
 Locale: en-US
-ms.date: 01/03/2023
+ms.date: 06/13/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_built-in_functions?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Built-in Functions
@@ -35,14 +35,15 @@ between the command and the destination path. This function runs
 
 ## `Pause`
 
-This function replicates the behavior of CMD's `pause` command. The script
-pauses execution and prompts the user to hit a key to continue.
+This function replicates the behavior of the `pause` command from `cmd.exe`.
+The script pauses execution and prompts the user to hit a key to continue.
 
 ## `help`
 
 This function invokes `Get-Help` with your parameters and passes the output to
 the systems pager command. On Windows systems, the pager is `more.com`. On
-non-Windows systems the pager could be `more` or `less`.
+non-Windows systems, `help` uses the pager defined by the `$env:PAGER`
+environment variable.
 
 ## `prompt`
 
@@ -57,12 +58,14 @@ This function clears the screen. For more information, see
 
 ## `TabExpansion2`
 
-This is the default function to use for tab expansion.
+This is the default function to use for tab expansion. For more information, see
+[TabExpansion2](xref:Microsoft.PowerShell.Core.TabExpansion2).
 
 ## `oss`
 
 This function provides a short hand way to run `Out-String -Stream` in a
-pipeline.
+pipeline. For more information, see
+[Out-String](xref:Microsoft.PowerShell.Utility.Out-String).
 
 ## `mkdir`
 
@@ -79,4 +82,4 @@ drive letter on the command line.
 PowerShell create a function for every possible drive letter, `A:` through
 `Z:`.
 
-These functions aren't defined for non-Windows systems.
+These drive letter functions aren't defined on non-Windows systems.
