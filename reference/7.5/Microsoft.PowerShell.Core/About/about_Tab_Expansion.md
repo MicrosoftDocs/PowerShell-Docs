@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Tab Expansion feature in PowerShell.
 Locale: en-US
-ms.date: 05/16/2024
+ms.date: 06/13/2024
 no-loc: [<kbd>Tab</kbd>, <kbd>Ctrl</kbd>, <kbd>Space</kbd>]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_tab_expansion?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -36,7 +36,7 @@ information, see [about_PSReadLine][02].
 > contain tabs. If it does, the results will be unpredictable and will almost
 > certainly not be what you intended.
 
-## File and path name completion
+## File and cmdlet name completion
 
 To fill in a filename or path from the available choices automatically, type
 part of the name and press the <kbd>Tab</kbd> key. PowerShell automatically
@@ -212,6 +212,7 @@ EXAMPLE        FORWARDHELPTARGETNAME  LINK              PARAMETER     SYNOPSIS
 
 ## See also
 
+- [TabExpansion2][06]
 - [about_Comment_Based_Help][03]
 - [about_Functions_Argument_Completion][04]
 - [about_Requires][05]
@@ -222,3 +223,4 @@ EXAMPLE        FORWARDHELPTARGETNAME  LINK              PARAMETER     SYNOPSIS
 [03]: about_Comment_Based_Help.md
 [04]: about_Functions_Argument_Completion.md
 [05]: about_Requires.md
+[06]: xref:Microsoft.PowerShell.Core.TabExpansion2

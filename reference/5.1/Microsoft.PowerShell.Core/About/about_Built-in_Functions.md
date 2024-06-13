@@ -1,7 +1,7 @@
 ---
 description: Describes the built-in functions in PowerShell.
 Locale: en-US
-ms.date: 07/17/2023
+ms.date: 06/13/2024
 online version: https://learn.microsoft.com/powershell/module/Microsoft.PowerShell.Core/about/about_built-in_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Built-in Functions
@@ -33,10 +33,10 @@ In the Windows CMD shell it's common to run the `cd` command without any spaces
 between the command and the destination path. This function runs
 `Set-Location \` to change to the root folder.
 
-## `Clear-Host`
+## `Pause`
 
-This function clears the screen. For more information, see
-[Clear-Host](xref:Microsoft.PowerShell.Core.Clear-Host).
+This function replicates the behavior of the `pause` command from `cmd.exe`.
+The script pauses execution and prompts the user to hit a key to continue.
 
 ## `Get-Verb`
 
@@ -52,34 +52,36 @@ the systems pager command, `more.com`.
 
 This function has been deprecated. It is an empty function that does nothing.
 
-## `mkdir`
-
-This function provides a short hand way to run `New-Item -Type Directory` with
-your parameters.
-
-## `more`
-
-This function is a wrapper around the `more.com` native command.
-
-## `oss`
-
-This function provides a short hand way to run `Out-String -Stream` in a
-pipeline.
-
-## `Pause`
-
-This function replicates the behavior of CMD's `pause` command. The script
-pauses execution and prompts the user to hit a key to continue.
-
 ## `prompt`
 
 This is the function that creates the default prompt for the PowerShell command
 line. You can customize your prompt by overriding this function with your own.
 For more information see [about_Prompts](about_Prompts.md).
 
+## `more`
+
+This function is a wrapper around the `more.com` native command.
+
+## `Clear-Host`
+
+This function clears the screen. For more information, see
+[Clear-Host](xref:Microsoft.PowerShell.Core.Clear-Host).
+
 ## `TabExpansion2`
 
-This is the default function to use for tab expansion.
+This is the default function to use for tab expansion. For more information, see
+[TabExpansion2](xref:Microsoft.PowerShell.Core.TabExpansion2).
+
+## `oss`
+
+This function provides a short hand way to run `Out-String -Stream` in a
+pipeline. For more information, see
+[Out-String](xref:Microsoft.PowerShell.Utility.Out-String).
+
+## `mkdir`
+
+This function provides a short hand way to run `New-Item -Type Directory` with
+your parameters.
 
 ## Windows drive letter functions
 

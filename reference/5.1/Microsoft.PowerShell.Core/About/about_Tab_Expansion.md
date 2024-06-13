@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Tab Expansion feature in PowerShell.
 Locale: en-US
-ms.date: 12/05/2023
+ms.date: 06/13/2024
 no-loc: [<kbd>Tab</kbd>, <kbd>Ctrl</kbd>, <kbd>Space</kbd>]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_tab_expansion?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -16,9 +16,9 @@ file paths can all be completed by pressing the <kbd>Tab</kbd> key.
 
 ## Long description
 
-Tab expansion is controlled by the internal function **TabExpansion** or
-**TabExpansion2**. Since this function can be modified or overridden, this
-discussion is a guide to the behavior of the default PowerShell configuration.
+Tab expansion is controlled by the internal function **TabExpansion2**. Since
+this function can be modified or overridden, this discussion is a guide to the
+behavior of the default PowerShell configuration.
 
 Tab expansion behavior can also be modified by the Predictive IntelliSense
 feature of the PSReadLine module. For more information, see
@@ -109,6 +109,7 @@ for some parameter. For more information, see
 
 ## See also
 
+- [TabExpansion2][06]
 - [about_Comment_Based_Help][03]
 - [about_Functions_Argument_Completion][04]
 - [about_Requires][05]
@@ -119,3 +120,4 @@ for some parameter. For more information, see
 [03]: about_Comment_Based_Help.md
 [04]: about_Functions_Argument_Completion.md
 [05]: about_Requires.md
+[06]: xref:Microsoft.PowerShell.Core.TabExpansion2
