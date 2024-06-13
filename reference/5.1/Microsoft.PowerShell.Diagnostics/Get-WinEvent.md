@@ -556,14 +556,14 @@ $xmlQuery = @'
 <QueryList>
   <Query Id="0" Path="Windows PowerShell">
     <Select Path="System">*[System[(Level=3) and
-        TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]</Select>
+        TimeCreated[timediff(@SystemTime) &amp;lt;= 86400000]]]</Select>
   </Query>
 </QueryList>
 '@
 Get-WinEvent -FilterXML $xmlQuery
 
 # Using the FilterXPath parameter:
-$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]'
+$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &amp;lt;= 86400000]]]'
 Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 ```
 
