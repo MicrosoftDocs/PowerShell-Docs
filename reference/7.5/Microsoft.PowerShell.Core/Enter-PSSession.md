@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 06/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enter-PSSession
@@ -66,7 +66,8 @@ Enter-PSSession [-Name <String>] [<CommonParameters>]
 ### VMId
 
 ```
-Enter-PSSession [-VMId] <Guid> [-Credential] <PSCredential> [-ConfigurationName <String>] [<CommonParameters>]
+Enter-PSSession [-VMId] <Guid> [-Credential] <PSCredential> [-ConfigurationName <String>]
+ [<CommonParameters>]
 ```
 
 ### VMName
@@ -85,13 +86,13 @@ Enter-PSSession [-ContainerId] <String> [-ConfigurationName <String>] [-RunAsAdm
 
 ## DESCRIPTION
 
-The `Enter-PSSession` cmdlet starts an interactive session with a single remote computer.
-During the session, the commands that you type run on the remote computer, just as if you were
-typing directly on the remote computer. You can have only one interactive session at a time.
+The `Enter-PSSession` cmdlet starts an interactive session with a single remote computer. During the
+session, the commands that you type run on the remote computer, just as if you were typing directly
+on the remote computer. You can have only one interactive session at a time.
 
 Typically, you use the **ComputerName** parameter to specify the name of the remote computer.
 However, you can also use a session that you create by using the `New-PSSession` cmdlet for the
-interactive session. However, you cannot use the `Disconnect-PSSession`, `Connect-PSSession`, or
+interactive session. However, you can't use the `Disconnect-PSSession`, `Connect-PSSession`, or
 `Receive-PSSession` cmdlets to disconnect from or re-connect to an interactive session.
 
 Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to a remote
@@ -104,6 +105,10 @@ information about how to set up PowerShell SSH remoting, see
 
 To end the interactive session and disconnect from the remote computer, use the `Exit-PSSession`
 cmdlet, or type `exit`.
+
+> [!IMPORTANT]
+> `Enter-PSSession` is designed to substitute a new remote session for the current interactive
+> session. You shouldn't call it from within script context.
 
 ## EXAMPLES
 
@@ -130,7 +135,7 @@ The command is submitted to the remote computer, and the file is saved on the re
 
 The third command uses the **Exit** keyword to end the interactive session and close the connection.
 The fourth command confirms that the Process.txt file is on the remote computer. A `Get-ChildItem`
-("dir") command on the local computer cannot find the file.
+("dir") command on the local computer can't find the file.
 
 ```powershell
 PS C:\> Enter-PSSession -ComputerName Server01
@@ -222,10 +227,10 @@ connection to the remote system.
 ### -AllowRedirection
 
 Allows redirection of this connection to an alternate Uniform Resource Identifier (URI). By default,
-redirection is not allowed.
+redirection isn't allowed.
 
 When you use the **ConnectionURI** parameter, the remote destination can return an instruction to
-redirect to a different URI. By default, PowerShell does not redirect connections, but you can use
+redirect to a different URI. By default, PowerShell doesn't redirect connections, but you can use
 this parameter to allow it to redirect the connection.
 
 You can also limit the number of times the connection is redirected by changing the
@@ -248,10 +253,10 @@ Accept wildcard characters: False
 ### -ApplicationName
 
 Specifies the application name segment of the connection URI. Use this parameter to specify the
-application name when you are not using the **ConnectionURI** parameter in the command.
+application name when you aren't using the **ConnectionURI** parameter in the command.
 
 The default value is the value of the `$PSSessionApplicationName` preference variable on the local
-computer. If this preference variable is not defined, the default value is WSMAN. This value is
+computer. If this preference variable isn't defined, the default value is WSMAN. This value is
 appropriate for most uses. For more information, see
 [about_Preference_Variables](About/about_Preference_Variables.md).
 
@@ -273,7 +278,7 @@ Accept wildcard characters: False
 
 ### -Authentication
 
-Specifies the mechanism that is used to authenticate the user's credentials. The acceptable values
+Specifies the mechanism that's used to authenticate the user's credentials. The acceptable values
 for this parameter are:
 
 - Default
@@ -318,7 +323,7 @@ Specifies the digital public key certificate (X509) of a user account that has p
 this action. Enter the certificate thumbprint of the certificate.
 
 Certificates are used in client certificate-based authentication. They can be mapped only to local
-user accounts; they do not work with domain accounts.
+user accounts; they don't work with domain accounts.
 
 To get a certificate, use the `Get-Item` or `Get-ChildItem` command in the PowerShell Cert: drive.
 
@@ -367,7 +372,7 @@ Accept wildcard characters: False
 
 ### -ConfigurationName
 
-Specifies the session configuration that is used for the interactive session.
+Specifies the session configuration that's used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
@@ -377,10 +382,10 @@ When used with SSH, this specifies the subsystem to use on the target as defined
 default value for SSH is the `powershell` subsystem.
 
 The session configuration for a session is located on the remote computer. If the specified session
-configuration does not exist on the remote computer, the command fails.
+configuration doesn't exist on the remote computer, the command fails.
 
 The default value is the value of the `$PSSessionConfigurationName` preference variable on the local
-computer. If this preference variable is not set, the default is Microsoft.PowerShell. For more
+computer. If this preference variable isn't set, the default is Microsoft.PowerShell. For more
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
@@ -425,11 +430,11 @@ The default value is as follows:
 
 `http://localhost:5985/WSMAN`
 
-If you do not specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**,
+If you don't specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**,
 and **ApplicationName** parameters to specify the **ConnectionURI** values.
 
 Valid values for the Transport segment of the URI are HTTP and HTTPS. If you specify a connection
-URI with a Transport segment, but do not specify a port, the session is created by using standards
+URI with a Transport segment, but don't specify a port, the session is created by using standards
 ports: 80 for HTTP and 443 for HTTPS. To use the default ports for PowerShell remoting, specify port
 5985 for HTTP or 5986 for HTTPS.
 
@@ -662,7 +667,7 @@ Accept wildcard characters: False
 
 ### -Port
 
-Specifies the network port on the remote computer that is used for this command.
+Specifies the network port on the remote computer that's used for this command.
 
 In PowerShell 6.0 this parameter was included in the **HostName** parameter set which supports
 Secure Shell (SSH) connections.
@@ -679,7 +684,7 @@ listen at that port. Use the following commands to configure the listener:
 1. `winrm delete winrm/config/listener?Address=*+Transport=HTTP`
 2. `winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number\>"}`
 
-Do not use the **Port** parameter unless you must. The port setting in the command applies to all
+Don't use the **Port** parameter unless you must. The port setting in the command applies to all
 computers or sessions on which the command runs. An alternate port setting might prevent the command
 from running on all computers.
 
@@ -749,11 +754,11 @@ by using the `New-PSSessionOption` cmdlet, or a hash table in which the keys are
 names and the values are session option values.
 
 The default values for the options are determined by the value of the `$PSSessionOption` preference
-variable, if it is set. Otherwise, the default values are established by options set in the session
+variable, if it's set. Otherwise, the default values are established by options set in the session
 configuration.
 
 The session option values take precedence over default values for sessions set in the
-`$PSSessionOption` preference variable and in the session configuration. However, they do not take
+`$PSSessionOption` preference variable and in the session configuration. However, they don't take
 precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see `New-PSSessionOption`.
@@ -800,10 +805,10 @@ Accept wildcard characters: False
 Specifies the SSH subsystem used for the new **PSSession**.
 
 This specifies the subsystem to use on the target as defined in sshd_config. The subsystem starts a
-specific version of PowerShell with predefined parameters. If the specified subsystem does not exist
+specific version of PowerShell with predefined parameters. If the specified subsystem doesn't exist
 on the remote computer, the command fails.
 
-If this parameter is not used, the default is the 'powershell' subsystem.
+If this parameter isn't used, the default is the `powershell` subsystem.
 
 ```yaml
 Type: System.String
@@ -820,19 +825,16 @@ Accept wildcard characters: False
 ### -UserName
 
 Specifies the user name for the account used to create a session on the remote computer. User
-authentication method will depend on how Secure Shell (SSH) is configured on the remote computer.
+authentication method depends on how Secure Shell (SSH) is configured on the remote computer.
 
-If SSH is configured for basic password authentication then you will be prompted for the user
-password.
+If SSH is configured for basic password authentication then you are prompted for the user password.
 
-If SSH is configured for key based user authentication then a key file path can be provided via the
-**KeyFilePath** parameter and no password prompt will occur. Note that if the client user key file
-is located in an SSH known location then the **KeyFilePath** parameter is not needed for key based
-authentication, and user authentication will occur automatically based on the user name. See SSH
-documentation about key based user authentication for more information.
+If SSH is configured for key based user authentication then uou aren't prompted for a password. You
+must provide a path to an SSH key file. If the user key file is located in an SSH known location
+then the **KeyFilePath** parameter isn't needed. User authentication occurs automatically based on
+the user name. See SSH documentation about key based user authentication for more information.
 
-This is not a required parameter. If no **UserName** parameter is specified then the current log on
-user name is used for the connection.
+If the **UserName** parameter isn't specified then the current logged on username is used.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -851,13 +853,13 @@ Accept wildcard characters: False
 ### -UseSSL
 
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to
-the remote computer. By default, SSL is not used.
+the remote computer. By default, SSL isn't used.
 
 WS-Management encrypts all PowerShell content transmitted over the network. The **UseSSL** parameter
 is an additional protection that sends the data across an HTTPS connection instead of an HTTP
 connection.
 
-If you use this parameter, but SSL is not available on the port that is used for the command, the
+If you use this parameter, but SSL isn't available on the port that's used for the command, the
 command fails.
 
 ```yaml
@@ -946,7 +948,7 @@ to change the command prompt, run before the remote prompt is displayed.
 find the local UI culture, use the `$UICulture` automatic variable.
 
 `Enter-PSSession` requires the `Get-Command`, `Out-Default`, and `Exit-PSSession` cmdlets. If these
-cmdlets are not included in the session configuration on the remote computer, the `Enter-PSSession`
+cmdlets aren't included in the session configuration on the remote computer, the `Enter-PSSession`
 commands fails.
 
 Unlike `Invoke-Command`, which parses and interprets the commands before it sends them to the remote
@@ -961,13 +963,13 @@ The **HostName** parameter set was included starting with PowerShell 6.0. It was
 PowerShell remoting based on Secure Shell (SSH). Both SSH and PowerShell are supported on multiple
 platforms (Windows, Linux, macOS) and PowerShell remoting works over these platforms where
 PowerShell and SSH are installed and configured. This is separate from the previous Windows only
-remoting that is based on WinRM and much of the WinRM specific features and limitations do not
+remoting that's based on WinRM and much of the WinRM specific features and limitations don't
 apply. For example, WinRM based quotas, session options, custom endpoint configuration, and
 disconnect/reconnect features are currently not supported. For more information about how to set up
 PowerShell SSH remoting, see
 [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
-Prior to PowerShell 7.1, remoting over SSH did not support second-hop remote sessions. This
+Prior to PowerShell 7.1, remoting over SSH didn't support second-hop remote sessions. This
 capability was limited to sessions using WinRM. PowerShell 7.1 allows `Enter-PSSession` and
 `Enter-PSHostProcess` to work from within any interactive remote session.
 
