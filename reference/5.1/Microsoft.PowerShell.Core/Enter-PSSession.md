@@ -90,8 +90,9 @@ To end the interactive session and disconnect from the remote computer, use the 
 cmdlet, or type `exit`.
 
 > [!IMPORTANT]
-> `Enter-PSSession` is designed to substitute a new remote session for the current interactive
-> session. You shouldn't call it from within script context.
+> `Enter-PSSession` is designed to substitute the current interactive session with a new interactive
+> remote session. You shouldn't call it from within a function or script or by passing it as a
+> command to the `powershell.exe` executable.
 
 ## EXAMPLES
 

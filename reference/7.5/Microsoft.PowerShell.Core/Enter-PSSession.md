@@ -96,7 +96,7 @@ interactive session. However, you can't use the `Disconnect-PSSession`, `Connect
 `Receive-PSSession` cmdlets to disconnect from or re-connect to an interactive session.
 
 Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to a remote
-computer, if SSH is available on the local computer and the remote computer is configured with a
+computer. You must have SSH on the local computer and the remote computer must be configured with a
 PowerShell SSH endpoint. The benefit an SSH based PowerShell remote session is that it works across
 multiple platforms (Windows, Linux, macOS). For SSH based remoting you use the **HostName**
 parameter set to specify the remote computer and relevant connection information. For more
@@ -107,8 +107,9 @@ To end the interactive session and disconnect from the remote computer, use the 
 cmdlet, or type `exit`.
 
 > [!IMPORTANT]
-> `Enter-PSSession` is designed to substitute a new remote session for the current interactive
-> session. You shouldn't call it from within script context.
+> `Enter-PSSession` is designed to substitute the current interactive session with a new interactive
+> remote session. You shouldn't call it from within a function or script or by passing it as a
+> command to the `pwsh` executable.
 
 ## EXAMPLES
 
