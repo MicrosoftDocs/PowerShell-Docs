@@ -1,7 +1,7 @@
 ---
 description: Describes regular expressions in PowerShell.
 Locale: en-US
-ms.date: 04/17/2024
+ms.date: 06/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Regular Expressions
@@ -14,8 +14,8 @@ Describes regular expressions in PowerShell.
 ## Long description
 
 > [!NOTE]
-> This article will show you the syntax and methods for using regular
-> expressions in PowerShell, not all syntax is discussed. For a more complete
+> This article shows the syntax and methods for using regular expressions in
+> PowerShell. It doesn't cover all possible expressions. For a more complete
 > reference, see the [Regular Expression Language - Quick Reference][03].
 
 A regular expression is a pattern used to match text. It can be made up of
@@ -193,9 +193,9 @@ characters.
 ```
 
 > [!NOTE]
-> When defining a regex containing an `$` anchor, be sure to enclose the regex
-> using single quotes (`'`) instead of double quotes (`"`) or PowerShell will
-> expand the expression as a variable.
+> When defining a regex containing an anchor (`$` ), you should enclose the
+> regex in single quotes (`'`). If you use double quotes (`"`), PowerShell
+> interprets the string as an expandable variable expression.
 
 When using anchors in PowerShell, you should understand the difference between
 **Singleline** and **Multiline** regular expression options.
@@ -273,7 +273,7 @@ True
 ```
 
 Use the `$Matches` **Hashtable** automatic variable to retrieve captured text.
-The text representing the entire match is stored at key `0`. It is important to
+The text representing the entire match is stored at key `0`. It's important to
 note that the `$Matches` hashtable contains only the first occurrence of any
 matching pattern.
 
