@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 04/06/2024
+ms.date: 06/17/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Preference Variables
@@ -812,7 +812,7 @@ $Error[0]
 To display the oldest retained error, type:
 
 ```powershell
-$Error[($Error.Count -1]
+$Error[-1]
 ```
 
 The **Force** parameter overrides the special formatting of **ErrorRecord**
