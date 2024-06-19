@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 02/07/2024
+ms.date: 06/19/2024
 ---
 
 # What's New in PowerShell 7.4
@@ -82,6 +82,8 @@ Many thanks to **@MartinGC94** and others for all their work to improve tab comp
   ([#17750][17750]) (Thanks @fflaten!).
 - Fix dynamic parameter completion ([#19510][19510])
 - Add completion for variables assigned by the Data statement ([#19831][19831])
+- Fix expanding tilde (`~`) on Windows systems to `$home` to prevent breaking use cases with native
+  commands ([#21529][21529])
 
 ## Web cmdlet improvements
 
@@ -329,3 +331,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [19831]: https://github.com/PowerShell/PowerShell/pull/19831
 [20369]: https://github.com/PowerShell/PowerShell/pull/20369
 [20371]: https://github.com/PowerShell/PowerShell/pull/20371
+[21529]: https://github.com/PowerShell/PowerShell/pull/21529
