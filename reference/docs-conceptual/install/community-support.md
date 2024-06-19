@@ -1,6 +1,6 @@
 ---
 description: PowerShell can run on Linux distributions that aren't officially supported by Microsoft.
-ms.date: 05/07/2024
+ms.date: 06/19/2024
 title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
@@ -70,9 +70,9 @@ information about installing these packages, see the [PowerShell][05] page in th
 Download the tar.gz package from the [releases][08] page onto your Raspberry Pi computer. The links
 to the current versions are:
 
-- PowerShell 7.4.2 - latest LTS release
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell-7.4.2-linux-arm32.tar.gz`
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.2/powershell-7.4.2-linux-arm64.tar.gz`
+- PowerShell 7.4.3 - latest LTS release
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.3/powershell-7.4.3-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.3/powershell-7.4.3-linux-arm64.tar.gz`
 - PowerShell 7.3.12 - latest stable release
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.12/powershell-7.3.12-linux-arm32.tar.gz`
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.3.12/powershell-7.3.12-linux-arm64.tar.gz`
