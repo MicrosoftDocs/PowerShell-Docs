@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/20/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-eventsubscriber?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-EventSubscriber
@@ -173,6 +173,32 @@ being generated when the Elapsed event occurs.
 
 For more information about modules, see
 [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
+
+### Example 3: Get hidden event subscribers
+
+This example registers an event subscriber for the **PowerShell.Exiting** event. The subscription is
+registered using the **SupportEvent** parameter, which hides the event subscriber from the default
+output of the `Get-EventSubscriber` cmdlet. You must use the **Force** parameter to get all event
+subscribers, including hidden subscribers.
+
+```powershell
+Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
+    Get-History | Export-Clixml d:\temp\history.clixml
+}
+Get-EventSubscriber  # No output - must use -Force
+Get-EventSubscriber -Force
+```
+
+```Output
+SubscriptionId   : 1
+SourceObject     :
+EventName        :
+SourceIdentifier : PowerShell.Exiting
+Action           : System.Management.Automation.PSEventJob
+HandlerDelegate  :
+SupportEvent     : True
+ForwardEvent     : False
+```
 
 ## PARAMETERS
 
