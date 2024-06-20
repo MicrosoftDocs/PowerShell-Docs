@@ -1,7 +1,7 @@
 ---
 description: There are many ways to use variables in strings to create formatted text.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/16/2022
+ms.date: 06/20/2024
 title: Everything you wanted to know about variable substitution in strings
 ---
 # Everything you wanted to know about variable substitution in strings
@@ -234,7 +234,7 @@ $tester = "Better"
 Write-Host "$test $tester ${test}ter"
 ```
 
-Thank you [/u/real_parbold][18] for that one.
+Thank you Redditor `u/real_parbold` for that one.
 
 Here is an alternate to this approach:
 
@@ -312,7 +312,7 @@ foreach($name in $nameList){
 ```
 
 To keep going on this idea; you could be importing a large email template from a text file to do
-this. I have to thank [Mark Kraus][02] for this [suggestion][17].
+this. I have to thank [Mark Kraus][02] for this suggestion.
 
 ## Whatever works the best for you
 
@@ -357,5 +357,3 @@ see the following list for the reference documentation.
 [14]: https://powershellexplained.com/2017-01-13-powershell-variable-substitution-in-strings/
 [15]: https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files/
 [16]: https://twitter.com/KevinMarquette
-[17]: https://www.reddit.com/r/PowerShell/comments/5npf8h/kevmar_everything_you_wanted_to_know_about/dcdfia5/
-[18]: https://www.reddit.com/r/PowerShell/comments/5npf8h/kevmar_everything_you_wanted_to_know_about/dcdfm6p/

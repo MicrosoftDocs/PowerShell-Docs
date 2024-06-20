@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/16/2023
+ms.date: 06/19/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Object
@@ -350,6 +350,81 @@ name weight
 a         7
 ```
 
+### Example 13: ExpandProperty alters the original object
+
+This example demonstrates the side-effect of using the **ExpandProperty** parameter. When you use
+**ExpandProperty**, `Select-Object` adds the selected properties to the original object as
+**NoteProperty** members.
+
+```powershell
+PS> $object = [PSCustomObject]@{
+    name = 'USA'
+    children = [PSCustomObject]@{
+        name = 'Southwest'
+    }
+}
+PS> $object
+
+name children
+---- --------
+USA  @{name=Southwest}
+
+# Use the ExpandProperty parameter to expand the children property
+PS> $object | Select-Object @{n="country"; e={$_.name}} -ExpandProperty children
+
+name      country
+----      -------
+Southwest USA
+
+# The original object has been altered
+PS> $object
+
+name children
+---- --------
+USA  @{name=Southwest; country=USA}
+```
+
+As you can see, the **country** property was added to the **children** object after using the
+**ExpandProperty** parameter.
+
+### Example 14: Create a new object with expanded properties without altering the input object
+
+You can avoid the side-effect of using the **ExpandProperty** parameter by creating a new object and
+copying the properties from the input object.
+
+```powershell
+PS> $object = [PSCustomObject]@{
+    name = 'USA'
+    children = [PSCustomObject]@{
+        name = 'Southwest'
+    }
+}
+PS> $object
+
+name children
+---- --------
+USA  @{name=Southwest}
+
+# Create a new object with selected properties
+PS> $newobject = [PSCustomObject]@{
+    country = $object.name
+    children = $object.children
+}
+
+PS> $newobject
+
+country children
+------- --------
+USA     @{name=Southwest}
+
+# $object remains unchanged
+PS> $object
+
+name children
+---- --------
+USA  @{name=Southwest}
+```
+
 ## PARAMETERS
 
 ### -ExcludeProperty
@@ -382,6 +457,10 @@ error.
   **InputObject**
 
 In either case, the output objects' **Type** matches the expanded property's **Type**.
+
+> [!NOTE]
+> There is a side-effect when using **ExpandProperty**. The `Select-Object` adds the selected
+> properties to the original object as **NoteProperty** members.
 
 If the **Property** parameter is specified, `Select-Object` attempts to add each selected property
 as a **NoteProperty** to every outputted object.

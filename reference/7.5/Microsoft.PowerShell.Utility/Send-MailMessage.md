@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/04/2023
+ms.date: 06/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
@@ -474,7 +474,7 @@ The `Send-MailMessage` cmdlet is obsolete. For more information, see
 [Platform Compatibility note DE0005](https://aka.ms/SendMailMessage). This cmdlet doesn't guarantee
 secure connections to SMTP servers.
 
-_DE0005_ suggests using the third-party library, [MailKit](https://github.com/jstedfast/MimeKit). If
+_DE0005_ suggests using the third-party library, [MailKit](https://github.com/jstedfast/MailKit). If
 you are using Exchange Online, you can use the
 [Send-MgUserMail](/powershell/module/microsoft.graph.users.actions/send-mgusermail) from the
 Microsoft Graph PowerShell SDK.

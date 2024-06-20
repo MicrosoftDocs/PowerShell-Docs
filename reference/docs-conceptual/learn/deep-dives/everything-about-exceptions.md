@@ -1,7 +1,7 @@
 ---
 description: Error handling is just part of life when it comes to writing code.
 ms.custom: contributor-KevinMarquette
-ms.date: 08/15/2023
+ms.date: 06/20/2024
 title: Everything you wanted to know about exceptions
 ---
 # Everything you wanted to know about exceptions
@@ -358,7 +358,7 @@ catch [System.IO.IOException]
 }
 ```
 
-Thank you `/u/Sheppard_Ra` for suggesting this addition.
+Thank you Redditor `u/Sheppard_Ra` for suggesting this addition.
 
 ### Throwing typed exceptions
 
@@ -423,8 +423,8 @@ catch [System.IO.FileNotFoundException]
 
 #### The big list of .NET exceptions
 
-I compiled a master list with the help of the [Reddit/r/PowerShell community][09] that contains
-hundreds of .NET exceptions to complement this post.
+I compiled a master list with the help of the Reddit `r/PowerShell` community that contains hundreds
+of .NET exceptions to complement this post.
 
 - [The big list of .NET exceptions][06]
 
@@ -672,4 +672,3 @@ advice and make `ThrowTerminatingError` my goto exception handler for every func
 [06]: https://powershellexplained.com/2017-04-07-all-dotnet-exception-list
 [07]: https://powershellexplained.com/2017-04-10-Powershell-exceptions-everything-you-ever-wanted-to-know/
 [08]: https://twitter.com/KevinMarquette
-[09]: https://www.reddit.com/r/PowerShell/comments/64866o/kevmar_all_net_46_exceptions_list_for_use_with/
