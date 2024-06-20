@@ -1,7 +1,7 @@
 ---
 description: PSCustomObject is a simple way to create structured data.
 ms.custom: contributor-KevinMarquette
-ms.date: 05/06/2024
+ms.date: 06/20/2024
 title: Everything you wanted to know about PSCustomObject
 ---
 # Everything you wanted to know about PSCustomObject
@@ -270,9 +270,8 @@ people do it:
 $myObject.PSObject.TypeNames.Insert(0,"My.Object")
 ```
 
-I recently discovered another way to do this from this
-[post by /u/markekraus][14]. He talks about this approach that allows you to
-define it inline.
+I recently discovered another way to do this from Redditor `u/markekraus`. He talks about this
+approach that allows you to define it inline.
 
 ```powershell
 $myObject = [PSCustomObject]@{
@@ -410,4 +409,3 @@ something and can find a way to work this into your scripts.
 [10]: https://powershellexplained.com/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/
 [11]: https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files
 [13]: https://twitter.com/KevinMarquette
-[14]: https://www.reddit.com/r/PowerShell/comments/590awc/is_it_possible_to_initialize_a_pscustoobject_with/

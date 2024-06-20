@@ -1,7 +1,7 @@
 ---
 description: Arrays are a fundamental language feature of most programming languages.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/16/2022
+ms.date: 06/20/2024
 title: Everything you wanted to know about arrays
 ---
 # Everything you wanted to know about arrays
@@ -842,8 +842,8 @@ if ( $null -ne $array -and @($array).count -gt 0 )
 
 ### All -eq
 
-I recently saw someone ask [how to verify that every value in an array matches a given value][14].
-Reddit user **/u/bis** had this clever [solution][15] that checks for any incorrect values and then
+I recently saw someone on Reddit ask how to verify that every value in an array matches a given
+value. Reddit user `u/bis` had this clever solution that checks for any incorrect values and then
 flips the result.
 
 ```powershell
@@ -1237,5 +1237,3 @@ From here, I would recommend you check out a similar post that I wrote about [ha
 [11]: https://powershellexplained.com/2017-11-20-Powershell-StringBuilder/
 [12]: https://powershellexplained.com/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/
 [13]: https://twitter.com/KevinMarquette
-[14]: https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition
-[15]: https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition/e7iizca
