@@ -1,6 +1,6 @@
 ---
 description: This article contains guidelines for the proper use of product names and terms.
-ms.date: 11/14/2022
+ms.date: 06/20/2024
 title: Product terminology and branding guidelines
 ---
 # Product terminology and branding guidelines
@@ -38,7 +38,7 @@ Guidelines
 
 ## PowerShell modules
 
-PowerShell modules are add-ons that containing PowerShell cmdlets that manage specific products or
+PowerShell modules are add-ons that contain PowerShell cmdlets to manage specific products or
 services.
 
 For example:
@@ -71,22 +71,23 @@ Guidelines
 
 ### Az PowerShell (product name)
 
-The currently supported collection of modules for use with Azure.
+The currently supported collection of modules for managing Azure resources with PowerShell.
 
 ### AzureRM PowerShell (product name)
 
-The earlier collection of modules that use the Azure Resource Manager model for managing Azure
-resources. This product is deprecated and will not be supported after February 29, 2024.
+The previous generation of modules that use the Azure Resource Manager (ARM) model for managing
+Azure resources. This product is deprecated, no longer maintained or supported, and not recommended.
 
 ### Azure Service Management PowerShell (product name)
 
-The earliest collection of modules is for managing legacy Azure resources that use Service
-Management APIs.
+The earliest collection of modules for managing legacy Azure resources that use Azure Service
+Manager (ASM) APIs. This legacy PowerShell module isn't recommended when creating new resources
+since ASM is scheduled for retirement.
 
 ### Azure PowerShell-related products
 
-These products are used to manage Azure resources but aren't included in one of the Azure PowerShell
-product collections.
+These products are used to manage Azure resources but aren't part of the Azure PowerShell collective
+product. They should never be described using the "Azure PowerShell" collective name.
 
 - Azure Active Directory PowerShell
 - Azure Information Protection PowerShell
