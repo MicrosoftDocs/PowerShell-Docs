@@ -330,7 +330,7 @@ changes the way the command line is parsed for native commands. For more
 information, see [Using experimental features][02].
 
 > [!CAUTION]
-> The new behavior is a **breaking change** from the Window PowerShell 5.1
+> The new behavior is a **breaking change** from the Windows PowerShell 5.1
 > behavior. This may break scripts and automation that work around the various
 > issues when invoking native applications. Use the stop-parsing token (`--%`)
 > or the [`Start-Process`][07] cmdlet to avoid the native argument passing when
