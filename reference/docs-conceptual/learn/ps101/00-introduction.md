@@ -1,7 +1,7 @@
 ---
-description: This is the introduction of the book PowerShell 101 by Mike F. Robbins.
+description: Introduction of the book PowerShell 101 The No-Nonsense Guide to Windows PowerShell by Mike F. Robbins.
 ms.custom: Contributor-mikefrobbins
-ms.date: 12/08/2022
+ms.date: 06/25/2024
 ms.reviewer: mirobb
 title: Introduction
 ---
@@ -10,51 +10,71 @@ title: Introduction
 <table>
   <tr><td>
   <a href="https://leanpub.com/powershell101">
-  <img src="media/powershell101-150x194.png" alt="PowerShell 101 (the book)" />
+  <img src="media/powershell101-final-new-210x273.png" alt="PowerShell 101 (the book)" />
   </a>
   </td>
   <td colspan=2>
-  This content originally appeared in the book <em>PowerShell 101</em> by Mike F Robbins. We thank
+  This content originally appeared in the book <em>PowerShell 101</em> by Mike F. Robbins. We thank
   Mike for granting us permission to reuse his content here. The content has been edited from the
   original publication. You can still get the original book from Leanpub at
   <a href="https://leanpub.com/powershell101">PowerShell 101</a>.
   </td></tr>
 </table>
 
-## Who is this book for?
-
-This is an entry-level book for anyone wanting to learn PowerShell.
-
-This book focuses on PowerShell version 5.1 running on Windows 10 and Windows Server 2016 in a
-Microsoft Active Directory domain environment. However, the basic concepts apply to all versions of
-PowerShell running on any supported platform.
-
 ## About this book
 
-This book is a collection of what I wish someone would have told me when I started learning
-PowerShell, along with the tips, tricks, and best practices that I've learned while using PowerShell
-during the past 10 years.
+Before PowerShell, I began my career as an IT Pro, pointing and clicking in the GUI. I wrote this
+book to save IT Pros from themselves by reducing the learning curve and helping them avoid being
+reluctant to learn PowerShell.
 
-Instead of providing an enormous amount of information, this book attempts to provide a balance of
-enough information to be successful for someone who is just getting started with PowerShell. Each
-chapter contains links to specific help topics for those who want more information about the topics
-covered in that chapter.
+Instead of a book that covers topics with fictitious scenarios, this book is a condensed version
+targeting the specific topics I've found an IT Pro needs to know to succeed with PowerShell in a
+real-world production environment. It's a collection of what I wish someone would have told me when
+I started learning PowerShell, along with the tips, tricks, and best practices that I've learned
+while using PowerShell since 2007.
+
+In every chapter, you'll find a curated collection of links to specific help topics if you want to
+know more about the information covered in that chapter. These resources help you dive deeper into
+the topics discussed in the book and broaden your understanding of PowerShell.
+
+## Who is this book for?
+
+This book is for anyone wanting to learn PowerShell. Whether you're a beginner or an experienced
+user, this book will help you improve your PowerShell skills.
+
+This book focuses on Windows PowerShell version 5.1 running on Windows 11 and Windows Server 2022 in
+a Microsoft Active Directory domain environment. However, the basic concepts apply to all versions
+of PowerShell running on any supported platform.
 
 ## About the author
 
-Mike F Robbins is a former Microsoft MVP, co-author of _Windows PowerShell TFM 4th Edition_, and a
-contributing author in the _PowerShell Deep Dives_ book. Mike has been a strong supporter of the
-PowerShell community and is now the lead writer for [Azure PowerShell][Azure PowerShell] at Microsoft. He blogs at
-[mikefrobbins.com][mikefrobbins.com] and can be found on twitter [@mikefrobbins][@mikefrobbins].
+Mike F. Robbins, a former Microsoft MVP, is the lead technical writer for
+[Azure PowerShell][azps-docs] at Microsoft. With extensive experience in PowerShell, he is a
+scripting, automation, and efficiency expert. As a lifelong learner, Mike continuously strives to
+improve his skills and empower others by sharing his knowledge and experience. He is also a
+published author, having written several books, including:
+
+- Author of [PowerShell 101: The No-Nonsense Guide to Windows PowerShell][powershell-101]
+- Creator of [The PowerShell Conference Book][psconf-book]
+- Co-author of [Windows PowerShell TFM 4th Edition][tfm4]
+- Contributing author in the [PowerShell Deep Dives][ps-deep-dives] book
+
+When Mike's not writing documentation for Microsoft, he can be found sharing his thoughts and
+insights on his blog at [mikefrobbins.com][mikefrobbins-com] and interacting with his followers on
+Twitter [@mikefrobbins][mikefrobbins-x].
 
 ## Lab environment
 
-The examples in this book were designed and tested on Windows 10 Anniversary Edition (build 1607)
-and Windows Server 2016 using PowerShell version 5.1. If you're using a different version of
-PowerShell or operating system, your results may differ from those shown here.
+The examples in this book were specifically created and tested on Windows 11 and Windows Server 2022
+operating systems, utilizing Windows PowerShell version 5.1. If you're running a different operating
+system or version of PowerShell, your results may vary from the ones presented in this book.
 
 <!-- link references -->
-[@mikefrobbins]: https://twitter.com/mikefrobbins
-[mikefrobbins.com]: https://mikefrobbins.com/
-[PowerShell 101]: https://leanpub.com/powershell101
-[Azure PowerShell]: /powershell/azure
+
+[azps-docs]: /powershell/azure
+[powershell-101]: https://leanpub.com/powershell101
+[psconf-book]: https://leanpub.com/powershell-conference-book
+[tfm4]: https://www.sapien.com/books_training/Windows-PowerShell-4
+[ps-deep-dives]: https://www.manning.com/books/powershell-deep-dives
+[mikefrobbins-com]: https://mikefrobbins.com/
+[mikefrobbins-x]: https://twitter.com/mikefrobbins
