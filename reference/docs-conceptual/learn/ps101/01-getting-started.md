@@ -15,11 +15,8 @@ your lab environment computer.
 ## What is PowerShell?
 
 Windows PowerShell is an easy-to-use command-line shell and scripting environment for automating
-administrative tasks of Windows-based systems.
-
-## What you need to get started with PowerShell
-
-All modern versions of Windows operating systems ship with Windows PowerShell preinstalled.
+administrative tasks of Windows-based systems. Windows PowerShell is preinstalled on all modern
+versions of the Windows operating system.
 
 ## Where to find PowerShell
 
@@ -41,6 +38,7 @@ indicated by the (x86) suffix on the shortcuts.
 
 > [!NOTE]
 > Windows 11 only ships as a 64-bit operating system. There is no 32-bit version of Windows 11.
+> However, Windows 11 include 32-bit versions of Windows PowerShell and the Windows PowerShell ISE.
 
 You only have two shortcuts if you're running an older 32-bit version of Windows. Those shortcuts
 don't have the (x86) suffix but are 32-bit versions.
