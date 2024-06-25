@@ -48,40 +48,36 @@ don't have the (x86) suffix but are 32-bit versions.
 I recommend using the 64-bit version of Windows PowerShell if you're running a 64-bit operating
 system unless you have a specific reason for using the 32-bit version.
 
-Depending on what version of Windows 11 you're running, Windows PowerShell may open in
+Depending on what version of Windows 11 you're running, Windows PowerShell might open in
 [Windows Terminal][windows-terminal].
 
-The PowerShell ISE is no longer in active feature development. I recommend using
-[Visual Studio Code][vs-code] (VS Code) with the [PowerShell extension][ps-extension] to replace the
-ISE. You must install VS Code and the PowerShell extension because they don't ship preinstalled with
-Windows. You only need to install them on the computer where you create PowerShell scripts. You
-don't need to install them on all the computers where you run PowerShell.
-
-For information about finding PowerShell on other versions of Windows, see
-[Starting Windows PowerShell][start-ps].
+Microsoft no longer updates the PowerShell ISE. The ISE only works with Windows PowerShell 5.1.
+[Visual Studio Code][vs-code] (VS Code) with the [PowerShell extension][ps-ext] works with both
+versions of PowerShell. VS Code and the PowerShell extension don't ship in Windows. Install VS Code
+and the extension on the computer where you create PowerShell scripts. You don't need to install
+them on all the computers where you run PowerShell.
 
 ## How to launch PowerShell
 
-I use three different Active Directory user accounts in the production environments I support. I've
-mirrored those accounts in the lab environment used in this book. I log into my Windows 11 computer
+I use three different Active Directory user accounts in the production environments I support. I
+mirrored those accounts in the lab environment used in this book. I sign into my Windows 11 computer
 as a domain user without domain or local administrator rights.
 
 Launch the PowerShell console by clicking the **Windows PowerShell** shortcut, as shown in Figure
-1-1. Notice that the title bar of the Windows PowerShell console says **Windows PowerShell**, as
-shown in Figure 1-2.
+1-1. Notice that the title bar of the console says **Windows PowerShell**, as shown in Figure 1-2.
 
 ![Figure 1-2 - Title bar of PowerShell window.](media/figure1-2.jpg)
 
 Some commands run fine when you run PowerShell as an ordinary user. However, PowerShell doesn't
-participate in User Access Control (UAC). That means it's unable to prompt for elevation for tasks
-that require the approval of an administrator.
+participate in [User Access Control (UAC)][uac]. That means it's unable to prompt for elevation for
+tasks that require the approval of an administrator.
 
 > [!NOTE]
 > UAC is a Windows security feature that helps prevent malicious code from running with elevated
 > privileges.
 
-When running as an ordinary user, PowerShell returns an error when you run a command that requires
-elevation, such as stopping a Windows service.
+When signed on as an ordinary user, PowerShell returns an error when you run a command that requires
+elevation. For example, stopping a Windows service:
 
 ```powershell
 Stop-Service -Name W32Time
@@ -103,18 +99,18 @@ The solution is to run PowerShell elevated as a user who is a local administrato
 configured my second domain user account. Following the principle of least privilege, this account
 shouldn't be a domain administrator or have any elevated privileges in the domain.
 
-Close the PowerShell console. When you relaunch it, right-click the **Windows PowerShell** shortcut
-and select **Run as administrator**, as shown in Figure 1-3.
+To start PowerShell with elevated rights, right-click the **Windows PowerShell** shortcut and select
+**Run as administrator**, as shown in Figure 1-3.
 
 ![Figure 1-3 - Context menu - Run as administrator.](media/figure1-3.jpg)
 
-You're prompted for credentials because you logged into Windows as an ordinary user. Enter the
+Windows prompts you for credentials because you logged into Windows as an ordinary user. Enter the
 credentials of your domain user who is a local administrator, as shown in Figure 1-4.
 
 ![Figure 1-4 - User account control - Enter credentials.](media/figure1-4.jpg)
 
-After you've relaunched the PowerShell console elevated as an administrator, the title bar says
-**Administrator: Windows PowerShell**, as shown in Figure 1-5.
+Notice that the title bar of the elevated console windows says **Administrator: Windows
+PowerShell**, as shown in Figure 1-5.
 
 ![Figure 1-5 - Title bar of elevated PowerShell window.](media/figure1-5.jpg)
 
@@ -124,38 +120,33 @@ run a command that requires elevation.
 > [!IMPORTANT]
 > You should only run PowerShell elevated as an administrator when absolutely necessary.
 
-When targeting remote computers, there is no need to run PowerShell elevated. Running PowerShell
-elevated as an administrator only affects commands that run against your local computer, not those
-that target remote computers.
+When you target remote computers, there's no need to run PowerShell elevated. Running PowerShell
+elevated only affects commands that run against your local computer.
 
-You can simplify finding and launching PowerShell. Pin the PowerShell console or Windows Terminal
-shortcut to your taskbar, but don't set it to launch automatically as an administrator.
-
-> The original version of this book, published in 2017, recommended pinning a shortcut to the
-> taskbar to launch an elevated instance automatically every time you start PowerShell. However,
-> this guidance is no longer recommended due to potential security implications. When you launch an
-> application from an elevated instance of PowerShell, it also runs elevated and bypasses UAC. For
-> example, if you launch a web browser from an elevated instance of PowerShell, any website you
-> visit containing malicious code also runs elevated.
-
-Search for PowerShell again, except this time right-click on it and select **Pin to taskbar** as
-shown in Figure 1-6.
+You can simplify finding and launching PowerShell. Pin the PowerShell or Windows Terminal shortcut
+to your taskbar. Search for PowerShell again, except this time right-click on it and select **Pin to
+taskbar** as shown in Figure 1-6.
 
 ![Figure 1-6 - Context menu - Pin to taskbar.](media/figure1-6.jpg)
 
+> [!IMPORTANT]
+> The original version of this book, published in 2017, recommended pinning a shortcut to the
+> taskbar to launch an elevated instance automatically every time you start PowerShell. However, due
+> to potential security concerns, I no longer recommended it. Any application you launch from an
+> elevated instance of PowerShell also bypass UAC and run elevated. For example, if you launch a web
+> browser from an elevated instance of PowerShell, any website you visit containing malicious code
+> also runs elevated.
+
 When you need to run PowerShell with elevated permissions, right-click the PowerShell shortcut
-pinned to your taskbar while pressing <kbd>Shift</kbd> and select **Run as administrator**, as shown
-in Figure 1-7.
+pinned to your taskbar while pressing <kbd>Shift</kbd>. Select **Run as administrator**, as shown in
+Figure 1-7.
 
 ![Figure 1-7 - Context menu - Run as administrator.](media/figure1-7.jpg)
-
-You'll never have to worry about finding PowerShell or whether it's running elevated as an
-administrator again.
 
 ## Determine your version of PowerShell
 
 There are automatic variables in PowerShell that store state information. One of these variables is
-`$PSVersionTable`, which contains a hashtable that you can use to display the PowerShell version.
+`$PSVersionTable`, which contains version information about your PowerShell session.
 
 ```powershell
 $PSVersionTable
@@ -174,13 +165,10 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-If you're running a version of Windows PowerShell older than 5.1, you should update to Windows
-PowerShell 5.1. Microsoft distributes new versions of Windows PowerShell as part of the Windows
-Management Framework (WMF). Depending on the WMF version, a specific version of the .NET Framework
-is required. To upgrade Windows PowerShell, see
-[Upgrading existing Windows PowerShell][upgrade-ps].
+If you're running a version of Windows PowerShell older than 5.1, you should update your version of
+Windows. Windows PowerShell 5.1 is preinstalled on the currently supported versions of Windows.
 
-PowerShell version 7 isn't an upgrade to Windows PowerShell 5.1; it installs side-by-side with
+PowerShell version 7 isn't a replacement for Windows PowerShell 5.1; it installs side-by-side with
 Windows PowerShell. Windows PowerShell version 5.1 and PowerShell version 7 are two different
 products. For more information about the differences between Windows PowerShell version 5.1 and
 PowerShell version 7, see [Migrating from Windows PowerShell 5.1 to PowerShell 7][migrate-ps].
@@ -243,23 +231,22 @@ All Windows client operating systems have the default execution policy setting o
 can't run PowerShell scripts using the `Restricted` execution policy setting. To test the execution
 policy, save the following code as a `.ps1` file named `Get-TimeService.ps1`.
 
-> A PowerShell script is a plaintext file with a `.ps1` extension that contains the commands you
-> want to run. To create a PowerShell script, use a code editor like Visual Studio Code (VS Code) or
-> any text editor such as Notepad.
+> [!TIP]
+> A PowerShell script is a plaintext file that contains the commands you want to run. PowerShell
+> script files use the `.ps1` file extension. To create a PowerShell script, use a code editor like
+> Visual Studio Code (VS Code) or any text editor such as Notepad.
+
+When you run the following command interactively, it completes without error.
 
 ```powershell
 Get-Service -Name W32Time
 ```
 
-When you run the previous command interactively, it completes without error. PowerShell returns an
-error when you run the same command from a script.
+However, PowerShell returns an error when you run the same command from a script.
 
 ```powershell
 .\Get-TimeService.ps1
 ```
-
-Notice the error message tells you why the command failed: "_Running scripts is disabled on this
-system_".
 
 ```Output
 .\Get-TimeService.ps1 : File C:\tmp\Get-TimeService.ps1 cannot be loaded
@@ -274,16 +261,18 @@ At line:1 char:1
 ```
 
 When you run a command in PowerShell that generates an error, read the error message before retrying
-the command. The error message often tells you why the command failed.
+the command. Notice the error message tells you why the command failed:
 
-You change the execution policy with the `Set-ExecutionPolicy` cmdlet. `LocalMachine` is the default
-scope when you don't specify the **Scope** parameter. You must run PowerShell elevated as an
-administrator to change the execution policy for the local machine. Unless you're signing your
-scripts, I recommend using the `RemoteSigned` execution policy. `RemoteSigned` requires downloaded
-scripts to be signed by a trusted publisher.
+> _... running scripts is disabled on this system._
+
+To enable the execution of scripts, change the execution policy with the `Set-ExecutionPolicy`
+cmdlet. `LocalMachine` is the default scope when you don't specify the **Scope** parameter. You must
+run PowerShell elevated as an administrator to change the execution policy for the local machine. If
+you're signing your scripts, I recommend using the `RemoteSigned` execution policy. `RemoteSigned`
+prevents you from running downloaded scripts that aren't signed by a trusted publisher.
 
 Before you change the execution policy, read the [about_Execution_Policies][execution-policies] help
-topic to understand the security implications.
+article to understand the security implications.
 
 Change the execution policy setting on your computer to `RemoteSigned`.
 
@@ -291,7 +280,7 @@ Change the execution policy setting on your computer to `RemoteSigned`.
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
 
-Read the warning that's displayed when you change the execution policy.
+If you have successfully changed the execution policy, PowerShell displays the following warning:
 
 ```Output
 Execution Policy Change
@@ -304,8 +293,8 @@ execution policy?
 (default is "N"):y
 ```
 
-If you're not running PowerShell elevated as an administrator, you'll receive the following error
-message when you attempt to change the execution policy for the local machine.
+If you're not running PowerShell elevated as an administrator, PowerShell returns the following
+error message:
 
 ```Output
 Set-ExecutionPolicy : Access to the registry key 'HKEY_LOCAL_MACHINE\SOFTWAR
@@ -324,17 +313,14 @@ At line:1 char:1
 ```
 
 It's also possible to change the execution policy for the current user without requiring you to run
-PowerShell elevated as an administrator.
-
-Set the execution policy for the current user to `RemoteSigned`. This step is unnecessary if you
-successfully set the execution policy for the local machine to `RemoteSigned`.
+PowerShell elevated as an administrator. This step is unnecessary if you successfully set the
+execution policy for the local machine to `RemoteSigned`.
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-Now that you've changed the execution policy to `RemoteSigned`, the `Get-TimeService.ps1` script
-runs successfully.
+With the execution policy set to `RemoteSigned`, the `Get-TimeService.ps1` script runs successfully.
 
 ```powershell
 .\Get-TimeService.ps1
@@ -348,8 +334,8 @@ Running  W32Time            Windows Time
 
 ## Summary
 
-In this chapter, you've learned where to find and how to launch PowerShell. You've also learned how
-to determine the version of PowerShell and the purpose of execution policies.
+In this chapter, you learned where to find and how to launch PowerShell. You also learned how to
+determine the version of PowerShell and the purpose of execution policies.
 
 ## Review
 
@@ -362,26 +348,23 @@ to determine the version of PowerShell and the purpose of execution policies.
 
 ## References
 
-If you're interested in learning more about the topics covered in this chapter, you should read the
-following PowerShell help topics.
+To learn more about the concepts covered in this chapter, read the following PowerShell help
+articles.
 
 - [about_Automatic_Variables][auto-variables]
 - [about_Execution_Policies][execution-policies]
-- [about_Hash_Tables][hash-tables]
 
 ## Next steps
 
 In the next chapter, you'll learn about the discoverability of commands in PowerShell. You'll also
-learn how to download PowerShell's help topics to view offline.
+learn how to download PowerShell's help files so you can view the help in your PowerShell session.
 
 <!-- link references -->
 
 [windows-terminal]: /windows/terminal/
 [vs-code]: https://code.visualstudio.com/
-[ps-extension]: https://code.visualstudio.com/docs/languages/powershell
-[start-ps]: /scripting/windows-powershell/starting-windows-powershell
-[upgrade-ps]: /powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell
+[ps-ext]: https://code.visualstudio.com/docs/languages/powershell
+[uac]: /windows/security/application-security/application-control/user-account-control/
 [migrate-ps]: /powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7
 [execution-policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [auto-variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
-[hash-tables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
