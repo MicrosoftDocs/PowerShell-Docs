@@ -38,7 +38,7 @@ indicated by the (x86) suffix on the shortcuts.
 
 > [!NOTE]
 > Windows 11 only ships as a 64-bit operating system. There is no 32-bit version of Windows 11.
-> However, Windows 11 include 32-bit versions of Windows PowerShell and the Windows PowerShell ISE.
+> However, Windows 11 includes 32-bit versions of Windows PowerShell and the Windows PowerShell ISE.
 
 You only have two shortcuts if you're running an older 32-bit version of Windows. Those shortcuts
 don't have the (x86) suffix but are 32-bit versions.
@@ -130,7 +130,7 @@ taskbar** as shown in Figure 1-6.
 > [!IMPORTANT]
 > The original version of this book, published in 2017, recommended pinning a shortcut to the
 > taskbar to launch an elevated instance automatically every time you start PowerShell. However, due
-> to potential security concerns, I no longer recommended it. Any application you launch from an
+> to potential security concerns, I no longer recommend it. Any applications you launch from an
 > elevated instance of PowerShell also bypass UAC and run elevated. For example, if you launch a web
 > browser from an elevated instance of PowerShell, any website you visit containing malicious code
 > also runs elevated.
@@ -265,9 +265,10 @@ the command. Notice the error message tells you why the command failed:
 
 To enable the execution of scripts, change the execution policy with the `Set-ExecutionPolicy`
 cmdlet. `LocalMachine` is the default scope when you don't specify the **Scope** parameter. You must
-run PowerShell elevated as an administrator to change the execution policy for the local machine. If
-you're signing your scripts, I recommend using the `RemoteSigned` execution policy. `RemoteSigned`
-prevents you from running downloaded scripts that aren't signed by a trusted publisher.
+run PowerShell elevated as an administrator to change the execution policy for the local machine.
+Unless you're signing your scripts, I recommend using the `RemoteSigned` execution policy.
+`RemoteSigned` prevents you from running downloaded scripts that aren't signed by a trusted
+publisher.
 
 Before you change the execution policy, read the [about_Execution_Policies][execution-policies] help
 article to understand the security implications.
