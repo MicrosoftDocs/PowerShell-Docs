@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 06/10/2024
+ms.date: 06/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions
@@ -146,7 +146,7 @@ the function receives.
 The automatic variable `$_` or `$PSItem` contains the current object in the
 pipeline for use in the `process` block. The `$input` automatic variable
 contains an enumerator that's only available to functions and script blocks.
-For more information, see [about_Automatic_Variables][15].
+For more information, see [about_Automatic_Variables][05].
 
 - Calling the function at the beginning, or outside of a pipeline, executes the
   `process` block once.
