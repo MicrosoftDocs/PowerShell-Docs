@@ -50,7 +50,7 @@ items:
             href: learn/ps101/00-introduction.md
           - name: Getting started with PowerShell
             href: learn/ps101/01-getting-started.md
-          - name: The Help System
+          - name: The help system
             href: learn/ps101/02-help-system.md
           - name: Discovering objects, properties, and methods
             href: learn/ps101/03-discovering-objects.md
