@@ -1,15 +1,15 @@
 ---
-description: Becoming proficient with the help system is the key to success with PowerShell
+description: Becoming proficient with the Help system is the key to success with PowerShell
 ms.custom: Contributor-mikefrobbins
 ms.date: 06/25/2024
 ms.reviewer: mirobb
-title: The Help System
+title: The Help system
 ---
 
-# Chapter 2 - The help system
+# Chapter 2 - The Help system
 
 In an experiment designed to assess proficiency in PowerShell, two distinct groups of IT
-professionals —beginners and experts— were first given a written examination without access to a
+professionals — beginners and experts — were first given a written examination without access to a
 computer. Surprisingly, the test scores indicated comparable skills across both groups. A subsequent
 test was then administered, mirroring the first but with one key difference: participants had access
 to an offline computer equipped with PowerShell. The results revealed a significant skills gap
@@ -20,10 +20,10 @@ What factors contributed to the outcomes observed between the two assessments?
 > Experts don't always know the answers, but they know how to figure out the answers.
 
 The outcomes observed in the results of the two tests were because experts don't memorize thousands
-of PowerShell commands. Instead, they excel at using the help system within PowerShell, enabling
+of PowerShell commands. Instead, they excel at using the Help system within PowerShell, enabling
 them to discover and learn how to use commands when necessary.
 
-> Becoming proficient with the help system is the key to success with PowerShell.
+> Becoming proficient with the Help system is the key to success with PowerShell.
 
 I heard Jeffrey Snover, the creator of PowerShell, share a similar story on multiple occasions.
 
@@ -48,7 +48,7 @@ I'm often asked: _"How do you figure out what the commands are in PowerShell?"_.
 
 ## Get-Help
 
-The first thing you need to know about the help system in PowerShell is how to use the `Get-Help`
+The first thing you need to know about the Help system in PowerShell is how to use the `Get-Help`
 cmdlet.
 
 `Get-Help` is a multipurpose command that helps you learn how to use commands once you find them.
@@ -82,9 +82,8 @@ https:/go.microsoft.com/fwlink/?LinkId=210614.
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-You only receive this message if you run PowerShell elevated as an administrator. You also don't
-receive it if you're using the `help` function or `man` alias. If you don't receive this message,
-run `Update-Help` from an elevated PowerShell session running as an administrator.
+If you don't receive this message, run `Update-Help` from an elevated PowerShell session running as
+an administrator.
 
 Once the update is complete, the help article is displayed.
 
@@ -180,17 +179,17 @@ Each of the following parameters belongs to a different parameter set for the `G
 - Parameter
 - ShowWindow
 
-### The help syntax
+### The command syntax
 
-If you're new to PowerShell, comprehending the cryptic help syntax —characterized by square and
-angle brackets— in the **SYNTAX** section of the help articles might seem overwhelming. However,
-learning these syntax elements is essential to becoming proficient with PowerShell. The more
-frequently you use the PowerShell help system, the easier it becomes to remember all the nuances.
+If you're new to PowerShell, comprehending the cryptic information — characterized by square and
+angle brackets — in the **SYNTAX** section might seem overwhelming. However, learning these syntax
+elements is essential to becoming proficient with PowerShell. The more frequently you use the
+PowerShell Help system, the easier it becomes to remember all the nuances.
 
-View the syntax section of the help article for the `Get-EventLog` cmdlet.
+View the syntax of the `Get-EventLog` cmdlet.
 
 ```powershell
-help Get-EventLog
+Get-Help Get-EventLog
 ```
 
 The following output shows the relevant portion of the help article.
@@ -211,59 +210,61 @@ SYNTAX
 ...
 ```
 
-The help syntax in the **SYNTAX** section of PowerShell help articles includes pairs of square
-brackets `([ ])`. Depending on their usage, these square brackets serve two different purposes.
+The syntax information includes pairs of square brackets (`[]`). Depending on their usage, these
+square brackets serve two different purposes.
 
-- Elements enclosed within square brackets are optional.
-- When an empty set of square brackets follows a datatype, such as `<string[]>`, it indicates the
-  parameter can accept multiple values as an array or a comma-separated list.
+- Elements enclosed in square brackets are optional.
+- An empty set of square brackets following a datatype, such as `<string[]>`, indicates that the
+  parameter can accept multiple values passed as an array or a collection object.
 
 ### Positional parameters
 
-When developers create a PowerShell cmdlet or function, they can optionally designate one or more
-parameters as positional. Positional parameters allow you to provide a value without specifying the
-parameter's name. When using a parameter positionally, you must specify its value in the correct
-position. You can find the positional information for a parameter in the **PARAMETERS** section of a
-command's help article. When you explicitly specify parameter names, their order is irrelevant.
+Some cmdlets are designed to accept positional parameters. Positional parameters allow you to
+provide a value without specifying the name of the parameter. When using a parameter positionally,
+you must specify its value in the correct position on the command line. You can find the positional
+information for a parameter in the **PARAMETERS** section of a command's help article. When you
+explicitly specify parameter names, you can use the parameters in any order.
 
 For the `Get-EventLog` cmdlet, the first parameter in the first parameter set is **LogName**.
 **LogName** is enclosed in square brackets, indicating it's a positional parameter.
+
+```Syntax
+Get-EventLog [-LogName] <System.String>
+```
 
 Since **LogName** is a positional parameter, you can specify it by either name or position.
 According to the angle brackets following the parameter name, the value for **LogName** must be a
 single string. The absence of square brackets enclosing both the parameter name and datatype
 indicates that **LogName** is a required parameter within this particular parameter set.
 
-```powershell
-Get-EventLog [-LogName] <System.String>
-```
-
 The second parameter in that parameter set is **InstanceId**. Both the parameter name and datatype
 are entirely enclosed in square brackets, signifying that **InstanceId** is an optional parameter.
+
+```Syntax
+[[-InstanceId] <System.Int64[]>]
+```
+
 Furthermore, **InstanceId** has its own pair of square brackets, indicating that it's a positional
 parameter similar to the **LogName** parameter. Following the datatype, an empty set of square
 brackets implies that **InstanceId** can accept multiple values.
 
-```powershell
-[[-InstanceId] <System.Int64[]>]
-```
-
 ### Switch parameters
 
 A parameter that doesn't require a value is called a switch parameter. You can easily identify
-switch parameters because a datatype doesn't follow their parameter names. When you specify a switch
-parameter, its value is `true`; when you don't specify a switch parameter, its value is `false`.
+switch parameters because there's no datatype following the parameter name. When you specify a
+switch parameter, its value is `true`. When you don't specify a switch parameter, its value is
+`false`.
 
 The second parameter set includes a **List** parameter, which is a switch parameter. When you
 specify the **List** parameter, it returns a list of event logs on the local computer.
 
-```powershell
+```Syntax
 [-List]
 ```
 
 ### A simplified approach to syntax
 
-There's a more user-friendly method to obtain the same information as the cryptic help syntax for
+There's a more user-friendly method to obtain the same information as the cryptic command syntax for
 some commands, except in plain English. PowerShell returns the complete help article when using
 `Get-Help` with the **Full** parameter, making it easier to understand a command's usage.
 
@@ -285,8 +286,8 @@ system organizes the information.
 - EXAMPLES
 - RELATED LINKS
 
-By specifying the **Full** parameter with the `Get-Help` cmdlet, notice the output includes several
-extra sections. Among these sections, **PARAMETERS** often provides a detailed explanation for each
+By specifying the **Full** parameter with the `Get-Help` cmdlet, the output includes several extra
+sections. Among these sections, **PARAMETERS** often provides a detailed explanation for each
 parameter. However, the extent of this information varies depending on the specific command you're
 investigating.
 
@@ -332,19 +333,16 @@ investigating.
 ...
 ```
 
-When you ran the previous command to display the help article for `Get-Help`, you probably noticed
-the output scrolled by too quickly to read it.
+When you ran the previous command to display the help for the `Get-Help` command, you probably
+noticed the output scrolled by too quickly to read it.
 
 If you're using the PowerShell console, Windows Terminal, or VS Code and need to view a help
-article, the `help` function can be useful. It pipes `Get-Help` to `more.com`, displaying one page
-of help content at a time. As for the ISE, running `help` works the same way as `Get-Help`. I
-recommend using the `help` function instead of the `Get-Help` cmdlet because it provides a better
-user experience and it's less to type.
+article, the `help` function can be useful. It pipes the output of `Get-Help` to `more.com`,
+displaying one page of help content at a time. I recommend using the `help` function instead of the
+`Get-Help` cmdlet because it provides a better user experience and it's less to type.
 
-While typing less might seem beneficial, it's not always the best practice or intuitive when saving
-commands in a script or sharing code with others. Using full cmdlet and parameter names offers the
-benefit of self-documenting, making the code more easily interpreted and understandable for anyone
-who reviews it.
+> [!NOTE]
+> The ISE doesn't support using `more.com`, so running `help` works the same way as `Get-Help`.
 
 Run each of the following commands in PowerShell on your computer.
 
@@ -356,29 +354,29 @@ help Get-Help -Full
 
 Did you observe any variations in the output when you ran the previous commands?
 
-The only difference is the last two commands display their output one page at a time. When using the
-`help` function, press the _Spacebar_ to navigate to the next page of content or `Q` to quit. If you
-need to terminate any command running interactively in PowerShell, press
-<kbd>Ctrl</kbd>+<kbd>C</kbd>.
-
 In the previous example, the first line uses the `Get-Help` cmdlet, the second uses the `help`
 function, and the third line omits the **Name** parameter while using the `help` function. Since
-**Name** is a positional parameter, the third example takes advantage of its placement instead of
+**Name** is a positional parameter, the third example takes advantage of its position instead of
 explicitly stating the parameter's name.
 
-To quickly find information about a specific parameter, use the `help` function with the
-**Parameter** parameter. This approach is more concise, containing only the parameter-specific help
-content instead of manually scanning the entire help article for details about a parameter.
+The difference is that the last two commands display their output one page at a time. When using the
+`help` function, press the <kbd>Spacebar</kbd> to display to the next page of content or
+<kbd>Q</kbd> to quit. If you need to terminate any command running interactively in PowerShell,
+press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
-In the following example, use the `help` function with the **Parameter** parameter to return
+To quickly find information about a specific parameter, use the **Parameter** parameter. This
+approach returns content containing only the parameter-specific information, rather than the entire
+help article. This is the easiest way to find information about a specific parameter.
+
+The following example uses the `help` function with the **Parameter** parameter to return
 information from the help article for the **Name** parameter of `Get-Help`.
 
 ```powershell
 help Get-Help -Parameter Name
 ```
 
-Based on the following results, the **Name** parameter is positional and must be specified in
-position zero when used positionally.
+The help information shows that the **Name** parameter is positional and must be specified in the
+first position (position zero) when used positionally.
 
 ```Output
 -Name <System.String>
@@ -413,12 +411,11 @@ position zero when used positionally.
     Accept wildcard characters?  true
 ```
 
-The **Name** parameter expects the datatype for its value to be a single string as identified by
-`<String>` next to the parameter name.
+The **Name** parameter expects a string value as identified by the `<String>` datatype next to the
+parameter name.
 
-There are several other parameters besides **Parameter** that you can specify with `Get-Help` to
-return a subset of a help article. To see how they work, run the following commands on your
-computer.
+There are several other parameters you can specify with `Get-Help` to return a subset of a help
+article. To see how they work, run the following commands on your computer.
 
 ```powershell
 Get-Help -Name Get-Command -Full
@@ -430,19 +427,21 @@ Get-Help -Name Get-Command -ShowWindow
 ```
 
 I typically use `help <command name>` with the **Full** or **Online** parameter. If you only have an
-interest in the examples, use the **Examples** parameter; if you only have an interest in a specific
+interest in the examples, use the **Examples** parameter. If you only have an interest in a specific
 parameter, use the **Parameter** parameter.
 
-When the **ShowWindow** parameter is used, it opens the help article in a separate searchable window
-that can be placed on a different monitor if you have multiple monitors. However, the **ShowWindow**
-parameter has a known bug that might prevent it from displaying the entire help article. The
-**ShowWindow** parameter also requires an operating system with a Graphical User Interface (GUI). It
-returns an error if you attempt to use it on Windows Server installed with the server core
-installation option.
+When you use the **ShowWindow** parameter, it displays the help content in a separate searchable
+window. You can move that window to a different monitor if you have multiple monitors. However, the
+**ShowWindow** parameter has a known bug that might prevent it from displaying the entire help
+article. The **ShowWindow** parameter also requires an operating system with a Graphical User
+Interface (GUI). It returns an error when you attempt to use it on Windows Server Core.
 
-If you want the help article in a separate window and have internet access, use the **Online**
-parameter instead. The **Online** parameter opens the help article with the most up-to-date content
-in your default web browser, allowing you to search it and navigate to other help articles.
+If you have internet access, you can use the **Online** parameter instead. The **Online** parameter
+opens the help article in your default web browser. The online content is the most up-to-date
+content. The browser allows you to search the help content and view other, related help articles.
+
+> [!NOTE]
+> The **Online** parameter isn't supported for **About** articles.
 
 ```powershell
 help Get-Command -Online
@@ -475,20 +474,17 @@ Get-ProcessMitigation             Cmdlet    ProcessMitigations        Get...
 Set-ProcessMitigation             Cmdlet    ProcessMitigations        Set...
 ```
 
-In this scenario, you aren't required to add the `*` wildcard characters. When you omit the wildcard
-characters, `Get-Help` automatically adds them behind the scenes. The following example produces the
-same results as specifying the `*` wildcard character on each end of `process`.
+In this scenario, you aren't required to add the `*` wildcard characters. If `Get-Help` can't find a
+command matching the value you provided, it does a full-text search for that value. The following
+example produces the same results as specifying the `*` wildcard character on each end of `process`.
 
 ```powershell
 help process
 ```
 
-However, you should always add them since that option works consistently. Otherwise, it requires you
-to add them in certain scenarios and not in others. When you specify a wildcard character within the
-value, they aren't appended automatically behind the scenes.
-
-The following command doesn't return any results unless you add a `*` wildcard character to the
-beginning, end, or both the beginning and end of `pr*cess`.
+When you specify a wildcard character within the value, `Get-Help` only searches for commands that
+match the pattern you provided. It doesn't perform a full-text search. The following command doesn't
+return any results.
 
 ```powershell
 help pr*cess
@@ -513,10 +509,10 @@ When you search for PowerShell commands with `Get-Help`, it's better to be vague
 specific.
 
 When you searched for `process` earlier, the results only returned commands that included `process`
-in their name. But if you use `help` to search for `processes`, it doesn't find any matches for
-command names. As previously stated, when help doesn't find any matches, it performs a comprehensive
-full-text search of every help article on your system and returns those results. This type of search
-often produces more results than expected, probably without the information you're trying to locate.
+in their name. But if you search for `processes`, it doesn't find any matches for command names. As
+previously stated, when help doesn't find any matches, it performs a comprehensive full-text search
+of every help article on your system and returns those results. This type of search often produces
+more results than expected, including information not relevant to you.
 
 ```powershell
 help processes
@@ -606,9 +602,9 @@ about_Parallel                    HelpFile
 about_Sequence                    HelpFile
 ```
 
-When using the `help` function to search for `process`, it returned 12 results. However, when
-searching for `processes`, it produced 78 results. If your search only finds one match, the help
-article is displayed instead of listing the results.
+When you searched for `process`, it returned 12 results. However, when searching for `processes`, it
+produced 78 results. If your search only finds one match, `Get-Help` displays the help content
+instead of listing the search results.
 
 ```powershell
 help *hotfix*
@@ -657,7 +653,7 @@ REMARKS
 
 You can also find commands that lack help articles with `Get-Help`, although this capability isn't
 commonly known. The `more` function is one of the commands that doesn't have a help article. To
-confirm you can find commands with `Get-Help` that don't include help articles, use the `help`
+confirm that you can find commands with `Get-Help` that don't include help articles, use the `help`
 function to find `more`.
 
 ```powershell
@@ -682,10 +678,8 @@ REMARKS
 ```
 
 The PowerShell help system also contains conceptual **About** help articles. You must update the
-help content on your system for the **About** help articles to exist. If the initial update of the
-help system fails, the **About** help articles aren't available until you run `Update-Help` and it
-completes successfully. For more information, see the [Updating help](#updating-help) section of
-this chapter.
+help content on your system to get the **About** articles. For more information, see the
+[Updating help](#updating-help) section of this chapter.
 
 Use the following command to return a list of all **About** help articles on your system.
 
@@ -693,8 +687,8 @@ Use the following command to return a list of all **About** help articles on you
 help About_*
 ```
 
-When you limit the results to one **About** help article, the content of the help article is
-displayed instead of returning a list of help articles.
+When you limit the results to one **About** help article, `Get-Help` displays the content that
+article.
 
 ```powershell
 help about_Updatable_Help
@@ -704,17 +698,18 @@ help about_Updatable_Help
 
 Earlier in this chapter, you updated the PowerShell help articles on your computer the first time
 you ran the `Get-Help` cmdlet. You should periodically run the `Update-Help` cmdlet on your computer
-to obtain any updates to the help content. `Update-Help` requires internet access by default.
+to obtain any updates to the help content.
 
 > [!IMPORTANT]
-> When you run `Update-Help` in Windows PowerShell 5.1, it requires running PowerShell elevated as
-> an administrator.
+> In Windows PowerShell 5.1, you must run `Update-Help` as an administrator in an elevated
+> PowerShell session.
 
-In the following example, use the `Update-Help` cmdlet to update the PowerShell help content on your
-computer.
+In the following example, `Update-Help` downloads the PowerShell help content for all modules
+installed on your computer. You should use the **Force** parameter to ensure that you download the
+latest version the help content.
 
 ```powershell
-Update-Help
+Update-Help -Force
 ```
 
 As shown in the following results, a module returned an error. Errors aren't uncommon and usually
@@ -734,15 +729,16 @@ At line:1 char:1
    ll.Commands.UpdateHelpCommand
 ```
 
-If your computer doesn't have internet access, use the `Save-Help` cmdlet on a computer with
-internet access to download and save the updated help content. Then, use the **SourcePath**
-parameter of `Update-Help` to specify the location of the saved updated help content.
+`Update-Help` requires internet access to download the help content. If your computer doesn't have
+internet access, use the `Save-Help` cmdlet on a computer with internet access to download and save
+the updated help content. Then, use the **SourcePath** parameter of `Update-Help` to specify the
+location of the saved updated help content.
 
 ## Get-Command
 
-`Get-Command` is another multipurpose command that helps you locate commands. You can also use
-`Get-Command` to learn how to use commands, but in a different and more indirect way when compared
-to `Get-Help`.
+`Get-Command` is another multipurpose command that helps you find commands. When you run
+`Get-Command` without any parameters, it returns a list of all PowerShell commands on your system.
+You can also use `Get-Command` to get command syntax similar to `Get-Help`.
 
 How do you determine the syntax for `Get-Command`? You could use `Get-Help` to display the help
 article for `Get-Command`, as shown in the [Get-Help](#get-help) section of this chapter. You can
@@ -754,8 +750,9 @@ content.
 Get-Command -Name Get-Command -Syntax
 ```
 
-Using `Get-Command` with its **Syntax** parameter offers a more programmatic view by showing the
-parameters and their value types, without listing the specific allowable values.
+Using `Get-Command` with the **Syntax** parameter provides a more concise view of the syntax that
+shows the parameters and their value types, without listing the specific allowable values like
+`Get-Help` shows.
 
 ```Output
 Get-Command [[-ArgumentList] <Object[]>] [-Verb <string[]>]
@@ -772,9 +769,9 @@ Get-Command [[-Name] <string[]>] [[-ArgumentList] <Object[]>]
 [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
-If you need more detailed information about how to use a command, revert to using `Get-Help`.
+If you need more detailed information about how to use a command, use `Get-Help`.
 
-```powwershell
+```powershell
 help Get-Command -Full
 ```
 
@@ -805,7 +802,7 @@ the available options.
 ...
 ```
 
-The **PARAMETERS** section of the help article for `Get-Command` reveals the **Name**, **Noun**, and
+The **PARAMETERS** section of the help for `Get-Command` reveals that the **Name**, **Noun**, and
 **Verb** parameters accept wildcard characters.
 
 ```Output
@@ -850,7 +847,7 @@ The **PARAMETERS** section of the help article for `Get-Command` reveals the **N
 ...
 ```
 
-In the following example, use `*` wildcard characters with the value for the **Name** parameter of
+The following example uses the `*` wildcard character with the value for the **Name** parameter of
 `Get-Command`.
 
 ```powershell
@@ -883,18 +880,17 @@ Application     TieringEngineService.exe                           10.0.2...
 Application     Windows.WARP.JITService.exe                        10.0.2...
 ```
 
-If you use wildcard characters with the **Name** parameter of `Get-Command`, consider limiting the
-results to PowerShell cmdlets, functions, and aliases with the **CommandType** parameter.
+You can limit the results `Get-Command` to PowerShell commands using the **CommandType** parameter.
 
 ```powershell
-Get-Command -Name *service* -CommandType Cmdlet, Function, Alias
+Get-Command -Name *service* -CommandType Cmdlet, Function, Alias, Script
 ```
 
-A better option might be to use either the **Verb** or **Noun** parameter or both since only
+Another option might be to use either the **Verb** or **Noun** parameter or both since only
 PowerShell commands have verbs and nouns.
 
-In the following example, use `Get-Command` to determine what commands exist on your computer for
-working with processes. Use the **Noun** parameter and specify `Process` as its value.
+The following example uses `Get-Command` to find commands on your computer that work with processes.
+Use the **Noun** parameter and specify `Process` as its value.
 
 ```powershell
 Get-Command -Noun Process
@@ -910,19 +906,10 @@ Cmdlet          Stop-Process                                       3.1.0.0
 Cmdlet          Wait-Process                                       3.1.0.0
 ```
 
-When you run `Get-Command` without any parameters, it returns a list of all the commands on your
-system.
-
-## Contributing to the documentation
-
-The help content for PowerShell is open source and available in the [PowerShell-Docs][ps-docs]
-repository on GitHub. For more information, see
-[Contributing to PowerShell documentation][contribute-ps-docs].
-
 ## Summary
 
 In this chapter, you learned how to find commands with `Get-Help` and `Get-Command`. You also
-learned how to use the help system to figure out how to use commands once you find them. In
+learned how to use the help system to understand how to use commands once you find them. In
 addition, you learned how to update the help system on your computer when new help content is
 available.
 
@@ -953,8 +940,6 @@ In the next chapter, you'll learn about objects, properties, methods, and the `G
 
 <!-- link references -->
 
-[ps-docs]: https://github.com/MicrosoftDocs/PowerShell-Docs
-[contribute-ps-docs]: /powershell/scripting/community/contributing/overview
 [help]: /powershell/module/microsoft.powershell.core/get-help
 [gcm]: /powershell/module/microsoft.powershell.core/get-command
 [update-help]: /powershell/module/microsoft.powershell.core/update-help
