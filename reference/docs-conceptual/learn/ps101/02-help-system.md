@@ -32,10 +32,13 @@ I heard Jeffrey Snover, the creator of PowerShell, share a similar story on mult
 Compiled commands in PowerShell are known as cmdlets, pronounced as _"command-let"_, not
 _"CMD-let"_. The naming convention for cmdlets follows a singular **Verb-Noun** format to make them
 easily discoverable. For instance, `Get-Process` is the cmdlet to determine what processes are
-running, and `Get-Service` is the cmdlet to retrieve a list of services. Other types of commands in
-PowerShell, such as aliases and functions, are discussed later in this book. The term _"PowerShell
-command"_ describes any command in PowerShell, regardless of whether it's a cmdlet, function, or
-alias.
+running, and `Get-Service` is the cmdlet to retrieve a list of services. Functions, also known as
+script cmdlets, and aliases are other types of PowerShell commands that are discussed later in this
+book. The term _"PowerShell command"_ describes any command in PowerShell, regardless of whether
+it's a cmdlet, function, or alias.
+
+You can also run operating system native commands from PowerShell, such as traditional command-line
+programs like `ping.exe` and `ipconfig.exe`.
 
 ## The three core cmdlets in PowerShell
 
@@ -360,9 +363,9 @@ function, and the third line omits the **Name** parameter while using the `help`
 explicitly stating the parameter's name.
 
 The difference is that the last two commands display their output one page at a time. When using the
-`help` function, press the <kbd>Spacebar</kbd> to display to the next page of content or
-<kbd>Q</kbd> to quit. If you need to terminate any command running interactively in PowerShell,
-press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+`help` function, press the <kbd>Spacebar</kbd> to display the next page of content or <kbd>Q</kbd>
+to quit. If you need to terminate any command running interactively in PowerShell, press
+<kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 To quickly find information about a specific parameter, use the **Parameter** parameter. This
 approach returns content containing only the parameter-specific information, rather than the entire
@@ -438,7 +441,7 @@ Interface (GUI). It returns an error when you attempt to use it on Windows Serve
 
 If you have internet access, you can use the **Online** parameter instead. The **Online** parameter
 opens the help article in your default web browser. The online content is the most up-to-date
-content. The browser allows you to search the help content and view other, related help articles.
+content. The browser allows you to search the help content and view other related help articles.
 
 > [!NOTE]
 > The **Online** parameter isn't supported for **About** articles.
@@ -687,7 +690,7 @@ Use the following command to return a list of all **About** help articles on you
 help About_*
 ```
 
-When you limit the results to one **About** help article, `Get-Help` displays the content that
+When you limit the results to one **About** help article, `Get-Help` displays the content of that
 article.
 
 ```powershell
@@ -706,7 +709,7 @@ to obtain any updates to the help content.
 
 In the following example, `Update-Help` downloads the PowerShell help content for all modules
 installed on your computer. You should use the **Force** parameter to ensure that you download the
-latest version the help content.
+latest version of the help content.
 
 ```powershell
 Update-Help -Force
@@ -880,7 +883,8 @@ Application     TieringEngineService.exe                           10.0.2...
 Application     Windows.WARP.JITService.exe                        10.0.2...
 ```
 
-You can limit the results `Get-Command` to PowerShell commands using the **CommandType** parameter.
+You can limit the results of `Get-Command` to PowerShell commands using the **CommandType**
+parameter.
 
 ```powershell
 Get-Command -Name *service* -CommandType Cmdlet, Function, Alias, Script
