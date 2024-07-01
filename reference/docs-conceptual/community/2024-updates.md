@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 06/04/2024
+ms.date: 07/01/2024
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,33 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-June
+
+New content
+
+- [TabExpansion2](/powershell/module/microsoft.powershell.core/tabexpansion2)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 35 PRs merged (5 from Community)
+- 16 issues opened (13 from Community)
+- 16 issues closed (13 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|         GitHub Id         | PRs merged | Issues opened |
+| ------------------------- | :--------: | :-----------: |
+| mklement0                 |            |       2       |
+| sethvs                    |     2      |               |
+| InvalidAccountNameEntered |     1      |               |
+| OS3DrNick                 |     1      |               |
+| trackd                    |     1      |               |
+| landon-lengyel            |     1      |               |
+| msklv                     |     1      |               |
 
 ## 2024-May
 
