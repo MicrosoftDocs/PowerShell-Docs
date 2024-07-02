@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 06/22/2023
+ms.date: 07/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -19,10 +19,9 @@ You can add parameters to the advanced functions that you write, and use
 parameter attributes and arguments to limit the parameter values that function
 users submit with the parameter.
 
-The parameters that you add to your function are available to users in addition
-to the common parameters that PowerShell adds automatically to all cmdlets and
-advanced functions. For more information about the PowerShell common
-parameters, see [about_CommonParameters][06].
+When you use the `CmdletBinding` attribute, PowerShell automatically adds the
+Common Parameters. You can't create any parameters that use the same names as
+the Common Parameters. For more information, see [about_CommonParameters][06].
 
 Beginning in PowerShell 3.0, you can use splatting with `@Args` to represent
 the parameters in a command. Splatting is valid on simple and advanced
@@ -82,7 +81,7 @@ function Get-Date_Func {
   }
 }
 
-[cultureinfo]::CurrentCulture = 'de-DE'
+[CultureInfo]::CurrentCulture = 'de-DE'
 
 # This German-format date string doesn't work with the invariant culture.
 # E.g., [datetime] '19-06-2018' breaks.
@@ -200,7 +199,7 @@ they can be difficult for users to discover. To find a dynamic parameter, the
 user must be in the provider path, use the **ArgumentList** parameter of the
 `Get-Command` cmdlet, or use the **Path** parameter of `Get-Help`.
 
-To create a dynamic parameter for a function or script, use the `DynamicParam`
+To create a dynamic parameter for a function or script, use the `dynamicparam`
 keyword.
 
 The syntax is as follows:
@@ -222,7 +221,7 @@ function Get-Sample {
   [CmdletBinding()]
   param([string]$Name, [string]$Path)
 
-  DynamicParam
+  dynamicparam
   {
     if ($Path.StartsWith("HKLM:"))
     {
@@ -246,7 +245,8 @@ function Get-Sample {
 }
 ```
 
-For more information, see the documentation for the [RuntimeDefinedParameter][02] type.
+For more information, see the documentation for the
+[RuntimeDefinedParameter][02] type.
 
 ## Attributes of parameters
 
@@ -739,7 +739,7 @@ For more information, see [about_Functions_Argument_Completion][11].
 
 The **ArgumentCompleter** attribute allows you to add tab completion values to
 a specific parameter. An **ArgumentCompleter** attribute must be defined for
-each parameter that needs tab completion. Like **DynamicParameters**, the
+each parameter that needs tab completion. Like **dynamicparameters**, the
 available values are calculated at runtime when the user presses <kbd>Tab</kbd>
 after the parameter name.
 
@@ -917,10 +917,10 @@ PowerShell generates an error if any value is outside that range.
 
 The **ValidateRangeKind** enum allows for the following values:
 
-- **Positive** - A number greater than zero.
-- **Negative** - A number less than zero.
-- **NonPositive** - A number less than or equal to zero.
-- **NonNegative** - A number greater than or equal to zero.
+- `Positive` - A number greater than zero.
+- `Negative` - A number less than zero.
+- `NonPositive` - A number less than or equal to zero.
+- `NonNegative` - A number greater than or equal to zero.
 
 In the following example, the value of the **Attempts** parameter must be
 between zero and ten.
@@ -1273,7 +1273,7 @@ intended for external usage.
 - [about_Functions_OutputTypeAttribute][13]
 
 <!-- link references -->
-[01]: ./about_comment_based_help.md
+[01]: about_comment_based_help.md
 [02]: /dotnet/api/system.management.automation.runtimedefinedparameter
 [03]: /dotnet/standard/base-types/composite-formatting#composite-format-string
 [04]: /dotnet/standard/base-types/composite-formatting#format-string-component
