@@ -1,7 +1,7 @@
 ---
 description: Describes the attribute that makes a function work like a compiled cmdlet.
 Locale: en-US
-ms.date: 09/23/2021
+ms.date: 07/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions CmdletBindingAttribute
@@ -16,6 +16,10 @@ Describes the attribute that makes a function work like a compiled cmdlet.
 The `CmdletBinding` attribute is an attribute of functions that makes them
 operate like compiled cmdlets written in C#. It provides access to the features
 of cmdlets.
+
+When you use the `CmdletBinding` attribute, PowerShell automatically adds the
+Common Parameters. You can't create any parameters that use the same names as
+the Common Parameters. For more information, see [about_CommonParameters][02].
 
 PowerShell binds the parameters of functions that have the `CmdletBinding`
 attribute in the same way that it binds the parameters of compiled cmdlets. The
@@ -90,7 +94,7 @@ be confirmed by a call to the **ShouldProcess** method. The call to the
 argument is also specified.
 
 For more information about confirmation requests, see
-[Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
+[Requesting Confirmation][01].
 
 ## DefaultParameterSetName
 
@@ -197,7 +201,7 @@ The **Position** argument of the **Parameter** attribute takes precedence over
 the **PositionalBinding** default value. You can use the **Position** argument
 to specify a position value for a parameter. For more information about the
 **Position** argument, see
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+[about_Functions_Advanced_Parameters][04].
 
 ## Notes
 
@@ -209,8 +213,17 @@ about_Functions_CmdletBinding_Attribute
 
 ## See also
 
-- [about_Functions](about_Functions.md)
-- [about_Functions_Advanced](about_Functions_Advanced.md)
-- [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
-- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-- [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+- [about_Functions][07]
+- [about_Functions_Advanced][05]
+- [about_Functions_Advanced_Methods][03]
+- [about_Functions_Advanced_Parameters][04]
+- [about_Functions_OutputTypeAttribute][06]
+
+<!-- link references -->
+[01]: /powershell/scripting/developer/cmdlet/requesting-confirmation
+[02]: about_CommonParameters.md
+[03]: about_Functions_Advanced_Methods.md
+[04]: about_Functions_Advanced_Parameters.md
+[05]: about_Functions_Advanced.md
+[06]: about_Functions_OutputTypeAttribute.md
+[07]: about_Functions.md

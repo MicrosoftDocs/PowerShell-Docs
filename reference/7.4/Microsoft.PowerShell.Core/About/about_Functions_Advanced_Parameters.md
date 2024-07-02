@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 01/31/2024
+ms.date: 07/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Functions Advanced Parameters
@@ -19,10 +19,9 @@ You can add parameters to the advanced functions that you write, and use
 parameter attributes and arguments to limit the parameter values that function
 users submit with the parameter.
 
-The parameters that you add to your function are available to users in addition
-to the common parameters that PowerShell adds automatically to all cmdlets and
-advanced functions. For more information about the PowerShell common
-parameters, see [about_CommonParameters][06].
+When you use the `CmdletBinding` attribute, PowerShell automatically adds the
+Common Parameters. You can't create any parameters that use the same names as
+the Common Parameters. For more information, see [about_CommonParameters][06].
 
 Beginning in PowerShell 3.0, you can use splatting with `@Args` to represent
 the parameters in a command. Splatting is valid on simple and advanced
