@@ -1,7 +1,7 @@
 ---
 description: Explains the differences between the [psobject] and [pscustomobject] type accelerators.
 Locale: en-US
-ms.date: 10/11/2023
+ms.date: 07/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about PSCustomObject
@@ -187,7 +187,7 @@ While, casting an object to `[psobject]` appears to have no affect on the type,
 PowerShell adds an _invisible_ `[psobject]` wrapper around the object. This can
 have subtle side effects.
 
-- Wrapped objects will match their original type and the `[psobject]` type.
+- Wrapped objects match their original type and the `[psobject]` type.
 
   ```powershell
   PS> 1 -is [Int32]
@@ -209,12 +209,52 @@ have subtle side effects.
   PS> '{0} {1}' -f ([psobject] (1, 2))
   Error formatting a string: Index (zero based) must be greater than or equal
   to zero and less than the size of the argument list..
-  At line:1 char:1
-  + '{0} {1}' -f ([psobject] (1, 2))
-  + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      + CategoryInfo          : InvalidOperation: ({0} {1}:String) [], RuntimeException
-      + FullyQualifiedErrorId : FormatError
   ```
+
+## Conversion of hashtables containing similar keys
+
+Case-sensitive dictionaries might contain key names that only differ by case.
+When you cast such a dictionary to a `[pscustomobject]`, PowerShell preserves
+that case of the keys but isn't case-sensitive. As a result:
+
+- The case of the first duplicate key becomes the name of that key.
+- The value of the last case-variant key becomes the property value.
+
+The following example demonstrates this behavior:
+
+```powershell
+$OrderedHashTable = [System.Collections.Specialized.OrderedDictionary]::new()
+$OrderedHashTable['One'] = 1
+$OrderedHashTable['TWO'] = 2
+$OrderedHashTable['two'] = 3  # case variation
+$OrderedHashTable['Three'] = 3
+$OrderedHashTable
+```
+
+Notice that the ordered hashtable contains multiple keys that differ only by
+case.
+
+```Output
+Name                           Value
+----                           -----
+One                            1
+TWO                            2
+two                            3
+Three                          3
+```
+
+When that hashtable is cast to a `[pscustomobject]`, the case of the name of
+first key is used, but that value of the last matching key name is used.
+
+```powershell
+[PSCustomObject]$OrderedHashTable
+```
+
+```Output
+One TWO Three
+--- --- -----
+  1   3     3
+```
 
 ## Notes
 
