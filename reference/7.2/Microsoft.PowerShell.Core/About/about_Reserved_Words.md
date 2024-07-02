@@ -1,7 +1,7 @@
 ---
 description: Lists the reserved words that cannot be used as identifiers because they have a special meaning in PowerShell.
 Locale: en-US
-ms.date: 07/23/2020
+ms.date: 07/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_reserved_words?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Reserved Words
@@ -44,15 +44,15 @@ enum             private
 (*) These keywords are reserved for future use.
 ```
 
-Several language keywords, including `Foreach`, `If`, `For`, and `While`, have
+Several language keywords, including `foreach`, `if`, `for`, and `while`, have
 their own help articles. To view them, type `Get-Help about_` and add the
-keyword. For example, to get information about the `Foreach` statement, type:
+keyword. For example, to get information about the `foreach` statement, type:
 
 ```powershell
 Get-Help about_ForEach
 ```
 
-For information about the `Filter` statement or the `Return` statement syntax,
+For information about the `filter` statement or the `return` statement syntax,
 type:
 
 ```powershell
