@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 01/10/2024
+ms.date: 07/05/2024
 no-loc: [-File, -f, -Command, -c, -CommandWithArgs, -cwa, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -222,22 +222,17 @@ arg: arg2
 ```
 
 > [!NOTE]
-> [Argument parsing with quotes][05] causes the example to fail if ran from 
+> [Argument parsing with quotes][05] causes the example to fail if run from
 > `cmd.exe` or `powershell.exe`. To run from those, you can use
 
-```powershell
-# When ran from cmd.exe
+```Cmd
+REM Quoting required when run from cmd.exe
 pwsh -CommandWithArgs "$args | % { ""arg: $_"" }" arg1 arg2
+```
 
-# when ran from pwsh.exe
-pwsh -CommandWithArgs '$args | % { "arg: $_" }' arg1 arg2
-
-# when ran from powershell.exe
+```powershell
+# Quoting required when run from powershell.exe
 pwsh -CommandWithArgs '"$args | % { ""arg: $_"" }"' arg1 arg2
-
-# when ran from pwsh.exe with legacy argument passing
-$PSNativeCommandArgumentPassing = 'Legacy'
-pwsh -CommandWithArgs '$args | % { ""arg: $_"" }' arg1 arg2
 ```
 
 ### -ConfigurationName | -config
