@@ -25,7 +25,7 @@ using passwords and rely on other means to authenticate, such as certificates or
 authentication.
 
 PowerShell continues to support the **SecureString** class for backward compatibility. Using a
-**SecureString** is still more secure than using a plain text string. Be default, PowerShell doesn't
+**SecureString** is still more secure than using a plain text string. By default, PowerShell doesn't
 show the unprotected value of a **SecureString** object. However, **SecureString** can be easily
 converted to a plain text string. For a full discussion about using **SecureString**, see the
 [System.Security.SecureString class][01] documentation.
