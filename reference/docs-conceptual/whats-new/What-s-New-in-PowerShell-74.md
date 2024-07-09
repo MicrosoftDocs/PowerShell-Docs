@@ -21,9 +21,9 @@ For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repositor
 - `Test-Json` now uses JsonSchema.NET instead of Newtonsoft.Json.Schema.
   - With this change, `Test-Json` no longer supports the older Draft 4 schemas. ([#18141][18141])
     (Thanks @gregsdennis!). For more information about JSON schemas, see [JSON Schema][14]
-    documentation.
-  - This also breaks `Test-Json` for JSON and JSONC files with comments. `ConvertFrom-Json` still
-    works as it still uses Newtonsoft.Json.Schema.
+    documentation. This also breaks `Test-Json` for JSON and JSONC files with comments.
+  - `ConvertFrom-Json` support still uses Newtonsoft.Json.Schema so it can convert JSON files
+    with comments.
 - Output from `Test-Connection` now includes more detailed information about TCP connection tests
 - .NET introduced changes that affected `Test-Connection`. The cmdlet now returns an error about
   the need to use `sudo` on Linux platforms when using a custom buffer size ([#20369][20369])
