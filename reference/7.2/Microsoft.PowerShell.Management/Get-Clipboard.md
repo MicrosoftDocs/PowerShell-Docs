@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/08/2023
+ms.date: 07/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
@@ -20,8 +20,6 @@ Get-Clipboard [-Raw] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-
-> **This cmdlet is not supported on macOS.**
 
 The `Get-Clipboard` cmdlet gets the contents of the clipboard as text. Multiple lines of text are
 returned as an array of strings similar to `Get-Content`.
@@ -87,6 +85,8 @@ PowerShell includes the following aliases for `Get-Clipboard`:
 
 - All platforms:
   - `gcb`
+
+Support for this cmdlet on macOS was added in the PowerShell 7.0.0 release.
 
 ## RELATED LINKS
 
