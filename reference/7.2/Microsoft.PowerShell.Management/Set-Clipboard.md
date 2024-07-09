@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/11/2023
+ms.date: 07/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
@@ -153,6 +153,8 @@ PowerShell includes the following aliases for `Set-Clipboard`:
 
 - All platforms:
   - `scb`
+
+Support for this cmdlet on macOS was added in the PowerShell 7.0.0 release.
 
 ## RELATED LINKS
 
