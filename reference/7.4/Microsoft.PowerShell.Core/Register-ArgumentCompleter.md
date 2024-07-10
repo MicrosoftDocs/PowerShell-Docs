@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 07/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
@@ -35,6 +35,12 @@ Register-ArgumentCompleter [-CommandName <String[]>] -ParameterName <String>
 The `Register-ArgumentCompleter` cmdlet registers a custom argument completer. An argument
 completer allows you to provide dynamic tab completion, at run time for any command that you
 specify.
+
+When you call this command with the **CommandName** parameter and without the **ParameterName** or
+**Native** parameters, the command runs as if you specified the **Native** parameter. This prevents
+the argument completer from working for PowerShell command parameters. Always specify the
+**ParameterName** parameter when you want to register an argument completer for PowerShell
+commands.
 
 ## EXAMPLES
 
@@ -144,7 +150,15 @@ to create a new **CompletionResult** object for each value.
 
 ### -CommandName
 
-Specifies the name of the commands as an array.
+Specifies the name of one or more commands to register the argument completer for. This parameter
+is mandatory for native commands.
+
+When you specify this parameter without the **ParameterName** or **Native** parameters, the command
+behaves as if you had specified the **Native** parameter. When registering argument completers for
+PowerShell commands, always specify the **ParameterName** parameter.
+
+If you don't specify this parameter, PowerShell registers the argument completer for the specified
+**ParameterName** across all PowerShell commands.
 
 ```yaml
 Type: System.String[]
@@ -160,7 +174,7 @@ Accept wildcard characters: False
 
 ### -Native
 
-Indicates that the argument completer is for a native command where PowerShell cannot complete
+Indicates that the argument completer is for a native command where PowerShell can't complete
 parameter names.
 
 ```yaml
@@ -181,6 +195,10 @@ Specifies the name of the parameter whose argument is being completed. The param
 cannot be an enumerated value, such as the **ForegroundColor** parameter of the `Write-Host` cmdlet.
 
 For more information on enums, see [about_Enum](./About/about_Enum.md).
+
+When registering an argument completer for PowerShell commands, always specify this parameter. When
+you specify the **CommandName** parameter without the **ParameterName** or **Native** parameters,
+the command behaves as if you specified the **Native** parameter.
 
 ```yaml
 Type: System.String
