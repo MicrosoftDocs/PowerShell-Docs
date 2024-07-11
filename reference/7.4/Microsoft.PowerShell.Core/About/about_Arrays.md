@@ -646,7 +646,7 @@ The following example shows how to select all odd numbers from the array.
 The next example shows how to select all non-empty strings.
 
 ```powershell
-('hi', '', 'there').Where{$_}
+('hi', '', 'there').Where{ $_ }
 ```
 
 ```Output
