@@ -643,7 +643,7 @@ The following example shows how to select all odd numbers from the array.
 9
 ```
 
-This example show how to select the strings that aren't empty.
+The next example shows how to select all non-empty strings.
 
 ```powershell
 ('hi', '', 'there').Where({$_.Length})
