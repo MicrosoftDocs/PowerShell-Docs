@@ -165,11 +165,10 @@ Cmdlets and functions that might pose a risk to the system have a **Confirm**
 parameter that you can use to request or suppress confirmation for a single
 command.
 
-Because most cmdlets and functions use the default risk value,
-**ConfirmImpact**, of **Medium**, and the default value of `$ConfirmPreference`
-is **High**, automatic confirmation rarely occurs. However, you can activate
-automatic confirmation by changing the value of `$ConfirmPreference` to
-**Medium** or **Low**.
+Most cmdlets and functions keep the default value of **Medium** for **ConfirmImpact**.
+The default value of `$ConfirmPreference` is **High**. Therefore, automatic
+confirmation rarely occurs. To extend automatic confirmation to more cmdlets and
+functions, change the value of `$ConfirmPreference` to **Medium** or **Low**.
 
 ### Examples
 
