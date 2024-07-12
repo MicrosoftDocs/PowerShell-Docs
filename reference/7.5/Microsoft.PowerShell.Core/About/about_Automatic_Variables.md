@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 07/01/2024
+ms.date: 07/12/2024
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline, PSEventArgs, PSEventSubscriber, PSEdition]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -281,23 +281,23 @@ echo Hello | pwsh -Command """$input World!"""
 
 ### $IsCoreCLR
 
-Contains `$True` if the current session is running on the .NET Core Runtime
-(CoreCLR). Otherwise contains `$False`.
+Contains `$true` if the current session is running on the .NET Core Runtime
+(CoreCLR). Otherwise contains `$false`.
 
 ### $IsLinux
 
-Contains `$True` if the current session is running on a Linux operating system.
-Otherwise contains `$False`.
+Contains `$true` if the current session is running on a Linux operating system.
+Otherwise contains `$false`.
 
 ### $IsMacOS
 
-Contains `$True` if the current session is running on a MacOS operating system.
-Otherwise contains `$False`.
+Contains `$true` if the current session is running on a MacOS operating system.
+Otherwise contains `$false`.
 
 ### $IsWindows
 
-Contains `$TRUE` if the current session is running on a Windows operating
-system. Otherwise contains `$FALSE`.
+Contains `$true` if the current session is running on a Windows operating
+system. Otherwise contains `$false`.
 
 ### $LASTEXITCODE
 
