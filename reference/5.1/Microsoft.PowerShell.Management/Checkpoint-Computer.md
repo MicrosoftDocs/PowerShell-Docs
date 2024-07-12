@@ -77,7 +77,7 @@ The acceptable values for this parameter are:
 
 The cmdlet accepts `CANCELLED_OPERATION` but this type of restore point operation is no longer
 supported. For more information about these types, see the
-[Restore Point Description Text](windows/win32/sr/restore-point-description-text) documentation.
+[Restore Point Description Text](/windows/win32/sr/restore-point-description-text) documentation.
 
 ```yaml
 Type: System.String
