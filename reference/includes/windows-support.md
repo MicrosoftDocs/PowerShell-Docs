@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 05/16/2024
+ms.date: 07/12/2024
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -25,4 +25,4 @@ Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycl
 [eol-windows]: /lifecycle/products/?terms=Windows%20Server&products=windows
 [client-faq]: /lifecycle/faq/windows
 [modern]: /lifecycle/policies/modern
-[mcr]: https://mcr.microsoft.com/en-us/product/powershell/tags
+[mcr]: https://mcr.microsoft.com/product/powershell/tags

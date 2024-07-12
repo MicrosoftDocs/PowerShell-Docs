@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 06/19/2024
+ms.date: 07/12/2024
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -115,7 +115,7 @@ sudo apt-get install -f
 rm powershell_7.4.3-1.deb_amd64.deb
 
 # Start PowerShell Preview
-pwsh-lts
+pwsh
 ```
 
 ## Uninstall PowerShell
