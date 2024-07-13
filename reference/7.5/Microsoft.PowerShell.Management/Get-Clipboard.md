@@ -25,7 +25,7 @@ The `Get-Clipboard` cmdlet gets the contents of the clipboard as text. Multiple 
 returned as an array of strings similar to `Get-Content`.
 
 > [!NOTE]
-> On Linux, this cmdlet requires the `xclip` utility to be in the path.
+> On Linux, this cmdlet requires either the `xclip` (under X11) or `wl-paste` (under Wayland) utilities to be in the path.
 
 ## EXAMPLES
 
