@@ -1,4 +1,4 @@
----
+A inlinescript---
 description: A statement specifies some sort of action that is to be performed.
 ms.date: 05/16/2022
 title: Statements
@@ -1559,7 +1559,7 @@ inlinescript-statement:
 The inlinescript statement contains zero or more statements that are executed in an implementation
 defined manner.
 
-A inlinescript statement is only allowed in a workflow ([§8.10.2][§8.10.2]).
+An inlinescript statement is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
 ## 8.14 Parameter binding
 
