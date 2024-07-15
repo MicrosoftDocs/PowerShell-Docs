@@ -579,7 +579,7 @@ Specifies the functions that the module exports. Wildcards are permitted.
 You can use this parameter to restrict the functions that are exported by the module. It can remove
 functions from the list of exported aliases, but it can't add functions to the list.
 
-If you omit this parameter, `New-ModuleManifest` creates an **FunctionsToExport** key with a value
+If you omit this parameter, `New-ModuleManifest` creates a **FunctionsToExport** key with a value
 of `*` (all), meaning that all functions defined in the module are exported by the manifest.
 
 ```yaml

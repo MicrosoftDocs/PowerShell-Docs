@@ -41,7 +41,7 @@ https://en.wikipedia.org/wiki/PowerShell
 
 ### Example 2: Get the content of the clipboard in a specific format
 
-In this example we copied files to the clipboard in Windows Explorerby selecting them and pressing
+In this example we copied files to the clipboard in Windows Explorer by selecting them and pressing
 <kbd>Ctrl-C</kbd>. Using the following command, you can access the contents of the clipboard as a
 list of files:
 

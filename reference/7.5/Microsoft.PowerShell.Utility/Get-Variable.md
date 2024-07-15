@@ -178,7 +178,7 @@ You can pipe a string that contains the variable name to this cmdlet.
 
 ### System.Management.Automation.PSVariable
 
-By default, this cmdlet returns a **AutomationPSVariable** object for each variable that it gets.
+By default, this cmdlet returns an **AutomationPSVariable** object for each variable that it gets.
 The object type depends on the variable.
 
 ### System.Object[]
