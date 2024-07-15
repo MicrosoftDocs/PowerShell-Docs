@@ -1,4 +1,4 @@
-A inlinescript---
+---
 description: A statement specifies some sort of action that is to be performed.
 ms.date: 05/16/2022
 title: Statements
