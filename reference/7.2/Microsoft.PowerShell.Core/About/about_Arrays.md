@@ -643,10 +643,10 @@ The following example shows how to select all odd numbers from the array.
 9
 ```
 
-This example show how to select the strings that aren't empty.
+The next example shows how to select all non-empty strings.
 
 ```powershell
-('hi', '', 'there').Where({$_.Length})
+('hi', '', 'there').Where{ $_ }
 ```
 
 ```Output
@@ -1055,11 +1055,10 @@ Thursday, June 24, 2021 1:23:30 PM
 ```
 
 The `set_LastWriteTime()` method is a _hidden_ member of the **FileInfo**
-object. The following example shows how to find members that have a _hidden_
-`set` method.
+object. The following example shows how to find _hidden_ `set` methods.
 
 ```powershell
-$files | Get-Member | Where-Object Definition -like '*set;*'
+$files | Get-Member -Force -Name set_*
 ```
 
 ```Output

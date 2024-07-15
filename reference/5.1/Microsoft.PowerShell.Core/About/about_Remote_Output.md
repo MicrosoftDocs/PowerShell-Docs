@@ -138,7 +138,7 @@ determines the order in which PowerShell connects to the remote computers.
 However, the results appear in the order that the data is received from the
 remote computers.
 
-You can use the `Sort-Object` cmdlet to sort the results on on the
+You can use the `Sort-Object` cmdlet to sort the results on the
 **PSComputerName**. When you any other property of the object, the results from
 different computers are interspersed interleaved in the output
 
