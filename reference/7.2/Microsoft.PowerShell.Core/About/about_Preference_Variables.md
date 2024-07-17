@@ -63,9 +63,10 @@ preferences. For more information about these environment variables, see
 - `$env:PSModulePath`
 
 > [!NOTE]
-> Changes to preference variable only take effect in scripts and functions if
-> those scripts or functions are defined in the same scope as the scope in
-> which preference was used. For more information, see [about_Scopes][38].
+> Changes to preference variables apply only in the scope they are made
+> and any child scopes thereof. For example, you can limit the effects of
+> changing a preference variable to a single function or script. For more
+> information, see [about_Scopes][38].
 
 ## Working with preference variables
 
