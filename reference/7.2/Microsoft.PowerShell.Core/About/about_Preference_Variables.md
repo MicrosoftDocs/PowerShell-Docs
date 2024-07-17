@@ -167,9 +167,10 @@ parameter that you can use to request or suppress confirmation for a single
 command.
 
 Most cmdlets and functions keep the default value of **Medium** for **ConfirmImpact**.
-`$ConfirmPreference` is set to **High** by default. Therefore, automatic
-confirmation rarely occurs. To extend automatic confirmation to more cmdlets and
-functions, set the value of `$ConfirmPreference` to **Medium** or **Low**.
+`$ConfirmPreference` is set to **High** by default. Therefore, it's rare that commands
+automatically prompt for confirmation when users don't specify the **Confirm** parameter.
+To extend automatic confirmation prompting to more cmdlets and functions, set the value
+of `$ConfirmPreference` to **Medium** or **Low**.
 
 ### Examples
 
