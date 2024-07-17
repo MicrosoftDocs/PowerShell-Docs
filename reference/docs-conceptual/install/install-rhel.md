@@ -42,13 +42,13 @@ then majorver=8
 else majorver=9
 fi
 
-# Register the Microsoft RedHat repository
+# Download the Microsoft RedHat repository package
 curl -sSL -O https://packages.microsoft.com/config/rhel/$majorver/packages-microsoft-prod.rpm
 
-# Register the Microsoft repository keys
+# Register the Microsoft RedHat repository
 sudo rpm -i packages-microsoft-prod.rpm
 
-# Delete the repository keys after installing
+# Delete the downloaded package after installing
 rm packages-microsoft-prod.rpm
 
 # RHEL 7.x uses yum and RHEL 8+ uses dnf
