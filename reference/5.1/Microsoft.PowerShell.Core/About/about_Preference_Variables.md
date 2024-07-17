@@ -120,7 +120,8 @@ enumeration values: **High**, **Medium**, **Low**, or **None**.
 Cmdlets and functions are assigned a risk of **High**, **Medium**, or **Low**.
 When the value of the `$ConfirmPreference` variable is less than or equal to
 the risk assigned to a cmdlet or function, PowerShell automatically prompts you
-for confirmation before running the cmdlet or function.
+for confirmation before running the cmdlet or function. For more information
+about assigning a risk to cmdlets or functions, see [about_Functions_CmdletBindingAttribute][65].
 
 If the value of the `$ConfirmPreference` variable is **None**, PowerShell never
 automatically prompts you before running a cmdlet or function.
@@ -1771,3 +1772,4 @@ At line:1 char:1
 [62]: xref:System.Text.UTF32Encoding
 [63]: xref:System.Text.UTF7Encoding
 [64]: xref:System.Text.UTF8Encoding
+[65]: about_Functions_CmdletBindingAttribute.md
