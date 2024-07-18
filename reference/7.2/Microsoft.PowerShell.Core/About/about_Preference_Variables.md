@@ -63,9 +63,10 @@ preferences. For more information about these environment variables, see
 - `$env:PSModulePath`
 
 > [!NOTE]
-> Changes to preference variable only take effect in scripts and functions if
-> those scripts or functions are defined in the same scope as the scope in
-> which preference was used. For more information, see [about_Scopes][38].
+> Changes to preference variables apply only in the scope they are made
+> and any child scopes thereof. For example, you can limit the effects of
+> changing a preference variable to a single function or script. For more
+> information, see [about_Scopes][38].
 
 ## Working with preference variables
 
@@ -116,7 +117,8 @@ enumeration values: **High**, **Medium**, **Low**, or **None**.
 Cmdlets and functions are assigned a risk of **High**, **Medium**, or **Low**.
 When the value of the `$ConfirmPreference` variable is less than or equal to
 the risk assigned to a cmdlet or function, PowerShell automatically prompts you
-for confirmation before running the cmdlet or function.
+for confirmation before running the cmdlet or function. For more information
+about assigning a risk to cmdlets or functions, see [about_Functions_CmdletBindingAttribute][64].
 
 If the value of the `$ConfirmPreference` variable is **None**, PowerShell never
 automatically prompts you before running a cmdlet or function.
@@ -164,11 +166,11 @@ Cmdlets and functions that might pose a risk to the system have a **Confirm**
 parameter that you can use to request or suppress confirmation for a single
 command.
 
-Because most cmdlets and functions use the default risk value,
-**ConfirmImpact**, of **Medium**, and the default value of `$ConfirmPreference`
-is **High**, automatic confirmation rarely occurs. However, you can activate
-automatic confirmation by changing the value of `$ConfirmPreference` to
-**Medium** or **Low**.
+Most cmdlets and functions keep the default value of **Medium** for **ConfirmImpact**.
+`$ConfirmPreference` is set to **High** by default. Therefore, it's rare that commands
+automatically prompt for confirmation when users don't specify the **Confirm** parameter.
+To extend automatic confirmation prompting to more cmdlets and functions, set the value
+of `$ConfirmPreference` to **Medium** or **Low**.
 
 ### Examples
 
@@ -1729,3 +1731,4 @@ At line:1 char:1
 [61]: xref:System.Text.UTF32Encoding
 [62]: xref:System.Text.UTF7Encoding
 [63]: xref:System.Text.UTF8Encoding
+[64]: about_Functions_CmdletBindingAttribute.md

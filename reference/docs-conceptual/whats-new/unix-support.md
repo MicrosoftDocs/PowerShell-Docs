@@ -225,10 +225,10 @@ The following cmdlets aren't available on Linux and macOS:
 
 The following cmdlets are available with limitations:
 
-`Get-Clipboard` - available on Linux but not supported on macOS
-`Set-Clipboard` - available in PowerShell 7.0+
-`Restart-Computer` - available for Linux and macOS in PowerShell 7.1+
-`Stop-Computer` - available for Linux and macOS in PowerShell 7.1+
+- `Get-Clipboard` - available in PowerShell 7.0+
+- `Set-Clipboard` - available in PowerShell 7.0+
+- `Restart-Computer` - available for Linux and macOS in PowerShell 7.1+
+- `Stop-Computer` - available for Linux and macOS in PowerShell 7.1+
 
 ### Microsoft.PowerShell.Utility cmdlets
 
