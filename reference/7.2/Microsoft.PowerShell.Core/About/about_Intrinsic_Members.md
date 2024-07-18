@@ -2,7 +2,7 @@
 description: Describes automatic members in all PowerShell objects
 Locale: en-US
 ms.date: 01/10/2024
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Inrinsic_Members?view=powershell-7.2&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Intrinsic_Members?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Intrinsic_Members
 ---
