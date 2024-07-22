@@ -192,7 +192,8 @@ in the PowerShell console.
 ### Example 5: Search for a string in a Windows event log
 
 This example searches for a string in a Windows event log. The variable `$_` represents the current
-object in the pipeline. For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+object in the pipeline. For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ```powershell
 $Events = Get-WinEvent -LogName Application -MaxEvents 50
@@ -205,7 +206,7 @@ the variable named `$Events`.
 
 The `$Events` variable is sent down the pipeline to the `Select-String` cmdlet. `Select-String` uses
 the **InputObject** parameter. The `$_` variable represents the current object and `message` is a
-property of the event. The **Pattern** parameter species the string **Failed** and searches for
+property of the event. The **Pattern** parameter specifies the string **Failed** and searches for
 matches in `$_.message`. `Select-String` displays the output in the PowerShell console.
 
 ### Example 6: Find a string in subdirectories
@@ -213,7 +214,8 @@ matches in `$_.message`. `Select-String` displays the output in the PowerShell c
 This example searches a directory and all of its subdirectories for a specific text string.
 
 ```powershell
-Get-ChildItem -Path C:\Windows\System32\*.txt -Recurse | Select-String -Pattern 'Microsoft' -CaseSensitive
+Get-ChildItem -Path C:\Windows\System32\*.txt -Recurse |
+    Select-String -Pattern 'Microsoft' -CaseSensitive
 ```
 
 `Get-ChildItem` uses the **Path** parameter to specify **C:\Windows\System32\*.txt**. The
