@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 07/05/2024
+ms.date: 07/23/2024
 no-loc: [-File, -f, -Command, -c, -CommandWithArgs, -cwa, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -103,9 +103,13 @@ find the literal path `.\test.ps1`
 > as `powershell` or `pwsh`), it doesn't know what to do with an array, so
 > it's passed as a string.
 
-When the script file terminates with an `exit` command, the process exit code
-is set to the numeric argument used with the `exit` command. With normal
-termination, the exit code is always `0`.
+The statements in the file are executed, one statement at a time, as though
+they were typed at the PowerShell command prompt. If a statement in the file
+doesn't parse correctly, the statement isn't executed. The process exit code is
+determined by status of the last (executed) command within the script block.
+With normal termination, the exit code is always `0`. When the script file
+terminates with an `exit` command, the process exit code is set to the numeric
+argument used with the `exit` command.
 
 For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][02].
 
@@ -121,9 +125,9 @@ with <kbd>Ctrl</kbd>+<kbd>C</kbd> the exit code is `0`.
 
 ### -Command | -c
 
-Executes the specified commands (and any parameters) as though they were typed
-at the PowerShell command prompt, and then exits, unless the `NoExit`
-parameter is specified.
+Executes the specified commands (and any parameters), one statement at a time,
+as though they were typed at the PowerShell command prompt, and then exits,
+unless the `NoExit` parameter is specified.
 
 The value of **Command** can be `-`, a script block, or a string. If the value
 of **Command** is `-`, the command text is read from standard input.
@@ -185,12 +189,13 @@ hi there
 out
 ```
 
-The process exit code is determined by status of the last (executed) command
-within the script block. The exit code is `0` when `$?` is `$true` or `1` when
-`$?` is `$false`. If the last command is an external program or a PowerShell
-script that explicitly sets an exit code other than `0` or `1`, that exit code
-is converted to `1` for process exit code. To preserve the specific exit code,
-add `exit $LASTEXITCODE` to your command string or script block.
+If the input code does not parse correctly, the statement isn't executed. The
+process exit code is determined by status of the last (executed) command within
+the script block. The exit code is `0` when `$?` is `$true` or `1` when `$?` is
+`$false`. If the last command is an external program or a PowerShell script
+that explicitly sets an exit code other than `0` or `1`, that exit code is
+converted to `1` for process exit code. To preserve the specific exit code, add
+`exit $LASTEXITCODE` to your command string or script block.
 
 For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][02].
 
