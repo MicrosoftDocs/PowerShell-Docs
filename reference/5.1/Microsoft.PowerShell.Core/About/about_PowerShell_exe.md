@@ -49,19 +49,16 @@ All parameters are case-insensitive.
 
 ### -File - | \<filePath\> \<args\>
 
+The value of **File** can be `-` or a filepath and optional parameters. If the
+value of **File** is `-`, then commands are read from standard input.
+
 If the value of **File** is a filepath, the script runs in the local scope
 ("dot-sourced") of the new session, so that the functions and variables that
 the script creates are available in that new session. Enter the script filepath
-and any parameters. **File** must be the last parameter in the command. All
+and any parameters. **File** _must_ be the last parameter in the command. All
 values typed after the **File** parameter are interpreted as the script
-filepath and parameters passed to that script.
-
-When the value of **File** is a filepath, **File** _must_ be the last parameter
-in the command because any characters typed after the **File** parameter name
-are interpreted as the script filepath followed by the script parameters.
-
-You can include the script parameters and values in the value of the **File**
-parameter. For example: `-File .\Get-Script.ps1 -Domain Central`
+filepath and parameters passed to that script. For example:
+`-File .\Get-Script.ps1 -Domain Central`
 
 Typically, the switch parameters of a script are either included or omitted.
 For example, the following command uses the **All** parameter of the
@@ -73,21 +70,21 @@ running a script in this way. This limitation was removed in PowerShell 6
 (`pwsh.exe`).
 
 Parameters passed to the script are passed as literal strings, after
-interpretation by the current shell. For example, if you are in **cmd.exe** and
-want to pass an environment variable value, you would use the **cmd.exe**
-syntax: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+interpretation by the current shell. For example, if you are in `cmd.exe` and
+want to pass an environment variable value, you would use the `cmd.exe` syntax:
+`powershell.exe -File .\test.ps1 -TestParam %windir%`
 
 In contrast, running `powershell.exe -File .\test.ps1 -TestParam $env:windir`
-in **cmd.exe** results in the script receiving the literal string `$env:windir`
-because it has no special meaning to the current **cmd.exe** shell. The
+in `cmd.exe` results in the script receiving the literal string `$env:windir`
+because it has no special meaning to the current `cmd.exe` shell. The
 `$env:windir` style of environment variable reference _can_ be used inside a
-**Command** parameter, since there it will be interpreted as PowerShell code.
+**Command** parameter, since there it's interpreted as PowerShell code.
 
-Similarly, if you want to execute the same command from a **Batch script**, you
+Similarly, if you want to execute the same command from a _Batch script_, you
 would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current
-execution directory: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%`.
-If you instead used `.\test.ps1`, PowerShell would throw an error because it
-can't find the literal path `.\test.ps1`
+execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. If you use
+`.\test.ps1` instead, PowerShell throws an error because it can't find the
+literal path `.\test.ps1`
 
 > [!NOTE]
 > The **File** parameter can't support scripts using a parameter that expects
@@ -96,14 +93,14 @@ can't find the literal path `.\test.ps1`
 > as `powershell` or `pwsh`), it doesn't know what to do with an array, so
 > it's passed as a string.
 
-If the value of `File` is `-`, the command text is read from standard input.
-Running `pwsh -File -` without redirected standard input starts a regular
+If the value of **File** is `-`, then commands are read from standard input.
+Running `powershell -File -` without redirected standard input starts a regular
 session. This is the same as not specifying the `File` parameter at all. When
-reading from standard input, the statements are executed one statement at a
-time as though they were typed at the PowerShell command prompt. If a statement
-doesn't parse correctly, the statement isn't executed. The process exit code is
-determined by status of the last (executed) command within the input. With
-normal termination, the exit code is always `0`. When the script file
+reading from standard input, the input statements are executed one statement at
+a time as though they were typed at the PowerShell command prompt. If a
+statement doesn't parse correctly, the statement isn't executed. The process
+exit code is determined by status of the last (executed) command. With
+successful execution, the exit code is always `0`. When the script file
 terminates with an `exit` command, the process exit code is set to the numeric
 argument used with the `exit` command.
 
@@ -151,7 +148,7 @@ When called from within an existing PowerShell session, the results are
 returned to the parent shell as deserialized XML objects, not live objects. For
 other shells, the results are returned as strings.
 
-If the value of **Command** is `-`, the command text is read from standard
+If the value of **Command** is `-`, the commands are read from standard
 input. You must redirect standard input when using the **Command** parameter
 with standard input. For example:
 
