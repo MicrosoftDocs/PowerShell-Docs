@@ -57,10 +57,6 @@ All parameters are case-insensitive.
 
 ### -File | -f
 
-If the value of `File` is `-`, the command text is read from standard input.
-Running `pwsh -File -` without redirected standard input starts a regular
-session. This is the same as not specifying the `File` parameter at all.
-
 This is the default parameter if no parameters are present but values are
 present in the command line. The specified script runs in the local scope
 ("dot-sourced") of the new session, so that the functions and variables that
@@ -103,19 +99,21 @@ find the literal path `.\test.ps1`
 > as `powershell` or `pwsh`), it doesn't know what to do with an array, so
 > it's passed as a string.
 
-The statements in the file are executed, one statement at a time, as though
-they were typed at the PowerShell command prompt. If a statement in the file
+If the value of `File` is `-`, the command text is read from standard input.
+Running `pwsh -File -` without redirected standard input starts a regular
+session. This is the same as not specifying the `File` parameter at all. When
+reading from standard input, the statements are executed one statement at a
+time as though they were typed at the PowerShell command prompt. If a statement
 doesn't parse correctly, the statement isn't executed. The process exit code is
-determined by status of the last (executed) command within the script block.
-With normal termination, the exit code is always `0`. When the script file
+determined by status of the last (executed) command within the input. With
+normal termination, the exit code is always `0`. When the script file
 terminates with an `exit` command, the process exit code is set to the numeric
 argument used with the `exit` command.
 
-For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][02].
-
 Similar to `-Command`, when a script-terminating error occurs, the exit code is
 set to `1`. However, unlike with `-Command`, when the execution is interrupted
-with <kbd>Ctrl</kbd>+<kbd>C</kbd> the exit code is `0`.
+with <kbd>Ctrl</kbd>+<kbd>C</kbd> the exit code is `0`. For more information,
+see `$LASTEXITCODE` in [about_Automatic_Variables][02].
 
 > [!NOTE]
 > As of PowerShell 7.2, the **File** parameter only accepts `.ps1` files on
@@ -124,10 +122,6 @@ with <kbd>Ctrl</kbd>+<kbd>C</kbd> the exit code is `0`.
 > file types.
 
 ### -Command | -c
-
-Executes the specified commands (and any parameters), one statement at a time,
-as though they were typed at the PowerShell command prompt, and then exits,
-unless the `NoExit` parameter is specified.
 
 The value of **Command** can be `-`, a script block, or a string. If the value
 of **Command** is `-`, the command text is read from standard input.
@@ -178,7 +172,7 @@ with standard input. For example:
   % { "$_ there" }
 
 "out"
-'@ | powershell -NoProfile -Command -
+'@ | pwsh -NoProfile -Command -
 ```
 
 This example produces the following output:
@@ -189,19 +183,24 @@ hi there
 out
 ```
 
-If the input code does not parse correctly, the statement isn't executed. The
-process exit code is determined by status of the last (executed) command within
-the script block. The exit code is `0` when `$?` is `$true` or `1` when `$?` is
+When reading from standard input, the input is parsed and executed one
+statement at a time, as though they were typed at the PowerShell command
+prompt. If the input code doesn't parse correctly, the statement isn't
+executed. Unless you use the `-NoExit` parameter, the PowerShell session exits
+when there is no more input to read from standard input.
+
+The process exit code is determined by status of the last (executed) command
+within the input. The exit code is `0` when `$?` is `$true` or `1` when `$?` is
 `$false`. If the last command is an external program or a PowerShell script
 that explicitly sets an exit code other than `0` or `1`, that exit code is
-converted to `1` for process exit code. To preserve the specific exit code, add
-`exit $LASTEXITCODE` to your command string or script block.
+converted to `1` for process exit code. Similarly, the value 1 is returned when
+a script-terminating (runspace-terminating) error, such as a `throw` or
+`-ErrorAction Stop`, occurs or when execution is interrupted with
+<kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
-For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][02].
-
-Similarly, the value 1 is returned when a script-terminating
-(runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
-or when execution is interrupted with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+To preserve the specific exit code, add `exit $LASTEXITCODE` to your command
+string or script block. For more information, see `$LASTEXITCODE` in
+[about_Automatic_Variables][02].
 
 ### -CommandWithArgs | -cwa
 
