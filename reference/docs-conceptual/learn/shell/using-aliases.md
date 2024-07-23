@@ -1,6 +1,6 @@
 ---
 description: This article describe how to use aliases in PowerShell.
-ms.date: 06/10/2024
+ms.date: 07/23/2024
 title: Using aliases
 ---
 # Using aliases
@@ -68,25 +68,25 @@ Set-Alias -Name cmpo  -Value Compare-Object
 
 ## Compatibility aliases in Windows
 
-PowerShell has several aliases that allow **UNIX** and **cmd.exe** users to use familiar commands in
+PowerShell has several aliases that allow **UNIX** and `cmd.exe` users to use familiar commands in
 Windows. The following table show common commands, the related PowerShell cmdlet, and the PowerShell
 alias:
 
-|            cmd.exe command            | UNIX command | PowerShell cmdlet |             PowerShell alias              |
-| ------------------------------------- | ------------ | ----------------- | ----------------------------------------- |
-| **cd**, **chdir**                     | **cd**       | `Set-Location`    | `sl`, `cd`, `chdir`                       |
-| **cls**                               | **clear**    | `Clear-Host`      | `cls` `clear`                             |
-| **copy**                              | **cp**       | `Copy-Item`       | `cpi`, `cp`, `copy`                       |
-| **del**, **erase**, **rd**, **rmdir** | **rm**       | `Remove-Item`     | `ri`, `del`, `erase`, `rd`, `rm`, `rmdir` |
-| **dir**                               | **ls**       | `Get-ChildItem`   | `gci`, `dir`, `ls`                        |
-| **echo**                              | **echo**     | `Write-Output`    | `write` `echo`                            |
-| **md**                                | **mkdir**    | `New-Item`        | `ni`                                      |
-| **move**                              | **mv**       | `Move-Item`       | `mi`, `move`, `mi`                        |
-| **popd**                              | **popd**     | `Pop-Location`    | `popd`                                    |
-|                                       | **pwd**      | `Get-Location`    | `gl`, `pwd`                               |
-| **pushd**                             | **pushd**    | `Push-Location`   | `pushd`                                   |
-| **ren**                               | **mv**       | `Rename-Item`     | `rni`, `ren`                              |
-| **type**                              | **cat**      | `Get-Content`     | `gc`, `cat`, `type`                       |
+|     Windows Command Shell     | UNIX command | PowerShell cmdlet |             PowerShell alias              |
+| ----------------------------- | ------------ | ----------------- | ----------------------------------------- |
+| `cd`, `chdir`                 | `cd`         | `Set-Location`    | `sl`, `cd`, `chdir`                       |
+| `cls`                         | `clear`      | `Clear-Host`      | `cls` `clear`                             |
+| `copy`                        | `cp`         | `Copy-Item`       | `cpi`, `cp`, `copy`                       |
+| `del`, `erase`, `rd`, `rmdir` | `rm`         | `Remove-Item`     | `ri`, `del`, `erase`, `rd`, `rm`, `rmdir` |
+| `dir`                         | `ls`         | `Get-ChildItem`   | `gci`, `dir`, `ls`                        |
+| `echo`                        | `echo`       | `Write-Output`    | `write` `echo`                            |
+| `md`                          | `mkdir`      | `New-Item`        | `ni`                                      |
+| `move`                        | `mv`         | `Move-Item`       | `mi`, `move`, `mi`                        |
+| `popd`                        | `popd`       | `Pop-Location`    | `popd`                                    |
+|                               | `pwd`        | `Get-Location`    | `gl`, `pwd`                               |
+| `pushd`                       | `pushd`      | `Push-Location`   | `pushd`                                   |
+| `ren`                         | `mv`         | `Rename-Item`     | `rni`, `ren`                              |
+| `type`                        | `cat`        | `Get-Content`     | `gc`, `cat`, `type`                       |
 
 > [!NOTE]
 > The aliases in this table are Windows-specific. Some aliases aren't available on other platforms.
