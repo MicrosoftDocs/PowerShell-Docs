@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 01/03/2024
+ms.date: 07/23/2024
 no-no-loc: [-Command, -ConfigurationName , -EncodedCommand, -ExecutionPolicy, -File, -Help, -InputFormat, -Mta, -NoExit, -NoLogo, -NonInteractive, -NoProfile, -OutputFormat, -PSConsoleFile, -Sta, -Version, -WindowStyle]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -45,11 +45,71 @@ PowerShell[.exe] -Help | -? | /?
 
 ## Parameters
 
-### -Command
+All parameters are case-insensitive.
 
-Executes the specified commands (and any parameters) as though they were typed
-at the PowerShell command prompt, and then exits, unless the `NoExit`
-parameter is specified.
+### -File - | \<filePath\> \<args\>
+
+The value of **File** can be `-` or a filepath and optional parameters. If the
+value of **File** is `-`, then commands are read from standard input.
+
+If the value of **File** is a filepath, the script runs in the local scope
+("dot-sourced") of the new session, so that the functions and variables that
+the script creates are available in that new session. Enter the script filepath
+and any parameters. **File** _must_ be the last parameter in the command. All
+values typed after the **File** parameter are interpreted as the script
+filepath and parameters passed to that script. For example:
+`-File .\Get-Script.ps1 -Domain Central`
+
+Typically, the switch parameters of a script are either included or omitted.
+For example, the following command uses the **All** parameter of the
+`Get-Script.ps1` script file: `-File .\Get-Script.ps1 -All`
+
+In rare cases, you might need to provide a **Boolean** value for a parameter.
+It isn't possible to pass an explicit boolean value for a switch parameter when
+running a script in this way. This limitation was removed in PowerShell 6
+(`pwsh.exe`).
+
+Parameters passed to the script are passed as literal strings, after
+interpretation by the current shell. For example, if you are in `cmd.exe` and
+want to pass an environment variable value, you would use the `cmd.exe` syntax:
+`powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+In contrast, running `powershell.exe -File .\test.ps1 -TestParam $env:windir`
+in `cmd.exe` results in the script receiving the literal string `$env:windir`
+because it has no special meaning to the current `cmd.exe` shell. The
+`$env:windir` style of environment variable reference _can_ be used inside a
+**Command** parameter, since there it's interpreted as PowerShell code.
+
+Similarly, if you want to execute the same command from a _Batch script_, you
+would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current
+execution directory: `pwsh -File %~dp0test.ps1 -TestParam %windir%`. If you use
+`.\test.ps1` instead, PowerShell throws an error because it can't find the
+literal path `.\test.ps1`
+
+> [!NOTE]
+> The **File** parameter can't support scripts using a parameter that expects
+> an array of argument values. This, unfortunately, is a limitation of how a
+> native command gets argument values. When you call a native executable (such
+> as `powershell` or `pwsh`), it doesn't know what to do with an array, so
+> it's passed as a string.
+
+If the value of **File** is `-`, then commands are read from standard input.
+Running `powershell -File -` without redirected standard input starts a regular
+session. This is the same as not specifying the `File` parameter at all. When
+reading from standard input, the input statements are executed one statement at
+a time as though they were typed at the PowerShell command prompt. If a
+statement doesn't parse correctly, the statement isn't executed. The process
+exit code is determined by status of the last (executed) command. With
+successful execution, the exit code is always `0`. When the script file
+terminates with an `exit` command, the process exit code is set to the numeric
+argument used with the `exit` command.
+
+Similar to `-Command`, when a script-terminating error occurs, the exit code is
+set to `1`. However, unlike with `-Command`, when the execution is interrupted
+with <kbd>Ctrl</kbd>+<kbd>C</kbd> the exit code is `0`. For more information,
+see `$LASTEXITCODE` in [about_Automatic_Variables][03].
+
+### -Command
 
 The value of **Command** can be `-`, a script block, or a string. If the value
 of **Command** is `-`, the command text is read from standard input.
@@ -66,10 +126,10 @@ powershell -Command {Get-WinEvent -LogName security}
 ```
 
 In `cmd.exe`, there is no such thing as a script block (or **ScriptBlock**
-type), so the value passed to **Command** will _always_ be a string. You can
-write a script block inside the string, but instead of being executed it will
-behave exactly as though you typed it at a typical PowerShell prompt, printing
-the contents of the script block back out to you.
+type), so the value passed to **Command** is _always_ a string. You can write a
+script block inside the string, but instead of being executed it behaves
+exactly as though you typed it at a typical PowerShell prompt, printing the
+contents of the script block back out to you.
 
 A string passed to **Command** is still executed as PowerShell code, so the
 script block curly braces are often not required in the first place when
@@ -88,7 +148,7 @@ When called from within an existing PowerShell session, the results are
 returned to the parent shell as deserialized XML objects, not live objects. For
 other shells, the results are returned as strings.
 
-If the value of **Command** is `-`, the command text is read from standard
+If the value of **Command** is `-`, the commands are read from standard
 input. You must redirect standard input when using the **Command** parameter
 with standard input. For example:
 
@@ -111,18 +171,24 @@ hi there
 out
 ```
 
+When reading from standard input, the input is parsed and executed one
+statement at a time, as though they were typed at the PowerShell command
+prompt. If the input code doesn't parse correctly, the statement isn't
+executed. Unless you use the `-NoExit` parameter, the PowerShell session exits
+when there is no more input to read from standard input.
+
 The process exit code is determined by status of the last (executed) command
-within the script block. The exit code is `0` when `$?` is `$true` or `1` when
-`$?` is `$false`. If the last command is an external program or a PowerShell
-script that explicitly sets an exit code other than `0` or `1`, that exit code
-is converted to `1` for process exit code. To preserve the specific exit code,
-add `exit $LASTEXITCODE` to your command string or script block.
+within the input. The exit code is `0` when `$?` is `$true` or `1` when `$?` is
+`$false`. If the last command is an external program or a PowerShell script
+that explicitly sets an exit code other than `0` or `1`, that exit code is
+converted to `1` for process exit code. Similarly, the value 1 is returned when
+a script-terminating (runspace-terminating) error, such as a `throw` or
+`-ErrorAction Stop`, occurs or when execution is interrupted with
+<kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
-For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][03].
-
-Similarly, the value 1 is returned when a script-terminating
-(runspace-terminating) error, such as a `throw` or `-ErrorAction Stop`, occurs
-or when execution is interrupted with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+To preserve the specific exit code, add `exit $LASTEXITCODE` to your command
+string or script block. For more information, see `$LASTEXITCODE` in
+[about_Automatic_Variables][02].
 
 ### -ConfigurationName \<string\>
 
@@ -149,65 +215,6 @@ Sets the default execution policy for the current session and saves it in the
 not change the PowerShell execution policy that's set in the registry. For
 information about PowerShell execution policies, including a list of valid
 values, see [about_Execution_Policies][04].
-
-### -File - | \<filePath\> \<args\>
-
-If the value of **File** is `-`, the command text is read from standard input.
-Running `powershell -File -` without redirected standard input starts a regular
-session. This is the same as not specifying the **File** parameter at all.
-
-If the value of **File** is a filepath, the script runs in the local scope
-("dot-sourced") of the new session, so that the functions and variables that
-the script creates are available in that new session. Enter the script filepath
-and any parameters. **File** must be the last parameter in the command. All
-values typed after the **File** parameter are interpreted as the script
-filepath and parameters passed to that script.
-
-Parameters passed to the script are passed as literal strings, after
-interpretation by the current shell. For example, if you are in **cmd.exe** and
-want to pass an environment variable value, you would use the **cmd.exe**
-syntax: `powershell.exe -File .\test.ps1 -TestParam %windir%`
-
-In contrast, running `powershell.exe -File .\test.ps1 -TestParam $env:windir`
-in **cmd.exe** results in the script receiving the literal string `$env:windir`
-because it has no special meaning to the current **cmd.exe** shell. The
-`$env:windir` style of environment variable reference _can_ be used inside a
-**Command** parameter, since there it will be interpreted as PowerShell code.
-
-Similarly, if you want to execute the same command from a **Batch script**, you
-would use `%~dp0` instead of `.\` or `$PSScriptRoot` to represent the current
-execution directory: `powershell.exe -File %~dp0test.ps1 -TestParam %windir%`.
-If you instead used `.\test.ps1`, PowerShell would throw an error because it
-can't find the literal path `.\test.ps1`
-
-When the value of **File** is a filepath, **File** _must_ be the last parameter
-in the command because any characters typed after the **File** parameter name
-are interpreted as the script filepath followed by the script parameters.
-
-You can include the script parameters and values in the value of the **File**
-parameter. For example: `-File .\Get-Script.ps1 -Domain Central`
-
-Typically, the switch parameters of a script are either included or omitted.
-For example, the following command uses the **All** parameter of the
-`Get-Script.ps1` script file: `-File .\Get-Script.ps1 -All`
-
-In rare cases, you might need to provide a **Boolean** value for a parameter.
-It isn't possible to pass an explicit boolean value for a switch parameter when
-running a script in this way. This limitation was removed in PowerShell 6
-(`pwsh.exe`).
-
-> [!NOTE]
-> The **File** parameter can't support scripts using a parameter that expects
-> an array of argument values. This, unfortunately, is a limitation of how a
-> native command gets argument values. When you call a native executable (such
-> as `powershell` or `pwsh`), it doesn't know what to do with an array, so
-> it's passed as a string.
-
-When the script file terminates with an `exit` command, the process exit code
-is set to the numeric argument used with the `exit` command. With normal
-termination, the exit code is always `0`.
-
-For more information, see `$LASTEXITCODE` in [about_Automatic_Variables][03].
 
 ### -InputFormat {Text | XML}
 
