@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  ms.date: 06/19/2024
+  ms.date: 07/24/2024
   title:  Microsoft Update for PowerShell FAQ
   description: Frequently asked questions about the using Microsoft Update to update PowerShell
   ms.topic: faq
@@ -108,7 +108,7 @@ sections:
             doesn't show the check box options. To enable MU updates run the following command:
 
             ```powershell
-            msiexec.exe /fmu .\PowerShell-7.4.3-win-x64.msi USE_MU=1 ENABLE_MU=1
+            msiexec.exe /fmu .\PowerShell-7.4.4-win-x64.msi USE_MU=1 ENABLE_MU=1
             ```
 
             For more information about running `msiexec.exe` from the command line, see
