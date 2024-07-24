@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/14/2024
+ms.date: 07/24/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
@@ -18,55 +18,61 @@ Tests whether a string is a valid JSON document
 ### JsonString (Default)
 
 ```
-Test-Json [-Json] <String> [<CommonParameters>]
+Test-Json [-Json] <String> [-Options <String[]>] [<CommonParameters>]
 ```
 
 ### JsonStringWithSchemaString
 
 ```
-Test-Json [-Json] <string> [-Schema] <string> [<CommonParameters>]
+Test-Json [-Json] <String> [-Schema] <String> [-Options <String[]>]
+ [<CommonParameters>]
 ```
 
 ### JsonStringWithSchemaFile
 
 ```
-Test-Json [-Json] <string> [-SchemaFile] <string> [<CommonParameters>]
+Test-Json [-Json] <String> -SchemaFile <String> [-Options <String[]>]
+ [<CommonParameters>]
 ```
 
 ### JsonPath
 
 ```
-Test-Json [-Path] <string> [<CommonParameters>]
+Test-Json -Path <String> [-Options <String[]>] [<CommonParameters>]
 ```
 
 ### JsonPathWithSchemaString
 
 ```
-Test-Json [-Path] <string> [-Schema] <string> [<CommonParameters>]
+Test-Json -Path <String> [-Schema] <String> [-Options <String[]>]
+ [<CommonParameters>]
 ```
 
 ### JsonPathWithSchemaFile
 
 ```
-Test-Json [-Path] <string> [-SchemaFile] <string> [<CommonParameters>]
+Test-Json -Path <String> -SchemaFile <String> [-Options <String[]>]
+ [<CommonParameters>]
 ```
 
 ### JsonLiteralPath
 
 ```
-Test-Json [-LiteralPath] <string> [<CommonParameters>]
+Test-Json -LiteralPath <String> [-Options <String[]>] [<CommonParameters>]
 ```
 
 ### JsonLiteralPathWithSchemaString
 
 ```
-Test-Json [-LiteralPath] <string> [-Schema] <string> [<CommonParameters>]
+Test-Json -LiteralPath <String> [-Schema] <String> [-Options <String[]>]
+ [<CommonParameters>]
 ```
 
 ### JsonLiteralPathWithSchemaFile
 
 ```
-Test-Json [-LiteralPath] <string> [-SchemaFile] <string> [<CommonParameters>]
+Test-Json -LiteralPath <String> -SchemaFile <String> [-Options <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -226,7 +232,7 @@ Parameter Sets: JsonString, JsonStringWithSchemaString, JsonStringWithSchemaFile
 Aliases:
 
 Required: True
-Position: 1
+Position: 0
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -247,6 +253,29 @@ Parameter Sets: JsonLiteralPath, JsonLiteralPathWithSchemaString, JsonLiteralPat
 Aliases: PSPath, LP
 
 Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Options
+
+By default, `Test-Json` doesn't support JSON containing comments or trailing commas. This parameter
+allows you to specify options to change the default behavior. The following options are available:
+
+- `IgnoreComments`
+- `AllowTrailingCommas`
+
+This parameter was added in PowerShell 7.5.0-preview.4.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+Accepted values: IgnoreComments, AllowTrailingCommas
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -266,9 +295,9 @@ Parameter Sets: JsonPath, JsonPathWithSchemaString, JsonPathWithSchemaFile
 Aliases:
 
 Required: True
-Position: Named
+Position: 0
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
@@ -285,8 +314,8 @@ Type: System.String
 Parameter Sets: JsonStringWithSchemaString, JsonLiteralPathWithSchemaString, JsonPathWithSchemaString
 Aliases:
 
-Required: False
-Position: 2
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -305,8 +334,8 @@ Type: System.String
 Parameter Sets: JsonStringWithSchemaFile, JsonLiteralPathWithSchemaFile, JsonPathWithSchemaFile
 Aliases:
 
-Required: False
-Position: Named
+Required: True
+Position: 1
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

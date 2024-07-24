@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/05/2024
+ms.date: 07/24/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
@@ -60,7 +60,7 @@ users.
 
 Every PowerShell session (**PSSession**) uses a session configuration, also known as an endpoint.
 When users create a session that connects to the computer, they can select a session configuration
-or use the default session configuration that is registered when you enable PowerShell remoting.
+or use the default session configuration that's registered when you enable PowerShell remoting.
 Users can also set the $PSSessionConfigurationName preference variable, which specifies a default
 configuration for remote sessions created in the current session.
 
@@ -74,8 +74,10 @@ You can define the elements of configuration by using an assembly that implement
 configuration class and by using a script that runs in the session. Beginning in PowerShell
 3.0, you can also use a session configuration file to define the session configuration.
 
-For information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
-For information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
+For information about session configurations, see
+[about_Session_Configurations](About/about_Session_Configurations.md). For information about session
+configuration files, see
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 ## EXAMPLES
 
@@ -189,7 +191,7 @@ information about dot sourcing, see [about_Scopes](./About/about_Scopes.md).
 Enables and disables the session configuration and determines whether it can be used for remote or
 local sessions on the computer. The acceptable values for this parameter are:
 
-- Disabled. Disables the session configuration. It cannot be used for remote or local access to the
+- Disabled. Disables the session configuration. It can't be used for remote or local access to the
   computer.
 - Local. Allows users of the local computer to use the session configuration to create a local
   loopback session on the same computer, but denies access to remote users.
@@ -220,9 +222,9 @@ Accept wildcard characters: False
 
 ### -ApplicationBase
 
-Specifies the path of the assembly file (\*.dll) that is specified in the value of the
-**AssemblyName** parameter. Use this parameter when the value of the **AssemblyName** parameter does
-not include a path. The default is the current directory.
+Specifies the path of the assembly file (`*.dll`) that's specified in the value of the
+**AssemblyName** parameter. Use this parameter when the value of the **AssemblyName** parameter
+doesn't include a path. The default is the current directory.
 
 ```yaml
 Type: System.String
@@ -257,15 +259,15 @@ Accept wildcard characters: False
 
 ### -ConfigurationTypeName
 
-Specifies the fully qualified name of the Microsoft .NET Framework type that is used for this
+Specifies the fully qualified name of the Microsoft .NET Framework type that's used for this
 configuration. The type that you specify must implement the
 **System.Management.Automation.Remoting.PSSessionConfiguration** class.
 
-To specify the assembly file (\*.dll) that implements the configuration type, specify the
+To specify the assembly file (`*.dll`) that implements the configuration type, specify the
 **AssemblyName** and **ApplicationBase** parameters.
 
 Creating a type lets you control more aspects of the session configuration, such as exposing or
-hiding certain parameters of cmdlets, or setting data size and object size limits that users cannot
+hiding certain parameters of cmdlets, or setting data size and object size limits that users can't
 override.
 
 If you omit this parameter, the **DefaultRemotePowerShellConfiguration** class is used for the
@@ -307,7 +309,7 @@ Accept wildcard characters: False
 Specifies a limit for the amount of data that can be sent to this computer in any single remote
 command. Enter the data size in megabytes (MB). The default is 50 MB.
 
-If a data size limit is defined in the configuration type that is specified in the
+If a data size limit is defined in the configuration type that's specified in the
 **ConfigurationTypeName** parameter, the limit in the configuration type is used and the value of
 this parameter is ignored.
 
@@ -318,7 +320,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: 50
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -328,7 +330,7 @@ Accept wildcard characters: False
 Specifies a limit for the amount of data that can be sent to this computer in any single object.
 Enter the data size in megabytes. The default is 10 MB.
 
-If an object size limit is defined in the configuration type that is specified in the
+If an object size limit is defined in the configuration type that's specified in the
 **ConfigurationTypeName** parameter, the limit in the configuration type is used and the value of
 this parameter is ignored.
 
@@ -390,8 +392,10 @@ Accept wildcard characters: False
 ### -NoServiceRestart
 
 The intent of this parameter is to prevent the restart the **WinRM** service. This functionality
-isn't implemented. This will be fixed in PowerShell 7.5, but there is no plan to back port this
-change to Windows PowerShell 5.1.
+isn't implemented.
+
+This functionality was implemented in PowerShell 7.5.0-preview.4, but there's no plan to back
+port this change to Windows PowerShell 5.1.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -496,7 +500,7 @@ use a session configuration in a session, users must have at least Execute (Invo
 the configuration.
 
 If the security descriptor is complex, consider using the **ShowSecurityDescriptorUI** parameter
-instead of this parameter. You cannot use both parameters in the same command.
+instead of this parameter. You can't use both parameters in the same command.
 
 If you omit this parameter, the root SDDL for the **WinRM** service is used for this configuration.
 To view or change the root SDDL, use the WSMan provider. For example
@@ -558,7 +562,7 @@ returns.
 The options of sessions that use the session configuration are determined by the values of session
 options and the session configuration options. Unless specified, options set in the session, such as
 by using the `New-PSSessionOption` cmdlet, take precedence over options set in the session
-configuration. However, session option values cannot exceed maximum values set in the session
+configuration. However, session option values can't exceed maximum values set in the session
 configuration.
 
 This parameter was introduced in PowerShell 3.0.
@@ -584,7 +588,7 @@ command and then restart the **WinRM** service.
 When setting the permissions for the configuration, remember that users must have at least Execute
 (Invoke) permission to use the session configuration in a session.
 
-You cannot use the **SecurityDescriptorSDDL** parameter and this parameter in the same command.
+You can't use the **SecurityDescriptorSDDL** parameter and this parameter in the same command.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -604,7 +608,7 @@ Specifies the fully qualified path of a PowerShell script. The specified script 
 session that uses the session configuration.
 
 You can use the script to additionally configure the session. If the script generates an error, even
-a non-terminating error, the session is not created and the `New-PSSession` command fails.
+a non-terminating error, the session isn't created and the `New-PSSession` command fails.
 
 ```yaml
 Type: System.String
@@ -619,9 +623,12 @@ Accept wildcard characters: False
 ```
 
 ### -ThreadApartmentState
-Specifies the apartment state of the threads in the session.
-The acceptable values for this parameter are: STA, MTA, and Unknown.
-The default value is Unknown.
+
+Specifies the apartment state of the threading module to be used. Acceptable values are:
+
+- Unknown
+- MTA
+- STA
 
 ```yaml
 Type: System.Threading.ApartmentState
@@ -718,7 +725,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
