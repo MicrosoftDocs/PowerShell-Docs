@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/05/2024
+ms.date: 07/24/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
@@ -226,9 +226,9 @@ Accept wildcard characters: False
 
 ### -ApplicationBase
 
-Specifies the path of the assembly file (\*.dll) that's specified in the value of the
-**AssemblyName** parameter. Use this parameter when the value of the **AssemblyName** parameter does
-not include a path. The default is the current directory.
+Specifies the path of the assembly file (`*.dll`) that's specified in the value of the
+**AssemblyName** parameter. Use this parameter when the value of the **AssemblyName** parameter
+doesn't include a path. The default is the current directory.
 
 ```yaml
 Type: System.String
@@ -267,7 +267,7 @@ Specifies the fully qualified name of the Microsoft .NET Framework type that's u
 configuration. The type that you specify must implement the
 **System.Management.Automation.Remoting.PSSessionConfiguration** class.
 
-To specify the assembly file (\*.dll) that implements the configuration type, specify the
+To specify the assembly file (`*.dll`) that implements the configuration type, specify the
 **AssemblyName** and **ApplicationBase** parameters.
 
 Creating a type lets you control more aspects of the session configuration, such as exposing or
@@ -396,7 +396,9 @@ Accept wildcard characters: False
 ### -NoServiceRestart
 
 The intent of this parameter is to prevent the restart the **WinRM** service. This functionality
-isn't implemented yet. This will be fixed in PowerShell 7.5.
+isn't implemented yet. 
+
+This functionality was implemented in PowerShell 7.5.0-preview.4.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -601,6 +603,7 @@ Specifies the apartment state of the threading module to be used. Acceptable val
 Type: System.Threading.ApartmentState
 Parameter Sets: (All)
 Aliases:
+Accepted values: STA, MTA, Unknown
 
 Required: False
 Position: Named
