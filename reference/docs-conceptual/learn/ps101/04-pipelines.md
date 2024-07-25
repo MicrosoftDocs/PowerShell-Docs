@@ -304,7 +304,7 @@ Select-Object -Property DisplayName, Running, Status |
 Where-Object CanPauseAndContinue
 ```
 
-The command in the previous example doesn't return any results because the **CanStopAndContinue**
+The command in the previous example doesn't return any results because the **CanPauseAndContinue**
 property doesn't exist when the results of `Select-Object` are piped to `Where-Object`. That
 particular property wasn't "selected". In essence, it was filtered out. Reversing the order of
 `Select-Object` and `Where-Object` produces the desired results.
