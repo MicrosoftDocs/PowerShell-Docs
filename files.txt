@@ -9,11 +9,6 @@ d----           7/27/2024  8:50 AM                .vscode
 d----           7/27/2024  8:50 AM                assets
 d----           7/27/2024  8:50 AM                reference
 d----           7/27/2024  8:50 AM                tests
-d----           7/27/2024  8:50 AM                tools
--a---           7/27/2024  8:50 AM            401 .editorconfig
--a---           7/27/2024  8:50 AM            489 .gitattributes
--a---           7/27/2024  8:50 AM            296 .gitignore
--a---           7/27/2024  8:50 AM            232 .localization-config
 -a---           7/27/2024  8:50 AM            796 .markdownlint-cli2.yaml
 -a---           7/27/2024  8:50 AM           3195 .markdownlint.yaml
 -a---           7/27/2024  8:50 AM            814 .openpublishing.build.ps1
