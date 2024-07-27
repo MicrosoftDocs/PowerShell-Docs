@@ -1,0 +1,43 @@
+
+    Directory: C:\GitHub\PowerShell-Docs
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           7/27/2024  8:50 AM                .devcontainer
+d----           7/27/2024  8:50 AM                .github
+d----           7/27/2024  8:50 AM                .vscode
+d----           7/27/2024  8:50 AM                assets
+d----           7/27/2024  8:50 AM                reference
+d----           7/27/2024  8:50 AM                tests
+d----           7/27/2024  8:50 AM                tools
+-a---           7/27/2024  8:50 AM            401 .editorconfig
+-a---           7/27/2024  8:50 AM            489 .gitattributes
+-a---           7/27/2024  8:50 AM            296 .gitignore
+-a---           7/27/2024  8:50 AM            232 .localization-config
+-a---           7/27/2024  8:50 AM            796 .markdownlint-cli2.yaml
+-a---           7/27/2024  8:50 AM           3195 .markdownlint.yaml
+-a---           7/27/2024  8:50 AM            814 .openpublishing.build.ps1
+-a---           7/27/2024  8:50 AM           2645 .openpublishing.publish.config.json
+-a---           7/27/2024  8:50 AM            499 .openpublishing.redirection.51.json
+-a---           7/27/2024  8:50 AM            495 .openpublishing.redirection.72.json
+-a---           7/27/2024  8:50 AM          33510 .openpublishing.redirection.dsc.json
+-a---           7/27/2024  8:50 AM           8455 .openpublishing.redirection.gallery.json
+-a---           7/27/2024  8:50 AM          38876 .openpublishing.redirection.json
+-a---           7/27/2024  8:50 AM          27361 .openpublishing.redirection.psget.json
+-a---           7/27/2024  8:50 AM         140050 .openpublishing.redirection.virtual.json
+-a---           7/27/2024  8:50 AM           6638 .openpublishing.redirection.wmf.json
+-a---           7/27/2024  8:50 AM            285 .vale.ini
+-a---           7/27/2024  8:50 AM           7507 build.ps1
+-a---           7/27/2024  8:50 AM            269 cabgen-bootstrap.yml
+-a---           7/27/2024  8:50 AM           2035 ci-steps.yml
+-a---           7/27/2024  8:50 AM            639 ci.yml
+-a---           7/27/2024  8:50 AM            568 CODE_OF_CONDUCT.md
+-a---           7/27/2024  8:50 AM            247 CONTRIBUTING.md
+-a---           7/27/2024  8:50 AM           1265 daily.yml
+-a---           7/27/2024  8:58 AM              0 files.txt
+-a---           7/27/2024  8:50 AM          19047 LICENSE
+-a---           7/27/2024  8:50 AM           1106 LICENSE-CODE
+-a---           7/27/2024  8:50 AM           4090 README.md
+-a---           7/27/2024  8:50 AM           2798 SECURITY.md
+-a---           7/27/2024  8:50 AM           1229 ThirdPartyNotices
+
