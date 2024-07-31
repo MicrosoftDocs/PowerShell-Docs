@@ -1,7 +1,7 @@
 ---
 description: Registry
 Locale: en-US
-ms.date: 03/01/2023
+ms.date: 07/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_registry_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Registry Provider
@@ -30,43 +30,43 @@ The PowerShell **Registry** provider lets you get, add, change,
 clear, and delete registry keys, entries, and values in PowerShell.
 
 The **Registry** drives are a hierarchical namespace containing the registry
-keys and subkeys on your computer. Registry entries and values are not
-components of that hierarchy. Instead, they are properties of each of the
-keys.
+keys and subkeys on your computer. Registry entries and values aren't
+components of that hierarchy. Instead, they're properties of each of the keys.
 
-The **Registry** provider supports the following cmdlets, which are covered
-in this article.
+The **Registry** provider supports the following cmdlets:
 
-- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
-- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
-- [Invoke-Item](xref:Microsoft.PowerShell.Management.Invoke-Item)
-- [Move-Item](xref:Microsoft.PowerShell.Management.Move-Item)
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Clear-ItemProperty](xref:Microsoft.PowerShell.Management.Clear-ItemProperty)
-- [Get-ItemProperty](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
-- [New-ItemProperty](xref:Microsoft.PowerShell.Management.New-ItemProperty)
-- [Remove-ItemProperty](xref:Microsoft.PowerShell.Management.Remove-ItemProperty)
-- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
-- [Get-Acl](xref:Microsoft.PowerShell.Security.Get-Acl)
-- [Set-Acl](xref:Microsoft.PowerShell.Security.Set-Acl)
+- [Get-Location][13]
+- [Set-Location][23]
+- [Get-Item][10]
+- [Get-ChildItem][09]
+- [Invoke-Item][14]
+- [Move-Item][15]
+- [New-Item][17]
+- [Remove-Item][19]
+- [Clear-ItemProperty][06]
+- [Get-ItemProperty][11]
+- [New-ItemProperty][18]
+- [Remove-ItemProperty][20]
+- [Set-ItemProperty][22]
+- [Get-Acl][24]
+- [Set-Acl][25]
 
 ## Types exposed by this provider
 
-Registry keys are represented as instances of the
-[Microsoft.Win32.RegistryKey](/dotnet/api/microsoft.win32.registrykey)
-class. Registry entries are represented as instances of the
-[PSCustomObject](/dotnet/api/system.management.automation.pscustomobject)
-class.
+The **Registry** provider returns registry data in one of two types:
+
+- [Microsoft.Win32.RegistryKey][01] for registry keys
+- [PSCustomObject][02] for registry values
 
 ## Navigating the Registry drives
 
-The **Registry** provider exposes its data store as two default drives. The
-registry location HKEY_LOCAL_MACHINE is mapped to the `HKLM:` drive and
-HKEY_CURRENT_USER is mapped to the `HKCU:` drive. To work with the registry,
-you can change your location to the `HKLM:` drive using the following command.
+The **Registry** provider exposes its data store as two default drives.
+
+- `HKLM:` maps to the `HKEY_LOCAL_MACHINE` registry hive
+- `HKCU:` maps to the `HKEY_CURRENT_USER` registry hive
+
+To work with the registry, you can change your location to the `HKLM:` drive
+using the following command.
 
 ```powershell
 Set-Location HKLM:
@@ -80,8 +80,8 @@ Set-Location C:
 
 You can also work with the **Registry** provider from any other PowerShell
 drive. To reference a registry key from another location, use the drive name
-(`HKLM:`, `HKCU:`) in the path. Use a backslash (`\`) or a forward slash (`/`) to
-indicate a level of the **Registry** drive.
+(`HKLM:`, `HKCU:`) in the path. Use a backslash (`\`) or a forward slash (`/`)
+to indicate a level of the **Registry** drive.
 
 ```powershell
 PS C:\> cd HKLM:\Software
@@ -89,10 +89,9 @@ PS C:\> cd HKLM:\Software
 
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
-> paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem),
-> `cd` is an alias for [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location),
-> and `pwd` is an alias for [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
+> paths. Commands such as `dir` and `ls` are aliases for [Get-ChildItem][09],
+> `cd` is an alias for [Set-Location][23], and `pwd` is an alias for
+> [Get-Location][13].
 
 This last example shows another path syntax you can use to navigate the
 **Registry** provider. This syntax uses the provider name, followed by two
@@ -106,7 +105,7 @@ cd "Registry::HKEY_LOCAL_MACHINE\Software"
 ## Displaying the contents of registry keys
 
 The registry is divided into keys, subkeys, and entries. For more information
-about registry structure, see [Structure of the Registry](/windows/desktop/sysinfo/structure-of-the-registry).
+about registry structure, see [Structure of the Registry][03].
 
 In a **Registry** drive, each key is a container. A key can contain any number
 of keys. A registry key that has a parent key is called a subkey. You can
@@ -114,8 +113,8 @@ use `Get-ChildItem` to view registry keys and `Set-Location` to navigate to
 a key path.
 
 Registry values are attributes of a registry key. In the **Registry** drive,
-they are called **Item Properties**. A registry key can have both children
-keys and item properties.
+they're called **Item Properties**. A registry key can have both children keys
+and item properties.
 
 In this example, the difference between `Get-Item` and `Get-ChildItem` is
 shown. When you use `Get-Item` on the "Spooler" registry key, you can view its
@@ -146,9 +145,9 @@ Spooler     DependOnService    : {RPCSS, http}
 ```
 
 Each registry key can also have subkeys. When you use `Get-Item` on a registry
-key, the subkeys are not displayed. The `Get-ChildItem` cmdlet will show you
-children items of the "Spooler" key, including each subkey's properties. The
-parent keys properties are not shown when using `Get-ChildItem`.
+key, the subkeys aren't displayed. The `Get-ChildItem` cmdlet shows you subkeys
+of the "Spooler" key, including each subkey's properties. The parent keys
+properties aren't shown when using `Get-ChildItem`.
 
 ```powershell
 Get-ChildItem -Path HKLM:\SYSTEM\CurrentControlSet\Services\Spooler
@@ -192,8 +191,8 @@ Spooler          DependOnService    : {RPCSS, http}
 For more information on the cmdlets covered in this section, see the following
 articles.
 
--[Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
--[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+-[Get-Item][10]
+-[Get-ChildItem][09]
 
 ## Viewing registry key values
 
@@ -262,15 +261,15 @@ Get-ItemPropertyValue -Path HKLM:\SOFTWARE\Microsoft\Wbem -Name BUILD
 For more information on the cmdlets used in this section, see the following
 articles.
 
-- [Get-ItemProperty](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
-- [Get-ItemPropertyValue](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
+- [Get-ItemProperty][11]
+- [Get-ItemPropertyValue][12]
 
 ## Changing registry key values
 
-The `Set-ItemProperty` cmdlet will set attributes for registry keys. The
-following example uses `Set-ItemProperty` to change the spooler service start
-type to manual. The example changes the **StartType** back to _Automatic_
-using the `Set-Service` cmdlet.
+The `Set-ItemProperty` cmdlet sets registry values associated with a registry
+key. The following example uses `Set-ItemProperty` to change the spooler
+service start type to manual. The example changes the **StartType** back to
+`Automatic` using the `Set-Service` cmdlet.
 
 ```powershell
 Get-Service spooler | Select-Object Name, StartMode
@@ -298,7 +297,7 @@ spooler    Manual
 Set-Service -Name Spooler -StartupType Automatic
 ```
 
-Each registry key has a _default_ value. You can change the _default_ value
+Each registry key has a _default_ value. You can change the `default` value
 for a registry key with either `Set-Item` or `Set-ItemProperty`.
 
 ```powershell
@@ -309,12 +308,12 @@ Set-Item -Path HKLM:\SOFTWARE\Contoso -Value "two"
 For more information on the cmdlets used in this section, see the following
 articles.
 
-- [Set-Item](xref:Microsoft.PowerShell.Management.Set-Item)
-- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
+- [Set-Item][21]
+- [Set-ItemProperty][22]
 
 ## Creating registry keys and values
 
-The `New-Item` cmdlet will create registry keys with a name that you provide.
+The `New-Item` cmdlet creates new registry keys with a name that you provide.
 You can also use the `mkdir` function, which calls the `New-Item` cmdlet
 internally.
 
@@ -343,18 +342,18 @@ New-ItemProperty -Path $path -Name Test -Type DWORD -Value 1
 > Review the dynamic parameters section in this article for other allowed type
 > values.
 
-For detailed cmdlet usage, see [New-ItemProperty](xref:Microsoft.PowerShell.Management.New-ItemProperty).
+For detailed cmdlet usage, see [New-ItemProperty][18].
 
 ## Copying registry keys and values
 
 In the **Registry** provider, use the `Copy-Item` cmdlet copies registry keys
 and values. Use the `Copy-ItemProperty` cmdlet to copy registry values only.
 The following command copies the "Contoso" registry key, and its properties to
-the specified location "HKLM:\Software\Fabrikam".
+the specified location `HKLM:\Software\Fabrikam`.
 
-`Copy-Item` creates the destination key if it does not exist. If the
-destination key exists, `Copy-Item` creates a duplicate of the source key
-as a child item (subkey) of the destination key.
+`Copy-Item` creates the destination key if it doesn't exist. If the destination
+key exists, `Copy-Item` creates a duplicate of the source key as a child item
+(subkey) of the destination key.
 
 ```powershell
 Copy-Item -Path  HKLM:\Software\Contoso -Destination HKLM:\Software\Fabrikam
@@ -372,14 +371,14 @@ Copy-ItemProperty -Path $source -Destination $dest -Name Server
 For more information on the cmdlets used in this section, see the following
 articles.
 
-- [Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item)
-- [Copy-ItemProperty](xref:Microsoft.PowerShell.Management.Copy-ItemProperty)
+- [Copy-Item][07]
+- [Copy-ItemProperty][08]
 
 ## Moving registry keys and values
 
 The `Move-Item` and `Move-ItemProperty` cmdlets behave like their "Copy"
 counterparts. If the destination exists, `Move-Item` moves the source key
-underneath the destination key. If the destination key does not exist, the
+underneath the destination key. If the destination key doesn't exist, the
 source key is moved to the destination path.
 
 The following command moves the "Contoso" key to the path
@@ -389,8 +388,8 @@ The following command moves the "Contoso" key to the path
 Move-Item -Path HKLM:\SOFTWARE\Contoso -Destination HKLM:\SOFTWARE\Fabrikam
 ```
 
-This command moves all of the properties from `HKLM:\SOFTWARE\ContosoCompany`
-to `HKLM:\SOFTWARE\Fabrikam`.
+This command moves all properties from `HKLM:\SOFTWARE\ContosoCompany` to
+`HKLM:\SOFTWARE\Fabrikam`.
 
 ```powershell
 $source = "HKLM:\SOFTWARE\Contoso"
@@ -401,8 +400,8 @@ Move-ItemProperty -Path $source -Destination $dest -Name *
 For more information on the cmdlets used in this section, see the following
 articles.
 
-- [Move-Item](xref:Microsoft.PowerShell.Management.Move-Item)
-- [Move-ItemProperty](xref:Microsoft.PowerShell.Management.Move-ItemProperty)
+- [Move-Item][15]
+- [Move-ItemProperty][16]
 
 ## Renaming registry keys and values
 
@@ -432,14 +431,14 @@ $acl | Set-Acl -Path HKLM:\SOFTWARE\Contoso
 
 For more examples and cmdlet usage details see the following articles.
 
-- [Get-Acl](xref:Microsoft.PowerShell.Security.Get-Acl)
-- [Set-Acl](xref:Microsoft.PowerShell.Security.Set-Acl)
+- [Get-Acl][24]
+- [Set-Acl][25]
 
 ## Removing and clearing registry keys and values
 
-You can remove contained items by using `Remove-Item`, but you will be
-prompted to confirm the removal if the item contains anything else. The
-following example attempts to delete a key `HKLM:\SOFTWARE\Contoso`.
+You can remove contained items using `Remove-Item`. You are prompted to confirm
+the removal if the item contains anything else. The following example attempts
+to delete a key `HKLM:\SOFTWARE\Contoso`.
 
 ```powershell
 dir HKLM:\SOFTWARE\Contoso\
@@ -460,7 +459,7 @@ Remove-Item -Path HKLM:\SOFTWARE\Contoso
 ```Output
 Confirm
 The item at HKLM:\SOFTWARE\Contoso has children and the -Recurse
-parameter was not specified. If you continue, all children will be removed
+parameter wasn't specified. If you continue, all children will be removed
 with the item. Are you sure you want to continue?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
 (default is "Y"):
@@ -521,10 +520,10 @@ Contoso
 
 For more examples and cmdlet usage details see the following articles.
 
-- [Clear-Item](xref:Microsoft.PowerShell.Management.Clear-Item)
-- [Clear-ItemProperty](xref:Microsoft.PowerShell.Management.Clear-ItemProperty)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Remove-ItemProperty](xref:Microsoft.PowerShell.Management.Remove-ItemProperty)
+- [Clear-Item][05]
+- [Clear-ItemProperty][06]
+- [Remove-Item][19]
+- [Remove-ItemProperty][20]
 
 ## Dynamic parameters
 
@@ -534,32 +533,29 @@ provider-enabled drive.
 
 ### Type <Microsoft.Win32.RegistryValueKind>
 
-Establishes or changes the data type of a registry value. The default is `String` (REG_SZ).
+Establishes or changes the data type of a registry value. The default is
+`String` (REG_SZ).
 
-This parameter works as designed on the
-[Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
-cmdlet. It is also available on the
-[Set-Item](xref:Microsoft.PowerShell.Management.Set-Item) cmdlet in the
-registry drives, but it has no effect.
+This parameter works as designed on the [Set-ItemProperty][22] cmdlet. It's
+also available on the [Set-Item][21] cmdlet in the registry drives, but it has
+no effect.
 
-|     Value      |                          Description                           |
-| -------------- | -------------------------------------------------------------- |
-| `String`       | Specifies a null-terminated string. Used for REG_SZ values.    |
-| `ExpandString` | Specifies a null-terminated string that contains unexpanded    |
-|                | references to environment variables that are expanded when     |
-|                | the value is retrieved. Used for REG_EXPAND_SZ values.         |
-| `Binary`       | Specifies binary data in any form. Used for REG_BINARY values. |
-| `DWord`        | Specifies a 32-bit binary number. Used for REG_DWORD values.   |
-| `MultiString`  | Specifies an array of null-terminated strings terminated by    |
-|                | two null characters. Used for REG_MULTI_SZ values.             |
-| `QWord`        | Specifies a 64-bit binary number. Used for REG_QWORD values.   |
-| `Unknown`      | Indicates an unsupported registry data type, such as           |
-|                | REG_RESOURCE_LIST values.                                      |
-
-#### Cmdlets supported
-
-- [Set-Item](xref:Microsoft.PowerShell.Management.Set-Item)
-- [Set-ItemProperty](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
+- `String` - Used for REG_SZ values. Pass a `[System.String]` object to the
+  **Value** parameter.
+- `ExpandString` - Used for REG_EXPAND_SZ values. Pass a `[System.String]`
+  object to the **Value** parameter. The string should contain unexpanded
+  references to environment variables that are expanded when the value is
+  retrieved.
+- `Binary` - Used for REG_BINARY values. Pass a `[System.Byte[]]` object to the
+  **Value** parameter.
+- `DWord` - Used for REG_DWORD values. Pass a `[System.Int32]` object to the
+  **Value** parameter.
+- `MultiString` - Used for REG_MULTI_SZ values. Pass a `[System.String[]]`
+  object to the **Value** parameter.
+- `QWord` - Used for REG_QWORD values. Pass a `[System.Int64]` object to the
+  **Value** parameter.
+- `Unknown` - Indicates an unsupported registry data type, such as
+  REG_RESOURCE_LIST values.
 
 ## Using the pipeline
 
@@ -587,4 +583,31 @@ Get-Help Get-ChildItem -Path HKLM:
 
 ## See also
 
-- [about_Providers](about_Providers.md)
+- [about_Providers][04]
+
+<!-- link references -->
+[01]: /dotnet/api/microsoft.win32.registrykey
+[02]: /dotnet/api/system.management.automation.pscustomobject
+[03]: /windows/desktop/sysinfo/structure-of-the-registry
+[04]: about_Providers.md
+[05]: xref:Microsoft.PowerShell.Management.Clear-Item
+[06]: xref:Microsoft.PowerShell.Management.Clear-ItemProperty
+[07]: xref:Microsoft.PowerShell.Management.Copy-Item
+[08]: xref:Microsoft.PowerShell.Management.Copy-ItemProperty
+[09]: xref:Microsoft.PowerShell.Management.Get-ChildItem
+[10]: xref:Microsoft.PowerShell.Management.Get-Item
+[11]: xref:Microsoft.PowerShell.Management.Get-ItemProperty
+[12]: xref:Microsoft.PowerShell.Management.Get-ItemPropertyValue
+[13]: xref:Microsoft.PowerShell.Management.Get-Location
+[14]: xref:Microsoft.PowerShell.Management.Invoke-Item
+[15]: xref:Microsoft.PowerShell.Management.Move-Item
+[16]: xref:Microsoft.PowerShell.Management.Move-ItemProperty
+[17]: xref:Microsoft.PowerShell.Management.New-Item
+[18]: xref:Microsoft.PowerShell.Management.New-ItemProperty
+[19]: xref:Microsoft.PowerShell.Management.Remove-Item
+[20]: xref:Microsoft.PowerShell.Management.Remove-ItemProperty
+[21]: xref:Microsoft.PowerShell.Management.Set-Item
+[22]: xref:Microsoft.PowerShell.Management.Set-ItemProperty
+[23]: xref:Microsoft.PowerShell.Management.Set-Location
+[24]: xref:Microsoft.PowerShell.Security.Get-Acl
+[25]: xref:Microsoft.PowerShell.Security.Set-Acl
