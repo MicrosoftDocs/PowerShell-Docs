@@ -1,6 +1,6 @@
 ---
 description: This article provides specific guidance for using Markdown in our documentation.
-ms.date: 04/23/2024
+ms.date: 08/01/2024
 title: Markdown best practices
 ---
 # Markdown best practices
@@ -50,9 +50,9 @@ Only use [ATX headings][07] (`#` style, as opposed to `=` or `-` style headers).
 
 ## Limit line length to 100 characters
 
-This applies to conceptual articles and cmdlet reference. Limiting the line length improves the
-readability of `git` diffs and history. It also makes it easier for other writers to make
-contributions.
+This applies to conceptual articles and cmdlet reference. For `about_` topics, limit the line
+length to 80 characters. Limiting the line length improves the readability of `git` diffs and
+history. It also makes it easier for other writers to make contributions.
 
 Use the [Reflow Markdown][09] extension in VS Code to reflow paragraphs to fit the prescribed line
 length.
