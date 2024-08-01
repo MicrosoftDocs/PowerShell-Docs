@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 07/12/2024
+ms.date: 08/01/2024
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -13,9 +13,12 @@ available from the [Microsoft Artifact Registry][mcr] for the following versions
 
 - Alpine 3.17 - OS support ends on 2024-11-22
 
-Docker images of PowerShell aren't available for Alpine 3.18 and 3.19 at this time.
+Docker images of PowerShell aren't available for Alpine 3.18 and 3.19.
 
-Preview versions of PowerShell are provided for testing and feedback only.
+> [!IMPORTANT]
+> The Docker images are built from official operating system (OS) images provide by the OS
+> distributor. These images may not have the latest security updates. Microsoft recommends that you
+> update the OS packages to the latest version to ensure the latest security updates are applied.
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-alpine]: https://alpinelinux.org/releases/

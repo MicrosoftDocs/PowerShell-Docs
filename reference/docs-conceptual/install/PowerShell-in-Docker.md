@@ -1,6 +1,6 @@
 ---
 description: How to use PowerShell that's preinstalled in a Docker image.
-ms.date: 02/05/2024
+ms.date: 08/01/2024
 ms.devlang: powershell
 ms.topic: conceptual
 title: Using PowerShell in Docker
@@ -40,6 +40,10 @@ version of PowerShell.
 ```console
 docker run -it mcr.microsoft.com/powershell:preview
 ```
+> [!IMPORTANT]
+> The Docker images are built from official operating system (OS) images provide by the OS
+> distributor. These images may not have the latest security updates. Microsoft recommends that you
+> update the OS packages to the latest version to ensure the latest security updates are applied.
 
 ### Remove the image when no longer needed
 
