@@ -1,12 +1,14 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 07/12/2024
+ms.date: 08/01/2024
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
 Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycle] or the version of
 [RHEL reaches end-of-support][eol-rhel].
+
+Install package files (`.rpm`) are also available from [https://packages.microsoft.com/][pcm].
 
 Docker images containing PowerShell 7.2, PowerShell 7.4, and PowerShell 7.5-preview for x64 are
 available from the [Microsoft Artifact Registry][mcr] for the following versions of RHEL:
@@ -17,7 +19,10 @@ available from the [Microsoft Artifact Registry][mcr] for the following versions
 PowerShell is tested on Red Hat Universal Base Images (UBI). For more information, see the
 [UBI information page][ubi].
 
-Install package files (`.rpm`) are also available from [https://packages.microsoft.com/][pcm].
+> [!IMPORTANT]
+> The Docker images are built from official operating system (OS) images provide by the OS
+> distributor. These images may not have the latest security updates. Microsoft recommends that you
+> update the OS packages to the latest version to ensure the latest security updates are applied.
 
 [lifecycle]: /powershell/scripting/install/powershell-support-lifecycle
 [eol-rhel]: https://access.redhat.com/support/policy/updates/errata/
