@@ -51,7 +51,7 @@ Only use [ATX headings][07] (`#` style, as opposed to `=` or `-` style headers).
 ## Limit line length to 100 characters
 
 This applies to conceptual articles and cmdlet reference. For `about_` topics, limit the line
-length to 80 characters. Limiting the line length improves the readability of `git` diffs and
+length to 79 characters. Limiting the line length improves the readability of `git` diffs and
 history. It also makes it easier for other writers to make contributions.
 
 Use the [Reflow Markdown][09] extension in VS Code to reflow paragraphs to fit the prescribed line
