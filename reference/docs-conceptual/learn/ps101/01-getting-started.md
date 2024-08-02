@@ -1,7 +1,7 @@
 ---
 description: Where to find and how to launch PowerShell for new users.
 ms.custom: Contributor-mikefrobbins
-ms.date: 06/25/2024
+ms.date: 08/02/2024
 ms.reviewer: mirobb
 title: Getting started with PowerShell
 ---
@@ -105,7 +105,7 @@ To start PowerShell with elevated rights, right-click the **Windows PowerShell**
 Windows prompts you for credentials because you logged into Windows as an ordinary user. Enter the
 credentials of your domain user who is a local administrator, as shown in Figure 1-4.
 
-![Figure 1-4 - User account control - Enter credentials.](media/figure1-4.jpg)
+![Figure 1-4 - User account control - Enter credentials.](media/figure1-4.png)
 
 Notice that the title bar of the elevated console windows says **Administrator: Windows
 PowerShell**, as shown in Figure 1-5.
