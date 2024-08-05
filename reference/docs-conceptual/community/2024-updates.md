@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 07/01/2024
+ms.date: 08/05/2024
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,34 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-July
+
+- Updates for new releases of PowerShell 7.2.22 and 7.4.4
+- Improved registry examples in:
+  - [Working with registry entries](/powershell/scripting/samples/working-with-registry-entries)
+  - [about_Registry_Provider](/powershell/module/microsoft.powershell.core/about/about_registry_provider)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 38 PRs merged (11 from Community)
+- 20 issues opened (20 from Community)
+- 24 issues closed (24 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id   | PRs merged | Issues opened |
+| ------------ | :--------: | :-----------: |
+| guillermooo  |     4      |               |
+| darthwalsh   |     2      |               |
+| shekeriev    |     1      |               |
+| Blake-Madden |     1      |               |
+| paaspaas00   |     1      |               |
+| ninmonkey    |     1      |       1       |
+| o-l-a-v      |     1      |               |
 
 ## 2024-June
 
