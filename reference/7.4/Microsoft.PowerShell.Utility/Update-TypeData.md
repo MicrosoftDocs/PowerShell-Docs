@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/10/2024
+ms.date: 08/07/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-typedata?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-TypeData
@@ -111,12 +111,21 @@ This example uses `Update-TypeData` to add the **Quarter** script property to **
 objects in the current session, such as those returned by the `Get-Date` cmdlet.
 
 ```powershell
-Update-TypeData -TypeName "System.DateTime" -MemberType ScriptProperty -MemberName "Quarter" -Value {
-  if ($this.Month -in @(1,2,3)) {"Q1"}
-  elseif ($this.Month -in @(4,5,6)) {"Q2"}
-  elseif ($this.Month -in @(7,8,9)) {"Q3"}
-  else {"Q4"}
+$typeDataParams = @{
+    TypeName   = 'System.DateTime'
+    MemberType = 'ScriptProperty'
+    MemberName = 'Quarter'
+    Value      = {
+        switch ($this.Month) {
+            { $_ -in @(1, 2, 3) } { return 'Q1' }
+            { $_ -in @(4, 5, 6) } { return 'Q2' }
+            { $_ -in @(7, 8, 9) } { return 'Q3' }
+            default               { return 'Q4' }
+        }
+    }
 }
+Update-TypeData @typeDataParams
+
 (Get-Date).Quarter
 ```
 
@@ -140,54 +149,220 @@ The second command gets the new Quarter property of the current date.
 ### Example 4: Update a type that displays in lists by default
 
 This example shows how to set the properties of a type that displays in lists by default, that is,
-when no properties are specified. Because the type data is not specified in a `Types.ps1xml` file, it
-is effective only in the current session.
+when no properties are specified. Because the type data is not specified in a `Types.ps1xml` file,
+it is effective only in the current session.
 
 ```powershell
-Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet "DateTime", "DayOfYear", "Quarter"
+Get-Date | Format-list
+
+Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet @(
+    'DateTime'
+    'DayOfYear'
+    'Quarter'
+)
+
 Get-Date | Format-List
 ```
 
 ```Output
-Thursday, March 15, 2012 12:00:00 AM
-DayOfYear : 75
-Quarter   : Q1
+DisplayHint : DateTime
+Date        : 8/7/2024 12:00:00 AM
+Day         : 7
+DayOfWeek   : Wednesday
+DayOfYear   : 220
+Hour        : 10
+Kind        : Local
+Millisecond : 568
+Microsecond : 308
+Nanosecond  : 600
+Minute      : 34
+Month       : 8
+Second      : 43
+Ticks       : 638586236835683086
+TimeOfDay   : 10:34:43.5683086
+Year        : 2024
+DateTime    : Wednesday, August 7, 2024 10:34:43 AM
+Quarter     : Q3
+
+
+DateTime  : Wednesday, August 7, 2024 10:34:43 AM
+DayOfYear : 220
+Quarter   : Q3
 ```
 
-The first command uses the `Update-TypeData` cmdlet to set the default list properties for the
+The first command shows the list view for the `Get-Date` command, which outputs a
+**System.DateTime** object that represents the current date. The command uses a pipeline operator
+(`|`) to send the **DateTime** object to the `Format-List` cmdlet. Because the `Format-List`
+command does not specify the properties to display in the list, PowerShell displays every public,
+non-hidden property for the object.
+
+The second command uses the `Update-TypeData` cmdlet to set the default list properties for the
 **System.DateTime** type. The command uses the **TypeName** parameter to specify the type and the
 **DefaultDisplayPropertySet** parameter to specify the default properties for a list. The selected
 properties include the new **Quarter** script property that was added in a previous example.
 
-The second command uses the `Get-Date` cmdlet to get a **System.DateTime** object that represents
-the current date. The command uses a pipeline operator (`|`) to send the **DateTime** object to the
-`Format-List` cmdlet. Because the `Format-List` command does not specify the properties to display
-in the list, PowerShell uses the default values that were established by the `Update-TypeData`
-command.
+The last command gets the currnet date and displays it in a list format again. It only displays the
+properties defined in the `Update-TypeData` command, instead of the full list of properties.
 
-### Example 5: Update type data for a piped object
+### Example 5: Set the property a type displays in wide format
+
+This example demonstrates how to create a new script property and use it
+as the default property displayed when the type is passed to the `Format-Wide` cmdlet.
 
 ```powershell
-Get-Module | Update-TypeData -MemberType ScriptProperty -MemberName "SupportsUpdatableHelp" -Value {
-  if ($this.HelpInfoUri) {$True} else {$False}
-}
-Get-Module -ListAvailable | Format-Table Name, SupportsUpdatableHelp
+Get-Command *File* | Format-Wide
 ```
 
 ```Output
-Name                             SupportsUpdatableHelp
-----                             ---------------------
-Microsoft.PowerShell.Diagnostics                  True
-Microsoft.PowerShell.Host                         True
-Microsoft.PowerShell.Management                   True
-Microsoft.PowerShell.Security                     True
-Microsoft.PowerShell.Utility                      True
-Microsoft.WSMan.Management                        True
-PSDiagnostics                                    False
-PSScheduledJob                                    True
-PSWorkflow                                        True
-ServerManager                                     True
-TroubleshootingPack                              False
+Set-AppPackageProvisionedDataFile                            Set-ProvisionedAppPackageDataFile
+Set-ProvisionedAppXDataFile                                  Write-FileSystemCache
+Write-FileSystemCache                                        Add-PoshGitToProfile
+Block-FileShareAccess                                        Clear-FileStorageTier
+Close-SmbOpenFile                                            Debug-FileShare
+Disable-NetIPHttpsProfile                                    Enable-NetIPHttpsProfile
+Get-FileIntegrity                                            Get-FileShare
+Get-FileShareAccessControlEntry                              Get-FileStorageTier
+Get-NetConnectionProfile                                     Get-NetFirewallHyperVProfile
+Get-NetFirewallProfile                                       Get-SmbOpenFile
+Get-StorageFileServer                                        Get-SupportedFileSystems
+Grant-FileShareAccess                                        New-FileShare
+New-NetFirewallHyperVProfile                                 New-ScriptFileInfo
+New-ScriptFileInfo                                           New-StorageFileServer
+Publish-BCFileContent                                        Remove-FileShare
+Remove-NetFirewallHyperVProfile                              Remove-PoshGitFromProfile
+Remove-StorageFileServer                                     Repair-FileIntegrity
+Revoke-FileShareAccess                                       Set-FileIntegrity
+Set-FileShare                                                Set-FileStorageTier
+Set-NetConnectionProfile                                     Set-NetFirewallHyperVProfile
+Set-NetFirewallProfile                                       Set-StorageBusProfile
+Set-StorageFileServer                                        Test-ScriptFileInfo
+Test-ScriptFileInfo                                          Unblock-FileShareAccess
+Update-ScriptFileInfo                                        Update-ScriptFileInfo
+Add-BitsFile                                                 Get-AppLockerFileInformation
+Get-FileHash                                                 Get-PSScriptFileInfo
+Import-PowerShellDataFile                                    New-FileCatalog
+New-PSRoleCapabilityFile                                     New-PSScriptFileInfo
+New-PSSessionConfigurationFile                               New-TemporaryFile
+Out-File                                                     Set-AppXProvisionedDataFile
+Test-FileCatalog                                             Test-PSScriptFileInfo
+Test-PSSessionConfigurationFile                              Unblock-File
+Update-PSScriptFileInfo                                      FileDialogBroker.exe
+FileHistory.exe                                              forfiles.exe
+openfiles.exe
+```
+
+```powershell
+$typeDataParams = @{
+    TypeName               = 'System.Management.Automation.CommandInfo'
+    DefaultDisplayProperty = 'FullyQualifiedName'
+    MemberType             = 'ScriptProperty'
+    MemberName             = 'FullyQualifiedName'
+    Value                  = {
+        [OutputType([string])]
+        param()
+
+        # For executables, return the path to the application.
+        if ($this -is [System.Management.Automation.ApplicationInfo]) {
+            return $this.Path
+        }
+
+        # For commands defined outside a module, return only the name.
+        if ([string]::IsNullOrEmpty($this.ModuleName)) {
+            return $this.Name
+        }
+
+        # Return the fully-qualified command name "<ModuleName>\<CommandName>"
+        return '{0}\{1}' -f $this.ModuleName, $this.Name
+    }
+}
+Update-TypeData @typeDataParams
+
+Get-Command *File* | Format-Wide
+```
+
+```Output
+Dism\Set-AppPackageProvisionedDataFile                       Dism\Set-ProvisionedAppPackageDataFile
+Dism\Set-ProvisionedAppXDataFile                             Storage\Write-FileSystemCache
+VMDirectStorage\Write-FileSystemCache                        posh-git\Add-PoshGitToProfile
+Storage\Block-FileShareAccess                                Storage\Clear-FileStorageTier
+SmbShare\Close-SmbOpenFile                                   Storage\Debug-FileShare
+NetworkTransition\Disable-NetIPHttpsProfile                  NetworkTransition\Enable-NetIPHttpsProfile
+Storage\Get-FileIntegrity                                    Storage\Get-FileShare
+Storage\Get-FileShareAccessControlEntry                      Storage\Get-FileStorageTier
+NetConnection\Get-NetConnectionProfile                       NetSecurity\Get-NetFirewallHyperVProfile
+NetSecurity\Get-NetFirewallProfile                           SmbShare\Get-SmbOpenFile
+Storage\Get-StorageFileServer                                Storage\Get-SupportedFileSystems
+Storage\Grant-FileShareAccess                                Storage\New-FileShare
+NetSecurity\New-NetFirewallHyperVProfile                     PowerShellGet\New-ScriptFileInfo
+PowerShellGet\New-ScriptFileInfo                             Storage\New-StorageFileServer
+BranchCache\Publish-BCFileContent                            Storage\Remove-FileShare
+NetSecurity\Remove-NetFirewallHyperVProfile                  posh-git\Remove-PoshGitFromProfile
+Storage\Remove-StorageFileServer                             Storage\Repair-FileIntegrity
+Storage\Revoke-FileShareAccess                               Storage\Set-FileIntegrity
+Storage\Set-FileShare                                        Storage\Set-FileStorageTier
+NetConnection\Set-NetConnectionProfile                       NetSecurity\Set-NetFirewallHyperVProfile
+NetSecurity\Set-NetFirewallProfile                           StorageBusCache\Set-StorageBusProfile
+Storage\Set-StorageFileServer                                PowerShellGet\Test-ScriptFileInfo
+PowerShellGet\Test-ScriptFileInfo                            Storage\Unblock-FileShareAccess
+PowerShellGet\Update-ScriptFileInfo                          PowerShellGet\Update-ScriptFileInfo
+BitsTransfer\Add-BitsFile                                    AppLocker\Get-AppLockerFileInformation
+Microsoft.PowerShell.Utility\Get-FileHash                    Microsoft.PowerShell.PSResourceGet\Get-PSScriptFileInfo        
+Microsoft.PowerShell.Utility\Import-PowerShellDataFile       Microsoft.PowerShell.Security\New-FileCatalog
+Microsoft.PowerShell.Core\New-PSRoleCapabilityFile           Microsoft.PowerShell.PSResourceGet\New-PSScriptFileInfo        
+Microsoft.PowerShell.Core\New-PSSessionConfigurationFile     Microsoft.PowerShell.Utility\New-TemporaryFile
+Microsoft.PowerShell.Utility\Out-File                        Dism\Set-AppXProvisionedDataFile
+Microsoft.PowerShell.Security\Test-FileCatalog               Microsoft.PowerShell.PSResourceGet\Test-PSScriptFileInfo       
+Microsoft.PowerShell.Core\Test-PSSessionConfigurationFile    Microsoft.PowerShell.Utility\Unblock-File
+Microsoft.PowerShell.PSResourceGet\Update-PSScriptFileInfo   C:\WINDOWS\system32\FileDialogBroker.exe
+C:\WINDOWS\system32\FileHistory.exe                          C:\WINDOWS\system32\forfiles.exe
+C:\WINDOWS\system32\openfiles.exe
+```
+
+The first command uses the `Get-Command` cmdlet to return every command with a name containing the
+word `File`. It pipes the output to the `Format-Wide` cmdlet, which shows the names of the commands
+in columns.
+
+Next, the example uses `Update-TypeData` to define both the **DefaultDisplayProperty** and a new
+script property for the **CommandInfo** type. The output for `Get-Command` returns **CommandInfo**
+objects and objects derived from that type. The new script property, **FullyQualifiedName**,
+returns the full path to executable applications and the fully qualified name for cmdlets, which
+prefixes the cmdlet name with the module that defines it. The `Update-TypeData` cmdlet is able to
+define the new script property and use it as the **DefaultDisplayProperty** in the same command.
+
+Finally, the output shows the results of the `Get-Command` displayed in wide format after the type
+update. It shows the fully qualified name for cmdlets and the full path to executable applications.
+
+### Example 6: Update type data for a piped object
+
+```powershell
+$typeDataParams = @{
+    MemberType = 'ScriptProperty'
+    MemberName = 'SupportsUpdatableHelp'
+    Value      = {
+        [OutputType([bool])]
+        param()
+
+        return (-not [string]::IsNullOrEmpty($this.HelpInfoUri))
+    }
+}
+Get-Module Microsoft.PowerShell.Utility | Update-TypeData @typeDataParams
+
+Get-Module -ListAvailable -Name Microsoft.PowerShell.* |
+    Format-Table Name, SupportsUpdatableHelp
+```
+
+```Output
+Name                                      SupportsUpdatableHelp
+----                                      ---------------------
+Microsoft.PowerShell.Archive                               True
+Microsoft.PowerShell.Diagnostics                           True
+Microsoft.PowerShell.Host                                  True
+Microsoft.PowerShell.Management                            True
+Microsoft.PowerShell.PSResourceGet                         True
+Microsoft.PowerShell.Security                              True
+Microsoft.PowerShell.Utility                               True
+Microsoft.PowerShell.Operation.Validation                  True
+Microsoft.PowerShell.LocalAccounts                         True
 ```
 
 This example demonstrates that when you pipe an object to `Update-TypeData`, `Update-TypeData` adds
@@ -198,18 +373,18 @@ object type. However, if you pipe a collection of objects to `Update-TypeData`, 
 data of the first object type and then returns an error for all other objects in the collection
 because the member is already defined on the type.
 
-The first command uses the `Get-Module` cmdlet to get the PSScheduledJob module. The command pipes
-the module object to the `Update-TypeData` cmdlet, which updates the type data for the
-**System.Management.Automation.PSModuleInfo** type and the types derived from it, such as the
-ModuleInfoGrouping type that `Get-Module` returns when you use the **ListAvailable** parameter in
-the command.
+The first command uses the `Get-Module` cmdlet to get the **Microsoft.PowerShell.Utility** module.
+The command pipes the module object to the `Update-TypeData` cmdlet, which updates the type data
+for the **System.Management.Automation.PSModuleInfo** type and the types derived from it, such as
+the **ModuleInfoGrouping** type that `Get-Module` returns when you use the **ListAvailable**
+parameter in the command.
 
 The `Update-TypeData` commands adds the **SupportsUpdatableHelp** script property to all imported
-modules. The value of the **Value** parameter is a script that returns `$True` if the
-**HelpInfoUri** property of the module is populated and `$False` otherwise.
+modules. The value of the **Value** parameter is a script that returns `$true` if the
+**HelpInfoUri** property of the module is populated and `$false` otherwise.
 
 The second command pipes the module objects from `Get-Module` to the `Format-Table` cmdlet, which
-displays the **Name** and **SupportsUpdatableHelp** properties of all modules in a list.
+displays the **Name** and **SupportsUpdatableHelp** properties of the available modules.
 
 ## PARAMETERS
 
