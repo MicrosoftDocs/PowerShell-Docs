@@ -5,10 +5,10 @@ pr: none # Disable pull request triggers.
 
 resources:
   repositories:
-    - repository: templates
+    - repository: ReferenceAutomation
       type: git
       name: Content CI/ReferenceAutomation
       ref: refs/heads/master
 
 extends:
-  template: PowerShell/cabgen.yml@templates
+  template: PowerShell/cabgen.yml@ReferenceAutomation
