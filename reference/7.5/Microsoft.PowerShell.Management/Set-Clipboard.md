@@ -25,7 +25,7 @@ Set-Clipboard [-Value] <string[]> [-Append] [-PassThru] [-AsOSC52] [-WhatIf] [-C
 The `Set-Clipboard` cmdlet sets the contents of the clipboard.
 
 > [!NOTE]
-> On Linux, this cmdlet requires the `xclip` utility to be in the path.
+> On Linux, this cmdlet requires either the `xclip` (under X11) or `wl-copy` (under Wayland) utilities to be in the path.
 
 ## EXAMPLES
 
