@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/28/2024
+ms.date: 08/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
@@ -191,7 +191,7 @@ Mode                LastWriteTime         Length Name
 
 The `Get-ChildItem` cmdlet uses the **Path** parameter to specify `C:\Test\*.txt`. **Path** uses the
 asterisk (`*`) wildcard to specify all files with the filename extension `.txt`. The **Recurse**
-parameter searches the **Path** directory its subdirectories, as shown in the **Directory:**
+parameter searches the **Path** directory and its subdirectories, as shown in the **Directory:**
 headings. The **Force** parameter displays hidden files such as `hiddenfile.txt` that have a mode of
 **h**.
 
