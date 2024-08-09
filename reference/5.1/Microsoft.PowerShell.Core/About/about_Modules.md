@@ -1,7 +1,7 @@
 ---
 description: Explains how to install, import, and use PowerShell modules.
 Locale: en-US
-ms.date: 03/18/2024
+ms.date: 08/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Modules
@@ -23,21 +23,24 @@ functions, variables, and other resources that can be imported into a PowerShell
 session or any custom PowerShell program.
 
 Before the functionality contained in a module is usable, the module must be
-loaded into the PowerShell session. By default, PowerShell automatically loads an
-installed module the first time you use a command from the module. You can configure
-automatic module loading behavior using the variable `$PSModuleAutoloadingPreference`.
-For more information, see [about_Preference_Variables][08].
+loaded into the PowerShell session. By default, PowerShell automatically loads
+an installed module the first time you use a command from the module. You can
+configure automatic module loading behavior using the variable
+`$PSModuleAutoloadingPreference`. For more information, see
+[about_Preference_Variables][08].
 
-You can also manually unload or reload modules during a PowerShell session. To unload a
-module, use the `Remove-Module` cmdlet. To load or reload a module, use `Import-Module`.
+You can also manually unload or reload modules during a PowerShell session. To
+unload a module, use the `Remove-Module` cmdlet. To load or reload a module,
+use `Import-Module`.
 
-PowerShell comes with a base set of modules. You or third parties can create
-new PowerShell commands or other resources, and publish them as modules that
-users can install as needed.
+PowerShell comes with a base set of modules. Anyone can create new PowerShell
+commands or other resources, and publish them as modules that users can install
+as needed.
 
-You can write modules in C# as compiled .NET assemblies, known as native modules, or in 
-plain PowerShell, known as script modules. This topic explains how to use PowerShell
-modules. For information about how to create PowerShell modules, see [Writing a PowerShell Module][02].
+You can write modules in C# as compiled .NET assemblies, known as native
+modules, or in plain PowerShell, known as script modules. This topic explains
+how to use PowerShell modules. For information about how to create PowerShell
+modules, see [Writing a PowerShell Module][02].
 
 > [!NOTE]
 > Prior to PowerShell 3.0, cmdlets and providers were packaged in PowerShell
@@ -94,8 +97,8 @@ Use the following command to create a `Modules` folder for the current user:
 $folder = New-Item -Type Directory -Path $HOME\Documents\WindowsPowerShell\Modules
 ```
 
-Copy the entire module folder into the new created folder. In PowerShell use the
-`Copy-Item` cmdlet. For example, run the following command to copy the
+Copy the entire module folder into the new created folder. In PowerShell use
+the `Copy-Item` cmdlet. For example, run the following command to copy the
 `MyModule` folder from `C:\PSTest` to the folder you just created:
 
 ```powershell

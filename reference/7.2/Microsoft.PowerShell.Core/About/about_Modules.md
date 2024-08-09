@@ -1,7 +1,7 @@
 ---
 description: Explains how to install, import, and use PowerShell modules.
 Locale: en-US
-ms.date: 03/18/2024
+ms.date: 08/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Modules
@@ -13,29 +13,34 @@ Explains how to install, import, and use PowerShell modules.
 
 ## Long description
 
-PowerShell is a scripting language and a command shell. The language is
-comprised of [keywords][07], which provide the structure and logic of
-processing, and commands that perform the work. Commands in PowerShell are
-implemented as scripts, functions, or cmdlets.
+PowerShell is both a command shell and a scripting language. Commands in
+PowerShell are implemented as scripts, functions, or cmdlets. The language
+includes [keywords][07], which provide the structure and logic of processing,
+and other resources, such as variables, providers, aliases.
 
-A module is a self-contained reusable unit that can contain cmdlets, providers,
-functions, variables, and other types of resources that can be imported as a
-single unit.
+A module is a self-contained, reusable unit that can include cmdlets, providers,
+functions, variables, and other resources that can be imported into a PowerShell
+session or any custom PowerShell program.
 
-PowerShell comes with a base set of modules. You can also install more modules
-as needed. By default, installed modules are loaded automatically the first
-time you use a command from a module. Use the `$PSModuleAutoloadingPreference`
-variable to enable, disable and configure automatic loading of modules. For
-more information, see [about_Preference_Variables][08].
+Before the functionality contained in a module is usable, the module must be
+loaded into the PowerShell session. By default, PowerShell automatically loads
+an installed module the first time you use a command from the module. You can
+configure automatic module loading behavior using the variable
+`$PSModuleAutoloadingPreference`. For more information, see
+[about_Preference_Variables][08].
 
-You can unload or reload during a session. Use the `Remove-Module` cmdlet to
-unload a module from your session. Use the `Import-Module` cmdlet to load a
-module.
+You can also manually unload or reload modules during a PowerShell session. To
+unload a module, use the `Remove-Module` cmdlet. To load or reload a module,
+use `Import-Module`.
 
-Modules can be created as compiled .NET assemblies written in C#, or
-script-based modules written in PowerShell. This topic explains how to use
-PowerShell modules. For information about how to write PowerShell modules, see
-[Writing a PowerShell Module][02].
+PowerShell comes with a base set of modules. Anyone can create new PowerShell
+commands or other resources, and publish them as modules that users can install
+as needed.
+
+You can write modules in C# as compiled .NET assemblies, known as native
+modules, or in plain PowerShell, known as script modules. This topic explains
+how to use PowerShell modules. For information about how to create PowerShell
+modules, see [Writing a PowerShell Module][02].
 
 > [!NOTE]
 > Prior to PowerShell 3.0, cmdlets and providers were packaged in PowerShell
@@ -92,8 +97,8 @@ Use the following command to create a `Modules` folder for the current user:
 $folder = New-Item -Type Directory -Path $HOME\Documents\PowerShell\Modules
 ```
 
-Copy the entire module folder into the new created folder. In PowerShell use the
-`Copy-Item` cmdlet. For example, run the following command to copy the
+Copy the entire module folder into the new created folder. In PowerShell use
+the `Copy-Item` cmdlet. For example, run the following command to copy the
 `MyModule` folder from `C:\PSTest` to the folder you just created:
 
 ```powershell
