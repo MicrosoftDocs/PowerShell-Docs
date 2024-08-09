@@ -16,13 +16,13 @@ Explains how to install, import, and use PowerShell modules.
 PowerShell is both a command shell and a scripting language. Commands in
 PowerShell are implemented as scripts, functions, or cmdlets. The language
 includes [keywords][07], which provide the structure and logic of processing,
-and other resources, such as variables, providers, aliases, and more.
+and other resources, such as variables, providers, aliases.
 
-A module is a self-contained, reusable unit that can contain cmdlets, providers,
+A module is a self-contained, reusable unit that can include cmdlets, providers,
 functions, variables, and other resources that can be imported into a PowerShell
 session or any custom PowerShell program.
 
-Before the functionality contained in a module can be used, the module must be
+Before the functionality contained in a module is usable, the module must be
 loaded into the PowerShell session. By default, PowerShell automatically loads an
 installed module the first time you use a command from the module. You can configure
 automatic module loading behavior using the variable `$PSModuleAutoloadingPreference`.
@@ -35,8 +35,8 @@ PowerShell comes with a base set of modules. You or third parties can create
 new PowerShell commands or other resources, and publish them as modules that
 users can install as needed.
 
-Modules can be written in C# as compiled .NET assemblies, known as native modules,
-or in plain PowerShell, known as script modules. This topic explains how to use PowerShell
+You can write modules in C# as compiled .NET assemblies, known as native modules, or in 
+plain PowerShell, known as script modules. This topic explains how to use PowerShell
 modules. For information about how to create PowerShell modules, see [Writing a PowerShell Module][02].
 
 > [!NOTE]
