@@ -34,7 +34,7 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Running remove commands
+          - text: Running remote commands
             url: remoting/running-remote-commands.md
           - text: Using WS-Management (WSMan) Remoting in PowerShell
             url: remoting/wsman-remoting-in-powershell.md
