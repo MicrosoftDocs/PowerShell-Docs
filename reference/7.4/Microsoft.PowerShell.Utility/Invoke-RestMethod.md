@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/03/2024
+ms.date: 08/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -890,14 +890,16 @@ Accept wildcard characters: False
 
 ### -OutFile
 
-Saves the response body in the specified output file. Enter a path and filename. If you omit the
-path, the default is the current location. The name is treated as a literal path. Names that contain
-brackets (`[]`) must be enclosed in single quotes (`'`).
+By default, `Invoke-RestMethod` returns the results to the pipeline. When you use the **OutFile**
+parameter, the results are saved to the specified file and not returned to the pipeline. Enter a
+path and filename. To send the results to a file and to the pipeline, add the **Passthru**
+parameter.
 
-By default, `Invoke-RestMethod` returns the results to the pipeline.
+If you omit the path, the default is the current location. The name is treated as a literal path.
+Names that contain brackets (`[]`) must be enclosed in single quotes (`'`).
 
 Starting in PowerShell 7.4, you can specify a folder path without the filename. When you do, the
-file's name is the taken from the last segment of the resolved URI after any redirections. When you
+command uses filename from the last segment of the resolved URI after any redirections. When you
 specify a folder path for **OutFile**, you can't use the **Resume** parameter.
 
 ```yaml
@@ -918,8 +920,8 @@ This parameter is valid only when the **OutFile** parameter is also used in the 
 is to have the results written to the file and to the pipeline.
 
 > [!NOTE]
-> When you use the **PassThru** parameter, the output is written to the pipeline but the file is not
-> created. For more information, see
+> When you use the **PassThru** parameter, the output is written to the pipeline but the file isn't
+> created. This is fixed in PowerShell 7.5-preview.4. For more information, see
 > [PowerShell Issue #15409](https://github.com/PowerShell/PowerShell/issues/15409).
 
 ```yaml
