@@ -1,7 +1,7 @@
 ---
 description: Describes the built-in functions in PowerShell.
 Locale: en-US
-ms.date: 06/13/2024
+ms.date: 08/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_built-in_functions?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Built-in Functions
@@ -41,9 +41,12 @@ The script pauses execution and prompts the user to hit a key to continue.
 ## `help`
 
 This function invokes `Get-Help` with your parameters and passes the output to
-the systems pager command. On Windows systems, the pager is `more.com`. On
-non-Windows systems, `help` uses the pager defined by the `$env:PAGER`
-environment variable.
+the system's pager command. PowerShell uses a different default pager for
+Windows and non-Windows systems. On Windows systems, the default pager is
+`more.com`. On non-Windows systems, the default pager is `less`.
+
+If the `$env:PAGER` environment variable is defined, PowerShell uses the
+specified program instead of the system default.
 
 ## `prompt`
 
