@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/03/2024
+ms.date: 08/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -915,16 +915,17 @@ Accept wildcard characters: False
 
 ### -OutFile
 
-Specifies the output file for which this cmdlet saves the response body. Enter a path and filename.
+By default, `Invoke-WebRequest` returns the results to the pipeline. When you use the **OutFile**
+parameter, the results are saved to the specified file and not returned to the pipeline. Enter a
+path and filename. To send the results to a file and to the pipeline, add the **Passthru**
+parameter.
+
 If you omit the path, the default is the current location. The name is treated as a literal path.
 Names that contain brackets (`[]`) must be enclosed in single quotes (`'`).
 
-By default, `Invoke-WebRequest` returns the results to the pipeline. To send the results to a file
-and to the pipeline, use the **Passthru** parameter.
-
 Starting in PowerShell 7.4, you can specify a folder path without the filename. When you do, the
-file's name is the taken from the last segment of the resolved URI after any redirections. When you
-specify a folder path for **OutFile**, you can't use the **Resume** parameter.
+command uses the filename from the last segment of the resolved URI after any redirections. When
+you specify a folder path for **OutFile**, you can't use the **Resume** parameter.
 
 ```yaml
 Type: System.String
@@ -942,6 +943,11 @@ Accept wildcard characters: False
 
 Indicates that the cmdlet returns the results, in addition to writing them to a file. This parameter
 is valid only when the **OutFile** parameter is also used in the command.
+
+> [!NOTE]
+> When you use the **PassThru** parameter, the output is written to the pipeline but the file isn't
+> created. This is fixed in PowerShell 7.5-preview.4. For more information, see
+> [PowerShell Issue #15409](https://github.com/PowerShell/PowerShell/issues/15409).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
