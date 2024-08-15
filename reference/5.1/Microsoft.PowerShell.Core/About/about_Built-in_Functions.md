@@ -1,7 +1,7 @@
 ---
 description: Describes the built-in functions in PowerShell.
 Locale: en-US
-ms.date: 06/13/2024
+ms.date: 08/14/2024
 online version: https://learn.microsoft.com/powershell/module/Microsoft.PowerShell.Core/about/about_built-in_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Built-in Functions
@@ -46,7 +46,7 @@ more information, see [Get-Verb](xref:Microsoft.PowerShell.Core.Get-Verb)
 ## `help`
 
 This function invokes `Get-Help` with your parameters and passes the output to
-the systems pager command, `more.com`.
+the system's pager command, `more.com`.
 
 ## `ImportSystemModules`
 
