@@ -28,8 +28,8 @@ Set-WmiInstance [-Class] <String> [-Arguments <Hashtable>] [-PutType <PutType>] 
 ### Object
 
 ```
-Set-WmiInstance -InputObject <ManagementObject> [-Arguments <Hashtable>] [-PutType <PutType>] [-AsJob]
- [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-WmiInstance -InputObject <ManagementObject> [-Arguments <Hashtable>] [-PutType <PutType>]
+ [-AsJob] [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Path
@@ -45,27 +45,27 @@ Set-WmiInstance -Path <String> [-Arguments <Hashtable>] [-PutType <PutType>] [-A
 
 ```
 Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLevel>]
- [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
- [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges]
+ [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
+ [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Query
 
 ```
 Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLevel>]
- [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
- [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges]
+ [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
+ [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### List
 
 ```
 Set-WmiInstance [-PutType <PutType>] [-AsJob] [-Impersonation <ImpersonationLevel>]
- [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges] [-Authority <String>]
- [-Credential <PSCredential>] [-ThrottleLimit <Int32>] [-ComputerName <String[]>] [-Namespace <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Authentication <AuthenticationLevel>] [-Locale <String>] [-EnableAllPrivileges]
+ [-Authority <String>] [-Credential <PSCredential>] [-ThrottleLimit <Int32>]
+ [-ComputerName <String[]>] [-Namespace <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,15 +76,16 @@ Instrumentation (WMI) class. The created or updated instance is written to the W
 New CIM cmdlets, introduced Windows PowerShell 3.0, perform the same tasks as the WMI cmdlets. The
 CIM cmdlets comply with WS-Management (WSMan) standards and with the Common Information Model (CIM)
 standard. this enables cmdlets to use the same techniques to manage Windows-based computers and
-those running other operating systems. Instead of using `Set-WmiInstance`, consider using the [Set-CimInstance](/powershell/module/cimcmdlets/set-ciminstance)
-or [New-CimInstance](/powershell/module/cimcmdlets/new-ciminstance) cmdlets.
+those running other operating systems. Instead of using `Set-WmiInstance`, consider using the
+[Set-CimInstance](/powershell/module/cimcmdlets/set-ciminstance) or
+[New-CimInstance](/powershell/module/cimcmdlets/new-ciminstance) cmdlets.
 
 ## EXAMPLES
 
 ### Example 1: Set WMI logging level
 
 ```powershell
-Set-WmiInstance -Class Win32_WMISetting -Argument @{LoggingLevel=2}
+Set-WmiInstance -Class Win32_WMISetting -Arguments @{LoggingLevel=2}
 ```
 
 ```Output
@@ -100,8 +101,7 @@ __NAMESPACE                    : root\cimv2
 __PATH                         : \\SYSTEM01\root\cimv2:Win32_WMISetting=@
 ASPScriptDefaultNamespace      : \\root\cimv2
 ASPScriptEnabled               : False
-AutorecoverMofs                : {%windir%\system32\wbem\cimwin32.mof, %windir%\system32\wbem\ncprov.mof, %windir%\syst
-em32\wbem\wmipcima.mof, %windir%\system32\wbem\secrcw32.mof...}
+AutorecoverMofs                : {%windir%\system32\wbem\cimwin32.mof, %windir%\system32\wbem\n...}
 AutoStartWin9X                 :
 BackupInterval                 :
 BackupLastTime                 :
@@ -130,13 +130,21 @@ SettingID                      :
 
 This command sets the WMI logging level to 2. The command passes the property to be set and the
 value, together considered a value pair, in the argument parameter. The parameter takes a hash table
-that is defined by the `@{property = value}` construction. The class information that is returned
+that's defined by the `@{property = value}` construction. The class information that's returned
 reflects the new value.
 
 ### Example 2: Create an environment variable and its value
 
 ```powershell
-Set-WmiInstance -Class win32_environment -Argument @{Name="testvar";VariableValue="testvalue";UserName="<SYSTEM>"}
+$setWmiInstanceSplat = @{
+    Class = 'win32_environment'
+    Arguments = @{
+        Name="testvar"
+        VariableValue="testvalue"
+        UserName="<SYSTEM>"
+    }
+}
+Set-WmiInstance @setWmiInstanceSplat
 ```
 
 ```Output
@@ -160,14 +168,20 @@ UserName         : <SYSTEM>
 VariableValue    : testvalue
 ```
 
-This command creates the testvar environment variable that has the value testvalue. It does this by
-creating a new instance of the **Win32_Environment** WMI class. This operation requires appropriate
-credentials and that you may have to restart Windows PowerShell to see the new environment variable.
+This command creates the `testvar` environment variable that has the value `testvalue`. It does this
+by creating a new instance of the **Win32_Environment** WMI class. This operation requires
+appropriate credentials and that you may have to restart Windows PowerShell to see the new
+environment variable.
 
 ### Example 3: Set WMI logging level for several remote computers
 
 ```powershell
-Set-WmiInstance -Class Win32_WMISetting -Argument @{LoggingLevel=2} -Computername "system01", "system02", "system03"
+$setWmiInstanceSplat = @{
+    Class = 'Win32_WMISetting'
+    Arguments = @{LoggingLevel = 2}
+    ComputerName = 'system01', 'system02', 'system03'
+}
+Set-WmiInstance @setWmiInstanceSplat
 ```
 
 ```Output
@@ -183,8 +197,7 @@ __NAMESPACE                    : root\cimv2
 __PATH                         : \\SYSTEM01\root\cimv2:Win32_WMISetting=@
 ASPScriptDefaultNamespace      : \\root\cimv2
 ASPScriptEnabled               : False
-AutorecoverMofs                : {%windir%\system32\wbem\cimwin32.mof, %windir%\system32\wbem\ncprov.mof, %windir%\syst
-em32\wbem\wmipcima.mof, %windir%\system32\wbem\secrcw32.mof...}
+AutorecoverMofs                : {%windir%\system32\wbem\cimwin32.mof, %windir%\system32\wbem\n...}
 AutoStartWin9X                 :
 BackupInterval                 :
 BackupLastTime                 :
@@ -214,8 +227,8 @@ SettingID                      :
 
 This command sets the WMI logging level to 2. The command passes the property to be set and the
 value, together considered a value pair, in the argument parameter. The parameter takes a hash table
-that is defined by the `@{property = value}` construction. The returned class information reflects the
-new value.
+that's defined by the `@{property = value}` construction. The returned class information reflects
+the new value.
 
 ## PARAMETERS
 
@@ -252,11 +265,13 @@ job, use the cmdlets that contain the **Job** noun (the **Job** cmdlets). To get
 use the `Receive-Job` cmdlet.
 
 To use this parameter together with remote computers, the local and remote computers must be
-configured for remoting. Additionally, you must start Windows PowerShell by using the Run as
-administrator option in Windows Vista and later versions of the Windows operating system. For more
-information, see [about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
+configured for remoting. Additionally, you must start Windows PowerShell using the **Run as
+administrator** option. For more information, see
+[about_Remote_Requirements](../Microsoft.PowerShell.Core/About/about_Remote_Requirements.md).
 
-For more information about Windows PowerShell background jobs, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
+For more information about Windows PowerShell background jobs, see
+[about_Jobs](../Microsoft.PowerShell.Core/About/about_Jobs.md) and
+[about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_Remote_Jobs.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -277,18 +292,16 @@ for this parameter are:
 
 - `-1`: Unchanged.
 - `0`: Default.
-- `1`: None.
-  No authentication in performed.
-- `2`: Connect.
-  Authentication is performed only when the client establishes a relationship with the application.
-- `3`: Call.
-  Authentication is performed only at the start of each call when the application receives the request.
-- `4`: Packet.
-  Authentication is performed on all the data that is received from the client.
-- `5`: PacketIntegrity.
-  All the data that is transferred between the client and the application is authenticated and verified.
-- `6`: PacketPrivacy.
-  The properties of the other authentication levels are used, and all the data is encrypted.
+- `1`: None. No authentication in performed.
+- `2`: Connect. Authentication is performed only when the client establishes a relationship with the
+  application.
+- `3`: Call. Authentication is performed only at the start of each call when the application
+  receives the request.
+- `4`: Packet. Authentication is performed on all the data that's received from the client.
+- `5`: PacketIntegrity. All the data that's transferred between the client and the application is
+  authenticated and verified.
+- `6`: PacketPrivacy. The properties of the other authentication levels are used, and all the data
+  is encrypted.
 
 ```yaml
 Type: System.Management.AuthenticationLevel
@@ -306,10 +319,10 @@ Accept wildcard characters: False
 ### -Authority
 
 Specifies the authority to use to authenticate the WMI connection. You can specify standard NTLM or
-Kerberos authentication. To use NTLM, set the authority setting to ntlmdomain:\<DomainName\>, where
-\<DomainName\> identifies a valid NTLM domain name. To use Kerberos, specify
-kerberos:\<DomainName\>\\\<ServerName\>. You cannot include the authority setting when you connect
-to the local computer.
+Kerberos authentication. To use NTLM, set the authority setting to `ntlmdomain:<DomainName>`, where
+`<DomainName>` identifies a valid NTLM domain name. To use Kerberos, specify
+`kerberos:<DomainName>\<ServerName>`. You can't include the authority setting when you connect to
+the local computer.
 
 ```yaml
 Type: System.String
@@ -346,8 +359,8 @@ Specifies the name of the computer on which this cmdlet runs. The default is the
 Type the NetBIOS name, an IP address, or a fully qualified domain name of one or more computers.
 To specify the local computer, type the computer name, a dot (`.`), or localhost.
 
-This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
-parameter even if your computer is not configured to run remote commands.
+This parameter doesn't rely on Windows PowerShell remoting. You can use the **ComputerName**
+parameter even if your computer isn't configured to run remote commands.
 
 ```yaml
 Type: System.String[]
@@ -366,10 +379,11 @@ Accept wildcard characters: False
 Specifies a user account that has permission to perform this action. The default is the current
 user.
 
-Type a user name, such as User01 or Domain01\User01, or enter a **PSCredential** object, such as one
-generated by the Get-Credential cmdlet. If you type a user name, this cmdlet prompts for a password.
+Type a user name, such as `User01` or `Domain01\User01`, or enter a **PSCredential** object, such as
+one generated by the `Get-Credential` cmdlet. If you type a user name, this cmdlet prompts for a
+password.
 
-This parameter is not supported by any providers installed with parameter is not supported by any
+This parameter isn't supported by any providers installed with parameter isn't supported by any
 providers installed with Windows PowerShell.
 
 ```yaml
@@ -407,14 +421,10 @@ Specifies the impersonation level to use. The acceptable values for this paramet
 
 - `0`: Default. Reads the local registry for the default impersonation level, which is usually set
   to 3: Impersonate.
-- `1`: Anonymous.
-  Hides the credentials of the caller.
-- `2`: Identify.
-  Allows objects to query the credentials of the caller.
-- `3`: Impersonate.
-  Allows objects to use the credentials of the caller.
-- `4`: Delegate.
-  Allows objects to permit other objects to use the credentials of the caller.
+- `1`: Anonymous. Hides the credentials of the caller.
+- `2`: Identify. Allows objects to query the credentials of the caller.
+- `3`: Impersonate. Allows objects to use the credentials of the caller.
+- `4`: Delegate. Allows objects to permit other objects to use the credentials of the caller.
 
 ```yaml
 Type: System.Management.ImpersonationLevel
@@ -431,8 +441,8 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies a **ManagementObject** object to use as input.
-When this parameter is used, all other parameters ,except the **Arguments** parameter, are ignored.
+Specifies a **ManagementObject** object to use as input. When this parameter is used, all other
+parameters ,except the **Arguments** parameter, are ignored.
 
 ```yaml
 Type: System.Management.ManagementObject
@@ -448,8 +458,8 @@ Accept wildcard characters: False
 
 ### -Locale
 
-Specifies the preferred locale for WMI objects.
-The **Locale** parameter is specified in an array in the MS_\<LCID\> format in the preferred order.
+Specifies the preferred locale for WMI objects. The **Locale** parameter is specified in an array in
+the `MS_<LCID>` format in the preferred order.
 
 ```yaml
 Type: System.String
@@ -465,7 +475,7 @@ Accept wildcard characters: False
 
 ### -Namespace
 
-Specifies the WMI repository namespace where the referenced WMI class is located when it is used
+Specifies the WMI repository namespace where the referenced WMI class is located when it's used
 with the **Class** parameter.
 
 ```yaml
@@ -501,12 +511,10 @@ Accept wildcard characters: False
 Indicates whether to create or update the WMI instance. The acceptable values for this parameter
 are:
 
-- `UpdateOnly`
-    Updates an existing WMI instance.
-- `CreateOnly`
-    Creates a new WMI instance.
-- `UpdateOrCreate`
-    Updates the WMI instance if it exists or creates a new instance if an instance does not exist.
+- `UpdateOnly` Updates an existing WMI instance.
+- `CreateOnly` Creates a new WMI instance.
+- `UpdateOrCreate` Updates the WMI instance if it exists or creates a new instance if an instance
+  doesn't exist.
 
 ```yaml
 Type: System.Management.PutType
@@ -557,8 +565,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -583,13 +590,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept input.
+This cmdlet doesn't accept input.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate output.
+This cmdlet doesn't generate output.
 
 ## NOTES
 
