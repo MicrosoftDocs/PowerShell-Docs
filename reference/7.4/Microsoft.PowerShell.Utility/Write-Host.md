@@ -35,7 +35,7 @@ a string to use to separate displayed objects. The particular result depends on 
 hosting PowerShell.
 
 > [!NOTE]
-> Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information` This allows
+> Starting in Windows PowerShell 5.0, `Write-Host` is a wrapper for `Write-Information`. This allows
 > you to use `Write-Host` to emit output to the information stream. This enables the **capture** or
 > **suppression** of data written using `Write-Host` while preserving backwards compatibility.
 >
