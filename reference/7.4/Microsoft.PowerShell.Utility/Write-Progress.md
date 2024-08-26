@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/22/2023
+ms.date: 08/26/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
@@ -78,7 +78,7 @@ for($I = 0; $I -lt 10; $I++ ) {
         $InnerLoopProgressParameters = @{
             ID               = 1
             Activity         = 'Updating'
-            Status           = 'Progress'
+            Status           = 'Inner Progress'
             PercentComplete  = $j
             CurrentOperation = 'InnerLoop'
         }
@@ -94,7 +94,7 @@ Progress ->
  [ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo]
 OuterLoop
 Updating
-Progress
+Inner Progress
  [oooooooooooooooooo                                                   ]
 InnerLoop
 ```
@@ -105,8 +105,13 @@ loops, each represented by a progress bar.
 The `Write-Progress` command for the second progress bar includes the **Id** parameter that
 distinguishes it from the first progress bar.
 
-Without the **Id** parameter, the progress bars would be superimposed on each other instead of being
-displayed one below the other.
+Without the **Id** parameter, the progress bars would be superimposed on each other instead of
+being displayed one below the other.
+
+> [!NOTE]
+> This example sets the progress view to `Classic`, which displays the **CurrentOperation** values
+> For each progress bar. When the progress view is set to `Minimal`, the **CurrentOperation**
+> values aren't displayed.
 
 ### Example 3: Display the progress while searching for a string
 
@@ -215,8 +220,9 @@ Accept wildcard characters: False
 
 ### -CurrentOperation
 
-Specifies the line of text below the progress bar. This text describes the operation that's
-currently taking place.
+Specifies the line of text below the progress bar in the `Classic` progress view. This text
+describes the operation that's currently taking place. This parameter has no effect when the
+progress view is set to `Minimal`.
 
 ```yaml
 Type: System.String
@@ -251,8 +257,8 @@ Accept wildcard characters: False
 
 ### -ParentId
 
-Specifies the parent activity of the current activity. Use the value `-1` if the current activity has
-no parent activity.
+Specifies the parent activity of the current activity. Use the value `-1` if the current activity
+has no parent activity.
 
 ```yaml
 Type: System.Int32
