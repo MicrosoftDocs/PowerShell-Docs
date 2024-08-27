@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 08/01/2024
+ms.date: 08/27/2024
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -13,7 +13,7 @@ available from the [Microsoft Artifact Registry][mcr] for the following versions
 
 - Alpine 3.17 - OS support ends on 2024-11-22
 
-Docker images of PowerShell aren't available for Alpine 3.18 and 3.19.
+Docker images of PowerShell aren't available for Alpine 3.18, 3.19, and 3.20.
 
 > [!IMPORTANT]
 > The Docker images are built from official operating system (OS) images provide by the OS
