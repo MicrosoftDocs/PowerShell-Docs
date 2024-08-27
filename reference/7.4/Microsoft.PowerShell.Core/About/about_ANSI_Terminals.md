@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 09/29/2023
+ms.date: 08/27/2024
 schema: 2.0.0
 title: about ANSI terminals
 ---
@@ -144,8 +144,8 @@ The following members control how or when ANSI formatting is used:
   - **Verbose** - formatting for verbose messages
   - **Debug** - formatting for debug messages
   - **TableHeader** - formatting for table headers
-  - **CustomTableHeaderLabel** - formatting for table headers that are
-    calculated values
+  - **CustomTableHeaderLabel** - formatting for table headers that are not
+    actually properties on the object
   - **FeedbackName** - formatting for the feedback provider name (added as an
     experimental feature in PowerShell 7.4)
   - **FeedbackText** - formatting for feedback messages (added as an

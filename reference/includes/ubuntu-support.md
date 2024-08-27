@@ -16,6 +16,7 @@ Ubuntu:
 
 - Ubuntu 22.04 (Jammy Jellyfish) - OS support ends on 2027-04-01
 - Ubuntu 20.04 (Focal Fossa) - OS support ends on 2025-04-02
+- Ubuntu 24.04 (Noble Numbat) is not available yet
 
 Ubuntu 23.10 (Mantic Minotaur) is an interim release. Microsoft doesn't support
 [interim releases][interim] of Ubuntu. For more information, see
