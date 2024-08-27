@@ -1,6 +1,6 @@
 ---
 description: PowerShell can run on Linux distributions that aren't officially supported by Microsoft.
-ms.date: 07/24/2024
+ms.date: 08/27/2024
 title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
@@ -15,7 +15,7 @@ Supported Linux distributions must meet the following criteria:
 - The version of the distribution isn't an interim release or equivalent.
 - The PowerShell team has tested the version of the distribution.
 
-For more information, see the [PowerShell Support Lifecycle][11] documentation.
+For more information, see the [PowerShell Support Lifecycle][12] documentation.
 
 The following distributions are examples of distributions supported by the community. Each
 distribution has its own community support mechanisms. Consult the distribution's website to find
@@ -23,15 +23,15 @@ their community resources. You can also get help from these [PowerShell Communit
 
 ## Ubuntu interim releases
 
-The documented steps to install PowerShell on [Ubuntu][09] might work on Ubuntu interim releases.
+The documented steps to install PowerShell on [Ubuntu][10] might work on Ubuntu interim releases.
 However, Microsoft only supports PowerShell on the Long Term Servicing (LTS) releases of Ubuntu.
-Microsoft doesn't support [interim releases][03] of Ubuntu.
+Microsoft doesn't support [interim releases][04] of Ubuntu.
 
 ## Arch Linux
 
-PowerShell is available from the [Arch Linux][06] User Repository (AUR). Packages in the AUR are
+PowerShell is available from the [Arch Linux][07] User Repository (AUR). Packages in the AUR are
 maintained by the Arch community. To install the [latest release binary][02], see the
-[Arch Linux wiki][04] or [Using PowerShell in Docker][10].
+[Arch Linux wiki][05] or [Using PowerShell in Docker][11].
 
 ## Kali
 
@@ -55,19 +55,26 @@ apt -y remove powershell
 ## Gentoo
 
 You can install PowerShell on Gentoo Linux using packages from the Gentoo package repository. For
-information about installing these packages, see the [PowerShell][05] page in the Gentoo wiki.
+information about installing these packages, see the [PowerShell][06] page in the Gentoo wiki.
 
 ## Raspberry Pi OS
 
-[Raspberry Pi OS][07] (formerly Raspbian) is a free operating system based on Debian.
+[Raspberry Pi OS][08] (formerly Raspbian) is a free operating system based on Debian.
 
 > [!IMPORTANT]
 > .NET isn't supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
 > devices released before Raspberry Pi 2.
 
+## SLES and openSUSE
+
+You may be able to install PowerShell on SLES and openSUSE using the SNAP package manager. Also,
+the following article provides information on how to install PowerShell on openSUSE:
+
+- [PowerShell - openSUSE Wiki][03]
+
 ### Install on Raspberry Pi OS
 
-Download the tar.gz package from the [releases][08] page onto your Raspberry Pi computer. The links
+Download the tar.gz package from the [releases][09] page onto your Raspberry Pi computer. The links
 to the current versions are:
 
 - PowerShell 7.4.5 - latest LTS release
@@ -129,12 +136,13 @@ rm -rf ~/powershell
 <!-- link references -->
 [01]: ../community/community-support.md
 [02]: https://aur.archlinux.org/packages/powershell-bin/
-[03]: https://ubuntu.com/about/release-cycle
-[04]: https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages
-[05]: https://wiki.gentoo.org/wiki/PowerShell
-[06]: https://www.archlinux.org/download/
-[07]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
-[08]: install-other-linux.md#binary-archives
-[09]: install-ubuntu.md
-[10]: powershell-in-docker.md
-[11]: powershell-support-lifecycle.md
+[03]: https://en.opensuse.org/PowerShell
+[04]: https://ubuntu.com/about/release-cycle
+[05]: https://wiki.archlinux.org/title/Arch_User_Repository#Installing_and_upgrading_packages
+[06]: https://wiki.gentoo.org/wiki/PowerShell
+[07]: https://www.archlinux.org/download/
+[08]: https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+[09]: install-other-linux.md#binary-archives
+[10]: install-ubuntu.md
+[11]: powershell-in-docker.md
+[12]: powershell-support-lifecycle.md
