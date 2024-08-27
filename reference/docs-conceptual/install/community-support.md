@@ -57,6 +57,13 @@ apt -y remove powershell
 You can install PowerShell on Gentoo Linux using packages from the Gentoo package repository. For
 information about installing these packages, see the [PowerShell][06] page in the Gentoo wiki.
 
+## SLES and openSUSE
+
+You may be able to install PowerShell on SLES and openSUSE using the SNAP package manager. Also,
+the following article provides information on how to install PowerShell on openSUSE:
+
+- [PowerShell - openSUSE Wiki][03]
+
 ## Raspberry Pi OS
 
 [Raspberry Pi OS][08] (formerly Raspbian) is a free operating system based on Debian.
@@ -64,13 +71,6 @@ information about installing these packages, see the [PowerShell][06] page in th
 > [!IMPORTANT]
 > .NET isn't supported on ARMv6 architecture devices, including Raspberry Pi Zero and Raspberry Pi
 > devices released before Raspberry Pi 2.
-
-## SLES and openSUSE
-
-You may be able to install PowerShell on SLES and openSUSE using the SNAP package manager. Also,
-the following article provides information on how to install PowerShell on openSUSE:
-
-- [PowerShell - openSUSE Wiki][03]
 
 ### Install on Raspberry Pi OS
 
