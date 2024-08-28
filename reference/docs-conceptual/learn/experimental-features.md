@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 02/23/2024
+ms.date: 08/28/2024
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -81,20 +81,21 @@ Legend
 - The ![Discontinued][03] icon indicates the version of PowerShell where the experimental feature
   was removed
 
-|                        Name                         |         7.2         |         7.3         |         7.4         |    7.5 (preview)    |
-| --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: | :-----------------: |
-| [PSCommandNotFoundSuggestion][10]                   | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSDesiredStateConfiguration.InvokeDscResource][14] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSNativePSPathResolution][21]                      | ![Experimental][02] | ![Discontinued][03] |                     |                     |
-| [PSSubsystemPluginModel][23]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSNativeCommandArgumentPassing][18]                | ![Experimental][02] |  ![Mainstream][01]  |                     |                     |
-| [PSAnsiRenderingFileInfo][09]                       | ![Experimental][02] |  ![Mainstream][01]  |                     |                     |
-| [PSLoadAssemblyFromNativeCode][16]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSNativeCommandErrorActionPreference][19]          |                     | ![Experimental][02] |  ![Mainstream][01]  |                     |
-| [PSFeedbackProvider][15]                            |                     |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSModuleAutoLoadSkipOfflineFiles][17]              |                     |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSCommandWithArgs][11]                             |                     |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSNativeWindowsTildeExpansion][22]                 |                     |                     |                     | ![Experimental][02] |
+|                        Name                         |         7.2         |         7.4         |    7.5 (preview)    |
+| --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: |
+| [PSCommandNotFoundSuggestion][10]                   | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSDesiredStateConfiguration.InvokeDscResource][14] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativePSPathResolution][21]                      | ![Experimental][02] |                     |                     |
+| [PSSubsystemPluginModel][23]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeCommandArgumentPassing][18]                | ![Experimental][02] |                     |                     |
+| [PSAnsiRenderingFileInfo][09]                       | ![Experimental][02] |                     |                     |
+| [PSLoadAssemblyFromNativeCode][16]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeCommandErrorActionPreference][19]          |                     |  ![Mainstream][01]  |                     |
+| [PSFeedbackProvider][15]                            |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSModuleAutoLoadSkipOfflineFiles][17]              |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSCommandWithArgs][11]                             |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeWindowsTildeExpansion][22]                 |                     |                     | ![Experimental][02] |
+| [PSRedirectToVariable][24]                          |                     |                     | ![Experimental][02] |
 
 ### PSAnsiRenderingFileInfo
 
@@ -325,6 +326,33 @@ operating system.
 - If the path isn't a PSDrive or `~` (on Windows), then path normalization doesn't occur
 - If the path is in single quotes, then it's not resolved and treated as literal
 
+### PSRedirectToVariable
+
+> [!NOTE]
+> This experimental feature was added in PowerShell 7.5-preview.4.
+
+When enabled, this feature adds support for redirecting to the variable drive. This feature allows
+you to redirect data to a variable using the `variable:name` syntax. PowerShell inspects the target
+of the redirection and if it uses the variable provider it calls `Set-Variable` rather than
+`Out-File`.
+
+The following example shows how to redirect the output of a command to a variable:
+
+```powershell
+. {
+    "Output 1"
+    Write-Warning "Warning, Warning!"
+    "Output 2"
+} 3> variable:warnings
+$warnings
+```
+
+```Output
+Output 1
+Output 2
+WARNING: Warning, Warning!
+```
+
 ### PSSubsystemPluginModel
 
 This feature enables the subsystem plugin model in PowerShell. The feature makes it possible to
@@ -385,6 +413,7 @@ This feature was added in PowerShell 7.5-preview.2.
 [21]: #psnativepspathresolution
 [22]: #psnativewindowstildeexpansion
 [23]: #pssubsystempluginmodel
+[24]: #psredirecttovariable
 [25]: https://github.com/PowerShell/PowerShell/issues/new/choose
 [26]: https://github.com/PowerShell/PowerShell/tree/master/test/tools/TestExe
 [27]: xref:Microsoft.PowerShell.Core.Disable-ExperimentalFeature
