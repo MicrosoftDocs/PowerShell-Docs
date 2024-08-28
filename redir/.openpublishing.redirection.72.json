@@ -3,12 +3,12 @@
     {
       "redirect_document_id": true,
       "redirect_url": "/powershell/module/microsoft.powershell.utility/get-verb?view=powershell-7.2",
-      "source_path": "reference/7.2/microsoft.powershell.utility/get-verb.md"
+      "source_path": "../reference/7.2/microsoft.powershell.utility/get-verb.md"
     },
     {
       "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq",
-      "source_path": "reference/7.2/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md"
+      "source_path": "../reference/7.2/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md"
     }
   ]
 }

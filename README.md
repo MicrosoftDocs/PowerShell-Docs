@@ -1,5 +1,5 @@
 ---
-ms.date: 02/13/2024
+ms.date: 08/28/2024
 ---
 # PowerShell Documentation
 
@@ -33,6 +33,7 @@ The following list describes the main folders in this repository.
 - `.vscode` - contains configuration settings and recommended extensions for Visual Studio Code (VS
   Code)
 - `assets` - contains downloadable files linked in the documentation
+- `redir` - contain redirection mapping files
 - `reference` - contains the documentation published to
   [learn.microsoft.com][01]. This includes both
   reference and conceptual content.
