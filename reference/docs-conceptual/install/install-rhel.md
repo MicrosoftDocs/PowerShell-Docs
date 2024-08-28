@@ -77,7 +77,7 @@ The link to the current version is:
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.5/powershell-7.4.5-1.rh.x86_64.rpm`
 - PowerShell 7.2.23 universal package for supported versions of RHEL
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.23/powershell-7.2.23-1.rh.x86_64.rpm`
-- PowerShell 7.5-preview.3 universal package for supported versions of RHEL
+- PowerShell 7.5-preview.4 universal package for supported versions of RHEL
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-preview.3/powershell-preview-7.5.0_preview.2-1.rh.x86_64.rpm`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can

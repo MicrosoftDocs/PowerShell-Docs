@@ -1,12 +1,12 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 05/16/2024
+ms.date: 08/28/2024
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5-preview.3 includes the following features, updates, and breaking changes. PowerShell
+PowerShell 7.5-preview.4 includes the following features, updates, and breaking changes. PowerShell
 7.5 is built on .NET 9.0.0-preview.3.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
@@ -24,10 +24,10 @@ For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repositor
 
 ## Updated modules
 
-PowerShell 7.5-preview.3 includes the following updated modules:
+PowerShell 7.5-preview.4 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** v1.0.5
-- **PSReadLine** v2.3.4
+- **Microsoft.PowerShell.PSResourceGet** v1.1.0-preview1
+- **PSReadLine** v2.3.5
 
 ## Tab completion improvements
 
@@ -51,17 +51,34 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 - Add `-Module` completion for `Save-Help`/`Update-Help` commands ([#20678][20678]) (Thanks
   @ArmaanMcleod)
 
-## Web Cmdlets improvements
+## New cmdlets
 
+- Add `ConvertTo-CliXml` and `ConvertFrom-CliXml` cmdlets ([#21063][21063]) (Thanks @ArmaanMcleod!)
+
+## Web cmdlets improvements
+
+- Fix to allow `-PassThru` and `-Outfile` work together ([#24086][24086]) (Thanks @jshigetomi!)
+- Add `OutFile` property in `WebResponseObject` ([#24047][24047]) (Thanks @jshigetomi!)
+- Show filename in `Invoke-WebRequest -OutFile -Verbose` ([#24041][24041]) (Thanks @jshigetomi!)
+- Fix WebCmdlets when `-Body` is specified but `ContentType` is not ([#23952][23952]) (Thanks
+  @CarloToso!)
 - Fix `Invoke-WebRequest` to report correct size when `-Resume` is specified ([#20207][20207])
   (Thanks @LNKLEO!)
 - Fix Web Cmdlets to allow `WinForm` apps to work correctly ([#20606][20606])
 
 ## Other cmdlet improvements
 
-- `Get-Process`: Remove admin requirement for `-IncludeUserName` ([#21302][21302]) (Thanks @jborean93!)
+- Enable `-NoRestart` to work with `Register-PSSessionConfiguration` ([#23891][23891])
+- Add `IgnoreComments` and `AllowTrailingCommas` options to `Test-Json` cmdlet ([#23817][23817])
+  (Thanks @ArmaanMcleod!)
+- Get-Help may report parameters with `ValueFromRemainingArguments` attribute as pipeline-able
+  ([#23871][23871])
+- Change type of `LineNumber` to `ulong` in `Select-String` ([#24075][24075]) (Thanks @Snowman-25!)
+- `Get-Process`: Remove admin requirement for `-IncludeUserName` ([#21302][21302]) (Thanks
+  @jborean93!)
 - Fix `Test-Path -IsValid` to check for invalid path and filename characters ([#21358][21358])
-- Add `RecommendedAction` to `ConciseView` of the error reporting ([#20826][20826]) (Thanks @JustinGrote!)
+- Add `RecommendedAction` to `ConciseView` of the error reporting ([#20826][20826]) (Thanks
+  @JustinGrote!)
 - Added progress bar for `Remove-Item` cmdlet ([#20778][20778]) (Thanks @ArmaanMcleod!)
 - Fix `Test-Connection` due to .NET 8 changes ([#20369][20369])
 - Fix `Get-Service` non-terminating error message to include category ([#20276][20276])
@@ -92,6 +109,10 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Engine improvements
 
+- Explicitly start and stop ANSI Error Color ([#24065][24065]) (Thanks @JustinGrote!)
+- Improve .NET overload definition of generic methods ([#21326][21326]) (Thanks @jborean93!)
+- Optimize the `+=` operation for a collection when it's an object array ([#23901][23901]) (Thanks
+  @jborean93!)
 - Add telemetry to check for specific tags when importing a module ([#20371][20371])
 - Add `PSAdapter` and `ConsoleGuiTools` to module load telemetry allowlist ([#20641][20641])
 - Add Winget module to track usage ([#21040][21040])
@@ -109,6 +130,7 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Experimental features
 
+- Allow redirecting to a variable ([#20381][20381]) - experimental feature
 - Add tilde expansion for windows native executables ([#20402][20402]) (Thanks @domsleee!)
   For more information, see [PSNativeWindowsTildeExpansion][01]
 
@@ -170,3 +192,16 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 [21302]: https://github.com/PowerShell/PowerShell/pull/21302
 [21358]: https://github.com/PowerShell/PowerShell/pull/21358
 [21529]: https://github.com/PowerShell/PowerShell/pull/21529
+[20381]: https://github.com/PowerShell/PowerShell/pull/20381
+[21063]: https://github.com/PowerShell/PowerShell/pull/21063
+[21326]: https://github.com/PowerShell/PowerShell/pull/21326
+[23817]: https://github.com/PowerShell/PowerShell/pull/23817
+[23871]: https://github.com/PowerShell/PowerShell/pull/23871
+[23891]: https://github.com/PowerShell/PowerShell/pull/23891
+[23901]: https://github.com/PowerShell/PowerShell/pull/23901
+[23952]: https://github.com/PowerShell/PowerShell/pull/23952
+[24041]: https://github.com/PowerShell/PowerShell/pull/24041
+[24047]: https://github.com/PowerShell/PowerShell/pull/24047
+[24065]: https://github.com/PowerShell/PowerShell/pull/24065
+[24075]: https://github.com/PowerShell/PowerShell/pull/24075
+[24086]: https://github.com/PowerShell/PowerShell/pull/24086
