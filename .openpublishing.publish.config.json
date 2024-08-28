@@ -72,14 +72,14 @@
   "need_preview_pull_request": true,
   "notification_subscribers": [],
   "redirection_files": [
-    ".openpublishing.redirection.json",
-    ".openpublishing.redirection.51.json",
-    ".openpublishing.redirection.72.json",
-    ".openpublishing.redirection.dsc.json",
-    ".openpublishing.redirection.gallery.json",
-    ".openpublishing.redirection.psget.json",
-    ".openpublishing.redirection.virtual.json",
-    ".openpublishing.redirection.wmf.json"
+    "redir/.openpublishing.redirection.json",
+    "redir/.openpublishing.redirection.51.json",
+    "redir/.openpublishing.redirection.72.json",
+    "redir/.openpublishing.redirection.dsc.json",
+    "redir/.openpublishing.redirection.gallery.json",
+    "redir/.openpublishing.redirection.psget.json",
+    "redir/.openpublishing.redirection.virtual.json",
+    "redir/.openpublishing.redirection.wmf.json"
   ],
   "skip_source_output_uploading": false,
   "sync_notification_subscribers": [],
