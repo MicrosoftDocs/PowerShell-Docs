@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 07/24/2024
+ms.date: 08/20/2024
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -29,7 +29,7 @@ different scenarios and workflows. Choose the method that best suits your needs.
 > Download links for every package are found in the **Assets** section of the Release page. The
 > **Assets** section may be collapsed, so you may need to click to expand it.
 
-## <a id="winget" />Install PowerShell using Winget (recommended)
+## <a id="winget">Install PowerShell using Winget (recommended)</a>
 
 Winget, the Windows Package Manager, is a command-line tool enables users to discover, install,
 upgrade, remove, and configure applications on Windows client computers. This tool is the client
@@ -71,7 +71,7 @@ winget install --id Microsoft.Powershell.Preview --source winget
 > the Arm64 processor, `winget` installs the Microsoft Store (MSIX) package. For more information,
 > see [Installing from the Microsoft Store][17].
 
-## <a id="msi" />Installing the MSI package
+## <a id="msi">Installing the MSI package</a>
 
 To install PowerShell on Windows, use the following links to download the install package from
 GitHub.
@@ -153,7 +153,7 @@ msiexec.exe /package PowerShell-7.4.5-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 For a full list of command-line options for `Msiexec.exe`, see
 [Command line options][12].
 
-## <a id="zip" />Installing the ZIP package
+## <a id="zip">Installing the ZIP package</a>
 
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [current release][23] page.
@@ -171,7 +171,7 @@ Use this method to install the ARM-based version of PowerShell on computers like
 Surface Pro X. For best results, install PowerShell to the to `$env:ProgramFiles\PowerShell\7`
 folder.
 
-## <a id="dotnet" />Install as a .NET Global tool
+## <a id="dotnet">Install as a .NET Global tool</a>
 
 If you already have the [.NET Core SDK][05] installed, you can install PowerShell as a
 [.NET Global tool][06].
@@ -184,7 +184,7 @@ The dotnet tool installer adds `$HOME\.dotnet\tools` to your `$env:PATH` environ
 However, the currently running shell doesn't have the updated `$env:PATH`. You can start PowerShell
 from a new shell by typing `pwsh`.
 
-## <a id="msstore" />Installing from the Microsoft Store
+## <a id="msstore">Installing from the Microsoft Store</a>
 
 PowerShell can be installed from the Microsoft Store. You can find the PowerShell release in the
 [Microsoft Store][33] site or in the Store application in Windows.

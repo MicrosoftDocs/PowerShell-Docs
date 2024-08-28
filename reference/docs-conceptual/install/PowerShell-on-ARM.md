@@ -1,6 +1,6 @@
 ---
 description: PowerShell on Arm-based systems
-ms.date: 05/16/2024
+ms.date: 08/28/2024
 title: PowerShell on Arm-based systems
 ---
 
@@ -22,8 +22,8 @@ Arm versions of PowerShell 7.4 can be installed on the following platforms:
 | Windows 11 Client Version 22000+ | Arm64         | [Windows][05]                          |
 | Windows 10 Client Version 1607+  | Arm64         | [Windows][05]                          |
 | macOS                            | Arm64         | [macOS][04]                            |
-| Raspberry Pi OS (Debian 10)      | Arm32         | [Raspberry Pi OS][08] and [Debian][06] |
-| Ubuntu 22.04, 20.04, 18.04       | Arm32         | [Ubuntu][07]                           |
+| Raspberry Pi OS (Debian 12)      | Arm32         | [Raspberry Pi OS][08] and [Debian][06] |
+| Ubuntu 22.04, 20.04              | Arm32         | [Ubuntu][07]                           |
 
 Support is based on the [.NET 8.0 Supported OS Lifecycle Policy][03].
 
@@ -36,8 +36,8 @@ Arm versions of PowerShell 7.2 can be installed on the following platforms:
 | Windows 11 Client Version 22000+ | Arm64         | [Windows][05]                          |
 | Windows 10 Client Version 1607+  | Arm64         | [Windows][05]                          |
 | macOS                            | Arm64         | [macOS][04]                            |
-| Raspberry Pi OS (Debian 10)      | Arm32         | [Raspberry Pi OS][08] and [Debian][06] |
-| Ubuntu 22.04, 20.04, 18.04       | Arm32         | [Ubuntu][07]                           |
+| Raspberry Pi OS (Debian 12)      | Arm32         | [Raspberry Pi OS][08] and [Debian][06] |
+| Ubuntu 22.04, 20.04              | Arm32         | [Ubuntu][07]                           |
 
 Support is based on the [.NET 6.0 Supported OS Lifecycle Policy][02].
 
