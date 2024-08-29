@@ -58,12 +58,12 @@ This example shows a `TableHeaders` element that defines two column headers.
 ```xml
 <TableHeaders>
   <TableColumnHeader>
-    <Label>Column 1</Label)
+    <Label>Column 1</Label>
     <Width>16</Width>
     <Alignment>Left</Alignment>
   </TableColumnHeader>
   <TableColumnHeader>
-    <Label>Column 2</Label)
+    <Label>Column 2</Label>
     <Width>10</Width>
     <Alignment>Centered</Alignment>
   </TableColumnHeader>

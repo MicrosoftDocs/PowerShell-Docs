@@ -62,7 +62,7 @@ This example shows a `TableColumnHeader` element whose label is "Column 1".
 
 ```xml
 <TableColumnHeader>
-  <Label>Column 1</Label)
+  <Label>Column 1</Label>
   <Width>16</Width>
   <Alignment>Left</Alignment>
 </TableColumnHeader>
