@@ -62,7 +62,7 @@ This example shows a `TableColumnHeader` element whose data is aligned on the ce
 
 ```xml
 <TableColumnHeader>
-  <Label>Column 1</Label)
+  <Label>Column 1</Label>
   <Width>16</Width>
   <Alignment>Center</Alignment>
 </TableColumnHeader>
