@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/09/2024
+ms.date: 08/30/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Clipboard
@@ -25,7 +25,8 @@ The `Get-Clipboard` cmdlet gets the contents of the clipboard as text. Multiple 
 returned as an array of strings similar to `Get-Content`.
 
 > [!NOTE]
-> On Linux, this cmdlet requires the `xclip` utility to be in the path.
+> On Linux, this cmdlet requires the `xclip` utility to be in the path. On macOS, this cmdlet uses
+> the `pbpaste` utility.
 
 ## EXAMPLES
 
