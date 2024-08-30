@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/09/2024
+ms.date: 08/30/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
@@ -25,7 +25,8 @@ Set-Clipboard [-Value] <string[]> [-Append] [-PassThru] [-AsOSC52] [-WhatIf] [-C
 The `Set-Clipboard` cmdlet sets the contents of the clipboard.
 
 > [!NOTE]
-> On Linux, this cmdlet requires the `xclip` utility to be in the path.
+> On Linux, this cmdlet requires the `xclip` utility to be in the path. On macOS, this cmdlet uses
+> the `pbcopy` utility.
 
 ## EXAMPLES
 
