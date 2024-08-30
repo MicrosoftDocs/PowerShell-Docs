@@ -293,7 +293,7 @@ predates the unified logging system.
 
 To view PowerShell log data from a command line on macOS, use the `log` command
 in the **Terminal** or other shell host application. These commands can be run
-from **PowerShell**, **ZShell**, or **Bash**.
+from **PowerShell**, **Z Shell**, or **Bash**.
 
 In the following example, the `log` command is used to show the log data on your
 system as it's occurring in realtime. The **process** parameter filters the log
@@ -321,7 +321,7 @@ command.
 
 You can also output the log data in JSON format, which allows you to convert
 the event data to PowerShell objects. The following example outputs the events
-in JSON format.The `ConvertFrom-Json` cmdlet is used to convert the JSON data
+in JSON format. The `ConvertFrom-Json` cmdlet is used to convert the JSON data
 to PowerShell objects are get stored in the `$logRecord` variable.
 
 ```powershell
