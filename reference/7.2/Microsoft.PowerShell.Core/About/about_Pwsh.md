@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 07/23/2024
+ms.date: 09/02/2024
 no-loc: [-File, -f, -Command, -c, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -355,7 +355,7 @@ non-Windows platforms results in an error.
 
 ### -Version | -v
 
-Displays the version of PowerShell. Additional parameters are ignored.
+Displays the version of this PowerShell exectuable. Additional parameters are ignored.
 
 ### -WindowStyle | -w
 
