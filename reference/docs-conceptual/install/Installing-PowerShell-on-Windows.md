@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 08/20/2024
+ms.date: 09/02/2024
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -62,8 +62,8 @@ PowerShell Preview Microsoft.PowerShell.Preview 7.5.0.3   winget
 Install PowerShell or PowerShell Preview using the `id` parameter
 
 ```powershell
-winget install --id Microsoft.Powershell --source winget
-winget install --id Microsoft.Powershell.Preview --source winget
+winget install --id Microsoft.PowerShell --source winget
+winget install --id Microsoft.PowerShell.Preview --source winget
 ```
 
 > [!NOTE]
