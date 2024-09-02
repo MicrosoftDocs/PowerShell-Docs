@@ -4,7 +4,7 @@ Help Version: 7.4.0.0
 Locale: en-US
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/04/2023
+ms.date: 09/02/2024
 schema: 2.0.0
 title: Microsoft.PowerShell.Core
 ---
@@ -102,6 +102,9 @@ Gets the capabilities of a specific user on a constrained session configuration.
 
 ### [Get-PSSessionConfiguration](Get-PSSessionConfiguration.md)
 Gets the registered session configurations on the computer.
+
+### [Get-PSSubsystem](Get-PSSubsystem.md)
+Retrieves information about the subsystems registered in PowerShell. (Experimental Feature)
 
 ### [Import-Module](Import-Module.md)
 Adds modules to the current session.
