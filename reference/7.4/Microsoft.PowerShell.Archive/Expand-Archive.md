@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 10/06/2023
+ms.date: 09/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Expand-Archive
@@ -11,7 +11,7 @@ title: Expand-Archive
 # Expand-Archive
 
 ## SYNOPSIS
-Extracts files from a specified archive (zipped) file.
+Extracts files from a specified ZIP archive file.
 
 ## SYNTAX
 
@@ -34,6 +34,11 @@ Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-Pa
 The `Expand-Archive` cmdlet extracts files from a specified zipped archive file to a specified
 destination folder. An archive file allows multiple files to be packaged, and optionally compressed,
 into a single zipped file for easier distribution and storage.
+
+The `Expand-Archive` cmdlet uses the **System.IO.Compression.ZipArchive** API to compress files.
+The API limits the maximum file size to 2GB. The .NET API works with files that conform to the
+official ZIP file format specification by PKWARE Inc. For more information, see
+[System.IO.Compression.ZipArchive](xref:System.IO.Compression.ZipArchive).
 
 ## EXAMPLES
 
