@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 01/03/2018
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Session Configuration Files
+title: about_Session_Configuration_Files
 ---
 
 # about_Session_Configuration_Files

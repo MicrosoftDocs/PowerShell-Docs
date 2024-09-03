@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 01/29/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Splatting
+title: about_Splatting
 ---
 
 # about_Splatting

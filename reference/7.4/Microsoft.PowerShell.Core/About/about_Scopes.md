@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 07/22/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Scopes
+title: about_Scopes
 ---
 # about_Scopes
 

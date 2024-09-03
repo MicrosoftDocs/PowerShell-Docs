@@ -5,7 +5,7 @@ ms.date: 11/15/2023
 no-loc: [iDictionary, Hashtable, OrderedDictionary, System.Collections.IDictionary, System.Collections.Hashtable]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Hash Tables
+title: about_Hash_Tables
 ---
 # about_Hash_Tables
 

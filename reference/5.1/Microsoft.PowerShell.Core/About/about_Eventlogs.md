@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 12/08/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_eventlogs?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Eventlogs
+title: about_Eventlogs
 ---
 
 # about_Eventlogs

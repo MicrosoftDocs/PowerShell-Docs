@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 01/04/2018
 online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about WS-Management Cmdlets
+title: about_WS-Management_Cmdlets
 ---
 
 # about_WS-Management_Cmdlets

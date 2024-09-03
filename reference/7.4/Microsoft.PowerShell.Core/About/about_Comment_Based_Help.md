@@ -5,7 +5,7 @@ ms.date: 07/05/2022
 no-loc: [.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE, .INPUTS, .OUTPUTS, .NOTES, .LINK, .COMPONENT, .ROLE, .FUNCTIONALITY, .FORWARDHELPTARGETNAME, .FORWARDHELPCATEGORY, .REMOTEHELPRUNSPACE, .EXTERNALHELP]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Comment Based Help
+title: about_Comment_Based_Help
 ---
 # about_Comment_Based_Help
 

@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 11/13/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes_properties?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Classes Properties
+title: about_Classes_Properties
 ---
 
 # about_Classes_Properties

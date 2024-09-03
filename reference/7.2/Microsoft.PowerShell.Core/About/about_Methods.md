@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 03/16/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Methods
+title: about_Methods
 ---
 # about_Methods
 

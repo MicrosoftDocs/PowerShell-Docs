@@ -2,10 +2,10 @@
 description: Describes the operators that work with Microsoft .NET types.
 Locale: en-US
 ms.date: 08/29/2022
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 no-loc: [-as]
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Type Operators
+title: about_Type_Operators
 ---
 # about_Type_Operators
 

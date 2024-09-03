@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 03/04/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wql?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about WQL
+title: about_WQL
 ---
 
 # about_WQL

@@ -1,12 +1,10 @@
 ---
 description: >
-    This article documents the functions provided by PSReadLine. These functions
-    can be bound to keystrokes for easy access and invocation.
 Locale: en-US
 ms.date: 10/16/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_functions?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PSReadLine Functions
+title: about_PSReadLine_Functions
 ---
 # about_PSReadLine_Functions
 

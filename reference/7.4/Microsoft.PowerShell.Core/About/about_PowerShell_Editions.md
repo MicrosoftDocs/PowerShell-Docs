@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 11/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_editions?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PowerShell Editions
+title: about_PowerShell_Editions
 ---
 # about_PowerShell_Editions
 

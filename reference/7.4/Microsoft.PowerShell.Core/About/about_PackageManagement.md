@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 03/30/2020
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_packagemanagement?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PackageManagement
+title: about_PackageManagement
 ---
 # about_PackageManagement
 

@@ -3,7 +3,7 @@ description: Describes how to call generic methods of .NET types in PowerShell
 Locale: en-US
 ms.date: 02/02/2022
 schema: 2.0.0
-title: about Calling Generic Methods
+title: about_Calling_Generic_Methods
 ---
 # about_Calling_Generic_Methods
 

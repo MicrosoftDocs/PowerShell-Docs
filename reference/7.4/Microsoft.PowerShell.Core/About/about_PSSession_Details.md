@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 03/07/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssession_details?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PSSession Details
+title: about_PSSession_Details
 ---
 # about_PSSession_Details
 

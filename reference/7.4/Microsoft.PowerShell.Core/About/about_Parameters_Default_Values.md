@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 05/31/2019
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Parameters Default Values
+title: about_Parameters_Default_Values
 ---
 # about_Parameters_Default_Values
 

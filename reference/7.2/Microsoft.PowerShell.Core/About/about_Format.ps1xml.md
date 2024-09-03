@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 04/25/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Format.ps1xml
+title: about_Format.ps1xml
 ---
 
 # about_Format.ps1xml
