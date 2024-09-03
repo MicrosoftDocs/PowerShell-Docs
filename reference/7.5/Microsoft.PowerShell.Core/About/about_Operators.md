@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 05/07/2024
+ms.date: 09/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -442,9 +442,23 @@ automatic variable `$args` is preserved.
 
 ### Format operator `-f`
 
-Formats strings by using the format method of string objects. Enter the format
-string on the left side of the operator and the objects to be formatted on the
-right side of the operator.
+Provide access to the .NET composite formatting feature. A composite format
+string consists of fixed text intermixed with indexed placeholders, called
+_format items_. These format items correspond to the objects in the list.
+
+Each format item takes the following form and consists of the following
+components:
+
+`{index[,alignment][:formatString]}`
+
+The matching braces (`{` and `}`) are required.
+
+The formatting operation yields a result string that consists of the original
+fixed text intermixed with the string representation of the objects in the
+list. For more information, see [Composite Formatting][02].
+
+Enter the composite format string on the left side of the operator and the
+objects to be formatted on the right side of the operator.
 
 ```powershell
 "{0} {1,-10} {2:N}" -f 1,"hello",[math]::pi
@@ -476,9 +490,6 @@ escape them by doubling the curly braces.
 ```Output
 foo vs. {0}
 ```
-
-For more information, see the [String.Format][01] method and
-[Composite Formatting][02].
 
 ### Index operator `[ ]`
 
