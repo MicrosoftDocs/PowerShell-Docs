@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 08/30/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_accelerators?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Type Accelerators
+title: about_Type_Accelerators
 ---
 # about_Type_Accelerators
 

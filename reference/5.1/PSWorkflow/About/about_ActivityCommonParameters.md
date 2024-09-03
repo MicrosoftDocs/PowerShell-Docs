@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 05/17/2022
 online version: https://learn.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about ActivityCommonParameters
+title: about_ActivityCommonParameters
 ---
 # about_ActivityCommonParameters
 

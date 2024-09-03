@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 08/24/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Throw
+title: about_Throw
 ---
 # about_Throw
 

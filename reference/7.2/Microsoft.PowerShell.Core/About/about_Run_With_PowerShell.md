@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 03/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_run_with_powershell?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Run With PowerShell
+title: about_Run_With_PowerShell
 ---
 
 # about_Run_With_PowerShell

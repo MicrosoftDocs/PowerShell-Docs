@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 03/01/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_break?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Break
+title: about_Break
 ---
 # about_Break
 

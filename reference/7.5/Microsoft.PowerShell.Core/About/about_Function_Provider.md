@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 06/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_function_provider?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Function Provider
+title: about_Function_Provider
 ---
 # about_Function_Provider
 

@@ -1,11 +1,10 @@
 ---
 description: This article explains how PowerShell handles case-sensitivity.
+Locale: en-US
 ms.custom: wiki-migration
 ms.date: 06/06/2022
-title: about Case-Sensitivity
-Locale: en-US
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_case-sensitivity?view=powershell-7.4&WT.mc_id=ps-gethelp
-
+title: about_Case-Sensitivity
 ---
 # about_Case-Sensitivity
 

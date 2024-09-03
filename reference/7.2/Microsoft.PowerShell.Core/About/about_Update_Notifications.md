@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 12/02/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Update Notifications
+title: about_Update_Notifications
 ---
 
 # about_Update_Notifications

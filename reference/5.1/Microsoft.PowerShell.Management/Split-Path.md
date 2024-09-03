@@ -79,41 +79,60 @@ HKCU:
 
 This command returns only the qualifier of the path. The qualifier is the drive.
 
-### Example 2: Display filenames
+### Example 2: Display filename portion of the path
+
+When using the **Leaf** parameter, `Split-Path` returns only the last item in the path string
+supplied, regardless whether that item is a file or a directory.
 
 ```powershell
-Split-Path -Path "C:\Test\Logs\*.log" -Leaf -Resolve
+Split-Path -Path .\folder1\*.txt -Leaf
 ```
 
 ```Output
-Pass1.log
-Pass2.log
-...
+*.txt
 ```
 
-This command displays the files that are referenced by the split path. Because this path is split to
-the last item, also known as the leaf, the command displays only the filenames.
+```powershell
+Split-Path -Path .\folder1\*.txt -Leaf -Resolve
+```
 
-The **Resolve** parameter tells `Split-Path` to display the items that the split path references,
-instead of displaying the split path.
+```Output
+file1.txt
+file2.txt
+```
 
-Like all `Split-Path` commands, this command returns strings. It doesn't return **FileInfo** objects
-that represent the files.
+When you use the **Resolve** parameter, `Split-Path` resolves the path string provided and returns
+the items referenced by the path.
 
 ### Example 3: Get the parent container
 
+When using the **Parent** parameter, `Split-Path` returns only the parent container portion of the
+path string supplied. If the **Path** string doesn't contain a parent container, `Split-Path`
+returns an empty string.
+
 ```powershell
-Split-Path -Parent "C:\WINDOWS\system32\WindowsPowerShell\V1.0\about_*.txt"
+Split-Path -Path .\folder1\file1.txt -Parent
 ```
 
 ```Output
-C:\WINDOWS\system32\WindowsPowerShell\V1.0
+.\folder1
 ```
 
-This command returns only the parent containers of the path. Because it doesn't include any
-parameters to specify the split, `Split-Path` uses the split location default, which is **Parent**.
+```powershell
+Split-Path -Path .\folder1\file1.txt -Parent -Resolve
+```
+
+```Output
+D:\temp\test\folder1
+```
+
+When you use the **Resolve** parameter, `Split-Path` resolves the path string provided and returns
+the full path of the parent container.
 
 ### Example 4: Determines whether a path is absolute
+
+This command determines whether the path is relative or absolute. In this case, because the path is
+relative to the current folder, which is represented by a dot (`.`), it returns `$False`.
 
 ```powershell
 Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
@@ -123,17 +142,14 @@ Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
 False
 ```
 
-This command determines whether the path is relative or absolute. In this case, because the path is
-relative to the current folder, which is represented by a dot (`.`), it returns `$False`.
-
 ### Example 5: Change location to a specified path
+
+This command changes your location to the folder that contains the PowerShell profile.
 
 ```powershell
 PS C:\> Set-Location (Split-Path -Path $profile)
-PS C:\Documents and Settings\User01\My Documents\WindowsPowerShell>
+PS C:\Users\User01\Documents\PowerShell>
 ```
-
-This command changes your location to the folder that contains the PowerShell profile.
 
 The command in parentheses uses `Split-Path` to return only the parent of the path stored in the
 built-in `$Profile` variable. The **Parent** parameter is the default split location parameter.
@@ -143,11 +159,11 @@ first. This is a useful way to move to a folder that has a long path name.
 ### Example 6: Split a path using the pipeline
 
 ```powershell
-'C:\Documents and Settings\User01\My Documents\My Pictures' | Split-Path
+'C:\Users\User01\My Documents\My Pictures' | Split-Path
 ```
 
 ```Output
-C:\Documents and Settings\User01\My Documents
+C:\Users\User01\My Documents
 ```
 
 This command uses a pipeline operator (`|`) to send a path to `Split-Path`. The path is enclosed in
@@ -176,9 +192,9 @@ Accept wildcard characters: False
 
 ### -IsAbsolute
 
-Indicates that this cmdlet returns `$True` if the path is absolute and `$False` if it's relative. An
-absolute path has a length greater than zero and doesn't use a dot (`.`) to indicate the current
-path.
+Indicates that this cmdlet returns `$True` if the path is absolute and `$False` if it's relative. On
+Windows, an absolute path string must start with a provider drive specifier, like `C:` or `HKCU:`. A
+relative path starts with a dot (`.`) or a dot-dot (`..`).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -194,8 +210,8 @@ Accept wildcard characters: False
 
 ### -Leaf
 
-Indicates that this cmdlet returns only the last item or container in the path. For example, in the
-path `C:\Test\Logs\Pass1.log`, it returns only `Pass1.log`.
+When using the **Leaf** parameter, `Split-Path` returns only the last item in the path string
+supplied, regardless whether that item is a file or a directory.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -248,9 +264,8 @@ Accept wildcard characters: False
 
 ### -Parent
 
-Indicates that this cmdlet returns only the parent containers of the item or of the container
-specified by the path. For example, in the path `C:\Test\Logs\Pass1.log`, it returns `C:\Test\Logs`.
-The **Parent** parameter is the default split location parameter.
+`Split-Path` returns only the parent container portion of the path string supplied. If the **Path**
+string doesn't contain a parent container, `Split-Path` returns an empty string.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -372,7 +387,8 @@ When you specify the **IsAbsolute** parameter, this cmdlet returns a **Boolean**
   Registry, and Certificate providers.
 
 - `Split-Path` is designed to work with the data exposed by any provider. To list the providers
-  available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+  available in your session, type `Get-PSProvider`. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 11/14/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PSReadLine
+title: about_PSReadLine
 ---
 # about_PSReadLine
 

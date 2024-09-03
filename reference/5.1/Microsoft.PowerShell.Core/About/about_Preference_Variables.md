@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 06/17/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Preference Variables
+title: about_Preference_Variables
 ---
 # about_Preference_Variables
 

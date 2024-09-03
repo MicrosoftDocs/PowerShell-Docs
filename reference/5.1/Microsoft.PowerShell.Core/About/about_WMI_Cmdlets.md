@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 12/01/2017
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wmi_cmdlets?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about WMI Cmdlets
+title: about_WMI_Cmdlets
 ---
 
 # about_WMI_Cmdlets

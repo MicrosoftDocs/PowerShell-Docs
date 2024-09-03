@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 12/09/2017
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Session Configurations
+title: about_Session_Configurations
 ---
 # about_Session_Configurations
 

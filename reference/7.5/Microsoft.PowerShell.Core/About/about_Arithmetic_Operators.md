@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 04/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Arithmetic Operators
+title: about_Arithmetic_Operators
 ---
 # about_Arithmetic_Operators
 

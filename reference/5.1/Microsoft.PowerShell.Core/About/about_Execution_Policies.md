@@ -5,7 +5,7 @@ ms.date: 05/16/2024
 no-loc: [Bypass, Default, Restricted, Undefined, Unrestricted, Process, Scope, MachinePolicy, about_Group_Policy_Settings]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Execution Policies
+title: about_Execution_Policies
 ---
 
 # about_Execution_Policies

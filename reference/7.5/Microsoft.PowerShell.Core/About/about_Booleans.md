@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 01/19/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_booleans?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Booleans
+title: about_Booleans
 ---
 # about_Booleans
 

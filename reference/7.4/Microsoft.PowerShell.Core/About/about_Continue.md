@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 06/04/2020
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Continue
+title: about_Continue
 ---
 # about_Continue
 

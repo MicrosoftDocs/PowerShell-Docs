@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 08/17/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Requires
+title: about_Requires
 ---
 
 # about_Requires

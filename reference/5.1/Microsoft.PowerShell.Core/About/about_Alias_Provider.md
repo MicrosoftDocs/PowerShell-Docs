@@ -5,7 +5,7 @@ ms.date: 10/18/2018
 no-loc: [Alias, Definition, AllScope, Option, None, Constant, Private]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_alias_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Alias Provider
+title: about_Alias_Provider
 ---
 # about_Alias_Provider
 

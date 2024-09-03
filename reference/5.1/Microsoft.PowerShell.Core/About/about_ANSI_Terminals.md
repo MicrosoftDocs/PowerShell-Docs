@@ -3,7 +3,7 @@ description: Describes the features of PowerShell that use ANSI escape sequences
 Locale: en-US
 ms.date: 03/01/2023
 schema: 2.0.0
-title: about ANSI terminals
+title: about_ANSI_terminals
 ---
 # about_ANSI_Terminals
 

@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 12/07/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_psitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PSItem
+title: about_PSItem
 ---
 # about_PSItem
 

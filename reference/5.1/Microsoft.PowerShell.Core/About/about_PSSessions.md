@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 01/03/2018
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssessions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PSSessions
+title: about_PSSessions
 ---
 
 # about_PSSessions

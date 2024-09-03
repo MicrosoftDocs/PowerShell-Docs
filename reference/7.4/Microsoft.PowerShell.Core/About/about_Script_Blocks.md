@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 01/31/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_blocks?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Script Blocks
+title: about_Script_Blocks
 ---
 # about_Script_Blocks
 

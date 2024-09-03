@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 04/26/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_simplified_syntax?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Simplified Syntax
+title: about_Simplified_Syntax
 ---
 # about_Simplified_Syntax
 

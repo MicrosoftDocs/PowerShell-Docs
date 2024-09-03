@@ -5,7 +5,7 @@ ms.date: 03/07/2024
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Arrays
+title: about_Arrays
 ---
 # about_Arrays
 

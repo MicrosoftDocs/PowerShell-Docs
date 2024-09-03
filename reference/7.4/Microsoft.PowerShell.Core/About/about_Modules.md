@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 08/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Modules
+title: about_Modules
 ---
 # about_Modules
 

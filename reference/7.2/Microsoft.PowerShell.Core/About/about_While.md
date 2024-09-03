@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 01/18/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_while?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about While
+title: about_While
 ---
 # about_While
 

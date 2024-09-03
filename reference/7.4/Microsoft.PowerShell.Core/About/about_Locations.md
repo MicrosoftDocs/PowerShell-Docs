@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 09/19/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_locations?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Locations
+title: about_Locations
 ---
 # about_Locations
 
