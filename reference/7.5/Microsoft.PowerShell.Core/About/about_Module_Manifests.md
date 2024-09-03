@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 07/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Module Manifests
+title: about_Module_Manifests
 ---
 # about_Module_Manifests
 

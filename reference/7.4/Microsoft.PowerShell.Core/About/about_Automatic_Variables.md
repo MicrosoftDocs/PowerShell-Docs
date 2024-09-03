@@ -5,7 +5,7 @@ ms.date: 07/12/2024
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline, PSEventArgs, PSEventSubscriber, PSEdition]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Automatic Variables
+title: about_Automatic_Variables
 ---
 
 # about_Automatic_Variables

@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 11/11/2020
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/about/about_thread_jobs?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Thread Jobs
+title: about_Thread_Jobs
 ---
 
 # about_Thread_Jobs

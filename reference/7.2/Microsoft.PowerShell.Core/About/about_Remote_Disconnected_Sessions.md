@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 07/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_disconnected_sessions?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Remote Disconnected Sessions
+title: about_Remote_Disconnected_Sessions
 ---
 
 # about_Remote_Disconnected_Sessions

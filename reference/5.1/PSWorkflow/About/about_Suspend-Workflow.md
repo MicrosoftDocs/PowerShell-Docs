@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 06/09/2017
 online version: https://learn.microsoft.com/powershell/module/psworkflow/about/about_suspend-workflow?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Suspend-Workflow
+title: about_Suspend-Workflow
 ---
 
 # about_Suspend-Workflow

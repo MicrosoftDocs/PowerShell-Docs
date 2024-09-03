@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 08/07/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_types.ps1xml?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Types.ps1xml
+title: about_Types.ps1xml
 ---
 # about_Types.ps1xml
 

@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 10/31/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_syntax?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Command Syntax
+title: about_Command_Syntax
 ---
 # about_Command_Syntax
 

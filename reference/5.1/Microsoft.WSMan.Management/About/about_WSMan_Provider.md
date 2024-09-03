@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 10/18/2018
 online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about WSMan Provider
+title: about_WSMan_Provider
 ---
 # about_WSMan_Provider
 

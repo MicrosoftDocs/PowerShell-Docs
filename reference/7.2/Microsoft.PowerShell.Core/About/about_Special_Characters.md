@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 05/06/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_special_characters?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Special Characters
+title: about_Special_Characters
 ---
 
 # about_Special_Characters

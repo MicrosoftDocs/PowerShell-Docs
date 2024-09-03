@@ -5,7 +5,7 @@ ms.date: 06/13/2024
 no-loc: [<kbd>Tab</kbd>, <kbd>Ctrl</kbd>, <kbd>Space</kbd>]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_tab_expansion?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: About tab expansion
+title: About_tab_expansion
 ---
 # about_Tab_Expansion
 

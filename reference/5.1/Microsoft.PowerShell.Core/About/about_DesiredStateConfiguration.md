@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 07/23/2020
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about DesiredStateConfiguration
+title: about_DesiredStateConfiguration
 ---
 
 # about_DesiredStateConfiguration

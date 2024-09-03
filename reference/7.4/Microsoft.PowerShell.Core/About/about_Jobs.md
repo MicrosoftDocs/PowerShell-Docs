@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 08/29/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Jobs
+title: about_Jobs
 ---
 # about_Jobs
 

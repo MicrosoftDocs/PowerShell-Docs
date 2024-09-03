@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 06/21/2023
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/about/about_pipeline_chain_operators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Pipeline Chain Operators
+title: about_Pipeline_Chain_Operators
 ---
 
 # about_Pipeline_Chain_Operators
