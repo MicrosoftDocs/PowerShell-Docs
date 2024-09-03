@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 03/03/2023
+ms.date: 09/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compress-Archive
@@ -11,7 +11,7 @@ title: Compress-Archive
 # Compress-Archive
 
 ## SYNOPSIS
-Creates a compressed archive, or zipped file, from specified files and directories.
+Creates a compressed ZIP archive from specified files and directories.
 
 ## SYNTAX
 
@@ -65,7 +65,8 @@ a single zipped file for easier distribution and storage. An archive file can be
 the compression algorithm specified by the **CompressionLevel** parameter.
 
 The `Compress-Archive` cmdlet uses the **System.IO.Compression.ZipArchive** API to compress files.
-The API limits the maximum file size to 2GB. For more information, see
+The API limits the maximum file size to 2GB. The .NET API works with files that conform to the
+official ZIP file format specification by PKWARE Inc. For more information, see
 [System.IO.Compression.ZipArchive](xref:System.IO.Compression.ZipArchive).
 
 > [!NOTE]
