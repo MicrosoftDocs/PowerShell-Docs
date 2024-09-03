@@ -455,7 +455,7 @@ The matching braces (`{` and `}`) are required.
 
 The formatting operation yields a result string that consists of the original
 fixed text intermixed with the string representation of the objects in the
-list. For more information, [Composite Formatting][02].
+list. For more information, see [Composite Formatting][02].
 
 Enter the composite format string on the left side of the operator and the
 objects to be formatted on the right side of the operator.
