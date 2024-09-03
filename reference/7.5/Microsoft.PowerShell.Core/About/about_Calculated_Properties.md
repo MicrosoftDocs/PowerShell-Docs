@@ -1,7 +1,7 @@
 ---
 description: PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
 Locale: en-US
-ms.date: 03/24/2023
+ms.date: 09/03/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calculated_properties?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about Calculated Properties
@@ -19,9 +19,9 @@ Several PowerShell cmdlets transform, group, or process input objects into
 output objects using parameters that allow the addition of new properties to
 those output objects. You can use these parameters to generate new, calculated
 properties on output objects based on the values of input objects. The
-calculated property is defined by a [hashtable](about_hash_tables.md)
-containing key-value pairs that specify the name of the new property, an
-expression to calculate the value, and optional formatting information.
+calculated property is defined by a [hashtable][03] containing key-value pairs
+that specify the name of the new property, an expression to calculate the
+value, and optional formatting information.
 
 ## Supported cmdlets
 
@@ -81,7 +81,7 @@ the key-value pairs that each cmdlet supports.
 
 > [!NOTE]
 > The value of the `expression` can be a script block instead of a
-> hashtable. For more information, see the [Notes](#notes) section.
+> hashtable. For more information, see the [Notes][02] section.
 
 ## Hashtable key definitions
 
@@ -96,7 +96,7 @@ the key-value pairs that each cmdlet supports.
   `'right'`.
 - `formatstring` - Specifies a format string that defines how the value is
   formatted for output. For more information about format strings, see
-  [Format types in .NET](/dotnet/standard/base-types/formatting-types).
+  [Format types in .NET][01].
 - `width` - Specifies the maximum width column in a table when the value is
   displayed. The value must be greater than `0`.
 - `depth` - The **Depth** parameter of `Format-Custom` specifies the depth of
@@ -361,8 +361,12 @@ Count Name
 ### Measure-Object
 
 The `Measure-Object` cmdlet calculates the numeric properties of objects. In
-this example, we use a calculated property to get the count (**Sum**) of the
-numbers, between 1 and 10, that are evenly divisible by 3.
+this example, we use a calculated property to get the count of the numbers
+between 1 and 10 that are evenly divisible by 3.
+
+The script block returns `$true` if the number is divisible by 3 and `$false`
+for all other numbers. The **Sum** operation treats `$true` values as `1` and
+`$false` values as `0`.
 
 ```powershell
 1..10 | Measure-Object -Property {($_ % 3) -eq 0} -Sum
@@ -498,15 +502,30 @@ Date       Salesperson UnitsSold
 
 ## See also
 
-- [about_Hash_Tables](about_hash_tables.md)
-- [ConvertTo-Html](xref:Microsoft.PowerShell.Utility.ConvertTo-Html)
-- [Format-Custom](xref:Microsoft.PowerShell.Utility.Format-Custom)
-- [Format-List](xref:Microsoft.PowerShell.Utility.Format-List)
-- [Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table)
-- [Format-Wide](xref:Microsoft.PowerShell.Utility.Format-Wide)
-- [Compare-Object](xref:Microsoft.PowerShell.Utility.Compare-Object)
-- [Group-Object](xref:Microsoft.PowerShell.Utility.Group-Object)
-- [Measure-Object](xref:Microsoft.PowerShell.Utility.Measure-Object)
-- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
-- [Sort-Object](xref:Microsoft.PowerShell.Utility.Sort-Object)
-- [Format types in .NET](/dotnet/standard/base-types/formatting-types)
+- [about_Hash_Tables][03]
+- [ConvertTo-Html][05]
+- [Format-Custom][06]
+- [Format-List][07]
+- [Format-Table][08]
+- [Format-Wide][09]
+- [Compare-Object][04]
+- [Group-Object][10]
+- [Measure-Object][11]
+- [Select-Object][12]
+- [Sort-Object][13]
+- [Format types in .NET][01]
+
+<!-- link references -->
+[01]: /dotnet/standard/base-types/formatting-types
+[02]: #notes
+[03]: about_hash_tables.md
+[04]: xref:Microsoft.PowerShell.Utility.Compare-Object
+[05]: xref:Microsoft.PowerShell.Utility.ConvertTo-Html
+[06]: xref:Microsoft.PowerShell.Utility.Format-Custom
+[07]: xref:Microsoft.PowerShell.Utility.Format-List
+[08]: xref:Microsoft.PowerShell.Utility.Format-Table
+[09]: xref:Microsoft.PowerShell.Utility.Format-Wide
+[10]: xref:Microsoft.PowerShell.Utility.Group-Object
+[11]: xref:Microsoft.PowerShell.Utility.Measure-Object
+[12]: xref:Microsoft.PowerShell.Utility.Select-Object
+[13]: xref:Microsoft.PowerShell.Utility.Sort-Object
