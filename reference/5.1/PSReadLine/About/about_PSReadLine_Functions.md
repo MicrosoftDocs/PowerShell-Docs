@@ -1,5 +1,7 @@
 ---
 description: >
+    This article documents the functions provided by PSReadLine. These functions
+    can be bound to keystrokes for easy access and invocation.
 Locale: en-US
 ms.date: 10/10/2023
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
