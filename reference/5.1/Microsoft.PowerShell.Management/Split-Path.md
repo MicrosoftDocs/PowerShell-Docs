@@ -116,6 +116,7 @@ Split-Path -Path .\folder1\file1.txt -Parent
 
 ```Output
 .\folder1
+```
 
 ```powershell
 Split-Path -Path .\folder1\file1.txt -Parent -Resolve
