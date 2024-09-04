@@ -336,10 +336,9 @@ $hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
 ```
 
 > [!NOTE]
-> In these examples, `$hash` is defined as an
-> [ordered dictionary](#creating-ordered-dictionaries) to ensure the output is
-> always in the same order. These examples work the same for normal hashtables,
-> but the order of the output isn't predictable.
+> In these examples, `$hash` is defined as an ordered dictionary to ensure the
+> output is always in the same order. These examples work the same for standard
+> hashtables, but the order of the output isn't predictable.
 
 Each example returns a message for every key and its value:
 
