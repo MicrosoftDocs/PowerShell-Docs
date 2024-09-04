@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 03/20/2024
+ms.date: 09/04/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
@@ -12,6 +12,13 @@ title: about_Quoting_Rules
 Describes rules for using single and double quotation marks in PowerShell.
 
 ## Long description
+
+When parsing, PowerShell first looks to interpret input as an expression. But
+when a command invocation is encountered, parsing continues in argument mode.
+Non-numeric arguments without quotes are treated as strings. If you have
+arguments that contain spaces, such as paths, then you must enclose those
+argument values in quotes. For more information about argument parsing, see the
+**Argument mode** section of [about_Parsing][01].
 
 Quotation marks are used to specify a literal string. You can enclose a string
 in single quotation marks (`'`) or double quotation marks (`"`).
@@ -427,12 +434,11 @@ For more information about this behavior, see the [about_Parsing][02] article.
 
 ## See also
 
-- [about_Parsing][01]
 - [about_Special_Characters][04]
 - [ConvertFrom-StringData][05]
 
 <!-- link references -->
-[01]: about_Parsing.md
+[01]: about_Parsing.md#argument-mode
 [02]: about_Parsing.md#passing-arguments-that-contain-quote-characters
 [03]: about_preference_variables.md#ofs
 [04]: about_Special_Characters.md
