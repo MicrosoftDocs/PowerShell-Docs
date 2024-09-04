@@ -90,6 +90,8 @@ items:
             href: learn/shell/using-keyhandlers.md
           - name: Configuring a light colored theme
             href: learn/shell/using-light-theme.md
+          - name: Improve the accessibility of output in PowerShell
+            href: learn/shell/output-for-screen-reader.md
       - name: Deep dives
         items:
           - name: Overview
