@@ -869,4 +869,4 @@ Displays information about PowerShell cmdlets and concepts.
 - [about_Functions](about_Functions.md)
 - [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 - [about_Scripts](about_Scripts.md)
-- [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)
+- [Writing Comment-Based Help Topics](/powershell/scripting/developer/help/writing-comment-based-help-topics)
