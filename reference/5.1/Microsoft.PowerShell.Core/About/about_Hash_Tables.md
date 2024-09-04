@@ -248,10 +248,10 @@ The most-used properties are **Count**, **Keys**, **Values**, and **Item**.
 ## Accessing values
 
 There are two common ways to access the values in a hashtable or dictionary:
-member notation or array notation.
+member notation or array index notation.
 
-- **Member notation** - Values can be accessed by using the key name as a member
-  property of the object. For example:
+- **Member notation** - Values can be accessed by using the key name as a
+  member property of the object. For example:
 
   ```powershell
   PS> $hash.1
@@ -261,11 +261,11 @@ member notation or array notation.
   two
   ```
 
-- **Array notation** - Values can be accessed by using array syntax. PowerShell
-  converts that notation into a call to **Item** parameterized property of the
-  object.
+- **Array index notation** - Values can be accessed by using index notation.
+  PowerShell converts that notation into a call to **Item** parameterized
+  property of the object.
 
-  When you use array syntax with hashtables, the value inside of the brackets
+  When you use index notation with hashtables, the value inside of the brackets
   is the key name. If the key is a string value, enclose the key name in
   quotes. For example:
 
@@ -286,10 +286,10 @@ member notation or array notation.
   one
   ```
 
-  When you use array syntax with dictionaries, the value inside of the brackets
-  is interpreted based on its type. If the value is an integer, it's treated as
-  an index into the collection of values. If the value isn't an integer, it's
-  treated as the key name. For example:
+  When you use index notation with dictionaries, the value inside of the
+  brackets is interpreted based on its type. If the value is an integer, it's
+  treated as an index into the collection of values. If the value isn't an
+  integer, it's treated as the key name. For example:
 
   ```powershell
   PS> $dictionary[1]
@@ -349,7 +349,7 @@ The value of 'Shape' is: Square
 The value of 'Color' is: Blue
 ```
 
-This example uses a **foreach** block to iterate over the keys.
+This example uses a `foreach` block to iterate over the keys.
 
 ```powershell
 foreach ($Key in $hash.Keys) {
@@ -365,7 +365,7 @@ $hash.Keys | ForEach-Object {
 }
 ```
 
-This example uses the **GetEnumerator** method to send each key-value pair
+This example uses the `GetEnumerator()` method to send each key-value pair
 through the pipeline to `ForEach-Object`.
 
 ```powershell
@@ -374,7 +374,7 @@ $hash.GetEnumerator() | ForEach-Object {
 }
 ```
 
-This example uses the **GetEnumerator** and **ForEach** methods to iterate over
+This example uses the `GetEnumerator()` and `ForEach()` methods to iterate over
 each key-value pair.
 
 ```powershell
