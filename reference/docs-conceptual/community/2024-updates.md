@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 08/05/2024
+ms.date: 09/05/2024
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,30 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-August
+
+- Updates for new releases of PowerShell 7.2.23, 7.4.5 and 7.5-preview.4
+- Two new cmdlets in 7.5-preview.4
+  - [ConvertFrom-CliXml](xref:Microsoft.PowerShell.Utility.ConvertFrom-CliXml)
+  - [ConvertTo-CliXml](xref:Microsoft.PowerShell.Utility.ConvertTo-CliXml)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 25 PRs merged (4 from Community)
+- 20 issues opened (18 from Community)
+- 20 issues closed (17 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|     GitHub Id      | PRs merged | Issues opened |
+| ------------------ | :--------: | :-----------: |
+| RokeJulianLockhart |     1      |               |
+| mohitNarang        |     1      |               |
+| aberus             |     1      |               |
 
 ## 2024-July
 
