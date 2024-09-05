@@ -1,7 +1,7 @@
 ---
 description: Describes the full and relative path formats in  PowerShell.
 Locale: en-US
-ms.date: 09/16/2023
+ms.date: 09/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_path_syntax?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Path_Syntax
@@ -18,9 +18,9 @@ uniquely identified by their path names. A path is a combination of the
 item name, the container and subcontainers in which the item is located, and
 the PowerShell drive through which the containers are accessed.
 
-In PowerShell, pathnames can be one of two types: _fully qualified_ and
+In PowerShell, path names can be one of two types: _fully qualified_ and
 _relative_. A fully qualified path consists of all elements that make up a
-path. The following syntax shows the elements in a fully qualified path name:
+path. The following syntax shows the elements in a fully qualified path:
 
 ```Syntax
 [<provider>::]<drive>:[\<container>[\<subcontainer>...]]\<item>
@@ -115,11 +115,35 @@ first file (`C:\TechDocs\Jan\Results.txt`) and the path for the second file
 (`C:\TechDocs\Feb\Results.txt`) allow you to clearly distinguish between the
 two files.
 
+## Support for the Win32 File namespace
+
+On Windows, the cmdlets that support the FileSystem provider also support the
+paths that use the Win32 File namespace format. You can only use these paths
+with the **LiteralPath** parameter of the cmdlets.
+
+Paths in Win32 File namespace are prefixed with `\\?\`. The prefix tells the
+Windows APIs to disable all string parsing and send the string that follows
+directly to the file system. For example, if the file system supports large
+paths and file names, you can exceed the **MAX_PATH** limits that are otherwise
+enforced by the Windows APIs.
+
+For more information, see _Win32 File Namespaces_ in
+[Naming Files, Paths, and Namespaces][01].
+
 ## See also
 
-- [about_Locations](about_Locations.md)
-- [Convert-Path](xref:Microsoft.PowerShell.Management.Convert-Path)
-- [Join-Path](xref:Microsoft.PowerShell.Management.Join-Path)
-- [Resolve-Path](xref:Microsoft.PowerShell.Management.Resolve-Path)
-- [Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
-- [Test-Path](xref:Microsoft.PowerShell.Management.Test-Path)
+- [about_Locations][02]
+- [Convert-Path][03]
+- [Join-Path][04]
+- [Resolve-Path][05]
+- [Split-Path][06]
+- [Test-Path][07]
+
+<!-- link references -->
+[01]: /windows/win32/fileio/naming-a-file#win32-file-namespaces
+[02]: about_Locations.md
+[03]: xref:Microsoft.PowerShell.Management.Convert-Path
+[04]: xref:Microsoft.PowerShell.Management.Join-Path
+[05]: xref:Microsoft.PowerShell.Management.Resolve-Path
+[06]: xref:Microsoft.PowerShell.Management.Split-Path
+[07]: xref:Microsoft.PowerShell.Management.Test-Path
