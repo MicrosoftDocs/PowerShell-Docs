@@ -84,17 +84,20 @@ The earliest collection of modules for managing legacy Azure resources that use 
 Manager (ASM) APIs. This legacy PowerShell module isn't recommended when creating new resources
 since ASM is scheduled for retirement.
 
-### Azure PowerShell-related products
+### Azure-related PowerShell modules
 
 These products are used to manage Azure resources but aren't part of the Azure PowerShell collective
 product. They should never be described using the "Azure PowerShell" collective name.
 
-- Azure Active Directory PowerShell
+- Azure Active Directory PowerShell (AzureAD)
 - Azure Information Protection PowerShell
 - Azure Deployment Manager PowerShell
 - Azure Elastic Database Jobs PowerShell
 - Azure Service Fabric PowerShell
 - Azure Stack PowerShell
+- Microsoft.Graph PowerShell
+- Microsoft.Graph.Entra PowerShell
+- MSOnline PowerShell
 
 Guidelines
 
