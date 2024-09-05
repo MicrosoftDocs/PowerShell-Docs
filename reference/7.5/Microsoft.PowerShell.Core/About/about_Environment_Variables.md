@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 04/22/2024
+ms.date: 09/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
@@ -14,13 +14,13 @@ Describes how to access and manage environment variables in PowerShell.
 Environment variables store data that's used by the operating system and other
 programs. PowerShell creates the following environment variables:
 
-- **POWERSHELL_TELEMETRY_OPTOUT**
-- **POWERSHELL_DISTRIBUTION_CHANNEL**
-- **POWERSHELL_UPDATECHECK**
-- **PSExecutionPolicyPreference**
-- **PSModulePath**
-- **PSModuleAnalysisCachePath**
-- **PSDisableModuleAnalysisCacheCleanup**
+- `POWERSHELL_TELEMETRY_OPTOUT`
+- `POWERSHELL_DISTRIBUTION_CHANNEL`
+- `POWERSHELL_UPDATECHECK`
+- `PSExecutionPolicyPreference`
+- `PSModulePath`
+- `PSModuleAnalysisCachePath`
+- `PSDisableModuleAnalysisCacheCleanup`
 
 For full descriptions of these variables, see the
 [PowerShell environment variables][03] of this article.
@@ -339,7 +339,7 @@ preference variables, see [about_Preference_Variables][06].
 
 The environment variables that store preferences include:
 
-- **POWERSHELL_TELEMETRY_OPTOUT**
+- `POWERSHELL_TELEMETRY_OPTOUT`
 
   To opt-out of telemetry, set the environment variable to `true`, `yes`, or
   `1`. For more information, see [about_Telemetry][09].
@@ -348,7 +348,7 @@ The environment variables that store preferences include:
   starting the PowerShell process. See the previous sections for information
   about creating persistent environment variables.
 
-- **POWERSHELL_DISTRIBUTION_CHANNEL**
+- `POWERSHELL_DISTRIBUTION_CHANNEL`
 
   Beginning in PowerShell 7.2, this environment variable is set by the
   installer packages to record the method and source of installation for
@@ -357,7 +357,7 @@ The environment variables that store preferences include:
   This information is included in the telemetry data sent to Microsoft. Users
   shouldn't change this value.
 
-- **POWERSHELL_UPDATECHECK**
+- `POWERSHELL_UPDATECHECK`
 
   The update notification behavior can be changed using the
   `POWERSHELL_UPDATECHECK` environment variable. For more information, see
@@ -375,7 +375,7 @@ The environment variables that store preferences include:
   PowerShell process. See the previous sections for information about creating
   persistent environment variables.
 
-- **PSExecutionPolicyPreference**
+- `PSExecutionPolicyPreference`
 
   Stores the execution policy set for the current session. This environment
   variable exists only when you set an execution policy for a single session.
@@ -393,7 +393,7 @@ The environment variables that store preferences include:
   This information only applies to the Windows platform. For more information,
   see [about_Execution_Policies][05].
 
-- **PSModulePath**
+- `PSModulePath`
 
   The `$env:PSModulePath` environment variable contains a list of folder
   locations that are searched to find modules and resources. On Windows, the
@@ -425,7 +425,7 @@ The environment variables that store preferences include:
 
   For more information, see [about_PSModulePath][08].
 
-- **PSModuleAnalysisCachePath**
+- `PSModuleAnalysisCachePath`
 
   PowerShell provides control over the file that's used to cache data about
   modules and their cmdlets. The cache is read at startup while searching for a
@@ -474,7 +474,7 @@ The environment variables that store preferences include:
   }
   ```
 
-- **PSDisableModuleAnalysisCacheCleanup**
+- `PSDisableModuleAnalysisCacheCleanup`
 
   When writing out the module analysis cache, PowerShell checks for modules
   that no longer exist to avoid an unnecessarily large cache. Sometimes these
@@ -491,7 +491,7 @@ The environment variables that store preferences include:
 
 ### Path information
 
-- **PATH**
+- `PATH`
 
   The `$env:PATH` environment variable contains a list of folder locations that
   the operating system searches for executable files. On Windows, the list of
@@ -499,7 +499,7 @@ The environment variables that store preferences include:
   non-Windows platforms, the colon (`:`) separates the folder locations in the
   environment variable.
 
-- **PATHEXT**
+- `PATHEXT`
 
   The `$env:PATHEXT` variable contains a list of file extensions that Windows
   considers to be executable files. When a script file with one of the listed
@@ -519,23 +519,23 @@ The environment variables that store preferences include:
   PowerShell scripts always start in the current console session. You don't
   need to add the `.PS1` extension.
 
-- **XDG** variables
+- `XDG` variables
 
   On non-Windows platforms, PowerShell uses the following XDG environment
   variables as defined by the [XDG Base Directory Specification][13].
 
-  - **XDG_CONFIG_HOME**
-  - **XDG_DATA_HOME**
-  - **XDG_CACHE_HOME**
+  - `XDG_CONFIG_HOME`
+  - `XDG_DATA_HOME`
+  - `XDG_CACHE_HOME`
 
 ### Terminal features
 
 Beginning in PowerShell 7.2, the following environment variables can be used to
 control the Virtual Terminal features like ANSI escape sequences that colorize
-output. Support for ANSI escape sequences can be turned off using the **TERM**
-or **NO_COLOR** environment variables.
+output. Support for ANSI escape sequences can be turned off using the `TERM`
+or `NO_COLOR` environment variables.
 
-- **TERM**
+- `TERM`
 
   The following values of `$env:TERM` change the behavior as follows:
 
@@ -543,10 +543,10 @@ or **NO_COLOR** environment variables.
   - `xterm-mono` - sets `$PSStyle.OutputRendering = PlainText`
   - `xtermm` - sets `$PSStyle.OutputRendering = PlainText`
 
-- **NO_COLOR**
+- `NO_COLOR`
 
   If `$env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
-  **PlainText**. For more information about the **NO_COLOR** environment
+  `PlainText`. For more information about the `NO_COLOR` environment
   variable, see [https://no-color.org/][12].
 
 ## See also

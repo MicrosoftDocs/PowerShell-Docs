@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 04/22/2024
+ms.date: 09/05/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
@@ -14,10 +14,10 @@ Describes how to access and manage environment variables in PowerShell.
 Environment variables store data that's used by the operating system and other
 programs. PowerShell creates the following environment variables:
 
-- **PSExecutionPolicyPreference**
-- **PSModulePath**
-- **PSModuleAnalysisCachePath**
-- **PSDisableModuleAnalysisCacheCleanup**
+- `PSExecutionPolicyPreference`
+- `PSModulePath`
+- `PSModuleAnalysisCachePath`
+- `PSDisableModuleAnalysisCacheCleanup`
 
 For full descriptions of these variables, see the
 [PowerShell environment variables][03] of this article.
@@ -308,7 +308,7 @@ preference variables, see [about_Preference_Variables][06].
 
 The environment variables that store preferences include:
 
-- **PSExecutionPolicyPreference**
+- `PSExecutionPolicyPreference`
 
   Stores the execution policy set for the current session. This environment
   variable exists only when you set an execution policy for a single session.
@@ -326,7 +326,7 @@ The environment variables that store preferences include:
   This information only applies to the Windows platform. For more information,
   see [about_Execution_Policies][05].
 
-- **PSModulePath**
+- `PSModulePath`
 
   The `$env:PSModulePath` environment variable contains a list of folder
   locations that are searched to find modules and resources.
@@ -352,7 +352,7 @@ The environment variables that store preferences include:
 
   For more information, see [about_PSModulePath][08].
 
-- **PSModuleAnalysisCachePath**
+- `PSModuleAnalysisCachePath`
 
   PowerShell provides control over the file that's used to cache data about
   modules and their cmdlets. The cache is read at startup while searching for a
@@ -396,7 +396,7 @@ The environment variables that store preferences include:
   }
   ```
 
-- **PSDisableModuleAnalysisCacheCleanup**
+- `PSDisableModuleAnalysisCacheCleanup`
 
   When writing out the module analysis cache, PowerShell checks for modules
   that no longer exist to avoid an unnecessarily large cache. Sometimes these
@@ -413,13 +413,13 @@ The environment variables that store preferences include:
 
 ### Path information
 
-- **PATH**
+- `PATH`
 
   The `$env:PATH` environment variable contains a list of folder locations that
   the operating system searches for executable files. On Windows, the list of
   folder locations is separated by the semi-colon (`;`) character.
 
-- **PATHEXT**
+- `PATHEXT`
 
   The `$env:PATHEXT` variable contains a list of file extensions that Windows
   considers to be executable files. When a script file with one of the listed
