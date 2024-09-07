@@ -1,7 +1,7 @@
 ---
 description: This article aims to guide you through methods to output from PowerShell in formats that are friendly for screen readers, enhancing the accessibility of your scripts.
 ms.custom: experience
-ms.date: 09/04/2024
+ms.date: 09/07/2024
 title: Improve the accessibility of output in PowerShell
 ---
 # Improve the accessibility of output in PowerShell
@@ -10,10 +10,87 @@ Most terminal environments only display raw text. Users that rely on screen read
 tedious narration when consuming large amounts of raw text because the raw output doesn't have the
 accessibility metadata to characterize the format of the content.
 
-The examples in this article show how to improve the structure and labelling of output from
-PowerShell to improve usability with screen reader technologies.
+There are two ways to improve the accessibility of the output in PowerShell:
 
-## Out-GridView command on Windows
+- Reduce the amount of output displayed in the terminal by filtering and selecting the data you
+  want and output the text in a more readable format.
+- Output the data in a way that it can be viewed in another tool that supports screen reading
+  technologies.
+
+## Reduce the amount of output
+
+One way to improve the accessibility of the output is to reduce the amount of output displayed in
+the terminal. PowerShell has several commands that can help you filter and select the data you want.
+
+### Select and filter data
+
+Rather than returning a large mount of data, use commands such as `Select-Object`, `Sort-Object`,
+and `Where-Object` to reduce the amount of output. The following example gets the list of services
+on the computer.
+
+Each of the following commands improves the output in a different way:
+
+- The `-ErrorAction SilentlyContinue` parameter suppresses error messages that might be generated if
+  the user doesn't have permission to view some services.
+- The `Where-Object` command reduces the number of items returned by filtering the list to only
+  show services that are running and have `event` in the description.
+- The `Select-Object` command selects only the service name and display name.
+- The `Format-List` command displays the output in list format, which provides a better narration
+  experience for screen readers.
+
+```powershell
+Get-Service -ErrorAction SilentlyContinue |
+    Where-Object {$_.Status -eq 'Running' -and $_.Description -Match 'event'} |
+    Select-Object Name, DisplayName |
+    Format-List
+```
+
+### Reformat the output with calculated properties
+
+The default property names of .NET objects output by PowerShell can be verbose and confusing. You
+can use calculated properties to change the property names and values to something easier to
+understood when read by a narrator technology.
+
+The following example shows how to get the top five processes by memory usage and display the process
+name and memory usage in megabytes.
+
+```powershell
+Get-Process |
+    Sort-Object WorkingSet -Descending |
+    Select-Object -First 5 -Property ProcessName,
+        @{n="MemoryMB"; e={'{0:N}' -f ($_.WorkingSet/1Mb)}} |
+    Format-List
+```
+
+By default, `Get-Process` displays the **WorkingSet** as the number of bytes of memory used. Without
+formatting, it can be difficult to understand the magnitude of the number. The calculated property
+converts the number of bytes to megabytes and formats the number with commas and limits the value to
+two decimal places.
+
+```Output
+ProcessName : vmmemWSL
+MemoryMB    : 1,217.69
+
+ProcessName : Memory Compression
+MemoryMB    : 780.45
+
+ProcessName : Code
+MemoryMB    : 726.43
+
+ProcessName : OUTLOOK
+MemoryMB    : 460.16
+
+ProcessName : msedgewebview2
+MemoryMB    : 428.94
+```
+
+## Display the data in a tool outside of the terminal
+
+For large amounts of data, rather than output to the host, consider writing output in a format that
+can be viewed in another tool that supports screen reading technologies. You might need to save the
+data to a file in a format that can be opened in another application.
+
+### Out-GridView command on Windows
 
 For small to moderate size output, use the `Out-GridView` command. The output is rendered using
 Windows Presentation Foundation (WPF) in tabular form, much like a spreadsheet. The GridView control
@@ -29,43 +106,6 @@ Get-Service | Out-GridView
 
 The `Out-GridView` command is only available in PowerShell on Windows.
 
-## Reduce the amount of output
-
-One way to improve the accessibility of the output is to reduce the amount of output displayed in
-the terminal. PowerShell has several commands that can help you filter and select the data you want.
-
-### Select and filter data
-
-Rather than returning a large mount of data, use commands such as `Select-Object`, `Sort-Object`,
-and `Where-Object` to reduce the amount of output. The following example gets the list of services
-running on the computer, filters the list to only show the running services with `event` in the
-description.
-
-```powershell
-Get-Service | Where-Object {$_.Status -eq 'Running' -and $_.Description -Match 'event'}
-```
-
-### Descriptive property names
-
-The default property names of .NET objects output by PowerShell can be verbose and confusing. Using
-`Select-Object` you can select only the properties you are interested in and use calculated
-properties to change the property names and values to something easier to understood when read by a
-narrator technology.
-
-The following examples shows how to get the top 5 processes by memory usage and display the process
-name and memory usage in megabytes.
-
-```powershell
-Get-Process | Sort-Object WorkingSet -Descending |
-    Select -First 5 -Property ProcessName, @{Name = "MemoryMB"; Expression = {$_.WorkingSet/1Mb}}
-```
-
-## Choose an output format
-
-For large amounts of data, rather than output to the host, consider writing output in a format that
-can be viewed in another tool that supports screen reading technologies. Save that formatted output
-to a file then open the file in an the appropriate application.
-
 ### Character Separated Value (CSV) format
 
 Spreadsheet applications such as **Microsoft Excel** support CSV files. The following example shows
@@ -73,9 +113,11 @@ how to save the output of a command to a CSV file.
 
 ```powershell
 Get-Service | Export-Csv -Path .\myFile.csv
+Invoke-Item .\myFile.csv
 ```
 
-Once the file is saved, you can open it in Excel to view the data in a tabular format.
+The `Invoke-Item` command opens the file in the default application for CSV files, which is usually
+Microsoft Excel.
 
 ### HyperText Markup Language (HTML) format
 
@@ -84,9 +126,10 @@ to save the output of a command to an HTML file.
 
 ```powershell
 Get-Service | ConvertTo-HTML | Out-File .\myFile.html
+Invoke-Item .\myFile.html
 ```
 
-Open the save file in your web browser to view the data in a tabular format.
+The `Invoke-Item` command opens the file in your default web browser.
 
 ## Additional reading
 
