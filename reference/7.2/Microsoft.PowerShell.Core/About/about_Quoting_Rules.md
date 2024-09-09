@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 09/04/2024
+ms.date: 09/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
@@ -33,6 +33,16 @@ In commands to remote computers, quotation marks define the parts of the
 command that are run on the remote computer. In a remote session, quotation
 marks also determine whether the variables in a command are interpreted first
 on the local computer or on the remote computer.
+
+> PowerShell treats smart quotation marks, also called typographic or curly
+> quotes, as normal quotation marks for strings. Don't use smart quotation
+> marks to enclose strings. When writing strings that contain smart quotation
+> marks, follow the guidance in the
+> [Including quote characters in a string](#including-quote-characters-in-a-string)
+> section of this document.
+>
+> For more information about smart quotation marks, see the _Smart Quotes_
+> section in the Wikipedia article [Quotation marks in English][02].
 
 ## Double-quoted strings
 
@@ -204,6 +214,20 @@ Use a quotation mark (") to begin a string.
 Use a quotation mark (`") to begin a string.
 ```
 
+Because PowerShell interprets smart quotation marks, like `‘`, `'`, `“`, and
+`”`, as normal quotation marks, smart quotation marks also need to be escaped.
+For example:
+
+```powershell
+"Double ““smart quotation marks`” must be escaped in a double-quoted string."
+'Single ‘‘smart quotation marks’’ must be escaped in a single-quoted string.'
+```
+
+```Output
+Double “smart quotation marks” must be escaped in a double-quoted string.
+Single ‘smart quotation marks’ must be escaped in a single-quoted string.
+```
+
 ## Here-strings
 
 The quotation rules for here-strings are slightly different.
@@ -360,7 +384,7 @@ see in the console.
 Collections, including arrays, are converted to strings by placing a single
 space between the string representations of the elements. A different separator
 can be specified by setting preference variable `$OFS`. For more information,
-see the [`$OFS` preference variable][03].
+see the [`$OFS` preference variable][04].
 
 Instances of any other type are converted to strings by calling the
 `ToString()` method, which may not give a meaningful representation. For
@@ -430,16 +454,17 @@ Some native commands expect arguments that contain quote characters. PowerShell
 interprets the quoted string before passing it to the external command. This
 interpretation removes the outer quote characters.
 
-For more information about this behavior, see the [about_Parsing][02] article.
+For more information about this behavior, see the [about_Parsing][03] article.
 
 ## See also
 
-- [about_Special_Characters][04]
-- [ConvertFrom-StringData][05]
+- [about_Special_Characters][05]
+- [ConvertFrom-StringData][06]
 
 <!-- link references -->
 [01]: about_Parsing.md#argument-mode
-[02]: about_Parsing.md#passing-arguments-that-contain-quote-characters
-[03]: about_preference_variables.md#ofs
-[04]: about_Special_Characters.md
-[05]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
+[02]: https://en.wikipedia.org/wiki/Quotation_marks_in_English#Smart_quotes
+[03]: about_Parsing.md#passing-arguments-that-contain-quote-characters
+[04]: about_preference_variables.md#ofs
+[05]: about_Special_Characters.md
+[06]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
