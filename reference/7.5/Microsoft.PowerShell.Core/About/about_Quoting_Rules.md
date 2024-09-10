@@ -18,7 +18,7 @@ when a command invocation is encountered, parsing continues in argument mode.
 Non-numeric arguments without quotes are treated as strings. If you have
 arguments that contain spaces, such as paths, then you must enclose those
 argument values in quotes. For more information about argument parsing, see the
-**Argument mode** section of [about_Parsing][01].
+**Argument mode** section of [about_Parsing][02].
 
 Quotation marks are used to specify a literal string. You can enclose a string
 in single quotation marks (`'`) or double quotation marks (`"`).
@@ -34,15 +34,14 @@ command that are run on the remote computer. In a remote session, quotation
 marks also determine whether the variables in a command are interpreted first
 on the local computer or on the remote computer.
 
+> [!NOTE]
 > PowerShell treats smart quotation marks, also called typographic or curly
 > quotes, as normal quotation marks for strings. Don't use smart quotation
 > marks to enclose strings. When writing strings that contain smart quotation
 > marks, follow the guidance in the
-> [Including quote characters in a string](#including-quote-characters-in-a-string)
-> section of this document.
->
-> For more information about smart quotation marks, see the _Smart Quotes_
-> section in the Wikipedia article [Quotation marks in English][02].
+> [Including quote characters in a string][01] section of this document. For
+> more information about smart quotation marks, see the _Smart Quotes_ section
+> in the Wikipedia article [Quotation marks in English][06].
 
 ## Double-quoted strings
 
@@ -85,7 +84,7 @@ enclosed in a subexpression. For example:
 ```
 
 ```Output
-PS version: 7.2.0
+PS version: 7.5.0-preview.4
 ```
 
 To separate a variable name from subsequent characters in the string, enclose
@@ -214,7 +213,7 @@ Use a quotation mark (") to begin a string.
 Use a quotation mark (`") to begin a string.
 ```
 
-Because PowerShell interprets smart quotation marks, like `‘`, `'`, `“`, and
+Because PowerShell interprets smart quotation marks, like `‘`, `’`, `“`, and
 `”`, as normal quotation marks, smart quotation marks also need to be escaped.
 For example:
 
@@ -459,12 +458,13 @@ For more information about this behavior, see the [about_Parsing][03] article.
 ## See also
 
 - [about_Special_Characters][05]
-- [ConvertFrom-StringData][06]
+- [ConvertFrom-StringData][07]
 
 <!-- link references -->
-[01]: about_Parsing.md#argument-mode
-[02]: https://en.wikipedia.org/wiki/Quotation_marks_in_English#Smart_quotes
+[01]: #including-quote-characters-in-a-string
+[02]: about_Parsing.md#argument-mode
 [03]: about_Parsing.md#passing-arguments-that-contain-quote-characters
 [04]: about_preference_variables.md#ofs
 [05]: about_Special_Characters.md
-[06]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
+[06]: https://en.wikipedia.org/wiki/Quotation_marks_in_English#Smart_quotes
+[07]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
