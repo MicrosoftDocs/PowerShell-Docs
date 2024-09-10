@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 07/24/2024
+ms.date: 09/10/2024
 title: Installing PowerShell on macOS
 ---
 
@@ -112,18 +112,19 @@ brew upgrade powershell-lts
 
 ## Installation via Direct Download
 
-Starting with version 7.2, PowerShell supports the Apple M1 processor. Download the install package
-from the [releases][09] page onto your computer. The links to the current versions are:
+Starting with version 7.2, PowerShell supports the Apple M-series Arm-based processors. Download the
+install package from the [releases][09] page onto your computer. The links to the current versions
+are:
 
 - PowerShell 7.4
   - x64 processors - [powershell-7.4.5-osx-x64.pkg][20]
-  - M1 processors - [powershell-7.4.5-osx-arm64.pkg][18]
+  - Arm64 processors - [powershell-7.4.5-osx-arm64.pkg][18]
 - PowerShell 7.2 (LTS)
   - x64 processors - [powershell-7.2.23-osx-x64.pkg][16]
-  - M1 processors - [powershell-7.2.23-osx-arm64.pkg][14]
+  - Arm64 processors - [powershell-7.2.23-osx-arm64.pkg][14]
 - PowerShell 7.5-preview
   - x64 processors - [powershell-7.5.0-preview.3-osx-x64.pkg][24]
-  - M1 processors - [powershell-7.5.0-preview.3-arm64.pkg][22]
+  - Arm64 processors - [powershell-7.5.0-preview.3-arm64.pkg][22]
 
 You can double-click the file and follow the prompts, or install it from the terminal using the
 following commands. Change the name of the file to match the file you downloaded.
@@ -189,13 +190,13 @@ current versions are:
 
 - PowerShell 7.4 (LTS)
   - x64 processors - [powershell-7.4.5-osx-x64.tar.gz][21]
-  - M1 processors - [powershell-7.4.5-osx-arm64.tar.gz][19]
+  - Arm64 processors - [powershell-7.4.5-osx-arm64.tar.gz][19]
 - PowerShell 7.2 (LTS)
   - x64 processors - [powershell-7.2.23-osx-x64.tar.gz][17]
-  - M1 processors - [powershell-7.2.23-osx-arm64.tar.gz][15]
+  - Arm64 processors - [powershell-7.2.23-osx-arm64.tar.gz][15]
 - PowerShell 7.5-preview
   - x64 processors - [powershell-7.5.0-preview.3-osx-x64.tar.gz][25]
-  - M1 processors - [powershell-7.5.0-preview.3-osx-arm64.tar.gz][23]
+  - Arm64 processors - [powershell-7.5.0-preview.3-osx-arm64.tar.gz][23]
 
 Use the following commands to install PowerShell from the binary archive. Change the download URL to
 match the version you want to install.
