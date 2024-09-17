@@ -26,7 +26,7 @@ Windows PowerShell 5.1.
 - v2.0.0 ships in Windows PowerShell 5.1
 
 For more information about version differences, see
-[about_PSReadLine_Release_Notes](about_PSReadLine_Release_Notes.md).
+[about_PSReadLine_Release_Notes](about/about_PSReadLine_Release_Notes.md).
 
 These articles document version 2.0.0 of PSReadLine.
 

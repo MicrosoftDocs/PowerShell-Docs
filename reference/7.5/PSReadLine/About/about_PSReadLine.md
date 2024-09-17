@@ -91,15 +91,10 @@ To disable Predictive IntelliSense, just run:
 Set-PSReadLineOption -PredictionSource None
 ```
 
-> [!NOTE]
-> Predictive IntelliSense is enabled by default in PSReadLine 2.2.6. For more
-> information see, the [PSReadLine release history][02] in the **Notes**
-> section below.
-
 ## Custom Key Bindings
 
 PSReadLine supports custom key bindings using the `Set-PSReadLineKeyHandler`
-cmdlet. Most custom key bindings call one of the [bindable functions][03], for
+cmdlet. Most custom key bindings call one of the [bindable functions][02], for
 example
 
 ```powershell
@@ -156,7 +151,7 @@ You can see many more examples in the file `SamplePSReadLineProfile.ps1`, which
 is installed in the **PSReadLine** module folder.
 
 Most key bindings use some helper functions for editing the command line. Those
-APIs are documented in [about_PSReadLine_Functions][03].
+APIs are documented in [about_PSReadLine_Functions][02].
 
 ## Notes
 
@@ -259,16 +254,16 @@ $env:PGPASS = gcloud auth print-access-token
 
 ### Feedback & contributing to PSReadLine
 
-[PSReadLine on GitHub][04]
+[PSReadLine on GitHub][03]
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
 ## See Also
 
-- PSReadLine is heavily influenced by the GNU [readline][06] library.
+- PSReadLine is heavily influenced by the GNU [readline][04] library.
 
 <!-- link references -->
-[01]: /powershell/module/psreadline/set-psreadlineoption#example-7-use-historyhandler-to-filter-commands-added-to-history
-[03]: about_PSReadLine_Functions.md
-[04]: https://github.com/PowerShell/PSReadLine
-[06]: https://tiswww.case.edu/php/chet/readline/rltop.html
+[01]: xref:PSReadLine.Set-PSReadLineOption#example-7-use-historyhandler-to-filter-commands-added-to-history
+[02]: about_PSReadLine_Functions.md
+[03]: https://github.com/PowerShell/PSReadLine
+[04]: https://tiswww.case.edu/php/chet/readline/rltop.html

@@ -116,13 +116,14 @@ You can see many more examples in the file `SamplePSReadLineProfile.ps1`, which
 is installed in the **PSReadLine** module folder.
 
 Most key bindings use some helper functions for editing the command line. Those
-APIs are documented in [about_PSReadLine_Functions][03].
+APIs are documented in [about_PSReadLine_Functions][02].
 
 ## Notes
 
 ### Command History
 
-PSReadLine maintains a history file containing all the commands and data you've entered from the command line. The history files are a file named
+PSReadLine maintains a history file containing all the commands and data you've
+entered from the command line. The history files are a file named
 `$($host.Name)_history.txt`. On Windows systems the history file is stored at
 `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`.
 
@@ -216,16 +217,16 @@ $env:PGPASS = gcloud auth print-access-token
 
 ### Feedback & contributing to PSReadLine
 
-[PSReadLine on GitHub][04]
+[PSReadLine on GitHub][03]
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
 ## See Also
 
-- PSReadLine is heavily influenced by the GNU [readline][06] library.
+- PSReadLine is heavily influenced by the GNU [readline][04] library.
 
 <!-- link references -->
-[01]: /powershell/module/psreadline/set-psreadlineoption#example-7-use-historyhandler-to-filter-commands-added-to-history
-[03]: about_PSReadLine_Functions.md
-[04]: https://github.com/PowerShell/PSReadLine
-[06]: https://tiswww.case.edu/php/chet/readline/rltop.html
+[01]: xref:PSReadLine.Set-PSReadLineOption#example-7-use-historyhandler-to-filter-commands-added-to-history
+[02]: about_PSReadLine_Functions.md
+[03]: https://github.com/PowerShell/PSReadLine
+[04]: https://tiswww.case.edu/php/chet/readline/rltop.html
