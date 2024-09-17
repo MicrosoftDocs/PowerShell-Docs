@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 11/14/2023
+ms.date: 09/17/2024
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine
@@ -13,10 +13,22 @@ title: about_PSReadLine
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
+There have been many updates to PSReadLine since the version that ships in
+Windows PowerShell 5.1.
+
+- v2.3.5 first shipped in PowerShell 7.4.2 and 7.5.0-preview.3
+- v2.3.4 first shipped in PowerShell 7.4.0-rc.1
+- v2.2.6 first shipped in PowerShell 7.3.0
+- v2.1.0 first shipped in PowerShell 7.2.5
+- v2.0.4 first shipped in PowerShell 7.0.11
+- v2.0.0 ships in Windows PowerShell 5.1
+
+For more information about version differences, see
+[about_PSReadLine_Release_Notes](about_PSReadLine_Release_Notes.md).
+
 ## Long Description
 
-PowerShell 7.4 ships with PSReadLine 2.3.4. The current version is PSReadLine
-2.3.4. The current version of PSReadLine can be installed and used on Windows
+The current version of PSReadLine can be installed and used on Windows
 PowerShell 5.1 and newer. For some features, you need to be running PowerShell
 7.2 or higher.
 
@@ -79,15 +91,10 @@ To disable Predictive IntelliSense, just run:
 Set-PSReadLineOption -PredictionSource None
 ```
 
-> [!NOTE]
-> Predictive IntelliSense is enabled by default in PSReadLine 2.2.6. For more
-> information see, the [PSReadLine release history][02] in the **Notes**
-> section below.
-
 ## Custom Key Bindings
 
 PSReadLine supports custom key bindings using the `Set-PSReadLineKeyHandler`
-cmdlet. Most custom key bindings call one of the [bindable functions][03], for
+cmdlet. Most custom key bindings call one of the [bindable functions][02], for
 example
 
 ```powershell
@@ -144,7 +151,7 @@ You can see many more examples in the file `SamplePSReadLineProfile.ps1`, which
 is installed in the **PSReadLine** module folder.
 
 Most key bindings use some helper functions for editing the command line. Those
-APIs are documented in [about_PSReadLine_Functions][03].
+APIs are documented in [about_PSReadLine_Functions][02].
 
 ## Notes
 
@@ -245,101 +252,18 @@ az account get-access-token --resource=https://app.contoso.com --query accessTok
 $env:PGPASS = gcloud auth print-access-token
 ```
 
-### PSReadLine release history
-
-There have been many updates to PSReadLine since the version that ships in
-Windows PowerShell 5.1.
-
-- Current release is PSReadLine 2.3.4
-- PowerShell 7.4 ships with PSReadLine 2.3.4
-- PowerShell 7.3 ships with PSReadLine 2.2.6
-- PowerShell 7.2 ships with PSReadLine 2.1.0
-- PowerShell 7.0.11 shipped with PSReadLine 2.0.4
-- PowerShell 5.1 ships with PSReadLine 2.0.0
-
-For a full list of changes, see the PSReadLine [ChangeLog][05].
-
-- **PSReadLine 2.3.4**
-
-In addition to several bug fixes, this release includes the following
-enhancements:
-
-- Scrollable **ListView** for Predictive IntelliSense
-  - Autoadjusts the size based on the size of the terminal window
-  - Can contain up to 50 prediction results
-  - Dynamic list header that shows the number of results and the current
-    prediction source
-- Improved sensitive history scrubbing to allow retrieving token from `az`,
-  `gcloud`, and `kubectl`
-- Improve the default sensitive history scrubbing to allow safe property access
-- Added support for upcasing, downcasing, and capitalizing words
-- Make tab completion show results whose `ListItemText` are different by case
-  only
-- Supports the text-object command `<d,i,w>` in the VI edit mode
-- Change default color for inline prediction to dim
-- Add a sample to README for transforming Unicode code point to Unicode char by
-  `Alt+x`
-- Add the TerminateOrphanedConsoleApps option on Windows to kill orphaned
-  console-attached process that may mess up reading from Console input
-
-- **PSReadLine 2.2.6**
-
-  In this release, the Predictive IntelliSense feature is enabled by default
-  depending on the following conditions:
-
-  - If Virtual Terminal (VT) is supported and PSReadLine running in PowerShell
-    7.2 or higher, **PredictionSource** is set to `HistoryAndPlugin`
-  - If VT is supported and PSReadLine running in PowerShell prior to 7.2,
-    **PredictionSource** is set to `History`
-  - If VT isn't supported, **PredictionSource** is set to `None`
-
-- **PSReadLine 2.2.5**
-
-  Official servicing release with minor bug fixes.
-
-- **PSReadLine 2.2.2**
-
-  - PSReadLine added two new predictive IntelliSense features:
-    - Added the **PredictionViewStyle** parameter to allow for the selection of
-      the new `ListView`.
-    - Connected PSReadLine to the `CommandPrediction` APIs introduced in
-      PowerShell 7.2 to allow a user can import a predictor module that can
-      render the suggestions from a custom source.
-  - Updated to use the 1.0.0 version of `Microsoft.PowerShell.Pager` for
-    dynamic help
-  - Improved the scrubbing of sensitive history items
-  - Lots of bug fixes and smaller improvements
-
-- **PSReadLine 2.1.0**
-
-  This release rolls up the following enhancements added since the 2.0.4
-  release:
-
-  - Add Predictive IntelliSense suggestions from the command history
-  - Many bug fixes and API enhancements
-
-- **PSReadLine 2.0.4**
-
-  This release rolls up the following enhancements added since the 2.0.0
-  release:
-
-  - Added the `-Chord` parameter to `Get-PSReadLineKeyHandler` to allow
-    searching for specific key bindings
-
 ### Feedback & contributing to PSReadLine
 
-[PSReadLine on GitHub][04]
+[PSReadLine on GitHub][03]
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
 ## See Also
 
-- PSReadLine is heavily influenced by the GNU [readline][06] library.
+- PSReadLine is heavily influenced by the GNU [readline][04] library.
 
 <!-- link references -->
-[01]: /powershell/module/psreadline/set-psreadlineoption#example-7-use-historyhandler-to-filter-commands-added-to-history
-[02]: #psreadline-release-history
-[03]: about_PSReadLine_Functions.md
-[04]: https://github.com/PowerShell/PSReadLine
-[05]: https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/Changes.txt
-[06]: https://tiswww.case.edu/php/chet/readline/rltop.html
+[01]: xref:PSReadLine.Set-PSReadLineOption#example-7-use-historyhandler-to-filter-commands-added-to-history
+[02]: about_PSReadLine_Functions.md
+[03]: https://github.com/PowerShell/PSReadLine
+[04]: https://tiswww.case.edu/php/chet/readline/rltop.html
