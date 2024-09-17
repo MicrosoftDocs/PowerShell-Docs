@@ -19,7 +19,7 @@
       "url": "https://github.com/Microsoft/templates.docs.msft"
     },
     {
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {},
       "path_to_root": "powershell-sdk-samples",
       "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples"
