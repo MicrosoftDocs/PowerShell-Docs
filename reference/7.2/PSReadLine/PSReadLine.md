@@ -4,7 +4,7 @@ Help Version: 7.2.0.0
 Locale: en-US
 Module Guid: 5714753b-2afd-4492-a5fd-01d9e2cff8b5
 Module Name: PSReadLine
-ms.date: 12/04/2023
+ms.date: 09/17/2024
 schema: 2.0.0
 title: PSReadLine
 ---
@@ -18,11 +18,15 @@ editing environment in PowerShell.
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
-- PowerShell 7.4.0 ships with PSReadLine 2.3.4
-- PowerShell 7.3.0 ships with PSReadLine 2.2.6
-- PowerShell 7.2.5 ships with PSReadLine 2.1.0
-- PowerShell 7.0.11 ships with PSReadLine 2.0.4
-- PowerShell 5.1 ships with PSReadLine 2.0.0
+- v2.3.5 first shipped in PowerShell 7.4.2 and 7.5.0-preview.3
+- v2.3.4 first shipped in PowerShell 7.4.0-rc.1
+- v2.2.6 first shipped in PowerShell 7.3.0
+- v2.1.0 first shipped in PowerShell 7.2.5
+- v2.0.4 first shipped in PowerShell 7.0.11
+- v2.0.0 ships in Windows PowerShell 5.1
+
+For more information about version differences, see
+[about_PSReadLine_Release_Notes](about_PSReadLine_Release_Notes.md).
 
 These articles document version 2.1.0 of PSReadLine.
 
@@ -39,7 +43,7 @@ These articles document version 2.1.0 of PSReadLine.
 The main entry point for PSReadLine.
 
 ### [Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
-Gets the bound key functions for the PSReadLine module.
+Gets the key bindings for the PSReadLine module.
 
 ### [Get-PSReadLineOption](Get-PSReadLineOption.md)
 Gets values for the options that can be configured.
