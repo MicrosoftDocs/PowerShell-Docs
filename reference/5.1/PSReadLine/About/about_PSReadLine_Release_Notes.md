@@ -1,5 +1,5 @@
 ---
-description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
+description: This article contains the list of changes for each released version of PSReadLine.
 Locale: en-US
 ms.date: 09/17/2024
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_release_notes?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -9,12 +9,12 @@ title: about_PSReadLine_Release_Notes
 # about_PSReadLine_Release_Notes
 
 This is a summary of changes to the **PSReadLine** module. For a full list of
-changes, see the **PSReadLine** [ChangeLog][05].
+changes, see the **PSReadLine** [ChangeLog][01].
 
 - Current preview: v2.4.0-beta0
 - Current stable release: v2.3.5
 
-### PSReadLine release history
+## PSReadLine release history
 
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
@@ -31,12 +31,11 @@ Windows PowerShell 5.1.
 ### v2.4.0-beta0 - 2024-03-01
 
 - Fix copying text to system clipboard on Linux using `xclip`
-- Use the correct directory separator for tab completion based on the platform
-  we are working with
+- Tab completion uses the correct directory separator for the platform
 - PowerShell version 5.1 is now the minimum supported version
 - Get the Windows keyboard layout from the parent terminal process
-- Fix a few VI key handlers to close edit group properly
-- Handle large history file properly by reading lines in the streaming way
+- Fix a few VI key handlers to correctly close the edit group
+- Read the history file in the streaming way to handle large files efficiently
 
 ### v2.3.5 - 2024-04-02
 
@@ -179,4 +178,4 @@ release:
 - `HistoryNoDuplicates` is now on by default
 
 <!-- link references -->
-[05]: https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/Changes.txt
+[01]: https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/Changes.txt
