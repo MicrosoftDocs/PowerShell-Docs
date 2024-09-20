@@ -51,7 +51,7 @@ PowerShell can run in both interactive and non-interactive modes.
 
 PowerShell runs commands in `ConstrainedLanguage` mode. This mode prevents interactive users from
 running certain commands or executing arbitrary code. For more information about the restrictions in
-this mode, see the [PowerShell Restrictions Under Lock Down Policy][02] of this article.
+this mode, see the [PowerShell restrictions under lockdown policy][02] of this article.
 
 ### Noninteractive mode running under policy enforcement
 
@@ -250,6 +250,6 @@ command, PowerShell either blocks the command from running (new behavior) or run
 - For information about how to configure and use WDAC, see [How to use WDAC for PowerShell][03].
 
 <!-- link references -->
-[01]: /powershell/modules/microsoft.powershell.com/about/about_language_modes
-[02]: #powershell-behavior-under-lock-down-policy
+[01]: /powershell/modules/microsoft.powershell.core/about/about_language_modes
+[02]: #powershell-behavior-under-lockdown-policy
 [03]: how-to-use-wdac.md
