@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 07/08/2024
+ms.date: 09/19/2024
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -33,12 +33,12 @@ converted to a plain text string. For a full discussion about using **SecureStri
 ## Module and script block logging
 
 Module Logging allows you to enable logging for selected PowerShell modules. This setting is
-effective in all sessions on the computer. Pipeline execution events for the specified modules are
-recorded in the Windows PowerShell log in Event Viewer.
+effective in all sessions on the computer. PowerShell records pipeline execution events for the
+specified modules in the Windows PowerShell log in Event Viewer.
 
 Script Block Logging enables logging for the processing of commands, script blocks, functions, and
-scripts - whether invoked interactively, or through automation. This information is logged to the
-**Microsoft-Windows-PowerShell/Operational** event log.
+scripts - whether invoked interactively, or through automation. PowerShell logs this information to
+the **Microsoft-Windows-PowerShell/Operational** event log.
 
 For more information, see the following articles:
 
@@ -48,8 +48,8 @@ For more information, see the following articles:
 
 ## AMSI Support
 
-The Windows Antimalware Scan Interface (AMSI) is an API that allows application actions to be passed
-to an antimalware scanner, such as Windows Defender, to be scanned for malicious payloads. Beginning
+The Windows Antimalware Scan Interface (AMSI) is an API that allows application to pass actions to
+an antimalware scanner, such as Windows Defender, to scan for malicious payloads. Beginning
 with PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
 
 PowerShell 7.3 extends the data that's sent to AMSI for inspection. It now includes all invocations
@@ -59,75 +59,53 @@ For more information about AMSI, see [How AMSI helps][09].
 
 ## Constrained language mode
 
-**ConstrainedLanguage** mode protects your system by limiting the cmdlets and .NET types that can be
-used in a PowerShell session. For a full description, see [about_Language_Modes][04].
+**ConstrainedLanguage** mode protects your system by limiting the cmdlets and .NET types that are
+allowed in a PowerShell session. For a full description, see [about_Language_Modes][04].
 
 ## Application Control
 
 Windows 10 includes two technologies, [Windows Defender Application Control (WDAC)][08] and
-[AppLocker][07] that you can use to control applications. They allow you to create a lockdown
-experience to help secure your PowerShell environment.
+[AppLocker][07] that you can use to control applications. PowerShell detects if a system wide
+application control policy is being enforced. The policy applies certain behaviors when running
+script blocks, script files, or loading module files to prevent arbitrary code execution on the
+system.
+
+WDAC is designed as a security feature under the servicing criteria defined by the Microsoft
+Security Response Center (MSRC). WDAC is the preferred application control system for Windows.
 
 For more information about how PowerShell supports AppLocker and WDAC, see
 [Using Windows Defender Application Control][10].
 
-### Changes in PowerShell 7.4
-
-On Windows, when PowerShell runs under a Windows Defender Application Control (WDAC) policy, it
-changes its behavior based on the defined security policy. Under a WDAC policy, PowerShell runs
-trusted scripts and modules allowed by the policy in Full Language mode. All other scripts and
-script blocks are untrusted and run in Constrained Language mode. PowerShell throws errors when the
-untrusted scripts attempt to perform disallowed actions. It's difficult to know why a script fails
-to run correctly in Constrained Language mode.
-
-PowerShell 7.4 now supports WDAC policies in **Audit** mode. In audit mode, PowerShell runs the
-untrusted scripts in Constrained Language mode but logs messages to the event log instead of
-throwing errors. The log messages describe what restrictions would apply if the policy was in
-**Enforce** mode.
-
-### Changes in PowerShell 7.3
-
-- PowerShell 7.3 now supports the ability to block or allow PowerShell script files via the WDAC API.
-
-### Changes in PowerShell 7.2
-
-- There was a corner-case scenario in AppLocker where you only have **Deny** rules and constrained
-  mode isn't used to enforce the policy that allows you to bypass the execution policy. Beginning in
-  PowerShell 7.2, a change was made to ensure AppLocker rules take precedence over a
-  `Set-ExecutionPolicy -ExecutionPolicy Bypass` command.
-
-- PowerShell 7.2 now disallows the use of the `Add-Type` cmdlet in a **NoLanguage** mode PowerShell
-  session on a locked down machine.
-
-- PowerShell 7.2 now disallows scripts from using COM objects in AppLocker system lock down
-  conditions. Cmdlets that use COM or DCOM internally aren't affected.
-
-### Security Servicing Criteria
-
-PowerShell follows the [Microsoft Security Servicing Criteria for Windows][12]. The table below
-outlines the features that meet the servicing criteria and those that do not.
-
-|                  Feature                   |       Type       |
-| ------------------------------------------ | ---------------- |
-| System Lockdown - with WDAC                | Security Feature |
-| Constrained language mode - with WDAC      | Security Feature |
-| System Lockdown - with AppLocker           | Defense in Depth |
-| Constrained language mode - with AppLocker | Defense in Depth |
-| Execution Policy                           | Defense in Depth |
-
 ## Software Bill of Materials (SBOM)
 
 Beginning with PowerShell 7.2, all install packages contain a Software Bill of Materials (SBOM). The
-SBOM is found at `$PSHOME/_manifest/spdx_2.2/manifest.spdx.json`. The creation and publishing of the
-SBOM is the first step to modernize Federal Government cybersecurity and enhance software supply
-chain security.
+PowerShell team is also producing SBOMs for modules that they own but ship independently from
+PowerShell.
 
-The PowerShell team is also producing SBOMs for modules that they own but ship separately from
-PowerShell. SBOMs will be added in the next release of the module. For modules, the SBOM is
-installed in the module's folder under `_manifest/spdx_2.2/manifest.spdx.json`.
+You can find SBOM files in the following locations:
 
-For more information about this initiative, see the blog post
-[Generating Software Bills of Materials (SBOMs) with SPDX at Microsoft][11].
+- In PowerShell, find the SBOM at `$PSHOME/_manifest/spdx_2.2/manifest.spdx.json`.
+- For modules, find the SBOM in the module's folder under `_manifest/spdx_2.2/manifest.spdx.json`.
+
+The creation and publishing of the SBOM is the first step to modernize Federal Government
+cybersecurity and enhance software supply chain security.For more information about this initiative,
+see the blog post [Generating Software Bills of Materials (SBOMs) with SPDX at Microsoft][11].
+
+## Security Servicing Criteria
+
+PowerShell follows the [Microsoft Security Servicing Criteria for Windows][12]. Only security
+features meet the criteria for servicing.
+
+Security features
+
+- System Lockdown with WDAC
+- Constrained language mode with WDAC
+
+Defense in depth features
+
+- System Lockdown with AppLocker
+- Constrained language mode with AppLocker
+- Execution Policy
 
 <!-- link references -->
 [01]: /dotnet/fundamentals/runtime-libraries/system-security-securestring
@@ -139,6 +117,6 @@ For more information about this initiative, see the blog post
 [07]: /windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker
 [08]: /windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control
 [09]: /windows/win32/amsi/how-amsi-helps
-[10]: application-control.md
+[10]: app-control/application-control.md
 [11]: https://devblogs.microsoft.com/engineering-at-microsoft/generating-software-bills-of-materials-sboms-with-spdx-at-microsoft/
 [12]: https://www.microsoft.com/msrc/windows-security-servicing-criteria
