@@ -85,7 +85,11 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: How to use WDAC to secure PowerShell
+<<<<<<< HEAD
             url: app-control/how-to-use-wdac.md
+=======
+            url: security/app-control/how-to-use-wdac.md
+>>>>>>> 0c467cf87 (Reorg security docs and add more WDAC content)
 
   # Card
   - title: Managing secrets
