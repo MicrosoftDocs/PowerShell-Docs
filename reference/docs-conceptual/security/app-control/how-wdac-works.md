@@ -250,6 +250,6 @@ command, PowerShell either blocks the command from running (new behavior) or run
 - For information about how to configure and use WDAC, see [How to use WDAC for PowerShell][03].
 
 <!-- link references -->
-[01]: /powershell/modules/microsoft.powershell.core/about/about_language_modes
+[01]: /powershell/module/microsoft.powershell.core/about/about_language_modes
 [02]: #powershell-behavior-under-lockdown-policy
 [03]: how-to-use-wdac.md
