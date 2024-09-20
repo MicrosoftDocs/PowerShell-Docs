@@ -16,7 +16,7 @@ based on unique properties of the files.
 **WDAC**, introduced with Windows 10, allows you to control which drivers and applications are
 allowed to run on Windows.
 
-PowerShell detects both AppLocker and WDAC system wide policies. AppLocker is a deprecated. WDAC is
+PowerShell detects both AppLocker and WDAC system wide policies. AppLocker is deprecated. WDAC is
 the preferred application control system for Windows. WDAC is designed as a security feature under
 the servicing criteria defined by the Microsoft Security Response Center (MSRC).
 
@@ -31,7 +31,7 @@ For more information about AppLocker and WDAC, see [Application Controls for Win
 
 ## WDAC policy enforcement
 
-When PowerShell runs under a WDAC policy, it changes its behavior based on the defined security
+When PowerShell runs under a WDAC policy, its behavior changes based on the defined security
 policy. Under a WDAC policy, PowerShell runs trusted scripts and modules allowed by the policy in
 `FullLanguage` mode. All other scripts and script blocks are untrusted and run in
 `ConstrainedLanguage` mode. PowerShell throws errors when the untrusted scripts attempt to perform
@@ -42,7 +42,7 @@ failed to run correctly in `ConstrainedLanguage` mode.
 
 PowerShell 7.4 added a new feature to support WDAC policies in **Audit** mode. In audit mode,
 PowerShell runs the untrusted scripts in `ConstrainedLanguage` mode without errors, but logs messages
-to the event log instead. The log messages describe what restrictions would apply if the policy was
+to the event log instead. The log messages describe what restrictions would apply if the policy were
 in **Enforce** mode.
 
 ## History of changes
@@ -50,12 +50,11 @@ in **Enforce** mode.
 Windows PowerShell 5.1 was the first version of PowerShell to support WDAC. The security features of
 WDAC and AppLocker improve with each new release of PowerShell. The following sections describe how
 this support changed in each version of PowerShell. The changes are cumulative, so the features
-described in the later versions include the features from the earlier versions.
+described in the later versions include those from earlier versions.
 
 ### Changes in PowerShell 7.4
 
-On Windows, when PowerShell runs under a Windows Defender Application Control (WDAC) policy, it
-changes its behavior based on the defined security policy. Under a WDAC policy, PowerShell runs
+On Windows, when PowerShell runs under a Windows Defender Application Control (WDAC) policy, its behavior changes based on the defined security policy. Under a WDAC policy, PowerShell runs
 trusted scripts and modules allowed by the policy in `FullLanguage` mode. All other scripts and
 script blocks are untrusted and run in `ConstrainedLanguage` mode. PowerShell throws errors when the
 untrusted scripts attempt to perform disallowed actions. It's difficult to know why a script fails
@@ -63,7 +62,7 @@ to run correctly in `ConstrainedLanguage` mode.
 
 PowerShell 7.4 now supports WDAC policies in **Audit** mode. In audit mode, PowerShell runs the
 untrusted scripts in `ConstrainedLanguage` mode but logs messages to the event log instead of
-throwing errors. The log messages describe what restrictions would apply if the policy was in
+throwing errors. The log messages describe what restrictions would apply if the policy were in
 **Enforce** mode.
 
 ### Changes in PowerShell 7.3
@@ -87,7 +86,7 @@ throwing errors. The log messages describe what restrictions would apply if the 
 
 - For more information about how WDAC works and what restrictions it enforces, see
   [How WDAC works with PowerShell][06].
-- For more information about using securing PowerShell with WDAC, see [How to use WDAC][05].
+- For more information about securing PowerShell with WDAC, see [How to use WDAC][05].
 
 <!-- link references -->
 [01]: /windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker

@@ -21,7 +21,7 @@ approved files are allowed to load and run. PowerShell either blocks unapproved 
 running or runs them in `ConstrainedLanguage` mode, depending on policy options.
 
 You create and manipulate WDAC policy using the **ConfigCI** module, which is available on all
-supported Windows version. This Windows PowerShell module that can be used in Windows PowerShell 5.1
+supported Windows versions. This Windows PowerShell module can be used in Windows PowerShell 5.1
 or in PowerShell 7 through the **Windows Compatibility** layer. It's easier to use this module in
 Windows PowerShell. The policy you create can be applied to any version of PowerShell.
 
@@ -44,7 +44,7 @@ For testing, you just need to create a default policy and a self signed code sig
 1. Disable Audit Mode in default policy
 
    A new policy is always created in `Audit` mode. To test policy enforcement, you need to disable
-   Audit mode when you apply the the policy. Edit the `SystemCIPolicy.xml` file using text editor
+   Audit mode when you apply the policy. Edit the `SystemCIPolicy.xml` file using a text editor
    like `notepad.exe` or Visual Studio Code (VS Code). Comment out the `Audit mode` option.
 
    ```XML
@@ -115,7 +115,7 @@ For testing, you just need to create a default policy and a self signed code sig
 PowerShell 7.4 added a new feature to support WDAC policies in **Audit** mode. In audit mode,
 PowerShell runs the untrusted scripts in `ConstrainedLanguage` mode without errors, but logs
 messages to the event log instead. The log messages describe what restrictions would apply if the
-policy was in **Enforce** mode.
+policy were in **Enforce** mode.
 
 ### Viewing audit events
 

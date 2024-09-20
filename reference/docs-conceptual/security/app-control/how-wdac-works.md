@@ -44,21 +44,21 @@ PowerShell can run in both interactive and non-interactive modes.
 
 - In interactive mode, PowerShell is a command-line application that takes users command-line input
   as commands or scripts to run. Results are displayed back to the user.
-- In non-interactive mode, PowerShell is used to load modules and run script files without user
-  input. Result data streams are either ignored or redirected to file.
+- In non-interactive mode, PowerShell loads modules and runs script files without user
+  input. Result data streams are either ignored or redirected to a file.
 
 ### Interactive mode running under policy enforcement
 
 PowerShell runs commands in `ConstrainedLanguage` mode. This mode prevents interactive users from
 running certain commands or executing arbitrary code. For more information about the restrictions in
-this mode, see the [PowerShell restrictions under lockdown policy][02] of this article.
+this mode, see the [PowerShell restrictions under lockdown policy][02] section of this article.
 
 ### Noninteractive mode running under policy enforcement
 
 When PowerShell runs a script or loads a module, it uses the WDAC API to get the policy enforcement
 for the file.
 
-PowerShell version 7.3 or higher uses the `WldpCanExecuteFile` API if available. This API return one
+PowerShell version 7.3 or higher uses the `WldpCanExecuteFile` API if available. This API returns one
 of the following results:
 
 - `WLDP_CAN_EXECUTE_ALLOWED`: The file is approved by policy and is used in `FullLanguage` mode
@@ -85,19 +85,18 @@ lockdown policy enforces the following restrictions:
 
 - Module dot-sourcing with wildcard function export restriction
 
-  Any module that uses script dot-sourcing and also exports functions using wildcard names results
+  Any module that uses script dot-sourcing and exports functions using wildcard names results
   in an error. Blocking wildcard exports prevents script injection from a malicious user who can
-  plant an untrusted script that gets dot-sourced into a trusted module. The malicious script could
-  get access to private functions of the trusted module.
+  plant an untrusted script that gets dot-sourced into a trusted module. The malicious script could then gain access to the trusted module's private functions.
 
-  **Security recommendation:** Never use script dot-sourcing in a module and to always export module
+  **Security recommendation:** Never use script dot-sourcing in a module and always export module
   functions with explicit names (no wildcard characters).
 
 - Nested module with wildcard function export restriction
 
-  If a parent module exports functions using function name wildcard characters, then PowerShell
-  removes any function name in a nested module from the function export list. Block wildcard exports
-  from nested modules prevents accidental exporting of dangerous nested functions through wildcards
+  If a parent module exports functions using function name wildcard characters, PowerShell
+  removes any function name in a nested module from the function export list. Blocking wildcard exports
+  from nested modules prevents accidental exporting of dangerous nested functions through wildcard
   name matching.
 
   **Security recommendation:** Always export module functions with explicit names (no wildcard
@@ -135,7 +134,7 @@ command, PowerShell either blocks the command from running (new behavior) or run
 
 - `Add-Type` cmdlet disallowed
 
-  Blocking `Add-Type` prevents the execution arbitrary .NET code.
+  Blocking `Add-Type` prevents the execution of arbitrary .NET code.
 
 - `Import-LocalizedData` cmdlet restricted
 
@@ -224,7 +223,7 @@ command, PowerShell either blocks the command from running (new behavior) or run
 
 - Type method invocation not allowed
 
-  `ConstrainedLanguage` mode doesn't allow method invocation on unapproved types. Blocking method on
+  `ConstrainedLanguage` mode doesn't allow method invocation on unapproved types. Blocking methods on
   unapproved types prevents invocation of .NET type methods that might be dangerous or allow code
   injection.
 

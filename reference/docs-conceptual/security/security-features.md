@@ -48,7 +48,7 @@ For more information, see the following articles:
 
 ## AMSI Support
 
-The Windows Antimalware Scan Interface (AMSI) is an API that allows application to pass actions to
+The Windows Antimalware Scan Interface (AMSI) is an API that allows applications to pass actions to
 an antimalware scanner, such as Windows Defender, to scan for malicious payloads. Beginning
 with PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
 
@@ -59,7 +59,7 @@ For more information about AMSI, see [How AMSI helps][09].
 
 ## Constrained language mode
 
-**ConstrainedLanguage** mode protects your system by limiting the cmdlets and .NET types that are
+**ConstrainedLanguage** mode protects your system by limiting the cmdlets and .NET types
 allowed in a PowerShell session. For a full description, see [about_Language_Modes][04].
 
 ## Application Control
@@ -79,7 +79,7 @@ For more information about how PowerShell supports AppLocker and WDAC, see
 ## Software Bill of Materials (SBOM)
 
 Beginning with PowerShell 7.2, all install packages contain a Software Bill of Materials (SBOM). The
-PowerShell team is also producing SBOMs for modules that they own but ship independently from
+PowerShell team also produces SBOMs for modules that they own but ship independently from
 PowerShell.
 
 You can find SBOM files in the following locations:
@@ -88,7 +88,7 @@ You can find SBOM files in the following locations:
 - For modules, find the SBOM in the module's folder under `_manifest/spdx_2.2/manifest.spdx.json`.
 
 The creation and publishing of the SBOM is the first step to modernize Federal Government
-cybersecurity and enhance software supply chain security.For more information about this initiative,
+cybersecurity and enhance software supply chain security. For more information about this initiative,
 see the blog post [Generating Software Bills of Materials (SBOMs) with SPDX at Microsoft][11].
 
 ## Security Servicing Criteria
