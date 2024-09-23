@@ -303,12 +303,16 @@ items:
         href: security/overview.yml
       - name: PowerShell security features
         href: security/security-features.md
-      - name: Using Application Control
-        href: security/application-control.md
+      - name: Secure PowerShell with WDAC
+        items:
+          - name: Using Application Control
+            href: security/app-control/application-control.md
+          - name: How WDAC works with PowerShell
+            href: security/app-control/how-wdac-works.md
+          - name: How to use WDAC to secure PowerShell
+            href: security/app-control/how-to-use-wdac.md
       - name: Preventing script injection attacks
         href: security/preventing-script-injection.md
-      - name: Securing a restricted PowerShell remoting session
-        href: security/securing-restricted-sessions.md
       - name: PowerShell remoting
         items:
           - name: Just Enough Administration (JEA)
@@ -339,6 +343,8 @@ items:
             href: security/remoting/winrm-security.md
           - name: Making the second hop in PowerShell Remoting
             href: security/remoting/ps-remoting-second-hop.md
+          - name: Securing a restricted PowerShell remoting session
+            href: security/securing-restricted-sessions.md
           - name: PowerShell Remoting FAQ
             href: security/remoting/powershell-remoting-faq.yml
   - name: Desired State Configuration (DSC)

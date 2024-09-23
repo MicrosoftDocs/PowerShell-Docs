@@ -74,6 +74,20 @@ landingContent:
             url: remoting/jea/audit-and-report.md
 
   # Card
+  - title: Using WDAC
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Using Windows Defender Application Control
+            url: app-control/application-control.md
+          - text: How WDAC works with PowerShell
+            url: app-control/how-wdac-works.md
+      - linkListType: how-to-guide
+        links:
+          - text: How to use WDAC to secure PowerShell
+            url: app-control/how-to-use-wdac.md
+
+  # Card
   - title: Managing secrets
     linkLists:
       - linkListType: concept
