@@ -11,9 +11,14 @@
       "source_path": "../reference/docs-conceptual/dev-cross-plat/security/securing-restricted-sessions.md"
     },
     {
-      "redirect_document_id": true,
-      "redirect_url": "/powershell/scripting/security/application-control",
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/security/app-control/application-control",
       "source_path": "../reference/docs-conceptual/learn/application-control.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/app-control/application-control",
+      "source_path": "../reference/docs-conceptual/security/application-control.md"
     },
     {
       "redirect_document_id": true,
