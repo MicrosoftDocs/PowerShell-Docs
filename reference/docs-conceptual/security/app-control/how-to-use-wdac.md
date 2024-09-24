@@ -10,8 +10,8 @@ can configure the policy to enforce or audit the policy's rule. In audit mode, P
 doesn't change but it logs Event ID 16387 messages to the `PowerShellCore/Analytic` event log. In
 enforcement mode, PowerShell applies the policy's restrictions.
 
-This article assumes you're using a test machine so that you can test PowerShell behavior
-under a machine wide WDAC policy before you deploy the policy in your environment.
+This article assumes you're using a test machine so that you can test PowerShell behavior under a
+machine wide WDAC policy before you deploy the policy in your environment.
 
 ## Create a WDAC policy
 
@@ -21,8 +21,8 @@ approved files are allowed to load and run. PowerShell either blocks unapproved 
 running or runs them in `ConstrainedLanguage` mode, depending on policy options.
 
 You create and manipulate WDAC policy using the **ConfigCI** module, which is available on all
-supported Windows versions. This Windows PowerShell module can be used in Windows PowerShell 5.1
-or in PowerShell 7 through the **Windows Compatibility** layer. It's easier to use this module in
+supported Windows versions. This Windows PowerShell module can be used in Windows PowerShell 5.1 or
+in PowerShell 7 through the **Windows Compatibility** layer. It's easier to use this module in
 Windows PowerShell. The policy you create can be applied to any version of PowerShell.
 
 ## Steps to create a WDAC policy
@@ -44,8 +44,8 @@ For testing, you just need to create a default policy and a self signed code sig
 1. Disable Audit Mode in default policy
 
    A new policy is always created in `Audit` mode. To test policy enforcement, you need to disable
-   Audit mode when you apply the policy. Edit the `SystemCIPolicy.xml` file using a text editor
-   like `notepad.exe` or Visual Studio Code (VS Code). Comment out the `Audit mode` option.
+   Audit mode when you apply the policy. Edit the `SystemCIPolicy.xml` file using a text editor like
+   `notepad.exe` or Visual Studio Code (VS Code). Comment out the `Audit mode` option.
 
    ```XML
    <!--

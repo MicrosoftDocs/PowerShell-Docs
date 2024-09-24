@@ -12,8 +12,7 @@ and PowerShell you're using.
 ## How PowerShell detects a system lockdown policy
 
 PowerShell detects both **AppLocker** and **Windows Defender Application Control** (WDAC) system
-wide polices. AppLocker is deprecated. WDAC is the preferred application control system for
-Windows.
+wide polices. AppLocker is deprecated. WDAC is the preferred application control system for Windows.
 
 ### Legacy WDAC policy enforcement detection
 
@@ -44,8 +43,8 @@ PowerShell can run in both interactive and non-interactive modes.
 
 - In interactive mode, PowerShell is a command-line application that takes users command-line input
   as commands or scripts to run. Results are displayed back to the user.
-- In non-interactive mode, PowerShell loads modules and runs script files without user
-  input. Result data streams are either ignored or redirected to a file.
+- In non-interactive mode, PowerShell loads modules and runs script files without user input. Result
+  data streams are either ignored or redirected to a file.
 
 ### Interactive mode running under policy enforcement
 
@@ -61,8 +60,8 @@ for the file.
 PowerShell version 7.3 or higher uses the `WldpCanExecuteFile` API if available. This API returns one
 of the following results:
 
-- `WLDP_CAN_EXECUTE_ALLOWED`: The file is approved by policy and is used in `FullLanguage` mode
-  with a few restrictions.
+- `WLDP_CAN_EXECUTE_ALLOWED`: The file is approved by policy and is used in `FullLanguage` mode with
+  a few restrictions.
 - `WLDP_CAN_EXECUTE_BLOCKED`: The file isn't approved by policy. PowerShell throws an error when the
   file is run or loaded.
 - `WLDP_CAN_EXECUTE_REQUIRE_SANDBOX`: The file isn't approved by the policy but it can still be run
@@ -78,26 +77,27 @@ behavior is:
 
 ## PowerShell restrictions under lockdown policy
 
-When PowerShell detects the system is under a WDAC lockdown policy, it applies restrictions
-even if the script is trusted and running in `FullLanguage` mode. These restrictions prevent known
-behaviors of PowerShell that could result in arbitrary code execution on a locked-down system. The
-lockdown policy enforces the following restrictions:
+When PowerShell detects the system is under a WDAC lockdown policy, it applies restrictions even if
+the script is trusted and running in `FullLanguage` mode. These restrictions prevent known behaviors
+of PowerShell that could result in arbitrary code execution on a locked-down system. The lockdown
+policy enforces the following restrictions:
 
 - Module dot-sourcing with wildcard function export restriction
 
-  Any module that uses script dot-sourcing and exports functions using wildcard names results
-  in an error. Blocking wildcard exports prevents script injection from a malicious user who can
-  plant an untrusted script that gets dot-sourced into a trusted module. The malicious script could then gain access to the trusted module's private functions.
+  Any module that uses script dot-sourcing and exports functions using wildcard names results in an
+  error. Blocking wildcard exports prevents script injection from a malicious user who can plant an
+  untrusted script that gets dot-sourced into a trusted module. The malicious script could then gain
+  access to the trusted module's private functions.
 
   **Security recommendation:** Never use script dot-sourcing in a module and always export module
   functions with explicit names (no wildcard characters).
 
 - Nested module with wildcard function export restriction
 
-  If a parent module exports functions using function name wildcard characters, PowerShell
-  removes any function name in a nested module from the function export list. Blocking wildcard exports
-  from nested modules prevents accidental exporting of dangerous nested functions through wildcard
-  name matching.
+  If a parent module exports functions using function name wildcard characters, PowerShell removes
+  any function name in a nested module from the function export list. Blocking wildcard exports from
+  nested modules prevents accidental exporting of dangerous nested functions through wildcard name
+  matching.
 
   **Security recommendation:** Always export module functions with explicit names (no wildcard
   characters).
@@ -223,8 +223,8 @@ command, PowerShell either blocks the command from running (new behavior) or run
 
 - Type method invocation not allowed
 
-  `ConstrainedLanguage` mode doesn't allow method invocation on unapproved types. Blocking methods on
-  unapproved types prevents invocation of .NET type methods that might be dangerous or allow code
+  `ConstrainedLanguage` mode doesn't allow method invocation on unapproved types. Blocking methods
+  on unapproved types prevents invocation of .NET type methods that might be dangerous or allow code
   injection.
 
 - Type property setters not allowed
