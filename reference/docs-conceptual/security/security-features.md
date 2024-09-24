@@ -49,8 +49,8 @@ For more information, see the following articles:
 ## AMSI Support
 
 The Windows Antimalware Scan Interface (AMSI) is an API that allows applications to pass actions to
-an antimalware scanner, such as Windows Defender, to scan for malicious payloads. Beginning
-with PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
+an antimalware scanner, such as Windows Defender, to scan for malicious payloads. Beginning with
+PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
 
 PowerShell 7.3 extends the data that's sent to AMSI for inspection. It now includes all invocations
 of .NET method members.
@@ -59,8 +59,8 @@ For more information about AMSI, see [How AMSI helps][09].
 
 ## Constrained language mode
 
-**ConstrainedLanguage** mode protects your system by limiting the cmdlets and .NET types
-allowed in a PowerShell session. For a full description, see [about_Language_Modes][04].
+**ConstrainedLanguage** mode protects your system by limiting the cmdlets and .NET types allowed in
+a PowerShell session. For a full description, see [about_Language_Modes][04].
 
 ## Application Control
 
@@ -88,8 +88,8 @@ You can find SBOM files in the following locations:
 - For modules, find the SBOM in the module's folder under `_manifest/spdx_2.2/manifest.spdx.json`.
 
 The creation and publishing of the SBOM is the first step to modernize Federal Government
-cybersecurity and enhance software supply chain security. For more information about this initiative,
-see the blog post [Generating Software Bills of Materials (SBOMs) with SPDX at Microsoft][11].
+cybersecurity and enhance software supply chain security. For more information about this
+initiative, see the blog post [Generating SBOMs with SPDX at Microsoft][11].
 
 ## Security Servicing Criteria
 
