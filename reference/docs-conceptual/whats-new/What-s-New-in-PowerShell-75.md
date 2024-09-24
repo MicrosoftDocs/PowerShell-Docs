@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 08/28/2024
+ms.date: 09/24/2024
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5-preview.4 includes the following features, updates, and breaking changes. PowerShell
-7.5 is built on .NET 9.0.0-preview.3.
+PowerShell 7.5-preview.5 includes the following features, updates, and breaking changes. PowerShell
+7.5 is built on .NET 9.0.100-rc.1.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
@@ -21,12 +21,13 @@ For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repositor
 - The Windows installer now remembers installation options used and uses them to initialize options
   for the next installation ([#20420][20420]) (Thanks @reduckted!)
 - `ConvertTo-Json` now serializes `BigInteger` as a number ([#21000][21000]) (Thanks @jborean93!)
+- `ConvertTo-Json` now treats large enums as numbers ([#20999][20999]) (Thanks @jborean93!)
 
 ## Updated modules
 
-PowerShell 7.5-preview.4 includes the following updated modules:
+PowerShell 7.5-preview.5 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** v1.1.0-preview1
+- **Microsoft.PowerShell.PSResourceGet** v1.1.0-preview2
 - **PSReadLine** v2.3.5
 
 ## Tab completion improvements
@@ -105,7 +106,10 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 - Add **WinGetCommandNotFound** and **CompletionPredictor** modules to track usage ([#21040][21040])
 - Add **DateKind** parameter to `ConvertFrom-Json` ([#20925][20925]) (Thanks @jborean93!)
 - Add **DirectoryInfo** to the OutputType for New-Item ([#21126][21126]) (Thanks @MartinGC94!)
-- Fix 1 serialization of array values ([#21085][21085]) (Thanks @jborean93!)
+- Fix `Get-Error` serialization of array values ([#21085][21085]) (Thanks @jborean93!)
+- Fix `Test-ModuleManifest` so it can use a UNC path ([#24115][24115])
+- Fix `Get-TypeData` to write to the pipeline immediately instead of collecting
+  data first ([#24236][24236]) (Thanks @MartinGC94)
 
 ## Engine improvements
 
@@ -127,18 +131,32 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 - Fix using assembly to use Path.Combine when constructing assembly paths ([#21169][21169])
 - Validate the value for using namespace during semantic checks to prevent declaring invalid
   namespaces ([#21162][21162])
+- Handle global tool specially when prepending `$PSHome` to PATH ([#24228][24228])
 
 ## Experimental features
 
-- Allow redirecting to a variable ([#20381][20381]) - experimental feature
-- Add tilde expansion for windows native executables ([#20402][20402]) (Thanks @domsleee!)
-  For more information, see [PSNativeWindowsTildeExpansion][01]
+The following experimental features were converted to mainstream features in
+PowerShell 7.5-preview.5:
+
+- [PSCommandNotFoundSuggestion][02]
+- [PSCommandWithArgs][03]
+- [PSModuleAutoLoadSkipOfflineFiles][04]
+
+The following experimental features are included in PowerShell 7.5-preview.5:
+
+- [PSRedirectToVariable][05] - Allow redirecting to a variable ([#20381][20381])
+- [PSNativeWindowsTildeExpansion][01] - Add tilde expansion for windows native executables
+  ([#20402][20402]) (Thanks @domsleee!)
 
 <!-- end of content -->
 <!-- reference links -->
 [chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 
 [01]: ../learn/experimental-features.md#psnativewindowstildeexpansion
+[02]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
+[03]: ../learn/experimental-features.md#pscommandwithargs
+[04]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
+[05]: ../learn/experimental-features.md#psredirecttovariable
 
 [19896]: https://github.com/PowerShell/PowerShell/pull/19896
 [20014]: https://github.com/PowerShell/PowerShell/pull/20014
@@ -152,6 +170,7 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 [20367]: https://github.com/PowerShell/PowerShell/pull/20367
 [20369]: https://github.com/PowerShell/PowerShell/pull/20369
 [20371]: https://github.com/PowerShell/PowerShell/pull/20371
+[20381]: https://github.com/PowerShell/PowerShell/pull/20381
 [20402]: https://github.com/PowerShell/PowerShell/pull/20402
 [20415]: https://github.com/PowerShell/PowerShell/pull/20415
 [20419]: https://github.com/PowerShell/PowerShell/pull/20419
@@ -180,8 +199,10 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 [20925]: https://github.com/PowerShell/PowerShell/pull/20925
 [20942]: https://github.com/PowerShell/PowerShell/pull/20942
 [20994]: https://github.com/PowerShell/PowerShell/pull/20994
+[20999]: https://github.com/PowerShell/PowerShell/pull/20999
 [21000]: https://github.com/PowerShell/PowerShell/pull/21000
 [21040]: https://github.com/PowerShell/PowerShell/pull/21040
+[21063]: https://github.com/PowerShell/PowerShell/pull/21063
 [21085]: https://github.com/PowerShell/PowerShell/pull/21085
 [21126]: https://github.com/PowerShell/PowerShell/pull/21126
 [21162]: https://github.com/PowerShell/PowerShell/pull/21162
@@ -190,11 +211,9 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 [21184]: https://github.com/PowerShell/PowerShell/pull/21184
 [21223]: https://github.com/PowerShell/PowerShell/pull/21223
 [21302]: https://github.com/PowerShell/PowerShell/pull/21302
+[21326]: https://github.com/PowerShell/PowerShell/pull/21326
 [21358]: https://github.com/PowerShell/PowerShell/pull/21358
 [21529]: https://github.com/PowerShell/PowerShell/pull/21529
-[20381]: https://github.com/PowerShell/PowerShell/pull/20381
-[21063]: https://github.com/PowerShell/PowerShell/pull/21063
-[21326]: https://github.com/PowerShell/PowerShell/pull/21326
 [23817]: https://github.com/PowerShell/PowerShell/pull/23817
 [23871]: https://github.com/PowerShell/PowerShell/pull/23871
 [23891]: https://github.com/PowerShell/PowerShell/pull/23891
@@ -205,3 +224,6 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 [24065]: https://github.com/PowerShell/PowerShell/pull/24065
 [24075]: https://github.com/PowerShell/PowerShell/pull/24075
 [24086]: https://github.com/PowerShell/PowerShell/pull/24086
+[24115]: https://github.com/PowerShell/PowerShell/pull/24115
+[24228]: https://github.com/PowerShell/PowerShell/pull/24228
+[24236]: https://github.com/PowerShell/PowerShell/pull/24236

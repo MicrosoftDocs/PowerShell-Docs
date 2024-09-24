@@ -1,8 +1,9 @@
 ---
 description: Describes the telemetry collected in PowerShell and how to opt-out.
 Locale: en-US
-ms.date: 04/22/2024
+ms.date: 09/24/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7.5&WT.mc_id=ps-gethelp
+ms.custom: 7.5-preview.5
 schema: 2.0.0
 title: about_Telemetry
 ---
@@ -51,6 +52,12 @@ PowerShell sends the following information during the session:
 - Value of `$PSNativeCommandUseErrorActionPreference` preference variable,
   either `true`, `false` or `unset`
 - The count of remote session open operations
+- The names of registered subsystems: `Completion` and `general`. If the name
+  of the subsystem name not one of those, then `anonymous` is submitted as the
+  name.
+- The count of `CommandNotFound` feedback suggestions provided.
+- The count of `PowerShellUnsafeAssemblyLoad` usage and whether the load was
+  successful or not.
 
 PowerShell sends this information periodically during the lifetime of the
 session for all host applications.
