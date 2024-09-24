@@ -21,7 +21,6 @@ For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repositor
 - The Windows installer now remembers installation options used and uses them to initialize options
   for the next installation ([#20420][20420]) (Thanks @reduckted!)
 - `ConvertTo-Json` now serializes `BigInteger` as a number ([#21000][21000]) (Thanks @jborean93!)
-- `ConvertTo-Json` now treats large enums as numbers ([#20999][20999]) (Thanks @jborean93!)
 
 ## Updated modules
 
@@ -147,6 +146,8 @@ The following experimental features are included in PowerShell 7.5-preview.5:
 - [PSRedirectToVariable][05] - Allow redirecting to a variable ([#20381][20381])
 - [PSNativeWindowsTildeExpansion][01] - Add tilde expansion for windows native executables
   ([#20402][20402]) (Thanks @domsleee!)
+- [PSSerializeJSONLongEnumAsNumber][06] - `ConvertTo-Json` now treats large enums as numbers
+  ([#20999][20999]) (Thanks @jborean93!)
 
 <!-- end of content -->
 <!-- reference links -->
@@ -157,6 +158,7 @@ The following experimental features are included in PowerShell 7.5-preview.5:
 [03]: ../learn/experimental-features.md#pscommandwithargs
 [04]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
 [05]: ../learn/experimental-features.md#psredirecttovariable
+[06]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
 
 [19896]: https://github.com/PowerShell/PowerShell/pull/19896
 [20014]: https://github.com/PowerShell/PowerShell/pull/20014
