@@ -1,7 +1,7 @@
 ---
 description: ShouldProcess is an important feature that is often overlooked is. The WhatIf and Confirm parameters make it easy to add to your functions.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/16/2022
+ms.date: 09/24/2024
 title: Everything you wanted to know about ShouldProcess
 ---
 # Everything you wanted to know about ShouldProcess
@@ -11,9 +11,9 @@ One important feature that is often overlooked is `-WhatIf` and `-Confirm` suppo
 add to your functions. In this article, we dive deep into how to implement this feature.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
-> PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][original version] of this article appeared on the blog written by
+> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
+> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
 
 This is a simple feature you can enable in your functions to provide a safety net for the users that
 need it. There's nothing scarier than running a command that you know can be dangerous for the
@@ -21,8 +21,8 @@ first time. The option to run it with `-WhatIf` can make a big difference.
 
 ## CommonParameters
 
-Before we look at implementing these [common parameters][common parameters], I want to take a quick look at how
-they're used.
+Before we look at implementing these [common parameters][common parameters], I want to take a quick
+look at how they're used.
 
 ## Using -WhatIf
 
@@ -516,6 +516,15 @@ function Test-ShouldProcess {
         [Switch]$Force
     )
 
+    if (-not $PSBoundParameters.ContainsKey('Confirm')) {
+        Write-Verbose "Setting `$Confirm = $false"
+        $Confirm = $false
+    } else {
+        Write-Verbose "Setting `$Confirm = $($PSBoundParameters.Confirm)"
+        # Set $Confirm to the value passed by the user
+        $Confirm = $PSBoundParameters.Confirm
+    }
+
     if ($Force -and -not $Confirm){
         $ConfirmPreference = 'None'
     }
@@ -526,17 +535,21 @@ function Test-ShouldProcess {
 }
 ```
 
-We add our own `-Force` switch as a parameter. The `-Confirm` parameter is automatically added
-when using `SupportsShouldProcess` in the `CmdletBinding`.
+We add our own `-Force` switch as a parameter. The `-Confirm` parameter is automatically added when
+using `SupportsShouldProcess` in the `CmdletBinding`. However, when you use `SupportsShouldProcess`,
+PowerShell doesn't add the `$Confirm` parameter to the function. If you are running in Strict Mode
+and try to use the `$Confirm` variable before it has been defined, you get an error. To avoid the
+error you can use `$PSBoundParameters` to test if the parameter was passed by the user.
 
 ```powershell
-[CmdletBinding(
-    SupportsShouldProcess,
-    ConfirmImpact = 'High'
-)]
-param(
-    [Switch]$Force
-)
+if (-not $PSBoundParameters.ContainsKey('Confirm')) {
+    Write-Verbose "Setting `$Confirm = $false"
+    $Confirm = $false
+} else {
+    Write-Verbose "Setting `$Confirm = $($PSBoundParameters.Confirm)"
+    # Set $Confirm to the value passed by the user
+    $Confirm = $PSBoundParameters.Confirm
+}
 ```
 
 Focusing in on the `-Force` logic here:
@@ -561,7 +574,7 @@ if ($PSCmdlet.ShouldProcess('TARGET')){
 If someone specifies both `-Force` and `-WhatIf`, then `-WhatIf` needs to take priority. This
 approach preserves `-WhatIf` processing because `ShouldProcess` always gets executed.
 
-Do not add a check for the `$Force` value inside the `if` statement with the `ShouldProcess`. That is
+Don't add a test for the `$Force` value inside the `if` statement with the `ShouldProcess`. That is
 an anti-pattern for this specific scenario even though that's what I show you in the next section
 for `ShouldContinue`.
 
