@@ -141,6 +141,11 @@ Notice that I did not create a parameter called `-WhatIf`. Specifying `SupportsS
 automatically creates it for us. When we specify the `-WhatIf` parameter on `Test-ShouldProcess`,
 some things we call also perform `-WhatIf` processing.
 
+> [!NOTE]
+> When you use `SupportsShouldProcess`, PowerShell doesn't add the `$WhatIf` variable to the
+> function. You don't need to check the value of `$WhatIf` because the `ShouldProcess()` method
+> takes care of that for you.
+
 ### Trust but verify
 
 There's some danger here trusting that everything you call inherits `-WhatIf` values. For the rest
@@ -537,7 +542,7 @@ function Test-ShouldProcess {
 
 We add our own `-Force` switch as a parameter. The `-Confirm` parameter is automatically added when
 using `SupportsShouldProcess` in the `CmdletBinding`. However, when you use `SupportsShouldProcess`,
-PowerShell doesn't add the `$Confirm` parameter to the function. If you are running in Strict Mode
+PowerShell doesn't add the `$Confirm` variable to the function. If you are running in Strict Mode
 and try to use the `$Confirm` variable before it has been defined, you get an error. To avoid the
 error you can use `$PSBoundParameters` to test if the parameter was passed by the user.
 
