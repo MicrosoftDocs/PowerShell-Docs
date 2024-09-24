@@ -518,23 +518,14 @@ function Test-ShouldProcess {
         ConfirmImpact = 'High'
     )]
     param(
-        [Switch]$Force
+        [switch]$Force
     )
 
-    if (-not $PSBoundParameters.ContainsKey('Confirm')) {
-        Write-Verbose "Setting `$Confirm = $false"
-        $Confirm = $false
-    } else {
-        Write-Verbose "Setting `$Confirm = $($PSBoundParameters.Confirm)"
-        # Set $Confirm to the value passed by the user
-        $Confirm = $PSBoundParameters.Confirm
-    }
-
-    if ($Force -and -not $Confirm){
+    if ($Force -and -not $PSBoundParameters.ContainsKey('Confirm')) {
         $ConfirmPreference = 'None'
     }
 
-    if ($PSCmdlet.ShouldProcess('TARGET')){
+    if ($PSCmdlet.ShouldProcess('TARGET')) {
         Write-Output "Some Action"
     }
 }
@@ -547,33 +538,18 @@ and try to use the `$Confirm` variable before it has been defined, you get an er
 error you can use `$PSBoundParameters` to test if the parameter was passed by the user.
 
 ```powershell
-if (-not $PSBoundParameters.ContainsKey('Confirm')) {
-    Write-Verbose "Setting `$Confirm = $false"
-    $Confirm = $false
-} else {
-    Write-Verbose "Setting `$Confirm = $($PSBoundParameters.Confirm)"
-    # Set $Confirm to the value passed by the user
-    $Confirm = $PSBoundParameters.Confirm
-}
-```
-
-Focusing in on the `-Force` logic here:
-
-```powershell
-if ($Force -and -not $Confirm){
+if ($Force -and -not $PSBoundParameters.ContainsKey('Confirm')) {
     $ConfirmPreference = 'None'
 }
 ```
 
-If the user specifies `-Force`, we want to suppress the confirm prompt unless they also specify
-`-Confirm`. This allows a user to force a change but still confirm the change. Then we set
-`$ConfirmPreference` in the local scope. Now, using the `-Force` parameter temporarily sets the
-`$ConfirmPreference` to none, disabling prompt for confirmation.
+If the user specifies `-Force` we set `$ConfirmPreference` to `None` in the local scope. If the user
+also specifies `-Confirm` then `ShoudProcess()` honors the values of the `-Confirm` parameter.
 
 ```powershell
 if ($PSCmdlet.ShouldProcess('TARGET')){
-        Write-Output "Some Action"
-    }
+    Write-Output "Some Action"
+}
 ```
 
 If someone specifies both `-Force` and `-WhatIf`, then `-WhatIf` needs to take priority. This
