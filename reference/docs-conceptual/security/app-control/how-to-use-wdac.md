@@ -44,11 +44,7 @@ For testing, you just need to create a default policy and a self signed code sig
 1. Disable Audit Mode in default policy
 
    A new policy is always created in `Audit` mode. To test policy enforcement, you need to disable
-<<<<<<< HEAD
    Audit mode when you apply the policy. Edit the `SystemCIPolicy.xml` file using a text editor
-=======
-   Audit mode when you apply the the policy. Edit the `SystemCIPolicy.xml` file using text editor
->>>>>>> 0c467cf87 (Reorg security docs and add more WDAC content)
    like `notepad.exe` or Visual Studio Code (VS Code). Comment out the `Audit mode` option.
 
    ```XML
