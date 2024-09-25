@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/30/2021
+ms.date: 09/25/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Computer
@@ -18,17 +18,17 @@ Add the local computer to a domain or workgroup.
 
 ```
 Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>]
- [-UnjoinDomainCredential <PSCredential>] -Credential <PSCredential> [-DomainName] <String> [-OUPath <String>]
- [-Server <String>] [-Unsecure] [-Options <JoinOptions>] [-Restart] [-PassThru] [-NewName <String>] [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-UnjoinDomainCredential <PSCredential>] -Credential <PSCredential> [-DomainName] <String>
+ [-OUPath <String>] [-Server <String>] [-Unsecure] [-Options <JoinOptions>] [-Restart] [-PassThru]
+ [-NewName <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Workgroup
 
 ```
-Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>] [-Credential <PSCredential>]
- [-WorkgroupName] <String> [-Restart] [-PassThru] [-NewName <String>] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>]
+ [-Credential <PSCredential>] [-WorkgroupName] <String> [-Restart] [-PassThru] [-NewName <String>]
+ [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -67,7 +67,7 @@ This command adds the local computer to the Workgroup-A workgroup.
 Add-Computer -DomainName Domain01 -Server Domain01\DC01 -PassThru -Verbose
 ```
 
-This command adds the local computer to the Domain01 domain by using the Domain01\DC01 domain
+This command adds the local computer to the Domain01 domain by using the `Domain01\DC01` domain
 controller.
 
 The command uses the **PassThru** and **Verbose** parameters to get detailed information about the
@@ -85,7 +85,15 @@ the organizational unit for the new accounts.
 ### Example 5: Add a local computer to a domain using credentials
 
 ```powershell
-Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
+$addComputerSplat = @{
+    ComputerName = 'Server01'
+    LocalCredential = 'Server01\Admin01'
+    DomainName = 'Domain02'
+    Credential = 'Domain02\Admin02'
+    Restart = $true
+    Force = $true
+}
+Add-Computer @addComputerSplat
 ```
 
 This command adds the Server01 computer to the Domain02 domain. It uses the **LocalCredential**
@@ -97,7 +105,15 @@ and the **Force** parameter to suppress user confirmation messages.
 ### Example 6: Move a group of computers to a new domain
 
 ```powershell
-Add-Computer -ComputerName Server01, Server02, localhost -DomainName Domain02 -LocalCredential Domain01\User01 -UnjoinDomainCredential Domain01\Admin01 -Credential Domain02\Admin01 -Restart
+$addComputerSplat = @{
+    ComputerName = 'Server01', 'Server02', 'localhost'
+    DomainName = 'Domain02'
+    LocalCredential = 'Domain01\User01'
+    UnjoinDomainCredential = 'Domain01\Admin01'
+    Credential = 'Domain02\Admin01'
+    Restart = $true
+}
+Add-Computer @addComputerSplat
 ```
 
 This command moves the Server01 and Server02 computers, and the local computer, from Domain01 to
@@ -112,7 +128,14 @@ domain. It uses the **Restart** parameter to restart all three computers after t
 ### Example 7: Move a computer to a new domain and change the name of the computer
 
 ```powershell
-Add-Computer -ComputerName Server01 -DomainName Domain02 -NewName Server044 -Credential Domain02\Admin01 -Restart
+$addComputerSplat = @{
+    ComputerName = 'Server01'
+    DomainName = 'Domain02'
+    NewName = 'Server044'
+    Credential = 'Domain02\Admin01'
+    Restart = $true
+}
+Add-Computer @addComputerSplat
 ```
 
 This command moves the Server01 computer to the Domain02 and changes the machine name to Server044.
@@ -124,12 +147,19 @@ permission to join the computer to the Domain02 domain.
 ### Example 8: Add computers listed in a file to a new domain
 
 ```powershell
-Add-Computer -ComputerName (Get-Content Servers.txt) -DomainName Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
+$addComputerSplat = @{
+    ComputerName = (Get-Content Servers.txt)
+    DomainName = 'Domain02'
+    Credential = 'Domain02\Admin02'
+    Options = 'Win9xUpgrade'
+    Restart = $true
+}
+Add-Computer @addComputerSplat
 ```
 
 This command adds the computers that are listed in the `Servers.txt` file to the Domain02 domain. It
 uses the **Options** parameter to specify the **Win9xUpgrade** option. The **Restart** parameter
-restarts all of the newly added computers after the join operation completes.
+restarts all the newly added computers after the join operation completes.
 
 ### Example 9: Add a computer to a domain using predefined computer credentials
 
@@ -137,7 +167,11 @@ This first command should be run by an administrator from a computer that is alr
 domain `Domain03`:
 
 ```powershell
-New-ADComputer -Name "Server02" -AccountPassword (ConvertTo-SecureString -String 'TempJoinPA$$' -AsPlainText -Force)
+$newADComputerSplat = @{
+    Name = "Server02"
+    AccountPassword = (ConvertTo-SecureString -String 'TempJoinPA$$' -AsPlainText -Force)
+}
+New-ADComputer @newADComputerSplat
 
 # Then this command is run from `Server02` which is not yet domain-joined:
 
@@ -145,7 +179,12 @@ $joinCred = New-Object pscredential -ArgumentList ([pscustomobject]@{
     UserName = $null
     Password = (ConvertTo-SecureString -String 'TempJoinPA$$' -AsPlainText -Force)[0]
 })
-Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential $joinCred
+$addComputerSplat = @{
+    DomainName = "Domain03"
+    Options = 'UnsecuredJoin', 'PasswordPass'
+    Credential = $joinCred
+}
+Add-Computer @addComputerSplat
 ```
 
 This combination of commands creates a new computer account with a predefined name and temporary
@@ -153,6 +192,21 @@ join password in a domain using an existing domain-joined computer. Then separat
 the predefined name joins the domain using only the computer name and the temporary join password.
 The predefined password is only used to support the join operation and is replaced as part of normal
 computer account procedures after the computer completes the join.
+
+### Example 10: Add a Computer to a domain with a new name
+
+Using this combination of commands avoids multiple reboots and multiple writes to Active Directory
+writes for the same object when the computer joins the domain with the new name.
+
+```powershell
+Rename-Computer -NewName "MyNewPC" -Force
+$addComputerSplat = @{
+    DomainName = 'Contoso.com'
+    Credential = 'contoso\administrator'
+    Options = 'JoinWithNewName', 'AccountCreate'
+}
+Add-Computer @addComputerSplat
+```
 
 ## PARAMETERS
 
