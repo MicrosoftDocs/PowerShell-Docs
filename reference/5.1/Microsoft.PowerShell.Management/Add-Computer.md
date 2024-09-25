@@ -154,6 +154,18 @@ the predefined name joins the domain using only the computer name and the tempor
 The predefined password is only used to support the join operation and is replaced as part of normal
 computer account procedures after the computer completes the join.
 
+### Example 10: Add a Computer to a domain with a new name 
+```powershell
+Rename-Computer -NewName "MyNewPC" -Force
+Add-Computer -DomainName Contoso.com -Credential contoso\administrator -Options JoinWithNewName,AccountCreate
+```
+This combination of commands first renames the computer locally and then performs a domain join using the new name.
+By default when the -NewName parameter is specified, the computer is first joined to the domain using the old name and then
+a rename operation is performed.
+This combination of commands is useful to avoid multiple reboots and multiple Active Directory writes to the same object when
+the domain join is performed with the new name.
+
+
 ## PARAMETERS
 
 ### -ComputerName
