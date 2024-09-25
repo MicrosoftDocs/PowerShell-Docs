@@ -109,6 +109,8 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 - Fix `Test-ModuleManifest` so it can use a UNC path ([#24115][24115])
 - Fix `Get-TypeData` to write to the pipeline immediately instead of collecting
   data first ([#24236][24236]) (Thanks @MartinGC94)
+- Add `-Force` parameter to `Resolve-Path` and `Convert-Path` cmdlets to support wildcard hidden
+  files [#20981][20981] (Thanks @ArmaanMcleod!)
 
 ## Engine improvements
 
@@ -200,6 +202,7 @@ The following experimental features are included in PowerShell 7.5-preview.5:
 [20913]: https://github.com/PowerShell/PowerShell/pull/20913
 [20925]: https://github.com/PowerShell/PowerShell/pull/20925
 [20942]: https://github.com/PowerShell/PowerShell/pull/20942
+[20981]: https://github.com/PowerShell/PowerShell/pull/20981
 [20994]: https://github.com/PowerShell/PowerShell/pull/20994
 [20999]: https://github.com/PowerShell/PowerShell/pull/20999
 [21000]: https://github.com/PowerShell/PowerShell/pull/21000

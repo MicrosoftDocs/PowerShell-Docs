@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/05/2023
+ms.date: 09/25/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/convert-path?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Convert-Path
@@ -61,7 +61,56 @@ PS C:\> Convert-Path ~
 C:\Users\User01
 ```
 
+### Example 4: Convert paths for hidden items
+
+By default, `Convert-Path` does not return hidden items. This example uses the **Force** parameter
+to find hidden items. The `Get-Item` command confirms that the `.git` folder is hidden. Using
+`Convert-Path` without the **Force** parameter returns only the visible items. Adding the **Force**
+parameter returns all items, including hidden items.
+
+```powershell
+PS> Get-Item .git -Force
+
+    Directory: D:\Git\PS-Docs\PowerShell-Docs
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d--h-           9/25/2024  4:46 PM                .git
+
+PS> Convert-Path .git*
+D:\Git\PS-Docs\PowerShell-Docs\.github
+D:\Git\PS-Docs\PowerShell-Docs\.gitattributes
+D:\Git\PS-Docs\PowerShell-Docs\.gitignore
+
+PS> Convert-Path .git* -Force
+D:\Git\PS-Docs\PowerShell-Docs\.git
+D:\Git\PS-Docs\PowerShell-Docs\.github
+D:\Git\PS-Docs\PowerShell-Docs\.gitattributes
+D:\Git\PS-Docs\PowerShell-Docs\.gitignore
+```
+
 ## PARAMETERS
+
+### -Force
+
+Allows the cmdlet to get items that otherwise can't be accessed by the user, such as hidden or
+system files. The **Force** parameter doesn't override security restrictions. Implementation varies
+among providers. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+This parameter was added in PowerShell 7.5-preview.5.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -LiteralPath
 
