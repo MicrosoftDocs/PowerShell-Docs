@@ -84,7 +84,7 @@ Legend
 
 |                        Name                         |         7.2         |         7.4         |    7.5 (preview)    |
 | --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: |
-| [PSCommandNotFoundSuggestion][10]                   | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSCommandNotFoundSuggestion][10]                   | ![Experimental][02] | ![Experimental][02] |  ![Mainstream][01]  |
 | [PSDesiredStateConfiguration.InvokeDscResource][14] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
 | [PSNativePSPathResolution][21]                      | ![Experimental][02] |                     |                     |
 | [PSSubsystemPluginModel][23]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
@@ -93,8 +93,8 @@ Legend
 | [PSLoadAssemblyFromNativeCode][16]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
 | [PSNativeCommandErrorActionPreference][19]          |                     |  ![Mainstream][01]  |                     |
 | [PSFeedbackProvider][15]                            |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSModuleAutoLoadSkipOfflineFiles][17]              |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSCommandWithArgs][11]                             |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSModuleAutoLoadSkipOfflineFiles][17]              |                     | ![Experimental][02] |  ![Mainstream][01]  |
+| [PSCommandWithArgs][11]                             |                     | ![Experimental][02] |  ![Mainstream][01]  |
 | [PSNativeWindowsTildeExpansion][22]                 |                     |                     | ![Experimental][02] |
 | [PSRedirectToVariable][24]                          |                     |                     | ![Experimental][02] |
 | [PSSerializeJSONLongEnumAsNumber][25]               |                     |                     | ![Experimental][02] |
@@ -117,6 +117,9 @@ For more information, see [about_Automatic_Variables][05].
 
 ### PSCommandNotFoundSuggestion
 
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.5-preview.5.
+
 Recommends potential commands based on fuzzy matching search after a **CommandNotFoundException**.
 
 ```powershell
@@ -133,6 +136,9 @@ gcm, gdr, gcs.
 ```
 
 ### PSCommandWithArgs
+
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.5-preview.5.
 
 This feature enables the `-CommandWithArgs` parameter for `pwsh`. This parameter allows you to
 execute a PowerShell command with arguments. Unlike `-Command`, this parameter populates the `$args`
@@ -192,6 +198,9 @@ This feature was added in PowerShell 7.4-preview.3.
 Exposes an API to allow assembly loading from native code.
 
 ### PSModuleAutoLoadSkipOfflineFiles
+
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.5-preview.5.
 
 With this feature enabled, if a user's **PSModulePath** contains a folder from a cloud provider,
 such as OneDrive, PowerShell no longer triggers the download of all files contained within that
