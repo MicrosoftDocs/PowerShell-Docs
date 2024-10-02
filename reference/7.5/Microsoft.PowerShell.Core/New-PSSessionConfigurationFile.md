@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/17/2024
+ms.date: 10/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
@@ -973,7 +973,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -VisibleExternalCommands
