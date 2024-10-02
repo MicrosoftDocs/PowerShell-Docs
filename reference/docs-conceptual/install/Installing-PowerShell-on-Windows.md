@@ -78,6 +78,7 @@ GitHub.
 
 - [PowerShell-7.4.5-win-x64.msi][28]
 - [PowerShell-7.4.5-win-x86.msi][30]
+- [PowerShell-7.4.5-win-arm64.msi][36]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -422,3 +423,4 @@ can't support those methods.
 [33]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [34]: microsoft-update-faq.yml
 [35]: https://techcommunity.microsoft.com/t5/windows-server-insiders/announcing-windows-server-preview-build-26085/m-p/4098829
+[36]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.5/PowerShell-7.4.5-win-arm64.msi
