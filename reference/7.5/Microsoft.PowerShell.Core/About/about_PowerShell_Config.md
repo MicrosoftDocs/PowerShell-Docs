@@ -267,7 +267,7 @@ For more information on experimental features, see
 This setting controls the behavior of logging for PowerShell modules. The
 setting contains two subkeys:
 
-- `EnableModuleLogging` - to enable session configurations, set the value to
+- `EnableModuleLogging` - to enable module logging, set the value to
   `true`. When enabled, pipeline execution events for members of the specified
   modules are recorded in the PowerShell log files.
 - `ModuleNames` - Specifies the name of the modules that should be logged.
