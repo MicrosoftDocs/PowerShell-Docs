@@ -1,7 +1,7 @@
 ---
 description: Describes the PowerShell execution policies and explains how to manage them.
 Locale: en-US
-ms.date: 03/04/2024
+ms.date: 10/07/2024
 no-loc: [Bypass, Default, Restricted, Undefined, Unrestricted, Process, Scope, MachinePolicy, about_Group_Policy_Settings]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -25,9 +25,9 @@ for the current user, or for a particular session. You can also use a Group
 Policy setting to set execution policies for computers and users.
 
 Execution policies for the local computer and current user are stored in the
-PowerShell configuration files. You don't need to set execution policies in your PowerShell profile.
-The execution policy for a particular session is stored only in memory and is
-lost when the session is closed.
+PowerShell configuration files. You don't need to set execution policies in
+your PowerShell profile. The execution policy for a particular session is
+stored only in memory and is lost when the session is closed.
 
 The execution policy isn't a security system that restricts user actions. For
 example, users can easily bypass a policy by typing the script contents at
@@ -137,8 +137,8 @@ execution policies are as follows:
 
   The **Process** scope only affects the current PowerShell session. The
   execution policy is saved in the environment variable
-  `$env:PSExecutionPolicyPreference`, rather than the configuration file. When the
-  PowerShell session is closed, the variable and value are deleted.
+  `$env:PSExecutionPolicyPreference`, rather than the configuration file. When
+  the PowerShell session is closed, the variable and value are deleted.
 
 - CurrentUser
 
