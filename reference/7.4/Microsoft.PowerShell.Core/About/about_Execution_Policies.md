@@ -1,7 +1,7 @@
 ---
 description: Describes the PowerShell execution policies and explains how to manage them.
 Locale: en-US
-ms.date: 03/04/2024
+ms.date: 10/07/2024
 no-loc: [Bypass, Default, Restricted, Undefined, Unrestricted, Process, Scope, MachinePolicy, about_Group_Policy_Settings]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -25,9 +25,9 @@ for the current user, or for a particular session. You can also use a Group
 Policy setting to set execution policies for computers and users.
 
 Execution policies for the local computer and current user are stored in the
-registry. You don't need to set execution policies in your PowerShell profile.
-The execution policy for a particular session is stored only in memory and is
-lost when the session is closed.
+PowerShell configuration files. You don't need to set execution policies in
+your PowerShell profile. The execution policy for a particular session is
+stored only in memory and is lost when the session is closed.
 
 The execution policy isn't a security system that restricts user actions. For
 example, users can easily bypass a policy by typing the script contents at
@@ -137,18 +137,18 @@ execution policies are as follows:
 
   The **Process** scope only affects the current PowerShell session. The
   execution policy is saved in the environment variable
-  `$env:PSExecutionPolicyPreference`, rather than the registry. When the
+  `$env:PSExecutionPolicyPreference`, rather than the configuration file. When the
   PowerShell session is closed, the variable and value are deleted.
 
 - CurrentUser
 
   The execution policy affects only the current user. It's stored in the
-  **HKEY_CURRENT_USER** registry subkey.
+  **CurrentUser** configuration file.
 
 - LocalMachine
 
   The execution policy affects all users on the current computer. It's stored
-  in the **HKEY_LOCAL_MACHINE** registry subkey.
+  in the **AllUsers** configuration file.
 
 ## Managing the execution policy with PowerShell
 
@@ -201,11 +201,11 @@ To change the PowerShell execution policy on your Windows computer, use the
 need to restart PowerShell.
 
 If you set the execution policy for the scopes **LocalMachine** or the
-**CurrentUser**, the change is saved in the registry and remains effective
+**CurrentUser**, the change is saved in the configuration file and remains effective
 until you change it again.
 
 If you set the execution policy for the **Process** scope, it's not saved in
-the registry. The execution policy is retained until the current process and
+the configuration file. The execution policy is retained until the current process and
 any child processes are closed.
 
 > [!NOTE]
@@ -280,13 +280,13 @@ For example:
 pwsh.exe -ExecutionPolicy AllSigned
 ```
 
-The execution policy that you set isn't stored in the registry. Instead, it's
+The execution policy that you set isn't stored in the configuration file. Instead, it's
 stored in the `$env:PSExecutionPolicyPreference` environment variable. The
 variable is deleted when you close the session in which the policy is set. You
 cannot change the policy by editing the variable value.
 
 During the session, the execution policy that is set for the session takes
-precedence over an execution policy that is set in the registry for the local
+precedence over an execution policy that is set in the configuration file for the local
 computer or current user. However, it doesn't take precedence over the
 execution policy set by using a Group Policy.
 
