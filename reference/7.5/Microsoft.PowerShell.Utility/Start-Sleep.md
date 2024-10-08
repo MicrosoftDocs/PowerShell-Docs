@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/22/2023
+ms.date: 10/08/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Sleep
@@ -76,6 +76,8 @@ Start-Sleep -Duration (New-TimeSpan -Seconds 30)
 
 Uses a **TimeSpan** object to specify how long the resource sleeps in milliseconds. The value must
 not be a negative **TimeSpan** and must not exceed `[int]::MaxValue` milliseconds.
+
+This parameter was added in PowerShell 7.3.
 
 ```yaml
 Type: System.TimeSpan
