@@ -38,7 +38,7 @@ This command creates the `TestLog` event log on the local computer and registers
 it.
 
 ```powershell
-New-EventLog -source TestApp -LogName TestLog -MessageResourceFile C:\Test\TestApp.dll
+New-EventLog -Source TestApp -LogName TestLog -MessageResourceFile C:\Test\TestApp.dll
 ```
 
 ### Example 2 - add a new event source to an existing log
