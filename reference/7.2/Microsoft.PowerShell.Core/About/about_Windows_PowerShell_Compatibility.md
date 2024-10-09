@@ -1,7 +1,7 @@
 ---
 description: Describes the Windows PowerShell Compatibility functionality for PowerShell 7.
 Locale: en-US
-ms.date: 04/22/2020
+ms.date: 10/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Windows_PowerShell_Compatibility
@@ -19,14 +19,14 @@ Core, modules in the `%windir%\system32\WindowsPowerShell\v1.0\Modules` folder
 are loaded in a background Windows PowerShell 5.1 process by Windows PowerShell
 Compatibility feature.
 
-### Using the Compatibility feature
+## Using the Compatibility feature
 
 When the first module is imported using Windows PowerShell Compatibility
-feature, PowerShell creates a remote session named `WinPSCompatSession` that is
-running in a background Windows PowerShell 5.1 process. This process is created
-when the Compatibility feature imports the first module. The process is closed
-when the last such module is removed (using `Remove-Module`) or when PowerShell
-process exits.
+feature, PowerShell creates a remote session named `WinPSCompatSession` that
+runs in a background Windows PowerShell 5.1 process. PowerShell creates this
+process when the Compatibility feature imports the first module. The process is
+closed when the last module is removed (using `Remove-Module`) or when
+PowerShell process exits.
 
 The modules loaded in the `WinPSCompatSession` session are used via implicit
 remoting and reflected into current PowerShell session. This is the same
@@ -34,8 +34,8 @@ transport method used for PowerShell jobs.
 
 When a module is imported into the `WinPSCompatSession` session, implicit
 remoting generates a proxy module in the user's `$env:Temp` directory and
-imports this proxy module into current PowerShell session. This allows
-PowerShell to detect that the module was loaded using Windows PowerShell
+imports this proxy module into current PowerShell session. The proxy module
+allows PowerShell to detect that the module was loaded using Windows PowerShell
 Compatibility functionality.
 
 Once the session is created, it can be used for operations that don't work
@@ -53,20 +53,20 @@ The Compatibility feature can be invoked in two ways:
 
 - Explicitly by importing a module using the **UseWindowsPowerShell** parameter
 
-   ```powershell
-   Import-Module -Name ScheduledTasks -UseWindowsPowerShell
-   ```
+  ```powershell
+  Import-Module -Name ScheduledTasks -UseWindowsPowerShell
+  ```
 
 - Implicitly by importing a Windows PowerShell module by module name, path, or
   autoloading via command discovery.
 
-   ```powershell
-   Import-Module -Name ServerManager
-   Get-AppLockerPolicy -Local
-   ```
+  ```powershell
+  Import-Module -Name ServerManager
+  Get-AppLockerPolicy -Local
+  ```
 
-   If not already loaded, the AppLocker module is autoloaded when you run
-   `Get-AppLockerPolicy`.
+  If not already loaded, the AppLocker module is autoloaded when you run
+  `Get-AppLockerPolicy`.
 
 Windows PowerShell Compatibility blocks loading of modules that are listed in
 the `WindowsPowerShellCompatibilityModuleDenyList` setting in PowerShell
@@ -80,13 +80,12 @@ The default value of this setting is:
 ]
 ```
 
-### Managing implicit module loading
+## Managing implicit module loading
 
 To disable implicit import behavior of the Windows PowerShell Compatibility
 feature, use the `DisableImplicitWinCompat` setting in a PowerShell
 configuration file. This setting can be added to the `powershell.config.json`
-file. For more information, see
-[about_powershell_config](about_powershell_config.md).
+file. For more information, see [about_PowerShell_Config][02].
 
 This example shows how to create a configuration file that disables the
 implicit module-loading feature of Windows PowerShell Compatibility.
@@ -102,9 +101,9 @@ pwsh -settingsFile $ConfigPath
 ```
 
 For more the latest information about module compatibility, see the
-[PowerShell 7 module compatibility](https://aka.ms/PSModuleCompat) list.
+[PowerShell 7 module compatibility][03] list.
 
-### Managing cmdlet clobbering
+## Managing cmdlet clobbering
 
 The Windows PowerShell Compatibility feature uses implicit remoting to load
 modules in compatibility mode. The result is that commands exported by the
@@ -113,7 +112,7 @@ module take precedence over commands of the same name in the current PowerShell
 ship with PowerShell.
 
 In PowerShell 7.1, the behavior was changed so that the following core
-PowerShell modules are not clobbered:
+PowerShell modules aren't clobbered:
 
 - Microsoft.PowerShell.ConsoleHost
 - Microsoft.PowerShell.Diagnostics
@@ -123,8 +122,8 @@ PowerShell modules are not clobbered:
 - Microsoft.PowerShell.Utility
 - Microsoft.WSMan.Management
 
-PowerShell 7.1 also added the ability to list additional modules that should
-not be clobbered by compatibility mode.
+PowerShell 7.1 also added the ability to exclude more modules from clobbering
+by compatibility mode.
 
 You can add the `WindowsPowerShellCompatibilityNoClobberModuleList` setting to
 PowerShell configuration file. The value of this setting is a comma-separated
@@ -139,17 +138,31 @@ list of module names. The default value of this setting is:
 The Windows PowerShell Compatibility functionality:
 
 1. Only works locally on Windows computers
-1. Requires that Windows PowerShell 5.1
+1. Requires Windows PowerShell 5.1
 1. Operates on serialized cmdlet parameters and return values, not on live
    objects
-1. All modules imported into the Windows PowerShell remoting session share the
-   same runspace.
+1. Shares a single runspace for all modules imported into the Windows
+   PowerShell remoting session
 
-## Keywords
+## Temporary files
 
-about_Windows_PowerShell_Compatibility
+The Windows PowerShell Compatibility feature uses implicit remoting to make
+Windows PowerShell 5.1 modules available in PowerShell 7. Implicit remoting
+creates temporary files in the `$env:Temp` directory. Each proxied module is
+stored in a separate folder with the following naming convention:
+
+- `remoteIpMoProxy_<ModuleName>_<ModuleVersion>_localhost_<SessionGuid>`.
+
+PowerShell removes the temporary files when you remove the last proxied module
+from the session or close the session.
 
 ## See also
 
-- [about_Modules](about_Modules.md)
-- [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)
+- [about_Modules][01]
+- [Import-Module][04]
+
+<!-- link references -->
+[01]: about_Modules.md
+[02]: about_powershell_config.md
+[03]: https://aka.ms/PSModuleCompat
+[04]: xref:Microsoft.PowerShell.Core.Import-Module
