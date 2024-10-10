@@ -21,7 +21,7 @@ allowed to run on Windows.
 PowerShell detects both AppLocker and WDAC system wide policies. AppLocker doesn't have way to query
 the policy enforcement status. To detect if a system wide application control policy is being
 enforced by AppLocker, PowerShell creates two temporary files and tests if they can be executed. The
-files use the following name format:
+filenames use the following name format:
 
 - `$env:TEMP/__PSAppLockerTest__<random-8dot3-name>.ps1`
 - `$env:TEMP/__PSAppLockerTest__<random-8dot3-name>.psm1`
