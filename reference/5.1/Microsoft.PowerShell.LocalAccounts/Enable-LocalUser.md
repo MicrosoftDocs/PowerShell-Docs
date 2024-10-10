@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 06/28/2023
+ms.date: 10/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/enable-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-LocalUser
@@ -59,8 +59,8 @@ This command enables the user account named Admin02.
 Get-LocalUser -Name "Administrator" | Enable-LocalUser
 ```
 
-This command gets the built-in Administrator account by using `Get-LocalUser`, and then passes it to
-the current cmdlet by using the pipeline operator. That cmdlet enables that account.
+In this example, `Get-LocalUser` gets the Administrator account and passes it to `Enable-LocalUser`
+by using the pipeline operator.
 
 ## PARAMETERS
 
@@ -149,7 +149,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
