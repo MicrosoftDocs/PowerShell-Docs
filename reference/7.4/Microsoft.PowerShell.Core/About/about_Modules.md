@@ -1,7 +1,7 @@
 ---
 description: Explains how to install, import, and use PowerShell modules.
 Locale: en-US
-ms.date: 08/09/2024
+ms.date: 10/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
@@ -18,29 +18,24 @@ PowerShell are implemented as scripts, functions, or cmdlets. The language
 includes [keywords][07], which provide the structure and logic of processing,
 and other resources, such as variables, providers, aliases.
 
-A module is a self-contained, reusable unit that can include cmdlets, providers,
-functions, variables, and other resources that can be imported into a PowerShell
-session or any custom PowerShell program.
-
-Before the functionality contained in a module is usable, the module must be
-loaded into the PowerShell session. By default, PowerShell automatically loads
-an installed module the first time you use a command from the module. You can
-configure automatic module loading behavior using the variable
-`$PSModuleAutoloadingPreference`. For more information, see
+A module is a self-contained, reusable unit that can include cmdlets,
+providers, functions, variables, and other resources. By default, PowerShell
+automatically loads an installed module the first time you use a command from
+the module. You can configure automatic module loading behavior using the
+variable `$PSModuleAutoloadingPreference`. For more information, see
 [about_Preference_Variables][08].
 
-You can also manually unload or reload modules during a PowerShell session. To
-unload a module, use the `Remove-Module` cmdlet. To load or reload a module,
-use `Import-Module`.
+You can also manually load or unload modules during a PowerShell session. To
+load or reload a module, use `Import-Module`. To unload a module, use the
+`Remove-Module` cmdlet.
 
-PowerShell comes with a base set of modules. Anyone can create new PowerShell
-commands or other resources, and publish them as modules that users can install
-as needed.
+PowerShell includes a base set of modules. Anyone can create new modules using
+C# or the PowerShell scripting language itself. Modules written in C# as
+compiled .NET assemblies are known as native modules. Modules written in
+PowerShell are known as script modules.
 
-You can write modules in C# as compiled .NET assemblies, known as native
-modules, or in plain PowerShell, known as script modules. This topic explains
-how to use PowerShell modules. For information about how to create PowerShell
-modules, see [Writing a PowerShell Module][02].
+This article explains how to use PowerShell modules. For information about how
+to create PowerShell modules, see [Writing a PowerShell Module][02].
 
 > [!NOTE]
 > Prior to PowerShell 3.0, cmdlets and providers were packaged in PowerShell
@@ -49,42 +44,18 @@ modules, see [Writing a PowerShell Module][02].
 > remaining in PowerShell. All other snap-ins were converted to modules.
 > Creation of new snap-ins is no longer supported.
 
-## Install a published module
+## Default module locations
 
-A published module is a module that is available from a registered repository,
-such as the PowerShell Gallery. The **PowerShellGet** and
-**Microsoft.PowerShell.PSResourceGet** modules provide cmdlets for finding,
-installing, and publishing PowerShell modules to a registered repository.
+PowerShell stores modules in the following default locations:
 
-The **PowerShellGet** module is included with PowerShell 5.0 and later
-releases. The **Microsoft.PowerShell.PSResourceGet** module is included with
-PowerShell 7.4 and later releases. **Microsoft.PowerShell.PSResourceGet** is
-the new preferred package manager for PowerShell and can be installed on
-previous versions of PowerShell. Use the `Install-Module` or
-`Install-PSResource` cmdlet to install modules from the PowerShell Gallery.
-
-```powershell
- Get-Command Install-Module, Install-PSResource
-```
-
-```Output
-CommandType  Name                Version    Source
------------  ----                -------    ------
-Function     Install-Module      2.9.0      PowerShellGet
-Cmdlet       Install-PSResource  1.0.0      Microsoft.PowerShell.PSResourceGet
-```
-
-For more information, see [PowerShellGet Overview][01].
-
-## Manually install a module
-
-If you receive a module as a folder with files in it, you need to install it on
-your computer before you can use it in PowerShell.
-
-PowerShell comes with several preinstalled modules. On Windows-based computers,
-many Windows features include modules for managing the feature. Those modules
-get installed when the feature is installed. Other modules may come in an
-installer or setup program that installs the module.
+- On Windows
+  - All users scope - `$env:ProgramFiles\PowerShell\Modules`
+  - Current user scope - `$HOME\Documents\PowerShell\Modules`
+  - Modules shipped with PowerShell - `$PSHOME\Modules`
+- On Linux and macOS
+  - All users scope - `/usr/local/share/powershell/Modules`
+  - Current user scope - `$HOME/.local/share/powershell/Modules`
+  - Modules shipped with PowerShell - `$PSHOME/Modules`
 
 By default, the `Modules` folder for the current user doesn't exist. If you
 installed a module in the `CurrentUser` scope using `Install-Module` or
@@ -97,31 +68,19 @@ Use the following command to create a `Modules` folder for the current user:
 $folder = New-Item -Type Directory -Path $HOME\Documents\PowerShell\Modules
 ```
 
-Copy the entire module folder into the new created folder. In PowerShell use
-the `Copy-Item` cmdlet. For example, run the following command to copy the
-`MyModule` folder from `C:\PSTest` to the folder you just created:
-
-```powershell
-Copy-Item -Path C:\PSTest\MyModule -Destination $folder
-```
-
-You can install a module in any location, but installing your modules in a
-default module location makes them easier to manage. For more information about
-the default module locations, see [about_PSModulePath][10].
+These locations are automatically included in the `$env:PSModulePath`
+environment variable. For more information about the default module locations,
+see [about_PSModulePath][10].
 
 ## Module autoloading
 
 The first time that you run a command from an installed module, PowerShell
 automatically imports (loads) that module. The module must be stored in the
-locations specified in the `$env:PSModulePath` environment variable. Modules in
-other locations must be imported using the `Import-Module` cmdlet.
+locations specified in the `$env:PSModulePath` environment variable.
 
 Module autoloading allows you to use commands in a module without any setup or
-profile configuration. There's no need to manage modules after you install them
-on your computer.
-
-Each of the following examples cause the **CimCmdlets** module, which contains
-`Get-CimInstance`, to be imported into your session.
+profile configuration. Each of the following examples causes the **CimCmdlets**
+module, which contains `Get-CimInstance`, to be imported into your session.
 
 - Run the Command
 
@@ -141,17 +100,9 @@ Each of the following examples cause the **CimCmdlets** module, which contains
   Get-Help Get-CimInstance
   ```
 
-You can use the `Get-Command` cmdlet list the commands in all installed
-modules, even if they're not yet in the session. When you use `Get-Command`
-with a wildcard character (`*`), PowerShell doesn't import any modules. You can
-use wildcards for command discovery without loading modules that you may not
-need in your session.
-
-Also, commands that use PowerShell providers don't automatically import a
-module. For example, if you use a command that requires the `WSMan:` drive,
-such as the `Get-PSSessionConfiguration` cmdlet, you might need to run the
-`Import-Module` cmdlet to import the **Microsoft.WSMan.Management** module that
-includes the `WSMan:` drive.
+When you use `Get-Command` with a wildcard character (`*`), PowerShell doesn't
+import any modules. You can use wildcards for command discovery without loading
+modules that you might not need in your session.
 
 ## Manually import a module
 
@@ -160,6 +111,12 @@ locations specified by the `$env:PSModulePath` environment variable, or when
 the module is provided as a standalone `.dll` or `.psm1` file, rather than a
 packaged module.
 
+Also, commands that use PowerShell providers don't automatically import a
+module. For example, if you use a command that requires the `WSMan:` drive,
+such as the `Get-PSSessionConfiguration` cmdlet, you might need to run the
+`Import-Module` cmdlet to import the **Microsoft.WSMan.Management** module that
+includes the `WSMan:` drive.
+
 You might also want to change how the module is imported in your session. For
 example, the **Prefix** parameter of `Import-Module` adds a distinctive prefix
 to the noun portion of the cmdlets imported from the module. The **NoClobber**
@@ -167,9 +124,8 @@ parameter prevents the module from adding commands that would hide or replace
 existing commands in the session. For more information, see
 [Manage name conflicts][03].
 
-You can import a module that's installed in your `$env:PSModulePath` by
-specifying the module name. For example, the following command imports the
-**BitsTransfer** module into the current session.
+The following example imports the **BitsTransfer** module into the current
+session.
 
 ```powershell
 Import-Module BitsTransfer
@@ -202,10 +158,56 @@ the `Import-Module` command to your PowerShell profile.
 
 For more information about profiles, see [about_Profiles][09].
 
+## Install a published module
+
+A published module is a module that's available from a registered repository,
+such as the PowerShell Gallery. The **PowerShellGet** and
+**Microsoft.PowerShell.PSResourceGet** modules provide cmdlets for finding,
+installing, and publishing PowerShell modules to a registered repository.
+
+The **PowerShellGet** module is included with PowerShell 5.0 and later
+releases. The **Microsoft.PowerShell.PSResourceGet** module is included with
+PowerShell 7.4 and later releases and is the preferred package manager for
+PowerShell. **Microsoft.PowerShell.PSResourceGet** can be installed, side by
+side with **PowerShellGet**, on older versions of PowerShell. Use the
+`Install-Module` or `Install-PSResource` cmdlet to install modules from the
+PowerShell Gallery.
+
+```powershell
+ Get-Command Install-Module, Install-PSResource
+```
+
+```Output
+CommandType  Name                Version    Source
+-----------  ----                -------    ------
+Function     Install-Module      2.9.0      PowerShellGet
+Cmdlet       Install-PSResource  1.0.0      Microsoft.PowerShell.PSResourceGet
+```
+
+For more information, see [PowerShellGet Overview][01].
+
+## Manually install a module
+
+You can manually install a module by copying the module contents from another
+folder. That folder can be in another location on the local machine or
+installed on another machine. To install a module manually, copy the entire
+module folder into a new location included in your `$env:PSModulePath`.
+
+In PowerShell use the `Copy-Item` cmdlet. For example, run the following
+command to copy the `MyModule` folder from `C:\PSTest`:
+
+```powershell
+$modulePath = $HOME\Documents\PowerShell\Modules\MyModule
+Copy-Item -Path C:\PSTest\MyModule\* -Destination $modulePath -Recurse
+```
+
+You can install a module in any location, but installing your modules in a
+default module location makes them easier to manage.
+
 ## Find installed modules
 
-The `Get-Module` cmdlet gets the PowerShell modules that have been imported in
-your session.
+The `Get-Module` cmdlet gets the PowerShell modules that are loaded in the
+current PowerShell session.
 
 ```powershell
 Get-Module
@@ -312,7 +314,7 @@ have the same names as commands or items in the session.
 current session. Name conflicts can result in commands being hidden or
 replaced. Command replacement occurs when the imported module contains a
 command with the same name as an existing command in the session. The newly
-imported command replaces takes precedence over the existing command.
+imported command takes precedence over the existing command.
 
 For example, when a session includes a function and a cmdlet with the same
 name, PowerShell runs the function by default. When the session includes
@@ -322,9 +324,9 @@ name, by default, it runs the most recently added command.
 For more information, including an explanation of the precedence rules and
 instructions for running hidden commands, see [about_Command_Precedence][04].
 
-You can run a command that has been hidden or replaced by qualifying the
-command name. To qualify the command name, add the name of module than contains
-the version of the command you want. For example:
+You can run a hidden or replaced command by qualifying the command name. To
+qualify the command name, add the name of module that contains the version of
+the command you want. For example:
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date

@@ -16,9 +16,19 @@ based on unique properties of the files.
 **WDAC**, introduced with Windows 10, allows you to control which drivers and applications are
 allowed to run on Windows.
 
-PowerShell detects both AppLocker and WDAC system wide policies. AppLocker is deprecated. WDAC is
-the preferred application control system for Windows. WDAC is designed as a security feature under
-the servicing criteria defined by the Microsoft Security Response Center (MSRC).
+## Lockdown policy detection
+
+PowerShell detects both AppLocker and WDAC system wide policies. AppLocker doesn't have way to query
+the policy enforcement status. To detect if a system wide application control policy is being
+enforced by AppLocker, PowerShell creates two temporary files and tests if they can be executed. The
+filenames use the following name format:
+
+- `$env:TEMP/__PSAppLockerTest__<random-8dot3-name>.ps1`
+- `$env:TEMP/__PSAppLockerTest__<random-8dot3-name>.psm1`
+
+WDAC is the preferred application control system for Windows. WDAC provides APIs that allow you to
+discover the policy configuration. WDAC is designed as a security feature under the servicing
+criteria defined by the Microsoft Security Response Center (MSRC).
 
 For more information about AppLocker and WDAC, see [Application Controls for Windows][04] and
 [WDAC and AppLocker feature availability][02].
