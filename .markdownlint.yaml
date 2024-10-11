@@ -115,3 +115,14 @@ MD050:       # strong-style
 MD051: true  # link-fragments
 MD052: true  # reference-links-images
 MD053: true  # link-image-reference-definitions
+MD054:       # link-image-style
+  autolink: false
+  collapsed: false
+  full: true
+  inline: true
+  shortcut: false
+  url_inline: true
+MD055: leading_and_trailing # table-pipe-style
+MD056: true  # table-column-count
+# MD057      # undefined
+MD058: true  # blanks-around-tables
