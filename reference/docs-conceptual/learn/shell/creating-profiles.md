@@ -63,7 +63,7 @@ C:\Program Files\PowerShell\7\profile.ps1
 ## How to create your personal profile
 
 When you first install PowerShell on a system, the profile script files and the directories they
-belong to don't exist. The following command creates the "Current User, Current Current Host"
+belong to don't exist. The following command creates the "Current User, Current Host"
 profile script file if it doesn't exist.
 
 ```powershell
