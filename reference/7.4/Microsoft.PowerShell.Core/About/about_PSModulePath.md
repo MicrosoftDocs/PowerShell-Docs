@@ -1,7 +1,7 @@
 ---
 description: The PSModulePath environment variable contains a list of folder locations that are searched to find modules and resources.
 Locale: en-US
-ms.date: 10/09/2024
+ms.date: 10/14/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
@@ -48,7 +48,7 @@ The default locations for Windows PowerShell 5.1 are different from PowerShell
 - Modules installed in the **CurrentUser** scope are stored in
   `$HOME\Documents\WindowsPowerShell\Modules`.
 - Modules installed in the **AllUsers** scope are stored in
-  `$env:ProgramFiles\PowerShell\Modules`.
+  `$env:ProgramFiles\WindowsPowerShell\Modules`.
 - Modules that ship with Windows PowerShell stored in `$PSHOME\Modules`, which
   is `$env:SystemRoot\System32\WindowsPowerShell\1.0\Modules`.
 
