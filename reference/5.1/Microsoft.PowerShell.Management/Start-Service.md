@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/27/2023
+ms.date: 10/15/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Service
@@ -281,8 +281,9 @@ Windows PowerShell includes the following aliases for `Start-Service`:
 
 - `sasv`
 
-- `Start-Service` can control services only if the current user has permission to do this. If a
-  command does not work correctly, you might not have the required permissions.
+- By default, only members of the Administrators group can start, stop, pause, resume, or restart a
+  service. If you are a member of the Administrators group, you need to run `Start-Service` from an
+  elevated PowerShell session. Use the **Run as Administrator** option to start PowerShell.
 - To find the service names and display names of the services on your system, type `Get-Service`.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.
