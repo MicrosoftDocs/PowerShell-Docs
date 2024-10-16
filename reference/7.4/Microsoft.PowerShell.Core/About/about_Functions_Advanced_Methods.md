@@ -1,7 +1,7 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 05/20/2024
+ms.date: 10/16/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Methods
@@ -55,7 +55,7 @@ processing, and an `end` block for one-time post-processing.
 Function Test-ScriptCmdlet
 {
 [CmdletBinding(SupportsShouldProcess=$True)]
-    Param ($Parameter1)
+    param ($Parameter1)
     begin{}
     process{}
     end{}
