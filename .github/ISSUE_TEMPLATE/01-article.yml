@@ -1,6 +1,7 @@
 name: "💡 Suggest a new document or idea"
 description: >-
   Suggest a new document or major rewrite of an existing one.
+  Note: You can clone the repository using `gh repo clone MicrosoftDocs/PowerShell-Docs`.
 labels:
   - issue-doc-idea
   - needs-triage

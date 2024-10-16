@@ -1,6 +1,7 @@
 name: "🛠 Document a product change"
 description: >-
   Request documentation for a new or updated feature, cmdlet, parameter, or behavior.
+  Note: You can clone the repository using `gh repo clone MicrosoftDocs/PowerShell-Docs`.
 labels:
   - issue-doc-idea
   - needs-triage

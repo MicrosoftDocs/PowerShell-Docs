@@ -30,6 +30,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct][04].
 The following list describes the main folders in this repository.
 
 - `.github` - contains configuration settings used by GitHub for this repository
+- `.github/ISSUE_TEMPLATE` - contains multiple issue templates
 - `.vscode` - contains configuration settings and recommended extensions for Visual Studio Code (VS
   Code)
 - `assets` - contains downloadable files linked in the documentation
@@ -56,6 +57,14 @@ The following list describes the main folders in this repository.
 > NOTE: The reference content (in the numbered folders) is used to create the webpages on the Docs
 > site as well as the updateable help used by PowerShell. The articles in the `docs-conceptual`
 > folder are only published to the Docs website.
+
+## Cloning the Repository
+
+To clone the repository, use the following command:
+
+```sh
+gh repo clone MicrosoftDocs/PowerShell-Docs
+```
 
 ## Contributing
 
