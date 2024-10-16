@@ -59,6 +59,7 @@ Function Test-ScriptCmdlet
     begin{}
     process{}
     end{}
+    clean{}
 }
 ```
 
