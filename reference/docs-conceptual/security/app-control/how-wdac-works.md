@@ -251,4 +251,4 @@ command, PowerShell either blocks the command from running (new behavior) or run
 <!-- link references -->
 [01]: /powershell/module/microsoft.powershell.core/about/about_language_modes
 [02]: #powershell-behavior-under-lockdown-policy
-[03]: how-to-use-App Control.md
+[03]: how-to-use-wdac.md
