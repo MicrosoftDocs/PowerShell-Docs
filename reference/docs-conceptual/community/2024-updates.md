@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 09/05/2024
+ms.date: 10/19/2024
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,30 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-September
+
+New content
+
+- [Improve the accessibility of output in PowerShell](/powershell/scripting/learn/shell/output-for-screen-reader)
+- [What's new in PSResourceGet?](/powershell/gallery/powershellget/psresourceget-release-notes)
+- [about_PSReadLine_Release_Notes](/powershell/module/psreadline/about/about_psreadline_release_notes)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 29 PRs merged (1 from Community)
+- 19 issues opened (19 from Community)
+- 20 issues closed (20 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+| GitHub Id | PRs merged | Issues opened |
+| --------- | :--------: | :-----------: |
+| iRon7     |            |       5       |
+| jikuja    |            |       2       |
 
 ## 2024-August
 
