@@ -64,17 +64,17 @@ a PowerShell session. For a full description, see [about_Language_Modes][04].
 
 ## Application Control
 
-Windows 10 includes two technologies, [Windows Defender Application Control (WDAC)][08] and
-[AppLocker][07] that you can use to control applications. PowerShell detects if a system wide
-application control policy is being enforced. The policy applies certain behaviors when running
-script blocks, script files, or loading module files to prevent arbitrary code execution on the
-system.
+Windows 10 includes two technologies, [App Control for Business][08] and [AppLocker][07] that you
+can use to control applications. PowerShell detects if a system wide application control policy is
+being enforced. The policy applies certain behaviors when running script blocks, script files, or
+loading module files to prevent arbitrary code execution on the system.
 
-WDAC is designed as a security feature under the servicing criteria defined by the Microsoft
-Security Response Center (MSRC). WDAC is the preferred application control system for Windows.
+App Control for Business is designed as a security feature under the servicing criteria defined by
+the Microsoft Security Response Center (MSRC). App Control is the preferred application control
+system for Windows.
 
-For more information about how PowerShell supports AppLocker and WDAC, see
-[Using Windows Defender Application Control][10].
+For more information about how PowerShell supports AppLocker and App Control, see
+[Use App Control to secure PowerShell][10].
 
 ## Software Bill of Materials (SBOM)
 
@@ -98,8 +98,8 @@ features meet the criteria for servicing.
 
 Security features
 
-- System Lockdown with WDAC
-- Constrained language mode with WDAC
+- System Lockdown with App Control for Business
+- Constrained language mode with App Control for Business
 
 Defense in depth features
 
@@ -114,8 +114,8 @@ Defense in depth features
 [04]: /powershell/module/microsoft.powershell.core/about/about_language_modes
 [05]: /powershell/module/microsoft.powershell.core/about/about_logging_non-windows
 [06]: /powershell/module/microsoft.powershell.core/about/about_logging_windows
-[07]: /windows/security/threat-protection/windows-defender-application-control/applocker/what-is-applocker
-[08]: /windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control
+[07]: /windows/security/application-security/application-control/app-control-for-business/applocker/what-is-applocker
+[08]: /windows/security/application-security/application-control/app-control-for-business/appcontrol
 [09]: /windows/win32/amsi/how-amsi-helps
 [10]: app-control/application-control.md
 [11]: https://devblogs.microsoft.com/engineering-at-microsoft/generating-software-bills-of-materials-sboms-with-spdx-at-microsoft/

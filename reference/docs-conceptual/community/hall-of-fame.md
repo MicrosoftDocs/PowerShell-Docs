@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
-ms.date: 09/05/2024
+ms.date: 10/19/2024
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -17,7 +17,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |   PRs Merged    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |  122 |  108 |   53 |        1969 |
+| Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |  121 |  108 |   54 |        1969 |
 | matt9ucci       |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |         274 |
 | nschonni        |      |      |      |   14 |  138 |   10 |      |      |      |      |         162 |
 | kiazhi          |      |   25 |   79 |   12 |      |      |      |      |      |      |         116 |
@@ -31,8 +31,8 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | NReilingh       |      |    2 |      |   13 |    3 |      |      |      |      |      |          18 |
 | it-praktyk      |      |      |      |   16 |    1 |      |      |      |      |      |          17 |
 | vors            |      |   15 |    1 |      |      |      |      |      |      |      |          16 |
-| markekraus      |      |      |   11 |    5 |      |      |      |      |      |      |          16 |
 | kvprasoon       |      |    2 |    1 |    7 |    2 |    2 |    2 |      |      |      |          16 |
+| markekraus      |      |      |   11 |    5 |      |      |      |      |      |      |          16 |
 | purdo17         |      |      |      |   13 |      |      |      |      |      |      |          13 |
 | k-takai         |      |      |      |    5 |    1 |    7 |      |      |      |      |          13 |
 | exchange12rocks |      |      |    7 |    3 |      |      |    1 |      |      |      |          11 |
@@ -45,15 +45,15 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |  Issues Opened  | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |   54 |   95 |  211 |  561 |  557 |  365 |  225 |  270 |  157 |        2498 |
+| Community       |    3 |   54 |   95 |  211 |  561 |  557 |  364 |  225 |  270 |  169 |        2509 |
 | mklement0       |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   23 |         275 |
 | ehmiiz          |      |      |      |      |      |      |      |   20 |   14 |      |          34 |
 | iSazonov        |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |    1 |          31 |
 | jszabo98        |      |      |      |    2 |   15 |    6 |    1 |      |    1 |    2 |          27 |
+| iRon7           |      |      |      |      |      |    2 |    2 |    2 |   10 |    7 |          23 |
 | juvtib          |      |      |      |      |      |   15 |    7 |      |      |      |          22 |
 | doctordns       |      |      |    5 |    3 |    5 |    7 |    1 |      |      |      |          21 |
 | peetrike        |      |      |      |    1 |      |    4 |    2 |    6 |    4 |    3 |          20 |
-| iRon7           |      |      |      |      |      |    2 |    2 |    2 |   10 |    4 |          20 |
 | vexx32          |      |      |      |    3 |   11 |      |      |    3 |      |      |          17 |
 | JustinGrote     |      |      |      |    1 |    3 |    6 |    1 |    1 |    2 |    2 |          16 |
 | KirkMunro       |      |      |      |    7 |    7 |    1 |      |      |      |      |          15 |

@@ -453,6 +453,11 @@ Accept wildcard characters: False
 Indicates that the cmdlet returns the results, in addition to writing them to a file. This parameter
 is valid only when the **OutFile** parameter is also used in the command.
 
+> [!NOTE]
+> When you use the **PassThru** parameter, the output is written to the pipeline but the file is
+> empty. For more information, see
+> [PowerShell Issue #15409](https://github.com/PowerShell/PowerShell/issues/15409).
+
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
