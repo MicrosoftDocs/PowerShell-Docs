@@ -1,31 +1,31 @@
 ---
-description: This article explains how to configure and use WDAC to secure PowerShell.
-ms.date: 09/19/2024
-title: How to use WDAC to secure PowerShell
+description: This article explains how to configure and use App Control to secure PowerShell.
+ms.date: 10/21/2024
+title: How to use App Control to secure PowerShell
 ---
-# How to use WDAC to secure PowerShell
+# How to use App Control to secure PowerShell
 
-This article describes how to set up a **Windows Defender Application Control** (WDAC) policy. You
-can configure the policy to enforce or audit the policy's rule. In audit mode, PowerShell behavior
-doesn't change but it logs Event ID 16387 messages to the `PowerShellCore/Analytic` event log. In
-enforcement mode, PowerShell applies the policy's restrictions.
+This article describes how to set up a **App Control for Business** policy. You can configure the
+policy to enforce or audit the policy's rule. In audit mode, PowerShell behavior doesn't change but
+it logs Event ID 16387 messages to the `PowerShellCore/Analytic` event log. In enforcement mode,
+PowerShell applies the policy's restrictions.
 
 This article assumes you're using a test machine so that you can test PowerShell behavior under a
-machine wide WDAC policy before you deploy the policy in your environment.
+machine wide App Control policy before you deploy the policy in your environment.
 
-## Create a WDAC policy
+## Create an App Control policy
 
-A WDAC policy is described in an XML file, which contains information about policy options, files
-allowed, and signing certificates recognized by the policy. When the policy is applied, only
+An App Control policy is described in an XML file, which contains information about policy options,
+files allowed, and signing certificates recognized by the policy. When the policy is applied, only
 approved files are allowed to load and run. PowerShell either blocks unapproved script files from
 running or runs them in `ConstrainedLanguage` mode, depending on policy options.
 
-You create and manipulate WDAC policy using the **ConfigCI** module, which is available on all
-supported Windows versions. This Windows PowerShell module can be used in Windows PowerShell 5.1 or
-in PowerShell 7 through the **Windows Compatibility** layer. It's easier to use this module in
+You create and manipulate App Control policy using the **ConfigCI** module, which is available on
+all supported Windows versions. This Windows PowerShell module can be used in Windows PowerShell 5.1
+or in PowerShell 7 through the **Windows Compatibility** layer. It's easier to use this module in
 Windows PowerShell. The policy you create can be applied to any version of PowerShell.
 
-## Steps to create a WDAC policy
+## Steps to create an App Control policy
 
 For testing, you just need to create a default policy and a self signed code signing certificate.
 
@@ -85,13 +85,13 @@ For testing, you just need to create a default policy and a self signed code sig
 
 1. Convert the XML policy file to a policy enforcement binary file
 
-   Finally, you need to convert the XML file to a binary file used by WDAC to apply a policy.
+   Finally, you need to convert the XML file to a binary file used by App Control to apply a policy.
 
    ```powershell
    ConvertFrom-CIPolicy -XmlFilePath .\SystemCIPolicy.xml -BinaryFilePath .\SIPolicy.p7b
    ```
 
-1. Apply the WDAC policy
+1. Apply the App Control policy
 
    To apply the policy to your test machine, copy the `SIPolicy.p7b` file to the required system
    location, `C:\Windows\System32\CodeIntegrity`.
@@ -99,9 +99,9 @@ For testing, you just need to create a default policy and a self signed code sig
    > [!NOTE]
    > Some policies definition must be copied to a subfolder such as
    > `C:\Windows\System32\CodeIntegrity\CiPolicies`. For more information, see
-   > [WDAC Admin Tips & Known Issues][01].
+   > [App Control Admin Tips & Known Issues][01].
 
-1. Disable the WDAC policy
+1. Disable the App Control policy
 
    To disable the policy, rename the `SIPolicy.p7b` file. If you need to do more testing, you can
    change the name back to reenable the policy.
@@ -110,9 +110,9 @@ For testing, you just need to create a default policy and a self signed code sig
    Rename-Item -Path .\SIPolicy.p7b -NewName .\SIPolicy.p7b.off
    ```
 
-## Test using WDAC policy auditing
+## Test using App Control policy auditing
 
-PowerShell 7.4 added a new feature to support WDAC policies in **Audit** mode. In audit mode,
+PowerShell 7.4 added a new feature to support App Control policies in **Audit** mode. In audit mode,
 PowerShell runs the untrusted scripts in `ConstrainedLanguage` mode without errors, but logs
 messages to the event log instead. The log messages describe what restrictions would apply if the
 policy were in **Enforce** mode.
@@ -141,7 +141,7 @@ Get-WinEvent -LogName PowerShellCore/Analytic -Oldest |
 TimeCreated  : 4/19/2023 10:11:07 AM
 ProviderName : PowerShellCore
 Id           : 16387
-Message      : WDAC Audit.
+Message      : App Control Audit.
 
     Title: Method or Property Invocation
     Message: Method or Property 'WriteLine' on type 'System.Console' invocation will not
@@ -153,7 +153,7 @@ Message      : WDAC Audit.
 ```
 
 The event message includes the script position where the restriction would be applied. This
-information helps you understand where you need to change your script so that it runs under the WDAC
+information helps you understand where you need to change your script so that it runs under the App Control
 policy.
 
 > [!IMPORTANT]
@@ -168,4 +168,4 @@ the audit event occurred. The breakpoint allows you to debug your code and inspe
 of the script in real time.
 
 <!-- link references -->
-[01]: /windows/security/application-security/application-control/windows-defender-application-control/operations/known-issues
+[01]: /windows/security/application-security/application-control/app-control-for-business/operations/known-issues

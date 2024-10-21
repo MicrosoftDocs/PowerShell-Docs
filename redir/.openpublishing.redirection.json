@@ -2,6 +2,16 @@
   "redirections": [
     {
       "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/app-control/how-to-use-app-control",
+      "source_path": "../reference/docs-conceptual/security/app-control/how-to-use-wdac.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/app-control/how-app-control-works",
+      "source_path": "../reference/docs-conceptual/security/app-control/how-wdac-works.md"
+    },
+    {
+      "redirect_document_id": true,
       "redirect_url": "/powershell/scripting/security/preventing-script-injection",
       "source_path": "../reference/docs-conceptual/dev-cross-plat/security/preventing-script-injection.md"
     },
