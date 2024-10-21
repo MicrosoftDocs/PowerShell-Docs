@@ -1,17 +1,17 @@
 ---
-description: This article explains how App Control works to secure PowerShell and the restrictions it imposes.
+description: This article explains how App Control for Business works to secure PowerShell and the restrictions it imposes.
 ms.date: 09/19/2024
-title: How App Control works with PowerShell
+title: How App Control for Business works with PowerShell
 ---
 # How App Control works with PowerShell
 
-This article explains how **Application Control for Business** secures PowerShell and the
+This article explains how **App Control for Business** secures PowerShell and the
 restrictions it imposes. The secure behavior of PowerShell varies based on the version of Windows
 and PowerShell you're using.
 
 ## How PowerShell detects a system lockdown policy
 
-PowerShell detects both **AppLocker** and **Application Control for Business** system
+PowerShell detects both **AppLocker** and **App Control for Business** system
 wide polices. AppLocker is deprecated. App Control is the preferred application control system for Windows.
 
 ### Legacy App Control policy enforcement detection
