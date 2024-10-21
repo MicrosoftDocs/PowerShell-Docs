@@ -20,7 +20,7 @@ landingContent:
         links:
           - text: PowerShell security features
             url: security-features.md
-          - text: Using Windows Defender Application Control
+          - text: Using App Control for Business
             url: application-control.md
       - linkListType: how-to-guide
         links:
@@ -74,18 +74,18 @@ landingContent:
             url: remoting/jea/audit-and-report.md
 
   # Card
-  - title: Using WDAC
+  - title: Using App Control
     linkLists:
       - linkListType: overview
         links:
-          - text: Using Windows Defender Application Control
+          - text: Using App Control for Business
             url: app-control/application-control.md
-          - text: How WDAC works with PowerShell
-            url: app-control/how-wdac-works.md
+          - text: How App Control works with PowerShell
+            url: app-control/how-app-control-works.md
       - linkListType: how-to-guide
         links:
-          - text: How to use WDAC to secure PowerShell
-            url: app-control/how-to-use-wdac.md
+          - text: How to use App Control to secure PowerShell
+            url: app-control/how-to-use-app-control.md
 
   # Card
   - title: Managing secrets
