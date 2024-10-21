@@ -1,31 +1,31 @@
 ---
-description: This article explains how WDAC works to secure PowerShell and the restrictions it imposes.
+description: This article explains how App Control for Business works to secure PowerShell and the restrictions it imposes.
 ms.date: 09/19/2024
-title: How WDAC works with PowerShell
+title: How App Control for Business works with PowerShell
 ---
-# How WDAC works with PowerShell
+# How App Control works with PowerShell
 
-This article explains how **Windows Defender Application Control** (WDAC) secures PowerShell and the
+This article explains how **App Control for Business** secures PowerShell and the
 restrictions it imposes. The secure behavior of PowerShell varies based on the version of Windows
 and PowerShell you're using.
 
 ## How PowerShell detects a system lockdown policy
 
-PowerShell detects both **AppLocker** and **Windows Defender Application Control** (WDAC) system
-wide polices. AppLocker is deprecated. WDAC is the preferred application control system for Windows.
+PowerShell detects both **AppLocker** and **App Control for Business** system
+wide polices. AppLocker is deprecated. App Control is the preferred application control system for Windows.
 
-### Legacy WDAC policy enforcement detection
+### Legacy App Control policy enforcement detection
 
-PowerShell uses the legacy WDAC `WldpGetLockdownPolicy` API to discover two things:
+PowerShell uses the legacy App Control `WldpGetLockdownPolicy` API to discover two things:
 
 - System wide policy enforcement: `None`, `Audit`, `Enforce`
 - Individual file policy: `None`, `Audit` (allowed by policy), `Enforce` (not allowed by policy)
 
-All versions of PowerShell (v5.1 - v7.x) support this WDAC policy detection.
+All versions of PowerShell (v5.1 - v7.x) support this App Control policy detection.
 
-### Latest WDAC policy enforcement detection
+### Latest App Control policy enforcement detection
 
-WDAC introduced new APIs in recent versions of Windows. Beginning with version 7.3, PowerShell uses
+App Control introduced new APIs in recent versions of Windows. Beginning with version 7.3, PowerShell uses
 the new `WldpCanExecuteFile` API to decide how a file should be handled. Windows PowerShell 5.1
 doesn't support this new API. The new API takes precedence over the legacy API for individual files.
 However, PowerShell continues to use the legacy API to get the system wide policy configuration. If
@@ -54,7 +54,7 @@ this mode, see the [PowerShell restrictions under lockdown policy][02] section o
 
 ### Noninteractive mode running under policy enforcement
 
-When PowerShell runs a script or loads a module, it uses the WDAC API to get the policy enforcement
+When PowerShell runs a script or loads a module, it uses the App Control API to get the policy enforcement
 for the file.
 
 PowerShell version 7.3 or higher uses the `WldpCanExecuteFile` API if available. This API returns one
@@ -77,7 +77,7 @@ behavior is:
 
 ## PowerShell restrictions under lockdown policy
 
-When PowerShell detects the system is under a WDAC lockdown policy, it applies restrictions even if
+When PowerShell detects the system is under a App Control lockdown policy, it applies restrictions even if
 the script is trusted and running in `FullLanguage` mode. These restrictions prevent known behaviors
 of PowerShell that could result in arbitrary code execution on a locked-down system. The lockdown
 policy enforces the following restrictions:
@@ -128,7 +128,7 @@ policy enforces the following restrictions:
 
 ## PowerShell restrictions under constrained language mode
 
-Script or function that isn't approved by the WDAC policy is untrusted. When you run an untrusted
+Script or function that isn't approved by the App Control policy is untrusted. When you run an untrusted
 command, PowerShell either blocks the command from running (new behavior) or runs the command in
 `ConstrainedLanguage` mode. The following restrictions apply to `ConstrainedLanguage` mode:
 
@@ -246,7 +246,7 @@ command, PowerShell either blocks the command from running (new behavior) or run
 ## Further reading
 
 - For more information about PowerShell language modes, see [about_Language_Modes][01].
-- For information about how to configure and use WDAC, see [How to use WDAC for PowerShell][03].
+- For information about how to configure and use App Control, see [How to use App Control for PowerShell][03].
 
 <!-- link references -->
 [01]: /powershell/module/microsoft.powershell.core/about/about_language_modes
