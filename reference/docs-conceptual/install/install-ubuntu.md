@@ -82,9 +82,9 @@ package from the [releases][05] page onto your Ubuntu machine.
 The link to the current version is:
 
 - PowerShell 7.4 (LTS) universal package for supported versions of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.5/powershell_7.4.5-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell_7.4.6-1.deb_amd64.deb`
 - PowerShell 7.2 (LTS) universal package for supported versions of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.23/powershell_7.2.23-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.24/powershell_7.2.24-1.deb_amd64.deb`
 - PowerShell 7.5-preview.4 universal package for supported versions of Ubuntu
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-preview.3/powershell-preview_7.5.0-preview.3-1.deb_amd64.deb`
 
@@ -102,17 +102,17 @@ sudo apt-get update
 sudo apt-get install -y wget
 
 # Download the PowerShell package file
-wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.5/powershell_7.4.5-1.deb_amd64.deb
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell_7.4.6-1.deb_amd64.deb
 
 ###################################
 # Install the PowerShell package
-sudo dpkg -i powershell_7.4.5-1.deb_amd64.deb
+sudo dpkg -i powershell_7.4.6-1.deb_amd64.deb
 
 # Resolve missing dependencies and finish the install (if necessary)
 sudo apt-get install -f
 
 # Delete the downloaded package file
-rm powershell_7.4.5-1.deb_amd64.deb
+rm powershell_7.4.6-1.deb_amd64.deb
 
 # Start PowerShell Preview
 pwsh
