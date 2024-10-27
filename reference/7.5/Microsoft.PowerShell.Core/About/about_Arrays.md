@@ -784,7 +784,7 @@ Stopped  AppIDSvc           Application Identity
 
 > [!NOTE]
 > Both `ForEach()` and `Where()` methods are intrinsic members. For more
-> information about intrinsic members, see [about_Instrinsic_Members][08].
+> information about intrinsic members, see [about_Intrinsic_Members][08].
 
 ## Get the members of an array
 

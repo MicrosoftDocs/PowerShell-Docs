@@ -74,7 +74,7 @@ Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>] [<Com
 The `Split-Path` cmdlet returns only the specified part of a path, such as the parent folder, a
 subfolder, or a filename. It can also get items that are referenced by the split path and tell
 whether the path is relative or absolute. If you split a path without specifying any other
-parameters, `Split-Path` returs the parent part of the path provided.
+parameters, `Split-Path` returns the parent part of the path provided.
 
 The `Split-Path` command returns strings. It doesn't return **FileInfo** or other item objects like
 the `*-Item` commands do.
