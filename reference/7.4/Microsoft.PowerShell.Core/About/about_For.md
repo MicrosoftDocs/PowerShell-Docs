@@ -349,7 +349,7 @@ the new variables `$sortedOriginal` and `$sortedPadded`. Finally, it uses a
 properties:
 
 - **Index** represents the current index in the sorted arrays.
-- **Original** is the item in the sorted array of original filenamess at the
+- **Original** is the item in the sorted array of original filenames at the
   current index.
 - **Padded** is the item in the sorted array of padded filenames at the current
   index.

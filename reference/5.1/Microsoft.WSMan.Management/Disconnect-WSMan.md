@@ -41,7 +41,7 @@ PS C:\> cd WSMan:
 PS WSMan:\> dir
 ```
 
-```Outpue
+```Output
 WSManConfig: Microsoft.WSMan.Management\WSMan::WSMan
 ComputerName                                  Type
 ------------                                  ----

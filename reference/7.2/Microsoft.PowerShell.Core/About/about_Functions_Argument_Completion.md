@@ -262,7 +262,7 @@ By deriving from `ArgumentCompleterAttribute`, it's possible to create generic
 completers that can be reused, for example:
 
 ```powershell
-[DirectoryCompleter(ContainingFile="pswh.exe", Depth=2)]
+[DirectoryCompleter(ContainingFile="pwsh.exe", Depth=2)]
 
 [DateCompleter(WeekDay='Monday', From="LastYear")]
 

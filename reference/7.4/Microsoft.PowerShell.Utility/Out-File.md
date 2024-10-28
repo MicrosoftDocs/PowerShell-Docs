@@ -141,7 +141,7 @@ the file's content in the PowerShell console.
 ### Example 5: Set file output width for entire scope
 
 This example uses `$PSDefaultParameterValues` to set the `Width` parameter for all invocations of
-`Out-File` and the redirection operartors (`>` and `>>`) to 2000. This ensures that everywhere
+`Out-File` and the redirection operators (`>` and `>>`) to 2000. This ensures that everywhere
 within the current scope that you output table formatted data to file, PowerShell uses a line width
 of 2000 instead of a line width determined by the PowerShell host's console width.
 

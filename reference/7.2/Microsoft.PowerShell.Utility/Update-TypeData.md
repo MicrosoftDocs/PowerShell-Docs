@@ -201,7 +201,7 @@ The second command uses the `Update-TypeData` cmdlet to set the default list pro
 **DefaultDisplayPropertySet** parameter to specify the default properties for a list. The selected
 properties include the new **Quarter** script property that was added in a previous example.
 
-The last command gets the currnet date and displays it in a list format again. It only displays the
+The last command gets the current date and displays it in a list format again. It only displays the
 properties defined in the `Update-TypeData` command, instead of the full list of properties.
 
 ### Example 5: Set the property a type displays in wide format
@@ -306,12 +306,12 @@ Storage\Set-StorageFileServer                                PowerShellGet\Test-
 PowerShellGet\Test-ScriptFileInfo                            Storage\Unblock-FileShareAccess
 PowerShellGet\Update-ScriptFileInfo                          PowerShellGet\Update-ScriptFileInfo
 BitsTransfer\Add-BitsFile                                    AppLocker\Get-AppLockerFileInformation
-Microsoft.PowerShell.Utility\Get-FileHash                    Microsoft.PowerShell.PSResourceGet\Get-PSScriptFileInfo        
+Microsoft.PowerShell.Utility\Get-FileHash                    Microsoft.PowerShell.PSResourceGet\Get-PSScriptFileInfo
 Microsoft.PowerShell.Utility\Import-PowerShellDataFile       Microsoft.PowerShell.Security\New-FileCatalog
-Microsoft.PowerShell.Core\New-PSRoleCapabilityFile           Microsoft.PowerShell.PSResourceGet\New-PSScriptFileInfo        
+Microsoft.PowerShell.Core\New-PSRoleCapabilityFile           Microsoft.PowerShell.PSResourceGet\New-PSScriptFileInfo
 Microsoft.PowerShell.Core\New-PSSessionConfigurationFile     Microsoft.PowerShell.Utility\New-TemporaryFile
 Microsoft.PowerShell.Utility\Out-File                        Dism\Set-AppXProvisionedDataFile
-Microsoft.PowerShell.Security\Test-FileCatalog               Microsoft.PowerShell.PSResourceGet\Test-PSScriptFileInfo       
+Microsoft.PowerShell.Security\Test-FileCatalog               Microsoft.PowerShell.PSResourceGet\Test-PSScriptFileInfo
 Microsoft.PowerShell.Core\Test-PSSessionConfigurationFile    Microsoft.PowerShell.Utility\Unblock-File
 Microsoft.PowerShell.PSResourceGet\Update-PSScriptFileInfo   C:\WINDOWS\system32\FileDialogBroker.exe
 C:\WINDOWS\system32\FileHistory.exe                          C:\WINDOWS\system32\forfiles.exe
