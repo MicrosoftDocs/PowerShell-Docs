@@ -23,6 +23,15 @@ This topic explains how to run selected scripts that aren't signed, even while
 the execution policy is **RemoteSigned**, and how to sign scripts for your own
 use.
 
+PowerShell checks the Authenticode signature of the following type types:
+
+- `.ps1` script files
+- `.psm1` module files
+- `.psd1` module manifest and data files
+- `.ps1xml` type and format XML files
+- `.cdxml` CDXML script files
+- `.xaml` XAML script files
+
 For more information about PowerShell execution policies, see
 [about_Execution_Policies][01].
 
