@@ -199,7 +199,7 @@ The second command uses the `Update-TypeData` cmdlet to set the default list pro
 **DefaultDisplayPropertySet** parameter to specify the default properties for a list. The selected
 properties include the new **Quarter** script property that was added in a previous example.
 
-The last command gets the currnet date and displays it in a list format again. It only displays the
+The last command gets the current date and displays it in a list format again. It only displays the
 properties defined in the `Update-TypeData` command, instead of the full list of properties.
 
 ### Example 5: Set the property a type displays in wide format

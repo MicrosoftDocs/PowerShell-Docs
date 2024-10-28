@@ -1468,7 +1468,7 @@ names and the values are session option values.
 
 > [!NOTE]
 > If you specify a hashtable for **SessionOption**, PowerShell converts the hashtable into a
-> **System.Management.Autiomation.Remoting.PSSessionOption** object. The values for keys specified
+> **System.Management.Automation.Remoting.PSSessionOption** object. The values for keys specified
 > in the hashtable are cast to the matching property of the object. This behaves differently from
 > calling `New-PSSessionOption`. For example, the **System.TimeSpan** values for the timeout
 > properties, like **IdleTimeout**, convert an integer value into ticks instead of milliseconds.
