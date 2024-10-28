@@ -406,7 +406,7 @@ non-Windows platforms results in an error.
 
 ### -Version | -v
 
-Displays the version of this PowerShell exectuable. Additional parameters are ignored.
+Displays the version of this PowerShell executable. Additional parameters are ignored.
 
 ### -WindowStyle | -w
 
