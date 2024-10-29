@@ -193,7 +193,7 @@ Specifies the type of events that are traced. The acceptable values for this par
 - `Assert`
 - `All`
 
-`All` is the default.
+`None` is the default.
 
 The following values are combinations of other values:
 
