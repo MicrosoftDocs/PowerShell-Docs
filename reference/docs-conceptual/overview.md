@@ -1,6 +1,6 @@
 ---
 description: This article is an introduction to the PowerShell scripting environment and its features.
-ms.date: 06/28/2023
+ms.date: 10/30/2024
 ms.topic: overview
 title: What is PowerShell?
 ---
@@ -69,7 +69,7 @@ enables you to manage your enterprise infrastructure with configuration as code.
 Are you new to PowerShell and don't know where to start? Take a look at these resources.
 
 - [Installing PowerShell][25]
-- [PowerShell Bits tutorials][26]
+- [Discover PowerShell][26]
 - [PowerShell 101][27]
 - [Microsoft Virtual Academy videos][28]
 - [PowerShell Learn modules][29]
@@ -103,13 +103,13 @@ Take a look at how PowerShell is being used in different scenarios and on differ
 [17]: /powershell/exchange/exchange-management-shell
 [18]: /sql/powershell/sql-server-powershell
 [19]: https://aws.amazon.com/powershell/
-[20]: https://core.vmware.com/vmware-powercli
+[20]: https://developer.broadcom.com/powercli
 [21]: https://cloud.google.com/powershell/
 [22]: /powershell/scripting/dsc/overview/dscforengineers
 [23]: /powershell/scripting/dsc/configurations/configurations
 [24]: /powershell/scripting/dsc/pull-server/enactingconfigurations
 [25]: /powershell/scripting/install/installing-powershell
-[26]: /powershell/scripting/learn/tutorials/00-introduction
+[26]: discover-powershell.md
 [27]: /powershell/scripting/learn/ps101/00-introduction
 [28]: /shows/browse?terms=powershell
 [29]: /training/browse/?terms=PowerShell
