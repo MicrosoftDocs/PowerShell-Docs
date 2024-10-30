@@ -1,7 +1,7 @@
 ---
 description: Both integer and real numeric literals can have type and multiplier suffixes.
 Locale: en-US
-ms.date: 03/01/2023
+ms.date: 10/30/2024
 no-loc: [482gb]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -24,21 +24,21 @@ with `0b` to distinguish them from decimal numbers.
 
 Integer literals can have a type suffix and a multiplier suffix.
 
-| Suffix |            Meaning             |          Note           |
-| ------ | ------------------------------ | ----------------------- |
-| `y`    | signed byte data type          | Added in PowerShell 6.2 |
-| `uy`   | unsigned byte data type        | Added in PowerShell 6.2 |
-| `s`    | short data type                | Added in PowerShell 6.2 |
-| `us`   | unsigned short data type       | Added in PowerShell 6.2 |
-| `l`    | long data type                 |                         |
-| `u`    | unsigned int or long data type | Added in PowerShell 6.2 |
-| `ul`   | unsigned long data type        | Added in PowerShell 6.2 |
-| `n`    | BigInteger data type           | Added in PowerShell 7.0 |
-| `kb`   | kilobyte multiplier            |                         |
-| `mb`   | megabyte multiplier            |                         |
-| `gb`   | gigabyte multiplier            |                         |
-| `tb`   | terabyte multiplier            |                         |
-| `pb`   | petabyte multiplier            |                         |
+| Suffix |                Meaning                 |          Note           |
+| ------ | -------------------------------------- | ----------------------- |
+| `y`    | signed byte data type                  | Added in PowerShell 6.2 |
+| `uy`   | unsigned byte data type                | Added in PowerShell 6.2 |
+| `s`    | short data type                        | Added in PowerShell 6.2 |
+| `us`   | unsigned short data type               | Added in PowerShell 6.2 |
+| `l`    | long data type                         |                         |
+| `u`    | unsigned int or long data type         | Added in PowerShell 6.2 |
+| `ul`   | unsigned long data type                | Added in PowerShell 6.2 |
+| `n`    | BigInteger data type                   | Added in PowerShell 7.0 |
+| `kb`   | kibibyte (1024<sup>1</sup>) multiplier |                         |
+| `mb`   | mebibyte (1024<sup>2</sup>) multiplier |                         |
+| `gb`   | gigibyte (1024<sup>3</sup>) multiplier |                         |
+| `tb`   | teribyte (1024<sup>4</sup>) multiplier |                         |
+| `pb`   | petibyte (1024<sup>5</sup>) multiplier |                         |
 
 The type of an integer literal is determined by its value, the type suffix, and
 the numeric multiplier suffix.
@@ -73,14 +73,14 @@ the numeric value 100.
 
 Real literals can have a type suffix and a multiplier suffix.
 
-| Suffix |       Meaning       |
-| ------ | ------------------- |
-| `d`    | decimal data type   |
-| `kb`   | kilobyte multiplier |
-| `mb`   | megabyte multiplier |
-| `gb`   | gigabyte multiplier |
-| `tb`   | terabyte multiplier |
-| `pb`   | petabyte multiplier |
+| Suffix |                Meaning                 |
+| ------ | -------------------------------------- |
+| `d`    | decimal data type                      |
+| `kb`   | kibibyte (1024<sup>1</sup>) multiplier |
+| `mb`   | mebibyte (1024<sup>2</sup>) multiplier |
+| `gb`   | gigibyte (1024<sup>3</sup>) multiplier |
+| `tb`   | teribyte (1024<sup>4</sup>) multiplier |
+| `pb`   | petibyte (1024<sup>5</sup>) multiplier |
 
 There are two kinds of real literal: double and decimal. These are indicated by
 the absence or presence, respectively, of decimal-type suffix. PowerShell does
@@ -143,27 +143,27 @@ PS> 0x12Lpb
 
 PowerShell supports the following type accelerators:
 
-| Accelerator |         Note         |           Description            |
-| ----------- | -------------------- | -------------------------------- |
-| `[byte]`    |                      | Byte (unsigned)                  |
-| `[sbyte]`   |                      | Byte (signed)                    |
-| `[Int16]`   |                      | 16-bit integer                   |
-| `[short]`   | alias for `[int16]`  | 16-bit integer                   |
-| `[UInt16]`  |                      | 16-bit integer (unsigned)        |
-| `[ushort]`  | alias for `[uint16]` | 16-bit integer (unsigned)        |
-| `[Int32]`   |                      | 32-bit integer                   |
-| `[int]`     | alias for `[int32]`  | 32-bit integer                   |
-| `[UInt32]`  |                      | 32-bit integer (unsigned)        |
-| `[uint]`    | alias for `[uint32]` | 32-bit integer (unsigned)        |
-| `[Int64]`   |                      | 64-bit integer                   |
-| `[long]`    | alias for `[int64]`  | 64-bit integer                   |
-| `[UInt64]`  |                      | 64-bit integer (unsigned)        |
-| `[ulong]`   | alias for `[uint64]` | 64-bit integer (unsigned)        |
-| `[bigint]`  |                      | See [BigInteger Struct][bigint]  |
-| `[single]`  |                      | Single precision floating point  |
-| `[float]`   | alias for `[single]` | Single precision floating point  |
-| `[double]`  |                      | Double precision floating point  |
-| `[decimal]` |                      | 128-bit floating point           |
+| Accelerator |         Note         |           Description           |
+| ----------- | -------------------- | ------------------------------- |
+| `[byte]`    |                      | Byte (unsigned)                 |
+| `[sbyte]`   |                      | Byte (signed)                   |
+| `[Int16]`   |                      | 16-bit integer                  |
+| `[short]`   | alias for `[int16]`  | 16-bit integer                  |
+| `[UInt16]`  |                      | 16-bit integer (unsigned)       |
+| `[ushort]`  | alias for `[uint16]` | 16-bit integer (unsigned)       |
+| `[Int32]`   |                      | 32-bit integer                  |
+| `[int]`     | alias for `[int32]`  | 32-bit integer                  |
+| `[UInt32]`  |                      | 32-bit integer (unsigned)       |
+| `[uint]`    | alias for `[uint32]` | 32-bit integer (unsigned)       |
+| `[Int64]`   |                      | 64-bit integer                  |
+| `[long]`    | alias for `[int64]`  | 64-bit integer                  |
+| `[UInt64]`  |                      | 64-bit integer (unsigned)       |
+| `[ulong]`   | alias for `[uint64]` | 64-bit integer (unsigned)       |
+| `[bigint]`  |                      | See [BigInteger Struct][bigint] |
+| `[single]`  |                      | Single precision floating point |
+| `[float]`   | alias for `[single]` | Single precision floating point |
+| `[double]`  |                      | Double precision floating point |
+| `[decimal]` |                      | 128-bit floating point          |
 
 > [!NOTE]
 > The following type accelerators were added in PowerShell 6.2: `[short]`,
