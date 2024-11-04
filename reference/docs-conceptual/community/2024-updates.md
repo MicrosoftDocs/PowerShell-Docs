@@ -15,7 +15,10 @@ get started.
 
 New content
 
-- [Improve the accessibility of DSC output in PowerShell - PowerShell](/powershell/dsc/concepts/output-accessibility?view=dsc-3.0&preserve-view=true)
+- [Improve the accessibility of DSC output in PowerShell](/powershell/dsc/concepts/output-accessibility?view=dsc-3.0&preserve-view=true)
+- Added cmdlet reference for the
+  [Microsoft.PowerShell.PlatyPS Module](/powershell/module/microsoft.powershell.platyps/)
+  v1.0.0-preview1 release
 
 ### Top Community Contributors
 
