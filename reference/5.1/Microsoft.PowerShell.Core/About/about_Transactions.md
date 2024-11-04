@@ -74,7 +74,7 @@ to find the **Transactions** value in the **Capabilities** property of
 providers:
 
 ```powershell
-Get-PSPovider | Where-Object {$_.Capabilities -like "*transactions*"}
+Get-PSProvider | Where-Object {$_.Capabilities -like "*transactions*"}
 ```
 
 For more information about a provider, see the Help for the provider. To get

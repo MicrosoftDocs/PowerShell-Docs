@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 10/19/2024
+ms.date: 11/04/2024
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,37 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-October
+
+New content
+
+- [Improve the accessibility of DSC output in PowerShell](/powershell/dsc/concepts/output-accessibility?view=dsc-3.0&preserve-view=true)
+- Added cmdlet reference for the
+  [Microsoft.PowerShell.PlatyPS Module](/powershell/module/microsoft.powershell.platyps/)
+  v1.0.0-preview1 release
+
+### Top Community Contributors
+
+GitHub stats
+
+- 30 PRs merged (11 from Community)
+- 22 issues opened (22 from Community)
+- 22 issues closed (22 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|     GitHub Id      | PRs merged | Issues opened |
+| ------------------ | :--------: | :-----------: |
+| jhribal            |     4      |               |
+| ArieHein           |     2      |               |
+| Bergbok            |     1      |       1       |
+| colinwebster-hc    |     1      |               |
+| HotCakeX           |     1      |               |
+| pmsjt              |     1      |               |
+| CameronSWilliamson |     1      |               |
+| FARICJH59          |            |       2       |
 
 ## 2024-September
 
