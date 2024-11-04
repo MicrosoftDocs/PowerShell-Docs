@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
-ms.date: 10/19/2024
+ms.date: 11/04/2024
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -17,7 +17,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |   PRs Merged    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |  121 |  108 |   54 |        1969 |
+| Community       |    3 |  194 |  446 |  464 |  318 |  161 |  100 |  121 |  108 |   65 |        1980 |
 | matt9ucci       |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |         274 |
 | nschonni        |      |      |      |   14 |  138 |   10 |      |      |      |      |         162 |
 | kiazhi          |      |   25 |   79 |   12 |      |      |      |      |      |      |         116 |
@@ -45,7 +45,7 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |  Issues Opened  | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | Grand Total |
 | --------------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community       |    3 |   54 |   95 |  211 |  561 |  557 |  364 |  225 |  270 |  169 |        2509 |
+| Community       |    3 |   54 |   95 |  211 |  561 |  557 |  364 |  225 |  268 |  179 |        2517 |
 | mklement0       |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   23 |         275 |
 | ehmiiz          |      |      |      |      |      |      |      |   20 |   14 |      |          34 |
 | iSazonov        |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |    1 |          31 |
@@ -66,8 +66,8 @@ GitHub issues help us identify errors and gaps in our documentation.
 | jsilverm        |      |      |      |      |      |    8 |      |      |    4 |      |          12 |
 | CarloToso       |      |      |      |      |      |      |      |      |   11 |      |          11 |
 | Liturgist       |      |      |      |      |    1 |    1 |    1 |    2 |    4 |    2 |          11 |
-| vors            |    1 |    6 |    2 |    1 |      |      |      |      |      |      |          10 |
 | UberKluger      |      |      |      |      |      |    1 |    7 |    2 |      |      |          10 |
+| vors            |    1 |    6 |    2 |    1 |      |      |      |      |      |      |          10 |
 | LaurentDardenne |      |      |    3 |    2 |      |      |      |    5 |      |      |          10 |
 | matt9ucci       |      |      |    2 |    5 |      |      |    2 |      |    1 |      |          10 |
 
