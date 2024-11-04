@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/14/2023
+ms.date: 11/04/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.2&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Copy-Item
@@ -90,7 +90,7 @@ Copy-Item -Path "C:\Logfiles\*" -Destination "C:\Drawings" -Recurse
 
 > [!NOTE]
 > If the path `C:\Drawings` doesn't exist the cmdlet copies all the files from the `Logfiles`
-> folder into a single file `C:\Drawings`.
+> folder tree into a single folder `C:\Drawings`, overwriting any files with the same name.
 
 ### Example 3: Copy directory and contents to a new directory
 
