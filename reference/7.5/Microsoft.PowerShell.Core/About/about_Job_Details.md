@@ -9,6 +9,7 @@ title: about_Job_Details
 # about_Job_Details
 
 ## Short description
+
 Provides details about background jobs on local and remote computers.
 
 ## Detailed description

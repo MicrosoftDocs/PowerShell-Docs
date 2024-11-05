@@ -9,6 +9,7 @@ title: about_Data_Files
 # about_Data_Files
 
 ## Short description
+
 PowerShell data files are used to store arbitrary data using PowerShell syntax.
 
 ## Long description

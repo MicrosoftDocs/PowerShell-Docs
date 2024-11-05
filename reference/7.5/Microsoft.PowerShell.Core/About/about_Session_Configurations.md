@@ -9,6 +9,7 @@ title: about_Session_Configurations
 # about_Session_Configurations
 
 ## Short description
+
 Describes session configurations, which determine the users who can connect to
 the computer remotely and the commands they can run.
 

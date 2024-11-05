@@ -432,7 +432,6 @@ the `Unblock-File` cmdlet.
 This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, `Add-Content` can
 target alternative data streams on both files and directories.
 
-
 ```yaml
 Type: System.String
 Parameter Sets: (All)

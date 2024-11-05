@@ -9,6 +9,7 @@ title: about_Command_Syntax
 # about_Command_Syntax
 
 ## Short description
+
 Describes the syntax diagrams that are used in PowerShell.
 
 ## Long description

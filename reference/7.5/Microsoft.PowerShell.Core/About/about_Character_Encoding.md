@@ -9,6 +9,7 @@ title: about_Character_Encoding
 # about_Character_Encoding
 
 ## Short description
+
 Describes how PowerShell uses character encoding for input and output of string
 data.
 

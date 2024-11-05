@@ -178,4 +178,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Markdown Parser](https://github.com/lunet-io/markdig)
 
 [ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code)
-

@@ -9,6 +9,7 @@ title: about_Throw
 # about_Throw
 
 ## Short description
+
 Describes the `throw` keyword that generates a terminating error.
 
 ## Long description

@@ -10,6 +10,7 @@ title: about_Hash_Tables
 # about_Hash_Tables
 
 ## Short description
+
 Describes how to create, use, and sort hashtables in PowerShell.
 
 ## Long description

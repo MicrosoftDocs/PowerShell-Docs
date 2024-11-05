@@ -9,6 +9,7 @@ title: about_Objects
 # about_Objects
 
 ## Short description
+
 Provides essential information about objects in PowerShell.
 
 ## Long description

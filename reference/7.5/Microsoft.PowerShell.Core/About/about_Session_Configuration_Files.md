@@ -9,6 +9,7 @@ title: about_Session_Configuration_Files
 # about_Session_Configuration_Files
 
 ## Short description
+
 Describes session configuration files, which are used in a session
 configuration (also known as an "endpoint") to define the environment of
 sessions that use the session configuration.

@@ -15,16 +15,19 @@ Creates a GUID.
 ## SYNTAX
 
 ### Default (Default)
+
 ```
 New-Guid [<CommonParameters>]
 ```
 
 ### Empty
+
 ```
 New-Guid [-Empty] [<CommonParameters>]
 ```
 
 ### InputObject
+
 ```
 New-Guid [-InputObject <String>] [<CommonParameters>]
 ```

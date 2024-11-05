@@ -102,4 +102,3 @@ This cmdlet returns a **FileInfo** object that represents the temporary file.
 ## NOTES
 
 ## RELATED LINKS
-

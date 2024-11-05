@@ -223,7 +223,6 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ...
 ```
 
-
 ### Example 8: Get all jobs including jobs started by a different method
 
 This example demonstrates that the `Get-Job` cmdlet can get all of the jobs that were started in the

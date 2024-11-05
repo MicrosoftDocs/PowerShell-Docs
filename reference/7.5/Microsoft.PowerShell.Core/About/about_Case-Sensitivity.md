@@ -9,6 +9,7 @@ title: about_Case-Sensitivity
 # about_Case-Sensitivity
 
 ## Short description
+
 PowerShell is as case-insensitive as possible while preserving case.
 
 ## Long description

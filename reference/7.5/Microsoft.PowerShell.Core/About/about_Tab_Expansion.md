@@ -10,6 +10,7 @@ title: About_tab_expansion
 # about_Tab_Expansion
 
 ## Short description
+
 PowerShell provides completions on input to provide hints, enable discovery,
 and speed up input entry. Command names, parameter names, argument values and
 file paths can all be completed by pressing the <kbd>Tab</kbd> key.

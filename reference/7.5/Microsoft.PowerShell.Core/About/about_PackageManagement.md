@@ -9,6 +9,7 @@ title: about_PackageManagement
 # about_PackageManagement
 
 ## Short description
+
 PackageManagement is an aggregator for software package managers.
 
 ## Long description

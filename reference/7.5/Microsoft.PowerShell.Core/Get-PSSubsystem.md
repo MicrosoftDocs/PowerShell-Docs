@@ -86,7 +86,6 @@ Implementations           : {}
 
 ### -Kind
 
-
 Specifies the kind of subsystem to be returned. Valid values are: `CommandPredictor`.
 
 ```yaml

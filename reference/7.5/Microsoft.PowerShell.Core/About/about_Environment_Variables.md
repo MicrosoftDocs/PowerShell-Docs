@@ -9,6 +9,7 @@ title: about_Environment_Variables
 # about_Environment_Variables
 
 ## Short description
+
 Describes how to access and manage environment variables in PowerShell.
 
 Environment variables store data that's used by the operating system and other

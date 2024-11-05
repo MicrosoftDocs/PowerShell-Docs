@@ -1307,6 +1307,7 @@ Accept wildcard characters: False
 ```
 
 ### -UnixSocket
+
 Specifies the name of the Unix socket to connect to. This parameter is supported on Unix-based
 systems and Windows version 1803 and later. For more information about Windows support of Unix
 sockets, see the
