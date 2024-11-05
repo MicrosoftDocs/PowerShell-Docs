@@ -378,11 +378,11 @@ on the current provider you are using.
 
 If your location is in a `FileSystem` drive, the following values are allowed:
 
-- File
-- Directory
-- SymbolicLink
-- Junction
-- HardLink
+- `File`
+- `Directory`
+- `SymbolicLink`
+- `Junction`
+- `HardLink`
 
 > [!NOTE]
 > Creating a `SymbolicLink` type on Windows requires elevation as administrator. However, Windows 10
