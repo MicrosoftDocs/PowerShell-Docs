@@ -9,6 +9,7 @@ title: about_Functions_OutputTypeAttribute
 # about_Functions_OutputTypeAttribute
 
 ## Short description
+
 Describes an attribute that reports the type of object that the function
 returns.
 

@@ -9,6 +9,7 @@ title: about_Arithmetic_Operators
 # about_Arithmetic_Operators
 
 ## Short description
+
 Describes the operators that perform arithmetic in PowerShell.
 
 ## Long description

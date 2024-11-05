@@ -9,6 +9,7 @@ title: about_Module_Manifests
 # about_Module_Manifests
 
 ## Short description
+
 Describes the settings and practices for writing module manifest files.
 
 ## Long description

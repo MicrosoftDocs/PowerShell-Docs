@@ -9,6 +9,7 @@ title: about_PSCustomObject
 # about_PSCustomObject
 
 ## Short description
+
 Explains the differences between the `[psobject]` and `[pscustomobject]` type
 accelerators.
 

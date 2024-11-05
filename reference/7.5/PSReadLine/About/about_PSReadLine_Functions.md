@@ -1337,7 +1337,6 @@ Show the tooltip of the currently selected list item in the full view.
 - Emacs mode: `F4`
 - Vi insert mode: `F4`
 
-
 ### SwitchPredictionView
 
 Switch the view style for prediction between `InlineView` and `ListView`.

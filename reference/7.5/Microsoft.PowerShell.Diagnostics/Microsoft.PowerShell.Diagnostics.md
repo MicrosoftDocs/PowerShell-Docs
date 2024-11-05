@@ -20,11 +20,13 @@ This module is only available on the Windows platform.
 ## Microsoft.PowerShell.Diagnostics Cmdlets
 
 ### [Get-Counter](Get-Counter.md)
+
 Gets performance counter data from local and remote computers.
 
 ### [Get-WinEvent](Get-WinEvent.md)
+
 Gets events from event logs and event tracing log files on local and remote computers.
 
 ### [New-WinEvent](New-WinEvent.md)
-Creates a new Windows event for the specified event provider.
 
+Creates a new Windows event for the specified event provider.

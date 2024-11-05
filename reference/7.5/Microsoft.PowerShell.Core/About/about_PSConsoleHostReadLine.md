@@ -9,6 +9,7 @@ title: about_PSConsoleHostReadLine
 # about_PSConsoleHostReadLine
 
 ## Short description
+
 Explains how to create a customize how PowerShell reads input at the console
 prompt.
 

@@ -9,6 +9,7 @@ title: about_Join
 # about_Join
 
 ## Short description
+
 Describes how the join operator (-join) combines multiple strings into a
 single string.
 

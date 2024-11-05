@@ -10,6 +10,7 @@ title: about_Logging_Windows
 # about_Logging_Windows
 
 ## Short description
+
 PowerShell logs internal operations from the engine, providers, and cmdlets to
 the Windows event log.
 

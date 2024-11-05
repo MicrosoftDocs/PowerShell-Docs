@@ -19,8 +19,9 @@ programs.
 ## Microsoft.PowerShell.Host Cmdlets
 
 ### [Start-Transcript](Start-Transcript.md)
+
 Creates a record of all or part of a PowerShell session to a text file.
 
 ### [Stop-Transcript](Stop-Transcript.md)
-Stops a transcript.
 
+Stops a transcript.

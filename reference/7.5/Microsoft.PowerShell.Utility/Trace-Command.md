@@ -124,7 +124,6 @@ Specifies a command that's being processed during the trace.
 When you use this parameter, PowerShell processes the command just as it would be processed in a
 pipeline. For example, command discovery isn't repeated for each incoming object.
 
-
 ```yaml
 Type: System.String
 Parameter Sets: commandSet

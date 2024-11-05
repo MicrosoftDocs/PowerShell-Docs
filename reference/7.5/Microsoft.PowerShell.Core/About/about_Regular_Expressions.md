@@ -9,6 +9,7 @@ title: about_Regular_Expressions
 # about_Regular_Expressions
 
 ## Short description
+
 Describes regular expressions in PowerShell.
 
 ## Long description

@@ -9,6 +9,7 @@ title: about_Path_Syntax
 # about_Path_Syntax
 
 ## Short description
+
 Describes the full and relative path formats in  PowerShell.
 
 ## Long description

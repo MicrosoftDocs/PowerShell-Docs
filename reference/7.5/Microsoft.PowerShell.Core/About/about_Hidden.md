@@ -9,6 +9,7 @@ title: about_Hidden
 # about_Hidden
 
 ## Short description
+
 Describes the `hidden` keyword, which hides class members from default
 `Get-Member` results.
 

@@ -169,4 +169,3 @@ certificate file is not password protected, the value of the **Authentication** 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
 [Set-AuthenticodeSignature](Set-AuthenticodeSignature.md)
-

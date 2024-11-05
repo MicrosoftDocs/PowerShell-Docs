@@ -9,6 +9,7 @@ title: about_Switch
 # about_Switch
 
 ## Short description
+
 Explains how to use a switch to handle multiple `if` statements.
 
 ## Long description

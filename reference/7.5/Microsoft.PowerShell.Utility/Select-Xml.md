@@ -169,7 +169,6 @@ about here-strings, see
 The third command is the same as the second, except that tt uses a pipeline operator (`|`) to send
 the XML in the `$Xml` variable to the `Select-Xml` cmdlet.
 
-
 ```powershell
 $Xml = @"
 <?xml version="1.0" encoding="utf-8"?>
