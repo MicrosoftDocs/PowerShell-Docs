@@ -9,6 +9,7 @@ title: about_Parameters
 # about_Parameters
 
 ## Short description
+
 Describes how to work with command parameters in PowerShell.
 
 ## Long description

@@ -9,6 +9,7 @@ title: about_Scripts
 # about_Scripts
 
 ## Short description
+
 Describes how to run and write scripts in PowerShell.
 
 ## Long description

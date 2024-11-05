@@ -9,6 +9,7 @@ title: about_PowerShell_Editions
 # about_PowerShell_Editions
 
 ## Short description
+
 Different editions of PowerShell run on different underlying runtimes.
 
 ## Long description

@@ -9,6 +9,7 @@ title: about_Data_Sections
 # about_Data_Sections
 
 ## Short description
+
 Explains Data sections, which isolate text strings and other read-only
 data from script logic.
 

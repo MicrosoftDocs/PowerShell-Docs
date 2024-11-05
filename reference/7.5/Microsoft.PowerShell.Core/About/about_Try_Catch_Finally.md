@@ -9,6 +9,7 @@ title: about_Try_Catch_Finally
 # about_Try_Catch_Finally
 
 ## Short description
+
 Describes how to use the `try`, `catch`, and `finally` blocks to handle
 terminating errors.
 

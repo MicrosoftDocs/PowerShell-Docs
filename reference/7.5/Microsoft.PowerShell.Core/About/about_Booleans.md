@@ -9,6 +9,7 @@ title: about_Booleans
 # about_Booleans
 
 ## Short description
+
 Describes how boolean expressions are evaluated.
 
 ## Long description

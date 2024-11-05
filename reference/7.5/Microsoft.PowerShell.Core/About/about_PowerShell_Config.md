@@ -9,6 +9,7 @@ title: about_PowerShell_Config
 # about_PowerShell_Config
 
 ## Short description
+
 Configuration files for PowerShell, replacing Registry configuration.
 
 ## Long description

@@ -9,6 +9,7 @@ title: about_Functions_CmdletBindingAttribute
 # about_Functions_CmdletBindingAttribute
 
 ## Short description
+
 Describes the attribute that makes a function work like a compiled cmdlet.
 
 ## Long description

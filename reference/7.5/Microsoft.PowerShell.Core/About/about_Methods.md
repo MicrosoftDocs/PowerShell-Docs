@@ -9,6 +9,7 @@ title: about_Methods
 # about_Methods
 
 ## Short description
+
 Describes how to use methods to perform actions on objects in PowerShell.
 
 ## Long description

@@ -278,7 +278,6 @@ If .NET fails to resolve the name, PowerShell then looks in the current location
 assembly. When you use wildcards in the **AssemblyName** parameter, the .NET assembly resolution
 process fails causing PowerShell to look in the current location.
 
-
 ```yaml
 Type: System.String[]
 Parameter Sets: FromAssemblyName

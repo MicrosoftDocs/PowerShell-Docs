@@ -9,6 +9,7 @@ title: about_Quoting_Rules
 # about_Quoting_Rules
 
 ## Short description
+
 Describes rules for using single and double quotation marks in PowerShell.
 
 ## Long description

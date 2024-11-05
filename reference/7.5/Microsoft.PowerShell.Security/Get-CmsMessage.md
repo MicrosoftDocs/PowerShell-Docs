@@ -169,4 +169,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Protect-CmsMessage](Protect-CmsMessage.md)
 
 [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
-

@@ -10,6 +10,7 @@ title: about_Pwsh
 # about_Pwsh
 
 ## Short description
+
 Explains how to use the `pwsh` command-line interface. Displays the
 command-line parameters and describes the syntax.
 

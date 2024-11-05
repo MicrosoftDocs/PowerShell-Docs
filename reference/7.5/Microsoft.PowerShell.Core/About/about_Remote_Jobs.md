@@ -9,6 +9,7 @@ title: about_Remote_Jobs
 # about_Remote_Jobs
 
 ## Short description
+
 Describes how to run background jobs on remote computers.
 
 ## Detailed Description

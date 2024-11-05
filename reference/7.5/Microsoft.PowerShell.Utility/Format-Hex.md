@@ -374,4 +374,3 @@ Generally, each byte is interpreted as a Unicode code point, which means that:
 [Format-Table](Format-Table.md)
 
 [Format-Wide](Format-Wide.md)
-

@@ -10,6 +10,7 @@ title: about_Output_Streams
 # about_Output_Streams
 
 ## Short description
+
 Explains the availability and purpose of output streams in PowerShell.
 
 ## Long description

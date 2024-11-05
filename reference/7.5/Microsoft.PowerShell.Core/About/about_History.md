@@ -9,6 +9,7 @@ title: about_History
 # about_History
 
 ## Short description
+
 Describes how to get and run commands in the command history.
 
 ## Long description
