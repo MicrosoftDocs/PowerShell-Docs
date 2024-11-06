@@ -59,11 +59,6 @@ Describes the built-in functions in PowerShell.
 PowerShell provides the ability to dynamically add new properties and alter the formatting of
 objects output to the pipeline.
 
-### [about_Calling_Generic_Methods](about_Calling_Generic_Methods.md)
-
-Generics let you tailor a method, class, structure, or interface to the precise data type it acts
-upon.
-
 ### [about_Case-Sensitivity](about_Case-Sensitivity.md)
 
 PowerShell is as case-insensitive as possible while preserving case.
