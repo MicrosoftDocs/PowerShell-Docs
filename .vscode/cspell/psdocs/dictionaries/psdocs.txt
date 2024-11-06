@@ -161,7 +161,7 @@ openpublishing
 openSUSE
 pageable
 parameterless
-Passthru
+PassThru
 PATHEXT
 pbpaste
 pltfrm
