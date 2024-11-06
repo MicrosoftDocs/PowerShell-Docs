@@ -227,7 +227,7 @@ The second command gets the PowerShell process that's hosting the current sessio
 ### Example 10: Get all processes that have a main window title and display them in a table
 
 ```powershell
-Get-Process | Where-Object {$_.mainWindowTitle} | Format-Table Id, Name, mainWindowtitle -AutoSize
+Get-Process | Where-Object {$_.mainWindowTitle} | Format-Table Id, Name, mainWindowTitle -AutoSize
 ```
 
 This command gets all the processes that have a main window title, and it displays them in a table

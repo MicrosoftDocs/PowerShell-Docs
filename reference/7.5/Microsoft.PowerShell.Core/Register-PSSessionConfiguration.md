@@ -98,7 +98,7 @@ $sessionConfiguration = @{
 Register-PSSessionConfiguration @sessionConfiguration
 ```
 
-To use this configuration, type `New-PSSession -ConfigurationName newshell`.
+To use this configuration, type `New-PSSession -ConfigurationName NewShell`.
 
 ### Example 2: Register a MaintenanceShell session configuration
 
@@ -120,7 +120,7 @@ This example registers the **AdminShell** session configuration.
 
 The `$sessionParams` variable is a hashtable containing all the parameter values. This hashtable is
 passed to the cmdlet using PowerShell splatting. The `Register-PSSessionConfiguration` command uses
-the **SecurityDescritorSDDL** parameter to specify the SDDL in the value of the `$sddl` variable and
+the **SecurityDescriptorSDDL** parameter to specify the SDDL in the value of the `$sddl` variable and
 the **MaximumReceivedObjectSizeMB** parameter to increase the object size limit. It also uses the
 **StartupScript** parameter to specify a script that configures the session.
 

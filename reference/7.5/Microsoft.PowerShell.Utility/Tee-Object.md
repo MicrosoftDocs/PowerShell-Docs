@@ -67,7 +67,7 @@ This example gets a list of the processes running on the computer, saves them to
 variable, and pipes them to `Select-Object`.
 
 ```powershell
-Get-Process notepad | Tee-Object -Variable proc | Select-Object processname,handles
+Get-Process notepad | Tee-Object -Variable proc | Select-Object ProcessName, Handles
 ```
 
 ```Output

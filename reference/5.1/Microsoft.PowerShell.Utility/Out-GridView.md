@@ -188,7 +188,7 @@ The values of this parameter determine how many items you can send down the pipe
 - `Single`. Zero items or one item. Use this value when the next command can take only one input
   object.
 - `Multiple`. Zero, one, or many items. Use this value when the next command can take multiple input
-  objects. This value is equivalent to the **Passthru** parameter.
+  objects. This value is equivalent to the **PassThru** parameter.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

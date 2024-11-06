@@ -102,7 +102,7 @@ C:\Users\User01
 ```
 
 ```powershell
-PS C:\> (get-psprovider FileSystem).home
+PS C:\> (Get-PSProvider FileSystem).Home
 ```
 
 ```Output

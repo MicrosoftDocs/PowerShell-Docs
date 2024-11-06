@@ -126,11 +126,11 @@ ${function:Clear-Host}
 This command gets the `man` function from the `Function:` drive. It uses the
 `Get-Item` cmdlet to get the function. The pipeline operator (`|`) sends the
 result to `Format-Table`. The `-Wrap` parameter directs text that does not fit
-on the line onto the next line. The `-Autosize` parameter resizes the table
+on the line onto the next line. The `-AutoSize` parameter resizes the table
 columns to accommodate the text.
 
 ```powershell
-Get-Item -Path man | Format-Table -Wrap -Autosize
+Get-Item -Path man | Format-Table -Wrap -AutoSize
 ```
 
 ### Working with Function provider paths

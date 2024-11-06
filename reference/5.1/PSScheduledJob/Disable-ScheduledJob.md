@@ -59,7 +59,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 This example disables a scheduled job on the local computer.
 
 ```powershell
-Disable-ScheduledJob -ID 2 -Passthru
+Disable-ScheduledJob -ID 2 -PassThru
 ```
 
 This command disables the scheduled job with ID 2 on the local computer.
@@ -69,7 +69,7 @@ This command disables the scheduled job with ID 2 on the local computer.
 This example disables all scheduled jobs on the local computer.
 
 ```powershell
-Get-ScheduledJob | Disable-ScheduledJob -Passthru
+Get-ScheduledJob | Disable-ScheduledJob -PassThru
 ```
 
 ```Output

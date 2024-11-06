@@ -88,7 +88,7 @@ Id         Name            Triggers        Command                              
 ```
 
 ```powershell
-Get-ScheduledJob -Name "Inventory" | Set-ScheduledJob -FilePath "C:\Scripts\Get-FullInventory.ps1" -Passthru
+Get-ScheduledJob -Name "Inventory" | Set-ScheduledJob -FilePath "C:\Scripts\Get-FullInventory.ps1" -PassThru
 ```
 
 ```Output
@@ -103,7 +103,7 @@ shows that the job runs the Get-Inventory.ps1 script.
 The second command uses the `Get-ScheduledJob` cmdlet to get the Inventory scheduled job. A pipeline
 operator (`|`) sends the scheduled job to the `Set-ScheduledJob` cmdlet. The `Set-ScheduledJob`
 cmdlet uses the **Script** parameter to specify a new script, `Get-FullInventory.ps1`. The command
-uses the **Passthru** parameter to return the scheduled job after the change.
+uses the **PassThru** parameter to return the scheduled job after the change.
 
 This command is not required; it is included only to show the effect of the script change.
 

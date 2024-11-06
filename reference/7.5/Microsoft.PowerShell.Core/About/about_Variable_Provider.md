@@ -152,7 +152,7 @@ a wildcard in paths, but `Get-ChildItem` does not attempt to resolve any
 wildcards in the values of the `-LiteralPath` parameter.
 
 ```powershell
-Get-ChildItem -Literalpath ?
+Get-ChildItem -LiteralPath ?
 ```
 
 ### Get ReadOnly and Constant variables

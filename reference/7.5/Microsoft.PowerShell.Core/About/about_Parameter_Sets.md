@@ -126,9 +126,9 @@ function Measure-Lines {
         }
         foreach ($file in $Files) {
             $result = [ordered]@{ }
-            $result.Add('File', $file.fullname)
+            $result.Add('File', $file.FullName)
 
-            $content = Get-Content -LiteralPath $file.fullname
+            $content = Get-Content -LiteralPath $file.FullName
 
             if ($Lines) { $result.Add('Lines', $content.Length) }
 

@@ -260,7 +260,7 @@ Accept wildcard characters: False
 
 Sets the **Option** property value of the alias. Values such as `ReadOnly` and `Constant`
 protect an alias from unintended changes. To see the **Option** property of all aliases in the
-session, type `Get-Alias | Format-Table -Property Name, Options -Autosize`.
+session, type `Get-Alias | Format-Table -Property Name, Options -AutoSize`.
 
 The acceptable values for this parameter are as follows:
 
@@ -419,7 +419,7 @@ cmdlet displays the aliases available in a PowerShell session.
 To create an alias, use the cmdlets `Set-Alias` or `New-Alias`. In PowerShell 6, to delete an alias,
 use the `Remove-Alias` cmdlet. `Remove-Item` is accepted for backwards compatibility such as for
 scripts created with prior versions of PowerShell. Use a command such as
-`Remove-Item -Path Alias:aliasname`.
+`Remove-Item -Path Alias:AliasName`.
 
 To create an alias that's available in each PowerShell session, add it to your PowerShell profile.
 For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).

@@ -140,7 +140,7 @@ $Namespace = @{
 
 $Path = "$Pshome\en-us\*dll-Help.xml"
 $Xml = Select-Xml -Path $Path -Namespace $Namespace -XPath "//command:name"
-$Xml | Format-Table @{Label="Name"; Expression= {($_.node.innerxml).trim()}}, Path -AutoSize
+$Xml | Format-Table @{Label="Name"; Expression= {($_.Node.InnerXml).trim()}}, Path -AutoSize
 ```
 
 ```Output
@@ -221,7 +221,7 @@ value of the **InnerXml** property of the node.
 $SnippetNamespace = @{snip = "http://schemas.microsoft.com/PowerShell/Snippets"}
 
 Select-Xml -Path $HOME\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" |
-    ForEach-Object {$_.Node.Innerxml}
+    ForEach-Object {$_.Node.InnerXml}
 ```
 
 ## PARAMETERS

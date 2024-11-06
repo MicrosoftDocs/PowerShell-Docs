@@ -122,7 +122,8 @@ MD054:       # link-image-style
   inline: true
   shortcut: false
   url_inline: true
-MD055: leading_and_trailing # table-pipe-style
+MD055:       # table-pipe-style
+  style: leading_and_trailing
 MD056: true  # table-column-count
 # MD057      # undefined
 MD058: true  # blanks-around-tables

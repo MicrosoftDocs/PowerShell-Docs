@@ -917,7 +917,7 @@ Accept wildcard characters: False
 
 By default, `Invoke-WebRequest` returns the results to the pipeline. When you use the **OutFile**
 parameter, the results are saved to the specified file and not returned to the pipeline. Enter a
-path and filename. To send the results to a file and to the pipeline, add the **Passthru**
+path and filename. To send the results to a file and to the pipeline, add the **PassThru**
 parameter.
 
 If you omit the path, the default is the current location. The name is treated as a literal path.

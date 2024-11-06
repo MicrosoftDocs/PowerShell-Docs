@@ -96,7 +96,7 @@ This example uses the **ContinueIfGoingOnBattery** parameter of the
 
 ```powershell
 Get-ScheduledJob -Name ProcessJob | Set-ScheduledJobOption `
--ContinueIfGoingOnBattery -Passthru
+-ContinueIfGoingOnBattery -PassThru
 ```
 
 ```Output

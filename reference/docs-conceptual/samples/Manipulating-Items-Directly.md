@@ -187,7 +187,7 @@ in the command. If you have already copied the directory without its contents, a
 parameter, which allows you to overwrite the empty folder.
 
 ```powershell
-Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -Passthru
+Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -PassThru
 ```
 
 ```Output
