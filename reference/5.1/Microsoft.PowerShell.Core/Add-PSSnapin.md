@@ -46,7 +46,7 @@ This command adds the Microsoft Exchange and Active Directory snap-ins to the cu
 ### Example 2: Add all the registered snap-ins
 
 ```powershell
-PS C:\> Get-PSSnapin -Registered | Add-PSSnapin -Passthru
+PS C:\> Get-PSSnapin -Registered | Add-PSSnapin -PassThru
 ```
 
 This command adds all of the registered Windows PowerShell snap-ins to the session. It uses the

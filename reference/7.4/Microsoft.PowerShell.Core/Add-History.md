@@ -16,7 +16,7 @@ Appends entries to the session history.
 ## SYNTAX
 
 ```
-Add-History [[-InputObject] <PSObject[]>] [-Passthru] [<CommonParameters>]
+Add-History [[-InputObject] <PSObject[]>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -138,7 +138,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Passthru
+### -PassThru
 
 Indicates that this cmdlet returns a **HistoryInfo** object for each history entry. By default, this
 cmdlet does not generate any output.

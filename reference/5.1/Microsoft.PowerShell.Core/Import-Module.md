@@ -292,7 +292,7 @@ TestCmdlets       Script
 ```
 
 ```powershell
-$a = Import-Module -Name Show-Calendar -AsCustomObject -Passthru
+$a = Import-Module -Name Show-Calendar -AsCustomObject -PassThru
 $a | Get-Member
 ```
 
