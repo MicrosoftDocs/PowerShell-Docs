@@ -253,7 +253,7 @@ This example demonstrates how to get the contents of a file as a `[byte[]]` as a
 
 ```powershell
 $byteArray = Get-Content -Path C:\temp\test.txt -AsByteStream -Raw
-Get-Member -InputObject $bytearray
+Get-Member -InputObject $byteArray
 ```
 
 ```Output

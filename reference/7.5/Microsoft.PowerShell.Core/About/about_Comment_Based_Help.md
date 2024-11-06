@@ -675,11 +675,11 @@ PS> .\Update-Month.ps1
 
 .EXAMPLE
 
-PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+PS> .\Update-Month.ps1 -InputPath C:\Data\January.csv
 
 .EXAMPLE
 
-PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath `
+PS> .\Update-Month.ps1 -InputPath C:\Data\January.csv -outputPath `
 C:\Reports\2009\January.csv
 #>
 

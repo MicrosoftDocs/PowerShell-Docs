@@ -173,7 +173,7 @@ A single-quoted here-string that uses the `ConvertFrom-StringData` cmdlet:
 
 ```powershell
 DATA {
-    ConvertFrom-StringData -stringdata @'
+    ConvertFrom-StringData -StringData @'
 Text001 = Windows 7
 Text002 = Windows Server 2008 R2
 '@
@@ -184,7 +184,7 @@ A double-quoted here-string that uses the `ConvertFrom-StringData` cmdlet:
 
 ```powershell
 DATA  {
-    ConvertFrom-StringData -stringdata @"
+    ConvertFrom-StringData -StringData @"
 Msg1 = To start, press any key.
 Msg2 = To exit, type "quit".
 "@

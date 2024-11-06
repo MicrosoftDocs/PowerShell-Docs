@@ -38,7 +38,7 @@ PowerShell supports configuring two categories of logging:
   ```powershell
   $psrl = Get-Module PSReadLine
   $psrl.LogPipelineExecutionDetails = $true
-  Get-Module PSReadline | Select-Object Name, LogPipelineExecutionDetails
+  Get-Module PSReadLine | Select-Object Name, LogPipelineExecutionDetails
   ```
 
   ```Output

@@ -44,7 +44,7 @@ This command tests the `TestModule.psd1` module manifest.
 ### Example 2: Test a manifest by using the pipeline
 
 ```powershell
-"$pshome\Modules\TestModule.psd1" | test-modulemanifest
+"$pshome\Modules\TestModule.psd1" | Test-ModuleManifest
 ```
 
 ```Output

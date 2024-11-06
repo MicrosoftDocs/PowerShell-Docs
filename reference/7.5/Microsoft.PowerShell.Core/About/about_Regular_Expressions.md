@@ -37,7 +37,7 @@ shown above has a different way to force case sensitivity.
 - For `Select-String`, use the **CaseSensitive** parameter.
 - For operators that use regular expressions, use the case-sensitive version:
   `-cmatch`, `-creplace`, or `-csplit`
-- For the `switch` statement, use the `-casesensitive` option
+- For the `switch` statement, use the `-CaseSensitive` option
 
 ## Character literals
 

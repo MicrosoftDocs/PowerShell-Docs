@@ -78,4 +78,4 @@ key. To scroll through a list of values, press the <kbd>Tab</kbd> key again.
 
 - [about_Command_Syntax](about_Command_Syntax.md)
 - [about_Path_Syntax](about_Path_Syntax.md)
-- [about_PSReadline](../../PSReadline/About/about_PSReadline.md)
+- [about_PSReadLine](../../PSReadline/About/about_PSReadline.md)

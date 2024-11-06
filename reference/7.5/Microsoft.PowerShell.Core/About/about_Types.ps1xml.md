@@ -217,7 +217,7 @@ For more information about `Update-TypeData`, see
 [Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData).
 
 ```powershell
-Update-Typedata -PrependPath $PSHOME\MyTypes.ps1xml
+Update-TypeData -PrependPath $PSHOME\MyTypes.ps1xml
 ```
 
 To test the change, run a `Get-ChildItem` command to get the PowerShell.exe

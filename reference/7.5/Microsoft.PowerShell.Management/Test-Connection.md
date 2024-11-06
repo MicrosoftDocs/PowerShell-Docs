@@ -536,7 +536,7 @@ Accept wildcard characters: False
 
 ### -Traceroute
 
-Causes the cmdlet to do a traceroute test. When this parameter is used, the cmdlet returns a
+Causes the cmdlet to do a Traceroute test. When this parameter is used, the cmdlet returns a
 `TestConnectionCommand+TraceStatus` object.
 
 ```yaml

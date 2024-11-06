@@ -153,7 +153,7 @@ Set-Location -Path  WSMan:\SERVER01
 
 ## Displaying the Contents of the WSMan: Drive
 
-This command uses the `Get-Childitem` cmdlet to display the WS-Management stores
+This command uses the `Get-ChildItem` cmdlet to display the WS-Management stores
 in the Localhost store location.
 
 ```powershell
@@ -162,7 +162,7 @@ Get-ChildItem -path WSMan:\Localhost
 
 If you are in the `WSMan:` drive, you can omit the drive name.
 
-This command uses the `Get-Childitem` cmdlet to display the WS-Management
+This command uses the `Get-ChildItem` cmdlet to display the WS-Management
 stores in the remote computer "SERVER01" store location.
 
 ```powershell
