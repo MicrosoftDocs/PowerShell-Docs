@@ -2,7 +2,7 @@
 description: About topics cover a range of concepts about PowerShell.
 Help Version: 7.5.0.0
 Locale: en-US
-ms.date: 11/10/2023
+ms.date: 11/06/2024
 title: About topics
 ---
 # About topics
@@ -39,7 +39,8 @@ Describes how to use operators to assign values to variables.
 
 ### [about_Automatic_Variables](about_Automatic_Variables.md)
 
-Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
+Describes variables that store state information for PowerShell. These variables are created and
+maintained by PowerShell.
 
 ### [about_Booleans](about_Booleans.md)
 
@@ -55,11 +56,13 @@ Describes the built-in functions in PowerShell.
 
 ### [about_Calculated_Properties](about_Calculated_Properties.md)
 
-PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
+PowerShell provides the ability to dynamically add new properties and alter the formatting of
+objects output to the pipeline.
 
 ### [about_Calling_Generic_Methods](about_Calling_Generic_Methods.md)
 
-A generic method is a method with two parameter lists: a list of generic types and a list of method arguments.  The following examples show the new PowerShell syntax for accessing a generic method:  ```Syntax # static generic methods [type_name]::MethodName[generic_type_arguments](method_arguments)  # instance generic methods $object.MethodName[generic_type_arguments](method_arguments) ```  The `generic_type_arguments` can be a single type or comma-separated list of types, like `[string, int]`, including other generic types like `$obj.MethodName[string, System.Collections.Generic.Dictionary[string, int]]()`  The `method_arguments` can be zero or more items.  For more information, see [Generics in .NET](/dotnet/standard/generics/).
+Generics let you tailor a method, class, structure, or interface to the precise data type it acts
+upon.
 
 ### [about_Case-Sensitivity](about_Case-Sensitivity.md)
 
@@ -111,11 +114,13 @@ Describes the parameters that can be used with any cmdlet.
 
 ### [about_Comparison_Operators](about_Comparison_Operators.md)
 
-The comparison operators in PowerShell can either compare two values or filter elements of a collection against an input value.
+The comparison operators in PowerShell can either compare two values or filter elements of a
+collection against an input value.
 
 ### [about_Continue](about_Continue.md)
 
-Describes how the `continue` statement immediately returns the program flow to the top of a program loop, a `switch` statement, or a `trap` statement.
+Describes how the `continue` statement immediately returns the program flow to the top of a program
+loop, a `switch` statement, or a `trap` statement.
 
 ### [about_Core_Commands](about_Core_Commands.md)
 
@@ -139,7 +144,8 @@ Runs a statement list one or more times, subject to a `While` or `Until` conditi
 
 ### [about_Enum](about_Enum.md)
 
-The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
+The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that
+consists of a set of named labels called the enumerator list.
 
 ### [about_Environment_Provider](about_Environment_Provider.md)
 
@@ -155,7 +161,8 @@ Describes the PowerShell execution policies and explains how to manage them.
 
 ### [about_Experimental_Features](about_Experimental_Features.md)
 
-Use the `Experimental` attribute to declare some code as experimental.  Use the following syntax to declare the `Experimental` attribute providing the name of the experimental feature and the action to take if the experimental feature is enabled:  ```csharp [Experimental(NameOfExperimentalFeature, ExperimentAction)] ```  For modules, the `NameOfExperimentalFeature` must follow the form of `<modulename>.<experimentname>`. The `ExperimentAction` parameter must be specified and the only valid values are:  - `Show` means to show this experimental feature if the feature is enabled - `Hide` means to hide this experimental feature if the feature is enabled
+The PowerShell provides a mechanism for experimental features to coexist with existing stable
+features in the PowerShell engine or in a PowerShell module.
 
 ### [about_FileSystem_Provider](about_FileSystem_Provider.md)
 
@@ -171,7 +178,8 @@ Describes a language command you can use to traverse all the items in a collecti
 
 ### [about_Format.ps1xml](about_Format.ps1xml.md)
 
-The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell console.
+The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell
+console.
 
 ### [about_Function_Provider](about_Function_Provider.md)
 
@@ -179,7 +187,8 @@ Provides access to the functions defined in PowerShell.
 
 ### [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
 
-Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
+Describes how functions that specify the `CmdletBinding` attribute can use the methods and
+properties that are available to compiled cmdlets.
 
 ### [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 
@@ -191,7 +200,8 @@ Introduces advanced functions that are a way to create cmdlets using scripts.
 
 ### [about_Functions_Argument_Completion](about_Functions_Argument_Completion.md)
 
-Argument completion is a feature of PowerShell that provide hints, enables discovery, and speeds up input entry of argument values.
+Argument completion is a feature of PowerShell that provide hints, enables discovery, and speeds up
+input entry of argument values.
 
 ### [about_Functions_CmdletBindingAttribute](about_Functions_CmdletBindingAttribute.md)
 
@@ -223,11 +233,13 @@ Describes how to get and run commands in the command history.
 
 ### [about_If](about_If.md)
 
-Describes a language command you can use to run statement lists based on the results of one or more conditional tests.
+Describes a language command you can use to run statement lists based on the results of one or more
+conditional tests.
 
 ### [about_Intrinsic_Members](about_Intrinsic_Members.md)
 
-Provides information about PowerShell's intrinsic members that are available to all PowerShell objects.
+Provides information about PowerShell's intrinsic members that are available to all PowerShell
+objects.
 
 ### [about_Job_Details](about_Job_Details.md)
 
@@ -235,7 +247,8 @@ Provides details about background jobs on local and remote computers.
 
 ### [about_Jobs](about_Jobs.md)
 
-Provides information about how PowerShell background jobs run a command or expression in the background without interacting with the current session.
+Provides information about how PowerShell background jobs run a command or expression in the
+background without interacting with the current session.
 
 ### [about_Join](about_Join.md)
 
@@ -263,7 +276,8 @@ PowerShell logs internal operations from the engine, providers, and cmdlets.
 
 ### [about_Logging_Windows](about_Logging_Windows.md)
 
-PowerShell logs internal operations from the engine, providers, and cmdlets to the Windows event log.
+PowerShell logs internal operations from the engine, providers, and cmdlets to the Windows event
+log.
 
 ### [about_Logical_Operators](about_Logical_Operators.md)
 
@@ -367,7 +381,8 @@ Describes how to use object properties in PowerShell.
 
 ### [about_Providers](about_Providers.md)
 
-Describes how PowerShell providers provide access to data and components that wouldn't otherwise be easily accessible at the command line. The data is presented in a consistent format that resembles a file system drive.
+PowerShell providers provide access to data and components, presented in a consistent format that
+resembles a file system drive.
 
 ### [about_PSConsoleHostReadLine](about_PSConsoleHostReadLine.md)
 
@@ -391,11 +406,13 @@ Provides detailed information about PowerShell sessions and the role they play i
 
 ### [about_PSSessions](about_PSSessions.md)
 
-Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to a remote computer.
+Describes PowerShell sessions (PSSessions) and explains how to establish a persistent connection to
+a remote computer.
 
 ### [about_Pwsh](about_Pwsh.md)
 
-Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
+Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and
+describes the syntax.
 
 ### [about_Quoting_Rules](about_Quoting_Rules.md)
 
@@ -407,11 +424,12 @@ Explains how to redirect output from PowerShell to text files.
 
 ### [about_Ref](about_Ref.md)
 
-Describes how to create and use a reference type variable. You can use reference type variables to permit a function to change the value of a variable that is passed to it.
+Describes how to create and use a reference type variable. You can use reference type variables to
+permit a function to change the value of a variable that is passed to it.
 
 ### [about_Registry_Provider](about_Registry_Provider.md)
 
-Registry
+Describes teh features and functions of the Registry provider.
 
 ### [about_Regular_Expressions](about_Regular_Expressions.md)
 
@@ -431,7 +449,8 @@ Describes how to interpret and format the output of remote commands.
 
 ### [about_Remote_Requirements](about_Remote_Requirements.md)
 
-Describes the system requirements and configuration requirements for running remote commands in PowerShell.
+Describes the system requirements and configuration requirements for running remote commands in
+PowerShell.
 
 ### [about_Remote_Troubleshooting](about_Remote_Troubleshooting.md)
 
@@ -451,7 +470,8 @@ Prevents a script from running without the required elements.
 
 ### [about_Reserved_Words](about_Reserved_Words.md)
 
-Lists the reserved words that cannot be used as identifiers because they have a special meaning in PowerShell.
+Lists the reserved words that cannot be used as identifiers because they have a special meaning in
+PowerShell.
 
 ### [about_Return](about_Return.md)
 
@@ -471,7 +491,8 @@ Defines what a script block is and explains how to use script blocks in the Powe
 
 ### [about_Script_Internationalization](about_Script_Internationalization.md)
 
-Describes the script internationalization features that make it easy for scripts to display messages and instructions to users in their user interface (UI) language.
+Describes the script internationalization features that make it easy for scripts to display messages
+and instructions to users in their user interface (UI) language.
 
 ### [about_Scripts](about_Scripts.md)
 
@@ -479,11 +500,13 @@ Describes how to run and write scripts in PowerShell.
 
 ### [about_Session_Configuration_Files](about_Session_Configuration_Files.md)
 
-Describes session configuration files, which are used in a session configuration (also known as an "endpoint") to define the environment of sessions that use the session configuration.
+Describes session configuration files, which are used in a session configuration (also known as an
+"endpoint") to define the environment of sessions that use the session configuration.
 
 ### [about_Session_Configurations](about_Session_Configurations.md)
 
-Describes session configurations, which determine the users who can connect to the computer remotely and the commands they can run.
+Describes session configurations, which determine the users who can connect to the computer remotely
+and the commands they can run.
 
 ### [about_Signing](about_Signing.md)
 
@@ -495,7 +518,8 @@ Describes easier, more natural-language ways of scripting filters for collection
 
 ### [about_Special_Characters](about_Special_Characters.md)
 
-Describes the special character sequences that control how PowerShell interprets the next characters in the sequence.
+Describes the special character sequences that control how PowerShell interprets the next characters
+in the sequence.
 
 ### [about_Splatting](about_Splatting.md)
 
@@ -511,7 +535,8 @@ Explains how to use a switch to handle multiple `if` statements.
 
 ### [about_Tab_Expansion](about_Tab_Expansion.md)
 
-PowerShell provides completions on input to provide hints, enable discovery, and speed up input entry. Command names, parameter names, argument values and file paths can all be completed by pressing the <kbd>Tab</kbd> key.
+PowerShell provides completions on input to provide hints, enable discovery, and speed up input
+entry by pressing the <kbd>Tab</kbd> key.
 
 ### [about_Telemetry](about_Telemetry.md)
 
@@ -519,7 +544,8 @@ Describes the telemetry collected in PowerShell and how to opt-out.
 
 ### [about_Thread_Jobs](about_Thread_Jobs.md)
 
-Provides information about PowerShell thread-based jobs. A thread job is a type of background job that runs a command or expression in a separate thread within the current session process.
+Provides information about PowerShell thread-based jobs. A thread job is a type of background job
+that runs a command or expression in a separate thread within the current session process.
 
 ### [about_Throw](about_Throw.md)
 
@@ -567,7 +593,8 @@ Describes how variables store values that can be used in PowerShell.
 
 ### [about_While](about_While.md)
 
-Describes a language statement that you can use to run a command block based on the results of a conditional test.
+Describes a language statement that you can use to run a command block based on the results of a
+conditional test.
 
 ### [about_Wildcards](about_Wildcards.md)
 
