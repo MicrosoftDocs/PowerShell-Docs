@@ -227,7 +227,7 @@ following example, the negative value can't be cast to an unsigned integer, and
 the unsigned integer is too large to be cast to `Int32`:
 
 ```powershell
-([int32]::minvalue + [uint32]::maxvalue).gettype().fullname
+([int32]::minvalue + [uint32]::maxvalue).GetType().FullNname
 ```
 
 ```output

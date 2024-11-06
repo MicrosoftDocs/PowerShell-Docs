@@ -90,7 +90,7 @@ This command creates a directory named "Logfiles" in the `C:` drive. The **ItemT
 specifies that the new item is a directory, not a file or other file system object.
 
 ```powershell
-New-Item -Path "c:\" -Name "logfiles" -ItemType "directory"
+New-Item -Path "c:\" -Name "Logfiles" -ItemType "directory"
 ```
 
 ### Example 3: Create a profile

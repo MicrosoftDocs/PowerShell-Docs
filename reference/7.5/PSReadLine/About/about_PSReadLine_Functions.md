@@ -557,7 +557,7 @@ Deletes backwards until given character.
 
 - Vi command mode: `<d,F>`
 
-### ViInsertAtBegining
+### ViInsertAtBeginning
 
 Switch to Insert mode and position the cursor at the beginning of the line.
 

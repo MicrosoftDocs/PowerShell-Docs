@@ -230,7 +230,7 @@ in the `bash` process, outside of the PowerShell host, the output isn't
 affected by **OutputRendering**.
 
 ```bash
-pwsh -noprofile -command 'Get-Childitem' > out.txt
+pwsh -noprofile -command 'Get-ChildItem' > out.txt
 ```
 
 When you inspect the contents of `out.txt` you see the ANSI escape sequences.
@@ -239,7 +239,7 @@ By contrast, when redirection occurs within the PowerShell session,
 **OutputRendering** affects the redirected output.
 
 ```bash
-pwsh -noprofile -command 'Get-Childitem > out.txt'
+pwsh -noprofile -command 'Get-ChildItem > out.txt'
 ```
 
 When you inspect the contents of `out.txt` there are no ANSI escape sequences.

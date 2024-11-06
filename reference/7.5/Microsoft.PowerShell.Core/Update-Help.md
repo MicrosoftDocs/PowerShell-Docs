@@ -206,10 +206,10 @@ foreach ($mModule in $Modules)
 {
     $mDir = $mModule.ModuleBase
 
-    if (Test-Path $mdir\*helpinfo.xml)
+    if (Test-Path $mDir\*helpinfo.xml)
     {
         $mName=$mModule.Name
-        $mNodes = dir $mdir\*helpinfo.xml -ErrorAction SilentlyContinue |
+        $mNodes = dir $mDir\*helpinfo.xml -ErrorAction SilentlyContinue |
             Select-Xml -Namespace $HelpInfoNamespace -XPath "//helpInfo:UICulture"
         foreach ($mNode in $mNodes)
         {

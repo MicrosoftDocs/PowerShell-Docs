@@ -201,7 +201,7 @@ in Windows PowerShell 3.0.
 ### Example 6: Group all modules by name
 
 ```powershell
-Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
+Get-Module -ListAvailable -All | Format-Table -Property Name, ModuleType, Path -GroupBy Name
 ```
 
 ```Output

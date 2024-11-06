@@ -152,9 +152,9 @@ script, the breakpoint is set on anything that runs in the current session. The 
 the function is called, not when it is declared.
 
 ```
-PS> Set-PSBreakpoint -Command "checklog"
+PS> Set-PSBreakpoint -Command "CheckLog"
 Id       : 0
-Command  : checklog
+Command  : CheckLog
 Enabled  : True
 HitCount : 0
 Action   :
@@ -164,9 +164,9 @@ function CheckLog {
 >> where {($_.source -like "TestApp") -and ($_.Message -like "*failed*")}
 >>}
 >>
-PS> Checklog
+PS> CheckLog
 DEBUG: Hit breakpoint(s)
-DEBUG:  Function breakpoint on 'prompt:Checklog'
+DEBUG:  Function breakpoint on 'prompt:CheckLog'
 ```
 
 ### Example 7: Set breakpoints on multiple lines
