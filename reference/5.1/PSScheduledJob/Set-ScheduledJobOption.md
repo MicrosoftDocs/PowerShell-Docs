@@ -77,7 +77,7 @@ JobDefinition          :
 
 ```powershell
 Get-ScheduledJobOption -Name "DeployPackage" |
-    Set-ScheduledJobOption -WakeToRun -RequireNetwork:$false -Passthru
+    Set-ScheduledJobOption -WakeToRun -RequireNetwork:$false -PassThru
 ```
 
 ```Output
@@ -103,7 +103,7 @@ DeployPackage scheduled job. The output shows that the WakeToRun and RunElevated
 to `$false`.
 
 The second command uses the `Set-ScheduledJobOpton` cmdlet to change the job options so the values
-of the WakeToRun and RunWithoutNetwork properties are $True. The command uses the **Passthru**
+of the WakeToRun and RunWithoutNetwork properties are $True. The command uses the **PassThru**
 parameter to return the trigger after the change.
 
 This command is not required; it is included only to show the effect of the option change.

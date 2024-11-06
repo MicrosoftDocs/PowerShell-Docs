@@ -434,7 +434,7 @@ Specifies the output file for which this cmdlet saves the response body. Enter a
 If you omit the path, the default is the current location.
 
 By default, `Invoke-WebRequest` returns the results to the pipeline. To send the results to a file
-and to the pipeline, use the **Passthru** parameter.
+and to the pipeline, use the **PassThru** parameter.
 
 ```yaml
 Type: System.String

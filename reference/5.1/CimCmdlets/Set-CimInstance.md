@@ -100,14 +100,14 @@ Set-CimInstance -InputObject $x -Property @{VariableValue="somevalue"} -PassThru
 This example retrieves the CIM instance objects filtered by the Query parameter in to a variable
 `$x` using `Get-CimInstance`, and then passes the contents of the variable to the `Set-CimInstance`
 cmdlet. `Set-CimInstance` then modifies the **VariableValue** property to **somevalue**. Because the
-**Passthru** parameter is used, This example returns a modified CIM instance object.
+**PassThru** parameter is used, This example returns a modified CIM instance object.
 
 ### Example 4: Set the CIM instance property
 
 This example retrieves the CIM instance object that is specified in the **Query** parameter into a
 variable `$x` using the `Get-CimInstance` cmdlet, and changes the **VariableValue** property value
 of the object to change. The CIM instance object is then saved using the `Set-CimInstance` cmdlet.
-Because the **Passthru** parameter is used, This example returns a modified CIM instance object.
+Because the **PassThru** parameter is used, This example returns a modified CIM instance object.
 
 ```powershell
 $x = Get-CimInstance -Query 'Select * from Win32_Environment where name="testvar"'
@@ -138,7 +138,7 @@ Set-CimInstance -Query 'Select * from Win32_Environment where name LIKE "testvar
 This example creates a CIM instance with the specified properties using the `New-CimInstance`
 cmdlet, and retrieves its contents in to a variable `$x`. The variable is then passed to the
 `Set-CimInstance` cmdlet, which modifies the value of **VariableValue** property to **somevalue**.
-Because the **Passthru** parameter is used, This example returns a modified CIM instance object.
+Because the **PassThru** parameter is used, This example returns a modified CIM instance object.
 
 ```powershell
 $x = New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";UserName="domain\user"} -Key Name,UserName -ClientOnly
@@ -409,7 +409,7 @@ By default, this cmdlet returns no output.
 
 ### Microsoft.Management.Infrastructure.CimInstance
 
-When you use the **Passthru** parameter, this cmdlet returns the modified CIM instance object.
+When you use the **PassThru** parameter, this cmdlet returns the modified CIM instance object.
 
 ## NOTES
 
