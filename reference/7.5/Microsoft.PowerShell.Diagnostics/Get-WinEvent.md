@@ -500,7 +500,7 @@ from newest to oldest.
 
 Event Tracing for Windows (ETW) writes events to the log as events occur. The events are stored in
 the order of oldest to newest. An archived ETW file is saved as an `.etl` such as **TraceLog.etl**.
-The events are listed in the order in which they are written to the log, so the *Oldest* parameter
+The events are listed in the order in which they are written to the log, so the `Oldest` parameter
 is required.
 
 ```powershell

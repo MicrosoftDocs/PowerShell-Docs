@@ -235,7 +235,7 @@ policy. The policy is set for the default scope, `LocalMachine`.
 The `Get-ExecutionPolicy` cmdlet shows that `RemoteSigned` is the effective execution policy for
 the current PowerShell session.
 
-The `Start-ActivityTracker.ps1 script is executed from the current directory. The script is blocked
+The `Start-ActivityTracker.ps1` script is executed from the current directory. The script is blocked
 by `RemoteSigned` because the script isn't digitally signed.
 
 For this example, the script's code was reviewed and verified as safe to run. The `Unblock-File`

@@ -659,7 +659,7 @@ Both arguments are optional. If you don't specify any arguments, then
 
 ### PSTypeName attribute
 
-You can't use extended type names in a type declaration. The *PSTypeName**
+You can't use extended type names in a type declaration. The **PSTypeName**
 attribute allows you to restrict the type of the parameter to the extended
 type.
 

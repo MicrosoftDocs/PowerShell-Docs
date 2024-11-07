@@ -233,7 +233,7 @@ drive:\location\child-location\...
 ```
 
 For example, to change your location to the `HKLM\Software` registry key, type
-a `Set-Location `command, such as:
+a `Set-Location` command, such as:
 
 ```powershell
 Set-Location HKLM:\SOFTWARE\

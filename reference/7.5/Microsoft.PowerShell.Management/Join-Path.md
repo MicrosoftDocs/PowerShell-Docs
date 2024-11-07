@@ -140,7 +140,7 @@ In this example, no parameter names are used, thus "a" binds to `Path`, "b" to `
 
 ### -AdditionalChildPath
 
-Specifies additional elements to append to the value of the *Path* parameter. The `ChildPath`
+Specifies additional elements to append to the value of the `Path` parameter. The `ChildPath`
 parameter is still mandatory and must be specified as well.
 
 This parameter is specified with the `ValueFromRemainingArguments` property which enables

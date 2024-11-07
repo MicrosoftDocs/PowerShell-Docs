@@ -198,7 +198,7 @@ Set-Item WSMAN:\localhost\Client\TrustedHosts *.domain2.com -Concatenate
 
 The `New-Item` cmdlet creates items within a provider drive. Each provider
 has different item types that you can create. In the `WSMAN:` drive, you can
-create *Listeners* which you configure to receive and respond to remote
+create _Listeners_ which you configure to receive and respond to remote
 requests. The following command creates a new HTTP listener using the `New-Item`
 cmdlet.
 
@@ -300,7 +300,7 @@ of the following:
 
 ### Capability \<Enumeration\>
 
-When working with *Plug-ins* this parameter specifies an operation that is
+When working with _Plug-ins_ this parameter specifies an operation that is
 supported on this Uniform Resource Identifier (URI). You have to create one
 entry for each type of operation that the URI supports. You can specify
 any valid attributes for a given operation, if the operation supports it.
