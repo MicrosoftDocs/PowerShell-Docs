@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 08/01/2024
+ms.date: 11/02/2024
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -10,8 +10,8 @@ Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycl
 
 Install package files (`.deb`) are also available from [https://packages.microsoft.com/][pcm].
 
-Docker images containing PowerShell 7.2, PowerShell 7.4, and PowerShell 7.5-preview for x64 are
-available from the [Microsoft Artifact Registry][mcr] for the following versions of Debian:
+Docker images containing PowerShell 7.4 and PowerShell 7.5-preview for x64 are available from the
+[Microsoft Artifact Registry][mcr] for the following versions of Debian:
 
 - Debian 12 (Bookworm) - OS support ends on 2026-06-10
 

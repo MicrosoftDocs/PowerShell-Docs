@@ -1,5 +1,5 @@
 ---
-ms.date: 08/28/2024
+ms.date: 11/02/2024
 ---
 # PowerShell Documentation
 
@@ -38,7 +38,6 @@ The following list describes the main folders in this repository.
   [learn.microsoft.com][01]. This includes both
   reference and conceptual content.
   - `5.1` - contains the cmdlet reference and about topics for PowerShell 5.1
-  - `7.2` - contains the cmdlet reference and about topics for PowerShell 7.2
   - `7.4` - contains the cmdlet reference and about topics for PowerShell 7.4
   - `7.5` - contains the cmdlet reference and about topics for PowerShell 7.5
   - `bread` - contains the TOC used for breadcrumb navigation

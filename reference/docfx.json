@@ -13,9 +13,6 @@
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-5.1", "src": "5.1" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-5.1", "src": "5.1" },
 
-      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.2", "src": "7.2" },
-      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.2", "src": "7.2" },
-
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.4", "src": "7.4" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.4", "src": "7.4" },
 
@@ -37,19 +34,12 @@
       "ms.subservice": {
         "5.1/*.md": "conceptual",
         "5.1/*.yml": "cmdlets",
-        "7.2/*.md": "conceptual",
-        "7.2/*.yml": "cmdlets",
-        "7.4/*.md": "conceptual",
-        "7.4/*.yml": "cmdlets",
-        "7.5/*.md": "conceptual",
-        "7.5/*.yml": "cmdlets",
+        "7*/*.md": "conceptual",
         "docs-conceptual/**/*.md": "conceptual"
       },
       "ms.topic": {
         "5.1/**/*": "managed-reference",
-        "7.2/**/*": "managed-reference",
-        "7.4/**/*": "managed-reference",
-        "7.5/**/*": "managed-reference",
+        "7*/**/*": "managed-reference",
         "docs-conceptual/community/contributing/**/*.md": "contributor-guide",
         "docs-conceptual/**/*.md": "conceptual",
         "docs-conceptual/dev-cross-plat/**/*.md": "reference",
@@ -123,7 +113,6 @@
     "groups": {
       "conceptual": { "moniker_range": ">=powershell-5.1" },
       "powershell-5.1": { "moniker_range": "powershell-5.1" },
-      "powershell-7.2": { "moniker_range": "powershell-7.2" },
       "powershell-7.4": { "moniker_range": "powershell-7.4" },
       "powershell-7.5": { "moniker_range": "powershell-7.5" }
     },
