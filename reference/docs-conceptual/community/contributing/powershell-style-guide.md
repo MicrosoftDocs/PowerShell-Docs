@@ -338,6 +338,6 @@ Basic formatting guidelines:
 [05]: editorial-checklist.md
 [06]: https://en.wikipedia.org/wiki/PascalCase
 [07]: https://github.com/powershell/platyps
-[08]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
+[08]: https://github.com/PowerShell/platyPS/blob/master/docs/developer/platyPS/platyPS.schema.md
 [09]: https://pandoc.org
 [10]: overview.md#get-started-writing-docs
