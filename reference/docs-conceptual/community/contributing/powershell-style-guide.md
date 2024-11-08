@@ -251,11 +251,12 @@ example, even if the parameter is positional. This reduces the chance of confusi
 
 ## Formatting cmdlet reference articles
 
-Cmdlet reference articles have a specific structure. This structure is defined by [PlatyPS][].
+Cmdlet reference articles have a specific structure. This structure is defined by [PlatyPS][07].
 PlatyPS generates the cmdlet help for PowerShell modules in Markdown. After editing the Markdown
 files, PlatyPS is used create the MAML help files used by the `Get-Help` cmdlet.
 
-PlatyPS has a schema that expects a specific structure for cmdlet reference. The [PlatyPS schema document][] describes this structure. Schema violations cause build errors that must be
+PlatyPS has a schema that expects a specific structure for cmdlet reference. The PlatyPS
+[schema document][08] describes this structure. Schema violations cause build errors that must be
 fixed before we can accept your contribution.
 
 - Don't remove any of the ATX header structures. PlatyPS expects a specific set of headers in a
@@ -336,7 +337,7 @@ Basic formatting guidelines:
 [04]: #markdown-for-code-samples
 [05]: editorial-checklist.md
 [06]: https://en.wikipedia.org/wiki/PascalCase
-[PlatyPS]: https://github.com/powershell/platyps
-[PlatyPS schema document]: https://github.com/PowerShell/platyPS/blob/master/docs/developer/platyPS/platyPS.schema.md
+[07]: https://github.com/powershell/platyps
+[08]: https://github.com/PowerShell/platyPS/blob/master/docs/developer/platyPS/platyPS.schema.md
 [09]: https://pandoc.org
 [10]: overview.md#get-started-writing-docs
