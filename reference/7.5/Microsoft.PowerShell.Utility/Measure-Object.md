@@ -244,7 +244,7 @@ Property          : num
 ### Example 11: Measure the Standard Deviation
 
 Beginning in PowerShell 6, `Measure-Object` supports the `-StandardDeviation` parameter. The
-following example determines the *standard deviation* for the CPU used by all processes. A large
+following example determines the _standard deviation_ for the CPU used by all processes. A large
 deviation would indicate a small number of processes consuming the most CPU.
 
 ```powershell
@@ -344,7 +344,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet counts the number of characters in the input objects.
 
 > [!NOTE]
-> The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
+> The **Word**, **Char** and **Line** switches count _inside_ each input object, as well as _across_
 > input objects. See Example 7.
 
 ```yaml
@@ -404,7 +404,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet counts the number of lines in the input objects.
 
 > [!NOTE]
-> The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
+> The **Word**, **Char** and **Line** switches count _inside_ each input object, as well as _across_
 > input objects. See Example 7.
 
 ```yaml
@@ -509,7 +509,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet counts the number of words in the input objects.
 
 > [!NOTE]
-> The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
+> The **Word**, **Char** and **Line** switches count _inside_ each input object, as well as _across_
 > input objects. See Example 7.
 
 ```yaml

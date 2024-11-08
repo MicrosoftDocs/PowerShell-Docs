@@ -16,9 +16,9 @@ of a variable that is passed to it.
 
 ## Long description
 
-You can pass variables to functions *by reference* or *by value*.
+You can pass variables to functions _by reference_ or _by value_.
 
-When you pass a variable *by value*, you are passing a copy of the data.
+When you pass a variable _by value_, you are passing a copy of the data.
 
 In the following example, the function changes the value of the variable passed
 to it. In PowerShell, integers are value types so they are passed by value.
@@ -41,9 +41,9 @@ $var
 
 In the following example, a variable containing a `Hashtable` is passed to a
 function. `Hashtable` is an object type so by default it is passed to the
-function *by reference*.
+function _by reference_.
 
-When passing a variable *by reference*, the function can change the data and
+When passing a variable _by reference_, the function can change the data and
 that change persists after the function executes.
 
 ```powershell

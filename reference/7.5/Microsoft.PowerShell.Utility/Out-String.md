@@ -112,7 +112,7 @@ parameter to find matches for the text **gcm**.
 > If you omit the **Stream** parameter, the command displays all the aliases because `Select-String`
 > finds the text **gcm** in the single string that `Out-String` returns.
 
-### Example 3: Use the Width parameter to prevent truncation.
+### Example 3: Use the Width parameter to prevent truncation
 
 While most output from `Out-String` is wrapped to the next line, there are scenarios where the
 output is truncated by the formatting system before being passed to `Out-String`. You can avoid
