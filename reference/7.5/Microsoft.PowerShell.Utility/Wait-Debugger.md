@@ -94,6 +94,7 @@ line 13.
 In this example, the `Wait-Debugger` command was inserted in the `CopyFile` method of a DSC
 resource. This is similar to using `Enable-RunspaceDebug -BreakAll` in a DSC resource but breaks at
 a specific point in the script.
+
 ```
 [DscResource()]
 class FileResource

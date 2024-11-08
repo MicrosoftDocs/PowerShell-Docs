@@ -87,7 +87,7 @@ The following examples are based on the current working directory being set to
 When using a path in a command, you can use a fully qualified path or a
 relative one. For example, suppose that your current working directory is
 `C:\Windows`. The following `Get-ChildItem` command retrieves all items in the
-`C:\TechDocs `directory:
+`C:\TechDocs` directory:
 
 ```powershell
 Get-ChildItem \TechDocs
