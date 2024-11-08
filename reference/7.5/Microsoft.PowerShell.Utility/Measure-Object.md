@@ -243,7 +243,7 @@ Property          : num
 
 ### Example 11: Measure the Standard Deviation
 
-Beginning in PowerShell 6, `Measure-Object` supports the `-StandardDeviation` parameter. The
+Beginning in PowerShell 6, `Measure-Object` supports the **StandardDeviation** parameter. The
 following example determines the _standard deviation_ for the CPU used by all processes. A large
 deviation would indicate a small number of processes consuming the most CPU.
 
