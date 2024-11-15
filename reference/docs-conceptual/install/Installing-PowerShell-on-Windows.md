@@ -63,6 +63,9 @@ Install PowerShell or PowerShell Preview using the `id` parameter
 
 ```powershell
 winget install --id Microsoft.PowerShell --source winget
+```
+
+```powershell
 winget install --id Microsoft.PowerShell.Preview --source winget
 ```
 
