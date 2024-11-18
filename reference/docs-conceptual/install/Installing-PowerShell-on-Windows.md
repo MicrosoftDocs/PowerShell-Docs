@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 09/02/2024
+ms.date: 11/18/2024
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -56,7 +56,7 @@ winget search Microsoft.PowerShell
 Name               Id                           Version   Source
 -----------------------------------------------------------------
 PowerShell         Microsoft.PowerShell         7.4.6.0   winget
-PowerShell Preview Microsoft.PowerShell.Preview 7.5.0.3   winget
+PowerShell Preview Microsoft.PowerShell.Preview 7.5.0.101 winget
 ```
 
 Install PowerShell or PowerShell Preview using the `id` parameter
@@ -220,8 +220,6 @@ instance of PowerShell.
 
 For more information, see
 [Understanding how packaged desktop apps run on Windows][13].
-
-### Changes for PowerShell 7.2
 
 Beginning in PowerShell 7.2, the PowerShell package is now exempt from file and registry
 virtualization. Changes to virtualized file and registry locations now persist outside of the
