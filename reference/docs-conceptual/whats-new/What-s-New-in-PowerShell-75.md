@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 09/24/2024
+ms.date: 11/18/2024
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5-preview.5 includes the following features, updates, and breaking changes. PowerShell
-7.5 is built on .NET 9.0.100-rc.1.
+PowerShell 7.5-rc.1 includes the following features, updates, and breaking changes. PowerShell
+7.5 is built on .NET 9.0.100 GA release.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
@@ -24,10 +24,10 @@ For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repositor
 
 ## Updated modules
 
-PowerShell 7.5-preview.5 includes the following updated modules:
+PowerShell 7.5-rc.1 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** v1.1.0-preview2
-- **PSReadLine** v2.3.5
+- **Microsoft.PowerShell.PSResourceGet** v1.1.0-RC2
+- **PSReadLine** v2.3.6
 
 ## Tab completion improvements
 
@@ -137,13 +137,13 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 ## Experimental features
 
 The following experimental features were converted to mainstream features in
-PowerShell 7.5-preview.5:
+PowerShell 7.5-rc.1:
 
 - [PSCommandNotFoundSuggestion][02]
 - [PSCommandWithArgs][03]
 - [PSModuleAutoLoadSkipOfflineFiles][04]
 
-The following experimental features are included in PowerShell 7.5-preview.5:
+The following experimental features are included in PowerShell 7.5-rc.1:
 
 - [PSRedirectToVariable][05] - Allow redirecting to a variable ([#20381][20381])
 - [PSNativeWindowsTildeExpansion][01] - Add tilde expansion for windows native executables
