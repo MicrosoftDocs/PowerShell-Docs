@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 09/10/2024
+ms.date: 11/18/2024
 title: Installing PowerShell on macOS
 ---
 
@@ -123,8 +123,8 @@ are:
   - x64 processors - [powershell-7.2.24-osx-x64.pkg][16]
   - Arm64 processors - [powershell-7.2.24-osx-arm64.pkg][14]
 - PowerShell 7.5-preview
-  - x64 processors - [powershell-7.5.0-preview.3-osx-x64.pkg][24]
-  - Arm64 processors - [powershell-7.5.0-preview.3-arm64.pkg][22]
+  - x64 processors - [powershell-7.5.0-rc.1-osx-x64.pkg][24]
+  - Arm64 processors - [powershell-7.5.0-rc.1-arm64.pkg][22]
 
 You can double-click the file and follow the prompts, or install it from the terminal using the
 following commands. Change the name of the file to match the file you downloaded.
@@ -195,8 +195,8 @@ current versions are:
   - x64 processors - [powershell-7.2.24-osx-x64.tar.gz][17]
   - Arm64 processors - [powershell-7.2.24-osx-arm64.tar.gz][15]
 - PowerShell 7.5-preview
-  - x64 processors - [powershell-7.5.0-preview.3-osx-x64.tar.gz][25]
-  - Arm64 processors - [powershell-7.5.0-preview.3-osx-arm64.tar.gz][23]
+  - x64 processors - [powershell-7.5.0-rc.1-osx-x64.tar.gz][25]
+  - Arm64 processors - [powershell-7.5.0-rc.1-osx-arm64.tar.gz][23]
 
 Use the following commands to install PowerShell from the binary archive. Change the download URL to
 match the version you want to install.
@@ -290,8 +290,8 @@ support those methods.
 [19]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell-7.4.6-osx-arm64.tar.gz
 [20]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell-7.4.6-osx-x64.pkg
 [21]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell-7.4.6-osx-x64.tar.gz
-[22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-preview.3/powershell-7.5.0-preview.3-osx-arm64.pkg
-[23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-preview.3/powershell-7.5.0-preview.3-osx-arm64.tar.gz
-[24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-preview.3/powershell-7.5.0-preview.3-osx-x64.pkg
-[25]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-preview.3/powershell-7.5.0-preview.3-osx-x64.tar.gz
+[22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-rc.1/powershell-7.5.0-rc.1-osx-arm64.pkg
+[23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-rc.1/powershell-7.5.0-rc.1-osx-arm64.tar.gz
+[24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-rc.1/powershell-7.5.0-rc.1-osx-x64.pkg
+[25]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0-rc.1/powershell-7.5.0-rc.1-osx-x64.tar.gz
 [26]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
