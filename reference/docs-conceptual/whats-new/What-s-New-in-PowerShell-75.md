@@ -57,9 +57,9 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Web cmdlets improvements
 
-- Fix to allow `-PassThru` and `-Outfile` work together ([#24086][24086]) (Thanks @jshigetomi!)
-- Add `OutFile` property in `WebResponseObject` ([#24047][24047]) (Thanks @jshigetomi!)
-- Show filename in `Invoke-WebRequest -OutFile -Verbose` ([#24041][24041]) (Thanks @jshigetomi!)
+- Fix to allow `-PassThru` and `-Outfile` work together ([#24086][24086])
+- Add `OutFile` property in `WebResponseObject` ([#24047][24047])
+- Show filename in `Invoke-WebRequest -OutFile -Verbose` ([#24041][24041])
 - Fix WebCmdlets when `-Body` is specified but `ContentType` is not ([#23952][23952]) (Thanks
   @CarloToso!)
 - Fix `Invoke-WebRequest` to report correct size when `-Resume` is specified ([#20207][20207])
