@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/06/2023
+ms.date: 11/25/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSRemoting
@@ -31,9 +31,9 @@ PowerShell remoting is enabled by default on Windows Server platforms. You can u
 `Enable-PSRemoting` to enable PowerShell remoting on other supported versions of Windows and to
 re-enable remoting if it becomes disabled.
 
-You have to run this command only one time on each computer that will receive commands. You do not
-have to run it on computers that only send commands. Because the configuration starts listeners to
-accept remote connections, it is prudent to run it only where it is needed.
+You need to run this command only one time on each computer that receive commands. You don't need to
+run it on computers that only send commands. Because the configuration starts listeners, it's
+prudent to run it only where it's needed.
 
 Enabling PowerShell remoting on client versions of Windows when the computer is on a public network
 is normally disallowed, but you can skip this restriction by using the **SkipNetworkProfileCheck**
@@ -80,6 +80,11 @@ option. This cmdlet is not available on Linux or MacOS versions of PowerShell.
 > It only affects endpoints created with PowerShell version 6 and greater. To enable and
 > disable PowerShell remoting endpoints that are hosted by Windows PowerShell, run the
 > `Enable-PSRemoting` cmdlet from within a Windows PowerShell session.
+
+For more information about using PowerShell remoting, see the following articles:
+
+- [about_Remote_Requirements](about/about_Remote_Requirements.md)
+- [about_Remote](about/about_Remote.md)
 
 ## EXAMPLES
 
@@ -237,7 +242,7 @@ Indicates that this cmdlet enables remoting on client versions of the Windows op
 the computer is on a public network. This parameter enables a firewall rule for public networks that
 allows remote access only from computers in the same local subnet.
 
-This parameter does not affect server versions of the Windows operating system, which, by default,
+This parameter doesn't affect server versions of the Windows operating system, which, by default,
 have a local subnet firewall rule for public networks. If the local subnet firewall rule is disabled
 on a server version, `Enable-PSRemoting` re-enables it, regardless of the value of this parameter.
 
@@ -276,8 +281,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
