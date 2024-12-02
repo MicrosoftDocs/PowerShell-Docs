@@ -11,6 +11,35 @@ community.
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
 
+## 2024-November
+
+New and updated content
+
+- 15 new article about AI Shell - [What is AI Shell?](/powershell/utility-modules/aishell/overview)
+- Updated [What's New in PowerShell 7.5](../whats-new/what-s-new-in-powershell-75.md) for the RC1
+  release
+
+### Top Community Contributors
+
+GitHub stats
+
+- 21 PRs merged (9 from Community)
+- 14 issues opened (14 from Community)
+- 14 issues closed (14 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+| GitHub Id  | PRs merged | Issues opened |
+| ---------- | :--------: | :-----------: |
+| ArieHein   |     5      |               |
+| abeu1      |     1      |               |
+| alexandair |     1      |               |
+| igoragoli  |     1      |               |
+| jmillerca  |     1      |               |
+| SamB       |     1      |               |
+| uiolee     |     1      |       1       |
+
 ## 2024-October
 
 New content
