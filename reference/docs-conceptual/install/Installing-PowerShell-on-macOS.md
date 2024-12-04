@@ -93,7 +93,7 @@ brew install powershell/tap/powershell-lts
 You can now verify your install
 
 ```sh
-pwsh
+pwsh-lts
 ```
 
 When new versions of PowerShell are released, run the following command.
