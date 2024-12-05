@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 11/18/2024
+ms.date: 12/05/2024
 ---
 
 # What's New in PowerShell 7.5
@@ -150,6 +150,102 @@ The following experimental features are included in PowerShell 7.5-rc.1:
   ([#20402][20402]) (Thanks @domsleee!)
 - [PSSerializeJSONLongEnumAsNumber][06] - `ConvertTo-Json` now treats large enums as numbers
   ([#20999][20999]) (Thanks @jborean93!)
+
+## Performance improvements
+
+PowerShell 7.5-rc.1 included [PR#23901][23901] from @jborean93 that improves the performance of the
+`+=` operation for an array of objects.
+
+The following example measures the performance for different methods of adding elements to an array.
+
+```powershell
+$tests = @{
+    'Direct Assignment' = {
+        param($count)
+
+    $result = foreach($i in 1..$count) {
+            $i
+        }
+    }
+    'List<T>.Add(T)' = {
+        param($count)
+
+        $result = [Collections.Generic.List[int]]::new()
+        foreach($i in 1..$count) {
+            $result.Add($i)
+        }
+    }
+    'Array+= Operator' = {
+        param($count)
+
+        $result = @()
+        foreach($i in 1..$count) {
+            $result += $i
+        }
+    }
+}
+
+5kb, 10kb | ForEach-Object {
+    $groupResult = foreach($test in $tests.GetEnumerator()) {
+        $ms = (Measure-Command { & $test.Value -Count $_ }).TotalMilliseconds
+
+[pscustomobject]@{
+            CollectionSize    = $_
+            Test              = $test.Key
+            TotalMilliseconds = [math]::Round($ms, 2)
+        }
+
+[GC]::Collect()
+        [GC]::WaitForPendingFinalizers()
+    }
+
+$groupResult = $groupResult | Sort-Object TotalMilliseconds
+    $groupResult | Select-Object *, @{
+        Name       = 'RelativeSpeed'
+        Expression = {
+            $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
+            $speed = [math]::Round($relativeSpeed, 2).ToString() + 'x'
+            if ($speed -eq '1x') { $speed } else { $speed + ' slower' }
+        }
+    } | Format-Table -AutoSize
+}
+```
+
+When you run the script in PowerShell 7.4.6, you see that using the `+=` operator is the slowest
+method.
+
+```Output
+CollectionSize Test                TotalMilliseconds RelativeSpeed
+-------------- ----                ----------------- -------------
+          5120 Direct Assignment                4.17 1x
+          5120 List<T>.Add(T)                  90.79 21.77x slower
+          5120 Array+= Operator               342.58 82.15x slower
+
+
+CollectionSize Test                TotalMilliseconds RelativeSpeed
+-------------- ----                ----------------- -------------
+         10240 Direct Assignment                0.64 1x
+         10240 List<T>.Add(T)                 184.10 287.66x slower
+         10240 Array+= Operator              1668.13 2606.45x slower
+```
+
+When you run the script in PowerShell 7.5-rc.1, you see that using the `+=` operator is much faster
+than PowerShell 7.4.6. Now, it's also faster than using the `List<T>.Add(T)` method.
+
+```Output
+CollectionSize Test                TotalMilliseconds RelativeSpeed
+-------------- ----                ----------------- -------------
+          5120 Direct Assignment                4.71 1x
+          5120 Array+= Operator                40.42 8.58x slower
+          5120 List<T>.Add(T)                  92.17 19.57x slower
+
+
+CollectionSize Test                TotalMilliseconds RelativeSpeed
+-------------- ----                ----------------- -------------
+         10240 Direct Assignment                1.76 1x
+         10240 Array+= Operator               104.73 59.51x slower
+         10240 List<T>.Add(T)                 173.00 98.3x slower
+```
 
 <!-- end of content -->
 <!-- reference links -->
