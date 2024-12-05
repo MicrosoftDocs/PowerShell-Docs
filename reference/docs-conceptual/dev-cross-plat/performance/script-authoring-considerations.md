@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 05/07/2024
+ms.date: 12/05/2024
 title: PowerShell scripting performance considerations
 ---
 
@@ -626,6 +626,67 @@ Unwrapped = 42.92 ms
 
 The unwrapped example is **372 times faster**. Also, notice that the first implementation requires
 the **Append** parameter, which isn't required for the later implementation.
+
+## Object creation
+
+Creating objects using the `New-Object` cmdlet can be slow. The following code compares the
+performance of creating objects using the `New-Object` cmdlet to the `[pscustomobject]` type
+accelerator.
+
+```powershell
+Measure-Command {
+    $test = 'PSCustomObject'
+    for ($i = 0; $i -lt 100000; $i++) {
+        $resultObject = [PSCustomObject]@{
+            Name = 'Name'
+            Path = 'FullName'
+        }
+    }
+} | Select-Object @{n='Test';e={$test}},TotalSeconds
+
+Measure-Command {
+    $test = 'New-Object'
+    for ($i = 0; $i -lt 100000; $i++) {
+        $resultObject = New-Object -TypeName PSObject -Property @{
+            Name = 'Name'
+            Path = 'FullName'
+        }
+    }
+} | Select-Object @{n='Test';e={$test}},TotalSeconds
+```
+
+```Output
+Test           TotalSeconds
+----           ------------
+PSCustomObject         0.48
+New-Object             3.37
+```
+
+PowerShell 5.0 added the `new()` static method for all .NET types. The following code compares the
+performance of creating objects using the `New-Object` cmdlet to the `new()` method.
+
+```powershell
+Measure-Command {
+    $test = 'new() method'
+    for ($i = 0; $i -lt 100000; $i++) {
+        $sb = [System.Text.StringBuilder]::new(1000)
+    }
+} | Select-Object @{n='Test';e={$test}},TotalSeconds
+
+Measure-Command {
+    $test = 'New-Object'
+    for ($i = 0; $i -lt 100000; $i++) {
+        $sb = New-Object -TypeName System.Text.StringBuilder -ArgumentList 1000
+    }
+} | Select-Object @{n='Test';e={$test}},TotalSeconds
+```
+
+```Output
+Test         TotalSeconds
+----         ------------
+new() method         0.59
+New-Object           3.17
+```
 
 ## Use OrderedDictionary to dynamically create new objects
 
