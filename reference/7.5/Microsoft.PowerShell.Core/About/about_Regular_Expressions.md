@@ -82,7 +82,7 @@ characters).
 ### Numbers
 
 The `\d` character class will match any decimal digit. Conversely, `\D` will
-match any non-decimal digit.
+match any character except decimal digits.
 
 ```powershell
 # This expression returns true if it matches a server name.
@@ -201,8 +201,8 @@ characters.
 When using anchors in PowerShell, you should understand the difference between
 **Singleline** and **Multiline** regular expression options.
 
-- **Multiline**: Multiline mode forces `^` and `$` to match the beginning end
-  of every LINE instead of the beginning and end of the input string.
+- **Multiline**: Multiline mode forces `^` and `$` to match the beginning and
+  end of every LINE instead of the beginning and end of the input string.
 - **Singleline**: Singleline mode treats the input string as a **SingleLine**.
   It forces the `.` character to match every character (including newlines),
   instead of matching every character EXCEPT the newline `\n`.
