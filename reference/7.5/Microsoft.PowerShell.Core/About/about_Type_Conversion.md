@@ -22,7 +22,7 @@ By default, PowerShell _variables_ aren't _type-constrained_. You can create a
 variable containing an instance of one type and later assign values of any
 other type. Also, PowerShell automatically converts values to other types, both
 explicitly and implicitly. While implicit type conversion can be helpful, there
-are pitfalls, especially for users more familiar with languages have stricter
+are pitfalls, especially for users more familiar with languages that have stricter
 type handling.
 
 ## Type-constrained variables and explicit types conversion
@@ -44,8 +44,7 @@ Int32
 ```
 
 Type casting ensures that only values of the specified type can be assigned to
-the variable. If you try to assign a value of a different type that can be
-converted to the constrained type, PowerShell performs an implicit conversion.
+the variable. PowerShell performs an implicit conversion if you try to assign a value of a different type that can be converted to the constrained type.
 For more information, see the [Implicit type conversion][03] section of this
 article.
 
@@ -159,7 +158,7 @@ These examples are equivalent to the enum expression:
 A single value (non-array) can be converted to an instance of a type if:
 
 - That type has a (public) single-parameter constructor
-- And the value is same type or can be coerced to the type of the parameter
+- And the value is the same type or can be coerced to the type of the parameter
 
 For example, the following two lines are equivalent:
 
@@ -207,7 +206,7 @@ These contexts include:
 
 PowerShell attempts to convert values passed to parameters to match the
 parameter type. Type conversion of parameter values occurs in cmdlets,
-functions, scripts, scriptblocks, or .NET method where the parameter is
+functions, scripts, scriptblocks, or .NET methods where the parameter is
 declared with a specific type. Declaring a parameter with the type `[object]`
 or not defining a specific type allows any value type to be passed to a
 parameter. Parameters can also have custom conversions defined by decorating
@@ -219,7 +218,7 @@ For more information, see [about_Parameter_Binding][08].
 
 For .NET methods, it's better to pass the exact type expected using a type
 casts where needed. Without exact types, PowerShell can select the wrong method
-overload. And, new method overloads added in future versions of .NET can break
+overload. Also, new method overloads added in future versions of .NET can break
 existing code. For an extreme example of this problem, see this
 [Stack Overflow question][11].
 
@@ -280,11 +279,11 @@ PS> $guid = New-Object System.Guid($bytes)
 New-Object: Cannot find an overload for "Guid" and the argument count: "16".
 ```
 
-PowerShell treats the `$bytes` array as a list of individual parameters. Even
+PowerShell treats the `$bytes` array as a list of individual parameters even
 though `$bytes` is an array of bytes and `System.Guid` has a `Guid(Byte[])`
 constructor.
 
-This common code pattern is instance of _pseudo method syntax_, which doesn't
+This common code pattern is an instance of _pseudo method syntax_, which doesn't
 always work as intended. This syntax translates to:
 
 ```powershell
@@ -294,7 +293,7 @@ New-Object -TypeName System.Guid -ArgumentList $bytes # !! BROKEN
 
 Given that the type of **ArgumentList** is `[object[]]`, a single argument
 that happens to be an array (of any type) binds to it _element by element_. The
-workaround is to wrap `$bytes` in an outer array so that PowerShell looks for
+workaround is to wrap `$bytes` in an outer array so that PowerShell looks for a
 constructor with parameters that match the contents of the outer array.
 
 ```powershell
@@ -309,7 +308,7 @@ Guid
 The first item of the wrapped array is our original `Byte[]` instance. That
 value matches the `Guid(Byte[]]` constructor.
 
-An alternative to array wrapping workaround is to use the intrinsic static
+An alternative to the array wrapping workaround is to use the intrinsic static
 `new()` method.
 
 ```powershell
@@ -377,7 +376,7 @@ PS> $result.GetType().Name
 Double
 ```
 
-If you want to the result to be an **Int64**, you can cast the result type or
+If you want the result to be an **Int64**, you can cast the result type or
 operands.
 
 ```powershell
@@ -390,8 +389,8 @@ Int64
 The `L` suffix on the `1` literal forces the result to be an **Int64**. For
 more information, see [about_Numeric_Literals][07].
 
-Usually, it's the left-hand side (LHS) operand of PowerShell operators that
-determines the data type used in the operation. PowerShell converts (coerces)
+Usually, the left-hand side (LHS) operand of PowerShell operators determines
+the data type used in the operation. PowerShell converts (coerces)
 the right-hand side (RHS) operand to the required type.
 
 ```powershell
@@ -456,9 +455,8 @@ custom-defines these operators via [operator overloading][02].
 #### Comparison operations
 
 The comparison operators, such as `-eq`, `-lt`, and `-gt`, can compare operands
-of different types. For non-strings and non-primitive types, the behavior
-depends on whether the LHS type implements interfaces such as `IEquatable` and
-`IComparable`.
+of different types. The behavior of non-strings and non-primitive types depends on
+whether the LHS type implements interfaces such as `IEquatable` and `IComparable`.
 
 The collection-based comparison operators (`-in` and `-contains`) perform per
 element `-eq` comparisons until a match is found. It's each individual element
