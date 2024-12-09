@@ -1,6 +1,6 @@
 ---
 description: This document covers security concerns, recommendations, and best practices when using PowerShell Remoting.
-ms.date: 10/23/2023
+ms.date: 12/07/2024
 title: Security considerations for PowerShell Remoting using WinRM
 ---
 
@@ -142,6 +142,6 @@ cons of each, see [Making the second hop in PowerShell Remoting][07].
 [03]: /windows/win32/secauthn/microsoft-ntlm
 [04]: /windows/win32/winrm/portal
 [05]: https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf
-[06]: https://www.mandiant.com/resources/investigating-powershell-attacks
+[06]: https://www.mandiant.com/sites/default/files/2021-09/wp-lazanciyan-investigating-powershell-attacks.pdf
 [07]: PS-remoting-second-hop.md
 [08]: running-remote-commands.md
