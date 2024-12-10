@@ -100,7 +100,7 @@ A value of _any_ type can be coerced to a **Boolean**.
   ```
 
 - For other types, null values, empty strings, and empty arrays are converted
-  to `$false`. Other values, including empty hashtables convert to `$true`.
+  to `$false`.
 
   ```powershell
   PS> [boolean]''
@@ -109,7 +109,16 @@ A value of _any_ type can be coerced to a **Boolean**.
   False
   PS> [boolean]'Hello'
   True
-  PS> [boolean]@(1,'Hello')
+  ```
+
+  Other values, including empty hashtables convert to `$true`. Single-element
+  collections evaluate to the Boolean value of their one and only element.
+  Collections with more than 1 element are always `$true`.
+
+  ```powershell
+  PS> [boolean]@(0)
+  False
+  PS> [boolean]@(0,0)
   True
   PS> [boolean]@{}
   True
@@ -300,8 +309,9 @@ This common code pattern is an instance of _pseudo method syntax_, which
 doesn't always work as intended. This syntax translates to:
 
 ```powershell
-[byte[]] $bytes = 1..16
-New-Object -TypeName System.Guid -ArgumentList $bytes # !! BROKEN
+PS> [byte[]] $bytes = 1..16
+PS> New-Object -TypeName System.Guid -ArgumentList $bytes
+New-Object: Cannot find an overload for "Guid" and the argument count: "16".
 ```
 
 Given that the type of **ArgumentList** is `[object[]]`, a single argument that
@@ -310,7 +320,8 @@ workaround is to wrap `$bytes` in an outer array so that PowerShell looks for a
 constructor with parameters that match the contents of the outer array.
 
 ```powershell
-PS> $guid = New-Object System.Guid(@(, $bytes))
+PS> [byte[]] $bytes = 1..16
+PS> $guid = New-Object -TypeName System.Guid -ArgumentList (, $bytes)
 PS> $guid
 
 Guid
