@@ -1,7 +1,7 @@
 ---
 description: Describes how and when PowerShell performs type conversions.
 Locale: en-US
-ms.date: 12/05/2024
+ms.date: 12/10/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_conversion?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Type_Conversion
@@ -40,11 +40,11 @@ PS> $var.GetType().Name
 Int32
 ```
 
-Type casting ensures that only values of the specified type can be assigned to
-the variable. PowerShell performs an implicit conversion if you try to assign a
-value of a different type that can be converted to the constrained type. For
-more information, see the [Implicit type conversion][03] section of this
-article.
+Type constraining ensures that only values of the specified type can be
+assigned to the variable. PowerShell performs an implicit conversion if you try
+to assign a value of a different type that can be converted to the constrained
+type. For more information, see the [Implicit type conversion][03] section of
+this article.
 
 ### Numeric type conversion
 
@@ -63,6 +63,21 @@ Byte
 
 The value `42.1` is a **Double**. When you cast it to a **Byte**, PowerShell
 truncates it to an integer `42`, which is small enough to fit into a **Byte**.
+
+When converting real numbers to integer types, PowerShell uses rounding rather
+than truncation, specifically using the _rounding-to-nearest-even_ method.
+The following examples illustrate this behavior. Both values are rounded to the
+nearest even integer, `22`.
+
+```powershell
+PS> [byte]21.5
+22
+PS> [byte]22.5
+22
+```
+
+For more information, see the _Midpoint values and rounding conventions_
+section of the [Math.Round][21] method.
 
 ### Boolean type conversion
 
@@ -385,6 +400,23 @@ Int64
 The `L` suffix on the `1` literal forces the result to be an **Int64**. For
 more information, see [about_Numeric_Literals][07].
 
+Using the `L` suffix is the preferred approach because it avoids loss of
+accuracy. If the type cast is applied after the calculation, you can lose
+accuracy due to the late type conversion. In the following example, the result
+is too large to fit into an **Int64** type so it is converted to a **Decimal**.
+
+```powershell
+PS> '{0:N0}' -f ([Int64]::MaxValue + 1L)
+9,223,372,036,854,775,808
+```
+
+Type casting the result after the calculation results in a loss in precision.
+
+```powershell
+PS> '{0:N0}' -f [decimal]([Int64]::MaxValue + 1)
+9,223,372,036,854,780,000
+```
+
 Usually, the left-hand side (LHS) operand of PowerShell operators determines
 the data type used in the operation. PowerShell converts (coerces) the
 right-hand side (RHS) operand to the required type.
@@ -490,3 +522,4 @@ For more information, see [about_Comparison_Operators][05].
 [18]: xref:System.Management.Automation.PSTypeConverter
 [19]: xref:System.Math.DivRem*
 [20]: xref:System.Math.Truncate*
+[21]: xref:System.Math.Round*#midpoint-values-and-rounding-conventions
