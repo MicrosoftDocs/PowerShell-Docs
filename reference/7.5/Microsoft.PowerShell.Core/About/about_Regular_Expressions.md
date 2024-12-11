@@ -215,7 +215,7 @@ To read more about these options and how to use them, visit the
 The backslash (`\`) is used to escape characters so they aren't parsed by the
 regular expression engine.
 
-The following characters are reserved: `[]().\^$|?*+{}`.
+The following characters are reserved: `[().\^$|?*+{`.
 
 You'll need to escape these characters in your patterns to match them in your
 input strings.
