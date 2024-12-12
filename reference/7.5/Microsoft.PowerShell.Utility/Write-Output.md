@@ -105,7 +105,8 @@ Accept wildcard characters: False
 By default, the `Write-Output` cmdlet always enumerates its output. The **NoEnumerate** parameter
 suppresses the default behavior, and prevents `Write-Output` from enumerating output. The
 **NoEnumerate** parameter has no effect if the command is wrapped in parentheses, because the
-parentheses force enumeration. For example, `(Write-Output 1,2,3)` still enumerates the array.
+parentheses force enumeration. For example, `(Write-Output 1,2,3 -NoEnumerate)` still enumerates
+the array.
 
 The **NoEnumerate** parameter is only useful within a pipeline. Trying to see the effects of
 **NoEnumerate** in the console is problematic because PowerShell adds `Out-Default` to the end of
