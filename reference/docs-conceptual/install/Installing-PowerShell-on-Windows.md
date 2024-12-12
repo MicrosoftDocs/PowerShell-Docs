@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 11/18/2024
+ms.date: 12/12/2024
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -261,7 +261,7 @@ If there is an available upgrade, the output indicates the latest available vers
 
 > [!NOTE]
 > When upgrading, PowerShell won't upgrade from an LTS version to a non-LTS version. It only
-> upgrades to the latest version of LTS, for example, from 7.2.3 to 7.2.24. To upgrade from an
+> upgrades to the latest version of LTS, for example, from 7.4.3 to 7.4.6. To upgrade from an
 > LTS release to a newer stable version or the next LTS, you need to install the new version with
 > the MSI for that release.
 >

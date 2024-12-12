@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 11/18/2024
+ms.date: 12/12/2024
 title: Installing PowerShell on macOS
 ---
 
@@ -119,10 +119,7 @@ are:
 - PowerShell 7.4
   - x64 processors - [powershell-7.4.6-osx-x64.pkg][20]
   - Arm64 processors - [powershell-7.4.6-osx-arm64.pkg][18]
-- PowerShell 7.2 (LTS)
-  - x64 processors - [powershell-7.2.24-osx-x64.pkg][16]
-  - Arm64 processors - [powershell-7.2.24-osx-arm64.pkg][14]
-- PowerShell 7.5-preview
+- PowerShell 7.5-rc.1
   - x64 processors - [powershell-7.5.0-rc.1-osx-x64.pkg][24]
   - Arm64 processors - [powershell-7.5.0-rc.1-arm64.pkg][22]
 
@@ -191,9 +188,6 @@ current versions are:
 - PowerShell 7.4 (LTS)
   - x64 processors - [powershell-7.4.6-osx-x64.tar.gz][21]
   - Arm64 processors - [powershell-7.4.6-osx-arm64.tar.gz][19]
-- PowerShell 7.2 (LTS)
-  - x64 processors - [powershell-7.2.24-osx-x64.tar.gz][17]
-  - Arm64 processors - [powershell-7.2.24-osx-arm64.tar.gz][15]
 - PowerShell 7.5-preview
   - x64 processors - [powershell-7.5.0-rc.1-osx-x64.tar.gz][25]
   - Arm64 processors - [powershell-7.5.0-rc.1-osx-arm64.tar.gz][23]
@@ -282,10 +276,6 @@ support those methods.
 [11]: https://docs.brew.sh/Manpage#link-ln-options-formula
 [12]: https://github.com/Homebrew
 [13]: https://github.com/Homebrew/homebrew-cask
-[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.24/powershell-7.2.24-osx-arm64.pkg
-[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.24/powershell-7.2.24-osx-arm64.tar.gz
-[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.24/powershell-7.2.24-osx-x64.pkg
-[17]: https://github.com/PowerShell/PowerShell/releases/download/v7.2.24/powershell-7.2.24-osx-x64.tar.gz
 [18]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell-7.4.6-osx-arm64.pkg
 [19]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell-7.4.6-osx-arm64.tar.gz
 [20]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell-7.4.6-osx-x64.pkg

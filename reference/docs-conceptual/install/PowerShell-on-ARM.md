@@ -27,20 +27,6 @@ Arm versions of PowerShell 7.4 can be installed on the following platforms:
 
 Support is based on the [.NET 8.0 Supported OS Lifecycle Policy][03].
 
-## PowerShell 7.2
-
-Arm versions of PowerShell 7.2 can be installed on the following platforms:
-
-|                OS                | Architectures |               Lifecycle                |
-| -------------------------------- | ------------- | -------------------------------------- |
-| Windows 11 Client Version 22000+ | Arm64         | [Windows][05]                          |
-| Windows 10 Client Version 1607+  | Arm64         | [Windows][05]                          |
-| macOS                            | Arm64         | [macOS][04]                            |
-| Raspberry Pi OS (Debian 12)      | Arm32         | [Raspberry Pi OS][08] and [Debian][06] |
-| Ubuntu 22.04, 20.04              | Arm32         | [Ubuntu][07]                           |
-
-Support is based on the [.NET 6.0 Supported OS Lifecycle Policy][02].
-
 ## Installing PowerShell on Arm-based systems
 
 For installation instructions, see the following articles:
@@ -65,7 +51,6 @@ Raspberry Pi
 
 <!-- link references -->
 [01]: community-support.md#raspberry-pi-os
-[02]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
 [03]: https://github.com/dotnet/core/blob/main/release-notes/8.0/supported-os.md
 [04]: https://support.apple.com/macos
 [05]: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet
