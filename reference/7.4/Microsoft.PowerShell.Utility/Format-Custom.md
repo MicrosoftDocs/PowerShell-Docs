@@ -161,7 +161,8 @@ Accept wildcard characters: False
 ### -GroupBy
 
 Formats the output in groups based on a shared property or value. Enter an expression or a property
-of the output.
+of the output. The **GroupBy** parameter expects that the objects are sorted. Use the `Sort-Object`
+cmdlet before using `Format-Custom` to group the objects.
 
 The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
 be a script block or a hash table. Valid key-value pairs are:
