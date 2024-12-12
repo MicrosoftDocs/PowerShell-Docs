@@ -70,10 +70,10 @@ scope.
 
 You can code your functions to take a parameter as a reference, regardless of
 the type of data passed. This requires that you specify the parameters type
-as `System.Management.Automation.PSReference`, or `[ref]`.
+as `[ref]`.
 
-When using references, you must use the `Value` property of the
-`System.Management.Automation.PSReference` type to access your data.
+When using references, you must use the `Value` property of the `[ref]` type to
+access your data.
 
 ```powershell
 Function Test([ref]$data)
@@ -85,7 +85,7 @@ Function Test([ref]$data)
 To pass a variable to a parameter that expects a reference, you must type
 cast your variable as a reference.
 
-> [!NOTE]
+> [!IMPORTANT]
 > The brackets and parenthesis are BOTH required.
 
 ```powershell
@@ -148,6 +148,52 @@ $i = 0;$iRef = 1
 
 Only the reference type's variable was changed.
 
+### Relationship between [ref] and System.Management.Automation.PSReference
+
+`Ref` is both a type accelerator for `System.Management.Automation.PSReference`
+(see [about_Type_Accelerators] for details) and a reserved keyword that
+PowerShell [treats][2] [especially][1]. Hence, `ref` and `PSReference` are not
+equivalents. The following script demonstrates their difference:
+
+```powershell
+$x = 1
+
+$a = [ref] $x
+$b = [System.Management.Automation.PSReference] $x
+$c = [ref] $x
+
+$x +=4
+$a.Value +=3
+$b.Value +=2
+$c.Value +=1
+
+$x, $a.Value, $b.Value, $c.Value | ForEach-Object {
+  Write-Output $PSItem
+}
+```
+
+The output of this script is:
+
+```powershell
+9
+9
+3
+9
+```
+
+The above script:
+
+- Creates an integer `$x` variable and assigns `1` to it.
+- Creates pointers `$a` and `$c` of `[ref]` types and points them at `$x`.
+- Creates pointer `$b` of `[PSReference]` type and points it, not at `$x`, but
+  a copy thereof, because PowerShell treats `[ref]` and `[PSReference]`
+  differently.
+- Adds 4 to `$x`, 3 to `$a`'s value, 2 to `$b`'s value, and 1 to `$a`'s value.
+
+In the script above, `$x`, `$a.Value`, and `$c.Value` point to the same memory
+location. They are the same, i.e., 1 + 4 + 3 + 1 = 9. But `$b.Value` refers to
+a copy of `$x` at the time of its creation. Hence, it contains 1 + 2 = 3.
+
 ## See also
 
 - [about_Variables](about_Variables.md)
@@ -155,3 +201,9 @@ Only the reference type's variable was changed.
 - [about_Functions](about_Functions.md)
 - [about_Script_Blocks](about_Script_Blocks.md)
 - [about_Scopes](about_scopes.md)
+- [about_Type_accelerators]
+
+[about_Type_accelerators]: about_Type_Accelerators.md
+
+[1]: https://github.com/PowerShell/PowerShell/blob/master/src/System.Management.Automation/engine/parser/ast.cs#L7983
+[2]: https://github.com/PowerShell/PowerShell/blob/master/src/System.Management.Automation/engine/parser/Compiler.cs#L6121

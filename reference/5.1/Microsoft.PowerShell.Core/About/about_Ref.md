@@ -6,7 +6,6 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_Ref
 ---
-
 # about_Ref
 
 ## Short description
@@ -17,9 +16,9 @@ of a variable that is passed to it.
 
 ## Long description
 
-You can pass variables to functions *by reference* or *by value*.
+You can pass variables to functions _by reference_ or _by value_.
 
-When you pass a variable *by value*, you are passing a copy of the data.
+When you pass a variable _by value_, you are passing a copy of the data.
 
 In the following example, the function changes the value of the variable passed
 to it. In PowerShell, integers are value types so they are passed by value.
@@ -42,9 +41,9 @@ $var
 
 In the following example, a variable containing a `Hashtable` is passed to a
 function. `Hashtable` is an object type so by default it is passed to the
-function *by reference*.
+function _by reference_.
 
-When passing a variable *by reference*, the function can change the data and
+When passing a variable _by reference_, the function can change the data and
 that change persists after the function executes.
 
 ```powershell
@@ -71,10 +70,10 @@ scope.
 
 You can code your functions to take a parameter as a reference, regardless of
 the type of data passed. This requires that you specify the parameters type
-as `System.Management.Automation.PSReference`, or `[ref]`.
+as `[ref]`.
 
-When using references, you must use the `Value` property of the
-`System.Management.Automation.PSReference` type to access your data.
+When using references, you must use the `Value` property of the `[ref]` type to
+access your data.
 
 ```powershell
 Function Test([ref]$data)
@@ -86,7 +85,7 @@ Function Test([ref]$data)
 To pass a variable to a parameter that expects a reference, you must type
 cast your variable as a reference.
 
-> [!NOTE]
+> [!IMPORTANT]
 > The brackets and parenthesis are BOTH required.
 
 ```powershell
@@ -149,6 +148,52 @@ $i = 0;$iRef = 1
 
 Only the reference type's variable was changed.
 
+### Relationship between [ref] and System.Management.Automation.PSReference
+
+`Ref` is both a type accelerator for `System.Management.Automation.PSReference`
+(see [about_Type_Accelerators] for details) and a reserved keyword that
+PowerShell treats especially. Hence, `ref` and `PSReference` are not
+equivalents. The following script demonstrates their difference:
+
+```powershell
+$x = 1
+
+$a = [ref] $x
+$b = [System.Management.Automation.PSReference] $x
+$c = [ref] $x
+
+$x +=4
+$a.Value +=3
+$b.Value +=2
+$c.Value +=1
+
+$x, $a.Value, $b.Value, $c.Value | ForEach-Object {
+  Write-Output $PSItem
+}
+```
+
+The output of this script is:
+
+```powershell
+9
+9
+3
+9
+```
+
+The above script:
+
+- Creates an integer `$x` variable and assigns `1` to it.
+- Creates pointers `$a` and `$c` of `[ref]` types and points them at `$x`.
+- Creates pointer `$b` of `[PSReference]` type and points it, not at `$x`, but
+  a copy thereof, because PowerShell treats `[ref]` and `[PSReference]`
+  differently.
+- Adds 4 to `$x`, 3 to `$a`'s value, 2 to `$b`'s value, and 1 to `$a`'s value.
+
+In the script above, `$x`, `$a.Value`, and `$c.Value` point to the same memory
+location. They are the same, i.e., 1 + 4 + 3 + 1 = 9. But `$b.Value` refers to
+a copy of `$x` at the time of its creation. Hence, it contains 1 + 2 = 3.
+
 ## See also
 
 - [about_Variables](about_Variables.md)
@@ -156,3 +201,6 @@ Only the reference type's variable was changed.
 - [about_Functions](about_Functions.md)
 - [about_Script_Blocks](about_Script_Blocks.md)
 - [about_Scopes](about_scopes.md)
+- [about_Type_accelerators]
+
+[about_Type_accelerators]: about_Type_Accelerators.md
