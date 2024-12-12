@@ -211,11 +211,11 @@ Value
     1
 ```
 
-At this point, both reference object have the same value as `$int`. By adding
+At this point, both reference objects have the same value as `$int`. By adding
 different values to the reference objects, we can see that `$aRef`, which was
 created using `[ref]`, is a reference to the original instance of `$int`.
-`$bRef` was created using `[System.Management.Automation.PSReference]` is a
-copy of the variable.
+`$bRef`, which was created using `[System.Management.Automation.PSReference]`,
+is a copy of the variable.
 
 ```powershell
 PS> $aRef.Value+=2
