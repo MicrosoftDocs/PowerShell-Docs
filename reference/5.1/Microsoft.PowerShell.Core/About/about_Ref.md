@@ -188,10 +188,10 @@ A reference type variable is created using
 Even though `[ref]` is a type accelerator for
 `[System.Management.Automation.PSReference]`, they behave differently.
 
-- When you use `[ref]` to cast a variable, PowerShell creates reference object
-  that contains reference to the original instance of the variable.
+- When you use `[ref]` to cast a variable, PowerShell creates a reference object
+  that contains a reference to the original instance of the variable.
 - When you use `[System.Management.Automation.PSReference]` to cast a variable,
-  PowerShell creates reference object that contains a copy of the variable,
+  PowerShell creates a reference object that contains a copy of the variable,
   rather than a reference to the original instance.
 
 For example, the following script creates a variable `$x` and two reference
