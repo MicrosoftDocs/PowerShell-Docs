@@ -175,7 +175,8 @@ Accept wildcard characters: False
 ### -GroupBy
 
 Specifies the output in groups based on a shared property or value. Enter an expression or a
-property of the output.
+property of the output. The **GroupBy** parameter expects that the objects are sorted. Use the
+`Sort-Object` cmdlet before using `Format-List` to group the objects.
 
 The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
 be a script block or a hash table. Valid key-value pairs are:
@@ -314,9 +315,6 @@ verb (the `Out` cmdlets), such as `Out-Host` or `Out-File`.
 
 If you do not use a format cmdlet, PowerShell applies that default format for each object that it
 displays.
-
-The **GroupBy** parameter assumes that the objects are sorted. Use `Sort-Object` before using
-`Format-List` to group the objects.
 
 The **View** parameter lets you specify an alternate format for the table. You can use the views
 defined in the `*.format.PS1XML` files in the PowerShell directory, or you can create your own views
