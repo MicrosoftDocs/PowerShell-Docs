@@ -1,7 +1,7 @@
 ---
 description: Describes how and when PowerShell performs type conversions.
 Locale: en-US
-ms.date: 12/10/2024
+ms.date: 12/16/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_conversion?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Type_Conversion
@@ -77,7 +77,7 @@ PS> [byte]22.5
 ```
 
 For more information, see the _Midpoint values and rounding conventions_
-section of the [Math.Round][21] method.
+section of the [Math.Round][20] method.
 
 ### Boolean type conversion
 
@@ -384,7 +384,7 @@ Double
 Even though both operands are integers, the result is converted to a **Double**
 to support the fractional result. To get true integer division, use the
 `[int]::Truncate()` or `[Math]::DivRem()` static methods. For more information,
-see [Truncate()][20] and [DivRem()][19].
+see [Truncate()][21] and [DivRem()][19].
 
 In integer arithmetic, when the result overflows the size of the operands,
 PowerShell defaults to using **Double** for the results, even when the result
@@ -404,29 +404,36 @@ operands.
 ```powershell
 PS> ([Int64]([int]::MaxValue + 1)).GetType().Name
 Int64
-PS> ([int]::MaxValue + 1L).GetType().Name
-Int64
 ```
 
-The `L` suffix on the `1` literal forces the result to be an **Int64**. For
-more information, see [about_Numeric_Literals][07].
-
-Using the `L` suffix is the preferred approach because it avoids loss of
-accuracy. If the type cast is applied after the calculation, you can lose
-accuracy due to the late type conversion. In the following example, the result
-is too large to fit into an **Int64** type so it is converted to a **Decimal**.
+However, use care when casting results to a specific type. For example, type
+casting the result to the `[decimal]` type can lead to loss of precision.
+Adding `1` to the maximum **Int64** value results in a **Double** type. When
+you cast a **Double** to a **Decimal** type, the result is
+`9223372036854780000`, which isn't accurate.
 
 ```powershell
-PS> '{0:N0}' -f ([Int64]::MaxValue + 1L)
-9,223,372,036,854,775,808
+PS> ([int64]::MaxValue + 1)GetType().Name
+Double
+PS> [decimal]([int64]::MaxValue + 1)
+9223372036854780000
 ```
 
-Type casting the result after the calculation results in a loss in precision.
+The conversion is limited to 15 digits of precision. For more information, see
+the _Remarks_ section of the [Decimal(Double)][01] constructor documentation.
+
+To avoid a loss of precision, use the `D` suffix on the `1` literal. By adding
+the `D` suffix, PowerShell converts the `[int64]::MaxValue` to a **Decimal**
+before adding `1D`.
 
 ```powershell
-PS> '{0:N0}' -f [decimal]([Int64]::MaxValue + 1)
-9,223,372,036,854,780,000
+PS> ([int64]::MaxValue + 1D).GetType().Name
+Decimal
+PS> ([int64]::MaxValue + 1D)
+9223372036854775808
 ```
+
+For more information about numeric suffixes, see [about_Numeric_Literals][07].
 
 Usually, the left-hand side (LHS) operand of PowerShell operators determines
 the data type used in the operation. PowerShell converts (coerces) the
@@ -514,6 +521,7 @@ Both examples return true because `'true' -eq $true` yields `$true`.
 For more information, see [about_Comparison_Operators][05].
 
 <!-- link references -->
+[01]: /dotnet/api/system.decimal.-ctor#system-decimal-ctor(system-double)
 [02]: /dotnet/csharp/programming-guide/statements-expressions-operators/overloadable-operators
 [03]: #implicit-type-conversion
 [04]: about_Booleans.md
@@ -532,5 +540,5 @@ For more information, see [about_Comparison_Operators][05].
 [17]: xref:System.Management.Automation.ArgumentTransformationAttribute
 [18]: xref:System.Management.Automation.PSTypeConverter
 [19]: xref:System.Math.DivRem*
-[20]: xref:System.Math.Truncate*
-[21]: xref:System.Math.Round*#midpoint-values-and-rounding-conventions
+[20]: xref:System.Math.Round*#midpoint-values-and-rounding-conventions
+[21]: xref:System.Math.Truncate*
