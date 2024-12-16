@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Alpine Linux
-ms.date: 12/12/2024
+ms.date: 12/16/2024
 title: Installing PowerShell on Alpine Linux
 ---
 # Installing PowerShell on Alpine Linux
@@ -34,7 +34,7 @@ sudo apk add --no-cache \
     krb5-libs \
     libgcc \
     libintl \
-    libssl1.1 \
+    libssl3 \
     libstdc++ \
     tzdata \
     userspace-rcu \
@@ -42,8 +42,9 @@ sudo apk add --no-cache \
     icu-libs \
     curl
 
-sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
-    lttng-ust
+apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
+    lttng-ust \
+    openssh-client \
 
 # Download the powershell '.tar.gz' archive
 curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/powershell-7.4.6-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz
