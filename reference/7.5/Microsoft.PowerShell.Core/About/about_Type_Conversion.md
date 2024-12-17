@@ -413,7 +413,7 @@ you cast a **Double** to a **Decimal** type, the result is
 `9223372036854780000`, which isn't accurate.
 
 ```powershell
-PS> ([int64]::MaxValue + 1)GetType().Name
+PS> ([int64]::MaxValue + 1).GetType().Name
 Double
 PS> [decimal]([int64]::MaxValue + 1)
 9223372036854780000
