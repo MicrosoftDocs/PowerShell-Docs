@@ -64,7 +64,7 @@ your investment in PowerShell is protected and your migration to PowerShell 7 is
 
 ### Differences in .NET versions
 
-PowerShell 7.2 is built on .NET 6.0. Windows PowerShell 5.1 is built on .NET Framework 4.x. The
+PowerShell 7.4 is built on .NET 8.0. Windows PowerShell 5.1 is built on .NET Framework 4.x. The
 differences between the .NET versions might affect the behavior of your scripts, especially if you
 are calling .NET method directly. For more information,
 [Differences between Windows PowerShell 5.1 and PowerShell 7.x][10].
