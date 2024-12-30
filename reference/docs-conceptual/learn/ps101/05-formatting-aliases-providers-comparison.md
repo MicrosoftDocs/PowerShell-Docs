@@ -449,7 +449,7 @@ True
 `-Match` uses a regular expression to perform the matching.
 
 ```powershell
-'PowerShell' -match '^*.shell$'
+'PowerShell' -match '^.*shell$'
 ```
 
 ```Output
