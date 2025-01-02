@@ -87,6 +87,7 @@ documentationcenter
 DPAPI
 DWORD
 endianness
+Entra
 Etag
 Etags
 eventlog
@@ -130,6 +131,7 @@ JavaScript
 Kerberos
 keypress
 keypresses
+keyvault
 Kubernetes
 LASTEXITCODE
 LCID
@@ -164,6 +166,7 @@ parameterless
 PassThru
 PATHEXT
 pbpaste
+platyps
 pltfrm
 POSIX
 PowerShell
@@ -198,6 +201,7 @@ QWORD
 Raspbian
 Recurse
 recurses
+regedit
 rehost
 rehosting
 rehosts
@@ -227,6 +231,8 @@ Sddl
 SDII
 SDKs
 sdwheeler
+secretmanagement
+secretstore
 setext
 sewhee
 SIEM
