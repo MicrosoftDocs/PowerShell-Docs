@@ -147,13 +147,12 @@ Get-*:Verbose                  True
 Send-MailMessage:SmtpServer    Server123
 ```
 
-You can use indexing or member access to  get the value of a specific value.
-For example, to get the value for the `Send-MailMessage:SmtpServer` key.
+You can use indexing or member access to get a specific value.
 
 ```powershell
-PS> $PSDefaultParameterValues['Send-MailMessage:SmtpServer']
+PS> $PSDefaultParameterValues['Send-MailMessage:SmtpServer'] # index notation
 Server123
-PS> $PSDefaultParameterValues.'Get-*:Verbose'
+PS> $PSDefaultParameterValues.'Get-*:Verbose' # member access notation
 True
 ```
 
