@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2024
-ms.date: 11/04/2024
+ms.date: 01/02/2025
 title: What's New in PowerShell-Docs for 2024
 ---
 # What's new in PowerShell Docs for 2024
@@ -10,6 +10,49 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2024-December
+
+- Added [about_Type_Conversion](/powershell/module/microsoft.powershell.core/about/about_type_conversion)
+- Updated and improved documentation for several PSScriptAnalyzer rules
+  - [AvoidDefaultValueSwitchParameter](/powershell/utility-modules/psscriptanalyzer/rules/avoiddefaultvalueswitchparameter)
+  - [AvoidGlobalFunctions](/powershell/utility-modules/psscriptanalyzer/rules/avoidglobalfunctions)
+  - [AvoidOverwritingBuiltInCmdlets](/powershell/utility-modules/psscriptanalyzer/rules/avoidoverwritingbuiltincmdlets)
+  - [AvoidUsingCmdletAliases](/powershell/utility-modules/psscriptanalyzer/rules/avoidusingcmdletaliases)
+  - [AvoidUsingWriteHost](/powershell/utility-modules/psscriptanalyzer/rules/avoidusingwritehost)
+  - [PlaceOpenBrace](/powershell/utility-modules/psscriptanalyzer/rules/placeopenbrace)
+  - [PossibleIncorrectComparisonWithNull](/powershell/utility-modules/psscriptanalyzer/rules/possibleincorrectcomparisonwithnull)
+  - [PossibleIncorrectUsageOfAssignmentOperator](/powershell/utility-modules/psscriptanalyzer/rules/possibleincorrectusageofassignmentoperator)
+  - [ProvideCommentHelp](/powershell/utility-modules/psscriptanalyzer/rules/providecommenthelp)
+  - [UseApprovedVerbs](/powershell/utility-modules/psscriptanalyzer/rules/useapprovedverbs)
+  - [UseCompatibleCmdlets](/powershell/utility-modules/psscriptanalyzer/rules/usecompatiblecmdlets)
+  - [UseCompatibleCommands](/powershell/utility-modules/psscriptanalyzer/rules/usecompatiblecommands)
+  - [UseCompatibleTypes](/powershell/utility-modules/psscriptanalyzer/rules/usecompatibletypes)
+  - [UseShouldProcessForStateChangingFunctions](/powershell/utility-modules/psscriptanalyzer/rules/useshouldprocessforstatechangingfunctions)
+  - [UseSupportsShouldProcess](/powershell/utility-modules/psscriptanalyzer/rules/usesupportsshouldprocess)
+
+### Top Community Contributors
+
+GitHub stats
+
+- 22 PRs merged (7 from Community)
+- 30 issues opened (30 from Community)
+- 24 issues closed (24 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|     GitHub Id      | PRs merged | Issues opened |
+| ------------------ | :--------: | :-----------: |
+| sethvs             |     3      |               |
+| ArieHein           |     1      |               |
+| bharathalleni      |     1      |               |
+| jhribal            |     1      |               |
+| Saibamen           |     1      |               |
+| skycommand         |     1      |               |
+| surfingoldelephant |            |       6       |
+| ArmaanMcleod       |            |       2       |
+| dpareit            |            |       2       |
 
 ## 2024-November
 
