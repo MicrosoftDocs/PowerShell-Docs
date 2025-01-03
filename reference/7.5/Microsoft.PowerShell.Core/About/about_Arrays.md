@@ -1,7 +1,7 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 03/07/2024
+ms.date: 01/03/2025
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -68,7 +68,7 @@ values of a particular type, cast the variable as an array type, such as
 variable name with an array type enclosed in brackets. For example:
 
 ```powershell
-[int32[]]$ia = 1500, 2230, 3350, 4000
+[Int32[]]$ia = 1500, 2230, 3350, 4000
 ```
 
 As a result, the `$ia` array can contain only integers.
@@ -342,9 +342,25 @@ while($i -lt 4) {
 
 ### Count or Length or LongLength
 
-To determine how many items are in an array, use the **Length** property or its
-**Count** alias. **Longlength** is useful if the array contains more than
-2,147,483,647 elements.
+In PowerShell, arrays have three properties that indicate the number of items
+contained in the array.
+
+- **Count** - This property is the most commonly used property to determine the
+  number of items in any collection, not just an array. It's an `[Int32]` type
+  value. In Windows PowerShell 5.1 (and older) **Count** alias property for
+  **Length**.
+
+- **Length** - This property is an `[Int32]` type value. This contains the same
+  value as **Count**.
+
+  > [!NOTE]
+  > While **Count** and **Length** are equivalent for arrays, **Length** can
+  > have a different meaning for other types. For example, **Length** for a
+  > string is the number of characters in the string. But the **Count**
+  > property is always `1`.
+
+- **Longlength** - This property is an `[Int64]` type value. Use this property
+  for arrays containing more than 2,147,483,647 elements.
 
 ```powershell
 $a = 0..9
@@ -471,7 +487,7 @@ True
 In this example, `$intA` is explicitly typed to contain integers.
 
 ```powershell
-[int[]] $intA = 1, 2, 3
+[Int[]] $intA = 1, 2, 3
 $intA.Clear()
 $intA
 ```
@@ -489,7 +505,7 @@ for each element of the array.
 
 The `ForEach()` method has several overloads that perform different operations.
 
-```
+```Syntax
 ForEach(scriptblock expression)
 ForEach(scriptblock expression, object[] arguments)
 ForEach(type convertToType)
@@ -885,10 +901,11 @@ faster, especially for large arrays.
 
 ## Arrays of zero or one
 
-Beginning in Windows PowerShell 3.0, a collection of zero or one object has the
-**Count** and **Length** properties. Also, you can index into an array of one
-object. This feature helps you to avoid scripting errors that occur when a
-command that expects a collection gets fewer than two items.
+Beginning in Windows PowerShell 3.0, a scalar types and collection of zero or
+one objects has the **Count** and **Length** properties. Also, you can use
+array index notation to access the value of a singleton scalar object. This
+feature helps you to avoid scripting errors that occur when a command that
+expects a collection gets fewer than two items.
 
 The following example shows that a variable that contains no objects has a
 **Count** and **Length** of 0.
