@@ -1,7 +1,7 @@
 ---
 description: Describes how to use object properties in PowerShell.
 Locale: en-US
-ms.date: 08/21/2023
+ms.date: 01/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Properties
@@ -33,7 +33,7 @@ it doesn't. A **DirectoryInfo** object, which represents a file system
 directory, has a **Parent** property that contains the path to the parent
 directory.
 
-### Object properties
+## Object properties
 
 To get the properties of an object, use the `Get-Member` cmdlet. For example,
 to get the properties of a **FileInfo** object, use the `Get-ChildItem` cmdlet
@@ -117,7 +117,7 @@ $a.CreationTime
 ```
 
 ```Output
-Tuesday, June 14, 2022 5:17:14 PM
+Wednesday, November 13, 2024 10:12:26 PM
 ```
 
 You can also use the `Select-Object` and `Format-List` cmdlets to display the
@@ -145,36 +145,37 @@ ModeWithoutHardLink : -a---
 VersionInfo         : File:             C:\Program Files\PowerShell\7-preview\pwsh.exe
                       InternalName:     pwsh.dll
                       OriginalFilename: pwsh.dll
-                      FileVersion:      7.3.0.5
-                      FileDescription:  pwsh
+                      FileVersion:      7.5.0.101
+                      FileDescription:  PowerShell 7
                       Product:          PowerShell
-                      ProductVersion:   7.3.0-preview.5 SHA: cfc237ac85cf24fa760923ace568201c8f3256aa
+                      ProductVersion:   7.5.0-rc.1 SHA: c0142dde17137e436e302b3c4e93e2d6dc50c5c4+c0142dde17137e436e302b3c4e93e2d6dc50c5c4
                       Debug:            False
                       Patched:          False
                       PreRelease:       False
                       PrivateBuild:     False
                       SpecialBuild:     False
                       Language:         Language Neutral
-
+                      
 BaseName            : pwsh
 ResolvedTarget      : C:\Program Files\PowerShell\7-preview\pwsh.exe
-Target              :
-LinkType            :
-Length              : 285088
+Target              : 
+LinkType            : 
+Name                : pwsh.exe
+Length              : 284704
 DirectoryName       : C:\Program Files\PowerShell\7-preview
 Directory           : C:\Program Files\PowerShell\7-preview
 IsReadOnly          : False
+Exists              : True
 FullName            : C:\Program Files\PowerShell\7-preview\pwsh.exe
 Extension           : .exe
-Name                : pwsh.exe
-Exists              : True
-CreationTime        : 6/14/2022 5:17:14 PM
-CreationTimeUtc     : 6/14/2022 10:17:14 PM
-LastAccessTime      : 7/18/2022 11:32:06 AM
-LastAccessTimeUtc   : 7/18/2022 4:32:06 PM
-LastWriteTime       : 6/14/2022 5:17:14 PM
-LastWriteTimeUtc    : 6/14/2022 10:17:14 PM
-LinkTarget          :
+CreationTime        : 11/13/2024 10:12:26 PM
+CreationTimeUtc     : 11/14/2024 4:12:26 AM
+LastAccessTime      : 1/3/2025 1:38:13 PM
+LastAccessTimeUtc   : 1/3/2025 7:38:13 PM
+LastWriteTime       : 11/13/2024 10:12:26 PM
+LastWriteTimeUtc    : 11/14/2024 4:12:26 AM
+LinkTarget          : 
+UnixFileMode        : -1
 Attributes          : Archive
 ```
 
@@ -220,12 +221,8 @@ property of the `System.DateTime` class.
 ## Member-access enumeration
 
 Starting in PowerShell 3.0, when you use the member-access operator (`.`) to
-access a property that doesn't exist on a list collection, PowerShell
-automatically enumerates the items in the collection and returns the value of
-the property on each item. For more information, see
-[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md).
-
-### Examples
+access a property that doesn't exist, PowerShell automatically enumerates the
+items in the collection and returns the value of the property for each item.
 
 This command returns the value of the **DisplayName** property of every service
 that `Get-Service` returns.
@@ -243,8 +240,8 @@ Application Information
 ...
 ```
 
-All collections have a **Count** property that returns the number of objects in
-the collection.
+Most collections in PowerShell have a **Count** property that returns the
+number items in the collection.
 
 ```powershell
 (Get-Service).Count
@@ -254,50 +251,40 @@ the collection.
 176
 ```
 
-Starting in PowerShell 3.0, you can get the **Count** or **Length** property of
-singleton objects that aren't collections.
-
-```powershell
-(Get-Service Audiosrv).Count
-```
-
-```Output
-1
-```
-
-However, some objects have a **Length** property. For example, the **Length**
-of a string is the number of characters in the string. The **Count** property
-is the number of instances of the object.
-
-```powershell
-PS> $str = 'string'
-PS> $str.Length
-6
-PS> $str.Count
-1
-```
-
 If a property exists on the individual objects and on the collection, only the
 collection's property is returned.
 
- ```powershell
- $collection = @(
-     [pscustomobject]@{length = "foo"}
-     [pscustomobject]@{length = "bar"}
+```powershell
+PS> $collection = @(
+     [pscustomobject]@{Length = "foo"}
+     [pscustomobject]@{Length = "bar"}
 )
- # PowerShell returns the collection's Length.
- $collection.length
- ```
 
- ```Output
- 2
- ```
+# PowerShell returns the collection's Length.
+$collection.Length
+2
+
+# Get the length property of each item in the collection.
+PS> $collection.GetEnumerator().Length
+foo
+bar
+```
+
+For more information, see [about_Member-Access_Enumeration][01].
 
 ## See also
 
-- [about_Objects](about_Objects.md)
-- [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
-- [about_Methods](about_Methods.md)
-- [Format-List](xref:Microsoft.PowerShell.Utility.Format-List)
-- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
+- [about_Objects][03]
+- [about_Member-Access_Enumeration][01]
+- [about_Methods][02]
+- [Format-List][04]
+- [Get-Member][05]
+- [Select-Object][06]
+
+<!-- link references -->
+[01]: about_Member-Access_Enumeration.md
+[02]: about_Methods.md
+[03]: about_Objects.md
+[04]: xref:Microsoft.PowerShell.Utility.Format-List
+[05]: xref:Microsoft.PowerShell.Utility.Get-Member
+[06]: xref:Microsoft.PowerShell.Utility.Select-Object

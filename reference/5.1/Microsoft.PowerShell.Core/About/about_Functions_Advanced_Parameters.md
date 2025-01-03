@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 07/02/2024
+ms.date: 01/02/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -27,6 +27,60 @@ Beginning in PowerShell 3.0, you can use splatting with `@Args` to represent
 the parameters in a command. Splatting is valid on simple and advanced
 functions. For more information, see [about_Functions][14] and
 [about_Splatting][17].
+
+## Parameter declaration
+
+Parameters are variables declared in the `param()` statement of a function or
+script block. You can use the optional `[Parameter()]` attribute alone or in
+combination with the `[Alias()]` attribute or any of the parameter validation
+attributes.
+
+Parameter names follow the rules for variable names. Parameter names consist of
+decimal digits, alphabetic characters, and underscores. For a complete list of
+naming rules, see [about_Variables][20].
+
+> [!IMPORTANT]
+> It's possible to name a parameter using only decimal digits. Using numeric
+> parameter names isn't recommended because it can lead to confusion with
+> positional parameters.
+
+Consider the following example:
+
+```powershell
+function TestFunction {
+    param (
+        [switch] $100,
+        [string] $200
+    )
+
+    "100: $100"
+    "200: $200"
+}
+```
+
+If you try to use the parameters, PowerShell interprets them as negative
+numbers passed as positional parameter.
+
+```powershell
+PS> TestFunction -100 -200 Hello
+100: False
+200: -100
+$args: -200 Hello
+```
+
+The output shows that PowerShell has bound the value `-100` to the `$200`
+parameter variable. The remaining positional values are bound to `$args`. To
+work around the issue, you can use splatting to pass the parameter values.
+
+```powershell
+PS> $ht = @{100 = $true; 200 = 'Hello'}
+PS> TestFunction @ht
+100: True
+200: Hello
+$args:
+```
+
+For more information, see [about_Splatting][17].
 
 ## Type conversion of parameter values
 
@@ -103,6 +157,8 @@ At line:13 char:15
     + CategoryInfo          : InvalidData: (:) [Get-Date_Func], ParameterBindingArgumentTransformationException
     + FullyQualifiedErrorId : ParameterArgumentTransformationError,Get-Date_Func
 ```
+
+For more information, see [about_Type_Conversion](about_Type_Conversion.md).
 
 ## Static parameters
 
@@ -1177,7 +1233,7 @@ True
 - [about_Functions_OutputTypeAttribute][13]
 
 <!-- link references -->
-[01]: ./about_comment_based_help.md
+[01]: about_comment_based_help.md
 [02]: /dotnet/api/system.management.automation.runtimedefinedparameter
 [05]: about_Automatic_Variables.md
 [06]: about_CommonParameters.md
@@ -1192,3 +1248,4 @@ True
 [17]: about_Splatting.md
 [18]: about_Tab_Expansion.md
 [19]: about_Wildcards.md
+[20]: about_Variables.md
