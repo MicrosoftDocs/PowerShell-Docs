@@ -9,8 +9,11 @@ This article is an overview of how to get started as a contributor to the PowerS
 
 ## PowerShell-Docs structure
 
-The [PowerShell-Docs repository][1] is divided into two groups of content: reference and
-conceptual.
+There are three categories of content in the [PowerShell-Docs][1] repository:
+
+- reference content
+- conceptual content
+- metadata and configuration files
 
 ### Reference content
 
