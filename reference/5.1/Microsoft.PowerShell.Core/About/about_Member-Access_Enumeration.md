@@ -279,7 +279,7 @@ When member-access enumeration is terminated by an error, output from prior
 successful method calls isn't returned. Terminating error conditions include:
 
 - the enumerated object lacks the accessed method
-- the accessed method raise a terminating error
+- the accessed method raises a terminating error
 
 Consider the following example:
 
