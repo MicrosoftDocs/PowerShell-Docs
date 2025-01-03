@@ -1,7 +1,7 @@
 ---
 description: Describes automatic members in all PowerShell objects
 Locale: en-US
-ms.date: 01/10/2024
+ms.date: 01/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Intrinsic_Members?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Intrinsic_Members
@@ -167,8 +167,15 @@ information on how to use these methods, see [about_Arrays][01].
 
 ## Properties
 
-The **Count** and **Length** properties are available to all PowerShell
-objects, not just collections. These are similar to each other but may work
+Not all scalar type have **Count** or **Length** properties in the base type.
+PowerShell adds the missing property as an intrinsic member for all scalar
+types.
+
+> [!NOTE]
+> Uninitialized variables are implicitly `$null`. `$null` is scalar and has an
+> intrinsic **Count** and **Length** of 0.
+
+While the **Count** and **Length** properties are similar, they may work
 differently depending on the data type. For example, the **Length** of a string
 is the number of characters in the string. The **Count** property is the number
 of instances of the object.

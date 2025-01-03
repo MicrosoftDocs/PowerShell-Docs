@@ -1,7 +1,7 @@
 ---
 description: Describes how to use object properties in PowerShell.
 Locale: en-US
-ms.date: 08/21/2023
+ms.date: 01/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_properties?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Properties
@@ -9,6 +9,7 @@ title: about_Properties
 # about_Properties
 
 ## Short description
+
 Describes how to use object properties in PowerShell.
 
 ## Long description
@@ -32,7 +33,7 @@ it doesn't. A **DirectoryInfo** object, which represents a file system
 directory, has a **Parent** property that contains the path to the parent
 directory.
 
-### Object properties
+## Object properties
 
 To get the properties of an object, use the `Get-Member` cmdlet. For example,
 to get the properties of a **FileInfo** object, use the `Get-ChildItem` cmdlet
@@ -117,7 +118,7 @@ $a.CreationTime
 ```
 
 ```Output
-Saturday, June 5, 2021 7:07:00 AM
+Wednesday, January 24, 2024 1:18:29 AM
 ```
 
 You can also use the `Select-Object` and `Format-List` cmdlets to display the
@@ -144,10 +145,10 @@ Mode              : -a----
 VersionInfo       : File:             C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
                     InternalName:     POWERSHELL
                     OriginalFilename: PowerShell.EXE.MUI
-                    FileVersion:      10.0.22000.1 (WinBuild.160101.0800)
+                    FileVersion:      10.0.22621.1 (WinBuild.160101.0800)
                     FileDescription:  Windows PowerShell
-                    Product:          Microsoft? Windows? Operating System
-                    ProductVersion:   10.0.22000.1
+                    Product:          Microsoft® Windows® Operating System
+                    ProductVersion:   10.0.22621.1
                     Debug:            False
                     Patched:          False
                     PreRelease:       False
@@ -156,8 +157,8 @@ VersionInfo       : File:             C:\Windows\System32\WindowsPowerShell\v1.0
                     Language:         English (United States)
 
 BaseName          : powershell
-Target            : {C:\Windows\WinSxS\amd64_microsoft-windows-powershell-exe_31bf3856ad364e35_10.0.22000.1_none_bf599c
-                    5a06fbb6f4\powershell.exe}
+Target            : {C:\Windows\WinSxS\amd64_microsoft-windows-powershell-exe_31bf3856ad364e35_10.0.22621.3085_none_492
+                    e8ee57da24e0e\powershell.exe}
 LinkType          : HardLink
 Name              : powershell.exe
 Length            : 450560
@@ -167,20 +168,20 @@ IsReadOnly        : False
 Exists            : True
 FullName          : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 Extension         : .exe
-CreationTime      : 6/5/2021 7:07:00 AM
-CreationTimeUtc   : 6/5/2021 12:07:00 PM
-LastAccessTime    : 7/18/2022 12:16:17 PM
-LastAccessTimeUtc : 7/18/2022 5:16:17 PM
-LastWriteTime     : 6/5/2021 7:07:00 AM
-LastWriteTimeUtc  : 6/5/2021 12:07:00 PM
+CreationTime      : 1/24/2024 1:18:29 AM
+CreationTimeUtc   : 1/24/2024 7:18:29 AM
+LastAccessTime    : 1/3/2025 1:36:20 PM
+LastAccessTimeUtc : 1/3/2025 7:36:20 PM
+LastWriteTime     : 1/24/2024 1:18:29 AM
+LastWriteTimeUtc  : 1/24/2024 7:18:29 AM
 Attributes        : Archive
 ```
 
-### Static properties
+## Static properties
 
 You can use the static properties of .NET classes in PowerShell. Static
-properties are properties of class, unlike standard properties, which are
-properties of an object.
+properties are properties of the class, unlike standard properties, which are
+properties of an object instance.
 
 To get the static properties of a class, use the **Static** parameter of the
 `Get-Member` cmdlet. For example, the following command gets the static
@@ -218,12 +219,8 @@ property of the `System.DateTime` class.
 ## Member-access enumeration
 
 Starting in PowerShell 3.0, when you use the member-access operator (`.`) to
-access a property that doesn't exist on a list collection, PowerShell
-automatically enumerates the items in the collection and returns the value of
-the property on each item. For more information, see
-[about_Member-Access_Enumeration](about_Member-Access_Enumeration.md).
-
-### Examples
+access a property that doesn't exist, PowerShell automatically enumerates the
+items in the collection and returns the value of the property for each item.
 
 This command returns the value of the **DisplayName** property of every service
 that `Get-Service` returns.
@@ -241,8 +238,8 @@ Application Information
 ...
 ```
 
-All collections have a **Count** property that returns the number of objects in
-the collection.
+Most collections in PowerShell have a **Count** property that returns the
+number items in the collection.
 
 ```powershell
 (Get-Service).Count
@@ -252,50 +249,40 @@ the collection.
 176
 ```
 
-Starting in PowerShell 3.0, you can get the **Count** or **Length** property of
-singleton objects that aren't collections.
-
-```powershell
-(Get-Service Audiosrv).Count
-```
-
-```Output
-1
-```
-
-However, some objects have a **Length** property. For example, the **Length**
-of a string is the number of characters in the string. The **Count** property
-is the number of instances of the object.
-
-```powershell
-PS> $str = 'string'
-PS> $str.Length
-6
-PS> $str.Count
-1
-```
-
 If a property exists on the individual objects and on the collection, only the
 collection's property is returned.
 
- ```powershell
- $collection = @(
-     [pscustomobject]@{length = "foo"}
-     [pscustomobject]@{length = "bar"}
+```powershell
+PS> $collection = @(
+     [pscustomobject]@{Length = "foo"}
+     [pscustomobject]@{Length = "bar"}
 )
- # PowerShell returns the collection's Length.
- $collection.length
- ```
 
- ```Output
- 2
- ```
+# PowerShell returns the collection's Length.
+$collection.Length
+2
+
+# Get the length property of each item in the collection.
+PS> $collection.GetEnumerator().Length
+foo
+bar
+```
+
+For more information, see [about_Member-Access_Enumeration][01].
 
 ## See also
 
-- [about_Objects](about_Objects.md)
-- [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
-- [about_Methods](about_Methods.md)
-- [Format-List](xref:Microsoft.PowerShell.Utility.Format-List)
-- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object)
+- [about_Objects][03]
+- [about_Member-Access_Enumeration][01]
+- [about_Methods][02]
+- [Format-List][04]
+- [Get-Member][05]
+- [Select-Object][06]
+
+<!-- link references -->
+[01]: about_Member-Access_Enumeration.md
+[02]: about_Methods.md
+[03]: about_Objects.md
+[04]: xref:Microsoft.PowerShell.Utility.Format-List
+[05]: xref:Microsoft.PowerShell.Utility.Get-Member
+[06]: xref:Microsoft.PowerShell.Utility.Select-Object
