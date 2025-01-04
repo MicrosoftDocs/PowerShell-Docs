@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 01/02/2025
+ms.date: 01/04/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -40,9 +40,9 @@ decimal digits, alphabetic characters, and underscores. For a complete list of
 naming rules, see [about_Variables][20].
 
 > [!IMPORTANT]
-> It's possible to name a parameter using only decimal digits. Using numeric
-> parameter names isn't recommended because it can lead to confusion with
-> positional parameters.
+> It's possible to define a parameter that starts with a decimal digit.
+> Starting parameter names with a digit isn't recommended because PowerShell
+> treats them as string values passed as positional parameters.
 
 Consider the following example:
 
@@ -58,8 +58,8 @@ function TestFunction {
 }
 ```
 
-If you try to use the parameters, PowerShell interprets them as negative
-numbers passed as positional parameter.
+If you try to use the parameters, PowerShell interprets them as stings passed
+as positional parameter.
 
 ```powershell
 PS> TestFunction -100 -200 Hello
