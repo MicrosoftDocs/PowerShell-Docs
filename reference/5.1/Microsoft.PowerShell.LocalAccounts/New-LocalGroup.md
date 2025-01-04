@@ -2,7 +2,7 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 06/28/2023
+ms.date: 01/04/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-LocalGroup
@@ -41,7 +41,7 @@ This command creates a group named SecurityGroup04.
 
 ### -Description
 
-Specifies a comment for the group. The maximum length is 48 characters.
+Specifies a comment for the group. The maximum length is 256 characters.
 
 ```yaml
 Type: System.String
@@ -57,7 +57,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies a name for the group. The maximum length is 256 characters.
+Specifies a name for the group. The maximum length is 48 characters.
 
 ```yaml
 Type: System.String
