@@ -631,7 +631,7 @@ This argument has no effect on optional parameters.
 
 #### DontShow argument
 
-The `DontShow` values is typically used to assist backwards compatibility for a
+The `DontShow` value is typically used to assist backwards compatibility for a
 command where an obsolete parameter cannot be removed. Setting `DontShow` to
 `True` hides the parameter from the user for tab expansion and IntelliSense.
 
