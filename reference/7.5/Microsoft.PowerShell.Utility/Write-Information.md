@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/19/2023
+ms.date: 01/06/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
@@ -239,11 +239,9 @@ This cmdlet returns no output. It only writes to the information message stream.
 
 ## RELATED LINKS
 
-[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
-
-[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
-
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
+
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 
@@ -255,10 +253,10 @@ This cmdlet returns no output. It only writes to the information message stream.
 
 [Write-Information](Write-Information.md)
 
+[Write-Output](Write-Output.md)
+
 [Write-Progress](Write-Progress.md)
 
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
-[Write-Output](Write-Output.md)
