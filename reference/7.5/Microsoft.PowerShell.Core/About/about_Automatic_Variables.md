@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 07/12/2024
+ms.date: 01/07/2025
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline, PSEventArgs, PSEventSubscriber, PSEdition]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -21,61 +21,61 @@ be written to.
 
 Here is a list of the automatic variables in PowerShell:
 
-- [$$][40]
-- [$?][41]
-- [$^][42]
-- [$_][02]
-- [$args][03]
-- [$ConsoleFileName][04]
-- [$EnabledExperimentalFeatures][05]
-- [$Error][06]
-- [$Event][07]
-- [$EventArgs][08]
-- [$EventSubscriber][09]
-- [$ExecutionContext][10]
-- [$false][11]
-- [$foreach][12]
-- [$HOME][13]
-- [$Host][14]
-- [$input][15]
-- [$IsCoreCLR][16]
-- [$IsLinux][17]
-- [$IsMacOS][18]
-- [$IsWindows][19]
-- [$LASTEXITCODE][20]
-- [$Matches][21]
-- [$MyInvocation][22]
-- [$NestedPromptLevel][23]
-- [$null][24]
-- [$PID][25]
-- [$PROFILE][26]
-- [$PSBoundParameters][27]
-- [$PSCmdlet][28]
-- [$PSCommandPath][29]
-- [$PSCulture][30]
-- [$PSDebugContext][31]
-- [$PSEdition][32]
-- [$PSHOME][33]
-- [$PSItem][34]
-- [$PSScriptRoot][35]
-- [$PSSenderInfo][36]
-- [$PSUICulture][37]
-- [$PSVersionTable][38]
-- [$PWD][39]
-- [$Sender][43]
-- [$ShellId][44]
-- [$StackTrace][45]
-- [$switch][46]
-- [$this][47]
-- [$true][48]
+- [`$$`][40]
+- [`$?`][41]
+- [`$^`][42]
+- [`$_`][02]
+- [`$args`][03]
+- [`$ConsoleFileName`][04]
+- [`$EnabledExperimentalFeatures`][05]
+- [`$Error`][06]
+- [`$Event`][07]
+- [`$EventArgs`][08]
+- [`$EventSubscriber`][09]
+- [`$ExecutionContext`][10]
+- [`$false`][11]
+- [`$foreach`][12]
+- [`$HOME`][13]
+- [`$Host`][14]
+- [`$input`][15]
+- [`$IsCoreCLR`][16]
+- [`$IsLinux`][17]
+- [`$IsMacOS`][18]
+- [`$IsWindows`][19]
+- [`$LASTEXITCODE`][20]
+- [`$Matches`][21]
+- [`$MyInvocation`][22]
+- [`$NestedPromptLevel`][23]
+- [`$null`][24]
+- [`$PID`][25]
+- [`$PROFILE`][26]
+- [`$PSBoundParameters`][27]
+- [`$PSCmdlet`][28]
+- [`$PSCommandPath`][29]
+- [`$PSCulture`][30]
+- [`$PSDebugContext`][31]
+- [`$PSEdition`][32]
+- [`$PSHOME`][33]
+- [`$PSItem`][34]
+- [`$PSScriptRoot`][35]
+- [`$PSSenderInfo`][36]
+- [`$PSUICulture`][37]
+- [`$PSVersionTable`][38]
+- [`$PWD`][39]
+- [`$Sender`][43]
+- [`$ShellId`][44]
+- [`$StackTrace`][45]
+- [`$switch`][46]
+- [`$this`][47]
+- [`$true`][48]
 
 ## Long description
 
-### $$
+### `$$`
 
 Contains the last token in the last line received by the session.
 
-### $?
+### `$?`
 
 Contains the execution status of the last command. It contains **True** if the
 last command succeeded and **False** if it failed. Parse errors don't result in
@@ -123,11 +123,11 @@ is 0, and set to **False** when `$LASTEXITCODE` is any other value.
 > behavior changed in PowerShell 7, so that `$?` always reflects the actual
 > success of the last command run in these expressions.
 
-### $^
+### `$^`
 
 Contains the first token in the last line received by the session.
 
-### $_
+### `$_`
 
 Same as `$PSItem`. Contains the current object in the pipeline object. You can
 use this variable in commands that perform an action on every object in a
@@ -135,7 +135,7 @@ pipeline.
 
 For more information, see [about_PSItem][67].
 
-### $args
+### `$args`
 
 Contains an array of values for undeclared parameters that are passed to a
 function, script, or script block. When you create a function, you can declare
@@ -148,7 +148,7 @@ only within the `Action` block of an event registration command. The value of
 this variable can also be found in the **SourceArgs** property of the
 **PSEventArgs** object that `Get-Event` returns.
 
-### $ConsoleFileName
+### `$ConsoleFileName`
 
 Contains the path of the console file (`.psc1`) that was most recently used in
 the session. This variable is populated when you start PowerShell with the
@@ -159,11 +159,11 @@ When you use the `Export-Console` cmdlet without parameters, it automatically
 updates the console file that was most recently used in the session. You can
 use this automatic variable to determine the file to update.
 
-### $EnabledExperimentalFeatures
+### `$EnabledExperimentalFeatures`
 
 Contains a list of names of the experimental features that are enabled.
 
-### $Error
+### `$Error`
 
 Contains an array of error objects that represent the most recent errors. The
 most recent error is the first error object in the array `$Error[0]`.
@@ -172,7 +172,7 @@ To prevent an error from being added to the `$Error` array, use the
 **ErrorAction** common parameter with a value of **Ignore**. For more
 information, see [about_CommonParameters][53].
 
-### $Event
+### `$Event`
 
 Contains a **PSEventArgs** object that represents the event that's being
 processed. This variable is populated only within the `Action` block of an
@@ -181,7 +181,7 @@ variable is the same object that the `Get-Event` cmdlet returns. You can use
 the properties of the `Event` variable, such as `$Event.TimeGenerated`, in an
 `Action` script block.
 
-### $EventArgs
+### `$EventArgs`
 
 Contains an object that represents the first event argument that derives from
 **EventArgs** of the event that's being processed. This variable is populated
@@ -189,27 +189,27 @@ only within the `Action` block of an event registration command. The value of
 this variable can also be found in the **SourceEventArgs** property of the
 **PSEventArgs** object that `Get-Event` returns.
 
-### $EventSubscriber
+### `$EventSubscriber`
 
 Contains a **PSEventSubscriber** object that represents the event subscriber of
 the event that's being processed. This variable is populated only within the
 `Action` block of an event registration command. The value of this variable is
 the same object that the `Get-EventSubscriber` cmdlet returns.
 
-### $ExecutionContext
+### `$ExecutionContext`
 
 Contains an **EngineIntrinsics** object that represents the execution context
 of the PowerShell host. You can use this variable to find the execution objects
 that are available to cmdlets.
 
-### $false
+### `$false`
 
 Contains **False**. You can use this variable to represent **False** in
 commands and scripts instead of using the string `"false"`. The string can be
 interpreted as **True** if it's converted to a non-empty string or to a
 non-zero integer.
 
-### $foreach
+### `$foreach`
 
 Contains the enumerator (not the resulting values) of a [ForEach][56] loop. The
 `$ForEach` variable exists only while the `ForEach` loop is running; it's
@@ -219,7 +219,7 @@ Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
 [Using Enumerators][49].
 
-### $HOME
+### `$HOME`
 
 Contains the full path of the user's home directory. On Windows, this variable
 uses the value of the `"$env:USERPROFILE"` Windows environment variable,
@@ -230,7 +230,7 @@ typically `C:\Users\<UserName>`. On Unix, this variable uses the value of the
 > Windows can redirect the location of the user's profile. This means that
 > `$HOME` may not have the same value as `"$env:HOMEDRIVE$env:HOMEPATH"`.
 
-### $Host
+### `$Host`
 
 Contains an object that represents the current host application for PowerShell.
 You can use this variable to represent the current host in commands or to
@@ -242,7 +242,7 @@ display or change the properties of the host, such as `$Host.version` or
 > `$PSStyle` preference variable. For more information, see
 > [about_ANSI_Terminals][50].
 
-### $input
+### `$input`
 
 Contains an enumerator that enumerates all input that's passed to a function.
 The `$input` variable is available only to functions, script blocks (which
@@ -279,27 +279,27 @@ following example is run from the Windows Command shell.
 echo Hello | pwsh -Command """$input World!"""
 ```
 
-### $IsCoreCLR
+### `$IsCoreCLR`
 
 Contains `$true` if the current session is running on the .NET Core Runtime
 (CoreCLR). Otherwise contains `$false`.
 
-### $IsLinux
+### `$IsLinux`
 
 Contains `$true` if the current session is running on a Linux operating system.
 Otherwise contains `$false`.
 
-### $IsMacOS
+### `$IsMacOS`
 
 Contains `$true` if the current session is running on a MacOS operating system.
 Otherwise contains `$false`.
 
-### $IsWindows
+### `$IsWindows`
 
 Contains `$true` if the current session is running on a Windows operating
 system. Otherwise contains `$false`.
 
-### $LASTEXITCODE
+### `$LASTEXITCODE`
 
 Contains the exit code of the last native program or PowerShell script that
 ran.
@@ -339,7 +339,7 @@ was called and whether the `exit` keyword was used:
 For more information on the **File** and **Command** parameters, see
 [about_Pwsh][68].
 
-### $Matches
+### `$Matches`
 
 The `$Matches` variable works with the `-match` and `-notmatch` operators. When
 you submit [scalar][01] input to the `-match` or `-notmatch` operator, and
@@ -363,7 +363,7 @@ operators. For more information about the `switch` statement, see
 > found, it doesn't reset `$Matches` to `$null`. The previously matched value
 > is kept in `$Matches` until another match is found.
 
-### $MyInvocation
+### `$MyInvocation`
 
 Contains information about the current command, such as the name, parameters,
 parameter values, and information about how the command was started, called, or
@@ -389,7 +389,7 @@ Unlike the `$PSScriptRoot` and `$PSCommandPath` automatic variables, the
 automatic variable contain information about the invoker or calling script, not
 the current script.
 
-### $NestedPromptLevel
+### `$NestedPromptLevel`
 
 Contains the current prompt level. A value of 0 indicates the original prompt
 level. The value is incremented when you enter a nested level and decremented
@@ -408,7 +408,7 @@ The `$NestedPromptLevel` variable helps you track the prompt level. You can
 create an alternative PowerShell command prompt that includes this value so
 that it's always visible.
 
-### $null
+### `$null`
 
 `$null` is an automatic variable that contains a **null** or empty value. You
 can use this variable to represent an absent or undefined value in commands and
@@ -470,12 +470,12 @@ Appointment on Tuesday: Meeting
 Appointment on Friday: Team lunch
 ```
 
-### $PID
+### `$PID`
 
 Contains the process identifier (PID) of the process that's hosting the
 current PowerShell session.
 
-### $PROFILE
+### `$PROFILE`
 
 Contains the full path of the PowerShell profile for the current user and the
 current host application. You can use this variable to represent the profile in
@@ -498,7 +498,7 @@ You can use it in a command to open the profile in **notepad.exe**:
 notepad.exe $PROFILE
 ```
 
-### $PSBoundParameters
+### `$PSBoundParameters`
 
 Contains a dictionary of the parameters that are passed to a script or function
 and their current values. This variable has a value only in a scope where
@@ -537,7 +537,7 @@ a     Power
 b     Shell
 ```
 
-### $PSCmdlet
+### `$PSCmdlet`
 
 Contains an object that represents the cmdlet or advanced function that's being
 run.
@@ -552,12 +552,12 @@ For more information about the `$PSCmdlet` automatic variable, see
 [about_Functions_CmdletBindingAttribute][60] and
 [about_Functions_Advanced][59].
 
-### $PSCommandPath
+### `$PSCommandPath`
 
 Contains the full path and filename of the script that's being run. This
 variable is valid in all scripts.
 
-### $PSCulture
+### `$PSCulture`
 
 Beginning in PowerShell 7, `$PSCulture` reflects the culture of the current
 PowerShell runspace (session). If the culture is changed in a PowerShell
@@ -568,7 +568,7 @@ and dates, and is stored in a **System.Globalization.CultureInfo** object. Use
 `Get-Culture` to display the computer's culture. `$PSCulture` contains the
 **Name** property's value.
 
-### $PSDebugContext
+### `$PSDebugContext`
 
 While debugging, this variable contains information about the debugging
 environment. Otherwise, it contains a **null** value. As a result, you can use
@@ -578,12 +578,12 @@ properties. The **InvocationInfo** property has several useful properties,
 including the **Location** property. The **Location** property indicates the
 path of the script that's being debugged.
 
-### $PSEdition
+### `$PSEdition`
 
 Contains the same value in `$PSVersionTable.PSEdition`. This variable is
 available for use in module manifest files, whereas `$PSVersionTable` isn't.
 
-### $PSHOME
+### `$PSHOME`
 
 Contains the full path of the installation directory for PowerShell, typically,
 `C:\Program Files\PowerShell\7` in Windows systems. You can use this variable
@@ -594,21 +594,21 @@ the conceptual Help topics for the word **Help**:
 Select-String -Pattern Help -Path $PSHOME\en-US\*.txt
 ```
 
-### $PSItem
+### `$PSItem`
 
 Same as `$_`. Contains the current object in the pipeline object. You can use
 this variable in commands that perform an action on every object in a pipeline.
 
 For more information, see [about_PSItem][67].
 
-### $PSScriptRoot
+### `$PSScriptRoot`
 
 Contains the full path of the executing script's parent directory.
 
 In PowerShell 2.0, this variable is valid only in script modules (`.psm1`).
 Beginning in PowerShell 3.0, it's valid in all scripts.
 
-### $PSSenderInfo
+### `$PSSenderInfo`
 
 Contains information about the user who started the PSSession, including the
 user identity and the time zone of the originating computer. This variable is
@@ -620,7 +620,7 @@ from the originating session. To add data to the **ApplicationArguments**
 property, use the **ApplicationArguments** parameter of the
 `New-PSSessionOption` cmdlet.
 
-### $PSUICulture
+### `$PSUICulture`
 
 Contains the name of the user interface (UI) culture that's configured in the
 operating system. The UI culture determines which text strings are used for
@@ -629,7 +629,7 @@ user interface elements, such as menus and messages. This is the value of the
 system. To get the **System.Globalization.CultureInfo** object for the system,
 use the `Get-UICulture` cmdlet.
 
-### $PSVersionTable
+### `$PSVersionTable`
 
 Contains a read-only hash table that displays details about the version of
 PowerShell that's running in the current session. The table includes the
@@ -652,7 +652,7 @@ following items:
 - **SerializationVersion** - The version of the serialization method
 - **WSManStackVersion** - The version number of the WS-Management stack
 
-### $PWD
+### `$PWD`
 
 Contains a path object that represents the full path of the current directory
 location for the current PowerShell runspace.
@@ -662,22 +662,22 @@ location for the current PowerShell runspace.
 > _current directory_. This isn't the same as the current directory of the
 > process: `[System.Environment]::CurrentDirectory`.
 
-### $Sender
+### `$Sender`
 
 Contains the object that generated this event. This variable is populated only
 within the Action block of an event registration command. The value of this
 variable can also be found in the Sender property of the **PSEventArgs** object
 that `Get-Event` returns.
 
-### $ShellId
+### `$ShellId`
 
 Contains the identifier of the current shell.
 
-### $StackTrace
+### `$StackTrace`
 
 Contains a stack trace for the most recent error.
 
-### $switch
+### `$switch`
 
 Contains the enumerator not the resulting values of a `Switch` statement. The
 `$switch` variable exists only while the `Switch` statement is running; it's
@@ -688,7 +688,7 @@ Enumerators contain properties and methods you can use to retrieve loop values
 and change the current loop iteration. For more information, see
 [Using Enumerators][49].
 
-### $this
+### `$this`
 
 The `$this` variable is used in script blocks that extend classes to refer to
 the instance of the class itself.
@@ -720,7 +720,7 @@ The `$this` variable is also used by .NET event classes that take script blocks
 as delegates for the event handler. In this scenario, `$this` represents the
 object originating the event, known as the event sender.
 
-### $true
+### `$true`
 
 Contains **True**. You can use this variable to represent **True** in commands
 and scripts.

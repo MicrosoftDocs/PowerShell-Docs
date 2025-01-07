@@ -1,7 +1,7 @@
 ---
 description: Describes how to use the `try`, `catch`, and `finally` blocks to handle terminating errors.
 Locale: en-US
-ms.date: 11/12/2021
+ms.date: 01/07/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Try_Catch_Finally
@@ -9,6 +9,7 @@ title: about_Try_Catch_Finally
 # about_Try_Catch_Finally
 
 ## Short description
+
 Describes how to use the `try`, `catch`, and `finally` blocks to handle
 terminating errors.
 
@@ -16,7 +17,7 @@ terminating errors.
 
 Use `try`, `catch`, and `finally` blocks to respond to or handle terminating
 errors in scripts. The `Trap` statement can also be used to handle terminating
-errors in scripts. For more information, see [about_Trap](about_Trap.md).
+errors in scripts. For more information, see [about_Trap][05].
 
 A terminating error stops a statement from running. If PowerShell does not
 handle a terminating error in some way, PowerShell also stops running the
@@ -71,9 +72,9 @@ Error types appear in brackets. The outermost brackets indicate the element is
 optional.
 
 The `catch` keyword is followed by an optional list of error type
-specifications and a statement list. If a terminating error occurs in the
-`try` block, PowerShell searches for an appropriate `catch` block. If
-one is found, the statements in the `catch` block are executed.
+specifications and a statement list. If a terminating error occurs in the `try`
+block, PowerShell searches for an appropriate `catch` block. If one is found,
+the statements in the `catch` block are executed.
 
 The `catch` block can specify one or more error types. An error type is a
 Microsoft .NET Framework exception or an exception that is derived from a .NET
@@ -117,7 +118,7 @@ block.
 PowerShell does not recognize "NonsenseString" as a cmdlet or other item.
 Running this script returns the following result:
 
-```powershell
+```Output
 An error occurred.
 ```
 
@@ -132,16 +133,13 @@ two `catch` blocks:
 
 ```powershell
 try {
-   $wc = new-object System.Net.WebClient
-   $wc.DownloadFile("http://www.contoso.com/MyDoc.doc","c:\temp\MyDoc.doc")
-}
-catch [System.Net.WebException],[System.IO.IOException] {
+    $wc = New-Object System.Net.WebClient
+    $wc.DownloadFile("http://www.contoso.com/MyDoc.doc","c:\temp\MyDoc.doc")
+} catch [System.Net.WebException],[System.IO.IOException] {
     "Unable to download MyDoc.doc from http://www.contoso.com."
-}
-catch {
+} catch {
     "An error occurred that could not be resolved."
 }
-
 ```
 
 The first `catch` block handles errors of the **System.Net.WebException** and
@@ -155,8 +153,9 @@ from the specified class. The following example contains a `catch` block that
 catches a "Command Not Found" error:
 
 ```powershell
-catch [System.Management.Automation.CommandNotFoundException]
-{"Inherited Exception" }
+catch [System.Management.Automation.CommandNotFoundException] {
+    "Inherited Exception"
+}
 ```
 
 The specified error type, **CommandNotFoundException**, inherits from the
@@ -181,8 +180,8 @@ block for the derived class before the `catch` block for the general class.
 ## Using Traps in a Try Catch
 
 When a terminating error occurs in a `try` block with a `Trap` defined within
-the `try` block, even if there is a matching `catch` block, the `Trap` statement
-takes control.
+the `try` block, even if there is a matching `catch` block, the `Trap`
+statement takes control.
 
 If a `Trap` exists at a higher block than the `try`, and there is no matching
 `catch` block within the current scope, the `Trap` will take control, even if
@@ -190,14 +189,14 @@ any parent scope has a matching `catch` block.
 
 ## Accessing exception information
 
-Within a `catch` block, the current error can be accessed using `$_`, which
-is also known as `$PSItem`. The object is of type **ErrorRecord**.
+Within a `catch` block, the current error can be accessed using `$_`, which is
+also known as `$PSItem`. The object is of type **ErrorRecord**.
 
 ```powershell
 try { NonsenseString }
 catch {
-  Write-Host "An error occurred:"
-  Write-Host $_
+    Write-Host "An error occurred:"
+    Write-Host $_
 }
 ```
 
@@ -210,21 +209,21 @@ script file, or operable program. Check the spelling of the name, or if a path
 was included, verify that the path is correct and try again.
 ```
 
-There are additional properties that can be accessed, such as **ScriptStackTrace**,
-**Exception**, and **ErrorDetails**.  For example, if we change the script to the
-following:
+There are additional properties that can be accessed, such as
+**ScriptStackTrace**, **Exception**, and **ErrorDetails**. For example, if we
+change the script to the following:
 
 ```powershell
 try { NonsenseString }
 catch {
-  Write-Host "An error occurred:"
-  Write-Host $_.ScriptStackTrace
+    Write-Host "An error occurred:"
+    Write-Host $_.ScriptStackTrace
 }
 ```
 
 The result will be similar to:
 
-```
+```Output
 An Error occurred:
 at <ScriptBlock>, <No file>: line 2
 ```
@@ -240,10 +239,37 @@ A `finally` block runs even if you use <kbd>CTRL</kbd>+<kbd>C</kbd> to stop the
 script. A `finally` block also runs if an Exit keyword stops the script from
 within a `catch` block.
 
+In the following example, the `try` block attempts to download a file to the
+`c:\temp` folder. The `catch` blocks handle errors that occur during the
+download. The `finally` block disposes of the `WebClient` object and removes
+the temporary file if it exists.
+
+```powershell
+try {
+    $wc = New-Object System.Net.WebClient
+    $tempFile = "c:\temp\MyDoc.doc"
+    $wc.DownloadFile("http://www.contoso.com/MyDoc.doc",$tempFile)
+} catch [System.Net.WebException],[System.IO.IOException] {
+    "Unable to download MyDoc.doc from http://www.contoso.com."
+} catch {
+    "An error occurred that could not be resolved."
+} finally {
+    $wc.Dispose()
+    if (Test-Path $tempPath) { Remove-item $tempFile }
+}
+```
+
 ## See also
 
-- [about_Break](about_Break.md)
-- [about_Continue](about_Continue.md)
-- [about_Scopes](about_Scopes.md)
-- [about_Throw](about_Throw.md)
-- [about_Trap](about_Trap.md)
+- [about_Break][01]
+- [about_Continue][02]
+- [about_Scopes][03]
+- [about_Throw][04]
+- [about_Trap][05]
+
+<!-- link references -->
+[01]: about_Break.md
+[02]: about_Continue.md
+[03]: about_Scopes.md
+[04]: about_Throw.md
+[05]: about_Trap.md
