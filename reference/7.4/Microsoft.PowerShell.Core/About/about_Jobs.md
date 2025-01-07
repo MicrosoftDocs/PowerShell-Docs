@@ -1,7 +1,7 @@
 ---
 description: Provides information about how PowerShell background jobs run a command or expression in the background without interacting with the current session.
 Locale: en-US
-ms.date: 08/29/2022
+ms.date: 01/07/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Jobs
@@ -253,7 +253,7 @@ results would be incomplete. You can use the `Receive-Job` cmdlet repeatedly to
 get all of the results. Use the **State** property to determine when the job is
 complete.
 
-You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When use
+You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When you
 use this parameter, the cmdlet doesn't return the command prompt until the job
 is completed and all results are available.
 
