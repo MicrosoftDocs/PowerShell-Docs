@@ -118,7 +118,7 @@ block.
 PowerShell does not recognize "NonsenseString" as a cmdlet or other item.
 Running this script returns the following result:
 
-```powershell
+```Output
 An error occurred.
 ```
 
@@ -133,16 +133,13 @@ two `catch` blocks:
 
 ```powershell
 try {
-   $wc = New-Object System.Net.WebClient
-   $wc.DownloadFile("http://www.contoso.com/MyDoc.doc","c:\temp\MyDoc.doc")
-}
-catch [System.Net.WebException],[System.IO.IOException] {
+    $wc = New-Object System.Net.WebClient
+    $wc.DownloadFile("http://www.contoso.com/MyDoc.doc","c:\temp\MyDoc.doc")
+} catch [System.Net.WebException],[System.IO.IOException] {
     "Unable to download MyDoc.doc from http://www.contoso.com."
-}
-catch {
+} catch {
     "An error occurred that could not be resolved."
 }
-
 ```
 
 The first `catch` block handles errors of the **System.Net.WebException** and
@@ -156,8 +153,9 @@ from the specified class. The following example contains a `catch` block that
 catches a "Command Not Found" error:
 
 ```powershell
-catch [System.Management.Automation.CommandNotFoundException]
-{"Inherited Exception" }
+catch [System.Management.Automation.CommandNotFoundException] {
+    "Inherited Exception"
+}
 ```
 
 The specified error type, **CommandNotFoundException**, inherits from the
@@ -197,8 +195,8 @@ also known as `$PSItem`. The object is of type **ErrorRecord**.
 ```powershell
 try { NonsenseString }
 catch {
-  Write-Host "An error occurred:"
-  Write-Host $_
+    Write-Host "An error occurred:"
+    Write-Host $_
 }
 ```
 
@@ -218,8 +216,8 @@ change the script to the following:
 ```powershell
 try { NonsenseString }
 catch {
-  Write-Host "An error occurred:"
-  Write-Host $_.ScriptStackTrace
+    Write-Host "An error occurred:"
+    Write-Host $_.ScriptStackTrace
 }
 ```
 
@@ -251,14 +249,11 @@ try {
     $wc = New-Object System.Net.WebClient
     $tempFile = "c:\temp\MyDoc.doc"
     $wc.DownloadFile("http://www.contoso.com/MyDoc.doc",$tempFile)
-}
-catch [System.Net.WebException],[System.IO.IOException] {
+} catch [System.Net.WebException],[System.IO.IOException] {
     "Unable to download MyDoc.doc from http://www.contoso.com."
-}
-catch {
+} catch {
     "An error occurred that could not be resolved."
-}
-finally {
+} finally {
     $wc.Dispose()
     if (Test-Path $tempPath) { Remove-item $tempFile }
 }
