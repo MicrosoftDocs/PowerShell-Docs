@@ -5,6 +5,8 @@ title: Attributes
 ---
 # 12. Attributes
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 An *attribute* object associates predefined system information with a *target element*, which can be
 a param block or a parameter ([§8.10][§8.10]). Each attribute object has an *attribute type*.
 
