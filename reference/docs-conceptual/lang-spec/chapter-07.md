@@ -5,6 +5,8 @@ title: Expressions
 ---
 # 7. Expressions
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 Syntax:
 
 ```Syntax

@@ -5,6 +5,8 @@ title: Modules
 ---
 # 11. Modules
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 ## 11.1 Introduction
 
 As stated in [§3.14][§3.14], a module is a self-contained reusable unit that allows PowerShell code to be

@@ -5,6 +5,8 @@ title: Appendix B - References
 ---
 # C. References
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 ANSI/IEEE 754−2008, _Binary floating-point arithmetic for microprocessor systems_.
 
 ECMA-334, _C# Language Specification_, 4th edition (June 2006),

@@ -5,6 +5,8 @@ title: Basic concepts
 ---
 # 3. Basic concepts
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 ## 3.1 Providers and drives
 
 A *provider* allows access to data and components that would not otherwise be easily accessible at

@@ -1,23 +1,11 @@
 ---
 description: This Language Specification describe the syntax, semantics, and behavior of the PowerShell language.
-ms.date: 05/19/2021
+ms.date: 01/08/2025
 title: Windows PowerShell Language Specification 3.0
 ---
 # Windows PowerShell Language Specification 3.0
 
-The _Windows PowerShell Language Specification 3.0_ was published in December 2012 and is based on
-PowerShell 3.0. The specification document is available as a Microsoft Word document from the
-Microsoft Download Center at:
-[https://www.microsoft.com/download/details.aspx?id=36389](https://www.microsoft.com/download/details.aspx?id=36389)
-
-That Word document has been converted for presentation here on Microsoft Learn. During conversion,
-some editorial changes have been made to accommodate formatting for the Docs platform. Some typos
-and minor errors have been corrected.
-
-> [!IMPORTANT]
-> The contents of this documentation may not reflect the current state of PowerShell in its current
-> version. There is no plan to update this documentation to reflect the current state. This
-> documentation is presented here for historical reference.
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
 
 ## 1. Introduction
 

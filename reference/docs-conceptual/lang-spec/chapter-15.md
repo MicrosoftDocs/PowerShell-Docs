@@ -5,6 +5,8 @@ title: Appendix A - Grammar
 ---
 # B. Grammar
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 This appendix contains summaries of the lexical and syntactic grammars found in the main document.
 
 > [!TIP]

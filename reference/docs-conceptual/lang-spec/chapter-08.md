@@ -5,6 +5,8 @@ title: Statements
 ---
 # 8. Statements
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 ## 8.1 Statement blocks and lists
 
 Syntax:
