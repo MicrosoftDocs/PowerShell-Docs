@@ -5,6 +5,8 @@ title: Variables
 ---
 # 5. Variables
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 A variable represents a storage location for a value, and that value has a type. Traditional
 procedural programming languages are statically typed; that is, the runtime type of a variable is
 that with which it was declared at compile time. Object-oriented languages add the idea of

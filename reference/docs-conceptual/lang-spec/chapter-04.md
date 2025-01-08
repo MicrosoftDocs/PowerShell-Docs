@@ -5,14 +5,16 @@ title: Types
 ---
 # 4. Types
 
-In PowerShell, each value has a type, and types fall into one of two main categories: **value types**
-and **reference types**. Consider the type `int`, which is typical of value types. A value of type
-`int` is completely self-contained; all the bits needed to represent that value are stored in that
-value, and every bit pattern in that value represents a valid value for its type. Now, consider the
-array type `int[]`, which is typical of reference types. A so-called value of an array type can hold
-either a reference to an object that actually contains the array elements, or the **null reference**
-whose value is `$null`. The important distinction between the two type categories is best
-demonstrated by the differences in their semantics during assignment. For example,
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
+In PowerShell, each value has a type, and types fall into one of two main categories: **value
+types** and **reference types**. Consider the type `int`, which is typical of value types. A value
+of type `int` is completely self-contained; all the bits needed to represent that value are stored
+in that value, and every bit pattern in that value represents a valid value for its type. Now,
+consider the array type `int[]`, which is typical of reference types. A so-called value of an array
+type can hold either a reference to an object that actually contains the array elements, or the
+**null reference** whose value is `$null`. The important distinction between the two type categories
+is best demonstrated by the differences in their semantics during assignment. For example,
 
 ```powershell
 $i = 100 # $i designates an int value 100

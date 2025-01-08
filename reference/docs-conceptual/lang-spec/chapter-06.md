@@ -5,6 +5,8 @@ title: Conversions
 ---
 # 6. Conversions
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 A *type conversion* is performed when a value of one type is used in a context that requires a
 different type. If such a conversion happens automatically it is known as *implicit conversion*. (A
 common example of this is with some operators that need to convert one or more of the values

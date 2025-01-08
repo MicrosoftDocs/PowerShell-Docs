@@ -5,6 +5,8 @@ title: Lexical structure
 ---
 # 2. Lexical Structure
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 ## 2.1 Grammars
 
 This specification shows the syntax of the PowerShell language using two grammars. The _lexical

@@ -5,6 +5,8 @@ title: Arrays
 ---
 # 9. Arrays
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 ## 9.1 Introduction
 
 PowerShell supports arrays of one or more dimensions with each dimension having zero or more
