@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Split operator to split one or more strings into substrings.
 Locale: en-US
-ms.date: 03/30/2021
+ms.date: 01/09/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
@@ -9,7 +9,6 @@ title: about_Split
 # about_Split
 
 ## Short description
-
 Explains how to use the Split operator to split one or more strings into
 substrings.
 
@@ -233,19 +232,17 @@ The RegexMatch options are:
   SimpleMatch.
 - **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
   operator is specified.
-- **CultureInvariant**: Ignores cultural differences in language
-  when evaluating the delimiter. Valid only with RegexMatch.
-- **IgnorePatternWhitespace**: Ignores unescaped whitespace and
-  comments marked with the number sign (#). Valid only with
-  RegexMatch.
-- **Multiline**: Multiline mode forces `^` and `$` to match the beginning
-  end of every line instead of the beginning and end of the input string.
-- **Singleline**: Singleline mode treats the input string as a *SingleLine*.
-  It forces the `.` character to match every character (including newlines),
+- **CultureInvariant**: Ignores cultural differences in language when
+  evaluating the delimiter. Valid only with RegexMatch.
+- **IgnorePatternWhitespace**: Ignores unescaped whitespace and comments marked
+  with the hash character (`#`). Valid only with RegexMatch.
+- **Multiline**: Multiline mode forces `^` and `$` to match the beginning end
+  of every line instead of the beginning and end of the input string.
+- **Singleline**: Singleline mode treats the input string as a *SingleLine*. It
+  forces the `.` character to match every character (including newlines),
   instead of matching every character EXCEPT the newline `\n`.
-- **ExplicitCapture**: Ignores non-named match groups so that only
-  explicit capture groups are returned in the result list. Valid
-  only with RegexMatch.
+- **ExplicitCapture**: Ignores non-named match groups so that only explicit
+  capture groups are returned in the result list. Valid only with RegexMatch.
 
 ## UNARY and BINARY SPLIT OPERATORS
 
