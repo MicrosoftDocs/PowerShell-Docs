@@ -1,7 +1,7 @@
 ---
 description: PowerShell functions allow you to create tools that can be reused in scripts.
 ms.custom: Contributor-mikefrobbins
-ms.date: 11/16/2022
+ms.date: 01/09/2025
 ms.reviewer: mirobb
 title: Functions
 ---
@@ -570,12 +570,12 @@ computer name if a value is not provided.
 
 ## Verbose Output
 
-While inline comments are useful, especially if you're writing some complex code, they never get
-seen by users unless they look into the code itself.
+While comments are useful, especially if you're writing some complex code, they never get seen by
+users unless they look into the code itself.
 
-The function shown in the following example has an inline comment in the `foreach` loop. While this
-particular comment may not be that difficult to locate, imagine if the function included hundreds of
-lines of code.
+The function shown in the following example has a in the `foreach` loop. While this particular
+comment may not be that difficult to locate, imagine if the function included hundreds of lines of
+code.
 
 ```powershell
 function Test-MrVerboseOutput {
@@ -587,15 +587,15 @@ function Test-MrVerboseOutput {
     )
 
     foreach ($Computer in $ComputerName) {
-        #Attempting to perform some action on $Computer <<-- Don't use
-        #inline comments like this, use write verbose instead.
+        # Attempting to perform some action on $Computer
         Write-Output $Computer
     }
 
 }
 ```
 
-A better option is to use `Write-Verbose` instead of inline comments.
+Rather than using comments like this, a better option is to use `Write-Verbose` so that the
+information can be seen by the user if they want it.
 
 ```powershell
 function Test-MrVerboseOutput {
@@ -614,14 +614,13 @@ function Test-MrVerboseOutput {
 }
 ```
 
-When the function is called without the **Verbose** parameter, the verbose output won't be
-displayed.
+When you call the function without the **Verbose** parameter, the verbose output isn't displayed.
 
 ```powershell
 Test-MrVerboseOutput -ComputerName Server01, Server02
 ```
 
-When it's called with the **Verbose** parameter, the verbose output will be displayed.
+When it's called with the **Verbose** parameter, the function displays the verbose output.
 
 ```powershell
 Test-MrVerboseOutput -ComputerName Server01, Server02 -Verbose

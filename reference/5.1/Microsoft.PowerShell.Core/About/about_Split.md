@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Split operator to split one or more strings into substrings.
 Locale: en-US
-ms.date: 03/30/2021
+ms.date: 01/09/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
@@ -161,8 +161,24 @@ Vanilla
 Strawberry-Blueberry
 ```
 
-Negative values are ignored.
+Negative values return the amount of substrings requested starting
+from the end of the input string.
 
+> [!NOTE]
+> Support for negative values was added in PowerShell 7.
+
+```powershell
+$c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
+$c -split ",", -5
+```
+
+```Output
+Mercury,Venus,Earth,Mars
+Jupiter
+Saturn
+Uranus
+Neptune
+```
 
 ### \<ScriptBlock\>
 
@@ -216,26 +232,17 @@ The RegexMatch options are:
   SimpleMatch.
 - **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
   operator is specified.
-- **CultureInvariant**: Ignores cultural differences in language
-  when evaluating the delimiter. Valid only with RegexMatch.
-- **IgnorePatternWhitespace**: Ignores unescaped whitespace and
-  comments marked with the number sign (#). Valid only with
-  RegexMatch.
-- **Multiline**: Multiline mode forces `^` and `$` to match the beginning
-  end of every line instead of the beginning and end of the input string.
-- **Singleline**: Singleline mode treats the input string as a *SingleLine*.
-  It forces the `.` character to match every character (including newlines),
+- **CultureInvariant**: Ignores cultural differences in language when
+  evaluating the delimiter. Valid only with RegexMatch.
+- **IgnorePatternWhitespace**: Ignores unescaped whitespace and comments marked
+  with the hash character (`#`). Valid only with RegexMatch.
+- **Multiline**: Multiline mode forces `^` and `$` to match the beginning end
+  of every line instead of the beginning and end of the input string.
+- **Singleline**: Singleline mode treats the input string as a *SingleLine*. It
+  forces the `.` character to match every character (including newlines),
   instead of matching every character EXCEPT the newline `\n`.
-- **ExplicitCapture**: Ignores non-named match groups so that only
-  explicit capture groups are returned in the result list. Valid
-  only with RegexMatch.
-
-> [!NOTE]
-> SingleLine is the default behavior. Singleline and Multiline
-> cannot be used together with the options parameter. This was resolved in
-> PowerShell 6.0.
-> The work around is by using *Mode-Modifiers* in your regular expression.
-> You can read more about mode modifiers in [Regular Expression Options](/dotnet/standard/base-types/regular-expression-options)
+- **ExplicitCapture**: Ignores non-named match groups so that only explicit
+  capture groups are returned in the result list. Valid only with RegexMatch.
 
 ## UNARY and BINARY SPLIT OPERATORS
 
@@ -390,6 +397,19 @@ b
 c,d,e,f,g,h
 ```
 
+The following statement splits a string into three substrings
+starting from the end of the string.
+
+```powershell
+"a,b,c,d,e,f,g,h" -split ",", -3
+```
+
+```Output
+a,b,c,d,e,f
+g
+h
+```
+
 The following statement splits two strings into three substrings.
 (The limit is applied to each string independently.)
 
@@ -423,7 +443,7 @@ $a = @'
 $a -split "^\d", 0, "multiline"
 ```
 
-```output
+```Output
 
 The first line.
 

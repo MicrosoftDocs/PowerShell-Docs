@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/09/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Csv
@@ -42,7 +42,7 @@ delimiter.
 
 You can also use the `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets to convert objects to CSV
 strings (and back). These cmdlets are the same as the `Export-CSV` and `Import-Csv` cmdlets, except
-that they do not deal with files.
+that they work with data from the pipeline instead of from files.
 
 If a header row entry in a CSV file contains an empty or null value, PowerShell inserts a default
 header row name and displays a warning message.
@@ -141,8 +141,8 @@ properties in the resulting imported object.
 ```powershell
 Start-Job -ScriptBlock { Get-Process } | Export-Csv -Path .\Jobs.csv -NoTypeInformation
 $Header = 'State', 'MoreData', 'StatusMessage', 'Location', 'Command', 'StateInfo', 'Finished',
-  'InstanceId', 'Id', 'Name', 'ChildJobs', 'BeginTime', 'EndTime', 'JobType', 'Output', 'Error',
-  'Progress', 'Verbose', 'Debug', 'Warning', 'Information'
+          'InstanceId', 'Id', 'Name', 'ChildJobs', 'BeginTime', 'EndTime', 'JobType', 'Output',
+          'Error', 'Progress', 'Verbose', 'Debug', 'Warning', 'Information'
 # Delete the default header from file
 $A = Get-Content -Path .\Jobs.csv
 $A = $A[1..($A.Count - 1)]
@@ -247,7 +247,7 @@ objects are stored in the `$A` variable. The `Get-Member` cmdlet shows the prope
 **Header** parameter. The `Where-Object` cmdlet selects objects with the **TopicTitle** property
 that includes **alias**.
 
-### Example 6: Import a CSV that is missing a value
+### Example 6: Import a CSV that's missing a value
 
 This example shows how the `Import-Csv` cmdlet in PowerShell responds when the header row in a CSV
 file includes a null or empty value. `Import-Csv` substitutes a default name for the missing header
@@ -269,7 +269,7 @@ Import-Csv -Path .\Projects.csv
 ```
 
 ```Output
-WARNING: One or more headers were not specified. Default names starting with "H" have been used in
+WARNING: One or more headers weren't specified. Default names starting with "H" have been used in
 place of any missing headers.
 
 ProjectID ProjectName H1      Completed
@@ -279,24 +279,9 @@ ProjectID ProjectName H1      Completed
 469       Marketing   Europe  False
 ```
 
-```powershell
-(Import-Csv -Path .\Projects.csv).H1
-```
-
-```Output
-WARNING: One or more headers were not specified. Default names starting with "H" have been used in
-place of any missing headers.
-Redmond
-FarEast
-Europe
-```
-
-To create your Projects.csv file, use the values shown in the example's `Get-Content` output.
-
-The `Get-Content` cmdlet displays the Projects.csv file. The header row is missing a value between
-**ProjectName** and **Completed**. The `Import-Csv` cmdlet imports the Projects.csv file and
-displays a warning message because **H1** is a default header name. The `(Import-Csv -Path
-.\Projects.csv).H1` command gets the **H1** property values and displays a warning.
+The `Get-Content` cmdlet displays the `Projects.csv` file. The header row is missing a value between
+**ProjectName** and **Completed**. The `Import-Csv` cmdlet imports the `Projects.csv` file and
+displays a warning message because **H1** is a default header name.
 
 ## PARAMETERS
 
@@ -309,8 +294,8 @@ Enter a character, such as a colon (`:`). To specify a semicolon (`;`) enclose i
 quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
 quotation marks.
 
-If you specify a character other than the actual string delimiter in the file, `Import-Csv` cannot
-create the objects from the CSV strings and will return the CSV strings.
+If you specify a character other than the actual string delimiter in the file, `Import-Csv` can't
+create the objects from the CSV strings and returns the full CSV strings.
 
 ```yaml
 Type: System.Char
@@ -357,7 +342,7 @@ Accept wildcard characters: False
 Specifies an alternate column header row for the imported file. The column header determines the
 property names of the objects created by `Import-Csv`.
 
-Enter column headers as a character-separated list. Do not enclose the header string in quotation
+Enter column headers as a character-separated list. Don't enclose the header string in quotation
 marks. Enclose each column header in single quotation marks.
 
 If you enter fewer column headers than there are data columns, the remaining data columns are
@@ -382,7 +367,7 @@ Accept wildcard characters: False
 ### -LiteralPath
 
 Specifies the path to the CSV file to import. Unlike **Path**, the value of the **LiteralPath**
-parameter is used exactly as it is typed. No characters are interpreted as wildcards. If the path
+parameter is used exactly as it's typed. No characters are interpreted as wildcards. If the path
 includes escape characters, enclose it in single quotation marks. Single quotation marks tell
 PowerShell not to interpret any characters as escape sequences.
 
@@ -457,7 +442,7 @@ Windows PowerShell includes the following aliases for `Import-Csv`:
 
 - `ipcsv`
 
-Because the imported objects are CSV versions of the object type, they are not recognized and
+Because the imported objects are CSV versions of the object type, they're not recognized and
 formatted by the PowerShell type formatting entries that format the non-CSV versions of the object
 type.
 
@@ -476,7 +461,7 @@ If the column header row is missing a value or contains a null or empty value, `
 
 In the CSV file, each object is represented by a character-separated list of the property values of
 the object. The property values are converted to strings by using the **ToString()** method of the
-object, so they are represented by the name of the property value. `Export-Csv` does not export the
+object, so they're represented by the name of the property value. `Export-Csv` doesn't export the
 methods of the object.
 
 ## RELATED LINKS
