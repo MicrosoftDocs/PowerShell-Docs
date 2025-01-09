@@ -292,22 +292,6 @@ ProjectID ProjectName H1      Completed
 469       Marketing   Europe  False
 ```
 
-The following command gets the **H1** property values and displays a warning.
-
-```powershell
-(Import-Csv -Path .\Projects.csv).H1
-```
-
-```Output
-WARNING: One or more headers were not specified. Default names starting with "H" have been used in
-place of any missing headers.
-Redmond
-FarEast
-Europe
-```
-
-To create your `Projects.csv` file, use the values shown in the example's `Get-Content` output.
-
 The `Get-Content` cmdlet displays the `Projects.csv` file. The header row is missing a value between
 **ProjectName** and **Completed**. The `Import-Csv` cmdlet imports the `Projects.csv` file and
 displays a warning message because **H1** is a default header name.
