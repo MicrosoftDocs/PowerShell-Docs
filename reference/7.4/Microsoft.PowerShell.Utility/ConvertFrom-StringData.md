@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/09/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-stringdata?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-StringData
@@ -14,8 +14,6 @@ title: ConvertFrom-StringData
 Converts a string containing one or more key and value pairs to a hash table.
 
 ## SYNTAX
-
-### All
 
 ```
 ConvertFrom-StringData [-StringData] <String> [[-Delimiter] <Char>] [<CommonParameters>]
@@ -38,7 +36,7 @@ machine translation tools. That is, the cmdlet can interpret backslashes (`\`) a
 in the string data by using the
 [Regex.Unescape Method](/dotnet/api/system.text.regularexpressions.regex.unescape), instead of the
 PowerShell backtick character (`` ` ``) that would normally signal the end of a line in a script.
-Inside the here-string, the backtick character does not work. You can also preserve a literal
+Inside the here-string, the backtick character doesn't work. You can also preserve a literal
 backslash in your results by escaping it with a preceding backslash, like this: `\\`. Unescaped
 backslash characters, such as those that are commonly used in file paths, can render as illegal
 escape sequences in your results.
@@ -50,14 +48,14 @@ PowerShell 7 adds the **Delimiter** parameter.
 ### Example 1: Convert a single-quoted here-string to a hash table
 
 This example converts a single-quoted here-string of user messages into a hash table. In a
-single-quoted string, values are not substituted for variables and expressions are not evaluated.
+single-quoted string, values aren't substituted for variables and expressions aren't evaluated.
 The `ConvertFrom-StringData` cmdlet converts the value in the `$Here` variable to a hash table.
 
 ```powershell
 $Here = @'
 Msg1 = The string parameter is required.
 Msg2 = Credentials are required for this command.
-Msg3 = The specified variable does not exist.
+Msg3 = The specified variable doesn't exist.
 '@
 ConvertFrom-StringData -StringData $Here
 ```
@@ -65,7 +63,7 @@ ConvertFrom-StringData -StringData $Here
 ```Output
 Name                           Value
 ----                           -----
-Msg3                           The specified variable does not exist.
+Msg3                           The specified variable doesn't exist.
 Msg2                           Credentials are required for this command.
 Msg1                           The string parameter is required.
 ```
@@ -121,8 +119,8 @@ Name                           Disks.ps1
 
 The value of the **StringData** parameter is a here-string, instead of a variable that contains a
 here-string. Either format is valid. The here-string includes a comment about one of the strings.
-`ConvertFrom-StringData` ignores single-line comments, but the `#` character must be the first
-non-whitespace character on the line. All characters on the line after the `#` are ignored.
+`ConvertFrom-StringData` ignores single-line comments, but the hash character (`#`) must be the
+first non-whitespace character on the line.
 
 ### Example 4: Convert a string to a hash table
 
@@ -144,9 +142,9 @@ Top              Red
 To satisfy the condition that each key-value pair must be on a separate line, the string uses the
 PowerShell newline character (`` `n ``) to separate the pairs.
 
-### Example 5: Use ConvertFrom-StringData in the DATA section of a script
+### Example 5: Use in the `DATA` section of a script
 
-This example shows a `ConvertFrom-StringData` command used in the **DATA** section of a script.
+This example shows a `ConvertFrom-StringData` command used in the `DATA` section of a script.
 The statements below the **DATA** section display the text to the user.
 
 ```powershell
@@ -167,7 +165,7 @@ Text002          The $MyNotebook variable contains the name of the user's privat
 ```
 
 Because the text includes variable names, it must be enclosed in a single-quoted string so that the
-variables are interpreted literally and not expanded. Variables are not permitted in the **DATA**
+variables are interpreted literally and not expanded. Variables aren't permitted in the `DATA`
 section.
 
 ### Example 6: Use the pipeline operator to pass a string
@@ -180,7 +178,7 @@ and the result in the `$Hash` variable.
 $Here = @'
 Msg1 = The string parameter is required.
 Msg2 = Credentials are required for this command.
-Msg3 = The specified variable does not exist.
+Msg3 = The specified variable doesn't exist.
 '@
 $Hash = $Here | ConvertFrom-StringData
 $Hash
@@ -189,7 +187,7 @@ $Hash
 ```Output
 Name     Value
 ----     -----
-Msg3     The specified variable does not exist.
+Msg3     The specified variable doesn't exist.
 Msg2     Credentials are required for this command.
 Msg1     The string parameter is required.
 ```
@@ -197,7 +195,7 @@ Msg1     The string parameter is required.
 ### Example 7: Use escape characters to add new lines and return characters
 
 This example shows the use of escape characters to create new lines and return characters in source
-data. The escape sequence `\n` is used to create new lines within a block of text that is associated
+data. The escape sequence `\n` is used to create new lines within a block of text that's associated
 with a name or item in the resulting hash table.
 
 ```powershell
@@ -216,7 +214,7 @@ Value : Let there be some more test made of my metal,
 Name  : Vincentio
 Value : Heaven doth with us as we with torches do,
         Not light them for themselves; for if our virtues
-        Did not go forth of us, 'twere all alike
+        Didn't go forth of us, 'twere all alike
         As if we had them not.
 ```
 
@@ -264,10 +262,10 @@ The value of this parameter must be a string that contains one or more key-value
 key-value pair must be on a separate line, or each pair must be separated by newline characters
 (`` `n ``).
 
-You can include comments in the string, but the comments cannot be on the same line as a key-value
-pair. `ConvertFrom-StringData` ignores single-line comments. The `#` character must be the first
-non-whitespace character on the line. All characters on the line after the `#` are ignored. The
-comments are not included in the hash table.
+You can include comments in the string, but the comments can't be on the same line as a key-value
+pair. `ConvertFrom-StringData` ignores single-line comments. The hash character (`#`) must be the
+first non-whitespace character on the line. All characters on the line after the hash character
+(`#`) are ignored. The comments aren't included in the hash table.
 
 A here-string is a string consisting of one or more lines. Quotation marks within the here-string
 are interpreted literally as part of the string data. For more information, see
