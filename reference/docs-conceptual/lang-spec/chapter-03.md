@@ -328,19 +328,19 @@ Unless dot source notation ([§3.5.5][§3.5.5]) is used, each of the following c
 Consider the following example:
 
 ```powershell
-# start of script
+# Start of script
 $x = 2; $y = 3
 Get-Power $x $y
 
-#function defined in script
-
-function Get-Power([int]$x, [int]$y)
-{
-if ($y -gt 0) { return $x * (Get-Power $x (--$y)) }
-
-else { return 1 }
+# Function defined in script
+function Get-Power([int]$x, [int]$y) {
+    if ($y -gt 0) {
+        return $x * (Get-Power $x (--$y))
+    } else {
+        return 1
+    }
 }
-# end of script
+# End of script
 ```
 
 The scope of the variables `$x` and `$y` created in the script is the body of that script, including
