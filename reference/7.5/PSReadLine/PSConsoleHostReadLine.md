@@ -2,7 +2,7 @@
 external help file: PSReadLine-help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 06/27/2024
+ms.date: 01/09/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/psconsolehostreadline?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: PSConsoleHostReadLine
