@@ -370,8 +370,8 @@ beginning with `#` as comments. For more information, see:
 [03]: /powershell/scripting/developer/help/writing-comment-based-help-topics
 [04]: #special-comments
 [05]: about_Comment_Based_Help.md
-[06]: about_quoting_rules#double-quoted-strings
-[07]: about_quoting_rules#single-quoted-strings
+[06]: about_quoting_rules.md#double-quoted-strings
+[07]: about_quoting_rules.md#single-quoted-strings
 [08]: about_Regular_Expressions.md
 [09]: about_Requires.md
 [10]: about_signing.md
