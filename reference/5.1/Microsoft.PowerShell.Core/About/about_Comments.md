@@ -127,14 +127,14 @@ function Get-Function { }
 
 For more information, see:
 
-- [about_Comment_Based_Help][05].
+- [about_Comment_Based_Help][05]
 - [Writing Comment-Based Help Topics][03]
 
 ### `#Requires`
 
 The `#Requires` statement prevents a script from running unless the current
-PowerShell sessions meets the specified prerequisites. `#Requires` can appear
-on any line in a script, but is processed in the same manner regardless of
+PowerShell session meets the specified prerequisites. `#Requires` can appear on
+any line in a script, but is processed in the same manner regardless of
 position.
 
 ```powershell
@@ -171,7 +171,7 @@ sections of code. For PowerShell, the region markers are comments that begin
 with `#region` and end with `#endregion`. The region markers must be at the
 beginning of a line. The region markers are supported in the PowerShell ISE and
 in Visual Studio Code with the PowerShell extension. The region markers aren't
-a part of the PowerShell language. PowerShell interprets them as a regular
+a part of the PowerShell language. PowerShell interprets them as regular
 comments.
 
 For more information, see the _Folding_ section of the
