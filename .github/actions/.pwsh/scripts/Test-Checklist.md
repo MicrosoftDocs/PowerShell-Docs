@@ -8,7 +8,7 @@ Inspects Markdown to find checklist items and their status
 
 ### __AllParameterSets (Default)
 
-```syntax
+```Syntax
 .\Test-Checklist.ps1
     [-Body] <string>
     [[-ReferenceUrl] <string>]
