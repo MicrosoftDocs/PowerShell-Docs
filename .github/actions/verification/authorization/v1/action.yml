@@ -8,7 +8,7 @@ inputs:
     description: |
       The permissions a user requires to perform a given task. Must be a comma-separated string of
       valid permissions. Valid permissions are (case-insensitive):
-      
+
       - `Admin`
       - `Maintain`
       - `Pull`
@@ -38,7 +38,7 @@ inputs:
       `pull_request` or `pull_request_target` trigger. You can use those settings together. For
       more information, see the documentation for the [branches][syntax-docs-branches] and
       [paths][syntax-docs-paths] settings for workflows in GitHub's documentation.
-      
+
       To specify multiple branches, separate each branch
       by a comma and/or newline, like `branch: live, production`. To specify a filepath, specify one
       or more path separated by a comma and/or a newline, like `path: foo/**/*.md, bar/*.json`.
@@ -80,7 +80,7 @@ runs:
   steps:
     - shell: pwsh
       env:
-        INPUT_REPOSITORY:  ${{ inputs.repository }}
+        INPUT_REPOSITORY: ${{ inputs.repository }}
         INPUT_PERMISSIONS: ${{ inputs.permissions }}
         INPUT_TARGET: ${{ inputs.target }}
         INPUT_USER: ${{ inputs.user }}
@@ -99,7 +99,7 @@ runs:
           $ActionRootPath = Split-Path -Parent -Path $ActionRootPath
         }
         "Action Root Path: $ActionRootPath"
-        
+
         $JoinPathParams = @{
           Path = $ActionRootPath
           ChildPath = '.pwsh'

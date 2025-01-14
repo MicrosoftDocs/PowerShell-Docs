@@ -16,7 +16,7 @@
 .PARAMETER BodyText
     The raw markdown text to write as a comment on the PR.
 .PARAMETER BodyFile
-    The  path to the markdown file to write as a comment on the PR. Due to the way GitHub mistreats
+    The path to the markdown file to write as a comment on the PR. Due to the way GitHub mistreats
     soft line breaks as hard line breaks in comments (unlike files), the markdown in a body file is
     converted to HTML when writing the comment. From the user perspective, it's a normal comment.
 .EXAMPLE

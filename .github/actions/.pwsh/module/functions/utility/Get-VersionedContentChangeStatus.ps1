@@ -47,7 +47,7 @@
     Get-VersionedContentChangeStatus -ChangedContent $Changes | ConvertTo-Json -Depth 3
     ```
 
-    ```output
+    ```Output
     [
         {
             "VersionRelativePath": "Microsoft.PowerShell.Core/About/about_Pwsh.md",
@@ -123,7 +123,7 @@ function Get-VersionedContentChangeStatus {
                         break
                     }
                 }
-                
+
                 if ($AddEntry) {
                     $VersionedContent += [pscustomobject]@{
                         VersionRelativePath = $VersionRelativePath

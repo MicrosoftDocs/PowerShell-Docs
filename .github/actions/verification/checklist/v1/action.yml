@@ -58,7 +58,7 @@ runs:
     - shell: pwsh
       env:
         INPUT_REFERENCE_URL: ${{ inputs.reference_url }}
-        INPUT_BODY:  ${{ inputs.body }}
+        INPUT_BODY: ${{ inputs.body }}
       run: |
         Write-Output "::group::Generic Setup"
         $ActionPath = Resolve-Path '${{ github.action_path }}' | Select-Object -ExpandProperty Path
@@ -73,7 +73,7 @@ runs:
           $ActionRootPath = Split-Path -Parent -Path $ActionRootPath
         }
         "Action Root Path: $ActionRootPath"
-        
+
         $JoinPathParams = @{
           Path = $ActionRootPath
           ChildPath = '.pwsh'
@@ -96,7 +96,7 @@ runs:
         Write-Output "::group::Parameter Validation"
         $Parameters = Get-ActionScriptParameter -ParameterHandler $ParameterHandlers
         Write-Output "::endgroup::"
-        
+
         Write-Output "::group::Verify Checklist"
         . $ScriptPath @Parameters
         Write-Output "::endgroup::"

@@ -1,7 +1,7 @@
 # Action Scripts
 
-This folder contains the scripts used by the GitHub Actions (GHA). Each script is used by a different
-action:
+This folder contains the scripts used by the GitHub Actions (GHA). Each script is used by a
+different action:
 
 |                   Script                   |                       Action                       |
 | :----------------------------------------- | :------------------------------------------------- |

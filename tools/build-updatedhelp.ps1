@@ -1,7 +1,7 @@
 <#
     Usage:
 
-    1. Clone the docs respository
+    1. Clone the docs repository
        cd C:\temp
        git clone https://github.com/MicrosoftDocs/PowerShell-Docs.git
 
@@ -35,9 +35,9 @@ $pandocSourceURL = "https://github.com/jgm/pandoc/releases/download/$panDocVersi
 
 $docToolsPath = New-Item (Join-Path $tempDir "doctools") -ItemType Directory -Force
 
-$pandoc = Get-Command pandoc.exe -ea SilentlyContinue
+$pandoc = Get-Command pandoc.exe -ErrorAction SilentlyContinue
 if ($pandoc) {
-    $version = (& $pandoc.Source --version | Select-String -pattern 'pandoc\.exe').Line.Split(' ')[-1]
+    $version = (& $pandoc.Source --version | Select-String -Pattern 'pandoc\.exe').Line.Split(' ')[-1]
     if ($version -ge $panDocVersion) {
         Write-Host "Found Pandoc version $version."
         $pandocExePath = $pandoc.Source
@@ -55,7 +55,7 @@ if ($needPandoc) {
 
 
 $platyPSversion = "0.14.0"
-$platyps = Get-Module -list platyps
+$platyps = Get-Module -List platyps
 
 if ($platyps) {
     if ($platyps.Version.ToString() -ge $platyPSversion) {
@@ -136,7 +136,7 @@ Get-ChildItem $VersionFolder -Directory | ForEach-Object -Process {
 
     if (Test-Path $AboutFolder) {
         Write-Verbose "AboutFolder = $AboutFolder"
-        Get-ChildItem "$aboutfolder/about_*.md" | ForEach-Object {
+        Get-ChildItem "$AboutFolder/about_*.md" | ForEach-Object {
             $aboutFileFullName = $_.FullName
             $aboutFileOutputName = "$($_.BaseName).help.txt"
             $aboutFileOutputFullName = Join-Path $MamlOutputFolder $aboutFileOutputName
