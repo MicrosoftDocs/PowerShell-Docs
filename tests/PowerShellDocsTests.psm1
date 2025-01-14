@@ -21,7 +21,7 @@ function Test-PSPesterResults
         throw "Test result file '$testResultsFile' not found."
     }
 
-    $x = [xml](Get-Content -raw $testResultsFile)
+    $x = [xml](Get-Content -Raw $testResultsFile)
     if ([int]$x.'test-results'.failures -gt 0)
     {
         logerror "TEST FAILURES"

@@ -158,7 +158,7 @@ statements, one of which is arbitrary code injected by the user.
 pwnd!
 ```
 
-### Use the `EscapeSingleQuotedStringContent()` method
+#### Use the `EscapeSingleQuotedStringContent()` method
 
 To protect against the user inserting their own single quote characters to exploit the function you
 must use the `EscapeSingleQuotedStringContent()` API. This is a static public method of the PowerShell

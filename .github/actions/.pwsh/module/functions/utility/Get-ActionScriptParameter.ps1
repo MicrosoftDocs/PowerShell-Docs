@@ -7,7 +7,7 @@
 .PARAMETER ParameterHandler
     Specify one or more parameter handlers, such as those as kept in an action's `Parameters.psd1`
     file. Make sure the hashtable in those data files is converted to a **PSCustomObject**.
-    
+
     Parameter handlers have the following properties:
 
     - **Name:** The name of the _input_ parameter to the action. This is
@@ -75,7 +75,7 @@ function Get-ActionScriptParameter {
             process {
                 $Stringified = $ScriptBlock.Ast.EndBlock.Extent.Text?.Trim()
                 # Scriptblocks from data files get wrapped in extra curly braces, preventing them
-                # from being invokable. Normally just the contents shows up when calling ToString()
+                # from being invocable. Normally just the contents shows up when calling ToString()
                 # on a scriptblock, so this is one way to tell.
                 if ($Stringified -match '^\{') {
                     $NestedBlock = $ScriptBlock.Ast.FindAll($Predicate, $true)

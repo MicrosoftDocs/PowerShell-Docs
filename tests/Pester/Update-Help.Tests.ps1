@@ -95,7 +95,7 @@ function GetFiles
         [string]$path
     )
 
-    Get-ChildItem $path -Include $fileType -Recurse -ea SilentlyContinue | Select-Object -ExpandProperty FullName
+    Get-ChildItem $path -Include $fileType -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
 }
 
 function ValidateInstalledHelpContent
@@ -105,7 +105,7 @@ function ValidateInstalledHelpContent
         [string]$moduleName
     )
 
-    $helpFilesInstalled = @(GetFiles -path $testCases[$moduleName].HelpInstallationPath | ForEach-Object {Split-Path $_ -Leaf})
+    $helpFilesInstalled = @(GetFiles -Path $testCases[$moduleName].HelpInstallationPath | ForEach-Object {Split-Path $_ -Leaf})
     $expectedHelpFiles = @($testCases[$moduleName].HelpFiles)
     $helpFilesInstalled.Count | Should Be $expectedHelpFiles.Count
 
@@ -126,7 +126,7 @@ function RunUpdateHelpTests
         It "Validate Update-Help for module '$moduleName'" {
 
             # If the help file is already installed, delete it.
-            Get-ChildItem $testCases[$moduleName].HelpInstallationPath -Include @("about_*.txt","*help.xml") -Recurse -ea SilentlyContinue |
+            Get-ChildItem $testCases[$moduleName].HelpInstallationPath -Include @("about_*.txt","*help.xml") -Recurse -ErrorAction SilentlyContinue |
             Remove-Item -Force -ErrorAction SilentlyContinue
 
             if ($useSourcePath)

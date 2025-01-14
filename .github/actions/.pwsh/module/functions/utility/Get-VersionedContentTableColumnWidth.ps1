@@ -41,9 +41,9 @@
         [PSCustomObject]@{
             VersionRelativePath = 'foo.md'
             Versions = @(
-                @{ Version = '1.1'; ChangeType =  'N/A' }
-                @{ Version = '1.2'; ChangeType =  'unchanged' }
-                @{ Version = '1.3'; ChangeType =  'modified' }
+                @{ Version = '1.1'; ChangeType = 'N/A' }
+                @{ Version = '1.2'; ChangeType = 'unchanged' }
+                @{ Version = '1.3'; ChangeType = 'modified' }
             )
         }
         [PSCustomObject]@{
@@ -60,7 +60,7 @@
     "Version Column Width:       $VersionWidth"
     ```
 
-    ```output
+    ```Output
     Relative Path Column Width: 30
     Version Column Width:       12
     ```
@@ -83,9 +83,9 @@
         [PSCustomObject]@{
             VersionRelativePath = 'foo.md'
             Versions = @(
-                @{ Version = '1.1'; ChangeType =  'N/A' }
-                @{ Version = '1.2'; ChangeType =  'unchanged' }
-                @{ Version = '1.3'; ChangeType =  'modified' }
+                @{ Version = '1.1'; ChangeType = 'N/A' }
+                @{ Version = '1.2'; ChangeType = 'unchanged' }
+                @{ Version = '1.3'; ChangeType = 'modified' }
             )
         }
         [PSCustomObject]@{
@@ -100,10 +100,10 @@
     Get-VersionedContentTableColumnWidth -ChangeSet $ChangeSet -RelativePath -DefaultWidth 5
     ```
 
-    ```output
+    ```Output
     14
     ```
-    
+
     The first command constructs an arbitrary changeset.
 
     The second command uses this cmdlet to determine the width of the **RelativePath** column for a
@@ -141,7 +141,7 @@ function Get-VersionedContentTableColumnWidth {
     )
 
     process {
-        #region    RelativePath
+        #region RelativePath
         if ($RelativePath -or !$Version) {
             # Set the default width for RelativePath unless specified by user
             $RelativePathWidth = ($DefaultWidth -lt 1) ? 30 : $DefaultWidth

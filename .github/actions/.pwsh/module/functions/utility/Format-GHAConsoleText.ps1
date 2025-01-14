@@ -22,7 +22,7 @@
     Format-GHAConsoleText -Text $Text
     ```
 
-    ```output
+    ```Output
     This is a very long string with multiple paragraphs. It will certainly
     need to be reflowed in a few different places. It's not always easy to
     read long lines like this in the console.

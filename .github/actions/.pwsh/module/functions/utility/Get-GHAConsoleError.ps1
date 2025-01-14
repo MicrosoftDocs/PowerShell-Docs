@@ -31,7 +31,7 @@ function Get-GHAConsoleError {
         [parameter(ValueFromPipeline)]
         [psobject]$InputObject
     )
-  
+
     begin {
         $Properties = @(
             'FullyQualifiedErrorId'
@@ -50,10 +50,10 @@ function Get-GHAConsoleError {
             'ScriptStackTrace'
         )
     }
-  
+
     process {
         Get-Error @PSBoundParameters | Select-Object -Property $Properties
     }
-  
+
     end {}
 }
