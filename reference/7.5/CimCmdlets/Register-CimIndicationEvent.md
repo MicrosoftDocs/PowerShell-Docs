@@ -74,7 +74,7 @@ Get-Event -SourceIdentifier "ProcessStarted"
 ```
 
 The `Get-Event` cmdlet gets the events with **ProcessStarted** subscription. For more information,
-see [Get-Event](../Microsoft.PowerShell.Utility/Get-Event.md).
+see [Get-Event][01].
 
 > [!NOTE]
 > For this example, you must run PowerShell as an Administrator.
@@ -98,13 +98,12 @@ script block for **Action**, which uses the `$event` variable to access the even
 $action = {
   $name = $event.SourceEventArgs.NewEvent.ProcessName
   $id = $event.SourceEventArgs.NewEvent.ProcessId
-  Write-Host -Object "New Process Started : Name = $name
- ID = $id"
+  Write-Host -Object "New Process Started : Name = $name ID = $id"
 }
 Register-CimIndicationEvent -ClassName 'Win32_ProcessStartTrace' -SourceIdentifier "ProcessStarted" -Action $action
 ```
 
-For more information, see [Win32_ProcessStartTrace](/previous-versions/windows/desktop/krnlprov/win32-processstarttrace).
+For more information, see [Win32_ProcessStartTrace][02].
 
 ### Example 4: Register the events on a remote computer
 
@@ -127,8 +126,7 @@ event is raised, instead of sending the event to the event queue. Enclose the co
 
 The script block specified with **Action** can include the `$Event`, `$EventSubscriber`, `$Sender`,
 `$SourceEventArgs`, and `$SourceArgs` automatic variables, which provide information about the event
-to the **Action** script block. For more information, see
-[About Automatic Variables](../microsoft.powershell.core/about/about_automatic_variables.md).
+to the **Action** script block. For more information, see [About Automatic Variables][03].
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -146,8 +144,7 @@ Accept wildcard characters: False
 
 Runs the command using the specified CIM session. Enter a variable that contains the CIM session, or
 a command that creates or gets the CIM session, such as the `New-CimSession` or `Get-CimSession`
-cmdlets. For more information, see
-[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+cmdlets. For more information, see [about_CimSession][04].
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession
@@ -373,8 +370,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][05].
 
 ## INPUTS
 
@@ -399,14 +395,21 @@ This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
-[Get-Event](../microsoft.powershell.utility/get-event.md)
+[Get-Event][01]
 
-[Remove-Event](../microsoft.powershell.utility/remove-event.md)
+[Remove-Event](../Microsoft.Powershell.Utility/Remove-Event.md)
 
-[Unregister-Event](../microsoft.powershell.utility/unregister-event.md)
+[Unregister-Event](../Microsoft.Powershell.Utility/Unregister-Event.md)
 
-[Write-Host](../microsoft.powershell.utility/write-host.md)
+[Write-Host](../Microsoft.Powershell.Utility/Write-Host.md)
 
 [Get-CimSession](Get-CimSession.md)
 
 [New-CimSession](New-CimSession.md)
+
+<!-- link references -->
+[01]: ../Microsoft.PowerShell.Utility/Get-Event.md
+[02]: /previous-versions/windows/desktop/krnlprov/win32-processstarttrace
+[03]: ../Microsoft.Powershell.Core/About/about_Automatic_Variables.md
+[04]: ../Microsoft.PowerShell.Core/About/about_CimSession.md
+[05]: https://go.microsoft.com/fwlink/?LinkID=113216

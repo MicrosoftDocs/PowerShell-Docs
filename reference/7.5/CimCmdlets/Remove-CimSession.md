@@ -57,7 +57,7 @@ session.
 ### Example 1: Remove all the CIM sessions
 
 This example retrieves all the available CIM sessions on the local computer using the
-[Get-CimSession](Get-CimSession.md) cmdlet, and then removes them using the `Remove-CimSession`.
+[Get-CimSession][01] cmdlet, and then removes them using the `Remove-CimSession`.
 
 ```powershell
 Get-CimSession | Remove-CimSession
@@ -87,9 +87,8 @@ Remove-CimSession -Name a* -WhatIf
 Specifies the session objects of the CIM sessions to close.
 
 Enter a variable that contains the CIM session, or a command that creates or gets the CIM session,
-such as the [`New-CimSession`](New-CimSession.md) or [`Get-CimSession`](Get-CimSession.md) cmdlets.
-For more information, see
-[about_CimSessions](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+such as the [`New-CimSession`][02] or [`Get-CimSession`][01] cmdlets.
+For more information, see [about_CimSessions][03].
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession[]
@@ -126,7 +125,7 @@ Specifies the ID of the CIM session to remove. Specify one or more IDs separated
 the range operator (`..`) to specify a range of IDs. An **Id** is an integer that uniquely
 identifies the CIM session in the current PowerShell session.
 
-For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
+For more information about the range operator, see [about_Operators][04].
 
 ```yaml
 Type: System.UInt32[]
@@ -146,7 +145,8 @@ Specifies the instance ID of the CIM session to remove. **InstanceId** is a Glob
 Identifier (GUID) that uniquely identifies a CIM session. The **InstanceId** is unique, even when
 you have multiple sessions running in PowerShell.
 
-The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM session.
+The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM
+session.
 
 ```yaml
 Type: System.Guid[]
@@ -213,8 +213,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][05].
 
 ## INPUTS
 
@@ -239,8 +238,15 @@ This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
-[Get-CimSession](Get-CimSession.md)
+[Get-CimSession][01]
 
-[New-CimSession](New-CimSession.md)
+[New-CimSession][02]
 
-[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
+[about_CimSession][03]
+
+<!-- link references -->
+[01]: Get-CimSession.md
+[02]: New-CimSession.md
+[03]: ../Microsoft.PowerShell.Core/About/about_CimSession.md
+[04]: ../Microsoft.PowerShell.Core/About/about_Operators.md
+[05]: https://go.microsoft.com/fwlink/?LinkID=113216

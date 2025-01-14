@@ -95,7 +95,7 @@ parameter using one of the following formats:
 
 - A culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
 - A variable that contains a **CultureInfo** object.
-- A command that gets a **CultureInfo** object, such as [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
+- A command that gets a **CultureInfo** object, such as [Get-Culture][01]
 
 ```yaml
 Type: System.Globalization.CultureInfo
@@ -462,8 +462,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][02].
 
 ## INPUTS
 
@@ -488,12 +487,16 @@ This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
-[Get-ChildItem](../microsoft.powershell.management/get-childitem.md)
+[Get-ChildItem](../Microsoft.Powershell.Management/Get-ChildItem.md)
 
-[Get-Credential](../microsoft.powershell.security/get-credential.md)
+[Get-Credential](../Microsoft.Powershell.Security/Get-Credential.md)
 
-[Get-Culture](../microsoft.powershell.utility/get-culture.md)
+[Get-Culture][01]
 
-[Get-Item](../microsoft.powershell.management/get-item.md)
+[Get-Item](../Microsoft.Powershell.Management/Get-Item.md)
 
 [New-CimSession](New-CimSession.md)
+
+<!-- link references -->
+[01]: ../Microsoft.PowerShell.Utility/Get-Culture.md
+[02]: https://go.microsoft.com/fwlink/?LinkID=113216

@@ -48,17 +48,17 @@ can use the parameters of `Get-CimSession` to get the sessions that are for part
 you can identify sessions by their names or other identifiers. `Get-CimSession` does not get CIM
 sessions that were created in other PowerShell sessions or that were created on other computers.
 
-For more information about CIM sessions, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+For more information about CIM sessions, see [about_CimSession][01].
 
 ## EXAMPLES
 
 ### Example 1: Get CIM sessions from the current PowerShell session
 
-This example creates CIM sessions using [New-CimSession](New-CimSession.md), and then gets the CIM
+This example creates CIM sessions using [New-CimSession][02], and then gets the CIM
 sessions using `Get-CimSession`.
 
 ```powershell
-New-CimSession -ComputerName Server01,Server02
+New-CimSession -ComputerName Server01, Server02
 Get-CimSession
 ```
 
@@ -98,7 +98,7 @@ This example gets all CIM sessions in the current PowerShell session and display
 only the **ComputerName** and **InstanceID** properties.
 
 ```powershell
-Get-CimSession | Format-Table -Property ComputerName,InstanceId
+Get-CimSession | Format-Table -Property ComputerName, InstanceId
 ```
 
 ```Output
@@ -171,7 +171,7 @@ Specifies the identifier of the CIM session to get. For multiple IDs, use commas
 or use the range operator (`..`) to specify a range of IDs. An **Id** is an integer that uniquely
 identifies the CIM session within the current PowerShell session.
 
-For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
+For more information about the range operator, see [about_Operators][03].
 
 ```yaml
 Type: System.UInt32[]
@@ -228,8 +228,7 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][04].
 
 ## INPUTS
 
@@ -254,10 +253,18 @@ This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
-[Format-Table](../microsoft.powershell.utility/format-table.md)
+[Format-Table][05]
 
-[New-CimSession](New-CimSession.md)
+[New-CimSession][02]
 
-[Remove-CimSession](remove-cimsession.md)
+[Remove-CimSession][06]
 
-[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)
+[about_CimSession][01]
+
+<!-- link references -->
+[01]: ../Microsoft.PowerShell.Core/About/about_CimSession.md
+[02]: New-CimSession.md
+[03]: ../Microsoft.PowerShell.Core/About/about_Operators.md
+[04]: https://go.microsoft.com/fwlink/?LinkID=113216
+[05]: ../Microsoft.Powershell.Utility/Format-Table.md
+[06]: Remove-CimSession.md

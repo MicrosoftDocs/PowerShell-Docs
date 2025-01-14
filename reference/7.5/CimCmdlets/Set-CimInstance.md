@@ -143,7 +143,7 @@ cmdlet, and retrieves its contents in to a variable `$x`. The variable is then p
 Because the **PassThru** parameter is used, This example returns a modified CIM instance object.
 
 ```powershell
-$x = New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";UserName="domain\user"} -Key Name,UserName -ClientOnly
+$x = New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";UserName="domain\user"} -Key Name, UserName -ClientOnly
 Set-CimInstance -CimInstance $x -Property @{VariableValue="somevalue"} -PassThru
 ```
 
@@ -396,8 +396,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][01].
 
 ## INPUTS
 
@@ -424,8 +423,11 @@ This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
 [New-CimInstance](New-CimInstance.md)
 
-[Remove-CimInstance](remove-ciminstance.md)
+[Remove-CimInstance](Remove-CimInstance.md)
+
+<!-- link references -->
+[01]: ../Microsoft.PowerShell.Core/About/about_CommonParameters.md

@@ -292,8 +292,7 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][01].
 
 ## INPUTS
 
@@ -319,3 +318,6 @@ This cmdlet is only available on Windows platforms.
 ## RELATED LINKS
 
 [New-CimSession](New-CimSession.md)
+
+<!-- link references -->
+[01]: https://go.microsoft.com/fwlink/?LinkID=113216

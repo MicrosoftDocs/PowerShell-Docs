@@ -162,8 +162,7 @@ Accept wildcard characters: False
 
 Runs the command using the specified CIM session. Enter a variable that contains the CIM session, or
 a command that creates or gets the CIM session, such as the `New-CimSession` or `Get-CimSession`
-cmdlets. For more information, see
-[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+cmdlets. For more information, see [about_CimSession][01].
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession[]
@@ -277,10 +276,10 @@ Accept wildcard characters: False
 
 Specifies the amount of time that the cmdlet waits for a response from the CIM server. By default,
 the value of this parameter is 0, which means that the cmdlet uses the default timeout value for the
-server. If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
-timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
-parameter are not recoverable, because the operation on the server times out before the client can
-reconnect.
+server. If the **OperationTimeoutSec** parameter is set to a value less than the robust connection
+retry timeout of 3 minutes, network failures that last more than the value of the
+**OperationTimeoutSec** parameter are not recoverable, because the operation on the server times
+out before the client can reconnect.
 
 ```yaml
 Type: System.UInt32
@@ -386,8 +385,7 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see [about_CommonParameters][02].
 
 ## INPUTS
 
@@ -412,10 +410,14 @@ This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
-[Get-CimClass](get-cimclass.md)
+[Get-CimClass](Get-CimClass.md)
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
-[Remove-CimInstance](remove-ciminstance.md)
+[Remove-CimInstance](Remove-CimInstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)
+
+<!-- link references -->
+[01]: ../Microsoft.PowerShell.Core/About/about_CimSession.md
+[02]: ../Microsoft.PowerShell.Core/About/about_CommonParameters.md
