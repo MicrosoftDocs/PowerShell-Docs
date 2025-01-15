@@ -291,7 +291,7 @@ Otherwise contains `$false`.
 
 ### `$IsMacOS`
 
-Contains `$true` if the current session is running on a MacOS operating system.
+Contains `$true` if the current session is running on a macOS operating system.
 Otherwise contains `$false`.
 
 ### `$IsWindows`
