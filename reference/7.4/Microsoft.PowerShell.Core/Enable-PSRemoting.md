@@ -73,7 +73,7 @@ The `Enable-PSRemoting` cmdlet performs the following operations:
 - Restarts the WinRM service to make the preceding changes effective.
 
 To run this cmdlet on the Windows platform, start PowerShell by using the Run as administrator
-option. This cmdlet is not available on Linux or MacOS versions of PowerShell.
+option. This cmdlet is not available on Linux or macOS versions of PowerShell.
 
 > [!CAUTION]
 > This cmdlet does not affect remote endpoint configurations created by Windows PowerShell.
