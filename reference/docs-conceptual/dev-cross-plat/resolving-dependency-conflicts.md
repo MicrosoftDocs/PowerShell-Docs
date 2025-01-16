@@ -875,7 +875,7 @@ jumping off points:
 - [.NET Framework: Best practices for assembly loading][24]
 - [.NET Framework: How the runtime locates assemblies][25]
 - [.NET Framework: Resolve assembly loads][26]
-- [StackOverflow: Assembly binding redirect, how and why?][27]
+- [Stack Overflow: Assembly binding redirect, how and why?][27]
 - [PowerShell: Discussion about implementing AssemblyLoadContexts][28]
 - [PowerShell: `Assembly.LoadFile()` doesn't load into default AssemblyLoadContext][29]
 - [Rick Strahl: When does a .NET assembly dependency get loaded?][30]
