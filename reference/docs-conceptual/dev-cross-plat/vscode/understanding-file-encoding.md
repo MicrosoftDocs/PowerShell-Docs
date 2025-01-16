@@ -229,7 +229,7 @@ finally
 It's possible to configure PowerShell to use a given encoding more generally using profile settings.
 See the following articles:
 
-- @mklement0's [answer about PowerShell encoding on StackOverflow][21].
+- @mklement0's [answer about PowerShell encoding on Stack Overflow][21].
 - @rkeithhill's [blog post about dealing with BOM-less UTF-8 input in PowerShell][20].
 
 It's not possible to force PowerShell to use a specific input encoding. PowerShell 5.1 and below,
@@ -315,7 +315,7 @@ There are a few other nice posts on encoding and configuring encoding in PowerSh
 read:
 
 - [about_Character_Encoding][01]
-- @mklement0's [summary of PowerShell encoding on StackOverflow][22]
+- @mklement0's [summary of PowerShell encoding on Stack Overflow][22]
 - Previous issues opened on VS Code-PowerShell for encoding problems:
   - [#1308][12]
   - [#1628][13]
