@@ -28,7 +28,7 @@ landingContent:
           - text: What's new in PowerShell 7.4 (LTS)
             url: ./What-s-New-in-PowerShell-74.md
           - text: Differences between Windows PowerShell 5.1 and PowerShell 7
-            url: whats-new/differences-from-windows-powershell.md
+            url: ./differences-from-windows-powershell.md
           - text: PowerShell differences on non-Windows platforms
             url: ./unix-support.md
 
