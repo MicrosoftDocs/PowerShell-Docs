@@ -19,7 +19,7 @@
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.5", "src": "7.5" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.5", "src": "7.5" },
 
-      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.6", "src": "7.5" },
+      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.6", "src": "7.6" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.6", "src": "7.6" },
 
       { "dest": "scripting", "files": [ "**/*.md" ], "src": "virtual-directory" },
