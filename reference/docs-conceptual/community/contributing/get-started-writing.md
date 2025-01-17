@@ -1,6 +1,6 @@
 ---
 description: This article is an overview of how to get started as a contributor to the PowerShell documentation.
-ms.date: 01/03/2025
+ms.date: 01/17/2025
 title: Get started contributing to PowerShell documentation
 ---
 # Get started contributing to PowerShell documentation
@@ -18,9 +18,9 @@ There are three categories of content in the [PowerShell-Docs][1] repository:
 ### Reference content
 
 The reference content is the PowerShell cmdlet reference for the cmdlets that ship in PowerShell.
-The cmdlet [reference][2] is collected in versioned folders (like 5.1, 7.4, and 7.5), which contain
-reference for the modules that ship with PowerShell. This content is also used to create the help
-information displayed by the `Get-Help` cmdlet.
+The cmdlet [reference][2] is collected in versioned folders (like 5.1, 7.4, 7.5, and 7.6), which
+contain the reference for the modules that ship with PowerShell. This content is also used to create
+the help information displayed by the `Get-Help` cmdlet.
 
 ### Conceptual content
 
