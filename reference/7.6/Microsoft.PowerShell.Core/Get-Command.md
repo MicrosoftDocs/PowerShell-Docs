@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 11/09/2024
+ms.date: 01/17/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
@@ -17,20 +17,20 @@ Gets all commands.
 ### CmdletSet (Default)
 
 ```
-Get-Command [-Verb <String[]>] [-Noun <String[]>] [-Module <String[]>]
- [-FullyQualifiedModule <ModuleSpecification[]>] [-TotalCount <Int32>] [-Syntax] [-ShowCommandInfo]
- [[-ArgumentList] <Object[]>] [-All] [-ListImported] [-ParameterName <String[]>]
- [-ParameterType <PSTypeName[]>] [<CommonParameters>]
+Get-Command [[-ArgumentList] <Object[]>] [-Verb <string[]>] [-Noun <string[]>]
+ [-Module <string[]>] [-ExcludeModule <string[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+ [-TotalCount <int>] [-Syntax] [-ShowCommandInfo] [-All] [-ListImported]
+ [-ParameterName <string[]>] [-ParameterType <PSTypeName[]>] [<CommonParameters>]
 ```
 
 ### AllCommandSet
 
 ```
-Get-Command [[-Name] <String[]>] [-Module <String[]>]
- [-FullyQualifiedModule <ModuleSpecification[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>]
- [-Syntax] [-ShowCommandInfo] [[-ArgumentList] <Object[]>] [-All] [-ListImported]
- [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
- [-FuzzyMinimumDistance <UInt32>] [-UseAbbreviationExpansion] [<CommonParameters>]
+Get-Command [[-Name] <string[]>] [[-ArgumentList] <Object[]>] [-Module <string[]>]
+ [-ExcludeModule <string[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
+ [-CommandType <CommandTypes>] [-TotalCount <int>] [-Syntax] [-ShowCommandInfo] [-All]
+ [-ListImported] [-ParameterName <string[]>] [-ParameterType <PSTypeName[]>] [-UseFuzzyMatching]
+ [-FuzzyMinimumDistance <uint>] [-UseAbbreviationExpansion] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -324,6 +324,18 @@ Application     getconf          0.0.0.0    /usr/bin/getconf
 Application     command          0.0.0.0    /usr/bin/command
 ```
 
+### Example 17: Exclude modules from the search for commands
+
+The following example shows the difference in results of searching for commands in all modules and
+when you exclude a specific module.
+
+```powershell
+PS> (Get-Command *-*Disk*).Count
+73
+PS> (Get-Command *-*Disk* -ExcludeModule Storage).Count
+35
+```
+
 ## PARAMETERS
 
 ### -All
@@ -422,6 +434,22 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### ExcludeModule
+
+Specify the name of one or more modules to be excluded from the search.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: ByValue (False), ByName (False)
 Accept wildcard characters: False
 ```
 
