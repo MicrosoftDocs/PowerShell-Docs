@@ -1392,7 +1392,7 @@ variations for each operating system and platform.
 
 To test a website with the standard user agent string that's used by most internet browsers, use the
 properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class, such
-as Chrome, FireFox, InternetExplorer, Opera, and Safari.
+as Chrome, Firefox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet Explorer:
 `Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`

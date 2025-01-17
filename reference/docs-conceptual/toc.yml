@@ -215,6 +215,8 @@ items:
     items:
       - name: Overview
         href: whats-new/overview.yml
+      - name: What's new in PowerShell 7.6
+        href: whats-new/what-s-new-in-powershell-76.md
       - name: What's new in PowerShell 7.5
         href: whats-new/what-s-new-in-powershell-75.md
       - name: What's new in PowerShell 7.4
