@@ -9,7 +9,7 @@ metadata:
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 11/30/2023
+  ms.date: 01/17/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
 #               overview | quickstart | reference | tutorial | video | whats-new
@@ -21,16 +21,14 @@ landingContent:
     linkLists:
       - linkListType: whats-new
         links:
+          - text: What's new in PowerShell 7.6 (preview)
+            url: ./What-s-New-in-PowerShell-76.md
+          - text: What's new in PowerShell 7.5 (RC)
+            url: ./What-s-New-in-PowerShell-75.md
           - text: What's new in PowerShell 7.4 (LTS)
             url: ./What-s-New-in-PowerShell-74.md
-          - text: What's new in PowerShell 7.3
-            url: ./What-s-New-in-PowerShell-73.md
-          - text: What's new in PowerShell 7.2 (LTS)
-            url: ./What-s-New-in-PowerShell-72.md
-          - text: What's new in PowerShell 7.1 (out of support)
-            url: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71
-          - text: What's new in PowerShell 7.0
-            url: ./What-s-New-in-PowerShell-70.md
+          - text: Differences between Windows PowerShell 5.1 and PowerShell 7
+            url: ./differences-from-windows-powershell.md
           - text: PowerShell differences on non-Windows platforms
             url: ./unix-support.md
 
