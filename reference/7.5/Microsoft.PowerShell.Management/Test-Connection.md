@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/18/2024
+ms.date: 01/18/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Connection
@@ -536,7 +536,7 @@ Accept wildcard characters: False
 
 ### -Traceroute
 
-Causes the cmdlet to do a Traceroute test. When this parameter is used, the cmdlet returns a
+Causes the cmdlet to do a traceroute test. When this parameter is used, the cmdlet returns a
 `TestConnectionCommand+TraceStatus` object.
 
 ```yaml
@@ -593,10 +593,9 @@ When you use the **Detailed** parameter, this cmdlet returns a
 
 ## NOTES
 
-On Linux, using the **BufferSize** parameter or any combination of parameters with the
-**MtuSizeDetect** parameter set that results in a non-default buffer size of 32 bytes may require
-`sudo`. In those cases, `Test-Command` raises an exception with a message indicating that `sudo` is
-required.
+On Linux, using the **BufferSize** parameter or any combination of parameters with the **MtuSize**
+parameter set that results in a non-default buffer size of 32 bytes may require `sudo`. In those
+cases, `Test-Command` raises an exception with a message indicating that `sudo` is required.
 
 ## RELATED LINKS
 
