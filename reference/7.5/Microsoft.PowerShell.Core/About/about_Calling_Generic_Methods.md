@@ -90,6 +90,6 @@ The output shows each value raised to the power of 3.
 
 <!-- link references -->
 [01]: xref:System.Collections.Hashtable
-[02]: xref:System.Collections.Generic.Dictionary%602>
+[02]: xref:System.Collections.Generic.Dictionary%602
 [03]: https://www.leeholmes.com/invoking-generic-methods-on-non-generic-classes-in-powershell/
 [04]: /dotnet/standard/generics/
