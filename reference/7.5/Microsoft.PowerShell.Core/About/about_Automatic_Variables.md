@@ -7,7 +7,6 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_Automatic_Variables
 ---
-
 # about_Automatic_Variables
 
 ## Short description
@@ -422,7 +421,7 @@ the objects.
 
 ```powershell
 $a = "one", $null, "three"
-$a.count
+$a.Count
 ```
 
 ```Output
@@ -433,7 +432,7 @@ If you pipe the `$null` variable to the `ForEach-Object` cmdlet, it generates a
 value for `$null`, just as it does for the other objects
 
 ```powershell
-"one", $null, "three" | ForEach-Object { "Hello " + $_}
+"one", $null, "three" | ForEach-Object {"Hello " + $_}
 ```
 
 ```Output
@@ -451,8 +450,8 @@ were ignored.
 
 ```powershell
 $calendar = @($null, $null, "Meeting", $null, $null, "Team Lunch", $null)
-$days = "Sunday","Monday","Tuesday","Wednesday","Thursday",
-        "Friday","Saturday"
+$days = "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+        "Friday", "Saturday"
 $currentDay = 0
 foreach($day in $calendar)
 {
@@ -744,10 +743,9 @@ isn't considered best practice.
 
 ### MoveNext
 
-The [MoveNext][76] method
-advances the enumerator to the next element of the collection. **MoveNext**
-returns `True` if the enumerator was successfully advanced, `False` if the
-enumerator has passed the end of the collection.
+The [MoveNext][76] method advances the enumerator to the next element of the
+collection. **MoveNext** returns `True` if the enumerator was successfully
+advanced, `False` if the enumerator has passed the end of the collection.
 
 > [!NOTE]
 > The **Boolean** value returned by **MoveNext** is sent to the output stream.

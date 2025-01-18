@@ -6,7 +6,6 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_Classes_Constructors
 ---
-
 # about_Classes_Constructors
 
 ## Short description

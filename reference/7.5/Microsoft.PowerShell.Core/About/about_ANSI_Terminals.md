@@ -253,7 +253,7 @@ The following values of `$env:TERM` change the behavior as follows:
 
 - `dumb` - sets `$Host.UI.SupportsVirtualTerminal = $false`
 - `xterm-mono` - sets `$PSStyle.OutputRendering = PlainText`
-- `xtermm` - sets `$PSStyle.OutputRendering = PlainText`
+- `xterm` - sets `$PSStyle.OutputRendering = PlainText`
 
 If `$env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
 **PlainText**. For more information about the **NO_COLOR** environment

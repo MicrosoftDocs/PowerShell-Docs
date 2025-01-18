@@ -129,8 +129,8 @@ in the current session, type:
 Get-Alias
 ```
 
-To get particular aliases, use the Name parameter of the `Get-Alias` cmdlet. For
-example, to get aliases that begin with "p", type:
+To get particular aliases, use the Name parameter of the `Get-Alias` cmdlet.
+For example, to get aliases that begin with "p", type:
 
 ```powershell
 Get-Alias -Name p*
