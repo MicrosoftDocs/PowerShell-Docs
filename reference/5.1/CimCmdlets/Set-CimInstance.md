@@ -141,7 +141,7 @@ cmdlet, and retrieves its contents in to a variable `$x`. The variable is then p
 Because the **PassThru** parameter is used, This example returns a modified CIM instance object.
 
 ```powershell
-$x = New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";UserName="domain\user"} -Key Name,UserName -ClientOnly
+$x = New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";UserName="domain\user"} -Key Name, UserName -ClientOnly
 Set-CimInstance -CimInstance $x -Property @{VariableValue="somevalue"} -PassThru
 ```
 
