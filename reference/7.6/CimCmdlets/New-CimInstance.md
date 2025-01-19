@@ -277,10 +277,10 @@ Accept wildcard characters: False
 
 Specifies the amount of time that the cmdlet waits for a response from the CIM server. By default,
 the value of this parameter is 0, which means that the cmdlet uses the default timeout value for the
-server. If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
-timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
-parameter are not recoverable, because the operation on the server times out before the client can
-reconnect.
+server. If the **OperationTimeoutSec** parameter is set to a value less than the robust connection
+retry timeout of 3 minutes, network failures that last more than the value of the
+**OperationTimeoutSec** parameter are not recoverable, because the operation on the server times
+out before the client can reconnect.
 
 ```yaml
 Type: System.UInt32
@@ -412,10 +412,10 @@ This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
-[Get-CimClass](get-cimclass.md)
+[Get-CimClass](Get-CimClass.md)
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
-[Remove-CimInstance](remove-ciminstance.md)
+[Remove-CimInstance](Remove-CimInstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)
