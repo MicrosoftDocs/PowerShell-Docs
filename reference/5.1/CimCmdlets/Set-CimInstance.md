@@ -415,8 +415,8 @@ When you use the **PassThru** parameter, this cmdlet returns the modified CIM in
 
 ## RELATED LINKS
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
 [New-CimInstance](New-CimInstance.md)
 
-[Remove-CimInstance](remove-ciminstance.md)
+[Remove-CimInstance](Remove-CimInstance.md)
