@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 06/06/2024
+ms.date: 01/19/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -44,8 +44,8 @@ specified patterns. PowerShell includes the following comparison operators:
 - `-contains`, `-icontains`, `-ccontains` - collection contains a value
 - `-notcontains`, `-inotcontains`, `-cnotcontains` - collection doesn't
   contain a value
-- `-in` - value is in a collection
-- `-notin` - value isn't in a collection
+- `-in`, `-iin`, `-cin` - value is in a collection
+- `-notin`, `-inotin`, `-cnotin` - value isn't in a collection
 
 **Type**
 
