@@ -14,13 +14,15 @@ title: Microsoft.PowerShell.Archive
 ## Description
 
 This section contains the help topics for the cmdlets that are installed with the PowerShell
-Microsoft.PowerShell.Archive module. The Archive module contains cmdlets that let you manage ZIP
-archive files.
+Microsoft.PowerShell.Archive module. The Archive module contains cmdlets that let you create and
+extract archive or ZIP files.
 
 ## Microsoft.PowerShell.Archive Cmdlets
 
 ### [Compress-Archive](Compress-Archive.md)
-Creates a compressed ZIP archive from specified files and directories.
+
+Creates a compressed archive, or zipped file, from specified files and directories.
 
 ### [Expand-Archive](Expand-Archive.md)
-Extracts files from a specified ZIP archive file.
+
+Extracts files from a specified archive (zipped) file.
