@@ -1,7 +1,7 @@
 ---
 description: Describes how to create, use, and sort hashtables in PowerShell.
 Locale: en-US
-ms.date: 09/04/2024
+ms.date: 01/19/2025
 no-loc: [iDictionary, Hashtable, OrderedDictionary, System.Collections.IDictionary, System.Collections.Hashtable]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -274,7 +274,7 @@ member notation or array index notation.
   3
 
   PS> $hash[2]
-  2
+  two
   ```
 
   In this example, the key value `2` isn't an index into the collection of
