@@ -93,7 +93,8 @@ User Configuration\
 > These **PowerShell Core Administrative Templates** don't include settings
 > for Windows PowerShell. For more information about acquiring other templates
 > and configuring Group policy, see
-> [How to create and manage the Central Store for Group Policy Administrative Templates in Windows][gpstore].
+> [How to create and manage the Central Store for Group Policy Administrative
+> Templates in Windows][gpstore].
 
 ## Console session configuration
 

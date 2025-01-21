@@ -125,8 +125,8 @@ public class InvokeWebRequestCommandV2 : WebCmdletBaseV2 { ... }
 public class InvokeWebRequestCommand : WebCmdletBase { ... }
 ```
 
-When the `MyWebCmdlets.PSWebCmdletV2` experimental feature is enabled, the existing
-`InvokeWebRequestCommand` implementation is hidden and the
+When the `MyWebCmdlets.PSWebCmdletV2` experimental feature is enabled, the
+existing `InvokeWebRequestCommand` implementation is hidden and the
 `InvokeWebRequestCommandV2` provides the implementation of
 `Invoke-WebRequest`.
 

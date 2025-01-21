@@ -9,6 +9,7 @@ title: about_Functions_Advanced
 # about_Functions_Advanced
 
 ## Short description
+
 Introduces advanced functions that are a way to create cmdlets using scripts.
 
 ## Long description
@@ -45,7 +46,7 @@ function Send-Greeting
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true)]
-        [string] $Name
+        [string]$Name
     )
 
     process

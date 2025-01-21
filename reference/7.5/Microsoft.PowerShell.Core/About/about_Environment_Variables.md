@@ -542,7 +542,7 @@ or `NO_COLOR` environment variables.
 
   - `dumb` - sets `$Host.UI.SupportsVirtualTerminal = $false`
   - `xterm-mono` - sets `$PSStyle.OutputRendering = PlainText`
-  - `xtermm` - sets `$PSStyle.OutputRendering = PlainText`
+  - `xterm` - sets `$PSStyle.OutputRendering = PlainText`
 
 - `NO_COLOR`
 
@@ -563,12 +563,12 @@ or `NO_COLOR` environment variables.
 [03]: #powershell-environment-variables
 [04]: about_Environment_Provider.md
 [05]: about_Execution_Policies.md
-[06]: about_preference_variables.md
-[07]: about_profiles.md
+[06]: about_Preference_Variables.md
+[07]: about_Profiles.md
 [08]: about_PSModulePath.md
 [09]: about_Telemetry.md
 [10]: about_Update_Notifications.md
-[11]: about_variables.md
+[11]: about_Variables.md
 [12]: https://no-color.org/
 [13]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [14]: xref:PowerShellGet.Install-Module
