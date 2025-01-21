@@ -46,7 +46,8 @@ can use the parameters of `Get-CimSession` to get the sessions that are for part
 you can identify sessions by their names or other identifiers. `Get-CimSession` does not get CIM
 sessions that were created in other PowerShell sessions or that were created on other computers.
 
-For more information about CIM sessions, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+For more information about CIM sessions, see
+[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ## EXAMPLES
 
@@ -56,7 +57,7 @@ This example creates CIM sessions using [New-CimSession](New-CimSession.md), and
 sessions using `Get-CimSession`.
 
 ```powershell
-New-CimSession -ComputerName Server01,Server02
+New-CimSession -ComputerName Server01, Server02
 Get-CimSession
 ```
 
@@ -96,7 +97,7 @@ This example gets all CIM sessions in the current PowerShell session and display
 only the **ComputerName** and **InstanceID** properties.
 
 ```powershell
-Get-CimSession | Format-Table -Property ComputerName,InstanceId
+Get-CimSession | Format-Table -Property ComputerName, InstanceId
 ```
 
 ```Output
@@ -169,7 +170,8 @@ Specifies the identifier of the CIM session to get. For multiple IDs, use commas
 or use the range operator (`..`) to specify a range of IDs. An **Id** is an integer that uniquely
 identifies the CIM session within the current PowerShell session.
 
-For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
+For more information about the range operator, see
+[about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
 ```yaml
 Type: System.UInt32[]
@@ -223,6 +225,7 @@ Accept wildcard characters: True
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
@@ -244,10 +247,10 @@ This cmdlet returns a CIM session object.
 
 ## RELATED LINKS
 
-[Format-Table](../microsoft.powershell.utility/format-table.md)
+[Format-Table](../Microsoft.Powershell.Utility/Format-Table.md)
 
 [New-CimSession](New-CimSession.md)
 
-[Remove-CimSession](remove-cimsession.md)
+[Remove-CimSession](Remove-CimSession.md)
 
 [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md)

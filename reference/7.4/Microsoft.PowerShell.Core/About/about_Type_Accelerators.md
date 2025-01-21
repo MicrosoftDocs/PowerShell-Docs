@@ -1,29 +1,68 @@
 ---
-description: Describes the Type accelerators available for .NET framework classes
+description: Describes the type accelerators available for .NET types.
 Locale: en-US
-ms.date: 08/30/2023
+ms.date: 01/21/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_type_accelerators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Type_Accelerators
 ---
 # about_Type_Accelerators
 
-## SHORT DESCRIPTION
-Describes the Type accelerators available for .NET framework classes
+## Short description
+
+Describes the type accelerators available for .NET types.
 
 ## Long description
 
-Type accelerators are aliases for .NET framework classes. They allow you to
-access specific .NET framework classes without having to explicitly type the
-entire class name. For example, you can shorten the **AliasAttribute**
-class from `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
+Type accelerators are aliases for .NET types. They allow you to access specific
+.NET types without explicitly using the full type name. For example, you can
+shorten `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 
-> [!NOTE]
-> All type accelerators still need to be wrapped in square brackets(`[]`).
+Type accelerator names are mostly lowercase, but some are defined using
+Pascal-case. PowerShell is case-insensitive, so you can use either.
 
-## Available Type Accelerators
+## Using type accelerators
 
-|         Accelerator          |                                                                 Full Class Name                                                                 |
+For most type accelerators, you use type accelerators in the same way as
+you would use the full type name. However, PowerShell has special handling for
+the following two type accelerators:
+
+- `pscustomobject` - See [about_PSCustomObject](about_PSCustomObject.md)
+- `ref` - See [about_Ref](about_Ref.md)
+
+Type accelerators are most commonly used to specify the type of a variable or
+cast an object to a specific type. For those cases, you must enclose the type
+name or its accelerator in square brackets (`[]`). For example, `[int]` or
+`[int32]`.
+
+In some contexts, you can specify allow type accelerator name as a string. For
+example:
+
+- When used with type comparison operators
+
+  ```powershell
+  PS> '1' -as 'int'
+  1
+  PS> 1 -is 'int'
+  True
+  ```
+
+- When used with `[type]` type class
+
+  ```powershell
+  PS> [type]'int'
+
+  IsPublic IsSerial Name                                     BaseType
+  -------- -------- ----                                     --------
+  True     True     Int32                                    System.ValueType
+  ```
+
+In other contexts, like reflection, you must use the full type name as a string
+rather than the type accelerator name.
+
+## Default type accelerators
+
+|       Accelerator name       |                                                                 Full type name                                                                  |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | adsi                         | [System.DirectoryServices.DirectoryEntry](xref:System.DirectoryServices.DirectoryEntry)                                                         |
 | adsisearcher                 | [System.DirectoryServices.DirectorySearcher](xref:System.DirectoryServices.DirectorySearcher)                                                   |
@@ -66,6 +105,7 @@ class from `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 | IPEndpoint                   | [System.Net.IPEndPoint](xref:System.Net.IPEndPoint)                                                                                             |
 | long                         | [System.Int64](xref:System.Int64)                                                                                                               |
 | mailaddress                  | [System.Net.Mail.MailAddress](xref:System.Net.Mail.MailAddress)                                                                                 |
+| NoRunspaceAffinity           | [System.Management.Automation.Language.NoRunspaceAffinityAttribute](xref:System.Management.Automation.Language.NoRunspaceAffinityAttribute)     |
 | NullString                   | [System.Management.Automation.Language.NullString](xref:System.Management.Automation.Language.NullString)                                       |
 | ObjectSecurity               | [System.Security.AccessControl.ObjectSecurity](xref:System.Security.AccessControl.ObjectSecurity)                                               |
 | ordered                      | [System.Collections.Specialized.OrderedDictionary](xref:System.Collections.Specialized.OrderedDictionary)                                       |
@@ -115,6 +155,7 @@ class from `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 | ValidateLength               | [System.Management.Automation.ValidateLengthAttribute](xref:System.Management.Automation.ValidateLengthAttribute)                               |
 | ValidateNotNull              | [System.Management.Automation.ValidateNotNullAttribute](xref:System.Management.Automation.ValidateNotNullAttribute)                             |
 | ValidateNotNullOrEmpty       | [System.Management.Automation.ValidateNotNullOrEmptyAttribute](xref:System.Management.Automation.ValidateNotNullOrEmptyAttribute)               |
+| ValidateNotNullOrWhiteSpace  | [System.Management.Automation.ValidateNotNullOrWhiteSpaceAttribute](xref:System.Management.Automation.ValidateNotNullOrWhiteSpaceAttribute)          |
 | ValidatePattern              | [System.Management.Automation.ValidatePatternAttribute](xref:System.Management.Automation.ValidatePatternAttribute)                             |
 | ValidateRange                | [System.Management.Automation.ValidateRangeAttribute](xref:System.Management.Automation.ValidateRangeAttribute)                                 |
 | ValidateScript               | [System.Management.Automation.ValidateScriptAttribute](xref:System.Management.Automation.ValidateScriptAttribute)                               |

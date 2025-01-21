@@ -2,7 +2,7 @@
 description: About topics cover a range of concepts about PowerShell.
 Help Version: 6.0
 Locale: en-US
-ms.date: 01/14/2025
+ms.date: 01/21/2025
 title: About topics
 ---
 # About topics
@@ -583,7 +583,7 @@ terminating errors.
 
 ### [about_Type_Accelerators](about_Type_Accelerators.md)
 
-Describes the Type accelerators available for .NET framework classes
+Describes the Type accelerators available for .NET types.
 
 ### [about_Type_Conversion](about_Type_Conversion.md)
 

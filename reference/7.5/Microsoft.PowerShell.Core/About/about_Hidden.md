@@ -17,9 +17,9 @@ Describes the `hidden` keyword, which hides class members from default
 
 When you use the `hidden` keyword in a script, you hide the members of a class
 by default. Hidden members do not display in the default results of the
-`Get-Member` cmdlet, IntelliSense, or tab completion results. To display members
-that you have hidden with the `hidden` keyword, add the **Force** parameter to a
-`Get-Member` command.
+`Get-Member` cmdlet, IntelliSense, or tab completion results. To display
+members that you have hidden with the `hidden` keyword, add the **Force**
+parameter to a `Get-Member` command.
 
 The `hidden` keyword can hide:
 
@@ -48,11 +48,12 @@ PowerShell 5.0.
 ## EXAMPLE
 
 The following example shows how to use the `hidden` keyword in a class
-definition. The **Car** class method, **Drive**, has a property, **rides**, that
-does not need to be viewed or changed as it merely tallies the number of times
-that **Drive** is called on the **Car** class. That metric that is not important
-to users of the class (consider, for example, that when you are buying a car,
-you do not ask the seller on how many drives the car has been taken).
+definition. The **Car** class method, **Drive**, has a property, **rides**,
+that does not need to be viewed or changed as it merely tallies the number of
+times that **Drive** is called on the **Car** class. That metric that is not
+important to users of the class (consider, for example, that when you are
+buying a car, you do not ask the seller on how many drives the car has been
+taken).
 
 Because there is little need for users of the class to change this property, we
 can hide the property from `Get-Member` and automatic completion results by
@@ -114,8 +115,8 @@ ModelYear   Property   string ModelYear {get;set;}
 ```
 
 Now, try running `Get-Member` again, but this time, add the `-Force` parameter.
-Note that the results contain the hidden **rides** property, among other members
-that are hidden by default.
+Note that the results contain the hidden **rides** property, among other
+members that are hidden by default.
 
 ```output
 PS C:\Windows\system32> $TestCar | Get-Member -Force

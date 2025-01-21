@@ -192,7 +192,7 @@ For example, the following command gets the variables in the local (script)
 scope:
 
 ```powershell
-Get-Variable -scope 0
+Get-Variable -Scope 0
 ```
 
 This is a useful way to see only the variables that you defined in the script
@@ -225,17 +225,17 @@ For example:
 ```powershell
 function test-cmdlet {
     begin {
-        write-output "Begin"
+        Write-Output "Begin"
     }
     process {
-        write-output "Process"
+        Write-Output "Process"
     }
     end {
-        write-output "End"
+        Write-Output "End"
     }
 }
 
-C:\PS> Set-PSBreakpoint -command test-cmdlet
+C:\PS> Set-PSBreakpoint -Command test-cmdlet
 
 C:\PS> test-cmdlet
 
@@ -285,7 +285,7 @@ identifying changes to the prompt:
 
 ```powershell
 Enter-PSSession -Cn localhost
-[localhost]: PS C:\psscripts> Set-PSBreakpoint .\ttest19.ps1 6,11,22,25
+[localhost]: PS C:\psscripts> Set-PSBreakpoint .\ttest19.ps1 6, 11, 22, 25
 
 ID Script          Line     Command          Variable          Action
 -- ------          ----     -------          --------          ------
@@ -367,7 +367,7 @@ Start by creating a line breakpoint on the first line of the Test.ps1 script in
 the current directory.
 
 ```powershell
-PS C:\ps-test> Set-PSBreakpoint -line 1 -script test.ps1
+PS C:\ps-test> Set-PSBreakpoint -Line 1 -Script test.ps1
 ```
 
 The command returns a **System.Management.Automation.LineBreakpoint** object.
@@ -482,7 +482,7 @@ reuse the breakpoint, use the `Disable-PsBreakpoint` cmdlet instead of
 `Remove-PsBreakpoint`.)
 
 ```powershell
-PS C:\ps-test> Get-PSBreakpoint| Remove-PSBreakpoint
+PS C:\ps-test> Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
 You can abbreviate this command as:
@@ -501,13 +501,13 @@ function delbr { gbp | rbp }
 Now, create a breakpoint on the `$scriptname` variable.
 
 ```powershell
-PS C:\ps-test> Set-PSBreakpoint -variable scriptname -script test.ps1
+PS C:\ps-test> Set-PSBreakpoint -Variable scriptname -Script test.ps1
 ```
 
 You can abbreviate the command as:
 
 ```powershell
-PS C:\ps-test> sbp -v scriptname -s test.ps1
+PS C:\ps-test> sbp -V scriptname -S test.ps1
 ```
 
 Now, start the script. The script reaches the variable breakpoint. The default
@@ -557,8 +557,8 @@ Have you run a background job today (start-job)?
 test.ps1:13  "Done $scriptName"
 ```
 
-The `StepOver` command executes the function, and it previews the next statement
-in the script, which prints the final line.
+The `StepOver` command executes the function, and it previews the next
+statement in the script, which prints the final line.
 
 Use a `Stop` command (`t`) to exit the debugger. The command prompt reverts to
 the standard command prompt.
@@ -571,19 +571,19 @@ To delete the breakpoints, use the `Get-PsBreakpoint` and `Remove-PsBreakpoint`
 cmdlets.
 
 ```powershell
-PS C:\ps-test> Get-PSBreakpoint| Remove-PSBreakpoint
+PS C:\ps-test> Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
 Create a new command breakpoint on the `psversion` function.
 
 ```powershell
-PS C:\ps-test> Set-PSBreakpoint -command psversion -script test.ps1
+PS C:\ps-test> Set-PSBreakpoint -Command psversion -Script test.ps1
 ```
 
 You can abbreviate this command to:
 
 ```powershell
-PS C:\ps-test> sbp -c psversion -s test.ps1
+PS C:\ps-test> sbp -C psversion -S test.ps1
 ```
 
 Now, run the script.
@@ -612,7 +612,7 @@ Windows PowerShell 2.0
 Have you run a background job today (start-job)?
 Done C:\ps-test\test.ps1
 
-PS C:\ps-test> Get-PSBreakpoint| Remove-PSBreakpoint
+PS C:\ps-test> Get-PSBreakpoint | Remove-PSBreakpoint
 PS C:\ps-test>
 ```
 
@@ -623,9 +623,9 @@ the action, execution doesn't stop. The backtick (`` ` ``) is the
 line-continuation character.
 
 ```powershell
-PS C:\ps-test> Set-PSBreakpoint -command psversion -script test.ps1  `
--action { add-content "The value of `$scriptName is $scriptName." `
--path action.log}
+PS C:\ps-test> Set-PSBreakpoint -Command psversion -Script test.ps1  `
+-Action { Add-Content "The value of `$scriptName is $scriptName." `
+-Path action.log}
 ```
 
 You can also add actions that set conditions for the breakpoint. In the
@@ -634,8 +634,8 @@ policy is set to RemoteSigned, the most restrictive policy that still permits
 you to run scripts.
 
 ```powershell
-PS C:\ps-test> Set-PSBreakpoint -script test.ps1 -command psversion `
--action { if ((Get-ExecutionPolicy) -eq "RemoteSigned") { break }}
+PS C:\ps-test> Set-PSBreakpoint -Script test.ps1 -Command psversion `
+-Action { if ((Get-ExecutionPolicy) -eq "RemoteSigned") { break }}
 ```
 
 The `break` keyword in the action directs the debugger to execute the
@@ -700,7 +700,7 @@ features that you can use to debug scripts and functions.
 
 <!-- link references -->
 [01]: /powershell/scripting/dev-cross-plat/vscode/using-vscode#debugging-with-visual-studio-code
-[02]: about_prompts.md
+[02]: about_Prompts.md
 [05]: xref:Microsoft.PowerShell.Utility.Disable-PSBreakpoint
 [06]: xref:Microsoft.PowerShell.Utility.Enable-PSBreakpoint
 [07]: xref:Microsoft.PowerShell.Utility.Get-PSBreakpoint

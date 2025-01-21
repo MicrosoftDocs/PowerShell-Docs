@@ -93,7 +93,8 @@ parameter using one of the following formats:
 
 - A culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
 - A variable that contains a **CultureInfo** object.
-- A command that gets a **CultureInfo** object, such as [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
+- A command that gets a **CultureInfo** object, such as
+  [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 
 ```yaml
 Type: System.Globalization.CultureInfo
@@ -479,12 +480,12 @@ This cmdlet returns an object that contains CIM session options information.
 
 ## RELATED LINKS
 
-[Get-ChildItem](../microsoft.powershell.management/get-childitem.md)
+[Get-ChildItem](../Microsoft.Powershell.Management/Get-ChildItem.md)
 
-[Get-Credential](../microsoft.powershell.security/get-credential.md)
+[Get-Credential](../Microsoft.Powershell.Security/Get-Credential.md)
 
-[Get-Culture](../microsoft.powershell.utility/get-culture.md)
+[Get-Culture](../Microsoft.Powershell.Utility/Get-Culture.md)
 
-[Get-Item](../microsoft.powershell.management/get-item.md)
+[Get-Item](../Microsoft.Powershell.Management/Get-Item.md)
 
 [New-CimSession](New-CimSession.md)

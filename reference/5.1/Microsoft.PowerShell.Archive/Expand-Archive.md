@@ -187,4 +187,4 @@ different than the source filename stored in the archive.
 
 ## RELATED LINKS
 
-[Compress-Archive](compress-archive.md)
+[Compress-Archive](Compress-Archive.md)

@@ -329,6 +329,6 @@ This cmdlet is only available on Windows platforms.
 
 [New-CimInstance](New-CimInstance.md)
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)

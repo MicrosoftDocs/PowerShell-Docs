@@ -98,13 +98,13 @@ script block for **Action**, which uses the `$event` variable to access the even
 $action = {
   $name = $event.SourceEventArgs.NewEvent.ProcessName
   $id = $event.SourceEventArgs.NewEvent.ProcessId
-  Write-Host -Object "New Process Started : Name = $name
- ID = $id"
+  Write-Host -Object "New Process Started : Name = $name ID = $id"
 }
 Register-CimIndicationEvent -ClassName 'Win32_ProcessStartTrace' -SourceIdentifier "ProcessStarted" -Action $action
 ```
 
-For more information, see [Win32_ProcessStartTrace](/previous-versions/windows/desktop/krnlprov/win32-processstarttrace).
+For more information, see
+[Win32_ProcessStartTrace](/previous-versions/windows/desktop/krnlprov/win32-processstarttrace).
 
 ### Example 4: Register the events on a remote computer
 
@@ -399,13 +399,13 @@ This cmdlet is only available on Windows platforms.
 
 ## RELATED LINKS
 
-[Get-Event](../microsoft.powershell.utility/get-event.md)
+[Get-Event](../Microsoft.Powershell.Utility/Get-Event.md)
 
-[Remove-Event](../microsoft.powershell.utility/remove-event.md)
+[Remove-Event](../Microsoft.Powershell.Utility/Remove-Event.md)
 
-[Unregister-Event](../microsoft.powershell.utility/unregister-event.md)
+[Unregister-Event](../Microsoft.Powershell.Utility/Unregister-Event.md)
 
-[Write-Host](../microsoft.powershell.utility/write-host.md)
+[Write-Host](../Microsoft.Powershell.Utility/Write-Host.md)
 
 [Get-CimSession](Get-CimSession.md)
 
