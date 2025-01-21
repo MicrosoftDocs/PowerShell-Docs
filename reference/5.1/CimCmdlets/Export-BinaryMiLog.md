@@ -96,8 +96,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
-[Import-BinaryMiLog](import-binarymilog.md)
+[Import-BinaryMiLog](Import-BinaryMiLog.md)
 
-[Import-Clixml](../microsoft.powershell.utility/import-clixml.md)
+[Import-Clixml](../Microsoft.Powershell.Utility/Import-Clixml.md)

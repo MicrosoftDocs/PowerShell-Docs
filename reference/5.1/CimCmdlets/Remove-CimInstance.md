@@ -320,6 +320,6 @@ This cmdlet returns no output.
 
 [New-CimInstance](New-CimInstance.md)
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)

@@ -153,7 +153,7 @@ to `Invoke-CimMethod`.
 
 ```powershell
 $c = Get-CimClass -ClassName Win32_Process
-Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{ CommandLine = 'notepad.exe' }
+Invoke-CimMethod -CimClass $c -MethodName "xyz" -Arguments @{CommandLine='notepad.exe'}
 ```
 
 ## PARAMETERS
@@ -467,9 +467,9 @@ This cmdlet returns an object.
 
 ## RELATED LINKS
 
-[Get-CimClass](get-cimclass.md)
+[Get-CimClass](Get-CimClass.md)
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
 [Get-CimSession](Get-CimSession.md)
 

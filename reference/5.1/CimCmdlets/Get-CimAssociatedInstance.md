@@ -327,6 +327,6 @@ Windows PowerShell includes the following aliases for `Get-CimAssociatedInstance
 
 ## RELATED LINKS
 
-[Get-CimClass](get-cimclass.md)
+[Get-CimClass](Get-CimClass.md)
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)

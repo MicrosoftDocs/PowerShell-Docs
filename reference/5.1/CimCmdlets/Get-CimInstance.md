@@ -142,7 +142,7 @@ the key property `@{ "Handle"=0 }` and stores it in a variable named `$x`. The v
 a CIM instance to the `Get-CimInstance` cmdlet to get a particular instance.
 
 ```powershell
-$x = New-CimInstance -ClassName Win32_Process -Namespace root\cimv2 -Property @{ "Handle"=0 } -Key Handle -ClientOnly
+$x = New-CimInstance -ClassName Win32_Process -Namespace root\cimv2 -Property @{"Handle"=0} -Key Handle -ClientOnly
 Get-CimInstance -CimInstance $x
 ```
 
@@ -154,7 +154,7 @@ the variables `$x` and `$y`. The variable `$x` is then formatted in a table cont
 
 ```powershell
 $x,$y = Get-CimInstance -ClassName Win32_Process
-$x | Format-Table -Property Name,KernelModeTime -AutoSize
+$x | Format-Table -Property Name, KernelModeTime -AutoSize
 ```
 
 ```Output
@@ -169,7 +169,7 @@ This example retrieves the CIM instances of a class named **Win32_ComputerSystem
 computers named **Server01** and **Server02**.
 
 ```powershell
-Get-CimInstance -ClassName Win32_ComputerSystem -ComputerName Server01,Server02
+Get-CimInstance -ClassName Win32_ComputerSystem -ComputerName Server01, Server02
 ```
 
 ### Example 8: Getting only the key properties, instead of all properties
@@ -188,8 +188,8 @@ This example retrieves only a subset of properties, which reduces the size of th
 traffic.
 
 ```powershell
-Get-CimInstance -Class Win32_Process -Property Name,KernelModeTime
-$x = Get-CimInstance -Class Win32_Process -Property Name,KernelModeTime
+Get-CimInstance -Class Win32_Process -Property Name, KernelModeTime
+$x = Get-CimInstance -Class Win32_Process -Property Name, KernelModeTime
 $x | Invoke-CimMethod -MethodName GetOwner
 ```
 
@@ -204,7 +204,7 @@ the variable are then passed to `Get-CimInstance` by using the **CimSession** pa
 CIM instances of the class named **Win32_ComputerSystem**.
 
 ```powershell
-$s = New-CimSession -ComputerName Server01,Server02
+$s = New-CimSession -ComputerName Server01, Server02
 Get-CimInstance -ClassName Win32_ComputerSystem -CimSession $s
 ```
 
@@ -214,7 +214,8 @@ Get-CimInstance -ClassName Win32_ComputerSystem -CimSession $s
 
 Specifies the CIM session to use for this cmdlet. Enter a variable that contains the CIM session or
 a command that creates or gets the CIM session, such as the `New-CimSession` or `Get-CimSession`
-cmdlets. For more information, see [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+cmdlets. For more information, see
+[about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
 
 ```yaml
 Type: Microsoft.Management.Infrastructure.CimSession[]
@@ -320,8 +321,8 @@ Accept wildcard characters: False
 Indicates that only objects with key properties populated are returned. Specifying the **KeyOnly**
 parameter reduces the amount of data transferred over the network.
 
-Use the **KeyOnly** parameter to return only a small portion of the object, which can be used for other
-operations, such as the `Set-CimInstance` or `Get-CimAssociatedInstance` cmdlets.
+Use the **KeyOnly** parameter to return only a small portion of the object, which can be used for
+other operations, such as the `Set-CimInstance` or `Get-CimAssociatedInstance` cmdlets.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -495,7 +496,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -514,18 +516,18 @@ the CIM server.
 
 ## RELATED LINKS
 
-[Format-Table](../microsoft.powershell.utility/format-table.md)
+[Format-Table](../Microsoft.Powershell.Utility/Format-Table.md)
 
 [Get-CimAssociatedInstance](Get-CimAssociatedInstance.md)
 
 [Get-CimClass](Get-CimClass.md)
 
-[Invoke-CimMethod](invoke-cimmethod.md)
+[Invoke-CimMethod](Invoke-CimMethod.md)
 
 [New-CimInstance](New-CimInstance.md)
 
 [Register-CimIndicationEvent](Register-CimIndicationEvent.md)
 
-[Remove-CimInstance](remove-ciminstance.md)
+[Remove-CimInstance](Remove-CimInstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)

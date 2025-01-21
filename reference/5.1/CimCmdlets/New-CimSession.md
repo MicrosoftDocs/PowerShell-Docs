@@ -10,7 +10,6 @@ title: New-CimSession
 # New-CimSession
 
 ## SYNOPSIS
-
 Creates a CIM session.
 
 ## SYNTAX
@@ -23,7 +22,7 @@ New-CimSession [-Authentication <PasswordAuthenticationMechanism>] [[-Credential
  [-Port <UInt32>] [-SessionOption <CimSessionOptions>] [<CommonParameters>]
 ```
 
-### CertificatePrameterSet
+### CertificateParameterSet
 
 ```
 New-CimSession [-CertificateThumbprint <String>] [[-ComputerName] <String[]>] [-Name <String>]
@@ -128,9 +127,9 @@ parameter are:
 - NtlmDomain
 - CredSsp
 
-You cannot use the **NtlmDomain** authentication type for connection to the local computer. **CredSSP**
-authentication is available only in Windows Vista, Windows Server 2008, and later versions of
-Windows.
+You cannot use the **NtlmDomain** authentication type for connection to the local computer.
+**CredSSP** authentication is available only in Windows Vista, Windows Server 2008, and later
+versions of Windows.
 
 > [!CAUTION]
 > Credential Security Service Provider (CredSSP) authentication is designed for commands that
@@ -164,11 +163,12 @@ To get a certificate thumbprint, use the
 [`Get-ChildItem`](../Microsoft.Powershell.Management/Get-ChildItem.md) cmdlets in the PowerShell
 Certificate Provider.
 
-For more information, see [about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
+For more information, see
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
 
 ```yaml
 Type: System.String
-Parameter Sets: CertificatePrameterSet
+Parameter Sets: CertificateParameterSet
 Aliases:
 
 Required: False
@@ -215,7 +215,8 @@ Specify the value for **Credential** using one of the following formats:
 - A user name: "User01"
 - A domain name and a user name: "Domain01\User01"
 - A user principal name: "User@Domain.com"
-- A PSCredential object, such as one returned by the [`Get-Credential`](../Microsoft.PowerShell.Security/Get-Credential.md) cmdlet.
+- A PSCredential object, such as one returned by the
+  [`Get-Credential`](../Microsoft.PowerShell.Security/Get-Credential.md) cmdlet.
 
 When you type a user name, you are prompted for a password.
 
@@ -235,7 +236,8 @@ Accept wildcard characters: False
 
 Specifies a friendly name for the CIM session.
 
-You can use the name to refer to the CIM session when using other cmdlets, such as the [`Get-CimSession`](Get-CimSession.md) cmdlet.
+You can use the name to refer to the CIM session when using other cmdlets, such as the
+[`Get-CimSession`](Get-CimSession.md) cmdlet.
 The name is not required to be unique to the computer or the current session.
 
 ```yaml
@@ -254,9 +256,13 @@ Accept wildcard characters: False
 
 Duration for which the cmdlet waits for a response from the server.
 
-By default, the value of this parameter is 0, which means that the cmdlet uses the default timeout value for the server.
+By default, the value of this parameter is 0, which means that the cmdlet uses the default timeout
+value for the server.
 
-If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec** parameter are not recoverable, because the operation on the server times out before the client can reconnect.
+If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
+timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
+parameter are not recoverable, because the operation on the server times out before the client can
+reconnect.
 
 ```yaml
 Type: System.UInt32
@@ -272,12 +278,12 @@ Accept wildcard characters: False
 
 ### -Port
 
-Specifies the network port on the remote computer that is used for this connection.
-To connect to a remote computer, the remote computer must be listening on the port that the connection uses.
-The default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
+Specifies the network port on the remote computer that is used for this connection. To connect to a
+remote computer, the remote computer must be listening on the port that the connection uses. The
+default ports are 5985 (the WinRM port for HTTP) and 5986 (the WinRM port for HTTPS).
 
-Before using an alternate port, you must configure the WinRM listener on the remote computer to listen at that port.
-Use the following commands to configure the listener:
+Before using an alternate port, you must configure the WinRM listener on the remote computer to
+listen at that port. Use the following commands to configure the listener:
 
 `winrm delete winrm/config/listener?Address=*+Transport=HTTP`
 
