@@ -118,7 +118,7 @@ for (($i = 0), ($j = 0); $i -lt 10 -and $j -lt 10; $i++,$j++)
 }
 ```
 
-For more information, see [about_Logical_Operators](about_Logical_Operators.md).
+For more information, see [about_Logical_Operators][01].
 
 ### Syntax examples
 
@@ -225,7 +225,7 @@ for ($i = 0; $i -le 20; $i += 2)
 The `For` loop can also be written on one line as in the following example.
 
 ```powershell
-for ($i = 0; $i -lt 10; $i++) { Write-Host $i }
+for ($i = 0; $i -lt 10; $i++){Write-Host $i}
 ```
 
 ### Functional example
@@ -356,7 +356,7 @@ properties:
   index.
 
 ```powershell
-$paddedList = Get-ChildItem -path ./work_items
+$paddedList = Get-ChildItem -Path ./work_items
 
 # Sort both file lists by name.
 $sortedOriginal = $fileList    | Sort-Object -Property Name
@@ -406,5 +406,10 @@ In the output, the sorted work items after padding are in the expected order.
 
 ## See also
 
-- [about_Comparison_Operators](about_Comparison_Operators.md)
-- [about_Foreach](about_Foreach.md)
+- [about_Comparison_Operators][02]
+- [about_Foreach][03]
+
+<!-- link references -->
+[01]: about_Logical_Operators.md
+[02]: about_Comparison_Operators.md
+[03]: about_Foreach.md
