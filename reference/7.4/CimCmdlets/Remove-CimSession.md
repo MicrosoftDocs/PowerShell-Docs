@@ -126,7 +126,8 @@ Specifies the ID of the CIM session to remove. Specify one or more IDs separated
 the range operator (`..`) to specify a range of IDs. An **Id** is an integer that uniquely
 identifies the CIM session in the current PowerShell session.
 
-For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
+For more information about the range operator, see
+[about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
 ```yaml
 Type: System.UInt32[]
@@ -146,7 +147,8 @@ Specifies the instance ID of the CIM session to remove. **InstanceId** is a Glob
 Identifier (GUID) that uniquely identifies a CIM session. The **InstanceId** is unique, even when
 you have multiple sessions running in PowerShell.
 
-The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM session.
+The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM
+session.
 
 ```yaml
 Type: System.Guid[]
