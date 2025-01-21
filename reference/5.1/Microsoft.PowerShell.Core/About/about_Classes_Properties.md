@@ -1,7 +1,7 @@
 ---
 description: Describes how to define properties for PowerShell classes.
 Locale: en-US
-ms.date: 11/13/2023
+ms.date: 01/21/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes_properties?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes_Properties
@@ -527,7 +527,8 @@ properties:
 
 > [!IMPORTANT]
 > Static properties for classes defined in PowerShell aren't immutable. They
-> can
+> can be overridden to any valid value, as defined by the static property's
+> type and attributes.
 
 ## Derived class properties
 
