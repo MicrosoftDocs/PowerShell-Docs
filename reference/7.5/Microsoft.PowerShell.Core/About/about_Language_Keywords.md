@@ -184,8 +184,8 @@ do {<statement list>} until (<condition>)
 
 ## `dynamicparam`
 
-Specifies one part of the body of a function, along with the `begin`, `process`,
-and `end` keywords. Dynamic parameters are added at runtime.
+Specifies one part of the body of a function, along with the `begin`,
+`process`, and `end` keywords. Dynamic parameters are added at runtime.
 
 Syntax:
 

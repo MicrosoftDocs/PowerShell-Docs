@@ -93,6 +93,6 @@ example, see the [Visualize parameter binding][01] article.
 
 <!-- link references -->
 [01]: /powershell/scripting/learn/deep-dives/visualize-parameter-binding
-[02]: about_functions_advanced_parameters.md#valuefrompipeline-argument
-[03]: about_functions_advanced_parameters.md#valuefrompipelinebypropertyname-argument
+[02]: about_Functions_Advanced_Parameters.md#valuefrompipeline-argument
+[03]: about_Functions_Advanced_Parameters.md#valuefrompipelinebypropertyname-argument
 [04]: xref:Microsoft.PowerShell.Utility.Trace-Command

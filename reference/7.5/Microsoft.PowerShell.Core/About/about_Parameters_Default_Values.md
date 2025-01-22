@@ -118,7 +118,7 @@ using an array. This example sets the default value of the
 
 ```powershell
 $PSDefaultParameterValues = @{
-  'Invoke-Command:ComputerName' = 'Server01','Server02'
+  'Invoke-Command:ComputerName' = 'Server01', 'Server02'
 }
 ```
 
