@@ -35,7 +35,7 @@ cast an object to a specific type. For those cases, you must enclose the type
 name or its accelerator in square brackets (`[]`). For example, `[int]` or
 `[int32]`.
 
-In some contexts, you can specify allow type accelerator name as a string. For
+In some contexts, you can specify the type accelerator name as a string. For
 example:
 
 - When used with type comparison operators
