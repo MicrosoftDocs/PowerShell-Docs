@@ -16,7 +16,7 @@ find help from other members of the community in one of these public forums:
 - [PowerShell Tech Community](https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell)
 - [DSC Community](https://dsccommunity.org/)
 - [PowerShell.org](https://forums.powershell.org/)
-- [StackOverFlow](https://stackoverflow.com/questions/tagged/powershell)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/powershell)
 - [r/PowerShell subreddit](https://www.reddit.com/r/PowerShell/)
 - PowerShell Virtual User Group - join via:
   - [Slack](https://aka.ms/psslack)
