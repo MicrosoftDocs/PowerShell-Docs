@@ -147,7 +147,7 @@ tools:
       imageSrc: /media/hubs/powershell/i_group-feedback.svg
       url: https://powershell.org/
     # Card 5
-    - title: StackOverFlow
+    - title: Stack Overflow
       imageSrc: /media/hubs/powershell/logo_stackoverflow.svg
       url: https://stackoverflow.com/questions/tagged/powershell
     # Card 6
