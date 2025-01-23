@@ -9,6 +9,7 @@ title: about_Foreach
 # about_Foreach
 
 ## Short description
+
 Describes a language command you can use to traverse all the items in a
 collection of items.
 
@@ -104,8 +105,8 @@ counts files over 100 KB in size:
 ```powershell
 $i = 0
 foreach ($file in Get-ChildItem) {
-  if ($file.length -gt 100KB) {
-    Write-Host $file 'file size:' ($file.length / 1024).ToString('F0') KB
+  if ($file.Length -gt 100KB) {
+    Write-Host $file 'file size:' ($file.Length / 1024).ToString('F0') KB
     $i = $i + 1
   }
 }
@@ -127,7 +128,7 @@ display a count of files over 100KB.
 The previous example also demonstrates how to format the file length results:
 
 ```powershell
-($file.length / 1024).ToString('F0')
+($file.Length / 1024).ToString('F0')
 ```
 
 The value is divided by 1,024 to show the results in kilobytes rather than

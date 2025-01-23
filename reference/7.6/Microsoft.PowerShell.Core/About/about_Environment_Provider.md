@@ -26,8 +26,8 @@ Provides access to the Windows environment variables.
 
 ## Detailed description
 
-The PowerShell **Environment** provider lets you get, add, change, clear, and delete environment
-variables and values in PowerShell.
+The PowerShell **Environment** provider lets you get, add, change, clear, and
+delete environment variables and values in PowerShell.
 
 **Environment** variables are dynamically named variables that describe the
 environment in which your programs run. Windows and PowerShell use environment
@@ -42,19 +42,18 @@ have no child items.
 The **Environment** provider supports the following cmdlets, which are covered
 in this article.
 
-- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
-- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Clear-Item](xref:Microsoft.PowerShell.Management.Clear-Item)
+- [Get-Location][01]
+- [Set-Location][02]
+- [Get-Item][03]
+- [New-Item][04]
+- [Remove-Item][05]
+- [Clear-Item][06]
 
 ## Types exposed by this provider
 
 Each environment variable is an instance of the
-[System.Collections.DictionaryEntry](/dotnet/api/system.collections.dictionaryentry)
-class. The name of the variable is the dictionary key. The value of the
-environment variable is the dictionary value.
+[System.Collections.DictionaryEntry][07] class. The name of the variable is the
+dictionary key. The value of the environment variable is the dictionary value.
 
 ## Navigating the Environment drive
 
@@ -75,10 +74,11 @@ Set-Location C:
 ```
 
 You can also work with the **Environment** provider from any other PowerShell
-drive. To reference an environment variable from another location, use the drive name `Env:` in the path.
+drive. To reference an environment variable from another location, use the
+drive name `Env:` in the path.
 
-The **Environment** provider also exposes environment variables using a variable
-prefix of `$env:`.  The following command views the contents of the
+The **Environment** provider also exposes environment variables using a
+variable prefix of `$env:`.  The following command views the contents of the
 **ProgramFiles** environment variable. The `$env:` variable prefix can
 be used from any PowerShell drive.
 
@@ -94,9 +94,8 @@ session for as long as it is active.
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem),
-> `cd` is an alias for [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd` is
-> an alias for [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
+> [Get-ChildItem][08], `cd` is an alias for [Set-Location][02] and `pwd` is
+> an alias for [Get-Location][01].
 
 ## Getting environment variables
 
@@ -203,8 +202,8 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system drive or use the `-Path`
-parameter of [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system drive.
+[Get-Help][09] command in a file system drive or use the `-Path` parameter of
+[Get-Help][09] to specify a file system drive.
 
 ```powershell
 Get-Help Get-ChildItem
@@ -216,4 +215,16 @@ Get-Help Get-ChildItem -Path env:
 
 ## See also
 
-- [about_Providers](about_Providers.md)
+- [about_Providers][10]
+
+<!-- link references -->
+[01]: xref:Microsoft.PowerShell.Management.Get-Location
+[02]: xref:Microsoft.PowerShell.Management.Set-Location
+[03]: xref:Microsoft.PowerShell.Management.Get-Item
+[04]: xref:Microsoft.PowerShell.Management.New-Item
+[05]: xref:Microsoft.PowerShell.Management.Remove-Item
+[06]: xref:Microsoft.PowerShell.Management.Clear-Item
+[07]: /dotnet/api/system.collections.dictionaryentry
+[08]: xref:Microsoft.PowerShell.Management.Get-ChildItem
+[09]: xref:Microsoft.PowerShell.Core.Get-Help
+[10]: about_Providers.md

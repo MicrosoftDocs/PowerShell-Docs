@@ -8,6 +8,7 @@ title: about_Parameter_Sets
 # about_Parameter_Sets
 
 ## Short description
+
 Describes how to define and use parameter sets in advanced functions.
 
 ## Long description
@@ -125,9 +126,9 @@ function Measure-Lines {
         }
         foreach ($file in $Files) {
             $result = [ordered]@{ }
-            $result.Add('File', $file.fullname)
+            $result.Add('File', $file.FullName)
 
-            $content = Get-Content -LiteralPath $file.fullname
+            $content = Get-Content -LiteralPath $file.FullName
 
             if ($Lines) { $result.Add('Lines', $content.Length) }
 
@@ -162,7 +163,7 @@ which parameters can be used in each parameter set.
 
 ```powershell
 (Get-Command Measure-Lines).ParameterSets |
-  Select-Object -Property @{n='ParameterSetName';e={$_.name}},
+  Select-Object -Property @{n='ParameterSetName';e={$_.Name}},
     @{n='Parameters';e={$_.ToString()}}
 ```
 
@@ -271,4 +272,4 @@ $Var4 = 3
 ```
 
 <!-- link references -->
-[01]: about_functions_cmdletbindingattribute.md
+[01]: about_Functions_CmdletBindingAttribute.md

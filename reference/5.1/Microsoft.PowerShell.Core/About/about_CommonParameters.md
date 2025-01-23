@@ -773,7 +773,7 @@ Mode                LastWriteTime     Length Name
 <!-- link references -->
 [02]: about_Automatic_Variables.md
 [03]: about_Preference_Variables.md
-[05]: about_functions_advanced.md
+[05]: about_Functions_Advanced.md
 [06]: xref:Microsoft.PowerShell.Utility.Write-Progress
 [07]: xref:System.Management.Automation.ActionPreference
 [11]: xref:Microsoft.PowerShell.Utility.Write-Debug

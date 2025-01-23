@@ -173,8 +173,8 @@ By default, new error messages overwrite error messages that are already stored
 in the variable. To append the error message to the variable content, put a
 plus sign (`+`) before the variable name.
 
-For example, the following command creates the `$a` variable and then stores any
-errors in it:
+For example, the following command creates the `$a` variable and then stores
+any errors in it:
 
 ```powershell
 Get-Process -Id 6 -ErrorVariable a
@@ -759,7 +759,7 @@ Mode                LastWriteTime     Length Name
 <!-- link references -->
 [02]: about_Automatic_Variables.md
 [03]: about_Preference_Variables.md
-[05]: about_functions_advanced.md
+[05]: about_Functions_Advanced.md
 [06]: xref:Microsoft.PowerShell.Utility.Write-Progress
 [07]: xref:System.Management.Automation.ActionPreference
 [11]: xref:Microsoft.PowerShell.Utility.Write-Debug

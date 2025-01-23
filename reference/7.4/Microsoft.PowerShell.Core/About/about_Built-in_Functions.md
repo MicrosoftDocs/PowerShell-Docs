@@ -69,8 +69,8 @@ This function clears the screen. For more information, see
 
 ## `TabExpansion2`
 
-This is the default function to use for tab expansion. For more information, see
-[TabExpansion2](xref:Microsoft.PowerShell.Core.TabExpansion2).
+This is the default function to use for tab expansion. For more information,
+see [TabExpansion2](xref:Microsoft.PowerShell.Core.TabExpansion2).
 
 ## `oss`
 

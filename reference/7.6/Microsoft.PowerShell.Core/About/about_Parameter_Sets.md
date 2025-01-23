@@ -163,7 +163,7 @@ which parameters can be used in each parameter set.
 
 ```powershell
 (Get-Command Measure-Lines).ParameterSets |
-  Select-Object -Property @{n='ParameterSetName';e={$_.name}},
+  Select-Object -Property @{n='ParameterSetName';e={$_.Name}},
     @{n='Parameters';e={$_.ToString()}}
 ```
 
@@ -272,4 +272,4 @@ $Var4 = 3
 ```
 
 <!-- link references -->
-[01]: about_functions_cmdletbindingattribute.md
+[01]: about_Functions_CmdletBindingAttribute.md

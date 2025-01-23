@@ -350,8 +350,7 @@ Beginning in PowerShell 3.0, you can use the **Stream** parameter of the
 from the internet. Use the `Unblock-File` cmdlet to unblock the scripts so that
 you can run them in PowerShell.
 
-For more information, see [about_Signing][04],
-[Get-Item][05], and
+For more information, see [about_Signing][04], [Get-Item][05], and
 [Unblock-File][08].
 
 > [!NOTE]

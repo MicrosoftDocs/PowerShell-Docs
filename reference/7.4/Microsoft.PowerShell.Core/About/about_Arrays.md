@@ -639,8 +639,8 @@ The value of `mode` must be a [WhereOperatorSelectionMode][02] enum value:
 - `Default` (`0`) - Return all items
 - `First` (`1`) - Return the first item
 - `Last` (`2`) - Return the last item
-- `SkipUntil` (`3`) - Skip items until condition is true, return all the remaining
-  items (including the first item for which the condition is true)
+- `SkipUntil` (`3`) - Skip items until condition is true, return all the
+  remaining items (including the first item for which the condition is true)
 - `Until` (`4`) - Return all items until condition is true
 - `Split` (`5`) - Return an array of two elements
   - The first element contains matching items
@@ -1018,8 +1018,8 @@ PS> [Collections.Generic.Dictionary[string, int]]::new()['nosuchkey']
 # No output ($null)
 
 PS> [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey')
-GetValueInvocationException: Exception getting "Item": "The given key 'nosuchkey'
- was not present in the dictionary."
+GetValueInvocationException: Exception getting "Item": "The given key 
+'nosuchkey' was not present in the dictionary."
 ```
 
 ## Member-access enumeration

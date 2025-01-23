@@ -98,8 +98,8 @@ DATA -supportedCommand Format-Xml
 
 ### Using a `DATA` Section
 
-To use the content of a `DATA` section, assign it to a variable and use variable
-notation to access the content.
+To use the content of a `DATA` section, assign it to a variable and use
+variable notation to access the content.
 
 For example, the following `DATA` section contains a `ConvertFrom-StringData`
 command that converts the here-string into a hash table. The hash table is
@@ -173,7 +173,7 @@ A single-quoted here-string that uses the `ConvertFrom-StringData` cmdlet:
 
 ```powershell
 DATA {
-    ConvertFrom-StringData -stringdata @'
+    ConvertFrom-StringData -StringData @'
 Text001 = Windows 7
 Text002 = Windows Server 2008 R2
 '@
@@ -184,7 +184,7 @@ A double-quoted here-string that uses the `ConvertFrom-StringData` cmdlet:
 
 ```powershell
 DATA  {
-    ConvertFrom-StringData -stringdata @"
+    ConvertFrom-StringData -StringData @"
 Msg1 = To start, press any key.
 Msg2 = To exit, type "quit".
 "@
@@ -195,7 +195,7 @@ A data section that includes a user-written cmdlet that generates data:
 
 ```powershell
 DATA -supportedCommand Format-XML {
-    Format-Xml -strings string1, string2, string3
+    Format-Xml -Strings string1, string2, string3
 }
 ```
 

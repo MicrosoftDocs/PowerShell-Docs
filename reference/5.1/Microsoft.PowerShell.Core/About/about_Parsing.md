@@ -128,13 +128,13 @@ uses one of the following syntaxes:
     literal `@` with `()` starting a new argument that's an expression.
 
 - Everything else is treated as an expandable string, except metacharacters
-  that still need escaping. See [Handling special characters][02].
+  that still need escaping. See [Handling special characters][03].
   - The argument-mode metacharacters (characters with special syntactic
     meaning) are: ``<space> ' " ` , ; ( ) { } | & < > @ #``. Of these,
     `< > @ #` are only special at the start of a token.
 
 - The stop-parsing token (`--%`) changes the interpretation of all remaining
-  arguments. For more information, see the [stop-parsing token][03] section
+  arguments. For more information, see the [stop-parsing token][04] section
   below.
 
 ### Examples
@@ -341,7 +341,7 @@ For more information about the escape requirements, see the documentation for
 
 > [!NOTE]
 > The following examples use the `TestExe.exe` tool. You can build `TestExe`
-> from the source code. See [TestExe][05] in the PowerShell source repository.
+> from the source code. See [TestExe][06] in the PowerShell source repository.
 
 The goal of these examples is to pass the directory path
 `"C:\Program Files (x86)\Microsoft\"` to a native command so that it received
@@ -485,11 +485,11 @@ Cannot access file D:\temp\~\repocache.clixml
 
 ## See also
 
-- [about_Command_Syntax][04]
+- [about_Command_Syntax][05]
 
 <!-- link references -->
 [01]: /dotnet/api/system.diagnostics.processstartinfo.arguments
-[02]: #handling-special-characters
-[03]: #the-stop-parsing-token
-[04]: about_Command_Syntax.md
-[05]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs
+[03]: #handling-special-characters
+[04]: #the-stop-parsing-token
+[05]: about_Command_Syntax.md
+[06]: https://github.com/PowerShell/PowerShell/blob/master/test/tools/TestExe/TestExe.cs

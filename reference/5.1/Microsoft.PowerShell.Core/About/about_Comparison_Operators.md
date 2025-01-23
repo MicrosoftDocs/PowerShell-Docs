@@ -630,8 +630,8 @@ Examples:
 More complex examples:
 
 ```powershell
-$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
-                 "ContosoDHCP","ContosoWSUS"
+$DomainServers = "ContosoDC1", "ContosoDC2", "ContosoFileServer",
+                 "ContosoDNS", "ContosoDHCP", "ContosoWSUS"
 $thisComputer  = "ContosoDC2"
 
 $DomainServers -contains $thisComputer
@@ -681,8 +681,8 @@ The following examples do the same thing that the examples for `-contains` and
 More complex examples:
 
 ```powershell
-$DomainServers = "ContosoDC1","ContosoDC2","ContosoFileServer","ContosoDNS",
-                 "ContosoDHCP","ContosoWSUS"
+$DomainServers = "ContosoDC1", "ContosoDC2", "ContosoFileServer",
+                 "ContosoDNS", "ContosoDHCP", "ContosoWSUS"
 $thisComputer  = "ContosoDC2"
 
 $thisComputer -in $DomainServers

@@ -266,9 +266,10 @@ The following table lists the job types that come with PowerShell.
 | PSEventJob     | Created using`Register-ObjectEvent` and specifying an    |
 |                | action with the **Action** parameter.                    |
 
-NOTE: Before using the `Get-Job` cmdlet to get jobs of a particular type,
-verify that the module that adds the job type is imported into the current
-session. Otherwise, `Get-Job` does not get jobs of that type.
+> [!NOTE]
+> Before using the `Get-Job` cmdlet to get jobs of a particular type, verify
+> that the module that adds the job type is imported into the current session.
+> Otherwise, `Get-Job` does not get jobs of that type.
 
 ## Examples
 

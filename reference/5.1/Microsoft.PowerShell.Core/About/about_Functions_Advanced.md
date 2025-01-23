@@ -9,13 +9,14 @@ title: about_Functions_Advanced
 # about_Functions_Advanced
 
 ## Short description
+
 Introduces advanced functions that are a way to create cmdlets using scripts.
 
 ## Long description
 
 A cmdlet is a single command that participates in the pipeline semantics of
-PowerShell. This includes binary cmdlets, PowerShell advanced script
-functions, CDXML, and Workflows.
+PowerShell. This includes binary cmdlets, PowerShell advanced functions,
+CDXML, and Workflows.
 
 Advanced functions allow you create cmdlets that are written as a PowerShell
 function. Advanced functions make it easier to create cmdlets without having to
@@ -45,7 +46,7 @@ function Send-Greeting
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true)]
-        [string] $Name
+        [string]$Name
     )
 
     process

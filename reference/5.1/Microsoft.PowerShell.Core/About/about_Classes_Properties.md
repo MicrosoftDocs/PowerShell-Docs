@@ -957,7 +957,7 @@ PowerShell class properties have the following limitations:
 [06]: /dotnet/csharp/language-reference/builtin-types/default-values
 [07]: about_Hidden.md
 [08]: about_Classes_Inheritance.md
-[09]: about_functions_advanced_parameters.md#parameter-and-variable-validation-attributes
+[09]: about_Functions_Advanced_Parameters.md#parameter-and-variable-validation-attributes
 [10]: about_Classes.md
 [11]: about_Classes_Constructors.md
 [12]: about_Classes_Inheritance.md

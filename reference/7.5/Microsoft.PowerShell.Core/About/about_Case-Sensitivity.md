@@ -42,7 +42,7 @@ operating system and integration with other tools.
   it was imported. The name, as stored in the session state, is used
   `Update-Help` when looking for new help files.
   The web service that serves the help files for Microsoft uses a
-  ase-sensitive filesystem. When the case of the imported name of the module
+  case-sensitive filesystem. When the case of the imported name of the module
   doesn't match, `Update-Help` can't find the help files and reports an error.
 
 ## Related links

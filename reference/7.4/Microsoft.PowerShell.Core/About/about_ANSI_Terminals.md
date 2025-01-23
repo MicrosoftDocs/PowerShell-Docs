@@ -8,6 +8,7 @@ title: about_ANSI_terminals
 # about_ANSI_Terminals
 
 ## Short description
+
 Describes the support available for ANSI escape sequences in PowerShell.
 
 ## Long description
@@ -229,7 +230,7 @@ in the `bash` process, outside of the PowerShell host, the output isn't
 affected by **OutputRendering**.
 
 ```bash
-pwsh -noprofile -command 'Get-Childitem' > out.txt
+pwsh -noprofile -command 'Get-ChildItem' > out.txt
 ```
 
 When you inspect the contents of `out.txt` you see the ANSI escape sequences.
@@ -238,7 +239,7 @@ By contrast, when redirection occurs within the PowerShell session,
 **OutputRendering** affects the redirected output.
 
 ```bash
-pwsh -noprofile -command 'Get-Childitem > out.txt'
+pwsh -noprofile -command 'Get-ChildItem > out.txt'
 ```
 
 When you inspect the contents of `out.txt` there are no ANSI escape sequences.
@@ -252,7 +253,7 @@ The following values of `$env:TERM` change the behavior as follows:
 
 - `dumb` - sets `$Host.UI.SupportsVirtualTerminal = $false`
 - `xterm-mono` - sets `$PSStyle.OutputRendering = PlainText`
-- `xtermm` - sets `$PSStyle.OutputRendering = PlainText`
+- `xterm` - sets `$PSStyle.OutputRendering = PlainText`
 
 If `$env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
 **PlainText**. For more information about the **NO_COLOR** environment

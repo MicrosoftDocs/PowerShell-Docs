@@ -10,6 +10,7 @@ title: about_Hash_Tables
 # about_Hash_Tables
 
 ## Short description
+
 Describes how to create, use, and sort hashtables in PowerShell.
 
 ## Long description
@@ -314,9 +315,9 @@ member notation or array index notation.
 ### Handling property name collisions
 
 If the key name collides with one of the property names of the **HashTable**
-type, you can use the **psbase** [intrinsic member](about_Intrinsic_Members.md)
-to access those properties. For example, if the key name is `keys` and you want
-to return the collection of the **HashTable** keys, use this syntax:
+type, you can use the **psbase** [intrinsic member][01] to access those
+properties. For example, if the key name is `keys` and you want to return the
+collection of the **HashTable** keys, use this syntax:
 
 ```powershell
 $hashtable.psbase.Keys
@@ -332,7 +333,7 @@ ways. Each of the examples in this section has identical output. They iterate
 over the `$hash` variable defined here:
 
 ```powershell
-$hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
+$hash = [ordered]@{Number = 1; Shape = "Square"; Color = "Blue"}
 ```
 
 > [!NOTE]
@@ -476,7 +477,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     441      24    54196      54012   571     5.10   1788 PowerShell
 
-PS> $p.keys | ForEach-Object {$p.$_.handles}
+PS> $p.Keys | ForEach-Object {$p.$_.Handles}
 441
 251
 ```
@@ -504,7 +505,7 @@ PowerShell                     System.Diagnostics.Process (PowerShell)
 Notepad                        System.Diagnostics.Process (notepad)
 System.ServiceProcess.Servi... Running
 
-PS> $p.keys
+PS> $p.Keys
 PowerShell
 Notepad
 
@@ -512,7 +513,7 @@ Status   Name               DisplayName
 ------   ----               -----------
 Running  winrm              Windows Remote Management (WS-Manag...
 
-PS> $p.keys | ForEach-Object {$_.name}
+PS> $p.Keys | ForEach-Object {$_.Name}
 WinRM
 ```
 
@@ -605,7 +606,7 @@ The syntax is as follows:
 This method works only for classes that have a constructor that has no
 parameters. The object properties must be public and settable.
 
-For more information, see [about_Object_Creation](about_Object_Creation.md).
+For more information, see [about_Object_Creation][02].
 
 ## ConvertFrom-StringData
 
@@ -617,7 +618,7 @@ cmdlet safely in the Data section of a script, and you can use it with the
 
 Here-strings are especially useful when the values in the hashtable include
 quotation marks. For more information about here-strings, see
-[about_Quoting_Rules](about_Quoting_Rules.md).
+[about_Quoting_Rules][03].
 
 The following example shows how to create a here-string of the user messages in
 the previous example and how to use `ConvertFrom-StringData` to convert them
@@ -647,16 +648,25 @@ Msg2                           She said, "Hello, World."
 Msg1                           Type "Windows".
 ```
 
-For more information about here-strings, see
-[about_Quoting_Rules](about_Quoting_Rules.md).
+For more information about here-strings, see [about_Quoting_Rules][03].
 
 ## See also
 
-- [about_Arrays](about_Arrays.md)
-- [about_Intrinsic_Members](about_Intrinsic_Members.md)
-- [about_Object_Creation](about_Object_Creation.md)
-- [about_Quoting_Rules](about_Quoting_Rules.md)
-- [about_Script_Internationalization](about_Script_Internationalization.md)
-- [Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData)
-- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
-- [System.Collections.Hashtable](/dotnet/api/system.collections.hashtable)
+- [about_Arrays][04]
+- [about_Intrinsic_Members][01]
+- [about_Object_Creation][02]
+- [about_Quoting_Rules][03]
+- [about_Script_Internationalization][05]
+- [Import-LocalizedData][06]
+- [ConvertFrom-StringData][07]
+- [System.Collections.Hashtable][08]
+
+<!-- link references -->
+[01]: about_Intrinsic_Members.md
+[02]: about_Object_Creation.md
+[03]: about_Quoting_Rules.md
+[04]: about_Arrays.md
+[05]: about_Script_Internationalization.md
+[06]: xref:Microsoft.PowerShell.Utility.Import-LocalizedData
+[07]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
+[08]: /dotnet/api/system.collections.hashtable

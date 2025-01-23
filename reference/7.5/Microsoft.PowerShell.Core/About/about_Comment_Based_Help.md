@@ -171,7 +171,7 @@ function Get-Function { }
 
 The following are valid comment-based help keywords. These keywords can appear
 in any order in the comment-based help, and they aren't case-sensitive. The
-keywords are listed in in this article in the order that they typically appear
+keywords are listed in this article in the order that they typically appear
 in a help topic.
 
 ### .SYNOPSIS

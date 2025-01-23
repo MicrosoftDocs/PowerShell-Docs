@@ -7,6 +7,7 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_Automatic_Variables
 ---
+
 # about_Automatic_Variables
 
 ## Short description

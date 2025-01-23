@@ -119,7 +119,7 @@ function Get-SumOfNumbers {
     end { $retValue }
 }
 
-PS> Get-SumOfNumbers 1,2,3,4
+PS> Get-SumOfNumbers 1, 2, 3, 4
 10
 PS> 1,2,3,4 | Get-SumOfNumbers
 10
