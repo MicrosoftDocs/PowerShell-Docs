@@ -296,6 +296,6 @@ properties.
 <!-- link references -->
 [01]: about_Object_Creation.md
 [02]: about_Objects.md
-[03]: about_type_accelerators.md
+[03]: about_Type_Accelerators.md
 [04]: xref:System.Management.Automation.PSCustomObject
 [05]: xref:System.Management.Automation.PSObject

@@ -295,11 +295,11 @@ To view PowerShell log data from a command line on macOS, use the `log` command
 in the **Terminal** or other shell host application. These commands can be run
 from **PowerShell**, **Z Shell**, or **Bash**.
 
-In the following example, the `log` command is used to show the log data on your
-system as it's occurring in realtime. The **process** parameter filters the log
-data for only the `pwsh` process. If you have more than one instance of `pwsh`
-running, the **process** parameter also accepts a process ID as its value. The
-**level** parameter shows messages at the specified level and below.
+In the following example, the `log` command is used to show the log data on
+your system as it's occurring in realtime. The **process** parameter filters
+the log data for only the `pwsh` process. If you have more than one instance of
+`pwsh` running, the **process** parameter also accepts a process ID as its
+value. The **level** parameter shows messages at the specified level and below.
 
 ```powershell
 log stream --predicate "subsystem == 'com.microsoft.powershell'" --level info
