@@ -2,7 +2,7 @@
 description: >
   This article shows how to run commands in PowerShell.
 title: Running commands in the shell
-ms.date: 08/22/2022
+ms.date: 01/23/2025
 ---
 # Running commands in the shell
 
@@ -73,8 +73,8 @@ For more information, see the following articles:
 - [about_Parsing][1]
 - [about_Quoting_Rules][2]
 
-PowerShell 7.2 introduced a new experimental feature `PSnativeCommandArgumentPassing` that improved
-native command handling. For more information, see [PSnativeCommandArgumentPassing][3].
+PowerShell 7.2 introduced a new experimental feature `PSNativeCommandArgumentPassing` that improved
+native command handling. For more information, see [`$PSNativeCommandArgumentPassing`][3].
 
 ### Handling output and errors
 
@@ -97,9 +97,9 @@ Many native commands write to **stderr** as an alternative stream for additional
 behavior can cause confusion in PowerShell when looking through errors and the additional output
 information can be lost if `$ErrorActionPreference` is set to a state that mutes the output.
 
-PowerShell 7.3 added a new experimental feature `PSnativeCommandErrorActionPreference` that allows
+PowerShell 7.3 added a new experimental feature `PSNativeCommandErrorActionPreference` that allows
 you to control whether output to `stderr` is treated as an error. For more information, see
-[PSnativeCommandErrorActionPreference][6].
+[`$PSNativeCommandUseErrorActionPreference`][6].
 
 ## Running PowerShell commands
 
@@ -154,10 +154,10 @@ For more information, see [Invoke-Item][9].
 <!-- link references -->
 [1]: /powershell/module/microsoft.powershell.core/about/about_parsing#passing-arguments-to-native
 [2]: /powershell/module/microsoft.powershell.core/about/about_quoting_rules
-[3]: ../experimental-features.md#psnativecommandargumentpassing
+[3]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommandargumentpassing
 [4]: /powershell/module/microsoft.powershell.core/about/about_redirection
 [5]: /powershell/module/microsoft.powershell.core/about/about_output_streams
-[6]: ../experimental-features.md#psnativecommanderroractionpreference
+[6]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommanduseerroractionpreference
 [7]: /powershell/module/microsoft.powershell.core/about/about_operators#call-operator-
 [8]: /powershell/module/microsoft.powershell.management/start-process
 [9]: /powershell/module/microsoft.powershell.management/invoke-item
