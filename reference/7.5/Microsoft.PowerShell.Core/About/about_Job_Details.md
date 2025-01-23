@@ -355,7 +355,7 @@ Id         Name            JobTriggers     Command       Enabled
 - [about_Jobs](about_Jobs.md)
 - [about_Remote](about_Remote.md)
 - [about_Remote_Jobs](about_Remote_Jobs.md)
-- [about_Thread_Jobs](about_Thread_Jobs)
+- [about_Thread_Jobs](about_Thread_Jobs.md)
 - [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 - [Get-Job](xref:Microsoft.PowerShell.Core.Get-Job)
 - [Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)
