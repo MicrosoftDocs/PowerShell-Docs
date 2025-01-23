@@ -272,8 +272,8 @@ pipeline to display a table of service objects.
 Get-Service | Format-Table -Property Name, DependentServices
 ```
 
-Functionally, this is like using the **InputObject** parameter of `Format-Table`
-to submit the object collection.
+Functionally, this is like using the **InputObject** parameter of
+`Format-Table` to submit the object collection.
 
 For example, we can save the collection of services to a variable that's
 passed using the **InputObject** parameter.
@@ -568,9 +568,9 @@ enhances readability.
 
 <!-- link references -->
 [02]: #investigating-pipeline-errors
-[03]: about_command_syntax.md
-[04]: about_foreach.md
-[05]: about_objects.md
-[06]: about_parameters.md
+[03]: about_Command_Syntax.md
+[04]: about_Foreach.md
+[05]: about_Objects.md
+[06]: about_Parameters.md
 [07]: about_Redirection.md
 [08]: xref:System.Data.DataTable.Rows

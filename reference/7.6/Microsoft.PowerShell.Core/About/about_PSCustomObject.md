@@ -1,7 +1,7 @@
 ---
 description: Explains the differences between the [psobject] and [pscustomobject] type accelerators.
 Locale: en-US
-ms.date: 10/11/2023
+ms.date: 07/02/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSCustomObject
@@ -296,6 +296,6 @@ properties.
 <!-- link references -->
 [01]: about_Object_Creation.md
 [02]: about_Objects.md
-[03]: about_type_accelerators.md
+[03]: about_Type_Accelerators.md
 [04]: xref:System.Management.Automation.PSCustomObject
 [05]: xref:System.Management.Automation.PSObject

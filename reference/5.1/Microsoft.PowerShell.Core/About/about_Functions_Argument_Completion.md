@@ -9,6 +9,7 @@ title: About_functions_argument_completion
 # about_Functions_Argument_Completion
 
 ## Short description
+
 Argument completion is a feature of PowerShell that provide hints, enables
 discovery, and speeds up input entry of argument values.
 
@@ -39,8 +40,7 @@ example, the value of the **Fruit** parameter can only be **Apple**,
 Param(
     [Parameter(Mandatory=$true)]
     [ValidateSet('Apple', 'Banana', 'Pear')]
-    [string[]]
-    $Fruit
+    [string[]]$Fruit
 )
 ```
 
@@ -50,7 +50,7 @@ be used on any variable, not just parameters.
 
 ```powershell
 [ValidateSet('Chocolate', 'Strawberry', 'Vanilla')]
-[string]$flavor = 'Strawberry'
+[string]$Flavor = 'Strawberry'
 ```
 
 The validation occurs whenever that variable is assigned even within the

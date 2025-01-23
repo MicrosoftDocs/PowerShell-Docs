@@ -10,6 +10,7 @@ title: about_Logging_Windows
 # about_Logging_Windows
 
 ## Short description
+
 PowerShell logs internal operations from the engine, providers, and cmdlets to
 the Windows event log.
 
@@ -37,7 +38,7 @@ PowerShell supports configuring two categories of logging:
   ```powershell
   $psrl = Get-Module PSReadLine
   $psrl.LogPipelineExecutionDetails = $true
-  Get-Module PSReadline | Select-Object Name, LogPipelineExecutionDetails
+  Get-Module PSReadLine | Select-Object Name, LogPipelineExecutionDetails
   ```
 
   ```Output
@@ -202,8 +203,7 @@ private key:
 
 ```powershell
 Get-WinEvent Microsoft-Windows-PowerShell/Operational |
-    Where-Object Id -eq 4104 |
-    Unprotect-CmsMessage
+    Where-Object Id -eq 4104 | Unprotect-CmsMessage
 ```
 
 ## See also

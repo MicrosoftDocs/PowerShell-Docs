@@ -452,8 +452,8 @@ The environment variables that store preferences include:
 [03]: #powershell-environment-variables
 [04]: about_Environment_Provider.md
 [05]: about_Execution_Policies.md
-[06]: about_preference_variables.md
-[07]: about_profiles.md
+[06]: about_Preference_Variables.md
+[07]: about_Profiles.md
 [08]: about_PSModulePath.md
-[11]: about_variables.md
+[11]: about_Variables.md
 [14]: xref:PowerShellGet.Install-Module

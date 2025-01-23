@@ -9,6 +9,7 @@ title: about_Character_Encoding
 # about_Character_Encoding
 
 ## Short description
+
 Describes how PowerShell uses character encoding for input and output of string
 data.
 
@@ -16,8 +17,7 @@ data.
 
 Unicode is a worldwide character-encoding standard. The system uses Unicode
 exclusively for character and string manipulation. For a detailed description
-of all aspects of Unicode, refer to
-[The Unicode Standard](https://www.unicode.org/standard/standard.html).
+of all aspects of Unicode, refer to [The Unicode Standard][01].
 
 Windows supports Unicode and traditional character sets. Traditional character
 sets, such as Windows code pages, use 8-bit values or combinations of 8-bit
@@ -49,8 +49,7 @@ The following cmdlets have the **Encoding** parameter:
 
 The byte-order-mark (BOM) is a _Unicode signature_ in the first few bytes of a
 file or text stream that indicate which Unicode encoding used for the data. For
-more information, see the
-[Byte order mark](/globalization/encoding/byte-order-mark) documentation.
+more information, see the [Byte order mark][02] documentation.
 
 In Windows PowerShell, any Unicode encoding, except `UTF7`, always creates a
 BOM. PowerShell (v6 and higher) defaults to `utf8NoBOM` for all text output.
@@ -92,9 +91,9 @@ In PowerShell 5.1, the **Encoding** parameter supports the following values:
 - `UTF7` Uses UTF-7.
 - `UTF8` Uses UTF-8 (with BOM).
 
-In general, Windows PowerShell uses the Unicode
-[UTF-16LE](https://wikipedia.org/wiki/UTF-16) encoding by default. However,
-the default encoding used by cmdlets in Windows PowerShell is not consistent.
+In general, Windows PowerShell uses the Unicode [UTF-16LE][03] encoding by
+default. However, the default encoding used by cmdlets in Windows PowerShell
+is not consistent.
 
 > [!NOTE]
 > Using any Unicode encoding, except `UTF7`, always creates a BOM.
@@ -104,7 +103,7 @@ For cmdlets that write output to files:
 - `Out-File` and the redirection operators `>` and `>>` create UTF-16LE, which
   notably differs from `Set-Content` and `Add-Content`.
 
-- `New-ModuleManifest` and `Export-CliXml` also create UTF-16LE files.
+- `New-ModuleManifest` and `Export-Clixml` also create UTF-16LE files.
 
 - When the target file is empty or doesn't exist, `Set-Content` and
   `Add-Content` use `Default` encoding. `Default` is the encoding specified by
@@ -117,7 +116,7 @@ For cmdlets that write output to files:
 
 - `New-Item -Type File -Value` creates a BOM-less UTF-8 file.
 
-- `Send-MailMessage` uses `Default` encoding by default.
+- `Send-MailMessage` uses `Ascii` encoding by default.
 
 - `Start-Transcript` creates `Utf8` files with a BOM. When the **Append**
   parameter is used, the encoding can be different (see below).
@@ -149,7 +148,7 @@ For cmdlets that read string data in the absence of a BOM:
   encoding. ANSI is also what the PowerShell engine uses when it reads source
   code from files.
 
-- `Import-Csv`, `Import-CliXml`, and `Select-String` assume `Utf8` in the
+- `Import-Csv`, `Import-Clixml`, and `Select-String` assume `Utf8` in the
   absence of a BOM.
 
 ## Character encoding in PowerShell
@@ -173,8 +172,7 @@ PowerShell defaults to `utf8NoBOM` for all output.
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric
 IDs of registered code pages (like `-Encoding 1251`) or string names of
 registered code pages (like `-Encoding "windows-1251"`). For more information,
-see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage).
+see the .NET documentation for [Encoding.CodePage][04].
 
 ## Changing the default encoding
 
@@ -184,8 +182,7 @@ encoding behavior.
 - `$PSDefaultParameterValues`
 - `$OutputEncoding`
 
-For more information, see
-[about_Preference_Variables](about_Preference_Variables.md).
+For more information, see [about_Preference_Variables][05].
 
 Beginning in PowerShell 5.1, the redirection operators (`>` and `>>`) call the
 `Out-File` cmdlet. Therefore, you can set the default encoding of them using
@@ -218,10 +215,17 @@ the output redirection operators and PowerShell cmdlets use to save to files.
 
 ## See also
 
-- [about_Preference_Variables](about_Preference_Variables.md)
+- [about_Preference_Variables][05]
 - [Byte order mark](https://wikipedia.org/wiki/Byte_order_mark)
 - [Code Pages - Win32 apps](/windows/win32/intl/code-pages)
-- [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage)
+- [Encoding.CodePage][04]
 - [Introduction to character encoding in .NET](/dotnet/standard/base-types/character-encoding-introduction)
-- [The Unicode Standard](https://www.unicode.org/standard/standard.html)
-- [UTF-16LE](https://wikipedia.org/wiki/UTF-16)
+- [The Unicode Standard][01]
+- [UTF-16LE][03]
+
+<!-- link references -->
+[01]: https://www.unicode.org/standard/standard.html
+[02]: /globalization/encoding/byte-order-mark
+[03]: https://wikipedia.org/wiki/UTF-16
+[04]: /dotnet/api/system.text.encoding.codepage
+[05]: about_Preference_Variables.md

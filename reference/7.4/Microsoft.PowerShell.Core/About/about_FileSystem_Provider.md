@@ -547,9 +547,10 @@ non-hidden items.
 
 The **Hidden** parameter was introduced in Windows PowerShell 3.0.
 
-To get only hidden items, use the **Hidden** parameter, its `h` or `ah` aliases,
-or the **Hidden** value of the **Attributes** parameter. To exclude hidden
-items, omit the **Hidden** parameter or use the **Attributes** parameter.
+To get only hidden items, use the **Hidden** parameter, its `h` or `ah`
+aliases, or the **Hidden** value of the **Attributes** parameter. To exclude
+hidden items, omit the **Hidden** parameter or use the **Attributes**
+parameter.
 
 #### Cmdlets supported
 
@@ -681,7 +682,7 @@ Get-Help Get-ChildItem -Path c:
 
 - [about_Providers][08]
 
-<!-- updated link references -->
+<!-- link references -->
 [01]: /dotnet/api/system.datetime
 [02]: /dotnet/api/system.io.directoryinfo
 [03]: /dotnet/api/system.io.fileattributes

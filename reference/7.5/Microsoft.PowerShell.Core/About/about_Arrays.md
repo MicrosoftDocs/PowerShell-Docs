@@ -1018,7 +1018,8 @@ PS> [Collections.Generic.Dictionary[string, int]]::new()['nosuchkey']
 # No output ($null)
 
 PS> [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey')
-GetValueInvocationException: Exception getting "Item": "The given key 'nosuchkey' was not present in the dictionary."
+GetValueInvocationException: Exception getting "Item": "The given key 
+'nosuchkey' was not present in the dictionary."
 ```
 
 ## Member-access enumeration

@@ -9,6 +9,7 @@ title: about_CimSession
 # about_CimSession
 
 ## Short description
+
 Describes a **CimSession** object and the difference between CIM sessions and
 PowerShell sessions.
 
@@ -19,9 +20,9 @@ represents a connection to a local computer or a remote computer. You can use
 CIM sessions as an alternative to PowerShell sessions (PSSessions). Both
 approaches have advantages.
 
-You can use the `New-CimSession` cmdlet to create a CIM session that contains
-information about a connection, such as computer name, the protocol used for
-the connection, session ID, and instance ID.
+You can use the `New-CimSession` cmdlet on a Windows computer to create a CIM
+session that contains information about a connection, such as computer name,
+the protocol used for the connection, session ID, and instance ID.
 
 After you create a **CimSession** object that specifies information required to
 establish a connection, PowerShell does not establish the connection
@@ -33,7 +34,7 @@ If you create a **PSSession** instead of using a CIM session, PowerShell
 validates connection settings, and then establishes and maintains the
 connection. If you use CIM sessions, PowerShell does not open a network
 connection until needed. For more information about PowerShell sessions, see
-[about_PSSessions](about_PSSessions.md).
+[about_PSSessions][01].
 
 ## When to use a CIM session
 
@@ -54,7 +55,7 @@ Management (WinRM). CIM sessions do not impose the WinRM limits.
 
 CIM-based Cmdlet Definition XML (CDXML) cmdlets can be written to use any WMI
 Provider. All WMI providers use **CimSession** objects. For more information
-about CDXML, see [CDXML definition and terms](/previous-versions/windows/desktop/wmi_v2/cdxml-overview).
+about CDXML, see [CDXML definition and terms][02].
 
 CDXML cmdlets have an automatic **CimSession** parameter that can take an array
 of **CimSession** objects. By default, PowerShell limits number of concurrent
@@ -64,5 +65,10 @@ understand the **ThrottleLimit**.
 
 ## See also
 
-- [about_PSSessions](about_PSSessions.md)
-- [New-CimSession](xref:CimCmdlets.New-CimSession)
+- [about_PSSessions][01]
+- [New-CimSession][03]
+
+<!-- link references -->
+[01]: about_PSSessions.md
+[02]: /previous-versions/windows/desktop/wmi_v2/cdxml-overview
+[03]: xref:CimCmdlets.New-CimSession

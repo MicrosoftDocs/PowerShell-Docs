@@ -123,7 +123,8 @@ even pass control across script and function call boundaries.
 
 ## Using `break` in a `switch` statement
 
-In a `switch`construct, `break` causes PowerShell to exit the `switch` code block.
+In a `switch`construct, `break` causes PowerShell to exit the `switch` code
+block.
 
 The `break` keyword is used to leave the `switch` construct. For example, the
 following `switch` statement uses `break` statements to test for the most
@@ -190,8 +191,8 @@ function test {
 test
 ```
 
-Notice that execution stops at the exception. The `After loop` is never reached.
-The exception is re-thrown after the `trap` executes.
+Notice that execution stops at the exception. The `After loop` is never
+reached. The exception is re-thrown after the `trap` executes.
 
 ```Output
 Before loop

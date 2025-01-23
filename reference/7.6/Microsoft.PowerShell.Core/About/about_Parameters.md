@@ -31,8 +31,8 @@ a value, but do not require the parameter name in the command.
 
 The type of parameters and the requirements for those parameters vary. To find
 information about the parameters of a command, use the `Get-Help` cmdlet. For
-example, to find information about the parameters of the `Get-ChildItem` cmdlet,
-type:
+example, to find information about the parameters of the `Get-ChildItem`
+cmdlet, type:
 
 ```powershell
 Get-Help Get-ChildItem
@@ -179,8 +179,8 @@ Get-Service -Name $s
 
 #### Accepts Pipeline Input
 
-This setting indicates whether you can use the pipeline operator (`|`) to send a
-value to the parameter.
+This setting indicates whether you can use the pipeline operator (`|`) to send
+a value to the parameter.
 
 ```
 Value                    Description

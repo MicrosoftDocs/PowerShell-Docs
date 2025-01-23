@@ -9,6 +9,7 @@ title: about_Assignment_Operators
 # about_Assignment_Operators
 
 ## Short description
+
 Describes how to use operators to assign values to variables.
 
 ## Long description
@@ -198,7 +199,7 @@ $a += 2
 $a
 ```
 
-```
+```Output
 6
 ```
 
@@ -645,9 +646,7 @@ $x
 100
 ```
 
-For more information, see
-[Null-coalescing operator][04].
-
+For more information, see [Null-coalescing operator][04].
 
 ## Microsoft .NET types
 

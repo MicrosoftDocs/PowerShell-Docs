@@ -57,8 +57,8 @@ During member-access enumeration for a property, the operator returns the value
 of the property for each item that has that property. If no items have the
 specified property, the operator returns `$null`.
 
-During member-access enumeration for a method, the operator attempts to call the
-method on each item in the collection. If any item in the collection does
+During member-access enumeration for a method, the operator attempts to call
+the method on each item in the collection. If any item in the collection does
 not have the specified method, the operator returns the **MethodNotFound**
 exception.
 
@@ -338,7 +338,7 @@ in the array.
 ### Collections containing PSCustomObject instances
 
 If the collection of objects contains instances of **PSCustomObject** items,
-PowerShell unexpectedly retruns `$null` values when the accessed property is
+PowerShell unexpectedly returns `$null` values when the accessed property is
 missing.
 
 In the following examples at least one object has the referenced property.

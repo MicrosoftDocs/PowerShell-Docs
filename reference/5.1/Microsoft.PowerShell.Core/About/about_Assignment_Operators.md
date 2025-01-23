@@ -9,6 +9,7 @@ title: about_Assignment_Operators
 # about_Assignment_Operators
 
 ## Short description
+
 Describes how to use operators to assign values to variables.
 
 ## Long description
@@ -50,10 +51,10 @@ $MyShell = "PowerShell"
 ```
 
 When you assign a value to a variable in PowerShell, the variable is created if
-it didn't already exist. For example, the first of the following two
-assignment statements creates the `$a` variable and assigns a value of 6 to
-`$a`. The second assignment statement assigns a value of 12 to `$a`. The first
-statement creates a new variable. The second statement changes only its value:
+it didn't already exist. For example, the first of the following two assignment
+statements creates the `$a` variable and assigns a value of 6 to `$a`. The
+second assignment statement assigns a value of 12 to `$a`. The first statement
+creates a new variable. The second statement changes only its value:
 
 ```powershell
 $a = 6
@@ -142,20 +143,35 @@ Compound assignment operators perform numeric operations on the values before
 the assignment.
 
 > [!IMPORTANT]
-> Compound assignment operators do not use dynamic scoping. The variable is
-> always in the current scope. In the following example, the variable `$x` is
-> defined in the global scope. The braces create a new scope. The variable `$x`
-> inside the braces is a new instance and not a reference to the global
-> variable.
->
-> ```powershell
-> $x = 1 # Global scope
-> & { $x += 1; $x }
-> ```
->
-> ```Output
-> 1
-> ```
+> Compound assignment operators don't use dynamic scoping. The variable is
+> always in the current scope.
+
+In the following example, the variable `$x` is defined in the global scope. The
+braces create a new scope. The variable `$x` inside the braces is a new
+instance and not a copy of the global variable.
+
+```powershell
+$x = 1 # Global scope
+& { $x += 1; $x }
+```
+
+```Output
+1
+```
+
+When you use the regular assignment operator, you get a copy of the variable
+from the parent scope. But notice that `$x` in the parent scope is not changed.
+
+```powershell
+$x = 1 # Global scope
+& { $x = $x + 1; $x }
+"Global `$x = $x"
+```
+
+```Output
+2
+Global $x = 1
+```
 
 ### The assignment by addition operator
 
@@ -183,7 +199,7 @@ $a += 2
 $a
 ```
 
-```
+```Output
 6
 ```
 
@@ -240,7 +256,7 @@ assignments fail.
 
 For example, the following command assigns a hash table to the `$a` variable.
 Then, it uses the `+=` operator to append another hash table to the existing
-hash table, effectively adding a new key/value pair to the existing hash table.
+hash table, effectively adding a new key-value pair to the existing hash table.
 This command succeeds, as shown in the output:
 
 ```powershell
@@ -279,8 +295,8 @@ At line:2 char:1
 
 The assignment by subtraction operator `-=` decrements the value of a variable
 by the value that's specified on the right side of the operator. This operator
-can't be used with string variables, and it can't be used to remove an
-element from a collection.
+can't be used with string variables, and it can't be used to remove an element
+from a collection.
 
 The `-=` operator combines two operations. First, it subtracts, and then it
 assigns. Therefore, the following statements are equivalent:

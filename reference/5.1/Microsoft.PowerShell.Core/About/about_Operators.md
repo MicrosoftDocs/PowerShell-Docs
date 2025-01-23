@@ -273,10 +273,10 @@ For more information, see [about_Parsing][08].
 This example stores a command in a string and executes it using the call
 operator.
 
-```
-PS> $c = "get-executionpolicy"
+```powershell
+PS> $c = "Get-ExecutionPolicy"
 PS> $c
-get-executionpolicy
+Get-ExecutionPolicy
 PS> & $c
 AllSigned
 ```
@@ -284,7 +284,7 @@ AllSigned
 The call operator doesn't parse strings. This means that you can't use
 command parameters within a string when you use the call operator.
 
-```
+```powershell
 PS> $c = "Get-Service -Name Spooler"
 PS> $c
 Get-Service -Name Spooler
@@ -303,7 +303,7 @@ At line:1 char:2
 The [Invoke-Expression][25] cmdlet can execute code that causes parsing errors
 when using the call operator.
 
-```
+```powershell
 PS> & "1+1"
 &: The term '1+1' is not recognized as a name of a cmdlet, function, script
 file, or executable program. Check the spelling of the name, or if a path was
@@ -324,7 +324,7 @@ the contents of the quoted string instead of running the script. The call
 operator allows you to execute the contents of the string containing the
 filename.
 
-```
+```powershell
 PS C:\Scripts> Get-ChildItem
 
     Directory: C:\Scripts
@@ -417,7 +417,7 @@ objects to be formatted on the right side of the operator.
 "{0} {1,-10} {2:N}" -f 1,"hello",[math]::pi
 ```
 
-```output
+```Output
 1 hello      3.14
 ```
 
@@ -429,7 +429,7 @@ formatted string to.
 "{0:00} {1:000} {2:000000}" -f 7, 24, 365
 ```
 
-```output
+```Output
 07 024 000365
 ```
 
@@ -454,7 +454,7 @@ value.
 Given a list of indices, the index operator returns a list of members
 corresponding to those indices.
 
-```
+```powershell
 PS> $a = 1, 2, 3
 PS> $a[0]
 1
@@ -475,7 +475,7 @@ $h = @{key="value"; name="PowerShell"; version="2.0"}
 $h["name"]
 ```
 
-```output
+```Output
 PowerShell
 ```
 
@@ -484,7 +484,7 @@ $x = [xml]"<doc><intro>Once upon a time...</intro></doc>"
 $x["doc"]
 ```
 
-```output
+```Output
 intro
 -----
 Once upon a time...
@@ -494,7 +494,7 @@ When an object isn't an indexed collection, using the index operator to access
 the first element returns the object itself. Index values beyond the first
 element return `$null`.
 
-```
+```powershell
 PS> (2)[0]
 2
 PS> (2)[-1]
@@ -577,7 +577,7 @@ expression.
 
 ```powershell
 $myProcess.peakWorkingSet
-(Get-Process PowerShell).kill()
+(Get-Process PowerShell).Kill()
 'OS', 'Platform' | Foreach-Object { $PSVersionTable. $_ }
 ```
 
@@ -620,9 +620,9 @@ properties and methods of an object, use the Static parameter of the
 [08]: about_Parsing.md
 [09]: about_Hash_Tables.md
 [12]: about_Join.md
-[13]: about_logical_operators.md
+[13]: about_Logical_Operators.md
 [14]: about_Member-Access_Enumeration.md
-[15]: about_operator_precedence.md
+[15]: about_Operator_Precedence.md
 [18]: about_Redirection.md
 [19]: about_Scopes.md
 [20]: about_Script_Blocks.md

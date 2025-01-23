@@ -677,7 +677,7 @@ Get-Help Get-ChildItem -Path c:
 
 - [about_Providers][08]
 
-<!-- updated link references -->
+<!-- link references -->
 [01]: /dotnet/api/system.datetime
 [02]: /dotnet/api/system.io.directoryinfo
 [03]: /dotnet/api/system.io.fileattributes

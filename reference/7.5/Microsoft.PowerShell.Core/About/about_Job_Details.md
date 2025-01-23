@@ -266,9 +266,10 @@ The following table lists the job types that come with PowerShell.
 | PSEventJob     | Created using`Register-ObjectEvent` and specifying an    |
 |                | action with the **Action** parameter.                    |
 
-NOTE: Before using the `Get-Job` cmdlet to get jobs of a particular type,
-verify that the module that adds the job type is imported into the current
-session. Otherwise, `Get-Job` does not get jobs of that type.
+> [!NOTE]
+> Before using the `Get-Job` cmdlet to get jobs of a particular type, verify
+> that the module that adds the job type is imported into the current session.
+> Otherwise, `Get-Job` does not get jobs of that type.
 
 ## Examples
 
@@ -355,7 +356,7 @@ Id         Name            JobTriggers     Command       Enabled
 - [about_Jobs](about_Jobs.md)
 - [about_Remote](about_Remote.md)
 - [about_Remote_Jobs](about_Remote_Jobs.md)
-- [about_Thread_Jobs](about_Thread_Jobs)
+- [about_Thread_Jobs](about_Thread_Jobs.md)
 - [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 - [Get-Job](xref:Microsoft.PowerShell.Core.Get-Job)
 - [Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)

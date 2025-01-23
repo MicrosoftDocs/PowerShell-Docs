@@ -484,7 +484,7 @@ text in angle brackets as needed.
 class <class-name> {
     static [hashtable[]] $MemberDefinitions = @(
         @{
-            MemberName = '<member-name>'
+            Name       = '<member-name>'
             MemberType = '<member-type>'
             Value      = <member-definition>
         }
@@ -541,7 +541,7 @@ PowerShell class constructors have the following limitations:
 - [about_Classes_Methods][01]
 - [about_Classes_Properties][09]
 
-<!-- Link reference definitions -->
+<!-- link references -->
 [01]: about_Classes_Methods.md
 [02]: #static-constructors
 [03]: about_Classes_Properties.md#default-property-values

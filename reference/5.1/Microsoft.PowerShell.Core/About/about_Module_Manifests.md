@@ -9,6 +9,7 @@ title: about_Module_Manifests
 # about_Module_Manifests
 
 ## Short description
+
 Describes the settings and practices for writing module manifest files.
 
 ## Long description
@@ -158,7 +159,7 @@ By default, all module members in the **RootModule** are exported.
 > [!TIP]
 > Module loading speed differs between **Binary**, **Script**, and **CIM**
 > module types. For more information, see
-> [PowerShell module authoring considerations][05]
+> [PowerShell module authoring considerations][04]
 
 For example, this module's **ModuleType** is **Manifest**. The only module
 members this module can export are those defined in the modules specified with
@@ -234,7 +235,7 @@ values.
 
 For information about PSEdition, see:
 
-- [about_PowerShell_Editions][04]
+- [about_PowerShell_Editions][09]
 - [Modules with compatible PowerShell Editions][02].
 
 When this setting is defined, the module can only be imported into a session
@@ -869,7 +870,7 @@ When you import the module, PowerShell runs the `Update-TypeData` cmdlet with
 the specified files. Because type files aren't scoped, they affect all session
 states in the session.
 
-For more information on type files, see [about_Types.ps1xml][09]
+For more information on type files, see [about_Types.ps1xml][10]
 
 For example, when you import this manifest, PowerShell loads the types
 specified in the `Example.ps1xml` file from the `Types` folder located in the
@@ -1477,7 +1478,7 @@ The **PSData** child property is used for the following scenarios:
   module, `Export-CrescendoModule` adds the value `CrescendoBuilt` to the
   **PSData.Tags** property. You can use this tag to find modules in the
   PowerShell Gallery that were created using Crescendo. For more information,
-  see [Export-CrescendoModule][14].
+  see [Export-CrescendoModule][15].
 
 ### HelpInfoURI
 
@@ -1499,8 +1500,8 @@ in PowerShell 3.0. It contains information about the location of downloadable
 help files for the module and the version numbers of the newest help files for
 each supported locale.
 
-For information about Updatable Help, see [about_Updatable_Help][10]. For
-information about the HelpInfo XML file, see [Supporting Updatable Help][06].
+For information about Updatable Help, see [about_Updatable_Help][11]. For
+information about the HelpInfo XML file, see [Supporting Updatable Help][05].
 
 For example, this module supports updatable help.
 
@@ -1540,24 +1541,25 @@ imported as `Get-ExampleItem`.
 
 ## See also
 
-- [about_PowerShell_Editions][04]
-- [New-ModuleManifest][12]
-- [Test-ModuleManifest][13]
+- [about_PowerShell_Editions][09]
+- [New-ModuleManifest][13]
+- [Test-ModuleManifest][14]
 - [Modules with compatible PowerShell Editions][02]
 - [Package manifest values that impact the PowerShell Gallery UI][03]
-- [PowerShell module authoring considerations][05]
+- [PowerShell module authoring considerations][04]
 
 <!-- link references -->
 [01]: /powershell/dsc/overview
 [02]: /powershell/gallery/concepts/module-psedition-support
 [03]: /powershell/gallery/concepts/package-manifest-affecting-ui
-[04]: /powershell/module/microsoft.powershell.core/about/about_powershell_editions
-[05]: /powershell/scripting/dev-cross-plat/performance/module-authoring-considerations
-[06]: /powershell/scripting/developer/module/supporting-updatable-help
+[04]: /powershell/scripting/dev-cross-plat/performance/module-authoring-considerations
+[05]: /powershell/scripting/developer/module/supporting-updatable-help
+
 [07]: about_Format.ps1xml.md
 [08]: about_Language_Modes.md
-[09]: about_Types.ps1xml.md
-[10]: about_Updatable_Help.md
-[12]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
-[13]: xref:Microsoft.PowerShell.Core.Test-ModuleManifest
-[14]: xref:Microsoft.PowerShell.Crescendo.Export-CrescendoModule
+[09]: /powershell/module/microsoft.powershell.core/about/about_powershell_editions
+[10]: about_Types.ps1xml.md
+[11]: about_Updatable_Help.md
+[13]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
+[14]: xref:Microsoft.PowerShell.Core.Test-ModuleManifest
+[15]: xref:Microsoft.PowerShell.Crescendo.Export-CrescendoModule

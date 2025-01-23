@@ -88,13 +88,13 @@ is **True** and iteration continues with the second `for` loop at `labelB`.
 ## Using continue in a switch statement
 
 An unlabeled `continue` statement within a `switch` terminates execution of the
-current `switch` iteration and transfers control to the top of the `switch` to get
-the next input item.
+current `switch` iteration and transfers control to the top of the `switch` to
+get the next input item.
 
-When there is a single input item `continue` exits the entire `switch` statement.
-When the `switch` input is a collection, the `switch` tests each element of the
-collection. The `continue` exits the current iteration and the `switch` continues
-with the next element.
+When there is a single input item `continue` exits the entire `switch`
+statement. When the `switch` input is a collection, the `switch` tests each
+element of the collection. The `continue` exits the current iteration and the
+`switch` continues with the next element.
 
 ```powershell
 switch (1,2,3) {
