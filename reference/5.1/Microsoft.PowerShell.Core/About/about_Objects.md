@@ -1,5 +1,5 @@
 ---
-description: Provides essential information about objects in Windows PowerShell.
+description: Provides essential information about objects in PowerShell.
 Locale: en-US
 ms.date: 06/02/2021
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -11,11 +11,11 @@ title: about_Objects
 
 ## Short description
 
-Provides essential information about objects in Windows PowerShell.
+Provides essential information about objects in PowerShell.
 
 ## Long description
 
-Every action you take in Windows PowerShell occurs within the context of
+Every action you take in PowerShell occurs within the context of
 objects. As data moves from one command to the next, it moves as one or
 more identifiable objects. An object, then, is a collection of data that
 represents an item. An object is made up of three types of data: the
@@ -39,7 +39,7 @@ in commands to take action and manage data.
 
 You can discover an objects properties and methods using
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) or the `psobject`
- [intrinsic member](about_Intrinsic_Members.md).
+[intrinsic member](about_Intrinsic_Members.md).
 
 ## Objects in Pipelines
 

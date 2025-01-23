@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 09/29/2023
+ms.date: 08/27/2024
 schema: 2.0.0
 title: about_ANSI_terminals
 ---

@@ -412,8 +412,7 @@ TestExe -echoargs --% """%ProgramFiles(x86)%\Microsoft\\""
 > [ProcessStartInfo.ArgumentList][01].
 
 PowerShell 7.3 also added the ability to trace parameter binding for native
-commands. For more information, see
-[Trace-Command][07].
+commands. For more information, see [Trace-Command][07].
 
 ## Passing arguments to PowerShell commands
 
@@ -468,9 +467,9 @@ Arg 3 is <-c>
 ## Tilde (~)
 
 The tilde character (`~`) has special meaning in PowerShell. When it's used
-with PowerShell commands at the beginning of a path, the tilde character is
-expanded to the user's home directory. If the tilde character is used anywhere
-else in a path, it's treated as a literal character.
+with PowerShell commands at the beginning of a path, PowerShell expands the
+tilde character to the user's home directory. If you use the tilde character
+anywhere else in a path, it's treated as a literal character.
 
 ```powershell
 PS D:\temp> $PWD

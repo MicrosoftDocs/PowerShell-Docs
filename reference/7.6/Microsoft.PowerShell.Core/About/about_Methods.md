@@ -115,8 +115,8 @@ two method signatures:
 ```
 
 The first method signature takes the destination file name (and a path). The
-following example uses the first `CopyTo` method to copy the `Final.txt` file to
-the `C:\Bin` directory.
+following example uses the first `CopyTo` method to copy the `Final.txt` file
+to the `C:\Bin` directory.
 
 ```powershell
 (Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt")

@@ -412,8 +412,7 @@ TestExe -echoargs --% """%ProgramFiles(x86)%\Microsoft\\""
 > [ProcessStartInfo.ArgumentList][01].
 
 PowerShell 7.3 also added the ability to trace parameter binding for native
-commands. For more information, see
-[Trace-Command][08].
+commands. For more information, see [Trace-Command][08].
 
 ## Passing arguments to PowerShell commands
 

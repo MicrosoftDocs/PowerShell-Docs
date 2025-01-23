@@ -10,6 +10,7 @@ title: about_Language_Modes
 # about_Language_Modes
 
 ## Short description
+
 Explains language modes and their effect on PowerShell sessions.
 
 ## Long description
@@ -338,7 +339,7 @@ Beginning in PowerShell 7.2, the `New-Object` cmdlet is disabled in
 
 <!-- link references -->
 [01]: /powershell/scripting/learn/remoting/jea/session-configurations
-[02]: about_member-access_enumeration.md
+[02]: about_Member-Access_Enumeration.md
 [03]: about_Session_Configuration_Files.md
 [04]: about_Session_Configurations.md
 [05]: xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile

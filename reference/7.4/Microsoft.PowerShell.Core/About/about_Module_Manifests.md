@@ -9,6 +9,7 @@ title: about_Module_Manifests
 # about_Module_Manifests
 
 ## Short description
+
 Describes the settings and practices for writing module manifest files.
 
 ## Long description
@@ -1558,10 +1559,10 @@ imported as `Get-ExampleItem`.
 [03]: /powershell/gallery/concepts/package-manifest-affecting-ui
 [04]: /powershell/scripting/dev-cross-plat/performance/module-authoring-considerations
 [05]: /powershell/scripting/developer/module/supporting-updatable-help
-[06]: about_experimental_features.md#declaring-experimental-features-in-modules-written-in-powershell
+[06]: about_Experimental_Features.md#declaring-experimental-features-in-modules-written-in-powershell
 [07]: about_Format.ps1xml.md
 [08]: about_Language_Modes.md
-[09]: about_powershell_editions.md
+[09]: about_Powershell_Editions.md
 [10]: about_Types.ps1xml.md
 [11]: about_Updatable_Help.md
 [13]: xref:Microsoft.PowerShell.Core.New-ModuleManifest

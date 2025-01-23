@@ -145,14 +145,15 @@ start the job.
 - When you use `Start-Job` to start a job on a local computer, the job consists
   of an executive parent job and a child job that runs the command.
 
-- When you use the **AsJob** parameter of `Invoke-Command` to start a job on one or
-  more computers, the job consists of an executive parent job and a child job
-  for each job run on each computer.
+- When you use the **AsJob** parameter of `Invoke-Command` to start a job on
+  one or more computers, the job consists of an executive parent job and a
+  child job for each job run on each computer.
 
-- When you use `Invoke-Command` to run a `Start-Job` command on one or more remote
-  computers, the result is the same as a local command run on each remote
-  computer. The command returns a job object for each computer. The job object
-  consists of an executive parent job and one child job that runs the command.
+- When you use `Invoke-Command` to run a `Start-Job` command on one or more
+  remote computers, the result is the same as a local command run on each
+  remote computer. The command returns a job object for each computer. The job
+  object consists of an executive parent job and one child job that runs the
+  command.
 
 The parent job represents all of the child jobs. When you manage a parent job,
 you also manage the associated child jobs. For example, if you stop a parent
@@ -239,10 +240,10 @@ exist only in a particular session. Workflow jobs can be suspended and
 resumed.
 
 The cmdlets that you use to manage custom jobs depend on the job type. For
-some, you use the standard job cmdlets, such as `Get-Job` and `Start-Job`. Others
-come with specialized cmdlets that manage only a particular type of job. For
-detailed information about custom job types, see the help topics about the job
-type.
+some, you use the standard job cmdlets, such as `Get-Job` and `Start-Job`.
+Others come with specialized cmdlets that manage only a particular type of job.
+For detailed information about custom job types, see the help topics about the
+job type.
 
 To find the job type of a job, use the `Get-Job` cmdlet. `Get-Job` returns
 different job objects for different types of jobs. The value of the
@@ -265,9 +266,10 @@ The following table lists the job types that come with PowerShell.
 | PSEventJob     | Created using`Register-ObjectEvent` and specifying an    |
 |                | action with the **Action** parameter.                    |
 
-NOTE: Before using the `Get-Job` cmdlet to get jobs of a particular type, verify
-that the module that adds the job type is imported into the current session.
-Otherwise, `Get-Job` does not get jobs of that type.
+> [!NOTE]
+> Before using the `Get-Job` cmdlet to get jobs of a particular type, verify
+> that the module that adds the job type is imported into the current session.
+> Otherwise, `Get-Job` does not get jobs of that type.
 
 ## Examples
 
@@ -354,7 +356,7 @@ Id         Name            JobTriggers     Command       Enabled
 - [about_Jobs](about_Jobs.md)
 - [about_Remote](about_Remote.md)
 - [about_Remote_Jobs](about_Remote_Jobs.md)
-- [about_Thread_Jobs](/powershell/module/microsoft.powershell.core/about/about_Thread_Jobs)
+- [about_Thread_Jobs](about_Thread_Jobs.md)
 - [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
 - [Get-Job](xref:Microsoft.PowerShell.Core.Get-Job)
 - [Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)

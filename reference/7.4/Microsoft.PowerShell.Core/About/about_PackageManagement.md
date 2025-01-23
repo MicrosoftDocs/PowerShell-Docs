@@ -9,6 +9,7 @@ title: about_PackageManagement
 # about_PackageManagement
 
 ## Short description
+
 PackageManagement is an aggregator for software package managers.
 
 ## Long description
@@ -41,8 +42,7 @@ us define some terms:
   stored in a specific package source.
 
 The PackageManagement module includes the following cmdlets. For more
-information, see the [PackageManagement](/powershell/module/packagemanagement)
-help.
+information, see the [PackageManagement][01] help.
 
 - `Get-PackageProvider`: Returns a list of package providers that are
    connected to PackageManagement.
@@ -100,7 +100,7 @@ More Information About the PackageManagement Project
 
 For more information about the PackageManagement open development project,
 including how to create a PackageManagement package provider, see the
-PackageManagement project on GitHub at https://oneget.org.
+PackageManagement project on GitHub at [https://oneget.org][02].
 
 ## See also
 
@@ -114,3 +114,7 @@ PackageManagement project on GitHub at https://oneget.org.
 - [Register-PackageSource](xref:PackageManagement.Register-PackageSource)
 - [Set-PackageSource](xref:PackageManagement.Set-PackageSource)
 - [Unregister-PackageSource](xref:PackageManagement.Unregister-PackageSource)
+
+<!-- link references -->
+[01]: /powershell/module/packagemanagement
+[02]: https://oneget.org

@@ -25,8 +25,8 @@ in the command.
 The following diagram shows the syntax for the join operator.
 
 ```powershell
--Join <String[]>
-<String[]> -Join <Delimiter>
+-join <String[]>
+<String[]> -join <Delimiter>
 ```
 
 #### Parameters

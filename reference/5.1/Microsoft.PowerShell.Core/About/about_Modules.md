@@ -9,6 +9,7 @@ title: about_Modules
 # about_Modules
 
 ## Short description
+
 Explains how to install, import, and use PowerShell modules.
 
 ## Long description
@@ -242,8 +243,7 @@ For example, to find the commands in the **BitsTransfer** module, type:
 Get-Command -Module BitsTransfer
 ```
 
-For more information about the `Get-Command` cmdlet, see
-[Get-Command][11].
+For more information about the `Get-Command` cmdlet, see [Get-Command][11].
 
 ## Remove a module
 

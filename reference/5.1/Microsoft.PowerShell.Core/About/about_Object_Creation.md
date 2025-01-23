@@ -293,7 +293,7 @@ New-PSSession -ComputerName Server01 -SessionOption @{
   IdleTimeout=43200000
   SkipCnCheck=$True
 }
-Register-ScheduledJob Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
+Register-ScheduledJob -Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
   Frequency="Daily"
   At="15:00"
 }

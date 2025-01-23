@@ -9,6 +9,7 @@ title: about_Objects
 # about_Objects
 
 ## Short description
+
 Provides essential information about objects in PowerShell.
 
 ## Long description
@@ -37,7 +38,7 @@ in commands to take action and manage data.
 
 You can discover an objects properties and methods using
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) or the `psobject`
- [intrinsic member](about_Intrinsic_Members.md).
+[intrinsic member](about_Intrinsic_Members.md).
 
 ## Objects in Pipelines
 

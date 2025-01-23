@@ -18,8 +18,8 @@ Describes how you can define classes that extend other types.
 PowerShell classes support _inheritance_, which allows you to define a child
 class that reuses (inherits), extends, or modifies the behavior of a parent
 class. The class whose members are inherited is called the _base class_. The
-class that inherits the members of the base class is called the _derived
-class_.
+class that inherits the members of the base class is called the
+_derived class_.
 
 PowerShell supports single inheritance only. A class can only inherit from a
 single class. However, inheritance is transitive, which allows you to define an
@@ -1500,8 +1500,8 @@ the value of an inherited static property in a class that doesn't override the
 property might have unintended effects for classes derived from the same base
 class.
 
-[Example 1][05] shows how
-derived classes that inherit, extend, and override the base class properties.
+[Example 1][05] shows how derived classes that inherit, extend, and override
+the base class properties.
 
 ### Deriving from generics
 

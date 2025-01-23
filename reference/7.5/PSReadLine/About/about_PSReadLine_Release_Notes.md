@@ -1,7 +1,7 @@
 ---
 description: This article contains the list of changes for each released version of PSReadLine.
 Locale: en-US
-ms.date: 09/17/2024
+ms.date: 01/23/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_release_notes?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Release_Notes
@@ -12,18 +12,19 @@ This is a summary of changes to the **PSReadLine** module. For a full list of
 changes, see the **PSReadLine** [ChangeLog][01].
 
 - Current preview: v2.4.0-beta0
-- Current stable release: v2.3.5
+- Current stable release: v2.3.6
 
 ## PSReadLine release history
 
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
-- v2.3.5 first shipped in PowerShell 7.4.2 and 7.5.0-preview.3
-- v2.3.4 first shipped in PowerShell 7.4.0-rc.1
-- v2.2.6 first shipped in PowerShell 7.3.0
-- v2.1.0 first shipped in PowerShell 7.2.5
-- v2.0.4 first shipped in PowerShell 7.0.11
+- v2.3.6 shipped in PowerShell 7.5.0
+- v2.3.5 shipped in PowerShell 7.4.2 and 7.5.0-preview.3
+- v2.3.4 shipped in PowerShell 7.4.0-rc.1
+- v2.2.6 shipped in PowerShell 7.3.0
+- v2.1.0 shipped in PowerShell 7.2.5
+- v2.0.4 shipped in PowerShell 7.0.11
 - v2.0.0 ships in Windows PowerShell 5.1
 
 ## Release Notes
@@ -37,9 +38,18 @@ Windows PowerShell 5.1.
 - Fix a few VI key handlers to correctly close the edit group
 - Read the history file in the streaming way to handle large files efficiently
 
+### v2.3.6 - 2024-10-03
+
+This is a servicing release for the build pipeline. There are no changes to
+PSReadLine in this release.
+
 ### v2.3.5 - 2024-04-02
 
-This is a servicing release that excludes test components from SBOM generation.
+This is a servicing release that fixes two issues:
+
+1. Exclude test components from SBOM generation to avoid false positive
+   security vulnerability report.
+1. Include the fix to a regression found in the v2.3.4 of PSReadLine.
 
 ### v2.3.4 - 2023-10-02
 

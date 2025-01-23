@@ -6,6 +6,7 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_Classes_Constructors
 ---
+
 # about_Classes_Constructors
 
 ## Short description
@@ -539,7 +540,7 @@ PowerShell class constructors have the following limitations:
 - [about_Classes_Methods][01]
 - [about_Classes_Properties][09]
 
-<!-- Link reference definitions -->
+<!-- link references -->
 [01]: about_Classes_Methods.md
 [02]: #static-constructors
 [03]: about_Classes_Properties.md#default-property-values

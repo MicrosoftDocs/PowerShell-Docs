@@ -121,8 +121,8 @@ $read_only = ( Get-ChildItem *.txt | Where-Object {$_.isReadOnly} )
 
 Because the pipeline operator (`|`) has a higher precedence than the assignment
 operator (`=`), the files that the `Get-ChildItem` cmdlet gets are sent to the
-`Where-Object` cmdlet for filtering before they are assigned to the `$read_only`
-variable.
+`Where-Object` cmdlet for filtering before they are assigned to the
+`$read_only` variable.
 
 The following example demonstrates that the index operator takes precedence
 over the cast operator.
@@ -187,14 +187,13 @@ are reading and maintaining your scripts.
 - [about_Redirection][redir]
 - [about_Scopes][scopes]
 - [about_Split][split]
-- [about_Type_Operators][type]
 
 <!-- reference links -->
 [math]: about_Arithmetic_Operators.md
 [assign]: about_Assignment_Operators.md
 [compare]: about_Comparison_Operators.md
 [join]: about_Join.md
-[logic]: about_logical_operators.md
+[logic]: about_Logical_Operators.md
 [ops]: about_Operators.md
 [redir]: about_Redirection.md
 [scopes]: about_Scopes.md

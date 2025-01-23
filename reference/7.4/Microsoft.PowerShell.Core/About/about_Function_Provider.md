@@ -9,6 +9,7 @@ title: about_Function_Provider
 # about_Function_Provider
 
 ## Provider name
+
 Function
 
 ## Drives
@@ -39,20 +40,18 @@ and filter objects. Neither functions nor filters have child items.
 The **Function** provider supports the following cmdlets, which are covered
 in this article.
 
-- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
-- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Clear-Item](xref:Microsoft.PowerShell.Management.Clear-Item)
+- [Get-Location][01]
+- [Set-Location][02]
+- [Get-Item][03]
+- [New-Item][04]
+- [Remove-Item][05]
+- [Clear-Item][06]
 
 ## Types exposed by this provider
 
 Each function is an instance of the
-[System.Management.Automation.FunctionInfo](/dotnet/api/system.management.automation.functioninfo)
-class. Each filter is an instance of the
-[System.Management.Automation.FilterInfo](/dotnet/api/system.management.automation.filterinfo)
-class.
+[System.Management.Automation.FunctionInfo][07] class. Each filter is an
+instance of the [System.Management.Automation.FilterInfo][08] class.
 
 ## Navigating the Function drive
 
@@ -79,9 +78,8 @@ drive. To reference a function from another location, use the drive name
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem),
-> `cd` is an alias for [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd` is
-> an alias for [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
+> [Get-ChildItem][09], `cd` is an alias for [Set-Location][10] and `pwd` is
+> an alias for [Get-Location][01].
 
 ## Getting functions
 
@@ -125,11 +123,11 @@ ${function:Clear-Host}
 This command gets the `man` function from the `Function:` drive. It uses the
 `Get-Item` cmdlet to get the function. The pipeline operator (`|`) sends the
 result to `Format-Table`. The `-Wrap` parameter directs text that does not fit
-on the line onto the next line. The `-Autosize` parameter resizes the table
+on the line onto the next line. The `-AutoSize` parameter resizes the table
 columns to accommodate the text.
 
 ```powershell
-Get-Item -Path man | Format-Table -Wrap -Autosize
+Get-Item -Path man | Format-Table -Wrap -AutoSize
 ```
 
 ### Working with Function provider paths
@@ -222,9 +220,9 @@ Determines the value of the **Options** property of a function.
 
 ### Cmdlets supported
 
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
+- [New-Item][04]
 
-- [Set-Item](xref:Microsoft.PowerShell.Management.Set-Item)
+- [Set-Item][11]
 
 ## Using the pipeline
 
@@ -239,8 +237,8 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system drive or use the `-Path`
-parameter of [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system drive.
+[Get-Help][12] command in a file system drive or use the `-Path` parameter of
+[Get-Help][12] to specify a file system drive.
 
 ```powershell
 Get-Help Get-ChildItem
@@ -252,5 +250,21 @@ Get-Help Get-ChildItem -Path function:
 
 ## See also
 
-- [about_Functions](about_Functions.md)
-- [about_Providers](about_Providers.md)
+- [about_Functions][13]
+- [about_Providers][14]
+
+<!-- link references -->
+[01]: xref:Microsoft.PowerShell.Management.Get-Location
+[02]: xref:Microsoft.PowerShell.Management.Set-Location
+[03]: xref:Microsoft.PowerShell.Management.Get-Item
+[04]: xref:Microsoft.PowerShell.Management.New-Item
+[05]: xref:Microsoft.PowerShell.Management.Remove-Item
+[06]: xref:Microsoft.PowerShell.Management.Clear-Item
+[07]: /dotnet/api/system.management.automation.functioninfo
+[08]: /dotnet/api/system.management.automation.filterinfo
+[09]: xref:Microsoft.PowerShell.Management.Get-ChildItem
+[10]: xref:Microsoft.PowerShell.Management.Set-Location
+[11]: xref:Microsoft.PowerShell.Management.Set-Item
+[12]: xref:Microsoft.PowerShell.Core.Get-Help
+[13]: about_Functions.md
+[14]: about_Providers.md

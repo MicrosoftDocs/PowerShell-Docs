@@ -2,6 +2,7 @@
 description: Describes how to call generic methods of .NET types in PowerShell
 Locale: en-US
 ms.date: 02/02/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calling_generic_methods?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Calling_Generic_Methods
 ---
@@ -9,8 +10,8 @@ title: about_Calling_Generic_Methods
 
 Generics let you tailor a method, class, structure, or interface to the precise
 data type it acts upon. For example, instead of using the
-<xref:System.Collections.Hashtable> class, which allows keys and values to be
-of any type, you can use the <xref:System.Collections.Generic.Dictionary%602>
+[System.Collections.Hashtable][01] class, which allows keys and values to be
+of any type, you can use the [System.Collections.Generic.Dictionary%602][02]
 generic class and specify the types allowed for the **key** and **value**
 properties. Generics provide increased code reusability and type safety.
 
@@ -26,8 +27,7 @@ generic method `Empty<T>()` that takes no formal parameters.
 
 Prior to PowerShell 7.3, to ensure proper method resolution you had to use
 complicated workarounds using .NET reflection. For an example, see Lee Holmes'
-blog post
-[Invoking generic methods on non-generic classes in PowerShell](https://www.leeholmes.com/invoking-generic-methods-on-non-generic-classes-in-powershell/).
+blog post [Invoking generic methods on non-generic classes in PowerShell][03].
 
 Beginning with PowerShell 7.3, you can specify the types for a generic method.
 
@@ -53,7 +53,7 @@ types, like `[string, int]`, including other generic types like
 
 The `method_arguments` can be zero or more items.
 
-For more information, see [Generics in .NET](/dotnet/standard/generics/).
+For more information, see [Generics in .NET][04].
 
 ## Example
 
@@ -88,3 +88,9 @@ The output shows each value raised to the power of 3.
 64
 125
 ```
+
+<!-- link references -->
+[01]: xref:System.Collections.Hashtable
+[02]: xref:System.Collections.Generic.Dictionary%602
+[03]: https://www.leeholmes.com/invoking-generic-methods-on-non-generic-classes-in-powershell/
+[04]: /dotnet/standard/generics/

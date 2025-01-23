@@ -585,7 +585,7 @@ function Test-Remainder {
         "${i}: $($Remaining[$i])"
     }
 }
-Test-Remainder first one,two
+Test-Remainder first one, two
 ```
 
 ```Output
@@ -1351,7 +1351,7 @@ This attribute was added in PowerShell 6.1.1.
 - [about_Functions_OutputTypeAttribute][13]
 
 <!-- link references -->
-[01]: about_comment_based_help.md
+[01]: about_Comment_Based_Help.md
 [02]: /dotnet/api/system.management.automation.runtimedefinedparameter
 [03]: /dotnet/standard/base-types/composite-formatting#composite-format-string
 [04]: /dotnet/standard/base-types/composite-formatting#format-string-component

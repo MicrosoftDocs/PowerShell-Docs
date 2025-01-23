@@ -184,8 +184,8 @@ do {<statement list>} until (<condition>)
 
 ## `dynamicparam`
 
-Specifies one part of the body of a function, along with the `begin`, `process`,
-and `end` keywords. Dynamic parameters are added at runtime.
+Specifies one part of the body of a function, along with the `begin`,
+`process`, and `end` keywords. Dynamic parameters are added at runtime.
 
 Syntax:
 
@@ -284,7 +284,7 @@ value of the `%ERRORLEVEL%` environment variable.
 Any argument that is non-numeric or outside the platform-specific range is
 translated to the value of `0`.
 
-In the following example, the user sets the error level variable value to **4**
+In the following example, the user sets the error level variable value to `4`
 by adding `exit 4` to the script file `test.ps1`.
 
 ```cmd

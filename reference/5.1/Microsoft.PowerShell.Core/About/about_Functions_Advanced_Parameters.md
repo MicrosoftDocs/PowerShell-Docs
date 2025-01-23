@@ -1255,7 +1255,7 @@ True
 - [about_Functions_OutputTypeAttribute][13]
 
 <!-- link references -->
-[01]: about_comment_based_help.md
+[01]: about_Comment_Based_Help.md
 [02]: /dotnet/api/system.management.automation.runtimedefinedparameter
 [05]: about_Automatic_Variables.md
 [06]: about_CommonParameters.md

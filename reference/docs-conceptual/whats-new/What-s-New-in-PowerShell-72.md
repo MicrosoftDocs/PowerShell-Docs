@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.2
 description: New features and changes released in PowerShell 7.2
-ms.date: 01/20/2023
+ms.date: 01/23/2025
 ---
 
 # What's New in PowerShell 7.2
@@ -146,9 +146,9 @@ Install-Module -Name PSDesiredStateConfiguration -Repository PSGallery -MaximumV
 <!-- end of content -->
 <!-- link references -->
 [01]: ../learn/experimental-features.md
-[02]: ../learn/experimental-features.md#psansirenderingfileinfo
+[02]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals#psstyle
 [03]: ../learn/experimental-features.md#psloadassemblyfromnativecode
-[04]: ../learn/experimental-features.md#psnativecommandargumentpassing
+[04]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommandargumentpassing
 [05]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals
 [06]: /powershell/module/microsoft.powershell.utility/import-powershelldatafile
 [07]: /powershell/scripting/install/installing-powershell-core-on-linux

@@ -40,9 +40,9 @@ cases.
 
 ## ForEach-Object Process
 
-The [ForEach-Object][02] cmdlet is designed to operate
-on objects in the pipeline, executing the **Process** parameter's scriptblock
-once for every object in the pipeline.
+The [ForEach-Object][02] cmdlet is designed to operate on objects in the
+pipeline, executing the **Process** parameter's scriptblock once for every
+object in the pipeline.
 
 You can use `$PSItem` in the **Process** parameter's scriptblock but not in the
 **Begin** or **End** parameter scriptblocks. If you reference `$PSItem` in the
@@ -356,9 +356,9 @@ total.
 ## See also
 
 - [about_Arrays][04]
-- [about_automatic_variables][01]
+- [about_Automatic_Variables][01]
 - [about_Comparison_Operators][12]
-- [about_functions][08]
+- [about_Functions][08]
 - [about_Script_Blocks][14]
 - [about_Switch][07]
 - [ForEach-Object][02]

@@ -9,6 +9,7 @@ title: about_Join
 # about_Join
 
 ## Short description
+
 Describes how the join operator (-join) combines multiple strings into a
 single string.
 
@@ -23,8 +24,8 @@ in the command.
 The following diagram shows the syntax for the join operator.
 
 ```powershell
--Join <String[]>
-<String[]> -Join <Delimiter>
+-join <String[]>
+<String[]> -join <Delimiter>
 ```
 
 #### Parameters

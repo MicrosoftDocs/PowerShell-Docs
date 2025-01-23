@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 09/29/2023
+ms.date: 08/27/2024
 schema: 2.0.0
 title: about_ANSI_terminals
 ---
@@ -253,7 +253,7 @@ The following values of `$env:TERM` change the behavior as follows:
 
 - `dumb` - sets `$Host.UI.SupportsVirtualTerminal = $false`
 - `xterm-mono` - sets `$PSStyle.OutputRendering = PlainText`
-- `xtermm` - sets `$PSStyle.OutputRendering = PlainText`
+- `xterm` - sets `$PSStyle.OutputRendering = PlainText`
 
 If `$env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
 **PlainText**. For more information about the **NO_COLOR** environment
