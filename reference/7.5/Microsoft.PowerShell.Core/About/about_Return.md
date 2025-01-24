@@ -28,8 +28,8 @@ return only the value or values that are specified by the `return` keyword.
 > [!NOTE]
 > Beginning in PowerShell 5.0, PowerShell added language for defining
 > classes, by using formal syntax.  In the context of a PowerShell class,
-> nothing is output from a method except what you specify using a
-> `return` statement. You can read more about PowerShell classes in
+> nothing is output from a method except what you specify using a `return`
+> statement. You can read more about PowerShell classes in
 > [about_Classes](about_Classes.md).
 
 ### Syntax
@@ -67,7 +67,7 @@ function MultiplyEven
 1..10 | ForEach-Object {MultiplyEven -Number $_}
 ```
 
-```output
+```Output
 1 is not even
 4
 3 is not even
@@ -139,7 +139,7 @@ function calculation {
 $a = calculation 14
 ```
 
-```output
+```
 Please wait. Working on calculation...
 C:\PS> $a
 87

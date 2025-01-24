@@ -42,7 +42,7 @@ Test -data $var
 $var
 ```
 
-```output
+```Output
 10
 ```
 
@@ -64,7 +64,7 @@ Test -data $var
 $var
 ```
 
-```output
+```Output
 Name                           Value
 ----                           -----
 Test                           New Text
@@ -101,21 +101,21 @@ Test -data ([ref]$var)
 $var
 ```
 
-```output
+```Output
 3
 ```
 
 ## Passing references to .NET methods
 
-Some .NET methods may require you to pass a variable as a reference. When
-the method's definition uses the keywords `in`, `out`, or `ref` on a
-parameter, it expects a reference.
+Some .NET methods may require you to pass a variable as a reference. When the
+method's definition uses the keywords `in`, `out`, or `ref` on a parameter, it
+expects a reference.
 
 ```powershell
 [int] | Get-Member -Static -Name TryParse
 ```
 
-```output
+```Output
 Name     MemberType Definition
 ----     ---------- ----------
 TryParse Method     static bool TryParse(string s, [ref] int result)
@@ -149,7 +149,7 @@ $iRef = [ref]0
 "`$i = $i;`$iRef = $($iRef.Value)"
 ```
 
-```output
+```Output
 $i = 0;$iRef = 1
 ```
 
@@ -188,8 +188,8 @@ specifying the `[System.Management.Automation.PSReference]` type directly. Even
 though `[ref]` is a type accelerator for
 `[System.Management.Automation.PSReference]`, they behave differently.
 
-- When you use `[ref]` to cast a variable, PowerShell creates a reference object
-  that contains a reference to the original instance of the variable.
+- When you use `[ref]` to cast a variable, PowerShell creates a reference
+  object that contains a reference to the original instance of the variable.
 - When you use `[System.Management.Automation.PSReference]` to cast a variable,
   PowerShell creates a reference object that contains a copy of the variable,
   rather than a reference to the original instance.
@@ -243,7 +243,7 @@ Value
 <!-- link references -->
 [01]: about_Environment_Variables.md
 [02]: about_Functions.md
-[03]: about_scopes.md
+[03]: about_Scopes.md
 [04]: about_Script_Blocks.md
 [05]: about_Type_Accelerators.md
 [06]: about_Variables.md

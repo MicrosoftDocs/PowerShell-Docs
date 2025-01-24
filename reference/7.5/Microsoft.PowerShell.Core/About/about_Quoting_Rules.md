@@ -465,7 +465,7 @@ For more information about this behavior, see the [about_Parsing][03] article.
 [01]: #including-quote-characters-in-a-string
 [02]: about_Parsing.md#argument-mode
 [03]: about_Parsing.md#passing-arguments-that-contain-quote-characters
-[04]: about_preference_variables.md#ofs
+[04]: about_Preference_Variables.md#ofs
 [05]: about_Special_Characters.md
 [06]: https://en.wikipedia.org/wiki/Quotation_marks_in_English#Smart_quotes
 [07]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData

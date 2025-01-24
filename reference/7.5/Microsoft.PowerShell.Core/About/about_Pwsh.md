@@ -108,11 +108,11 @@ Running `pwsh -File -` without redirected standard input starts a regular
 session. This is the same as not specifying the `File` parameter at all. When
 reading from standard input, the input statements are executed one statement at
 a time as though they were typed at the PowerShell command prompt. If a
-statement doesn't parse correctly, the statement isn't executed. The process exit code is
-determined by status of the last (executed) command within the input. With
-normal termination, the exit code is always `0`. When the script file
-terminates with an `exit` command, the process exit code is set to the numeric
-argument used with the `exit` command.
+statement doesn't parse correctly, the statement isn't executed. The process
+exit code is determined by status of the last (executed) command within the
+input. With normal termination, the exit code is always `0`. When the script
+file terminates with an `exit` command, the process exit code is set to the
+numeric argument used with the `exit` command.
 
 Similar to `-Command`, when a script-terminating error occurs, the exit code is
 set to `1`. However, unlike with `-Command`, when the execution is interrupted
@@ -152,7 +152,7 @@ script block curly braces are often not required in the first place when
 running from `cmd.exe`. To execute an inline script block defined inside a
 string, the [call operator][03] `&` can be used:
 
-```
+```powershell
 pwsh -Command "& {Get-WinEvent -LogName security}"
 ```
 
@@ -289,7 +289,7 @@ For example:
 $command = 'dir "c:\program files" '
 $bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
 $encodedCommand = [Convert]::ToBase64String($bytes)
-pwsh -encodedcommand $encodedCommand
+pwsh -EncodedCommand $encodedCommand
 ```
 
 ### -ExecutionPolicy | -ex | -ep
@@ -326,7 +326,8 @@ To set up `pwsh` as the login shell on UNIX-like operating systems:
 - Verify that the full absolute path to `pwsh` is listed under `/etc/shells`
   - This path is usually something like `/usr/bin/pwsh` on Linux or
     `/usr/local/bin/pwsh` on macOS
-  - With some installation methods, this entry will be added automatically at installation time
+  - With some installation methods, this entry will be added automatically at
+    installation time
   - If `pwsh` isn't present in `/etc/shells`, use an editor to append the path
     to `pwsh` on the last line. This requires elevated privileges to edit.
 - Use the [chsh][04] utility to set your current
@@ -408,7 +409,8 @@ non-Windows platforms results in an error.
 
 ### -Version | -v
 
-Displays the version of this PowerShell executable. Additional parameters are ignored.
+Displays the version of this PowerShell executable. Additional parameters are
+ignored.
 
 ### -WindowStyle | -w
 
@@ -431,6 +433,6 @@ prepend the command parameters with a hyphen (`-`), not a forward slash (`/`).
 <!-- link references -->
 [01]: /powershell/module/microsoft.powershell.core/about/about_powershell_exe?view=powershell-5.1&preserve-view=true
 [02]: about_Automatic_Variables.md#lastexitcode
-[03]: about_operators.md#special-operators
+[03]: about_Operators.md#special-operators
 [04]: https://linux.die.net/man/1/chsh
 [05]: about_Parsing.md#passing-arguments-that-contain-quote-characters
