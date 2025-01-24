@@ -62,7 +62,7 @@ If you use `$null` in a string, then it's a blank value (or empty string).
 ```powershell
 PS> $value = $null
 PS> Write-Output "The value is $value"
-The value is
+The value is 
 ```
 
 This is one of the reasons that I like to place brackets around variables when using them in log
