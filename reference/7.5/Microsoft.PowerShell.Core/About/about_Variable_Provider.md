@@ -39,31 +39,31 @@ objects. The variables have no child items.
 The **Variable** provider supports the following cmdlets, which are covered
 in this article.
 
-- [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
-- [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location)
-- [Get-Item](xref:Microsoft.PowerShell.Management.Get-Item)
-- [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
-- [Remove-Item](xref:Microsoft.PowerShell.Management.Remove-Item)
-- [Clear-Item](xref:Microsoft.PowerShell.Management.Clear-Item)
+- [Get-Location][01]
+- [Set-Location][02]
+- [Get-Item][03]
+- [New-Item][04]
+- [Remove-Item][05]
+- [Clear-Item][06]
 
 PowerShell also includes a set of cmdlets designed especially to view and to
 change variables. When you use **Variable** cmdlets, you do not need to specify
 the `Variable:` drive in the name. This article does not cover working with
 **Variable** cmdlets.
 
-- [Get-Variable](xref:Microsoft.PowerShell.Utility.Get-Variable)
-- [New-Variable](xref:Microsoft.PowerShell.Utility.New-Variable)
-- [Set-Variable](xref:Microsoft.PowerShell.Utility.Set-Variable)
-- [Remove-Variable](xref:Microsoft.PowerShell.Utility.Remove-Variable)
-- [Clear-Variable](xref:Microsoft.PowerShell.Utility.Clear-Variable)
+- [Get-Variable][07]
+- [New-Variable][08]
+- [Set-Variable][09]
+- [Remove-Variable][10]
+- [Clear-Variable][11]
 
 > [!NOTE]
 > You can also use the PowerShell expression parser to create, view, and change
-> the values of variables without using the cmdlets. When working with variables
-> directly, use a dollar sign (`$`) to identify the name as a variable and the
-> assignment operator (`=`)to establish and change its value. For example,
-> `$p = Get-Process` creates the `p` variable and stores the results of a
-> `Get-Process` command in it.
+> the values of variables without using the cmdlets. When working with
+> variables directly, use a dollar sign (`$`) to identify the name as a
+> variable and the assignment operator (`=`)to establish and change its value.
+> For example, `$p = Get-Process` creates the `p` variable and stores the
+> results of a `Get-Process` command in it.
 
 ## Types exposed by this provider
 
@@ -109,9 +109,8 @@ drive. To reference a variable from another location, use the drive name
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem),
-> `cd` is an alias for [Set-Location](xref:Microsoft.PowerShell.Management.Set-Location). and `pwd` is
-> an alias for [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location).
+> [Get-ChildItem][12], `cd` is an alias for [Set-Location][13]. and `pwd` is
+> an alias for [Get-Location][14].
 
 ## Displaying the value of variables
 
@@ -126,9 +125,9 @@ Get-ChildItem -Path Variable:
 
 ### Get a variable using its provider path
 
-This command retrieves a variables value using its provider path prefixed by the
-dollar sign (`$`). This has the same effect as prefixing the variables name with
-the dollar sign (`$`).
+This command retrieves a variables value using its provider path prefixed by
+the dollar sign (`$`). This has the same effect as prefixing the variables name
+with the dollar sign (`$`).
 
 ```powershell
 $variable:home
@@ -145,8 +144,7 @@ Get-ChildItem -Path Variable:max*
 
 ### Get the value of the ? variable
 
-This command uses the `-LiteralPath` parameter of
-[Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem) to get
+This command uses the `-LiteralPath` parameter of [Get-ChildItem][12] to get
 the value of the `?` variable from within the `Variable:` drive. The `?` is
 a wildcard in paths, but `Get-ChildItem` does not attempt to resolve any
 wildcards in the values of the `-LiteralPath` parameter.
@@ -162,8 +160,8 @@ This command gets the variables that have the values of `ReadOnly` or
 
 ```powershell
 Get-ChildItem -Path Variable: | Where-Object {
-   $_.options -Match "Constant" `
-   -or $_.options -Match "ReadOnly"
+   $_.options -match "Constant" `
+   -or $_.options -match "ReadOnly"
  } | Format-List -Property name, value, options
 ```
 
@@ -267,8 +265,8 @@ Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
 
 To get the help topics that are customized for the file system drive, run a
-[Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) command in a file system drive or use the `-Path`
-parameter of [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) to specify a file system drive.
+[Get-Help][15] command in a file system drive or use the `-Path` parameter of
+[Get-Help][15] to specify a file system drive.
 
 ```powershell
 Get-Help Get-ChildItem
@@ -280,6 +278,26 @@ Get-Help Get-ChildItem -Path variable:
 
 ## See also
 
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Providers](about_Providers.md)
-- [about_Variables](about_Variables.md)
+- [about_Automatic_Variables][16]
+- [about_Providers][17]
+- [about_Variables][18]
+
+<!-- link references -->
+[01]: xref:Microsoft.PowerShell.Management.Get-Location
+[02]: xref:Microsoft.PowerShell.Management.Set-Location
+[03]: xref:Microsoft.PowerShell.Management.Get-Item
+[04]: xref:Microsoft.PowerShell.Management.New-Item
+[05]: xref:Microsoft.PowerShell.Management.Remove-Item
+[06]: xref:Microsoft.PowerShell.Management.Clear-Item
+[07]: xref:Microsoft.PowerShell.Utility.Get-Variable
+[08]: xref:Microsoft.PowerShell.Utility.New-Variable
+[09]: xref:Microsoft.PowerShell.Utility.Set-Variable
+[10]: xref:Microsoft.PowerShell.Utility.Remove-Variable
+[11]: xref:Microsoft.PowerShell.Utility.Clear-Variable
+[12]: xref:Microsoft.PowerShell.Management.Get-ChildItem
+[13]: xref:Microsoft.PowerShell.Management.Set-Location
+[14]: xref:Microsoft.PowerShell.Management.Get-Location
+[15]: xref:Microsoft.PowerShell.Core.Get-Help
+[16]: about_Automatic_Variables.md
+[17]: about_Providers.md
+[18]: about_Variables.md
