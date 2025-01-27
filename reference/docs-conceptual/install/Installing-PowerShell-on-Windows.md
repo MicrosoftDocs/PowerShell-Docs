@@ -327,8 +327,6 @@ In both cases, you need the [Windows x64 ZIP release package][23]. Run the comma
    image.
 1. Unmount the image and boot it.
 1. Connect to the built-in instance of Windows PowerShell.
-1. Follow the instructions to create a remoting endpoint using the
-   ["another instance technique"][03].
 
 ### Online Deployment of PowerShell
 
@@ -348,9 +346,6 @@ Enter-PSSession $session
 # Extract the ZIP file
 Expand-Archive -Path C:\PowerShell-7.5.0-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
 ```
-
-If you want WSMan-based remoting, follow the instructions to create a remoting endpoint using the
-["another instance technique"][03].
 
 ## PowerShell remoting
 
@@ -375,7 +370,6 @@ can't support those methods.
 <!-- link references -->
 [01]: ../security/remoting/SSH-Remoting-in-PowerShell.md
 [02]: ../security/remoting/WSMan-Remoting-in-PowerShell.md
-[03]: ../security/remoting/WSMan-Remoting-in-PowerShell.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
 [04]: /dotnet/core/sdk
 [05]: /dotnet/core/tools/global-tools
 [06]: /windows-server/get-started/deploy-nano-server
@@ -388,9 +382,6 @@ can't support those methods.
 [13]: #powershell-remoting
 [14]: #winget
 [15]: #zip
-[16]: https://aka.ms/powershell-release?tag=lts
-[17]: https://aka.ms/powershell-release?tag=preview
-[18]: https://aka.ms/powershell-release?tag=stable
 [19]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
 [20]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/PowerShell-7.5.0-win-arm64.msi
 [21]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/PowerShell-7.5.0-win-arm64.zip

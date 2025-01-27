@@ -11,9 +11,14 @@ ms.topic: include
 > following links direct you to the release page for each version in the PowerShell repository on
 > GitHub.
 >
-> - v7.5.0 - Stable release: [https://aka.ms/powershell-release?tag=stable][18]
-> - v7.4.7 - LTS release: [https://aka.ms/powershell-release?tag=lts][16]
-> - v7.6.0-preview.2 - Preview release: [https://aka.ms/powershell-release?tag=preview][17]
+> - v7.5.0 - Stable release: [https://aka.ms/powershell-release?tag=stable][03]
+> - v7.4.7 - LTS release: [https://aka.ms/powershell-release?tag=lts][01]
+> - v7.6.0-preview.2 - Preview release: [https://aka.ms/powershell-release?tag=preview][02]
 >
 > Download links for every package are found in the **Assets** section of the Release page. The
 > **Assets** section may be collapsed, so you may need to click to expand it.
+
+<!-- link references -->
+[01]: https://aka.ms/powershell-release?tag=lts
+[02]: https://aka.ms/powershell-release?tag=preview
+[03]: https://aka.ms/powershell-release?tag=stable
