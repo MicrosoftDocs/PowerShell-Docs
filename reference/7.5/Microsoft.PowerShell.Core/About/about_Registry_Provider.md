@@ -28,8 +28,8 @@ Provides access to the registry keys, entries, and values in PowerShell.
 
 > This information only applies to PowerShell running on Windows.
 
-The PowerShell **Registry** provider lets you get, add, change,
-clear, and delete registry keys, entries, and values in PowerShell.
+The PowerShell **Registry** provider lets you get, add, change, clear, and
+delete registry keys, entries, and values in PowerShell.
 
 The **Registry** drives are a hierarchical namespace containing the registry
 keys and subkeys on your computer. Registry entries and values aren't
