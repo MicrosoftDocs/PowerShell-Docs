@@ -9,6 +9,7 @@ title: about_Simplified_Syntax
 # about_Simplified_Syntax
 
 ## Short description
+
 Describes easier, more natural-language ways of scripting filters for
 collections of objects.
 
@@ -60,7 +61,7 @@ commands:
 
 ```powershell
 dir Cert:\LocalMachine\Root | Where FriendlyName -EQ 'Verisign'
-dir Cert:\ -Recurse | ForEach GetKeyAlgorithm
+dir Cert:\ -Recurse | foreach GetKeyAlgorithm
 ```
 
 While both syntaxes work, the simplified syntax returns results without
@@ -96,5 +97,5 @@ Get-ChildItem /home -Directory | foreach GetFiles .*
 
 - [about_Comparison_Operators](about_Comparison_Operators.md)
 - [about_Foreach](about_Foreach.md)
-- [Foreach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
+- [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object)
 - [Where-Object](xref:Microsoft.PowerShell.Core.Where-Object)

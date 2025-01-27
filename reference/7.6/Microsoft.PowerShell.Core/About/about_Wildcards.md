@@ -82,7 +82,7 @@ following command gets services in which the **ServiceType** property value
 includes **Interactive**.
 
 ```powershell
-Get-Service | Where-Object {$_.ServiceType -Like "*Interactive*"}
+Get-Service | Where-Object {$_.ServiceType -like "*Interactive*"}
 ```
 
 In the following example, the `If` statement includes a condition that uses
@@ -106,7 +106,7 @@ foreach ($point in $p) {
 - [about_Script_Blocks][04]
 
 <!-- link references -->
-[01]: ./about_Regular_Expressions.md
+[01]: about_Regular_Expressions.md
 [02]: about_If.md
 [03]: about_Language_Keywords.md
 [04]: about_Script_Blocks.md

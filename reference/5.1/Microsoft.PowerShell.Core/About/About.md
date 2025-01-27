@@ -145,7 +145,8 @@ Describes the PowerShell debugger.
 
 ### [about_DesiredStateConfiguration](about_DesiredStateConfiguration.md)
 
-Provides a brief introduction to the PowerShell Desired State Configuration (DSC) feature.
+Provides a brief introduction to the PowerShell Desired State Configuration
+(DSC) feature.
 
 ### [about_Do](about_Do.md)
 
@@ -221,7 +222,8 @@ Describes the attribute that makes a function work like a compiled cmdlet.
 
 ### [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
 
-Describes an attribute that reports the type of object that the function returns.
+Describes an attribute that reports the type of object that the function
+returns.
 
 ### [about_Functions](about_Functions.md)
 
@@ -370,7 +372,8 @@ Combining commands into pipelines in the PowerShell
 
 ### [about_PowerShell_exe](about_PowerShell_exe.md)
 
-Explains how to use the `powershell.exe` command-line interface. Displays the command-line parameters and describes the syntax.
+Explains how to use the `powershell.exe` command-line interface. Displays the
+command-line parameters and describes the syntax.
 
 ### [about_PowerShell_Ise_exe](about_PowerShell_Ise_exe.md)
 
@@ -630,7 +633,8 @@ Describes new features that are included in Windows PowerShell 5.1.
 
 ### [about_Windows_PowerShell_ISE](about_Windows_PowerShell_ISE.md)
 
-Describes the features and system requirements of Windows PowerShell Integrated Scripting Environment (ISE).
+Describes the features and system requirements of Windows PowerShell Integrated
+Scripting Environment (ISE).
 
 ### [about_Windows_RT](about_Windows_RT.md)
 
@@ -638,12 +642,16 @@ Explains limitations of  Windows PowerShell 4.0 on Windows RT 8.1.
 
 ### [about_WMI_Cmdlets](about_WMI_Cmdlets.md)
 
-Provides background information about Windows Management Instrumentation (WMI) and Windows PowerShell.
+Provides background information about Windows Management Instrumentation (WMI)
+and Windows PowerShell.
 
 ### [about_WMI](about_WMI.md)
 
-Windows Management Instrumentation (WMI) uses the Common Information Model (CIM) to represent systems, applications, networks, devices, and other manageable components of the modern enterprise.
+Windows Management Instrumentation (WMI) uses the Common Information Model
+(CIM) to represent systems, applications, networks, devices, and other
+manageable components of the modern enterprise.
 
 ### [about_WQL](about_WQL.md)
 
-Describes WMI Query Language (WQL), which can be used to get WMI objects in Windows PowerShell.
+Describes WMI Query Language (WQL), which can be used to get WMI objects in
+Windows PowerShell.

@@ -16,9 +16,9 @@ Prevents a script from running without the required elements.
 ## Long description
 
 The `#Requires` statement prevents a script from running unless the PowerShell
-version, modules (and version), and edition
-prerequisites are met. If the prerequisites aren't met, PowerShell doesn't run
-the script or provide other runtime features, such as tab completion.
+version, modules (and version), and edition prerequisites are met. If the
+prerequisites aren't met, PowerShell doesn't run the script or provide other
+runtime features, such as tab completion.
 
 ### Syntax
 

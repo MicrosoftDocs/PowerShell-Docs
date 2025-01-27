@@ -29,11 +29,11 @@ The following shows the While statement syntax:
 while (<condition>){<statement list>}
 ```
 
-When you run a `while` statement, PowerShell evaluates the `<condition>` section
-of the statement before entering the `<statement list>` section. The condition
-portion of the statement resolves to either true or false. As long as the
-condition remains true, PowerShell reruns the `<statement list>` section. For
-more information about how booleans are evaluated, see
+When you run a `while` statement, PowerShell evaluates the `<condition>`
+section of the statement before entering the `<statement list>` section. The
+condition portion of the statement resolves to either true or false. As long as
+the condition remains true, PowerShell reruns the `<statement list>` section.
+For more information about how booleans are evaluated, see
 [about_Booleans](about_Booleans.md).
 
 The `<statement list>` section of the statement contains one or more commands
@@ -41,8 +41,8 @@ that are run each time the loop is entered or repeated. The `<statement list>`
 can contain any valid PowerShell statements, including the `break` and
 `continue` keywords.
 
-For example, the following `while` statement displays the numbers 1 through 3 if
-the `$val` variable has not been created or if the `$val` variable has been
+For example, the following `while` statement displays the numbers 1 through 3
+if the `$val` variable has not been created or if the `$val` variable has been
 created and initialized to 0.
 
 ```powershell
@@ -65,8 +65,8 @@ can enter it in the following way:
 while($val -ne 3){$val++; Write-Host $val}
 ```
 
-Notice that the semicolon separates the first command that adds 1 to `$val` from
-the second command that writes the value of `$val` to the console.
+Notice that the semicolon separates the first command that adds 1 to `$val`
+from the second command that writes the value of `$val` to the console.
 
 ## See also
 

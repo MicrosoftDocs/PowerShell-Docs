@@ -85,7 +85,7 @@ enclosed in a subexpression. For example:
 ```
 
 ```Output
-PS version: 7.5.0-preview.4
+PS version: 7.5.0
 ```
 
 To separate a variable name from subsequent characters in the string, enclose

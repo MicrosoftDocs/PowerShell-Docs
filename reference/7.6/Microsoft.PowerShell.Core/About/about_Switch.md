@@ -192,10 +192,10 @@ examples evaluates 4 and then 2.
 ```powershell
 switch (4, 2)
 {
-    1 {"It is one." }
-    2 {"It is two." }
-    3 {"It is three." }
-    4 {"It is four." }
+    1 {"It is one."}
+    2 {"It is two."}
+    3 {"It is three."}
+    4 {"It is four."}
     3 {"Three again."}
 }
 ```
@@ -213,9 +213,9 @@ statement in the condition of value 4.
 switch (4, 2)
 {
     1 {"It is one."; Break}
-    2 {"It is two." ; Break }
-    3 {"It is three." ; Break }
-    4 {"It is four." ; Break }
+    2 {"It is two." ; Break}
+    3 {"It is three." ; Break}
+    4 {"It is four." ; Break}
     3 {"Three again."}
 }
 ```
@@ -370,7 +370,7 @@ the beginning of the year 2022.
 ```powershell
 switch ((Get-Date 1-Jan-2022), (Get-Date 25-Dec-2021)) {
     { $_.Year -eq 2021 } {
-        $days = ((Get-Date 1/1/2022) - $_).days
+        $days = ((Get-Date 1/1/2022) - $_).Days
         "There are $days days until 2022."
     }
     { $_.Year -eq 2022 } { 'Welcome to 2022!' }
