@@ -125,7 +125,7 @@ by the function and assigned to the `$a` variable.
 If you would like to display a message within your function, beginning in
 PowerShell 5.0, you can use the `Information` stream. The code below corrects
 the above example using the `Write-Information` cmdlet with a
-`InformationAction` of **Continue**.
+**InformationAction** set to `Continue`.
 
 ```powershell
 function calculation {
@@ -135,13 +135,15 @@ function calculation {
     $value += 73
     return $value
 }
-
-$a = calculation 14
 ```
 
-```
+Now the information message to display in the host and not assigned to the
+variable.
+
+```powershell
+PS> $a = calculation 14
 Please wait. Working on calculation...
-C:\PS> $a
+PS> $a
 87
 ```
 

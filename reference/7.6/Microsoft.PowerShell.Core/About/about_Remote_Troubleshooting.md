@@ -77,8 +77,8 @@ For errors:
 
 > - ERROR:  ACCESS IS DENIED
 > - ERROR: The connection to the remote host was refused. Verify that the
->   WS-Management service is running on the remote host and configured to listen
->   for requests on the correct port and HTTP URL.
+>   WS-Management service is running on the remote host and configured to
+>   listen for requests on the correct port and HTTP URL.
 
 Enable the **Allow automatic configuration of listeners** policy to configure
 the listeners for all computers in a domain.
@@ -137,7 +137,6 @@ The `Set-NetFirewallRule` cmdlet is exported by the **NetSecurity** module.
 For errors:
 
 > - ERROR:  ACCESS IS DENIED
-
 > - ERROR: The connection to the remote host was refused. Verify that the
 >   WS-Management service is running on the remote host and configured to
 >   listen for requests on the correct port and HTTP URL.

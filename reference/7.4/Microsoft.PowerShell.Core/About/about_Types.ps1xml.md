@@ -9,6 +9,7 @@ title: about_Types.ps1xml
 # about_Types.ps1xml
 
 ## Short description
+
 Explains how to use `Types.ps1xml` files to extend the types of objects that
 are used in PowerShell.
 
@@ -24,8 +25,7 @@ data to a PowerShell session.
 
 This topic describes `Types.ps1xml` files. For more information about using the
 `Update-TypeData` cmdlet to add dynamic extended type data to the current
-session see
-[Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData).
+session see [Update-TypeData][01].
 
 ## About extended type data
 
@@ -46,8 +46,8 @@ Sunday, January 29, 2012 9:43:57 AM
 ```
 
 You won't find the **DateTime** property in the description of the
-[System.DateTime](/dotnet/api/system.datetime) structure, because PowerShell
-adds the property and it is visible only in PowerShell.
+[System.DateTime][02] structure, because PowerShell adds the property and it is
+visible only in PowerShell.
 
 PowerShell internally defines a default set of extended types. This type
 information is loaded in every PowerShell session at startup. The **DateTime**
@@ -141,12 +141,12 @@ As a result, you can use either the **Count** property or the **Length**
 property of arrays in PowerShell. For example:
 
 ```powershell
-(1, 2, 3, 4).count
+(1, 2, 3, 4).Count
 4
 ```
 
 ```powershell
-(1, 2, 3, 4).length
+(1, 2, 3, 4).Length
 4
 ```
 
@@ -176,9 +176,7 @@ the `Update-TypeData` command to your PowerShell profile.
 The `Types.ps1xml` files add properties and methods to all the instances of the
 objects of the specified .NET type in the affected PowerShell session. However,
 if you need to add properties or methods only to one instance of an object, use
-the `Add-Member` cmdlet.
-
-For more information, see [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member).
+the `Add-Member` cmdlet. For more information, see [Add-Member][03].
 
 ## Example: Adding an Age member to FileInfo objects
 
@@ -210,13 +208,11 @@ Save the follow XML code to the file `$PSHOME\MyTypes.ps1xml`.
 
 Run `Update-TypeData` to add the new `Types.ps1xml` file to the current
 session. The command uses the **PrependData** parameter to place the new file
-in a precedence order higher than the original definitions.
-
-For more information about `Update-TypeData`, see
-[Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData).
+in a precedence order higher than the original definitions. For more
+information about `Update-TypeData`, see [Update-TypeData][01].
 
 ```powershell
-Update-Typedata -PrependPath $PSHOME\MyTypes.ps1xml
+Update-TypeData -PrependPath $PSHOME\MyTypes.ps1xml
 ```
 
 To test the change, run a `Get-ChildItem` command to get the PowerShell.exe
@@ -234,9 +230,8 @@ Get-ChildItem $PSHOME\pwsh.exe | Select-Object Age
 
 ## The XML in Types.ps1xml files
 
-The full schema definition can be found in
-[Types.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Types.xsd)
-in the PowerShell source code repository on GitHub.
+The full schema definition can be found in [Types.xsd][04] in the PowerShell
+source code repository on GitHub.
 
 The `<Types>` tag encloses all of the types that are defined in the file. There
 should be only one `<Types>` tag.
@@ -517,7 +512,7 @@ objects.
 ```
 
 For more information, see the
-[Windows PowerShell Software Development Kit (SDK)](/powershell/scripting/developer/windows-powershell).
+[Windows PowerShell Software Development Kit (SDK)][05].
 
 ## Update-TypeData
 
@@ -545,15 +540,27 @@ are added by running the `Update-TypeData` cmdlet cannot use method syntax.
 ## Signing a Types.ps1xml file
 
 To protect users of your `Types.ps1xml` file, you can sign the file using a
-digital signature. For more information, see
-[about_Signing](about_Signing.md).
+digital signature. For more information, see [about_Signing][06].
 
 ## See also
 
-- [about_Signing](about_Signing.md)
-- [Copy-Item](xref:Microsoft.PowerShell.Management.Copy-Item)
-- [Copy-ItemProperty](xref:Microsoft.PowerShell.Management.Copy-ItemProperty)
-- [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
-- [Get-TypeData](xref:Microsoft.PowerShell.Utility.Get-TypeData)
-- [Remove-TypeData](xref:Microsoft.PowerShell.Utility.Remove-TypeData)
-- [Update-TypeData](xref:Microsoft.PowerShell.Utility.Update-TypeData)
+- [about_Signing][06]
+- [Copy-Item][07]
+- [Copy-ItemProperty][08]
+- [Get-Member][09]
+- [Get-TypeData][10]
+- [Remove-TypeData][11]
+- [Update-TypeData][01]
+
+<!-- link references -->
+[01]: xref:Microsoft.PowerShell.Utility.Update-TypeData
+[02]: /dotnet/api/system.datetime
+[03]: xref:Microsoft.PowerShell.Utility.Add-Member
+[04]: https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Types.xsd
+[05]: /powershell/scripting/developer/windows-powershell
+[06]: about_Signing.md
+[07]: xref:Microsoft.PowerShell.Management.Copy-Item
+[08]: xref:Microsoft.PowerShell.Management.Copy-ItemProperty
+[09]: xref:Microsoft.PowerShell.Utility.Get-Member
+[10]: xref:Microsoft.PowerShell.Utility.Get-TypeData
+[11]: xref:Microsoft.PowerShell.Utility.Remove-TypeData

@@ -255,7 +255,7 @@ try {
     "An error occurred that could not be resolved."
 } finally {
     $wc.Dispose()
-    if (Test-Path $tempPath) { Remove-item $tempFile }
+    if (Test-Path $tempPath) { Remove-Item $tempFile }
 }
 ```
 

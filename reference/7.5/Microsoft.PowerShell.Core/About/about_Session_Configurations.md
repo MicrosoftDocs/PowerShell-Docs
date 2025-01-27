@@ -267,7 +267,11 @@ limits the data received from a remote command to 20 megabytes (MB). (The
 default is 50 MB).
 
 ```powershell
-Register-PSSessionConfiguration -Name NewConfig -MaximumReceivedDataSizePerCommandMB 20
+$registerPSSessionConfigurationSplat = @{
+    Name = 'NewConfig'
+    MaximumReceivedDataSizePerCommandMB = 20
+}
+Register-PSSessionConfiguration @registerPSSessionConfigurationSplat
 ```
 
 When you create a session configuration, you can manage it by using the other
@@ -282,7 +286,7 @@ To remove a session configuration from the local computer, use the
 removes the NewConfig session configuration from the computer.
 
 ```powershell
-PS C:> Unregister-PSSessionConfiguration -Name NewConfig
+Unregister-PSSessionConfiguration -Name NewConfig
 ```
 
 For more information, see `Unregister-PSSessionConfiguration`.
@@ -311,7 +315,7 @@ on the Server01 computer. The command uses the ConfigurationName parameter to
 select the WithProfile configuration on the Server01 computer.
 
 ```powershell
-PS C:> New-PSSession -ComputerName Server01 -ConfigurationName WithProfile
+New-PSSession -ComputerName Server01 -ConfigurationName WithProfile
 ```
 
 This command will succeed only if the current user has permission to use the

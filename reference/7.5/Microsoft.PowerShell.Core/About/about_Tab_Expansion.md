@@ -121,7 +121,7 @@ Tab completion can also work to complete parameter arguments. You can use the
 <kbd>Tab</kbd> key to cycle through a list of possible values that are valid
 for some parameter.
 
-For more information, see[about_Functions_Argument_Completion][04].
+For more information, see [about_Functions_Argument_Completion][04].
 
 ## Enumerated value completion
 

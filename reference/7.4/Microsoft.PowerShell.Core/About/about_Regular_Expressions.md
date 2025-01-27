@@ -9,6 +9,7 @@ title: about_Regular_Expressions
 # about_Regular_Expressions
 
 ## Short description
+
 Describes regular expressions in PowerShell.
 
 ## Long description
@@ -36,7 +37,7 @@ shown above has a different way to force case sensitivity.
 - For `Select-String`, use the **CaseSensitive** parameter.
 - For operators that use regular expressions, use the case-sensitive version:
   `-cmatch`, `-creplace`, or `-csplit`
-- For the `switch` statement, use the `-casesensitive` option
+- For the `switch` statement, use the `-CaseSensitive` option
 
 ## Character literals
 
@@ -353,7 +354,7 @@ The provided regular expression extracts the username and domain from the
 message and stores them under the keys:**N** for name and **D** for domain.
 
 ```powershell
-$log = (Get-WinEvent -LogName Security -MaxEvents 1).message
+$log = (Get-WinEvent -LogName Security -MaxEvents 1).Message
 $r = '(?s).*Account Name:\s*(?<N>.*).*Account Domain:\s*(?<D>[A-Z,0-9]*)'
 $log -match $r
 ```

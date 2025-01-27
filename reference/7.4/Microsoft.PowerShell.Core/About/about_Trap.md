@@ -366,8 +366,8 @@ however, the `trap` statement is outside the function. PowerShell doesn't go
 back into the function after the `trap` statement runs.
 
 > [!CAUTION]
-> When multiple traps are defined for the same error condition, the first `trap`
-> defined lexically (highest in the script block) is used.
+> When multiple traps are defined for the same error condition, the first
+> `trap` defined lexically (highest in the script block) is used.
 
 In the following example, only the `trap` with `whoops 1` runs.
 

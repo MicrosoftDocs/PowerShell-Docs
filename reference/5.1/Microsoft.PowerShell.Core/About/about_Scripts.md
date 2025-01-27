@@ -9,6 +9,7 @@ title: about_Scripts
 # about_Scripts
 
 ## Short description
+
 Describes how to run and write scripts in PowerShell.
 
 ## Long description
@@ -37,7 +38,7 @@ running on non-Windows platforms.
 
 The default execution policy, `Restricted`, prevents all scripts from running,
 including scripts that you write on the local computer. For more information,
-see [about_Execution_Policies](about_Execution_Policies.md).
+see [about_Execution_Policies][01].
 
 The execution policy is saved in the registry, so you need to change it only
 once on each computer.
@@ -78,7 +79,7 @@ For example, to run the ServicesLog.ps1 script in the local directory, type:
 ```
 
 If the script has parameters, type the parameters and parameter values after
-the script file name.
+the script filename.
 
 For example, the following command uses the ServiceName parameter of the
 Get-ServiceLog script to request a log of WinRM service activity.
@@ -91,7 +92,7 @@ As a security feature, PowerShell does not run scripts when you double-click
 the script icon in File Explorer or when you type the script name without a
 full path, even when the script is in the current directory. For more
 information about running commands and scripts in PowerShell, see
-[about_Command_Precedence](about_Command_Precedence.md).
+[about_Command_Precedence][02].
 
 ### Run with PowerShell
 
@@ -105,12 +106,12 @@ PowerShell".
 The "Run with PowerShell" feature is designed to run scripts that do not have
 required parameters and do not return output to the command prompt.
 
-For more information, see [about_Run_With_PowerShell](about_Run_With_PowerShell.md).
+For more information, see [about_Run_With_PowerShell][03].
 
 ### Running scripts on other computers
 
-To run a script on one or more remote computers, use the **FilePath** parameter of
-the `Invoke-Command` cmdlet.
+To run a script on one or more remote computers, use the **FilePath** parameter
+of the `Invoke-Command` cmdlet.
 
 Enter the path and filename of the script as the value of the **FilePath**
 parameter. The script must reside on the local computer or in a directory that
@@ -120,8 +121,11 @@ The following command runs the `Get-ServiceLog.ps1` script on the remote
 computers named Server01 and Server02.
 
 ```powershell
-Invoke-Command -ComputerName Server01,Server02 -FilePath `
-  C:\Scripts\Get-ServiceLog.ps1
+$invokeCommandSplat = @{
+    ComputerName = 'Server01', 'Server02'
+    FilePath = 'C:\Scripts\Get-ServiceLog.ps1'
+}
+Invoke-Command @invokeCommandSplat
 ```
 
 ## Get help for scripts
@@ -134,7 +138,7 @@ path is in your `Path` environment variable, you can omit the path.
 For example, to get help for the ServicesLog.ps1 script, type:
 
 ```powershell
-get-help C:\admin\scripts\ServicesLog.ps1
+Get-Help C:\admin\scripts\ServicesLog.ps1
 ```
 
 ## How to write a script
@@ -151,8 +155,8 @@ running on the current system and saves them to a log file. The log filename is
 created from the current date.
 
 ```powershell
-$date = (get-date).dayofyear
-get-service | out-file "$date.log"
+$date = (Get-Date).DayOfYear
+Get-Service | Out-File "$date.log"
 ```
 
 To create this script, open a text editor or a script editor, type these
@@ -180,22 +184,22 @@ The following example shows a `Test-Remote.ps1` script that has a
 param ($ComputerName = $(throw "ComputerName parameter is required."))
 
 function CanPing {
-   $error.clear()
-   $tmp = test-connection $computername -erroraction SilentlyContinue
+   $error.Clear()
+   $tmp = Test-Connection $computername -ErrorAction SilentlyContinue
 
    if (!$?)
-       {write-host "Ping failed: $ComputerName."; return $false}
+       {Write-Host "Ping failed: $ComputerName."; return $false}
    else
-       {write-host "Ping succeeded: $ComputerName"; return $true}
+       {Write-Host "Ping succeeded: $ComputerName"; return $true}
 }
 
 function CanRemote {
-    $s = new-pssession $computername -erroraction SilentlyContinue
+    $s = New-PSSession $computername -ErrorAction SilentlyContinue
 
     if ($s -is [System.Management.Automation.Runspaces.PSSession])
-        {write-host "Remote test succeeded: $ComputerName."}
+        {Write-Host "Remote test succeeded: $ComputerName."}
     else
-        {write-host "Remote test failed: $ComputerName."}
+        {Write-Host "Remote test failed: $ComputerName."}
 }
 
 if (CanPing $computername) {CanRemote $computername}
@@ -204,15 +208,14 @@ if (CanPing $computername) {CanRemote $computername}
 To run this script, type the parameter name after the script name. For example:
 
 ```powershell
-C:\PS> .\test-remote.ps1 -computername Server01
+C:\PS> .\test-remote.ps1 -ComputerName Server01
 
 Ping succeeded: Server01
 Remote test failed: Server01
 ```
 
 For more information about the Param statement and the function parameters, see
-[about_Functions](about_Functions.md) and
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+[about_Functions][04] and [about_Functions_Advanced_Parameters][05].
 
 ### Writing help for scripts
 
@@ -224,7 +227,7 @@ methods:
   Create a Help topic by using special keywords in the comments. To create
   comment-based Help for a script, the comments must be placed at the beginning
   or end of the script file. For more information about comment-based Help, see
-  [about_Comment_Based_Help](about_Comment_Based_Help.md).
+  [about_Comment_Based_Help][06].
 
 - XML-Based Help  for Scripts
 
@@ -234,8 +237,8 @@ methods:
 
 To associate the script with the XML-based Help topic, use the .ExternalHelp
 Help comment keyword. For more information about the ExternalHelp keyword, see
-[about_Comment_Based_Help](about_Comment_Based_Help.md). For more information
-about XML-based help, see
+[about_Comment_Based_Help][06]. For more information about XML-based help, see
+[How to Write Cmdlet Help][07].
 [How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ### Returning an exit value
@@ -299,12 +302,12 @@ function and the `$ProfileName` variable.
 function New-Profile
 {
   Write-Host "Running New-Profile function"
-  $profileName = split-path $profile -leaf
+  $profileName = Split-Path $profile -Leaf
 
-  if (test-path $profile)
-    {write-error "Profile $profileName already exists on this computer."}
+  if (Test-Path $profile)
+    {Write-Error "Profile $profileName already exists on this computer."}
   else
-    {new-item -type file -path $profile -force }
+    {New-Item -Type file -Path $profile -Force }
 }
 ```
 
@@ -348,7 +351,7 @@ C:\PS> $profileName
 Microsoft.PowerShellISE_profile.ps1
 ```
 
-For more information about scope, see [about_Scopes](about_Scopes.md).
+For more information about scope, see [about_Scopes][08].
 
 ## Scripts in modules
 
@@ -362,7 +365,7 @@ which is a module that consists entirely or primarily of a script and
 supporting resources. A script module is just a script with a .psm1 file
 extension.
 
-For more information about modules, see [about_Modules](about_Modules.md).
+For more information about modules, see [about_Modules][09].
 
 ## Other script features
 
@@ -370,7 +373,7 @@ PowerShell has many useful features that you can use in scripts.
 
 - `#Requires` - You can use a `#Requires` statement to prevent a script from
   running without specified modules or snap-ins and a specified version of
-  PowerShell. For more information, see [about_Requires](about_Requires.md).
+  PowerShell. For more information, see [about_Requires][10].
 
 - `$PSCommandPath` - Contains the full path and name of the script that is
   being run. This parameter is valid in all scripts. This automatic variable is
@@ -393,11 +396,11 @@ PowerShell has many useful features that you can use in scripts.
   script. The values of these properties are populated only when the invoker or
   caller is a script.
 
-  - **PSCommandPath** contains the full path and name of the script that called or
-    invoked the current script.
+  - **PSCommandPath** contains the full path and name of the script that called
+    or invoked the current script.
 
-  - **PSScriptRoot** contains the directory of the script that called or invoked
-    the current script.
+  - **PSScriptRoot** contains the directory of the script that called or
+    invoked the current script.
 
   Unlike the `$PSCommandPath` and `$PSScriptRoot` automatic variables, which
   contain information about the current script, the **PSCommandPath** and
@@ -406,26 +409,43 @@ PowerShell has many useful features that you can use in scripts.
 
 - Data sections - You can use the `Data` keyword to separate data from logic in
   scripts. Data sections can also make localization easier. For more
-  information, see [about_Data_Sections](about_Data_Sections.md) and
-  [about_Script_Internationalization](about_Script_Internationalization.md).
+  information, see [about_Data_Sections][11] and
+  [about_Script_Internationalization][12].
 
 - Script Signing - You can add a digital signature to a script. Depending on
   the execution policy, you can use digital signatures to restrict the running
   of scripts that could include unsafe commands. For more information, see
-  [about_Execution_Policies](about_Execution_Policies.md) and
-  [about_Signing](about_Signing.md).
+  [about_Execution_Policies][01] and [about_Signing][13].
 
 ## See also
 
-- [about_Command_Precedence](about_Command_Precedence.md)
-- [about_Comment_Based_Help](about_Comment_Based_Help.md)
-- [about_Execution_Policies](about_Execution_Policies.md)
-- [about_Functions](about_Functions.md)
-- [about_Modules](about_Modules.md)
-- [about_Profiles](about_Profiles.md)
-- [about_Requires](about_Requires.md)
-- [about_Run_With_PowerShell](about_Run_With_PowerShell.md)
-- [about_Scopes](about_Scopes.md)
-- [about_Script_Blocks](about_Script_Blocks.md)
-- [about_Signing](about_Signing.md)
-- [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command)
+- [about_Command_Precedence][02]
+- [about_Comment_Based_Help][06]
+- [about_Execution_Policies][01]
+- [about_Functions][04]
+- [about_Modules][09]
+- [about_Profiles][14]
+- [about_Requires][10]
+- [about_Run_With_PowerShell][03]
+- [about_Scopes][08]
+- [about_Script_Blocks][15]
+- [about_Signing][13]
+- [Invoke-Command][16]
+
+<!-- link references -->
+[01]: about_Execution_Policies.md
+[02]: about_Command_Precedence.md
+[03]: about_Run_With_PowerShell.md
+[04]: about_Functions.md
+[05]: about_Functions_Advanced_Parameters.md
+[06]: about_Comment_Based_Help.md
+[07]: /powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets
+[08]: about_Scopes.md
+[09]: about_Modules.md
+[10]: about_Requires.md
+[11]: about_Data_Sections.md
+[12]: about_Script_Internationalization.md
+[13]: about_Signing.md
+[14]: about_Profiles.md
+[15]: about_Script_Blocks.md
+[16]: xref:Microsoft.PowerShell.Core.Invoke-Command

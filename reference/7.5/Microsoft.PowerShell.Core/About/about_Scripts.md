@@ -121,8 +121,11 @@ The following command runs the `Get-ServiceLog.ps1` script on the remote
 computers named Server01 and Server02.
 
 ```powershell
-Invoke-Command -ComputerName Server01, Server02 -FilePath `
-  C:\Scripts\Get-ServiceLog.ps1
+$invokeCommandSplat = @{
+    ComputerName = 'Server01', 'Server02'
+    FilePath = 'C:\Scripts\Get-ServiceLog.ps1'
+}
+Invoke-Command @invokeCommandSplat
 ```
 
 ## Get help for scripts

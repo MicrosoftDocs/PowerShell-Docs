@@ -231,7 +231,7 @@ At line:5 char:1
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-Because PowerShell doesn't recognize "nonsenseString" as a cmdlet or other
+Because PowerShell doesn't recognize `nonsenseString` as a cmdlet or other
 item, it returns a **CommandNotFoundException** error. The specific `trap`
 statement traps this terminating error.
 
@@ -386,8 +386,8 @@ however, the `trap` statement is outside the function. PowerShell doesn't go
 back into the function after the `trap` statement runs.
 
 > [!CAUTION]
-> When multiple traps are defined for the same error condition, the first `trap`
-> defined lexically (highest in the script block) is used.
+> When multiple traps are defined for the same error condition, the first
+> `trap` defined lexically (highest in the script block) is used.
 
 In the following example, only the `trap` with `whoops 1` runs.
 

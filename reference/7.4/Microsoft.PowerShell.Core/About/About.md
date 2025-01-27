@@ -223,7 +223,8 @@ Describes the attribute that makes a function work like a compiled cmdlet.
 
 ### [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
 
-Describes an attribute that reports the type of object that the function returns.
+Describes an attribute that reports the type of object that the function
+returns.
 
 ### [about_Functions](about_Functions.md)
 
