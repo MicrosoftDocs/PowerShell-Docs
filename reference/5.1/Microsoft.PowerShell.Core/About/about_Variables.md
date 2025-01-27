@@ -515,7 +515,7 @@ Get-Help <cmdlet-name>
 <!-- link references -->
 [01]: #variable-names-that-include-special-characters
 [02]: about_Alias_Provider.md
-[03]: about_assignment_operators.md#assigning-multiple-variables
+[03]: about_Assignment_Operators.md#assigning-multiple-variables
 [04]: about_Automatic_Variables.md
 [05]: about_Environment_Provider.md
 [06]: about_Environment_Variables.md

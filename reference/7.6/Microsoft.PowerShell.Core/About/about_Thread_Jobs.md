@@ -21,9 +21,9 @@ PowerShell concurrently runs commands and scripts through jobs. There are three
 jobs types provided by PowerShell to support concurrency.
 
 - `RemoteJob` - Commands and scripts run in a remote session. For information,
-  see [about_Remote_Jobs](about_Remote_Jobs.md).
+  see [about_Remote_Jobs][01].
 - `BackgroundJob` - Commands and scripts run in a separate process on the local
-  machine. For more information, see [about_Jobs](about_Jobs.md).
+  machine. For more information, see [about_Jobs][02].
 - `PSTaskJob` or `ThreadJob` - Commands and scripts run in a separate thread
   within the same process on the local machine.
 
@@ -46,10 +46,9 @@ faster and use fewer resources than the other job types.
 There are two ways work around this situation:
 
 1. Use `Invoke-Command` to create jobs that run in disconnected sessions. For
-   more information, see [about_Remote_Jobs](about_Remote_Jobs.md).
+   more information, see [about_Remote_Jobs][01].
 1. Use `Start-Process` to create a new process rather than a job. For more
-   information, see
-   [Start-Process](xref:Microsoft.PowerShell.Management.Start-Process).
+   information, see [Start-Process][03].
 
 ## How to start and manage thread-based jobs
 
@@ -59,7 +58,7 @@ There are two ways to start thread-based jobs:
 - `ForEach-Object -Parallel -AsJob` - the parallel feature was added in
   PowerShell 7.0
 
-Use the same **Job** cmdlets described in [about_Jobs](about_Jobs.md) to manage
+Use the same **Job** cmdlets described in [about_Jobs][02] to manage
 thread-based jobs.
 
 ### Using `Start-ThreadJob`
@@ -184,7 +183,7 @@ system logs. Since the script involves reading a number of logs, it makes sense
 to do the operations in parallel.
 
 ```powershell
-$logNames.count
+$logNames.Count
 10
 
 Measure-Command {
@@ -277,14 +276,29 @@ NPM(K)  PM(M)   WS(M) CPU(s)    Id SI ProcessName
 
 ## See also
 
-- [about_Job_Details](about_Job_Details.md)
-- [about_Remote_Jobs](about_Remote_Jobs.md)
-- [about_Thread_Jobs](about_Thread_Jobs.md)
-- [about_PSSessions](about_PSSessions.md)
-- [about_Remote](about_Remote.md)
-- [Get-Job](xref:Microsoft.PowerShell.Core.Get-Job)
-- [Receive-Job](xref:Microsoft.PowerShell.Core.Receive-Job)
-- [Remove-Job](xref:Microsoft.PowerShell.Core.Remove-Job)
-- [Start-Job](xref:Microsoft.PowerShell.Core.Start-Job)
-- [Stop-Job](xref:Microsoft.PowerShell.Core.Stop-Job)
-- [Wait-Job](xref:Microsoft.PowerShell.Core.Wait-Job)
+- [about_Job_Details][04]
+- [about_Remote_Jobs][01]
+- [about_Thread_Jobs][05]
+- [about_PSSessions][06]
+- [about_Remote][07]
+- [Get-Job][08]
+- [Receive-Job][09]
+- [Remove-Job][10]
+- [Start-Job][11]
+- [Stop-Job][12]
+- [Wait-Job][13]
+
+<!-- link references -->
+[01]: about_Remote_Jobs.md
+[02]: about_Jobs.md
+[03]: xref:Microsoft.PowerShell.Management.Start-Process
+[04]: about_Job_Details.md
+[05]: about_Thread_Jobs.md
+[06]: about_PSSessions.md
+[07]: about_Remote.md
+[08]: xref:Microsoft.PowerShell.Core.Get-Job
+[09]: xref:Microsoft.PowerShell.Core.Receive-Job
+[10]: xref:Microsoft.PowerShell.Core.Remove-Job
+[11]: xref:Microsoft.PowerShell.Core.Start-Job
+[12]: xref:Microsoft.PowerShell.Core.Stop-Job
+[13]: xref:Microsoft.PowerShell.Core.Wait-Job

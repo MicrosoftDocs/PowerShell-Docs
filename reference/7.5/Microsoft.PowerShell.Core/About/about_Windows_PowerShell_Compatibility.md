@@ -163,6 +163,6 @@ from the session or close the session.
 
 <!-- link references -->
 [01]: about_Modules.md
-[02]: about_powershell_config.md
+[02]: about_Powershell_Config.md
 [03]: https://aka.ms/PSModuleCompat
 [04]: xref:Microsoft.PowerShell.Core.Import-Module

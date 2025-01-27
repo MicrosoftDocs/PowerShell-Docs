@@ -37,7 +37,8 @@ The following cmdlets support the Disconnected Sessions feature:
 
 - `Connect-PSSession`: Connects to a disconnected PSSession.
 - `Disconnect-PSSession`: Disconnects a PSSession.
-- `Get-PSSession`: Gets PSSessions on the local computer or on remote computers.
+- `Get-PSSession`: Gets PSSessions on the local computer or on remote
+  computers.
 - `Receive-PSSession`: Gets the results of commands that ran in disconnected
   sessions.
 - `Invoke-Command`: **InDisconnectedSession** parameter creates a PSSession and
@@ -56,7 +57,7 @@ created ends.
 
 When you disconnect a PSSession, the PSSession remains active and is maintained
 on the remote computer. The session state changes from **Running** to
-**Disconnected**. You can reconnect to a disconnected PSSession from
+**Disconnected**. You can reconnect to a disconnected PSSession from:
 
 - The current session on the same computer
 - A different session on the same computer

@@ -9,6 +9,7 @@ title: about_Session_Configuration_Files
 # about_Session_Configuration_Files
 
 ## Short description
+
 Describes session configuration files, which are used in a session
 configuration (also known as an "endpoint") to define the environment of
 sessions that use the session configuration.
@@ -20,8 +21,8 @@ sessions that use the session configuration.
 A "session configuration file" is a text file with a .pssc file name extension
 that contains a hash table of session configuration properties and values. You
 can use a session configuration file to set the properties of a session
-configuration. Doing so defines the environment of any PowerShell
-sessions that use that session configuration.
+configuration. Doing so defines the environment of any PowerShell sessions that
+use that session configuration.
 
 Session configuration files make it easy to create custom session
 configurations without using complex C# assemblies or scripts.
@@ -30,7 +31,7 @@ A "session configuration" or "endpoint" is a collection of local computer
 settings that determine such things as which users can create sessions on the
 computer; which commands users can run in those sessions; and whether the
 session should run as a privileged virtual account. For more information about
-session configurations, see [about_Session_Configurations](about_Session_Configurations.md).
+session configurations, see [about_Session_Configurations][01].
 
 Session configurations were introduced in Windows PowerShell 2.0, and session
 configuration files were introduced in Windows PowerShell 3.0. You must use
@@ -40,9 +41,9 @@ affected by the settings in the session configuration.
 
 ## Creating Custom Sessions
 
-You can customize many features of a PowerShell session by specifying
-session properties in a session configuration. You can customize a session by
-writing a C# program that defines a custom runspace, or you can use a session
+You can customize many features of a PowerShell session by specifying session
+properties in a session configuration. You can customize a session by writing a
+C# program that defines a custom runspace, or you can use a session
 configuration file to define the properties of sessions created by using the
 session configuration. As a general rule, it is easier to use the session
 configuration file than to write a C# program.
@@ -54,25 +55,25 @@ the modules required for those tasks; and sessions where unprivileged users
 can only run specific commands as a privileged account.
 
 In addition to that, you can manage whether users of the session can use
-PowerShell language elements such as script blocks, or whether they
-can only run commands. You can manage the version of PowerShell users
-can run in the session; manage which modules are imported into the session;
-and manage which cmdlets, functions, and aliases session users can run. When
-using the RoleDefinitions field, you can give users different capabilities in
-the session based on group membership.
+PowerShell language elements such as script blocks, or whether they can only
+run commands. You can manage the version of PowerShell users can run in the
+session; manage which modules are imported into the session; and manage which
+cmdlets, functions, and aliases session users can run. When using the
+RoleDefinitions field, you can give users different capabilities in the session
+based on group membership.
 
 For more information about RoleDefinitions and how to define this Value, see
-the help topic for the New-PSRoleCapabilityFile Cmdlet.
+the help topic for the `New-PSRoleCapabilityFile` Cmdlet.
 
 ## Creating a Session Configuration File
 
 The easiest way to create a session configuration file is by using the
-New-PSSessionConfigurationFile cmdlet. This cmdlet generates a file that uses
+`New-PSSessionConfigurationFile` cmdlet. This cmdlet generates a file that uses
 the correct syntax and format, and that automatically verifies many of the
 configuration file property values.
 
 For detailed descriptions of the properties that you can set in a session
-configuration file, see the help topic for the New-PSSessionConfigurationFile
+configuration file, see the help topic for the `New-PSSessionConfigurationFile`
 cmdlet.
 
 The following command creates a session configuration file that uses the
@@ -107,8 +108,7 @@ To create a session configuration for sessions in which users can use only Get
 cmdlets, type:
 
 ```powershell
-New-PSSessionConfigurationFile -VisibleCmdlets Get-*
--Path .\GetSessions.pssc
+New-PSSessionConfigurationFile -VisibleCmdlets Get-* -Path .\GetSessions.pssc
 ```
 
 In the preceding example, setting the VisibleCmdlets parameter to Get-* limits
@@ -118,8 +118,7 @@ To create a session configuration for sessions that run under a privileged
 virtual account instead of the user's credentials, type:
 
 ```powershell
-New-PSSessionConfigurationFile -RunAsVirtualAccount
--Path .\VirtualAccount.pssc
+New-PSSessionConfigurationFile -RunAsVirtualAccount -Path .\VirtualAccount.pssc
 ```
 
 To create a session configuration for sessions in which the commands visible
@@ -138,7 +137,7 @@ configuration or add you can add a file to the session configuration at a
 later time.
 
 To include a session configuration file when creating a session configuration,
-use the Path parameter of the Register-PSSessionConfiguration cmdlet.
+use the Path parameter of the `Register-PSSessionConfiguration` cmdlet.
 
 For example, the following command uses the NoLanguage.pssc file when it
 creates a NoLanguage session configuration.
@@ -148,43 +147,43 @@ Register-PSSessionConfiguration -Name NoLanguage
 -Path .\NoLanguage.pssc
 ```
 
-When a new NoLanguage session starts, users will only have access to PowerShell commands.
+When a new NoLanguage session starts, users will only have access to PowerShell
+commands.
 
 To add a session configuration file to an existing session configuration, use
 the Set-PSSessionConfiguration cmdlet and the Path parameter. This affects any
 new sessions created with the specified session configuration. Note that the
-Set-PSSessionConfiguration cmdlet changes the session itself and does not
+`Set-PSSessionConfiguration` cmdlet changes the session itself and does not
 modify the session configuration file.
 
 For example, the following command adds the NoLanguage.pssc file to the
 LockedDown session configuration.
 
 ```powershell
-Set-PSSessionConfiguration -Name LockedDown
--Path .\NoLanguage.pssc
+Set-PSSessionConfiguration -Name LockedDown -Path .\NoLanguage.pssc
 ```
 
 When users use the LockedDown session configuration to create a session, they
 will be able to run cmdlets but they will not be able to create or use
 variables, assign values, or use other PowerShell language elements.
 
-The following command uses the New-PSSession cmdlet to create a session on the
-computer Srv01 that uses the LockedDown session configuration, saving an
+The following command uses the `New-PSSession` cmdlet to create a session on
+the computer Srv01 that uses the LockedDown session configuration, saving an
 object reference to the session in the $s variable. The ACL (access control
 list) of the session configuration determines who can use it to create a
 session.
 
 ```powershell
-$s = New-PSSession -ComputerName Srv01
--ConfigurationName LockedDown
+$s = New-PSSession -ComputerName Srv01 -ConfigurationName LockedDown
 ```
 
 Because the NoLanguage constraints were added to the LockedDown session
-configuration, users in LockedDown sessions will only be able to run PowerShell commands and cmdlets. For example, the following two commands use
-the Invoke-Command cmdlet to run commands in the session referenced in the $s
-variable. The first command, which runs the Get-UICulture cmdlet and does not
+configuration, users in LockedDown sessions will only be able to run PowerShell
+commands and cmdlets. For example, the following two commands use the
+`Invoke-Command` cmdlet to run commands in the session referenced in the $s
+variable. The first command, which runs the `Get-UICulture` cmdlet and does not
 use any variables, succeeds. The second command, which gets the value of the
-$PSUICulture variable, fails.
+`$PSUICulture` variable, fails.
 
 ```
 Invoke-Command -Session $s {Get-UICulture}
@@ -205,7 +204,8 @@ RunAsVirtualAccountGroups can be modified by editing the session configuration
 file used by the session configuration. To do this, begin by locating the
 active copy of the session configuration file.
 
-When you use a session configuration file in a session configuration, PowerShell creates an active copy of the session configuration file and stores
+When you use a session configuration file in a session configuration,
+PowerShell creates an active copy of the session configuration file and stores
 it in the \$pshome\\SessionConfig directory on the local computer.
 
 The location of the active copy of a session configuration file is stored in
@@ -249,12 +249,12 @@ NoLanguage_0c115179-ff2a-4f66-a5eb-e56e5692ba22.pssc
 ```
 
 If the syntax and values in the configuration file are valid
-Test-PSSessionConfigurationFile returns True. If the syntax and values are not
-valid then the cmdlet returns False.
+`Test-PSSessionConfigurationFile` returns True. If the syntax and values are
+not valid then the cmdlet returns False.
 
-You can use Test-PSSessionConfigurationFile to test any session configuration
+You can use `Test-PSSessionConfigurationFile` to test any session configuration
 file, including files that the New-PSSessionConfiguration cmdlet creates. For
-more information, see the help topic for the Test-PSSessionConfigurationFile
+more information, see the help topic for the `Test-PSSessionConfigurationFile`
 cmdlet.
 
 ## Removing a Session Configuration File
@@ -265,7 +265,7 @@ settings. This effectively cancels the settings used by the original
 configuration file.
 
 To replace a session configuration file, create a new session configuration
-file that uses the default settings, then use the Set-PSSessionConfiguration
+file that uses the default settings, then use the `Set-PSSessionConfiguration`
 cmdlet to replace the custom session configuration file with the new file.
 
 For example, the following commands create a Default session configuration
@@ -287,8 +287,8 @@ objects that represent session configurations using session configuration
 files have additional properties that make it easy to discover and analyze the
 session configuration. (Note that the type name shown below includes a
 formatted view definition.) You can view the properties by running the
-Get-PSSessionConfiguration cmdlet and piping the returned data to the
-Get-Member cmdlet:
+`Get-PSSessionConfiguration` cmdlet and piping the returned data to the
+`Get-Member` cmdlet:
 
 ```powershell
 Get-PSSessionConfiguration NoLanguage | Get-Member
@@ -351,20 +351,18 @@ use session configuration files, the command might not return all qualifying
 session configurations.
 
 ```powershell
-Get-PSSessionConfiguration |
-where {$_.ExecutionPolicy -eq "RemoteSigned"}
+Get-PSSessionConfiguration | Where-Object {$_.ExecutionPolicy -eq "RemoteSigned"}
 ```
 
 The following command gets session configurations in which the RunAsUser is
 the Exchange administrator.
 
 ```powershell
- Get-PSSessionConfiguration |
-where {$_.RunAsUser -eq "Exchange01\Admin01"}
+ Get-PSSessionConfiguration | Where-Object {$_.RunAsUser -eq "Exchange01\Admin01"}
 ```
 
 To view information about the role definitions associated with a configuration
-use the Get-PSSessionCapability cmdlet. This cmdlet enables you to determine
+use the `Get-PSSessionCapability` cmdlet. This cmdlet enables you to determine
 the commands and environment available to specific users in specific
 endpoints.
 
@@ -379,15 +377,29 @@ working with an empty session.
 
 ## See also
 
-- [about_Session_Configurations](about_Session_Configurations.md)
-- [New-PSRoleCapabilityFile](xref:Microsoft.PowerShell.Core.New-PSRoleCapabilityFile)
-- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
-- [Get-PSSessionCapability](xref:Microsoft.PowerShell.Core.Get-PSSessionCapability)
-- [Disable-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Disable-PSSessionConfiguration)
-- [Enable-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Enable-PSSessionConfiguration)
-- [Get-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Get-PSSessionConfiguration)
-- [Register-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration)
-- [Set-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Set-PSSessionConfiguration)
-- [Unregister-PSSessionConfiguration](xref:Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration)
-- [New-PSSessionConfigurationFile](xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile)
-- [Test-PSSessionConfigurationFile](xref:Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile)
+- [about_Session_Configurations][01]
+- [New-PSRoleCapabilityFile][02]
+- [New-PSSession][03]
+- [Get-PSSessionCapability][04]
+- [Disable-PSSessionConfiguration][05]
+- [Enable-PSSessionConfiguration][06]
+- [Get-PSSessionConfiguration][07]
+- [Register-PSSessionConfiguration][08]
+- [Set-PSSessionConfiguration][09]
+- [Unregister-PSSessionConfiguration][10]
+- [New-PSSessionConfigurationFile][11]
+- [Test-PSSessionConfigurationFile][12]
+
+<!-- link references -->
+[01]: about_Session_Configurations.md
+[02]: xref:Microsoft.PowerShell.Core.New-PSRoleCapabilityFile
+[03]: xref:Microsoft.PowerShell.Core.New-PSSession
+[04]: xref:Microsoft.PowerShell.Core.Get-PSSessionCapability
+[05]: xref:Microsoft.PowerShell.Core.Disable-PSSessionConfiguration
+[06]: xref:Microsoft.PowerShell.Core.Enable-PSSessionConfiguration
+[07]: xref:Microsoft.PowerShell.Core.Get-PSSessionConfiguration
+[08]: xref:Microsoft.PowerShell.Core.Register-PSSessionConfiguration
+[09]: xref:Microsoft.PowerShell.Core.Set-PSSessionConfiguration
+[10]: xref:Microsoft.PowerShell.Core.Unregister-PSSessionConfiguration
+[11]: xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
+[12]: xref:Microsoft.PowerShell.Core.Test-PSSessionConfigurationFile

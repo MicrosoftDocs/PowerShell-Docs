@@ -28,8 +28,8 @@ return only the value or values that are specified by the `return` keyword.
 > [!NOTE]
 > Beginning in PowerShell 5.0, PowerShell added language for defining
 > classes, by using formal syntax.  In the context of a PowerShell class,
-> nothing is output from a method except what you specify using a
-> `return` statement. You can read more about PowerShell classes in
+> nothing is output from a method except what you specify using a `return`
+> statement. You can read more about PowerShell classes in
 > [about_Classes](about_Classes.md).
 
 ### Syntax
@@ -67,7 +67,7 @@ function MultiplyEven
 1..10 | ForEach-Object {MultiplyEven -Number $_}
 ```
 
-```output
+```Output
 1 is not even
 4
 3 is not even
@@ -125,7 +125,7 @@ by the function and assigned to the `$a` variable.
 If you would like to display a message within your function, beginning in
 PowerShell 5.0, you can use the `Information` stream. The code below corrects
 the above example using the `Write-Information` cmdlet with a
-`InformationAction` of **Continue**.
+**InformationAction** set to `Continue`.
 
 ```powershell
 function calculation {
@@ -135,13 +135,15 @@ function calculation {
     $value += 73
     return $value
 }
-
-$a = calculation 14
 ```
 
-```output
+Now the information message to display in the host and not assigned to the
+variable.
+
+```powershell
+PS> $a = calculation 14
 Please wait. Working on calculation...
-C:\PS> $a
+PS> $a
 87
 ```
 

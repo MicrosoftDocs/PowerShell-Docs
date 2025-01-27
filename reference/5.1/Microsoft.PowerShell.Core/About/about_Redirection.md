@@ -9,13 +9,14 @@ title: about_Redirection
 # about_Redirection
 
 ## Short description
+
 Explains how to redirect output from PowerShell to text files.
 
 ## Long description
 
 By default, PowerShell sends output to the PowerShell host. Usually this is the
-console application. However, you can redirect the output to a text file and you
-can redirect error output to the regular output stream.
+console application. However, you can redirect the output to a text file and
+you can redirect error output to the regular output stream.
 
 You can use the following methods to redirect output:
 
@@ -26,9 +27,11 @@ You can use the following methods to redirect output:
 - Use the `Tee-Object` cmdlet, which sends command output to a text file and
   then sends it to the pipeline.
 
-- Use the PowerShell redirection operators. Using the redirection operator with
-  a file target is functionally equivalent to piping to `Out-File` with no
-  extra parameters.
+- Use the PowerShell redirection operators. Redirecting the output of a
+  PowerShell command (cmdlet, function, script) using the redirection operator
+  (`>`) is functionally equivalent to piping to `Out-File` with no extra
+  parameters. 
+
 
 For more information about streams, see [about_Output_Streams][04].
 
@@ -142,27 +145,27 @@ particular stream. The script in this example shows how the value of
 ```powershell
 $ErrorActionPreference = 'Continue'
 $ErrorActionPreference > log.txt
-get-item /not-here 2>&1 >> log.txt
+Get-Item /not-here 2>&1 >> log.txt
 
 $ErrorActionPreference = 'SilentlyContinue'
 $ErrorActionPreference >> log.txt
-get-item /not-here 2>&1 >> log.txt
+Get-Item /not-here 2>&1 >> log.txt
 
 $ErrorActionPreference = 'Stop'
 $ErrorActionPreference >> log.txt
 Try {
-    get-item /not-here 2>&1 >> log.txt
+    Get-Item /not-here 2>&1 >> log.txt
 }
 catch {
     "`tError caught!" >> log.txt
 }
 $ErrorActionPreference = 'Ignore'
 $ErrorActionPreference >> log.txt
-get-item /not-here 2>&1 >> log.txt
+Get-Item /not-here 2>&1 >> log.txt
 
 $ErrorActionPreference = 'Inquire'
 $ErrorActionPreference >> log.txt
-get-item /not-here 2>&1 >> log.txt
+Get-Item /not-here 2>&1 >> log.txt
 
 $ErrorActionPreference = 'Continue'
 ```
@@ -340,7 +343,7 @@ used. For more information, see the `-gt` operator in
 [03]: about_Operators.md
 [04]: about_Output_Streams.md
 [05]: about_Path_Syntax.md
-[06]: about_preference_variables.md#psdefaultparametervalues
+[06]: about_Preference_Variables.md#psdefaultparametervalues
 [07]: xref:Microsoft.PowerShell.Utility.Out-File
 [08]: xref:Microsoft.PowerShell.Utility.Tee-Object
 [09]: xref:Microsoft.PowerShell.Utility.Write-Debug

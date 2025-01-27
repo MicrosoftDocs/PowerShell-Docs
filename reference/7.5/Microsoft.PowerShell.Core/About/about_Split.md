@@ -9,6 +9,7 @@ title: about_Split
 # about_Split
 
 ## Short description
+
 Explains how to use the Split operator to split one or more strings into
 substrings.
 

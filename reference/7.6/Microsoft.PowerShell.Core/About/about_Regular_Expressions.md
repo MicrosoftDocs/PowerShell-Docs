@@ -354,7 +354,7 @@ The provided regular expression extracts the username and domain from the
 message and stores them under the keys:**N** for name and **D** for domain.
 
 ```powershell
-$log = (Get-WinEvent -LogName Security -MaxEvents 1).message
+$log = (Get-WinEvent -LogName Security -MaxEvents 1).Message
 $r = '(?s).*Account Name:\s*(?<N>.*).*Account Domain:\s*(?<D>[A-Z,0-9]*)'
 $log -match $r
 ```

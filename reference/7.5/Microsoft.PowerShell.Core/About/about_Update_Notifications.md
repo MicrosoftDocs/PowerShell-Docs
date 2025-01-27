@@ -52,9 +52,9 @@ information about setting environment variables, see
 PowerShell uses the following endpoints for determining the latest version
 available for each channel:
 
-- `LTS`: <https://aka.ms/pwsh-buildinfo-lts>
-- `Stable`: <https://aka.ms/pwsh-buildinfo-stable>
-- `Preview`: <https://aka.ms/pwsh-buildinfo-preview>
+- `LTS`: [https://aka.ms/pwsh-buildinfo-lts][02]
+- `Stable`: [https://aka.ms/pwsh-buildinfo-stable][03]
+- `Preview`: [https://aka.ms/pwsh-buildinfo-preview][04]
 
 The update notification doesn't provide any way to automatically update
 PowerShell. In the future, there may be more instructions or capabilities to
@@ -63,3 +63,6 @@ mechanism you used to install PowerShell to update it.
 
 <!-- link references -->
 [01]: ../about/about_Environment_Variables.md
+[02]: https://aka.ms/pwsh-buildinfo-lts
+[03]: https://aka.ms/pwsh-buildinfo-stable
+[04]: https://aka.ms/pwsh-buildinfo-preview

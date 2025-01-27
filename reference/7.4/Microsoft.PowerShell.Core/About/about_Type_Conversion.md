@@ -528,8 +528,8 @@ For more information, see [about_Comparison_Operators][05].
 [05]: about_Comparison_Operators.md
 [06]: about_Functions_Advanced.md
 [07]: about_Numeric_Literals.md
-[08]: about_parameter_binding.md
-[09]: about_preference_variables.md#ofs
+[08]: about_Parameter_Binding.md
+[09]: about_Preference_Variables.md#ofs
 [10]: about_Types.ps1xml.md
 [11]: https://stackoverflow.com/questions/76241804/how-does-powershell-split-consecutive-strings-not-a-single-letter
 [12]: xref:Microsoft.PowerShell.Utility.Update-TypeData
