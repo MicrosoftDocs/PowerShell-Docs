@@ -50,7 +50,7 @@ Microsoft
 Third-party
 
 - [AWS][19]
-- [VMWare][20]
+- [VMware][20]
 - [Google Cloud][21]
 
 ### Configuration management
