@@ -17,6 +17,8 @@ All packages are available on our GitHub [releases][02] page. Before installing,
 
 RHEL 7 uses `yum` and RHEL 8 and higher uses the `dnf` package manager.
 
+[!INCLUDE [Latest version](../../includes/latest-install.md)]
+
 ## Installation via the Package Repository
 
 Microsoft builds and supports a variety of software products for Linux systems and makes them
@@ -75,7 +77,7 @@ change the URL to download the version of PowerShell that you want to install.
 On RHEL 8 or 9:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-1.rh.x86_64.rpm
 ```
 
 ## Uninstall PowerShell
