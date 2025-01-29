@@ -142,6 +142,6 @@ Changes to state of an experimental feature only take effect on restart of Power
 
 [Get-ExperimentalFeature](Get-ExperimentalFeature.md)
 
-[about_Experimental_Features](About/about_Experimental_Features)
+[about_Experimental_Features](About/about_Experimental_Features.md)
 
 [Using Experimental Features](/powershell/scripting/learn/experimental-features)

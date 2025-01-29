@@ -85,6 +85,6 @@ name is specified.
 
 [Enable-ExperimentalFeature](Enable-ExperimentalFeature.md)
 
-[about_Experimental_Features](About/about_Experimental_Features)
+[about_Experimental_Features](About/about_Experimental_Features.md)
 
 [Using Experimental Features](/powershell/scripting/learn/experimental-features)
