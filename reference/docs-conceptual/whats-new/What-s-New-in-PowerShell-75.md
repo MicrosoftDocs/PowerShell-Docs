@@ -120,7 +120,7 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
   @jborean93!)
 - Add telemetry to check for specific tags when importing a module ([#20371][20371])
 - Add `PSAdapter` and `ConsoleGuiTools` to module load telemetry allowlist ([#20641][20641])
-- Add Winget module to track usage ([#21040][21040])
+- Add WinGet module to track usage ([#21040][21040])
 - Ensure the filename is not null when logging WDAC ETW events ([#20910][20910]) (Thanks
   @jborean93!)
 - Fix four regressions introduced by the WDAC logging feature ([#20913][20913])
@@ -133,6 +133,13 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 - Validate the value for using namespace during semantic checks to prevent declaring invalid
   namespaces ([#21162][21162])
 - Handle global tool specially when prepending `$PSHome` to PATH ([#24228][24228])
+
+## New features inherited from .NET 9
+
+New features in .NET 9 can be found here: [https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/overview](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/overview).
+Here are some highlights that might be good to know about for PowerShell users:
+
+- UUID v7 support with [`[guid]::CreateVersion7()`](100)
 
 ## Experimental features
 
@@ -190,14 +197,14 @@ $tests = @{
         $ms = (Measure-Command { & $test.Value -Count $_ }).TotalMilliseconds
 
 [pscustomobject]@{
-            CollectionSize    = $_
-            Test              = $test.Key
-            TotalMilliseconds = [math]::Round($ms, 2)
-        }
+    CollectionSize    = $_
+    Test              = $test.Key
+    TotalMilliseconds = [math]::Round($ms, 2)
+}
 
 [GC]::Collect()
-        [GC]::WaitForPendingFinalizers()
-    }
+    [GC]::WaitForPendingFinalizers()
+}
 
 $groupResult = $groupResult | Sort-Object TotalMilliseconds
     $groupResult | Select-Object *, @{
@@ -249,7 +256,7 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 
 <!-- end of content -->
 <!-- reference links -->
-[chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
+[chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.5.md
 
 [01]: ../learn/experimental-features.md#psnativewindowstildeexpansion
 [02]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
