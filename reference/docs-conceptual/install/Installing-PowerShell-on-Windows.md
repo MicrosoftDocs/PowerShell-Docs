@@ -8,7 +8,7 @@ title: Installing PowerShell on Windows
 There are multiple ways to install PowerShell in Windows. Each install method is designed to support
 different scenarios and workflows. Choose the method that best suits your needs.
 
-- [Winget][14] - Recommended way to install PowerShell on Windows clients
+- [WinGet][14] - Recommended way to install PowerShell on Windows clients
 - [MSI package][11] - Best choice for Windows Servers and enterprise deployment scenarios
 - [ZIP package][15] - Easiest way to "side load" or install multiple versions
   - Use this method for Windows Nano Server, Windows IoT, and Arm-based systems
@@ -18,16 +18,16 @@ different scenarios and workflows. Choose the method that best suits your needs.
 
 [!INCLUDE [Latest version](../../includes/latest-install.md)]
 
-## <a id="winget">Install PowerShell using Winget (recommended)</a>
+## <a id="winget">Install PowerShell using WinGet (recommended)</a>
 
-Winget, the Windows Package Manager, is a command-line tool enables users to discover, install,
+WinGet, the Windows Package Manager, is a command-line tool enables users to discover, install,
 upgrade, remove, and configure applications on Windows client computers. This tool is the client
 interface to the Windows Package Manager service. The `winget` command-line tool is bundled with
 Windows 11 and modern versions of Windows 10 by default as the **App Installer**.
 
 > [!NOTE]
 > See the [winget documentation][09] for a list of system requirements and install instructions.
-> `Winget` isn't available on Windows Server 2022 or earlier versions. Windows Server 2025 Preview
+> `winget` isn't available on Windows Server 2022 or earlier versions. Windows Server 2025 Preview
 > Build 26085 and later includes `winget` for **Windows Server with Desktop Experience** only.
 
 The following commands can be used to install PowerShell using the published `winget` packages:
@@ -229,15 +229,15 @@ session is running.
 
 - If the value is `$HOME\.dotnet\tools`, PowerShell was installed with the [.NET Global tool][10].
 - If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was installed as an
-  [MSI package][11] or with [Winget][14] on a computer with an X86 or x64 processor.
+  [MSI package][11] or with [WinGet][14] on a computer with an X86 or x64 processor.
 - If the value starts with `$Env:ProgramFiles\WindowsApps\`, PowerShell was installed as a
-  [Microsoft Store package][12] or with [Winget][14] on computer with an ARM processor.
+  [Microsoft Store package][12] or with [WinGet][14] on computer with an ARM processor.
 - If the value is anything else, it's likely that PowerShell was installed as a [ZIP package][15].
 
 If you installed via the MSI package, that information also appears in the
 **Programs and Features** Control Panel.
 
-To determine whether PowerShell may be upgraded with Winget, run the following command:
+To determine whether PowerShell may be upgraded with WinGet, run the following command:
 
 ```powershell
 winget list --name PowerShell --upgrade-available
@@ -382,6 +382,7 @@ can't support those methods.
 [13]: #powershell-remoting
 [14]: #winget
 [15]: #zip
+[18]: https://github.com/PowerShell/PowerShell/releases/latest
 [19]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
 [20]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/PowerShell-7.5.0-win-arm64.msi
 [21]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/PowerShell-7.5.0-win-arm64.zip

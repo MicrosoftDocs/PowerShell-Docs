@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 01/23/2025
+ms.date: 01/29/2025
 ---
 
 # What's New in PowerShell 7.5
@@ -9,7 +9,8 @@ ms.date: 01/23/2025
 PowerShell 7.5.0 includes the following features, updates, and breaking changes. PowerShell
 7.5 is built on .NET 9.0.1 GA release.
 
-For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
+For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
+information about .NET 9, see [What's new in .NET 9][07].
 
 ## Breaking Changes
 
@@ -120,7 +121,7 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
   @jborean93!)
 - Add telemetry to check for specific tags when importing a module ([#20371][20371])
 - Add `PSAdapter` and `ConsoleGuiTools` to module load telemetry allowlist ([#20641][20641])
-- Add Winget module to track usage ([#21040][21040])
+- Add WinGet module to track usage ([#21040][21040])
 - Ensure the filename is not null when logging WDAC ETW events ([#20910][20910]) (Thanks
   @jborean93!)
 - Fix four regressions introduced by the WDAC logging feature ([#20913][20913])
@@ -189,25 +190,25 @@ $tests = @{
     $groupResult = foreach($test in $tests.GetEnumerator()) {
         $ms = (Measure-Command { & $test.Value -Count $_ }).TotalMilliseconds
 
-[pscustomobject]@{
+        [pscustomobject]@{
             CollectionSize    = $_
             Test              = $test.Key
             TotalMilliseconds = [math]::Round($ms, 2)
         }
 
-[GC]::Collect()
-        [GC]::WaitForPendingFinalizers()
+        [GC]::Collect()
+            [GC]::WaitForPendingFinalizers()
     }
 
-$groupResult = $groupResult | Sort-Object TotalMilliseconds
-    $groupResult | Select-Object *, @{
-        Name       = 'RelativeSpeed'
-        Expression = {
-            $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
-            $speed = [math]::Round($relativeSpeed, 2).ToString() + 'x'
-            if ($speed -eq '1x') { $speed } else { $speed + ' slower' }
-        }
-    } | Format-Table -AutoSize
+    $groupResult = $groupResult | Sort-Object TotalMilliseconds
+        $groupResult | Select-Object *, @{
+            Name       = 'RelativeSpeed'
+            Expression = {
+                $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
+                $speed = [math]::Round($relativeSpeed, 2).ToString() + 'x'
+                if ($speed -eq '1x') { $speed } else { $speed + ' slower' }
+            }
+        } | Format-Table -AutoSize
 }
 ```
 
@@ -249,7 +250,7 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 
 <!-- end of content -->
 <!-- reference links -->
-[chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
+[chg]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.5.md
 
 [01]: ../learn/experimental-features.md#psnativewindowstildeexpansion
 [02]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
@@ -257,6 +258,7 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [04]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
 [05]: ../learn/experimental-features.md#psredirecttovariable
 [06]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
+[07]: /dotnet/core/whats-new/dotnet-9/overview)
 
 [19896]: https://github.com/PowerShell/PowerShell/pull/19896
 [20014]: https://github.com/PowerShell/PowerShell/pull/20014
