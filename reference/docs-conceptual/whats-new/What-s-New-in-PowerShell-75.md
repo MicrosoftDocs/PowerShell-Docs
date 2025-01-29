@@ -22,6 +22,9 @@ information about .NET 9, see [What's new in .NET 9][07].
 - The Windows installer now remembers installation options used and uses them to initialize options
   for the next installation ([#20420][20420]) (Thanks @reduckted!)
 - `ConvertTo-Json` now serializes `BigInteger` as a number ([#21000][21000]) (Thanks @jborean93!)
+- .NET 9 removed the `BinaryFormatter` implementation causing a regression in the `Out-GridView`
+  cmdlet. The search feature of `Out-GridView` doesn't work in PowerShell 7.5. This problem is
+  tracked in [Issue #24749][24749].
 
 ## Updated modules
 
@@ -330,3 +333,4 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [24115]: https://github.com/PowerShell/PowerShell/pull/24115
 [24228]: https://github.com/PowerShell/PowerShell/pull/24228
 [24236]: https://github.com/PowerShell/PowerShell/pull/24236
+[24749]: https://github.com/PowerShell/PowerShell/issues/24749
