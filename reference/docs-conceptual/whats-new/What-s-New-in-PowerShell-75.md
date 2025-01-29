@@ -136,7 +136,8 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## New features inherited from .NET 9
 
-New features in .NET 9 can be found here: [https://learn.microsoft.com/dotnet/core/whats-new/dotnet-9/overview](https://learn.microsoft.com/dotnet/core/whats-new/dotnet-9/overview).
+New features in .NET 9 can be found here:
+[https://learn.microsoft.com/dotnet/core/whats-new/dotnet-9/overview](https://learn.microsoft.com/dotnet/core/whats-new/dotnet-9/overview).
 Here are some highlights that might be good to know about for PowerShell users:
 
 - UUID v7 support with [`[guid]::CreateVersion7()`][100]
