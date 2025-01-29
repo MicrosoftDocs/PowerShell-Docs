@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 01/27/2025
+ms.date: 01/29/2025
 title: Installing PowerShell on macOS
 ---
 
@@ -282,8 +282,8 @@ support those methods.
 [19]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-osx-arm64.tar.gz
 [20]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-osx-x64.pkg
 [21]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-osx-x64.tar.gz
-[22]: https://github.com/PowerShell/PowerShell/releases/download/7.5.0/powershell-7.5.0-osx-arm64.pkg
-[23]: https://github.com/PowerShell/PowerShell/releases/download/7.5.0/powershell-7.5.0-osx-arm64.tar.gz
-[24]: https://github.com/PowerShell/PowerShell/releases/download/7.5.0/powershell-7.5.0-osx-x64.pkg
-[25]: https://github.com/PowerShell/PowerShell/releases/download/7.5.0/powershell-7.5.0-osx-x64.tar.gz
+[22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-osx-arm64.pkg
+[23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-osx-arm64.tar.gz
+[24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-osx-x64.pkg
+[25]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-osx-x64.tar.gz
 [26]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Debian Linux
-ms.date: 01/23/2025
+ms.date: 01/29/2025
 title: Installing PowerShell on Debian
 ---
 # Installing PowerShell on Debian
@@ -74,7 +74,7 @@ The link to the current version is:
 - PowerShell 7.4 (LTS) universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell_7.4.7-1.deb_amd64.deb`
 - PowerShell 7.5 universal package for supported versions of Debian
-  - `https://github.com/PowerShell/PowerShell/releases/download/7.5.0/powershell-preview_7.5.0-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell_7.5.0-1.deb_amd64.deb`
 
 The following shell script downloads and installs the current release of PowerShell. You can
 change the URL to download the version of PowerShell that you want to install.
