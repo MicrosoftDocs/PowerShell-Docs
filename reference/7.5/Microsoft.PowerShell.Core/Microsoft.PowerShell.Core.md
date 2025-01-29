@@ -257,7 +257,8 @@ Downloads and installs the newest help files on your computer.
 
 ### [Wait-Job](Wait-Job.md)
 
-Suppresses the command prompt until one or all of the PowerShell background jobs running in the session are completed.
+Suppresses the command prompt until one or all of the PowerShell background jobs running in the
+session are completed.
 
 ### [Where-Object](Where-Object.md)
 

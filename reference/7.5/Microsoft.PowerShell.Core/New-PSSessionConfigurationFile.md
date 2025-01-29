@@ -234,13 +234,15 @@ CompanyName = 'Fabrikam Corporation'
 # Copyright statement for this document
 Copyright = '(c) Fabrikam Corporation. All rights reserved.'
 
-# Session type defaults to apply for this session configuration. Can be 'RestrictedRemoteServer' (recommended), 'Empty', or 'Default'
+# Session type defaults to apply for this session configuration. Can be
+# 'RestrictedRemoteServer' (recommended), 'Empty', or 'Default'
 SessionType = 'Default'
 
 # Directory to place session transcripts for this session configuration
 # TranscriptDirectory = 'C:\Transcripts\'
 
-# Whether to run this session configuration as the machine's (virtual) administrator account
+# Whether to run this session configuration as the machine's (virtual) administrator
+# account
 RunAsVirtualAccount = $true
 
 # Groups associated with machine's (virtual) administrator account
@@ -249,10 +251,12 @@ RunAsVirtualAccountGroups = 'Backup Operators'
 # Scripts to run when applied to a session
 ScriptsToProcess = 'Get-Inputs.ps1'
 
-# User roles (security groups), and the role capabilities that should be applied to them when applied to a session
+# User roles (security groups), and the role capabilities that should be applied to them
+# when applied to a session
 # RoleDefinitions = @{ 'CONTOSO\SqlAdmins' = @{ RoleCapabilities = 'SqlAdministration' }; 'CONTOSO\SqlManaged' = @{ RoleCapabilityFiles = 'C:\RoleCapability\SqlManaged.psrc' }; 'CONTOSO\ServerMonitors' = @{ VisibleCmdlets = 'Get-Process' } }
 
-# Language mode to apply when applied to a session. Can be 'NoLanguage' (recommended), 'RestrictedLanguage', 'ConstrainedLanguage', or 'FullLanguage'
+# Language mode to apply when applied to a session. Can be 'NoLanguage' (recommended),
+# 'RestrictedLanguage', 'ConstrainedLanguage', or 'FullLanguage'
 LanguageMode = 'FullLanguage'
 
 # Execution policy to apply when applied to a session
@@ -458,7 +462,7 @@ Accept wildcard characters: False
 Specifies the execution policy of sessions that use the session configuration. If you omit this
 parameter, the value of the **ExecutionPolicy** key in the session configuration file is
 **Restricted**. For information about execution policies in PowerShell, see
-[about_Execution_Policies](about/about_Execution_Policies.md).
+[about_Execution_Policies](About/about_Execution_Policies.md).
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicy

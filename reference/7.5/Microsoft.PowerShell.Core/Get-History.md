@@ -31,7 +31,8 @@ features in PowerShell, see [about_History](About/about_History.md).
 
 The session history is managed separately from the history maintained by the **PSReadLine** module.
 Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
-the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+the session history. For more information, see
+[about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 ## EXAMPLES
 
@@ -163,7 +164,8 @@ command history, see [about_History](About/about_History.md).
 
 Starting in Windows PowerShell 3.0, the default value of the `$MaximumHistoryCount` preference
 variable is `4096`. In Windows PowerShell 2.0, the default value is `64`. For more information about
-the `$MaximumHistoryCount` variable, see [about_Preference_Variables](About/about_Preference_Variables.md).
+the `$MaximumHistoryCount` variable, see
+[about_Preference_Variables](About/about_Preference_Variables.md).
 
 ## RELATED LINKS
 

@@ -63,7 +63,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -84,6 +85,6 @@ name is specified.
 
 [Enable-ExperimentalFeature](Enable-ExperimentalFeature.md)
 
-[about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features)
+[about_Experimental_Features](About/about_Experimental_Features.md)
 
 [Using Experimental Features](/powershell/scripting/learn/experimental-features)

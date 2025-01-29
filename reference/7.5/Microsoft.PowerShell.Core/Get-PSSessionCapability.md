@@ -44,7 +44,8 @@ and Environmental Variables.
 Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User'
 ```
 
-This example returns the commands available to the user CONTOSO\User when connecting to the Endpoint1 constrained endpoint on the local computer.
+This example returns the commands available to the user `CONTOSO\User` when connecting to the
+Endpoint1 constrained endpoint on the local computer.
 
 ### Example 2: Get details about a runspace for a user
 
@@ -52,7 +53,8 @@ This example returns the commands available to the user CONTOSO\User when connec
 Get-PSSessionCapability -ConfigurationName Endpoint1 -Username 'CONTOSO\User' -Full
 ```
 
-This example returns details about the runspace the user CONTOSO\User would interact with when connecting to the Endpoint1 constrained endpoint.
+This example returns details about the runspace the user `CONTOSO\User` would interact with when
+connecting to the Endpoint1 constrained endpoint.
 
 ## PARAMETERS
 
@@ -109,7 +111,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
