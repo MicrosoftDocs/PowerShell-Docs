@@ -764,12 +764,12 @@ PowerShell includes the following aliases for `Get-Command`:
 - When more than one command that has the same name is available to the session, `Get-Command`
   returns the command that runs when you type the command name. To get commands that have the same
   name, listed in run order, use the **All** parameter. For more information, see
-  [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md).
+  [about_Command_Precedence](About/about_Command_Precedence.md).
 - When a module is imported automatically, the effect is the same as using the `Import-Module`
   cmdlet. The module can add commands, types and formatting files, and run scripts in the session.
   To enable, disable, and configuration automatic importing of modules, use the
   `$PSModuleAutoLoadingPreference` preference variable. For more information, see
-  [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+  [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ## RELATED LINKS
 

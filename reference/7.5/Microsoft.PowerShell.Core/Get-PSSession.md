@@ -132,7 +132,7 @@ command runs when you use the **ComputerName** or **ConnectionUri** parameters.
 > in the current session. The **ComputerName** parameter gets sessions that were created in the
 > current session and connect to the specified computer.
 
-For more information about PowerShell sessions, see [about_PSSessions](about/about_PSSessions.md).
+For more information about PowerShell sessions, see [about_PSSessions](About/about_PSSessions.md).
 
 ## EXAMPLES
 
@@ -684,8 +684,8 @@ values for this parameter are: `All`, `Opened`, `Disconnected`, `Closed`, and `B
 value is `All`.
 
 The session state value is relative to the current sessions. Sessions that were not created in the
-current sessions and are not connected to the current session have a state of `Disconnected` even when
-they are connected to a different session.
+current sessions and are not connected to the current session have a state of `Disconnected` even
+when they are connected to a different session.
 
 The state of a session is stored in the **State** property of the session.
 

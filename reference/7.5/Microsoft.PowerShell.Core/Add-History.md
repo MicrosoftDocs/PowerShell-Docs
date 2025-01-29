@@ -31,7 +31,8 @@ about the session history, see [about_History](About/about_History.md).
 
 The session history is managed separately from the history maintained by the **PSReadLine** module.
 Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
-the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+the session history. For more information see,
+[about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 You can use the `Get-History` cmdlet to get the commands and pass them to `Add-History`, or you can
 export the commands to a CSV or XML file, then import the commands, and pass the imported file to
@@ -122,9 +123,9 @@ PowerShell. The `Add-History` cmdlet then adds the commands in the file to the s
 
 ### -InputObject
 
-Specifies an array of entries to add to the history as **HistoryInfo** object to the session history.
-You can use this parameter to submit a **HistoryInfo** object, such as the ones that are returned by
-the `Get-History`, `Import-Clixml`, or `Import-Csv` cmdlets, to `Add-History`.
+Specifies an array of entries to add to the history as **HistoryInfo** object to the session
+history. You can use this parameter to submit a **HistoryInfo** object, such as the ones that are
+returned by the `Get-History`, `Import-Clixml`, or `Import-Csv` cmdlets, to `Add-History`.
 
 ```yaml
 Type: System.Management.Automation.PSObject[]

@@ -180,7 +180,7 @@ You can also use `Invoke-Command` on a local computer to a run script block as a
 runs the script block immediately in a child scope of the current scope.
 
 Before using `Invoke-Command` to run commands on a remote computer, read
-[about_Remote](./About/about_Remote.md).
+[about_Remote](About/about_Remote.md).
 
 Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke
 commands on remote computers. SSH must be installed on the local computer and the remote computer
@@ -191,7 +191,7 @@ connection information. For more information about how to set up PowerShell SSH 
 [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 Some code samples use splatting to reduce the line length. For more information, see
-[about_Splatting](./About/about_Splatting.md).
+[about_Splatting](About/about_Splatting.md).
 
 ## EXAMPLES
 
@@ -397,8 +397,8 @@ This example shows how to include the values of local variables in a command run
 computer. The command uses the `Using` scope modifier to identify a local variable in a remote
 command. By default, all variables are assumed to be defined in the remote session. The `Using`
 scope modifier was introduced in PowerShell 3.0. For more information about the `Using` scope
-modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md) and
-[about_Scopes](./about/about_scopes.md).
+modifier, see [about_Remote_Variables](About/about_Remote_Variables.md) and
+[about_Scopes](About/about_scopes.md).
 
 ```powershell
 $Log = 'PowerShellCore/Operational'
@@ -455,7 +455,7 @@ parameters in a script block. This example displays filenames that begin with th
 have the `.pdf` extension.
 
 For more information about the `Param` keyword, see
-[about_Language_Keywords](./about/about_language_keywords.md#param).
+[about_Language_Keywords](About/about_language_keywords.md#param).
 
 ```powershell
 $parameters = @{
@@ -488,7 +488,7 @@ files. The `Get-ChildItem` **Path** parameter is position 0 and the **Filter** p
 1.
 
 For more information about the `$args` variable, see
-[about_Automatic_Variables](./about/about_automatic_variables.md#args)
+[about_Automatic_Variables](About/about_automatic_variables.md#args)
 
 ```powershell
 $parameters = @{
@@ -785,7 +785,7 @@ application name when you aren't using the **ConnectionURI** parameter in the co
 The default value is the value of the `$PSSessionApplicationName` preference variable on the local
 computer. If this preference variable isn't defined, the default value is WSMAN. This value is
 appropriate for most uses. For more information, see
-[about_Preference_Variables](./About/about_Preference_Variables.md).
+[about_Preference_Variables](About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on
@@ -808,7 +808,7 @@ Accept wildcard characters: False
 Supplies the values of parameters for the scriptblock. The parameters in the script block are
 passed by position from the array value supplied to **ArgumentList**. This is known as array
 splatting. For more information about the behavior of **ArgumentList**, see
-[about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+[about_Splatting](About/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -966,7 +966,7 @@ configuration doesn't exist on the remote computer, the command fails.
 
 The default value is the value of the `$PSSessionConfigurationName` preference variable on the local
 computer. If this preference variable isn't set, the default is **Microsoft.PowerShell**. For more
-information, see [about_Preference_Variables](about/about_Preference_Variables.md).
+information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
 Type: System.String
@@ -1204,10 +1204,10 @@ provides sufficient time for you to connect before deleting the session.
 
 You can set the output buffering mode and idle time-out in the **SessionOption** parameter or in the
 `$PSSessionOption` preference variable. For more information about session options, see
-`New-PSSessionOption` and [about_Preference_Variables](./about/about_preference_variables.md).
+`New-PSSessionOption` and [about_Preference_Variables](About/about_preference_variables.md).
 
 For more information about the Disconnected Sessions feature, see
-[about_Remote_Disconnected_Sessions](about/about_Remote_Disconnected_Sessions.md).
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md).
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -1251,7 +1251,7 @@ is an ordinal number.
 If you use the **JobName** parameter in a command, the command is run as a job, and `Invoke-Command`
 returns a job object, even if you don't include **AsJob** in the command.
 
-For more information about PowerShell background jobs, see [about_Jobs](./About/about_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md).
 
 ```yaml
 Type: System.String
@@ -1426,7 +1426,7 @@ Specifies an array of sessions in which this cmdlet runs the command. Enter a va
 When you create a **PSSession**, PowerShell establishes a persistent connection to the remote
 computer. Use a **PSSession** to run a series of related commands that share data. To run a single
 command or a series of unrelated commands, use the **ComputerName** parameter. For more information,
-see [about_PSSessions](./About/about_PSSessions.md).
+see [about_PSSessions](About/about_PSSessions.md).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession[]
@@ -1780,17 +1780,17 @@ hashtable. For more information about `ssh_config` files, see
 
 ## RELATED LINKS
 
-[about_PSSessions](./About/about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](./About/about_Remote.md)
+[about_Remote](About/about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
-[about_Remote_Troubleshooting](./About/about_remote_troubleshooting.md)
+[about_Remote_Troubleshooting](About/about_Remote_Troubleshooting.md)
 
-[about_Remote_Variables](./About/about_Remote_Variables.md)
+[about_Remote_Variables](About/about_Remote_Variables.md)
 
-[about_Scopes](./About/about_scopes.md)
+[about_Scopes](About/about_Scopes.md)
 
 [Enter-PSSession](Enter-PSSession.md)
 

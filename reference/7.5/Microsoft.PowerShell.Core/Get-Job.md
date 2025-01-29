@@ -70,7 +70,7 @@ contain the job results. To get the results, use the `Receive-Job` cmdlet.
 A Windows PowerShell background job is a command that runs in the background without interacting
 with the current session. Typically, you use a background job to run a complex command that takes a
 long time to finish. For more information about background jobs in Windows PowerShell, see
-[about_Jobs](./about/about_Jobs.md).
+[about_Jobs](About/about_Jobs.md).
 
 Beginning in Windows PowerShell 3.0, the `Get-Job` cmdlet also gets custom job types, such as
 workflow jobs and instances of scheduled jobs. To find the job type of a job, use the
@@ -146,7 +146,8 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 ### Example 4: Get jobs that include a specific command by using the pipeline
 
 Like the command in the previous example, this command gets the jobs on the system that include a
-`Get-Process` command. The command uses a pipeline operator (`|`) to send a PSCustomObject with the NoteProperty **Command**, to the `Get-Job` cmdlet. It is the equivalent of the previous command.
+`Get-Process` command. The command uses a pipeline operator (`|`) to send a PSCustomObject with the
+NoteProperty **Command**, to the `Get-Job` cmdlet. It is the equivalent of the previous command.
 
 ```powershell
 [pscustomobject]@{Command='*Get-Process*'} | Get-Job
@@ -244,7 +245,7 @@ parameter. It then gets the job using the `Get-Job` command on the S2 computer u
 The sample output shows the results of the `Get-Job` command. On the S2 computer, the job
 appears to be a local job. The computer name is localhost and the job type is a background job.
 For more information about how to run background jobs on remote computers, see
-[about_Remote_Jobs](./about/about_Remote_Jobs.md).
+[about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 ```powershell
 Start-Job -ScriptBlock {Get-EventLog -LogName System}
@@ -298,8 +299,8 @@ error. In this case, the user forgot to use the Run as administrator option when
 PowerShell.Because background jobs use the remoting features of Windows PowerShell, the computer
 must be configured for remoting to run a job, even when the job runs on the local computer.For
 information about requirements for remoting in Windows PowerShell, see
-[about_Remote_Requirements](./about/about_Remote_Requirements.md). For troubleshooting tips, see
-[about_Remote_Troubleshooting](./about/about_Remote_Troubleshooting.md).
+[about_Remote_Requirements](About/about_Remote_Requirements.md). For troubleshooting tips, see
+[about_Remote_Troubleshooting](About/about_Remote_Troubleshooting.md).
 
 ```powershell
 PS> Start-Job -ScriptBlock {Get-Process}
@@ -415,7 +416,7 @@ Access is denied.
 ```
 
 For more information, see the
-[about_Remote_Troubleshooting](./about/about_Remote_Troubleshooting.md) Help topic.
+[about_Remote_Troubleshooting](About/about_Remote_Troubleshooting.md) Help topic.
 
 ## PARAMETERS
 

@@ -122,7 +122,7 @@ This example uses the `Export-ModuleMember` cmdlet to export a variable into the
 Without the `Export-ModuleMember` command, only the function is exported.
 
 ```powershell
-New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
+New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -Function SayHello -Variable SayHelloHelp}
 $SayHelloHelp
 ```
 
@@ -151,7 +151,7 @@ return any objects by default, there is no output from this command. `Get-Module
 **GreetingModule** has been imported into the current session.
 
 ```powershell
-New-Module -ScriptBlock {function Hello {"Hello!"}} -name GreetingModule | Import-Module
+New-Module -ScriptBlock {function Hello {"Hello!"}} -Name GreetingModule | Import-Module
 Get-Module
 ```
 
@@ -255,7 +255,8 @@ Hello, World!
 ### -ArgumentList
 
 Specifies an array of arguments which are parameter values that are passed to the script block. For
-more information about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+more information about the behavior of **ArgumentList**, see
+[about_Splatting](About/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
