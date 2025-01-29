@@ -301,6 +301,7 @@ WBEM
 WDAC
 webservice
 WinCompat
+WinGet
 wmicimv2
 workgroup
 workgroups
