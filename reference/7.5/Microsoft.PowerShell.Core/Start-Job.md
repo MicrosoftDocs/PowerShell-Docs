@@ -59,11 +59,11 @@ finish. You can continue to work in the session without interruption while the j
 
 The job object contains useful information about the job, but it doesn't contain the job results.
 When the job finishes, use the `Receive-Job` cmdlet to get the results of the job. For more
-information about background jobs, see [about_Jobs](./About/about_Jobs.md).
+information about background jobs, see [about_Jobs](About/about_Jobs.md).
 
 To run a background job on a remote computer, use the **AsJob** parameter that is available on many
 cmdlets, or use the `Invoke-Command` cmdlet to run a `Start-Job` command on the remote computer. For
-more information, see [about_Remote_Jobs](./About/about_Remote_Jobs.md).
+more information, see [about_Remote_Jobs](About/about_Remote_Jobs.md).
 
 Starting in PowerShell 3.0, `Start-Job` can start instances of custom job types, such as scheduled
 jobs. For information about how to use `Start-Job` to start jobs with custom types, see the help
@@ -72,7 +72,7 @@ documents for the job type feature.
 Beginning in PowerShell 6.0, you can start jobs using the ampersand (`&`) background operator. The
 functionality of the background operator is similar to `Start-Job`. Both methods to start a job
 create a **PSRemotingJob** job object. For more information about using the ampersand (`&`), see
-[about_Operators](./about/about_operators.md#background-operator-).
+[about_Operators](About/about_operators.md#background-operator-).
 
 PowerShell 7 introduced the **WorkingDirectory** parameter that specifies a background job's initial
 working directory. If the parameter isn't specified, `Start-Job` defaults to the current working
@@ -87,7 +87,8 @@ directory of the caller that started the job.
 > PowerShell, it's directly using the PowerShell NuGet SDK packages and won't have `pwsh` shipped
 > along.
 >
-> The substitute in that scenario is `Start-ThreadJob` from the module **[ThreadJob](https://www.powershellgallery.com/packages/ThreadJob)**.
+> The substitute in that scenario is `Start-ThreadJob` from the module
+> **[ThreadJob](https://www.powershellgallery.com/packages/ThreadJob)**.
 
 ## EXAMPLES
 
@@ -257,7 +258,7 @@ The **WorkingDirectory** allows you to specify an alternate directory for a job 
 run scripts or open files. In this example, the background job specifies a working directory that's
 different than the current directory location.
 
-```
+```powershell
 PS C:\Test> Start-Job -WorkingDirectory C:\Test\Scripts { $PWD } | Receive-Job -AutoRemoveJob -Wait
 
 Path
@@ -328,7 +329,7 @@ Specifies an array of arguments, or parameter values, for the script that is spe
 
 Arguments must be passed to **ArgumentList** as single-dimension array argument. For example, a
 comma-separated list. For more information about the behavior of **ArgumentList**, see
-[about_Splatting](about/about_Splatting.md#splatting-with-arrays).
+[about_Splatting](About/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -671,7 +672,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -699,15 +701,15 @@ the `Invoke-Command` cmdlet to run a `Start-Job` command in a session on a remot
 
 ## RELATED LINKS
 
-[about_Arrays](./about/about_arrays.md)
+[about_Arrays](About/about_Arrays.md)
 
-[about_Automatic_Variables](./about/about_automatic_variables.md)
+[about_Automatic_Variables](About/about_Automatic_Variables.md)
 
-[about_Jobs](./About/about_Jobs.md)
+[about_Jobs](About/about_Jobs.md)
 
-[about_Job_Details](./About/about_Job_Details.md)
+[about_Job_Details](About/about_Job_Details.md)
 
-[about_Remote_Jobs](./About/about_Remote_Jobs.md)
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [Get-Job](Get-Job.md)
 

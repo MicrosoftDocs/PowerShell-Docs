@@ -68,7 +68,8 @@ wait for a job in the `Suspended` or `Disconnected` states.
 When the commands in the job are complete, `Wait-Job` returns a job object and continues execution.
 
 You can use the `Wait-Job` cmdlet to wait for jobs started by using the `Start-Job` cmdlet or the
-**AsJob** parameter of the `Invoke-Command` cmdlet. For more information about jobs, see [about_Jobs](./about/about_Jobs.md).
+**AsJob** parameter of the `Invoke-Command` cmdlet. For more information about jobs, see
+[about_Jobs](About/about_Jobs.md).
 
 Starting in Windows PowerShell 3.0, the `Wait-Job` cmdlet also waits for custom job types, such as
 workflow jobs and instances of scheduled jobs. To enable `Wait-Job` to wait for jobs of a particular
@@ -147,7 +148,7 @@ variable.
 The command uses the **Using** scope modifier to indicate that the `$c` variable was defined on the
 local computer. The **Using** scope modifier is introduced in Windows PowerShell 3.0. For more
 information about the **Using** scope modifier, see
-[about_Remote_Variables](./about/about_Remote_Variables.md).
+[about_Remote_Variables](About/about_Remote_Variables.md).
 
 The fourth command uses `Invoke-Command` to run a `Wait-Job` command in the sessions. It uses the
 **Any** parameter to wait until the first job on the remote computers is terminating state.
@@ -184,7 +185,7 @@ The `$done` variable contains a job object that represents the job that ran on S
 ### Example 5: Wait until one of several jobs finishes
 
 ```powershell
-Wait-Job -id 1,2,5 -Any
+Wait-Job -id 1, 2, 5 -Any
 ```
 
 This command identifies three jobs by their IDs and waits until any one of them are in a terminating
@@ -211,7 +212,7 @@ This command uses the job name to identify the job for which to wait.
 ### Example 8: Wait for jobs on local computer started with Start-Job
 
 ```powershell
-$j = Start-Job -ScriptBlock {Get-ChildItem -Filter *.ps1| Where-Object {$PSItem.LastWriteTime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
+$j = Start-Job -ScriptBlock {Get-ChildItem -Filter *.ps1 | Where-Object {$PSItem.LastWriteTime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
 $j | Wait-Job
 ```
 
@@ -505,7 +506,8 @@ By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the fo
 - Suspended
 - Disconnected
 
-To direct `Wait-Job` to continue to wait for Suspended and Disconnected jobs, use the **Force** parameter.
+To direct `Wait-Job` to continue to wait for Suspended and Disconnected jobs, use the **Force**
+parameter.
 
 ## RELATED LINKS
 

@@ -120,9 +120,9 @@ This example registers the **AdminShell** session configuration.
 
 The `$sessionParams` variable is a hashtable containing all the parameter values. This hashtable is
 passed to the cmdlet using PowerShell splatting. The `Register-PSSessionConfiguration` command uses
-the **SecurityDescriptorSDDL** parameter to specify the SDDL in the value of the `$sddl` variable and
-the **MaximumReceivedObjectSizeMB** parameter to increase the object size limit. It also uses the
-**StartupScript** parameter to specify a script that configures the session.
+the **SecurityDescriptorSDDL** parameter to specify the SDDL in the value of the `$sddl` variable
+and the **MaximumReceivedObjectSizeMB** parameter to increase the object size limit. It also uses
+the **StartupScript** parameter to specify a script that configures the session.
 
 ```powershell
 $sddl = "O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;FASA;GWGX;;;WD)"
@@ -181,8 +181,8 @@ Register-PSSessionConfiguration -Name WithProfile -StartupScript Add-Profile.ps1
 The script contains a single command that uses dot sourcing to run the user's
 **CurrentUserAllHosts** profile in the current scope of the session.
 
-For more information about profiles, see [about_Profiles](./About/about_Profiles.md). For more
-information about dot sourcing, see [about_Scopes](./About/about_Scopes.md).
+For more information about profiles, see [about_Profiles](About/about_Profiles.md). For more
+information about dot sourcing, see [about_Scopes](About/about_Scopes.md).
 
 ## PARAMETERS
 
@@ -626,7 +626,8 @@ for this parameter are:
 
 The default value is **UseCurrentThread**.
 
-For more information, see [PSThreadOptions Enumeration](/dotnet/api/system.management.automation.runspaces.psthreadoptions?view=powershellsdk-1.1.0).
+For more information, see
+[PSThreadOptions Enumeration](/dotnet/api/system.management.automation.runspaces.psthreadoptions?view=powershellsdk-1.1.0).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSThreadOptions
@@ -714,7 +715,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

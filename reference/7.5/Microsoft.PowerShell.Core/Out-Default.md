@@ -36,8 +36,8 @@ transforms the objects into a stream of Formatting records (driven by the data i
 definition) and `Out-Host` transforms the formatting records into calls on the Host interface.
 
 This cmdlet isn't intended to be used by the end user. Other cmdlets are recommended for controlling
-output like [Out-Host](Out-Host.md) or using `Format-*` cmdlets and the [Format.ps1xml](About/about_format.ps1xml.md)
-file to control formatting.
+output like [Out-Host](Out-Host.md) or using `Format-*` cmdlets and the
+[Format.ps1xml](About/about_format.ps1xml.md) file to control formatting.
 
 ## EXAMPLES
 
@@ -100,7 +100,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

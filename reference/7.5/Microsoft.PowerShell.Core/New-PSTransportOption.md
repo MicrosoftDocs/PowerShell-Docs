@@ -128,7 +128,8 @@ session configuration is 40.
 
 ### Example 3: Setting a transport option
 
-This command shows the effect of setting a transport option in a session configuration on the sessions that use the session configuration.
+This command shows the effect of setting a transport option in a session configuration on the
+sessions that use the session configuration.
 
 ```powershell
 $t = New-PSTransportOption -IdleTimeoutSec 3600
@@ -245,8 +246,8 @@ Accept wildcard characters: False
 
 ### -MaxIdleTimeoutSec
 
-Limits the idle time-out set for each session to the specified value. The default value is `[Int]::MaxValue`
-(~25 days).
+Limits the idle time-out set for each session to the specified value. The default value is
+`[Int]::MaxValue` (~25 days).
 
 The idle time-out value is of significant importance when the user intends to disconnect and
 reconnect to a session. The user can reconnect only if the session has not timed out.
@@ -400,7 +401,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

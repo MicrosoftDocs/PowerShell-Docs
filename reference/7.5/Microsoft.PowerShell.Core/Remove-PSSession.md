@@ -110,12 +110,12 @@ with `Serv`.
 ### Example 4: Close sessions connected to a port
 
 ```powershell
-Get-PSSession | where {$_.port -eq 90} | Remove-PSSession
+Get-PSSession | Where-Object {$_.port -eq 90} | Remove-PSSession
 ```
 
 This command closes the **PSSessions** that are connected to port 90. You can use this command
-format to identify **PSSessions** by properties other than **ComputerName**, **Name**, **InstanceID**, and
-**ID**.
+format to identify **PSSessions** by properties other than **ComputerName**, **Name**,
+**InstanceID**, and **ID**.
 
 ### Example 5: Close a session by instance ID
 
@@ -358,7 +358,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

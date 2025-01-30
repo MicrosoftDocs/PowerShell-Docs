@@ -272,9 +272,9 @@ remote session, including startup scripts in the session configuration, can find
 the **ApplicationArguments** property of the `$PSSenderInfo` automatic variable. You can use this
 parameter to send data to the remote session.
 
-For more information, see [about_Hash_Tables](about/about_Hash_Tables.md),
+For more information, see [about_Hash_Tables](About/about_Hash_Tables.md),
 [about_Session_Configurations](About/about_Session_Configurations.md), and
-[about_Automatic_Variables](about/about_Automatic_Variables.md).
+[about_Automatic_Variables](About/about_Automatic_Variables.md).
 
 ```yaml
 Type: System.Management.Automation.PSPrimitiveDictionary
@@ -339,7 +339,7 @@ The idle time-out value is of significant importance if you intend to disconnect
 session. You can reconnect only if the session has not timed out.
 
 Enter a value in milliseconds. The minimum value is `60000` (1 minute). The maximum is the value of
-the **MaxIdleTimeoutms** property of the session configuration. The default value, `-1`, does not
+the **MaxIdleTimeoutMs** property of the session configuration. The default value, `-1`, does not
 set an idle time-out.
 
 The session uses the idle time-out that is set in the session options, if any. If none is set
