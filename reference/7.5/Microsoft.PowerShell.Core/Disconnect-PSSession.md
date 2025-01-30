@@ -193,7 +193,7 @@ and in the session configuration on the remote computer. Values set for the sess
 over values set in the session configuration, but session values cannot exceed quotas set in the
 session configuration, such as the **MaxIdleTimeoutMs** value.
 
-```
+```powershell
 PS> $Timeout = New-PSSessionOption -IdleTimeout 172800000
 PS> $s = New-PSSession -Computer Server01 -Name ITTask -SessionOption $Timeout
 PS> Disconnect-PSSession -Session $s

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/18/2024
+ms.date: 01/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-RestMethod
@@ -99,17 +99,17 @@ The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational
 
 PowerShell formats the response based to the data type. For an RSS or ATOM feed, PowerShell returns
 the Item or Entry XML nodes. For JavaScript Object Notation (JSON) or XML, PowerShell converts, or
-deserializes, the content into `[PSCustomObject]` objects.
+deserializes, the content into `[PSCustomObject]` objects. Comments are permitted in the JSON data.
 
 > [!NOTE]
 > When the REST endpoint returns multiple objects, the objects are received as an array. If you pipe
-> the output from `Invoke-RestMethod` to another command, it is sent as a single `[Object[]]`
-> object. The contents of that array are not enumerated for the next command on the pipeline.
+> the output from `Invoke-RestMethod` to another command, it's sent as a single `[Object[]]`
+> object. The contents of that array aren't enumerated for the next command on the pipeline.
 
 This cmdlet is introduced in Windows PowerShell 3.0.
 
 Beginning in PowerShell 7.0, `Invoke-RestMethod` supports proxy configuration defined by environment
-variables. See the [Notes](#notes) section of this article.
+variables. See the [NOTES](#notes) section of this article.
 
 Beginning in PowerShell 7.4, character encoding for requests defaults to UTF-8 instead of ASCII. If
 you need a different encoding, you must set the `charset` attribute in the `Content-Type` header.
@@ -159,8 +159,8 @@ $Body = @{
 Invoke-RestMethod -Method 'Post' -Uri $url -Credential $Cred -Body $body -OutFile output.csv
 ```
 
-The credentials are prompted for and then stored in `$Cred` and the URL that will be access is
-defined in `$Url`.
+The cmdlet prompts for credentials and stores them in `$Cred`. `$Url` contains the REST endpoint
+URL.
 
 The `$Body` variable describes the search criteria, specifies CSV as the output mode, and specifies
 a time period for returned data that starts two days ago and ends one day ago. The body variable
@@ -202,18 +202,18 @@ $Result = Invoke-RestMethod -Uri $Uri -Method Post -Form $Form
 
 The profile form requires these fields: `firstName`, `lastName`, `email`, `avatar`, `birthday`, and
 `hobbies`. The API is expecting an image for the user profile pic to be supplied in the `avatar`
-field. The API will also accept multiple `hobbies` entries to be submitted in the same form.
+field. The API also accepts multiple `hobbies` entries to be submitted in the same form.
 
 When creating the `$Form` HashTable, the key names are used as form field names. By default, the
-values of the HashTable will be converted to strings. If a `System.IO.FileInfo` value is present,
-the file contents will be submitted. If a collection such as arrays or lists are present, the form
-field will be submitted multiple times.
+values of the HashTable are converted to strings. If a `System.IO.FileInfo` value is present, the
+file contents are submitted. If a collection, such as an array or list are present, the form field
+is submitted multiple times.
 
-By using `Get-Item` on the `avatar` key, the `FileInfo` object will be set as the value. The result
-is that the image data for `jdoe.png` will be submitted.
+By using `Get-Item` on the `avatar` key, the `FileInfo` object is set as the value. The result
+is that the image data for `jdoe.png` is submitted.
 
-By supplying a list to the `hobbies` key, the `hobbies` field will be present in the submissions
-once for each list item.
+By supplying a list to the `hobbies` key, the `hobbies` field is present in the submissions once for
+each list item.
 
 ### Example 5: Pass multiple headers
 
@@ -230,7 +230,7 @@ Invoke-RestMethod -Uri $uri -Method Post -Headers $headers -Body $body
 
 ### Example 6: Enumerate returned items on the pipeline
 
-GitHub returns multiple objects an array. If you pipe the output to another command, it is sent as a
+GitHub returns multiple objects an array. If you pipe the output to another command, it's sent as a
 single `[Object[]]`object.
 
 To enumerate the objects into the pipeline, pipe the results to `Write-Output` or wrap the cmdlet in
@@ -292,7 +292,7 @@ assigned a hash table where the value of `If-Match` is invalid because it's defi
 instead of `"12345"`.
 
 Calling `Invoke-RestMethod` with the invalid headers returns an error reporting that the formatted
-value is invalid. The request is not sent to the endpoint.
+value is invalid. The request isn't sent to the endpoint.
 
 Calling `Invoke-RestMethod` with the **SkipHeaderValidation** parameter ignores the validation
 failure and sends the request to the endpoint. Because the endpoint tolerates non-compliant header
@@ -321,7 +321,7 @@ Invoke-RestMethod -Uri "http://localhost/v1.40/images/json/" -UnixSocket "/var/r
 
 ### -AllowInsecureRedirect
 
-Allows redirecting from HTTPS to HTTP. By default, any request that is redirected from HTTPS to
+Allows redirecting from HTTPS to HTTP. By default, any request that's redirected from HTTPS to
 HTTP results in an error and the request is aborted to prevent unintentionally communicating in
 plain text over unencrypted connections. To override this behavior at your own risk, use the
 **AllowInsecureRedirect** parameter.
@@ -343,14 +343,14 @@ Accept wildcard characters: False
 ### -AllowUnencryptedAuthentication
 
 Allows sending of credentials and secrets over unencrypted connections. By default, supplying
-**Credential** or any **Authentication** option with a **Uri** that does not begin with `https://`
-will result in an error and the request will abort to prevent unintentionally communicating secrets
-in plain text over unencrypted connections. To override this behavior at your own risk, supply the
+**Credential** or any **Authentication** option with a **Uri** that doesn't begin with `https://`
+results in an error and the request aborts to prevent unintentionally communicating secrets in plain
+text over unencrypted connections. To override this behavior at your own risk, supply the
 **AllowUnencryptedAuthentication** parameter.
 
 > [!WARNING]
-> Using this parameter is not secure and is not recommended. It is provided only for compatibility
-> with legacy systems that cannot provide encrypted connections. Use at your own risk.
+> Using this parameter isn't secure and isn't recommended. It's provided only for compatibility
+> with legacy systems that can't provide encrypted connections. Use at your own risk.
 
 This feature was added in PowerShell 6.0.0.
 
@@ -373,9 +373,9 @@ The **Authentication** parameter can't be used with the **UseDefaultCredentials*
 
 Available Authentication Options:
 
-- `None`: This is the default option when **Authentication** is not supplied. No explicit
-  authentication will be used.
-- `Basic`: Requires **Credential**. The credentials will be used to send an RFC 7617 Basic
+- `None`: This is the default option when **Authentication** isn't supplied. No explicit
+  authentication is used.
+- `Basic`: Requires **Credential**. The credentials are used to send an RFC 7617 Basic
   Authentication `Authorization: Basic` header in the format of `base64(user:password)`.
 - `Bearer`: Requires the **Token** parameter. Sends an RFC 6750 `Authorization: Bearer` header with
   the supplied token.
@@ -426,11 +426,11 @@ parameter.
 When the body is a form, or it's the output of another `Invoke-WebRequest` call, PowerShell sets the
 request content to the form fields.
 
-The **Body** parameter may also accept a **System.Net.Http.MultipartFormDataContent** object. This
-will facilitate `multipart/form-data` requests. When a **MultipartFormDataContent** object is
-supplied for **Body**, any content related headers supplied to the **ContentType**, **Headers**, or
-**WebSession** parameters will be overridden by the content headers of the
-`MultipartFormDataContent` object. This feature was added in PowerShell 6.0.0.
+The **Body** parameter can also accept a **System.Net.Http.MultipartFormDataContent** object, which
+facilitates `multipart/form-data` requests. When a **MultipartFormDataContent** object is supplied
+for **Body**, any content related headers supplied to the **ContentType**, **Headers**, or
+**WebSession** parameters are overridden by the content headers of the `MultipartFormDataContent`
+object. This feature was added in PowerShell 6.0.0.
 
 ```yaml
 Type: System.Object
@@ -446,7 +446,7 @@ Accept wildcard characters: False
 
 ### -Certificate
 
-Specifies the client certificate that is used for a secure web request. Enter a variable that
+Specifies the client certificate that's used for a secure web request. Enter a variable that
 contains a certificate or a command or expression that gets the certificate.
 
 To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate
@@ -530,8 +530,7 @@ If this parameter is omitted and the request method is POST, `Invoke-RestMethod`
 type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in the
 call.
 
-**ContentType** will be overridden when a `MultipartFormDataContent` object is supplied for
-**Body**.
+**ContentType** is overridden when a `MultipartFormDataContent` object is supplied for **Body**.
 
 Starting in PowerShell 7.4, if you use this both this parameter and the **Headers** parameter to
 define the `Content-Type` header, the value specified in the **ContentType** parameter is used.
@@ -555,10 +554,10 @@ Specifies a user account that has permission to send the request. The default is
 Type a user name, such as **User01** or **Domain01\User01**, or enter a **PSCredential** object
 generated by the `Get-Credential` cmdlet.
 
-**Credential** can be used alone or in conjunction with certain **Authentication** parameter
-options. When used alone, it will only supply credentials to the remote server if the remote server
+You can use **Credential** alone or in conjunction with certain **Authentication** parameter
+options. When used alone, it only supplies credentials to the remote server if the remote server
 sends an authentication challenge request. When used with **Authentication** options, the
-credentials will be explicitly sent.
+credentials is explicitly sent.
 
 Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
 object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
@@ -582,7 +581,7 @@ Accept wildcard characters: False
 ### -CustomMethod
 
 Specifies custom method used for the web request. This can be used with the Request Method required
-by the endpoint is not an available option on the **Method**. **Method** and **CustomMethod** cannot
+by the endpoint isn't an available option on the **Method**. **Method** and **CustomMethod** can't
 be used together.
 
 Example:
@@ -607,9 +606,8 @@ Accept wildcard characters: False
 
 ### -DisableKeepAlive
 
-Indicates that the cmdlet sets the **KeepAlive** value in the HTTP header to False. By default,
-**KeepAlive** is True. **KeepAlive** establishes a persistent connection to the server to facilitate
-subsequent requests.
+Sets the **KeepAlive** value in the HTTP header to False. By default, **KeepAlive** is True.
+**KeepAlive** establishes a persistent connection to the server to facilitate subsequent requests.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -628,9 +626,9 @@ Accept wildcard characters: False
 Indicates the cmdlet should follow relation links.
 
 Some REST APIs support pagination via Relation Links per
-[RFC5988](https://tools.ietf.org/html/rfc5988#page-6). Instead of parsing the header to get the URL
-for the next page, you can have the cmdlet do this for you. To set how many times to follow relation
-links, use the **MaximumFollowRelLink** parameter.
+[RFC5988](https://tools.ietf.org/html/rfc5988#section-5). Instead of parsing the header to get the
+URL for the next page, you can have the cmdlet do this for you. To set how many times to follow
+relation links, use the **MaximumFollowRelLink** parameter.
 
 When using this switch, the cmdlet returns a collection of pages of results. Each page of results
 may contain multiple result items.
@@ -652,15 +650,14 @@ Accept wildcard characters: False
 ### -Form
 
 Converts a dictionary to a `multipart/form-data` submission. **Form** may not be used with **Body**.
-If **ContentType** will be ignored.
+The **ContentType** is ignored.
 
-The keys of the dictionary will be used as the form field names. By default, form values will be
-converted to string values.
+The keys of the dictionary are used as the form field names. By default, form values are converted
+to string values.
 
-If the value is a **System.IO.FileInfo** object, then the binary file contents will be submitted.
-The name of the file will be submitted as the `filename`. The MIME will be set as
-`application/octet-stream`. `Get-Item` can be used to simplify supplying the **System.IO.FileInfo**
-object.
+If the value is a **System.IO.FileInfo** object, then the binary file contents is submitted. The
+name of the file is submitted as the `filename`. The MIME type is set as `application/octet-stream`.
+`Get-Item` can be used to simplify supplying the **System.IO.FileInfo** object.
 
 ```powershell
 $Form = @{
@@ -668,9 +665,9 @@ $Form = @{
 }
 ```
 
-If the value is a collection type, such as an Array or List, the for field will be submitted
-multiple times. The values of the list will be treated as strings by default. If the value is a
-**System.IO.FileInfo** object, then the binary file contents will be submitted. Nested collections
+If the value is a collection type, such as an Array or List, the form field is submitted multiple
+times. The values of the list are treated as strings by default. If the value is a
+**System.IO.FileInfo** object, then the binary file contents are submitted. Nested collections
 aren't supported.
 
 ```powershell
@@ -680,10 +677,9 @@ $Form = @{
 }
 ```
 
-In the above example, the `tags` field will be supplied three times in the form, once for each of
-`Vacation`, `Italy`, and `2017`. The `pictures` field will also be submitted once for each file in
-the `2017-Italy` folder. The binary contents of the files in that folder will be submitted as the
-values.
+In the above example, the `tags` field is supplied three times in the form, once for each of the
+values: `Vacation`, `Italy`, and `2017`. The `pictures` field is submitted once for each file in the
+`2017-Italy` folder. The binary contents of the files in that folder are submitted as the values.
 
 This feature was added in PowerShell 6.1.0.
 
@@ -848,10 +844,8 @@ Accept wildcard characters: False
 
 ### -NoProxy
 
-Indicates that the cmdlet will not use a proxy to reach the destination.
-
-When you need to bypass the proxy configured in Internet Explorer, or a proxy specified in the
-environment, use this switch.
+Indicates that the cmdlet won't use a proxy to reach the destination. Use this to bypass the proxy
+configured in your internet settings or specified in the environment.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -1000,11 +994,11 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Specifies a user account that has permission to use the proxy server that is specified by the
+Specifies a user account that has permission to use the proxy server that's specified by the
 **Proxy** parameter. The default is the current user.
 
-Type a user name, such as **User01** or **Domain01\User01**, **User@Domain.Com**, or enter a
-`PSCredential` object, such as one generated by the `Get-Credential` cmdlet.
+Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such
+as one generated by the `Get-Credential` cmdlet.
 
 This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
 the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
@@ -1023,8 +1017,8 @@ Accept wildcard characters: False
 
 ### -ProxyUseDefaultCredentials
 
-Indicates that the cmdlet uses the credentials of the current user to access the proxy server that
-is specified by the **Proxy** parameter.
+Uses the credentials of the current user to access the proxy server that is specified by the
+**Proxy** parameter.
 
 This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
 the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
@@ -1069,22 +1063,22 @@ requires the **OutFile** parameter.
 **Resume** only operates on the size of the local file and remote file and performs no other
 validation that the local file and the remote file are the same.
 
-If the local file size is smaller than the remote file size, then the cmdlet will attempt to resume
+If the local file size is smaller than the remote file size, then the cmdlet attempts to resume
 downloading the file and append the remaining bytes to the end of the file.
 
 If the local file size is the same as the remote file size, then no action is taken and the cmdlet
 assumes the download already completed.
 
-If the local file size is larger than the remote file size, then the local file will be overwritten
-and the entire remote file will be completely re-downloaded. This behavior is the same as using
-**OutFile** without **Resume**.
+If the local file size is larger than the remote file size, then the local file is overwritten and
+the entire remote file is re-downloaded. This behavior is the same as using **OutFile** without
+**Resume**.
 
-If the remote server does not support download resuming, then the local file will be overwritten and
-the entire remote file will be completely re-downloaded. This behavior is the same as using
-**OutFile** without **Resume**.
+If the remote server doesn't support download resuming, then the local file is overwritten and the
+entire remote file is re-downloaded. This behavior is the same as using **OutFile** without
+**Resume**.
 
-If the local file doesn't exist, then the local file will be created and the entire remote file will
-be completely downloaded. This behavior is the same as using **OutFile** without **Resume**.
+If the local file doesn't exist, then the local file is created and the entire remote file is
+downloaded. This behavior is the same as using **OutFile** without **Resume**.
 
 This feature was added in PowerShell 6.1.0.
 
@@ -1166,7 +1160,7 @@ Skips certificate validation checks that include all validations such as expirat
 trusted root authority, etc.
 
 > [!WARNING]
-> Using this parameter is not secure and is not recommended. This switch is only intended to be used
+> Using this parameter isn't secure and isn't recommended. This switch is only intended to be used
 > against known hosts using a self-signed certificate for testing purposes. Use at your own risk.
 
 This feature was added in PowerShell 6.0.0.
@@ -1187,11 +1181,11 @@ Accept wildcard characters: False
 
 Indicates the cmdlet should add headers to the request without validation.
 
-This switch should be used for sites that require header values that do not conform to standards.
+This switch should be used for sites that require header values that don't conform to standards.
 Specifying this switch disables validation to allow the value to be passed unchecked. When
 specified, all headers are added without validation.
 
-This will disable validation for values passed to the **ContentType**, **Headers**, and
+This switch disables validation for values passed to the **ContentType**, **Headers**, and
 **UserAgent** parameters.
 
 This feature was added in PowerShell 6.0.0.
@@ -1235,17 +1229,11 @@ protocols for compliance purposes.
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **SslProtocol** parameter
-as an array of values or as a comma-separated string of those values. The cmdlet will combine the
-values using a binary-OR operation. Passing values as an array is the simplest option and also
-allows you to use tab-completion on the values. You may not be able to supply multiple values on all
-platforms.
+as an array of values or as a comma-separated string of those values. The cmdlet combines the values
+using a binary-OR operation. Passing values as an array is the simplest option and also allows you
+to use tab-completion on the values. You may not be able to supply multiple values on all platforms.
 
-> [!NOTE]
-> On non-Windows platforms it may not be possible to supply `Tls` or `Tls12` as an option. Support
-> for `Tls13` is not available on all operating systems and will need to be verified on a per
-> operating system basis.
-
-This feature was added in PowerShell 6.0.0 and support for `Tls13` was added in PowerShell 7.1.
+This feature was added in PowerShell 6.0.0. Support for `Tls13` was added in PowerShell 7.1.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebSslProtocol
@@ -1377,8 +1365,8 @@ Accept wildcard characters: False
 ### -UseBasicParsing
 
 This parameter has been deprecated. Beginning with PowerShell 6.0.0, all Web requests use basic
-parsing only. This parameter is included for backwards compatibility only and any use of it will
-have no effect on the operation of the cmdlet.
+parsing only. This parameter is included for backwards compatibility only. When used, it has no
+effect on the operation of the cmdlet.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -1417,9 +1405,9 @@ The default user agent is similar to
 `Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` with slight
 variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most internet browsers, use
-the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuseragent) class,
-such as Chrome, Firefox, InternetExplorer, Opera, and Safari.
+To test a website with the standard user agent string that's used by most internet browsers, use
+the properties of the [PSUserAgent](xref:Microsoft.PowerShell.Commands.PSUserAgent) class, such as
+Chrome, Firefox, InternetExplorer, Opera, and Safari.
 
 ```yaml
 Type: System.String
@@ -1439,8 +1427,8 @@ Specifies a web request session. Enter the variable name, including the dollar s
 
 To override a value in the web request session, use a cmdlet parameter, such as **UserAgent** or
 **Credential**. Parameter values take precedence over values in the web request session. Content
-related headers, such as `Content-Type`, will be also be overridden when a
-**MultipartFormDataContent** object is supplied for **Body**.
+related headers, such as `Content-Type`, are overridden when a **MultipartFormDataContent** object
+is supplied for **Body**.
 
 Unlike a remote session, the web request session isn't a persistent connection. It's an object that
 contains information about the connection and the request, including cookies, credentials, the
@@ -1507,16 +1495,16 @@ PowerShell includes the following aliases for `Invoke-RestMethod`:
 Some features may not be available on all platforms.
 
 Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
-[HttpClient.DefaultProxy](xref:System.Net.Http.HttpClient.DefaultProxy*)
-property to determine the proxy configuration.
+[HttpClient.DefaultProxy](xref:System.Net.Http.HttpClient.DefaultProxy*) property to determine the
+proxy configuration.
 
-The value of this property is different rules depending on your platform:
+The value of this property differ depending on your platform:
 
-- **For Windows**: Reads proxy configuration from environment variables or, if those are not
-  defined, from the user's proxy settings.
-- **For macOS**: Reads proxy configuration from environment variables or, if those are not defined,
+- **For Windows**: Reads proxy configuration from environment variables or, if those aren't defined,
+  from the user's proxy settings.
+- **For macOS**: Reads proxy configuration from environment variables or, if those aren't defined,
   from the system's proxy settings.
-- **For Linux**: Reads proxy configuration from environment variables or, in case those are not
+- **For Linux**: Reads proxy configuration from environment variables or, in case those aren't
   defined, this property initializes a non-configured instance that bypasses all addresses.
 
 The environment variables used for `DefaultProxy` initialization on Windows and Unix-based platforms
@@ -1525,7 +1513,7 @@ are:
 - `HTTP_PROXY`: the hostname or IP address of the proxy server used on HTTP requests.
 - `HTTPS_PROXY`: the hostname or IP address of the proxy server used on HTTPS requests.
 - `ALL_PROXY`: the hostname or IP address of the proxy server used on HTTP and HTTPS requests in
-  case `HTTP_PROXY` or `HTTPS_PROXY` are not defined.
+  case `HTTP_PROXY` or `HTTPS_PROXY` aren't defined.
 - `NO_PROXY`: a comma-separated list of hostnames that should be excluded from proxying.
 
 PowerShell 7.4 added support for the Brotli compression algorithm.

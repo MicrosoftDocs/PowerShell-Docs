@@ -57,7 +57,8 @@ option.
 
 ### Example 1: Prevent remote access to all PowerShell session configurations
 
-This example prevents remote access to all PowerShell session endpoint configurations on the computer.
+This example prevents remote access to all PowerShell session endpoint configurations on the
+computer.
 
 ```powershell
 Disable-PSRemoting
@@ -537,9 +538,9 @@ This cmdlet is only available on Windows platforms.
   following changes manually.
 
   1. Stop and disable the WinRM service.
-  2. Delete the listener that accepts requests on any IP address.
-  3. Disable the firewall exceptions for WS-Management communications.
-  4. Restore the value of the LocalAccountTokenFilterPolicy to 0, which restricts remote access to
+  1. Delete the listener that accepts requests on any IP address.
+  1. Disable the firewall exceptions for WS-Management communications.
+  1. Restore the value of the LocalAccountTokenFilterPolicy to 0, which restricts remote access to
      members of the Administrators group on the computer.
 
 - A session endpoint configuration is a group of settings that define the environment for a session.

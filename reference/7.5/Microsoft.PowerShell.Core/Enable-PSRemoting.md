@@ -83,8 +83,8 @@ option. This cmdlet is not available on Linux or macOS versions of PowerShell.
 
 For more information about using PowerShell remoting, see the following articles:
 
-- [about_Remote_Requirements](about/about_Remote_Requirements.md)
-- [about_Remote](about/about_Remote.md)
+- [about_Remote_Requirements](About/about_Remote_Requirements.md)
+- [about_Remote](About/about_Remote.md)
 
 ## EXAMPLES
 

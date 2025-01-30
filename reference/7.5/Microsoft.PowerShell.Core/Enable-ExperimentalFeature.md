@@ -32,9 +32,9 @@ This cmdlet was introduced in PowerShell 6.2.
 
 ### Example 1: Enable an experimental feature
 
-In this example, if this experimental feature was previously disabled, then the `powershell.config.json`
-file is updated for the user to enable that feature once PowerShell is restarted.
-Upon success nothing is output to the pipeline and only a warning message is displayed.
+In this example, if this experimental feature was previously disabled, then the
+`powershell.config.json` file is updated for the user to enable that feature once PowerShell is
+restarted. Upon success nothing is output to the pipeline and only a warning message is displayed.
 
 ```powershell
 Enable-ExperimentalFeature PSImplicitRemotingBatching
@@ -117,7 +117,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -141,6 +142,6 @@ Changes to state of an experimental feature only take effect on restart of Power
 
 [Get-ExperimentalFeature](Get-ExperimentalFeature.md)
 
-[about_Experimental_Features](/powershell/module/microsoft.powershell.core/about/about_experimental_features)
+[about_Experimental_Features](About/about_Experimental_Features.md)
 
 [Using Experimental Features](/powershell/scripting/learn/experimental-features)

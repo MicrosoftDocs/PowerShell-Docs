@@ -34,7 +34,8 @@ object that `Get-PSSessionConfiguration` returns. These properties make it easie
 session configuration authors to examine and compare session configurations.
 
 To create and register a session configuration, use the `Register-PSSessionConfiguration` cmdlet.
-For more information about session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
+For more information about session configurations, see
+[about_Session_Configurations](About/about_Session_Configurations.md).
 
 ## EXAMPLES
 
@@ -120,7 +121,8 @@ session type, language mode, and execution policy of sessions that are created w
 configuration, session quotas, and the full path to the session configuration file.
 
 This view of a session configuration is used for sessions that include a session configuration file.
-For more information about session configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
+For more information about session configuration files, see
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 ### Example 4 - Another way to look at the session configurations
 
@@ -277,7 +279,7 @@ Accept wildcard characters: True
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](./About/about_CommonParameters.md).
+[about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
