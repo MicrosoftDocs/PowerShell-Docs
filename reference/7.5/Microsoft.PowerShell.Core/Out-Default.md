@@ -37,7 +37,7 @@ definition) and `Out-Host` transforms the formatting records into calls on the H
 
 This cmdlet isn't intended to be used by the end user. Other cmdlets are recommended for controlling
 output like [Out-Host](Out-Host.md) or using `Format-*` cmdlets and the
-[Format.ps1xml](About/about_format.ps1xml.md) file to control formatting.
+[Format.ps1xml](About/about_Format.ps1xml.md) file to control formatting.
 
 ## EXAMPLES
 

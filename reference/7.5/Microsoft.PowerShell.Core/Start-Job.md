@@ -72,7 +72,7 @@ documents for the job type feature.
 Beginning in PowerShell 6.0, you can start jobs using the ampersand (`&`) background operator. The
 functionality of the background operator is similar to `Start-Job`. Both methods to start a job
 create a **PSRemotingJob** job object. For more information about using the ampersand (`&`), see
-[about_Operators](About/about_operators.md#background-operator-).
+[about_Operators](About/about_Operators.md#background-operator-).
 
 PowerShell 7 introduced the **WorkingDirectory** parameter that specifies a background job's initial
 working directory. If the parameter isn't specified, `Start-Job` defaults to the current working
