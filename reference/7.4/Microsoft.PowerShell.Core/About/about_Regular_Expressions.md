@@ -1,7 +1,7 @@
 ---
 description: Describes regular expressions in PowerShell.
 Locale: en-US
-ms.date: 06/14/2024
+ms.date: 01/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Regular_Expressions
@@ -17,19 +17,20 @@ Describes regular expressions in PowerShell.
 > [!NOTE]
 > This article shows the syntax and methods for using regular expressions in
 > PowerShell. It doesn't cover all possible expressions. For a more complete
-> reference, see the [Regular Expression Language - Quick Reference][03].
+> reference, see the [Regular Expression Language - Quick Reference][02].
 
 A regular expression is a pattern used to match text. It can be made up of
-literal characters, operators, and other constructs.
+literal characters, operators, and other constructs. PowerShell uses the
+[.NET regex][03] engine.
 
 This article demonstrates regular expression syntax in PowerShell. PowerShell
 has several operators and cmdlets that use regular expressions. You can read
 more about their syntax and usage at the links below.
 
-- [Select-String][10]
-- [-match and -replace operators][06]
-- [-split operator][08]
-- [switch statement with -regex option][09]
+- [Select-String][11]
+- [-match and -replace operators][07]
+- [-split operator][09]
+- [switch statement with -regex option][10]
 
 PowerShell regular expressions are case-insensitive by default. Each method
 shown above has a different way to force case sensitivity.
@@ -81,8 +82,8 @@ characters).
 
 ### Numbers
 
-The `\d` character class will match any decimal digit. Conversely, `\D` will
-match any character except decimal digits.
+The `\d` character class matchs any decimal digit. Conversely, `\D` matches any
+character except decimal digits.
 
 ```powershell
 # This expression returns true if it matches a server name.
@@ -92,7 +93,7 @@ match any character except decimal digits.
 
 ### Word characters
 
-The `\w` character class will match any word character `[a-zA-Z_0-9]`. To match
+The `\w` character class matches any word character `[a-zA-Z_0-9]`. To match
 any non-word character, use `\W`.
 
 ```powershell
@@ -103,8 +104,8 @@ any non-word character, use `\W`.
 
 ### Wildcards
 
-The period (`.`) is a wildcard character in regular expressions. It will match
-any character except a newline (`\n`).
+The period (`.`) is a wildcard character in regular expressions. It matches any
+character except a newline (`\n`).
 
 ```powershell
 # This expression returns true.
@@ -155,7 +156,7 @@ The plus sign (`+`) matches the previous element one or more times.
 ```
 
 The question mark `?` matches the previous element zero or one time. Like
-asterisk `*`, it will even match strings where the element is absent.
+asterisk `*`, it even matches strings where the element is absent.
 
 ```powershell
 # This returns true for any server name, even server names without dashes.
@@ -208,7 +209,7 @@ When using anchors in PowerShell, you should understand the difference between
   instead of matching every character EXCEPT the newline `\n`.
 
 To read more about these options and how to use them, visit the
-[Regular Expression Language - Quick Reference][03].
+[Regular Expression Language - Quick Reference][02].
 
 ## Escaping characters
 
@@ -372,10 +373,10 @@ Name                           Value
 ----                           -----
 D                              CONTOSO
 N                              jsmith
-0                              A process has exited....
+0                              A process has exited...
 ```
 
-For more information, see [Grouping Constructs in Regular Expressions][02].
+For more information, see [Grouping Constructs in Regular Expressions][01].
 
 ### Substitutions in Regular Expressions
 
@@ -461,18 +462,32 @@ Gobble Gobble
 For detailed information on substitution expressions, see
 [Substitutions in Regular Expressions][04].
 
+## Comments in regular expressions
+
+Regular expressions can be very complex and difficult to read. You can use
+comments to make them more understandable. There are two types of comments
+allowed in regular expressions.
+
+- Inline comment (`(?#)`)
+- End-of-line comment (`#`)
+
+For more information, see the _Regular expression comments_ section of
+[about_Comments][05].
+
 ## See also
 
-- [about_Operators][07]
-- [about_Comparison_Operators][05]
+- [about_Operators][08]
+- [about_Comparison_Operators][06]
 
 <!-- link references -->
-[02]: /dotnet/standard/base-types/grouping-constructs-in-regular-expressions
-[03]: /dotnet/standard/base-types/regular-expression-language-quick-reference
+[01]: /dotnet/standard/base-types/grouping-constructs-in-regular-expressions
+[02]: /dotnet/standard/base-types/regular-expression-language-quick-reference
+[03]: /dotnet/standard/base-types/regular-expressions
 [04]: /dotnet/standard/base-types/substitutions-in-regular-expressions
-[05]: about_Comparison_Operators.md
-[06]: about_Comparison_Operators.md#matching-operators
-[07]: about_Operators.md
-[08]: about_Split.md
-[09]: about_Switch.md
-[10]: xref:Microsoft.PowerShell.Utility.Select-String
+[05]: about_Comments.md#regular-expression-comments
+[06]: about_Comparison_Operators.md
+[07]: about_Comparison_Operators.md#matching-operators
+[08]: about_Operators.md
+[09]: about_Split.md
+[10]: about_Switch.md
+[11]: xref:Microsoft.PowerShell.Utility.Select-String
