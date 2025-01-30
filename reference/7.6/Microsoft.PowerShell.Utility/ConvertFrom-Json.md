@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/29/2024
+ms.date: 01/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -36,10 +36,11 @@ To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 This cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> Beginning with PowerShell 6, the cmdlet supports JSON with comments. JSON comments start with two
-> forward slashes (`//`) characters. JSON comments aren't captured in the objects output by the
-> cmdlet. Prior to PowerShell 6, `ConvertFrom-Json` would return an error when it encountered a JSON
-> comment.
+> In Windows PowerShell 5.1, `ConvertFrom-Json` returned an error when it encountered a JSON
+> comment. In PowerShell 6 and higher, the cmdlet supports JSON with comments. JSON comments aren't
+> captured in the objects output by the cmdlet. For more information, see the _JSON comments_
+> section of the
+> [about_Comments](/powershell/module/microsoft.powershell.core/about/about_comments) article.
 
 ## EXAMPLES
 
@@ -76,16 +77,16 @@ TimeOfDay   : @{Ticks=546269310476; Days=0; Hours=15; Milliseconds=931; Microsec
 Year        : 2024
 ```
 
-The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime** object.
-It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a string formatted as a
-JSON object and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string to a
-**PSCustomObject** object.
+The example uses the `Select-Object` cmdlet to get all of the properties of the **DateTime**
+object. It uses the `ConvertTo-Json` cmdlet to convert the **DateTime** object to a string
+formatted as a JSON object and the `ConvertFrom-Json` cmdlet to convert the JSON-formatted string
+to a **PSCustomObject** object.
 
 ### Example 2: Get JSON strings from a web service and convert them to PowerShell objects
 
-This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service and then it
-uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects that can be managed in
-PowerShell.
+This command uses the `Invoke-WebRequest` cmdlet to get JSON strings from a web service
+and then it uses the `ConvertFrom-Json` cmdlet to convert JSON content to objects
+that can be managed in PowerShell.
 
 ```powershell
 # Ensures that Invoke-WebRequest uses TLS 1.2
@@ -105,9 +106,9 @@ custom object.
 Get-Content -Raw JsonFile.JSON | ConvertFrom-Json
 ```
 
-The command uses Get-Content cmdlet to get the strings in a JSON file. The **Raw** parameter returns
-the whole file as a single JSON object. Then it uses the pipeline operator to send the delimited
-string to the `ConvertFrom-Json` cmdlet, which converts it to a custom object.
+The command uses Get-Content cmdlet to get the strings in a JSON file. The **Raw** parameter
+returns the whole file as a single JSON object. Then it uses the pipeline operator to send the
+delimited string to the `ConvertFrom-Json` cmdlet, which converts it to a custom object.
 
 ### Example 4: Convert a JSON string to a hash table
 

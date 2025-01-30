@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/29/2023
+ms.date: 01/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Json
@@ -35,10 +35,11 @@ To generate a JSON string from any object, use the `ConvertTo-Json` cmdlet.
 This cmdlet was introduced in PowerShell 3.0.
 
 > [!NOTE]
-> Beginning with PowerShell 6, the cmdlet supports JSON with comments. JSON comments start with two
-> forward slashes (`//`) characters. JSON comments aren't captured in the objects output by the
-> cmdlet. Prior to PowerShell 6, `ConvertFrom-Json` would return an error when it encountered a JSON
-> comment.
+> In Windows PowerShell 5.1, `ConvertFrom-Json` returns an error when it encounters a JSON
+> comment. In PowerShell 6 and higher, the cmdlet supports JSON with comments. JSON comments aren't
+> captured in the objects output by the cmdlet. For more information, see the _JSON comments_
+> section of the
+> [about_Comments](/powershell/module/microsoft.powershell.core/about/about_comments) article.
 
 ## EXAMPLES
 

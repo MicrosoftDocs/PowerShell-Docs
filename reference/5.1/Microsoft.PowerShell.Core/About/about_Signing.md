@@ -1,7 +1,7 @@
 ---
 description: Explains how to sign scripts so that they comply with the PowerShell execution policies.
 Locale: en-US
-ms.date: 01/07/2025
+ms.date: 01/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_signing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Signing
@@ -15,7 +15,7 @@ policies.
 
 ## Long description
 
-The Restricted execution policy doesn't permit any scripts to run. The
+The **Restricted** execution policy doesn't permit any scripts to run. The
 **AllSigned** and **RemoteSigned** execution policies prevent PowerShell from
 running scripts that don't have a digital signature.
 
@@ -141,10 +141,8 @@ certificate. Two types of certificates are suitable for signing a script file:
   not run on other computers.
 
 Self-signed certificate should only be used to sign scripts for testing
-purposes.
-
-It isn't appropriate for scripts that will be shared, even within an
-enterprise.
+purposes. Self-signed certificates aren't appropriate for scripts that you want
+to share.
 
 If you create a self-signed certificate, be sure to enable strong private key
 protection on your certificate. This prevents malicious programs from signing
@@ -220,7 +218,7 @@ Directory: Microsoft.PowerShell.Security\Certificate::CurrentUser\My
 
 Thumbprint                                Subject
 ----------                                -------
-4D4917CB140714BA5B81B96E0B18AAF2C4564FDF  CN=PowerShell User ]
+4D4917CB140714BA5B81B96E0B18AAF2C4564FDF  CN=PowerShell User
 ```
 
 ## Sign a script
@@ -264,6 +262,10 @@ $cert = Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert |
 
 Set-AuthenticodeSignature add-signature.ps1 $cert
 ```
+
+The `Set-AuthenticodeSignature` cmdlet adds the signature to the script file as
+a comment block at the end of the file. The comment block begins and ends with
+`# SIG #`.
 
 After you sign the script, you can run it on the local computer. However, the
 script won't run on computers where the PowerShell execution policy requires a
