@@ -1,7 +1,7 @@
 ---
 description: The automatic variable that contains the current object in the pipeline object.
 Locale: en-US
-ms.date: 12/07/2022
+ms.date: 01/31/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_psitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSItem
@@ -15,7 +15,7 @@ The automatic variable that contains the current object in the pipeline object.
 ## Long description
 
 PowerShell includes the `$PSItem` variable and its alias, `$_`, as
-[automatic variables][01] in scriptblocks that process the current object, such
+[automatic variables][03] in scriptblocks that process the current object, such
 as in the pipeline. This article uses `$PSItem` in the examples, but `$PSItem`
 can be replaced with `$_` in every example.
 
@@ -24,23 +24,25 @@ a pipeline.
 
 There are a few common use cases for `$PSItem`:
 
-- in the scriptblock for the **Process** parameter of the
+- In the scriptblock for the **Process** parameter of the
   `ForEach-Object`cmdlet
-- in the scriptblock for the **FilterScript** parameter of the `Where-Object`
+- In the scriptblock for the **FilterScript** parameter of the `Where-Object`
   cmdlet
-- in the intrinsic methods **ForEach** and **Where**
+- In the intrinsic methods **ForEach** and **Where**
 - with delay-bind scriptblock parameters
-- in a `switch` statement's conditional values and associated scriptblocks
-- in the `process` block of a function
-- in a `filter` definition
-- in the scriptblock of the **ValidateScript** attribute
+- In a `switch` statement's conditional values and associated scriptblocks
+- In the `process` block of a function
+- In a `filter` definition
+- In the scriptblock of the **ValidateScript** attribute
+- In the scriptblock of a `catch` statement
+- In the substitution operand scriptblock of the `-replace` operator
 
 The rest of this article includes examples of using `$PSItem` for these use
 cases.
 
 ## ForEach-Object Process
 
-The [ForEach-Object][02] cmdlet is designed to operate on objects in the
+The [ForEach-Object][15] cmdlet is designed to operate on objects in the
 pipeline, executing the **Process** parameter's scriptblock once for every
 object in the pipeline.
 
@@ -75,7 +77,7 @@ Result is: 2 3 4
 
 ## Where-Object FilterScript
 
-The [Where-Object][03] cmdlet is designed to filter objects in the pipeline.
+The [Where-Object][16] cmdlet is designed to filter objects in the pipeline.
 
 You can use `$PSItem` in the scriptblock of the **FilterScript** parameter,
 which executes once for each input object in the pipeline.
@@ -94,7 +96,7 @@ list.
 
 ## ForEach and Where methods
 
-Both the [ForEach][04] and [Where][05] intrinsic methods for arrays take a
+Both the [ForEach][01] and [Where][02] intrinsic methods for arrays take a
 scriptblock as an input parameter. You can use the `$PSItem` in those
 scriptblocks to access the current object.
 
@@ -111,7 +113,7 @@ current object. Then the scriptblock of the **Where** method returns only `B`.
 
 ## Delay-bind scriptblock parameters
 
-[Delay-bind scriptblocks][06] let you use `$PSItem` to define parameters for a
+[Delay-bind scriptblocks][12] let you use `$PSItem` to define parameters for a
 pipelined cmdlet before executing it.
 
 ```powershell
@@ -120,7 +122,7 @@ dir config.log | Rename-Item -NewName { "old_$($_.Name)" }
 
 ## Switch statement scriptblocks
 
-In [switch statements][07], you can use `$PSItem` in both action scriptblocks
+In [switch statements][13], you can use `$PSItem` in both action scriptblocks
 and statement condition scriptblocks.
 
 ```powershell
@@ -147,7 +149,7 @@ the current object is odd.
 
 ## Function process blocks
 
-When you define a [function][08], you can use `$PSItem` in the `process` block
+When you define a [function][09], you can use `$PSItem` in the `process` block
 definition but not in the `begin` or `end` block definitions. If you
 reference `$PSItem` in the `begin` or `end` blocks, the value is `$null`
 because those blocks don't operate on each object in the pipeline.
@@ -171,10 +173,10 @@ function Add-One {
 ```
 
 > [!TIP]
-> While you can use `$PSItem` in [advanced functions][09], there's little
+> While you can use `$PSItem` in [advanced functions][08], there's little
 > reason to do so. If you intend to receive input from the pipeline,
 > it's best to define parameters with one of the `ValueFromPipeline*` arguments
-> for the [Parameter][10] attribute.
+> for the [Parameter][06] attribute.
 
 Using the **Parameter** attribute and cmdlet binding for advanced functions
 makes the implementation more explicit and predictable than processing the
@@ -275,7 +277,7 @@ VERBOSE: Input object 3 is:
 
 ## Filter definitions
 
-You can use `$PSItem` in the statement list of a [filter][11]'s definition.
+You can use `$PSItem` in the statement list of a [filter][10]'s definition.
 
 When you use `$PSItem` in a `filter` definition, the value is the current
 object if the filter is called in the pipeline and otherwise `$null`.
@@ -297,7 +299,7 @@ is an even number and `$false` if it isn't.
 
 ## The ValidateScript attribute scriptblock
 
-You can use `$PSItem` in the scriptblock of a [ValidateScript][15] attribute.
+You can use `$PSItem` in the scriptblock of a [ValidateScript][07] attribute.
 When used with **ValidateScript**, `$PSItem` is the value of the current object
 being validated. When the variable or parameter value is an array, the
 scriptblock is called once for each object in the array with `$PSItem` as the
@@ -353,29 +355,75 @@ value isn't even.
 The `Add-EvenNumber` function adds the valid input numbers and returns the
 total.
 
+## The catch statement scriptblock
+
+Within a `catch` block, the current error can be accessed using `$PSItem`. The
+object is of type **ErrorRecord**.
+
+```powershell
+try { NonsenseString }
+catch {
+    Write-Host "An error occurred:"
+    Write-Host $_
+}
+```
+
+Running this script returns the following result:
+
+```Output
+An Error occurred:
+The term 'NonsenseString' is not recognized as the name of a cmdlet, function,
+script file, or operable program. Check the spelling of the name, or if a path
+was included, verify that the path is correct and try again.
+```
+
+For more examples, see the _Accessing exception information_ section in
+[about_Try_Catch_Finally][14].
+
+## The -replace operator's substitution scriptblock
+
+Starting in PowerShell 6, you can use `$PSItem` when calling the [replace][04]
+operator and defining a [substitution scriptblock][05]. When you do, the value
+of `$PSItem` is the value of the current match.
+
+```powershell
+$datePattern = '\d{4}-\d{2}-\d{2}'
+'Today is 1999-12-31' -replace $datePattern, { [datetime]$PSItem.Value }
+```
+
+```output
+Today is 12/31/1999 00:00:00
+```
+
+In this example, the substitution scriptblock replaces the original date string
+with the default format for the current culture by casting the value to
+**datetime**.
+
 ## See also
 
-- [about_Arrays][04]
-- [about_Automatic_Variables][01]
-- [about_Comparison_Operators][12]
-- [about_Functions][08]
-- [about_Script_Blocks][14]
-- [about_Switch][07]
-- [ForEach-Object][02]
-- [Where-Object][03]
+- [about_Arrays][01]
+- [about_Automatic_Variables][03]
+- [about_Comparison_Operators][04]
+- [about_Functions][09]
+- [about_Script_Blocks][11]
+- [about_Switch][13]
+- [ForEach-Object][15]
+- [Where-Object][16]
 
 <!-- link references -->
-[01]: about_Automatic_Variables.md
-[02]: xref:Microsoft.PowerShell.Core.ForEach-Object
-[03]: xref:Microsoft.PowerShell.Core.Where-Object
-[04]: about_Arrays.md#foreach
-[05]: about_Arrays.md#where
-[06]: about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters
-[07]: about_Switch.md
-[08]: about_Functions.md
-[09]: about_Functions_Advanced.md
-[10]: about_Functions_Advanced_Parameters.md#parameter-attribute
-[11]: about_Functions.md#filters
-[12]: about_Comparison_Operators.md#replacement-operator
-[14]: about_Script_Blocks.md
-[15]: about_Functions_Advanced_Parameters.md#validatescript-validation-attribute
+[01]: about_Arrays.md#foreach
+[02]: about_Arrays.md#where
+[03]: about_Automatic_Variables.md
+[04]: about_Comparison_Operators.md#replacement-operator
+[05]: about_Comparison_Operators.md#replacement-with-a-script-block
+[06]: about_Functions_Advanced_Parameters.md#parameter-attribute
+[07]: about_Functions_Advanced_Parameters.md#validatescript-validation-attribute
+[08]: about_Functions_Advanced.md
+[09]: about_Functions.md
+[10]: about_Functions.md#filters
+[11]: about_Script_Blocks.md
+[12]: about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters
+[13]: about_Switch.md
+[14]: about_Try_Catch_Finally.md#accessing-exception-information
+[15]: xref:Microsoft.PowerShell.Core.ForEach-Object
+[16]: xref:Microsoft.PowerShell.Core.Where-Object
