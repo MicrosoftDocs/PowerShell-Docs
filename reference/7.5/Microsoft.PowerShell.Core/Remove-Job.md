@@ -98,7 +98,7 @@ An alternative is to use the **Job** parameter, such as `Remove-Job -Job $batch`
 In this example, all the jobs in the current PowerShell session are deleted.
 
 ```powershell
-Get-job | Remove-Job
+Get-Job | Remove-Job
 ```
 
 `Get-Job` gets all the jobs in the current PowerShell session. The job objects are sent down the
@@ -116,7 +116,7 @@ Remove-Job -State NotStarted
 
 ### Example 4: Delete jobs by using a friendly name
 
-This example deletes all jobs from the current session with friendly names that end with *batch**,
+This example deletes all jobs from the current session with friendly names that end with **batch**,
 including jobs that are running.
 
 ```powershell
@@ -410,7 +410,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -438,11 +439,11 @@ If a job stops before completion and its process hasn't exited, the process is f
 
 ## RELATED LINKS
 
-[about_Jobs](./About/about_Jobs.md)
+[about_Jobs](About/about_Jobs.md)
 
-[about_Job_Details](./About/about_Job_Details.md)
+[about_Job_Details](About/about_Job_Details.md)
 
-[about_Remote_Jobs](./About/about_Remote_Jobs.md)
+[about_Remote_Jobs](About/about_Remote_Jobs.md)
 
 [Get-Job](Get-Job.md)
 

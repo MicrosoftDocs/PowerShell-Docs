@@ -195,7 +195,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -213,7 +214,7 @@ This cmdlet returns no output.
 
 ## RELATED LINKS
 
-[about_Debuggers](./About/about_Debuggers.md)
+[about_Debuggers](About/about_Debuggers.md)
 
 [Debug-Process](../Microsoft.PowerShell.Management/Debug-Process.md)
 

@@ -226,8 +226,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_Built-in_Functions](./about/about_Built-in_Functions.md)
+[about_Built-in_Functions](About/about_Built-in_Functions.md)
 
-[about_Tab_Expansion](./about/about_Tab_Expansion.md)
+[about_Tab_Expansion](About/about_Tab_Expansion.md)
 
 [CompleteInput() method](xref:System.Management.Automation.CommandCompletion.CompleteInput*)

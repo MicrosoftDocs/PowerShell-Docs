@@ -104,10 +104,10 @@ If you use the `Receive-PSSession` cmdlet to connect to a session in which no co
 or suspended, `Receive-PSSession` connects to the session, but returns no output or errors.
 
 For more information about the Disconnected Sessions feature, see
-[about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md).
 
 Some examples use splatting to reduce the line length and improve readability. For more information,
-see [about_Splatting](./About/about_Splatting.md).
+see [about_Splatting](About/about_Splatting.md).
 
 ## EXAMPLES
 
@@ -179,7 +179,7 @@ disrupts a session connection. PowerShell automatically attempts to reconnect th
 second for the next four minutes and abandons the effort only if all attempts in the four-minute
 interval fail.
 
-```
+```powershell
 PS> $s = New-PSSession -ComputerName Server01 -Name AD -ConfigurationName ADEndpoint
 PS> $s
 
@@ -248,7 +248,7 @@ commands. And, the script resumed execution and is getting the script results.
 This example uses the `Receive-PSSession` cmdlet to reconnect to sessions that were intentionally
 disconnected and get the results of jobs that were running in the sessions.
 
-```
+```powershell
 PS> $parms = @{
       InDisconnectedSession = $True
       ComputerName = "Server01", "Server02", "Server30"
@@ -318,7 +318,7 @@ results are unexpected, the user can run commands in the sessions to investigate
 
 This example shows what happens to a job that's running in a disconnected session.
 
-```
+```powershell
 PS> $s = New-PSSession -ComputerName Server01 -Name Test
 PS> $j = Invoke-Command -Session $s { 1..1500 | Foreach-Object {"Return $_"; sleep 30}} -AsJob
 PS> $j
@@ -533,7 +533,7 @@ The parameter's value is used to select and filter sessions. It doesn't change t
 configuration that the session uses.
 
 For more information about session configurations, see
-[about_Session_Configurations](./About/about_Session_Configurations.md).
+[about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: System.String
@@ -786,9 +786,8 @@ precedence over maximum values, quotas, or limits set in the session configurati
 
 For a description of the session options that includes the default values, see
 `New-PSSessionOption`. For information about the **$PSSessionOption** preference variable, see
-[about_Preference_Variables](./About/about_Preference_Variables.md). For more information about
-session configurations, see
-[about_Session_Configurations](./About/about_Session_Configurations.md).
+[about_Preference_Variables](About/about_Preference_Variables.md). For more information about
+session configurations, see [about_Session_Configurations](About/about_Session_Configurations.md).
 
 ```yaml
 Type: System.Management.Automation.Remoting.PSSessionOption
@@ -977,13 +976,13 @@ When you disconnect a **PSSession**, the session state is Disconnected and the a
 
 ## RELATED LINKS
 
-[about_PSSessions](./About/about_PSSessions.md)
+[about_PSSessions](About/about_PSSessions.md)
 
-[about_Remote](./About/about_Remote.md)
+[about_Remote](About/about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
 
-[about_Session_Configurations](./About/about_Session_Configurations.md)
+[about_Session_Configurations](About/about_Session_Configurations.md)
 
 [Connect-PSSession](Connect-PSSession.md)
 

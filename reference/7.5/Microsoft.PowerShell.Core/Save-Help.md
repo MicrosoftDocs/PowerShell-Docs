@@ -82,23 +82,25 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ### Example 1: Save the help for the DhcpServer module
 
 ```powershell
-# Option 1: Run Invoke-Command to get the PSModuleInfo object for the remote DHCP Server module,
-# save the PSModuleInfo object in the variable $m, and then run Save-Help.
+# Option 1: Run Invoke-Command to get the PSModuleInfo object for the remote DHCP Server
+# module, save the PSModuleInfo object in the variable $m, and then run Save-Help.
 
 $m = Invoke-Command -ComputerName RemoteServer -ScriptBlock { Get-Module -Name DhcpServer -ListAvailable }
 Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 
 
-# Option 2: Open a PSSession--targeted at the remote computer that is running the DhcpServer
-# module--to get the PSModuleInfo object for the remote module, and then run Save-Help.
+# Option 2: Open a PSSession--targeted at the remote computer that is running the
+# DhcpServer module--to get the PSModuleInfo object for the remote module, and then run
+# Save-Help.
 
 $s = New-PSSession -ComputerName "RemoteServer"
 $m = Get-Module -PSSession $s -Name "DhcpServer" -ListAvailable
 Save-Help -Module $m -DestinationPath "C:\SavedHelp"
 
 
-# Option 3: Open a CIM session--targeted at the remote computer that is running the DhcpServer
-# module--to get the PSModuleInfo object for the remote module, and then run Save-Help.
+# Option 3: Open a CIM session--targeted at the remote computer that is running the
+# DhcpServer module--to get the PSModuleInfo object for the remote module, and then run
+# Save-Help.
 
 $c = New-CimSession -ComputerName "RemoteServer"
 $m = Get-Module -CimSession $c -Name "DhcpServer" -ListAvailable
@@ -112,20 +114,21 @@ the DHCP Server role on the local computer.
 ### Example 2: Install help for the DhcpServer module
 
 ```powershell
-# First, run Export-CliXml to export the PSModuleInfo object to a shared folder or to removable media.
+# First, run Export-CliXml to export the PSModuleInfo object to a shared folder or to
+# removable media.
 
 $m = Get-Module -Name "DhcpServer" -ListAvailable
 Export-CliXml -Path "E:\UsbFlashDrive\DhcpModule.xml" -InputObject $m
 
-# Next, transport the removable media to a computer that has Internet access, and then import the
-# PSModuleInfo object with Import-CliXml. Run Save-Help to save the Help for the imported DhcpServer
-# module PSModuleInfo object.
+# Next, transport the removable media to a computer that has Internet access, and then
+# import the PSModuleInfo object with Import-CliXml. Run Save-Help to save the Help for
+# the imported DhcpServer module PSModuleInfo object.
 
 $deserialized_m = Import-CliXml "E:\UsbFlashDrive\DhcpModule.xml"
 Save-Help -Module $deserialized_m -DestinationPath "E:\UsbFlashDrive\SavedHelp"
 
-# Finally, transport the removable media back to the computer that does not have network access, and
-# then install the help by running Update-Help.
+# Finally, transport the removable media back to the computer that does not have network
+# access, and then install the help by running Update-Help.
 
 Update-Help -Module DhcpServer -SourcePath "E:\UsbFlashDrive\SavedHelp"
 ```

@@ -258,7 +258,7 @@ command.
   `Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}`
 
   All PowerShell comparison operators are valid in the script block format. For more information,
-  see [about_Comparison_Operators](./About/about_Comparison_Operators.md).
+  see [about_Comparison_Operators](About/about_Comparison_Operators.md).
 
 - **Comparison statement**. You can also write a comparison statement, which is much more like
   natural language. Comparison statements were introduced in Windows PowerShell 3.0.
@@ -285,7 +285,7 @@ The previous example is functionally equivalent to:
 - `('hi', '', 'there') | Where-Object { $_.Length -gt 0 }`
 
 For more information about how PowerShell evaluates booleans, see
-[about_Booleans](about/about_Booleans.md).
+[about_Booleans](About/about_Booleans.md).
 
 ## EXAMPLES
 
@@ -400,9 +400,9 @@ The example uses the script block command format. Logical operators, such as `-a
 `Where-Object` command.
 
 - For more information about PowerShell logical operators, see
-  [about_Logical_Operators](./About/about_logical_operators.md).
+  [about_Logical_Operators](About/about_Logical_Operators.md).
 - For more information about the Updatable Help feature, see
-  [about_Updatable_Help](./About/about_Updatable_Help.md).
+  [about_Updatable_Help](About/about_Updatable_Help.md).
 
 ## PARAMETERS
 
@@ -1188,7 +1188,7 @@ PowerShell includes the following aliases for `Where-Object`:
 Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with
 collections.
 
-You can read more about these methods here [about_arrays](./About/about_Arrays.md)
+You can read more about these methods here [about_arrays](About/about_Arrays.md)
 
 ## RELATED LINKS
 
@@ -1208,4 +1208,4 @@ You can read more about these methods here [about_arrays](./About/about_Arrays.m
 
 [Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
 
-[about_Booleans](about/about_Booleans.md)
+[about_Booleans](About/about_Booleans.md)

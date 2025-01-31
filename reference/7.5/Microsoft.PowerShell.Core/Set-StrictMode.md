@@ -258,7 +258,7 @@ While the **Version** parameter accepts values greater than `3.0`, there are no 
 defined for anything higher than `3.0`.
 
 `Set-StrictMode` is effective only in the scope it's set in and in its child scopes. For more
-information about scopes in PowerShell, see [about_Scopes](about/about_Scopes.md).
+information about scopes in PowerShell, see [about_Scopes](About/about_Scopes.md).
 
 ## RELATED LINKS
 
