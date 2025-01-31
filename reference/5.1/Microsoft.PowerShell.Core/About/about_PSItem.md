@@ -35,7 +35,6 @@ There are a few common use cases for `$PSItem`:
 - In a `filter` definition
 - In the scriptblock of the **ValidateScript** attribute
 - In the scriptblock of a `catch` statement
-- In the substitution operand scriptblock of the `-replace` operator
 
 The rest of this article includes examples of using `$PSItem` for these use
 cases.
@@ -380,25 +379,6 @@ was included, verify that the path is correct and try again.
 For more examples, see the _Accessing exception information_ section in
 [about_Try_Catch_Finally][14].
 
-## The -replace operator's substitution scriptblock
-
-Starting in PowerShell 6, you can use `$PSItem` when calling the [replace][04]
-operator and defining a [substitution scriptblock][05]. When you do, the value
-of `$PSItem` is the value of the current match.
-
-```powershell
-$datePattern = '\d{4}-\d{2}-\d{2}'
-'Today is 1999-12-31' -replace $datePattern, { [datetime]$PSItem.Value }
-```
-
-```output
-Today is 12/31/1999 00:00:00
-```
-
-In this example, the substitution scriptblock replaces the original date string
-with the default format for the current culture by casting the value to
-**datetime**.
-
 ## See also
 
 - [about_Arrays][01]
@@ -415,7 +395,7 @@ with the default format for the current culture by casting the value to
 [02]: about_Arrays.md#where
 [03]: about_Automatic_Variables.md
 [04]: about_Comparison_Operators.md#replacement-operator
-[05]: about_Comparison_Operators.md#replacement-with-a-script-block
+
 [06]: about_Functions_Advanced_Parameters.md#parameter-attribute
 [07]: about_Functions_Advanced_Parameters.md#validatescript-validation-attribute
 [08]: about_Functions_Advanced.md
