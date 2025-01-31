@@ -31,7 +31,8 @@ errors, use the **Verbose** parameter.
 `Test-PSSessionConfigurationFile` verifies the session configuration files, such as those created by
 the `New-PSSessionConfigurationFile` cmdlet. For information about session configurations, see
 [about_Session_Configurations](About/about_Session_Configurations.md). For information about session
-configuration files, see [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
+configuration files, see
+[about_Session_Configuration_Files](About/about_Session_Configuration_Files.md).
 
 This cmdlet was introduced in PowerShell 3.0.
 
@@ -125,7 +126,8 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

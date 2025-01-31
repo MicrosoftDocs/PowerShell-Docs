@@ -226,7 +226,7 @@ Specifies the name of the parameter the argument completer applies to. The type 
 parameters can't be an enumeration, such as the **ForegroundColor** parameter of the `Write-Host`
 cmdlet.
 
-For more information on enums, see [about_Enum](./About/about_Enum.md).
+For more information on enums, see [about_Enum](About/about_Enum.md).
 
 When registering an argument completer for PowerShell commands, always specify this parameter. When
 you specify the **CommandName** parameter without the **ParameterName** or **Native** parameters,
@@ -272,7 +272,7 @@ parameters aren't important because PowerShell passes in the values by position.
   [CommandAst Class](/dotnet/api/system.management.automation.language.commandast).
 - `$fakeBoundParameters` (Position 4 **IDictionary**) - This parameter is set to a hashtable
   containing the `$PSBoundParameters` for the cmdlet, before the user pressed <kbd>Tab</kbd>. For
-  more information, see [about_Automatic_Variables](./About/about_Automatic_Variables.md).
+  more information, see [about_Automatic_Variables](About/about_Automatic_Variables.md).
 
 When you specify the **Native** parameter, the script block must take the following parameters in
 the specified order. The names of the parameters aren't important because PowerShell passes in the
@@ -288,7 +288,7 @@ values by position.
   when the user pressed <kbd>Tab</kbd>.
 
 You can also provide an **ArgumentCompleter** as a parameter attribute. For more information, see
-[about_Functions_Advanced_Parameters](./About/about_Functions_Advanced_Parameters.md).
+[about_Functions_Advanced_Parameters](About/about_Functions_Advanced_Parameters.md).
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](./About/about_CommonParameters.md).
+[about_CommonParameters](About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -325,4 +325,4 @@ This cmdlet returns no output.
 
 ## RELATED LINKS
 
-[about_Functions_Argument_Completion](./About/about_Functions_Argument_Completion.md)
+[about_Functions_Argument_Completion](About/about_Functions_Argument_Completion.md)
