@@ -66,7 +66,8 @@ omitted.
 ### Example 3: Get only valid Authenticode signatures for multiple files
 
 ```powershell
-Get-ChildItem $PSHOME\*.* | ForEach-Object {Get-AuthenticodeSignature $_} | Where-Object {$_.Status -eq "Valid"}
+Get-ChildItem $PSHOME\*.* | ForEach-Object {Get-AuthenticodeSignature $_} |
+    Where-Object {$_.Status -eq "Valid"}
 ```
 
 This command lists all of the files in the `$PSHOME` directory that have a valid Authenticode
@@ -86,7 +87,11 @@ selects only the signature objects with a status of Valid.
 ### Example 4: Get the Authenticode signature for a file content specified as byte array
 
 ```powershell
-Get-AuthenticodeSignature -Content (Get-Content foo.ps1 -AsByteStream) -SourcePathorExtension ps1
+$authenticodeSignatureParams = @{
+    Content = (Get-Content foo.ps1 -AsByteStream)
+    SourcePathorExtension = "ps1"
+}
+Get-AuthenticodeSignature @authenticodeSignatureParams
 ```
 
 This command gets information about the Authenticode signature for the content of a file. In this
@@ -171,7 +176,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

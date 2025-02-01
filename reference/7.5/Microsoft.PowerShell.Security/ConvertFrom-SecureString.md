@@ -18,7 +18,8 @@ Converts a secure string to an encrypted standard string.
 ### Secure (Default)
 
 ```
-ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureString>] [<CommonParameters>]
+ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureString>]
+ [<CommonParameters>]
 ```
 
 ### AsPlainText
@@ -47,8 +48,8 @@ key is specified, the Windows Data Protection API (DPAPI) is used to encrypt the
 representation.
 
 > [!NOTE]
-> Note that per [DotNet](/dotnet/api/system.security.securestring?view=netcore-2.1#remarks), the
-> contents of a SecureString are not encrypted on non-Windows systems.
+> For more information about **SecureString** data protection, see
+> [How secure is SecureString?](xref:System.Security.SecureString#how-secure-is-securestring).
 
 ## EXAMPLES
 

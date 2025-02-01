@@ -18,22 +18,24 @@ Changes the security descriptor of a specified item, such as a file or a registr
 ### ByPath (Default)
 
 ```
-Set-Acl [-Path] <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-PassThru] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Acl [-Path] <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-PassThru]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ByInputObject
 
 ```
-Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-PassThru] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-PassThru] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
 Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-PassThru]
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -58,18 +60,18 @@ $DogACL = Get-Acl -Path "C:\Dog.txt"
 Set-Acl -Path "C:\Cat.txt" -AclObject $DogACL
 ```
 
-These commands copy the values from the security descriptor of the Dog.txt file to the security
-descriptor of the Cat.txt file. When the commands complete, the security descriptors of the Dog.txt
-and Cat.txt files are identical.
+These commands copy the values from the security descriptor of the `Dog.txt` file to the security
+descriptor of the Cat.txt file. When the commands complete, the security descriptors of the
+`Dog.txt` and Cat.txt files are identical.
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file.
-The assignment operator (`=`) stores the security descriptor in the value of the $DogACL variable.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor of the `Dog.txt` file.
+The assignment operator (`=`) stores the security descriptor in the value of the `$DogACL` variable.
 
 The second command uses `Set-Acl` to change the values in the ACL of Cat.txt to the values in
 `$DogACL`.
 
 The value of the **Path** parameter is the path to the Cat.txt file. The value of the **AclObject**
-parameter is the model ACL, in this case, the ACL of Dog.txt as saved in the `$DogACL` variable.
+parameter is the model ACL, in this case, the ACL of `Dog.txt` as saved in the `$DogACL` variable.
 
 ### Example 2: Use the pipeline operator to pass a descriptor
 
@@ -81,12 +83,12 @@ This command is almost the same as the command in the previous example, except t
 pipeline operator (`|`) to send the security descriptor from a `Get-Acl` command to a `Set-Acl`
 command.
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file. The
-pipeline operator (`|`) passes an object that represents the Dog.txt security descriptor to the
-`Set-Acl` cmdlet.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor of the `Dog.txt` file.
+The pipeline operator (`|`) passes an object that represents the `Dog.txt` security descriptor to
+the `Set-Acl` cmdlet.
 
-The second command uses `Set-Acl` to apply the security descriptor of Dog.txt to Cat.txt.
-When the command completes, the ACLs of the Dog.txt and Cat.txt files are identical.
+The second command uses `Set-Acl` to apply the security descriptor of `Dog.txt` to Cat.txt.
+When the command completes, the ACLs of the `Dog.txt` and Cat.txt files are identical.
 
 ### Example 3: Apply a security descriptor to multiple files
 
@@ -129,20 +131,20 @@ Set-Acl -Path "C:\Pets\Dog.txt" -AclObject $NewAcl
 These commands disable access inheritance from parent folders, while still preserving the existing
 inherited access rules.
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor of the `Dog.txt` file.
 
 Next, variables are created to convert the inherited access rules to explicit access rules. To
 protect the access rules associated with this from inheritance, set the `$isProtected` variable to
 `$true`. To allow inheritance, set `$isProtected` to `$false`. For more information, see
-[set access rule protection](/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection).
+[set access rule protection](xref:System.Security.AccessControl.ObjectSecurity.SetAccessRuleProtection%2A).
 
 Set the `$preserveInheritance` variable to `$true` to preserve inherited access rules or `$false` to
 remove inherited access rules. Then the access rule protection is updated using the
 **SetAccessRuleProtection()** method.
 
-The last command uses `Set-Acl` to apply the security descriptor of to Dog.txt. When the command
-completes, the ACLs of the Dog.txt that were inherited from the Pets folder will be applied directly
-to Dog.txt, and new access policies added to Pets will not change the access to Dog.txt.
+The last command uses `Set-Acl` to apply the security descriptor of to `Dog.txt`. When the command
+completes, the ACLs of the `Dog.txt` that were inherited from the Pets folder will be applied directly
+to `Dog.txt`, and new access policies added to Pets will not change the access to `Dog.txt`.
 
 ### Example 5: Grant Administrators Full Control of the file
 
@@ -154,29 +156,33 @@ $fileSystemRights = "FullControl"
 $type = "Allow"
 # Create new rule
 $fileSystemAccessRuleArgumentList = $identity, $fileSystemRights, $type
-$fileSystemAccessRule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $fileSystemAccessRuleArgumentList
+$newParams = @{
+  TypeName     = 'System.Security.AccessControl.FileSystemAccessRule'
+    ArgumentList = $fileSystemAccessRuleArgumentList
+}
+$fileSystemAccessRule = New-Object @newParams
 # Apply new rule
 $NewAcl.SetAccessRule($fileSystemAccessRule)
 Set-Acl -Path "C:\Pets\Dog.txt" -AclObject $NewAcl
 ```
 
-This command will grant the **BUILTIN\Administrators** group Full control of the Dog.txt file.
+This command will grant the **BUILTIN\Administrators** group Full control of the `Dog.txt` file.
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor of the `Dog.txt` file.
 
-Next variables are created to grant the **BUILTIN\Administrators** group full control of the Dog.txt
-file. The `$identity` variable set to the name of a
-[user account](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor). The
+Next variables are created to grant the **BUILTIN\Administrators** group full control of the
+`Dog.txt` file. The `$identity` variable set to the name of a
+[user account](xref:System.Security.AccessControl.FileSystemAccessRule.%23ctor%2A). The
 `$fileSystemRights` variable set to FullControl, and can be any one of the
-[FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) values that specifies
-the type of operation associated with the access rule. The `$type` variable set to "Allow" to
-specifies whether to allow or deny the operation. The `$fileSystemAccessRuleArgumentList` variable
-is an argument list is to be passed when making the new **FileSystemAccessRule** object. Then a new
+[FileSystemRights](xref:System.Security.AccessControl.FileSystemRights) values that specifies the
+type of operation associated with the access rule. The `$type` variable set to "Allow" to specifies
+whether to allow or deny the operation. The `$fileSystemAccessRuleArgumentList` variable is an
+argument list is to be passed when making the new **FileSystemAccessRule** object. Then a new
 **FileSystemAccessRule** object is created, and the **FileSystemAccessRule** object is passed to the
 **SetAccessRule()** method, adds the new access rule.
 
-The last command uses `Set-Acl` to apply the security descriptor of to Dog.txt. When the command
-completes, the **BUILTIN\Administrators** group will have full control of the Dog.txt.
+The last command uses `Set-Acl` to apply the security descriptor of to `Dog.txt`. When the command
+completes, the **BUILTIN\Administrators** group will have full control of the `Dog.txt`.
 
 ## PARAMETERS
 
@@ -341,7 +347,7 @@ Changes the security descriptor of the specified item. Enter the path to an item
 a file or registry key. Wildcards are permitted.
 
 If you pass a security object to `Set-Acl` (either by using the **AclObject** or
-**SecurityDescriptor** parameters or by passing a security object from Get-Acl to `Set-Acl`), and
+**SecurityDescriptor** parameters or by passing a security object from `Get-Acl` to `Set-Acl`), and
 you omit the **Path** parameter (name and value), `Set-Acl` uses the path that is included in the
 security object.
 
@@ -428,8 +434,8 @@ can use it to change the security descriptors of files, directories, and registr
 
 [Get-Acl](Get-Acl.md)
 
-[FileSystemAccessRule](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor)
+[FileSystemAccessRule](xref:System.Security.AccessControl.FileSystemAccessRule.%23ctor%2A)
 
-[ObjectSecurity.SetAccessRuleProtection](/dotnet/api/system.security.accesscontrol.objectsecurity.setaccessruleprotection)
+[ObjectSecurity.SetAccessRuleProtection](xref:System.Security.AccessControl.ObjectSecurity.SetAccessRuleProtection%2A)
 
-[FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights)
+[FileSystemRights](xref:sSystem.Security.AccessControl.FileSystemRights)

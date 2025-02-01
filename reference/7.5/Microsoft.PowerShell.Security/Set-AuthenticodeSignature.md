@@ -59,7 +59,7 @@ These commands retrieve a code-signing certificate from the PowerShell certifica
 it to sign a PowerShell script.
 
 ```powershell
-$cert=Get-ChildItem -Path Cert:\CurrentUser\My -CodeSigningCert
+$cert = Get-ChildItem -Path Cert:\CurrentUser\My -CodeSigningCert
 Set-AuthenticodeSignature -FilePath PsTestInternet2.ps1 -Certificate $cert
 ```
 
@@ -88,7 +88,7 @@ $cert = Get-PfxCertificate -FilePath C:\Test\Mysign.pfx
 Set-AuthenticodeSignature -FilePath ServerProps.ps1 -Certificate $cert
 ```
 
-The first command uses the `Get-PfxCertificate` cmdlet to load the C:\Test\MySign.pfx certificate
+The first command uses the `Get-PfxCertificate` cmdlet to load the `C:\Test\MySign.pfx` certificate
 into the `$cert` variable.
 
 The second command uses `Set-AuthenticodeSignature` to sign the script. The **FilePath** parameter
@@ -103,7 +103,13 @@ This command adds a digital signature that includes the root authority in the tr
 signed by a third-party timestamp server.
 
 ```powershell
-Set-AuthenticodeSignature -FilePath c:\scripts\Remodel.ps1 -Certificate $cert -IncludeChain All -TimestampServer "https://timestamp.fabrikam.com/scripts/timstamper.dll"
+$SignatureParams = @{
+    FilePath = "c:\scripts\Remodel.ps1"
+    Certificate = $cert
+    IncludeChain = "All"
+    TimestampServer = "https://timestamp.fabrikam.com/scripts/timstamper.dll"
+}
+Set-AuthenticodeSignature @SignatureParams
 ```
 
 The command uses the **FilePath** parameter to specify the script being signed and the
@@ -196,7 +202,7 @@ might not be recognized on other systems. Which algorithms are supported depends
 the operating system.
 
 For a list of possible values, see
-[HashAlgorithmName Struct](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
+[HashAlgorithmName](xref:System.Security.Cryptography.HashAlgorithmName#properties) struct.
 
 ```yaml
 Type: System.String

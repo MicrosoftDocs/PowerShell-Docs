@@ -19,8 +19,8 @@ This cmdlet is only supported on Windows.
 ## SYNTAX
 
 ```
-Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <String> [[-Path] <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <String>
+ [[-Path] <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -30,7 +30,7 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 `Test-FileCatalog` validates the authenticity of files by comparing the file hashes of a catalog
 file (.cat) with the hashes of actual files on disk. If it detects any mismatches, it returns the
 status as ValidationFailed. Users can retrieve all this information by using the -Detailed
-parameter. It also displays signing status of catalog in Signature property which is equivalent to
+parameter. It also displays signing status of catalog in Signature property, which is equivalent to
 calling `Get-AuthenticodeSignature` cmdlet on the catalog file. Users can also skip any file during
 validation by using the -FilesToSkip parameter.
 
@@ -41,9 +41,18 @@ This cmdlet is only supported on Windows.
 ### Example 1: Create and validate a file catalog
 
 ```powershell
-New-FileCatalog -Path $PSHOME\Modules\Microsoft.PowerShell.Utility -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -CatalogVersion 2.0
+$NewFileCatalogParams = @{
+    Path = "$PSHOME\Modules\Microsoft.PowerShell.Utility"
+    CatalogFilePath = "\temp\Microsoft.PowerShell.Utility.cat"
+    CatalogVersion = 2.0
+}
+New-FileCatalog @NewFileCatalogParams
 
-Test-FileCatalog -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+$TestFileCatalogParams = @{
+    CatalogFilePath = "\temp\Microsoft.PowerShell.Utility.cat"
+    Path = "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+}
+Test-FileCatalog @TestFileCatalogParams
 ```
 
 ```Output
@@ -53,7 +62,12 @@ Valid
 ### Example 2: Validate a file catalog with detailed output
 
 ```powershell
-Test-FileCatalog -Detailed -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+$TestFileCatalogParams = @{
+    Detailed = $true
+    CatalogFilePath = "\temp\Microsoft.PowerShell.Utility.cat"
+    Path = "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+}
+Test-FileCatalog @TestFileCatalogParams
 ```
 
 ```Output
@@ -72,7 +86,7 @@ Signature     : System.Management.Automation.Signature
 
 ### -CatalogFilePath
 
-A path to a catalog file (.cat) that contains the hashes to be used for validation.
+A path to a catalog file (`.cat`) that contains the hashes to be used for validation.
 
 ```yaml
 Type: System.String
@@ -169,9 +183,9 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction,
--InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and
--WarningVariable. For more information, see
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
