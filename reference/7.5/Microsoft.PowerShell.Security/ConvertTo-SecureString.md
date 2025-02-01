@@ -47,8 +47,8 @@ specified key, that same key must be provided as the value of the **Key** or **S
 of the `ConvertTo-SecureString` cmdlet.
 
 > [!NOTE]
-> Note that per [DotNet](/dotnet/api/system.security.securestring#remarks), the
-> contents of a SecureString are not encrypted on non-Windows systems.
+> For more information about **SecureString** data protection, see
+> [How secure is SecureString?](xref:System.Security.SecureString#how-secure-is-securestring).
 
 ## EXAMPLES
 
@@ -86,13 +86,14 @@ variable.
 The fourth command displays the encrypted string in the value of the `$Encrypted` variable.
 
 The fifth command uses the `ConvertTo-SecureString` cmdlet to convert the encrypted standard string
-in the `$Encrypted` variable back into a secure string. It saves the result in the `$Secure2` variable.
-The sixth command displays the value of the `$Secure2` variable. The SecureString type indicates that
-the command was successful.
+in the `$Encrypted` variable back into a secure string. It saves the result in the `$Secure2`
+variable. The sixth command displays the value of the `$Secure2` variable. The SecureString type
+indicates that the command was successful.
 
 ### Example 2: Create a secure string from an encrypted string in a file
 
-This example shows how to create a secure string from an encrypted standard string that is saved in a file.
+This example shows how to create a secure string from an encrypted standard string that is saved in
+a file.
 
 ```powershell
 $Secure = Read-Host -AsSecureString

@@ -25,7 +25,8 @@ Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPol
 ## DESCRIPTION
 
 The `Set-ExecutionPolicy` cmdlet changes PowerShell execution policies for Windows computers. For
-more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
+more information, see
+[about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
 Beginning in PowerShell 6.0 for non-Windows computers, the default execution policy is
 `Unrestricted` and can't be changed. The `Set-ExecutionPolicy` cmdlet is available, but PowerShell
