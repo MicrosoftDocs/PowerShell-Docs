@@ -316,7 +316,7 @@ The `*-Path` cmdlets work with the **FileSystem**, **Registry**, and **Certifica
 
 `Resolve-Path` is designed to work with any provider. To list the providers available in your
 session, type `Get-PSProvider`. For more information, see
-[about_providers](../microsoft.powershell.core/about/about_providers.md).
+[about_Providers](../microsoft.powershell.core/About/about_Providers.md).
 
 `Resolve-Path` only resolves existing paths. It cannot be used to resolve a location that does not
 exist yet.

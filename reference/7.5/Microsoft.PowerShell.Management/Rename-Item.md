@@ -72,8 +72,8 @@ Use the `Move-Item` cmdlet, instead.
 
 ### Example 3: Rename a registry key
 
-This example renames a registry key from **Advertising** to **Marketing**. When the command is complete,
-the key is renamed, but the registry entries in the key are unchanged.
+This example renames a registry key from **Advertising** to **Marketing**. When the command is
+complete, the key is renamed, but the registry entries in the key are unchanged.
 
 ```powershell
 Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"
@@ -127,7 +127,8 @@ sensitive.
 
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell. To impersonate another
-> user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
+> user, or elevate your credentials when running this cmdlet, use
+> [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -145,7 +146,8 @@ Accept wildcard characters: False
 
 Forces the cmdlet to rename items that can't otherwise be changed, such as hidden or read-only files
 or read-only aliases or variables. The cmdlet can't change constant aliases or variables.
-Implementation varies from provider to provider. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+Implementation varies from provider to provider. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 Even using the **Force** parameter, the cmdlet can't override security restrictions.
 
@@ -168,7 +170,8 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String
@@ -190,7 +193,8 @@ To rename and move an item, use `Move-Item`.
 
 You can't use wildcard characters in the value of the **NewName** parameter. To specify a name for
 multiple files, use the **Replace** operator in a regular expression. For more information about the
-Replace operator, see [about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
+Replace operator, see
+[about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
 
 ```yaml
 Type: System.String
@@ -274,7 +278,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -302,7 +307,8 @@ PowerShell includes the following aliases for `Rename-Item`:
   - `rni`
 
 `Rename-Item` is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+available in your session, type `Get-PsProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

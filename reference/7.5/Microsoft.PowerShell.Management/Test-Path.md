@@ -315,8 +315,8 @@ exist. PowerShell returns false because it doesn't know which drive provider to 
 > A breaking change in the Path APIs was introduced in .NET 2.1. Those methods no longer check for
 > invalid path characters. This change caused a regression in PowerShell where the **IsValid** check
 > no longer tests for invalid characters. The regression will be addressed in a future release. For
-> more information,
-> see [Breaking changes in .NET Core 2.1](/dotnet/core/compatibility/2.1#path-apis-dont-throw-an-exception-for-invalid-characters).
+> more information, see
+> [Breaking changes in .NET Core 2.1](/dotnet/core/compatibility/2.1#path-apis-dont-throw-an-exception-for-invalid-characters).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

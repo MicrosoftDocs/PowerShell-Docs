@@ -77,7 +77,7 @@ This command uses the `Get-Service` cmdlet to get an object that represents the 
 
 ### Example 4: Suspend all services that can be suspended
 
-```
+```powershell
 PS C:\> Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"} | Suspend-Service -Confirm
 ```
 

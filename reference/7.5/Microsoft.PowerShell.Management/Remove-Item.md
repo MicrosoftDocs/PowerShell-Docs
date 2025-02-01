@@ -440,8 +440,8 @@ Accept wildcard characters: True
 Prompts you for confirmation before running the cmdlet. For more information, see the following
 articles:
 
-- [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
-- [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
+- [about_Preference_Variables](../microsoft.powershell.core/About/about_Preference_Variables.md#confirmpreference)
+- [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/About/about_Functions_CmdletBindingAttribute.md?#confirmimpact)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -533,6 +533,6 @@ design.
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
-[about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
+[about_Preference_Variables](../microsoft.powershell.core/About/about_Preference_Variables.md#confirmpreference)
 
-[about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
+[about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/About/about_Functions_CmdletBindingAttribute.md?#confirmimpact)

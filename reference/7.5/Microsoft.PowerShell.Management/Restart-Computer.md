@@ -355,7 +355,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -371,10 +372,12 @@ This cmdlet returns no output.
 
 ## NOTES
 
-- In Windows, `Restart-Computer` uses the [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
-  of the Windows Management Instrumentation (WMI) [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem)
-  class. This method requires the **SeShutdownPrivilege** privilege be enabled for the user account
-  used to restart the machine.
+- In Windows, `Restart-Computer` uses the
+  [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+  of the Windows Management Instrumentation (WMI)
+  [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) class. This method
+  requires the **SeShutdownPrivilege** privilege be enabled for the user account used to restart
+  the machine.
 - On Linux and Mac OS, `Restart-Computer` uses the `/sbin/shutdown` bash tool.
 
 ## RELATED LINKS
