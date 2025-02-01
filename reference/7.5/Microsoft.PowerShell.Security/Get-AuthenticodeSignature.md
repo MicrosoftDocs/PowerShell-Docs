@@ -38,11 +38,9 @@ Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<
 > **This cmdlet is only available on the Windows platform.**
 
 The `Get-AuthenticodeSignature` cmdlet gets information about the Authenticode signature for a
-file or file content as a byte array.
-If the file is both embedded signed and Windows catalog signed,
-the Windows catalog signature is used.
-If the file is not signed, the information is retrieved, but
-the fields are blank.
+file or file content as a byte array. If the file is both embedded signed and Windows catalog
+signed, the Windows catalog signature is used. If the file is not signed, the information is
+retrieved, but the fields are blank.
 
 ## EXAMPLES
 
@@ -62,12 +60,13 @@ Get-AuthenticodeSignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps1
 ```
 
 This command gets information about the Authenticode signature for the four files listed at the
-command line. In this example, the name of the **FilePath** parameter, which is optional, is omitted.
+command line. In this example, the name of the **FilePath** parameter, which is optional, is
+omitted.
 
 ### Example 3: Get only valid Authenticode signatures for multiple files
 
 ```powershell
-Get-ChildItem $PSHOME\*.* | ForEach-object {Get-AuthenticodeSignature $_} | Where-Object {$_.status -eq "Valid"}
+Get-ChildItem $PSHOME\*.* | ForEach-Object {Get-AuthenticodeSignature $_} | Where-Object {$_.Status -eq "Valid"}
 ```
 
 This command lists all of the files in the `$PSHOME` directory that have a valid Authenticode

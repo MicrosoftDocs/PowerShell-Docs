@@ -59,7 +59,7 @@ the **Credential** parameter.
 ### Example 2
 
 ```powershell
-$c = Get-Credential -credential User01
+$c = Get-Credential -Credential User01
 $c.Username
 User01
 ```

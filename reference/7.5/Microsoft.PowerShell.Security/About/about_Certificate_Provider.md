@@ -196,7 +196,7 @@ $getChildItemSplat = @{
     Eku = "*Client Authentication*"
 }
 Get-ChildItem @getChildItemSplat |
-    Where-Object {$_.SendAsTrustedIssuer -and $_.NotAfter -gt $ValidThrough }
+  Where-Object {$_.SendAsTrustedIssuer -and $_.NotAfter -gt $ValidThrough}
 ```
 
 ## Opening the Certificates MMC Snap-in
@@ -319,7 +319,7 @@ Start a remote session on the S1 computer using the `New-PSSession` cmdlet, and
 specify CredSSP authentication. Saves the session in the `$s` variable.
 
 ```powershell
-$s  = New-PSSession S1 -Authentication CredSSP -Credential Domain01\Admin01
+$s = New-PSSession S1 -Authentication CredSSP -Credential Domain01\Admin01
 ```
 
 Finally, use the `Invoke-Command` cmdlet to run a `Remove-Item` command in the

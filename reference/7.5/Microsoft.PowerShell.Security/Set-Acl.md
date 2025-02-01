@@ -95,8 +95,8 @@ $NewAcl = Get-Acl File0.txt
 Get-ChildItem -Path "C:\temp" -Recurse -Include "*.txt" -Force | Set-Acl -AclObject $NewAcl
 ```
 
-These commands apply the security descriptors in the File0.txt file to all text files in the `C:\Temp`
-directory and all of its subdirectories.
+These commands apply the security descriptors in the File0.txt file to all text files in the
+`C:\Temp` directory and all of its subdirectories.
 
 The first command gets the security descriptor of the File0.txt file in the current directory and
 uses the assignment operator (`=`) to store it in the `$NewACL` variable.

@@ -86,13 +86,14 @@ variable.
 The fourth command displays the encrypted string in the value of the `$Encrypted` variable.
 
 The fifth command uses the `ConvertTo-SecureString` cmdlet to convert the encrypted standard string
-in the `$Encrypted` variable back into a secure string. It saves the result in the `$Secure2` variable.
-The sixth command displays the value of the `$Secure2` variable. The SecureString type indicates that
-the command was successful.
+in the `$Encrypted` variable back into a secure string. It saves the result in the `$Secure2`
+variable. The sixth command displays the value of the `$Secure2` variable. The SecureString type
+indicates that the command was successful.
 
 ### Example 2: Create a secure string from an encrypted string in a file
 
-This example shows how to create a secure string from an encrypted standard string that is saved in a file.
+This example shows how to create a secure string from an encrypted standard string that is saved in
+a file.
 
 ```powershell
 $Secure = Read-Host -AsSecureString
