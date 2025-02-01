@@ -123,7 +123,7 @@ as follows:
 - `s` (system)
 
 For more information about the mode flags, see
-[about_Filesystem_Provider](../microsoft.powershell.core/About/about_Filesystem_Provider.md#attributes-flagsexpression).
+[about_Filesystem_Provider](../Microsoft.PowerShell.Core/About/about_Filesystem_Provider.md#attributes-flagsexpression).
 
 ### Example 2: Get child item names in a directory
 
@@ -507,8 +507,8 @@ The **Attributes** parameter supports the following properties:
 - **System**
 - **Temporary**
 
-For a description of these attributes, see the
-[FileAttributes Enumeration](/dotnet/api/system.io.fileattributes).
+For a description of these attributes, see the [FileAttributes](xref:System.IO.FileAttributes)
+enumeration.
 
 To combine attributes, use the following operators:
 
@@ -864,7 +864,7 @@ it in single quotation marks. Single quotation marks tell PowerShell to not inte
 as escape sequences.
 
 For more information, see
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -1075,7 +1075,7 @@ providers available in your session, type `Get-PSProvider`. For more information
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md)
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 
 [about_Registry_Provider](../Microsoft.PowerShell.Core/About/about_Registry_Provider.md)
 

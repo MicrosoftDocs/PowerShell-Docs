@@ -347,7 +347,8 @@ This command lists the Event Ids that the **Microsoft-Windows-GroupPolicy** even
 along with the event description.
 
 ```powershell
-(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Format-Table Id, Description
+(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events |
+    Format-Table Id, Description
 ```
 
 ```Output
@@ -507,7 +508,7 @@ is required.
 
 ```powershell
 Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -Oldest |
-  Sort-Object -Property TimeCreated -Descending |
+    Sort-Object -Property TimeCreated -Descending |
     Select-Object -First 100
 ```
 
@@ -528,7 +529,7 @@ reading from an `.etl` file, but the **Oldest** parameter applies to each file.
 
 ```powershell
 Get-WinEvent -Path 'C:\Tracing\TraceLog.etl', 'C:\Test\Windows PowerShell.evtx' -Oldest |
-  Where-Object { $_.Id -eq '403' }
+    Where-Object { $_.Id -eq '403' }
 ```
 
 The `Get-WinEvent` cmdlet gets log information from the archived files. The **Path** parameter uses
@@ -575,7 +576,7 @@ Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 
 This example uses the **FilterHashtable** parameter to get events from the **Application** log. The
 hash table uses **key/value** pairs. For more information about the **FilterHashtable** parameter,
-see [Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/Creating-Get-WinEvent-queries-with-FilterHashtable).
+see [Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/creating-get-winevent-queries-with-filterhashtable).
 For more information about hash tables, see
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md).
 
@@ -992,7 +993,7 @@ Environment (Windows PE).
 
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
 
-[Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/Creating-Get-WinEvent-queries-with-FilterHashtable)
+[Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/creating-get-winevent-queries-with-filterhashtable)
 
 [Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 

@@ -18,17 +18,17 @@ Moves a property from one location to another.
 ### Path (Default)
 
 ```
-Move-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Destination] <String> [-PassThru] [-Force]
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Move-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Destination] <String> [-PassThru]
+ [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Move-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Destination] <String> [-PassThru] [-Force]
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Move-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Destination] <String> [-PassThru]
+ [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,7 +46,12 @@ This command moves the Version registry value, and its data, from the "MyApp" su
 subkey of the `HKLM\Software\MyCompany` registry key.
 
 ```powershell
-Move-ItemProperty "HKLM:\Software\MyCompany\MyApp" -Name "Version" -Destination "HKLM:\Software\MyCompany\NewApp"
+$moveParams = @{
+    Path        = "HKLM:\Software\MyCompany\MyApp"
+    Name        = "Version"
+    Destination = "HKLM:\Software\MyCompany\NewApp"
+}
+Move-ItemProperty @moveParams
 ```
 
 ## PARAMETERS
@@ -130,9 +135,9 @@ Accept wildcard characters: True
 
 ### -Force
 
-Forces the command to run without asking for user confirmation.
-Implementation varies from provider to provider.
-For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+Forces the command to run without asking for user confirmation. Implementation varies from provider
+to provider. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -273,10 +278,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

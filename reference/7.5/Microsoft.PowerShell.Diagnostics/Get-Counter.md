@@ -171,7 +171,9 @@ In this example, `Start-Job` runs a `Get-Counter` command as a background job on
 To view the performance counter output from the job, use the `Receive-Job` cmdlet.
 
 ```powershell
-Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
+Start-Job -ScriptBlock {
+    Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000
+}
 ```
 
 ```Output

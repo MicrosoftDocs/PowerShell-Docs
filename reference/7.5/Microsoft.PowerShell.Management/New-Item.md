@@ -219,10 +219,10 @@ Mode                LastWriteTime         Length Name
 -a----         5/1/2020   8:03 AM              0 TestFile.txt
 ```
 
-### Example 9: Use the -Force parameter to overwrite existing files
+### Example 9: Use the Force parameter to overwrite existing files
 
-This example creates a file with a value and then recreates the file using `-Force`. This overwrites
-the existing file, as you can see by the length property.
+This example creates a file with a value and then recreates the file using the **Force** parameter.
+This overwrites the existing file, as you can see by the length property.
 
 ```powershell
 PS> New-Item ./TestFile.txt -ItemType File -Value 'This is just a test file'
@@ -241,9 +241,9 @@ Mode                LastWriteTime         Length Name
 ```
 
 > [!NOTE]
-> When using `New-Item` with the `-Force` switch to create registry keys, the command will behave
+> When using `New-Item` with the **Force** parameter to create registry keys, the command behaves
 > the same as when overwriting a file. If the registry key already exists, the key and all
-> properties and values will be overwritten with an empty registry key.
+> properties and values are overwritten with an empty registry key.
 
 ## PARAMETERS
 

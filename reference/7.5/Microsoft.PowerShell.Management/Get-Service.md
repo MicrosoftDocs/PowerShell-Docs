@@ -106,10 +106,10 @@ Status is only one property of service objects. To see all of the properties, ty
 This example gets services that have dependent services.
 
 ```powershell
-Get-Service |
-  Where-Object {$_.DependentServices} |
+Get-Service | Where-Object {$_.DependentServices} |
     Format-List -Property Name, DependentServices, @{
-      Label="NoOfDependentServices"; Expression={$_.DependentServices.Count}
+        Label="NoOfDependentServices"
+        Expression={$_.DependentServices.Count}
     }
 ```
 
@@ -138,7 +138,7 @@ This example shows that when you sort services in ascending order by the value o
 property, stopped services appear before running services. This happens because the value of
 **Status** is an enumeration, in which `Stopped` has a value of `1`, and `Running` has a value of
 `4`. For more information, see
-[ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+[ServiceControllerStatus](xref:System.ServiceProcess.ServiceControllerStatus).
 
 To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.
 
@@ -360,8 +360,7 @@ When you sort in ascending order by status value, `Stopped` services appear befo
 services. The **Status** property of a service is an enumerated value in which the names of the
 statuses represent integer values. The sort is based on the integer value, not the name. `Running`
 appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value of `4`. For
-more information, see
-[ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+more information, see [ServiceControllerStatus](xref:System.ServiceProcess.ServiceControllerStatus).
 
 ## RELATED LINKS
 

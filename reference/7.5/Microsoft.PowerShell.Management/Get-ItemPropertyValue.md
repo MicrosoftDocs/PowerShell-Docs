@@ -18,15 +18,15 @@ Gets the value for one or more properties of a specified item.
 ### Path (Default)
 
 ```
-Get-ItemPropertyValue [[-Path] <String[]>] [-Name] <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+Get-ItemPropertyValue [[-Path] <String[]>] [-Name] <String[]> [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,8 +39,8 @@ parameters.
 
 ### Example 1: Get the value of the ProductID property
 
-This command gets the value of the **ProductID** property of the "\SOFTWARE\Microsoft\Windows
-NT\CurrentVersion" object in the Windows Registry provider.
+This command gets the value of the **ProductID** property of the
+`\SOFTWARE\Microsoft\Windows NT\CurrentVersion` object in the Windows Registry provider.
 
 ```powershell
 Get-ItemPropertyValue 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion' -Name ProductID
@@ -237,10 +237,10 @@ Accept wildcard characters: True
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -252,8 +252,8 @@ You can pipe a string that contains a path to this cmdlet.
 
 ### System.Management.Automation.PSObject
 
-This cmdlet returns an object for each item property value that it gets.
-The object type depends on the property value that is retrieved.
+This cmdlet returns an object for each item property value that it gets. The object type depends on
+the property value that is retrieved.
 
 ## NOTES
 

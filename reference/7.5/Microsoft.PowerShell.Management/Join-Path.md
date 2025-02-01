@@ -29,7 +29,7 @@ The provider supplies the path delimiters.
 ### Example 1: Combine a path with a child path
 
 ```powershell
-PS C:\> Join-Path -Path "path" -ChildPath "childpath"
+Join-Path -Path "path" -ChildPath "childpath"
 ```
 
 ```output
@@ -44,7 +44,7 @@ the paths.
 ### Example 2: Combine paths that already contain directory separators
 
 ```powershell
-PS C:\> Join-Path -Path "path\" -ChildPath "\childpath"
+Join-Path -Path "path\" -ChildPath "\childpath"
 ```
 
 ```output
