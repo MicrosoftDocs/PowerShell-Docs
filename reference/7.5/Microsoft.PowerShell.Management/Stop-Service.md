@@ -18,22 +18,22 @@ Stops one or more running services.
 ### InputObject (Default)
 
 ```
-Stop-Service [-Force] [-NoWait] [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
- [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Service [-Force] [-NoWait] [-InputObject] <ServiceController[]> [-PassThru]
+ [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
 
 ```
-Stop-Service [-Force] [-NoWait] [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Service [-Force] [-NoWait] [-Name] <String[]> [-PassThru] [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

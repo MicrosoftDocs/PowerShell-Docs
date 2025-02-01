@@ -18,22 +18,22 @@ Starts one or more stopped services.
 ### InputObject (Default)
 
 ```
-Start-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
 
 ```
-Start-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Start-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -90,9 +90,10 @@ existing file.
 
 This example shows how to start a service when the start type of the service is **Disabled**.
 
-```
+```powershell
 PS> Start-Service tlntsvr
-Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the following error: Cannot start service TlntSvr on computer '.'.
+Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the following error: Cannot
+start service TlntSvr on computer '.'.
 At line:1 char:14
 + Start-Service  <<<< tlntsvr
 

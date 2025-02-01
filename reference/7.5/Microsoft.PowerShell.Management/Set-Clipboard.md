@@ -68,7 +68,7 @@ $PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $env:SSH_TTY
 ```
 
 For more information about `$PSDefaultParameterValues`, see
-[about_Parameters_Default_Values](/powershell/module/microsoft.powershell.core/About/about_Parameters_Default_Values).
+[about_Parameters_Default_Values](../Microsoft.PowerShell.Core/About/about_Parameters_Default_Values.md).
 
 ## PARAMETERS
 

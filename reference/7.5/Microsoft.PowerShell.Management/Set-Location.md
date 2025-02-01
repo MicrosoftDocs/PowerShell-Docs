@@ -108,7 +108,7 @@ specified in the command. For information about location stacks, see the [Notes]
 
 ### Example 5: Navigate location history using `+` or `-`
 
-```
+```powershell
 PS C:\> Set-Location -Path $env:SystemRoot
 PS C:\Windows> Set-Location -Path Cert:\
 PS Cert:\> Set-Location -Path HKLM:\

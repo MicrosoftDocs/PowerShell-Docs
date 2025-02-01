@@ -18,22 +18,22 @@ Suspends (pauses) one or more running services.
 ### InputObject (Default)
 
 ```
-Suspend-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Suspend-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
 
 ```
-Suspend-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Suspend-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,16 +50,16 @@ object that represents the services that you want to suspend.
 
 ### Example 1: Suspend a service
 
-```
-PS C:\> Suspend-Service -DisplayName "Telnet"
+```powershell
+Suspend-Service -DisplayName "Telnet"
 ```
 
 This command suspends the Telnet service (Tlntsvr) service on the local computer.
 
 ### Example 2: Display what would happen if you suspend services
 
-```
-PS C:\> Suspend-Service -Name lanman* -WhatIf
+```powershell
+Suspend-Service -Name lanman* -WhatIf
 ```
 
 This command tells what would happen if you suspended the services that have a service name that
@@ -67,8 +67,8 @@ starts with lanman. To suspend the services, rerun the command without the **Wha
 
 ### Example 3: Get and suspend a service
 
-```
-PS C:\> Get-Service schedule | Suspend-Service
+```powershell
+Get-Service schedule | Suspend-Service
 ```
 
 This command uses the `Get-Service` cmdlet to get an object that represents the Task Scheduler
@@ -78,7 +78,9 @@ This command uses the `Get-Service` cmdlet to get an object that represents the 
 ### Example 4: Suspend all services that can be suspended
 
 ```powershell
-PS C:\> Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"} | Suspend-Service -Confirm
+Get-Service |
+    Where-Object {$_.CanPauseAndContinue -eq "True"} |
+    Suspend-Service -Confirm
 ```
 
 This command suspends all of the services on the computer that can be suspended. It uses
