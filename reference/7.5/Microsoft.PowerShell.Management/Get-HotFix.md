@@ -60,7 +60,12 @@ The `Get-Hotfix` command uses parameters to get hotfixes installed on remote com
 are filtered by a specified description string.
 
 ```powershell
-Get-HotFix -Description Security* -ComputerName Server01, Server02 -Credential Domain01\admin01
+$hotFixParams = @{
+    Description = "Security*"
+    ComputerName = "Server01, Server02"
+    Credential = "Domain01\admin01"
+}
+Get-HotFix @hotFixParams
 ```
 
 `Get-Hotfix` filters the output with the **Description** parameter and the string **Security** that
@@ -216,7 +221,7 @@ The `Get-HotFix` output might vary on different operating systems.
 
 ## RELATED LINKS
 
-[about_Arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
+[about_Arrays](/powershell/module/microsoft.powershell.core/About/about_Arrays)
 
 [Add-Content](Add-Content.md)
 

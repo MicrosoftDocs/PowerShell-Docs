@@ -238,7 +238,7 @@ This cmdlet returns no output.
 
 This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI)
 Win32_Process class. For more information about this method, see
-[AttachDebugger method](https://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
+[AttachDebugger method](https://go.microsoft.com/fwlink/?LinkId=143640) in Microsoft Learn.
 
 ## RELATED LINKS
 

@@ -159,8 +159,7 @@ set to `False`.
 ### Example 7: Use Filters with Add-Content
 
 You can specify a filter to the `Add-Content` cmdlet. When using filters to qualify the **Path**
-parameter, you need to include a trailing asterisk (`*`) to indicate the contents of the
-path.
+parameter, you need to include a trailing asterisk (`*`) to indicate the contents of the path.
 
 The following command adds the word "Done" the content of all `*.txt` files in the `C:\Temp`
 directory.
@@ -235,7 +234,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.
@@ -429,8 +428,8 @@ You can use the `Add-Content` cmdlet to change the content of any alternate data
 block files that are downloaded from the Internet. If you verify that a downloaded file is safe, use
 the `Unblock-File` cmdlet.
 
-This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, `Add-Content` can
-target alternative data streams on both files and directories.
+This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, `Add-Content` can target
+alternative data streams on both files and directories.
 
 ```yaml
 Type: System.String
