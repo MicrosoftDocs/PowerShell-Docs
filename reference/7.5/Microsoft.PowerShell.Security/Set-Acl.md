@@ -438,4 +438,4 @@ can use it to change the security descriptors of files, directories, and registr
 
 [ObjectSecurity.SetAccessRuleProtection](xref:System.Security.AccessControl.ObjectSecurity.SetAccessRuleProtection%2A)
 
-[FileSystemRights](xref:sSystem.Security.AccessControl.FileSystemRights)
+[FileSystemRights](xref:System.Security.AccessControl.FileSystemRights)
