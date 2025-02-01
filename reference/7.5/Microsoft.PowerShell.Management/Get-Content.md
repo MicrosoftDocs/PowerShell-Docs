@@ -129,7 +129,8 @@ to create sample content in a file named `Stream.txt`.
 
 ```powershell
 Set-Content -Path .\Stream.txt -Value 'This is the content of the Stream.txt file'
-# Specify a wildcard to the Stream parameter to display all streams of the recently created file.
+# Specify a wildcard to the Stream parameter to display all streams of the recently
+# created file.
 Get-Item -Path .\Stream.txt -Stream *
 ```
 
@@ -168,7 +169,8 @@ This is the content of the Stream.txt file
 ```
 
 ```powershell
-# Use the Stream parameter of Add-Content to create a new Stream containing sample content.
+# Use the Stream parameter of Add-Content to create a new Stream containing sample
+# content.
 $addContentSplat = @{
     Path = '.\Stream.txt'
     Stream = 'NewStream'
@@ -212,7 +214,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 The **Stream** parameter is a dynamic parameter of the
-[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-string).
+[FileSystem provider](../microsoft.powershell.core/About/about_Filesystem_Provider.md#stream-string).
 By default `Get-Content` only retrieves data from the default, or `:$DATA` stream. **Streams** can
 be used to store hidden data such as attributes, security settings, or other data. They can also be
 stored on directories without being child items.

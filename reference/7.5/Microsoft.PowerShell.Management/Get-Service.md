@@ -71,8 +71,8 @@ Get-Service "wmi*"
 ### Example 3: Display services that include a search string
 
 This example displays services with a display name that includes the word `network`. Searching the
-display name finds network-related services even when the service name doesn't include `Net`, such as
-xmlprov, the Network Provisioning Service.
+display name finds network-related services even when the service name doesn't include `Net`, such
+as xmlprov, the Network Provisioning Service.
 
 ```powershell
 Get-Service -DisplayName "*network*"

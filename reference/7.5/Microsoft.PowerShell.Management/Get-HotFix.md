@@ -216,7 +216,7 @@ The `Get-HotFix` output might vary on different operating systems.
 
 ## RELATED LINKS
 
-[about_Arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)
+[about_Arrays](/powershell/module/microsoft.powershell.core/About/about_Arrays)
 
 [Add-Content](Add-Content.md)
 

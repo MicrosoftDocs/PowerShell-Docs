@@ -108,7 +108,8 @@ profile path, even when the directories in the path do not exist.
 After you create a profile, you can enter aliases, functions, and scripts in the profile to
 customize your shell.
 
-For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 and [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 ```powershell

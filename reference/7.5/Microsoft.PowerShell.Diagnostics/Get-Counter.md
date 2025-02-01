@@ -262,7 +262,8 @@ The pipeline is used with the `Where-Object` cmdlet to find a subset of the path
 counter sets complete list of counter paths, remove the pipeline (`|`) and `Where-Object` command.
 
 The `$_` is an automatic variable for the current object in the pipeline.
-For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ```powershell
 (Get-Counter -ListSet Memory).Paths | Where-Object { $_ -like "*Cache*" }
@@ -659,4 +660,4 @@ In PowerShell 7, when using the **ListSet** parameter, `Get-Counter` can't retri
 
 [Start-Job](../Microsoft.PowerShell.Core/Start-Job.md)
 
-[Where-Object](..//Microsoft.PowerShell.Core/Where-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
