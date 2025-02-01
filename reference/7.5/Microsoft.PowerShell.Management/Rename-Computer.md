@@ -17,16 +17,16 @@ Renames a computer.
 
 ```
 Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCredential>]
- [-LocalCredential <PSCredential>] [-NewName] <String> [-Force] [-Restart] [-WsmanAuthentication <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-LocalCredential <PSCredential>] [-NewName] <String> [-Force] [-Restart]
+ [-WsmanAuthentication <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 > **This cmdlet is only available on the Windows platform.**
 
-The `Rename-Computer` cmdlet renames the local computer or a remote computer.
-It renames one computer in each command.
+The `Rename-Computer` cmdlet renames the local computer or a remote computer. It renames one
+computer in each command.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -51,7 +51,13 @@ computers in the domain.
 The **Force** parameter suppresses the confirmation prompt.
 
 ```powershell
-Rename-Computer -ComputerName "Srv01" -NewName "Server001" -DomainCredential Domain01\Admin01 -Force
+$renameParams = @{
+    ComputerName = "Srv01"
+    NewName = "Server001"
+    DomainCredential = "Domain01\Admin01"
+    Force = $true
+}
+Rename-Computer @renameParams
 ```
 
 ## PARAMETERS
@@ -215,7 +221,8 @@ WSMan protocol. The acceptable values for this parameter are:
 
 The default value is **Default**.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
+For more information about the values of this parameter, see
+[AuthenticationMechanism Enumeration](xref:System.Management.Automation.Runspaces.AuthenticationMechanism).
 
 > [!WARNING]
 > Credential Security Service Provider (CredSSP) authentication, in which the user
@@ -278,7 +285,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

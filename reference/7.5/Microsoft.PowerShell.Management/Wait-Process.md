@@ -55,7 +55,7 @@ This example stops the **Notepad** process and then waits for the process to be 
 continues with the next command.
 
 ```powershell
-$nid = (Get-Process notepad).id
+$nid = (Get-Process notepad).Id
 Stop-Process -Id $nid
 Wait-Process -Id $nid
 ```

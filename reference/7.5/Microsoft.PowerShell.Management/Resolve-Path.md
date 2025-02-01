@@ -287,7 +287,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -316,7 +316,7 @@ The `*-Path` cmdlets work with the **FileSystem**, **Registry**, and **Certifica
 
 `Resolve-Path` is designed to work with any provider. To list the providers available in your
 session, type `Get-PSProvider`. For more information, see
-[about_providers](../microsoft.powershell.core/about/about_providers.md).
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 `Resolve-Path` only resolves existing paths. It cannot be used to resolve a location that does not
 exist yet.
