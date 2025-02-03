@@ -35,7 +35,7 @@ To run a `Get-PSCallStack` command while in the debugger, type `k` or `Get-PSCal
 ```powershell
 PS C:\> function my-alias {
 $p = $args[0]
-Get-Alias | where {$_.definition -like "*$p"} | format-table definition, name -auto
+Get-Alias | where {$_.Definition -like "*$p"} | Format-Table definition, name -auto
 }
 PS C:\ps-test> Set-PSBreakpoint -Command my-alias
 Command    : my-alias
@@ -47,18 +47,18 @@ Script     : prompt PS C:\> my-alias Get-Content
 
 Entering debug mode. Use h or ? for help.
 Hit Command breakpoint on 'prompt:my-alias'
-my-alias get-content
+my-alias Get-Content
 [DBG]: PS C:\ps-test> s
 $p = $args[0]
 DEBUG: Stepped to ':    $p = $args[0]    '
 [DBG]: PS C:\ps-test> s
-get-alias | Where {$_.Definition -like "*$p*"} | format-table Definition,
-[DBG]: PS C:\ps-test>get-pscallstack
+Get-Alias | Where {$_.Definition -like "*$p*"} | Format-Table Definition,
+[DBG]: PS C:\ps-test>Get-PSCallstack
 
 Name        CommandLineParameters         UnboundArguments              Location
 ----        ---------------------         ----------------              --------
 prompt      {}                            {}                            prompt
-my-alias    {}                            {get-content}                 prompt
+my-alias    {}                            {Get-Content}                 prompt
 prompt      {}                            {}                            prompt
 
 PS C:\> [DBG]: PS C:\ps-test> o
