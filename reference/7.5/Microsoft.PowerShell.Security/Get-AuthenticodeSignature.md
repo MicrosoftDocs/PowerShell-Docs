@@ -38,11 +38,9 @@ Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<
 > **This cmdlet is only available on the Windows platform.**
 
 The `Get-AuthenticodeSignature` cmdlet gets information about the Authenticode signature for a
-file or file content as a byte array.
-If the file is both embedded signed and Windows catalog signed,
-the Windows catalog signature is used.
-If the file is not signed, the information is retrieved, but
-the fields are blank.
+file or file content as a byte array. If the file is both embedded signed and Windows catalog
+signed, the Windows catalog signature is used. If the file is not signed, the information is
+retrieved, but the fields are blank.
 
 ## EXAMPLES
 
@@ -62,12 +60,14 @@ Get-AuthenticodeSignature test.ps1, test1.ps1, sign-file.ps1, makexml.ps1
 ```
 
 This command gets information about the Authenticode signature for the four files listed at the
-command line. In this example, the name of the **FilePath** parameter, which is optional, is omitted.
+command line. In this example, the name of the **FilePath** parameter, which is optional, is
+omitted.
 
 ### Example 3: Get only valid Authenticode signatures for multiple files
 
 ```powershell
-Get-ChildItem $PSHOME\*.* | ForEach-object {Get-AuthenticodeSignature $_} | Where-Object {$_.status -eq "Valid"}
+Get-ChildItem $PSHOME\*.* | ForEach-Object {Get-AuthenticodeSignature $_} |
+    Where-Object {$_.Status -eq "Valid"}
 ```
 
 This command lists all of the files in the `$PSHOME` directory that have a valid Authenticode
@@ -87,7 +87,11 @@ selects only the signature objects with a status of Valid.
 ### Example 4: Get the Authenticode signature for a file content specified as byte array
 
 ```powershell
-Get-AuthenticodeSignature -Content (Get-Content foo.ps1 -AsByteStream) -SourcePathorExtension ps1
+$authenticodeSignatureParams = @{
+    Content = (Get-Content foo.ps1 -AsByteStream)
+    SourcePathorExtension = "ps1"
+}
+Get-AuthenticodeSignature @authenticodeSignatureParams
 ```
 
 This command gets information about the Authenticode signature for the content of a file. In this
@@ -172,7 +176,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

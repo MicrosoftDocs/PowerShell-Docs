@@ -50,7 +50,9 @@ This example gets the content of a file in the current directory. The `LineNumbe
 has 100 lines in the format, **This is Line X** and is used in several examples.
 
 ```powershell
-1..100 | ForEach-Object { Add-Content -Path .\LineNumbers.txt -Value "This is line $_." }
+1..100 | ForEach-Object {
+    Add-Content -Path .\LineNumbers.txt -Value "This is line $_."
+}
 Get-Content -Path .\LineNumbers.txt
 ```
 
@@ -129,7 +131,8 @@ to create sample content in a file named `Stream.txt`.
 
 ```powershell
 Set-Content -Path .\Stream.txt -Value 'This is the content of the Stream.txt file'
-# Specify a wildcard to the Stream parameter to display all streams of the recently created file.
+# Specify a wildcard to the Stream parameter to display all streams of the recently
+# created file.
 Get-Item -Path .\Stream.txt -Stream *
 ```
 
@@ -168,7 +171,8 @@ This is the content of the Stream.txt file
 ```
 
 ```powershell
-# Use the Stream parameter of Add-Content to create a new Stream containing sample content.
+# Use the Stream parameter of Add-Content to create a new Stream containing sample
+# content.
 $addContentSplat = @{
     Path = '.\Stream.txt'
     Stream = 'NewStream'
@@ -212,7 +216,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 The **Stream** parameter is a dynamic parameter of the
-[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-string).
+[FileSystem provider](../Microsoft.PowerShell.Core/About/about_Filesystem_Provider.md#stream-string).
 By default `Get-Content` only retrieves data from the default, or `:$DATA` stream. **Streams** can
 be used to store hidden data such as attributes, security settings, or other data. They can also be
 stored on directories without being child items.
@@ -374,7 +378,7 @@ This parameter is available only in file system drives.
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.
@@ -486,7 +490,7 @@ it in single quotation marks. Single quotation marks tell PowerShell not to inte
 as escape sequences.
 
 For more information, see
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]

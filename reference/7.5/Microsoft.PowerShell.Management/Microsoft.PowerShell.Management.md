@@ -60,7 +60,8 @@ Gets the items and child items in one or more specified locations.
 
 ### [Get-Clipboard](Get-Clipboard.md)
 
-Gets the contents of the clipboard.  [!NOTE] > On Linux, this cmdlet requires the `xclip` utility to be in the path.
+Gets the contents of the clipboard.
+[!NOTE] > On Linux, this cmdlet requires the `xclip` utility to be in the path.
 
 ### [Get-ComputerInfo](Get-ComputerInfo.md)
 

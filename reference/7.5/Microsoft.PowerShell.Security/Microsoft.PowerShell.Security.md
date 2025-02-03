@@ -73,7 +73,8 @@ Sets the PowerShell execution policies for Windows computers.
 
 ### [Test-FileCatalog](Test-FileCatalog.md)
 
-Validates whether the hashes contained in a catalog file (.cat) matches the hashes of the actual files in order to validate their authenticity.
+Validates whether the hashes contained in a catalog file (.cat) matches the hashes of the actual
+files in order to validate their authenticity.
 
 ### [Unprotect-CmsMessage](Unprotect-CmsMessage.md)
 

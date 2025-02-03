@@ -108,7 +108,7 @@ specified in the command. For information about location stacks, see the [Notes]
 
 ### Example 5: Navigate location history using `+` or `-`
 
-```
+```powershell
 PS C:\> Set-Location -Path $env:SystemRoot
 PS C:\Windows> Set-Location -Path Cert:\
 PS Cert:\> Set-Location -Path HKLM:\
@@ -264,7 +264,7 @@ path-based operations using the current working directory specific to the curren
 
 The `Set-Location` cmdlet is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PSProvider`. For more information, see
-[about_Providers](../Microsoft.PowerShell.Core/about/about_Providers.md).
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 A stack is a last-in, first-out list in which only the most recently added item can be accessed. You
 add items to a stack in the order that you use them, and then retrieve them for use in the reverse

@@ -196,7 +196,9 @@ $getChildItemSplat = @{
     Eku = "*Client Authentication*"
 }
 Get-ChildItem @getChildItemSplat |
-    Where-Object {$_.SendAsTrustedIssuer -and $_.NotAfter -gt $ValidThrough }
+    Where-Object {
+        $_.SendAsTrustedIssuer -and $_.NotAfter -gt $ValidThrough
+    }
 ```
 
 ## Opening the Certificates MMC Snap-in
@@ -319,7 +321,7 @@ Start a remote session on the S1 computer using the `New-PSSession` cmdlet, and
 specify CredSSP authentication. Saves the session in the `$s` variable.
 
 ```powershell
-$s  = New-PSSession S1 -Authentication CredSSP -Credential Domain01\Admin01
+$s = New-PSSession S1 -Authentication CredSSP -Credential Domain01\Admin01
 ```
 
 Finally, use the `Invoke-Command` cmdlet to run a `Remove-Item` command in the
@@ -597,7 +599,7 @@ Get-Help Get-ChildItem -Path cert:
 <!-- link references -->
 [01]: ../../Microsoft.PowerShell.Core/About/about_Providers.md
 [02]: ../../Microsoft.PowerShell.Core/About/about_Signing.md
-[03]: /powershell/module/pki/new-selfsignedcertificate
+[03]: xref:PKI.New-SelfSignedCertificate
 [04]: /windows-server/security/tls/what-s-new-in-tls-ssl-schannel-ssp-overview#BKMK_TrustedIssuers
 [05]: xref:Microsoft.PowerShell.Core.Get-Help
 [06]: xref:Microsoft.PowerShell.Management.Get-ChildItem

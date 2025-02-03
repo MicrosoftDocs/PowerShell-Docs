@@ -30,7 +30,8 @@ To display the execution policies for each scope in the order of precedence, use
 The effective execution policy is determined by execution policies that are set by
 `Set-ExecutionPolicy` and Group Policy settings.
 
-For more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
+For more information, see
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
 ## EXAMPLES
 
@@ -232,7 +233,7 @@ whether scripts must be digitally signed before they are run.
 
 ## RELATED LINKS
 
-[about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md)
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md)
 
 [about_Group_Policy_Settings](../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md)
 
