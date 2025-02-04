@@ -11,7 +11,7 @@ community.
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
 
-## 2024-January
+## 2025-January
 
 New content
 

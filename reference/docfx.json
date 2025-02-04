@@ -41,19 +41,21 @@
         "docs-conceptual/**/*.md": "conceptual"
       },
       "ms.topic": {
-        "5.1/**/*": "managed-reference",
-        "7*/**/*": "managed-reference",
+        "5.1/**/*": "reference",
+        "7*/**/*": "reference",
         "docs-conceptual/community/contributing/**/*.md": "contributor-guide",
         "docs-conceptual/**/*.md": "conceptual",
-        "docs-conceptual/dev-cross-plat/**/*.md": "reference",
-        "docs-conceptual/developer/**/*.md": "reference",
+        "docs-conceptual/dev-cross-plat/**/*.md": "conceptual",
+        "docs-conceptual/developer/**/*.md": "conceptual",
         "docs-conceptual/lang-spec/**/*.md": "language-reference",
         "docs-conceptual/learn/*.md": "tutorial",
         "docs-conceptual/learn/deep-dives/*.md": "tutorial",
         "docs-conceptual/learn/ps101/*.md": "conceptual",
         "docs-conceptual/learn/remoting/*.md": "tutorial",
         "docs-conceptual/samples/**/*.md": "sample",
-        "docs-conceptual/whats-new/**/*.md": "whats-new"
+        "docs-conceptual/whats-new/**/*.md": "whats-new",
+        "docs-conceptual/windows-powershell/ise/*.md": "ui-reference",
+        "docs-conceptual/windows-powershell/ise/object-model/*.md": "reference"
       },
       "products": {
         "5.1/**/*": [

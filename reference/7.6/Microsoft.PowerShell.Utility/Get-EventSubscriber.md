@@ -113,7 +113,7 @@ Id  Name           State      HasMoreData  Location  Command
 ```powershell
 $Timer.Enabled = $True
 $Subscriber = Get-EventSubscriber -SourceIdentifier Timer.Random
-($Subscriber.action).gettype().fullname
+($Subscriber.action).GetType().fullname
 ```
 
 ```Output
