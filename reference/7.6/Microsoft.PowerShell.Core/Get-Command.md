@@ -115,7 +115,7 @@ This command uses the **ArgumentList** and **Syntax** parameters to get the synt
 the Certificate Provider adds to the session.
 
 ```powershell
-Get-Command  -Name Get-Childitem -Args Cert: -Syntax
+Get-Command  -Name Get-ChildItem -Args Cert: -Syntax
 ```
 
 When you compare the syntax displayed in the output with the syntax that's displayed when you omit
