@@ -378,7 +378,7 @@ This cmdlet returns no output.
   [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) class. This method
   requires the **SeShutdownPrivilege** privilege be enabled for the user account used to restart
   the machine.
-- On Linux and Mac OS, `Restart-Computer` uses the `/sbin/shutdown` bash tool.
+- On Linux and macOS, `Restart-Computer` uses the `/sbin/shutdown` bash tool.
 
 ## RELATED LINKS
 
