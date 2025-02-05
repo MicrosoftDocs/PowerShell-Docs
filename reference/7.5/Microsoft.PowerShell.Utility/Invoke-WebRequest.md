@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/18/2024
+ms.date: 02/05/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-WebRequest
@@ -604,11 +604,18 @@ format, the default encoding format is used instead. An example of a **ContentTy
 encoding format is `text/plain; charset=iso-8859-5`, which specifies the
 [Latin/Cyrillic](https://www.iso.org/standard/28249.html) alphabet.
 
-If this parameter is omitted and the request method is POST or PUT, `Invoke-WebRequest` sets the
-content type to `application/x-www-form-urlencoded`. Otherwise, the content type isn't specified in
-the call.
+If you omit the parameter, the content type may be different based on the HTTP method you use:
 
-**ContentType** is overridden when a **MultipartFormDataContent** object is supplied for **Body**.
+- For a POST method, the content type is `application/x-www-form-urlencoded`
+- For a PUT method, the content type is `application/json`
+- For other methods, the content type isn't specified in the request
+
+If you are using the **InFile** parameter to upload a file, you should set the content type.
+Usually, the type should be `application/octet-stream`. However, you need to set the content type
+based on the requirements of the endpoint.
+
+**ContentType** is overridden when the **Body** is a
+[MultipartFormDataContent](xref:System.Net.Http.MultipartFormDataContent) object.
 
 Starting in PowerShell 7.4, if you use this both this parameter and the **Headers** parameter to
 define the `Content-Type` header, the value specified in the **ContentType** parameter is used.
@@ -793,8 +800,12 @@ Accept wildcard characters: False
 
 ### -InFile
 
-Gets the content of the web request from a file. Enter a path and filename. If you omit the path,
-the default is the current location.
+Gets the content of the web request body from a file. Enter a path and filename. If you omit the
+path, the default is the current location.
+
+You also need to set the content type of the request. For example, to upload a file you should set
+the content type. Usually, the type should be `application/octet-stream`. However, you need to set
+the content type based on the requirements of the endpoint.
 
 ```yaml
 Type: System.String
