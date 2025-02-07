@@ -58,7 +58,7 @@ function TestFunction {
 }
 ```
 
-If you try to use the parameters, PowerShell interprets them as stings passed
+If you try to use the parameters, PowerShell interprets them as strings passed
 as positional parameter.
 
 ```powershell
