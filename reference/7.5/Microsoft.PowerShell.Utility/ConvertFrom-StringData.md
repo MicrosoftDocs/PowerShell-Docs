@@ -34,7 +34,7 @@ string must conform to the rules for a **DATA** section. For more information, s
 `ConvertFrom-StringData` supports escape character sequences that are allowed by conventional
 machine translation tools. That is, the cmdlet can interpret backslashes (`\`) as escape characters
 in the string data by using the
-[Regex.Unescape Method](/dotnet/api/system.text.regularexpressions.regex.unescape), instead of the
+[Regex.Unescape Method](xref:System.Text.RegularExpressions.Regex.Unescape%2a), instead of the
 PowerShell backtick character (`` ` ``) that would normally signal the end of a line in a script.
 Inside the here-string, the backtick character doesn't work. You can also preserve a literal
 backslash in your results by escaping it with a preceding backslash, like this: `\\`. Unescaped
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

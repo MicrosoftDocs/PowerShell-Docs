@@ -18,7 +18,8 @@ Starts an interactive debugging session with a runspace.
 ### RunspaceParameterSet (Default)
 
 ```
-Debug-Runspace [-Runspace] <Runspace> [-BreakAll] [-WhatIf] [-Confirm] [<CommonParameters>]
+Debug-Runspace [-Runspace] <Runspace> [-BreakAll] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### NameParameterSet

@@ -17,8 +17,8 @@ Compares two sets of objects.
 
 ```
 Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
- [-SyncWindow <Int32>] [-Property <Object[]>] [-ExcludeDifferent] [-IncludeEqual] [-PassThru]
- [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
+ [-SyncWindow <Int32>] [-Property <Object[]>] [-ExcludeDifferent] [-IncludeEqual]
+ [-PassThru] [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,7 +56,11 @@ The output displays only the lines that are different between the files. `Testfi
 content that appear in both files aren't displayed.
 
 ```powershell
-Compare-Object -ReferenceObject (Get-Content -Path C:\Test\Testfile1.txt) -DifferenceObject (Get-Content -Path C:\Test\Testfile2.txt)
+$objects = @{
+  ReferenceObject = (Get-Content -Path C:\Test\Testfile1.txt)
+  DifferenceObject = (Get-Content -Path C:\Test\Testfile2.txt)
+}
+Compare-Object @objects
 ```
 
 ```Output
@@ -174,7 +178,12 @@ output displayed by the default format for **System.Boolean** objects didn't dis
 In this example, we compare two different string that have the same length.
 
 ```powershell
-Compare-Object -ReferenceObject 'abc' -DifferenceObject 'xyz' -Property Length -IncludeEqual
+$objects = @{
+  ReferenceObject = 'abc'
+  DifferenceObject = 'xyz'
+  Property = 'Length'
+}
+Compare-Object @objects -IncludeEqual
 ```
 
 ```Output

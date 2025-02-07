@@ -25,7 +25,8 @@ ConvertFrom-Csv [[-Delimiter] <Char>] [-InputObject] <PSObject[]> [-Header <Stri
 ### UseCulture
 
 ```
-ConvertFrom-Csv -UseCulture [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
+ConvertFrom-Csv -UseCulture [-InputObject] <PSObject[]> [-Header <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -89,7 +90,7 @@ $Header = 'State', 'MoreData', 'StatusMessage', 'Location', 'Command',
           'BeginTime', 'EndTime', 'JobType', 'Output', 'Error', 'Progress',
           'Verbose', 'Debug', 'Warning', 'Information'
 # Delete the default header from $J
-$J = $J[1..($J.count - 1)]
+$J = $J[1..($J.Count - 1)]
 $J | ConvertFrom-Csv -Header $Header
 ```
 
