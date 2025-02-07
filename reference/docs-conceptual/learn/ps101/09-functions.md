@@ -578,7 +578,7 @@ function Test-MrParameterValidation {
 
 ## Verbose output
 
-Inline commands are useful if you're writing complex code, but users don't see them unless they look
+Inline comments are useful if you're writing complex code, but users don't see them unless they look
 at the code.
 
 The function in the following example has an inline comment in the `foreach` loop. While this
