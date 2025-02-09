@@ -25,8 +25,8 @@ Disable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confir
 ### Id
 
 ```
-Disable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-Runspace <Runspace>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Disable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-Runspace <Runspace>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -42,7 +42,7 @@ when you create them using the `Set-PSBreakpoint` cmdlet.
 A breakpoint is a point in a script where execution stops temporarily so that you can examine the
 instructions in the script. `Disable-PSBreakpoint` is one of several cmdlets designed for debugging
 PowerShell scripts. For more information about the PowerShell debugger, see
-[about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md).
+[about_Debuggers](../Microsoft.PowerShell.Core/About/about_Debuggers.md).
 
 ## EXAMPLES
 

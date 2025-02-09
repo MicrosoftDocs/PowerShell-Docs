@@ -41,7 +41,8 @@ Disable-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 ### ProcessNameParameterSet
 
 ```
-Disable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
+Disable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

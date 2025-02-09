@@ -18,8 +18,9 @@ Adds a Microsoft .NET class to a PowerShell session.
 ### FromSource (Default)
 
 ```
-Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
- [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
+Add-Type [-TypeDefinition] <String> [-Language <Language>]
+ [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
  [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
@@ -28,24 +29,24 @@ Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblie
 ```
 Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>]
  [-UsingNamespace <String[]>] [-Language <Language>] [-ReferencedAssemblies <String[]>]
- [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [-CompilerOptions <String[]>] [<CommonParameters>]
+ [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru]
+ [-IgnoreWarnings] [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
 ### FromPath
 
 ```
 Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
- [<CommonParameters>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
+ [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
 ### FromLiteralPath
 
 ```
-Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
- [<CommonParameters>]
+Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>]
+ [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru]
+ [-IgnoreWarnings] [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
 ### FromAssemblyName
@@ -451,7 +452,7 @@ Accept wildcard characters: True
 Specifies the output type of the output assembly. By default, no output type is specified. This
 parameter is valid only when an output assembly is specified in the command. For more information
 about the values, see
-[OutputAssemblyType Enumeration](/dotnet/api/microsoft.powershell.commands.outputassemblytype).
+[OutputAssemblyType Enumeration](xref:Microsoft.PowerShell.Commands.OutputAssemblyType).
 
 The acceptable values for this parameter are as follows:
 
@@ -541,7 +542,7 @@ Accept wildcard characters: False
 
 Specifies the source code that contains the type definitions. Enter the source code in a string or
 here-string, or enter a variable that contains the source code. For more information about
-here-strings, see [about_Quoting_Rules](../Microsoft.PowerShell.Core/about/about_Quoting_Rules.md).
+here-strings, see [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 Include a namespace declaration in your type definition. If you omit the namespace declaration, your
 type might have the same name as another type or the shortcut for another type, causing an
@@ -628,7 +629,7 @@ arbitrary path requires `Add-Type`, since those assemblies can't not be loaded a
 
 ## RELATED LINKS
 
-[about_Profiles](../Microsoft.PowerShell.Core/About/about_profiles.md)
+[about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md)
 
 [about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md)
 
@@ -636,7 +637,7 @@ arbitrary path requires `Add-Type`, since those assemblies can't not be loaded a
 
 [New-Object](New-Object.md)
 
-[OutputAssemblyType](/dotnet/api/microsoft.powershell.commands.outputassemblytype)
+[OutputAssemblyType](xref:Microsoft.PowerShell.Commands.OutputAssemblyType)
 
 [Platform Invoke (P/Invoke)](/dotnet/standard/native-interop/pinvoke)
 
