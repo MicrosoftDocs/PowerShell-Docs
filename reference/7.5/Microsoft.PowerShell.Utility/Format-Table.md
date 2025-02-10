@@ -142,11 +142,7 @@ Get-Service | Format-Table -Property Name, DependentServices
 displayed in the table.
 
 **Name** and **DependentServices** are two of the object type's properties. To view all the
-properties:
-
-```powershell
-Get-Service | Get-Member -MemberType Properties
-```
+properties: `Get-Service | Get-Member -MemberType Properties`
 
 ### Example 6: Format a process and calculate its running time
 
