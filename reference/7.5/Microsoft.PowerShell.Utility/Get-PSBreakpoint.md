@@ -24,19 +24,22 @@ Get-PSBreakpoint [[-Script] <String[]>] [-Runspace <Runspace>] [<CommonParameter
 ### Command
 
 ```
-Get-PSBreakpoint [[-Script] <String[]>] -Command <String[]> [-Runspace <Runspace>] [<CommonParameters>]
+Get-PSBreakpoint [[-Script] <String[]>] -Command <String[]> [-Runspace <Runspace>]
+ [<CommonParameters>]
 ```
 
 ### Variable
 
 ```
-Get-PSBreakpoint [[-Script] <String[]>] -Variable <String[]> [-Runspace <Runspace>] [<CommonParameters>]
+Get-PSBreakpoint [[-Script] <String[]>] -Variable <String[]> [-Runspace <Runspace>]
+ [<CommonParameters>]
 ```
 
 ### Type
 
 ```
-Get-PSBreakpoint [[-Script] <String[]>] [-Type] <BreakpointType[]> [-Runspace <Runspace>] [<CommonParameters>]
+Get-PSBreakpoint [[-Script] <String[]>] [-Type] <BreakpointType[]> [-Runspace <Runspace>]
+ [<CommonParameters>]
 ```
 
 ### Id

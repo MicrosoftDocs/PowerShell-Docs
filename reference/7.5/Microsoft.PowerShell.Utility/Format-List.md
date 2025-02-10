@@ -17,7 +17,8 @@ Formats the output as a list of properties in which each property appears on a n
 
 ```
 Format-List [[-Property] <Object[]>] [-GroupBy <Object>] [-View <string>] [-ShowError]
- [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>] [<CommonParameters>]
+ [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,12 +93,12 @@ The following examples show of the results of adding the **DisplayError** or **S
 parameters with an expression.
 
 ```powershell
-PC /> Get-Date | Format-List DayOfWeek,{ $_ / $null } -DisplayError
+PC /> Get-Date | Format-List DayOfWeek, { $_ / $null } -DisplayError
 
 DayOfWeek    : Friday
  $_ / $null  : #ERR
 
-PC /> Get-Date | Format-List DayOfWeek,{ $_ / $null } -ShowError
+PC /> Get-Date | Format-List DayOfWeek, { $_ / $null } -ShowError
 
 DayOfWeek    : Friday
  $_ / $null  :
@@ -340,11 +341,11 @@ parameter under any of the following conditions:
 
   - The wrapper types include:
 
-    - [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
-    - [System.Management.Automation.WarningRecord](/dotnet/api/System.Management.Automation.WarningRecord)
-    - [System.Management.Automation.VerboseRecord](/dotnet/api/System.Management.Automation.VerboseRecord)
-    - [System.Management.Automation.DebugRecord](/dotnet/api/System.Management.Automation.DebugRecord)
-    - [System.Management.Automation.InformationRecord](/dotnet/api/System.Management.Automation.InformationRecord)
+    - [System.Management.Automation.ErrorRecord](xref:System.Management.Automation.ErrorRecord)
+    - [System.Management.Automation.WarningRecord](xref:System.Management.Automation.WarningRecord)
+    - [System.Management.Automation.VerboseRecord](xref:System.Management.Automation.VerboseRecord)
+    - [System.Management.Automation.DebugRecord](xref:System.Management.Automation.DebugRecord)
+    - [System.Management.Automation.InformationRecord](xref:System.Management.Automation.InformationRecord)
 
 ## RELATED LINKS
 

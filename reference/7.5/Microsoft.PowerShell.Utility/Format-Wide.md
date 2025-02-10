@@ -16,9 +16,9 @@ Formats objects as a wide table that displays only one property of each object.
 ## SYNTAX
 
 ```
-Format-Wide [[-Property] <Object>] [-AutoSize] [-Column <int>] [-GroupBy <Object>] [-View <string>]
-  [-ShowError] [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
-  [<CommonParameters>]
+Format-Wide [[-Property] <Object>] [-AutoSize] [-Column <int>] [-GroupBy <Object>]
+ [-View <string>] [-ShowError] [-DisplayError] [-Force] [-Expand <string>]
+ [-InputObject <psobject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,7 +46,7 @@ output. The **Column** parameter specifies the number of columns.
 This command displays the names of registry keys in the `HKEY_CURRENT_USER\Software\Microsoft` key.
 
 ```powershell
-Get-ChildItem HKCU:\software\microsoft | Format-Wide -Property pschildname -AutoSize
+Get-ChildItem HKCU:\software\microsoft | Format-Wide -Property PSChildName -AutoSize
 ```
 
 The `Get-ChildItem` cmdlet gets objects representing the keys. The path is specified as `HKCU:`, one

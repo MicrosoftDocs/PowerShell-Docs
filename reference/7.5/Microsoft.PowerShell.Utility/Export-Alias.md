@@ -18,17 +18,17 @@ Exports information about currently defined aliases to a file.
 ### ByPath (Default)
 
 ```
-Export-Alias [-Path] <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append]
- [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Alias [-Path] <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>]
+ [-Append] [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>]
- [-Append] [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru]
+ [-As <ExportAliasFormat>] [-Append] [-Force] [-NoClobber] [-Description <String>]
+ [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ profile.
 ### Example 1: Export an alias
 
 ```powershell
-Export-Alias -Path "alias.csv"
+Export-Alias -Path "Alias.csv"
 ```
 
 This command exports current alias information to a file named Alias.csv in the current directory.
@@ -53,7 +53,7 @@ This command exports current alias information to a file named Alias.csv in the 
 ### Example 2: Export an alias unless the export file already exists
 
 ```powershell
-Export-Alias -Path "alias.csv" -NoClobber
+Export-Alias -Path "Alias.csv" -NoClobber
 ```
 
 This command exports the aliases in the current session to an Alias.csv file.
@@ -64,7 +64,7 @@ exists in the current directory.
 ### Example 3: Append aliases to a file
 
 ```powershell
-Export-Alias -Path "alias.csv" -Append -Description "Appended Aliases" -Force
+Export-Alias -Path "Alias.csv" -Append -Description "Appended Aliases" -Force
 ```
 
 This command appends the aliases in the current session to the Alias.csv file.

@@ -18,9 +18,9 @@ Formats the output as a table.
 ### All
 
 ```
-Format-Table [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap]
- [-GroupBy <Object>] [-View <string>] [-ShowError] [-DisplayError] [-Force] [-Expand <string>]
- [-InputObject <psobject>] [<CommonParameters>]
+Format-Table [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders]
+ [-Wrap] [-GroupBy <Object>] [-View <string>] [-ShowError] [-DisplayError] [-Force]
+ [-Expand <string>] [-InputObject <psobject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,7 +60,8 @@ table. The **AutoSize** parameter adjusts the column widths to minimize truncati
 In this example, processes are displayed in groups that have the same **BasePriority** property.
 
 ```powershell
-Get-Process | Sort-Object -Property BasePriority | Format-Table -GroupBy BasePriority -Wrap
+Get-Process | Sort-Object -Property BasePriority |
+    Format-Table -GroupBy BasePriority -Wrap
 ```
 
 The `Get-Process` cmdlet gets objects that represent each process on the computer and sends them
@@ -141,7 +142,11 @@ Get-Service | Format-Table -Property Name, DependentServices
 displayed in the table.
 
 **Name** and **DependentServices** are two of the object type's properties. To view all the
-properties: `Get-Service | Get-Member -MemberType Properties`.
+properties:
+
+```powershell
+Get-Service | Get-Member -MemberType Properties
+```
 
 ### Example 6: Format a process and calculate its running time
 
@@ -151,7 +156,10 @@ process from the current time.
 
 ```powershell
 Get-Process notepad |
-  Format-Table ProcessName, @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
+  Format-Table ProcessName, @{
+    Label = "TotalRunningTime"
+    Expression = {(Get-Date) - $_.StartTime}
+}
 ```
 
 ```Output
@@ -180,7 +188,7 @@ from remote computers.
 $Processes = Get-CimInstance -Class win32_process -Filter "name='notepad.exe'"
 $Processes | Format-Table ProcessName, @{
     Label = "Total Running Time"
-    Expression={(Get-Date) - $_.CreationDate}
+    Expression = {(Get-Date) - $_.CreationDate}
 }
 ```
 
@@ -210,7 +218,7 @@ The following examples show the results of adding the **DisplayError** or **Show
 with an expression.
 
 ```powershell
-Get-Date | Format-Table DayOfWeek,{ $_ / $null } -DisplayError
+Get-Date | Format-Table DayOfWeek, { $_ / $null } -DisplayError
 ```
 
 ```Output
@@ -220,7 +228,7 @@ Wednesday #ERR
 ```
 
 ```powershell
-Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
+Get-Date | Format-Table DayOfWeek, { $_ / $null } -ShowError
 ```
 
 ```Output
@@ -272,8 +280,8 @@ Accept wildcard characters: False
 
 Specifies the format of the collection object and the objects in the collection. This parameter is
 designed to format objects that support the
-[ICollection](/dotnet/api/system.collections.icollection)
-([System.Collections](/dotnet/api/system.collections)) interface. The default value is **EnumOnly**.
+[ICollection](xref:System.Collections.ICollection)([System.Collections](xref:System.Collections))
+interface. The default value is **EnumOnly**.
 The acceptable values for this parameter are as follows:
 
 - **EnumOnly**: Displays the properties of the objects in the collection.
@@ -542,11 +550,11 @@ parameter under any of the following conditions:
 
   - The wrapper types include:
 
-    - [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
-    - [System.Management.Automation.WarningRecord](/dotnet/api/System.Management.Automation.WarningRecord)
-    - [System.Management.Automation.VerboseRecord](/dotnet/api/System.Management.Automation.VerboseRecord)
-    - [System.Management.Automation.DebugRecord](/dotnet/api/System.Management.Automation.DebugRecord)
-    - [System.Management.Automation.InformationRecord](/dotnet/api/System.Management.Automation.InformationRecord)
+    - [System.Management.Automation.ErrorRecord](xref:System.Management.Automation.ErrorRecord)
+    - [System.Management.Automation.WarningRecord](xref:System.Management.Automation.WarningRecord)
+    - [System.Management.Automation.VerboseRecord](xref:System.Management.Automation.VerboseRecord)
+    - [System.Management.Automation.DebugRecord](xref:System.Management.Automation.DebugRecord)
+    - [System.Management.Automation.InformationRecord](xref:System.Management.Automation.InformationRecord)
 
 ## RELATED LINKS
 

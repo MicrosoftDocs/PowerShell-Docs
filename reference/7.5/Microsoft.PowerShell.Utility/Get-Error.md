@@ -11,7 +11,6 @@ title: Get-Error
 # Get-Error
 
 ## SYNOPSIS
-
 Gets and displays the most recent error messages from the current session.
 
 ## SYNTAX
@@ -47,7 +46,7 @@ In this example, `Get-Error` displays the details of the most recent error that 
 current session.
 
 ```powershell
-Get-Childitem -path /NoRealDirectory
+Get-ChildItem -Path /NoRealDirectory
 Get-Error
 ```
 
@@ -86,11 +85,11 @@ InvocationInfo        :
     ScriptLineNumber : 1
     OffsetInLine     : 1
     HistoryId        : 57
-    Line             : Get-Childitem -path c:\NoRealDirectory
+    Line             : Get-ChildItem -path c:\NoRealDirectory
     PositionMessage  : At line:1 char:1
-                       + Get-Childitem -path c:\NoRealDirectory
+                       + Get-ChildItem -path c:\NoRealDirectory
                        + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    InvocationName   : Get-Childitem
+    InvocationName   : Get-ChildItem
     CommandOrigin    : Internal
 ScriptStackTrace      : at <ScriptBlock>, <No file>: line 1
 PipelineIterationInfo :
@@ -155,7 +154,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
