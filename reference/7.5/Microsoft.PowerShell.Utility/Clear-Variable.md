@@ -16,8 +16,8 @@ Deletes the value of a variable.
 ## SYNTAX
 
 ```
-Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force] [-PassThru]
- [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force]
+ [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,7 +39,7 @@ This command removes the value of global variables that have names that begin wi
 ### Example 2: Clear a variable in a child scope but not the parent scope
 
 ```powershell
-$a=3
+$a = 3
 &{ Clear-Variable a }
 $a
 ```
@@ -163,7 +163,8 @@ The acceptable values for this parameter are:
 - `Script`
 
 You can also use a number relative to the current scope (0 through the number of scopes, where 0 is
-the current scope and 1 is its parent). Local is the default. For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+the current scope and 1 is its parent). Local is the default. For more information, see
+[about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String
@@ -213,7 +214,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

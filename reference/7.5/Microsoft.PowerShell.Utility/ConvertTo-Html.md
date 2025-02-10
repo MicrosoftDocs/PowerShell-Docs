@@ -19,22 +19,22 @@ Converts .NET objects into HTML that can be displayed in a Web browser.
 
 ```
 ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [[-Body] <String[]>]
- [[-Head] <String[]>] [[-Title] <String>] [-As <String>] [-CssUri <Uri>] [-PostContent <String[]>]
- [-PreContent <String[]>] [-Meta <Hashtable>] [-Charset <String>] [-Transitional]
- [<CommonParameters>]
+ [[-Head] <String[]>] [[-Title] <String>] [-As <String>] [-CssUri <Uri>]
+ [-PostContent <String[]>] [-PreContent <String[]>] [-Meta <Hashtable>]
+ [-Charset <String>] [-Transitional] [<CommonParameters>]
 ```
 
 ### Fragment
 
 ```
-ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>] [-Fragment]
- [-PostContent <String[]>] [-PreContent <String[]>] [<CommonParameters>]
+ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>]
+ [-Fragment] [-PostContent <String[]>] [-PreContent <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `ConvertTo-Html` cmdlet converts .NET objects into HTML that can be displayed in a
-Web browser. You can use this cmdlet to display the output of a command in a Web page.
+The `ConvertTo-Html` cmdlet converts .NET objects into HTML that can be displayed in a Web browser.
+You can use this cmdlet to display the output of a command in a Web page.
 
 You can use the parameters of `ConvertTo-Html` to select object properties, to specify a table or
 list format, to specify the HTML page title, to add text before and after the object, and to return
@@ -133,7 +133,7 @@ attribute in the tag contains the name of the style sheet.
 ### Example 6: Create a web page to display service objects
 
 ```powershell
-Get-Service | ConvertTo-Html -As LIST | Out-File services.htm
+Get-Service | ConvertTo-Html -As List | Out-File services.htm
 ```
 
 This command creates an HTML page of the service objects that the `Get-Service` cmdlet returns. The
@@ -168,7 +168,7 @@ omitted.
 ### Example 8: Create a web page to display PowerShell events
 
 ```powershell
-Get-EventLog -Log "Windows PowerShell" | ConvertTo-Html -Property id, level, task
+Get-EventLog -Log "Windows PowerShell" | ConvertTo-Html -Property ID, Level, Task
 ```
 
 This command uses the `Get-EventLog` cmdlet to get events from the Windows PowerShell event log.

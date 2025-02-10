@@ -89,7 +89,7 @@ The third command uses dot notation to get the value of the **Status** property 
 `$a`. As the output shows, the value is `Done`.
 
 ```powershell
-$A = Get-ChildItem c:\ps-test\test.txt
+$A = Get-ChildItem C:\ps-test\test.txt
 $A | Add-Member -NotePropertyName Status -NotePropertyValue Done
 $A.Status
 ```
@@ -211,25 +211,35 @@ In this example we create a custom object that contains two **NoteProperty** mem
 property is a string.
 
 ```powershell
-PS> $obj = [pscustomobject]@{
-      Name = 'Doris'
-      Age = '20'
+$user = [pscustomobject]@{
+    Name = 'Doris'
+    Age = '20'
 }
-PS> $obj | Add-Member -MemberType AliasProperty -Name 'intAge' -Value age -SecondValue uint32
-PS> $obj | Get-Member
+$addMemberSplat = @{
+    MemberType = 'AliasProperty'
+    Name = 'intAge'
+    Value = 'Age'
+    SecondValue = 'UInt32'
+}
+$user | Add-Member @addMemberSplat
+$user | Get-Member
+```
 
+```Output
    TypeName: System.Management.Automation.PSCustomObject
 
 Name        MemberType    Definition
 ----        ----------    ----------
-intAge      AliasProperty intAge = (System.UInt32)age
+intAge      AliasProperty intAge = (System.UInt32)Age
 Equals      Method        bool Equals(System.Object obj)
 GetHashCode Method        int GetHashCode()
 GetType     Method        type GetType()
 ToString    Method        string ToString()
 Age         NoteProperty  string Age=20
 Name        NoteProperty  string Name=Doris
+```
 
+```powershell
 PS> $obj
 
 Name  Age intAge
@@ -561,7 +571,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -611,4 +621,4 @@ methods are being added. For more information about the `$this` variable, see
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
-[System.Type.GetMethod()](/dotnet/api/system.type.getmethod)
+[System.Type.GetMethod()](xref:System.Type.GetMethod%2a)
