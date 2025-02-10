@@ -85,9 +85,9 @@ InvocationInfo        :
     ScriptLineNumber : 1
     OffsetInLine     : 1
     HistoryId        : 57
-    Line             : Get-ChildItem -path c:\NoRealDirectory
+    Line             : Get-ChildItem -Path c:\NoRealDirectory
     PositionMessage  : At line:1 char:1
-                       + Get-ChildItem -path c:\NoRealDirectory
+                       + Get-ChildItem -Path c:\NoRealDirectory
                        + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     InvocationName   : Get-ChildItem
     CommandOrigin    : Internal
