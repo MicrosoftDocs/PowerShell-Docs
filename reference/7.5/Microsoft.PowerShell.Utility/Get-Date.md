@@ -18,33 +18,33 @@ Gets the current date and time.
 ### DateAndFormat (Default)
 
 ```
-Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
- [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-Format <String>] [-AsUTC] [<CommonParameters>]
+Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
+ [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
+ [-DisplayHint <DisplayHintType>] [-Format <String>] [-AsUTC] [<CommonParameters>]
 ```
 
 ### DateAndUFormat
 
 ```
-Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
- [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- -UFormat <String> [<CommonParameters>]
+Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
+ [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
+ [-DisplayHint <DisplayHintType>] -UFormat <String> [<CommonParameters>]
 ```
 
 ### UnixTimeSecondsAndFormat
 
 ```
-Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
- [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-Format <String>] [-AsUTC] [<CommonParameters>]
+Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
+ [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
+ [-DisplayHint <DisplayHintType>] [-Format <String>] [-AsUTC] [<CommonParameters>]
 ```
 
 ### UnixTimeSecondsAndUFormat
 
 ```
-Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
- [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- -UFormat <String> [<CommonParameters>]
+Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
+ [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
+ [-DisplayHint <DisplayHintType>] -UFormat <String> [<CommonParameters>]
 ```
 
 ## DESCRIPTION

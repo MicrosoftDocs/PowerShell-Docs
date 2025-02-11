@@ -90,14 +90,18 @@ Path      : C:\Users\user1\Downloads\Contoso8_1_ENT.iso
 
 ### Example 3: Compute the hash value of a stream
 
-For this example, we get are using **System.Net.WebClient** to download a package from the
-[Powershell release page](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4). The release
+For this example, we are using **System.Net.WebClient** to download a package from the
+[PowerShell release page](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4). The release
 page also documents the SHA256 hash of each package file. We can compare the published hash value
 with the one we calculate with `Get-FileHash`.
 
 ```powershell
 $wc = [System.Net.WebClient]::new()
-$pkgurl = 'https://github.com/PowerShell/PowerShell/releases/download/v6.2.4/powershell_6.2.4-1.debian.9_amd64.deb'
+
+$baseurl = 'https://github.com/PowerShell/PowerShell/releases/download/v6.2.4/'
+$pkgname = 'powershell_6.2.4-1.debian.9_amd64.deb'
+$pkgurl = $baseurl + $pkgname
+
 $publishedHash = '8E28E54D601F0751922DE24632C1E716B4684876255CF82304A9B19E89A9CCAC'
 $FileHash = Get-FileHash -InputStream ($wc.OpenRead($pkgurl))
 $FileHash.Hash -eq $publishedHash

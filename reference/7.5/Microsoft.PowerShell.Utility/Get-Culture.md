@@ -40,9 +40,9 @@ information about the current language settings on the system, such as the keybo
 display format of items such as numbers, currency, and dates.
 
 You can also use the `Get-UICulture` cmdlet, which gets the current user interface culture on the
-system, and the [Set-Culture](/powershell/module/international/set-culture) cmdlet in the
-International module. The user-interface (UI) culture determines which text strings are used for
-user interface elements, such as menus and messages.
+system, and the [Set-Culture](xref:International.Set-Culture) cmdlet in the International module.
+The user-interface (UI) culture determines which text strings are used for user interface elements,
+such as menus and messages.
 
 ## EXAMPLES
 
@@ -249,6 +249,6 @@ culture.
 
 ## RELATED LINKS
 
-[Set-Culture](/powershell/module/international/set-culture)
+[Set-Culture](xref:International.Set-Culture)
 
 [Get-UICulture](Get-UICulture.md)
