@@ -11,7 +11,6 @@ title: Export-PSSession
 # Export-PSSession
 
 ## SYNOPSIS
-
 Exports commands from another session and saves them in a PowerShell module.
 
 ## SYNTAX
@@ -21,9 +20,9 @@ Exports commands from another session and saves them in a PowerShell module.
 ```
 Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>]
  [[-CommandName] <String[]>] [-AllowClobber] [-ArgumentList <Object[]>]
- [-CommandType <CommandTypes>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [[-FormatTypeName] <String[]>] [-Certificate <X509Certificate2>] [-Session] <PSSession>
- [<CommonParameters>]
+ [-CommandType <CommandTypes>] [-Module <String[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [[-FormatTypeName] <String[]>]
+ [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -69,8 +68,23 @@ formatting data into the Server01 module.
 This example exports all of the `Get` and `Set` commands from a server.
 
 ```powershell
-$S = New-PSSession -ConnectionUri https://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
-Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $PSHOME\Modules\Exchange -Encoding ASCII
+$newSession = @{
+    ConnectionUri = 'https://exchange.microsoft.com/mailbox'
+    Credential = 'exchangeadmin01@hotmail.com'
+    Authentication = 'Negotiate'
+}
+$S = New-PSSession @newSession
+
+$exportSession = @{
+    Session = $S
+    Module = 'exch*'
+    CommandName = 'Get-*', 'Set-*'
+    FormatTypeName = '*'
+    OutputModule = "$PSHOME\Modules\Exchange"
+    Encoding = 'ASCII'
+}
+
+Export-PSSession @exportSession
 ```
 
 These commands export the `Get` and `Set` commands from a Microsoft Exchange Server snap-in on a
@@ -85,8 +99,21 @@ the local computer. The cmdlets from the module are added to the current session
 be used.
 
 ```powershell
-$S = New-PSSession -ComputerName Server01 -Credential Server01\User01
-Export-PSSession -Session $S -OutputModule TestCmdlets -Type Cmdlet -CommandName *test* -FormatTypeName *
+$newSession = @{
+    ComputerName = 'Server01'
+    Credential = 'Server01\User01'
+}
+$S = New-PSSession @newSession
+
+$exportSession = @{
+    Session = $S
+    OutputModule = 'TestCmdlets'
+    Type = 'Cmdlet'
+    CommandName = '*test*'
+    FormatTypeName = '*'
+}
+Export-PSSession @exportSession
+
 Remove-PSSession $S
 Import-Module TestCmdlets
 Get-Help Test*
@@ -264,7 +291,8 @@ The acceptable values for this parameter are as follows:
   (`$env:path`).
 - `Filter` and `Function`: All PowerShell functions.
 - `Script` Script blocks in the current session.
-- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
+- `Workflow` A PowerShell workflow. For more information, see
+  [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **CommandType** parameter
@@ -307,7 +335,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2a).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.

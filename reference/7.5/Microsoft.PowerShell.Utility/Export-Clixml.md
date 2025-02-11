@@ -18,21 +18,21 @@ Creates an XML-based representation of an object or objects and stores it in a f
 ### ByPath (Default)
 
 ```
-Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Export-Clixml` cmdlet serialized an object into a Common Language Infrastructure (CLI)
-XML-based representation stores it in a file. You can then use the `Import-Clixml` cmdlet to
+The `Export-Clixml` cmdlet serializes an object into a Common Language Infrastructure (CLI)
+XML-based representation and stores it in a file. You can then use the `Import-Clixml` cmdlet to
 recreate the saved object based on the contents of that file. For more information about CLI, see
 [Language independence](/dotnet/standard/language-independence).
 
@@ -192,7 +192,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.

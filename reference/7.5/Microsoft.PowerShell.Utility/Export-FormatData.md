@@ -18,35 +18,37 @@ Saves formatting data from the current session in a formatting file.
 ### ByPath (Default)
 
 ```
-Export-FormatData -InputObject <ExtendedTypeDefinition[]> -Path <String> [-Force] [-NoClobber]
- [-IncludeScriptBlock] [<CommonParameters>]
+Export-FormatData -InputObject <ExtendedTypeDefinition[]> -Path <String> [-Force]
+ [-NoClobber] [-IncludeScriptBlock] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> [-Force] [-NoClobber]
- [-IncludeScriptBlock] [<CommonParameters>]
+Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> [-Force]
+ [-NoClobber] [-IncludeScriptBlock] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Export-FormatData` cmdlet creates PowerShell formatting files (format.ps1xml) from
-the formatting objects in the current session. It takes the **ExtendedTypeDefinition** objects that
+The `Export-FormatData` cmdlet creates PowerShell formatting files (format.ps1xml) from the
+formatting objects in the current session. It takes the **ExtendedTypeDefinition** objects that
 `Get-FormatData` returns and saves them in a file in XML format.
 
-PowerShell uses the data in formatting files (format.ps1xml) to generate the default display
-of Microsoft .NET Framework objects in the session. You can view and edit the formatting files and
+PowerShell uses the data in formatting files (format.ps1xml) to generate the default display of
+Microsoft .NET Framework objects in the session. You can view and edit the formatting files and
 use the Update-FormatData cmdlet to add the formatting data to a session.
 
-For more information about formatting files in PowerShell, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
+For more information about formatting files in PowerShell, see
+[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
 
 ## EXAMPLES
 
 ### Example 1: Export session format data
 
 ```powershell
-Get-FormatData -TypeName "*" | Export-FormatData -Path "allformat.ps1xml" -IncludeScriptBlock
+Get-FormatData -TypeName "*" |
+    Export-FormatData -Path "AllFormat.ps1xml" -IncludeScriptBlock
 ```
 
 This command exports all of the format data in the session to the AllFormat.ps1xml file.
@@ -55,7 +57,7 @@ The command uses the `Get-FormatData` cmdlet to get the format data in the sessi
 (all) for the **TypeName** parameter directs the cmdlet to get all of the data in the session.
 
 The command uses a pipeline operator (`|`) to send the format data from the `Get-FormatData` command
-to the `Export-FormatData` cmdlet, which exports the format data to the AllFormat.ps1 file.
+to the `Export-FormatData` cmdlet, which exports the format data to the AllFormat.ps1xml file.
 
 The `Export-FormatData` command uses the **IncludeScriptBlock** parameter to include script blocks
 in the format data in the file.
@@ -63,8 +65,8 @@ in the format data in the file.
 ### Example 2: Export format data for a type
 
 ```powershell
-$F = Get-FormatData -TypeName "helpinfoshort"
-Export-FormatData -InputObject $F -Path "c:\test\help.format.ps1xml" -IncludeScriptBlock
+$F = Get-FormatData -TypeName "HelpInfoShort"
+Export-FormatData -InputObject $F -Path "c:\test\Help.format.ps1xml" -IncludeScriptBlock
 ```
 
 These commands export the format data for the **HelpInfoShort** type to the Help.format.ps1xml file.
@@ -79,8 +81,9 @@ script blocks in the output.
 ### Example 3: Export format data without a script block
 
 ```powershell
-Get-FormatData -TypeName "System.Diagnostics.Process" | Export-FormatData -Path process.format.ps1xml
-Update-FormatData -PrependPath ".\process.format.ps1xml"
+Get-FormatData -TypeName "System.Diagnostics.Process" |
+    Export-FormatData -Path process.format.ps1xml
+Update-FormatData -PrependPath ".\Process.format.ps1xml"
 Get-Process p*
 ```
 
@@ -103,9 +106,9 @@ it to the Process.format.ps1xml file in the current directory.
 In this case, the `Export-FormatData` command does not use the **IncludeScriptBlock** parameter.
 
 The second command uses the `Update-FormatData` cmdlet to add the Process.format.ps1xml file to the
-current session. The command uses the **PrependPath** parameter to ensure that the formatting data for
-process objects in the Process.format.ps1xml file is found before the standard formatting data for
-process objects.
+current session. The command uses the **PrependPath** parameter to ensure that the formatting data
+for process objects in the Process.format.ps1xml file is found before the standard formatting data
+for process objects.
 
 The third command shows the effects of this change. The command uses the `Get-Process` cmdlet to
 get processes that have names that begin with P. The output shows that property values that are
@@ -205,9 +208,9 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a location for the output file.
-Enter a path (optional) and file name with a format.ps1xml file name extension.
-If you omit the path, `Export-FormatData` creates the file in the current directory.
+Specifies a location for the output file. Enter a path (optional) and file name with a
+format.ps1xml file name extension. If you omit the path, `Export-FormatData` creates the file in
+the current directory.
 
 If you use a file name extension other than .ps1xml, the `Update-FormatData` cmdlet will not
 recognize the file.
@@ -232,7 +235,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -16,9 +16,9 @@ Uses a customized view to format the output.
 ## SYNTAX
 
 ```
-Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>] [-View <String>]
- [-ShowError] [-DisplayError] [-Force] [-Expand <String>] [-InputObject <PSObject>]
- [<CommonParameters>]
+Format-Custom [[-Property] <Object[]>] [-Depth <Int32>] [-GroupBy <Object>]
+ [-View <String>] [-ShowError] [-DisplayError] [-Force] [-Expand <String>]
+ [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -64,7 +64,6 @@ class DateTime
   DayOfWeek = Friday
    $_ / $null  = #ERR
 }
-
 
 PC /> Get-Date | Format-Custom DayOfWeek,{ $_ / $null } -ShowError
 

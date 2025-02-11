@@ -63,7 +63,12 @@ Elapsed  Event      System.Timers.ElapsedEventHandler Elapsed(System.Object, Sys
 ```
 
 ```powershell
-Register-ObjectEvent -InputObject $Timer -EventName Elapsed -SourceIdentifier Timer.Elapsed
+$params = @{
+    InputObject = $Timer
+    EventName = 'Elapsed'
+    SourceIdentifier = 'Timer.Elapsed'
+}
+Register-ObjectEvent @params
 Get-EventSubscriber
 ```
 
@@ -113,7 +118,7 @@ Id  Name           State      HasMoreData  Location  Command
 ```powershell
 $Timer.Enabled = $True
 $Subscriber = Get-EventSubscriber -SourceIdentifier Timer.Random
-($Subscriber.action).gettype().fullname
+($Subscriber.Action).GetType().FullName
 ```
 
 ```Output
@@ -121,7 +126,7 @@ System.Management.Automation.PSEventJob
 ```
 
 ```powershell
-$Subscriber.action | Format-List -Property *
+$Subscriber.Action | Format-List -Property *
 ```
 
 ```Output
@@ -141,7 +146,7 @@ ChildJobs     : {}
 ```
 
 ```powershell
-& $Subscriber.action.module {$Random}
+& $Subscriber.Action.Module {$Random}
 ```
 
 The third command uses the `Register-ObjectEvent` cmdlet to register the Elapsed event of the timer
