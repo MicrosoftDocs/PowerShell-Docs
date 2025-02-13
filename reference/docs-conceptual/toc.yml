@@ -8,6 +8,8 @@ items:
         href: overview.md
       - name: What is Windows PowerShell?
         href: what-is-windows-powershell.md
+      - name: What is a command shell?
+        href: what-is-a-command-shell.md
       - name: What is a PowerShell command?
         href: powershell-commands.md
       - name: Discover PowerShell
