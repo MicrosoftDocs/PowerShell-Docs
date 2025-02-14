@@ -521,6 +521,10 @@ and second level of subdirectories. By default directory names and filenames are
 output.
 
 > [!NOTE]
+> The **Depth** parameter has no effect when used with the **Include** parameter. To work around
+> this issue, use the **Filter** parameter instead. This is fixed in PowerShell 6.
+
+> [!NOTE]
 > On a Windows computer from PowerShell or **cmd.exe**, you can display a graphical view of a
 > directory structure with the **tree.com** command.
 
@@ -801,6 +805,10 @@ after the inclusions, which can affect the final output.
 > [!NOTE]
 > The **Include** and **Exclude** parameters have no effect when used with the **LiteralPath**
 > parameter. This is fixed in PowerShell 7.
+
+> [!NOTE]
+> The **Depth** parameter has no effect when used with the **Include** parameter. To work around
+> this issue, use the **Filter** parameter instead. This is fixed in PowerShell 6.
 
 ```yaml
 Type: System.String[]
