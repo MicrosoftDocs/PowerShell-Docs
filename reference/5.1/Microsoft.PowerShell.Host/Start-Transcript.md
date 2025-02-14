@@ -266,6 +266,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
+> [!NOTE]
+> The `Write-Information` logic is reversed in `Start-Transcript`. This means if the
+> **InformationPreference** is set to `Continue`, Information messages will be written to the
+> console, but not to the transcript file. If the **InformationPreference** is set to
+> `SilentlyContinue`, Information messages will not be written to the console, but will be written
+> to the transcript file. This is fixed in PowerShell 6.
+
 ## INPUTS
 
 ### None
