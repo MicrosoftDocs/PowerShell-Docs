@@ -1,7 +1,7 @@
 ---
 description: Describes the PowerShell execution policies and explains how to manage them.
 Locale: en-US
-ms.date: 10/07/2024
+ms.date: 02/14/2025
 no-loc: [Bypass, Default, Restricted, Undefined, Unrestricted, Process, Scope, MachinePolicy, about_Group_Policy_Settings]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -315,15 +315,9 @@ The **Turn on Script Execution** policy settings are as follows:
 
 The PowerShellExecutionPolicy.adm and PowerShellExecutionPolicy.admx files add
 the **Turn on Script Execution** policy to the Computer Configuration and User
-Configuration nodes in Group Policy Editor in the following paths.
-
-For Windows XP and Windows Server 2003:
+Configuration nodes in Group Policy Editor in the following path:
 
 `Administrative Templates\Windows Components\Windows PowerShell`
-
-For Windows Vista and later versions of Windows:
-
-`Administrative Templates\Classic Administrative Templates\Windows Components\Windows PowerShell`
 
 Policies set in the Computer Configuration node take precedence over policies
 set in the User Configuration node.
