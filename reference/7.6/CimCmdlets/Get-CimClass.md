@@ -26,8 +26,8 @@ Get-CimClass [[-ClassName] <string>] [[-Namespace] <string>] [-Amended]
 ### SessionSet
 
 ```
-Get-CimClass [[-ClassName] <string>] [[-Namespace] <string>] -CimSession <CimSession[]> [-Amended]
- [-OperationTimeoutSec <uint>] [-MethodName <string>] [-PropertyName <string>]
+Get-CimClass [[-ClassName] <string>] [[-Namespace] <string>] -CimSession <CimSession[]>
+ [-Amended] [-OperationTimeoutSec <uint>] [-MethodName <string>] [-PropertyName <string>]
  [-QualifierName <string>] [<CommonParameters>]
 ```
 

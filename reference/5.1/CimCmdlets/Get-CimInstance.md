@@ -18,17 +18,17 @@ Gets the CIM instances of a class from a CIM server.
 ### ClassNameComputerSet (Default)
 
 ```
-Get-CimInstance [-ClassName] <String> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-QueryDialect <String>] [-Shallow] [-Filter <String>]
- [-Property <String[]>] [<CommonParameters>]
+Get-CimInstance [-ClassName] <String> [-ComputerName <String[]>] [-KeyOnly]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-QueryDialect <String>] [-Shallow]
+ [-Filter <String>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### ResourceUriSessionSet
 
 ```
-Get-CimInstance -CimSession <CimSession[]> -ResourceUri <Uri> [-KeyOnly] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>]
- [<CommonParameters>]
+Get-CimInstance -CimSession <CimSession[]> -ResourceUri <Uri> [-KeyOnly]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### QuerySessionSet
@@ -42,31 +42,31 @@ Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-Namespace <Str
 ### ClassNameSessionSet
 
 ```
-Get-CimInstance -CimSession <CimSession[]> [-ClassName] <String> [-KeyOnly] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-QueryDialect <String>] [-Shallow] [-Filter <String>]
- [-Property <String[]>] [<CommonParameters>]
+Get-CimInstance -CimSession <CimSession[]> [-ClassName] <String> [-KeyOnly]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-QueryDialect <String>] [-Shallow]
+ [-Filter <String>] [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### CimInstanceSessionSet
 
 ```
-Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [<CommonParameters>]
+Get-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>]
+ [-OperationTimeoutSec <UInt32>] [-InputObject] <CimInstance> [<CommonParameters>]
 ```
 
 ### CimInstanceComputerSet
 
 ```
-Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [<CommonParameters>]
+Get-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>]
+ [-OperationTimeoutSec <UInt32>] [-InputObject] <CimInstance> [<CommonParameters>]
 ```
 
 ### ResourceUriComputerSet
 
 ```
-Get-CimInstance -ResourceUri <Uri> [-ComputerName <String[]>] [-KeyOnly] [-Namespace <String>]
- [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>] [-Property <String[]>]
- [<CommonParameters>]
+Get-CimInstance -ResourceUri <Uri> [-ComputerName <String[]>] [-KeyOnly]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-Shallow] [-Filter <String>]
+ [-Property <String[]>] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
@@ -142,7 +142,16 @@ the key property `@{ "Handle"=0 }` and stores it in a variable named `$x`. The v
 a CIM instance to the `Get-CimInstance` cmdlet to get a particular instance.
 
 ```powershell
-$x = New-CimInstance -ClassName Win32_Process -Namespace root\cimv2 -Property @{"Handle"=0} -Key Handle -ClientOnly
+$instance = @{
+    ClassName = 'Win32_Process'
+    Namespace = 'root\cimv2'
+    Properties = @{
+        Handle = 0
+    }
+    Key = 'Handle'
+    ClientOnly = $true
+}
+$x = New-CimInstance @instance
 Get-CimInstance -CimInstance $x
 ```
 
@@ -153,7 +162,7 @@ the variables `$x` and `$y`. The variable `$x` is then formatted in a table cont
 **Name** and **KernelModeTime** properties, the table set to **AutoSize**.
 
 ```powershell
-$x,$y = Get-CimInstance -ClassName Win32_Process
+$x, $y = Get-CimInstance -ClassName Win32_Process
 $x | Format-Table -Property Name, KernelModeTime -AutoSize
 ```
 
