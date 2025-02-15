@@ -18,63 +18,65 @@ Invokes a method of a CIM class.
 ### ClassNameComputerSet (Default)
 
 ```
-Invoke-CimMethod [-ClassName] <String> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Invoke-CimMethod [-ClassName] <String> [-ComputerName <String[]>]
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>]
+ [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ClassNameSessionSet
 
 ```
-Invoke-CimMethod [-ClassName] <String> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Invoke-CimMethod [-ClassName] <String> -CimSession <CimSession[]>
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>]
+ [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceUriComputerSet
 
 ```
-Invoke-CimMethod -ResourceUri <Uri> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Invoke-CimMethod -ResourceUri <Uri> [-ComputerName <String[]>]
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>]
+ [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimInstanceSessionSet
 
 ```
-Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> -CimSession <CimSession[]>
- [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance>
+ -CimSession <CimSession[]> [[-Arguments] <IDictionary>] [-MethodName] <String>
+ [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimInstanceComputerSet
 
 ```
-Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance> [-ComputerName <String[]>]
- [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Invoke-CimMethod [-ResourceUri <Uri>] [-InputObject] <CimInstance>
+ [-ComputerName <String[]>] [[-Arguments] <IDictionary>] [-MethodName] <String>
+ [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceUriSessionSet
 
 ```
-Invoke-CimMethod -ResourceUri <Uri> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Invoke-CimMethod -ResourceUri <Uri> -CimSession <CimSession[]>
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-Namespace <String>]
+ [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassComputerSet
 
 ```
-Invoke-CimMethod [-CimClass] <CimClass> [-ComputerName <String[]>] [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-CimMethod [-CimClass] <CimClass> [-ComputerName <String[]>]
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassSessionSet
 
 ```
-Invoke-CimMethod [-CimClass] <CimClass> -CimSession <CimSession[]> [[-Arguments] <IDictionary>]
- [-MethodName] <String> [-OperationTimeoutSec <UInt32>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-CimMethod [-CimClass] <CimClass> -CimSession <CimSession[]>
+ [[-Arguments] <IDictionary>] [-MethodName] <String> [-OperationTimeoutSec <UInt32>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
@@ -124,7 +126,11 @@ If the **InputObject** parameter is specified, the cmdlet works in one of the fo
 This example invokes the **Terminate** method of the **Win32_Process** class.
 
 ```powershell
-Invoke-CimMethod -Query 'select * from Win32_Process where name like "notepad%"' -MethodName "Terminate"
+$method = @{
+  Query = 'select * from Win32_Process where name like "notepad%"'
+  MethodName = "Terminate"
+}
+Invoke-CimMethod @method
 ```
 
 ### Example 2: Invoke a method using CIM instance object
@@ -447,7 +453,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
