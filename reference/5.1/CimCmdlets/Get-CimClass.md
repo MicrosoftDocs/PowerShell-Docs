@@ -18,17 +18,17 @@ Gets a list of CIM classes in a specific namespace.
 ### ComputerSet (Default)
 
 ```
-Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>] [-OperationTimeoutSec <UInt32>]
- [-ComputerName <String[]>] [-MethodName <String>] [-PropertyName <String>]
- [-QualifierName <String>] [<CommonParameters>]
+Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>]
+ [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-MethodName <String>]
+ [-PropertyName <String>] [-QualifierName <String>] [<CommonParameters>]
 ```
 
 ### SessionSet
 
 ```
-Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>] [-OperationTimeoutSec <UInt32>]
- -CimSession <CimSession[]> [-MethodName <String>] [-PropertyName <String>]
- [-QualifierName <String>] [<CommonParameters>]
+Get-CimClass [[-ClassName] <String>] [[-Namespace] <String>]
+ [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-MethodName <String>]
+ [-PropertyName <String>] [-QualifierName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

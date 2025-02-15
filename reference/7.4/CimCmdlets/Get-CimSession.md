@@ -136,7 +136,7 @@ Protocol     : WSMAN
 This example gets the CIM session that has an **Id** of 2.
 
 ```powershell
-Get-CimSession -ID 2
+Get-CimSession -Id 2
 ```
 
 ```Output
