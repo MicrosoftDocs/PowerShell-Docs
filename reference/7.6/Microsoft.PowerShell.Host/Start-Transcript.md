@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 01/06/2025
+ms.date: 02/18/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
@@ -92,7 +92,7 @@ $hostname   = hostname
 $version    = $PSVersionTable.PSVersion.ToString()
 $datetime   = Get-Date -f 'yyyyMMddHHmmss'
 $filename   = "Transcript-${username}-${hostname}-${version}-${datetime}.txt"
-$Transcript = (Join-Path -Path $sharepath -ChildPath $filename).ToString()
+$Transcript = Join-Path -Path $sharepath -ChildPath $filename
 Start-Transcript
 ```
 
