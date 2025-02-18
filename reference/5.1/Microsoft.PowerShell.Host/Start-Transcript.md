@@ -266,6 +266,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 -WarningAction, and -WarningVariable. For more information, see
 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
+
 ## INPUTS
 
 ### None
@@ -284,6 +285,13 @@ To stop a transcript, use the `Stop-Transcript` cmdlet.
 
 To record an entire session, add the `Start-Transcript` command to your profile. For more
 information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
+
+> [!NOTE]
+> When you use `Start-Transcript`, the default value of `$InformationPreference` is changed to
+> `Continue`. Output from `Write-Information` is written to the console, but not to the transcript
+> file. If the `$InformationPreference` is set to `SilentlyContinue`, Information messages aren't
+> written to the console, but are written to the transcript file. This is fixed in PowerShell 6 and
+> higher.
 
 ## RELATED LINKS
 
