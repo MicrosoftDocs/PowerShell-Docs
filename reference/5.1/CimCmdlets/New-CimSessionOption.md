@@ -18,8 +18,8 @@ Specifies advanced options for the New-CimSession cmdlet.
 ### ProtocolTypeSet (Default)
 
 ```
-New-CimSessionOption [-Protocol] <ProtocolType> [-UICulture <CultureInfo>] [-Culture <CultureInfo>]
- [<CommonParameters>]
+New-CimSessionOption [-Protocol] <ProtocolType> [-UICulture <CultureInfo>]
+ [-Culture <CultureInfo>] [<CommonParameters>]
 ```
 
 ### WSManParameterSet
@@ -28,15 +28,16 @@ New-CimSessionOption [-Protocol] <ProtocolType> [-UICulture <CultureInfo>] [-Cul
 New-CimSessionOption [-NoEncryption] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck]
  [-EncodePortInServicePrincipalName] [-Encoding <PacketEncoding>] [-HttpPrefix <Uri>]
  [-MaxEnvelopeSizeKB <UInt32>] [-ProxyAuthentication <PasswordAuthenticationMechanism>]
- [-ProxyCertificateThumbprint <String>] [-ProxyCredential <PSCredential>] [-ProxyType <ProxyType>]
- [-UseSsl] [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
+ [-ProxyCertificateThumbprint <String>] [-ProxyCredential <PSCredential>]
+ [-ProxyType <ProxyType>] [-UseSsl] [-UICulture <CultureInfo>] [-Culture <CultureInfo>]
+ [<CommonParameters>]
 ```
 
 ### DcomParameterSet
 
 ```
-New-CimSessionOption [-Impersonation <ImpersonationType>] [-PacketIntegrity] [-PacketPrivacy]
- [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
+New-CimSessionOption [-Impersonation <ImpersonationType>] [-PacketIntegrity]
+ [-PacketPrivacy] [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,7 +72,14 @@ parameter, the credentials specified by the **ProxyCredential** parameter, and s
 command is to skip the CA check, skip the CN check, and use SSL.
 
 ```powershell
-New-CimSessionOption -ProxyAuthentication Kerberos -ProxyCredential $cred -SkipCACheck -SkipCNCheck -UseSsl
+$option = @{
+    ProxyAuthentication = 'Kerberos'
+    ProxyCredential = $cred
+    SkipCACheck = $true
+    SkipCNCheck = $true
+    UseSsl = $true
+}
+New-CimSessionOption @option
 ```
 
 ### Example 3: Create a CIM session options object with the culture specified

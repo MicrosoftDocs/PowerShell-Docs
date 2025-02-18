@@ -19,46 +19,48 @@ Creates a CIM instance.
 
 ```
 New-CimInstance [-ClassName] <String> [-Key <String[]>] [[-Property] <IDictionary>]
- [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-ClientOnly]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>]
+ [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ClassNameSessionSet
 
 ```
 New-CimInstance [-ClassName] <String> [-Key <String[]>] [[-Property] <IDictionary>]
- [-Namespace <String>] [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-ClientOnly]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]>
+ [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceUriSessionSet
 
 ```
 New-CimInstance -ResourceUri <Uri> [-Key <String[]>] [[-Property] <IDictionary>]
- [-Namespace <String>] [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceUriComputerSet
 
 ```
 New-CimInstance -ResourceUri <Uri> [-Key <String[]>] [[-Property] <IDictionary>]
- [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassSessionSet
 
 ```
-New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
- -CimSession <CimSession[]> [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>]
+ [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-ClientOnly] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassComputerSet
 
 ```
-New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
- [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>]
+ [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-ClientOnly] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -77,7 +79,12 @@ This example creates an instance of a CIM Class named win32_environment in the r
 on the computer.
 
 ```powershell
-New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";VariableValue="testvalue";UserName="domain\user"}
+$prop = @{
+    Name = "testvar"
+    VariableValue = "testvalue"
+    UserName = "domain\user"
+}
+New-CimInstance -ClassName Win32_Environment -Property $prop
 ```
 
 No client side validation is performed if the class does not exist, the properties are wrong, or if
@@ -91,7 +98,12 @@ of the variable are then passed to the `New-CimInstance` cmdlet.
 
 ```powershell
 $class = Get-CimClass -ClassName Win32_Environment
-New-CimInstance -CimClass $class -Property @{Name="testvar";VariableValue="testvalue";UserName="Contoso\User1"}
+$prop = @{
+    Name = "testvar"
+    VariableValue = "testvalue"
+    UserName = "Contoso\User1"
+}
+New-CimInstance -CimClass $class -Property $prop
 ```
 
 ### Example 3: Create a dynamic instance on the client
@@ -102,7 +114,16 @@ computer without getting the instance from the server. The new instance is store
 on the server.
 
 ```powershell
-$a = New-CimInstance -ClassName Win32_Process -Property @{Handle=0} -Key Handle -ClientOnly
+$instance = @{
+    ClassName = 'Win32_Process'
+    Property = @{
+        Handle = 0
+    }
+    Key = 'Handle'
+    ClientOnly = $true
+}
+$a = New-CimInstance @instance
+
 Get-CimInstance -CimInstance $a
 Invoke-CimMethod -CimInstance $a -MethodName GetOwner
 ```
@@ -387,7 +408,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
