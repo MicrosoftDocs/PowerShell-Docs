@@ -522,7 +522,7 @@ output.
 
 > [!NOTE]
 > The **Depth** parameter has no effect when used with the **Include** parameter. To work around
-> this issue, use the **Filter** parameter instead. This is fixed in PowerShell 6.
+> this issue, use the **Filter** parameter instead. This is fixed in PowerShell 6 and higher.
 
 > [!NOTE]
 > On a Windows computer from PowerShell or **cmd.exe**, you can display a graphical view of a
