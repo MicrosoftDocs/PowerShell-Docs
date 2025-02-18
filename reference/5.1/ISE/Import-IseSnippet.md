@@ -80,7 +80,7 @@ This example gets snippets in all installed modules in the **PSModulePath** envi
 ```powershell
 ($env:PSModulePath).split(";") |
   ForEach-Object {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} |
-    ForEach-Object {$_.fullname}
+    ForEach-Object {$_.Fullname}
 ```
 
 ### Example 4: Import all module snippets

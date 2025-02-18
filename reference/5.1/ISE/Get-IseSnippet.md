@@ -45,10 +45,13 @@ Get-IseSnippet
 
 ### Example 2: Copy all user-defined snippets from remote computers to a shared directory
 
-This example copies all of the user-created snippets from a group of remote computers to a shared Snippets directory.
+This example copies all of the user-created snippets from a group of remote computers to a shared
+Snippets directory.
 
 ```powershell
-Invoke-Command -Computer (Get-Content Servers.txt) {Get-IseSnippet | Copy-Item -Destination \\Server01\Share01\Snippets}
+Invoke-Command -Computer (Get-Content Servers.txt) -ScriptBlock {
+    Get-IseSnippet | Copy-Item -Destination \\Server01\Share01\Snippets
+}
 ```
 
 `Invoke-Command` runs `Get-IseSnippet` on the computers in the `Servers.txt` file. A pipeline
@@ -57,8 +60,8 @@ that is specified by the **Destination** parameter.
 
 ### Example 3: Display the title and text of each snippet on a local computer
 
-This example uses the `Get-IseSnippet` and `Select-Xml` cmdlets to display the title and text of each
-snippet on the local computer.
+This example uses the `Get-IseSnippet` and `Select-Xml` cmdlets to display the title and text of
+each snippet on the local computer.
 
 ```powershell
 #Parse-Snippet Function
@@ -93,7 +96,8 @@ Text:  (c) Fabrikam, Inc. 2012
 
 ### Example 4: Display the title and description of all snippets in the session
 
-This example displays the title and description of all snippets in the session, including built-in snippets, user-defined snippets, and imported snippets.
+This example displays the title and description of all snippets in the session, including built-in
+snippets, user-defined snippets, and imported snippets.
 
 ```powershell
 $PSISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description

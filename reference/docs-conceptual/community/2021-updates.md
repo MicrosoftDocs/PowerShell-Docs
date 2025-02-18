@@ -259,7 +259,7 @@ New content
 Content updates
 
 - Converted [about_remote_faq](/powershell/scripting/learn/remoting/powershell-remoting-faq) to new
-  Yaml format and moved to conceptual TOC
+  YAML format and moved to conceptual TOC
 - Moved **PSDesiredStateConfiguration** out of 7.2 docs and into PowerShell-Docs-Modules
   - DSC is being removed from PowerShell to become an optional module that is loaded from the
     PowerShell Gallery

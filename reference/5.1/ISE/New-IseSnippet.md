@@ -15,8 +15,8 @@ Creates a Windows PowerShell ISE code snippet.
 ## SYNTAX
 
 ```
-New-IseSnippet [-Title] <String> [-Description] <String> [-Text] <String> [-Author <String>]
- [-CaretOffset <Int32>] [-Force] [<CommonParameters>]
+New-IseSnippet [-Title] <String> [-Description] <String> [-Text] <String>
+ [-Author <String>] [-CaretOffset <Int32>] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Create a Comment-Based help snippet
 
-```
+```powershell
 New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
     .SYNOPSIS
 
@@ -64,7 +64,7 @@ This command creates a Comment-BasedHelp snippet for Windows PowerShell ISE. It 
 
 ### Example 2: Create a mandatory snippet
 
-```
+```powershell
 $M = @'
 Param
 (
@@ -74,7 +74,14 @@ Param
 )
 '@
 
-New-ISESnippet -Text $M -Title Mandatory -Description "Adds a mandatory function parameter." -Author "Patti Fuller, Fabrikam Corp." -Force
+$snippet = @{
+    Text = $M
+    Title = 'Mandatory'
+    Description = 'Adds a mandatory function parameter.'
+    Author = 'Patti Fuller, Fabrikam Corp.'
+    Force = $true
+}
+New-ISESnippet @snippet
 ```
 
 This example creates a snippet named **Mandatory** for Windows PowerShell ISE. The first command
@@ -84,8 +91,10 @@ the same name.
 
 ### Example 3: Copy a mandatory snippet from a folder to a destination folder
 
-```
-Copy-Item "$HOME\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml" -Destination "\\Server\Share"
+```powershell
+$path = "$HOME\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml"
+$destination = "\\Server\Share"
+Copy-Item -Path $path -Destination $destination
 ```
 
 This command uses the `Copy-Item` cmdlet to copy the **Mandatory** snippet from the folder where
@@ -228,7 +237,8 @@ is created, but an error message appears when Windows PowerShell tries to add th
 snippet to the session. To use the new snippet (and other unsigned user-created snippets), change
 the execution policy, and then restart Windows PowerShell ISE.
 
-For more information about Windows PowerShell execution policies, see [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
+For more information about Windows PowerShell execution policies, see
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
 - To change a snippet, edit the snippet file. You can edit snippet files in the Script pane of
   Windows PowerShell ISE.
