@@ -18,43 +18,43 @@ Creates a compressed archive, or zipped file, from specified files and directori
 ### Path (Default)
 
 ```
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithUpdate
 
 ```
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] -Update
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] -Update [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithForce
 
 ```
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] -Force
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] -Force [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithUpdate
 
 ```
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
- -Update [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] -Update [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithForce
 
 ```
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
- -Force [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] -Force [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -184,7 +184,8 @@ This example sends a directory down the pipeline to create an archive. Files are
 doesn't include the root directory, but its files and subdirectories are included in the archive.
 
 ```powershell
-Get-ChildItem -Path C:\LogFiles | Compress-Archive -DestinationPath C:\Archives\PipelineDir.zip
+Get-ChildItem -Path C:\LogFiles |
+    Compress-Archive -DestinationPath C:\Archives\PipelineDir.zip
 ```
 
 `Get-ChildItem` uses the **Path** parameter to specify the `C:\LogFiles` root directory. Each
