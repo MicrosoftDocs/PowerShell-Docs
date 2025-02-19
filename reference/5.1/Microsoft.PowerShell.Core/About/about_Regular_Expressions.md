@@ -30,7 +30,7 @@ more about their syntax and usage at the links below.
 - [Select-String][11]
 - [-match and -replace operators][07]
 - [-split operator][09]
-- [switch statement with -regex option][10]
+- [switch statement with -Regex option][10]
 
 PowerShell regular expressions are case-insensitive by default. Each method
 shown above has a different way to force case sensitivity.

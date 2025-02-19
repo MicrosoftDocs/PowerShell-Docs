@@ -487,7 +487,7 @@ condition obtains, the action is performed.
 Syntax 1:
 
 ```Syntax
-switch [-regex|-wildcard|-exact][-casesensitive] ( <value> )
+switch [-Regex|-Wildcard|-Exact][-CaseSensitive] ( <value> )
 {
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
@@ -500,7 +500,7 @@ switch [-regex|-wildcard|-exact][-casesensitive] ( <value> )
 Syntax 2:
 
 ```Syntax
-switch [-regex|-wildcard|-exact][-casesensitive] -file <filename>
+switch [-Regex|-Wildcard|-Exact][-CaseSensitive] -File <filename>
 {
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
    <string>|<number>|<variable>|{ <expression> } {<statement list>}
