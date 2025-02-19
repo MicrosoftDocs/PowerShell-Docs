@@ -63,10 +63,10 @@ labeled-statement:
 
 Description:
 
-An iteration statement ([§8.4][§8.4]) or a switch statement ([§8.6][§8.6]) may optionally be preceded
-immediately by one statement label, *label*. A statement label is used as the optional target of a
-break ([§8.5.1][§8.5.1]) or continue ([§8.5.2][§8.5.2]) statement. However, a label does not alter the flow of
-control.
+An iteration statement ([§8.4][§8.4]) or a switch statement ([§8.6][§8.6]) may optionally be
+preceded immediately by one statement label, *label*. A statement label is used as the optional
+target of a break ([§8.5.1][§8.5.1]) or continue ([§8.5.2][§8.5.2]) statement. However, a label
+does not alter the flow of control.
 
 White space is not permitted between the colon (`:`) and the token that follows it.
 
@@ -228,14 +228,14 @@ governing arguments are as follows:
 - Putting parentheses around an argument causes that expression to be evaluated with the result
   being passed instead of the text of the original expression.
 
-- To pass an argument that looks like a switch parameter ([§2.3.4][§2.3.4]) but is not intended as such,
-  enclose that argument in quotes.
+- To pass an argument that looks like a switch parameter ([§2.3.4][§2.3.4]) but is not intended as
+  such, enclose that argument in quotes.
 
 - When specifying an argument that matches a parameter having the `[switch]` type constraint
-  ([§8.10.5][§8.10.5]), the presence of the argument name on its own causes that parameter to be set to
-  `$true`. However, the parameter's value can be set explicitly by appending a suffix to the
-  argument. For example, given a type constrained parameter *p*, an argument of `-p:$true` sets p to
-  True, while `-p:$false` sets p to False.
+  ([§8.10.5][§8.10.5]), the presence of the argument name on its own causes that parameter to be
+  set to `$true`. However, the parameter's value can be set explicitly by appending a suffix to the
+  argument. For example, given a type constrained parameter *p*, an argument of `-p:$true` sets p
+  to True, while `-p:$false` sets p to False.
 
 - An argument of `--` indicates that all arguments following it are to be passed in their actual
   form as though double quotes were placed around them.
@@ -258,16 +258,16 @@ For information about parameter binding see [§8.14][§8.14]. For information ab
 [§3.8][§3.8].
 
 Once argument processing has been completed, the command is invoked. If the invoked command
-terminates normally ([§8.5.4][§8.5.4]), control reverts to the point in the script or function immediately
-following the command invocation. For a description of the behavior on abnormal termination see
-`break` ([§8.5.1][§8.5.1]), `continue` ([§8.5.2][§8.5.2]), `throw` ([§8.5.3][§8.5.3]), `exit` ([§8.5.5][§8.5.5]), `try`
-([§8.7][§8.7]), and `trap` ([§8.8][§8.8]).
+terminates normally ([§8.5.4][§8.5.4]), control reverts to the point in the script or function
+immediately following the command invocation. For a description of the behavior on abnormal
+termination see `break` ([§8.5.1][§8.5.1]), `continue` ([§8.5.2][§8.5.2]), `throw`
+([§8.5.3][§8.5.3]), `exit` ([§8.5.5][§8.5.5]), `try` ([§8.7][§8.7]), and `trap` ([§8.8][§8.8]).
 
 Ordinarily, a command is invoked by using its name followed by any arguments. However, the
 command-invocation operator, &, can be used. If the command name contains unescaped white space, it
-must be quoted and invoked with this operator. As a script block has no name, it too must be invoked
-with this operator. For example, the following invocations of a command call `Get-Factorial` are
-equivalent:
+must be quoted and invoked with this operator. As a script block has no name, it too must be
+invoked with this operator. For example, the following invocations of a command call
+`Get-Factorial` are equivalent:
 
 ```powershell
 Get-Factorial 5
@@ -292,7 +292,9 @@ New-Object -ArgumentList 3,2 -TypeName 'int[,]'
 
 dir e:\PowerShell\Scripts\*statement*.ps1 | Foreach-Object {$_.Length}
 
-dir e:\PowerShell\Scripts\*.ps1 | Select-String -List "catch" | Format-Table path,linenumber -AutoSize
+dir e:\PowerShell\Scripts\*.ps1 |
+    Select-String -List "catch" |
+    Format-Table path,linenumber -AutoSize
 ```
 
 ## 8.3 The if statement
@@ -786,15 +788,15 @@ switch-parameters:
     switch-parameters switch-parameter
 
 switch-parameter:
-    -regex
-    -wildcard
-    -exact
-    -casesensitive
-    -parallel
+    -Regex
+    -Wildcard
+    -Exact
+    -CaseSensitive
+    -Parallel
 
 switch-condition:
     ( new-lines~opt~ pipeline new-lines~opt~ )
-    -file new-lines~opt~ switch-filename
+    -File new-lines~opt~ switch-filename
 
 switch-filename:
     command-argument
@@ -847,26 +849,26 @@ that *statement-block*'s *switch-clause-condition*.
 Matching of non-strings is done by testing for equality ([§7.8.1][§7.8.1]).
 
 If the matching involves strings, by default, the comparison is case-insensitive. The presence of
-the *switch-parameter* `-casesensitive` makes the comparison case-sensitive.
+the *switch-parameter* `-CaseSensitive` makes the comparison case-sensitive.
 
 A pattern may contain wildcard characters ([§3.15][§3.15]), in which case, wildcard string comparisons
-are performed, but only if the *switch-parameter* -wildcard is present. By default, the comparison
+are performed, but only if the *switch-parameter* `-Wildcard` is present. By default, the comparison
 is case-insensitive.
 
 A pattern may contain a regular expression ([§3.16][§3.16]), in which case, regular expression string
-comparisons are performed, but only if the *switch-parameter* `-regex` is present. By default, the
-comparison is case-insensitive. If `-regex` is present and a pattern is matched, `$matches` is
+comparisons are performed, but only if the *switch-parameter* `-Regex` is present. By default, the
+comparison is case-insensitive. If `-Regex` is present and a pattern is matched, `$matches` is
 defined in the *switch-clause* *statement-block* for that pattern.
 
 A *switch-parameter* may be abbreviated; any distinct leading part of a parameter may be used. For
-example, `‑regex`, `‑rege`, `‑reg`, `‑re`, and `‑r` are equivalent.
+example, `‑Regex`, `‑Rege`, `‑Reg`, `‑Re`, and `‑R` are equivalent.
 
 If conflicting *switch-parameter*s are specified, the lexically final one prevails. The presence of
-`‑exact` disables `-regex` and `-wildcard`; it has no affect on `‑case`, however.
+`‑Exact` disables `-Regex` and `-Wildcard`; it has no affect on `‑Case`, however.
 
-If the *switch-parameter* `‑parallel` is specified, the behavior is implementation defined.
+If the *switch-parameter* `‑Parallel` is specified, the behavior is implementation defined.
 
-The *switch-parameter* `‑parallel` is only allowed in a workflow ([§8.10.2][§8.10.2]).
+The *switch-parameter* `‑Parallel` is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
 If a pattern is a *script-block-expression*, that block is evaluated and the result is converted to
 bool, if necessary. If the result has the value `$true`, the corresponding *statement-block* is
@@ -880,7 +882,7 @@ while that switch is executing.
 A switch statement may have a label, and it may contain labeled and unlabeled break ([§8.5.1][§8.5.1]) and
 continue ([§8.5.2][§8.5.2]) statements.
 
-If *switch-condition* is `-file` *switch-filename*, instead of iterating over the values in an
+If *switch-condition* is `-File` *switch-filename*, instead of iterating over the values in an
 expression, the switch iterates over the values in the file designated by *switch-filename*.The file
 is read a line at a time with each line comprising a value. Line terminator characters are not
 included in the values.
@@ -901,13 +903,13 @@ for ($i = 0; $i -lt $s.Length; ++$i) {
     }
 }
 
-switch -wildcard ("abc") {
+switch -Wildcard ("abc") {
     a* { "a*, $_" }
     ?B? { "?B? , $_" }
     default { "default, $_" }
 }
 
-switch -regex -casesensitive ("abc") {
+switch -Regex -CaseSensitive ("abc") {
     ^a* { "a*" }
     ^A* { "A*" }
 }

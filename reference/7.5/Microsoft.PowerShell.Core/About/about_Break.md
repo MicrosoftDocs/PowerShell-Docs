@@ -132,7 +132,7 @@ specific condition:
 
 ```powershell
 $var = "word2"
-switch -regex ($var) {
+switch -Regex ($var) {
     "word2" {
       Write-Host "Exact" $_
       break

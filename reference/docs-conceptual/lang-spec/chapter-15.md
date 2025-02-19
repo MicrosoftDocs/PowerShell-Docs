@@ -656,11 +656,11 @@ switch-parameters:
     switch-parameters switch-parameter
 
 switch-parameter:
-    -regex
-    -wildcard
-    -exact
-    -casesensitive
-    -parallel
+    -Regex
+    -Wildcard
+    -Exact
+    -CaseSensitive
+    -Parallel
 
 switch-condition:
     ( new-lines~opt~ pipeline new-lines~opt~ )
