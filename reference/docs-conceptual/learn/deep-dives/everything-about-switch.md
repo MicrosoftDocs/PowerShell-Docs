@@ -190,7 +190,7 @@ The matches aren't case-sensitive by default. If you need to be case-sensitive, 
 
 ### -Wildcard
 
-We can enable wildcard support with the `-wildcard` switch. This uses the same wildcard logic as the
+We can enable wildcard support with the `-Wildcard` switch. This uses the same wildcard logic as the
 `-like` operator to do each match.
 
 ``` powershell
@@ -247,7 +247,7 @@ I have more examples of using regex in another article I wrote:
 ### -File
 
 A little known feature of the switch statement is that it can process a file with the `-File`
-parameter. You use `-file` with a path to a file instead of giving it a variable expression.
+parameter. You use `-File` with a path to a file instead of giving it a variable expression.
 
 ``` powershell
 switch -Wildcard -File $path
@@ -289,7 +289,7 @@ Whatever the expression evaluates to is the value used for the match.
 ### Multiple matches
 
 You may have already picked up on this, but a `switch` can match to multiple conditions. This is
-especially true when using `-wildcard` or `-regex` matches. You can add the same condition multiple
+especially true when using `-Wildcard` or `-Regex` matches. You can add the same condition multiple
 times and all are triggered.
 
 ``` powershell
@@ -568,7 +568,7 @@ action with named matches.
 ``` powershell
 $message = 'my ssn is 123-23-3456 and credit card: 1234-5678-1234-5678'
 
-switch -regex ($message)
+switch -Regex ($message)
 {
     '(?<SSN>\d\d\d-\d\d-\d\d\d\d)'
     {
