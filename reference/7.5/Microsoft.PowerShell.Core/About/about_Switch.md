@@ -110,14 +110,14 @@ conditions. It's equivalent to an `else` clause in an `if` statement. Only one
   comparison is case-insensitive.
 - **CaseSensitive** - Performs a case-sensitive match. If the match clause is
   not a string, this parameter is ignored.
-- **File**- Takes input from a file rather than a `<test-expression>`. The file
-  is read a line at a time and evaluated by the `switch` statement. By default,
-  the comparison is case-insensitive. The **File** parameter only supports one
-  file. If multiple **File** parameters are included, only the last one is
-  used.For more information see [File parameter examples][01].
+- **File** - Takes input from a file rather than a `<test-expression>`. The
+  file is read a line at a time and evaluated by the `switch` statement. By
+  default, the comparison is case-insensitive. The **File** parameter only
+  supports one file. If multiple **File** parameters are included, only the
+  last one is used. For more information see [File parameter examples][01].
 - **Regex** - Performs regular expression matching of the value to the
   condition. If the match clause isn't a string, this parameter is ignored.
-  The comparison is case-insensitive. The `$matches` automatic variable is
+  The comparison is case-insensitive. The `$Matches` automatic variable is
   available for use within the matching statement block.
 
 > [!NOTE]
@@ -327,7 +327,7 @@ switch -Regex ($target) {
         }
     '^(http[s]?)\://.*$'
         {
-            "$_ is a web address that uses $($matches[1])"
+            "$_ is a web address that uses $($Matches[1])"
             break
         }
 }
@@ -401,12 +401,12 @@ Using the `switch` statement with the **File** parameter is an efficient way to
 process large files line by line. PowerShell streams the lines of the file to
 the `switch` statement. Each line is processed individually.
 
-You can terminate
-the processing before reaching the end of the file by using the `break` keyword
-in the action statement. The `switch` statement is more efficient than using
-`Get-Content` to process large files line by line.
+You can terminate the processing before reaching the end of the file by using
+the `break` keyword in the action statement. The `switch` statement is more
+efficient than using `Get-Content` to process large files line by line.
 
-You can combine `switch -File` with `-Wildcard` or `-Regex` for flexible and efficient line-by-line pattern matching.
+You can combine `switch -File` with `-Wildcard` or `-Regex` for flexible and
+efficient line-by-line pattern matching.
 
 The following example reads the `README.md` in the PowerShell-Docs repository.
 It outputs each line until it reaches the line that starts with `##`.
