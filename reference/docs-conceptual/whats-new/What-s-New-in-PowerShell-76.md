@@ -11,16 +11,16 @@ PowerShell 7.6-preview.3 includes the following features, updates, and breaking 
 
 For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
 
-## Breaking Changes
-
-No breaking changes were introduced in PowerShell 7.6-preview.2.
-
 ## Updated modules
 
-PowerShell 7.6-preview.2 includes the following updated modules:
+PowerShell 7.6-preview.3 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.1.0
 - **PSReadLine** v2.3.6
+
+## Breaking Changes
+
+- Remove trailing space from event source name ([#24192][24192]) (Thanks @MartinGC94!)
 
 ## Tab completion improvements
 
@@ -66,13 +66,12 @@ PowerShell 7.6-preview.2 includes the following updated modules:
 - Update **DnsNameList** for **X509Certificate2** to use
   `X509SubjectAlternativeNameExtension.EnumerateDnsNames()` Method ([#24714][24714]) (Thanks
   @ArmaanMcleod!)
-- Remove trailing space from event source name ([#24192][24192]) (Thanks @MartinGC94!)
 - Stringify **ErrorRecord** with empty exception message to empty string ([#24949][24949]) (Thanks
   @MatejKafka!)
 
 ## Experimental features
 
-The following experimental features are included in PowerShell 7.6-preview.2:
+The following experimental features are included in PowerShell 7.6-preview.3:
 
 - [PSNativeWindowsTildeExpansion][01] - Add tilde expansion for windows native executables
 - [PSRedirectToVariable][02] - Allow redirecting to a variable
