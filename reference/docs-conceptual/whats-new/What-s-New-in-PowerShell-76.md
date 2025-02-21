@@ -28,10 +28,10 @@ PowerShell 7.6-preview.2 includes the following updated modules:
   Increment/decrement operators as part of their output ([#21137][21137]) (Thanks @MartinGC94!)
 - Add `-PropertyType` argument completer for `New-ItemProperty` ([#21117][21117]) (Thanks
   @ArmaanMcleod!)
-- Add completion single/double quote support for `-Noun` parameter ([#24977][24977]) (Thanks
-  @ArmaanMcleod!)
-- Add completion single/double quote support for `-PSEdition` parameter ([#24971][24971]) (Thanks
-  @ArmaanMcleod!)
+- Add completion single/double quote support for `-Noun` parameter for `Get-Command`
+  ([#24977][24977]) (Thanks @ArmaanMcleod!)
+- Add completion single/double quote support for `-PSEdition` parameter for `Get-Module`
+  ([#24971][24971]) (Thanks @ArmaanMcleod!)
 - Convert **InvalidCommandNameCharacters** in AnalysisCache to `SearchValues<char>` for more
   efficient char searching ([#24880][24880]) (Thanks @ArmaanMcleod!)
 - Convert **s_charactersRequiringQuotes** in Completion Completers to `SearchValues<char>` for more
@@ -40,7 +40,7 @@ PowerShell 7.6-preview.2 includes the following updated modules:
   char searching ([#24896][24896]) (Thanks @ArmaanMcleod!)
 - Replace `char[]` array in `CompletionRequiresQuotes` with cached `SearchValues<char>`
   ([#24907][24907]) (Thanks @ArmaanMcleod!)
-- Add quote handling in **Verb**, **StrictModeVersion**, **Scope** & **PropertyType** Argument
+- Add quote handling in `Verb`, `StrictModeVersion`, `Scope` and `PropertyType` Argument
   Completers with single helper method ([#24839][24839]) (Thanks @ArmaanMcleod!)
 
 ## Cmdlet improvements
@@ -51,10 +51,11 @@ PowerShell 7.6-preview.2 includes the following updated modules:
 - Fix `Get-ItemProperty` to report non-terminating error for cast exception ([#21115][21115])
   (Thanks @ArmaanMcleod!)
 - Fix a bug in how q handles XmlNode object ([#24669][24669]) (Thanks @brendandburns!)
-- Fix `New-Item -Force` to error on invalid directory name ([#24936][24936]) (Thanks @kborowinski!)
-- Fix `Start-Transcript` error when `$Transcript` is a **PSObject** wrapped string
-  ([#24963][24963]) (Thanks @kborowinski!)
-- Fix `Start-Process -Wait` polling ([#24711][24711]) (Thanks @jborean93!)
+- Error when `New-Item -Force` is passed an invalid directory name ([#24936][24936]) (Thanks
+  @kborowinski!)
+- Allow `Start-Transcript` to use `$Transcript` which is a `PSObject` wrapped string to specify the
+  transcript path ([#24963][24963]) (Thanks @kborowinski!)
+- Improve `Start-Process -Wait` polling efficiency ([#24711][24711]) (Thanks @jborean93!)
 - Add completion of modules by their shortname ([#20330][20330]) (Thanks @MartinGC94!)
 
 ## Engine improvements
