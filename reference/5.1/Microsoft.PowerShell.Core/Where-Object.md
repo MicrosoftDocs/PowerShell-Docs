@@ -366,11 +366,11 @@ Get-ChildItem | Where-Object { $_.PSIsContainer }
 ```powershell
 # Finally, use the -not operator (!) to get objects that are not containers.
 # This gets objects that do have the **PSIsContainer** property and those
-# that have a value of $False for the **PSIsContainer** property.
+# that have a value of $false for the **PSIsContainer** property.
 Get-ChildItem | Where-Object { !$_.PSIsContainer }
 # You cannot use the -not operator (!) in the comparison statement format
 # of the command.
-Get-ChildItem | Where-Object PSIsContainer -eq $False
+Get-ChildItem | Where-Object PSIsContainer -eq $false
 ```
 
 ### Example 6: Use multiple conditions

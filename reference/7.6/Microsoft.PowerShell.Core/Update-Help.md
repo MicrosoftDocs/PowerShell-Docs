@@ -193,7 +193,7 @@ The script uses the **PSCustomObject** class and a hash table to create a custom
 ```powershell
 # Get-UpdateHelpVersion.ps1
 Param(
-    [parameter(Mandatory=$False)]
+    [parameter(Mandatory=$false)]
     [String[]]
     $Module
 )

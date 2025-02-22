@@ -504,12 +504,12 @@ to see the command multiple times when recalling or searching the history.
 
 By default, the **HistoryNoDuplicates** property of the global **PSConsoleReadLineOptions** object
 is set to `True`. To change the property value, you must specify the value of the
-**SwitchParameter** as follows: `-HistoryNoDuplicates:$False`. You can set back to `True` by using
+**SwitchParameter** as follows: `-HistoryNoDuplicates:$false`. You can set back to `True` by using
 just the **SwitchParameter**, `-HistoryNoDuplicates`.
 
 Using the following command, you can set the property value directly:
 
-`(Get-PSReadLineOption).HistoryNoDuplicates = $False`
+`(Get-PSReadLineOption).HistoryNoDuplicates = $false`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -587,11 +587,11 @@ Specifies that history searching is case-sensitive in functions like **ReverseSe
 By default, the **HistorySearchCaseSensitive** property of the global **PSConsoleReadLineOptions**
 object is set to `False`. Using this **SwitchParameter** sets the property value to `True`. To
 change the property value back, you must specify the value of the **SwitchParameter** as follows:
-`-HistorySearchCaseSensitive:$False`.
+`-HistorySearchCaseSensitive:$false`.
 
 Using the following command, you can set the property value directly:
 
-`(Get-PSReadLineOption).HistorySearchCaseSensitive = $False`
+`(Get-PSReadLineOption).HistorySearchCaseSensitive = $false`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -608,17 +608,17 @@ Accept wildcard characters: False
 ### -HistorySearchCursorMovesToEnd
 
 Indicates that the cursor moves to the end of commands that you load from history by using a search.
-When this parameter is set to `$False`, the cursor remains at the position it was when you pressed
+When this parameter is set to `$false`, the cursor remains at the position it was when you pressed
 the up or down arrows.
 
 By default, the **HistorySearchCursorMovesToEnd** property of the global
 **PSConsoleReadLineOptions** object is set to `False`. Using this **SwitchParameter** set the
 property value to `True`. To change the property value back, you must specify the value of the
-**SwitchParameter** as follows: `-HistorySearchCursorMovesToEnd:$False`.
+**SwitchParameter** as follows: `-HistorySearchCursorMovesToEnd:$false`.
 
 Using the following command, you can set the property value directly:
 
-`(Get-PSReadLineOption).HistorySearchCursorMovesToEnd = $False`
+`(Get-PSReadLineOption).HistorySearchCursorMovesToEnd = $false`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -743,17 +743,17 @@ Accept wildcard characters: False
 When displaying possible completions, tooltips are shown in the list of completions.
 
 This option is enabled by default. This option wasn't enabled by default in prior versions of
-**PSReadLine**. To disable, set this option to `$False`.
+**PSReadLine**. To disable, set this option to `$false`.
 
 This parameter and option were added in PSReadLine 2.3.4.
 
 By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions** object is set
 to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the property
-value, you must specify the value of the **SwitchParameter** as follows: `-ShowToolTips:$False`.
+value, you must specify the value of the **SwitchParameter** as follows: `-ShowToolTips:$false`.
 
 Using the following command, you can set the property value directly:
 
-`(Get-PSReadLineOption).ShowToolTips = $False`
+`(Get-PSReadLineOption).ShowToolTips = $false`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

@@ -176,7 +176,7 @@ lists the changes that the command would make, instead of running the command.
 
 The **PositionalBinding** argument determines whether parameters in the
 function are positional by default. The default value is `$True`. You can use
-the **PositionalBinding** argument with a value of `$False` to disable
+the **PositionalBinding** argument with a value of `$false` to disable
 positional binding.
 
 The **PositionalBinding** argument is introduced in Windows PowerShell 3.0.
@@ -193,7 +193,7 @@ When **PositionalBinding** is `$True`, function parameters are positional by
 default. PowerShell assigns position number to the parameters in the order in
 which they are declared in the function.
 
-When **PositionalBinding** is `$False`, function parameters are not positional
+When **PositionalBinding** is `$false`, function parameters are not positional
 by default. Unless the **Position** argument of the **Parameter** attribute is
 declared on the parameter, the parameter name (or an alias or abbreviation)
 must be included when the parameter is used in a function.

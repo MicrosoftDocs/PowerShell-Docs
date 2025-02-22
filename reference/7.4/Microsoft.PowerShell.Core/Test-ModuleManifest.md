@@ -87,7 +87,7 @@ function Test-ManifestBool ($path)
 ```
 
 This function is like `Test-ModuleManifest`, but it returns a Boolean value. The function returns
-`$True` if the manifest passed the test and `$False` otherwise.
+`$True` if the manifest passed the test and `$false` otherwise.
 
 The function uses the Get-ChildItem cmdlet, alias = dir, to get the module manifest specified by the
 `$path` variable. The command uses a pipeline operator (`|`) to pass the file object to
@@ -99,7 +99,7 @@ object that `Test-ModuleManifest` returns in the $a variable. Therefore, the obj
 displayed.
 
 Then, in a separate command, the function displays the value of the `$?` automatic variable. If the
-previous command generates no error, the command displays `$True`, and `$False` otherwise.
+previous command generates no error, the command displays `$True`, and `$false` otherwise.
 
 You can use this function in conditional statements, such as those that might precede an
 `Import-Module` command or a command that uses the module.

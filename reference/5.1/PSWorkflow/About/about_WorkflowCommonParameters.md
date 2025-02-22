@@ -292,7 +292,7 @@ Valid values:
   checkpoint after each activity, in addition to any checkpoints that are
   specified in the workflow.
 
-- `$False`. No checkpoints are added. Checkpoints are taken only when specified
+- `$false`. No checkpoints are added. Checkpoints are taken only when specified
   in the workflow.
 
 #### -PSPort \<Int32\>

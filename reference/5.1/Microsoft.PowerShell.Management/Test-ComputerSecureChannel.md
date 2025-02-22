@@ -27,7 +27,7 @@ The `Test-ComputerSecureChannel` cmdlet verifies that the channel between the lo
 domain is working correctly by checking the status of its trust relationships. If a connection
 fails, you can use the **Repair** parameter to try to restore it.
 
-`Test-ComputerSecureChannel` returns $True if the channel is working correctly and $False if it is
+`Test-ComputerSecureChannel` returns $True if the channel is working correctly and $false if it is
 not. This result lets you use the cmdlet in conditional statements in functions and scripts. To get
 more detailed test results, use the **Verbose** parameter.
 
@@ -200,7 +200,7 @@ You cannot pipe input to this cmdlet.
 
 ### System.Boolean
 
-This cmdlet returns `$True` if the connection is working correctly and `$False` if it is not.
+This cmdlet returns `$True` if the connection is working correctly and `$false` if it is not.
 
 ## NOTES
 

@@ -146,7 +146,7 @@ the full path of the parent container.
 ### Example 4: Determines whether a path is absolute
 
 This command determines whether the path is relative or absolute. In this case, because the path is
-relative to the current folder, which is represented by a dot (`.`), it returns `$False`.
+relative to the current folder, which is represented by a dot (`.`), it returns `$false`.
 
 ```powershell
 Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 
 ### -IsAbsolute
 
-Indicates that this cmdlet returns `$True` if the path is absolute and `$False` if it's relative. On
+Indicates that this cmdlet returns `$True` if the path is absolute and `$false` if it's relative. On
 Windows, an absolute path string must start with a provider drive specifier, like `C:` or `HKCU:`. A
 relative path starts with a dot (`.`) or a dot-dot (`..`).
 

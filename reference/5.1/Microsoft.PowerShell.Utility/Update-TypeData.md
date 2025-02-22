@@ -495,11 +495,11 @@ Indicates whether the set of properties that are serialized is inherited. The de
 `$Null`. The acceptable values for this parameter are:
 
 - `$True`. The property set is inherited.
-- `$False`. The property set is not inherited.
+- `$false`. The property set is not inherited.
 - `$Null`. Inheritance is not defined.
 
 This parameter is valid only when the value of the **SerializationMethod** parameter is
-`SpecificProperties`. When the value of this parameter is `$False`, the **PropertySerializationSet**
+`SpecificProperties`. When the value of this parameter is `$false`, the **PropertySerializationSet**
 parameter is required.
 
 This parameter was introduced in Windows PowerShell 3.0.

@@ -167,7 +167,7 @@ mode:
 - `$PSCulture`
 - `$PSUICulture`
 - `$True`
-- `$False`
+- `$false`
 - `$Null`
 
 Module manifests are loaded in `RestrictedLanguage` mode and may use these

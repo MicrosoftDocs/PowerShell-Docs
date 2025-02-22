@@ -32,8 +32,8 @@ The following table lists the preference variables and their default values.
 | [`$ErrorView`][05]                     | [`NormalView`][57]                                               |
 | [`$FormatEnumerationLimit`][06]        | `4`                                                              |
 | [`$InformationPreference`][07]         | [`SilentlyContinue`][54]                                         |
-| [`$LogCommandHealthEvent`][08]         | `$False` (not logged)                                            |
-| [`$LogCommandLifecycleEvent`][08]      | `$False` (not logged)                                            |
+| [`$LogCommandHealthEvent`][08]         | `$false` (not logged)                                            |
+| [`$LogCommandLifecycleEvent`][08]      | `$false` (not logged)                                            |
 | [`$LogEngineHealthEvent`][08]          | `$True` (logged)                                                 |
 | [`$LogEngineLifecycleEvent`][08]       | `$True` (logged)                                                 |
 | [`$LogProviderLifecycleEvent`][08]     | `$True` (logged)                                                 |
@@ -56,7 +56,7 @@ The following table lists the preference variables and their default values.
 | [`$Transcript`][24]                    | `$Null` (none)                                                   |
 | [`$VerbosePreference`][25]             | [`SilentlyContinue`][54]                                         |
 | [`$WarningPreference`][26]             | [`Continue`][54]                                                 |
-| [`$WhatIfPreference`][27]              | `$False`                                                         |
+| [`$WhatIfPreference`][27]              | `$false`                                                         |
 
 PowerShell includes the following environment variables that store user
 preferences. For more information about these environment variables, see

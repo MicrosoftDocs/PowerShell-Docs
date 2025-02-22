@@ -500,7 +500,7 @@ This cmdlet returns a **ScheduledJobOptions** object representing the created op
   **ScheduledJobOption** parameter can also take a hash table value that specifies the properties of
   the **ScheduledJobOptions** object and their values, such as:
 
-  `@{ShowInTaskScheduler=$False; RunElevated=$True; IdleDuration="00:05"}`
+  `@{ShowInTaskScheduler=$false; RunElevated=$True; IdleDuration="00:05"}`
 
 ## RELATED LINKS
 
