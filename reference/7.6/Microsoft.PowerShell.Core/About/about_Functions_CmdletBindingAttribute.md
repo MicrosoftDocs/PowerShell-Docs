@@ -25,7 +25,7 @@ the Common Parameters. For more information, see [about_CommonParameters][02].
 PowerShell binds the parameters of functions that have the `CmdletBinding`
 attribute in the same way that it binds the parameters of compiled cmdlets. The
 `$PSCmdlet` automatic variable is available to functions with the
-`CmdletBinding` attribute, but the `$Args` variable is not available.
+`CmdletBinding` attribute, but the `$args` variable is not available.
 
 In functions that have the `CmdletBinding` attribute, unknown parameters and
 positional arguments that have no matching positional parameters cause

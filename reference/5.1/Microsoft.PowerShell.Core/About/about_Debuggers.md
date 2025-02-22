@@ -126,7 +126,7 @@ for the following automatic variables:
 
 ```powershell
 $_
-$Args
+$args
 $Input
 $MyInvocation
 $PSBoundParameters
@@ -144,7 +144,7 @@ variable.
 For example,
 
 ```powershell
-$scriptArgs = $Args
+$scriptArgs = $args
 $scriptname = $MyInvocation.PSCommandPath
 ```
 

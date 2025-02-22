@@ -188,8 +188,8 @@ The `Get-Event` cmdlet returns a **PSEventArgs** object
   automatic variable contains this value.
 
 - SourceArgs. All parameters of the original event signature. For a standard event signature,
-  `$Args[0]` represents the sender, and `$Args[1]` represents the **SourceEventArgs**. In the
-  value of the **Action** parameter, the `$Args` automatic variable contains this value.
+  `$args[0]` represents the sender, and `$args[1]` represents the **SourceEventArgs**. In the
+  value of the **Action** parameter, the `$args` automatic variable contains this value.
 
 - SourceIdentifier. A string that identifies the event subscription. In the value of the
   **Action** parameter, the **SourceIdentifier** property of the `$Event` automatic variable

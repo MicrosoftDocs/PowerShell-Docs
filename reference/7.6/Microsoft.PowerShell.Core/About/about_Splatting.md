@@ -301,22 +301,22 @@ You can use splatting to represent the parameters of a command. This technique
 is useful when you are creating a proxy function, that is, a function that
 calls another command. This feature is introduced in Windows PowerShell 3.0.
 
-To splat the parameters of a command, use `@Args` to represent the command
+To splat the parameters of a command, use `@args` to represent the command
 parameters. This technique is easier than enumerating command parameters and
 it works without revision even if the parameters of the called command change.
 
-The feature uses the `$Args` automatic variable, which contains all unassigned
+The feature uses the `$args` automatic variable, which contains all unassigned
 parameter values.
 
 For example, the following function calls the `Get-Process` cmdlet. In this
-function, `@Args` represents all the parameters of the `Get-Process` cmdlet.
+function, `@args` represents all the parameters of the `Get-Process` cmdlet.
 
 ```powershell
-function Get-MyProcess { Get-Process @Args }
+function Get-MyProcess { Get-Process @args }
 ```
 
 When you use the `Get-MyProcess` function, all unassigned parameters and
-parameter values are passed to `@Args`, as shown in the following commands.
+parameter values are passed to `@args`, as shown in the following commands.
 
 ```powershell
 Get-MyProcess -Name PowerShell
@@ -338,16 +338,16 @@ ProductVersion   FileVersion      FileName
 6.2.9200.16384   6.2.9200.1638... C:\Windows\system32\WindowsPowerShell\...
 ```
 
-You can use `@Args` in a function that has explicitly declared parameters. You
+You can use `@args` in a function that has explicitly declared parameters. You
 can use it more than once in a function, but all parameters that you enter are
-passed to all instances of `@Args`, as shown in the following example.
+passed to all instances of `@args`, as shown in the following example.
 
 ```powershell
 function Get-MyCommand
 {
     Param ([switch]$P, [switch]$C)
-    if ($P) { Get-Process @Args }
-    if ($C) { Get-Command @Args }
+    if ($P) { Get-Process @args }
+    if ($C) { Get-Command @args }
 }
 
 Get-MyCommand -P -C -Name PowerShell
