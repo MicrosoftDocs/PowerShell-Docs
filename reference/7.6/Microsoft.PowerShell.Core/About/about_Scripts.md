@@ -184,7 +184,7 @@ The following example shows a `Test-Remote.ps1` script that has a
 param ($ComputerName = $(throw "ComputerName parameter is required."))
 
 function CanPing {
-   $error.Clear()
+   $Error.Clear()
    $tmp = Test-Connection $computername -ErrorAction SilentlyContinue
 
    if (!$?)
