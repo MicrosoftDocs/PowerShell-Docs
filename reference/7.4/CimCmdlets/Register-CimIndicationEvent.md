@@ -96,12 +96,12 @@ Register-CimIndicationEvent -Query $query -SourceIdentifier "Timer"
 ### Example 3: Run a script when the event arrives
 
 This example shows how to use an action in response to an event. The variable `$action` holds the
-script block for **Action**, which uses the `$event` variable to access the event received from CIM.
+script block for **Action**, which uses the `$Event` variable to access the event received from CIM.
 
 ```powershell
 $action = {
-  $name = $event.SourceEventArgs.NewEvent.ProcessName
-  $id = $event.SourceEventArgs.NewEvent.ProcessId
+  $name = $Event.SourceEventArgs.NewEvent.ProcessName
+  $id = $Event.SourceEventArgs.NewEvent.ProcessId
   Write-Host -Object "New Process Started : Name = $name ID = $id"
 }
 $event = @{

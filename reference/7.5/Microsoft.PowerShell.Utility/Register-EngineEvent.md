@@ -81,7 +81,7 @@ data to a text file.
 
 ```powershell
 Register-EngineEvent -SourceIdentifier MyEventSource -Action {
-    "Event: {0}" -f $event.MessageData | Out-File c:\temp\MyEvents.txt -Append
+    "Event: {0}" -f $Event.MessageData | Out-File c:\temp\MyEvents.txt -Append
 }
 
 Start-Job -Name TestJob -ScriptBlock {
