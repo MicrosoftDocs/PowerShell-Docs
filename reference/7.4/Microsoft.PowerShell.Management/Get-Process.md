@@ -118,7 +118,7 @@ cmdlet, then to the `Format-Table` cmdlet, which formats the processes by using 
 view.
 
 The **Priority** view, and other views, are defined in the PS1XML format files in the PowerShell
-home directory (`$pshome`).
+home directory (`$PSHOME`).
 
 ### Example 5: Add a property to the standard Get-Process output display
 

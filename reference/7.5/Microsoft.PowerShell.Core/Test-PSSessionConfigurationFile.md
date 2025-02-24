@@ -25,7 +25,7 @@ Test-PSSessionConfigurationFile [-Path] <String> [<CommonParameters>]
 This cmdlet verifies that a session configuration file contains valid keys and the values are of the
 correct type. For enumerated values, the cmdlet verifies that the specified values are valid.
 
-The cmdlet returns `$True` if the file passes all tests and `$false` if it does not. To find any
+The cmdlet returns `$true` if the file passes all tests and `$false` if it does not. To find any
 errors, use the **Verbose** parameter.
 
 `Test-PSSessionConfigurationFile` verifies the session configuration files, such as those created by

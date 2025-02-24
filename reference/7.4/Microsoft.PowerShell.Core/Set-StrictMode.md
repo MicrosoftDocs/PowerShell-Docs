@@ -40,10 +40,10 @@ override the setting inherited from the global scope.
 
 When `Set-StrictMode` is off, PowerShell has the following behaviors:
 
-- Uninitialized variables are assumed to have a value of `0` (zero) or `$Null`, depending on type
-- References to non-existent properties return `$Null`
+- Uninitialized variables are assumed to have a value of `0` (zero) or `$null`, depending on type
+- References to non-existent properties return `$null`
 - Results of improper function syntax vary with the error conditions
-- Attempting to retrieve a value using an invalid index in an array returns `$Null`
+- Attempting to retrieve a value using an invalid index in an array returns `$null`
 
 ## EXAMPLES
 
@@ -137,7 +137,7 @@ which nothing is added. With version `2.0` strict mode, it's correctly interpret
 syntax for submitting two values.
 
 Without version `2.0`, the reference to the non-existent **Month** property of a string returns only
-`$Null`. With version `2.0`, it's interpreted correctly as a reference error.
+`$null`. With version `2.0`, it's interpreted correctly as a reference error.
 
 ### Example 3: Turn on strict mode as version 3.0
 

@@ -60,7 +60,7 @@ local computer.
 Use the **Name** parameter to identify the session configuration that you want to change. Use the
 other parameters to specify new values for the properties of the session configuration. To delete a
 property value from the configuration, and use the default value, enter an empty string (`""`) or a
-value of `$Null` for the corresponding parameter.
+value of `$null` for the corresponding parameter.
 
 Starting in PowerShell 3.0, you can use a session configuration file to define a session
 configuration. This feature provides a simple and discoverable method for setting and changing the
@@ -104,7 +104,7 @@ The third command removes the `AdminConfig.ps1` script from the configuration.
 ```powershell
 Register-PSSessionConfiguration -Name "AdminShell" -AssemblyName "C:\Shells\AdminShell.dll" -ConfigurationTypeName "AdminClass"
 Set-PSSessionConfiguration -Name "AdminShell" -StartupScript "AdminConfig.ps1"
-Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $Null
+Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $null
 ```
 
 ### Example 3: Display results
@@ -490,7 +490,7 @@ use a session configuration in a session, users must have at least `Execute(Invo
 the configuration.
 
 To use the default security descriptor for the configuration, enter an empty string (`""`) or a
-value of `$Null`. The default is the root SDDL in the `WSMan:` drive.
+value of `$null`. The default is the root SDDL in the `WSMan:` drive.
 
 If the security descriptor is complex, consider using the **ShowSecurityDescriptorUI** parameter
 instead of this one. You cannot use both parameters in the same command.
@@ -562,7 +562,7 @@ Specifies the startup script for the configuration. Enter the fully qualified pa
 script. The specified script runs in the new session that uses the session configuration.
 
 To delete a startup script from a session configuration, enter an empty string (`""`) or a value of
-`$Null`.
+`$null`.
 
 You can use a startup script to further configure the user session. If the script generates an
 error, even a non-terminating error, the session is not created and the `New-PSSession` command

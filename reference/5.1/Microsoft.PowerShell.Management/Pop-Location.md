@@ -199,7 +199,7 @@ If you make a named location stack the current location stack, you can no longer
 `Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use the
 `Get-Location` cmdlet to display the locations in the unnamed stack. To make the unnamed stack
 the current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of
-`$Null` or an empty string (`""`).
+`$null` or an empty string (`""`).
 
 `Pop-Location` is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PSProvider`. For more information, see
