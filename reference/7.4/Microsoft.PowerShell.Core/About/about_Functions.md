@@ -450,15 +450,15 @@ need to declare or enumerate the command parameters, or change the function
 when command parameters change.
 
 The following sample function calls the `Get-Command` cmdlet. The command uses
-`@Args` to represent the parameters of `Get-Command`.
+`@args` to represent the parameters of `Get-Command`.
 
 ```powershell
-function Get-MyCommand { Get-Command @Args }
+function Get-MyCommand { Get-Command @args }
 ```
 
 You can use all the parameters of `Get-Command` when you call the
 `Get-MyCommand` function. The parameters and parameter values are passed to the
-command using `@Args`.
+command using `@args`.
 
 ```powershell
 Get-MyCommand -Name Get-ChildItem
@@ -470,7 +470,7 @@ CommandType     Name                ModuleName
 Cmdlet          Get-ChildItem       Microsoft.PowerShell.Management
 ```
 
-The `@Args` feature uses the `$Args` automatic parameter, which represents
+The `@args` feature uses the `$args` automatic parameter, which represents
 undeclared cmdlet parameters and values from remaining arguments.
 
 For more information, see [about_Splatting][19].

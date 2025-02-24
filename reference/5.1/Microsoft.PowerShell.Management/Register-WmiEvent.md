@@ -122,7 +122,7 @@ event is raised instead of sending the event to the event queue. Enclose the com
 (`{}`) to create a script block.
 
 The value of **Action** can include the `$Event`, `$EventSubscriber`, `$Sender`, `$EventArgs`, and
-`$Args` automatic variables, which provide information about the event to the **Action** script
+`$args` automatic variables, which provide information about the event to the **Action** script
 block. For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 When you specify an action, `Register-WmiEvent` returns an event job object that represents that

@@ -23,7 +23,7 @@ When you use the `CmdletBinding` attribute, PowerShell automatically adds the
 Common Parameters. You can't create any parameters that use the same names as
 the Common Parameters. For more information, see [about_CommonParameters][06].
 
-Beginning in PowerShell 3.0, you can use splatting with `@Args` to represent
+Beginning in PowerShell 3.0, you can use splatting with `@args` to represent
 the parameters in a command. Splatting is valid on simple and advanced
 functions. For more information, see [about_Functions][14] and
 [about_Splatting][17].

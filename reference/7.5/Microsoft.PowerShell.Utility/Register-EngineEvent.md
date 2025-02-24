@@ -160,7 +160,7 @@ instead of sending the event to the event queue. Enclose the commands in braces 
 script block.
 
 The value of the **Action** parameter can include the `$Event`, `$EventSubscriber`, `$Sender`,
-`$EventArgs`, and `$Args` automatic variables, which provide information about the event to the
+`$EventArgs`, and `$args` automatic variables, which provide information about the event to the
 **Action** script block. For more information, see
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
