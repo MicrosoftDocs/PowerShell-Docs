@@ -190,7 +190,7 @@ hash table to specify the property names and sort orders. The **Property** param
 two properties, **Status** in descending order and **DisplayName** in ascending order.
 
 **Status** is an enumerated property. **Stopped** has a value of **1** and **Running** has a value
-of **4**. The **Descending** parameter is set to `$True` so that **Running** processes are displayed
+of **4**. The **Descending** parameter is set to `$true` so that **Running** processes are displayed
 before **Stopped** processes. **DisplayName** sets the **Descending** parameter to `$false` to sort
 the display names in alphabetical order.
 

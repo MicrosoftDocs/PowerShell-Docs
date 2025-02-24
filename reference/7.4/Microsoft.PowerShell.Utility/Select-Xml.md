@@ -61,7 +61,7 @@ the XPath statement from the `Types.ps1xml` file. The command uses a pipeline op
 **Node** object and returns its **Name** and **ReferencedMemberName** properties.
 
 ```powershell
-$Path = "$Pshome\Types.ps1xml"
+$Path = "$PSHOME\Types.ps1xml"
 $XPath = "/Types/Type/Members/AliasProperty"
 Select-Xml -Path $Path -XPath $Xpath | Select-Object -ExpandProperty Node
 ```
@@ -103,7 +103,7 @@ the **Xml** parameter to specify the XML content in the `$Types` variable and th
 parameter to specify the path to the **MethodName** node.
 
 ```powershell
-[xml]$Types = Get-Content $Pshome\Types.ps1xml
+[xml]$Types = Get-Content $PSHOME\Types.ps1xml
 Select-Xml -Xml $Types -XPath "//MethodName"
 ```
 
@@ -138,7 +138,7 @@ $Namespace = @{
     dev = "http://schemas.microsoft.com/maml/dev/2004/10"
 }
 
-$Path = "$Pshome\en-us\*dll-Help.xml"
+$Path = "$PSHOME\en-us\*dll-Help.xml"
 $Xml = Select-Xml -Path $Path -Namespace $Namespace -XPath "//command:name"
 $Xml | Format-Table @{Label="Name"; Expression= {($_.node.innerxml).trim()}}, Path -AutoSize
 ```

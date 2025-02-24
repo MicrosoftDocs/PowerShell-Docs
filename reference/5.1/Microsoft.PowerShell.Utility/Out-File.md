@@ -147,7 +147,7 @@ function DemoDefaultOutFileWidth() {
     try {
         $PSDefaultParameterValues['out-file:width'] = 2000
 
-        $logFile = "$pwd\logfile.txt"
+        $logFile = "$PWD\logfile.txt"
 
         Get-ChildItem Env:\ > $logFile
 

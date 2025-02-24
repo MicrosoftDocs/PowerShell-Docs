@@ -500,11 +500,11 @@ Accept wildcard characters: False
 ### -InheritPropertySerializationSet
 
 Indicates whether the set of properties that are serialized is inherited. The default value is
-`$Null`. The acceptable values for this parameter are:
+`$null`. The acceptable values for this parameter are:
 
-- `$True`. The property set is inherited.
+- `$true`. The property set is inherited.
 - `$false`. The property set is not inherited.
-- `$Null`. Inheritance is not defined.
+- `$null`. Inheritance is not defined.
 
 This parameter is valid only when the value of the **SerializationMethod** parameter is
 `SpecificProperties`. When the value of this parameter is `$false`, the **PropertySerializationSet**
