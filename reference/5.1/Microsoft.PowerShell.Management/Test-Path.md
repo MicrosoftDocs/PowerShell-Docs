@@ -73,7 +73,7 @@ returns `$false`. Otherwise, it returns `$true`.
 ### Example 2: Test the path of a profile
 
 ```powershell
-Test-Path -Path $profile
+Test-Path -Path $PROFILE
 ```
 
 ```Output
@@ -81,7 +81,7 @@ False
 ```
 
 ```powershell
-Test-Path -Path $profile -IsValid
+Test-Path -Path $PROFILE -IsValid
 ```
 
 ```Output
@@ -92,7 +92,7 @@ These commands test the path of the PowerShell profile.
 
 The first command determines whether all elements in the path exist. The second command determines
 whether the syntax of the path is correct. In this case, the path is `$false`, but the syntax is
-correct `$true`. These commands use `$profile`, the automatic variable that points to the location
+correct `$true`. These commands use `$PROFILE`, the automatic variable that points to the location
 for the profile, even if the profile doesn't exist.
 
 For more information about automatic variables, see
@@ -123,14 +123,14 @@ In this case, because the directory contains only .dwg files, the result is `$fa
 ### Example 4: Check for a file
 
 ```powershell
-Test-Path -Path $profile -PathType leaf
+Test-Path -Path $PROFILE -PathType leaf
 ```
 
 ```Output
 True
 ```
 
-This command checks whether the path stored in the `$profile` variable leads to a file. In this
+This command checks whether the path stored in the `$PROFILE` variable leads to a file. In this
 case, because the PowerShell profile is a `.ps1` file, the cmdlet returns `$true`.
 
 ### Example 5: Check paths in the Registry
@@ -169,7 +169,7 @@ file on the computer is newer than `July 13, 2009`.
 The NewerThan parameter works only in file system drives.
 
 ```powershell
-Test-Path $pshome\PowerShell.exe -NewerThan "July 13, 2009"
+Test-Path $PSHOME\PowerShell.exe -NewerThan "July 13, 2009"
 ```
 
 ```Output

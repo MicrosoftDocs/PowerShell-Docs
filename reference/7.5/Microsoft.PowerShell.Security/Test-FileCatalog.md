@@ -50,7 +50,7 @@ New-FileCatalog @NewFileCatalogParams
 
 $TestFileCatalogParams = @{
     CatalogFilePath = "\temp\Microsoft.PowerShell.Utility.cat"
-    Path = "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+    Path = "$PSHOME\Modules\Microsoft.PowerShell.Utility\"
 }
 Test-FileCatalog @TestFileCatalogParams
 ```
@@ -65,7 +65,7 @@ Valid
 $TestFileCatalogParams = @{
     Detailed = $true
     CatalogFilePath = "\temp\Microsoft.PowerShell.Utility.cat"
-    Path = "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+    Path = "$PSHOME\Modules\Microsoft.PowerShell.Utility\"
 }
 Test-FileCatalog @TestFileCatalogParams
 ```

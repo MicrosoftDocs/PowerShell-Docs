@@ -73,7 +73,7 @@ object.
 ### Example 3
 
 ```powershell
-$Credential = $host.ui.PromptForCredential(
+$Credential = $Host.ui.PromptForCredential(
     "Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
 ```
 

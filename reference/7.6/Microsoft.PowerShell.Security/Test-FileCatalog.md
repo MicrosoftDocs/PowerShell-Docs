@@ -43,7 +43,7 @@ This cmdlet is only supported on Windows.
 ```powershell
 New-FileCatalog -Path $PSHOME\Modules\Microsoft.PowerShell.Utility -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -CatalogVersion 2.0
 
-Test-FileCatalog -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+Test-FileCatalog -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHOME\Modules\Microsoft.PowerShell.Utility\"
 ```
 
 ```Output
@@ -53,7 +53,7 @@ Valid
 ### Example 2: Validate a file catalog with detailed output
 
 ```powershell
-Test-FileCatalog -Detailed -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHome\Modules\Microsoft.PowerShell.Utility\"
+Test-FileCatalog -Detailed -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -Path "$PSHOME\Modules\Microsoft.PowerShell.Utility\"
 ```
 
 ```Output
