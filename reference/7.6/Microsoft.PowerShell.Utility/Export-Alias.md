@@ -79,7 +79,7 @@ they have the read-only attribute.
 
 ```powershell
 Export-Alias -Path "alias.ps1" -As Script
-Add-Content -Path $Profile -Value (Get-Content alias.ps1)
+Add-Content -Path $PROFILE -Value (Get-Content alias.ps1)
 $S = New-PSSession -ComputerName Server01
 Invoke-Command -Session $S -FilePath .\alias.ps1
 ```
@@ -91,7 +91,7 @@ parameter with a value of Script to generate a file that contains a Set-Alias co
 alias.
 
 The second command adds the aliases in the Alias.ps1 file to the CurrentUser-CurrentHost profile.
-The path to the profile is saved in the `$Profile` variable. The command uses the `Get-Content`
+The path to the profile is saved in the `$PROFILE` variable. The command uses the `Get-Content`
 cmdlet to get the aliases from the Alias.ps1 file and the `Add-Content` cmdlet to add them to the
 profile. For more information, see
 [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).

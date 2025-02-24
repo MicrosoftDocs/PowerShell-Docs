@@ -74,9 +74,9 @@ In this example, given a credential that you've stored in the `$Credential` vari
 > such as macOS and Linux, credentials are exported in plain text.
 
 ```powershell
-$Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+$Credxmlpath = Join-Path (Split-Path $PROFILE) TestScript.ps1.credential
 $Credential | Export-Clixml $Credxmlpath
-$Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+$Credxmlpath = Join-Path (Split-Path $PROFILE) TestScript.ps1.credential
 $Credential = Import-Clixml $Credxmlpath
 ```
 
