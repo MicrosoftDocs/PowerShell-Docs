@@ -223,11 +223,11 @@ $ShowWindowAsync = Add-Type @addTypeSplat
 
 # Minimize the PowerShell console
 
-$ShowWindowAsync::ShowWindowAsync((Get-Process -Id $pid).MainWindowHandle, 2)
+$ShowWindowAsync::ShowWindowAsync((Get-Process -Id $PID).MainWindowHandle, 2)
 
 # Restore the PowerShell console
 
-$ShowWindowAsync::ShowWindowAsync((Get-Process -Id $Pid).MainWindowHandle, 4)
+$ShowWindowAsync::ShowWindowAsync((Get-Process -Id $PID).MainWindowHandle, 4)
 ```
 
 The `$Signature` variable stores the C# signature of the `ShowWindowAsync` function. To ensure that

@@ -107,7 +107,7 @@ shows which input object the output belongs to.
 The following examples shows the different output types.
 
 ```powershell
-$a = $True
+$a = $true
 Compare-Object -IncludeEqual $a $a
 (Compare-Object -IncludeEqual $a $a) | Get-Member
 ```

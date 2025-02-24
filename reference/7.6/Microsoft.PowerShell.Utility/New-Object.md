@@ -56,16 +56,16 @@ Major  Minor  Build  Revision
 
 This example creates two instances of the COM object that represents the Internet Explorer
 application. The first instance uses the **Property** parameter hash table to call the **Navigate2**
-method and set the **Visible** property of the object to `$True` to make the application visible.
+method and set the **Visible** property of the object to `$true` to make the application visible.
 The second instance gets the same results with individual commands.
 
 ```powershell
-$IE1 = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $True}
+$IE1 = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $true}
 
 # The following command gets the same results as the example above.
 $IE2 = New-Object -COMObject InternetExplorer.Application`
 $IE2.Navigate2("www.microsoft.com")`
-$IE2.Visible = $True`
+$IE2.Visible = $true`
 ```
 
 ### Example 3: Use the Strict parameter to generate a non-terminating error
@@ -74,7 +74,7 @@ This example demonstrates that adding the **Strict** parameter causes the `New-O
 generate a non-terminating error when the COM object uses an interop assembly.
 
 ```powershell
-$A = New-Object -COMObject Word.Application -Strict -Property @{Visible = $True}
+$A = New-Object -COMObject Word.Application -Strict -Property @{Visible = $true}
 ```
 
 ```Output

@@ -212,7 +212,7 @@ non-zero integer.
 ### `$foreach`
 
 Contains the enumerator (not the resulting values) of a [ForEach][56] loop. The
-`$ForEach` variable exists only while the `ForEach` loop is running; it's
+`$foreach` variable exists only while the `ForEach` loop is running; it's
 deleted after the loop is completed.
 
 Enumerators contain properties and methods you can use to retrieve loop values
@@ -644,7 +644,7 @@ following items:
 - **GitCommitId** - The commit Id of the source files, in GitHub,
 - **OS** - Description of the operating system that PowerShell is running on.
 - **Platform** - Platform that the operating system is running on. The value on
-  Linux and macOS is **Unix**. See `$IsMacOs` and `$IsLinux`.
+  Linux and macOS is **Unix**. See `$IsMacOS` and `$IsLinux`.
 - **PSCompatibleVersions** - Versions of PowerShell that are compatible with
   the current version
 - **PSRemotingProtocolVersion** - The version of the PowerShell remote

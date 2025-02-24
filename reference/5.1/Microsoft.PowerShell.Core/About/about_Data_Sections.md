@@ -46,8 +46,8 @@ is limited to the following elements:
 
 - All PowerShell operators, except `-match`
 - `If`, `Else`, and `ElseIf` statements
-- The following automatic variables: `$PsCulture`, `$PsUICulture`, `$True`,
-  `$False`, and `$Null`
+- The following automatic variables: `$PSCulture`, `$PSUICulture`, `$true`,
+  `$false`, and `$null`
 - Comments
 - Pipelines
 - Statements separated by semicolons (`;`)

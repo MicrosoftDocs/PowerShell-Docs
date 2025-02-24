@@ -314,7 +314,7 @@ Specifies the culture to use for the session. Enter a culture name in
 `<languagecode2>-<country/regioncode2>` format (like `ja-JP`), a variable that contains a
 **CultureInfo** object, or a command that gets a **CultureInfo** object.
 
-The default value is `$Null`, and the culture that is set in the operating system is used in the
+The default value is `$null`, and the culture that is set in the operating system is used in the
 session.
 
 ```yaml

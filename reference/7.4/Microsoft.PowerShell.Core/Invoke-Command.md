@@ -1228,7 +1228,7 @@ Accept wildcard characters: False
 Specifies input to the command. Enter a variable that contains the objects or type a command or
 expression that gets the objects.
 
-When using the **InputObject** parameter, use the `$Input` automatic variable in the value of the
+When using the **InputObject** parameter, use the `$input` automatic variable in the value of the
 **ScriptBlock** parameter to represent the input objects.
 
 ```yaml
@@ -1689,7 +1689,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.ScriptBlock
 
-You can pipe a command in a script block to `Invoke-Command`. Use the `$Input` automatic variable to
+You can pipe a command in a script block to `Invoke-Command`. Use the `$input` automatic variable to
 represent the input objects in the command.
 
 ## OUTPUTS

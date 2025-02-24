@@ -56,7 +56,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// <param name="args">Parameter not used.</param>
     /// <remarks>
     /// This sample demonstrates the following:
-    /// 1. Creating a PowerSHell object to run a script.
+    /// 1. Creating a PowerShell object to run a script.
     /// 2. Adding a script to the pipeline of the PowerShell object.
     /// 3. Passing input objects to the script from the calling program.
     /// 4. Running the script synchronously.

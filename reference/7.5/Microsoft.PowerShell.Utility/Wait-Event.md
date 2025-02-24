@@ -62,8 +62,8 @@ $objectEventArgs = @{
 }
 Register-ObjectEvent @objectEventArgs
 $Timer.Interval = 2000
-$Timer.AutoReset = $False
-$Timer.Enabled = $True
+$Timer.AutoReset = $false
+$Timer.Enabled = $true
 Wait-Event Timer.Elapsed
 ```
 

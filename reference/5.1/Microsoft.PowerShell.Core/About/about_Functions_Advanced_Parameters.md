@@ -23,7 +23,7 @@ When you use the `CmdletBinding` attribute, PowerShell automatically adds the
 Common Parameters. You can't create any parameters that use the same names as
 the Common Parameters. For more information, see [about_CommonParameters][06].
 
-Beginning in PowerShell 3.0, you can use splatting with `@Args` to represent
+Beginning in PowerShell 3.0, you can use splatting with `@args` to represent
 the parameters in a command. Splatting is valid on simple and advanced
 functions. For more information, see [about_Functions][14] and
 [about_Splatting][17].
@@ -413,7 +413,7 @@ parameter is used in a command.
 By default, all function parameters are positional. PowerShell assigns position
 numbers to parameters in the order the parameters are declared in the function.
 To disable this feature, set the value of the `PositionalBinding` argument of
-the **CmdletBinding** attribute to `$False`. The `Position` argument takes
+the **CmdletBinding** attribute to `$false`. The `Position` argument takes
 precedence over the value of the `PositionalBinding` argument of the
 **CmdletBinding** attribute. For more information, see `PositionalBinding` in
 [about_Functions_CmdletBindingAttribute][12].
@@ -1203,7 +1203,7 @@ function Test-UserDrivePath{
         [ValidateUserDrive()]
         [string]$Path
     )
-    $True
+    $true
 }
 
 Test-UserDrivePath -Path C:\

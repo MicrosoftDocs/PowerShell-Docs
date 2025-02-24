@@ -225,7 +225,7 @@ interchangeably.
 
 This command uses the **PrivateData** property of `$Host` as its ErrorBackgroundColor property. To
 see all of the properties of the object in the `$Host`.PrivateData property, type
-`$host.PrivateData | format-list *`.
+`$Host.PrivateData | format-list *`.
 
 ## PARAMETERS
 

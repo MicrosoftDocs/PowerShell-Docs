@@ -36,11 +36,11 @@ For more information about Windows PowerShell snap-ins, see [about_PSSnapins](Ab
 ### Example 1: Export the names of snap-ins in the current session
 
 ```
-PS C:\> Export-Console -Path $pshome\Consoles\ConsoleS1.psc1
+PS C:\> Export-Console -Path $PSHOME\Consoles\ConsoleS1.psc1
 ```
 
 This command exports the names of Windows PowerShell snap-ins in the current session to the
-`ConsoleS1.psc1` file in the Consoles folder of the Windows PowerShell installation folder, `$pshome`.
+`ConsoleS1.psc1` file in the Consoles folder of the Windows PowerShell installation folder, `$PSHOME`.
 
 ### Example 2: Export the names of snap-ins to the most recent console file
 

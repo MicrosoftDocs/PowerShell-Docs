@@ -59,7 +59,7 @@ PS C:\> function Enable-ProcessCreationEvent
    $Identifier = "WMI.ProcessCreated"
    Register-ObjectEvent $ProcessWatcher "EventArrived" -SupportEvent $Identifier -Action
    {
-      [void] (New-Event -SourceID "PowerShell.ProcessCreated" -Sender $Args[0] -EventArguments $Args[1].SourceEventArgs.NewEvent.TargetInstance)
+      [void] (New-Event -SourceID "PowerShell.ProcessCreated" -Sender $args[0] -EventArguments $args[1].SourceEventArgs.NewEvent.TargetInstance)
    }
 }
 ```

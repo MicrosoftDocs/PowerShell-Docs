@@ -78,7 +78,7 @@ This cmdlet returns an alternate view of an error record for the GH CLI. It limi
 properties to the fully qualified ID, the type of the error, the error message, and the target
 object (which for GH CLI errors is always the command-line arguments for the failing command).
 
-It can retrieve errors from the `$error` variable or act on an input object.
+It can retrieve errors from the `$Error` variable or act on an input object.
 
 For more information, review the [source code][utility-Get-GHAConsoleError]
 

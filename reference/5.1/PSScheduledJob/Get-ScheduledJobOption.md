@@ -87,7 +87,7 @@ Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.Waket
     ForEach-Object {$_.JobDefinition}
 ```
 
-The first command gets job options in which the RunElevated property has a value of $True and the
+The first command gets job options in which the RunElevated property has a value of $true and the
 **RunWithoutNetwork** property has a value of `$false`. The output shows the **JobOptions** object
 that was selected.
 

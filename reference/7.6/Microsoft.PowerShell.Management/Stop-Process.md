@@ -102,7 +102,7 @@ to `Stop-Process`.
 The last command gets all of the processes on the computer that were running but that are now
 stopped. It uses `Get-Process` to get all of the processes on the computer. The pipeline operator
 (`|`) passes the results to the `Where-Object` cmdlet, which selects the ones where the value of the
-**HasExited** property is $True. **HasExited** is just one property of process objects. To find all
+**HasExited** property is $true. **HasExited** is just one property of process objects. To find all
 the properties, type `Get-Process | Get-Member`.
 
 ### Example 4: Stop a process not owned by the current user

@@ -84,7 +84,7 @@ $Cred = Get-Credential
 
 # Next, allow the use of self-signed SSL certificates.
 
-[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $True }
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }
 
 # Create variables to store the values consumed by the Invoke-RestMethod command.
 # The search variable contents are later embedded in the body variable.

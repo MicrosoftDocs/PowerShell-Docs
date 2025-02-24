@@ -75,7 +75,7 @@ object.
 ### Example 3
 
 ```powershell
-$Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
+$Credential = $Host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
 ```
 
 This command uses the **PromptForCredential** method to prompt the user for their user name and

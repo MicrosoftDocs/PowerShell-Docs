@@ -67,7 +67,7 @@ any PowerShell modules.
 If this policy setting isn't configured, the **LogPipelineExecutionDetails**
 property of each module determines whether PowerShell logs the execution events
 of that module. By default, the **LogPipelineExecutionDetails** property of all
-modules is set to `$False`.
+modules is set to `$false`.
 
 To turn on module logging for a module, use the following command format. The
 module must be imported into the session and the setting is effective only in
@@ -80,7 +80,7 @@ Import-Module <Module-Name>
 
 To turn on module logging for all sessions on a particular computer, add the
 previous commands to the 'All Users' PowerShell profile
-(`$Profile.AllUsersAllHosts`).
+(`$PROFILE.AllUsersAllHosts`).
 
 For more information about module logging, see
 [about_Modules](about_Modules.md).

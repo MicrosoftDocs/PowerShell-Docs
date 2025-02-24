@@ -61,7 +61,7 @@ processes a `Get-Alias` expression that takes input from the pipeline.
 
 ```powershell
 $A = "i*"
-Trace-Command ParameterBinding {Get-Alias $Input} -PSHost -InputObject $A
+Trace-Command ParameterBinding {Get-Alias $input} -PSHost -InputObject $A
 ```
 
 In `Trace-Command`, the **InputObject** parameter passes an object to the expression that's being
@@ -71,7 +71,7 @@ The first command stores the string `i*` in the `$A` variable. The second comman
 `Trace-Command` cmdlet with the ParameterBinding trace source. The **PSHost** parameter sends the
 output to the console.
 
-The expression being processed is `Get-Alias $Input`, where the `$Input` variable is associated with
+The expression being processed is `Get-Alias $input`, where the `$input` variable is associated with
 the **InputObject** parameter. The **InputObject** parameter passes the variable `$A` to the
 expression. In effect, the command being processed during the trace is
 `Get-Alias -InputObject $A" or "$A | Get-Alias`.

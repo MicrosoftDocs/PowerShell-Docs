@@ -81,11 +81,11 @@ data to a text file.
 
 ```powershell
 Register-EngineEvent -SourceIdentifier MyEventSource -Action {
-    "Event: {0}" -f $event.MessageData | Out-File c:\temp\MyEvents.txt -Append
+    "Event: {0}" -f $Event.MessageData | Out-File c:\temp\MyEvents.txt -Append
 }
 
 Start-Job -Name TestJob -ScriptBlock {
-    While ($True) {
+    While ($true) {
         Register-EngineEvent -SourceIdentifier MyEventSource -Forward
         Start-Sleep -seconds 2
         "Doing some work..."
@@ -160,7 +160,7 @@ instead of sending the event to the event queue. Enclose the commands in braces 
 script block.
 
 The value of the **Action** parameter can include the `$Event`, `$EventSubscriber`, `$Sender`,
-`$EventArgs`, and `$Args` automatic variables, which provide information about the event to the
+`$EventArgs`, and `$args` automatic variables, which provide information about the event to the
 **Action** script block. For more information, see
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 

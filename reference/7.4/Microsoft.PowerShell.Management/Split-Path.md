@@ -146,7 +146,7 @@ the full path of the parent container.
 ### Example 4: Determines whether a path is absolute
 
 This command determines whether the path is relative or absolute. In this case, because the path is
-relative to the current folder, which is represented by a dot (`.`), it returns `$False`.
+relative to the current folder, which is represented by a dot (`.`), it returns `$false`.
 
 ```powershell
 Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
@@ -161,12 +161,12 @@ False
 This command changes your location to the folder that contains the PowerShell profile.
 
 ```powershell
-PS C:\> Set-Location (Split-Path -Path $profile)
+PS C:\> Set-Location (Split-Path -Path $PROFILE)
 PS C:\Users\User01\Documents\PowerShell>
 ```
 
 The command in parentheses uses `Split-Path` to return only the parent of the path stored in the
-built-in `$Profile` variable. The **Parent** parameter is the default split location parameter.
+built-in `$PROFILE` variable. The **Parent** parameter is the default split location parameter.
 Therefore, you can omit it from the command. The parentheses direct PowerShell to run the command
 first. This is a useful way to move to a folder that has a long path name.
 
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 
 ### -IsAbsolute
 
-Indicates that this cmdlet returns `$True` if the path is absolute and `$False` if it's relative. On
+Indicates that this cmdlet returns `$true` if the path is absolute and `$false` if it's relative. On
 Windows, an absolute path string must start with a provider drive specifier, like `C:` or `HKCU:`. A
 relative path starts with a dot (`.`) or a dot-dot (`..`).
 

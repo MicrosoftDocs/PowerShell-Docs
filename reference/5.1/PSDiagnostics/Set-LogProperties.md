@@ -32,7 +32,7 @@ You must run this cmdlet from an elevated PowerShell session.
 
 ```powershell
 $logDetails = Get-LogProperties 'Windows PowerShell'
-$logDetails.Retention = $True
+$logDetails.Retention = $true
 Set-LogProperties -LogDetails $logDetails
 Get-LogProperties 'Windows PowerShell'
 ```

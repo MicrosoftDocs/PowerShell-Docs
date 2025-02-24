@@ -228,17 +228,17 @@ debugging a script. However, these methods do not work for the following automat
 
 - `$_`
 
-- `$Input`
+- `$input`
 
 - `$MyInvocation`
 
 - `$PSBoundParameters`
 
-- `$Args`
+- `$args`
 
 If you try to display the value of any of these variables, you get the value of that variable for in
 an internal pipeline the debugger uses, not the value of the variable in the script. You can work
-around this for a few variables (`$_`, `$Input`, `$MyInvocation`, `$PSBoundParameters`, and `$Args`)
+around this for a few variables (`$_`, `$input`, `$MyInvocation`, `$PSBoundParameters`, and `$args`)
 by using the following method:
 
 1. In the script, assign the value of the automatic variable to a new variable.

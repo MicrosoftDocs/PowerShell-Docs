@@ -507,9 +507,9 @@ PowerShell includes the following aliases for `Get-Member`:
 You can get information about a collection object either using the **InputObject** parameter or by
 piping the object, preceded by a comma, to `Get-Member`.
 
-You can use the `$This` automatic variable in script blocks that define the values of new properties
-and methods. The `$This` variable refers to the instance of the object to which the properties and
-methods are being added. For more information about the `$This` variable, see
+You can use the `$this` automatic variable in script blocks that define the values of new properties
+and methods. The `$this` variable refers to the instance of the object to which the properties and
+methods are being added. For more information about the `$this` variable, see
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 If you pass an object representing a _type_, like a type literal such as `[int]`, `Get-Member`
