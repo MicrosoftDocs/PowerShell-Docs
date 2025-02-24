@@ -95,13 +95,13 @@ New-Item -Path "c:\" -Name "Logfiles" -ItemType "directory"
 
 ### Example 3: Create a profile
 
-This command creates a PowerShell profile in the path that is specified by the `$profile` variable.
+This command creates a PowerShell profile in the path that is specified by the `$PROFILE` variable.
 
-You can use profiles to customize PowerShell. `$profile` is an automatic (built-in) variable that
+You can use profiles to customize PowerShell. `$PROFILE` is an automatic (built-in) variable that
 stores the path and file name of the "CurrentUser/CurrentHost" profile. By default, the profile does
 not exist, even though PowerShell stores a path and file name for it.
 
-In this command, the `$profile` variable represents the path of the file. **ItemType** parameter
+In this command, the `$PROFILE` variable represents the path of the file. **ItemType** parameter
 specifies that the command creates a file. The **Force** parameter lets you create a file in the
 profile path, even when the directories in the path do not exist.
 
@@ -112,7 +112,7 @@ For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Co
 and [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 ```powershell
-New-Item -Path $profile -ItemType "file" -Force
+New-Item -Path $PROFILE -ItemType "file" -Force
 ```
 
 ### Example 4: Create a directory in a different directory

@@ -84,7 +84,7 @@ Set-ItemProperty -LiteralPath <string[]> -InputObject <psobject> [-PassThru] [-F
 The `Set-ItemProperty` cmdlet changes the value of the property of the specified item.
 You can use the cmdlet to establish or change the properties of items.
 For example, you can use `Set-ItemProperty` to set the value of the **IsReadOnly** property of a
-file object to `$True`.
+file object to `$true`.
 
 You also use `Set-ItemProperty` to create and change registry values and data.
 For example, you can add a new registry entry to a key and establish or change its value.
@@ -170,7 +170,7 @@ Th example uses `Get-ChildItem` to get the `weekly.txt` file. The file object is
 specify the property and its new value.
 
 ```powershell
-Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $True
+Get-ChildItem weekly.txt | Set-ItemProperty -Name IsReadOnly -Value $true
 ```
 
 ## PARAMETERS

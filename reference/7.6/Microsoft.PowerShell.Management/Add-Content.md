@@ -131,7 +131,7 @@ The steps to create a read-only file are included in the example.
 
 ```powershell
 New-Item -Path .\IsReadOnlyTextFile.txt -ItemType File
-Set-ItemProperty -Path .\IsReadOnlyTextFile.txt -Name IsReadOnly -Value $True
+Set-ItemProperty -Path .\IsReadOnlyTextFile.txt -Name IsReadOnly -Value $true
 Get-ChildItem -Path .\IsReadOnlyTextFile.txt
 Add-Content -Path .\IsReadOnlyTextFile.txt -Value 'Add value to read-only text file' -Force
 Get-Content -Path .\IsReadOnlyTextFile.txt
