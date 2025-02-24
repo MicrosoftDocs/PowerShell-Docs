@@ -84,7 +84,7 @@ pass it to the `Invoke-OperationValidation` cmdlet, which runs the test.
 
 ### -IncludePesterOutput
 
-Includes Pester test output. The default is `$False`.
+Includes Pester test output. The default is `$false`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

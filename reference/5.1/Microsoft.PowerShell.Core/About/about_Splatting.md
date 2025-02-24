@@ -70,7 +70,7 @@ variable in a command with splatting. The At symbol (`@HashArguments`) replaces
 the dollar sign (`$HashArguments`) in the command.
 
 To provide a value for the **WhatIf** switch parameter, use `$True` or
-`$False`.
+`$false`.
 
 ```powershell
 $HashArguments = @{

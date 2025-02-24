@@ -65,7 +65,7 @@ This section describes the activity common parameters.
 #### AppendOutput \<Boolean\>
 
 A value of `$True` adds the output of the activity to the value of the variable.
-A value of `$False` has no effect. By default, assigning a value to a variable
+A value of `$false` has no effect. By default, assigning a value to a variable
 replaces the variable value.
 
 For example, the following commands add a process object to the service object
@@ -144,7 +144,7 @@ piping objects to the activity one at a time.
 
 #### MergeErrorToOutput \<Boolean\>
 
-A value of `$True` adds errors to the output stream. A value of `$False` has
+A value of `$True` adds errors to the output stream. A value of `$false` has
 no effect. Use this parameter with the **Parallel** and `ForEach -Parallel`
 keywords to collect errors and output from multiple parallel commands
 in a single collection.
@@ -170,7 +170,7 @@ affected target computer.
 #### PSAllowRedirection \<Boolean\>
 
 A value of `$True` allows redirection of the connection to the target computers.
-A value of `$False` has no effect. This activity common parameter is also a
+A value of `$false` has no effect. This activity common parameter is also a
 workflow common parameter.
 
 When you use the **PSConnectionURI** parameter, the remote destination can return
@@ -365,7 +365,7 @@ Valid values:
 - `$True`. Directs all activities within a workflow to return
   "live" (not serialized) objects. The resulting objects have methods, as well
   as properties, but they cannot be saved when a checkpoint is taken.
-- `$False`. Workflow objects are serialized.
+- `$false`. Workflow objects are serialized.
 
 #### PSError \<PSDataCollection[ErrorRecord]\>
 
@@ -414,7 +414,7 @@ Valid values:
 - `$True`. Takes a checkpoint after the activity completes. This checkpoint is
   in addition to any checkpoints that are specified in the workflow.
 
-- `$False`. No checkpoints are added. Checkpoints are taken only when specified
+- `$false`. No checkpoints are added. Checkpoints are taken only when specified
   in the workflow.
 
 #### PSPort \<Int32\>
@@ -501,7 +501,7 @@ For more information about the `$PSSessionOption` preference variable, see
 
 A value of `$True` uses the Secure Sockets Layer (SSL) protocol to establish a
 connection to the target computer. By default, SSL is not used. A value of
-`$False` has no effect. This activity common parameter is also a workflow common
+`$false` has no effect. This activity common parameter is also a workflow common
 parameter.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the

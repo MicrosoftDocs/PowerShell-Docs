@@ -464,7 +464,7 @@ options, including the default values, see `New-ScheduledJobOption`.
 To submit a hash table, use the following keys. In the following hash table, the keys are shown with
 their default values.
 
-`@{StartIfOnBattery=$False; StopIfGoingOnBattery=$True; WakeToRun=$False; StartIfNotIdle=$False; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$True; RestartOnIdleResume=$False; ShowInTaskScheduler=$True; RunElevated=$False; RunWithoutNetwork=$False; DoNotAllowDemandStart=$False; MultipleInstancePolicy="IgnoreNew"}`
+`@{StartIfOnBattery=$false; StopIfGoingOnBattery=$True; WakeToRun=$false; StartIfNotIdle=$false; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$True; RestartOnIdleResume=$false; ShowInTaskScheduler=$True; RunElevated=$false; RunWithoutNetwork=$false; DoNotAllowDemandStart=$false; MultipleInstancePolicy="IgnoreNew"}`
 
 ```yaml
 Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions

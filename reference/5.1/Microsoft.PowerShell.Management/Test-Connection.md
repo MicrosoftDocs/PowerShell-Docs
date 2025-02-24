@@ -153,7 +153,7 @@ if (Test-Connection -ComputerName Server01 -Quiet) {New-PSSession Server01}
 
 The `if` command uses the `Test-Connection` cmdlet to ping the Server01 computer. The command uses
 the **Quiet** parameter, which returns a **Boolean** value, instead of a **Win32_PingStatus**
-object. The value is `$True` if any of the four pings succeed and is, otherwise, `$False`.
+object. The value is `$True` if any of the four pings succeed and is, otherwise, `$false`.
 
 If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession`
 cmdlet to create the **PSSession**.
@@ -359,7 +359,7 @@ specifies multiple computers, an array of **Boolean** values is returned.
 
 If **any** ping succeeds, `$True` is returned.
 
-If **all** pings fail, `$False` is returned.
+If **all** pings fail, `$false` is returned.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

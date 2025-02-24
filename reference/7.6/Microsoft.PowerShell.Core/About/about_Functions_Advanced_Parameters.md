@@ -408,7 +408,7 @@ parameter is used in a command.
 By default, all function parameters are positional. PowerShell assigns position
 numbers to parameters in the order the parameters are declared in the function.
 To disable this feature, set the value of the `PositionalBinding` argument of
-the **CmdletBinding** attribute to `$False`. The `Position` argument takes
+the **CmdletBinding** attribute to `$false`. The `Position` argument takes
 precedence over the value of the `PositionalBinding` argument of the
 **CmdletBinding** attribute. For more information, see `PositionalBinding` in
 [about_Functions_CmdletBindingAttribute][12].

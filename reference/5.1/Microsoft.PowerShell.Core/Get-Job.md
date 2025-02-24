@@ -548,13 +548,13 @@ Accept wildcard characters: False
 Indicates whether this cmdlet gets only jobs that have the specified **HasMoreData** property value.
 The **HasMoreData** property indicates whether all job results have been received in the current
 session. To get jobs that have more results, specify a value of `$True`. To get jobs that do not
-have more results, specify a value of `$False`.
+have more results, specify a value of `$false`.
 
 To get the results of a job, use the `Receive-Job` cmdlet.
 
 When you use the `Receive-Job` cmdlet, it deletes from its in-memory, session-specific storage the
 results that it returned. When it has returned all results of the job in the current session, it
-sets the value of the **HasMoreData** property of the job to `$False`) to indicate that it has no
+sets the value of the **HasMoreData** property of the job to `$false`) to indicate that it has no
 more results for the job in the current session. Use the **Keep** parameter of `Receive-Job` to
 prevent `Receive-Job` from deleting results and changing the value of the **HasMoreData** property.
 For more information, type `Get-Help Receive-Job`.
@@ -562,7 +562,7 @@ For more information, type `Get-Help Receive-Job`.
 The **HasMoreData** property is specific to the current session. If results for a custom job type
 are saved outside of the session, such as the scheduled job type, which saves job results on disk,
 you can use the `Receive-Job` cmdlet in a different session to get the job results again, even if
-the value of **HasMoreData** is `$False`. For more information, see the help topics for the custom
+the value of **HasMoreData** is `$false`. For more information, see the help topics for the custom
 job type.
 
 This parameter was introduced in Windows PowerShell 3.0.
