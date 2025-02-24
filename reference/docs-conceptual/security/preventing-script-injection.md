@@ -34,7 +34,7 @@ another script that's parsed and run using the `Invoke-Expression` cmdlet. This 
 when a valid process Id integer is passed in.
 
 ```powershell
-Get-ProcessById $pid
+Get-ProcessById $PID
 
  NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
  ------    -----      -----     ------      --  -- -----------
@@ -45,10 +45,10 @@ However, the `$ProcId` parameter doesn't specify a type. It accepts any arbitrar
 can include other commands.
 
 ```powershell
-Get-ProcessById "$pid; Write-Host 'pwnd!'"
+Get-ProcessById "$PID; Write-Host 'pwnd!'"
 ```
 
-In this example, the function correctly retrieved the process identified by `$pid`, but also ran the
+In this example, the function correctly retrieved the process identified by `$PID`, but also ran the
 injected script `Write-Host 'pwnd!'`.
 
 ```Output
@@ -73,13 +73,13 @@ function Get-ProcessById
 
     Invoke-Expression -Command "Get-Process -Id $ProcId"
 }
-Get-ProcessById "$pid; Write-Host 'pwnd!'"
+Get-ProcessById "$PID; Write-Host 'pwnd!'"
 ```
 
 ```Output
 Get-ProcessById:
 Line |
-   7 |  Get-ProcessById "$pid; Write-Host 'pwnd!'"
+   7 |  Get-ProcessById "$PID; Write-Host 'pwnd!'"
      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~
      | Cannot process argument transformation on parameter 'ProcId'. Cannot convert value
 "8064; Write-Host 'pwnd!'" to type "System.Int32". Error: "The input string '8064; Write-Host 'pwnd!'
@@ -101,7 +101,7 @@ function Get-ProcessById
 
     Get-Process -Id $ProcId
 }
-Get-ProcessById "$pid; Write-Host 'pwnd!'"
+Get-ProcessById "$PID; Write-Host 'pwnd!'"
 ```
 
 ```Output
@@ -133,7 +133,7 @@ function Get-ProcessById
     Invoke-Expression -Command "Get-Process -Id '$ProcId'"
 }
 
-Get-ProcessById "$pid; Write-Host 'pwnd!'"
+Get-ProcessById "$PID; Write-Host 'pwnd!'"
 ```
 
 ```Output
@@ -145,7 +145,7 @@ However, this version of the function isn't yet completely safe from injection a
 user can still use single quotes in their input to inject code.
 
 ```powershell
-Get-ProcessById "$pid'; Write-Host 'pwnd!';'"
+Get-ProcessById "$PID'; Write-Host 'pwnd!';'"
 ```
 
 This example uses single quotes in the user input to force the function to run three separate
@@ -174,7 +174,7 @@ function Get-ProcessById
         EscapeSingleQuotedStringContent("$ProcId")
     Invoke-Expression -Command "Get-Process -Id '$ProcIdClean'"
 }
-Get-ProcessById "$pid'; Write-Host 'pwnd!';'"
+Get-ProcessById "$PID'; Write-Host 'pwnd!';'"
 ```
 
 ```Output

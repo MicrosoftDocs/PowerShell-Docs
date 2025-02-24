@@ -857,7 +857,7 @@ is case-insensitive.
 
 A pattern may contain a regular expression ([§3.16][§3.16]), in which case, regular expression string
 comparisons are performed, but only if the *switch-parameter* `-Regex` is present. By default, the
-comparison is case-insensitive. If `-Regex` is present and a pattern is matched, `$matches` is
+comparison is case-insensitive. If `-Regex` is present and a pattern is matched, `$Matches` is
 defined in the *switch-clause* *statement-block* for that pattern.
 
 A *switch-parameter* may be abbreviated; any distinct leading part of a parameter may be used. For
@@ -1169,7 +1169,7 @@ only:
 
 - All operators except `-match`
 - The `if` statement
-- The following automatic variables: `$PsCulture`, `$PsUICulture`, `$true`, `$false`, and `$null`.
+- The following automatic variables: `$PSCulture`, `$PSUICulture`, `$true`, `$false`, and `$null`.
 - Comments
 - Pipelines
 - Statements separated by semicolons (`;`)
@@ -1660,7 +1660,7 @@ function Test {
         [Parameter(Position = 0, ParameterSetname = "SetB")]
         [int]$in
     )
-    $PsCmdlet.ParameterSetName
+    $PSCmdlet.ParameterSetName
 }
 
 Test 42d   # outputs "SetA"

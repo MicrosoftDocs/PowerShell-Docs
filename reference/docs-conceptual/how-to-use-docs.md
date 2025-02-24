@@ -48,7 +48,7 @@ If there are version-specific differences, the documentation makes note of those
 
 ![Animation showing how to use the version selector.][04]
 
-You can verify the version of PowerShell you are using by inspecting the `$PSversionTable.PSVersion`
+You can verify the version of PowerShell you are using by inspecting the `$PSVersionTable.PSVersion`
 value. The following example shows the output for Windows PowerShell 5.1.
 
 ```powershell
