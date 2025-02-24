@@ -250,7 +250,7 @@ disconnected and get the results of jobs that were running in the sessions.
 
 ```powershell
 PS> $parms = @{
-      InDisconnectedSession = $True
+      InDisconnectedSession = $true
       ComputerName = "Server01", "Server02", "Server30"
       FilePath = "\\Server12\Scripts\SharedScripts\Get-BugStatus.ps1"
       Name = "BugStatus"

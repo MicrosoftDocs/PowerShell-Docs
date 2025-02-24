@@ -219,7 +219,7 @@ This cmdlet returns strings that describe its results.
 ## NOTES
 
 Starting in PowerShell 3.0, `Enable-PSRemoting` enables all session configurations by setting the
-value of the **Enabled** property of all session configurations to `$True`.
+value of the **Enabled** property of all session configurations to `$true`.
 
 - On server versions of the Windows operating system, `Enable-PSRemoting` creates firewall rules for
   private and domain networks that allow remote access, and creates a firewall rule for public
@@ -236,7 +236,7 @@ value of the **Enabled** property of all session configurations to `$True`.
   `Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any`
 
 `Enable-PSRemoting` enables all session configurations by setting the value of the **Enabled**
-property of all session configurations to `$True`.
+property of all session configurations to `$true`.
 
 `Enable-PSRemoting` removes the **Deny_All** and **Network_Deny_All** settings. This provides remote
 access to session configurations that were reserved for local use.
