@@ -28,7 +28,7 @@ object, the file changes too.
 Most objects have properties. Properties are the data that are associated with
 an object. Different types of object have different properties. For example, a
 **FileInfo** object, which represents a file, has an **IsReadOnly** property
-that contains `$True` if the file has the read-only attribute and `$false` if
+that contains `$true` if the file has the read-only attribute and `$false` if
 it doesn't. A **DirectoryInfo** object, which represents a file system
 directory, has a **Parent** property that contains the path to the parent
 directory.

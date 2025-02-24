@@ -74,7 +74,7 @@ The **Boolean** type operators (`-is` and `-isnot`) always return a **Boolean**
 value, even if the input is a collection of objects.
 
 If `<input>` is a type that is the same as or is _derived_ from the .NET Type,
-the `-is` operator returns `$True`.
+the `-is` operator returns `$true`.
 
 For example, the **DirectoryInfo** type is derived from the **FileSystemInfo**
 type. Therefore, both of these examples return **True**.

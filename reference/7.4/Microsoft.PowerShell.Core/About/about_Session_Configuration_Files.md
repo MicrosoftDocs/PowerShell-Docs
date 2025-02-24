@@ -206,7 +206,7 @@ active copy of the session configuration file.
 
 When you use a session configuration file in a session configuration,
 PowerShell creates an active copy of the session configuration file and stores
-it in the \$pshome\\SessionConfig directory on the local computer.
+it in the \$PSHOME\\SessionConfig directory on the local computer.
 
 The location of the active copy of a session configuration file is stored in
 the ConfigFilePath property of the session configuration object.

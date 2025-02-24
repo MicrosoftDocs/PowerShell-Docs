@@ -305,12 +305,12 @@ function and the `$ProfileName` variable.
 function New-Profile
 {
   Write-Host "Running New-Profile function"
-  $profileName = Split-Path $profile -Leaf
+  $profileName = Split-Path $PROFILE -Leaf
 
-  if (Test-Path $profile)
+  if (Test-Path $PROFILE)
     {Write-Error "Profile $profileName already exists on this computer."}
   else
-    {New-Item -Type file -Path $profile -Force }
+    {New-Item -Type file -Path $PROFILE -Force }
 }
 ```
 
