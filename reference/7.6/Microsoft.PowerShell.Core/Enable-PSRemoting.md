@@ -333,7 +333,7 @@ networks that removes the local subnet restriction and allows remote access , us
 `Set-NetFirewallRule -Name "WINRM-HTTP-In-TCP-PUBLIC" -RemoteAddress Any`
 
 `Enable-PSRemoting` enables all session configurations by setting the value of the **Enabled**
-property of all session configurations to `$True`.
+property of all session configurations to `$true`.
 
 `Enable-PSRemoting` removes the **Deny_All** and **Network_Deny_All** settings. This provides remote
 access to session configurations that were reserved for local use.

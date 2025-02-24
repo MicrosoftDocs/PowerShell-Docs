@@ -267,7 +267,7 @@ Get-Content $m.Path
     CLRVersion         = "2.0"
     NestedModules      = "Microsoft.BackgroundIntelligentTransfer.Management"
     FormatsToProcess   = "FileTransfer.Format.ps1xml"
-    RequiredAssemblies = Join-Path $psScriptRoot "Microsoft.BackgroundIntelligentTransfer.Management.Interop.dll"
+    RequiredAssemblies = Join-Path $PSScriptRoot "Microsoft.BackgroundIntelligentTransfer.Management.Interop.dll"
 }
 ```
 

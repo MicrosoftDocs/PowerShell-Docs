@@ -546,7 +546,7 @@ Accept wildcard characters: False
 
 Indicates whether this cmdlet gets only jobs that have the specified **HasMoreData** property value.
 The **HasMoreData** property indicates whether all job results have been received in the current
-session. To get jobs that have more results, specify a value of `$True`. To get jobs that do not
+session. To get jobs that have more results, specify a value of `$true`. To get jobs that do not
 have more results, specify a value of `$false`.
 
 To get the results of a job, use the `Receive-Job` cmdlet.

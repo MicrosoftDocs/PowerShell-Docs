@@ -71,7 +71,7 @@ cabinet file. The `Update-Help` cmdlet extracts the help files, validates the XM
 then installs the help files and the help information file in a language-specific subfolder of the
 module folder.
 
-To save the help files for modules in the PowerShell installation folder (`$pshome\Modules`), start
+To save the help files for modules in the PowerShell installation folder (`$PSHOME\Modules`), start
 PowerShell by using the Run as administrator option. You must be a member of the Administrators
 group on the computer to download the help files for these modules.
 
@@ -461,9 +461,9 @@ This cmdlet returns no output.
 
 ## NOTES
 
-- To save help for modules in the $pshome\Modules folder, start PowerShell by using the Run as
+- To save help for modules in the $PSHOME\Modules folder, start PowerShell by using the Run as
   administrator option. Only members of the Administrators group on the computer can download help
-  for modules in the $pshome\Modules folder.
+  for modules in the $PSHOME\Modules folder.
 - The saved help for each module consists of one help information (HelpInfo XML) file and one
   cabinet (.cab) file for the help files each UI culture. You do not have to extract the help files
   from the cabinet file. The `Update-Help` cmdlet extracts the help files, validates the XML, and
