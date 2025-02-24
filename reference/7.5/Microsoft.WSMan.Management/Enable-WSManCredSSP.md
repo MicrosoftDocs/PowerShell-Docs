@@ -135,7 +135,7 @@ the WSMan provider must be set to true.
 
 ```powershell
 Connect-WSMan -ComputerName "server02"
-Set-Item -Path "WSMan:\server02\service\auth\credSSP" -Value $True
+Set-Item -Path "WSMan:\server02\service\auth\credSSP" -Value $true
 ```
 
 `Connect-WSMan` creates a connection to the remote computer, server02. `Set-Item` uses the **Path**

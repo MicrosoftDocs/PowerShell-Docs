@@ -106,7 +106,7 @@ function  Enable-ProcessCreationEvent {
         EventName = 'EventArrived'
         SourceIdentifier = 'WMI.ProcessCreated'
         MessageData = 'Test'
-        Forward = $True
+        Forward = $true
     }
     Register-ObjectEvent @objectEventArgs
 }
@@ -141,7 +141,7 @@ variable.
 ```powershell
 $Timer = New-Object Timers.Timer
 $Timer.Interval = 500
-$Timer.Enabled = $True
+$Timer.Enabled = $true
 $objectEventArgs = @{
     InputObject = $Timer
     EventName = 'Elapsed'

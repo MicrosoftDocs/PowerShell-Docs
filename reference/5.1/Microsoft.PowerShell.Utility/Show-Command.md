@@ -95,7 +95,7 @@ the **Height**, **Width**, and **ErrorPopup** parameters of the `Show-Command` c
 $PSDefaultParameterValues = @{
     "Show-Command:Height" = 700
     "Show-Command:Width" = 1000
-    "Show-Command:ErrorPopup" = $True
+    "Show-Command:ErrorPopup" = $true
 }
 ```
 
