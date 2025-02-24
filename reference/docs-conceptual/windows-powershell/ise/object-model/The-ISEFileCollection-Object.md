@@ -27,7 +27,7 @@ the full path.
 $newFile = $psISE.CurrentPowerShellTab.Files.Add()
 
 # Adds a file specified by its full path to the collection of files in the current PowerShell tab.
-$psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
+$psISE.CurrentPowerShellTab.Files.Add("$PSHOME\Examples\profile.ps1")
 ```
 
 ### Remove\( File, \[Force\] \)

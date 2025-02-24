@@ -558,10 +558,10 @@ switch ( $age )
 
 It still executes the same way and gives a better visual break when quickly looking at it.
 
-### Regex $matches
+### Regex $Matches
 
 We need to revisit regex to touch on something that isn't immediately obvious. The use of regex
-populates the `$matches` variable. I do go into the use of `$matches` more when I talk about
+populates the `$Matches` variable. I do go into the use of `$Matches` more when I talk about
 [The many ways to use regex][The many ways to use regex]. Here is a quick sample to show it in
 action with named matches.
 
@@ -572,15 +572,15 @@ switch -Regex ($message)
 {
     '(?<SSN>\d\d\d-\d\d-\d\d\d\d)'
     {
-        Write-Warning "message contains a SSN: $($matches.SSN)"
+        Write-Warning "message contains a SSN: $($Matches.SSN)"
     }
     '(?<CC>\d\d\d\d-\d\d\d\d-\d\d\d\d-\d\d\d\d)'
     {
-        Write-Warning "message contains a credit card number: $($matches.CC)"
+        Write-Warning "message contains a credit card number: $($Matches.CC)"
     }
     '(?<Phone>\d\d\d-\d\d\d-\d\d\d\d)'
     {
-        Write-Warning "message contains a phone number: $($matches.Phone)"
+        Write-Warning "message contains a phone number: $($Matches.Phone)"
     }
 }
 ```
