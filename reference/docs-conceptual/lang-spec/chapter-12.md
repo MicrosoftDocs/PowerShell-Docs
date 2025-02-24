@@ -179,7 +179,7 @@ conversion from `$null` to int.
 
 This attribute is used in the *attribute-list* of *param-block* of a function to indicate that
 function acts similar to a cmdlet. Specifically, it allows functions to access a number of methods
-and properties through the $PsCmdlet variable by using begin, process, and end named blocks
+and properties through the $PSCmdlet variable by using begin, process, and end named blocks
 ([§8.10.7][§8.10.7]).
 
 When this attribute is present, positional arguments that have no matching positional parameters
@@ -322,11 +322,11 @@ ParameterSetName = "User")]<br />
 ParameterSetName = "Computer")]<br />
 [Parameter(ParameterSetName = "User")]<br />
 [int] $SharedParam = 5 )</p>
-<p>if ($PsCmdlet.ParameterSetName -eq "Computer")<br />
+<p>if ($PSCmdlet.ParameterSetName -eq "Computer")<br />
 {<br />
 # handle "Computer" parameter set<br />
 }</p>
-<p>elseif ($PsCmdlet.ParameterSetName -eq "User")<br />
+<p>elseif ($PSCmdlet.ParameterSetName -eq "User")<br />
 {<br />
 # handle "User" parameter set<br />
 }<br />

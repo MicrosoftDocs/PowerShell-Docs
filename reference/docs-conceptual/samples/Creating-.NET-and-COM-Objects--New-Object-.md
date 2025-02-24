@@ -276,10 +276,10 @@ TargetPath       Property     string TargetPath () {get} {set}
 
 We need to specify the **TargetPath**, which is the application folder for PowerShell, and then save
 the shortcut by calling the `Save` method. The PowerShell application folder path is stored in the
-variable `$PSHome`, so we can do this by typing:
+variable `$PSHOME`, so we can do this by typing:
 
 ```powershell
-$lnk.TargetPath = $PSHome
+$lnk.TargetPath = $PSHOME
 $lnk.Save()
 ```
 

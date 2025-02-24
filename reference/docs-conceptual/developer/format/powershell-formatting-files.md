@@ -7,7 +7,7 @@ title: Windows PowerShell Formatting Files
 # Windows PowerShell Formatting Files
 
 Windows PowerShell provides several formatting files (.format.ps1xml) that are located in the
-installation directory (`$pshome`). Each of these files defines the default display for a specific
+installation directory (`$PSHOME`). Each of these files defines the default display for a specific
 set of .NET objects. These files should never be changed. However, you can use them as a reference
 for creating your own custom formatting files.
 

@@ -33,7 +33,7 @@ PowerShell modules. Cmdlets rely on the value of this environment variable to fi
 By default, the **PSModulePath** environment variable value contains the following system and user
 module directories, but you can add to and edit the value.
 
-- `$PSHome\Modules` (`%Windir%\System32\WindowsPowerShell\v1.0\Modules`)
+- `$PSHOME\Modules` (`%Windir%\System32\WindowsPowerShell\v1.0\Modules`)
 
   > [!WARNING]
   > This location is reserved for modules that ship with Windows. Do not install modules to this

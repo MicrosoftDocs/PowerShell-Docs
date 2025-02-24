@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
     expression = {
         if ( $_.CommandLine -match 'encodedCommand (.*) -inputFormat' )
         {
-            return $matches[1]
+            return $Matches[1]
         }
     }
 }

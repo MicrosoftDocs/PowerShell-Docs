@@ -1698,10 +1698,10 @@ dash:
 Description:
 
 If the left operand does not designate a collection, the result has type `bool` and if that result
-is `$true`, the elements of the Hashtable `$matches` are set to the strings that match (or
+is `$true`, the elements of the Hashtable `$Matches` are set to the strings that match (or
 do-not-match) the value designated by the right operand. Otherwise, the result is a possibly empty
 unconstrained 1-dimensional array containing the elements of the collection that test True when
-compared to the value designated by the right operand, and `$matches` is not set. The right operand
+compared to the value designated by the right operand, and `$Matches` is not set. The right operand
 may designate a string that contains regular expressions ([§3.16][§3.16]), in which case, it is
 referred to as a _pattern_. These operators have two variants ([§7.8][§7.8]).
 
@@ -1710,11 +1710,11 @@ These operators support submatches ([§7.8.4.6][§7.8.4.6]).
 Examples:
 
 ```powershell
-"Hello" -match ".l"                    # True, $matches key/value is 0/"el"
-"Hello" -match '\^h.*o$'               # True, $matches key/value is
+"Hello" -match ".l"                    # True, $Matches key/value is 0/"el"
+"Hello" -match '\^h.*o$'               # True, $Matches key/value is
 0/"Hello"
-"Hello" -cmatch '\^h.*o$'              # False, $matches not set
-"abc\^ef" -match ".\\\^e"              # True, $matches key/value is 0/"c\^e"
+"Hello" -cmatch '\^h.*o$'              # False, $Matches not set
+"abc\^ef" -match ".\\\^e"              # True, $Matches key/value is 0/"c\^e"
 
 "abc" -notmatch "[A-Za-z]"             # False
 "abc" -match "[\^A-Za-z]"              # False
@@ -1885,7 +1885,7 @@ _submatches_) delimited by parentheses. Consider the following example:
 
 `"red" -match "red"`
 
-The result is `$true` and key 0 of `$matches` contains "red", that part of the string designated by
+The result is `$true` and key 0 of `$Matches` contains "red", that part of the string designated by
 the left operand that exactly matched the pattern designated by the right operand.
 
 In the following example, the whole pattern is a submatch:
@@ -1914,7 +1914,7 @@ In the case of `-replace`, the replacement text can access the submatches via na
 
 The resulting string is "the morning of Monday".
 
-Instead of having keys in `$matches` be zero-based indexes, submatches can be named using the form
+Instead of having keys in `$Matches` be zero-based indexes, submatches can be named using the form
 `?<*name*>`. For example, `"((r)e)(d)"` can be written with three named submatches, `m1`, `m2`, and
 `m3`, as follows: `"(?<m1>(?<m2>r)e)(?<m3>d)"`.
 

@@ -195,7 +195,7 @@ The operation completed successfully.
 
 To add a new entry named "PowerShellPath" to the **CurrentVersion** key, use `New-ItemProperty` with
 the path to the key, the entry name, and the value of the entry. For this example, we will take the
-value of the Windows PowerShell variable `$PSHome`, which stores the path to the installation
+value of the Windows PowerShell variable `$PSHOME`, which stores the path to the installation
 directory for Windows PowerShell.
 
 You can add the new entry to the key using the following command, and the command also returns
@@ -206,7 +206,7 @@ $newItemPropertySplat = @{
     Path = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion'
     Name = 'PowerShellPath'
     PropertyType = 'String'
-    Value = $PSHome
+    Value = $PSHOME
 }
 New-ItemProperty @newItemPropertySplat
 ```
@@ -240,7 +240,7 @@ parameter:
 $newItemPropertySplat = @{
     Name = 'PowerShellPath'
     PropertyType = 'String'
-    Value = $PSHome
+    Value = $PSHOME
     Path = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion',
            'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion'
 }

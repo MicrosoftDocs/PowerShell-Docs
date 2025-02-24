@@ -85,7 +85,7 @@ Many thanks to **@MartinGC94** and others for all their work to improve tab comp
   ([#17750][17750]) (Thanks @fflaten!).
 - Fix dynamic parameter completion ([#19510][19510])
 - Add completion for variables assigned by the Data statement ([#19831][19831])
-- Fix expanding tilde (`~`) on Windows systems to `$home` to prevent breaking use cases with native
+- Fix expanding tilde (`~`) on Windows systems to `$HOME` to prevent breaking use cases with native
   commands ([#21529][21529])
 
 ## Web cmdlet improvements

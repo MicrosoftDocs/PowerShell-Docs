@@ -912,7 +912,7 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "UTF8"
 
 This adds an entry to the `$PSDefaultParameterValues` hashtable that sets `UTF8` as the default
 value for the `Out-File -Encoding` parameter. This is session-specific so you should place it in
-your `$profile`.
+your `$PROFILE`.
 
 I use this often to pre-assign values that I type quite often.
 
@@ -932,7 +932,7 @@ For a more in-depth breakdown, see this great article on [Automatic Defaults][Au
 
 ## Regex $Matches
 
-When you use the `-match` operator, an automatic variable called `$matches` is created with the
+When you use the `-match` operator, an automatic variable called `$Matches` is created with the
 results of the match. If you have any sub expressions in your regex, those sub matches are also
 listed.
 

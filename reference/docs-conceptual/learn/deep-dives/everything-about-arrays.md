@@ -764,7 +764,7 @@ We can take the same approach with `Select-String`.
 $servers | Select-String SQL
 ```
 
-I take a closer look at `Select-String`,`-match` and the `$matches` variable in another post called
+I take a closer look at `Select-String`,`-match` and the `$Matches` variable in another post called
 [The many ways to use regex][10].
 
 ### $null or empty

@@ -25,7 +25,7 @@ The path and file name to a .snippets.ps1xml file that contains snippet definiti
 
 ```powershell
 # Loads a custom snippet file into the current PowerShell tab.
-$SnipFile = Join-Path ( Split-Path $profile) 'Snippets\MySnips.snippets.ps1xml' $psISE.CurrentPowerShellTab.Snippets.Add($SnipPath)
+$SnipFile = Join-Path ( Split-Path $PROFILE) 'Snippets\MySnips.snippets.ps1xml' $psISE.CurrentPowerShellTab.Snippets.Add($SnipPath)
 ```
 
 ## See Also

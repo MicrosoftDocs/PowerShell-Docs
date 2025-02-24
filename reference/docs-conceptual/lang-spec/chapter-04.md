@@ -929,7 +929,7 @@ In PowerShell, this type is `System.Management.Automation.PSCustomObject`. The c
 
 ### 4.5.14 Command description type
 
-The automatic variable `$PsCmdlet` is an object that represents the cmdlet or function being
+The automatic variable `$PSCmdlet` is an object that represents the cmdlet or function being
 executed. The type of this object is implementation defined; it has the following accessible
 members:
 

@@ -27,7 +27,7 @@ This sample requires Windows PowerShell 2.0.
 - Building a console application that uses these host classes to build an interactive Windows
   PowerShell shell.
 
-- Creating a `$profile` variable and loading the following profiles.
+- Creating a `$PROFILE` variable and loading the following profiles.
 
   - current user, current host
   - current user, all hosts
@@ -145,7 +145,7 @@ namespace Microsoft.Samples.PowerShell.Host
       this.myRunSpace.Open();
 
       // Create a PowerShell object that will be used to execute the commands
-      // to create $profile and load the profiles.
+      // to create $PROFILE and load the profiles.
       lock (this.instanceLock)
       {
         this.currentPowerShell = PowerShell.Create();

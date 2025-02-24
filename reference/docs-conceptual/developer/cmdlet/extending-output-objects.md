@@ -6,7 +6,7 @@ title: Extending Output Objects
 ---
 # Extending Output Objects
 
-You can extend the .NET Framework objects that are returned by cmdlets, functions, and scripts by using types files (.ps1xml). Types files are XML-based files that let you add properties and methods to existing objects. For example, Windows PowerShell provides the Types.ps1xml file, which adds elements to several existing .NET Framework objects. The Types.ps1xml file is located in the Windows PowerShell installation directory (`$pshome`). You can create your own types file to further extend those objects or to extend other objects. When you extend an object by using a types file, any instance of the object is extended with the new elements.
+You can extend the .NET Framework objects that are returned by cmdlets, functions, and scripts by using types files (.ps1xml). Types files are XML-based files that let you add properties and methods to existing objects. For example, Windows PowerShell provides the Types.ps1xml file, which adds elements to several existing .NET Framework objects. The Types.ps1xml file is located in the Windows PowerShell installation directory (`$PSHOME`). You can create your own types file to further extend those objects or to extend other objects. When you extend an object by using a types file, any instance of the object is extended with the new elements.
 
 ## Extending the System.Array Object
 
@@ -66,7 +66,7 @@ PS> (1, 2, 3, 4).Length
 
 ## Custom Types Files
 
-To create a custom types file, start by copying an existing types file. The new file can have any name, but it must have a .ps1xml file name extension. When you copy the file, you can place the new file in any directory that is accessible to Windows PowerShell, but it is useful to place the files in the Windows PowerShell installation directory (`$pshome`) or in a subdirectory of the installation directory.
+To create a custom types file, start by copying an existing types file. The new file can have any name, but it must have a .ps1xml file name extension. When you copy the file, you can place the new file in any directory that is accessible to Windows PowerShell, but it is useful to place the files in the Windows PowerShell installation directory (`$PSHOME`) or in a subdirectory of the installation directory.
 
 To add your own extended types to the file, add a types element for each object that you want to extend. The following topics provide examples.
 
