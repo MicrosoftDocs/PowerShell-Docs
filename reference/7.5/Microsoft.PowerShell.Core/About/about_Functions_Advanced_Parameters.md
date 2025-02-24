@@ -1292,7 +1292,7 @@ function Test-UserDrivePath{
         [ValidateUserDrive()]
         [string]$Path
     )
-    $True
+    $true
 }
 
 Test-UserDrivePath -Path C:\

@@ -175,7 +175,7 @@ lists the changes that the command would make, instead of running the command.
 ## PositionalBinding
 
 The **PositionalBinding** argument determines whether parameters in the
-function are positional by default. The default value is `$True`. You can use
+function are positional by default. The default value is `$true`. You can use
 the **PositionalBinding** argument with a value of `$false` to disable
 positional binding.
 
@@ -189,7 +189,7 @@ function command.
 When parameters are not positional (they are "named"), the parameter
 name (or an abbreviation or alias of the name) is required in the command.
 
-When **PositionalBinding** is `$True`, function parameters are positional by
+When **PositionalBinding** is `$true`, function parameters are positional by
 default. PowerShell assigns position number to the parameters in the order in
 which they are declared in the function.
 

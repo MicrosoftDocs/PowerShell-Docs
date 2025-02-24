@@ -205,7 +205,7 @@ non-zero integer.
 ### `$foreach`
 
 Contains the enumerator (not the resulting values) of a [ForEach][56] loop. The
-`$ForEach` variable exists only while the `ForEach` loop is running; it's
+`$foreach` variable exists only while the `ForEach` loop is running; it's
 deleted after the loop is completed.
 
 Enumerators contain properties and methods you can use to retrieve loop values

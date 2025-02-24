@@ -586,7 +586,7 @@ system files and folders, use the **Attributes** parameter.
 
 ### NewerThan \<DateTime\>
 
-Returns `$True` when the `LastWriteTime` value of a file is greater than the
+Returns `$true` when the `LastWriteTime` value of a file is greater than the
 specified date. Otherwise, it returns `$false`.
 
 Enter a [DateTime][01] object, such as one that the [Get-Date][37] cmdlet
@@ -599,7 +599,7 @@ returns, or a string that can be converted to a **DateTime** object, such as
 
 ### OlderThan \<DateTime\>
 
-Returns `$True` when the `LastWriteTime` value of a file is less than the
+Returns `$true` when the `LastWriteTime` value of a file is less than the
 specified date. Otherwise, it returns `$false`.
 
 Enter a **DateTime** object, such as one that the `Get-Date` cmdlet

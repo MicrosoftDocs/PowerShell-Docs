@@ -53,7 +53,7 @@ processing, and an `end` block for one-time post-processing.
 ```powershell
 Function Test-ScriptCmdlet
 {
-[CmdletBinding(SupportsShouldProcess=$True)]
+[CmdletBinding(SupportsShouldProcess=$true)]
     param ($Parameter1)
     begin{}
     process{}
