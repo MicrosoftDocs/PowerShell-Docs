@@ -251,7 +251,7 @@ For example, the following command creates a session option object.
 ```powershell
 [System.Management.Automation.Remoting.PSSessionOption]@{
   IdleTimeout=43200000
-  SkipCnCheck=$True
+  SkipCnCheck=$true
 }
 ```
 
@@ -291,7 +291,7 @@ cmdlet can be a hash table.
 ```powershell
 New-PSSession -ComputerName Server01 -SessionOption @{
   IdleTimeout=43200000
-  SkipCnCheck=$True
+  SkipCnCheck=$true
 }
 Register-ScheduledJob -Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
   Frequency="Daily"

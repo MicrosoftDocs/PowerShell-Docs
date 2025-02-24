@@ -141,7 +141,7 @@ Update-Help -Module Microsoft.PowerShell.Security
 
 ## Permissions for updatable help
 
-To update help for the modules in the directory `$pshome/Modules`, you must be
+To update help for the modules in the directory `$PSHOME/Modules`, you must be
 member of the Administrators group on the computer.
 
 If you aren't a member of the Administrators group, you can't update help for

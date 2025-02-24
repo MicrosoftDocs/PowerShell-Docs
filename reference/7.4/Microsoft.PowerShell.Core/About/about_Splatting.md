@@ -72,7 +72,7 @@ table of parameter-name and parameter-value pairs and stores it in the
 variable in a command with splatting. The At symbol (`@HashArguments`) replaces
 the dollar sign (`$HashArguments`) in the command.
 
-To provide a value for the **WhatIf** switch parameter, use `$True` or
+To provide a value for the **WhatIf** switch parameter, use `$true` or
 `$false`.
 
 ```powershell

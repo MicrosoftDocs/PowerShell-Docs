@@ -160,7 +160,7 @@ if (!($username)) { $msgTable.promptMsg }
 ```
 
 If `Import-LocalizedData` cannot find a `.psd1` file that matches the value of
-`$PSUIculture`, the value of `$msgTable` is not replaced, and the call to
+`$PSUICulture`, the value of `$msgTable` is not replaced, and the call to
 `$msgTable.promptMsg` displays the fallback en-US strings.
 
 ## Examples

@@ -312,7 +312,7 @@ reproduced exactly. For example:
 
 ```powershell
 @'
-The $profile variable contains the path
+The $PROFILE variable contains the path
 of your PowerShell profile.
 '@
 ```
@@ -320,7 +320,7 @@ of your PowerShell profile.
 The output of this command is:
 
 ```Output
-The $profile variable contains the path
+The $PROFILE variable contains the path
 of your PowerShell profile.
 ```
 
@@ -331,7 +331,7 @@ example:
 @"
 Even if you have not created a profile,
 the path of the profile file is:
-$profile.
+$PROFILE.
 "@
 ```
 

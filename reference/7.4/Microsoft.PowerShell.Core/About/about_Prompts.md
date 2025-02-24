@@ -73,7 +73,7 @@ For example:
 ```
 
 ```Output
-"PS $($ExecutionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) "
+"PS $($ExecutionContext.SessionState.Path.CurrentLocation)$('>' * ($NestedPromptLevel + 1)) "
 # .Link
 # https://go.microsoft.com/fwlink/?LinkID=225750
 # .ExternalHelp System.Management.Automation.dll-help.xml
@@ -114,7 +114,7 @@ PowerShell includes a built-in `Prompt` function.
 
 ```powershell
 function prompt {
-  "PS $($ExecutionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) ";
+  "PS $($ExecutionContext.SessionState.Path.CurrentLocation)$('>' * ($NestedPromptLevel + 1)) ";
   # .Link
   # https://go.microsoft.com/fwlink/?LinkID=225750
   # .ExternalHelp System.Management.Automation.dll-help.xml
