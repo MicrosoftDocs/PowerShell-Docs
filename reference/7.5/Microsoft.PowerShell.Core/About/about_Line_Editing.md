@@ -85,10 +85,10 @@ key. To scroll through a list of values, press the <kbd>Tab</kbd> key again.
 
 ## See also
 
-- [about_PSReadLine](../../PSReadLine/About/about_PSReadline.md)
+- [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
 - [about_Tab_Expansion](about_Tab_Expansion.md)
-- [Get-PSReadLineOption](xref:PSReadline.Get-PSReadLineOption)
-- [Get-PSReadLineKeyHandler](xref:PSReadline.Get-PSReadLineKeyHandler)
-- [Set-PSReadLineOption](xref:PSReadline.Set-PSReadLineOption)
-- [Set-PSReadLineKeyHandler](xref:PSReadline.Set-PSReadLineKeyHandler)
+- [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption)
+- [Get-PSReadLineKeyHandler](xref:PSReadLine.Get-PSReadLineKeyHandler)
+- [Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption)
+- [Set-PSReadLineKeyHandler](xref:PSReadLine.Set-PSReadLineKeyHandler)
 - [Using PSReadLine key handlers](/powershell/scripting/learn/shell/using-keyhandlers)
