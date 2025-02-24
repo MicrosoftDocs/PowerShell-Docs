@@ -1,7 +1,7 @@
 ---
 description: Describes how to edit commands at the PowerShell command prompt.
 Locale: en-US
-ms.date: 09/12/2022
+ms.date: 02/24/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_line_editing?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Line_Editing
@@ -15,8 +15,16 @@ Describes how to edit commands at the PowerShell command prompt.
 
 ## Long description
 
-The PowerShell console has some useful keyboard shortcuts to help you edit
-commands at the PowerShell command prompt.
+The PSReadLine module provides useful keyboard shortcuts to help you edit
+commands at the PowerShell command prompt. The key bindings discussed in this
+article are the default key bindings on Windows platforms. You can create
+custom key bindings by using the `Set-PSReadLineKeyHandler` command.
+
+You can change the edit mode using the `Set-PSReadLineOption` command.
+PSReadLine has three edit modes: `Emacs`, `Vi`, and `Windows`.
+
+To see the current edit mode, use the `Get-PSReadLineOption` command. To see a
+list of the current key bindings, use the `Get-PSReadLineKeyHandler` command.
 
 ### Add a line
 
@@ -76,6 +84,10 @@ key. To scroll through a list of values, press the <kbd>Tab</kbd> key again.
 
 ## See also
 
-- [about_Command_Syntax](about_Command_Syntax.md)
-- [about_Path_Syntax](about_Path_Syntax.md)
-- [about_PSReadline](../../PSReadline/About/about_PSReadline.md)
+- [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
+- [about_Tab_Expansion](about_Tab_Expansion.md)
+- [Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption)
+- [Get-PSReadLineKeyHandler](xref:PSReadLine.Get-PSReadLineKeyHandler)
+- [Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption)
+- [Set-PSReadLineKeyHandler](xref:PSReadLine.Set-PSReadLineKeyHandler)
+- [Using PSReadLine key handlers](/powershell/scripting/learn/shell/using-keyhandlers)
