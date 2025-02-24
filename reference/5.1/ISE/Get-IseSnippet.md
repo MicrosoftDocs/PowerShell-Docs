@@ -100,14 +100,14 @@ This example displays the title and description of all snippets in the session, 
 snippets, user-defined snippets, and imported snippets.
 
 ```powershell
-$PSISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
+$psISE.CurrentPowerShellTab.Snippets | Format-Table DisplayTitle, Description
 ```
 
-The `$PSISE` variable represents the Windows PowerShell ISE host program. The
-**CurrentPowerShellTab** property of the `$PSISE` variable represent the current session. The
+The `$psISE` variable represents the Windows PowerShell ISE host program. The
+**CurrentPowerShellTab** property of the `$psISE` variable represent the current session. The
 **Snippets** property represents snippets in the current session.
 
-The `$PSISE.CurrentPowerShellTab.Snippets` command returns a
+The `$psISE.CurrentPowerShellTab.Snippets` command returns a
 **Microsoft.PowerShell.Host.ISE.ISESnippet** object that represents a snippet, unlike the
 `Get-IseSnippet` cmdlet. `Get-IseSnippet` returns a file object (System.Io.FileInfo) that represents
 a snippet file.

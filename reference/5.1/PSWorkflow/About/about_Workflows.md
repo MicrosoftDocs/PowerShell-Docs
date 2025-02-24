@@ -240,7 +240,7 @@ workflows that don't define persistence points.
 
 ```powershell
 Invoke-Command -Session $ws {
-  Test-Workflow -PSComputerName Server01, Server02 -PSPersist:$True
+  Test-Workflow -PSComputerName Server01, Server02 -PSPersist:$true
 }
 ```
 

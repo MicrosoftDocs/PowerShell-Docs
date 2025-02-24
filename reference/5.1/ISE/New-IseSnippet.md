@@ -244,7 +244,7 @@ For more information about Windows PowerShell execution policies, see
   Windows PowerShell ISE.
 - To delete a snippet that you added, delete the snippet file.
 - You cannot delete a built-in snippet, but you can hide all built-in snippets by using the
-  "$psise.Options.ShowDefaultSnippets=$false" command.
+  "$psISE.Options.ShowDefaultSnippets=$false" command.
 - You can create a snippet that has the same name as a built-in snippet. Both snippets appear in the
   snippet menu in Windows PowerShell ISE.
 

@@ -92,7 +92,7 @@ you don't need to run a command like this because modules that have snippets wil
 ```powershell
 ($env:PSModulePath).split(";") |
   ForEach-Object {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} |
-    ForEach-Object {$psise.CurrentPowerShellTab.Snippets.Load($_)}
+    ForEach-Object {$psISE.CurrentPowerShellTab.Snippets.Load($_)}
 ```
 
 ### Example 5: Copy all module snippets

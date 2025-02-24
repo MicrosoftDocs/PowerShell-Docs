@@ -209,7 +209,7 @@ For example, the following example creates a prompt that contains the current pa
 greater-than character (`>`) and a space.
 
 ```powershell
-function prompt { "PS $pwd> " }`
+function prompt { "PS $PWD> " }`
 Set-PSReadLineOption -PromptText '> ' # change the '>' character red
 Set-PSReadLineOption -PromptText '> ', 'X ' # replace the '>' character with a red 'X'
 ```

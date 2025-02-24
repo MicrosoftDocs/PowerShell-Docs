@@ -149,7 +149,7 @@ The next command copies the file contents to a new file,
 `MyDotNetTypes.Format.ps1xml`.
 
 ```powershell
-Copy-Item $PSHome\DotNetTypes.format.ps1xml MyDotNetTypes.Format.ps1xml
+Copy-Item $PSHOME\DotNetTypes.format.ps1xml MyDotNetTypes.Format.ps1xml
 ```
 
 Open the `MyDotNetTypes.Format.ps1xml` file in any XML or text editor, such as
@@ -451,7 +451,7 @@ $Parms = @{
   Pattern = "System.IO.DirectoryInfo"
 }
 Select-String @Parms
-Copy-Item $PSHome\FileSystem.format.ps1xml .\MyFileSystem.Format.ps1xml
+Copy-Item $PSHOME\FileSystem.format.ps1xml .\MyFileSystem.Format.ps1xml
 Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 ```
 

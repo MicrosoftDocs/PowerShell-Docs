@@ -32,7 +32,7 @@ Formatting files are text files in XML format with the `format.ps1xml` file name
 formatting data in the files defines the display of Microsoft .NET Framework objects in the session.
 
 When Windows PowerShell starts, it loads the format data from the formatting files in the PowerShell
-installation directory (`$pshome`) into the session. You can use `Update-FormatData` to reload the
+installation directory (`$PSHOME`) into the session. You can use `Update-FormatData` to reload the
 formatting data into the current session without restarting PowerShell. This is useful when you have
 added or changed a formatting file, but do not want to interrupt the session.
 

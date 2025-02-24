@@ -30,7 +30,7 @@ triggers to `Disable-JobTrigger` or use its **InputObject** parameter.
 
 To disable a job trigger, the `Disable-JobTrigger` cmdlet sets the Enabled property of the job
 trigger to `$false`. To re-enable the job trigger, use the `Enable-JobTrigger` cmdlet, which sets
-the **Enabled** property of the job trigger to $True. Disabling a job trigger does not disable the
+the **Enabled** property of the job trigger to $true. Disabling a job trigger does not disable the
 scheduled job, such as is done by the `Disable-ScheduledJob` cmdlet, but if you disable all job
 triggers, the effect is the same as disabling the scheduled job.
 
