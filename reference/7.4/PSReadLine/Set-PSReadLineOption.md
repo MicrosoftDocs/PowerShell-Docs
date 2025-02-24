@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 10/10/2023
+ms.date: 02/24/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
@@ -454,8 +454,8 @@ Specifies the command line editing mode. Using this parameter resets any key bin
 
 The valid values are as follows:
 
-- **Windows**: Key bindings emulate PowerShell, cmd, and Visual Studio.
-- **Emacs**: Key bindings emulate Bash or Emacs.
+- **Windows**: Key bindings emulate PowerShell, cmd, and Visual Studio. (default on Windows)
+- **Emacs**: Key bindings emulate Bash or Emacs. (default on non-Windows platforms)
 - **Vi**: Key bindings emulate Vi.
 
 Use `Get-PSReadLineKeyHandler` to see the key bindings for the currently configured **EditMode**.
@@ -503,7 +503,7 @@ commands are added to history to preserve ordering during recall. However, you t
 to see the command multiple times when recalling or searching the history.
 
 By default, the **HistoryNoDuplicates** property of the global **PSConsoleReadLineOptions** object
-is set to `True`. To change the property value, you must specify the value of the 
+is set to `True`. To change the property value, you must specify the value of the
 **SwitchParameter** as follows: `-HistoryNoDuplicates:$False`. You can set back to `True` by using
 just the **SwitchParameter**, `-HistoryNoDuplicates`.
 
