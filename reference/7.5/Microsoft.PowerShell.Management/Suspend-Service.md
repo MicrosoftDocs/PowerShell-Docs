@@ -86,7 +86,7 @@ Get-Service |
 This command suspends all of the services on the computer that can be suspended. It uses
 `Get-Service` to get objects that represent the services on the computer. The pipeline operator
 passes the results to the `Where-Object` cmdlet, which selects only the services that have a value
-of `$True` for the **CanPauseAndContinue** property. Another pipeline operator passes the results to
+of `$true` for the **CanPauseAndContinue** property. Another pipeline operator passes the results to
 `Suspend-Service`. The **Confirm** parameter prompts you for confirmation before suspending each of
 the services.
 

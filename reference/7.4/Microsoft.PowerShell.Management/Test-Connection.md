@@ -146,10 +146,10 @@ if (Test-Connection -TargetName Server01 -Quiet) { New-PSSession -ComputerName S
 ```
 
 The `Test-Connection` cmdlet pings the `Server01` computer, with the **Quiet** parameter provided.
-The resulting value is `$True` if any of the four pings succeed. If none of the pings succeed,
+The resulting value is `$true` if any of the four pings succeed. If none of the pings succeed,
 the value is `$false`.
 
-If the `Test-Connection` command returns a value of `$True`, the command uses the `New-PSSession`
+If the `Test-Connection` command returns a value of `$true`, the command uses the `New-PSSession`
 cmdlet to create the **PSSession**.
 
 ### Example 6: Use the Traceroute parameter
@@ -404,7 +404,7 @@ errors.
 Each connection that's tested returns a **Boolean** value. If the **TargetName** parameter
 specifies multiple computers, an array of **Boolean** values is returned.
 
-If **any** ping to a given target succeeds, `$True` is returned.
+If **any** ping to a given target succeeds, `$true` is returned.
 
 If **all** pings to a given target fail, `$false` is returned.
 
@@ -500,7 +500,7 @@ Specifies the TCP port number on the target to be used in the TCP connection tes
 
 The cmdlet attempts to make a TCP connection to the specified port on the target.
 
-- The cmdlet returns `$True` if a connection is made.
+- The cmdlet returns `$true` if a connection is made.
 - The cmdlet returns `$false` if a connection is not made.
 
 ```yaml
