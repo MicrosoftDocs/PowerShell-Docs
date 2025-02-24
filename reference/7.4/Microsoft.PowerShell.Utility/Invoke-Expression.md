@@ -145,12 +145,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string representing the expression to invoke to this cmdlet. Use the `$Input`
+You can pipe a string representing the expression to invoke to this cmdlet. Use the `$input`
 automatic variable to represent the input objects in the command.
 
 ### System.Management.Automation.PSObject
 
-You can pipe an object representing the expression to invoke to this cmdlet. Use the `$Input`
+You can pipe an object representing the expression to invoke to this cmdlet. Use the `$input`
 automatic variable to represent the input objects in the command.
 
 ## OUTPUTS

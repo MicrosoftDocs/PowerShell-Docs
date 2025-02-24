@@ -48,7 +48,7 @@ default output cmdlet for display.
 These commands display information about the PS1XML files in the PowerShell directory as a list.
 
 ```powershell
-$A = Get-ChildItem $pshome\*.ps1xml
+$A = Get-ChildItem $PSHOME\*.ps1xml
 Format-List -InputObject $A
 ```
 

@@ -84,9 +84,9 @@ In this example, given a credential that you've stored in the `$Credential` vari
 > array. This provides some obfuscation but does not provide encryption.
 
 ```powershell
-$Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+$Credxmlpath = Join-Path (Split-Path $PROFILE) TestScript.ps1.credential
 $Credential | Export-Clixml $Credxmlpath
-$Credxmlpath = Join-Path (Split-Path $Profile) TestScript.ps1.credential
+$Credxmlpath = Join-Path (Split-Path $PROFILE) TestScript.ps1.credential
 $Credential = Import-Clixml $Credxmlpath
 ```
 

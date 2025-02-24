@@ -55,7 +55,7 @@ Import-LocalizedData -BindingVariable "Messages"
 ```
 
 If the command is included in the Archives.ps1 script in the `C:\Test` directory, and the value of
-the `$PsUICulture` automatic variable is zh-CN, `Import-LocalizedData` imports the `Archives.psd1`
+the `$PSUICulture` automatic variable is zh-CN, `Import-LocalizedData` imports the `Archives.psd1`
 file in the `C:\test\zh-CN` directory into the `$Messages` variable.
 
 ### Example 2: Import localized data strings
@@ -160,13 +160,13 @@ command that converts the contents of the DATA section to a hashtable and stores
 
 The script also includes an `Import-LocalizedData` command, which imports a hashtable of translated
 text strings from the TestScript.psd1 file in the subdirectory specified by the value of the
-`$PsUICulture` variable. If the command finds the `.psd1` file, it saves the translated strings from
+`$PSUICulture` variable. If the command finds the `.psd1` file, it saves the translated strings from
 the file in the value of the same `$UserMessages` variable, overwriting the hashtable saved by the
 DATA section logic.
 
 The third command displays the first message in the `$UserMessages` variable.
 
-If the `Import-LocalizedData` command finds a `.psd1` file for the `$PsUICulture` language, the
+If the `Import-LocalizedData` command finds a `.psd1` file for the `$PSUICulture` language, the
 value of the `$UserMessages` variable contains the translated text strings. If the command fails for
 any reason, the command displays the default text strings defined in the DATA section of the script.
 
@@ -301,14 +301,14 @@ Accept wildcard characters: False
 
 ### -UICulture
 
-Specifies an alternate UI culture. The default is the value of the `$PsUICulture` automatic
+Specifies an alternate UI culture. The default is the value of the `$PSUICulture` automatic
 variable. Enter a UI culture in `<language>-<region>` format, such as `en-US`, `de-DE`, or `ar-SA`.
 
 The value of the **UICulture** parameter determines the language-specific subdirectory (within the
 base directory) from which `Import-LocalizedData` gets the `.psd1` file for the script.
 
 The cmdlet searches for a subdirectory with the same name as the value of the **UICulture**
-parameter or the `$PsUICulture` automatic variable, such as `de-DE` or `ar-SA`. If it can't find the
+parameter or the `$PSUICulture` automatic variable, such as `de-DE` or `ar-SA`. If it can't find the
 directory, or the directory doesn't contain a `.psd1` file for the script, it searches for a
 subdirectory with the name of the language code, such as de or ar. If it can't find the subdirectory
 or `.psd1` file, the command fails and the data is displayed in the default language specified in
@@ -363,7 +363,7 @@ parameter.
 
   `Import-LocalizedData` begins the search in the directory where the script file is located (or the
   value of the **BaseDirectory** parameter). It then searches within the base directory for a
-  subdirectory with the same name as the value of the `$PsUICulture` variable (or the value of the
+  subdirectory with the same name as the value of the `$PSUICulture` variable (or the value of the
   **UICulture** parameter), such as `de-DE` or `ar-SA`. Then, it searches in that subdirectory for a
   `.psd1` file with the same name as the script (or the value of the **FileName** parameter).
 
