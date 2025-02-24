@@ -288,7 +288,7 @@ Valid values:
   and end of the workflow, in addition to any checkpoints that are specified in
   the workflow.
 
-- `$True`. Adds a checkpoint to the beginning and end of the workflow and a
+- `$true`. Adds a checkpoint to the beginning and end of the workflow and a
   checkpoint after each activity, in addition to any checkpoints that are
   specified in the workflow.
 

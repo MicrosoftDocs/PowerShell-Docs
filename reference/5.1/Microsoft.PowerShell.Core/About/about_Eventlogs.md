@@ -165,7 +165,7 @@ following command sequence.
 
 ```powershell
 $m = Get-PSSnapin Microsoft.PowerShell.Core
-$m.LogPipelineExecutionDetails = $True
+$m.LogPipelineExecutionDetails = $true
 ```
 
 To disable logging, use the same command sequence to set the property value to

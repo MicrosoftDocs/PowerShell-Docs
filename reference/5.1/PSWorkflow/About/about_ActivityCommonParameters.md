@@ -64,7 +64,7 @@ This section describes the activity common parameters.
 
 #### AppendOutput \<Boolean\>
 
-A value of `$True` adds the output of the activity to the value of the variable.
+A value of `$true` adds the output of the activity to the value of the variable.
 A value of `$false` has no effect. By default, assigning a value to a variable
 replaces the variable value.
 
@@ -144,7 +144,7 @@ piping objects to the activity one at a time.
 
 #### MergeErrorToOutput \<Boolean\>
 
-A value of `$True` adds errors to the output stream. A value of `$false` has
+A value of `$true` adds errors to the output stream. A value of `$false` has
 no effect. Use this parameter with the **Parallel** and `ForEach -Parallel`
 keywords to collect errors and output from multiple parallel commands
 in a single collection.
@@ -169,14 +169,14 @@ affected target computer.
 
 #### PSAllowRedirection \<Boolean\>
 
-A value of `$True` allows redirection of the connection to the target computers.
+A value of `$true` allows redirection of the connection to the target computers.
 A value of `$false` has no effect. This activity common parameter is also a
 workflow common parameter.
 
 When you use the **PSConnectionURI** parameter, the remote destination can return
 an instruction to redirect to a different URI. By default, Windows PowerShell
 does not redirect connections, but you can use the **PSAllowRedirection** parameter
-with a value of `$True` to allow redirection of the connection to the target
+with a value of `$true` to allow redirection of the connection to the target
 computer.
 
 You can also limit the number of times that the connection is redirected by
@@ -338,8 +338,8 @@ Workflow Test-Workflow
 {
     $debugCollection = New-Object -Type `
     System.Management.Automation.PSDataCollection[System.Management.Automation.DebugRecord]
-    InlineScript {\Server01\Share01\Get-AssetData.ps1} -PSDebug $debugCollection -Debug $True
-    InlineScript {\Server01\Share01\Set-AssetData.ps1} -PSDebug $debugCollection -Debug $True
+    InlineScript {\Server01\Share01\Get-AssetData.ps1} -PSDebug $debugCollection -Debug $true
+    InlineScript {\Server01\Share01\Set-AssetData.ps1} -PSDebug $debugCollection -Debug $true
     if ($debugCollection -like "Missing") { ...}
 }
 ```
@@ -362,7 +362,7 @@ Valid values:
 - (Default) If omitted, and you have also not added the
   **PSDisableSerialization** parameter to an activity, objects are serialized.
 
-- `$True`. Directs all activities within a workflow to return
+- `$true`. Directs all activities within a workflow to return
   "live" (not serialized) objects. The resulting objects have methods, as well
   as properties, but they cannot be saved when a checkpoint is taken.
 - `$false`. Workflow objects are serialized.
@@ -411,7 +411,7 @@ Valid values:
 - (Default) If you omit this parameter, no checkpoints are added. Checkpoints
   are taken based on the settings for the workflow.
 
-- `$True`. Takes a checkpoint after the activity completes. This checkpoint is
+- `$true`. Takes a checkpoint after the activity completes. This checkpoint is
   in addition to any checkpoints that are specified in the workflow.
 
 - `$false`. No checkpoints are added. Checkpoints are taken only when specified
@@ -499,7 +499,7 @@ For more information about the `$PSSessionOption` preference variable, see
 
 #### PSUseSSL \<Boolean\>
 
-A value of `$True` uses the Secure Sockets Layer (SSL) protocol to establish a
+A value of `$true` uses the Secure Sockets Layer (SSL) protocol to establish a
 connection to the target computer. By default, SSL is not used. A value of
 `$false` has no effect. This activity common parameter is also a workflow common
 parameter.
@@ -539,7 +539,7 @@ activity.
 ```powershell
 workflow Test-Workflow
 {
-    Get-Service -UseDefaultInput $True
+    Get-Service -UseDefaultInput $true
 }
 
 PS C:> Test-Workflow -InputObject WinRm
