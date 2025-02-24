@@ -127,7 +127,7 @@ for the following automatic variables:
 ```powershell
 $_
 $args
-$Input
+$input
 $MyInvocation
 $PSBoundParameters
 ```

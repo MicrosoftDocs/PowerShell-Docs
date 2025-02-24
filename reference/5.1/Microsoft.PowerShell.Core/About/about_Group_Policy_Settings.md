@@ -80,7 +80,7 @@ Import-Module <Module-Name>
 
 To turn on module logging for all sessions on a particular computer, add the
 previous commands to the 'All Users' PowerShell profile
-(`$Profile.AllUsersAllHosts`).
+(`$PROFILE.AllUsersAllHosts`).
 
 For more information about module logging, see
 [about_Modules](about_Modules.md).
