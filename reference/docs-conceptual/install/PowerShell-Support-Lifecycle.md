@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell.
-ms.date: 01/23/2025
+ms.date: 02/25/2025
 ms.topic: lifecycle
 title: PowerShell Support Lifecycle
 ---
@@ -122,8 +122,8 @@ The following table lists the end-of-support dates for retired versions of Power
 | -------------------- | :----------: | :------------: | ---------------------------- |
 | PowerShell 7.3       | 09-Nov-2022  |  08-May-2024   | Built on [.NET 7.0][12]      |
 | PowerShell 7.2 (LTS) | 08-Nov-2021  |  08-Nov-2024   | Built on [.NET 6.0][11]      |
-| PowerShell 7.0 (LTS) | 04-Mar-2020  |  03-Dec-2022   | Built on [.NET 5.0][10]      |
-| PowerShell 7.1       | 11-Nov-2020  |  08-May-2022   | Built on [.NET Core 3.1][09] |
+| PowerShell 7.1       | 11-Nov-2020  |  08-May-2022   | Built on [.NET 5.0][10]      |
+| PowerShell 7.0 (LTS) | 04-Mar-2020  |  03-Dec-2022   | Built on [.NET Core 3.1][09] |
 | PowerShell 6.2       | 29-Mar-2019  |  04-Sep-2020   | Built on [.NET Core 2.1][08] |
 | PowerShell 6.1       | 13-Sep-2018  |  28-Sep-2019   | Built on [.NET Core 2.1][08] |
 | PowerShell 6.0       | 20-Jan-2018  |  13-Feb-2019   | Built on [.NET Core 2.0][07] |
