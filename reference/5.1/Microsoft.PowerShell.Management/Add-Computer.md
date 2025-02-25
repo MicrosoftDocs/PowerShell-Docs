@@ -456,6 +456,8 @@ Accept wildcard characters: False
 Specifies the name of a domain controller that adds the computer to the domain. Enter the name in
 DomainName\ComputerName format. By default, no domain controller is specified.
 
+There is a domain join hardening since August 2024: [NetJoin Domain Join Hardning Changes](https://support.microsoft.com/en-us/topic/kb5020276-netjoin-domain-join-hardening-changes-2b65a0f3-1f4c-42ef-ac0f-1caaf421baf8). When this is used, the domain controller name has to be specified with the DNS FQDN name syntax like "-Server DC1.contoso.com".
+
 ```yaml
 Type: System.String
 Parameter Sets: Domain
