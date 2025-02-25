@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 01/06/2025
+ms.date: 02/25/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -36,8 +36,8 @@ combination with the `[Alias()]` attribute or any of the parameter validation
 attributes.
 
 Parameter names follow the rules for variable names. Parameter names consist of
-decimal digits, alphabetic characters, and underscores. For a complete list of
-naming rules, see [about_Variables][20].
+decimal digits, alphabetical characters, and underscores. For a complete list
+of naming rules, see [about_Variables][20].
 
 > [!IMPORTANT]
 > It's possible to define a parameter that starts with a decimal digit.
@@ -189,24 +189,23 @@ has a **false** value.
 For example, the **Recurse** parameter of `Get-ChildItem` is a switch
 parameter.
 
-To create a switch parameter in a function, specify the `switch` type in the
-parameter definition.
-
-For example, your function may have an option to output data as a byte array:
+To create a switch parameter in a function, specify the `[switch]` type in the
+parameter definition. The following example shows the definition of a switch
+parameter that could be used to provide an option to output data as a byte
+array:
 
 ```powershell
 param([switch]$AsByteArray)
 ```
 
-Switch parameters are easy to use and are preferred over Boolean parameters,
-which have a less natural syntax for PowerShell.
+Switch parameters are easy to use and are preferred over Boolean parameters
+that have a less natural syntax for PowerShell.
 
-For example, to use a switch parameter, the user types the parameter in the
-command.
+To use a switch parameter, include the parameter in the command. For example:
 
 `-IncludeAll`
 
-To use a Boolean parameter, the user types the parameter and a Boolean value.
+To use a Boolean parameter, you must provide the parameter and a Boolean value.
 
 `-IncludeAll $true`
 
@@ -217,29 +216,37 @@ value is required.
 
 ### Switch parameter design considerations
 
-- Switch parameters shouldn't be given default values. They should always
+- Don't set a default value for a switch parameter. Switch parameter always
   default to false.
-- Switch parameters are excluded from positional parameters by default. Even
-  when other parameters are implicitly positional, switch parameters aren't.
-  You _can_ override that in the Parameter attribute, but it will confuse
-  users.
-- Switch parameters should be designed so that setting them moves a command
-  from its default behavior to a less common or more complicated mode. The
-  simplest behavior of a command should be the default behavior that doesn't
-  require the use of switch parameters.
-- Switch parameters shouldn't be mandatory. The only case where it's necessary
-  to make a switch parameter mandatory is when it's needed to differentiate a
+- Don't make switch parameters positional. By default, switch parameters are
+  excluded from positional parameters. You _can_ override that in the
+  **Parameter** attribute, but it can confuse users.
+- Design switch parameters so that using parameter changes the default behavior
+  of the command to a less common or more complicated mode. The simplest
+  behavior of a command should be the default behavior that doesn't require the
+  use of switch parameters.
+- Don't make switch parameters mandatory. The only case where it's helpful to
+  make a switch parameter mandatory is when it's needed to differentiate a
   parameter set.
-- Explicitly setting a switch from a boolean can be done with
-  `-MySwitch:$boolValue` and in splatting with
-  `$params = @{ MySwitch = $boolValue }`.
-- Switch parameters are of type `SwitchParameter`, which implicitly converts to
-  Boolean. The parameter variable can be used directly in a conditional
-  expression. For example:
+- Use the switch parameter variable directly in a conditional expression. The
+  `SwitchParameter` type implicitly converts to Boolean. For example:
 
-  `if ($MySwitch) { ... }`
+  ```powershell
+  if ($MySwitch) { ... }
+  ```
 
-  There's no need to write `if ($MySwitch.IsPresent) { ... }`
+- Always base the behavior controlled by the switch on the value of the switch,
+  not the presence of the parameter. There are several ways to test for the
+  presence of a switch parameters:
+
+  - `$PSBoundParameters` contains the switch parameter name as a key
+  - `$MyInvocation.BoundParameters` contains the switch parameter name as a key
+  - `$PSCmdlet.ParameterSetName` when the switch defines a unique parameter set
+
+  For example, it's possible to provide an explicit value for the switch using
+  `-MySwitch:$false` or splatting. If you only test for the presence of the
+  parameter, the command behaves as if the switch value is `$true` instead of
+  `$false`.
 
 ## Dynamic parameters
 
@@ -594,7 +601,7 @@ function Test-Remainder {
         "${i}: $($Remaining[$i])"
     }
 }
-Test-Remainder first one,two
+Test-Remainder first one, two
 ```
 
 ```Output
