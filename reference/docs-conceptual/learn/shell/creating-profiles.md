@@ -2,7 +2,7 @@
 description: >
   This article explains how to use your profile to save preferred PowerShell settings and optimize
   your shell experience.
-ms.date: 09/04/2024
+ms.date: 02/26/2025
 title: Customizing your shell environment
 ---
 # Customizing your shell environment
@@ -10,11 +10,11 @@ title: Customizing your shell environment
 A PowerShell profile is a script that runs when PowerShell starts. You can use the profile to
 customize the environment. You can:
 
-- add aliases, functions, and variables
-- load modules
-- create PowerShell drives
-- run arbitrary commands
-- and change preference settings
+- Add aliases, functions, and variables
+- Load modules
+- Create PowerShell drives
+- Run arbitrary commands
+- Change preference settings
 
 Putting these settings in your profile ensures that they're available whenever you start PowerShell
 on your system.
@@ -39,32 +39,47 @@ properties of `$PROFILE`.
 - **CurrentUserCurrentHost**
 
 You can create profile scripts that run for all users or just one user, the **CurrentUser**.
-**CurrentUser** profiles are stored in the user's home directory.
+**CurrentUser** profiles are stored under the user's home directory path. The location varies
+depending on the operating system and the version of PowerShell you use.
 
-There are also profiles that run for all PowerShell hosts or specific hosts. The profile script
-for each PowerShell host has a name unique for that host. For example, the filename for the standard
+By default, referencing the `$PROFILE` variable returns the path to the "Current User, Current Host"
+profile. The other profiles path can be accessed through the properties of the `$PROFILE` variable.
+The following command shows the default profile locations on Windows.
+
+```powershell
+PS> $PROFILE | Select-Object *
+AllUsersAllHosts       : C:\Program Files\PowerShell\7\profile.ps1
+AllUsersCurrentHost    : C:\Program Files\PowerShell\7\Microsoft.PowerShell_profile.ps1
+CurrentUserAllHosts    : C:\Users\username\Documents\PowerShell\profile.ps1
+CurrentUserCurrentHost : C:\Users\username\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
+Length                 : 69
+```
+
+The following command shows the default profile locations on Ubuntu Linux.
+
+```powershell
+$PROFILE | Select-Object *
+
+AllUsersAllHosts       : /opt/microsoft/powershell/7/profile.ps1
+AllUsersCurrentHost    : /opt/microsoft/powershell/7/Microsoft.PowerShell_profile.ps1
+CurrentUserAllHosts    : /home/username/.config/powershell/profile.ps1
+CurrentUserCurrentHost : /home/username/.config/powershell/Microsoft.PowerShell_profile.ps1
+Length                 : 67
+```
+
+There are also profiles that run for all PowerShell hosts or specific hosts. The profile script for
+each PowerShell host has a name unique for that host. For example, the filename for the standard
 Console Host on Windows or the default terminal application on other platforms is
 `Microsoft.PowerShell_profile.ps1`. For Visual Studio Code (VS Code), the filename is
 `Microsoft.VSCode_profile.ps1`.
 
 For more information, see [about_Profiles][2].
 
-By default, referencing the `$PROFILE` variable returns the path to the "Current User, Current Host"
-profile. The other profiles path can be accessed through the properties of the `$PROFILE` variable.
-For example:
-
-```powershell
-PS> $PROFILE
-C:\Users\user1\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
-PS> $PROFILE.AllUsersAllHosts
-C:\Program Files\PowerShell\7\profile.ps1
-```
-
 ## How to create your personal profile
 
 When you first install PowerShell on a system, the profile script files and the directories they
-belong to don't exist. The following command creates the "Current User, Current Host"
-profile script file if it doesn't exist.
+belong to don't exist. The following command creates the "Current User, Current Host" profile script
+file if it doesn't exist.
 
 ```powershell
 if (!(Test-Path -Path $PROFILE)) {
@@ -73,14 +88,14 @@ if (!(Test-Path -Path $PROFILE)) {
 ```
 
 The **Force** parameter of `New-Item` cmdlet creates the necessary folders when they don't exist.
-Once you have created the script file, you can use your favorite editor to customize your shell
+After you create the script file, you can use your favorite editor to customize your shell
 environment.
 
 ## Adding customizations to your profile
 
 The previous articles talked about using [tab completion][3], [command predictors][4], and
 [aliases][5]. These articles showed the commands used to load the required modules, create custom
-completers, define keybindings, and other settings. These are the kinds of customizations that you
+completers, define key bindings, and other settings. These are the kinds of customizations that you
 want to have available in every PowerShell interactive session. The profile script is the place for
 these settings.
 
@@ -163,11 +178,11 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 This profile script provides examples for the following customization:
 
 - Adds two new [PSDrives][7] for the other root registry hives.
-- Creates a [customized prompt][8] that changes if you are running in an elevated session.
-- Configures **PSReadLine** and adds keybinding. The color settings use the [$PSStyle][9] feature to
-  define the ANSI color settings.
-- Adds tab completion for the [dotnet CLI][10] tool. The tool provides parameters to help resolve the
-  command-line arguments. The script block for [Register-ArgumentCompleter][11] uses that
+- Creates a [customized prompt][8] that changes if you're running in an elevated session.
+- Configures **PSReadLine** and adds key binding. The color settings use the [$PSStyle][9] feature
+  to define the ANSI color settings.
+- Adds tab completion for the [dotnet CLI][10] tool. The tool provides parameters to help resolve
+  the command-line arguments. The script block for [Register-ArgumentCompleter][11] uses that
   feature to provide the tab completion.
 
 <!-- link references -->
