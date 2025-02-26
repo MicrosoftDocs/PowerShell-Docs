@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/09/2024
+ms.date: 02/26/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
@@ -31,44 +31,6 @@ Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
  [<CommonParameters>]
 ```
 
-### Items (Default) - Certificate provider
-
-```
-Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>]
- [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
- [-CodeSigningCert] [-DocumentEncryptionCert] [-SSLServerAuthentication]
- [-DnsName <string>] [-Eku <string[]>] [-ExpiringInDays <int>]
- [<CommonParameters>]
-```
-
-### LiteralItems - Certificate provider
-
-```
-Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
- [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
- [-CodeSigningCert] [-DocumentEncryptionCert] [-SSLServerAuthentication]
- [-DnsName <string>] [-Eku <string[]>] [-ExpiringInDays <int>]
- [<CommonParameters>]
-```
-
-### Items (Default) - Filesystem provider
-
-```
-Get-ChildItem [[-Path] <string[]>] [[-Filter] <string>] [-Include <string[]>]
- [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
- [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory]
- [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
-```
-
-### LiteralItems - FileSystem provider
-
-```
-Get-ChildItem [[-Filter] <string>] -LiteralPath <string[]> [-Include <string[]>]
- [-Exclude <string[]>] [-Recurse] [-Depth <uint>] [-Force] [-Name]
- [-Attributes <FlagsExpression[FileAttributes]>] [-FollowSymlink] [-Directory]
- [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
-```
-
 ## DESCRIPTION
 
 The `Get-ChildItem` cmdlet gets the items in one or more specified locations. If the item is a
@@ -79,9 +41,10 @@ of levels to recurse.
 `Get-ChildItem` doesn't display empty directories. When a `Get-ChildItem` command includes the
 **Depth** or **Recurse** parameters, empty directories aren't included in the output.
 
-Locations are exposed to `Get-ChildItem` by PowerShell providers. A location can be a file system
-directory, registry hive, or a certificate store. Some parameters are only available for a specific
-provider. For more information, see
+The `Get-ChildItem` cmdlet is designed to work with the items exposed by any provider. For example,
+items can be a file system file or directory, registry hive, or a certificate store. To list the
+providers available in your session, use the `Get-PSProvider` command. Some parameters are only
+available for a specific provider. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## EXAMPLES
@@ -488,24 +451,24 @@ For example, to get non-system files (not directories) that are encrypted or com
 To find files and folders with commonly used attributes, use the **Attributes** parameter. Or, the
 parameters **Directory**, **File**, **Hidden**, **ReadOnly**, and **System**.
 
-The **Attributes** parameter supports the following properties:
+The **Attributes** parameter supports the following values:
 
-- **Archive**
-- **Compressed**
-- **Device**
-- **Directory**
-- **Encrypted**
-- **Hidden**
-- **IntegrityStream**
-- **Normal**
-- **NoScrubData**
-- **NotContentIndexed**
-- **Offline**
-- **ReadOnly**
-- **ReparsePoint**
-- **SparseFile**
-- **System**
-- **Temporary**
+- `Archive`
+- `Compressed`
+- `Device`
+- `Directory`
+- `Encrypted`
+- `Hidden`
+- `IntegrityStream`
+- `Normal`
+- `NoScrubData`
+- `NotContentIndexed`
+- `Offline`
+- `ReadOnly`
+- `ReparsePoint`
+- `SparseFile`
+- `System`
+- `Temporary`
 
 For a description of these attributes, see the [FileAttributes](xref:System.IO.FileAttributes)
 enumeration.
@@ -796,7 +759,7 @@ Accept wildcard characters: False
 
 Allows the cmdlet to get items that otherwise can't be accessed by the user, such as hidden or
 system files. The **Force** parameter doesn't override security restrictions. Implementation varies
-among providers. For more information, see
+by provider. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
@@ -898,8 +861,9 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a path to one or more locations. Wildcards are accepted. The default location is the
-current directory (`.`).
+Specifies a path to one or more locations. If not specified, the default location is the current
+directory (`.`). Wildcards are accepted. Use care when using the **Path** parameter with the
+**Recurse** parameter. For more information, see the [NOTES](#notes) section of this article.
 
 ```yaml
 Type: System.String[]
@@ -1062,12 +1026,33 @@ PowerShell includes the following aliases for `Get-ChildItem`:
 - Windows:
   - `ls`
 
-`Get-ChildItem` doesn't get hidden items by default. To get hidden items, use the **Force**
-parameter.
+**Recursion behavior with the Path parameter:**
 
-The `Get-ChildItem` cmdlet is designed to work with the data exposed by any provider. To list the
-providers available in your session, type `Get-PSProvider`. For more information, see
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+When you use `Get-ChildItem -Recurse` with the **Path** parameter, the cmdlet searches for the last
+path component whether or not it's a wildcard pattern or a literal name.
+
+- If the last path component matches an existing immediate subdirectory of the target directory, the
+  cmdlet performs recursive enumeration on the matching directory.
+- If the last path component doesn't match an existing immediate subdirectory of the target
+  directory, the cmdlet recursively searches the target directory's hierarchy for items that match
+  the last path component
+
+When you use `Get-ChildItem -Recurse` with the **Path** and **Name** parameters, the behavior
+changes. The command searches for the last path component among the immediate child items of the
+target directory.
+
+- If there is a match among the immediate child items, the cmdlet performs recursive enumeration on
+  the matching items. Wildcard matching happens only once, at the top level of the target directory.
+  The results are processed as if they had been individually passed to the **LiteralPath**
+  parameter.
+- If the last path component doesn't match any items at the top level, an error occurs.
+
+You should avoid using the **Path** parameter with the **Recurse** parameter. For best results:
+
+- Use **LiteralPath** to specify the target directory to avoid triggering a recursive search for the
+  last path component.
+- Use **Filter** or **Include** parameters to specify wildcard or literal patterns that should be
+  searched for in every level of the target directory's hierarchy.
 
 ## RELATED LINKS
 
