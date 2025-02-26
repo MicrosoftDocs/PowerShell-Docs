@@ -91,7 +91,7 @@ Path      : C:\Users\user1\Downloads\Contoso8_1_ENT.iso
 ### Example 3: Compute the hash value of a stream
 
 For this example, we get are using **System.Net.WebClient** to download a package from the
-[Powershell release page](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4). The release
+[PowerShell release page](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4). The release
 page also documents the SHA256 hash of each package file. We can compare the published hash value
 with the one we calculate with `Get-FileHash`.
 
