@@ -76,7 +76,7 @@ For Windows PowerShell, use one of these formats instead:
 1. When the cmdlet haas no aliases
 
    ```md
-   Windows Powershell includes no aliases for `<Cmdlet-Name>`.
+   Windows PowerShell includes no aliases for `<Cmdlet-Name>`.
    ```
 -->
 ## Formatting code samples
