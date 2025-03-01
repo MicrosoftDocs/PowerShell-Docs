@@ -1,7 +1,7 @@
 ---
 description: Describes the built-in functions in PowerShell.
 Locale: en-US
-ms.date: 08/14/2024
+ms.date: 03/01/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_built-in_functions?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Built-in_Functions
@@ -83,6 +83,15 @@ pipeline. For more information, see
 This function provides a short hand way to run `New-Item -Type Directory` with
 your parameters. This function is only defined for Windows systems. Linux and
 macOS system use the native `mkdir` command.
+
+## `exec`
+
+Some native Unix commands shell out to run something (like ssh) and use the
+built-in bash command `exec` to spawn a new process that replaces the current
+one. PowerShell 7.3.1 adds the `exec` function to wrap the
+[Switch-Process](xref:Microsoft.PowerShell.Core.Switch-Process) cmdlet.
+`Switch-Process` calls the native Unix `execv()` function to provide similar
+behavior as POSIX shells.
 
 ## Windows drive letter functions
 
