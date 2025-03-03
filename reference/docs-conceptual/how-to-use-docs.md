@@ -46,7 +46,7 @@ The version selector doesn't affect conceptual documentation. The conceptual doc
 the **Reference** node in the TOC. The same conceptual articles appear for every version selected.
 If there are version-specific differences, the documentation makes note of those differences.
 
-![Animation showing how to use the version selector.][04]
+![Animation showing how to use the version selector.][06]
 
 You can verify the version of PowerShell you are using by inspecting the `$PSVersionTable.PSVersion`
 value. The following example shows the output for Windows PowerShell 5.1.
@@ -96,7 +96,7 @@ To download the documentation as a PDF, click the **Download PDF** button at the
 Documentation for older versions of PowerShell is archived in our [Previous Versions][01] site. You
 can choose **Previous Versions** from the version selector.
 
-![Screenshot of the Previous Versions option.](media/how-to-use-docs/previous-versions.gif)
+![Screenshot of the Previous Versions option.][04]
 
 The previous versions site contains documentation for the following topics:
 
@@ -115,5 +115,6 @@ The previous versions site contains documentation for the following topics:
 [01]: https://aka.ms/PSLegacyDocs
 [02]: media/how-to-use-docs/how-to-use.gif
 [03]: media/how-to-use-docs/pdf-button.gif
-[04]: media/how-to-use-docs/version-search.gif
+[04]: media/how-to-use-docs/previous-versions.gif
 [05]: media/how-to-use-docs/search-scope.gif
+[06]: media/how-to-use-docs/version-search.gif
