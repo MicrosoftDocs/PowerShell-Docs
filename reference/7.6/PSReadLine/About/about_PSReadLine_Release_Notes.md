@@ -1,7 +1,7 @@
 ---
 description: This article contains the list of changes for each released version of PSReadLine.
 Locale: en-US
-ms.date: 01/23/2025
+ms.date: 03/03/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_release_notes?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Release_Notes
@@ -11,7 +11,7 @@ title: about_PSReadLine_Release_Notes
 This is a summary of changes to the **PSReadLine** module. For a full list of
 changes, see the **PSReadLine** [ChangeLog][01].
 
-- Current preview: v2.4.0-beta0
+- Current preview: v2.4.0-beta1
 - Current stable release: v2.3.6
 
 ## PSReadLine release history
@@ -28,6 +28,13 @@ Windows PowerShell 5.1.
 - v2.0.0 ships in Windows PowerShell 5.1
 
 ## Release Notes
+
+### v2.4.0-beta1 - 2025-02-28
+
+- Avoid querying for cursor position when it's not necessary
+- Handle buffer changes made by an event handler
+- Update SelectCommandArgument to properly handle POSIX style options for CLI
+  commands
 
 ### v2.4.0-beta0 - 2024-03-01
 
@@ -75,7 +82,8 @@ enhancements:
 - Add the `TerminateOrphanedConsoleApps` option on Windows to kill orphaned
   console-attached process that may mess up reading from Console input
 - De-duplicate prediction results with the history results
-- Make tab completion show results whose `ListItemText` are different by case only
+- Make tab completion show results whose `ListItemText` are different by case
+  only
 - Add support for upcasing, downcasing, and capitalizing word
 - Handle multi-line description for parameter help content
 
@@ -143,9 +151,11 @@ release:
   logical line
 - Rename `PredictionColor` to `InlinePredictionColor`
 - Allow `MaximumHistoryCount` to be set from user's profile
-- Add the parameter `-PredictionSource` to `Set-PSReadLineOption`, with the options `None` and `History`
+- Add the parameter `-PredictionSource` to `Set-PSReadLineOption`, with the
+  options `None` and `History`
 - Make the functions `AcceptSuggestion` and `AcceptNextSuggestionWord` bindable
-- Relax the sensitive words we filter by changing `key` to `apikey` to reduce false positives
+- Relax the sensitive words we filter by changing `key` to `apikey` to reduce
+  false positives
 - Make `ViForwardChar` able to accept suggestions
 - Expose `ViBackwardChar` and `ViForwardChar` as bindable functions
 
