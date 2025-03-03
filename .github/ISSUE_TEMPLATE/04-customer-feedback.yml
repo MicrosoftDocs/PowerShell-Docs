@@ -66,3 +66,9 @@ body:
       required: true
     attributes:
       label: Document Id
+  - type: input
+    id: platformId
+    validations:
+      required: true
+    attributes:
+      label: Platform Id
