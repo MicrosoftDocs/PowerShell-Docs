@@ -3,7 +3,7 @@ description: >
     This article documents the functions provided by PSReadLine. These functions
     can be bound to keystrokes for easy access and invocation.
 Locale: en-US
-ms.date: 10/16/2023
+ms.date: 03/03/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_functions?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Functions
@@ -18,11 +18,11 @@ PowerShell console.
 ## Long Description
 
 PowerShell 7.3 ships with PSReadLine 2.2.6. The current version is PSReadLine
-2.3.4. The current version of PSReadLine can be installed and used on Windows
+2.3.6. The current version of PSReadLine can be installed and used on Windows
 PowerShell 5.1 and newer. For some features, you need to be running PowerShell
 7.2 or higher.
 
-This article documents the functions provided by PSReadLine 2.3.4. These
+This article documents the functions provided by PSReadLine 2.3.6. These
 functions can be bound to keystrokes for easy access and invocation.
 
 ## Using the Microsoft.PowerShell.PSConsoleReadLine class
@@ -557,7 +557,7 @@ Deletes backwards until given character.
 
 - Vi command mode: `<d,F>`
 
-### ViInsertAtBeginning
+### ViInsertAtBegining
 
 Switch to Insert mode and position the cursor at the beginning of the line.
 

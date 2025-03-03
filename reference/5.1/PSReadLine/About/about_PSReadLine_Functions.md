@@ -18,11 +18,11 @@ PowerShell console.
 ## Long Description
 
 PowerShell 5.1 ships with PSReadLine 2.0.0. The current version is PSReadLine
-2.3.4. The current version of PSReadLine can be installed and used on Windows
+2.3.6. The current version of PSReadLine can be installed and used on Windows
 PowerShell 5.1 and newer. For some features, you need to be running PowerShell
 7.2 or higher.
 
-This article documents the functions provided by PSReadLine. These functions
+This article documents the functions provided by PSReadLine 2.0.0. These functions
 can be bound to keystrokes for easy access and invocation.
 
 ## Using the Microsoft.PowerShell.PSConsoleReadLine class
