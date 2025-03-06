@@ -1,7 +1,7 @@
 ---
 description: Function
 Locale: en-US
-ms.date: 06/10/2024
+ms.date: 03/06/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_function_provider?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Function_Provider
@@ -78,8 +78,8 @@ drive. To reference a function from another location, use the drive name
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem][09], `cd` is an alias for [Set-Location][10] and `pwd` is
-> an alias for [Get-Location][01].
+> [Get-ChildItem][09], `cd` is an alias for [Set-Location][10] and `pwd` is an
+> alias for [Get-Location][01].
 
 ## Getting functions
 
@@ -153,9 +153,33 @@ function name.
 New-Item -Path Function:Win32: -Value {Set-Location C:\Windows\System32}
 ```
 
-You can also create a function by typing it at the PowerShell command line. For
-example, tpe `Function:Win32: {Set-Location C:\Windows\System32}`. If you are
-in the `Function:` drive, you can omit the drive name.
+### Scopes
+
+Just like variables, functions belong to a specific scope. When you create a
+function, it is available only in the scope in which it was created. To make a
+function available, use a scope modifier when you create the function. For more
+information, see [about_Scopes][15].
+
+The following example uses the `global:` scope modifier to create a function in
+the global scope.
+
+```powershell
+function New-Function {
+    param(
+        [string] $Name,
+        [scriptblock] $Script
+    )
+
+    $lp = "Function:\global:$($name)"
+    Set-Item -LiteralPath $lp -Value $script -PassThru -Force
+}
+
+New-Function -Name 'Win32:' -Script { Set-Location C:\Windows\System32 }
+```
+
+Without the `global:` scope modifier, the function would be created in the
+local scope. When `New-Function` exits the newly created function would no
+longer exist.
 
 ## Deleting a function
 
@@ -268,3 +292,4 @@ Get-Help Get-ChildItem -Path function:
 [12]: xref:Microsoft.PowerShell.Core.Get-Help
 [13]: about_Functions.md
 [14]: about_Providers.md
+[15]: about_Scopes.md
