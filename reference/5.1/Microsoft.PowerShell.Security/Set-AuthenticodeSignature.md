@@ -11,8 +11,7 @@ title: Set-AuthenticodeSignature
 # Set-AuthenticodeSignature
 
 ## SYNOPSIS
-Adds an [Authenticode](/windows-hardware/drivers/install/authenticode) signature to a PowerShell
-script or other file.
+Adds an Authenticode signature to a PowerShell script or other file.
 
 ## SYNTAX
 
@@ -36,8 +35,8 @@ Set-AuthenticodeSignature [-Certificate] <X509Certificate2> [-IncludeChain <Stri
 
 ```
 Set-AuthenticodeSignature [-Certificate] <X509Certificate2> [-IncludeChain <String>]
- [-TimestampServer <String>] [-HashAlgorithm <String>] [-Force] -SourcePathOrExtension <String[]>
- -Content <Byte[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-TimestampServer <String>] [-HashAlgorithm <String>] [-Force] -SourcePathOrExtension
+ <String[]> -Content <Byte[]> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -83,7 +82,7 @@ The third command signs the script by splatting the parameters defined in `$sign
 > [!NOTE]
 > Using the **CodeSigningCert** parameter with `Get-ChildItem` only returns certificates that have
 > code-signing authority and contain a private key. If there is no private key, the certificates
-> cannot be used for signing.
+> can't be used for signing.
 
 ### Example 2 - Sign a script using a certificate from a PFX file
 
@@ -115,7 +114,7 @@ If the certificate file is password protected, PowerShell prompts you for the pa
 
 ### Example 3 - Add a signature that includes the root authority
 
-This command adds a digital signature that includes the root authority in the trust chain, and it is
+This command adds a digital signature that includes the root authority in the trust chain, and it's
 signed by a third-party timestamp server.
 
 ```powershell
@@ -129,13 +128,11 @@ $signingParameters = @{
 Set-AuthenticodeSignature @signingParameters
 ```
 
-The first command defines the `$signingParameters` variable as a **HashTable** with the parameters
-for the `Set-AuthenticodeSignature` cmdlet to sign the script. It uses the **FilePath** parameter to
-specify the path to the script, the **Certificate** parameter to specify that the certificate is
-stored in the `$cert` variable, and the **HashAlgorithm** parameter to set the hashing algorithm to
-SHA256. It uses the **IncludeChain** parameter to include all of the signatures in the trust chain,
-including the root authority. It also uses the **TimeStampServer** parameter to add a timestamp to
-the signature. This prevents the script from failing when the certificate expires.
+The command uses the **FilePath** parameter to specify the script being signed and the
+**Certificate** parameter to specify the certificate that's saved in the `$cert` variable. It uses
+the **IncludeChain** parameter to include all of the signatures in the trust chain, including the
+root authority. It also uses the **TimeStampServer** parameter to add a timestamp to the signature.
+This prevents the script from failing when the certificate expires.
 
 The second command signs the script by splatting the parameters defined in `$signingParameters`.
 
@@ -147,8 +144,8 @@ Specifies the certificate that will be used to sign the script or file. Enter a 
 an object representing the certificate or an expression that gets the certificate.
 
 To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate
-`Cert:` drive. If the certificate is not valid or does not have `code-signing` authority, the
-command fails.
+`Cert:` drive. If the certificate isn't valid or doesn't have `code-signing` authority, the command
+fails.
 
 ```yaml
 Type: System.Security.Cryptography.X509Certificates.X509Certificate2
@@ -164,8 +161,8 @@ Accept wildcard characters: False
 
 ### -Content
 
-This parameter appears in the syntax listing because it is defined in the base class that
-`Set-AuthenticodeSignature` is derived from. However, support for this parameter is not implemented
+This parameter appears in the syntax listing because it's defined in the base class that
+`Set-AuthenticodeSignature` is derived from. However, support for this parameter isn't implemented
 in `Set-AuthenticodeSignature`.
 
 ```yaml
@@ -182,7 +179,7 @@ Accept wildcard characters: False
 
 ### -FilePath
 
-Specifies the path to a file that is being signed.
+Specifies the path to a file that's being signed.
 
 ```yaml
 Type: System.String[]
@@ -199,7 +196,7 @@ Accept wildcard characters: False
 ### -Force
 
 Allows the cmdlet to append a signature to a read-only file. Even using the **Force** parameter, the
-cmdlet cannot override security restrictions.
+cmdlet can't override security restrictions.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -221,7 +218,8 @@ The default is SHA1. Files that are signed with a different hashing algorithm mi
 recognized on other systems. Which algorithms are supported depends on the version of the operating
 system.
 
-For a list of possible values, see [HashAlgorithmName Struct](/dotnet/api/system.security.cryptography.hashalgorithmname?view=netframework-4.7.2#properties).
+For a list of possible values, see
+[HashAlgorithmName](xref:System.Security.Cryptography.HashAlgorithmName#properties) struct.
 
 ```yaml
 Type: System.String
@@ -242,9 +240,10 @@ Determines which certificates in the certificate trust chain are included in the
 
 Valid values are:
 
-- Signer: Includes only the signer's certificate.
-- NotRoot: Includes all of the certificates in the certificate chain, except for the root authority.
-- All: Includes all the certificates in the certificate chain.
+- `Signer`: Includes only the signer's certificate.
+- `NotRoot`: Includes all of the certificates in the certificate chain, except for the root
+  authority.
+- `All`: Includes all the certificates in the certificate chain.
 
 ```yaml
 Type: System.String
@@ -260,8 +259,8 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the path to a file that is being signed. Unlike **FilePath**, the value of the
-**LiteralPath** parameter is used exactly as it is typed. No characters are interpreted as
+Specifies the path to a file that's being signed. Unlike **FilePath**, the value of the
+**LiteralPath** parameter is used exactly as it's typed. No characters are interpreted as
 wildcards. If the path includes escape characters, enclose it in single quotation marks. Single
 quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
@@ -279,8 +278,8 @@ Accept wildcard characters: False
 
 ### -SourcePathOrExtension
 
-This parameter appears in the syntax listing because it is defined in the base class that
-`Set-AuthenticodeSignature` is derived from. However, support for this parameter is not implemented
+This parameter appears in the syntax listing because it's defined in the base class that
+`Set-AuthenticodeSignature` is derived from. However, support for this parameter isn't implemented
 in `Set-AuthenticodeSignature`.
 
 ```yaml
@@ -298,7 +297,7 @@ Accept wildcard characters: False
 ### -TimestampServer
 
 Uses the specified time stamp server to add a time stamp to the signature. Type the URL of the time
-stamp server as a string.
+stamp server as a string. The URL must start with `http://`.
 
 The time stamp represents the exact time that the certificate was added to the file. A time stamp
 prevents the script from failing if the certificate expires because users and programs can verify
@@ -334,7 +333,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -370,6 +369,8 @@ This cmdlet returns a **Signature** object representing the value it set.
 ## NOTES
 
 ## RELATED LINKS
+
+[Authenticode](/windows-hardware/drivers/install/authenticode)
 
 [Get-AuthenticodeSignature](Get-AuthenticodeSignature.md)
 
