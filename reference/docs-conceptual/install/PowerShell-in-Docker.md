@@ -3,15 +3,15 @@ description: How to use PowerShell that's preinstalled in a Docker image.
 ms.date: 03/11/2025
 ms.devlang: powershell
 ms.topic: conceptual
-title: Using PowerShell in Docker
+title: Use PowerShell in Docker
 ---
 
-# Using PowerShell in Docker
+# Use PowerShell in Docker
 
 The .NET team publishes Docker images with PowerShell preinstalled. This article shows you how to
 get started using PowerShell in the Docker container.
 
-## Finding available images
+## Find available images
 
 These images require Docker 17.05 or newer. It's also expected that you are able to run Docker
 without `sudo` or local administrative rights. Please follow Docker's official [instructions][02] to
@@ -21,10 +21,7 @@ The .NET team publishes several Docker images designed for different development
 image for the .NET SDK contains PowerShell. For more information, see
 [Official .NET Docker images][01].
 
-## Using PowerShell in a container
-
-The following steps show the Docker commands required to download the image containing the latest
-available stable version of PowerShell and start an interactive PowerShell session.
+## Use PowerShell in a container
 
 The following command downloads the image containing the latest available stable versions of the
 .NET SDK and PowerShell.
