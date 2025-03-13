@@ -1,7 +1,7 @@
 ---
 description: Describes the PowerShell execution policies and explains how to manage them.
 Locale: en-US
-ms.date: 02/14/2025
+ms.date: 03/13/2025
 no-loc: [Bypass, Default, Restricted, Undefined, Unrestricted, Process, Scope, MachinePolicy, about_Group_Policy_Settings]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -66,12 +66,11 @@ execution policies are as follows:
 - `Default`
 
   - Sets the default execution policy.
-  - **Restricted** for Windows clients.
-  - **RemoteSigned** for Windows servers.
+  - **RemoteSigned** for Windows clients and servers.
 
 - `RemoteSigned`
 
-  - The default execution policy for Windows server computers.
+  - The default execution policy for Windows computers.
   - Scripts can run.
   - Requires a digital signature from a trusted publisher on scripts and
     configuration files that are downloaded from the internet which includes
@@ -85,7 +84,6 @@ execution policies are as follows:
 
 - `Restricted`
 
-  - The default execution policy for Windows client computers.
   - Permits individual commands, but does not allow scripts.
   - Prevents running of all script files, including formatting and
     configuration files (`.ps1xml`), module script files (`.psm1`), and
