@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 01/27/2025
+ms.date: 03/13/2025
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -240,19 +240,15 @@ If you installed via the MSI package, that information also appears in the
 To determine whether PowerShell may be upgraded with WinGet, run the following command:
 
 ```powershell
-winget list --name PowerShell --upgrade-available
+winget list --id Microsoft.PowerShell --upgrade-available
 ```
 
-If there is an available upgrade, the output indicates the latest available version.
+If there is an available upgrade, the output indicates the latest available version. Use the
+following command to upgrade PowerShell using WinGet:
 
-> [!NOTE]
-> When upgrading, PowerShell won't upgrade from an LTS version to a non-LTS version. It only
-> upgrades to the latest version of LTS, for example, from 7.4.3 to 7.4.7. To upgrade from an
-> LTS release to a newer stable version or the next LTS, you need to install the new version with
-> the MSI for that release.
->
-> When the installed version isn't an LTS version, PowerShell upgrades to the latest stable
-> version.
+```powershell
+winget upgrade --id Microsoft.PowerShell
+```
 
 ## Deploying on Windows 10 IoT Enterprise
 
