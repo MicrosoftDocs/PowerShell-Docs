@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 02/03/2025
+ms.date: 03/03/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -10,6 +10,34 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2025-February
+
+Content updates
+
+- Updated the Microsoft Update FAQ
+- Tons of quality improvements from the community
+  - surfingoldelephant - 13 PRs on 497 files
+  - ArieHein - 10 PRs on 140 files
+
+### Top Community Contributors
+
+GitHub stats
+
+- 52 PRs merged (29 from Community)
+- 26 issues opened (25 from Community)
+- 28 issues closed (26 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|     GitHub Id      | PRs merged | Issues opened |
+| ------------------ | :--------: | :-----------: |
+| surfingoldelephant |     13     |       3       |
+| ArieHein           |     10     |               |
+| changeworld        |     4      |               |
+| deadlydog          |     2      |               |
+| piedquance         |            |       4       |
 
 ## 2025-January
 
