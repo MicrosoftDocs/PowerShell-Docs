@@ -6,8 +6,8 @@ title: PowerShell Desired State Configuration (DSC)
 
 # Desired State Configuration (DSC) Overview
 
-DSC is a management platform in PowerShell that enables you to manage your IT and development
-infrastructure with configuration as code.
+DSC is a management platform that enables you to manage your IT and development infrastructure with
+configuration as code.
 
 There are three versions of DSC available:
 
