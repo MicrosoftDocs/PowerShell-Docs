@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 11/16/2023
+  ms.date: 03/18/2025
 
 # highlightedContent section (optional)
 # Maximum of 8 items
@@ -18,7 +18,7 @@ highlightedContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   items:
     # Card
-    - title: Overview
+    - title: What is PowerShell?
       itemType: get-started
       url: /powershell/scripting/overview
     # Card
@@ -61,7 +61,7 @@ productDirectory:
           text: What's new in PowerShell
     # Card 2
     - title: PowerShell Utility modules
-      imageSrc: /media/common/ih_tools.svg
+      imageSrc: /media/common/i_tools.svg
       links:
         - url: /powershell/utility-modules/overview?view=ps-modules
           text: PowerShell utility modules
@@ -74,17 +74,17 @@ productDirectory:
         - url: /powershell/utility-modules/secretmanagement/overview?view=ps-modules
           text: SecretManagement overview
     # Card 3
-    - title: PowerShell DSC
-      imageSrc: /media/common/i_dev-ops.svg
+    - title: Desired State Configuration
+      imageSrc: /media/common/ih_tools.png
       links:
         - url: /powershell/scripting/dsc/overview
-          text: DSC Overview
-        - url: /powershell/dsc/overview?view=dsc-1.1
-          text: DSC 1.1 in Windows PowerShell
-        - url: /powershell/dsc/overview?view=dsc-2.0
-          text: DSC 2.0
+          text: PowerShell DSC Overview
         - url: /powershell/dsc/overview?view=dsc-3.0
-          text: DSC 3.0 (preview)
+          text: Microsoft DSC 3.0
+        - url: /powershell/dsc/overview?view=dsc-2.0
+          text: PowerShell DSC 2.0
+        - url: /powershell/dsc/overview?view=dsc-1.1
+          text: PowerShell DSC 1.1
         - url: https://dsccommunity.org/
           text: DSC Community
     # Card 4
@@ -94,8 +94,8 @@ productDirectory:
         - url: https://www.powershellgallery.com/
           text: PowerShell Gallery
         - url: /powershell/gallery/overview
-          text: What is the PowerShell Gallery
-        - url: /powershell/gallery/concepts/publishing-guidelines
+          text: Package management for PowerShell
+        - url: /powershell/gallery/powershellget/overview
           text: Best practices
         - url: /powershell/gallery/faqs
           text: FAQs
