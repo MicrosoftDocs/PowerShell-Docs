@@ -431,8 +431,8 @@ $now = (Get-Date)
 $hash.Add($t, $now)
 ```
 
-You can't use a subtraction operator to remove a key-value pair from a hashtable,
-but you can use the `Remove()` method of the hashtable object. The
+You can't use a subtraction operator to remove a key-value pair from a
+hashtable, but you can use the `Remove()` method of the hashtable object. The
 `Remove` method has the following syntax:
 
 ```
@@ -561,8 +561,8 @@ Although you can't sort a hashtable, you can use the `GetEnumerator()` method
 of hashtables to enumerate the keys and values, and then use the `Sort-Object`
 cmdlet to sort the enumerated values for display.
 
-For example, the following commands enumerate the keys and values in the hashtable
-in the `$p` variable and then sort the keys in alphabetical order.
+For example, the following commands enumerate the keys and values in the
+hashtable in the `$p` variable and then sort the keys in alphabetical order.
 
 ```powershell
 PS> $p.GetEnumerator() | Sort-Object -Property key
