@@ -1,5 +1,5 @@
 ---
-description: How to use PowerShell that's preinstalled in a Docker image.
+description: How to use PowerShell in a Docker image.
 ms.date: 03/11/2025
 ms.devlang: powershell
 ms.topic: conceptual
@@ -13,11 +13,10 @@ get started using PowerShell in the Docker container.
 
 ## Find available images
 
-These images require Docker 17.05 or newer. It's also expected that you are able to run Docker
-without `sudo` or local administrative rights. Please follow Docker's official [instructions][02] to
-install `docker` correctly.
+These images require Docker 17.05 or newer. Also, you must be able to run Docker without `sudo` or
+local administrative rights. For install instructions, see Docker's official [documentation][02].
 
-The .NET team publishes several Docker images designed for different development scenarios. The
+The .NET team publishes several Docker images designed for different development scenarios. Only the
 image for the .NET SDK contains PowerShell. For more information, see
 [Official .NET Docker images][01].
 
@@ -47,18 +46,20 @@ system, you can specify the operating system in the image tag. See the
 
 ## Support lifecycle
 
-Support for these images is governed by the [.NET support policy][03]. These images are provided for
+The [.NET support policy][03] defines how these images are supported. These images are provided for
 development and testing purposes only. If you need a production-ready image, you should build your
 own images. For more information about these Docker images, visit the [dotnet-docker][04] repository
 on GitHub.
 
+The images previously published by the PowerShell team will be marked as deprecated in the Microsoft
+Container Registry (MCR).
+
 ## Telemetry
 
-By default, PowerShell collects limited telemetry without personally identifiable information to
-help aid development of future versions of PowerShell. To opt-out of sending telemetry, create an
-environment variable called `POWERSHELL_TELEMETRY_OPTOUT` set to a value of `1` before starting
-PowerShell from the installed location. The telemetry we collect falls under the
-[Microsoft Privacy Statement][08].
+By default, PowerShell collects limited telemetry without personal data to help aid development of
+future versions of PowerShell. To opt-out of sending telemetry, create an environment variable
+called `POWERSHELL_TELEMETRY_OPTOUT` set to a value of `1` before starting PowerShell from the
+installed location. The telemetry we collect falls under the [Microsoft Privacy Statement][08].
 
 <!-- link references -->
 [01]: /dotnet/architecture/microservices/net-core-net-framework-containers/official-net-docker-images
