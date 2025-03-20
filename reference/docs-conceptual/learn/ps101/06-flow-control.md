@@ -14,7 +14,7 @@ When you move from writing PowerShell one-liners to writing scripts, it sounds m
 it is. A script is nothing more than the same or similar commands you run interactively in the
 PowerShell console, except you save them as a `.PS1` file. There are some scripting constructs that
 you might use, such as a `foreach` loop instead of the `ForEach-Object` cmdlet. The differences can
-be confusing for beginners when considering that `foreach` is both a scripting construct and an
+be confusing for beginners when considering that `foreach` is both a language keyword and an
 alias for the `ForEach-Object` cmdlet.
 
 ## Looping
@@ -29,9 +29,9 @@ through the items using one of the different types of loops in PowerShell.
 one-liners. `ForEach-Object` streams the objects through the pipeline.
 
 Although the **Module** parameter of `Get-Command` accepts multiple string values, it only accepts
-them via pipeline input by property name or parameter input. In the following scenario, if you want
-to pipe two strings by value to `Get-Command` for use with the **Module** parameter, you would need
-to use the `ForEach-Object` cmdlet.
+them via pipeline input by property name. In the following scenario, if you want to pipe two string
+values to `Get-Command` for use with the **Module** parameter, you need to use the `ForEach-Object`
+cmdlet.
 
 ```powershell
 'ActiveDirectory', 'SQLServer' |
@@ -133,8 +133,8 @@ UserPrincipalName :
 ```
 
 As you can see in the previous examples, the **Identity** parameter for `Get-ADComputer` only
-accepts a single value when provided via parameter input. It allows for multiple items when you
-provide the input via pipeline input.
+accepts a single value when provided via parameter input. However, by using the pipeline, you can
+send multiple values to the command because the values are processed one at a time.
 
 ### For
 
@@ -218,8 +218,8 @@ The same results are achieved with a `Do While` loop by reversing the test condi
 
 ### While
 
-Like the `Do While` loop, a `While` loop runs as long as the specified condition is true. The
-difference, however, is that a `While` loop evaluates the condition at the top of the loop before
+Like the `do while` loop, a `while` loop runs as long as the specified condition is true. The
+difference, however, is that a `while` loop evaluates the condition at the top of the loop before
 any code is run. So, it doesn't run if the condition is evaluated as false.
 
 The following example calculates what day Thanksgiving Day is on in the United States. It's always
@@ -241,7 +241,7 @@ Thursday, November 23, 2017 12:00:00 AM
 
 ## Break, Continue, and Return
 
-The `break` statement is designed to exit a loop and is often used with the `switch` statement. In
+The `break` keyword is designed to exit a loop and is often used with the `switch` statement. In
 the following example, `break` causes the loop to end after the first iteration.
 
 ```powershell
@@ -256,7 +256,7 @@ for ($i = 1; $i -lt 5; $i++) {
 Sleeping for 1 seconds
 ```
 
-`Continue` is designed to skip to the next iteration of a loop.
+The `continue` keyword is designed to skip to the next iteration of a loop.
 
 The following example outputs the numbers 1, 2, 4, and 5. It skips number 3 and continues with the
 next iteration of the loop. Like `break`, `continue` breaks out of the loop except only for the
@@ -282,14 +282,14 @@ while ($i -lt 5) {
 
 `Return` is designed to exit out of the existing scope.
 
-Notice that in the following example, return outputs the first result and then exits out of the
+Notice in the following example that `return` outputs the first result and then exits out of the
 loop.
 
 ```powershell
 $number = 1..10
 foreach ($n in $number) {
     if ($n -ge 4) {
-        Return $n
+        return $n
     }
 }
 ```
