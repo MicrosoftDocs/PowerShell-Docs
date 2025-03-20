@@ -160,8 +160,8 @@ as long as the counter variable `$i` is less than 5. It sleeps for a total of 10
 
 ### Do
 
-There are two different `do` loops in PowerShell. `Do Until` runs while the specified condition is
-false.
+There are two different `do` loops in PowerShell: `do until` and `do while`. `do until` runs until
+the specified condition is false.
 
 The following example is a numbers game that continues until the value you guess equals the same
 number that the `Get-Random` cmdlet generated.
@@ -239,7 +239,7 @@ Write-Output $date
 Thursday, November 23, 2017 12:00:00 AM
 ```
 
-## Break, Continue, and Return
+## break, continue, and return
 
 The `break` keyword is designed to exit a loop and is often used with the `switch` statement. In
 the following example, `break` causes the loop to end after the first iteration.
