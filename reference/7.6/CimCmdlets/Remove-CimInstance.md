@@ -249,7 +249,7 @@ By default, if you do not specify this parameter, the DMTF standard resource URI
 **ResourceUri** can only be used with CIM sessions created using the WSMan protocol, or when
 specifying the **ComputerName** parameter, which creates a CIM session using WSMan. If you specify
 this parameter without specifying the **ComputerName** parameter, or if you specify a CIM session
-created using DCOM protocol, you will get an error, because the DCOM protocol does not support the
+created using DCOM protocol, you get an error, because the DCOM protocol does not support the
 **ResourceUri** parameter.
 
 If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**
