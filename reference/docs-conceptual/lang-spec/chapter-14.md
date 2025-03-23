@@ -140,7 +140,7 @@ Examples:
 
 ```powershell
 <#
-.ExternalHelp C:\MyScripts\Update-Month-Help.xml
+.EXTERNALHELP C:\MyScripts\Update-Month-Help.xml
 #>
 ```
 
@@ -220,7 +220,7 @@ is added to the item.
 function Process-Thing {
     param ( ...
         [Parameter(ValueFromPipeline=$true)]
-        [object[]]$Value,
+        [Object[]]$Value,
         ...
     )
     ...
@@ -275,7 +275,7 @@ Examples:
 
 ```powershell
 <#
-.Notes
+.NOTES
 *arbitrary text goes here*
 #>
 ```

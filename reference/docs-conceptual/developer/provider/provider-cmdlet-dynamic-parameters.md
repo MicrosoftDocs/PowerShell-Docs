@@ -120,7 +120,7 @@ Here is a list of the static parameters that can be used to add dynamic paramete
   [System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters*][08] method.
 - `Remove-Item` cmdlet - You can define dynamic parameters that are triggered by the `Path` and
   `Recurse` parameters of the `Remove-Item` cmdlet by implementing the
-  [System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*][06]
+  [System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters*][06]
   method.
 - `Remove-ItemProperty` cmdlet - You can define dynamic parameters that are triggered by the `Path`
   and `Name` parameters of the `Remove-ItemProperty` cmdlet by implementing the
@@ -128,7 +128,7 @@ Here is a list of the static parameters that can be used to add dynamic paramete
   method.
 - `Rename-Item` cmdlet - You can define dynamic parameters that are triggered by the `Path` and
   `NewName` parameters of the `Rename-Item` cmdlet by implementing the
-  [System.Management.Automation.Provider.Containercmdletprovider.Renameitemdynamicparameters*][07]
+  [System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters*][07]
   method.
 - `Rename-ItemProperty` - You can define dynamic parameters that are triggered by the `Path`,
   `Name`, and `NewName` parameters of the `Rename-ItemProperty` cmdlet by implementing the

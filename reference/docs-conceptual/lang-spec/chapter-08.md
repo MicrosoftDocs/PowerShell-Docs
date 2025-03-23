@@ -249,7 +249,7 @@ If the command type is Application, the parameter `--%` is not passed to the com
 after `--%` have any environment variables (strings surrounded by `%`) expanded. For example:
 
 ```powershell
-echoargs.exe --% "%path%" # %path% is replaced with the value $env:path
+echoargs.exe --% "%path%" # %path% is replaced with the value $Env:path
 ```
 
 The order of evaluation of arguments is unspecified.
@@ -290,11 +290,11 @@ Examples:
 New-Object 'int[,]' 3,2
 New-Object -ArgumentList 3,2 -TypeName 'int[,]'
 
-dir e:\PowerShell\Scripts\*statement*.ps1 | Foreach-Object {$_.Length}
+dir E:\PowerShell\Scripts\*statement*.ps1 | ForEach-Object {$_.Length}
 
-dir e:\PowerShell\Scripts\*.ps1 |
+dir E:\PowerShell\Scripts\*.ps1 |
     Select-String -List "catch" |
-    Format-Table path,linenumber -AutoSize
+    Format-Table Path, LineNumber -AutoSize
 ```
 
 ## 8.3 The if statement
@@ -1013,7 +1013,7 @@ the `throw` statement.
 Examples:
 
 ```powershell
-$a = new-object 'int[]' 10
+$a = New-Object 'int[]' 10
 $i = 20 # out-of-bounds subscript
 
 while ($true) {
@@ -1145,7 +1145,7 @@ data-name:
     simple-name
 
 data-commands-allowed:
-    new-lines~opt~ -supportedcommand data-commands-list
+    new-lines~opt~ -SupportedCommand data-commands-list
 
 data-commands-list:
     new-lines~opt~ data-command
@@ -1176,7 +1176,7 @@ only:
 - Literals
 - Calls to the [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
   cmdlet
-- Any other cmdlets identified via the **supportedcommand** parameter
+- Any other cmdlets identified via the **SupportedCommand** parameter
 
 If the `ConvertFrom-StringData` cmdlet is used, the key/value pairs can be expressed using any form
 of string literal. However, *expandable-string-literal*s and *expandable-here-string-literal*s must
@@ -1185,12 +1185,12 @@ not contain any variable substitutions or sub-expression expansions.
 Examples:
 
 The **SupportedCommand** parameter indicates that the given cmdlets or functions generate data only.
-For example, the following data section includes a user-written cmdlet, `ConvertTo-XML`, which
+For example, the following data section includes a user-written cmdlet, `ConvertTo-Xml`, which
 formats data in an XML file:
 
 ```powershell
-data -supportedCommand ConvertTo-XML {
-    Format-XML -strings string1, string2, string3
+data -SupportedCommand ConvertTo-Xml {
+    Format-Xml -Strings string1, string2, string3
 }
 ```
 
@@ -1199,7 +1199,7 @@ command that converts the strings into a hash table, whose value is assigned to 
 
 ```powershell
 $messages = data {
-    ConvertFrom-StringData -stringdata @'
+    ConvertFrom-StringData -StringData @'
     Greeting = Hello
     Yes = yes
     No = no
@@ -1215,7 +1215,7 @@ be created in separate files, with the following data sections:
 
 ```powershell
 $messages = data {
-    ConvertFrom-StringData -stringdata @"
+    ConvertFrom-StringData -StringData @"
     Greeting = Guten Tag
     Yes = ja
     No = nein
@@ -1223,7 +1223,7 @@ $messages = data {
 }
 
 $messagesS = data {
-    ConvertFrom-StringData -stringdata @"
+    ConvertFrom-StringData -StringData @"
     Greeting = Buenos días
     Yes = sí
     No = no
@@ -1331,17 +1331,17 @@ Windows Workflow Foundation engine.
 Consider the following definition for a function called `Get-Power`:
 
 ```powershell
-function Get-Power ([long]$base, [int]$exponent) {
+function Get-Power ([long]$Base, [int]$Exponent) {
     $result = 1
-    for ($i = 1; $i -le $exponent; ++$i) {
-        $result *= $base
+    for ($i = 1; $i -le $Exponent; ++$i) {
+        $result *= $Base
     }
     return $result
 }
 ```
 
-This function has two parameters, `$base` and `$exponent`. It also contains a set of statements
-that, for non-negative exponent values, computes `$base^$exponent^` and returns the result to
+This function has two parameters, `$Base` and `$Exponent`. It also contains a set of statements
+that, for non-negative exponent values, computes `$Base^$Exponent^` and returns the result to
 `Get-Power`'s caller.
 
 When a script, function, or filter begins execution, each parameter is initialized to its
@@ -1378,10 +1378,10 @@ value is used to initialize *p* provided *p* is not bound to any arguments in th
 Consider the following function definition and calls:
 
 ```powershell
-function Find-Str ([string]$str, [int]$start_pos = 0) { ... }
+function Find-Str ([string]$Str, [int]$StartPos = 0) { ... }
 
-Find-Str "abcabc" # 2nd argument omitted, 0 used for $start_pos
-Find-Str "abcabc" 2 # 2nd argument present, so it is used for $start_pos
+Find-Str "abcabc" # 2nd argument omitted, 0 used for $StartPos
+Find-Str "abcabc" 2 # 2nd argument present, so it is used for $StartPos
 ```
 
 ### 8.10.5 The [switch] type constraint
@@ -1392,13 +1392,13 @@ the type switch. Type switch has two values, True and False.
 Consider the following function definition and calls:
 
 ```powershell
-function Process ([switch]$trace, $p1, $p2) { ... }
+function Process ([switch]$Trace, $P1, $P2) { ... }
 
-Process 10 20                # $trace is False, $p1 is 10, $p2 is 20
-Process 10 -trace 20         # $trace is True, $p1 is 10, $p2 is 20
-Process 10 20 -trace         # $trace is True, $p1 is 10, $p2 is 20
-Process 10 20 -trace:$false  # $trace is False, $p1 is 10, $p2 is 20
-Process 10 20 -trace:$true   # $trace is True, $p1 is 10, $p2 is 20
+Process 10 20                # $Trace is False, $P1 is 10, $P2 is 20
+Process 10 -Trace 20         # $Trace is True, $P1 is 10, $P2 is 20
+Process 10 20 -Trace         # $Trace is True, $P1 is 10, $P2 is 20
+Process 10 20 -Trace:$false  # $Trace is False, $P1 is 10, $P2 is 20
+Process 10 20 -Trace:$true   # $Trace is True, $P1 is 10, $P2 is 20
 ```
 
 ### 8.10.6 Pipelines and functions
@@ -1464,10 +1464,10 @@ registry drive.
 
 ```powershell
 function Sample {
-    Param ([String]$Name, [String]$Path)
+    param ([string]$Name, [string]$Path)
     dynamicparam {
-        if ($path -match "*HKLM*:") {
-            $dynParam1 = New-Object System.Management.Automation.RuntimeDefinedParameter("dp1", [Int32], $attributeCollection)
+        if ($Path -match "*HKLM*:") {
+            $dynParam1 = New-Object System.Management.Automation.RuntimeDefinedParameter("dp1", [int32], $attributeCollection)
 
             $attributes = New-Object System.Management.Automation.ParameterAttribute
             $attributes.ParameterSetName = 'pset1'
@@ -1499,9 +1499,9 @@ A *param-block* provides an alternate way of declaring parameters. For example, 
 of parameter declarations are equivalent:
 
 ```powershell
-function FindStr1 ([string]$str, [int]$start_pos = 0) { ... }
+function FindStr1 ([string]$Str, [int]$StartPos = 0) { ... }
 function FindStr2 {
-    param ([string]$str, [int]$start_pos = 0) ...
+    param ([string]$Str, [int]$StartPos = 0) ...
 }
 ```
 
@@ -1573,16 +1573,16 @@ corresponding parameter by position, with the first parameter having position ze
 Consider the following definition fragment for a function called `Get-Power`, and the calls to it:
 
 ```powershell
-function Get-Power ([long]$base, [int]$exponent) { ... }
+function Get-Power ([long]$Base, [int]$Exponent) { ... }
 
-Get-Power 5 3       # argument 5 is bound to parameter $base in position 0
-                    # argument 3 is bound to parameter $exponent in position 1
+Get-Power 5 3       # argument 5 is bound to parameter $Base in position 0
+                    # argument 3 is bound to parameter $Exponent in position 1
                     # no conversion is needed, and the result is 5 to the power 3
 
 Get-Power 4.7 3.2   # double argument 4.7 is rounded to int 5, double argument
                     # 3.2 is rounded to int 3, and result is 5 to the power 3
 
-Get-Power 5         # $exponent has value $null, which is converted to int 0
+Get-Power 5         # $Exponent has value $null, which is converted to int 0
 
 Get-Power           # both parameters have value $null, which is converted to int 0
 ```
@@ -1597,24 +1597,24 @@ designates the corresponding parameter. When choosing parameter names, avoid usi
 Consider the following calls to function `Get-Power`:
 
 ```powershell
-Get-Power -base 5 -exponent 3   # -base designates $base, so 5 is
-                                # bound to that, exponent designates
-                                # $exponent, so 3 is bound to that
+Get-Power -Base 5 -Exponent 3   # -Base designates $Base, so 5 is
+                                # bound to that, -Exponent designates
+                                # $Exponent, so 3 is bound to that
 
-Get-Power -Exp 3 -BAs 5         # $base takes on 5 and $exponent takes on 3
+Get-Power -Exp 3 -Bas 5         # $Base takes on 5 and $Exponent takes on 3
 
-Get-Power -e 3 -b 5             # $base takes on 5 and $exponent takes on 3
+Get-Power -E 3 -B 5             # $Base takes on 5 and $Exponent takes on 3
 ```
 
 On the other hand, calls to the following function
 
 ```powershell
-function Get-Hypot ([double]$side1, [double]$side2) {
-    return [Math]::Sqrt($side1 * $side1 + $side2 * $side2)
+function Get-Hypot ([double]$Side1, [double]$Side2) {
+    return [Math]::Sqrt($Side1 * $Side1 + $Side2 * $Side2)
 }
 ```
 
-must use parameters `-side1` and `-side2`, as there is no prefix that uniquely designates the
+must use parameters `-Side1` and `-Side2`, as there is no prefix that uniquely designates the
 parameter.
 
 The same parameter name cannot be used multiple times with or without different associated argument
@@ -1654,11 +1654,11 @@ Positional parameters prefer to be bound without type conversion, if possible. F
 
 ```powershell
 function Test {
-    [CmdletBinding(DefaultParameterSetname = "SetB")]
-    param([Parameter(Position = 0, ParameterSetname = "SetA")]
-        [decimal]$dec,
-        [Parameter(Position = 0, ParameterSetname = "SetB")]
-        [int]$in
+    [CmdletBinding(DefaultParameterSetName = "SetB")]
+    param([Parameter(Position = 0, ParameterSetName = "SetA")]
+        [decimal]$Dec,
+        [Parameter(Position = 0, ParameterSetName = "SetB")]
+        [int]$In
     )
     $PSCmdlet.ParameterSetName
 }

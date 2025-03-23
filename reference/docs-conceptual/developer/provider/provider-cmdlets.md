@@ -25,13 +25,13 @@ This cmdlet allows the user to create PowerShell drives to access the data store
 cmdlet, overwrite the following methods of
 [System.Management.Automation.Provider.DriveCmdletProvider][12] class:
 
-- [Newdrive][13]
+- [NewDrive][13]
 - [NewDriveDynamicParameters][14]
 
 ### `Remove-PSDrive`
 
 This cmdlet allows the user to remove PowerShell drives that access the data store. To support this
-cmdlet, overwrite the [System.Management.Automation.Provider.DriveCmdletProvider.Removedrive][15]
+cmdlet, overwrite the [System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive][15]
 method.
 
 ## Item cmdlets
@@ -42,7 +42,7 @@ This cmdlet allows the user to remove the value of an item in the data store. To
 cmdlet, overwrite the following methods of
 [System.Management.Automation.Provider.ItemCmdletProvider][43] class:
 
-- [Clearitem][44]
+- [ClearItem][44]
 - [ClearItemDynamicParameters][45]
 
 ### `Copy-Item`
@@ -51,7 +51,7 @@ This cmdlet allows the user to copy an item from one location to another. To sup
 overwrite the following methods of
 [System.Management.Automation.Provider.ContainerCmdletProvider][01] class:
 
-- [Copyitem][02]
+- [CopyItem][02]
 - [CopyItemDynamicParameters][03]
 
 ### `Get-Item`
@@ -59,7 +59,7 @@ overwrite the following methods of
 This cmdlet allows the user to retrieve data from the data store. To support this cmdlet, overwrite
 the following methods of [System.Management.Automation.Provider.ItemCmdletProvider][43] class:
 
-- [Getitem][46]
+- [GetItem][46]
 - [GetItemDynamicParameters][47]
 
 ### `Get-ChildItem`
@@ -83,7 +83,7 @@ cmdlet, overwrite the
 
 This cmdlet allows the user to move an item from one location to another location. To support this
 cmdlet, overwrite the following methods of
-[System.Management.Automation.Provider.Navigationcmdletprovider][53] class:
+[System.Management.Automation.Provider.NavigationCmdletProvider][53] class:
 
 - [MoveItem][55]
 - [MoveItemDynamicParameters][56]

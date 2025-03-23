@@ -10,7 +10,7 @@ This topic explains how to create a Windows PowerShell provider that has basic f
 
 ## Writing a basic provider
 
-The most basic functionality of a Windows PowerShell provider is to create and remove drives. In this example, we implement the [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) and [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) methods of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class. You will also see how to declare a provider class.
+The most basic functionality of a Windows PowerShell provider is to create and remove drives. In this example, we implement the [System.Management.Automation.Provider.DriveCmdletProvider.NewDrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) and [System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) methods of the [System.Management.Automation.Provider.DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class. You will also see how to declare a provider class.
 
 When you write a provider, you can specify default drives-drives that are created automatically when the provider is available. You also define a method to create new drives that use that provider.
 
@@ -24,15 +24,15 @@ In Visual Studio, create a Class Library project named AccessDBProviderSample. C
 
 1. Add the System.Management.Automation assembly as a reference to your project.
 
-2. Click **Project > AccessDBProviderSample Properties > Debug**. In **Start project**, click **Start external program**, and navigate to the Windows PowerShell executable (typically c:\Windows\System32\WindowsPowerShell\v1.0\\.powershell.exe).
+2. Click **Project > AccessDBProviderSample Properties > Debug**. In **Start project**, click **Start external program**, and navigate to the Windows PowerShell executable (typically C:\Windows\System32\WindowsPowerShell\v1.0\\.powershell.exe).
 
-3. Under **Start Options**, enter the following into the **Command line arguments** box: `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. Under **Start Options**, enter the following into the **Command line arguments** box: `-NoExit -Command "[Reflection.Assembly]::LoadFrom(AccessDBProviderSample.dll' ) | Import-Module"`
 
 ### Declaring the provider class
 
-Our provider derives from the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class. Most providers that provide real functionality (accessing and manipulating items, navigating the data store, and getting and setting content of items) derive from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class.
+Our provider derives from the [System.Management.Automation.Provider.DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class. Most providers that provide real functionality (accessing and manipulating items, navigating the data store, and getting and setting content of items) derive from the [System.Management.Automation.Provider.NavigationCmdletProvider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) class.
 
-In addition to specifying that the class derives from [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider), you must decorate it with the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) as shown in the example.
+In addition to specifying that the class derives from [System.Management.Automation.Provider.DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider), you must decorate it with the [System.Management.Automation.Provider.CmdletProviderAttribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) as shown in the example.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -56,7 +56,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### Implementing NewDrive
 
-The [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) method is called by the Windows PowerShell engine when a user calls the [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) cmdlet specifying the name of your provider. The PSDriveInfo parameter is passed by the Windows PowerShell engine, and the method returns the new drive to the Windows PowerShell engine. This method must be declared within the class created above.
+The [System.Management.Automation.Provider.DriveCmdletProvider.NewDrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) method is called by the Windows PowerShell engine when a user calls the [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) cmdlet specifying the name of your provider. The PSDriveInfo parameter is passed by the Windows PowerShell engine, and the method returns the new drive to the Windows PowerShell engine. This method must be declared within the class created above.
 
 The method first checks to make sure both the drive object and the drive root that were passed in exist, returning `null` if either of them do not. It then uses a constructor of the internal class AccessDBPSDriveInfo to create a new drive and a connection to the Access database the drive represents.
 
@@ -136,7 +136,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### Implementing RemoveDrive
 
-The [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) method is called by the Windows PowerShell engine when a user calls the [Microsoft.PowerShell.Commands.RemovePSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) cmdlet. The method in this provider closes the connection to the Access database.
+The [System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) method is called by the Windows PowerShell engine when a user calls the [Microsoft.PowerShell.Commands.RemovePSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) cmdlet. The method in this provider closes the connection to the Access database.
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

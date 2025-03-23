@@ -77,7 +77,7 @@ environment variable PSModulePath points to a set of directories to be searched 
 cmdlets look for modules whose names do not include a fully qualified path. Additional lookup paths
 can be provided; for example,
 
-`$Env:PSModulepath = $Env:PSModulepath + ";<additional-path>"`
+`$Env:PSModulePath = $Env:PSModulePath + ";<additional-path>"`
 
 Any additional paths added affect the current session only.
 
@@ -221,40 +221,40 @@ A dynamic module can be used to create a *closure*, a function with attached dat
 following example:
 
 ```powershell
-function Get-NextID ([int]$startValue = 1) {
-    $nextID = $startValue
+function Get-NextID ([int]$StartValue = 1) {
+    $nextID = $StartValue
     {
-        ($script:nextID++)
+        ($Script:nextID++)
     }.GetNewClosure()
 }
 
-$v1 = Get-NextID      # get a scriptblock with $startValue of 0
+$v1 = Get-NextID      # get a scriptblock with $StartValue of 0
 & $v1                 # invoke Get-NextID getting back 1
 & $v1                 # invoke Get-NextID getting back 2
 
-$v2 = Get-NextID 100  # get a scriptblock with $startValue of 100
+$v2 = Get-NextID 100  # get a scriptblock with $StartValue of 100
 & $v2                 # invoke Get-NextID getting back 100
 & $v2                 # invoke Get-NextID getting back 101
 ```
 
 The intent here is that `Get-NextID` return the next ID in a sequence whose start value can be
-specified. However, multiple sequences must be supported, each with its own `$startValue` and
+specified. However, multiple sequences must be supported, each with its own `$StartValue` and
 `$nextID` context. This is achieved by the call to the method `[scriptblock]::GetNewClosure`
 ([§4.3.7][§4.3.7]).
 
 Each time a new closure is created by `GetNewClosure`, a new dynamic module is created, and the
 variables in the caller's scope (in this case, the script block containing the increment) are copied
 into this new module. To ensure that the nextId defined inside the parent function (but outside the
-script block) is incremented, the explicit script: scope prefix is needed.
+script block) is incremented, the explicit Script: scope prefix is needed.
 
 Of course, the script block need not be a named function; for example:
 
 ```powershell
-$v3 = & {      # get a scriptblock with $startValue of 200
-    param ([int]$startValue = 1)
-    $nextID = $startValue
+$v3 = & {      # get a scriptblock with $StartValue of 200
+    param ([int]$StartValue = 1)
+    $nextID = $StartValue
     {
-        ($script:nextID++)
+        ($Script:nextID++)
     }.GetNewClosure()
 } 200
 

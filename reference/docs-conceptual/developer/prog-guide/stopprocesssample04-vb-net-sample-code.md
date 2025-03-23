@@ -29,7 +29,7 @@ Namespace Microsoft.Samples.PowerShell.Commands
 #Region "StopProcCommand"
 
     ''' <summary>
-    ''' Class that implements the stop-proc cmdlet.
+    ''' Class that implements the Stop-Proc cmdlet.
     ''' </summary>
     <Cmdlet(VerbsLifecycle.Stop, "Proc", DefaultParameterSetName:="ProcessId", _
     SupportsShouldProcess:=True)> _
@@ -454,7 +454,7 @@ ContinueForEach1:
         Public Overrides ReadOnly Property Description() As String
             Get
                 Return "This is a PowerShell snap-in that includes " & _
-                    "the stop-proc cmdlet."
+                    "the Stop-Proc cmdlet."
             End Get
         End Property
     End Class 'StopProcPSSnapIn04
