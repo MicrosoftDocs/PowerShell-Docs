@@ -52,11 +52,11 @@ This command reloads the formatting files that it loaded previously.
 ### Example 2: Reload formatting files and trace and log formatting files
 
 ```powershell
-Update-FormatData -AppendPath "trace.format.ps1xml, log.format.ps1xml"
+Update-FormatData -AppendPath Trace.format.ps1xml, Log.format.ps1xml
 ```
 
 This command reloads the formatting files into the session, including two new files,
-Trace.format.ps1xml and Log.format.ps1xml.
+`Trace.format.ps1xml` and `Log.format.ps1xml`.
 
 Because the command uses the **AppendPath** parameter, the formatting data in the new files is loaded
 after the formatting data from the built-in files.
@@ -67,7 +67,7 @@ are not referenced in the built-in files.
 ### Example 3: Edit a formatting file and reload it
 
 ```powershell
-Update-FormatData -PrependPath "c:\test\NewFiles.format.ps1xml"
+Update-FormatData -PrependPath "C:\test\NewFiles.format.ps1xml"
 
 # Edit the NewFiles.format.ps1 file.
 
@@ -76,15 +76,15 @@ Update-FormatData
 
 This example shows how to reload a formatting file after you have edited it.
 
-The first command adds the NewFiles.format.ps1xml file to the session. It uses the **PrependPath**
+The first command adds the `NewFiles.format.ps1xml` file to the session. It uses the **PrependPath**
 parameter because the file contains formatting data for objects that are referenced in the built-in
 files.
 
-After adding the NewFiles.format.ps1xml file and testing it in these sessions, the author edits the
-file.
+After adding the `NewFiles.format.ps1xml` file and testing it in these sessions, the author edits
+the file.
 
 The second command uses the `Update-FormatData` cmdlet to reload the formatting files. Because the
-NewFiles.format.ps1xml file was previously loaded, `Update-FormatData` automatically reloads it
+`NewFiles.format.ps1xml` file was previously loaded, `Update-FormatData` automatically reloads it
 without using parameters.
 
 ## PARAMETERS

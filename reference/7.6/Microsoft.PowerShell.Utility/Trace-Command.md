@@ -44,7 +44,7 @@ This example starts a trace of metadata processing, parameter binding, and cmdle
 destruction of the `Get-Process Notepad` expression.
 
 ```powershell
-Trace-Command -Name metadata,parameterbinding,cmdlet -Expression {Get-Process Notepad} -PSHost
+Trace-Command -Name Metadata, ParameterBinding, Cmdlet -Expression {Get-Process Notepad} -PSHost
 ```
 
 It uses the **Name** parameter to specify the trace sources, the **Expression** parameter to specify

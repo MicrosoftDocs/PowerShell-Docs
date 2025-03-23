@@ -49,7 +49,7 @@ function Test-Condition {
         [string]$Message = "Hello, $Name!"
     )
 
-    if ($Name -eq $env:USERNAME) {
+    if ($Name -eq $Env:USERNAME) {
         Write-Output "$Message"
     } else {
         # Remove after debugging
@@ -70,7 +70,7 @@ At D:\temp\test\dbgtest.ps1:13 char:9
 [DBG]: PS D:\>> l
 
     8:
-    9:      if ($Name -eq $env:USERNAME) {
+    9:      if ($Name -eq $Env:USERNAME) {
    10:          Write-Output "$Message"
    11:      } else {
    12:          # Remove after debugging
@@ -80,7 +80,7 @@ At D:\temp\test\dbgtest.ps1:13 char:9
    16:      }
    17:  }
 
-[DBG]: PS D:\>> $env:USERNAME
+[DBG]: PS D:\>> $Env:USERNAME
 User01
 [DBG]: PS D:\>> exit
 PS D:\>
@@ -113,7 +113,7 @@ class FileResource
 
     [void] Set() {
         $fileExists = $this.TestFilePath($this.Path)
-        if ($this.ensure -eq [Ensure]::Present) {
+        if ($this.Ensure -eq [Ensure]::Present) {
             if (! $fileExists) {
                $this.CopyFile()
             }
