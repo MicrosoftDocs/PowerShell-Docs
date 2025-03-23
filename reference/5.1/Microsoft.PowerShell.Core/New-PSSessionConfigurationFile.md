@@ -473,7 +473,7 @@ Accept wildcard characters: False
 
 ### -FormatsToProcess
 
-Specifies the formatting files (.ps1xml) that run in sessions that use the session configuration.
+Specifies the formatting files (`.ps1xml`) that run in sessions that use the session configuration.
 The value of this parameter must be a full or absolute path of the formatting files.
 
 ```yaml
@@ -516,7 +516,7 @@ the following keys:
   values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
 For example:
-`@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`
+`@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process powershell};Options='AllScope'}`
 
 ```yaml
 Type: System.Collections.IDictionary[]
@@ -644,10 +644,10 @@ Accept wildcard characters: False
 
 Configures sessions that use this session configuration to expose the `User:` PSDrive. User drives
 are unique for each connecting user and allow users to copy data to and from PowerShell endpoints
-even if the File System provider is not exposed. User drive roots are created under
-`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
-endpoint, a folder is created with the name `${env:USERDOMAIN}_${env:USERNAME}`. For computers in
-workgroups, the value of `$env:USERDOMAIN` is the hostname.
+even if the FileSystem provider is not exposed. User drive roots are created under
+`$Env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
+endpoint, a folder is created with the name `${Env:USERDOMAIN}_${Env:USERNAME}`. For computers in
+workgroups, the value of `$Env:USERDOMAIN` is the hostname.
 
 Contents in the user drive persist across user sessions and are not automatically removed. By
 default, users can only store up to 50MB of data in the user drive. This can be customized with the
@@ -1076,7 +1076,7 @@ value of the **VisibleProviders** parameter is the Certificate provider, but the
 parameter does not specify the **Microsoft.PowerShell.Security** module that contains the
 Certificate provider, the Certificate provider is not visible in the session.
 
-`New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name
+`New-PSSessionConfigurationFile` creates a session configuration file that has a `.pssc` file name
 extension in the path that you specify in the **Path** parameter. When you use the session
 configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet
 copies the configuration file and saves an active copy of the file in the **SessionConfig**

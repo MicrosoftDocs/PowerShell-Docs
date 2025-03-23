@@ -197,7 +197,7 @@ $s = New-PSSession -ComputerName Server01, Server02, Server03
 $invokeCommandSplat = @{
     Session = $s
     ScriptBlock = {
-        Start-Job -Name $('MyJob-' +$env:COMPUTERNAME) -ScriptBlock {
+        Start-Job -Name $('MyJob-' +$Env:COMPUTERNAME) -ScriptBlock {
             (Get-Date).ToString()
         }
     }
@@ -224,7 +224,7 @@ Id   Name               State      HasMoreData   Location   Command
 # variable and save the results in the $results variable. The Receive-Job command must be
 # run in each session because the jobs were run locally on each server.
 $results = Invoke-Command -Session $s -ScriptBlock {
-    Receive-Job -Name $('MyJob-' +$env:COMPUTERNAME)
+    Receive-Job -Name $('MyJob-' +$Env:COMPUTERNAME)
 }
 ```
 

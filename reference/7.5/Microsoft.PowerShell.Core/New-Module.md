@@ -84,7 +84,7 @@ This example demonstrates that dynamic modules are not returned by the `Get-Modu
 members that they export are returned by the `Get-Command` cmdlet.
 
 ```powershell
-new-module -scriptblock {function Hello {"Hello!"}}
+New-Module -ScriptBlock {function Hello {"Hello!"}}
 ```
 
 ```Output
@@ -122,7 +122,7 @@ This example uses the `Export-ModuleMember` cmdlet to export a variable into the
 Without the `Export-ModuleMember` command, only the function is exported.
 
 ```powershell
-New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -Function SayHello -Variable SayHelloHelp}
+New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($Name) { "Hello, $Name" }; Export-ModuleMember -Function SayHello -Variable SayHelloHelp}
 $SayHelloHelp
 ```
 
@@ -173,7 +173,7 @@ NestedModules     : {}
 ```
 
 ```powershell
-Get-Command hello
+Get-Command Hello
 ```
 
 ```Output
@@ -196,8 +196,8 @@ The `$m` variable appears to have no assigned value.
 
 ```powershell
 $m = New-Module -ScriptBlock {
-  function Hello ($name) {"Hello, $name"}
-  function Goodbye ($name) {"Goodbye, $name"}
+  function Hello ($Name) {"Hello, $Name"}
+  function Goodbye ($Name) {"Goodbye, $Name"}
 } -AsCustomObject
 $m
 $m | Get-Member
@@ -217,7 +217,7 @@ Hello       ScriptMethod System.Object Hello();
 ```
 
 ```powershell
-$m.goodbye("Jane")
+$m.Goodbye("Jane")
 ```
 
 ```Output
@@ -225,7 +225,7 @@ Goodbye, Jane
 ```
 
 ```powershell
-$m.hello("Manoj")
+$m.Hello("Manoj")
 ```
 
 ```Output

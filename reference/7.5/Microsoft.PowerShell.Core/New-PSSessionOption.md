@@ -88,7 +88,7 @@ IdleTimeout                       : 00:04:00
 This example shows how to use a **SessionOption** object to configure a session.
 
 ```powershell
-$pso = New-PSSessionOption -Culture "fr-fr" -MaximumReceivedObjectSize 10MB
+$pso = New-PSSessionOption -Culture "fr-FR" -MaximumReceivedObjectSize 10MB
 New-PSSession -ComputerName Server01 -SessionOption $pso
 ```
 
@@ -138,7 +138,7 @@ TotalMilliseconds : 180000
 
 ```powershell
 $a.UICulture = (Get-UICulture)
-$a.OpenTimeout = (New-Timespan -Minutes 4)
+$a.OpenTimeout = (New-TimeSpan -Minutes 4)
 $a.MaximumConnectionRedirectionCount = 1
 $a
 ```
