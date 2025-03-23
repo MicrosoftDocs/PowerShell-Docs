@@ -36,15 +36,15 @@ The parameter names do not appear in the command. Include only the parameter
 values. The values must appear in the order specified in the syntax diagram.
 
 ```
--Split <String>
--Split (<String[]>)
-<String> -Split <Delimiter>[,<Max-substrings>[,"<Options>"]]
-<String> -Split {<ScriptBlock>} [,<Max-substrings>]
+-split <String>
+-split (<String[]>)
+<String> -split <Delimiter>[,<Max-substrings>[,"<Options>"]]
+<String> -split {<ScriptBlock>} [,<Max-substrings>]
 ```
 
-You can substitute `-iSplit` or `-cSplit` for `-split` in any binary Split
+You can substitute `-isplit` or `-csplit` for `-split` in any binary Split
 statement (a Split statement that includes a delimiter or script block). The
-`-iSplit` and `-split` operators are case-insensitive. The `-cSplit` operator
+`-isplit` and `-split` operators are case-insensitive. The `-csplit` operator
 is case-sensitive, meaning that case is considered when the delimiter rules
 are applied.
 
@@ -223,7 +223,7 @@ The SimpleMatch options are:
 
 - **SimpleMatch**: Use simple string comparison when evaluating the
   delimiter. Cannot be used with RegexMatch.
-- **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
+- **IgnoreCase**: Forces case-insensitive matching, even if the -csplit
   operator is specified.
 
 The RegexMatch options are:
@@ -231,7 +231,7 @@ The RegexMatch options are:
 - **RegexMatch**: Use regular expression matching to evaluate the
   delimiter. This is the default behavior. Cannot be used with
   SimpleMatch.
-- **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
+- **IgnoreCase**: Forces case-insensitive matching, even if the -csplit
   operator is specified.
 - **CultureInvariant**: Ignores cultural differences in language when
   evaluating the delimiter. Valid only with RegexMatch.
@@ -343,7 +343,7 @@ cury,Venus,Earth,Mars,Jupit
 The following statement performs a case-sensitive split at the letter "N".
 
 ```powershell
-"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
+"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -csplit 'N'
 ```
 
 ```Output
@@ -441,7 +441,7 @@ $a = @'
 2The second line.
 3The third of three lines.
 '@
-$a -split "^\d", 0, "multiline"
+$a -split "^\d", 0, "Multiline"
 ```
 
 ```Output
@@ -480,7 +480,7 @@ can use options, such as SimpleMatch, only when the Max-substrings value is
 specified.
 
 ```powershell
-"This.is.a.test" -split ".", 0, "simplematch"
+"This.is.a.test" -split ".", 0, "SimpleMatch"
 ```
 
 ```Output

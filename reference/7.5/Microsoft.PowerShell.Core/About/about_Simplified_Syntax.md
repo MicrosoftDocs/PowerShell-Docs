@@ -60,7 +60,7 @@ omit them from the command. Using aliases, you can further simplify the
 commands:
 
 ```powershell
-dir Cert:\LocalMachine\Root | Where FriendlyName -EQ 'Verisign'
+dir Cert:\LocalMachine\Root | where FriendlyName -EQ 'Verisign'
 dir Cert:\ -Recurse | foreach GetKeyAlgorithm
 ```
 
