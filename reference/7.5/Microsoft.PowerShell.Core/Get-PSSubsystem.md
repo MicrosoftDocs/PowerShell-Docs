@@ -138,7 +138,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[about_experimental_features](About/about_Experimental_Features.md)
+[about_Experimental_Features](About/about_Experimental_Features.md)
 
 [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 

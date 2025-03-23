@@ -87,9 +87,9 @@ It uses the `Get-PSBreakpoint` cmdlet to get the breakpoints. Then, it uses a pi
 
 ### Example 5: Remove a breakpoint in a runspace
 
-In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
-run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
-**Runspace** parameter. The output of `Get-PSBreakPoint` is piped to `Remove-PSBreakpoint` to
+In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakpoint` is
+run. The runspace is stored in a variable and passed to the `Get-PSBreakpoint` command with the
+**Runspace** parameter. The output of `Get-PSBreakpoint` is piped to `Remove-PSBreakpoint` to
 remove the breakpoint in the runspace.
 
 ```powershell
@@ -100,7 +100,7 @@ Start-Job -ScriptBlock {
 
 $runspace = Get-Runspace -Id 1
 
-Get-PSBreakPoint -Runspace $runspace | Remove-Breakpoint -Runspace $runspace
+Get-PSBreakpoint -Runspace $runspace | Remove-Breakpoint -Runspace $runspace
 ```
 
 ## PARAMETERS

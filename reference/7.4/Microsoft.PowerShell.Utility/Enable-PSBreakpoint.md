@@ -118,8 +118,8 @@ This example is equivalent to running `Enable-PSBreakpoint -Id 3, 5`.
 ### Example 5: Enable a breakpoint in a runspace
 
 In this example, a job is started with a breakpoint is set to break then disabled. The runspace is
-stored in a variable and passed to the `Get-PSBreakPoint` command with the **Runspace** parameter.
-The output of `Get-PSBreakPoint` is piped to `Enable-PSBreakpoint` to enable the breakpoint in the
+stored in a variable and passed to the `Get-PSBreakpoint` command with the **Runspace** parameter.
+The output of `Get-PSBreakpoint` is piped to `Enable-PSBreakpoint` to enable the breakpoint in the
 runspace.
 
 ```powershell
@@ -131,7 +131,7 @@ Start-Job -ScriptBlock {
 
 $runspace = Get-Runspace -Id 1
 
-Get-PSBreakPoint -Runspace $runspace | Enable-Breakpoint -Runspace $runspace
+Get-PSBreakpoint -Runspace $runspace | Enable-Breakpoint -Runspace $runspace
 ```
 
 ## PARAMETERS

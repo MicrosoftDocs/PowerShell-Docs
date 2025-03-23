@@ -47,7 +47,7 @@ In this example, `Get-Error` displays the details of the most recent error that 
 current session.
 
 ```powershell
-Get-ChildItem -path /NoRealDirectory
+Get-ChildItem -Path /NoRealDirectory
 Get-Error
 ```
 
@@ -86,9 +86,9 @@ InvocationInfo        :
     ScriptLineNumber : 1
     OffsetInLine     : 1
     HistoryId        : 57
-    Line             : Get-ChildItem -path c:\NoRealDirectory
+    Line             : Get-ChildItem -Path C:\NoRealDirectory
     PositionMessage  : At line:1 char:1
-                       + Get-ChildItem -path c:\NoRealDirectory
+                       + Get-ChildItem -Path C:\NoRealDirectory
                        + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     InvocationName   : Get-ChildItem
     CommandOrigin    : Internal
