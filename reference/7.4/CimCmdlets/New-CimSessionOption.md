@@ -62,7 +62,7 @@ named `$so`. The contents of the variable are then passed to the `New-CimSession
 options defined in the variable.
 
 ```powershell
-$so = New-CimSessionOption -Protocol DCOM
+$so = New-CimSessionOption -Protocol Dcom
 New-CimSession -ComputerName Server01 -SessionOption $so
 ```
 
@@ -87,7 +87,7 @@ New-CimSessionOption @option
 ### Example 3: Create a CIM session options object with the culture specified
 
 ```powershell
-New-CimSessionOption -Culture Fr-Fr -Protocol Wsman
+New-CimSessionOption -Culture fr-FR -Protocol Wsman
 ```
 
 This example specifies the culture that is used for the CIM session. By default, the culture of the
@@ -101,7 +101,7 @@ client is used when performing operations. However, the default culture can be o
 Specifies the user interface culture to use for the CIM session. Specify the value for this
 parameter using one of the following formats:
 
-- A culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
+- A culture name in `<languagecode2>-<country/regioncode2>` format such as "en-US".
 - A variable that contains a **CultureInfo** object.
 - A command that gets a **CultureInfo** object, such as
   [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
@@ -268,7 +268,7 @@ Accept wildcard characters: False
 
 ### -Protocol
 
-Specifies the protocol to use. The acceptable values for this parameter are: **DCOM**, **Default**,
+Specifies the protocol to use. The acceptable values for this parameter are: **Dcom**, **Default**,
 or **Wsman**.
 
 ```yaml
@@ -427,7 +427,7 @@ Accept wildcard characters: False
 Specifies the user interface culture to use for the CIM session. Specify the value for this
 parameter using one of the following formats:
 
-- A culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
+- A culture name in `<languagecode2>-<country/regioncode2>` format such as "en-US".
 - A variable that contains a CultureInfo object.
 - A command that gets a CultureInfo object, such as `Get-Culture`.
 

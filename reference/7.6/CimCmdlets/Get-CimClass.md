@@ -43,7 +43,7 @@ instance, CIM classes do not contain the CIM session or computer name from which
 
 ### Example 1: Get all the class definitions
 
-This example gets all the class definitions under the namespace **root/cimv2**.
+This example gets all the class definitions under the namespace **root/CIMV2**.
 
 ```powershell
 Get-CimClass
@@ -51,10 +51,10 @@ Get-CimClass
 
 ### Example 2: Get the classes with a specific name
 
-This example gets the classes that contain the word **disk** in their names.
+This example gets the classes that contain the word **Disk** in their names.
 
 ```powershell
-Get-CimClass -ClassName *disk*
+Get-CimClass -ClassName *Disk*
 ```
 
 ### Example 3: Get the classes with a specific method name
@@ -87,26 +87,26 @@ Get-CimClass -ClassName Win32*Disk* -QualifierName Association
 ### Example 6: Get the class definitions from a specific namespace
 
 This example gets the class definitions that contain the word **Net** in their names from the
-specified namespace **root/standardCimv2**.
+specified namespace **root/StandardCimv2**.
 
 ```powershell
-Get-CimClass -Namespace root/standardCimv2 -ClassName *Net*
+Get-CimClass -Namespace root/StandardCimv2 -ClassName *Net*
 ```
 
 ### Example 7: Get the class definitions from a remote server
 
-This example gets the class definitions that contain the word **disk** in their names from the
+This example gets the class definitions that contain the word **Disk** in their names from the
 specified remote servers **Server01** and **Server02**.
 
 ```powershell
-Get-CimClass -ClassName *disk* -ComputerName Server01, Server02
+Get-CimClass -ClassName *Disk* -ComputerName Server01, Server02
 ```
 
 ### Example 8: Get the classes by using a CIM session
 
 ```powershell
 $s = New-CimSession -ComputerName Server01, Server02
-Get-CimClass -ClassName *disk* -CimSession $s
+Get-CimClass -ClassName *Disk* -CimSession $s
 ```
 
 This set of commands creates a session with multiple computers and stores it into a variable `$s`
@@ -215,7 +215,7 @@ Accept wildcard characters: True
 
 ### -Namespace
 
-Specifies the namespace for CIM operation. The default namespace is **root/cimv2**. You can use tab
+Specifies the namespace for CIM operation. The default namespace is **root/CIMV2**. You can use tab
 completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the
 local WMI server to provide the list of namespaces.
 
