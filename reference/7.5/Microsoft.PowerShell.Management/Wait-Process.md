@@ -73,7 +73,7 @@ command gets the Notepad process and stores it in the `$p` variable. The second 
 
 ```powershell
 $p = Get-Process notepad
-Wait-Process -Id $p.id
+Wait-Process -Id $p.Id
 Wait-Process -Name "notepad"
 Wait-Process -InputObject $p
 ```

@@ -61,7 +61,7 @@ the **Credential** parameter.
 ### Example 2
 
 ```powershell
-$c = Get-Credential -credential User01
+$c = Get-Credential -Credential User01
 $c.Username
 User01
 ```
@@ -75,7 +75,7 @@ object.
 ### Example 3
 
 ```powershell
-$Credential = $Host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
+$Credential = $Host.UI.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
 ```
 
 This command uses the **PromptForCredential** method to prompt the user for their user name and

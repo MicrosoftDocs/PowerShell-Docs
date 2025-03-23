@@ -398,8 +398,8 @@ When you use the **AsJob** parameter, this cmdlet returns a **RemotingJob** obje
 ## NOTES
 
 This cmdlet uses the
-[`Win32Shutdown`](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
-method of the [`Win32_OperatingSystem`](/windows/desktop/CIMWin32Prov/win32-operatingsystem) WMI
+[Win32Shutdown](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
+method of the [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) WMI
 class. This method requires the `SeShutdownPrivilege` privilege be enabled for the user account
 used to shutdown the machine.
 
