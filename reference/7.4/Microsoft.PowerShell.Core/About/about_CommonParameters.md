@@ -341,7 +341,7 @@ For example, the following command creates the `$out` variable and stores the
 process object in it:
 
 ```powershell
-Get-Process PowerShell -OutVariable out
+Get-Process powershell -OutVariable out
 ```
 
 The following command adds the process object to the `$out` variable:
@@ -410,13 +410,13 @@ Valid values are strings, the same as for any variable names.
 > a command after the blocking command.
 
 The following is an example of how **PipelineVariable** works. In this example,
-the **PipelineVariable** parameter is added to a `Foreach-Object` command to
+the **PipelineVariable** parameter is added to a `ForEach-Object` command to
 store the results of the command in variables. A range of numbers, 1 to 5, are
-piped into the first `Foreach-Object` command, the results of which are stored
+piped into the first `ForEach-Object` command, the results of which are stored
 in a variable named `$temp`.
 
-The results of the first `Foreach-Object` command are piped into a second
-`Foreach-Object` command, which displays the current values of `$temp` and
+The results of the first `ForEach-Object` command are piped into a second
+`ForEach-Object` command, which displays the current values of `$temp` and
 `$_`.
 
 ```powershell

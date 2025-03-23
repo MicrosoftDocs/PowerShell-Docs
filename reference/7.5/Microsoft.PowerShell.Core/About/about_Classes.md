@@ -204,8 +204,8 @@ class BookList {
     # Static method to initialize the list of books. Called in the other
     # static methods to avoid needing to explicit initialize the value.
     static [void] Initialize()             { [BookList]::Initialize($false) }
-    static [bool] Initialize([bool]$force) {
-        if ([BookList]::Books.Count -gt 0 -and -not $force) {
+    static [bool] Initialize([bool]$Force) {
+        if ([BookList]::Books.Count -gt 0 -and -not $Force) {
             return $false
         }
 
@@ -369,8 +369,8 @@ an error, such as `Global scope cannot be removed`.
 ```powershell
 # Class definition with Runspace affinity (default behavior)
 class UnsafeClass {
-    static [object] ShowRunspaceId($val) {
-        return [PSCustomObject]@{
+    static [Object] ShowRunspaceId($Val) {
+        return [pscustomobject]@{
             ThreadId   = [Threading.Thread]::CurrentThread.ManagedThreadId
             RunspaceId = [runspace]::DefaultRunspace.Id
         }
@@ -382,7 +382,7 @@ $unsafe = [UnsafeClass]::new()
 while ($true) {
     1..10 | ForEach-Object -Parallel {
         Start-Sleep -ms 100
-        ($using:unsafe)::ShowRunspaceId($_)
+        ($Using:unsafe)::ShowRunspaceId($_)
     }
 }
 ```
@@ -398,8 +398,8 @@ Runspace ids.
 # Class definition with NoRunspaceAffinity attribute
 [NoRunspaceAffinity()]
 class SafeClass {
-    static [object] ShowRunspaceId($val) {
-        return [PSCustomObject]@{
+    static [Object] ShowRunspaceId($Val) {
+        return [pscustomobject]@{
             ThreadId   = [Threading.Thread]::CurrentThread.ManagedThreadId
             RunspaceId = [runspace]::DefaultRunspace.Id
         }
@@ -411,7 +411,7 @@ $safe = [SafeClass]::new()
 while ($true) {
     1..10 | ForEach-Object -Parallel {
         Start-Sleep -ms 100
-        ($using:safe)::ShowRunspaceId($_)
+        ($Using:safe)::ShowRunspaceId($_)
     }
 }
 ```
@@ -608,7 +608,7 @@ module is removed, so are the type accelerators.
 
 ## Manually importing classes from a PowerShell module
 
-`Import-Module` and the `#requires` statement only import the module functions,
+`Import-Module` and the `#Requires` statement only import the module functions,
 aliases, and variables, as defined by the module. Classes aren't imported.
 
 If a module defines classes and enumerations but doesn't add type accelerators

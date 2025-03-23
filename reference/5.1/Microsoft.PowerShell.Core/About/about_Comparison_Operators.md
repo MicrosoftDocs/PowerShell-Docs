@@ -162,8 +162,8 @@ The following example demonstrates the issue.
 
 ```powershell
 class MyFileInfoSet {
-    [String]$File
-    [Int64]$Size
+    [string]$File
+    [int64]$Size
 }
 $a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
 $b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
@@ -184,8 +184,8 @@ the File and Size properties of two **MyFileInfoSet** objects are the same.
 
 ```powershell
 class MyFileInfoSet : System.IEquatable[Object] {
-    [String]$File
-    [Int64]$Size
+    [string]$File
+    [int64]$Size
 
     [bool] Equals([Object] $obj) {
         return ($this.File -eq $obj.File) -and ($this.Size -eq $obj.Size)
@@ -319,7 +319,7 @@ Examples:
 
 ```powershell
 # Date comparison
-[DateTime]'2001-11-12' -lt [DateTime]'2020-08-01' # True
+[datetime]'2001-11-12' -lt [datetime]'2020-08-01' # True
 
 # Sorting order comparison
 'a' -lt 'z'           # True; 'a' comes before 'z'
@@ -505,7 +505,7 @@ such as renaming files. For example, the following command changes the file
 name extensions of all `.txt` files to `.log`:
 
 ```powershell
-Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
+Get-ChildItem *.txt | Rename-Item -NewName { $_.Name -replace '\.txt$','.log' }
 ```
 
 By default, the `-replace` operator is case-insensitive. To make it case
@@ -733,7 +733,7 @@ $a -isnot $b.GetType() # Output: True
 - [about_Regular_Expressions][10]
 - [about_Wildcards][11]
 - [Compare-Object][14]
-- [Foreach-Object][12]
+- [ForEach-Object][12]
 - [Where-Object][13]
 
 <!-- link references -->
