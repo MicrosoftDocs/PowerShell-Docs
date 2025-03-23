@@ -205,9 +205,9 @@ Here are a few suggestions to get you started.
 ### Add a function that lists aliases for any cmdlet
 
 ```powershell
-function Get-CmdletAlias ($cmdletname) {
+function Get-CmdletAlias ($cmdletName) {
   Get-Alias |
-    Where-Object -FilterScript {$_.Definition -like "$cmdletname"} |
+    Where-Object -FilterScript {$_.Definition -like "$cmdletName"} |
       Format-Table -Property Definition, Name -AutoSize
 }
 ```
@@ -216,9 +216,9 @@ function Get-CmdletAlias ($cmdletname) {
 
 ```powershell
 function CustomizeConsole {
-  $hosttime = (Get-ChildItem -Path $PSHOME\PowerShell.exe).CreationTime
-  $hostversion="$($Host.Version.Major)`.$($Host.Version.Minor)"
-  $Host.UI.RawUI.WindowTitle = "PowerShell $hostversion ($hosttime)"
+  $hostTime = (Get-ChildItem -Path $PSHOME\powershell.exe).CreationTime
+  $hostVersion="$($Host.Version.Major)`.$($Host.Version.Minor)"
+  $Host.UI.RawUI.WindowTitle = "PowerShell $hostVersion ($hostTime)"
   Clear-Host
 }
 CustomizeConsole
@@ -227,8 +227,8 @@ CustomizeConsole
 ### Add a customized PowerShell prompt
 
 ```powershell
-function Prompt {
-    $env:COMPUTERNAME + "\" + (Get-Location) + "> "
+function prompt {
+    $Env:COMPUTERNAME + "\" + (Get-Location) + "> "
 }
 ```
 

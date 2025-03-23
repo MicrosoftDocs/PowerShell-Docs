@@ -265,7 +265,7 @@ PS> $collection = @(
 $collection.Length
 2
 
-# Get the length property of each item in the collection.
+# Get the Length property of each item in the collection.
 PS> $collection.GetEnumerator().Length
 foo
 bar

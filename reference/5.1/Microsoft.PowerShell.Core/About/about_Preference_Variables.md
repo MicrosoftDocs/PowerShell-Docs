@@ -62,8 +62,8 @@ PowerShell includes the following environment variables that store user
 preferences. For more information about these environment variables, see
 [about_Environment_Variables][30].
 
-- `$env:PSExecutionPolicyPreference`
-- `$env:PSModulePath`
+- `$Env:PSExecutionPolicyPreference`
+- `$Env:PSModulePath`
 
 > [!NOTE]
 > Changes to preference variables apply only in the scope they are made
@@ -549,7 +549,7 @@ ObjectNotFound: (C:\nofile.txt:String) [Get-ChildItem], ItemNotFoundException
 This example demonstrates that the value of `$ErrorView` only affects the error
 display. It doesn't change the structure of the error object that's stored in
 the `$Error` automatic variable. For information about the `$Error` automatic
-variable, see [about_automatic_variables][28].
+variable, see [about_Automatic_Variables][28].
 
 The following command takes the **ErrorRecord** object associated with the most
 recent error in the error array, **element 0**, and formats the properties of
@@ -739,14 +739,14 @@ To enable a **Log*Event**, type the variable with a value of `$true`, for
 example:
 
 ```powershell
-$LogCommandLifeCycleEvent = $true
+$LogCommandLifecycleEvent = $true
 ```
 
 To disable an event type, type the variable with a value of `$false`, for
 example:
 
 ```powershell
-$LogCommandLifeCycleEvent = $false
+$LogCommandLifecycleEvent = $false
 ```
 
 The events that you enable are effective only for the current PowerShell
@@ -766,7 +766,7 @@ value is **4096** and that should be enough for most uses. You can adjust
 To count the aliases on your system, type:
 
 ```powershell
-(Get-Alias).count
+(Get-Alias).Count
 ```
 
 ## $MaximumDriveCount
@@ -782,7 +782,7 @@ providers and appear as drives, such as the `Alias:` and `HKLM:` drives.
 To count the aliases on your system, type:
 
 ```powershell
-(Get-PSDrive).count
+(Get-PSDrive).Count
 ```
 
 ## $MaximumErrorCount
@@ -801,7 +801,7 @@ To count the errors on your system, use the `$Error` array's **Count**
 property.
 
 ```powershell
-$Error.count
+$Error.Count
 ```
 
 To display a specific error, use the `[0]` array notation to see the most
@@ -1016,7 +1016,7 @@ try {
     $buffer = [byte[]]::new(1024)
     $read = $inputStream.Read($buffer, 0, $buffer.Length)
     $actual = [byte[]]::new($read)
-    [Array]::Copy($buffer, $actual, $read)
+    [array]::Copy($buffer, $actual, $read)
     Format-Hex -InputObject $actual
 } finally {
     $inputStream.Dispose()
@@ -1093,16 +1093,16 @@ Specifies the default email server that's used to send email messages. This
 preference variable is used by cmdlets that send email, such as the
 [Send-MailMessage][49] cmdlet.
 
-## $PSModuleAutoloadingPreference
+## $PSModuleAutoLoadingPreference
 
 Enables and disables automatic importing of modules in the session. The
-`$PSModuleAutoloadingPreference` variable doesn't exist by default. The default
+`$PSModuleAutoLoadingPreference` variable doesn't exist by default. The default
 behavior when the variable isn't defined is the same as
-`$PSModuleAutoloadingPreference = 'All'`.
+`$PSModuleAutoLoadingPreference = 'All'`.
 
 To automatically import a module, get or use a command contained in the module.
 
-The `$PSModuleAutoloadingPreference` variable takes one of the
+The `$PSModuleAutoLoadingPreference` variable takes one of the
 [`PSModuleAutoLoadingPreference`][58] enumeration values:
 
 - `All`: Modules are imported automatically on first-use.
@@ -1700,7 +1700,7 @@ At line:1 char:1
 
 ## See also
 
-- [about_automatic_variables][28]
+- [about_Automatic_Variables][28]
 - [about_CommonParameters][29]
 - [about_Environment_Variables][30]
 - [about_Profiles][36]

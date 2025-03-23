@@ -196,7 +196,7 @@ cmdlets. Type the drive name followed by a colon (`:`). For example, to view
 the contents of the `Alias:` drive, type:
 
 ```powershell
-Get-Item alias:
+Get-Item Alias:
 ```
 
 You can view and manage the data in any drive from another drive by including
@@ -212,7 +212,7 @@ specify the drive path. For example, to change your location to the root
 directory of the `Cert:` drive, type:
 
 ```powershell
-Set-Location cert:
+Set-Location Cert:
 ```
 
 Then, to view the contents of the `Cert:` drive, type:
@@ -306,7 +306,7 @@ Cert:\> Set-Location ~
 
 ```Output
 Set-Location : Home location for this provider isn't set. To set the home
-location, call "(get-psprovider 'Certificate').Home = 'path'".
+location, call "(Get-PSProvider 'Certificate').Home = 'path'".
 At line:1 char:1
 + Set-Location ~
 + ~~~~~~~~~~~~~~
@@ -335,7 +335,7 @@ Get-Help <provider-name>
 For example:
 
 ```powershell
-Get-Help certificate
+Get-Help Certificate
 ```
 
 ## Learning about providers
@@ -354,7 +354,7 @@ Get-Help <ProviderName>
 For example:
 
 ```powershell
-Get-Help registry
+Get-Help Registry
 ```
 
 For a list of Help topics about the providers, type:

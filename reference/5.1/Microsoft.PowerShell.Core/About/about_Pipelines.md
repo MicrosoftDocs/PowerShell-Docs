@@ -50,7 +50,7 @@ Get-Process notepad | Stop-Process
 The first command uses the `Get-Process` cmdlet to get an object representing
 the Notepad process. It uses a pipeline operator (`|`) to send the process
 object to the `Stop-Process` cmdlet, which stops the Notepad process. Notice
-that the `Stop-Process` command doesn't have a **Name** or **ID** parameter to
+that the `Stop-Process` command doesn't have a **Name** or **Id** parameter to
 specify the process, because the specified process is submitted through the
 pipeline.
 
@@ -60,9 +60,9 @@ displays the name and length of each file in a table.
 
 ```powershell
 Get-ChildItem -Path *.txt |
-  Where-Object {$_.length -gt 10000} |
-    Sort-Object -Property length |
-      Format-Table -Property name, length
+  Where-Object {$_.Length -gt 10000} |
+    Sort-Object -Property Length |
+      Format-Table -Property Name, Length
 ```
 
 This pipeline consists of four commands in the specified order. The following
@@ -73,7 +73,7 @@ command in the pipeline.
 Get-ChildItem -Path *.txt
 | (FileInfo objects for *.txt)
 V
-Where-Object {$_.length -gt 10000}
+Where-Object {$_.Length -gt 10000}
 | (FileInfo objects for *.txt)
 | (      Length > 10000      )
 V
@@ -82,7 +82,7 @@ Sort-Object -Property Length
 | (      Length > 10000      )
 | (     Sorted by length     )
 V
-Format-Table -Property name, length
+Format-Table -Property Name, Length
 | (FileInfo objects for *.txt)
 | (      Length > 10000      )
 | (     Sorted by length     )
@@ -110,7 +110,7 @@ Get-Service wmi | Start-Service
 ```
 
 For another example, you can pipe the output of `Get-Item` or `Get-ChildItem`
-within the PowerShell registry provider to the `New-ItemProperty` cmdlet. This
+within the PowerShell Registry provider to the `New-ItemProperty` cmdlet. This
 example adds a new registry entry, **NoOfEmployees**, with a value of **8124**,
 to the **MyCompany** registry key.
 
@@ -126,11 +126,11 @@ how to sort all the processes on the computer by the number of open handles in
 each process.
 
 ```powershell
-Get-Process | Sort-Object -Property handles
+Get-Process | Sort-Object -Property Handles
 ```
 
 You can pipe objects to the formatting, export, and output cmdlets, such as
-`Format-List`, `Format-Table`, `Export-Clixml`, `Export-CSV`, and `Out-File`.
+`Format-List`, `Format-Table`, `Export-Clixml`, `Export-Csv`, and `Out-File`.
 
 This example shows how to use the `Format-List` cmdlet to display a list of
 properties for a process object.
@@ -391,7 +391,7 @@ use that to count the number of processes running on the computer.
 For example,
 
 ```powershell
-(Get-Process).count
+(Get-Process).Count
 ```
 
 It's important to remember that objects sent down the pipeline are delivered
@@ -564,7 +564,7 @@ enhances readability.
 - [about_Objects][05]
 - [about_Parameters][06]
 - [about_Command_Syntax][03]
-- [about_ForEach][04]
+- [about_Foreach][04]
 
 <!-- link references -->
 [02]: #investigating-pipeline-errors
