@@ -176,7 +176,7 @@ This command uses the `Get-EventLog` cmdlet to get events from the Windows Power
 It uses a pipeline operator (`|`) to send the events to the `ConvertTo-Html` cmdlet, which converts
 the events to HTML format.
 
-The `ConvertTo-Html` command uses the **Property** parameter to select only the **ID**, **Level**,
+The `ConvertTo-Html` command uses the **Property** parameter to select only the **Id**, **Level**,
 and **Task** properties of the event.
 
 ### Example 9: Create a web page to display specified services
@@ -209,10 +209,10 @@ cmdlet to open the `Services.htm` file in the default browser.
 ### Example 10: Set the Meta properties and Charset of the HTML
 
 ```powershell
-Get-Service | ConvertTo-HTML -Meta @{
+Get-Service | ConvertTo-Html -Meta @{
   refresh=10
   author="Author's Name"
-  keywords="PowerShell, HTML, ConvertTo-HTML"
+  keywords="PowerShell, HTML, ConvertTo-Html"
 } -Charset "UTF-8"
 ```
 
@@ -222,7 +222,7 @@ The charset for the page is set to UTF-8
 ### Example 11: Set the HTML to XHTML Transitional DTD
 
 ```powershell
-Get-Service | ConvertTo-HTML -Transitional
+Get-Service | ConvertTo-Html -Transitional
 ```
 
 This command sets the `DOCTYPE` of the returned HTML to **XHTML Transitional DTD**

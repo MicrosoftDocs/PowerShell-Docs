@@ -27,8 +27,8 @@ used as the input format. By default, the **key** must be separated from the **v
 sign (`=`) character.
 
 The `ConvertFrom-StringData` cmdlet is considered to be a safe cmdlet that can be used in the
-**DATA** section of a script or function. When used in a **DATA** section, the contents of the
-string must conform to the rules for a **DATA** section. For more information, see
+`data` section of a script or function. When used in a `data` section, the contents of the
+string must conform to the rules for a `data` section. For more information, see
 [about_Data_Sections](../Microsoft.PowerShell.Core/About/about_Data_Sections.md).
 
 `ConvertFrom-StringData` supports escape character sequences that are allowed by conventional
@@ -142,13 +142,13 @@ Top              Red
 To satisfy the condition that each key-value pair must be on a separate line, the string uses the
 PowerShell newline character (`` `n ``) to separate the pairs.
 
-### Example 5: Use in the `DATA` section of a script
+### Example 5: Use in the `data` section of a script
 
-This example shows a `ConvertFrom-StringData` command used in the `DATA` section of a script.
-The statements below the **DATA** section display the text to the user.
+This example shows a `ConvertFrom-StringData` command used in the `data` section of a script.
+The statements below the `data` section display the text to the user.
 
 ```powershell
-$TextMsgs = DATA {
+$TextMsgs = data {
 ConvertFrom-StringData @'
 Text001 = The $Notebook variable contains the name of the user's system notebook.
 Text002 = The $MyNotebook variable contains the name of the user's private notebook.
@@ -165,7 +165,7 @@ Text002          The $MyNotebook variable contains the name of the user's privat
 ```
 
 Because the text includes variable names, it must be enclosed in a single-quoted string so that the
-variables are interpreted literally and not expanded. Variables aren't permitted in the `DATA`
+variables are interpreted literally and not expanded. Variables aren't permitted in the `data`
 section.
 
 ### Example 6: Use the pipeline operator to pass a string
@@ -225,13 +225,13 @@ path to render correctly in the resulting `ConvertFrom-StringData` hash table. T
 ensures that the literal backslash characters render correctly in the hash table output.
 
 ```powershell
-ConvertFrom-StringData "Message=Look in c:\\Windows\\System32"
+ConvertFrom-StringData "Message=Look in C:\\Windows\\System32"
 ```
 
 ```Output
 Name                           Value
 ----                           -----
-Message                        Look in c:\Windows\System32
+Message                        Look in C:\Windows\System32
 ```
 
 ## PARAMETERS
