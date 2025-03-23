@@ -32,13 +32,13 @@ This cmdlet was introduced in PowerShell 7.5-preview.4.
 ### Example 1 - Convert a process object to CliXml and back
 
 This example shows the result of converting a process object to CliXml and back. First, the current
-process is stored in the variable `$process`. The **PSTypeNames** property of the process object
+process is stored in the variable `$process`. The **pstypenames** property of the process object
 shows that the object is of type **System.Diagnostics.Process**. The next command displays the count
 for each type of member in the process object.
 
 ```powershell
 $process = Get-Process -Id $PID
-$process.PSTypeNames
+$process.pstypenames
 ```
 
 ```Output
@@ -68,7 +68,7 @@ Event              4
 ```powershell
 $xml = $process | ConvertTo-CliXml
 $fromXML = ConvertFrom-CliXml $xml
-$fromXML.PSTypeNames
+$fromXML.pstypenames
 ```
 
 ```Output

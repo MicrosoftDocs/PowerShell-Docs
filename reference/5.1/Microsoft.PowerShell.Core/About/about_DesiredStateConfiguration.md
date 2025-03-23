@@ -92,7 +92,7 @@ have defined (two in the example above). For example, in this case:
 
 ```powershell
 MyWebConfig -MachineName "TestMachine" -WebsiteFilePath `
-  "\\filesrv\WebFiles" -OutputPath "C:\Windows\system32\temp"
+  "\\filesrv\WebFiles" -OutputPath "C:\Windows\system32\Temp"
 # OutputPath is optional
 ```
 
@@ -103,7 +103,7 @@ configuration, and enact those configurations. Note that you do not need to
 create a separate MOF file for class-based DSC resources.
 
 ```powershell
-Start-DscConfiguration -Verbose -Wait -Path "C:\Windows\system32\temp"
+Start-DscConfiguration -Verbose -Wait -Path "C:\Windows\system32\Temp"
 ```
 
 ## USING DSC TO MAINTAIN CONFIGURATION STATE

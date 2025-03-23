@@ -53,7 +53,7 @@ retained for at least 7 days.
 ### Example 3: Change the overflow action of all event logs
 
 ```powershell
-$Logs = Get-EventLog -List | ForEach {$_.log}
+$Logs = Get-EventLog -List | foreach {$_.Log}
 Limit-EventLog -OverflowAction OverwriteOlder -LogName $Logs
 Get-EventLog -List
 ```

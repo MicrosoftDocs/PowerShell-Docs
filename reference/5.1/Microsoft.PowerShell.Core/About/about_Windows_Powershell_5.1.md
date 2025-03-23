@@ -7,7 +7,7 @@ schema: 2.0.0
 title: about_Windows_Powershell_5.1
 ---
 
-# about_Windows_Powershell_5.1
+# about_Windows_PowerShell_5.1
 
 ## Short description
 
@@ -113,19 +113,19 @@ Starting with WMF 5.1, PowerShell provides control over the file that's used
 to cache data about a module, such as the commands it exports.
 
 By default, this cache is stored in the file
-`${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. The
+`${Env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache`. The
 cache is typically read at startup while searching for a command and is written
 on a background thread sometime after a module is imported.
 
 To change the default location of the cache, set the
-`$env:PSModuleAnalysisCachePath` environment variable before starting
+`$Env:PSModuleAnalysisCachePath` environment variable before starting
 PowerShell. Changes to this environment variable only affect child processes.
 The value should name a full path (including filename) that PowerShell has
 permission to create and write files. To disable the file cache, set this value
 to an invalid location, for example:
 
 ```powershell
-$env:PSModuleAnalysisCachePath = 'nul'
+$Env:PSModuleAnalysisCachePath = 'nul'
 ```
 
 This sets the path to an invalid device. If PowerShell can't write to the path,
@@ -142,7 +142,7 @@ to avoid an unnecessarily large cache. You can disable the checks using the
 following setting:
 
 ```powershell
-$env:PSDisableModuleAnalysisCacheCleanup = 1
+$Env:PSDisableModuleAnalysisCacheCleanup = 1
 ```
 
 Setting this environment variable takes effect immediately in the current

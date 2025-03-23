@@ -1,5 +1,5 @@
 ---
-description: Explains how to use the PowerShell_Ise.exe command-line tool.
+description: Explains how to use the `powershell_ise.exe` command-line tool.
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -11,23 +11,22 @@ title: about_PowerShell_Ise_exe
 
 ## Short description
 
-Explains how to use the PowerShell_Ise.exe command-line tool.
+Explains how to use the `powershell_ise.exe` command-line tool.
 
 ## Long description
 
-PowerShell_Ise.exe starts a Windows PowerShell Integrated
+Running `powershell_ise.exe` starts a Windows PowerShell Integrated
 Scripting Environment (ISE) session. You can run it in Cmd.exe
 and in Windows PowerShell.
 
-To run PowerShell_ISE.exe, type PowerShell_ISE.exe, PowerShell_ISE,
-or ISE.
+To run Windows PowerShell ISE, type `powershell_ise.exe`, `powershell_ise`,
+or `ISE`.
 
 ## Syntax
 
 ```
-PowerShell_Ise[.exe]
-PowerShell_ISE[.exe]
-ISE[.exe]
+powershell_ise[.exe]
+ISE
 [-File]<FilePath[]> [-NoProfile] [-MTA]
 -Help | ? | -? | /? Displays the syntax and describes the command-line switches.
 ```
@@ -43,7 +42,9 @@ commas to separate the file names within the string.
 
 For example:
 
-PowerShell_ISE -File "File1.ps1,File2.ps1,File3.xml".
+```powershell
+powershell_ise -File "File1.ps1,File2.ps1,File3.xml".
+```
 
 Spaces between the file names are permitted in Windows PowerShell,
 but might not be interpreted correctly by other programs, such as
@@ -52,7 +53,7 @@ Cmd.exe.
 You can use this parameter to open any text file, including Windows
 PowerShell script files and XML files.
 
-### -Mta
+### -MTA
 
 Starts Windows PowerShell ISE using a multi-threaded apartment. This
 parameter is introduced in Windows PowerShell 3.0. Single-threaded
@@ -69,7 +70,7 @@ For more information, see [about_Profiles](about_Profiles.md).
 
 ### -Help -?, /?
 
-Displays help for PowerShell_ISE.exe.
+Displays help for `powershell_ise.exe`.
 
 ## Examples
 
@@ -77,8 +78,8 @@ These commands start Windows PowerShell ISE. The commands are equivalent
 and can be used interchangeably.
 
 ```
-PS C:> PowerShell_ISE.exe
-PS C:> PowerShell_ISE
+PS C:> powershell_ise.exe
+PS C:> powershell_ise
 PS C:> ISE
 ```
 
@@ -86,7 +87,7 @@ These commands open the Get-Profile.ps1 script in Windows PowerShell ISE.
 The commands are equivalent and can be used interchangeably.
 
 ```
-PS C:> PowerShell_ISE.exe -File .\Get-Profile.ps1
+PS C:> powershell_ise.exe -File .\Get-Profile.ps1
 PS C:> ISE -File .\Get-Profile.ps1
 PS C:> ISE .\Get-Profile.ps1
 ```
@@ -106,10 +107,10 @@ This command starts Windows PowerShell ISE with no profiles.
 PS C:> ISE -NoProfile
 ```
 
-This command gets help for PowerShell_ISE.exe.
+This command gets help for `powershell_ise.exe`.
 
 ```
-PS C:> ISE -help
+PS C:> ISE -Help
 ```
 
 ## See also

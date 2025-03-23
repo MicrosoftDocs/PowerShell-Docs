@@ -102,7 +102,7 @@ entered in a specific order.
 ### Example 2: Start an instance of an application
 
 ```powershell
-([Wmiclass]'Win32_Process').Create.OverloadDefinitions
+([wmiclass]'Win32_Process').Create.OverloadDefinitions
 ```
 
 ```Output

@@ -38,7 +38,7 @@ imported automatically on first use and you can use the Import-Module cmdlet to 
 ### Example 1: Add snap-ins
 
 ```powershell
-PS C:\> Add-PSSnapIn -Name Microsoft.Exchange, Microsoft.Windows.AD
+PS C:\> Add-PSSnapin -Name Microsoft.Exchange, Microsoft.Windows.AD
 ```
 
 This command adds the Microsoft Exchange and Active Directory snap-ins to the current session.
@@ -88,12 +88,12 @@ find the value of the PSSnapin property of the Set-Alias cmdlet.
 ```powershell
 PS C:\> Get-PSSnapin
 PS C:\> Get-PSSnapin -Registered
-PS C:\> Set-Alias installutil $env:windir\Microsoft.NET\Framework\v2.0.50727\installutil.exe
+PS C:\> Set-Alias installutil $Env:windir\Microsoft.NET\Framework\v2.0.50727\installutil.exe
 PS C:\> installutil C:\Dev\Management\ManagementCmdlets.dll
 PS C:\> Get-PSSnapin -Registered
-PS C:\> add-pssnapin ManagementFeatures
+PS C:\> Add-PSSnapin ManagementFeatures
 PS C:\> Get-Command -Module ManagementFeatures
-PS C:\> (Get-Command Set-Alias).pssnapin
+PS C:\> (Get-Command Set-Alias).PSSnapin
 ```
 
 This example demonstrates the process of registering a snap-in on your system and then adding it to

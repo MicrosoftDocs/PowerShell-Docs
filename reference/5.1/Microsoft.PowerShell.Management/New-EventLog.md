@@ -205,7 +205,7 @@ new log, but the log is not created until the first entry is written to it.
 The operating system stores event logs as files.
 
 When you create a new event log, the associated file is stored in the
-`$env:SystemRoot\System32\Config` directory on the specified computer.
+`$Env:SystemRoot\System32\Config` directory on the specified computer.
 
 The file name is the first eight characters of the **Log** property with an `.evt` file name
 extension.
