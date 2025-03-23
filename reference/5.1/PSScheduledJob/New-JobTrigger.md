@@ -188,7 +188,7 @@ by the job trigger.
 This example creates a repeating job trigger to only run for a specific amount of time.
 
 ```powershell
-New-JobTrigger -Once -At "09/12/2013 1:00:00" -RepetitionInterval (New-TimeSpan -Hours 1) -RepetitionDuration (New-Timespan -Hours 48)
+New-JobTrigger -Once -At "09/12/2013 1:00:00" -RepetitionInterval (New-TimeSpan -Hours 1) -RepetitionDuration (New-TimeSpan -Hours 48)
 ```
 
 This command creates a job trigger that runs a job every 60 minutes for 48 hours beginning on
@@ -214,7 +214,7 @@ repetition duration of the job trigger to zero (`0`).
 This example creates a repeating job trigger that runs indefinitely.
 
 ```powershell
-New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSpan -Hour 12) -RepetitionDuration ([TimeSpan]::MaxValue)
+New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSpan -Hour 12) -RepetitionDuration ([timespan]::MaxValue)
 ```
 
 The following command creates a job trigger that runs a scheduled job once every 12 hours for an

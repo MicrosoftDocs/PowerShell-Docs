@@ -40,8 +40,8 @@ The `Remove-JobTrigger` cmdlet deletes job triggers from scheduled jobs.
 A job trigger defines a recurring schedule or conditions for starting a scheduled job. To manage job
 triggers, use the New-JobTrigger, Add-JobTrigger, Set-JobTrigger, and `Set-ScheduledJob` cmdlets.
 
-Use the **Name**, **ID**, or **InputObject** parameters of `Remove-JobTrigger` to identify the
-scheduled jobs from which the triggers are removed. Use the **TriggerID** parameter to identify the
+Use the **Name**, **Id**, or **InputObject** parameters of `Remove-JobTrigger` to identify the
+scheduled jobs from which the triggers are removed. Use the **TriggerId** parameter to identify the
 job triggers to delete. By default, `Remove-JobTrigger` deletes all job triggers of a scheduled job.
 
 `Remove-JobTrigger` is one of a collection of job scheduling cmdlets in the PSScheduledJob module
@@ -65,7 +65,7 @@ This command deletes all job triggers from scheduled job that have names that be
 ### Example 2: Delete selected job triggers
 
 ```powershell
-Remove-JobTrigger -Name "BackupArchive" -TriggerID 3
+Remove-JobTrigger -Name "BackupArchive" -TriggerId 3
 ```
 
 This command deletes only the third trigger (ID = 3) from the BackupArchive scheduled job.
@@ -75,7 +75,7 @@ This command deletes only the third trigger (ID = 3) from the BackupArchive sche
 ```powershell
 function Delete-AtStartup
 {
-    Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.Frequency -eq "AtStartup"} | ForEach-Object { Remove-JobTrigger -InputObject $_.JobDefinition -TriggerID $_.ID}
+    Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.Frequency -eq "AtStartup"} | ForEach-Object { Remove-JobTrigger -InputObject $_.JobDefinition -TriggerId $_.Id}
 }
 ```
 
@@ -94,19 +94,19 @@ trigger. The remainder of the command uses that valuable feature.
 A pipeline operator sends the AtStartup job triggers to the `ForEach-Object` cmdlet, which runs a
 `Remove-JobTrigger` command on each AtStartup trigger. The value of the **InputObject** parameter of
 `Remove-JobTrigger` is the scheduled job in the JobDefinition property of the job trigger. The value
-of the **TriggerID** parameter is the identifier in the ID property of the job trigger.
+of the **TriggerId** parameter is the identifier in the ID property of the job trigger.
 
 ### Example 4: Delete a job trigger from a remote scheduled job
 
 ```powershell
-Invoke-Command -ComputerName "Server01" { Remove-JobTrigger -ID 38 -TriggerID 1 }
+Invoke-Command -ComputerName "Server01" { Remove-JobTrigger -Id 38 -TriggerId 1 }
 ```
 
 This command deletes the first job trigger from the Inventory job on the Server01 computer.
 
 The command uses the `Invoke-Command` cmdlet to run the `Remove-JobTrigger` cmdlet on the Server01
-computer. The `Remove-JobTrigger` cmdlet uses the **ID** parameter to identify the Inventory
-scheduled job and the **TriggerID** parameter to specify the first trigger. The **ID** parameter is
+computer. The `Remove-JobTrigger` cmdlet uses the **Id** parameter to identify the Inventory
+scheduled job and the **TriggerId** parameter to specify the first trigger. The **Id** parameter is
 especially useful when multiple scheduled jobs have the same or similar names.
 
 ## PARAMETERS

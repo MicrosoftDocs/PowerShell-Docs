@@ -493,7 +493,7 @@ multiple connections, it returns an array of **Boolean** values.
 
 ## NOTES
 
-This cmdlet uses the **Win32_PingStatus** class. A `Get-WMIObject Win32_PingStatus` command is
+This cmdlet uses the **Win32_PingStatus** class. A `Get-WmiObject Win32_PingStatus` command is
 equivalent to a `Test-Connection` command.
 
 The **Source** parameter set was introduced in PowerShell 3.0.

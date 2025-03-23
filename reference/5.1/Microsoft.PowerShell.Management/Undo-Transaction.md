@@ -48,7 +48,7 @@ This command rolls back the current, active, transaction.
 ### Example 2: Start and roll back a transaction
 
 ```powershell
-Set-Location hkcu:\software
+Set-Location HKCU:\software
 Start-Transaction
 New-Item -Path "ContosoCompany" -UseTransaction
 Undo-Transaction
@@ -60,7 +60,7 @@ registry.
 ### Example 3: Roll back a transaction for all subscribers
 
 ```powershell
-Set-Location hkcu:\software
+Set-Location HKCU:\software
 Start-Transaction
 New-Item -Path "ContosoCompany" -UseTransaction
 Get-Transaction

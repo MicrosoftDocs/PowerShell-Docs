@@ -16,15 +16,15 @@ Describes the parameters that Windows PowerShell Workflow adds to activities.
 
 Windows PowerShell Workflow adds the activity common parameters to activities
 that are derived from the **PSActivity** base class. This category includes the
-**InlineScript** activity and Windows PowerShell cmdlets that are implemented as
+`inlinescript` activity and Windows PowerShell cmdlets that are implemented as
 activities, such as `Get-Process` and `Get-WinEvent`.
 
 The activity common parameters are not valid on the `Suspend-Workflow` and
 `Checkpoint-Workflow` activities and they are not added to cmdlets or
 expressions that Windows PowerShell Workflow automatically runs in an
-**InlineScript** script block or similar activity. The activity common
-parameters are available on the **InlineScript** activity, but not on commands
-in the **InlineScript** script block.
+`inlinescript` script block or similar activity. The activity common
+parameters are available on the `inlinescript` activity, but not on commands
+in the `inlinescript` script block.
 
 Several of the activity common parameters are also workflow common parameters
 or Windows PowerShell common parameters. Other activity common parameters are
@@ -72,7 +72,7 @@ For example, the following commands add a process object to the service object
 in the `$x` variable.
 
 ```powershell
-Workflow Test-Workflow
+workflow Test-Workflow
 {
     $x = Get-Service
     $x = Get-Process -AppendOutput $true
@@ -84,7 +84,7 @@ can also use the `+=` assignment operator to add output to the value of a
 variable, as shown in the following example.
 
 ```powershell
-Workflow Test-Workflow
+workflow Test-Workflow
 {
     $x = Get-Service
     $x += Get-Process
@@ -145,7 +145,7 @@ piping objects to the activity one at a time.
 #### MergeErrorToOutput \<Boolean\>
 
 A value of `$true` adds errors to the output stream. A value of `$false` has
-no effect. Use this parameter with the **Parallel** and `ForEach -Parallel`
+no effect. Use this parameter with the `parallel` and `foreach -Parallel`
 keywords to collect errors and output from multiple parallel commands
 in a single collection.
 
@@ -334,12 +334,12 @@ in a variable. Then, use the variable as the value of the **PSDebug** parameter
 of one or more activities, as shown in the following example.
 
 ```powershell
-Workflow Test-Workflow
+workflow Test-Workflow
 {
     $debugCollection = New-Object -Type `
     System.Management.Automation.PSDataCollection[System.Management.Automation.DebugRecord]
-    InlineScript {\Server01\Share01\Get-AssetData.ps1} -PSDebug $debugCollection -Debug $true
-    InlineScript {\Server01\Share01\Set-AssetData.ps1} -PSDebug $debugCollection -Debug $true
+    inlinescript {\Server01\Share01\Get-AssetData.ps1} -PSDebug $debugCollection -Debug $true
+    inlinescript {\Server01\Share01\Set-AssetData.ps1} -PSDebug $debugCollection -Debug $true
     if ($debugCollection -like "Missing") { ...}
 }
 ```
@@ -380,13 +380,13 @@ in a variable. Then, use the variable as the value of the **PSError** parameter
 of one or more activities, as shown in the following example.
 
 ```powershell
-Workflow Test-Workflow
+workflow Test-Workflow
 {
    $typeName = "System.Management.Automation.PSDataCollection"
    $typeName += '[System.Management.Automation.ErrorRecord]'
    $ec = New-Object $typeName
-   InlineScript {\Server01\Share01\Get-AssetData.ps1} -PSError $ec
-   InlineScript {\Server01\Share01\Set-AssetData.ps1} -PSError $ec
+   inlinescript {\Server01\Share01\Get-AssetData.ps1} -PSError $ec
+   inlinescript {\Server01\Share01\Set-AssetData.ps1} -PSError $ec
    if ($ec.Count -gt 2)
    {
       # Do Some Work.
@@ -445,7 +445,7 @@ also included in the command, the progress bar content appears in
 `<DisplayName>:<PSProgressMessage>` format.
 
 This parameter is particularly useful for identifying activities in a
-`ForEach -Parallel` script block. Without this message, activities in all
+`foreach -Parallel` script block. Without this message, activities in all
 parallel branches are identified by the same name.
 
 #### PSRemotingBehavior \<RemotingBehavior\>
@@ -600,7 +600,7 @@ parameters to run a `Get-EventLog` activity only on computers it a particular
 domain.
 
 ```powershell
-Workflow Test-Workflow
+workflow Test-Workflow
 {
     $UserDomain = Get-Content -Path '.\UserComputers.txt'
     $Log = (Get-EventLog -LogName "Windows PowerShell" `

@@ -158,8 +158,8 @@ Invoke-Command -ComputerName (Get-Content Servers.txt) -Credential $Cred -Script
   $params = @{
       Name = "Get-EnergyData"
       FilePath = "\\Srv01\Scripts\Get-EnergyData.ps1"
-      ScheduledJobOption = $using:O
-      Trigger = $using:T
+      ScheduledJobOption = $Using:O
+      Trigger = $Using:T
   }
   Register-ScheduledJob @params
 }
@@ -196,7 +196,7 @@ Register-ScheduledJob -Name "CollectEnergyData" -Trigger $T -MaxResultCount 99 -
     AsJob = $true
     ComputerName = (Get-Content Servers.txt)
     FilePath = '\\Srv01\Scripts\Get-EnergyData.ps1'
-    Credential = $using:Admin
+    Credential = $Using:Admin
     Authentication = 'CredSSP'
   }
   Invoke-Command @params

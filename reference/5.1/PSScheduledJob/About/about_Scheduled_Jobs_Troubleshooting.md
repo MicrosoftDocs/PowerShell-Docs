@@ -60,11 +60,11 @@ Id     Name         PSJobTypeName   State         HasMoreData     Location
 ```
 
 The `Get-Job` cmdlet sends **ProcessJob** objects down the pipeline. The
-`Format-Table` cmdlet displays the **Name**, **ID**, and **PSBeginTime**
+`Format-Table` cmdlet displays the **Name**, **Id**, and **PSBeginTime**
 properties of a scheduled job instance in a table.
 
 ```powershell
-Get-Job ProcessJob | Format-Table -Property Name, ID, PSBeginTime -Auto
+Get-Job ProcessJob | Format-Table -Property Name, Id, PSBeginTime -Auto
 ```
 
 ```Output
@@ -85,7 +85,7 @@ cmdlet. The following command gets the results of the newest instance of the
 ProcessJob (ID = 50).
 
 ```powershell
-Receive-Job -ID 50
+Receive-Job -Id 50
 ```
 
 ### Basic method for finding job results on disk
@@ -145,7 +145,7 @@ Get-ChildItem $Path
 ```
 
 ```Output
-Directory: C:\Users\User01\Appdata\Local\Microsoft\Windows\PowerShell
+Directory: C:\Users\User01\AppData\Local\Microsoft\Windows\PowerShell
                \ScheduledJobs\ProcessJob\Output
 ```
 
@@ -182,7 +182,7 @@ To get the job instance results again, start a new PowerShell session by typing
 command again.
 
 ```powershell
-Receive-Job -ID 50
+Receive-Job -Id 50
 ```
 
 ```Output
@@ -190,7 +190,7 @@ Receive-Job -ID 50
 ```
 
 ```powershell
-PowerShell.exe
+powershell.exe
 ```
 
 ```Output
@@ -200,7 +200,7 @@ Copyright (C) 2012 Microsoft Corporation. All rights reserved.
 
 ```powershell
 Import-Module PSScheduledJob
-Receive-Job -ID 50
+Receive-Job -Id 50
 ```
 
 ```Output
@@ -218,7 +218,7 @@ To get the result of a job instance more than one time in a session, use the
 
 ```powershell
 Import-Module PSScheduledJob
-Receive-Job -ID 50 -Keep
+Receive-Job -Id 50 -Keep
 ```
 
 ```Output
@@ -230,7 +230,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id  ProcessName
 ```
 
 ```powershell
-Receive-Job -ID 50 -Keep
+Receive-Job -Id 50 -Keep
 ```
 
 ```Output
@@ -466,7 +466,7 @@ the **ScheduledJob** directory.
 
 The directory's location:
 
-`$env:UserProfile\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>`
+`$Env:USERPROFILE\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs<ScheduledJobName>`
 
 For example:
 

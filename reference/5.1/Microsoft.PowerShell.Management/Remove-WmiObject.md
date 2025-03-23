@@ -77,7 +77,7 @@ The `Remove-WmiObject` cmdlet deletes an instance of an existing Windows Managem
 
 ```powershell
 notepad
-$np = Get-WmiObject -Query "select * from win32_process where name='notepad.exe'"
+$np = Get-WmiObject -Query "select * from Win32_Process where name='notepad.exe'"
 $np | Remove-WmiObject
 ```
 
@@ -96,14 +96,14 @@ instances of Notepad.exe.
 This command deletes the C:\Test folder.
 
 ```powershell
-$a = Get-WMIObject -Query "Select * From Win32_Directory Where Name ='C:\\Test'"
-$a | Remove-WMIObject
+$a = Get-WmiObject -Query "Select * From Win32_Directory Where Name ='C:\\Test'"
+$a | Remove-WmiObject
 ```
 
-The first command uses `Get-WMIObject` to query for the `C:\Test` folder, and then stores the object
+The first command uses `Get-WmiObject` to query for the `C:\Test` folder, and then stores the object
 in the `$a` variable.
 
-The second command pipes the `$a` variable to `Remove-WMIObject`, which deletes the folder.
+The second command pipes the `$a` variable to `Remove-WmiObject`, which deletes the folder.
 
 ## PARAMETERS
 

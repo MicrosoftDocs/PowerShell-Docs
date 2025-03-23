@@ -241,9 +241,9 @@ Accept wildcard characters: False
 
 ### -FilePath
 
-Specifies a script that the scheduled job runs. Enter the path to a .ps1 file on the local computer.
-To specify default values for the script parameters, use the **ArgumentList** parameter. Every
-scheduled job must have either a **ScriptBlock** or **FilePath** value.
+Specifies a script that the scheduled job runs. Enter the path to a `.ps1` file on the local
+computer. To specify default values for the script parameters, use the **ArgumentList** parameter.
+Every scheduled job must have either a **ScriptBlock** or **FilePath** value.
 
 ```yaml
 Type: System.String

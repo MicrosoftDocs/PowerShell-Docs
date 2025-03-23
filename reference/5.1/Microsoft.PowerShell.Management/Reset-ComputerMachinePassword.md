@@ -51,7 +51,7 @@ password in the domain.
 
 ```powershell
 $cred = Get-Credential
-Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword -Credential $using:cred}
+Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword -Credential $Using:cred}
 ```
 
 This command uses the Invoke-Command cmdlet to run a `Reset-ComputerMachinePassword` command on the

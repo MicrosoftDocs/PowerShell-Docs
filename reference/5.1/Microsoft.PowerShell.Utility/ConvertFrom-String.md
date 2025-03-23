@@ -156,7 +156,7 @@ Wild Shrimp, (111)  222-3333, 1
 '@
 
 $PersonalData = $testText | ConvertFrom-String -TemplateContent $template
-Write-output ("Pet items found: " + ($PersonalData.Count))
+Write-Output ("Pet items found: " + ($PersonalData.Count))
 $PersonalData
 ```
 
@@ -206,7 +206,7 @@ Wild Shrimp, (111)  222-3333, 1
 '@
 
 $PersonalData = $testText | ConvertFrom-String -TemplateContent $template
-Write-output ("Pet items found: " + ($PersonalData.Count))
+Write-Output ("Pet items found: " + ($PersonalData.Count))
 $PersonalData
 ```
 

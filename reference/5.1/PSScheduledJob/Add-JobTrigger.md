@@ -42,7 +42,7 @@ triggers to multiple scheduled jobs.
 A job trigger starts a scheduled job on a one-time or recurring schedule or when an event occurs.
 
 Use the **Trigger** parameter of `Add-JobTrigger` to identify the job triggers to add. Use the
-**Name**, **ID**, or **InputObject** parameters of `Add-JobTrigger` to identify the scheduled job to
+**Name**, **Id**, or **InputObject** parameters of `Add-JobTrigger` to identify the scheduled job to
 which the triggers are added.
 
 To create job triggers for the value of the **Trigger** parameter, use the `New-JobTrigger` cmdlet

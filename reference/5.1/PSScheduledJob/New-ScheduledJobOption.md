@@ -138,7 +138,7 @@ order for easy reading.
 
 ```powershell
 $options = New-ScheduledJobOption -WakeToRun
-$options.PSObject.Properties | Sort-Object -Property Name | Format-Table -Property Name, Value -Autosize
+$options.psobject.Properties | Sort-Object -Property Name | Format-Table -Property Name, Value -AutoSize
 ```
 
 ```Output
@@ -164,7 +164,7 @@ The first command uses the `New-ScheduledJobOption` cmdlet to create a **Schedul
 object. The command uses the **WakeToRun** parameter and saves the resulting object in the
 `$options` variable.
 
-To get the properties of $Options as objects, the second command uses the **PSObject** property of
+To get the properties of $Options as objects, the second command uses the **psobject** property of
 all Windows PowerShell objects and its Properties property. The command then pipes the property
 objects to the `Sort-Object` cmdlet, which sorts the properties in alphabetical order by name, and
 then to the `Format-Table` cmdlet, which displays the names and values of the properties in a table.

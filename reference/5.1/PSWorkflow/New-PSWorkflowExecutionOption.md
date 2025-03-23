@@ -132,7 +132,7 @@ OutputBufferingMode           : Block
 AutoRestart                   : false
 MaxShells                     : 25
 MaxMemoryPerShellMB           : 1024
-MaxIdleTimeoutms              : 43200000
+MaxIdleTimeoutMs              : 43200000
 outofprocessactivity          : InlineScript
 SDKVersion                    : 2
 Name                          : ITWorkflows
@@ -180,7 +180,7 @@ Accept wildcard characters: False
 
 Specifies the activities that are permitted to run in the session.
 
-Enter namespace-qualified activity names, such as `Microsoft.Powershell.HyperV.Activities.*`.
+Enter namespace-qualified activity names, such as `Microsoft.PowerShell.HyperV.Activities.*`.
 Wildcard characters are supported. The default value, **PSDefaultActivities**, includes the built-in
 Windows Workflow Foundation activities and the activities that represent the core Windows PowerShell
 cmdlets.
@@ -363,7 +363,7 @@ Specifies the location on disk where workflow state and data are stored. Storing
 and data allows workflows to be suspended and resumed, and to recover from interruptions and network
 failures.
 
-The default value is `$env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS`.
+The default value is `$Env:LOCALAPPDATA\Microsoft\Windows\PowerShell\WF\PS`.
 
 ```yaml
 Type: System.String
@@ -389,7 +389,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: $env:LocalAppData\Microsoft\Windows\PowerShell\WF\PS
+Default value: $Env:LOCALAPPDATA\Microsoft\Windows\PowerShell\WF\PS
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

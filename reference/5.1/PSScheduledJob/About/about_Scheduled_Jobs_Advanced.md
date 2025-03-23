@@ -117,7 +117,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 You can open and examine the **ScheduledJobDefinition.xml**, **Results.xml**
-and **Status.xml** files or use the `Select-XML` cmdlet to parse the files.
+and **Status.xml** files or use the `Select-Xml` cmdlet to parse the files.
 
 > [!WARNING]
 > Do not edit the XML files. If any XML file contains invalid XML, PowerShell
@@ -172,9 +172,9 @@ instance in a table. A calculated property named **Label** displays the elapsed
 time of each job instance.
 
 ```powershell
-Get-job -Name UpdateHelpJob |
-  Format-Table -Property ID, PSBeginTime, PSEndTime,
-@{Label="Elapsed Time";Expression={$.PsEndTime - $.PSBeginTime}}
+Get-Job -Name UpdateHelpJob |
+  Format-Table -Property Id, PSBeginTime, PSEndTime,
+@{Label="Elapsed Time";Expression={$.PSEndTime - $.PSBeginTime}}
 ```
 
 ```Output

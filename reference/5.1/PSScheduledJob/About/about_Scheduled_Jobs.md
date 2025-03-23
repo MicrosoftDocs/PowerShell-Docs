@@ -156,7 +156,7 @@ The `Receive-Job` cmdlet gets the results of the most recent instance of the
 **ProcessJob** scheduled job (ID = 51).
 
 ```powershell
-Receive-Job -ID 51
+Receive-Job -Id 51
 ```
 
 Even though the `Receive-Job` command did not include the **Keep** parameter,

@@ -194,8 +194,8 @@ To run a workflow, use the following procedure.
    `Get-Content` cmdlet gets the computer names from a text file and saves them in
    the `$Servers` variable on the local computer.
 
-   `Invoke-Command` uses the `$Using` scope modifier to define the `$Servers`
-   variable in the local session. For more information about the `$Using` scope
+   `Invoke-Command` uses the `Using:` scope modifier to define the `$Servers`
+   variable in the local session. For more information about the `Using:` scope
    modifier, see
    [about_Remote_Variables](../../Microsoft.PowerShell.Core/About/about_Remote_Variables.md).
 
