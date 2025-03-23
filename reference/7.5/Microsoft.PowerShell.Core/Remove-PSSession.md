@@ -69,7 +69,7 @@ stops any commands that are running in the **PSSessions**, ends the **PSSession*
 resources that the **PSSession** was using. If the **PSSession** is connected to a remote computer,
 this cmdlet also closes the connection between the local and remote computers.
 
-To remove a **PSSession**, enter the **Name**, **ComputerName**, **ID**, or **InstanceID** of the
+To remove a **PSSession**, enter the **Name**, **ComputerName**, **Id**, or **InstanceId** of the
 session.
 
 If you have saved the **PSSession** in a variable, the session object remains in the variable, but
@@ -110,17 +110,17 @@ with `Serv`.
 ### Example 4: Close sessions connected to a port
 
 ```powershell
-Get-PSSession | Where-Object {$_.port -eq 90} | Remove-PSSession
+Get-PSSession | Where-Object {$_.Port -eq 90} | Remove-PSSession
 ```
 
 This command closes the **PSSessions** that are connected to port 90. You can use this command
 format to identify **PSSessions** by properties other than **ComputerName**, **Name**,
-**InstanceID**, and **ID**.
+**InstanceId**, and **Id**.
 
 ### Example 5: Close a session by instance ID
 
 ```powershell
-Get-PSSession | Format-Table ComputerName, InstanceID  -AutoSize
+Get-PSSession | Format-Table ComputerName, InstanceId  -AutoSize
 ```
 
 ```Output
@@ -134,18 +134,18 @@ TX-TEST-01   fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 ```
 
 ```powershell
-Remove-PSSession -InstanceID fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
+Remove-PSSession -InstanceId fc4e9dfa-f246-452d-9fa3-1adbdd64ae85
 ```
 
 These commands show how to close a **PSSession** based on its instance ID, or **RemoteRunspaceID**.
 
 The first command uses the `Get-PSSession` cmdlet to get the **PSSessions** in the current session.
 It uses a pipeline operator (`|`) to send the **PSSessions** to the `Format-Table` cmdlet, which
-formats their **ComputerName** and **InstanceID** properties in a table. The **AutoSize** parameter
+formats their **ComputerName** and **InstanceId** properties in a table. The **AutoSize** parameter
 compresses the columns for display.
 
 From the resulting display, you can identify the **PSSession** to be closed, and copy and paste the
-**InstanceID** of that **PSSession** into the second command.
+**InstanceId** of that **PSSession** into the second command.
 
 The second command uses the `Remove-PSSession` cmdlet to remove the **PSSession** with the specified
 instance ID.
@@ -153,7 +153,7 @@ instance ID.
 ### Example 6: Create a function that deletes all sessions in the current session
 
 ```powershell
-Function EndPSS { Get-PSSession | Remove-PSSession }
+function EndPSS { Get-PSSession | Remove-PSSession }
 ```
 
 This function closes every **PSSession** in the current session. After you add this function to your
@@ -229,8 +229,8 @@ instance IDs.
 The instance ID is a GUID that uniquely identifies a **PSSession** in the current session. The
 instance ID is unique, even when you have multiple sessions running on a single computer.
 
-The instance ID is stored in the **InstanceID** property of the object that represents a
-**PSSession**. To find the **InstanceID** of the **PSSessions** in the current session, type
+The instance ID is stored in the **InstanceId** property of the object that represents a
+**PSSession**. To find the **InstanceId** of the **PSSessions** in the current session, type
 `Get-PSSession | Format-Table Name, ComputerName, InstanceId`.
 
 ```yaml

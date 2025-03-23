@@ -256,7 +256,7 @@ PS> $parms = @{
       ConfigurationName = "ITTasks"
     }
 PS> Invoke-Command @parms
-PS> Exit
+PS> exit
 
 
 PS> $s = Get-PSSession -ComputerName Server01, Server02, Server30 -Name BugStatus
@@ -318,7 +318,7 @@ This example shows what happens to a job that's running in a disconnected sessio
 
 ```
 PS> $s = New-PSSession -ComputerName Server01 -Name Test
-PS> $j = Invoke-Command -Session $s { 1..1500 | Foreach-Object {"Return $_"; sleep 30}} -AsJob
+PS> $j = Invoke-Command -Session $s { 1..1500 | ForEach-Object {"Return $_"; sleep 30}} -AsJob
 PS> $j
 
 Id     Name           State         HasMoreData     Location
@@ -501,7 +501,7 @@ computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of one computer.
 Wildcard characters aren't permitted. To specify the local computer, type the computer name, a dot
-(`.`), `$env:COMPUTERNAME`, or localhost.
+(`.`), `$Env:COMPUTERNAME`, or localhost.
 
 ```yaml
 Type: System.String
@@ -633,7 +633,7 @@ Accept wildcard characters: False
 
 Specifies the instance ID of the disconnected session. The instance ID is a GUID that uniquely
 identifies a **PSSession** on a local or remote computer. The instance ID is stored in the
-**InstanceID** property of the **PSSession**.
+**InstanceId** property of the **PSSession**.
 
 ```yaml
 Type: System.Guid

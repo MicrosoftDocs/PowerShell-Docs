@@ -95,14 +95,14 @@ parameter specifies the configuration class to use from the assembly.
 ```powershell
 $sessionConfiguration = @{
     Name='NewShell'
-    ApplicationBase='c:\MyShells\'
+    ApplicationBase='C:\MyShells\'
     AssemblyName='MyShell.dll'
     ConfigurationTypeName='MyClass'
 }
 Register-PSSessionConfiguration @sessionConfiguration
 ```
 
-To use this configuration, type `New-PSSession -ConfigurationName newshell`.
+To use this configuration, type `New-PSSession -ConfigurationName NewShell`.
 
 ### Example 2: Register a MaintenanceShell session configuration
 
@@ -507,8 +507,8 @@ instead of this parameter. You can't use both parameters in the same command.
 
 If you omit this parameter, the root SDDL for the **WinRM** service is used for this configuration.
 To view or change the root SDDL, use the WSMan provider. For example
-`Get-Item wsman:\localhost\service\rootSDDL`. For more information about the WSMan provider, type
-`Get-Help wsman`.
+`Get-Item WSMan:\localhost\service\rootSDDL`. For more information about the WSMan provider, type
+`Get-Help WSMan`.
 
 ```yaml
 Type: System.String
@@ -732,7 +732,7 @@ To run this cmdlet you must start PowerShell by using the **Run as administrator
 
 This cmdlet generates XML that represents a Web Services for Management (WS-Management) plug-in
 configuration and sends the XML to WS-Management, which registers the plug-in on the local computer
-(`New-Item wsman:\localhost\plugin`).
+(`New-Item WSMan:\localhost\plugin`).
 
 The properties of a session configuration object vary with the options set for the session
 configuration and the values of those options. Also, session configurations that use a session

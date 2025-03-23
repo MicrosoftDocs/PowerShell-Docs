@@ -86,7 +86,7 @@ This example shows how to get tab completion for parameter values. In this examp
 this technique to test that tab completion for your function returns the expected results.
 
 ```powershell
-function GetData {
+function Get-Data {
     param (
         [ValidateSet('One', 'Two', 'Three')]
         [string]$Stage
@@ -94,7 +94,7 @@ function GetData {
     Write-Verbose "Retrieving data for stage $Stage"
 }
 
-$result = TabExpansion2 -inputScript ($line = 'GetData -Stage ') -cursorColumn $line.Length |
+$result = TabExpansion2 -inputScript ($line = 'Get-Data -Stage ') -cursorColumn $line.Length |
     Select-Object -ExpandProperty CompletionMatches
 $result.Count -eq 3
 $result.CompletionText -contains 'Three'
