@@ -33,11 +33,11 @@ The **FileSystem** drives are a hierarchical namespace containing the
 directories and files on your computer. A **FileSystem** drive can be a logical
 or physical drive, directory, or mapped network share.
 
-Beginning in PowerShell Version 7.0, a drive called `TEMP:` is mapped to the
+Beginning in PowerShell Version 7.0, a drive called `Temp:` is mapped to the
 user's temporary directory path. PowerShell uses the .NET [GetTempPath()][05]
 method to determine the location of the temporary folder. On Windows, the
-location is the same as `$env:TEMP`. On non-Windows systems, the location is
-the same as `$env:TMPDIR` or `/tmp` if the environment variable isn't defined.
+location is the same as `$Env:TEMP`. On non-Windows systems, the location is
+the same as `$Env:TMPDIR` or `/tmp` if the environment variable isn't defined.
 
 The **FileSystem** provider supports the following cmdlets, which are covered
 in this article.
@@ -212,7 +212,7 @@ the dollar sign (`$`). The path must be enclosed in curly braces due to
 variable naming restrictions. For more information, see [about_Variables][09].
 
 ```powershell
-${C:\Windows\System32\Drivers\etc\hosts}
+${C:\Windows\System32\drivers\etc\hosts}
 ```
 
 ### Add content to a file
@@ -260,7 +260,7 @@ For more information about `Get-Content` cmdlet, see the help topic for the
 For more information about arrays, see [about_Arrays][07].
 
 ```powershell
-$e = Get-Content c:\test\employees.txt -Delimited "End Of Employee Record"
+$e = Get-Content C:\test\employees.txt -Delimited "End Of Employee Record"
 $e[0]
 ```
 
@@ -284,7 +284,7 @@ For more information about this object, pipe the command to the
 This command creates the `logfiles` directory on the `C` drive:
 
 ```powershell
-New-Item -Path c:\ -Name logfiles -Type directory
+New-Item -Path C:\ -Name logfiles -Type Directory
 ```
 
 PowerShell also includes a `mkdir` function (alias `md`) that uses the
@@ -296,7 +296,7 @@ This command creates the `log2.txt` file in the `C:\logfiles` directory and
 then adds the "test log" string to the file:
 
 ```powershell
-New-Item -Path c:\logfiles -Name log2.txt -Type file
+New-Item -Path C:\logfiles -Name log2.txt -Type File
 ```
 
 ### Create a file with content
@@ -305,7 +305,7 @@ Creates a file called `log2.txt` in the `C:\logfiles` directory and adds the
 string "test log" to the file.
 
 ```powershell
-New-Item -Path c:\logfiles -Name log2.txt -Type file -Value "test log"
+New-Item -Path C:\logfiles -Name log2.txt -Type File -Value "test log"
 ```
 
 ## Renaming files and directories
@@ -315,7 +315,7 @@ New-Item -Path c:\logfiles -Name log2.txt -Type file -Value "test log"
 This command renames the `a.txt` file in the `C:\a` directory to `b.txt`:
 
 ```powershell
-Rename-Item -Path c:\a\a.txt -NewName b.txt
+Rename-Item -Path C:\a\a.txt -NewName b.txt
 ```
 
 ### Rename a directory
@@ -323,7 +323,7 @@ Rename-Item -Path c:\a\a.txt -NewName b.txt
 This command renames the `C:\a\cc` directory to `C:\a\dd`:
 
 ```powershell
-Rename-Item -Path c:\a\cc -NewName dd
+Rename-Item -Path C:\a\cc -NewName dd
 ```
 
 ## Deleting files and directories
@@ -388,7 +388,7 @@ which gets hidden files, and `!Directory`, which gets all other files.
 Get-ChildItem -Attributes !Directory,!Directory+Hidden
 ```
 
-`dir -att !d,!d+h` is the equivalent of this command.
+`dir -Att !d,!d+h` is the equivalent of this command.
 
 ### Get Compressed and Encrypted files
 

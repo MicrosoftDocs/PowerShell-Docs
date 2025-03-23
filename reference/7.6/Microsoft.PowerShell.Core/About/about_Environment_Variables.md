@@ -29,12 +29,12 @@ For full descriptions of these variables, see the
 ## Long description
 
 PowerShell can access and manage environment variables in any of the supported
-operating system platforms. The PowerShell environment provider lets you get,
+operating system platforms. The PowerShell Environment provider lets you get,
 add, change, clear, and delete environment variables in the current console.
 
 > [!NOTE]
 > Unlike Windows, environment variable names on macOS and Linux are
-> case-sensitive. For example, `$env:Path` and `$env:PATH` are different
+> case-sensitive. For example, `$Env:Path` and `$Env:PATH` are different
 > environment variables on non-Windows platforms.
 
 Environment variables, unlike other types of variables in PowerShell, are
@@ -56,7 +56,7 @@ _User_ scopes.
 
 When you change environment variables in PowerShell, the change affects only
 the current session. This behavior resembles the behavior of the `set` command
-in the Windows Command Shell and the `setenv` command in UNIX-based
+in the Windows Command Shell and the `setenv` command in Unix-based
 environments. To change values in the Machine or User scopes, you must use the
 methods of the **System.Environment** class.
 
@@ -80,7 +80,7 @@ following syntax:
 $Env:<variable-name>
 ```
 
-For example, to display the value of the `WINDIR` environment variable:
+For example, to display the value of the `windir` environment variable:
 
 ```powershell
 $Env:windir
@@ -134,7 +134,7 @@ $Env:Foo | Get-Member -MemberType Properties
 ```Output
 Get-Member : You must specify an object for the Get-Member cmdlet.
 At line:1 char:12
-+ $env:foo | Get-Member
++ $Env:foo | Get-Member
 +            ~~~~~~~~~~
     + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
     + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
@@ -260,12 +260,12 @@ available in any session that loads your profile. This method works for any
 version of PowerShell on any supported platform.
 
 For example, to create the `CompanyUri` environment variable and update the
-`Path` environment variable to include the `C:\Tools` folder, add the following
+`PATH` environment variable to include the `C:\Tools` folder, add the following
 lines to your PowerShell profile:
 
 ```powershell
 $Env:CompanyUri = 'https://internal.contoso.com'
-$Env:Path += ';C:\Tools'
+$Env:PATH += ';C:\Tools'
 ```
 
 > [!NOTE]
@@ -396,13 +396,13 @@ The environment variables that store preferences include:
 
 - `PSModulePath`
 
-  The `$env:PSModulePath` environment variable contains a list of folder
+  The `$Env:PSModulePath` environment variable contains a list of folder
   locations that are searched to find modules and resources. On Windows, the
   list of folder locations is separated by the semi-colon (`;`) character. On
   non-Windows platforms, the colon (`:`) separates the folder locations in the
   environment variable.
 
-  By default, the effective locations assigned to `$env:PSModulePath` are:
+  By default, the effective locations assigned to `$Env:PSModulePath` are:
 
   - System-wide locations: These folders contain modules that ship with
     PowerShell. The modules are store in the `$PSHOME\Modules` location. Also,
@@ -415,14 +415,14 @@ The environment variables that store preferences include:
 
     - On Windows, the location of the user-specific **CurrentUser** scope is
       the `$HOME\Documents\PowerShell\Modules` folder. The location of the
-      **AllUsers** scope is `$env:ProgramFiles\PowerShell\Modules`.
+      **AllUsers** scope is `$Env:ProgramFiles\PowerShell\Modules`.
     - On non-Windows systems, the location of the user-specific **CurrentUser**
       scope is the `$HOME/.local/share/powershell/Modules` folder. The location
       of the **AllUsers** scope is `/usr/local/share/powershell/Modules`.
 
   In addition, setup programs that install modules in other directories, such
   as the Program Files directory, can append their locations to the value of
-  `$env:PSModulePath`.
+  `$Env:PSModulePath`.
 
   For more information, see [about_PSModulePath][08].
 
@@ -435,8 +435,8 @@ The environment variables that store preferences include:
 
   The default location of the cache is:
 
-  - Windows PowerShell 5.1: `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell`
-  - PowerShell 6.0 and higher: `$env:LOCALAPPDATA\Microsoft\PowerShell`
+  - Windows PowerShell 5.1: `$Env:LOCALAPPDATA\Microsoft\Windows\PowerShell`
+  - PowerShell 6.0 and higher: `$Env:LOCALAPPDATA\Microsoft\PowerShell`
   - Non-Windows default: `~/.cache/powershell`
 
   The default filename for the cache is `ModuleAnalysisCache`. When you have
@@ -462,7 +462,7 @@ The environment variables that store preferences include:
   ```powershell
   # `NUL` here is a special device on Windows that can't be written to,
   # on non-Windows you would use `/dev/null`
-  $env:PSModuleAnalysisCachePath = 'NUL'
+  $Env:PSModuleAnalysisCachePath = 'NUL'
   ```
 
   This sets the path to the **NUL** device. PowerShell can't write to the
@@ -494,7 +494,7 @@ The environment variables that store preferences include:
 
 - `PATH`
 
-  The `$env:PATH` environment variable contains a list of folder locations that
+  The `$Env:PATH` environment variable contains a list of folder locations that
   the operating system searches for executable files. On Windows, the list of
   folder locations is separated by the semi-colon (`;`) character. On
   non-Windows platforms, the colon (`:`) separates the folder locations in the
@@ -502,7 +502,7 @@ The environment variables that store preferences include:
 
 - `PATHEXT`
 
-  The `$env:PATHEXT` variable contains a list of file extensions that Windows
+  The `$Env:PATHEXT` variable contains a list of file extensions that Windows
   considers to be executable files. When a script file with one of the listed
   extensions is executed from PowerShell, the script runs in the current
   console or terminal session. If the file extension isn't listed, the script
@@ -518,7 +518,7 @@ The environment variables that store preferences include:
   documentation for the [ftype][02] command.
 
   PowerShell scripts always start in the current console session. You don't
-  need to add the `.PS1` extension.
+  need to add the `.ps1` extension.
 
 - `XDG` variables
 
@@ -538,7 +538,7 @@ or `NO_COLOR` environment variables.
 
 - `TERM`
 
-  The following values of `$env:TERM` change the behavior as follows:
+  The following values of `$Env:TERM` change the behavior as follows:
 
   - `dumb` - sets `$Host.UI.SupportsVirtualTerminal = $false`
   - `xterm-mono` - sets `$PSStyle.OutputRendering = PlainText`
@@ -546,7 +546,7 @@ or `NO_COLOR` environment variables.
 
 - `NO_COLOR`
 
-  If `$env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
+  If `$Env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
   `PlainText`. For more information about the `NO_COLOR` environment
   variable, see [https://no-color.org/][12].
 

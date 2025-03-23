@@ -135,7 +135,7 @@ execution policies are as follows:
 
   The **Process** scope only affects the current PowerShell session. The
   execution policy is saved in the environment variable
-  `$env:PSExecutionPolicyPreference`, rather than the configuration file. When
+  `$Env:PSExecutionPolicyPreference`, rather than the configuration file. When
   the PowerShell session is closed, the variable and value are deleted.
 
 - CurrentUser
@@ -279,7 +279,7 @@ pwsh.exe -ExecutionPolicy AllSigned
 ```
 
 The execution policy that you set isn't stored in the configuration file.
-Instead, it's stored in the `$env:PSExecutionPolicyPreference` environment
+Instead, it's stored in the `$Env:PSExecutionPolicyPreference` environment
 variable. The variable is deleted when you close the session in which the
 policy is set. You cannot change the policy by editing the variable value.
 
