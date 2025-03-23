@@ -81,7 +81,7 @@ This command creates a text file that is named "testfile1.txt" in the current di
 follows the **Value** parameter is added to the file as content.
 
 ```powershell
-New-Item -Path . -Name "testfile1.txt" -ItemType "file" -Value "This is a text string."
+New-Item -Path . -Name "testfile1.txt" -ItemType "File" -Value "This is a text string."
 ```
 
 ### Example 2: Create a directory
@@ -90,7 +90,7 @@ This command creates a directory named "Logfiles" in the `C:` drive. The **ItemT
 specifies that the new item is a directory, not a file or other file system object.
 
 ```powershell
-New-Item -Path "c:\" -Name "logfiles" -ItemType "directory"
+New-Item -Path "C:\" -Name "logfiles" -ItemType "Directory"
 ```
 
 ### Example 3: Create a profile
@@ -112,7 +112,7 @@ For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Co
 and [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 ```powershell
-New-Item -Path $PROFILE -ItemType "file" -Force
+New-Item -Path $PROFILE -ItemType "File" -Force
 ```
 
 > [!NOTE]
@@ -128,7 +128,7 @@ instead of being specified in the value of **Name**. As indicated by the syntax,
 is valid.
 
 ```powershell
-New-Item -ItemType "directory" -Path "c:\ps-test\scripts"
+New-Item -ItemType "Directory" -Path "C:\ps-test\scripts"
 ```
 
 ### Example 5: Create multiple files
@@ -137,7 +137,7 @@ This example creates files in two different directories. Because **Path** takes 
 you can use it to create multiple items.
 
 ```powershell
-New-Item -ItemType "file" -Path "c:\ps-test\test.txt", "c:\ps-test\Logs\test.log"
+New-Item -ItemType "File" -Path "C:\ps-test\test.txt", "C:\ps-test\Logs\test.log"
 ```
 
 ### Example 6: Use wildcards to create files in multiple directories
@@ -221,7 +221,7 @@ Mode                LastWriteTime         Length Name
 ### Example 9: Use the -Force parameter to overwrite existing files
 
 This example creates a file with a value and then recreates the file using `-Force`. This overwrites
-the existing file, as you can see by the length property.
+the existing file, as you can see by the **Length** property.
 
 ```powershell
 PS> New-Item ./TestFile.txt -ItemType File -Value 'This is just a test file'
@@ -676,7 +676,7 @@ Windows PowerShell includes the following aliases for `New-Item`:
 - `ni`
 
 `New-Item` is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PsProvider`. For more information, see
+available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS

@@ -33,14 +33,14 @@ Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PS
 
 > **This cmdlet is only available on the Windows platform.**
 
-The `Get-Hotfix` cmdlet uses the **Win32_QuickFixEngineering** WMI class to list hotfixes that are
+The `Get-HotFix` cmdlet uses the **Win32_QuickFixEngineering** WMI class to list hotfixes that are
 installed on the local computer or specified remote computers.
 
 ## EXAMPLES
 
 ### Example 1: Get all hotfixes on the local computer
 
-The `Get-Hotfix` cmdlet gets all hotfixes installed on the local computer.
+The `Get-HotFix` cmdlet gets all hotfixes installed on the local computer.
 
 ```powershell
 Get-HotFix
@@ -56,7 +56,7 @@ Server01       Update           KB4480056     NT AUTHORITY\SYSTEM  1/24/2019 00:
 
 ### Example 2: Get hotfixes from multiple computers filtered by a string
 
-The `Get-Hotfix` command uses parameters to get hotfixes installed on remote computers. The results
+The `Get-HotFix` command uses parameters to get hotfixes installed on remote computers. The results
 are filtered by a specified description string.
 
 ```powershell
@@ -68,7 +68,7 @@ $hotFixParams = @{
 Get-HotFix @hotFixParams
 ```
 
-`Get-Hotfix` filters the output with the **Description** parameter and the string **Security** that
+`Get-HotFix` filters the output with the **Description** parameter and the string **Security** that
 includes the asterisk (`*`) wildcard. The **ComputerName** parameter includes a comma-separated
 string of remote computer names. The **Credential** parameter specifies a user account that has
 permission to access the remote computers and run commands.
@@ -86,7 +86,7 @@ $A | ForEach-Object { if (!(Get-HotFix -Id KB957095 -ComputerName $_))
 
 The `$A` variable contains computer names that were obtained by `Get-Content` from a text file. The
 objects in `$A` are sent down the pipeline to `ForEach-Object`. An `if` statement uses the
-`Get-Hotfix` cmdlet with the **Id** parameter and a specific Id number for each computer name. If a
+`Get-HotFix` cmdlet with the **Id** parameter and a specific Id number for each computer name. If a
 computer doesn't have the specified hotfix Id installed, the `Add-Content` cmdlet writes the
 computer name to a file.
 
@@ -98,7 +98,7 @@ This example gets the most recent hotfix installed on a computer.
 (Get-HotFix | Sort-Object -Property InstalledOn)[-1]
 ```
 
-`Get-Hotfix` sends the objects down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` sorts
+`Get-HotFix` sends the objects down the pipeline to the `Sort-Object` cmdlet. `Sort-Object` sorts
 objects by ascending order and uses the **Property** parameter to evaluate each **InstalledOn**
 date. The array notation `[-1]` selects the most recent installed hotfix.
 
@@ -109,7 +109,7 @@ date. The array notation `[-1]` selects the most recent installed hotfix.
 Specifies a remote computer. Type the NetBIOS name, an Internet Protocol (IP) address, or a fully
 qualified domain name (FQDN) of a remote computer.
 
-When the **ComputerName** parameter isn't specified, `Get-Hotfix` runs on the local computer.
+When the **ComputerName** parameter isn't specified, `Get-HotFix` runs on the local computer.
 
 The **ComputerName** parameter doesn't rely on Windows PowerShell remoting. If your computer isn't
 configured to run remote commands, use the **ComputerName** parameter.
@@ -201,7 +201,7 @@ You can pipe a string containing a computer name to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.ManagementObject#root\CIMV2\Win32_QuickFixEngineering
+### System.Management.ManagementObject#root\cimv2\Win32_QuickFixEngineering
 
 This cmdlet returns objects representing the hotfixes on the computer.
 
