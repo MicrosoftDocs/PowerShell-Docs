@@ -318,7 +318,7 @@ digital signature. For more information, see [about_Signing][07].
 
 The following XML sample creates a `Format-Table` custom view for the
 **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects created by
-`Get-ChildItem`. The custom view is named **mygciview** and adds the
+`Get-ChildItem`. The custom view is named **MyGciView** and adds the
 **CreationTime** column to the table.
 
 To create the custom view, use the `Get-FormatData` and `Export-FormatData`
@@ -335,7 +335,7 @@ For this example, the custom view must use the table format, otherwise,
 `Format-Table` fails.
 
 Use `Format-Table` with the **View** parameter to specify the custom view's
-name, **mygciview**, and format the table's output with the **CreationTime**
+name, **MyGciView**, and format the table's output with the **CreationTime**
 column. For an example of how the command is run, see [Format-Table][08].
 
 > [!NOTE]
@@ -349,8 +349,8 @@ specific PowerShell version.
 
 ```powershell
 Get-FormatData -PowerShellVersion 5.1 -TypeName System.IO.DirectoryInfo |
-   Export-FormatData -Path ./Mygciview.Format.ps1xml
-Update-FormatData -AppendPath ./Mygciview.Format.ps1xml
+   Export-FormatData -Path ./MyGciView.Format.ps1xml
+Update-FormatData -AppendPath ./MyGciView.Format.ps1xml
 ```
 
 ```xml
@@ -358,7 +358,7 @@ Update-FormatData -AppendPath ./Mygciview.Format.ps1xml
 <Configuration>
   <ViewDefinitions>
     <View>
-      <Name>mygciview</Name>
+      <Name>MyGciView</Name>
       <ViewSelectedBy>
         <TypeName>System.IO.DirectoryInfo</TypeName>
         <TypeName>System.IO.FileInfo</TypeName>

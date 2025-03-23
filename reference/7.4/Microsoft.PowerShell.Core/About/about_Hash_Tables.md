@@ -128,10 +128,10 @@ If you place the ordered attribute before the variable name, the command fails
 with the following error message.
 
 ```powershell
-[ordered]$orderedhash = @{}
+[ordered]$orderedHash = @{}
 ParserError:
 Line |
-   1 |  [ordered]$orderedhash = @{}
+   1 |  [ordered]$orderedHash = @{}
      |  ~~~~~~~~~~~~~~
      | The ordered attribute can be specified only on a hash literal node.
 ```
@@ -139,19 +139,19 @@ Line |
 To correct the expression, move the [ordered] attribute.
 
 ```powershell
-$orderedhash = [ordered]@{}
+$orderedHash = [ordered]@{}
 ```
 
 You can cast an ordered dictionary to a hashtable, but you can't guarantee the
 order of the members.
 
 ```powershell
-[hashtable]$newhash = [ordered]@{
+[hashtable]$newHash = [ordered]@{
     Number = 1
     Shape = "Square"
     Color = "Blue"
 }
-$newhash
+$newHash
 ```
 
 ```Output
@@ -297,7 +297,7 @@ member notation or array index notation.
   two
   PS> ([array]$dictionary.Values)[1]
   two
-  PS> $dictionary[[object]1]
+  PS> $dictionary[[Object]1]
   one
   PS> $dictionary['three']
   3
@@ -305,7 +305,7 @@ member notation or array index notation.
 
   In this example, the array value `[1]` is an index into the collection of
   values using the `Item(int index)` parameterized property overload. The array
-  value `[[object]1]` isn't an index but a key value using the
+  value `[[Object]1]` isn't an index but a key value using the
   `Item(System.Object key)` overload.
 
   > [!NOTE]
@@ -455,7 +455,7 @@ object values and saves it in the `$p` variable.
 
 ```powershell
 $p = @{
-    "PowerShell" = (Get-Process PowerShell)
+    "PowerShell" = (Get-Process powershell)
     "Notepad" = (Get-Process notepad)
 }
 ```
@@ -565,7 +565,7 @@ For example, the following commands enumerate the keys and values in the
 hashtable in the `$p` variable and then sort the keys in alphabetical order.
 
 ```powershell
-PS> $p.GetEnumerator() | Sort-Object -Property key
+PS> $p.GetEnumerator() | Sort-Object -Property Key
 
 Name                           Value
 ----                           -----
