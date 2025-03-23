@@ -34,7 +34,7 @@ precedence.
 
 The Operator column lists the operators. The Reference column lists the
 PowerShell Help topic in which the operator is described. To display the topic,
-type `get-help <topic-name>`.
+type `Get-Help <topic-name>`.
 
 |          OPERATOR           |              REFERENCE               |
 | --------------------------- | ------------------------------------ |
@@ -66,7 +66,7 @@ and explicitly case-insensitive variants have the same precedence.
 | `-like -notlike`          | [about_Comparison_Operators][compare] |
 | `-match -notmatch`        | [about_Comparison_Operators][compare] |
 | `-in -notIn`              | [about_Comparison_Operators][compare] |
-| `-contains -notContains`  | [about_Comparison_Operators][compare] |
+| `-contains -notcontains`  | [about_Comparison_Operators][compare] |
 | `-replace`                | [about_Comparison_Operators][compare] |
 
 The list resumes here with the following operators in precedence
@@ -110,13 +110,13 @@ The following example gets the read-only text files from the local directory
 and saves them in the `$read_only` variable.
 
 ```powershell
-$read_only = Get-ChildItem *.txt | Where-Object {$_.isReadOnly}
+$read_only = Get-ChildItem *.txt | Where-Object {$_.IsReadOnly}
 ```
 
 It is equivalent to the following example.
 
 ```powershell
-$read_only = ( Get-ChildItem *.txt | Where-Object {$_.isReadOnly} )
+$read_only = ( Get-ChildItem *.txt | Where-Object {$_.IsReadOnly} )
 ```
 
 Because the pipeline operator (`|`) has a higher precedence than the assignment

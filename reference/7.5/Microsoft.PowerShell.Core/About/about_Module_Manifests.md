@@ -99,7 +99,7 @@ Allowed variables
 - `$PSScriptRoot`
 - `$PSEdition`
 - `$EnabledExperimentalFeatures`
-- Any environment variables, like `$ENV:TEMP`
+- Any environment variables, like `$Env:TEMP`
 
 For more information, see [about_Language_Modes][08].
 
@@ -1416,7 +1416,7 @@ For example, this manifest defines the **PublishedDate** key in
 Cmdlets in the module can access this value with the `$MyInvocation` variable.
 
 ```powershell
-Function Get-Stale {
+function Get-Stale {
     [CmdletBinding()]
     param()
 
@@ -1428,7 +1428,7 @@ Function Get-Stale {
     } catch {
         # The date was set in the manifest, set to an invalid value, or
         # the script module was directly imported without the manifest.
-        Throw "Unable to determine published date. Check the module manifest."
+        throw "Unable to determine published date. Check the module manifest."
     }
 
     if ($CurrentDate -gt $PublishedDate.AddDays(30)) {
@@ -1562,7 +1562,7 @@ imported as `Get-ExampleItem`.
 [06]: about_Experimental_Features.md#declaring-experimental-features-in-modules-written-in-powershell
 [07]: about_Format.ps1xml.md
 [08]: about_Language_Modes.md
-[09]: about_Powershell_Editions.md
+[09]: about_PowerShell_Editions.md
 [10]: about_Types.ps1xml.md
 [11]: about_Updatable_Help.md
 [13]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
