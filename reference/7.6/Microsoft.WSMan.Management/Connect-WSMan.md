@@ -53,7 +53,7 @@ For information about how to disconnect from the WinRM service on a remote compu
 
 ```powershell
 PS C:\> Connect-WSMan -ComputerName "server01"
-PS C:\> cd wsman:
+PS C:\> cd WSMan:
 PS WSMan:\>
 PS WSMan:\> dir
 ```
@@ -79,7 +79,7 @@ the **ComputerName** list.
 ```powershell
 PS C:\> $cred = Get-Credential Administrator
 PS C:\> Connect-WSMan -ComputerName "server01" -Credential $cred
-PS C:\> cd wsman:
+PS C:\> cd WSMan:
 PS WSMan:\>
 PS WSMan:\> dir
 ```
@@ -108,7 +108,7 @@ Administrator credentials.
 
 ```powershell
 PS C:\> Connect-WSMan -ComputerName "server01" -Port 80
-PS C:\> cd wsman:
+PS C:\> cd WSMan:
 PS WSMan:\>
 PS WSMan:\> dir
 ```
@@ -128,7 +128,7 @@ This command creates a connection to the remote server01 computer over port 80.
 ```powershell
 PS C:\> $a = New-WSManSessionOption -OperationTimeout 30000
 PS C:\> Connect-WSMan -ComputerName "server01" -SessionOption $a
-PS C:\> cd wsman:
+PS C:\> cd WSMan:
 PS WSMan:\> dir
 ```
 

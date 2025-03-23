@@ -45,7 +45,7 @@ This cmdlet uses the WSMan connection/transport layer to run the action.
 ### Example 1: Invoke a method
 
 ```powershell
-Invoke-WSManAction -Action startservice -ResourceURI wmicimv2/win32_service  -SelectorSet @{name="spooler"} -Authentication default
+Invoke-WSManAction -Action StartService -ResourceURI wmicimv2/Win32_Service -SelectorSet @{name="spooler"} -Authentication Default
 ```
 
 ```Output
@@ -56,8 +56,8 @@ lang        : en-US
 ReturnValue : 0
 ```
 
-This command calls the StartService method of the Win32_Service WMI class instance that corresponds
-to the Spooler service.
+This command calls the StartService method of the **Win32_Service** WMI class instance that
+corresponds to the Spooler service.
 
 The return value indicates whether the action was successful. In this case, a return value of 0
 indicates success. A return value of 5 indicates that the service is already started.
@@ -65,7 +65,7 @@ indicates success. A return value of 5 indicates that the service is already sta
 ### Example 2: Invoke a method
 
 ```powershell
-Invoke-WSManAction -Action stopservice -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication default
+Invoke-WSManAction -Action StopService -ResourceURI wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:input.xml -Authentication Default
 ```
 
 ```Output
@@ -86,7 +86,7 @@ indicates success. A return value of 5 indicates that the service is already sta
 ### Example 3: Invoke a method with specified parameter values
 
 ```powershell
-Invoke-WSManAction -Action create -ResourceURI wmicimv2/win32_process -ValueSet @{commandline="notepad.exe";currentdirectory="C:\"}
+Invoke-WSManAction -Action Create -ResourceURI wmicimv2/Win32_Process -ValueSet @{commandline="notepad.exe";currentdirectory="C:\"}
 ```
 
 ```Output
@@ -98,14 +98,14 @@ ProcessId   : 6356
 ReturnValue : 0
 ```
 
-This command calls the **Create** method of the Win32_Process class. It passes the method two
+This command calls the **Create** method of the **Win32_Process** class. It passes the method two
 parameter values, `Notepad.exe` and `C:\`. As a result, a new process is created to run Notepad, and
 the current directory of the new process is set to `C:\`.
 
 ### Example 4: Invoke a method on a remote computer
 
 ```powershell
-Invoke-WSManAction -Action startservice -ResourceURI wmicimv2/win32_service  -SelectorSet @{name="spooler"} -ComputerName server01 -Authentication default
+Invoke-WSManAction -Action StartService -ResourceURI wmicimv2/Win32_Service -SelectorSet @{name="spooler"} -ComputerName server01 -Authentication Default
 ```
 
 ```Output
@@ -116,9 +116,9 @@ lang        : en-US
 ReturnValue : 0
 ```
 
-This command calls the StartService method of the Win32_Service WMI class instance that corresponds
-to the Spooler service. Because the ComputerName parameter is specified, the command runs against
-the remote server01 computer.
+This command calls the StartService method of the **Win32_Service** WMI class instance that 
+corresponds to the Spooler service. Because the ComputerName parameter is specified, the command
+runs against the remote server01 computer.
 
 The return value indicates whether the action was successful. In this case, a return value of 0
 indicates success. A return value of 5 indicates that the service is already started.
@@ -299,7 +299,7 @@ Specifies the path of a file that is used to update a management resource. You s
 management resource by using the ResourceURI parameter and the SelectorSet parameter. For example,
 the following command uses the FilePath parameter:
 
-`Invoke-WSManAction -Action stopservice -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath c:\input.xml -Authentication default`
+`Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath C:\input.xml -Authentication Default`
 
 This command calls the **StopService** method on the Spooler service by using input from a file. The
 file, `Input.xml`, contains the following content:

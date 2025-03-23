@@ -48,7 +48,7 @@ This cmdlet uses the WS-Management connection/transport layer to retrieve inform
 ### Example 1: Get all information from WMI
 
 ```powershell
-Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="winrm"} -ComputerName "Server01"
+Get-WSManInstance -ResourceURI wmicimv2/Win32_Service -SelectorSet @{name="winrm"} -ComputerName "Server01"
 ```
 
 This command returns all of the information that Windows Management Instrumentation (WMI) exposes
@@ -57,7 +57,7 @@ about the **WinRM** service on the remote server01 computer.
 ### Example 2: Get the status of the Spooler service
 
 ```powershell
-Get-WSManInstance -ResourceURI wmicimv2/win32_service -SelectorSet @{name="spooler"} -Fragment Status -ComputerName "Server01"
+Get-WSManInstance -ResourceURI wmicimv2/Win32_Service -SelectorSet @{name="spooler"} -Fragment Status -ComputerName "Server01"
 ```
 
 This command returns only the status of the **Spooler** service on the remote server01 computer.
@@ -65,7 +65,7 @@ This command returns only the status of the **Spooler** service on the remote se
 ### Example 3: Get endpoint references for all services
 
 ```powershell
-Get-WSManInstance -Enumerate -ResourceURI wmicimv2/win32_service -ReturnType EPR
+Get-WSManInstance -Enumerate -ResourceURI wmicimv2/Win32_Service -ReturnType EPR
 ```
 
 This command returns endpoint references that correspond to all the services on the local computer.
@@ -73,7 +73,7 @@ This command returns endpoint references that correspond to all the services on 
 ### Example 4: Get services that meet specified criteria
 
 ```powershell
-Get-WSManInstance -Enumerate -ResourceURI wmicimv2/* -Filter "select * from win32_service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName "Server01"
+Get-WSManInstance -Enumerate -ResourceURI wmicimv2/* -Filter "select * from Win32_Service where StartMode = 'Auto' and State = 'Stopped'" -ComputerName "Server01"
 ```
 
 This command lists all of the services that meet the following criteria on the remote Server01
@@ -103,7 +103,7 @@ listener that matches the criteria in the selector set.
 ### Example 7: Get associated instances related to a specified instance
 
 ```powershell
-Get-WSManInstance -Enumerate -Dialect Association -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
+Get-WSManInstance -Enumerate -Dialect Association -Filter "{Object=Win32_Service?name=winrm}" -ResourceURI wmicimv2/*
 ```
 
 This command gets the associated instances that are related to the specified instance (winrm).
@@ -113,7 +113,7 @@ You must enclose the filter in quotation marks, as shown in the example.
 ### Example 8: Get association instances related to a specified instance
 
 ```powershell
-Get-WSManInstance -Enumerate -Dialect Association -Associations -Filter "{Object=win32_service?name=winrm}" -ResourceURI wmicimv2/*
+Get-WSManInstance -Enumerate -Dialect Association -Associations -Filter "{Object=Win32_Service?name=winrm}" -ResourceURI wmicimv2/*
 ```
 
 This command gets association instances that are related to the specified instance (winrm). Because
