@@ -33,14 +33,14 @@ The description of a parameter. You can include a `.PARAMETER` keyword for each 
 function or script.
 
 The `.PARAMETER` keywords can appear in any order in the comment block, but the order in which the
-parameters appear in the `Param` statement or function declaration determines the order in which the
+parameters appear in the `param` statement or function declaration determines the order in which the
 parameters appear in Help topic. To change the order of parameters in the Help topic, change the
-order of the parameters in the `Param` statement or function declaration.
+order of the parameters in the `param` statement or function declaration.
 
-You can also specify a parameter description by placing a comment in the `Param` statement
-immediately before the parameter variable name. If you use both a `Param` statement comment and a
+You can also specify a parameter description by placing a comment in the `param` statement
+immediately before the parameter variable name. If you use both a `param` statement comment and a
 `.PARAMETER` keyword, the description associated with the `.PARAMETER` keyword is used, and the
-`Param` statement comment is ignored.
+`param` statement comment is ignored.
 
 ## `.EXAMPLE`
 

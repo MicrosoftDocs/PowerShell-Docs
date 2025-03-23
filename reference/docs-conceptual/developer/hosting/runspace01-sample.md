@@ -6,7 +6,7 @@ title: Runspace01 Sample
 ---
 # Runspace01 Sample
 
-This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously. The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer. The values of the [System.Diagnostics.Process.Processname*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.
+This sample shows how to use the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously. The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer. The values of the [System.Diagnostics.Process.ProcessName*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.HandleCount*](/dotnet/api/System.Diagnostics.Process.HandleCount) properties are then extracted from the returned objects and displayed in a console window.
 
 ## Requirements
 
@@ -14,9 +14,9 @@ This sample shows how to use the [System.Management.Automation.Powershell](/dotn
 
 ## Demonstrates
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run a command.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object to run a command.
 
-- Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Adding a command to the pipeline of the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 - Running the command synchronously.
 
@@ -40,7 +40,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
   {
     /// <summary>
     /// This sample uses the PowerShell class to execute
-    /// the get-process cmdlet synchronously. The name and
+    /// the Get-Process cmdlet synchronously. The name and
     /// handlecount are then extracted from the PSObjects
     /// returned and displayed.
     /// </summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     {
       // Create a PowerShell object. Creating this object takes care of
       // building all of the other data structures needed to run the command.
-      using (PowerShell powershell = PowerShell.Create().AddCommand("get-process"))
+      using (PowerShell powershell = PowerShell.Create().AddCommand("Get-Process"))
       {
         Console.WriteLine("Process              HandleCount");
         Console.WriteLine("--------------------------------");

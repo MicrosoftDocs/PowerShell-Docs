@@ -63,7 +63,7 @@ Updatable Help includes the following features.
   parameter of the `Get-Help` cmdlet now gets the URL of an online help topic from the value of the
   **HelpUri** property of any command, if it can't find the online help URL in a help file. You can
   populate the **HelpUri** property by adding a **HelpUri** attribute to the code of cmdlets,
-  functions, and CIM commands, or using the **.Link** comment-based help directive in workflows and
+  functions, and CIM commands, or using the `.LINK` comment-based help keyword in workflows and
   scripts.
 
   To make our help files updatable, the Windows PowerShell modules in Windows don't come with help
