@@ -22,9 +22,9 @@ This sample demonstrates the following:
   at the same time.
 - Creating a list of commands.
 - Running the commands asynchronously.
-- Calling the [System.Management.Automation.Runspaces.Runspacepool.Getavailablerunspaces*](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool.GetAvailableRunspaces)
+- Calling the [System.Management.Automation.Runspaces.RunspacePool.GetAvailableRunspaces*](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool.GetAvailableRunspaces)
   method to see how many runspaces are free.
-- Capturing the command output with the [System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)
+- Capturing the command output with the [System.Management.Automation.PowerShell.EndInvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)
   method.
 
 ## Example

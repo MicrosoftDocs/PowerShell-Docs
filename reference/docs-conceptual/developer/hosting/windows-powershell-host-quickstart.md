@@ -61,11 +61,11 @@ The previous example executes a single command without any parameters. You can a
 command by using the
 [System.Management.Automation.PSCommand.AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)
 method. For example, the following code gets a list of all of the processes that are named
-`PowerShell` running on the machine.
+`powershell` running on the machine.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
-                   .AddParameter("Name", "PowerShell")
+                   .AddParameter("Name", "powershell")
                    .Invoke();
 ```
 
@@ -73,7 +73,7 @@ You can add additional parameters by calling the AddParameter method repeatedly.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-ChildItem")
-                   .AddParameter("Path", @"c:\Windows")
+                   .AddParameter("Path", @"C:\Windows")
                    .AddParameter("Filter", "*.exe")
                    .Invoke();
 ```
@@ -84,7 +84,7 @@ method.
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
-parameters.Add("Path", @"c:\Windows");
+parameters.Add("Path", @"C:\Windows");
 parameters.Add("Filter", "*.exe");
 
 PowerShell.Create().AddCommand("Get-Process")
@@ -98,11 +98,11 @@ PowerShell.Create().AddCommand("Get-Process")
 You can simulate batching by using the
 [System.Management.Automation.PowerShell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)
 method, which adds an additional statement to the end of the pipeline. The following code gets a
-list of running processes with the name `PowerShell`, and then gets the list of running services.
+list of running processes with the name `powershell`, and then gets the list of running services.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddCommand("Get-Process").AddParameter("Name", "PowerShell");
+ps.AddCommand("Get-Process").AddParameter("Name", "powershell");
 ps.AddStatement().AddCommand("Get-Service");
 ps.Invoke();
 ```

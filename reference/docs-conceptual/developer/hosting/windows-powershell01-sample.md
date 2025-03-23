@@ -6,7 +6,7 @@ title: Windows PowerShell01 Sample
 ---
 # Windows PowerShell01 Sample
 
-This sample shows how to use a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace. The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more. This sample concentrates on how to restrict the runspace programmatically. Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.
+This sample shows how to use a [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace. The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more. This sample concentrates on how to restrict the runspace programmatically. Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.
 
 ## Requirements
 
@@ -16,17 +16,17 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following:
 
-- Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.
+- Restricting the language by setting the [System.Management.Automation.Runspaces.InitialSessionState.LanguageMode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.
 
-- Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.
+- Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.SessionStateAliasEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.
 
 - Marking commands as private.
 
-- Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.
+- Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.InitialSessionState.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.
 
-- Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.
+- Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.InitialSessionState.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.
 
-- Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Adding commands and providers to the [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
 ## Example
 
@@ -153,32 +153,32 @@ namespace Sample
 
       this.runspace = RunspaceFactory.CreateRunspace(InitialSessionState.CreateDefault());
       this.runspace.Open();
-      string scriptComment = "get-childitem with a default InitialSessionState will work since the standard \n" +
+      string scriptComment = "Get-ChildItem with a default InitialSessionState will work since the standard \n" +
            "PowerShell cmdlets are included in the default InitialSessionState";
-      this.RunScript("get-childitem", scriptComment);
+      this.RunScript("Get-ChildItem", scriptComment);
       this.runspace.Close();
 
       InitialSessionState defaultSessionState = InitialSessionState.CreateDefault();
-      defaultSessionState.Commands.Add(new SessionStateAliasEntry("dir2", "get-childitem"));
+      defaultSessionState.Commands.Add(new SessionStateAliasEntry("dir2", "Get-ChildItem"));
       this.runspace = RunspaceFactory.CreateRunspace(defaultSessionState);
       this.runspace.Open();
       this.RunScript("dir2", "An alias, like dir2, can be added to InitialSessionState");
       this.runspace.Close();
 
       defaultSessionState = InitialSessionState.CreateDefault();
-      int commandIndex = GetIndexOfEntry(defaultSessionState.Commands, "get-childitem");
+      int commandIndex = GetIndexOfEntry(defaultSessionState.Commands, "Get-ChildItem");
       defaultSessionState.Commands.RemoveItem(commandIndex);
       this.runspace = RunspaceFactory.CreateRunspace(defaultSessionState);
       this.runspace.Open();
-      scriptComment = "get-childitem was removed from the list of commands so it\nwill no longer be found";
-      this.RunScript("get-childitem", scriptComment);
+      scriptComment = "Get-ChildItem was removed from the list of commands so it\nwill no longer be found";
+      this.RunScript("Get-ChildItem", scriptComment);
       this.runspace.Close();
 
       defaultSessionState = InitialSessionState.CreateDefault();
       defaultSessionState.Providers.Clear();
       this.runspace = RunspaceFactory.CreateRunspace(defaultSessionState);
       this.runspace.Open();
-      this.RunScript("get-childitem", "There are no providers so get-childitem will not work");
+      this.RunScript("Get-ChildItem", "There are no providers so Get-ChildItem will not work");
       this.runspace.Close();
 
       // Marks a command as private, and then defines a proxy command
@@ -187,21 +187,21 @@ namespace Sample
       // For a more complete sample of a proxy command, see the Runspace11
       // sample.
       defaultSessionState = InitialSessionState.CreateDefault();
-      commandIndex = GetIndexOfEntry(defaultSessionState.Commands, "get-childitem");
+      commandIndex = GetIndexOfEntry(defaultSessionState.Commands, "Get-ChildItem");
       defaultSessionState.Commands[commandIndex].Visibility = SessionStateEntryVisibility.Private;
       CommandMetadata getChildItemMetadata = new CommandMetadata(
            typeof(Microsoft.PowerShell.Commands.GetChildItemCommand));
       getChildItemMetadata.Parameters.Remove("Recurse");
       string getChildItemBody = ProxyCommand.Create(getChildItemMetadata);
-      defaultSessionState.Commands.Add(new SessionStateFunctionEntry("get-childitem2", getChildItemBody));
+      defaultSessionState.Commands.Add(new SessionStateFunctionEntry("Get-ChildItem2", getChildItemBody));
       this.runspace = RunspaceFactory.CreateRunspace(defaultSessionState);
       this.runspace.Open();
-      this.RunScript("get-childitem", "get-childitem is private so it will not be available");
-      scriptComment = "get-childitem2 is a proxy to get-childitem. \n" +
-                    "It works even when get-childitem is private.";
-      this.RunScript("get-childitem2", scriptComment);
-      scriptComment = "This will fail. Unlike get-childitem, get-childitem2 does not have -Recurse";
-      this.RunScript("get-childitem2 -Recurse", scriptComment);
+      this.RunScript("Get-ChildItem", "Get-ChildItem is private so it will not be available");
+      scriptComment = "Get-ChildItem2 is a proxy to Get-ChildItem. \n" +
+                    "It works even when Get-ChildItem is private.";
+      this.RunScript("Get-ChildItem2", scriptComment);
+      scriptComment = "This will fail. Unlike Get-ChildItem, Get-ChildItem2 does not have -Recurse";
+      this.RunScript("Get-ChildItem2 -Recurse", scriptComment);
 
       InitialSessionState cleanSessionState = InitialSessionState.Create();
       this.runspace = RunspaceFactory.CreateRunspace(cleanSessionState);
@@ -215,9 +215,9 @@ namespace Sample
       cleanSessionState.LanguageMode = PSLanguageMode.FullLanguage;
       this.runspace = RunspaceFactory.CreateRunspace(cleanSessionState);
       this.runspace.Open();
-      scriptComment = "get-childitem, standard cmdlets and providers are not present \n" +
+      scriptComment = "Get-ChildItem, standard cmdlets and providers are not present \n" +
                    "in an InitialSessionState returned from InitialSessionState.Create()";
-      this.RunScript("get-childitem", scriptComment);
+      this.RunScript("Get-ChildItem", scriptComment);
       this.runspace.Close();
 
       cleanSessionState = InitialSessionState.Create();
@@ -234,9 +234,9 @@ namespace Sample
       cleanSessionState.LanguageMode = PSLanguageMode.FullLanguage;
       this.runspace = RunspaceFactory.CreateRunspace(cleanSessionState);
       this.runspace.Open();
-      scriptComment = "get-childitem and the FileSystem provider were explicitly added\n" +
-                "so get-childitem will work";
-      this.RunScript("get-childitem", scriptComment);
+      scriptComment = "Get-ChildItem and the FileSystem provider were explicitly added\n" +
+                "so Get-ChildItem will work";
+      this.RunScript("Get-ChildItem", scriptComment);
       this.runspace.Close();
 
       Console.Write("Done...");
