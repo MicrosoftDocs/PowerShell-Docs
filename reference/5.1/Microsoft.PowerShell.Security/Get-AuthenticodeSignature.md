@@ -65,7 +65,7 @@ command line. In this example, the name of the **FilePath** parameter, which is 
 ### Example 3: Get only valid Authenticode signatures for multiple files
 
 ```powershell
-Get-ChildItem $PSHOME\*.* | ForEach-object {Get-AuthenticodeSignature $_} | Where-Object {$_.status -eq "Valid"}
+Get-ChildItem $PSHOME\*.* | ForEach-Object {Get-AuthenticodeSignature $_} | Where-Object {$_.Status -eq "Valid"}
 ```
 
 This command lists all of the files in the `$PSHOME` directory that have a valid Authenticode

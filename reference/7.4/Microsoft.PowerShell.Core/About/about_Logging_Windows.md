@@ -203,7 +203,7 @@ private key:
 
 ```powershell
 Get-WinEvent Microsoft-Windows-PowerShell/Operational |
-    Where-Object Id -eq 4104 | Unprotect-CmsMessage
+    Where-Object Id -EQ 4104 | Unprotect-CmsMessage
 ```
 
 ## See also

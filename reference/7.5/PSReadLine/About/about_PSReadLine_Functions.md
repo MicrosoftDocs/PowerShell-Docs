@@ -1275,8 +1275,8 @@ chords.
 
 ### ViEditVisually
 
-Edit the command line in a text editor specified by `$env:EDITOR` or
-`$env:VISUAL`.
+Edit the command line in a text editor specified by `$Env:EDITOR` or
+`$Env:VISUAL`.
 
 - Emacs mode: `Ctrl+x,Ctrl+e`
 - Vi command mode: `<v>`

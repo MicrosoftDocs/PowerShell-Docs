@@ -53,7 +53,7 @@ the system's pager command. PowerShell uses a different default pager for
 Windows and non-Windows systems. On Windows systems, the default pager is
 `more.com`. On non-Windows systems, the default pager is `less`.
 
-If the `$env:PAGER` environment variable is defined, PowerShell uses the
+If the `$Env:PAGER` environment variable is defined, PowerShell uses the
 specified program instead of the system default.
 
 ## `prompt`
