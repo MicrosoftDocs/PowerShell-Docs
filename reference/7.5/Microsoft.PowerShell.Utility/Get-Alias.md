@@ -92,7 +92,7 @@ parameter gets the alias when you know the item name.
 ### Example 4: Get aliases by property
 
 ```powershell
-Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
+Get-Alias | Where-Object {$_.Options -match "ReadOnly"}
 ```
 
 This command gets all aliases in which the value of the **Options** property is **ReadOnly**. This

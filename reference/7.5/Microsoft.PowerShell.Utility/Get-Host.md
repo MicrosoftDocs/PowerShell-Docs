@@ -84,7 +84,7 @@ Major  Minor  Build  Revision PSSemVerPreReleaseLabel    PSSemVerBuildLabel
 This command gets detailed information about the version of Windows PowerShell running in the host.
 You can view, but not change, these values.
 
-The Version property of `Get-Host` contains a **System.Version** object. This command uses a
+The **Version** property of `Get-Host` contains a **System.Version** object. This command uses a
 pipeline operator (`|`) to send the version object to the `Format-List` cmdlet. The `Format-List`
 command uses the **Property** parameter with a value of all (`*`) to display all of the properties
 and property values of the version object.

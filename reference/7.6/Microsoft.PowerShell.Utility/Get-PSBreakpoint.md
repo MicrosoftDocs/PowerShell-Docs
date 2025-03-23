@@ -47,7 +47,7 @@ Get-PSBreakpoint [-Id] <Int32[]> [-Runspace <Runspace>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Get-PSBreakPoint` cmdlet gets the breakpoints that are set in the current session. You can use
+The `Get-PSBreakpoint` cmdlet gets the breakpoints that are set in the current session. You can use
 the cmdlet parameters to get particular breakpoints.
 
 A breakpoint is a point in a command or script where execution stops temporarily so that you can
@@ -144,8 +144,8 @@ Get-PSBreakpoint -Type Line, Variable -Script "Sample.ps1"
 
 ### Example 9: Get the breakpoints set in a specific runspace
 
-In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
-run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
+In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakpoint` is
+run. The runspace is stored in a variable and passed to the `Get-PSBreakpoint` command with the
 **Runspace** parameter. You can then inspect the breakpoint in the `$breakpoint` variable.
 
 ```powershell
@@ -156,7 +156,7 @@ Start-Job -ScriptBlock {
 
 $runspace = Get-Runspace -Id 1
 
-$breakpoint = Get-PSBreakPoint -Runspace $runspace
+$breakpoint = Get-PSBreakpoint -Runspace $runspace
 ```
 
 ## PARAMETERS
@@ -240,7 +240,7 @@ acceptable values for this parameter are:
 - Command
 - Variable
 
-You can also pipe breakpoint types to `Get-PSBreakPoint`.
+You can also pipe breakpoint types to `Get-PSBreakpoint`.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BreakpointType[]

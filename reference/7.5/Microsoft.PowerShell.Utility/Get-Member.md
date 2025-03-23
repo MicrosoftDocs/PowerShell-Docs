@@ -93,18 +93,18 @@ ToString                  ScriptMethod  System.Object ToString();
 ### Example 2: Get members of service objects
 
 This example gets all the members (properties and methods) of service objects retrieved by the
-`Get-Service` cmdlet, including the intrinsic members, such as **PSBase**, **PSObject**, and the
+`Get-Service` cmdlet, including the intrinsic members, such as **psbase**, **psobject**, and the
 **get_** and **set_** methods.
 
 ```powershell
 Get-Service | Get-Member -Force
-(Get-Service Schedule).PSBase
+(Get-Service Schedule).psbase
 ```
 
 The `Get-Member` command uses the **Force** parameter to add the intrinsic members and
 compiler-generated members of the objects to the display. You can use these properties and methods
 in the same way that you would use an adapted method of the object. The second command shows how to
-display the value of the **PSBase** property of the Schedule service. For more information on
+display the value of the **psbase** property of the Schedule service. For more information on
 intrinsic members, see
 [about_Intrinsic_Members](../Microsoft.PowerShell.Core/About/about_Intrinsic_Members.md)
 
@@ -248,8 +248,8 @@ returns the members of the **Object[]** type.
 This example shows how to determine which properties of an object can be changed.
 
 ```powershell
-$File = Get-Item c:\test\textFile.txt
-$File.PSObject.Properties | Where-Object isSettable | Select-Object -Property Name
+$File = Get-Item C:\test\textFile.txt
+$File.psobject.Properties | Where-Object IsSettable | Select-Object -Property Name
 ```
 
 ```Output
@@ -275,13 +275,13 @@ Attributes
 
 This example creates a new **PSObject** and adds properties to it. `Get-Member` lists the properties
 in alphabetic order. To see the properties in the order they were added to the object you must use
-the **PSObject** intrinsic member.
+the **psobject** intrinsic member.
 
 ```powershell
-$Asset = New-Object -TypeName PSObject
+$Asset = New-Object -TypeName psobject
 $d = [ordered]@{Name="Server30";System="Server Core";PSVersion="4.0"}
 $Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
-$Asset.PSObject.Properties | Select-Object Name, Value
+$Asset.psobject.Properties | Select-Object Name, Value
 ```
 
 ```Output
@@ -299,13 +299,13 @@ PSVersion 4.0
 Adds the intrinsic members and the compiler-generated **get_** and **set_** methods to the display.
 The following list describes the properties that are added when you use the **Force** parameter:
 
-- `PSBase`: The original properties of the .NET object without extension or adaptation. These are
+- `psbase`: The original properties of the .NET object without extension or adaptation. These are
   the properties defined for the object class.
-- `PSAdapted`: The properties and methods defined in the PowerShell extended type system.
-- `PSExtended`: The properties and methods that were added in the `Types.ps1xml` files or using the
+- `psadapted`: The properties and methods defined in the PowerShell extended type system.
+- `psextended`: The properties and methods that were added in the `Types.ps1xml` files or using the
   `Add-Member` cmdlet.
-- `PSObject`: The adapter that converts the base object to a PowerShell **PSObject** object.
-- `PSTypeNames`: A list of object types that describe the object, in order of specificity. When
+- `psobject`: The adapter that converts the base object to a PowerShell **PSObject** object.
+- `pstypenames`: A list of object types that describe the object, in order of specificity. When
   formatting the object, PowerShell searches for the types in the `Format.ps1xml` files in the
   PowerShell installation directory (`$PSHOME`). It uses the formatting definition for the first
   type that it finds.

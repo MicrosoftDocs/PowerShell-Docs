@@ -188,7 +188,7 @@ subscribers, including hidden subscribers.
 
 ```powershell
 Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
-    Get-History | Export-Clixml d:\temp\history.clixml
+    Get-History | Export-Clixml D:\temp\history.clixml
 }
 Get-EventSubscriber  # No output - must use -Force
 Get-EventSubscriber -Force
