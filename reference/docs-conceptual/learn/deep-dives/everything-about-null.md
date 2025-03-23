@@ -485,7 +485,7 @@ commands you use deal with the no results and error scenarios.
 ## Initializing to $null
 
 One habit that I have picked up is initializing all my variables before I use them. You are required
-to do this in other languages. At the top of my function or as I enter a `foreach loop`, I define
+to do this in other languages. At the top of my function or as I enter a `foreach` loop, I define
 all the values that I'm using.
 
 Here is a scenario that I want you to take a close look at. It's an example of a bug I had to chase

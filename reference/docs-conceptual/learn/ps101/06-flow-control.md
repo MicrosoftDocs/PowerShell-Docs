@@ -307,8 +307,8 @@ In this chapter, you learned about the different types of loops that exist in Po
 
 ## Review
 
-1. What is the difference between the `ForEach-Object` cmdlet and the `foreach` statement?
-1. What is the primary advantage of using a `while` loop instead of a `do while` or `do until` loop?
+1. What's the difference between the `ForEach-Object` cmdlet and the `foreach` statement?
+1. What's the primary advantage of using a `while` loop instead of a `do while` or `do until` loop?
 1. How do the `break` and `continue` statements differ?
 
 ## References
