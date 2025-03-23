@@ -230,7 +230,7 @@ PS> $CapitalizedProperty = @{
     Value      = { $this.ToUpper() }
     PassThru   = $true
 }
-PS> [System.Collections.Generic.List[object]]$MixedCollection = @(
+PS> [System.Collections.Generic.List[Object]]$MixedCollection = @(
     'a'
     ('b' | Add-Member @CapitalizedProperty)
     ('c' | Add-Member @CapitalizedProperty)
@@ -284,7 +284,7 @@ successful method calls isn't returned. Terminating error conditions include:
 Consider the following example:
 
 ```powershell
-class Class1 { [object] Foo() { return 'Bar' } }
+class Class1 { [Object] Foo() { return 'Bar' } }
 class Class2 { [void] Foo() { throw 'Error' } }
 class Class3 {}
 

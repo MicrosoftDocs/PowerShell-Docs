@@ -179,7 +179,7 @@ additional variables:
 - `$PSScriptRoot`
 - `$PSEdition`
 - `$EnabledExperimentalFeatures`
-- Any environment variables, like `$ENV:TEMP`
+- Any environment variables, like `$Env:TEMP`
 
 Only the following comparison operators are permitted:
 

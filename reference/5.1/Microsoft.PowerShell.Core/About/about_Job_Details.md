@@ -84,7 +84,7 @@ other cmdlets might work differently.
 
 The child jobs are stored in the **ChildJobs** property of the parent job
 object. The **ChildJobs** property can contain one or many child job objects.
-The child job objects have a **Name**, **ID**, and **InstanceId** that differ
+The child job objects have a **Name**, **Id**, and **InstanceId** that differ
 from the parent job so that you can manage the parent and child jobs
 individually or as a unit.
 

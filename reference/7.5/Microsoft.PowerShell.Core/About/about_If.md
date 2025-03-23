@@ -49,7 +49,7 @@ statement. If both `<test1>` and `<test2>` evaluate to false, the
 You can use multiple `elseif` statements to chain a series of conditional
 tests. Each test is run only if all the previous tests are false. If you need
 to create an `if` statement that contains many `elseif` statements, consider
-using a Switch statement instead.
+using a `switch` statement instead.
 
 Examples:
 
@@ -68,7 +68,7 @@ evaluates to true, and the statement list runs. However, if `$a` is less than
 or equal to `2` or isn't an existing variable, the `if` statement doesn't
 display a message.
 
-By adding an Else statement, a message is displayed when $a is less than or
+By adding an `else` statement, a message is displayed when $a is less than or
 equal to 2. As the next example shows:
 
 ```powershell

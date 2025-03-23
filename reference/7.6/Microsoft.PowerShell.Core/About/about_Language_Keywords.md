@@ -37,12 +37,12 @@ about topic for the keyword and the information that follows the table.
 | `filter`       | [about_Functions][14]                                              |
 | `finally`      | [about_Try_Catch_Finally][22]                                      |
 | `for`          | [about_For][09]                                                    |
-| `foreach`      | [about_ForEach][10]                                                |
+| `foreach`      | [about_Foreach][10]                                                |
 | `from`         | Reserved for future use                                            |
 | `function`     | [about_Functions][14], [about_Functions_Advanced][13]              |
 | `hidden`       | [about_Hidden][15]                                                 |
 | `if`           | [about_If][16]                                                     |
-| `in`           | [about_ForEach][10]                                                |
+| `in`           | [about_Foreach][10]                                                |
 | `param`        | [about_Functions][14]                                              |
 | `process`      | [about_Functions][14], [about_Functions_Advanced][13]              |
 | `return`       | [about_Return][17]                                                 |
@@ -162,7 +162,7 @@ also include `if` statements and some limited commands.
 Syntax:
 
 ```Syntax
-data <variable> [-supportedCommand <cmdlet-name>] {<permitted content>}
+data <variable> [-SupportedCommand <cmdlet-name>] {<permitted content>}
 ```
 
 ## `do`
@@ -294,7 +294,7 @@ C:\scripts\test>type test.ps1
 3
 exit 4
 
-C:\scripts\test>pwsh -file ./test.ps1
+C:\scripts\test>pwsh -File ./test.ps1
 1
 2
 3
@@ -371,7 +371,7 @@ Syntax:
 
 ```Syntax
 function [<scope:>]<name> {
-   param ([type]<$pname1> [, [type]<$pname2>])
+   param ([type]<$PName1> [, [type]<$PName2>])
    dynamicparam {<statement list>}
    begin {<statement list>}
    process {<statement list>}
@@ -385,7 +385,7 @@ statement list after the function name.
 Syntax:
 
 ```Syntax
-function [<scope:>]<name> [([type]<$pname1>, [[type]<$pname2>])] {
+function [<scope:>]<name> [([type]<$PName1>, [[type]<$PName2>])] {
    dynamicparam {<statement list>}
    begin {<statement list>}
    process {<statement list>}
@@ -433,7 +433,7 @@ Syntax:
 
 ```Syntax
 function [<scope:>]<name> {
-   param ([type]<$pname1>[, [[type]<$pname2>]])
+   param ([type]<$PName1>[, [[type]<$PName2>]])
    <statement list>
 }
 ```
@@ -567,7 +567,7 @@ include classes from modules.
 Namespace syntax:
 
 ```Syntax
-using namespace <.Net-namespace>
+using namespace <.NET-namespace>
 ```
 
 Module syntax:
@@ -622,7 +622,7 @@ do {<statement list>} while (<condition>)
 [07]: about_Do.md
 [08]: about_Enum.md
 [09]: about_For.md
-[10]: about_ForEach.md
+[10]: about_Foreach.md
 [11]: about_Functions_Advanced_Methods.md
 [12]: about_Functions_Advanced_Parameters.md
 [13]: about_Functions_Advanced.md

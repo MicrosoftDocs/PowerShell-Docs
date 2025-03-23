@@ -211,7 +211,7 @@ For more information, see [about_Operators][03].
 
 ## New() method for types
 
-Beginning in PowerShell 5.0, PowerShell adds a static `New()` method for all
+Beginning in PowerShell 5.0, PowerShell adds a static `new()` method for all
 .NET types. The following examples produce the same result.
 
 ```powershell
