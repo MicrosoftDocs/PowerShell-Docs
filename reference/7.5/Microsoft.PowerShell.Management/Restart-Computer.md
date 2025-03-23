@@ -203,7 +203,7 @@ The acceptable values for this parameter are:
 
 - **Default**: Waits for PowerShell to restart.
 - **PowerShell**: Can run commands in a PowerShell remote session on the computer.
-- **WMI**: Receives a reply to a Win32_ComputerSystem query for the computer.
+- **WMI**: Receives a reply to a **Win32_ComputerSystem** query for the computer.
 - **WinRM**: Can establish a remote session to the computer by using WS-Management.
 
 This parameter was introduced in Windows PowerShell 3.0.

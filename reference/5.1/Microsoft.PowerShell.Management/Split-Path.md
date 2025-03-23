@@ -299,7 +299,7 @@ Accept wildcard characters: True
 ### -Qualifier
 
 Indicates that this cmdlet returns only the qualifier of the specified path. For the FileSystem or
-registry providers, the qualifier is the drive of the provider path, such as `C:` or `HKCU:`.
+Registry providers, the qualifier is the drive of the provider path, such as `C:` or `HKCU:`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

@@ -125,7 +125,7 @@ The word Warning was replaced.
 
 ```powershell
 (Get-Content -Path .\Notice.txt) |
-    ForEach-Object {$_ -Replace 'Warning', 'Caution'} |
+    ForEach-Object {$_ -replace 'Warning', 'Caution'} |
         Set-Content -Path .\Notice.txt
 Get-Content -Path .\Notice.txt
 ```
@@ -506,7 +506,7 @@ Windows PowerShell includes the following aliases for `Set-Content`:
 - `Set-Content` is designed for string processing. If you pipe non-string objects to `Set-Content`,
   it converts the object to a string before writing it. To write objects to files, use `Out-File`.
 - The `Set-Content` cmdlet is designed to work with the data exposed by any provider. To list the
-  providers available in your session, type `Get-PsProvider`. For more information, see
+  providers available in your session, type `Get-PSProvider`. For more information, see
   [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS

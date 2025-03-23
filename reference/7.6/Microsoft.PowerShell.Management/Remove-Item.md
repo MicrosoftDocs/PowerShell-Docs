@@ -504,7 +504,7 @@ PowerShell includes the following aliases for `Remove-Item`:
   - `rmdir`
 
 The `Remove-Item` cmdlet is designed to work with the data exposed by any provider. To list the
-providers available in your session, type `Get-PsProvider`. For more information, see
+providers available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 When you try to delete a folder that contains items without using the **Recurse** parameter, the
