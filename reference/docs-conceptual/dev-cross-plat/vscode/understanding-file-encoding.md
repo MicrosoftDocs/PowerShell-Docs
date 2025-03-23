@@ -253,7 +253,7 @@ If you need to re-encode multiple files, you can use the following script:
 ```powershell
 Get-ChildItem *.ps1 -Recurse | ForEach-Object {
     $content = Get-Content -Path $_
-    Set-Content -Path $_.Fullname -Value $content -Encoding UTF8 -PassThru -Force
+    Set-Content -Path $_.FullName -Value $content -Encoding UTF8 -PassThru -Force
 }
 ```
 

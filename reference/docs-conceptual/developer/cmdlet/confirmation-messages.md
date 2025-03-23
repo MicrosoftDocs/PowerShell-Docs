@@ -19,7 +19,7 @@ methods that are called.
 ## Specifying the Resource
 
 You can specify the resource that is about to be changed by calling the
-[System.Management.Automation.Cmdlet.Shouldprocess%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
+[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
 method. In this case, you supply the resource by using the `target` parameter of the method, and the
 operation is added by Windows PowerShell. In the following message, the text "MyResource" is the
 resource acted on and the operation is the name of the command that makes the call.
@@ -51,7 +51,7 @@ Continue with this operation?
 
 You can specify the resource that is about to be changed and the operation that the command is about
 to perform by calling the
-[System.Management.Automation.Cmdlet.Shouldprocess%2A?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
+[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
 method. In this case, you supply the resource by using the `target` parameter and the operation by
 using the `target` parameter. In the following message, the text "MyResource" is the resource acted
 on and "MyAction" is the operation to be performed.

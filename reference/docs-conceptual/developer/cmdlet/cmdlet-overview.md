@@ -34,7 +34,7 @@ specialized cmdlet base classes. The derived class must:
 You can load the assembly that contains the class directly by using the
 [Import-Module](/powershell/module/microsoft.powershell.core/import-module) cmdlet, or you can
 create a host application that loads the assembly by using the
-[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)
+[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)
 API. Both methods provide programmatic and command-line access to the functionality of the cmdlet.
 
 ## Cmdlet Terms

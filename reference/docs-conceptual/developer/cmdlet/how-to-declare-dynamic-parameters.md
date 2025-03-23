@@ -13,14 +13,14 @@ example, the `Department` parameter is added to the cmdlet whenever the user spe
 
 ## To define dynamic parameters
 
-1. In the cmdlet class declaration, add the [System.Management.Automation.Idynamicparameters][03]
+1. In the cmdlet class declaration, add the [System.Management.Automation.IDynamicParameters][03]
    interface as shown.
 
    ```csharp
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-1. Call the [System.Management.Automation.Idynamicparameters.Getdynamicparameters*][04] method,
+1. Call the [System.Management.Automation.IDynamicParameters.GetDynamicParameters*][04] method,
    which returns the object in which the dynamic parameters are defined. In this example, the method
    is called when the `Employee` parameter is specified.
 

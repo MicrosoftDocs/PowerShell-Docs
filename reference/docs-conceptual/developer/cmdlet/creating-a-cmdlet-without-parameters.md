@@ -13,7 +13,7 @@ This section describes how to create a cmdlet that retrieves information from th
 
 ## Naming the Cmdlet
 
-A cmdlet name consists of a verb that indicates the action the cmdlet takes and a noun that indicates the items that the cmdlet acts upon. Because this sample Get-Proc cmdlet retrieves process objects, it uses the verb "Get", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) enumeration, and the noun "Proc" to indicate that the cmdlet works on process items.
+A cmdlet name consists of a verb that indicates the action the cmdlet takes and a noun that indicates the items that the cmdlet acts upon. Because this sample Get-Proc cmdlet retrieves process objects, it uses the verb "Get", defined by the [System.Management.Automation.VerbsCommon](/dotnet/api/System.Management.Automation.VerbsCommon) enumeration, and the noun "Proc" to indicate that the cmdlet works on process items.
 
 When naming cmdlets, do not use any of the following characters: # , () {} [] & - /\ $ ; : " '<> &#124; ? @ ` .
 
@@ -136,7 +136,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 1. Start Windows PowerShell, and get the current processes running on the computer.
 
     ```powershell
-    get-proc
+    Get-Proc
     ```
 
     The following output appears.
@@ -154,13 +154,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 2. Assign a variable to the cmdlet results for easier manipulation.
 
     ```powershell
-    $p=get-proc
+    $p=Get-Proc
     ```
 
 3. Get the number of processes.
 
     ```powershell
-    $p.length
+    $p.Length
     ```
 
     The following output appears.
@@ -186,7 +186,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 5. Get the start time of this process.
 
     ```powershell
-    $p[6].starttime
+    $p[6].StartTime
     ```
 
     The following output appears.
@@ -196,7 +196,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     ```
 
     ```powershell
-    $p[6].starttime.dayofyear
+    $p[6].StartTime.DayOfYear
     ```
 
     ```output
@@ -224,7 +224,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 7. Use the `Get-Member` cmdlet to list the properties available for each process.
 
     ```powershell
-    $p | Get-Member -MemberType property
+    $p | Get-Member -MemberType Property
     ```
 
     ```output

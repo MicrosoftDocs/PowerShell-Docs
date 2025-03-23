@@ -449,7 +449,7 @@ Import-Module ./bin/Debug/net8.0/myFeedbackProvider
 ```
 
 Once you're satisfied with your module, you should create a module manifest, publish it to the
-PowerShell Gallery, and install it in your `$env:PSModulePath`. For more information, see
+PowerShell Gallery, and install it in your `$Env:PSModulePath`. For more information, see
 [How to create a module manifest][01]. You can add the `Import-Module` command to your `$PROFILE`
 script so the module is available in PowerShell session.
 

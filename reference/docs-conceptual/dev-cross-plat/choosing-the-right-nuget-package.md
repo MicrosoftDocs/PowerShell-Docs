@@ -168,7 +168,7 @@ as the root module).
 When it comes to testing your module in .NET test runners like xUnit, remember that compile-time
 checks can only go so far. You must test your module against the relevant PowerShell platforms.
 
-To test APIs built against PowerShell Standard in .NET, you should add `Microsoft.Powershell.SDK` as
+To test APIs built against PowerShell Standard in .NET, you should add `Microsoft.PowerShell.SDK` as
 a testing dependency with .NET Core (with the version set to match the desired PowerShell version),
 and the appropriate Windows PowerShell reference assemblies with .NET Framework.
 
@@ -187,24 +187,24 @@ PowerShell installations or libraries.
 > The PowerShell SDK just refers to all the component packages that make up PowerShell, and which
 > can be used for .NET development with PowerShell.
 
-A given `Microsoft.Powershell.SDK` version contains the concrete implementation of the same version
+A given `Microsoft.PowerShell.SDK` version contains the concrete implementation of the same version
 of the PowerShell application; version 7.0 contains the implementation of PowerShell 7.0 and running
 commands or scripts with it will largely behave like running them in PowerShell 7.0.
 
 Running PowerShell commands from the SDK is mostly, but not totally, the same as running them from
 `pwsh`. For example, [Start-Job][10] currently depends on the `pwsh` executable being available, and
-so will not work with `Microsoft.Powershell.SDK` by default.
+so will not work with `Microsoft.PowerShell.SDK` by default.
 
-Targeting `Microsoft.Powershell.SDK` from a .NET application allows you to integrate with all of
+Targeting `Microsoft.PowerShell.SDK` from a .NET application allows you to integrate with all of
 PowerShell's implementation assemblies, such as `System.Management.Automation`,
 `Microsoft.PowerShell.Management`, and other module assemblies.
 
-Publishing an application targeting `Microsoft.Powershell.SDK` will include all these assemblies,
+Publishing an application targeting `Microsoft.PowerShell.SDK` will include all these assemblies,
 and any dependencies PowerShell requires. It will also include other assets that PowerShell required
 in its build, such as the module manifests for `Microsoft.PowerShell.*` modules and the `ref`
 directory required by [Add-Type][11].
 
-Given the completeness of `Microsoft.Powershell.SDK`, it's best suited for:
+Given the completeness of `Microsoft.PowerShell.SDK`, it's best suited for:
 
 - Implementation of PowerShell hosts.
 - xUnit testing of libraries targeting PowerShell reference assemblies.
@@ -215,7 +215,7 @@ be used as a module or otherwise loaded by PowerShell, but depends on APIs only 
 particular version of PowerShell. Note that an assembly published against a specific version of
 `Microsoft.PowerShell.SDK` will only be safe to load and use in that version of PowerShell. To
 target multiple PowerShell versions with specific APIs, multiple builds are required, each targeting
-their own version of `Microsoft.Powershell.SDK`.
+their own version of `Microsoft.PowerShell.SDK`.
 
 > [!NOTE]
 > The PowerShell SDK is only available for PowerShell versions 6 and up. To provide equivalent
@@ -225,7 +225,7 @@ their own version of `Microsoft.Powershell.SDK`.
 ## System.Management.Automation
 
 The `System.Management.Automation` package is the heart of the PowerShell SDK. It exists on NuGet,
-primarily, as an asset for `Microsoft.Powershell.SDK` to pull in. However, it can also be used
+primarily, as an asset for `Microsoft.PowerShell.SDK` to pull in. However, it can also be used
 directly as a package for smaller hosting scenarios and version-targeting modules.
 
 Specifically, the `System.Management.Automation` package may be a preferable provider of PowerShell

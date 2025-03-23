@@ -159,7 +159,7 @@ to define actions that apply to data handling. The following table lists most of
 | [Expand](/dotnet/api/System.Management.Automation.VerbsData.Expand) (en)           | Restores the data of a resource that has been compressed to its original state. This verb is paired with `Compress`.                                                                                                                                                                            | Explode, Uncompress                              |
 | [Export](/dotnet/api/System.Management.Automation.VerbsData.Export) (ep)           | Encapsulates the primary input into a persistent data store, such as a file, or into an interchange format. This verb is paired with `Import`.                                                                                                                                                  | Extract, Backup                                  |
 | [Group](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp)             | Arranges or associates one or more resources                                                                                                                                                                                                                                                    |                                                  |
-| [Import](/dotnet/api/System.Management.Automation.VerbsData.Import) (ip)           | Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the `Import-CSV` cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with `Export`. | BulkLoad, Load                                   |
+| [Import](/dotnet/api/System.Management.Automation.VerbsData.Import) (ip)           | Creates a resource from data that is stored in a persistent data store (such as a file) or in an interchange format. For example, the `Import-Csv` cmdlet imports data from a comma-separated value (CSV) file to objects that can be used by other cmdlets. This verb is paired with `Export`. | BulkLoad, Load                                   |
 | [Initialize](/dotnet/api/System.Management.Automation.VerbsData.Initialize) (in)   | Prepares a resource for use, and sets it to a default state.                                                                                                                                                                                                                                    | Erase, Init, Renew, Rebuild, Reinitialize, Setup |
 | [Limit](/dotnet/api/System.Management.Automation.VerbsData.Limit) (l)              | Applies constraints to a resource.                                                                                                                                                                                                                                                              | Quota                                            |
 | [Merge](/dotnet/api/System.Management.Automation.VerbsData.Merge) (mg)             | Creates a single resource from multiple resources.                                                                                                                                                                                                                                              | Combine, Join                                    |
@@ -192,7 +192,7 @@ verbs.
 ## Lifecycle Verbs
 
 PowerShell uses the
-[System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+[System.Management.Automation.VerbsLifecycle](/dotnet/api/System.Management.Automation.VerbsLifecycle)
 class to define actions that apply to the lifecycle of a resource. The following table lists most of
 the defined verbs.
 
@@ -253,7 +253,7 @@ common, communications, data, lifecycle, or security verb names verbs.
 - [System.Management.Automation.VerbsCommunications](/dotnet/api/System.Management.Automation.VerbsCommunications)
 - [System.Management.Automation.VerbsData](/dotnet/api/System.Management.Automation.VerbsData)
 - [System.Management.Automation.VerbsDiagnostic](/dotnet/api/System.Management.Automation.VerbsDiagnostic)
-- [System.Management.Automation.VerbsLifeCycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+- [System.Management.Automation.VerbsLifecycle](/dotnet/api/System.Management.Automation.VerbsLifecycle)
 - [System.Management.Automation.VerbsSecurity](/dotnet/api/System.Management.Automation.VerbsSecurity)
 - [System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
 - [Cmdlet Declaration](./cmdlet-class-declaration.md)

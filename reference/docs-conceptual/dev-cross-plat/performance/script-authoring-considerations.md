@@ -62,7 +62,7 @@ $tests = @{
         [pscustomobject]@{
             Iterations        = $_
             Test              = $test.Key
-            TotalMilliseconds = [math]::Round($ms, 2)
+            TotalMilliseconds = [Math]::Round($ms, 2)
         }
 
         [GC]::Collect()
@@ -74,7 +74,7 @@ $tests = @{
         Name       = 'RelativeSpeed'
         Expression = {
             $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
-            [math]::Round($relativeSpeed, 2).ToString() + 'x'
+            [Math]::Round($relativeSpeed, 2).ToString() + 'x'
         }
     }
 }
@@ -122,7 +122,7 @@ There are a couple of alternatives. If you don't actually require an array, inst
 a typed generic list (`[List<T>]`):
 
 ```powershell
-$results = [System.Collections.Generic.List[object]]::new()
+$results = [System.Collections.Generic.List[Object]]::new()
 $results.AddRange((Get-Something))
 $results.AddRange((Get-SomethingElse))
 $results
@@ -136,25 +136,25 @@ as the baseline for performance.
 ```powershell
 $tests = @{
     'PowerShell Explicit Assignment' = {
-        param($count)
+        param($Count)
 
-        $result = foreach($i in 1..$count) {
+        $result = foreach($i in 1..$Count) {
             $i
         }
     }
     '.Add(T) to List<T>' = {
-        param($count)
+        param($Count)
 
         $result = [Collections.Generic.List[int]]::new()
-        foreach($i in 1..$count) {
+        foreach($i in 1..$Count) {
             $result.Add($i)
         }
     }
     '+= Operator to Array' = {
-        param($count)
+        param($Count)
 
         $result = @()
-        foreach($i in 1..$count) {
+        foreach($i in 1..$Count) {
             $result += $i
         }
     }
@@ -167,7 +167,7 @@ $tests = @{
         [pscustomobject]@{
             CollectionSize    = $_
             Test              = $test.Key
-            TotalMilliseconds = [math]::Round($ms, 2)
+            TotalMilliseconds = [Math]::Round($ms, 2)
         }
 
         [GC]::Collect()
@@ -179,7 +179,7 @@ $tests = @{
         Name       = 'RelativeSpeed'
         Expression = {
             $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
-            [math]::Round($relativeSpeed, 2).ToString() + 'x'
+            [Math]::Round($relativeSpeed, 2).ToString() + 'x'
         }
     }
 }
@@ -204,8 +204,8 @@ CollectionSize Test                           TotalMilliseconds RelativeSpeed
 When you're working with large collections, array addition is dramatically slower than adding to
 a **`List<T>`**.
 
-When using a `[List<T>]` object, you need to create the list with a specific type, like `[String]`
-or `[Int]`. When you add objects of a different type to the list, they are cast to the specified
+When using a `[List<T>]` object, you need to create the list with a specific type, like `[string]`
+or `[int]`. When you add objects of a different type to the list, they are cast to the specified
 type. If they can't be cast to the specified type, the method raises an exception.
 
 ```powershell
@@ -235,7 +235,7 @@ When you need the list to be a collection of different types of objects, create 
 as the list type. You can enumerate the collection inspect the types of the objects in it.
 
 ```powershell
-$objectList = [System.Collections.Generic.List[object]]::new()
+$objectList = [System.Collections.Generic.List[Object]]::new()
 $objectList.Add(1)
 $objectList.Add('2')
 $objectList.Add(3.0)
@@ -309,7 +309,7 @@ $tests = @{
         [pscustomobject]@{
             Iterations        = $_
             Test              = $test.Key
-            TotalMilliseconds = [math]::Round($ms, 2)
+            TotalMilliseconds = [Math]::Round($ms, 2)
         }
 
         [GC]::Collect()
@@ -321,7 +321,7 @@ $tests = @{
         Name       = 'RelativeSpeed'
         Expression = {
             $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
-            [math]::Round($relativeSpeed, 2).ToString() + 'x'
+            [Math]::Round($relativeSpeed, 2).ToString() + 'x'
         }
     }
 }
@@ -393,25 +393,25 @@ like using a name to retrieve an ID from one list and an email from another. Ite
 first list to find the matching record in the second collection is slow. In particular, the
 repeated filtering of the second collection has a large overhead.
 
-Given two collections, one with an **ID** and **Name**, the other with **Name** and **Email**:
+Given two collections, one with an **Id** and **Name**, the other with **Name** and **Email**:
 
 ```powershell
 $Employees = 1..10000 | ForEach-Object {
-    [PSCustomObject]@{
+    [pscustomobject]@{
         Id   = $_
         Name = "Name$_"
     }
 }
 
 $Accounts = 2500..7500 | ForEach-Object {
-    [PSCustomObject]@{
+    [pscustomobject]@{
         Name  = "Name$_"
         Email = "Name$_@fabrikam.com"
     }
 }
 ```
 
-The usual way to reconcile these collections to return a list of objects with the **ID**, **Name**,
+The usual way to reconcile these collections to return a list of objects with the **Id**, **Name**,
 and **Email** properties might look like this:
 
 ```powershell
@@ -501,39 +501,39 @@ $tests = @{
         param([int] $RepeatCount, [random] $RanGen)
 
         function Get-RandomNumberCore {
-            param ($rng)
+            param ($Rng)
 
-            $rng.Next()
+            $Rng.Next()
         }
 
         for ($i = 0; $i -lt $RepeatCount; $i++) {
-            $null = Get-RandomNumberCore -rng $RanGen
+            $null = Get-RandomNumberCore -Rng $RanGen
         }
     }
     'for-loop in a function' = {
         param([int] $RepeatCount, [random] $RanGen)
 
         function Get-RandomNumberAll {
-            param ($rng, $count)
+            param ($Rng, $Count)
 
-            for ($i = 0; $i -lt $count; $i++) {
-                $null = $rng.Next()
+            for ($i = 0; $i -lt $Count; $i++) {
+                $null = $Rng.Next()
             }
         }
 
-        Get-RandomNumberAll -rng $RanGen -count $RepeatCount
+        Get-RandomNumberAll -Rng $RanGen -Count $RepeatCount
     }
 }
 
 5kb, 10kb, 100kb | ForEach-Object {
-    $rng = [random]::new()
+    $Rng = [random]::new()
     $groupResult = foreach ($test in $tests.GetEnumerator()) {
-        $ms = Measure-Command { & $test.Value -RepeatCount $_ -RanGen $rng }
+        $ms = Measure-Command { & $test.Value -RepeatCount $_ -RanGen $Rng }
 
         [pscustomobject]@{
             CollectionSize    = $_
             Test              = $test.Key
-            TotalMilliseconds = [math]::Round($ms.TotalMilliseconds,2)
+            TotalMilliseconds = [Math]::Round($ms.TotalMilliseconds,2)
         }
 
         [GC]::Collect()
@@ -545,7 +545,7 @@ $tests = @{
         Name       = 'RelativeSpeed'
         Expression = {
             $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
-            [math]::Round($relativeSpeed, 2).ToString() + 'x'
+            [Math]::Round($relativeSpeed, 2).ToString() + 'x'
         }
     }
 }
@@ -589,7 +589,7 @@ iteration of the `ForEach-Object` loop.
 ```powershell
 $measure = Measure-Command -Expression {
     Import-Csv .\Input.csv | ForEach-Object -Begin { $Id = 1 } -Process {
-        [PSCustomObject]@{
+        [pscustomobject]@{
             Id   = $Id
             Name = $_.opened_by
         } | Export-Csv .\Output1.csv -Append
@@ -610,7 +610,7 @@ In this case, `Export-Csv` is invoked only once, but still processes all objects
 ```powershell
 $measure = Measure-Command -Expression {
     Import-Csv .\Input.csv | ForEach-Object -Begin { $Id = 2 } -Process {
-        [PSCustomObject]@{
+        [pscustomobject]@{
             Id   = $Id
             Name = $_.opened_by
         }
@@ -637,7 +637,7 @@ accelerator.
 Measure-Command {
     $test = 'PSCustomObject'
     for ($i = 0; $i -lt 100000; $i++) {
-        $resultObject = [PSCustomObject]@{
+        $resultObject = [pscustomobject]@{
             Name = 'Name'
             Path = 'FullName'
         }
@@ -647,7 +647,7 @@ Measure-Command {
 Measure-Command {
     $test = 'New-Object'
     for ($i = 0; $i -lt 100000; $i++) {
-        $resultObject = New-Object -TypeName PSObject -Property @{
+        $resultObject = New-Object -TypeName psobject -Property @{
             Name = 'Name'
             Path = 'FullName'
         }
@@ -779,38 +779,38 @@ Here is a performance comparison of three techniques for creating objects with 5
 ```powershell
 $tests = @{
     '[ordered] into [pscustomobject] cast' = {
-        param([int] $iterations, [string[]] $props)
+        param([int] $Iterations, [string[]] $Props)
 
-        foreach ($i in 1..$iterations) {
+        foreach ($i in 1..$Iterations) {
             $obj = [ordered]@{}
-            foreach ($prop in $props) {
+            foreach ($prop in $Props) {
                 $obj[$prop] = $i
             }
             [pscustomobject] $obj
         }
     }
     'Add-Member'                           = {
-        param([int] $iterations, [string[]] $props)
+        param([int] $Iterations, [string[]] $Props)
 
-        foreach ($i in 1..$iterations) {
+        foreach ($i in 1..$Iterations) {
             $obj = [psobject]::new()
-            foreach ($prop in $props) {
+            foreach ($prop in $Props) {
                 $obj | Add-Member -MemberType NoteProperty -Name $prop -Value $i
             }
             $obj
         }
     }
     'PSObject.Properties.Add'              = {
-        param([int] $iterations, [string[]] $props)
+        param([int] $Iterations, [string[]] $Props)
 
         # this is how, behind the scenes, `Add-Member` attaches
         # new properties to our PSObject.
         # Worth having it here for performance comparison
 
-        foreach ($i in 1..$iterations) {
+        foreach ($i in 1..$Iterations) {
             $obj = [psobject]::new()
-            foreach ($prop in $props) {
-                $obj.PSObject.Properties.Add(
+            foreach ($prop in $Props) {
+                $obj.psobject.Properties.Add(
                     [psnoteproperty]::new($prop, $i))
             }
             $obj
@@ -822,12 +822,12 @@ $properties = 'Prop1', 'Prop2', 'Prop3', 'Prop4', 'Prop5'
 
 1kb, 10kb, 100kb | ForEach-Object {
     $groupResult = foreach ($test in $tests.GetEnumerator()) {
-        $ms = Measure-Command { & $test.Value -iterations $_ -props $properties }
+        $ms = Measure-Command { & $test.Value -Iterations $_ -Props $properties }
 
         [pscustomobject]@{
             Iterations        = $_
             Test              = $test.Key
-            TotalMilliseconds = [math]::Round($ms.TotalMilliseconds, 2)
+            TotalMilliseconds = [Math]::Round($ms.TotalMilliseconds, 2)
         }
 
         [GC]::Collect()
@@ -839,7 +839,7 @@ $properties = 'Prop1', 'Prop2', 'Prop3', 'Prop4', 'Prop5'
         Name       = 'RelativeSpeed'
         Expression = {
             $relativeSpeed = $_.TotalMilliseconds / $groupResult[0].TotalMilliseconds
-            [math]::Round($relativeSpeed, 2).ToString() + 'x'
+            [Math]::Round($relativeSpeed, 2).ToString() + 'x'
         }
     }
 }
@@ -868,8 +868,8 @@ Iterations Test                                 TotalMilliseconds RelativeSpeed
 - [Out-Null][05]
 - [`List<T>`][06]
 - [`Add(T)` method][07]
-- [`[String]`][08]
-- [`[Int]`][09]
+- [`[string]`][08]
+- [`[int]`][09]
 - [`[Object]`][10]
 - [`ToArray()` method][11]
 - [`[ArrayList]`][12]
