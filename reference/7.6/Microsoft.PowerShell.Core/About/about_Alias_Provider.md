@@ -149,7 +149,7 @@ current location is in the `Alias:` drive, the `-Path` parameter is not needed.
 This command also uses the `-Options` dynamic parameter to set the **AllScope**
 option on the alias. The `-Options` parameter is available in the `New-Item`
 cmdlet only when you are in the `Alias:` drive. The dot (`.`) indicates the
-current directory, which is the alias drive.
+current directory, which is the `Alias:` drive.
 
 ```
 PS Alias:\> New-Item -Path . -Name serv -Value Get-Service -Options "AllScope"
@@ -161,7 +161,7 @@ You can create an alias for any item that invokes a command.
 This command creates the `np` alias for `Notepad.exe`.
 
 ```powershell
-New-Item -Path Alias:np -Value c:\windows\notepad.exe
+New-Item -Path Alias:np -Value C:\windows\notepad.exe
 ```
 
 ### Create an alias to a new function
@@ -177,7 +177,7 @@ When the command is complete, you can use either `CD32` or `go` to invoke the
 function.
 
 ```powershell
-function CD32 {Set-Location -Path c:\windows\system32}
+function CD32 {Set-Location -Path C:\windows\system32}
 Set-Item -Path Alias:go -Value CD32
 ```
 
@@ -313,7 +313,7 @@ Get-Help Get-ChildItem
 ```
 
 ```powershell
-Get-Help Get-ChildItem -Path alias:
+Get-Help Get-ChildItem -Path Alias:
 ```
 
 ## See also

@@ -82,7 +82,7 @@ pipeline to a variable. For example, the following command sorts the services
 on the computer and then assigns the sorted services to the `$a` variable:
 
 ```powershell
-$a = Get-Service | Sort-Object -Property name
+$a = Get-Service | Sort-Object -Property Name
 ```
 
 You can also assign the value created by a statement to a variable, as in the

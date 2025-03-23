@@ -33,76 +33,76 @@ The following list itemizes the cmdlets that support calculated properties and
 the key-value pairs that each cmdlet supports.
 
 - `Compare-Object`
-  - `expression`
+  - `Expression`
 
 - `ConvertTo-Html`
-  - `name`/`label` - optional (added in PowerShell 6.x)
-  - `expression`
-  - `width` - optional
-  - `alignment` - optional
+  - `Name`/`Label` - optional (added in PowerShell 6.x)
+  - `Expression`
+  - `Width` - optional
+  - `Alignment` - optional
 
 - `Format-Custom`
-  - `expression`
-  - `depth` - optional
+  - `Expression`
+  - `Depth` - optional
 
 - `Format-List`
-  - `name`/`label` - optional
-  - `expression`
-  - `formatstring` - optional
+  - `Name`/`Label` - optional
+  - `Expression`
+  - `FormatString` - optional
 
   This same set of key-value pairs also apply to calculated property values
   passed to the **GroupBy** parameter for all `Format-*` cmdlets.
 
 - `Format-Table`
-  - `name`/`label` - optional
-  - `expression`
-  - `formatstring` - optional
-  - `width` - optional
-  - `alignment` - optional
+  - `Name`/`Label` - optional
+  - `Expression`
+  - `FormatString` - optional
+  - `Width` - optional
+  - `Alignment` - optional
 
 - `Format-Wide`
-  - `expression`
-  - `formatstring` - optional
+  - `Expression`
+  - `FormatString` - optional
 
 - `Group-Object`
-  - `expression`
+  - `Expression`
 
 - `Measure-Object`
   - Only supports a script block for the expression, not a hashtable.
   - Not supported in PowerShell 5.1 and older.
 
 - `Select-Object`
-  - `name`/`label` - optional
-  - `expression`
+  - `Name`/`Label` - optional
+  - `Expression`
 
 - `Sort-Object`
-  - `expression`
-  - `ascending`/`descending` - optional
+  - `Expression`
+  - `Ascending`/`Descending` - optional
 
 > [!NOTE]
-> The value of the `expression` can be a script block instead of a
+> The value of the `Expression` can be a script block instead of a
 > hashtable. For more information, see the [Notes][02] section.
 
 ## Hashtable key definitions
 
-- `name`/`label` - Specifies the name of the property being created. You can
-  use `name` or its alias, `label`, interchangeably.
-- `expression` - A string or script block used to calculate the value of the
-  new property. If the `expression` is a string, the value is interpreted as a
+- `Name`/`Label` - Specifies the name of the property being created. You can
+  use `Name` or its alias, `Label`, interchangeably.
+- `Expression` - A string or script block used to calculate the value of the
+  new property. If the `Expression` is a string, the value is interpreted as a
   property name on the input object. This is a shorter option than
-  `expression = { $_.<PropertyName> }`.
-- `alignment` - Used by cmdlets that produce tabular output to define how the
-  values are displayed in a column. The value must be `'left'`, `'center'`, or
-  `'right'`.
-- `formatstring` - Specifies a format string that defines how the value is
+  `Expression = { $_.<PropertyName> }`.
+- `Alignment` - Used by cmdlets that produce tabular output to define how the
+  values are displayed in a column. The value must be `'Left'`, `'Center'`, or
+  `'Right'`.
+- `FormatString` - Specifies a format string that defines how the value is
   formatted for output. For more information about format strings, see
   [Format types in .NET][01].
-- `width` - Specifies the maximum width column in a table when the value is
+- `Width` - Specifies the maximum width column in a table when the value is
   displayed. The value must be greater than `0`.
-- `depth` - The **Depth** parameter of `Format-Custom` specifies the depth of
-  expansion for all properties. The `depth` key allows you to specify the
+- `Depth` - The **Depth** parameter of `Format-Custom` specifies the depth of
+  expansion for all properties. The `Depth` key allows you to specify the
   depth of expansion per property.
-- `ascending` / `descending` - Allows you to specify the order of sorting for
+- `Ascending` / `Descending` - Allows you to specify the order of sorting for
   one or more properties. These are boolean values.
 
 You don't need to spell out the hashtable keys as long as the specified name
@@ -119,7 +119,7 @@ directly, the values are compared to the result of the arithmetic operation
 (modulus of 2).
 
 ```powershell
-Compare-Object @{p=1} @{p=2} -property @{ Expression = { $_.p % 2 } }
+Compare-Object @{p=1} @{p=2} -Property @{ Expression = { $_.p % 2 } }
 ```
 
 ```Output
@@ -139,8 +139,8 @@ Get-Alias |
   ConvertTo-Html Name,
                  Definition,
                  @{
-                    expr={$_.Parameters.Keys.Count}
-                    align='center'
+                    Expr={$_.Parameters.Keys.Count}
+                    Align='Center'
                  } |
     Out-File .\aliases.htm -Force
 ```
@@ -154,15 +154,15 @@ the number parameters for each aliased command. The values of
 `Format-Custom` provides a custom view of an object in a format similar to a
 class definition. More complex objects can contain members that are deeply
 nested with complex types. The **Depth** parameter of `Format-Custom` specifies
-the depth of expansion for all properties. The `depth` key allows you to
+the depth of expansion for all properties. The `Depth` key allows you to
 specify the depth of expansion per property.
 
-In this example, the `depth` key simplifies the custom output for the
+In this example, the `Depth` key simplifies the custom output for the
 `Get-Date` cmdlet. `Get-Date` returns a **DateTime** object. The **Date**
 property of this object is also a **DateTime** object, so the object is nested.
 
 ```powershell
-Get-Date | Format-Custom @{expr={$_.Date};depth=1},TimeOfDay
+Get-Date | Format-Custom @{Expr={$_.Date};Depth=1},TimeOfDay
 ```
 
 ```Output
@@ -211,16 +211,16 @@ the output from `Get-ChildItem`.
 
 ```powershell
 Get-ChildItem *.json -File |
-  Format-List Fullname,
+  Format-List FullName,
               @{
-                 name='Modified'
-                 expression={$_.LastWriteTime}
-                 formatstring='O'
+                 Name='Modified'
+                 Expression={$_.LastWriteTime}
+                 FormatString='O'
               },
               @{
-                 name='Size'
-                 expression={$_.Length/1KB}
-                 formatstring='N2'
+                 Name='Size'
+                 Expression={$_.Length/1KB}
+                 FormatString='N2'
               }
 ```
 
@@ -245,11 +245,11 @@ classify the files by the content type.
 
 ```powershell
 Get-ChildItem -File |
-  Sort-Object extension |
+  Sort-Object Extension |
     Format-Table Name, Length -GroupBy @{
-      name='Type'
-      expression={
-        switch ($_.extension) {
+      Name='Type'
+      Expression={
+        switch ($_.Extension) {
           '.md'   {'Content'}
           ''      {'Metacontent'}
           '.ps1'  {'Automation'}
@@ -311,7 +311,7 @@ value.
 
 ```powershell
 Get-ChildItem -File |
-  Format-Wide -Property @{e={'{0} ({1:N2}kb)' -f $_.name,($_.length/1kb)}}
+  Format-Wide -Property @{e={'{0} ({1:N2}kb)' -f $_.Name,($_.Length/1kb)}}
 ```
 
 ```Output
@@ -334,10 +334,10 @@ of files of each content type.
 
 ```powershell
 Get-ChildItem -File |
-  Sort-Object extension |
+  Sort-Object Extension |
     Group-Object -NoElement -Property @{
-      expression={
-        switch ($_.extension) {
+      Expression={
+        switch ($_.Extension) {
           '.md'   {'Content'}
           ''      {'Metacontent'}
           '.ps1'  {'Automation'}
@@ -371,8 +371,8 @@ $aliases = Get-Alias c* |
   Select-Object Name,
                 Definition,
                 @{
-                    name='ParameterCount'
-                    expr={$_.Parameters.Keys.Count}
+                    Name='ParameterCount'
+                    Expr={$_.Parameters.Keys.Count}
                 }
 $aliases | Get-Member
 $aliases
@@ -422,7 +422,7 @@ property. This example sorts data from a CSV file in ascending order by
 
 ```powershell
 Import-Csv C:\temp\sales-data.csv |
-  Sort-Object Date, @{expr={$_.UnitsSold}; desc=$true}, Salesperson  |
+  Sort-Object Date, @{Expr={$_.UnitsSold}; Desc=$true}, Salesperson  |
     Select-Object Date, Salesperson, UnitsSold
 ```
 
