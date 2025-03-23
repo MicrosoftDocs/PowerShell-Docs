@@ -55,7 +55,7 @@ delimiter, or direct `Import-Csv` to use the list separator for the current cult
 delimiter.
 
 You can also use the `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets to convert objects to CSV
-strings (and back). These cmdlets are the same as the `Export-CSV` and `Import-Csv` cmdlets, except
+strings (and back). These cmdlets are the same as the `Export-Csv` and `Import-Csv` cmdlets, except
 that they work with data from the pipeline instead of from files.
 
 If a header row entry in a CSV file contains an empty or null value, PowerShell inserts a default

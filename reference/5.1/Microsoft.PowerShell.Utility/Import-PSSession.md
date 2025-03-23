@@ -103,7 +103,7 @@ need to use the `Invoke-Command` cmdlet to run an imported command.
 ```
 $S1 = New-PSSession -ComputerName s1
 $S2 = New-PSSession -ComputerName s2
-Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
+Import-PSSession -Session s1 -Type Cmdlet -Name New-Test, Get-Test -FormatTypeName *
 Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
 New-Test Test1 | Set-Test -RunType Full
 ```
@@ -199,7 +199,7 @@ function into the current session.
 
 The `Import-PSSession` cmdlet returns a **PSModuleInfo** object that represents the temporary
 module. The value of the **Path** property shows that `Import-PSSession` created a script module
-(.psm1) file in a temporary location. The **ExportedFunctions** property shows that the `Get-Date`
+(`.psm1`) file in a temporary location. The **ExportedFunctions** property shows that the `Get-Date`
 cmdlet and the SearchHelp function were both imported as functions.
 
 ### Example 7: Run a command that is hidden by an imported command
@@ -327,7 +327,7 @@ Accept wildcard characters: False
 Specifies an array of commands that results from using the specified arguments (parameter values).
 
 For instance, to import the variant of the `Get-Item` command in the certificate (Cert:) drive in
-the PSSession in `$S`, type `Import-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
+the PSSession in `$S`, type `Import-PSSession -Session $S -Command Get-Item -ArgumentList Cert:`.
 
 ```yaml
 Type: System.Object[]
@@ -344,7 +344,7 @@ Accept wildcard characters: False
 ### -Certificate
 
 Specifies the client certificate that is used to sign the format files (*.Format.ps1xml) or script
-module files (.psm1) in the temporary module that `Import-PSSession` creates.
+module files (`.psm1`) in the temporary module that `Import-PSSession` creates.
 
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
@@ -398,11 +398,11 @@ alias, **Type**. The acceptable values for this parameter are:
 - `Alias`: The Windows PowerShell aliases in the remote session.
 - `All`: The cmdlets and functions in the remote session.
 - `Application`: All the files other than Windows-PowerShell files in the paths that are listed in
-  the Path environment variable (`$env:path`) in the remote session, including .txt, .exe, and .dll
+  the PATH environment variable (`$Env:PATH`) in the remote session, including .txt, .exe, and .dll
   files.
 - `Cmdlet`: The cmdlets in the remote session. "Cmdlet" is the default.
-- `ExternalScript`: The .ps1 files in the paths listed in the Path environment variable
-  (`$env:path`) in the remote session.
+- `ExternalScript`: The `.ps1` files in the paths listed in the PATH environment variable
+  (`$Env:PATH`) in the remote session.
 - `Filter` and `Function`: The Windows PowerShell functions in the remote session.
 - `Script`: The script blocks in the remote session.
 

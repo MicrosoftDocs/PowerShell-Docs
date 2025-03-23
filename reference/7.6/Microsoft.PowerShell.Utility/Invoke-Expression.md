@@ -79,14 +79,14 @@ Invoke-Expression -Command "C:\ps-test\testscript.ps1"
 "C:\ps-test\testscript.ps1" | Invoke-Expression
 ```
 
-These commands use `Invoke-Expression` to run a script, TestScript.ps1, on the local computer. The
+These commands use `Invoke-Expression` to run a script, `TestScript.ps1`, on the local computer. The
 two commands are equivalent. The first uses the **Command** parameter to specify the command to run.
 The second uses a pipeline operator (`|`) to send the command string to `Invoke-Expression`.
 
 ### Example 3: Run a command in a variable
 
 ```powershell
-$Command = 'Get-Process | where {$_.cpu -gt 1000}'
+$Command = 'Get-Process | where {$_.CPU -gt 1000}'
 Invoke-Expression $Command
 ```
 
