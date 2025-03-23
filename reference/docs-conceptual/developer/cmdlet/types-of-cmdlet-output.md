@@ -91,7 +91,7 @@ You can also design a cmdlet to directly access the output functionality of a ho
 through the PowerShell runtime. Using the host APIs provided by PowerShell instead of
 [System.Console](/dotnet/api/System.Console) or
 [System.Windows.Forms](/dotnet/api/System.Windows.Forms) ensures that your cmdlet will work with a
-variety of hosts. For example: the **powershell.exe** console host, the **powershell_ise.exe**
+variety of hosts. For example: the `powershell.exe` console host, the `powershell_ise.exe`
 graphical host, the PowerShell remoting host, and third-party hosts.
 
 ## See also

@@ -39,7 +39,7 @@ PowerShell 2.0.
 
 1. Run the following command to run the cmdlet:
 
-    `stop-proc`
+    `Stop-Proc`
 
 ## Requirements
 
@@ -77,7 +77,7 @@ namespace Microsoft.Samples.PowerShell.Commands
    #region StopProcCommand
 
     /// <summary>
-   /// This class implements the stop-proc cmdlet.
+   /// This class implements the Stop-Proc cmdlet.
    /// </summary>
    [Cmdlet(VerbsLifecycle.Stop, "Proc",
        SupportsShouldProcess = true)]

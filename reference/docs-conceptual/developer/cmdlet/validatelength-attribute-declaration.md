@@ -36,10 +36,10 @@ Required. Specifies the maximum number of characters allowed.
 
   - When the argument is not a string.
 
-- The ValidateLength attribute is defined by the [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) class.
+- The ValidateLength attribute is defined by the [System.Management.Automation.ValidateLengthAttribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute) class.
 
 ## See Also
 
-[System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)
+[System.Management.Automation.ValidateLengthAttribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)
 
 [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

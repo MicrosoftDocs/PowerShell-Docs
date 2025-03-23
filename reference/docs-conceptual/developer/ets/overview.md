@@ -146,7 +146,7 @@ PowerShell, a **PSObject** may also define extended members that extend the orig
 with additional information that is useful in the scripting environment.
 
 For example, all the core cmdlets provided by PowerShell, such as the Get-Content and Set-Content
-cmdlets, take a path parameter. To ensure that these cmdlets, and others, can work against objects
+cmdlets, take a Path parameter. To ensure that these cmdlets, and others, can work against objects
 of different types, a Path member can be added to those objects so that they all state their
 information in a common way. This extended Path member ensures that the cmdlets can work against all
 those types even though there base class might not have a Path member.

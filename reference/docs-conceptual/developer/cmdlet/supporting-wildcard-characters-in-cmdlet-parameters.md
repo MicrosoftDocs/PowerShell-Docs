@@ -38,9 +38,9 @@ Windows PowerShell supports the following wildcard characters.
 
 When you design cmdlets that support wildcard characters, allow for combinations of wildcard
 characters. For example, the following command uses the `Get-ChildItem` cmdlet to retrieve all the
-.txt files that are in the c:\Techdocs folder and that begin with the letters "a" through "l."
+.txt files that are in the C:\Techdocs folder and that begin with the letters "a" through "l."
 
-`Get-ChildItem c:\techdocs\[a-l]\*.txt`
+`Get-ChildItem C:\techdocs\[a-l]\*.txt`
 
 The previous command uses the range wildcard `[a-l]` to specify that the file name should begin
 with the characters "a" through "l" and uses the `*` wildcard character as a placeholder
@@ -49,7 +49,7 @@ for any characters between the first letter of the filename and the **.txt** ext
 The following example uses a range wildcard pattern that excludes the letter "d" but includes all
 the other letters from "a" through "f."
 
-`Get-ChildItem c:\techdocs\[a-cef]\*.txt`
+`Get-ChildItem C:\techdocs\[a-cef]\*.txt`
 
 ## Handling Literal Characters in Wildcard Patterns
 

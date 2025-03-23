@@ -57,14 +57,14 @@ positional parameters.
 
 The following commands show the different ways in which you can specify single and multiple
 arguments for the parameters of the `Get-Command` cmdlet. Notice that in the last two samples,
-**-name** doesn't need to be specified because the `Name` parameter is defined as a positional
+`-Name` doesn't need to be specified because the **Name** parameter is defined as a positional
 parameter.
 
 ```powershell
-Get-Command -Name get-service
-Get-Command -Name get-service,set-service
-Get-Command get-service
-Get-Command get-service,set-service
+Get-Command -Name Get-Service
+Get-Command -Name Get-Service,Set-Service
+Get-Command Get-Service
+Get-Command Get-Service,Set-Service
 ```
 
 ## Mandatory and Optional Parameters

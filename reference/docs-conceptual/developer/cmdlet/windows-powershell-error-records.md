@@ -39,8 +39,8 @@ object.
 
 - The target object that was being processed when the error occurred. This might be the input
   object, or it might be another object that your cmdlet was processing. For example, for the
-  command `remove-item -recurse c:\somedirectory`, the error might be an instance of a FileInfo
-  object for "c:\somedirectory\lockedfile". The target object information is optional.
+  command `Remove-Item -Recurse C:\somedirectory`, the error might be an instance of a FileInfo
+  object for "C:\somedirectory\lockedfile". The target object information is optional.
 
 ## Error Identifier
 
@@ -66,7 +66,7 @@ Use the following guidelines to generate error identifiers when you create error
   specific identifiers. Often, each code path that calls
   [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
   or
-  [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
+  [System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
   has its own identifier. As a rule, define a new identifier when you define a new template string
   for the error message, and vice-versa. Do not use the error message as an identifier.
 
@@ -104,7 +104,7 @@ category is not a perfect match.
 
 The information displayed by Windows PowerShell is referred to as the category-view string and is
 built from the properties of the
-[System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
+[System.Management.Automation.ErrorCategoryInfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 class. (This class is accessed through the error
 [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)
 property.)
@@ -158,7 +158,7 @@ developers. These replacement messages should be written for the cmdlet user.
 The replacement error message must be added before the
 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 or
-[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
+[System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 methods are called. To add a replacement message, set the
 [System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
 property of the error record. When this property is set, Windows PowerShell displays the
@@ -176,10 +176,10 @@ object can also provide information about what actions are recommended when the 
 When a cmdlet uses
 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 or
-[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
+[System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 to report an error record, Windows PowerShell automatically adds information that describes the
 command that was invoked when the error occurred. This information is provided by a
-[System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)
+[System.Management.Automation.InvocationInfo](/dotnet/api/System.Management.Automation.InvocationInfo)
 object that contains the name of the cmdlet that was invoked by the command, the command itself, and
 information about the pipeline or script. This property is read-only.
 
@@ -187,17 +187,17 @@ information about the pipeline or script. This property is read-only.
 
 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
-[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
+[System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
 [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)
 
-[System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
+[System.Management.Automation.ErrorCategoryInfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
 [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
 [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)
 
-[System.Management.Automation.Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)
+[System.Management.Automation.InvocationInfo](/dotnet/api/System.Management.Automation.InvocationInfo)
 
 [Windows PowerShell Error Reporting](./error-reporting-concepts.md)
 

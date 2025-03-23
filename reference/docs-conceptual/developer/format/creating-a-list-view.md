@@ -10,10 +10,10 @@ A list view displays data in a single column (in sequential order). The data dis
 
 ## A List View Display
 
-The following output shows how Windows PowerShell displays the properties of [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) objects that are returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. In this example, three objects were returned, with each object separated from the preceding object by a blank line.
+The following output shows how Windows PowerShell displays the properties of [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) objects that are returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlet. In this example, three objects were returned, with each object separated from the preceding object by a blank line.
 
 ```powershell
-Get-Service | format-list
+Get-Service | Format-List
 ```
 
 ```output
@@ -51,7 +51,7 @@ ServiceType         : Win32OwnProcess
 
 ## Defining the List View
 
-The following XML shows the list view schema for displaying several properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController) object. You must specify each property that you want displayed in the list view.
+The following XML shows the list view schema for displaying several properties of the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) object. You must specify each property that you want displayed in the list view.
 
 ```xml
 <View>
@@ -100,7 +100,7 @@ For an example of a complete formatting file that defines a simple list view, se
 
 ## Providing Definitions for Your List View
 
-List views can provide one or more definitions by using the child elements of the [ListControl](./listcontrol-element-format.md) element. Typically, a view will have only one definition. In the following example, the view provides a single definition that displays several properties of the [System.Diagnostics.Process?Displayproperty=Fullname](/dotnet/api/System.Diagnostics.Process) object. A list view can display the value of a property or the value of a script (not shown in the example).
+List views can provide one or more definitions by using the child elements of the [ListControl](./listcontrol-element-format.md) element. Typically, a view will have only one definition. In the following example, the view provides a single definition that displays several properties of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object. A list view can display the value of a property or the value of a script (not shown in the example).
 
 ```xml
 <ListControl>
@@ -216,7 +216,7 @@ The following XML elements can be used to specify the objects that are used by a
 
 ## Displaying Groups of Objects in a List View
 
-You can separate the objects that are displayed by the list view into groups. This does not mean that you define a group, only that Windows PowerShell starts a new group whenever the value of a specific property or script changes. In the following example, a new group is started whenever the value of the [System.Serviceprocess.Servicecontroller.Servicetype](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType) property changes.
+You can separate the objects that are displayed by the list view into groups. This does not mean that you define a group, only that Windows PowerShell starts a new group whenever the value of a specific property or script changes. In the following example, a new group is started whenever the value of the [System.ServiceProcess.ServiceController.ServiceType](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType) property changes.
 
 ```xml
 <GroupBy>
@@ -268,7 +268,7 @@ In the following example, the `ToString` method is called to format the value of
 ```xml
 <ListItem>
   <ScriptBlock>
-    [String]::Format("{0,-10} {1,-8}", $_.LastWriteTime.ToString("d"), $_.LastWriteTime.ToString("t"))
+    [string]::Format("{0,-10} {1,-8}", $_.LastWriteTime.ToString("d"), $_.LastWriteTime.ToString("t"))
   </ScriptBlock>
 </ListItem>
 ```
