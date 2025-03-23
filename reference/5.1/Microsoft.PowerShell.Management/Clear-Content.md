@@ -272,7 +272,7 @@ Accept wildcard characters: False
 
 Includes the command in the active transaction. This parameter is valid only when a transaction is
 in progress. For more information, see
-[about_transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -348,7 +348,7 @@ manipulate content. To clear items that are not considered to be content, such a
 the PowerShell Certificate or Registry providers, use `Clear-Item`.
 
 The `Clear-Content` cmdlet is designed to work with the data exposed by any provider.
-To list the providers available in your session, type `Get-PsProvider`.
+To list the providers available in your session, type `Get-PSProvider`.
 For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
