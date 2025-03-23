@@ -37,7 +37,7 @@ recreate the saved object based on the contents of that file. For more informati
 [Language independence](/dotnet/standard/language-independence).
 
 This cmdlet is similar to `ConvertTo-Xml`, except that `Export-Clixml` stores the resulting XML in a
-file. `ConvertTo-XML` returns the XML, so you can continue to process it in PowerShell.
+file. `ConvertTo-Xml` returns the XML, so you can continue to process it in PowerShell.
 
 A valuable use of `Export-Clixml` on Windows computers is to export credentials and secure strings
 securely as XML. For an example, see Example 3.

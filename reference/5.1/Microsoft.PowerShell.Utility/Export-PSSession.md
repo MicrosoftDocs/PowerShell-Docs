@@ -183,7 +183,7 @@ Exports the variant of the command that results from using the specified argumen
 values).
 
 For example, to export the variant of the `Get-Item` command in the certificate (Cert:) drive in
-the PSSession in `$S`, type `Export-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
+the PSSession in `$S`, type `Export-PSSession -Session $S -Command Get-Item -ArgumentList Cert:`.
 
 ```yaml
 Type: System.Object[]
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ### -Certificate
 
 Specifies the client certificate that is used to sign the format files (*.Format.ps1xml) or script
-module files (.psm1) in the module that `Export-PSSession` creates. Enter a variable that contains
+module files (`.psm1`) in the module that `Export-PSSession` creates. Enter a variable that contains
 a certificate or a command or expression that gets the certificate.
 
 To find a certificate, use the `Get-PfxCertificate` cmdlet or use the `Get-ChildItem` cmdlet in the
@@ -253,13 +253,13 @@ The acceptable values for this parameter are as follows:
 
 - `Alias`: All PowerShell aliases in the current session.
 - `All`: All command types. It is the equivalent of `Get-Command -Name *`.
-- `Application`: All files other than PowerShell files in paths listed in the Path environment
-  variable (`$env:path`), including .txt, .exe, and .dll files.
+- `Application`: All files other than PowerShell files in paths listed in the PATH environment
+  variable (`$Env:PATH`), including .txt, .exe, and .dll files.
 - `Cmdlet`: The cmdlets in the current session. Cmdlet is the default.
 - `Configuration`: A PowerShell configuration. For more information, see
   [about_Session_Configurations](../Microsoft.PowerShell.Core/About/about_Session_Configurations.md).
-- `ExternalScript`: All .ps1 files in the paths listed in the Path environment variable
-  (`$env:path`).
+- `ExternalScript`: All `.ps1` files in the paths listed in the PATH environment variable
+  (`$Env:PATH`).
 - `Filter` and `Function`: All PowerShell functions.
 - `Script` Script blocks in the current session.
 - `Workflow` A PowerShell workflow. For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).

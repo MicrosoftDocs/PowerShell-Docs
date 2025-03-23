@@ -225,7 +225,7 @@ Specifies the objects to be formatted. Enter a variable that contains the object
 or expression that gets the objects.
 
 Only certain [scalar](/powershell/scripting/learn/glossary#scalar-value) types and
-`[system.io.fileinfo]` are supported.
+`[System.IO.FileInfo]` are supported.
 
 The supported scalar types are:
 

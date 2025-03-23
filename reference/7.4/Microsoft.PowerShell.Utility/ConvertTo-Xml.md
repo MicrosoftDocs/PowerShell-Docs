@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ### -InputObject
 
 Specifies the object to be converted. Enter a variable that contains the objects, or type a command
-or expression that gets the objects. You can also pipe objects to `ConvertTo-XML`.
+or expression that gets the objects. You can also pipe objects to `ConvertTo-Xml`.
 
 ```yaml
 Type: System.Management.Automation.PSObject

@@ -34,11 +34,11 @@ Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-
 
 ## DESCRIPTION
 
-The `Export-CSV` cmdlet creates a CSV file of the objects that you submit. Each object is a row that
-includes a character-separated list of the object's property values. You can use the `Export-CSV`
+The `Export-Csv` cmdlet creates a CSV file of the objects that you submit. Each object is a row that
+includes a character-separated list of the object's property values. You can use the `Export-Csv`
 cmdlet to create spreadsheets and share data with programs that accept CSV files as input.
 
-Do not format objects before sending them to the `Export-CSV` cmdlet. If `Export-CSV` receives
+Do not format objects before sending them to the `Export-Csv` cmdlet. If `Export-Csv` receives
 formatted objects the CSV file contains the format properties rather than the object properties. To
 export only selected properties of an object, use the `Select-Object` cmdlet.
 
@@ -301,9 +301,9 @@ This example shows how to use the **Force** and **Append** parameters. When thes
 combined, mismatched object properties can be written to a CSV file.
 
 ```powershell
-$Content = [PSCustomObject]@{Name = 'PowerShell'; Version = '7.0'}
+$Content = [pscustomobject]@{Name = 'PowerShell'; Version = '7.0'}
 $Content | Export-Csv -Path .\ParmFile.csv -NoTypeInformation
-$AdditionalContent = [PSCustomObject]@{Name = 'Windows PowerShell'; Edition = 'Desktop'}
+$AdditionalContent = [pscustomobject]@{Name = 'Windows PowerShell'; Edition = 'Desktop'}
 $AdditionalContent | Export-Csv -Path .\ParmFile.csv -NoTypeInformation -Append
 ```
 
@@ -351,8 +351,8 @@ the file located in the current directory.
 
 ### -Append
 
-Use this parameter so that `Export-CSV` adds CSV output to the end of the specified file. Without
-this parameter, `Export-CSV` replaces the file contents without warning.
+Use this parameter so that `Export-Csv` adds CSV output to the end of the specified file. Without
+this parameter, `Export-Csv` replaces the file contents without warning.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -436,7 +436,7 @@ Accept wildcard characters: False
 ### -InputObject
 
 Specifies the objects to export as CSV strings. Enter a variable that contains the objects or type a
-command or expression that gets the objects. You can also pipe objects to `Export-CSV`.
+command or expression that gets the objects. You can also pipe objects to `Export-Csv`.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -471,8 +471,8 @@ Accept wildcard characters: False
 
 ### -NoClobber
 
-Use this parameter so that `Export-CSV` does not overwrite an existing file. By default, if the file
-exists in the specified path, `Export-CSV` overwrites the file without warning.
+Use this parameter so that `Export-Csv` does not overwrite an existing file. By default, if the file
+exists in the specified path, `Export-Csv` overwrites the file without warning.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -594,13 +594,13 @@ Windows PowerShell includes the following aliases for `Export-Csv`:
 
 - `epcsv`
 
-The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV strings and saves
-them in the specified text file. You can use `Export-CSV` to save objects in a CSV file and then use
+The `Export-Csv` cmdlet converts the objects that you submit into a series of CSV strings and saves
+them in the specified text file. You can use `Export-Csv` to save objects in a CSV file and then use
 the `Import-Csv` cmdlet to create objects from the CSV file.
 
 In the CSV file, each object is represented by a character-separated list of the property values of
 the object. The property values are converted to strings using the **ToString()** method. The
-strings are represented by the property value name. `Export-CSV does not export the methods of the
+strings are represented by the property value name. `Export-Csv does not export the methods of the
 object.
 
 The CSV strings are output as follows:
@@ -611,7 +611,7 @@ The CSV strings are output as follows:
   contain the first object's property names as a character-separated list.
 - The remaining strings contain character-separated lists of each object's property values.
 
-When you submit multiple objects to `Export-CSV`, `Export-CSV` organizes the file based on the
+When you submit multiple objects to `Export-Csv`, `Export-Csv` organizes the file based on the
 properties of the first object that you submit. If the remaining objects do not have one of the
 specified properties, the property value of that object is null, as represented by two consecutive
 commas. If the remaining objects have additional properties, those property values are not included
@@ -622,7 +622,7 @@ resulting objects are CSV versions of the original objects that consist of strin
 the property values and no methods.
 
 The `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets convert objects to CSV strings and from CSV
-strings. `Export-CSV` is the same as `ConvertTo-CSV`, except that it saves the CSV strings in a
+strings. `Export-Csv` is the same as `ConvertTo-Csv`, except that it saves the CSV strings in a
 file.
 
 ## RELATED LINKS
