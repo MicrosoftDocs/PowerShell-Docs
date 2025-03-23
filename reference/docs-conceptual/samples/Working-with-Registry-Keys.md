@@ -50,8 +50,8 @@ HKEY_CURRENT_USER\Volatile Environment
 These are the top-level keys visible under `HKEY_CURRENT_USER` in the Registry Editor
 (`regedit.exe`).
 
-You can also specify this registry path by specifying the registry provider's name, followed by
-`::`. The registry provider's full name is `Microsoft.PowerShell.Core\Registry`, but this can be
+You can also specify this registry path by specifying the Registry provider's name, followed by
+`::`. The Registry provider's full name is `Microsoft.PowerShell.Core\Registry`, but this can be
 shortened to just `Registry`. Any of the following commands will list the contents directly under
 `HKCU:`.
 
@@ -64,7 +64,7 @@ Get-ChildItem HKCU:
 ```
 
 These commands list only the directly contained items, much like using `DIR` in `cmd.exe` or `ls`
-in a UNIX shell. To show contained items, you need to specify the **Recurse** parameter. To list all
+in a Unix shell. To show contained items, you need to specify the **Recurse** parameter. To list all
 registry keys in `HKCU:`, use the following command.
 
 ```powershell
@@ -143,7 +143,7 @@ Remove-Item -Path HKCU:\CurrentVersion
 
 ```Output
 Confirm
-The item at HKCU:\CurrentVersion\AdminDebug has children and the -recurse
+The item at HKCU:\CurrentVersion\AdminDebug has children and the Recurse
 parameter was not specified. If you continue, all children will be removed with
 the item. Are you sure you want to continue?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):

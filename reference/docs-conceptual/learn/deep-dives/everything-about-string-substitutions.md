@@ -60,12 +60,12 @@ is where many new people get tripped up. First let me show you what they think s
 face value almost looks like it should).
 
 ```powershell
-$directory = Get-Item 'c:\windows'
+$directory = Get-Item 'C:\windows'
 $message = "Time: $directory.CreationTime"
 ```
 
 You would be expecting to get the `CreationTime` off of the `$directory`, but instead you get this
-`Time: c:\windows.CreationTime` as your value. The reason is that this type of substitution only
+`Time: C:\windows.CreationTime` as your value. The reason is that this type of substitution only
 sees the base variable. It considers the period as part of the string so it stops resolving the
 value any deeper.
 
@@ -175,7 +175,7 @@ This is often overlooked but a great cmdlet for building a file path.
 
 ```powershell
 $folder = 'Temp'
-Join-Path -Path 'c:\windows' -ChildPath $folder
+Join-Path -Path 'C:\windows' -ChildPath $folder
 ```
 
 The great thing about this is it works out the backslashes correctly when it puts the values
@@ -296,7 +296,7 @@ $name = 'Kevin Marquette'
 $string = $ExecutionContext.InvokeCommand.ExpandString($message)
 ```
 
-The call to `.InvokeCommand.ExpandString` on the current execution context uses the variables in
+The call to `InvokeCommand.ExpandString` on the current execution context uses the variables in
 the current scope for substitution. The key thing here is that the `$message` can be defined very
 early before the variables even exist.
 

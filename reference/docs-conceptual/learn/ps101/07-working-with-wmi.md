@@ -73,7 +73,7 @@ WMI, such as in the following example.
 ```vb
 strComputer = "."
 Set objWMIService = GetObject("winmgmts:" _
-    & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")
+    & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\CIMV2")
 
 Set colBIOS = objWMIService.ExecQuery _
     ("Select * from Win32_BIOS")

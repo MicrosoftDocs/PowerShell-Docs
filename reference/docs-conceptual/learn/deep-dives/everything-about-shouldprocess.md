@@ -181,7 +181,7 @@ function Test-ShouldProcess {
 }
 ```
 
-The call to `$PSCmdlet.ShouldProcess($file.name)` checks for the `-WhatIf` (and `-Confirm`
+The call to `$PSCmdlet.ShouldProcess($file.Name)` checks for the `-WhatIf` (and `-Confirm`
 parameter) then handles it accordingly. The `-WhatIf` causes `ShouldProcess` to output a
 description of the change and return `$false`:
 
@@ -298,7 +298,7 @@ if ($PSCmdlet.ShouldProcess('TARGET','OPERATION')){
 ```
 
 If I'm processing a collection of items, I call it for each item. So the call gets placed inside
-the foreach loop.
+the `foreach` loop.
 
 ```powershell
 foreach ($node in $collection){
@@ -567,7 +567,7 @@ This is the correct way to implement `-Force` with `ShouldContinue`.
 function Test-ShouldContinue {
     [CmdletBinding()]
     param(
-        [Switch]$Force
+        [switch]$Force
     )
 
     if($Force -or $PSCmdlet.ShouldContinue('TARGET','OPERATION')){
@@ -577,7 +577,7 @@ function Test-ShouldContinue {
 ```
 
 By placing the `$Force` to the left of the `-or` operator, it gets evaluated first. Writing it
-this way short circuits the execution of the `if` statement. If `$force` is `$true`, then the
+this way short circuits the execution of the `if` statement. If `$Force` is `$true`, then the
 `ShouldContinue` is not executed.
 
 ```powershell

@@ -54,8 +54,8 @@ encoded command.
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 @{
-    name       = 'EncodedCommand'
-    expression = {
+    Name       = 'EncodedCommand'
+    Expression = {
         if ( $_.CommandLine -match 'encodedCommand (.*) -inputFormat' )
         {
             return $Matches[1]
@@ -81,7 +81,7 @@ $commandDetails | ForEach-Object -Process {
 
     # Add the decoded command back to the object
     $commandDetails |
-        Where-Object -FilterScript { $_.ProcessId -eq $currentProcess.processId } |
+        Where-Object -FilterScript { $_.ProcessId -eq $currentProcess.ProcessId } |
         Add-Member -MemberType NoteProperty -Name DecodedCommand -Value $decodedCommand
 }
 $commandDetails[0] | Format-List -Property *

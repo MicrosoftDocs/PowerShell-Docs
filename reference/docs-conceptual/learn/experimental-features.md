@@ -196,19 +196,19 @@ This feature was added in PowerShell 7.4-preview.1.
 > [!NOTE]
 > This experimental feature was added in PowerShell 7.5-preview.4.
 
-When enabled, this feature adds support for redirecting to the variable drive. This feature allows
-you to redirect data to a variable using the `variable:name` syntax. PowerShell inspects the target
-of the redirection and if it uses the variable provider it calls `Set-Variable` rather than
+When enabled, this feature adds support for redirecting to the Variable: drive. This feature allows
+you to redirect data to a variable using the `Variable:name` syntax. PowerShell inspects the target
+of the redirection and if it uses the Variable provider it calls `Set-Variable` rather than
 `Out-File`.
 
-The following example shows how to redirect the output of a command to a variable:
+The following example shows how to redirect the output of a command to a Variable:
 
 ```powershell
 . {
     "Output 1"
     Write-Warning "Warning, Warning!"
     "Output 2"
-} 3> variable:warnings
+} 3> Variable:warnings
 $warnings
 ```
 

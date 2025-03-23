@@ -110,7 +110,7 @@ services.
 
 ```powershell
 Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} |
-  Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
+  Format-Table -Property Status, Name, RequiredServices, DependentServices -Auto
 ```
 
 ## Stopping, starting, suspending, and restarting services
