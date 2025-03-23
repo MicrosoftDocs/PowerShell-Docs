@@ -143,7 +143,7 @@ Administrator privileges are required for the following remoting operations:
   known as a "loopback" scenario.
 - Managing session configurations on the local computer.
 - Viewing and changing WS-Management settings on the local computer. These are
-  the settings in the LocalHost node of the WSMAN: drive.
+  the settings in the LocalHost node of the WSMan: drive.
 
 You must start PowerShell with the **Run as administrator** option even if you
 are a member of the **Administrators** group on the local computer.

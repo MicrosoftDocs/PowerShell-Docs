@@ -239,7 +239,7 @@ configurations.
 To see the **RootSDDL** security descriptor, type:
 
 ```powershell
-Get-Item wsman:\localhost\Service\RootSDDL
+Get-Item WSMan:\localhost\Service\RootSDDL
 ```
 
 To change the **RootSDDL**, use the `Set-Item` cmdlet in the `WSMan:` drive. To
@@ -383,14 +383,14 @@ trusted hosts on the computer.
 To view the list of trusted hosts, use the following command:
 
 ```powershell
-Get-Item wsman:\localhost\Client\TrustedHosts
+Get-Item WSMan:\localhost\Client\TrustedHosts
 ```
 
 The following example uses the wildcard character (`*`) to add all computers to
 the list of trusted hosts.
 
 ```powershell
-Set-Item wsman:localhost\client\trustedhosts -Value *
+Set-Item WSMan:localhost\client\trustedhosts -Value *
 ```
 
 You can also use a wildcard character (`*`) to add all computers in a
@@ -398,14 +398,14 @@ particular domain to the list of trusted hosts. For example, the following
 command adds all of the computers in the Fabrikam domain.
 
 ```powershell
-Set-Item wsman:localhost\client\trustedhosts *.fabrikam.com
+Set-Item WSMan:localhost\client\trustedhosts *.fabrikam.com
 ```
 
 The following example set the list of trusted hosts to a single computer.
 
 ```powershell
 $server = 'Server01.Domain01.Fabrikam.com'
-Set-Item wsman:\localhost\Client\TrustedHosts -Value $server
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value $server
 ```
 
 To add a computer name to an existing list of trusted hosts, first save the
@@ -416,21 +416,21 @@ The following example add Server01 to an existing list of trusted hosts.
 
 ```powershell
 $newServer = 'Server01.Domain01.Fabrikam.com'
-$curValue = (Get-Item wsman:\localhost\Client\TrustedHosts).Value
-Set-Item wsman:\localhost\Client\TrustedHosts -Value "$curValue, $newServer"
+$curValue = (Get-Item WSMan:\localhost\Client\TrustedHosts).Value
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "$curValue, $newServer"
 ```
 
 To add the IP addresses of particular computers to the list of trusted hosts,
 use the following command format:
 
 ```powershell
-Set-Item wsman:\localhost\Client\TrustedHosts -Value <IP Address>
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value <IP Address>
 ```
 
 For example:
 
 ```powershell
-Set-Item wsman:\localhost\Client\TrustedHosts -Value 172.16.0.0
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value 172.16.0.0
 ```
 
 To add a computer to the **TrustedHosts** list of a remote computer, use the
@@ -456,7 +456,7 @@ Use `Set-Item` cmdlet to change the **Port** value in the listener leaf node.
 For example, the following command changes the default port to 8080.
 
 ```powershell
-Set-Item wsman:\localhost\listener\listener*\port -Value 8080
+Set-Item WSMan:\localhost\listener\listener*\port -Value 8080
 ```
 
 ## How to configure remoting with a proxy server
@@ -519,17 +519,17 @@ For error:
 If the remote computer is running a 64-bit version of Windows, and the remote
 command uses a 32-bit session configuration, like **Microsoft.PowerShell32**,
 WinRM loads a WOW64 process. Windows automatically redirects all references to
-`$env:Windir\System32` to the `$env:Windir\SysWOW64` directory.
+`$Env:windir\System32` to the `$Env:windir\SysWOW64` directory.
 
 As a result, running tools in the `System32` directory that do not have
-counterparts in the `SysWow64` directory can't be found.
+counterparts in the `SysWOW64` directory can't be found.
 
 To find the processor architecture that is being used in the session, use the
 value of the **PROCESSOR_ARCHITECTURE** environment variable.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01 -ConfigurationName CustomShell
-Invoke-Command -Session $s {$env:PROCESSOR_ARCHITECTURE}
+Invoke-Command -Session $s {$Env:PROCESSOR_ARCHITECTURE}
 ```
 
 ```Output
@@ -568,7 +568,7 @@ for the current process. The change only affects the current process.
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 ```
 
-You can also use the **ExecutionPolicy** parameter of `PowerShell.exe` to start
+You can also use the **ExecutionPolicy** parameter of `powershell.exe` to start
 a single session with a less restrictive execution policy.
 
 ```powershell

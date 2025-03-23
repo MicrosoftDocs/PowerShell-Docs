@@ -230,7 +230,7 @@ input strings.
 There's a static method of the regex class that can escape text for you.
 
 ```powershell
-[regex]::escape('3.\d{2,}')
+[regex]::Escape('3.\d{2,}')
 ```
 
 ```Output
