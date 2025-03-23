@@ -48,7 +48,7 @@ The `Get-Module` cmdlet lists the PowerShell modules that have been imported, or
 imported, into a PowerShell session. Without parameters, `Get-Module` gets modules that have been
 imported into the current session. The **ListAvailable** parameter is used to list the modules that
 are available to be imported from the paths specified in the **PSModulePath** environment variable
-(`$env:PSModulePath`).
+(`$Env:PSModulePath`).
 
 The module object that `Get-Module` returns contains valuable information about the module. You can
 also pipe the module objects to other cmdlets, such as the `Import-Module` and `Remove-Module`
@@ -80,7 +80,7 @@ These include computers that are not running the Windows operating system, and c
 PowerShell but do not have PowerShell remoting enabled.
 
 Start by creating a CIM session on the remote computer. A CIM session is a connection to Windows
-Management Instrumentation (WMI) on the remote computer. Then use the **CIMSession** parameter of
+Management Instrumentation (WMI) on the remote computer. Then use the **CimSession** parameter of
 `Get-Module` to get CIM modules from the CIM session. When you import a CIM module by using the
 `Import-Module` cmdlet and then run the imported commands, the commands run implicitly on the remote
 computer. You can use this WMI and CIM strategy to manage the remote computer.
@@ -104,7 +104,7 @@ Get-Module -ListAvailable
 This command gets the modules that are installed on the computer and can be imported into the
 current session.
 
-`Get-Module` looks for available modules in the path specified by the **$env:PSModulePath**
+`Get-Module` looks for available modules in the path specified by the **$Env:PSModulePath**
 environment variable. For more information about **PSModulePath**, see
 [about_Modules](About/about_Modules.md) and
 [about_Environment_Variables](About/about_Environment_Variables.md).
@@ -200,7 +200,7 @@ in Windows PowerShell 3.0.
 ### Example 6: Group all modules by name
 
 ```powershell
-Get-Module -ListAvailable -All | Format-Table -Property Name, Moduletype, Path -Groupby Name
+Get-Module -ListAvailable -All | Format-Table -Property Name, ModuleType, Path -GroupBy Name
 ```
 
 ```Output
@@ -248,7 +248,7 @@ information about a module, its requirements, and its contents.
 
 ```powershell
 # First command
-$m = Get-Module -list -Name BitsTransfer
+$m = Get-Module -List -Name BitsTransfer
 
 # Second command
 Get-Content $m.Path
@@ -661,7 +661,7 @@ Windows PowerShell includes the following aliases for `Get-Module`:
   [CreateDefault2 Method](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2).
 
 - `Get-Module` only gets modules in locations that are stored in the value of the **PSModulePath**
-  environment variable (`$env:PSModulePath`). The `Import-Module` cmdlet can import modules in other
+  environment variable (`$Env:PSModulePath`). The `Import-Module` cmdlet can import modules in other
   locations, but you cannot use the `Get-Module` cmdlet to get them.
 
 - Also, starting in PowerShell 3.0, new properties have been added to the object that `Get-Module`

@@ -472,7 +472,7 @@ script, or workflow, such as `Get-Member`, a conceptual article name, such as `a
 alias, such as `ls`. Wildcard characters are permitted in cmdlet and provider names, but you can't
 use wildcard characters to find the names of function help and script help articles.
 
-To get help for a script that isn't located in a path that's listed in the `$env:Path` environment
+To get help for a script that isn't located in a path that's listed in the `$Env:PATH` environment
 variable, type the script's path and file name.
 
 If you enter the exact name of a help article, `Get-Help` displays the article contents.

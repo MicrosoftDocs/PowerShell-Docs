@@ -42,7 +42,7 @@ have been imported into the current session, use the **ListImported** parameter.
 
 Without parameters, `Get-Command` gets all the cmdlets, functions, and aliases installed on the
 computer. `Get-Command *` gets all types of commands, including all the non-PowerShell files in the
-Path environment variable (`$env:PATH`), which it lists in the Application command type.
+PATH environment variable (`$Env:PATH`), which it lists in the Application command type.
 
 `Get-Command` that uses the exact name of the command, without wildcard characters, automatically
 imports the module that contains the command so that you can use the command immediately. To enable,
@@ -115,7 +115,7 @@ This command uses the **ArgumentList** and **Syntax** parameters to get the synt
 the Certificate Provider adds to the session.
 
 ```powershell
-Get-Command  -Name Get-Childitem -Args Cert: -Syntax
+Get-Command  -Name Get-ChildItem -Args Cert: -Syntax
 ```
 
 When you compare the syntax displayed in the output with the syntax that's displayed when you omit
@@ -155,7 +155,7 @@ cmdlet by another cmdlet or a provider.
 ### Example 8: Get all commands of all types
 
 This command gets all commands of all types on the local computer, including executable files in the
-paths of the **Path** environment variable (`$env:PATH`).
+paths of the **PATH** environment variable (`$Env:PATH`).
 
 ```powershell
 Get-Command *
@@ -285,7 +285,7 @@ code defines the **OutputType** attribute for the cmdlet.
 ### Example 15: Get cmdlets that take a specific object type as input
 
 ```powershell
-Get-Command -ParameterType (((Get-NetAdapter)[0]).PSTypeNames)
+Get-Command -ParameterType (((Get-NetAdapter)[0]).pstypenames)
 ```
 
 ```Output
@@ -301,9 +301,9 @@ Function        Set-NetAdapter                                     NetAdapter
 This command finds cmdlets that take net adapter objects as input. You can use this command format
 to find the cmdlets that accept the type of objects that any command returns.
 
-The command uses the **PSTypeNames** intrinsic property of all objects, which gets the types that
-describe the object. To get the **PSTypeNames** property of a net adapter, and not the
-**PSTypeNames** property of a collection of net adapters, the command uses array notation to get the
+The command uses the **pstypenames** intrinsic property of all objects, which gets the types that
+describe the object. To get the **pstypenames** property of a net adapter, and not the
+**pstypenames** property of a collection of net adapters, the command uses array notation to get the
 first net adapter that the cmdlet returns.
 
 ### Example 16: Get commands using a fuzzy match
@@ -391,15 +391,15 @@ The acceptable values for this parameter are:
 
 - `All`: Gets all command types. This parameter value is the equivalent of `Get-Command *`.
 
-- `Application`: Searches folders in the `$env:PATH` environment variable for non-PowerShell
+- `Application`: Searches folders in the `$Env:PATH` environment variable for non-PowerShell
   executable files. On Windows, executable files have a file extension that is listed in the
-  `$env:PATHEXT` environment variable. For more information, see
+  `$Env:PATHEXT` environment variable. For more information, see
   [about_Environment_Variables](About/about_Environment_Variables.md).
 
 - `Cmdlet`: Gets all cmdlets.
 
-- `ExternalScript`: Gets all `.ps1` files in the paths listed in the **Path** environment variable
-  (`$env:PATH`).
+- `ExternalScript`: Gets all `.ps1` files in the paths listed in the **PATH** environment variable
+  (`$Env:PATH`).
 
 - `Filter` and `Function`: Gets all PowerShell advanced and simple functions and filters.
 

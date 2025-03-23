@@ -117,20 +117,20 @@ remote computer. When the session starts, the command prompt changes to include 
 The second command gets the PowerShell process and redirects the output to the `Process.txt` file.
 The command is submitted to the remote computer, and the file is saved on the remote computer.
 
-The third command uses the **Exit** keyword to end the interactive session and close the connection.
+The third command uses the `exit` keyword to end the interactive session and close the connection.
 The fourth command confirms that the Process.txt file is on the remote computer. A `Get-ChildItem`
 ("dir") command on the local computer cannot find the file.
 
 ```powershell
 PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\>
-[Server01]: PS C:\> Get-Process PowerShell > C:\ps-test\Process.txt
+[Server01]: PS C:\> Get-Process powershell > C:\ps-test\Process.txt
 [Server01]: PS C:\> exit
 PS C:\>
 PS C:\> dir C:\ps-test\Process.txt
 Get-ChildItem : Cannot find path 'C:\ps-test\Process.txt' because it does not exist.
 At line:1 char:4
-+ dir <<<<  c:\ps-test\Process.txt
++ dir <<<<  C:\ps-test\Process.txt
 ```
 
 This command shows how to work in an interactive session with a remote computer.
@@ -169,7 +169,7 @@ This example shows how to start and stop an interactive session. The first comma
 `Enter-PSSession` cmdlet to start an interactive session with the Server01 computer.
 
 The second command uses the `Exit-PSSession` cmdlet to end the session. You can also use the
-**Exit** keyword to end the interactive session. `Exit-PSSession` and **Exit** have the same effect.
+`exit` keyword to end the interactive session. `Exit-PSSession` and `exit` have the same effect.
 
 ## PARAMETERS
 
@@ -484,7 +484,7 @@ Specifies the instance ID of an existing session. `Enter-PSSession` uses the spe
 the interactive session.
 
 The instance ID is a GUID. To find the instance ID of a session, use the `Get-PSSession` cmdlet. You
-can also use the **Session**, **Name**, or **ID** parameters to specify an existing session. Or, you
+can also use the **Session**, **Name**, or **Id** parameters to specify an existing session. Or, you
 can use the **ComputerName** parameter to start a temporary session.
 
 ```yaml
@@ -505,7 +505,7 @@ Specifies the friendly name of an existing session. `Enter-PSSession` uses the s
 the interactive session.
 
 If the name that you specify matches more than one session, the command fails. You can also use the
-**Session**, **InstanceID**, or **ID** parameters to specify an existing session. Or, you can use
+**Session**, **InstanceId**, or **Id** parameters to specify an existing session. Or, you can use
 the **ComputerName** parameter to start a temporary session.
 
 To establish a friendly name for a session, use the **Name** parameter of the `New-PSSession`
@@ -571,7 +571,7 @@ Accept wildcard characters: False
 ### -Session
 
 Specifies a PowerShell session (**PSSession**) to use for the interactive session. This parameter
-takes a session object. You can also use the **Name**, **InstanceID**, or **ID** parameters to
+takes a session object. You can also use the **Name**, **InstanceId**, or **Id** parameters to
 specify a **PSSession**.
 
 Enter a variable that contains a session object or a command that creates or gets a session object,
@@ -579,7 +579,7 @@ such as a `New-PSSession` or `Get-PSSession` command. You can also pipe a sessio
 `Enter-PSSession`. You can submit only one **PSSession** by using this parameter. If you enter a
 variable that contains more than one **PSSession**, the command fails.
 
-When you use `Exit-PSSession` or the **EXIT** keyword, the interactive session ends, but the
+When you use `Exit-PSSession` or the `exit` keyword, the interactive session ends, but the
 **PSSession** that you created remains open and available for use.
 
 ```yaml

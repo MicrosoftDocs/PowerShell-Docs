@@ -63,7 +63,7 @@ saves it in the History.csv file. The file includes the data that is displayed w
 history as a list. This includes the status and start and end times of the command.
 
 ```powershell
-Get-History -ID 7 -Count 5 | Export-Csv -Path History.csv
+Get-History -Id 7 -Count 5 | Export-Csv -Path History.csv
 ```
 
 ### Example 4: Display the most recent command

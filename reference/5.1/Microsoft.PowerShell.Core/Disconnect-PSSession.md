@@ -221,7 +221,7 @@ OutputBufferingMode           : Block
 AutoRestart                   : false
 SecurityDescriptorSddl        : O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;SA;GXGW;;;WD)
 MaxMemoryPerShellMB           : 1024
-MaxIdleTimeoutms              : 2147483647
+MaxIdleTimeoutMs              : 2147483647
 Uri                           : http://schemas.microsoft.com/powershell/microsoft.powershell
 SDKVersion                    : 2
 Name                          : microsoft.powershell
@@ -296,7 +296,7 @@ violation can go undetected while the session is in use.
 The fourth command uses the `Invoke-Command` cmdlet to run a `Get-PSSessionConfiguration` command
 for the `Microsoft.PowerShell` session configuration on the Server01 computer. The command uses the
 `Format-List` cmdlet to display all properties of the session configuration in a list.The output
-shows that the **MaxIdleTimeoutMS** property, which establishes the maximum permitted
+shows that the **MaxIdleTimeoutMs** property, which establishes the maximum permitted
 **IdleTimeout** value for sessions that use the session configuration, is `43200000` milliseconds
 (12 hours).
 
@@ -321,7 +321,7 @@ which is measured in milliseconds. The output confirms that the command was succ
 Disconnects from sessions with the specified session ID. Type one or more IDs (separated by
 commas), or use the range operator (`..`) to specify a range of IDs.
 
-To get the ID of a session, use the `Get-PSSession` cmdlet. The instance ID is stored in the **ID**
+To get the ID of a session, use the `Get-PSSession` cmdlet. The instance ID is stored in the **Id**
 property of the session.
 
 ```yaml
@@ -376,7 +376,7 @@ The instance ID is a GUID that uniquely identifies a session on a local or remot
 instance ID is unique, even across multiple sessions on multiple computers.
 
 To get the instance ID of a session, use the `Get-PSSession` cmdlet. The instance ID is stored in
-the **InstanceID** property of the session.
+the **InstanceId** property of the session.
 
 ```yaml
 Type: System.Guid[]
