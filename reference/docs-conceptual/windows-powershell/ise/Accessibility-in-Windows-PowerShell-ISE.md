@@ -165,12 +165,12 @@ You can use the following keyboard shortcuts when you use Windows PowerShell tab
 ## Keyboard shortcuts for starting and exiting
 
 You can use the following keyboard shortcuts to start the Windows PowerShell console
-(**PowerShell.exe**) or to exit Windows PowerShell ISE.
+(`powershell.exe`) or to exit Windows PowerShell ISE.
 
 |                        Action                         |               Keyboard Shortcut               |
 | ----------------------------------------------------- | --------------------------------------------- |
 | **Exit**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
-| **Start PowerShell.exe** (Windows PowerShell console) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> |
+| **Start powershell.exe** (Windows PowerShell console) | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> |
 
 ## Breakpoint Management
 

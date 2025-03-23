@@ -49,7 +49,7 @@ The following buttons are located on the toolbar.
 | **Run Selection**              | Runs a selected portion of a script.                                                                                                                                             |
 | **Stop Operation**             | Stops a script that's running.                                                                                                                                                   |
 | **New Remote PowerShell Tab**  | Creates a new PowerShell Tab that establishes a session on a remote computer. A dialog box appears and prompts you to enter details required to establish the remote connection. |
-| **Start PowerShell.exe**       | Opens a PowerShell Console.                                                                                                                                                      |
+| **Start powershell.exe**       | Opens a PowerShell Console.                                                                                                                                                      |
 | **Show Script Pane Top**       | Moves the Script Pane to the top in the display.                                                                                                                                 |
 | **Show Script Pane Right**     | Moves the Script Pane to the right in the display.                                                                                                                               |
 | **Show Script Pane Maximized** | Maximizes the Script Pane.                                                                                                                                                       |

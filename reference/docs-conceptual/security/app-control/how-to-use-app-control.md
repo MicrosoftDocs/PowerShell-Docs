@@ -63,16 +63,16 @@ For testing, you just need to create a default policy and a self signed code sig
 
    ```powershell
    $newSelfSignedCertificateSplat = @{
-       DnsName = $env:COMPUTERNAME
+       DnsName = $Env:COMPUTERNAME
        CertStoreLocation = "Cert:\CurrentUser\My\"
        Type = 'CodeSigningCert'
    }
    $cert = New-SelfSignedCertificate @newSelfSignedCertificateSplat
-   Export-Certificate -Cert $cert -FilePath c:\certs\signing.cer
+   Export-Certificate -Cert $cert -FilePath C:\certs\signing.cer
    Import-Certificate -FilePath C:\certs\signing.cer -CertStoreLocation "Cert:\CurrentUser\Root\"
    $cert = Get-ChildItem Cert:\CurrentUser\My\ -CodeSigningCert
 
-   dir c:\bin\powershell\pwsh.exe | Set-AuthenticodeSignature -Certificate $cert
+   dir C:\bin\PowerShell\pwsh.exe | Set-AuthenticodeSignature -Certificate $cert
    ```
 
 1. Add the code signing certificate to the policy
@@ -80,7 +80,7 @@ For testing, you just need to create a default policy and a self signed code sig
    Use the following command to add the new code signing certificate to the policy.
 
    ```powershell
-   Add-SignerRule -FilePath .\SystemCIPolicy.xml -CertificatePath c:\certs\signing.cer -User
+   Add-SignerRule -FilePath .\SystemCIPolicy.xml -CertificatePath C:\certs\signing.cer -User
    ```
 
 1. Convert the XML policy file to a policy enforcement binary file
@@ -134,7 +134,7 @@ events.
 
 ```powershell
 Get-WinEvent -LogName PowerShellCore/Analytic -Oldest |
-    Where-Object Id -eq 16387 | Format-List
+    Where-Object Id -EQ 16387 | Format-List
 ```
 
 ```Output

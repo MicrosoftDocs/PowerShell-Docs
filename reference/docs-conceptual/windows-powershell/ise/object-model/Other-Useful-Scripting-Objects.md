@@ -53,7 +53,7 @@ Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.ht
 The following script adds an entry to the list.
 
 ```powershell
-$psLocalHelp.Add("get-myNoun", "c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57ae-aa0c-87b5e5a84712.htm")
+$psLocalHelp.Add("Get-MyNoun", "C:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57ae-aa0c-87b5e5a84712.htm")
 ```
 
 ### $psOnlineHelp
@@ -77,7 +77,7 @@ Value : https://go.microsoft.com/fwlink/p/?LinkID=113278
 The following script adds an entry to the list.
 
 ```powershell
-$psOnlineHelp.Add("get-myNoun", "https://www.mydomain.com/MyNoun.html")
+$psOnlineHelp.Add("Get-MyNoun", "https://www.mydomain.com/MyNoun.html")
 ```
 
 ## See Also

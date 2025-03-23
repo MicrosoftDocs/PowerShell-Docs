@@ -29,7 +29,7 @@ If set to `$true`, the add-on tool is immediately visible in the associated tool
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
-[reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
+[Reflection.Assembly]::LoadFile("C:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
@@ -44,7 +44,7 @@ Specifies the object to be removed from Windows PowerShell ISE.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE
-[reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
+[Reflection.Assembly]::LoadFile("C:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 

@@ -88,7 +88,7 @@ sections:
 
           These cmdlets include the following:
 
-          - `Get-Hotfix`
+          - `Get-HotFix`
           - `Rename-Computer`
           - `Restart-Computer`
           - `Stop-Computer`
@@ -112,7 +112,7 @@ sections:
           For example:
 
           ```PowerShell
-          Get-Help Get-Hotfix -Parameter ComputerName
+          Get-Help Get-HotFix -Parameter ComputerName
           ```
 
           For all other commands, use the `Invoke-Command` cmdlet.
@@ -326,7 +326,7 @@ sections:
           [about_Remote_Jobs](/powershell/module/microsoft.powershell.core/about/about_remote_jobs).
 
       - question: |
-          Can I run windows programs on a remote computer?
+          Can I run Windows programs on a remote computer?
         answer: |
           You can use PowerShell remote commands to run Windows-based programs on remote computers.
           For example, you can run `Shutdown.exe` or `Ipconfig.exe` on a remote computer.

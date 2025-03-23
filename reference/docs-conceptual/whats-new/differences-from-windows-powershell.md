@@ -301,7 +301,7 @@ Additional changes to `pwsh(.exe)` from `powershell.exe`:
 - `pwsh` accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell.
   This allows PowerShell to be used as a default shell on Unix platforms.
 - Removed parameters `-ImportSystemModules` and `-PSConsoleFile` from `pwsh.exe`.
-- Changed `pwsh -version` and built-in help for `pwsh.exe` to align with other native tools.
+- Changed `pwsh -Version` and built-in help for `pwsh.exe` to align with other native tools.
 - Invalid argument error messages for `-File` and `-Command` and exit codes consistent with Unix
   standards
 - Added `-WindowStyle` parameter on Windows. Similarly, package-based installations updates on
@@ -346,7 +346,7 @@ The PowerShell 7.2 MSI package includes following command-line options:
 On Unix, it is a convention for shells to accept `-i` for an interactive shell and many tools
 expect this behavior (`script` for example, and when setting PowerShell as the default shell) and
 calls the shell with the `-i` switch. This change is breaking in that `-i` previously could be used
-as short hand to match `-inputformat`, which now needs to be `-in`.
+as short hand to match `-InputFormat`, which now needs to be `-in`.
 
 ### Custom snap-ins
 
@@ -401,7 +401,7 @@ tools and operating systems.
 
 ### Unify cmdlets with parameter `-Encoding` to be of type `System.Text.Encoding`
 
-The `-Encoding` value `Byte` has been removed from the filesystem provider cmdlets. A new parameter,
+The `-Encoding` value `Byte` has been removed from the FileSystem provider cmdlets. A new parameter,
 `-AsByteStream`, is now used to specify that a byte stream is required as input or that the output
 is a stream of bytes.
 
@@ -636,7 +636,7 @@ You can convert a `PSMethod` into a delegate. This allows you to do things like 
 class M {
     static [int] DoubleStrLen([string] $value) { return 2 * $value.Length }
 
-    static [long] AggregateString([string[]] $values, [func[string, int]] $selector) {
+    static [long] AggregateString([string[]] $values, [Func[string, int]] $selector) {
         [long] $res = 0
         foreach($s in $values){
             $res += $selector.Invoke($s)
@@ -729,7 +729,7 @@ With **ConciseView**, if an error is not from a script or parser error, then it'
 error message:
 
 ```powershell
-Get-Childitem -Path c:\NotReal
+Get-ChildItem -Path C:\NotReal
 ```
 
 ```Output
@@ -803,8 +803,8 @@ name.
 The new **ThrottleLimit** parameter limits the number of script blocks running in parallel at a
 given time. The default is 5.
 
-Use the `$_` variable to represent the current input object in the script block. Use the `$using:`
-scope to pass variable references to the running script block.
+Use the `$_` variable to represent the current input object in the script block. Use the `Using:`
+scope modifier to pass variable references to the running script block.
 
 For more information, see [ForEach-Object][12].
 
@@ -899,15 +899,15 @@ Previously, the `Import-Csv` cmdlet cannot be used to directly import the log fi
 log format and additional action would be required. With this change, W3C extended log format is
 supported.
 
-### `Import-Csv` applies `PSTypeNames` upon import when type information is present in the CSV
+### `Import-Csv` applies `pstypenames` upon import when type information is present in the CSV
 
-Previously, objects exported using `Export-CSV` with `TypeInformation` imported with
+Previously, objects exported using `Export-Csv` with `TypeInformation` imported with
 `ConvertFrom-Csv` were not retaining the type information. This change adds the type information to
-`PSTypeNames` member if available from the CSV file.
+`pstypenames` member if available from the CSV file.
 
 ### `-NoTypeInformation` is the default on `Export-Csv`
 
-Previously, the `Export-CSV` cmdlet would output a comment as the first line containing the type
+Previously, the `Export-Csv` cmdlet would output a comment as the first line containing the type
 name of the object. The change excludes the type information by default because it's not understood
 by most CSV tools. This change was made to address customer feedback.
 
@@ -963,7 +963,7 @@ In the past, PowerShell shipped a function on Windows called `more` that wrapped
 function has now been removed.
 
 Also, the `help` function changed to use `more.com` on Windows, or the system's default pager
-specified by `$env:PAGER` on non-Windows platforms.
+specified by `$Env:PAGER` on non-Windows platforms.
 
 ### `cd DriveName:` now returns users to the current working directory in that drive
 

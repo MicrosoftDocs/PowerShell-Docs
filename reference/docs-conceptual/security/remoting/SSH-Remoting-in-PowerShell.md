@@ -68,7 +68,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    > If you want to set PowerShell as the default shell for OpenSSH, see
    > [Configuring Windows for OpenSSH][07].
 
-1. Edit the `sshd_config` file located at `$env:ProgramData\ssh`.
+1. Edit the `sshd_config` file located at `$Env:ProgramData\ssh`.
 
    Make sure password authentication is enabled:
 
@@ -79,15 +79,15 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    Create the SSH subsystem that hosts a PowerShell process on the remote computer:
 
    ```
-   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -nologo
+   Subsystem powershell C:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo
    ```
 
    > [!NOTE]
-   > Starting in PowerShell 7.4, you no longer need to use the `-nologo` parameter when running
+   > Starting in PowerShell 7.4, you no longer need to use the `-NoLogo` parameter when running
    > PowerShell in SSH server mode.
 
    > [!NOTE]
-   > The default location of the PowerShell executable is `c:/progra~1/powershell/7/pwsh.exe`. The
+   > The default location of the PowerShell executable is `C:/progra~1/powershell/7/pwsh.exe`. The
    > location can vary depending on how you installed PowerShell.
    >
    > You must use the 8.3 short name for any file paths that contain spaces. There's a bug in
@@ -105,7 +105,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    > ```Output
    > EightDotThreeFileName
    > ---------------------
-   > c:\progra~1
+   > C:\progra~1
    > ```
 
    Optionally, enable key authentication:
@@ -122,7 +122,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    Restart-Service sshd
    ```
 
-1. Add the path where OpenSSH is installed to your Path environment variable. For example,
+1. Add the path where OpenSSH is installed to your PATH environment variable. For example,
    `C:\Program Files\OpenSSH\`. This entry allows for the `ssh.exe` to be found.
 
 ## Install the SSH service on an Ubuntu Linux computer
@@ -155,7 +155,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    Add a PowerShell subsystem entry:
 
    ```
-   Subsystem powershell /usr/bin/pwsh -sshs -nologo
+   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -163,7 +163,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    > depending on how you installed PowerShell.
 
    > [!NOTE]
-   > Starting in PowerShell 7.4, you no longer need to use the `-nologo` parameter when running
+   > Starting in PowerShell 7.4, you no longer need to use the `-NoLogo` parameter when running
    > PowerShell in SSH server mode.
 
 1. Restart the **ssh** service.
@@ -202,7 +202,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    Add a PowerShell subsystem entry:
 
    ```
-   Subsystem powershell /usr/local/bin/pwsh -sshs -nologo
+   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -210,7 +210,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    > vary depending on how you installed PowerShell.
 
    > [!NOTE]
-   > Starting in PowerShell 7.4, you no longer need to use the `-nologo` parameter when running
+   > Starting in PowerShell 7.4, you no longer need to use the `-NoLogo` parameter when running
    > PowerShell in SSH server mode.
 
    Optionally, enable key authentication:

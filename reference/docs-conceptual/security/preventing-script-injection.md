@@ -202,7 +202,7 @@ You can use this to automate security analysis during builds, continuous integra
 deployments, and other scenarios.
 
 ```powershell
-$RulePath = (Get-Module -list InjectionHunter).Path
+$RulePath = (Get-Module -List InjectionHunter).Path
 Invoke-ScriptAnalyzer -CustomRulePath $RulePath -Path .\Invoke-Dangerous.ps1
 ```
 

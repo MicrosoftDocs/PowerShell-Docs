@@ -37,8 +37,8 @@ This is a work in progress. Please help us keep this information fresh.
 | [Microsoft.PowerShell.Utility][17]              | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                             |
 | [Microsoft.WsMan.Management][18]                | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] | Windows only                                |
 | [PackageManagement][19]                         | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |                                             |
-| [PowershellGet 1.1][20]                         | ![Included][01] |                 |                 |                 | Must upgrade to v2.x                        |
-| [PowershellGet 2.x][20]                         |                 | ![Included][01] | ![Included][01] | ![Included][01] | New versions available from the Gallery     |
+| [PowerShellGet 1.1][20]                         | ![Included][01] |                 |                 |                 | Must upgrade to v2.x                        |
+| [PowerShellGet 2.x][20]                         |                 | ![Included][01] | ![Included][01] | ![Included][01] | New versions available from the Gallery     |
 | [PSDesiredStateConfiguration 1.1][21]           | ![Included][01] |                 |                 |                 | Removed in 7.2 - available from the Gallery |
 | [PSDesiredStateConfiguration 2.x][22]           |                 |                 |                 |                 | Removed in 7.2 - available from the Gallery |
 | [PSDesiredStateConfiguration 3.x][23]           |                 |                 |                 |                 | Preview available from the Gallery          |
@@ -517,7 +517,7 @@ This modules is only available in Windows PowerShell.
 | Uninstall-Package        | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
 | Unregister-PackageSource | ![Included][01] | ![Included][01] | ![Included][01] | ![Included][01] |      |
 
-### PowershellGet 2.x
+### PowerShellGet 2.x
 
 |           Cmdlet name           |       5.1       |       7.4       |       7.5       |       7.6       | Note |
 | ------------------------------- | --------------- | --------------- | --------------- | --------------- | ---- |

@@ -36,7 +36,7 @@ returns **Unrestricted** on Linux and macOS. `Set-ExecutionPolicy` does nothing 
 
 ## Case-sensitivity in PowerShell
 
-Historically, PowerShell has been uniformly case-insensitive, with few exceptions. On UNIX-like
+Historically, PowerShell has been uniformly case-insensitive, with few exceptions. On Unix-like
 operating systems, the file system is predominantly case-sensitive, and PowerShell adheres to the
 standard of the file system.
 
@@ -54,7 +54,7 @@ standard of the file system.
 - Paths given to cmdlets are now slash-agnostic (both `/` and `\` work as directory separators)
 - XDG Base Directory Specification is now respected and used by default:
   - The Linux/macOS profile path is located at `~/.config/powershell/profile.ps1`
-  - The history save path is located at `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
+  - The history save path is located at `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
   - The user module path is located at `~/.local/share/powershell/Modules`
 - Support for file and folder names containing the colon character on Unix.
 - Support for script names or full paths that have commas.
