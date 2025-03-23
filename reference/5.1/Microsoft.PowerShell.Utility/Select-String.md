@@ -42,7 +42,7 @@ Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-Cas
 ## DESCRIPTION
 
 The `Select-String` cmdlet uses regular expression matching to search for text patterns in input
-strings and files. You can use `Select-String` similar to `grep` in UNIX or `findstr.exe` in
+strings and files. You can use `Select-String` similar to `grep` in Unix or `findstr.exe` in
 Windows.
 
 `Select-String` is based on lines of text. By default, `Select-String` finds the first match in each
@@ -148,7 +148,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.
 C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.help.txt:33:  about_CommonParameters.
 ```
 
-The function is created on the PowerShell command line. The `Function` command uses the name
+The function is created on the PowerShell command line. The `function` keyword uses the name
 `Search-Help`. Press **Enter** to begin adding statements to the function. From the `>>` prompt,
 add each statement and press **Enter** as shown in the example. After the closing bracket is added,
 you're returned to a PowerShell prompt.
@@ -171,7 +171,7 @@ object in the pipeline. For more information, see [about_Automatic_Variables](..
 
 ```powershell
 $Events = Get-WinEvent -LogName Application -MaxEvents 50
-$Events | Select-String -InputObject {$_.message} -Pattern 'Failed'
+$Events | Select-String -InputObject {$_.Message} -Pattern 'Failed'
 ```
 
 The `Get-WinEvent` cmdlet uses the **LogName** parameter to specify the Application log. The
@@ -179,9 +179,9 @@ The `Get-WinEvent` cmdlet uses the **LogName** parameter to specify the Applicat
 the variable named `$Events`.
 
 The `$Events` variable is sent down the pipeline to the `Select-String` cmdlet. `Select-String` uses
-the **InputObject** parameter. The `$_` variable represents the current object and `message` is a
+the **InputObject** parameter. The `$_` variable represents the current object and `Message` is a
 property of the event. The **Pattern** parameter specifies the string **Failed** and searches for
-matches in `$_.message`. `Select-String` displays the output in the PowerShell console.
+matches in `$_.Message`. `Select-String` displays the output in the PowerShell console.
 
 ### Example 6: Find a string in subdirectories
 
@@ -685,7 +685,7 @@ Windows PowerShell includes the following aliases for `Select-String`:
 
 - `sls`
 
-`Select-String` is similar to `grep` in UNIX or `findstr.exe` in Windows.
+`Select-String` is similar to `grep` in Unix or `findstr.exe` in Windows.
 
 > [!NOTE]
 > According to

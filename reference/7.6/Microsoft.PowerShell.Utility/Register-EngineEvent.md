@@ -47,7 +47,7 @@ This example registers for a PowerShell engine event on two remote computers.
 ```powershell
 $S = New-PSSession -ComputerName "Server01, Server02"
 Invoke-Command -Session $S {
-  Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward
+  Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PSEngineEvent]::Exiting) -Forward
 }
 ```
 
@@ -81,13 +81,13 @@ data to a text file.
 
 ```powershell
 Register-EngineEvent -SourceIdentifier MyEventSource -Action {
-    "Event: {0}" -f $Event.MessageData | Out-File c:\temp\MyEvents.txt -Append
+    "Event: {0}" -f $Event.MessageData | Out-File C:\temp\MyEvents.txt -Append
 }
 
 Start-Job -Name TestJob -ScriptBlock {
-    While ($true) {
+    while ($true) {
         Register-EngineEvent -SourceIdentifier MyEventSource -Forward
-        Start-Sleep -seconds 2
+        Start-Sleep -Seconds 2
         "Doing some work..."
         $newEventSplat = @{
             SourceIdentifier = 'MyEventSource'
@@ -96,7 +96,7 @@ Start-Job -Name TestJob -ScriptBlock {
         New-Event @newEventSplat
     }
 }
-Start-Sleep -seconds 4
+Start-Sleep -Seconds 4
 Get-EventSubscriber
 Get-Job
 ```
@@ -126,7 +126,7 @@ This is a continuation of Example 3. In this example we wait for 10 seconds to l
 occur. Then we unregister the event subscription.
 
 ```powershell
-PS> Start-Sleep -seconds 10
+PS> Start-Sleep -Seconds 10
 PS> Get-EventSubscriber | Unregister-Event
 PS> Get-Job
 

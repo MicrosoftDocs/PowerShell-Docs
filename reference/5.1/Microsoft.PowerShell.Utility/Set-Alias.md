@@ -172,7 +172,7 @@ function. For more information, see
 [about_Functions](../Microsoft.PowerShell.Core/about/about_Functions.md).
 
 ```
-Function CD32 {Set-Location -Path C:\Windows\System32}
+function CD32 {Set-Location -Path C:\Windows\System32}
 
 Set-Alias -Name Go -Value CD32
 ```
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 
 Sets the **Option** property value of the alias. Values such as `ReadOnly` and `Constant`
 protect an alias from unintended changes. To see the **Option** property of all aliases in the
-session, type `Get-Alias | Format-Table -Property Name, Options -Autosize`.
+session, type `Get-Alias | Format-Table -Property Name, Options -AutoSize`.
 
 The acceptable values for this parameter are as follows:
 
