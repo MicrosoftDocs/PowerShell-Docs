@@ -523,7 +523,7 @@ Specifies the instance IDs of the disconnected sessions.
 
 The instance ID is a GUID that uniquely identifies a **PSSession** on a local or remote computer.
 
-The instance ID is stored in the **InstanceID** property of the **PSSession**.
+The instance ID is stored in the **InstanceId** property of the **PSSession**.
 
 ```yaml
 Type: System.Guid[]

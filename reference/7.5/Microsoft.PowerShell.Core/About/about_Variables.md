@@ -163,7 +163,7 @@ The next example assigns multiple values to multiple variables.
 
 ```powershell
 $i,$j,$k = 10, "red", $true    # $i is 10, $j is "red", $k is True
-$i,$j = 10, "red", $true       # $i is 10, $j is [object[]], Length 2
+$i,$j = 10, "red", $true       # $i is 10, $j is [Object[]], Length 2
 ```
 
 For more detailed information, see the **Assigning multiple variables** section
@@ -367,7 +367,7 @@ The following command gets the child items in the directory that is represented
 by the `ProgramFiles(x86)` environment variable.
 
 ```powershell
-Get-ChildItem ${env:ProgramFiles(x86)}
+Get-ChildItem ${Env:ProgramFiles(x86)}
 ```
 
 To reference a variable name that includes braces, enclose the variable name in
@@ -400,7 +400,7 @@ global scope, even when it's created in a script or function.
 $Global:Computers = "Server01"
 ```
 
-For any script or command that executes out of session, you need the `Using`
+For any script or command that executes out of session, you need the `Using:`
 scope modifier to embed variable values from the calling session scope, so that
 out of session code can access them.
 

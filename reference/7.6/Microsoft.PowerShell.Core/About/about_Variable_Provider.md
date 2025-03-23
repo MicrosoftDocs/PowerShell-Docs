@@ -130,16 +130,16 @@ the dollar sign (`$`). This has the same effect as prefixing the variables name
 with the dollar sign (`$`).
 
 ```powershell
-$variable:HOME
+$Variable:HOME
 ```
 
 ### Get variables using wildcards
 
-This command gets the variables with names that begin with "max". You can use
+This command gets the variables with names that begin with "Max". You can use
 this command from any PowerShell drive.
 
 ```powershell
-Get-ChildItem -Path Variable:max*
+Get-ChildItem -Path Variable:Max*
 ```
 
 ### Get the value of the ? variable
@@ -160,9 +160,9 @@ This command gets the variables that have the values of `ReadOnly` or
 
 ```powershell
 Get-ChildItem -Path Variable: | Where-Object {
-   $_.options -match "Constant" `
-   -or $_.options -match "ReadOnly"
- } | Format-List -Property name, value, options
+   $_.Options -match "Constant" `
+   -or $_.Options -match "ReadOnly"
+ } | Format-List -Property Name, Value, Options
 ```
 
 ## Creating variables
@@ -273,7 +273,7 @@ Get-Help Get-ChildItem
 ```
 
 ```powershell
-Get-Help Get-ChildItem -Path variable:
+Get-Help Get-ChildItem -Path Variable:
 ```
 
 ## See also
