@@ -133,7 +133,7 @@ Invoke-Command @invokeCommandSplat
 The Get-Help cmdlet gets the help topics for scripts as well as for cmdlets
 and other types of commands. To get the help topic for a script, type
 `Get-Help` followed by the path and filename of the script. If the script
-path is in your `Path` environment variable, you can omit the path.
+path is in your `PATH` environment variable, you can omit the path.
 
 For example, to get help for the ServicesLog.ps1 script, type:
 
@@ -144,8 +144,8 @@ Get-Help C:\admin\scripts\ServicesLog.ps1
 ## How to write a script
 
 A script can contain any valid PowerShell commands, including single commands,
-commands that use the pipeline, functions, and control structures such as If
-statements and For loops.
+commands that use the pipeline, functions, and control structures such as `if`
+statements and `for` loops.
 
 To write a script, open a new file in a text editor, type the commands, and
 save them in a file with a valid filename with the `.ps1` file extension.
@@ -164,9 +164,9 @@ commands, and then save them in a file named `ServiceLog.ps1`.
 
 ### Parameters in scripts
 
-To define parameters in a script, use a Param statement. The `Param` statement
-must be the first statement in a script, except for comments and any
-`#Require` statements.
+To define parameters in a script, use a `param` statement. The `param`
+statement must be the first statement in a script, except for comments and any
+`#Requires` statements.
 
 Script parameters work like function parameters. The parameter values are
 available to all of the commands in the script. All of the features of
@@ -185,7 +185,7 @@ param ($ComputerName = $(throw "ComputerName parameter is required."))
 
 function CanPing {
    $Error.Clear()
-   $tmp = Test-Connection $computername -ErrorAction SilentlyContinue
+   $tmp = Test-Connection $ComputerName -ErrorAction SilentlyContinue
 
    if (!$?)
        {Write-Host "Ping failed: $ComputerName."; return $false}
@@ -194,7 +194,7 @@ function CanPing {
 }
 
 function CanRemote {
-    $s = New-PSSession $computername -ErrorAction SilentlyContinue
+    $s = New-PSSession $ComputerName -ErrorAction SilentlyContinue
 
     if ($s -is [System.Management.Automation.Runspaces.PSSession])
         {Write-Host "Remote test succeeded: $ComputerName."}
@@ -202,7 +202,7 @@ function CanRemote {
         {Write-Host "Remote test failed: $ComputerName."}
 }
 
-if (CanPing $computername) {CanRemote $computername}
+if (CanPing $ComputerName) {CanRemote $ComputerName}
 ```
 
 To run this script, type the parameter name after the script name. For example:
@@ -214,8 +214,8 @@ Ping succeeded: Server01
 Remote test failed: Server01
 ```
 
-For more information about the Param statement and the function parameters, see
-[about_Functions][04] and [about_Functions_Advanced_Parameters][05].
+For more information about the `param` statement and the function parameters,
+see [about_Functions][04] and [about_Functions_Advanced_Parameters][05].
 
 ### Writing help for scripts
 
@@ -235,11 +235,11 @@ methods:
   for cmdlets. XML-based Help is required if you are translating Help topics
   into multiple languages.
 
-To associate the script with the XML-based Help topic, use the .ExternalHelp
-Help comment keyword. For more information about the ExternalHelp keyword, see
-[about_Comment_Based_Help][06]. For more information about XML-based help, see
-[How to Write Cmdlet Help][07].
-[How to Write Cmdlet Help](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets).
+To associate the script with the XML-based Help topic, use the `.EXTERNALHELP`
+Help comment keyword. For more information, see:
+
+- [about_Comment_Based_Help][06]
+- [How to Write Cmdlet Help][07]
 
 ### Returning an exit value
 
@@ -307,7 +307,7 @@ function New-Profile
   if (Test-Path $PROFILE)
     {Write-Error "Profile $profileName already exists on this computer."}
   else
-    {New-Item -Type file -Path $PROFILE -Force }
+    {New-Item -Type File -Path $PROFILE -Force }
 }
 ```
 
@@ -320,11 +320,11 @@ removed, as shown in the following example.
 C:\PS> .\UtilityFunctions.ps1
 
 C:\PS> New-Profile
-The term 'new-profile' is not recognized as a cmdlet, function, operable
+The term 'New-Profile' is not recognized as a cmdlet, function, operable
 program, or script file. Verify the term and try again.
 At line:1 char:12
-+ new-profile <<<<
-   + CategoryInfo          : ObjectNotFound: (new-profile:String) [],
++ New-Profile <<<<
+   + CategoryInfo          : ObjectNotFound: (New-Profile:String) [],
    + FullyQualifiedErrorId : CommandNotFoundException
 
 C:\PS> $profileName
@@ -362,7 +362,7 @@ get code from trusted sources.
 
 You can include scripts in your modules, or you can create a script module,
 which is a module that consists entirely or primarily of a script and
-supporting resources. A script module is just a script with a .psm1 file
+supporting resources. A script module is just a script with a `.psm1` file
 extension.
 
 For more information about modules, see [about_Modules][09].

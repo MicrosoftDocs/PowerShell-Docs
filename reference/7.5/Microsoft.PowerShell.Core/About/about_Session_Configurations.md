@@ -124,9 +124,9 @@ PS C:> Get-PSSessionConfiguration | Format-List -Property *
 ```
 
 You can also use the WSMan provider in PowerShell to view session
-configurations. The WSMan provider creates a WSMAN: drive in your session.
+configurations. The WSMan provider creates a WSMan: drive in your session.
 
-In the WSMAN: drive, session configurations are in the Plugin node. (All
+In the WSMan: drive, session configurations are in the Plugin node. (All
 session configurations are in the Plugin node, but there are items in the
 Plugin node that are not session configurations.)
 
@@ -134,7 +134,7 @@ For example, to view the session configurations on the local computer,
 type:
 
 ```powershell
-PS C:> dir wsman:\localhost\plugin\microsoft*
+PS C:> dir WSMan:\localhost\plugin\microsoft*
 
 WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin
 
@@ -149,11 +149,11 @@ Container  {Name=microsoft.powershell32}     microsoft.powershell32
 
 To view the session configurations on a remote computer, use the
 `Connect-WSMan` cmdlet to add a note for the remote computer to the
-WSMAN: drive on your local computer, and then use the WSMAN: drive to view the
+WSMan: drive on your local computer, and then use the WSMan: drive to view the
 session configurations.
 
 For example, the following command adds a node for the Server01 remote
-computer to the WSMAN: drive on the local computer.
+computer to the WSMan: drive on the local computer.
 
 ```powershell
 PS C:> Connect-WSMan server01.corp.fabrikam.com
@@ -165,7 +165,7 @@ computer to view the session configurations.
 For example:
 
 ```powershell
-PS C:> cd wsman:
+PS C:> cd WSMan:
 
 PS WSMan:> dir
 
@@ -275,7 +275,7 @@ Register-PSSessionConfiguration @registerPSSessionConfigurationSplat
 ```
 
 When you create a session configuration, you can manage it by using the other
-session configuration cmdlets, and it appears in the WSMAN: drive.
+session configuration cmdlets, and it appears in the WSMan: drive.
 
 For more information, see `Register-PSSessionConfiguration`.
 

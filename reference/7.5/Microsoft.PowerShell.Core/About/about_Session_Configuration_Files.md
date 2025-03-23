@@ -19,11 +19,11 @@ sessions that use the session configuration.
 
 > This information only applies to PowerShell running on Windows.
 
-A "session configuration file" is a text file with a .pssc file name extension
-that contains a hash table of session configuration properties and values. You
-can use a session configuration file to set the properties of a session
-configuration. Doing so defines the environment of any PowerShell sessions that
-use that session configuration.
+A "session configuration file" is a text file with a `.pssc` file name
+extension that contains a hash table of session configuration properties and
+values. You can use a session configuration file to set the properties of a
+session configuration. Doing so defines the environment of any PowerShell
+sessions that use that session configuration.
 
 Session configuration files make it easy to create custom session
 configurations without using complex C# assemblies or scripts.
@@ -140,7 +140,7 @@ later time.
 To include a session configuration file when creating a session configuration,
 use the Path parameter of the `Register-PSSessionConfiguration` cmdlet.
 
-For example, the following command uses the NoLanguage.pssc file when it
+For example, the following command uses the `NoLanguage.pssc` file when it
 creates a NoLanguage session configuration.
 
 ```powershell
@@ -157,7 +157,7 @@ new sessions created with the specified session configuration. Note that the
 `Set-PSSessionConfiguration` cmdlet changes the session itself and does not
 modify the session configuration file.
 
-For example, the following command adds the NoLanguage.pssc file to the
+For example, the following command adds the `NoLanguage.pssc` file to the
 LockedDown session configuration.
 
 ```powershell
@@ -226,7 +226,7 @@ C:\WINDOWS\System32\WindowsPowerShell\v1.0\SessionConfig\
 NoLanguage_0c115179-ff2a-4f66-a5eb-e56e5692ba22.pssc
 ```
 
-You can edit the .pssc file in any text editor. After the file is saved it
+You can edit the `.pssc` file in any text editor. After the file is saved it
 will be employed by any new sessions that use the session configuration.
 
 If you need to modify the RunAsVirtualAccount or the RunAsVirtualAccountGroups
@@ -323,7 +323,7 @@ lang                          NoteProperty   System.String lang=e...
 LanguageMode                  NoteProperty   System.String Langua...
 MaxConcurrentCommandsPerShell NoteProperty   System.String MaxCon...
 MaxConcurrentUsers            NoteProperty   System.String MaxCon...
-MaxIdleTimeoutms              NoteProperty   System.String MaxIdl...
+MaxIdleTimeoutMs              NoteProperty   System.String MaxIdl...
 MaxMemoryPerShellMB           NoteProperty   System.String MaxMem...
 MaxProcessesPerShell          NoteProperty   System.String MaxPro...
 MaxShells                     NoteProperty   System.String MaxShells
