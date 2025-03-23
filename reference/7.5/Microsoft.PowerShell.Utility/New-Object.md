@@ -60,10 +60,10 @@ method and set the **Visible** property of the object to `$true` to make the app
 The second instance gets the same results with individual commands.
 
 ```powershell
-$IE1 = New-Object -COMObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $true}
+$IE1 = New-Object -ComObject InternetExplorer.Application -Property @{Navigate2="www.microsoft.com"; Visible = $true}
 
 # The following command gets the same results as the example above.
-$IE2 = New-Object -COMObject InternetExplorer.Application`
+$IE2 = New-Object -ComObject InternetExplorer.Application`
 $IE2.Navigate2("www.microsoft.com")`
 $IE2.Visible = $true`
 ```
@@ -74,7 +74,7 @@ This example demonstrates that adding the **Strict** parameter causes the `New-O
 generate a non-terminating error when the COM object uses an interop assembly.
 
 ```powershell
-$A = New-Object -COMObject Word.Application -Strict -Property @{Visible = $true}
+$A = New-Object -ComObject Word.Application -Strict -Property @{Visible = $true}
 ```
 
 ```Output
@@ -84,7 +84,7 @@ this type exposes different members than the IDispatch members, scripts written 
 object might not work if the primary interop assembly is not installed.
 
 At line:1 char:14
-+ $A = New-Object  <<<< -COM Word.Application -Strict; $a.visible=$true
++ $A = New-Object  <<<< -ComObject Word.Application -Strict; $a.Visible=$true
 ```
 
 ### Example 4: Create a COM object to manage Windows desktop
@@ -92,16 +92,16 @@ At line:1 char:14
 This example shows how to create and use a COM object to manage your Windows desktop.
 
 The first command uses the **ComObject** parameter of the `New-Object` cmdlet to create a COM object
-with the **Shell.Application** ProgID. It stores the resulting object in the `$ObjShell` variable. The
-second command pipes the `$ObjShell` variable to the `Get-Member` cmdlet, which displays the
+with the **Shell.Application** ProgID. It stores the resulting object in the `$objShell` variable. The
+second command pipes the `$objShell` variable to the `Get-Member` cmdlet, which displays the
 properties and methods of the COM object. Among the methods is the **ToggleDesktop** method. The
 third command calls the **ToggleDesktop** method of the object to minimize the open windows on your
 desktop.
 
 ```powershell
-$Objshell = New-Object -COMObject "Shell.Application"
-$objshell | Get-Member
-$objshell.ToggleDesktop()
+$objShell = New-Object -ComObject "Shell.Application"
+$objShell | Get-Member
+$objShell.ToggleDesktop()
 ```
 
 ```Output
@@ -324,7 +324,7 @@ This cmdlet returns the object that it creates.
 
 - `New-Object` provides the most commonly-used functionality of the VBScript CreateObject
   function. A statement like `Set objShell = CreateObject("Shell.Application")` in VBScript can be
-  translated to `$objShell = New-Object -COMObject "Shell.Application"` in PowerShell.
+  translated to `$objShell = New-Object -ComObject "Shell.Application"` in PowerShell.
 - `New-Object` expands upon the functionality available in the Windows Script Host environment by
   making it easy to work with .NET Framework objects from the command line and within scripts.
 

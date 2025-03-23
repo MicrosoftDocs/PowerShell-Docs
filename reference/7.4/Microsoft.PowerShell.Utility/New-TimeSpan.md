@@ -86,7 +86,7 @@ These commands return the date that is 90 days after the current date.
 ### Example 4: Discover the TimeSpan since a file was updated
 
 This command tells you how long it has been since the
-[about_remote](../Microsoft.PowerShell.Core/About/about_Remote.md) help file was last updated. You
+[about_Remote](../Microsoft.PowerShell.Core/About/about_Remote.md) help file was last updated. You
 can use this command format on any file, or any other object that has a **LastWriteTime** property.
 
 This command works because the **Start** parameter of `New-TimeSpan` has an alias of
@@ -94,7 +94,7 @@ This command works because the **Start** parameter of `New-TimeSpan` has an alia
 PowerShell uses the value of the **LastWriteTime** property as the value of the **Start** parameter.
 
 ```powershell
-Get-ChildItem $PSHOME\en-us\about_remote.help.txt | New-TimeSpan
+Get-ChildItem $PSHOME\en-US\about_remote.help.txt | New-TimeSpan
 ```
 
 ```Output
@@ -217,8 +217,8 @@ Specifies the start of a time span. Enter a string that represents the date and 
 current date and time.
 
 You can use **Start** or its alias, **LastWriteTime**. The **LastWriteTime** alias lets you pipe
-objects that have a **LastWriteTime** property, such as files in the file system
-`[System.Io.FileIO]`, to the **Start** parameter of `New-TimeSpan`.
+objects that have a **LastWriteTime** property, such as files in the file system (`[IO.FileInfo]`),
+to the **Start** parameter of `New-TimeSpan`.
 
 ```yaml
 Type: System.DateTime

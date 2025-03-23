@@ -244,7 +244,7 @@ Imports language-specific data into scripts and functions based on the UI cultur
 
 ### [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
 
-Imports values from a `.PSD1` file without invoking its contents.
+Imports values from a `.psd1` file without invoking its contents.
 
 ### [Import-PSSession](Import-PSSession.md)
 

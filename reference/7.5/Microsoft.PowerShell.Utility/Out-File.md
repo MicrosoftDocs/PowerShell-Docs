@@ -94,7 +94,7 @@ This example shows how to encode output with a specific encoding type.
 
 ```powershell
 $Procs = Get-Process
-Out-File -FilePath .\Process.txt -InputObject $Procs -Encoding ASCII -Width 50
+Out-File -FilePath .\Process.txt -InputObject $Procs -Encoding ascii -Width 50
 ```
 
 The `Get-Process` cmdlet gets the list of processes running on the local computer. The **Process**
@@ -148,7 +148,7 @@ of 2000 instead of a line width determined by the PowerShell host's console widt
 ```powershell
 function DemoDefaultOutFileWidth() {
     try {
-        $PSDefaultParameterValues['out-file:width'] = 2000
+        $PSDefaultParameterValues['Out-File:Width'] = 2000
 
         $logFile = "$PWD\logfile.txt"
 
@@ -161,7 +161,7 @@ function DemoDefaultOutFileWidth() {
         Get-Process | Format-Table Id,SI,Name,Path,MainWindowTitle >> $logFile
     }
     finally {
-        $PSDefaultParameterValues.Remove('out-file:width')
+        $PSDefaultParameterValues.Remove('Out-File:Width')
     }
 }
 
@@ -345,7 +345,7 @@ Specifies the maximum number of characters in each line of output. Any additiona
 truncated, not wrapped. If this parameter isn't used, the width is determined by the
 characteristics of the host. The default for the PowerShell console is 80 characters. If you want
 to control the width for all invocations of `Out-File` as well as the redirection operators (`>`
-and `>>`), set `$PSDefaultParameterValues['out-file:width'] = 2000` before using `Out-File`.
+and `>>`), set `$PSDefaultParameterValues['Out-File:Width'] = 2000` before using `Out-File`.
 
 ```yaml
 Type: System.Int32
