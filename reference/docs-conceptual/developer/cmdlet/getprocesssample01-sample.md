@@ -36,9 +36,9 @@ cmdlet is a simplified version of the `Get-Process` cmdlet that is provided by W
 
    `Add-PSSnapin GetProcPSSnapIn01`
 
-1. Enter the following command to run the cmdlet. `get-proc`
+1. Enter the following command to run the cmdlet. `Get-Proc`
 
-   `get-proc`
+   `Get-Proc`
 
    This is a sample output that results from following these steps.
 
@@ -50,7 +50,7 @@ cmdlet is a simplified version of the `Get-Process` cmdlet that is provided by W
    ```
 
    ```powershell
-   Set-Content $env:temp\test.txt "This is a test file"
+   Set-Content $Env:TEMP\test.txt "This is a test file"
    ```
 
    ```output
@@ -177,7 +177,7 @@ namespace Microsoft.Samples.PowerShell.Commands
        {
            get
            {
-               return "This is a PowerShell snap-in that includes the get-proc cmdlet.";
+               return "This is a PowerShell snap-in that includes the Get-Proc cmdlet.";
            }
        }
    }

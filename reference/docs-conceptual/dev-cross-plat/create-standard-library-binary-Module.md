@@ -282,7 +282,7 @@ At this point, we can import our module with the psd1 file.
 Import-Module ".\Output\$module\$module.psd1"
 ```
 
-From here, we can drop the `.\Output\$module` folder into our `$env:PSModulePath` directory and it
+From here, we can drop the `.\Output\$module` folder into our `$Env:PSModulePath` directory and it
 autoloads our command whenever we need it.
 
 ### Update: dotnet new PSModule

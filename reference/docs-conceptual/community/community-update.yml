@@ -8,7 +8,7 @@ metadata:
   description: A list of resources and a summary of new articles and community contributions. # < 160 chars
   ms.topic: landing-page # Required
   author: sdwheeler #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sewhee #Required; microsoft alias of author; optional team alias.
+  ms.author: sewhee #Required; Microsoft alias of author; optional team alias.
   ms.date: 02/03/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |

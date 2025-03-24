@@ -28,7 +28,7 @@ The following examples show how the **CodeSigningCert** parameter is added at ru
 In this example, the PowerShell runtime has added the parameter and the cmdlet is successful.
 
 ```powershell
-Get-Item -Path cert:\CurrentUser -CodeSigningCert
+Get-Item -Path Cert:\CurrentUser -CodeSigningCert
 ```
 
 ```Output
@@ -44,9 +44,9 @@ Get-Item -Path C:\ -CodeSigningCert
 ```
 
 ```Output
-Get-Item : A parameter cannot be found that matches parameter name 'codesigningcert'.
+Get-Item : A parameter cannot be found that matches parameter name 'CodeSigningCert'.
 At line:1 char:37
-+  get-item -path C:\ -codesigningcert <<<<
++  Get-Item -Path C:\ -CodeSigningCert <<<<
 --------
     CategoryInfo          : InvalidArgument: (:) [Get-Item], ParameterBindingException
     FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetItemCommand

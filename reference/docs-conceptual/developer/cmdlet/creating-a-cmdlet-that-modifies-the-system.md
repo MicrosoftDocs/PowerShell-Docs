@@ -32,7 +32,7 @@ system outside Windows PowerShell. For example, stopping a process, enabling or 
 account, or adding a row to a database table are all changes to the system that should be confirmed.
 In contrast, operations that read data or establish transient connections do not change the system
 and generally do not require confirmation. Confirmation is also not needed for actions whose effect
-is limited to inside the Windows PowerShell runtime, such as `set-variable`. Cmdlets that might or
+is limited to inside the Windows PowerShell runtime, such as `Set-Variable`. Cmdlets that might or
 might not make a persistent change should declare `SupportsShouldProcess` and call
 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
 only if they are about to make a persistent change.
@@ -54,7 +54,7 @@ The first step in cmdlet creation is always naming the cmdlet and declaring the 
 implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named
 accordingly. This cmdlet stops system processes, so the verb name chosen here is "Stop", defined by
 the
-[System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+[System.Management.Automation.VerbsLifecycle](/dotnet/api/System.Management.Automation.VerbsLifecycle)
 class, with the noun "Proc" to indicate that the cmdlet stops processes. For more information about
 approved cmdlet verbs, see
 [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
@@ -90,7 +90,7 @@ if `ConfirmImpact` is set to
 
 Similarly, some operations are unlikely to be destructive, although they do in theory modify the
 running state of a system outside Windows PowerShell. Such cmdlets can set `ConfirmImpact` to
-[System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact).
+[System.Management.Automation.ConfirmImpact.Low](/dotnet/api/system.management.automation.confirmimpact).
 This will bypass confirmation requests where the user has asked to confirm only medium-impact and
 high-impact operations.
 
@@ -361,7 +361,7 @@ For the complete C# sample code, see [StopProcessSample01 Sample](./stopprocesss
 
 ## Defining Object Types and Formatting
 
-Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may
+Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet may
 need to define its own type, or the cmdlet may need to extend an existing type provided by another
 cmdlet. For more information about defining new types or extending existing types, see
 [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
@@ -383,13 +383,13 @@ using cmdlets from the command line, see the
   the cmdlet specifies the `Name` parameter as mandatory, the cmdlet queries for the parameter.
 
     ```powershell
-    PS> stop-proc
+    PS> Stop-Proc
     ```
 
     The following output appears.
 
     ```
-    Cmdlet stop-proc at command pipeline position 1
+    Cmdlet Stop-Proc at command pipeline position 1
     Supply values for the following parameters:
     Name[0]:
     ```
@@ -398,7 +398,7 @@ using cmdlets from the command line, see the
   action.
 
     ```powershell
-    PS> stop-proc -Name notepad
+    PS> Stop-Proc -Name notepad
     ```
 
     The following output appears.
@@ -406,7 +406,7 @@ using cmdlets from the command line, see the
     ```
     Confirm
     Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (4996)".
+    Performing operation "Stop-Proc" on Target "notepad (4996)".
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
@@ -414,7 +414,7 @@ using cmdlets from the command line, see the
   about performing this action because it will cause the operating system to reboot.
 
     ```powershell
-    PS> stop-proc -Name Winlogon
+    PS> Stop-Proc -Name Winlogon
     ```
 
     The following output appears.
@@ -422,7 +422,7 @@ using cmdlets from the command line, see the
     ```Output
     Confirm
     Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "winlogon (656)".
+    Performing operation "Stop-Proc" on Target "winlogon (656)".
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     Warning!
     The process " winlogon " is a critical process and should not be stopped. Are you sure you wish to stop the process?
@@ -433,7 +433,7 @@ using cmdlets from the command line, see the
   entry uses the `Force` parameter to override the warning.
 
     ```powershell
-    PS> stop-proc -Name winlogon -Force
+    PS> Stop-Proc -Name winlogon -Force
     ```
 
     The following output appears.
@@ -441,7 +441,7 @@ using cmdlets from the command line, see the
     ```Output
     Confirm
     Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "winlogon (656)".
+    Performing operation "Stop-Proc" on Target "winlogon (656)".
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 

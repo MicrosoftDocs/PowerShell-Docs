@@ -132,7 +132,7 @@ set names include **DefaultDisplayProperty**, **DefaultDisplayPropertySet**, and
 member set are ignored.
 
 In the following example, the **DefaultDisplayPropertySet** property set is added to the
-**PSStandardMembers** member set of the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+**PSStandardMembers** member set of the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 type. The [PropertySet](/dotnet/api/system.management.automation.pspropertyset) element defines the
 group of properties. The [Name](/dotnet/api/system.management.automation.psmemberinfo.name) element
 specifies the name of the property set. And, the
