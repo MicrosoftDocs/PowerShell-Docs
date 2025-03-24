@@ -159,10 +159,12 @@ This command gets the variables that have the values of `ReadOnly` or
 `Constant` for their **Options** property.
 
 ```powershell
-Get-ChildItem -Path Variable: | Where-Object {
-   $_.Options -match "Constant" `
-   -or $_.Options -match "ReadOnly"
- } | Format-List -Property Name, Value, Options
+Get-ChildItem -Path Variable: |
+    Where-Object {
+        $_.Options -match 'Constant' -or 
+        $_.Options -match 'ReadOnly'
+    } | 
+    Format-List -Property Name, Value, Options
 ```
 
 ## Creating variables
