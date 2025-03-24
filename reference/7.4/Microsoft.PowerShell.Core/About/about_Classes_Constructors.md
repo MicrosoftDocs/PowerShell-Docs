@@ -308,7 +308,7 @@ class BaseExample {
         Write-Verbose "[$($Type.Name)] static constructor"
     }
 
-    static [void] ParamMessage([type]$Type, [object]$Value) {
+    static [void] ParamMessage([type]$Type, [Object]$Value) {
         Write-Verbose "[$($Type.Name)] param constructor ($Value)"
     }
 

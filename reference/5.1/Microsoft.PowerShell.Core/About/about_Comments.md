@@ -162,7 +162,7 @@ before the script is executed.
 # SIG # End signature block
 ```
 
-For more information, see [about_signing][10].
+For more information, see [about_Signing][10].
 
 ### Code editor region markers
 
