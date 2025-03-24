@@ -39,12 +39,12 @@ write a snap-in that allows you to select what is registered, see
 6. Add a public property for the description of the snap-in (required).
 
     In this example, the description is "This is a Windows PowerShell snap-in that registers the
-    get-proc cmdlet".
+    Get-Proc cmdlet".
 
 7. Add a public property for the description resource of the snap-in (optional).
 
     In this example, the vendor resource is "GetProcPSSnapIn01,This is a Windows PowerShell snap-in
-    that registers the get-proc cmdlet".
+    that registers the Get-Proc cmdlet".
 
 ## Example
 
@@ -105,7 +105,7 @@ public class GetProcPSSnapIn01 : PSSnapIn
   {
     get
     {
-      return "This is a PowerShell snap-in that includes the get-proc cmdlet.";
+      return "This is a PowerShell snap-in that includes the Get-Proc cmdlet.";
     }
   }
 
@@ -117,7 +117,7 @@ public class GetProcPSSnapIn01 : PSSnapIn
   {
     get
     {
-      return "GetProcPSSnapIn01,This is a PowerShell snap-in that includes the get-proc cmdlet.";
+      return "GetProcPSSnapIn01,This is a PowerShell snap-in that includes the Get-Proc cmdlet.";
     }
   }
 }

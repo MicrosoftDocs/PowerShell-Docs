@@ -6,7 +6,7 @@ title: Runspace10 Sample
 ---
 # Runspace10 Sample
 
-This sample shows how to create a default initial session state, how to add a cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), how to create a runspace that uses the initial session state, and how to run the command by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+This sample shows how to create a default initial session state, how to add a cmdlet to the [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), how to create a runspace that uses the initial session state, and how to run the command by using a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 ## Requirements
 
@@ -16,21 +16,21 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Creating a [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
-- Adding a cmdlet (defined by the Host application) to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Adding a cmdlet (defined by the Host application) to the [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
 - Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the object.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
 
-- Adding the command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Adding the command to the pipeline of the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 - Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.
 
 ## Example
 
-This sample creates a runspace that uses a [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened. In this sample, the Get-Proc cmdlet (defined by the Host application) is added to the initial session state, and the cmdlet is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+This sample creates a runspace that uses a [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened. In this sample, the Get-Proc cmdlet (defined by the Host application) is added to the initial session state, and the cmdlet is run synchronously by using a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -100,8 +100,8 @@ namespace Microsoft.Samples.PowerShell.Runspaces
       // by Windows PowerShell.
       InitialSessionState iss = InitialSessionState.CreateDefault();
 
-      // Add the get-proc cmdlet to the InitialSessionState object.
-      SessionStateCmdletEntry ssce = new SessionStateCmdletEntry("get-proc", typeof(GetProcCommand), null);
+      // Add the Get-Proc cmdlet to the InitialSessionState object.
+      SessionStateCmdletEntry ssce = new SessionStateCmdletEntry("Get-Proc", typeof(GetProcCommand), null);
       iss.Commands.Add(ssce);
 
       // Create a Runspace object that uses the InitialSessionState object.
@@ -115,8 +115,8 @@ namespace Microsoft.Samples.PowerShell.Runspaces
         {
           powershell.Runspace = myRunSpace;
 
-          // Add the get-proc cmdlet to the pipeline of the PowerShell object.
-          powershell.AddCommand("get-proc");
+          // Add the Get-Proc cmdlet to the pipeline of the PowerShell object.
+          powershell.AddCommand("Get-Proc");
 
           Collection<PSObject> results = powershell.Invoke();
 

@@ -16,7 +16,7 @@ assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powersh
 
 1. Add the RunInstallerAttribute attribute.
 2. Create a public class that derives from the
-   [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)
+   [System.Management.Automation.CustomPSSnapIn](/dotnet/api/System.Management.Automation.CustomPSSnapIn)
    class.
 
    In this example, the class name is "CustomPSSnapinTest".
@@ -48,7 +48,7 @@ assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powersh
    > Test-HelloWorld and Test-CustomSnapinTest cmdlets".
 
 8. Specify the cmdlets that belong to the custom snap-in (optional) using the
-   [System.Management.Automation.Runspaces.Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)
+   [System.Management.Automation.Runspaces.CmdletConfigurationEntry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)
    class. The information added here includes the name of the cmdlet, its .NET type, and the cmdlet
    Help file name (the format of the cmdlet Help file name should be `name.dll-help.xml`).
 

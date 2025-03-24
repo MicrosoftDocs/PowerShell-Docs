@@ -7,7 +7,7 @@ title: Runspace02 (C#) Code Sample
 # Runspace02 (C#) Code Sample
 
 Here is the C# source code for the Runspace02 sample. This sample uses the
-[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)
+[System.Management.Automation.RunspaceInvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)
 class to execute the `Get-Process` cmdlet synchronously. Windows Forms and data binding are then
 used to display the results in a DataGridView control
 

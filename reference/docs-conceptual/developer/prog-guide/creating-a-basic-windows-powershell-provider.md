@@ -23,7 +23,7 @@ uninitialize the provider.
 
 The first step in creating a Windows PowerShell provider is to define its .NET class. This basic
 provider defines a class called `AccessDBProvider` that derives from the
-[System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
+[System.Management.Automation.Provider.CmdletProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
 base class.
 
 It is recommended that you place your provider classes in a `Providers` namespace of your API
@@ -40,17 +40,17 @@ Here is the class definition for this basic provider:
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="23-24":::
 
 Right before the class definition, you must declare the
-[System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
+[System.Management.Automation.Provider.CmdletProviderAttribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
 attribute, with the syntax [CmdletProvider()].
 
 You can set attribute keywords to further declare the class if necessary. Notice that the
-[System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
+[System.Management.Automation.Provider.CmdletProviderAttribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
 attribute declared here includes two parameters. The first attribute parameter specifies the
 default-friendly name for the provider, which the user can modify later. The second parameter
 specifies the Windows PowerShell-defined capabilities that the provider exposes to the Windows
 PowerShell runtime during command processing. The possible values for the provider capabilities are
 defined by the
-[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)
+[System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)
 enumeration. Because this is a base provider, it supports no capabilities.
 
 > [!NOTE]
@@ -60,14 +60,14 @@ enumeration. Because this is a base provider, it supports no capabilities.
 ## Defining Provider-Specific State Information
 
 The
-[System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
+[System.Management.Automation.Provider.CmdletProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
 base class and all derived classes are considered stateless because the Windows PowerShell runtime
 creates provider instances only as required. Therefore, if your provider requires full control and
 state maintenance for provider-specific data, it must derive a class from the
-[System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)
+[System.Management.Automation.ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo)
 class. Your derived class should define the members necessary to maintain the state so that the
 provider-specific data can be accessed when the Windows PowerShell runtime calls the
-[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
+[System.Management.Automation.Provider.CmdletProvider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
 method to initialize the provider.
 
 A Windows PowerShell provider can also maintain connection-based state. For more information about
@@ -77,19 +77,19 @@ maintaining connection state, see
 ## Initializing the Provider
 
 To initialize the provider, the Windows PowerShell runtime calls the
-[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
+[System.Management.Automation.Provider.CmdletProvider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
 method when Windows PowerShell is started. For the most part, your provider can use the default
 implementation of this method, which simply returns the
-[System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)
+[System.Management.Automation.ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo)
 object that describes your provider. However, in the case where you want to add additional
 initialization information, you should implement your own
-[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
+[System.Management.Automation.Provider.CmdletProvider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
 method that returns a modified version of the
-[System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)
+[System.Management.Automation.ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo)
 object that is passed to your provider. In general, this method should return the provided
-[System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)
+[System.Management.Automation.ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo)
 object passed to it or a modified
-[System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)
+[System.Management.Automation.ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo)
 object that contains other initialization information.
 
 This basic provider does not override this method. However, the following code shows the default implementation of this method:
@@ -99,18 +99,18 @@ This basic provider does not override this method. However, the following code s
 The provider can maintain the state of provider-specific information as described in
 [Defining Provider-specific Data State](#defining-provider-specific-state-information). In this
 case, your implementation must override the
-[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
+[System.Management.Automation.Provider.CmdletProvider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
 method to return an instance of the derived class.
 
 ## Start Dynamic Parameters
 
 Your provider implementation of the
-[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
+[System.Management.Automation.Provider.CmdletProvider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)
 method might require additional parameters. In this case, the provider should override the
-[System.Management.Automation.Provider.Cmdletprovider.Startdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)
+[System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)
 method and return an object that has properties and fields with parsing attributes similar to a
 cmdlet class or a
-[System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)
+[System.Management.Automation.RuntimeDefinedParameterDictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)
 object.
 
 This basic provider does not override this method. However, the following code shows the default implementation of this method:
@@ -120,7 +120,7 @@ This basic provider does not override this method. However, the following code s
 ## Uninitializing the Provider
 
 To free resources that the Windows PowerShell provider uses, your provider should implement its own
-[System.Management.Automation.Provider.Cmdletprovider.Stop*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Stop)
+[System.Management.Automation.Provider.CmdletProvider.Stop*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Stop)
 method. This method is called by the Windows PowerShell runtime to uninitialize the provider at the
 close of a session.
 

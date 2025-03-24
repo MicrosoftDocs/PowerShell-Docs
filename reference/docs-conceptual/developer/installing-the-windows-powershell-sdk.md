@@ -24,7 +24,7 @@ repository.
 
 ### Reference assemblies
 
-Reference assemblies are installed in the following location by default: `c:\Program Files\Reference
+Reference assemblies are installed in the following location by default: `C:\Program Files\Reference
 Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
@@ -134,8 +134,8 @@ description of what each sample does.
   application also supports displaying prompts that allow the user to specify multiple choices.
 - Host05 - Shows how to build an interactive console-based host application that reads commands from
   the command line, executes the commands, and then displays the results to the console. This host
-  application also supports calls to remote computers by using the `Enter-PsSession` and
-  `Exit-PsSession` cmdlets.
+  application also supports calls to remote computers by using the `Enter-PSSession` and
+  `Exit-PSSession` cmdlets.
 - Host06 - Shows how to build an interactive console-based host application that reads commands from
   the command line, executes the commands, and then displays the results to the console. In
   addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by
