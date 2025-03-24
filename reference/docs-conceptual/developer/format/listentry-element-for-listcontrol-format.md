@@ -53,7 +53,7 @@ more information about list views, see [Creating a List View](./creating-a-list-
 
 ## Example
 
-This example shows the XML elements that define the list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+This example shows the XML elements that define the list view for the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object.
 
 ```xml

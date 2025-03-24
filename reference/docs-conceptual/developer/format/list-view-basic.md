@@ -6,7 +6,7 @@ title: List View (Basic)
 ---
 # List View (Basic)
 
-This example shows how to implement a basic list view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+This example shows how to implement a basic list view that displays the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 objects returned by the [Get-Service](/powershell/module/microsoft.powershell.management/get-service)
 cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
@@ -18,11 +18,11 @@ cmdlet. For more information about the components of a list view, see [Creating 
    formatting file.
 
 1. Open Windows PowerShell, and run the following command to load the formatting file into the
-   current session: `Update-formatdata -prependpath PathToFormattingFile`.
+   current session: `Update-FormatData -PrependPath PathToFormattingFile`.
 
 > [!WARNING]
 > This formatting file defines the display of an object that is already defined by a Windows
-> PowerShell formatting file. You must use the `prependPath` parameter when you run the cmdlet, and
+> PowerShell formatting file. You must use the `PrependPath` parameter when you run the cmdlet, and
 > you cannot load this formatting file as a module.
 
 ## Demonstrates
@@ -45,7 +45,7 @@ This formatting file demonstrates the following XML elements:
 
 ## Example
 
-The following XML defines a list view that displays four properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+The following XML defines a list view that displays four properties of the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object. In each row, the name of the property is displayed followed by the value of the property.
 
 ```xml
@@ -79,7 +79,7 @@ object. In each row, the name of the property is displayed followed by the value
 </Configuration>
 ```
 
-The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+The following example shows how Windows PowerShell displays the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 objects after this format file is loaded.
 
 ```powershell

@@ -121,7 +121,7 @@ used to identify the error. This information is available through the following 
 
 - [System.Management.Automation.Cmdlet.WriteError][4]
 
-- [System.Management.Automation.Cmdlet.Throwterminatingerror*][3]
+- [System.Management.Automation.Cmdlet.ThrowTerminatingError*][3]
 
 - [Adding Non-Terminating Error Reporting to Your Cmdlet](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
 

@@ -14,7 +14,7 @@ Errors can occur in ETS during the initialization of type data and when accessin
 With one exception, when casting, all exceptions thrown from ETS during runtime are either an
 **ExtendedTypeSystemException** exception or an exception derived from the
 **ExtendedTypeSystemException** class. This allows script developers to trap these exceptions using
-the `Trap` statement in their script.
+the `trap` statement in their script.
 
 ## Errors getting member values
 
