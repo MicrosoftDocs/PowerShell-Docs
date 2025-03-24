@@ -10,27 +10,27 @@ title: about_PSModulePath
 
 ## Short description
 
-This article describes the purpose and usage of the `$env:PSModulePath`
+This article describes the purpose and usage of the `$Env:PSModulePath`
 environment variable.
 
 ## Long description
 
-The `$env:PSModulePath` environment variable contains a list of folder
+The `$Env:PSModulePath` environment variable contains a list of folder
 locations. PowerShell recursively searches each folder for module (`.psd1` or
 `.psm1`) files.
 
-By default, the effective locations assigned to `$env:PSModulePath` are:
+By default, the effective locations assigned to `$Env:PSModulePath` are:
 
 - Modules installed in the **CurrentUser** scope are stored in
   `$HOME\Documents\WindowsPowerShell\Modules`.
 - Modules installed in the **AllUsers** scope are stored in
-  `$env:ProgramFiles\WindowsPowerShell\Modules`.
+  `$Env:ProgramFiles\WindowsPowerShell\Modules`.
 - Modules that ship with Windows PowerShell stored in `$PSHOME\Modules`, which
-  is `$env:SystemRoot\System32\WindowsPowerShell\1.0\Modules`.
+  is `$Env:SystemRoot\System32\WindowsPowerShell\1.0\Modules`.
 
 ## PowerShell PSModulePath construction
 
-The value of `$env:PSModulePath` is constructed each time PowerShell starts.
+The value of `$Env:PSModulePath` is constructed each time PowerShell starts.
 The value varies by version of PowerShell and how you launched it.
 
 ### Windows PowerShell startup
@@ -48,8 +48,8 @@ startup:
       the `$PSHOME` location
 
 The **CurrentUser** module path is prefixed only if the User scope
-`$env:PSModulePath` doesn't exist. Otherwise, the User scope
-`$env:PSModulePath` is used as defined.
+`$Env:PSModulePath` doesn't exist. Otherwise, the User scope
+`$Env:PSModulePath` is used as defined.
 
 ## Module search behavior
 
@@ -78,7 +78,7 @@ locations. However, you might need to change the value of the `PSModulePath`
 environment variable.
 
 For example, to temporarily add the `C:\Program Files\Fabrikam\Modules`
-directory to `$env:PSModulePath` for the current session, type:
+directory to `$Env:PSModulePath` for the current session, type:
 
 ```powershell
 $Env:PSModulePath = $Env:PSModulePath+";C:\Program Files\Fabrikam\Modules"

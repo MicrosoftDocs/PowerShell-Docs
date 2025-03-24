@@ -32,13 +32,13 @@ to it. In PowerShell, integers are value types so they're passed by value.
 Therefore, the value of `$var` is unchanged outside the scope of the function.
 
 ```powershell
-Function Test($data)
+Function Test($Data)
 {
-    $data = 3
+    $Data = 3
 }
 
 $var = 10
-Test -data $var
+Test -Data $var
 $var
 ```
 
@@ -54,13 +54,13 @@ When passing a variable _by reference_, the function can change the data and
 that change persists after the function executes.
 
 ```powershell
-Function Test($data)
+Function Test($Data)
 {
-    $data.Test = "New Text"
+    $Data.Test = "New Text"
 }
 
 $var = @{}
-Test -data $var
+Test -Data $var
 $var
 ```
 
@@ -84,8 +84,8 @@ access your data.
 
 ```powershell
 function Test {
-    param([ref]$data)
-    $data.Value = 3
+    param([ref]$Data)
+    $Data.Value = 3
 }
 ```
 
@@ -97,7 +97,7 @@ your variable as a reference.
 
 ```powershell
 $var = 10
-Test -data ([ref]$var)
+Test -Data ([ref]$var)
 $var
 ```
 
