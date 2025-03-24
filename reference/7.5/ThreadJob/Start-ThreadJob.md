@@ -169,7 +169,7 @@ $jobs = @()
 
 foreach ($file in $files) {
     $jobs += Start-ThreadJob -Name $file.OutFile -ScriptBlock {
-        $params = $using:file
+        $params = $Using:file
         Invoke-WebRequest @params
     }
 }

@@ -160,7 +160,7 @@ two cases for that meet this criteria.
 
 ```powershell
 (Measure-Command {
-    1..1000 | ForEach { Start-ThreadJob { Write-Output "Hello $using:_" } } | Receive-Job -Wait
+    1..1000 | foreach { Start-ThreadJob { Write-Output "Hello $Using:_" } } | Receive-Job -Wait
 }).TotalMilliseconds
 36860.8226
 
@@ -170,13 +170,13 @@ two cases for that meet this criteria.
 7.1975
 ```
 
-The first example above shows a foreach loop that creates 1000 thread jobs to
+The first example above shows a `foreach` loop that creates 1000 thread jobs to
 do a simple string write. Due to job overhead, it takes over 36 seconds to
 complete.
 
-The second example runs the `ForEach` cmdlet to do the same 1000 operations.
-This time, `ForEach-Object` runs sequentially, on a single thread, without any
-job overhead. It completes in a mere 7 milliseconds.
+The second example runs the `ForEach-Object` cmdlet to do the same 1000
+operations. This time, `ForEach-Object` runs sequentially, on a single thread,
+without any job overhead. It completes in a mere 7 milliseconds.
 
 In the following example, up to 5000 entries are collected for 10 separate
 system logs. Since the script involves reading a number of logs, it makes sense
@@ -201,9 +201,9 @@ The script completes in half the time when the jobs are run in parallel.
 
 ```powershell
 Measure-Command {
-    $logs = $logNames | ForEach {
+    $logs = $logNames | foreach {
         Start-ThreadJob {
-            Get-WinEvent -LogName $using:_ -MaxEvents 5000 2>$null
+            Get-WinEvent -LogName $Using:_ -MaxEvents 5000 2>$null
         } -ThrottleLimit 10
     } | Wait-Job | Receive-Job
 }
@@ -218,7 +218,7 @@ $logs.Count
 There are multiple ways to pass values into the thread-based jobs.
 
 `Start-ThreadJob` can accept variables that are piped to the cmdlet, passed in
-to the script block via the `$using` keyword, or passed in via the
+to the script block via the `Using:` scope modifier, or passed in via the
 **ArgumentList** parameter.
 
 ```powershell
@@ -226,21 +226,21 @@ $msg = "Hello"
 
 $msg | Start-ThreadJob { $input | Write-Output } | Wait-Job | Receive-Job
 
-Start-ThreadJob { Write-Output $using:msg } | Wait-Job | Receive-Job
+Start-ThreadJob { Write-Output $Using:msg } | Wait-Job | Receive-Job
 
-Start-ThreadJob { param ([string] $message) Write-Output $message } -ArgumentList @($msg) |
+Start-ThreadJob { param ([string] $Message) Write-Output $Message } -ArgumentList @($msg) |
   Wait-Job | Receive-Job
 ```
 
 `ForEach-Object -Parallel` accepts piped in variables, and variables passed
-directly to the script block via the `$using` keyword.
+directly to the script block via the `Using:` scope modifier.
 
 ```powershell
 $msg = "Hello"
 
 $msg | ForEach-Object -Parallel { Write-Output $_ } -AsJob | Wait-Job | Receive-Job
 
-1..1 | ForEach-Object -Parallel { Write-Output $using:msg } -AsJob | Wait-Job | Receive-Job
+1..1 | ForEach-Object -Parallel { Write-Output $Using:msg } -AsJob | Wait-Job | Receive-Job
 ```
 
 Since thread jobs run in the same process, any variable reference type passed
@@ -255,10 +255,10 @@ the process.
 
 ```powershell
 $threadSafeDictionary = [System.Collections.Concurrent.ConcurrentDictionary[string,object]]::new()
-$jobs = Get-Process | ForEach {
+$jobs = Get-Process | foreach {
     Start-ThreadJob {
-        $proc = $using:_
-        $dict = $using:threadSafeDictionary
+        $proc = $Using:_
+        $dict = $Using:threadSafeDictionary
         $dict.TryAdd($proc.ProcessName, $proc)
     }
 }

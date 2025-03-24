@@ -57,14 +57,14 @@ Set-Clipboard -Value "This is a test string" -AsOSC52
 ### Example 4: Set the default value of the **AsOSC52** parameter
 
 You can detect if you are connected to a remote session over SSH by checking the value of the
-`$env:SSH_CLIENT` or `$env:SSH_TTY` environment variables. If either of these variables are set,
+`$Env:SSH_CLIENT` or `$Env:SSH_TTY` environment variables. If either of these variables are set,
 then you are connected to a remote session over SSH. You can use this information to set the default
 value of the **AsOSC52** parameter. Add one of the following lines to your PowerShell profile
 script.
 
 ```powershell
-$PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $env:SSH_CLIENT
-$PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $env:SSH_TTY
+$PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $Env:SSH_CLIENT
+$PSDefaultParameterValues['Set-Clipboard:AsOSC52'] = $Env:SSH_TTY
 ```
 
 For more information about `$PSDefaultParameterValues`, see

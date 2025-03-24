@@ -45,12 +45,12 @@ This example removes all aliases from the current PowerShell session, except for
 other PowerShell sessions or new PowerShell sessions.
 
 ```powershell
-Get-Alias | Where-Object { $_.Options -NE "Constant" } | Remove-Alias -Force
+Get-Alias | Where-Object { $_.Options -ne "Constant" } | Remove-Alias -Force
 ```
 
 `Get-Alias` gets all the aliases in the PowerShell session and sends the objects down the pipeline.
 `Where-Object` uses a script block, and the automatic variable (`$_`) and **Options** property
-represent the current pipeline object. The parameter **NE** (not equal), selects objects that don't
+represent the current pipeline object. The `-ne` (not equal) operator selects objects that don't
 have an **Options** value set to **Constant**. `Remove-Alias` uses the **Force** parameter to remove
 aliases, including read-only aliases, from the PowerShell session. The **Force** parameter can't
 remove **Constant** aliases.

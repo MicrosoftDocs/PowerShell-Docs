@@ -109,7 +109,7 @@ specified in the command. For information about location stacks, see the [Notes]
 ### Example 5: Navigate location history using `+` or `-`
 
 ```
-PS C:\> Set-Location -Path $env:SystemRoot
+PS C:\> Set-Location -Path $Env:SystemRoot
 PS C:\Windows> Set-Location -Path Cert:\
 PS Cert:\> Set-Location -Path HKLM:\
 PS HKLM:\>
