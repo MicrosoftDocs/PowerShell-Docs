@@ -159,8 +159,8 @@ HitCount : 0
 Action   :
 
 function CheckLog {
->> get-eventlog -log Application |
->> where {($_.source -like "TestApp") -and ($_.Message -like "*failed*")}
+>> Get-EventLog -Log Application |
+>> Where-Object {($_.Source -like "TestApp") -and ($_.Message -like "*failed*")}
 >>}
 >>
 PS> Checklog
@@ -220,9 +220,9 @@ tasks, such as testing or logging.
 If this parameter is omitted, or no action is specified, execution stops at the breakpoint, and the
 debugger starts.
 
-When the **Action** parameter is used, the Action script block runs at each breakpoint. Execution does
-not stop unless the script block includes the Break keyword. If you use the Continue keyword in the
-script block, execution resumes until the next breakpoint.
+When the **Action** parameter is used, the Action script block runs at each breakpoint. Execution
+does not stop unless the script block includes the `break` keyword. If you use the `continue`
+keyword in the script block, execution resumes until the next breakpoint.
 
 For more information, see [about_Script_Blocks](../Microsoft.PowerShell.Core/About/about_Script_Blocks.md),
 [about_Break](../Microsoft.PowerShell.Core/About/about_Break.md), and
@@ -272,7 +272,7 @@ Sets a command breakpoint. Enter cmdlet names, such as `Get-Process`, or functio
 are permitted.
 
 Execution stops just before each instance of each command is executed. If the command is a function,
-execution stops each time the function is called and at each BEGIN, PROCESS, and END section.
+execution stops each time the function is called and at each `begin`, `process`, and `end` block.
 
 ```yaml
 Type: System.String[]

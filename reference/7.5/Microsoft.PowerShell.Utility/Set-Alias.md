@@ -172,7 +172,7 @@ function. For more information, see
 [about_Functions](../Microsoft.PowerShell.Core/about/about_Functions.md).
 
 ```
-Function CD32 {Set-Location -Path C:\Windows\System32}
+function CD32 {Set-Location -Path C:\Windows\System32}
 
 Set-Alias -Name Go -Value CD32
 ```

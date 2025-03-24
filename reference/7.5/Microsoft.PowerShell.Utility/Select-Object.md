@@ -66,7 +66,7 @@ reached. To turn off this optimizing behavior, use the **Wait** parameter.
 
 ### Example 1: Select objects by property
 
-This example creates objects that have the **Name**, **ID**, and working set (**WS**) properties of
+This example creates objects that have the **Name**, **Id**, and working set (**WS**) properties of
 process objects.
 
 ```powershell
@@ -193,7 +193,7 @@ event is 0. The index of the last event is the number of items in `$a` minus 1.
 
 ```powershell
 $a = Get-WinEvent -LogName "Windows PowerShell"
-$a | Select-Object -Index 0, ($a.count - 1)
+$a | Select-Object -Index 0, ($a.Count - 1)
 ```
 
 ### Example 8: Select all but the first object
@@ -333,7 +333,7 @@ ati2evxx                   Thursday
 # Add a custom property to calculate the size in KiloBytes of each FileInfo
 # object you pass in. Use the pipeline variable to divide each file's length by
 # 1 KiloBytes
-$size = @{label="Size(KB)";expression={$_.length/1KB}}
+$size = @{Label="Size(KB)";Expression={$_.Length/1KB}}
 # Create an additional calculated property with the number of Days since the
 # file was last accessed. You can also shorten the key names to be 'l', and 'e',
 # or use Name instead of Label.
@@ -374,9 +374,9 @@ This example demonstrates the side-effect of using the **ExpandProperty** parame
 **NoteProperty** members.
 
 ```powershell
-PS> $object = [PSCustomObject]@{
+PS> $object = [pscustomobject]@{
     name = 'USA'
-    children = [PSCustomObject]@{
+    children = [pscustomobject]@{
         name = 'Southwest'
     }
 }
@@ -410,9 +410,9 @@ You can avoid the side-effect of using the **ExpandProperty** parameter by creat
 copying the properties from the input object.
 
 ```powershell
-PS> $object = [PSCustomObject]@{
+PS> $object = [pscustomobject]@{
     name = 'USA'
-    children = [PSCustomObject]@{
+    children = [pscustomobject]@{
         name = 'Southwest'
     }
 }
@@ -423,12 +423,12 @@ name children
 USA  @{name=Southwest}
 
 # Create a new object with selected properties
-PS> $newobject = [PSCustomObject]@{
+PS> $newObject = [pscustomobject]@{
     country = $object.name
     children = $object.children
 }
 
-PS> $newobject
+PS> $newObject
 
 country children
 ------- --------
