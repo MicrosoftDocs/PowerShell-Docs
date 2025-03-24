@@ -81,9 +81,13 @@ the job options of each scheduled job.
 This example shows how to find job options object with particular values.
 
 ```powershell
-Get-ScheduledJob | Get-ScheduledJobOption | where {$_.RunElevated -and !$_.WakeToRun}
+Get-ScheduledJob |
+    Get-ScheduledJobOption |
+    Where-Object {$_.RunElevated -and !$_.WakeToRun}
 
-Get-ScheduledJob | Get-ScheduledJobOption | where {$_.RunElevated -and !$_.WakeToRun} |
+Get-ScheduledJob | 
+    Get-ScheduledJobOption |
+    Where-Object {$_.RunElevated -and !$_.WakeToRun} |
     ForEach-Object {$_.JobDefinition}
 ```
 
@@ -103,8 +107,12 @@ This example shows how to use the job options that `Get-ScheduledJobOption` gets
 job.
 
 ```powershell
-$Opts = Get-ScheduledJobOption -Name "BackupTestLogs"
-Register-ScheduledJob -Name "Archive-Scripts" -FilePath "\\Srv01\Scripts\ArchiveScripts.ps1" -ScheduledJobOption $Opts
+$registerScheduledJobSplat = @{
+    Name = "Archive-Scripts"
+    FilePath = "\\Srv01\Scripts\ArchiveScripts.ps1"
+    ScheduledJobOption = Get-ScheduledJobOption -Name "BackupTestLogs"
+}
+Register-ScheduledJob @registerScheduledJobSplat
 ```
 
 The first command uses `Get-ScheduledJobOption` to get the jobs options of the BackupTestLogs
@@ -186,7 +194,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
