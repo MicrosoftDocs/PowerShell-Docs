@@ -153,7 +153,7 @@ when no properties are specified. Because the type data is not specified in a `T
 it is effective only in the current session.
 
 ```powershell
-Get-Date | Format-list
+Get-Date | Format-List
 
 Update-TypeData -TypeName "System.DateTime" -DefaultDisplayPropertySet @(
     'DateTime'

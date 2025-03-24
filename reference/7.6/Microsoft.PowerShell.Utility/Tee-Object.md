@@ -88,8 +88,8 @@ This example saves a list of system files in a two log files, a cumulative file 
 
 ```powershell
 Get-ChildItem -Path D: -File -System -Recurse |
-  Tee-Object -FilePath "c:\test\AllSystemFiles.txt" -Append |
-    Out-File c:\test\NewSystemFiles.txt
+  Tee-Object -FilePath "C:\test\AllSystemFiles.txt" -Append |
+    Out-File C:\test\NewSystemFiles.txt
 ```
 
 The command uses the `Get-ChildItem` cmdlet to do a recursive search for system files on the D:

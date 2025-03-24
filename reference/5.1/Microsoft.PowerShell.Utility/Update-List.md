@@ -51,43 +51,43 @@ interface.
 
 In this example we create a class that represents a deck of cards where the cards are stored as a
 **List** collection object. The **NewDeck()** method uses `Update-List`to add a complete deck of
-card values to the **cards** collection.
+card values to the **Cards** collection.
 
 ```powershell
 class Cards {
 
-    [System.Collections.Generic.List[string]]$cards
-    [string]$name
+    [System.Collections.Generic.List[string]]$Cards
+    [string]$Name
 
     Cards([string]$_name) {
-        $this.name = $_name
-        $this.cards = [System.Collections.Generic.List[string]]::new()
+        $this.Name = $_name
+        $this.Cards = [System.Collections.Generic.List[string]]::new()
     }
 
     NewDeck() {
         $_suits = [char]0x2663,[char]0x2666,[char]0x2665,[char]0x2660
         $_values = 'A',2,3,4,5,6,7,8,9,10,'J','Q','K'
         $_deck = foreach ($s in $_suits){ foreach ($v in $_values){ "$v$s"} }
-        $this | Update-List -Property cards -Add $_deck | Out-Null
+        $this | Update-List -Property Cards -Add $_deck | Out-Null
     }
 
     Show() {
         Write-Host
-        Write-Host $this.name ": " $this.cards[0..12]
-        if ($this.cards.count -gt 13) {
-            Write-Host (' ' * ($this.name.length+3)) $this.cards[13..25]
+        Write-Host $this.Name ": " $this.Cards[0..12]
+        if ($this.Cards.Count -gt 13) {
+            Write-Host (' ' * ($this.Name.Length+3)) $this.Cards[13..25]
         }
-        if ($this.cards.count -gt 26) {
-            Write-Host (' ' * ($this.name.length+3)) $this.cards[26..38]
+        if ($this.Cards.Count -gt 26) {
+            Write-Host (' ' * ($this.Name.Length+3)) $this.Cards[26..38]
         }
-        if ($this.cards.count -gt 39) {
-            Write-Host (' ' * ($this.name.length+3)) $this.cards[39..51]
+        if ($this.Cards.Count -gt 39) {
+            Write-Host (' ' * ($this.Name.Length+3)) $this.Cards[39..51]
         }
     }
 
-    Shuffle() { $this.cards = Get-Random -InputObject $this.cards -Count 52 }
+    Shuffle() { $this.Cards = Get-Random -InputObject $this.Cards -Count 52 }
 
-    Sort() { $this.cards.Sort() }
+    Sort() { $this.Cards.Sort() }
 }
 ```
 
@@ -111,10 +111,10 @@ $deck.Shuffle()
 $deck.Show()
 
 # Deal two hands
-$player1 | Update-List -Property cards -Add $deck.cards[0,2,4,6,8] | Out-Null
-$player2 | Update-List -Property cards -Add $deck.cards[1,3,5,7,9] | Out-Null
-$deck | Update-List -Property cards -Remove $player1.cards | Out-Null
-$deck | Update-List -Property cards -Remove $player2.cards | Out-Null
+$player1 | Update-List -Property Cards -Add $deck.Cards[0,2,4,6,8] | Out-Null
+$player2 | Update-List -Property Cards -Add $deck.Cards[1,3,5,7,9] | Out-Null
+$deck | Update-List -Property Cards -Remove $player1.Cards | Out-Null
+$deck | Update-List -Property Cards -Remove $player2.Cards | Out-Null
 
 $player1.Show()
 $player2.Show()
@@ -150,11 +150,11 @@ example, Player 1 wants to discard the `4♦` and `6♦` and get two new cards.
 
 ```powershell
 # Player 1 wants two new cards - remove 2 cards & add 2 cards
-$player1 | Update-List -Property cards -Remove $player1.cards[0,4] -Add $deck.cards[0..1] | Out-Null
+$player1 | Update-List -Property Cards -Remove $player1.Cards[0,4] -Add $deck.Cards[0..1] | Out-Null
 $player1.Show()
 
 # remove dealt cards from deck
-$deck | Update-List -Property cards -Remove $deck.cards[0..1] | Out-Null
+$deck | Update-List -Property Cards -Remove $deck.Cards[0..1] | Out-Null
 $deck.Show()
 ```
 
@@ -187,7 +187,7 @@ Remove                         {43}
 ```
 
 ```powershell
-([PSListModifier]($changeInstructions)).ApplyTo($list)
+([pslistmodifier]($changeInstructions)).ApplyTo($list)
 $list
 ```
 
