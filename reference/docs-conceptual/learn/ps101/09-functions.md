@@ -12,7 +12,7 @@ PowerShell one-liners and scripts that have to be modified often are good candid
 reusable functions.
 
 Write functions whenever possible because they're more tool-oriented. You can add the functions to a
-script module, put that module in a location defined in the `$env:PSModulePath`, and call the
+script module, put that module in a location defined in the `$Env:PSModulePath`, and call the
 functions without needing to locate where you saved the functions. Using the **PowerShellGet**
 module, it's easy to share your PowerShell modules in a NuGet repository. **PowerShellGet** ships
 with PowerShell version 5.0 and higher. It's also available as a separate download for PowerShell
@@ -559,7 +559,7 @@ The problem is that default values can't be used with mandatory parameters. Inst
 `ValidateNotNullOrEmpty` parameter validation attribute with a default value.
 
 Even when setting a default value, try not to use static values. In the following example,
-`$env:COMPUTERNAME` is used as the default value, which is automatically translated to the local
+`$Env:COMPUTERNAME` is used as the default value, which is automatically translated to the local
 computer name if a value isn't provided.
 
 ```powershell
@@ -568,7 +568,7 @@ function Test-MrParameterValidation {
     [CmdletBinding()]
     param (
         [ValidateNotNullOrEmpty()]
-        [string[]]$ComputerName = $env:COMPUTERNAME
+        [string[]]$ComputerName = $Env:COMPUTERNAME
     )
 
     Write-Output $ComputerName
@@ -591,7 +591,7 @@ function Test-MrVerboseOutput {
     [CmdletBinding()]
     param (
         [ValidateNotNullOrEmpty()]
-        [string[]]$ComputerName = $env:COMPUTERNAME
+        [string[]]$ComputerName = $Env:COMPUTERNAME
     )
 
     foreach ($Computer in $ComputerName) {
@@ -611,7 +611,7 @@ function Test-MrVerboseOutput {
     [CmdletBinding()]
     param (
         [ValidateNotNullOrEmpty()]
-        [string[]]$ComputerName = $env:COMPUTERNAME
+        [string[]]$ComputerName = $Env:COMPUTERNAME
     )
 
     foreach ($Computer in $ComputerName) {

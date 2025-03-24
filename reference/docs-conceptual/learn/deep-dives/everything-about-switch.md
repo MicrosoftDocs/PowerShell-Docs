@@ -281,7 +281,7 @@ advanced processing.
 The `switch` can be on an expression instead of a variable.
 
 ``` powershell
-switch ( ( Get-Service | Where status -eq 'running' ).name ) {...}
+switch ( ( Get-Service | where Status -EQ 'running' ).Name ) {...}
 ```
 
 Whatever the expression evaluates to is the value used for the match.
@@ -411,7 +411,7 @@ switch -Wildcard ($Messages)
 ```Output
 Downloading update
 WARNING: Ran into errors downloading file
-write-error -message $PSItem : Error: out of disk space
+Write-Error -Message $PSItem : Error: out of disk space
 + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
 + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
@@ -768,7 +768,7 @@ If I'm only using a `switch` as a lookup, I often use a `hashtable` instead.
 
 ### Enum
 
-PowerShell 5.0 introduced the `Enum` and it's also an option in this case.
+PowerShell 5.0 introduced the `enum` and it's also an option in this case.
 
 ``` powershell
 $day = 3

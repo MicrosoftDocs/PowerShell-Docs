@@ -282,7 +282,7 @@ To retrieve information about the PowerShell process running on your lab environ
 the `Get-Process` cmdlet.
 
 ```powershell
-Get-Process -Name PowerShell
+Get-Process -Name powershell
 ```
 
 ```Output
@@ -294,7 +294,7 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
 To determine the available properties, pipe `Get-Process` to `Get-Member`.
 
 ```powershell
-Get-Process -Name PowerShell | Get-Member
+Get-Process -Name powershell | Get-Member
 ```
 
 When using the `Get-Process` command, you might notice that some properties displayed by default are

@@ -139,15 +139,15 @@ ASCII files, don't work correctly with the default output format. You can change
 format to ASCII using the **Encoding** parameter:
 
 ```powershell
-Get-Process | Out-File -FilePath C:\temp\processlist.txt -Encoding ASCII
+Get-Process | Out-File -FilePath C:\temp\processlist.txt -Encoding ascii
 ```
 
-`Out-file` formats file contents to look like console output. This causes the output to be truncated
+`Out-File` formats file contents to look like console output. This causes the output to be truncated
 just as it's in a console window in most circumstances. For example, if you run the following
 command:
 
 ```powershell
-Get-Command | Out-File -FilePath c:\temp\output.txt
+Get-Command | Out-File -FilePath C:\temp\output.txt
 ```
 
 The output will look like this:
@@ -165,7 +165,7 @@ parameter to specify line width. Because **Width** is a 32-bit integer parameter
 it can have is 2147483647. Type the following to set the line width to this maximum value:
 
 ```powershell
-Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
+Get-Command | Out-File -FilePath C:\temp\output.txt -Width 2147483647
 ```
 
 The `Out-File` cmdlet is most useful when you want to save output as it would have displayed on the

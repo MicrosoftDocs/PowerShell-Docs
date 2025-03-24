@@ -68,11 +68,11 @@ Set-Alias -Name cmpo  -Value Compare-Object
 
 ## Compatibility aliases in Windows
 
-PowerShell has several aliases that allow **UNIX** and `cmd.exe` users to use familiar commands in
+PowerShell has several aliases that allow **Unix** and `cmd.exe` users to use familiar commands in
 Windows. The following table show common commands, the related PowerShell cmdlet, and the PowerShell
 alias:
 
-|     Windows Command Shell     | UNIX command | PowerShell cmdlet |             PowerShell alias              |
+|     Windows Command Shell     | Unix command | PowerShell cmdlet |             PowerShell alias              |
 | ----------------------------- | ------------ | ----------------- | ----------------------------------------- |
 | `cd`, `chdir`                 | `cd`         | `Set-Location`    | `sl`, `cd`, `chdir`                       |
 | `cls`                         | `clear`      | `Clear-Host`      | `cls` `clear`                             |
@@ -114,8 +114,8 @@ For more information, see the [Alias attribute][03] documentation.
 In addition to parameter aliases, PowerShell lets you specify the parameter name using the fewest
 characters needed to uniquely identify the parameter. For example, the `Get-ChildItem` cmdlet has
 the **Recurse** and **ReadOnly** parameters. To uniquely identify the **Recurse** parameter you only
-need to provide `-rec`. If you combine that with the command alias, `Get-ChildItem -Recurse` can be
-shortened to `dir -rec`.
+need to provide `-Rec`. If you combine that with the command alias, `Get-ChildItem -Recurse` can be
+shortened to `dir -Rec`.
 
 ## Don't use aliases in scripts
 

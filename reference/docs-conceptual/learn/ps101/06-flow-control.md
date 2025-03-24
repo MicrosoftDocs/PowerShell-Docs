@@ -12,7 +12,7 @@ title: Flow control
 
 When you move from writing PowerShell one-liners to writing scripts, it sounds more complicated than
 it is. A script is nothing more than the same or similar commands you run interactively in the
-PowerShell console, except you save them as a `.PS1` file. There are some scripting constructs that
+PowerShell console, except you save them as a `.ps1` file. There are some scripting constructs that
 you might use, such as a `foreach` loop instead of the `ForEach-Object` cmdlet. The differences can
 be confusing for beginners when considering that `foreach` is both a language keyword and an
 alias for the `ForEach-Object` cmdlet.
@@ -214,7 +214,7 @@ What's your guess?: 4
 
 The same results are achieved with a `Do While` loop by reversing the test condition to not equals.
 
-`Do` loops always run at least once because the condition is evaluated at the end of the loop.
+`do` loops always run at least once because the condition is evaluated at the end of the loop.
 
 ### While
 
@@ -280,7 +280,7 @@ while ($i -lt 5) {
 5
 ```
 
-`Return` is designed to exit out of the existing scope.
+The `return` keyword is designed to exit out of the existing scope.
 
 Notice in the following example that `return` outputs the first result and then exits out of the
 loop.
@@ -307,20 +307,20 @@ In this chapter, you learned about the different types of loops that exist in Po
 
 ## Review
 
-1. What's the difference between the `ForEach-Object` cmdlet and the `foreach` scripting construct?
-1. What's the primary advantage of using a `While` loop instead of a `Do While` or `Do Until` loop?
+1. What's the difference between the `ForEach-Object` cmdlet and the `foreach` statement?
+1. What's the primary advantage of using a `while` loop instead of a `do while` or `do until` loop?
 1. How do the `break` and `continue` statements differ?
 
 ## References
 
-- [ForEach-Object][foreach-object]
-- [about_ForEach][about-foreach]
-- [about_For][about-for]
-- [about_Do][about-do]
-- [about_While][about-while]
-- [about_Break][about-break]
-- [about_Continue][about-continue]
-- [about_Return][about-return]
+- [ForEach-Object][ForEach-Object]
+- [about_Foreach][about_Foreach]
+- [about_For][about_For]
+- [about_Do][about_Do]
+- [about_While][about_While]
+- [about_Break][about_Break]
+- [about_Continue][about_Continue]
+- [about_Return][about_Return]
 
 <!-- link references -->
 

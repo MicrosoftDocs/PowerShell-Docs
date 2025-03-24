@@ -180,7 +180,7 @@ Add the following line of code to display the form in Windows.
 $result = $form.ShowDialog()
 ```
 
-Finally, the code inside the **If** block instructs Windows what to do with the form after users
+Finally, the code inside the `if` block instructs Windows what to do with the form after users
 select an option from the list box, and then click the **OK** button or press the **Enter** key.
 
 ```powershell

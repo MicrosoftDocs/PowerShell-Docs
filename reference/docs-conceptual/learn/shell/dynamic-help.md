@@ -52,7 +52,7 @@ To work around these quirks, map the PSReadLine function to an available key com
 example:
 
 ```powershell
-Set-PSReadLineKeyHandler -chord 'Ctrl+l' -Function ShowParameterHelp
+Set-PSReadLineKeyHandler -Chord 'Ctrl+l' -Function ShowParameterHelp
 Set-PSReadLineKeyHandler -Chord 'Ctrl+k' -Function SelectCommandArgument
 ```
 

@@ -54,7 +54,7 @@ Cmdlet          Test-Connection                3.1.0.0    Microsoft.PowerShell.M
 Cmdlet          Write-EventLog                 3.1.0.0    Microsoft.PowerShell.Management
 ```
 
-Commands such as `Get-Process` and `Get-Hotfix` have a **ComputerName** parameter. This isn't the
+Commands such as `Get-Process` and `Get-HotFix` have a **ComputerName** parameter. This isn't the
 long-term direction that Microsoft is heading for running commands against remote computers. Even if
 you find a command that has a **ComputerName** parameter, chances are that you'll need to specify
 alternate credentials and it won't have a **Credential** parameter. And if you decided to run

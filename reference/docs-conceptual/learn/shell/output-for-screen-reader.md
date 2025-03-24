@@ -58,7 +58,7 @@ HTML files can be viewed by web browsers such as **Microsoft Edge**. The followi
 to save the output of a command to an HTML file.
 
 ```powershell
-Get-Service | ConvertTo-HTML | Out-File .\myFile.html
+Get-Service | ConvertTo-Html | Out-File .\myFile.html
 Invoke-Item .\myFile.html
 ```
 
@@ -87,7 +87,7 @@ Each of the following commands improves the output in a different way:
 
 ```powershell
 Get-Service -ErrorAction SilentlyContinue |
-    Where-Object {$_.Status -eq 'Running' -and $_.Description -Match 'event'} |
+    Where-Object {$_.Status -eq 'Running' -and $_.Description -match 'event'} |
     Select-Object Name, DisplayName |
     Format-List
 ```

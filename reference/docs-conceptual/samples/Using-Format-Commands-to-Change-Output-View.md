@@ -28,8 +28,8 @@ This article describes the `Format-Wide`, `Format-List`, and `Format-Table` cmdl
 Each object type in PowerShell has default properties that are used when you don't select the
 properties to display. Each cmdlet uses the same **Property** parameter to specify which properties
 you want displayed. Because `Format-Wide` only shows a single property, its **Property** parameter
-only takes a single value, but the property parameters of `Format-List` and `Format-Table` accept a
-list of property names.
+only takes a single value, but the **Property** parameter of `Format-List` and `Format-Table`
+accepts a list of property names.
 
 In this example, the default output of `Get-Process` cmdlet shows that we've two instances of
 Internet Explorer running.

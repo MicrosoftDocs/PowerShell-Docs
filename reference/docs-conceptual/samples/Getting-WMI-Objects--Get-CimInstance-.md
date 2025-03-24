@@ -24,7 +24,7 @@ classes available on the local computer by typing:
 
 ```powershell
 Get-CimClass -Namespace root/CIMV2 | 
-    Where-Object CimClassName -like Win32* | 
+    Where-Object CimClassName -Like Win32* | 
     Select-Object CimClassName
 ```
 
@@ -79,9 +79,10 @@ C:\WINDOWS\system32 Microsoft    22621       USER1          00330-80000-00000-AA
 Although we're showing all of the parameters, the command can be expressed in a more succinct way.
 The **ComputerName** parameter isn't necessary when connecting to the local system. We show it to
 demonstrate the most general case and remind you about the parameter. The **Namespace** defaults to
-`root/CIMV2`, and can be omitted as well. Finally, most cmdlets allow you to omit the name of common
-parameters. With `Get-CimInstance`, if no name is specified for the first parameter, PowerShell
-treats it as the **Class** parameter. This means the last command could have been issued by typing:
+**root/CIMV2**, and can be omitted as well. Finally, most cmdlets allow you to omit the name of
+common parameters. With `Get-CimInstance`, if no name is specified for the first parameter,
+PowerShell treats it as the **Class** parameter. This means the last command could have been issued
+by typing:
 
 ```powershell
 Get-CimInstance Win32_OperatingSystem

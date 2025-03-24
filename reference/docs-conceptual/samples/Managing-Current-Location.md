@@ -60,7 +60,7 @@ C:\WINDOWS
 The **PassThru** parameter can be used with many Set commands in PowerShell to return information
 about the result for cases in which there is no default output.
 
-You can specify paths relative to your current location in the same way as you would in most UNIX
+You can specify paths relative to your current location in the same way as you would in most Unix
 and Windows command shells. In standard notation for relative paths, a period (`.`) represents your
 current folder, and a doubled period (`..`) represents the parent directory of your current
 location.

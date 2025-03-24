@@ -61,7 +61,7 @@ PowerShell 7.2
 - Fix tab completion for unlocalized `about*` topics
 - Fix splatting being treated as positional parameter in completions
 - Add completions for Comment-based Help keywords
-- Add completion for `#requires` statements
+- Add completion for `#Requires` statements
 - Add tab completion for **View** parameter of `Format-*` cmdlets
 - Add support for class-based argument completers
 

@@ -391,7 +391,7 @@ first position (position zero) when used positionally.
     function help and script help articles.
 
     To get help for a script that isn't located in a path that's listed in
-    the `$env:Path` environment variable, type the script's path and file
+    the `$Env:PATH` environment variable, type the script's path and file
     name.
 
     If you enter the exact name of a help article, `Get-Help` displays the
@@ -633,7 +633,7 @@ SYNTAX
 
 DESCRIPTION
     > This cmdlet is only available on the Windows platform. The
-    `Get-Hotfix` cmdlet uses the Win32_QuickFixEngineering WMI class to
+    `Get-HotFix` cmdlet uses the Win32_QuickFixEngineering WMI class to
     list hotfixes that are installed on the local computer or specified
     remote computers.
 
@@ -648,10 +648,10 @@ RELATED LINKS
     Win32_QuickFixEngineering class
 
 REMARKS
-    To see the examples, type: "get-help Get-HotFix -examples".
-    For more information, type: "get-help Get-HotFix -detailed".
-    For technical information, type: "get-help Get-HotFix -full".
-    For online help, type: "get-help Get-HotFix -online"
+    To see the examples, type: "Get-Help Get-HotFix -Examples".
+    For more information, type: "Get-Help Get-HotFix -Detailed".
+    For technical information, type: "Get-Help Get-HotFix -Full".
+    For online help, type: "Get-Help Get-HotFix -Online"
 ```
 
 You can also find commands that lack help articles with `Get-Help`, although this capability isn't
