@@ -195,7 +195,7 @@ PowerShell also assigns types to literal values automatically.
 
 Numeric literals are implicitly typed by default. Numbers are typed based on
 their size. For example, `42` is small enough to be stored as an **Int32** type
-and `1.2` is stored as a **Double**. Integers larger than `[Int32]::MaxValue`
+and `1.2` is stored as a **Double**. Integers larger than `[int32]::MaxValue`
 are stored as **Int64**. While `42` can be stored as a **Byte** and `1.2` can
 be stored as a **Single** type, the implicit typing uses **Int32** and
 **Double** respectively. For more information, see
@@ -229,7 +229,7 @@ These contexts include:
 PowerShell attempts to convert values passed to parameters to match the
 parameter type. Type conversion of parameter values occurs in cmdlets,
 functions, scripts, scriptblocks, or .NET methods where the parameter is
-declared with a specific type. Declaring a parameter with the type `[object]`
+declared with a specific type. Declaring a parameter with the type `[Object]`
 or not defining a specific type allows any value type to be passed to a
 parameter. Parameters can also have custom conversions defined by decorating
 parameters with [ArgumentTransformationAttribute][17] attribute.
@@ -302,7 +302,7 @@ New-Object: Cannot find an overload for "Guid" and the argument count: "16".
 ```
 
 PowerShell treats the `$bytes` array as a list of individual parameters even
-though `$bytes` is an array of bytes and `System.Guid` has a `Guid(Byte[])`
+though `$bytes` is an array of bytes and `System.Guid` has a `Guid(byte[])`
 constructor.
 
 This common code pattern is an instance of _pseudo method syntax_, which
@@ -314,7 +314,7 @@ PS> New-Object -TypeName System.Guid -ArgumentList $bytes
 New-Object: Cannot find an overload for "Guid" and the argument count: "16".
 ```
 
-Given that the type of **ArgumentList** is `[object[]]`, a single argument that
+Given that the type of **ArgumentList** is `[Object[]]`, a single argument that
 happens to be an array (of any type) binds to it _element by element_. The
 workaround is to wrap `$bytes` in an outer array so that PowerShell looks for a
 constructor with parameters that match the contents of the outer array.
@@ -329,8 +329,8 @@ Guid
 04030201-0605-0807-090a-0b0c0d0e0f10
 ```
 
-The first item of the wrapped array is our original `Byte[]` instance. That
-value matches the `Guid(Byte[]]` constructor.
+The first item of the wrapped array is our original `[byte[]]` instance. That
+value matches the `Guid(byte[])` constructor.
 
 An alternative to the array wrapping workaround is to use the intrinsic static
 `new()` method.
@@ -402,7 +402,7 @@ If you want the result to be an **Int64**, you can cast the result type or
 operands.
 
 ```powershell
-PS> ([Int64]([int]::MaxValue + 1)).GetType().Name
+PS> ([int64]([int]::MaxValue + 1)).GetType().Name
 Int64
 ```
 

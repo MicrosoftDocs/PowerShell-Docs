@@ -5,7 +5,7 @@ ms.date: 06/13/2024
 no-loc: [<kbd>Tab</kbd>, <kbd>Ctrl</kbd>, <kbd>Space</kbd>]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_tab_expansion?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: About_tab_expansion
+title: about_Tab_Expansion
 ---
 # about_Tab_Expansion
 
@@ -80,7 +80,7 @@ You can then partially specify the path to the Active Setup log file and use
 tab expansion again:
 
 ```powershell
-PS> Get-Content c:\windows\acts<Tab>
+PS> Get-Content C:\windows\acts<Tab>
 ```
 
 When you press the <kbd>Tab</kbd> key, the command expands to:
@@ -173,18 +173,18 @@ $flavor = 'Chocolate'
 ## Tab completions for comment-based keywords
 
 Beginning in PowerShell 7.2, support was added for tab completion of the
-`#requires` parameters and the keywords for comment-based help.
+`#Requires` parameters and the keywords for comment-based help.
 
-### Example for `#requires` statement
+### Example for `#Requires` statement
 
 ```powershell
-#requires -<Ctrl-Space>
+#Requires -<Ctrl-Space>
 ```
 
 Menu expansion shows the following parameter options:
 
 ```powershell
-#requires -<Ctrl-Space>
+#Requires -<Ctrl-Space>
 Modules     PSEdition     RunAsAdministrator    Version
 ```
 

@@ -16,7 +16,7 @@ terminating errors.
 ## Long description
 
 Use `try`, `catch`, and `finally` blocks to respond to or handle terminating
-errors in scripts. The `Trap` statement can also be used to handle terminating
+errors in scripts. The `trap` statement can also be used to handle terminating
 errors in scripts. For more information, see [about_Trap][05].
 
 A terminating error stops a statement from running. If PowerShell does not
@@ -29,8 +29,8 @@ PowerShell to monitor for errors. When an error occurs within the `try` block,
 the error is first saved to the `$Error` automatic variable. PowerShell then
 searches for a `catch` block to handle the error. If the `try` statement does
 not have a matching `catch` block, PowerShell continues to search for an
-appropriate `catch` block or `Trap` statement in the parent scopes. After a
-`catch` block is completed or if no appropriate `catch` block or `Trap`
+appropriate `catch` block or `trap` statement in the parent scopes. After a
+`catch` block is completed or if no appropriate `catch` block or `trap`
 statement is found, the `finally` block is run. If the error cannot be handled,
 the error is written to the error stream.
 
@@ -134,7 +134,7 @@ two `catch` blocks:
 ```powershell
 try {
     $wc = New-Object System.Net.WebClient
-    $wc.DownloadFile("http://www.contoso.com/MyDoc.doc","c:\temp\MyDoc.doc")
+    $wc.DownloadFile("http://www.contoso.com/MyDoc.doc","C:\temp\MyDoc.doc")
 } catch [System.Net.WebException],[System.IO.IOException] {
     "Unable to download MyDoc.doc from http://www.contoso.com."
 } catch {
@@ -179,12 +179,12 @@ block for the derived class before the `catch` block for the general class.
 
 ## Using Traps in a Try Catch
 
-When a terminating error occurs in a `try` block with a `Trap` defined within
-the `try` block, even if there is a matching `catch` block, the `Trap`
+When a terminating error occurs in a `try` block with a `trap` defined within
+the `try` block, even if there is a matching `catch` block, the `trap`
 statement takes control.
 
-If a `Trap` exists at a higher block than the `try`, and there is no matching
-`catch` block within the current scope, the `Trap` will take control, even if
+If a `trap` exists at a higher block than the `try`, and there is no matching
+`catch` block within the current scope, the `trap` will take control, even if
 any parent scope has a matching `catch` block.
 
 ## Accessing exception information
@@ -236,18 +236,18 @@ To free resources used by a script, add a `finally` block after the `try` and
 before the script terminates or before the current block goes out of scope.
 
 A `finally` block runs even if you use <kbd>CTRL</kbd>+<kbd>C</kbd> to stop the
-script. A `finally` block also runs if an Exit keyword stops the script from
+script. A `finally` block also runs if an `exit` keyword stops the script from
 within a `catch` block.
 
 In the following example, the `try` block attempts to download a file to the
-`c:\temp` folder. The `catch` blocks handle errors that occur during the
+`C:\temp` folder. The `catch` blocks handle errors that occur during the
 download. The `finally` block disposes of the `WebClient` object and removes
 the temporary file if it exists.
 
 ```powershell
 try {
     $wc = New-Object System.Net.WebClient
-    $tempFile = "c:\temp\MyDoc.doc"
+    $tempFile = "C:\temp\MyDoc.doc"
     $wc.DownloadFile("http://www.contoso.com/MyDoc.doc",$tempFile)
 } catch [System.Net.WebException],[System.IO.IOException] {
     "Unable to download MyDoc.doc from http://www.contoso.com."

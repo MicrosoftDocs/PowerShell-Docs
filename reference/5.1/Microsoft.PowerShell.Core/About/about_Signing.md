@@ -204,7 +204,7 @@ a certificate file in the file system directory.
 At the PowerShell prompt, type:
 
 ```powershell
-Get-ChildItem cert:\CurrentUser\my -CodeSigning
+Get-ChildItem Cert:\CurrentUser\my -CodeSigning
 ```
 
 This command uses the PowerShell Certificate provider to view information
@@ -241,7 +241,7 @@ To use this script, copy the following text into a text file, and name it
 
 ```powershell
 ## Signs a file
-[cmdletbinding()]
+[CmdletBinding()]
 param(
     [Parameter(Mandatory=$true)]
     [string] $File
@@ -260,7 +260,7 @@ PowerShell command prompt:
 $cert = Get-ChildItem Cert:\CurrentUser\My -CodeSigningCert |
     Select-Object -First 1
 
-Set-AuthenticodeSignature add-signature.ps1 $cert
+Set-AuthenticodeSignature Add-Signature.ps1 $cert
 ```
 
 The `Set-AuthenticodeSignature` cmdlet adds the signature to the script file as

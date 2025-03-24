@@ -342,7 +342,7 @@ statement conditions.
 
 ```powershell
 switch ("Test") {
-    { $_ -is [String] } { "Found a string" }
+    { $_ -is [string] } { "Found a string" }
     "Test"              { "This $_ executes as well" }
 }
 ```
@@ -383,7 +383,7 @@ non-number is encountered, execution is terminated with the `break` keyword.
 ```powershell
 switch (1,4,-1,3,"Hello",2,1) {
     {$_ -lt 0}           { continue }
-    {$_ -isnot [Int32]}  { break }
+    {$_ -isnot [int32]}  { break }
     {$_ % 2}             { "$_ is Odd" }
     {-not ($_ % 2)}      { "$_ is Even" }
 }
@@ -445,7 +445,7 @@ switch -File $fileEscaped { foo { 'Foo' } }
 
 ## See also
 
-- [about_break][03]
+- [about_Break][03]
 - [about_Continue][05]
 - [about_If][06]
 - [about_Script_Blocks][07]
