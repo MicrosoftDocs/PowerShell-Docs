@@ -188,7 +188,13 @@ by the job trigger.
 This example creates a repeating job trigger to only run for a specific amount of time.
 
 ```powershell
-New-JobTrigger -Once -At "09/12/2013 1:00:00" -RepetitionInterval (New-TimeSpan -Hours 1) -RepetitionDuration (New-TimeSpan -Hours 48)
+$newJobTriggerSplat = @{
+    Once = -Once
+    At = "09/12/2013 1:00:00"
+    RepetitionInterval = (New-TimeSpan -Hours 1)
+    RepetitionDuration = (New-TimeSpan -Hours 48)
+}
+New-JobTrigger @newJobTriggerSplat
 ```
 
 This command creates a job trigger that runs a job every 60 minutes for 48 hours beginning on
@@ -199,7 +205,8 @@ September 12, 2013 at 1:00 AM.
 This example stops a repeating job trigger.
 
 ```powershell
-Get-JobTrigger -Name SecurityCheck | Set-JobTrigger -RepetitionInterval 0:00 -RepetitionDuration 0:00
+Get-JobTrigger -Name SecurityCheck |
+    Set-JobTrigger -RepetitionInterval 0:00 -RepetitionDuration 0:00
 ```
 
 This command forcibly stops the **SecurityCheck** job, which is triggered to run every 60 minutes
@@ -214,7 +221,13 @@ repetition duration of the job trigger to zero (`0`).
 This example creates a repeating job trigger that runs indefinitely.
 
 ```powershell
-New-JobTrigger -Once -At "9/21/2012 0am" -RepetitionInterval (New-TimeSpan -Hour 12) -RepetitionDuration ([timespan]::MaxValue)
+$newJobTriggerSplat = @{
+    Once = -Once
+    At = "9/21/2012 0am"
+    RepetitionInterval = (New-TimeSpan -Hour 12)
+    RepetitionDuration = ([timespan]::MaxValue)
+}
+New-JobTrigger @newJobTriggerSplat
 ```
 
 The following command creates a job trigger that runs a scheduled job once every 12 hours for an
