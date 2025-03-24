@@ -21,7 +21,7 @@ There are many ways to create objects, this list is not definitive:
 
 - [New-Object][14]: Creates an instance of a .NET Framework object or COM
   object.
-- [Import-Csv][13]/[ConvertFrom-CSV][10]: Creates custom objects
+- [Import-Csv][13]/[ConvertFrom-Csv][10]: Creates custom objects
   (**PSCustomObject**) from the items defined as character separated values.
 - [ConvertFrom-Json][11]: Creates custom objects defined in JavaScript Object
   Notation (JSON).
@@ -170,17 +170,17 @@ the example section of the `Update-Help` cmdlet help topic.
 ```powershell
 function Test-Object {
   $ModuleName = "PSScheduledJob"
-  $HelpCulture = "en-us"
+  $HelpCulture = "en-US"
   $HelpVersion = "3.1.0.0"
-  [PSCustomObject]@{
+  [pscustomobject]@{
     "ModuleName"=$ModuleName
     "UICulture"=$HelpCulture
     "Version"=$HelpVersion
   }
   $ModuleName = "PSWorkflow"
-  $HelpCulture = "en-us"
+  $HelpCulture = "en-US"
   $HelpVersion = "3.0.0.0"
-  [PSCustomObject]@{
+  [pscustomobject]@{
     "ModuleName"=$ModuleName
     "UICulture"=$HelpCulture
     "Version"=$HelpVersion
@@ -195,8 +195,8 @@ table by default.
 ```Output
 ModuleName        UICulture      Version
 ---------         ---------      -------
-PSScheduledJob    en-us          3.1.0.0
-PSWorkflow        en-us          3.0.0.0
+PSScheduledJob    en-US          3.1.0.0
+PSWorkflow        en-US          3.0.0.0
 ```
 
 Users can manage the properties of the custom objects just as they do with

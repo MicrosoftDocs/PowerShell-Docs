@@ -54,18 +54,18 @@ The following example demonstrates how objects are passed from one
 command to the next:
 
 ```powershell
-Get-ChildItem C: | where { $_.PsIsContainer -eq $false } | Format-List
+Get-ChildItem C: | where { $_.PSIsContainer -eq $false } | Format-List
 ```
 
 The first command `Get-ChildItem C:` returns a file or directory object
 for each item in the root directory of the file system. The file and
 directory objects are passed down the pipeline to the second command.
 
-The second command `where { $_.PsIsContainer -eq $false }` uses the
-**PsIsContainer** property of all file system objects to select only
-files, which have a value of False (`$false`) in their **PsIsContainer**
+The second command `where { $_.PSIsContainer -eq $false }` uses the
+**PSIsContainer** property of all file system objects to select only
+files, which have a value of False (`$false`) in their **PSIsContainer**
 property. Folders, which are containers and, thus, have a value of
-True (`$true`) in their **PsIsContainer** property, are not selected.
+True (`$true`) in their **PSIsContainer** property, are not selected.
 
 The second command passes only the file objects to the third command
 `Format-List`, which displays the file objects in a list.

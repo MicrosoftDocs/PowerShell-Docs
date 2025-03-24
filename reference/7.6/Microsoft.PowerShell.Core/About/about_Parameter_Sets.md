@@ -134,7 +134,7 @@ function Measure-Lines {
 
             if ($Words) {
                 $wc = 0
-                foreach ($line in $content) { $wc += $line.split(' ').Length }
+                foreach ($line in $content) { $wc += $line.Split(' ').Length }
                 $result.Add('Words', $wc)
             }
 
