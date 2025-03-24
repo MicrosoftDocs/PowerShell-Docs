@@ -227,7 +227,7 @@ following example, the negative value can't be cast to an unsigned integer, and
 the unsigned integer is too large to be cast to `Int32`:
 
 ```powershell
-([int32]::minvalue + [uint32]::maxvalue).GetType().FullName
+([int32]::MinValue + [uint32]::MaxValue).GetType().FullName
 ```
 
 ```Output
@@ -241,10 +241,10 @@ The `System.Decimal` type is an exception. If either operand has the
 **Decimal** value is an error.
 
 ```powershell
-PS> [Decimal]::maxvalue
+PS> [decimal]::MaxValue
 79228162514264337593543950335
 
-PS> [Decimal]::maxvalue + 1
+PS> [decimal]::MaxValue + 1
 RuntimeException: Value was either too large or too small for a Decimal.
 ```
 
@@ -454,12 +454,12 @@ InvalidOperation: A hash table can only be added to another hash table.
 
 Although the addition operators are very useful, use the assignment operators
 to add elements to hash tables and arrays. For more information see
-[about_assignment_operators](about_Assignment_Operators.md). The following
+[about_Assignment_Operators](about_Assignment_Operators.md). The following
 examples use the `+=` assignment operator to add items to an array:
 
 ```powershell
 $array = @()
-(0..2).foreach{ $array += $_ }
+(0..2).ForEach{ $array += $_ }
 $array
 ```
 
@@ -497,7 +497,7 @@ The following examples show how to use the arithmetic operators in expressions
 with PowerShell commands:
 
 ```powershell
-(Get-Date) + (New-TimeSpan -day 1)
+(Get-Date) + (New-TimeSpan -Day 1)
 ```
 
 The parenthesis operator forces the evaluation of the `Get-Date` cmdlet and the
@@ -505,7 +505,7 @@ evaluation of the `New-TimeSpan -Day 1` cmdlet expression, in that order. Both
 results are then added using the `+` operator.
 
 ```powershell
-Get-Process | Where-Object { ($_.ws * 2) -gt 50mb }
+Get-Process | Where-Object { ($_.WS * 2) -gt 50mb }
 ```
 
 ```Output
@@ -519,7 +519,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     967      30    58804      59496   416   930.97   2508 WINWORD
 ```
 
-In the above expression, each process working space (`$_.ws`) is multiplied by
+In the above expression, each process working space (`$_.WS`) is multiplied by
 `2`; and, the result, compared against `50mb` to see if it's greater than that.
 
 ## Bitwise operators
@@ -540,7 +540,7 @@ PowerShell supports the following bitwise operators.
 | `-band`  | Bitwise AND            | `10 -band 3` | 2      |
 | `-bor`   | Bitwise OR (inclusive) | `10 -bor 3`  | 11     |
 | `-bxor`  | Bitwise OR (exclusive) | `10 -bxor 3` | 9      |
-| `-bnot`  | Bitwise NOT            | `-bNot 10`   | -11    |
+| `-bnot`  | Bitwise NOT            | `-bnot 10`   | -11    |
 | `-shl`   | Shift-left             | `102 -shl 2` | 408    |
 | `-shr`   | Shift-right            | `102 -shr 1` | 51     |
 
@@ -587,7 +587,7 @@ For example, the binary complement of 0 is -1, the maximum unsigned integer
 (0xFFFFFFFF), and the binary complement of -1 is 0.
 
 ```powershell
--bNot 10
+-bnot 10
 ```
 
 ```Output

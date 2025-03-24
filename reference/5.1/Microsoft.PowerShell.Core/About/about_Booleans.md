@@ -90,7 +90,7 @@ Examples:
 # Empty collections
 PS> [bool]@()
 False
-PS> [bool](Get-ChildItem | Where-Object Name -eq 'Non-existent-File.txt')
+PS> [bool](Get-ChildItem | Where-Object Name -EQ 'Non-existent-File.txt')
 False
 # Single-element collections
 PS> $a = @(0)

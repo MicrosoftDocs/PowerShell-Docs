@@ -3,7 +3,7 @@ description: Describes the features of PowerShell that use ANSI escape sequences
 Locale: en-US
 ms.date: 08/27/2024
 schema: 2.0.0
-title: about_ANSI_terminals
+title: about_ANSI_Terminals
 ---
 # about_ANSI_Terminals
 
@@ -230,7 +230,7 @@ in the `bash` process, outside of the PowerShell host, the output isn't
 affected by **OutputRendering**.
 
 ```bash
-pwsh -noprofile -command 'Get-ChildItem' > out.txt
+pwsh -NoProfile -Command 'Get-ChildItem' > out.txt
 ```
 
 When you inspect the contents of `out.txt` you see the ANSI escape sequences.
@@ -239,7 +239,7 @@ By contrast, when redirection occurs within the PowerShell session,
 **OutputRendering** affects the redirected output.
 
 ```bash
-pwsh -noprofile -command 'Get-ChildItem > out.txt'
+pwsh -NoProfile -Command 'Get-ChildItem > out.txt'
 ```
 
 When you inspect the contents of `out.txt` there are no ANSI escape sequences.
@@ -249,13 +249,13 @@ When you inspect the contents of `out.txt` there are no ANSI escape sequences.
 Support for ANSI escape sequences can be turned off using the **TERM** or
 **NO_COLOR** environment variables.
 
-The following values of `$env:TERM` change the behavior as follows:
+The following values of `$Env:TERM` change the behavior as follows:
 
 - `dumb` - sets `$Host.UI.SupportsVirtualTerminal = $false`
 - `xterm-mono` - sets `$PSStyle.OutputRendering = PlainText`
 - `xterm` - sets `$PSStyle.OutputRendering = PlainText`
 
-If `$env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
+If `$Env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
 **PlainText**. For more information about the **NO_COLOR** environment
 variable, see [https://no-color.org/][04].
 

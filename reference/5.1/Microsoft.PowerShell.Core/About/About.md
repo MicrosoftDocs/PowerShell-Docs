@@ -150,7 +150,7 @@ Provides a brief introduction to the PowerShell Desired State Configuration
 
 ### [about_Do](about_Do.md)
 
-Runs a statement list one or more times, subject to a `While` or `Until`
+Runs a statement list one or more times, subject to a `while` or `until`
 condition.
 
 ### [about_Enum](about_Enum.md)
@@ -267,8 +267,8 @@ expression in the background without interacting with the current session.
 
 ### [about_Join](about_Join.md)
 
-Describes how the join operator (-join) combines multiple strings into a single
-string.
+Describes how the join operator (`-join`) combines multiple strings into a
+single string.
 
 ### [about_Language_Keywords](about_Language_Keywords.md)
 
@@ -377,7 +377,7 @@ command-line parameters and describes the syntax.
 
 ### [about_PowerShell_Ise_exe](about_PowerShell_Ise_exe.md)
 
-Explains how to use the PowerShell_Ise.exe command-line tool.
+Explains how to use the `powershell_ise.exe` command-line tool.
 
 ### [about_Preference_Variables](about_Preference_Variables.md)
 
@@ -389,8 +389,8 @@ Describes how to create and use a PowerShell profile.
 
 ### [about_Prompts](about_Prompts.md)
 
-Describes the `Prompt` function and demonstrates how to create a custom
-`Prompt` function.
+Describes the `prompt` function and demonstrates how to create a custom
+`prompt` function.
 
 ### [about_Properties](about_Properties.md)
 
@@ -417,7 +417,7 @@ The automatic variable that contains the current object in the pipeline object.
 
 ### [about_PSModulePath](about_PSModulePath.md)
 
-This article the purpose and usage of the `$env:PSModulePath` environment
+This article the purpose and usage of the `$Env:PSModulePath` environment
 variable.
 
 ### [about_PSSession_Details](about_PSSession_Details.md)
