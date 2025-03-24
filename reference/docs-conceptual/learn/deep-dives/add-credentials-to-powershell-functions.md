@@ -125,7 +125,7 @@ function Set-RemoteRegistryValue {
         $Credential = [System.Management.Automation.PSCredential]::Empty
     )
         $null = Invoke-Command -ComputerName $ComputerName -ScriptBlock {
-            Set-ItemProperty -Path $using:Path -Name $using:Name -Value $using:Value
+            Set-ItemProperty -Path $Using:Path -Name $Using:Name -Value $Using:Value
         } -Credential $Credential
 }
 ```
@@ -134,15 +134,15 @@ The following sections show different methods of providing credentials to `Set-R
 
 ### Prompting for credentials
 
-Using `Get-Credential` in parentheses `()` at run time causes the `Get-credential` to run first. You
+Using `Get-Credential` in parentheses `()` at run time causes the `Get-Credential` to run first. You
 are prompted for a username and password. You could use the **Credential** or **UserName**
-parameters of `Get-credential` to pre-populate the username and domain. The following example uses a
+parameters of `Get-Credential` to pre-populate the username and domain. The following example uses a
 technique called splatting to pass parameters to the `Set-RemoteRegistryValue` function. For more
 information about splatting, check out the [about_Splatting][about_Splatting] article.
 
 ```powershell
 $remoteKeyParams = @{
-    ComputerName = $env:COMPUTERNAME
+    ComputerName = $Env:COMPUTERNAME
     Path = 'HKLM:\SOFTWARE\Microsoft\WebManagement\Server'
     Name = 'EnableRemoteManagement'
     Value = '1'
@@ -159,7 +159,7 @@ only a username, the cmdlet automatically prompts for the password. The
 
 ```powershell
 $remoteKeyParams = @{
-    ComputerName = $env:COMPUTERNAME
+    ComputerName = $Env:COMPUTERNAME
     Path = 'HKLM:\SOFTWARE\Microsoft\WebManagement\Server'
     Name = 'EnableRemoteManagement'
     Value = '1'
@@ -191,7 +191,7 @@ $password = ConvertTo-SecureString "P@ssw0rd" -AsPlainText -Force
 $Cred = New-Object System.Management.Automation.PSCredential ("duffney", $password)
 
 $remoteKeyParams = @{
-    ComputerName = $env:COMPUTERNAME
+    ComputerName = $Env:COMPUTERNAME
     Path = 'HKLM:\SOFTWARE\Microsoft\WebManagement\Server'
     Name = 'EnableRemoteManagement'
     Value = '1'
@@ -212,7 +212,7 @@ credentials, as shown in this example:
 
 ```powershell
 $remoteKeyParams = @{
-    ComputerName = $env:COMPUTERNAME
+    ComputerName = $Env:COMPUTERNAME
     Path = 'HKLM:\SOFTWARE\Microsoft\WebManagement\Server'
     Name = 'EnableRemoteManagement'
     Value = '1'
@@ -247,11 +247,11 @@ function Set-RemoteRegistryValue {
 
     if($Credential -ne [System.Management.Automation.PSCredential]::Empty) {
         Invoke-Command -ComputerName:$ComputerName -Credential:$Credential  {
-            Set-ItemProperty -Path $using:Path -Name $using:Name -Value $using:Value
+            Set-ItemProperty -Path $Using:Path -Name $Using:Name -Value $Using:Value
         }
     } else {
         Invoke-Command -ComputerName:$ComputerName {
-            Set-ItemProperty -Path $using:Path -Name $using:Name -Value $using:Value
+            Set-ItemProperty -Path $Using:Path -Name $Using:Name -Value $Using:Value
         }
     }
 }
@@ -286,7 +286,7 @@ function Set-RemoteRegistryValue {
         }
 
         $null = Invoke-Command -ScriptBlock {
-            Set-ItemProperty -Path $using:Path -Name $using:Name -Value $using:Value
+            Set-ItemProperty -Path $Using:Path -Name $Using:Name -Value $Using:Value
         } @splat
 }
 ```

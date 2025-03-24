@@ -19,7 +19,7 @@ specified destination.
 
 For each cmdlet, provide a help file that can be accessed by typing:
 
-`get-help *cmdlet-name* -detailed`
+`Get-Help *cmdlet-name* -Detailed`
 
 The detailed view of the cmdlet help file should include a description of the cmdlet, the command
 syntax, descriptions of the parameters, and an example that demonstrate the use of that cmdlet.

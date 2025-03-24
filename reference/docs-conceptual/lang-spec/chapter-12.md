@@ -87,15 +87,15 @@ Consider a function call `Test1` that has the following param block, and which i
 param (
     [Parameter(Mandatory = $true)]
     [Alias("CN")]
-    [Alias("name", "system")]
+    [Alias("Name", "System")]
     [string[]] $ComputerName
 )
 
 Test1 "Mars", "Saturn"                # pass argument by position
 Test1 -ComputerName "Mars", "Saturn"  # pass argument by name
 Test1 -CN "Mars", "Saturn"            # pass argument using first alias
-Test1 -name "Mars", "Saturn"          # pass argument using second alias
-Test1 -sys "Mars", "Saturn"           # pass argument using third alias
+Test1 -Name "Mars", "Saturn"          # pass argument using second alias
+Test1 -Sys "Mars", "Saturn"           # pass argument using third alias
 ```
 
 Consider a function call `Test2` that has the following param block, and which is called as shown:
@@ -112,7 +112,7 @@ Get-ChildItem "E:\*.txt" | Test2 -LiteralPath { $_ ; "`n`t";
 Get-ChildItem "E:\*.txt" | Test2
 ```
 
-Cmdlet `Get-ChildItem` (alias `Dir`) adds to the object it returns a new **NoteProperty** of type
+Cmdlet `Get-ChildItem` (alias `dir`) adds to the object it returns a new **NoteProperty** of type
 `string`, called **PSPath**.
 
 ### 12.3.2 The AllowEmptyCollection attribute
@@ -124,14 +124,14 @@ Consider a function call `Test` that has the following param block, and which is
 
 ```powershell
 param (
-    [parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [AllowEmptyCollection()]
     [string[]] $ComputerName
 )
 
-Test "Red", "Green" # $computerName has Length 2
-Test "Red" # $computerName has Length 1
-Test -comp @() # $computerName has Length 0
+Test "Red", "Green" # $ComputerName has Length 2
+Test "Red" # $ComputerName has Length 1
+Test -Comp @() # $ComputerName has Length 0
 ```
 
 ### 12.3.3 The AllowEmptyString attribute
@@ -143,14 +143,14 @@ Consider a function call `Test` that has the following param block, and which is
 
 ```powershell
 param (
-    [parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [AllowEmptyString()]
     [string] $ComputerName
 )
 
-Test "Red" # $computerName is "Red"
+Test "Red" # $ComputerName is "Red"
 Test "" # empty string is permitted
-Test -comp "" # empty string is permitted
+Test -Comp "" # empty string is permitted
 ```
 
 ### 12.3.4 The AllowNull attribute
@@ -162,14 +162,14 @@ Consider a function call Test that has the following param block, and which is c
 
 ```powershell
 param (
-    [parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [AllowNull()]
     [int[]] $Values
 )
 
 Test 10, 20, 30     # $values has Length 3, values 10, 20, 30
 Test 10, $null, 30  # $values has Length 3, values 10, 0, 30
-Test -val $null     # $values has value $null
+Test -Val $null     # $values has value $null
 ```
 
 Note that the second case above does not need this attribute; there is already an implicit
@@ -362,8 +362,8 @@ ValueFromPipeline=$true)]<br />
 <p>This argument specifies whether the parameter takes its value from a property of a pipeline object that has either the same name or the same alias as this parameter. A value of $true indicates that it does. A value of $false indicates that it does not.</p>
 <p>Specify $true if the following conditions are true: the parameter accesses a property of the piped object, and the property has the same name as the parameter, or the property has the same alias as the parameter.</p>
 <p>A parameter having ValueFromPipelineByPropertyName set to $true need not have a parameter in the same set with ValueFromPipeline set to $true.</p>
-<p>If a function has a parameter $ComputerName, and the piped object has a ComputerName property, the value of the ComputerName property is assigned to the $ComputerName parameter of the function:</p>
-<p>param ( [parameter(Mandatory = $true,<br />
+<p>If a function has a parameter $ComputerName, and the piped object has a ComputerName property, the value of the ComputerName property is assigned to the $ComputerName parameter of the Function:</p>
+<p>param ( [Parameter(Mandatory = $true,<br />
 ValueFromPipelineByPropertyName = $true)]<br />
 [string[]] $ComputerName )</p>
 <p>Multiple parameters in a parameter set can define the ValueFromPipelineByPropertyName as $true. Although, a single input object cannot be bound to multiple parameters, different properties in that input object may be bound to different parameters.</p>
@@ -387,13 +387,13 @@ Get-Date | Process-Date</p></td>
 <td>ValueFromRemainingArguments (named)</td>
 <td><p>Type: bool; Default value: $false</p>
 <p>This argument specifies whether the parameter accepts all of the remaining arguments that are not bound to the parameters of the function. A value of $true indicates that it does. A value of $false indicates that it does not.</p>
-<p>The following example shows a parameter $others that accepts all the remaining arguments of the input object that is passed to the function Test:</p>
-<p>param ( [parameter(Mandatory = $true)][int] $p1,<br />
-[parameter(Mandatory = $true)][int] $p2,<br />
-[parameter(ValueFromRemainingArguments = $true)]<br />
-[string[]] $others )</p>
-<p>Test 10 20 # $others has Length 0<br />
-Test 10 20 30 40 # $others has Length 2, value 30,40</p></td>
+<p>The following example shows a parameter $Others that accepts all the remaining arguments of the input object that is passed to the function Test:</p>
+<p>param ( [Parameter(Mandatory = $true)][int] $p1,<br />
+[Parameter(Mandatory = $true)][int] $p2,<br />
+[Parameter(ValueFromRemainingArguments = $true)]<br />
+[string[]] $Others )</p>
+<p>Test 10 20 # $Others has Length 0<br />
+Test 10 20 30 40 # $Others has Length 2, value 30,40</p></td>
 </tr>
 </tbody>
 </table>
@@ -523,7 +523,7 @@ In the absence of this attribute, the parameter's corresponding argument can be 
 Consider a function call Test that has the following param block, and which is called as shown:
 
 ```powershell
-param ( [parameter(Mandatory = $true)]
+param ( [Parameter(Mandatory = $true)]
 [ValidateLength(3,6)]
 [string[]] $ComputerName )
 
@@ -621,16 +621,16 @@ param (
     [int] $Minimum
 )
 
-Test -c A12 # matches pattern
-Test -c A63 # does not match pattern
+Test -C A12 # matches pattern
+Test -C A63 # does not match pattern
 
-Test -h 0x4f # matches pattern
-Test -h "0XB2" # matches pattern
-Test -h 0xK3 # does not match pattern
+Test -H 0x4f # matches pattern
+Test -H "0XB2" # matches pattern
+Test -H 0xK3 # does not match pattern
 
-Test -m -4 # matches pattern
-Test -m "+7" # matches pattern
-Test -m -12 # matches pattern, but is too long
+Test -M -4 # matches pattern
+Test -M "+7" # matches pattern
+Test -M -12 # matches pattern, but is too long
 
 [ValidatePattern('\^[a-z][a-z0-9]\*$')]$ident = "abc"
 $ident = "123" # does not match pattern
@@ -669,13 +669,13 @@ Consider a function call `Test1` that has the following param block, and which i
 
 ```powershell
 param (
-    [parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [ValidateRange(1, 10)]
     [int] $StartValue
 )
 
 Test1 2
-Test1 -st 7
+Test1 -St 7
 Test1 -3 # value is too small
 Test1 12 # value is too large
 ```
@@ -684,7 +684,7 @@ Consider a function call Test2 that has the following param block and calls:
 
 ```powershell
 param (
-    [parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [ValidateRange("b", "f")]
     [string] $Name
 )
@@ -698,7 +698,7 @@ Consider a function call `Test3` that has the following param block, and which i
 
 ```powershell
 param (
-    [parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [ValidateRange(0.002, 0.003)]
     [double] $Distance
 )
@@ -778,11 +778,11 @@ param ( [ValidateSet("Red", "Green", "Blue")]
 
 )
 
-Test -col "RED"    # case is ignored, is a member of the set
-Test -col "white"  # case is ignored, is not a member of the set
+Test -Col "RED"    # case is ignored, is a member of the set
+Test -Col "white"  # case is ignored, is not a member of the set
 
-Test -dir "up"     # case is not ignored, is a member of the set
-Test -dir "Up"     # case is not ignored, is not a member of the set
+Test -Dir "up"     # case is not ignored, is a member of the set
+Test -Dir "Up"     # case is not ignored, is not a member of the set
 
 [ValidateSet(("Red", "Green", "Blue")]$color = "RED" # ok, case is ignored
 $color = "Purple"  # case is ignored, is not a member of the set

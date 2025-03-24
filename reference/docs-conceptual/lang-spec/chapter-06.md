@@ -143,8 +143,8 @@ The rules for converting any value to type string are as follows:
 - For other reference type values, if the reference type supports such a conversion, that conversion
   is used; otherwise, the conversion is in error.
 
-The string used to represent the value of an element that is an array has the form `System.type[]`,
-`System.type[,]`, and so on. For other reference types, the method `ToString` is called. For other
+The string used to represent the value of an element that is an array has the form `System.Type[]`,
+`System.Type[,]`, and so on. For other reference types, the method `ToString` is called. For other
 enumerable types, the source value is treated like a 1-dimensional array.
 
 ## 6.9 Conversion to array
