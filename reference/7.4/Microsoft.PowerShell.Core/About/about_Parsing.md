@@ -59,7 +59,7 @@ Variable expressions carry the value of the variable they reference:
 
 ```powershell
 $x
-$script:path
+$Script:path
 ```
 
 Operators combine other expressions for evaluation:
@@ -391,7 +391,7 @@ In `Windows` or `Standard` mode, the following examples produce the expected
 results:
 
 ```powershell
-TestExe -echoargs """${env:ProgramFiles(x86)}\Microsoft\"""
+TestExe -echoargs """${Env:ProgramFiles(x86)}\Microsoft\"""
 TestExe -echoargs '"C:\Program Files (x86)\Microsoft\"'
 ```
 
@@ -399,7 +399,7 @@ To get the same results in `Legacy` mode, you must escape the quotes or use the
 stop-parsing token (`--%`):
 
 ```powershell
-TestExe -echoargs """""${env:ProgramFiles(x86)}\Microsoft\\"""""
+TestExe -echoargs """""${Env:ProgramFiles(x86)}\Microsoft\\"""""
 TestExe -echoargs "\""C:\Program Files (x86)\Microsoft\\"""
 TestExe -echoargs --% ""\""C:\Program Files (x86)\Microsoft\\"\"""
 TestExe -echoargs --% """C:\Program Files (x86)\Microsoft\\""
@@ -439,7 +439,7 @@ Unlike the stop-parsing (`--%`) token, any values following the `--` token can
 be interpreted as expressions by PowerShell.
 
 ```powershell
-Write-Output -- -InputObject $env:PROCESSOR_ARCHITECTURE
+Write-Output -- -InputObject $Env:PROCESSOR_ARCHITECTURE
 ```
 
 ```Output

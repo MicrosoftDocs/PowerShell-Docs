@@ -59,7 +59,7 @@ Variable expressions carry the value of the variable they reference:
 
 ```powershell
 $x
-$script:path
+$Script:path
 ```
 
 Operators combine other expressions for evaluation:
@@ -391,7 +391,7 @@ In `Windows` or `Standard` mode, the following examples produce the expected
 results:
 
 ```powershell
-TestExe -echoargs """${env:ProgramFiles(x86)}\Microsoft\"""
+TestExe -echoargs """${Env:ProgramFiles(x86)}\Microsoft\"""
 TestExe -echoargs '"C:\Program Files (x86)\Microsoft\"'
 ```
 
@@ -399,7 +399,7 @@ To get the same results in `Legacy` mode, you must escape the quotes or use the
 stop-parsing token (`--%`):
 
 ```powershell
-TestExe -echoargs """""${env:ProgramFiles(x86)}\Microsoft\\"""""
+TestExe -echoargs """""${Env:ProgramFiles(x86)}\Microsoft\\"""""
 TestExe -echoargs "\""C:\Program Files (x86)\Microsoft\\"""
 TestExe -echoargs --% ""\""C:\Program Files (x86)\Microsoft\\"\"""
 TestExe -echoargs --% """C:\Program Files (x86)\Microsoft\\""
@@ -439,7 +439,7 @@ Unlike the stop-parsing (`--%`) token, any values following the `--` token can
 be interpreted as expressions by PowerShell.
 
 ```powershell
-Write-Output -- -InputObject $env:PROCESSOR_ARCHITECTURE
+Write-Output -- -InputObject $Env:PROCESSOR_ARCHITECTURE
 ```
 
 ```Output
@@ -521,13 +521,13 @@ using `Trace-Command`.
 
 ```powershell
 Trace-Command -Name ParameterBinding -Expression {
-    findstr /c:"foo" ~\repocache.clixml
+    findstr /C:\foo" ~\repocache.clixml
 } -PSHost
 ```
 
 ```Output
 DEBUG: 2024-05-06 15:13:46.8268 ParameterBinding Information: 0 : BIND NAMED native application line args [C:\Windows\system32\findstr.exe]
-DEBUG: 2024-05-06 15:13:46.8270 ParameterBinding Information: 0 :     BIND cmd line arg [/c:foo] to position [0]
+DEBUG: 2024-05-06 15:13:46.8270 ParameterBinding Information: 0 :     BIND cmd line arg [/C:\oo] to position [0]
 DEBUG: 2024-05-06 15:13:46.8271 ParameterBinding Information: 0 :     BIND cmd line arg [C:\Users\user2\repocache.clixml] to position [1]
 DEBUG: 2024-05-06 15:13:46.8322 ParameterBinding Information: 0 : CALLING BeginProcessing
 ```
