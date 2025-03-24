@@ -11,7 +11,7 @@ title: Import-PowerShellDataFile
 # Import-PowerShellDataFile
 
 ## SYNOPSIS
-Imports values from a `.PSD1` file without invoking its contents.
+Imports values from a `.psd1` file without invoking its contents.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Import-PowerShellDataFile [-LiteralPath <string[]>] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Import-PowerShellDataFile` cmdlet safely imports key-value pairs from hashtables defined in a
-`.PSD1` file. The values could be imported using `Invoke-Expression` on the contents of the file.
+`.psd1` file. The values could be imported using `Invoke-Expression` on the contents of the file.
 However, `Invoke-Expression` runs any code contained in the file. This could produce unwanted
 results or execute unsafe code. `Import-PowerShellDataFile` imports the data without invoking the
 code.

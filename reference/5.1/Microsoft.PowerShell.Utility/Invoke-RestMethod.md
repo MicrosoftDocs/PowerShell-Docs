@@ -32,7 +32,7 @@ The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational
 
 PowerShell formats the response based to the data type. For an RSS or ATOM feed, PowerShell returns
 the Item or Entry XML nodes. For JavaScript Object Notation (JSON) or XML, PowerShell converts, or
-deserializes, the content into `[PSCustomObject]` objects. Comments aren't permitted in the JSON
+deserializes, the content into `[pscustomobject]` objects. Comments aren't permitted in the JSON
 data.
 
 > [!NOTE]
