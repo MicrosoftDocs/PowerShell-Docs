@@ -604,14 +604,14 @@ use the saved data as input for another command.
 
 ```powershell
 'Background Intelligent Transfer Service', 'Windows Time' |
-    Out-File -FilePath $Env:TEMP\services.txt
+    Out-File -FilePath $env:TEMP\services.txt
 ```
 
 You can use parentheses to pass the output of one command as input for a parameter to another
 command.
 
 ```powershell
-Stop-Service -DisplayName (Get-Content -Path $Env:TEMP\services.txt)
+Stop-Service -DisplayName (Get-Content -Path $env:TEMP\services.txt)
 ```
 
 This concept is like the order of operations in Algebra. Just as mathematical operations within
