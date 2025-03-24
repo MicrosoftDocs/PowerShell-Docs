@@ -29,8 +29,8 @@ New-PSRoleCapabilityFile [-Path] <String> [-Guid <Guid>] [-Author <String>] [-De
 The `New-PSRoleCapabilityFile` cmdlet creates a file that defines a set of user capabilities that
 can be exposed through session configuration files. This includes determining which cmdlets,
 functions, and scripts are available to users. The capability file is a human-readable text file
-that contains a hash table of session configuration properties and values. The file has a .psrc file
-name extension, and can be used by more than one session configuration.
+that contains a hash table of session configuration properties and values. The file has a `.psrc`
+file name extension, and can be used by more than one session configuration.
 
 All the parameters of `New-PSRoleCapabilityFile` are optional except for the **Path** parameter,
 which specifies the path for the file. If you don't include a parameter when you run the cmdlet, the
@@ -235,7 +235,7 @@ the following keys:
 
 For example:
 
-`@{Name="Get-PowerShellProcess";ScriptBlock={Get-Process PowerShell};Options="AllScope"}`
+`@{Name="Get-PowerShellProcess";ScriptBlock={Get-Process powershell};Options="AllScope"}`
 
 ```yaml
 Type: System.Collections.IDictionary[]
