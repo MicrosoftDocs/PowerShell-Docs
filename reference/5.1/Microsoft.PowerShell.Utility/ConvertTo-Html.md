@@ -132,7 +132,7 @@ attribute in the tag contains the name of the style sheet.
 ### Example 6: Create a web page to display service objects
 
 ```powershell
-Get-Service | ConvertTo-Html -As LIST | Out-File services.htm
+Get-Service | ConvertTo-Html -As List | Out-File services.htm
 ```
 
 This command creates an HTML page of the service objects that the `Get-Service` cmdlet returns. The
@@ -167,7 +167,7 @@ omitted.
 ### Example 8: Create a web page to display PowerShell events
 
 ```powershell
-Get-EventLog -Log "Windows PowerShell" | ConvertTo-Html -Property id, level, task
+Get-EventLog -Log "Windows PowerShell" | ConvertTo-Html -Property Id, Level, Task
 ```
 
 This command uses the `Get-EventLog` cmdlet to get events from the Windows PowerShell event log.
@@ -175,7 +175,7 @@ This command uses the `Get-EventLog` cmdlet to get events from the Windows Power
 It uses a pipeline operator (`|`) to send the events to the `ConvertTo-Html` cmdlet, which converts
 the events to HTML format.
 
-The `ConvertTo-Html` command uses the **Property** parameter to select only the **ID**, **Level**,
+The `ConvertTo-Html` command uses the **Property** parameter to select only the **Id**, **Level**,
 and **Task** properties of the event.
 
 ### Example 9: Create a web page to display specified services

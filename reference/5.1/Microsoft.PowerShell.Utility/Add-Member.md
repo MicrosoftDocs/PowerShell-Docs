@@ -89,7 +89,7 @@ The third command uses dot notation to get the value of the **Status** property 
 `$a`. As the output shows, the value is `Done`.
 
 ```powershell
-$A = Get-ChildItem c:\ps-test\test.txt
+$A = Get-ChildItem C:\ps-test\test.txt
 $A | Add-Member -NotePropertyName Status -NotePropertyValue Done
 $A.Status
 ```
@@ -142,7 +142,7 @@ Display
 
 This example adds the **SizeInMB** script method to a **FileInfo** object that calculates the file
 size to the nearest MegaByte. The second command creates a **ScriptBlock** that uses the **Round**
-static method from the `[math]` type to round the file size to the second decimal place.
+static method from the `[Math]` type to round the file size to the second decimal place.
 
 The **Value** parameter also uses the `$this` automatic variable, which represents the current
 object. The `$this` variable is valid only in script blocks that define new properties and methods.
@@ -152,7 +152,7 @@ The last command uses dot notation to call the new **SizeInMB** script method on
 
 ```powershell
 $A = Get-ChildItem C:\Temp\test.txt
-$S = {[math]::Round(($this.Length / 1MB), 2)}
+$S = {[Math]::Round(($this.Length / 1MB), 2)}
 $A | Add-Member -MemberType ScriptMethod -Name "SizeInMB" -Value $S
 $A.SizeInMB()
 ```
@@ -173,7 +173,7 @@ Piping `$Asset` to `Add-Member` adds the key-value pairs in the dictionary to th
 in alphabetical order, not in the order that they were added.
 
 ```powershell
-$Asset = New-Object -TypeName PSObject
+$Asset = New-Object -TypeName psobject
 $Asset | Add-Member -NotePropertyMembers @{Name="Server30"} -TypeName Asset
 $Asset | Add-Member -NotePropertyMembers @{System="Server Core"}
 $Asset | Add-Member -NotePropertyMembers @{PSVersion="4.0"}
@@ -191,7 +191,7 @@ System      NoteProperty string System=Server Core
 ```
 
 ```powershell
-$Asset.PSObject.Properties | Format-Table Name, MemberType, TypeNameOfValue, Value
+$Asset.psobject.Properties | Format-Table Name, MemberType, TypeNameOfValue, Value
 ```
 
 ```Output
@@ -216,14 +216,14 @@ PS> $obj = [pscustomobject]@{
       Name = 'Doris'
       Age = '20'
 }
-PS> $obj | Add-Member -MemberType AliasProperty -Name 'intAge' -Value age -SecondValue uint32
+PS> $obj | Add-Member -MemberType AliasProperty -Name 'IntAge' -Value Age -SecondValue uint32
 PS> $obj | Get-Member
 
    TypeName: System.Management.Automation.PSCustomObject
 
 Name        MemberType    Definition
 ----        ----------    ----------
-intAge      AliasProperty intAge = (System.UInt32)age
+IntAge      AliasProperty IntAge = (System.UInt32)Age
 Equals      Method        bool Equals(System.Object obj)
 GetHashCode Method        int GetHashCode()
 GetType     Method        type GetType()
@@ -235,18 +235,18 @@ PS> $obj
 
 Name   : Doris
 Age    : 20
-intAge : 20
+IntAge : 20
 
 PS> $obj.Age + 1
 
 201
 
-PS> $obj.intAge + 1
+PS> $obj.IntAge + 1
 
 21
 ```
 
-The **intAge** property is an **AliasProperty** for the **Age** property, but the type is guaranteed
+The **IntAge** property is an **AliasProperty** for the **Age** property, but the type is guaranteed
 to be **uint32**.
 
 ### Example 7: Add get and set methods to a custom object

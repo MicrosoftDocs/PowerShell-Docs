@@ -30,15 +30,15 @@ ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-NoTypeInformation] [<Com
 
 ## DESCRIPTION
 
-The `ConvertTo-CSV` cmdlet returns a series of character-separated value (CSV) strings that
+The `ConvertTo-Csv` cmdlet returns a series of character-separated value (CSV) strings that
 represent the objects that you submit. You can then use the `ConvertFrom-Csv` cmdlet to recreate
 objects from the CSV strings. The objects converted from CSV are string values of the original
 objects that contain property values and no methods.
 
-You can use the `Export-Csv` cmdlet to convert objects to CSV strings. `Export-CSV` is similar to
-`ConvertTo-CSV`, except that it saves the CSV strings to a file.
+You can use the `Export-Csv` cmdlet to convert objects to CSV strings. `Export-Csv` is similar to
+`ConvertTo-Csv`, except that it saves the CSV strings to a file.
 
-The `ConvertTo-CSV` cmdlet has parameters to specify a delimiter other than a comma or use the
+The `ConvertTo-Csv` cmdlet has parameters to specify a delimiter other than a comma or use the
 current culture as the delimiter.
 
 ## EXAMPLES
@@ -57,8 +57,8 @@ Get-Process -Name 'PowerShell' | ConvertTo-Csv -NoTypeInformation
 ```
 
 The `Get-Process` cmdlet gets the **Process** object and uses the **Name** parameter to specify the
-PowerShell process. The process object is sent down the pipeline to the `ConvertTo-CSV` cmdlet. The
-`ConvertTo-CSV` cmdlet converts the object to CSV strings. The **NoTypeInformation** parameter
+PowerShell process. The process object is sent down the pipeline to the `ConvertTo-Csv` cmdlet. The
+`ConvertTo-Csv` cmdlet converts the object to CSV strings. The **NoTypeInformation** parameter
 removes the **#TYPE** information header from the CSV output.
 
 ### Example 2: Convert a DateTime object to CSV
@@ -127,7 +127,7 @@ Accept wildcard characters: False
 ### -InputObject
 
 Specifies the objects that are converted to CSV strings. Enter a variable that contains the objects
-or type a command or expression that gets the objects. You can also pipe objects to `ConvertTo-CSV`.
+or type a command or expression that gets the objects. You can also pipe objects to `ConvertTo-Csv`.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -198,7 +198,7 @@ This cmdlet returns one or more strings representing each converted object.
 
 In CSV format, each object is represented by a character-separated list of its property value. The
 property values are converted to strings using the object's **ToString()** method. The strings are
-represented by the property value name. `ConvertTo-CSV` does not export the object's methods.
+represented by the property value name. `ConvertTo-Csv` does not export the object's methods.
 
 The CSV strings are output as follows:
 
@@ -208,7 +208,7 @@ The CSV strings are output as follows:
   contain the first object's property names as a comma-separated list.
 - The remaining strings contain comma-separated lists of each object's property values.
 
-When you submit multiple objects to `ConvertTo-CSV`, `ConvertTo-CSV` orders the strings based on the
+When you submit multiple objects to `ConvertTo-Csv`, `ConvertTo-Csv` orders the strings based on the
 properties of the first object that you submit. If the remaining objects do not have one of the
 specified properties, the property value of that object is Null, as represented by two consecutive
 commas. If the remaining objects have additional properties, those property values are ignored.

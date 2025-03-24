@@ -142,7 +142,7 @@ Display
 
 This example adds the **SizeInMB** script method to a **FileInfo** object that calculates the file
 size to the nearest MegaByte. The second command creates a **ScriptBlock** that uses the **Round**
-static method from the `[math]` type to round the file size to the second decimal place.
+static method from the `[Math]` type to round the file size to the second decimal place.
 
 The **Value** parameter also uses the `$this` automatic variable, which represents the current
 object. The `$this` variable is valid only in script blocks that define new properties and methods.
@@ -152,7 +152,7 @@ The last command uses dot notation to call the new **SizeInMB** script method on
 
 ```powershell
 $A = Get-ChildItem C:\Temp\test.txt
-$S = {[math]::Round(($this.Length / 1MB), 2)}
+$S = {[Math]::Round(($this.Length / 1MB), 2)}
 $A | Add-Member -MemberType ScriptMethod -Name "SizeInMB" -Value $S
 $A.SizeInMB()
 ```
@@ -173,7 +173,7 @@ Piping `$Asset` to `Add-Member` adds the key-value pairs in the dictionary to th
 in alphabetical order, not in the order that they were added.
 
 ```powershell
-$Asset = New-Object -TypeName PSObject
+$Asset = New-Object -TypeName psobject
 $d = [ordered]@{Name="Server30"; System="Server Core"; PSVersion="4.0"}
 $Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
 $Asset | Get-Member -MemberType Properties
@@ -190,7 +190,7 @@ System      NoteProperty string System=Server Core
 ```
 
 ```powershell
-$Asset.PSObject.Properties | Format-Table Name, MemberType, TypeNameOfValue, Value
+$Asset.psobject.Properties | Format-Table Name, MemberType, TypeNameOfValue, Value
 ```
 
 ```Output
@@ -217,7 +217,7 @@ $user = [pscustomobject]@{
 }
 $addMemberSplat = @{
     MemberType = 'AliasProperty'
-    Name = 'intAge'
+    Name = 'IntAge'
     Value = 'Age'
     SecondValue = 'UInt32'
 }
@@ -230,7 +230,7 @@ $user | Get-Member
 
 Name        MemberType    Definition
 ----        ----------    ----------
-intAge      AliasProperty intAge = (System.UInt32)Age
+IntAge      AliasProperty IntAge = (System.UInt32)Age
 Equals      Method        bool Equals(System.Object obj)
 GetHashCode Method        int GetHashCode()
 GetType     Method        type GetType()
@@ -242,7 +242,7 @@ Name        NoteProperty  string Name=Doris
 ```powershell
 PS> $obj
 
-Name  Age intAge
+Name  Age IntAge
 ----  --- ------
 Doris 20      20
 
@@ -250,12 +250,12 @@ PS> $obj.Age + 1
 
 201
 
-PS> $obj.intAge + 1
+PS> $obj.IntAge + 1
 
 21
 ```
 
-The **intAge** property is an **AliasProperty** for the **Age** property, but the type is guaranteed
+The **IntAge** property is an **AliasProperty** for the **Age** property, but the type is guaranteed
 to be **uint32**.
 
 ### Example 7: Add get and set methods to a custom object

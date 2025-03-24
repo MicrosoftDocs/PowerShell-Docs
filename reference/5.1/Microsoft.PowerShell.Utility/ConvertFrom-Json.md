@@ -96,7 +96,7 @@ This example shows how to use the `ConvertFrom-Json` cmdlet to convert a JSON fi
 custom object.
 
 ```powershell
-Get-Content -Raw JsonFile.JSON | ConvertFrom-Json
+Get-Content -Raw JsonFile.json | ConvertFrom-Json
 ```
 
 The command uses Get-Content cmdlet to get the strings in a JSON file. The **Raw** parameter

@@ -70,7 +70,7 @@ It uses the `-Type` parameter to specify that SDDL string represents a registry 
 ```powershell
 $acl = Get-Acl -Path HKLM:\SOFTWARE\Microsoft\
 
-ConvertFrom-SddlString -Sddl $acl.Sddl | Foreach-Object {$_.DiscretionaryAcl[0]}
+ConvertFrom-SddlString -Sddl $acl.Sddl | ForEach-Object {$_.DiscretionaryAcl[0]}
 ```
 
 ```Output
@@ -78,7 +78,7 @@ BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateDirectories, Del
 ```
 
 ```powershell
-ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights | Foreach-Object {$_.DiscretionaryAcl[0]}
+ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights | ForEach-Object {$_.DiscretionaryAcl[0]}
 ```
 
 ```Output
