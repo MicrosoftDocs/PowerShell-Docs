@@ -487,7 +487,7 @@ True
 In this example, `$intA` is explicitly typed to contain integers.
 
 ```powershell
-[int] $intA = 1, 2, 3
+[int[]] $intA = 1, 2, 3
 $intA.Clear()
 $intA
 ```
