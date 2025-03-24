@@ -128,7 +128,7 @@ The acceptable values for this parameter are:
 
 - CSV. Comma-separated value (CSV) format.
 - Script. Creates a `Set-Alias` command for each exported alias. If you name the output file with a
-  .ps1 file name extension, you can run it as a script to add the aliases to any session.
+  `.ps1` file name extension, you can run it as a script to add the aliases to any session.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ExportAliasFormat
