@@ -137,7 +137,7 @@ function.
 This method is called to request confirmation from the user before the function
 performs an action that would change the system. The function can continue
 based on the Boolean value returned by the method. This method can only be
-called only from within the `Process{}` block of the function. The
+called only from within the `process {}` block of the function. The
 `CmdletBinding` attribute must also declare that the function supports
 `ShouldProcess` (as shown in the previous example).
 
@@ -160,7 +160,7 @@ Functions can call two different methods when errors occur. When a
 non-terminating error occurs, the function should call the `WriteError` method,
 which is described in the `Write` methods section. When a terminating error
 occurs and the function can't continue, it should call the
-`ThrowTerminatingError` method. You can also use the `Throw` statement for
+`ThrowTerminatingError` method. You can also use the `throw` statement for
 terminating errors and the [Write-Error][22] cmdlet for non-terminating errors.
 
 For more information, see

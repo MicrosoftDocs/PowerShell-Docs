@@ -55,7 +55,7 @@ parameter sets return different types.
 ```
 
 Place the **OutputType** attribute statements in the attributes list that
-precedes the `Param` statement.
+precedes the `param` statement.
 
 The following example shows the placement of the **OutputType** attribute in a
 simple function.
@@ -64,7 +64,7 @@ simple function.
 function SimpleFunction2
 {
   [OutputType([<Type>])]
-  Param ($Parameter1)
+  param ($Parameter1)
 
   <function body>
 }
@@ -77,9 +77,9 @@ advanced functions.
 function AdvancedFunction1
 {
   [OutputType([<Type>])]
-  Param (
-    [parameter(Mandatory=$true)]
-    [String[]]
+  param (
+    [Parameter(Mandatory=$true)]
+    [string[]]
     $Parameter1
   )
 
@@ -90,9 +90,9 @@ function AdvancedFunction2
 {
   [CmdletBinding(SupportsShouldProcess=<Boolean>)]
   [OutputType([<Type>])]
-  Param (
-    [parameter(Mandatory=$true)]
-    [String[]]
+  param (
+    [Parameter(Mandatory=$true)]
+    [string[]]
     $Parameter1
   )
 
@@ -107,8 +107,8 @@ function AdvancedFunction2
 ```powershell
 function Send-Greeting
 {
-  [OutputType([String])]
-  Param ($Name)
+  [OutputType([string])]
+  param ($Name)
 
   "Hello, $Name"
 }
@@ -138,15 +138,15 @@ function Get-User
   [CmdletBinding(DefaultParameterSetName="ID")]
 
   [OutputType("System.Int32", ParameterSetName="ID")]
-  [OutputType([String], ParameterSetName="Name")]
+  [OutputType([string], ParameterSetName="Name")]
 
-  Param (
-    [parameter(Mandatory=$true, ParameterSetName="ID")]
-    [Int[]]
+  param (
+    [Parameter(Mandatory=$true, ParameterSetName="ID")]
+    [int]
     $UserID,
 
-    [parameter(Mandatory=$true, ParameterSetName="Name")]
-    [String[]]
+    [Parameter(Mandatory=$true, ParameterSetName="Name")]
+    [string[]]
     $UserName
   )
 
@@ -166,10 +166,10 @@ that it returns a **System.DateTime** object.
 ```powershell
 function Get-Time
 {
-  [OutputType([DateTime])]
-  Param (
-    [parameter(Mandatory=$true)]
-    [Datetime]$DateTime
+  [OutputType([datetime])]
+  param (
+    [Parameter(Mandatory=$true)]
+    [datetime]$DateTime
   )
 
   $DateTime.ToShortTimeString()
@@ -209,7 +209,7 @@ but not return anything.
 function Invoke-Notepad
 {
   [OutputType([System.Void])]
-  Param ()
+  param ()
   & notepad.exe | Out-Null
 }
 ```

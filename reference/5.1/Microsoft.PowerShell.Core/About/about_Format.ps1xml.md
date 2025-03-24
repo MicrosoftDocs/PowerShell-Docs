@@ -431,7 +431,7 @@ digital signature. For more information, see
 
 The following sample creates a `Format-Table` custom view for the
 **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects created by
-`Get-ChildItem`. The custom view is named **mygciview** and adds the
+`Get-ChildItem`. The custom view is named **MyGciView** and adds the
 **CreationTime** column to the table.
 
 The custom view is created from an edited version of the
@@ -500,7 +500,7 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 </Controls>
 <ViewDefinitions>
     <View>
-    <Name>mygciview</Name>
+    <Name>MyGciView</Name>
     <ViewSelectedBy>
         <SelectionSetName>FileSystemTypes</SelectionSetName>
     </ViewSelectedBy>
@@ -541,14 +541,14 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
                         </TableColumnItem>
                         <TableColumnItem>
                             <ScriptBlock>
-                                [String]::Format("{0,10}  {1,8}",
+                                [string]::Format("{0,10}  {1,8}",
                                     $_.LastWriteTime.ToString("d"),
                                     $_.LastWriteTime.ToString("t"))
                             </ScriptBlock>
                         </TableColumnItem>
                         <TableColumnItem>
                             <ScriptBlock>
-                                [String]::Format("{0,10}  {1,8}",
+                                [string]::Format("{0,10}  {1,8}",
                                     $_.CreationTime.ToString("d"),
                                     $_.LastWriteTime.ToString("t"))
                             </ScriptBlock>
