@@ -39,7 +39,7 @@ imported automatically on first use and you can use the `Import-Module` cmdlet t
 ### Example 1: Get snap-ins that are currently loaded
 
 ```
-PS C:\> Get-PSSnapIn
+PS C:\> Get-PSSnapin
 ```
 
 This command gets the Windows PowerShell snap-ins that are currently loaded in the session. This
@@ -49,7 +49,7 @@ the session.
 ### Example 2: Get snap-ins that have been registered
 
 ```
-PS C:\> get-PSSnapIn -Registered
+PS C:\> Get-PSSnapin -Registered
 ```
 
 This command gets the Windows PowerShell snap-ins that have been registered on the computer,
@@ -60,7 +60,7 @@ that are installed with Windows PowerShell or Windows PowerShell snap-in dynamic
 ### Example 3: Get current snap-ins that match a string
 
 ```
-PS C:\> Get-PSSnapIn -Name smp*
+PS C:\> Get-PSSnapin -Name smp*
 ```
 
 This command gets the Windows PowerShell snap-ins in the current session that have names that begin

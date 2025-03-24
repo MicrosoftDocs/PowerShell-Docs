@@ -26,7 +26,7 @@ Infrastructure (CLI) XML to a custom **PSObject**. This command is similar to `I
 it doesn't read from a file. Instead, it takes a string as input.
 
 The newly deserialized objects aren't live objects. They're a snapshot of the objects at the time of
-serialization. The deserialized objects include properties but no methods. The **PSTypeNames**
+serialization. The deserialized objects include properties but no methods. The **pstypenames**
 property contains the original type name prefixed with `Deserialized`.
 
 This cmdlet was introduced in PowerShell 7.5-preview.4.
@@ -36,13 +36,13 @@ This cmdlet was introduced in PowerShell 7.5-preview.4.
 ### Example 1 - Convert a process object to CliXml and back
 
 This example shows the result of converting a process object to CliXml and back. First, the current
-process is stored in the variable `$process`. The **PSTypeNames** property of the process object
+process is stored in the variable `$process`. The **pstypenames** property of the process object
 shows that the object is of type **System.Diagnostics.Process**. The next command displays the count
 for each type of member in the process object.
 
 ```powershell
 $process = Get-Process -Id $PID
-$process.PSTypeNames
+$process.pstypenames
 ```
 
 ```Output
@@ -72,7 +72,7 @@ Event              4
 ```powershell
 $xml = $process | ConvertTo-CliXml
 $fromXML = ConvertFrom-CliXml $xml
-$fromXML.PSTypeNames
+$fromXML.pstypenames
 ```
 
 ```Output

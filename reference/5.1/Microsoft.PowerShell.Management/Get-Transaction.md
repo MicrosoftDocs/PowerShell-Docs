@@ -77,7 +77,7 @@ object.
 ### Example 3: Show the property values of a rolled back transaction
 
 ```powershell
-Set-Location hklm:\software
+Set-Location HKLM:\software
 Start-Transaction
 New-Item MyCompany -UseTransaction
 Undo-Transaction
@@ -96,7 +96,7 @@ rolled back.
 ### Example 4: Show the property values of a committed transaction
 
 ```powershell
-Set-Location hklm:\software
+Set-Location HKLM:\software
 Start-Transaction
 New-Item MyCompany -UseTransaction
 Complete-Transaction
@@ -115,7 +115,7 @@ committed.
 ### Example 5: Start a transaction while another is in progress
 
 ```powershell
-Set-Location hklm:\software
+Set-Location HKLM:\software
 Start-Transaction
 New-Item MyCompany -UseTransaction
 Start-Transaction
@@ -176,7 +176,7 @@ The second `Complete-Transaction` command commits the transaction.
 ### Example 6: Start an independent transaction while another is in progress
 
 ```powershell
-Set-Location hklm:\software
+Set-Location HKLM:\software
 Start-Transaction
 Get-Transaction
 ```

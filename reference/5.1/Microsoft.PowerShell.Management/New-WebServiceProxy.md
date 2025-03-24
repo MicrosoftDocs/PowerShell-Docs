@@ -71,7 +71,7 @@ parameters to specify the namespace and class of the object.
 ### Example 3: Display methods of a Web service proxy
 
 ```powershell
-$calc | Get-Member -MemberType method
+$calc | Get-Member -MemberType Method
 ```
 
 ```Output

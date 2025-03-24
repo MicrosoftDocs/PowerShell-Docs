@@ -87,7 +87,7 @@ Get-Help <provider-name>
 For example, to get Help for the Registry provider, type:
 
 ```powershell
-Get-Help registry
+Get-Help Registry
 ```
 
 ## The **UseTransaction** parameter
@@ -214,7 +214,7 @@ data store, the data can be changed while the transaction is in progress.
 
 The examples in this section use the PowerShell Registry provider and assume
 that you are familiar with it. For information about the Registry provider,
-type `Get-Help registry`.
+type `Get-Help Registry`.
 
 ### Example 1: Committing a transaction
 
@@ -232,7 +232,7 @@ For example, the following command, which sets the current location in the
 Software key of the `HKCU:` drive, isn't included in the transaction.
 
 ```powershell
-cd hkcu:\Software
+cd HKCU:\Software
 ```
 
 The following command, which creates the MyCompany key, uses the
@@ -347,7 +347,7 @@ registry entry to the MyCompany key. The command uses the UseTransaction
 parameter to include the command in the transaction.
 
 ```powershell
-New-Itemproperty -path MyCompany -Name MyKey -value 123 -UseTransaction
+New-ItemProperty -Path MyCompany -Name MyKey -Value 123 -UseTransaction
 ```
 
 The command returns an object representing the new registry entry, but the
@@ -383,7 +383,7 @@ To preview the effect of committing the transaction, enter a `Get-ChildItem`
 the data from within the transaction.
 
 ```powershell
-dir m* -useTransaction
+dir m* -UseTransaction
 ```
 
 The result shows that, if the transaction is committed, the `MyKey` entry is
@@ -566,7 +566,7 @@ to add text to the string. Because the command isn't part of the transaction,
 the change is effective immediately.
 
 ```powershell
-$t.append("Windows")
+$t.Append("Windows")
 ```
 
 The following command uses the same Append method to add text, but it adds the
@@ -575,14 +575,14 @@ set as the value of the **ScriptBlock** parameter of `Use-Transaction`. The
 **UseTransaction** parameter (**usetx**) is required.
 
 ```powershell
-Use-Transaction {$t.append(" PowerShell")} -usetx
+Use-Transaction {$t.Append(" PowerShell")} -usetx
 ```
 
 To see the current content of the transacted string in `$t`, use the `ToString`
 method of the **TransactedString** object.
 
 ```powershell
-$t.tostring()
+$t.ToString()
 ```
 
 The output shows that only the non-transacted changes are effective.
@@ -595,7 +595,7 @@ To see the current content of the transacted string in $t from within the
 transaction, embed the expression in a `Use-Transaction` command.
 
 ```powershell
-Use-Transaction {$t.tostring()} -usetx
+Use-Transaction {$t.ToString()} -usetx
 ```
 
 The output shows the transaction view.
@@ -613,7 +613,7 @@ Complete-Transaction
 To see the final string:
 
 ```
-$t.tostring()
+$t.ToString()
 PowerShell
 ```
 
@@ -676,7 +676,7 @@ entry to the MyCompany key. It uses the UseTransaction parameter to include
 the command in the transaction.
 
 ```powershell
-New-ItemProperty -path MyCompany -name MyKey -UseTransaction
+New-ItemProperty -Path MyCompany -Name MyKey -UseTransaction
 ```
 
 The MyCompany key doesn't exist in the registry, but this command succeeds

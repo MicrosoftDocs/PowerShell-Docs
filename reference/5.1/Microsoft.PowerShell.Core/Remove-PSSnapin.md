@@ -42,7 +42,7 @@ is complete, the cmdlets and providers that the snap-in supported are not availa
 ### Example 2: Remove snap-ins by using names with the pipeline
 
 ```powershell
-Get-PSSnapIn smp* | Remove-PSSnapIn
+Get-PSSnapin smp* | Remove-PSSnapin
 ```
 
 This command removes the Windows PowerShell snap-ins that have names that start with smp from the
