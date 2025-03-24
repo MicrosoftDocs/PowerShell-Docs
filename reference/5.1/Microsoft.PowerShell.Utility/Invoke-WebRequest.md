@@ -50,14 +50,14 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 This example uses the `Invoke-WebRequest` cmdlet to send a web request to the Bing.com site.
 
 ```powershell
-$Response = Invoke-WebRequest -UseBasicParsing -URI https://www.bing.com?q=how+many+feet+in+a+mile
+$Response = Invoke-WebRequest -UseBasicParsing -Uri https://www.bing.com?q=how+many+feet+in+a+mile
 $Response.InputFields |
-    Where-Object name -like "* Value" |
-    Select-Object name, value
+    Where-Object Name -Like "* Value" |
+    Select-Object Name, Value
 ```
 
 ```Output
-name       value
+Name       Value
 ----       -----
 From Value 1
 To Value   5280
@@ -65,8 +65,8 @@ To Value   5280
 
 The data returned by `Invoke-WebRequest` is stored in the `$Response` variable. The **InputFields**
 property of the response contains the form fields. `Where-Object` is used to filter the form fields
-to those where the **name** property is like "* Value". The filtered results are piped to
-`Select-Object` to select the **name** and **value** properties.
+to those where the **Name** property is like "* Value". The filtered results are piped to
+`Select-Object` to select the **Name** and **Value** properties.
 
 ### Example 2: Use a stateful web service
 
@@ -77,8 +77,8 @@ Facebook.
 $R = Invoke-WebRequest https://www.facebook.com/login.php -SessionVariable fb
 # This command stores the first form in the Forms property of the $R variable in the $Form variable.
 $Form = $R.Forms[0]
-# This command shows the fields available in the Form.
-$Form.fields
+# This command shows the fields available in the form.
+$Form.Fields
 ```
 
 ```Output
@@ -91,7 +91,7 @@ pass
 ```
 
 ```powershell
-# These commands populate the username and password of the respective Form fields.
+# These commands populate the username and password of the respective form fields.
 $Form.Fields["email"]="User01@Fabrikam.com"
 $Form.Fields["pass"]="P@ssw0rd"
 # This command creates the Uri that will be used to log in to facebook.
@@ -101,7 +101,7 @@ $Uri = "https://www.facebook.com" + $Form.Action
 # The WebRequestSession object in the $FB variable is passed as the value of the WebSession parameter.
 # The value of the Body parameter is the hash table in the Fields property of the form.
 # The value of the *Method* parameter is POST. The command saves the output in the $R variable.
-$R = Invoke-WebRequest -Uri $Uri -WebSession $FB -Method POST -Body $Form.Fields
+$R = Invoke-WebRequest -Uri $Uri -WebSession $FB -Method Post -Body $Form.Fields
 $R.StatusDescription
 ```
 
@@ -181,7 +181,7 @@ $jobs = @()
 
 foreach ($file in $files) {
     $jobs += Start-ThreadJob -Name $file.OutFile -ScriptBlock {
-        $params = $using:file
+        $params = $Using:file
         Invoke-WebRequest @params
     }
 }
