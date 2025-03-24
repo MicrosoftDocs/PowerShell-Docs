@@ -144,9 +144,9 @@ The third command uses `Invoke-Command` cmdlet to run `Start-Job` in each of the
 The `Start-Job` command starts a job that runs the `Get-EventLog` command in the `$c`
 variable.
 
-The command uses the **Using** scope modifier to indicate that the `$c` variable was defined on the
-local computer. The **Using** scope modifier is introduced in Windows PowerShell 3.0. For more
-information about the **Using** scope modifier, see
+The command uses the `Using:` scope modifier to indicate that the `$c` variable was defined on the
+local computer. The `Using:` scope modifier is introduced in Windows PowerShell 3.0. For more
+information about the `Using:` scope modifier, see
 [about_Remote_Variables](./about/about_Remote_Variables.md).
 
 The fourth command uses `Invoke-Command` to run a `Wait-Job` command in the sessions. It uses the
@@ -184,7 +184,7 @@ The `$done` variable contains a job object that represents the job that ran on S
 ### Example 5: Wait until one of several jobs finishes
 
 ```powershell
-Wait-Job -id 1,2,5 -Any
+Wait-Job -Id 1,2,5 -Any
 ```
 
 This command identifies three jobs by their IDs and waits until any one of them are in a terminating
@@ -222,7 +222,7 @@ These commands start a job that gets the Windows PowerShell script files that we
 in the last week.
 
 The first command uses `Start-Job` to start a job on the local computer. The job runs a
-`Get-ChildItem` command that gets all of the files that have a .ps1 file name extension that were
+`Get-ChildItem` command that gets all of the files that have a `.ps1` file name extension that were
 added or updated in the last week.
 
 The third command uses `Wait-Job` to wait until the job is in a terminating state. When the job
@@ -265,7 +265,7 @@ Get-Job
 ```Output
 Id   Name     State      HasMoreData     Location             Command
 --   ----     -----      -----------     --------             -------
-1    Job1     Completed  True            localhost,Server01.. get-service
+1    Job1     Completed  True            localhost,Server01.. Get-Service
 4    Job4     Completed  True            localhost            dir | where
 ```
 

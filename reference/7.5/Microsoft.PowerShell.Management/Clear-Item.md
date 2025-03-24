@@ -275,7 +275,7 @@ PowerShell includes the following aliases for `Clear-Item`:
 - The `Clear-Item` cmdlet is supported only by several PowerShell providers, including the
   **Alias**, **Environment**, **Function**, **Registry**, and **Variable** providers. As such, you
   can use `Clear-Item` to delete the content of items in the provider namespaces. To list the
-  providers available in your session, type `Get-PsProvider`. For more information, see
+  providers available in your session, type `Get-PSProvider`. For more information, see
   [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 - You cannot use `Clear-Item` to delete the contents of a file, because the PowerShell FileSystem
   provider does not support this cmdlet. To clear files, use the `Clear-Content`.

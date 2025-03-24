@@ -44,7 +44,7 @@ for a module or if your help files are outdated, `Update-Help` downloads the new
 help files can be downloaded and installed from the internet or a file share.
 
 Without parameters, `Update-Help` updates the help files for modules that support updateable help
-and are loaded in the session or installed in a location included in the `$env:PSModulePath`. For
+and are loaded in the session or installed in a location included in the `$Env:PSModulePath`. For
 more information, see [about_Updatable_Help](About/about_Updatable_Help.md).
 
 `Update-Help` checks the version of the help installed. If `Update-Help` can't find updated help
@@ -162,7 +162,7 @@ Get-Module -ListAvailable | Where-Object -Property HelpInfoUri
 ```
 
 ```output
-   Directory: C:\program files\powershell\6\Modules
+   Directory: C:\Program Files\PowerShell\6\Modules
 
 ModuleType Version    Name                                PSEdition ExportedCommands
 ---------- -------    ----                                --------- ----------------
@@ -192,9 +192,9 @@ The script uses the **PSCustomObject** class and a hash table to create a custom
 
 ```powershell
 # Get-UpdateHelpVersion.ps1
-Param(
-    [parameter(Mandatory=$false)]
-    [String[]]
+param (
+    [Parameter(Mandatory=$false)]
+    [string[]]
     $Module
 )
 $HelpInfoNamespace = @{helpInfo='http://schemas.microsoft.com/powershell/help/2010/05'}
@@ -216,7 +216,7 @@ foreach ($mModule in $Modules)
             $mCulture=$mNode.Node.UICultureName
             $mVer=$mNode.Node.UICultureVersion
 
-            [PSCustomObject]@{"ModuleName"=$mName; "Culture"=$mCulture; "Version"=$mVer}
+            [pscustomobject]@{"ModuleName"=$mName; "Culture"=$mCulture; "Version"=$mVer}
         }
     }
 }
@@ -367,7 +367,7 @@ are permitted. You can pipeline modules from the `Get-Module` cmdlet to the `Upd
 
 The modules that you specify must be installed on the computer, but they don't have to be imported
 into the current session. You can specify any module in the session or any module that's installed
-in a location listed in the `$env:PSModulePath` environment variable.
+in a location listed in the `$Env:PSModulePath` environment variable.
 
 A value of `*` (all) attempts to update help for all modules that are installed on the computer.
 Modules that don't support Updatable Help are included. This value might generate errors when the
@@ -375,7 +375,7 @@ command encounters modules that don't support Updatable Help. Instead, run `Upda
 parameters.
 
 The **Module** parameter of the `Update-Help` cmdlet doesn't accept the full path of a module file
-or module manifest file. To update help for a module that isn't in a `$env:PSModulePath` location,
+or module manifest file. To update help for a module that isn't in a `$Env:PSModulePath` location,
 import the module into the current session before you run the `Update-Help` command.
 
 ```yaml
@@ -598,7 +598,7 @@ for HTTP and port 443 for HTTPS.
 `Update-Help` supports all modules and the core PowerShell snap-ins. It doesn't support any other
 snap-ins.
 
-To update help for a module in a location that isn't listed in the `$env:PSModulePath` environment
+To update help for a module in a location that isn't listed in the `$Env:PSModulePath` environment
 variable, import the module into the current session and then run an `Update-Help` command. Run
 `Update-Help` without parameters or use the **Module** parameter to specify the module name. The
 **Module** parameter of the `Update-Help` and `Save-Help` cmdlets doesn't accept the full path of a
