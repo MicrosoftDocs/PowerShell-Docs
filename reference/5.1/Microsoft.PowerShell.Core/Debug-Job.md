@@ -54,7 +54,7 @@ command detaches the debugger, and allows the job to continue to run.
 This command breaks into a running job with an ID of 3.
 
 ```powershell
-Debug-Job -ID 3
+Debug-Job -Id 3
 ```
 
 ```Output

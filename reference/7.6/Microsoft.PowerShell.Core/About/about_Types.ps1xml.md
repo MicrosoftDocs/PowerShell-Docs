@@ -215,7 +215,7 @@ information about `Update-TypeData`, see [Update-TypeData][01].
 Update-TypeData -PrependPath $PSHOME\MyTypes.ps1xml
 ```
 
-To test the change, run a `Get-ChildItem` command to get the PowerShell.exe
+To test the change, run a `Get-ChildItem` command to get the `powershell.exe`
 file in the `$PSHOME` directory, and then pipe the file to the `Format-List`
 cmdlet to list all of the properties of the file. As a result of the change,
 the **Age** property appears in the list.
