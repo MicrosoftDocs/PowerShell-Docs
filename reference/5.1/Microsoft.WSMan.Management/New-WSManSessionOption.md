@@ -38,7 +38,7 @@ WSMan cmdlets:
 ```powershell
 PS C:\> $a = New-WSManSessionOption -OperationTimeout 30000
 PS C:\> Connect-WSMan -ComputerName "server01" -SessionOption $a
-PS C:\> cd wsman:
+PS C:\> cd WSMan:
 PS WSMan:\> dir
 ```
 

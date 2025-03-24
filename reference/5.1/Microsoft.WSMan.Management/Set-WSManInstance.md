@@ -317,7 +317,7 @@ Specifies the path of a file that is used to update a management resource. You s
 management resource by using the **ResourceURI** parameter and the **SelectorSet** parameter. For
 example, the following command uses the **FilePath** parameter:
 
-`Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:c:\input.xml -authentication default`
+`Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:C:\input.xml -Authentication Default`
 
 This command calls the **StopService** method on the Spooler service by using input from a file.
 The file, `Input.xml`, contains the following content:

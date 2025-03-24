@@ -101,7 +101,7 @@ WSMan:\localhost
 --------- InitializationParameters
 --------- Resources
 ------------ Security
------- Microsoft.Powershell
+------ Microsoft.PowerShell
 --------- InitializationParameters
 --------- Resources
 ------------ Security
@@ -157,7 +157,7 @@ This command uses the `Get-ChildItem` cmdlet to display the WS-Management stores
 in the Localhost store location.
 
 ```powershell
-Get-ChildItem -path WSMan:\Localhost
+Get-ChildItem -Path WSMan:\Localhost
 ```
 
 If you are in the `WSMan:` drive, you can omit the drive name.
@@ -166,22 +166,22 @@ This command uses the `Get-ChildItem` cmdlet to display the WS-Management
 stores in the remote computer "SERVER01" store location.
 
 ```powershell
-Get-ChildItem -path WSMan:\SERVER01
+Get-ChildItem -Path WSMan:\SERVER01
 ```
 
 > [!NOTE]
 > The above command assume that a connection to the remote system already
 > exists.
 
-## Setting the value of items in the  WSMAN: drive
+## Setting the value of items in the  WSMan: drive
 
 You can use the `Set-Item` cmdlet to change configuration settings in the
-`WSMAN` drive. The following example sets the **TrustedHosts** value to
+`WSMan:` drive. The following example sets the **TrustedHosts** value to
 accept all hosts with the suffix "contoso.com".
 
 ```powershell
 # You do not need to specify the -Path parameter name when using Set-Item.
-PS WSMAN:\localhost\Client> Set-Item .\TrustedHosts -Value "*.contoso.com"
+PS WSMan:\localhost\Client> Set-Item .\TrustedHosts -Value "*.contoso.com"
 ```
 
 The `Set-Item` cmdlet supports an additional parameter `-Concatenate` that
@@ -189,21 +189,21 @@ appends a value instead of changing it. The following example will append a
 new value "*.domain2.com" to the old value stored in `TrustedHost:`
 
 ```powershell
-Set-Item WSMAN:\localhost\Client\TrustedHosts *.domain2.com -Concatenate
+Set-Item WSMan:\localhost\Client\TrustedHosts *.domain2.com -Concatenate
 ```
 
-## Creating items in the WSMAN: drive
+## Creating items in the WSMan: drive
 
 ### Creating a new listener
 
 The `New-Item` cmdlet creates items within a provider drive. Each provider
-has different item types that you can create. In the `WSMAN:` drive, you can
+has different item types that you can create. In the `WSMan:` drive, you can
 create *Listeners* which you configure to receive and respond to remote
 requests. The following command creates a new HTTP listener using the `New-Item`
 cmdlet.
 
 ```powershell
-New-Item -Path WSMan:\localhost\Listener -Address * -Transport HTTP -force
+New-Item -Path WSMan:\localhost\Listener -Address * -Transport http -Force
 ```
 
 ### Creating a new plug-in
@@ -213,7 +213,7 @@ This command creates (registers) a plug-in for the WS-Management service.
 ```powershell
 New-Item -Path WSMan:\localhost\Plugin `
          -Plugin TestPlugin `
-         -FileName %systemroot%\system32\WsmWmiPl.dll `
+         -FileName $Env:SystemRoot\system32\WsmWmiPl.dll `
          -Resource http://schemas.dmtf.org/wbem/wscim/2/cim-schema `
          -SDKVersion 1 `
          -Capability "Get","Put","Invoke","Enumerate" `
@@ -257,7 +257,7 @@ certificate.
 $cred = Get-Credential
 New-Item -Path WSMan:\localhost\ClientCertificate `
          -Issuer 1b3fd224d66c6413fe20d21e38b304226d192dfe `
-         -URI wmicimv2/* `
+         -Uri wmicimv2/* `
          -Credential $cred;
 ```
 
@@ -515,7 +515,7 @@ Specifies the entity that is identified by the certificate.
 ### Transport \<String\>
 
 Specifies the transport to use to send and receive WS-Management protocol
-requests and responses. The value must be either HTTP or HTTPS.
+requests and responses. The value must be either **http** or **https**.
 
 Note: The Transport value is set when creating a Listener.
 
@@ -592,7 +592,7 @@ Get-Help Get-ChildItem
 ```
 
 ```powershell
-Get-Help Get-ChildItem -Path wsman:
+Get-Help Get-ChildItem -Path WSMan:
 ```
 
 ## See also

@@ -42,13 +42,13 @@ You must run this cmdlet from an elevated PowerShell session.
 $parameters = @{
     SessionName         = 'wsmlog'
     ETS                 = $true
-    OutputFilePath      = "$env:windir\system32\wsmtraces.log"
+    OutputFilePath      = "$Env:windir\system32\wsmtraces.log"
     Format              = 'bincirc'
     MinBuffers          = 16
     MaxBuffers          = 256
     BufferSizeInKb      = 64
     MaxLogFileSizeInMB  = 256
-    ProviderFilePath    = "$env:windir\system32\wsmtraceproviders.txt"
+    ProviderFilePath    = "$Env:windir\system32\wsmtraceproviders.txt"
 }
 Start-Trace @parameters
 ```
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ### -OutputFilePath
 
 Path of the output log file or the DSN and log set name in a SQL database. The default path is
-`$env:systemdrive\PerfLogs\Admin`.
+`$Env:SystemDrive\PerfLogs\Admin`.
 
 ```yaml
 Type: System.String
@@ -172,7 +172,7 @@ Aliases:
 
 Required: False
 Position: 1
-Default value: $env:systemdrive\PerfLogs\Admin
+Default value: $Env:SystemDrive\PerfLogs\Admin
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
