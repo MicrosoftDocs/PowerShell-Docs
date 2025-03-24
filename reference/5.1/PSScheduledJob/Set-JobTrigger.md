@@ -106,7 +106,8 @@ Id         Frequency       Time                   DaysOfWeek              Enable
 ```
 
 ```powershell
-Get-JobTrigger -Name "Inventory" -TriggerID 2 | Set-JobTrigger -Weekly -WeeksInterval 4 -DaysOfWeek Monday -At "12:00 AM"
+Get-JobTrigger -Name "Inventory" -TriggerId 2 |
+    Set-JobTrigger -Weekly -WeeksInterval 4 -DaysOfWeek Monday -At "12:00 AM"
 ```
 
 ```Output
@@ -121,7 +122,7 @@ scheduled job. The output shows that the job has two triggers a daily trigger an
 trigger.
 
 The second command uses the `Get-JobTrigger` cmdlet to get the **AtStartup** job trigger of the
-`Inventory` job. The command uses the **TriggerID** parameter to identify the job trigger. A
+`Inventory` job. The command uses the **TriggerId** parameter to identify the job trigger. A
 pipeline operator (`|`) sends the job trigger to the `Set-JobTrigger` cmdlet, which changes it to a
 weekly job trigger that runs every four weeks on Monday at midnight. The command uses the
 **PassThru** parameter to return the trigger after the change.
@@ -131,7 +132,12 @@ This command is not required; it is included only to show the effect of the trig
 ### Example 3: Change the user on a remote job trigger
 
 ```powershell
-Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.User} | Set-JobTrigger -User "Domain01/Admin02"}
+Invoke-Command -ComputerName "Server01" -ScriptBlock {
+    Get-ScheduledJob |
+        Get-JobTrigger |
+        Where-Object {$_.User} |
+        Set-JobTrigger -User "Domain01/Admin02"
+}
 ```
 
 This command changes the user in all **AtLogon** job triggers of scheduled jobs on the Server01
@@ -163,7 +169,7 @@ Id         Frequency       Time                   DaysOfWeek              Enable
 ```
 
 ```powershell
-Get-JobTrigger -Name "SecurityCheck" -TriggerID 3 | Format-List -Property *
+Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 | Format-List -Property *
 ```
 
 ```Output
@@ -181,8 +187,10 @@ JobDefinition      : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 ```
 
 ```powershell
-Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 | Set-JobTrigger -RepetitionInterval (New-TimeSpan -Minutes 90)
-Get-JobTrigger -Name "SecurityCheck" -TriggerID 3 | Format-List -Property *
+Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 |
+    Set-JobTrigger -RepetitionInterval (New-TimeSpan -Minutes 90)
+Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 |
+    Format-List -Property *
 ```
 
 ```Output
@@ -206,9 +214,9 @@ scheduled job has three job triggers, so the commands use the **TriggerId** para
 
 The first command uses the `Get-JobTrigger` cmdlet to get all job triggers of the `SecurityCheck`
 scheduled job. The output, which displays the IDs of the job triggers, reveals that the **Once** job
-trigger has an **ID** of `3`.
+trigger has an **Id** of `3`.
 
-The second command uses the **TriggerID** parameter of the `Get-JobTrigger` cmdlet to get the
+The second command uses the **TriggerId** parameter of the `Get-JobTrigger` cmdlet to get the
 **Once** trigger of the `SecurityCheck` scheduled job. The command pipes the trigger to the
 `Format-List` cmdlet, which displays all of the properties of the **Once** job trigger. The output
 shows that the trigger starts the job once every hour (**RepetitionInterval** is 1 hour) for one day

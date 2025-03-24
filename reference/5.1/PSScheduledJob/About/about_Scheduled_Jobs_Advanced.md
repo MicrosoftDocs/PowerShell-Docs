@@ -117,7 +117,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 You can open and examine the **ScheduledJobDefinition.xml**, **Results.xml**
-and **Status.xml** files or use the `Select-XML` cmdlet to parse the files.
+and **Status.xml** files or use the `Select-Xml` cmdlet to parse the files.
 
 > [!WARNING]
 > Do not edit the XML files. If any XML file contains invalid XML, PowerShell
@@ -145,7 +145,8 @@ Start-Job -DefinitionName ProcessJob
 ```
 
 To manage the job and get the job results, use the job cmdlets. For more
-information about the job cmdlets, see [about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
+information about the job cmdlets, see
+[about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 > [!NOTE]
 > To use the Job cmdlets on instances of scheduled jobs, the **PSScheduledJob**
@@ -172,9 +173,9 @@ instance in a table. A calculated property named **Label** displays the elapsed
 time of each job instance.
 
 ```powershell
-Get-job -Name UpdateHelpJob |
-  Format-Table -Property ID, PSBeginTime, PSEndTime,
-@{Label="Elapsed Time";Expression={$.PsEndTime - $.PSBeginTime}}
+Get-Job -Name UpdateHelpJob |
+    Format-Table -Property Id, PSBeginTime, PSEndTime,
+    @{Label="Elapsed Time";Expression={$.PSEndTime - $.PSBeginTime}}
 ```
 
 ```Output
@@ -213,7 +214,8 @@ new instances of the scheduled job.
 
 The following example uses splatting to create `$JobParms` which are parameter
 values that are passed to the `Register-ScheduledJob` cmdlet. For more
-information, see [about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md).
+information, see
+[about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md).
 The `Register-ScheduledJob` uses `@JobParms` to create a scheduled job. The
 command uses the **MaxResultCount** parameter with a value of 12 to save only
 the 12 newest job instance results of the scheduled job.

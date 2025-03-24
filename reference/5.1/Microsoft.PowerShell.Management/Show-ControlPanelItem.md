@@ -80,7 +80,7 @@ This method is an alternative to using a `Show-ControlPanelItem` command.
 
 > [!NOTE]
 > In PowerShell, you can omit the .cpl file extension for control panel files because it's included
-> in the value of the `$env:PathExt` environment variable.
+> in the value of the `$Env:PATHEXT` environment variable.
 
 ## PARAMETERS
 

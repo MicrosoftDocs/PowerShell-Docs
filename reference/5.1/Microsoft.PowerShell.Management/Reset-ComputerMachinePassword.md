@@ -51,14 +51,16 @@ password in the domain.
 
 ```powershell
 $cred = Get-Credential
-Invoke-Command -ComputerName "Server01" -ScriptBlock {Reset-ComputerMachinePassword -Credential $using:cred}
+Invoke-Command -ComputerName "Server01" -ScriptBlock {
+    Reset-ComputerMachinePassword -Credential $Using:cred
+}
 ```
 
 This command uses the Invoke-Command cmdlet to run a `Reset-ComputerMachinePassword` command on the
 Server01 remote computer.
 
-For more information about remote commands in Windows PowerShell, see [about_Remote](../Microsoft.PowerShell.Core/About/about_Remote.md)
-and `Invoke-Command`.
+For more information about remote commands in Windows PowerShell, see 
+[about_Remote](../Microsoft.PowerShell.Core/About/about_Remote.md) and `Invoke-Command`.
 
 ## PARAMETERS
 
@@ -141,7 +143,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -70,7 +70,7 @@ scheduled job.
 ### Example 2: Get a job trigger by ID
 
 
-The example uses the **ID** parameter of `Get-JobTrigger` to get the job triggers of a scheduled
+The example uses the **Id** parameter of `Get-JobTrigger` to get the job triggers of a scheduled
 job.
 
 ```powershell
@@ -87,14 +87,14 @@ Id         Name            Triggers        Command                              
 ```
 
 ```powershell
-Get-JobTrigger -ID 3
+Get-JobTrigger -Id 3
 ```
 
 The first command uses the `Get-ScheduledJob` cmdlet to display the scheduled jobs on the local
 computer. The display includes the IDs of the scheduled jobs.
 
 The second command uses the `Get-JobTrigger` cmdlet to get the job trigger for the `Test-HelpFiles`
-job (whose **ID** is `3`).
+job (whose **Id** is `3`).
 
 ### Example 3: Get job triggers by piping a job
 
@@ -111,12 +111,12 @@ This command gets the job triggers of all jobs that have `Backup` or `Archive` i
 This example gets the triggers of a scheduled job on a remote computer.
 
 ```powershell
-Invoke-Command -ComputerName Server01 { Get-ScheduledJob Backup | Get-JobTrigger -TriggerID 2 }
+Invoke-Command -ComputerName Server01 { Get-ScheduledJob Backup | Get-JobTrigger -TriggerId 2 }
 ```
 
 The command uses the `Invoke-Command` cmdlet to run a command on the Server01 computer. It uses the
 `Get-ScheduledJob` cmdlet to get the `Backup` scheduled job, which it pipes to the `Get-JobTrigger`
-cmdlet. It uses the **TriggerID** parameter to get only the second trigger.
+cmdlet. It uses the **TriggerId** parameter to get only the second trigger.
 
 ### Example 5: Get all job triggers
 
@@ -124,7 +124,7 @@ This example gets all job triggers of all scheduled jobs on the local computer.
 
 ```powershell
 Get-ScheduledJob | Get-JobTrigger |
-    Format-Table -Property ID, Frequency, At, DaysOfWeek, Enabled, @{Label="ScheduledJob";Expression={$_.JobDefinition.Name}} -AutoSize
+    Format-Table -Property Id, Frequency, At, DaysOfWeek, Enabled, @{Label="ScheduledJob";Expression={$_.JobDefinition.Name}} -AutoSize
 ```
 
 ```Output
@@ -276,7 +276,7 @@ Accept wildcard characters: False
 ### -TriggerId
 
 Gets the specified job triggers. Enter the trigger IDs of one or more job triggers of a scheduled
-job. Use this parameter when the scheduled job that is specified by the **Name**, **ID**, or
+job. Use this parameter when the scheduled job that is specified by the **Name**, **Id**, or
 **InputObject** parameters has multiple job triggers.
 
 ```yaml

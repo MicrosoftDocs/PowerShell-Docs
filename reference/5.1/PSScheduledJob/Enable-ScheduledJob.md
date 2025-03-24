@@ -57,7 +57,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 This example enables the scheduled job on a local computer.
 
 ```powershell
-Enable-ScheduledJob -ID 2 -PassThru
+Enable-ScheduledJob -Id 2 -PassThru
 ```
 
 The `Enable-ScheduledJob` command enables the scheduled job with ID 2 on the local computer. The

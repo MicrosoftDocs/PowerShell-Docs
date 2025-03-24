@@ -1,5 +1,5 @@
 ---
-description: Describes the `Sequence` keyword that runs selected activities sequentially.
+description: Describes the `sequence` keyword that runs selected activities sequentially.
 Locale: en-US
 ms.date: 06/09/2017
 online version: https://learn.microsoft.com/powershell/module/psworkflow/about/about_sequence?view=powershell-5.1&WT.mc_id=ps-gethelp
@@ -11,33 +11,31 @@ title: about_Sequence
 
 ## Short description
 
-Describes the `Sequence` keyword that runs selected activities sequentially.
+Describes the `sequence` keyword that runs selected activities sequentially.
 
 ## Long description
 
-The `Sequence` keyword runs selected workflow activities sequentially. Workflow
+The `sequence` keyword runs selected workflow activities sequentially. Workflow
 activities run in the order that they appear and do not run concurrently. The
-`Sequence` keyword is only valid in a PowerShell Workflow.
+`sequence` keyword is only valid in a PowerShell Workflow.
 
-The `Sequence` keyword is used in a `Parallel` script block to run selected
+The `sequence` keyword is used in a `parallel` script block to run selected
 commands sequentially.
 
-Because workflow activities run sequentially by default, the `Sequence` keyword
-is only effective in a `Parallel` script block. If the `Sequence` keyword isn't
-included in a `Parallel` script block, it's valid but ineffective.
+Because workflow activities run sequentially by default, the `sequence` keyword
+is only effective in a `parallel` script block. If the `sequence` keyword isn't
+included in a `parallel` script block, it's valid but ineffective.
 
-The `Sequence` script block lets you run more commands in parallel by allowing
+The `sequence` script block lets you run more commands in parallel by allowing
 you to run dependent commands sequentially.
 
 ## Syntax
 
-### Workflow using Sequence
+### Workflow using `sequence`
 
 ```
-workflow <Verb-Noun>
-{
-    Sequence
-    {
+workflow <Verb-Noun> {
+    sequence {
         [<Activity>]
         [<Activity>]
         # ...
@@ -45,16 +43,13 @@ workflow <Verb-Noun>
 }
 ```
 
-### Workflow using Parallel and Sequence
+### Workflow using `parallel` and `sequence`
 
 ```
-workflow <Verb-Noun>
-{
-    Parallel
-    {
+workflow <Verb-Noun> {
+    parallel {
         [<Activity>]
-        Sequence
-        {
+        sequence {
             [<Activity>]
             [<Activity>]
             # ...
@@ -65,25 +60,25 @@ workflow <Verb-Noun>
 
 ## Detailed description
 
-The commands in a `Parallel` script block can run concurrently. The order in
+The commands in a `parallel` script block can run concurrently. The order in
 which they run is not determined. This feature improves the performance of a
 script workflow.
 
-You can use a `Sequence` script block to run selected activities sequentially,
-even though the activities appear in a `Parallel` script block.
+You can use a `sequence` script block to run selected activities sequentially,
+even though the activities appear in a `parallel` script block.
 
-The activities in a `Sequence` script block run consecutively in the order that
-they are listed. An activity in a `Sequence` script block starts only after the
+The activities in a `sequence` script block run consecutively in the order that
+they are listed. An activity in a `sequence` script block starts only after the
 previous activity completes.
 
-However, when the `Sequence` script block appears in a `Parallel` script block,
-the order in which the `Sequence` script block runs isn't determined. It might
-run before, after, or concurrent with other activities in the `Parallel` script
+However, when the `sequence` script block appears in a `parallel` script block,
+the order in which the `sequence` script block runs isn't determined. It might
+run before, after, or concurrent with other activities in the `parallel` script
 block.
 
-For example, the following workflow includes a `Parallel` script block that
-runs activities that get processes and services on the computer. The `Parallel`
-script block contains a `Sequence` script block that gets information from a
+For example, the following workflow includes a `parallel` script block that
+runs activities that get processes and services on the computer. The `parallel`
+script block contains a `sequence` script block that gets information from a
 file and uses the information as input to a script.
 
 The `Get-Process`, `Get-Service`, and hotfix-related commands are independent
@@ -92,17 +87,14 @@ command that gets the hotfix information must run before the command that uses
 it.
 
 ```powershell
-workflow Test-Workflow
-{
-    Parallel
-    {
+workflow Test-Workflow {
+    parallel {
     Get-Process
     Get-Service
 
-    Sequence
-    {
+    sequence {
         $Hotfix = Get-Content 'D:\HotFixes\Required.txt'
-        Foreach ($h in $Hotfix) {'D:\Scripts\Verify-Hotfix' -Hotfix $h}
+        foreach ($h in $Hotfix) {'D:\Scripts\Verify-Hotfix' -Hotfix $h}
         }
     }
 }
@@ -110,8 +102,8 @@ workflow Test-Workflow
 
 ## See also
 
-- [about_ForEach](../../Microsoft.PowerShell.Core/About/about_Foreach.md)
-- [about_ForEach-Parallel](about_ForEach-Parallel.md)
+- [about_Foreach](../../Microsoft.PowerShell.Core/About/about_Foreach.md)
+- [about_Foreach-Parallel](about_Foreach-Parallel.md)
 - [about_Language_Keywords](../../Microsoft.PowerShell.Core/About/about_Language_Keywords.md)
 - [about_Parallel](about_Parallel.md)
 - [about_Workflows](about_Workflows.md)

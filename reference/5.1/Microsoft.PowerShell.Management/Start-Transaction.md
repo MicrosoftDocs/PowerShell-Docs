@@ -52,7 +52,7 @@ Windows PowerShell. For more information, see [about_Transactions](../Microsoft.
 ### Example 1: Start and roll back a transaction
 
 ```powershell
-Set-Location hkcu:\software
+Set-Location HKCU:\software
 Start-Transaction
 New-Item "ContosoCompany" -UseTransaction
 New-ItemProperty "ContosoCompany" -Name "MyKey" -Value 123 -UseTransaction
@@ -65,7 +65,7 @@ changes are made to the registry.
 ### Example 2: Start and complete a transaction
 
 ```powershell
-Set-Location hkcu:\software
+Set-Location HKCU:\software
 Start-Transaction
 New-Item "ContosoCompany" -UseTransaction
 New-ItemProperty "ContosoCompany" -Name "MyKey" -Value 123 -UseTransaction
@@ -82,11 +82,11 @@ Set-Location HKCU:\software
 Start-Transaction
 New-Item -Path "NoPath" -Name "ContosoCompany" -UseTransaction
 New-Item -Path . -Name "ContosoCompany" -UseTransaction
-Start-Transaction -RollbackPreference never
+Start-Transaction -RollbackPreference Never
 New-Item -Path "NoPath" -Name "ContosoCompany" -UseTransaction
 New-Item -Path . -Name "ContosoCompany" -UseTransaction
 
-# Start-Transaction (-rollbackpreference error)
+# Start-Transaction (-RollbackPreference Error)
 
 Start-Transaction
 New-Item -Path "NoPath" -Name "ContosoCompany" -UseTransaction
@@ -95,7 +95,7 @@ New-Item : The registry key at the specified path does not exist.
 
 ```Output
 At line:1 char:9
-+ new-item <<<<  -Path NoPath -Name ContosoCompany -UseTransaction
++ New-Item <<<<  -Path NoPath -Name ContosoCompany -UseTransaction
 ```
 
 ```powershell
@@ -109,9 +109,9 @@ At line:1 char:9
 ```
 
 ```powershell
-# Start-Transaction (-rollbackpreference never)
+# Start-Transaction (-RollbackPreference Never)
 
-Start-Transaction -RollbackPreference never
+Start-Transaction -RollbackPreference Never
 New-Item -Path "NoPath" -Name "ContosoCompany" -UseTransaction
 ```
 
@@ -235,7 +235,7 @@ As a result, the registry is changed.
 ### Example 6: Run commands that are not part of a transaction
 
 ```powershell
-Set-Location hkcu:\software
+Set-Location HKCU:\software
 Start-Transaction
 New-Item "ContosoCompany1" -UseTransaction
 New-Item "ContosoCompany2"
@@ -308,7 +308,7 @@ New-Item HKCU:\Software\ContosoCompany -UseTransaction
 ```Output
 New-Item : Cannot use transaction. The transaction has been rolled back or has timed out.
 At line:1 char:9
-+ new-item <<<<  MyCompany -UseTransaction
++ New-Item <<<<  MyCompany -UseTransaction
 ```
 
 This command uses the **Timeout** parameter of `Start-Transaction` to start a transaction that must

@@ -165,7 +165,7 @@ issues. Thank you!
 
 - New PowerShell documentation
   - [About_Calculated_Properties](/powershell/module/microsoft.powershell.core/about/about_calculated_properties)
-  - [Writing Progress across multiple threads with Foreach Parallel](/powershell/scripting/learn/deep-dives/write-progress-across-multiple-threads)
+  - [Writing Progress across multiple threads with ForEach-Object -Parallel](/powershell/scripting/learn/deep-dives/write-progress-across-multiple-threads)
 - Documentation maintenance
   - Updates for 7.1-preview content
 
