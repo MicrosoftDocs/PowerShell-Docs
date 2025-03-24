@@ -89,7 +89,7 @@ D                1211.06     123642.32 FileSystem    D:\
 This command gets the D: drive on the computer. Note that the drive letter in the command is not
 followed by a colon.
 
-### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
+### Example 3: Get all the drives that are supported by the Windows PowerShell FileSystem provider
 
 ```
 PS C:\> Get-PSDrive -PSProvider FileSystem

@@ -143,7 +143,7 @@ property, stopped services appear before running services. This happens because 
 To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.
 
 ```powershell
-Get-Service "s*" | Sort-Object status
+Get-Service "s*" | Sort-Object Status
 ```
 
 ```Output

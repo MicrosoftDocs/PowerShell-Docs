@@ -41,11 +41,11 @@ This command displays a list of all available PowerShell providers.
 ### Example 2: Display a list of all PowerShell providers that begin with specified letters
 
 ```powershell
-Get-PSProvider f*, r* | Format-List
+Get-PSProvider F*, R* | Format-List
 ```
 
-This command displays a list of all PowerShell providers with names that begin with the letter `f`
-or `r`.
+This command displays a list of all PowerShell providers with names that begin with the letter `F`
+or `R`.
 
 ### Example 3: Find snap-ins or module that added providers to your session
 
@@ -67,7 +67,7 @@ WSMan       Microsoft.WSMan.Management
 ```
 
 ```powershell
-Get-PSProvider | Where {$_.ModuleName -eq "Microsoft.PowerShell.Security"}
+Get-PSProvider | where {$_.ModuleName -eq "Microsoft.PowerShell.Security"}
 ```
 
 ```Output
@@ -89,7 +89,7 @@ values of their Name, Module, and PSSnapin properties.
 The second command uses the `Where-Object` cmdlet to get the providers that come from the
 **Microsoft.PowerShell.Security** snap-in.
 
-### Example 4: Resolve the path of the Home property of the file system provider
+### Example 4: Resolve the path of the Home property of the FileSystem provider
 
 ```powershell
 C:\> Resolve-Path ~
@@ -102,7 +102,7 @@ C:\Users\User01
 ```
 
 ```powershell
-PS C:\> (get-psprovider FileSystem).home
+PS C:\> (Get-PSProvider FileSystem).Home
 ```
 
 ```Output
@@ -111,7 +111,7 @@ C:\Users\User01
 
 This example shows that the tilde symbol (`~`) represents the value of the **Home** property of the
 FileSystem provider. The **Home** property value is optional, but for the **FileSystem** provider,
-it is defined as `$env:HOMEDRIVE\$env:HOMEPATH` or `$HOME`.
+it is defined as `$Env:HOMEDRIVE\$Env:HOMEPATH` or `$HOME`.
 
 ## PARAMETERS
 
