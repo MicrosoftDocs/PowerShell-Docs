@@ -78,13 +78,13 @@ To find the items in a particular scope, use the Scope parameter of
 For example, to get all the variables in the local scope, type:
 
 ```powershell
-Get-Variable -Scope local
+Get-Variable -Scope Local
 ```
 
 To get all the variables in the global scope, type:
 
 ```powershell
-Get-Variable -Scope global
+Get-Variable -Scope Global
 ```
 
 When a reference is made to a variable, alias, or function, PowerShell searches
@@ -122,22 +122,22 @@ scope.
 A variable, alias, or function name can include any one of the following
 optional scope modifiers:
 
-- `global:` - Specifies that the name exists in the **Global** scope.
-- `local:` - Specifies that the name exists in the **Local** scope. The current
+- `Global:` - Specifies that the name exists in the **Global** scope.
+- `Local:` - Specifies that the name exists in the **Local** scope. The current
   scope is always the **Local** scope.
-- `private:` - Specifies that the name is **Private** and only visible to the
+- `Private:` - Specifies that the name is **Private** and only visible to the
   current scope.
 
   > [!NOTE]
-  > `private:` isn't a scope. It's an [option][04] that changes the
+  > `Private:` isn't a scope. It's an [option][04] that changes the
   > accessibility of an item outside of the scope in which it's defined.
 
-- `script:` - Specifies that the name exists in the **Script** scope.
+- `Script:` - Specifies that the name exists in the **Script** scope.
   **Script** scope is the nearest ancestor script file's scope or **Global** if
   there is no nearest ancestor script file.
-- `using:` - Used to access variables defined in another scope while running
+- `Using:` - Used to access variables defined in another scope while running
   in remote sessions, background jobs, or thread jobs.
-- `workflow:` - Specifies that the name exists within a workflow. Note:
+- `Workflow:` - Specifies that the name exists within a workflow. Note:
   Workflows aren't supported in PowerShell v6 and higher.
 - `<variable-namespace>` - A modifier created by a PowerShell **PSDrive**
   provider. For example:
@@ -177,11 +177,11 @@ in the current or **local** scope:
 $a = "one"
 ```
 
-To create the same variable in the **global** scope, use the scope `global:`
+To create the same variable in the **global** scope, use the scope `Global:`
 modifier:
 
 ```powershell
-$global:a = "one"
+$Global:a = "one"
 Get-Variable a | Format-List *
 ```
 
@@ -201,11 +201,11 @@ Attributes  : {}
 Compare that to a private variable:
 
 ```powershell
-$private:pVar = 'Private variable'
+$Private:pVar = 'Private variable'
 Get-Variable pVar | Format-List *
 ```
 
-Using the `private` scope modifier sets the **Options** property to `Private`.
+Using the `Private:` scope modifier sets the **Options** property to `Private`.
 
 ```Output
 Name        : pVar
@@ -218,18 +218,18 @@ Options     : Private
 Attributes  : {}
 ```
 
-To create the same variable in the **script** scope, use the `script:` scope
+To create the same variable in the **script** scope, use the `Script:` scope
 modifier:
 
 ```powershell
-$script:a = "one"
+$Script:a = "one"
 ```
 
 You can also use a scope modifier with functions. The following function
 definition creates a function in the **global** scope:
 
 ```powershell
-function global:Hello {
+function Global:Hello {
   Write-Host "Hello, World"
 }
 ```
@@ -240,21 +240,21 @@ and then in the global scope:
 
 ```powershell
 $test
-$global:test
+$Global:test
 ```
 
-### The `using:` scope modifier
+### The `Using:` scope modifier
 
 Using is a special scope modifier that identifies a local variable in a remote
 command. Without a modifier, PowerShell expects variables in remote commands to
 be defined in the remote session.
 
-The `using` scope modifier is introduced in PowerShell 3.0.
+The `Using:` scope modifier was introduced in PowerShell 3.0.
 
-For any script or command that executes out of session, you need the `using`
+For any script or command that executes out of session, you need the `Using:`
 scope modifier to embed variable values from the calling session scope, so that
-out of session code can access them. The `using` scope modifier is supported in
-the following contexts:
+out of session code can access them. The `Using:` scope modifier is supported
+in the following contexts:
 
 - Remotely executed commands, started with `Invoke-Command` using the
   **ComputerName**, **HostName**, **SSHConnection** or **Session** parameters
@@ -269,7 +269,7 @@ out-of-process sessions, they're always independent copies.
 
 For more information, see [about_Remote_Variables][08].
 
-A `$using:` reference only expands to a variable's value. If you want to change
+A `$Using:` reference only expands to a variable's value. If you want to change
 the value of a variable in the caller's scope, you must have a reference to the
 variable itself. You can create a reference to a variable by getting the
 **PSVariable** instance of the variable. The following example show how to
@@ -280,7 +280,7 @@ $Count = 1
 $refOfCount = Get-Variable Count
 
 Start-ThreadJob {
-    ($using:refOfCount).Value = 2
+    ($Using:refOfCount).Value = 2
 } | Receive-Job -Wait -AutoRemoveJob
 
 $Count
@@ -311,7 +311,7 @@ It has the type properties and methods. For simple types, such as
 imperfect. For example, rehydrated certificate objects don't include the
 private key.
 
-Instances of all other types are **PSObject** instances. The **PSTypeNames**
+Instances of all other types are **PSObject** instances. The **pstypenames**
 property contains the original type name prefixed with **Deserialized**, for
 example, **Deserialized.System.Data.DataTable**
 
@@ -333,7 +333,7 @@ change) items in a particular scope. Use the following command to find all the
 cmdlets in your session that have a **Scope** parameter:
 
 ```powershell
-Get-Help * -Parameter scope
+Get-Help * -Parameter Scope
 ```
 
 To find the variables that are visible in a particular scope, use the `Scope`
@@ -344,7 +344,7 @@ For example, the following command gets the variables that are visible in the
 local scope:
 
 ```powershell
-Get-Variable -Scope local
+Get-Variable -Scope Local
 ```
 
 To create a variable in a particular scope, use a scope modifier or the
@@ -352,7 +352,7 @@ To create a variable in a particular scope, use a scope modifier or the
 in the global scope:
 
 ```powershell
-New-Variable -Scope global -Name a -Value "One"
+New-Variable -Scope Global -Name a -Value "One"
 ```
 
 You can also use the Scope parameter of the `New-Alias`, `Set-Alias`, or
@@ -360,7 +360,7 @@ You can also use the Scope parameter of the `New-Alias`, `Set-Alias`, or
 alias in the global scope:
 
 ```powershell
-New-Alias -Scope global -Name np -Value Notepad.exe
+New-Alias -Scope Global -Name np -Value Notepad.exe
 ```
 
 To get the functions in a particular scope, use the `Get-Item` cmdlet when you
@@ -390,7 +390,7 @@ the script scope (the default for scripts), just enter the full path to the
 script file on the command line.
 
 ```powershell
-c:\scripts\sample.ps1
+C:\scripts\sample.ps1
 ```
 
 A script file must have a `.ps1` file extension to be executable. Files that
@@ -403,7 +403,7 @@ Using the call operator to run a function or script runs it in script scope.
 Using the call operator is no different than running the script by name.
 
 ```powershell
-& c:\scripts\sample.ps1
+& C:\scripts\sample.ps1
 ```
 
 You can read more about the call operator in [about_Operators][07].
@@ -412,7 +412,7 @@ To run the `Sample.ps1` script in the local scope type a dot and a space (`. `)
 before the path to the script:
 
 ```powershell
-. c:\scripts\sample.ps1
+. C:\scripts\sample.ps1
 ```
 
 Now, any functions, aliases, or variables defined in the script are added to
@@ -460,7 +460,7 @@ $a = "Hello"
 
 function foo {
     "`$a = $a"
-    "`$global:a = $global:a"
+    "`$Global:a = $Global:a"
 }
 ```
 
@@ -477,7 +477,7 @@ The module declares the variable `$a` in the module scope then the function
 
 ```Output
 $a = Hello
-$global:a = Goodbye
+$Global:a = Goodbye
 ```
 
 Modules create parallel scope containers linked to the scope in which they were
@@ -489,10 +489,10 @@ module's scope container.
 
 If you load **Module2** from _within_ **Module1**, **Module2** is loaded into
 the scope container of Module1. Any exports from **Module2** are placed in the
-current module scope of **Module1**. If you use `Import-Module -Scope local`,
+current module scope of **Module1**. If you use `Import-Module -Scope Local`,
 then the exports are placed into the current scope object rather than at the
 top level. If you are _in a module_ and load another module using
-`Import-Module -Scope global` (or `Import-Module -Global`), that module and its
+`Import-Module -Scope Global` (or `Import-Module -Global`), that module and its
 exports are loaded into the global scope instead of the module's local scope.
 The **WindowsCompatibility** feature does this to import proxy modules into the
 global session state.
@@ -515,8 +515,8 @@ that scope.
 
 For example, if you create a variable that has a private option in the global
 scope and then run a script, `Get-Variable` commands in the script don't
-display the private variable. Using the global scope modifier in this instance
-doesn't display the private variable.
+display the private variable. Using the `Global:` scope modifier in this
+instance doesn't display the private variable.
 
 You can use the **Option** parameter of the `New-Variable`, `Set-Variable`,
 `New-Alias`, and `Set-Alias` cmdlets to set the value of the Option property to
@@ -606,7 +606,7 @@ In `Sample.ps1`:
 ```powershell
 $test = "Local"
 "The local value of `$test is $test."
-"The global value of `$test is $global:test."
+"The global value of `$test is $Global:test."
 ```
 
 When you run `Sample.ps1`, the output should resemble the following output:
@@ -642,8 +642,8 @@ the `$test` variable.
 In Sample.ps1:
 
 ```powershell
-$global:test = "Local"
-"The global value of `$test is $global:test."
+$Global:test = "Local"
+"The global value of `$test is $Global:test."
 ```
 
 When the script is complete, the global value of `$test` is changed.
@@ -655,7 +655,7 @@ Local
 
 ### Example 4: Creating a private variable
 
-A variable can be made private by using the `private:` scope modifier or by
+A variable can be made private by using the `Private:` scope modifier or by
 creating the variable with the **Option** property set to `Private`. Private
 variables can only be viewed or changed in the scope in which they were
 created.
@@ -676,7 +676,7 @@ function funcA {
 
 function funcB {
     "In funcB before set -> '$funcAVar1'"
-    $private:funcAVar1 = "Locally overwrite the value - child scopes can't see me!"
+    $Private:funcAVar1 = "Locally overwrite the value - child scopes can't see me!"
     "In funcB after set  -> '$funcAVar1'"
     funcC
 }
@@ -733,14 +733,14 @@ scopes using `Get-Variable` and specifying a scope number.
 
 ### Example 5: Using a local variable in a remote command
 
-For variables in a remote command created in the local session, use the `using`
-scope modifier. PowerShell assumes that the variables in remote commands were
-created in the remote session.
+For variables in a remote command created in the local session, use the
+`Using:` scope modifier. PowerShell assumes that the variables in remote
+commands were created in the remote session.
 
 The syntax is:
 
 ```
-$using:<VariableName>
+$Using:<VariableName>
 ```
 
 For example, the following commands create a `$Cred` variable in the local
@@ -748,10 +748,10 @@ session and then use the `$Cred` variable in a remote command:
 
 ```powershell
 $Cred = Get-Credential
-Invoke-Command $s {Remove-Item .\Test*.ps1 -Credential $using:Cred}
+Invoke-Command $s {Remove-Item .\Test*.ps1 -Credential $Using:Cred}
 ```
 
-The `using` scope modifier was introduced in PowerShell 3.0.
+The `Using:` scope modifier was introduced in PowerShell 3.0.
 
 ## See also
 

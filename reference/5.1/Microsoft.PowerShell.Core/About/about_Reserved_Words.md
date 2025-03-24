@@ -49,7 +49,7 @@ their own help articles. To view them, type `Get-Help about_` and add the
 keyword. For example, to get information about the `foreach` statement, type:
 
 ```powershell
-Get-Help about_ForEach
+Get-Help about_Foreach
 ```
 
 For information about the `filter` statement or the `return` statement syntax,

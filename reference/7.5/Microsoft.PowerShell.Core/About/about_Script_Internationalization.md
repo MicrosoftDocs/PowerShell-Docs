@@ -68,7 +68,7 @@ the English-United States (en-US) set of prompt messages for a script. The
 stores them in the `$msgtable` variable.
 
 ```powershell
-$msgTable = Data {
+$msgTable = data {
     #culture="en-US"
     ConvertFrom-StringData @'
     helloWorld = Hello, World.
@@ -186,7 +186,7 @@ are defined in the Data section.
 The remaining commands load the strings into an array and display them.
 
 ```powershell
-$Day = Data {
+$Day = data {
 #culture="en-US"
 ConvertFrom-StringData -StringData @'
     messageDate = Today is

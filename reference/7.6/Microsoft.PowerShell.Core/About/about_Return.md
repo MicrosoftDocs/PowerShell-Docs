@@ -22,7 +22,7 @@ Users who are familiar with languages like C or C\# might want to use the
 `return` keyword to make the logic of leaving a scope explicit.
 
 In PowerShell, the results of each statement are returned as output, even
-without a statement that contains the Return keyword. Languages like C or C\#
+without a statement that contains the `return` keyword. Languages like C or C\#
 return only the value or values that are specified by the `return` keyword.
 
 > [!NOTE]
@@ -58,10 +58,10 @@ because the return statement exits before that statement can execute.
 ```powershell
 function MultiplyEven
 {
-    param($number)
+    param($Number)
 
-    if ($number % 2) { return "$number is not even" }
-    $number * 2
+    if ($Number % 2) { return "$Number is not even" }
+    $Number * 2
 }
 
 1..10 | ForEach-Object {MultiplyEven -Number $_}
@@ -99,15 +99,15 @@ The following example includes a statement intended to let the user know that
 the function is performing a calculation:
 
 ```powershell
-function calculation {
-    param ($value)
+function Calculation {
+    param ($Value)
 
     "Please wait. Working on calculation..."
-    $value += 73
-    return $value
+    $Value += 73
+    return $Value
 }
 
-$a = calculation 14
+$a = Calculation 14
 ```
 
 The "Please wait. Working on calculation..." string is not displayed. Instead,
@@ -128,12 +128,12 @@ the above example using the `Write-Information` cmdlet with a
 **InformationAction** set to `Continue`.
 
 ```powershell
-function calculation {
-    param ($value)
+function Calculation {
+    param ($Value)
 
     Write-Information "Please wait. Working on calculation..." -InformationAction Continue
-    $value += 73
-    return $value
+    $Value += 73
+    return $Value
 }
 ```
 
@@ -141,7 +141,7 @@ Now the information message to display in the host and not assigned to the
 variable.
 
 ```powershell
-PS> $a = calculation 14
+PS> $a = Calculation 14
 Please wait. Working on calculation...
 PS> $a
 87
@@ -152,7 +152,7 @@ PS> $a
 When you return a collection from your script block or function, PowerShell
 automatically unrolls the members and passes them one at a time through the
 pipeline. This is due to PowerShell's one-at-a-time processing. For more
-information, see [about_pipelines](about_pipelines.md).
+information, see [about_Pipelines](about_pipelines.md).
 
 This concept is illustrated by the following sample function that returns an
 array of numbers. The output from the function is piped to the `Measure-Object`

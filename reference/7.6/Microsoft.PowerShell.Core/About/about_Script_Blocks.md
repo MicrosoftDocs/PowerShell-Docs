@@ -36,12 +36,12 @@ keyword doesn't affect or suppress other output returned from your script
 block. However, the `return` keyword exits the script block at that line. For
 more information, see [about_Return][04].
 
-Like functions, a script block can include parameters. Use the Param
+Like functions, a script block can include parameters. Use the `param`
 keyword to assign named parameters, as shown in the following syntax:
 
 ```
 {
-    Param([type]$Parameter1 [,[type]$Parameter2])
+    param ([type]$Parameter1 [,[type]$Parameter2])
     <statement list>
 }
 ```
@@ -50,8 +50,8 @@ keyword to assign named parameters, as shown in the following syntax:
 > In a script block, unlike a function, you can't specify parameters outside
 > the braces.
 
-Like functions, script blocks can include the `DynamicParam`, `Begin`,
-`Process`, and `End` keywords. For more information, see [about_Functions][02]
+Like functions, script blocks can include the `dynamicparam`, `begin`,
+`process`, and `end` keywords. For more information, see [about_Functions][02]
 and [about_Functions_Advanced][01].
 
 ## Using Script Blocks
@@ -174,7 +174,7 @@ Notes on delay-bind script blocks as parameters:
 - You must explicitly specify any parameter names you use with delay-bind
   script blocks.
 - The parameter must not be untyped, and the parameter's type can't be
-  `[scriptblock]` or `[object]`.
+  `[scriptblock]` or `[Object]`.
 - You receive an error if you use a delay-bind script block without providing
   pipeline input.
 
