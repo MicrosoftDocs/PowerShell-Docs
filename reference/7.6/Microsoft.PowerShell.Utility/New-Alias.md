@@ -40,10 +40,10 @@ This command creates an alias named List to represent the Get-ChildItem cmdlet.
 ### Example 2: Create a read-only alias for a cmdlet
 
 This command creates an alias named `C` to represent the `Get-ChildItem` cmdlet. It creates a
-description of "quick gci alias" for the alias and makes it read-only.
+description of "Quick gci alias" for the alias and makes it read-only.
 
 ```powershell
-New-Alias -Name "C" -Value Get-ChildItem -Description "quick gci alias" -Option ReadOnly
+New-Alias -Name "C" -Value Get-ChildItem -Description "Quick gci alias" -Option ReadOnly
 Get-Alias -Name "C" | Format-List *
 ```
 
@@ -55,7 +55,7 @@ ReferencedCommand   : Get-ChildItem
 ResolvedCommand     : Get-ChildItem
 Definition          : Get-ChildItem
 Options             : ReadOnly
-Description         : quick gci alias
+Description         : Quick gci alias
 OutputType          : {System.IO.FileInfo, System.IO.DirectoryInfo}
 Name                : C
 CommandType         : Alias

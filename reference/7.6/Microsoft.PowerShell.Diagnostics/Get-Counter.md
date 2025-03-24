@@ -196,10 +196,10 @@ $DiskReads | Get-Counter -ComputerName Server01, Server02 -MaxSamples 10
 ```Output
 Timestamp                 CounterSamples
 ---------                 --------------
-6/21/2019 10:51:04        \\Server01\logicaldisk(c:)\disk reads/sec :
+6/21/2019 10:51:04        \\Server01\logicaldisk(C:)\disk reads/sec :
                           0
 
-                          \\Server02\logicaldisk(c:)\disk reads/sec :
+                          \\Server02\logicaldisk(C:)\disk reads/sec :
                           0.983050344269146
 ```
 

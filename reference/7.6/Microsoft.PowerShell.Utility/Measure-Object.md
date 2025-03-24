@@ -57,7 +57,7 @@ This command displays the **Minimum**, **Maximum**, and **Sum** of the sizes of 
 current directory, and the average size of a file in the directory.
 
 ```powershell
-Get-ChildItem | Measure-Object -Property length -Minimum -Maximum -Sum -Average
+Get-ChildItem | Measure-Object -Property Length -Minimum -Maximum -Sum -Average
 ```
 
 ### Example 3: Measure text in a text file
@@ -124,7 +124,7 @@ You can use `Measure-Object` to calculate the values of these properties, just l
 property of an object.
 
 ```powershell
-Import-Csv d:\test\serviceyrs.csv | Measure-Object -Property years -Minimum -Maximum -Average
+Import-Csv D:\test\serviceyrs.csv | Measure-Object -Property Years -Minimum -Maximum -Average
 ```
 
 ### Example 6: Measure Boolean values
@@ -134,7 +134,7 @@ In this case, it uses the **PSIsContainer** **Boolean** property to measure the 
 folders (vs. files) in the current directory.
 
 ```powershell
-Get-ChildItem | Measure-Object -Property psiscontainer -Maximum -Sum -Minimum -Average
+Get-ChildItem | Measure-Object -Property PSIsContainer -Maximum -Sum -Minimum -Average
 ```
 
 ```Output

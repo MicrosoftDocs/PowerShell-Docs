@@ -119,7 +119,7 @@ The third command lists the event logs again. The ZapLog event log no longer app
 ### Example 5: Remove an event source and confirm the action
 
 ```powershell
-Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'" | foreach {$_.sources}
+Get-WmiObject Win32_NTEventlogFile -Filter "logfilename='TestLog'" | foreach {$_.Sources}
 ```
 
 ```Output
@@ -129,7 +129,7 @@ TestApp
 
 ```powershell
 Remove-Eventlog -Source "MyApp"
-Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'"} | foreach {$_.sources}
+Get-WmiObject Win32_NTEventlogFile -Filter "logfilename='TestLog'"} | foreach {$_.Sources}
 ```
 
 ```Output

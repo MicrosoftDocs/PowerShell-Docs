@@ -23,7 +23,7 @@ Namespace Microsoft.Samples.PowerShell.Runspaces
     Module Runspace01
         ' <summary>
         ' This sample uses the RunspaceInvoke class to execute
-        ' the get-process cmdlet synchronously. The name and
+        ' the Get-Process cmdlet synchronously. The name and
         ' handlecount are then extracted from  the PSObjects
         ' returned and displayed.
         ' </summary>
@@ -46,7 +46,7 @@ Namespace Microsoft.Samples.PowerShell.Runspaces
 
             ' Now invoke the runspace and display the objects that are
             ' returned...
-            For Each result As PSObject In invoker.Invoke("get-process")
+            For Each result As PSObject In invoker.Invoke("Get-Process")
                 Console.WriteLine("{0,-20} {1}", _
                     result.Members("ProcessName").Value, _
                     result.Members("HandleCount").Value)

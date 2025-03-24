@@ -22,7 +22,7 @@ This article describes how to import cmdlets to a PowerShell session by using a 
 
 1. Make sure that the `PSModulePath` environment variable includes the path to your new module
    folder. By default, the system folder is already added to the `PSModulePath` environment
-   variable. To view the `PSModulePath`, type: `$env:PSModulePath`.
+   variable. To view the `PSModulePath`, type: `$Env:PSModulePath`.
 
 1. Copy the cmdlet assembly into the module folder.
 

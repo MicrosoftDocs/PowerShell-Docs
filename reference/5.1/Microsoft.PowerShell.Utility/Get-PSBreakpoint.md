@@ -47,7 +47,7 @@ Get-PSBreakpoint [-Id] <Int32[]> [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Get-PSBreakPoint` cmdlet gets the breakpoints that are set in the current session. You can use
+The `Get-PSBreakpoint` cmdlet gets the breakpoints that are set in the current session. You can use
 the cmdlet parameters to get particular breakpoints.
 
 A breakpoint is a point in a command or script where execution stops temporarily so that you can
@@ -204,7 +204,7 @@ acceptable values for this parameter are:
 - Command
 - Variable
 
-You can also pipe breakpoint types to `Get-PSBreakPoint`.
+You can also pipe breakpoint types to `Get-PSBreakpoint`.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BreakpointType[]

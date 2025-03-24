@@ -11,7 +11,7 @@ This topic discusses the ways in which users can display error information.
 When your cmdlet encounters an error, the presentation of the error information will, by default, resemble the following error output.
 
 ```powershell
-$ stop-service lanmanworkstation
+$ Stop-Service lanmanworkstation
 You do not have sufficient permissions to stop the service Workstation.
 ```
 
@@ -19,8 +19,8 @@ However, users can view errors by category by setting the `$ErrorView` variable 
 
 ```powershell
 $ $ErrorView = "CategoryView"
-$ stop-service lanmanworkstation
-CloseError: (System.ServiceProcess.ServiceController:ServiceController) [stop-service], ServiceCommandException
+$ Stop-Service lanmanworkstation
+CloseError: (System.ServiceProcess.ServiceController:ServiceController) [Stop-Service], ServiceCommandException
 ```
 
 For more information about error categories, see [Windows PowerShell Error Records](./windows-powershell-error-records.md).

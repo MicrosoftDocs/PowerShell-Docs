@@ -14,7 +14,7 @@ computer. The call to the `Get-Process` cmdlet is equivalent to the following co
 retrieves all the processes whose names start with the characters "a" through "t".
 
 ```powershell
-Get-Process -name [a-t]*
+Get-Process -Name [a-t]*
 ```
 
 > [!IMPORTANT]

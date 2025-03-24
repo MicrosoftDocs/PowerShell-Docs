@@ -1,5 +1,5 @@
 ---
-description: Describes how to use PowerShell data (.psd1) files.
+description: Describes how to use PowerShell data (`.psd1`) files.
 Locale: en-US
 ms.date: 01/19/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_files?view=powershell-7.4&WT.mc_id=ps-gethelp
@@ -55,7 +55,7 @@ you aren't limited to storing string data and don't have to use the data for
 localized output.
 
 The data in the file isn't limited to hashtables. It can be in any format
-supported by the PowerShell syntax, such as `DATA` sections.
+supported by the PowerShell syntax, such as `data` sections.
 
 For more information, see [about_Data_Sections][01].
 

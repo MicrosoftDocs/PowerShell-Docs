@@ -84,10 +84,10 @@ interpretation by the current shell. For example, if you are in `cmd.exe` and
 want to pass an environment variable value, you would use the `cmd.exe` syntax:
 `pwsh -File .\test.ps1 -TestParam %windir%`
 
-In contrast, running `pwsh -File .\test.ps1 -TestParam $env:windir` in
-`cmd.exe` results in the script receiving the literal string `$env:windir`
+In contrast, running `pwsh -File .\test.ps1 -TestParam $Env:windir` in
+`cmd.exe` results in the script receiving the literal string `$Env:windir`
 because it has no special meaning to the current `cmd.exe` shell. The
-`$env:windir` style of environment variable reference _can_ be used inside a
+`$Env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it's interpreted as PowerShell code.
 
 Similarly, if you want to execute the same command from a _Batch script_, you
@@ -138,7 +138,7 @@ expression, or parsed by the PowerShell host as a literal script block enclosed
 in curly braces (`{}`), before being passed to `pwsh`.
 
 ```powershell
-pwsh -Command {Get-WinEvent -LogName security}
+pwsh -Command {Get-WinEvent -LogName Security}
 ```
 
 In `cmd.exe`, there is no such thing as a script block (or **ScriptBlock**
@@ -153,7 +153,7 @@ running from `cmd.exe`. To execute an inline script block defined inside a
 string, the [call operator][03] `&` can be used:
 
 ```powershell
-pwsh -Command "& {Get-WinEvent -LogName security}"
+pwsh -Command "& {Get-WinEvent -LogName Security}"
 ```
 
 If the value of **Command** is a string, **Command** must be the last parameter
@@ -272,9 +272,9 @@ For example:
 
 ```powershell
 # PowerShell instance 1
-pwsh -CustomPipeName mydebugpipe
+pwsh -CustomPipeName MyDebugPipe
 # PowerShell instance 2
-Enter-PSHostProcess -CustomPipeName mydebugpipe
+Enter-PSHostProcess -CustomPipeName MyDebugPipe
 ```
 
 ### -EncodedCommand | -e | -ec
@@ -286,7 +286,7 @@ representation must be a UTF-16LE encoded string.
 For example:
 
 ```powershell
-$command = 'dir "c:\program files" '
+$command = 'dir "C:\Program Files" '
 $bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
 $encodedCommand = [Convert]::ToBase64String($bytes)
 pwsh -EncodedCommand $encodedCommand
@@ -295,7 +295,7 @@ pwsh -EncodedCommand $encodedCommand
 ### -ExecutionPolicy | -ex | -ep
 
 Sets the default execution policy for the current session and saves it in the
-`$env:PSExecutionPolicyPreference` environment variable. This parameter does
+`$Env:PSExecutionPolicyPreference` environment variable. This parameter does
 not change the persistently configured execution policies.
 
 This parameter only applies to Windows computers. On non-Windows platforms, the
@@ -321,7 +321,7 @@ On Windows, this switch does nothing.
 > This parameter must come first to start PowerShell as a login shell. This
 > parameter is ignored if it is passed in another position.
 
-To set up `pwsh` as the login shell on UNIX-like operating systems:
+To set up `pwsh` as the login shell on Unix-like operating systems:
 
 - Verify that the full absolute path to `pwsh` is listed under `/etc/shells`
   - This path is usually something like `/usr/bin/pwsh` on Linux or
@@ -394,7 +394,7 @@ session. By default, system-wide settings are read from the
 Note that these settings aren't used by the endpoint specified by the
 `-ConfigurationName` argument.
 
-Example: `pwsh -SettingsFile c:\myproject\powershell.config.json`
+Example: `pwsh -SettingsFile C:\myproject\powershell.config.json`
 
 ### -SSHServerMode | -sshs
 

@@ -68,7 +68,7 @@ Get-Acl C:\Windows\s*.log | Format-List -Property PSPath, Sddl
 
 The command uses the `Get-Acl` cmdlet to get objects representing the security descriptors of each
 log file. It uses a pipeline operator (`|`) to send the results to the `Format-List` cmdlet. The
-command uses the **Property** parameter of `Format-List` to display only the **PsPath** and **SDDL**
+command uses the **Property** parameter of `Format-List` to display only the **PSPath** and **SDDL**
 properties of each security descriptor object.
 
 Lists are often used in PowerShell, because long values appear truncated in tables.
@@ -289,7 +289,7 @@ and access list, PowerShell displays the following properties and property value
   Descriptor Definition Language format. PowerShell uses the **GetSddlForm** method of security
   descriptors to get this data.
 
-Because `Get-Acl` is supported by the file system and registry providers, you can use `Get-Acl` to
+Because `Get-Acl` is supported by the FileSystem and Registry providers, you can use `Get-Acl` to
 view the ACL of file system objects, such as files and directories, and registry objects, such as
 registry keys and entries.
 

@@ -418,7 +418,7 @@ Example:
     "Transcription": {
         "EnableTranscripting": true,
         "EnableInvocationHeader": true,
-        "OutputDirectory": "c:\\tmp"
+        "OutputDirectory": "C:\\tmp"
       }
 }
 ```
@@ -436,7 +436,7 @@ Example:
 ```json
 {
     "UpdatableHelp": {
-      "DefaultSourcePath": "f:\\temp"
+      "DefaultSourcePath": "F:\\temp"
     }
 }
 ```

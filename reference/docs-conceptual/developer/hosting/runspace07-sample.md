@@ -6,7 +6,7 @@ title: Runspace07 Sample
 ---
 # Runspace07 Sample
 
-This sample shows how to create a runspace, and then use that runspace to run two cmdlets synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+This sample shows how to create a runspace, and then use that runspace to run two cmdlets synchronously by using a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 ## Requirements
 
@@ -16,11 +16,11 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.
+- Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.
 
-- Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Adding cmdlets to the pipeline of the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 - Running the cmdlets synchronously.
 
@@ -47,7 +47,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// <summary>
     /// This sample shows how to create a runspace and how to run commands
     /// using a PowerShell object. It builds a pipeline that runs the
-    /// get-process cmdlet, which is piped to the measure-object
+    /// Get-Process cmdlet, which is piped to the Measure-Object
     /// cmdlet to count the number of processes running on the system.
     /// </summary>
     /// <param name="args">The parameter is not used.</param>
@@ -83,14 +83,14 @@ namespace Microsoft.Samples.PowerShell.Runspaces
         // when we're done.
         using (powershell)
         {
-          // Add the get-process cmdlet to the PowerShell object. Notice
+          // Add the Get-Process cmdlet to the PowerShell object. Notice
           // we are specify the name of the cmdlet, not a script.
-          powershell.AddCommand("get-process");
+          powershell.AddCommand("Get-Process");
 
-          // Add the measure-object cmdlet to count the number
+          // Add the Measure-Object cmdlet to count the number
           // of objects being returned. Commands are always added to the end
           // of the pipeline.
-          powershell.AddCommand("measure-object");
+          powershell.AddCommand("Measure-Object");
 
           // Run the cmdlets synchronously and save the objects returned.
           result = powershell.Invoke();

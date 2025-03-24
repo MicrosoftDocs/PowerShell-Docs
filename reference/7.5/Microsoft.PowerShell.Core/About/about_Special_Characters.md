@@ -222,7 +222,7 @@ There is a vertical tab
 between the words.
 ```
 
-On printers or in a unix-based consoles, the vertical tab character advances to
+On printers or in a Unix-based console, the vertical tab character advances to
 the next line and writes the remaining output at that point.
 
 ```Output

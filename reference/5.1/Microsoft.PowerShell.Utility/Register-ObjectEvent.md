@@ -150,8 +150,8 @@ $objectEventArgs = @{
 }
 $Job = Register-ObjectEvent @objectEventArgs
 $Job | Format-List -Property *
-& $Job.module {$Random}
-& $Job.module {$Random}
+& $Job.Module {$Random}
+& $Job.Module {$Random}
 ```
 
 ```Output

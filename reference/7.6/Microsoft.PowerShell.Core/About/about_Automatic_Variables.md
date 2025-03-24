@@ -211,8 +211,8 @@ non-zero integer.
 
 ### `$foreach`
 
-Contains the enumerator (not the resulting values) of a [ForEach][56] loop. The
-`$foreach` variable exists only while the `ForEach` loop is running; it's
+Contains the enumerator (not the resulting values) of a [foreach][56] loop. The
+`$foreach` variable exists only while the `foreach` loop is running; it's
 deleted after the loop is completed.
 
 Enumerators contain properties and methods you can use to retrieve loop values
@@ -222,19 +222,19 @@ and change the current loop iteration. For more information, see
 ### `$HOME`
 
 Contains the full path of the user's home directory. On Windows, this variable
-uses the value of the `"$env:USERPROFILE"` Windows environment variable,
+uses the value of the `"$Env:USERPROFILE"` Windows environment variable,
 typically `C:\Users\<UserName>`. On Unix, this variable uses the value of the
 `HOME` environment variable.
 
 > [!IMPORTANT]
 > Windows can redirect the location of the user's profile. This means that
-> `$HOME` may not have the same value as `"$env:HOMEDRIVE$env:HOMEPATH"`.
+> `$HOME` may not have the same value as `"$Env:HOMEDRIVE$Env:HOMEPATH"`.
 
 ### `$Host`
 
 Contains an object that represents the current host application for PowerShell.
 You can use this variable to represent the current host in commands or to
-display or change the properties of the host, such as `$Host.version` or
+display or change the properties of the host, such as `$Host.Version` or
 `$Host.CurrentCulture`, or `$Host.UI.RawUI.BackGroundColor = "Red"`.
 
 > [!NOTE]
@@ -489,7 +489,7 @@ Test-Path $PROFILE
 Or, you can use it in a command to create a profile:
 
 ```powershell
-New-Item -ItemType file -Path $PROFILE -Force
+New-Item -ItemType File -Path $PROFILE -Force
 ```
 
 You can use it in a command to open the profile in **notepad.exe**:
@@ -679,8 +679,8 @@ Contains a stack trace for the most recent error.
 
 ### `$switch`
 
-Contains the enumerator not the resulting values of a `Switch` statement. The
-`$switch` variable exists only while the `Switch` statement is running; it's
+Contains the enumerator not the resulting values of a `switch` statement. The
+`$switch` variable exists only while the `switch` statement is running; it's
 deleted when the `switch` statement completes execution. For more information,
 see [about_Switch][71].
 
@@ -1133,7 +1133,7 @@ Default (Current): End
 [53]: about_CommonParameters.md
 [54]: about_comparison_operators.md
 [55]: about_Continue.md
-[56]: about_ForEach.md
+[56]: about_Foreach.md
 [57]: about_Functions_Advanced_Methods.md
 [58]: about_Functions_Advanced_Parameters.md
 [59]: about_Functions_Advanced.md

@@ -75,7 +75,7 @@ display name finds network-related services even when the service name doesn't i
 xmlprov, the Network Provisioning Service.
 
 ```powershell
-Get-Service -Displayname "*network*"
+Get-Service -DisplayName "*network*"
 ```
 
 ### Example 4: Get services that begin with a search string and an exclusion
@@ -109,7 +109,7 @@ This example gets services that have dependent services.
 Get-Service |
   Where-Object {$_.DependentServices} |
     Format-List -Property Name, DependentServices, @{
-      Label="NoOfDependentServices"; Expression={$_.dependentservices.count}
+      Label="NoOfDependentServices"; Expression={$_.DependentServices.Count}
     }
 ```
 
@@ -143,7 +143,7 @@ property, stopped services appear before running services. This happens because 
 To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.
 
 ```powershell
-Get-Service "s*" | Sort-Object status
+Get-Service "s*" | Sort-Object Status
 ```
 
 ```Output

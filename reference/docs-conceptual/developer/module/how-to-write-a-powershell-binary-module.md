@@ -76,7 +76,7 @@ The following procedure describes how to create and install a PowerShell binary 
 
    The `PSModulePath` global environment variable describes the default paths that PowerShell will
    use to locate your module. For example, a common path to save a module on a system would be
-   `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. If you do not use
+   `%SystemRoot%\Users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. If you do not use
    the default paths, you will need to explicitly state the location of your module during
    installation. Be sure to create a folder to save your module in, as you may need the folder to
    store multiple assemblies and files for your solution.

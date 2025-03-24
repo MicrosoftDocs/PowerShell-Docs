@@ -18,7 +18,7 @@ You can get particular processes by specifying their process names or process ID
 command gets the Idle process:
 
 ```powershell
-Get-Process -id 0
+Get-Process -Id 0
 ```
 
 ```Output
@@ -81,7 +81,7 @@ example, the following command gets the PowerShell processes on the local comput
 "localhost") and on two remote computers.
 
 ```powershell
-Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
+Get-Process -Name powershell -ComputerName localhost, Server01, Server02
 ```
 
 ```Output
@@ -94,12 +94,12 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 The computer names aren't evident in this display, but they're stored in the **MachineName** property of
 the process objects that `Get-Process` returns. The following command uses the `Format-Table` cmdlet
-to display the process **ID**, **ProcessName** and **MachineName** (ComputerName) properties of the
+to display the process **Id**, **ProcessName** and **MachineName** (ComputerName) properties of the
 process objects.
 
 ```powershell
-Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 |
-    Format-Table -Property ID, ProcessName, MachineName
+Get-Process -Name powershell -ComputerName localhost, Server01, Server01 |
+    Format-Table -Property Id, ProcessName, MachineName
 ```
 
 ```Output
@@ -120,7 +120,7 @@ Get-Process powershell -ComputerName localhost, Server01, Server02 |
         @{Label="WS(K)";Expression={[int]($_.WS/1024)}},
         @{Label="VM(M)";Expression={[int]($_.VM/1MB)}},
         @{Label="CPU(s)";Expression={if ($_.CPU -ne $()){$_.CPU.ToString("N")}}},
-        Id, ProcessName, MachineName -auto
+        Id, ProcessName, MachineName -Auto
 ```
 
 ```Output
@@ -195,7 +195,7 @@ command on a remote computer, you need to use the `Invoke-Command` cmdlet. For e
 PowerShell process on the Server01 remote computer, type:
 
 ```powershell
-Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
+Invoke-Command -ComputerName Server01 {Stop-Process PowerShell}
 ```
 
 ## Stopping All Other PowerShell Sessions

@@ -271,7 +271,7 @@ Accept wildcard characters: False
 
 ### -Namespace
 
-Specifies the namespace for the CIM operation. The default namespace is **root/cimv2**. You can use
+Specifies the namespace for the CIM operation. The default namespace is **root/CIMV2**. You can use
 tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from
 the local WMI server to provide the list of namespaces.
 

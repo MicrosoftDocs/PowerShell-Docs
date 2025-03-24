@@ -90,7 +90,7 @@ parameter gets the alias when you know the item name.
 ### Example 4: Get aliases by property
 
 ```powershell
-Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
+Get-Alias | Where-Object {$_.Options -match "ReadOnly"}
 ```
 
 This command gets all aliases in which the value of the **Options** property is **ReadOnly**. This
@@ -98,7 +98,7 @@ command provides a quick way to find the aliases that are built into PowerShell,
 the **ReadOnly** option.
 
 **Options** is just one property of the **AliasInfo** objects that `Get-Alias` gets. To find all
-properties and methods of **AliasInfo** objects, type `Get-Alias | get-member`.
+properties and methods of **AliasInfo** objects, type `Get-Alias | Get-Member`.
 
 ### Example 5: Get aliases by name and filter by beginning letter
 

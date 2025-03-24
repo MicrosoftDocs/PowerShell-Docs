@@ -35,7 +35,7 @@ In the following example, the PSStandardMembers member set defines the DefaultDi
 The following output shows the default properties returned by the [Format-List](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet. Only the `Id`, `Handles`, `CPU`, and `Name` properties are returned for each process object.
 
 ```powershell
-Get-Process | format-list
+Get-Process | Format-List
 ```
 
 ```output

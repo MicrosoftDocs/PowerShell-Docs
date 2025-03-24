@@ -21,11 +21,11 @@ Imports System.ComponentModel
 
 Namespace Microsoft.Samples.PowerShell.Commands
 
-    ' This sample is a complete implementation of the get-proc Cmdlet.
+    ' This sample is a complete implementation of the Get-Proc Cmdlet.
 #Region "GetProcCommand"
 
     ''' <summary>
-    ''' This class implements the get-proc cmdlet
+    ''' This class implements the Get-Proc cmdlet
     ''' </summary>
     <Cmdlet(VerbsCommon.Get, "Proc", _
     DefaultParameterSetName:="ProcessName")> _
@@ -411,7 +411,7 @@ ContinueForEach1:
         Public Overrides ReadOnly Property Description() As String
             Get
                 Return "This is a PowerShell snap-in that includes " & _
-                    "the get-proc sample."
+                    "the Get-Proc sample."
             End Get
         End Property
     End Class 'GetProcPSSnapIn05

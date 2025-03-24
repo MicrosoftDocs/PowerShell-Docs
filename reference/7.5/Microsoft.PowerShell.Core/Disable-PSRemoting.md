@@ -249,7 +249,7 @@ disabled.
 
 ```powershell
 Disable-PSRemoting -Force
-powershell.exe -command 'Get-PSSessionConfiguration'
+powershell.exe -Command 'Get-PSSessionConfiguration'
 ```
 
 ```Output
@@ -301,8 +301,8 @@ Permission    : NT AUTHORITY\NETWORK AccessDenied, NT AUTHORITY\INTERACTIVE Acce
 ```
 
 ```powershell
-powershell.exe -command 'Disable-PSRemoting -Force'
-powershell.exe -command 'Get-PSSessionConfiguration'
+powershell.exe -Command 'Disable-PSRemoting -Force'
+powershell.exe -Command 'Get-PSSessionConfiguration'
 ```
 
 ```Output

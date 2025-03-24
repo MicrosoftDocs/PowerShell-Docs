@@ -59,7 +59,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 This example disables a scheduled job on the local computer.
 
 ```powershell
-Disable-ScheduledJob -ID 2 -PassThru
+Disable-ScheduledJob -Id 2 -PassThru
 ```
 
 This command disables the scheduled job with ID 2 on the local computer.
@@ -121,11 +121,11 @@ TestJob scheduled job on each computer.
 ### Example 5: Disable a scheduled job by its global ID
 
 This examples shows how to disable a scheduled job by using its global identifier. The value of the
-GlobalID property of a scheduled job is a unique identifier (GUID). Use the GlobalID value when
-precision is required, such as when you are disabling scheduled jobs on multiple computers.
+**GlobalId** property of a scheduled job is a unique identifier (GUID). Use the **GlobalId** value
+when precision is required, such as when you are disabling scheduled jobs on multiple computers.
 
 ```powershell
-Get-ScheduledJob | Format-Table -Property Name, GlobalID, Command -Autosize
+Get-ScheduledJob | Format-Table -Property Name, GlobalId, Command -AutoSize
 ```
 
 ```Output
@@ -139,13 +139,13 @@ Test-HelpFiles   2f1606d2-c6cf-4bef-8b1c-ae36a9cc9934 .\Test-DomainHelpFiles.ps1
 ```
 
 ```powershell
-Get-ScheduledJob | Where-Object {$_.GlobalID = d77020ca-f20d-42be-86c8-fc64df97db90} | Disable-ScheduledJob
+Get-ScheduledJob | Where-Object {$_.GlobalId = d77020ca-f20d-42be-86c8-fc64df97db90} | Disable-ScheduledJob
 ```
 
-The first command demonstrates one way of finding the GlobalID of a scheduled job. The command uses
-the `Get-ScheduledJob` cmdlet to get the scheduled jobs on the computer. A pipeline operator (`|`)
-sends the scheduled jobs to the `Format-Table` cmdlet, which displays the Name, GlobalID, and
-Command properties of each job in a table.
+The first command demonstrates one way of finding the **GlobalId** of a scheduled job. The command
+uses the `Get-ScheduledJob` cmdlet to get the scheduled jobs on the computer. A pipeline operator
+(`|`) sends the scheduled jobs to the `Format-Table` cmdlet, which displays the **Name**,
+**GlobalId**, and **Command** properties of each job in a table.
 
 The second command uses the `Get-ScheduledJob` cmdlet to get the scheduled jobs on the computer. A
 pipeline operator (`|`) sends the scheduled jobs to the `Where-Object` cmdlet, which selects the

@@ -216,7 +216,7 @@ using a binary-OR operation. Passing values as an array is the simplest option a
 to use tab-completion on the values.
 
 To see the Options property of all variables in the session, type
-`Get-Variable | Format-Table -Property name, options -AutoSize`.
+`Get-Variable | Format-Table -Property Name, Options -AutoSize`.
 
 ```yaml
 Type: System.Management.Automation.ScopedItemOptions

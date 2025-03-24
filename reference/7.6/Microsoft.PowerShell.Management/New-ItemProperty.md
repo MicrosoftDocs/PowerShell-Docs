@@ -97,7 +97,7 @@ $newValue = New-ItemProperty -Path "HKLM:\SOFTWARE\ContosoCompany\" -Name 'HereS
 This is text which contains newlines
 It can also contain "quoted" strings
 "@
-$newValue.MultiString
+$newValue.HereString
 ```
 
 ```output

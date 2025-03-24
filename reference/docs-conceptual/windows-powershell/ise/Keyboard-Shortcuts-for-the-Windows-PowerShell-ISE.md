@@ -123,7 +123,7 @@ Windows PowerShell session outside of the ISE.
 |          Action          |                                            Keyboard Shortcut                                             |
 | ------------------------ | -------------------------------------------------------------------------------------------------------- |
 | **Exit**                 | <kbd>ALT</kbd>+<kbd>F4</kbd> closes the ISE.                                                             |
-| **Start PowerShell.exe** | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> opens a new Windows PowerShell session outside of the ISE. |
+| **Start powershell.exe** | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> opens a new Windows PowerShell session outside of the ISE. |
 
 ## See Also
 

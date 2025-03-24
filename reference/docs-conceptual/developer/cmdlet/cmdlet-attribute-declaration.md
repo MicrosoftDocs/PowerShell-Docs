@@ -26,7 +26,7 @@ Required. Specifies the cmdlet noun. This noun specifies the resource that the c
 `SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean))
 Optional named parameter. `True` indicates that the cmdlet supports calls to the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method, which provides the cmdlet with a way to prompt the user before an action that changes the system is performed. `False`, the default value, indicates that the cmdlet does not support calls to the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. For more information about confirmation requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).
 
-`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact))
+`ConfirmImpact` ([System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact))
 Optional named parameter. Specifies when the action of the cmdlet should be confirmed by a call to the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method. [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) will only be called when the ConfirmImpact value of the cmdlet (by default, Medium) is equal to or greater than the value of the `$ConfirmPreference` variable. This parameter should be specified only when the `SupportsShouldProcess` parameter is specified.
 
 `DefaultParameterSetName` ([System.String](/dotnet/api/System.String))

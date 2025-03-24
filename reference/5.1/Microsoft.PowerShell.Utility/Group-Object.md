@@ -44,7 +44,7 @@ This example uses the **NoElement** parameter to omit the members of the group.
 ```powershell
 $files = Get-ChildItem -Path $PSHOME -Recurse
 $files |
-    Group-Object -Property extension -NoElement |
+    Group-Object -Property Extension -NoElement |
     Sort-Object -Property Count -Descending
 ```
 
@@ -180,7 +180,7 @@ values are **CmdletInfo** object. The **AsString** parameter doesn't convert the
 groups to strings.
 
 ```powershell
-$A = Get-Command Get-*, Set-* -CommandType cmdlet |
+$A = Get-Command Get-*, Set-* -CommandType Cmdlet |
      Group-Object -Property Verb -AsHashTable -AsString
 $A
 ```

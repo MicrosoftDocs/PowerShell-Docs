@@ -119,7 +119,7 @@ following example uses the first `CopyTo` method to copy the `Final.txt` file
 to the `C:\Bin` directory.
 
 ```powershell
-(Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt")
+(Get-ChildItem C:\final.txt).CopyTo("C:\bin\final.txt")
 ```
 
 > [!NOTE]
@@ -138,7 +138,7 @@ The following example uses the second `CopyTo` method to copy the `Final.txt`
 file to the `C:\Bin` directory, and to overwrite existing files.
 
 ```powershell
-(Get-ChildItem c:\final.txt).CopyTo("c:\bin\final.txt", $true)
+(Get-ChildItem C:\final.txt).CopyTo("C:\bin\final.txt", $true)
 ```
 
 ## Member-access enumeration
@@ -190,7 +190,7 @@ At line:1 char:12
 l.Commands.GetProcessCommand
 ```
 
-This example is functionally equivalent to using the `Foreach-Object` cmdlet to
+This example is functionally equivalent to using the `ForEach-Object` cmdlet to
 run the method on each object in the collection.
 
 ```powershell
@@ -203,7 +203,7 @@ Beginning in PowerShell 4.0, collection filtering using a method syntax is
 supported. This allows use of two new methods when dealing with collections
 `ForEach` and `Where`.
 
-You can read more about these methods in [about_arrays](about_arrays.md)
+You can read more about these methods in [about_Arrays](about_arrays.md)
 
 ## Calling a specific method when multiple overloads exist
 

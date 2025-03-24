@@ -123,7 +123,7 @@ In this case, because the directory contains only .dwg files, the result is `$fa
 ### Example 4: Check for a file
 
 ```powershell
-Test-Path -Path $PROFILE -PathType leaf
+Test-Path -Path $PROFILE -PathType Leaf
 ```
 
 ```Output
@@ -135,7 +135,7 @@ case, because the PowerShell profile is a `.ps1` file, the cmdlet returns `$true
 
 ### Example 5: Check paths in the Registry
 
-These commands use `Test-Path` with the PowerShell registry provider.
+These commands use `Test-Path` with the PowerShell Registry provider.
 
 The first command tests whether the registry path of the **Microsoft.PowerShell** registry key is
 correct on the system. If PowerShell is installed correctly, the cmdlet returns `$true`.
@@ -163,13 +163,13 @@ False
 
 ### Example 6: Test if a file is newer than a specified date
 
-This command uses the **NewerThan** dynamic parameter to determine whether the `PowerShell.exe`
+This command uses the **NewerThan** dynamic parameter to determine whether the `powershell.exe`
 file on the computer is newer than `July 13, 2009`.
 
 The NewerThan parameter works only in file system drives.
 
 ```powershell
-Test-Path $PSHOME\PowerShell.exe -NewerThan "July 13, 2009"
+Test-Path $PSHOME\powershell.exe -NewerThan "July 13, 2009"
 ```
 
 ```Output

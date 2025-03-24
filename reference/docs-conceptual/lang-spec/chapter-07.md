@@ -132,7 +132,7 @@ the case. Consider the following example:
 
 ```powershell
 2,4,6       # Length 3; values 2,4,6
-(2,4),6     # Length 2; values [object[]],int
+(2,4),6     # Length 2; values [Object[]],int
 ```
 
 In the second case, the parentheses change the semantics, resulting in an array whose two elements
@@ -312,19 +312,19 @@ The type of the result of an _invocation-expression_ is a _method-designator_ ([
 Examples:
 
 ```powershell
-[math]::Sqrt(2.0)            # call method with argument 2.0
+[Math]::Sqrt(2.0)            # call method with argument 2.0
 [char]::IsUpper("a")         # call method
 $b = "abc#$%XYZabc"
 $b.ToUpper()                 # call instance method
 
-[math]::Sqrt(2)              # convert 2 to 2.0 and call method
-[math]::Sqrt(2D)             # convert 2D to 2.0 and call method
-[math]::Sqrt($true)          # convert $true to 1.0 and call method
-[math]::Sqrt("20")           # convert "20" to 20 and call method
+[Math]::Sqrt(2)              # convert 2 to 2.0 and call method
+[Math]::Sqrt(2D)             # convert 2D to 2.0 and call method
+[Math]::Sqrt($true)          # convert $true to 1.0 and call method
+[Math]::Sqrt("20")           # convert "20" to 20 and call method
 
-$a = [math]::Sqrt            # get method descriptor for Sqrt
+$a = [Math]::Sqrt            # get method descriptor for Sqrt
 $a.Invoke(2.0)               # call Sqrt via the descriptor
-$a = [math]::("Sq"+"rt")     # get method descriptor for Sqrt
+$a = [Math]::("Sq"+"rt")     # get method descriptor for Sqrt
 $a.Invoke(2.0)               # call Sqrt via the descriptor
 $a = [char]::ToLower         # get method descriptor for ToLower
 $a.Invoke("X")               # call ToLower via the descriptor
@@ -503,9 +503,9 @@ $a[(0,1),(1,0)]           # slice with Length 2, value 20,30, parens needed
 $h1 = @{ FirstName = "James"; LastName = "Anderson"; IDNum = 123 }
 $h1['FirstName']          # the value associated with key FirstName
 $h1['BirthDate']          # no such key, returns $null
-$h1['FirstName','IDNum']  # returns [object[]], Length 2 (James/123)
-$h1['FirstName','xxx']    # returns [object[]], Length 2 (James/$null)
-$h1[$null,'IDNum']        # returns [object[]], Length 2 ($null/123)
+$h1['FirstName','IDNum']  # returns [Object[]], Length 2 (James/123)
+$h1['FirstName','xxx']    # returns [Object[]], Length 2 (James/$null)
+$h1[$null,'IDNum']        # returns [Object[]], Length 2 ($null/123)
 ```
 
 Windows PowerShell: When _expression_ is a collection of two or more key names, if `$null` is used
@@ -593,11 +593,11 @@ $j = 20
 $($i = 10) # pipeline gets nothing
 $(($i = 10)) # pipeline gets int 10
 $($i = 10; $j) # pipeline gets int 20
-$(($i = 10); $j) # pipeline gets [object[]](10,20)
+$(($i = 10); $j) # pipeline gets [Object[]](10,20)
 $(($i = 10); ++$j) # pipeline gets int 10
-$(($i = 10); (++$j)) # pipeline gets [object[]](10,22)
+$(($i = 10); (++$j)) # pipeline gets [Object[]](10,22)
 $($i = 10; ++$j) # pipeline gets nothing
-$(2,4,6) # pipeline gets [object[]](2,4,6)
+$(2,4,6) # pipeline gets [Object[]](2,4,6)
 ```
 
 ### 7.1.7 @(...) operator
@@ -1107,8 +1107,8 @@ Examples:
 
 ```powershell
 2,4,6                    # Length 3; values 2,4,6
-(2,4),6                  # Length 2; values [object[]],int
-(2,4,6),12,(2..4)        # Length 3; [object[]],int,[object[]]
+(2,4),6                  # Length 2; values [Object[]],int
+(2,4,6),12,(2..4)        # Length 3; [Object[]],int,[Object[]]
 2,4,6,"red",$null,$true  # Length 6
 ```
 
@@ -1284,12 +1284,12 @@ Examples:
 
 ```powershell
 $a = [int[]](10,20)              # [int[]], Length 2*1
-$a * "3"                         # [object[]], Length 2*3
-$a * 4                           # [object[]], Length 2*4
-$a * 0                           # [object[]], Length 2*0
-$a * 2.3450D                     # [object[]], Length 2*2
-$a * 2.7                         # [object[]], Length 2*3
-(New-Object 'float[,]' 2,3) * 2  # [object[]], Length 2*2
+$a * "3"                         # [Object[]], Length 2*3
+$a * 4                           # [Object[]], Length 2*4
+$a * 0                           # [Object[]], Length 2*0
+$a * 2.3450D                     # [Object[]], Length 2*2
+$a * 2.7                         # [Object[]], Length 2*3
+(New-Object 'float[,]' 2,3) * 2  # [Object[]], Length 2*2
 ```
 
 ### 7.6.4 Division
@@ -1409,10 +1409,10 @@ Examples:
 
 ```powershell
 $a = [int[]](10,20)               # [int[]], Length 2
-$a + "red"                        # [object[]], Length 3
-$a + 12.5,$true                   # [object[]], Length 4
-$a + (New-Object 'float[,]' 2,3)  # [object[]], Length 8
-(New-Object 'float[,]' 2,3) + $a  # [object[]], Length 8
+$a + "red"                        # [Object[]], Length 3
+$a + 12.5,$true                   # [Object[]], Length 4
+$a + (New-Object 'float[,]' 2,3)  # [Object[]], Length 8
+(New-Object 'float[,]' 2,3) + $a  # [Object[]], Length 8
 ```
 
 ### 7.7.4 Hashtable concatenation
@@ -1627,7 +1627,7 @@ $x = [int[]](10,20)
 $x -is [int[]]     # True
 
 $a = "abcd"        # string is derived from object
-$a -is [object]    # True
+$a -is [Object]    # True
 
 $x = [double]
 foreach ($t in [int],$x,[decimal],"string") {
@@ -2106,13 +2106,13 @@ Examples:
 $a = 20; $b = $a + 12L             # $b has type long, value 22
 $hypot = [Math]::Sqrt(3*3 + 4*4)   # type double, value 5
 $a = $b = $c = 10.20D              # all have type decimal, value 10.20
-$a = (10,20,30),(1,2)              # type [object[]], Length 2
+$a = (10,20,30),(1,2)              # type [Object[]], Length 2
 [int]$x = 10.6                     # type int, value 11
 [long]$x = "0xabc"                 # type long, value 0xabc
 $a = [float]                       # value type literal [float]
 $i,$j,$k = 10,"red",$true          # $i is 10, $j is "red", $k is True
-$i,$j = 10,"red",$true             # $i is 10, $j is [object[]], Length 2
-$i,$j = (10,"red"),$true           # $i is [object[]], Length 2, $j is True
+$i,$j = 10,"red",$true             # $i is 10, $j is [Object[]], Length 2
+$i,$j = (10,"red"),$true           # $i is [Object[]], Length 2, $j is True
 $i,$j,$k = 10                      # $i is 10, $j is $null, $k is $null
 
 $h = @{}
@@ -2124,7 +2124,7 @@ $h1["City"] = "New York"           # adds element City
 
 [int]$Variable:v = 123.456         # v takes on the value 123
 ${E:output.txt} = "a"              # write text to the given file
-$Env:MyPath = "x:\data\file.txt"   # define the environment variable
+$Env:MyPath = "X:\data\file.txt"   # define the environment variable
 $Function:F = { param ($a, $b) "Hello there, $a, $b" }
 F 10 "red"                         # define and invoke a function
 function Demo { "Hi there from inside Demo" }

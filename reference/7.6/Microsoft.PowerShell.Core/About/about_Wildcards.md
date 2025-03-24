@@ -85,7 +85,7 @@ includes **Interactive**.
 Get-Service | Where-Object {$_.ServiceType -like "*Interactive*"}
 ```
 
-In the following example, the `If` statement includes a condition that uses
+In the following example, the `if` statement includes a condition that uses
 wildcard characters to find property values. If the restore point's
 **Description** includes **PowerShell**, the command adds the value of the
 restore point's **CreationTime** property to a log file.
@@ -93,7 +93,7 @@ restore point's **CreationTime** property to a log file.
 ```powershell
 $p = Get-ComputerRestorePoint
 foreach ($point in $p) {
-  if ($point.description -like "*PowerShell*") {
+  if ($point.Description -like "*PowerShell*") {
     Add-Content -Path C:\TechDocs\RestoreLog.txt "$($point.CreationTime)"
   }
 }

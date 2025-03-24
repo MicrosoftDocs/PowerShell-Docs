@@ -39,7 +39,7 @@ supports arithmetic operations on those values. The set of numerical types inclu
 A **collection** is a group of one or more related items, which need not have the same type.
 Examples of collection types are arrays, stacks, queues, lists, and hash tables. A program can
 _enumerate_ (or _iterate_) over the elements in a collection, getting access to each element one at
-a time. Common ways to do this are with the foreach statement ([§8.4.4][§8.4.4]) and the
+a time. Common ways to do this are with the `foreach` statement ([§8.4.4][§8.4.4]) and the
 [ForEach-Object](xref:Microsoft.PowerShell.Core.ForEach-Object) cmdlet. The type of an object that
 represents an enumerator is described in [§4.5.16][§4.5.16].
 
@@ -326,7 +326,7 @@ In PowerShell, `string` maps to `System.String`.
 
 ### 4.3.2 Arrays
 
-All array types are derived from the type `Array`. This type has the following accessible members:
+All array types are derived from the type `array`. This type has the following accessible members:
 
 <table>
 <thead>
@@ -372,7 +372,7 @@ Copy(<em>source</em>, <em>sourceIndex</em>, <em>destination</em>, <em>destinatio
 
 For more details on arrays, see [§9.][§9.]
 
-In PowerShell, `Array` maps to `System.Array`.
+In PowerShell, `array` maps to `System.Array`.
 
 ### 4.3.3 Hashtables
 

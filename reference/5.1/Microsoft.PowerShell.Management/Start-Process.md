@@ -109,7 +109,7 @@ verbs are determined by the filename extension of the file that runs in the proc
 
 ```powershell
 $startExe = New-Object System.Diagnostics.ProcessStartInfo -Args powershell.exe
-$startExe.verbs
+$startExe.Verbs
 ```
 
 ```Output
@@ -131,8 +131,8 @@ Note that the first command specifies a string as **ArgumentList**. The second c
 array.
 
 ```powershell
-Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%SystemDrive%\Program Files`""
-Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%SystemDrive%\Program Files`""
+Start-Process -FilePath "$Env:ComSpec" -ArgumentList "/c dir `"%SystemDrive%\Program Files`""
+Start-Process -FilePath "$Env:ComSpec" -ArgumentList "/c","dir","`"%SystemDrive%\Program Files`""
 ```
 
 ## PARAMETERS

@@ -4,7 +4,7 @@ Locale: en-US
 ms.date: 10/22/2021
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_argument_completion?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: About_functions_argument_completion
+title: about_Functions_Argument_Completion
 ---
 # about_Functions_Argument_Completion
 
@@ -37,7 +37,7 @@ example, the value of the **Fruit** parameter can only be **Apple**,
 **Banana**, or **Pear**.
 
 ```powershell
-Param(
+param (
     [Parameter(Mandatory=$true)]
     [ValidateSet('Apple', 'Banana', 'Pear')]
     [string[]]$Fruit
@@ -57,7 +57,7 @@ The validation occurs whenever that variable is assigned even within the
 script.
 
 ```powershell
-Param(
+param (
     [ValidateSet('hello', 'world')]
     [string]$Message
 )
@@ -77,19 +77,19 @@ For more information about tab expansion, see
 
 ### Dynamic ValidateSet values using classes
 
-You can use a **Class** to dynamically generate the values for **ValidateSet**
+You can use a `class` to dynamically generate the values for **ValidateSet**
 at runtime. In the following example, the valid values for the variable
-`$Sound` are generated via a **Class** named **SoundNames** that checks three
+`$Sound` are generated via a `class` named **SoundNames** that checks three
 filesystem paths for available sound files:
 
 ```powershell
-Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
+class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
     [string[]] GetValidValues() {
         $SoundPaths = '/System/Library/Sounds/',
                       '/Library/Sounds',
                       '~/Library/Sounds'
-        $SoundNames = ForEach ($SoundPath in $SoundPaths) {
-            If (Test-Path $SoundPath) {
+        $SoundNames = foreach ($SoundPath in $SoundPaths) {
+            if (Test-Path $SoundPath) {
                 (Get-ChildItem $SoundPath).BaseName
             }
         }
@@ -102,7 +102,7 @@ The `[SoundNames]` class is then implemented as a dynamic **ValidateSet** value
 as follows:
 
 ```powershell
-Param(
+param (
     [ValidateSet([SoundNames])]
     [string]$Sound
 )
@@ -167,7 +167,7 @@ The syntax is as follows:
 
 ```powershell
 function MyArgumentCompleter {
-    Param(
+    param (
         [Parameter(Mandatory)]
         [ArgumentCompleter( {
             param ( $commandName,
@@ -301,8 +301,8 @@ class NumberCompleter : IArgumentCompleter {
         [IDictionary] $fakeBoundParameters) {
 
         $resultList = [List[CompletionResult]]::new()
-        $local:to = $this.To
-        $local:step = $this.Step
+        $Local:to = $this.To
+        $Local:step = $this.Step
         for ($i = $this.From; $i -lt $to; $i += $step) {
             $resultList.Add([CompletionResult]::new($i.ToString()))
         }

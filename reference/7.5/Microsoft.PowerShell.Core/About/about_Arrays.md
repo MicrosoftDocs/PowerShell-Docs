@@ -305,7 +305,7 @@ value in an array, type:
 
 ```powershell
 $a = 0..9
-for ($i = 0; $i -le ($a.length - 1); $i += 2) {
+for ($i = 0; $i -le ($a.Length - 1); $i += 2) {
   $a[$i]
 }
 ```
@@ -346,11 +346,11 @@ In PowerShell, arrays have three properties that indicate the number of items
 contained in the array.
 
 - **Count** - This property is the most commonly used property to determine the
-  number of items in any collection, not just an array. It's an `[Int32]` type
+  number of items in any collection, not just an array. It's an `[int32]` type
   value. In Windows PowerShell 5.1 (and older) **Count** alias property for
   **Length**.
 
-- **Length** - This property is an `[Int32]` type value. This contains the same
+- **Length** - This property is an `[int32]` type value. This contains the same
   value as **Count**.
 
   > [!NOTE]
@@ -359,7 +359,7 @@ contained in the array.
   > string is the number of characters in the string. But the **Count**
   > property is always `1`.
 
-- **Longlength** - This property is an `[Int64]` type value. Use this property
+- **LongLength** - This property is an `[int64]` type value. Use this property
   for arrays containing more than 2,147,483,647 elements.
 
 ```powershell
@@ -408,8 +408,8 @@ Multidimensional arrays are stored in [row-major order][14]. The following
 example shows how to create a truly multidimensional array.
 
 ```powershell
-[string[,]]$rank2 = [string[,]]::New(3,2)
-$rank2.rank
+[string[,]]$rank2 = [string[,]]::new(3,2)
+$rank2.Rank
 $rank2.Length
 $rank2[0,0] = 'a'
 $rank2[0,1] = 'b'
@@ -487,7 +487,7 @@ True
 In this example, `$intA` is explicitly typed to contain integers.
 
 ```powershell
-[Int[]] $intA = 1, 2, 3
+[int[]] $intA = 1, 2, 3
 $intA.Clear()
 $intA
 ```
@@ -552,7 +552,7 @@ For more information about the behavior of **ArgumentList**, see
 
 The `ForEach()` method can be used to cast the elements to a different type;
 the following example shows how to convert a list of string dates to
-`[DateTime]` type.
+`[datetime]` type.
 
 ```powershell
 ("1/1/2017", "2/1/2017", "3/1/2017").ForEach([datetime])
@@ -680,7 +680,7 @@ to return.
 
 ```powershell
 # Get the zip files in the current users profile, sorted by LastAccessTime
-$Zips = dir $env:userprofile -Recurse '*.zip' | Sort-Object LastAccessTime
+$Zips = dir $Env:USERPROFILE -Recurse '*.zip' | Sort-Object LastAccessTime
 # Get the least accessed file over 100MB
 $Zips.Where({$_.Length -gt 100MB}, 'Default', 1)
 ```
@@ -876,7 +876,7 @@ create the `$t` array with all the elements in the `$a` array except for the
 value at index position 2, type:
 
 ```powershell
-$t = $a[0,1 + 3..($a.length - 1)]
+$t = $a[0,1 + 3..($a.Length - 1)]
 ```
 
 To combine two arrays into a single array, use the plus operator (`+`). The
@@ -1101,7 +1101,7 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 ## See also
 
 - [about_For][05]
-- [about_ForEach][06]
+- [about_Foreach][06]
 - [about_Hash_Tables][07]
 - [about_Member-Access_Enumeration][09]
 - [about_Operators][11]
@@ -1114,7 +1114,7 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 [03]: about_Assignment_Operators.md
 [04]: about_Booleans.md
 [05]: about_For.md
-[06]: about_ForEach.md
+[06]: about_Foreach.md
 [07]: about_Hash_Tables.md
 [08]: about_Intrinsic_Members.md
 [09]: about_Member-Access_Enumeration.md

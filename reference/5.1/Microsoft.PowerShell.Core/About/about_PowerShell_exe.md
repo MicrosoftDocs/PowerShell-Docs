@@ -74,10 +74,10 @@ interpretation by the current shell. For example, if you are in `cmd.exe` and
 want to pass an environment variable value, you would use the `cmd.exe` syntax:
 `powershell.exe -File .\test.ps1 -TestParam %windir%`
 
-In contrast, running `powershell.exe -File .\test.ps1 -TestParam $env:windir`
-in `cmd.exe` results in the script receiving the literal string `$env:windir`
+In contrast, running `powershell.exe -File .\test.ps1 -TestParam $Env:windir`
+in `cmd.exe` results in the script receiving the literal string `$Env:windir`
 because it has no special meaning to the current `cmd.exe` shell. The
-`$env:windir` style of environment variable reference _can_ be used inside a
+`$Env:windir` style of environment variable reference _can_ be used inside a
 **Command** parameter, since there it's interpreted as PowerShell code.
 
 Similarly, if you want to execute the same command from a _Batch script_, you
@@ -122,7 +122,7 @@ expression, or parsed by the PowerShell host as a literal script block enclosed
 in curly braces (`{}`), before being passed to `powershell.exe`.
 
 ```powershell
-powershell -Command {Get-WinEvent -LogName security}
+powershell -Command {Get-WinEvent -LogName Security}
 ```
 
 In `cmd.exe`, there is no such thing as a script block (or **ScriptBlock**
@@ -137,7 +137,7 @@ running from `cmd.exe`. To execute an inline script block defined inside a
 string, the [call operator][05] `&` can be used:
 
 ```cmd
-powershell.exe -Command "& {Get-WinEvent -LogName security}"
+powershell.exe -Command "& {Get-WinEvent -LogName Security}"
 ```
 
 If the value of **Command** is a string, **Command** must be the last parameter
@@ -211,7 +211,7 @@ braces. The string must be formatted using UTF-16LE character encoding.
 ### -ExecutionPolicy \<ExecutionPolicy\>
 
 Sets the default execution policy for the current session and saves it in the
-`$env:PSExecutionPolicyPreference` environment variable. This parameter does
+`$Env:PSExecutionPolicyPreference` environment variable. This parameter does
 not change the PowerShell execution policy that's set in the registry. For
 information about PowerShell execution policies, including a list of valid
 values, see [about_Execution_Policies][04].
@@ -279,7 +279,7 @@ Sets the window style for the session. Valid values are `Normal`, `Minimized`,
 
 ### -Help, -?, /?
 
-Displays help for `PowerShell.exe`. If you are typing a `PowerShell.exe`
+Displays help for `powershell.exe`. If you are typing a `powershell.exe`
 command in a PowerShell session, prepend the command parameters with a hyphen
 (`-`), not a forward slash (`/`). You can use either a hyphen or forward slash
 in `cmd.exe`.
@@ -299,19 +299,19 @@ PowerShell -PSConsoleFile sqlsnapin.psc1
 PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
 
 # Execute a PowerShell Command in a session
-PowerShell -Command "Get-EventLog -LogName security"
+PowerShell -Command "Get-EventLog -LogName Security"
 
 # Run a script block in a session
-PowerShell -Command {Get-EventLog -LogName security}
+PowerShell -Command {Get-EventLog -LogName Security}
 
 # An alternate way to run a command in a new session
-PowerShell -Command "& {Get-EventLog -LogName security}"
+PowerShell -Command "& {Get-EventLog -LogName Security}"
 
 # To use the -EncodedCommand parameter:
-$command = "dir 'c:\program files' "
+$command = "dir 'C:\Program Files' "
 $bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
 $encodedCommand = [Convert]::ToBase64String($bytes)
-powershell.exe -encodedCommand $encodedCommand
+powershell.exe -EncodedCommand $encodedCommand
 ```
 
 <!-- link references -->

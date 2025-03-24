@@ -46,7 +46,7 @@ For more information about `$PSStyle`, see
 
 ## EXAMPLES
 
-### Example 1: Display the progress of a For loop
+### Example 1: Display the progress of a `for` loop
 
 ```powershell
 for ($i = 1; $i -le 100; $i++ ) {
@@ -61,7 +61,7 @@ The `Write-Progress` cmdlet includes a status bar heading `Activity`, a status l
 variable `$i` (the counter in the `for` loop), which indicates the relative completeness of the
 task.
 
-### Example 2: Display the progress of nested For loops
+### Example 2: Display the progress of nested `for` loops
 
 ```powershell
 $PSStyle.Progress.View = 'Classic'
@@ -117,7 +117,7 @@ being displayed one below the other.
 
 ```powershell
 # Use Get-WinEvent to get the events in the System log and store them in the $Events variable.
-$Events = Get-WinEvent -LogName system
+$Events = Get-WinEvent -LogName System
 # Pipe the events to the ForEach-Object cmdlet.
 $Events | ForEach-Object -Begin {
     # In the Begin block, use Clear-Host to clear the screen.
@@ -128,7 +128,7 @@ $Events | ForEach-Object -Begin {
     $out = ""
 } -Process {
     # In the Process script block search the message property of each incoming object for "bios".
-    if($_.message -like "*bios*")
+    if($_.Message -like "*bios*")
     {
         # Append the matching message to the out variable.
         $out=$out + $_.Message
@@ -136,7 +136,7 @@ $Events | ForEach-Object -Begin {
     # Increment the $i counter variable which is used to create the progress bar.
     $i = $i+1
     # Determine the completion percentage
-    $Completed = ($i/$Events.count) * 100
+    $Completed = ($i/$Events.Count) * 100
     # Use Write-Progress to output a progress bar.
     # The Activity and Status parameters create the first and second lines of the progress bar
     # heading, respectively.
@@ -150,7 +150,7 @@ $Events | ForEach-Object -Begin {
 This command displays the progress of a command to find the string "bios" in the System event log.
 
 The **PercentComplete** parameter value is calculated by dividing the number of events that have
-been processed `$i` by the total number of events retrieved `$Events.count` and then multiplying
+been processed `$i` by the total number of events retrieved `$Events.Count` and then multiplying
 that result by 100.
 
 ### Example 4: Display progress for each level of a nested process

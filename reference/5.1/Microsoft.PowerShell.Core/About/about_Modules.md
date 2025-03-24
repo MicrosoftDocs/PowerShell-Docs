@@ -23,7 +23,7 @@ A module is a self-contained, reusable unit that can include cmdlets,
 providers, functions, variables, and other resources. By default, PowerShell
 automatically loads an installed module the first time you use a command from
 the module. You can configure automatic module loading behavior using the
-variable `$PSModuleAutoloadingPreference`. For more information, see
+variable `$PSModuleAutoLoadingPreference`. For more information, see
 [about_Preference_Variables][08].
 
 You can also manually load or unload modules during a PowerShell session. To
@@ -49,7 +49,7 @@ to create PowerShell modules, see [Writing a PowerShell Module][02].
 
 PowerShell stores modules in the following default locations:
 
-  - All users scope - `$env:ProgramFiles\WindowsPowerShell\Modules`
+  - All users scope - `$Env:ProgramFiles\WindowsPowerShell\Modules`
   - Current user scope - `$HOME\Documents\WindowsPowerShell\Modules`
   - Modules shipped with PowerShell - `$PSHOME\Modules`
 
@@ -64,7 +64,7 @@ Use the following command to create a `Modules` folder for the current user:
 $folder = New-Item -Type Directory -Path $HOME\Documents\WindowsPowerShell\Modules
 ```
 
-These locations are automatically included in the `$env:PSModulePath`
+These locations are automatically included in the `$Env:PSModulePath`
 environment variable. For more information about the default module locations,
 see [about_PSModulePath][10].
 
@@ -72,7 +72,7 @@ see [about_PSModulePath][10].
 
 The first time that you run a command from an installed module, PowerShell
 automatically imports (loads) that module. The module must be stored in the
-locations specified in the `$env:PSModulePath` environment variable.
+locations specified in the `$Env:PSModulePath` environment variable.
 
 Module autoloading allows you to use commands in a module without any setup or
 profile configuration. Each of the following examples causes the **CimCmdlets**
@@ -103,7 +103,7 @@ modules that you might not need in your session.
 ## Manually import a module
 
 Manually importing a module is required when a module isn't installed in the
-locations specified by the `$env:PSModulePath` environment variable, or when
+locations specified by the `$Env:PSModulePath` environment variable, or when
 the module is provided as a standalone `.dll` or `.psm1` file, rather than a
 packaged module.
 
@@ -127,7 +127,7 @@ session.
 Import-Module BitsTransfer
 ```
 
-To import a module that isn't in your `$env:PSModulePath`, use the fully
+To import a module that isn't in your `$Env:PSModulePath`, use the fully
 qualified path to the module folder. For example, to add the **TestCmdlets**
 module in the `C:\ps-test` directory to your session, type:
 
@@ -187,7 +187,7 @@ For more information, see [PowerShellGet Overview][01].
 You can manually install a module by copying the module contents from another
 folder. That folder can be in another location on the local machine or
 installed on another machine. To install a module manually, copy the entire
-module folder into a new location included in your `$env:PSModulePath`.
+module folder into a new location included in your `$Env:PSModulePath`.
 
 In PowerShell use the `Copy-Item` cmdlet. For example, run the following
 command to copy the `MyModule` folder from `C:\PSTest`:
@@ -210,16 +210,16 @@ Get-Module
 ```
 
 The modules listed can include modules that were imported from any location,
-not just from `$env:PSModulePath`.
+not just from `$Env:PSModulePath`.
 
 Use the following command to list modules that are installed in the
-`$env:PSModulePath`:
+`$Env:PSModulePath`:
 
 ```powershell
 Get-Module -ListAvailable
 ```
 
-This command gets all modules that are installed in `$env:PSModulePath`, not
+This command gets all modules that are installed in `$Env:PSModulePath`, not
 just the modules that are imported into the current session. This command
 doesn't list modules that are installed in other locations.
 

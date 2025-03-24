@@ -73,7 +73,7 @@ input-character:
     Any Unicode character except a new-line-character
 
 requires-comment:
-    #requires whitespace command-arguments
+    #Requires whitespace command-arguments
 
 dash:
     - (U+002D)
@@ -161,12 +161,12 @@ braced-variable:
     ${   variable-scope~opt~   braced-variable-characters   }
 
 variable-scope:
-    global:
-    local:
-    private:
-    script:
-    using:
-    workflow:
+    Global:
+    Local:
+    Private:
+    Script:
+    Using:
+    Workflow:
     variable-namespace
 
 variable-namespace:
@@ -777,7 +777,7 @@ data-name:
     simple-name
 
 data-commands-allowed:
-    new-lines~opt~ -supportedcommand data-commands-list
+    new-lines~opt~ -SupportedCommand data-commands-list
 
 data-commands-list:
     new-lines~opt~ data-command

@@ -43,7 +43,7 @@ derives from the [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase][1] 
    file is created under the TEMP directory.
 
     ```powershell
-    Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
+    Register-FileSystemEvent $Env:TEMP Created -Filter "*.txt" -Action { Write-Host "A file was created in the TEMP directory" }
     ```
 
 1. Create a file under the TEMP directory and note that the action is executed (the message is
@@ -59,7 +59,7 @@ Id              Name            State      HasMoreData     Location             
 ```
 
 ```powershell
-Set-Content $env:temp\test.txt "This is a test file"
+Set-Content $Env:TEMP\test.txt "This is a test file"
 ```
 
 ```output

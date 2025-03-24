@@ -59,7 +59,7 @@ character encoding parameter to be used for the saved file. The default value is
 
 ```powershell
 # Save the file with a full path and name.
-$fullpath = "c:\temp\newname.txt"
+$fullpath = "C:\temp\newname.txt"
 $psISE.CurrentFile.SaveAs($fullPath)
 # Save the file with a full path and name and explicitly as UTF8.
 $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)

@@ -103,11 +103,11 @@ parameter uses `$SDDL` to set the **SecurityDescriptor** of the new service.
 Specifies the path of the executable file for the service. This parameter is required.
 
 The fully qualified path to the service binary file. If the path contains a space, it must be quoted
-so that it is correctly interpreted. For example, `d:\my share\myservice.exe` should be specified as
-`'"d:\my share\myservice.exe"'`.
+so that it is correctly interpreted. For example, `D:\my share\myservice.exe` should be specified as
+`'"D:\my share\myservice.exe"'`.
 
 The path can also include arguments for an auto-start service. For example,
-`'"d:\my share\myservice.exe" arg1 arg2'`. These arguments are passed to the service entry point.
+`'"D:\my share\myservice.exe" arg1 arg2'`. These arguments are passed to the service entry point.
 
 For more information, see the **lpBinaryPathName** parameter of
 [CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) API.

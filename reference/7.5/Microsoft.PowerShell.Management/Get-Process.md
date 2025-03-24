@@ -107,7 +107,7 @@ though the default display lists them in kilobytes and megabytes.
 
 ```powershell
 $A = Get-Process
-$A | Get-Process | Format-Table -View priority
+$A | Get-Process | Format-Table -View Priority
 ```
 
 These commands list the processes on the computer in groups based on their priority class. The first
@@ -227,13 +227,13 @@ The second command gets the PowerShell process that's hosting the current sessio
 ### Example 10: Get all processes that have a main window title and display them in a table
 
 ```powershell
-Get-Process | Where-Object {$_.mainWindowTitle} | Format-Table Id, Name, mainWindowTitle -AutoSize
+Get-Process | Where-Object {$_.MainWindowTitle} | Format-Table Id, Name, MainWindowTitle -AutoSize
 ```
 
 This command gets all the processes that have a main window title, and it displays them in a table
 with the process ID and the process name.
 
-The **mainWindowTitle** property is just one of many useful properties of the **Process** object
+The **MainWindowTitle** property is just one of many useful properties of the **Process** object
 that `Get-Process` returns. To view all the properties, pipe the results of a `Get-Process`
 command to the `Get-Member` cmdlet `Get-Process | Get-Member`.
 
@@ -417,7 +417,7 @@ of all the properties of process objects, see
 - **VM(M)**: The amount of virtual memory that the process is using, in megabytes. Virtual memory
   includes storage in the paging files on disk.
 - **CPU(s)**: The amount of processor time that the process has used on all processors, in seconds.
-- **ID**: The process ID (PID) of the process.
+- **Id**: The process ID (PID) of the process.
 - **ProcessName**: The name of the process. For explanations of the concepts related to processes,
   see the Glossary in Help and Support Center and the Help for Task Manager.
 

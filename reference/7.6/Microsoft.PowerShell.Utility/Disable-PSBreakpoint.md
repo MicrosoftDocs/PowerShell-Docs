@@ -97,9 +97,9 @@ This command disables all breakpoints in the current console.
 
 ### Example 5: Disable a breakpoint in a runspace
 
-In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakPoint` is
-run. The runspace is stored in a variable and passed to the `Get-PSBreakPoint` command with the
-**Runspace** parameter. The output of `Get-PSBreakPoint` is piped to `Disable-PSBreakpoint` to
+In this example, a job is started and a breakpoint is set to break when the `Set-PSBreakpoint` is
+run. The runspace is stored in a variable and passed to the `Get-PSBreakpoint` command with the
+**Runspace** parameter. The output of `Get-PSBreakpoint` is piped to `Disable-PSBreakpoint` to
 disable the breakpoint in the runspace.
 
 ```powershell
@@ -110,7 +110,7 @@ Start-Job -ScriptBlock {
 
 $runspace = Get-Runspace -Id 1
 
-Get-PSBreakPoint -Runspace $runspace | Disable-Breakpoint -Runspace $runspace
+Get-PSBreakpoint -Runspace $runspace | Disable-Breakpoint -Runspace $runspace
 ```
 
 ## PARAMETERS

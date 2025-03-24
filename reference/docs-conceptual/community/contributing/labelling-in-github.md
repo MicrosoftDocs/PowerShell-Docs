@@ -54,7 +54,7 @@ Area labels identify the parts of PowerShell or the documentation that the issue
 | `area-portability`       | Cross-platform compatibility.                                                            |
 | `area-powershellget`     | The [PowerShellGet][13] module.                                                          |
 | `area-providers`         | PowerShell providers.                                                                    |
-| `area-psreadline`        | The [PSReadline][14] module.                                                             |
+| `area-psreadline`        | The [PSReadLine][14] module.                                                             |
 | `area-release-notes`     | The PowerShell release notes.                                                            |
 | `area-remoting`          | The PowerShell remoting feature and cmdlets.                                             |
 | `area-scriptanalyzer`    | The [PSScriptAnalyzer][15] module.                                                       |

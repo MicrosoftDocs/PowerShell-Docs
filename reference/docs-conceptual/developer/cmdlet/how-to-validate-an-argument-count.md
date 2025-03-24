@@ -9,7 +9,7 @@ title: How to Validate an Argument Count
 This example shows how to specify a validation rule that the Windows PowerShell runtime can use to check the number of arguments (the count) that a parameter accepts before the cmdlet is run. You set this validation rule by declaring the ValidateCount attribute.
 
 > [!NOTE]
-> For more information about the class that defines this attribute, see [System.Management.Automation.Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute).
+> For more information about the class that defines this attribute, see [System.Management.Automation.ValidateCountAttribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute).
 
 ## To validate an argument count
 

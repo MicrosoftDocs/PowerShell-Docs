@@ -45,14 +45,14 @@ Get-PSSnapin
 To get the snap-in for each  Windows PowerShell provider, type:
 
 ```powershell
-Get-PSProvider | Format-List name, pssnapin
+Get-PSProvider | Format-List Name, PSSnapIn
 ```
 
 To get all the registered snap-ins on your system or to verify that a snap-in
 is registered, type:
 
 ```powershell
-Get-PSSnapin -registered
+Get-PSSnapin -Registered
 ```
 
 To get a list of the cmdlets in a  Windows PowerShell snap-in, type:
@@ -70,7 +70,7 @@ your session.
 
 ## Add a snap-in to the current session
 
-To add a registered snap-in to the current session, use the `Add-PsSnapin`
+To add a registered snap-in to the current session, use the `Add-PSSnapin`
 cmdlet. For example, to add the Microsoft SQL Server snap-in to the session,
 type:
 
@@ -84,7 +84,7 @@ session unless you save them.
 
 ## Save a snap-ins
 
-To use a snap-in in future Windows PowerShell sessions, add the `Add-PsSnapin`
+To use a snap-in in future Windows PowerShell sessions, add the `Add-PSSnapin`
 command to your Windows PowerShell profile. Or, export the snap-in names to a
 console file.
 
@@ -92,7 +92,7 @@ If you add the `Add-PSSnapin` command to your profile, it's available in all
 future Windows PowerShell sessions. If you export the names of the snap-ins in
 your session, you can use the export file only when you need the snap-ins.
 
-To add the `Add-PsSnapin` command to your Windows PowerShell profile, open your
+To add the `Add-PSSnapin` command to your Windows PowerShell profile, open your
 profile, paste or type the command, and then save the profile. For more
 information, see [about_Profiles][03].
 
@@ -111,12 +111,12 @@ For more information, see [Export-Console][05].
 
 To use a console file that includes the snap-in, start Windows PowerShell
 (`powershell.exe`) from the command prompt in `cmd.exe` or in another Windows
-PowerShell session. Use the **PsConsoleFile** parameter to specify the console
+PowerShell session. Use the **PSConsoleFile** parameter to specify the console
 file that includes the snap-in. For example, the following command starts
 Windows PowerShell with the `NewConsole.psc1` console file:
 
 ```powershell
-PowerShell.exe -psconsolefile NewConsole.psc1
+powershell.exe -PSConsoleFile NewConsole.psc1
 ```
 
 The providers and cmdlets in the snap-in are now available for use in the
@@ -125,7 +125,7 @@ session.
 ## Remove a snap-in
 
 To remove a Windows PowerShell snap-in from the current session, use the
-`Remove-PsSnapin` cmdlet. For example, to remove the SQL Server snap-in from the
+`Remove-PSSnapin` cmdlet. For example, to remove the SQL Server snap-in from the
 current session, type:
 
 ```powershell
@@ -148,9 +148,9 @@ For more information, see [about_EventLogs][01].
 - [about_Profiles][03]
 - [Get-Command][06]
 - [Export-Console][05]
-- [Add-PsSnapin][04]
-- [Get-PsSnapin][07]
-- [Remove-PsSnapin][08]
+- [Add-PSSnapin][04]
+- [Get-PSSnapin][07]
+- [Remove-PSSnapin][08]
 
 <!-- link references -->
 [01]: about_EventLogs.md

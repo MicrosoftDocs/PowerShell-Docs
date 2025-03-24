@@ -129,7 +129,7 @@ an array of strings.
 ```powershell
 $array = 'Hello', 'World!'
 Invoke-Command -ScriptBlock {
-  param([string[]]$words) $words -join ' '
+  param([string[]]$Words) $Words -join ' '
   } -ArgumentList $array
 ```
 
@@ -142,7 +142,7 @@ Hello
 ```powershell
 $array = 'Hello', 'World!'
 Invoke-Command -ScriptBlock {
-  param([string[]]$words) $words -join ' '
+  param([string[]]$Words) $Words -join ' '
 } -ArgumentList (,$array)
 ```
 
@@ -276,7 +276,7 @@ When you use the `Get-MyProcess` function, all unassigned parameters and
 parameter values are passed to `@args`, as shown in the following commands.
 
 ```powershell
-Get-MyProcess -Name PowerShell
+Get-MyProcess -Name powershell
 ```
 
 ```Output
@@ -286,7 +286,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 ```powershell
-Get-MyProcess -Name PowerShell_Ise -FileVersionInfo
+Get-MyProcess -Name powershell_ise -FileVersionInfo
 ```
 
 ```Output
@@ -302,12 +302,12 @@ passed to all instances of `@args`, as shown in the following example.
 ```powershell
 function Get-MyCommand
 {
-    Param ([switch]$P, [switch]$C)
+    param ([switch]$P, [switch]$C)
     if ($P) { Get-Process @args }
     if ($C) { Get-Command @args }
 }
 
-Get-MyCommand -P -C -Name PowerShell
+Get-MyCommand -P -C -Name powershell
 ```
 
 ```Output

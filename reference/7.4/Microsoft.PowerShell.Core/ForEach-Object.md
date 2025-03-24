@@ -55,7 +55,7 @@ command.
   `Get-Process | ForEach-Object {$_.ProcessName}`
 
   `ForEach-Object` supports the `begin`, `process`, and `end` blocks as described in
-  [about_functions](about/about_functions.md#piping-objects-to-functions).
+  [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
   > [!NOTE]
   > The script blocks run in the caller's scope. Therefore, the blocks have access to variables in
@@ -73,8 +73,8 @@ command.
 - **Parallel running script block**. Beginning with PowerShell 7.0, a third parameter set is
   available that runs each script block in parallel. The **ThrottleLimit** parameter limits the
   number of parallel scripts running at a time. As before, use the `$_` variable to represent the
-  current input object in the script block. Use the `$using:` keyword to pass variable references to
-  the running script.
+  current input object in the script block. Use the `Using:` scope modifier to pass variable
+  references to the running script.
 
   In PowerShell 7, a new runspace is created for each loop iteration to ensure maximum isolation.
   This can be a large performance and resource hit if the work you are doing is small compared to
@@ -115,7 +115,7 @@ Get-ChildItem $PSHOME |
 
 If the object isn't a directory, the script block gets the name of the file, divides the value of
 its **Length** property by 1024, and adds a space (" ") to separate it from the next entry. The
-cmdlet uses the **PSISContainer** property to determine whether an object is a directory.
+cmdlet uses the **PSIsContainer** property to determine whether an object is a directory.
 
 ### Example 3: Operate on the most recent System events
 
@@ -190,7 +190,7 @@ the **MemberName** parameter of the `ForEach-Object` cmdlet.
 
 ```powershell
 Get-Module -ListAvailable | ForEach-Object -MemberName Path
-Get-Module -ListAvailable | Foreach Path
+Get-Module -ListAvailable | foreach Path
 ```
 
 The second command is equivalent to the first. It uses the `Foreach` alias of the `ForEach-Object`
@@ -212,7 +212,7 @@ are equivalent and interchangeable. The output is the same for all three cases.
 "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" |
     ForEach-Object -MemberName Split -ArgumentList "."
 "Microsoft.PowerShell.Core", "Microsoft.PowerShell.Host" |
-    Foreach Split "."
+    foreach Split "."
 ```
 
 ```Output
@@ -231,7 +231,7 @@ argument.
 The second command uses the **MemberName** parameter to specify the **Split** method and the
 **ArgumentList** parameter to identify the dot (`.`) as the split delimiter.
 
-The third command uses the **Foreach** alias of the `ForEach-Object` cmdlet and omits the names of
+The third command uses the `foreach` alias of the `ForEach-Object` cmdlet and omits the names of
 the **MemberName** and **ArgumentList** parameters, which are optional.
 
 ### Example 8: Using ForEach-Object with two script blocks
@@ -300,7 +300,7 @@ This example runs a script block that evaluates a string and sleeps for one seco
 $Message = "Output:"
 
 1..8 | ForEach-Object -Parallel {
-    "$using:Message $_"
+    "$Using:Message $_"
     Start-Sleep 1
 } -ThrottleLimit 4
 ```
@@ -317,7 +317,7 @@ Output: 8
 ```
 
 The **ThrottleLimit** parameter value is set to 4 so that the input is processed in batches of four.
-The `$using:` keyword is used to pass the `$Message` variable into each parallel script block.
+The `Using:` scope modifier is used to pass the `$Message` variable into each parallel script block.
 
 ### Example 12: Retrieve log entries in parallel
 
@@ -386,7 +386,7 @@ This example invokes script blocks in parallel to collect uniquely named Process
 ```powershell
 $threadSafeDictionary = [System.Collections.Concurrent.ConcurrentDictionary[string,object]]::new()
 Get-Process | ForEach-Object -Parallel {
-    $dict = $using:threadSafeDictionary
+    $dict = $Using:threadSafeDictionary
     $dict.TryAdd($_.ProcessName, $_)
 }
 
@@ -453,17 +453,17 @@ Output: 5
 
 > [!NOTE]
 > [PipelineVariable](About/about_CommonParameters.md) common parameter variables are _not_
-> supported in `Foreach-Object -Parallel` scenarios even with the `$using:` keyword.
+> supported in `ForEach-Object -Parallel` scenarios even with the `Using:` scope modifier.
 
 ### Example 17: Passing variables in nested parallel script ScriptBlockSet
 
-You can create a variable outside a `Foreach-Object -Parallel` scoped scriptblock and use
-it inside the scriptblock with the `$using` keyword.
+You can create a variable outside a `ForEach-Object -Parallel` scoped scriptblock and use
+it inside the scriptblock with the `Using:` scope modifier.
 
 ```powershell
 $test1 = 'TestA'
-1..2 | Foreach-Object -Parallel {
-    $using:test1
+1..2 | ForEach-Object -Parallel {
+    $Using:test1
 }
 ```
 
@@ -476,20 +476,20 @@ TestA
 # You CANNOT create a variable inside a scoped scriptblock
 # to be used in a nested foreach parallel scriptblock.
 $test1 = 'TestA'
-1..2 | Foreach-Object -Parallel {
-    $using:test1
+1..2 | ForEach-Object -Parallel {
+    $Using:test1
     $test2 = 'TestB'
-    1..2 | Foreach-Object -Parallel {
-        $using:test2
+    1..2 | ForEach-Object -Parallel {
+        $Using:test2
     }
 }
 ```
 
 ```Output
 Line |
-   2 |  1..2 | Foreach-Object -Parallel {
+   2 |  1..2 | ForEach-Object -Parallel {
      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | The value of the using variable '$using:test2' can't be retrieved because it has
+     | The value of the using variable '$Using:test2' can't be retrieved because it has
      | not been set in the local session.
 ```
 
@@ -626,7 +626,7 @@ Specifies the name of the member property to get or the member method to call. T
 instance members, not static members.
 
 Wildcard characters are permitted, but work only if the resulting string resolves to a unique value.
-For example, if you run `Get-Process | ForEach -MemberName *Name`, the wildcard pattern matches more
+For example, if you run `Get-Process | foreach -MemberName *Name`, the wildcard pattern matches more
 than one member causing the command to fail.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -828,12 +828,12 @@ PowerShell includes the following aliases for `ForEach-Object`:
   - `%`
   - `foreach`
 
-The `ForEach-Object` cmdlet works much like the **Foreach** statement, except that you can't pipe
-input to a **Foreach** statement. For more information about the **Foreach** statement, see
+The `ForEach-Object` cmdlet works much like the `foreach` statement, except that you can't pipe
+input to a `foreach` statement. For more information about the `foreach` statement, see
 [about_Foreach](./About/about_Foreach.md).
 
 Starting in PowerShell 4.0, `Where` and `ForEach` methods were added for use with collections. You
-can read more about these new methods here [about_arrays](./About/about_Arrays.md)
+can read more about these new methods here [about_Arrays](./About/about_Arrays.md)
 
 Using `ForEach-Object -Parallel`:
 
@@ -869,18 +869,18 @@ Using `ForEach-Object -Parallel`:
 
   Terminating errors, such as exceptions, terminate the individual parallel instance of the
   scriptblocks in which they occur. A terminating error in one scriptblocks may not cause the
-  termination of the `Foreach-Object` cmdlet. The other scriptblocks, running in parallel, continue
+  termination of the `ForEach-Object` cmdlet. The other scriptblocks, running in parallel, continue
   to run unless they also encounter a terminating error. The terminating error is written to the
   error data stream as an **ErrorRecord** with a **FullyQualifiedErrorId** of `PSTaskException`.
   Terminating errors can be converted to non-terminating errors using PowerShell `try`/`catch` or
   `trap` blocks.
 
 - [PipelineVariable](About/about_CommonParameters.md) common parameter variables are _not_ supported
-  in parallel scenarios even with the `$using:` keyword.
+  in parallel scenarios even with the `Using:` scope modifier.
 
   > [!IMPORTANT]
   > The `ForEach-Object -Parallel` parameter set runs script blocks in parallel on separate process
-  > threads. The `$using:` keyword allows passing variable references from the cmdlet invocation
+  > threads. The `Using:` modifier allows passing variable references from the cmdlet invocation
   > thread to each running script block thread. Since the script blocks run in different threads,
   > the object variables passed by reference must be used safely. Generally it's safe to read from
   > referenced objects that don't change. If you need to modify the object state then you must

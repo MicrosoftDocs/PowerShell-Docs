@@ -71,7 +71,7 @@ This command uses a query to subscribe to Win32_process instance creation events
 
 ```powershell
 $wmiParameters = @{
-  Query = "select * from __instancecreationevent within 5 where targetinstance isa 'win32_process'"
+  Query = "select * from __instancecreationevent within 5 where targetinstance isa 'Win32_Process'"
   SourceIdentifier = "WMIProcess"
   MessageData = "Test 01"
   TimeOut = 500
@@ -85,14 +85,18 @@ This example shows how to use an action to respond to an event. In this case, wh
 any `Start-Process` commands in the current session are written to an XML file.
 
 ```powershell
-$action = { Get-History | where { $_.commandline -like "*start-process*" } | export-cliXml "commandHistory.clixml" }
-Register-WmiEvent -Class 'Win32_ProcessStartTrace' -SourceIdentifier "ProcessStarted" -Action $action
+$action = {
+    Get-History | 
+    Where-Object { $_.CommandLine -like "*Start-Process*" } |
+    Export-CliXml "commandHistory.clixml"
+}
+Register-WmiEvent -Class Win32_ProcessStartTrace -SourceIdentifier ProcessStarted -Action $action
 ```
 
 ```Output
 Id    Name            State      HasMoreData   Location  Command
 --    ----            -----      -----------   --------  -------
-1     ProcessStarted  NotStarted False                   get-history | where {...
+1     ProcessStarted  NotStarted False                   Get-History | where {...
 ```
 
 When you use the **Action** parameter, `Register-WmiEvent` returns a background job that represents
@@ -106,7 +110,7 @@ For more information, see [about_Jobs](../Microsoft.PowerShell.Core/About/about_
 This example registers for events on the Server01 remote computer.
 
 ```powershell
-Register-WmiEvent -Class 'Win32_ProcessStartTrace' -SourceIdentifier "Start" -Computername Server01
+Register-WmiEvent -Class 'Win32_ProcessStartTrace' -SourceIdentifier "Start" -ComputerName Server01
 Get-Event -SourceIdentifier "Start"
 ```
 
@@ -123,7 +127,8 @@ event is raised instead of sending the event to the event queue. Enclose the com
 
 The value of **Action** can include the `$Event`, `$EventSubscriber`, `$Sender`, `$EventArgs`, and
 `$args` automatic variables, which provide information about the event to the **Action** script
-block. For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+block. For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 When you specify an action, `Register-WmiEvent` returns an event job object that represents that
 action. You can use the cmdlets that contain the **Job** noun (the **Job** cmdlets) to manage the

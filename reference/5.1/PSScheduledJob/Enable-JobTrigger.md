@@ -44,7 +44,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ### Example 1: Enable a job trigger
 
 ```powershell
-Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Enable-JobTrigger
+Get-JobTrigger -Name Backup-Archives -TriggerId 1 | Enable-JobTrigger
 ```
 
 This command enables the first trigger (ID=1) of the Backup-Archives scheduled job on the local

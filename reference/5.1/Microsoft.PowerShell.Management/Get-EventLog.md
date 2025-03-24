@@ -156,7 +156,7 @@ Index Time          EntryType  Source  InstanceID  Message
 ```
 
 The `Get-EventLog` cmdlet uses the **LogName** parameter to specify the System log. The
-**InstanceID** parameter selects the events with the specified Instance ID. The **Source** parameter
+**InstanceId** parameter selects the events with the specified Instance ID. The **Source** parameter
 specifies the event property.
 
 ### Example 6: Get events from multiple computers

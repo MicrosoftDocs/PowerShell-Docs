@@ -61,8 +61,8 @@ of FALSE. All other integers have a value of TRUE.
 The syntax of the logical operators is as follows:
 
 ```Syntax
-<statement> {-AND | -OR | -XOR} <statement>
-{! | -NOT} <statement>
+<statement> {-and | -or | -xor} <statement>
+{! | -not} <statement>
 ```
 
 Statements that use the logical operators return Boolean (TRUE or FALSE)
@@ -73,7 +73,7 @@ determine the truth value of the statement. If the left operand in a statement
 that contains the and operator is FALSE, the right operand isn't evaluated. If
 the left operand in a statement that contains the or statement is TRUE, the
 right operand isn't evaluated. As a result, you can use these statements in
-the same way that you would use the `If` statement.
+the same way that you would use the `if` statement.
 
 ## See also
 

@@ -196,7 +196,7 @@ PowerShell includes the following aliases for `Get-Variable`:
   - `gv`
 
 - This cmdlet does not manage environment variables. To manage environment variables, you can use
-the environment variable provider.
+the Environment provider.
 
 ## RELATED LINKS
 

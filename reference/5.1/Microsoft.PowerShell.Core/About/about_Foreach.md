@@ -81,7 +81,7 @@ foreach ($file in Get-ChildItem)
 ```
 
 In this example, the `foreach` loop uses a property of the `$file` variable to
-perform a comparison operation (`$file.length -gt 100KB`). The `$file` variable
+perform a comparison operation (`$file.Length -gt 100KB`). The `$file` variable
 has all the properties of the object returned by the `Get-ChildItem`.
 
 In the next example, the script displays the length and the last access time

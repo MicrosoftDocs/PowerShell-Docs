@@ -137,7 +137,7 @@ reflects the new value.
 
 ```powershell
 $setWmiInstanceSplat = @{
-    Class = 'win32_environment'
+    Class = 'Win32_Environment'
     Arguments = @{
         Name="testvar"
         VariableValue="testvalue"

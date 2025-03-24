@@ -107,8 +107,8 @@ Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <Stri
 The `Import-Module` cmdlet adds one or more modules to the current session. Starting in PowerShell
 3.0, installed modules are automatically imported to the session when you use any commands or
 providers in the module. However, you can still use the `Import-Module` command to import a module.
-You can disable automatic module importing using the `$PSModuleAutoloadingPreference` preference
-variable. For more information about the `$PSModuleAutoloadingPreference` variable, see
+You can disable automatic module importing using the `$PSModuleAutoLoadingPreference` preference
+variable. For more information about the `$PSModuleAutoLoadingPreference` variable, see
 [about_Preference_Variables](About/about_Preference_Variables.md).
 
 A module is a package that contains members that can be used in PowerShell. Members include
@@ -135,7 +135,7 @@ Starting in Windows PowerShell 3.0, you can use `Import-Module` to import Common
 you use cmdlets that are implemented in non-managed code assemblies, such as those written in C++.
 
 For remote computers that don't have PowerShell remoting enabled, including computers that aren't
-running the Windows operating system, you can use the **CIMSession** parameter of `Import-Module`
+running the Windows operating system, you can use the **CimSession** parameter of `Import-Module`
 to import CIM modules from the remote computer. The imported commands run implicitly on the remote
 computer. A **CIMSession** is a connection to Windows Management Instrumentation (WMI) on the
 remote computer.
@@ -152,7 +152,7 @@ Import-Module -Name PSDiagnostics
 
 ### Example 2: Import all modules specified by the module path
 
-This example imports all available modules in the path specified by the `$env:PSModulePath`
+This example imports all available modules in the path specified by the `$Env:PSModulePath`
 environment variable into the current session.
 
 ```powershell
@@ -181,7 +181,7 @@ session.
 This example uses an explicit path to identify the module to import.
 
 ```powershell
-Import-Module -Name c:\ps-test\modules\test -Verbose
+Import-Module -Name C:\ps-test\modules\test -Verbose
 ```
 
 ```Output
@@ -453,7 +453,7 @@ PS> Get-Module -ListAvailable PowerShellGet | Select-Object Path
 Path
 ----
 C:\Program Files\PowerShell\Modules\PowerShellGet\2.2.1\PowerShellGet.psd1
-C:\program files\powershell\6\Modules\PowerShellGet\PowerShellGet.psd1
+C:\Program Files\PowerShell\6\Modules\PowerShellGet\PowerShellGet.psd1
 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\2.1.2\PowerShellGet.psd1
 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
 
@@ -950,7 +950,7 @@ the module, such as a `.psd1`, `.psm1`, `.dll`, or `.ps1` file. File paths are o
 characters aren't permitted. You can also pipe module names and filenames to `Import-Module`.
 
 If you omit a path, `Import-Module` looks for the module in the paths saved in the
-`$env:PSModulePath` environment variable.
+`$Env:PSModulePath` environment variable.
 
 Specify only the module name whenever possible. When you specify a filename, only the members that
 are implemented in that file are imported. If the module contains other files, they aren't
@@ -1143,7 +1143,7 @@ Accept wildcard characters: False
 
 Skips the check on the `CompatiblePSEditions` field.
 
-Allows loading a module from the `"$($env:windir)\System32\WindowsPowerShell\v1.0\Modules"` module
+Allows loading a module from the `"$($Env:windir)\System32\WindowsPowerShell\v1.0\Modules"` module
 directory into PowerShell Core when that module doesn't specify `Core` in the
 `CompatiblePSEditions` manifest field.
 
@@ -1255,7 +1255,7 @@ PowerShell includes the following aliases for `Import-Module`:
   in the `PSModulePath` environmental variable. For more information, see
   [about_Modules](About/about_Modules.md).
 
-  You can also use the **PSSession** and **CIMSession** parameters to import modules that are
+  You can also use the **PSSession** and **CimSession** parameters to import modules that are
   installed on remote computers. However, commands that use the cmdlets in these modules run in the
   remote session on the remote computer.
 
@@ -1296,7 +1296,7 @@ PowerShell includes the following aliases for `Import-Module`:
   To import a module that contains mixed-mode assemblies, start Windows PowerShell 2.0 by using the
   following command, and then try the `Import-Module` command again.
 
-  `PowerShell.exe -Version 2.0`
+  `powershell.exe -Version 2.0`
 
 - To use the CIM session feature, the remote computer must have WS-Management remoting and Windows
   Management Instrumentation (WMI), which is the Microsoft implementation of the Common Information

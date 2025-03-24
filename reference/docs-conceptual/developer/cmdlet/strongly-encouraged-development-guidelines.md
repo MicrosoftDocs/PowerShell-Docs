@@ -258,7 +258,7 @@ characters is not required, define a `LiteralPath` parameter.
 
 If the data that the cmdlet reads or writes has to be a file, the cmdlet should accept Windows
 PowerShell path input, and the cmdlet should use the
-[System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path)
+[System.Management.Automation.SessionState.Path](/dotnet/api/System.Management.Automation.SessionState.Path)
 property to translate the Windows PowerShell paths into paths that the file system recognizes. The
 specific mechanisms include the following methods:
 

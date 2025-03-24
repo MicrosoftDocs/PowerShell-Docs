@@ -6,7 +6,7 @@ title: Runspace08 Sample
 ---
 # Runspace08 Sample
 
-This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.
+This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.
 
 ## Requirements
 
@@ -16,11 +16,11 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.
+- Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.
 
-- Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Adding cmdlets to the pipeline of the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 - Running the cmdlets synchronously.
 
@@ -28,7 +28,7 @@ This sample demonstrates the following.
 
 ## Example
 
-This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -47,9 +47,9 @@ namespace Microsoft.Samples.PowerShell.Runspaces
   {
     /// <summary>
     /// This sample shows how to use a PowerShell object to run commands. The
-    /// PowerShell object builds a pipeline that include the get-process cmdlet,
-    /// which is then piped to the sort-object cmdlet. Parameters are added to the
-    /// sort-object cmdlet to sort the HandleCount property in descending order.
+    /// PowerShell object builds a pipeline that include the Get-Process cmdlet,
+    /// which is then piped to the Sort-Object cmdlet. Parameters are added to the
+    /// Sort-Object cmdlet to sort the HandleCount property in descending order.
     /// </summary>
     /// <param name="args">Parameter is not used.</param>
     /// <remarks>
@@ -73,13 +73,13 @@ namespace Microsoft.Samples.PowerShell.Runspaces
       // when we are done.
       using (powershell)
       {
-        // Add the get-process cmdlet to the pipeline of the PowerShell object.
-        powershell.AddCommand("get-process");
+        // Add the Get-Process cmdlet to the pipeline of the PowerShell object.
+        powershell.AddCommand("Get-Process");
 
-        // Add the sort-object cmdlet and its parameters to the pipeline of
+        // Add the Sort-Object cmdlet and its parameters to the pipeline of
         // the PowerShell object so that we can sort the HandleCount property
         //  in descending order.
-        powershell.AddCommand("sort-object").AddParameter("descending").AddParameter("property", "handlecount");
+        powershell.AddCommand("Sort-Object").AddParameter("Descending").AddParameter("Property", "HandleCount");
 
         // Run the commands of the pipeline synchronously.
         results = powershell.Invoke();

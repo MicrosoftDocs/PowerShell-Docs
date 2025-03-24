@@ -38,7 +38,7 @@ For more information about how to connect to the WinRM service on a remote compu
 ### Example 1: Delete a connection to a remote computer
 
 ```powershell
-PS C:\> Disconnect-WSMan -computer server01
+PS C:\> Disconnect-WSMan -Computer server01
 PS C:\> cd WSMan:
 PS WSMan:\> dir
 ```

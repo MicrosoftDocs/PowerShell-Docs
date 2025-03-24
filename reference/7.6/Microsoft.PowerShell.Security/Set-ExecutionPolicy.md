@@ -169,7 +169,7 @@ MachinePolicy       Undefined
 ### Example 6: Set the execution policy for the current PowerShell session
 
 The `Process` scope only affects the current PowerShell session. The execution policy is saved in
-the environment variable `$env:PSExecutionPolicyPreference` and is deleted when the session is
+the environment variable `$Env:PSExecutionPolicyPreference` and is deleted when the session is
 closed.
 
 ```powershell
@@ -316,7 +316,7 @@ The effective execution policy is determined by the order of precedence as follo
 - `CurrentUser` - Affects only the current user
 
 The `Process` scope only affects the current PowerShell session. The execution policy is saved in
-the environment variable `$env:PSExecutionPolicyPreference`, rather than the registry. When the
+the environment variable `$Env:PSExecutionPolicyPreference`, rather than the registry. When the
 PowerShell session is closed, the variable and value are deleted.
 
 Execution policies for the `CurrentUser` scope are written to the registry hive `HKEY_LOCAL_USER`.

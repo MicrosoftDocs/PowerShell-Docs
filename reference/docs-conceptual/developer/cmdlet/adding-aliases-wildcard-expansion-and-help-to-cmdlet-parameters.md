@@ -18,7 +18,7 @@ This `Stop-Proc` cmdlet attempts to stop processes that are retrieved using the 
 The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that
 implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named
 accordingly. Because this cmdlet stops system processes, it uses the verb **Stop**, defined by the
-[System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)
+[System.Management.Automation.VerbsLifecycle](/dotnet/api/System.Management.Automation.VerbsLifecycle)
 class, with the noun **Proc** to indicate process. For more information about approved cmdlet verbs,
 see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
@@ -43,7 +43,7 @@ the system by some sort of identifier. In addition, the cmdlet should define the
 A parameter alias can be an alternate name or a well-defined 1-letter or 2-letter short name for a
 cmdlet parameter. In both cases, the goal of using aliases is to simplify user entry from the
 command line. Windows PowerShell supports parameter aliases through the
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)
+[System.Management.Automation.AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute)
 attribute, which uses the declaration syntax `[Alias()]`.
 
 The following code shows how an alias is added to the **Name** parameter.
@@ -70,7 +70,7 @@ private string[] processNames;
 ```
 
 In addition to using the
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)
+[System.Management.Automation.AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute)
 attribute, the Windows PowerShell runtime performs partial name matching, even if no aliases are
 specified. For example, if your cmdlet has a **FileName** parameter and that is the only parameter
 that starts with `F`, the user could enter `Filename`, `Filenam`, `File`, `Fi`, or `F` and still
@@ -81,7 +81,7 @@ recognize the entry as the **FileName** parameter.
 Windows PowerShell allows you to create Help for cmdlet parameters. Do this for any parameter used
 for system modification and user feedback. For each parameter to support Help, you can set the
 **HelpMessage** attribute keyword in the
-[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
+[System.Management.Automation.ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
 attribute declaration. This keyword defines the text to display to the user for assistance in using
 the parameter. You can also set the **HelpMessageBaseName** keyword to identify the base name of a
 resource to use for the message. If you set this keyword, you must also set the
@@ -174,7 +174,7 @@ For the complete C# sample code, see [StopProcessSample03 Sample](./stopprocesss
 
 ## Define Object Types and Formatting
 
-Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may
+Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet may
 need to define its own type, or the cmdlet may need to extend an existing type provided by another
 cmdlet. For more information about defining new types or extending existing types, see
 [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).

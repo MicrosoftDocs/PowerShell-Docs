@@ -74,7 +74,7 @@ specified in the command.
 This command creates an alias of np for Notepad.
 
 ```powershell
-Set-Item -Path alias:np -Value "c:\windows\notepad.exe"
+Set-Item -Path Alias:np -Value "C:\windows\notepad.exe"
 ```
 
 ### Example 2: Change the value of an environment variable
@@ -82,7 +82,7 @@ Set-Item -Path alias:np -Value "c:\windows\notepad.exe"
 This command changes the value of the UserRole environment variable to Administrator.
 
 ```powershell
-Set-Item -Path env:UserRole -Value "Administrator"
+Set-Item -Path Env:UserRole -Value "Administrator"
 ```
 
 ### Example 3: Modify your prompt function
@@ -90,7 +90,7 @@ Set-Item -Path env:UserRole -Value "Administrator"
 This command changes the prompt function so that it displays the time before the path.
 
 ```powershell
-Set-Item -Path function:prompt -Value {'PS '+ (Get-Date -Format t) + " " + (Get-Location) + '> '}
+Set-Item -Path Function:prompt -Value {'PS '+ (Get-Date -Format t) + " " + (Get-Location) + '> '}
 ```
 
 ### Example 4: Set options for your prompt function
@@ -101,7 +101,7 @@ The **Options** parameter is available in `Set-Item` only when you use it with t
 **Function** provider.
 
 ```powershell
-Set-Item -Path function:prompt -Options "AllScope,ReadOnly"
+Set-Item -Path Function:prompt -Options "AllScope,ReadOnly"
 ```
 
 ## PARAMETERS
@@ -423,7 +423,7 @@ Windows PowerShell includes the following aliases for `Set-Item`:
   - To change the names and data in registry values, use the `New-ItemProperty`, `Set-ItemProperty`, and
     `Rename-ItemProperty` cmdlets.
 - `Set-Item` is designed to work with the data exposed by any provider.
-  To list the providers available in your session, type `Get-PsProvider`.
+  To list the providers available in your session, type `Get-PSProvider`.
   For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS

@@ -23,7 +23,7 @@ properties and values was more complicated. Originally, you had to use
 example:
 
 ```powershell
-PS> $object1 = New-Object -TypeName PSObject
+PS> $object1 = New-Object -TypeName psobject
 PS> Add-Member -InputObject $object1 -MemberType NoteProperty -Name one -Value 1
 PS> Add-Member -InputObject $object1 -MemberType NoteProperty -Name two -Value 2
 PS> $object1 | Get-Member
@@ -50,7 +50,7 @@ Later, you could use the **Property** parameter of `New-Object` to pass a
 **Hashtable** containing the members and values. For example:
 
 ```powershell
-PS> $object2 = New-Object -TypeName PSObject -Property @{one=1; two=2}
+PS> $object2 = New-Object -TypeName psobject -Property @{one=1; two=2}
 PS> $object2 | Get-Member
 
    TypeName: System.Management.Automation.PSCustomObject
@@ -191,11 +191,11 @@ have subtle side effects.
 - Wrapped objects match their original type and the `[psobject]` type.
 
   ```powershell
-  PS> 1 -is [Int32]
+  PS> 1 -is [int32]
   True
   PS> 1 -is [psobject]
   False
-  PS> ([psobject] 1) -is [Int32]
+  PS> ([psobject] 1) -is [int32]
   True
   PS> ([psobject] 1) -is [psobject]
   True
@@ -248,7 +248,7 @@ When that hashtable is cast to a `[pscustomobject]`, the case of the name of
 first key is used, but that value of the last matching key name is used.
 
 ```powershell
-[PSCustomObject]$OrderedHashTable
+[pscustomobject]$OrderedHashTable
 ```
 
 ```Output
@@ -266,7 +266,7 @@ Attempting to access these members returns `$null`.
 For example:
 
 ```powershell
-PS> $object = [PSCustomObject]@{key = 'value'}
+PS> $object = [pscustomobject]@{key = 'value'}
 PS> $object
 
 key

@@ -17,12 +17,12 @@ the results of a conditional test.
 The `while` statement (also known as a `while` loop) is a language construct
 for creating a loop that runs commands in a command block as long as a
 conditional test evaluates to true. The `while` statement is easier to
-construct than a For statement because its syntax is less complicated. In
-addition, it is more flexible than the Foreach statement because you specify a
-conditional test in the `while` statement to control how many times the loop
+construct than a `for` statement because its syntax is less complicated. In
+addition, it is more flexible than the `foreach` statement because you specify
+a conditional test in the `while` statement to control how many times the loop
 runs.
 
-The following shows the While statement syntax:
+The following shows the `while` statement syntax:
 
 ```powershell
 while (<condition>){<statement list>}

@@ -35,7 +35,7 @@ the flow of the pipeline.
 
 ```powershell
 Get-Service |
-    Where-Object CanPauseAndContinue -eq $true |
+    Where-Object CanPauseAndContinue -EQ $true |
     Select-Object -Property *
 ```
 
@@ -298,7 +298,7 @@ to filter its results. This technique is inefficient if an earlier command in th
 parameter to perform the filtering.
 
 ```powershell
-Get-Service | Where-Object Name -eq w32time
+Get-Service | Where-Object Name -EQ w32time
 ```
 
 ```Output
@@ -593,7 +593,7 @@ understanding and retention of the syntax.
 
 ```powershell
 $customObject |
-    Select-Object -Property @{name='Name';expression={$_.Service}} |
+    Select-Object -Property @{Name='Name';Expression={$_.Service}} |
     Stop-Service
 ```
 
@@ -604,14 +604,14 @@ use the saved data as input for another command.
 
 ```powershell
 'Background Intelligent Transfer Service', 'Windows Time' |
-    Out-File -FilePath $env:TEMP\services.txt
+    Out-File -FilePath $Env:TEMP\services.txt
 ```
 
 You can use parentheses to pass the output of one command as input for a parameter to another
 command.
 
 ```powershell
-Stop-Service -DisplayName (Get-Content -Path $env:TEMP\services.txt)
+Stop-Service -DisplayName (Get-Content -Path $Env:TEMP\services.txt)
 ```
 
 This concept is like the order of operations in Algebra. Just as mathematical operations within

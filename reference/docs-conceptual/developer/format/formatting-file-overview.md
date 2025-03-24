@@ -7,7 +7,7 @@ title: Formatting File Overview
 # Formatting File Overview
 
 The display format for the objects that are returned by commands (cmdlets, functions, and scripts)
-are defined by using formatting files (format.ps1xml files). Several of these files are provided by
+are defined by using formatting files (`format.ps1xml`). Several of these files are provided by
 PowerShell to define the display format for those objects returned by PowerShell-provided commands,
 such as the [System.Diagnostics.Process][12] object returned by the `Get-Process` cmdlet. However,
 you can also create your own custom formatting files to overwrite the default display formats or you

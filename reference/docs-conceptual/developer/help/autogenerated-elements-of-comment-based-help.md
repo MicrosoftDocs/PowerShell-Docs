@@ -23,20 +23,20 @@ its capitalization, change the function definition or the script filename.
 
 ### Syntax
 
-The Syntax section of the Help topic is generated from the parameter list in the Param statement of
-the function or script. To add detail to the Help topic syntax, such as the .NET type of a
+The Syntax section of the Help topic is generated from the parameter list in the `param` statement
+of the function or script. To add detail to the Help topic syntax, such as the .NET type of a
 parameter, add the detail to the parameter list. If you don't specify a parameter type, the
 **Object** type is inserted as the default value.
 
 ### Parameter List
 
 The Parameters section of the Help topic is generated from the parameter list in the function or
-script and from the descriptions that you add using the `.Parameters` keyword or comments in the
+script and from the descriptions that you add using the `.PARAMETER` keyword or comments in the
 parameter list.
 
 Parameters appear in the Parameters section in the same order that they appear in the parameter
 list. The spelling and capitalization of parameter names is also taken from the parameter list; it
-isn't affected by the parameter name specified by the `.Parameter` keyword.
+isn't affected by the parameter name specified by the `.PARAMETER` keyword.
 
 ### Common Parameters
 

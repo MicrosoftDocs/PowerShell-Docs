@@ -22,7 +22,7 @@ run as if you had typed them at the command prompt.
 Functions can be as simple as:
 
 ```powershell
-function Get-PowerShellProcess { Get-Process PowerShell }
+function Get-PowerShellProcess { Get-Process powershell }
 ```
 
 Once a function is defined, you can use it like the built-in cmdlets. For
@@ -71,7 +71,7 @@ like a cmdlet without using `C#` programming. For more information, see
 The following are the syntax for a function:
 
 ```Syntax
-function [<scope:>]<name> [([type]$parameter1[,[type]$parameter2])]
+function [<scope:>]<name> [([type]$Parameter1[,[type]$Parameter2])]
 {
   begin {<statement list>}
   process {<statement list>}
@@ -82,7 +82,7 @@ function [<scope:>]<name> [([type]$parameter1[,[type]$parameter2])]
 ```Syntax
 function [<scope:>]<name>
 {
-  param([type]$parameter1 [,[type]$parameter2])
+  param([type]$Parameter1 [,[type]$Parameter2])
   dynamicparam {<statement list>}
   begin {<statement list>}
   process {<statement list>}
@@ -120,7 +120,7 @@ processing, and an `end` block for one-time post-processing.
 Function Test-ScriptCmdlet
 {
 [CmdletBinding(SupportsShouldProcess=$true)]
-    Param ($Parameter1)
+    param ($Parameter1)
     begin{}
     process{}
     end{}
@@ -188,11 +188,11 @@ For example, the following function finds all `.jpg` files in the current
 user's directories that were changed after the start date.
 
 ```powershell
-function Get-NewPix
+function Get-NewPicture
 {
   $start = Get-Date -Month 1 -Day 1 -Year 2010
-  $allpix = Get-ChildItem -Path $env:UserProfile\*.jpg -Recurse
-  $allpix | Where-Object {$_.LastWriteTime -gt $Start}
+  $allPics = Get-ChildItem -Path $Env:USERPROFILE\*.jpg -Recurse
+  $allPics | Where-Object {$_.LastWriteTime -gt $Start}
 }
 ```
 
@@ -234,16 +234,16 @@ in the following sample syntax:
 
 ```Syntax
 function <name> {
-  param ([type]$parameter1 [,[type]$parameter2])
+  param ([type]$Parameter1 [,[type]$Parameter2])
   <statement list>
 }
 ```
 
-You can also define parameters outside the braces without the `Param` keyword,
+You can also define parameters outside the braces without the `param` keyword,
 as shown in the following sample syntax:
 
 ```Syntax
-function <name> [([type]$parameter1[,[type]$parameter2])] {
+function <name> [([type]$Parameter1[,[type]$Parameter2])] {
   <statement list>
 }
 ```
@@ -251,8 +251,8 @@ function <name> [([type]$parameter1[,[type]$parameter2])] {
 Below is an example of this alternative syntax.
 
 ```powershell
-function Add-Numbers([int]$one, [int]$two) {
-    $one + $two
+function Add-Numbers([int]$One, [int]$Two) {
+    $One + $Two
 }
 ```
 
@@ -269,7 +269,7 @@ the value of the `$Size` parameter, and it excludes directories:
 
 ```powershell
 function Get-SmallFiles {
-  Param($Size)
+  param ($Size)
   Get-ChildItem $HOME | Where-Object {
     $_.Length -lt $Size -and !$_.PSIsContainer
   }
@@ -369,8 +369,8 @@ name, as shown in the following example:
 
 ```powershell
 function Switch-Item {
-  param ([switch]$on)
-  if ($on) { "Switch on" }
+  param ([switch]$On)
+  if ($On) { "Switch on" }
   else { "Switch off" }
 }
 ```
@@ -379,7 +379,7 @@ When you type the `On` switch parameter after the function name, the function
 displays `Switch on`. Without the switch parameter, it displays `Switch off`.
 
 ```powershell
-Switch-Item -on
+Switch-Item -On
 ```
 
 ```Output
@@ -398,7 +398,7 @@ You can also assign a **Boolean** value to a switch when you run the function,
 as shown in the following example:
 
 ```powershell
-Switch-Item -on:$true
+Switch-Item -On:$true
 ```
 
 ```Output
@@ -406,7 +406,7 @@ Switch on
 ```
 
 ```powershell
-Switch-Item -on:$false
+Switch-Item -On:$false
 ```
 
 ```Output
@@ -607,7 +607,7 @@ You can specify the scope of a function. For example, the function is added to
 the global scope in the following example:
 
 ```powershell
-function global:Get-DependentSvs {
+function Global:Get-DependentSvs {
   Get-Service | Where-Object {$_.DependentServices}
 }
 ```
@@ -633,7 +633,7 @@ The following command displays all the functions in the current session of
 PowerShell:
 
 ```powershell
-Get-ChildItem function:
+Get-ChildItem Function:
 ```
 
 The commands in the function are stored as a script block in the definition
@@ -641,13 +641,13 @@ property of the function. For example, to display the commands in the Help
 function that comes with PowerShell, type:
 
 ```powershell
-(Get-ChildItem function:help).Definition
+(Get-ChildItem Function:help).Definition
 ```
 
 You can also use the following syntax.
 
 ```powershell
-$function:help
+$Function:help
 ```
 
 For more information about the `Function:` drive, see the help topic for the

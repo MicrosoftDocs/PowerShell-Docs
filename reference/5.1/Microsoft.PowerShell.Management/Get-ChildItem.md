@@ -88,7 +88,7 @@ as follows:
 - `s` (system)
 
 For more information about the mode flags, see
-[about_Filesystem_Provider](../Microsoft.PowerShell.Core/About/about_Filesystem_Provider.md#attributes-flagsexpression).
+[about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_Filesystem_Provider.md#attributes-flagsexpression).
 
 ### Example 2: Get child item names in a directory
 
@@ -357,8 +357,8 @@ point. In PowerShell, this information is available from the **Target** property
 object returned by `Get-ChildItem`.
 
 ```powershell
-PS D:\> New-Item -ItemType Junction -Name tmp -Target $env:TEMP
-PS D:\> Get-ChildItem | Select-Object name,*target
+PS D:\> New-Item -ItemType Junction -Name tmp -Target $Env:TEMP
+PS D:\> Get-ChildItem | Select-Object Name, *Target
 
 Name     Target
 ----     ------
@@ -979,7 +979,7 @@ The cmdlet outputs this type when accessing the `Env:` drive.
 
 ### System.IO.FileInfo
 
-The cmdlet outputs these types when accessing the Filesystem drives.
+The cmdlet outputs these types when accessing the FileSystem drives.
 
 ### System.Management.Automation.FunctionInfo
 

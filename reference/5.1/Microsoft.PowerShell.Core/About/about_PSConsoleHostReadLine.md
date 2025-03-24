@@ -27,7 +27,7 @@ the user creates:
 
 ```powershell
 function PSConsoleHostReadLine {
-  $inputFile = Join-Path $env:TEMP PSConsoleHostReadLine
+  $inputFile = Join-Path $Env:TEMP PSConsoleHostReadLine
   Set-Content $inputFile "PS > "
 
   # Notepad opens. Enter your command in it, save the file, and then exit.

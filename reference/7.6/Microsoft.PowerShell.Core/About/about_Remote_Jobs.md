@@ -138,7 +138,7 @@ all of the operations occur on the remote computer, not the local computer.
    results of the job in the PsLog.txt file on the Server01 computer.
 
    ```powershell
-   Server01\C:> Receive-Job $job > c:\logs\PsLog.txt
+   Server01\C:> Receive-Job $job > C:\logs\PsLog.txt
    ```
 
 1. To end the interactive session, use the `Exit-PSSession` cmdlet. The command
@@ -165,7 +165,7 @@ all of the operations occur on the remote computer, not the local computer.
    ```powershell
    $s = New-PSSession -ComputerName Server01
    Invoke-Command -Session $s -ScriptBlock {
-     Get-Content c:\logs\pslog.txt}
+     Get-Content C:\logs\pslog.txt}
    ```
 
 ### Start a remote job that returns the results to the local computer (AsJob)
@@ -190,8 +190,8 @@ requirements for remoting.
    assign a display name to the job.
 
    ```powershell
-   Invoke-Command -Computername Server01 -ScriptBlock {
-     Get-EventLog system} -AsJob
+   Invoke-Command -ComputerName Server01 -ScriptBlock {
+     Get-EventLog System} -AsJob
    ```
 
    The results of the command resemble the following sample output.
@@ -199,7 +199,7 @@ requirements for remoting.
    ```Output
    SessionId   Name   State    HasMoreData   Location   Command
    ---------   ----   -----    -----------   --------   -------
-   1           Job1   Running  True          Server01   Get-EventLog system
+   1           Job1   Running  True          Server01   Get-EventLog System
    ```
 
    When the **AsJob** parameter is used, `Invoke-Command` returns the same type
@@ -229,7 +229,7 @@ requirements for remoting.
    ```Output
    SessionId   Name   State      HasMoreData   Location   Command
    ---------   ----   -----      -----------   --------   -------
-   1           Job1   Completed  True          Server01   Get-EventLog system
+   1           Job1   Completed  True          Server01   Get-EventLog System
    ```
 
 1. To get the results of the job, use the `Receive-Job` cmdlet. Because the job
@@ -280,7 +280,7 @@ commands remotely to manage a local job on the remote computer.
 
    ```powershell
    Invoke-Command -Session $s -ScriptBlock {
-     Start-Job -ScriptBlock {Get-EventLog system}}
+     Start-Job -ScriptBlock {Get-EventLog System}}
    ```
 
    The results resemble the following sample output.
@@ -288,7 +288,7 @@ commands remotely to manage a local job on the remote computer.
    ```Output
    Id       Name    State      HasMoreData     Location   Command
    --       ----    -----      -----------     --------   -------
-   2        Job2    Running    True            Localhost  Get-EventLog system
+   2        Job2    Running    True            Localhost  Get-EventLog System
    ```
 
    When you run a `Start-Job` command remotely, `Invoke-Command` returns the
@@ -319,7 +319,7 @@ commands remotely to manage a local job on the remote computer.
    ```Output
    SessionId   Name  State      HasMoreData   Location   Command
    ---------   ----  -----      -----------   --------   -------
-   2           Job2  Completed  True          LocalHost   Get-EventLog system
+   2           Job2  Completed  True          LocalHost   Get-EventLog System
    ```
 
 1. To get the results of the job, use the `Invoke-Command` cmdlet to run a
@@ -343,7 +343,7 @@ commands remotely to manage a local job on the remote computer.
 
    ```powershell
    Invoke-Command -Session $s -Command {
-     Receive-Job -SessionId 2 > c:\logs\pslog.txt
+     Receive-Job -SessionId 2 > C:\logs\pslog.txt
    }
    ```
 
@@ -364,7 +364,7 @@ objects generated after the disconnect are returned when re-connected.
 
 ```powershell
 # Create remote session on local machine
-PS> $session = New-PSSession -cn localhost
+PS> $session = New-PSSession -Cn localhost
 
 # Start remote job
 PS> $job = Invoke-Command -Session $session -ScriptBlock { 1..60 | % { sleep 1; "Output $_" } } -AsJob

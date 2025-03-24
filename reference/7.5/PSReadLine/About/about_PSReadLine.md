@@ -161,9 +161,9 @@ APIs are documented in [about_PSReadLine_Functions][02].
 PSReadLine maintains a history file containing all the commands and data you've
 entered from the command line. The history files are a file named
 `$($Host.Name)_history.txt`. On Windows systems the history file is stored at
-`$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows systems,
-the history files are stored at `$env:XDG_DATA_HOME/powershell/PSReadLine` or
-`$env:HOME/.local/share/powershell/PSReadLine`.
+`$Env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`. On non-Windows systems,
+the history files are stored at `$Env:XDG_DATA_HOME/powershell/PSReadLine` or
+`$Env:HOME/.local/share/powershell/PSReadLine`.
 
 The history can contain sensitive data including passwords. PSReadLine attempts
 to filter out sensitive information. Any command lines containing the following
@@ -250,7 +250,7 @@ kubectl get secrets
 kubectl get secret db-user-pass -o jsonpath='{.data.password}' | base64 --decode
 kubectl describe secret db-user-pass
 az account get-access-token --resource=https://app.contoso.com --query accessToken --output tsv
-$env:PGPASS = gcloud auth print-access-token
+$Env:PGPASS = gcloud auth print-access-token
 ```
 
 ### Feedback & contributing to PSReadLine

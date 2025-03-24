@@ -124,7 +124,7 @@ function prompt {
     $principal = [Security.Principal.WindowsPrincipal] $identity
     $adminRole = [Security.Principal.WindowsBuiltInRole]::Administrator
 
-    $prefix = if (Test-Path variable:/PSDebugContext) { '[DBG]: ' } else { '' }
+    $prefix = if (Test-Path Variable:/PSDebugContext) { '[DBG]: ' } else { '' }
     if ($principal.IsInRole($adminRole)) {
         $prefix = "[ADMIN]:$prefix"
     }

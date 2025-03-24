@@ -17,10 +17,10 @@ Describes the types and output that cmdlets can generate and the methods that cm
 Discusses cmdlet error reporting, a subset of cmdlet output.
 
 [Extending Output Objects](./extending-output-objects.md)
-Discusses how to use the types files (.ps1xml) to extend the .NET Framework objects that are returned by cmdlets, functions, and scripts.
+Discusses how to use the types files (`.ps1xml`) to extend the .NET Framework objects that are returned by cmdlets, functions, and scripts.
 
 [PowerShell Formatting Files](../format/powershell-formatting-files.md)
-Describes the formatting files (.format.ps1xml) files that define the default display for a specific set of .NET Framework objects in Windows PowerShell.
+Describes the formatting files (`.format.ps1xml`) files that define the default display for a specific set of .NET Framework objects in Windows PowerShell.
 
 [Custom Formatting Files](./custom-formatting-files.md)
 Describes how to create your own custom formatting files to overwrite the default display formats or to define the display of objects returned by your own commands.

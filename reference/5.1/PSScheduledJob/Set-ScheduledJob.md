@@ -67,7 +67,8 @@ as a template for other jobs.
 that is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
-the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -88,7 +89,8 @@ Id         Name            Triggers        Command                              
 ```
 
 ```powershell
-Get-ScheduledJob -Name "Inventory" | Set-ScheduledJob -FilePath "C:\Scripts\Get-FullInventory.ps1" -PassThru
+Get-ScheduledJob -Name "Inventory" |
+    Set-ScheduledJob -FilePath "C:\Scripts\Get-FullInventory.ps1" -PassThru
 ```
 
 ```Output
@@ -120,7 +122,8 @@ operator (`|`) sends the job to the `Set-ScheduledJob` cmdlet to change it. The 
 cmdlet uses the **ClearExecutionHistory** parameter to delete the execution history and saved
 results.
 
-For more information about the execution history and saved job results of scheduled jobs, see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+For more information about the execution history and saved job results of scheduled jobs, see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 ### Example 3: Change scheduled jobs on a remote computer
 
@@ -170,7 +173,8 @@ for this parameter are:
 - `Negotiate`
 - `NegotiateWithImplicitCredential`
 
-The default value is `Default`. For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)
+The default value is `Default`. For more information about the values of this parameter, see
+[AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)
 in the PowerShell SDK.
 
 > [!CAUTION]
@@ -241,9 +245,9 @@ Accept wildcard characters: False
 
 ### -FilePath
 
-Specifies a script that the scheduled job runs. Enter the path to a .ps1 file on the local computer.
-To specify default values for the script parameters, use the **ArgumentList** parameter. Every
-scheduled job must have either a **ScriptBlock** or **FilePath** value.
+Specifies a script that the scheduled job runs. Enter the path to a `.ps1` file on the local
+computer. To specify default values for the script parameters, use the **ArgumentList** parameter.
+Every scheduled job must have either a **ScriptBlock** or **FilePath** value.
 
 ```yaml
 Type: System.String
@@ -518,7 +522,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

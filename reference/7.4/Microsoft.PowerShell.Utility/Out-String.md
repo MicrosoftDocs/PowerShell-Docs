@@ -35,7 +35,7 @@ parameter to direct `Out-String` to return one line at a time or create an array
 cmdlet lets you search and manipulate string output as you would in traditional shells when object
 manipulation is less convenient.
 
-PowerShell also adds the `OSS` function that calls `Out-String -Stream` as a shorthand way to use
+PowerShell also adds the `oss` function that calls `Out-String -Stream` as a shorthand way to use
 `Out-String` in a pipeline.
 
 ## EXAMPLES

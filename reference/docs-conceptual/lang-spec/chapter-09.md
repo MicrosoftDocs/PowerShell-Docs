@@ -226,14 +226,14 @@ elements from a collection. An array slice is created via the subscript operator
 ## 9.10 Copying an array
 
 A contiguous set of elements can be copied from one array to another using the method
-`[Array]::Copy`. For example,
+`[array]::Copy`. For example,
 
 ```powershell
 $a = [int[]](10,20,30)
 $b = [int[]](0,1,2,3,4,5)
-[Array]::Copy($a, $b, 2)        # $a[0]->$b[0],
+[array]::Copy($a, $b, 2)        # $a[0]->$b[0],
 $a[1]->$b[1]
-[Array]::Copy($a, 1, $b, 3, 2)  # $a[1]->$b[3],
+[array]::Copy($a, 1, $b, 3, 2)  # $a[1]->$b[3],
 $a[2]->$b[4]
 ```
 

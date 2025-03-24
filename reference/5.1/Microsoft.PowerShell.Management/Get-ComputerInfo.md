@@ -39,7 +39,7 @@ Get-ComputerInfo
 This command gets all version properties from the computer.
 
 ```powershell
-Get-ComputerInfo -Property "*version"
+Get-ComputerInfo -Property "*Version"
 ```
 
 ```Output

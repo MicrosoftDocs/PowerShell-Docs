@@ -9,7 +9,7 @@ title: How to Validate an Argument Range
 This example shows how to specify a validation rule that the Windows PowerShell runtime can use to check the minimum and maximum values of the parameter argument before the cmdlet is run. You set this validation rule by declaring the ValidateRange attribute.
 
 > [!NOTE]
-> For more information about the class that defines this attribute, see [System.Management.Automation.Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute).
+> For more information about the class that defines this attribute, see [System.Management.Automation.ValidateRangeAttribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute).
 
 ### To validate an argument range
 

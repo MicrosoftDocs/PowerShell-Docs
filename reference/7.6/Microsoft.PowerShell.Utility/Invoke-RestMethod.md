@@ -99,7 +99,7 @@ The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational
 
 PowerShell formats the response based to the data type. For an RSS or ATOM feed, PowerShell returns
 the Item or Entry XML nodes. For JavaScript Object Notation (JSON) or XML, PowerShell converts, or
-deserializes, the content into `[PSCustomObject]` objects. Comments are permitted in the JSON data.
+deserializes, the content into `[pscustomobject]` objects. Comments are permitted in the JSON data.
 
 > [!NOTE]
 > When the REST endpoint returns multiple objects, the objects are received as an array. If you pipe
@@ -193,7 +193,7 @@ $Form = @{
     firstName  = 'John'
     lastName   = 'Doe'
     email      = 'john.doe@contoso.com'
-    avatar     = Get-Item -Path 'c:\Pictures\jdoe.png'
+    avatar     = Get-Item -Path 'C:\Pictures\jdoe.png'
     birthday   = '1980-10-15'
     hobbies    = 'Hiking','Fishing','Jogging'
 }
@@ -593,7 +593,7 @@ be used together.
 
 Example:
 
-`Invoke-RestMethod -uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'`
+`Invoke-RestMethod -Uri 'https://api.contoso.com/widget/' -CustomMethod 'TEST'`
 
 This makes a `TEST` HTTP request to the API.
 
@@ -668,7 +668,7 @@ name of the file is submitted as the `filename`. The MIME type is set as `applic
 
 ```powershell
 $Form = @{
-    resume = Get-Item 'c:\Users\jdoe\Documents\John Doe.pdf'
+    resume = Get-Item 'C:\Users\jdoe\Documents\John Doe.pdf'
 }
 ```
 
@@ -680,7 +680,7 @@ aren't supported.
 ```powershell
 $Form = @{
     tags     = 'Vacation', 'Italy', '2017'
-    pictures = Get-ChildItem 'c:\Users\jdoe\Pictures\2017-Italy\'
+    pictures = Get-ChildItem 'C:\Users\jdoe\Pictures\2017-Italy\'
 }
 ```
 
@@ -772,7 +772,7 @@ Accept wildcard characters: False
 
 Specifies how many times to follow relation links if **FollowRelLink** is used. A smaller value may
 be needed if the REST api throttles due to too many requests. The default value is
-`[Int32]::MaxValue`. A value of 0 (zero) prevents following relation links.
+`[int32]::MaxValue`. A value of 0 (zero) prevents following relation links.
 
 ```yaml
 Type: System.Int32

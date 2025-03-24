@@ -87,7 +87,7 @@ This command resolves a Universal Naming Convention (UNC) path and returns the s
 ### Example 5: Get relative paths
 
 ```powershell
-Resolve-Path -Path "c:\prog*" -Relative
+Resolve-Path -Path "C:\prog*" -Relative
 ```
 
 ```Output
@@ -111,12 +111,12 @@ Resolve-Path -LiteralPath 'test[xml]'
 ### Example 7: Resolve a path relative to another folder
 
 This example uses the **RelativeBasePath** parameter to resolve the path of the `pwsh` executable
-relative to `$env:TEMP`. When the command includes the **Relative** switch parameter, it returns a
-**String** representing the relative path from `$env:TEMP` to the `pwsh` executable.
+relative to `$Env:TEMP`. When the command includes the **Relative** switch parameter, it returns a
+**String** representing the relative path from `$Env:TEMP` to the `pwsh` executable.
 
 ```powershell
 $ExecutablePath = Get-Command -Name pwsh | Select-Object -ExpandProperty Source
-Resolve-Path -Path $ExecutablePath -RelativeBasePath $env:TEMP -Relative
+Resolve-Path -Path $ExecutablePath -RelativeBasePath $Env:TEMP -Relative
 ```
 
 ```Output

@@ -44,7 +44,7 @@ WMI Namespaces organize WMI providers and WMI classes into groups of related
 components. In this way, they're similar to .NET Framework namespaces.
 Namespaces aren't physical locations, but are more like logical databases. All
 WMI namespaces are instances of the __Namespace system class. The default WMI
-namespace is `root/cimv2` (since Microsoft Windows 2000). To use Windows
+namespace is **root/CIMV2** (since Microsoft Windows 2000). To use Windows
 PowerShell to get WMI namespaces in the current session, use a command with the
 following format.
 
@@ -54,10 +54,10 @@ Get-WmiObject -Class __Namespace
 
 To get WMI namespaces in other namespaces, use the Namespace parameter to
 change the location of the search. The following command finds WMI namespaces
-that reside in the `root/cimv2/Applications` namespace.
+that reside in the **root/CIMV2/Applications** namespace.
 
 ```powershell
-Get-WmiObject -Class __Namespace -Namespace root/cimv2/applications
+Get-WmiObject -Class __Namespace -Namespace root/CIMV2/Applications
 ```
 
 WMI namespaces are hierarchical. Therefore, obtaining a list of all namespaces
@@ -72,23 +72,23 @@ requested through the management application.
 
 ## FINDING WMI CLASSES
 
-In a default installation of Windows 8, there are more than 1,100 WMI classes
-in `root/cimv2`. With this many WMI classes, the challenge becomes identifying
+In a default Windows 8 installation, there are more than 1,100 WMI classes in
+**root/CIMV2**. With this many WMI classes, the challenge becomes identifying
 the appropriate WMI class to use to perform a specific task. Windows PowerShell
 3.0 provides two ways to find WMI classes that are related to a specific topic.
 
-For example,to find WMI classes in the `root/cimv2` WMI namespace that are
+For example, to find WMI classes in the **root/CIMV2** WMI namespace that are
 related to disks, you can use a query such as the one shown here.
 
 ```powershell
-Get-WmiObject -List *disk*
+Get-WmiObject -List *Disk*
 ```
 
 To find WMI classes that are related to memory, you might use a query such as
 the one shown here.
 
 ```powershell
-Get-WmiObject -List *memory*
+Get-WmiObject -List *Memory*
 ```
 
 The CIM cmdlets also provide the ability to discover WMI classes. To do this,
@@ -96,15 +96,15 @@ use the `Get-CimClass` cmdlet. The command shown here lists WMI classes related
 to video.
 
 ```powershell
-Get-CimClass *video*
+Get-CimClass *Video*
 ```
 
 Tab expansion works when changing WMI namespaces, and therefore use of tab
 expansion makes sub-WMI namespaces easily discoverable. In the following
 example, the `Get-CimClass` cmdlet lists WMI classes related to power settings.
-To find it, type the `root/cimv2` namespace and then press the Tab key several
-times until the power namespace appears. Here is the command:
+To find it, type the **root/CIMV2** namespace and then press the Tab key
+several times until the **power** namespace appears. Here is the command:
 
 ```powershell
-Get-CimClass *power* -Namespace root/cimv2/power
+Get-CimClass *Power* -Namespace root/CIMV2/power
 ```

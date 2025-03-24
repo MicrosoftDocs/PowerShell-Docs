@@ -33,12 +33,12 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ## Creating new items
 
 To create a new item in the filesystem, use the `New-Item` cmdlet. Include the **Path** parameter
-with path to the item, and the **ItemType** parameter with a value of `file` or `directory`.
+with path to the item, and the **ItemType** parameter with a value of `File` or `Directory`.
 
 For example, to create a new directory named `New.Directory` in the `C:\Temp` directory, type:
 
 ```powershell
-New-Item -Path c:\temp\New.Directory -ItemType Directory
+New-Item -Path C:\temp\New.Directory -ItemType Directory
 ```
 
 ```Output
@@ -49,11 +49,11 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  11:29 AM            New.Directory
 ```
 
-To create a file, change the value of the **ItemType** parameter to `file`. For example, to create a
+To create a file, change the value of the **ItemType** parameter to `File`. For example, to create a
 file named `file1.txt` in the `New.Directory` directory, type:
 
 ```powershell
-New-Item -Path C:\temp\New.Directory\file1.txt -ItemType file
+New-Item -Path C:\temp\New.Directory\file1.txt -ItemType File
 ```
 
 ```Output
@@ -127,13 +127,13 @@ following command fails because it attempts to move the file from the `New.Direc
 the Temp directory.
 
 ```powershell
-Rename-Item -Path C:\temp\New.Directory\fileOne.txt c:\temp\fileOne.txt
+Rename-Item -Path C:\temp\New.Directory\fileOne.txt C:\temp\fileOne.txt
 ```
 
 ```Output
 Rename-Item : can't rename because the target specified isn't a path.
 At line:1 char:12
-+ Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
++ Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne C:\temp\fileOne.txt
 ```
 
 ## Moving items
@@ -217,7 +217,7 @@ Remove-Item C:\temp\New.Directory
 
 ```Output
 Confirm
-The item at C:\temp\New.Directory has children and the -recurse parameter was not
+The item at C:\temp\New.Directory has children and the -Recurse parameter was not
 specified. If you continue, all children will be removed with the item. Are you
  sure you want to continue?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help

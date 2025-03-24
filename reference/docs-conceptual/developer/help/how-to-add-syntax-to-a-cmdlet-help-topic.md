@@ -73,8 +73,8 @@ aren't required, because they're one of several values that might be used with t
 
    ```
    SYNTAX
-       Get-Tech -name -type
-       Get-Tech -ID -list -type
+       Get-Tech -Name -Type
+       Get-Tech -Id -List -Type
    ```
 
    Start each parameter set with the cmdlet name.
@@ -82,7 +82,7 @@ aren't required, because they're one of several values that might be used with t
    List the default parameter set first. The default parameter is specified by the cmdlet class.
 
    For each parameter set, list its unique parameter first, unless there are positional parameters
-   that must appear first. In the previous example, the Name and ID parameters are unique parameters
+   that must appear first. In the previous example, the Name and Id parameters are unique parameters
    for the two parameter sets (each parameter set must have one parameter that's unique to that
    parameter set). This makes it easier for users to identify what parameter they need to supply for
    the parameter set.
@@ -100,33 +100,33 @@ aren't required, because they're one of several values that might be used with t
 
    ```
    SYNTAX
-       Get-Tech -name string -type basic advanced
-       Get-Tech -ID int -list -type basic advanced
+       Get-Tech -Name string -Type Basic Advanced
+       Get-Tech -Id int -List -Type Basic Advanced
    ```
 
    Abbreviate types as long as their meaning is clear, such as **string** for **System.String** and **int**
    for **System.Int32**.
 
-   List all values of enumerations, such as the `-type` parameter in the previous example, which can
+   List all values of enumerations, such as the `-Type` parameter in the previous example, which can
    be set to **basic** or **advanced**.
 
-   Switch parameters, such as `-list` in the previous example, don't have values.
+   Switch parameters, such as `-List` in the previous example, don't have values.
 
 1. Add angle brackets to parameters values that are placeholder, as compared to parameter values
    that are literals.
 
    ```
    SYNTAX
-       Get-Tech -name <string> -type basic advanced
-       Get-Tech -ID <int> -list -type basic advanced
+       Get-Tech -Name <string> -Type Basic Advanced
+       Get-Tech -Id <int> -List -Type Basic Advanced
    ```
 
 1. Enclose optional parameters and their vales in square brackets.
 
    ```
    SYNTAX
-       Get-Tech -name <string> [-type basic advanced]
-       Get-Tech -ID <int> [-list] [-type basic advanced]
+       Get-Tech -Name <string> [-Type Basic Advanced]
+       Get-Tech -Id <int> [-List] [-Type Basic Advanced]
    ```
 
 1. Enclose optional parameters names (for positional parameters) in square brackets. The name for
@@ -135,8 +135,8 @@ aren't required, because they're one of several values that might be used with t
 
    ```
    SYNTAX
-       Get-Tech [-name] <string> [-type basic advanced]
-       Get-Tech -ID <int> [-list] [-type basic advanced]
+       Get-Tech [-Name] <string> [-Type Basic Advanced]
+       Get-Tech -Id <int> [-List] [-Type Basic Advanced]
    ```
 
 1. If a parameter value can contain multiple values, such as a list of names in the Name parameter,
@@ -144,8 +144,8 @@ aren't required, because they're one of several values that might be used with t
 
    ```
    SYNTAX
-       Get-Tech [-name] <string[]> [-type basic advanced]
-       Get-Tech -ID <int[]> [-list] [-type basic advanced]
+       Get-Tech [-Name] <string[]> [-Type Basic Advanced]
+       Get-Tech -Id <int[]> [-List] [-Type Basic Advanced]
    ```
 
 1. If the user can choose from parameters or parameter values, such as the Type parameter, enclose
@@ -153,8 +153,8 @@ aren't required, because they're one of several values that might be used with t
 
    ```
    SYNTAX
-       Get-Tech [-name] <string[]> [-type {basic | advanced}]
-       Get-Tech -ID <int[]> [-list] [-type {basic | advanced}]
+       Get-Tech [-Name] <string[]> [-Type {Basic | Advanced}]
+       Get-Tech -Id <int[]> [-List] [-Type {Basic | Advanced}]
    ```
 
 1. If the parameter value must use specific formatting, such as quotation marks or parentheses, show
@@ -162,8 +162,8 @@ aren't required, because they're one of several values that might be used with t
 
    ```
    SYNTAX
-       Get-Tech [-name] <"string[]"> [-type {basic | advanced}]
-       Get-Tech -ID <int[]> [-list] [-type {basic | advanced}]
+       Get-Tech [-Name] <"string[]"> [-Type {Basic | Advanced}]
+       Get-Tech -Id <int[]> [-List] [-Type {Basic | Advanced}]
    ```
 
 ## Coding the syntax diagram XML

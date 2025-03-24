@@ -39,7 +39,7 @@ This sample shows a complete version of the Get-Proc cmdlet.
 
 1. Run the following command to run the cmdlet:
 
-   `get-proc`
+   `Get-Proc`
 
 ## Requirements
 
@@ -80,7 +80,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     #region GetProcCommand
 
     /// <summary>
-   /// This class implements the get-proc cmdlet.
+   /// This class implements the Get-Proc cmdlet.
    /// </summary>
    [Cmdlet(VerbsCommon.Get, "Proc",
       DefaultParameterSetName = "ProcessName")]

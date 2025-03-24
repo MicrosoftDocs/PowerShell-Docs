@@ -29,7 +29,7 @@ text that appears above and below the progress bar.
 
 ## EXAMPLES
 
-### Example 1: Display the progress of a For loop
+### Example 1: Display the progress of a `for` loop
 
 ```powershell
 for ($i = 1; $i -le 100; $i++ ) {
@@ -44,7 +44,7 @@ The `Write-Progress` cmdlet includes a status bar heading `Activity`, a status l
 variable `$i` (the counter in the `for` loop), which indicates the relative completeness of the
 task.
 
-### Example 2: Display the progress of nested For loops
+### Example 2: Display the progress of nested `for` loops
 
 ```powershell
 for($I = 0; $I -lt 10; $I++ ) {
@@ -80,7 +80,7 @@ Progress
 InnerLoop
 ```
 
-This example displays the progress of two nested For loops, each of which is represented by a
+This example displays the progress of two nested `for` loops, each of which is represented by a
 progress bar.
 
 The `Write-Progress` command for the second progress bar includes the **Id** parameter that
@@ -93,7 +93,7 @@ displayed one below the other.
 
 ```powershell
 # Use Get-EventLog to get the events in the System log and store them in the $Events variable.
-$Events = Get-EventLog -LogName system
+$Events = Get-EventLog -LogName System
 # Pipe the events to the ForEach-Object cmdlet.
 $Events | ForEach-Object -Begin {
     # In the Begin block, use Clear-Host to clear the screen.
@@ -104,7 +104,7 @@ $Events | ForEach-Object -Begin {
     $out = ""
 } -Process {
     # In the Process script block search the message property of each incoming object for "bios".
-    if($_.message -like "*bios*")
+    if($_.Message -like "*bios*")
     {
         # Append the matching message to the out variable.
         $out=$out + $_.Message
@@ -112,7 +112,7 @@ $Events | ForEach-Object -Begin {
     # Increment the $i counter variable which is used to create the progress bar.
     $i = $i+1
     # Determine the completion percentage
-    $Completed = ($i/$Events.count) * 100
+    $Completed = ($i/$Events.Count) * 100
     # Use Write-Progress to output a progress bar.
     # The Activity and Status parameters create the first and second lines of the progress bar
     # heading, respectively.
@@ -126,7 +126,7 @@ $Events | ForEach-Object -Begin {
 This command displays the progress of a command to find the string "bios" in the System event log.
 
 The **PercentComplete** parameter value is calculated by dividing the number of events that have
-been processed `$i` by the total number of events retrieved `$Events.count` and then multiplying
+been processed `$i` by the total number of events retrieved `$Events.Count` and then multiplying
 that result by 100.
 
 ### Example 4: Display progress for each level of a nested process

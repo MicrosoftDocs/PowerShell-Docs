@@ -335,7 +335,7 @@ ContosoCompany registry key.
 
 ```powershell
 $path = "HKLM:\SOFTWARE\ContosoCompany"
-New-ItemProperty -Path $path -Name Test -Type DWORD -Value 1
+New-ItemProperty -Path $path -Name Test -Type DWord -Value 1
 ```
 
 > [!NOTE]

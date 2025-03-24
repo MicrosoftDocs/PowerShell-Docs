@@ -157,7 +157,7 @@ time and the date and time that was saved in the `$a` variable before the workfl
 
 ```
 #SampleWorkflow
-Workflow Test-Suspend
+workflow Test-Suspend
 {
     $a = Get-Date
     Suspend-Workflow

@@ -368,15 +368,15 @@ comparison operator.
 | `-ge`          | Greater than or equal to                                    |
 | `-lt`          | Less than                                                   |
 | `-le`          | Less than or equal to                                       |
-| `-Like`        | Match using the `*` wildcard character                      |
-| `-NotLike`     | Doesn't match using the `*` wildcard character              |
-| `-Match`       | Matches the specified regular expression                    |
-| `-NotMatch`    | Doesn't match the specified regular expression              |
-| `-Contains`    | Determines if a collection contains a specified value       |
-| `-NotContains` | Determines if a collection doesn't contain a specific value |
-| `-In`          | Determines if a specified value is in a collection          |
-| `-NotIn`       | Determines if a specified value isn't in a collection       |
-| `-Replace`     | Replaces the specified value                                |
+| `-like`        | Match using the `*` wildcard character                      |
+| `-notlike`     | Doesn't match using the `*` wildcard character              |
+| `-match`       | Matches the specified regular expression                    |
+| `-notmatch`    | Doesn't match the specified regular expression              |
+| `-contains`    | Determines if a collection contains a specified value       |
+| `-notcontains` | Determines if a collection doesn't contain a specific value |
+| `-in`          | Determines if a specified value is in a collection          |
+| `-notin`       | Determines if a specified value isn't in a collection       |
+| `-replace`     | Replaces the specified value                                |
 
 Proper case "PowerShell" is equal to lower case "powershell" using the equals comparison operator.
 
@@ -441,7 +441,7 @@ less than or equal to work.
 True
 ```
 
-The `-Like` and `-Match` operators can be confusing, even for experienced PowerShell users. `-Like`
+The `-like` and `-match` operators can be confusing, even for experienced PowerShell users. `-like`
 is used with the wildcard characters `*` and `?` to perform "like" matches.
 
 ```powershell
@@ -452,7 +452,7 @@ is used with the wildcard characters `*` and `?` to perform "like" matches.
 True
 ```
 
-`-Match` uses a regular expression to perform the matching.
+The `-match` operator uses a regular expression to perform the matching.
 
 ```powershell
 'PowerShell' -match '^.*shell$'
@@ -488,7 +488,8 @@ $Numbers -contains 10
 True
 ```
 
-`-NotContains` reverses the logic to see if the `$Numbers` variable doesn't contain a value.
+The `-notcontains` operator reverses the logic to see if the `$Numbers` variable doesn't contain a
+value.
 
 ```powershell
 $Numbers -notcontains 15
@@ -585,7 +586,7 @@ to replace. SQL Saturday in Baton Rouge is an event I try to speak at every year
 example, the word "Saturday" is replaced with the abbreviation "Sat".
 
 ```powershell
-'SQL Saturday - Baton Rouge' -Replace 'saturday','Sat'
+'SQL Saturday - Baton Rouge' -replace 'saturday','Sat'
 ```
 
 ```Output
@@ -593,7 +594,7 @@ SQL Sat - Baton Rouge
 ```
 
 There are also methods like **Replace()** that can be used to replace things similar to how the
-replace operator works. However, the `-Replace` operator is case-insensitive by default, and the
+replace operator works. However, the `-replace` operator is case-insensitive by default, and the
 **Replace()** method is case-sensitive.
 
 ```powershell
@@ -636,7 +637,7 @@ Comparison Operators.
 1. Why is it necessary to perform formatting as far to the right as possible?
 1. How do you determine what the actual cmdlet is for the `%` alias?
 1. Why shouldn't you use aliases in scripts you save or code you share with others?
-1. Perform a directory listing on the drives that are associated with one of the registry providers.
+1. Perform a directory listing on the drives that are associated with the Registry provider.
 1. What's one of the main benefits of using the replace operator instead of the replace method?
 
 ## References

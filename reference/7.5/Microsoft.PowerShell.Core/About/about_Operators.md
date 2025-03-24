@@ -202,7 +202,7 @@ of command in a string expression.
 PS> "Today is $(Get-Date)"
 Today is 12/02/2019 13:15:20
 
-PS> "Folder list: $((dir c:\ -dir).Name -join ', ')"
+PS> "Folder list: $((dir C:\ -Dir).Name -join ', ')"
 Folder list: Program Files, Program Files (x86), Users, Windows
 ```
 
@@ -221,7 +221,7 @@ True     True     Object[]                                 System.Array
 
 PS> $list.Count
 20
-PS> $list = @(Get-Service | Where-Object Status -eq Starting )
+PS> $list = @(Get-Service | Where-Object Status -EQ Starting )
 PS> $list.GetType()
 
 IsPublic IsSerial Name                                     BaseType
@@ -314,7 +314,7 @@ For more about script blocks, see [about_Script_Blocks][20].
 ### Background operator `&`
 
 Runs the pipeline before it in the background, in a PowerShell job. This
-operator acts similarly to the UNIX control operator ampersand (`&`), which
+operator acts similarly to the Unix control operator ampersand (`&`), which
 runs the command before it asynchronously in subshell as a job.
 
 This operator is functionally equivalent to `Start-Job`. By default, the
@@ -355,7 +355,7 @@ Receive-Job $job -Wait
 Remove-Job $job
 ```
 
-The `&` background operator is also a statement terminator, just like the UNIX
+The `&` background operator is also a statement terminator, just like the Unix
 control operator ampersand (`&`). This allows you to invoke additional commands
 after the `&` background operator. The following example demonstrates the
 invocation of additional commands after the `&` background operator.
@@ -396,7 +396,7 @@ Converts or limits objects to the specified type. If the objects can't be
 converted, PowerShell generates an error.
 
 ```powershell
-[DateTime] '2/20/88' - [DateTime] '1/20/88' -eq [TimeSpan] '31'
+[datetime] '2/20/88' - [datetime] '1/20/88' -eq [timespan] '31'
 ```
 
 A cast can also be performed when a variable is assigned to using
@@ -426,7 +426,7 @@ for which no value has been given become variables with no value. However, the
 automatic variable `$args` is preserved.
 
 ```powershell
-. c:\scripts\sample.ps1 1 2 -Also:3
+. C:\scripts\sample.ps1 1 2 -Also:3
 ```
 
 > [!NOTE]
@@ -462,7 +462,7 @@ Enter the composite format string on the left side of the operator and the
 objects to be formatted on the right side of the operator.
 
 ```powershell
-"{0} {1,-10} {2:N}" -f 1,"hello",[math]::pi
+"{0} {1,-10} {2:N}" -f 1,"hello",[Math]::PI
 ```
 
 ```Output
@@ -515,7 +515,7 @@ PS> $a[2, 1, 0]
 ```
 
 ```powershell
-(Get-HotFix | Sort-Object installedOn)[-1]
+(Get-HotFix | Sort-Object InstalledOn)[-1]
 ```
 
 ```powershell
@@ -706,9 +706,9 @@ Accesses the properties and methods of an object. The member name may be an
 expression.
 
 ```powershell
-$myProcess.peakWorkingSet
-(Get-Process PowerShell).Kill()
-'OS', 'Platform' | Foreach-Object { $PSVersionTable. $_ }
+$myProcess.PeakWorkingSet
+(Get-Process powershell).Kill()
+'OS', 'Platform' | ForEach-Object { $PSVersionTable. $_ }
 ```
 
 Starting PowerShell 3.0, when you use the operator on a list collection object
@@ -724,7 +724,7 @@ properties and methods of an object, use the Static parameter of the
 
 ```powershell
 [datetime]::Now
-'MinValue', 'MaxValue' | Foreach-Object { [int]:: $_ }
+'MinValue', 'MaxValue' | ForEach-Object { [int]:: $_ }
 ```
 
 ### Ternary operator `? <if-true> : <if-false>`

@@ -232,15 +232,15 @@ is a property of the object with a non-null value.
 ### Example 5: Get event logs from multiple servers
 
 This example gets objects that represent the **Application** event logs on three computers:
-Server01, Server02, and Server03. The **ForEach** keyword is used because the **ComputerName**
+Server01, Server02, and Server03. The `foreach` keyword is used because the **ComputerName**
 parameter accepts only one value. For more information, see [about_Foreach](../Microsoft.PowerShell.Core/about/about_Foreach.md).
 
 ```powershell
 $S = 'Server01', 'Server02', 'Server03'
-ForEach ($Server in $S) {
+foreach ($Server in $S) {
   Get-WinEvent -ListLog Application -ComputerName $Server |
     Select-Object LogMode, MaximumSizeInBytes, RecordCount, LogName,
-      @{name='ComputerName'; expression={$Server}} |
+      @{Name='ComputerName'; Expression={$Server}} |
     Format-Table -AutoSize
 }
 ```
@@ -254,7 +254,7 @@ Circular           15532032        5309 Application Server03
 ```
 
 The variable `$S` stores the names three servers: **Server01**, **Server02**, and **Server03**. The
-**ForEach** statement uses a loop to process each server, `($Server in $S)`. The script block in the
+`foreach` statement uses a loop to process each server, `($Server in $S)`. The script block in the
 curly braces (`{ }`) runs the `Get-WinEvent` command. The **ListLog** parameter specifies the
 **Application** log. The **ComputerName** parameter uses the variable `$Server` to get log
 information from each server.
@@ -692,7 +692,7 @@ Hash table queries have the following rules:
 - The **Path** value takes paths to `.etl`, `.evt`, and `.evtx` log files.
 - The **LogName**, **Path**, and **ProviderName** keys can be used in the same query.
 - The **UserID** key can take a valid security identifier (SID) or a domain account name that can be
-  used to construct a valid **System.Security.Principal.NTAccount object**.
+  used to construct a valid **System.Security.Principal.NTAccount** object.
 - The **Data** value takes event data in an unnamed field. For example, events in classic event
   logs.
 - `<named-data>` key represents a named event data field.
@@ -778,7 +778,7 @@ Accept wildcard characters: False
 ### -Force
 
 Gets debug and analytic logs, in addition to other event logs. The **Force** parameter is required
-to get a debug or analytic log when the value of the name parameter includes wildcard characters.
+to get a debug or analytic log when the value of the Name parameter includes wildcard characters.
 
 By default, the `Get-WinEvent` cmdlet excludes these logs unless you specify the full name of a
 debug or analytic log.
@@ -842,7 +842,7 @@ cmdlet.
 > PowerShell does not limit the amount of logs you can request. However, the `Get-WinEvent` cmdlet
 > queries the Windows API which has a limit of 256. This can make it difficult to filter through all
 > of your logs at one time. You can work around this by using a `foreach` loop to iterate through each
-> log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.Logname }`
+> log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.LogName }`
 
 ```yaml
 Type: System.String[]

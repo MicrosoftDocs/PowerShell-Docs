@@ -30,8 +30,8 @@ PowerShell 2.0 uses the appropriately-named
 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet to import
 modules. When this cmdlet is run, Windows PowerShell searches for the specified module within the
 directories specified in the `PSModulePath` variable. When the specified directory is found, Windows
-PowerShell searches for files in the following order: module manifest files (.psd1), script module
-files (.psm1), binary module files (.dll). For more information about adding directories to the
+PowerShell searches for files in the following order: module manifest files (`.psd1`), script module
+files (`.psm1`), binary module files (.dll). For more information about adding directories to the
 search, see
 [about_PSModulePath](/powershell/module/microsoft.powershell.core/about/about_psmodulepath).
 The following code describes how to import a module:

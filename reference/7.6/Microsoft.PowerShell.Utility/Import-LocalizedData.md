@@ -61,7 +61,7 @@ file in the `C:\test\zh-CN` directory into the `$Messages` variable.
 ### Example 2: Import localized data strings
 
 This example is run at the command line not in a script. It gets localized data strings from the
-Test.psd1 file and displays them at the command line. Because the command isn't used in a script,
+`Test.psd1` file and displays them at the command line. Because the command isn't used in a script,
 the **FileName** parameter is required. The command uses the **UICulture** parameter to specify the
 en-US culture.
 
@@ -154,12 +154,12 @@ Import-LocalizedData -BindingVariable "UserMessages"
 $UserMessages.Msg1...
 ```
 
-In this example, the DATA section of the TestScript.ps1 script contains a `ConvertFrom-StringData`
+In this example, the DATA section of the `TestScript.ps1` script contains a `ConvertFrom-StringData`
 command that converts the contents of the DATA section to a hashtable and stores in the value of the
 `$UserMessages` variable.
 
 The script also includes an `Import-LocalizedData` command, which imports a hashtable of translated
-text strings from the TestScript.psd1 file in the subdirectory specified by the value of the
+text strings from the `TestScript.psd1` file in the subdirectory specified by the value of the
 `$PSUICulture` variable. If the command finds the `.psd1` file, it saves the translated strings from
 the file in the value of the same `$UserMessages` variable, overwriting the hashtable saved by the
 DATA section logic.
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 
 ### -FileName
 
-Specifies the name of the data file (`.psd1)` to be imported. Enter a filename. You can specify a
+Specifies the name of the data file (`.psd1`) to be imported. Enter a filename. You can specify a
 filename that doesn't include its `.psd1` filename extension, or you can specify the filename
 including the `.psd1` filename extension. Data files should be saved as Unicode or UTF-8.
 

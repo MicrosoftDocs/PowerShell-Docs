@@ -104,7 +104,7 @@ in the same PSSession that uses the `$p` variable. The following command counts
 the number of processes saved in `$p`.
 
 ```powershell
-Invoke-Command -Session $s -ScriptBlock {$p.count}
+Invoke-Command -Session $s -ScriptBlock {$p.Count}
 ```
 
 ## How to run a remote command on multiple computers

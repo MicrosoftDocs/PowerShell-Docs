@@ -27,8 +27,7 @@ cmdlet. You can't resume a workflow from within the workflow.
 ## Syntax
 
 ```
-workflow <Verb-Noun>
-{
+workflow <Verb-Noun> {
     Suspend-Workflow
 }
 ```
@@ -54,8 +53,7 @@ that represents the suspended workflow. The job type is **PSWorkflowJob**.
 You can use the job cmdlets, such as `Get-Job`, to manage the workflow job.
 
 ```powershell
-Workflow Test-Suspend
-{
+workflow Test-Suspend {
     $a = Get-Date
     Suspend-Workflow
     (Get-Date)- $a

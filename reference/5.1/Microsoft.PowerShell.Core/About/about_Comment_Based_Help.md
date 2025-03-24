@@ -70,12 +70,12 @@ Keywords define each section of comment-based help. Each comment-based help
 keyword is preceded by a dot `.`. The keywords can appear in any order. The
 keyword names aren't case-sensitive.
 
-For example, the `.Description` keyword precedes a description of a function or
+For example, the `.DESCRIPTION` keyword precedes a description of a function or
 script.
 
 ```powershell
 <#
-.Description
+.DESCRIPTION
 Get-Function displays the name and syntax of all functions in the session.
 #>
 ```
@@ -220,8 +220,8 @@ ignored.
 function Verb-Noun {
     [CmdletBinding()]
     param (
-        # This is the same as .Parameter
-        [string]$Computername
+        # This is the same as .PARAMETER
+        [string]$ComputerName
     )
     # Verb the Noun on the computer
 }
@@ -256,7 +256,7 @@ Repeat the `.LINK` keyword for each related topic.
 
 This content appears in the Related Links section of the help topic.
 
-The `.Link` keyword content can also include a Uniform Resource Identifier
+The `.LINK` keyword content can also include a Uniform Resource Identifier
 (URI) to an online version of the same help topic. The online version opens
 when you use the **Online** parameter of `Get-Help`. The URI must begin with
 "http" or "https".
@@ -290,7 +290,7 @@ provider.
 
 ### .FORWARDHELPCATEGORY
 
-Specifies the help category of the item in `.ForwardHelpTargetName`. Valid
+Specifies the help category of the item in `.FORWARDHELPTARGETNAME`. Valid
 values are `Alias`, `Cmdlet`, `HelpFile`, `Function`, `Provider`, `General`,
 `FAQ`, `Glossary`, `ScriptCommand`, `ExternalScript`, `Filter`, or `All`. Use
 this keyword to avoid conflicts when there are commands with the same name.
@@ -369,11 +369,11 @@ type, the **Object** type is inserted as the default value.
 ### Parameter List
 
 The parameter list in the help topic is generated from the function or script
-syntax and from the descriptions that you add by using the `.Parameter`
+syntax and from the descriptions that you add by using the `.PARAMETER`
 keyword. The function parameters appear in the **Parameters** section of the
 help topic in the same order that they appear in the function or script syntax.
 The spelling and capitalization of parameter names is also taken from the
-syntax. It isn't affected by the parameter name specified by the `.Parameter`
+syntax. It isn't affected by the parameter name specified by the `.PARAMETER`
 keyword.
 
 ### Common Parameters
@@ -408,8 +408,8 @@ The following sample function includes comment-based help:
 function Add-Extension
 {
 param ([string]$Name,[string]$Extension = "txt")
-$name = $name + "." + $extension
-$name
+$Name = $Name + "." + $Extension
+$Name
 
 <#
 .SYNOPSIS
@@ -438,17 +438,17 @@ or file name.
 
 .EXAMPLE
 
-PS> extension -name "File"
+PS> Add-Extension -Name "File"
 File.txt
 
 .EXAMPLE
 
-PS> extension -name "File" -extension "doc"
+PS> Add-Extension -Name "File" -Extension "doc"
 File.doc
 
 .EXAMPLE
 
-PS> extension "File" "doc"
+PS> Add-Extension "File" "doc"
 File.doc
 
 .LINK
@@ -511,7 +511,7 @@ Accept wildcard characters?
 This cmdlet supports the common parameters: -Verbose, -Debug,
 -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,
 -OutBuffer and -OutVariable. For more information, type
-"get-help about_commonparameters".
+"Get-Help about_CommonParameters".
 
 INPUTS
 None. You can't pipe objects to Add-Extension.
@@ -523,17 +523,17 @@ file name.
 
 Example 1
 
-PS> extension -name "File"
+PS> Add-Extension -Name "File"
 File.txt
 
 Example 2
 
-PS> extension -name "File" -extension "doc"
+PS> Add-Extension -Name "File" -Extension "doc"
 File.doc
 
 Example 3
 
-PS> extension "File" "doc"
+PS> Add-Extension "File" "doc"
 File.doc
 
 RELATED LINKS
@@ -556,15 +556,15 @@ param
 
 [string]
 #Specifies the file name.
-$name,
+$Name,
 
 [string]
 #Specifies the file name extension. "Txt" is the default.
-$extension = "txt"
+$Extension = "txt"
 )
 
-$name = $name + "." + $extension
-$name
+$Name = $Name + "." + $Extension
+$Name
 
 <#
 .SYNOPSIS
@@ -587,17 +587,17 @@ file name.
 
 .EXAMPLE
 
-PS> extension -name "File"
+PS> Add-Extension -Name "File"
 File.txt
 
 .EXAMPLE
 
-PS> extension -name "File" -extension "doc"
+PS> Add-Extension -Name "File" -Extension "doc"
 File.doc
 
 .EXAMPLE
 
-PS> extension "File" "doc"
+PS> Add-Extension "File" "doc"
 File.doc
 
 .LINK
@@ -614,8 +614,8 @@ Set-Item
 ### Comment-based Help for a Script
 
 The following sample script includes comment-based help. Notice the blank lines
-between the closing `#>` and the `Param` statement. In a script that doesn't
-have a `Param` statement, there must be at least two blank lines between the
+between the closing `#>` and the `param` statement. In a script that doesn't
+have a `param` statement, there must be at least two blank lines between the
 final comment in the help topic and the first function declaration. Without
 these blank lines, `Get-Help` associates the help topic with the function, not
 the script.
@@ -653,22 +653,22 @@ PS> .\Update-Month.ps1
 
 .EXAMPLE
 
-PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+PS> .\Update-Month.ps1 -InputPath C:\Data\January.csv
 
 .EXAMPLE
 
-PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath `
+PS> .\Update-Month.ps1 -InputPath C:\Data\January.csv -OutputPath `
 C:\Reports\2009\January.csv
 #>
 
-param ([string]$InputPath, [string]$OutPutPath)
+param ([string]$InputPath, [string]$OutputPath)
 
 function Get-Data { }
 ...
 ```
 
 The following command gets the script help. Because the script isn't in a
-directory that's listed in the `$env:Path` environment variable, the
+directory that's listed in the `$Env:PATH` environment variable, the
 `Get-Help` command that gets the script help must specify the script path.
 
 ```powershell
@@ -720,7 +720,7 @@ Accept wildcard characters?
 This cmdlet supports the common parameters: -Verbose, -Debug,
 -ErrorAction, -ErrorVariable, -WarningAction, -WarningVariable,
 -OutBuffer and -OutVariable. For more information, type,
-"get-help about_commonparameters".
+"Get-Help about_CommonParameters".
 
 # INPUTS
 
@@ -736,11 +736,11 @@ PS> .\Update-Month.ps1
 
 Example 2
 
-PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv
+PS> .\Update-Month.ps1 -InputPath C:\Data\January.csv
 
 Example 3
 
-PS> .\Update-Month.ps1 -inputpath C:\Data\January.csv -outputPath
+PS> .\Update-Month.ps1 -InputPath C:\Data\January.csv -OutputPath
 C:\Reports\2009\January.csv
 
 # RELATED LINKS
@@ -762,7 +762,7 @@ the keyword. Any other placement is ineffective.
 ```powershell
 # .EXTERNALHELP C:\MyScripts\Update-Month-Help.xml
 
-param ([string]$InputPath, [string]$OutPutPath)
+param ([string]$InputPath, [string]$OutputPath)
 function Get-Data { }
 ...
 ```
@@ -774,17 +774,17 @@ keyword in a function.
 function Add-Extension {
     # .EXTERNALHELP C:\ps-test\Add-Extension.xml
 
-    param ([string] $name, [string]$extension = "txt")
-    $name = $name + "." + $extension
-    $name
+    param ([string] $Name, [string]$Extension = "txt")
+    $Name = $Name + "." + $Extension
+    $Name
 }
 ```
 
 ```powershell
 function Add-Extension {
-    param ([string] $name, [string]$extension = "txt")
-    $name = $name + "." + $extension
-    $name
+    param ([string] $Name, [string]$Extension = "txt")
+    $Name = $Name + "." + $Extension
+    $Name
 
     # .EXTERNALHELP C:\ps-test\Add-Extension.xml
 }
@@ -793,9 +793,9 @@ function Add-Extension {
 ```powershell
 # .EXTERNALHELP C:\ps-test\Add-Extension.xml
 function Add-Extension {
-    param ([string] $name, [string]$extension = "txt")
-    $name = $name + "." + $extension
-    $name
+    param ([string] $Name, [string]$Extension = "txt")
+    $Name = $Name + "." + $Extension
+    $Name
 }
 ```
 
@@ -804,7 +804,7 @@ function Add-Extension {
 The following code is an excerpt from the beginning of the built-in help
 function in PowerShell, which displays one screen of help text at a time.
 Because the help topic for the `Get-Help` cmdlet describes the help function,
-the help function uses the `.ForwardHelpTargetName` and `.ForwardHelpCategory`
+the help function uses the `.FORWARDHELPTARGETNAME` and `.FORWARDHELPCATEGORY`
 keywords to redirect the user to the `Get-Help` cmdlet help topic.
 
 ```powershell

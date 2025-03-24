@@ -153,7 +153,7 @@ Get-Item /not-here 2>&1 >> log.txt
 
 $ErrorActionPreference = 'Stop'
 $ErrorActionPreference >> log.txt
-Try {
+try {
     Get-Item /not-here 2>&1 >> log.txt
 }
 catch {
@@ -181,7 +181,7 @@ Can't find path 'C:\not-here' because it doesn't exist.
 [Y] Yes  [A] Yes to All  [H] Halt Command  [S] Suspend  [?] Help (default is "Y"): H
 Get-Item: C:\temp\test.ps1:23
 Line |
-  23 |  get-item /not-here 2>&1 >> log.txt
+  23 |  Get-Item /not-here 2>&1 >> log.txt
      |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      | The running command stopped because the user selected the Stop option.
 ```
@@ -194,7 +194,7 @@ Continue
 
 Get-Item: C:\temp\test.ps1:3
 Line |
-   3 |  get-item /not-here 2>&1 >> log.txt
+   3 |  Get-Item /not-here 2>&1 >> log.txt
      |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      | Cannot find path 'C:\not-here' because it does not exist.
 
@@ -252,7 +252,7 @@ redirection operators as well. Put the following command near the top of your
 script to set `Out-File:Width` for the whole script:
 
 ```powershell
-$PSDefaultParameterValues['out-file:width'] = 2000
+$PSDefaultParameterValues['Out-File:Width'] = 2000
 ```
 
 Increasing the output width will increase memory consumption when logging
@@ -264,7 +264,7 @@ you will need to pipe the output through `Format-Table -AutoSize` before
 outputting to file.
 
 ```powershell
-$PSDefaultParameterValues['out-file:width'] = 2000
+$PSDefaultParameterValues['Out-File:Width'] = 2000
 Get-Service | Format-Table -AutoSize > services.log
 ```
 

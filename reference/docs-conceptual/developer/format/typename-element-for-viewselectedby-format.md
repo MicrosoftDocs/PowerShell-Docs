@@ -53,7 +53,7 @@ and [Custom View Components](./creating-custom-controls.md).
 
 ## Example
 
-The following example shows how to specify the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+The following example shows how to specify the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object for a list view. The same schema is used for table, wide, and custom views.
 
 ```xml

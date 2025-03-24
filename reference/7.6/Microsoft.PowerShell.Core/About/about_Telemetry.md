@@ -63,12 +63,12 @@ PowerShell sends this information periodically during the lifetime of the
 session for all host applications.
 
 To opt-out of this telemetry, set the environment variable
-`$env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`. For this
+`$Env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`. For this
 environment variable to have effect, it must be set before starting the
 PowerShell process. For more information, see
 [about_Environment_Variables][01].
 
-The `$env:POWERSHELL_DISTRIBUTION_CHANNEL` environment variable is set by the
+The `$Env:POWERSHELL_DISTRIBUTION_CHANNEL` environment variable is set by the
 installer packages to record the method and source of installation for
 PowerShell. Since this information is included in the telemetry data sent to
 Microsoft, users shouldn't change this value.

@@ -183,7 +183,7 @@ release:
 - Supporting line-wise yanks, including paste and undo
 - Make `y0` yank up to the start of the logical line in `VI` mode
 - Add API to detect if the screen reader is active
-- Make `PageUp/PageDown` and `CtrlPageUp/CtrlPageDown` windows only
+- Make `PageUp/PageDown` and `CtrlPageUp/CtrlPageDown` Windows-only
 - Add script block vi mode indicator option
 - Support vi mode `G` and `gg` movements in multi-line buffers
 - Supports `_` and `$` to move to the beginning and end of the logical line in

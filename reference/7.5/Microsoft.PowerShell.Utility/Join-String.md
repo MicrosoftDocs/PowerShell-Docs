@@ -166,7 +166,7 @@ $parms = @{
   OutputSuffix = "`n}`n"
   Separator = "`n"
 }
-$obj.PSObject.Properties | Join-String @parms
+$obj.psobject.Properties | Join-String @parms
 ```
 
 ```Output

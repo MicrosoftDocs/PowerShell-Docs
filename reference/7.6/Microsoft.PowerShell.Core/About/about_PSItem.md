@@ -190,7 +190,7 @@ parameters that take input from the pipeline.
 function Write-JsonLog {
     [CmdletBinding()]
     param(
-        [parameter(ValueFromPipelineByPropertyName)]
+        [Parameter(ValueFromPipelineByPropertyName)]
         [string]$Message
     )
     begin {
@@ -378,9 +378,9 @@ was included, verify that the path is correct and try again.
 For more examples, see the _Accessing exception information_ section in
 [about_Try_Catch_Finally][14].
 
-## The -replace operator's substitution scriptblock
+## The `-replace` operator's substitution scriptblock
 
-Starting in PowerShell 6, you can use `$PSItem` when calling the [replace][04]
+Starting in PowerShell 6, you can use `$PSItem` when calling the [-replace][04]
 operator and defining a [substitution scriptblock][05]. When you do, the value
 of `$PSItem` is the value of the current match.
 

@@ -147,17 +147,17 @@ PowerShell supports the following type accelerators:
 | ----------- | -------------------- | ------------------------------- |
 | `[byte]`    |                      | Byte (unsigned)                 |
 | `[sbyte]`   |                      | Byte (signed)                   |
-| `[Int16]`   |                      | 16-bit integer                  |
+| `[int16]`   |                      | 16-bit integer                  |
 | `[short]`   | alias for `[int16]`  | 16-bit integer                  |
-| `[UInt16]`  |                      | 16-bit integer (unsigned)       |
+| `[uint16]`  |                      | 16-bit integer (unsigned)       |
 | `[ushort]`  | alias for `[uint16]` | 16-bit integer (unsigned)       |
-| `[Int32]`   |                      | 32-bit integer                  |
+| `[int32]`   |                      | 32-bit integer                  |
 | `[int]`     | alias for `[int32]`  | 32-bit integer                  |
-| `[UInt32]`  |                      | 32-bit integer (unsigned)       |
+| `[uint32]`  |                      | 32-bit integer (unsigned)       |
 | `[uint]`    | alias for `[uint32]` | 32-bit integer (unsigned)       |
-| `[Int64]`   |                      | 64-bit integer                  |
+| `[int64]`   |                      | 64-bit integer                  |
 | `[long]`    | alias for `[int64]`  | 64-bit integer                  |
-| `[UInt64]`  |                      | 64-bit integer (unsigned)       |
+| `[uint64]`  |                      | 64-bit integer (unsigned)       |
 | `[ulong]`   | alias for `[uint64]` | 64-bit integer (unsigned)       |
 | `[bigint]`  |                      | See [BigInteger Struct][bigint] |
 | `[single]`  |                      | Single precision floating point |
@@ -314,20 +314,20 @@ If the literal contains a decimal point or the e-notation, the literal string
 is parsed as a real number.
 
 - If the decimal-suffix is present then directly into `[decimal]`.
-- Else, parse as `[Double]` and apply multiplier to the value. Then check the
+- Else, parse as `[double]` and apply multiplier to the value. Then check the
   type suffixes and attempt to cast into appropriate type.
-- If the string has no type suffix, then parse as `[Double]`.
+- If the string has no type suffix, then parse as `[double]`.
 
 ### Parsing integer numeric literals
 
 Integer type literals are parsed using the following steps:
 
 1. Determine the radix format
-   - For binary formats, parse into `[BigInteger]`.
-   - For hexadecimal formats, parse into `[BigInteger]` using special cases to
+   - For binary formats, parse into `[bigint]`.
+   - For hexadecimal formats, parse into `[bigint]` using special cases to
      retain original behaviors when the value is in the `[int]` or `[long]`
      range.
-   - If neither binary nor hex, parse normally as a `[BigInteger]`.
+   - If neither binary nor hex, parse normally as a `[bigint]`.
 1. Apply the multiplier value before attempting any casts to ensure type bounds
    can be appropriately checked without overflows.
 1. Check type suffixes.
@@ -373,7 +373,7 @@ PS> 111111111111111111111111111111111111111111111111111111n
 
 Also values between `[ulong]::MaxValue` and `[decimal]::MaxValue` should be
 denoted using the decimal-suffix `D` to maintain accuracy. Without the suffix,
-these values are parsed as `[Double]` using the real-parsing mode.
+these values are parsed as `[double]` using the real-parsing mode.
 
 <!-- reference links -->
 [bigint]: /dotnet/api/system.numerics.biginteger

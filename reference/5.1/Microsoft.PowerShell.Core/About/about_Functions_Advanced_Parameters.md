@@ -128,14 +128,14 @@ As shown above, cmdlets use culture-sensitive parsing to convert the string.
 # Define an equivalent function.
 function Get-Date_Func {
   param(
-    [DateTime] $Date
+    [datetime] $Date
   )
   process {
     $Date
   }
 }
 
-[CultureInfo]::CurrentCulture = 'de-DE'
+[cultureinfo]::CurrentCulture = 'de-DE'
 
 # This German-format date string doesn't work with the invariant culture.
 # E.g., [datetime] '19-06-2018' breaks.
@@ -302,7 +302,7 @@ function Get-Sample {
       $attributeCollection.Add($parameterAttribute)
 
       $dynParam1 = [System.Management.Automation.RuntimeDefinedParameter]::new(
-        'KeyCount', [Int32], $attributeCollection
+        'KeyCount', [int32], $attributeCollection
       )
 
       $paramDictionary = [System.Management.Automation.RuntimeDefinedParameterDictionary]::new()
@@ -724,7 +724,7 @@ function TestDefaultValue {
 Use `Get-Help` to see the default value information.
 
 ```powershell
-Get-Help TestDefaultValue -Parameter name
+Get-Help TestDefaultValue -Parameter Name
 ```
 
 ```Output
@@ -1004,7 +1004,7 @@ between zero and ten.
 param(
     [Parameter(Mandatory)]
     [ValidateRange(0,10)]
-    [Int]$Attempts
+    [int]$Attempts
 )
 ```
 
@@ -1033,7 +1033,7 @@ greater than or equal to the current date.
 param(
     [Parameter(Mandatory)]
     [ValidateScript({$_ -ge (Get-Date)})]
-    [DateTime]$EventDate
+    [datetime]$EventDate
 )
 ```
 
@@ -1041,7 +1041,7 @@ In the following example, the value of the variable `$date` must be less than
 or equal to the current date and time.
 
 ```powershell
-[ValidateScript({$_ -le (Get-Date)})] [DateTime]$date = (Get-Date)
+[ValidateScript({$_ -le (Get-Date)})] [datetime]$date = (Get-Date)
 ```
 
 > [!NOTE]
@@ -1103,18 +1103,18 @@ more information, see [about_Tab_Expansion][18].
 
 #### Dynamic ValidateSet values using classes
 
-You can use a **Class** to dynamically generate the values for **ValidateSet**
+You can use a `class` to dynamically generate the values for **ValidateSet**
 at runtime. In the following example, the valid values for the variable
-`$Sound` are generated via a **Class** named **SoundNames** that checks three
+`$Sound` are generated via a `class` named **SoundNames** that checks three
 filesystem paths for available sound files:
 
 ```powershell
-Class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
+class SoundNames : System.Management.Automation.IValidateSetValuesGenerator {
     [string[]] GetValidValues() {
         $SoundPaths = '/System/Library/Sounds/',
             '/Library/Sounds','~/Library/Sounds'
-        $SoundNames = ForEach ($SoundPath in $SoundPaths) {
-            If (Test-Path $SoundPath) {
+        $SoundNames = foreach ($SoundPath in $SoundPaths) {
+            if (Test-Path $SoundPath) {
                 (Get-ChildItem $SoundPath).BaseName
             }
         }
@@ -1148,13 +1148,13 @@ that implicitly converts a null value, such as a **string**, the null value is
 converted to an empty string even when using the **ValidateNotNull** attribute.
 For this scenario use the **ValidateNotNullOrEmpty** attribute.
 
-In the following example, the value of the **ID** parameter can't be `$null`.
+In the following example, the value of the **Id** parameter can't be `$null`.
 
 ```powershell
 param(
     [Parameter()]
     [ValidateNotNull()]
-    $ID
+    $Id
 )
 ```
 
@@ -1235,7 +1235,7 @@ You can define `User` drive in Just Enough Administration (JEA) session
 configurations. For this example, we create the User: drive.
 
 ```powershell
-New-PSDrive -Name 'User' -PSProvider FileSystem -Root $env:HOMEPATH
+New-PSDrive -Name 'User' -PSProvider FileSystem -Root $Env:HOMEPATH
 ```
 
 ```Output

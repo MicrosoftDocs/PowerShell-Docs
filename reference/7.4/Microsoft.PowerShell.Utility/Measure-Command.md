@@ -35,7 +35,7 @@ This example measures the time it takes to run a `Get-EventLog` command that get
 Windows PowerShell event log.
 
 ```powershell
-Measure-Command { Get-EventLog "windows powershell" }
+Measure-Command { Get-EventLog "Windows PowerShell" }
 ```
 
 ### Example 2: Compare two outputs from Measure-Command

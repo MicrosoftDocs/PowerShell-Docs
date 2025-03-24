@@ -157,7 +157,7 @@ Some code samples use splatting to reduce the line length. For more information,
 This example runs the `Test.ps1` script on the Server01 computer.
 
 ```powershell
-Invoke-Command -FilePath c:\scripts\test.ps1 -ComputerName Server01
+Invoke-Command -FilePath C:\scripts\test.ps1 -ComputerName Server01
 ```
 
 The **FilePath** parameter specifies a script that is located on the local computer. The script runs
@@ -207,10 +207,10 @@ This example compares the effects of using **ComputerName** and **Session** para
 data.
 
 ```powershell
-Invoke-Command -ComputerName Server02 -ScriptBlock { $p = Get-Process PowerShell }
+Invoke-Command -ComputerName Server02 -ScriptBlock { $p = Get-Process powershell }
 Invoke-Command -ComputerName Server02 -ScriptBlock { $p.VirtualMemorySize }
 $s = New-PSSession -ComputerName Server02
-Invoke-Command -Session $s -ScriptBlock { $p = Get-Process PowerShell }
+Invoke-Command -Session $s -ScriptBlock { $p = Get-Process powershell }
 Invoke-Command -Session $s -ScriptBlock { $p.VirtualMemorySize }
 ```
 
@@ -300,13 +300,13 @@ but the job exists on the local computer. The results are transmitted to the loc
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
-Invoke-Command -Session $s -ScriptBlock { Get-EventLog system } -AsJob
+Invoke-Command -Session $s -ScriptBlock { Get-EventLog System } -AsJob
 ```
 
 ```Output
 Id   Name    State      HasMoreData   Location           Command
 ---  ----    -----      -----         -----------        ---------------
-1    Job1    Running    True          Server01,Server02  Get-EventLog system
+1    Job1    Running    True          Server01,Server02  Get-EventLog System
 ```
 
 ```powershell
@@ -318,7 +318,7 @@ $j | Format-List -Property *
 HasMoreData   : True
 StatusMessage :
 Location      : Server01,Server02
-Command       : Get-EventLog system
+Command       : Get-EventLog System
 JobStateInfo  : Running
 Finished      : System.Threading.ManualResetEvent
 InstanceId    : e124bb59-8cb2-498b-a0d2-2e07d4e030ca
@@ -351,9 +351,9 @@ the results in the `$results` variable.
 ### Example 9: Include local variables in a command run on a remote computer
 
 This example shows how to include the values of local variables in a command run on a remote
-computer. The command uses the `Using` scope modifier to identify a local variable in a remote
-command. By default, all variables are assumed to be defined in the remote session. The `Using`
-scope modifier was introduced in PowerShell 3.0. For more information about the `Using` scope
+computer. The command uses the `Using:` scope modifier to identify a local variable in a remote
+command. By default, all variables are assumed to be defined in the remote session. The `Using:`
+scope modifier was introduced in PowerShell 3.0. For more information about the `Using:` scope
 modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md) and
 [about_Scopes](./about/about_scopes.md).
 
@@ -366,8 +366,8 @@ Invoke-Command -ComputerName Server01 -ScriptBlock {
 
 The `$Log` variable stores the name of the event log, Windows PowerShell. The `Invoke-Command`
 cmdlet runs `Get-EventLog` on Server01 to get the ten newest events from the event log. The value of
-the **LogName** parameter is the `$Log` variable, which is prefixed by the `Using` scope modifier to
-indicate that it was created in the local session, not in the remote session.
+the **LogName** parameter is the `$Log` variable, which is prefixed by the `Using:` scope modifier
+to indicate that it was created in the local session, not in the remote session.
 
 ### Example 10: Hide the computer name
 
@@ -377,7 +377,7 @@ display. You can still use the **Format** cmdlets to display the **PsComputerNam
 of the affected objects.
 
 ```powershell
-Invoke-Command -ComputerName S1, S2 -ScriptBlock { Get-Process PowerShell }
+Invoke-Command -ComputerName S1, S2 -ScriptBlock { Get-Process powershell }
 ```
 
 ```Output
@@ -389,7 +389,7 @@ S2                777      14        35100      30988   150     3.68     67   Po
 
 ```powershell
 Invoke-Command -ComputerName S1, S2 -HideComputerName -ScriptBlock {
-    Get-Process PowerShell
+    Get-Process powershell
 }
 ```
 
@@ -405,21 +405,21 @@ process. The output of the first command includes the **PsComputerName** propert
 the name of the computer on which the command ran. The output of the second command, which uses
 **HideComputerName**, doesn't include the **PsComputerName** column.
 
-### Example 11: Use the Param keyword in a script block
+### Example 11: Use the `param` keyword in a script block
 
-The `Param` keyword and the **ArgumentList** parameter are used to pass variable values to named
+The `param` keyword and the **ArgumentList** parameter are used to pass variable values to named
 parameters in a script block. This example displays filenames that begin with the letter `a` and
 have the `.pdf` extension.
 
-For more information about the `Param` keyword, see
+For more information about the `param` keyword, see
 [about_Language_Keywords](./about/about_language_keywords.md#param).
 
 ```powershell
 $parameters = @{
     ComputerName = 'Server01'
     ScriptBlock  = {
-        Param ($param1, $param2)
-        Get-ChildItem -Name $param1 -Include $param2
+        param ($Param1, $Param2)
+        Get-ChildItem -Name $Param1 -Include $Param2
     }
     ArgumentList = 'a*', '*.pdf'
 }
@@ -433,8 +433,8 @@ ac.pdf
 az.pdf
 ```
 
-`Invoke-Command` uses the **ScriptBlock** parameter that defines two variables, `$param1` and
-`$param2`. `Get-ChildItem` uses the named parameters, **Name** and **Include** with the variable
+`Invoke-Command` uses the **ScriptBlock** parameter that defines two variables, `$Param1` and
+`$Param2`. `Get-ChildItem` uses the named parameters, **Name** and **Include** with the variable
 names. The **ArgumentList** passes the values to the variables.
 
 ### Example 12: Use the $args automatic variable in a script block
@@ -1415,7 +1415,7 @@ on a single computer.
 
 If the remote computer isn't in a domain that the local computer trusts, the computer might not be
 able to authenticate the user's credentials. To add the remote computer to the list of trusted hosts
-in WS-Management, use the following command in the `WSMAN` provider, where `<Remote-Computer-Name>`
+in WS-Management, use the following command in the `WSMan` provider, where `<Remote-Computer-Name>`
 is the name of the remote computer:
 
 `Set-Item -Path WSMan:\Localhost\Client\TrustedHosts -Value \<Remote-Computer-Name\>`

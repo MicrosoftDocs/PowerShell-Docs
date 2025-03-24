@@ -149,8 +149,8 @@ Get-History | Sort-Object -Property Id -Descending
    8 Get-Command Sort-Object -Syntax
    7 Get-Command Sort-Object -ShowCommandInfo
    6 Get-ChildItem -Path C:\Test | Sort-Object -Property Length
-   5 Get-Help Clear-History -online
-   4 Get-Help Clear-History -full
+   5 Get-Help Clear-History -Online
+   4 Get-Help Clear-History -Full
    3 Get-ChildItem | Get-Member
    2 Get-Command Sort-Object -Syntax
    1 Set-Location C:\Test\
@@ -590,8 +590,8 @@ use a scriptblock or a hashtable.
 
 Valid keys for a hash table are as follows:
 
-- `expression` - `<string>` or `<script block>`
-- `ascending` or `descending` - `<boolean>`
+- `Expression` - `<string>` or `<script block>`
+- `Ascending` or `Descending` - `<boolean>`
 
 For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).

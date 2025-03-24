@@ -203,8 +203,8 @@ class BookList {
     # Static method to initialize the list of books. Called in the other
     # static methods to avoid needing to explicit initialize the value.
     static [void] Initialize()             { [BookList]::Initialize($false) }
-    static [bool] Initialize([bool]$force) {
-        if ([BookList]::Books.Count -gt 0 -and -not $force) {
+    static [bool] Initialize([bool]$Force) {
+        if ([BookList]::Books.Count -gt 0 -and -not $Force) {
             return $false
         }
 
@@ -527,7 +527,7 @@ module is removed, so are the type accelerators.
 
 ## Manually importing classes from a PowerShell module
 
-`Import-Module` and the `#requires` statement only import the module functions,
+`Import-Module` and the `#Requires` statement only import the module functions,
 aliases, and variables, as defined by the module. Classes aren't imported.
 
 If a module defines classes and enumerations but doesn't add type accelerators

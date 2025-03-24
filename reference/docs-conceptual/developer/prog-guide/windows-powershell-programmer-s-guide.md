@@ -39,7 +39,7 @@ PowerShell runtime processes all command types just as it does cmdlets, using pi
 
 In addition to commands, Windows PowerShell supports various customizable Windows PowerShell
 providers that make available specific sets of cmdlets. The shell operates within the Windows
-PowerShell-provided host application (Windows PowerShell.exe), but it is equally accessible from a
+PowerShell-provided host application (`powershell.exe`), but it is equally accessible from a
 custom host application that you can develop to meet specific requirements. For more information,
 see [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
 

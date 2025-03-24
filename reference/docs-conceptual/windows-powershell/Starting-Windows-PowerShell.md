@@ -41,7 +41,7 @@ In Windows Command shell, Windows PowerShell, or Windows PowerShell ISE, to star
 PowerShell, type: `PowerShell`.
 
 You can also use the parameters of the `powershell.exe` program to customize the session. For more
-information, see [PowerShell.exe Command-Line Help][03].
+information, see [about_PowerShell_exe][03].
 
 ### With Administrative privileges (Run as administrator)
 

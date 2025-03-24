@@ -22,7 +22,7 @@ The Credential attribute is an optional attribute that can be used with credenti
 
 - This attribute is used with the Parameter attribute. For more information about that attribute, see [Parameter Attribute Declaration](./parameter-attribute-declaration.md).
 
-- The credential attribute is defined by the [System.Management.Automation.Credentialattribute](/dotnet/api/System.Management.Automation.CredentialAttribute) class.
+- The credential attribute is defined by the [System.Management.Automation.CredentialAttribute](/dotnet/api/System.Management.Automation.CredentialAttribute) class.
 
 ## See Also
 

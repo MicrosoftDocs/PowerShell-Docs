@@ -48,7 +48,7 @@ to the following default commands (and aliases):
 
 No PowerShell providers are available, nor are any external programs (executables or scripts).
 
-For more information about language modes, see [about_Language_modes][01].
+For more information about language modes, see [about_Language_Modes][01].
 
 ### Choose the JEA identity
 
@@ -191,7 +191,7 @@ to the user.
 
 When specifying local users or groups in the role definitions field, be sure to use the computer
 name, not **localhost** or wildcards. You can check the computer name by inspecting the
-`$env:COMPUTERNAME` variable.
+`$Env:COMPUTERNAME` variable.
 
 ```powershell
 RoleDefinitions = @{
@@ -207,7 +207,7 @@ capabilities are available on the system with the same name, PowerShell uses its
 order to select the effective role capability file. JEA does **not** give access to all role
 capability files with the same name.
 
-JEA uses the `$env:PSModulePath` environment variable to determine which paths to scan for role
+JEA uses the `$Env:PSModulePath` environment variable to determine which paths to scan for role
 capability files. Within each of those paths, JEA looks for valid PowerShell modules that contain a
 "RoleCapabilities" subfolder. As with importing modules, JEA prefers role capabilities that are
 shipped with Windows to custom role capabilities with the same name.

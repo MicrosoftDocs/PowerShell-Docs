@@ -101,21 +101,21 @@ You can retrieve a function's definition by accessing the **Definition**
 property, as shown below.
 
 ```powershell
-(Get-Item -Path function:more).Definition
+(Get-Item -Path Function:more).Definition
 ```
 
 You can also retrieve a function's definition using its provider path prefixed
 by the dollar sign (`$`).
 
 ```powershell
-$function:more
+$Function:more
 ```
 
 To retrieve the definition for a function that has a dash (`-`) in the name,
 wrap the value after the dollar sign in curly braces.
 
 ```powershell
-${function:Clear-Host}
+${Function:Clear-Host}
 ```
 
 ### Getting selected functions
@@ -132,7 +132,7 @@ Get-Item -Path man | Format-Table -Wrap -AutoSize
 
 ### Working with Function provider paths
 
-These commands both get the function named `c:`. The first command can be used
+These commands both get the function named `C:`. The first command can be used
 in any drive. The second command is used in the `Function:` drive. Because the
 name ends in a colon, which is the syntax for a drive, you must qualify the
 path with the drive name. Within the `Function:` drive, you can use either
@@ -160,7 +160,7 @@ function, it is available only in the scope in which it was created. To make a
 function available, use a scope modifier when you create the function. For more
 information, see [about_Scopes][15].
 
-The following example uses the `global:` scope modifier to create a function in
+The following example uses the `Global:` scope modifier to create a function in
 the global scope.
 
 ```powershell
@@ -170,14 +170,14 @@ function New-Function {
         [scriptblock] $Script
     )
 
-    $lp = "Function:\global:$($name)"
-    Set-Item -LiteralPath $lp -Value $script -PassThru -Force
+    $lp = "Function:\Global:$($Name)"
+    Set-Item -LiteralPath $lp -Value $Script -PassThru -Force
 }
 
 New-Function -Name 'Win32:' -Script { Set-Location C:\Windows\System32 }
 ```
 
-Without the `global:` scope modifier, the function would be created in the
+Without the `Global:` scope modifier, the function would be created in the
 local scope. When `New-Function` exits the newly created function would no
 longer exist.
 
@@ -269,7 +269,7 @@ Get-Help Get-ChildItem
 ```
 
 ```powershell
-Get-Help Get-ChildItem -Path function:
+Get-Help Get-ChildItem -Path Function:
 ```
 
 ## See also

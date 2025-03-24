@@ -305,7 +305,7 @@ Update-Help -Module DhcpServer -SourcePath E:\UsbDrive\SavedHelp
 Without parameters, `Save-Help` downloads help for all modules in the session
 and for all installed modules that support Updatable Help. To be included,
 modules must be installed in directories that are listed in the value of the
-`$env:PSModulePath` environment variable, on either the local computer or on a
+`$Env:PSModulePath` environment variable, on either the local computer or on a
 remote computer for which you want to save help. These are also modules that
 are returned by running a `Get-Help -ListAvailable` command.
 
@@ -322,10 +322,10 @@ However, you can use the **UICulture** parameters of the `Update-Help` and
 which they're available.
 
 For example, to save the newest help files for all modules on the session in
-Japanese (ja-Jp) and French (fr-FR), type:
+Japanese (ja-JP) and French (fr-FR), type:
 
 ```powershell
-Save-Help -Path \Server\Share -UICulture ja-jp, fr-fr
+Save-Help -Path \Server\Share -UICulture ja-JP, fr-FR
 ```
 
 If help files for the modules aren't available in the languages that you
@@ -403,7 +403,7 @@ only a module name. They don't accept the path to a module file.
 
 Use this technique to update or save help for any module that's not returned by
 the **ListAvailable** parameter of the `Get-Module` cmdlet, such as a module
-that's installed in a location that's not listed in the `$env:PSModulePath`
+that's installed in a location that's not listed in the `$Env:PSModulePath`
 environment variable, or a module that's not well-formed (the module directory
 doesn't contain at least one file whose basename is the same as the directory
 name).

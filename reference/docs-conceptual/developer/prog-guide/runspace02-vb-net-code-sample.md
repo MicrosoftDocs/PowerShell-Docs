@@ -6,7 +6,7 @@ title: Runspace02 (VB.NET) Code Sample
 ---
 # Runspace02 (VB.NET) Code Sample
 
-Here is the VB.NET source code for the Runspace02 sample. This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously. Windows Forms and data binding are then used to display the results in a DataGridView control.
+Here is the VB.NET source code for the Runspace02 sample. This sample uses the [System.Management.Automation.RunspaceInvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously. Windows Forms and data binding are then used to display the results in a DataGridView control.
 
 ## Code Sample
 
@@ -34,7 +34,7 @@ Namespace Microsoft.Samples.PowerShell.Runspaces
             Dim invoker As New RunspaceInvoke()
 
             Dim results As Collection(Of PSObject) = _
-                invoker.Invoke("get-process | sort-object ID")
+                invoker.Invoke("Get-Process | Sort-Object ID")
 
             ' The generic collection needs to be re-wrapped in an ArrayList
             ' for data-binding to work...
@@ -52,7 +52,7 @@ Namespace Microsoft.Samples.PowerShell.Runspaces
 
         ''' <summary>
         ''' This sample uses the RunspaceInvoke class to execute
-        ''' the get-process cmdlet synchronously. Windows Forms and data
+        ''' the Get-Process cmdlet synchronously. Windows Forms and data
         ''' binding are then used to display the results in a
         ''' DataGridView control.
         ''' </summary>

@@ -23,7 +23,7 @@ This section includes sample code for writing a custom host. You can use Microso
  This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console. This host application also supports displaying prompts that allow the user to specify multiple choices.
 
  [Host05 Sample](./host05-sample.md)
- This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console. This host application also supports calls to remote computers by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets
+ This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console. This host application also supports calls to remote computers by using the [Enter-PSSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PSSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets
 
  [Host06 Sample](./host06-sample.md)
  This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console. In addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by the user.

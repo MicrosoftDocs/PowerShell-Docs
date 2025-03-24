@@ -73,16 +73,16 @@ Once downloaded, double-click the installer file and follow the prompts.
 
 The installer creates a shortcut in the Windows Start Menu.
 
-- By default the package is installed to `$env:ProgramFiles\PowerShell\<version>`
-- You can launch PowerShell via the Start Menu or `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- By default the package is installed to `$Env:ProgramFiles\PowerShell\<version>`
+- You can launch PowerShell via the Start Menu or `$Env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
 > PowerShell 7.4 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
 > PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
 > versions of PowerShell can be installed side-by-side with other versions of PowerShell.
 >
-> - PowerShell 7.4 is installed to `$env:ProgramFiles\PowerShell\7`
-> - The `$env:ProgramFiles\PowerShell\7` folder is added to `$env:PATH`
+> - PowerShell 7.4 is installed to `$Env:ProgramFiles\PowerShell\7`
+> - The `$Env:ProgramFiles\PowerShell\7` folder is added to `$Env:PATH`
 >
 > If you need to run PowerShell 7.4 side-by-side with other versions, use the [ZIP install][15]
 > method to install the other version to a different folder.
@@ -129,7 +129,7 @@ installation options:
 - `DISABLE_TELEMETRY` - This property controls the option for disabling PowerShell's telemetry by
   setting the `POWERSHELL_TELEMETRY_OPTOUT` environment variable.
 - `INSTALLFOLDER` - This property controls the installation directory. The default is
-  `$env:ProgramFiles\PowerShell\`. This is the location where the installer creates the versioned
+  `$Env:ProgramFiles\PowerShell\`. This is the location where the installer creates the versioned
   subfolder. You can't change the name of the versioned subfolder.
   - For current releases, the versioned subfolder is `7`
   - For preview releases, the versioned subfolder is `7-preview`
@@ -158,7 +158,7 @@ installing the MSI packages, installing the ZIP archive doesn't check for prereq
 remoting over WSMan to work properly, ensure that you've met the [prerequisites][13].
 
 Use this method to install the ARM-based version of PowerShell on computers like the Microsoft
-Surface Pro X. For best results, install PowerShell to the to `$env:ProgramFiles\PowerShell\7`
+Surface Pro X. For best results, install PowerShell to the to `$Env:ProgramFiles\PowerShell\7`
 folder.
 
 ## <a id="dotnet">Install as a .NET Global tool</a>
@@ -170,8 +170,8 @@ If you already have the [.NET Core SDK][04] installed, you can install PowerShel
 dotnet tool install --global PowerShell
 ```
 
-The dotnet tool installer adds `$HOME\.dotnet\tools` to your `$env:PATH` environment variable.
-However, the currently running shell doesn't have the updated `$env:PATH`. You can start PowerShell
+The dotnet tool installer adds `$HOME\.dotnet\tools` to your `$Env:PATH` environment variable.
+However, the currently running shell doesn't have the updated `$Env:PATH`. You can start PowerShell
 from a new shell by typing `pwsh`.
 
 ## <a id="msstore">Installing from the Microsoft Store</a>
@@ -216,7 +216,7 @@ application sandbox. However, changes to the application's root folder are still
 
 ## Installing a preview version
 
-Preview releases of PowerShell 7 install to `$env:ProgramFiles\PowerShell\7-preview` so they can be
+Preview releases of PowerShell 7 install to `$Env:ProgramFiles\PowerShell\7-preview` so they can be
 run side-by-side with non-preview releases of PowerShell. PowerShell 7.4 is the next preview
 release.
 
@@ -258,7 +258,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
 # Replace the placeholder information for the following variables:
 $deviceip = '<device ip address'
 $zipfile = 'PowerShell-7.5.0-win-arm64.zip'
-$downloadfolder = 'u:\users\administrator\Downloads'  # The download location is local to the device.
+$downloadfolder = 'U:\Users\Administrator\Downloads'  # The download location is local to the device.
     # There should be enough  space for the zip file and the unzipped contents.
 
 # Create PowerShell session to target device
@@ -269,7 +269,7 @@ Copy-Item $zipfile -Destination $downloadfolder -ToSession $S
 
 #Connect to the device and expand the archive
 Enter-PSSession $S
-Set-Location u:\users\administrator\Downloads
+Set-Location U:\Users\Administrator\Downloads
 Expand-Archive .\PowerShell-7.5.0-win-arm64.zip
 
 # Set up remoting to PowerShell 7
@@ -336,7 +336,7 @@ $zipfile = 'PowerShell-7.5.0-win-x64.zip'
 # Connect to the built-in instance of Windows PowerShell
 $session = New-PSSession -ComputerName $ipaddr -Credential $credential
 # Copy the file to the Nano Server instance
-Copy-Item $zipfile c:\ -ToSession $session
+Copy-Item $zipfile C:\ -ToSession $session
 # Enter the interactive remote session
 Enter-PSSession $session
 # Extract the ZIP file

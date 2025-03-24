@@ -45,7 +45,7 @@ In version 0, the **IsMachine** field is a boolean value. In version 1, the **Is
 an unsigned integer value.
 
 ```powershell
-(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Where-Object Id -eq 8007
+(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Where-Object Id -EQ 8007
 ```
 
 ```Output
@@ -94,9 +94,9 @@ to the **PolicyElaspedTimeInSeconds** field.
 This example shows how to create an event using a specific template version.
 
 ```powershell
-$Payload = @(300, [uint32]'0x8001011f', $env:USERNAME, 0, 1)
+$Payload = @(300, [uint32]'0x8001011f', $Env:USERNAME, 0, 1)
 New-WinEvent -ProviderName Microsoft-Windows-GroupPolicy -Id 8007 -Version 1 -Payload $Payload
-Get-winEvent -ProviderName Microsoft-Windows-GroupPolicy -MaxEvents 1
+Get-WinEvent -ProviderName Microsoft-Windows-GroupPolicy -MaxEvents 1
 ```
 
 ```Output

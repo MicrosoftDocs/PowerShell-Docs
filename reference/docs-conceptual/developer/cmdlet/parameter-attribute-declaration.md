@@ -101,7 +101,7 @@ hidden from the user for tab expansion and IntelliSense. The default is `false`.
 
 ## See Also
 
-- [System.Management.Automation.Parameterattribute][05]
+- [System.Management.Automation.ParameterAttribute][05]
 - [Cmdlet Parameter Names][07]
 - [Writing a Windows PowerShell Cmdlet][02]
 

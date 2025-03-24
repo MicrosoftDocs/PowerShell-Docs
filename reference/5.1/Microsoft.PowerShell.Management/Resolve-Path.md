@@ -87,7 +87,7 @@ This command resolves a Universal Naming Convention (UNC) path and returns the s
 ### Example 5: Get relative paths
 
 ```powershell
-Resolve-Path -Path "c:\prog*" -Relative
+Resolve-Path -Path "C:\prog*" -Relative
 ```
 
 ```Output
@@ -188,7 +188,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see [about_transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -235,7 +235,7 @@ The `*-Path` cmdlets work with the **FileSystem**, **Registry**, and **Certifica
 
 `Resolve-Path` is designed to work with any provider. To list the providers available in your
 session, type `Get-PSProvider`. For more information, see
-[about_providers](../microsoft.powershell.core/about/about_providers.md).
+[about_Providers](../microsoft.powershell.core/about/about_providers.md).
 
 `Resolve-Path` only resolves existing paths. It cannot be used to resolve a location that does not
 exist yet.

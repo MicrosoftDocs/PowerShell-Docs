@@ -155,7 +155,7 @@ cmdlet with the PowerShell Registry provider to get registry keys and subkeys, b
 `Get-ItemProperty` cmdlet to get the registry values and data.
 
 ```powershell
-Get-Item HKLM:\Software\Microsoft\Powershell\1\Shellids\Microsoft.Powershell\
+Get-Item HKLM:\Software\Microsoft\PowerShell\1\Shellids\Microsoft.PowerShell\
 ```
 
 ### Example 7: Get items in a directory that have an exclusion
@@ -527,7 +527,7 @@ The cmdlet outputs this type when accessing the `Env:` drive.
 
 ### System.IO.FileInfo
 
-The cmdlet outputs these types when accessing the Filesystem drives.
+The cmdlet outputs these types when accessing the FileSystem drives.
 
 ### System.Management.Automation.FunctionInfo
 
@@ -563,7 +563,7 @@ to get registry values and data. The registry values are considered to be proper
 registry key.
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PsProvider`. For more information, see
+available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS

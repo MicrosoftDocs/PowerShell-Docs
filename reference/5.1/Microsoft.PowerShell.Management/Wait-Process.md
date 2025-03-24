@@ -47,7 +47,7 @@ stopped. You can specify a process by process name or process ID (PID), or pipe 
 ### Example 1: Stop a process and wait
 
 ```
-PS C:\> $nid = (Get-Process notepad).id
+PS C:\> $nid = (Get-Process notepad).Id
 PS C:\> Stop-Process -Id $nid
 PS C:\> Wait-Process -Id $nid
 ```
@@ -67,7 +67,7 @@ The third command uses `Wait-Process` to wait until the Notepad process is stopp
 
 ```
 PS C:\> $p = Get-Process notepad
-PS C:\> Wait-Process -Id $p.id
+PS C:\> Wait-Process -Id $p.Id
 PS C:\> Wait-Process -Name "notepad"
 PS C:\> Wait-Process -InputObject $p
 ```

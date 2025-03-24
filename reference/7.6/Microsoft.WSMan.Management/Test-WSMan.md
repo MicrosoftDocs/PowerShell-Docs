@@ -51,24 +51,24 @@ This command determines whether the WinRM service is running on the server01 com
 ### Example 3: Determine the status of the WinRM service and the operating system version
 
 ```powershell
-Test-WSMan -Authentication default
+Test-WSMan -Authentication Default
 ```
 
 This command tests to see whether the WS-Management (WinRM) service is running on the local computer
-by using the authentication parameter.
+by using the **Authentication** parameter.
 
-Using the authentication parameter enables `Test-WSMan` to return the operating system version.
+Using the **Authentication** parameter enables `Test-WSMan` to return the operating system version.
 
 ### Example 4: Determine the status of the WinRM service and the OS version on a remote computer
 
 ```powershell
-Test-WSMan -ComputerName "server01" -Authentication default
+Test-WSMan -ComputerName "server01" -Authentication Default
 ```
 
 This command tests to see whether the WS-Management (WinRM) service is running on the computer named
-server01 using the authentication parameter.
+server01 using the **Authentication** parameter.
 
-Using the authentication parameter enables `Test-WSMan` to return the operating system version.
+Using the **Authentication** parameter enables `Test-WSMan` to return the operating system version.
 
 ## PARAMETERS
 

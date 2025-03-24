@@ -96,7 +96,7 @@ menu.
   you are debugging a job by running the `Debug-Job` cmdlet, the `Exit` command
   detaches the debugger, and allows the job to continue running.
 
-- `k`, `Get-PsCallStack`: Displays the current call stack.
+- `k`, `Get-PSCallStack`: Displays the current call stack.
 
 - `<Enter>`: Repeats the last command if it was `Step` (`s`), `StepOver` (`v`),
   or `List` (`l`). Otherwise, represents a submit action.
@@ -223,7 +223,7 @@ sections, the debugger breaks at the first line of each section.
 For example:
 
 ```powershell
-function test-cmdlet {
+function Test-Cmdlet {
     begin {
         Write-Output "Begin"
     }
@@ -235,32 +235,32 @@ function test-cmdlet {
     }
 }
 
-C:\PS> Set-PSBreakpoint -Command test-cmdlet
+C:\PS> Set-PSBreakpoint -Command Test-Cmdlet
 
-C:\PS> test-cmdlet
+C:\PS> Test-Cmdlet
 
 Begin
 Entering debug mode. Use h or ? for help.
 
-Hit Command breakpoint on 'prompt:test-cmdlet'
+Hit Command breakpoint on 'prompt:Test-Cmdlet'
 
-test-cmdlet
+Test-Cmdlet
 
 [DBG]: C:\PS> c
 Process
 Entering debug mode. Use h or ? for help.
 
-Hit Command breakpoint on 'prompt:test-cmdlet'
+Hit Command breakpoint on 'prompt:Test-Cmdlet'
 
-test-cmdlet
+Test-Cmdlet
 
 [DBG]: C:\PS> c
 End
 Entering debug mode. Use h or ? for help.
 
-Hit Command breakpoint on 'prompt:test-cmdlet'
+Hit Command breakpoint on 'prompt:Test-Cmdlet'
 
-test-cmdlet
+Test-Cmdlet
 
 [DBG]: C:\PS>
 ```
@@ -351,7 +351,7 @@ function psversion {
     "Upgrade to PowerShell 7!"
   }
   else {
-    "Have you run a background job today (start-job)?"
+    "Have you run a background job today (Start-Job)?"
   }
 }
 
@@ -460,7 +460,7 @@ steps to the next statement in the script.
 ```powershell
 DBG> o
 Windows PowerShell 2.0
-Have you run a background job today (start-job)?
+Have you run a background job today (Start-Job)?
 test.ps1:13  "Done $scriptName"
 ```
 
@@ -477,9 +477,9 @@ indicates that the debugger has exited and returned control to the command
 processor.
 
 Now, run the debugger again. First, to delete the current breakpoint, use the
-`Get-PsBreakpoint` and `Remove-PsBreakpoint` cmdlets. (If you think you might
-reuse the breakpoint, use the `Disable-PsBreakpoint` cmdlet instead of
-`Remove-PsBreakpoint`.)
+`Get-PSBreakpoint` and `Remove-PSBreakpoint` cmdlets. (If you think you might
+reuse the breakpoint, use the `Disable-PSBreakpoint` cmdlet instead of
+`Remove-PSBreakpoint`.)
 
 ```powershell
 PS C:\ps-test> Get-PSBreakpoint | Remove-PSBreakpoint
@@ -553,7 +553,7 @@ displayed, but it isn't executed.
 ```powershell
 DBG> v
 Windows PowerShell 2.0
-Have you run a background job today (start-job)?
+Have you run a background job today (Start-Job)?
 test.ps1:13  "Done $scriptName"
 ```
 
@@ -567,7 +567,7 @@ the standard command prompt.
 C:\ps-test>
 ```
 
-To delete the breakpoints, use the `Get-PsBreakpoint` and `Remove-PsBreakpoint`
+To delete the breakpoints, use the `Get-PSBreakpoint` and `Remove-PSBreakpoint`
 cmdlets.
 
 ```powershell
@@ -603,13 +603,13 @@ the breakpoint or to perform preparatory or diagnostic tasks, such as starting
 a log or invoking a diagnostic or security script.
 
 To set an action, use a Continue command (c) to exit the script, and a
-`Remove-PsBreakpoint` command to delete the current breakpoint. (Breakpoints
+`Remove-PSBreakpoint` command to delete the current breakpoint. (Breakpoints
 are read-only, so you can't add an action to the current breakpoint.)
 
 ```powershell
 DBG> c
 Windows PowerShell 2.0
-Have you run a background job today (start-job)?
+Have you run a background job today (Start-Job)?
 Done C:\ps-test\test.ps1
 
 PS C:\ps-test> Get-PSBreakpoint | Remove-PSBreakpoint
@@ -656,7 +656,7 @@ Because the execution policy is set to **RemoteSigned**, execution stops at the
 function call.
 
 At this point, you might want to check the call stack. Use the
-`Get-PsCallStack` cmdlet or the `Get-PsCallStack` debugger command (`k`). The
+`Get-PSCallStack` cmdlet or the `Get-PSCallStack` debugger command (`k`). The
 following command gets the current call stack.
 
 ```powershell

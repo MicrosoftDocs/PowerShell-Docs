@@ -65,7 +65,7 @@ the `System\*` child path. It displays the same files and folders as `Get-ChildI
 displays the fully qualified path to each item. In this command, the `Path` and `ChildPath` optional
 parameter names are omitted.
 
-### Example 4: Use Join-Path with the PowerShell registry provider
+### Example 4: Use Join-Path with the PowerShell Registry provider
 
 ```powershell
 PS HKLM:\> Join-Path -Path System -ChildPath *ControlSet* -Resolve
@@ -103,7 +103,7 @@ This command uses `Join-Path` to combine multiple path roots with a child path.
 ### Example 6: Combine the roots of a file system drive with a child path
 
 ```powershell
-Get-PSDrive -PSProvider filesystem | ForEach-Object {$_.Root} | Join-Path -ChildPath "Subdir"
+Get-PSDrive -PSProvider FileSystem | ForEach-Object {$_.Root} | Join-Path -ChildPath "Subdir"
 ```
 
 ```output

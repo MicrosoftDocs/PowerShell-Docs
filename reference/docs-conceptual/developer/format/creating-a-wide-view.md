@@ -19,7 +19,7 @@ example, the two columns are used to display the name of the process for each re
 name of the object's property isn't displayed, only the value of the property.
 
 ```powershell
-Get-Process | format-wide
+Get-Process | Format-Wide
 ```
 
 ```Output
@@ -225,7 +225,7 @@ of the wide view:
 You can separate the objects that are displayed by the wide view into groups. This doesn't mean that
 you define a group, only that Windows PowerShell starts a new group whenever the value of a specific
 property or script changes. In the following example, a new group is started whenever the value of
-the [System.Serviceprocess.Servicecontroller.Servicetype][34] property changes.
+the [System.ServiceProcess.ServiceController.ServiceType][34] property changes.
 
 ```xml
 <GroupBy>
@@ -283,7 +283,7 @@ formatting parameters, the script can call that method to format the output valu
 ```xml
 <WideItem>
   <ScriptBlock>
-    [String]::Format("{0,-10} {1,-8}", $_.LastWriteTime.ToString("d"), $_.LastWriteTime.ToString("t"))
+    [string]::Format("{0,-10} {1,-8}", $_.LastWriteTime.ToString("d"), $_.LastWriteTime.ToString("t"))
   </ScriptBlock>
 </WideItem>
 ```

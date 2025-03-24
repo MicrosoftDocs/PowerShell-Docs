@@ -1,5 +1,5 @@
 ---
-description: Describes the Throw keyword, which generates a terminating error.
+description: Describes the `throw` keyword, which generates a terminating error.
 Locale: en-US
 ms.date: 08/24/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-7.4&WT.mc_id=ps-gethelp

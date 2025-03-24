@@ -33,7 +33,7 @@ example, mydrive:\abc\bar.
 
 To allow the Windows PowerShell runtime to initialize and uninitialize the provider, your Windows
 PowerShell provider must support a provider-qualified path. For example,
-FileSystem::\\\uncshare\abc\bar is the provider-qualified path for the filesystem provider furnished
+FileSystem::\\\uncshare\abc\bar is the provider-qualified path for the FileSystem provider furnished
 by Windows PowerShell.
 
 ### Defining a Provider-Direct Path
@@ -47,12 +47,12 @@ registry Windows PowerShell provider can use \\\server\regkeypath as a provider-
 To allow the provider cmdlet to access data using non-Windows PowerShell application programming
 interfaces (APIs), your Windows PowerShell provider should support a provider-internal path. This
 path is indicated after the "::" in the provider-qualified path. For example, the provider-internal
-path for the filesystem Windows PowerShell provider is \\\uncshare\abc\bar.
+path for the FileSystem Windows PowerShell provider is \\\uncshare\abc\bar.
 
 ## Changing Stored Data
 
 When overriding methods that modify the underlying data store, always call the
-[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)
+[System.Management.Automation.Provider.CmdletProvider.WriteItemObject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)
 method with the most up-to-date version of the item changed by that method. The provider
 infrastructure determines if the item object needs to be passed to the pipeline, such as when the
 user specifies the -PassThru parameter. If retrieving the most up-to-date item is a costly operation
@@ -76,7 +76,7 @@ location cmdlets.
 ### CmdletProvider Base Class
 
 The
-[System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
+[System.Management.Automation.Provider.CmdletProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
 class defines a basic Windows PowerShell provider. This class supports the provider declaration and
 supplies a number of properties and methods that are available to all Windows PowerShell providers.
 The class is invoked by the `Get-PSProvider` cmdlet to list all available providers for a session.
@@ -88,14 +88,14 @@ The implementation of this cmdlet is furnished by the session state.
 ### DriveCmdletProvider Base Class
 
 The
-[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)
+[System.Management.Automation.Provider.DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)
 class defines a Windows PowerShell drive provider that supports operations for adding new drives,
 removing existing drives, and initializing default drives. For example, the FileSystem provider
 provided by Windows PowerShell initializes drives for all volumes that are mounted, such as hard
 drives and CD/DVD device drives.
 
 This class derives from the
-[System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
+[System.Management.Automation.Provider.CmdletProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
 base class. The following table lists the cmdlets exposed by this class. In addition to those
 listed, the `Get-PSDrive` cmdlet (exposed by session state) is a related cmdlet that is used to
 retrieve available drives.
@@ -108,11 +108,11 @@ retrieve available drives.
 ### ItemCmdletProvider Base Class
 
 The
-[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
+[System.Management.Automation.Provider.ItemCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 class defines a Windows PowerShell item provider that performs operations on the individual items of
 the data store, and it does not assume any container or navigation capabilities. This class derives
 from the
-[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)
+[System.Management.Automation.Provider.DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)
 base class. The following table lists the cmdlets exposed by this class.
 
 |     Cmdlet     |                                                                                                                                                            Definition                                                                                                                                                            |
@@ -122,25 +122,25 @@ base class. The following table lists the cmdlets exposed by this class.
 | `Invoke-Item`  | Invokes the default action for the item at the specified path.                                                                                                                                                                                                                                                                   |
 | `Set-Item`     | Sets an item at the specified location with the indicated value. This cmdlet does not pass an output object through the pipeline unless its `PassThru` parameter is specified.                                                                                                                                                   |
 | `Resolve-Path` | Resolves the wildcards for a Windows PowerShell path, and streams path information.                                                                                                                                                                                                                                              |
-| `Test-Path`    | Tests for the specified path, and returns `true` if it exists and `false` otherwise. This cmdlet is implemented to support the `IsContainer` parameter for the [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) method. |
+| `Test-Path`    | Tests for the specified path, and returns `true` if it exists and `false` otherwise. This cmdlet is implemented to support the `IsContainer` parameter for the [System.Management.Automation.Provider.CmdletProvider.WriteItemObject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) method. |
 
 ### ContainerCmdletProvider Base Class
 
 The
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
+[System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
 class defines a Windows PowerShell container provider that exposes a container, for data store
 items, to the user. Be aware that a Windows PowerShell container provider can be used only when
 there is one container (no nested containers) with items in it. If there are nested containers, then
 you must implement a Windows PowerShell navigation provider .
 
 This class derives from the
-[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
+[System.Management.Automation.Provider.ItemCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 base class. The following table defines the cmdlets implemented by this class.
 
 |     Cmdlet      |                                                                        Definition                                                                        |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Copy-Item`     | Copies items from one location to another. This cmdlet does not pass an output object through the pipeline unless its `PassThru` parameter is specified. |
-| `Get-Childitem` | Retrieves the child items at the specified location, and streams them as objects.                                                                        |
+| `Get-ChildItem` | Retrieves the child items at the specified location, and streams them as objects.                                                                        |
 | `New-Item`      | Creates new items at the specified location, and streams the resultant object.                                                                           |
 | `Remove-Item`   | Removes items from the specified location.                                                                                                               |
 | `Rename-Item`   | Renames an item at the specified location. This cmdlet does not pass an output object through the pipeline unless its `PassThru` parameter is specified. |
@@ -148,10 +148,10 @@ base class. The following table defines the cmdlets implemented by this class.
 ### NavigationCmdletProvider Base Class
 
 The
-[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
+[System.Management.Automation.Provider.NavigationCmdletProvider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 class defines a Windows PowerShell navigation provider that performs operations for items that use
 more than one container. This class derives from the
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
+[System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
 base class. The following table list the cmdlets exposed by this class.
 
 |     Cmdlet     |                                                                      Definition                                                                      |
@@ -174,7 +174,7 @@ available online using the `Get-Command` and `Get-Help` cmdlets.
 ### IContentCmdletProvider
 
 The
-[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)
+[System.Management.Automation.Provider.IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)
 interface defines a content provider that performs operations on the content of a data item. The
 following table lists the cmdlets exposed by this interface.
 
@@ -188,7 +188,7 @@ following table lists the cmdlets exposed by this interface.
 ### IPropertyCmdletProvider
 
 The
-[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)
+[System.Management.Automation.Provider.IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)
 interface defines a property Windows PowerShell provider that performs operations on the properties
 of items in the data store. The following table lists the cmdlets exposed by this interface.
 
@@ -205,9 +205,9 @@ of items in the data store. The following table lists the cmdlets exposed by thi
 ### IDynamicPropertyCmdletProvider
 
 The
-[System.Management.Automation.Provider.Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)
+[System.Management.Automation.Provider.IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)
 interface, derived from
-[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider),
+[System.Management.Automation.Provider.IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider),
 defines a provider that specifies dynamic parameters for its supported cmdlets. This type of
 provider handles operations for which properties can be defined at run time, for example, a new
 property operation. Such operations are not possible on items having statically defined properties.
@@ -224,7 +224,7 @@ The following table lists the cmdlets exposed by this interface.
 ### ISecurityDescriptorCmdletProvider
 
 The
-[System.Management.Automation.Provider.Isecuritydescriptorcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ISecurityDescriptorCmdletProvider)
+[System.Management.Automation.Provider.ISecurityDescriptorCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ISecurityDescriptorCmdletProvider)
 interface adds security descriptor functionality to a provider. This interface allows the user to
 get and set security descriptor information for an item in the data store. The following table lists
 the cmdlets exposed by this interface.
@@ -232,7 +232,7 @@ the cmdlets exposed by this interface.
 |  Cmdlet   |                                                                                                                                                                                                          Definition                                                                                                                                                                                                          |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Get-Acl` | Retrieves the information contained in an access control list (ACL), which is part of a security descriptor used to guard operating system resources, for example, a file or an object.                                                                                                                                                                                                                                      |
-| `Set-Acl` | Sets the information for an ACL. It is in the form of an instance of [System.Security.Accesscontrol.Objectsecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity) on the item(s) designated for the specified path. This cmdlet can set information about files, keys, and subkeys in the registry, or any other provider item, if the Windows PowerShell provider supports the setting of security information. |
+| `Set-Acl` | Sets the information for an ACL. It is in the form of an instance of [System.Security.AccessControl.ObjectSecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity) on the item(s) designated for the specified path. This cmdlet can set information about files, keys, and subkeys in the registry, or any other provider item, if the Windows PowerShell provider supports the setting of security information. |
 
 ## See Also
 

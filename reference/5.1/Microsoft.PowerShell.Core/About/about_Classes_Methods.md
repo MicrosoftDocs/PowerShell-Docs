@@ -602,17 +602,17 @@ class. The representation for **DerivedClassB** is different because it
 overrode the `ToString()` instance method.
 
 ```powershell
-"`$base = [BaseClass]::New()     => $($base = [BaseClass]::New(); $base)"
-"`$a    = [DerivedClassA]::New() => $($a = [DerivedClassA]::New(); $a)"
-"`$b    = [DerivedClassB]::New() => $($b = [DerivedClassB]::New(); $b)"
-"`$c    = [DerivedClassC]::New() => $($c = [DerivedClassC]::New(); $c)"
+"`$base = [BaseClass]::new()     => $($base = [BaseClass]::new(); $base)"
+"`$a    = [DerivedClassA]::new() => $($a = [DerivedClassA]::new(); $a)"
+"`$b    = [DerivedClassB]::new() => $($b = [DerivedClassB]::new(); $b)"
+"`$c    = [DerivedClassC]::new() => $($c = [DerivedClassC]::new(); $c)"
 ```
 
 ```Output
-$base = [BaseClass]::New()     => 11/6/2023 9:44:57 AM
-$a    = [DerivedClassA]::New() => 11/6/2023 9:44:57 AM
-$b    = [DerivedClassB]::New() => 2023-11-06
-$c    = [DerivedClassC]::New() => 11/6/2023 9:44:57 AM
+$base = [BaseClass]::new()     => 11/6/2023 9:44:57 AM
+$a    = [DerivedClassA]::new() => 11/6/2023 9:44:57 AM
+$b    = [DerivedClassB]::new() => 2023-11-06
+$c    = [DerivedClassC]::new() => 11/6/2023 9:44:57 AM
 ```
 
 The next block calls the `SetTimeStamp()` instance method for each instance,

@@ -53,7 +53,7 @@ Non-terminating errors write an error to the error stream, but they don't stop c
 If a non-terminating error is declared on one item in a collection of input items, the command
 continues to process the other items in the collection.
 
-To declare a terminating error, use the `Throw` keyword.
+To declare a terminating error, use the `throw` keyword.
 For more information, see [about_Throw](../Microsoft.PowerShell.Core/About/about_Throw.md).
 
 ## EXAMPLES

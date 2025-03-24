@@ -24,7 +24,7 @@ Required. Specifies a set of comma-separated alias names for the cmdlet paramete
 ## Remarks
 
 The **Alias** attribute is defined by the
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)
+[System.Management.Automation.AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute)
 class.
 
 ### Cmdlet aliases

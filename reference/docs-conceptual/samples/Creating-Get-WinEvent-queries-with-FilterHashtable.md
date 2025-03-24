@@ -24,7 +24,7 @@ log data. For example, the following commands are inefficient to filter the
 ```powershell
 Get-EventLog -LogName Application | Where-Object Source -Match defrag
 
-Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -match 'defrag' }
 ```
 
 The following command uses a hash table that improves the performance:
@@ -55,7 +55,7 @@ If the **key-value** pairs are on the same line, they must be separated by a sem
 places **key-value** pairs on separate lines and doesn't use semicolons.
 
 This sample uses several of the **FilterHashtable** parameter's **key-value** pairs. The completed
-query includes **LogName**, **ProviderName**, **Keywords**, **ID**, and **Level**.
+query includes **LogName**, **ProviderName**, **Keywords**, **Id**, and **Level**.
 
 The accepted **key-value** pairs are shown in the following table and are included in the
 documentation for the [Get-WinEvent][06] **FilterHashtable** parameter.
@@ -216,26 +216,26 @@ Get-WinEvent -FilterHashtable @{
 
 The **Keywords** key is enumerated, but you can use a static property name in the hash table query.
 Rather than using the returned string, the property name must be converted to a value with the
-**Value__** property.
+**value__** property.
 
-For example, the following script uses the **Value__** property.
+For example, the following script uses the **value__** property.
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventKeywords]::EventLogClassic
 Get-WinEvent -FilterHashtable @{
    LogName='Application'
    ProviderName='.NET Runtime'
-   Keywords=$C.Value__
+   Keywords=$C.value__
 }
 ```
 
 ## Filtering by Event Id
 
 To get more specific data, the query's results are filtered by **Event Id**. The **Event Id** is
-referenced in the hash table as the key **ID** and the value is a specific **Event Id**. The
+referenced in the hash table as the key **Id** and the value is a specific **Event Id**. The
 **Windows Event Viewer** displays the **Event Id**. This example uses **Event Id 1023**.
 
-Update the hash table and include the **key-value** pair with the key, **ID** and the value,
+Update the hash table and include the **key-value** pair with the key, **Id** and the value,
 **1023**.
 
 ```powershell
@@ -304,9 +304,9 @@ Get-WinEvent -FilterHashtable @{
 
 The **Level** key is enumerated, but you can use a static property name in the hash table query.
 Rather than using the returned string, the property name must be converted to a value with the
-**Value__** property.
+**value__** property.
 
-For example, the following script uses the **Value__** property.
+For example, the following script uses the **value__** property.
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventLevel]::Informational
@@ -315,7 +315,7 @@ Get-WinEvent -FilterHashtable @{
    ProviderName='.NET Runtime'
    Keywords=36028797018963968
    ID=1023
-   Level=$C.Value__
+   Level=$C.value__
 }
 ```
 

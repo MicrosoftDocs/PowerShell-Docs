@@ -109,7 +109,7 @@ New-CimSession -ComputerName Server01 -Port 1234
 This example creates a CIM session using the Distributed COM (DCOM) protocol instead of WSMan.
 
 ```powershell
-$SessionOption = New-CimSessionOption -Protocol DCOM
+$SessionOption = New-CimSessionOption -Protocol Dcom
 New-CimSession -ComputerName Server1 -SessionOption $SessionOption
 ```
 

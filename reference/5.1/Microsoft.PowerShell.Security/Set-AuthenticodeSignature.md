@@ -52,7 +52,7 @@ cmdlet runs, that signature is removed.
 
 ### Example 1 - Sign a script using a certificate from the local certificate store
 
-These commands retrieve a code-signing certificate from the PowerShell certificate provider and use
+These commands retrieve a code-signing certificate from the PowerShell Certificate provider and use
 it to sign a PowerShell script.
 
 ```powershell
@@ -65,10 +65,10 @@ $signingParameters = @{
 Set-AuthenticodeSignature @signingParameters
 ```
 
-The first command uses the `Get-ChildItem` cmdlet and the PowerShell certificate provider to get the
+The first command uses the `Get-ChildItem` cmdlet and the PowerShell Certificate provider to get the
 certificates in the `Cert:\CurrentUser\My` subdirectory of the certificate store. The `Cert:` drive
-is the drive exposed by the certificate provider. The **CodeSigningCert** parameter, which is
-supported only by the certificate provider, limits the certificates retrieved to those with
+is the drive exposed by the Certificate provider. The **CodeSigningCert** parameter, which is
+supported only by the Certificate provider, limits the certificates retrieved to those with
 code-signing authority. The command stores the result in the `$cert` variable.
 
 The second command defines the `$signingParameters` variable as a **HashTable** with the parameters

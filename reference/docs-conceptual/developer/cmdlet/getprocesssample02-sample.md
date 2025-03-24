@@ -38,7 +38,7 @@ is a simplified version of the `Get-Process` cmdlet provided by Windows PowerShe
 
 1. Run the following command to run the cmdlet:
 
-    `get-proc`
+    `Get-Proc`
 
 ## Requirements
 
@@ -70,7 +70,7 @@ namespace Microsoft.Samples.PowerShell.Commands
   #region GetProcCommand
 
   /// <summary>
-  /// This class implements the get-proc cmdlet.
+  /// This class implements the Get-Proc cmdlet.
   /// </summary>
   [Cmdlet(VerbsCommon.Get, "Proc")]
   public class GetProcCommand : Cmdlet

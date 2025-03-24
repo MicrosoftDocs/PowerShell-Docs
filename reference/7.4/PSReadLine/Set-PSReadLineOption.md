@@ -131,10 +131,10 @@ This example emits a cursor change VT escape in response to a **Vi** mode change
 function OnViModeChange {
     if ($args[0] -eq 'Command') {
         # Set the cursor to a blinking block.
-        Write-Host -NoNewLine "`e[1 q"
+        Write-Host -NoNewline "`e[1 q"
     } else {
         # Set the cursor to a blinking line.
-        Write-Host -NoNewLine "`e[5 q"
+        Write-Host -NoNewline "`e[5 q"
     }
 }
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
@@ -154,9 +154,9 @@ to history.
 
 ```powershell
 $ScriptBlock = {
-    Param([string]$line)
+    param ([string]$Line)
 
-    if ($line -match "^git") {
+    if ($Line -match "^git") {
         return $false
     } else {
         return $true
@@ -533,11 +533,11 @@ If you don't use this parameter, the default path is as follows:
 
 **Windows**
 
-- `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($Host.Name)_history.txt`
+- `$Env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($Host.Name)_history.txt`
 
 **non-Windows**
 
-- `$env:XDG_DATA_HOME/powershell/PSReadLine/$($Host.Name)_history.txt`
+- `$Env:XDG_DATA_HOME/powershell/PSReadLine/$($Host.Name)_history.txt`
 - `$HOME/.local/share/powershell/PSReadLine/$($Host.Name)_history.txt`
 
 ```yaml
@@ -547,7 +547,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: A file named $($Host.Name)_history.txt in $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine on Windows and $env:XDG_DATA_HOME/powershell/PSReadLine or $HOME/.local/share/powershell/PSReadLine on non-Windows platforms
+Default value: A file named $($Host.Name)_history.txt in $Env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine on Windows and $Env:XDG_DATA_HOME/powershell/PSReadLine or $HOME/.local/share/powershell/PSReadLine on non-Windows platforms
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

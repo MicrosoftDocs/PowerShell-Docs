@@ -55,7 +55,7 @@ description.
 
 ### Use conventional syntax
 
-Use the standard Backus-Naur format which is common for Windows and UNIX command-line Help.
+Use the standard Backus-Naur format which is common for Windows and Unix command-line Help.
 
 ### Use Microsoft .NET types for parameter values
 

@@ -205,7 +205,7 @@ Get-PSDrive -Name "PSDrive", "X"
 Name       Provider      Root
 ----       --------      ----
 
-PsDrive    FileSystem    \\Server01\public
+PSDrive    FileSystem    \\Server01\public
 X          FileSystem    X:\
 ```
 

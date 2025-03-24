@@ -216,7 +216,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 The **Stream** parameter is a dynamic parameter of the
-[FileSystem provider](../Microsoft.PowerShell.Core/About/about_Filesystem_Provider.md#stream-string).
+[FileSystem provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md#stream-string).
 By default `Get-Content` only retrieves data from the default, or `:$DATA` stream. **Streams** can
 be used to store hidden data such as attributes, security settings, or other data. They can also be
 stored on directories without being child items.

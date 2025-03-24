@@ -309,20 +309,20 @@ These commands list processes that have a working set greater than 250 megabytes
 filter the processes the same way and return the same output. Only the syntax is different.
 
 ```powershell
-Get-Process | Where-Object { $_.WorkingSet -GT 250MB }
+Get-Process | Where-Object { $_.WorkingSet -gt 250MB }
 Get-Process | Where-Object WorkingSet -GT 250MB
 ```
 
 ### Example 3: Get processes based on process name
 
 These commands get the processes that have a **ProcessName** property value that begins with the
-letter `p`. The **Match** operator lets you use regular expression matches.
+letter `p`. The `-match` operator and **Match** parameter let you use regular expression matches.
 
 The commands filter the processes the same way and return the same output. Only the syntax is
 different.
 
 ```powershell
-Get-Process | Where-Object { $_.ProcessName -Match "^p.*" }
+Get-Process | Where-Object { $_.ProcessName -match "^p.*" }
 Get-Process | Where-Object ProcessName -Match "^p.*"
 ```
 
@@ -812,7 +812,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value matches any of the specified values.
 For example:
 
-`Get-Process | Where-Object -Property ProcessName -in -Value "Svchost", "TaskHost", "WsmProvHost"`
+`Get-Process | Where-Object -Property ProcessName -In -Value "Svchost", "TaskHost", "WsmProvHost"`
 
 If the input is a single object, PowerShell converts it to a collection of one object.
 
@@ -864,7 +864,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value is an instance of the specified .NET
 type. Enclose the type name in square brackets.
 
-For example, `Get-Process | Where-Object StartTime -Is [DateTime]`
+For example, `Get-Process | Where-Object StartTime -Is [datetime]`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -885,7 +885,7 @@ Accept wildcard characters: False
 Indicates that this cmdlet gets objects if the property value isn't an instance of the specified
 .NET type.
 
-For example, `Get-Process | where StartTime -IsNot [DateTime]`
+For example, `Get-Process | where StartTime -IsNot [datetime]`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -1099,7 +1099,7 @@ Indicates that this cmdlet gets objects when the property value doesn't match th
 expression. When the input is a single object, the matched value is saved in the `$Matches`
 automatic variable.
 
-For example: `Get-Process | Where-Object ProcessName -NotMatch "PowerShell"`
+For example: `Get-Process | Where-Object ProcessName -NotMatch "powershell"`
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -1188,7 +1188,7 @@ PowerShell includes the following aliases for `Where-Object`:
 Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with
 collections.
 
-You can read more about these methods here [about_arrays](./About/about_Arrays.md)
+You can read more about these methods here [about_Arrays](./About/about_Arrays.md)
 
 ## RELATED LINKS
 

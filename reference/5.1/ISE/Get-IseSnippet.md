@@ -71,7 +71,7 @@ function Parse-Snippet {
   foreach ($SnippetFile in $SnippetFiles) {
      Write-Host ""
      $Title = Select-Xml -Path $SnippetFile.FullName -Namespace $SnippetNamespace -XPath "//x:Title" |
-       ForEach-Object {$_.Node.InnerXML}
+       ForEach-Object {$_.Node.InnerXml}
      $Text = Select-Xml -Path $SnippetFile.FullName -Namespace $SnippetNamespace -XPath "//x:Script" |
        ForEach-Object {$_.Node.InnerText}
      Write-Host "Title: $Title"
@@ -83,10 +83,10 @@ function Parse-Snippet {
 ```Output
 Title: Mandatory
 Text:
-Param
+param
 (
-  [parameter(Mandatory=True)]
-  [String[]]
+  [Parameter(Mandatory=True)]
+  [string[]]
   $<ParameterName>
 )
 
@@ -138,7 +138,7 @@ This cmdlet returns a file object representing the snippet file.
 
 ## NOTES
 
-- The `New-IseSnippet` cmdlet stores new user-created snippets in unsigned .ps1xml files. As such,
+- The `New-IseSnippet` cmdlet stores new user-created snippets in unsigned `.ps1xml` files. As such,
   Windows PowerShell cannot add them to a session in which the execution policy is **AllSigned** or
   **Restricted**. In a **Restricted** or **AllSigned** session, you can create, get, and import
   unsigned user-created snippets, but you cannot use them in the session.

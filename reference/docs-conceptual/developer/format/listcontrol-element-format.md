@@ -51,7 +51,7 @@ For more information about creating a list view, see [Creating a List View](./cr
 
 ## Example
 
-This example shows a list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+This example shows a list view for the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object.
 
 ```

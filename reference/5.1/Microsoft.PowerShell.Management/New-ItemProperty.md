@@ -97,7 +97,7 @@ $newValue = New-ItemProperty -Path "HKLM:\SOFTWARE\ContosoCompany\" -Name 'HereS
 This is text which contains newlines
 It can also contain "quoted" strings
 "@
-$newValue.multistring
+$newValue.HereString
 ```
 
 ```output
@@ -111,7 +111,7 @@ The example shows how to use an array of values to create the `MultiString` valu
 
 ```powershell
 $newValue = New-ItemProperty -Path "HKLM:\SOFTWARE\ContosoCompany\" -Name 'MultiString' -PropertyType MultiString -Value ('a','b','c')
-$newValue.multistring[0]
+$newValue.MultiString[0]
 ```
 
 ```output

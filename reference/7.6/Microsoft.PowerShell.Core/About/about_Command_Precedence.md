@@ -38,7 +38,7 @@ C:\TechDocs\FindDocs.ps1
 You can run any executable command using its full path. As a security feature,
 PowerShell doesn't run executable commands, including PowerShell scripts and
 native commands, unless the command is located in a path listed in the
-`$env:Path` environment variable.
+`$Env:PATH` environment variable.
 
 To run an executable file that's in the current directory, specify the full
 path or use the relative path `.\` to represent the current directory.
@@ -58,7 +58,7 @@ when it runs commands.
 1. External executable files (including PowerShell script files)
 
 Therefore, if you type `help`, PowerShell first looks for an alias named
-`help`, then a function named `Help`, and finally a cmdlet named `Help`. It
+`help`, then a function named `help`, and finally a cmdlet named `help`. It
 runs the first `help` item that it finds.
 
 For example, if your session contains a cmdlet and a function, both named
@@ -247,7 +247,7 @@ For example, the following command saves the `Map` function in the `$myMap`
 variable and then uses the `Call` operator to run it.
 
 ```powershell
-$myMap = (Get-Command -Name map -CommandType function)
+$myMap = (Get-Command -Name map -CommandType Function)
 & ($myMap)
 ```
 
@@ -273,7 +273,7 @@ first module found alphabetically.
 
 If the cmdlet isn't loaded, PowerShell searches the installed modules and
 autoloads the first module that contains the cmdlet and runs that cmdlet.
-PowerShell searches for modules in each path defined in the `$env:PSModulePath`
+PowerShell searches for modules in each path defined in the `$Env:PSModulePath`
 environment variable. The paths are searched in the order that they're listed
 in the variable. Within each path, the modules are searched in alphabetical
 order. PowerShell uses the cmdlet from the first match it finds.
@@ -299,7 +299,7 @@ Import-Module -Name DateFunctions -Prefix ZZ
 
 ## Running external executables
 
-On Windows. PowerShell treats the file extensions listed in the `$env:PATHEXT`
+On Windows. PowerShell treats the file extensions listed in the `$Env:PATHEXT`
 environment variable as executable files. Files that aren't Windows executables
 are handed to Windows to process. Windows looks up the file association and
 executes the default Windows Shell verb for the extension. For Windows to
@@ -312,7 +312,7 @@ to register the file handler. For more information, see the documentation for
 the [ftype][04] command.
 
 For PowerShell to see a file extension as executable in the current session,
-you must add the extension to the `$env:PATHEXT` environment variable.
+you must add the extension to the `$Env:PATHEXT` environment variable.
 
 ## See also
 

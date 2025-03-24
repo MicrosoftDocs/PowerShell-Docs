@@ -23,8 +23,8 @@ doesn't have way to query the policy enforcement status. To detect if a system w
 control policy is being enforced by AppLocker, PowerShell creates two temporary files and tests if
 they can be executed. The filenames use the following name format:
 
-- `$env:TEMP/__PSAppLockerTest__<random-8dot3-name>.ps1`
-- `$env:TEMP/__PSAppLockerTest__<random-8dot3-name>.psm1`
+- `$Env:TEMP/__PSAppLockerTest__<random-8dot3-name>.ps1`
+- `$Env:TEMP/__PSAppLockerTest__<random-8dot3-name>.psm1`
 
 App Control for Business is the preferred application control system for Windows. App Control
 provides APIs that allow you to discover the policy configuration. App Control is designed as a

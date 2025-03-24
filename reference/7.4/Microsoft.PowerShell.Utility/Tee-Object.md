@@ -67,7 +67,7 @@ This example gets a list of the processes running on the computer, saves them to
 variable, and pipes them to `Select-Object`.
 
 ```powershell
-Get-Process notepad | Tee-Object -Variable proc | Select-Object processname,handles
+Get-Process notepad | Tee-Object -Variable proc | Select-Object ProcessName, Handles
 ```
 
 ```Output
@@ -88,8 +88,8 @@ This example saves a list of system files in a two log files, a cumulative file 
 
 ```powershell
 Get-ChildItem -Path D: -File -System -Recurse |
-  Tee-Object -FilePath "c:\test\AllSystemFiles.txt" -Append |
-    Out-File c:\test\NewSystemFiles.txt
+  Tee-Object -FilePath "C:\test\AllSystemFiles.txt" -Append |
+    Out-File C:\test\NewSystemFiles.txt
 ```
 
 The command uses the `Get-ChildItem` cmdlet to do a recursive search for system files on the D:

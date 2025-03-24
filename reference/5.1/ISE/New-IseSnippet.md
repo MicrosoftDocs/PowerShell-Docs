@@ -66,10 +66,10 @@ This command creates a Comment-BasedHelp snippet for Windows PowerShell ISE. It 
 
 ```powershell
 $M = @'
-Param
+param
 (
-  [parameter(Mandatory=$true)]
-  [String[]]
+  [Parameter(Mandatory=$true)]
+  [string[]]
   $<ParameterName>
 )
 '@
@@ -227,7 +227,7 @@ This cmdlet returns no output.
 
 ## NOTES
 
-`New-IseSnippet` stores new user-created snippets in unsigned .ps1xml files. As such, Windows
+`New-IseSnippet` stores new user-created snippets in unsigned `.ps1xml` files. As such, Windows
 PowerShell cannot add them to a session in which the execution policy is **AllSigned** or
 **Restricted**. In a **Restricted** or **AllSigned** session, you can create, get, and import
 unsigned user-created snippets, but you cannot use them in the session.

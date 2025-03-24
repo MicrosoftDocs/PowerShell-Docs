@@ -209,11 +209,11 @@ computer.
 This example uses a background job to get a specified process by name.
 
 ```powershell
-Start-Job -Name PShellJob -ScriptBlock { Get-Process -Name PowerShell }
+Start-Job -Name PShellJob -ScriptBlock { Get-Process -Name powershell }
 ```
 
 `Start-Job` uses the **Name** parameter to specify a friendly job name, **PShellJob**. The
-**ScriptBlock** parameter specifies `Get-Process` to get processes with the name **PowerShell**.
+**ScriptBlock** parameter specifies `Get-Process` to get processes with the name `powershell`.
 
 ### Example 7: Collect and save data by using a background job
 

@@ -104,7 +104,7 @@ Get-WmiObject -Class Win32_Service -ComputerName 10.1.4.62
 This example gets the WMI classes in the root or default namespace of the local computer.
 
 ```powershell
-Get-WmiObject -Namespace "root/default" -List
+Get-WmiObject -Namespace "root/DEFAULT" -List
 ```
 
 ### Example 4: Get a named service on multiple computers
@@ -113,8 +113,8 @@ This example gets the WinRM service on the computers specified by the value of t
 parameter.
 
 ```powershell
-Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 |
-  Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
+Get-WmiObject -Query "select * from Win32_Service where name='WinRM'" -ComputerName Server01, Server02 |
+  Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessId, StartMode, State, Status
 ```
 
 ```Output
@@ -122,7 +122,7 @@ PSComputerName : SERVER01
 Name           : WinRM
 ExitCode       : 0
 Name           : WinRM
-ProcessID      : 844
+ProcessId      : 844
 StartMode      : Auto
 State          : Running
 Status         : OK
@@ -131,7 +131,7 @@ PSComputerName : SERVER02
 Name           : WinRM
 ExitCode       : 0
 Name           : WinRM
-ProcessID      : 932
+ProcessId      : 932
 StartMode      : Auto
 State          : Running
 Status         : OK
@@ -161,7 +161,7 @@ This example gets the BIOS information from the local computer. The **Property**
 only the subset of properties defined in the `Types.ps1xml` configuration file are displayed.
 
 ```powershell
-Get-WmiObject -Class Win32_Bios | Format-List -Property *
+Get-WmiObject -Class Win32_BIOS | Format-List -Property *
 ```
 
 ```Output
@@ -429,12 +429,12 @@ Specifies a **Where** clause to use as a filter. Uses the syntax of the WMI Quer
 
 > [!IMPORTANT]
 > Do not include the **Where** keyword in the value of the parameter. For example, the following
-> commands return only the logical disks that have a **DeviceID** of `c:` and services that have the
+> commands return only the logical disks that have a **DeviceID** of `C:\ and services that have the
 > name 'WinRM' without using the **Where** keyword.
 
-`Get-WmiObject Win32_LogicalDisk -filter "DeviceID = 'c:' "`
+`Get-WmiObject Win32_LogicalDisk -Filter "DeviceID = 'C:' "`
 
-`Get-WmiObject win32_service -filter "name='WinRM'"`
+`Get-WmiObject Win32_Service -Filter "name='WinRM'"`
 
 ```yaml
 Type: System.String
@@ -480,7 +480,7 @@ Gets the names of the WMI classes in the WMI repository namespace that is specif
 **Namespace** parameter.
 
 If you specify the **List** parameter, but not the **Namespace** parameter, `Get-WmiObject` uses
-the **Root\Cimv2** namespace by default. This cmdlet does not use the **Default Namespace** registry
+the **root/CIMV2** namespace by default. This cmdlet does not use the **Default Namespace** registry
 entry in the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WBEM\Scripting` registry key to determine the
 default namespace.
 

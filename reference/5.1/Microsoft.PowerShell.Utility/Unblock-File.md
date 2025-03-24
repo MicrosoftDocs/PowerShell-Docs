@@ -85,12 +85,12 @@ Stream                   Length
 Zone.Identifier              26
 
 PS C:\> C:\ps-test\Start-ActivityTracker.ps1
-c:\ps-test\Start-ActivityTracker.ps1 : File c:\ps-test\Start-ActivityTracker.ps1 cannot
-be loaded. The file c:\ps-test\Start-ActivityTracker.ps1 is not digitally signed. The script
+C:\ps-test\Start-ActivityTracker.ps1 : File C:\ps-test\Start-ActivityTracker.ps1 cannot
+be loaded. The file C:\ps-test\Start-ActivityTracker.ps1 is not digitally signed. The script
 will not execute on the system. For more information, see about_Execution_Policies.
 
 At line:1 char:1
-+ c:\ps-test\Start-ActivityTracker.ps1
++ C:\ps-test\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess

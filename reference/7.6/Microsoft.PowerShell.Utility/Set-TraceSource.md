@@ -50,7 +50,7 @@ Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -Listener
 This command starts tracing for the ParameterBinding component of PowerShell. It uses the **Name**
 parameter to specify the trace source, the **Option** parameter to select the `ExecutionFlow` trace
 events, and the **PSHost** parameter to select the PowerShell host listener, which sends the output
-to the console. The **ListenerOption** parameter adds the `ProcessID` and `TimeStamp` values to the
+to the console. The **ListenerOption** parameter adds the `ProcessId` and `TimeStamp` values to the
 trace message prefix.
 
 ### Example 2: Stop a trace

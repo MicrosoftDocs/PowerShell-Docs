@@ -182,7 +182,7 @@ the `$s` variable. It uses the credentials of the `Domain1\Admin01` user to comp
 ### Example 6: Create a session with a global scope in a different domain
 
 ```powershell
-$global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
+$Global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
 ```
 
 This example shows how to create a **PSSession** with a global scope on a computer in a different
@@ -215,7 +215,7 @@ text file, or other text-convertible format.
 ### Example 8: Create a session by using a URI
 
 ```powershell
-$s = New-PSSession -URI http://Server01:91/NewSession -Credential Domain01\User01
+$s = New-PSSession -Uri http://Server01:91/NewSession -Credential Domain01\User01
 ```
 
 This command creates a **PSSession** on the Server01 computer and stores it in the `$s` variable. It
@@ -227,7 +227,7 @@ that has permission to create a session on the remote computer.
 
 ```powershell
 $s = New-PSSession -ComputerName (Get-Content Servers.txt) -Credential Domain01\Admin01 -ThrottleLimit 16
-Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
+Invoke-Command -Session $s -ScriptBlock {Get-Process powershell} -AsJob
 ```
 
 These commands create a set of **PSSession** objects and then run a background job in each of the
@@ -244,7 +244,7 @@ command to `16` concurrent connections. The command saves the **PSSession** obje
 variable.
 
 The second command uses the **AsJob** parameter of the `Invoke-Command` cmdlet to start a background
-job that runs a `Get-Process PowerShell` command in each of the **PSSession** objects in `$s`.
+job that runs a `Get-Process powershell` command in each of the **PSSession** objects in `$s`.
 
 For more information about PowerShell background jobs, see
 [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
@@ -287,7 +287,7 @@ will have to use SSH key based user authentication.
 ### Example 13: Create a session using SSH and specify the port and user authentication key
 
 ```powershell
-New-PSSession -HostName UserA@LinuxServer01:22 -KeyFilePath c:\<path>\userAKey_rsa
+New-PSSession -HostName UserA@LinuxServer01:22 -KeyFilePath C:\<path>\userAKey_rsa
 ```
 
 This example shows how to create a **PSSession** using Secure Shell (SSH). It uses the **Port**
@@ -301,11 +301,11 @@ $sshConnections = @(
     @{
           HostName    = 'WinServer1'
           UserName    = 'domain\userA'
-          KeyFilePath = 'c:\users\UserA\id_rsa'
+          KeyFilePath = 'C:\Users\UserA\id_rsa'
     }
     @{
         HostName    = 'UserB@LinuxServer5'
-        KeyFilePath = 'c:\UserB\<path>\id_rsa'
+        KeyFilePath = 'C:\UserB\<path>\id_rsa'
     }
 )
 New-PSSession -SSHConnection $sshConnections

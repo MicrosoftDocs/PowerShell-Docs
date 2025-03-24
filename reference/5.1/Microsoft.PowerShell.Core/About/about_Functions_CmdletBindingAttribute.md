@@ -44,15 +44,15 @@ each argument follows this example.
 {
     [CmdletBinding(ConfirmImpact=<String>,
     DefaultParameterSetName=<String>,
-    HelpURI=<URI>,
+    HelpUri=<URI>,
     SupportsPaging=<Boolean>,
     SupportsShouldProcess=<Boolean>,
     PositionalBinding=<Boolean>)]
 
-    Param ($Parameter1)
-    Begin{}
-    Process{}
-    End{}
+    param ($Parameter1)
+    begin {}
+    process {}
+    end {}
 }
 ```
 
@@ -65,10 +65,10 @@ value to `$true` or just list the argument by name. For example, the following
 {
     [CmdletBinding(SupportsPaging=$true)]
 
-    Param ($Parameter1)
-    Begin{}
-    Process{}
-    End{}
+    param ($Parameter1)
+    begin {}
+    process {}
+    end {}
 }
 
 # Boolean arguments can be defined using this shorthand syntax
@@ -76,10 +76,10 @@ value to `$true` or just list the argument by name. For example, the following
 {
     [CmdletBinding(SupportsPaging)]
 
-    Param ($Parameter1)
-    Begin{}
-    Process{}
-    End{}
+    param ($Parameter1)
+    begin {}
+    process {}
+    end {}
 }
 ```
 
@@ -103,22 +103,22 @@ set that PowerShell will attempt to use when it cannot determine which
 parameter set to use. You can avoid this issue by making the unique parameter
 of each parameter set a mandatory parameter.
 
-## HelpURI
+## HelpUri
 
-The **HelpURI** argument specifies the internet address of the online version
-of the help topic that describes the function. The value of the **HelpURI**
+The **HelpUri** argument specifies the internet address of the online version
+of the help topic that describes the function. The value of the **HelpUri**
 argument must begin with "http" or "https".
 
-The **HelpURI** argument value is used for the value of the **HelpURI**
+The **HelpUri** argument value is used for the value of the **HelpUri**
 property of the **CommandInfo** object that `Get-Command` returns for the
 function.
 
 However, when help files are installed on the computer and the value of the
 first link in the **RelatedLinks** section of the help file is a URI, or the
-value of the first `.Link` directive in comment-based help is a URI, the URI in
+value of the first `.LINK` keyword in comment-based help is a URI, the URI in
 the help file is used as the value of the **HelpUri** property of the function.
 
-The `Get-Help` cmdlet uses the value of the **HelpURI** property to locate the
+The `Get-Help` cmdlet uses the value of the **HelpUri** property to locate the
 online version of the function help topic when the **Online** parameter of
 `Get-Help` is specified in a command.
 

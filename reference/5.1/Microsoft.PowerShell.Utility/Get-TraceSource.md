@@ -33,7 +33,7 @@ The tracing cmdlets were designed for PowerShell developers, but they are availa
 ### Example 1: Get trace sources by name
 
 ```powershell
-Get-TraceSource -Name "*provider*"
+Get-TraceSource -Name "*Provider*"
 ```
 
 This command gets all of the trace sources that have names that include provider.

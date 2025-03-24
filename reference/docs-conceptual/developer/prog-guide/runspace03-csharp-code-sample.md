@@ -8,7 +8,7 @@ title: RunSpace03 (C#) Code Sample
 
 Here is the C# source code for the console application described in "Creating a
 Console Application That Runs a Specified Script". This sample uses the
-[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)
+[System.Management.Automation.RunspaceInvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)
 class to execute a script that retrieves process information by using the list
 of process names passed into the script. It shows how to pass input objects to
 a script and how to retrieve error objects as well as the output objects.
