@@ -44,14 +44,14 @@ This command tests the `TestModule.psd1` module manifest.
 ### Example 2: Test a manifest by using the pipeline
 
 ```powershell
-"$PSHOME\Modules\TestModule.psd1" | test-modulemanifest
+"$PSHOME\Modules\TestModule.psd1" | Test-ModuleManifest
 ```
 
 ```Output
 Test-ModuleManifest : The specified type data file 'C:\Windows\System32\Wi
 ndowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml' could not be processed because the file was not found. Please correct the path and try again.
 At line:1 char:34
-+ "$PSHOME\Modules\TestModule.psd1" | test-modulemanifest <<<<
++ "$PSHOME\Modules\TestModule.psd1" | Test-ModuleManifest <<<<
 + CategoryInfo          : ResourceUnavailable: (C:\Windows\System32\WindowsPowerShell\v1.0\Modules\TestModule\TestTypes.ps1xml:String) [Test-ModuleManifest], FileNotFoundException
 + FullyQualifiedErrorId : Modules_TypeDataFileNotFound,Microsoft.PowerShell.Commands.TestModuleManifestCommandName
 

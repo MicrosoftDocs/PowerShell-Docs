@@ -118,7 +118,7 @@ $OnRemoveScript = {
 $ExecutionContext.SessionState.Module.OnRemove += $OnRemoveScript
 
 $registerEngineEventSplat = @{
-    SourceIdentifier = ([System.Management.Automation.PsEngineEvent]::Exiting)
+    SourceIdentifier = ([System.Management.Automation.PSEngineEvent]::Exiting)
     Action = $OnRemoveScript
 }
 Register-EngineEvent @registerEngineEventSplat
@@ -128,7 +128,7 @@ The `$OnRemoveScript` variable contains the script block that cleans up the reso
 the script block by assigning it to `$ExecutionContext.SessionState.Module.OnRemove`. You can also
 use `Register-EngineEvent` to have the script block execute when the PowerShell session ends.
 
-For script-based modules, you would add this code to the `.PSM1` file or put it in a startup script
+For script-based modules, you would add this code to the `.psm1` file or put it in a startup script
 that is listed in the **ScriptsToProcess** property of the module manifest.
 
 ## PARAMETERS
