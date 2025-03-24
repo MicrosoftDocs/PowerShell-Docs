@@ -32,7 +32,7 @@ The following example shows comment-based at the beginning of a function body.
 function MyProcess
 {
     <#
-       .Description
+       .DESCRIPTION
        The MyProcess function gets the Windows PowerShell process.
     #>
 
@@ -50,7 +50,7 @@ function MyFunction
     Get-Process powershell
 
     <#
-       .Description
+       .DESCRIPTION
        The MyProcess function gets the Windows PowerShell process.
     #>
 }
@@ -62,7 +62,7 @@ function MyFunction
 
 ```powershell
 <#
-    .Description
+    .DESCRIPTION
     The MyProcess function gets the Windows PowerShell process.
 #>
 function MyFunction { Get-Process powershell}

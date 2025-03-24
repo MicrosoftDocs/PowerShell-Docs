@@ -29,11 +29,11 @@ information about writing comment-based help topics, see [about_Comment_Based_He
 ### XML-Based Command Help
 
 The help topic that describes a script or function can be implemented in an XML file that uses the
-command help schema. To associate the script or function with the XML file, use the `ExternalHelp`
+command help schema. To associate the script or function with the XML file, use the `.EXTERNALHELP`
 comment keyword followed by the path and name of the XML file.
 
-When the `ExternalHelp` comment keyword is present, it takes precedence over comment-based help,
-even when `Get-Help` can't find a help file that matches the value of the `ExternalHelp` keyword.
+When the `.EXTERNALHELP` comment keyword is present, it takes precedence over comment-based help,
+even when `Get-Help` can't find a help file that matches the value of the `.EXTERNALHELP` keyword.
 
 ### Online Help
 

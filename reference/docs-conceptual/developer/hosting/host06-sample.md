@@ -21,9 +21,9 @@ the user.
 - Creating a custom host whose classes derive from the
   [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
   class, the
-  [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+  [System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
   class, and the
-  [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+  [System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
   class.
 
 - Building a console application that uses these host classes to build an interactive Windows
@@ -43,8 +43,8 @@ the user.
 - Implement the
   [System.Management.Automation.Host.IHostSupportsInteractiveSession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)
   interface to support interactive remoting by using the
-  [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and
-  [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
+  [Enter-PSSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and
+  [Exit-PSSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
 
 - Use the Tokenize API to colorize the command line as it is typed.
 
@@ -234,7 +234,7 @@ namespace Microsoft.Samples.PowerShell.Host
         // pipeline. This will result in the output being written using the PSHost
         // and PSHostUserInterface classes instead of returning objects to the host
         // application.
-        this.currentPowerShell.AddCommand("out-default");
+        this.currentPowerShell.AddCommand("Out-Default");
         this.currentPowerShell.Commands.Commands[0].MergeMyResults(PipelineResultTypes.Error, PipelineResultTypes.Output);
 
         // If there is any input pass it in, otherwise just invoke the
@@ -294,7 +294,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
         try
         {
-          this.currentPowerShell.AddScript("$input").AddCommand("out-string");
+          this.currentPowerShell.AddScript("$input").AddCommand("Out-String");
 
           // Do not merge errors, this function will swallow errors.
           Collection<PSObject> result;
@@ -642,7 +642,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ## Example 3
 
 The following code is the implementation of the
-[System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+[System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 class that is used by this host application.
 
 ```csharp
@@ -1162,7 +1162,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ## Example 4
 
 The following code is the implementation of the
-[System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+[System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
 class that is used by this host application. Those elements that are not implemented throw an
 exception or return nothing.
 
@@ -1378,7 +1378,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
 The following code reads the command line and colors the text as it is entered. Tokens are
 determined by using the
-[System.Management.Automation.Psparser.Tokenize*](/dotnet/api/System.Management.Automation.PSParser.Tokenize)
+[System.Management.Automation.PSParser.Tokenize*](/dotnet/api/System.Management.Automation.PSParser.Tokenize)
 method.
 
 ```csharp
@@ -1862,6 +1862,6 @@ namespace Microsoft.Samples.PowerShell.Host
 
  [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

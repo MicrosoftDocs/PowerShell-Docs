@@ -32,7 +32,7 @@ The following example shows comment-based at the beginning of a script.
 
 ```powershell
 <#
-.Description
+.DESCRIPTION
 This script performs a series of network connection tests.
 #>
 
@@ -49,7 +49,7 @@ param [string]$ComputerName
 function Ping { Test-Connection -ComputerName $ComputerName }
 
 <#
-.Description
+.DESCRIPTION
 This script performs a series of network connection tests.
 #>
 ```

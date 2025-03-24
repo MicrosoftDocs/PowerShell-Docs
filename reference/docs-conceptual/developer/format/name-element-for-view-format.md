@@ -53,7 +53,7 @@ For more information about the different types of views, see the following topic
 
 ## Example
 
-The following example shows a `View` element that defines a table view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+The following example shows a `View` element that defines a table view for the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object. The name of the view is "service".
 
 ```xml
