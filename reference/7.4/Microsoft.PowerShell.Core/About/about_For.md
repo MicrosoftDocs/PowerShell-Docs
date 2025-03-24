@@ -15,17 +15,17 @@ conditional test.
 
 ## Long description
 
-The `For` statement (also known as a `For` loop) is a language construct you
+The `for` statement (also known as a `for` loop) is a language construct you
 can use to create a loop that runs commands in a command block while a
 specified condition evaluates to `$true`.
 
-A typical use of the `For` loop is to iterate an array of values and to operate
+A typical use of the `for` loop is to iterate an array of values and to operate
 on a subset of these values. In most cases, if you want to iterate all the
-values in an array, consider using a `Foreach` statement.
+values in an array, consider using a `foreach` statement.
 
 ### Syntax
 
-The following shows the `For` statement syntax.
+The following shows the `for` statement syntax.
 
 ```
 for (<Init>; <Condition>; <Repeat>)
@@ -39,11 +39,11 @@ the loop begins. You typically use the **Init** portion of the statement to
 create and initialize a variable with a starting value.
 
 This variable will then be the basis for the condition to be tested in the next
-portion of the `For` statement.
+portion of the `for` statement.
 
-The **Condition** placeholder represents the portion of the `For` statement
+The **Condition** placeholder represents the portion of the `for` statement
 that resolves to a `$true` or `$false` **Boolean** value. PowerShell evaluates
-the condition each time the `For` loop runs. If the statement is `$true`, the
+the condition each time the `for` loop runs. If the statement is `$true`, the
 commands in the command block run, and the statement is evaluated again. If the
 condition is still `$true`, the commands in the **Statement list** run again.
 The loop is repeated until the condition becomes `$false`.
@@ -122,14 +122,14 @@ For more information, see [about_Logical_Operators][01].
 
 ### Syntax examples
 
-At a minimum, a `For` statement requires the parenthesis surrounding the
+At a minimum, a `for` statement requires the parenthesis surrounding the
 **Init**, **Condition**, and **Repeat** part of the statement and a command
 surrounded by braces in the **Statement list** part of the statement.
 
-Note that the upcoming examples intentionally show code outside the `For`
-statement. In later examples, code is integrated into the `For` statement.
+Note that the upcoming examples intentionally show code outside the `for`
+statement. In later examples, code is integrated into the `for` statement.
 
-For example, the following `For` statement continually displays the value of
+For example, the following `for` statement continually displays the value of
 the `$i` variable until you manually break out of the command by pressing
 CTRL+C.
 
@@ -156,7 +156,7 @@ continually display the value of the `$i` variable as it is incremented by 1
 each time the loop is run.
 
 Rather than change the value of the variable in the statement list part of the
-`For` statement, you can use the **Repeat** portion of the `For` statement
+`for` statement, you can use the **Repeat** portion of the `for` statement
 instead, as follows.
 
 ```powershell
@@ -170,11 +170,11 @@ for (;;$i++)
 This statement will still repeat indefinitely until you break out of the
 command by pressing CTRL+C.
 
-You can terminate the `For` loop using a **condition**. You can place a
-condition using the **Condition** portion of the `For` statement. The `For`
+You can terminate the `for` loop using a **condition**. You can place a
+condition using the **Condition** portion of the `for` statement. The `for`
 loop terminates when the condition evaluates to `$false`.
 
-In the following example, the `For` loop runs while the value of `$i` is less
+In the following example, the `for` loop runs while the value of `$i` is less
 than or equal to 10.
 
 ```powershell
@@ -185,17 +185,17 @@ for(;$i -le 10;$i++)
 }
 ```
 
-Instead of creating and initializing the variable outside the `For` statement,
-you can perform this task inside the `For` loop by using the **Init** portion
-of the `For` statement.
+Instead of creating and initializing the variable outside the `for` statement,
+you can perform this task inside the `for` loop by using the **Init** portion
+of the `for` statement.
 
 ```powershell
 for($i=1; $i -le 10; $i++){Write-Host $i}
 ```
 
 You can use carriage returns instead of semicolons to delimit the **Init**,
-**Condition**, and **Repeat** portions of the `For` statement. The following
-example shows a `For` that uses this alternative syntax.
+**Condition**, and **Repeat** portions of the `for` statement. The following
+example shows a `for` that uses this alternative syntax.
 
 ```powershell
 for ($i = 0
@@ -205,15 +205,15 @@ for ($i = 0
 }
 ```
 
-This alternative form of the `For` statement works in PowerShell script files
-and at the PowerShell command prompt. However, it is easier to use the `For`
+This alternative form of the `for` statement works in PowerShell script files
+and at the PowerShell command prompt. However, it is easier to use the `for`
 statement syntax with semicolons when you enter interactive commands at the
 command prompt.
 
-The `For` loop is more flexible than the `Foreach` loop because it allows you
+The `for` loop is more flexible than the `foreach` loop because it allows you
 to increment values in an array or collection by using patterns. In the
 following example, the `$i` variable is incremented by 2 in the **Repeat**
-portion of the `For` statement.
+portion of the `for` statement.
 
 ```powershell
 for ($i = 0; $i -le 20; $i += 2)
@@ -222,7 +222,7 @@ for ($i = 0; $i -le 20; $i += 2)
 }
 ```
 
-The `For` loop can also be written on one line as in the following example.
+The `for` loop can also be written on one line as in the following example.
 
 ```powershell
 for ($i = 0; $i -lt 10; $i++){Write-Host $i}
@@ -230,7 +230,7 @@ for ($i = 0; $i -lt 10; $i++){Write-Host $i}
 
 ### Functional example
 
-The following example demonstrates how you can use a `For` loop to iterate over
+The following example demonstrates how you can use a `for` loop to iterate over
 an array of files and rename them. The files in the `work_items` folder have
 their work item ID as the filename. The loop iterates through the files
 to ensure that the ID number is zero-padded to five digits.
