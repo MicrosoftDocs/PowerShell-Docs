@@ -22,7 +22,7 @@ overloads, or when the generic method takes no formal parameter. PowerShell can
 fail to resolve the correct method without the explicit generic method
 arguments.
 
-For example, `[Array]::Empty<T>()`. The .NET **Array** class has a static,
+For example, `[array]::Empty<T>()`. The .NET **Array** class has a static,
 generic method `Empty<T>()` that takes no formal parameters.
 
 Prior to PowerShell 7.3, to ensure proper method resolution you had to use
@@ -72,8 +72,8 @@ require two generic type parameters and two formal value parameters.
 $result = [System.Linq.Enumerable]::Select[int, float](
     $list,
     [Func[int, float]]{
-        param($item)
-        [math]::Pow($item, 3)
+        param($Item)
+        [Math]::Pow($Item, 3)
     }
 )
 $result
