@@ -55,7 +55,7 @@ This example stops the **Notepad** process and then waits for the process to be 
 continues with the next command.
 
 ```powershell
-$nid = (Get-Process notepad).id
+$nid = (Get-Process notepad).Id
 Stop-Process -Id $nid
 Wait-Process -Id $nid
 ```
@@ -73,7 +73,7 @@ command gets the Notepad process and stores it in the `$p` variable. The second 
 
 ```powershell
 $p = Get-Process notepad
-Wait-Process -Id $p.id
+Wait-Process -Id $p.Id
 Wait-Process -Name "notepad"
 Wait-Process -InputObject $p
 ```

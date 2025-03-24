@@ -97,7 +97,7 @@ start service TlntSvr on computer '.'.
 At line:1 char:14
 + Start-Service  <<<< tlntsvr
 
-PS> Get-CimInstance win32_service | Where-Object Name -eq "tlntsvr"
+PS> Get-CimInstance Win32_Service | Where-Object Name -EQ "tlntsvr"
 ExitCode  : 0
 Name      : TlntSvr
 ProcessId : 0

@@ -105,7 +105,7 @@ The first command in the pipeline uses the Get-ChildItem cmdlet to get all of th
 `C:\Temp` directory. The **Recurse** parameter extends the command to all subdirectories of
 `C:\temp`. The **Include** parameter limits the files retrieved to those with the `.txt` file name
 extension. The **Force** parameter gets hidden files, which would otherwise be excluded. (You cannot
-use `c:\temp\*.txt`, because the **Recurse** parameter works on directories, not on files.)
+use `C:\temp\*.txt`, because the **Recurse** parameter works on directories, not on files.)
 
 The pipeline operator (`|`) sends the objects representing the retrieved files to the `Set-Acl`
 cmdlet, which applies the security descriptor in the **AclObject** parameter to all of the files in
@@ -421,7 +421,7 @@ security object depends on the type of the item.
 
 This cmdlet is only available on Windows platforms.
 
-The `Set-Acl` cmdlet is supported by the PowerShell file system and registry providers. As such, you
+The `Set-Acl` cmdlet is supported by the PowerShell FileSystem and Registry providers. As such, you
 can use it to change the security descriptors of files, directories, and registry keys.
 
 ## RELATED LINKS

@@ -76,7 +76,7 @@ the `Cert:` drive.
 Set-Location Cert:
 ```
 
-You can also work with the certificate provider from any other PowerShell
+You can also work with the Certificate provider from any other PowerShell
 drive. To reference an alias from another location, use the `Cert:` drive name
 in the path.
 
@@ -114,7 +114,7 @@ The example shows the new certificate script properties (**DnsNameList**,
 **EnhancedKeyUsageList**, **SendAsTrustedIssuer**) using `Select-Object`.
 
 ```powershell
-$c = Get-Item cert:\LocalMachine\My\52A149D0393CE8A8D4AF0B172ED667A9E3A1F44E
+$c = Get-Item Cert:\LocalMachine\My\52A149D0393CE8A8D4AF0B172ED667A9E3A1F44E
 $c | Format-List DnsNameList, EnhancedKeyUsageList, SendAsTrustedIssuer
 ```
 
@@ -132,7 +132,7 @@ This command uses the **CodeSigningCert** and **Recurse** parameters of the
 code-signing authority.
 
 ```powershell
-Get-ChildItem -Path cert: -CodeSigningCert -Recurse
+Get-ChildItem -Path Cert: -CodeSigningCert -Recurse
 ```
 
 ### Find expired certificates
@@ -141,7 +141,7 @@ This command uses the **ExpiringInDays** parameter of the `Get-ChildItem`
 cmdlet to get certificates that expire within the next 30 days.
 
 ```powershell
-Get-ChildItem -Path cert:\LocalMachine\WebHosting -ExpiringInDays 30
+Get-ChildItem -Path Cert:\LocalMachine\WebHosting -ExpiringInDays 30
 ```
 
 ### Find Server SSL Certificates
@@ -152,7 +152,7 @@ This command uses the **SSLServerAuthentication** parameter of the
 
 ```powershell
 $getChildItemSplat = @{
-    Path = 'cert:\LocalMachine\My', 'cert:\LocalMachine\WebHosting'
+    Path = 'Cert:\LocalMachine\My', 'Cert:\LocalMachine\WebHosting'
     SSLServerAuthentication = $true
 }
 Get-ChildItem @getChildItemSplat
@@ -169,7 +169,7 @@ that have expired.
 $invokeCommandSplat = @{
     ComputerName = 'Srv01', 'Srv02'
     ScriptBlock = {
-        Get-ChildItem -Path cert:\* -Recurse -ExpiringInDays 0
+        Get-ChildItem -Path Cert:\* -Recurse -ExpiringInDays 0
     }
 }
 Invoke-Command @invokeCommandSplat
@@ -188,9 +188,9 @@ have the following attributes:
 The **NotAfter** property stores the certificate expiration date.
 
 ```powershell
-[DateTime] $ValidThrough = (Get-Date) + (New-TimeSpan -Days 30)
+[datetime] $ValidThrough = (Get-Date) + (New-TimeSpan -Days 30)
 $getChildItemSplat = @{
-    Path = 'cert:\*'
+    Path = 'Cert:\*'
     Recurse = $true
     DnsName = "*fabrikam*"
     Eku = "*Client Authentication*"
@@ -209,7 +209,7 @@ This command opens the Certificates MMC snap-in to manage the specified
 certificate.
 
 ```powershell
-Invoke-Item cert:\CurrentUser\my\6B8223358119BB08840DEE50FD8AF9EA776CE66B
+Invoke-Item Cert:\CurrentUser\my\6B8223358119BB08840DEE50FD8AF9EA776CE66B
 ```
 
 ## Copying Certificates
@@ -254,8 +254,8 @@ The returned certificates are piped to the `Move-Item` cmdlet, which moves the
 certificates to the `WebHosting` store.
 
 ```powershell
-Get-ChildItem cert:\LocalMachine\My -SSLServerAuthentication |
-    Move-Item -Destination cert:\LocalMachine\WebHosting
+Get-ChildItem Cert:\LocalMachine\My -SSLServerAuthentication |
+    Move-Item -Destination Cert:\LocalMachine\WebHosting
 ```
 
 ## Deleting Certificates and Private Keys
@@ -273,7 +273,7 @@ In the `Cert:` drive, the `Remove-Item` cmdlet supports only the **DeleteKey**,
 ignored.
 
 ```powershell
-Remove-Item cert:\LocalMachine\CA\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0
+Remove-Item Cert:\LocalMachine\CA\5DDC44652E62BF9AA1116DC41DE44AB47C87BDD0
 ```
 
 ### Delete a Certificate using a wildcards in the DNS name
@@ -283,7 +283,7 @@ This command deletes all certificates that have a DNS name that contains
 get the certificates and the `Remove-Item` cmdlet to delete them.
 
 ```powershell
-Get-ChildItem -Path cert:\LocalMachine -DnsName *Fabrikam* | Remove-Item
+Get-ChildItem -Path Cert:\LocalMachine -DnsName *Fabrikam* | Remove-Item
 ```
 
 ### Delete private keys from a remote computer
@@ -329,7 +329,7 @@ parameter to remove the private key along with the specified certificate.
 ```powershell
 Invoke-Command -Session $s {
     $removeItemSplat = @{
-        Path = 'cert:\LocalMachine\My\D2D38EBA60CAA1C12055A2E1C83B15AD450110C2'
+        Path = 'Cert:\LocalMachine\My\D2D38EBA60CAA1C12055A2E1C83B15AD450110C2'
         DeleteKey = $true
     }
     Remove-Item @removeItemSplat
@@ -347,7 +347,7 @@ cmdlet, which deletes them. The command uses the **DeleteKey** parameter to
 delete the private key along with the certificate.
 
 ```powershell
-$expired = Get-ChildItem cert:\LocalMachine\WebHosting -ExpiringInDays 0
+$expired = Get-ChildItem Cert:\LocalMachine\WebHosting -ExpiringInDays 0
 $expired | Remove-Item -DeleteKey
 ```
 
@@ -369,7 +369,7 @@ This command creates a new certificate store named `CustomStore` in the
 `LocalMachine` store location.
 
 ```powershell
-New-Item -Path cert:\LocalMachine\CustomStore
+New-Item -Path Cert:\LocalMachine\CustomStore
 ```
 
 ### Create a new certificate store on a remote computer
@@ -384,7 +384,7 @@ new certificate store.
 
 ```powershell
 Invoke-Command -ComputerName Server01 -ScriptBlock {
-    New-Item -Path cert:\LocalMachine\CustomStore
+    New-Item -Path Cert:\LocalMachine\CustomStore
 }
 ```
 
@@ -417,7 +417,7 @@ store.
 
 ```powershell
 Invoke-Command -ComputerName S1, S2 -ScriptBlock {
-    Remove-Item -Path cert:\LocalMachine\TestStore -Recurse
+    Remove-Item -Path Cert:\LocalMachine\TestStore -Recurse
 }
 ```
 
@@ -542,7 +542,7 @@ This parameter was reintroduced in PowerShell 7.1
 
 ## Script properties
 
-New script properties have been added to the **x509Certificate2** object that
+New script properties have been added to the **X509Certificate2** object that
 represents the certificates to make it easy to search and manage the
 certificates.
 
@@ -583,7 +583,7 @@ Get-Help Get-ChildItem
 ```
 
 ```powershell
-Get-Help Get-ChildItem -Path cert:
+Get-Help Get-ChildItem -Path Cert:
 ```
 
 ## See also
