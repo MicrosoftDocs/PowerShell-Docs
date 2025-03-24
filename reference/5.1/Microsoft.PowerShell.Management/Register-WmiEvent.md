@@ -85,8 +85,12 @@ This example shows how to use an action to respond to an event. In this case, wh
 any `Start-Process` commands in the current session are written to an XML file.
 
 ```powershell
-$action = { Get-History | where { $_.CommandLine -like "*Start-Process*" } | Export-CliXml "commandHistory.clixml" }
-Register-WmiEvent -Class 'Win32_ProcessStartTrace' -SourceIdentifier "ProcessStarted" -Action $action
+$action = {
+    Get-History | 
+    Where-Object { $_.CommandLine -like "*Start-Process*" } |
+    Export-CliXml "commandHistory.clixml"
+}
+Register-WmiEvent -Class Win32_ProcessStartTrace -SourceIdentifier ProcessStarted -Action $action
 ```
 
 ```Output
@@ -123,7 +127,8 @@ event is raised instead of sending the event to the event queue. Enclose the com
 
 The value of **Action** can include the `$Event`, `$EventSubscriber`, `$Sender`, `$EventArgs`, and
 `$args` automatic variables, which provide information about the event to the **Action** script
-block. For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+block. For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 When you specify an action, `Register-WmiEvent` returns an event job object that represents that
 action. You can use the cmdlets that contain the **Job** noun (the **Job** cmdlets) to manage the
