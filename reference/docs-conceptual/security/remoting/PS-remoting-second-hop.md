@@ -148,7 +148,7 @@ Now let's set up the variables we'll use to represent the servers:
 
 ```powershell
 # Set up variables for reuse
-$ServerA = $env:COMPUTERNAME
+$ServerA = $Env:COMPUTERNAME
 $ServerB = Get-ADComputer -Identity ServerB
 $ServerC = Get-ADComputer -Identity ServerC
 ```
@@ -202,14 +202,14 @@ $cred = Get-Credential Contoso\Alice
 
 # Test kerberos double hop
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
-    Test-Path \\$($using:ServerC.Name)\C$
-    Get-Process lsass -ComputerName $($using:ServerC.Name)
-    Get-EventLog -LogName System -Newest 3 -ComputerName $($using:ServerC.Name)
+    Test-Path \\$($Using:ServerC.Name)\C$
+    Get-Process lsass -ComputerName $($Using:ServerC.Name)
+    Get-EventLog -LogName System -Newest 3 -ComputerName $($Using:ServerC.Name)
 }
 ```
 
-In this example, the `$using` variable is used to make the `$ServerC` variable visible to _ServerB_.
-For more information about the `$using` variable, see [about_Remote_Variables][06].
+In this example, the `Using:` scope modifier is used to make the `$ServerC` variable visible to
+_ServerB_. For more information about the `Using:` scope modifier, see [about_Remote_Variables][06].
 
 To allow multiple servers to delegate credentials to _ServerC_, set the value of the
 **PrincipalsAllowedToDelegateToAccount** parameter on _ServerC_ to an array:

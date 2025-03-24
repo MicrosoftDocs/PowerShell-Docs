@@ -73,7 +73,7 @@ PowerShell 7.6-preview.3 includes the following updated modules:
 
 The following experimental features are included in PowerShell 7.6-preview.3:
 
-- [PSNativeWindowsTildeExpansion][01] - Add tilde expansion for windows native executables
+- [PSNativeWindowsTildeExpansion][01] - Add tilde expansion for Windows-native executables
 - [PSRedirectToVariable][02] - Allow redirecting to a variable
 - [PSSerializeJSONLongEnumAsNumber][03] - `ConvertTo-Json` now treats large enums as numbers
 

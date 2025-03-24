@@ -16,12 +16,12 @@ that is associated with a **PowerShellTab** object is a member of this class. An
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-Loads a `.snippets.ps1xml` file that contains user-defined snippets. The easiest way to create
+Loads a `snippets.ps1xml` file that contains user-defined snippets. The easiest way to create
 snippets is to use the `New-IseSnippet` cmdlet, which automatically stores them in your profile folder
 so that they are loaded every time that you start Windows PowerShell ISE.
 
 **FilePathName** - String
-The path and file name to a .snippets.ps1xml file that contains snippet definitions.
+The path and file name to a `snippets.ps1xml` file that contains snippet definitions.
 
 ```powershell
 # Loads a custom snippet file into the current PowerShell tab.

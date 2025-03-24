@@ -32,7 +32,7 @@ PowerShell 7.3 includes the following features, updates, and breaking changes.
 
 ## Tab completion improvements
 
-- PowerShell 7.3 includes PSReadline 2.2.6, which enables Predictive IntelliSense by default. For
+- PowerShell 7.3 includes PSReadLine 2.2.6, which enables Predictive IntelliSense by default. For
   more information, see [about_PSReadLine][12].
 - Fix tab completion within the script block specified for the `ValidateScriptAttribute`.
   ([#14550][14550]) (Thanks @MartinGC94!)
@@ -85,7 +85,7 @@ PowerShell 7.3 includes the following features, updates, and breaking changes.
 - Add `-HttpVersion` parameter to web cmdlets ([#15853][15853]) (Thanks @hayhay27!)
 - Add support to web cmdlets for open-ended input tags ([#16193][16193]) (Thanks @farmerau!)
 - Fix `ConvertTo-Json -Depth` to allow 100 at maximum ([#16197][16197]) (Thanks @KevRitchie!)
-- Improve variable handling when calling `Invoke-Command` with the `$using:` expression
+- Improve variable handling when calling `Invoke-Command` with the `$Using:` expression
   ([#16113][16113]) (Thanks @dwtaber!)
 - Add `-StrictMode` to `Invoke-Command` to allow specifying strict mode when invoking command
   locally ([#16545][16545]) (Thanks @Thomas-Yu!)
@@ -104,7 +104,7 @@ PowerShell 7.3 includes the following features, updates, and breaking changes.
 - Render decimal numbers in a table using current culture ([#17650][17650])
 - Add type accelerator ordered for **OrderedDictionary** ([#17804][17804]) (Thanks @fflaten!)
 - Add `find.exe` to legacy argument binding behavior for Windows ([#17715][17715])
-- Add `-noprofileloadtime` switch to pwsh ([#17535][17535]) (Thanks @rkeithhill!)
+- Add `-NoProfileLoadTime` switch to pwsh ([#17535][17535]) (Thanks @rkeithhill!)
 
 For a complete list of changes, see the [Change Log][11] in the GitHub repository.
 

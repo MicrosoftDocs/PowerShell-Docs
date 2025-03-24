@@ -17,7 +17,7 @@ For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repositor
 - Added the **ProgressAction** parameter to the Common Parameters
 - Update some PowerShell APIs to throw **ArgumentException** instead of **ArgumentNullException**
   when the argument is an empty string ([#19215][19215]) (Thanks @xtqqczze!)
-- Remove code related to `#requires -pssnapin` ([#19320][19320])
+- Remove code related to `#Requires -PSSnapin` ([#19320][19320])
 - `Test-Json` now uses JsonSchema.NET instead of Newtonsoft.Json.Schema.
   - With this change, `Test-Json` no longer supports the older Draft 4 schemas. ([#18141][18141])
     (Thanks @gregsdennis!). For more information about JSON schemas, see [JSON Schema][14]
@@ -68,7 +68,7 @@ Many thanks to **@MartinGC94** and others for all their work to improve tab comp
 - Fix member completion in attribute argument ([#17902][17902])
 - Exclude redundant parameter aliases from completion results ([#19382][19382])
 - Fix class member completion for classes with base types ([#19179][19179])
-- Add completion for Using keywords ([#16514][18758])
+- Add completion for the `using` keyword ([#16514][18758])
 - Fix TabExpansion2 variable leak when completing variables ([#18763][18763])
 - Enable completion of variables across ScriptBlock scopes ([#19819][19819])
 - Fix completion of the foreach statement variable ([#19814][19814])
@@ -84,7 +84,7 @@ Many thanks to **@MartinGC94** and others for all their work to improve tab comp
 - Update parameter completion for enums to exclude values not allowed by `ValidateRange` attributes
   ([#17750][17750]) (Thanks @fflaten!).
 - Fix dynamic parameter completion ([#19510][19510])
-- Add completion for variables assigned by the Data statement ([#19831][19831])
+- Add completion for variables assigned by the `data` statement ([#19831][19831])
 - Fix expanding tilde (`~`) on Windows systems to `$HOME` to prevent breaking use cases with native
   commands ([#21529][21529])
 
@@ -188,7 +188,7 @@ Other Engine updates
 - Add a public API for getting locations of PSModulePath elements ([#19422][19422])
 - Fix incorrect string to type conversion ([#19560][19560]) (Thanks @MartinGC94!)
 - Fix slow execution when many breakpoints are used ([#14953][14953]) (Thanks @nohwnd!)
-- Remove code related to `#requires -pssnapin` ([#19320][19320])
+- Remove code related to `#Requires -PSSnapin` ([#19320][19320])
 
 ## Experimental Features
 

@@ -109,7 +109,7 @@ For example, the following command runs the `DiskCollect.ps1` script on the remo
 Server01 and Server02.
 
 ```powershell
-Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
+Invoke-Command -ComputerName Server01, Server02 -FilePath C:\Scripts\DiskCollect.ps1
 ```
 
 ### Establish a Persistent Connection
@@ -149,11 +149,11 @@ PowerShell includes cmdlets that allow you to:
 - Import commands from a remote session that actually run implicitly on the remote session
 - Configure the security of a remote session
 
-PowerShell on Windows includes a WSMan provider. The provider creates a `WSMAN:` drive that lets you
+PowerShell on Windows includes a WSMan provider. The provider creates a `WSMan:` drive that lets you
 navigate through a hierarchy of configuration settings on the local computer and remote computers.
 
 For more information about the WSMan provider, see [WSMan Provider][07] and
-[About WS-Management Cmdlets][06], or in the Windows PowerShell console, type `Get-Help wsman`.
+[About WS-Management Cmdlets][06], or in the Windows PowerShell console, type `Get-Help WSMan`.
 
 For more information, see:
 
