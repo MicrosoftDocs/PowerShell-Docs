@@ -229,7 +229,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -253,10 +254,11 @@ This cmdlet creates a file that contains the exported aliases.
   To use a Windows PowerShell console file in a new session, use the following syntax to start
   Windows PowerShell:
 
-  `powershell.exe -PSConsoleFile \<ConsoleFile\>.psc1`
+  `powershell.exe -PSConsoleFile <ConsoleFile>.psc1`
 
-  You can also save Windows PowerShell snap-ins for future sessions by adding an Add-PSSnapin
-  command to your Windows PowerShell profile. For more information, see [about_Profiles](About/about_Profiles.md).
+  You can also save Windows PowerShell snap-ins for future sessions by adding an `Add-PSSnapin`
+  command to your Windows PowerShell profile. For more information, see 
+  [about_Profiles](About/about_Profiles.md).
 
 ## RELATED LINKS
 
