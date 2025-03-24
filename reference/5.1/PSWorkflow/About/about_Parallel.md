@@ -18,10 +18,8 @@ The `parallel` keyword runs workflow activities in parallel. This keyword is val
 ### SYNTAX
 
 ```
-workflow <Verb-Noun>
-{
-     parallel
-     {
+workflow <Verb-Noun> {
+     parallel {
           [<Activity>]
           [<Activity>]
         ...
@@ -36,10 +34,8 @@ The commands in a `parallel` script block can run concurrently. The order in whi
 For example, the following workflow includes a `parallel` script block that runs activities that get processes and services on the computer. Because the Get-Process and Get-Service commands are independent of each other, they can run concurrently and in any order.
 
 ```powershell
-workflow Test-Workflow
-{
-    parallel
-    {
+workflow Test-Workflow {
+    parallel {
          Get-Process
          Get-Service
     }

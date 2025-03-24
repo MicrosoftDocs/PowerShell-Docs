@@ -72,8 +72,7 @@ For example, the following commands add a process object to the service object
 in the `$x` variable.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
     $x = Get-Service
     $x = Get-Process -AppendOutput $true
 }
@@ -84,8 +83,7 @@ can also use the `+=` assignment operator to add output to the value of a
 variable, as shown in the following example.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
     $x = Get-Service
     $x += Get-Process
 }
@@ -334,8 +332,7 @@ in a variable. Then, use the variable as the value of the **PSDebug** parameter
 of one or more activities, as shown in the following example.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
     $debugCollection = New-Object -Type `
     System.Management.Automation.PSDataCollection[System.Management.Automation.DebugRecord]
     inlinescript {\Server01\Share01\Get-AssetData.ps1} -PSDebug $debugCollection -Debug $true
@@ -380,15 +377,13 @@ in a variable. Then, use the variable as the value of the **PSError** parameter
 of one or more activities, as shown in the following example.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
    $typeName = "System.Management.Automation.PSDataCollection"
    $typeName += '[System.Management.Automation.ErrorRecord]'
    $ec = New-Object $typeName
    inlinescript {\Server01\Share01\Get-AssetData.ps1} -PSError $ec
    inlinescript {\Server01\Share01\Set-AssetData.ps1} -PSError $ec
-   if ($ec.Count -gt 2)
-   {
+   if ($ec.Count -gt 2) {
       # Do Some Work.
    }
 }
@@ -537,8 +532,7 @@ the workflow. When you run the workflow with input, that input is used by the
 activity.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
     Get-Service -UseDefaultInput $true
 }
 
@@ -600,24 +594,16 @@ parameters to run a `Get-EventLog` activity only on computers it a particular
 domain.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
     $UserDomain = Get-Content -Path '.\UserComputers.txt'
     $Log = (Get-EventLog -LogName "Windows PowerShell" `
       -PSComputerName $UserDomain)
 
-    if ($Log)
-    {
+    if ($Log) {
         # Do Work Here.
     }
 }
 ```
-
-<!--
-# KEYWORDS
-[about_Activity_Common_Parameters](about_Activity_Common_Parameters.md)
-[about_Activity_Parameters](about_Activity_Parameters.md)
-[about_ActivityParameters]()about_ActivityParameters.md) -->
 
 ## See Also
 

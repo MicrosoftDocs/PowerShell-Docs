@@ -26,8 +26,7 @@ each item in the collection.
 ### SYNTAX
 
 ```
-foreach -Parallel ($<item> in $<collection>)
-{
+foreach -Parallel ($<item> in $<collection>) {
     [<Activity1>]
     [<Activity2>]
     ...
@@ -59,8 +58,7 @@ the disks that the `Get-Disk` activity gets. The commands in the
 parallel. The disks might be processed concurrently and in any order.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
     $Disks = Get-Disk
 
     # The disks are processed in parallel.
@@ -81,8 +79,7 @@ parallel. The parallel commands and the `foreach -Parallel` loop run
 concurrently.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
     #Run commands in parallel.
     parallel
     {

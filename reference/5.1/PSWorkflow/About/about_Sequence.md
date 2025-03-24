@@ -34,10 +34,8 @@ you to run dependent commands sequentially.
 ### Workflow using `sequence`
 
 ```
-workflow <Verb-Noun>
-{
-    sequence
-    {
+workflow <Verb-Noun> {
+    sequence {
         [<Activity>]
         [<Activity>]
         # ...
@@ -48,13 +46,10 @@ workflow <Verb-Noun>
 ### Workflow using `parallel` and `sequence`
 
 ```
-workflow <Verb-Noun>
-{
-    parallel
-    {
+workflow <Verb-Noun> {
+    parallel {
         [<Activity>]
-        sequence
-        {
+        sequence {
             [<Activity>]
             [<Activity>]
             # ...
@@ -92,15 +87,12 @@ command that gets the hotfix information must run before the command that uses
 it.
 
 ```powershell
-workflow Test-Workflow
-{
-    parallel
-    {
+workflow Test-Workflow {
+    parallel {
     Get-Process
     Get-Service
 
-    sequence
-    {
+    sequence {
         $Hotfix = Get-Content 'D:\HotFixes\Required.txt'
         foreach ($h in $Hotfix) {'D:\Scripts\Verify-Hotfix' -Hotfix $h}
         }

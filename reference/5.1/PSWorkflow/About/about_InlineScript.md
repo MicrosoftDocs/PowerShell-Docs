@@ -136,8 +136,7 @@ in PowerShell but aren't valid in workflows. For example, the `New-Object`
 cmdlet with the **ComObject** parameter.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
   $ie = inlinescript {
     $ie = New-Object -ComObject InternetExplorer.Application -Property @{navigate2="www.microsoft.com"}
 

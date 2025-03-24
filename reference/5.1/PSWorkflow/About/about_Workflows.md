@@ -153,8 +153,11 @@ To run a workflow, use the following procedure.
    On a remote computer:
 
    ```powershell
-   $ws = New-PSWorkflowSession -ComputerName Server01 `
-   -Credential Domain01\Admin01
+   $newPSWorkflowSessionSplat = @{
+    ComputerName = 'Server01'
+    Credential = 'Domain01\Admin01'
+   }
+   $ws = New-PSWorkflowSession @newPSWorkflowSessionSplat
    ```
 
    If you are an Administrator on the workflow session computer, you can use the
@@ -163,12 +166,22 @@ To run a workflow, use the following procedure.
    cmdlet to change the session configuration.
 
    ```powershell
-   $sto = New-PSWorkflowExecutionOption -MaxConnectedSessions 150
-   Invoke-Command -ComputerName Server01 `
-   {Set-PSSessionConfiguration Microsoft.PowerShell.Workflow `
-   -SessionTypeOption $Using:sto}
-   $ws = New-PSWorkflowSession -ComputerName Server01 `
-   -Credential Domain01\Admin01
+   $newPSWorkflowExecutionOptionSplat = @{
+       MaxConnectedSessions = 150
+   }
+   $sto = New-PSWorkflowExecutionOption @newPSWorkflowExecutionOptionSplat
+   $invokeCommandSplat = @{
+       ComputerName = 'Server01'
+       ScriptBlock = {
+         Set-PSSessionConfiguration Microsoft.PowerShell.Workflow -SessionTypeOption $Using:sto
+      }
+   }
+   Invoke-Command @invokeCommandSplat
+   $newPSWorkflowSessionSplat = @{
+      ComputerName = 'Server01'
+      Credential = 'Domain01\Admin01'
+   }
+   $ws = New-PSWorkflowSession @newPSWorkflowSessionSplat
    ```
 
 1. Run the workflow in the workflow session. To specify the names of the
@@ -259,10 +272,18 @@ the workflow session from the `PS-prefixed` workflow common parameters that
 define the connection to the managed nodes.
 
 ```powershell
-$ws = New-PSSession -ComputerName Server01 -ConfigurationName Microsoft.PowerShell.Workflow
+$newPSSessionSplat = @{
+    ComputerName = 'Server01'
+    ConfigurationName = 'Microsoft.PowerShell.Workflow'
+}
+$ws = New-PSSession @newPSSessionSplat
 
 Invoke-Command -Session $ws {
-  Test-Workflow -PSComputerName Server01, Server02 -PSConfigurationName Microsoft.PowerShell.Workflow
+  $testWorkflowSplat = @{
+    PSComputerName = 'Server01', 'Server02'
+    PSConfigurationName = 'Microsoft.PowerShell.Workflow'
+  }
+  Test-Workflow @testWorkflowSplat
 }
 ```
 

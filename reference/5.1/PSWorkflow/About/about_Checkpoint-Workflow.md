@@ -23,8 +23,7 @@ The Checkpoint-Workflow activity is valid only in a workflow.
 ### SYNTAX
 
 ```
-workflow <Verb-Noun>
-{
+workflow <Verb-Noun> {
     Checkpoint-Workflow
 }
 ```
@@ -72,14 +71,12 @@ The following workflow includes a call to the Checkpoint-Workflow activity after
 long-running function and a script that share data.
 
 ```powershell
-workflow Test-Workflow
-{
+workflow Test-Workflow {
     $a = Invoke-LongRunningFunction
     inlinescript { \\Server\Share\Get-DataPacks.ps1 $Using:a}
     Checkpoint-Workflow
 
-    Invoke-LongRunningFunction
-    {
+    Invoke-LongRunningFunction {
         ...
     }
 }

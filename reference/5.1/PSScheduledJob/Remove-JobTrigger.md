@@ -48,7 +48,8 @@ job triggers to delete. By default, `Remove-JobTrigger` deletes all job triggers
 that is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
-the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -73,9 +74,11 @@ This command deletes only the third trigger (ID = 3) from the BackupArchive sche
 ### Example 3: Delete AtStartup job triggers from all scheduled jobs
 
 ```powershell
-function Delete-AtStartup
-{
-    Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.Frequency -eq "AtStartup"} | ForEach-Object { Remove-JobTrigger -InputObject $_.JobDefinition -TriggerId $_.Id}
+function Delete-AtStartup {
+    Get-ScheduledJob |
+        Get-JobTrigger |
+        Where-Object {$_.Frequency -eq "AtStartup"} |
+        ForEach-Object { Remove-JobTrigger -InputObject $_.JobDefinition -TriggerId $_.Id}
 }
 ```
 
@@ -194,7 +197,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

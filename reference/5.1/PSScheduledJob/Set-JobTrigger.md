@@ -106,7 +106,8 @@ Id         Frequency       Time                   DaysOfWeek              Enable
 ```
 
 ```powershell
-Get-JobTrigger -Name "Inventory" -TriggerId 2 | Set-JobTrigger -Weekly -WeeksInterval 4 -DaysOfWeek Monday -At "12:00 AM"
+Get-JobTrigger -Name "Inventory" -TriggerId 2 |
+    Set-JobTrigger -Weekly -WeeksInterval 4 -DaysOfWeek Monday -At "12:00 AM"
 ```
 
 ```Output
@@ -131,7 +132,12 @@ This command is not required; it is included only to show the effect of the trig
 ### Example 3: Change the user on a remote job trigger
 
 ```powershell
-Invoke-Command -ComputerName "Server01" -ScriptBlock {Get-ScheduledJob | Get-JobTrigger | Where-Object {$_.User} | Set-JobTrigger -User "Domain01/Admin02"}
+Invoke-Command -ComputerName "Server01" -ScriptBlock {
+    Get-ScheduledJob |
+        Get-JobTrigger |
+        Where-Object {$_.User} |
+        Set-JobTrigger -User "Domain01/Admin02"
+}
 ```
 
 This command changes the user in all **AtLogon** job triggers of scheduled jobs on the Server01
@@ -181,8 +187,10 @@ JobDefinition      : Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 ```
 
 ```powershell
-Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 | Set-JobTrigger -RepetitionInterval (New-TimeSpan -Minutes 90)
-Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 | Format-List -Property *
+Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 |
+    Set-JobTrigger -RepetitionInterval (New-TimeSpan -Minutes 90)
+Get-JobTrigger -Name "SecurityCheck" -TriggerId 3 |
+    Format-List -Property *
 ```
 
 ```Output

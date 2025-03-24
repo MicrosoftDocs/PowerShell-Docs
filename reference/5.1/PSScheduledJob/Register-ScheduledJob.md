@@ -85,7 +85,7 @@ This example creates a scheduled job on the local computer.
 ```powershell
 Register-ScheduledJob -Name "Archive-Scripts" -ScriptBlock {
   Get-ChildItem $HOME\*.ps1 -Recurse |
-    Copy-Item -Destination "\\Server\Share\PSScriptArchive"
+  Copy-Item -Destination "\\Server\Share\PSScriptArchive"
 }
 ```
 
@@ -141,7 +141,13 @@ $O = @{
   StartIfNotIdle=$false
   MultipleInstancePolicy="Queue"
 }
-Register-ScheduledJob -Trigger $T -ScheduledJobOption $O -Name UpdateVersion -FilePath "\\Srv01\Scripts\Update-Version.ps1"
+$registerScheduledJobSplat = @{
+    Trigger = $T
+    ScheduledJobOption = $O
+    Name = 'UpdateVersion'
+    FilePath = "\\Srv01\Scripts\Update-Version.ps1"
+}
+Register-ScheduledJob @registerScheduledJobSplat
 ```
 
 ### Example 4: Create scheduled jobs on remote computers
