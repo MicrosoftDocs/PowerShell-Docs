@@ -34,11 +34,9 @@ Cmdlet          Remove-WmiObject                                   3.1.0.0
 Cmdlet          Set-WmiInstance                                    3.1.0.0
 ```
 
-The Common Information Model (CIM) cmdlets were introduced in PowerShell 3.0 and are available only
-on Windows systems.
-
-The CIM cmdlets are all contained within a module. To obtain a list of the CIM cmdlets, use
-`Get-Command` with the **Module** parameter, as shown in the following example.
+The Common Information Model (CIM) cmdlets were introduced in PowerShell 3.0 and are grouped within
+a dedicated module. To list all available CIM cmdlets, use the `Get-Command` cmdlet with the
+**Module** parameter, as shown in the following example.
 
 ```powershell
 Get-Command -Module CimCmdlets
