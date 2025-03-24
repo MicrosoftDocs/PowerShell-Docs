@@ -50,7 +50,7 @@ Get-Date -UnixTimeSeconds <Int64> [-Year <Int32>] [-Month <Int32>] [-Day <Int32>
 ## DESCRIPTION
 
 The `Get-Date` cmdlet gets a **DateTime** object that represents the current date or a date that you
-specify. `Get-Date` can format the date and time in several .NET and UNIX formats. You can use
+specify. `Get-Date` can format the date and time in several .NET and Unix formats. You can use
 `Get-Date` to generate a date or time character string, and then send the string to other cmdlets or
 programs.
 
@@ -160,7 +160,7 @@ The Gregorian calendar has 365 days, except for leap years that have 366 days. F
 ```
 
 `Get-Date` uses three parameters to specify the date: **Year**, **Month**, and **Day**. The command
-is wrapped with parentheses so that the result is evaluated by the **DayofYear** property.
+is wrapped with parentheses so that the result is evaluated by the **DayOfYear** property.
 
 ### Example 6: Check if a date is adjusted for daylight saving time
 
@@ -514,7 +514,7 @@ Accept wildcard characters: False
 
 ### -UFormat
 
-Displays the date and time in UNIX format. The **UFormat** parameter outputs a string object.
+Displays the date and time in Unix format. The **UFormat** parameter outputs a string object.
 
 **UFormat** specifiers are preceded by a percent sign (`%`), for example, `%m`, `%d`, and `%Y`. The
 [Notes](#notes) section contains a table of valid **UFormat specifiers**.

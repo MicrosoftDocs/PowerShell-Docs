@@ -33,32 +33,32 @@ To run a `Get-PSCallStack` command while in the debugger, type `k` or `Get-PSCal
 ### Example 1: Get the call stack for a function
 
 ```powershell
-PS C:\> function my-alias {
+PS C:\> function My-Alias {
 $p = $args[0]
-Get-Alias | where {$_.Definition -like "*$p"} | Format-Table definition, name -auto
+Get-Alias | where {$_.Definition -like "*$p"} | Format-Table Definition, Name -Auto
 }
-PS C:\ps-test> Set-PSBreakpoint -Command my-alias
-Command    : my-alias
+PS C:\ps-test> Set-PSBreakpoint -Command My-Alias
+Command    : My-Alias
 Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
-Script     : prompt PS C:\> my-alias Get-Content
+Script     : prompt PS C:\> My-Alias Get-Content
 
 Entering debug mode. Use h or ? for help.
-Hit Command breakpoint on 'prompt:my-alias'
-my-alias Get-Content
+Hit Command breakpoint on 'prompt:My-Alias'
+My-Alias Get-Content
 [DBG]: PS C:\ps-test> s
 $p = $args[0]
 DEBUG: Stepped to ':    $p = $args[0]    '
 [DBG]: PS C:\ps-test> s
-Get-Alias | Where {$_.Definition -like "*$p*"} | Format-Table Definition,
-[DBG]: PS C:\ps-test>Get-PSCallstack
+Get-Alias | where {$_.Definition -like "*$p*"} | Format-Table Definition,
+[DBG]: PS C:\ps-test>Get-PSCallStack
 
 Name        CommandLineParameters         UnboundArguments              Location
 ----        ---------------------         ----------------              --------
 prompt      {}                            {}                            prompt
-my-alias    {}                            {Get-Content}                 prompt
+My-Alias    {}                            {Get-Content}                 prompt
 prompt      {}                            {}                            prompt
 
 PS C:\> [DBG]: PS C:\ps-test> o

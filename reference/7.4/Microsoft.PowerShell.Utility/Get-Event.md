@@ -72,7 +72,7 @@ SourceEventArgs  : System.Management.EventArrivedEventArgs
 SourceArgs       : {System.Management.ManagementEventWatcher, System.Management.EventArrivedEventArgs}
 SourceIdentifier : ProcessStarted
 TimeGenerated    : 11/13/2008 12:09:32 PM
-MessageData      : PS C:\> Get-Event | Where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
+MessageData      : PS C:\> Get-Event | where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
 ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b8059325d1a0
 EventIdentifier  : 1

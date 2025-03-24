@@ -113,7 +113,7 @@ Id  Name           State      HasMoreData  Location  Command
 ```powershell
 $Timer.Enabled = $true
 $Subscriber = Get-EventSubscriber -SourceIdentifier Timer.Random
-($Subscriber.action).GetType().fullname
+($Subscriber.Action).GetType().FullName
 ```
 
 ```Output
@@ -121,7 +121,7 @@ System.Management.Automation.PSEventJob
 ```
 
 ```powershell
-$Subscriber.action | Format-List -Property *
+$Subscriber.Action | Format-List -Property *
 ```
 
 ```Output
@@ -141,7 +141,7 @@ ChildJobs     : {}
 ```
 
 ```powershell
-& $Subscriber.action.module {$Random}
+& $Subscriber.Action.Module {$Random}
 ```
 
 The third command uses the `Register-ObjectEvent` cmdlet to register the Elapsed event of the timer
@@ -183,7 +183,7 @@ subscribers, including hidden subscribers.
 
 ```powershell
 Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
-    Get-History | Export-Clixml d:\temp\history.clixml
+    Get-History | Export-Clixml D:\temp\history.clixml
 }
 Get-EventSubscriber  # No output - must use -Force
 Get-EventSubscriber -Force
