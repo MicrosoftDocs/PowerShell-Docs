@@ -96,7 +96,7 @@ Protocol     : WSMAN
 ### Example 3: Get a list of CIM sessions and then format the list
 
 This example gets all CIM sessions in the current PowerShell session and displays a table containing
-only the **ComputerName** and **InstanceID** properties.
+only the **ComputerName** and **InstanceId** properties.
 
 ```powershell
 Get-CimSession | Format-Table -Property ComputerName, InstanceId
@@ -111,7 +111,7 @@ Server02     c0095981-52c5-4e7f-a5bb-c4c680541710
 
 ### Example 4: Get all the CIM sessions that have specific names
 
-This example gets all CIM sessions that have names that begin with **serv**.
+This example gets all CIM sessions that have names that begin with **Serv**.
 
 ```powershell
 Get-CimSession -ComputerName Serv*

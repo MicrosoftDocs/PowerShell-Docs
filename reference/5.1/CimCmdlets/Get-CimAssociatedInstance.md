@@ -57,7 +57,7 @@ $disk = Get-CimInstance -ClassName Win32_LogicalDisk -KeyOnly
 Get-CimAssociatedInstance -InputObject $disk[1]
 ```
 
-This set of commands retrieves the instances of the class named Win32_LogicalDisk and stores the
+This set of commands retrieves the instances of the class named **Win32_LogicalDisk** and stores the
 information in a variable named `$disk` using the `Get-CimInstance` cmdlet. The first logical disk
 instance in the variable is then used as the input object for the `Get-CimAssociatedInstance` cmdlet
 to get all the associated CIM instances of the specified CIM instance.
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 
 ### -Namespace
 
-Specifies the namespace for the CIM operation. The default namespace is root/cimv2.
+Specifies the namespace for the CIM operation. The default namespace is **root/CIMV2**.
 
 > [!NOTE]
 > You can use tab completion to browse the list of namespaces, because PowerShell gets a list of
@@ -254,11 +254,11 @@ A URI consists of a prefix and a path to a resource. For example:
 By default, if you don't specify this parameter, the DMTF standard resource URI
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
-**ResourceURI** can only be used with CIM sessions created using the WSMan protocol, or when
+**ResourceUri** can only be used with CIM sessions created using the WSMan protocol, or when
 specifying the **ComputerName** parameter, which creates a CIM session using WSMan. If you specify
 this parameter without specifying the **ComputerName** parameter, or if you specify a CIM session
 created using DCOM protocol, you get an error, because the DCOM protocol doesn't support the
-**ResourceURI** parameter.
+**ResourceUri** parameter.
 
 If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**
 parameter is ignored.
@@ -284,7 +284,7 @@ name.
 By default, the value of this parameter is null, and all associated CIM instances are returned.
 
 You can filter the association results to match a specific class name. Filtering happens on the
-server. If this parameter isn't specified, `Get-CIMAssociatedInstance` returns all existing
+server. If this parameter isn't specified, `Get-CimAssociatedInstance` returns all existing
 associations. For example, if class A is associated with classes B, C and D, then this parameter can
 be used to restrict the output to a specific type (B, C or D).
 
