@@ -50,7 +50,7 @@ For more information about location stacks, see the [Notes](#notes).
 ```
 PS C:\> pushd HKLM:\Software\Microsoft\PowerShell
 PS HKLM:\Software\Microsoft\PowerShell> pushd Cert:\LocalMachine\TrustedPublisher
-PS cert:\LocalMachine\TrustedPublisher> popd
+PS Cert:\LocalMachine\TrustedPublisher> popd
 PS HKLM:\Software\Microsoft\PowerShell> popd
 PS C:\>
 ```
@@ -63,7 +63,7 @@ The first command pushes the current file system location onto the stack and mov
 supported by the PowerShell Registry provider.
 
 The second command pushes the registry location onto the stack and moves to a location supported by
-the PowerShell certificate provider.
+the PowerShell Certificate provider.
 
 The last two commands pop those locations off the stack. The first `popd` command returns to the
 Registry drive, and the second command returns to the file system drive.

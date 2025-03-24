@@ -44,7 +44,7 @@ name. To move and rename an item, use the `Move-Item` cmdlet.
 This command renames the file `daily_file.txt` to `monday_file.txt`.
 
 ```powershell
-Rename-Item -Path "c:\logfiles\daily_file.txt" -NewName "monday_file.txt"
+Rename-Item -Path "C:\logfiles\daily_file.txt" -NewName "monday_file.txt"
 ```
 
 ### Example 2: Rename and move an item
@@ -54,15 +54,15 @@ for the value of the **NewName** parameter, unless the path is identical to the 
 the **Path** parameter. Otherwise, only a new name is permitted.
 
 ```powershell
-Rename-Item -Path "project.txt" -NewName "d:\archive\old-project.txt"
+Rename-Item -Path "project.txt" -NewName "D:\archive\old-project.txt"
 ```
 
 ```Output
 Rename-Item : can't rename because the target specified represents a path or device name.
 At line:1 char:12
-+ Rename-Item <<<<  -path project.txt -NewName d:\archive\old-project.txt
++ Rename-Item <<<<  -Path project.txt -NewName D:\archive\old-project.txt
 + CategoryInfo          : InvalidArgument: (:) [Rename-Item], PS>  Move-Item -Path "project.txt" -De
-stination "d:\archive\old-project.txt"
+stination "D:\archive\old-project.txt"
 ```
 
 This example attempts to rename the `project.txt` file in the current directory to `old-project.txt`
@@ -189,8 +189,8 @@ differs from the path that is specified in the **Path** parameter, `Rename-Item`
 To rename and move an item, use `Move-Item`.
 
 You can't use wildcard characters in the value of the **NewName** parameter. To specify a name for
-multiple files, use the **Replace** operator in a regular expression. For more information about the
-Replace operator, see [about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
+multiple files, use the `-replace` operator in a regular expression. For more information about the
+`-replace` operator, see [about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
 
 ```yaml
 Type: System.String
@@ -319,7 +319,7 @@ Windows PowerShell includes the following aliases for `Rename-Item`:
 - `rni`
 
 `Rename-Item` is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PsProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
