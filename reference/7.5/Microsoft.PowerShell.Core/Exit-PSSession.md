@@ -69,7 +69,7 @@ The third command uses `Exit-PSSession` to stop the interactive session.
 The final command displays the **PSSession** in the `$s` variable. The **State** property shows the
 **PSSession** is still open and available for use.
 
-### Example 3: Use the Exit keyword to stop a session
+### Example 3: Use the `exit` keyword to stop a session
 
 ```powershell
 PS> Enter-PSSession -ComputerName Server01

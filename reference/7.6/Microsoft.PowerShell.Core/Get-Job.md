@@ -95,7 +95,7 @@ Get-Job
 ```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
-1      Job1            BackgroundJob   Completed     True            localhost             $env:COMPUTERNAME
+1      Job1            BackgroundJob   Completed     True            localhost             $Env:COMPUTERNAME
 ```
 
 ### Example 2: Stop a job by using an instance ID
@@ -113,7 +113,7 @@ instance ID of the job.
 
 ```powershell
 $j = Get-Job -Name Job1
-$ID = $j.InstanceID
+$ID = $j.InstanceId
 $ID
 ```
 
@@ -179,7 +179,7 @@ Get-Job -Name Job*
 ```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
-1      Job1            BackgroundJob   Completed     True            localhost             $env:COMPUTERNAME
+1      Job1            BackgroundJob   Completed     True            localhost             $Env:COMPUTERNAME
 ```
 
 ### Example 7: Use a job object to represent the job in a command
@@ -315,7 +315,7 @@ PS> Get-Job | Format-List -Property *
 HasMoreData   : False
 StatusMessage :
 Location      : localhost
-Command       : get-process
+Command       : Get-Process
 JobStateInfo  : Failed
 Finished      : System.Threading.ManualReset
 EventInstanceId    : fb792295-1318-4f5d-8ac8-8a89c5261507
@@ -330,7 +330,7 @@ Debug         : {}
 Warning       : {}
 StateChanged  :
 
-PS> (Get-Job -Name job2).JobStateInfo.Reason
+PS> (Get-Job -Name Job2).JobStateInfo.Reason
 Connecting to remote server using WSManCreateShellEx api failed. The async callback gave the
 following error message: Access is denied.
 ```
@@ -341,7 +341,7 @@ This example shows how to use the **Filter** parameter to get a workflow job. Th
 parameter, introduced in Windows PowerShell 3.0 is valid only on custom job types, such as workflow
 jobs and scheduled jobs.
 
-The first command uses the **Workflow** keyword to create the WFProcess workflow. The second command
+The first command uses the `workflow` keyword to create the WFProcess workflow. The second command
 uses the **AsJob** parameter of the WFProcess workflow to run the workflow as a background job. It
 uses the **JobName** parameter of the workflow to specify a name for the job, and the
 **PSPrivateMetadata** parameter of the workflow to specify a custom ID. The third command uses the
@@ -349,7 +349,7 @@ uses the **JobName** parameter of the workflow to specify a name for the job, an
 **PSPrivateMetadata** parameter.
 
 ```powershell
-PS> Workflow WFProcess {Get-Process}
+PS> workflow WFProcess {Get-Process}
 PS> WFProcess -AsJob -JobName WFProcessJob -PSPrivateMetadata @{MyCustomId = 92107}
 PS> Get-Job -Filter @{MyCustomId = 92107}
 Id     Name            State         HasMoreData     Location             Command
