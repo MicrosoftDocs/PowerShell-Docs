@@ -69,6 +69,40 @@ Advanced functions differ from compiled cmdlets in the following ways:
   named parameters.
 - Advanced functions can't be used in transactions.
 
+## PipelineStopToken
+
+Beginning with PowerShell 7.6, you can access the `PipelineStopToken` property
+on the `$PSCmdlet` variable to access a [CancellationToken][07] tied to the
+PowerShell stop event source. This token will be automatically triggered when
+the PowerShell pipeline has been requested to stop. It is designed to be used
+with .NET methods that accept a `CancellationToken` overload so that the
+method can exit when requested rather than wait until the method returns from
+what it is doing.
+
+A common example is if the function is calling a .NET async compatible API. In
+the below example the function is calling `HttpClient.GetStringAsync` which
+could take a while to respond if the network is slow or there is a lot of data
+being returned.
+
+```powershell
+Function Invoke-WebGetRequest {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]
+        $Url
+    )
+
+    $client = [System.Net.Http.HttpClient]::new()
+    $client.GetStringAsync(
+        $Url,
+        $PSCmdlet.PipelineStopToken).GetAwaiter().GetResult()
+}
+
+Invoke-WebGetRequest -Url https://httpbin.org/delay/10
+# Press ctrl+c to cancel
+```
+
 ## See also
 
 - [about_Functions][05]
@@ -85,3 +119,4 @@ Advanced functions differ from compiled cmdlets in the following ways:
 [04]: about_Functions_OutputTypeAttribute.md
 [05]: about_Functions.md
 [06]: about_Variables.md
+[07]: xref:System.Threading.CancellationToken
