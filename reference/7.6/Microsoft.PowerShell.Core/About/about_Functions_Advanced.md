@@ -1,7 +1,7 @@
 ---
 description: Introduces advanced functions that are a way to create cmdlets using scripts.
 Locale: en-US
-ms.date: 01/02/2025
+ms.date: 03/25/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced
@@ -71,21 +71,19 @@ Advanced functions differ from compiled cmdlets in the following ways:
 
 ## PipelineStopToken
 
-Beginning with PowerShell 7.6, you can access the `PipelineStopToken` property
-on the `$PSCmdlet` variable to access a [CancellationToken][07] tied to the
-PowerShell stop event source. This token will be automatically triggered when
-the PowerShell pipeline has been requested to stop. It is designed to be used
-with .NET methods that accept a `CancellationToken` overload so that the
-method can exit when requested rather than wait until the method returns from
-what it is doing.
+Beginning with PowerShell 7.6, `$PSCmdlet` includes the `PipelineStopToken`
+property allowing access a [CancellationToken][07] tied to the PowerShell stop
+event source. The token is triggered when the PowerShell pipeline receives a
+request to stop. Use it with a .NET method that accepts a `CancellationToken`
+overload to exit the method when requested rather than waiting until the method
+returns.
 
-A common example is if the function is calling a .NET async compatible API. In
-the below example the function is calling `HttpClient.GetStringAsync` which
-could take a while to respond if the network is slow or there is a lot of data
-being returned.
+In the following example the function is calling `HttpClient.GetStringAsync`
+that can take a while to respond when the network is slow or there is a lot of
+data being returned.
 
 ```powershell
-Function Invoke-WebGetRequest {
+function Invoke-CancelableWebRequest {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true)]
@@ -99,7 +97,7 @@ Function Invoke-WebGetRequest {
         $PSCmdlet.PipelineStopToken).GetAwaiter().GetResult()
 }
 
-Invoke-WebGetRequest -Url https://httpbin.org/delay/10
+Invoke-CancelableWebRequest -Url https://httpbin.org/delay/10
 # Press ctrl+c to cancel
 ```
 
