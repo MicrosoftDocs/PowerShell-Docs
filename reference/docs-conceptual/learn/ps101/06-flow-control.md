@@ -314,13 +314,13 @@ In this chapter, you learned about the different types of loops that exist in Po
 ## References
 
 - [ForEach-Object][ForEach-Object]
-- [about_Foreach][about_Foreach]
-- [about_For][about_For]
-- [about_Do][about_Do]
-- [about_While][about_While]
-- [about_Break][about_Break]
-- [about_Continue][about_Continue]
-- [about_Return][about_Return]
+- [about_Foreach][about-foreach]
+- [about_For][about-for]
+- [about_Do][about-do]
+- [about_While][about-while]
+- [about_Break][about-break]
+- [about_Continue][about-continue]
+- [about_Return][about-return]
 
 <!-- link references -->
 

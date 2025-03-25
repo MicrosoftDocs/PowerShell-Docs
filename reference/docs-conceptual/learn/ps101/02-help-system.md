@@ -391,7 +391,7 @@ first position (position zero) when used positionally.
     function help and script help articles.
 
     To get help for a script that isn't located in a path that's listed in
-    the `$Env:PATH` environment variable, type the script's path and file
+    the `$env:Path` environment variable, type the script's path and file
     name.
 
     If you enter the exact name of a help article, `Get-Help` displays the
