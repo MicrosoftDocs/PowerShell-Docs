@@ -71,15 +71,15 @@ Advanced functions differ from compiled cmdlets in the following ways:
 
 ## PipelineStopToken
 
-Beginning with PowerShell 7.6, `$PSCmdlet` includes the `PipelineStopToken`
-property allowing access a [CancellationToken][07] tied to the PowerShell stop
-event source. The token is triggered when the PowerShell pipeline receives a
-request to stop. Use it with a .NET method that accepts a `CancellationToken`
-overload to exit the method when requested rather than waiting until the method
-returns.
+Beginning with PowerShell 7.6-preview.4, `$PSCmdlet` includes the
+`PipelineStopToken` property allowing access a [CancellationToken][07] tied to
+the PowerShell stop event source. The token is triggered when the PowerShell
+pipeline receives a request to stop. Use it with a .NET method that accepts a
+`CancellationToken` overload to exit the method when requested rather than
+waiting until the method returns.
 
-In the following example the function is calling `HttpClient.GetStringAsync`
-that can take a while to respond when the network is slow or there is a lot of
+In the following example, the function is calling `HttpClient.GetStringAsync`,
+which can take time to respond when the network is slow or there is a lot of
 data being returned.
 
 ```powershell
