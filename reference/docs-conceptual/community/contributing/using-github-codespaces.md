@@ -2,7 +2,7 @@
 description: >-
     This article describes the process for contributing to the documentation using GitHub
     Codespaces as an authoring environment.
-ms.date: 05/10/2023
+ms.date: 03/30/2025
 title: Contribute using GitHub Codespaces
 ---
 
@@ -37,17 +37,15 @@ already available for you:
 
 ## Cost
 
-GitHub Codespaces can be used for free up to 120 core-hours per month. With the configuration we
-recommend in this article, that means up to 60 hours of free usage per month. The monthly usage is
+GitHub Codespaces can be used for free up to 120 core-hours per month. The monthly usage is
 calculated across all your repositories, not just documentation.
 
 For more information about pricing, see [About billing for GitHub Codespaces][12].
 
 > [!TIP]
-> If you're comfortable using containers and Docker, you can get the same experience as using
-> GitHub Codespaces in VS Code by using the devcontainer defined for the PowerShell documentation
-> repositories. There's no cost associated with using devcontainers. For more information, see
-> the [Dev Containers tutorial][13].
+> If you're comfortable using containers and Docker, you can get the same experience by using the
+> devcontainer defined for the PowerShell documentation repositories. There's no cost associated
+> with using devcontainers. For more information, see the [Dev Containers tutorial][13].
 
 ## Creating your GitHub Codespace
 
@@ -69,7 +67,7 @@ The UI is based on VS Code and works the same way.
 To open your GitHub Codespace in the browser, follow these steps:
 
 1. Open [https://github.com/codespaces][14] in your browser.
-1. The page lists your codespaces. Find the created codespace for the repository you want to
+1. The page lists your Codespaces. Find the created codespace for the repository you want to
    contribute to and select it.
 
 After you select your codespace, GitHub opens it in the same window. From here, you're ready to
@@ -91,15 +89,15 @@ writing or editing your contribution.
 When you want to turn an inline link, like `[some text](destination.md)`, into a reference link like
 `[some text][01]`, select the link destination in the editor. Then you can either:
 
-1. Right click on the link destination and select "Refactor..." in the context menu.
+1. Right-click on the link destination and select "Refactor..." in the context menu.
 1. Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>.
 
-Either action raises the refactoring context menu. Select "Extract to link definition" in the
-context menu. This replaces the `(destination.md)` in the link with `[def]`. You can rename the
+Either action raises the refactoring context menu. To replace the `(destination.md)` in the link
+with `[def]`, select **Extract to link definition** in the context menu. You can rename the
 definition by typing a name in.
 
 For the PowerShell documentation, we use two-digit numerical reference link definitions, like
-`[01]` or `[31]`. Only use reference link definitions in about topics and conceptual documentation.
+`[01]` or `[31]`. Only use reference link definitions in about articles and conceptual documentation.
 Don't use reference link definitions in cmdlet reference documentation.
 
 ### Fix prose style violations
@@ -110,8 +108,8 @@ document with colored squiggles.
 
 Hover over a violation to see more information about it.
 
-Select the rule's name in the hover information to open a web page that explains the rule. Select
-the rule's filename (ending in `.yml`) to open the rule and review its implementation.
+To open a web page that explains the rule, select the rule's name in the hover information. To open
+the rule and review its implementation, select the rule's filename (ending in `.yml`).
 
 If the rule supports a quick fix, you can select "Quick Fix..." in the hover information for the
 violation and apply one of the suggested fixes by selecting it from the context menu. You can also
@@ -127,9 +125,8 @@ When you review an article in your codespace, Markdownlint automatically checks 
 you open it and as you type. If Markdownlint finds any syntax problems, it highlights them in the
 document with colored squiggles.
 
-Hover over a violation to see more information about it.
-
-Select the rule's ID in the hover information to open a web page that explains the rule.
+Hover over a violation to see more information about it. To open a web page that explains the rule,
+select the rule's ID in the hover information.
 
 If the rule supports a quick fix, you can select "Quick Fix..." in the hover information for the
 violation and apply one of the suggested fixes by selecting it from the context menu. You can also
@@ -203,7 +200,7 @@ command. When you select that command, VS Code opens a preview of the active doc
 preview's style matches the Learn platform.
 
 > [!NOTE]
-> Site-relative and cross-reference links won't work in the preview.
+> Site-relative and cross-reference links don't work in the preview.
 
 ### Reflow your content
 
@@ -216,9 +213,9 @@ When using this command for block quotes, make sure the paragraph in the block q
 reflowing is surrounded by blank lines. Otherwise, the command reflows every paragraph together.
 
 > [!CAUTION]
-> Don't use this command when editing about topics. The lines in those documents must not be
+> Don't use this command when editing about articles. The lines in those documents must not be
 > longer than 80 characters. There's currently no way for a repository to configure different line
-> lengths by folder or filename, so reflow doesn't work for about topic documents.
+> lengths by folder or filename, so reflow doesn't work for about article documents.
 
 ### Review all problems in a document
 

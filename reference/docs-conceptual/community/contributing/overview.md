@@ -1,6 +1,6 @@
 ---
 description: This article outlines the steps required to contribute to the PowerShell documentation.
-ms.date: 07/25/2022
+ms.date: 03/30/2025
 title: Contributing to PowerShell documentation
 ---
 # Contributing to PowerShell documentation
@@ -57,13 +57,12 @@ Use the full GitHub workflow when you're making significant changes. If you're n
 Microsoft, our PR validation system adds a comment to the pull request asking you to sign the online
 [Contribution Licensing Agreement (CLA)][15]. You must complete this step before we can review or
 accept your pull request. Signing the CLA is only required the first time you submit a PR in the
-repository. You will be asked to sign the CLA for each time you contribute to a new repository.
+repository. You might be asked to sign the CLA for each time you contribute to a new repository.
 
 ## Code of conduct
 
-All repositories that publish to Microsoft Learn have adopted the
-[Microsoft Open Source Code of Conduct][16] or the
-[.NET Foundation Code of Conduct][17]. For more
+All repositories that publish to Microsoft Learn adhere to the
+[Microsoft Open Source Code of Conduct][16] or the [.NET Foundation Code of Conduct][17]. For more
 information, see the [Code of Conduct FAQ][18].
 
 ## Next steps

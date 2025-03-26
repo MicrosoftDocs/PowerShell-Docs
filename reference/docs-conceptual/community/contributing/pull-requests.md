@@ -1,6 +1,6 @@
 ---
 description: This article explains how to submit pull requests to the PowerShell-Docs repository.
-ms.date: 07/26/2022
+ms.date: 03/30/2025
 title: How to submit pull requests
 ---
 # How to submit pull requests
@@ -38,12 +38,12 @@ changed files. Large PRs are difficult to review and are more prone to contain e
 
 ### Renaming or deleting files
 
-When renaming or deleting files, there must be an issue associated with the PR. That issue must
+There must be an issue associated with the PR when you rename or delete files. That issue must
 discuss the need to rename or delete the files.
 
-Avoid mixing content additions or changes with file renames and deletes. Any file that's renamed or
-deleted must be added to the global redirection file. When possible, update any files that link to
-the renamed or deleted content, including any TOC files.
+Avoid mixing content additions or changes with file renames and deletes. Any file that you rename or
+delete must be added to the appropriate redirection file. When possible, update any files that link
+to the renamed or deleted content, including any TOC files.
 
 ### Avoid editing repository configuration files
 
@@ -65,9 +65,9 @@ configuration files are any files that match one or more of these patterns:
 - `ThirdPartyNotices`
 - `tools/**`
 
-For safety and security, if you believe you have discovered a bug or potential improvement for a
-repository configuration file, [file an issue][2]. The maintainers will review and implement any
-fixes or improvements as needed.
+For safety and security, don't change these files. If you think one of these files should be
+changed, [file an issue][2]. After the maintainers triage the issue, they'll make the appropriate
+changes.
 
 ## Use the PR template
 
@@ -123,9 +123,9 @@ If your PR is a work-in-progress, set it to [draft mode][4] or prefix your PR ti
 
 ## Expectations Comment
 
-After you submit your PR, a bot will comment on your PR to provide you with resources and to set
-expectations for the rest of the process. Always review this comment, even if you've contributed
-before, because it contains accurate and up-to-date information.
+After you submit your PR, a bot will comment on your PR. The comment provides resources and sets
+expectations for the rest of the process. We might update this comment periodically, so always
+review the comment, even if this isn't your first contribution.
 
 ![example expectation comment][5]
 
@@ -134,29 +134,27 @@ before, because it contains accurate and up-to-date information.
 The Docs PR validation service is a GitHub app that runs validation rules on your changes. You must
 fix any errors or warnings reported by the validation service.
 
-You'll see the following behavior:
+The following steps outline the validation behavior:
 
 1. You submit a PR.
-1. In the GitHub comment that indicates the status of your PR, you'll see the status of "checks"
-   enabled on the repository. In this example, there are two checks enabled, "Commit Validation" and
-   "OpenPublishing.Build":
+1. In the GitHub comment that indicates the status of the "checks" enabled on the repository. In
+   this example, there are two checks enabled, "Commit Validation" and "OpenPublishing.Build":
 
    ![validation status - some checks failed][6]
 
    The build can pass even if commit validation fails.
 
-1. Click **Details** for more information.
-1. On the Details page, you'll see all the validation checks that failed, with information about how
-   to fix the issues.
+1. Select **Details** for more information. The **Details** page shows all the validation checks
+   that failed and includes information about how to fix the issues.
 1. When validation succeeds, the following comment is added to the PR:
 
    ![Validation status: success][7]
 
 > [!NOTE]
-> If you are an external (not a Microsoft employee) contributor you don't have access to the
+> If you're an external contributor (not a Microsoft employee), you don't have access to the
 > detailed build reports or preview links.
 
-When the PR is reviewed, you may be asked to make changes or fix validation warning messages. The
+When the PR is reviewed, you might be asked to make changes or fix validation warning messages. The
 PowerShell-Docs team can help you understand validation errors and editorial requirements.
 
 ## GitHub Actions
@@ -166,14 +164,14 @@ and the reviewers.
 
 ### Checklist verification
 
-If your PR is not in [draft mode][4] and is not prefixed with `WIP`, a GitHub Action inspects your
-PR to verify that you have checked every item in the PR template's checklist. If this check fails,
-the team won't review or merge your PR. The checklist items are mandatory.
+If your PR isn't in [draft mode][4] and isn't prefixed with `WIP`, a GitHub Action inspects your PR
+to verify that you selected every item in the PR template's checklist. The maintainers won't review
+or merge your PR until you complete the checklist. The checklist items are mandatory.
 
 ### Authorization verification
 
 If your PR targets the `live` branch or modifies any repository configuration files, a GitHub Action
-checks your permissions to verify that you are authorized to submit those changes.
+checks your permissions to verify that you're authorized to submit those changes.
 
 Only repository administrators are authorized to target the `live` branch or modify repository
 configuration files.
@@ -183,8 +181,7 @@ configuration files.
 If your PR adds, removes, or modifies any versioned content a GitHub Action analyzes your changes
 and writes a report summarizing the types of changes made to versioned content.
 
-This report is useful for seeing if there are other versions of the file(s) you modified and whether
-or not those versions have also been updated in the changeset.
+This report can show if there are other versions of the files that you need to update in this PR.
 
 To find the versioned content report for your PR:
 

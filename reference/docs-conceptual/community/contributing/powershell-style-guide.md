@@ -1,6 +1,6 @@
 ---
 description: This article provides the rules of style for writing PowerShell documentation.
-ms.date: 05/09/2024
+ms.date: 03/30/2025
 title: PowerShell-Docs style guide
 ---
 # PowerShell-Docs style guide
@@ -10,8 +10,8 @@ information outlined in the [Overview][10].
 
 ## Formatting command syntax elements
 
-Use the following rules to format elements of the PowerShell language when they are used in a
-sentence.
+Use the following rules to format elements of the PowerShell language when the elements are used in
+a sentence.
 
 - Always use the full name for cmdlets and parameters in the proper Pascal case
 - Only use an alias when you're specifically demonstrating the alias
@@ -23,8 +23,8 @@ sentence.
   - Property names
   - Parameter names
     - By default, use the parameter without the hyphen prefix.
-    - When illustrating the use of a parameter with the hyphen prefix, the parameter should be
-      wrapped in backticks.
+    - Use parameter name with the hyphen if you're illustrating syntax. Wrap the parameter in
+      backticks.
 
     For example:
 
@@ -47,7 +47,7 @@ sentence.
   - File and directory paths
   - Inline command syntax examples - See [Markdown for code samples][04]
 
-    This example show some backtick examples:
+    This example shows some backtick examples:
 
     ~~~markdown
     The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
@@ -58,7 +58,7 @@ sentence.
     ```
     ~~~
 
-    This examples shows command syntax inline:
+    This example shows command syntax inline:
 
     ```markdown
     To start the spooler service on a remote computer named DC01, you type:
@@ -75,7 +75,7 @@ Markdown supports two different code styles:
 - **Code spans (inline)** - marked by a single backtick (`` ` ``) character. Used within a paragraph
   rather than as a standalone block.
 - **Code blocks** - a multi-line block surrounded by triple-backtick (`` ``` ``) strings. Code
-  blocks may also have a language label following the backticks. The language label enables syntax
+  blocks can also have a language label following the backticks. The language label enables syntax
   highlighting for the contents of the code block.
 
 All code blocks should be contained in a code fence. Never use indentation for code blocks. Markdown
@@ -83,7 +83,7 @@ allows this pattern but it can be problematic and should be avoided.
 
 A code block is one or more lines of code surrounded by a triple-backtick (`` ``` ``) code fence.
 The code fence markers must be on their own line before and after the code sample. The opening
-marker may have an optional language label. The language label enables syntax highlighting on the
+marker can have an optional language label. The language label enables syntax highlighting on the
 rendered webpage.
 
 For a full list of supported language tags, see [Fenced code blocks][01] in the centralized
@@ -126,10 +126,10 @@ for (<init>; <condition>; <repeat>)
 
 ### Illustrative examples
 
-Illustrative examples are used to explain a PowerShell concept. In general you should
-[Avoid using PowerShell prompts in examples][03]. However, illustrative examples aren't meant to be
-copied and pasted for execution. These are most commonly used for simple examples that are easy to
-understand. The code block can include the PowerShell prompt and example output.
+Illustrative examples are used to explain a PowerShell concept. Yo`u should
+[Avoid using PowerShell prompts in examples][03] whenever possible. However, illustrative examples
+aren't meant to be copied and pasted for execution. They're most commonly used for simple examples
+that are easy to understand. You may include the PowerShell prompt and example output.
 
 Here's a simple example illustrating the PowerShell comparison operators. In this case, we don't
 intend the reader to copy and run this example. Notice that this example uses `PS>` as a simplified
@@ -205,8 +205,8 @@ box frame on the web page. The **Output** code box has no syntax highlighting.
 
 ### Avoid line continuation in code samples
 
-Avoid using line continuation characters (`` ` ``) in PowerShell code examples. These are hard to
-see and can cause problems if there are extra spaces at the end of the line.
+Avoid using line continuation characters (`` ` ``) in PowerShell code examples. Backtick characters
+are difficult to see and can cause problems if there are extra spaces at the end of the line.
 
 - Use PowerShell [splatting][02] to reduce line length for cmdlets that have several parameters.
 - Take advantage of PowerShell's natural line break opportunities, like after pipe (`|`) characters,
@@ -246,14 +246,14 @@ Cmdlet and parameter names must use the proper [Pascal-cased][06] names.
 
 ### Using parameters in examples
 
-Avoid using positional parameters. In general, you should always include the parameter name in an
-example, even if the parameter is positional. This reduces the chance of confusion in your examples.
+Avoid using positional parameters. To reduce the chance of confusion, you should include the
+parameter name in an example, even if the parameter is positional.
 
 ## Formatting cmdlet reference articles
 
-Cmdlet reference articles have a specific structure. This structure is defined by [PlatyPS][07].
-PlatyPS generates the cmdlet help for PowerShell modules in Markdown. After editing the Markdown
-files, PlatyPS is used create the MAML help files used by the `Get-Help` cmdlet.
+Cmdlet reference articles have a specific structure. [PlatyPS][07] defines this structure. PlatyPS
+generates the cmdlet help for PowerShell modules in Markdown. After you edit the Markdown files,
+PlatyPS can create the MAML help files used by the `Get-Help` cmdlet.
 
 PlatyPS has a schema that expects a specific structure for cmdlet reference. The PlatyPS
 [schema document][08] describes this structure. Schema violations cause build errors that must be
@@ -322,7 +322,7 @@ Basic formatting guidelines:
     ```
 
 - Markdown tables
-  - For `About_*` topics, tables must fit within 76 characters
+  - For `About_*` articles, tables must fit within 76 characters
     - If the content doesn't fit within 76 character limit, use bullet lists instead
   - Use opening and closing `|` characters on each line
 
