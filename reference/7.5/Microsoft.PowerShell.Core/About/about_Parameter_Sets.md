@@ -1,7 +1,7 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
 Locale: en-US
-ms.date: 03/27/2024
+ms.date: 03/26/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-7.5&WT.mc_id=ps-gethelp
 title: about_Parameter_Sets
 ---
@@ -64,12 +64,23 @@ one unique parameter.
 Parameters that don't have an assigned parameter set name belong to all
 parameter sets.
 
+## Reserved parameter set name
+
+PowerShell reserves the parameter set name `__AllParameterSets` for special
+handling.
+
+- This name is the default name of the parameter set that when you don't
+  explicitly define a parameter set name.
+- When you have muliple parameter sets, you can use this name to define a
+  parameter that belongs to all parameter sets.
+- Setting **DefaultParameterSetName** to `__AllParameterSets` in the
+  `[CmdletBinding()]` attribute has no effect.
+
 ## Examples
 
 The following example function counts the number lines, characters, and words
-in a text file. Using parameters, you can specify which values you want
-returned and which files you want to measure. There are four parameter sets
-defined:
+in a text file. Using parameters, you can specify the values you want returned
+and the files you want to measure. There are four parameter sets defined:
 
 - Path
 - PathAll
