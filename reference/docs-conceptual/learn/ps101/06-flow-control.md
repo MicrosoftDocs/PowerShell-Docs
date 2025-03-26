@@ -313,7 +313,7 @@ In this chapter, you learned about the different types of loops that exist in Po
 
 ## References
 
-- [ForEach-Object][ForEach-Object]
+- [ForEach-Object][foreach-object]
 - [about_Foreach][about-foreach]
 - [about_For][about-for]
 - [about_Do][about-do]

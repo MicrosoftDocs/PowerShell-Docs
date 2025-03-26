@@ -34,6 +34,11 @@ more detailed test results, use the **Verbose** parameter.
 This cmdlet works much like `NetDom.exe`. Both NetDom and `Test-ComputerSecureChannel` use the
 **NetLogon** service to perform the actions.
 
+> [!NOTE]
+> This cmdlet only works on Domain Member computers. When you run it on Domain Controllers, it
+> returns false positive errors. To verify and reset the secure  channels for Domain Controllers,
+> use `netdom.exe` or `nltest.exe`.
+
 ## EXAMPLES
 
 ### Example 1: Test a channel between the local computer and its domain
@@ -74,7 +79,8 @@ VERBOSE: "The secure channel between 'SERVER01' and 'net.fabrikam.com' is alive 
 ```
 
 This command uses the **Verbose** common parameter to request detailed messages about the operation.
-For more information about **Verbose**, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+For more information about **Verbose**, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ### Example 5: Test a connection before you run a script
 
@@ -170,7 +176,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -188,7 +194,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see 
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -218,3 +225,7 @@ This cmdlet returns `$true` if the connection is working correctly and `$false` 
 [Restart-Computer](Restart-Computer.md)
 
 [Stop-Computer](Stop-Computer.md)
+
+[Use Netdom.exe to reset machine account passwords of a Windows Server domain controller](/troubleshoot/windows-server/windows-security/use-netdom-reset-domain-controller-password)
+
+[Nltest.exe](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731935(v=ws.11))
