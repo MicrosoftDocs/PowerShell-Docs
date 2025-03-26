@@ -34,6 +34,8 @@ more detailed test results, use the **Verbose** parameter.
 This cmdlet works much like `NetDom.exe`. Both NetDom and `Test-ComputerSecureChannel` use the
 **NetLogon** service to perform the actions.
 
+**Note:** Based on how the cmdlet uses Netlogon Services, it is working reliably only on Domain Members. The configuration context of Domain Controllers with regard to their secure channels makes the cmdlet return false positive errors. We recommend you use NetDom or NlTest to verify and reset the secure channels for Domain Controllers.
+
 ## EXAMPLES
 
 ### Example 1: Test a channel between the local computer and its domain
