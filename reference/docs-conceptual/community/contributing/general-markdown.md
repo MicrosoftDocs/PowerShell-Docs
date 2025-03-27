@@ -1,21 +1,20 @@
 ---
 description: This article provides specific guidance for using Markdown in our documentation.
-ms.date: 08/01/2024
+ms.date: 03/30/2025
 title: Markdown best practices
 ---
 # Markdown best practices
 
-This article provides specific guidance for using Markdown in our documentation. This is not a
-tutorial for Markdown, but lists specific rules and best practices for Markdown in the PowerShell
-docs. If you need a tutorial for Markdown, see this [Markdown cheatsheet][12].
+This article provides specific guidance for using Markdown in our documentation. It isn't a tutorial
+for Markdown. If you need a tutorial for Markdown, see this [Markdown cheatsheet][12].
 
 The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig][06] to
 process the Markdown documents. Markdig parses the documents based on the rules of the latest
 [CommonMark][10] specification. OPS follows the CommonMark specification and adds some extensions
 for platform-specific features, such as tables and alerts.
 
-The CommonMark specification is much stricter about the construction of some Markdown elements. Pay
-close attention to the details provided in this document.
+The CommonMark specification is stricter about the construction of some Markdown elements. Pay close
+attention to the details provided in this document.
 
 We use the [markdownlint][08] extension in VS Code to enforce our style and formatting rules. This
 extension is installed as part of the **Learn Authoring Pack**.
@@ -24,11 +23,12 @@ extension is installed as part of the **Learn Authoring Pack**.
 
 Blank lines also signal the end of a block in Markdown.
 
-- There should be a single blank between Markdown blocks of different types -- for example, between
+- Put a single blank between Markdown blocks of different types; for example, between
   a paragraph and a list or header.
 - Don't use more than one blank line. Multiple blank lines render as a single blank line in HTML,
   therefore the extra blank lines are unnecessary.
-- Within a code block, consecutive blank lines break the code block.
+- Don't use put multiple consecutive blank lines in a code block, consecutive blank lines break the
+  code block.
 
 Spacing is significant in Markdown.
 
@@ -37,29 +37,31 @@ Spacing is significant in Markdown.
 
 ## Titles and headings
 
-Only use [ATX headings][07] (`#` style, as opposed to `=` or `-` style headers).
+Use [ATX headings][07] only (`#` style, as opposed to `=` or `-` style headers).
 
 - Use sentence case - only proper nouns and the first letter of a title or header should be
   capitalized
-- There must be a single space between the `#` and the first letter of the heading
-- Headings should be surrounded by a single blank line
-- Only one H1 per document
-- Header levels should increment by one -- don't skip levels
+- Include a single space between the `#` and the first letter of the heading
+- Surround headings with single blank line
+- Don't use more than one H1 per document
+  - It should be the first header
+  - It should match the title of the article
+- Increment header levels by one - don't skip levels
 - Limit depth to H3 or H4
 - Avoid using bold or other markup in headers
 
 ## Limit line length to 100 characters
 
-This applies to conceptual articles and cmdlet reference. For `about_` topics, limit the line
-length to 79 characters. Limiting the line length improves the readability of `git` diffs and
-history. It also makes it easier for other writers to make contributions.
+For conceptual articles and cmdlet reference, limit lines to 100 characters. For `about_` articles,
+limit the line length to 79 characters. Limiting the line length improves the readability of `git`
+diffs and history. It also makes it easier for other writers to make contributions.
 
 Use the [Reflow Markdown][09] extension in VS Code to reflow paragraphs to fit the prescribed line
 length.
 
-Some content types can't be easily reflowed. For example, the code inside of code blocks may also be
-difficult to reflow, depending on the content and the code language. And you can't reflow a table.
-In these cases, use your best judgment to keep the content as close to the 100-character limit as
+Some content types can't be easily reflowed. For example, the code inside of code blocks can also be
+difficult to reflow, depending on the content and the code language. You can't reflow a table. In
+these cases, use your best judgment to keep the content as close to the 100-character limit as
 possible.
 
 ## Emphasis
@@ -70,21 +72,21 @@ mark the emphasis. However, to be consistent and show intent:
 - Use `**` for bold
 - Use `_` for italics
 
-Following this pattern makes it easier for others to understand the intent of the markup when there
-is a mix of bold and italics in a document.
+Following this pattern makes it easier for others to understand the intent of the markup when
+there's a mix of bold and italics in a document.
 
 ## Lists
 
 If your list has multiple sentences or paragraphs, consider using a sublevel header rather than a
 list.
 
-List should be surrounded by a single blank line.
+Surround lists with a single blank line.
 
 ### Unordered lists
 
 - Don't end list items with a period unless they contain multiple sentences.
-- Use the hyphen character (`-`) for list item bullets. This avoids confusion with emphasis markup
-  that uses the asterisk (`*`).
+- Use the hyphen character (`-`) for list item bullets to avoid confusion with emphasis markup that
+  uses the asterisk (`*`).
 - To include a paragraph or other elements under a bullet item, insert a line break and align
   indentation with the first character after the bullet.
 
@@ -129,8 +131,8 @@ This is a list that contains child elements under a bullet item.
 For example:
 
 ```Markdown
-1. For the first element, insert a single space after the 1. Long sentences should be wrapped to the
-   next line and must line up with the first character after the numbered list marker.
+1. For the first element, insert a single space after the `1`. Long sentences should be wrapped to
+   the next line and must line up with the first character after the numbered list marker.
 
    To include a second element, insert a line break after the first and align indentations. The
    indentation of the second element must line up with the first character after the numbered list
@@ -141,8 +143,8 @@ For example:
 
 The resulting Markdown is rendered as follows:
 
-1. For the first element, insert a single space after the 1. Long sentences should be wrapped to the
-   next line and must line up with the first character after the numbered list marker.
+1. For the first element, insert a single space after the `1`. Long sentences should be wrapped to
+   the next line and must line up with the first character after the numbered list marker.
 
    To include a second element, insert a line break after the first and align indentations. The
    indentation of the second element must line up with the first character after the numbered list
@@ -227,8 +229,11 @@ Warning block
 
 ## Markdown extension - Tables
 
-A table is an arrangement of data with rows and columns, consisting of a single header row, a
-delimiter row separating the header from the data, and zero or more data rows.
+A table is an arrangement of data with rows and columns consisting of:
+
+- A single header row
+- A delimiter row separating the header from the data
+- Zero or more data rows
 
 Each row consists of cells containing arbitrary text separated by pipes (`|`). A leading and
 trailing pipe is also recommended for clarity. Spaces between pipes and cell content are trimmed.
@@ -237,9 +242,11 @@ Block-level elements can't be inserted in a table. All content of a row must be 
 The delimiter row consists of cells whose only content are hyphens (`-`), and optionally, a leading
 or trailing colon (`:`), or both, to indicate left, right, or center alignment respectively.
 
-For small tables, consider using a list instead. Lists are easier to maintain and read, can be
-reflowed to fit within the 100-character line limit, and are more accessible for users that use
-screen readers for visual assistance.
+For small tables, consider using a list instead. Lists are:
+
+- Easier to maintain and read
+- Can be reflowed to fit within the 100-character line limit
+- More accessible for users that use screen readers for visual assistance
 
 For more information, see _Tables_ section of [Markdown reference for Microsoft Learn][05].
 
@@ -253,7 +260,7 @@ For more information, see _Tables_ section of [Markdown reference for Microsoft 
 - All URLs to external websites should use HTTPS unless that isn't valid for the target site.
 - Links must have a friendly name, usually the title of the linked article
 - Avoid using backticks, bold, or other markup inside the brackets of a hyperlink.
-- Bare URLs may be used when you're documenting a specific URI but must be enclosed in backticks.
+- Bare URLs can be used when you're documenting a specific URI but must be enclosed in backticks.
   For example:
 
   ```Markdown

@@ -1,6 +1,6 @@
 ---
 description: This article describes how we manage and support hack-a-thon events like Hacktoberfest.
-ms.date: 10/04/2022
+ms.date: 03/30/2025
 title: Hacktoberfest and other hack-a-thon events
 ---
 # Hacktoberfest and other hack-a-thon events
@@ -13,8 +13,8 @@ in Hacktoberfest.
 ## How to contribute
 
 Before you can contribute to an open source repo, you must first configure your account to
-contribute to Microsoft Learn. If you have never completed this process, start by
-[signing up for a GitHub account][01]. Be sure to [install Git and the Markdown tools][02].
+contribute to Microsoft Learn. If you're new to this process, start by signing up for a
+[GitHub account][01]. Be sure to [install Git and the Markdown tools][02].
 
 To get credit for participation, [register with Hacktoberfest][03] and read their
 [participation guide][04].
@@ -22,18 +22,18 @@ To get credit for participation, [register with Hacktoberfest][03] and read thei
 ## Find a repo that needs your help
 
 The PowerShell-Docs team is supporting Hacktoberfest contributions for several PowerShell
-documentation repositories. We have defined a set of cleanup tasks designed to be simple for first
-time contributors. Full information can be found in the [Hacktoberfest meta-issue][05].
+documentation repositories. We defined a set of cleanup tasks designed to be simple for first time
+contributors. Full information can be found in the [Hacktoberfest meta-issue][05].
 
 To be successful with these tasks, you should:
 
 - Have a general understanding of PowerShell syntax
 - Have an understanding of [splatting][06]
 - Be able to read and follow the [PowerShell-Docs style guide][07] and [Editorial checklist][08]
-- Basic familiarity with Markdown
+- Have basic familiarity with Markdown
 
-Before contributing should read the meta-issue. When you are ready to start, open a new issue using
-the Hacktoberfest issue template (linked below):
+Before contributing should read the meta-issue. When you're ready to start, open a new issue using
+the Hacktoberfest issue template by using one of the following links:
 
 - [MicrosoftDocs/PowerShell-Docs][09]
 - [MicrosoftDocs/PowerShell-Docs-DSC][10]
@@ -47,21 +47,19 @@ To have a successful contribution to an open source Microsoft Learn repository, 
 and impactful PR. The following examples from the official Hacktoberfest site are considered
 **_low-quality contributions_**:
 
-- PRs that are automated (for example, scripted opening PRs to remove whitespace, fix typos, or
-  optimize images)
-- PRs that are disruptive (for example, taking someone else's branch or commits and making a PR)
-- PRs that are regarded by a project maintainer as a hindrance vs. helping
-- A submission that's clearly an attempt to simply +1 your PR count for October
-
-Finally, one PR to fix a typo is fine, but five PRs to remove a stray whitespace are not.
+- PRs containing bulk automated changes
+  - Example: scripted PRs to remove whitespace, fix common spelling, or optimize images
+  - Submit an issue first describing the automated changes you want to make
+- PRs deemed disruptive (for example, taking someone else's branch or commits and making a PR)
+- PRs deemed a hindrance vs. helping
+- PRs that are clearly an attempt to increment your PR count for October
 
 For more information, see [Hacktoberfest: Values][14].
 
 ### Open a PR
 
-A _PR_ provides a convenient way for a contributor to propose a set of changes. When opening a PR,
-specify in the original comment that it's intended to contribute to _hacktoberfest_. Successful PRs
-have these common characteristics:
+A _PR_ provides a convenient way for a contributor to propose a set of changes. Successful PRs have
+these common characteristics:
 
 - The PR adds value.
 - The contributor is receptive to feedback.

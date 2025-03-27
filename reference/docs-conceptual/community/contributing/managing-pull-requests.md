@@ -1,25 +1,24 @@
 ---
 description: This article explains how the PowerShell-Docs team manages pull requests.
-ms.date: 07/25/2022
+ms.date: 03/30/2025
 title: How we manage pull requests
 ---
 # Managing pull requests
 
 This article documents how we manage pull requests in the PowerShell-Docs repository. This article
-is designed to be a job aid for members of the PowerShell-Docs team. It's published here to provide
-process transparency for our public contributors.
+is designed to be a job aid for members of the PowerShell-Docs team. We publish this information
+here to provide process transparency for our public contributors.
 
 ## Best practices
 
-- The person submitting the PR shouldn't merge the PR without a peer review.
+- Request a review. The person submitting the PR shouldn't merge the PR without a peer review.
 - Assign the peer reviewer when the PR is submitted. Early assignment allows the reviewer to respond
   sooner with editorial remarks.
-- Use comments to describe the nature of the change being submitted. Be sure to @mention the
-  reviewer. For example, if the change is minor and you don't need a full technical review, explain
-  this in a comment.
-- Reviewers should use the comment suggestion feature, when appropriate, to make it easier for the
-  author to accept the suggested change. For more information, see
-  [Reviewing proposed changes in a pull request][1].
+- Use comments to describe the nature of the change being submitted. For example, if the change is
+  minor, explain the change and that you don't need a full technical review. Be sure to @mention the
+  reviewer.
+- Use the comment suggestion feature to make it easier for the author to accept the suggested
+  change. For more information, see [Reviewing proposed changes in a pull request][1].
 
 ## PR Process steps
 
@@ -34,7 +33,7 @@ process transparency for our public contributors.
 1. Both: Review preview rendering
 1. Both: Review validation report - fix warnings and errors
 1. Reviewer: Mark review "Approved"
-1. Repo Admin: Merge PR (see below for criteria)
+1. Repo Maintainer: Merge PR
 
 ## Content Reviewer Checklist
 
@@ -47,7 +46,7 @@ See the [editorial checklist][4] for a more comprehensive list.
 - Validate markdown correctness
   - See style guide for content-specific formatting rules
 - Reorganize examples as follows:
-  - Intro sentence(s)
+  - Intro paragraph
   - Code and output
   - Detailed explanation of code (as necessary)
 - Check hyperlinks for accuracy
@@ -60,12 +59,12 @@ See the [editorial checklist][4] for a more comprehensive list.
   - Remove locales from URLs
   - Simplify URLs pointing to `learn.microsoft.com`
 - Verify versioned content is correct across all versions
-  - Review the [versioned content change report][5] to see summarized changes
+  - Review the [versioned content change report][5]
 
 ## Branch Merge Process
 
-The `main` branch is the only branch that's merged into `live`. Merges from short-lived (working)
-branches should be squashed.
+The `main` branch is the only branch that should be merged into `live`. Merges from short-lived
+(working) branches should be squashed before merging into `main`.
 
 | _Merge from/to_  | _release-branch_ |      _main_      |   _live_    |
 | ---------------- | :--------------: | :--------------: | :---------: |
@@ -101,10 +100,12 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 ```
 
 When a PR is merged, the HEAD of the target branch is changed. Any open PRs that were based on the
-previous HEAD are now outdated. The outdated PR can be merged using Admin rights to override the
-merge warnings in GitHub. This is safe to do if the previously merged PRs haven't touched the same
-files. Clicking the **Update Branch** button is the safest option. Choose **Update with rebase**
-option. For more information see [Updating your pull request branch][9].
+previous HEAD are now outdated. A Maintainer has the right required to override the merge warnings
+and merge the outdated PR in GitHub. Merging an outdated PR is safe if the previously merged PRs
+didn't touch the same files.
+
+To update the PR, select the **Update Branch** button. Choose **Update with rebase** option. For
+more information, see [Updating your pull request branch][9].
 
 ## Publishing to Live
 

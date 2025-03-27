@@ -1,14 +1,14 @@
 ---
 description: This article explains how the PowerShell-Docs team uses labels in GitHub.
-ms.date: 12/16/2022
-title: Labelling in GitHub
+ms.date: 03/30/2025
+title: Labeling in GitHub
 ---
 
-# Labelling in GitHub
+# Labeling in GitHub
 
 This article documents how we label issues and pull requests in the PowerShell-Docs repository.
-This article is designed to be a job aid for members of the PowerShell-Docs team. It's published
-here to provide process transparency for our public contributors.
+This article is designed to be a job aid for members of the PowerShell-Docs team. We publish this
+information here to provide process transparency for our public contributors.
 
 Labels always have a name and a description that is prefixed with their type.
 
@@ -18,11 +18,11 @@ Area labels identify the parts of PowerShell or the documentation that the issue
 
 |          Label           |                                     Related Content                                      |
 | :----------------------- | :--------------------------------------------------------------------------------------- |
-| `area-about`             | The `about_*` topic articles.                                                            |
+| `area-about`             | The `about_*` articles.                                                                  |
 | `area-archive`           | The [Microsoft.PowerShell.Archive][03] module.                                           |
 | `area-cim`               | The [CimCmdlets][01] module.                                                             |
 | `area-community`         | Community-facing projects, including the contributor's guide and monthly updates.        |
-| `area-conceptual`        | Conceptual (non-reference) articles.                                                     |
+| `area-conceptual`        | Conceptual articles (not cmdlet reference).                                              |
 | `area-console`           | The console host                                                                         |
 | `area-core`              | The [Microsoft.PowerShell.Core][04] module.                                              |
 | `area-crescendo`         | The [Crescendo][02] module.                                                              |
@@ -134,17 +134,17 @@ status labels when they're closed without a related PR.
 
 Tag labels add independent context for work items.
 
-|           Label           |                                  Purpose                                  |
-| :------------------------ | :------------------------------------------------------------------------ |
-| `in-progress`             | Someone is actively working on the item                                   |
-| `go-live`                 | The work item is related to a specific release                            |
-| `doc-a-thon`              | The work item is related to a doc-a-thon                                  |
-| `up-for-grabs`            | Any contributor may volunteer to resolve the work item                    |
-| `hacktoberfest-accepted`  | The PR is accepted for inclusion in [#hacktoberfest][17]                  |
-| `hacktoberfest-candidate` | The PR is a candidate for inclusion in [#hacktoberfest][17]               |
-| `needs-triage`            | The issue needs to be triaged by the team before it is ready to be worked |
-| `code-of-conduct`         | Closed for spam, trolling, or code of conduct violations                  |
-| `do-not-merge`            | The PR isn't meant to be merged                                           |
+|           Label           |                               Purpose                                |
+| :------------------------ | :------------------------------------------------------------------- |
+| `in-progress`             | Someone is actively working on the item                              |
+| `go-live`                 | The work item is related to a specific release                       |
+| `doc-a-thon`              | The work item is related to a doc-a-thon                             |
+| `up-for-grabs`            | Any contributor can volunteer to resolve the work item               |
+| `hacktoberfest-accepted`  | The PR is accepted for inclusion in [#hacktoberfest][17]             |
+| `hacktoberfest-candidate` | The PR is a candidate for inclusion in [#hacktoberfest][17]          |
+| `needs-triage`            | The issue must be triaged by the team before it's ready to be worked |
+| `code-of-conduct`         | Closed for spam, trolling, or code of conduct violations             |
+| `do-not-merge`            | The PR isn't meant to be merged                                      |
 
 ## Waiting labels
 
