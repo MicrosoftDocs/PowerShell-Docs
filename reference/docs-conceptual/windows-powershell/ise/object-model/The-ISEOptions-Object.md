@@ -1,31 +1,32 @@
 ---
 description: The ISEOptions object represents various settings for Windows PowerShell ISE.
-ms.date: 12/31/2019
+ms.date: 03/27/2025
 title: The ISEOptions Object
 ---
 
 # The ISEOptions Object
 
-The **ISEOptions** object represents various settings for Windows PowerShell ISE. It is an instance
+The **ISEOptions** object represents various settings for Windows PowerShell ISE. It's an instance
 of the **Microsoft.PowerShell.Host.ISE.ISEOptions** class.
 
 The **ISEOptions** object provides the following methods and properties.
 
 ## Methods
 
-### RestoreDefaultConsoleTokenColors\(\)
+### `RestoreDefaultConsoleTokenColors()`
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
 Restores the default values of the token colors in the Console pane.
 
 ```powershell
-# Changes the color of the commands in the Console pane to red and then restores it to its default value.
+# Changes the color of the commands in the Console pane to red and then restores
+# it to its default value.
 $psISE.Options.ConsoleTokenColors["Command"] = 'red'
 $psISE.Options.RestoreDefaultConsoleTokenColors()
 ```
 
-### RestoreDefaults\(\)
+### `RestoreDefaults()`
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
@@ -39,27 +40,29 @@ $psISE.Options.ConsolePaneBackgroundColor = 'orange'
 $psISE.Options.RestoreDefaults()
 ```
 
-### RestoreDefaultTokenColors\(\)
+### `RestoreDefaultTokenColors()`
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
 Restores the default values of the token colors in the Script pane.
 
 ```powershell
-# Changes the color of the comments in the Script pane to red and then restores it to its default value.
+# Changes the color of the comments in the Script pane to red and then restores it
+# to its default value.
 $psISE.Options.TokenColors["Comment"] = 'red'
 $psISE.Options.RestoreDefaultTokenColors()
 ```
 
-### RestoreDefaultXmlTokenColors\(\)
+### `RestoreDefaultXmlTokenColors()`
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
 Restores the default values of the token colors for XML elements that are displayed in Windows
-PowerShell ISE. Also see [XmlTokenColors](#xmltokencolors).
+PowerShell ISE. Also see [XmlTokenColors][09].
 
 ```powershell
-# Changes the color of the comments in XML data to red and then restores it to its default value.
+# Changes the color of the comments in XML data to red and then restores it
+# to its default value.
 $psISE.Options.XmlTokenColors["Comment"] = 'red'
 $psISE.Options.RestoreDefaultXmlTokenColors()
 ```
@@ -81,9 +84,9 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 ### CommandPaneBackgroundColor
 
 This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions
-of the ISE. For later versions, see [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
+of the ISE. For later versions, see [ConsolePaneBackgroundColor][01].
 
-Specifies the background color for the Command pane. It is an instance of the
+Specifies the background color for the Command pane. It's an instance of the
 **System.Windows.Media.Color** class.
 
 ```powershell
@@ -107,7 +110,7 @@ $psISE.Options.CommandPaneUp  = $true
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-Specifies the background color for the Console pane. It is an instance of the
+Specifies the background color for the Console pane. It's an instance of the
 **System.Windows.Media.Color** class.
 
 ```powershell
@@ -143,11 +146,12 @@ Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier ve
 
 Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Console pane. This
 property is a dictionary object that contains name/value pairs of token types and colors for the
-Console pane. To change the colors of the IntelliSense tokens in the Script pane, see [TokenColors](#tokencolors).
-To reset the colors to the default values, see [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors).
-Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter,
-Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number,
-Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
+Console pane. To change the colors of the IntelliSense tokens in the Script pane, see
+[TokenColors][08]. To reset the colors to the default values, see
+[RestoreDefaultConsoleTokenColors][05]. Token colors can be set for the following: Attribute,
+Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword,
+LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator,
+String, Type, Unknown, Variable.
 
 ```powershell
 # Sets the color of commands to green.
@@ -160,11 +164,12 @@ $psISE.Options.ConsoleTokenColors["Keyword"] = 'magenta'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the background color for the debug text that appears in the Console pane. It is an
-instance of the **System.Windows.Media.Color** class.
+Specifies the background color for the debug text that appears in the Console pane. It's an instance
+of the **System.Windows.Media.Color** class.
 
 ```powershell
-# Changes the background color for the debug text that appears in the Console pane to blue.
+# Changes the background color for the debug text that appears in the Console pane
+# to blue.
 $psISE.Options.DebugBackgroundColor = '#0000FF'
 ```
 
@@ -172,11 +177,12 @@ $psISE.Options.DebugBackgroundColor = '#0000FF'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the foreground color for the debug text that appears in the Console pane. It is an
-instance of the **System.Windows.Media.Color** class.
+Specifies the foreground color for the debug text that appears in the Console pane. It's an instance
+of the **System.Windows.Media.Color** class.
 
 ```powershell
-# Changes the foreground color for the debug text that appears in the Console pane to yellow.
+# Changes the foreground color for the debug text that appears in the Console
+# pane to yellow.
 $psISE.Options.DebugForegroundColor = 'yellow'
 ```
 
@@ -184,7 +190,8 @@ $psISE.Options.DebugForegroundColor = 'yellow'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-A collection of properties that specify the default values to be used when the Reset methods are used.
+A collection of properties that specify the default values to be used when the Reset methods are
+used.
 
 ```powershell
 # Displays the name of the default options. This example is from ISE 4.0.
@@ -233,7 +240,7 @@ IntellisenseTimeoutInSeconds              : 3
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the background color for error text that appears in the Console pane. It is an instance of
+Specifies the background color for error text that appears in the Console pane. It's an instance of
 the **System.Windows.Media.Color** class.
 
 ```powershell
@@ -245,7 +252,7 @@ $psISE.Options.ErrorBackgroundColor = 'black'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the foreground color for error text that appears in the Console pane. It is an instance of
+Specifies the foreground color for error text that appears in the Console pane. It's an instance of
 the **System.Windows.Media.Color** class.
 
 ```powershell
@@ -268,7 +275,7 @@ $psISE.Options.FontName = 'Courier New'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the font size as an integer. It is used in the Script pane, the Command pane, and the
+Specifies the font size as an integer. It's used in the Script pane, the Command pane, and the
 Output pane. The valid range of values is 8 through 32.
 
 ```powershell
@@ -297,16 +304,17 @@ Specifies the number of recently opened files that Windows PowerShell ISE tracks
 bottom of the **File Open** menu. The default value is 10. The value is an integer.
 
 ```powershell
-# Changes the number of recently used files that appear at the bottom of the File Open menu to 5.
+# Changes the number of recently used files that appear at the bottom of the
+# File Open menu to 5.
 $psISE.Options.MruCount = 5
 ```
 
 ### OutputPaneBackgroundColor
 
 This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions
-of the ISE. For later versions, see [ConsolePaneBackgroundColor](#consolepanebackgroundcolor).
+of the ISE. For later versions, see [ConsolePaneBackgroundColor][01].
 
-The read/write property that gets or sets the background color for the Output pane itself. It is an
+The read/write property that gets or sets the background color for the Output pane itself. It's an
 instance of the **System.Windows.Media.Color** class.
 
 ```powershell
@@ -317,7 +325,7 @@ $psISE.Options.OutputPaneForegroundColor = 'gold'
 ### OutputPaneTextForegroundColor
 
 This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions
-of the ISE. For later versions, see [ConsolePaneForegroundColor](#consolepaneforegroundcolor).
+of the ISE. For later versions, see [ConsolePaneForegroundColor][02].
 
 The read/write property that changes the foreground color of the text in the Output pane in Windows
 PowerShell ISE 2.0.
@@ -330,7 +338,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = 'blue'
 ### OutputPaneTextBackgroundColor
 
 This feature is present in Windows PowerShell ISE 2.0, but was removed or renamed in later versions
-of the ISE. For later versions, see [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor).
+of the ISE. For later versions, see [ConsolePaneTextBackgroundColor][03].
 
 The read/write property that changes the background color of the text in the Output pane.
 
@@ -343,7 +351,7 @@ $psISE.Options.OutputPaneTextBackgroundColor = 'pink'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read/write property that gets or sets the background color for files. It is an instance of the
+The read/write property that gets or sets the background color for files. It's an instance of the
 **System.Windows.Media.Color** class.
 
 ```powershell
@@ -355,8 +363,8 @@ $psISE.Options.ScriptPaneBackgroundColor = 'yellow'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read/write property that gets or sets the foreground color for non-script files in the Script pane.
-To set the foreground color for script files, use the [TokenColors](#tokencolors).
+The read/write property that gets or sets the foreground color for non-script files in the Script
+pane. To set the foreground color for script files, use the [TokenColors][08].
 
 ```powershell
 # Sets the foreground to color of non-script files in the script pane to green.
@@ -383,9 +391,9 @@ $psISE.Options.SelectedScriptPaneState = 'Maximized'
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-Specifies whether the <kbd>CTRL</kbd>+<kbd>J</kbd> list of snippets includes the starter set that is included in
-Windows PowerShell. When set to `$false`, only user-defined snippets appear in the <kbd>CTRL</kbd>+<kbd>J</kbd> list.
-The default value is `$true`.
+Specifies whether the <kbd>CTRL</kbd>+<kbd>J</kbd> list of snippets includes the starter set that's
+included in Windows PowerShell. When set to `$false`, only user-defined snippets appear in the
+<kbd>CTRL</kbd>+<kbd>J</kbd> list. The default value is `$true`.
 
 ```powershell
 # Hide the default snippets from the CTRL+J list.
@@ -420,7 +428,8 @@ $psISE.Options.ShowIntellisenseInScriptPane = $false
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-Specifies whether the Script pane displays line numbers in the left margin. The default value is `$true`.
+Specifies whether the Script pane displays line numbers in the left margin. The default value is
+`$true`.
 
 ```powershell
 # Turn off line numbers in the Script pane.
@@ -432,9 +441,9 @@ $psISE.Options.ShowLineNumbers = $false
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
 Specifies whether the Script pane displays expandable and collapsible brackets next to sections of
-code in the left margin. When they are displayed, you can click the minus `-` icons next to a
-block of text to collapse it or click the plus `+` icon to expand a block of text. The default
-value is `$true`.
+code in the left margin. When they're displayed, you can click the minus `-` icons next to a block
+of text to collapse it or click the plus `+` icon to expand a block of text. The default value is
+`$true`.
 
 ```powershell
 # Turn off outlining in the Script pane.
@@ -457,7 +466,7 @@ $psISE.Options.ShowToolBar = $true
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies whether a warning message appears when a script is saved automatically before it is run.
+Specifies whether a warning message appears when a script is saved automatically before it's run.
 The default value is `$true`.
 
 ```powershell
@@ -487,11 +496,12 @@ Supported in Windows PowerShell ISE 2.0 and later.
 
 Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Script pane. This
 property is a dictionary object that contains name/value pairs of token types and colors for the
-Script pane. To change the colors of the IntelliSense tokens in the Console pane, see [ConsoleTokenColors](#consoletokencolors).
-To reset the colors to the default values, see [RestoreDefaultTokenColors](#restoredefaulttokencolors).
-Token colors can be set for the following: Attribute, Command, CommandArgument, CommandParameter,
-Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number,
-Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
+Script pane. To change the colors of the IntelliSense tokens in the Console pane, see
+[ConsoleTokenColors][04]. To reset the colors to the default values, see
+[RestoreDefaultTokenColors][06]. Token colors can be set for the following: Attribute, Command,
+CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation,
+LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown,
+Variable.
 
 ```powershell
 # Sets the color of commands to green.
@@ -544,7 +554,7 @@ $psISE.Options.UseLocalHelp = $true
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the background color for verbose text that appears in the Console pane. It is a
+Specifies the background color for verbose text that appears in the Console pane. It's a
 **System.Windows.Media.Color** object.
 
 ```powershell
@@ -556,7 +566,7 @@ $psISE.Options.VerboseBackgroundColor ='#0000FF'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the foreground color for verbose text that appears in the Console pane. It is a
+Specifies the foreground color for verbose text that appears in the Console pane. It's a
 **System.Windows.Media.Color** object.
 
 ```powershell
@@ -568,7 +578,7 @@ $psISE.Options.VerboseForegroundColor = 'yellow'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the background color for warning text that appears in the Console pane. It is a
+Specifies the background color for warning text that appears in the Console pane. It's a
 **System.Windows.Media.Color** object.
 
 ```powershell
@@ -580,7 +590,7 @@ $psISE.Options.WarningBackgroundColor = '#0000FF'
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Specifies the foreground color for warning text that appears in the Output pane. It is a
+Specifies the foreground color for warning text that appears in the Output pane. It's a
 **System.Windows.Media.Color** object.
 
 ```powershell
@@ -593,10 +603,10 @@ $psISE.Options.WarningForegroundColor = 'yellow'
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
 Specifies a dictionary object that contains name/value pairs of token types and colors for XML
-content that is displayed in Windows PowerShell ISE. Token colors can be set for the following:
+content that's displayed in Windows PowerShell ISE. Token colors can be set for the following:
 Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword,
 LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator,
-String, Type, Unknown, Variable. Also see [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
+String, Type, Unknown, Variable. Also see [RestoreDefaultXmlTokenColors][07].
 
 ```powershell
 # Sets the color of XML element names to green.
@@ -620,5 +630,18 @@ $psISE.Options.Zoom = 200
 
 ## See Also
 
-- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [Purpose of the Windows PowerShell ISE Scripting Object Model][10]
+- [The ISE Object Model Hierarchy][11]
+
+<!-- link references -->
+[01]: #consolepanebackgroundcolor
+[02]: #consolepaneforegroundcolor
+[03]: #consolepanetextbackgroundcolor
+[04]: #consoletokencolors
+[05]: #restoredefaultconsoletokencolors
+[06]: #restoredefaulttokencolors
+[07]: #restoredefaultxmltokencolors
+[08]: #tokencolors
+[09]: #xmltokencolors
+[10]: Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md
+[11]: The-ISE-Object-Model-Hierarchy.md

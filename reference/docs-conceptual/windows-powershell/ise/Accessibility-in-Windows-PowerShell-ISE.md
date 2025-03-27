@@ -1,6 +1,6 @@
 ---
 description: This topic describes the accessibility features of Windows PowerShell Integrated Scripting Environment (ISE) that you might find helpful.
-ms.date: 12/19/2019
+ms.date: 03/27/2025
 ms.topic: ui-reference
 title: Accessibility in Windows PowerShell ISE
 ---
@@ -10,14 +10,14 @@ title: Accessibility in Windows PowerShell ISE
 This topic describes the accessibility features of Windows PowerShell Integrated Scripting
 Environment (ISE) that you might find helpful.
 
-- [How to change the size and location of the Console and Script Panes](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
-- [Keyboard shortcuts for editing text](#keyboard-shortcuts-for-editing-text)
-- [Keyboard shortcuts for running scripts](#keyboard-shortcuts-for-running-scripts)
-- [Keyboard shortcuts for customizing the view](#keyboard-shortcuts-for-customizing-the-view)
-- [Keyboard shortcuts for debugging scripts](#keyboard-shortcuts-for-debugging-scripts)
-- [Keyboard shortcuts for Windows PowerShell tabs](#keyboard-shortcuts-for-windows-powershell-tabs)
-- [Keyboard shortcuts for starting and exiting](#keyboard-shortcuts-for-starting-and-exiting)
-- [Breakpoint management with cmdlets](#breakpoint-management)
+- [How to change the size and location of the Console and Script Panes][04]
+- [Keyboard shortcuts for editing text][07]
+- [Keyboard shortcuts for running scripts][08]
+- [Keyboard shortcuts for customizing the view][05]
+- [Keyboard shortcuts for debugging scripts][06]
+- [Keyboard shortcuts for Windows PowerShell tabs][10]
+- [Keyboard shortcuts for starting and exiting][09]
+- [Breakpoint management with cmdlets][03]
 
 Microsoft is committed to making its products and services easier for everyone to use. The following
 topics provide information about the features, products, and services that make Windows PowerShell
@@ -29,7 +29,7 @@ make Windows PowerShell ISE more accessible for people with disabilities:
 - Keyboard Shortcuts
 
 - Syntax Coloring Table and the ability to modify several other color settings using the
-  [$psISE.Options](object-model/The-ISEOptions-Object.md) scripting object.
+  [$psISE.Options][13] scripting object.
 
 - Text Size Change
 
@@ -175,12 +175,24 @@ You can use the following keyboard shortcuts to start the Windows PowerShell con
 ## Breakpoint Management
 
 For the visually impaired, breakpoint information is available through the cmdlets for managing
-breakpoints, such as
-[Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) and
-[Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint). For more
-information please see 'How to manage breakpoints' in
-[How to Debug Scripts in the Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
+breakpoints, such as [Get-PSBreakpoint][01] and [Set-PSBreakpoint][02]. For more information please
+see 'How to manage breakpoints' in [How to Debug Scripts in the Windows PowerShell ISE][11].
 
 ## See Also
 
-[Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
+[Introducing the Windows PowerShell ISE][12]
+
+<!-- link references -->
+[01]: /powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint
+[02]: /powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint
+[03]: #breakpoint-management
+[04]: #how-to-change-the-size-and-location-of-the-console-and-script-panes
+[05]: #keyboard-shortcuts-for-customizing-the-view
+[06]: #keyboard-shortcuts-for-debugging-scripts
+[07]: #keyboard-shortcuts-for-editing-text
+[08]: #keyboard-shortcuts-for-running-scripts
+[09]: #keyboard-shortcuts-for-starting-and-exiting
+[10]: #keyboard-shortcuts-for-windows-powershell-tabs
+[11]: How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md
+[12]: Introducing-the-Windows-PowerShell-ISE.md
+[13]: object-model/The-ISEOptions-Object.md
