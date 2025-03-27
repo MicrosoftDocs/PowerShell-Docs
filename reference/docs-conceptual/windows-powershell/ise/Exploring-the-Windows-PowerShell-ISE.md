@@ -1,7 +1,7 @@
 ---
 description: This article is an overview of the features of the Windows PowerShell ISE
 ms.custom: ISE-F1-page
-ms.date: 05/04/2023
+ms.date: 03/27/2025
 ms.topic: ui-reference
 title: Exploring the Windows PowerShell ISE
 ---
@@ -11,26 +11,25 @@ title: Exploring the Windows PowerShell ISE
 You can use the Windows PowerShell Integrated Scripting Environment (ISE) to create, run, and debug
 commands and scripts.
 
-![Screenshot of the full ISE window.](media/exploring-the-windows-powershell-ise/full-ise-window.png)
+![Screenshot of the full ISE window.][10]
 
-The Windows PowerShell ISE consists of the menu bar, Windows PowerShell tabs,
-the toolbar, script tabs, a Script Pane, a Console Pane, a status bar, a text-size slider and
-context-sensitive Help.
+The Windows PowerShell ISE consists of the menu bar, Windows PowerShell tabs, the toolbar, script
+tabs, a Script Pane, a Console Pane, a status bar, a text-size slider and context-sensitive Help.
 
 ## Menu Bar
 
 The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **Add-ons**, and
 **Help** menus.
 
-![Screenshot of the menu bar.](media/exploring-the-windows-powershell-ise/ise-menu-bar.png)
+![Screenshot of the menu bar.][11]
 
 The buttons on the menus allow you to perform tasks related to writing and running scripts and
-running commands in the Windows PowerShell ISE. Additionally, an [add-on tool][11] may be placed on
-the menu bar by running scripts that use the [The ISE Object Model Hierarchy][10].
+running commands in the Windows PowerShell ISE. Additionally, an [add-on tool][17] may be placed on
+the menu bar by running scripts that use the [The ISE Object Model Hierarchy][16].
 
 ## Toolbar
 
-![Screenshot of the tool bar.](media/exploring-the-windows-powershell-ise/ise-tool-bar.png)
+![Screenshot of the tool bar.][15]
 
 The following buttons are located on the toolbar.
 
@@ -58,7 +57,7 @@ The following buttons are located on the toolbar.
 
 ## Windows PowerShell Tabs
 
-![Screenshot of the Windows PowerShell tabs.](media/exploring-the-windows-powershell-ise/ise-powershell-tabs.png)
+![Screenshot of the Windows PowerShell tabs.][13]
 
 A Windows PowerShell tab is the environment in which a Windows PowerShell script runs. You can open
 new Windows PowerShell tabs in the Windows PowerShell ISE to create separate environments on your
@@ -69,7 +68,7 @@ For more information, see [How to Create a PowerShell Tab in Windows PowerShell 
 
 ## Script Tab
 
-![Screenshot of the script tabs.](media/exploring-the-windows-powershell-ise/ise-script-tabs.png)
+![Screenshot of the script tabs.][14]
 
 Displays the name of the script you are editing. You can click a script tab to select the script you
 want to edit.
@@ -78,7 +77,7 @@ When you point to the script tab, the fully qualified path to the script file ap
 
 ## Script Pane
 
-![Screenshot of the panes and status bar.](media/exploring-the-windows-powershell-ise/ise-panes.png)
+![Screenshot of the panes and status bar.][12]
 
 Allows you to create and run scripts. You can open, edit and run existing scripts in the Script
 Pane. For more information, see [How to Write and Run Scripts in the Windows PowerShell ISE][07].
@@ -108,7 +107,7 @@ Increases or decreases the size of the text on the screen.
 Help for Windows PowerShell ISE is available on Microsoft Learn. You can open the Help by clicking
 **Windows PowerShell ISE Help** on the **Help** menu or by pressing the <kbd>F1</kbd> key anywhere
 except when the cursor is on a cmdlet name in either the Script Pane or the Console Pane. From the
-**Help** menu you can also run the `Update-Help` cmdlet, and display the Command Window which
+**Help** menu you can also run the `Update-Help` cmdlet, and display the Command Window, which
 assists you in constructing commands by showing you all the parameters for a cmdlet and enabling you
 to fill in the parameters in an easy-to-use form.
 
@@ -129,5 +128,11 @@ to fill in the parameters in an easy-to-use form.
 [07]: How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md
 [08]: Introducing-the-Windows-PowerShell-ISE.md
 [09]: Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md
-[10]: object-model/The-ISE-Object-Model-Hierarchy.md
-[11]: object-model/The-ISEAddOnTool-Object.md
+[10]: media/exploring-the-windows-powershell-ise/full-ise-window.png
+[11]: media/exploring-the-windows-powershell-ise/ise-menu-bar.png
+[12]: media/exploring-the-windows-powershell-ise/ise-panes.png
+[13]: media/exploring-the-windows-powershell-ise/ise-powershell-tabs.png
+[14]: media/exploring-the-windows-powershell-ise/ise-script-tabs.png
+[15]: media/exploring-the-windows-powershell-ise/ise-tool-bar.png
+[16]: object-model/The-ISE-Object-Model-Hierarchy.md
+[17]: object-model/The-ISEAddOnTool-Object.md

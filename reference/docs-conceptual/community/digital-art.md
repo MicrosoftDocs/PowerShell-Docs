@@ -2,7 +2,7 @@
 author: sdwheeler
 description: Download PowerShell related artwork and posters
 ms.author: sewhee
-ms.date: 06/28/2023
+ms.date: 03/30/2025
 title: PowerShell Digital Art
 ---
 # PowerShell Digital Art

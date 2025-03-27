@@ -1,16 +1,15 @@
 ---
 description: >-
     This article describes the process for contributing quality improvements to the documentation.
-ms.date: 06/28/2023
+ms.date: 03/30/2025
 title: Contributing quality improvements
 ---
 
 # Contributing quality improvements
 
 For [Hacktoberfest 2022][31], we [piloted a process][19] for contributing quality improvements to
-the PowerShell content. This guide continues and generalizes that process, providing a low-friction
-way for community members to contribute and collaborate on GitHub through enhancing the quality of
-documentation.
+the PowerShell content. This guide generalizes that process to define a low-friction way for
+community members to improve to the quality of the documentation.
 
 We're focusing on these quality areas:
 
@@ -85,12 +84,12 @@ All code samples should follow the [style guidelines][03] for PowerShell content
 repeated in abbreviated form here for convenience:
 
 - All code blocks should be contained in a triple-backtick code fence (`` ``` ``).
-- Line length for code blocks is limited to `90` characters except in About topics, where it's
-  limited to `76` characters.
+- Line length for code blocks is limited to `90` characters for cmdlet reference articles.
+- Line length for code blocks is limited to `76` characters for `about_*` articles.
 - Avoid using line continuation characters (`` ` ``) in PowerShell code examples.
   - Use splatting or natural line break opportunities, like after pipe (`|`) characters, opening
     braces (`}`), parentheses (`(`), and brackets (`[`) to limit line length.
-- Only include the PowerShell prompt for illustrative examples where the code is not intended for
+- Only include the PowerShell prompt for illustrative examples where the code isn't intended for
   copy-pasting.
 - Don't use aliases in examples unless you're specifically documenting the alias.
 - Avoid using positional parameters. Use the parameter name, even if the parameter is positional.
@@ -109,9 +108,9 @@ here for convenience:
 - PowerShell module names should be **bold**.
 - PowerShell keywords and operators should be all lowercase.
 - Use proper (Pascal) casing for cmdlet names and parameters.
-- When referring to a parameter by name, the name should be **bold**. When illustrating the use of
-  a parameter with the hyphen prefix, the parameter should be wrapped in backticks.
-- When showing example usage of an external command, the example should be wrapped in backticks.
+- When you refer to a parameter by name, the name should be **bold**.
+- Use parameter name with the hyphen if you're illustrating syntax. Wrap the parameter in backticks.
+- When you show example usage of an external command, the example should be wrapped in backticks.
   Always include the file extension of the external command.
 
 ## Link references
@@ -134,7 +133,7 @@ The [Packages tab][31] displays all available packages in the PowerShell Gallery
 
 > [!NOTE]
 > When you replace an inline link, reflow the content to wrap at 100 characters. You can use the
-> [reflow-markdown][30] VS Code extension to do this quickly.
+> [reflow-markdown][30] VS Code extension to quickly reflow the paragraph.
 
 At the bottom of the file, add a markdown comment before the definition of the links.
 
@@ -163,16 +162,14 @@ Make sure of the line lengths and use the [Reflow Markdown][30] extension to fix
 
 ## Spelling
 
-Sometimes, despite our best efforts, typos and misspellings get through and end up in the
-documentation. These mistakes make documentation harder to follow and localize. Fixing these
-mistakes makes the documentation more readable, especially for non-English speakers who rely on
-accurate translations.
+Despite our best efforts, typos and misspellings get through and end up in the documentation. These
+mistakes make documentation harder to follow and localize. Fixing these mistakes makes the
+documentation more readable, especially for non-English speakers who rely on accurate translations.
 
 ## Process
 
 We encourage you to choose one or more of the quality areas and an article (or group of articles)
-to improve. Once you've decided what articles and content areas you want to work on, follow these
-steps:
+to improve. Use the following steps to guide your work:
 
 <!-- markdownlint-disable MD044 -->
 
@@ -200,7 +197,8 @@ steps:
       - resolves #123
       ```
 
-   The content developers will review your work as soon as they can to help you get it merged.
+   After you submit the PR, the maintainers will review your work and work with you to get it
+   merged.
 
 <!-- markdownlint-enable MD044 -->
 
