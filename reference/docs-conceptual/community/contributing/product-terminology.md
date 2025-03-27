@@ -1,13 +1,13 @@
 ---
 description: This article contains guidelines for the proper use of product names and terms.
-ms.date: 06/20/2024
+ms.date: 03/30/2025
 title: Product terminology and branding guidelines
 ---
 # Product terminology and branding guidelines
 
-When writing about any product it's important to correctly and consistently use product names and
-terminology. This guide defines product names and terminology related to PowerShell. Note the
-capitalization of specific words or use cases.
+When you write about any product, it's important to use the proper product names and terminology.
+This guide defines product names and terminology related to PowerShell. Note the capitalization of
+specific words or use cases.
 
 ## PowerShell (collective name)
 
@@ -15,8 +15,8 @@ Use **PowerShell** to describe the scripting language and an interactive shell.
 
 ### PowerShell (product name)
 
-The cross-platform version of PowerShell that's built on .NET (core), rather than the .NET
-Framework. PowerShell can be installed on Windows, Linux, and macOS.
+The cross-platform version of PowerShell built on .NET (core), rather than the .NET Framework.
+PowerShell can be installed on Windows, Linux, and macOS.
 
 ### PowerShell Core (product deprecated)
 
@@ -89,15 +89,13 @@ since ASM is scheduled for retirement.
 These products are used to manage Azure resources but aren't part of the Azure PowerShell collective
 product. They should never be described using the "Azure PowerShell" collective name.
 
-- Azure Active Directory PowerShell (AzureAD)
 - Azure Information Protection PowerShell
 - Azure Deployment Manager PowerShell
 - Azure Elastic Database Jobs PowerShell
 - Azure Service Fabric PowerShell
 - Azure Stack PowerShell
-- Microsoft.Graph PowerShell
-- Microsoft.Graph.Entra PowerShell
-- MSOnline PowerShell
+- Microsoft Graph PowerShell SDK
+- Microsoft Entra PowerShell
 
 Guidelines
 

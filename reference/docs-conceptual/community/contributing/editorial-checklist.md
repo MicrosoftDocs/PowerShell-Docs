@@ -1,17 +1,17 @@
 ---
-description: This is a summarized list of rules for editing PowerShell documentation.
-ms.date: 11/16/2022
+description: This article contains a summarized list of rules for editing PowerShell documentation.
+ms.date: 03/30/2025
 title: Editorial checklist
 ---
 # Editor's checklist
 
-This is a summary of rules to apply when writing new or updating existing articles. See other
-articles in the Contributor's Guide for detailed explanations and examples of these rules.
+This article contains a summarized list of rules for writing or editing PowerShell documentation.
+See other articles in the Contributor's Guide for detailed explanations and examples of these rules.
 
 ## Metadata
 
 - `ms.date`: must be in the format **MM/DD/YYYY**
-  - Change the date when there is a significant or factual update
+  - Change the date when there's a significant or factual update
     - Reorganizing the article
     - Fixing factual errors
     - Adding new information
@@ -31,7 +31,7 @@ articles in the Contributor's Guide for detailed explanations and examples of th
   - File paths `C:\Program Files\PowerShell`, `/usr/bin/pwsh`
   - URLs that aren't meant to be clickable in the document
   - Property or parameter values
-- Use bold for property names, parameter names, class names, module names, entity names, object or
+- Use bold for property names, parameter names, class names, module names, entity names, object, or
   type names
   - Bold is used for semantic markup, not emphasis
   - Bold - use asterisks `**`
@@ -45,39 +45,39 @@ articles in the Contributor's Guide for detailed explanations and examples of th
 
 ### Headers
 
-- H1 is first - only one H1 per article
+- Start with H1 first - only one H1 per article
 - Use [ATX Headers][1] only
 - Use sentence case for all headers
 - Don't skip levels - no H3 without an H2
-- Max depth of H3 or H4
-- Blank line before and after
-- PlatyPS enforces specific headers in its schema - don't add or remove headers
+- Limit header depth to H3 or H4
+- Add blank lines before and after
+- Don't add or remove headers - PlatyPS enforces specific headers in its schema
 
 ### Code blocks
 
-- Blank line before and after
+- Add blank lines before and after
 - Use tagged code fences - **powershell**, **Output**, or other appropriate language ID
-- Untagged fence - syntax blocks or other shells
-- Put output in separate code block except for basic examples where you don't intend the for the
+- Use untagged code fence for syntax blocks
+- Put output in separate code block except for basic examples where you don't intend for the
   reader to use the **Copy** button
 - See list of [supported languages][2]
 
 ### Lists
 
-- Indented properly
-- Blank line before first item and after last item
-- Bullet - use hyphen (`-`) not asterisk (`*`) to reduce confusion with emphasis
-- For numbered lists, all numbers are "1."
+- Indent properly
+- Add blank lines before first item and after last item
+- Use hyphen (`-`) for bullets not asterisk (`*`) to reduce confusion with emphasis
+- Use `1.` for all items in a numbered list
 
 ## Terminology
 
-- PowerShell vs. Windows PowerShell
+- Use _PowerShell_ vs. _Windows PowerShell_
 - See [Product Terminology][3]
 
 ## Cmdlet reference examples
 
 - Must have at least one example in cmdlet reference
-- Examples should be just enough code to demonstrate the usage
+- Examples should be only enough code to demonstrate the usage
 - PowerShell syntax
   - Use full names of cmdlets and parameters - no aliases
   - Use splatting for parameters when the command line gets too long
@@ -108,11 +108,12 @@ articles in the Contributor's Guide for detailed explanations and examples of th
 ## Linking to other documents
 
 - When linking outside the docset or between cmdlet reference and conceptual
-  - Use site-relative URLs when linking to Microsoft Learn (remove `https://learn.microsoft.com/en-us`)
-  - don't include locales in URLs on Microsoft properties (eg. remove `/en-us` from URL)
+  - Use site-relative URLs when linking to Microsoft Learn (remove
+    `https://learn.microsoft.com/en-us`)
+  - don't include locales in URLs on Microsoft properties (remove `/en-us` from URL)
   - All URLs to external websites should use HTTPS unless that's not valid for the target site
 - When linking within the docset
-  - Use the relative filepath (e.g. `../folder/file.md`)
+  - Use the relative filepath (`../folder/file.md`)
 - All paths use forward-slash (`/`) characters
 - Image links should have unique alt text
 
