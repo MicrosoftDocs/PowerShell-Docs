@@ -70,8 +70,6 @@ items:
             href: learn/ps101/09-functions.md
           - name: Script modules
             href: learn/ps101/10-script-modules.md
-          - name: Appendix A - Help Syntax
-            href: learn/ps101/appendix-a.md
       - name: Optimizing your shell experience
         items:
           - name: Overview of the Shell
