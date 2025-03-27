@@ -1,6 +1,6 @@
 ---
-description: WMF is a prerequisite for Windows PowerShell. This articles shows the history of WMF versions and provides information about how to find and install WMF.
-ms.date: 11/03/2023
+description: WMF is a prerequisite for Windows PowerShell. This article shows the history of WMF versions and provides information about how to find and install WMF.
+ms.date: 03/27/2025
 ms.topic: overview
 title: Windows Management Framework (WMF)
 ---
@@ -29,8 +29,8 @@ WMF installation adds and/or updates the following features:
 
 ## WMF Release Notes
 
-To learn about various enhancements in PowerShell and other components of a given WMF, please refer
-to the links below to review the release notes:
+To learn about the enhancements in Windows PowerShell and other components, see the release notes
+for each version of WMF:
 
 - [WMF 5.1][08]
 - [WMF 5.0][07]
@@ -57,8 +57,8 @@ to the links below to review the release notes:
 
 - **Included**: The features of the specified version of WMF were shipped in the indicated version
   of Windows client or Windows Server.
-- **Out of support**: These products are no longer supported by Microsoft. You must upgrade to a
-  supported version. For more information, see the [Microsoft Lifecycle Policy][06] page.
+- **Out of support**: Microsoft no longer supports these products. You must upgrade to a supported
+  version. For more information, see the [Microsoft Lifecycle Policy][06] page.
 
 > [!NOTE]
 > The version of WMF that shipped in an operating system is supported for the lifetime of support

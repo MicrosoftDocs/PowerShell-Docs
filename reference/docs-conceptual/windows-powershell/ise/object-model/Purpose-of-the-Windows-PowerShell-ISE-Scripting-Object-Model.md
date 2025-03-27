@@ -1,6 +1,6 @@
 ---
 description: Purpose of the Windows PowerShell ISE Scripting Object Model
-ms.date: 12/31/2019
+ms.date: 03/27/2025
 title: Purpose of the Windows PowerShell ISE Scripting Object Model
 ---
 
@@ -59,4 +59,7 @@ You can use the scripting object model to create keyboard shortcuts for frequent
 
 ## See also
 
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The ISE Object Model Hierarchy][01]
+
+<!-- link references -->
+[01]: The-ISE-Object-Model-Hierarchy.md

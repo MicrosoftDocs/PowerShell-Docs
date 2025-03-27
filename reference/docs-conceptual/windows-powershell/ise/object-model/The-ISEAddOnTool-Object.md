@@ -1,6 +1,6 @@
 ---
 description: An ISEAddonTool object represents an installed add-on tool that provides additional functionality to Windows PowerShell ISE.
-ms.date: 06/05/2017
+ms.date: 03/27/2025
 title: The ISEAddOnTool Object
 ---
 
@@ -16,11 +16,10 @@ vertical pane is docked to the right edge of Windows PowerShell ISE. The horizon
 to the bottom edge.
 
 Each PowerShell tab in Windows PowerShell ISE can have its own set of add-on tools installed. See
-[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) and
-[$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) to access the
-collection of tools available to the currently selected tab or the same properties on any of the
-**PowerShellTab** objects in the [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
-collection object.
+[$psISE.CurrentPowerShellTab.HorizontalAddOnTools][04] and
+[$psISE.CurrentPowerShellTab.VerticalAddOnTools][04] to access the collection of tools available to
+the currently selected tab or the same properties on any of the **PowerShellTab** objects in the
+[$psISE.PowerShellTabs][05] collection object.
 
 ## Methods
 
@@ -36,7 +35,7 @@ The **Control** property provides read access to many of the details of the Comm
 
 ```powershell
 # View the properties of the Commands add-on tool.
-# (assumes that it is visible in the vertical pane)
+# (assumes that it's visible in the vertical pane)
 $psISE.CurrentVisibleVerticalTool.Control
 ```
 
@@ -152,10 +151,10 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
 The Boolean property that indicates whether the add-on tool is currently visible in its assigned
-pane. If it is visible, you can set the **IsVisible** property to `$false` to hide the tool, or set
+pane. If it's visible, you can set the **IsVisible** property to `$false` to hide the tool, or set
 the **IsVisible** property to `$true` to make an add-on tool visible on its PowerShell tab. Note
-that after an add-on tool is hidden, it is no longer accessible through the
-**CurrentVisibleHorizontalTool** or **CurrentVisibleVerticalTool** objects, and therefore cannot be
+that after an add-on tool is hidden, it's no longer accessible through the
+**CurrentVisibleHorizontalTool** or **CurrentVisibleVerticalTool** objects, and therefore can't be
 made visible by using this property on that object.
 
 ```powershell
@@ -182,6 +181,13 @@ Commands
 
 ## See Also
 
-- [The ISEAddOnToolCollection Object](The-ISEAddOnToolCollection-Object.md)
-- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The ISEAddOnToolCollection Object][03]
+- [Purpose of the Windows PowerShell ISE Scripting Object Model][01]
+- [The ISE Object Model Hierarchy][02]
+
+<!-- link references -->
+[01]: Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md
+[02]: The-ISE-Object-Model-Hierarchy.md
+[03]: The-ISEAddOnToolCollection-Object.md
+[04]: The-PowerShellTab-Object.md
+[05]: The-PowerShellTabCollection-Object.md
