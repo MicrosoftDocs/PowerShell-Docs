@@ -13,7 +13,7 @@ For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository
 
 ## Updated modules
 
-PowerShell 7.6-preview.3 includes the following updated modules:
+PowerShell 7.6-preview.4 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.1.0
 - **PSReadLine** v2.3.6
