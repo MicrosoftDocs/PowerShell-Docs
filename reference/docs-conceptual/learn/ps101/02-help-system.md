@@ -597,7 +597,7 @@ about_Simplified_Syntax           HelpFile
 about_Switch                      HelpFile
 about_Variables                   HelpFile
 about_Variable_Provider           HelpFile
-about_Windows_Powershell_5.1      HelpFile
+about_Windows_PowerShell_5.1      HelpFile
 about_WQL                         HelpFile
 about_WS-Management_Cmdlets       HelpFile
 about_Foreach-Parallel            HelpFile
@@ -943,7 +943,6 @@ articles.
 In the next chapter, you'll learn about objects, properties, methods, and the `Get-Member` cmdlet.
 
 <!-- link references -->
-
 [help]: /powershell/module/microsoft.powershell.core/get-help
 [gcm]: /powershell/module/microsoft.powershell.core/get-command
 [update-help]: /powershell/module/microsoft.powershell.core/update-help

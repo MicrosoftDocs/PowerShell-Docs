@@ -2,7 +2,7 @@
 description: About topics cover a range of concepts about PowerShell.
 Help Version: 6.0
 Locale: en-US
-ms.date: 01/21/2025
+ms.date: 04/01/2025
 title: About topics
 ---
 # About topics
@@ -375,7 +375,7 @@ Combining commands into pipelines in the PowerShell
 Explains how to use the `powershell.exe` command-line interface. Displays the
 command-line parameters and describes the syntax.
 
-### [about_PowerShell_Ise_exe](about_PowerShell_Ise_exe.md)
+### [about_PowerShell_ISE_exe](about_PowerShell_ISE_exe.md)
 
 Explains how to use the `powershell_ise.exe` command-line tool.
 
@@ -627,7 +627,7 @@ the results of a conditional test.
 
 Describes how to use wildcard characters in PowerShell.
 
-### [about_Windows_Powershell_5.1](about_Windows_Powershell_5.1.md)
+### [about_Windows_PowerShell_5.1](about_Windows_PowerShell_5.1.md)
 
 Describes new features that are included in Windows PowerShell 5.1.
 
