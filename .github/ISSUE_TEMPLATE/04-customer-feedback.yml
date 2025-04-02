@@ -60,6 +60,12 @@ body:
       label: Author
       description: GitHub Id of the author
   - type: input
+    id: PlatformId
+    validations:
+      required: true
+    attributes:
+      label: Platform Id
+  - type: input
     id: documentVersionIndependentId
     validations:
       required: true
