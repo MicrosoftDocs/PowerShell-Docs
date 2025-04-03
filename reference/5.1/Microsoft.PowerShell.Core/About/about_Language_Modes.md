@@ -323,6 +323,10 @@ Special cases:
 - `[ref]` - Casting an object to type `[ref]` or
   `[Management.Automation.PSReference]` is not permitted. Other uses are
   permitted.
+- `[ordered]` - The `[ordered] @{}` expression is permitted and creates an
+  object of type `[Collections.Specialized.OrderedDictionary]`. However,
+  accessing methods of the object or directly instantiating an
+  **OrderedDictionary** is not permitted.
 
 ### `NoLanguage` mode
 
