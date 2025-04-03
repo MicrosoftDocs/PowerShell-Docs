@@ -1,7 +1,7 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 10/04/2023
+ms.date: 04/03/2025
 no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -277,7 +277,6 @@ Allowed Types:
 - `[psobject]`
 - `[psprimitivedictionary]`
 - `[PSTypeNameAttribute]`
-- `[ref]`
 - `[regex]`
 - `[sbyte]`
 - `[securestring]`
@@ -322,6 +321,12 @@ Only the following COM object types are permitted:
 - `Scripting.Dictionary`
 - `Scripting.FileSystemObject`
 - `VBScript.RegExp`
+
+Special cases:
+
+- `[ref]` - Casting an object to type `[ref]` or
+  `[Management.Automation.PSReference]` is not permitted. Other uses are
+  permitted.
 
 ### NoLanguage mode
 
