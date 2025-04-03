@@ -181,7 +181,6 @@ additional variables:
 
 - `$PSScriptRoot`
 - `$PSEdition`
-- `$EnabledExperimentalFeatures`
 - Any environment variable, like `$env:TEMP`
 
 Only the following comparison operators are permitted:
