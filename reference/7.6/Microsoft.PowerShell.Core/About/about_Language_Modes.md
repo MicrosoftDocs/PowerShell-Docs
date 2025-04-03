@@ -228,8 +228,8 @@ get properties, invoke methods, and convert objects to these types.
 
 Allowed types:
 
-- `[adsi]`
-- `[adsisearcher]`
+- `[adsi]` (Windows-only)
+- `[adsisearcher]` (Windows-only)
 - `[Alias]`
 - `[AllowEmptyCollection]`
 - `[AllowEmptyString]`
@@ -316,9 +316,9 @@ Allowed types:
 - `[version]`
 - `[void]`
 - `[WildcardPattern]`
-- `[wmi]`
-- `[wmiclass]`
-- `[wmisearcher]`
+- `[wmi]` (Windows-only)
+- `[wmiclass]` (Windows-only)
+- `[wmisearcher]` (Windows-only)
 - `[X500DistinguishedName]`
 - `[X509Certificate]`
 - `[xml]`
