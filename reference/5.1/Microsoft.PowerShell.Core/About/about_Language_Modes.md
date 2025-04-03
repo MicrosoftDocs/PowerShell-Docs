@@ -50,6 +50,9 @@ For example:
 
 ```powershell
 $ExecutionContext.SessionState.LanguageMode
+```
+
+```Output
 ConstrainedLanguage
 ```
 
@@ -57,7 +60,7 @@ However, in sessions with `RestrictedLanguage` and `NoLanguage` modes, you
 can't use the [member-access operator][02] (`.`) to get property values.
 Instead, the error message reveals the language mode.
 
-When you run the `$ExecutionContext.SessionState.LanguageMode` command in a
+When you access `$ExecutionContext.SessionState.LanguageMode` in a
 `RestrictedLanguage` session, PowerShell returns the
 **PropertyReferenceNotSupportedInDataSection** and
 **VariableReferenceNotSupportedInDataSection** error messages.
@@ -68,8 +71,9 @@ When you run the `$ExecutionContext.SessionState.LanguageMode` command in a
   referenced in restricted language mode or a Data section is being
   referenced.
 
-When you run the `$ExecutionContext.SessionState.LanguageMode` command in a
-NoLanguage session, PowerShell returns the **ScriptsNotAllowed** error message.
+When you access `$ExecutionContext.SessionState.LanguageMode` in a
+`NoLanguage` session, PowerShell returns the **ScriptsNotAllowed** error
+message.
 
 - **ScriptsNotAllowed**: The syntax isn't supported by this runspace. This
   might be because it's in no-language mode.
@@ -82,6 +86,9 @@ language mode by getting the value of the **LanguageMode** property.
 
 ```powershell
 (Get-PSSessionConfiguration -Name Test).LanguageMode
+```
+
+```Output
 FullLanguage
 ```
 
@@ -117,11 +124,10 @@ application control policy. For example, there are additional restrictions to
 dot-sourcing and module importing under a policy.
 
 When a PowerShell session is started under a policy, it runs in
-`ConstrainedLanguage` mode. This mode allows for a usable interactive shell
-experience while limiting access to features and APIs that could be abused by a
-malicious actor. Users can run cmdlets and native commands and have access to
-basic language elements. Access to PowerShell, .NET, and COM APIs is
-restricted.
+`ConstrainedLanguage` mode. This mode allows users to have a usable interactive
+shell experience, running cmdlets and native commands, as well as access to
+basic language elements. But the user can't access PowerShell, .NET, or COM
+APIs that could be abused by a malicious actor.
 
 Any script or script-based module executed in this session runs in
 `ConstrainedLanguage` mode. However, any script or script-based module allowed
@@ -146,13 +152,13 @@ For more information, see [JEA Session configurations][01] and
 
 This section describes the language modes in PowerShell sessions.
 
-### FullLanguage mode
+### `FullLanguage` mode
 
 The `FullLanguage` mode permits all language elements in the session.
 `FullLanguage` is the default language mode for default sessions on all
 versions of Windows.
 
-### RestrictedLanguage mode
+### `RestrictedLanguage` mode
 
 In `RestrictedLanguage` mode, users can run commands (cmdlets, functions, CIM
 commands, and workflows), but can't use script blocks. This mode is also used
@@ -176,7 +182,7 @@ additional variables:
 - `$PSScriptRoot`
 - `$PSEdition`
 - `$EnabledExperimentalFeatures`
-- Any environment variables, like `$Env:TEMP`
+- Any environment variable, like `$env:TEMP`
 
 Only the following comparison operators are permitted:
 
@@ -186,7 +192,7 @@ Only the following comparison operators are permitted:
 
 Assignment statements, property references, and method calls aren't permitted.
 
-### ConstrainedLanguage mode
+### `ConstrainedLanguage` mode
 
 `ConstrainedLanguage` mode is designed to allow basic language elements such as
 loops, conditionals, string expansion, and access to object properties. The
@@ -221,7 +227,7 @@ The features of `ConstrainedLanguage` mode are as follows:
 The following .NET types are permitted in `ConstrainedLanguage` mode. Users can
 get properties, invoke methods, and convert objects to these types.
 
-Allowed Types:
+Allowed types:
 
 - `[adsi]`
 - `[adsisearcher]`
@@ -318,7 +324,7 @@ Special cases:
   `[Management.Automation.PSReference]` is not permitted. Other uses are
   permitted.
 
-### NoLanguage mode
+### `NoLanguage` mode
 
 PowerShell `NoLanguage` mode disables PowerShell scripting language completely.
 You can't run scripts or use variables. You can only run native commands and
