@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 03/03/2025
+ms.date: 04/04/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -10,6 +10,33 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2025-March
+
+Content updates
+
+- DSC v3 GA release - Complete reorg of the documentation as well as updating for the GA release
+- PSScriptAnalyzer v1.24.0  release - updated docs for release
+- Tons for quality improvements from surfingoldelephant
+  - 38 PRs cleaning up 1505 files
+
+### Top Community Contributors
+
+GitHub stats
+
+- 68 PRs merged (40 from Community)
+- 30 issues opened (28 from Community)
+- 30 issues closed (28 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|     GitHub Id      | PRs merged | Issues opened |
+| ------------------ | :--------: | :-----------: |
+| surfingoldelephant |     38     |       2       |
+| Allyyyyy           |     1      |               |
+| jborean93          |     1      |               |
+| JustinGrote        |            |       2       |
 
 ## 2025-February
 
