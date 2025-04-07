@@ -141,7 +141,7 @@ function Enable-PSScriptBlockLogging {
 
 You can set the `ScriptBlockLogging` option in the `powershell.config.json`
 file that controls how PowerShell behaves. For more information, see
-[about_PowerSHell_Config][06].
+[about_PowerShell_Config][06].
 
 ## Protected Event Logging
 
