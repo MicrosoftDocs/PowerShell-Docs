@@ -33,10 +33,6 @@ The following requirements apply to all parameter sets.
   unique positions for each parameter. No two positional parameters can specify
   the same position.
 
-- Only one parameter in a set can declare the `ValueFromPipeline` keyword with
-  a value of `true`. Multiple parameters can define the
-  `ValueFromPipelineByPropertyName` keyword with a value of `true`.
-
 > [!NOTE]
 > There is a limit of 32 parameter sets.
 
@@ -69,12 +65,20 @@ parameter sets.
 PowerShell reserves the parameter set name `__AllParameterSets` for special
 handling.
 
-- This name is the default name of the parameter set that when you don't
-  explicitly define a parameter set name.
-- When you have muliple parameter sets, you can use this name to define a
-  parameter that belongs to all parameter sets.
-- Setting **DefaultParameterSetName** to `__AllParameterSets` in the
-  `[CmdletBinding()]` attribute has no effect.
+`__AllParameterSets` is the name of the default parameter set when an explicit
+default name is not used.
+
+Setting the `ParameterSetName` of a the **Parameter** attribute to
+`__AllParameterSets` is equivalent to not assigning a `ParameterSetName`. In both
+cases the parameter belongs to all parameter sets.
+
+> [!NOTE]
+> `DefaultParameterSetName` should not be explicitly set to `__AllParameterSets`.
+
+The **CmdletBinding** attribute allows the `DefaultParameterSetName` to be
+explicitly set to `__AllParameterSets`. This is not recommended as it causes
+creation of an explicit parameter set which cannot be properly referenced by the
+**Parameter** attribute.
 
 ## Examples
 
