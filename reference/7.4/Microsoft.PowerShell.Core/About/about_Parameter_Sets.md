@@ -73,12 +73,10 @@ Setting the `ParameterSetName` of a the **Parameter** attribute to
 cases the parameter belongs to all parameter sets.
 
 > [!NOTE]
-> `DefaultParameterSetName` should not be explicitly set to `__AllParameterSets`.
-
-The **CmdletBinding** attribute allows the `DefaultParameterSetName` to be
-explicitly set to `__AllParameterSets`. This is not recommended as it causes
-creation of an explicit parameter set which cannot be properly referenced by the
-**Parameter** attribute.
+> The **CmdletBinding** attribute doesn't prevent you from setting the 
+> `DefaultParameterSetName` to be to `__AllParameterSets`. If you do this,
+> PowerShell creates an explicit parameter set that can't be properly
+> referenced by the **Parameter** attribute.
 
 ## Examples
 
