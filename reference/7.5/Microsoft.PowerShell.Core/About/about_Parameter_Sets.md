@@ -69,11 +69,11 @@ handling.
 default name is not used.
 
 Setting the `ParameterSetName` of a the **Parameter** attribute to
-`__AllParameterSets` is equivalent to not assigning a `ParameterSetName`. In both
-cases the parameter belongs to all parameter sets.
+`__AllParameterSets` is equivalent to not assigning a `ParameterSetName`. In
+both cases the parameter belongs to all parameter sets.
 
 > [!NOTE]
-> The **CmdletBinding** attribute doesn't prevent you from setting the 
+> The **CmdletBinding** attribute doesn't prevent you from setting the
 > `DefaultParameterSetName` to be to `__AllParameterSets`. If you do this,
 > PowerShell creates an explicit parameter set that can't be properly
 > referenced by the **Parameter** attribute.
