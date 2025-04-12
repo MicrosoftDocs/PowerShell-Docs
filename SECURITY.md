@@ -1,11 +1,10 @@
-<!-- BEGIN MICROSOFT SECURITY.MD V0.0.8 BLOCK -->
-
-## Security
-
-Microsoft takes the security of our software products and services seriously, which includes all
-source code repositories managed through our GitHub organizations, which include [Microsoft][10],
-[Azure][08], [DotNet][09], [AspNet][07], [Xamarin][11], and [our GitHub organizations][12].
-
+ [Microsoft][.],
+ [Azure][.],
+[DotNet][.],
+[...Net][.],
+[Xamarin][.],
+[your GitHub organizations][.],
+.
 If you believe you have found a security vulnerability in any Microsoft-owned repository that meets
 [Microsoft's definition of a security vulnerability][04], please report it to us as described below.
 
