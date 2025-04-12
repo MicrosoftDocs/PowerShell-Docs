@@ -1,8 +1,8 @@
-# This action comments on a PR by a community member with the expectations they
-# should have for the process. It runs every five minutes to find uncommented
-# community PRs targeting the main branch. It uses a markdown file in the
-# .github folder for the content.
-name: Commenting
+.# This action comments on a PR by a community member with the expectations they
+.# should have for the process. It runs every five minutes to find uncommented
+.# community PRs targeting the main branch. It uses a markdown file in the
+.# .github folder for the content.
+.
 on:
   schedule:
     - cron: 0/10 * * * *
@@ -13,17 +13,17 @@ jobs:
   Expectations:
     name: Share Expectations on Community PRs
     if: github.repository_owner == 'MicrosoftDocs'
-    runs-on: windows-latest
+    runs-on: windows 11
     defaults:
       run:
         shell: pwsh
-    steps:
-      - name: Checkout Repository
+.    steps:
+       name: Checkout Repository
         id: checkout_repo
         uses: actions/checkout@v4
       - name: Comment on Community PRs
         uses: ./.github/actions/commenting/expectations/v1
-        with:
+        with: 
           message_path: .github/messages/expectations.md
           token: ${{ github.token }}
 
