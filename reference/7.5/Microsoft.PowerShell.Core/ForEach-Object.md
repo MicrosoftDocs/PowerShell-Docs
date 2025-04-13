@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/26/2024
+ms.date: 04/13/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -457,23 +457,10 @@ Output: 5
 
 ### Example 17: Passing variables in nested parallel scriptblocks
 
-You can create a variable outside a `ForEach-Object -Parallel` scoped scriptblock and use
-it inside the scriptblock with the `Using:` scope modifier.
-
-```powershell
-$test1 = 'TestA'
-1..2 | ForEach-Object -Parallel {
-    $Using:test1
-}
-```
-
-```Output
-TestA
-TestA
-```
-
-Beginning in PowerShell 7.2, you can create a variable inside a `ForEach-Object -Parallel` scoped
-scriptblock and use it inside a nested scriptblock.
+You can create a variable outside a `ForEach-Object -Parallel` scoped scriptblock and use it inside
+the scriptblock with the `Using:` scope modifier. Beginning in PowerShell 7.2, you can create a
+variable inside a `ForEach-Object -Parallel` scoped scriptblock and use it inside a nested
+scriptblock.
 
 ```powershell
 $test1 = 'TestA'
