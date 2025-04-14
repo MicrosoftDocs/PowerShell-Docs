@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/03/2023
+ms.date: 04/14/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
@@ -409,17 +409,14 @@ The default display of a process is a table that includes the following columns.
 of all the properties of process objects, see
 [Process Properties](/dotnet/api/system.diagnostics.process).
 
-- **Handles**: The number of handles that the process has opened.
 - **NPM(K)**: The amount of non-paged memory that the process is using, in kilobytes.
-- **PM(K)**: The amount of pageable memory that the process is using, in kilobytes.
-- **WS(K)**: The size of the working set of the process, in kilobytes. The working set consists of
+- **PM(M)**: The amount of pageable memory that the process is using, in megabytes.
+- **WS(M)**: The size of the working set of the process, in megabytes. The working set consists of
   the pages of memory that were recently referenced by the process.
-- **VM(M)**: The amount of virtual memory that the process is using, in megabytes. Virtual memory
-  includes storage in the paging files on disk.
 - **CPU(s)**: The amount of processor time that the process has used on all processors, in seconds.
 - **Id**: The process ID (PID) of the process.
-- **ProcessName**: The name of the process. For explanations of the concepts related to processes,
-  see the Glossary in Help and Support Center and the Help for Task Manager.
+- **SI**: The session ID of the process.
+- **ProcessName**: The name of the process.
 
 You can also use the built-in alternate views of the processes available with `Format-Table`, such
 as **StartTime** and **Priority**, and you can design your own views.
