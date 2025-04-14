@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/26/2024
+ms.date: 04/13/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -455,26 +455,14 @@ Output: 5
 > [PipelineVariable](About/about_CommonParameters.md) common parameter variables are _not_
 > supported in `ForEach-Object -Parallel` scenarios even with the `Using:` scope modifier.
 
-### Example 17: Passing variables in nested parallel script ScriptBlockSet
+### Example 17: Passing variables in nested parallel scriptblocks
 
-You can create a variable outside a `ForEach-Object -Parallel` scoped scriptblock and use
-it inside the scriptblock with the `Using:` scope modifier.
-
-```powershell
-$test1 = 'TestA'
-1..2 | ForEach-Object -Parallel {
-    $Using:test1
-}
-```
-
-```Output
-TestA
-TestA
-```
+You can create a variable outside a `ForEach-Object -Parallel` scoped scriptblock and use it inside
+the scriptblock with the `Using:` scope modifier. Beginning in PowerShell 7.2, you can create a
+variable inside a `ForEach-Object -Parallel` scoped scriptblock and use it inside a nested
+scriptblock.
 
 ```powershell
-# You CANNOT create a variable inside a scoped scriptblock
-# to be used in a nested foreach parallel scriptblock.
 $test1 = 'TestA'
 1..2 | ForEach-Object -Parallel {
     $Using:test1
@@ -486,14 +474,17 @@ $test1 = 'TestA'
 ```
 
 ```Output
-Line |
-   2 |  1..2 | ForEach-Object -Parallel {
-     |         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | The value of the using variable '$Using:test2' can't be retrieved because it has
-     | not been set in the local session.
+TestA
+TestA
+TestB
+TestB
+TestB
+TestB
 ```
 
-The nested scriptblock can't access the `$test2` variable and an error is thrown.
+> [!NOTE]
+> In versions prior to PowerShell 7.2, the nested scriptblock can't access the `$test2` variable and
+> an error is thrown.
 
 ### Example 18: Creating multiple jobs that run scripts in parallel
 
