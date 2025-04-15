@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/04/2024
+ms.date: 04/15/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ExecutionPolicy
@@ -145,7 +145,7 @@ The effective execution policy for the user becomes `AllSigned`.
 
 ### Example 5: Remove the execution policy for the current user
 
-This example shows how use the `Undefined` execution policy to remove an execution policy for a
+This example shows how to use the `Undefined` execution policy to remove an execution policy for a
 specified scope.
 
 ```powershell

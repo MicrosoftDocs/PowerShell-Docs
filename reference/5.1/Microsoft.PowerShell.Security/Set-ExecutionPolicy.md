@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/04/2024
+ms.date: 04/15/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ExecutionPolicy
@@ -140,7 +140,7 @@ The effective execution policy for the user becomes `AllSigned`.
 
 ### Example 5: Remove the execution policy for the current user
 
-This example shows how use the `Undefined` execution policy to remove an execution policy for a
+This example shows how to use the `Undefined` execution policy to remove an execution policy for a
 specified scope.
 
 ```powershell
@@ -231,7 +231,7 @@ policy. The policy is set for the default scope, `LocalMachine`.
 The `Get-ExecutionPolicy` cmdlet shows that `RemoteSigned` is the effective execution policy for
 the current PowerShell session.
 
-The `Start-ActivityTracker.ps1 script is executed from the current directory. The script is blocked
+The `Start-ActivityTracker.ps1` script is executed from the current directory. The script is blocked
 by `RemoteSigned` because the script isn't digitally signed.
 
 For this example, the script's code was reviewed and verified as safe to run. The `Unblock-File`
