@@ -110,22 +110,20 @@ objects to the `Where-Object` cmdlet, which selects only the object with a value
 `Get-Process | Get-Member`. By default, the values of all amount properties are in bytes, even
 though the default display lists them in kilobytes and megabytes.
 
-### Example 4: List processes on the computer in groups based on priority
+### Example 4: Display processes on the computer in groups based on priority
 
 ```powershell
-$A = Get-Process
-$A | Get-Process | Format-Table -View Priority
+$processes = Get-Process
+$processes | Sort-Object { $_.PriorityClass } | Format-Table -View Priority
 ```
 
-These commands list the processes on the computer in groups based on their priority class. The first
-command gets all the processes on the computer and then stores them in the `$A` variable.
+These commands display processes on the computer in groups based on their
+[priority class](/dotnet/api/system.diagnostics.processpriorityclass). The first command gets all
+processes on the computer and stores them in the `$processes` variable.
 
-The second command pipes the **Process** object stored in the `$A` variable to the `Get-Process`
-cmdlet, then to the `Format-Table` cmdlet, which formats the processes by using the **Priority**
-view.
-
-The **Priority** view, and other views, are defined in the PS1XML format files in the PowerShell
-home directory (`$PSHOME`).
+The second command pipes the **Process** objects stored in the `$processes` variable to the
+`Sort-Object` cmdlet, then to the `Format-Table` cmdlet, which formats the processes using the
+**Priority** view.
 
 ### Example 5: Add a property to the standard Get-Process output display
 
