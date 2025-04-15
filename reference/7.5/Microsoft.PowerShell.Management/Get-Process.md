@@ -424,8 +424,13 @@ PowerShell includes the following aliases for `Get-Process`:
 - Windows:
   - `ps`
 
-On computers that are running a 64-bit version of Windows, the 64-bit version of PowerShell gets
-only 64-bit process modules. The 32-bit version of PowerShell gets only 32-bit process modules.
+On computers running 64-bit Windows, the 64-bit version of PowerShell gets the main module and
+64-bit process modules. The 32-bit version of PowerShell gets only 32-bit process modules.
+
+> [!WARNING]
+> When you use `Get-Process` to get a 64-bit process in the 32-bit version of PowerShell, properties
+> such as `Path` and `MainModule` of the returned **Process** object are `$null`. You must use
+> either the 64-bit version of PowerShell or the [Win32_Process][08] class.
 
 To get process information from a remote computer, use the `Invoke-Command` cmdlet. For more
 information, see [Invoke-Command][07].
