@@ -11,7 +11,6 @@ title: Get-Process
 # Get-Process
 
 ## SYNOPSIS
-
 Gets the processes that are running on the local computer or a remote computer.
 
 ## SYNTAX
@@ -84,7 +83,7 @@ Get-Process
 ```
 
 This command gets a list of all running processes on the local computer. For a definition of each
-display column, see the [Notes](#notes) section.
+display column, see the [NOTES](#notes) section.
 
 To see all properties of a **Process** object, use `Get-Process | Get-Member`. By default,
 PowerShell displays certain property values using units such as kilobytes (K) and megabytes (M). The
@@ -106,20 +105,20 @@ You can also identify the processes by their process IDs. For instance, `Get-Pro
 ### Example 3: Get all processes with a working set greater than a specified size
 
 ```powershell
-Get-Process | Where-Object { $_.WorkingSet -gt 20000000 }
+Get-Process | Where-Object { $_.WorkingSet -gt 20971520 }
 Get-Process | Where-Object WorkingSet -GT 20MB
 ```
 
-The first pipeline gets all processes that have a working set greater than 20 MB. It uses the
-`Get-Process` cmdlet to get all running processes. The pipeline operator (`|`) pipes each
-**Process** object to the `Where-Object` cmdlet, which selects only objects with a **WorkingSet**
-value greater than `20000000` bytes.
+The `Get-Process` cmdlet returns the running processes. The output is piped to the `Where-Object`
+cmdlet, which selects the objects with a **WorkingSet** value greater than 20,971,520 bytes.
 
-The second pipeline uses a
-[comparison statement](../Microsoft.PowerShell.Core/Where-Object.md#description) and the `MB`
+In the first example, `Where-Object` uses a scriptblock to compare the **WorkingSet** property of
+each **Process** object. In the second example, the `Where-Object` cmdlet uses the simplified syntax
+to compare the **WorkingSet** property. In this case, `-GT` is a parameter, not a comparison
+operator. The second example also uses a
 [numeric literal suffix](../Microsoft.PowerShell.Core/About/about_Numeric_Literals.md) as a concise
-alternative to the first pipeline. In PowerShell, `MB` represents a mebibyte (MiB) multiplier.
-`20MB` is equal to `20971520` bytes.
+alternative to `20971520`. In PowerShell, `MB` represents a mebibyte (MiB) multiplier. `20MB` is
+equal to 20,971,520 bytes.
 
 ### Example 4: Display processes on the computer in groups based on priority
 
@@ -501,8 +500,8 @@ You can use the built-in alternate views for **Process** objects available with 
 as **StartTime** and **Priority**. You can also design your own views.
 
 For a description of all available **Process** object members, see
-[Process Properties](/dotnet/api/system.diagnostics.process#properties) and
-[Process Methods](/dotnet/api/system.diagnostics.process#methods).
+[Process Properties](xref:System.Diagnostics.Process#properties) and
+[Process Methods](xref:System.Diagnostics.Process#methods).
 
 ## RELATED LINKS
 
@@ -515,3 +514,5 @@ For a description of all available **Process** object members, see
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
+
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)
