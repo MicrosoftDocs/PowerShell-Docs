@@ -198,37 +198,24 @@ Handles      WS(K)   CPU(s)     Id UserName            ProcessName
 ```
 
 ```powershell
-$p = Get-WmiObject Win32_Process -Filter "name='powershell.exe'"
-$p.GetOwner()
+Get-CimInstance -ClassName Win32_Process -Filter "name='powershell.exe'" |
+    Invoke-CimMethod -MethodName GetOwner
 ```
 
 ```Output
-__GENUS          : 2
-__CLASS          : __PARAMETERS
-__SUPERCLASS     :
-__DYNASTY        : __PARAMETERS
-__RELPATH        :
-__PROPERTY_COUNT : 3
-__DERIVATION     : {}
-__SERVER         :
-__NAMESPACE      :
-__PATH           :
-Domain           : DOMAIN01
-ReturnValue      : 0
-User             : user01
+Domain   ReturnValue User   PSComputerName
+------   ----------- ----   --------------
+DOMAIN01           0 user01
 ```
 
-The first command shows how to find the owner of a process. The **IncludeUserName** parameter
+The first command shows how to get the owner of a process. The **IncludeUserName** parameter
 requires elevated user rights (**Run as Administrator**). The output reveals that the owner is
-`Domain01\user01`.
+`DOMAIN01\user01`.
 
-The second and third command are another way to find the owner of a process.
-
-The second command uses `Get-WmiObject` to get the PowerShell process.
-It saves it in the `$p` variable.
-
-The third command uses the **GetOwner** method to get the owner of the process in `$p`. The output
-reveals that the owner is `Domain01\user01`.
+The second pipeline shows a different way to get the owner of a process using `Get-CimInstance` and
+`Invoke-CimMethod`. The **Win32_Process** class with a filter retrieves `powershell` processes and
+the invoked `GetOwner()` method returns information on the process's **Domain** and **User**. This
+method doesn't require elevated user rights.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
 

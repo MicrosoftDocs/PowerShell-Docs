@@ -189,15 +189,29 @@ Get-Process pwsh -IncludeUserName
 ```
 
 ```Output
-Handles      WS(K)   CPU(s)     Id UserName            ProcessName
--------      -----   ------     -- --------            -----------
-    782     132080     2.08   2188 DOMAIN01\user01     pwsh
+WS(M)   CPU(s)      Id UserName                       ProcessName
+-----   ------      -- --------                       -----------
+46.53    21.70    3188 DOMAIN01\user01                pwsh
 ```
 
-This command shows how to find the owner of a process.
-On Windows, the **IncludeUserName** parameter requires elevated user rights
-(**Run as Administrator**).
-The output reveals that the owner is `Domain01\user01`.
+```powershell
+Get-CimInstance -ClassName Win32_Process -Filter "name='pwsh.exe'" |
+    Invoke-CimMethod -MethodName GetOwner
+```
+
+```Output
+Domain   ReturnValue User   PSComputerName
+------   ----------- ----   --------------
+DOMAIN01           0 user01
+```
+
+The first command shows how to get the owner of a process. The output reveals that the owner is
+`DOMAIN01\user01`.
+
+The second pipeline shows a different way to get the owner of a process using `Get-CimInstance` and
+`Invoke-CimMethod`. The **Win32_Process** class with a filter retrieves `pwsh` processes and the
+invoked `GetOwner()` method returns information on the process's **Domain** and **User**. This
+method is only available on Windows and doesn't require elevated user rights.
 
 ### Example 9: Use an automatic variable to identify the process hosting the current session
 
