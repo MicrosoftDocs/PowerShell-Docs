@@ -98,17 +98,23 @@ You can also identify the processes by their process IDs. For instance, `Get-Pro
 ### Example 3: Get all processes with a working set greater than a specified size
 
 ```powershell
-Get-Process | Where-Object {$_.WorkingSet -gt 20000000}
+Get-Process | Where-Object { $_.WorkingSet -gt 20000000 }
+Get-Process | Where-Object WorkingSet -GT 20MB
 ```
 
-This command gets all processes that have a working set greater than 20 MB. It uses the
-`Get-Process` cmdlet to get all running processes. The pipeline operator (`|`) passes the process
-objects to the `Where-Object` cmdlet, which selects only the object with a value greater than
-20,000,000 bytes for the **WorkingSet** property.
+The first pipeline gets all processes that have a working set greater than 20 MB. It uses the
+`Get-Process` cmdlet to get all running processes. The pipeline operator (`|`) pipes each
+**Process** object to the `Where-Object` cmdlet, which selects only objects with a **WorkingSet**
+value greater than `20000000` bytes.
 
-**WorkingSet** is one of many properties of process objects. To see all the properties, type
-`Get-Process | Get-Member`. By default, the values of all amount properties are in bytes, even
-though the default display lists them in kilobytes and megabytes.
+The second pipeline uses a
+[comparison statement](xref:Microsoft.PowerShell.Core.Where-Object#description) and the `MB`
+[numeric literal suffix](about_Numeric_Literals.md) as a concise alternative to the first pipeline.
+In PowerShell, `MB` represents a mebibyte (MiB) multiplier. `20MB` is equal to `20971520` bytes.
+
+To see all properties of a **Process** object, use `Get-Process | Get-Member`. By default,
+PowerShell displays certain property values using units such as kilobytes (K) and megabytes (M). The
+actual values when accessed with the member-access operator (`.`) are in bytes.
 
 ### Example 4: Display processes on the computer in groups based on priority
 
