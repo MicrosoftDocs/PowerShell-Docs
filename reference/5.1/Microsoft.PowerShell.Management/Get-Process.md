@@ -73,7 +73,7 @@ information returned by this cmdlet.
 > [!NOTE]
 > A module is an executable file or a dynamic link library (DLL) loaded into a process. A process
 > has one or more modules. The main module is the module used to initially start the process. For
-> more information, see [ProcessModule Class][01].
+> more information, see [ProcessModule Class](/dotnet/api/system.diagnostics.processmodule).
 
 ## EXAMPLES
 
@@ -84,7 +84,7 @@ Get-Process
 ```
 
 This command gets a list of all running processes on the local computer. For a definition of each
-display column, see the [Notes][02] section.
+display column, see the [Notes](#notes) section.
 
 To see all properties of a **Process** object, use `Get-Process | Get-Member`. By default,
 PowerShell displays certain property values using units such as kilobytes (K) and megabytes (M). The
@@ -115,9 +115,10 @@ The first pipeline gets all processes that have a working set greater than 20 MB
 **Process** object to the `Where-Object` cmdlet, which selects only objects with a **WorkingSet**
 value greater than `20000000` bytes.
 
-The second pipeline uses a [comparison statement][03] and the `MB` [numeric literal suffix][04] as a
-concise alternative to the first pipeline. In PowerShell, `MB` represents a mebibyte (MiB)
-multiplier. `20MB` is equal to `20971520` bytes.
+The second pipeline uses a
+[comparison statement](xref:Microsoft.PowerShell.Core.Where-Object#description) and the `MB`
+[numeric literal suffix](about_Numeric_Literals.md) as a concise alternative to the first pipeline.
+In PowerShell, `MB` represents a mebibyte (MiB) multiplier. `20MB` is equal to `20971520` bytes.
 
 ### Example 4: Display processes on the computer in groups based on priority
 
@@ -126,8 +127,9 @@ $processes = Get-Process
 $processes | Sort-Object { $_.PriorityClass } | Format-Table -View Priority
 ```
 
-These commands display processes on the computer in groups based on their [priority class][05]. The
-first command gets all processes on the computer and stores them in the `$processes` variable.
+These commands display processes on the computer in groups based on their
+[priority class](/dotnet/api/system.diagnostics.processpriorityclass). The first command gets all
+processes on the computer and stores them in the `$processes` variable.
 
 The second command pipes the **Process** objects stored in the `$processes` variable to the
 `Sort-Object` cmdlet, then to the `Format-Table` cmdlet, which formats the processes using the
@@ -162,8 +164,8 @@ Handles NPM(K) PM(K) WS(K) CPU(s)   Id SI ProcessName StartTime
 
 This example retrieves processes from the local computer and pipes each **Process** object to the
 `Format-Table` cmdlet. `Format-Table` recreates the default output display of a **Process** object
-using a mixture of property names and [calculated properties][06]. The display includes an
-additional **StartTime** property not present in the default display.
+using a mixture of property names and [calculated properties](about_Calculated_Properties.md). The
+display includes an additional **StartTime** property not present in the default display.
 
 ### Example 6: Get version information for a process
 
@@ -468,16 +470,18 @@ On computers running 64-bit Windows, the 64-bit version of PowerShell gets the m
 > [!WARNING]
 > When you use `Get-Process` to get a 64-bit process in the 32-bit version of PowerShell, properties
 > such as `Path` and `MainModule` of the returned **Process** object are `$null`. You must use
-> either the 64-bit version of PowerShell or the [Win32_Process][08] class.
+> either the 64-bit version of PowerShell or the
+> [Win32_Process](/windows/desktop/CIMWin32Prov/win32-process) class.
 
 To get process information from a remote computer, use the `Invoke-Command` cmdlet. For more
-information, see [Invoke-Command][07].
+information, see [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command).
 
-You can use the Windows Management Instrumentation (WMI) [Win32_Process][08] class in PowerShell as
-an alternative to `Get-Process`. For more information, see:
+You can use the Windows Management Instrumentation (WMI)
+[Win32_Process](/windows/desktop/CIMWin32Prov/win32-process) class in PowerShell as an alternative
+to `Get-Process`. For more information, see:
 
-- [Example 8: Find the owner of a process][09]
-- [Get-CimInstance][10]
+- [Example 8: Find the owner of a process](#example-8-find-the-owner-of-a-process)
+- [Get-CimInstance](xref:CimCmdlets.Get-CimInstance)
 
 The default display of a **Process** object is a table view that includes the following columns.
 
@@ -494,32 +498,14 @@ The default display of a **Process** object is a table view that includes the fo
 You can use the built-in alternate views for **Process** objects available with `Format-Table`, such
 as **StartTime** and **Priority**. You can also design your own views.
 
-For a description of all available **Process** object members, see [Process Properties][11] and
-[Process Methods][12].
+For a description of all available **Process** object members, see
+[Process Properties](/dotnet/api/system.diagnostics.process#properties) and
+[Process Methods](/dotnet/api/system.diagnostics.process#methods).
 
 ## RELATED LINKS
 
-- [Debug-Process][13]
-- [Get-Process][14]
-- [Start-Process][15]
-- [Stop-Process][16]
-- [Wait-Process][17]
-
-<!-- link references -->
-[01]: /dotnet/api/system.diagnostics.processmodule
-[02]: #notes
-[03]: xref:Microsoft.PowerShell.Core.Where-Object#description
-[04]: about_Numeric_Literals.md
-[05]: /dotnet/api/system.diagnostics.processpriorityclass
-[06]: about_Calculated_Properties.md
-[07]: xref:Microsoft.PowerShell.Core.Invoke-Command
-[08]: /windows/desktop/CIMWin32Prov/win32-process
-[09]: #example-8-find-the-owner-of-a-process
-[10]: xref:CimCmdlets.Get-CimInstance
-[11]: /dotnet/api/system.diagnostics.process#properties
-[12]: /dotnet/api/system.diagnostics.process#methods
-[13]: xref:Microsoft.PowerShell.Management.Debug-Process
-[14]: xref:Microsoft.PowerShell.Management.Get-Process
-[15]: xref:Microsoft.PowerShell.Management.Start-Process
-[16]: xref:Microsoft.PowerShell.Management.Stop-Process
-[17]: xref:Microsoft.PowerShell.Management.Wait-Process
+- [Debug-Process](xref:Microsoft.PowerShell.Management.Debug-Process)
+- [Get-Process](xref:Microsoft.PowerShell.Management.Get-Process)
+- [Start-Process](xref:Microsoft.PowerShell.Management.Start-Process)
+- [Stop-Process](xref:Microsoft.PowerShell.Management.Stop-Process)
+- [Wait-Process](xref:Microsoft.PowerShell.Management.Wait-Process)
