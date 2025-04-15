@@ -55,14 +55,21 @@ Get-Process -InputObject <Process[]> -IncludeUserName [<CommonParameters>]
 
 The `Get-Process` cmdlet gets the processes on a local computer.
 
-Without parameters, this cmdlet gets all the processes on the local computer. You can also specify a
-particular process by process name or process ID (PID) or pass a process object through the pipeline
-to this cmdlet.
+Without parameters, this cmdlet gets all processes on the local computer. You can also specify a
+specific process by process name or process ID (PID), or by piping a **System.Diagnostics.Process**
+object to this cmdlet.
 
-By default, this cmdlet returns a process object that has detailed information about the process and
-supports methods that let you start and stop the process. You can also use the parameters of the
-`Get-Process` cmdlet to get file version information for the program that runs in the process and to
-get the modules that the process loaded.
+By default, this cmdlet returns a **Process** object that has detailed information about the process
+and supports methods that let you control it. With parameters, you can change the type of
+information returned by this cmdlet.
+
+- **Module**: Retrieve information for each module loaded into the process.
+- **FileVersionInfo**: Retrieve file version information for the main module of the process.
+
+> [!NOTE]
+> A module is an executable file or a dynamic link library (DLL) loaded into a process. A process
+> has one or more modules. The main module is the module used to initially start the process. For
+> more information, see [ProcessModule Class](/dotnet/api/system.diagnostics.processmodule).
 
 ## EXAMPLES
 
