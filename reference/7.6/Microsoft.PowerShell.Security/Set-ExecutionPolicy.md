@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/04/2024
+ms.date: 04/15/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ExecutionPolicy
@@ -25,7 +25,8 @@ Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPol
 ## DESCRIPTION
 
 The `Set-ExecutionPolicy` cmdlet changes PowerShell execution policies for Windows computers. For
-more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
+more information, see
+[about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
 Beginning in PowerShell 6.0 for non-Windows computers, the default execution policy is
 `Unrestricted` and can't be changed. The `Set-ExecutionPolicy` cmdlet is available, but PowerShell
@@ -144,7 +145,7 @@ The effective execution policy for the user becomes `AllSigned`.
 
 ### Example 5: Remove the execution policy for the current user
 
-This example shows how use the `Undefined` execution policy to remove an execution policy for a
+This example shows how to use the `Undefined` execution policy to remove an execution policy for a
 specified scope.
 
 ```powershell
