@@ -106,7 +106,7 @@ productDirectory:
         - url: https://code.visualstudio.com/docs/languages/powershell
           text: Visual Studio Code PowerShell Extension
         - url: /powershell/scripting/components/vscode/using-vscode-for-remote-editing-and-debugging
-          text: Using VSCode for remote editing and debugging
+          text: Using VS Code for remote editing and debugging
         - url: /powershell/scripting/developer/windows-powershell
           text: Windows PowerShell SDK documentation
         - url: /dotnet/api/?view=powershellsdk-7.4.0
