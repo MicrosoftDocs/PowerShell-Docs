@@ -111,7 +111,7 @@ Guidelines
 
 - First mention - use the full name
 - Subsequent mentions - you can use "VS Code"
-- Never use "VS Code"
+- Never use "VSCode"
 
 ### PowerShell Extension for Visual Studio Code
 
