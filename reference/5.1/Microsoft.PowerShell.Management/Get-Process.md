@@ -116,9 +116,10 @@ The first pipeline gets all processes that have a working set greater than 20 MB
 value greater than `20000000` bytes.
 
 The second pipeline uses a
-[comparison statement](xref:Microsoft.PowerShell.Core.Where-Object#description) and the `MB`
-[numeric literal suffix](about_Numeric_Literals.md) as a concise alternative to the first pipeline.
-In PowerShell, `MB` represents a mebibyte (MiB) multiplier. `20MB` is equal to `20971520` bytes.
+[comparison statement](../Microsoft.PowerShell.Core/Where-Object.md#description) and the `MB`
+[numeric literal suffix](../Microsoft.PowerShell.Core/About/about_Numeric_Literals.md) as a concise
+alternative to the first pipeline. In PowerShell, `MB` represents a mebibyte (MiB) multiplier.
+`20MB` is equal to `20971520` bytes.
 
 ### Example 4: Display processes on the computer in groups based on priority
 
@@ -164,7 +165,8 @@ Handles NPM(K) PM(K) WS(K) CPU(s)   Id SI ProcessName StartTime
 
 This example retrieves processes from the local computer and pipes each **Process** object to the
 `Format-Table` cmdlet. `Format-Table` recreates the default output display of a **Process** object
-using a mixture of property names and [calculated properties](about_Calculated_Properties.md). The
+using a mixture of property names and
+[calculated properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md). The
 display includes an additional **StartTime** property not present in the default display.
 
 ### Example 6: Get version information for a process
@@ -474,14 +476,14 @@ On computers running 64-bit Windows, the 64-bit version of PowerShell gets the m
 > [Win32_Process](/windows/desktop/CIMWin32Prov/win32-process) class.
 
 To get process information from a remote computer, use the `Invoke-Command` cmdlet. For more
-information, see [Invoke-Command](xref:Microsoft.PowerShell.Core.Invoke-Command).
+information, see [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 You can use the Windows Management Instrumentation (WMI)
 [Win32_Process](/windows/desktop/CIMWin32Prov/win32-process) class in PowerShell as an alternative
 to `Get-Process`. For more information, see:
 
 - [Example 8: Find the owner of a process](#example-8-find-the-owner-of-a-process)
-- [Get-CimInstance](xref:CimCmdlets.Get-CimInstance)
+- [Get-CimInstance](../CimCmdlets/Get-CimInstance.md)
 
 The default display of a **Process** object is a table view that includes the following columns.
 
@@ -504,8 +506,12 @@ For a description of all available **Process** object members, see
 
 ## RELATED LINKS
 
-- [Debug-Process](xref:Microsoft.PowerShell.Management.Debug-Process)
-- [Get-Process](xref:Microsoft.PowerShell.Management.Get-Process)
-- [Start-Process](xref:Microsoft.PowerShell.Management.Start-Process)
-- [Stop-Process](xref:Microsoft.PowerShell.Management.Stop-Process)
-- [Wait-Process](xref:Microsoft.PowerShell.Management.Wait-Process)
+[Debug-Process](Debug-Process.md)
+
+[Get-Process](Get-Process.md)
+
+[Start-Process](Start-Process.md)
+
+[Stop-Process](Stop-Process.md)
+
+[Wait-Process](Wait-Process.md)
