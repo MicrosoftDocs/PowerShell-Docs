@@ -8,7 +8,7 @@ title: Using Visual Studio Code for remote editing and debugging
 For those of you that are familiar with the ISE, you may recall that you could run `psedit file.ps1`
 from the integrated console to open files - local or remote - right in the ISE.
 
-This feature is also available in the PowerShell extension for VSCode. This guide shows you how to
+This feature is also available in the PowerShell extension for VS Code. This guide shows you how to
 do it.
 
 ## Prerequisites
@@ -17,7 +17,7 @@ This guide assumes that you have:
 
 - A remote resource (ex: a VM, a container) that you have access to
 - PowerShell running on it and the host machine
-- VSCode and the PowerShell extension for VSCode
+- VS Code and the PowerShell extension for VS Code
 
 This feature works on PowerShell and Windows PowerShell.
 
@@ -26,7 +26,7 @@ you want to use SSH, but are using Windows, check out the [Win32 version of SSH]
 
 > [!IMPORTANT]
 > The `Open-EditorFile` and `psedit` commands only work in the **PowerShell Integrated Console**
-> created by the PowerShell extension for VSCode.
+> created by the PowerShell extension for VS Code.
 
 ## Usage examples
 
@@ -35,7 +35,7 @@ Azure. The process is identical on Windows.
 
 ### Local file editing with Open-EditorFile
 
-With the PowerShell extension for VSCode started and the PowerShell Integrated Console opened, we
+With the PowerShell extension for VS Code started and the PowerShell Integrated Console opened, we
 can type `Open-EditorFile foo.ps1` or `psedit foo.ps1` to open the local foo.ps1 file right in the
 editor.
 

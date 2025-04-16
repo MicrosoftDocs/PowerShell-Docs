@@ -189,7 +189,7 @@ Not only can we create a value that makes both of them evaluate to `$false`, it'
 create a value where they both evaluate to `$true`. Mathias Jessen (@IISResetMe) has a
 [good post][good post] that dives into that scenario.
 
-### PSScriptAnalyzer and VSCode
+### PSScriptAnalyzer and VS Code
 
 The [PSScriptAnalyzer][PSScriptAnalyzer] module has a rule that checks for this issue called
 `PSPossibleIncorrectComparisonWithNull`.
