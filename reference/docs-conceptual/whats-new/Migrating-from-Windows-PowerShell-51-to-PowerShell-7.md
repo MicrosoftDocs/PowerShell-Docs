@@ -286,7 +286,7 @@ For more information, see [about_Logging_Windows][14].
 
 ## Improved editing experience with Visual Studio Code
 
-[Visual Studio Code (VSCode)][22] with the [PowerShell Extension][23] is the supported scripting
+[Visual Studio Code (VS Code)][22] with the [PowerShell Extension][23] is the supported scripting
 environment for PowerShell 7. The Windows PowerShell Integrated Scripting Environment (ISE) only
 supports Windows PowerShell.
 
@@ -300,7 +300,7 @@ The updated PowerShell extension includes:
 - Improved path autocompletion
 
 To make the transition to Visual Studio Code easier, use the **Enable ISE Mode** function available
-in the **Command Palette**. This function switches VSCode into an ISE-style layout. The ISE-style
+in the **Command Palette**. This function switches VS Code into an ISE-style layout. The ISE-style
 layout gives you all the new features and capabilities of PowerShell in a familiar user experience.
 
 To switch to the new ISE layout, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> to open the
@@ -309,7 +309,7 @@ To switch to the new ISE layout, press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</
 To set the layout to the original layout, open the **Command Palette**, select
 **PowerShell: Disable ISE Mode (restore to defaults)**.
 
-For details about customizing the VSCode layout to ISE, see
+For details about customizing the VS Code layout to ISE, see
 [How to Replicate the ISE Experience in Visual Studio Code][01]
 
 > [!NOTE]
