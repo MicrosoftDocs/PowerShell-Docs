@@ -418,7 +418,7 @@ with the default format for the current culture by casting the value to
 [07]: about_Functions_Advanced_Parameters.md#validatescript-validation-attribute
 [08]: about_Functions_Advanced.md
 [09]: about_Functions.md
-[10]: about_Functions.md#filters
+[10]: about_Functions.md#filter-syntax
 [11]: about_Script_Blocks.md
 [12]: about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters
 [13]: about_Switch.md

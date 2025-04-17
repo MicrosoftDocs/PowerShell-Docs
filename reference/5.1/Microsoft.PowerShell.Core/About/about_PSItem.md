@@ -1,7 +1,7 @@
 ---
 description: The automatic variable that contains the current object in the pipeline object.
 Locale: en-US
-ms.date: 01/31/2025
+ms.date: 04/17/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_psitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSItem
@@ -400,7 +400,7 @@ For more examples, see the _Accessing exception information_ section in
 [07]: about_Functions_Advanced_Parameters.md#validatescript-validation-attribute
 [08]: about_Functions_Advanced.md
 [09]: about_Functions.md
-[10]: about_Functions.md#filters
+[10]: about_Functions.md#filter-syntax
 [11]: about_Script_Blocks.md
 [12]: about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters
 [13]: about_Switch.md
