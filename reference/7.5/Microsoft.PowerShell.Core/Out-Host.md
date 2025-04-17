@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/31/2022
+ms.date: 04/17/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/out-host?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Host
@@ -27,10 +27,9 @@ The `Out-Host` cmdlet sends output to the PowerShell host for display. The host 
 at the command line. Because `Out-Host` is the default, you don't have to specify it unless you want
 to use its parameters.
 
-`Out-Host` is automatically appended to every command that is executed. It passes the output of the
-pipeline to the host executing the command. `Out-Host` ignores ANSI escape sequences. The escape
-sequences are handled by the host. `Out-Host` passes ANSI escape sequences to the host without
-trying to interpret or change them.
+`Out-Host` passes the output of the pipeline to the host executing the command. `Out-Host` ignores
+ANSI escape sequences. The escape sequences are handled by the host. `Out-Host` passes ANSI escape
+sequences to the host without trying to interpret or change them.
 
 ## EXAMPLES
 
@@ -89,14 +88,14 @@ Accept wildcard characters: False
 
 ### -Paging
 
-Indicates that `Out-Host` displays one page of output at a time, and waits for user input before the
-remaining pages are displayed. By default, all the output is displayed on a single page. The page
-size is determined by the characteristics of the host.
+Indicates that `Out-Host` displays one page of output at a time. The page size is determined by the
+characteristics of the host.
 
-Press the <kbd>Space</kbd> bar to display the next page of output or the <kbd>Enter</kbd> key to
-view the next line of output. Press <kbd>Q</kbd> to quit.
+After outputting the first page, the command waits for user input before the remaining pages are
+displayed. Press the <kbd>Spacebar</kbd> to display the next page of output or the <kbd>Enter</kbd>
+key to view the next line of output. Press <kbd>Q</kbd> to quit.
 
-**Paging** is similar to the **more** command.
+Using **Paging** is similar to using the **more** command.
 
 > [!NOTE]
 > The **Paging** parameter isn't supported by the PowerShell ISE host.
@@ -139,20 +138,22 @@ PowerShell includes the following aliases for `Out-Host`:
 - All platforms:
   - `oh`
 
-The **Paging** parameter isn't supported by all PowerShell hosts. For example, if you use the
-**Paging** parameter in the PowerShell ISE, the following error is displayed:
-`out-lineoutput : The method or operation is not implemented.`
+Not all PowerShell hosts support the **Paging** parameter. For example, if you use the **Paging**
+parameter in the Windows PowerShell ISE, the following error is displayed:
+
+> out-lineoutput : The method or operation is not implemented.
 
 The cmdlets that contain the **Out** verb, `Out-`, don't format objects. They render objects and
 send them to the specified display destination. If you send an unformatted object to an `Out-`
 cmdlet, the cmdlet sends it to a formatting cmdlet before rendering it.
 
-The `Out-` cmdlets don't have parameters for names or file paths. To send data to an `Out-` cmdlet,
-use the pipeline to send a PowerShell command's output to the cmdlet. Or, you can store data in a
-variable and use the **InputObject** parameter to pass the data to the cmdlet.
+The `Out-` cmdlets don't read input from files. To send data to an `Out-` cmdlet, use the pipeline
+to send data to the cmdlet. Or, you can store data in a variable and use the **InputObject**
+parameter to pass the data to the cmdlet.
 
-`Out-Host` sends data, but it doesn't produce any output objects. If you pipeline the output of
-`Out-Host` to the `Get-Member` cmdlet, `Get-Member` reports that no objects have been specified.
+`Out-Host` sends data to the host only. Tt doesn't produce output objects to the pipeline. If you
+pipeline the output of `Out-Host` to the `Get-Member` cmdlet, `Get-Member` reports that no objects
+have been specified.
 
 ## RELATED LINKS
 
