@@ -45,9 +45,9 @@ sections:
     questions:
       - question: What version of Windows is required to support the Microsoft Update feature?
         answer: |
-          You must have Windows Version 1709 or newer installed on an x64-based system. Version 1709
-          is the Windows 10 Fall Creators Update or the October update of Windows Server 2016. Versions
-          prior to 1709 do not support Microsoft Update for PowerShell.
+          You must have Windows Version 1809 or newer installed on an x64-based system. Version 1809
+          is the Windows 10 October 2018 Update or Windows Server 2019. Versions
+          prior to 1809 do not support Microsoft Update for PowerShell.
 
       - question: Do I need to check both boxes in the setup dialog?
         answer: |
