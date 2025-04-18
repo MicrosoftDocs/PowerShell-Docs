@@ -8,7 +8,8 @@ see the [LICENSE][05] file, and grant you a license to any code in the repositor
 Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the
 documentation may be either trademarks or registered trademarks of Microsoft in the United States
 and/or other countries. The licenses for this project do not grant you rights to use any Microsoft
-names, logos, or trademarks. You can find Microsoft general trademark guidelines at [Microsoft Trademark and Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks).
+names, logos, or trademarks. You can find Microsoft general trademark guidelines at 
+[Microsoft Trademark and Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks).
 
 For privacy information, see [privacy at Microsoft](https://privacy.microsoft.com/en-us/).
 
