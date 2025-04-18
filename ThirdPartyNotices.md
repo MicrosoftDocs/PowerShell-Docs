@@ -9,16 +9,16 @@ Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services
 documentation may be either trademarks or registered trademarks of Microsoft in the United States
 and/or other countries. The licenses for this project do not grant you rights to use any Microsoft
 names, logos, or trademarks. You can find Microsoft general trademark guidelines at 
-[Microsoft Trademark and Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks).
+[Microsoft Trademark and Brand Guidelines][02].
 
-For privacy information, see [privacy at Microsoft](https://privacy.microsoft.com/en-us/).
+For privacy information, see [privacy at Microsoft][04].
 
 Microsoft and any contributors reserve all others rights, whether under their respective copyrights,
 patents, or trademarks, whether by implication, estoppel or otherwise.
 
 <!-- link references -->
 [01]: https://creativecommons.org/licenses/by/4.0/legalcode
-[02]: https://go.microsoft.com/fwlink/?LinkID=254653
+[02]: https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks
 [03]: https://opensource.org/licenses/MIT
 [04]: https://privacy.microsoft.com
 [05]: LICENSE
