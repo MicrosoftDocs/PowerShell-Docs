@@ -41,6 +41,13 @@ You can then access and use the values like you would a normal object.
 $myObject.Name
 ```
 
+To get name or value by index-number
+
+```powershell
+$myObject.psobject.properties.Name[2]
+$myObject.psobject.properts.Value[2]
+```
+
 ### Converting a hashtable
 
 While I am on the topic, did you know you could do this:
@@ -128,6 +135,13 @@ We can get this same list off of the `psobject` property too.
 ```powershell
 $myobject.psobject.Properties.Name
 ```
+
+Or to get all values
+
+```powershell
+$myobject.psobject.Properties.Value
+```
+
 
 > [!NOTE]
 > `Get-Member` returns the properties in alphabetical order. Using the member-access operator to
