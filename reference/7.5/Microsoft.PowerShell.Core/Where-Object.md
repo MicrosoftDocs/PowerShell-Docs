@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/26/2024
+ms.date: 04/23/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Where-Object
@@ -248,32 +248,38 @@ particular version of Windows.
 Starting in Windows PowerShell 3.0, there are two different ways to construct a `Where-Object`
 command.
 
-- **Script block**. You can use a script block to specify the property name, a comparison operator,
+- **Script block syntax**. You can use a script block to specify the property name, a comparison operator,
   and a property value. `Where-Object` returns all objects for which the script block statement is
   true.
 
-  For example, the following command gets processes in the `Normal` priority class, that is,
-  processes where the value of the **PriorityClass** property equals `Normal`.
+  For example, the following command gets processes where the value of the **PriorityClass**
+  property equals `Normal`.
 
   `Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}`
 
   All PowerShell comparison operators are valid in the script block format. For more information,
-  see [about_Comparison_Operators](About/about_Comparison_Operators.md).
+  see [about_Comparison_Operators](./About/about_Comparison_Operators.md).
 
-- **Comparison statement**. You can also write a comparison statement, which is much more like
-  natural language. Comparison statements were introduced in Windows PowerShell 3.0.
+- **Simplified syntax**. To enable the simiplified syntax, `Where-Object` includes 31 switch
+  parameters that represent the comparison operators. The simplified syntax is easier to read and
+  write than the script block syntax. You can combine one of the switch parameters with the
+  **Property** and **Value** parameters to create a command that filters objects based on the
+  values of their properties.
 
   For example, the following commands also get processes that have a priority class of `Normal`.
   These commands are equivalent and you can use them interchangeably.
 
-  `Get-Process | Where-Object -Property PriorityClass -EQ -Value "Normal"`
+  `Get-Process | Where-Object -Property PriorityClass -Value Normal -EQ`
 
-  `Get-Process | Where-Object PriorityClass -EQ "Normal"`
+  `Get-Process | Where-Object PriorityClass -EQ Normal`
 
-  Starting in Windows PowerShell 3.0, `Where-Object` adds comparison operators as parameters in a
-  `Where-Object` command. Unless specified, all operators are case-insensitive. Before Windows
-  PowerShell 3.0, the comparison operators in the PowerShell language were only usable in script
-  blocks.
+  As shown in the example, the parameter names **Property** and **Value** are optional. The
+  **Property** parameter is a positional parameter mapped to position `0`. The **Value** parameter
+  is a positional parameter mapped to position `1`. The switch parameter, used to specify the
+  comparison, can be used in any position.
+
+  The simplfied syntax was introduced in Windows PowerShell 3.0. For more information, see
+  [about_Simplified_Syntax](About/about_Simplified_Syntax.md).
 
 When you provide a single **Property** to `Where-Object`, the cmdlet treats the value of the
 property as a boolean expression. When the value of the property's **Length** isn't zero, the
@@ -285,7 +291,7 @@ The previous example is functionally equivalent to:
 - `('hi', '', 'there') | Where-Object { $_.Length -gt 0 }`
 
 For more information about how PowerShell evaluates booleans, see
-[about_Booleans](About/about_Booleans.md).
+[about_Booleans](about/about_Booleans.md).
 
 ## EXAMPLES
 
@@ -400,9 +406,9 @@ The example uses the script block command format. Logical operators, such as `-a
 `Where-Object` command.
 
 - For more information about PowerShell logical operators, see
-  [about_Logical_Operators](About/about_Logical_Operators.md).
+  [about_Logical_Operators](./About/about_logical_operators.md).
 - For more information about the Updatable Help feature, see
-  [about_Updatable_Help](About/about_Updatable_Help.md).
+  [about_Updatable_Help](./About/about_Updatable_Help.md).
 
 ## PARAMETERS
 
@@ -1188,7 +1194,7 @@ PowerShell includes the following aliases for `Where-Object`:
 Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with
 collections.
 
-You can read more about these methods here [about_Arrays](About/about_Arrays.md)
+You can read more about these methods here [about_Arrays](./About/about_Arrays.md)
 
 ## RELATED LINKS
 
@@ -1208,4 +1214,4 @@ You can read more about these methods here [about_Arrays](About/about_Arrays.md)
 
 [Tee-Object](../Microsoft.PowerShell.Utility/Tee-Object.md)
 
-[about_Booleans](About/about_Booleans.md)
+[about_Booleans](./About/about_Booleans.md)
