@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 07/02/2024
+ms.date: 04/24/2025
 no-loc: [Debug, Verbose, Confirm]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -470,6 +470,64 @@ At line:1 char:1
     + CategoryInfo          : ObjectNotFound: (temp:String) [Get-Variable], ItemNotFoundException
     + FullyQualifiedErrorId : VariableNotFound,Microsoft.PowerShell.Commands.GetVariableCommand
 ```
+
+> [!CAUTION]
+> There are two known issues with using the **PipelineVariable** parameter in a
+> pipeline that includes CimCmdlets or CDXML cmdlets. In the following
+> examples, `Get-Partition` is a CDXML function and `Get-CimInstance` is a
+> CimCmdlet.
+
+1. CDXML functions use `[CmdletBinding()]`, which allows the
+   **PipelineVariable** parameter.
+
+   ```powershell
+   Get-Partition -pv pvar
+   ```
+
+   However, when you use **PipelineVariable** in Windows PowerShell v5.1, you
+   receive the following error.
+
+   ```Output
+   Get-Partition : Cannot retrieve the dynamic parameters for the cmdlet.
+   Object reference not set to an instance of an object.
+
+   At line:1 char:1
+   + get-partition -PipelineVariable pvar
+   + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       + CategoryInfo          : InvalidArgument: (:) [Get-Partition], ParameterBindingException
+       + FullyQualifiedErrorId : GetDynamicParametersException,Get-Partition
+   ```
+
+1. When the preceding command is _not_ a CDXML command and the downstream
+   contains either command type, the **PipelineVariable** remains as the last
+   accumulated object.
+
+   ```powershell
+   Get-CimInstance Win32_DiskDrive -pv pvar |
+       ForEach-Object {
+           Write-Host "Before: $($pvar.Index)"
+           [pscustomobject]@{ DiskNumber = $_.Index }
+       } |
+       Get-Partition |
+       ForEach-Object {
+           Write-Host "After: $($pvar.Index)"
+       }
+   ```
+
+   Notice that the value of `$pvar` set to the last object in the pipeline for
+   the second `ForEach-Object` command.
+
+   ```Output
+   Before: 1
+   Before: 2
+   Before: 0
+   After: 0
+   After: 0
+   After: 0
+   After: 0
+   After: 0
+   After: 0
+   ```
 
 ### -ProgressAction
 
