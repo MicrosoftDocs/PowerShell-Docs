@@ -52,10 +52,7 @@ command.
   For example, the following command gets the value of the **ProcessName** property of each process
   on the computer.
 
-
-  ```powershell
-  Get-Process | ForEach-Object {$_.ProcessName}
-  ```
+  `Get-Process | ForEach-Object {$_.ProcessName}`
 
   `ForEach-Object` supports the `begin`, `process`, and `end` blocks as described in
   [about_Functions](about/about_functions.md#piping-objects-to-functions).
@@ -66,14 +63,12 @@ command.
 
 - **Simplified syntax**. Using the simplified syntax, you a property or method name of the object in
   the pipeline. `ForEach-Object` returns the value of the property or method for each object in the
-  the pipeline.
+  pipeline.
 
   For example, the following command also gets the value of the **ProcessName** property of each
   process on the computer.
 
-  ```powershell
-  Get-Process | ForEach-Object ProcessName
-  ```
+  `Get-Process | ForEach-Object ProcessName`
 
   The simplified syntax was introduced in Windows PowerShell 3.0. For more information, see
   [about_Simplified_Syntax](About/about_Simplified_Syntax.md).
@@ -117,8 +112,9 @@ This example takes an array of three integers and divides each one of them by 10
 This example processes the files and directories in the PowerShell installation directory `$PSHOME`.
 
 ```powershell
-Get-ChildItem $PSHOME |
-  ForEach-Object -Process {if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; " " }}
+Get-ChildItem $PSHOME | ForEach-Object -Process {
+    if (!$_.PSIsContainer) {$_.Name; $_.Length / 1024; " " }
+}
 ```
 
 If the object isn't a directory, the script block gets the name of the file, divides the value of

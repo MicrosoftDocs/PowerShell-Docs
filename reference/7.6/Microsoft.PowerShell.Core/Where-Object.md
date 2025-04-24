@@ -255,9 +255,7 @@ command.
   For example, the following command gets processes where the value of the **PriorityClass**
   property equals `Normal`.
 
-  ```powershell
-  Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}
-  ```
+  `Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}`
 
   All PowerShell comparison operators are valid in the script block format. For more information,
   see [about_Comparison_Operators](./About/about_Comparison_Operators.md).
@@ -271,10 +269,9 @@ command.
   For example, the following commands also get processes that have a priority class of `Normal`.
   These commands are equivalent and you can use them interchangeably.
 
-  ```powershell
-  Get-Process | Where-Object -Property PriorityClass -Value Normal -EQ
-  Get-Process | Where-Object PriorityClass -EQ Normal
-  ```
+  `Get-Process | Where-Object -Property PriorityClass -Value Normal -EQ`
+
+  `Get-Process | Where-Object PriorityClass -EQ Normal`
 
   As shown in the example, the parameter names **Property** and **Value** are optional. The
   **Property** parameter is a positional parameter mapped to position `0`. The **Value** parameter
