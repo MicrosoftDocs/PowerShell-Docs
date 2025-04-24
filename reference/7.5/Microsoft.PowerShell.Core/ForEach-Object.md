@@ -61,9 +61,9 @@ command.
   > The script blocks run in the caller's scope. Therefore, the blocks have access to variables in
   > that scope and can create new variables that persist in that scope after the cmdlet completes.
 
-- **Simplified syntax**. Using the simplified syntax, you a property or method name of the object in
-  the pipeline. `ForEach-Object` returns the value of the property or method for each object in the
-  pipeline.
+- **Simplified syntax**. Using the simplified syntax, you specify a property or method name of the
+  object in the pipeline. `ForEach-Object` returns the value of the property or method for each
+  object in the pipeline.
 
   For example, the following command also gets the value of the **ProcessName** property of each
   process on the computer.
