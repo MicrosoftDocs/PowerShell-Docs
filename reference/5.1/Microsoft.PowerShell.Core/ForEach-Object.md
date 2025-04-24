@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/26/2024
+ms.date: 04/23/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ForEach-Object
@@ -36,14 +36,17 @@ input objects can be piped to the cmdlet or specified using the **InputObject** 
 Starting in Windows PowerShell 3.0, there are two different ways to construct a `ForEach-Object`
 command.
 
-- **Script block**. You can use a script block to specify the operation. Within the script block,
+- **Script block syntax**. You can use a script block to specify the operation. Within the script block,
   use the `$_` variable to represent the current object. The script block is the value of the
   **Process** parameter. The script block can contain any PowerShell script.
 
   For example, the following command gets the value of the **ProcessName** property of each process
   on the computer.
 
-  `Get-Process | ForEach-Object {$_.ProcessName}`
+
+  ```powershell
+  Get-Process | ForEach-Object {$_.ProcessName}
+  ```
 
   `ForEach-Object` supports the `begin`, `process`, and `end` blocks as described in
   [about_Functions](about/about_functions.md#piping-objects-to-functions).
@@ -52,14 +55,19 @@ command.
   > The script blocks run in the caller's scope. Therefore, the blocks have access to variables in
   > that scope and can create new variables that persist in that scope after the cmdlet completes.
 
-- **Operation statement**. You can also write an operation statement, which is much more like
-  natural language. You can use the operation statement to specify a property value or call a
-  method. Operation statements were introduced in Windows PowerShell 3.0.
+- **Simplified syntax**. Using the simplified syntax, you a property or method name of the object in
+  the pipeline. `ForEach-Object` returns the value of the property or method for each object in the
+  the pipeline.
 
   For example, the following command also gets the value of the **ProcessName** property of each
   process on the computer.
 
-  `Get-Process | ForEach-Object ProcessName`
+  ```powershell
+  Get-Process | ForEach-Object ProcessName
+  ```
+
+  The simplified syntax was introduced in Windows PowerShell 3.0. For more information, see
+  [about_Simplified_Syntax](About/about_Simplified_Syntax.md).
 
 ## EXAMPLES
 
