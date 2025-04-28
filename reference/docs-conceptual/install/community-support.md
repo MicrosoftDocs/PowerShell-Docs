@@ -1,6 +1,6 @@
 ---
 description: PowerShell can run on Linux distributions that aren't officially supported by Microsoft.
-ms.date: 01/27/2025
+ms.date: 04/28/2025
 title: Community support for PowerShell on Linux
 ---
 # Community support for PowerShell on Linux
@@ -81,8 +81,8 @@ to the current versions are:
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-linux-arm32.tar.gz`
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-linux-arm64.tar.gz`
 - PowerShell 7.5 - latest stable release
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-linux-arm32.tar.gz`
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/powershell-7.5.0-linux-arm64.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-linux-arm64.tar.gz`
 
 Use the following shell commands to download and install the package. This script detects whether
 you're running a 32-bit or 64-bit OS and installs the latest stable version of PowerShell for that
