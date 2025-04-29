@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 04/28/2025
+ms.date: 04/29/2025
 title: Installing PowerShell on macOS
 ---
 
@@ -37,7 +37,7 @@ Once `brew` is installed you can install PowerShell.
 The following command installs the latest stable release of PowerShell:
 
 ```sh
-brew install powershell/tap/powershell
+brew install --cask powershell
 ```
 
 Finally, verify that your install is working properly:

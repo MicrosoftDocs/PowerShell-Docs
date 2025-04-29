@@ -1,7 +1,7 @@
 ---
 description: Describes a statement you can use to immediately exit `foreach`, `for`, `while`, `do`, `switch`, or `trap` statements.
 Locale: en-US
-ms.date: 12/26/2024
+ms.date: 04/29/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_break?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Break
@@ -79,7 +79,7 @@ example has a `while` statement with a `for` statement:
 
 ```powershell
 :myLabel while (<condition 1>) {
-  for ($item in $items) {
+  foreach ($item in $items) {
     if (<condition 2>) {
       break myLabel
     }

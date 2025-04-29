@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 11/02/2024
+ms.date: 04/29/2025
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -15,7 +15,7 @@ from the [Microsoft Artifact Registry][mcr] for the following versions of Ubuntu
 
 - Ubuntu 24.04 (Noble Numbat) - OS support ends on 2029-04-01
 - Ubuntu 22.04 (Jammy Jellyfish) - OS support ends on 2027-04-01
-- Ubuntu 20.04 (Focal Fossa) - OS support ends on 2025-04-02
+- Ubuntu 20.04 (Focal Fossa) - OS support ends on 2025-05-31
 
 Ubuntu 24.10 (Oracular Oriole) is an interim release. Microsoft doesn't support
 [interim releases][interim] of Ubuntu. For more information, see
