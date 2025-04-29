@@ -1,6 +1,6 @@
 ---
 description: This article provides specific guidance for using Markdown in our documentation.
-ms.date: 03/30/2025
+ms.date: 04/29/2025
 title: Markdown best practices
 ---
 # Markdown best practices
@@ -8,10 +8,10 @@ title: Markdown best practices
 This article provides specific guidance for using Markdown in our documentation. It isn't a tutorial
 for Markdown. If you need a tutorial for Markdown, see this [Markdown cheatsheet][12].
 
-The Microsoft Open Publishing System (OPS) that builds our documentation uses [markdig][06] to
-process the Markdown documents. Markdig parses the documents based on the rules of the latest
-[CommonMark][10] specification. OPS follows the CommonMark specification and adds some extensions
-for platform-specific features, such as tables and alerts.
+The build pipeline that builds our documentation uses [markdig][06] to process the Markdown
+documents. Markdig parses the documents based on the rules of the latest [CommonMark][10]
+specification. OPS follows the CommonMark specification and adds some extensions for
+platform-specific features, such as tables and alerts.
 
 The CommonMark specification is stricter about the construction of some Markdown elements. Pay close
 attention to the details provided in this document.

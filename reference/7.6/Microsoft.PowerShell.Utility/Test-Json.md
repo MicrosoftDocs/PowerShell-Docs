@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/24/2024
+ms.date: 04/29/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/test-json?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-Json
@@ -142,20 +142,16 @@ $schema = @'
   }
 }
 '@
-'{"name": "Ashley", "age": "25"}' | Test-Json -Schema $schema
+'{"name": "Ashley", "age": "25"}' | Test-Json -Schema $schema -ErrorAction SilentlyContinue
 ```
 
 ```Output
-Test-Json:
-Line |
-  35 |  '{"name": "Ashley", "age": "25"}' | Test-Json -Schema $schema
-     |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~
-     | The JSON is not valid with the schema: Value is "string" but should be "integer" at '/age'
 False
 ```
 
-In this example, we get an error because the schema expects an integer for **age** but the JSON
-input we tested uses a string value instead.
+In this example, we use the **ErrorAction** parameter to suppres the error message. Without this
+parameter the command also outputs an error because the schema expects an integer for **age** but
+the JSON input we tested uses a string value instead.
 
 For more information, see [JSON Schema](https://json-schema.org/).
 
