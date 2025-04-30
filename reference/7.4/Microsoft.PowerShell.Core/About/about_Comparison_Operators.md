@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 01/19/2025
+ms.date: 04/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -36,8 +36,8 @@ specified patterns. PowerShell includes the following comparison operators:
 
 **Replacement**
 
-- `-replace`, `-ireplace`, `-creplace` - replaces strings matching a regex
-  pattern
+- `-replace`, `-ireplace`, `-creplace` - finds and replaces strings matching a
+  regex pattern
 
 **Containment**
 
