@@ -649,7 +649,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%u` | Numeric day of the week (1-7) (Changed in PowerShell 7.2)               | Monday = 1, Sunday = 7   |
 | `%V` | Week of the year                                                        | 01-53                    |
 | `%w` | Numeric day of the week (0-6)                                           | Sunday = 0, Saturday = 6 |
-| `%W` | Week of the year                                                        | 00-52                    |
+| `%W` | Week of the year                                                        | 1-53                     |
 | `%X` | Same as 'T'                                                             |                          |
 | `%x` | Date in standard format for locale                                      | 06/27/19 for English-US  |
 | `%Y` | Year in 4-digit format                                                  | 2019                     |

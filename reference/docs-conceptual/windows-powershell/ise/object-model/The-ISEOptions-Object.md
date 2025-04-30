@@ -1,6 +1,6 @@
 ---
 description: The ISEOptions object represents various settings for Windows PowerShell ISE.
-ms.date: 03/27/2025
+ms.date: 04/30/2025
 title: The ISEOptions Object
 ---
 
@@ -148,10 +148,10 @@ Specifies the colors of the IntelliSense tokens in the Windows PowerShell ISE Co
 property is a dictionary object that contains name/value pairs of token types and colors for the
 Console pane. To change the colors of the IntelliSense tokens in the Script pane, see
 [TokenColors][08]. To reset the colors to the default values, see
-[RestoreDefaultConsoleTokenColors][05]. Token colors can be set for the following: Attribute,
-Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword,
-LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator,
-String, Type, Unknown, Variable.
+[RestoreDefaultConsoleTokenColors][05]. Token colors can be set for the following: `Attribute`,
+`Command`, `CommandArgument`, `CommandParameter`, `Comment`, `GroupEnd`, `GroupStart`, `Keyword`,
+`LineContinuation`, `LoopLabel`, `Member`, `NewLine`, `Number`, `Operator`, `Position`,
+`StatementSeparator`, `String`, `Type`, `Unknown`, `Variable`.
 
 ```powershell
 # Sets the color of commands to green.
@@ -204,14 +204,17 @@ ShowDefaultSnippets                       : True
 ShowToolBar                               : True
 ShowOutlining                             : True
 ShowLineNumbers                           : True
-TokenColors                               : {[Attribute, #FF00BFFF], [Command, #FF0000FF], [CommandArgument, #FF8A2BE2], [CommandParameter, #FF000080]...}
-ConsoleTokenColors                        : {[Attribute, #FFB0C4DE], [Command, #FFE0FFFF], [CommandArgument, #FFEE82EE], [CommandParameter, #FFFFE4B5]...}
-XmlTokenColors                            : {[Comment, #FF006400], [CommentDelimiter, #FF008000], [ElementName, #FF8B0000], [MarkupExtension, #FFFF8C00]...}
+TokenColors                               : {[Attribute, #FF00BFFF], [Command, #FF0000FF],
+                                            [CommandArgument, #FF8A2BE2], [CommandParameter, #FF000080]...}
+ConsoleTokenColors                        : {[Attribute, #FFB0C4DE], [Command, #FFE0FFFF],
+                                            [CommandArgument, #FFEE82EE], [CommandParameter, #FFFFE4B5]...}
+XmlTokenColors                            : {[Comment, #FF006400], [CommentDelimiter, #FF008000],
+                                            [ElementName, #FF8B0000], [MarkupExtension, #FFFF8C00]...}
 DefaultOptions                            : Microsoft.PowerShell.Host.ISE.ISEOptions
 FontSize                                  : 9
 Zoom                                      : 100
 FontName                                  : Lucida Console
-ErrorForegroundColor                      : #FFFF0000
+ErrorForegroundColor                      : #FFFF9494
 ErrorBackgroundColor                      : #00FFFFFF
 WarningForegroundColor                    : #FFFF8C00
 WarningBackgroundColor                    : #00FFFFFF
@@ -233,7 +236,6 @@ ShowIntellisenseInConsolePane             : True
 ShowIntellisenseInScriptPane              : True
 UseEnterToSelectInConsolePaneIntellisense : True
 UseEnterToSelectInScriptPaneIntellisense  : True
-IntellisenseTimeoutInSeconds              : 3
 ```
 
 ### ErrorBackgroundColor
@@ -391,12 +393,12 @@ $psISE.Options.SelectedScriptPaneState = 'Maximized'
 
 Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.
 
-Specifies whether the <kbd>CTRL</kbd>+<kbd>J</kbd> list of snippets includes the starter set that's
+Specifies whether the <kbd>Ctrl</kbd>+<kbd>J</kbd> list of snippets includes the starter set that's
 included in Windows PowerShell. When set to `$false`, only user-defined snippets appear in the
-<kbd>CTRL</kbd>+<kbd>J</kbd> list. The default value is `$true`.
+<kbd>Ctrl</kbd>+<kbd>J</kbd> list. The default value is `$true`.
 
 ```powershell
-# Hide the default snippets from the CTRL+J list.
+# Hide the default snippets from the Ctrl+J list.
 $psISE.Options.ShowDefaultSnippets = $false
 ```
 
