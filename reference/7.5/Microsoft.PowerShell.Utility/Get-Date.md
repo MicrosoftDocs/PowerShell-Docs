@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/19/2024
+ms.date: 04/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -649,7 +649,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%u` | Numeric day of the week (1-7) (Changed in PowerShell 7.2)               | Monday = 1, Sunday = 7   |
 | `%V` | Week of the year                                                        | 01-53                    |
 | `%w` | Numeric day of the week (0-6)                                           | Sunday = 0, Saturday = 6 |
-| `%W` | Week of the year                                                        | 00-52                    |
+| `%W` | Week of the year                                                        | 1-53                     |
 | `%X` | Same as 'T'                                                             |                          |
 | `%x` | Date in standard format for locale                                      | 06/27/19 for English-US  |
 | `%Y` | Year in 4-digit format                                                  | 2019                     |

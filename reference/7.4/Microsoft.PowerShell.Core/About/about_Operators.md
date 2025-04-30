@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 09/03/2024
+ms.date: 04/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -50,7 +50,7 @@ determine whether they're equal.
 
 The comparison operators also include operators that find or replace patterns
 in text. The (`-match`, `-notmatch`, `-replace`) operators use regular
-expressions, and (`-like`, `-notlike`) use wildcards `*`.
+expressions, and (`-like`, `-notlike`) use wildcards like `*`.
 
 Containment comparison operators determine whether a test value appears in a
 reference set (`-in`, `-notin`, `-contains`, `-notcontains`).

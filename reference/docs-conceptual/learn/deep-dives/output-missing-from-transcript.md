@@ -1,7 +1,7 @@
 ---
 description: This articles explains the limitations of PowerShell transcripts and the cases than can cause data to be logged out of order or be missing from the transcript.
 ms.custom: wiki-migration
-ms.date: 11/16/2022
+ms.date: 04/30/2025
 title: Limitations of PowerShell transcripts
 ---
 # Limitations of PowerShell transcripts
@@ -14,10 +14,10 @@ When you emit objects from your script the formatting of those objects is handle
 But the formatting can occur after the script has completed and transcription has stopped. This
 means that the output doesn't get transcribed. Strings are handled differently. Sometimes string
 output is passed through formatting, but not always. `Write-Host` makes an immediate write to the
-host process. `Write-Object` is sent through the formatting system. Combining the output of complex
+host process. `Write-Output` is sent through the formatting system. Combining the output of complex
 objects with writes to the host makes it difficult to predict what gets logged in the transcript.
 
-## Scenario 1 - Output of a structured object at the end of all of the other operations
+## Scenario 1 - Output of a structured object after all other operations
 
 Consider the following script and its output:
 
@@ -152,7 +152,7 @@ Path
 Transcript stopped, output file is /Users/user1/src/projects/transcript/scenario3.log
 ```
 
-The string output from both `Write-Host` and `Write-Object` makes it into the transcript. However,
+The string output from both `Write-Host` and `Write-Output` makes it into the transcript. However,
 the output from `Get-Location` occurs after transcription has stopped.
 
 ```
