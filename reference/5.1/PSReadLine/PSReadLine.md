@@ -32,23 +32,26 @@ These articles document version 2.0.0 of PSReadLine.
 
 ## PSReadLine Cmdlets
 
-### [PSConsoleHostReadLine](PSConsoleHostReadLine.md)
-The main entry point for PSReadLine.
-
 ### [Get-PSReadLineKeyHandler](Get-PSReadLineKeyHandler.md)
+
 Gets the key bindings for the PSReadLine module.
 
 ### [Get-PSReadLineOption](Get-PSReadLineOption.md)
+
 Gets values for the options that can be configured.
 
 ### [PSConsoleHostReadLine](PSConsoleHostReadLine.md)
+
 This function is the main entry point for PSReadLine.
 
 ### [Remove-PSReadLineKeyHandler](Remove-PSReadLineKeyHandler.md)
+
 Removes a key binding.
 
 ### [Set-PSReadLineKeyHandler](Set-PSReadLineKeyHandler.md)
+
 Binds keys to user-defined or PSReadLine key handler functions.
 
 ### [Set-PSReadLineOption](Set-PSReadLineOption.md)
+
 Customizes the behavior of command line editing in **PSReadLine**.
