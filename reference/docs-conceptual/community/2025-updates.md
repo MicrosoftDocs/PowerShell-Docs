@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 04/04/2025
+ms.date: 05/06/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -10,6 +10,32 @@ community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
+
+## 2025-April
+
+Content updates
+
+- Updated release notes for the 7.5.1 and 7.6-preview.4 releases
+- Refactored documentation of filter functions
+- Documented bugs with CIM/CDXML bugs and PipelineVariable parameter
+
+### Top Community Contributors
+
+GitHub stats
+
+- 24 PRs merged (6 from Community)
+- 23 issues opened (22 from Community)
+- 23 issues closed (23 Community issues closed)
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|      GitHub Id      | PRs merged | Issues opened |
+| ------------------- | :--------: | :-----------: |
+| surfingoldelephant  |     3      |       1       |
+| IISResetMe          |     1      |               |
+| changeworld         |     1      |               |
+| indented-automation |     1      |               |
 
 ## 2025-March
 
