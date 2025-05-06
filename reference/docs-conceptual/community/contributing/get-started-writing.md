@@ -28,8 +28,8 @@ The [conceptual documentation][3] isn't organized by version. All articles are d
 version of PowerShell.
 
 > [!NOTE]
-> Anytime a conceptual article is added, removed, or renamed, the TOC must be updated and deleted or
-> renamed files must be redirected.
+> Anytime a conceptual article is added, removed, or renamed, the TOC must be updated.
+> Any deleted or renamed files must be redirected.
 
 ### Metadata files
 
