@@ -116,7 +116,7 @@ Contributor's Guide:
    large changes.
 
 Before starting any changes, you should create a fork of the PowerShell-Docs repository. The changes
-should be made in a working branch in you copy of the PowerShell-Docs. If you're using the **quick
+should be made in a working branch in your copy of the PowerShell-Docs. If you're using the **quick
 edit** method in GitHub, these steps are handled for you. If you're using the **full GitHub
 workflow**, you must be set up to [work locally][7].
 
