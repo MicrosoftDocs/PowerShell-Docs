@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/15/2023
+ms.date: 05/07/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Computer
@@ -29,8 +29,9 @@ The `Stop-Computer` cmdlet shuts down the local computer and remote computers.
 You can use the parameters of `Stop-Computer` to specify the authentication levels and alternate
 credentials, and to force an immediate shut down.
 
-In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. The parameters have no effect on
-these platforms. The cmdlet is just calling the native command `/sbin/shutdown`.
+In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. The non-Windows platforms only
+have the **WhatIf**, **Confirm**, and **CommonParameters** parameters. The cmdlet is just calling
+the native command `/sbin/shutdown`.
 
 ## EXAMPLES
 
@@ -118,6 +119,8 @@ comma-separated list. To specify the local computer, type the computer name or l
 This parameter doesn't rely on PowerShell remoting. You can use the **ComputerName** parameter even
 if your computer isn't configured to run remote commands.
 
+This parameter is only available on Windows platforms.
+
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
@@ -145,6 +148,8 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > For more information about **SecureString** data protection, see
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
+This parameter is only available on Windows platforms.
+
 ```yaml
 Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
@@ -160,6 +165,8 @@ Accept wildcard characters: False
 ### -Force
 
 Forces an immediate shut down of the computer.
+
+This parameter is only available on Windows platforms.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -197,7 +204,8 @@ For more information about the values of this parameter, see
 > increases the security risk of the remote operation. If the remote computer is compromised, the
 > credentials that are passed to it can be used to control the network session.
 
-This parameter was introduced in PowerShell 3.0.
+This parameter was introduced in PowerShell 3.0. This parameter is only available on Windows
+platforms.
 
 ```yaml
 Type: System.String

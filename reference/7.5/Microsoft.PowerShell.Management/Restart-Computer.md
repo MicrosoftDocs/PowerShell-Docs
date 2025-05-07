@@ -25,8 +25,6 @@ Restart-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
 
 ## DESCRIPTION
 
-> **This cmdlet is only available on the Windows platform.**
-
 The `Restart-Computer` cmdlet restarts the operating system on the local and remote computers.
 
 You can use the parameters of `Restart-Computer` to run the restart operations, to specify the
@@ -37,6 +35,12 @@ Starting in Windows PowerShell 3.0, you can wait for the restart to complete bef
 command. Specify a waiting time-out and query interval, and wait for particular services to be
 available on the restarted computer. This feature makes it practical to use `Restart-Computer` in
 scripts and functions.
+
+In PowerShell 7.1, `Restart-Computer` was added for Linux and macOS. The non-Windows platforms only
+have the **WhatIf**, **Confirm**, and **CommonParameters** parameters. The cmdlet is just calling
+the native command `/sbin/shutdown`.
+
+## EXAMPLES
 
 ## EXAMPLES
 
@@ -132,6 +136,8 @@ if your computer isn't configured to run remote commands.
 
 If the **ComputerName** parameter isn't specified, `Restart-Computer` restarts the local computer.
 
+This parameter is only available on Windows platforms.
+
 ```yaml
 Type: System.String[]
 Parameter Sets: (All)
@@ -159,6 +165,8 @@ object and the password is stored as a [SecureString](xref:System.Security.Secur
 > For more information about **SecureString** data protection, see
 > [How secure is SecureString?](xref:System.Security.SecureString#how-secure-is-securestring).
 
+This parameter is only available on Windows platforms.
+
 ```yaml
 Type: System.Management.Automation.PSCredential
 Parameter Sets: (All)
@@ -181,6 +189,8 @@ This parameter is valid only together with the **Wait** and **For** parameters.
 This parameter was introduced in Windows PowerShell 3.0.
 
 If the **Delay** parameter isn't specified, `Restart-Computer` uses a five second delay.
+
+This parameter is only available on Windows platforms.
 
 ```yaml
 Type: System.Int16
@@ -206,7 +216,8 @@ The acceptable values for this parameter are:
 - **WMI**: Receives a reply to a **Win32_ComputerSystem** query for the computer.
 - **WinRM**: Can establish a remote session to the computer by using WS-Management.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0. This parameter is only available on Windows
+platforms.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WaitForServiceTypes
@@ -224,6 +235,8 @@ Accept wildcard characters: False
 ### -Force
 
 Forces an immediate restart of the computer.
+
+This parameter is only available on Windows platforms.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -246,6 +259,8 @@ The **Timeout** parameter is only valid with the **Wait** parameter. **Timeout**
 **Wait** parameter's indefinite waiting period.
 
 This parameter was introduced in Windows PowerShell 3.0.
+
+This parameter is only available on Windows platforms.
 
 ```yaml
 Type: System.Int32
@@ -274,7 +289,8 @@ The **Wait** parameter isn't valid when you're restarting the local computer. If
 `Restart-Computer` generates a non-terminating error for **Wait** on the local computer, but waits
 for the remote computers to restart.
 
-This parameter was introduced in Windows PowerShell 3.0.
+This parameter was introduced in Windows PowerShell 3.0. This parameter is only available on Windows
+platforms.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -305,6 +321,8 @@ For more information, see
 > authentication on more than one resource, such as accessing a remote network share. This mechanism
 > increases the security risk of the remote operation. If the remote computer is compromised, the
 > credentials that are passed to it can be used to control the network session.
+
+This parameter is only available on Windows platforms.
 
 ```yaml
 Type: System.String
@@ -378,7 +396,8 @@ This cmdlet returns no output.
   [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) class. This method
   requires the **SeShutdownPrivilege** privilege be enabled for the user account used to restart
   the machine.
-- On Linux and macOS, `Restart-Computer` uses the `/sbin/shutdown` bash tool.
+- This cmdlet was added for Linux and macOS in PowerShell 7.1. On Linux and macOS,
+  `Restart-Computer` uses the `/sbin/shutdown` bash tool.
 
 ## RELATED LINKS
 
