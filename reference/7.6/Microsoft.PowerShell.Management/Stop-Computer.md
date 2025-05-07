@@ -29,9 +29,11 @@ The `Stop-Computer` cmdlet shuts down the local computer and remote computers.
 You can use the parameters of `Stop-Computer` to specify the authentication levels and alternate
 credentials, and to force an immediate shut down.
 
-In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. The **WsmanAuthentication**,
-**ComputerName**, and **Credential** parameters aren't available on non-Windows platforms. The
-cmdlet is just calling the native command `/sbin/shutdown`. ## EXAMPLES
+In PowerShell 7.1, `Stop-Computer` was added for Linux and macOS. The non-Windows platforms only
+have the **WhatIf**, **Confirm**, and **CommonParameters** parameters. The cmdlet is just calling
+the native command `/sbin/shutdown`.
+
+## EXAMPLES
 
 ### Example 1: Shut down the local computer
 
@@ -117,7 +119,7 @@ comma-separated list. To specify the local computer, type the computer name or l
 This parameter doesn't rely on PowerShell remoting. You can use the **ComputerName** parameter even
 if your computer isn't configured to run remote commands.
 
-This parameter isn't available on non-Windows platforms.
+This parameter is only available on Windows platforms.
 
 ```yaml
 Type: System.String[]
@@ -146,7 +148,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 > For more information about **SecureString** data protection, see
 > [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
 
-This parameter isn't available on non-Windows platforms.
+This parameter is only available on Windows platforms.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -163,6 +165,8 @@ Accept wildcard characters: False
 ### -Force
 
 Forces an immediate shut down of the computer.
+
+This parameter is only available on Windows platforms.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -200,7 +204,7 @@ For more information about the values of this parameter, see
 > increases the security risk of the remote operation. If the remote computer is compromised, the
 > credentials that are passed to it can be used to control the network session.
 
-This parameter was introduced in PowerShell 3.0. This parameter isn't available on non-Windows
+This parameter was introduced in PowerShell 3.0. This parameter is only available on Windows
 platforms.
 
 ```yaml
