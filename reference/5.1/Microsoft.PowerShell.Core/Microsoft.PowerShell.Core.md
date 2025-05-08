@@ -4,7 +4,7 @@ Help Version: 5.2.0.0
 Locale: en-US
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/04/2023
+ms.date: 05/08/2025
 schema: 2.0.0
 title: Microsoft.PowerShell.Core
 ---
@@ -192,6 +192,10 @@ Stops a PowerShell background job.
 
 ### [Suspend-Job](Suspend-Job.md)
 Temporarily stops workflow jobs.
+
+### [TabExpansion2](TabExpansion2.md)
+A helper function that wraps the `CompleteInput()` method of the **CommandCompletion** class to
+provide tab completion for PowerShell scripts.
 
 ### [Test-ModuleManifest](Test-ModuleManifest.md)
 Verifies that a module manifest file accurately describes the contents of a module.
