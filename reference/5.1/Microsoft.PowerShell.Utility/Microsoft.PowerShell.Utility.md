@@ -4,7 +4,7 @@ Help Version: 5.2.0.0
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/26/2022
+ms.date: 05/08/2025
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
 ---
@@ -161,9 +161,6 @@ Returns unique items from a sorted list.
 
 ### [Get-Variable](Get-Variable.md)
 Gets the variables in the current console.
-
-### [Get-Verb](Get-Verb.md)
-Gets approved PowerShell verbs.
 
 ### [Group-Object](Group-Object.md)
 Groups objects that contain the same value for specified properties.
