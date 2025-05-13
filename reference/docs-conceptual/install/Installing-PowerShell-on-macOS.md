@@ -119,8 +119,8 @@ install package from the [releases][09] page onto your computer. The links to th
 are:
 
 - PowerShell 7.4
-  - x64 processors - [powershell-7.4.7-osx-x64.pkg][20]
-  - Arm64 processors - [powershell-7.4.7-osx-arm64.pkg][18]
+  - x64 processors - [powershell-7.4.10-osx-x64.pkg][20]
+  - Arm64 processors - [powershell-7.4.10-osx-arm64.pkg][18]
 - PowerShell 7.5
   - x64 processors - [powershell-7.5.1-osx-x64.pkg][24]
   - Arm64 processors - [powershell-7.5.1-arm64.pkg][22]
@@ -188,8 +188,8 @@ Download the install package from the [releases][09] page onto your computer. Th
 current versions are:
 
 - PowerShell 7.4 (LTS)
-  - x64 processors - [powershell-7.4.7-osx-x64.tar.gz][21]
-  - Arm64 processors - [powershell-7.4.7-osx-arm64.tar.gz][19]
+  - x64 processors - [powershell-7.4.10-osx-x64.tar.gz][21]
+  - Arm64 processors - [powershell-7.4.10-osx-arm64.tar.gz][19]
 - PowerShell 7.5-preview
   - x64 processors - [powershell-7.5.1-osx-x64.tar.gz][25]
   - Arm64 processors - [powershell-7.5.1-osx-arm64.tar.gz][23]
@@ -278,10 +278,10 @@ support those methods.
 [11]: https://docs.brew.sh/Manpage#link-ln-options-formula
 [12]: https://github.com/Homebrew
 [13]: https://github.com/Homebrew/homebrew-cask
-[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-osx-arm64.pkg
-[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-osx-arm64.tar.gz
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-osx-x64.pkg
-[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.7/powershell-7.4.7-osx-x64.tar.gz
+[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.10/powershell-7.4.10-osx-arm64.pkg
+[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.10/powershell-7.4.10-osx-arm64.tar.gz
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.10/powershell-7.4.10-osx-x64.pkg
+[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.10/powershell-7.4.10-osx-x64.tar.gz
 [22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-osx-arm64.pkg
 [23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-osx-arm64.tar.gz
 [24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-osx-x64.pkg
