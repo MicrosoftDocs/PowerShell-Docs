@@ -86,7 +86,7 @@ Description : Completed periodic policy processing for user %3 in %1 seconds.
 
 The **Description** property contains the message that gets written to the event log. The `%3` and
 `%1` value are placeholders for the values passed into the template. The `%3` string is replace with
-the value passed to the **PrincipalSamName** field. The `%1` string is replaced withe value passed
+the value passed to the **PrincipalSamName** field. The `%1` string is replaced with value passed
 to the **PolicyElaspedTimeInSeconds** field.
 
 ### Example 3 - Create a new event using a versioned template
