@@ -1,7 +1,7 @@
 ---
 description: Describes how to use the `try`, `catch`, and `finally` blocks to handle terminating errors.
 Locale: en-US
-ms.date: 01/07/2025
+ms.date: 05/14/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Try_Catch_Finally
@@ -134,9 +134,9 @@ two `catch` blocks:
 ```powershell
 try {
     $wc = New-Object System.Net.WebClient
-    $wc.DownloadFile("http://www.contoso.com/MyDoc.doc","C:\temp\MyDoc.doc")
+    $wc.DownloadFile("https://httpbin.org/MyDoc.doc","C:\temp\MyDoc.doc")
 } catch [System.Net.WebException],[System.IO.IOException] {
-    "Unable to download MyDoc.doc from http://www.contoso.com."
+    "Unable to download MyDoc.doc from https://httpbin.org."
 } catch {
     "An error occurred that could not be resolved."
 }
@@ -248,9 +248,9 @@ the temporary file if it exists.
 try {
     $wc = New-Object System.Net.WebClient
     $tempFile = "C:\temp\MyDoc.doc"
-    $wc.DownloadFile("http://www.contoso.com/MyDoc.doc",$tempFile)
+    $wc.DownloadFile("https://httpbin.org/MyDoc.doc",$tempFile)
 } catch [System.Net.WebException],[System.IO.IOException] {
-    "Unable to download MyDoc.doc from http://www.contoso.com."
+    "Unable to download MyDoc.doc from https://httpbin.org."
 } catch {
     "An error occurred that could not be resolved."
 } finally {
