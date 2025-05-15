@@ -398,7 +398,7 @@ items:
           - name: Module performance considerations
             href: dev-cross-plat/performance/module-authoring-considerations.md
           - name: Optimize performance using parallel execution
-            href: dev-cross-plat/performance/parllel-execution.md
+            href: dev-cross-plat/performance/parallel-execution.md
       - name: Developing modern modules
         items:
           - name: Writing portable modules
