@@ -1,7 +1,7 @@
 ---
 description: Explains how to use a switch to handle multiple `if` statements.
 Locale: en-US
-ms.date: 02/19/2025
+ms.date: 05/15/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Switch
@@ -10,35 +10,34 @@ title: about_Switch
 
 ## Short description
 
-Explains how to use a switch to handle multiple `if` statements.
+Explains how to use a switch to handle multiple conditional statements.
 
 ## Long description
 
-To check a condition in a script or function, use an `if` statement. The `if`
-statement can check many types of conditions, including the value of variables
-and the properties of objects.
+To check a condition in a script or function, you can use an `if` statement.
+The `if` statement can check many types of conditions, including the value of
+variables and the properties of objects.
 
-To check multiple conditions, use a `switch` statement. The `switch` statement
-is equivalent to a series of `if` statements, but it's simpler. The `switch`
-statement lists each condition and an optional action. If a condition obtains,
-the action is performed.
+To check multiple conditions, you can use a `switch` statement. The `switch`
+statement is similar to a series of `if` statements, but it's simpler. The
+`switch` statement lists each condition and an optional action. If a condition
+matches, the action is performed.
 
 The `switch` statement can use the `$_` and `$switch` automatic variables. For
-more information, see [about_Automatic_Variables][02].
+more information, see [about_Automatic_Variables][03].
 
 ## Syntax
 
 A basic `switch` statement has the following format:
 
 ```Syntax
-switch (<test-expression>)
-{
+switch (<test-expression>) {
     <result1-to-be-matched> {<action>}
     <result2-to-be-matched> {<action>}
 }
 ```
 
-The equivalent `if` statements are:
+This is similar to the following `if` statements:
 
 ```Syntax
 if (<result1-to-be-matched> -eq (<test-expression>)) {<action>}
@@ -50,18 +49,14 @@ mode to return a value.
 
 The `<result-to-be-matched>` is an expression whose value is compared to the
 input value. Expressions include literal values (strings or numbers),
-variables, and scriptblocks that return a boolean value.
-
-Any unquoted value that's not recognized as a number is treated as a string.
-To avoid confusion or unintended string conversion, you should always quote
-string values. Enclose any expressions in parentheses `()`, creating
-subexpressions, to ensure that the expression is evaluated correctly.
+variables, and scriptblocks that return a boolean value. For an example, see
+[Impact of string conversion][02] later in this article.
 
 It's important to understand that the `<result-to-be-matched>` value is on the
 left-hand side of the comparison expression. That means the result of the
 `<test-expression>` is on the right-hand side, which can be converted to the
 type of the left-hand side value for comparison. For more information, see
-[about_Comparison_Operators][04]
+[about_Comparison_Operators][05]
 
 The value `default` is reserved for the action used when there are no other
 matches.
@@ -216,6 +211,43 @@ switch (4, 2) {
 
 ```Output
 It's four.
+```
+
+## Impact of string conversion
+
+Any unquoted value that's not recognized as a number is treated as a string. To
+avoid unintended string conversion, use script blocks to evaluate the switch
+value.
+
+```powershell
+switch ( ([datetime]'1 Jan 1970').DayOfWeek ) {
+    4            { 'The value matches a Thursday.' }
+    "4"          { 'The numeric string matches a Thursday.' }
+    "Thursday"   { 'The string value matches a Thursday.' }
+    { 4 -eq $_ } { 'The expression matches a Thursday.' }
+}
+```
+
+The **DayOfWeek** property of the date object is an enumeration. While
+enumerations can be compared to their numeric or string values, the `switch`
+statement converts the value to a the string representation of the enumeration.
+
+```Output
+The string value matches a Thursday.
+The expression matches a Thursday.
+```
+
+This behavior is different from the behavior of the `-eq` comparison in an `if`
+statement.
+
+```powershell
+if (4 -eq ([datetime]'1 Jan 1970').DayOfWeek) {
+    'The value matches a Thursday.'
+}
+```
+
+```Output
+The value matches a Thursday.
 ```
 
 ## More complex match examples
@@ -445,16 +477,17 @@ switch -File $fileEscaped { foo { 'Foo' } }
 
 ## See also
 
-- [about_Break][03]
-- [about_Continue][05]
-- [about_If][06]
-- [about_Script_Blocks][07]
+- [about_Break][04]
+- [about_Continue][06]
+- [about_If][07]
+- [about_Script_Blocks][08]
 
 <!-- updated link references -->
 [01]: #file-parameter-examples
-[02]: about_Automatic_Variables.md
-[03]: about_break.md
-[04]: about_Comparison_Operators.md
-[05]: about_Continue.md
-[06]: about_If.md
-[07]: about_Script_Blocks.md
+[02]: #impact-of-string-conversion
+[03]: about_Automatic_Variables.md
+[04]: about_break.md
+[05]: about_Comparison_Operators.md
+[06]: about_Continue.md
+[07]: about_If.md
+[08]: about_Script_Blocks.md
