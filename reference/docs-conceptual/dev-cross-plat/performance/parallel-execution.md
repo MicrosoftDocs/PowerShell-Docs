@@ -278,4 +278,4 @@ You may also be interested in the [PSParallelPipeline][06] module created by San
 [07]: xref:Microsoft.PowerShell.Core.ForEach-Object
 [08]: xref:Microsoft.PowerShell.Core.Start-Job
 [09]: xref:Microsoft.PowerShell.Management.Start-Process
-[10]: xref:Microsoft.PowerShell.ThreadJob.Start-ThreadJob
+[10]: xref:ThreadJob.Start-ThreadJob
