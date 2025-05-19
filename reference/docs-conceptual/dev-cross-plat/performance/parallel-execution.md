@@ -7,9 +7,9 @@ title: Optimize performance using parallel execution
 
 PowerShell provides several options for the creation of parallel invocations.
 
-- `Start-Job` runs each job runs in a separate process, each with a new instance of PowerShell. In
-  many cases, a linear loop is faster. Also, serialization and deserialization can limit the
-  usefulness of the objects returned. This command is built in to all versions of PowerShell.
+- `Start-Job` runs each job in a separate process, each with a new instance of PowerShell. In many
+  cases, a linear loop is faster. Also, serialization and deserialization can limit the usefulness
+  of the objects returned. This command is built in to all versions of PowerShell.
 - `Start-ThreadJob` is a cmdlet found in the **ThreadJob** module. This command uses PowerShell
   runspaces to create and manage thread-based jobs. These jobs are lighter-weight than the jobs
   created by `Start-Job` and avoid potential loss of type fidelity required by cross-process
@@ -61,7 +61,7 @@ approaches:
    > [!NOTE]
    > This approach only makes sense if your parallel tasks only consist of a single call to an
    > external program, as opposed to running a block of PowerShell code. Also, the only way to
-   > capture output with is by redirecting to a file.
+   > capture output with this approach is by redirecting to a file.
 
 ```powershell
 function Measure-Parallel {
