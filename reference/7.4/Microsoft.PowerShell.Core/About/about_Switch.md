@@ -1,7 +1,7 @@
 ---
 description: Explains how to use a switch to handle multiple `if` statements.
 Locale: en-US
-ms.date: 05/15/2025
+ms.date: 05/19/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Switch
@@ -20,11 +20,11 @@ variables and the properties of objects.
 
 To check multiple conditions, you can use a `switch` statement. The `switch`
 statement is similar to a series of `if` statements, but it's simpler. The
-`switch` statement lists each condition and an optional action. If a condition
-matches, the action is performed.
+`switch` statement lists each condition and the corresponding action. If a
+condition matches, the action is performed.
 
-The `switch` statement can use the `$_` and `$switch` automatic variables. For
-more information, see [about_Automatic_Variables][03].
+> [!IMPORTANT]
+> The `switch` statement converts all values to strings before comparison.
 
 ## Syntax
 
@@ -37,33 +37,33 @@ switch (<test-expression>) {
 }
 ```
 
-This is similar to the following `if` statements:
+The syntax of a `switch` statement is similar to the following `if` statements:
 
 ```Syntax
-if (<result1-to-be-matched> -eq (<test-expression>)) {<action>}
-if (<result2-to-be-matched> -eq (<test-expression>)) {<action>}
+if ("$(<result1-to-be-matched>)") -eq ("$(<test-expression>)") {<action>}
+if ("$(<result2-to-be-matched>)") -eq ("$(<test-expression>)") {<action>}
 ```
 
-The `<test-expression>` is single expression that's evaluated in expression
-mode to return a value.
-
-The `<result-to-be-matched>` is an expression whose value is compared to the
-input value. Expressions include literal values (strings or numbers),
-variables, and scriptblocks that return a boolean value. For an example, see
+Expressions include literal values (strings or numbers), variables, and
+scriptblocks that return a boolean value. The `switch` statement converts all
+values to strings before comparison. For an example, see
 [Impact of string conversion][02] later in this article.
 
-It's important to understand that the `<result-to-be-matched>` value is on the
-left-hand side of the comparison expression. That means the result of the
-`<test-expression>` is on the right-hand side, which can be converted to the
-type of the left-hand side value for comparison. For more information, see
-[about_Comparison_Operators][05]
+The `<test-expression>` is evaluated in expression mode. If the expression
+returns more than one value, such as an array or other enumerable type, the
+`switch` statement evaluates each enumerated value separately.
+
+The `<result-to-be-matched>` is an expression must resolve to a single value.
+That value is compared to the input value.
 
 The value `default` is reserved for the action used when there are no other
 matches.
 
-The `$_` automatic variable contains the value of the expression passed to the
-`switch` statement and is available for evaluation and use within the scope of
-the `<result-to-be-matched>` statements.
+The `switch` statement can use the `$_` and `$switch` automatic variables. The
+automatic variable contains the value of the expression passed to the `switch`
+statement and is available for evaluation and use within the scope of the
+`<result-to-be-matched>` statements. For more information, see
+[about_Automatic_Variables][03].
 
 The complete `switch` statement syntax is as follows:
 
@@ -109,7 +109,8 @@ conditions. It's equivalent to an `else` clause in an `if` statement. Only one
   file is read a line at a time and evaluated by the `switch` statement. By
   default, the comparison is case-insensitive. The **File** parameter only
   supports one file. If multiple **File** parameters are included, only the
-  last one is used. For more information see [File parameter examples][01].
+  last one is used. For more information see the
+  [**File** parameter examples][01].
 - **Regex** - Performs regular expression matching of the value to the
   condition. If the match clause isn't a string, this parameter is ignored.
   The comparison is case-insensitive. The `$Matches` automatic variable is
@@ -121,7 +122,11 @@ conditions. It's equivalent to an `else` clause in an `if` statement. Only one
 > ignored. Multiple instances of parameters are also permitted. However, only
 > the last parameter listed is used.
 
-## Simple match examples
+## Examples
+
+The following examples demonstrate the use of the `switch` statement.
+
+### Simple match examples
 
 In the following example, the `switch` statement compares the test value `3` to
 each of the conditions. When the test value matches the condition, the action
@@ -159,69 +164,44 @@ It's three.
 Three again.
 ```
 
-To direct the `switch` to stop comparing after a match, use the `break`
-statement. The `break` statement terminates the `switch` statement.
+### Use `break` and `continue` to control the flow
+
+If the value matches multiple conditions, the action for each condition is
+executed. To change this behavior, use the `break` or `continue` keywords.
+
+The `break` keyword stops processing and exits the `switch` statement.
+
+The `continue` keyword stops processing the current value, but continues
+processing any subsequent values.
+
+The following example processes an array of numbers and displays if they're
+odd or even. Negative numbers are skipped with the `continue` keyword. If a
+non-number is encountered, execution is terminated with the `break` keyword.
 
 ```powershell
-switch (3) {
-    1 { "It's one."           }
-    2 { "It's two."           }
-    3 { "It's three."; break  }
-    4 { "It's four."          }
-    3 { "Three again."        }
+switch (1,4,-1,3,"Hello",2,1) {
+    {$_ -lt 0}           { continue }
+    {$_ -isnot [int32]}  { break }
+    {$_ % 2}             { "$_ is Odd" }
+    {-not ($_ % 2)}      { "$_ is Even" }
 }
 ```
 
 ```Output
-It's three.
+1 is Odd
+4 is Even
+3 is Odd
 ```
 
-If the test value is a collection, such as an array, each item in the
-collection is evaluated in the order in which it appears. The following
-examples evaluates 4 and then 2.
+### Impact of string conversion
 
-```powershell
-switch (4, 2) {
-    1 { "It's one."    }
-    2 { "It's two."    }
-    3 { "It's three."  }
-    4 { "It's four."   }
-    3 { "Three again." }
-}
-```
-
-```Output
-It's four.
-It's two.
-```
-
-Any `break` statements apply to the collection, not to each value, as shown
-in the following example. The `switch` statement is terminated by the `break`
-statement in the condition of value 4.
-
-```powershell
-switch (4, 2) {
-    1 { "It's one.";    break }
-    2 { "It's two." ;   break }
-    3 { "It's three." ; break }
-    4 { "It's four." ;  break }
-    3 { "Three again."        }
-}
-```
-
-```Output
-It's four.
-```
-
-## Impact of string conversion
-
-Any unquoted value that's not recognized as a number is treated as a string. To
-avoid unintended string conversion, use script blocks to evaluate the switch
-value.
+All values, both input and the comparison value are converted to strings for
+comparison. To avoid unintended string conversion, use script blocks to
+evaluate the switch value.
 
 ```powershell
 switch ( ([datetime]'1 Jan 1970').DayOfWeek ) {
-    4            { 'The value matches a Thursday.' }
+    4            { 'The integer value matches a Thursday.' }
     "4"          { 'The numeric string matches a Thursday.' }
     "Thursday"   { 'The string value matches a Thursday.' }
     { 4 -eq $_ } { 'The expression matches a Thursday.' }
@@ -242,7 +222,7 @@ statement.
 
 ```powershell
 if (4 -eq ([datetime]'1 Jan 1970').DayOfWeek) {
-    'The value matches a Thursday.'
+    'The integer value matches a Thursday.'
 }
 ```
 
@@ -250,11 +230,42 @@ if (4 -eq ([datetime]'1 Jan 1970').DayOfWeek) {
 The value matches a Thursday.
 ```
 
-## More complex match examples
+In this example, a hashtable is passed to the `switch` statement. The `switch`
+converts the hashtable to a string.
+
+```powershell
+$test = @{
+    Test  = 'test'
+    Test2 = 'test2'
+}
+
+$test.ToString()
+```
+
+```Output
+System.Collections.Hashtable
+```
+
+Notice that the string representation of the hashtable is not the same as the
+value of the **Test** key.
+
+```powershell
+switch -Exact ($test) {
+    'System.Collections.Hashtable' { 'Hashtable string coercion' }
+    'test'                         { 'Hashtable value' }
+}
+```
+
+```Output
+Hashtable string coercion
+```
+
+### Use `switch` to test the values in a hashtable
 
 In this example, the `switch` statement is testing for the type of the value in
-the hashtable. You must use and expression that returns a boolean value to
-select the scriptblock to execute.
+the hashtable. We must enumerate the items in the hashtable before we can test
+the values. To avoid the complications of string conversion, use a script block
+that returns a boolean value to select the action scriptblock to execute.
 
 ```powershell
 $var = @{A = 10; B = 'abc'}
@@ -272,28 +283,7 @@ A + 10 = 20
 B = abc
 ```
 
-In this example, an object that's not a string or numerical data is passed to
-the `switch`. The `switch` performs a string coercion on the object and
-evaluates the outcome.
-
-```powershell
-$test = @{
-    Test  = 'test'
-    Test2 = 'test2'
-}
-
-$test.ToString()
-
-switch -Exact ($test) {
-    'System.Collections.Hashtable' { 'Hashtable string coercion' }
-    'test'                         { 'Hashtable value' }
-}
-```
-
-```Output
-System.Collections.Hashtable
-Hashtable string coercion
-```
+### Use wildcards with `switch`
 
 In this example, there is no matching case so there is no output.
 
@@ -341,6 +331,8 @@ switch -Wildcard ("fourteen") {
 ```Output
 That's too many.
 ```
+
+### Use regular expressions with `switch`
 
 The following example uses the `-Regex` parameter.
 
@@ -400,34 +392,7 @@ switch ((Get-Date 1-Jan-2022), (Get-Date 25-Dec-2021)) {
 }
 ```
 
-If the value matches multiple conditions, the action for each condition is
-executed. To change this behavior, use the `break` or `continue` keywords.
-
-The `break` keyword stops processing and exits the `switch` statement.
-
-The `continue` keyword stops processing the current value, but continues
-processing any subsequent values.
-
-The following example processes an array of numbers and displays if they're
-odd or even. Negative numbers are skipped with the `continue` keyword. If a
-non-number is encountered, execution is terminated with the `break` keyword.
-
-```powershell
-switch (1,4,-1,3,"Hello",2,1) {
-    {$_ -lt 0}           { continue }
-    {$_ -isnot [int32]}  { break }
-    {$_ % 2}             { "$_ is Odd" }
-    {-not ($_ % 2)}      { "$_ is Even" }
-}
-```
-
-```Output
-1 is Odd
-4 is Even
-3 is Odd
-```
-
-## File parameter examples
+### Read the content of a file with `switch`
 
 Using the `switch` statement with the **File** parameter is an efficient way to
 process large files line by line. PowerShell streams the lines of the file to
@@ -450,10 +415,10 @@ switch -Regex -File .\README.md {
 }
 ```
 
-The `<filename>` argument is interpreted as a wildcard expression, but it must
-match only one file. The following example is the same as the previous one
-except it uses a wildcard in the `<filename>` argument. This example works
-because the wildcard pattern matches only one file.
+The `<filename>` argument accepts wildcard expressions, but it must match only
+one file. The following example is the same as the previous one except it uses
+a wildcard in the `<filename>` argument. This example works because the
+wildcard pattern matches only one file.
 
 ```powershell
 switch -Regex -File .\README.* {
@@ -478,16 +443,15 @@ switch -File $fileEscaped { foo { 'Foo' } }
 ## See also
 
 - [about_Break][04]
-- [about_Continue][06]
-- [about_If][07]
-- [about_Script_Blocks][08]
+- [about_Continue][05]
+- [about_If][06]
+- [about_Script_Blocks][07]
 
-<!-- updated link references -->
-[01]: #file-parameter-examples
+<!-- link references -->
+[01]: #read-the-content-of-a-file-with-switch
 [02]: #impact-of-string-conversion
 [03]: about_Automatic_Variables.md
 [04]: about_break.md
-[05]: about_Comparison_Operators.md
-[06]: about_Continue.md
-[07]: about_If.md
-[08]: about_Script_Blocks.md
+[05]: about_Continue.md
+[06]: about_If.md
+[07]: about_Script_Blocks.md
