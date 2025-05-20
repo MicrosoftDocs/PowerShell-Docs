@@ -1,7 +1,6 @@
 ---
 description: SelectionSetName Element for SelectionCondition for CustomControl for View
 ms.date: 08/25/2021
-ms.topic: reference
 title: SelectionSetName Element for SelectionCondition for CustomControl for View
 ---
 # SelectionSetName Element for SelectionCondition for CustomControl for View

@@ -1,7 +1,6 @@
 ---
 description: TableRowEntries Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: TableRowEntries Element
 ---
 # TableRowEntries Element

@@ -1,7 +1,6 @@
 ---
 description: EnumerateCollection Element for ExpressionBinding for Controls for View
 ms.date: 08/23/2021
-ms.topic: reference
 title: EnumerateCollection Element for ExpressionBinding for Controls for View
 ---
 # EnumerateCollection Element for ExpressionBinding for Controls for View

@@ -1,7 +1,6 @@
 ---
 description: Requesting Confirmation from Cmdlets
 ms.date: 09/13/2016
-ms.topic: reference
 title: Requesting Confirmation from Cmdlets
 ---
 # Requesting Confirmation from Cmdlets

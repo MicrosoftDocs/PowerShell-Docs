@@ -1,7 +1,6 @@
 ---
 description: FormatString Element for TableColumnItem for TableControl
 ms.date: 08/23/2021
-ms.topic: reference
 title: FormatString Element for TableColumnItem for TableControl
 ---
 # FormatString Element for TableColumnItem for TableControl

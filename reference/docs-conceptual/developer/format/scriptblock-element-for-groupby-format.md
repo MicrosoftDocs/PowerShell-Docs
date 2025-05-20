@@ -1,7 +1,6 @@
 ---
 description: ScriptBlock Element for GroupBy
 ms.date: 08/24/2021
-ms.topic: reference
 title: ScriptBlock Element for GroupBy
 ---
 # ScriptBlock Element for GroupBy

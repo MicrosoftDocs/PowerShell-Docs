@@ -1,7 +1,6 @@
 ---
 description: AutoSize Element for WideControl
 ms.date: 08/20/2021
-ms.topic: reference
 title: AutoSize Element for WideControl
 ---
 # AutoSize Element for WideControl

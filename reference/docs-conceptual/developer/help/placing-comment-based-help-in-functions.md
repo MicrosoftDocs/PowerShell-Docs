@@ -1,7 +1,6 @@
 ---
 description: Placing Comment-Based Help in Functions
 ms.date: 07/10/2023
-ms.topic: reference
 title: Placing Comment-Based Help in Functions
 ---
 # Placing Comment-Based Help in Functions

@@ -1,7 +1,6 @@
 ---
 description: TableColumnHeader Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: TableColumnHeader Element
 ---
 # TableColumnHeader Element

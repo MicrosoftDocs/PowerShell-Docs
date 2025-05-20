@@ -1,7 +1,6 @@
 ---
 description: Scheduling Jobs with the Windows PowerShell API
 ms.date: 09/13/2016
-ms.topic: reference
 title: Scheduling Jobs with the Windows PowerShell API
 ---
 # Scheduling Jobs with the Windows PowerShell API

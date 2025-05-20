@@ -1,7 +1,6 @@
 ---
 description: Creating multiple runspaces
 ms.date: 09/13/2016
-ms.topic: reference
 title: Creating multiple runspaces
 ---
 # Creating multiple runspaces

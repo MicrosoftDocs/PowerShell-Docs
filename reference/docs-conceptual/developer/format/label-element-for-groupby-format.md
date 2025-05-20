@@ -1,7 +1,6 @@
 ---
 description: Label Element for GroupBy
 ms.date: 08/23/2021
-ms.topic: reference
 title: Label Element for GroupBy
 ---
 # Label Element for GroupBy

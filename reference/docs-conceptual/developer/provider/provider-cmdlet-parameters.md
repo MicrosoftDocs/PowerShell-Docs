@@ -1,7 +1,6 @@
 ---
 description: Provider cmdlet parameters
 ms.date: 09/13/2016
-ms.topic: reference
 title: Provider cmdlet parameters
 ---
 # Provider cmdlet parameters

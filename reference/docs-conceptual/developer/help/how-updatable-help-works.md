@@ -1,7 +1,6 @@
 ---
 description: How Updatable Help Works
 ms.date: 07/10/2023
-ms.topic: reference
 title: How Updatable Help Works
 ---
 # How Updatable Help Works

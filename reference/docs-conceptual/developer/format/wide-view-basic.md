@@ -1,7 +1,6 @@
 ---
 description: Wide View (Basic)
 ms.date: 08/25/2021
-ms.topic: reference
 title: Wide View (Basic)
 ---
 # Wide View (Basic)

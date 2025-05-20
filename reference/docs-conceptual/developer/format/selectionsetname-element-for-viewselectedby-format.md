@@ -1,7 +1,6 @@
 ---
 description: SelectionSetName Element for ViewSelectedBy
 ms.date: 08/25/2021
-ms.topic: reference
 title: SelectionSetName Element for ViewSelectedBy
 ---
 # SelectionSetName Element for ViewSelectedBy

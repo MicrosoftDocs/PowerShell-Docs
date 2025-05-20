@@ -1,7 +1,6 @@
 ---
 description: How to test Updatable Help
 ms.date: 07/10/2023
-ms.topic: reference
 title: How to Test Updatable Help
 ---
 # How to test Updatable Help

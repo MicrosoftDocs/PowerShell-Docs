@@ -1,7 +1,6 @@
 ---
 description: ExpressionBinding Element for CustomItem for Controls for View
 ms.date: 08/23/2021
-ms.topic: reference
 title: ExpressionBinding Element for CustomItem for Controls for View
 ---
 # ExpressionBinding Element for CustomItem for Controls for View

@@ -1,7 +1,6 @@
 ---
 description: ScriptBlock Element for SelectionCondition for Controls for Configuration
 ms.date: 08/24/2021
-ms.topic: reference
 title: ScriptBlock Element for SelectionCondition for Controls for Configuration
 ---
 # ScriptBlock Element for SelectionCondition for Controls for Configuration

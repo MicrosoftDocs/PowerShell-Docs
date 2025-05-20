@@ -1,7 +1,6 @@
 ---
 description: Non-Terminating Errors
 ms.date: 09/13/2016
-ms.topic: reference
 title: Non-Terminating Errors
 ---
 # Non-Terminating Errors

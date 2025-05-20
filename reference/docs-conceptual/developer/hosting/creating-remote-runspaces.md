@@ -1,7 +1,6 @@
 ---
 description: Creating remote runspaces
 ms.date: 09/12/2016
-ms.topic: reference
 title: Creating remote runspaces
 ---
 

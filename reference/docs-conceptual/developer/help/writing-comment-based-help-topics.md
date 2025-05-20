@@ -1,7 +1,6 @@
 ---
 description: Writing Comment-Based Help Topics
 ms.date: 07/10/2023
-ms.topic: reference
 title: Writing Comment-Based Help Topics
 ---
 # Writing Comment-Based Help Topics

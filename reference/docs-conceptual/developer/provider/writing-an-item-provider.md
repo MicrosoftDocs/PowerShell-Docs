@@ -1,7 +1,6 @@
 ---
 description: Writing an item provider
 ms.date: 09/13/2016
-ms.topic: reference
 title: Writing an item provider
 ---
 # Writing an item provider

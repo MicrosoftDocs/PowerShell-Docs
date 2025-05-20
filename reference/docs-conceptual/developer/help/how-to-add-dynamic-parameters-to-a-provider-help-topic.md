@@ -1,7 +1,6 @@
 ---
 description: How to add dynamic parameters to a provider help topic
 ms.date: 07/10/2023
-ms.topic: reference
 title: How to add dynamic parameters to a provider help topic
 ---
 # How to add dynamic parameters to a provider help topic

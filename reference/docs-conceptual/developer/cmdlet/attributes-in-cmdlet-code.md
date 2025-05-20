@@ -1,7 +1,6 @@
 ---
 description: Attributes in Cmdlet Code
 ms.date: 09/13/2016
-ms.topic: reference
 title: Attributes in Cmdlet Code
 ---
 # Attributes in Cmdlet Code

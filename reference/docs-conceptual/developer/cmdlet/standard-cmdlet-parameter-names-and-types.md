@@ -1,7 +1,6 @@
 ---
 description: Standard Cmdlet Parameter Names and Types
 ms.date: 09/13/2016
-ms.topic: reference
 title: Standard Cmdlet Parameter Names and Types
 ---
 # Standard Cmdlet Parameter Names and Types

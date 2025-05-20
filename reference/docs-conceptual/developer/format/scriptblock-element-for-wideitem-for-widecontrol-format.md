@@ -1,7 +1,6 @@
 ---
 description: ScriptBlock Element for WideItem for WideControl
 ms.date: 08/24/2021
-ms.topic: reference
 title: ScriptBlock Element for WideItem for WideControl
 ---
 # ScriptBlock Element for WideItem for WideControl

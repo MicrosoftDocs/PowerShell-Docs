@@ -1,7 +1,6 @@
 ---
 description: Creating an InitialSessionState
 ms.date: 09/13/2016
-ms.topic: reference
 title: Creating an InitialSessionState
 ---
 # Creating an InitialSessionState
@@ -33,28 +32,28 @@ namespace SampleHost
   {
     static void Main(string[] args)
     {
-      // Call InitialSessionState.CreateDefault() to create an empty 
-      // InitialSessionState object, then add the variables that will be 
+      // Call InitialSessionState.CreateDefault() to create an empty
+      // InitialSessionState object, then add the variables that will be
       // available when the runspace is opened.
       InitialSessionState iss = InitialSessionState.CreateDefault();
-      SessionStateVariableEntry var1 = 
+      SessionStateVariableEntry var1 =
         new SessionStateVariableEntry("test1",
                                       "MyVar1",
                                       "Initial session state MyVar1 test");
       iss.Variables.Add(var1);
 
-      SessionStateVariableEntry var2 = 
+      SessionStateVariableEntry var2 =
         new SessionStateVariableEntry("test2",
                                       "MyVar2",
                                       "Initial session state MyVar2 test");
       iss.Variables.Add(var2);
 
-      // Call RunspaceFactory.CreateRunspace(InitialSessionState) to 
+      // Call RunspaceFactory.CreateRunspace(InitialSessionState) to
       // create the runspace where the pipeline is run.
       Runspace rs = RunspaceFactory.CreateRunspace(iss);
       rs.Open();
 
-      // Call PowerShell.Create() to create the PowerShell object, then 
+      // Call PowerShell.Create() to create the PowerShell object, then
       // specify the runspace and pipeline commands.
       PowerShell ps = PowerShell.Create();
       ps.Runspace = rs;

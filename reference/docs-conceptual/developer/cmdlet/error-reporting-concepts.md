@@ -1,7 +1,6 @@
 ---
 description: Error Reporting Concepts
 ms.date: 09/13/2016
-ms.topic: reference
 title: Error Reporting Concepts
 ---
 # Error Reporting Concepts

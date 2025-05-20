@@ -1,7 +1,6 @@
 ---
 description: Host02 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Host02 Sample
 ---
 # Host02 Sample

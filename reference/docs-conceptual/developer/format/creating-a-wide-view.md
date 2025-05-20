@@ -1,7 +1,6 @@
 ---
 description: Creating a Wide View
 ms.date: 03/13/2023
-ms.topic: reference
 title: Creating a Wide View
 ---
 # Creating a Wide View
