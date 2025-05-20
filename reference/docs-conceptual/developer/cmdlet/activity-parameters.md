@@ -16,7 +16,7 @@ The following table lists the recommended names and functionality for activity p
 |**Command**<br>Data type: String|Implement this parameter so the user can specify a command string to run.|
 |**CompatibleVersion**<br>Data type: System.Version object|Implement this parameter so the user can specify the semantics that the cmdlet must be compatible with for compatibility with previous versions.|
 |**Compress**<br>Data type: SwitchParameter|Implement this parameter so that data compression is used when the parameter is specified.|
-|**Compress**<br>Data type: Keyword|Implement this parameter so that the user can specify the algorithm to use for data compression.|
+|**CompressionLevel**<br>Data type: Keyword|Implement this parameter so that the user can specify the algorithm to use for data compression.|
 |**Continuous**<br>Data type: SwitchParameter|Implement this parameter so that data is processed until the user terminates the cmdlet when the parameter is specified. If the parameter is not specified, the cmdlet processes a predefined amount of data and then terminates the operation.|
 |**Create**<br>Data type: SwitchParameter|Implement this parameter to indicate that a resource is created if one does not already exist when the parameter is specified.|
 |**Delete**<br>Data type: SwitchParameter|Implement this parameter so that resources are deleted when the cmdlet has completed its operation when the parameter is specified.|
