@@ -1,7 +1,6 @@
 ---
 description: How to update help files
 ms.date: 07/10/2023
-ms.topic: reference
 title: How to update help files
 ---
 # How to update help files

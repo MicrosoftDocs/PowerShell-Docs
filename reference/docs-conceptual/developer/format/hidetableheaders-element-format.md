@@ -1,7 +1,6 @@
 ---
 description: HideTableHeaders Element
 ms.date: 08/23/2021
-ms.topic: reference
 title: HideTableHeaders Element
 ---
 # HideTableHeaders Element

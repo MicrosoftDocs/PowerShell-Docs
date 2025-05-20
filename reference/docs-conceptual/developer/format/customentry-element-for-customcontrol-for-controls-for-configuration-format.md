@@ -1,7 +1,6 @@
 ---
 description: CustomEntry Element for CustomControl for Controls for Configuration
 ms.date: 08/20/2021
-ms.topic: reference
 title: CustomEntry Element for CustomControl for Controls for Configuration
 ---
 # CustomEntry Element for CustomControl for Controls for Configuration

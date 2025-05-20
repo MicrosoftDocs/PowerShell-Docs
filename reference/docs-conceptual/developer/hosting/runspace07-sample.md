@@ -1,7 +1,6 @@
 ---
 description: Runspace07 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Runspace07 Sample
 ---
 # Runspace07 Sample

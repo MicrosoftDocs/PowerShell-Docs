@@ -1,7 +1,6 @@
 ---
 description: Control Element for Controls for Configuration
 ms.date: 08/20/2021
-ms.topic: reference
 title: Control Element for Controls for Configuration
 ---
 # Control Element for Controls for Configuration

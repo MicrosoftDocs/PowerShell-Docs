@@ -1,7 +1,6 @@
 ---
 description: TypeName Element for EntrySelectedBy for CustomEntry for View
 ms.date: 08/25/2021
-ms.topic: reference
 title: TypeName Element for EntrySelectedBy for CustomEntry for View
 ---
 # TypeName Element for EntrySelectedBy for CustomEntry for View

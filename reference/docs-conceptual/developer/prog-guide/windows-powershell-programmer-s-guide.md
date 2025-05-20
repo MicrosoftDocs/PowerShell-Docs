@@ -1,7 +1,6 @@
 ---
 description: Windows PowerShell Programmer&#39;s Guide
 ms.date: 09/13/2016
-ms.topic: reference
 title: Windows PowerShell Programmer&#39;s Guide
 ---
 # Windows PowerShell Programmer&#39;s Guide

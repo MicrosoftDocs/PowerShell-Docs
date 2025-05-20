@@ -1,7 +1,6 @@
 ---
 description: HelpInfo XML Sample File
 ms.date: 07/10/2023
-ms.topic: reference
 title: HelpInfo XML Sample File
 ---
 # HelpInfo XML Sample File

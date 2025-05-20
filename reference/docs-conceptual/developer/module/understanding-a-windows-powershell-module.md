@@ -1,7 +1,6 @@
 ---
 description: Understanding a Windows PowerShell Module
 ms.date: 09/16/2021
-ms.topic: reference
 title: Understanding a Windows PowerShell Module
 ---
 # Understanding a Windows PowerShell Module

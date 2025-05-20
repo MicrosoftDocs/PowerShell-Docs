@@ -1,7 +1,6 @@
 ---
 description: StopProcessSample04 (C#) Sample Code
 ms.date: 09/13/2016
-ms.topic: reference
 title: StopProcessSample04 (C#) Sample Code
 ---
 # StopProcessSample04 (C#) Sample Code

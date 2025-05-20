@@ -2,7 +2,6 @@
 description: How to use PowerShell in a Docker image.
 ms.date: 03/11/2025
 ms.devlang: powershell
-ms.topic: conceptual
 title: Use PowerShell in Docker
 ---
 

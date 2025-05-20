@@ -1,7 +1,6 @@
 ---
 description: Windows PowerShell Host Quickstart
 ms.date: 01/25/2022
-ms.topic: reference
 no-loc: [AddCommand, AddScript, AddStatement, AddParameter]
 title: Windows PowerShell Host Quickstart
 ---

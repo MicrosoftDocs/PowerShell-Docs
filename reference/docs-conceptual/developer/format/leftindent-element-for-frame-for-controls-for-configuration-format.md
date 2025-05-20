@@ -1,7 +1,6 @@
 ---
 description: LeftIndent Element for Frame for Controls for Configuration
 ms.date: 08/23/2021
-ms.topic: reference
 title: LeftIndent Element for Frame for Controls for Configuration
 ---
 # LeftIndent Element for Frame for Controls for Configuration

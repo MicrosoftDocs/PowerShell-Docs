@@ -1,7 +1,6 @@
 ---
 description: ShowError Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: ShowError Element
 ---
 # ShowError Element

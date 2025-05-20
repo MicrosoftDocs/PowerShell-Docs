@@ -1,7 +1,6 @@
 ---
 description: How to Import Cmdlets Using Modules
 ms.date: 08/28/2019
-ms.topic: reference
 title: How to Import Cmdlets Using Modules
 ---
 

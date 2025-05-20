@@ -1,7 +1,6 @@
 ---
 description: Creating Runspaces
 ms.date: 09/13/2016
-ms.topic: reference
 title: Creating Runspaces
 ---
 # Creating Runspaces

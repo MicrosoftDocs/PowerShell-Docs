@@ -1,7 +1,6 @@
 ---
 description: Cmdlet Input Processing Methods
 ms.date: 09/13/2016
-ms.topic: reference
 title: Cmdlet Input Processing Methods
 ---
 # Cmdlet Input Processing Methods

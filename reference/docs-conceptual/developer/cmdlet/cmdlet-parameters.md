@@ -1,7 +1,6 @@
 ---
 description: Cmdlet Parameters
 ms.date: 09/13/2016
-ms.topic: reference
 title: Cmdlet Parameters
 ---
 # Cmdlet Parameters

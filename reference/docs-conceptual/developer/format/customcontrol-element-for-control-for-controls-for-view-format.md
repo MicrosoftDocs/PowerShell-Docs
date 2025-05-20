@@ -1,7 +1,6 @@
 ---
 description: CustomControl Element for Control for Controls for View
 ms.date: 08/20/2021
-ms.topic: reference
 title: CustomControl Element for Control for Controls for View
 ---
 # CustomControl Element for Control for Controls for View

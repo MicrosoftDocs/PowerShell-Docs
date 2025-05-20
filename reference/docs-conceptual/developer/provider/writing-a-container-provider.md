@@ -1,7 +1,6 @@
 ---
 description: Writing a container provider
 ms.date: 09/13/2016
-ms.topic: reference
 title: Writing a container provider
 ---
 # Writing a container provider

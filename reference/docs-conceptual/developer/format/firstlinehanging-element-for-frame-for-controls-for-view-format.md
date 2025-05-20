@@ -1,7 +1,6 @@
 ---
 description: FirstLineHanging Element for Frame for Controls for View
 ms.date: 08/23/2021
-ms.topic: reference
 title: FirstLineHanging Element for Frame for Controls for View
 ---
 # FirstLineHanging Element for Frame for Controls for View

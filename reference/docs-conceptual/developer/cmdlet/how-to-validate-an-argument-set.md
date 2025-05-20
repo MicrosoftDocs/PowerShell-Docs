@@ -1,7 +1,6 @@
 ---
 description: How to Validate an Argument Set
 ms.date: 09/13/2016
-ms.topic: reference
 title: How to Validate an Argument Set
 ---
 # How to Validate an Argument Set

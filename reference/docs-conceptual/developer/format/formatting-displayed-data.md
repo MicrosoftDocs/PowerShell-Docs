@@ -1,7 +1,6 @@
 ---
 description: Formatting Displayed Data
 ms.date: 03/13/2023
-ms.topic: reference
 title: Formatting Displayed Data
 ---
 # Formatting Displayed Data

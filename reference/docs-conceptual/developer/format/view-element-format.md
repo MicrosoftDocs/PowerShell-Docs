@@ -1,7 +1,6 @@
 ---
 description: View Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: View Element
 ---
 # View Element

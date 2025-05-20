@@ -1,7 +1,6 @@
 ---
 description: WideEntry Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: WideEntry Element
 ---
 # WideEntry Element

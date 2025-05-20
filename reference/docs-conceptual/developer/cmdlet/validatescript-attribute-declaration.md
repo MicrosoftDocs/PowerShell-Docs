@@ -1,7 +1,6 @@
 ---
 description: ValidateScript Attribute Declaration
 ms.date: 09/30/2022
-ms.topic: reference
 title: ValidateScript Attribute Declaration
 ---
 # ValidateScript Attribute Declaration

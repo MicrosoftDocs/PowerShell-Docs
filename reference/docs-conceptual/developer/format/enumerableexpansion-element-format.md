@@ -1,7 +1,6 @@
 ---
 description: EnumerableExpansion Element
 ms.date: 08/23/2021
-ms.topic: reference
 title: EnumerableExpansion Element
 ---
 # EnumerableExpansion Element

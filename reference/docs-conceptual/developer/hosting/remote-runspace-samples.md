@@ -1,7 +1,6 @@
 ---
 description: Remote Runspace Samples
 ms.date: 09/13/2016
-ms.topic: reference
 title: Remote Runspace Samples
 ---
 # Remote Runspace Samples

@@ -1,7 +1,6 @@
 ---
 description: ValidateLength Attribute Declaration
 ms.date: 09/13/2016
-ms.topic: reference
 title: ValidateLength Attribute Declaration
 ---
 # ValidateLength Attribute Declaration

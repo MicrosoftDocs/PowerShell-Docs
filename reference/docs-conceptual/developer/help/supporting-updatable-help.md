@@ -1,7 +1,6 @@
 ---
 description: Supporting Updatable Help
 ms.date: 07/10/2023
-ms.topic: reference
 title: Supporting Updatable Help
 ---
 # Supporting Updatable Help

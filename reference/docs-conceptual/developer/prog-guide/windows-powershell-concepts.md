@@ -1,7 +1,6 @@
 ---
 description: Windows PowerShell Concepts
 ms.date: 10/22/2021
-ms.topic: reference
 title: Windows PowerShell Concepts
 ---
 # Windows PowerShell Concepts

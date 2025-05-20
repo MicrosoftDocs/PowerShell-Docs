@@ -1,7 +1,6 @@
 ---
 description: Advisory Development Guidelines
 ms.date: 10/05/2021
-ms.topic: reference
 title: Advisory Development Guidelines
 ---
 # Advisory Development Guidelines

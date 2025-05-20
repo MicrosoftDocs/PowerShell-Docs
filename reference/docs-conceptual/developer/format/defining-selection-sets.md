@@ -1,7 +1,6 @@
 ---
 description: Defining Selection Sets
 ms.date: 08/23/2021
-ms.topic: reference
 title: Defining Selection Sets
 ---
 # Defining Selection Sets

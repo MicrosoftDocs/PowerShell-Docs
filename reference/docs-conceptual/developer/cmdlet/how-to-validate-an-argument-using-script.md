@@ -1,7 +1,6 @@
 ---
 description: How to validate an argument using a script
 ms.date: 06/11/2024
-ms.topic: reference
 title: How to validate an argument using a script
 ---
 # How to validate an argument using a script

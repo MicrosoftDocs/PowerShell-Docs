@@ -1,7 +1,6 @@
 ---
 description: How to prepare Updatable Help CAB files
 ms.date: 07/10/2023
-ms.topic: reference
 title: How to prepare Updatable Help CAB files
 ---
 # How to prepare Updatable Help CAB files

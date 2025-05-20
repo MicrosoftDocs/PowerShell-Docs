@@ -1,7 +1,6 @@
 ---
 description: TypeName Element for SelectionCondition for Controls for Configuration
 ms.date: 08/25/2021
-ms.topic: reference
 title: TypeName Element for SelectionCondition for Controls for Configuration
 ---
 # TypeName Element for SelectionCondition for Controls for Configuration

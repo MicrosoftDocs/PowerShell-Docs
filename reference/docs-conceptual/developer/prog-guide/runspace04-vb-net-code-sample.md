@@ -1,7 +1,6 @@
 ---
 description: RunSpace04  (VB.NET) Code Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: RunSpace04  (VB.NET) Code Sample
 ---
 # RunSpace04  (VB.NET) Code Sample

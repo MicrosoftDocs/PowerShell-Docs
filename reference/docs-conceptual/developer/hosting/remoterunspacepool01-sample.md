@@ -1,7 +1,6 @@
 ---
 description: RemoteRunspacePool01 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: RemoteRunspacePool01 Sample
 ---
 # RemoteRunspacePool01 Sample

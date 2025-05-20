@@ -1,7 +1,6 @@
 ---
 description: How to Invoke a Cmdlet from Within a Cmdlet
 ms.date: 10/06/2022
-ms.topic: reference
 title: How to Invoke a Cmdlet from Within a Cmdlet
 ---
 # How to Invoke a Cmdlet from Within a Cmdlet

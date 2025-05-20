@@ -1,7 +1,6 @@
 ---
 description: Creating a Cmdlet that Modifies the System
 ms.date: 09/13/2016
-ms.topic: reference
 title: Creating a Cmdlet that Modifies the System
 ---
 # Creating a Cmdlet that Modifies the System

@@ -1,7 +1,6 @@
 ---
 description: How to Create a Windows PowerShell Snap-in
 ms.date: 09/13/2016
-ms.topic: reference
 title: How to Create a Windows PowerShell Snap-in
 ---
 # How to Create a Windows PowerShell Snap-in

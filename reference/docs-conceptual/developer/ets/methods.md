@@ -1,7 +1,6 @@
 ---
 description: Extended Type System class methods
 ms.date: 07/09/2020
-ms.topic: reference
 title: Extended Type System class methods
 ---
 # ETS class methods

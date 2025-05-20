@@ -1,7 +1,6 @@
 ---
 description: Label Element for TableColumnHeader for TableControl
 ms.date: 08/23/2021
-ms.topic: reference
 title: Label Element for TableColumnHeader for TableControl
 ---
 # Label Element for TableColumnHeader for TableControl

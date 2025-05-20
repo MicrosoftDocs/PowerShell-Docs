@@ -1,7 +1,6 @@
 ---
 description: Creating a Windows PowerShell Drive Provider
 ms.date: 09/13/2016
-ms.topic: reference
 title: Creating a Windows PowerShell Drive Provider
 ---
 # Creating a Windows PowerShell Drive Provider

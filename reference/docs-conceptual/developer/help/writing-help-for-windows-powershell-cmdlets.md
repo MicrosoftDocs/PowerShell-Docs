@@ -1,7 +1,6 @@
 ---
 description: Writing Help for PowerShell Cmdlets
 ms.date: 07/10/2023
-ms.topic: reference
 title: Writing Help for PowerShell Cmdlets
 ---
 # Writing Help for PowerShell Cmdlets

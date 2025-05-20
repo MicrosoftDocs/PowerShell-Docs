@@ -1,7 +1,6 @@
 ---
 description: EntrySelectedBy Element for CustomEntry for GroupBy
 ms.date: 08/23/2021
-ms.topic: reference
 title: EntrySelectedBy Element for CustomEntry for GroupBy
 ---
 # EntrySelectedBy Element for CustomEntry for GroupBy
