@@ -1,7 +1,6 @@
 ---
 description: Runspace02 (C#) Code Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Runspace02 (C#) Code Sample
 ---
 # Runspace02 (C#) Code Sample

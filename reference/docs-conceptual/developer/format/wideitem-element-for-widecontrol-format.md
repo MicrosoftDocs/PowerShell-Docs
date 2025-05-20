@@ -1,7 +1,6 @@
 ---
 description: WideItem Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: WideItem Element
 ---
 # WideItem Element for WideControl

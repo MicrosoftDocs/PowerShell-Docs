@@ -1,7 +1,6 @@
 ---
 description: Writing Help for PowerShell Modules
 ms.date: 07/10/2023
-ms.topic: reference
 title: Writing Help for PowerShell Modules
 ---
 # Writing Help for PowerShell Modules

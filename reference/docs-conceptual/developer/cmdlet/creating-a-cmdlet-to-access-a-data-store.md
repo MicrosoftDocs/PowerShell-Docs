@@ -1,7 +1,6 @@
 ---
 description: Creating a Cmdlet to Access a Data Store
 ms.date: 09/13/2016
-ms.topic: reference
 title: Creating a Cmdlet to Access a Data Store
 ---
 # Creating a Cmdlet to Access a Data Store

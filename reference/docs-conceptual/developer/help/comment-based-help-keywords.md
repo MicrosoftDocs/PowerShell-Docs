@@ -1,7 +1,6 @@
 ---
 description: Comment-Based Help Keywords
 ms.date: 07/10/2023
-ms.topic: reference
 no-loc: [FAQ, Function, General, Glossary, Provider, Component, Functionality, Role]
 title: Comment-Based Help Keywords
 ---

@@ -1,7 +1,6 @@
 ---
 description: List View (Labels)
 ms.date: 08/23/2021
-ms.topic: reference
 title: List View (Labels)
 ---
 # List View (Labels)

@@ -1,7 +1,6 @@
 ---
 description: FirstLineIndent Element for Frame for GroupBy
 ms.date: 08/23/2021
-ms.topic: reference
 title: FirstLineIndent Element for Frame for GroupBy
 ---
 # FirstLineIndent Element for Frame for GroupBy

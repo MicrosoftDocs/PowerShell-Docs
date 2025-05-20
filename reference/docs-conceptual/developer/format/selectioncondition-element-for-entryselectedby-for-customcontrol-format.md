@@ -1,7 +1,6 @@
 ---
 description: SelectionCondition Element for EntrySelectedBy for CustomControl
 ms.date: 08/25/2021
-ms.topic: reference
 title: SelectionCondition Element for EntrySelectedBy for CustomControl
 ---
 # SelectionCondition Element for EntrySelectedBy for CustomControl

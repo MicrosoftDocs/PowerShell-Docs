@@ -1,7 +1,6 @@
 ---
 description: Types of Cmdlet Output
 ms.date: 01/18/2019
-ms.topic: reference
 title: Types of Cmdlet Output
 ---
 

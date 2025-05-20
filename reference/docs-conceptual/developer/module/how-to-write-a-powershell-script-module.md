@@ -1,7 +1,6 @@
 ---
 description: How to Write a PowerShell Script Module
 ms.date: 11/21/2019
-ms.topic: reference
 title: How to Write a PowerShell Script Module
 ---
 

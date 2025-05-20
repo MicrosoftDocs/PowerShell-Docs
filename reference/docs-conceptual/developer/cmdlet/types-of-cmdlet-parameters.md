@@ -1,7 +1,6 @@
 ---
 description: Types of Cmdlet Parameters
 ms.date: 02/25/2025
-ms.topic: reference
 title: Types of Cmdlet Parameters
 ---
 # Types of Cmdlet Parameters

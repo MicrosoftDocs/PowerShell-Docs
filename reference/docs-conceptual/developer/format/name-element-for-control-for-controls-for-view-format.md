@@ -1,7 +1,6 @@
 ---
 description: Name Element for Control for Controls for View
 ms.date: 08/23/2021
-ms.topic: reference
 title: Name Element for Control for Controls for View
 ---
 # Name Element for Control for Controls for View

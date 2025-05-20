@@ -1,7 +1,6 @@
 ---
 description: Examples of Comment-based Help
 ms.date: 10/05/2023
-ms.topic: reference
 title: Examples of Comment-based Help
 ---
 

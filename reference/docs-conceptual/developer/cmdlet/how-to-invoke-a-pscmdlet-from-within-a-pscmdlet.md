@@ -1,7 +1,6 @@
 ---
 description: How to invoke a PSCmdlet from within a PSCmdlet
 ms.date: 10/06/2022
-ms.topic: reference
 title: How to invoke a PSCmdlet from within a PSCmdlet
 ---
 # How to invoke a PSCmdlet from within a PSCmdlet

@@ -1,7 +1,6 @@
 ---
 description: How to create the cmdlet help file
 ms.date: 07/10/2023
-ms.topic: reference
 title: How to create the cmdlet help file
 ---
 # How to create the cmdlet help file

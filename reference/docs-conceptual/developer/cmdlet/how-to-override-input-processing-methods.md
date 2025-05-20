@@ -1,7 +1,6 @@
 ---
 description: How to Override Input Processing Methods
 ms.date: 09/13/2016
-ms.topic: reference
 title: How to Override Input Processing Methods
 ---
 # How to Override Input Processing Methods

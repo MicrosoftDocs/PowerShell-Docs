@@ -1,7 +1,6 @@
 ---
 description: How to add input types to a cmdlet help topic
 ms.date: 07/10/2023
-ms.topic: reference
 title: How to add input types to a cmdlet help topic
 ---
 # How to add input types to a cmdlet help topic

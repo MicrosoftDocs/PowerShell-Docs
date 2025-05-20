@@ -1,7 +1,6 @@
 ---
 description: How to Support Jobs
 ms.date: 09/22/2021
-ms.topic: reference
 title: How to Support Jobs
 ---
 # How to Support Jobs

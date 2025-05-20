@@ -1,7 +1,6 @@
 ---
 description: AccessDBProviderSample02
 ms.date: 09/13/2016
-ms.topic: reference
 title: AccessDBProviderSample02
 ---
 # AccessDBProviderSample02

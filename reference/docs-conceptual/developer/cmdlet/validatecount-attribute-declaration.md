@@ -1,7 +1,6 @@
 ---
 description: ValidateCount Attribute Declaration
 ms.date: 09/13/2016
-ms.topic: reference
 title: ValidateCount Attribute Declaration
 ---
 # ValidateCount Attribute Declaration

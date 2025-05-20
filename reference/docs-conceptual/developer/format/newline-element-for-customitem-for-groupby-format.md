@@ -1,7 +1,6 @@
 ---
 description: NewLine Element for CustomItem for GroupBy
 ms.date: 08/23/2021
-ms.topic: reference
 title: NewLine Element for CustomItem for GroupBy
 ---
 # NewLine Element for CustomItem for GroupBy

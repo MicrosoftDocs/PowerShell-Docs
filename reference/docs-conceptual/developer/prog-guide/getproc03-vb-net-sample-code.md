@@ -1,7 +1,6 @@
 ---
 description: GetProc03 (VB.NET) Sample Code
 ms.date: 09/12/2016
-ms.topic: reference
 title: GetProc03 (VB.NET) Sample Code
 ---
 # GetProc03 (VB.NET) Sample Code

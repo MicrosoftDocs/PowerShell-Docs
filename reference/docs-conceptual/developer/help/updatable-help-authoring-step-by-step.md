@@ -1,7 +1,6 @@
 ---
 description: Updatable Help Authoring - Step-by-Step
 ms.date: 07/10/2023
-ms.topic: reference
 title: Updatable Help Authoring - Step-by-Step
 ---
 # Updatable Help Authoring: Step-by-Step

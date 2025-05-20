@@ -1,7 +1,6 @@
 ---
 description: How to Validate the Argument Length
 ms.date: 09/13/2016
-ms.topic: reference
 title: How to Validate the Argument Length
 ---
 # How to Validate the Argument Length

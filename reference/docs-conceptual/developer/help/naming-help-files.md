@@ -1,7 +1,6 @@
 ---
 description: Naming Help files
 ms.date: 07/10/2023
-ms.topic: reference
 title: Naming Help files
 ---
 # Naming Help files

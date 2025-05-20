@@ -1,7 +1,6 @@
 ---
 description: RightIndent Element for Frame for Controls for Configuration
 ms.date: 08/24/2021
-ms.topic: reference
 title: RightIndent Element for Frame for Controls for Configuration
 ---
 # RightIndent Element for Frame for Controls for Configuration

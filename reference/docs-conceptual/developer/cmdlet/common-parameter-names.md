@@ -1,7 +1,6 @@
 ---
 description: Common Parameter Names
 ms.date: 10/04/2023
-ms.topic: reference
 title: Common Parameter Names
 ---
 # Common Parameter Names

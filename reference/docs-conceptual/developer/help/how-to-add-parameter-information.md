@@ -1,7 +1,6 @@
 ---
 description: How to add parameter information
 ms.date: 07/10/2023
-ms.topic: reference
 title: How to add parameter information
 ---
 # How to add parameter information

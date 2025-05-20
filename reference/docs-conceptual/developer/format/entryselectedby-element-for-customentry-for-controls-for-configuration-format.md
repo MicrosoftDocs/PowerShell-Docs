@@ -1,7 +1,6 @@
 ---
 description: EntrySelectedBy Element for CustomEntry for Controls
 ms.date: 08/23/2021
-ms.topic: reference
 title: EntrySelectedBy Element for CustomEntry for Controls
 ---
 # EntrySelectedBy Element for CustomEntry for Controls

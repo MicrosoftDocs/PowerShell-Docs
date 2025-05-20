@@ -1,7 +1,6 @@
 ---
 description: StopProcessSample01 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: StopProcessSample01 Sample
 ---
 # StopProcessSample01 Sample

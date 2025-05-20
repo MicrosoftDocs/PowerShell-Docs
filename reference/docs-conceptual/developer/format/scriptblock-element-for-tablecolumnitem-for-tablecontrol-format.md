@@ -1,7 +1,6 @@
 ---
 description: ScriptBlock Element for TableColumnItem for TableControl
 ms.date: 08/24/2021
-ms.topic: reference
 title: ScriptBlock Element for TableColumnItem for TableControl
 ---
 # ScriptBlock Element for TableColumnItem for TableControl

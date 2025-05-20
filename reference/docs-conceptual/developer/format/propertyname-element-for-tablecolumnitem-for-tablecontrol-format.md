@@ -1,7 +1,6 @@
 ---
 description: PropertyName Element for TableColumnItem for TableControl
 ms.date: 08/24/2021
-ms.topic: reference
 title: PropertyName Element for TableColumnItem for TableControl
 ---
 # PropertyName Element for TableColumnItem for TableControl

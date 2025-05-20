@@ -1,7 +1,6 @@
 ---
 description: How to Add a Cmdlet Description
 ms.date: 07/10/2023
-ms.topic: reference
 title: How to Add a Cmdlet Description
 ---
 # How to Add a Cmdlet Description

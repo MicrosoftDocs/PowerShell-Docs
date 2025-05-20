@@ -1,7 +1,6 @@
 ---
 description: Loading and Exporting Formatting Data
 ms.date: 08/23/2021
-ms.topic: reference
 title: Loading and Exporting Formatting Data
 ---
 # Loading and Exporting Formatting Data

@@ -1,7 +1,6 @@
 ---
 description: SelectionSetName Element for SelectionCondition for Controls for Configuration
 ms.date: 08/25/2021
-ms.topic: reference
 title: SelectionSetName Element for SelectionCondition for Controls for Configuration
 ---
 # SelectionSetName Element for SelectionCondition for Controls for Configuration

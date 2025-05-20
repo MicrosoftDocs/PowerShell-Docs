@@ -1,7 +1,6 @@
 ---
 description: FirstLineHanging Element for Frame for GroupBy
 ms.date: 08/23/2021
-ms.topic: reference
 title: FirstLineHanging Element for Frame for GroupBy
 ---
 # FirstLineHanging Element for Frame for GroupBy

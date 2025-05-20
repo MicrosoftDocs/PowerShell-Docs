@@ -1,7 +1,6 @@
 ---
 description: ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration
 ms.date: 08/23/2021
-ms.topic: reference
 title: ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration
 ---
 # ItemSelectionCondition Element for ExpressionBinding for Controls for Configuration

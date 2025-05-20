@@ -1,7 +1,6 @@
 ---
 description: Defining Default Member Sets for Objects
 ms.date: 09/13/2016
-ms.topic: reference
 title: Defining Default Member Sets for Objects
 ---
 # Defining Default Member Sets for Objects

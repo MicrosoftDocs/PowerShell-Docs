@@ -1,7 +1,6 @@
 ---
 description: Frame Element for CustomItem for Controls for Configuration
 ms.date: 08/23/2021
-ms.topic: reference
 title: Frame Element for CustomItem for Controls for Configuration
 ---
 # Frame Element for CustomItem for Controls for Configuration

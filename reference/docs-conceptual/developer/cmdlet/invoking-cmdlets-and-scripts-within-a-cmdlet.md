@@ -1,7 +1,6 @@
 ---
 description: Invoking Cmdlets and Scripts Within a Cmdlet
 ms.date: 09/13/2016
-ms.topic: reference
 title: Invoking Cmdlets and Scripts Within a Cmdlet
 ---
 # Invoking Cmdlets and Scripts Within a Cmdlet
