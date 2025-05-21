@@ -266,7 +266,7 @@ In this example, the **InputObject** parameter specifies an array that contains 
 Get-Random -InputObject @('a','',$null)
 ```
 
-`Get-Random` returns either `a`, empty string, or `$null`. The empty sting displays as a blank line
+`Get-Random` returns either `a`, empty string, or `$null`. The empty string displays as a blank line
 and `$null` returns to a PowerShell prompt.
 
 ## PARAMETERS
