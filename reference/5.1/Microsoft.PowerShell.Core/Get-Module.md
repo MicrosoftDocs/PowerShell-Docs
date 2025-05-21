@@ -495,7 +495,9 @@ Accept wildcard characters: False
 
 ### -ListAvailable
 
-Lists modules installed in any path in the **PSModulePath** environment variable.
+By default, `Get-Module` only returns the modules that have been imported into the current session.
+With this parameter the command lists modules installed in any path included in the
+**$env:PSModulePath** environment variable.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
