@@ -495,7 +495,7 @@ Accept wildcard characters: False
 
 ### -ListAvailable
 
-Indicates that this cmdlet will list all modules that are currently installed in a path contained in the **PSModulePath** environment variable.
+Lists modules installed in any path in the **PSModulePath** environment variable.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
