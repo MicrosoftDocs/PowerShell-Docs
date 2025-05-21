@@ -495,12 +495,9 @@ Accept wildcard characters: False
 
 ### -ListAvailable
 
-Indicates that this cmdlet gets all installed modules. `Get-Module` gets modules in paths listed in
-the **PSModulePath** environment variable. Without this parameter, `Get-Module` gets only the
-modules that are both listed in the **PSModulePath** environment variable, and that are loaded in
-the current session. **ListAvailable** does not return information about modules that are not found
-in the **PSModulePath** environment variable, even if those modules are loaded in the current
-session.
+By default, `Get-Module` only returns the modules that have been imported into the current session.
+With this parameter the command lists modules installed in any path included in the
+`$env:PSModulePath` environment variable.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

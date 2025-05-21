@@ -1,7 +1,7 @@
 ---
 description: Describes how to write comment-based help content for functions and scripts.
 Locale: en-US
-ms.date: 01/09/2025
+ms.date: 05/21/2025
 no-loc: [.SYNOPSIS, .DESCRIPTION, .PARAMETER, .EXAMPLE, .INPUTS, .OUTPUTS, .NOTES, .LINK, .COMPONENT, .ROLE, .FUNCTIONALITY, .FORWARDHELPTARGETNAME, .FORWARDHELPCATEGORY, .REMOTEHELPRUNSPACE, .EXTERNALHELP]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comment_based_help?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -227,58 +227,54 @@ function Verb-Noun {
 }
 ```
 
-### .EXAMPLE
+### `.EXAMPLE`
 
 A sample command that uses the function or script, optionally followed by
 sample output and a description. Repeat this keyword for each example.
 
-### .INPUTS
+### `.INPUTS`
 
 The .NET types of objects that can be piped to the function or script. You can
-also include a description of the input objects.
+also include a description of the input objects. Repeat this keyword for each
+input type.
 
-### .OUTPUTS
+### `.OUTPUTS`
 
 The .NET type of the objects that the cmdlet returns. You can also include a
-description of the returned objects.
+description of the returned objects. Repeat this keyword for each output type.
 
-### .NOTES
+### `.NOTES`
 
 Additional information about the function or script.
 
-### .LINK
+### `.LINK`
 
-The name of a related topic. The value appears on the line below the ".LINK"
-keyword and must be preceded by a comment symbol `#` or included in the
-comment block.
-
-Repeat the `.LINK` keyword for each related topic.
-
-This content appears in the Related Links section of the help topic.
+The name of a related topic. Repeat this keyword for each related topic. This
+content appears in the Related Links section of the Help topic.
 
 The `.LINK` keyword content can also include a Uniform Resource Identifier
 (URI) to an online version of the same help topic. The online version opens
 when you use the **Online** parameter of `Get-Help`. The URI must begin with
-"http" or "https".
+`http` or `https`.
 
-### .COMPONENT
+### `.COMPONENT`
 
 The name of the technology or feature that the function or script uses, or to
 which it's related. The **Component** parameter of `Get-Help` uses this value
 to filter the search results returned by `Get-Help`.
 
-### .ROLE
+### `.ROLE`
 
 The name of the user role for the help topic. The **Role** parameter of
 `Get-Help` uses this value to filter the search results returned by `Get-Help`.
 
-### .FUNCTIONALITY
+### `.FUNCTIONALITY`
 
 The keywords that describe the intended use of the function. The
 **Functionality** parameter of `Get-Help` uses this value to filter the search
 results returned by `Get-Help`.
 
-### .FORWARDHELPTARGETNAME
+### `.FORWARDHELPTARGETNAME <Command-Name>`
 
 Redirects to the help topic for the specified command. You can redirect users
 to any help topic, including help content for a function, script, cmdlet, or
@@ -288,7 +284,7 @@ provider.
 # .FORWARDHELPTARGETNAME <Command-Name>
 ```
 
-### .FORWARDHELPCATEGORY
+### `.FORWARDHELPCATEGORY`
 
 Specifies the help category of the item in `.FORWARDHELPTARGETNAME`. Valid
 values are `Alias`, `Cmdlet`, `HelpFile`, `Function`, `Provider`, `General`,
@@ -299,7 +295,7 @@ this keyword to avoid conflicts when there are commands with the same name.
 # .FORWARDHELPCATEGORY <Category>
 ```
 
-### .REMOTEHELPRUNSPACE
+### `.REMOTEHELPRUNSPACE <PSSession-variable>`
 
 Specifies a session that contains the help topic. Enter a variable that
 contains a **PSSession** object. This keyword is used by the
@@ -310,7 +306,7 @@ commands.
 # .REMOTEHELPRUNSPACE <PSSession-variable>
 ```
 
-### .EXTERNALHELP
+### `.EXTERNALHELP`
 
 Specifies an XML-based help file for the script or function.
 
