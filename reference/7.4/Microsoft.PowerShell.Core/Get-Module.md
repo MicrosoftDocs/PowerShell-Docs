@@ -498,7 +498,7 @@ Accept wildcard characters: False
 
 By default, `Get-Module` only returns the modules that have been imported into the current session.
 With this parameter the command lists modules installed in any path included in the
-**$env:PSModulePath** environment variable.
+`$env:PSModulePath` environment variable.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
