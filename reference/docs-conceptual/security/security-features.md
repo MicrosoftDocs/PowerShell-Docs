@@ -53,8 +53,8 @@ The Windows Antimalware Scan Interface (AMSI) is an API that allows applications
 an antimalware scanner, such as Windows Defender, to scan for malicious payloads. Beginning with
 PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
 
-PowerShell 7.3 extends the data it sends to AMSI for inspection. It now includes all invocations of
-.NET method members.
+PowerShell 7.3 extends the data it sends to AMSI for inspection. It now includes all .NET method
+invocations.
 
 For more information about AMSI, see [How AMSI helps][09].
 

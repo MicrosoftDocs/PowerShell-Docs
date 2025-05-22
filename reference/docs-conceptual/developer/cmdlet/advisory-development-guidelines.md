@@ -175,9 +175,9 @@ because it can be easily converted to a plain text string. For a full discussion
 [10]: xref:System.Management.Automation.Cmdlet.EndProcessing
 [11]: xref:System.Management.Automation.Cmdlet.ProcessRecord
 [12]: xref:System.Management.Automation.Cmdlet.StopProcessing
-[13]: xref:System.Management.Automation.Cmdlet.WriteError
-[14]: xref:System.Management.Automation.Cmdlet.WriteObject
+[13]: xref:System.Management.Automation.Cmdlet.WriteError%2A
+[14]: xref:System.Management.Automation.Cmdlet.WriteObject%2A
 [15]: xref:System.Management.Automation.PSCredential
 [16]: xref:System.Security.SecureString
 [17]: xref:Microsoft.PowerShell.Management.Get-Process
-[18]: xref:Microsoft.PowerShell.ManagementRemove-Item
+[18]: xref:Microsoft.PowerShell.Management.Remove-Item
