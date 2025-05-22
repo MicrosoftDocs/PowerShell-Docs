@@ -351,7 +351,7 @@ Accept wildcard characters: False
 ### -Module
 
 Specifies modules for which this cmdlet downloads help. Enter one or more module names or name
-patters in a comma-separated list or in a file that has one module name on each line. Wildcard
+patterns in a comma-separated list or in a file that has one module name on each line. Wildcard
 characters are permitted. You can also pipe module objects from the `Get-Module` cmdlet to
 `Save-Help`.
 
