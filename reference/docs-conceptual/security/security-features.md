@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 09/19/2024
+ms.date: 05/22/2025
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -14,7 +14,7 @@ PowerShell loads configuration files and runs scripts. This feature helps preven
 malicious scripts. You can use a Group Policy setting to set execution policies for computers and
 users. Execution policies only apply to the Windows platform.
 
-For more information see [about_Execution_Policies][02].
+For more information, see [about_Execution_Policies][02].
 
 ## Use of the SecureString class
 
@@ -25,16 +25,17 @@ using passwords and rely on other means to authenticate, such as certificates or
 authentication.
 
 PowerShell continues to support the **SecureString** class for backward compatibility. Using a
-**SecureString** is still more secure than using a plain text string. By default, PowerShell doesn't
-show the unprotected value of a **SecureString** object. However, **SecureString** can be easily
-converted to a plain text string. For a full discussion about using **SecureString**, see the
-[System.Security.SecureString class][01] documentation.
+**SecureString** is still more secure than using a plain text string. PowerShell still relies on the
+**SecureString** type to avoid accidentally exposing the contents to the console or in logs. Use
+**SecureString** carefully, because it can be easily converted to a plain text string. For a full
+discussion about using **SecureString**, see the [System.Security.SecureString class][01]
+documentation.
 
 ## Module and script block logging
 
 Module Logging allows you to enable logging for selected PowerShell modules. This setting is
 effective in all sessions on the computer. PowerShell records pipeline execution events for the
-specified modules in the Windows PowerShell log in Event Viewer.
+specified modules in the Windows PowerShell event log.
 
 Script Block Logging enables logging for the processing of commands, script blocks, functions, and
 scripts - whether invoked interactively, or through automation. PowerShell logs this information to
@@ -52,8 +53,8 @@ The Windows Antimalware Scan Interface (AMSI) is an API that allows applications
 an antimalware scanner, such as Windows Defender, to scan for malicious payloads. Beginning with
 PowerShell 5.1, PowerShell running on Windows 10 (and higher) passes all script blocks to AMSI.
 
-PowerShell 7.3 extends the data that's sent to AMSI for inspection. It now includes all invocations
-of .NET method members.
+PowerShell 7.3 extends the data it sends to AMSI for inspection. It now includes all invocations of
+.NET method members.
 
 For more information about AMSI, see [How AMSI helps][09].
 
