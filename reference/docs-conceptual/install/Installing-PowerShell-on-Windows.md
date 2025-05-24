@@ -1,16 +1,12 @@
----
-description: Information about installing PowerShell on Windows
-ms.date: 04/28/2025
+description:PowerShell on Windows
+ms.date: 23/05/2025
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
 
 There are multiple ways to install PowerShell in Windows. Each install method is designed to support
 different scenarios and workflows. Choose the method that best suits your needs.
-
-- [WinGet][14] - Recommended way to install PowerShell on Windows clients
-- [MSI package][11] - Best choice for Windows Servers and enterprise deployment scenarios
-- [ZIP package][15] - Easiest way to "side load" or install multiple versions
+[Windows 10][14] - Recommended way to install PowerShell on Windows clients [Windows 10][11] - Best choice for Windows Servers and enterprise deployment scenarios [Windows 10 ][15] - Easiest way to "side load" or install multiple versions
   - Use this method for Windows Nano Server, Windows IoT, and Arm-based systems
 - [.NET Global tool][10] - A good choice for .NET developers that install and use other global tools
 - [Microsoft Store package][12] - An easy way to install for casual users of PowerShell but has
