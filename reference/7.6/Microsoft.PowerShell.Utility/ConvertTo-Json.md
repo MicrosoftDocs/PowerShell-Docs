@@ -15,9 +15,24 @@ Converts an object to a JSON-formatted string.
 
 ## SYNTAX
 
+### Default (Default)
 ```
 ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
- [-EnumsAsStrings] [-AsArray] [-EscapeHandling <StringEscapeHandling>]
+ [-EnumsAsStrings] [-EscapeHandling <StringEscapeHandling>]
+ [<CommonParameters>]
+```
+
+### Array
+```
+ConvertTo-Json [-InputObject] <Object> -AsArray [-Depth <Int32>] [-Compress]
+ [-EnumsAsStrings] [-EscapeHandling <StringEscapeHandling>]
+ [<CommonParameters>]
+```
+
+### Stream
+```
+ConvertTo-Json [-InputObject] <Object> -AsStream [-Depth <Int32>] [-Compress]
+ [-EnumsAsStrings] [-EscapeHandling <StringEscapeHandling>]
  [<CommonParameters>]
 ```
 
@@ -180,7 +195,23 @@ Outputs the object in array brackets, even if the input is a single object.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: Array
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsStream
+
+Converts each input object to a complete JSON string.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Stream
 Aliases:
 
 Required: False
@@ -304,7 +335,8 @@ You can pipe any object to this cmdlet.
 
 ### System.String
 
-This cmdlet returns a string representing the input object converted to a JSON string.
+This cmdlet returns a string representing the input object(s) converted to a JSON string.
+When AsStream is specified, each object is converted to a complete JSON string.
 
 ## NOTES
 
