@@ -885,7 +885,7 @@ Iterations Test                                 TotalMilliseconds RelativeSpeed
 - [Add-Member][18]
 
 <!-- Link reference definitions -->
-[01]: ../whats-new/what-s-new-in-powershell-75.md#engine-improvements
+[01]: ../../whats-new/what-s-new-in-powershell-75.md#engine-improvements
 [02]: ../../learn/deep-dives/everything-about-hashtable.md
 [03]: ../../learn/deep-dives/everything-about-null.md
 [04]: xref:System.Void
