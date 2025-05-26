@@ -87,25 +87,41 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    > PowerShell in SSH server mode.
 
    > [!NOTE]
-   > The default location of the PowerShell executable is `C:/progra~1/powershell/7/pwsh.exe`. The
-   > location can vary depending on how you installed PowerShell.
-   >
-   > You must use the 8.3 short name for any file paths that contain spaces. There's a bug in
-   > OpenSSH for Windows that prevents spaces from working in subsystem executable paths. For more
-   > information, see this [GitHub issue][09].
-   >
-   > The 8.3 short name for the `Program Files` folder in Windows is usually `Progra~1`. However,
-   > you can use the following command to make sure:
+   > The full path to the PowerShell executable can be found by running:
    >
    > ```powershell
-   > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
-   >   Select-Object EightDotThreeFileName
+   > (Get-Command pwsh).Source
+   >```
+   > 
+   > Due to a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable
+   > paths, you must use a path containing no whitespace.\
+   >  For more information, see this [GitHub issue][09].
+   >
+   > One option is to create a symbolic link to the executable:
+   >
+   > ```powershell
+   > New-Item -ItemType SymbolicLink -Path C:\ProgramData\ssh\ -Name pwsh.exe -Value (Get-Command pwsh.exe).Source
    > ```
    >
+   > This places a symbolic link to the PowerShell executable in the same directory used by the OpenSSH server to
+   > store the host keys and other configuration. The link can be updated if the path to the executable ever changes,
+   > without also needing to update your sshd_config file.
+   >
+   > If you are unable to use a symbolic link, another option is to use DOS "8.3"-style short names for the components
+   > of the path to the PowerShell executable. This requires that the legacy NTFS 8dot3name file system option is
+   > enabled for the system and for the volume on which PowerShell is installed, and an 8.3 name must exist for all
+   > path components. It is inadvisable to enable that option if it is not currently enabled, and doing so may be
+   > restricted by group policy.
+   >
+   > You can use the following command to get the full 8.3 path to pwsh.exe:
+   >
+   > ```powershell
+   > cmd.exe /Q /C "for %I in (`"$((Get-Command pwsh.exe).Source)`") do echo %~sI"
+   > ```
+   >
+   > Example output on a system with PowerShell 7 Preview installed (may not be identical on all systems):
    > ```Output
-   > EightDotThreeFileName
-   > ---------------------
-   > C:\progra~1
+   > C:\PROGRA~1\POWERS~1\7-PREV~1\pwsh.exe
    > ```
 
    Optionally, enable key authentication:
