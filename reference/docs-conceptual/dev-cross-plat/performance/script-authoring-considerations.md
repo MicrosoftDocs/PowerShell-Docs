@@ -113,7 +113,10 @@ $results += Get-SomethingElse
 $results
 ```
 
->[!NOTE] In PowerShell 7.5, array addition has been optimized and no longer creates a new array for each operation. The performance considerations described here should only be used in environments where PowerShell versions prior to 7.5 are in use. For more information, see [What's New in PowerShell 7.5](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-75?view=powershell-7.5#engine-improvements).
+>[!NOTE]
+> In PowerShell 7.5, array addition was optimized and no longer creates a new array for each
+> operation. The performance considerations described here still apply to PowerShell versions
+> prior to 7.5. For more information, see [What's New in PowerShell 7.5][01].
 
 Array addition is inefficient because arrays have a fixed size. Each addition to the array creates
 a new array big enough to hold all elements of both the left and right operands. The elements of
@@ -882,21 +885,22 @@ Iterations Test                                 TotalMilliseconds RelativeSpeed
 - [Add-Member][18]
 
 <!-- Link reference definitions -->
+[01]: ../whats-new/what-s-new-in-powershell-75.md#engine-improvements
 [02]: ../../learn/deep-dives/everything-about-hashtable.md
 [03]: ../../learn/deep-dives/everything-about-null.md
 [04]: xref:System.Void
 [05]: xref:Microsoft.PowerShell.Core.Out-Null
 [06]: xref:System.Collections.Generic.List`1
-[07]: xref:System.Collections.Generic.List`1.Add*
+[07]: xref:System.Collections.Generic.List`1.Add%2A
 [08]: xref:System.String
 [09]: xref:System.Int32
 [10]: xref:System.Object
-[11]: xref:System.Collections.Generic.List`1.ToArray*#system-collections-generic-list-1-toarray
+[11]: xref:System.Collections.Generic.List%601.ToArray%2A#system-collections-generic-list-1-toarray
 [12]: xref:System.Collections.ArrayList
 [13]: /powershell/module/microsoft.powershell.core/about/about_join
 [14]: xref:System.Text.StringBuilder
 [15]: xref:System.IO.StreamReader
-[16]: xref:System.IO.File.ReadLines*
+[16]: xref:System.IO.File.ReadLines%2A
 [17]: xref:Microsoft.PowerShell.Utility.Write-Host
 [18]: xref:Microsoft.PowerShell.Utility.Add-Member
 [19]: /powershell/module/microsoft.powershell.core/about/about_hash_tables#creating-ordered-dictionaries
