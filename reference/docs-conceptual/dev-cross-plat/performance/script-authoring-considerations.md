@@ -113,6 +113,8 @@ $results += Get-SomethingElse
 $results
 ```
 
+>[!NOTE] In PowerShell 7.5, array addition has been optimized and no longer creates a new array for each operation. The performance considerations described here should only be used in environments where PowerShell versions prior to 7.5 are in use. For more information, see [What's New in PowerShell 7.5](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-75?view=powershell-7.5#engine-improvements).
+
 Array addition is inefficient because arrays have a fixed size. Each addition to the array creates
 a new array big enough to hold all elements of both the left and right operands. The elements of
 both operands are copied into the new array. For small collections, this overhead may not matter.
