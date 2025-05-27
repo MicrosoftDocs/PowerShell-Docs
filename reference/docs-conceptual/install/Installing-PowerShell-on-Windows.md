@@ -77,14 +77,14 @@ The installer creates a shortcut in the Windows Start Menu.
 - You can launch PowerShell via the Start Menu or `$Env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
 > [!NOTE]
-> PowerShell 7.4 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
-> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
+> PowerShell 7.5 installs to a new directory and runs side-by-side with Windows PowerShell 5.1.
+> PowerShell 7.5 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
 > versions of PowerShell can be installed side-by-side with other versions of PowerShell.
 >
-> - PowerShell 7.4 is installed to `$Env:ProgramFiles\PowerShell\7`
+> - PowerShell 7.5 is installed to `$Env:ProgramFiles\PowerShell\7`
 > - The `$Env:ProgramFiles\PowerShell\7` folder is added to `$Env:PATH`
 >
-> If you need to run PowerShell 7.4 side-by-side with other versions, use the [ZIP install][15]
+> If you need to run PowerShell 7.5 side-by-side with other versions, use the [ZIP install][15]
 > method to install the other version to a different folder.
 
 ### Support for Microsoft Update in PowerShell 7.2 and newer
@@ -217,7 +217,7 @@ application sandbox. However, changes to the application's root folder are still
 ## Installing a preview version
 
 Preview releases of PowerShell 7 install to `$Env:ProgramFiles\PowerShell\7-preview` so they can be
-run side-by-side with non-preview releases of PowerShell. PowerShell 7.4 is the next preview
+run side-by-side with non-preview releases of PowerShell. PowerShell 7.6 is the next preview
 release.
 
 ## Upgrading an existing installation
