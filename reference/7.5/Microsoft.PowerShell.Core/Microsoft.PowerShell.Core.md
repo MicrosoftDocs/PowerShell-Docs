@@ -37,7 +37,7 @@ Reconnects to disconnected sessions.
 
 ### [Debug-Job](Debug-Job.md)
 
-Debugs a running background, remote, or PowerShell Workflow job.
+Debugs a running background or remote job.
 
 ### [Disable-ExperimentalFeature](Disable-ExperimentalFeature.md)
 
@@ -113,7 +113,7 @@ Gets PowerShell background jobs that are running in the current session.
 
 ### [Get-Module](Get-Module.md)
 
-Gets the modules that have been imported or that can be imported into the current session.
+List the modules imported in the current session or that can be imported from the PSModulePath.
 
 ### [Get-PSHostProcessInfo](Get-PSHostProcessInfo.md)
 
@@ -133,7 +133,7 @@ Gets the registered session configurations on the computer.
 
 ### [Get-PSSubsystem](Get-PSSubsystem.md)
 
-Retrieves information about the subsystems registered in PowerShell. (Experimental Feature)
+Retrieves information about the subsystems registered in PowerShell.
 
 ### [Import-Module](Import-Module.md)
 
@@ -239,6 +239,14 @@ Starts a PowerShell background job.
 
 Stops a PowerShell background job.
 
+### [Switch-Process](Switch-Process.md)
+
+On Linux and macOS, the cmdlet calls the `execv()` function to provide similar behavior as POSIX shells.
+
+### [TabExpansion2](TabExpansion2.md)
+
+A helper function that wraps the `CompleteInput()` method of the **CommandCompletion** class to provide tab completion for PowerShell scripts.
+
 ### [Test-ModuleManifest](Test-ModuleManifest.md)
 
 Verifies that a module manifest file accurately describes the contents of a module.
@@ -257,8 +265,7 @@ Downloads and installs the newest help files on your computer.
 
 ### [Wait-Job](Wait-Job.md)
 
-Suppresses the command prompt until one or all of the PowerShell background jobs running in the
-session are completed.
+Waits until one or all of the PowerShell jobs running in the session are in a terminating state.
 
 ### [Where-Object](Where-Object.md)
 

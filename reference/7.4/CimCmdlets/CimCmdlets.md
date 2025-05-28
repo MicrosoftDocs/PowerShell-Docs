@@ -19,10 +19,6 @@ This module is only available on the Windows platform.
 
 ## CimCmdlets Cmdlets
 
-### [Export-BinaryMiLog](Export-BinaryMiLog.md)
-
-Creates a binary encoded representation of an object or objects and stores it in a file.
-
 ### [Get-CimAssociatedInstance](Get-CimAssociatedInstance.md)
 
 Retrieves the CIM instances that are connected to a specific CIM instance by an association.
@@ -39,10 +35,6 @@ Gets the CIM instances of a class from a CIM server.
 
 Gets the CIM session objects from the current session.
 
-### [Import-BinaryMiLog](Import-BinaryMiLog.md)
-
-Used to re-create the saved objects based on the contents of an export file.
-
 ### [Invoke-CimMethod](Invoke-CimMethod.md)
 
 Invokes a method of a CIM class.
@@ -57,7 +49,7 @@ Creates a CIM session.
 
 ### [New-CimSessionOption](New-CimSessionOption.md)
 
-Specifies advanced options for the `New-CimSession` cmdlet.
+Specifies advanced options for the New-CimSession cmdlet.
 
 ### [Register-CimIndicationEvent](Register-CimIndicationEvent.md)
 
@@ -73,4 +65,4 @@ Removes one or more CIM sessions.
 
 ### [Set-CimInstance](Set-CimInstance.md)
 
-Modifies a CIM instance on a CIM server by calling the **ModifyInstance** method of the CIM class.
+Modifies a CIM instance on a CIM server by calling the ModifyInstance method of the CIM class.
