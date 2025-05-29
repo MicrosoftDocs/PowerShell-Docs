@@ -80,6 +80,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
 
      ```
      Subsystem powershell C:/progra~1/powershell/7/pwsh.exe -sshs
+     ```
 
      > [!NOTE]
      > There is a bug in OpenSSH for Windows that prevents you from using a path with spaces for the
