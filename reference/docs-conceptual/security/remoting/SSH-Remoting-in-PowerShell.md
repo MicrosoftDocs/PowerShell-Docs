@@ -89,7 +89,7 @@ remote computer. And, you must enable **password** or **key-based** authenticati
      > - Use the Windows _8.3-style_ short name for the PowerShell executable path
      > - Create a symbolic link to the PowerShell executable that results in a path without spaces
      >
-     > For more information, see this [GitHub issue][09].
+     > For more information, see [issue #784][09] in the PowerShell/Win32-OpenSSH repository.
 
      You only need to get the 8.3-style name for the segment of the path that contains the space. By
      default PowerShell 7 is installed in `C:\Program Files\PowerShell\7\`. The 8.3-style name for
@@ -410,4 +410,5 @@ GitCommitId                    v6.0.0-alpha.17
 [06]: /windows-server/administration/openssh/openssh_overview
 [07]: /windows-server/administration/openssh/openssh_server_configuration
 [08]: http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html
+[09]: https://github.com/PowerShell/Win32-OpenSSH/issues/784
 [10]: https://ubuntu.com/server/docs/service-openssh
