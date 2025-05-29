@@ -195,7 +195,7 @@ overloads. The first overload has parameters for the dimensions of the cube and
 a flag to indicate whether the method should validate the input.
 
 The second overload only includes the numeric inputs. It calls the first
-overload with `$Static` as `$true`. The second overload gives users a way to
+overload with `$Strict` as `$true`. The second overload gives users a way to
 call the method without always having to define whether to strictly validate
 the input.
 
