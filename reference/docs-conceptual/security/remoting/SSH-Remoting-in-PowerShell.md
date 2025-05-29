@@ -70,51 +70,66 @@ remote computer. And, you must enable **password** or **key-based** authenticati
 
 1. Edit the `sshd_config` file located at `$Env:ProgramData\ssh`.
 
-   Make sure password authentication is enabled:
+   - Make sure password authentication is enabled:
 
-   ```
-   PasswordAuthentication yes
-   ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-   Create the SSH subsystem that hosts a PowerShell process on the remote computer:
+   - Create the SSH subsystem that hosts a PowerShell process on the remote computer:
 
-   ```
-   Subsystem powershell C:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo
-   ```
+     ```
+     Subsystem powershell C:/progra~1/powershell/7/pwsh.exe -sshs
+     ```
 
-   > [!NOTE]
-   > Starting in PowerShell 7.4, you no longer need to use the `-NoLogo` parameter when running
-   > PowerShell in SSH server mode.
+     > [!NOTE]
+     > There is a bug in OpenSSH for Windows that prevents you from using a path with spaces for the
+     > subsystem executable. There are two ways to work around this issue:
+     >
+     > - Use the Windows _8.3-style_ short name for the PowerShell executable path
+     > - Create a symbolic link to the PowerShell executable that results in a path without spaces
+     >
+     > For more information, see [issue #784][09] in the PowerShell/Win32-OpenSSH repository.
 
-   > [!NOTE]
-   > The default location of the PowerShell executable is `C:/progra~1/powershell/7/pwsh.exe`. The
-   > location can vary depending on how you installed PowerShell.
-   >
-   > You must use the 8.3 short name for any file paths that contain spaces. There's a bug in
-   > OpenSSH for Windows that prevents spaces from working in subsystem executable paths. For more
-   > information, see this [GitHub issue][09].
-   >
-   > The 8.3 short name for the `Program Files` folder in Windows is usually `Progra~1`. However,
-   > you can use the following command to make sure:
-   >
-   > ```powershell
-   > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
-   >   Select-Object EightDotThreeFileName
-   > ```
-   >
-   > ```Output
-   > EightDotThreeFileName
-   > ---------------------
-   > C:\progra~1
-   > ```
+     You only need to get the 8.3-style name for the segment of the path that contains the space. By
+     default PowerShell 7 is installed in `C:\Program Files\PowerShell\7\`. The 8.3-style name for
+     `Program Files` should be `progra~1`. You can use the following command to verify the name:
 
-   Optionally, enable key authentication:
+     ```powershell
+     Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
+         Select-Object EightDotThreeFileName
+     ```
 
-   ```
-   PubkeyAuthentication yes
-   ```
+     The 8.3 name is a legacy feature of the NTFS file system that can be disabled. This feature
+     must be enabled for the volume on which PowerShell is installed.
 
-   For more information, see [Managing OpenSSH Keys][05].
+     Alternatively, you can create a symbolic link to the PowerShell executable that results in a
+     path without spaces. This method is preferred because it allows you to update the link if the
+     path to the PowerShell executable ever changes, without also needing to update your
+     `sshd_config` file.
+
+     Use the following command to create a symbolic link to the executable:
+
+     ```powershell
+     $newItemSplat = @{
+          ItemType = 'SymbolicLink'
+          Path = 'C:\ProgramData\ssh\'
+          Name = 'pwsh.exe'
+          Value = (Get-Command pwsh.exe).Source
+     }
+     New-Item @newItemSplat
+     ```
+
+     This command creates the symbolic link in the same directory used by the OpenSSH server to store
+     the host keys and other configuration.
+
+   - Optionally, enable key authentication:
+
+     ```
+     PubkeyAuthentication yes
+     ```
+
+     For more information, see [Managing OpenSSH Keys][05].
 
 1. Restart the **sshd** service.
 
@@ -137,34 +152,29 @@ remote computer. And, you must enable **password** or **key-based** authenticati
 
 1. Edit the `sshd_config` file at location `/etc/ssh`.
 
-   Make sure password authentication is enabled:
+   - Make sure password authentication is enabled:
 
-   ```
-   PasswordAuthentication yes
-   ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-   Optionally, enable key authentication:
+   - Optionally, enable key authentication:
 
-   ```
-   PubkeyAuthentication yes
-   ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
-   For more information about creating SSH keys on Ubuntu, see the manpage for
-   [ssh-keygen][08].
+     For more information about creating SSH keys on Ubuntu, see the manpage for [ssh-keygen][08].
 
-   Add a PowerShell subsystem entry:
+   - Add a PowerShell subsystem entry:
 
-   ```
-   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
-   ```
+     ```
+     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
+     ```
 
-   > [!NOTE]
-   > The default location of the PowerShell executable is `/usr/bin/pwsh`. The location can vary
-   > depending on how you installed PowerShell.
-
-   > [!NOTE]
-   > Starting in PowerShell 7.4, you no longer need to use the `-NoLogo` parameter when running
-   > PowerShell in SSH server mode.
+     > [!NOTE]
+     > The default location of the PowerShell executable is `/usr/bin/pwsh`. The location can vary
+     > depending on how you installed PowerShell.
 
 1. Restart the **ssh** service.
 
@@ -193,31 +203,27 @@ remote computer. And, you must enable **password** or **key-based** authenticati
    sudo nano /private/etc/ssh/sshd_config
    ```
 
-   Make sure password authentication is enabled:
+   - Make sure password authentication is enabled:
 
-   ```
-   PasswordAuthentication yes
-   ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-   Add a PowerShell subsystem entry:
+   - Add a PowerShell subsystem entry:
 
-   ```
-   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo
-   ```
+     ```
+     Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo
+     ```
 
-   > [!NOTE]
-   > The default location of the PowerShell executable is `/usr/local/bin/pwsh`. The location can
-   > vary depending on how you installed PowerShell.
+     > [!NOTE]
+     > The default location of the PowerShell executable is `/usr/local/bin/pwsh`. The location can
+     > vary depending on how you installed PowerShell.
 
-   > [!NOTE]
-   > Starting in PowerShell 7.4, you no longer need to use the `-NoLogo` parameter when running
-   > PowerShell in SSH server mode.
+   - Optionally, enable key authentication:
 
-   Optionally, enable key authentication:
-
-   ```
-   PubkeyAuthentication yes
-   ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
 1. Restart the **sshd** service.
 

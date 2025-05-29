@@ -34,6 +34,10 @@ Deletes the value of a variable.
 
 Compares two sets of objects.
 
+### [ConvertFrom-CliXml](ConvertFrom-CliXml.md)
+
+Converts a CliXml-formatted string to a custom **PSObject**.
+
 ### [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
 Converts object properties in character-separated value (CSV) format into CSV versions of the original objects.
@@ -53,6 +57,10 @@ Converts a SDDL string to a custom object.
 ### [ConvertFrom-StringData](ConvertFrom-StringData.md)
 
 Converts a string containing one or more key and value pairs to a hash table.
+
+### [ConvertTo-CliXml](ConvertTo-CliXml.md)
+
+Converts an object to a CliXml-formatted string.
 
 ### [ConvertTo-Csv](ConvertTo-Csv.md)
 
@@ -194,6 +202,10 @@ Gets active runspaces within a PowerShell host process.
 
 Shows runspace debugging options.
 
+### [Get-SecureRandom](Get-SecureRandom.md)
+
+Gets a random number, or selects objects randomly from a collection.
+
 ### [Get-TraceSource](Get-TraceSource.md)
 
 Gets PowerShell components that are instrumented for tracing.
@@ -240,7 +252,7 @@ Creates table-like custom objects from the items in a character-separated value 
 
 ### [Import-LocalizedData](Import-LocalizedData.md)
 
-Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
+Imports language-specific data into scripts and functions based on the UI culture that's selected for the operating system.
 
 ### [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
 
@@ -316,7 +328,7 @@ Sends output to a printer.
 
 ### [Out-String](Out-String.md)
 
-Outputs input objects as a strings.
+Outputs input objects as a string.
 
 ### [Read-Host](Read-Host.md)
 
@@ -420,7 +432,7 @@ Configures and starts a trace of the specified expression or command.
 
 ### [Unblock-File](Unblock-File.md)
 
-Unblocks files that were downloaded from the Internet.
+Unblocks files that were downloaded from the internet.
 
 ### [Unregister-Event](Unregister-Event.md)
 
@@ -464,7 +476,7 @@ Specifies how PowerShell handles information stream data for a command.
 
 ### [Write-Output](Write-Output.md)
 
-Sends the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console.
+Writes the specified objects to the pipeline.
 
 ### [Write-Progress](Write-Progress.md)
 
