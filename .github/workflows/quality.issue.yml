@@ -2,7 +2,7 @@ name: "Quality Contribution Issues"
 on:
   issues:
     types:
-      - opened
+      about_Experimental_features.md
 
 jobs:
   # Check if the issue is for quality contributions; all other jobs depend on this one.
