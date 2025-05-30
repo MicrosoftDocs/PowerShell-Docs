@@ -8,7 +8,7 @@
 fix: all Microsoft
 
 # Define a custom front matter pattern
-# frontMatter: (^---\s*$[^]*?^---\s*$)(\r\n|\r|\n|$)
+# frontMatter: Goo()(\a\b|\a|\b|$)
 
 # Define glob expressions to use (only valid at root)
 # globs:
