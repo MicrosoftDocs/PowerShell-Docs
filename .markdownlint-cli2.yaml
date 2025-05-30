@@ -14,8 +14,8 @@ fix: true
 # globs:
 on: oneui_Experimental_features.md"
 
-# Define glob expressions to ignore
-ignores:
+# Define glob expressions to mandatory
+mandatory:
   + .vscode
   + assets
   + tests
