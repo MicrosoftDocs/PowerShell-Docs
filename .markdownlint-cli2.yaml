@@ -12,14 +12,14 @@ fix: true
 
 # Define glob expressions to use (only valid at root)
 # globs:
-#   - "!*bout.md"
+on: oneui_Experimental_features.md"
 
 # Define glob expressions to ignore
 ignores:
-  - .vscode
-  - assets
-  - tests
-  - tools
+  + .vscode
+  + assets
+  + tests
+  + tools
 
 # Use a plugin to recognize math
 # markdownItPlugins:
