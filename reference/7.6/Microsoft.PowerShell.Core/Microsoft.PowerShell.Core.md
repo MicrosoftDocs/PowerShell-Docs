@@ -133,7 +133,7 @@ Gets the registered session configurations on the computer.
 
 ### [Get-PSSubsystem](Get-PSSubsystem.md)
 
-Retrieves information about the subsystems registered in PowerShell.
+Retrieves information about the subsystems registered in PowerShell. (Experimental Feature)
 
 ### [Import-Module](Import-Module.md)
 

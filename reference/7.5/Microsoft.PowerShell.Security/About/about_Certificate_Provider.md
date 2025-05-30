@@ -599,7 +599,7 @@ Get-Help Get-ChildItem -Path Cert:
 <!-- link references -->
 [01]: ../../Microsoft.PowerShell.Core/About/about_Providers.md
 [02]: ../../Microsoft.PowerShell.Core/About/about_Signing.md
-[03]: xref:PKI.New-SelfSignedCertificate
+[03]: xref:pki.New-SelfSignedCertificate
 [04]: /windows-server/security/tls/what-s-new-in-tls-ssl-schannel-ssp-overview#BKMK_TrustedIssuers
 [05]: xref:Microsoft.PowerShell.Core.Get-Help
 [06]: xref:Microsoft.PowerShell.Management.Get-ChildItem
