@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 05/06/2025
+ms.date: 06/02/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -11,6 +11,44 @@ community.
 Help us make the documentation better for you. Read the [Contributor's Guide][01] to learn how to
 get started.
 
+<!-- Link references -->
+[01]: contributing/overview.md
+
+## 2025-May
+
+Content updates
+
+- Add new article - [Optimize performance using parallel execution](../dev-cross-plat/performance/parallel-execution.md)
+- Updated release notes for the PowerShell 7.4.10 release
+- Updated release notes for AIShell 1.0.0-preview.4
+- Updated docs for PSResoureGet 1.1.1 release - no supporting MAR
+- Retired PowerShell content for Windows Server 20212/2012r2/MDOP (5338 articles)
+
+GitHub stats
+
+- 27 PRs merged (10 from Community)
+- 32 issues opened (31 from Community)
+- 31 issues closed (30 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| changeworld     |     3      |               |
+| cflanderscpc    |     1      |               |
+| HeyItsGilbert   |     1      |               |
+| dodexahedron    |     1      |               |
+| MaratMussabekov |     1      |               |
+| geeksbsmrt      |     1      |               |
+| SP3269          |     1      |               |
+| ajansveld       |     1      |               |
+| robinmalik      |     1      |               |
+| andreshungbz    |     1      |               |
+| mklement0       |            |       2       |
+
 ## 2025-April
 
 Content updates
@@ -19,13 +57,13 @@ Content updates
 - Refactored documentation of filter functions
 - Documented bugs with CIM/CDXML bugs and PipelineVariable parameter
 
-### Top Community Contributors
-
 GitHub stats
 
 - 24 PRs merged (6 from Community)
 - 23 issues opened (22 from Community)
 - 23 issues closed (23 Community issues closed)
+
+Top Community Contributors
 
 The following people contributed to PowerShell docs this month by submitting pull requests or
 filing issues. Thank you!
@@ -46,13 +84,13 @@ Content updates
 - Tons for quality improvements from surfingoldelephant
   - 38 PRs cleaning up 1505 files
 
-### Top Community Contributors
-
 GitHub stats
 
 - 68 PRs merged (40 from Community)
 - 30 issues opened (28 from Community)
 - 30 issues closed (28 Community issues closed)
+
+Top Community Contributors
 
 The following people contributed to PowerShell docs this month by submitting pull requests or
 filing issues. Thank you!
@@ -73,13 +111,13 @@ Content updates
   - surfingoldelephant - 13 PRs on 497 files
   - ArieHein - 10 PRs on 140 files
 
-### Top Community Contributors
-
 GitHub stats
 
 - 52 PRs merged (29 from Community)
 - 26 issues opened (25 from Community)
 - 28 issues closed (26 Community issues closed)
+
+Top Community Contributors
 
 The following people contributed to PowerShell docs this month by submitting pull requests or
 filing issues. Thank you!
@@ -109,13 +147,13 @@ Updates
 - Special thanks to @ArieHein for his contributions (15 PRs on 234 files) to fix typos and adherence
   to style guidelines.
 
-### Top Community Contributors
-
 GitHub stats
 
 - 74 PRs merged (30 from Community)
 - 32 issues opened (32 from Community)
 - 37 issues closed (37 Community issues closed)
+
+Top Community Contributors
 
 The following people contributed to PowerShell docs this month by submitting pull requests or
 filing issues. Thank you!
@@ -129,5 +167,3 @@ filing issues. Thank you!
 | daniel-brandenburg |     1      |               |
 | o-l-a-v            |     2      |               |
 
-<!-- Link references -->
-[01]: contributing/overview.md
