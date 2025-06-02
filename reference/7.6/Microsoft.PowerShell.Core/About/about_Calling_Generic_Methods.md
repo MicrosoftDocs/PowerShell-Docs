@@ -11,7 +11,7 @@ title: about_Calling_Generic_Methods
 Generics let you tailor a method, class, structure, or interface to the precise
 data type it acts upon. For example, instead of using the
 [System.Collections.Hashtable][01] class, which allows keys and values to be
-of any type, you can use the [System.Collections.Generic.Dictionary%602][02]
+of any type, you can use the [System.Collections.Generic.Dictionary][02]
 generic class and specify the types allowed for the **key** and **value**
 properties. Generics provide increased code reusability and type safety.
 
@@ -22,8 +22,8 @@ overloads, or when the generic method takes no formal parameter. PowerShell can
 fail to resolve the correct method without the explicit generic method
 arguments.
 
-For example, `[array]::Empty<T>()`. The .NET **Array** class has a static,
-generic method `Empty<T>()` that takes no formal parameters.
+For example, `[array]::Empty[T]()`. The .NET **Array** class has a static,
+generic method `Empty[T]()` that takes no formal parameters.
 
 Prior to PowerShell 7.3, to ensure proper method resolution you had to use
 complicated workarounds using .NET reflection. For an example, see Lee Holmes'
@@ -61,10 +61,10 @@ In this example, we create a list of integers then use the
 `System.Linq.Enumerable` class to enumerate the values and transform them to a
 new value.
 
-The variable `$list` is a generic `List<T>` object that can only contain
-integers. `List<T>` is a generic class that allows you to specify the type of
+The variable `$list` is a generic `List[T]` object that can only contain
+integers. `List[T]` is a generic class that allows you to specify the type of
 its members when you create it.
-`[System.Linq.Enumerable]::Select<T1,T2>(T1,T2)` is a generic method that
+`[System.Linq.Enumerable]::Select[T1,T2](T1,T2)` is a generic method that
 require two generic type parameters and two formal value parameters.
 
 ```powershell
