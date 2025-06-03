@@ -21,7 +21,7 @@
 
 - [ ] **Descriptive Title:** This PR's title is a synopsis of the changes it proposes.
 - [ ] **Summary:** This PR's summary describes the scope and intent of the change.
-- [ ] **Contributor's Guide:** I have read the [contributors guide][contrib].
+- [ ] **Contributor's Guide:** I have read the [contributor's guide][contrib].
 - [ ] **Style:** This PR adheres to the [style guide][style].
 
 <!--
