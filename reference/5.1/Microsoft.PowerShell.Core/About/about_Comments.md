@@ -191,7 +191,7 @@ This is <# also not interpreted #> as a comment.
 ```
 
 However, certain PowerShell features are designed to work with strings that
-contain comments. Interpretation of the comment is dependant on the specific
+contain comments. Interpretation of the comment is dependent on the specific
 feature.
 
 ### Regular expression comments
