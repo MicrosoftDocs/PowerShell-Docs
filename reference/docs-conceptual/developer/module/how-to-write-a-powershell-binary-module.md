@@ -92,6 +92,10 @@ The following procedure describes how to create and install a PowerShell binary 
    your module into active memory. If you are using PowerShell 3.0 and later, simply calling the
    name of your module in code will also import it; for more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md).
 
+## Module Initialization and Cleanup Code
+
+If your module needs to do something upon import or removal such as a discovery task or initialization, you can implement the `IModuleAssemblyInitializer` and `IModuleAssemblyCleanup` interfaces. Please note this is discouraged unless absolutely necessary, as to keep PowerShell performant you should lazily load things at the point your cmdlet(s) are called rather than on import.
+
 ## Importing Snap-in Assemblies as Modules
 
 Cmdlets and providers that exist in snap-in assemblies can be loaded as binary modules. When the
