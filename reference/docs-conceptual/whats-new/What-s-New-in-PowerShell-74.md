@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 05/13/2025
+ms.date: 06/16/2025
 ---
 
 # What's New in PowerShell 7.4
 
-PowerShell 7.4.10 includes the following features, updates, and breaking changes. PowerShell 7.4.10
-is built on .NET 8.0.408.
+PowerShell 7.4.11 includes the following features, updates, and breaking changes. PowerShell 7.4.10
+is built on .NET 8.0.411.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
@@ -178,6 +178,8 @@ Updates to `$PSStyle`
 
 Other Engine updates
 
+- Move .NET method invocation logging to after the needed type conversion is done for method
+  arguments ([#25568][25568])
 - Fallback to AppLocker after WldpCanExecuteFile ([#25229][25229])
 - Make PowerShell class not affiliate with Runspace when declaring the `NoRunspaceAffinity`
   attribute ([#18138][18138])
@@ -336,3 +338,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [20371]: https://github.com/PowerShell/PowerShell/pull/20371
 [21529]: https://github.com/PowerShell/PowerShell/pull/21529
 [25229]: https://github.com/PowerShell/PowerShell/pull/25229
+[25568]: https://github.com/PowerShell/PowerShell/pull/25568
