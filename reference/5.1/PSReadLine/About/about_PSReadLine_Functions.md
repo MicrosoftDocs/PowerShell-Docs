@@ -3,7 +3,7 @@ description: >
     This article documents the functions provided by PSReadLine. These functions
     can be bound to keystrokes for easy access and invocation.
 Locale: en-US
-ms.date: 10/10/2023
+ms.date: 06/17/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_functions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Functions
@@ -980,8 +980,8 @@ pressing the `#` key sends 10 `#` characters (`##########`) to the input line.
 Similarly, you can use this with other operations, like `<Delete>` or
 `Left-Arrow`.
 
-- Windows mode: `<Alt+0>`, `<Alt+1>`, `<Alt+2>`, `<Alt+3>`, `<Alt+4>`, `<Alt+5>`,
-  `<Alt+6>`, `<Alt+7>`, `<Alt+8>`, `<Alt+9>`, `<Alt+->`
+- Windows mode: `<Alt+0>`, `<Alt+1>`, `<Alt+2>`, `<Alt+3>`, `<Alt+4>`,
+  `<Alt+5>`, `<Alt+6>`, `<Alt+7>`, `<Alt+8>`, `<Alt+9>`, `<Alt+->`
 - Emacs mode: `<Alt+0>`, `<Alt+1>`, `<Alt+2>`, `<Alt+3>`, `<Alt+4>`, `<Alt+5>`,
   `<Alt+6>`, `<Alt+7>`, `<Alt+8>`, `<Alt+9>`, `<Alt+->`
 - Vi command mode: `<0>`, `<1>`, `<2>`, `<3>`, `<4>`, `<5>`, `<6>`, `<7>`,
@@ -989,11 +989,11 @@ Similarly, you can use this with other operations, like `<Delete>` or
 
 ### InvokePrompt
 
-Attempt to erase the current prompt and call the prompt function to redisplay
+Attempts to erase the current prompt and call the prompt function to redisplay
 the prompt. Useful for custom key handlers that change state. For example,
-change the current directory. This method cannot overwrite a prompt that has
-left the screen buffer. Calls to InvokePrompt with no Y position argument will 
-immediately return if the prompt cannot be overwritten.
+change the current directory. This method can't overwrite a prompt that has
+left the screen buffer. Calls to `InvokePrompt` with no `Y` position argument
+return immediately if the prompt can't be overwritten.
 
 - Function is unbound.
 
