@@ -989,9 +989,11 @@ Similarly, you can use this with other operations, like `<Delete>` or
 
 ### InvokePrompt
 
-Erases the current prompt and calls the prompt function to redisplay the
+Attempt to erase the current prompt and call the prompt function to redisplay the
 prompt. Useful for custom key handlers that change state. For example, change
-the current directory.
+the current directory. This method cannot overwrite a prompt that has left the
+screen buffer. Calls to InvokePrompt with no Y position argument will 
+immediately return if the prompt cannot be overwritten.
 
 - Function is unbound.
 
