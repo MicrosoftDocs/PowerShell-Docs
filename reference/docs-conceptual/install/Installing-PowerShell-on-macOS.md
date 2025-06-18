@@ -1,20 +1,20 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 04/29/2025
+ms.date: 06/18/2025
 title: Installing PowerShell on macOS
 ---
 
 # Installing PowerShell on macOS
 
-PowerShell 7 or higher requires macOS 11 and higher. All packages are available on our GitHub
-[releases][09] page. After the package is installed, run `pwsh` from a terminal. Before installing,
-check the list of [Supported versions][06] below.
+PowerShell 7 or higher requires macOS 13 and higher. All packages are available on the GitHub
+[releases][09] page for PowerShell. After the package is installed, run `pwsh` from a terminal.
+Before installing, check the list of [Supported versions][06].
 
 > [!NOTE]
-> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
-> versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
-> need to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version
-> using the [binary archive][04] method.
+> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. You can
+> install preview versions of PowerShell side-by-side with other versions of PowerShell. If you need
+> to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version using
+> the [binary archive][04] method.
 
 [!INCLUDE [Latest version](../../includes/latest-install.md)]
 
@@ -23,7 +23,7 @@ check the list of [Supported versions][06] below.
 There are several ways to install PowerShell on macOS. Choose one of the following methods:
 
 - Install using [Homebrew][10]. Homebrew is the preferred package manager for macOS.
-- Install PowerShell via [Direct Download][04]
+- Install via [Direct Download][04]
 - Install from [binary archives][03].
 
 If the `brew` command isn't found, you need to install Homebrew following [their instructions][10].
@@ -32,7 +32,7 @@ If the `brew` command isn't found, you need to install Homebrew following [their
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Once `brew` is installed you can install PowerShell.
+Once `brew` is installed, install PowerShell.
 
 The following command installs the latest stable release of PowerShell:
 
@@ -40,7 +40,7 @@ The following command installs the latest stable release of PowerShell:
 brew install --cask powershell
 ```
 
-Finally, verify that your install is working properly:
+Verify the installation is working correctly:
 
 ```sh
 pwsh
@@ -54,15 +54,15 @@ brew upgrade powershell
 ```
 
 > [!NOTE]
-> The commands above can be called from within a PowerShell (pwsh) host, but then the PowerShell
-> shell must be exited and restarted to complete the upgrade and refresh the values shown in
+> You can call the previous commands from within a PowerShell (`pwsh`) session, but then you must
+> restart the PowerShell session to complete the upgrade and refresh the values shown in
 > `$PSVersionTable`.
 
 [brew]: https://brew.sh/
 
 ## Install the latest preview release of PowerShell
 
-After you've installed Homebrew, you can install PowerShell.
+The following command installs the latest preview release of PowerShell:
 
 ```sh
 brew install powershell/tap/powershell-preview
@@ -74,7 +74,8 @@ Run the following command to start the preview version of PowerShell:
 pwsh-preview
 ```
 
-When new versions of PowerShell are released, update Homebrew's formulae and upgrade PowerShell:
+When new preview versions of PowerShell are released, update Homebrew's formulae and upgrade to the
+latest preview version of PowerShell:
 
 ```sh
 brew update
@@ -82,97 +83,119 @@ brew upgrade powershell-preview
 ```
 
 > [!NOTE]
-> The commands above can be called from within a PowerShell (pwsh) host, but then the PowerShell
-> shell must be exited and restarted to complete the upgrade. and refresh the values shown in
+> You can call the previous commands from within a PowerShell (`pwsh`) session, but then you must
+> restart the PowerShell session to complete the upgrade and refresh the values shown in
 > `$PSVersionTable`.
 
 ## Install the latest LTS release of PowerShell
+
+The following command installs the latest LTS release of PowerShell:
 
 ```sh
 brew install powershell/tap/powershell-lts
 ```
 
-You can now verify your install
+Verify your installation:
 
 ```sh
 pwsh-lts
 ```
 
-When new versions of PowerShell are released, run the following command.
+When new LTS versions of PowerShell are released, run the following commands to update Homebrew's
+formulae and upgrade to the latest LTS version of PowerShell:
 
 ```sh
+brew update
 brew upgrade powershell-lts
 ```
 
 > [!NOTE]
-> Whether you use the cask or the tap method, when updating to a newer version of PowerShell, use
-> the same method you used to initially install PowerShell. If you use a different method, opening a
-> new pwsh session will continue to use the older version of PowerShell.
+> When updating to a newer version of PowerShell, use the same method, cask or the tap, that you
+> used to perform the initial install. If you use a different method, opening a new pwsh session
+> continues to use the older version of PowerShell.
 >
-> If you do decide to use different methods, there are ways to correct the issue using the
+> If you decide to use different methods, there are ways to correct the issue using the
 > [Homebrew link method][11].
 
 ## Installation via Direct Download
 
 Starting with version 7.2, PowerShell supports the Apple M-series Arm-based processors. Download the
-install package from the [releases][09] page onto your computer. The links to the current versions
-are:
+install package from the [releases][09] page onto your Mac. The links to the current versions are:
+
+- PowerShell 7.5
+  - Arm64 processors - [powershell-7.5.1-arm64.pkg][22]
+  - x64 processors - [powershell-7.5.1-osx-x64.pkg][24]
 
 - PowerShell 7.4
-  - x64 processors - [powershell-7.4.10-osx-x64.pkg][20]
   - Arm64 processors - [powershell-7.4.10-osx-arm64.pkg][18]
-- PowerShell 7.5
-  - x64 processors - [powershell-7.5.1-osx-x64.pkg][24]
-  - Arm64 processors - [powershell-7.5.1-arm64.pkg][22]
+  - x64 processors - [powershell-7.4.10-osx-x64.pkg][20]
 
-You can double-click the file and follow the prompts, or install it from the terminal using the
-following commands. Change the name of the file to match the file you downloaded.
+There are two ways to install PowerShell using the Direct Download method.
 
-```sh
-sudo installer -pkg ./Downloads/powershell-7.5.1-osx-x64.pkg -target /
-```
+### Using Finder
 
-If you are running on macOS Big Sur 11.5 or higher you may receive the following error message
-when installing the package:
+Install PowerShell using Finder:
 
-> "powershell-7.5.1-osx-x64.pkg" cannot be opened because Apple cannot check it for malicious
+1. Open Finder
+1. Locate the downloaded package
+1. Double-click the file
+1. Follow the prompts
+
+You might receive the following error message when installing the package:
+
+> "powershell-7.5.1-osx-arm64.pkg" cannot be opened because Apple cannot check it for malicious
 > software.
 
-There are two ways to work around this issue:
+To work around this issue using Finder:
 
-Using the Finder
+1. Locate the downloaded package in Finder
+1. Control-click (click while pressing the <kbd>Control (or Ctrl)</kbd> key on the package
+1. Select **Open** from the context menu
 
-1. Find the package in Finder.
-1. Control-click (click while pressing the <kbd>Ctrl</kbd> key) on the package.
-1. Select **Open** from the context menu.
+### Using Terminal
 
-From the command line
+Install PowerShell from the terminal. Change the filename to match the package you downloaded.
 
-1. Run `sudo xattr -rd com.apple.quarantine ./Downloads/powershell-7.5.1-osx-x64.pkg`. If you are using
-   PowerShell 7 or higher, you can use the `Unblock-File` cmdlet. Include the full path to the
-   `.pkg` file.
-1. Install the package as you normally would.
+```sh
+sudo installer -pkg ./Downloads/powershell-7.5.1-osx-arm64.pkg -target /
+```
 
-> [!NOTE]
-> This is a known issue related to package notarization that will be addressed in the future.
+You might receive the following error message when installing the package:
+
+> "powershell-7.5.1-osx-arm64.pkg" cannot be opened because Apple cannot check it for malicious
+> software.
+
+There are a few different ways to work around this issue from the command line:
+
+- Run the `installer` command with the **allowUntrusted** flag:
+
+  ```sh
+  `sudo installer -allowUntrusted -pkg ./Downloads/powershell-7.5.1-osx-arm64.pkg -target /`
+  ```
+
+- Or install the package as you normally would after running one of the following commands:
+
+  - Run `sudo xattr -rd com.apple.quarantine ./Downloads/powershell-7.5.1-osx-arm64.pkg`.
+  - Use the `Unblock-File` cmdlet if you're using PowerShell. Include the full path to the `.pkg`
+    file.
 
 ## Install as a .NET Global tool
 
 If you already have the [.NET Core SDK][01] installed, it's easy to install PowerShell as a
 [.NET Global tool][02].
 
-```
+```sh
 dotnet tool install --global PowerShell
 ```
 
 The dotnet tool installer adds `~/.dotnet/tools` to your `PATH` environment variable. However, the
-currently running shell doesn't have the updated `PATH`. You should be able to start PowerShell from
-a new shell by typing `pwsh`.
+currently running shell doesn't have the updated `PATH`. Start PowerShell from a new shell by typing
+`pwsh`.
 
 ## Binary Archives
 
 PowerShell binary `tar.gz` archives are provided for the macOS platform to enable advanced
-deployment scenarios. When you install using this method you must also manually install any
+deployment scenarios. When you install using this method, you must also manually install any
 dependencies.
 
 > [!NOTE]
@@ -184,22 +207,23 @@ dependencies.
 
 ### Installing binary archives on macOS
 
-Download the install package from the [releases][09] page onto your computer. The links to the
-current versions are:
+Download the install package from the [releases][09] page onto your Mac. The links to the current
+versions are:
+
+- PowerShell 7.5-preview
+  - Arm64 processors - [powershell-7.5.1-osx-arm64.tar.gz][23]
+  - x64 processors - [powershell-7.5.1-osx-x64.tar.gz][25]
 
 - PowerShell 7.4 (LTS)
-  - x64 processors - [powershell-7.4.10-osx-x64.tar.gz][21]
   - Arm64 processors - [powershell-7.4.10-osx-arm64.tar.gz][19]
-- PowerShell 7.5-preview
-  - x64 processors - [powershell-7.5.1-osx-x64.tar.gz][25]
-  - Arm64 processors - [powershell-7.5.1-osx-arm64.tar.gz][23]
+  - x64 processors - [powershell-7.4.10-osx-x64.tar.gz][21]
 
 Use the following commands to install PowerShell from the binary archive. Change the download URL to
 match the version you want to install.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-osx-arm64.tar.gz
 
 # Create the target folder where powershell is placed
 sudo mkdir -p /usr/local/microsoft/powershell/7
@@ -228,11 +252,11 @@ If you installed PowerShell via direct download, PowerShell must be removed manu
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-To remove the additional PowerShell paths, refer to the [paths][05] section in this document and
-remove the paths using `sudo rm`.
+To remove the extra PowerShell paths, refer to the [paths][05] section in this document and remove
+the paths using `sudo rm`.
 
 > [!NOTE]
-> This isn't necessary if you installed with Homebrew.
+> This process isn't necessary if you installed with Homebrew.
 
 ## Paths
 
@@ -244,7 +268,7 @@ remove the paths using `sudo rm`.
 - User modules are read from `~/.local/share/powershell/Modules`
 - Shared modules are read from `/usr/local/share/powershell/Modules`
 - Default modules are read from `$PSHOME/Modules`
-- PSReadLine history are recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- PSReadLine history is recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 PowerShell respects the [XDG Base Directory Specification][26] on macOS.
 
@@ -254,8 +278,8 @@ PowerShell respects the [XDG Base Directory Specification][26] on macOS.
 
 ## Installation support
 
-Microsoft supports the installation methods in this document. There may be other methods of
-installation available from other sources. While those tools and methods may work, Microsoft can't
+Microsoft supports the installation methods in this document. There might be other methods of
+installation available from other sources. While those tools and methods might work, Microsoft can't
 support those methods.
 
 ## Additional Resources
