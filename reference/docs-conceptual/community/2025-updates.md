@@ -21,7 +21,7 @@ Content updates
 - Add new article - [Optimize performance using parallel execution](../dev-cross-plat/performance/parallel-execution.md)
 - Updated release notes for the PowerShell 7.4.10 release
 - Updated release notes for AIShell 1.0.0-preview.4
-- Updated docs for PSResoureGet 1.1.1 release - no supporting MAR
+- Updated docs for PSResoureGet 1.1.1 release - now supporting MAR
 - Retired PowerShell content for Windows Server 20212/2012r2/MDOP (5338 articles)
 
 GitHub stats
