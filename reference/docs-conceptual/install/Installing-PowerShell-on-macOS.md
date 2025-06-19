@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 06/18/2025
+ms.date: 06/19/2025
 title: Installing PowerShell on macOS
 ---
 
@@ -22,9 +22,12 @@ Before installing, check the list of [Supported versions][06].
 
 There are several ways to install PowerShell on macOS. Choose one of the following methods:
 
-- Install using [Homebrew][10]. Homebrew is the preferred package manager for macOS.
-- Install via [Direct Download][04]
+- Install using [Homebrew][27]. Homebrew is the preferred package manager for macOS.
+- Install via [Direct Download][04].
+- Install as [a .NET Global tool][28].
 - Install from [binary archives][03].
+
+## Install using Homebrew
 
 If the `brew` command isn't found, you need to install Homebrew following [their instructions][10].
 
@@ -60,7 +63,7 @@ brew upgrade powershell
 
 [brew]: https://brew.sh/
 
-## Install the latest preview release of PowerShell
+### Install the latest preview release of PowerShell
 
 The following command installs the latest preview release of PowerShell:
 
@@ -87,7 +90,7 @@ brew upgrade powershell-preview
 > restart the PowerShell session to complete the upgrade and refresh the values shown in
 > `$PSVersionTable`.
 
-## Install the latest LTS release of PowerShell
+### Install the latest LTS release of PowerShell
 
 The following command installs the latest LTS release of PowerShell:
 
@@ -192,7 +195,7 @@ The dotnet tool installer adds `~/.dotnet/tools` to your `PATH` environment vari
 currently running shell doesn't have the updated `PATH`. Start PowerShell from a new shell by typing
 `pwsh`.
 
-## Binary Archives
+## Binary archives
 
 PowerShell binary `tar.gz` archives are provided for the macOS platform to enable advanced
 deployment scenarios. When you install using this method, you must also manually install any
@@ -282,7 +285,7 @@ Microsoft supports the installation methods in this document. There might be oth
 installation available from other sources. While those tools and methods might work, Microsoft can't
 support those methods.
 
-## Additional Resources
+## Additional resources
 
 - [Homebrew Web][10]
 - [Homebrew GitHub Repository][12]
@@ -311,3 +314,5 @@ support those methods.
 [24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-osx-x64.pkg
 [25]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-osx-x64.tar.gz
 [26]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[27]: #install-using-homebrew
+[28]: #install-as-a-net-global-tool
