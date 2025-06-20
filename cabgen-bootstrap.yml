@@ -1,7 +1,8 @@
 trigger:
 - live
 
-pr: none # Disable pull request triggers.
+pr:
+- live
 
 resources:
   repositories:
