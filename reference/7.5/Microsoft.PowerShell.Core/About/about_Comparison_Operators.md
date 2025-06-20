@@ -390,7 +390,7 @@ Example:
 
 For best results, the right-hand side of the `-like` and `-notlike` operators
 should be a string literal containing the wildcard expression. PowerShell
-passes the wildcard expression to the wildcard expression parser. To match a one
+passes the wildcard expression to the wildcard expression parser. To match one
 of the wildcard characters (`*`, `?`, or `[ ]`), you must escape it with a
 backtick (`` ` ``) character. For example, to match a literal `?`, use
 `` `? `` in the wildcard expression. If you use an expandable string
