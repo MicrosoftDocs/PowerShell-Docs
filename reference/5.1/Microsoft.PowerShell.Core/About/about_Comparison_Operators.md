@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 04/30/2025
+ms.date: 06/20/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -107,11 +107,11 @@ Example:
 ```powershell
 2 -eq 2                 # Output: True
 2 -eq 3                 # Output: False
-"abc" -eq "abc"         # Output: True
-"abc" -eq "abc", "def"  # Output: False
-"abc" -ne "def"         # Output: True
-"abc" -ne "abc"         # Output: False
-"abc" -ne "abc", "def"  # Output: True
+'abc' -eq 'abc'         # Output: True
+'abc' -eq 'abc', 'def'  # Output: False
+'abc' -ne 'def'         # Output: True
+'abc' -ne 'abc'         # Output: False
+'abc' -ne 'abc', 'def'  # Output: True
 ```
 
 When the left-hand side is a collection, `-eq` returns those members that match
@@ -121,14 +121,14 @@ Example:
 
 ```powershell
 1,2,3 -eq 2             # Output: 2
-"abc", "def" -eq "abc"  # Output: abc
-"abc", "def" -ne "abc"  # Output: def
+'abc', 'def' -eq 'abc'  # Output: abc
+'abc', 'def' -ne 'abc'  # Output: def
 ```
 
 These operators process all elements of the collection. Example:
 
 ```powershell
-"zzz", "def", "zzz" -eq "zzz"
+'zzz', 'def', 'zzz' -eq 'zzz'
 ```
 
 ```output
@@ -165,8 +165,8 @@ class MyFileInfoSet {
     [string]$File
     [int64]$Size
 }
-$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
-$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a = [MyFileInfoSet]@{File = 'C:\Windows\explorer.exe'; Size = 4651032}
+$b = [MyFileInfoSet]@{File = 'C:\Windows\explorer.exe'; Size = 4651032}
 $a -eq $b
 ```
 
@@ -191,8 +191,8 @@ class MyFileInfoSet : System.IEquatable[Object] {
         return ($this.File -eq $obj.File) -and ($this.Size -eq $obj.Size)
     }
 }
-$a = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
-$b = [MyFileInfoSet]@{File = "C:\Windows\explorer.exe"; Size = 4651032}
+$a = [MyFileInfoSet]@{File = 'C:\Windows\explorer.exe'; Size = 4651032}
+$b = [MyFileInfoSet]@{File = 'C:\Windows\explorer.exe'; Size = 4651032}
 $a -eq $b
 ```
 
@@ -270,7 +270,7 @@ Example:
 ```powershell
 $a=5, 6, 7, 8, 9
 
-Write-Output "Test collection:"
+Write-Output 'Test collection:'
 $a
 
 Write-Output "`nMembers greater than 7"
@@ -348,7 +348,7 @@ raise a non-terminating error.
 The matching operators (`-like`, `-notlike`, `-match`, and `-notmatch`) find
 elements that match or don't match a specified pattern. The pattern for `-like`
 and `-notlike` is a wildcard expression (containing `*`, `?`, and `[ ]`), while
-`-match` and `-notmatch` accept a regular expression (Regex).
+`-match` and `-notmatch` accept a regular expression (regex).
 
 The syntax is:
 
@@ -377,15 +377,43 @@ side could be a string containing [wildcards][11].
 Example:
 
 ```powershell
-"PowerShell" -like    "*shell"           # Output: True
-"PowerShell" -notlike "*shell"           # Output: False
-"PowerShell" -like    "Power?hell"       # Output: True
-"PowerShell" -notlike "Power?hell"       # Output: False
-"PowerShell" -like    "Power[p-w]hell"   # Output: True
-"PowerShell" -notlike "Power[p-w]hell"   # Output: False
+'PowerShell' -like    '*shell'           # Output: True
+'PowerShell' -notlike '*shell'           # Output: False
+'PowerShell' -like    'Power?hell'       # Output: True
+'PowerShell' -notlike 'Power?hell'       # Output: False
+'PowerShell' -like    'Power[p-w]hell'   # Output: True
+'PowerShell' -notlike 'Power[p-w]hell'   # Output: False
 
-"PowerShell", "Server" -like "*shell"    # Output: PowerShell
-"PowerShell", "Server" -notlike "*shell" # Output: Server
+'PowerShell', 'Server' -like '*shell'    # Output: PowerShell
+'PowerShell', 'Server' -notlike '*shell' # Output: Server
+```
+
+For best results, the right-hand side of the `-like` and `-notlike` operators
+should be a string literal containing the wildcard expression. PowerShell
+passes the wildcard expression to the wildcard expression parser. To match a one
+of the wildcard characters (`*`, `?`, or `[ ]`), you must escape it with a
+backtick (`` ` ``) character. For example, to match a literal `?`, use
+`` `? `` in the wildcard expression. If you use an expandable string
+expression PowerShell expands the string before passing it to the wildcard
+parser, which results in unescaped characters being sent as wildcards.
+
+```powershell
+# Escaped literals in an expandable string
+PS> "f`?`?"
+f??
+# Escaped literals in a literal string
+PS> 'f`?`?'
+f`?`?
+# Comparison containing 2 wildcards
+PS> 'f??' -like 'f??'
+True
+PS> 'for' -like 'f??'
+True
+# Comparison containing literal '?' characters
+PS> 'f??' -like 'f`?`?'
+True
+PS> 'for' -like 'f`?`?'
+False
 ```
 
 ### -match and -notmatch
@@ -399,11 +427,11 @@ Scalar examples:
 
 ```powershell
 # Partial match test, showing how differently -match and -like behave
-"PowerShell" -match 'shell'        # Output: True
-"PowerShell" -like  'shell'        # Output: False
+'PowerShell' -match 'shell'        # Output: True
+'PowerShell' -like  'shell'        # Output: False
 
 # Regex syntax test
-"PowerShell" -match    '^Power\w+' # Output: True
+'PowerShell' -match    '^Power\w+' # Output: True
 'bag'        -notmatch 'b[iou]g'   # Output: True
 ```
 
@@ -413,16 +441,16 @@ collection.
 Collection examples:
 
 ```powershell
-"PowerShell", "Super PowerShell", "Power's hell" -match '^Power\w+'
+'PowerShell', 'Super PowerShell', 'Power's hell' -match '^Power\w+'
 # Output: PowerShell
 
-"Rhell", "Chell", "Mel", "Smell", "Shell" -match "hell"
+'Rhell', 'Chell', 'Mel', 'Smell', 'Shell' -match 'hell'
 # Output: Rhell, Chell, Shell
 
-"Bag", "Beg", "Big", "Bog", "Bug"  -match 'b[iou]g'
+'Bag', 'Beg', 'Big', 'Bog', 'Bug'  -match 'b[iou]g'
 #Output: Big, Bog, Bug
 
-"Bag", "Beg", "Big", "Bog", "Bug"  -notmatch 'b[iou]g'
+'Bag', 'Beg', 'Big', 'Bog', 'Bug'  -notmatch 'b[iou]g'
 #Output: Bag, Beg
 ```
 
@@ -477,7 +505,7 @@ operator invocation using a condition statement.
 Example:
 
 ```powershell
-if ("<version>1.0.0</version>" -match '<version>(.*?)</version>') {
+if ('<version>1.0.0</version>' -match '<version>(.*?)</version>') {
     $Matches
 }
 ```
@@ -515,8 +543,8 @@ sensitive, use `-creplace`. To make it explicitly case-insensitive, use
 Examples:
 
 ```powershell
-"book" -ireplace "B", "C" # Case insensitive
-"book" -creplace "B", "C" # Case-sensitive; hence, nothing to replace
+'book' -ireplace 'B', 'C' # Case insensitive
+'book' -creplace 'B', 'C' # Case-sensitive; hence, nothing to replace
 ```
 
 ```Output
@@ -561,7 +589,7 @@ For example:
 ```powershell
 $1 = 'Goodbye'
 
-'Hello World' -replace '(\w+) \w+', "$1 Universe"
+'Hello World' -replace '(\w+) \w+', '$1 Universe'
 # Output: Goodbye Universe
 
 'Hello World' -replace '(\w+) \w+', '$1 Universe'
@@ -586,7 +614,7 @@ When the `<input>` to the `-replace` operator is a collection, PowerShell
 applies the replacement to every value in the collection. For example:
 
 ```powershell
-"B1","B2","B3","B4","B5" -replace "B", 'a'
+'B1','B2','B3','B4','B5' -replace 'B', 'a'
 a1
 a2
 a3
@@ -619,20 +647,20 @@ elements in the set. `-notcontains` returns False instead.
 Examples:
 
 ```powershell
-"abc", "def" -contains "def"                  # Output: True
-"abc", "def" -notcontains "def"               # Output: False
-"Windows", "PowerShell" -contains "Shell"     # Output: False
-"Windows", "PowerShell" -notcontains "Shell"  # Output: True
-"abc", "def", "ghi" -contains "abc", "def"    # Output: False
-"abc", "def", "ghi" -notcontains "abc", "def" # Output: True
+'abc', 'def' -contains 'def'                  # Output: True
+'abc', 'def' -notcontains 'def'               # Output: False
+'Windows', 'PowerShell' -contains 'Shell'     # Output: False
+'Windows', 'PowerShell' -notcontains 'Shell'  # Output: True
+'abc', 'def', 'ghi' -contains 'abc', 'def'    # Output: False
+'abc', 'def', 'ghi' -notcontains 'abc', 'def' # Output: True
 ```
 
 More complex examples:
 
 ```powershell
-$DomainServers = "ContosoDC1", "ContosoDC2", "ContosoFileServer",
-                 "ContosoDNS", "ContosoDHCP", "ContosoWSUS"
-$thisComputer  = "ContosoDC2"
+$DomainServers = 'ContosoDC1', 'ContosoDC2', 'ContosoFileServer',
+                 'ContosoDNS', 'ContosoDHCP', 'ContosoWSUS'
+$thisComputer  = 'ContosoDC2'
 
 $DomainServers -contains $thisComputer
 # Output: True
@@ -643,13 +671,13 @@ value to its string representation before comparing it to the left-hand side
 collection.
 
 ```powershell
-$a = "abc", "def"
-"abc", "def", "ghi" -contains $a # Output: False
+$a = 'abc', 'def'
+'abc', 'def', 'ghi' -contains $a # Output: False
 
 # The following statements are equivalent
-$a, "ghi" -contains $a           # Output: True
-"$a", "ghi" -contains $a         # Output: True
-"abc def", "ghi" -contains $a    # Output: True
+$a, 'ghi' -contains $a           # Output: True
+'$a', 'ghi' -contains $a         # Output: True
+'abc def', 'ghi' -contains $a    # Output: True
 ```
 
 ### -in and -notin
@@ -670,20 +698,20 @@ The following examples do the same thing that the examples for `-contains` and
 `-notcontains` do, but they're written with `-in` and `-notin` instead.
 
 ```powershell
-"def" -in "abc", "def"                  # Output: True
-"def" -notin "abc", "def"               # Output: False
-"Shell" -in "Windows", "PowerShell"     # Output: False
-"Shell" -notin "Windows", "PowerShell"  # Output: True
-"abc", "def" -in "abc", "def", "ghi"    # Output: False
-"abc", "def" -notin "abc", "def", "ghi" # Output: True
+'def' -in 'abc', 'def'                  # Output: True
+'def' -notin 'abc', 'def'               # Output: False
+'Shell' -in 'Windows', 'PowerShell'     # Output: False
+'Shell' -notin 'Windows', 'PowerShell'  # Output: True
+'abc', 'def' -in 'abc', 'def', 'ghi'    # Output: False
+'abc', 'def' -notin 'abc', 'def', 'ghi' # Output: True
 ```
 
 More complex examples:
 
 ```powershell
-$DomainServers = "ContosoDC1", "ContosoDC2", "ContosoFileServer",
-                 "ContosoDNS", "ContosoDHCP", "ContosoWSUS"
-$thisComputer  = "ContosoDC2"
+$DomainServers = 'ContosoDC1', 'ContosoDC2', 'ContosoFileServer',
+                 'ContosoDNS', 'ContosoDHCP', 'ContosoWSUS'
+$thisComputer  = 'ContosoDC2'
 
 $thisComputer -in $DomainServers
 # Output: True
@@ -694,13 +722,13 @@ value to its string representation before comparing it to the right-hand side
 collection.
 
 ```powershell
-$a = "abc", "def"
-$a -in "abc", "def", "ghi" # Output: False
+$a = 'abc', 'def'
+$a -in 'abc', 'def', 'ghi' # Output: False
 
 # The following statements are equivalent
-$a -in $a, "ghi"           # Output: True
-$a -in "$a", "ghi"         # Output: True
-$a -in "abc def", "ghi"    # Output: True
+$a -in $a, 'ghi'           # Output: True
+$a -in '$a', 'ghi'         # Output: True
+$a -in 'abc def', 'ghi'    # Output: True
 ```
 
 ## Type comparison
@@ -719,7 +747,7 @@ Example:
 
 ```powershell
 $a = 1
-$b = "1"
+$b = '1'
 $a -is [int]           # Output: True
 $a -is $b.GetType()    # Output: False
 $b -isnot [int]        # Output: True

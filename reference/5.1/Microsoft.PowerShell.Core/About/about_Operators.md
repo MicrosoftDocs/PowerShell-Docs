@@ -50,7 +50,7 @@ determine whether they're equal.
 
 The comparison operators also include operators that find or replace patterns
 in text. The (`-match`, `-notmatch`, `-replace`) operators use regular
-expressions, and (`-like`, `-notlike`) use wildcards like `*`.
+expressions, and (`-like`, `-notlike`) use wildcards like `*` and `?`.
 
 Containment comparison operators determine whether a test value appears in a
 reference set (`-in`, `-notin`, `-contains`, `-notcontains`).
