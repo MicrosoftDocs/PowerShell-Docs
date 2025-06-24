@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 04/25/2025
+ms.date: 06/16/2025
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.1 includes the following features, updates, and breaking changes. PowerShell
-7.5 is built on .NET 9.0.203 release.
+PowerShell 7.5.2 includes the following features, updates, and breaking changes. PowerShell
+7.5 is built on .NET 9.0.301 release.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
@@ -115,9 +115,16 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
   data first ([#24236][24236]) (Thanks @MartinGC94)
 - Add `-Force` parameter to `Resolve-Path` and `Convert-Path` cmdlets to support wildcard hidden
   files [#20981][20981] (Thanks @ArmaanMcleod!)
+- Set standard handles explicitly when starting a process with `-NoNewWindow` ([#25324][25324])
+- Make inherited protected internal instance members accessible in class scope. ([#25547][25547])
+  (Thanks @mawosoft!)
+- Remove the old fuzzy suggestion and fix the local script file name suggestion ([#25330][25330])
+- Fix `PSMethodInvocationConstraints.GetHashCode` method ([#25306][25306]) (Thanks @crazyjncsu!)
 
 ## Engine improvements
 
+- Move .NET method invocation logging to after the needed type conversion is done for method
+  arguments ([#25357][25357])
 - Fallback to AppLocker after `WldpCanExecuteFile` ([#25305][25305])
 - Explicitly start and stop ANSI Error Color ([#24065][24065]) (Thanks @JustinGrote!)
 - Improve .NET overload definition of generic methods ([#21326][21326]) (Thanks @jborean93!)
@@ -336,3 +343,8 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [24236]: https://github.com/PowerShell/PowerShell/pull/24236
 [24749]: https://github.com/PowerShell/PowerShell/issues/24749
 [25305]: https://github.com/PowerShell/PowerShell/pull/25305
+[25306]: https://github.com/PowerShell/PowerShell/pull/25306
+[25324]: https://github.com/PowerShell/PowerShell/pull/25324
+[25330]: https://github.com/PowerShell/PowerShell/pull/25330
+[25357]: https://github.com/PowerShell/PowerShell/pull/25357
+[25547]: https://github.com/PowerShell/PowerShell/pull/25547
