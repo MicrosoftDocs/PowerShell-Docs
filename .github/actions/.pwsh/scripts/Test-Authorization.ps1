@@ -69,7 +69,8 @@ param(
   [Parameter(Mandatory, ParameterSetName='Path')]
   [string[]]$TargetPath,
   [ValidateSet('Admin', 'Maintain', 'Pull', 'Push', 'Triage')]
-  [string[]]$ValidPermissions = @('Admin', 'Maintain')
+  [string[]]$ValidPermissions = @('Admin', 'Maintain'),
+  [string[]]$AuthorizedAccounts
 )
 
 begin {
@@ -101,6 +102,10 @@ begin {
       Console = Format-ConsoleStyle -Text $User -DefinedStyle UserName
       Markdown = "``$User``"
     }
+    AuthorizedAccounts = @{
+      Console = Format-ConsoleStyle -Text 'AuthorizedAccounts' -DefinedStyle Success
+      Markdown = '`AuthorizedAccounts`'
+    }
   }
   if (![string]::IsNullOrEmpty($TargetBranch)) {
     $ConsoleBranch = Format-ConsoleStyle -Text $TargetBranch -StyleComponent $TargetStyle
@@ -123,6 +128,19 @@ begin {
 }
 
 process {
+  if ($AuthorizedAccounts.Count -gt 0 -and $User -in $AuthorizedAccounts) {
+    $template = "Account {0} is explicitly permitted per the {1} parameter."
+    $message  = @{
+      summary = ($template -f $Texts.Author.Markdown, $Texts.AuthorizedAccounts.Markdown)
+      console = ($template -f $Texts.Author.Console,  $Texts.AuthorizedAccounts.Console)
+    }
+    $null = $Summary.AppendLine('## Authorization').AppendLine()
+    $null = $Summary.AppendLine($message.summary).AppendLine()
+    # Console Logging
+    $message.console
+
+    return
+  }
   try {
     $Permissions = Get-AuthorPermission -Owner $Owner -Repo $Repo -Author $User
   } catch {
@@ -149,7 +167,7 @@ process {
     "$Prefix`t$Setting"
   }
   #endregion Permission Retrieval Messaging
-  
+
   $null = $Summary.AppendLine('## Result').AppendLine()
 
   # Check for authorization; if the user has any of the valid permissions, they
