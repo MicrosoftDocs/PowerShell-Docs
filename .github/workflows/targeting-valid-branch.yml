@@ -23,3 +23,4 @@ jobs:
         uses: ./.github/actions/verification/authorization/v1
         with:
           token: ${{ github.token }}
+          authorized_accounts: learn-build-service-prod[bot]

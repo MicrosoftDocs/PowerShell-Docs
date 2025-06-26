@@ -29,6 +29,25 @@
         return $Parameters
       }
     }
+    @{
+      Name = 'AuthorizedAccounts'
+      Type = 'String[]'
+      IfNullOrEmpty = {
+          param($ErrorTarget)
+
+          # This parameter is optional, so don't error.
+      }
+      Process = {
+        param($Parameters, $Value, $ErrorTarget)
+
+        [string[]]$SpecifiedAccounts = $Value -split ','
+        if ($SpecifiedAccounts.Count -gt 0) {
+          $Parameters.AuthorizedAccounts = $SpecifiedAccounts
+          Write-HostParameter -Name AuthorizedAccounts -Value $Parameters.AuthorizedAccounts
+        }
+        return $Parameters
+      }
+    }
 
     @{
       Name = 'Permissions'
