@@ -40,16 +40,10 @@ pressing the <kbd>F2</kbd> key. You can also use the **PredictionViewStyle** par
 To use Predictive IntelliSense you must have a newer version of **PSReadLine** installed. For best
 results, install the latest version of the module.
 
-(Recommended) Install **PSReadLine** using the new [PSResourceGet][05] module:
+Install **PSReadLine** using the [Microsoft.PowerShell.PSResourceGet][05] module:
 
 ```powershell
 Install-PSResource -Name PSReadLine
-```
-
-Install **PSReadLine** using the classic **PowerShellGet**:
-
-```powershell
-Install-Module -Name PSReadLine
 ```
 
 **PSReadLine** can be installed in Windows PowerShell 5.1 or in PowerShell 7 or higher. To use
