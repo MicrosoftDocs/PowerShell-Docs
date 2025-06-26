@@ -40,13 +40,7 @@ pressing the <kbd>F2</kbd> key. You can also use the **PredictionViewStyle** par
 To use Predictive IntelliSense you must have a newer version of **PSReadLine** installed. For best
 results, install the latest version of the module.
 
-To install **PSReadLine** using **PowerShellGet**:
-
-```powershell
-Install-Module -Name PSReadLine
-```
-
-Or install using the new [PowerShellGet v3][05] module:
+Install **PSReadLine** using the [Microsoft.PowerShell.PSResourceGet][05] module:
 
 ```powershell
 Install-PSResource -Name PSReadLine
@@ -162,7 +156,7 @@ For more information, see [How to create a command-line predictor][02].
 [02]: /powershell/scripting/dev-cross-plat/create-cmdline-predictor
 [03]: https://techcommunity.microsoft.com/t5/azure-tools-blog/announcing-general-availability-of-az-tools-predictor/ba-p/3297956
 [04]: https://www.powershellgallery.com/packages/CompletionPredictor
-[05]: https://www.powershellgallery.com/packages/PowerShellGet/3.0.14-beta14
+[05]: https://www.powershellgallery.com/packages/Microsoft.PowerShell.PSResourceGet
 [06]: media/using-predictors/completion-predictor.gif
 [07]: media/using-predictors/predictor-inline-1.png
 [08]: media/using-predictors/predictor-listview-1.png
