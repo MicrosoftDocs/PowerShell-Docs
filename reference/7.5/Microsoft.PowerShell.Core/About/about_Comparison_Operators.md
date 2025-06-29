@@ -612,7 +612,7 @@ For example:
 ```powershell
 $1 = 'Goodbye'
 
-'Hello World' -replace '(\w+) \w+', '$1 Universe'
+'Hello World' -replace '(\w+) \w+', "$1 Universe"
 # Output: Goodbye Universe
 
 'Hello World' -replace '(\w+) \w+', '$1 Universe'
