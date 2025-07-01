@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 10/18/2023
+ms.date: 07/01/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unprotect-CmsMessage
@@ -144,6 +144,9 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeContext
+
+Determines whether to include the decrypted content in its original context, rather than output the
+decrypted content only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
