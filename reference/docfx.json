@@ -22,8 +22,8 @@
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.6", "src": "7.6" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.6", "src": "7.6" },
 
-      { "dest": "scripting", "files": [ "**/*.md" ], "src": "virtual-directory" },
-      { "dest": "module", "files": [ "**/*.md" ], "src": "virtual-directory-module" }
+      { "dest": "scripting", "files": [ "**/*.yml" ], "src": "virtual-directory" },
+      { "dest": "module", "files": [ "**/*.yml" ], "src": "virtual-directory-module" }
     ],
     "dest": "pscore-reference",
     "externalReference": [],
