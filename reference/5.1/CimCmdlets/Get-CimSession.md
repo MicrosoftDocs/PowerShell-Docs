@@ -53,7 +53,7 @@ For more information about CIM sessions, see
 
 ### Example 1: Get CIM sessions from the current PowerShell session
 
-This example creates CIM sessions using [New-CimSession](New-CimSession.md), and then gets the CIM
+This example creates CIM sessions using [New-CimSession](New-CimSession.yml), and then gets the CIM
 sessions using `Get-CimSession`.
 
 ```powershell
