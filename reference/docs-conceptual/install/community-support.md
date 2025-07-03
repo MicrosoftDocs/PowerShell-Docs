@@ -78,8 +78,8 @@ Download the tar.gz package from the [releases][09] page onto your Raspberry Pi 
 to the current versions are:
 
 - PowerShell 7.4 - latest LTS release
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.10/powershell-7.4.10-linux-arm32.tar.gz`
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.10/powershell-7.4.10-linux-arm64.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.11/powershell-7.4.11-linux-arm32.tar.gz`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.11/powershell-7.4.11-linux-arm64.tar.gz`
 - PowerShell 7.5 - latest stable release
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell-7.5.2-linux-arm32.tar.gz`
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell-7.5.2-linux-arm64.tar.gz`

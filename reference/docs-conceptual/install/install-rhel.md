@@ -66,8 +66,8 @@ package from the [releases][02] page onto your RHEL machine.
 
 The link to the current version is:
 
-- PowerShell 7.4.10 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.10/powershell-7.4.10-1.rh.x86_64.rpm`
+- PowerShell 7.4.11 universal package for supported versions of RHEL
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.11/powershell-7.4.11-1.rh.x86_64.rpm`
 - PowerShell 7.5.2 universal package for supported versions of RHEL
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell-7.5.2-1.rh.x86_64.rpm`
 
