@@ -1,18 +1,21 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 11/02/2024
+ms.date: 07/03/2025
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
 Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycle] or the version of
 [Windows reaches end-of-support][eol-windows].
 
-- Docker images containing PowerShell 7.4 and PowerShell 7.5-preview for x64 for Windows Server
-  2022, Windows Server Core 2022, and Windows Server Nano build 1809 are available from the
-  [Microsoft Artifact Registry][mcr].
-- PowerShell 7.4 and higher can be installed on Windows 10 build 1607 and higher, Windows 11,
-  Windows Server 2016 and higher.
+The Docker images for the .NET SDK contain the latest versions of PowerShell. These images are
+available from the [Microsoft Artifact Registry][mcr].
+
+These images may not have the latest security updates. Microsoft recommends that you update the OS
+packages to the latest version to ensure the latest security updates are applied.
+
+These images are provided for testing purposes. If you need a Docker image for a production
+workload, you should build and maintain your own.
 
 > [!NOTE]
 > Support for a specific version of Windows is determined by the Microsoft Support Lifecycle

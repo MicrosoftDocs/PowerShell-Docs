@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Windows
-ms.date: 04/28/2025
+ms.date: 07/03/2025
 title: Installing PowerShell on Windows
 ---
 # Installing PowerShell on Windows
@@ -41,7 +41,7 @@ winget search Microsoft.PowerShell
 ```Output
 Name               Id                           Version Source
 ---------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.5.1.0 winget
+PowerShell         Microsoft.PowerShell         7.5.2.0 winget
 PowerShell Preview Microsoft.PowerShell.Preview 7.6.0.4 winget
 ```
 
@@ -65,9 +65,9 @@ winget install --id Microsoft.PowerShell.Preview --source winget
 To install PowerShell on Windows, use the following links to download the install package from
 GitHub.
 
-- [PowerShell-7.5.1-win-x64.msi][22]
-- [PowerShell-7.5.1-win-x86.msi][24]
-- [PowerShell-7.5.1-win-arm64.msi][20]
+- [PowerShell-7.5.2-win-x64.msi][22]
+- [PowerShell-7.5.2-win-x86.msi][24]
+- [PowerShell-7.5.2-win-arm64.msi][20]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -137,7 +137,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.5.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1
+msiexec.exe /package PowerShell-7.5.2-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see
@@ -148,9 +148,9 @@ For a full list of command-line options for `Msiexec.exe`, see
 PowerShell binary ZIP archives are provided to enable advanced deployment scenarios. Download one of
 the following ZIP archives from the [current release][18] page.
 
-- [PowerShell-7.5.1-win-x64.zip][23]
-- [PowerShell-7.5.1-win-x86.zip][25]
-- [PowerShell-7.5.1-win-arm64.zip][21]
+- [PowerShell-7.5.2-win-x64.zip][23]
+- [PowerShell-7.5.2-win-x86.zip][25]
+- [PowerShell-7.5.2-win-arm64.zip][21]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -257,7 +257,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
 ```powershell
 # Replace the placeholder information for the following variables:
 $deviceip = '<device ip address'
-$zipfile = 'PowerShell-7.5.1-win-arm64.zip'
+$zipfile = 'PowerShell-7.5.2-win-arm64.zip'
 $downloadfolder = 'U:\Users\Administrator\Downloads'  # The download location is local to the device.
     # There should be enough  space for the zip file and the unzipped contents.
 
@@ -270,10 +270,10 @@ Copy-Item $zipfile -Destination $downloadfolder -ToSession $S
 #Connect to the device and expand the archive
 Enter-PSSession $S
 Set-Location U:\Users\Administrator\Downloads
-Expand-Archive .\PowerShell-7.5.1-win-arm64.zip
+Expand-Archive .\PowerShell-7.5.2-win-arm64.zip
 
 # Set up remoting to PowerShell 7
-Set-Location .\PowerShell-7.5.1-win-arm64
+Set-Location .\PowerShell-7.5.2-win-arm64
 # Be sure to use the -PowerShellHome parameter otherwise it tries to create a new
 # endpoint with Windows PowerShell 5.1
 .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -285,7 +285,7 @@ PowerShell has to restart WinRM. Now you can connect to PowerShell 7 endpoint on
 ```powershell
 
 # Be sure to use the -Configuration parameter. If you omit it, you connect to Windows PowerShell 5.1
-Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.5.1
+Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.5.2
 ```
 
 ## Deploying on Windows 10 IoT Core
@@ -332,7 +332,7 @@ Deploy PowerShell to Nano Server using the following steps.
 # Replace the placeholder information for the following variables:
 $ipaddr = '<Nano Server IP address>'
 $credential = Get-Credential # <An Administrator account on the system>
-$zipfile = 'PowerShell-7.5.1-win-x64.zip'
+$zipfile = 'PowerShell-7.5.2-win-x64.zip'
 # Connect to the built-in instance of Windows PowerShell
 $session = New-PSSession -ComputerName $ipaddr -Credential $credential
 # Copy the file to the Nano Server instance
@@ -340,7 +340,7 @@ Copy-Item $zipfile C:\ -ToSession $session
 # Enter the interactive remote session
 Enter-PSSession $session
 # Extract the ZIP file
-Expand-Archive -Path C:\PowerShell-7.5.1-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
+Expand-Archive -Path C:\PowerShell-7.5.2-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
 ```
 
 ## PowerShell remoting
@@ -380,11 +380,11 @@ can't support those methods.
 [15]: #zip
 [18]: https://github.com/PowerShell/PowerShell/releases/latest
 [19]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/PowerShell-7.5.1-win-arm64.msi
-[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/PowerShell-7.5.1-win-arm64.zip
-[22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/PowerShell-7.5.1-win-x64.msi
-[23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/PowerShell-7.5.1-win-x64.zip
-[24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/PowerShell-7.5.1-win-x86.msi
-[25]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/PowerShell-7.5.1-win-x86.zip
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/PowerShell-7.5.2-win-arm64.msi
+[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/PowerShell-7.5.2-win-arm64.zip
+[22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/PowerShell-7.5.2-win-x64.msi
+[23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/PowerShell-7.5.2-win-x64.zip
+[24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/PowerShell-7.5.2-win-x86.msi
+[25]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/PowerShell-7.5.2-win-x86.zip
 [27]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [28]: microsoft-update-faq.yml
