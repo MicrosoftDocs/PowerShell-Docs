@@ -1,0 +1,47 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Host.Stop-Transcript
+name: Stop-Transcript
+module: Microsoft.PowerShell.Host
+isPreview: false
+summary: |-
+  Stops a transcript.
+description: |-
+  The `Stop-Transcript` cmdlet stops a transcript that was started by the `Start-Transcript` cmdlet.
+  Alternatively, you can end a session to stop a transcript.
+notes: |-
+  If a transcript hasn't been started, the command fails.
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Stop-Transcript
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a string that contains a status message and the path to the output file.
+examples:
+- title: 'Example 1: Stop all transcripts'
+  description: |-
+    ```powershell
+    Stop-Transcript
+    ```
+
+    This command stops all transcripts.
+links:
+- text: Start-Transcript
+  href: Start-Transcript.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Host
+  ms.date: 01/04/2024
+  PlatyPS schema version: 2024-05-01
+  title: Stop-Transcript

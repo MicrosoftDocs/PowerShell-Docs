@@ -1,0 +1,168 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Utility.Show-Markdown
+name: Show-Markdown
+module: Microsoft.PowerShell.Utility
+isPreview: false
+summary: |-
+  Shows a Markdown file or string in the console in a friendly way using VT100 escape sequences or in
+  a browser using HTML.
+description: |-
+  The `Show-Markdown` cmdlet is used to render Markdown in a human readable format either in a
+  terminal or in a browser.
+
+  `Show-Markdown` can return a string that includes the VT100 escape sequences which the terminal
+  renders (if it supports VT100 escape sequences). This is primarily used for viewing Markdown files
+  in a terminal. You can also get this string via the `ConvertFrom-Markdown` by specifying the
+  **AsVT100EncodedString** parameter.
+
+  `Show-Markdown` also has the ability to open a browser and show you a rendered version of the
+  Markdown. It renders the Markdown by turning it into HTML and opening the HTML file in your default
+  browser.
+
+  You can change how `Show-Markdown` renders Markdown in a terminal by using `Set-MarkdownOption`.
+
+  This cmdlet was introduced in PowerShell 6.1.
+parameters:
+  cmdletParameters:
+  - name: InputObject
+    type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+    description: |-
+      A Markdown string that will be shown in the terminal. If you do not pass in a supported format,
+      `Show-Markdown` will emit an error.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InputObject
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LiteralPath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the path to a Markdown file. Unlike the Path parameter, the value of LiteralPath is used
+      exactly as it is typed. No characters are interpreted as wildcards. If the path includes escape
+      characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
+      interpret any characters as escape sequences.
+    aliases:
+    - PSPath
+    - LP
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LiteralPath
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Path
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the path to a Markdown file to be rendered.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Path
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: UseBrowser
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Compiles the Markdown input as HTML and opens it in your default browser.
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Show-Markdown
+        [-Path] <String[]>
+        [-UseBrowser]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Path
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Show-Markdown
+        -InputObject <PSObject>
+        [-UseBrowser]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InputObject
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Show-Markdown
+        -LiteralPath <String[]>
+        [-UseBrowser]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LiteralPath
+  isDefault: false
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+examples:
+- title: 'Example 1: Simple example specifying a path'
+  description: |-
+    ```powershell
+    Show-Markdown -Path ./README.md
+    ```
+- title: 'Example 2: Simple example specifying a string'
+  description: |-
+    ```powershell
+    @"
+    # Show-Markdown
+
+    ## Markdown
+
+    You can now interact with Markdown via PowerShell!
+
+    *stars*
+    __underlines__
+    "@ | Show-Markdown
+    ```
+- title: 'Example 2: Opening Markdown in a browser'
+  description: |-
+    ```powershell
+    Show-Markdown -Path ./README.md -UseBrowser
+    ```
+links:
+- text: ConvertFrom-Markdown
+  href: ConvertFrom-Markdown.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/show-markdown?view=powershell-7.6&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 08/23/2019
+  PlatyPS schema version: 2024-05-01
+  title: Show-Markdown

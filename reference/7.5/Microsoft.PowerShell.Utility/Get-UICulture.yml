@@ -1,0 +1,79 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Utility.Get-UICulture
+name: Get-UICulture
+module: Microsoft.PowerShell.Utility
+isPreview: false
+summary: |-
+  Gets the current UI culture settings in the operating system.
+description: |-
+  The `Get-UICulture` cmdlet gets information about the current user interface (UI) culture settings
+  for Windows. The UI culture determines which text strings are used for user interface elements, such
+  as menus and messages.
+
+  You can also use the `Get-Culture` cmdlet, which gets the current culture on the system. The culture
+  determines the display format of items such as numbers, currency, and dates.
+notes: |-
+  You can also use the `$PSCulture` and `$PSUICulture` variables. The `$PSCulture` variable stores the
+  name of the current culture, and the `$PSUICulture` variable stores the name of the current UI
+  culture.
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-UICulture
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="System.Globalization.CultureInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns an object representing the current UI culture. In PowerShell 3.0 and later,
+    it returns a **CultureInfo** object.
+- name: <xref href="Microsoft.PowerShell.VistaCultureInfo" data-throw-if-not-resolved="False" />
+  description: |-
+    In Windows PowerShell 2.0 and earlier, this cmdlet returns a **VistaCultureInfo** object.
+examples:
+- title: 'Example 1: Get the UI culture'
+  description: |-
+    ```powershell
+    Get-UICulture
+    ```
+
+    This command gets the current UI culture information.
+- title: 'Example 2: Get the UI culture and format the results'
+  description: |-
+    ```powershell
+    Get-UICulture | Format-List *
+    ```
+
+    This command displays the values of all of the properties of the current UI culture in a list.
+- title: 'Example 3: Get the value of the Calendar property'
+  description: |-
+    ```powershell
+    (Get-UICulture).Calendar
+    ```
+
+    This command displays the current values for the Calendar property of the current UI culture.
+    Calendar is just one property of UI culture. To see all of the properties, type
+    `Get-UICulture | Get-Member`.
+- title: 'Example 4: Get the short date pattern'
+  description: |-
+    ```powershell
+    (Get-UICulture).DateTimeFormat.ShortDatePattern
+    ```
+
+    This command displays the short date pattern for the current UI culture. To see all of the
+    subproperties of the **DateTimeFormat** property of the UI culture, type
+    `(Get-UICulture).DateTimeFormat | Get-Member`.
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-uiculture?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Get-UICulture

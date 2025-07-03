@@ -1,0 +1,147 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Get-TimeZone
+name: Get-TimeZone
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Gets the current time zone or a list of available time zones.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  The `Get-TimeZone` cmdlet gets the current time zone or a list of available time zones.
+notes: |-
+  PowerShell includes the following aliases for `Get-TimeZone`:
+
+  - All platforms:
+    - `gtz`
+parameters:
+  cmdletParameters:
+  - name: Id
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies, as a string array, the ID or IDs of the time zones that this cmdlet gets.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ListAvailable
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets all available time zones.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ListAvailable
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies, as a string array, the name or names of the time zones that this cmdlet gets.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: "0"
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-TimeZone
+        [[-Name] <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-TimeZone
+        -Id <String[]>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-TimeZone
+        [-ListAvailable]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ListAvailable
+  isDefault: false
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.TimeZoneInfo" data-throw-if-not-resolved="False" />
+examples:
+- title: 'Example 1: Get the current time zone'
+  description: |-
+    ```powershell
+    Get-TimeZone
+    ```
+
+    This command gets the current time zone.
+- title: 'Example 2: Get time zones that match a specified string'
+  description: |-
+    ```powershell
+    Get-TimeZone -Name "*pac*"
+    ```
+
+    ```Output
+    Pacific Standard Time (Mexico)
+
+    (UTC-08:00) Pacific Time (US &amp; Canada)
+
+    Pacific Standard Time
+
+    SA Pacific Standard Time
+
+    Pacific SA Standard Time
+
+    West Pacific Standard Time
+
+    Central Pacific Standard Time
+    ```
+
+    This command gets all time zones that match the specified wildcard.
+- title: 'Example 3: Get all available time zones'
+  description: |-
+    ```powershell
+    Get-TimeZone -ListAvailable
+    ```
+
+    This command gets all available time zones.
+links:
+- text: Set-TimeZone
+  href: Set-TimeZone.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-timezone?view=powershell-7.4&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 10/02/2022
+  PlatyPS schema version: 2024-05-01
+  title: Get-TimeZone

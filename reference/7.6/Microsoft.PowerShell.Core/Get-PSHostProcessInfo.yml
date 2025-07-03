@@ -1,0 +1,133 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Core.Get-PSHostProcessInfo
+name: Get-PSHostProcessInfo
+module: Microsoft.PowerShell.Core
+isPreview: false
+summary: |-
+  Gets process information about the PowerShell host.
+description: |-
+  The `Get-PSHostProcessInfo` cmdlet gets information about PowerShell host processes running on the
+  local computer.
+
+  Beginning in PowerShell 6.2, this cmdlet is supported on non-Windows platforms.
+parameters:
+  cmdletParameters:
+  - name: Id
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies a process by the process ID. To get a process ID, run the `Get-Process` cmdlet.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ProcessIdParameterSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies a process by the process name. To get a process name, run the `Get-Process` cmdlet.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ProcessNameParameterSet
+      position: "0"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Process
+    type: <xref href="System.Diagnostics.Process" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies a process by the process object. The simplest way to use this parameter is to save the
+      results of a `Get-Process` command that returns process that you want to enter in a variable, and
+      then specify the variable as the value of this parameter.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ProcessParameterSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PSHostProcessInfo
+        [[-Name] <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ProcessNameParameterSet
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PSHostProcessInfo
+        [-Process] <Process[]>
+        [<CommonParameters>]
+    ```
+  parameterSetName: ProcessParameterSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PSHostProcessInfo
+        [-Id] <Int32[]>
+        [<CommonParameters>]
+    ```
+  parameterSetName: ProcessIdParameterSet
+  isDefault: false
+inputs:
+- name: <xref href="System.Diagnostics.Process" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a **Process** object from `Get-Process` to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.PowerShell.Commands.PSHostProcessInfo" data-throw-if-not-resolved="False" />
+examples:
+- title: '1: Get a list of PowerShell hosts running on the system'
+  description: |-
+    ```powershell
+    Get-PSHostProcessInfo
+    ```
+
+    ```Output
+    ProcessName ProcessId AppDomainName
+    ----------- --------- -------------
+    powershell      11204 DefaultAppDomain
+    pwsh            13912 DefaultAppDomain
+    ```
+- title: '2: Get PowerShell host information for a specific process name'
+  description: |-
+    ```powershell
+    Get-PSHostProcessInfo -Name pwsh
+    ```
+
+    ```Output
+    ProcessName ProcessId AppDomainName
+    ----------- --------- -------------
+    pwsh            13912 DefaultAppDomain
+    ```
+links:
+- text: Get-Process
+  href: ../Microsoft.PowerShell.Management/get-process.yml
+metadata:
+  document type: cmdlet
+  external help file: System.Management.Automation.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-pshostprocessinfo?view=powershell-7.6&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 06/09/2017
+  PlatyPS schema version: 2024-05-01
+  title: Get-PSHostProcessInfo

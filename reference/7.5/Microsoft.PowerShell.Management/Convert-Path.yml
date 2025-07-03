@@ -1,0 +1,194 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Convert-Path
+name: Convert-Path
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Converts a path from a PowerShell path to a PowerShell provider path.
+description: |-
+  The `Convert-Path` cmdlet converts a path from a PowerShell path to a PowerShell provider path.
+notes: |-
+  PowerShell includes the following aliases for `Convert-Path`:
+
+  - All platforms:
+    - `cvpa`
+
+  The cmdlets that contain the Path noun manipulate path names and return the names in a concise
+  format that all PowerShell providers can interpret. They're designed for use in programs and
+  scripts where you want to display all or part of a path in a particular format. Use them like you
+  would use **Dirname**, **Normpath**, **Realpath**, **Join**, or other path manipulators.
+
+  You can use the path cmdlets with several providers, including the **FileSystem**, **Registry**,
+  and **Certificate** providers.
+
+  This cmdlet is designed to work with the data exposed by any provider. To list the providers
+  available in your session, type `Get-PSProvider`. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+  `Convert-Path` only converts existing paths. It can't be used to convert a location that doesn't
+  exist yet.
+parameters:
+  cmdletParameters:
+  - name: Force
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Allows the cmdlet to get items that otherwise can't be accessed by the user, such as hidden or
+      system files. The **Force** parameter doesn't override security restrictions. Implementation varies
+      among providers. For more information, see
+      [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+
+      This parameter was added in PowerShell 7.5-preview.5.
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LiteralPath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies, as a string array, the path to be converted. The value of the **LiteralPath** parameter
+      is used exactly as it's typed. No characters are interpreted as wildcards. If the path includes
+      escape characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not
+      to interpret any characters as escape sequences.
+
+      For more information, see
+      [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+    aliases:
+    - PSPath
+    - LP
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LiteralPath
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Path
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the PowerShell path to be converted.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Path
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Convert-Path
+        [-Path] <String[]>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Path
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Convert-Path
+        -LiteralPath <String[]>
+        [<CommonParameters>]
+    ```
+  parameterSetName: LiteralPath
+  isDefault: false
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a path, but not a literal path, to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a string that contains the converted path.
+examples:
+- title: 'Example 1: Convert the working directory to a standard file system path'
+  description: |-
+    This example converts the current working directory, which is represented by a dot (`.`), to a
+    standard FileSystem path.
+
+    ```
+    PS C:\> Convert-Path .
+    C:\
+    ```
+- title: 'Example 2: Convert a provider path to a standard registry path'
+  description: |-
+    This example converts the PowerShell provider path to a standard registry path.
+
+    ```powershell
+    PS C:\> Convert-Path HKLM:\Software\Microsoft
+    HKEY_LOCAL_MACHINE\Software\Microsoft
+    ```
+- title: 'Example 3: Convert a path to a string'
+  description: |-
+    This example converts the path to the home directory of the current provider, which is the
+    FileSystem provider, to a string.
+
+    ```powershell
+    PS C:\> Convert-Path ~
+    C:\Users\User01
+    ```
+- title: 'Example 4: Convert paths for hidden items'
+  description: |-
+    By default, `Convert-Path` does not return hidden items. This example uses the **Force** parameter
+    to find hidden items. The `Get-Item` command confirms that the `.git` folder is hidden. Using
+    `Convert-Path` without the **Force** parameter returns only the visible items. Adding the **Force**
+    parameter returns all items, including hidden items.
+
+    ```powershell
+    PS> Get-Item .git -Force
+
+        Directory: D:\Git\PS-Docs\PowerShell-Docs
+
+    Mode                 LastWriteTime         Length Name
+    ----                 -------------         ------ ----
+    d--h-           9/25/2024  4:46 PM                .git
+
+    PS> Convert-Path .git*
+    D:\Git\PS-Docs\PowerShell-Docs\.github
+    D:\Git\PS-Docs\PowerShell-Docs\.gitattributes
+    D:\Git\PS-Docs\PowerShell-Docs\.gitignore
+
+    PS> Convert-Path .git* -Force
+    D:\Git\PS-Docs\PowerShell-Docs\.git
+    D:\Git\PS-Docs\PowerShell-Docs\.github
+    D:\Git\PS-Docs\PowerShell-Docs\.gitattributes
+    D:\Git\PS-Docs\PowerShell-Docs\.gitignore
+    ```
+links:
+- text: Join-Path
+  href: Join-Path.yml
+- text: Resolve-Path
+  href: Resolve-Path.yml
+- text: Split-Path
+  href: Split-Path.yml
+- text: Test-Path
+  href: Test-Path.yml
+- text: Get-PSProvider
+  href: Get-PSProvider.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/convert-path?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/25/2024
+  PlatyPS schema version: 2024-05-01
+  title: Convert-Path

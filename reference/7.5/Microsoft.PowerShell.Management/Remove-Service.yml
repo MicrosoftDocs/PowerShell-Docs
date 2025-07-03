@@ -1,0 +1,166 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Remove-Service
+name: Remove-Service
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Removes a Windows service.
+description: |-
+  The `Remove-Service` cmdlet removes a Windows service in the registry and in the service database.
+
+  The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
+notes: |-
+  This cmdlet is only available on Windows platforms.
+
+  To run this cmdlet, start PowerShell by using the **Run as administrator** option.
+parameters:
+  cmdletParameters:
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies **ServiceController** objects that represent the services to remove. Enter a variable that
+      contains the objects, or type a command or expression that gets the objects.
+
+      The **InputObject** parameter doesn't enumerate collections. If a collection is passed, an error is
+      thrown. When working with collections, pipe the input to enumerate the values.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InputObject
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the service names of the services to remove. Wildcard characters are permitted.
+    aliases:
+    - ServiceName
+    - SN
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Remove-Service
+        [-Name] <String>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Remove-Service
+        [-InputObject <ServiceController>]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InputObject
+  isDefault: false
+inputs:
+- name: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a service object to this cmdlet.
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains the name of a service to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Remove a service'
+  description: |-
+    This removes a service named TestService.
+
+    ```powershell
+    Remove-Service -Name "TestService"
+    ```
+- title: 'Example 2: Remove a service using the display name'
+  description: |-
+    This example removes a service named TestService. The command uses `Get-Service` to get an object
+    that represents the TestService service using the display name. The pipeline operator (`|`) pipes
+    the object to `Remove-Service`, which removes the service.
+
+    ```powershell
+    Get-Service -DisplayName "Test Service" | Remove-Service
+    ```
+links:
+- text: Get-Service
+  href: Get-Service.yml
+- text: Restart-Service
+  href: Restart-Service.yml
+- text: Resume-Service
+  href: Resume-Service.yml
+- text: Set-Service
+  href: Set-Service.yml
+- text: Start-Service
+  href: Start-Service.yml
+- text: Stop-Service
+  href: Stop-Service.yml
+- text: Suspend-Service
+  href: Suspend-Service.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-service?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Remove-Service

@@ -1,0 +1,99 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSDiagnostics.Enable-PSTrace
+name: Enable-PSTrace
+module: PSDiagnostics
+isPreview: false
+summary: |-
+  Enables the Microsoft-Windows-PowerShell event provider logs.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  This cmdlet enables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
+  event provider.
+
+  You must run this cmdlet from an elevated PowerShell session.
+notes: |-
+  This cmdlet uses the `Get-LogProperties` and `Set-LogProperties` cmdlets.
+
+  You must run this cmdlet from an elevated PowerShell session.
+parameters:
+  cmdletParameters:
+  - name: AnalyticOnly
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      When this parameter is used, the cmdlet enables the Analytic event log of the
+      Microsoft-Windows-PowerShell provider. The Operational event log is not changed.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Force
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Used to force the change without prompting.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Enable-PSTrace
+        [-Force]
+        [-AnalyticOnly]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Enable the Analytic event log for PowerShell'
+  description: |-
+    The following example enables only the Analytic event log of the Microsoft-Windows-PowerShell
+    provider.
+
+    ```powershell
+    Enable-PSTrace -AnalyticOnly
+    ```
+links:
+- text: Get-LogProperties
+  href: Get-LogProperties.yml
+- text: Set-LogProperties
+  href: Set-LogProperties.yml
+- text: Disable-PSTrace
+  href: Disable-PSTrace.yml
+metadata:
+  document type: cmdlet
+  external help file: PSDiagnostics-help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psdiagnostics/enable-pstrace?view=powershell-7.4&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Enable-PSTrace

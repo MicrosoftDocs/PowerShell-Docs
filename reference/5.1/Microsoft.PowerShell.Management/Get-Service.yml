@@ -1,0 +1,424 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Get-Service
+name: Get-Service
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Gets the services on a local or remote computer.
+description: |-
+  The `Get-Service` cmdlet gets objects that represent the services on a local computer or on a remote
+  computer, including running and stopped services. By default, when `Get-Service` is run without
+  parameters, all the local computer's services are returned.
+
+  You can direct this cmdlet to get only particular services by specifying the service name or the
+  display name of the services, or you can pipe service objects to this cmdlet.
+notes: |-
+  Windows PowerShell includes the following aliases for `Get-Service`:
+
+  - `gsv`
+
+  This cmdlet can display services only when the current user has permission to see them. If this
+  cmdlet does not display services, you might not have permission to see them.
+
+  To find the service name and display name of each service on your system, type `Get-Service`. The
+  service names appear in the **Name** column, and the display names appear in the **DisplayName**
+  column.
+
+  > [!NOTE]
+  > Typically, `Get-Service` returns information about services and not driver. However, if you
+  > specify the name of a driver, `Get-Service` returns information about the driver.
+  >
+  > - Enumeration doesn't include device driver services
+  > - When a wildcard is specified, the cmdlet only returns Windows services
+  > - If you specify the **Name** or **DisplayName** that is an exact match to a device service name,
+  >   then the device instance is returned
+
+  When you sort in ascending order by status value, `Stopped` services appear before `Running`
+  services. The **Status** property of a service is an enumerated value in which the names of the
+  statuses represent integer values. The sort is based on the integer value, not the name. `Running`
+  appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value of `4`. For
+  more information, see
+  [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+parameters:
+  cmdletParameters:
+  - name: ComputerName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Gets the services running on the specified computers. The default is the local computer.
+
+      Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of a remote computer.
+      To specify the local computer, type the computer name, a dot (`.`), or `localhost`.
+
+      This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
+      parameter of `Get-Service` even if your computer is not configured to run remote commands.
+    aliases:
+    - Cn
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: DependentServices
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets only the services that depend upon the specified service.
+    aliases:
+    - DS
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: DisplayName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies, as a string array, the display names of services to be retrieved. Wildcards are
+      permitted.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DisplayName
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: Exclude
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies, as a string array, a service or services that this cmdlet excludes from the operation.
+      The value of this parameter qualifies the **Name** parameter. Enter a name element or pattern, such
+      as `s*`. Wildcards are permitted.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: Include
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies, as a string array, a service or services that this cmdlet includes in the operation. The
+      value of this parameter qualifies the **Name** parameter. Enter a name element or pattern, such as
+      `s*`. Wildcards are permitted.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: InputObject
+    type: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies **ServiceController** objects representing the services to be retrieved. Enter a variable
+      that contains the objects, or type a command or expression that gets the objects. You can pipe a
+      service object to this cmdlet.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InputObject
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the service names of services to be retrieved. Wildcards are permitted.
+    aliases:
+    - ServiceName
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Default
+      position: "0"
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: RequiredServices
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets only the services that this service requires. This parameter gets
+      the value of the **ServicesDependedOn** property of the service.
+    aliases:
+    - SDO
+    - ServicesDependedOn
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-Service
+        [[-Name] <String[]>]
+        [-ComputerName <String[]>]
+        [-DependentServices]
+        [-RequiredServices]
+        [-Include <String[]>]
+        [-Exclude <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-Service
+        -DisplayName <String[]>
+        [-ComputerName <String[]>]
+        [-DependentServices]
+        [-RequiredServices]
+        [-Include <String[]>]
+        [-Exclude <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DisplayName
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-Service
+        [-ComputerName <String[]>]
+        [-DependentServices]
+        [-RequiredServices]
+        [-Include <String[]>]
+        [-Exclude <String[]>]
+        [-InputObject <ServiceController[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InputObject
+  isDefault: false
+inputs:
+- name: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a service object to this cmdlet.
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a service name to this cmdlet.
+outputs:
+- name: <xref href="System.ServiceProcess.ServiceController" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns objects that represent the services on the computer.
+examples:
+- title: 'Example 1: Get all services on the computer'
+  description: |-
+    This example gets all of the services on the computer. It behaves as though you typed
+    `Get-Service *`. The default display shows the status, service name, and display name of each
+    service.
+
+    ```powershell
+    Get-Service
+    ```
+- title: 'Example 2: Get services that begin with a search string'
+  description: |-
+    This example retrieves services with service names that begin with `WMI` (Windows Management
+    Instrumentation).
+
+    ```powershell
+    Get-Service "wmi*"
+    ```
+- title: 'Example 3: Display services that include a search string'
+  description: |-
+    This example displays services with a display name that includes the word `network`. Searching the
+    display name finds network-related services even when the service name doesn't include `Net`, such as
+    xmlprov, the Network Provisioning Service.
+
+    ```powershell
+    Get-Service -DisplayName "*network*"
+    ```
+- title: 'Example 4: Get services that begin with a search string and an exclusion'
+  description: |-
+    This example only gets the services with service names that begin with `win`, except for the WinRM
+    service.
+
+    ```powershell
+    Get-Service -Name "win*" -Exclude "WinRM"
+    ```
+- title: 'Example 5: Display services that are currently active'
+  description: |-
+    This example displays only the services with a status of `Running`.
+
+    ```powershell
+    Get-Service | Where-Object {$_.Status -eq "Running"}
+    ```
+
+    `Get-Service` gets all the services on the computer and sends the objects down the pipeline. The
+    `Where-Object` cmdlet, selects only the services with a **Status** property that equals `Running`.
+
+    Status is only one property of service objects. To see all of the properties, type
+    `Get-Service | Get-Member`.
+- title: 'Example 6: Get the services on a remote computer'
+  description: |-
+    ```powershell
+    Get-Service -ComputerName "Server02"
+    ```
+
+    This command gets the services on the Server02 remote computer.
+
+    Because the **ComputerName** parameter of `Get-Service` does not use Windows PowerShell remoting,
+    you can use this parameter even if the computer is not configured for remoting in Windows
+    PowerShell.
+- title: 'Example 7: List the services on the local computer that have dependent services'
+  description: |-
+    This example gets services that have dependent services.
+
+    ```powershell
+    Get-Service |
+      Where-Object {$_.DependentServices} |
+        Format-List -Property Name, DependentServices, @{
+          Label="NoOfDependentServices"; Expression={$_.DependentServices.Count}
+        }
+    ```
+
+    ```Output
+    Name                  : AudioEndpointBuilder
+    DependentServices     : {AudioSrv}
+    NoOfDependentServices : 1
+
+    Name                  : Dhcp
+    DependentServices     : {WinHttpAutoProxySvc}
+    NoOfDependentServices : 1
+    ...
+    ```
+
+    The `Get-Service` cmdlet gets all the services on the computer and sends the objects down the
+    pipeline. The `Where-Object` cmdlet selects the services whose **DependentServices** property isn't
+    null.
+
+    The results are sent down the pipeline to the `Format-List` cmdlet. The **Property** parameter
+    displays the name of the service, the name of the dependent services, and a calculated property that
+    displays the number of dependent services for each service.
+- title: 'Example 8: Sort services by property value'
+  description: |-
+    This example shows that when you sort services in ascending order by the value of their **Status**
+    property, stopped services appear before running services. This happens because the value of
+    **Status** is an enumeration, in which `Stopped` has a value of `1`, and `Running` has a value of
+    `4`. For more information, see
+    [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+
+    To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.
+
+    ```powershell
+    Get-Service "s*" | Sort-Object Status
+    ```
+
+    ```Output
+    Status   Name               DisplayName
+    ------   ----               -----------
+    Stopped  stisvc             Windows Image Acquisition (WIA)
+    Stopped  SwPrv              MS Software Shadow Copy Provider
+    Stopped  SysmonLog          Performance Logs and Alerts
+    Running  Spooler            Print Spooler
+    Running  srservice          System Restore Service
+    Running  SSDPSRV            SSDP Discovery Service
+    Running  ShellHWDetection   Shell Hardware Detection
+    Running  Schedule           Task Scheduler
+    Running  SCardSvr           Smart Card
+    Running  SamSs              Security Accounts Manager
+    Running  SharedAccess       Windows Firewall/Internet Connectio...
+    Running  SENS               System Event Notification
+    Running  seclogon           Secondary Logon
+    ```
+- title: 'Example 9: Get services on multiple computers'
+  description: |-
+    ```powershell
+    Get-Service -Name "WinRM" -ComputerName "localhost", "Server01", "Server02" |
+     Format-Table -Property MachineName, Status, Name, DisplayName -Auto
+    ```
+
+    ```Output
+    MachineName    Status  Name  DisplayName
+    ------------   ------  ----  -----------
+    localhost      Running WinRM Windows Remote Management (WS-Management)
+    Server01       Running WinRM Windows Remote Management (WS-Management)
+    Server02       Running WinRM Windows Remote Management (WS-Management)
+    ```
+
+    This command uses the `Get-Service` cmdlet to run a `Get-Service Winrm` command on two remote
+    computers and the local computer (`localhost`).
+
+    The command runs on the remote computers, and the results are returned to the local computer. A
+    pipeline operator (`|`) sends the results to the `Format-Table` cmdlet, which formats the services
+    as a table. The `Format-Table` command uses the **Property** parameter to specify the properties
+    displayed in the table, including the **MachineName** property.
+- title: 'Example 10: Get the dependent services of a service'
+  description: |-
+    This example gets the services that the WinRM service requires. The value of the service's
+    **ServicesDependedOn** property is returned.
+
+    ```powershell
+    Get-Service "WinRM" -RequiredServices
+    ```
+- title: 'Example 11: Get a service through the pipeline operator'
+  description: |-
+    This example gets the WinRM service on the local computer. The service name string, enclosed in
+    quotation marks, is sent down the pipeline to `Get-Service`.
+
+    ```powershell
+    "WinRM" | Get-Service
+    ```
+links:
+- text: New-Service
+  href: New-Service.yml
+- text: Restart-Service
+  href: Restart-Service.yml
+- text: Resume-Service
+  href: Resume-Service.yml
+- text: Set-Service
+  href: Set-Service.yml
+- text: Start-Service
+  href: Start-Service.yml
+- text: Stop-Service
+  href: Stop-Service.yml
+- text: Suspend-Service
+  href: Suspend-Service.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 03/20/2024
+  PlatyPS schema version: 2024-05-01
+  title: Get-Service

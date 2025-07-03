@@ -1,0 +1,290 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Utility.Get-PSBreakpoint
+name: Get-PSBreakpoint
+module: Microsoft.PowerShell.Utility
+isPreview: false
+summary: |-
+  Gets the breakpoints that are set in the current session.
+description: |-
+  The `Get-PSBreakpoint` cmdlet gets the breakpoints that are set in the current session. You can use
+  the cmdlet parameters to get particular breakpoints.
+
+  A breakpoint is a point in a command or script where execution stops temporarily so that you can
+  examine the instructions. `Get-PSBreakpoint` is one of several cmdlets designed for debugging
+  PowerShell scripts and commands. For more information about the PowerShell debugger, see
+  [about_Debuggers](../microsoft.powershell.core/about/about_debuggers.md).
+notes: |-
+  Windows PowerShell includes the following aliases for `Get-PSBreakpoint`:
+
+  - `gbp`
+parameters:
+  cmdletParameters:
+  - name: Command
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of command breakpoints that are set on the specified command names. Enter the
+      command names, such as the name of a cmdlet or function.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Command
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the breakpoint IDs that this cmdlet gets. Enter the IDs in a comma-separated list. You can
+      also pipe breakpoint IDs to `Get-PSBreakpoint`.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Script
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of scripts that contain the breakpoints. Enter the path (optional) and names of
+      one or more script files. If you omit the path, the default location is the current directory.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Script
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Variable
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Command
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Type
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Type
+    type: <xref href="Microsoft.PowerShell.Commands.BreakpointType" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of breakpoint types that this cmdlet gets. Enter one or more types. The
+      acceptable values for this parameter are:
+
+      - Line
+      - Command
+      - Variable
+
+      You can also pipe breakpoint types to `Get-PSBreakpoint`.
+    acceptedValues:
+    - Line
+    - Variable
+    - Command
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Type
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Variable
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of variable breakpoints that are set on the specified variable names. Enter the
+      variable names without dollar signs.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Variable
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-PSBreakpoint
+        [-Script <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Script
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-PSBreakpoint
+        -Variable <String[]>
+        [-Script <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Variable
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PSBreakpoint
+        -Command <String[]>
+        [-Script <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Command
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PSBreakpoint
+        [-Type] <BreakpointType[]>
+        [-Script <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Type
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-PSBreakpoint
+        [-Id] <Int32[]>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+inputs:
+- name: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe breakpoint IDs to this cmdlet.
+- name: <xref href="Microsoft.PowerShell.Commands.BreakpointType" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe breakpoint types to this cmdlet.
+outputs:
+- name: <xref href="System.Management.Automation.CommandBreakpoint" data-throw-if-not-resolved="False" />
+- name: <xref href="System.Management.Automation.LineBreakpoint" data-throw-if-not-resolved="False" />
+- name: <xref href="System.Management.Automation.VariableBreakpoint" data-throw-if-not-resolved="False" />
+- name: <xref href="System.Management.Automation.Breakpoint" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns objects that represent the breakpoints in the session.
+examples:
+- title: 'Example 1: Get all breakpoints for all scripts and functions'
+  description: |-
+    This command gets all breakpoints set on all scripts and functions in the current session.
+
+    ```powershell
+    Get-PSBreakpoint
+    ```
+- title: 'Example 2: Get breakpoints by ID'
+  description: |-
+    This command gets the breakpoint with breakpoint ID 2.
+
+    ```powershell
+    Get-PSBreakpoint -Id 2
+    ```
+
+    ```Output
+    Function         :
+    IncrementAction  :
+    Enabled          :
+    TrueHitCount     : 0
+    Id               : 2
+    Script           : C:\ps-test\sample.ps1
+    ScriptName       : C:\ps-test\sample.ps1
+    ```
+- title: 'Example 3: Pipe an ID to `Get-PSBreakpoint`'
+  description: |-
+    These commands show how to get a breakpoint by piping a breakpoint ID to `Get-PSBreakpoint`.
+
+    ```powershell
+    $B = `Set-PSBreakpoint` -Script "sample.ps1" -Command "Increment"
+    $B.Id | Get-PSBreakpoint
+    ```
+
+    The `Set-PSBreakpoint` cmdlet creates a breakpoint on the Increment function in the `Sample.ps1`
+    script and saves the breakpoint object in the `$B` variable. The **Id** property of the breakpoint
+    object in the `$B` variable is piped to the `Get-PSBreakpoint` cmdlet to display the breakpoint
+    information.
+- title: 'Example 4: Get breakpoints in specified script files'
+  description: |-
+    This command gets all of the breakpoints in the `Sample.ps1` and `SupportScript.ps1` files.
+
+    ```powershell
+    Get-PSBreakpoint -Script "Sample.ps1, SupportScript.ps1"
+    ```
+
+    This command does not get other breakpoints that might be set in other scripts or on functions in
+    the session.
+- title: 'Example 5: Get breakpoints in specified cmdlets'
+  description: |-
+    This command gets all Command breakpoints that are set on `Read-Host` or `Write-Host` commands in
+    the `Sample.ps1` file.
+
+    ```powershell
+    Get-PSBreakpoint -Command "Read-Host, Write-Host" -Script "Sample.ps1"
+    ```
+- title: 'Example 6: Get Command breakpoints in a specified file'
+  description: |-
+    ```powershell
+    Get-PSBreakpoint -Type Command -Script "Sample.ps1"
+    ```
+
+    This command gets all Command breakpoints in the Sample.ps1 file.
+- title: 'Example 7: Get breakpoints by variable'
+  description: |-
+    This command gets breakpoints that are set on the `$Index` and `$Swap` variables in the current
+    session.
+
+    ```powershell
+    Get-PSBreakpoint -Variable "Index, Swap"
+    ```
+- title: 'Example 8: Get all Line and Variable breakpoints in a file'
+  description: |-
+    This command gets all line and variable breakpoints in the `Sample.ps1` script.
+
+    ```powershell
+    Get-PSBreakpoint -Type Line, Variable -Script "Sample.ps1"
+    ```
+links:
+- text: Disable-PSBreakpoint
+  href: Disable-PSBreakpoint.yml
+- text: Enable-PSBreakpoint
+  href: Enable-PSBreakpoint.yml
+- text: Get-PSCallStack
+  href: Get-PSCallStack.yml
+- text: Remove-PSBreakpoint
+  href: Remove-PSBreakpoint.yml
+- text: Set-PSBreakpoint
+  href: Set-PSBreakpoint.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Get-PSBreakpoint

@@ -1,0 +1,240 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Security.Unprotect-CmsMessage
+name: Unprotect-CmsMessage
+module: Microsoft.PowerShell.Security
+isPreview: false
+summary: |-
+  Decrypts content that has been encrypted by using the Cryptographic Message Syntax format.
+description: |-
+  The `Unprotect-CmsMessage` cmdlet decrypts content that has been encrypted using the Cryptographic
+  Message Syntax (CMS) format.
+
+  The CMS cmdlets support encryption and decryption of content using the IETF standard format for
+  cryptographically protecting messages, as documented by
+  [RFC5652](https://tools.ietf.org/html/rfc5652).
+
+  The CMS encryption standard uses public key cryptography, where the keys used to encrypt content
+  (the public key) and the keys used to decrypt content (the private key) are separate. Your public
+  key can be shared widely, and isn't sensitive data. If any content is encrypted with this public
+  key, only your private key can decrypt it. For more information, see
+  [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).
+
+  `Unprotect-CmsMessage` decrypts content that has been encrypted in CMS format. You can run this
+  cmdlet to decrypt content that you have encrypted by running the `Protect-CmsMessage` cmdlet. You
+  can specify content that you want to decrypt as a string, by the encryption event log record ID
+  number, or by path to the encrypted content. The `Unprotect-CmsMessage` cmdlet returns the decrypted
+  content.
+
+  Support for Linux and macOS was added in PowerShell 7.1.
+parameters:
+  cmdletParameters:
+  - name: Content
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies an encrypted string, or a variable containing an encrypted string.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ByContent
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: EventLogRecord
+    type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies an event log record that contains a CMS encrypted message.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ByWinEvent
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: IncludeContext
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Determines whether to include the decrypted content in its original context, rather than output the
+      decrypted content only.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LiteralPath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the path to encrypted content that you want to decrypt. Unlike **Path**, the value of
+      **LiteralPath** is used exactly as it's typed. No characters are interpreted as wildcard characters.
+      If the path includes escape characters, enclose it in single quotation marks. Single quotation marks
+      tell PowerShell not to interpret any characters as escape sequences.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ByLiteralPath
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Path
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the path to encrypted content that you want to decrypt.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ByPath
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: To
+    type: <xref href="System.Management.Automation.CmsMessageRecipient" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies one or more CMS message recipients, identified in any of the following formats:
+
+      - An actual certificate (as retrieved from the Certificate provider).
+      - Path to the a file containing the certificate.
+      - Path to a directory containing the certificate.
+      - Thumbprint of the certificate (used to look in the certificate store).
+      - Subject name of the certificate (used to look in the certificate store).
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Unprotect-CmsMessage
+        [-EventLogRecord] <EventLogRecord>
+        [[-To] <CmsMessageRecipient[]>]
+        [-IncludeContext]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ByWinEvent
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Unprotect-CmsMessage
+        [-Content] <string>
+        [[-To] <CmsMessageRecipient[]>]
+        [-IncludeContext]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ByContent
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Unprotect-CmsMessage
+        [-Path] <string>
+        [[-To] <CmsMessageRecipient[]>]
+        [-IncludeContext]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ByPath
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Unprotect-CmsMessage
+        [-LiteralPath] <string>
+        [[-To] <CmsMessageRecipient[]>]
+        [-IncludeContext]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ByLiteralPath
+  isDefault: false
+inputs:
+- name: <xref href="System.Diagnostics.Eventing.Reader.EventLogRecord" data-throw-if-not-resolved="False" />
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe an object containing encrypted content to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns the unencrypted message.
+examples:
+- title: 'Example 1: Decrypt a message'
+  description: |-
+    In the following example, you decrypt content that's located at the literal path
+    `C:\Users\Test\Documents\PowerShell`. For the value of the required **To** parameter, this example
+    uses the thumbprint of the certificate that was used to perform the encryption. The decrypted
+    message, "Try the new Break All command," is the result.
+
+    ```powershell
+    $parameters = @{
+      LiteralPath = "C:\Users\Test\Documents\PowerShell\Future_Plans.txt"
+      To = '0f 8j b1 ab e0 ce 35 1d 67 d2 f2 6f a2 d2 00 cl 22 z9 m9 85'
+    }
+    Unprotect-CmsMessage -LiteralPath @parameters
+    ```
+
+    ```Output
+    Try the new Break All command
+    ```
+- title: 'Example 2: Decrypt an encrypted event log message'
+  description: |-
+    The following example gets an encrypted event from the PowerShell event log and decrypts it using
+    `Unprotect-CmsMessage`.
+
+    ```powershell
+    $event = Get-WinEvent Microsoft-Windows-PowerShell/Operational -MaxEvents 1 |
+        Where-Object Id -EQ 4104
+    Unprotect-CmsMessage -EventLogRecord $event
+    ```
+- title: 'Example 3: Decrypt encrypted event log messages using the pipeline'
+  description: |-
+    The following example gets all encrypted events from the PowerShell event log and decrypts them
+    using `Unprotect-CmsMessage`.
+
+    ```powershell
+    Get-WinEvent Microsoft-Windows-PowerShell/Operational |
+        Where-Object Id -EQ 4104 |
+        Unprotect-CmsMessage
+    ```
+links:
+- text: about_Providers
+  href: ../Microsoft.PowerShell.Core/About/about_Providers.md
+- text: Get-CmsMessage
+  href: Get-CmsMessage.yml
+- text: Protect-CmsMessage
+  href: Protect-CmsMessage.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Security.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/unprotect-cmsmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Security
+  ms.date: 07/01/2025
+  PlatyPS schema version: 2024-05-01
+  title: Unprotect-CmsMessage

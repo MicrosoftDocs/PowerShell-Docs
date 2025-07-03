@@ -1,0 +1,204 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Clear-EventLog
+name: Clear-EventLog
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Clears all entries from specified event logs on the local or remote computers.
+description: |-
+  The `Clear-EventLog` cmdlet deletes all of the entries from the specified event logs on the local
+  computer or on remote computers. To use `Clear-EventLog`, you must be a member of the Administrators
+  group on the affected computer.
+
+  The cmdlets that contain the `EventLog` noun (the `EventLog` cmdlets) work only on classic event
+  logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later
+  versions of Windows, use the `Get-WinEvent` cmdlet.
+notes: |-
+  - To use `Clear-EventLog` on Windows Vista and later versions of Windows, start Windows PowerShell
+    with the **Run as administrator** option.
+parameters:
+  cmdletParameters:
+  - name: ComputerName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies a remote computer. The default is the local computer.
+
+      Type the NetBIOS name, an Internet Protocol (IP) address, or a fully qualified domain name of a
+      remote computer. To specify the local computer, type the computer name, a dot (`.`), or `localhost`.
+
+      This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
+      parameter of `Get-EventLog` even if your computer is not configured to run remote commands.
+    aliases:
+    - Cn
+    defaultValue: Local computer
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LogName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the event logs. Enter the log name (the value of the **Log** property not the
+      **LogDisplayName**) of one or more event logs, separated by commas. Wildcard characters are not
+      permitted. This parameter is required.
+
+      > [!IMPORTANT]
+      > This parameter is supposed to accept values from the pipeline by property name. However, there is
+      > a bug that prevents this from working. You must pass a value using the parameter directly.
+    aliases:
+    - LN
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Clear-EventLog
+        [-LogName] <String[]>
+        [[-ComputerName] <String[]>]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to `Clear-EventLog`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+examples:
+- title: 'Example 1: Clear specific event log types from the local computer'
+  description: |-
+    ```powershell
+    Clear-EventLog "Windows PowerShell"
+    ```
+
+    This command clears the entries from the Windows PowerShell event log on the local computer.
+- title: 'Example 2: Clear specific multiple log types from the local and remote computers'
+  description: |-
+    ```powershell
+    Clear-EventLog -LogName ODiag, OSession -ComputerName localhost, Server02
+    ```
+
+    This command clears all of the entries in the Microsoft Office Diagnostics (ODiag) and Microsoft
+    Office Sessions (OSession) logs on the local computer and the Server02 remote computer.
+- title: 'Example 3: Clear all logs on the specified computers then display the event log list'
+  description: |-
+    ```powershell
+    Clear-EventLog -LogName Application, System -Confirm
+    ```
+
+    This command prompts you for confirmation before deleting the entries in the specified event logs.
+- title: 'Example 4: Clear all logs on the specified computers then display the event log list'
+  description: |-
+    ```powershell
+    function clear-all-event-logs ($ComputerName="localhost")
+    {
+       $logs = Get-EventLog -ComputerName $ComputerName -List | ForEach-Object {$_.Log}
+       $logs | ForEach-Object {Clear-EventLog -ComputerName $ComputerName -LogName $_ }
+       Get-EventLog -ComputerName $ComputerName -List
+    }
+
+    clear-all-event-logs -ComputerName Server01
+    ```
+
+    ```Output
+    Max(K) Retain OverflowAction        Entries Log
+    ------ ------ --------------        ------- ---
+    15,168      0 OverwriteAsNeeded           0 Application
+    15,168      0 OverwriteAsNeeded           0 DFS Replication
+    512         7 OverwriteOlder              0 DxStudio
+    20,480      0 OverwriteAsNeeded           0 Hardware Events
+    512         7 OverwriteOlder              0 Internet Explorer
+    20,480      0 OverwriteAsNeeded           0 Key Management Service
+    16,384      0 OverwriteAsNeeded           0 Microsoft Office Diagnostics
+    16,384      0 OverwriteAsNeeded           0 Microsoft Office Sessions
+    30,016      0 OverwriteAsNeeded           1 Security
+    15,168      0 OverwriteAsNeeded           2 System
+    15,360      0 OverwriteAsNeeded           0 Windows PowerShell
+    ```
+
+    This function clears all event logs on the specified computers and then displays the resulting event
+    log list.
+
+    Notice that a few entries were added to the System and Security logs after the logs were cleared but
+    before they were displayed.
+links:
+- text: Get-EventLog
+  href: Get-EventLog.yml
+- text: Limit-EventLog
+  href: Limit-EventLog.yml
+- text: New-EventLog
+  href: New-EventLog.yml
+- text: Remove-EventLog
+  href: Remove-EventLog.yml
+- text: Show-EventLog
+  href: Show-EventLog.yml
+- text: Write-EventLog
+  href: Write-EventLog.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 05/17/2022
+  PlatyPS schema version: 2024-05-01
+  title: Clear-EventLog

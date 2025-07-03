@@ -1,0 +1,84 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Core.Get-ExperimentalFeature
+name: Get-ExperimentalFeature
+module: Microsoft.PowerShell.Core
+isPreview: false
+summary: |-
+  Gets experimental features.
+description: |-
+  The `Get-ExperimentalFeature` cmdlet returns all experimental features discovered by PowerShell.
+  Experimental features can come from modules or the PowerShell engine. Experimental features allow
+  users to safely test new features and provide feedback (typically via GitHub) before the design is
+  considered complete and any changes can become a breaking change.
+parameters:
+  cmdletParameters:
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Name or names of specific experimental features to return.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-ExperimentalFeature
+        [[-Name] <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string containing the name of an experimental feature to this cmdlet.
+outputs:
+- name: <xref href="System.Management.Automation.ExperimentalFeature" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns instances that match the requested names or all experimental features if no
+    name is specified.
+examples:
+- title: Example 1
+  description: |-
+    Gets the list of currently registered experimental features and their current state.
+
+    ```powershell
+    Get-ExperimentalFeature
+    ```
+
+    ```Output
+    Name                         Enabled Source      Description
+    ----                         ------- ------      -----------
+    PSImplicitRemotingBatching   False PSEngine      Batch implicit remoting proxy commands to improve performance
+    ```
+links:
+- text: Disable-ExperimentalFeature
+  href: Disable-ExperimentalFeature.yml
+- text: Enable-ExperimentalFeature
+  href: Enable-ExperimentalFeature.yml
+- text: about_Experimental_Features
+  href: /powershell/module/microsoft.powershell.core/about/about_experimental_features
+- text: Using Experimental Features
+  href: /powershell/scripting/learn/experimental-features
+metadata:
+  document type: cmdlet
+  external help file: System.Management.Automation.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-experimentalfeature?view=powershell-7.6&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 12/04/2023
+  PlatyPS schema version: 2024-05-01
+  title: Get-ExperimentalFeature

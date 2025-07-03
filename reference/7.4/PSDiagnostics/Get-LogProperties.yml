@@ -1,0 +1,85 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSDiagnostics.Get-LogProperties
+name: Get-LogProperties
+module: PSDiagnostics
+isPreview: false
+summary: |-
+  Retrieves the properties of a Windows event log.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  This cmdlet gets the configuration settings of a Windows event log. This cmdlet is used by the
+  `Enable-PSTrace` and `Disable-PSTrace` cmdlets.
+parameters:
+  cmdletParameters:
+  - name: Name
+    type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+    description: |-
+      The name of the event provider.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-LogProperties
+        [-Name] <Object>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string containing the name of a log provider to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.PowerShell.Diagnostics.LogDetails" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a **LogDetails** object.
+
+    The **PSDiagnostics** module adds the **LogDetails** class to the
+    `Microsoft.PowerShell.Diagnostics` namespace.
+examples:
+- title: 'Example 1: Get the configuration settings of the Windows PowerShell event log'
+  description: |-
+    ```powershell
+    Get-LogProperties 'Windows PowerShell'
+    ```
+
+    ```Output
+    Name       : Windows PowerShell
+    Enabled    : True
+    Type       : Admin
+    Retention  : False
+    AutoBackup : False
+    MaxLogSize : 15728640
+    ```
+links:
+- text: Set-LogProperties
+  href: Set-LogProperties.yml
+- text: Enable-PSTrace
+  href: Enable-PSTrace.yml
+- text: Disable-PSTrace
+  href: Disable-PSTrace.yml
+metadata:
+  document type: cmdlet
+  external help file: PSDiagnostics-help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psdiagnostics/get-logproperties?view=powershell-7.4&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Get-LogProperties

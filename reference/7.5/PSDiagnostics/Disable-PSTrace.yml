@@ -1,0 +1,83 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSDiagnostics.Disable-PSTrace
+name: Disable-PSTrace
+module: PSDiagnostics
+isPreview: false
+summary: |-
+  Disables the Microsoft-Windows-PowerShell event provider logs.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  This cmdlet disables the Operational and Analytic event logs of the Microsoft-Windows-PowerShell
+  event provider.
+
+  You must run this cmdlet from an elevated PowerShell session.
+notes: |-
+  This cmdlet uses the `Get-LogProperties` and `Set-LogProperties` cmdlets.
+
+  You must run this cmdlet from an elevated PowerShell session.
+parameters:
+  cmdletParameters:
+  - name: AnalyticOnly
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      When this parameter is used, the cmdlet disables the Analytic event log of the
+      Microsoft-Windows-PowerShell provider. The Operational event log is not changed.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Disable-PSTrace
+        [-AnalyticOnly]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Disable the Analytic event log for PowerShell'
+  description: |-
+    The following example disables only the Analytic event log of the Microsoft-Windows-PowerShell
+    provider.
+
+    ```powershell
+    Disable-PSTrace -AnalyticOnly
+    ```
+links:
+- text: Get-LogProperties
+  href: Get-LogProperties.yml
+- text: Set-LogProperties
+  href: Set-LogProperties.yml
+- text: Enable-PSTrace
+  href: Enable-PSTrace.yml
+metadata:
+  document type: cmdlet
+  external help file: PSDiagnostics-help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psdiagnostics/disable-pstrace?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Disable-PSTrace

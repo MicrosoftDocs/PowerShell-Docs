@@ -1,0 +1,479 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Split-Path
+name: Split-Path
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Returns the specified part of a path.
+description: |-
+  The `Split-Path` cmdlet returns only the specified part of a path, such as the parent folder, a
+  subfolder, or a filename. It can also get items that are referenced by the split path and tell
+  whether the path is relative or absolute. If you split a path without specifying any other
+  parameters, `Split-Path` returns the parent part of the path provided.
+
+  The `Split-Path` command returns strings. It doesn't return **FileInfo** or other item objects like
+  the `*-Item` commands do.
+notes: |-
+  - The split location parameters (**Qualifier**, **Parent**, **Extension**, **Leaf**, **LeafBase**,
+    and **NoQualifier**) are exclusive. You can use only one in each command.
+
+  - The cmdlets that contain the **Path** noun (the **Path** cmdlets) work with path names and return
+    the names in a concise format that all PowerShell providers can interpret. They're designed for
+    use in programs and scripts where you want to display all or part of a path name in a particular
+    format. Use them in the way that you would use **Dirname**, **Normpath**, **Realpath**, **Join**,
+    or other path manipulators.
+
+  - You can use the **Path** cmdlets together with several providers. These include the FileSystem,
+    Registry, and Certificate providers.
+
+  - `Split-Path` is designed to work with the data exposed by any provider. To list the providers
+    available in your session, type `Get-PSProvider`. For more information, see
+    [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+parameters:
+  cmdletParameters:
+  - name: Credential
+    type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+    description: |-
+      > [!NOTE]
+      > This parameter isn't supported by any providers installed with PowerShell. To impersonate another
+      > user, or elevate your credentials when running this cmdlet, use
+      > [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.yml).
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Extension
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet returns only the extension of the leaf. For example, in the path
+      `C:\Test\Logs\Pass1.log`, it returns only `.log`.
+
+      This parameter was introduced in PowerShell 6.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ExtensionSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: IsAbsolute
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet returns `$true` if the path is absolute and `$false` if it's relative. On
+      Windows, an absolute path string must start with a provider drive specifier, like `C:` or `HKCU:`. A
+      relative path starts with a dot (`.`) or a dot-dot (`..`).
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IsAbsoluteSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Leaf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      When using the **Leaf** parameter, `Split-Path` returns only the last item in the path string
+      supplied, regardless whether that item is a file or a directory.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LeafSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LeafBase
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet returns only base name of the leaf. For example, in the path
+      `C:\Test\Logs\Pass1.log`, it returns only `Pass1`.
+
+      This parameter was introduced in PowerShell 6.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LeafBaseSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LiteralPath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the paths to be split. Unlike **Path**, the value of **LiteralPath** is used exactly as it
+      is typed. No characters are interpreted as wildcard characters. If the path includes escape
+      characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
+      interpret any characters as escape sequences.
+    aliases:
+    - PSPath
+    - LP
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LiteralPathSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: NoQualifier
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet returns the path without the qualifier. For the FileSystem or registry
+      providers, the qualifier is the drive of the provider path, such as `C:` or `HKCU:`. For example,
+      in the path `C:\Test\Logs\Pass1.log`, it returns only `\Test\Logs\Pass1.log`.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NoQualifierSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Parent
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      `Split-Path` returns only the parent container portion of the path string supplied. If the **Path**
+      string doesn't contain a parent container, `Split-Path` returns an empty string.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ParentSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Path
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the paths to be split. Wildcard characters are permitted. If the path includes spaces,
+      enclose it in quotation marks. You can also pipe a path to this cmdlet.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ParentSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: LeafSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: LeafBaseSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ExtensionSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: QualifierSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: NoQualifierSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: IsAbsoluteSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: Qualifier
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet returns only the qualifier of the specified path. For the FileSystem or
+      Registry providers, the qualifier is the drive of the provider path, such as `C:` or `HKCU:`.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: QualifierSet
+      position: "1"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Resolve
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet displays the items that are referenced by the resulting split path
+      instead of displaying the path elements.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Split-Path
+        [-Path] <String[]>
+        [-Parent]
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ParentSet
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Split-Path
+        [-Path] <String[]>
+        -Leaf
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LeafSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Split-Path
+        [-Path] <String[]>
+        -LeafBase
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LeafBaseSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Split-Path
+        [-Path] <String[]>
+        -Extension
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ExtensionSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Split-Path
+        [-Path] <String[]>
+        -Qualifier
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: QualifierSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Split-Path
+        [-Path] <String[]>
+        -NoQualifier
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: NoQualifierSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Split-Path
+        [-Path] <String[]>
+        -IsAbsolute
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: IsAbsoluteSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Split-Path
+        -LiteralPath <String[]>
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LiteralPathSet
+  isDefault: false
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a path to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns text strings. When you specify the **Resolve** parameter, it returns a
+    string that describes the location of the items. It doesn't return objects that represent the
+    items, such as a **FileInfo** or **RegistryKey** object.
+- name: <xref href="System.Boolean" data-throw-if-not-resolved="False" />
+  description: |-
+    When you specify the **IsAbsolute** parameter, this cmdlet returns a **Boolean** value.
+examples:
+- title: 'Example 1: Get the qualifier of a path'
+  description: |-
+    ```powershell
+    Split-Path -Path "HKCU:\Software\Microsoft" -Qualifier
+    ```
+
+    ```Output
+    HKCU:
+    ```
+
+    This command returns only the qualifier of the path. The qualifier is the drive.
+- title: 'Example 2: Display filename portion of the path'
+  description: |-
+    When using the **Leaf** parameter, `Split-Path` returns only the last item in the path string
+    supplied, regardless whether that item is a file or a directory.
+
+    ```powershell
+    Split-Path -Path .\folder1\*.txt -Leaf
+    ```
+
+    ```Output
+    *.txt
+    ```
+
+    ```powershell
+    Split-Path -Path .\folder1\*.txt -Leaf -Resolve
+    ```
+
+    ```Output
+    file1.txt
+    file2.txt
+    ```
+
+    When you use the **Resolve** parameter, `Split-Path` resolves the path string provided and returns
+    the items referenced by the path.
+- title: 'Example 3: Get the parent container'
+  description: |-
+    When using the **Parent** parameter, `Split-Path` returns only the parent container portion of the
+    path string supplied. If the **Path** string doesn't contain a parent container, `Split-Path`
+    returns an empty string.
+
+    ```powershell
+    Split-Path -Path .\folder1\file1.txt -Parent
+    ```
+
+    ```Output
+    .\folder1
+    ```
+
+    ```powershell
+    Split-Path -Path .\folder1\file1.txt -Parent -Resolve
+    ```
+
+    ```Output
+    D:\temp\test\folder1
+    ```
+
+    When you use the **Resolve** parameter, `Split-Path` resolves the path string provided and returns
+    the full path of the parent container.
+- title: 'Example 4: Determines whether a path is absolute'
+  description: |-
+    This command determines whether the path is relative or absolute. In this case, because the path is
+    relative to the current folder, which is represented by a dot (`.`), it returns `$false`.
+
+    ```powershell
+    Split-Path -Path ".\My Pictures\*.jpg" -IsAbsolute
+    ```
+
+    ```Output
+    False
+    ```
+- title: 'Example 5: Change location to a specified path'
+  description: |-
+    This command changes your location to the folder that contains the PowerShell profile.
+
+    ```powershell
+    PS C:\> Set-Location (Split-Path -Path $PROFILE)
+    PS C:\Users\User01\Documents\PowerShell>
+    ```
+
+    The command in parentheses uses `Split-Path` to return only the parent of the path stored in the
+    built-in `$PROFILE` variable. The **Parent** parameter is the default split location parameter.
+    Therefore, you can omit it from the command. The parentheses direct PowerShell to run the command
+    first. This is a useful way to move to a folder that has a long path name.
+- title: 'Example 6: Split a path using the pipeline'
+  description: |-
+    ```powershell
+    'C:\Users\User01\My Documents\My Pictures' | Split-Path
+    ```
+
+    ```Output
+    C:\Users\User01\My Documents
+    ```
+
+    This command uses a pipeline operator (`|`) to send a path to `Split-Path`. The path is enclosed in
+    quotation marks to indicate that it's a single token.
+links:
+- text: Convert-Path
+  href: Convert-Path.yml
+- text: Join-Path
+  href: Join-Path.yml
+- text: Resolve-Path
+  href: Resolve-Path.yml
+- text: Test-Path
+  href: Test-Path.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/split-path?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/03/2024
+  PlatyPS schema version: 2024-05-01
+  title: Split-Path

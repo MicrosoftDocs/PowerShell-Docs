@@ -1,0 +1,164 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.LocalAccounts.Get-LocalGroupMember
+name: Get-LocalGroupMember
+module: Microsoft.PowerShell.LocalAccounts
+isPreview: false
+summary: |-
+  Gets members from a local group.
+description: |-
+  The `Get-LocalGroupMember` cmdlet gets members from a local group.
+
+  > [!NOTE]
+  > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  > system.
+notes: |-
+  Windows PowerShell includes the following aliases for `Get-LocalGroupMember`:
+
+  - `glgm`
+
+  The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
+
+  - Local
+  - Active Directory
+  - Microsoft Entra group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+  Windows operating system. For earlier versions, the property is blank.
+parameters:
+  cmdletParameters:
+  - name: Group
+    type: <xref href="Microsoft.PowerShell.Commands.LocalGroup" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the security group from which this cmdlet gets members.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Group
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Member
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies a user or group that this cmdlet gets from a security group. You can specify users or
+      groups by name or security ID (SID). Specify SID strings in S-R-I-S-S . . . format. You can use
+      wildcard characters. If you do not specify this parameter, the cmdlet gets all members of the group.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the name of the security group from which this cmdlet gets members.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Default
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: SID
+    type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the security ID of the security group from which this cmdlet gets members.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: SecurityIdentifier
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-LocalGroupMember
+        [[-Member] <String>]
+        [-Name] <String>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-LocalGroupMember
+        [-Group] <LocalGroup>
+        [[-Member] <String>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Group
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-LocalGroupMember
+        [[-Member] <String>]
+        [-SID] <SecurityIdentifier>
+        [<CommonParameters>]
+    ```
+  parameterSetName: SecurityIdentifier
+  isDefault: false
+inputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalGroup" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a local group to this cmdlet.
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string to this cmdlet.
+- name: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a SID to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.SecurityAccountsManager.LocalPrincipal" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns local principals.
+examples:
+- title: 'Example 1: Get all members of the Administrators group'
+  description: |-
+    ```powershell
+    Get-LocalGroupMember -Group "Administrators"
+    ```
+
+    This command gets all the members of the local Administrators group.
+links:
+- text: Add-LocalGroupMember
+  href: Add-LocalGroupMember.yml
+- text: New-LocalGroup
+  href: New-LocalGroup.yml
+- text: Remove-LocalGroupMember
+  href: Remove-LocalGroupMember.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/28/2023
+  PlatyPS schema version: 2024-05-01
+  title: Get-LocalGroupMember

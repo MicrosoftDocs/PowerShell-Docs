@@ -1,0 +1,147 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Enable-ComputerRestore
+name: Enable-ComputerRestore
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Enables the System Restore feature on the specified file system drive.
+description: |-
+  The `Enable-ComputerRestore` cmdlet turns on the System Restore feature on one or more file system
+  drives. As a result, you can use tools, such as the Restore-Computer cmdlet, to restore the computer
+  to a previous state.
+
+  By default, System Restore is enabled on all eligible drives, but you can disable it, such as by
+  using the` Disable-ComputerRestore` cmdlet. To enable (or re-enable) System Restore on any drive, it
+  must be enabled on the system drive, either first or concurrently. To find the state of System
+  Restore for each drive, use `Rstrui.exe`.
+
+  System restore points and the ComputerRestore cmdlets are supported only on client operating
+  systems, such as Windows 7, Windows Vista, and Windows XP.
+notes: |-
+  - To run this cmdlet on Windows Vista and later versions of Windows, open Windows PowerShell with
+    the Run as administrator option.
+
+    To find the file system drives that are eligible for system restore, in System in Control Panel,
+    see the System Protection tab. To open this tab in Windows PowerShell, type
+    `SystemPropertiesProtection`.
+
+    This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
+parameters:
+  cmdletParameters:
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Drive
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the file system drives. Enter one or more file system drive letters, each followed by a
+      colon and a backslash and enclosed in quotation marks, such as C:\ or D:\. This parameter is
+      required.
+
+      You cannot use this cmdlet to enable System Restore on a remote network drive, even if the drive is
+      mapped to the local computer, and you cannot enable System Restore on drives that are not eligible
+      for System Restore, such as external drives.
+
+      To enable System Restore on any drive, System Restore must be enabled on the system drive, either
+      before or concurrently.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Enable-ComputerRestore
+        [-Drive] <String[]>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+examples:
+- title: 'Example 1: Enable System Restore on the specified drive'
+  description: |-
+    ```
+    Enable-ComputerRestore -Drive "C:\"
+    ```
+
+    This command enables System Restore on the C: drive of the local computer.
+- title: 'Example 2: Enable System Restore on multiple drives'
+  description: |-
+    ```
+    Enable-ComputerRestore -Drive "C:\", "D:\"
+    ```
+
+    This command enables System Restore on the C: and D: drives of the local computer.
+links:
+- text: Checkpoint-Computer
+  href: Checkpoint-Computer.yml
+- text: Disable-ComputerRestore
+  href: Disable-ComputerRestore.yml
+- text: Get-ComputerRestorePoint
+  href: Get-ComputerRestorePoint.yml
+- text: Restart-Computer
+  href: Restart-Computer.yml
+- text: Restore-Computer
+  href: Restore-Computer.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/enable-computerrestore?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/30/2021
+  PlatyPS schema version: 2024-05-01
+  title: Enable-ComputerRestore

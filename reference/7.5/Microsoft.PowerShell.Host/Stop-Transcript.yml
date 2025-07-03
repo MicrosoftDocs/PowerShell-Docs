@@ -1,0 +1,95 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Host.Stop-Transcript
+name: Stop-Transcript
+module: Microsoft.PowerShell.Host
+isPreview: false
+summary: |-
+  Stops a transcript.
+description: |-
+  The `Stop-Transcript` cmdlet stops a transcript that was started by the `Start-Transcript` cmdlet.
+  Alternatively, you can end a session to stop a transcript.
+notes: |-
+  If a transcript hasn't been started, the command fails.
+parameters:
+  cmdletParameters:
+  - name: Confirm
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+
+      This parameter was added in PowerShell 7.4.
+    aliases:
+    - cf
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet isn't run.
+
+      This parameter was added in PowerShell 7.4.
+    aliases:
+    - wi
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Stop-Transcript
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a string that contains a status message and the path to the output file.
+examples:
+- title: 'Example 1: Stop all transcripts'
+  description: |-
+    ```powershell
+    Stop-Transcript
+    ```
+
+    This command stops all transcripts.
+links:
+- text: Start-Transcript
+  href: Start-Transcript.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/stop-transcript?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Host
+  ms.date: 01/04/2024
+  PlatyPS schema version: 2024-05-01
+  title: Stop-Transcript

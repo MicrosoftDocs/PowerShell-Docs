@@ -1,0 +1,32 @@
+### YamlMime:PowerShellModule1
+uid: PSDiagnostics
+name: PSDiagnostics Module
+isPreview: false
+cmdletGroups:
+- title: PSDiagnostics Cmdlets
+  cmdlets:
+  - PSDiagnostics.Disable-PSTrace
+  - PSDiagnostics.Disable-PSWSManCombinedTrace
+  - PSDiagnostics.Disable-WSManTrace
+  - PSDiagnostics.Enable-PSTrace
+  - PSDiagnostics.Enable-PSWSManCombinedTrace
+  - PSDiagnostics.Enable-WSManTrace
+  - PSDiagnostics.Get-LogProperties
+  - PSDiagnostics.Set-LogProperties
+  - PSDiagnostics.Start-Trace
+  - PSDiagnostics.Stop-Trace
+description: |-
+  The PowerShell Diagnostics Module contains a set of cmdlets that enables the use of ETW
+  tracing in PowerShell on Windows.
+
+  This module is only available on the Windows platform.
+metadata:
+  HelpInfoUri: https://aka.ms/powershell74-help
+  Help Version: 7.4.0.0
+  Locale: en-US
+  Module Guid: c61d6278-02a3-4618-ae37-a524d40a7f44
+  Module Name: PSDiagnostics
+  ms.date: 11/27/2018
+  PlatyPS schema version: 2024-05-01
+  title: PSDiagnostics Module
+  document type: module

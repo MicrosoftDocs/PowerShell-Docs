@@ -1,0 +1,159 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.LocalAccounts.Get-LocalUser
+name: Get-LocalUser
+module: Microsoft.PowerShell.LocalAccounts
+isPreview: false
+summary: |-
+  Gets local user accounts.
+description: |-
+  The `Get-LocalUser` cmdlet gets local user accounts. This cmdlet gets default built-in user
+  accounts, local user accounts that you created, and local accounts that you connected to Microsoft
+  accounts.
+
+  > [!NOTE]
+  > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  > system.
+notes: |-
+  Windows PowerShell includes the following aliases for `Get-LocalUser`:
+
+  - `glu`
+
+  The **PrincipalSource** property on **LocalUser**, **LocalGroup**, and **LocalPrincipal** objects
+  describes the source of the object. The possible sources are as follows:
+
+  - Local
+  - Active Directory
+  - Microsoft Entra group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+  Windows operating system. For earlier versions, the property is blank.
+parameters:
+  cmdletParameters:
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of names of user accounts that this cmdlet gets. You can use the wildcard
+      character.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Default
+      position: "0"
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: SID
+    type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of security IDs (SIDs) of user accounts that this cmdlet gets.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: SecurityIdentifier
+      position: "0"
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-LocalUser
+        [[-Name] <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-LocalUser
+        [[-SID] <SecurityIdentifier[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: SecurityIdentifier
+  isDefault: false
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string to this cmdlet.
+- name: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a SID to this cmdlet.
+outputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalUser" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns local user accounts.
+examples:
+- title: 'Example 1: Get an account by using its name'
+  description: |-
+    This example gets a user account named AdminContoso02.
+
+    ```powershell
+    Get-LocalUser -Name "AdminContoso02"
+    ```
+
+    ```Output
+    Name             Enabled Description
+    ----             ------- -----------
+    AdminContoso02   True    Description of this account.
+    ```
+- title: 'Example 2: Get an account that is connected to a Microsoft account'
+  description: |-
+    This example gets a user account that is connected to a Microsoft account. This example uses a
+    placeholder value for the username of an account at Outlook.com.
+
+    ```powershell
+    Get-LocalUser -Name "MicrosoftAccount\username@Outlook.com"
+    ```
+
+    ```Output
+    Name                                    Enabled  Description
+    ----                                    -------  -----------
+    MicrosoftAccount\username@outlook.com  True     Description of this account.
+    ```
+- title: 'Example 3: Get an account that has the specified SID'
+  description: |-
+    This example gets a local user account that has the specified SID.
+
+    ```powershell
+    Get-LocalUser -SID S-1-5-21-9526073513-1762370368-3942940353-500
+    ```
+
+    ```Output
+    Name          Enabled Description
+    ----          ------- -----------
+    Administrator True    Built-in account for administering the computer/domain
+    ```
+links:
+- text: Disable-LocalUser
+  href: Disable-LocalUser.yml
+- text: Enable-LocalUser
+  href: Enable-LocalUser.yml
+- text: New-LocalUser
+  href: New-LocalUser.yml
+- text: Remove-LocalUser
+  href: Remove-LocalUser.yml
+- text: Rename-LocalUser
+  href: Rename-LocalUser.yml
+- text: Set-LocalUser
+  href: Set-LocalUser.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/28/2023
+  PlatyPS schema version: 2024-05-01
+  title: Get-LocalUser

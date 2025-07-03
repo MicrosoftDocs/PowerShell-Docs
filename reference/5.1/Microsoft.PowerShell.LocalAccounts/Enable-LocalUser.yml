@@ -1,0 +1,201 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.LocalAccounts.Enable-LocalUser
+name: Enable-LocalUser
+module: Microsoft.PowerShell.LocalAccounts
+isPreview: false
+summary: |-
+  Enables a local user account.
+description: |-
+  The `Enable-LocalUser` cmdlet enables local user accounts.
+  When a user account is disabled, the user cannot log on.
+  When a user account is enabled, the user can log on.
+
+  > [!NOTE]
+  > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  > system.
+notes: |-
+  Windows PowerShell includes the following aliases for `Enable-LocalUser`:
+
+  - `elu`
+
+  The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
+
+  - Local
+  - Active Directory
+  - Microsoft Entra group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+  Windows operating system. For earlier versions, the property is blank.
+parameters:
+  cmdletParameters:
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="Microsoft.PowerShell.Commands.LocalUser" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of user accounts that this cmdlet enables. To obtain a user account, use the
+      `Get-LocalUser` cmdlet.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InputObject
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of names of the user accounts that this cmdlet enables.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Default
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: SID
+    type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of user accounts that this cmdlet enables.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: SecurityIdentifier
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Enable-LocalUser
+        [-InputObject] <LocalUser[]>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InputObject
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Enable-LocalUser
+        [-Name] <String[]>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Enable-LocalUser
+        [-SID] <SecurityIdentifier[]>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: SecurityIdentifier
+  isDefault: false
+inputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalUser" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a local user to this cmdlet.
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string to this cmdlet.
+- name: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a SID to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Enable an account by specifying a name'
+  description: |-
+    ```powershell
+    Enable-LocalUser -Name "Admin02"
+    ```
+
+    This command enables the user account named Admin02.
+- title: 'Example 2: Enable an account by using the pipeline'
+  description: |-
+    ```powershell
+    Get-LocalUser -Name "Administrator" | Enable-LocalUser
+    ```
+
+    In this example, `Get-LocalUser` gets the Administrator account and passes it to `Enable-LocalUser`
+    by using the pipeline operator.
+links:
+- text: Disable-LocalUser
+  href: Disable-LocalUser.yml
+- text: Get-LocalUser
+  href: Get-LocalUser.yml
+- text: New-LocalUser
+  href: New-LocalUser.yml
+- text: Remove-LocalUser
+  href: Remove-LocalUser.yml
+- text: Rename-LocalUser
+  href: Rename-LocalUser.yml
+- text: Set-LocalUser
+  href: Set-LocalUser.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/enable-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 10/10/2024
+  PlatyPS schema version: 2024-05-01
+  title: Enable-LocalUser

@@ -1,0 +1,343 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.LocalAccounts.Set-LocalUser
+name: Set-LocalUser
+module: Microsoft.PowerShell.LocalAccounts
+isPreview: false
+summary: |-
+  Modifies a local user account.
+description: |-
+  The `Set-LocalUser` cmdlet modifies a local user account. This cmdlet can reset the password of a
+  local user account.
+
+  > [!NOTE]
+  > The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
+  > system.
+notes: |-
+  Windows PowerShell includes the following aliases for `Set-LocalUser`:
+
+  - `slu`
+
+  The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
+  follows:
+
+  - Local
+  - Active Directory
+  - Microsoft Entra group
+  - Microsoft Account
+
+  **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
+  Windows operating system. For earlier versions, the property is blank.
+parameters:
+  cmdletParameters:
+  - name: AccountExpires
+    type: <xref href="System.DateTime" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies when the user account expires. To obtain a **DateTime** object, use the `Get-Date` cmdlet.
+
+      If you do not want the account to expire, specify the **AccountNeverExpires** parameter.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: AccountNeverExpires
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that the account does not expire.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Description
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies a comment for the user account. The maximum length is 48 characters.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: FullName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the full name for the user account. The full name differs from the user name of the user
+      account.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="Microsoft.PowerShell.Commands.LocalUser" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the user account that this cmdlet changes. To obtain a user account, use the
+      `Get-LocalUser` cmdlet.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InputObject
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the name of the user account that this cmdlet changes.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Password
+    type: <xref href="System.Security.SecureString" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies a password for the user account. If the user account is connected to a Microsoft account,
+      do not set a password.
+
+      You can use `Read-Host -AsSecureString`, `Get-Credential`, or `ConvertTo-SecureString` to create a
+      **SecureString** object for the password.
+
+      If you omit the **Password** and **NoPassword** parameters, `Set-LocalUser` prompts you for the
+      user's password.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: PasswordNeverExpires
+    type: <xref href="System.Boolean" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates whether the password expires.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: SID
+    type: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the security ID (SID) of the user account that this cmdlet changes.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: SecurityIdentifier
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: UserMayChangePassword
+    type: <xref href="System.Boolean" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that the user can change the password on the user account.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Set-LocalUser
+        [-Name] <String>
+        [-AccountExpires <DateTime>]
+        [-AccountNeverExpires]
+        [-Description <String>]
+        [-FullName <String>]
+        [-Password <SecureString>]
+        [-PasswordNeverExpires <Boolean>]
+        [-UserMayChangePassword <Boolean>]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Set-LocalUser
+        [-InputObject] <LocalUser>
+        [-AccountExpires <DateTime>]
+        [-AccountNeverExpires]
+        [-Description <String>]
+        [-FullName <String>]
+        [-Password <SecureString>]
+        [-PasswordNeverExpires <Boolean>]
+        [-UserMayChangePassword <Boolean>]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InputObject
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Set-LocalUser
+        [-SID] <SecurityIdentifier>
+        [-AccountExpires <DateTime>]
+        [-AccountNeverExpires]
+        [-Description <String>]
+        [-FullName <String>]
+        [-Password <SecureString>]
+        [-PasswordNeverExpires <Boolean>]
+        [-UserMayChangePassword <Boolean>]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: SecurityIdentifier
+  isDefault: false
+inputs:
+- name: <xref href="System.Management.Automation.SecurityAccountsManager.LocalUser" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a local user to this cmdlet.
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string to this cmdlet.
+- name: <xref href="System.Security.Principal.SecurityIdentifier" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a SID to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Change a description of a user account'
+  description: |-
+    ```powershell
+    Set-LocalUser -Name "Admin07" -Description "Description of this account."
+    ```
+
+    This command changes the description of a user account named Admin07.
+- title: 'Example 2: Change the password on an account'
+  description: |-
+    ```powershell
+    $Password = Read-Host -AsSecureString
+    $UserAccount = Get-LocalUser -Name "User02"
+    $UserAccount | Set-LocalUser -Password $Password
+    ```
+
+    The first command prompts you for a password by using the Read-Host cmdlet. The command stores the
+    password as a secure string in the $Password variable.
+
+    The second command gets a user account named User02 by using `Get-LocalUser`. The command stores the
+    account in the $UserAccount variable.
+
+    The third command sets the new password on the user account stored in `$UserAccount`.
+links:
+- text: Disable-LocalUser
+  href: Disable-LocalUser.yml
+- text: Enable-LocalUser
+  href: Enable-LocalUser.yml
+- text: Get-LocalUser
+  href: Get-LocalUser.yml
+- text: New-LocalUser
+  href: New-LocalUser.yml
+- text: Remove-LocalUser
+  href: Remove-LocalUser.yml
+- text: Rename-LocalUser
+  href: Rename-LocalUser.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/set-localuser?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.LocalAccounts
+  ms.date: 06/28/2023
+  PlatyPS schema version: 2024-05-01
+  title: Set-LocalUser

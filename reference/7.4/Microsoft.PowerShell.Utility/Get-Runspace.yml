@@ -1,0 +1,155 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Utility.Get-Runspace
+name: Get-Runspace
+module: Microsoft.PowerShell.Utility
+isPreview: false
+summary: |-
+  Gets active runspaces within a PowerShell host process.
+description: |-
+  The `Get-Runspace` cmdlet gets active runspaces in a PowerShell host process.
+parameters:
+  cmdletParameters:
+  - name: Id
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the Id of a runspace
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IdParameterSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InstanceId
+    type: <xref href="System.Guid" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the instance ID GUID of a running job.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InstanceIdParameterSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the Name of a runspace
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NameParameterSet
+      position: "0"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-Runspace
+        [[-Name] <String[]>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: NameParameterSet
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-Runspace
+        [-Id] <Int32[]>
+        [<CommonParameters>]
+    ```
+  parameterSetName: IdParameterSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Get-Runspace
+        [-InstanceId] <Guid[]>
+        [<CommonParameters>]
+    ```
+  parameterSetName: InstanceIdParameterSet
+  isDefault: false
+outputs:
+- name: <xref href="System.Management.Automation.Runspaces.Runspace" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a **Runspace**. You can pipe the results of a `Get-Runspace` command to
+    `Debug-Runspace`.
+examples:
+- title: 'Example 1: Get runspaces'
+  description: |-
+    ```powershell
+    Get-Runspace
+    ```
+
+    ```Output
+    Id Name            ComputerName    Type          State         Availability
+     -- ----            ------------    ----          -----         ------------
+      1 Runspace1       localhost       Local         Opened        Busy
+      2 Runspace2       localhost       Local         Opened        Available
+      3 Runspace3       localhost       Local         Opened        Available
+    ```
+- title: 'Example 2: Get runspace by Id'
+  description: |-
+    ```powershell
+    Get-Runspace -Id 2
+    ```
+
+    ```Output
+    Id Name            ComputerName    Type          State         Availability
+     -- ----            ------------    ----          -----         ------------
+      2 Runspace2       localhost       Local         Opened        Available
+    ```
+- title: 'Example 3: Get runspace by Name'
+  description: |-
+    ```powershell
+    Get-Runspace -Name Runspace1
+    ```
+
+    ```Output
+    Id Name            ComputerName    Type          State         Availability
+     -- ----            ------------    ----          -----         ------------
+      1 Runspace1       localhost       Local         Opened        Busy
+    ```
+- title: 'Example 4: Get runspace by InstanceId'
+  description: |-
+    In this example, we identify an available runspace using the `Name` parameter and store the return
+    object to the variable `$activeRunspace`. This allows you to use the properties of the **Runspace**
+    in subsequent runs of `Get-Runspace`.
+
+    ```powershell
+    $activeRunspace = Get-Runspace -Name Runspace1
+    Get-Runspace -InstanceId $activeRunspace.InstanceId
+    ```
+
+    ```Output
+    Id Name            ComputerName    Type          State         Availability
+     -- ----            ------------    ----          -----         ------------
+      1 Runspace1       localhost       Local         Opened        Busy
+    ```
+links:
+- text: Debug-Runspace
+  href: Debug-Runspace.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-runspace?view=powershell-7.4&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Get-Runspace

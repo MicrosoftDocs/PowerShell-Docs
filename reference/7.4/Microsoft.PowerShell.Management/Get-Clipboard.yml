@@ -1,0 +1,85 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Get-Clipboard
+name: Get-Clipboard
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Gets the contents of the clipboard.
+description: |-
+  The `Get-Clipboard` cmdlet gets the contents of the clipboard as text. Multiple lines of text are
+  returned as an array of strings similar to `Get-Content`.
+
+  > [!NOTE]
+  > On Linux, this cmdlet requires the `xclip` utility to be in the path. On macOS, this cmdlet uses
+  > the `pbpaste` utility.
+notes: |-
+  PowerShell includes the following aliases for `Get-Clipboard`:
+
+  - All platforms:
+    - `gcb`
+
+  Support for this cmdlet on macOS was added in the PowerShell 7.0.0 release.
+parameters:
+  cmdletParameters:
+  - name: Raw
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Gets the entire contents of the clipboard. Multiline text is returned as a single multiline string
+      rather than an array of strings.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-Clipboard
+        [-Raw]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a string containing the contents of the clipboard.
+examples:
+- title: 'Example 1: Get the content of the clipboard and display it to the command-line'
+  description: |-
+    In this example we have copied the text "hello" into the clipboard.
+
+    ```powershell
+    Get-Clipboard
+    ```
+
+    ```Output
+    hello
+    ```
+links:
+- text: Set-Clipboard
+  href: Set-Clipboard.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7.4&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 08/30/2024
+  PlatyPS schema version: 2024-05-01
+  title: Get-Clipboard

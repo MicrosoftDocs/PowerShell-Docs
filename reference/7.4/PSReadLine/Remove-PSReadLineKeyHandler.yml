@@ -1,0 +1,103 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSReadLine.Remove-PSReadLineKeyHandler
+name: Remove-PSReadLineKeyHandler
+module: PSReadLine
+isPreview: false
+summary: |-
+  Removes a key binding.
+description: |-
+  The `Remove-PSReadLineKeyHandler` cmdlet removes a specified key binding.
+parameters:
+  cmdletParameters:
+  - name: Chord
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies an array of keys or sequences of keys to be removed. A single binding is specified by
+      using a single string. If the binding is a sequence of keys, separate the keys by a comma, as in
+      the following example:
+
+      `Ctrl+x,Ctrl+l`
+
+      This parameter accepts an array of strings. Each string is a separate binding, not a sequence of
+      keys for a single binding.
+    aliases:
+    - Key
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ViMode
+    type: <xref href="Microsoft.PowerShell.ViMode" data-throw-if-not-resolved="False" />
+    description: |-
+      Specify which vi mode the binding applies to. Possible values are: Insert, Command.
+    acceptedValues:
+    - Insert
+    - Command
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Remove-PSReadLineKeyHandler
+        [-Chord] <String[]>
+        [-ViMode <ViMode>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Remove a binding'
+  description: |-
+    ```powershell
+    Remove-PSReadLineKeyHandler -Chord Ctrl+B
+    ```
+
+    This command removes the binding from the key combination, or chord, `Ctrl+B`. The `Ctrl+B` chord is
+    created in the `Set-PSReadLineKeyHandler` article.
+links:
+- text: Get-PSReadLineKeyHandler
+  href: Get-PSReadLineKeyHandler.yml
+- text: Get-PSReadLineOption
+  href: Get-PSReadLineOption.yml
+- text: Set-PSReadLineOption
+  href: Set-PSReadLineOption.yml
+- text: Set-PSReadLineKeyHandler
+  href: Set-PSReadLineKeyHandler.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psreadline/remove-psreadlinekeyhandler?view=powershell-7.4&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSReadLine
+  ms.date: 12/13/2022
+  PlatyPS schema version: 2024-05-01
+  title: Remove-PSReadLineKeyHandler

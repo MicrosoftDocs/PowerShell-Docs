@@ -1,0 +1,312 @@
+### YamlMime:PowerShellCmdlet1
+uid: CimCmdlets.Get-CimClass
+name: Get-CimClass
+module: CimCmdlets
+isPreview: false
+summary: |-
+  Gets a list of CIM classes in a specific namespace.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  The `Get-CimClass` cmdlet retrieves a list of CIM classes in a specific namespace. If there is no
+  class name supplied, then the cmdlet returns all the classes in the namespace. Unlike a CIM
+  instance, CIM classes do not contain the CIM session or computer name from which they are retrieved.
+notes: |-
+  PowerShell includes the following aliases for `Get-CimClass`:
+
+  - Windows:
+    - `gcls`
+
+  This cmdlet is only available on Windows platforms.
+parameters:
+  cmdletParameters:
+  - name: Amended
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that objects returned from the CIM query should contain amended information. Typically,
+      amended information is localizable information, such as object and property descriptions that are
+      attached to the CIM object. This is useful for translating numeric values to human-readable values.
+
+      This parameter was added in PowerShell 7.3.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CimSession
+    type: <xref href="Microsoft.Management.Infrastructure.CimSession" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Runs the cmdlet in a remote session or on a remote computer. Enter a computer name or a session
+      object, such as the output of a `New-CimSession` or `Get-CimSession` cmdlet. The default is the
+      current session on the local computer.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: SessionSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ClassName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the name of the CIM class for which to perform the operation. You can use tab completion
+      to browse the list of classes, because PowerShell gets a list of classes from the local WMI server
+      to provide a list of class names.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: ComputerName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the computer on which you want to run the CIM operation. You can specify a fully qualified
+      domain name (FQDN) a NetBIOS name, or an IP address.
+
+      If you specify this parameter, the cmdlet creates a temporary session to the specified computer
+      using the WsMan protocol.
+
+      If you do not specify this parameter, the cmdlet performs the operation on the local computer using
+      Component Object Model (COM).
+
+      If multiple operations are being performed on the same computer, using a CIM session gives better
+      performance.
+    aliases:
+    - CN
+    - ServerName
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: MethodName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Finds the classes that have a method matching this name. You can use wildcard characters with this
+      parameter.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: Namespace
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the namespace for CIM operation. The default namespace is **root/CIMV2**. You can use tab
+      completion to browse the list of namespaces, because PowerShell gets a list of namespaces from the
+      local WMI server to provide the list of namespaces.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: OperationTimeoutSec
+    type: <xref href="System.UInt32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the amount of time that the cmdlet waits for a response from the computer. By default, the
+      value of this parameter is 0, which means that the cmdlet uses the default timeout value for the
+      server.
+
+      If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
+      timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
+      parameter are not recoverable, because the operation on the server times out before the client can
+      reconnect.
+    aliases:
+    - OT
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: PropertyName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Finds the classes which have a property matching this name. You can use wildcard characters with
+      this parameter.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: QualifierName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Filters the classes by class level qualifier name. You can use wildcard characters with this
+      parameter.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Get-CimClass
+        [[-ClassName] <string>]
+        [[-Namespace] <string>]
+        [-Amended]
+        [-OperationTimeoutSec <uint>]
+        [-ComputerName <string[]>]
+        [-MethodName <string>]
+        [-PropertyName <string>]
+        [-QualifierName <string>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ComputerSet
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Get-CimClass
+        [[-ClassName] <string>]
+        [[-Namespace] <string>]
+        -CimSession <CimSession[]>
+        [-Amended]
+        [-OperationTimeoutSec <uint>]
+        [-MethodName <string>]
+        [-PropertyName <string>]
+        [-QualifierName <string>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: SessionSet
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.Management.Infrastructure.CimClass" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a CIM class object.
+examples:
+- title: 'Example 1: Get all the class definitions'
+  description: |-
+    This example gets all the class definitions under the namespace **root/CIMV2**.
+
+    ```powershell
+    Get-CimClass
+    ```
+- title: 'Example 2: Get the classes with a specific name'
+  description: |-
+    This example gets the classes that contain the word **Disk** in their names.
+
+    ```powershell
+    Get-CimClass -ClassName *Disk*
+    ```
+- title: 'Example 3: Get the classes with a specific method name'
+  description: |-
+    This example gets the classes that start with the name **Win32** and have a method name that starts
+    with **Term**.
+
+    ```powershell
+    Get-CimClass -ClassName Win32* -MethodName Term*
+    ```
+- title: 'Example 4: Get the classes with a specific property name'
+  description: |-
+    This example gets the classes that start with the name **Win32** and have a property named
+    **Handle**.
+
+    ```powershell
+    Get-CimClass -ClassName Win32* -PropertyName Handle
+    ```
+- title: 'Example 5: Get the classes with a specific qualifier name'
+  description: |-
+    This example gets the classes that start with the name **Win32**, contain the word **Disk** in their
+    names and have the specified qualifier **Association**.
+
+    ```powershell
+    Get-CimClass -ClassName Win32*Disk* -QualifierName Association
+    ```
+- title: 'Example 6: Get the class definitions from a specific namespace'
+  description: |-
+    This example gets the class definitions that contain the word **Net** in their names from the
+    specified namespace **root/StandardCimv2**.
+
+    ```powershell
+    Get-CimClass -Namespace root/StandardCimv2 -ClassName *Net*
+    ```
+- title: 'Example 7: Get the class definitions from a remote server'
+  description: |-
+    This example gets the class definitions that contain the word **Disk** in their names from the
+    specified remote servers **Server01** and **Server02**.
+
+    ```powershell
+    Get-CimClass -ClassName *Disk* -ComputerName Server01, Server02
+    ```
+- title: 'Example 8: Get the classes by using a CIM session'
+  description: |-
+    ```powershell
+    $s = New-CimSession -ComputerName Server01, Server02
+    Get-CimClass -ClassName *Disk* -CimSession $s
+    ```
+
+    This set of commands creates a session with multiple computers and stores it into a variable `$s`
+    using the `New-CimSession` cmdlet, and then gets the classes using the `Get-CimClass` cmdlet.
+links:
+- text: New-CimSession
+  href: New-CimSession.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/cimcmdlets/get-cimclass?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: CimCmdlets
+  ms.date: 09/11/2023
+  PlatyPS schema version: 2024-05-01
+  title: Get-CimClass

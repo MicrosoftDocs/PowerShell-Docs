@@ -1,0 +1,231 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Core.TabExpansion2
+name: TabExpansion2
+module: Microsoft.PowerShell.Core
+isPreview: false
+summary: |-
+  A helper function that wraps the `CompleteInput()` method of the **CommandCompletion** class to
+  provide tab completion for PowerShell scripts.
+description: |-
+  `TabExpansion2` is a built-in function that provides tab completion for user input. PowerShell calls
+  this function when the user presses the <kbd>Tab</kbd> or <kbd>Ctrl</kbd>+<kbd>Space</kbd> key while
+  typing a command. The function returns a list of possible completions for the current input.
+
+  `TabExpansion2` isn't normally called directly by users. However, it can be useful for testing tab
+  completion. To use `TabExpansion2`, you need to provide the current input script and the cursor
+  position in the script. The function returns a **CommandCompletion** object that contains a list of
+  possible completions for the current input. This input script can be a string or an abstract syntax
+  tree (AST) that represents the script.
+
+  You can override the default behavior of `TabExpansion2` by defining a custom function with the same
+  name in your PowerShell session. This custom function can provide completions for custom commands or
+  parameters. While it is possible to override `TabExpansion2`, it's not supported. You should create
+  a custom function only if you have a specific need to customize the tab completion behavior.
+parameters:
+  cmdletParameters:
+  - name: ast
+    type: <xref href="System.Management.Automation.Language.Ast" data-throw-if-not-resolved="False" />
+    description: |-
+      An abstract syntax tree (AST) object that represents the script that you want to expand using tab
+      completion.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: AstInputSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: cursorColumn
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      The column number of the cursor in the input script string. The cursor position is used to determine
+      the token that gets expanded by tab completion.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ScriptInputSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: inputScript
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      A string that represents the script that you want to expand using tab completion.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ScriptInputSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: options
+    type: <xref href="System.Collections.Hashtable" data-throw-if-not-resolved="False" />
+    description: |-
+      A hashtable of option values to pass to the `CompleteInput()` API. The API accepts the following
+      boolean options:
+
+      - `IgnoreHiddenShares` - When set to `$true`, ignore hidden UNC shares such as `\\COMPUTER\ADMIN$`
+        and `\\COMPUTER\C$`. By default, PowerShell includes hidden shares.
+      - `RelativePaths` - By default, PowerShell decides how to expand paths based on the input you
+        provided. Setting this value to `$true` forces PowerShell to replace paths with relative paths.
+        Setting this value to `$false`, forces PowerShell to replace them with absolute paths.
+      - `LiteralPaths` - By default, PowerShell replace special file characters, such as square brackets
+        and back-ticks, with their escaped equivalents. Setting this value to `$true` prevents the
+        replacement.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "3"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: positionOfCursor
+    type: <xref href="System.Management.Automation.Language.IScriptPosition" data-throw-if-not-resolved="False" />
+    description: |-
+      The column number of the cursor in the input AST. The cursor position is used to determine
+      the token that gets expanded by tab completion.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: AstInputSet
+      position: "2"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: tokens
+    type: <xref href="System.Management.Automation.Language.Token" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      An array of tokens parsed from the input script. The tokens are used to determine the token that
+      gets expanded by tab completion.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: AstInputSet
+      position: "1"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    TabExpansion2
+        [-inputScript] <String>
+        [[-cursorColumn] <Int32>]
+        [[-options] <Hashtable>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ScriptInputSet
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    TabExpansion2
+        [-ast] <Ast>
+        [-tokens] <Token[]>
+        [-positionOfCursor] <IScriptPosition>
+        [[-options] <Hashtable>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: AstInputSet
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="System.Management.Automation.CommandCompletion" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1 - Get tab completion for command parameter
+  description: |-
+    This example shows the same results you would get by entering `Format-Hex -<Tab>` at the PowerShell
+    command prompt. The `TabExpansion2` function returns a **CommandCompletion** object that contains a
+    list of possible completions for the `-` token.
+
+    ```powershell
+    TabExpansion2 -inputScript ($s = 'Format-Hex -') -cursorColumn $s.Length |
+        Select-Object -ExpandProperty CompletionMatches
+    ```
+
+    ```Output
+    CompletionText       ListItemText           ResultType ToolTip
+    --------------       ------------           ---------- -------
+    -Path                Path                ParameterName [string[]] Path
+    -LiteralPath         LiteralPath         ParameterName [string[]] LiteralPath
+    -InputObject         InputObject         ParameterName [Object] InputObject
+    -Encoding            Encoding            ParameterName [string] Encoding
+    -Raw                 Raw                 ParameterName [switch] Raw
+    -Verbose             Verbose             ParameterName [switch] Verbose
+    -Debug               Debug               ParameterName [switch] Debug
+    -ErrorAction         ErrorAction         ParameterName [ActionPreference] ErrorAction
+    -WarningAction       WarningAction       ParameterName [ActionPreference] WarningAction
+    -InformationAction   InformationAction   ParameterName [ActionPreference] InformationAction
+    -ErrorVariable       ErrorVariable       ParameterName [string] ErrorVariable
+    -WarningVariable     WarningVariable     ParameterName [string] WarningVariable
+    -InformationVariable InformationVariable ParameterName [string] InformationVariable
+    -OutVariable         OutVariable         ParameterName [string] OutVariable
+    -OutBuffer           OutBuffer           ParameterName [int] OutBuffer
+    -PipelineVariable    PipelineVariable    ParameterName [string] PipelineVariable
+    ```
+- title: Example 2 - Get tab completion for parameter values
+  description: |-
+    This example shows how to get tab completion for parameter values. In this example, we expect that
+    **Stage** parameter has three possible values and that one of the values is `Three`. You can use
+    this technique to test that tab completion for your function returns the expected results.
+
+    ```powershell
+    function Get-Data {
+        param (
+            [ValidateSet('One', 'Two', 'Three')]
+            [string]$Stage
+        )
+        Write-Verbose "Retrieving data for stage $Stage"
+    }
+
+    $result = TabExpansion2 -inputScript ($line = 'Get-Data -Stage ') -cursorColumn $line.Length |
+        Select-Object -ExpandProperty CompletionMatches
+    $result.Count -eq 3
+    $result.CompletionText -contains 'Three'
+    ```
+
+    ```Output
+    True
+    True
+    ```
+links:
+- text: about_Built-in_Functions
+  href: ./about/about_Built-in_Functions.md
+- text: about_Tab_Expansion
+  href: ./about/about_Tab_Expansion.md
+- text: CompleteInput() method
+  href: xref:System.Management.Automation.CommandCompletion.CompleteInput*
+metadata:
+  document type: cmdlet
+  external help file: System.Management.Automation.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/tabexpansion2?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 06/13/2024
+  PlatyPS schema version: 2024-05-01

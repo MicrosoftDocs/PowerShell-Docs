@@ -1,0 +1,273 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSScheduledJob.Enable-ScheduledJob
+name: Enable-ScheduledJob
+module: PSScheduledJob
+isPreview: false
+summary: |-
+  Enables a scheduled job.
+description: |-
+  The `Enable-ScheduledJob` cmdlet re-enables scheduled jobs that are disabled, such as those that are
+  disabled by using the `Disable-ScheduledJob` cmdlet. Enabled jobs run automatically when triggered.
+
+  To enable a scheduled job, the `Enable-ScheduledJob` cmdlet sets the Enabled property of the
+  scheduled job to `$true`.
+
+  `Enabled-ScheduledJob` is one of a collection of job scheduling cmdlets in the **PSScheduledJob**
+  module that is included in Windows PowerShell.
+
+  For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
+  the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+
+  This cmdlet was introduced in Windows PowerShell 3.0.
+notes: |-
+  - `Enable-ScheduledJob` does not generate warnings or errors if you use it to enable a scheduled job
+    that is already enabled.
+parameters:
+  cmdletParameters:
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Enables the scheduled job with the specified identification number (ID). Enter the ID of a scheduled
+      job.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DefinitionId
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the scheduled job to enable. Enter a variable that contains **ScheduledJobDefinition**
+      objects or type a command or expression that gets **ScheduledJobDefinition** objects, such as a
+      `Get-ScheduledJob` command. You can also pipe a **ScheduledJobDefinition** object to
+      `Enable-ScheduledJob`.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Definition
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Enables the scheduled jobs with the specified names. Enter the name of a scheduled job. Wildcards
+      are supported.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DefinitionName
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: PassThru
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Returns an object representing the item with which you are working. By default, this cmdlet does not
+      generate any output.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Enable-ScheduledJob
+        [-InputObject] <ScheduledJobDefinition>
+        [-PassThru]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Definition
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Enable-ScheduledJob
+        [-Id] <Int32>
+        [-PassThru]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DefinitionId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Enable-ScheduledJob
+        [-Name] <String>
+        [-PassThru]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DefinitionName
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a scheduled job to `Enable-ScheduledJob`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    By default, this cmdlet returns no output.
+- name: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the **PassThru** parameter, this cmdlet returns the scheduled job that it enabled.
+examples:
+- title: 'Example 1: Enable a scheduled job'
+  description: |-
+    This example enables the scheduled job on a local computer.
+
+    ```powershell
+    Enable-ScheduledJob -Id 2 -PassThru
+    ```
+
+    The `Enable-ScheduledJob` command enables the scheduled job with ID 2 on the local computer. The
+    **PassThru** parameter allows the Job object to be output.
+- title: 'Example 2: Enable all scheduled jobs'
+  description: |-
+    This examples enables all scheduled jobs on the local computer.
+
+    ```powershell
+    Get-ScheduledJob | Enable-ScheduledJob
+    ```
+
+    The `Get-ScheduledJob` cmdlet gets all scheduled jobs and pipes them to `Enable-ScheduledJob` cmdlet
+    to enable them.
+
+    `Enable-ScheduledJob` does not generate warnings or errors if you enable a scheduled job that is
+    already enabled, so you can enable all scheduled jobs without conditions.
+- title: 'Example 3: Enable selected scheduled jobs'
+  description: |-
+    This example enables scheduled jobs that do not require a network connection.
+
+    ```powershell
+    Get-ScheduledJob | Get-ScheduledJobOption | Where-Object {$_.RunWithoutNetwork} |
+        ForEach-Object {Enable-ScheduledJob -InputObject $_.JobDefinition}
+    ```
+
+    The command uses the `Get-ScheduledJob` cmdlet to get all scheduled jobs on the computer. A pipeline
+    operator (`|`) sends the scheduled jobs to the `Get-ScheduledJobOption` cmdlet, which gets the job
+    options of each scheduled job. Each job options object has a JobDefinition property that contains
+    the associated scheduled job. The JobDefinition property is used to complete the command.
+
+    The command uses a pipeline operator (`|`) to send the job options to the `Where-Object` cmdlet,
+    which selects scheduled job option objects in which the **RunWithoutNetwork** property has a value
+    of `$true`. Another pipeline operator sends the selected scheduled job options objects to the
+    `ForEach-Object` cmdlet which runs an `Enable-ScheduledJob` command on the scheduled job in the
+    value of the **JobDefinition** property of each job options object.
+- title: 'Example 4: Enable scheduled jobs on a remote computer'
+  description: |-
+    ```powershell
+    Invoke-Command -ComputerName "Srv01,Srv10" -ScriptBlock {Enable-ScheduledJob -Name "Inventory"}
+    ```
+
+    This command enables scheduled jobs that have "test" in their names on two remote computers, Srv01
+    and Srv10.
+
+    The command uses the `Invoke-Command` cmdlet to run an `Enable-ScheduledJob` command on the Srv01
+    and Srv10 computers. The command uses the **Name** parameter of `Enable-ScheduledJob` to enable the
+    Inventory scheduled job on each computer.
+links:
+- text: Add-JobTrigger
+  href: Add-JobTrigger.yml
+- text: Disable-JobTrigger
+  href: Disable-JobTrigger.yml
+- text: Disable-ScheduledJob
+  href: Disable-ScheduledJob.yml
+- text: Enable-JobTrigger
+  href: Enable-JobTrigger.yml
+- text: Enable-ScheduledJob
+  href: Enable-ScheduledJob.yml
+- text: Get-JobTrigger
+  href: Get-JobTrigger.yml
+- text: Get-ScheduledJob
+  href: Get-ScheduledJob.yml
+- text: Get-ScheduledJobOption
+  href: Get-ScheduledJobOption.yml
+- text: New-JobTrigger
+  href: New-JobTrigger.yml
+- text: New-ScheduledJobOption
+  href: New-ScheduledJobOption.yml
+- text: Register-ScheduledJob
+  href: Register-ScheduledJob.yml
+- text: Remove-JobTrigger
+  href: Remove-JobTrigger.yml
+- text: Set-JobTrigger
+  href: Set-JobTrigger.yml
+- text: Set-ScheduledJob
+  href: Set-ScheduledJob.yml
+- text: Set-ScheduledJobOption
+  href: Set-ScheduledJobOption.yml
+- text: Unregister-ScheduledJob
+  href: Unregister-ScheduledJob.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psscheduledjob/enable-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSScheduledJob
+  ms.date: 12/13/2022
+  PlatyPS schema version: 2024-05-01
+  title: Enable-ScheduledJob

@@ -1,0 +1,22 @@
+### YamlMime:PowerShellModule1
+uid: ThreadJob
+name: ThreadJob Module
+isPreview: false
+cmdletGroups:
+- title: ThreadJob Cmdlets
+  cmdlets:
+  - ThreadJob.Start-ThreadJob
+description: |-
+  This module extends the existing PowerShell BackgroundJob to include a new thread based
+  **ThreadJob** job. This is a lighter weight solution for running concurrent PowerShell scripts that
+  works within the existing PowerShell job infrastructure.
+metadata:
+  HelpInfoUri: https://aka.ms/powershell75-help
+  Help Version: 7.5.0.0
+  Locale: en-US
+  Module Guid: 0e7b895d-2fec-43f7-8cae-11e8d16f6e40
+  Module Name: ThreadJob
+  ms.date: 07/09/2019
+  title: ThreadJob Module
+  PlatyPS schema version: 2024-05-01
+  document type: module

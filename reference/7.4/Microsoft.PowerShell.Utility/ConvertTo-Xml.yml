@@ -1,0 +1,167 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Utility.ConvertTo-Xml
+name: ConvertTo-Xml
+module: Microsoft.PowerShell.Utility
+isPreview: false
+summary: |-
+  Creates an XML-based representation of an object.
+description: |-
+  The `ConvertTo-Xml` cmdlet creates an [XML-based](/dotnet/api/system.xml.xmldocument) representation
+  of one or more .NET objects. To use this cmdlet, pipe one or more objects to the cmdlet, or use the
+  **InputObject** parameter to specify the object.
+
+  When you pipe multiple objects to `ConvertTo-Xml` or use the **InputObject** parameter to submit
+  multiple objects, `ConvertTo-Xml` returns a single, in-memory XML document that includes
+  representations of all the objects.
+
+  This cmdlet is similar to [Export-Clixml](./Export-Clixml.yml) except that `Export-Clixml` stores the
+  resulting XML in a
+  [Common Language Infrastructure (CLI)](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/)
+  file that can be reimported as objects with [Import-Clixml](./Import-Clixml.yml). `ConvertTo-Xml`
+  returns an in-memory representation of an XML document, so you can continue to process it in
+  PowerShell. `ConvertTo-Xml` doesn't have an option to convert objects to CLI XML.
+parameters:
+  cmdletParameters:
+  - name: As
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Determines the output format. The acceptable values for this parameter are:
+
+      - `String` - Returns a single string.
+      - `Stream` - Returns an array of strings.
+      - `Document` - Returns an **XmlDocument** object.
+
+      The default value is `Document`.
+    acceptedValues:
+    - Stream
+    - String
+    - Document
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Depth
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies how many levels of contained objects are included in the XML representation. The default
+      value is 1.
+
+      For example, if the object's properties also contain objects, to save an XML representation of the
+      properties of the contained objects, you must specify a depth of 2.
+
+      The default value can be overridden for the object type in the Types.ps1xml files. For more
+      information, see [about_Types.ps1xml](../Microsoft.PowerShell.Core/About/about_Types.ps1xml.md).
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the object to be converted. Enter a variable that contains the objects, or type a command
+      or expression that gets the objects. You can also pipe objects to `ConvertTo-Xml`.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: NoTypeInformation
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Omits the Type attribute from the object nodes.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    ConvertTo-Xml
+        [-Depth <Int32>]
+        [-InputObject] <PSObject>
+        [-NoTypeInformation]
+        [-As <String>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe any object to this cmdlet
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the **As** parameter and set the value to `string`, this cmdlet returns the XML as a
+    string. When the value is `stream`, this cmdlet returns an array of strings.
+- name: <xref href="System.Xml.XmlDocument" data-throw-if-not-resolved="False" />
+  description: |-
+    By default, this cmdlet returns an XML document.
+examples:
+- title: 'Example 1: Convert a date to XML'
+  description: |-
+    ```powershell
+    Get-Date | ConvertTo-Xml
+    ```
+
+    This command converts the current date (a **DateTime** object) to XML.
+- title: 'Example 2: Convert processes to XML'
+  description: |-
+    ```powershell
+    ConvertTo-Xml -As "Document" -InputObject (Get-Process) -Depth 3
+    ```
+
+    This command converts the process objects that represent all the processes on the computer into an
+    XML document. The objects are expanded to a depth of three levels.
+links:
+- text: ConvertTo-Csv
+  href: ConvertTo-Csv.yml
+- text: ConvertTo-Html
+  href: ConvertTo-Html.yml
+- text: Export-Clixml
+  href: Export-Clixml.yml
+- text: Get-Date
+  href: Get-Date.yml
+- text: Import-Clixml
+  href: Import-Clixml.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-xml?view=powershell-7.4&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 01/18/2023
+  PlatyPS schema version: 2024-05-01
+  title: ConvertTo-Xml

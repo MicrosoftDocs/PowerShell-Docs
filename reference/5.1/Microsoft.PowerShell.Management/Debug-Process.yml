@@ -1,0 +1,260 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Debug-Process
+name: Debug-Process
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Debugs one or more processes running on the local computer.
+description: |-
+  The `Debug-Process` cmdlet attaches a debugger to one or more running processes on a local computer.
+  You can specify the processes by their process name or process ID (PID), or you can pipe process
+  objects to this cmdlet.
+
+  This cmdlet attaches the debugger that's registered for the process. Before using this cmdlet,
+  verify that a debugger is installed and configured.
+notes: |-
+  This cmdlet uses the AttachDebugger method of the Windows Management Instrumentation (WMI)
+  **Win32_Process** class. For more information about this method, see
+  [AttachDebugger method](https://go.microsoft.com/fwlink/?LinkId=143640) in the MSDN library.
+parameters:
+  cmdletParameters:
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the process IDs of the processes to be debugged. The **Id** parameter name is optional.
+
+      To find the process ID of a process, type `Get-Process`.
+    aliases:
+    - PID
+    - ProcessId
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Id
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="System.Diagnostics.Process" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the process objects that represent processes to be debugged. Enter a variable that
+      contains the process objects or a command that gets the process objects, such as the `Get-Process`
+      cmdlet. You can also pipe process objects to this cmdlet.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InputObject
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the names of the processes to be debugged. If there is more than one process with the same
+      name, this cmdlet attaches a debugger to all processes with that name. The **Name** parameter is
+      optional.
+    aliases:
+    - ProcessName
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Name
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Debug-Process
+        [-Name] <String[]>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Name
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Debug-Process
+        [-Id] <Int32[]>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Id
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Debug-Process
+        -InputObject <Process[]>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InputObject
+  isDefault: false
+inputs:
+- name: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a process ID to this cmdlet.
+- name: <xref href="System.Diagnostics.Process" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a process object to this cmdlet.
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a process name to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Attach a debugger to a process on the computer'
+  description: |-
+    ```powershell
+    Debug-Process -Name powershell
+    ```
+
+    This command attaches a debugger to the PowerShell process on the computer.
+- title: 'Example 2: Attach a debugger to all processes that begin with the specified string'
+  description: |-
+    ```powershell
+    Debug-Process -Name note*
+    ```
+
+    This command attaches a debugger to all processes that have names that begin with `note`.
+- title: 'Example 3: Attach a debugger to multiple processes'
+  description: |-
+    ```powershell
+    Debug-Process "Winlogon", "Explorer", "Outlook"
+    ```
+
+    This command attempts to attach a debugger to the Winlogon, Explorer, and Outlook processes.
+    Winlogon is a protected process. To debug Winlogon, you must run the command as an administrator.
+- title: 'Example 4: Attach a debugger to multiple process IDs'
+  description: |-
+    ```powershell
+    Debug-Process -Id 1132, 2028
+    ```
+
+    This command attaches a debugger to the processes that have process IDs 1132 and 2028.
+- title: 'Example 5: Use Get-Process to get a process then attach a debugger to it'
+  description: |-
+    ```powershell
+    Get-Process powershell | Debug-Process
+    ```
+
+    This command attaches a debugger to the PowerShell processes on the computer. It uses the
+    `Get-Process` cmdlet to get the PowerShell processes on the computer, and it uses a pipeline
+    operator (`|`) to send the processes to the `Debug-Process` cmdlet.
+
+    To specify a particular PowerShell process, use the **Id** parameter of `Get-Process`.
+- title: 'Example 6: Attach a debugger to a current process on the local computer'
+  description: |-
+    ```powershell
+     Debug-Process -Id $PID
+    ```
+
+    This command attaches a debugger to the current PowerShell processes on the computer.
+
+    The command uses the `$PID` automatic variable, which contains the process ID of the current
+    PowerShell process. Then, it uses a pipeline operator (`|`) to send the process ID to the
+    `Debug-Process` cmdlet.
+
+    For more information about the `$PID` automatic variable, see
+    [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+- title: 'Example 7: Attach a debugger to the specified process on multiple computers'
+  description: |-
+    ```powershell
+    Get-Process -ComputerName "Server01", "Server02" -Name "MyApp" | Debug-Process
+    ```
+
+    This command attaches a debugger to the MyApp processes on the Server01 and Server02 computers.
+
+    The command uses the `Get-Process` cmdlet to get the MyApp processes on the Server01 and Server02
+    computers. It uses a pipeline operator to send the processes to the `Debug-Process` cmdlet, which
+    attaches the debuggers.
+- title: 'Example 8: Attach a debugger to a process that uses the InputObject parameter'
+  description: |-
+    ```powershell
+    $P = Get-Process powershell
+    Debug-Process -InputObject $P
+    ```
+
+    This command attaches a debugger to the PowerShell processes on the local computer.
+
+    The first command uses the `Get-Process` cmdlet to get the PowerShell processes on the
+    computer. It saves the resulting process object in the variable named `$P`.
+
+    The second command uses the **InputObject** parameter of the `Debug-Process` cmdlet to submit the
+    process object in the `$P` variable.
+links:
+- text: Debug-Process
+  href: Debug-Process.yml
+- text: Get-Process
+  href: Get-Process.yml
+- text: Start-Process
+  href: Start-Process.yml
+- text: Stop-Process
+  href: Stop-Process.yml
+- text: Wait-Process
+  href: Wait-Process.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/debug-process?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 07/24/2024
+  PlatyPS schema version: 2024-05-01
+  title: Debug-Process

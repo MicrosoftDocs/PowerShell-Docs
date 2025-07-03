@@ -1,0 +1,268 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Join-Path
+name: Join-Path
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Combines a path and a child path into a single path.
+description: |-
+  The `Join-Path` cmdlet combines a path and child-path into a single path.
+  The provider supplies the path delimiters.
+notes: |-
+  The cmdlets that contain the Path noun manipulate path names and return the names in a concise
+  format that all PowerShell providers can interpret. They're designed to be used where you want to
+  display all or part of a path in a particular format. Use them like you would use `Dirname`,
+  `Normpath`, `Realpath`, `Join`, or other path manipulators.
+
+  You can use the path cmdlets with several providers, including the `FileSystem`, `Registry`, and
+  `Certificate` providers.
+
+  This cmdlet is designed to work with the data exposed by any provider. To list the providers
+  available in your session, type `Get-PSProvider`. For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+parameters:
+  cmdletParameters:
+  - name: AdditionalChildPath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies additional elements to append to the value of the **Path** parameter. The **ChildPath**
+      parameter is still mandatory and must be specified as well. This parameter is specified with the
+      `ValueFromRemainingArguments` property, which enables joining an indefinite number of paths.
+
+      This parameter was added in PowerShell 6.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "2"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ChildPath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the elements to append to the value of the `Path` parameter. Wildcards are permitted.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "1"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: Credential
+    type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+    description: |-
+      > [!NOTE]
+      > This parameter isn't supported by any providers installed with PowerShell. To impersonate another
+      > user, or elevate your credentials when running this cmdlet, use
+      > [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.yml).
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Path
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the main path (or paths) to which the child-path is appended. The value of **Path**
+      determines which provider joins the paths and adds the path delimiters. Wildcards are permitted.
+    aliases:
+    - PSPath
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: Resolve
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet should attempt to resolve the joined path from the current provider.
+
+      - If you use wildcards, the cmdlet returns all paths that match the joined path.
+      - If you don't use wildcards, the cmdlet returns an error if the path doesn't exist.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Join-Path
+        [-Path] <String[]>
+        [-ChildPath] <String>
+        [[-AdditionalChildPath] <String[]>]
+        [-Resolve]
+        [-Credential <PSCredential>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a path to this cmdlet.
+outputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a string that contains the resulting path.
+examples:
+- title: 'Example 1: Combine a path with a child path'
+  description: |-
+    ```powershell
+    Join-Path -Path "path" -ChildPath "childpath"
+    ```
+
+    ```output
+    path\childpath
+    ```
+
+    This command uses `Join-Path` to combine a path with a childpath.
+
+    Since the command is executed from the **FileSystem** provider, it provides the `\` delimiter to
+    join the paths.
+- title: 'Example 2: Combine paths that already contain directory separators'
+  description: |-
+    ```powershell
+    Join-Path -Path "path\" -ChildPath "\childpath"
+    ```
+
+    ```output
+    path\childpath
+    ```
+
+    Existing directory separators `\` are handled so there is only one separator between **Path** and
+    **ChildPath**.
+- title: 'Example 3: Display files and folders by joining a path with a child path'
+  description: |-
+    ```powershell
+    Join-Path "C:\win*" "System*" -Resolve
+    ```
+
+    This command displays the files and folders that are referenced by joining the `C:\Win\*` path and
+    the `System\*` child path. It displays the same files and folders as `Get-ChildItem`, but it
+    displays the fully qualified path to each item. In this command, the **Path** and **ChildPath**
+    optional parameter names are omitted.
+- title: 'Example 4: Use Join-Path with the PowerShell Registry provider'
+  description: |-
+    ```powershell
+    PS HKLM:\> Join-Path -Path System -ChildPath *ControlSet* -Resolve
+    ```
+
+    ```output
+    HKLM:\System\ControlSet001
+    HKLM:\System\CurrentControlSet
+    ```
+
+    This command displays the registry keys in the `HKLM\System` registry subkey that include
+    `ControlSet`.
+
+    The **Resolve** parameter, attempts to resolve the joined path, including wildcards from the current
+    provider path `HKLM:\`
+- title: 'Example 5: Combine multiple path roots with a child path'
+  description: |-
+    ```powershell
+    Join-Path -Path C:, D:, E:, F: -ChildPath New
+    ```
+
+    ```output
+    C:\New
+    D:\New
+    E:\New
+    F:\New
+    ```
+
+    This command uses `Join-Path` to combine multiple path roots with a child path.
+
+    > [!NOTE]
+    > The Drives specified by **Path** must exist or the join of that entry will fail.
+- title: 'Example 6: Combine the roots of a file system drive with a child path'
+  description: |-
+    ```powershell
+    Get-PSDrive -PSProvider FileSystem |
+        ForEach-Object {$_.Root} |
+        Join-Path -ChildPath "Subdir"
+    ```
+
+    ```output
+    C:\Subdir
+    D:\Subdir
+    ```
+
+    This command combines the roots of each PowerShell file system drive in the console with the
+    `Subdir` child path.
+
+    The command uses the `Get-PSDrive` cmdlet to get the PowerShell drives supported by the FileSystem
+    provider. The `ForEach-Object` statement selects only the **Root** property of the **PSDriveInfo**
+    objects and combines it with the specified child path.
+
+    The output shows that the PowerShell drives on the computer included a drive mapped to the
+    `C:\Program Files` directory.
+- title: 'Example 7: Combine an indefinite number of paths'
+  description: |-
+    ```powershell
+    Join-Path a b c d e f g
+    ```
+
+    ```Output
+    a\b\c\d\e\f\g
+    ```
+
+    The **AdditionalChildPath** parameter allows the joining of an unlimited number of paths.
+
+    In this example, no parameter names are used, thus "a" binds to **Path**, "b" to **ChildPath** and
+    "c-g" to **AdditionalChildPath**.
+links:
+- text: Convert-Path
+  href: Convert-Path.yml
+- text: Resolve-Path
+  href: Resolve-Path.yml
+- text: Split-Path
+  href: Split-Path.yml
+- text: Test-Path
+  href: Test-Path.yml
+- text: Get-PSProvider
+  href: Get-PSProvider.yml
+- text: Get-ChildItem
+  href: Get-ChildItem.yml
+- text: Get-PSDrive
+  href: Get-PSDrive.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/join-path?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 03/25/2025
+  PlatyPS schema version: 2024-05-01
+  title: Join-Path

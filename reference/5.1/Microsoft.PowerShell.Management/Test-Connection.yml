@@ -1,0 +1,551 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Test-Connection
+name: Test-Connection
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Sends ICMP echo request packets, or pings, to one or more computers.
+description: |-
+  The `Test-Connection` cmdlet sends Internet Control Message Protocol (ICMP) echo request packets,
+  or pings, to one or more remote computers and returns the echo response replies. You can use this
+  cmdlet to determine whether a particular computer can be contacted across an IP network.
+
+  You can use the parameters of `Test-Connection` to specify both the sending and receiving
+  computers, to run the command as a background job, to set a time-out and number of pings, and to
+  configure the connection and authentication.
+
+  Unlike the familiar **ping** command, `Test-Connection` returns a **Win32_PingStatus** object that
+  you can investigate in PowerShell. The **Quiet** parameter returns a **Boolean** value in a
+  **System.Boolean** object for each tested connection. If multiple connections are tested, an array
+  of **Boolean** values is returned.
+notes: |-
+  This cmdlet uses the **Win32_PingStatus** class. A `Get-WmiObject Win32_PingStatus` command is
+  equivalent to a `Test-Connection` command.
+
+  The **Source** parameter set was introduced in PowerShell 3.0.
+parameters:
+  cmdletParameters:
+  - name: AsJob
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet runs as a background job. When you specify the **AsJob** parameter, the
+      command immediately returns an object that represents the background job. You can continue to work
+      in the session while the job finishes. To get the job results, use the `Receive-Job` cmdlet.
+
+      For more information about PowerShell background jobs, see
+      [about_Jobs](../Microsoft.PowerShell.Core/About/about_jobs.md) and
+      [about_Remote_Jobs](../Microsoft.PowerShell.Core/About/about_remote_jobs.md).
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Default
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Source
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: BufferSize
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the size, in bytes, of the buffer sent with this command. The default value is 32.
+    aliases:
+    - Size
+    - Bytes
+    - BS
+    defaultValue: "32"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ComputerName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the computers to ping. Type the computer names or type IP addresses in IPv4 or IPv6
+      format. Wildcard characters are not permitted. This parameter is required.
+
+      This parameter doesn't rely on PowerShell remoting. You can use the **ComputerName** parameter even
+      if your computer isn't configured to run remote commands.
+
+      > [!NOTE]
+      > The **ComputerName** parameter is renamed to **TargetName** in PowerShell 6.0 and above.
+    aliases:
+    - CN
+    - IPAddress
+    - __SERVER
+    - Server
+    - Destination
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Count
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the number of echo requests to send. The default value is 4.
+    defaultValue: "4"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Credential
+    type: <xref href="System.Management.Automation.PSCredential" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies a user account that has permission to send a ping request from the source computer. Type a
+      user name, such as User01 or Domain01\User01, or enter a **PSCredential** object, such as one from
+      the `Get-Credential` cmdlet.
+
+      The **Credential** parameter is valid only when the **Source** parameter is used in the command. The
+      credentials don't affect the destination computer.
+    defaultValue: Current user
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Source
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: DcomAuthentication
+    type: <xref href="System.Management.AuthenticationLevel" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the authentication level that this cmdlet uses with WMI.
+      `Test-Connection` uses WMI.
+      The acceptable values for this parameter are:
+
+      - **Default**. Windows Authentication
+      - **None**. No COM authentication
+      - **Connect**. Connect-level COM authentication
+      - **Call**. Call-level COM authentication
+      - **Packet**. Packet-level COM authentication
+      - **PacketIntegrity**. Packet Integrity-level COM authentication
+      - **PacketPrivacy**. Packet Privacy-level COM authentication
+      - **Unchanged**. Same as the previous command
+
+      The default value is **Packet** that has an enumerated value of **4**. For more information about
+      the values of this parameter, see
+      [AuthenticationLevel](/dotnet/api/system.management.authenticationlevel) enumeration.
+    acceptedValues:
+    - Default
+    - None
+    - Connect
+    - Call
+    - Packet
+    - PacketIntegrity
+    - PacketPrivacy
+    - Unchanged
+    aliases:
+    - Authentication
+    defaultValue: Packet (enumerated value of 4)
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Delay
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the interval between pings, in seconds.
+    defaultValue: 1 (second)
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Impersonation
+    type: <xref href="System.Management.ImpersonationLevel" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the impersonation level to use when this cmdlet calls WMI. `Test-Connection` uses WMI.
+
+      The acceptable values for this parameter are as follows:
+
+      - **Default**. Default impersonation.
+      - **Anonymous**. Hides the identity of the caller.
+      - **Identify**. Allows objects to query the credentials of the caller.
+      - **Impersonate**. Allows objects to use the credentials of the caller.
+
+      The default value is **Impersonate**.
+    acceptedValues:
+    - Default
+    - Anonymous
+    - Identify
+    - Impersonate
+    - Delegate
+    defaultValue: Impersonate
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Protocol
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies a protocol. The acceptable values for this parameter are DCOM and WSMan.
+    acceptedValues:
+    - DCOM
+    - WSMan
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Quiet
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      The **Quiet** parameter returns a **Boolean** value in a **System.Boolean** object. Using this
+      parameter suppresses all errors.
+
+      Each connection that's tested returns a **Boolean** value. If the **ComputerName** parameter
+      specifies multiple computers, an array of **Boolean** values is returned.
+
+      If **any** ping succeeds, `$true` is returned.
+
+      If **all** pings fail, `$false` is returned.
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Quiet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Source
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the names of the computers where the ping originates. Enter a comma-separated list of
+      computer names. The default is the local computer.
+    aliases:
+    - FCN
+    - SRC
+    defaultValue: Local computer
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Source
+      position: "1"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ThrottleLimit
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the maximum number of concurrent connections that can be established to run this command.
+      If you omit this parameter or enter a value of 0, the default value, 32, is used.
+
+      The throttle limit applies only to the current command, not to the session or to the computer.
+    defaultValue: "32"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Default
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Source
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: TimeToLive
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the maximum times a packet can be forwarded. For every hop in gateways, routers etc. the
+      **TimeToLive** value is decreased by one. At zero the packet is discarded and an error is returned.
+      In **Windows**, The default value is **128**. The alias of the **TimeToLive** parameter is **TTL**.
+    aliases:
+    - TTL
+    defaultValue: 128 in Windows
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WsmanAuthentication
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the mechanism that is used to authenticate the user credentials when this cmdlet uses the WSMan protocol.
+      The acceptable values for this parameter are:
+
+      - Basic
+      - CredSSP
+      - Default
+      - Digest
+      - Kerberos
+      - Negotiate.
+
+      The default value is Default.
+
+      For more information about the values of this parameter, see
+      [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism?view=powershellsdk-1.1.0).
+
+      Caution: Credential Security Service Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.
+      This mechanism increases the security risk of the remote operation.
+      If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    acceptedValues:
+    - Default
+    - Basic
+    - Negotiate
+    - CredSSP
+    - Digest
+    - Kerberos
+    defaultValue: Default
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Test-Connection
+        [-ComputerName] <String[]>
+        [-AsJob]
+        [-DcomAuthentication <AuthenticationLevel>]
+        [-WsmanAuthentication <String>]
+        [-Protocol <String>]
+        [-BufferSize <Int32>]
+        [-Count <Int32>]
+        [-Impersonation <ImpersonationLevel>]
+        [-ThrottleLimit <Int32>]
+        [-TimeToLive <Int32>]
+        [-Delay <Int32>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Test-Connection
+        [-ComputerName] <String[]>
+        [-Source] <String[]>
+        [-AsJob]
+        [-DcomAuthentication <AuthenticationLevel>]
+        [-WsmanAuthentication <String>]
+        [-Protocol <String>]
+        [-BufferSize <Int32>]
+        [-Count <Int32>]
+        [-Credential <PSCredential>]
+        [-Impersonation <ImpersonationLevel>]
+        [-ThrottleLimit <Int32>]
+        [-TimeToLive <Int32>]
+        [-Delay <Int32>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Source
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Test-Connection
+        [-ComputerName] <String[]>
+        [-DcomAuthentication <AuthenticationLevel>]
+        [-WsmanAuthentication <String>]
+        [-Protocol <String>]
+        [-BufferSize <Int32>]
+        [-Count <Int32>]
+        [-Impersonation <ImpersonationLevel>]
+        [-TimeToLive <Int32>]
+        [-Delay <Int32>]
+        [-Quiet]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Quiet
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="System.Management.ManagementObject#root\cimv2\Win32_PingStatus" data-throw-if-not-resolved="False" />
+  description: |-
+    By default, this cmdlet returns a **Win32_PingStatus** object for each ping reply.
+- name: <xref href="System.Management.Automation.RemotingJob" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns a job object, if you specify the **AsJob** parameter.
+- name: <xref href="System.Boolean" data-throw-if-not-resolved="False" />
+  description: |-
+    When you use the **Quiet** parameter, this returns a **Boolean** value. If the cmdlet tests
+    multiple connections, it returns an array of **Boolean** values.
+examples:
+- title: 'Example 1: Send echo requests to a remote computer'
+  description: |-
+    This example sends echo request packets from the local computer to the Server01 computer.
+
+    ```powershell
+    Test-Connection -ComputerName Server01
+    ```
+
+    ```Output
+    Source        Destination     IPV4Address     IPV6Address  Bytes    Time(ms)
+    ------        -----------     -----------     -----------  -----    --------
+    ADMIN1        Server01         10.59.137.44                32       0
+    ADMIN1        Server01         10.59.137.44                32       0
+    ADMIN1        Server01         10.59.137.44                32       0
+    ADMIN1        Server01         10.59.137.44                32       1
+    ```
+
+    `Test-Connection` uses the **ComputerName** parameter to specify the Server01 computer.
+- title: 'Example 2: Send echo requests to several computers'
+  description: |-
+    This example sends pings from the local computer to several remote computers.
+
+    ```powershell
+    Test-Connection -ComputerName Server01, Server02, Server12
+    ```
+- title: 'Example 3: Send echo requests from several computers to a computer'
+  description: |-
+    This example sends pings from different source computers to a single remote computer, Server01.
+
+    ```powershell
+    Test-Connection -Source Server02, Server12, localhost -ComputerName Server01 -Credential Domain01\Admin01
+    ```
+
+    `Test-Connection` uses the **Credential** parameter to specify the credentials of a user who has
+    permission to send a ping request from the source computers. Use this command format to test the
+    latency of connections from multiple points.
+- title: 'Example 4: Use parameters to customize the test command'
+  description: |-
+    This example uses the parameters of `Test-Connection` to customize the command. The local computer
+    sends a ping test to a remote computer.
+
+    ```powershell
+    Test-Connection -ComputerName Server01 -Count 3 -Delay 2 -TTL 255 -BufferSize 256 -ThrottleLimit 32
+    ```
+
+    `Test-Connection` uses the **ComputerName** parameter to specify Server01. The **Count** parameter
+    specifies three pings are sent to the Server01 computer with a **Delay** of 2-second intervals.
+
+    You might use these options when the ping response is expected to take longer than usual, either
+    because of an extended number of hops or a high-traffic network condition.
+- title: 'Example 5: Run a test as a background job'
+  description: |-
+    This example shows how to run a `Test-Connection` command as a PowerShell background job.
+
+    ```powershell
+    $job = Test-Connection -ComputerName (Get-Content Servers.txt) -AsJob
+    if ($job.JobStateInfo.State -ne "Running") {$Results = Receive-Job $job}
+    ```
+
+    The `Test-Connection` command pings many computers in an enterprise. The value of the
+    **ComputerName** parameter is a `Get-Content` command that reads a list of computer names from the
+    `Servers.txt file`. The command uses the **AsJob** parameter to run the command as a background job
+    and it saves the job in the `$job` variable.
+
+    The `if` command checks to see that the job isn't still running. If the job isn't running,
+    `Receive-Job` gets the results and stores them in the `$Results` variable.
+- title: 'Example 6: Ping a remote computer with credentials'
+  description: |-
+    This command uses the `Test-Connection` cmdlet to ping a remote computer.
+
+    ```powershell
+    Test-Connection Server55 -Credential Domain55\User01 -Impersonation Identify
+    ```
+
+    The command uses the **Credential** parameter to specify a user account that has permission to ping
+    the remote computer and the **Impersonation** parameter to change the impersonation level to
+    **Identify**.
+- title: 'Example 7: Create a session only if a connection test succeeds'
+  description: |-
+    This example creates a session on the Server01 computer only if at least one of the pings sent to
+    the computer succeeds.
+
+    ```powershell
+    if (Test-Connection -ComputerName Server01 -Quiet) {New-PSSession Server01}
+    ```
+
+    The `if` command uses the `Test-Connection` cmdlet to ping the Server01 computer. The command uses
+    the **Quiet** parameter, which returns a **Boolean** value, instead of a **Win32_PingStatus**
+    object. The value is `$true` if any of the four pings succeed and is, otherwise, `$false`.
+
+    If the `Test-Connection` command returns a value of `$true`, the command uses the `New-PSSession`
+    cmdlet to create the **PSSession**.
+links:
+- text: Add-Computer
+  href: Add-Computer.yml
+- text: Restart-Computer
+  href: Restart-Computer.yml
+- text: Stop-Computer
+  href: Stop-Computer.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-connection?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 07/31/2024
+  PlatyPS schema version: 2024-05-01
+  title: Test-Connection

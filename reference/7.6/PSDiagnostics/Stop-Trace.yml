@@ -1,0 +1,101 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSDiagnostics.Stop-Trace
+name: Stop-Trace
+module: PSDiagnostics
+isPreview: false
+summary: |-
+  Stop an Event Trace logging session.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  This cmdlet stops a Windows Event Trace logging session.
+
+  This cmdlet is used by the following cmdlets:
+
+  - `Disable-PSWSManCombinedTrace`
+  - `Disable-WSManTrace`
+
+  You must run this cmdlet from an elevated PowerShell session.
+parameters:
+  cmdletParameters:
+  - name: ETS
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Send commands to Event Trace Sessions directly without saving or scheduling.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: SessionName
+    type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+    description: |-
+      The name of the Event Trace session to be stopped.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Stop-Trace
+        [-SessionName] <Object>
+        [-ETS]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Stop a WSMan Trace logging session'
+  description: |-
+    ```powershell
+    Stop-Trace -SessionName 'wsmlog'
+    ```
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Start-Trace
+  href: start-trace.yml
+- text: Disable-PSWSManCombinedTrace
+  href: Disable-PSWSManCombinedTrace.yml
+- text: Disable-WSManTrace
+  href: Disable-WSManTrace.yml
+- text: Enable-PSWSManCombinedTrace
+  href: Enable-PSWSManCombinedTrace.yml
+- text: Enable-WSManTrace
+  href: Enable-WSManTrace.yml
+metadata:
+  document type: cmdlet
+  external help file: PSDiagnostics-help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psdiagnostics/stop-trace?view=powershell-7.6&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Stop-Trace

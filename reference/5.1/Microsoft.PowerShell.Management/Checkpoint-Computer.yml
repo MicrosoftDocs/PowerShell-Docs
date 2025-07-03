@@ -1,0 +1,131 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Checkpoint-Computer
+name: Checkpoint-Computer
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Creates a system restore point on the local computer.
+description: |-
+  The `Checkpoint-Computer` cmdlet creates a system restore point on the local computer.
+
+  System restore points and the `Checkpoint-Computer` cmdlet are supported only on client operating
+  systems, such as Windows 10 or Windows 11. `Checkpoint-Computer` cannot create more than one
+  checkpoint each day.
+notes: |-
+  - This cmdlet uses the **CreateRestorePoint** method of the **SystemRestore** class with a
+    **BEGIN_SYSTEM_CHANGE** event.
+  - Beginning in Windows 8, `Checkpoint-Computer` cannot create more than one system restore point
+    each day. If you try to create a new restore point before the 24-hour period has elapsed, Windows
+    PowerShell generates the following error:
+
+    `"A new system restore point cannot be created because one has already been created within the
+    past 24 hours. Please try again later."`
+parameters:
+  cmdletParameters:
+  - name: Description
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies a descriptive name for the restore point. This parameter is required.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: RestorePointType
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the type of restore point. The default is `APPLICATION_INSTALL`.
+
+      The acceptable values for this parameter are:
+
+      - `APPLICATION_INSTALL`
+      - `APPLICATION_UNINSTALL`
+      - `DEVICE_DRIVER_INSTALL`
+      - `MODIFY_SETTINGS`
+      - `CANCELLED_OPERATION`
+
+      The cmdlet accepts `CANCELLED_OPERATION` but this type of restore point operation is no longer
+      supported. For more information about these types, see the
+      [Restore Point Description Text](/windows/win32/sr/restore-point-description-text) documentation.
+    acceptedValues:
+    - APPLICATION_INSTALL
+    - APPLICATION_UNINSTALL
+    - DEVICE_DRIVER_INSTALL
+    - MODIFY_SETTINGS
+    - CANCELLED_OPERATION
+    aliases:
+    - RPT
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Checkpoint-Computer
+        [-Description] <String>
+        [[-RestorePointType] <String>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe objects to `Checkpoint-Computer`.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+examples:
+- title: 'Example 1: Create a system restore point'
+  description: |-
+    ```powershell
+    Checkpoint-Computer -Description "Install MyApp"
+    ```
+
+    This command creates a system restore point called Install MyApp. It uses the default
+    `APPLICATION_INSTALL` restore point type.
+- title: 'Example 2: Create a system MODIFY_SETTINGS restore point'
+  description: |-
+    ```powershell
+    Checkpoint-Computer -Description "ChangeNetSettings" -RestorePointType MODIFY_SETTINGS
+    ```
+
+    This command creates a `MODIFY_SETTINGS` system restore point called "ChangeNetSettings".
+links:
+- text: Disable-ComputerRestore
+  href: Disable-ComputerRestore.yml
+- text: Enable-ComputerRestore
+  href: Enable-ComputerRestore.yml
+- text: Get-ComputerRestorePoint
+  href: Get-ComputerRestorePoint.yml
+- text: Restore-Computer
+  href: Restore-Computer.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/checkpoint-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 07/12/2024
+  PlatyPS schema version: 2024-05-01
+  title: Checkpoint-Computer

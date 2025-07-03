@@ -1,0 +1,82 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSDiagnostics.Enable-PSWSManCombinedTrace
+name: Enable-PSWSManCombinedTrace
+module: PSDiagnostics
+isPreview: false
+summary: |-
+  Start a logging session with the WSMan and PowerShell providers enabled.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  This cmdlet starts a logging session with the following PowerShell providers enabled:
+
+  - Microsoft-Windows-PowerShell
+  - Microsoft-Windows-WinRM
+
+  The session is named 'PSTrace'.
+
+  This cmdlet uses the `Start-Trace` cmdlet.
+
+  You must run this cmdlet from an elevated PowerShell session.
+parameters:
+  cmdletParameters:
+  - name: DoNotOverwriteExistingTrace
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      By default, the events are written to `$PSHOME\Traces\PSTrace.etl`. When this parameter is used,
+      the cmdlet creates a unique filename: `$PSHOME\Traces\PSTrace_{guid}.etl`
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Enable-PSWSManCombinedTrace
+        [-DoNotOverwriteExistingTrace]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Start a combined logging session'
+  description: |-
+    ```powershell
+    Enable-PSWSManCombinedTrace
+    ```
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Start-Trace
+  href: start-trace.yml
+- text: Disable-PSWSManCombinedTrace
+  href: Disable-PSWSManCombinedTrace.yml
+metadata:
+  document type: cmdlet
+  external help file: PSDiagnostics-help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psdiagnostics/enable-pswsmancombinedtrace?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Enable-PSWSManCombinedTrace

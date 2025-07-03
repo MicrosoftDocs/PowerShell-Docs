@@ -1,0 +1,65 @@
+### YamlMime:PowerShellCmdlet1
+uid: CimCmdlets.Import-BinaryMiLog
+name: Import-BinaryMiLog
+module: CimCmdlets
+isPreview: false
+summary: |-
+  Used to re-create the saved objects based on the contents of an export file.
+description: |-
+  Use this cmdlet to re-create saved objects based on the contents of an export file created by
+  `Export-BinaryMILog`. This cmdlet is similar to `Import-Clixml`, except that `Export-BinaryMILog`
+  stores the resulting object in a binary encoded file.
+parameters:
+  cmdletParameters:
+  - name: Path
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the path of the file in which to store the binary representation of the object. The
+      **Path** parameter supports wildcards and relative paths. This cmdlet generates an error if the path
+      resolves to more than one file.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Import-BinaryMiLog
+        [-Path] <String>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1 - Restore objects exported to a file
+  description: |-
+    ```powershell
+    Import-BinaryMiLog -Path "Processes.bmil"
+    ```
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/cimcmdlets/import-binarymilog?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: CimCmdlets
+  ms.date: 12/09/2022
+  PlatyPS schema version: 2024-05-01
+  title: Import-BinaryMiLog

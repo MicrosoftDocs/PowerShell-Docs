@@ -1,0 +1,174 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Utility.ConvertFrom-Markdown
+name: ConvertFrom-Markdown
+module: Microsoft.PowerShell.Utility
+isPreview: false
+summary: |-
+  Convert the contents of a string or a file to a **MarkdownInfo**
+  object.
+description: |-
+  This cmdlet converts the specified content into a **MarkdownInfo**. When a file path is specified
+  for the **Path** parameter, the contents on the file are converted. The output object has three
+  properties:
+
+  - The **Token** property has the abstract syntax tree (AST) of the converted object
+  - The **Html** property has the HTML conversion of the specified input
+  - The **VT100EncodedString** property has the converted string with ANSI (VT100) escape sequences if
+    the **AsVT100EncodedString** parameter was specified
+
+  This cmdlet was introduced in PowerShell 6.1.
+parameters:
+  cmdletParameters:
+  - name: AsVT100EncodedString
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies if the output should be encoded as a string with VT100 escape codes.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the object to be converted. When an object of type **System.String** is specified, the
+      string is converted. When an object of type **System.IO.FileInfo** is specified, the contents of the
+      file specified by the object are converted. Objects of any other type result in an error.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InputObjParamSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LiteralPath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies a path to the file to be converted.
+    aliases:
+    - PSPath
+    - LP
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LiteralParamSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Path
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies a path to the file to be converted.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: PathParamSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    ConvertFrom-Markdown
+        [-Path] <String[]>
+        [-AsVT100EncodedString]
+        [<CommonParameters>]
+    ```
+  parameterSetName: PathParamSet
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    ConvertFrom-Markdown
+        -LiteralPath <String[]>
+        [-AsVT100EncodedString]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LiteralParamSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    ConvertFrom-Markdown
+        -InputObject <PSObject>
+        [-AsVT100EncodedString]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InputObjParamSet
+  isDefault: false
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="Microsoft.PowerShell.MarkdownRender.MarkdownInfo" data-throw-if-not-resolved="False" />
+examples:
+- title: 'Example 1: Convert a file containing Markdown content to HTML'
+  description: |-
+    ```powershell
+    ConvertFrom-Markdown -Path .\README.md
+    ```
+
+    The **MarkdownInfo** object is returned. The **Tokens** property has the AST of the converted
+    content of the `README.md` file. The **Html** property has the HTML converted content of the
+    `README.md` file.
+- title: 'Example 2: Convert a file containing Markdown content to a VT100-encoded string'
+  description: |-
+    ```powershell
+    ConvertFrom-Markdown -Path .\README.md -AsVT100EncodedString
+    ```
+
+    The **MarkdownInfo** object is returned. The **Tokens** property has the AST of the converted
+    content of the `README.md` file. The **VT100EncodedString** property has the VT100-encoded string
+    converted content of the `README.md` file.
+- title: 'Example 3: Convert input object containing Markdown content to a VT100-encoded string'
+  description: |-
+    ```powershell
+    Get-Item .\README.md | ConvertFrom-Markdown -AsVT100EncodedString
+    ```
+
+    The **MarkdownInfo** object is returned. The **FileInfo** object from `Get-Item` is converted to a
+    VT100-encoded string. The **Tokens** property has the AST of the converted content of the
+    `README.md` file. The **VT100EncodedString** property has the VT100-encoded string converted content
+    of the `README.md` file.
+- title: 'Example 4: Convert a string containing Markdown content to a VT100-encoded string'
+  description: |-
+    ```powershell
+    "**Bold text**" | ConvertFrom-Markdown -AsVT100EncodedString
+    ```
+
+    The **MarkdownInfo** object is returned. The specified string `**Bold text**` is converted to a
+    VT100-encoded string and available in **VT100EncodedString** property.
+links:
+- text: Markdown Parser
+  href: https://github.com/lunet-io/markdig
+- text: ANSI escape code
+  href: https://wikipedia.org/wiki/ANSI_escape_code
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-markdown?view=powershell-7.6&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 11/02/2018
+  PlatyPS schema version: 2024-05-01
+  title: ConvertFrom-Markdown

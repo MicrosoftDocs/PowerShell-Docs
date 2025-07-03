@@ -1,0 +1,355 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Utility.Set-MarkdownOption
+name: Set-MarkdownOption
+module: Microsoft.PowerShell.Utility
+isPreview: false
+summary: |-
+  Sets the colors and styles used for rendering Markdown content in the console.
+description: |-
+  Sets the colors and styles used for rendering Markdown content in the console. These styles are
+  defined using ANSI escape codes that change the color and style of the Markdown text being rendered.
+
+  For more information about Markdown, see the [CommonMark](https://commonmark.org/) website.
+
+  > [!NOTE]
+  > The string values used in the settings are the characters that follow the **Escape** character
+  > (`[char]0x1B`) for the ANSI escape sequence. Do not include the **Escape** character in the
+  > string. For more information about ANSI escape codes work, see
+  > [ANSI_escape_code](https://en.wikipedia.org/wiki/ANSI_escape_code).
+notes: |-
+  The string values used to define the color and style must match the regular expression
+  `^\[*[0-9;]*?m{1}`.
+parameters:
+  cmdletParameters:
+  - name: BoldForegroundColor
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the foreground color for rendering bold Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Code
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the color for rendering code blocks and spans in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Header1Color
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the color for rendering Header1 blocks in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Header2Color
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the color for rendering Header2 blocks in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Header3Color
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the color for rendering Header3 blocks in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Header4Color
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the color for rendering Header4 blocks in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Header5Color
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the color for rendering Header5 blocks in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Header6Color
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the color for rendering Header6 blocks in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ImageAltTextForegroundColor
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the foreground color for rendering the alternate text of an image element in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+    description: |-
+      A **PSMarkdownOptionInfo** object containing the configuration to be set.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InputObject
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ItalicsForegroundColor
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the foreground color for rendering the italics in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LinkForegroundColor
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the foreground color for rendering hyperlinks in Markdown text.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IndividualSetting
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: PassThru
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Causes the cmdlet to output a **PSMarkdownOptionInfo** object containing the new configuration.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Theme
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Selects a theme containing predefined color settings. The possible values are **Dark** and
+      **Light**.
+    acceptedValues:
+    - Dark
+    - Light
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Theme
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Set-MarkdownOption
+        [-Header1Color <String>]
+        [-Header2Color <String>]
+        [-Header3Color <String>]
+        [-Header4Color <String>]
+        [-Header5Color <String>]
+        [-Header6Color <String>]
+        [-Code <String>]
+        [-ImageAltTextForegroundColor <String>]
+        [-LinkForegroundColor <String>]
+        [-ItalicsForegroundColor <String>]
+        [-BoldForegroundColor <String>]
+        [-PassThru]
+        [<CommonParameters>]
+    ```
+  parameterSetName: IndividualSetting
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Set-MarkdownOption
+        -Theme <String>
+        [-PassThru]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Theme
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Set-MarkdownOption
+        [-InputObject] <PSObject>
+        [-PassThru]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InputObject
+  isDefault: false
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+outputs:
+- name: <xref href="Microsoft.PowerShell.MarkdownRender.PSMarkdownOptionInfo" data-throw-if-not-resolved="False" />
+examples:
+- title: Example 1 - Switch to the Light Theme
+  description: |-
+    This example selects the **Light** theme and displays the new configuration using the **PassThru**
+    parameter.
+
+    ```powershell
+    Set-MarkdownOption -Theme Light -PassThru
+    ```
+
+    ```Output
+    Header1         : [7m
+    Header2         : [4;33m
+    Header3         : [4;34m
+    Header4         : [4;35m
+    Header5         : [4;36m
+    Header6         : [4;30m
+    Code            : [48;2;155;155;155;38;2;30;30;30m
+    Link            : [4;38;5;117m
+    Image           : [33m
+    EmphasisBold    : [1m
+    EmphasisItalics : [36m
+    ```
+- title: Example 2 - Customize the color and style settings
+  description: |-
+    This example changes the escape code for the Markdown headers. The default configuration for headers
+    renders them as underlined text of various colors. This change removes the underline style.
+
+    ```powershell
+    $mdOptions = Get-MarkdownOption
+    $mdOptions.Header2 = '[93m'
+    $mdOptions.Header3 = '[94m'
+    $mdOptions.Header4 = '[95m'
+    $mdOptions.Header5 = '[96m'
+    $mdOptions.Header6 = '[97m'
+    Set-MarkdownOption -InputObject $mdOptions -PassThru
+    ```
+
+    ```Output
+    Header1         : [7m
+    Header2         : [93m
+    Header3         : [94m
+    Header4         : [95m
+    Header5         : [96m
+    Header6         : [97m
+    Code            : [48;2;155;155;155;38;2;30;30;31m
+    Link            : [4;38;5;117m
+    Image           : [33m
+    EmphasisBold    : [1m
+    EmphasisItalics : [36m
+    ```
+links:
+- text: Get-MarkdownOption
+  href: Get-MarkdownOption.yml
+- text: ConvertFrom-Markdown
+  href: ConvertFrom-Markdown.yml
+- text: Show-Markdown
+  href: Show-Markdown.yml
+- text: ANSI_escape_code
+  href: https://en.wikipedia.org/wiki/ANSI_escape_code
+- text: CommonMark
+  href: https://commonmark.org/
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Set-MarkdownOption?view=powershell-7.6&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 01/30/2020
+  PlatyPS schema version: 2024-05-01
+  title: Set-MarkdownOption

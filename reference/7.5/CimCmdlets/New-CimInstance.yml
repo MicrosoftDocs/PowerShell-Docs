@@ -1,0 +1,566 @@
+### YamlMime:PowerShellCmdlet1
+uid: CimCmdlets.New-CimInstance
+name: New-CimInstance
+module: CimCmdlets
+isPreview: false
+summary: |-
+  Creates a CIM instance.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  The `New-CimInstance` cmdlet creates an instance of a CIM class based on the class definition on
+  either the local computer or a remote computer. By default, the `New-CimInstance` cmdlet creates an
+  instance on the local computer.
+notes: |-
+  PowerShell includes the following aliases for `New-CimInstance`:
+
+  - Windows:
+    - `ncim`
+
+  This cmdlet is only available on Windows platforms.
+parameters:
+  cmdletParameters:
+  - name: CimClass
+    type: <xref href="Microsoft.Management.Infrastructure.CimClass" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies a CIM class object that represents the type of the instance. Use the `Get-CimClass` cmdlet
+      to retrieve the class declaration from a computer. Using this parameter results in better client
+      side schema validations.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CimClassSessionSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CimClassComputerSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CimSession
+    type: <xref href="Microsoft.Management.Infrastructure.CimSession" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Runs the command using the specified CIM session. Enter a variable that contains the CIM session, or
+      a command that creates or gets the CIM session, such as the `New-CimSession` or `Get-CimSession`
+      cmdlets. For more information, see
+      [about_CimSession](../Microsoft.PowerShell.Core/About/about_CimSession.md).
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ClassNameSessionSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ResourceUriSessionSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CimClassSessionSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ClassName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the name of the CIM class of which the operation creates an instance. NOTE: You can use
+      tab completion to browse the list of classes, because PowerShell gets a list of classes from the
+      local WMI server to provide a list of class names.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ClassNameComputerSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ClassNameSessionSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ClientOnly
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that the instance is only created in PowerShell without going to the CIM server. You can
+      use this parameter to create an in-memory CIM instance for use in subsequent PowerShell operations.
+    aliases:
+    - Local
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ClassNameComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ClassNameSessionSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CimClassSessionSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CimClassComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ComputerName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the name of the computer on which you want to run the CIM operation. You can specify a
+      fully qualified domain name (FQDN), a NetBIOS name, or an IP address.
+
+      If you specify this parameter, the cmdlet creates a temporary session to the specified computer
+      using the WSMan protocol.
+
+      If you do not specify this parameter, the cmdlet performs the operation on the local computer using
+      Component Object Model (COM).
+
+      If multiple operations are being performed on the same computer, connecting using a CIM session
+      gives better performance.
+    aliases:
+    - CN
+    - ServerName
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ClassNameComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ResourceUriComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: CimClassComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Key
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the properties that are used as keys. **CimSession** and **ComputerName** cannot be used
+      when **Key** is specified.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ClassNameComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ClassNameSessionSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ResourceUriSessionSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ResourceUriComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Namespace
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the namespace of the class for the new instance. The default namespace is **root/CIMV2**.
+      You can use tab completion to browse the list of namespaces, because PowerShell gets a list of
+      namespaces from the local WMI server to provide the list of namespaces.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ClassNameComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ClassNameSessionSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ResourceUriSessionSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ResourceUriComputerSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: OperationTimeoutSec
+    type: <xref href="System.UInt32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the amount of time that the cmdlet waits for a response from the CIM server. By default,
+      the value of this parameter is 0, which means that the cmdlet uses the default timeout value for the
+      server. If the **OperationTimeoutSec** parameter is set to a value less than the robust connection
+      retry timeout of 3 minutes, network failures that last more than the value of the
+      **OperationTimeoutSec** parameter are not recoverable, because the operation on the server times
+      out before the client can reconnect.
+    aliases:
+    - OT
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Property
+    type: <xref href="System.Collections.IDictionary" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the properties of the CIM instance using a hash table (name-value pairs).
+
+      If you specify the **CimClass** parameter, then the `New-CimInstance` cmdlet performs a property
+      validation on the client to make sure that the properties specified are consistent with the class
+      declaration on the server. If the **CimClass** parameter is not specified, then the property
+      validation is done on the server.
+    aliases:
+    - Arguments
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ResourceUri
+    type: <xref href="System.Uri" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the resource uniform resource identifier (URI) of the resource class or instance. The URI
+      is used to identify a specific type of resource, such as disks or processes, on a computer.
+
+      A URI consists of a prefix and a path to a resource. For example:
+
+      `http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_LogicalDisk`
+
+      `http://intel.com/wbem/wscim/1/amt-schema/1/AMT_GeneralSettings`
+
+      By default, if you do not specify this parameter, the DMTF standard resource URI
+      `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
+
+      **ResourceUri** can only be used with CIM sessions created using the WSMan protocol, or when
+      specifying the **ComputerName** parameter, which creates a CIM session using WSMan. If you specify
+      this parameter without specifying the **ComputerName** parameter, or if you specify a CIM session
+      created using DCOM protocol, you will get an error, because the DCOM protocol does not support the
+      **ResourceUri** parameter.
+
+      If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**
+      parameter is ignored.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ResourceUriSessionSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    - name: ResourceUriComputerSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    New-CimInstance
+        [-ClassName] <String>
+        [[-Property] <IDictionary>]
+        [-Key <String[]>]
+        [-Namespace <String>]
+        [-OperationTimeoutSec <UInt32>]
+        [-ComputerName <String[]>]
+        [-ClientOnly]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ClassNameComputerSet
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    New-CimInstance
+        [-ClassName] <String>
+        [[-Property] <IDictionary>]
+        -CimSession <CimSession[]>
+        [-Key <String[]>]
+        [-Namespace <String>]
+        [-OperationTimeoutSec <UInt32>]
+        [-ClientOnly]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ClassNameSessionSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    New-CimInstance
+        [[-Property] <IDictionary>]
+        -ResourceUri <Uri>
+        -CimSession <CimSession[]>
+        [-Key <String[]>]
+        [-Namespace <String>]
+        [-OperationTimeoutSec <UInt32>]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ResourceUriSessionSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    New-CimInstance
+        [[-Property] <IDictionary>]
+        -ResourceUri <Uri>
+        [-Key <String[]>]
+        [-Namespace <String>]
+        [-OperationTimeoutSec <UInt32>]
+        [-ComputerName <String[]>]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ResourceUriComputerSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    New-CimInstance
+        [-CimClass] <CimClass>
+        [[-Property] <IDictionary>]
+        -CimSession <CimSession[]>
+        [-OperationTimeoutSec <UInt32>]
+        [-ClientOnly]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CimClassSessionSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    New-CimInstance
+        [-CimClass] <CimClass>
+        [[-Property] <IDictionary>]
+        [-OperationTimeoutSec <UInt32>]
+        [-ComputerName <String[]>]
+        [-ClientOnly]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CimClassComputerSet
+  isDefault: false
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="Microsoft.Management.Infrastructure.CimInstance" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns an object that contains the CIM instance information.
+examples:
+- title: 'Example 1: Create an instance of a CIM class'
+  description: |-
+    This example creates an instance of a CIM Class named **Win32_Environment** in the **root/CIMV2**
+    namespace on the computer.
+
+    ```powershell
+    $prop = @{
+        Name = "testvar"
+        VariableValue = "testvalue"
+        UserName = "domain\user"
+    }
+    New-CimInstance -ClassName Win32_Environment -Property $prop
+    ```
+
+    No client side validation is performed if the class does not exist, the properties are wrong, or if
+    the server rejects the call. If the instance is created successfully, the cmdlet outputs the newly
+    created instance.
+- title: 'Example 2: Create an instance of a CIM class using a class schema'
+  description: |-
+    This example retrieves a CIM class object and stores it in a variable named `$class`. The contents
+    of the variable are then passed to the `New-CimInstance` cmdlet.
+
+    ```powershell
+    $class = Get-CimClass -ClassName Win32_Environment
+    $prop = @{
+        Name = "testvar"
+        VariableValue = "testvalue"
+        UserName = "Contoso\User1"
+    }
+    New-CimInstance -CimClass $class -Property $prop
+    ```
+- title: 'Example 3: Create a dynamic instance on the client'
+  description: |-
+    This example creates a dynamic instance of a CIM class named **Win32_Process** on the client
+    computer without getting the instance from the server. The new instance is stored in the variable
+    `$a`. This dynamic instance can be used to perform operations if the instance with this key exists
+    on the server.
+
+    ```powershell
+    $instance = @{
+        ClassName = 'Win32_Process'
+        Property = @{
+            Handle = 0
+        }
+        Key = 'Handle'
+        ClientOnly = $true
+    }
+    $a = New-CimInstance @instance
+
+    Get-CimInstance -CimInstance $a
+    Invoke-CimMethod -CimInstance $a -MethodName GetOwner
+    ```
+
+    ```Output
+    ProcessId Name                HandleCount WorkingSetSize VirtualSize
+    --------- ----                ----------- -------------- -----------
+    0         System Idle Process 0           8192           8192
+
+    Domain         :
+    ReturnValue    : 2
+    User           :
+    PSComputerName :
+    ```
+
+    The `Get-CimInstance` cmdlet then retrieves a particular single instance. The `Invoke-CimMethod`
+    cmdlet calls the **GetOwner** method on the retrieved instance.
+- title: 'Example 4: Create an instance for a CIM class of a specific namespace'
+  description: |-
+    This example gets an instance of a CIM class named **MSFT_Something** in the namespace
+    **root/somewhere** and stores it in a variable named `$class`. The variable is passed to the
+    `New-CimInstance` cmdlet to create a new CIM instance and perform client side validations on the new
+    instance.
+
+    ```powershell
+    $class = Get-CimClass -ClassName MSFT_Something -Namespace root/somewhere
+    New-CimInstance -CimClass $class -Property @{"Prop1"=1;"Prop2"="value"} -ClientOnly
+    ```
+
+    In this example, using the **CimClass** parameter instead of the **ClassName** parameter validates
+    that **Prop1** and **Prop2** actually exist and that the keys are marked correctly.
+
+    You cannot use the **ComputerName** or **CimSession** parameter with the **ClientOnly** parameter.
+links:
+- text: Get-CimClass
+  href: Get-CimClass.yml
+- text: Get-CimInstance
+  href: Get-CimInstance.yml
+- text: Remove-CimInstance
+  href: Remove-CimInstance.yml
+- text: Set-CimInstance
+  href: Set-CimInstance.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/cimcmdlets/new-ciminstance?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: CimCmdlets
+  ms.date: 06/28/2023
+  PlatyPS schema version: 2024-05-01
+  title: New-CimInstance

@@ -1,0 +1,255 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSScheduledJob.Unregister-ScheduledJob
+name: Unregister-ScheduledJob
+module: PSScheduledJob
+isPreview: false
+summary: |-
+  Deletes scheduled jobs on the local computer.
+description: |-
+  The `Unregister-ScheduledJob` cmdlet deletes scheduled jobs from the local computer.
+
+  When it deletes or unregisters a scheduled job, `Unregister-ScheduledJob` deletes the directory for
+  the scheduled job (in the
+  `$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory`), which contains the XML
+  file that defines the scheduled job, the job execution history, and all job results. This action
+  also deletes the job from Task Scheduler.
+
+  `Unregister-ScheduledJob` deletes only the scheduled jobs that are created by using the
+  `Register-ScheduledJob` cmdlet. It does not delete scheduled jobs that are created in Task
+  Scheduler.
+
+  You can use the parameters of `Unregister-ScheduledJob` to delete scheduled jobs by ID or name, or
+  pipe scheduled jobs from `Get-ScheduledJob` to `Unregister-ScheduledJob`.
+
+  `Unregister-ScheduledJob` is one of a collection of job scheduling cmdlets in the PSScheduledJob
+  module that is included in Windows PowerShell.
+
+  For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
+  the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+
+  This cmdlet was introduced in Windows PowerShell 3.0.
+parameters:
+  cmdletParameters:
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Force
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Deletes the scheduled job even if an instance of the job is running. By default,
+      `Unregister-ScheduledJob` does not interrupt running jobs.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Id
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Deletes the scheduled jobs with the specified identification numbers (ID). Enter the IDs of
+      scheduled jobs on the computer.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DefinitionId
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies a scheduled job. Enter a variable that contains **ScheduledJob** objects or type a command
+      or expression that gets **ScheduledJob** objects, such as a `Get-ScheduledJob` command. You can also
+      pipe **ScheduledJob** objects to `Unregister-JobTrigger`.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Definition
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Name
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Deletes the scheduled jobs with the specified names. Enter the names of one or more scheduled jobs
+      on the computer. Wildcards are supported.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: DefinitionName
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Unregister-ScheduledJob
+        [-InputObject] <ScheduledJobDefinition[]>
+        [-Force]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Definition
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Unregister-ScheduledJob
+        [-Id] <Int32[]>
+        [-Force]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DefinitionId
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Unregister-ScheduledJob
+        [-Name] <String[]>
+        [-Force]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: DefinitionName
+  isDefault: false
+inputs:
+- name: <xref href="Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a scheduled job to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Delete a scheduled job'
+  description: |-
+    ```powershell
+    Unregister-ScheduledJob TestJob
+    ```
+
+    This command deletes the TestJob scheduled job on the local computer.
+- title: 'Example 2: Delete all scheduled jobs'
+  description: |-
+    ```powershell
+    Get-ScheduledJob | Unregister-ScheduledJob -Force
+    Unregister-ScheduledJob -Name "*" -Force
+    ```
+
+    This example shows two different commands that delete all scheduled jobs on the local computer.
+
+    The first command uses the `Get-ScheduledJob` cmdlet to get all scheduled jobs on the local
+    computer. A pipeline operator (`|`) sends the scheduled jobs to `Unregister-ScheduleJob`, which
+    deletes them.
+
+    The second command uses the **Name** parameter of `Unregister-ScheduledJob` with a value of all
+    (`*`) to delete all scheduled jobs.
+
+    Both commands use the **Force** parameter, which deletes a scheduled job even if an instance of the
+    job is running.
+- title: 'Example 3: Delete a scheduled job on a remote computer'
+  description: |-
+    ```powershell
+    Invoke-Command -ComputerName "Server01" { Unregister-ScheduledJob -Name "Test*"}
+    ```
+
+    This command deletes scheduled jobs with names that begin with Test on the Server01 remote computer.
+    The command uses the `Invoke-Command` cmdlet to run the `Unregister-ScheduledJob` command on the
+    Server02 computer.
+links:
+- text: Add-JobTrigger
+  href: Add-JobTrigger.yml
+- text: Disable-JobTrigger
+  href: Disable-JobTrigger.yml
+- text: Disable-ScheduledJob
+  href: Disable-ScheduledJob.yml
+- text: Enable-JobTrigger
+  href: Enable-JobTrigger.yml
+- text: Enable-ScheduledJob
+  href: Enable-ScheduledJob.yml
+- text: Get-JobTrigger
+  href: Get-JobTrigger.yml
+- text: Get-ScheduledJob
+  href: Get-ScheduledJob.yml
+- text: Get-ScheduledJobOption
+  href: Get-ScheduledJobOption.yml
+- text: New-JobTrigger
+  href: New-JobTrigger.yml
+- text: New-ScheduledJobOption
+  href: New-ScheduledJobOption.yml
+- text: Register-ScheduledJob
+  href: Register-ScheduledJob.yml
+- text: Remove-JobTrigger
+  href: Remove-JobTrigger.yml
+- text: Set-JobTrigger
+  href: Set-JobTrigger.yml
+- text: Set-ScheduledJob
+  href: Set-ScheduledJob.yml
+- text: Set-ScheduledJobOption
+  href: Set-ScheduledJobOption.yml
+- text: Unregister-ScheduledJob
+  href: Unregister-ScheduledJob.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psscheduledjob/unregister-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSScheduledJob
+  ms.date: 12/13/2022
+  PlatyPS schema version: 2024-05-01
+  title: Unregister-ScheduledJob

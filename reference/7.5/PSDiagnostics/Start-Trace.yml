@@ -1,0 +1,239 @@
+### YamlMime:PowerShellCmdlet1
+uid: PSDiagnostics.Start-Trace
+name: Start-Trace
+module: PSDiagnostics
+isPreview: false
+summary: |-
+  Start an Event Trace logging session.
+description: |-
+  > **This cmdlet is only available on the Windows platform.**
+
+  This cmdlet starts a Windows Event Trace logging session.
+
+  This cmdlet is used by the following cmdlets:
+
+  - `Enable-PSWSManCombinedTrace`
+  - `Enable-WSManTrace`
+
+  You must run this cmdlet from an elevated PowerShell session.
+parameters:
+  cmdletParameters:
+  - name: BufferSizeInKB
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Event Trace Session buffer size in kilobytes (KB).
+    defaultValue: "0"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ETS
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Send commands to Event Trace Sessions directly without saving or scheduling.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Format
+    type: <xref href="System.Object" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the log format for the data collector. For SQL database format, you must use the
+      **OutputFilePath** option in the command line with the `dsn!log` value. The default is binary
+      (bin). The possible values are:
+
+      - bin - binary
+      - bincirc - binary with circular logging
+      - csv - Comma-separated values
+      - tsv - Tab-separated values
+      - sql - SQL database
+    acceptedValues:
+    - bin
+    - bincirc
+    - csv
+    - tsv
+    - sql
+    defaultValue: bin
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: MaxBuffers
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the maximum number of Event Trace Session buffers.
+    defaultValue: "256"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: MaxLogFileSizeInMB
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the maximum log file size in megabytes (MB) or number of records for SQL logs.
+    defaultValue: 0 (no limit)
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: MinBuffers
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Sets the minimum number of Event Trace Session buffers.
+    defaultValue: "0"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: OutputFilePath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Path of the output log file or the DSN and log set name in a SQL database. The default path is
+      `$Env:SystemDrive\PerfLogs\Admin`.
+    defaultValue: $Env:SystemDrive\PerfLogs\Admin
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: ProviderFilePath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      File listing multiple Event Trace providers to enable.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "2"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: SessionName
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      The name of the Event Trace session. To stop a trace session you must know the session name.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Start-Trace
+        [-SessionName] <String>
+        [[-OutputFilePath] <String>]
+        [[-ProviderFilePath] <String>]
+        [-ETS]
+        [-Format <String>]
+        [-MinBuffers <Int32>]
+        [-MaxBuffers <Int32>]
+        [-BufferSizeInKB <Int32>]
+        [-MaxLogFileSizeInMB <Int32>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You can't pipe objects to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Start a WSMan Trace logging session'
+  description: |-
+    ```powershell
+    $parameters = @{
+        SessionName         = 'wsmlog'
+        ETS                 = $true
+        OutputFilePath      = "$Env:windir\system32\wsmtraces.log"
+        Format              = 'bincirc'
+        MinBuffers          = 16
+        MaxBuffers          = 256
+        BufferSizeInKb      = 64
+        MaxLogFileSizeInMB  = 256
+        ProviderFilePath    = "$Env:windir\system32\wsmtraceproviders.txt"
+    }
+    Start-Trace @parameters
+    ```
+links:
+- text: Event Tracing
+  href: /windows/desktop/ETW/event-tracing-portal
+- text: Stop-Trace
+  href: stop-trace.yml
+- text: Disable-PSWSManCombinedTrace
+  href: Disable-PSWSManCombinedTrace.yml
+- text: Disable-WSManTrace
+  href: Disable-WSManTrace.yml
+- text: Enable-PSWSManCombinedTrace
+  href: Enable-PSWSManCombinedTrace.yml
+- text: Enable-WSManTrace
+  href: Enable-WSManTrace.yml
+metadata:
+  document type: cmdlet
+  external help file: PSDiagnostics-help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/psdiagnostics/start-trace?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: PSDiagnostics
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Start-Trace

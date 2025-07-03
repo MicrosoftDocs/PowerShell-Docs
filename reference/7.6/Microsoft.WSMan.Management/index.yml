@@ -1,0 +1,36 @@
+### YamlMime:PowerShellModule1
+uid: Microsoft.WSMan.Management
+name: Microsoft.WSMan.Management Module
+isPreview: false
+cmdletGroups:
+- title: Microsoft.WSMan.Management Cmdlets
+  cmdlets:
+  - Microsoft.WSMan.Management.Connect-WSMan
+  - Microsoft.WSMan.Management.Disable-WSManCredSSP
+  - Microsoft.WSMan.Management.Disconnect-WSMan
+  - Microsoft.WSMan.Management.Enable-WSManCredSSP
+  - Microsoft.WSMan.Management.Get-WSManCredSSP
+  - Microsoft.WSMan.Management.Get-WSManInstance
+  - Microsoft.WSMan.Management.Invoke-WSManAction
+  - Microsoft.WSMan.Management.New-WSManInstance
+  - Microsoft.WSMan.Management.New-WSManSessionOption
+  - Microsoft.WSMan.Management.Remove-WSManInstance
+  - Microsoft.WSMan.Management.Set-WSManInstance
+  - Microsoft.WSMan.Management.Set-WSManQuickConfig
+  - Microsoft.WSMan.Management.Test-WSMan
+description: |-
+  This section contains the help topics for the cmdlets that are installed with PowerShell
+  Microsoft.WSMan.Management module. The WSMan module contains cmdlets and providers that manage the
+  WS-Management protocol in PowerShell.
+
+  This module is only available on the Windows platform.
+metadata:
+  HelpInfoUri: https://aka.ms/powershell75-help
+  Help Version: 7.6.0.0
+  Locale: en-US
+  Module Guid: 766204a6-330e-4263-a7ab-46c87afc366c
+  Module Name: Microsoft.WSMan.Management
+  ms.date: 03/01/2019
+  PlatyPS schema version: 2024-05-01
+  title: Microsoft.WSMan.Management
+  document type: module

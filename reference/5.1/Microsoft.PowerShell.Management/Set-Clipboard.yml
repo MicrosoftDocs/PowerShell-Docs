@@ -1,0 +1,230 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Set-Clipboard
+name: Set-Clipboard
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Sets the current Windows clipboard entry.
+description: |-
+  The `Set-Clipboard` cmdlet sets the current Windows clipboard entry.
+notes: |-
+  Windows PowerShell includes the following aliases for `Set-Clipboard`:
+
+  - `scb`
+
+  In rare cases, when using `Set-Clipboard` many times in rapid succession, like in a loop, the
+  clipboard isn't updated or you receive an **ExternalException** error. This can be caused when you
+  try to set the clipboard and it's still in use. This can try to avoid this problem by adding
+  `Start-Sleep -Milliseconds 100` to the loop.
+parameters:
+  cmdletParameters:
+  - name: Append
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that the cmdlet should add to the clipboard instead of replacing it. By default, the
+      cmdlet clears the current content from the clipboard and sets it to the new content. When this
+      parameter is specified, the cmdlet appends the new content after a newline to the current content.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: AsHtml
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that the cmdlet renders the content as HTML to the clipboard.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LiteralPath
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the path to the item that's copied to the clipboard. Unlike **Path**, the value of
+      **LiteralPath** is used exactly as it's written. No characters are interpreted as wildcards. If the
+      path includes escape characters, enclose it in single quotation marks. Single quotation marks tell
+      Windows PowerShell not to interpret any characters as escape sequences.
+    aliases:
+    - PSPath
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LiteralPath
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Path
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies the path to the item that's copied to the clipboard. Wildcard characters are permitted.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Path
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  - name: Value
+    type: <xref href="System.String" data-throw-if-not-resolved="False" /><span>[</span><span>]</span>
+    description: |-
+      Specifies, as a string array, the content to copy to the clipboard.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Value
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: true
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet isn't run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Set-Clipboard
+        [-Append]
+        [-AsHtml]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: String
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Set-Clipboard
+        [-Value] <String[]>
+        [-Append]
+        [-AsHtml]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Value
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Set-Clipboard
+        -Path <String[]>
+        [-Append]
+        [-AsHtml]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Path
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Set-Clipboard
+        -LiteralPath <String[]>
+        [-Append]
+        [-AsHtml]
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LiteralPath
+  isDefault: false
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string containing the content to set to the clipboard to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Copy text to the clipboard'
+  description: |-
+    ```powershell
+    Set-Clipboard -Value "This is a test string"
+    ```
+- title: 'Example 2: Copy the contents of a directory to the clipboard'
+  description: |-
+    This example copies the content of the specified folder to the clipboard.
+
+    ```powershell
+    Set-Clipboard -Path "C:\Staging\"
+    ```
+- title: 'Example 3: Copy the contents of a file to the clipboard'
+  description: |-
+    This example pipes the contents of a file, a public ssh key, to the clipboard. Then, the key can be
+    pasted into another application, like GitHub.
+
+    ```powershell
+    Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
+    ```
+links:
+- text: Get-Clipboard
+  href: Get-Clipboard.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/11/2023
+  PlatyPS schema version: 2024-05-01
+  title: Set-Clipboard

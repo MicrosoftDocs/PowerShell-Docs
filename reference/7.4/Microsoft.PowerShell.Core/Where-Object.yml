@@ -1,0 +1,1673 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Core.Where-Object
+name: Where-Object
+module: Microsoft.PowerShell.Core
+isPreview: false
+summary: |-
+  Selects objects from a collection based on their property values.
+description: |-
+  The `Where-Object` cmdlet selects objects that have particular property values from the collection
+  of objects that are passed to it. For example, you can use the `Where-Object` cmdlet to select files
+  that were created after a certain date, events with a particular ID, or computers that use a
+  particular version of Windows.
+
+  Starting in Windows PowerShell 3.0, there are two different ways to construct a `Where-Object`
+  command.
+
+  - **Script block syntax**. You can use a script block to specify the property name, a comparison operator,
+    and a property value. `Where-Object` returns all objects for which the script block statement is
+    true.
+
+    For example, the following command gets processes where the value of the **PriorityClass**
+    property equals `Normal`.
+
+    `Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}`
+
+    All PowerShell comparison operators are valid in the script block format. For more information,
+    see [about_Comparison_Operators](./About/about_Comparison_Operators.md).
+
+  - **Simplified syntax**. To enable the simiplified syntax, `Where-Object` includes 31 switch
+    parameters that represent the comparison operators. The simplified syntax is easier to read and
+    write than the script block syntax. You can combine one of the switch parameters with the
+    **Property** and **Value** parameters to create a command that filters objects based on the
+    values of their properties.
+
+    For example, the following commands also get processes that have a priority class of `Normal`.
+    These commands are equivalent and you can use them interchangeably.
+
+    `Get-Process | Where-Object -Property PriorityClass -Value Normal -EQ`
+
+    `Get-Process | Where-Object PriorityClass -EQ Normal`
+
+    As shown in the example, the parameter names **Property** and **Value** are optional. The
+    **Property** parameter is a positional parameter mapped to position `0`. The **Value** parameter
+    is a positional parameter mapped to position `1`. The switch parameter, used to specify the
+    comparison, can be used in any position.
+
+    The simplfied syntax was introduced in Windows PowerShell 3.0. For more information, see
+    [about_Simplified_Syntax](About/about_Simplified_Syntax.md).
+
+  When you provide a single **Property** to `Where-Object`, the cmdlet treats the value of the
+  property as a boolean expression. When the value of the property's **Length** isn't zero, the
+  expression evaluates to `$true`. For example: `('hi', '', 'there') | Where-Object Length`
+
+  The previous example is functionally equivalent to:
+
+  - `('hi', '', 'there') | Where-Object Length -GT 0`
+  - `('hi', '', 'there') | Where-Object { $_.Length -gt 0 }`
+
+  For more information about how PowerShell evaluates booleans, see
+  [about_Booleans](about/about_Booleans.md).
+notes: |-
+  PowerShell includes the following aliases for `Where-Object`:
+
+  - All Platforms:
+    - `?`
+    - `where`
+
+  Starting in Windows PowerShell 4.0, `Where` and `ForEach` methods were added for use with
+  collections.
+
+  You can read more about these methods here [about_Arrays](./About/about_Arrays.md)
+parameters:
+  cmdletParameters:
+  - name: CContains
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects from a collection if the property value of the object is an
+      exact match for the specified value. This operation is case-sensitive.
+
+      For example: `Get-Process | Where-Object ProcessName -CContains "svchost"`
+
+      **CContains** refers to a collection of values and is true if the collection contains an item that
+      is an exact match for the specified value. If the input is a single object, PowerShell converts it
+      to a collection of one object.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveContainsSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CEQ
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is the same as the specified value.
+      This operation is case-sensitive.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveEqualSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CGE
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is greater than or equal to the
+      specified value. This operation is case-sensitive.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveGreaterOrEqualSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CGT
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is greater than the specified value.
+      This operation is case-sensitive.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveGreaterThanSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CIn
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value includes the specified value. This
+      operation is case-sensitive.
+
+      For example: `Get-Process | Where-Object -Value "svchost" -CIn ProcessName`
+
+      **CIn** resembles **CContains**, except that the property and value positions are reversed. For
+      example, the following statements are both true.
+
+      `"abc", "def" -CContains "abc"`
+
+      `"abc" -CIn "abc", "def"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveInSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CLE
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is less-than or equal to the specified
+      value. This operation is case-sensitive.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveLessOrEqualSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CLike
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value matches a value that includes wildcard
+      characters (`*`). This operation is case-sensitive.
+
+      For example: `Get-Process | Where-Object ProcessName -CLike "*host"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveLikeSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CLT
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is less-than the specified value. This
+      operation is case-sensitive.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveLessThanSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CMatch
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value matches the specified regular
+      expression. This operation is case-sensitive. When the input is a single object, the matched value
+      is saved in the `$Matches` automatic variable.
+
+      For example: `Get-Process | Where-Object ProcessName -CMatch "Shell"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveMatchSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CNE
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is different than the specified value.
+      This operation is case-sensitive.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveNotEqualSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CNotContains
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value of the object isn't an exact match
+      for the specified value. This operation is case-sensitive.
+
+      For example: `Get-Process | Where-Object ProcessName -CNotContains "svchost"`
+
+      **NotContains** and **CNotContains** refer to a collection of values and are true when the
+      collection doesn't contain any items that are an exact match for the specified value. If the input
+      is a single object, PowerShell converts it to a collection of one object.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveNotContainsSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CNotIn
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value isn't an exact match for the
+      specified value. This operation is case-sensitive.
+
+      For example: `Get-Process | Where-Object -Value "svchost" -CNotIn -Property ProcessName`
+
+      **NotIn** and **CNotIn** operators resemble **NotContains** and **CNotContains**, except that the
+      property and value positions are reversed. For example, the following statements are true.
+
+      `"abc", "def" -CNotContains "Abc"`
+
+      `"abc" -CNotIn "Abc", "def"`
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveNotInSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CNotLike
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value doesn't match a value that includes
+      wildcard characters. This operation is case-sensitive.
+
+      For example: `Get-Process | Where-Object ProcessName -CNotLike "*host"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveNotLikeSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: CNotMatch
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value doesn't match the specified regular
+      expression. This operation is case-sensitive. When the input is a single object, the matched value
+      is saved in the `$Matches` automatic variable.
+
+      For example: `Get-Process | Where-Object ProcessName -CNotMatch "Shell"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: CaseSensitiveNotMatchSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Contains
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if any item in the property value of the object is an exact
+      match for the specified value.
+
+      For example: `Get-Process | Where-Object ProcessName -Contains "Svchost"`
+
+      If the input is a single object, PowerShell converts it to a collection of one object.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - IContains
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ContainsSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: EQ
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is the same as the specified value.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - IEQ
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: EqualSet
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: FilterScript
+    type: <xref href="System.Management.Automation.ScriptBlock" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the script block that's used to filter the objects. Enclose the script block in braces
+      (`{}`).
+
+      The parameter name, **FilterScript**, is optional.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: ScriptBlockSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: GE
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is greater than or equal to the
+      specified value.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - IGE
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: GreaterOrEqualSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: GT
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is greater than the specified value.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - IGT
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: GreaterThanSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: In
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value matches any of the specified values.
+      For example:
+
+      `Get-Process | Where-Object -Property ProcessName -In -Value "Svchost", "TaskHost", "WsmProvHost"`
+
+      If the input is a single object, PowerShell converts it to a collection of one object.
+
+      If the property value of an object is an array, PowerShell uses reference equality to determine a
+      match. `Where-Object` returns the object only if the value of the **Property** parameter and any
+      value of **Value** are the same instance of an object.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - IIn
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: InSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: InputObject
+    type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the objects to filter. You can also pipe the objects to `Where-Object`.
+
+      When you use the **InputObject** parameter with `Where-Object`, instead of piping command results
+      to `Where-Object`, the cmdlet treats the **InputObject** as a single object. This is true even if
+      the value is a collection that's the result of a command, such as `-InputObject (Get-Process)`.
+
+      Because **InputObject** can't return individual properties from an array or collection of objects,
+      we recommend that, if you use `Where-Object` to filter a collection of objects for those objects
+      that have specific values in defined properties, you use `Where-Object` in the pipeline, as shown
+      in the examples in this topic.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Is
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is an instance of the specified .NET
+      type. Enclose the type name in square brackets.
+
+      For example, `Get-Process | Where-Object StartTime -Is [datetime]`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IsSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: IsNot
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value isn't an instance of the specified
+      .NET type.
+
+      For example, `Get-Process | where StartTime -IsNot [datetime]`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: IsNotSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LE
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is less than or equal to the specified
+      value.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - ILE
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LessOrEqualSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Like
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value matches a value that includes wildcard
+      characters (`*`).
+
+      For example: `Get-Process | Where-Object ProcessName -Like "*host"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - ILike
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LikeSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: LT
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is less than the specified value.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - ILT
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: LessThanSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Match
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value matches the specified regular
+      expression. When the input is a single object, the matched value is saved in the `$Matches`
+      automatic variable.
+
+      For example: `Get-Process | Where-Object ProcessName -Match "shell"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - IMatch
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: MatchSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: NE
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value is different than the specified value.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - INE
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NotEqualSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Not
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property doesn't exist or has a value of `$null` or
+      `$false`.
+
+      For example: `Get-Service | Where-Object -Not "DependentServices"`
+
+      This parameter was introduced in Windows PowerShell 6.1.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: Not
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: NotContains
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if none of the items in the property value is an exact match
+      for the specified value.
+
+      For example: `Get-Process | Where-Object ProcessName -NotContains "Svchost"`
+
+      **NotContains** refers to a collection of values and is true if the collection doesn't contain any
+      items that are an exact match for the specified value. If the input is a single object, PowerShell
+      converts it to a collection of one object.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - INotContains
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NotContainsSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: NotIn
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value isn't an exact match for any of the
+      specified values.
+
+      For example: `Get-Process | Where-Object -Value "svchost" -NotIn -Property ProcessName`
+
+      If the value of **Value** is a single object, PowerShell converts it to a collection of one object.
+
+      If the property value of an object is an array, PowerShell uses reference equality to determine a
+      match. `Where-Object` returns the object only if the value of **Property** and any value of
+      **Value** aren't the same instance of an object.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - INotIn
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NotInSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: NotLike
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects if the property value doesn't match a value that includes
+      wildcard characters (`*`).
+
+      For example: `Get-Process | Where-Object ProcessName -NotLike "*host"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - INotLike
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NotLikeSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: NotMatch
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Indicates that this cmdlet gets objects when the property value doesn't match the specified regular
+      expression. When the input is a single object, the matched value is saved in the `$Matches`
+      automatic variable.
+
+      For example: `Get-Process | Where-Object ProcessName -NotMatch "powershell"`
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    aliases:
+    - INotMatch
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: NotMatchSet
+      position: Named
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Property
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the name of a property of the input object. The property must be an instance property, not
+      a static property. This is a positional parameter, so the name, **Property**, is optional.
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: EqualSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: LessOrEqualSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveEqualSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotEqualSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotEqualSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: GreaterThanSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveGreaterThanSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: LessThanSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveLessThanSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: GreaterOrEqualSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveGreaterOrEqualSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveLessOrEqualSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: LikeSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveLikeSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotLikeSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotLikeSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: MatchSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveMatchSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotMatchSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotMatchSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ContainsSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveContainsSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotContainsSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotContainsSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: InSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveInSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotInSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotInSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: IsSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: IsNotSet
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: Not
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: Value
+    type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies a property value. The parameter name, **Value**, is optional. This parameter accepts
+      wildcard characters when used with the following comparison parameters:
+
+      - **CLike**
+      - **CNotLike**
+      - **Like**
+      - **NotLike**
+
+      This parameter was introduced in Windows PowerShell 3.0.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: EqualSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveGreaterOrEqualSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveEqualSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotEqualSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotEqualSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: GreaterThanSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveGreaterThanSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: LessThanSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveLessThanSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: GreaterOrEqualSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: LessOrEqualSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveLessOrEqualSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: LikeSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveLikeSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotLikeSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotLikeSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: MatchSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveMatchSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotMatchSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotMatchSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: ContainsSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveContainsSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotContainsSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotContainsSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: InSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveInSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: NotInSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: CaseSensitiveNotInSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: IsSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    - name: IsNotSet
+      position: "1"
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: true
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        [-InputObject <PSObject>]
+        [-EQ]
+        [<CommonParameters>]
+    ```
+  parameterSetName: EqualSet
+  isDefault: true
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-FilterScript] <ScriptBlock>
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ScriptBlockSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -Match
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: MatchSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CEQ
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveEqualSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -NE
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: NotEqualSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CNE
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveNotEqualSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -GT
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: GreaterThanSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CGT
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveGreaterThanSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -LT
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LessThanSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CLT
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveLessThanSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -GE
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: GreaterOrEqualSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CGE
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveGreaterOrEqualSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -LE
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LessOrEqualSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CLE
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveLessOrEqualSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -Like
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: LikeSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CLike
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveLikeSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -NotLike
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: NotLikeSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CNotLike
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveNotLikeSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CMatch
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveMatchSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -NotMatch
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: NotMatchSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CNotMatch
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveNotMatchSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -Contains
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: ContainsSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CContains
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveContainsSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -NotContains
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: NotContainsSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CNotContains
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveNotContainsSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -In
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: InSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CIn
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveInSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -NotIn
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: NotInSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -CNotIn
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: CaseSensitiveNotInSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -Is
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: IsSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        [[-Value] <Object>]
+        -IsNot
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: IsNotSet
+  isDefault: false
+- syntax: |-
+    ```Syntax
+    Where-Object
+        [-Property] <String>
+        -Not
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Not
+  isDefault: false
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe any object to this cmdlet.
+outputs:
+- name: <xref href="System.Object" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns the selected items from the input object set.
+examples:
+- title: 'Example 1: Get stopped services'
+  description: |-
+    These commands get a list of all services that are stopped. The `$_` automatic variable represents
+    each object that's passed to the `Where-Object` cmdlet.
+
+    The first command uses the script block format, the second command uses the comparison statement
+    format. The commands filter the services the same way and return the same output. Only the syntax
+    is different.
+
+    ```powershell
+    Get-Service | Where-Object { $_.Status -eq "Stopped" }
+    Get-Service | Where-Object Status -EQ "Stopped"
+    ```
+- title: 'Example 2: Get processes based on working set'
+  description: |-
+    These commands list processes that have a working set greater than 250 megabytes (MB). The commands
+    filter the processes the same way and return the same output. Only the syntax is different.
+
+    ```powershell
+    Get-Process | Where-Object { $_.WorkingSet -gt 250MB }
+    Get-Process | Where-Object WorkingSet -GT 250MB
+    ```
+- title: 'Example 3: Get processes based on process name'
+  description: |-
+    These commands get the processes that have a **ProcessName** property value that begins with the
+    letter `p`. The `-match` operator and **Match** parameter let you use regular expression matches.
+
+    The commands filter the processes the same way and return the same output. Only the syntax is
+    different.
+
+    ```powershell
+    Get-Process | Where-Object { $_.ProcessName -match "^p.*" }
+    Get-Process | Where-Object ProcessName -Match "^p.*"
+    ```
+- title: 'Example 4: Use the comparison statement format'
+  description: |-
+    This example shows how to use the new comparison statement format of the `Where-Object` cmdlet.
+
+    The first command uses the comparison statement format. It doesn't use any aliases and includes the
+    name for every parameter.
+
+    The second command is the more natural use of the comparison command format. The command
+    substitutes the `where` alias for the `Where-Object` cmdlet name and omits all optional parameter
+    names.
+
+    The commands filter the processes the same way and return the same output. Only the syntax is
+    different.
+
+    ```powershell
+    Get-Process | Where-Object -Property Handles -GE -Value 1000
+    Get-Process | where Handles -GE 1000
+    ```
+- title: 'Example 5: Get commands based on properties'
+  description: |-
+    This example shows how to write commands that return items that are true or false or have any value
+    for a specified property. Each example shows both the script block and comparison statement formats
+    for the command.
+
+    The commands filter their input the same way and return the same output. Only the syntax is
+    different.
+
+    ```powershell
+    # Use Where-Object to get commands that have any value for the OutputType
+    # property of the command. This omits commands that do not have an OutputType
+    # property and those that have an OutputType property, but no property value.
+    Get-Command | Where-Object OutputType
+    Get-Command | Where-Object { $_.OutputType }
+    ```
+
+    ```powershell
+    # Use Where-Object to get objects that are containers. This gets objects that
+    # have the **PSIsContainer** property with a value of $true and excludes all
+    # others.
+    Get-ChildItem | Where-Object PSIsContainer
+    Get-ChildItem | Where-Object { $_.PSIsContainer }
+    ```
+
+    ```powershell
+    # Finally, use the -not operator (!) to get objects that are not containers.
+    # This gets objects that do have the **PSIsContainer** property and those
+    # that have a value of $false for the **PSIsContainer** property.
+    Get-ChildItem | Where-Object -Not PSIsContainer
+    Get-ChildItem | Where-Object { !$_.PSIsContainer }
+    ```
+- title: 'Example 6: Use multiple conditions'
+  description: |-
+    ```powershell
+    Get-Module -ListAvailable | Where-Object {
+        ($_.Name -notlike "Microsoft*" -and $_.Name -notlike "PS*") -and $_.HelpInfoUri
+    }
+    ```
+
+    This example shows how to create a `Where-Object` command with multiple conditions.
+
+    This command gets non-core modules that support the Updatable Help feature. The command uses the
+    **ListAvailable** parameter of the `Get-Module` cmdlet to get all modules on the computer. A
+    pipeline operator (`|`) sends the modules to the `Where-Object` cmdlet, which gets modules whose
+    names don't begin with `Microsoft` or `PS`, and have a value for the **HelpInfoURI** property,
+    which tells PowerShell where to find updated help files for the module. The `-and` logical operator
+    connects the comparison statements.
+
+    The example uses the script block command format. Logical operators, such as `-and`,`-or`, and
+    `-not` are valid only in script blocks. You can't use them in the comparison statement format of a
+    `Where-Object` command.
+
+    - For more information about PowerShell logical operators, see
+      [about_Logical_Operators](./About/about_logical_operators.md).
+    - For more information about the Updatable Help feature, see
+      [about_Updatable_Help](./About/about_Updatable_Help.md).
+links:
+- text: Compare-Object
+  href: ../Microsoft.PowerShell.Utility/Compare-Object.yml
+- text: ForEach-Object
+  href: ForEach-Object.yml
+- text: Group-Object
+  href: ../Microsoft.PowerShell.Utility/Group-Object.yml
+- text: Measure-Object
+  href: ../Microsoft.PowerShell.Utility/Measure-Object.yml
+- text: New-Object
+  href: ../Microsoft.PowerShell.Utility/New-Object.yml
+- text: Select-Object
+  href: ../Microsoft.PowerShell.Utility/Select-Object.yml
+- text: Sort-Object
+  href: ../Microsoft.PowerShell.Utility/Sort-Object.yml
+- text: Tee-Object
+  href: ../Microsoft.PowerShell.Utility/Tee-Object.yml
+- text: about_Booleans
+  href: ./About/about_Booleans.md
+metadata:
+  document type: cmdlet
+  external help file: System.Management.Automation.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.4&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 04/23/2025
+  PlatyPS schema version: 2024-05-01
+  title: Where-Object

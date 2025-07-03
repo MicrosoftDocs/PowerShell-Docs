@@ -1,0 +1,80 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Core.Out-Null
+name: Out-Null
+module: Microsoft.PowerShell.Core
+isPreview: false
+summary: |-
+  Hides the output instead of sending it down the pipeline or displaying it.
+description: |-
+  The `Out-Null` cmdlet sends its output to NULL, in effect, removing it from the pipeline and
+  preventing the output from being displayed on screen.
+notes: |-
+  - The cmdlets that contain the **Out** verb (the **Out** cmdlets) do not have parameters for names
+    or file paths. To send data to an **Out** cmdlet, use a pipeline operator (`|`) to send the output
+    of a PowerShell command to the cmdlet. You can also store data in a variable and use the
+    **InputObject** parameter to pass the data to the cmdlet. For more information, see the examples.
+  - `Out-Null` does not return any output objects. If you pipe the output of `Out-Null` to the
+    Get-Member cmdlet, `Get-Member` reports that no objects have been specified.
+parameters:
+  cmdletParameters:
+  - name: InputObject
+    type: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the object to be sent to NULL (removed from pipeline). Enter a variable that contains the
+      objects, or type a command or expression that gets the objects.
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Out-Null
+        [-InputObject <PSObject>]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="System.Management.Automation.PSObject" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe any object to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output.
+examples:
+- title: 'Example 1: Delete output'
+  description: |-
+    ```powershell
+    Get-ChildItem | Out-Null
+    ```
+
+    This command gets items in the current location/directory, but its output is not passed through the
+    pipeline nor displayed at the command line. This is useful for hiding output that you do not need.
+links:
+- text: Out-Default
+  href: Out-Default.yml
+- text: Out-Host
+  href: Out-Host.yml
+metadata:
+  document type: cmdlet
+  external help file: System.Management.Automation.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Core
+  ms.date: 12/09/2022
+  PlatyPS schema version: 2024-05-01
+  title: Out-Null

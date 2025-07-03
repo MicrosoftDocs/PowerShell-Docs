@@ -1,0 +1,155 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Management.Restore-Computer
+name: Restore-Computer
+module: Microsoft.PowerShell.Management
+isPreview: false
+summary: |-
+  Starts a system restore on the local computer.
+description: |-
+  The `Restore-Computer` cmdlet restores the local computer to the specified system restore point.
+
+  `Restore-Computer` restarts the computer. The restore is completed during the restart operation.
+
+  System restore points and `Restore-Computer` are supported only on client operating systems, such as
+  Windows 7, Windows Vista, and Windows XP.
+notes: |-
+  - To run a `Restore-Computer` command on Windows Vista and later versions of the Windows operating
+    system, open Windows PowerShell by using the Run as administrator option.
+  - This cmdlet uses the Windows Management Instrumentation (WMI) **SystemRestore** class.
+parameters:
+  cmdletParameters:
+  - name: Confirm
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Prompts you for confirmation before running the cmdlet.
+    aliases:
+    - cf
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: RestorePoint
+    type: <xref href="System.Int32" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the sequence number of the restore point. To find the sequence number, use the
+      `Get-ComputerRestorePoint` cmdlet. This parameter is required.
+    aliases:
+    - SequenceNumber
+    - SN
+    - RP
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  - name: WhatIf
+    type: <xref href="System.Management.Automation.SwitchParameter" data-throw-if-not-resolved="False" />
+    description: |-
+      Shows what would happen if the cmdlet runs. The cmdlet is not run.
+    aliases:
+    - wi
+    defaultValue: "False"
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: Named
+      isRequired: false
+      valueFromPipeline: false
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Restore-Computer
+        [-RestorePoint] <Int32>
+        [-WhatIf]
+        [-Confirm]
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    You cannot pipe input to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet does not generate any output.
+examples:
+- title: 'Example 1: Restore the local computer'
+  description: |-
+    ```powershell
+    Restore-Computer -RestorePoint 253
+    ```
+
+    This command restores the local computer to the restore point that has sequence number 253.
+- title: 'Example 2: Restore the local computer with confirmation'
+  description: |-
+    ```powershell
+    PS> Restore-Computer -RestorePoint 255 -Confirm
+    Confirm
+    Are you sure you want to perform this action?
+    Performing operation "Restore-Computer" .
+    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
+    ```
+
+    This command restores the local computer to the restore point that has sequence number 255. It uses
+    the **Confirm** parameter to prompt the user before actually performing the operation.
+- title: 'Example 3: Restore a computer and check the status'
+  description: |-
+    ```powershell
+    Get-ComputerRestorePoint
+    Restore-Computer -RestorePoint 255
+    Get-ComputerRestorePoint -LastStatus
+    ```
+
+    These commands run a system restore and then check its status.
+
+    The first command uses `Get-ComputerRestorePoint` to get the restore points on the local computer.
+
+    The second command restores the computer to the restore point with sequence number 255.
+
+    The third command uses the **LastStatus** parameter of `Get-ComputerRestorePoint` cmdlet to check
+    the status of the restore operation. Because `Restore-Computer` forces a restart, this command would
+    be entered after the computer restarts.
+links:
+- text: Checkpoint-Computer
+  href: Checkpoint-Computer.yml
+- text: Disable-ComputerRestore
+  href: Disable-ComputerRestore.yml
+- text: Enable-ComputerRestore
+  href: Enable-ComputerRestore.yml
+- text: Get-ComputerRestorePoint
+  href: Get-ComputerRestorePoint.yml
+- text: Restart-Computer
+  href: Restart-Computer.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/restore-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Management
+  ms.date: 09/30/2021
+  PlatyPS schema version: 2024-05-01
+  title: Restore-Computer

@@ -1,0 +1,139 @@
+### YamlMime:PowerShellCmdlet1
+uid: Microsoft.PowerShell.Utility.Write-Debug
+name: Write-Debug
+module: Microsoft.PowerShell.Utility
+isPreview: false
+summary: |-
+  Writes a debug message to the console.
+description: |-
+  The `Write-Debug` cmdlet writes debug messages to the host from a script or command.
+
+  By default, debug messages are not displayed in the console, but you can display them by using the
+  **Debug** parameter or the `$DebugPreference` variable.
+parameters:
+  cmdletParameters:
+  - name: Message
+    type: <xref href="System.String" data-throw-if-not-resolved="False" />
+    description: |-
+      Specifies the debug message to send to the console.
+    aliases:
+    - Msg
+    defaultValue: None
+    dontShow: false
+    isDynamic: false
+    parameterSets:
+    - name: (All)
+      position: "0"
+      isRequired: true
+      valueFromPipeline: true
+      valueFromPipelineByPropertyName: false
+      valueFromRemainingArguments: false
+    supportsWildcards: false
+  commonParameters: |-
+    This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+    -InformationAction, -InformationVariable, -OutBuffer, -OutVariable, -PipelineVariable,
+    -ProgressAction, -Verbose, -WarningAction, and -WarningVariable. For more information, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+syntaxes:
+- syntax: |-
+    ```Syntax
+    Write-Debug
+        [-Message] <String>
+        [<CommonParameters>]
+    ```
+  parameterSetName: Default
+  isDefault: true
+inputs:
+- name: <xref href="System.String" data-throw-if-not-resolved="False" />
+  description: |-
+    You can pipe a string that contains a debug message to this cmdlet.
+outputs:
+- name: <xref href="None" data-throw-if-not-resolved="False" />
+  description: |-
+    This cmdlet returns no output. It only writes to the debug stream.
+examples:
+- title: 'Example 1: Understand $DebugPreference'
+  description: |-
+    This example writes a debug message.
+
+    ```powershell
+    Write-Debug "Cannot open file."
+    ```
+
+    The default value of `$DebugPreference` is **SilentlyContinue**. Therefore, the message is not
+    displayed in the console.
+- title: 'Example 2: Change the value of $DebugPreference'
+  description: |-
+    This example shows the effect of changing the value of the `$DebugPreference` variable. First, we
+    display the current value of `$DebugPreference` and attempt to write a debug message. Then we change
+    the value of `$DebugPreference` to **Continue**, which allows debug messages to be displayed.
+
+    ```
+    PS> $DebugPreference
+    SilentlyContinue
+    PS> Write-Debug "Cannot open file."
+    PS>
+    PS> $DebugPreference = "Continue"
+    PS> Write-Debug "Cannot open file."
+    DEBUG: Cannot open file.
+    ```
+
+    For more information about `$DebugPreference`, see
+    [about_Preference_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Preference_Variables).
+- title: 'Example 3: Use the Debug parameter to override $DebugPreference'
+  description: |-
+    The `Test-Debug` function writes the value of the `$DebugPreference` variable to the PowerShell host
+    and to the Debug stream. In this example, we use the **Debug** parameter to override the
+    `$DebugPreference` value.
+
+    ```powershell
+    function Test-Debug {
+        [CmdletBinding()]
+        param()
+        Write-Debug ('$DebugPreference is ' + $DebugPreference)
+        Write-Host ('$DebugPreference is ' + $DebugPreference)
+    }
+    ```
+
+    ```
+    PS> Test-Debug
+    $DebugPreference is SilentlyContinue
+
+    PS> Test-Debug -Debug
+    DEBUG: $DebugPreference is Continue
+    $DebugPreference is Continue
+    PS> $DebugPreference
+    SilentlyContinue
+    ```
+
+    Notice that the value of `$DebugPreference` changes when you use the **Debug** parameter. This
+    change only affects the scope of the function. The value is not affected outside the function.
+
+    For more information about the **Debug** common parameter, see
+    [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+links:
+- text: about_Output_Streams
+  href: ../Microsoft.PowerShell.Core/About/about_Output_Streams.md
+- text: about_Redirection
+  href: ../Microsoft.PowerShell.Core/About/about_Redirection.md
+- text: Write-Error
+  href: Write-Error.yml
+- text: Write-Host
+  href: Write-Host.yml
+- text: Write-Output
+  href: Write-Output.yml
+- text: Write-Progress
+  href: Write-Progress.yml
+- text: Write-Verbose
+  href: Write-Verbose.yml
+- text: Write-Warning
+  href: Write-Warning.yml
+metadata:
+  document type: cmdlet
+  external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
+  HelpUri: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7.5&WT.mc_id=ps-gethelp
+  Locale: en-US
+  Module Name: Microsoft.PowerShell.Utility
+  ms.date: 12/12/2022
+  PlatyPS schema version: 2024-05-01
+  title: Write-Debug
