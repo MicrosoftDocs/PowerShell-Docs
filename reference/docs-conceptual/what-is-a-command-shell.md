@@ -23,7 +23,7 @@ There are two main types of command shells:
 
 - General purpose command shells
 
-  General purpose command shells provide are designed to work with the operating system and allow
+  General purpose command shells are designed to work with the operating system and allow
   you to run any command that the operating system supports. They also include shell-specific
   commands and programming features. The following list contains some examples of general purpose
   command shells:
