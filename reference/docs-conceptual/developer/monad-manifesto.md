@@ -18,8 +18,9 @@ Use the following link to download a copy of the Manifesto.
 
 - [Monad Manifesto][01].
 
-This document is historically significant to PowerShell. It's a version of the original Monad Manifesto, which articulated the long-term vision and initiated the development effort that became PowerShell. PowerShell has delivered on many of the elements
-described in this document.
+This document is historically significant to PowerShell. It's a version of the original Monad
+Manifesto, which articulated the long-term vision and initiated the development effort that became
+PowerShell. PowerShell has delivered on many of the elements described in this document.
 
 <!-- link references -->
 [01]: https://github.com/MicrosoftDocs/PowerShell-Docs/blob/main/assets/MonadManifesto.pdf
