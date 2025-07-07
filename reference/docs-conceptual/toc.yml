@@ -451,6 +451,8 @@ items:
             href: lang-spec/chapter-16.md
       - name: Legacy PowerShell SDK
         href: developer/toc.yml
+      - name: The Monad Manifesto
+        href: developer/monad-manifesto.md
   - name: Docs Contributor's Guide
     items:
       - name: Overview
