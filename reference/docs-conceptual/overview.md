@@ -68,7 +68,7 @@ Jeffrey Snover, the inventor of PowerShell, wrote the Monad Manifesto to explain
 PowerShell and how it would change the way we manage systems. Use the following link to download a
 copy of the [Monad Manifesto][33].
 
-This PDF file is a version of the original Monad Manifesto that articulated the long-term vision and
+This PDF file is a version of the original Monad Manifesto, which articulated the long-term vision and
 started the development effort that became PowerShell. PowerShell has delivered on many of the
 elements described in this document.
 

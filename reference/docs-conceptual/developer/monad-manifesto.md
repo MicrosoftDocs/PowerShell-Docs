@@ -11,16 +11,14 @@ it in his [Monad Manifesto][02] blog post.
 
 In that post, he explained how hard it was to communicate the vision for PowerShell to widely
 distributed development teams. The development teams didn't understand the vision. Writing the
-Manifesto forced him to be clear about what problem being addressed, the core principles of the
-design, how to address the problem, who would benefit from it, and why.
+Manifesto forced him to be clear about what problem was being addressed, the core principles of the
+design, how to address the issue, who would benefit from it, and why.
 
-Use the following link to download a copy of the manifesto.
+Use the following link to download a copy of the Manifesto.
 
 - [Monad Manifesto][01].
 
-This is an important document for PowerShell. It's provided here for historical context. This PDF
-file is a version of the original Monad Manifesto that articulated the long-term vision and started
-the development effort that became PowerShell. PowerShell has delivered on many of the elements
+This document is historically significant to PowerShell. It's a version of the original Monad Manifesto, which articulated the long-term vision and initiated the development effort that became PowerShell. PowerShell has delivered on many of the elements
 described in this document.
 
 <!-- link references -->
