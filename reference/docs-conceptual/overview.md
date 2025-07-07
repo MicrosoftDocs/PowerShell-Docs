@@ -37,17 +37,17 @@ following features:
 
 ## Automation platform
 
-The extensible nature of PowerShell has enabled an ecosystem of PowerShell modules to deploy and
-manage almost any technology you work with. For example:
+The extensible nature of PowerShell provides an ecosystem of PowerShell modules to deploy and manage
+almost any technology you work with. For example:
 
-Microsoft
+Microsoft modules
 
 - [Azure][02]
 - [Windows][25]
 - [Exchange][04]
 - [SQL][27]
 
-Third-party
+Third-party modules
 
 - [AWS][30]
 - [VMware][32]
@@ -68,9 +68,9 @@ Jeffrey Snover, the inventor of PowerShell, wrote the Monad Manifesto to explain
 PowerShell and how it would change the way we manage systems. Use the following link to download a
 copy of the [Monad Manifesto][33].
 
-This is a version of the original Monad Manifesto that articulated the long-term vision and started
-the development effort that became PowerShell. PowerShell has delivered on many of the elements
-described in this document.
+This PDF file is a version of the original Monad Manifesto that articulated the long-term vision and
+started the development effort that became PowerShell. PowerShell has delivered on many of the
+elements described in this document.
 
 ## Next steps
 
@@ -78,7 +78,7 @@ described in this document.
 
 Are you new to PowerShell and don't know where to start? Take a look at these resources.
 
-- [Installing PowerShell][22]
+- [Install PowerShell][22]
 - [Discover PowerShell][29]
 - [PowerShell 101][23]
 - [Microsoft Virtual Academy videos][26]
