@@ -149,7 +149,7 @@ $schema = @'
 False
 ```
 
-In this example, we use the **ErrorAction** parameter to suppres the error message. Without this
+In this example, we use the **ErrorAction** parameter to suppress the error message. Without this
 parameter the command also outputs an error because the schema expects an integer for **age** but
 the JSON input we tested uses a string value instead.
 
