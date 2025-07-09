@@ -271,7 +271,7 @@ command.
   is a positional parameter mapped to position `1`. The switch parameter, used to specify the
   comparison, can be used in any position.
 
-  The simplfied syntax was introduced in Windows PowerShell 3.0. For more information, see
+  The simplified syntax was introduced in Windows PowerShell 3.0. For more information, see
   [about_Simplified_Syntax](About/about_Simplified_Syntax.md).
 
 When you provide a single **Property** to `Where-Object`, the cmdlet treats the value of the
