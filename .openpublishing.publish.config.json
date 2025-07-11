@@ -49,7 +49,7 @@
         ">=powershell-5.1"
       ],
       "monikerPath": [
-        "mapping/MAML2Yaml/monikerMapping.json"
+        "mapping/monikerMapping.json"
       ],
       "monikers": [],
       "open_to_public_contributors": true,
