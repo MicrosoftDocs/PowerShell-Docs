@@ -569,7 +569,7 @@ Determine if fifteen isn't in the `$Numbers` array.
 True
 ```
 
-The `-replace` operator does just want you would think. It's used to replace something. Specifying
+The `-replace` operator does just what you would think. It's used to replace something. Specifying
 one value replaces that value with nothing. In the following example, you replace "Shell" with
 nothing.
 
