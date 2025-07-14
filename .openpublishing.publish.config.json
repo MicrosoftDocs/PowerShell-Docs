@@ -56,8 +56,8 @@
       "template_folder": "_themes",
       "type_mapping": {
         "Conceptual": "Content",
-        "PowershellCmdlet": "Content",
-        "PowershellModule": "Content"
+        "PowerShellCmdlet1": "Content",
+        "PowerShellModule1": "Content"
       },
       "version": 0,
       "xref_query_tags": [
