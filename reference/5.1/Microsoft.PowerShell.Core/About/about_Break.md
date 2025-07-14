@@ -123,7 +123,7 @@ even pass control across script and function call boundaries.
 
 ## Using `break` in a `switch` statement
 
-In a `switch`construct, `break` causes PowerShell to exit the `switch` code
+In a `switch` construct, `break` causes PowerShell to exit the `switch` code
 block.
 
 The `break` keyword is used to leave the `switch` construct. For example, the
