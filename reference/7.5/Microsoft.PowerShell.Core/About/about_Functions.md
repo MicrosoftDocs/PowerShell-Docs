@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 04/17/2025
+ms.date: 07/16/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions
@@ -533,22 +533,33 @@ function Get-SumOfNumbers {
     begin { $retValue = 0 }
 
     process {
-        if ($null -ne $Numbers) {
+        if ($MyInvocation.ExpectingInput) {
+           "Pipeline input: $_"
+           $retValue += $_
+        } else {
            foreach ($n in $Numbers) {
+               "Command line input: $n"
                $retValue += $n
            }
-        } else {
-           $retValue += $_
         }
     }
 
-    end { $retValue }
+    end { "Sum = $retValue" }
 }
 
-PS> 1, 2, 3, 4 | Get-SumOfNumbers
-10
-PS> Get-SumOfNumbers 1, 2, 3, 4
-10
+
+PS> 1,2,3,4 | Get-SumOfNumbers
+Pipeline input: 1
+Pipeline input: 2
+Pipeline input: 3
+Pipeline input: 4
+Sum = 10
+PS> Get-SumOfNumbers 1,2,3,4
+Command line input: 1
+Command line input: 2
+Command line input: 3
+Command line input: 4
+Sum = 10
 ```
 
 When you use a function in a pipeline, the objects piped to the function are
