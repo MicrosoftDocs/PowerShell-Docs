@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 06/02/2025
+ms.date: 07/17/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -13,6 +13,31 @@ get started.
 
 <!-- Link references -->
 [01]: contributing/overview.md
+
+## 2025-June
+
+No new content this month. Only minor edits and bug fixes.
+
+GitHub stats
+
+- 18 PRs merged (5 from Community)
+- 22 issues opened (22 from Community)
+- 22 issues closed (22 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| skycommand  |     2      |               |
+| JustinGrote |     1      |               |
+| OranguTech  |     1      |               |
+| changeworld |     1      |               |
+| ThomasNieto |     1      |               |
+| SamErde     |     1      |               |
+| vlad1300    |            |       2       |
 
 ## 2025-May
 
