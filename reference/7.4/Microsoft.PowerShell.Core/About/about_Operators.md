@@ -171,7 +171,7 @@ PS> $i
 In the prefix case, the value of `$i` is incremented before being output. In
 the postfix case, the value of `$i` is incremented after being output.
 
-You can also use this technique In the context of a conditional statement, such
+You can also use this technique in the context of a conditional statement, such
 as the `if` statement.
 
 ```powershell
