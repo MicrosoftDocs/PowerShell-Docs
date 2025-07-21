@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 09/22/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gjb
 title: Get-Job
 ---
 # Get-Job
@@ -95,7 +97,7 @@ Get-Job
 ```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
-1      Job1            BackgroundJob   Completed     True            localhost             $Env:COMPUTERNAME 
+1      Job1            BackgroundJob   Completed     True            localhost             $Env:COMPUTERNAME
 ```
 
 ### Example 2: Stop a job by using an instance ID
@@ -179,7 +181,7 @@ Get-Job -Name Job*
 ```Output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
 --     ----            -------------   -----         -----------     --------             -------
-1      Job1            BackgroundJob   Completed     True            localhost             $Env:COMPUTERNAME 
+1      Job1            BackgroundJob   Completed     True            localhost             $Env:COMPUTERNAME
 ```
 
 ### Example 7: Use a job object to represent the job in a command

@@ -5,6 +5,10 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 03/18/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - cat
+  - gc
+  - type
 title: Get-Content
 ---
 

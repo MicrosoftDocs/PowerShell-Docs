@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 03/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - epsn
 title: Export-PSSession
 ---
 

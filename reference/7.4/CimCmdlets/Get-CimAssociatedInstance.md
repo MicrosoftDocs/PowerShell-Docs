@@ -5,6 +5,8 @@ Module Name: CimCmdlets
 ms.date: 05/31/2024
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/get-cimassociatedinstance?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gcai
 title: Get-CimAssociatedInstance
 ---
 

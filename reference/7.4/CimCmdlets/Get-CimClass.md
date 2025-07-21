@@ -5,6 +5,8 @@ Module Name: CimCmdlets
 ms.date: 09/11/2023
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/get-cimclass?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gcls
 title: Get-CimClass
 ---
 

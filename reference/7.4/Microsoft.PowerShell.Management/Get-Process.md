@@ -5,6 +5,9 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 04/15/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gps
+  - ps
 title: Get-Process
 ---
 

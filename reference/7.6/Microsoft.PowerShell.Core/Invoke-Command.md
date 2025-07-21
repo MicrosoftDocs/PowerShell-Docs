@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 01/21/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - icm
 title: Invoke-Command
 ---
 
