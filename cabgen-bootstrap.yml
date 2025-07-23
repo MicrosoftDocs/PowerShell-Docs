@@ -1,15 +1,13 @@
-trigger:
-- live
+trigger: none
 
-pr:
-- live
+pr: none
 
 resources:
   repositories:
     - repository: ReferenceAutomation
       type: git
       name: Content CI/ReferenceAutomation
-      ref: refs/heads/master
+      ref: refs/heads/cabgen-test-rc2
 
 extends:
   template: PowerShell/cabgen.yml@ReferenceAutomation
