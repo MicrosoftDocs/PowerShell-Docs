@@ -43,7 +43,7 @@ The script pauses execution and prompts the user to hit a key to continue.
 This function lists PowerShell verbs and the category group they belong to. For
 more information, see [Get-Verb](xref:Microsoft.PowerShell.Core.Get-Verb)
 
-## `help`
+## `help` (alias: `man`)
 
 This function invokes `Get-Help` with your parameters and passes the output to
 the system's pager command, `more.com`.
@@ -78,7 +78,7 @@ This function provides a short hand way to run `Out-String -Stream` in a
 pipeline. For more information, see
 [Out-String](xref:Microsoft.PowerShell.Utility.Out-String).
 
-## `mkdir`
+## `mkdir` (alias: `md`)
 
 This function provides a short hand way to run `New-Item -Type Directory` with
 your parameters.

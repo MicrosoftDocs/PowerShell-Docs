@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 09/25/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rvpa
 title: Resolve-Path
 ---
 

@@ -5,6 +5,9 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 09/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-history?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ghy
+  - history
 title: Get-History
 ---
 # Get-History

@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 12/12/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gmo
 title: Get-Module
 ---
 # Get-Module

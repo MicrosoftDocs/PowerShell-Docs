@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/17/2025
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.6&WT.mc_id=ps-gethelp
+ms.date: 11/09/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Command
 ---

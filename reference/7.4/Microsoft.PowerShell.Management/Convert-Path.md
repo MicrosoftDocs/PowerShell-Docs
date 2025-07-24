@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 09/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/convert-path?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - cvpa
 title: Convert-Path
 ---
 # Convert-Path

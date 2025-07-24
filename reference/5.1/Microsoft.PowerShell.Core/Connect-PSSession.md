@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 09/09/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - cnsn
 title: Connect-PSSession
 ---
 # Connect-PSSession
