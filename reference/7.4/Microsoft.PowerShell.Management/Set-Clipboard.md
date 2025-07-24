@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 08/30/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - scb
 title: Set-Clipboard
 ---
 

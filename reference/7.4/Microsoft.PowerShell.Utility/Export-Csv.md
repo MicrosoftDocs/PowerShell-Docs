@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 03/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - epcsv
 title: Export-Csv
 ---
 

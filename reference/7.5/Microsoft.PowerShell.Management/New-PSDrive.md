@@ -5,6 +5,9 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 01/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - mount
+  - ndr
 title: New-PSDrive
 ---
 

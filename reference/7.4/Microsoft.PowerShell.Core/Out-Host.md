@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 04/17/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/out-host?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - oh
 title: Out-Host
 ---
 

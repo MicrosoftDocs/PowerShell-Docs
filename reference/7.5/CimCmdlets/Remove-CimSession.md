@@ -5,6 +5,8 @@ Module Name: CimCmdlets
 ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/remove-cimsession?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rcms
 title: Remove-CimSession
 ---
 

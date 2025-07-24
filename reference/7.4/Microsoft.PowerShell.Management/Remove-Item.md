@@ -5,6 +5,12 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 02/14/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - del
+  - erase
+  - rd
+  - ri
+  - rm
 title: Remove-Item
 ---
 

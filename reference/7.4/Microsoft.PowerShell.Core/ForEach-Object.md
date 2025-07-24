@@ -5,6 +5,9 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 04/23/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - %
+  - foreach
 title: ForEach-Object
 ---
 # ForEach-Object

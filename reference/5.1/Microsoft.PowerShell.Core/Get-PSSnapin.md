@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gsnp
 title: Get-PSSnapin
 ---
 

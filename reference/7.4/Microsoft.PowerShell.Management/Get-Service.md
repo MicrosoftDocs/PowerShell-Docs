@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 03/20/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gsv
 title: Get-Service
 ---
 

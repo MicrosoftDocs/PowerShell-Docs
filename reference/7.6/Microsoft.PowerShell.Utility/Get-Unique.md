@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 08/18/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-unique?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gu
 title: Get-Unique
 ---
 

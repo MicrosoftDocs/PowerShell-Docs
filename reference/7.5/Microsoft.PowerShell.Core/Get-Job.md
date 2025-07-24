@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 09/22/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-job?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gjb
 title: Get-Job
 ---
 # Get-Job

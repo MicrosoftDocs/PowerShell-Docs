@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 02/03/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - iex
 title: Invoke-Expression
 ---
 

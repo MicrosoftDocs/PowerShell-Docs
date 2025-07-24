@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 02/27/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/trace-command?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - trcm
 title: Trace-Command
 ---
 

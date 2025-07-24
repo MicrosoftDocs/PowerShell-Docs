@@ -5,6 +5,9 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/07/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - echo
+  - write
 title: Write-Output
 ---
 

@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 02/16/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-item?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - si
 title: Set-Item
 ---
 

@@ -5,6 +5,9 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 09/15/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ihy
+  - r
 title: Invoke-History
 ---
 # Invoke-History

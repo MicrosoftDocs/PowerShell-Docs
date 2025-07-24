@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 05/13/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/receive-job?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rcjb
 title: Receive-Job
 ---
 # Receive-Job

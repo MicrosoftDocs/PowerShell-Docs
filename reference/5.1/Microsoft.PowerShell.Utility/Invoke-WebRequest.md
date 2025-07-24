@@ -5,6 +5,10 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/25/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - curl
+  - iwr
+  - wget
 title: Invoke-WebRequest
 ---
 
