@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Run with PowerShell feature to run a script from a file system drive.
 Locale: en-US
-ms.date: 03/06/2024
+ms.date: 07/29/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_run_with_powershell?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Run_With_PowerShell
@@ -17,40 +17,44 @@ file system drive.
 ## Long description
 
 Beginning in Windows PowerShell 3.0, you can use the **Run with PowerShell**
-feature to run scripts from File Explorer. The **Run with PowerShell** feature
-is intended to run scripts that don't have required parameters, don't return
-output to console, and don't prompt for user input. When you use the **Run with
-PowerShell** feature, the PowerShell console window appears only briefly, if at
-all.
+feature to run scripts from File Explorer. PowerShell 7 adds the **Run with
+PowerShell 7** feature that allows you to run scripts specifically with
+PowerShell 7.
+
+The **Run with PowerShell** feature is intended to run scripts that don't have
+parameters, don't return output to console, and don't prompt for user input.
+
+When you use the **Run with PowerShell** feature, the PowerShell console window
+appears only briefly, if at all.
 
 To use the **Run with PowerShell** feature:
 
-In File Explorer (or Windows Explorer), right-click the script filename and
-then select **Run with PowerShell**.
+In File Explorer on Windows, right-click the script filename and then select
+**Run with PowerShell** or **Run with PowerShell 7**. Either selection starts a
+new PowerShell session, runs the script, and closes the session when the script
+exits.
 
-The **Run with PowerShell** feature starts a Windows PowerShell session that
-has an execution policy of Bypass, runs the script, and closes the session.
+- When you select **Run with PowerShell 7**, the script is invoked using the
+  following command:
 
-It runs a command that has the following format:
+  ```
+  C:\Program Files\PowerShell\7\pwsh.exe -Command "$host.UI.RawUI.WindowTitle = 'PowerShell 7 (x64)'; & '%1'"
+  ```
 
-```
-powershell.exe -File <FileName> -ExecutionPolicy Bypass
-```
+- When you select **Run with PowerShell**, the script is invoked using the
+  following command:
 
-**Run with PowerShell** sets the Bypass execution policy only for the session
-(the current instance of the PowerShell process) in which the script runs.
-This feature doesn't change the execution policy for the computer or the
-user.
+  ```
+  C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -file "%1"
+  ```
 
-The **Run with PowerShell** feature is affected only by the AllSigned execution
-policy. If the AllSigned execution policy is effective for the computer or the
-user, **Run with PowerShell** runs only signed scripts. **Run with PowerShell**
-is not affected by any other execution policy. For more information, see
-[about_Execution_Policies][01].
+Your ability to run scripts is subject to the configured execution policy. For
+more information, see [about_Execution_Policies][01].
 
 > [!NOTE]
-> **Run with PowerShell** feature might prompt you to confirm the execution
-> policy change.
+> There is a known issue with this feature for PowerShell 7 on Windows 11. Due
+> to a change in the context menus on Windows 11, the **Run with PowerShell 7**
+> menu item does not appear. This issue is being investigated.
 
 ## See also
 
