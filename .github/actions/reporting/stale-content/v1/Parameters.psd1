@@ -1,7 +1,7 @@
 @{
   Parameters = @(
     @{
-      Name = 'Relative_Folder_Path'
+      Name = 'relative_folder_path'
       Type = 'String[]'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -33,7 +33,7 @@
     }
 
     @{
-      Name = 'Exclude_Folder_Segment'
+      Name = 'exclude_folder_segment'
       Type = 'String[]'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -56,7 +56,7 @@
     }
 
     @{
-      Name = 'Days_Until_Stale'
+      Name = 'days_until_stale'
       Type = 'Int'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -91,7 +91,7 @@
     }
 
     @{
-      Name = 'Stale_Since_Date'
+      Name = 'stale_since_date'
       Type = 'DateTime'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -125,7 +125,7 @@
     }
 
     @{
-      Name = 'Upload_Artifact'
+      Name = 'upload_artifact'
       Type = 'Bool'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -166,7 +166,7 @@
     }
 
     @{
-      Name = 'Export_As_Csv'
+      Name = 'export_as_csv'
       Type = 'Bool'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -206,7 +206,7 @@
     }
 
     @{
-      Name = 'Export_Path'
+      Name = 'export_path'
       Type = 'string'
       IfNullOrEmpty = {
         param($ErrorTarget)

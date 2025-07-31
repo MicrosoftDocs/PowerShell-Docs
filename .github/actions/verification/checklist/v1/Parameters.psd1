@@ -1,7 +1,7 @@
 @{
   Parameters = @(
     @{
-      Name = 'Body'
+      Name = 'body'
       Type = 'string'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -30,7 +30,7 @@
     }
 
     @{
-      Name          = 'Reference_Url'
+      Name          = 'reference_url'
       Type          = 'string'
       IfNullOrEmpty = {
         param($ErrorTarget)
