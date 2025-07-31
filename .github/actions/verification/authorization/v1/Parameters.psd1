@@ -32,11 +32,6 @@
     @{
       Name = 'authorized_accounts'
       Type = 'String[]'
-      IfNullOrEmpty = {
-          param($ErrorTarget)
-
-          # This parameter is optional, so don't error.
-      }
       Process = {
         param($Parameters, $Value, $ErrorTarget)
 
