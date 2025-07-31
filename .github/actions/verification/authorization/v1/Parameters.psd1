@@ -40,7 +40,10 @@
       Process = {
         param($Parameters, $Value, $ErrorTarget)
 
-        [string[]]$SpecifiedAccounts = $Value -split ','
+        [string[]]$SpecifiedAccounts = $Value -split ',' | Where-Object {
+           -not [string]::IsNullOrEmpty($_)
+        }
+
         if ($SpecifiedAccounts.Count -gt 0) {
           $Parameters.AuthorizedAccounts = $SpecifiedAccounts
           Write-HostParameter -Name AuthorizedAccounts -Value $Parameters.AuthorizedAccounts
