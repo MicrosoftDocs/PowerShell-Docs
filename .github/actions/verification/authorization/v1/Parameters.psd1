@@ -35,6 +35,7 @@
       Process = {
         param($Parameters, $Value, $ErrorTarget)
 
+        # Comment line.
         [string[]]$SpecifiedAccounts = $Value -split ',' | Where-Object {
            -not [string]::IsNullOrEmpty($_)
         }
