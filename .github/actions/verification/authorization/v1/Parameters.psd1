@@ -1,7 +1,7 @@
 @{
   Parameters = @(
     @{
-      Name = 'Repository'
+      Name = 'repository'
       Type = 'string'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -30,7 +30,7 @@
       }
     }
     @{
-      Name = 'AuthorizedAccounts'
+      Name = 'authorized_accounts'
       Type = 'String[]'
       IfNullOrEmpty = {
           param($ErrorTarget)
@@ -50,7 +50,7 @@
     }
 
     @{
-      Name = 'Permissions'
+      Name = 'permissions'
       Type = 'String[]'
       IfNullOrEmpty = {
           param($ErrorTarget)
@@ -118,7 +118,7 @@
     }
 
     @{
-      Name = 'Target'
+      Name = 'target'
       Type = 'String[]'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -191,7 +191,7 @@
     }
 
     @{
-      Name = 'User'
+      Name = 'user'
       Type = 'String'
       IfNullOrEmpty = {
         param($ErrorTarget)
