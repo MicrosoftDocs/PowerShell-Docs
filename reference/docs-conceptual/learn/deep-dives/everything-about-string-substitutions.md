@@ -53,7 +53,7 @@ The type of quotes you use around the string makes a difference. A double quoted
 substitution but a single quoted string doesn't. There are times you want one or the other so you
 have an option.
 
-## Command substitution
+## Command substitution (subexpression)
 
 Things get a little tricky when you start trying to get the values of properties into a string. This
 is where many new people get tripped up. First let me show you what they think should work (and at
