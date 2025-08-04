@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 07/17/2025
+ms.date: 08/04/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -13,6 +13,38 @@ get started.
 
 <!-- Link references -->
 [01]: contributing/overview.md
+
+## 2025-July
+
+New content
+
+- [The Monad Manifesto](../developer/monad-manifesto.md) - No new but certainly a classic.
+
+Content updates
+
+- In July, we completed the deployment of a new build pipeline for PowerShell reference content. Now
+  all reference content for Microsoft products and services is using the new build system. The
+  webpage has a new right-hand navigation menu and we greatly improved the documentation of
+  parameters by including full details about each parameter set.
+
+GitHub stats
+
+- 19 PRs merged (8 from Community)
+- 31 issues opened (31 from Community)
+- 30 issues closed (30 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| changeworld |     3      |               |
+| sethvs      |     2      |               |
+| yashanshh   |     2      |               |
+| Gijsreyn    |     1      |               |
+| TNGBBK      |            |       2       |
 
 ## 2025-June
 
