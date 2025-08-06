@@ -82,7 +82,7 @@ characters).
 
 ### Numbers
 
-The `\d` character class matchs any decimal digit. Conversely, `\D` matches any
+The `\d` character class matches any decimal digit. Conversely, `\D` matches any
 character except decimal digits.
 
 ```powershell

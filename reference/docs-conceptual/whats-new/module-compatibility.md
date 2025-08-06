@@ -1,6 +1,6 @@
 ---
 description: This article lists the compatibility status of modules published for other Microsoft products with PowerShell 7.
-ms.date: 06/28/2023
+ms.date: 08/06/2025
 title: PowerShell 7 module compatibility
 ---
 # PowerShell 7 module compatibility
@@ -70,7 +70,7 @@ Browser, you can find documentation for other PowerShell modules to determine th
 version requirements.
 
 <!-- link references -->
-[01]: /graph/powershell/installation#supported-powershell-versions
+[01]: /powershell/microsoftgraph/overview#microsoft-graph-powershell-features--benefits
 [02]: /powershell/azure/new-azureps-module-az
 [03]: /powershell/exchange/exchange-online-powershell-v2
 [04]: /powershell/module
