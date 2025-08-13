@@ -184,8 +184,9 @@ Specifies the body of the request. The body is the content of the request that f
 You can also pipe a body value to `Invoke-RestMethod`.
 
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
-the response.
+the .
 
+request.
 When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body
 is added to the URI as query parameters. For other request types (such as POST), the body is set as
 the value of the request body in the standard name=value format.
