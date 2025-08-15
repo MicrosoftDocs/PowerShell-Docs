@@ -1,9 +1,11 @@
 ---
+title: Getting Started with PowerShell
 description: Where to find and how to launch PowerShell for new users.
-ms.custom: Contributor-mikefrobbins
-ms.date: 08/02/2024
 ms.reviewer: mirobb
-title: Getting started with PowerShell
+ms.custom:
+  - Contributor-mikefrobbins
+  - sfi-image-nochange
+ms.date: 08/02/2024
 ---
 
 # Chapter 1 - Getting started with PowerShell
