@@ -2,6 +2,7 @@
 description: Creating a Windows PowerShell Drive Provider
 ms.date: 09/13/2016
 title: Creating a Windows PowerShell Drive Provider
+ms.custom: sfi-ropc-nochange
 ---
 # Creating a Windows PowerShell Drive Provider
 
