@@ -1,8 +1,10 @@
 ---
 description: How to add credential parameters to your PowerShell scripts, functions, and cmdlets.
-ms.custom: contributor-JoshDuffney
 ms.date: 10/05/2021
 title: Add Credential support to PowerShell functions
+ms.custom:
+  - contributor-JoshDuffney
+  - sfi-image-nochange
 ---
 # Add Credential support to PowerShell functions
 
