@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
 ---
+
 # New-Event
 
 ## SYNOPSIS
@@ -42,7 +43,7 @@ must change the program conditions or close the PowerShell session.
 ### Example 1: Create a new event in the event queue
 
 ```
-PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
+PS C:\> New-Event -SourceIdentifier Timer -Sender Windows.Timer -MessageData "Test"
 ```
 
 This command creates a new event in the PowerShell event queue. It uses a **Windows.Timer** object
@@ -58,7 +59,7 @@ PS C:\> function Enable-ProcessCreationEvent
    $Identifier = "WMI.ProcessCreated"
    Register-ObjectEvent $ProcessWatcher "EventArrived" -SupportEvent $Identifier -Action
    {
-      [void] (New-Event -SourceID "PowerShell.ProcessCreated" -Sender $Args[0] -EventArguments $Args[1].SourceEventArgs.NewEvent.TargetInstance)
+      [void] (New-Event -SourceId "PowerShell.ProcessCreated" -Sender $args[0] -EventArguments $args[1].SourceEventArgs.NewEvent.TargetInstance)
    }
 }
 ```
@@ -152,7 +153,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 

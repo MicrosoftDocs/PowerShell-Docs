@@ -1,12 +1,13 @@
 ---
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
-Module Name: PSReadline
-ms.date: 06/30/2020
-online version: https://docs.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-5.1&WT.mc_id=ps-gethelp
+Module Name: PSReadLine
+ms.date: 02/24/2025
+online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
+
 # Set-PSReadLineOption
 
 ## SYNOPSIS
@@ -30,6 +31,11 @@ Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <String>] [-His
 
 The `Set-PSReadLineOption` cmdlet customizes the behavior of the **PSReadLine** module when you're
 editing the command line. To view the **PSReadLine** settings, use `Get-PSReadLineOption`.
+
+The options set by this command only apply to the current session. To persist any options, add them
+to a profile script. For more information, see
+[about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md) and
+[Customizing your shell environment](/powershell/scripting/learn/shell/creating-profiles).
 
 ## EXAMPLES
 
@@ -124,10 +130,10 @@ This example emits a cursor change VT escape in response to a **Vi** mode change
 function OnViModeChange {
     if ($args[0] -eq 'Command') {
         # Set the cursor to a blinking block.
-        Write-Host -NoNewLine "$([char]0x1b)[1 q"
+        Write-Host -NoNewline "$([char]0x1b)[1 q"
     } else {
         # Set the cursor to a blinking line.
-        Write-Host -NoNewLine "$([char]0x1b)[5 q"
+        Write-Host -NoNewline "$([char]0x1b)[5 q"
     }
 }
 Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
@@ -140,14 +146,93 @@ block object.
 For more information, see
 [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
 
+### Example 7: Use HistoryHandler to filter commands added to history
+
+The following example shows how to use the `AddToHistoryHandler` to prevent saving any git commands
+to history.
+
+```powershell
+$ScriptBlock = {
+    param ([string]$Line)
+
+    if ($Line -match "^git") {
+        return $false
+    } else {
+        return $true
+    }
+}
+
+Set-PSReadLineOption -AddToHistoryHandler $ScriptBlock
+```
+
+The scriptblock returns `$false` if the command started with `git`. This has the same effect as
+returning the `SkipAdding` **AddToHistory** enum. If the command doesn't start with `git`, the
+handler returns `$true` and PSReadLine saves the command in history.
+
+### Example 8: Use CommandValidationHandler to validate a command before its executed
+
+This example shows how to use the **CommandValidationHandler** parameter to run a validate a command
+before it's executed. The example specifically checks for the command `git` with the sub command
+`cmt` and replaces that with the full name `commit`. This way you can create shorthand aliases for
+subcommands.
+
+```powershell
+# Load the namespace so you can use the [CommandAst] object type
+using namespace System.Management.Automation.Language
+
+Set-PSReadLineOption -CommandValidationHandler {
+    param([CommandAst]$CommandAst)
+
+    switch ($CommandAst.GetCommandName()) {
+        'git' {
+            $gitCmd = $CommandAst.CommandElements[1].Extent
+            switch ($gitCmd.Text) {
+                'cmt' {
+                    [Microsoft.PowerShell.PSConsoleReadLine]::Replace(
+                        $gitCmd.StartOffset, $gitCmd.EndOffset - $gitCmd.StartOffset, 'commit')
+                }
+            }
+        }
+    }
+}
+# This checks the validation script when you hit enter
+Set-PSReadLineKeyHandler -Chord Enter -Function ValidateAndAcceptLine
+```
+
+### Example 9: Using the PromptText parameter
+
+When there's a parse error, **PSReadLine** changes a part of the prompt red. The **PromptText**
+parameter tells **PSReadLine** the part of the prompt string to make red.
+
+For example, the following example creates a prompt that contains the current path followed by the
+greater-than character (`>`) and a space.
+
+```powershell
+function prompt { "PS $PWD> " }`
+Set-PSReadLineOption -PromptText '> ' # change the '>' character red
+Set-PSReadLineOption -PromptText '> ', 'X ' # replace the '>' character with a red 'X'
+```
+
+The first string is the portion of your prompt string that you want to make red when there is a
+parse error. The second string is an alternate string to use for when there is a parse error.
+
 ## PARAMETERS
 
 ### -AddToHistoryHandler
 
-Specifies a **ScriptBlock** that controls which commands get added to **PSReadLine** history.
+Specifies a **ScriptBlock** that controls how commands get added to **PSReadLine** history.
 
-The **ScriptBlock** receives the command line as input. If the **ScriptBlock** returns `$True`, the
-command line is added to the history.
+The **ScriptBlock** receives the command line as input.
+
+The  **ScripBlock** should return a member of the **AddToHistoryOption** enum, the string name of
+one of those members, or a boolean value. The list below describes the possible values and their
+effects.
+
+- `MemoryAndFile` - Add the command to the history file and the current session.
+- `MemoryOnly` - Add the command to history for the current session only.
+- `SkipAdding` - Don't add the command to the history file for current session.
+- `$false` - Same as if the value was `SkipAdding`.
+- `$true` - Same as if the value was `MemoryAndFile`.
 
 ```yaml
 Type: System.Func`2[System.String,System.Object]
@@ -213,12 +298,13 @@ Accept wildcard characters: False
 
 The **Colors** parameter specifies various colors used by **PSReadLine**.
 
-The argument is a hash table where the keys specify which element and the values specify the color.
-For more information, see [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
+The argument is a hash table where the keys specify the elements and the values specify the color.
+For more information, see
+[about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables).
 
 Colors can be either a value from **ConsoleColor**, for example `[ConsoleColor]::Red`, or a valid
 ANSI escape sequence. Valid escape sequences depend on your terminal. In PowerShell 5.0, an example
-escape sequence for red text is `$([char]0x1b)[91m`. In PowerShell 6 and above, the same escape
+escape sequence for red text is `$([char]0x1b)[91m`. In PowerShell 6 and newer, the same escape
 sequence is `` `e[91m``. You can specify other escape sequences including the following types:
 
 - 256 color
@@ -226,7 +312,8 @@ sequence is `` `e[91m``. You can specify other escape sequences including the fo
 - Foreground, background, or both
 - Inverse, bold
 
-For more information about ANSI color codes, see [ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code#Colors_) in Wikipedia.
+For more information about ANSI color codes, see the Wikipedia article
+[ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code#Colors_).
 
 The valid keys include:
 
@@ -264,8 +351,8 @@ Specifies a **ScriptBlock** that is called from **ValidateAndAcceptLine**. If an
 thrown, validation fails and the error is reported.
 
 Before throwing an exception, the validation handler can place the cursor at the point of the error
-to make it easier to fix. A validation handler can also change the command line, such as to correct
-common typographical errors.
+to make it easier to fix. A validation handler can also change the command line to correct common
+typographical errors.
 
 **ValidateAndAcceptLine** is used to avoid cluttering your history with commands that can't work.
 
@@ -356,7 +443,7 @@ Specifies the command line editing mode. Using this parameter resets any key bin
 
 The valid values are as follows:
 
-- **Windows**: Key bindings emulate PowerShell, cmd, and Visual Studio.
+- **Windows**: Key bindings emulate PowerShell, cmd, and Visual Studio. (default on Windows)
 - **Emacs**: Key bindings emulate Bash or Emacs.
 - **Vi**: Key bindings emulate Vi.
 
@@ -405,13 +492,13 @@ commands are added to history to preserve ordering during recall. However, you t
 to see the command multiple times when recalling or searching the history.
 
 By default, the **HistoryNoDuplicates** property of the global **PSConsoleReadLineOptions** object
-is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the
-property value, you must specify the value of the **SwitchParameter** as follows:
-`-HistoryNoDuplicates:$False`.
+is set to `True`. To change the property value, you must specify the value of the
+**SwitchParameter** as follows: `-HistoryNoDuplicates:$false`. You can set back to `True` by using
+just the **SwitchParameter**, `-HistoryNoDuplicates`.
 
 Using the following command, you can set the property value directly:
 
-`(Get-PSReadLineOption).HistoryNoDuplicates = $False`
+`(Get-PSReadLineOption).HistoryNoDuplicates = $false`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -429,11 +516,11 @@ Accept wildcard characters: False
 
 Specifies the path to the file where history is saved. Computers running Windows or non-Windows
 platforms store the file in different locations. The filename is stored in a variable
-`$($host.Name)_history.txt`, for example `ConsoleHost_history.txt`.
+`$($Host.Name)_history.txt`, for example `ConsoleHost_history.txt`.
 
 If you don't use this parameter, the default path is:
 
-`$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($host.Name)_history.txt`
+`$Env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine\$($Host.Name)_history.txt`
 
 ```yaml
 Type: System.String
@@ -442,7 +529,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: A file named $($host.Name)_history.txt in $env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine on Windows and $env:XDG_DATA_HOME/powershell/PSReadLine or $env:HOME/.local/share/powershell/PSReadLine on non-Windows platforms
+Default value: A file named $($Host.Name)_history.txt in $Env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine on Windows and $Env:XDG_DATA_HOME/powershell/PSReadLine or $HOME/.local/share/powershell/PSReadLine on non-Windows platforms
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -453,10 +540,14 @@ Specifies how **PSReadLine** saves history.
 
 Valid values are as follows:
 
-- **SaveIncrementally**: Save history after each command is executed and share across multiple
+- `SaveIncrementally`: Save history after each command is executed and share across multiple
   instances of PowerShell.
-- **SaveAtExit**: Append history file when PowerShell exits.
-- **SaveNothing**: Don't use a history file.
+- `SaveAtExit`: Append history file when PowerShell exits.
+- `SaveNothing`: Don't use a history file.
+
+> [!NOTE]
+> If you set **HistorySaveStyle** to `SaveNothing` and then set it to `SaveIncrementally` later in
+> the same session, PSReadLine saves all the commands previously run in the session.
 
 ```yaml
 Type: Microsoft.PowerShell.HistorySaveStyle
@@ -478,11 +569,11 @@ Specifies that history searching is case-sensitive in functions like **ReverseSe
 By default, the **HistorySearchCaseSensitive** property of the global **PSConsoleReadLineOptions**
 object is set to `False`. Using this **SwitchParameter** sets the property value to `True`. To
 change the property value back, you must specify the value of the **SwitchParameter** as follows:
-`-HistorySearchCaseSensitive:$False`.
+`-HistorySearchCaseSensitive:$false`.
 
 Using the following command, you can set the property value directly:
 
-`(Get-PSReadLineOption).HistorySearchCaseSensitive = $False`
+`(Get-PSReadLineOption).HistorySearchCaseSensitive = $false`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -499,17 +590,17 @@ Accept wildcard characters: False
 ### -HistorySearchCursorMovesToEnd
 
 Indicates that the cursor moves to the end of commands that you load from history by using a search.
-When this parameter is set to `$False`, the cursor remains at the position it was when you pressed
+When this parameter is set to `$false`, the cursor remains at the position it was when you pressed
 the up or down arrows.
 
 By default, the **HistorySearchCursorMovesToEnd** property of the global
 **PSConsoleReadLineOptions** object is set to `False`. Using this **SwitchParameter** set the
 property value to `True`. To change the property value back, you must specify the value of the
-**SwitchParameter** as follows: `-HistorySearchCursorMovesToEnd:$False`.
+**SwitchParameter** as follows: `-HistorySearchCursorMovesToEnd:$false`.
 
 Using the following command, you can set the property value directly:
 
-`(Get-PSReadLineOption).HistorySearchCursorMovesToEnd = $False`
+`(Get-PSReadLineOption).HistorySearchCursorMovesToEnd = $false`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -559,20 +650,15 @@ Accept wildcard characters: False
 
 ### -PromptText
 
-When there's a parse error, **PSReadLine** changes a part of the prompt red. **PSReadLine** analyzes
-your prompt function to determine how to change only the color of part of your prompt. This analysis
-isn't 100% reliable.
+This parameter sets the value of the **PromptText** property. The default value is `"> "`.
 
-Use this option if **PSReadLine** is changing your prompt in unexpected ways. Include any trailing
-whitespace.
+**PSReadLine** analyzes your prompt function to determine how to change only the color of part of
+your prompt. This analysis isn't 100% reliable. Use this option if **PSReadLine** is changing your
+prompt in unexpected ways. Include any trailing whitespace.
 
-For example, if your prompt function looked like the following example:
-
-`function prompt { Write-Host -NoNewLine -ForegroundColor Yellow "$pwd"; return "# " }`
-
-Then set:
-
-`Set-PSReadLineOption -PromptText "# "`
+The value of this parameter can be a single string or an array of two strings. The first string is
+the portion of your prompt string that you want to be changed to red when there is a parse error.
+The second string is an alternate string to use for when there is a parse error.
 
 ```yaml
 Type: System.String[]
@@ -591,16 +677,15 @@ Accept wildcard characters: False
 When displaying possible completions, tooltips are shown in the list of completions.
 
 This option is enabled by default. This option wasn't enabled by default in prior versions of
-**PSReadLine**. To disable, set this option to `$False`.
+**PSReadLine**. To disable, set this option to `$false`.
 
-By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions**
-object is set to `True`. Using this **SwitchParameter** sets the property value to `True`. To change
-the property value, you must specify the value of the **SwitchParameter** as follows:
-`-ShowToolTips:$False`.
+By default, the **ShowToolTips** property of the global **PSConsoleReadLineOptions** object is set
+to `True`. Using this **SwitchParameter** sets the property value to `True`. To change the property
+value, you must specify the value of the **SwitchParameter** as follows: `-ShowToolTips:$false`.
 
 Using the following command, you can set the property value directly:
 
-`(Get-PSReadLineOption).ShowToolTips = $False`
+`(Get-PSReadLineOption).ShowToolTips = $false`
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -635,12 +720,12 @@ Accept wildcard characters: False
 
 ### -ViModeIndicator
 
-This option sets the visual indication for the current **Vi** mode. Either insert mode or command
+This option sets the visual indicator for the current **Vi** mode. Either insert mode or command
 mode.
 
 The valid values are as follows:
 
-- **None**: There's no indication.
+- **None**: There's no indicator.
 - **Prompt**: The prompt changes color.
 - **Cursor**: The cursor changes size.
 - **Script**: User-specified text is printed.
@@ -684,13 +769,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to `Set-PSReadLineOption.`
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

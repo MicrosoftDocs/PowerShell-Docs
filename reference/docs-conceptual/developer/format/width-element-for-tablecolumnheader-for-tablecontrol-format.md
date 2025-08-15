@@ -1,7 +1,6 @@
 ---
 description: Width Element for TableColumnHeader
 ms.date: 08/25/2021
-ms.topic: reference
 title: Width Element for TableColumnHeader
 ---
 # Width Element for TableColumnHeader
@@ -58,7 +57,7 @@ The following example shows a `TableColumnHeader` element whose width is 16 char
 
 ```xml
 <TableColumnHeader>
-  <Label>Column 1</Label)
+  <Label>Column 1</Label>
   <Width>16</Width>
   <Alignment>Left</Alignment>
 </TableColumnHeader>

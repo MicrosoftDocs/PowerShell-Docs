@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/18/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/move-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/move-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - mp
 title: Move-ItemProperty
 ---
+
 # Move-ItemProperty
 
 ## SYNOPSIS
@@ -294,12 +297,20 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSCustomObject
+### None
 
-When you use the **PassThru** parameter, this cmdlet generates a **PSCustomObject** representing the moved item property.
-Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSCustomObject
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSCustomObject** representing the
+moved item property.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Move-ItemProperty`:
+
+- `mp`
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 

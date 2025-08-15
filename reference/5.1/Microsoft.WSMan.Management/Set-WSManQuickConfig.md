@@ -2,8 +2,8 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 10/02/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmanquickconfig?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-WSManQuickConfig
 ---
@@ -140,13 +140,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet doesn't accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet doesn't generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

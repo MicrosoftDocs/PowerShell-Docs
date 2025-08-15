@@ -1,7 +1,6 @@
 ---
 description: Validating Parameter Input
 ms.date: 09/16/2021
-ms.topic: reference
 title: Validating Parameter Input
 ---
 # Validating Parameter Input

@@ -2,11 +2,12 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 03/31/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/new-wsmaninstance?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/new-wsmaninstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-WSManInstance
 ---
+
 # New-WSManInstance
 
 ## SYNOPSIS
@@ -210,7 +211,7 @@ Specifies the path of a file that is used to create a management resource. You s
 management resource using the **ResourceURI** parameter and the **SelectorSet** parameter . For
 example, the following command uses the **File** parameter:
 
-`Invoke-WSManAction -Action stopservice -ResourceUri wmi/cimv2/Win32_Service -SelectorSet @{Name="spooler"} -File c:\input.xml -Authentication Default`
+`Invoke-WSManAction -Action StopService -ResourceUri wmi/cimv2/Win32_Service -SelectorSet @{Name="spooler"} -File C:\input.xml -Authentication Default`
 
 This command calls the **StopService** method on the Spooler service using input from a file. The
 file, `Input.xml`, contains the following content:
@@ -389,13 +390,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None
+### System.Xml.XmlElement
 
-This cmdlet does not generate any output.
+This cmdlet returns the created WSMan instance as an **XmlElement** object.
 
 ## NOTES
 

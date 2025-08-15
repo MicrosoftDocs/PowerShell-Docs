@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 05/21/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 05/15/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Credential
 ---
+
 # Get-Credential
 
 ## SYNOPSIS
@@ -60,7 +61,7 @@ the **Credential** parameter.
 ### Example 2
 
 ```powershell
-$c = Get-Credential -credential User01
+$c = Get-Credential -Credential User01
 $c.Username
 User01
 ```
@@ -74,7 +75,7 @@ object.
 ### Example 3
 
 ```powershell
-$Credential = $host.ui.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
+$Credential = $Host.UI.PromptForCredential("Need credentials", "Please enter your user name and password.", "", "NetBiosUserName")
 ```
 
 This command uses the **PromptForCredential** method to prompt the user for their user name and
@@ -108,25 +109,24 @@ might not work in all host programs.
 
 ### Example 5
 
-This example shows how to create a credential object that is identical to the object that
-`Get-Credential` returns without prompting the user. This method requires a plain text password,
-which might violate the security standards in some enterprises.
+This example demonstrates how to create a credential object identical to the one returned by
+`Get-Credential`.
 
 ```powershell
 $User = "Domain01\User01"
-$PWord = ConvertTo-SecureString -String "P@sSwOrd" -AsPlainText -Force
+$PWord = Read-Host -Prompt 'Enter a Password' -AsSecureString
 $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
 ```
 
-The first command saves the user account name in the `$User` parameter. The value must have the
-"Domain\User" or "ComputerName\User" format.
+The first command assigns the username to the `$User` variable. Ensure the value follows
+the "Domain\User" or "ComputerName\User" format.
 
-The second command uses the `ConvertTo-SecureString` cmdlet to create a secure string from a plain
-text password. The command uses the **AsPlainText** parameter to indicate that the string is plain
-text and the **Force** parameter to confirm that you understand the risks of using plain text.
+The second command uses the `Read-Host` cmdlet to create a secure string from user input. The
+**Prompt** parameter requests user input, and the **AsSecureString** parameter masks the input and
+converts it to a secure string.
 
 The third command uses the `New-Object` cmdlet to create a **PSCredential** object from the values
-in the `$User` and `$PWord` variables.
+stored in the `$User` and `$PWord` variables.
 
 ### Example 6
 
@@ -255,13 +255,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSCredential
 
-`Get-Credential` returns a credential object.
+This cmdlet returns a credential object.
 
 ## NOTES
 

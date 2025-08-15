@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-psdrive?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/18/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-psdrive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gdr
 title: Get-PSDrive
 ---
+
 # Get-PSDrive
 
 ## SYNOPSIS
@@ -88,7 +91,7 @@ D                1211.06     123642.32 FileSystem    D:\
 This command gets the D: drive on the computer. Note that the drive letter in the command is not
 followed by a colon.
 
-### Example 3: Get all the drives that are supported by the Windows PowerShell file system provider
+### Example 3: Get all the drives that are supported by the Windows PowerShell FileSystem provider
 
 ```
 PS C:\> Get-PSDrive -PSProvider FileSystem
@@ -299,24 +302,28 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSDriveInfo
 
-This cmdlet returns objects that represent the drives in the session.
+This cmdlet returns objects representing the drives in the session.
 
 ## NOTES
 
-* This cmdlet is designed to work with the data exposed by any provider. To list the providers
+Windows PowerShell includes the following aliases for `Get-PSDrive`:
+
+- `gdr`
+
+- This cmdlet is designed to work with the data exposed by any provider. To list the providers
   available in your session, use the `Get-PSProvider` cmdlet. For more information, see
   [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
-* Mapped network drives that are created by using the **Persist** parameter of the New-PSDrive cmdlet
-  are specific to a user account. Mapped network drives that you create in sessions that are started
-  with the Run as administrator option or with the credentials of another user are not visible in
-  sessions that are started without explicit credentials or with the credentials of the current
-  user.
+- Mapped network drives that are created by using the **Persist** parameter of the New-PSDrive
+  cmdlet are specific to a user account. Mapped network drives that you create in sessions that are
+  started with the Run as administrator option or with the credentials of another user are not
+  visible in sessions that are started without explicit credentials or with the credentials of the
+  current user.
 
 ## RELATED LINKS
 

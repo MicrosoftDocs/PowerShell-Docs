@@ -9,7 +9,7 @@ metadata:
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 08/05/2022
+  ms.date: 01/17/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
 #               overview | quickstart | reference | tutorial | video | whats-new
@@ -21,14 +21,14 @@ landingContent:
     linkLists:
       - linkListType: whats-new
         links:
-          - text: What's new in PowerShell 7.3 (preview)
-            url: ./What-s-New-in-PowerShell-73.md
-          - text: What's new in PowerShell 7.2 (LTS)
-            url: ./What-s-New-in-PowerShell-72.md
-          - text: What's new in PowerShell 7.1 (out of support)
-            url: /previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-71
-          - text: What's new in PowerShell 7.0
-            url: ./What-s-New-in-PowerShell-70.md
+          - text: What's new in PowerShell 7.6 (preview)
+            url: ./What-s-New-in-PowerShell-76.md
+          - text: What's new in PowerShell 7.5 (RC)
+            url: ./What-s-New-in-PowerShell-75.md
+          - text: What's new in PowerShell 7.4 (LTS)
+            url: ./What-s-New-in-PowerShell-74.md
+          - text: Differences between Windows PowerShell 5.1 and PowerShell 7
+            url: ./differences-from-windows-powershell.md
           - text: PowerShell differences on non-Windows platforms
             url: ./unix-support.md
 
@@ -36,8 +36,8 @@ landingContent:
     linkLists:
       - linkListType: whats-new
         links:
-          - text: What's new in PowerShell 5.1
-            url: ../windows-powershell/whats-new/what-s-new-in-windows-powershell-50.md
+          - text: What is Windows PowerShell?
+            url: ../windows-powershell/overview.md
           - text: Differences between Windows PowerShell 5.1 and PowerShell 7
             url: ./differences-from-windows-powershell.md
           - text: Migrating from Windows PowerShell 5.1 to PowerShell 7
@@ -51,18 +51,5 @@ landingContent:
             url: ./cmdlet-versions.md
           - text: Module compatibility
             url: ./module-compatibility.md
-
-  - title: What's new in previous versions of PowerShell
-    linkLists:
-      - linkListType: whats-new
-        links:
-          - text: What's new in PowerShell 6.2
-            url: /powershell/scripting/whats-new/what-s-new-in-powershell-core-62
-          - text: What's new in PowerShell 6.1
-            url: /powershell/scripting/whats-new/what-s-new-in-powershell-core-61
-          - text: What's new in PowerShell 6.0
-            url: /powershell/scripting/whats-new/what-s-new-in-powershell-core-60
-          - text: Breaking changes in PowerShell 6.0
-            url: /powershell/scripting/whats-new/breaking-changes-ps6
-          - text: Known issues in PowerShell 6.0
-            url: /powershell/scripting/whats-new/known-issues-ps6
+          - text: Previous versions of PowerShell
+            url: /previous-versions/powershell/scripting/overview

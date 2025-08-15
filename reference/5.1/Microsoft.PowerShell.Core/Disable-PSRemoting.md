@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 10/06/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSRemoting
 ---
@@ -129,11 +129,11 @@ configurations as long as they are connecting locally (also known as loopback) a
 credentials.
 
 ```powershell
-Disable-PSRemoting -force
-Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+Disable-PSRemoting -Force
+Get-PSSessionConfiguration | Format-Table -Property Name, Permission -AutoSize
 
 Enable-PSRemoting -Force
-Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+Get-PSSessionConfiguration | Format-Table -Property Name, Permission -AutoSize
 ```
 
 ```Output
@@ -287,10 +287,10 @@ the configuration.
 
 ```powershell
 Disable-PSRemoting -Force
-Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+Get-PSSessionConfiguration | Format-Table -Property Name, Permission -AutoSize
 
 Set-PSSessionConfiguration -Name Microsoft.ServerManager -AccessMode Remote -Force
-Get-PSSessionConfiguration | Format-Table -Property Name, Permission -Auto
+Get-PSSessionConfiguration | Format-Table -Property Name, Permission -AutoSize
 ```
 
 ```Output
@@ -379,13 +379,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe any objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

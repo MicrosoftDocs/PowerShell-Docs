@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/28/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pstransportoption?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pstransportoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSTransportOption
 ---
@@ -101,7 +101,7 @@ OutputBufferingMode           : Block
 AutoRestart                   : false
 MaxShells                     : 40
 MaxMemoryPerShellMB           : 1024
-MaxIdleTimeoutms              : 43200000
+MaxIdleTimeoutMs              : 43200000
 SDKVersion                    : 2
 Name                          : ITTasks
 XmlRenderingType              : text
@@ -245,7 +245,7 @@ Accept wildcard characters: False
 
 ### -MaxIdleTimeoutSec
 
-Limits the idle time-out set for each session to the specified value. The default value is `[Int]::MaxValue`
+Limits the idle time-out set for each session to the specified value. The default value is `[int]::MaxValue`
 (~25 days).
 
 The idle time-out value is of significant importance when the user intends to disconnect and
@@ -406,7 +406,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 

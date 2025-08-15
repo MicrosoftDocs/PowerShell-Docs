@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/22/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 03/04/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ExecutionPolicy
 ---
@@ -75,9 +75,9 @@ MachinePolicy       Undefined
 ```
 
 The `Set-ExecutionPolicy` cmdlet uses the **ExecutionPolicy** parameter to specify the
-**RemoteSigned** policy. The **Scope** parameter specifies the default scope value,
-**LocalMachine**. To view the execution policy settings, use the `Get-ExecutionPolicy` cmdlet with
-the **List** parameter.
+`RemoteSigned` policy. The **Scope** parameter specifies the default scope value, `LocalMachine`.
+To view the execution policy settings, use the `Get-ExecutionPolicy` cmdlet with the **List**
+parameter.
 
 ### Example 3: Get the effective execution policy
 
@@ -101,18 +101,18 @@ AllSigned
 
 The `Get-ExecutionPolicy` cmdlet uses the **List** parameter to display each scope's execution
 policy. The `Get-ExecutionPolicy` cmdlet is run without a parameter to display the effective
-execution policy, **AllSigned**.
+execution policy, `AllSigned`.
 
 ### Example 4: Unblock a script to run it without changing the execution policy
 
-This example shows how the **RemoteSigned** execution policy prevents you from running unsigned
+This example shows how the `RemoteSigned` execution policy prevents you from running unsigned
 scripts.
 
-A best practice is to read the script's code and verify it's safe **before** using the
-`Unblock-File` cmdlet. The `Unblock-File` cmdlet unblocks scripts so they can run, but doesn't
-change the execution policy.
+A best practice is to read the script's code and verify it's safe _before_ using the `Unblock-File`
+cmdlet. The `Unblock-File` cmdlet unblocks scripts so they can run, but doesn't change the execution
+policy.
 
-```
+```powershell
 PS> Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 
 PS> Get-ExecutionPolicy
@@ -142,30 +142,30 @@ PS> .\Start-ActivityTracker.ps1
 Task 1:
 ```
 
-The `Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the **RemoteSigned**
-policy. The policy is set for the default scope, **LocalMachine**.
+The `Set-ExecutionPolicy` uses the **ExecutionPolicy** parameter to specify the `RemoteSigned`
+policy. The policy is set for the default scope, `LocalMachine`.
 
-The `Get-ExecutionPolicy` cmdlet shows that **RemoteSigned** is the effective execution policy for
+The `Get-ExecutionPolicy` cmdlet shows that `RemoteSigned` is the effective execution policy for
 the current PowerShell session.
 
-The **Start-ActivityTracker.ps1** script is executed from the current directory. The script is
-blocked by **RemoteSigned** because the script isn't digitally signed.
+The `Start-ActivityTracker.ps1` script is executed from the current directory. The script is
+blocked by `RemoteSigned` because the script isn't digitally signed.
 
 For this example, the script's code was reviewed and verified as safe to run. The `Unblock-File`
 cmdlet uses the **Path** parameter to unblock the script.
 
 To verify that `Unblock-File` didn't change the execution policy, `Get-ExecutionPolicy` displays the
-effective execution policy, **RemoteSigned**.
+effective execution policy, `RemoteSigned`.
 
-The script, **Start-ActivityTracker.ps1** is executed from the current directory. The script begins
+The script, `Start-ActivityTracker.ps1` is executed from the current directory. The script begins
 to run because it was unblocked by the `Unblock-File` cmdlet.
 
 ## PARAMETERS
 
 ### -List
 
-Gets all execution policy values for the session listed in precedence order. By default,
-`Get-ExecutionPolicy` gets only the effective execution policy.
+Gets all execution policy values for the session. By default, `Get-ExecutionPolicy` gets only the
+effective execution policy.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -185,11 +185,11 @@ Specifies the scope that is affected by an execution policy.
 
 The effective execution policy is determined by the order of precedence as follows:
 
-- **MachinePolicy**. Set by a Group Policy for all users of the computer.
-- **UserPolicy**. Set by a Group Policy for the current user of the computer.
-- **Process**. Affects only the current PowerShell session.
-- **CurrentUser**. Affects only the current user.
-- **LocalMachine**. Default scope that affects all users of the computer.
+- `MachinePolicy`. Set by a Group Policy for all users of the computer.
+- `UserPolicy`. Set by a Group Policy for the current user of the computer.
+- `Process`. Affects only the current PowerShell session.
+- `LocalMachine`. Default scope that affects all users of the computer.
+- `CurrentUser`. Affects only the current user.
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicyScope
@@ -208,17 +208,20 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-`Get-ExecutionPolicy` doesn't accept input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.ExecutionPolicy
+
+This cmdlet returns the current execution policy.
 
 ## NOTES
 

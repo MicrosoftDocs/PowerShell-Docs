@@ -1,6 +1,6 @@
 ---
 description: An ISESnippet object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class.
-ms.date: 06/05/2017
+ms.date: 03/27/2025
 title: The ISESnippetObject
 ---
 
@@ -8,8 +8,7 @@ title: The ISESnippetObject
 
 An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class. The
 members of the `$psISE.CurrentPowerShellTab.Snippets` collection are all examples of **ISESnippet**
-objects. The easiest way to create a snippet is to use the
-[New-IseSnippet](/powershell/module/ISE/New-IseSnippet) cmdlet.
+objects. The easiest way to create a snippet is to use the [New-IseSnippet][01] cmdlet.
 
 ## Properties
 
@@ -50,6 +49,12 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 
 ## See Also
 
-- [The ISESnippetCollection Object](The-ISESnippetCollection-Object.md)
-- [Purpose of the Windows PowerShell ISE Scripting Object Model](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The ISESnippetCollection Object][04]
+- [Purpose of the Windows PowerShell ISE Scripting Object Model][02]
+- [The ISE Object Model Hierarchy][03]
+
+<!-- link references -->
+[01]: /powershell/module/ISE/New-IseSnippet
+[02]: purpose-of-the-windows-powershell-ise-scripting-object-model.md
+[03]: The-ISE-Object-Model-Hierarchy.md
+[04]: The-ISESnippetCollection-Object.md

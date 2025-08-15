@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/01/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Rename-Computer
 ---
+
 # Rename-Computer
 
 ## SYNOPSIS
@@ -302,15 +303,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not have parameters that take input by value. However, you can pipe the values of
+This cmdlet has no parameters that take input by value. However, you can pipe the values of
 the **ComputerName** and **NewName** properties of objects to this cmdlet.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.ComputerChangeInfo
+### None
 
-This cmdlet returns a **ComputerChangeInfo** object, if you specify the **PassThru** parameter.
-Otherwise, it does not return any output.
+By default, this cmdlet doesn't return any output.
+
+### Microsoft.PowerShell.Commands.RenameComputerChangeInfo
+
+When you use the **PassThru** parameter, this cmdlet returns a **RenameComputerChangeInfo** object.
 
 ## NOTES
 

@@ -2,9 +2,9 @@
 description: Provides background information about Windows Management Instrumentation (WMI) and Windows PowerShell.
 Locale: en-US
 ms.date: 12/01/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wmi_cmdlets?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wmi_cmdlets?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about WMI Cmdlets
+title: about_WMI_Cmdlets
 ---
 
 # about_WMI_Cmdlets
@@ -58,24 +58,24 @@ The following WMI cmdlets are included.
 The following command displays the BIOS information for the local computer.
 
 ```powershell
-C:\PS> get-wmiobject win32_bios | format-list *
+C:\PS> Get-WmiObject Win32_BIOS | Format-List *
 ```
 
 The following command displays information about the WinRM service for three
 remote computers.
 
 ```powershell
-$wql = "select * from win32_service where name='WinRM'"
-get-wmiobject -query $wql -computername server01, server01, server03
+$wql = "select * from Win32_Service where name='WinRM'"
+Get-WmiObject -Query $wql -ComputerName server01, server01, server03
 ```
 
 The following more complex command exits all instances of a program.
 
 ```powershell
 C:\PS> notepad.exe
-C:\PS> $wql = "select * from win32_process where name='notepad.exe'"
-C:\PS> $np = get-wmiobject -query $wql
-C:\PS> $np | remove-wmiobject
+C:\PS> $wql = "select * from Win32_Process where name='notepad.exe'"
+C:\PS> $np = Get-WmiObject -Query $wql
+C:\PS> $np | Remove-WmiObject
 ```
 
 ### WMI-BASED REMOTING
@@ -95,23 +95,23 @@ accelerator approach would allow.
 
 The following type accelerators are supported with WMI:
 
-[WMISEARCHER] - A shortcut for searching for WMI objects.
+`[wmisearcher]` - A shortcut for searching for WMI objects.
 
-[WMICLASS] - A shortcut for accessing the static properties and methods of a class.
+`[wmiclass]` - A shortcut for accessing the static properties and methods of a class.
 
-[WMI] - A shortcut for getting a single instance of a class.
+`[wmi]` - A shortcut for getting a single instance of a class.
 
-[WMISEARCHER] is a type accelerator for a ManagementObjectSearcher. It can
-take a string constructor to create a searcher that you can then do a GET()
+`[wmisearcher]` is a type accelerator for a `ManagementObjectSearcher`. It can
+take a string constructor to create a searcher that you can then do a `Get()`
 on.
 
 For example:
 
 ```powershell
-PS> $s = [WmiSearcher]'Select * from Win32_Process where Handlecount > 1000'
-PS> $s.Get() |sort handlecount |ft handlecount,__path,name -auto
+PS> $s = [wmisearcher]'Select * from Win32_Process where HandleCount > 1000'
+PS> $s.Get() | sort HandleCount | ft HandleCount, __PATH, Name -Auto
 
-count  __PATH                                              name
+Count  __PATH                                              Name
 -----  ------                                              ----
 1105   \\SERVER01\root\cimv2:Win32_Process.Handle="3724"   PowerShell...
 1132   \\SERVER01\root\cimv2:Win32_Process.Handle="1388"   winlogon.exe
@@ -121,14 +121,14 @@ count  __PATH                                              name
 2579   \\SERVER01\root\cimv2:Win32_Process.Handle="1768"   svchost.exe
 ```
 
-[WMICLASS] is a type accelerator for ManagementClass. This has a string
+`[wmiclass]` is a type accelerator for `ManagementClass`. This has a string
 constructor that takes a local or absolute WMI path to a WMI class and returns
 an object that is bound to that class.
 
 For example:
 
 ```powershell
-PS> $c = [WMICLASS]"root\cimv2:WIn32_Process"
+PS> $c = [wmiclass]"root\CIMV2:Win32_Process"
 PS> $c |fl *
 Name             : Win32_Process
 __GENUS          : 1
@@ -144,14 +144,14 @@ __NAMESPACE      : ROOT\cimv2
 __PATH           : \\SERVER01\ROOT\cimv2:Win32_Process
 ```
 
-[WMI] is a type accelerator for ManagementObject. This has a string
+`[wmi]` is a type accelerator for `ManagementObject`. This has a string
 constructor that takes a local or absolute WMI path to a WMI instance and
 returns an object that is bound to that instance.
 
 For example:
 
 ```powershell
-PS> $p = [WMI]'\\SERVER01\root\cimv2:Win32_Process.Handle="1204"'
+PS> $p = [wmi]'\\SERVER01\root\CIMV2:Win32_Process.Handle="1204"'
 PS> $p.Name
 OUTLOOK.EXE
 ```

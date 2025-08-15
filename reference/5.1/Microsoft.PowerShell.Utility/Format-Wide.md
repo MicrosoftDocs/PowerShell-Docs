@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-wide?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-wide?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - fw
 title: Format-Wide
 ---
+
 # Format-Wide
 
 ## SYNOPSIS
@@ -45,7 +48,7 @@ output. The **Column** parameter specifies the number of columns.
 This command displays the names of registry keys in the `HKEY_CURRENT_USER\Software\Microsoft` key.
 
 ```powershell
-Get-ChildItem HKCU:\software\microsoft | Format-Wide -Property pschildname -AutoSize
+Get-ChildItem HKCU:\software\Microsoft | Format-Wide -Property PSChildName -AutoSize
 ```
 
 The `Get-ChildItem` cmdlet gets objects representing the keys. The path is specified as `HKCU:`, one
@@ -176,7 +179,8 @@ Accept wildcard characters: False
 ### -GroupBy
 
 Formats the output in groups based on a shared property or value. Enter an expression or a property
-of the output.
+of the output. The **GroupBy** parameter expects that the objects are sorted. Use the `Sort-Object`
+cmdlet before using `Format-Wide` to group the objects.
 
 The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
 be a script block or a hash table. Valid key-value pairs are:
@@ -292,24 +296,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Format-Wide`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
-`Format-Wide` returns format objects that represent the table.
+This cmdlet returns format objects that represent the table.
 
 ## NOTES
 
-You can also refer to `Format-Wide` by its built-in alias, `fw`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+Windows PowerShell includes the following aliases for `Format-Wide`:
 
-The **GroupBy** parameter assumes that the objects are sorted. Use `Sort-Object` before using
-`Format-Custom` to group the objects.
+- `fw`
 
 The **View** parameter lets you specify an alternate format for the table. You can use the views
-defined in the `*.format.PS1XML` files in the PowerShell directory or you can create your own views
+defined in the `*.format.ps1xml` files in the PowerShell directory or you can create your own views
 in new PS1XML files and use the `Update-FormatData` cmdlet to include them in PowerShell.
 
 The alternate view for the **View** parameter must use table format; if it does not, the command

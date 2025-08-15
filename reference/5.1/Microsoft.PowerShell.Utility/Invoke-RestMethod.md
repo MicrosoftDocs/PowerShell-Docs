@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/28/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 02/05/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - irm
 title: Invoke-RestMethod
 ---
 
@@ -32,7 +34,8 @@ The `Invoke-RestMethod` cmdlet sends HTTP and HTTPS requests to Representational
 
 PowerShell formats the response based to the data type. For an RSS or ATOM feed, PowerShell returns
 the Item or Entry XML nodes. For JavaScript Object Notation (JSON) or XML, PowerShell converts, or
-deserializes, the content into `[PSCustomObject]` objects.
+deserializes, the content into `[pscustomobject]` objects. Comments aren't permitted in the JSON
+data.
 
 > [!NOTE]
 > When the REST endpoint returns multiple objects, the objects are received as an array. If you pipe
@@ -83,7 +86,7 @@ $Cred = Get-Credential
 
 # Next, allow the use of self-signed SSL certificates.
 
-[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $True }
+[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $true }
 
 # Create variables to store the values consumed by the Invoke-RestMethod command.
 # The search variable contents are later embedded in the body variable.
@@ -181,8 +184,9 @@ Specifies the body of the request. The body is the content of the request that f
 You can also pipe a body value to `Invoke-RestMethod`.
 
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
-the response.
+the .
 
+request.
 When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body
 is added to the URI as query parameters. For other request types (such as POST), the body is set as
 the value of the request body in the standard name=value format.
@@ -205,11 +209,11 @@ Accept wildcard characters: False
 
 ### -Certificate
 
-Specifies the client certificate that is used for a secure web request. Enter a variable that
+Specifies the client certificate that's used for a secure web request. Enter a variable that
 contains a certificate or a command or expression that gets the certificate.
 
 To find a certificate, use `Get-PfxCertificate` or use the `Get-ChildItem` cmdlet in the Certificate
-(`Cert:`) drive. If the certificate is not valid or does not have sufficient authority, the command
+(`Cert:`) drive. If the certificate isn't valid or doesn't have sufficient authority, the command
 fails.
 
 ```yaml
@@ -229,11 +233,11 @@ Accept wildcard characters: False
 Specifies the digital public key certificate (X509) of a user account that has permission to send
 the request. Enter the certificate thumbprint of the certificate.
 
-Certificates are used in client certificate-based authentication. They can be mapped only to local
-user accounts; they do not work with domain accounts.
+Certificates are used in client certificate-based authentication. Certificates can only be mapped
+only to local user accounts, not domain accounts.
 
-To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the Windows
-PowerShell (`Cert:`) drive.
+To see the certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command to find the
+certificate in `Cert:\CurrentUser\My`.
 
 ```yaml
 Type: System.String
@@ -251,9 +255,21 @@ Accept wildcard characters: False
 
 Specifies the content type of the web request.
 
-If this parameter is omitted and the request method is POST, `Invoke-RestMethod` sets the content
-type to "application/x-www-form-urlencoded". Otherwise, the content type is not specified in the
-call.
+If the value for **ContentType** contains the encoding format (as `charset`), the cmdlet uses that
+format to encode the body of the web request. If the **ContentType** doesn't specify an encoding
+format, the default encoding format is used instead. An example of a **ContentType** with an
+encoding format is `text/plain; charset=iso-8859-5`, which specifies the
+[Latin/Cyrillic](https://www.iso.org/standard/28249.html) alphabet.
+
+If you omit the parameter, the content type may be different based on the HTTP method you use:
+
+- For a POST method, the content type is `application/x-www-form-urlencoded`
+- For a PUT method, the content type is `application/json`
+- For other methods, the content type isn't specified in the request
+
+If you are using the **InFile** parameter to upload a file, you should set the content type.
+Usually, the type should be `application/octet-stream`. However, you need to set the content type
+based on the requirements of the endpoint.
 
 ```yaml
 Type: System.String
@@ -305,7 +321,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: KeepAlive
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -331,9 +347,12 @@ Accept wildcard characters: False
 
 ### -InFile
 
-Gets the content of the web request from a file.
+Gets the content of the web request body from a file. Enter a path and filename. If you omit the
+path, the default is the current location.
 
-Enter a path and file name. If you omit the path, the default is the current location.
+You also need to set the content type of the request. For example, to upload a file you should set
+the content type. Usually, the type should be `application/octet-stream`. However, you need to set
+the content type based on the requirements of the endpoint.
 
 ```yaml
 Type: System.String
@@ -453,14 +472,14 @@ Accept wildcard characters: False
 
 ### -ProxyCredential
 
-Specifies a user account that has permission to use the proxy server that is specified by the
+Specifies a user account that has permission to use the proxy server that's specified by the
 **Proxy** parameter. The default is the current user.
 
-Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such as
-one generated by the `Get-Credential` cmdlet.
+Type a user name, such as "User01" or "Domain01\User01", or enter a **PSCredential** object, such
+as one generated by the `Get-Credential` cmdlet.
 
-This parameter is valid only when the **Proxy** parameter is also used in the command. You cannot
-use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
+This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
+the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -479,8 +498,8 @@ Accept wildcard characters: False
 Uses the credentials of the current user to access the proxy server that is specified by the
 **Proxy** parameter.
 
-This parameter is valid only when the **Proxy** parameter is also used in the command. You cannot
-use the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
+This parameter is valid only when the **Proxy** parameter is also used in the command. You can't use
+the **ProxyCredential** and **ProxyUseDefaultCredentials** parameters in the same command.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -576,7 +595,7 @@ Accept wildcard characters: False
 
 ### -Uri
 
-Specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is
+Specifies the Uniform Resource Identifier (URI) of the internet resource to which the web request is
 sent. This parameter supports HTTP, HTTPS, FTP, and FILE values.
 
 This parameter is required. The parameter name (**Uri**) is optional.
@@ -630,12 +649,13 @@ Accept wildcard characters: False
 
 Specifies a user agent string for the web request.
 
-The default user agent is similar to "Mozilla/5.0 (Windows NT; Windows NT 6.1; en-US)
-WindowsPowerShell/3.0" with slight variations for each operating system and platform.
+The default user agent is similar to
+`Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.15063; en-US) PowerShell/6.0.0` with slight
+variations for each operating system and platform.
 
-To test a website with the standard user agent string that is used by most Internet browsers, use
-the properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands) class, such as
-Chrome, FireFox, Internet Explorer, Opera, and Safari.
+To test a website with the standard user agent string that's used by most internet browsers, use
+the properties of the [PSUserAgent](xref:Microsoft.PowerShell.Commands.PSUserAgent) class, such as
+Chrome, Firefox, InternetExplorer, Opera, and Safari.
 
 ```yaml
 Type: System.String
@@ -656,17 +676,17 @@ Specifies a web request session. Enter the variable name, including the dollar s
 To override a value in the web request session, use a cmdlet parameter, such as **UserAgent** or
 **Credential**. Parameter values take precedence over values in the web request session.
 
-Unlike a remote session, the web request session is not a persistent connection. It is an object
-that contains information about the connection and the request, including cookies, credentials, the
+Unlike a remote session, the web request session isn't a persistent connection. It's an object that
+contains information about the connection and the request, including cookies, credentials, the
 maximum redirection value, and the user agent string. You can use it to share state and data among
 web requests.
 
-To create a web request session, enter a variable name (without a dollar sign) in the value of the
+To create a web request session, enter a variable name, without a dollar sign, in the value of the
 **SessionVariable** parameter of an `Invoke-RestMethod` command. `Invoke-RestMethod` creates the
 session and saves it in the variable. In subsequent commands, use the variable as the value of the
 **WebSession** parameter.
 
-You cannot use the **SessionVariable** and **WebSession** parameters in the same command.
+You can't use the **SessionVariable** and **WebSession** parameters in the same command.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.WebRequestSession
@@ -691,20 +711,31 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe the body of a web request to `Invoke-RestMethod`.
+You can pipe the body of a web request to this cmdlet.
 
 ## OUTPUTS
 
-### System.Xml.XmlDocument, Microsoft.PowerShell.Commands.HtmlWebResponseObject, System.String
+### System.Int64
 
-The output of the cmdlet depends upon the format of the content that is retrieved.
+When the request returns an integer, this cmdlet returns that integer.
+
+### System.String
+
+When the request returns a string, this cmdlet returns that string.
+
+### System.Xml.XmlDocument
+
+When the request returns valid XML, this cmdlet returns it as an **XmlDocument**.
 
 ### PSObject
 
-If the request returns JSON strings, `Invoke-RestMethod` returns a PSObject that represents the
-strings.
+When the request returns JSON strings, this cmdlet returns a **PSObject** representing the data.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Invoke-RestMethod`:
+
+- `irm`
 
 ## RELATED LINKS
 

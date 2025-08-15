@@ -1,7 +1,6 @@
 ---
 description: Adding User Messages to Your Cmdlet
 ms.date: 09/13/2016
-ms.topic: reference
 title: Adding User Messages to Your Cmdlet
 ---
 # Adding User Messages to Your Cmdlet
@@ -134,7 +133,7 @@ WriteObject(process);
 
 Windows PowerShell automatically routes any [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) calls to the tracing infrastructure and cmdlets. This allows the method calls to be traced to the hosting application, a file, or a debugger without your having to do any extra development work within the cmdlet. The following command-line entry implements a tracing operation.
 
-**PS> trace-expression stop-proc -file proc.log -command stop-proc notepad**
+**PS> Trace-Expression Stop-Proc -File proc.log -Command Stop-Proc notepad**
 
 ## Writing a Warning Message
 
@@ -163,7 +162,7 @@ The following code is an example of a progress message written by a cmdlet that 
 
 ```csharp
 int myId = 0;
-string myActivity = "Copy-item: Copying *.* to c:\abc";
+string myActivity = "Copy-item: Copying *.* to C:\abc";
 string myStatus = "Copying file bar.txt";
 ProgressRecord pr = new ProgressRecord(myId, myActivity, myStatus);
 WriteProgress(pr);
@@ -191,7 +190,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 - The following command-line entry uses Stop-Proc to stop the process named "NOTEPAD", provide verbose notifications, and print debug information.
 
     ```powershell
-    PS> stop-proc -Name notepad -Verbose -Debug
+    PS> Stop-Proc -Name notepad -Verbose -Debug
     ```
 
     The following output appears.
@@ -206,7 +205,7 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
 
     Confirm
     Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (5584)".
+    Performing operation "Stop-Proc" on Target "notepad (5584)".
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     VERBOSE: Stopped process "notepad", pid 5584.
     ```

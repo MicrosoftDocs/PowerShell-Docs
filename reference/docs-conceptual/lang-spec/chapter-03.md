@@ -5,6 +5,8 @@ title: Basic concepts
 ---
 # 3. Basic concepts
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 ## 3.1 Providers and drives
 
 A *provider* allows access to data and components that would not otherwise be easily accessible at
@@ -53,7 +55,7 @@ command.
 The provider Alias is a flat namespace that contains only objects that represent the aliases. The
 variables have no child items.
 
-Some aliases are built in to PowerShell.
+PowerShell comes with a set of built-in aliases.
 
 The following cmdlets deal with aliases:
 
@@ -78,7 +80,7 @@ Alias objects are stored on the drive Alias: ([§3.1][§3.1]).
 
 ### 3.1.2 Environment variables
 
-The PowerShell environment provider allows operating system environment variables to be retrieved,
+The PowerShell Environment provider allows operating system environment variables to be retrieved,
 added, changed, cleared, and deleted.
 
 The provider Environment is a flat namespace that contains only objects that represent the
@@ -96,10 +98,10 @@ Environment variable objects are stored on the drive Env: ([§3.1][§3.1]).
 
 ### 3.1.3 File system
 
-The PowerShell file system provider allows directories and files to be created, opened, changed, and
+The PowerShell FileSystem provider allows directories and files to be created, opened, changed, and
 deleted.
 
-The file system provider is a hierarchical namespace that contains objects that represent the
+The FileSystem provider is a hierarchical namespace that contains objects that represent the
 underlying file system.
 
 Files are stored on drives with names like A:, B:, C:, and so on ([§3.1][§3.1]). Directories and files
@@ -109,7 +111,7 @@ A directory or file is an item ([§3.3][§3.3]).
 
 ### 3.1.4 Functions
 
-The PowerShell function provider allows functions ([§8.10][§8.10]) and filters ([§8.10][§8.10].1) to be
+The PowerShell Function provider allows functions ([§8.10][§8.10]) and filters ([§8.10][§8.10].1) to be
 retrieved, added, changed, cleared, and deleted.
 
 The provider Function is a flat namespace that contains only the function and filter objects.
@@ -326,19 +328,19 @@ Unless dot source notation ([§3.5.5][§3.5.5]) is used, each of the following c
 Consider the following example:
 
 ```powershell
-# start of script
+# Start of script
 $x = 2; $y = 3
 Get-Power $x $y
 
-#function defined in script
-
-function Get-Power([int]$x, [int]$y)
-{
-if ($y -gt 0) { return $x * (Get-Power $x (--$y)) }
-
-else { return 1 }
+# Function defined in script
+function Get-Power([int]$x, [int]$y) {
+    if ($y -gt 0) {
+        return $x * (Get-Power $x (--$y))
+    } else {
+        return 1
+    }
 }
-# end of script
+# End of script
 ```
 
 The scope of the variables `$x` and `$y` created in the script is the body of that script, including
@@ -427,12 +429,12 @@ scopes:
 
 ```Syntax
 variable-scope:
-    global:
-    local:
-    private:
-    script:
-    using:
-    workflow:
+    Global:
+    Local:
+    Private:
+    Script:
+    Using:
+    Workflow:
     variable-namespace
 ```
 
@@ -441,28 +443,29 @@ also shows the scope when no scope is specified explicitly:
 
 | **Scope Modifier** |                                  **Within a Script File**                                  |                                 **Within a Script Block**                                  |                                   **Within a Function**                                    |
 | ------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| global             | Global scope                                                                               | Global scope                                                                               | Global scope                                                                               |
-| script             | Nearest ancestor script file's scope or Global if there is no nearest ancestor script file | Nearest ancestor script file's scope or Global if there is no nearest ancestor script file | Nearest ancestor script file's scope or Global if there is no nearest ancestor script file |
-| private            | Global/Script/Local scope                                                                  | Local scope                                                                                | Local scope                                                                                |
-| local              | Global/Script/Local scope                                                                  | Local scope                                                                                | Local scope                                                                                |
-| using              | Implementation defined                                                                     | Implementation defined                                                                     | Implementation defined                                                                     |
-| workflow           | Implementation defined                                                                     | Implementation defined                                                                     | Implementation defined                                                                     |
-| none               | Global/Script/Local scope                                                                  | Local scope                                                                                | Local scope                                                                                |
+| Global             | Global scope                                                                               | Global scope                                                                               | Global scope                                                                               |
+| Script             | Nearest ancestor script file's scope or Global if there is no nearest ancestor script file | Nearest ancestor script file's scope or Global if there is no nearest ancestor script file | Nearest ancestor script file's scope or Global if there is no nearest ancestor script file |
+| Private            | Global/Script/Local scope                                                                  | Local scope                                                                                | Local scope                                                                                |
+| Local              | Global/Script/Local scope                                                                  | Local scope                                                                                | Local scope                                                                                |
+| Using              | Implementation defined                                                                     | Implementation defined                                                                     | Implementation defined                                                                     |
+| Workflow           | Implementation defined                                                                     | Implementation defined                                                                     | Implementation defined                                                                     |
+| None               | Global/Script/Local scope                                                                  | Local scope                                                                                | Local scope                                                                                |
 
 Variable scope information can also be specified when using the family of cmdlets listed in
 ([§3.1.5][§3.1.5]). In particular, refer to the parameter `Scope`, and the parameters `Option Private` and
 `Option AllScope` for more information.
 
-The scope `using` is used to access variables defined in another scope while running scripts via
-cmdlets like `Start-Job`, `Invoke-Command`, or within an *inlinescript-statement*. For example:
+The `Using:` scope modifier is used to access variables defined in another scope while running
+scripts via cmdlets like `Start-Job`, `Invoke-Command`, or within an *inlinescript-statement*. For
+example:
 
 ```powershell
 $a = 42
-Invoke-Command --ComputerName RemoteServer { $using:a } # returns 42
+Invoke-Command --ComputerName RemoteServer { $Using:a } # returns 42
 workflow foo
 {
     $b = "Hello"
-    inlinescript { $using:b }
+    inlinescript { $Using:b }
 }
 foo # returns "Hello"
 ```
@@ -562,7 +565,7 @@ to be a way to resolve which overloaded version to call, if any. For example,
 
 ```powershell
 [Math]::Abs([byte]10) # no overload takes type byte
-[Array]::Copy($source, 3, $dest, 5L, 4) # both int and long indexes
+[array]::Copy($source, 3, $dest, 5L, 4) # both int and long indexes
 ```
 
 Other examples include the type **string** (i.e.; **System.String**), which has numerous overloaded
@@ -821,7 +824,7 @@ directory, sort a set of text records, and perform some processing on a text rec
 
 ```powershell
 Get-ChildItem
-Get-ChildItem e:*.txt | Sort-Object -CaseSensitive | Process-File >results.txt
+Get-ChildItem E:*.txt | Sort-Object -CaseSensitive | Process-File >results.txt
 ```
 
 In the first case, `Get-ChildItem` creates a collection of names of the files in the current/default
@@ -829,7 +832,7 @@ directory. That collection is sent to the host environment, which, by default, w
 element's value to standard output.
 
 In the second case, `Get-ChildItem` creates a collection of names of the files in the directory
-specified, using the argument `e:*.txt`. That collection is written to the command `Sort-Object`,
+specified, using the argument `E:*.txt`. That collection is written to the command `Sort-Object`,
 which, by default, sorts them in ascending order, sensitive to case (by virtue of the
 **CaseSensitive** argument). The resulting collection is then written to command `Process-File`,
 which performs some (unknown) processing. The output from that command is then redirected to the

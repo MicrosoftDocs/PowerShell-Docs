@@ -1,6 +1,6 @@
 ---
 description: This article describe how to use aliases in PowerShell.
-ms.date: 08/13/2021
+ms.date: 07/23/2024
 title: Using aliases
 ---
 # Using aliases
@@ -11,7 +11,8 @@ executable name.
 
 ## Managing command aliases
 
-PowerShell provides cmdlets for managing command aliases.
+PowerShell provides cmdlets for managing command aliases. The following command shows the cmdlets
+that manage aliases.
 
 ```powershell
 Get-Command -Noun Alias
@@ -28,9 +29,9 @@ Cmdlet      Remove-Alias 7.0.0.0 Microsoft.PowerShell.Utility
 Cmdlet      Set-Alias    7.0.0.0 Microsoft.PowerShell.Utility
 ```
 
-For more information, see [about_Aliases][about_Aliases].
+For more information, see [about_Aliases][01].
 
-Use the [Get-Alias][Get-Alias] cmdlet to list the aliases available in your environment. To list the
+Use the [Get-Alias][04] cmdlet to list the aliases available in your environment. To list the
 aliases for a single cmdlet, use the **Definition** parameter and specify the executable name.
 
 ```powershell
@@ -57,27 +58,35 @@ CommandType     Name
 Alias           gci -> Get-ChildItem
 ```
 
+To create an alias, use the `Set-Alias` command. You can create aliases for cmdlets, functions,
+scripts, and native executables files.
+
+```powershell
+Set-Alias -Name np -Value Notepad.exe
+Set-Alias -Name cmpo  -Value Compare-Object
+```
+
 ## Compatibility aliases in Windows
 
-PowerShell has several aliases that allow **UNIX** and **cmd.exe** users to use familiar commands in
+PowerShell has several aliases that allow **Unix** and `cmd.exe` users to use familiar commands in
 Windows. The following table show common commands, the related PowerShell cmdlet, and the PowerShell
 alias:
 
-|            cmd.exe command            | UNIX command | PowerShell cmdlet |             PowerShell alias              |
-| ------------------------------------- | ------------ | ----------------- | ----------------------------------------- |
-| **cd**, **chdir**                     | **cd**       | `Set-Location`    | `sl`, `cd`, `chdir`                       |
-| **cls**                               | **clear**    | `Clear-Host`      | `cls` `clear`                             |
-| **copy**                              | **cp**       | `Copy-Item`       | `cpi`, `cp`, `copy`                       |
-| **del**, **erase**, **rd**, **rmdir** | **rm**       | `Remove-Item`     | `ri`, `del`, `erase`, `rd`, `rm`, `rmdir` |
-| **dir**                               | **ls**       | `Get-ChildItem`   | `gci`, `dir`, `ls`                        |
-| **echo**                              | **echo**     | `Write-Output`    | `write` `echo`                            |
-| **md**                                | **mkdir**    | `New-Item`        | `ni`                                      |
-| **move**                              | **mv**       | `Move-Item`       | `mi`, `move`, `mi`                        |
-| **popd**                              | **popd**     | `Pop-Location`    | `popd`                                    |
-|                                       | **pwd**      | `Get-Location`    | `gl`, `pwd`                               |
-| **pushd**                             | **pushd**    | `Push-Location`   | `pushd`                                   |
-| **ren**                               | **mv**       | `Rename-Item`     | `rni`, `ren`                              |
-| **type**                              | **cat**      | `Get-Content`     | `gc`, `cat`, `type`                       |
+|     Windows Command Shell     | Unix command | PowerShell cmdlet |             PowerShell alias              |
+| ----------------------------- | ------------ | ----------------- | ----------------------------------------- |
+| `cd`, `chdir`                 | `cd`         | `Set-Location`    | `sl`, `cd`, `chdir`                       |
+| `cls`                         | `clear`      | `Clear-Host`      | `cls` `clear`                             |
+| `copy`                        | `cp`         | `Copy-Item`       | `cpi`, `cp`, `copy`                       |
+| `del`, `erase`, `rd`, `rmdir` | `rm`         | `Remove-Item`     | `ri`, `del`, `erase`, `rd`, `rm`, `rmdir` |
+| `dir`                         | `ls`         | `Get-ChildItem`   | `gci`, `dir`, `ls`                        |
+| `echo`                        | `echo`       | `Write-Output`    | `write` `echo`                            |
+| `md`                          | `mkdir`      | `New-Item`        | `ni`                                      |
+| `move`                        | `mv`         | `Move-Item`       | `mi`, `move`, `mi`                        |
+| `popd`                        | `popd`       | `Pop-Location`    | `popd`                                    |
+|                               | `pwd`        | `Get-Location`    | `gl`, `pwd`                               |
+| `pushd`                       | `pushd`      | `Push-Location`   | `pushd`                                   |
+| `ren`                         | `mv`         | `Rename-Item`     | `rni`, `ren`                              |
+| `type`                        | `cat`        | `Get-Content`     | `gc`, `cat`, `type`                       |
 
 > [!NOTE]
 > The aliases in this table are Windows-specific. Some aliases aren't available on other platforms.
@@ -92,7 +101,7 @@ you cannot assign an alias to a command with parameters. For example, you can as
 `Get-Eventlog` cmdlet, but you cannot assign an alias to the `Get-Eventlog -LogName System` command.
 You must create a function that contains the command with parameters.
 
-For more information, see [about_Aliases][alias-func].
+For more information, see [about_Aliases][02].
 
 ## Parameter aliases and shorthand names
 
@@ -100,25 +109,25 @@ PowerShell also provides ways to create shorthand names for parameters. Paramete
 defined using the `Alias` attribute when you declare the parameter. These can't be defined using the
 `*-Alias` cmdlets.
 
-For more information, see the [Alias attribute][alias-attr] documentation.
+For more information, see the [Alias attribute][03] documentation.
 
 In addition to parameter aliases, PowerShell lets you specify the parameter name using the fewest
 characters needed to uniquely identify the parameter. For example, the `Get-ChildItem` cmdlet has
 the **Recurse** and **ReadOnly** parameters. To uniquely identify the **Recurse** parameter you only
-need to provide `-rec`. If you combine that with the command alias, `Get-ChildItem -Recurse` can be
-shortened to `dir -rec`.
+need to provide `-Rec`. If you combine that with the command alias, `Get-ChildItem -Recurse` can be
+shortened to `dir -Rec`.
 
 ## Don't use aliases in scripts
 
-Aliases are a convenience feature to be used interactively in the shell. You should always use
-the full command and parameter names in your scripts.
+Aliases are a convenience feature to be used interactively in the shell. You should always use the
+full command and parameter names in your scripts.
 
 - Aliases can be deleted or redefined in a profile script
 - Any aliases you define may not be available to the user of your scripts
 - Aliases make your code harder to read and maintain
 
 <!-- link references -->
-[Get-Alias]: xref:Microsoft.PowerShell.Utility.Get-Alias
-[about_Aliases]: /powershell/module/microsoft.powershell.core/about/about_aliases
-[alias-attr]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters#alias-attribute
-[alias-func]: /powershell/module/microsoft.powershell.core/about/about_aliases#alternate-names-for-commands-with-parameters
+[01]: /powershell/module/microsoft.powershell.core/about/about_aliases
+[02]: /powershell/module/microsoft.powershell.core/about/about_aliases#alternate-names-for-commands-with-parameters
+[03]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters#alias-attribute
+[04]: xref:Microsoft.PowerShell.Utility.Get-Alias

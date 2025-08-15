@@ -2,13 +2,14 @@
 description: Describes how to get and run commands in the command history.
 Locale: en-US
 ms.date: 05/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_history?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_history?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about History
+title: about_History
 ---
 # about_History
 
 ## Short description
+
 Describes how to get and run commands in the command history.
 
 ## Long description
@@ -28,13 +29,13 @@ The PSReadLine history tracks the commands used in all PowerShell sessions.
 The history is written to a central file per host. That history file is
 available to all sessions and contains all past history. The history is not
 deleted when the session ends. Also, that history cannot be managed by the
-`*-History` cmdlets. For more information, see
-[about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md).
+`*-History` cmdlets. For more information, see [about_PSReadLine][01].
 
 ## Using the built-in session history
 
 The built-in history only tracks the commands used in the current session. The
-history is not available to other sessions and is deleted when the session ends.
+history is not available to other sessions and is deleted when the session
+ends.
 
 ### History Cmdlets
 
@@ -71,7 +72,7 @@ command history.
 > module. PSReadLine loads automatically when you start a PowerShell session.
 > With PSReadLine loaded, <kbd>F7</kbd> and <kbd>F9</kbd> are not bound to any
 > function. PSReadLine does not provide equivalent functionality. For more
-> information, see [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md).
+> information, see [about_PSReadLine][01].
 
 ### MaximumHistoryCount
 
@@ -90,10 +91,10 @@ To apply the setting, restart PowerShell.
 
 To save the new variable value for all your PowerShell sessions, add the
 assignment statement to a PowerShell profile. For more information about
-profiles, see [about_Profiles](about_Profiles.md).
+profiles, see [about_Profiles][02].
 
 For more information about the `$MaximumHistoryCount` preference variable, see
-[about_Preference_Variables](about_Preference_Variables.md).
+[about_Preference_Variables][03].
 
 ### Order of Commands in the History
 
@@ -105,8 +106,15 @@ completed only when you exit the prompt level.
 
 ## See also
 
-- [about_Line_Editing](about_Line_Editing.md)
-- [about_Preference_Variables](about_Preference_Variables.md)
-- [about_Profiles](about_Profiles.md)
-- [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
-- [about_Variables](about_Variables.md)
+- [about_Line_Editing][04]
+- [about_Preference_Variables][03]
+- [about_Profiles][02]
+- [about_PSReadLine][01]
+- [about_Variables][05]
+
+<!-- link references -->
+[01]: ../../PSReadLine/About/about_PSReadLine.md
+[02]: about_Profiles.md
+[03]: about_Preference_Variables.md
+[04]: about_Line_Editing.md
+[05]: about_Variables.md

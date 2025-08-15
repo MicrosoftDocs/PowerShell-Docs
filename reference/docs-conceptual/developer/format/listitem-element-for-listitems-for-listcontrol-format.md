@@ -1,7 +1,6 @@
 ---
 description: ListItem Element
 ms.date: 08/23/2021
-ms.topic: reference
 title: ListItem Element
 ---
 # ListItem Element

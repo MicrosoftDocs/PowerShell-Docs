@@ -2,22 +2,23 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 11/02/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 05/29/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
 ---
+
 # New-FileCatalog
 
 ## SYNOPSIS
-`New-FileCatalog` creates a catalog file of file hashes that can be used to validate the
-authenticity of a file.
+Creates a Windows catalog file containing cryptographic hashes for files and folders in the
+specified paths.
 
 ## SYNTAX
 
 ```
-New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-FileCatalog [-CatalogVersion <Int32>] [-CatalogFilePath] <String> [[-Path] <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,16 +29,19 @@ paths. Users can then distribute the catalog with their files so that users can 
 changes have been made to the folders since catalog creation time.
 
 Catalog versions 1 and 2 are supported. Version 1 uses the (deprecated) SHA1 hashing algorithm to
-create file hashes, and version 2 uses SHA256. Catalog version 2 is not supported on Windows Server
-2008 R2 or Windows 7. You should use catalog version 2 on Windows 8, Windows Server 2012, and later
-operating systems.
+create file hashes, and version 2 uses SHA256.
 
 ## EXAMPLES
 
 ### Example 1: Create a file catalog for `Microsoft.PowerShell.Utility`
 
 ```powershell
-New-FileCatalog -Path $PSHOME\Modules\Microsoft.PowerShell.Utility -CatalogFilePath \temp\Microsoft.PowerShell.Utility.cat -CatalogVersion 2.0
+$newFileCatalogSplat = @{
+    Path = "$PSHOME\Modules\Microsoft.PowerShell.Utility"
+    CatalogFilePath = '\temp\Microsoft.PowerShell.Utility.cat'
+    CatalogVersion = 2.0
+}
+New-FileCatalog @newFileCatalogSplat
 ```
 
 ```Output
@@ -50,8 +54,8 @@ Mode                LastWriteTime         Length Name
 
 ### -CatalogFilePath
 
-A path to a file or folder where the catalog file (.cat) should be placed. If a folder path is
-specified, the default filename `catalog.cat` will be used.
+The location and name of the catalog file (`.cat`) you are creating. If you specify only a folder
+path, the command creates a file named `catalog.cat` in that location.
 
 ```yaml
 Type: System.String
@@ -67,9 +71,9 @@ Accept wildcard characters: False
 
 ### -CatalogVersion
 
-Accepts `1.0` or `2.0` as possible values for specifying the catalog version. `1.0` should be used
-avoided whenever possible, as it uses the insecure SHA-1 hash algorithm, while `2.0` uses the secure
-SHA-256 algorithm However, `1.0` is the only supported algorithm on Windows 7 and Server 2008R2.
+Accepts `1.0` or `2.0` as possible values for specifying the catalog version. `1.0` should be
+avoided whenever possible because it uses the insecure SHA-1 hash algorithm. Version `2.0` uses the
+secure SHA-256 algorithm.
 
 ```yaml
 Type: System.Int32
@@ -86,7 +90,7 @@ Accept wildcard characters: False
 ### -Path
 
 Accepts a path or array of paths to files or folders that should be included in the catalog file. If
-a folder is specified, all the files in the folder will be included as well.
+a folder is specified, the command includes all files in the folder.
 
 ```yaml
 Type: System.String[]
@@ -143,15 +147,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-The pipeline takes a string that is used as the catalog filename.
+You can pipe a string that's used as the catalog filename to this cmdlet.
 
 ## OUTPUTS
 
 ### System.IO.FileInfo
 
-## NOTES
+This cmdlet returns a **FileInfo** object representing the created catalog.
 
-This cmdlet is only available on Windows platforms.
+## NOTES
 
 ## RELATED LINKS
 

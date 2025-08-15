@@ -1,7 +1,6 @@
 ---
 description: PropertyName Element for SelectionCondition for GroupBy
 ms.date: 08/24/2021
-ms.topic: reference
 title: PropertyName Element for SelectionCondition for GroupBy
 ---
 # PropertyName Element for SelectionCondition for GroupBy

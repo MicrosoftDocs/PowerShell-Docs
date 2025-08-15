@@ -6,6 +6,8 @@ title: Comment-Based Help
 
 # A. Comment-Based Help
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 PowerShell provides a mechanism for programmers to document their scripts using special comment
 directives. Comments using such syntax are called *help comments*. The cmdlet
 [Get-Help](xref:Microsoft.PowerShell.Core.Get-Help) generates documentation from these directives.
@@ -138,7 +140,7 @@ Examples:
 
 ```powershell
 <#
-.ExternalHelp C:\MyScripts\Update-Month-Help.xml
+.EXTERNALHELP C:\MyScripts\Update-Month-Help.xml
 #>
 ```
 
@@ -218,7 +220,7 @@ is added to the item.
 function Process-Thing {
     param ( ...
         [Parameter(ValueFromPipeline=$true)]
-        [object[]]$Value,
+        [Object[]]$Value,
         ...
     )
     ...
@@ -273,7 +275,7 @@ Examples:
 
 ```powershell
 <#
-.Notes
+.NOTES
 *arbitrary text goes here*
 #>
 ```

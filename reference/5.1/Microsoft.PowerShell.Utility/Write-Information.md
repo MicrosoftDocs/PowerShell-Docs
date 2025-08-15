@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/15/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 10/19/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-information?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Information
 ---
@@ -132,6 +132,30 @@ function Test-Info
 Test-Info 6> Info.txt
 ```
 
+### Example 4: Saving information records to a variable
+
+Using the **InformationVariable** parameter, you can save information records to a variable. This
+allows you to inspect the information stream messages later in the script.
+
+```powershell
+$psproc = Get-Process -Id $PID | Select-Object ProcessName, CPU, Path
+Write-Information -MessageData $psproc -Tags 'PowerShell' -InformationVariable 'InfoMsg'
+$InfoMsg | Select-Object *
+```
+
+```Output
+MessageData     : @{ProcessName=powershell; CPU=1.609375;
+                  Path=C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe}
+Source          : Write-Information
+TimeGenerated   : 10/19/2023 11:28:15
+Tags            : {PowerShell}
+User            : sdwheeler
+Computer        : circumflex
+ProcessId       : 237
+NativeThreadId  : 261
+ManagedThreadId : 10
+```
+
 ## PARAMETERS
 
 ### -MessageData
@@ -180,21 +204,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-`Write-Information` does not accept piped input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.Automation.InformationRecord
+### None
+
+This cmdlet returns no output. It only writes to the information message stream.
 
 ## NOTES
 
 ## RELATED LINKS
 
-[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
-
-[about_Redirection](../Microsoft.PowerShell.Core/About/about_Redirection.md)
-
 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)
+
+[about_Output_Streams](../Microsoft.PowerShell.Core/About/about_Output_Streams.md)
 
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md)
 
@@ -206,10 +230,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Write-Information](Write-Information.md)
 
+[Write-Output](Write-Output.md)
+
 [Write-Progress](Write-Progress.md)
 
 [Write-Verbose](Write-Verbose.md)
 
 [Write-Warning](Write-Warning.md)
-
-[Write-Output](Write-Output.md)

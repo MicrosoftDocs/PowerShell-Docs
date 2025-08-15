@@ -1,7 +1,6 @@
 ---
 description: Creating Custom Controls
 ms.date: 09/13/2016
-ms.topic: reference
 title: Creating Custom Controls
 ---
 # Creating Custom Controls
@@ -26,7 +25,7 @@ The following example shows a custom control that is defined in the Certificates
                 <Text AssemblyName="System.Management.Automation" BaseName="FileSystemProviderStrings"
                   ResourceId="DirectoryDisplayGrouping"/>
                 <ExpressionBinding>
-                  <ScriptBlock>split-path $_.Path</ScriptBlock>
+                  <ScriptBlock>Split-Path $_.Path</ScriptBlock>
                 </ExpressionBinding>
                 <NewLine/>
               </CustomItem>

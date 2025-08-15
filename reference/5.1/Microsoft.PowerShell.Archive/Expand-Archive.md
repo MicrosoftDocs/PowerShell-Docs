@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 07/17/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 10/06/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/expand-archive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Expand-Archive
 ---
@@ -18,15 +18,15 @@ Extracts files from a specified archive (zipped) file.
 ### Path (Default)
 
 ```
-Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Expand-Archive [-Path] <String> [[-DestinationPath] <String>] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Expand-Archive -LiteralPath <String> [[-DestinationPath] <String>] [-Force] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,7 +43,7 @@ This example extracts the contents of an existing archive file into the folder s
 **DestinationPath** parameter.
 
 ```powershell
-Expand-Archive -LiteralPath 'C:\Archives\Draft[v1].Zip' -DestinationPath C:\Reference
+Expand-Archive -LiteralPath 'C:\Archives\Draft[v1].zip' -DestinationPath C:\Reference
 ```
 
 In this example, the **LiteralPath** parameter is used because the filename contains characters that
@@ -55,16 +55,16 @@ This example extracts the contents of an existing archive file in the current fo
 specified by the **DestinationPath** parameter.
 
 ```powershell
-Expand-Archive -Path Draftv2.Zip -DestinationPath C:\Reference
+Expand-Archive -Path Draftv2.zip -DestinationPath C:\Reference
 ```
 
 ## PARAMETERS
 
 ### -DestinationPath
 
-By default, `Expand-Archive` creates a folder in the current location that is the same name as the
+By default, `Expand-Archive` creates a folder in the current location that's the same name as the
 ZIP file. The parameter allows you to specify the path to a different folder. The target folder is
-created if it does not exist.
+created if it doesn't exist.
 
 ```yaml
 Type: System.String
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces the command to run without asking for user confirmation.
+Use this parameter to overwrite existing files. By default, `Expand-Archive` doesn't overwrite.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -97,7 +97,7 @@ Accept wildcard characters: False
 ### -LiteralPath
 
 Specifies the path to an archive file. Unlike the **Path** parameter, the value of **LiteralPath**
-is used exactly as it is typed. Wildcard characters are not supported. If the path includes escape
+is used exactly as it's typed. Wildcard characters aren't supported. If the path includes escape
 characters, enclose each escape character in single quotation marks, to instruct PowerShell not to
 interpret any characters as escape sequences.
 
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,6 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
@@ -179,13 +180,11 @@ You can pipe a string that contains a path to an existing archive file.
 
 ## NOTES
 
-The [ZIP file specification](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) does not
-specify a standard way of encoding filenames that contain non-ASCII characters. The
-`Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different encoding
-scheme. When extracting files with filenames not stored using UTF-8 encoding, `Expand-Archive` uses
-the raw value found in the archive. This can result in a filename that is different than the source
-filename stored in the archive.
+The `Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different
+encoding scheme. When extracting files with filenames not stored using UTF-8 encoding,
+`Expand-Archive` uses the raw value found in the archive. This can result in a filename that's
+different than the source filename stored in the archive.
 
 ## RELATED LINKS
 
-[Compress-Archive](compress-archive.md)
+[Compress-Archive](Compress-Archive.md)

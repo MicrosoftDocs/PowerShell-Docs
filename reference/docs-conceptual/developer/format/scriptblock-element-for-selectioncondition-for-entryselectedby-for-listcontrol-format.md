@@ -1,7 +1,6 @@
 ---
 description: ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl
 ms.date: 08/24/2021
-ms.topic: reference
 title: ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl
 ---
 # ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListControl

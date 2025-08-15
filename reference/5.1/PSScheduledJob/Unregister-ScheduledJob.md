@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/unregister-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/unregister-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-ScheduledJob
 ---
@@ -41,7 +41,7 @@ The `Unregister-ScheduledJob` cmdlet deletes scheduled jobs from the local compu
 
 When it deletes or unregisters a scheduled job, `Unregister-ScheduledJob` deletes the directory for
 the scheduled job (in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory`), which contains the XML
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs directory`), which contains the XML
 file that defines the scheduled job, the job execution history, and all job results. This action
 also deletes the job from Task Scheduler.
 
@@ -212,13 +212,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
-You can pipe scheduled jobs to Unregister-ScheduledJob
+You can pipe a scheduled job to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

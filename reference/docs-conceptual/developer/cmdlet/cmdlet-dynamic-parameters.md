@@ -1,7 +1,6 @@
 ---
 description: Cmdlet Dynamic Parameters
 ms.date: 09/13/2016
-ms.topic: reference
 title: Cmdlet Dynamic Parameters
 ---
 
@@ -28,7 +27,7 @@ The following examples show how the **CodeSigningCert** parameter is added at ru
 In this example, the PowerShell runtime has added the parameter and the cmdlet is successful.
 
 ```powershell
-Get-Item -Path cert:\CurrentUser -CodeSigningCert
+Get-Item -Path Cert:\CurrentUser -CodeSigningCert
 ```
 
 ```Output
@@ -44,9 +43,9 @@ Get-Item -Path C:\ -CodeSigningCert
 ```
 
 ```Output
-Get-Item : A parameter cannot be found that matches parameter name 'codesigningcert'.
+Get-Item : A parameter cannot be found that matches parameter name 'CodeSigningCert'.
 At line:1 char:37
-+  get-item -path C:\ -codesigningcert <<<<
++  Get-Item -Path C:\ -CodeSigningCert <<<<
 --------
     CategoryInfo          : InvalidArgument: (:) [Get-Item], ParameterBindingException
     FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetItemCommand
@@ -58,8 +57,8 @@ To support dynamic parameters, the following elements must be included in the cm
 
 ### Interface
 
-[System.Management.Automation.IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters).
-This interface provides the method that retrieves the dynamic parameters.
+[System.Management.Automation.IDynamicParameters][03]. This interface provides the method that
+retrieves the dynamic parameters.
 
 For example:
 
@@ -67,8 +66,8 @@ For example:
 
 ### Method
 
-[System.Management.Automation.IDynamicParameters.GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters).
-This method retrieves the object that contains the dynamic parameter definitions.
+[System.Management.Automation.IDynamicParameters.GetDynamicParameters][04]. This method retrieves
+the object that contains the dynamic parameter definitions.
 
 For example:
 
@@ -107,14 +106,18 @@ public class SendGreetingCommandDynamicParameters
 }
 ```
 
-For a complete example of a cmdlet that supports dynamic parameters, see [How to Declare Dynamic Parameters](./how-to-declare-dynamic-parameters.md).
+For a complete example of a cmdlet that supports dynamic parameters, see
+[How to Declare Dynamic Parameters][01].
 
 ## See also
 
-[System.Management.Automation.IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
+- [System.Management.Automation.IDynamicParameters][03]
+- [System.Management.Automation.IDynamicParameters.GetDynamicParameters][04]
+- [How to Declare Dynamic Parameters][01]
+- [Writing a Windows PowerShell Cmdlet][02]
 
-[System.Management.Automation.IDynamicParameters.GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
-
-[How to Declare Dynamic Parameters](./how-to-declare-dynamic-parameters.md)
-
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+<!-- link references -->
+[01]: ./how-to-declare-dynamic-parameters.md
+[02]: ./writing-a-windows-powershell-cmdlet.md
+[03]: /dotnet/api/System.Management.Automation.IDynamicParameters
+[04]: /dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters

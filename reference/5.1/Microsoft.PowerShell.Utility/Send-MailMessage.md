@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/03/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/18/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/send-mailmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Send-MailMessage
 ---
+
 # Send-MailMessage
 
 ## SYNOPSIS
@@ -31,10 +32,11 @@ The `Send-MailMessage` cmdlet sends an email message from within PowerShell.
 You must specify a Simple Mail Transfer Protocol (SMTP) server or the `Send-MailMessage` command
 fails. Use the **SmtpServer** parameter or set the `$PSEmailServer` variable to a valid SMTP server.
 The value assigned to `$PSEmailServer` is the default SMTP setting for PowerShell. For more
-information, see [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+information, see
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 
 > [!WARNING]
-> The `Send-MailMessage` cmdlet is obsolete. This cmdlet does not guarantee secure connections to
+> The `Send-MailMessage` cmdlet is obsolete. This cmdlet doesn't guarantee secure connections to
 > SMTP servers. While there is no immediate replacement available in PowerShell, we recommend you do
 > not use `Send-MailMessage`. For more information, see
 > [Platform Compatibility note DE0005](https://aka.ms/SendMailMessage).
@@ -50,44 +52,68 @@ uses the default `$PSEmailServer` variable for the SMTP server, so the **SmtpSer
 not needed.
 
 ```powershell
-Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>' -Subject 'Test mail'
+$sendMailMessageSplat = @{
+    From = 'User01 <user01@fabrikam.com>'
+    To = 'User02 <user02@fabrikam.com>'
+    Subject = 'Test mail'
+}
+Send-MailMessage @sendMailMessageSplat
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
 **To** parameter specifies the message's recipient. The **Subject** parameter uses the text string
-**Test mail** as the message because the optional **Body** parameter is not included.
+**Test mail** as the message because the optional **Body** parameter isn't included.
 
 ### Example 2: Send an attachment
 
 This example sends an email message with an attachment.
 
 ```powershell
-Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>' -Subject 'Sending the Attachment' -Body "Forgot to send the attachment. Sending now." -Attachments .\data.csv -Priority High -DeliveryNotificationOption OnSuccess, OnFailure -SmtpServer 'smtp.fabrikam.com'
+$sendMailMessageSplat = @{
+    From = 'User01 <user01@fabrikam.com>'
+    To = 'User02 <user02@fabrikam.com>', 'User03 <user03@fabrikam.com>'
+    Subject = 'Sending the Attachment'
+    Body = "Forgot to send the attachment. Sending now."
+    Attachments = '.\data.csv'
+    Priority = 'High'
+    DeliveryNotificationOption = 'OnSuccess', 'OnFailure'
+    SmtpServer = 'smtp.fabrikam.com'
+}
+Send-MailMessage @sendMailMessageSplat
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
 **To** parameter specifies the message's recipients. The **Subject** parameter describes the content
 of the message. The **Body** parameter is the content of the message.
 
-The **Attachments** parameter specifies the file in the current directory that is attached to the
-email message. The **Priority** parameter sets the message to **High** priority. The
-**-DeliveryNotificationOption** parameter specifies two values, **OnSuccess** and **OnFailure**. The
+The **Attachments** parameter specifies the file in the current directory that's attached to the
+email message. The **Priority** parameter sets the message to `High` priority. The
+**DeliveryNotificationOption** parameter specifies two values, `OnSuccess` and `OnFailure`. The
 sender will receive email notifications to confirm the success or failure of the message delivery.
-The **SmtpServer** parameter sets the SMTP server to **smtp.fabrikam.com**.
+The **SmtpServer** parameter sets the SMTP server to `smtp.fabrikam.com`.
 
 ### Example 3: Send email to a mailing list
 
 This example sends an email message to a mailing list.
 
 ```powershell
-Send-MailMessage -From 'User01 <user01@fabrikam.com>' -To 'ITGroup <itdept@fabrikam.com>' -Cc 'User02 <user02@fabrikam.com>' -Bcc 'ITMgr <itmgr@fabrikam.com>' -Subject "Don't forget today's meeting!" -Credential domain01\admin01 -UseSsl
+$sendMailMessageSplat = @{
+    From = 'User01 <user01@fabrikam.com>'
+    To = 'ITGroup <itdept@fabrikam.com>'
+    Cc = 'User02 <user02@fabrikam.com>'
+    Bcc = 'ITMgr <itmgr@fabrikam.com>'
+    Subject = "Don't forget today's meeting!"
+    Credential = 'domain01\admin01'
+    UseSsl = $true
+}
+Send-MailMessage @sendMailMessageSplat
 ```
 
 The `Send-MailMessage` cmdlet uses the **From** parameter to specify the message's sender. The
 **To** parameter specifies the message's recipients. The **Cc** parameter sends a copy of the
 message to the specified recipient. The **Bcc** parameter sends a blind copy of the message. A blind
-copy is an email address that is hidden from the other recipients. The **Subject** parameter is the
-message because the optional **Body** parameter is not included.
+copy is an email address that's hidden from the other recipients. The **Subject** parameter is the
+message because the optional **Body** parameter isn't included.
 
 The **Credential** parameter specifies a domain administrator's credentials are used to send the
 message. The **UseSsl** parameter specifies that Secure Socket Layer (SSL) creates a secure
@@ -114,8 +140,8 @@ Accept wildcard characters: False
 
 ### -Bcc
 
-Specifies the email addresses that receive a copy of the mail but are not listed as recipients of
-the message. Enter names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
+Specifies the email addresses that receive a copy of the mail but aren't listed as recipients of the
+message. Enter names (optional) and the email address, such as `Name <someone@fabrikam.com>`.
 
 ```yaml
 Type: System.String[]
@@ -324,7 +350,7 @@ Accept wildcard characters: False
 Specifies the name of the SMTP server that sends the email message.
 
 The default value is the value of the `$PSEmailServer` preference variable. If the preference
-variable is not set and this parameter is not used, the `Send-MailMessage` command fails.
+variable isn't set and this parameter isn't used, the `Send-MailMessage` command fails.
 
 ```yaml
 Type: System.String
@@ -340,7 +366,7 @@ Accept wildcard characters: False
 
 ### -Subject
 
-The **Subject** parameter is required. This parameter specifies the subject of the email message.
+The **Subject** parameter isn't required. This parameter specifies the subject of the email message.
 
 ```yaml
 Type: System.String
@@ -374,7 +400,7 @@ Accept wildcard characters: False
 ### -UseSsl
 
 The Secure Sockets Layer (SSL) protocol is used to establish a secure connection to the remote
-computer to send mail. By default, SSL is not used.
+computer to send mail. By default, SSL isn't used.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -392,21 +418,31 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.String
 
-You can pipe the path and file names of attachments to `Send-MailMessage`.
+You can pipe the path and file names of attachments to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
+
+The `Send-MailMessage` cmdlet is obsolete. For more information, see
+[Platform Compatibility note DE0005](https://aka.ms/SendMailMessage). This cmdlet doesn't guarantee
+secure connections to SMTP servers.
+
+_DE0005_ suggests using the third-party library, [MailKit](https://github.com/jstedfast/MailKit). If
+you are using Exchange Online, you can use the
+[Send-MgUserMail](/powershell/module/microsoft.graph.users.actions/send-mgusermail) from the
+Microsoft Graph PowerShell SDK.
 
 ## RELATED LINKS
 

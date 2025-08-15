@@ -2,13 +2,14 @@
 description: Describes the `hidden` keyword, which hides class members from default `Get-Member` results.
 Locale: en-US
 ms.date: 03/07/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hidden?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_hidden?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Hidden
+title: about_Hidden
 ---
 # about_Hidden
 
 ## Short description
+
 Describes the `hidden` keyword, which hides class members from default
 `Get-Member` results.
 
@@ -16,9 +17,9 @@ Describes the `hidden` keyword, which hides class members from default
 
 When you use the `hidden` keyword in a script, you hide the members of a class
 by default. Hidden members do not display in the default results of the
-`Get-Member` cmdlet, IntelliSense, or tab completion results. To display members
-that you have hidden with the `hidden` keyword, add the **Force** parameter to a
-`Get-Member` command.
+`Get-Member` cmdlet, IntelliSense, or tab completion results. To display
+members that you have hidden with the `hidden` keyword, add the **Force**
+parameter to a `Get-Member` command.
 
 The `hidden` keyword can hide:
 
@@ -47,11 +48,12 @@ PowerShell 5.0.
 ## EXAMPLE
 
 The following example shows how to use the `hidden` keyword in a class
-definition. The **Car** class method, **Drive**, has a property, **rides**, that
-does not need to be viewed or changed as it merely tallies the number of times
-that **Drive** is called on the **Car** class. That metric that is not important
-to users of the class (consider, for example, that when you are buying a car,
-you do not ask the seller on how many drives the car has been taken).
+definition. The **Car** class method, **Drive**, has a property, **Rides**,
+that does not need to be viewed or changed as it merely tallies the number of
+times that **Drive** is called on the **Car** class. That metric that is not
+important to users of the class (consider, for example, that when you are
+buying a car, you do not ask the seller on how many drives the car has been
+taken).
 
 Because there is little need for users of the class to change this property, we
 can hide the property from `Get-Member` and automatic completion results by
@@ -66,20 +68,20 @@ later to identify all members that you have hidden.
 class Car
 {
    # Properties
-   [String] $Color
-   [String] $ModelYear
+   [string] $Color
+   [string] $ModelYear
    [int] $Distance
 
    # Method
-   [int] Drive ([int]$miles)
+   [int] Drive ([int]$Miles)
    {
-      $this.Distance += $miles
-      $this.rides++
+      $this.Distance += $Miles
+      $this.Rides++
       return $this.Distance
    }
 
    # Hidden property of the Drive method
-    hidden [int] $rides = 0
+    hidden [int] $Rides = 0
 }
 ```
 
@@ -91,7 +93,7 @@ $TestCar = [Car]::new()
 ```
 
 After you create the new instance, pipe the contents of the `$TestCar` variable
-to `Get-Member`. Observe that the **rides** property is not among the members
+to `Get-Member`. Observe that the **Rides** property is not among the members
 listed in the `Get-Member` command results.
 
 ```output
@@ -101,7 +103,7 @@ PS C:\Windows\system32> $TestCar | Get-Member
 
 Name        MemberType Definition
 ----        ---------- ----------
-Drive       Method     int Drive(int miles)
+Drive       Method     int Drive(int Miles)
 Equals      Method     bool Equals(System.Object obj)
 GetHashCode Method     int GetHashCode()
 GetType     Method     type GetType()
@@ -113,8 +115,8 @@ ModelYear   Property   string ModelYear {get;set;}
 ```
 
 Now, try running `Get-Member` again, but this time, add the `-Force` parameter.
-Note that the results contain the hidden **rides** property, among other members
-that are hidden by default.
+Note that the results contain the hidden **Rides** property, among other
+members that are hidden by default.
 
 ```output
 PS C:\Windows\system32> $TestCar | Get-Member -Force
@@ -128,23 +130,23 @@ psadapted     MemberSet    psadapted {Color, ModelYear, Distance,
 psbase        MemberSet    psbase {Color, ModelYear, Distance,...
 psextended    MemberSet    psextended {}
 psobject      MemberSet    psobject {BaseObject, Members,...
-Drive         Method       int Drive(int miles)
+Drive         Method       int Drive(int Miles)
 Equals        Method       bool Equals(System.Object obj)
 GetHashCode   Method       int GetHashCode()
 GetType       Method       type GetType()
 get_Color     Method       string get_Color()
 get_Distance  Method       int get_Distance()
 get_ModelYear Method       string get_ModelYear()
-get_rides     Method       int get_rides()
+get_Rides     Method       int get_Rides()
 set_Color     Method       void set_Color(string )
 set_Distance  Method       void set_Distance(int )
 set_ModelYear Method       void set_ModelYear(string )
-set_rides     Method       void set_rides(int )
+set_Rides     Method       void set_Rides(int )
 ToString      Method       string ToString()
 Color         Property     string Color {get;set;}
 Distance      Property     int Distance {get;set;}
 ModelYear     Property     string ModelYear {get;set;}
-rides         Property     int rides {get;set;}
+Rides         Property     int Rides {get;set;}
 
 ```
 

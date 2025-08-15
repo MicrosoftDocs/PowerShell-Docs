@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 09/27/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - group
 title: Group-Object
 ---
 
@@ -35,7 +37,7 @@ property, and then, within each property group, it groups by the value of the ne
 
 ### Example 1: Group files by extension
 
-This example recursively gets the files under `$PSHOME` and groups them by file name extension. The
+This example recursively gets the files under `$PSHOME` and groups them by filename extension. The
 output is sent to the `Sort-Object` cmdlet, which sorts them by the count files found for the given
 extension. The empty **Name** represents directories.
 
@@ -43,7 +45,9 @@ This example uses the **NoElement** parameter to omit the members of the group.
 
 ```powershell
 $files = Get-ChildItem -Path $PSHOME -Recurse
-$files | Group-Object -Property extension -NoElement | Sort-Object -Property Count -Descending
+$files |
+    Group-Object -Property Extension -NoElement |
+    Sort-Object -Property Count -Descending
 ```
 
 ```Output
@@ -95,9 +99,9 @@ Get-WinEvent -LogName System -MaxEvents 1000 | Group-Object -Property LevelDispl
 ```Output
 Count Name          Group
 ----- ----          -----
-  153 Error         {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics...}
-  722 Information   {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics...}
-  125 Warning       {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics...}
+  153 Error         {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diag...}
+  722 Information   {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diag...}
+  125 Warning       {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diag...}
 ```
 
 ### Example 4: Group processes by priority class
@@ -109,7 +113,7 @@ The first command uses the `Get-Process` cmdlet to get the processes on the comp
 objects down the pipeline. `Group-Object`groups the objects by the value of the **PriorityClass**
 property of the process.
 
-The second example uses the **NoElement** parameter to eliminate the members of the group from the
+The second example uses the **NoElement** parameter to remove the members of the group from the
 output. The result is a table with only the **Count** and **Name** property value.
 
 The results are shown in the following sample output.
@@ -178,7 +182,8 @@ values are **CmdletInfo** object. The **AsString** parameter doesn't convert the
 groups to strings.
 
 ```powershell
-$A = Get-Command Get-*, Set-* -CommandType cmdlet | Group-Object -Property Verb -AsHashTable -AsString
+$A = Get-Command Get-*, Set-* -CommandType Cmdlet |
+     Group-Object -Property Verb -AsHashTable -AsString
 $A
 ```
 
@@ -194,13 +199,36 @@ $A.Get
 ```
 
 ```Output
-CommandType     Name                               Version    Source
------------     ----                               -------    ------
-Cmdlet          Get-Acl                            3.0.0.0    Microsoft.PowerShell.Security
-Cmdlet          Get-Alias                          3.1.0.0    Microsoft.PowerShell.Utility
-Cmdlet          Get-AppLockerFileInformation       2.0.0.0    AppLocker
-Cmdlet          Get-AppLockerPolicy                2.0.0.0    AppLocker
+CommandType     Name                              Version    Source
+-----------     ----                              -------    ------
+Cmdlet          Get-Acl                           3.0.0.0    Microsoft.PowerShell.Security
+Cmdlet          Get-Alias                         3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Get-AppLockerFileInformation      2.0.0.0    AppLocker
+Cmdlet          Get-AppLockerPolicy               2.0.0.0    AppLocker
 ...
+```
+
+### Example 10: Group hashtables by their key values with calculated properties
+
+This example shows how you can group **hashtable** objects by the value of their keys. You can
+specify one or more **scriptblocks** for the **Property** parameter. The expressions in these
+scriptblocks are used to group for the input like the values for named properties.
+
+```powershell
+@(
+    @{ name = 'a' ; weight = 7 }
+    @{ name = 'b' ; weight = 1 }
+    @{ name = 'c' ; weight = 3 }
+    @{ name = 'd' ; weight = 7 }
+) | Group-Object -Property { $_.weight } -NoElement
+```
+
+```output
+Count Name
+----- ----
+    2 7
+    1 1
+    1 3
 ```
 
 ## PARAMETERS
@@ -319,8 +347,10 @@ Accept wildcard characters: False
 
 ### -Property
 
-Specifies the properties for grouping. The objects are arranged into groups based on the value of
-the specified property.
+Specifies the properties for grouping. The objects are arranged into named groups based on the value
+of the specified properties. When no property is specified, objects are grouped by their value or
+the `ToString()` representation of their value. The output is presented in order the group objects
+were created.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
 can be a script block or a hash table. Valid key-value pairs are:
@@ -353,44 +383,53 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Group-Object`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.GroupInfo or System.Collections.Hashtable
+### Microsoft.PowerShell.Commands.GroupInfo
 
-When you use the **AsHashTable** parameter, `Group-Object` returns a **Hashtable** object.
-Otherwise, it returns a **GroupInfo** object.
+By default, this cmdlet returns a **GroupInfo** object.
+
+### System.Collections.Hashtable
+
+When you use the **AsHashTable** parameter, this cmdlet returns a **Hashtable** object.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Group-Object`:
+
+- `group`
 
 You can use the **GroupBy** parameter of the formatting cmdlets, such as `Format-Table` and
 `Format-List`, to group objects. Unlike `Group-Object`, which creates a single table with a row for
 each property value, the **GroupBy** parameters create a table for each property value with a row
 for each item that has the property value.
 
-`Group-Object` doesn't require that the objects being grouped are of the same Microsoft .NET
-Framework type. When grouping objects of different .NET Framework types, `Group-Object` uses the
-following rules:
+`Group-Object` doesn't require that the objects being grouped are of the same Microsoft .NET type.
+When grouping objects of different .NET types, `Group-Object` uses the following rules:
 
 - Same Property Names and Types.
 
-  If the objects have a property with the specified name, and the property values have the same .NET
-  Framework type, the property values are grouped by using the same rules that would be used for
-  objects of the same type.
+  If the objects have a property with the specified name, and the property values have the same
+  .NET type, the property values are grouped by the same rules that would be used for objects
+  of the same type.
 
 - Same Property Names, Different Types.
 
   If the objects have a property with the specified name, but the property values have a different
-  .NET Framework type in different objects, `Group-Object` uses the .NET Framework type of the first
-  occurrence of the property as the .NET Framework type for that property group. When an object has
-  a property with a different type, the property value is converted to the type for that group. If
-  the type conversion fails, the object is not included in the group.
+  .NET type in different objects, `Group-Object` uses the .NET type of the first occurrence of the
+  property as the .NET type for that property group. When an object has a property with a different
+  type, the property value is converted to the type for that group. If the type conversion fails,
+  the object isn't included in the group.
 
 - Missing Properties.
 
   Objects that don't have a specified property can't be grouped. Objects that aren't grouped appear
   in the final **GroupInfo** object output in a group named `AutomationNull.Value`.
+
+The output groups are presented in order the group were created. The items belonging to each group
+are not sorted. They are listed in the order in which they were received.
 
 ## RELATED LINKS
 

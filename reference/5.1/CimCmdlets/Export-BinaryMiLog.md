@@ -3,7 +3,7 @@ external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-help.xml
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 02/20/2019
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/cimcmdlets/export-binarymilog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-BinaryMiLog
 ---
@@ -96,8 +96,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
-[Import-BinaryMiLog](import-binarymilog.md)
+[Import-BinaryMiLog](Import-BinaryMiLog.md)
 
-[Import-Clixml](../microsoft.powershell.utility/import-clixml.md)
+[Import-Clixml](../Microsoft.Powershell.Utility/Import-Clixml.md)

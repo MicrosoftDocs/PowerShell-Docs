@@ -2,9 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/01/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/18/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-psdrive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - mount
+  - ndr
 title: New-PSDrive
 ---
 
@@ -205,7 +208,7 @@ Get-PSDrive -Name "PSDrive", "X"
 Name       Provider      Root
 ----       --------      ----
 
-PsDrive    FileSystem    \\Server01\public
+PSDrive    FileSystem    \\Server01\public
 X          FileSystem    X:\
 ```
 
@@ -261,7 +264,7 @@ longer available.
 New-PSDrive -Persist -Name "X" -PSProvider "FileSystem" -Root "\\Server01\Public" -Scope Global
 ```
 
-To ensure that the drive is available outside of the script to must use the **Scope** parameter to
+To ensure that the drive is available outside of the script you must use the **Scope** parameter to
 create the drive in the **Global** scope.
 
 ## PARAMETERS
@@ -498,13 +501,20 @@ This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVar
 
 ### None
 
-You can't pipeline input to this cmdlet.
+You can't pipe objects to this cmdlet
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSDriveInfo
 
+This cmdlet returns a **PSDriveInfo** object representing the created drive.
+
 ## NOTES
+
+Windows PowerShell includes the following aliases for `New-PSDrive`:
+
+- `mount`
+- `ndr`
 
 `New-PSDrive` is designed to work with the data exposed by any provider. To list the providers
 available in your session, use `Get-PSProvider`. For more information about providers, see

@@ -184,8 +184,10 @@ items:
             href: cmdlet/how-to-support-transactions.md
           - name: How to Support Jobs
             href: cmdlet/how-to-support-jobs.md
-          - name: How to Invoke a Cmdlet from Within a Cmdlet
+          - name: How to invoke a Cmdlet from within a Cmdlet
             href: cmdlet/how-to-invoke-a-cmdlet-from-within-a-cmdlet.md
+          - name: How to invoke a PSCmdlet from within a PSCmdlet
+            href: cmdlet/how-to-invoke-a-pscmdlet-from-within-a-pscmdlet.md
       - name: Tutorials for Writing Cmdlets
         href: cmdlet/tutorials-for-writing-cmdlets.md
         items:

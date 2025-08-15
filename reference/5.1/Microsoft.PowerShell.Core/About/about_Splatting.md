@@ -1,10 +1,10 @@
 ---
 description: Describes how to use splatting to pass parameters to commands in PowerShell.
 Locale: en-US
-ms.date: 04/08/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/29/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Splatting
+title: about_Splatting
 ---
 
 # about_Splatting
@@ -69,7 +69,8 @@ table of parameter-name and parameter-value pairs and stores it in the
 variable in a command with splatting. The At symbol (`@HashArguments`) replaces
 the dollar sign (`$HashArguments`) in the command.
 
-To provide a value for the **WhatIf** switch parameter, use `$True` or `$False`.
+To provide a value for the **WhatIf** switch parameter, use `$true` or
+`$false`.
 
 ```powershell
 $HashArguments = @{
@@ -128,11 +129,12 @@ an array of strings.
 ```powershell
 $array = 'Hello', 'World!'
 Invoke-Command -ScriptBlock {
-  param([string[]]$words) $words -join ' '
+  param([string[]]$Words) $Words -join ' '
   } -ArgumentList $array
 ```
 
 In this example, only the first item in `$array` is passed to the script block.
+
 ```Output
 Hello
 ```
@@ -140,8 +142,8 @@ Hello
 ```powershell
 $array = 'Hello', 'World!'
 Invoke-Command -ScriptBlock {
-  param([string[]]$words) $words -join ' '
-  } -ArgumentList (,$array)
+  param([string[]]$Words) $Words -join ' '
+} -ArgumentList (,$array)
 ```
 
 In this example, `$array` is wrapped in an array so that the entire
@@ -152,6 +154,8 @@ Hello World!
 ```
 
 ## Examples
+
+### Example 1: Reuse splatted parameters in different commands
 
 This example shows how to reuse splatted values in different commands. The
 commands in this example use the `Write-Host` cmdlet to write messages to the
@@ -181,7 +185,9 @@ Write-Host "This is a test." @Colors
 Write-Host @Colors "This is another test."
 ```
 
-This example shows how to forward their parameters to other commands by using
+### Example 2: Forward parameters using $PSBoundParameters
+
+This example shows how to forward their parameters to other commands using
 splatting and the `$PSBoundParameters` automatic variable.
 
 The `$PSBoundParameters` automatic variable is a dictionary object
@@ -198,9 +204,9 @@ function Test1
 {
     param($a, $b, $c)
 
-    $a
-    $b
-    $c
+    "a = $a"
+    "b = $b"
+    "c = $c"
 }
 
 function Test2
@@ -208,22 +214,42 @@ function Test2
     param($a, $b, $c)
 
     #Call the Test1 function with $a, $b, and $c.
-    Test1 @PsBoundParameters
+    Test1 @PSBoundParameters
 
     #Call the Test1 function with $b and $c, but not with $a
-    $LimitedParameters = $PSBoundParameters
-    $LimitedParameters.Remove("a") | Out-Null
-    Test1 @LimitedParameters
+    Test1 -b $PSBoundParameters.b -c $PSBoundParameters.c
 }
+
+Test2 -a 1 -b 2 -c 3
 ```
 
 ```Output
-Test2 -a 1 -b 2 -c 3
-1
-2
-3
-2
-3
+a = 1
+b = 2
+c = 3
+a =
+b = 2
+c = 3
+```
+
+### Example 3: Using multiple splatted objects in a single command
+
+You can use multiple splatted objects in a single command. In this example,
+different parameters are defined in separate hashtables. The hashtables are
+splatted in a single `Write-Host` command.
+
+```powershell
+$a = @{
+    Message         = 'Hello', 'World!'
+}
+$b = @{
+    Separator       = '|'
+}
+$c = @{
+    BackgroundColor = 'Cyan'
+    ForegroundColor = 'Black'
+}
+Write-Host @a @b @c
 ```
 
 ## Splatting command parameters
@@ -232,25 +258,25 @@ You can use splatting to represent the parameters of a command. This technique
 is useful when you are creating a proxy function, that is, a function that
 calls another command. This feature is introduced in Windows PowerShell 3.0.
 
-To splat the parameters of a command, use `@Args` to represent the command
+To splat the parameters of a command, use `@args` to represent the command
 parameters. This technique is easier than enumerating command parameters and
 it works without revision even if the parameters of the called command change.
 
-The feature uses the `$Args` automatic variable, which contains all unassigned
+The feature uses the `$args` automatic variable, which contains all unassigned
 parameter values.
 
 For example, the following function calls the `Get-Process` cmdlet. In this
-function, `@Args` represents all the parameters of the `Get-Process` cmdlet.
+function, `@args` represents all the parameters of the `Get-Process` cmdlet.
 
 ```powershell
-function Get-MyProcess { Get-Process @Args }
+function Get-MyProcess { Get-Process @args }
 ```
 
 When you use the `Get-MyProcess` function, all unassigned parameters and
-parameter values are passed to `@Args`, as shown in the following commands.
+parameter values are passed to `@args`, as shown in the following commands.
 
 ```powershell
-Get-MyProcess -Name PowerShell
+Get-MyProcess -Name powershell
 ```
 
 ```Output
@@ -260,7 +286,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 ```powershell
-Get-MyProcess -Name PowerShell_Ise -FileVersionInfo
+Get-MyProcess -Name powershell_ise -FileVersionInfo
 ```
 
 ```Output
@@ -269,29 +295,31 @@ ProductVersion   FileVersion      FileName
 6.2.9200.16384   6.2.9200.1638... C:\Windows\system32\WindowsPowerShell\...
 ```
 
-You can use `@Args` in a function that has explicitly declared parameters. You
+You can use `@args` in a function that has explicitly declared parameters. You
 can use it more than once in a function, but all parameters that you enter are
-passed to all instances of `@Args`, as shown in the following example.
+passed to all instances of `@args`, as shown in the following example.
 
 ```powershell
 function Get-MyCommand
 {
-    Param ([switch]$P, [switch]$C)
-    if ($P) { Get-Process @Args }
-    if ($C) { Get-Command @Args }
+    param ([switch]$P, [switch]$C)
+    if ($P) { Get-Process @args }
+    if ($C) { Get-Command @args }
 }
 
-Get-MyCommand -P -C -Name PowerShell
+Get-MyCommand -P -C -Name powershell
 ```
 
 ```Output
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-408      28    75568      83176   620     1.33   1692 powershell
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    830      50   115840      95524      16.75   6880   1 powershell
 
-Path               : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.e
+Path               : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
 Extension          : .exe
-Definition         : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.e
+Definition         : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Source             : C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Version            : 10.0.22621.3085
 Visibility         : Public
 OutputType         : {System.String}
 Name               : powershell.exe
@@ -302,14 +330,13 @@ RemotingCapability : PowerShell
 Parameters         :
 ParameterSets      :
 HelpUri            :
-FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell
-                     \v1.0\powershell.exe
+FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
                      InternalName:     POWERSHELL
                      OriginalFilename: PowerShell.EXE.MUI
-                     FileVersion:      10.0.14393.0 (rs1_release.160715-1616
+                     FileVersion:      10.0.22621.1 (WinBuild.160101.0800)
                      FileDescription:  Windows PowerShell
-                     Product:          Microsoft Windows Operating System
-                     ProductVersion:   10.0.14393.0
+                     Product:          Microsoft&reg; Windows&reg; Operating System
+                     ProductVersion:   10.0.22621.1
                      Debug:            False
                      Patched:          False
                      PreRelease:       False
@@ -327,11 +354,18 @@ parameter definition.
 
 PowerShell Desired State Configuration (DSC) was not designed to use splatting.
 You cannot use splatting to pass values into a DSC resource. For more
-information, see Gael Colas' article [Pseudo-Splatting DSC Resources](https://gaelcolas.com/2017/11/05/pseudo-splatting-dsc-resources/).
+information, see Gael Colas' article [Pseudo-Splatting DSC Resources][05].
 
 ## See also
 
-- [about_Arrays](about_Arrays.md)
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Hash_Tables](about_Hash_Tables.md)
-- [about_Parameters](about_Parameters.md)
+- [about_Arrays][01]
+- [about_Automatic_Variables][02]
+- [about_Hash_Tables][03]
+- [about_Parameters][04]
+
+<!-- link references -->
+[01]: about_Arrays.md
+[02]: about_Automatic_Variables.md
+[03]: about_Hash_Tables.md
+[04]: about_Parameters.md
+[05]: https://gaelcolas.com/2017/11/05/pseudo-splatting-dsc-resources/

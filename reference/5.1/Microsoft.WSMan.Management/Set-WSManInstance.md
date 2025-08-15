@@ -2,11 +2,12 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 05/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmaninstance?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/set-wsmaninstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-WSManInstance
 ---
+
 # Set-WSManInstance
 
 ## SYNOPSIS
@@ -316,7 +317,7 @@ Specifies the path of a file that is used to update a management resource. You s
 management resource by using the **ResourceURI** parameter and the **SelectorSet** parameter. For
 example, the following command uses the **FilePath** parameter:
 
-`Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:c:\input.xml -authentication default`
+`Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:C:\input.xml -Authentication Default`
 
 This command calls the **StopService** method on the Spooler service by using input from a file.
 The file, `Input.xml`, contains the following content:
@@ -512,13 +513,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

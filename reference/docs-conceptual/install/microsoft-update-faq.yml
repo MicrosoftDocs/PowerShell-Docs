@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  ms.date: 06/21/2022
+  ms.date: 02/20/2025
   title:  Microsoft Update for PowerShell FAQ
   description: Frequently asked questions about the using Microsoft Update to update PowerShell
   ms.topic: faq
@@ -35,13 +35,19 @@ sections:
           the update from the [Releases](https://github.com/PowerShell/PowerShell/releases) page on
           GitHub.
 
+      - question: Why is the latest LTS version not marked as LTS?
+        answer: |
+          We mark the earliest minor version LTS until it goes out of support. For example, both PowerShell
+          7.2 and 7.4 are LTS releases and have a year of overlapping support. PowerShell 7.2 was marked
+          as the latest LTS in MU until it reached end of support in November 2024.
+
   - name: Configuration
     questions:
       - question: What version of Windows is required to support the Microsoft Update feature?
         answer: |
-          You must have Windows Version 1709 or newer installed on an x64-based system. Version 1709
-          is the Windows 10 Fall Creators Update or the October update of Windows Server 2016. Versions
-          prior to 1709 do not support Microsoft Update for PowerShell.
+          You must have Windows Version 1809 or newer installed on an x64-based system. Version 1809
+          is the Windows 10 October 2018 Update or Windows Server 2019. Versions
+          prior to 1809 do not support Microsoft Update for PowerShell.
 
       - question: Do I need to check both boxes in the setup dialog?
         answer: |
@@ -71,8 +77,8 @@ sections:
           Yes. The MSI package includes two new MSI options for enabling the update features:
 
           - `USE_MU` - This property has two possible values:
-          - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
-          - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
+            - `1` (default) - Opts into updating through Microsoft Update, WSUS, or SCCM
+            - `0` -  Do not opt into updating through Microsoft Update, WSUS, or SCCM
           - `ENABLE_MU`
             - `1` (default) - Opts into using Microsoft Update for Automatic Updates
             - `0` - Do not opt into using Microsoft Update
@@ -82,7 +88,7 @@ sections:
 
   - name: Troubleshooting
     questions:
-      - question: I haven't received an update for the new release. Why not?
+      - question: Why haven't I received an update for the new release?
         answer: |
           There can be several reasons for not receiving the update:
 
@@ -96,8 +102,31 @@ sections:
             doesn't show the check box options. To enable MU updates run the following command:
 
             ```powershell
-            msiexec.exe /fmu .\PowerShell-7.2.6-win-x64.msi USE_MU=1 ENABLE_MU=1
+            msiexec.exe /fmu .\PowerShell-7.4.10-win-x64.msi USE_MU=1 ENABLE_MU=1
             ```
 
             For more information about running `msiexec.exe` from the command line, see
             [msiexec](/windows-server/administration/windows-commands/msiexec#repair-options).
+
+      - question: I am on PowerShell 7.x, why have I not been upgraded to 7.y?
+        answer: |
+          The Microsoft Update feature for PowerShell only updates versions in the same release channel.
+          PowerShell 7.4 is the latest long term supported (LTS) version. PowerShell 7.5 is the latest
+          stable (non-LTS) version. Microsoft Update provides updates for the next patch level
+          versions of either version. For example:
+
+          - If you are running 7.4, you will receive updates for 7.4.
+          - If you are running 7.5, you will receive updates for 7.5.
+
+          Microsoft Update will never upgrade an LTS release to a stable non-LTS release. However, a
+          stable non-LTS release will be upgraded to the higher LTS release when support for the
+          stable release ends.
+
+          Preview releases are never upgraded to the GA release version. However, they will be
+          upgraded to the next available preview release. For example: Consider the scenario where
+          you have 7.4 (LTS) installed and the 7.5-rc.1 (preview) release installed. When 7.5.0
+          (Stable) released, your 7.4 (LTS) installation is not upgraded to 7.5.0. Also, 7.5.0
+          can't upgrade 7.5-rc.1. However, 7.6-preview.2 can upgrade 7.5-rc.1.
+
+          For more information, see
+          [PowerShell Support Lifecycle](/powershell/scripting/install/powershell-support-lifecycle).

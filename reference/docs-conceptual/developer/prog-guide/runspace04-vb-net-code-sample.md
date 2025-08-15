@@ -1,12 +1,11 @@
 ---
 description: RunSpace04  (VB.NET) Code Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: RunSpace04  (VB.NET) Code Sample
 ---
 # RunSpace04  (VB.NET) Code Sample
 
-Here is the VB.NET source code for the Runspace04 sample. This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error. The host application is responsible for catching the error and interpreting the error record.
+Here is the VB.NET source code for the Runspace04 sample. This sample uses the [System.Management.Automation.RunspaceInvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error. The host application is responsible for catching the error and interpreting the error record.
 
 > [!NOTE]
 > You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
@@ -52,13 +51,13 @@ Namespace Microsoft.Samples.PowerShell.Runspaces
             ' Define a list of patterns to use in matching
             ' Note that the fourth pattern is not a valid regular
             ' expression so it will cause a terminating exception to
-            ' be thrown when used in select-string.
+            ' be thrown when used in Select-String.
             Dim patterns() As String = {"aa", "bc", "ab*c", "*", "abc"}
 
             ' The script to run to use the patterns. Input passed
             ' to the script will be available in the $input variable.
             Dim script As String = "$input | where {" & _
-                " select-string $_ -inputobject 'abc' }"
+                " Select-String $_ -InputObject 'abc' }"
 
             ' Create an instance of the RunspaceInvoke class.
             Dim invoker As New RunspaceInvoke()

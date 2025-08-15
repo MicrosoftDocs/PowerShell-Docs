@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Operation.Validation-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Operation.Validation
-ms.date: 10/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/get-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.operation.validation/get-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-OperationValidation
 ---
@@ -104,13 +104,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe any input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### PSCustomObject
+### System.Management.Automation.PSCustomObject
 
-The **PSCustomObject** describes the validation.
+This cmdlet returns a **PSCustomObject** describing the validation.
 
 ## NOTES
 

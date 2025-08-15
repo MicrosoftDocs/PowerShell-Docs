@@ -1,10 +1,10 @@
 ---
-description: Describes the Throw keyword, which generates a terminating error.
+description: Describes the `throw` keyword, which generates a terminating error.
 Locale: en-US
 ms.date: 08/24/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Throw
+title: about_Throw
 ---
 # about_Throw
 
@@ -80,7 +80,7 @@ throw (Get-Process pwsh)
 
 ```Output
 At line:1 char:6
-+ throw <<<<  (get-process PowerShell)
++ throw <<<<  (Get-Process powershell)
 + CategoryInfo          : OperationStopped: (System.Diagnostics.Process (Pow
 erShell):Process) [],
 RuntimeException

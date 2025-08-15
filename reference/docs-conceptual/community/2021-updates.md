@@ -1,12 +1,12 @@
 ---
 description: List of changes to the PowerShell documentation for 2021
-ms.date: 02/01/2022
+ms.date: 03/30/2025
 title: What's New in PowerShell-Docs for 2021
 ---
 # What's new in PowerShell Docs for 2021
 
-This article lists some of the major changes to docs during this previous month and celebrates the
-contributions from the community.
+This article lists notable changes made to docs each month and celebrates the contributions from the
+community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
@@ -148,7 +148,7 @@ Content updates
   - [Microsoft Update for PowerShell FAQ](/powershell/scripting/install/microsoft-update-faq)
   - [PowerShell Support Lifecycle](/powershell/scripting/install/powershell-support-lifecycle)
 - Reformatted and updated the PSScriptAnalyzer rules documentation. Next month we plan to publish these
-  docs on Microsoft Docs.
+  docs to Microsoft Learn.
   - [Rules documentation on GitHub](https://github.com/PowerShell/PSScriptAnalyzer/tree/master/docs/Rules)
 - Lots of general editorial updates across 4500 files
 - PowerShell 7.2-preview.10 documentation updates
@@ -258,8 +258,8 @@ New content
 
 Content updates
 
-- Converted [about_remote_faq](/powershell/scripting/learn/remoting/powershell-remoting-faq) to new
-  Yaml format and moved to conceptual TOC
+- Converted [about_Remote_FAQ](/powershell/scripting/learn/remoting/powershell-remoting-faq) to new
+  YAML format and moved to conceptual TOC
 - Moved **PSDesiredStateConfiguration** out of 7.2 docs and into PowerShell-Docs-Modules
   - DSC is being removed from PowerShell to become an optional module that is loaded from the
     PowerShell Gallery
@@ -333,7 +333,7 @@ issues. Thank you!
 
 New Content
 
-- Published new Learn content   [Write your first PowerShell code](/learn/modules/powershell-write-first/)
+- Published new Learn content   [Write your first PowerShell code](/training/modules/powershell-write-first/)
 - Updated docs for PowerShell 7.2-preview.5
 - Updated metadata on ~3300 articles in the Windows module documentation
   - Preparing for Windows Server 2022 release and fixing updateable help

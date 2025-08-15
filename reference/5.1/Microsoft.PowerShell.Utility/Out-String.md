@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-String
 ---
@@ -29,7 +29,7 @@ parameter to direct `Out-String` to return one line at a time or create an array
 cmdlet lets you search and manipulate string output as you would in traditional shells when object
 manipulation is less convenient.
 
-PowerShell also adds the `OSS` function that calls `Out-String -Stream` as a shorthand way to use
+PowerShell also adds the `oss` function that calls `Out-String -Stream` as a shorthand way to use
 `Out-String` in a pipeline.
 
 ## EXAMPLES
@@ -197,13 +197,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can send objects down the pipeline to `Out-String`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
 
-`Out-String` returns the string that it creates from the input object.
+This cmdlet returns the string that it creates from the input object.
 
 ## NOTES
 

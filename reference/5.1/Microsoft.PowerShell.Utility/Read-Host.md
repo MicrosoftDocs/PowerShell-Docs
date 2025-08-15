@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/18/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 05/22/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/read-host?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Read-Host
 ---
+
 # Read-Host
 
 ## SYNOPSIS
@@ -47,6 +48,55 @@ value is stored as a **SecureString** object in the `$pwd_secure_string` variabl
 ```powershell
 $pwd_secure_string = Read-Host "Enter a Password" -AsSecureString
 ```
+
+### Example 3: Normalizing input
+
+This example prompts the user to input a list of cities separated by semi-colons. It shows the
+string's value as typed by the user. In the example, the user added spaces between some of
+the entries. This could lead to an error later in the script where the code expects an exact
+name.
+
+The example shows how you can convert an input string into an array of entries without any
+extra spaces.
+
+```powershell
+$prompt = @(
+    'List the cities you want weather information for.'
+    'When specifying multiple cities, separate them with a semi-colon, like:'
+    "'New York; Osan; Koforidua'"
+) -join ' '
+
+$cities = Read-Host $prompt
+
+"Input cities string: `n`t'$cities'"
+
+$splitCities = $cities -split ';'
+
+"Split cities array:"
+$splitCities | ForEach-Object -Process { "`t'$_'" }
+
+$normalizedCities = $splitCities  | ForEach-Object -Process { $_.Trim() }
+
+"Normalized split cities array:"
+$normalizedCities | ForEach-Object -Process { "`t'$_'" }
+```
+
+```output
+Input cities string:
+        '    New York;  Osan   ;Koforidua   '
+Split cities array:
+        '    New York'
+        '  Osan   '
+        'Koforidua   '
+Normalized split cities array:
+        'New York'
+        'Osan'
+        'Koforidua'
+```
+
+The example uses the `-split` operator to convert the input string into an array of strings. Each
+string in the array includes the name of a different city. However, the split strings include extra
+spaces. The `Trim()` method removes the leading and trailing spaces from each string.
 
 ## PARAMETERS
 
@@ -96,14 +146,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept input from the PowerShell pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### System.String or System.Security.SecureString
+### System.String
 
-If the **AsSecureString** parameter is used, `Read-Host` returns a **SecureString**. Otherwise, it
-returns a string.
+By default, this cmdlet returns a string.
+
+### System.Security.SecureString
+
+When you use **AsSecureString** parameter, this cmdlet returns a **SecureString**.
 
 ## NOTES
 

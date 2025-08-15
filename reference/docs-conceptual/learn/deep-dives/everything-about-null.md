@@ -1,7 +1,7 @@
 ---
 description: The PowerShell $null often appears to be simple but it has a lot of nuances. Let's take a close look at $null so you know what happens when you unexpectedly run into a null value.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 06/11/2024
 title: Everything you wanted to know about $null
 ---
 # Everything you wanted to know about $null
@@ -61,8 +61,8 @@ If you use `$null` in a string, then it's a blank value (or empty string).
 
 ```powershell
 PS> $value = $null
-PS> Write-Output "The value is $value"
-The value is
+PS> Write-Output "'The value is $value'"
+'The value is '
 ```
 
 This is one of the reasons that I like to place brackets around variables when using them in log
@@ -126,11 +126,11 @@ property, you get a `$null` value like you would for an undefined variable. It d
 variable is `$null` or an actual object in this case.
 
 ```powershell
-PS> $null -eq $undefined.some.fake.property
+PS> $null -eq $undefined.Some.Fake.Property
 True
 
 PS> $date = Get-Date
-PS> $null -eq $date.some.fake.property
+PS> $null -eq $date.Some.Fake.Property
 True
 ```
 
@@ -140,10 +140,10 @@ Calling a method on a `$null` object throws a `RuntimeException`.
 
 ```powershell
 PS> $value = $null
-PS> $value.toString()
+PS> $value.ToString()
 You cannot call a method on a null-valued expression.
 At line:1 char:1
-+ $value.tostring()
++ $value.ToString()
 + ~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
     + FullyQualifiedErrorId : InvokeMethodOnNull
@@ -189,7 +189,7 @@ Not only can we create a value that makes both of them evaluate to `$false`, it'
 create a value where they both evaluate to `$true`. Mathias Jessen (@IISResetMe) has a
 [good post][good post] that dives into that scenario.
 
-### PSScriptAnalyzer and VSCode
+### PSScriptAnalyzer and VS Code
 
 The [PSScriptAnalyzer][PSScriptAnalyzer] module has a rule that checks for this issue called
 `PSPossibleIncorrectComparisonWithNull`.
@@ -246,9 +246,9 @@ I ran into this issue when refactoring some code a few days ago. It had a basic 
 this.
 
 ```powershell
-if ( $object.property )
+if ( $object.Property )
 {
-    $object.property = $value
+    $object.Property = $value
 }
 ```
 
@@ -259,9 +259,9 @@ the property but it was a blank string value. This prevented it from ever gettin
 previous logic. So I added a proper `$null` check and everything worked.
 
 ```powershell
-if ( $null -ne $object.property )
+if ( $null -ne $object.Property )
 {
-    $object.property = $value
+    $object.Property = $value
 }
 ```
 
@@ -269,41 +269,42 @@ It's little bugs like these that are hard to spot and make me aggressively check
 
 ## $null.Count
 
-If you try to access a property on a `$null` value, that the property is also `$null`. The `count`
+If you try to access a property on a `$null` value, that the property is also `$null`. The `Count`
 property is the exception to this rule.
 
 ```powershell
 PS> $value = $null
-PS> $value.count
+PS> $value.Count
 0
 ```
 
-When you have a `$null` value, then the `count` is `0`. This special property is added by
+When you have a `$null` value, then the `Count` is `0`. This special property is added by
 PowerShell.
 
 ### [PSCustomObject] Count
 
-Almost all objects in PowerShell have that count property. One important exception is the
-`[PSCustomObject]` in Windows PowerShell 5.1 (This is fixed in PowerShell 6.0). It doesn't have a
-count property so you get a `$null` value if you try to use it. I call this out here so that you
-don't try to use `.Count` instead of a `$null` check.
+Almost all objects in PowerShell have that `Count` property. One important exception is the
+`[pscustomobject]` in Windows PowerShell 5.1 (This is fixed in PowerShell 6.0). It doesn't have a
+`Count` property so you get a `$null` value if you try to use it. I call this out here so that you
+don't try to use `Count` instead of a `$null` check.
 
 Running this example on Windows PowerShell 5.1 and PowerShell 6.0 gives you different results.
 
 ```powershell
-$value = [PSCustomObject]@{Name='MyObject'}
-if ( $value.count -eq 1 )
+$value = [pscustomobject]@{Name='MyObject'}
+if ( $value.Count -eq 1 )
 {
     "We have a value"
 }
 ```
 
-## Empty null
+## Enumerable null
 
 There is one special type of `$null` that acts differently than the others. I am going to call it
-the empty `$null` but it's really a [System.Management.Automation.Internal.AutomationNull][System.Management.Automation.Internal.AutomationNull]. This
-empty `$null` is the one you get as the result of a function or script block that returns nothing (a
-void result).
+the enumerable null but it's really a
+[System.Management.Automation.Internal.AutomationNull][System.Management.Automation.Internal.AutomationNull].
+This enumerable null is the one you get as the result of a function or script block that returns
+nothing (a void result).
 
 ```powershell
 PS> function Get-Nothing {}
@@ -317,31 +318,32 @@ required, the value is always `$null`. But if you place it inside an array, it's
 an empty array.
 
 ```powershell
-PS> $containempty = @( @() )
-PS> $containnothing = @($nothing)
-PS> $containnull = @($null)
+PS> $containEmpty = @( @() )
+PS> $containNothing = @($nothing)
+PS> $containNull = @($null)
 
-PS> $containempty.count
+PS> $containEmpty.Count
 0
-PS> $containnothing.count
+PS> $containNothing.Count
 0
-PS> $containnull.count
+PS> $containNull.Count
 1
 ```
 
-You can have an array that contains one `$null` value and its `count` is `1`. But if you place
-an empty result inside an array then it's not counted as an item. The count is `0`.
+You can have an array that contains one `$null` value and its `Count` is `1`. But if you place
+an empty array inside an array then it's not counted as an item. The count is `0`.
 
-If you treat the empty `$null` like a collection, then it's empty.
+If you treat the enumerable null like a collection, then it's empty.
 
-If you pass in an empty value to a function parameter that isn't strongly typed, PowerShell coerces
-the nothing value into a `$null` value by default. This means inside the function, the value will be
-treated as `$null` instead of the **System.Management.Automation.Internal.AutomationNull** type.
+If you pass in an enumerable null to a function parameter that isn't strongly typed, PowerShell
+coerces the enumerable null into a `$null` value by default. This means inside the function, the
+value is treated as `$null` instead of the **System.Management.Automation.Internal.AutomationNull**
+type.
 
 ### Pipeline
 
 The primary place you see the difference is when using the pipeline. You can pipe a `$null`
-value but not an empty `$null` value.
+value but not an enumerable null value.
 
 ```powershell
 PS> $null | ForEach-Object{ Write-Output 'NULL Value' }
@@ -353,7 +355,7 @@ Depending on your code, you should account for the `$null` in your logic.
 
 Either check for `$null` first
 
-- Filter out null on the pipeline (`... | Where {$null -ne $_} | ...`)
+- Filter out null on the pipeline (`... | where {$null -ne $_} | ...`)
 - Handle it in the pipeline function
 
 ## foreach
@@ -370,7 +372,7 @@ foreach ( $node in $null )
 This saves me from having to `$null` check the collection before I enumerate it. If you have a
 collection of `$null` values, the `$node` can still be `$null`.
 
-The foreach started working this way with PowerShell 3.0. If you happen to be on an older version,
+The `foreach` started working this way with PowerShell 3.0. If you happen to be on an older version,
 then this is not the case. This is one of the important changes to be aware of when back-porting
 code for 2.0 compatibility.
 
@@ -418,7 +420,7 @@ it.
 function Do-Something
 {
     param(
-        [String] $Value
+        [string] $Value
     )
 }
 ```
@@ -476,15 +478,15 @@ those scenarios earlier in this post.
 ### No results scenario
 
 It's important to know that different functions and commands handle the no results scenario
-differently. Many PowerShell commands return the empty `$null` and an error in the error stream. But
-others throw exceptions or give you a status object. It's still up to you to know how the commands
-you use deal with the no results and error scenarios.
+differently. Many PowerShell commands return the enumerable null and an error in the error stream.
+But others throw exceptions or give you a status object. It's still up to you to know how the
+commands you use deal with the no results and error scenarios.
 
 ## Initializing to $null
 
 One habit that I have picked up is initializing all my variables before I use them. You are required
-to do this in other languages. At the top of my function or as I enter a foreach loop, I define all
-the values that I'm using.
+to do this in other languages. At the top of my function or as I enter a `foreach` loop, I define
+all the values that I'm using.
 
 Here is a scenario that I want you to take a close look at. It's an example of a bug I had to chase
 down before.
@@ -496,7 +498,7 @@ function Do-Something
     {
         try
         {
-            $result = Get-Something -ID $node
+            $result = Get-Something -Id $node
         }
         catch
         {
@@ -511,15 +513,15 @@ function Do-Something
 }
 ```
 
-The expectation here is that `Get-Something` returns either a result or an empty `$null`. If there
-is an error, we log it. Then we check to make sure we got a valid result before processing it.
+The expectation here is that `Get-Something` returns either a result or an enumerable null. If
+there's an error, we log it. Then we check to make sure we got a valid result before processing it.
 
 The bug hiding in this code is when `Get-Something` throws an exception and doesn't assign a value
 to `$result`. It fails before the assignment so we don't even assign `$null` to the `$result`
 variable. `$result` still contains the previous valid `$result` from other iterations.
 `Update-Something` to execute multiple times on the same object in this example.
 
-I set `$result` to `$null` right inside the foreach loop before I use it to mitigate this issue.
+I set `$result` to `$null` right inside the `foreach` loop before I use it to mitigate this issue.
 
 ```powershell
 foreach ( $node in 1..6 )
@@ -555,7 +557,7 @@ function Do-Something
 {
     try
     {
-        $result = Get-Something -ID $node
+        $result = Get-Something -Id $node
     }
     catch
     {

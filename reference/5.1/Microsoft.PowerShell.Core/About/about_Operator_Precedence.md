@@ -2,13 +2,14 @@
 description: Lists the PowerShell operators in precedence order.
 Locale: en-US
 ms.date: 06/29/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Operator Precedence
+title: about_Operator_Precedence
 ---
 # about_Operator_Precedence
 
 ## Short description
+
 Lists the PowerShell operators in precedence order.
 
 ## Long description
@@ -33,7 +34,7 @@ precedence.
 
 The Operator column lists the operators. The Reference column lists the
 PowerShell Help topic in which the operator is described. To display the topic,
-type `get-help <topic-name>`.
+type `Get-Help <topic-name>`.
 
 |          OPERATOR           |              REFERENCE               |
 | --------------------------- | ------------------------------------ |
@@ -65,7 +66,7 @@ and explicitly case-insensitive variants have the same precedence.
 | `-like -notlike`          | [about_Comparison_Operators][compare] |
 | `-match -notmatch`        | [about_Comparison_Operators][compare] |
 | `-in -notIn`              | [about_Comparison_Operators][compare] |
-| `-contains -notContains`  | [about_Comparison_Operators][compare] |
+| `-contains -notcontains`  | [about_Comparison_Operators][compare] |
 | `-replace`                | [about_Comparison_Operators][compare] |
 
 The list resumes here with the following operators in precedence
@@ -109,19 +110,19 @@ The following example gets the read-only text files from the local directory
 and saves them in the `$read_only` variable.
 
 ```powershell
-$read_only = Get-ChildItem *.txt | Where-Object {$_.isReadOnly}
+$read_only = Get-ChildItem *.txt | Where-Object {$_.IsReadOnly}
 ```
 
 It is equivalent to the following example.
 
 ```powershell
-$read_only = ( Get-ChildItem *.txt | Where-Object {$_.isReadOnly} )
+$read_only = ( Get-ChildItem *.txt | Where-Object {$_.IsReadOnly} )
 ```
 
 Because the pipeline operator (`|`) has a higher precedence than the assignment
 operator (`=`), the files that the `Get-ChildItem` cmdlet gets are sent to the
-`Where-Object` cmdlet for filtering before they are assigned to the `$read_only`
-variable.
+`Where-Object` cmdlet for filtering before they are assigned to the
+`$read_only` variable.
 
 The following example demonstrates that the index operator takes precedence
 over the cast operator.
@@ -192,7 +193,7 @@ are reading and maintaining your scripts.
 [assign]: about_Assignment_Operators.md
 [compare]: about_Comparison_Operators.md
 [join]: about_Join.md
-[logic]: about_logical_operators.md
+[logic]: about_Logical_Operators.md
 [ops]: about_Operators.md
 [redir]: about_Redirection.md
 [scopes]: about_Scopes.md

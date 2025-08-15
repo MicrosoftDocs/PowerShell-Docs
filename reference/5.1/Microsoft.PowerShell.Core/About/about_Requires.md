@@ -1,23 +1,24 @@
 ---
 description: Prevents a script from running without the required elements.
 Locale: en-US
-ms.date: 08/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 08/17/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_requires?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Requires
+title: about_Requires
 ---
 
 # about_Requires
 
 ## Short description
+
 Prevents a script from running without the required elements.
 
 ## Long description
 
 The `#Requires` statement prevents a script from running unless the PowerShell
-version, modules (and version), or snap-ins (and version), and edition
-prerequisites are met. If the prerequisites aren't met, PowerShell doesn't run
-the script or provide other runtime features, such as tab completion.
+version, modules (and version), and edition prerequisites are met. If the
+prerequisites aren't met, PowerShell doesn't run the script or provide other
+runtime features, such as tab completion.
 
 ### Syntax
 
@@ -38,13 +39,13 @@ For more information about the syntax, see
 A script can include more than one `#Requires` statement. The `#Requires`
 statements can appear on any line in a script.
 
-Placing a `#Requires` statement inside a function does NOT limit its scope. All
+Placing a `#Requires` statement inside a function doesn't limit its scope. All
 `#Requires` statements are always applied globally, and must be met, before the
 script can execute.
 
 > [!WARNING]
 > Even though a `#Requires` statement can appear on any line in a script, its
-> position in a script does not affect the sequence of its application. The
+> position in a script doesn't affect the sequence of its application. The
 > global state the `#Requires` statement presents must be met before script
 > execution.
 
@@ -113,6 +114,11 @@ and an optional version number.
 
 If the required modules aren't in the current session, PowerShell imports them.
 If the modules can't be imported, PowerShell throws a terminating error.
+
+The `#Requires` statement doesn't load class and enumeration definitions in the
+module. Use the `using module` statement at the beginning of your script to
+import the module, including the class and enumeration definitions. For more
+information, see [about_Using](about_Using.md).
 
 For each module, type the module name (\<String\>) or a hashtable. The value
 can be a combination of strings and hashtables. The hashtable has the
@@ -226,10 +232,10 @@ specified in both statements aren't met, the script doesn't run. Each
 ```powershell
 #Requires -Modules PSWorkflow
 #Requires -Version 3
-Param
+param
 (
-    [parameter(Mandatory=$true)]
-    [String[]]
+    [Parameter(Mandatory=$true)]
+    [string[]]
     $Path
 )
 ...

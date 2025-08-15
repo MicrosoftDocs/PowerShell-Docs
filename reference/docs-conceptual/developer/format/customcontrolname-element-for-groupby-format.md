@@ -1,7 +1,6 @@
 ---
 description: CustomControlName Element for GroupBy
 ms.date: 09/13/2016
-ms.topic: reference
 title: CustomControlName Element for GroupBy
 ---
 # CustomControlName Element for GroupBy

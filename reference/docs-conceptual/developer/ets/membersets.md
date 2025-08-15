@@ -1,7 +1,6 @@
 ---
 description: Extended Type System member sets
 ms.date: 07/09/2020
-ms.topic: reference
 title: Extended Type System member sets
 ---
 # ETS member sets
@@ -14,7 +13,7 @@ which properties to display for a given **PSObject** object.
 
 ## Property Sets
 
-Property sets can include any number of properties of an **PSObject** type. In general, a property
+Property sets can include any number of properties of a **PSObject** type. In general, a property
 set can be used whenever a collection of properties (of the same type) is needed. The property set
 is created by calling the
 `PSPropertySet(System.String,System.Collections.Generic.IEnumerable{System.String})` constructor

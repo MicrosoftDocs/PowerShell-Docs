@@ -2,9 +2,12 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/06/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-history?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 09/15/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-history?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ghy
+  - history
 title: Get-History
 ---
 # Get-History
@@ -62,7 +65,7 @@ saves it in the History.csv file. The file includes the data that is displayed w
 history as a list. This includes the status and start and end times of the command.
 
 ```powershell
-Get-History -ID 7 -Count 5 | Export-Csv History.csv
+Get-History -Id 7 -Count 5 | Export-Csv -Path History.csv
 ```
 
 ### Example 4: Display the most recent command
@@ -148,6 +151,12 @@ You can pipe a history ID to this cmdlet.
 This cmdlet returns a history object for each history item that it gets.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-History`:
+
+  - `h`
+  - `history`
+  - `ghy`
 
 The session history is a list of the commands entered during the session. The session history
 represents the run order, the status, and the start and end times of the command. As you enter each

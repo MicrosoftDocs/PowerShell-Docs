@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/enable-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/enable-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-JobTrigger
 ---
@@ -44,7 +44,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 ### Example 1: Enable a job trigger
 
 ```powershell
-Get-JobTrigger -Name Backup-Archives -TriggerID 1 | Enable-JobTrigger
+Get-JobTrigger -Name Backup-Archives -TriggerId 1 | Enable-JobTrigger
 ```
 
 This command enables the first trigger (ID=1) of the Backup-Archives scheduled job on the local
@@ -184,13 +184,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
-You can pipe job triggers to `Enable-JobTrigger`.
+You can pipe a job trigger to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

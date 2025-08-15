@@ -1,7 +1,6 @@
 ---
 description: This article outlines the steps required to contribute to the PowerShell documentation.
-ms.date: 07/25/2022
-ms.topic: conceptual
+ms.date: 03/30/2025
 title: Contributing to PowerShell documentation
 ---
 # Contributing to PowerShell documentation
@@ -10,7 +9,7 @@ Thank you for your support of PowerShell!
 
 The Contributor's Guide is a collection of articles that describe the tools and processes we use to
 create documentation at Microsoft. Some of these guides cover information common to any
-documentation set published to `docs.microsoft.com`. Other guides are specific to how we write
+documentation set published to `learn.microsoft.com`. Other guides are specific to how we write
 documentation for PowerShell.
 
 The common articles are available in our centralized [Contributor's Guide][1]. The
@@ -52,19 +51,18 @@ Also, read the [Writing essentials][12] section of the centralized Contributor's
 excellent resource is the [Microsoft Writing Style Guide][13].
 
 Minor corrections or clarifications to documentation and code examples in public repositories are
-covered by the [docs.microsoft.com Terms of Use][14].
+covered by the [learn.microsoft.com Terms of Use][14].
 
 Use the full GitHub workflow when you're making significant changes. If you're not an employee of
 Microsoft, our PR validation system adds a comment to the pull request asking you to sign the online
 [Contribution Licensing Agreement (CLA)][15]. You must complete this step before we can review or
 accept your pull request. Signing the CLA is only required the first time you submit a PR in the
-repository. You will be asked to sign the CLA for each time you contribute to a new repository.
+repository. You might be asked to sign the CLA for each time you contribute to a new repository.
 
 ## Code of conduct
 
-All repositories that publish to Microsoft Docs have adopted the
-[Microsoft Open Source Code of Conduct][16] or the
-[.NET Foundation Code of Conduct][17]. For more
+All repositories that publish to Microsoft Learn adhere to the
+[Microsoft Open Source Code of Conduct][16] or the [.NET Foundation Code of Conduct][17]. For more
 information, see the [Code of Conduct FAQ][18].
 
 ## Next steps
@@ -97,7 +95,7 @@ Additional resources
 [7]: https://www.powershellgallery.com/packages/posh-git
 [8]: /contribute/get-started-setup-local
 [9]: /contribute/git-github-fundamentals
-[10]: /contribute/#quick-edits-to-existing-documents
+[10]: /contribute/content/how-to-write-quick-edits
 [11]: /contribute/how-to-write-workflows-major
 [12]: /contribute/style-quick-start
 [13]: /style-guide/welcome/

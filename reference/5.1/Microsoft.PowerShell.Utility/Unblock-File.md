@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/unblock-file?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unblock-File
 ---
@@ -85,12 +85,12 @@ Stream                   Length
 Zone.Identifier              26
 
 PS C:\> C:\ps-test\Start-ActivityTracker.ps1
-c:\ps-test\Start-ActivityTracker.ps1 : File c:\ps-test\Start-ActivityTracker.ps1 cannot
-be loaded. The file c:\ps-test\Start-ActivityTracker.ps1 is not digitally signed. The script
+C:\ps-test\Start-ActivityTracker.ps1 : File C:\ps-test\Start-ActivityTracker.ps1 cannot
+be loaded. The file C:\ps-test\Start-ActivityTracker.ps1 is not digitally signed. The script
 will not execute on the system. For more information, see about_Execution_Policies.
 
 At line:1 char:1
-+ c:\ps-test\Start-ActivityTracker.ps1
++ C:\ps-test\Start-ActivityTracker.ps1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : SecurityError: (:) [], PSSecurityException
     + FullyQualifiedErrorId : UnauthorizedAccess
@@ -178,13 +178,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a file path to `Unblock-File`.
+You can pipe a file path to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

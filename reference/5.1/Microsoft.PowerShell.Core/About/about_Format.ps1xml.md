@@ -2,9 +2,9 @@
 description: The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell console. You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell.
 Locale: en-US
 ms.date: 04/25/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Format.ps1xml
+title: about_Format.ps1xml
 ---
 
 # about_Format.ps1xml
@@ -149,7 +149,7 @@ The next command copies the file contents to a new file,
 `MyDotNetTypes.Format.ps1xml`.
 
 ```powershell
-Copy-Item $PSHome\DotNetTypes.format.ps1xml MyDotNetTypes.Format.ps1xml
+Copy-Item $PSHOME\DotNetTypes.format.ps1xml MyDotNetTypes.Format.ps1xml
 ```
 
 Open the `MyDotNetTypes.Format.ps1xml` file in any XML or text editor, such as
@@ -431,7 +431,7 @@ digital signature. For more information, see
 
 The following sample creates a `Format-Table` custom view for the
 **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects created by
-`Get-ChildItem`. The custom view is named **mygciview** and adds the
+`Get-ChildItem`. The custom view is named **MyGciView** and adds the
 **CreationTime** column to the table.
 
 The custom view is created from an edited version of the
@@ -451,7 +451,7 @@ $Parms = @{
   Pattern = "System.IO.DirectoryInfo"
 }
 Select-String @Parms
-Copy-Item $PSHome\FileSystem.format.ps1xml .\MyFileSystem.Format.ps1xml
+Copy-Item $PSHOME\FileSystem.format.ps1xml .\MyFileSystem.Format.ps1xml
 Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 ```
 
@@ -500,7 +500,7 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 </Controls>
 <ViewDefinitions>
     <View>
-    <Name>mygciview</Name>
+    <Name>MyGciView</Name>
     <ViewSelectedBy>
         <SelectionSetName>FileSystemTypes</SelectionSetName>
     </ViewSelectedBy>
@@ -541,14 +541,14 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
                         </TableColumnItem>
                         <TableColumnItem>
                             <ScriptBlock>
-                                [String]::Format("{0,10}  {1,8}",
+                                [string]::Format("{0,10}  {1,8}",
                                     $_.LastWriteTime.ToString("d"),
                                     $_.LastWriteTime.ToString("t"))
                             </ScriptBlock>
                         </TableColumnItem>
                         <TableColumnItem>
                             <ScriptBlock>
-                                [String]::Format("{0,10}  {1,8}",
+                                [string]::Format("{0,10}  {1,8}",
                                     $_.CreationTime.ToString("d"),
                                     $_.LastWriteTime.ToString("t"))
                             </ScriptBlock>
@@ -570,10 +570,21 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 
 ## See also
 
-- [Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command)
-- [Export-FormatData](xref:Microsoft.PowerShell.Utility.Export-FormatData)
-- [Get-FormatData](xref:Microsoft.PowerShell.Utility.Get-FormatData)
-- [Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData)
-- [Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource)
-- [Format Schema XML Reference](/powershell/scripting/developer/format/format-schema-xml-reference)
-- [Writing a PowerShell Formatting File](/powershell/scripting/developer/format/writing-a-powershell-formatting-file)
+- [Trace-Command][05]
+- [Export-FormatData][02]
+- [Get-FormatData][01]
+- [Update-FormatData][03]
+- [Get-TraceSource][06]
+- [Format Schema XML Reference][09]
+- [Writing a PowerShell Formatting File][10]
+
+<!-- link references -->
+[01]: xref:Microsoft.PowerShell.Utility.Get-FormatData
+[02]: xref:Microsoft.PowerShell.Utility.Export-FormatData
+[03]: xref:Microsoft.PowerShell.Utility.Update-FormatData
+
+[05]: xref:Microsoft.PowerShell.Utility.Trace-Command
+[06]: xref:Microsoft.PowerShell.Utility.Get-TraceSource
+
+[09]: /powershell/scripting/developer/format/format-schema-xml-reference
+[10]: /powershell/scripting/developer/format/writing-a-powershell-formatting-file

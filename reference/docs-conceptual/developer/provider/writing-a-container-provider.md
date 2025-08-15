@@ -1,15 +1,14 @@
 ---
 description: Writing a container provider
 ms.date: 09/13/2016
-ms.topic: reference
 title: Writing a container provider
 ---
 # Writing a container provider
 
 This topic describes how to implement the methods of a Windows PowerShell provider that support
-items that contain other items, such as folders in the file system provider. To be able to support
+items that contain other items, such as folders in the FileSystem provider. To be able to support
 containers, a provider must derive from the
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
+[System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
 class.
 
 The provider in the examples in this topic uses an Access database as its data store. There are
@@ -23,7 +22,7 @@ For more information about Windows PowerShell providers, see
 ## Implementing container methods
 
 The
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
+[System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
 class implements methods that support containers, and create, copy, and remove items. For a complete
 list of these methods, see
 [System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider#methods).
@@ -33,19 +32,19 @@ list of these methods, see
 > [Windows PowerShell Provider QuickStart](./windows-powershell-provider-quickstart.md). This topic
 > does not cover the basics of how to set up a provider project, or how to implement the methods
 > inherited from the
-> [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)
+> [System.Management.Automation.Provider.DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)
 > class that create and remove drives. This topic also does not cover how to implement methods
 > exposed by the
-> [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
+> [System.Management.Automation.Provider.ItemCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 > class. For an example that shows how to implement item cmdlets, see
 > [Writing an item provider](./writing-an-item-provider.md).
 
 ### Declaring the provider class
 
 Declare the provider to derive from the
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
+[System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)
 class, and decorate it with the
-[System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute).
+[System.Management.Automation.Provider.CmdletProviderAttribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute).
 
 ```csharp
 [CmdletProvider("AccessDB", ProviderCapabilities.None)]
@@ -58,18 +57,18 @@ class, and decorate it with the
 ### Implementing GetChildItems
 
 The PowerShell engine calls the
-[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
+[System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
 method when a user calls the
 [Microsoft.PowerShell.Commands.GetChildItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.Getchilditemcommand)
 cmdlet. This method gets the items that are the children of the item at the specified path.
 
 In the Access database example, the behavior of the
-[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
+[System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
 method depends on the type of the specified item. If the item is the drive, then the children are
 tables, and the method returns the set of tables from the database. If the specified item is a
 table, then the children are the rows of that table. If the item is a row, then it has no children,
 and the method returns that row only. All child items are sent back to the PowerShell engine by the
-[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)
+[System.Management.Automation.Provider.CmdletProvider.WriteItemObject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)
 method.
 
 ```csharp
@@ -130,9 +129,9 @@ protected override void GetChildItems(string path, bool recurse)
 ### Implementing GetChildNames
 
 The
-[System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)
+[System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)
 method is similar to the
-[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
+[System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
 method, except that it returns only the name property of the items, and not the items themselves.
 
 ```csharp
@@ -184,7 +183,7 @@ protected override void GetChildNames(string path,
 ### Implementing NewItem
 
 The
-[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)
+[System.Management.Automation.Provider.ContainerCmdletProvider.NewItem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)
 method creates a new item of the specified type at the specified path. The PowerShell engine calls
 this method when a user calls the
 [Microsoft.PowerShell.Commands.NewItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.newitemcommand)
@@ -378,7 +377,7 @@ cmdlet. This method can also be recursive, copying all of the items children in 
 itself.
 
 Similarly to the
-[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)
+[System.Management.Automation.Provider.ContainerCmdletProvider.NewItem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)
 method, this method performs logic to make sure that the specified item is of the correct type for
 the path to which it is being copied. For example, if the destination path is a table, the item to
 be copied must be a row.
@@ -435,7 +434,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
                    throw e;
                }
 
-               // if table already exists then force parameter should be set
+               // if table already exists then Force parameter should be set
                // to force a copy
                if (!Force && GetTable(copyTableName) != null)
                {
@@ -513,7 +512,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 ### Implementing RemoveItem
 
 The
-[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)
+[System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)
 method removes the item at the specified path. The PowerShell engine calls this method when a user
 calls the
 [Microsoft.PowerShell.Commands.RemoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.removeitemcommand)

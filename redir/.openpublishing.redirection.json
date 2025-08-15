@@ -1,0 +1,819 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/app-control/how-to-use-app-control",
+      "source_path": "../reference/docs-conceptual/security/app-control/how-to-use-wdac.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/app-control/how-app-control-works",
+      "source_path": "../reference/docs-conceptual/security/app-control/how-wdac-works.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/preventing-script-injection",
+      "source_path": "../reference/docs-conceptual/dev-cross-plat/security/preventing-script-injection.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/securing-restricted-sessions",
+      "source_path": "../reference/docs-conceptual/dev-cross-plat/security/securing-restricted-sessions.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/security/app-control/application-control",
+      "source_path": "../reference/docs-conceptual/learn/application-control.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/app-control/application-control",
+      "source_path": "../reference/docs-conceptual/security/application-control.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/ps-remoting-second-hop",
+      "source_path": "../reference/docs-conceptual/learn/remoting/PS-remoting-second-hop.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/running-remote-commands",
+      "source_path": "../reference/docs-conceptual/learn/remoting/Running-Remote-Commands.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/ssh-remoting-in-powershell",
+      "source_path": "../reference/docs-conceptual/learn/remoting/SSH-Remoting-in-PowerShell.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/wsman-remoting-in-powershell",
+      "source_path": "../reference/docs-conceptual/learn/remoting/WSMan-Remoting-in-PowerShell.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/winrm-security",
+      "source_path": "../reference/docs-conceptual/learn/remoting/WinRMSecurity.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/audit-and-report",
+      "source_path": "../reference/docs-conceptual/learn/remoting/jea/audit-and-report.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/overview",
+      "source_path": "../reference/docs-conceptual/learn/remoting/jea/overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/prerequisites",
+      "source_path": "../reference/docs-conceptual/learn/remoting/jea/prerequisites.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/register-jea",
+      "source_path": "../reference/docs-conceptual/learn/remoting/jea/register-jea.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/role-capabilities",
+      "source_path": "../reference/docs-conceptual/learn/remoting/jea/role-capabilities.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/security-considerations",
+      "source_path": "../reference/docs-conceptual/learn/remoting/jea/security-considerations.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/session-configurations",
+      "source_path": "../reference/docs-conceptual/learn/remoting/jea/session-configurations.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/jea/using-jea",
+      "source_path": "../reference/docs-conceptual/learn/remoting/jea/using-jea.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/remoting/powershell-remoting-faq",
+      "source_path": "../reference/docs-conceptual/learn/remoting/powershell-remoting-faq.yml"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/security/security-features",
+      "source_path": "../reference/docs-conceptual/learn/security-features.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/what-is-windows-powershell",
+      "source_path": "../reference/docs-conceptual/windows-powershell/overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/shell/optimize-shell",
+      "source_path": "../reference/docs-conceptual/windows-powershell/install/Creating-a-Custom-PowerShell-Shortcut.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/whats-new/what-s-new-in-powershell-70",
+      "source_path": "../reference/docs-conceptual/whats-new/what-s-new-in-powershell-70.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/shell/using-aliases",
+      "source_path": "../reference/docs-conceptual/learn/Compatibility-Aliases.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/discover-powershell",
+      "source_path": "../reference/docs-conceptual/learn/tutorials/00-introduction.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/discover-powershell",
+      "source_path": "../reference/docs-conceptual/learn/tutorials/01-discover-powershell.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/security/remoting/wsman-remoting-in-powershell",
+      "source_path": "../reference/docs-conceptual/learn/remoting/wsman-remoting-in-powershell-core.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/security/remoting/ssh-remoting-in-powershell",
+      "source_path": "../reference/docs-conceptual/learn/remoting/ssh-remoting-in-powershell-core.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/security/remoting/wsman-remoting-in-powershell",
+      "source_path": "../reference/docs-conceptual/learn/remoting/wsman-unsupported-for-nonwindows.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/utility-modules/platyps/create-help-using-platyps",
+      "source_path": "../reference/docs-conceptual/dev-cross-plat/create-help-using-platyps.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/install/community-support",
+      "source_path": "../reference/docs-conceptual/install/install-raspbian.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/install/installing-powershell-on-linux",
+      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-Core-on-Linux.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/install/installing-powershell-on-windows",
+      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-Core-on-Windows.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/install/installing-powershell-on-macos",
+      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-Core-on-macOS.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/install/PowerShell-Support-Lifecycle",
+      "source_path": "../reference/docs-conceptual/PowerShell-Support-Lifecycle.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/install/powershell-on-arm",
+      "source_path": "../reference/docs-conceptual/install/PowerShell-Core-on-Arm.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_psmodulepath",
+      "source_path": "../reference/docs-conceptual/developer/module/modifying-the-psmodulepath-installation-path.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_Tab_Expansion",
+      "source_path": "../reference/docs-conceptual/learn/Using-Tab-Expansion.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "source_path": "../reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-71.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "source_path": "../reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-Core-60.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "source_path": "../reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-Core-61.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "source_path": "../reference/docs-conceptual/whats-new/What-s-New-in-PowerShell-Core-62.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "source_path": "../reference/docs-conceptual/whats-new/breaking-changes-ps6.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/whats-new/differences-from-windows-powershell",
+      "source_path": "../reference/docs-conceptual/whats-new/known-issues-ps6.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/Compatibility-Aliases",
+      "source_path": "../reference/docs-conceptual/samples/Appendix-1---Compatibility-Aliases.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/install/Creating-a-Custom-PowerShell-Shortcut",
+      "source_path": "../reference/docs-conceptual/samples/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects",
+      "source_path": "../reference/docs-conceptual/samples/Other-Useful-Scripting-Objects.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/index.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/foreach-object",
+      "source_path": "../reference/docs-conceptual/samples/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/community/community-update",
+      "source_path": "../reference/docs-conceptual/community/whats-new-in-docs.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/community/2020-update",
+      "source_path": "../reference/docs-conceptual/community/2020-Q1.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/community/2020-update",
+      "source_path": "../reference/docs-conceptual/community/2020-Q2.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/community/2020-update",
+      "source_path": "../reference/docs-conceptual/community/2020-Q3.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/community/2020-update",
+      "source_path": "../reference/docs-conceptual/community/2020-Q4.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/windows-powershell",
+      "source_path": "../reference/docs-conceptual/developer/index.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/overview",
+      "source_path": "../reference/docs-conceptual/wmf/index.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/community/contributing/powershell-style-guide",
+      "source_path": "../reference/docs-conceptual/community/contributing/editing-cmdlet-ref.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/experimental-features",
+      "source_path": "../reference/docs-conceptual/whats-new/experimental-features.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/ps101/02-help-system",
+      "source_path": "../reference/docs-conceptual/learn/ps101/Getting-Detailed-Help-Information.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/ps101/02-help-system",
+      "source_path": "../reference/docs-conceptual/learn/ps101/Getting-Information-About-Commands.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/ps101/02-help-system",
+      "source_path": "../reference/docs-conceptual/learn/ps101/Learning-PowerShell-Names.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_powershell_exe",
+      "source_path": "../reference/docs-conceptual/learn/ps101/PowerShell.exe-Command-Line-Help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/ps101/05-formatting-aliases-providers-comparison",
+      "source_path": "../reference/docs-conceptual/learn/ps101/Using-Familiar-Command-Names.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/ps101/03-discovering-objects",
+      "source_path": "../reference/docs-conceptual/learn/ps101/Using-Variables-to-Store-Objects.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/Using-Tab-Expansion",
+      "source_path": "../reference/docs-conceptual/learn/ps101/Using-Tab-Expansion.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/ps101/using-tab-expansion",
+      "source_path": "../reference/docs-conceptual/components/console/using-tab-expansion.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/ps101/02-help-system",
+      "source_path": "../reference/docs-conceptual/learn/getting-detailed-help-information.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/ps101/02-help-system",
+      "source_path": "../reference/docs-conceptual/learn/getting-information-about-commands.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/ps101/02-help-system",
+      "source_path": "../reference/docs-conceptual/learn/learning-powershell-names.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/ps101/05-formatting-aliases-providers-comparison",
+      "source_path": "../reference/docs-conceptual/learn/using-familiar-command-names.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/ps101/03-discovering-objects",
+      "source_path": "../reference/docs-conceptual/learn/using-variables-to-store-objects.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7",
+      "source_path": "../reference/docs-conceptual/install/migrating-from-windows-powershell-51-to-powershell-7.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/whats-new/what-s-new-in-the-powershell-50-ise",
+      "source_path": "../reference/docs-conceptual/whats-new/what-s-new-in-the-powershell-50-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/whats-new/what-s-new-in-windows-powershell-50",
+      "source_path": "../reference/docs-conceptual/whats-new/what-s-new-in-windows-powershell-50.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/cmdlet/cmdlet-overview",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-windows-powershell-cmdlet.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/format/wide-view-basic",
+      "source_path": "../reference/docs-conceptual/developer/format/examples-of-formatting-files.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/format/formatting-file-overview",
+      "source_path": "../reference/docs-conceptual/developer/format/writing-a-powershell-formatting-file.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/hosting/windows-powershell-host-quickstart",
+      "source_path": "../reference/docs-conceptual/developer/hosting/writing-a-windows-powershell-host-application.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/provider/windows-powershell-provider-quickstart",
+      "source_path": "../reference/docs-conceptual/developer/provider/writing-a-windows-powershell-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/getting-started/getting-started-with-windows-powershell.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/install/installing-windows-powershell",
+      "source_path": "../reference/docs-conceptual/install/installing-windows-powershell.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/learn/understanding-important-powershell-concepts.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/learn/understanding-the-powershell-pipeline.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/install/windows-powershell-system-requirements",
+      "source_path": "../reference/docs-conceptual/install/windows-powershell-system-requirements.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/accessibility-in-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/accessibility-in-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/exploring-the-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/exploring-the-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/how-to-debug-scripts-in-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/how-to-use-profiles-in-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/how-to-use-profiles-in-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane",
+      "source_path": "../reference/docs-conceptual/components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/introducing-the-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/introducing-the-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise",
+      "source_path": "../reference/docs-conceptual/components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontoolcollection-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseaddontoolcollection-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontool-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseaddontool-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseeditor-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseeditor-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isefilecollection-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isefilecollection-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isefile-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isefile-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitemcollection-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isemenuitemcollection-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitem-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isemenuitem-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-ise-object-model-hierarchy",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-ise-object-model-hierarchy.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseoptions-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseoptions-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetcollection-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isesnippetcollection-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetobject",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isesnippetobject.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-objectmodelroot-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-objectmodelroot-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-powershelltabcollection-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-powershelltabcollection-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-powershelltab-object",
+      "source_path": "../reference/docs-conceptual/components/ise/object-model/the-powershelltab-object.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/dev-cross-plat/vscode/how-to-replicate-the-ise-experience-in-vscode",
+      "source_path": "../reference/docs-conceptual/components/vscode/how-to-replicate-the-ise-experience-in-vscode.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/dev-cross-plat/vscode/understanding-file-encoding",
+      "source_path": "../reference/docs-conceptual/components/vscode/understanding-file-encoding.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/dev-cross-plat/vscode/using-vscode",
+      "source_path": "../reference/docs-conceptual/components/vscode/using-vscode.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/dev-cross-plat/vscode/using-vscode-for-remote-editing-and-debugging",
+      "source_path": "../reference/docs-conceptual/components/vscode/using-vscode-for-remote-editing-and-debugging.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/module/how-to-create-a-windows-powershell-snap-in",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/module/how-to-import-cmdlets-using-modules",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-import-cmdlets-using-modules.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/module/modules-and-snap-ins",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/modules-and-snap-ins.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/module/registering-cmdlets",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/registering-cmdlets.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/module/writing-a-custom-windows-powershell-snap-in",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/module/writing-a-windows-powershell-snap-in",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-windows-powershell-snap-in.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/file-types-permitted-in-an-updatable-help-cab-file",
+      "source_path": "../reference/docs-conceptual/developer/module/file-types-permitted-in-an-updatable-help-cab-file.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/helpinfo-xml-sample-file",
+      "source_path": "../reference/docs-conceptual/developer/module/helpinfo-xml-sample-file.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/helpinfo-xml-schema",
+      "source_path": "../reference/docs-conceptual/developer/module/helpinfo-xml-schema.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-create-a-helpinfo-xml-file",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-create-a-helpinfo-xml-file.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-create-and-upload-cab-files",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-create-and-upload-cab-files.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-name-a-helpinfo-xml-file",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-name-a-helpinfo-xml-file.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-name-an-updatable-help-cab-file",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-name-an-updatable-help-cab-file.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-prepare-updatable-help-cab-files",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-prepare-updatable-help-cab-files.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-set-helpinfo-xml-version-numbers",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-set-helpinfo-xml-version-numbers.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-test-updatable-help",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-test-updatable-help.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-update-help-files",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-update-help-files.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/how-updatable-help-works",
+      "source_path": "../reference/docs-conceptual/developer/module/how-updatable-help-works.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/naming-help-files",
+      "source_path": "../reference/docs-conceptual/developer/module/naming-help-files.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/supporting-online-help",
+      "source_path": "../reference/docs-conceptual/developer/module/supporting-online-help.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/supporting-updatable-help",
+      "source_path": "../reference/docs-conceptual/developer/module/supporting-updatable-help.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/updatable-help-authoring-step-by-step",
+      "source_path": "../reference/docs-conceptual/developer/module/updatable-help-authoring-step-by-step.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/updatable-help-overview",
+      "source_path": "../reference/docs-conceptual/developer/module/updatable-help-overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/help/writing-help-for-windows-powershell-modules",
+      "source_path": "../reference/docs-conceptual/developer/module/writing-help-for-windows-powershell-modules.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/starting-the-windows-powershell-2.0-engine",
+      "source_path": "../reference/docs-conceptual/getting-started/starting-the-windows-powershell-2.0-engine.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/starting-windows-powershell",
+      "source_path": "../reference/docs-conceptual/getting-started/starting-windows-powershell.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/install/installing-the-windows-powershell-2.0-engine",
+      "source_path": "../reference/docs-conceptual/install/installing-the-windows-powershell-2.0-engine.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/learn/glossary",
+      "source_path": "../reference/docs-conceptual/learn/windows-powershell-glossary.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/dev-cross-plat/writing-portable-modules",
+      "source_path": "../reference/docs-conceptual/learn/writing-portable-modules.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/known-issues/known-issues-50",
+      "source_path": "../reference/docs-conceptual/wmf/known-issues/known-issues-50.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/known-issues/known-issues-51",
+      "source_path": "../reference/docs-conceptual/wmf/known-issues/known-issues-51.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/overview",
+      "source_path": "../reference/docs-conceptual/wmf/overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/setup/install-configure",
+      "source_path": "../reference/docs-conceptual/wmf/setup/install-configure.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/setup/uninstall",
+      "source_path": "../reference/docs-conceptual/wmf/setup/uninstall.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/bugfixes",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/bugfixes.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/class-overview",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/class-overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/compatibility",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/compatibility.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/console-improvements",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/console-improvements.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/debug-overview",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/debug-overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/engine-improvements",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/engine-improvements.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/informationstream-overview",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/informationstream-overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/jea-improvements",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/jea-improvements.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/new-updated-cmdlets",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/new-updated-cmdlets.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/package-management-improvements",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/package-management-improvements.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/release-notes",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/release-notes.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/script-logging",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/script-logging.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/sil-overview",
+      "source_path": "../reference/docs-conceptual/wmf/whats-new/sil-overview.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/cmdlet/requesting-confirmation-from-cmdlets",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-request-confirmations.md"
+    },
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "../reference/docs-conceptual/developer/prog-guide/how-to-create-a-console-shell.md"
+    }
+  ]
+}

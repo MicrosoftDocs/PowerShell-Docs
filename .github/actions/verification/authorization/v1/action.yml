@@ -4,11 +4,21 @@ description: |
   branch of a repository or to submit a PR editing repo configuration.
 author: PowerShell Docs Team
 inputs:
+  authorized_accounts:
+    description: |
+      Defines one or more authorized accounts to skip permission-checking for. This is best used
+      for bot accounts, which may not have specific permissions to a repository but are used by
+      the organization's automation. Must be a comma-separated string of account names.
+
+      If a user is in the authorized accounts list, the action skips checking permissions and
+      passes for that user.
+    required: false
+    default: ''
   permissions:
     description: |
       The permissions a user requires to perform a given task. Must be a comma-separated string of
       valid permissions. Valid permissions are (case-insensitive):
-      
+
       - `Admin`
       - `Maintain`
       - `Pull`
@@ -38,7 +48,7 @@ inputs:
       `pull_request` or `pull_request_target` trigger. You can use those settings together. For
       more information, see the documentation for the [branches][syntax-docs-branches] and
       [paths][syntax-docs-paths] settings for workflows in GitHub's documentation.
-      
+
       To specify multiple branches, separate each branch
       by a comma and/or newline, like `branch: live, production`. To specify a filepath, specify one
       or more path separated by a comma and/or a newline, like `path: foo/**/*.md, bar/*.json`.
@@ -80,10 +90,11 @@ runs:
   steps:
     - shell: pwsh
       env:
-        INPUT_REPOSITORY:  ${{ inputs.repository }}
+        INPUT_REPOSITORY: ${{ inputs.repository }}
         INPUT_PERMISSIONS: ${{ inputs.permissions }}
         INPUT_TARGET: ${{ inputs.target }}
         INPUT_USER: ${{ inputs.user }}
+        INPUT_AUTHORIZED_ACCOUNTS: ${{ inputs.authorized_accounts }}
         GITHUB_TOKEN: ${{ inputs.token }}
       run: |
         Write-Output "::group::Generic Setup"
@@ -99,7 +110,7 @@ runs:
           $ActionRootPath = Split-Path -Parent -Path $ActionRootPath
         }
         "Action Root Path: $ActionRootPath"
-        
+
         $JoinPathParams = @{
           Path = $ActionRootPath
           ChildPath = '.pwsh'

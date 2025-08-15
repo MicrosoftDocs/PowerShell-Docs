@@ -2,8 +2,8 @@
 external help file: PSDiagnostics-help.xml
 Locale: en-US
 Module Name: PSDiagnostics
-ms.date: 11/27/2018
-online version: https://docs.microsoft.com/powershell/module/psdiagnostics/set-logproperties?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/psdiagnostics/set-logproperties?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-LogProperties
 ---
@@ -32,7 +32,7 @@ You must run this cmdlet from an elevated PowerShell session.
 
 ```powershell
 $logDetails = Get-LogProperties 'Windows PowerShell'
-$logDetails.Retention = $True
+$logDetails.Retention = $true
 Set-LogProperties -LogDetails $logDetails
 Get-LogProperties 'Windows PowerShell'
 ```
@@ -91,13 +91,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.PowerShell.Diagnostics.LogDetails
 
-You must pass a fully configured **LogDetails** object to the `Set-LogProperties` cmdlet.
-Therefore, to change one setting, you should use `Get-LogProperties` to retrieve the current
-configuration.
+You can pipe a fully configured **LogDetails** object to this cmdlet. Therefore, to change one
+setting, you should use `Get-LogProperties` to retrieve the current configuration.
 
 ## OUTPUTS
 
-### System.Object
+### None
+
+This cmdlet returns no output.
 
 ## NOTES
 

@@ -1,6 +1,6 @@
 ---
 description: This article describes how to create, edit, run, and save scripts in the Script Pane.
-ms.date: 10/07/2021
+ms.date: 03/27/2025
 title: How to Write and Run Scripts in the Windows PowerShell ISE
 ---
 
@@ -20,22 +20,20 @@ files.
 > The Windows PowerShell execution policy determines whether you can run scripts and load Windows
 > PowerShell profiles and configuration files. The default execution policy, Restricted, prevents
 > all scripts from running, and prevents loading profiles. To change the execution policy to allow
-> profiles to load and be used, see
-> [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy) and
-> [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing).
+> profiles to load and be used, see [Set-ExecutionPolicy][02] and [about_Signing][01].
 
 ### To create a new script file
 
-On the toolbar, click **New**, or on the **File** menu, click **New**. The created file appears in
-a new file tab under the current PowerShell tab. Remember that the PowerShell tabs are only visible
+On the toolbar, click **New**, or on the **File** menu, click **New**. The created file appears in a
+new file tab under the current PowerShell tab. Remember that the PowerShell tabs are only visible
 when there are more than one. By default a file of type script (`.ps1`) is created, but it can be
 saved with a new name and extension. Multiple script files can be created in the same PowerShell
 tab.
 
 ### To open an existing script
 
-On the toolbar, click **Open**, or on the **File** menu, click **Open**. In the **Open** dialog
-box, select the file you want to open. The opened file appears in a new tab.
+On the toolbar, click **Open**, or on the **File** menu, click **Open**. In the **Open** dialog box,
+select the file you want to open. The opened file appears in a new tab.
 
 ### To close a script tab
 
@@ -72,8 +70,8 @@ case <kbd>CTRL</kbd>+<kbd>C</kbd> maps to the copy function for the selected tex
 ## How to write and edit text in the Script Pane
 
 You can copy, cut, paste, find, and replace text in the Script Pane. You can also undo and redo the
-last action you just performed. The keyboard shortcuts for these actions are the same shortcuts
-used for all Windows applications.
+last action you just performed. The keyboard shortcuts for these actions are the same shortcuts used
+for all Windows applications.
 
 ### To enter text in the Script Pane
 
@@ -81,7 +79,7 @@ used for all Windows applications.
    to Script Pane** in the **View** menu.
 1. Create a script. Syntax coloring and tab completion provide a richer editing experience in
    Windows PowerShell ISE.
-1. See [How to Use Tab Completion in the Script Pane and Console Pane](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
+1. See [How to Use Tab Completion in the Script Pane and Console Pane][04]
    for details about using the tab completion feature to help in typing.
 
 ### To find text in the Script Pane
@@ -154,9 +152,8 @@ menu, click **Save**.
 ### To save a script in ASCII encoding
 
 By default, Windows PowerShell ISE saves new script files (`.ps1`), script data files (`.psd1`), and
-script module files (`.psm1`) as Unicode (BigEndianUnicode). To save a script in another
-encoding, such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the
-[$psISE.CurrentFile](object-model/the-ise-object-model-hierarchy.md) object.
+script module files (`.psm1`) as Unicode (BigEndianUnicode). To save a script in another encoding,
+such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the [$psISE.CurrentFile][05] object.
 
 The following command saves a new script as MyScript.ps1 with ASCII encoding.
 
@@ -180,9 +177,16 @@ $psISE.CurrentFile.encoding
 Windows PowerShell ISE supports the following encoding options: ASCII, BigEndianUnicode, Unicode,
 UTF32, UTF7, UTF8, and Default. The value of the Default option varies with the system.
 
-Windows PowerShell ISE doesn't change the encoding of script files when you use the Save or
-Save As commands.
+Windows PowerShell ISE doesn't change the encoding of script files when you use the Save or Save As
+commands.
 
 ## See Also
 
-- [Exploring the Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)
+- [Exploring the Windows PowerShell ISE][03]
+
+<!-- link references -->
+[01]: /powershell/module/microsoft.powershell.core/about/about_signing
+[02]: /powershell/module/microsoft.powershell.security/set-executionpolicy
+[03]: exploring-the-windows-powershell-ise.md
+[04]: How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md
+[05]: object-model/the-ise-object-model-hierarchy.md

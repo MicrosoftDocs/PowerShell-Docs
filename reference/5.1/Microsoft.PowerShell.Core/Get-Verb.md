@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/11/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/functions/get-verb?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/05/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/functions/get-verb?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Verb
 ---
@@ -32,8 +32,7 @@ warning message.
 > [!NOTE]
 > The verb list that `Get-Verb` returns might not be complete. For an updated list of approved
 > PowerShell verbs with descriptions, see
-> [Approved Verbs](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands)
-> in the Microsoft Docs.
+> [Approved Verbs](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
 ## EXAMPLES
 
@@ -123,10 +122,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-`Get-Verb` returns a modified version of a Microsoft.PowerShell.Commands.MemberDefinition object.
-The object does not have the standard properties of a MemberDefinition object. Instead it has Verb
-and Group properties. The Verb property contains a string with the verb name. The Group property
-contains a string with the verb group.
+`Get-Verb` returns a modified version of a **Microsoft.PowerShell.Commands.MemberDefinition**
+object. The object doesn't have the standard properties of a **MemberDefinition** object. Instead it
+has **Verb** and **Group** properties. The **Verb** property contains a string with the verb name.
+The **Group** property contains a string with the verb group.
 
 PowerShell verbs are assigned to a group based on their most common use. The groups are designed to
 make the verbs easy to find and compare, not to restrict their use. You can use any approved verb
@@ -142,7 +141,7 @@ Each PowerShell verb is assigned to one of the following groups.
 - Security: Define actions that apply to security, such as Revoke.
 - Other: Define other types of actions.
 
-Some of the cmdlets that are installed with PowerShell, such as `Tee-Object` and `Where-Object`, use
+Some of the cmdlets installed with PowerShell, such as `Tee-Object` and `Where-Object`, use
 unapproved verbs. These cmdlets are historic exceptions and their verbs are classified as
 **reserved**.
 

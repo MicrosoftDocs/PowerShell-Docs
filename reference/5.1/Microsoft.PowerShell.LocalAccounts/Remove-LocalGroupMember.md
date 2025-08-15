@@ -2,9 +2,11 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 09/28/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/remove-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/28/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/remove-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rlgm
 title: Remove-LocalGroupMember
 ---
 
@@ -53,7 +55,7 @@ Remove-LocalGroupMember -Group "Administrators" -Member $members
 ```
 
 This command removes several members from the local Administrators group. The members that this
-cmdlet removes include a local user account, a Microsoft account, an Azure Active Directory account,
+cmdlet removes include a local user account, a Microsoft account, a Microsoft Entra account,
 and a domain group. This example uses a placeholder value for the user name of an account at
 Outlook.com.
 
@@ -166,25 +168,37 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Management.Automation.SecurityAccountsManager.LocalPrincipal, System.String, System.Security.Principal.SecurityIdentifier
+### System.Management.Automation.SecurityAccountsManager.LocalPrincipal
 
-You can pipe a local principal, a string, or a SID to this cmdlet.
+You can pipe a local principal to this cmdlet.
+
+### System.String
+
+You can pipe a string to this cmdlet.
+
+### System.Security.Principal.SecurityIdentifier
+
+You can pipe a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 
-- The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
-  **LocalPrincipal** objects that describes the source of the object. The possible sources are as
-  follows:
+Windows PowerShell includes the following aliases for `Remove-LocalGroupMember`:
+
+- `rlgm`
+
+The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+**LocalPrincipal** objects that describes the source of the object. The possible sources are as
+follows:
 
 - Local
 - Active Directory
-- Azure Active Directory group
+- Microsoft Entra group
 - Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the

@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/01/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Culture
 ---
@@ -151,18 +151,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Globalization.CultureInfo
 
-`Get-Culture` returns an object that represents the current culture.
+This cmdlet returns a **CultureInfo** object representing the current culture.
 
 ## NOTES
 
-You can also use the `$PsCulture` and `$PsUICulture` variables. The `$PsCulture` variable stores the
-name of the current culture and the `$PsUICulture` variable stores the name of the current UI
+You can also use the `$PSCulture` and `$PSUICulture` variables. The `$PSCulture` variable stores the
+name of the current culture and the `$PSUICulture` variable stores the name of the current UI
 culture.
 
 ## RELATED LINKS

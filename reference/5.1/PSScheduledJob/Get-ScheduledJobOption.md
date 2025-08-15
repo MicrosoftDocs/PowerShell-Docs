@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/get-scheduledjoboption?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/get-scheduledjoboption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ScheduledJobOption
 ---
@@ -81,13 +81,17 @@ the job options of each scheduled job.
 This example shows how to find job options object with particular values.
 
 ```powershell
-Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun}
+Get-ScheduledJob |
+    Get-ScheduledJobOption |
+    Where-Object {$_.RunElevated -and !$_.WakeToRun}
 
-Get-ScheduledJob | Get-ScheduledJobOption | Where {$_.RunElevated -and !$_.WaketoRun} |
+Get-ScheduledJob | 
+    Get-ScheduledJobOption |
+    Where-Object {$_.RunElevated -and !$_.WakeToRun} |
     ForEach-Object {$_.JobDefinition}
 ```
 
-The first command gets job options in which the RunElevated property has a value of $True and the
+The first command gets job options in which the RunElevated property has a value of $true and the
 **RunWithoutNetwork** property has a value of `$false`. The output shows the **JobOptions** object
 that was selected.
 
@@ -103,8 +107,12 @@ This example shows how to use the job options that `Get-ScheduledJobOption` gets
 job.
 
 ```powershell
-$Opts = Get-ScheduledJobOption -Name "BackupTestLogs"
-Register-ScheduledJob -Name "Archive-Scripts" -FilePath "\\Srv01\Scripts\ArchiveScripts.ps1" -ScheduledJobOption $Opts
+$registerScheduledJobSplat = @{
+    Name = "Archive-Scripts"
+    FilePath = "\\Srv01\Scripts\ArchiveScripts.ps1"
+    ScheduledJobOption = Get-ScheduledJobOption -Name "BackupTestLogs"
+}
+Register-ScheduledJob @registerScheduledJobSplat
 ```
 
 The first command uses `Get-ScheduledJobOption` to get the jobs options of the BackupTestLogs
@@ -186,17 +194,20 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
-You can pipe a scheduled job from `Get-ScheduledJob` to `Get-ScheduledJobOption`.
+You can pipe a scheduled job object to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
+
+This cmdlet returns a **ScheduledJobOptions** object.
 
 ## NOTES
 

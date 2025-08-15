@@ -1,7 +1,6 @@
 ---
 description: Adding Parameters That Process Command-Line Input
 ms.date: 09/13/2016
-ms.topic: reference
 title: Adding Parameters That Process Command-Line Input
 ---
 # Adding Parameters That Process Command-Line Input
@@ -41,7 +40,7 @@ A cmdlet parameter enables the user to provide input to the cmdlet. In the follo
 `Get-Proc` and `Get-Member` are the names of pipelined cmdlets, and `MemberType` is a parameter
 for the `Get-Member` cmdlet. The parameter has the argument "property."
 
-**PS> get-proc ; `get-member` -membertype property**
+**PS> Get-Proc ; `Get-Member` -MemberType Property**
 
 To declare parameters for a cmdlet, you must first define the properties that represent the
 parameters. In the `Get-Proc` cmdlet, the only parameter is `Name`, which in this case represents
@@ -81,7 +80,7 @@ End Property
 ```
 
 To inform the Windows PowerShell runtime that this property is the `Name` parameter, a
-[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
+[System.Management.Automation.ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
 attribute is added to the property definition. The basic syntax for declaring this attribute is
 `[Parameter()]`.
 
@@ -142,7 +141,7 @@ not set in the attribute declaration.
 ## Supporting Parameter Validation
 
 The sample `Get-Proc` cmdlet adds an input validation attribute,
-[System.Management.Automation.Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute),
+[System.Management.Automation.ValidateNotNullOrEmptyAttribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute),
 to the `Name` parameter to enable validation that the input is neither `null` nor empty. This
 attribute is one of several validation attributes provided by Windows PowerShell. For examples of
 other validation attributes, see [Validating Parameter Input](./validating-parameter-input.md).
@@ -166,7 +165,7 @@ processes for each requested process name, or all for processes if no name is pr
 in
 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord),
 the call to
-[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)
+[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
 is the output mechanism for sending output objects to the pipeline. The second parameter of this
 call, `enumerateCollection`, is set to `true` to inform the Windows PowerShell runtime to enumerate
 the output array of process objects and write one process at a time to the command line.
@@ -245,7 +244,7 @@ cmdlets from the command line, see
   which is named "IEXPLORE."
 
   ```powershell
-  get-proc -name iexplore
+  Get-Proc -Name iexplore
   ```
 
   The following output appears.
@@ -260,7 +259,7 @@ cmdlets from the command line, see
   "NOTEPAD," use the following command. If there are multiple processes, all of them are displayed.
 
   ```powershell
-  get-proc -name iexplore, outlook, notepad
+  Get-Proc -Name iexplore, outlook, notepad
   ```
 
   The following output appears.

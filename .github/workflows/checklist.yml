@@ -1,6 +1,6 @@
 name: Checklist
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
     types:
@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Checkout Repository
         id: checkout_repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Verify Checklist
         id: verify_checklist
         uses: ./.github/actions/verification/checklist/v1

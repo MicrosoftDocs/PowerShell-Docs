@@ -2,9 +2,11 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/new-ciminstance?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/cimcmdlets/new-ciminstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ncim
 title: New-CimInstance
 ---
 
@@ -19,46 +21,48 @@ Creates a CIM instance.
 
 ```
 New-CimInstance [-ClassName] <String> [-Key <String[]>] [[-Property] <IDictionary>]
- [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-ClientOnly]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>]
+ [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ClassNameSessionSet
 
 ```
 New-CimInstance [-ClassName] <String> [-Key <String[]>] [[-Property] <IDictionary>]
- [-Namespace <String>] [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-ClientOnly]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]>
+ [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceUriSessionSet
 
 ```
 New-CimInstance -ResourceUri <Uri> [-Key <String[]>] [[-Property] <IDictionary>]
- [-Namespace <String>] [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]>
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ResourceUriComputerSet
 
 ```
 New-CimInstance -ResourceUri <Uri> [-Key <String[]>] [[-Property] <IDictionary>]
- [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Namespace <String>] [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassSessionSet
 
 ```
-New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
- -CimSession <CimSession[]> [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>]
+ [-OperationTimeoutSec <UInt32>] -CimSession <CimSession[]> [-ClientOnly] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### CimClassComputerSet
 
 ```
-New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>] [-OperationTimeoutSec <UInt32>]
- [-ComputerName <String[]>] [-ClientOnly] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-CimInstance [-CimClass] <CimClass> [[-Property] <IDictionary>]
+ [-OperationTimeoutSec <UInt32>] [-ComputerName <String[]>] [-ClientOnly] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -71,11 +75,16 @@ instance on the local computer.
 
 ### Example 1: Create an instance of a CIM class
 
-This example creates an instance of a CIM Class named win32_environment in the root/cimv2 namespace
-on the computer.
+This example creates an instance of a CIM Class named **Win32_Environment** in the **root/CIMV2**
+namespace on the computer.
 
 ```powershell
-New-CimInstance -ClassName Win32_Environment -Property @{Name="testvar";VariableValue="testvalue";UserName="domain\user"}
+$prop = @{
+    Name = "testvar"
+    VariableValue = "testvalue"
+    UserName = "domain\user"
+}
+New-CimInstance -ClassName Win32_Environment -Property $prop
 ```
 
 No client side validation is performed if the class does not exist, the properties are wrong, or if
@@ -89,7 +98,12 @@ of the variable are then passed to the `New-CimInstance` cmdlet.
 
 ```powershell
 $class = Get-CimClass -ClassName Win32_Environment
-New-CimInstance -CimClass $class -Property @{Name="testvar";VariableValue="testvalue";UserName="Contoso\User1"}
+$prop = @{
+    Name = "testvar"
+    VariableValue = "testvalue"
+    UserName = "Contoso\User1"
+}
+New-CimInstance -CimClass $class -Property $prop
 ```
 
 ### Example 3: Create a dynamic instance on the client
@@ -100,7 +114,16 @@ computer without getting the instance from the server. The new instance is store
 on the server.
 
 ```powershell
-$a = New-CimInstance -ClassName Win32_Process -Property @{Handle=0} -Key Handle -ClientOnly
+$instance = @{
+    ClassName = 'Win32_Process'
+    Property = @{
+        Handle = 0
+    }
+    Key = 'Handle'
+    ClientOnly = $true
+}
+$a = New-CimInstance @instance
+
 Get-CimInstance -CimInstance $a
 Invoke-CimMethod -CimInstance $a -MethodName GetOwner
 ```
@@ -255,7 +278,7 @@ Accept wildcard characters: False
 
 ### -Namespace
 
-Specifies the namespace of the class for the new instance. The default namespace is **root/cimv2**.
+Specifies the namespace of the class for the new instance. The default namespace is **root/CIMV2**.
 You can use tab completion to browse the list of namespaces, because PowerShell gets a list of
 namespaces from the local WMI server to provide the list of namespaces.
 
@@ -275,10 +298,10 @@ Accept wildcard characters: False
 
 Specifies the amount of time that the cmdlet waits for a response from the CIM server. By default,
 the value of this parameter is 0, which means that the cmdlet uses the default timeout value for the
-server. If the **OperationTimeoutSec** parameter is set to a value less than the robust connection retry
-timeout of 3 minutes, network failures that last more than the value of the **OperationTimeoutSec**
-parameter are not recoverable, because the operation on the server times out before the client can
-reconnect.
+server. If the **OperationTimeoutSec** parameter is set to a value less than the robust connection
+retry timeout of 3 minutes, network failures that last more than the value of the
+**OperationTimeoutSec** parameter are not recoverable, because the operation on the server times
+out before the client can reconnect.
 
 ```yaml
 Type: System.UInt32
@@ -327,11 +350,11 @@ A URI consists of a prefix and a path to a resource. For example:
 By default, if you do not specify this parameter, the DMTF standard resource URI
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
-**ResourceURI** can only be used with CIM sessions created using the WSMan protocol, or when
+**ResourceUri** can only be used with CIM sessions created using the WSMan protocol, or when
 specifying the **ComputerName** parameter, which creates a CIM session using WSMan. If you specify
 this parameter without specifying the **ComputerName** parameter, or if you specify a CIM session
 created using DCOM protocol, you will get an error, because the DCOM protocol does not support the
-**ResourceURI** parameter.
+**ResourceUri** parameter.
 
 If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**
 parameter is ignored.
@@ -385,13 +408,13 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-This cmdlet accepts no input objects.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
@@ -403,10 +426,10 @@ This cmdlet returns an object that contains the CIM instance information.
 
 ## RELATED LINKS
 
-[Get-CimClass](get-cimclass.md)
+[Get-CimClass](Get-CimClass.md)
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
-[Remove-CimInstance](remove-ciminstance.md)
+[Remove-CimInstance](Remove-CimInstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)

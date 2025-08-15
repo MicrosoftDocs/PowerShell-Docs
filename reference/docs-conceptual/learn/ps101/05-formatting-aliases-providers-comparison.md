@@ -1,22 +1,25 @@
 ---
 description: This chapter introduces the concepts of output formatting, command aliases, providers, and comparison operations.
 ms.custom: Contributor-mikefrobbins
-ms.date: 10/05/2021
+ms.date: 01/09/2025
 ms.reviewer: mirobb
 title: Formatting, aliases, providers, comparison
 ---
+
 # Chapter 5 - Formatting, aliases, providers, comparison
 
-## Requirements
+## Prerequisites
 
-The SQL Server PowerShell module is required by some of the examples shown in this chapter. The
-module installs as part of [SQL Server Management Studio (SSMS)][SSMS]. It's also used in
-subsequent chapters. Download and install it on your Windows 10 lab environment computer.
+The **SqlServer** PowerShell module is required by some examples shown in this chapter. For more
+information about the **SqlServer** PowerShell module and installation instructions, see
+[SQL Server PowerShell overview][sql-server-powershell]. It's also used in subsequent chapters.
+Download and install it on your Windows lab environment computer.
 
 ## Format Right
 
 In Chapter 4, you learned to filter as far to the left as possible. The rule for manually formatting
-a command's output is similar to that rule except it needs to occur as far to the right as possible.
+a command's output is similar to that rule, except it needs to occur as far to the right as
+possible.
 
 The most common format commands are `Format-Table` and `Format-List`. `Format-Wide` and
 `Format-Custom` can also be used, but are less common.
@@ -25,7 +28,8 @@ As mentioned in Chapter 3, a command that returns more than four properties defa
 unless custom formatting is used.
 
 ```powershell
-Get-Service -Name w32time | Select-Object -Property Status, DisplayName, Can*
+Get-Service -Name w32time |
+    Select-Object -Property Status, DisplayName, Can*
 ```
 
 ```Output
@@ -40,13 +44,14 @@ Use the `Format-Table` cmdlet to manually override the formatting and show the o
 instead of a list.
 
 ```powershell
-Get-Service -Name w32time | Select-Object -Property Status, DisplayName, Can* |
-Format-Table
+Get-Service -Name w32time |
+    Select-Object -Property Status, DisplayName, Can* |
+    Format-Table
 ```
 
 ```Output
- Status DisplayName  CanPauseAndContinue CanShutdown CanStop
- ------ -----------  ------------------- ----------- -------
+Status  DisplayName  CanPauseAndContinue CanShutdown CanStop
+------  -----------  ------------------- ----------- -------
 Running Windows Time               False        True    True
 ```
 
@@ -68,6 +73,10 @@ Use the `Format-List` cmdlet to override the default formatting and return the r
 Get-Service -Name w32time | Format-List
 ```
 
+Notice that simply piping `Get-Service` to `Format-List` made it return additional properties. This
+doesn't occur with every command because of how the format for that particular command is set up
+behind the scenes.
+
 ```Output
 Name                : w32time
 DisplayName         : Windows Time
@@ -77,12 +86,8 @@ ServicesDependedOn  : {}
 CanPauseAndContinue : False
 CanShutdown         : True
 CanStop             : True
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 ```
-
-Notice that simply piping `Get-Service` to `Format-List` made it return additional properties. This
-doesn't occur with every command because of the way the formatting for that particular command is
-set up behind the scenes.
 
 The number one thing to be aware of with the format cmdlets is they produce format objects that are
 different than normal objects in PowerShell.
@@ -96,63 +101,67 @@ Get-Service -Name w32time | Format-List | Get-Member
 
 Name                                    MemberType Definition
 ----                                    ---------- ----------
-Equals                                  Method     bool Equals(System.Object obj)
+Equals                                  Method     bool Equals(System.Obj...
 GetHashCode                             Method     int GetHashCode()
 GetType                                 Method     type GetType()
 ToString                                Method     string ToString()
-autosizeInfo                            Property   Microsoft.PowerShell.Commands.Inter...
-ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef21dd47e99d3c9...
-groupingEntry                           Property   Microsoft.PowerShell.Commands.Inter...
-pageFooterEntry                         Property   Microsoft.PowerShell.Commands.Inter...
-pageHeaderEntry                         Property   Microsoft.PowerShell.Commands.Inter...
-shapeInfo                               Property   Microsoft.PowerShell.Commands.Inter...
+autosizeInfo                            Property   Microsoft.PowerShell.C...
+ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef...
+groupingEntry                           Property   Microsoft.PowerShell.C...
+pageFooterEntry                         Property   Microsoft.PowerShell.C...
+pageHeaderEntry                         Property   Microsoft.PowerShell.C...
+shapeInfo                               Property   Microsoft.PowerShell.C...
+
 
    TypeName: Microsoft.PowerShell.Commands.Internal.Format.GroupStartData
 
 Name                                    MemberType Definition
 ----                                    ---------- ----------
-Equals                                  Method     bool Equals(System.Object obj)
+Equals                                  Method     bool Equals(System.Obj...
 GetHashCode                             Method     int GetHashCode()
 GetType                                 Method     type GetType()
 ToString                                Method     string ToString()
-ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef21dd47e99d3c9...
-groupingEntry                           Property   Microsoft.PowerShell.Commands.Inter...
-shapeInfo                               Property   Microsoft.PowerShell.Commands.Inter...
+ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef...
+groupingEntry                           Property   Microsoft.PowerShell.C...
+shapeInfo                               Property   Microsoft.PowerShell.C...
+
 
    TypeName: Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
 
 Name                                    MemberType Definition
 ----                                    ---------- ----------
-Equals                                  Method     bool Equals(System.Object obj)
+Equals                                  Method     bool Equals(System.Obj...
 GetHashCode                             Method     int GetHashCode()
 GetType                                 Method     type GetType()
 ToString                                Method     string ToString()
-ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef21dd47e99d3c9...
-formatEntryInfo                         Property   Microsoft.PowerShell.Commands.Inter...
+ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef...
+formatEntryInfo                         Property   Microsoft.PowerShell.C...
 outOfBand                               Property   bool outOfBand {get;set;}
-writeStream                             Property   Microsoft.PowerShell.Commands.Inter...
+writeStream                             Property   Microsoft.PowerShell.C...
+
 
    TypeName: Microsoft.PowerShell.Commands.Internal.Format.GroupEndData
 
 Name                                    MemberType Definition
 ----                                    ---------- ----------
-Equals                                  Method     bool Equals(System.Object obj)
+Equals                                  Method     bool Equals(System.Obj...
 GetHashCode                             Method     int GetHashCode()
 GetType                                 Method     type GetType()
 ToString                                Method     string ToString()
-ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef21dd47e99d3c9...
-groupingEntry                           Property   Microsoft.PowerShell.Commands.Inter...
+ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef...
+groupingEntry                           Property   Microsoft.PowerShell.C...
+
 
    TypeName: Microsoft.PowerShell.Commands.Internal.Format.FormatEndData
 
 Name                                    MemberType Definition
 ----                                    ---------- ----------
-Equals                                  Method     bool Equals(System.Object obj)
+Equals                                  Method     bool Equals(System.Obj...
 GetHashCode                             Method     int GetHashCode()
 GetType                                 Method     type GetType()
 ToString                                Method     string ToString()
-ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef21dd47e99d3c9...
-groupingEntry                           Property   Microsoft.PowerShell.Commands.Inter...
+ClassId2e4f51ef21dd47e99d3c952918aff9cd Property   string ClassId2e4f51ef...
+groupingEntry                           Property   Microsoft.PowerShell.C...
 ```
 
 What this means is format commands can't be piped to most other commands. They can be piped to some
@@ -172,8 +181,8 @@ Get-Alias -Name gcm
 ```
 
 ```Output
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
+CommandType     Name                                               Version
+-----------     ----                                               -------
 Alias           gcm -> Get-Command
 ```
 
@@ -184,75 +193,73 @@ Get-Alias -Name gcm, gm
 ```
 
 ```Output
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
+CommandType     Name                                               Version
+-----------     ----                                               -------
 Alias           gcm -> Get-Command
 Alias           gm -> Get-Member
 ```
 
-You'll often see the **Name** parameter omitted since it's a positional parameter.
+You often see the **Name** parameter omitted since it's a positional parameter.
 
 ```powershell
 Get-Alias gm
 ```
 
 ```Output
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
+CommandType     Name                                               Version
+-----------     ----                                               -------
 Alias           gm -> Get-Member
 ```
 
-If you want to find aliases for a command, you'll need to use the **Definition** parameter.
+If you want to find aliases for a command, you need to use the **Definition** parameter.
 
 ```powershell
 Get-Alias -Definition Get-Command, Get-Member
 ```
 
 ```Output
-CommandType     Name                                               Version    Source
------------     ----                                               -------    ------
+CommandType     Name                                               Version
+-----------     ----                                               -------
 Alias           gcm -> Get-Command
 Alias           gm -> Get-Member
 ```
 
-The **Definition** parameter can't be used positionally so it must be specified.
+The **Definition** parameter can't be used positionally, so it must be specified.
 
-Aliases can save you a few keystrokes and they're fine when you're typing commands into the console.
+Aliases can save you a few keystrokes, and they're fine when you type commands into the console.
 They shouldn't be used in scripts or any code that you're saving or sharing with others. As
 mentioned earlier in this book, using full cmdlet and parameter names is self-documenting and easier
 to understand.
 
-Use caution when creating your own aliases because they'll only exist in your current PowerShell
+Use caution when creating your own aliases because they only exist in your current PowerShell
 session on your computer.
 
 ## Providers
 
-A provider in PowerShell is an interface that allows file system like access to a datastore. There
-are a number of built-in providers in PowerShell.
+A provider in PowerShell is an interface that allows file system-like access to a data store. There
+are several built-in providers in PowerShell.
 
 ```powershell
 Get-PSProvider
 ```
 
-```Output
-Name                 Capabilities                       Drives
-----                 ------------                       ------
-Registry             ShouldProcess, Transactions        {HKLM, HKCU}
-Alias                ShouldProcess                      {Alias}
-Environment          ShouldProcess                      {Env}
-FileSystem           Filter, ShouldProcess, Credentials {C, A, D}
-Function             ShouldProcess                      {Function}
-Variable             ShouldProcess                      {Variable}
-Certificate          ShouldProcess                      {Cert}
-WSMan                Credentials                        {WSMan}
-```
-
-As you can see in the previous results, there are built-in providers for the registry, aliases,
+As you can see in the following results, there are built-in providers for the registry, aliases,
 environment variables, the file system, functions, variables, certificates, and WSMan.
 
-The actual drives that these providers use to expose their datastore can be determined with the
-`Get-PSDrive` cmdlet. The `Get-PSDrive` cmdlet not only displays drives exposed by providers, but it
-also displays Windows logical drives including drives mapped to network shares.
+```Output
+Name                 Capabilities                 Drives
+----                 ------------                 ------
+Registry             ShouldProcess, Transactions  {HKLM, HKCU}
+Alias                ShouldProcess                {Alias}
+Environment          ShouldProcess                {Env}
+FileSystem           Filter, ShouldProcess, Cr... {C, D}
+Function             ShouldProcess                {Function}
+Variable             ShouldProcess                {Variable}
+```
+
+The actual drives that these providers use to expose their data store can be determined with the
+`Get-PSDrive` cmdlet. The `Get-PSDrive` cmdlet not only displays drives exposed by providers but
+also displays Windows logical drives, including drives mapped to network shares.
 
 ```powershell
 Get-PSDrive
@@ -261,9 +268,8 @@ Get-PSDrive
 ```Output
 Name           Used (GB)     Free (GB) Provider      Root
 ----           ---------     --------- --------      ----
-A                                      FileSystem    A:\
 Alias                                  Alias
-C                  14.41        112.10 FileSystem    C:\
+C                  18.56        107.62 FileSystem    C:\
 Cert                                   Certificate   \
 D                                      FileSystem    D:\
 Env                                    Environment
@@ -274,10 +280,10 @@ Variable                               Variable
 WSMan                                  WSMan
 ```
 
-Third-party modules such as the Active Directory PowerShell module and the SQLServer PowerShell
-module both add their own PowerShell provider and PSDrive.
+Third-party modules such as the **ActiveDirectory** PowerShell module and the **SqlServer**
+PowerShell module both add their own PowerShell provider and PSDrive.
 
-Import the Active Directory and SQL Server PowerShell modules.
+Import the **ActiveDirectory** and **SqlServer** PowerShell modules.
 
 ```powershell
 Import-Module -Name ActiveDirectory, SQLServer
@@ -288,6 +294,9 @@ Check to see if any additional PowerShell providers were added.
 ```powershell
 Get-PSProvider
 ```
+
+Notice that in the following set of results, two new PowerShell providers now exist, one for Active
+Directory and another one for SQL Server.
 
 ```Output
 Name                 Capabilities                       Drives
@@ -301,9 +310,6 @@ Variable             ShouldProcess                      {Variable}
 ActiveDirectory      Include, Exclude, Filter, Shoul... {AD}
 SqlServer            Credentials                        {SQLSERVER}
 ```
-
-Notice that in the previous set of results, two new PowerShell providers now exist, one for Active
-Directory and another one for SQL Server.
 
 A PSDrive for each of those modules was also added.
 
@@ -341,36 +347,36 @@ Get-ChildItem -Path Cert:\LocalMachine\CA
 Thumbprint                                Subject
 ----------                                -------
 FEE449EE0E3965A5246F000E87FDE2A065FD89D4  CN=Root Agency
-D559A586669B08F46A30A133F8A9ED3D038E2EA8  OU=www.verisign.com/CPS Incorporated LIABI...
-109F1CAED645BB78B3EA2B94C0697C740733031C  CN=Microsoft Windows Hardware Compatibility,...
+D559A586669B08F46A30A133F8A9ED3D038E2EA8  OU=www.verisign.com/CPS Incorp....
+109F1CAED645BB78B3EA2B94C0697C740733031C  CN=Microsoft Windows Hardware C...
 ```
 
 ## Comparison Operators
 
-PowerShell contains a number of comparison operators that are used to compare values or find values
-that match certain patterns. Table 5-1 contains a list of comparison operators in PowerShell.
+PowerShell contains various comparison operators that are used to compare values or find values that
+match certain patterns. The following table contains a list of comparison operators in PowerShell.
 
-|    Operator    |                          Definition                          |
-| -------------- | ------------------------------------------------------------ |
-| `-eq`          | Equal to                                                     |
-| `-ne`          | Not equal to                                                 |
-| `-gt`          | Greater than                                                 |
-| `-ge`          | Greater than or equal to                                     |
-| `-lt`          | Less than                                                    |
-| `-le`          | Less than or equal to                                        |
-| `-Like`        | Match using the `*` wildcard character                       |
-| `-NotLike`     | Does not match using the `*` wildcard character              |
-| `-Match`       | Matches the specified regular expression                     |
-| `-NotMatch`    | Does not match the specified regular expression              |
-| `-Contains`    | Determines if a collection contains a specified value        |
-| `-NotContains` | Determines if a collection does not contain a specific value |
-| `-In`          | Determines if a specified value is in a collection           |
-| `-NotIn`       | Determines if a specified value is not in a collection       |
-| `-Replace`     | Replaces the specified value                                 |
+All the operators listed in the table are case-insensitive. To make them case-sensitive, place a `c`
+in front of the operator. For example, `-ceq` is the case-sensitive version of the equals (`-eq`)
+comparison operator.
 
-All of the operators listed in Table 5-1 are case-insensitive. Place a `c` in front of the operator
-listed in Table 5-1 to make it case-sensitive. For example, `-ceq` is the case-sensitive version of
-the `-eq` comparison operator.
+|    Operator    |                         Definition                          |
+| -------------- | ----------------------------------------------------------- |
+| `-eq`          | Equal to                                                    |
+| `-ne`          | Not equal to                                                |
+| `-gt`          | Greater than                                                |
+| `-ge`          | Greater than or equal to                                    |
+| `-lt`          | Less than                                                   |
+| `-le`          | Less than or equal to                                       |
+| `-like`        | Match using the `*` wildcard character                      |
+| `-notlike`     | Doesn't match using the `*` wildcard character              |
+| `-match`       | Matches the specified regular expression                    |
+| `-notmatch`    | Doesn't match the specified regular expression              |
+| `-contains`    | Determines if a collection contains a specified value       |
+| `-notcontains` | Determines if a collection doesn't contain a specific value |
+| `-in`          | Determines if a specified value is in a collection          |
+| `-notin`       | Determines if a specified value isn't in a collection       |
+| `-replace`     | Replaces the specified value                                |
 
 Proper case "PowerShell" is equal to lower case "powershell" using the equals comparison operator.
 
@@ -435,8 +441,8 @@ less than or equal to work.
 True
 ```
 
-The `-Like` and `-Match` operators can be confusing, even for experienced PowerShell users. `-Like`
-is used with wildcard the characters `*` and `?` to perform "like" matches.
+The `-like` and `-match` operators can be confusing, even for experienced PowerShell users. `-like`
+is used with the wildcard characters `*` and `?` to perform "like" matches.
 
 ```powershell
 'PowerShell' -like '*shell'
@@ -446,10 +452,10 @@ is used with wildcard the characters `*` and `?` to perform "like" matches.
 True
 ```
 
-`-Match` uses a regular expression to perform the matching.
+The `-match` operator uses a regular expression to perform the matching.
 
 ```powershell
-'PowerShell' -match '^*.shell$'
+'PowerShell' -match '^.*shell$'
 ```
 
 ```Output
@@ -460,9 +466,6 @@ Use the range operator to store the numbers 1 through 10 in a variable.
 
 ```powershell
 $Numbers = 1..10
-```
-
-```Output
 ```
 
 Determine if the `$Numbers` variable includes 15.
@@ -485,18 +488,21 @@ $Numbers -contains 10
 True
 ```
 
-`-NotContains` reverses the logic to see if the `$Numbers` variable doesn't contain a value.
+The `-notcontains` operator reverses the logic to see if the `$Numbers` variable doesn't contain a
+value.
 
 ```powershell
 $Numbers -notcontains 15
 ```
 
+The previous example returns the **Boolean** true because it's true that the `$Numbers` variable
+doesn't contain 15.
+
 ```Output
 True
 ```
 
-The previous example returns the **Boolean** true because it's true that the `$Numbers` variable
-doesn't contain 15. It does however contain the number 10 so it's false when it's tested.
+It does, however, contain the number 10, so it's false when tested.
 
 ```powershell
 $Numbers -notcontains 10
@@ -506,8 +512,8 @@ $Numbers -notcontains 10
 False
 ```
 
-The "in" comparison operator was first introduced in PowerShell version 3.0. It's used to determine
-if a value is "in" an array. The `$Numbers` variable is an array since it contains multiple values.
+The `-in` comparison operator was first introduced in PowerShell version 3.0. It's used to determine
+if a value is _in_ an array. The `$Numbers` variable is an array since it contains multiple values.
 
 ```powershell
 15 -in $Numbers
@@ -528,7 +534,7 @@ opposite direction.
 True
 ```
 
-15 isn't in the `$Numbers` array so false is returned in the following example.
+Fifteen isn't in the `$Numbers` array, so false is returned in the following example.
 
 ```powershell
 15 -in $Numbers
@@ -544,25 +550,28 @@ Just like the `-contains` operator, `not` reverses the logic for the `-in` opera
 10 -notin $Numbers
 ```
 
+The previous example returns false because the `$Numbers` array does include 10 and the condition
+tests to determine if it doesn't contain 10.
+
 ```Output
 False
 ```
 
-The previous example returns false because the `$Numbers` array does include 10 and the condition
-was testing to determine if it didn't contain 10.
-
-15 is "not in" the `$Numbers` array so it returns the **Boolean** true.
+Determine if fifteen isn't in the `$Numbers` array.
 
 ```powershell
 15 -notin $Numbers
 ```
 
+15 is "not in" the `$Numbers` array so it returns the **Boolean** true.
+
 ```Output
 True
 ```
 
-The `-replace` operator does just want you would think. It's used to replace something. Specifying
-one value replaces that value with nothing. In the following example, I replace "Shell" with nothing.
+The `-replace` operator does just what you would think. It's used to replace something. Specifying
+one value replaces that value with nothing. In the following example, you replace "Shell" with
+nothing.
 
 ```powershell
 'PowerShell' -replace 'Shell'
@@ -572,33 +581,35 @@ one value replaces that value with nothing. In the following example, I replace 
 Power
 ```
 
-If you want to replace a value with a different value, specify the new value after the pattern you
-want to replace. SQL Saturday in Baton Rouge is an event that I try to speak at every year. In the
-following example, I replace the word "Saturday" with the abbreviation "Sat".
+If you want to replace a value with a different one, specify the new one after the pattern you want
+to replace. SQL Saturday in Baton Rouge is an event I try to speak at every year. In the following
+example, the word "Saturday" is replaced with the abbreviation "Sat".
 
 ```powershell
-'SQL Saturday - Baton Rouge' -Replace 'saturday','Sat'
+'SQL Saturday - Baton Rouge' -replace 'saturday','Sat'
 ```
 
 ```Output
 SQL Sat - Baton Rouge
 ```
 
-There are also methods like **Replace()** that can be used to replace things similar to the way the
-replace operator works. However, the `-Replace` operator is case-insensitive by default, and the
+There are also methods like **Replace()** that can be used to replace things similar to how the
+replace operator works. However, the `-replace` operator is case-insensitive by default, and the
 **Replace()** method is case-sensitive.
 
 ```powershell
 'SQL Saturday - Baton Rouge'.Replace('saturday','Sat')
 ```
 
+Notice that the word "Saturday" isn't replaced. This is because it's specified in a different case
+than the original.
+
 ```Output
 SQL Saturday - Baton Rouge
 ```
 
-Notice that the word "Saturday" wasn't replaced in the previous example. This is because it was
-specified in a different case than the original. When the word "Saturday" is specified in the same
-case as the original, the **Replace()** method does replace it as expected.
+When the word "Saturday" is specified in the same case as the original, the **Replace()** method
+performs the replacement as expected.
 
 ```powershell
 'SQL Saturday - Baton Rouge'.Replace('Saturday','Sat')
@@ -608,44 +619,49 @@ case as the original, the **Replace()** method does replace it as expected.
 SQL Sat - Baton Rouge
 ```
 
-Be careful when using methods to transform data because you can run into unforeseen problems, such
-as failing the _Turkey Test_. For an example, see the blog article titled
-[Using Pester to Test PowerShell Code with Other Cultures][Using Pester to Test PowerShell Code with Other Cultures]. My recommendation is to use an
-operator instead of a method whenever possible to avoid these types of problems.
+Be careful when using methods to transform data because you can encounter unforeseen problems, such
+as failing the _Turkey Test_. For an example, see my blog article,
+[Using Pester to Test PowerShell Code with Other Cultures][pester-test-other-cultures]. I recommend
+using operators instead of methods whenever possible to avoid these types of problems.
 
-While the comparison operators can be used as shown in the previous examples, I normally find myself
-using them with the `Where-Object` cmdlet to perform some type of filtering.
+While the comparison operators can be used, as shown in the previous examples, I typically use them
+with the `Where-Object` cmdlet to perform filtering.
 
 ## Summary
 
-In this chapter, you've learned a number of different topics to include Formatting Right, Aliases,
-Providers, and Comparison Operators.
+You learned several topics in this chapter, including Formatting Right, Aliases, Providers, and
+Comparison Operators.
 
 ## Review
 
-1. Why is it necessary to perform Formatting as far to the right as possible?
+1. Why is it necessary to perform formatting as far to the right as possible?
 1. How do you determine what the actual cmdlet is for the `%` alias?
 1. Why shouldn't you use aliases in scripts you save or code you share with others?
-1. Perform a directory listing on the drives that are associated with one of the registry providers.
+1. Perform a directory listing on the drives that are associated with the Registry provider.
 1. What's one of the main benefits of using the replace operator instead of the replace method?
 
-## Recommended Reading
+## References
 
-- [Format-Table][Format-Table]
-- [Format-List][Format-List]
-- [Format-Wide][Format-Wide]
-- [about_Aliases][about_Aliases]
-- [about_Providers][about_Providers]
-- [about_Comparison_Operators][about_Comparison_Operators]
-- [about_Arrays][about_Arrays]
+- [Format-Table][format-table]
+- [Format-List][format-list]
+- [Format-Wide][format-wide]
+- [about_Aliases][about-aliases]
+- [about_Providers][about-providers]
+- [about_Comparison_Operators][about-comparison-operators]
+- [about_Arrays][about-arrays]
+
+## Next steps
+
+In the next chapter, you'll learn about flow control, scripting, loops, and conditional logic.
 
 <!-- link references -->
-[SSMS]: /sql/ssms/download-sql-server-management-studio-ssms
-[Format-Table]: /powershell/module/microsoft.powershell.utility/format-table
-[Format-List]: /powershell/module/microsoft.powershell.utility/format-list
-[Format-Wide]: /powershell/module/microsoft.powershell.utility/format-wide
-[about_Aliases]: /powershell/module/microsoft.powershell.core/about/about_aliases
-[about_Providers]: /powershell/module/microsoft.powershell.core/about/about_providers
-[about_Comparison_Operators]: /powershell/module/microsoft.powershell.core/about/about_comparison_operators
-[about_Arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[Using Pester to Test PowerShell Code with Other Cultures]: https://mikefrobbins.com/2015/10/22/using-pester-to-test-powershell-code-with-other-cultures/
+
+[sql-server-powershell]: /sql/powershell/download-sql-server-ps-module
+[format-table]: /powershell/module/microsoft.powershell.utility/format-table
+[format-list]: /powershell/module/microsoft.powershell.utility/format-list
+[format-wide]: /powershell/module/microsoft.powershell.utility/format-wide
+[about-aliases]: /powershell/module/microsoft.powershell.core/about/about_aliases
+[about-providers]: /powershell/module/microsoft.powershell.core/about/about_providers
+[about-comparison-operators]: /powershell/module/microsoft.powershell.core/about/about_comparison_operators
+[about-arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
+[pester-test-other-cultures]: https://mikefrobbins.com/2015/10/22/using-pester-to-test-powershell-code-with-other-cultures/

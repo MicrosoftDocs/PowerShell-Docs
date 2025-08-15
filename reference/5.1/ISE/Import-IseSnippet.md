@@ -2,8 +2,8 @@
 external help file: ISE-help.xml
 Locale: en-US
 Module Name: ISE
-ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/ise/import-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/ise/import-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-IseSnippet
 ---
@@ -38,12 +38,12 @@ Snippets** or press <kbd>Ctrl</kbd>+<kbd>J</kbd>.
 Imported snippets are available only in the current session. To import the snippets into all Windows
 PowerShell ISE sessions, add an `Import-IseSnippet` command to your Windows PowerShell profile or
 copy the snippet files to your local snippets directory
-`$home\Documents\WindowsPowershell\Snippets`.
+`$HOME\Documents\WindowsPowerShell\Snippets`.
 
 To import snippets, they must be properly formatted in the snippet XML for Windows PowerShell ISE
 snippets and saved in Snippet.ps1xml files. To create eligible snippets, use the `New-IseSnippet`
 cmdlet. `New-IseSnippet` creates a `<SnippetTitle>.Snippets.ps1xml` file in the
-`$home\Documents\WindowsPowerShell\Snippets` directory. You can move or copy the snippets to the
+`$HOME\Documents\WindowsPowerShell\Snippets` directory. You can move or copy the snippets to the
 Snippets directory of a Windows PowerShell module, or to any other directory.
 
 The `Get-IseSnippet` cmdlet, which gets user-created snippets in the local snippets directory, does
@@ -78,9 +78,9 @@ Import-IseSnippet -Module SnippetModule -ListAvailable
 This example gets snippets in all installed modules in the **PSModulePath** environment variable.
 
 ```powershell
-($env:PSModulePath).split(";") |
+($Env:PSModulePath).Split(";") |
   ForEach-Object {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} |
-    ForEach-Object {$_.fullname}
+    ForEach-Object {$_.FullName}
 ```
 
 ### Example 4: Import all module snippets
@@ -90,9 +90,9 @@ you don't need to run a command like this because modules that have snippets wil
 `Import-IseSnippet` cmdlet to import them for you when the module is imported.
 
 ```powershell
-($env:PSModulePath).split(";") |
+($Env:PSModulePath).Split(";") |
   ForEach-Object {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} |
-    ForEach-Object {$psise.CurrentPowerShellTab.Snippets.Load($_)}
+    ForEach-Object {$psISE.CurrentPowerShellTab.Snippets.Load($_)}
 ```
 
 ### Example 5: Copy all module snippets
@@ -102,9 +102,9 @@ the current user. Unlike imported snippets, which affect only the current sessio
 are available in every Windows PowerShell ISE session.
 
 ```powershell
-($env:PSModulePath).split(";") |
+($Env:PSModulePath).Split(";") |
   ForEach-Object {dir $_\*\Snippets\*.Snippets.ps1xml -ErrorAction SilentlyContinue} |
-    Copy-Item -Destination $home\Documents\WindowsPowerShell\Snippets
+    Copy-Item -Destination $HOME\Documents\WindowsPowerShell\Snippets
 ```
 
 ## PARAMETERS
@@ -136,7 +136,7 @@ Imports snippets from the specified module into the current session. Wildcard ch
 supported.
 
 This parameter imports snippets from `Snippet.ps1xml` files in the Snippets subdirectory in the
-module path, such as `$home\Documents\WindowsPowerShell\Modules\<ModuleName>\Snippets`.
+module path, such as `$HOME\Documents\WindowsPowerShell\Modules\<ModuleName>\Snippets`.
 
 This parameter is designed to be used by module authors in a startup script, such as a script
 specified in the **ScriptsToProcess** key of a module manifest. Snippets in a module are not
@@ -199,23 +199,23 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not take input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate output.
+This cmdlet returns no output.
 
 ## NOTES
 
 - You cannot use the `Get-IseSnippet` cmdlet to get imported snippets. `Get-IseSnippet` gets only
-  snippets in the `$home\Documents\WindowsPowerShell\Snippets` directory.
+  snippets in the `$HOME\Documents\WindowsPowerShell\Snippets` directory.
 - `Import-IseSnippet` uses the **Load** static method of
   **Microsoft.PowerShell.Host.ISE.ISESnippetCollection** objects. You can also use the **Load**
   method of snippets in the Windows PowerShell ISE object model:
   `$psISE.CurrentPowerShellTab.Snippets.Load()`
-- The `New-IseSnippet` cmdlet stores new user-created snippets in unsigned .ps1xml files. As such,
+- The `New-IseSnippet` cmdlet stores new user-created snippets in unsigned `.ps1xml` files. As such,
   Windows PowerShell cannot load them into a session in which the execution policy is **AllSigned**
   or **Restricted**. In a **Restricted** or **AllSigned** session, you can create, get, and import
   unsigned user-created snippets, but you cannot use them in the session.

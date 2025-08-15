@@ -1,7 +1,6 @@
 ---
 description: Windows PowerShell Reference
 ms.date: 09/13/2016
-ms.topic: reference
 title: Windows PowerShell Reference
 ---
 # Windows PowerShell Reference
@@ -56,7 +55,7 @@ base class from which all cmdlet classes must be derived. For more information a
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider) This
 namespace contains the classes, enumerations, and interfaces required to implement a Windows
 PowerShell provider. In particular, the
-[System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
+[System.Management.Automation.Provider.CmdletProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)
 class is the base class from which all Windows PowerShell provider classes must be derived.
 
 [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) This namespace contains
@@ -69,7 +68,7 @@ between the user and Windows PowerShell.
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) This
 namespace contains the base classes used by other namespace classes. For example, the
-[System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)
+[System.Management.Automation.Internal.CmdletMetadataAttribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)
 class is the base class for the
 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 class.

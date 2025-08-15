@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/disable-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSSessionConfiguration
 ---
@@ -208,16 +208,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration, System.String
+### Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration
 
-You can pipe a session configuration object or a string that contains the name of a session
-configuration to this cmdlet.
+You can pipe a session configuration object to this cmdlet.
+
+### System.String
+
+You can pipe a string that contains the name of a session configuration to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any objects.
+This cmdlet returns no output.
 
 ## NOTES
 

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 09/30/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/limit-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/limit-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Limit-EventLog
 ---
@@ -53,7 +53,7 @@ retained for at least 7 days.
 ### Example 3: Change the overflow action of all event logs
 
 ```powershell
-$Logs = Get-EventLog -List | ForEach {$_.log}
+$Logs = Get-EventLog -List | foreach {$_.Log}
 Limit-EventLog -OverflowAction OverwriteOlder -LogName $Logs
 Get-EventLog -List
 ```

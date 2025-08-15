@@ -8,8 +8,8 @@ metadata:
   description: A list of resources and a summary of new articles and community contributions. # < 160 chars
   ms.topic: landing-page # Required
   author: sdwheeler #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sewhee #Required; microsoft alias of author; optional team alias.
-  ms.date: 05/27/2022
+  ms.author: sewhee #Required; Microsoft alias of author; optional team alias.
+  ms.date: 03/30/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
 #               overview | quickstart | reference | tutorial | video | whats-new
@@ -21,6 +21,12 @@ landingContent:
   linkLists:
     - linkListType: whats-new
       links:
+        - text: 2025 Updates
+          url: ./2025-updates.md
+        - text: 2024 Updates
+          url: ./2024-updates.md
+        - text: 2023 Updates
+          url: ./2023-updates.md
         - text: 2022 Updates
           url: ./2022-updates.md
         - text: 2021 Updates
@@ -38,7 +44,7 @@ landingContent:
         - text: Deep Dives
           url: ../learn/deep-dives/overview.md
         - text: PowerShell Learn modules
-          url: /learn/browse/?terms=PowerShell
+          url: /training/browse/?terms=PowerShell
     - linkListType: video
       links:
       - text: Microsoft Virtual Academy videos
@@ -59,3 +65,9 @@ landingContent:
       links:
         - text: Digital art
           url: digital-art.md
+    - linkListType: reference
+      links:
+        - text: PowerShell 7 usage stats
+          url: https://msit.powerbi.com/view?r=eyJrIjoiM2E3MDllNDMtNGE4OS00NjdkLWI1ODEtZGI2MGNiYjA1ZmI1IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9&pageName=ReportSection
+        - text: Top contributors to PowerShell
+          url: https://msit.powerbi.com/view?r=eyJrIjoiM2E3MDllNDMtNGE4OS00NjdkLWI1ODEtZGI2MGNiYjA1ZmI1IiwidCI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImMiOjV9&pageName=ReportSection4644b8b160132457dabe

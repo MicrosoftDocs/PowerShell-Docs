@@ -1,14 +1,13 @@
 ---
 description: Writing Help for PowerShell Scripts and Functions
-ms.date: 09/13/2016
-ms.topic: reference
+ms.date: 07/10/2023
 title: Writing Help for PowerShell Scripts and Functions
 ---
 # Writing Help for PowerShell Scripts and Functions
 
-PowerShell scripts and functions should be fully documented whenever they are shared with others.
-The `Get-Help` cmdlet displays the script and function help topics in the same format as it displays
-help for cmdlets, and all of the `Get-Help` parameters work on script and function help topics.
+PowerShell scripts and functions should be fully documented whenever they're shared with others. The
+`Get-Help` cmdlet displays the script and function help topics in the same format as it displays
+help for cmdlets, and all the `Get-Help` parameters work on script and function help topics.
 
 PowerShell scripts can include a help topic about the script and help topics about each functions in
 the script. Functions that are shared independently of scripts can include their own help topics.
@@ -24,23 +23,21 @@ The help topic that describes a script or function can be implemented as a set o
 the script or function. When writing comment-based help for a script and for functions in a script,
 pay careful attention to the rules for placing the comment-based help. The placement determines
 whether the `Get-Help` cmdlet associates the help topic with the script or a function. For more
-information about writing comment-based help topics, see
-[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+information about writing comment-based help topics, see [about_Comment_Based_Help][03].
 
 ### XML-Based Command Help
 
 The help topic that describes a script or function can be implemented in an XML file that uses the
-command help schema. To associate the script or function with the XML file, use the `ExternalHelp`
+command help schema. To associate the script or function with the XML file, use the `.EXTERNALHELP`
 comment keyword followed by the path and name of the XML file.
 
-When the `ExternalHelp` comment keyword is present, it takes precedence over comment-based help,
-even when `Get-Help` cannot find a help file that matches the value of the `ExternalHelp` keyword.
+When the `.EXTERNALHELP` comment keyword is present, it takes precedence over comment-based help,
+even when `Get-Help` can't find a help file that matches the value of the `.EXTERNALHELP` keyword.
 
 ### Online Help
 
 You can post your help topics on the internet and then direct `Get-Help` to open the topics. For
-more information about writing comment-based help topics, see
-[Supporting Online Help](../module/supporting-online-help.md).
+more information about writing comment-based help topics, see [Supporting Online Help][01].
 
 There is no established method for writing conceptual ("About") topics for scripts and functions.
 However, you can post conceptual topics on the internet list the topics and their URLs in the
@@ -81,11 +78,16 @@ Related Links section of a command help topic.
   to use it in other sessions, they need to add it, or add it a PowerShell profile.
 
 - `Get-Help` displays the help topic for a script or function only when the script file and help
-  topic files are saved in the correct locations. Therefore, it is not useful to include
-  instructions for installing PowerShell, or saving or installing the script or function in a script
-  or function help topic. Instead, include any installation instructions in the document that you
-  use to distribute the script or function.
+  topic files are saved in the correct locations. Therefore, it's not useful to include instructions
+  for installing PowerShell, or saving or installing the script or function in a script or function
+  help topic. Instead, include any installation instructions in the document that you use to
+  distribute the script or function.
 
 ## See Also
 
-[Writing Comment-Based Help Topics](./writing-comment-based-help-topics.md)
+[Writing Comment-Based Help Topics][02]
+
+<!-- link references -->
+[01]: ../module/supporting-online-help.md
+[02]: ./writing-comment-based-help-topics.md
+[03]: /powershell/module/microsoft.powershell.core/about/about_comment_based_help

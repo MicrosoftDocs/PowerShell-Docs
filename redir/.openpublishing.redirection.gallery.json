@@ -1,0 +1,179 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/faqs",
+      "source_path": "../reference/docs-conceptual/gallery/faqs.yml"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/getting-started",
+      "source_path": "../reference/docs-conceptual/gallery/getting-started.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/powershellget/install-on-older-systems",
+      "source_path": "../reference/docs-conceptual/gallery/install-on-older-systems.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/powershellget/install-powershellget",
+      "source_path": "../reference/docs-conceptual/gallery/installing-psget.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/module-license-acceptance",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/module-license-acceptance.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/module-prerelease-support",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/module-prerelease-support.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/module-psedition-support",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/module-psedition-support.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/package-manifest-affecting-ui",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/package-manifest-affecting-ui.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/publishing-guidelines",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/publishing-guidelines.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/script-license-acceptance",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/script-license-acceptance.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/script-prerelease-support",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/script-prerelease-support.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/script-psedition-support",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/script-psedition-support.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/concepts/scriptanalyzer-rule-profile",
+      "source_path": "../reference/docs-conceptual/gallery/concepts/scriptanalyzer-rule-profile.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/working-with-local-psrepositories",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/working-with-local-psrepositories.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/finding-packages/filtering-packages",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/finding-packages/filtering-packages.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/finding-packages/search-syntax",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/finding-packages/search-syntax.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/finding-packages/searching-by-compatibility",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/finding-packages/searching-by-compatibility.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/getting-support/bootstrapping-nuget",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/getting-support/bootstrapping-nuget.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/getting-support/contacting-administrators",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/getting-support/contacting-administrators.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/getting-support/dispute-resolution",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/getting-support/dispute-resolution.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/getting-support/gdpr-dsr-policy",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/getting-support/gdpr-dsr-policy.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/getting-support/report-abuse",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/getting-support/report-abuse.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/getting-support/troubleshooting-cmdlets",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/getting-support/troubleshooting-cmdlets.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/managing-profile/creating-APIkeys",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/managing-profile/creating-APIkeys.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/managing-profile/managing-account",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/managing-profile/managing-account.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/publishing-packages/creating-an-account",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/publishing-packages/creating-an-account.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/publishing-packages/deleting-packages",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/publishing-packages/deleting-packages.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/publishing-packages/managing-package-owners",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/publishing-packages/managing-package-owners.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/publishing-packages/publishing-a-package",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/publishing-packages/publishing-a-package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/publishing-packages/unlisting-packages",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/publishing-packages/unlisting-packages.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/working-with-packages/contacting-package-owners",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/working-with-packages/contacting-package-owners.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/working-with-packages/deploy-to-azure-automation",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/working-with-packages/deploy-to-azure-automation.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/working-with-packages/filelist-view",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/working-with-packages/filelist-view.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/working-with-packages/manual-download",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/working-with-packages/manual-download.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/gallery/how-to/working-with-packages/packages-that-require-license-acceptance",
+      "source_path": "../reference/docs-conceptual/gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md"
+    }
+  ]
+}

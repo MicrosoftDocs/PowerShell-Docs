@@ -1,7 +1,6 @@
 ---
 description: Configuration Element
 ms.date: 08/20/2021
-ms.topic: reference
 title: Configuration Element
 ---
 # Configuration Element

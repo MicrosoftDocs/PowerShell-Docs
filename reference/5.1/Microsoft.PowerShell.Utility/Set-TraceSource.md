@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-tracesource?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-tracesource?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-TraceSource
 ---
+
 # Set-TraceSource
 
 ## SYNOPSIS
@@ -49,7 +50,7 @@ Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -Listener
 This command starts tracing for the ParameterBinding component of PowerShell. It uses the **Name**
 parameter to specify the trace source, the **Option** parameter to select the `ExecutionFlow` trace
 events, and the **PSHost** parameter to select the PowerShell host listener, which sends the output
-to the console. The **ListenerOption** parameter adds the `ProcessID` and `TimeStamp` values to the
+to the console. The **ListenerOption** parameter adds the `ProcessId` and `TimeStamp` values to the
 trace message prefix.
 
 ### Example 2: Stop a trace
@@ -192,7 +193,7 @@ Specifies the type of events that are traced. The acceptable values for this par
 - `Assert`
 - `All`
 
-`All` is the default.
+`None` is the default.
 
 The following values are combinations of other values:
 
@@ -302,15 +303,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a name to `Set-TraceSource`.
+You can pipe a string that contains a name to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSTraceSource
+### None
 
-When you use the **PassThru** parameter, `Set-TraceSource` generates a
-**System.Management.Automation.PSTraceSource** object representing the trace session. Otherwise,
-this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSTraceSource
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSTraceSource** object
+representing the trace session.
 
 ## NOTES
 

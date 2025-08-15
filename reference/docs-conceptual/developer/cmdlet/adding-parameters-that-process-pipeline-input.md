@@ -1,7 +1,6 @@
 ---
 description: Adding Parameters that Process Pipeline Input
 ms.date: 09/13/2016
-ms.topic: reference
 title: Adding Parameters that Process Pipeline Input
 ---
 # Adding Parameters that Process Pipeline Input
@@ -47,7 +46,7 @@ defines a property that represents the `Name` parameter as described in
 However, when a cmdlet needs to process pipeline input, it must have its parameters bound to input
 values by the Windows PowerShell runtime. To do this, you must add the `ValueFromPipeline` keyword
 or add the `ValueFromPipelineByProperty` keyword to the
-[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
+[System.Management.Automation.ParameterAttribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
 attribute declaration. Specify the `ValueFromPipeline` keyword if the cmdlet accesses the complete
 input object. Specify the `ValueFromPipelineByProperty` if the cmdlet accesses only a property of
 the object.
@@ -151,7 +150,7 @@ For the complete C# sample code, see [GetProcessSample03 Sample](./getprocesssam
 
 ## Defining Object Types and Formatting
 
-Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may
+Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet may
 need to define its own type, or the cmdlet may need to extend an existing type provided by another
 cmdlet. For more information about defining new types or extending existing types, see
 [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
@@ -173,7 +172,7 @@ from the command line, see the
   through the pipeline.
 
   ```powershell
-  PS> type ProcessNames | get-proc
+  PS> type ProcessNames | Get-Proc
   ```
 
   The following output appears.
@@ -192,7 +191,7 @@ from the command line, see the
   PowerShell) as an upstream command to retrieve the "IEXPLORE" processes.
 
   ```powershell
-  PS> get-process iexplore | get-proc
+  PS> Get-Process iexplore | Get-Proc
   ```
 
   The following output appears.

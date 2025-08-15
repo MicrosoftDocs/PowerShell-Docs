@@ -1,7 +1,6 @@
 ---
 description: Creating remote runspaces
 ms.date: 09/12/2016
-ms.topic: reference
 title: Creating remote runspaces
 ---
 
@@ -75,7 +74,7 @@ namespace Samples
         using (PowerShell powershell = PowerShell.Create())
         {
           powershell.Runspace = remoteRunspace;
-          powershell.AddCommand("get-process");
+          powershell.AddCommand("Get-Process");
           powershell.Invoke();
 
           Collection<PSObject> results = powershell.Invoke();

@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSSessionConfiguration
 ---
@@ -60,7 +60,7 @@ local computer.
 Use the **Name** parameter to identify the session configuration that you want to change. Use the
 other parameters to specify new values for the properties of the session configuration. To delete a
 property value from the configuration, and use the default value, enter an empty string (`""`) or a
-value of `$Null` for the corresponding parameter.
+value of `$null` for the corresponding parameter.
 
 Starting in PowerShell 3.0, you can use a session configuration file to define a session
 configuration. This feature provides a simple and discoverable method for setting and changing the
@@ -104,7 +104,7 @@ The third command removes the `AdminConfig.ps1` script from the configuration.
 ```powershell
 Register-PSSessionConfiguration -Name "AdminShell" -AssemblyName "C:\Shells\AdminShell.dll" -ConfigurationTypeName "AdminClass"
 Set-PSSessionConfiguration -Name "AdminShell" -StartupScript "AdminConfig.ps1"
-Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $Null
+Set-PSSessionConfiguration -Name "AdminShell" -StartupScript $null
 ```
 
 ### Example 3: Display results
@@ -125,7 +125,7 @@ ParamName                       ParamValue
 psmaximumreceivedobjectsizemb   20
 
 "Restart WinRM service"
-WinRM service need to be restarted to make the changes effective. Do you want to run the command "restart-service winrm"?
+WinRM service need to be restarted to make the changes effective. Do you want to run the command "Restart-Service winrm"?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 ```
 
@@ -140,7 +140,7 @@ operator (`|`) sends the results of the command to `Format-List`, which displays
 of the configuration object in a list. Next, using the WSMan provider, we view the initialization
 parameters for the **MaintenanceShell** configuration. `Get-ChildItem` gets the child items in the
 **InitializationParameters** node for the **MaintenanceShell** plug-in. For more information about
-the WSMan provider, type `Get-Help wsman`.
+the WSMan provider, type `Get-Help WSMan`.
 
 ```powershell
 Set-PSSessionConfiguration -Name "MaintenanceShell" -StartupScript "C:\ps-test\Maintenance.ps1"
@@ -151,11 +151,11 @@ WSManConfig: Microsoft.WSMan.Management\WSMan::localhost\Plugin\MaintenanceShell
 
 ParamName            ParamValue
 ---------            ----------
-startupscript        c:\ps-test\Mainte...
+startupscript        C:\ps-test\Mainte...
 
 "Restart WinRM service"
 WinRM service need to be restarted to make the changes effective. Do you want to run
-the command "restart-service winrm"?
+the command "Restart-Service winrm"?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 
 ```
@@ -172,7 +172,7 @@ SDKVersion       : 1
 XmlRenderingType : text
 lang             : en-US
 PSVersion        : 2.0
-startupscript    : c:\ps-test\Maintenance.ps1
+startupscript    : C:\ps-test\Maintenance.ps1
 ResourceUri      : http://schemas.microsoft.com/powershell/MaintenanceShell
 SupportsOptions  : true
 ExactMatch       : true
@@ -188,7 +188,7 @@ Get-ChildItem WSMan:\localhost\Plugin\MaintenanceShell\InitializationParameters
 ParamName     ParamValue
 ---------     ----------
 PSVersion     2.0
-startupscript c:\ps-test\Maintenance.ps1
+startupscript C:\ps-test\Maintenance.ps1
 ```
 
 ## PARAMETERS
@@ -490,7 +490,7 @@ use a session configuration in a session, users must have at least `Execute(Invo
 the configuration.
 
 To use the default security descriptor for the configuration, enter an empty string (`""`) or a
-value of `$Null`. The default is the root SDDL in the `WSMan:` drive.
+value of `$null`. The default is the root SDDL in the `WSMan:` drive.
 
 If the security descriptor is complex, consider using the **ShowSecurityDescriptorUI** parameter
 instead of this one. You cannot use both parameters in the same command.
@@ -562,7 +562,7 @@ Specifies the startup script for the configuration. Enter the fully qualified pa
 script. The specified script runs in the new session that uses the session configuration.
 
 To delete a startup script from a session configuration, enter an empty string (`""`) or a value of
-`$Null`.
+`$null`.
 
 You can use a startup script to further configure the user session. If the script generates an
 error, even a non-terminating error, the session is not created and the `New-PSSession` command
@@ -717,7 +717,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 

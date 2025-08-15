@@ -1,14 +1,13 @@
 ---
 description: Host01 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Host01 Sample
 ---
 # Host01 Sample
 
 This sample shows how to implement a host application that uses a custom host. In this sample a
 runspace is created that uses the custom host, and then the
-[System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API
+[System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) API
 is used to run a script that calls "exit." The host application then looks at the output of the
 script and prints out the results.
 
@@ -28,7 +27,7 @@ This sample requires Windows PowerShell 2.0.
 - Creating a runspace that uses the custom host class.
 
 - Creating a
-  [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell)
+  [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell)
   object that runs a script that calls exit.
 
 - Verifying that the correct exit code was used in the exit process.
@@ -119,7 +118,7 @@ namespace Microsoft.Samples.PowerShell.Host
                     powershell.Invoke(script);
                 }
 
-                // Check the flags and see if they were set propertly.
+                // Check the flags and see if they were set properly.
                 Console.WriteLine(
                     "ShouldExit={0} (should be True); ExitCode={1} (should be 4)",
                     me.ShouldExit,

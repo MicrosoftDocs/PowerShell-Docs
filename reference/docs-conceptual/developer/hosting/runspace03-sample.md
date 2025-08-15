@@ -1,12 +1,11 @@
 ---
 description: Runspace03 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Runspace03 Sample
 ---
 # Runspace03 Sample
 
-This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run a script synchronously, and how to handle non-terminating errors. The script receives a list of process names and then retrieves those processes. The results of the script, including any non-terminating errors that were generated when running the script, are displayed in a console window.
+This sample shows how to use the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) class to run a script synchronously, and how to handle non-terminating errors. The script receives a list of process names and then retrieves those processes. The results of the script, including any non-terminating errors that were generated when running the script, are displayed in a console window.
 
 ## Requirements
 
@@ -16,9 +15,9 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run a script.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object to run a script.
 
-- Adding a script to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Adding a script to the pipeline of the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 - Passing input objects to the script from the calling program.
 
@@ -56,7 +55,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// <param name="args">Parameter not used.</param>
     /// <remarks>
     /// This sample demonstrates the following:
-    /// 1. Creating a PowerSHell object to run a script.
+    /// 1. Creating a PowerShell object to run a script.
     /// 2. Adding a script to the pipeline of the PowerShell object.
     /// 3. Passing input objects to the script from the calling program.
     /// 4. Running the script synchronously.
@@ -75,7 +74,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
       // The script to run to get these processes. Input passed
       // to the script will be available in the $input variable.
-      string script = "$input | get-process -name {$_}";
+      string script = "$input | Get-Process -Name {$_}";
 
       // Create a PowerShell object. Creating this object takes care of
       // building all of the other data structures needed to run the script.

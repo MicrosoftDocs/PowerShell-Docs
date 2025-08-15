@@ -1,0 +1,14 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": true,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-verb?view=powershell-5.1",
+      "source_path": "../reference/5.1/microsoft.powershell.core/functions/get-verb.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/learn/remoting/powershell-remoting-faq",
+      "source_path": "../reference/5.1/Microsoft.PowerShell.Core/About/about_Remote_FAQ.md"
+    }
+  ]
+}

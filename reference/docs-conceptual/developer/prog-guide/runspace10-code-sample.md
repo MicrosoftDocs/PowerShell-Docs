@@ -1,13 +1,12 @@
 ---
 description: RunSpace10 Code Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: RunSpace10 Code Sample
 ---
 # RunSpace10 Code Sample
 
 Here is the source code for the Runspace10 sample. This sample application adds a cmdlet to
-[System.Management.Automation.Runspaces.Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration)
+[System.Management.Automation.Runspaces.RunspaceConfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration)
 and then uses the modified configuration information to create the runspace.
 
 > [!NOTE]

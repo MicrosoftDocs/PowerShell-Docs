@@ -1,14 +1,13 @@
 ---
 description: RunSpace03 (VB.NET) Code Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: RunSpace03 (VB.NET) Code Sample
 ---
 # RunSpace03 (VB.NET) Code Sample
 
 Here is the VB.NET source code for the console application described in
 "Creating a Console Application That Runs a Specified Script". This sample uses
-the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)
+the [System.Management.Automation.RunspaceInvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)
 class to execute a script that retrieves process information for the list of
 process names passed into the script. It shows how to pass input objects to a
 script and how to retrieve error objects as well as the output objects.
@@ -63,7 +62,7 @@ Namespace Microsoft.Samples.PowerShell.Runspaces
 
             ' The script to run to get these processes. Input passed
             ' to the script will be available in the $input variable.
-            Dim script As String = "$input | get-process -name {$_}"
+            Dim script As String = "$input | Get-Process -Name {$_}"
 
             ' Create an instance of the RunspaceInvoke class.
             Dim invoker As New RunspaceInvoke()

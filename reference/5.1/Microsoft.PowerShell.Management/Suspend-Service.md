@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/suspend-service?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/suspend-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Suspend-Service
 ---
+
 # Suspend-Service
 
 ## SYNOPSIS
@@ -39,7 +40,7 @@ Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Excl
 
 The `Suspend-Service` cmdlet sends a suspend message to the Windows Service Controller for each of
 the specified services. While suspended, the service is still running, but its action is stopped
-until resumed, such as by usingthe `Resume-Service` cmdlet. You can specify the services by their
+until resumed, such as by using the `Resume-Service` cmdlet. You can specify the services by their
 service names or display names, or you can use the **InputObject** parameter to pass a service
 object that represents the services that you want to suspend.
 
@@ -81,7 +82,7 @@ PS C:\> Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"} | Suspend
 This command suspends all of the services on the computer that can be suspended. It uses
 `Get-Service` to get objects that represent the services on the computer. The pipeline operator
 passes the results to the `Where-Object` cmdlet, which selects only the services that have a value
-of `$True` for the **CanPauseAndContinue** property. Another pipeline operator passes the results to
+of `$true` for the **CanPauseAndContinue** property. Another pipeline operator passes the results to
 `Suspend-Service`. The **Confirm** parameter prompts you for confirmation before suspending each of
 the services.
 
@@ -233,17 +234,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.ServiceProcess.ServiceController, System.String
+### System.ServiceProcess.ServiceController
 
-You can pipe a service object or a string that contains a service name to this cmdlet.
+You can pipe a service object to this cmdlet.
+
+### System.String
+
+You can pipe a string that contains a service name to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.ServiceProcess.ServiceController
+### None
 
-This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
-service, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any
-output.
+By default, this cmdlet returns no output.
+
+### System.ServiceProcess.ServiceController
+
+When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object
+representing the service.
 
 ## NOTES
 

@@ -27,7 +27,7 @@
     Format-ConsoleStyle -Text 'hooray!' -DefinedStyle Success
     ```
 
-    The cmdlet returns  the string `hooray!` in bright blue and bolded.
+    The cmdlet returns the string `hooray!` in bright blue and bolded.
 #>
 function Format-ConsoleStyle {
     [CmdletBinding(DefaultParameterSetName='Components')]

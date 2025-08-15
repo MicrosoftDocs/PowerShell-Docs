@@ -2,11 +2,12 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 10/04/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/get-wsmancredssp?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/get-wsmancredssp?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WSManCredSSP
 ---
+
 # Get-WSManCredSSP
 
 ## SYNOPSIS
@@ -77,13 +78,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None
+### System.String
 
-This cmdlet does not generate any output.
+This cmdlet returns a message string describing the configuration state for CredSSP.
 
 ## NOTES
 

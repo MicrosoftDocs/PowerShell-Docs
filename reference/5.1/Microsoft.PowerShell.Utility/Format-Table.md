@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ft
 title: Format-Table
 ---
 
@@ -18,9 +20,9 @@ Formats the output as a table.
 ### All
 
 ```
-Format-Table [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap] [[-Property] <Object[]>]
- [-GroupBy <Object>] [-View <String>] [-ShowError] [-DisplayError] [-Force] [-Expand <String>]
- [-InputObject <PSObject>] [<CommonParameters>]
+Format-Table [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap]
+ [-GroupBy <Object>] [-View <string>] [-ShowError] [-DisplayError] [-Force] [-Expand <string>]
+ [-InputObject <psobject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,7 +35,8 @@ want to display.
 PowerShell uses default formatters to define how object types are displayed. You can use `.ps1xml`
 files to create custom views that display an output table with specified properties. After a custom
 view is created, use the **View** parameter to display the table with your custom view. For more
-information about views, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
+information about views, see
+[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
 
 You can use a hash table to add calculated properties to an object before displaying it and to
 specify the column headings in the table. To add a calculated property, use the **Property** or
@@ -102,7 +105,7 @@ more information about views and the code used to create this example's view, se
 [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md#sample-xml-for-a-format-table-custom-view).
 
 ```powershell
-Get-ChildItem  -Path C:\Test | Format-Table -View mygciview
+Get-ChildItem  -Path C:\Test | Format-Table -View MyGciView
 ```
 
 ```Output
@@ -120,7 +123,7 @@ d-----       10/23/2019     09:38       2/25/2019     09:38                Files
 
 `Get-ChildItem` gets the contents of the current directory, `C:\Test`. The
 **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects are sent down the pipeline.
-`Format-Table` uses the **View** parameter to specify the custom view **mygciview** that includes
+`Format-Table` uses the **View** parameter to specify the custom view **MyGciView** that includes
 the **CreationTime** column.
 
 The default `Format-Table` output for `Get-ChildItem` doesn't include the **CreationTime** column.
@@ -171,13 +174,16 @@ from the result of a `Get-Date` command, which gets the current date and time.
 
 ### Example 7: Format Notepad processes
 
-This example uses `Get-CimInstance` to get the running time for all **notepad** processes on the local
-computer. You can use `Get-CimInstance` with the **ComputerName** parameter to get information from
-remote computers.
+This example uses `Get-CimInstance` to get the running time for all **notepad** processes on the
+local computer. You can use `Get-CimInstance` with the **ComputerName** parameter to get information
+from remote computers.
 
 ```powershell
-$Processes = Get-CimInstance -Class win32_process -Filter "name='notepad.exe'"
-$Processes | Format-Table ProcessName, @{ Label = "Total Running Time"; Expression={(Get-Date) - $_.CreationDate}}
+$Processes = Get-CimInstance -Class Win32_Process -Filter "name='notepad.exe'"
+$Processes | Format-Table ProcessName, @{
+    Label = "Total Running Time"
+    Expression={(Get-Date) - $_.CreationDate}
+}
 ```
 
 ```Output
@@ -295,7 +301,10 @@ Accept wildcard characters: False
 
 Indicates that the cmdlet directs the cmdlet to display all the error information. Use with the
 **DisplayError** or **ShowError** parameter. By default, when an error object is written to the
-error or display streams, only some of the error information is displayed.
+error or display streams, only some error information is displayed.
+
+Also required when formatting certain .NET types. For more information, see the [Notes](#notes)
+section.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -381,13 +390,13 @@ property. Wildcards are permitted.
 If you omit this parameter, the properties that appear in the display depend on the first object's
 properties. For example, if the first object has **PropertyA** and **PropertyB** but subsequent
 objects have **PropertyA**, **PropertyB**, and **PropertyC**, then only the **PropertyA** and
-**PropertyB** headers will display.
+**PropertyB** headers are displayed.
 
 The **Property** parameter is optional. You can't use the **Property** and **View** parameters in
 the same command.
 
-The value of the **Property** parameter can be a new calculated property. The calculated property can
-be a script block or a hash table. Valid key-value pairs are:
+The value of the **Property** parameter can be a new calculated property. The calculated property
+can be a script block or a hash table. Valid key-value pairs are:
 
 - Name (or Label) `<string>`
 - Expression - `<string>` or `<script block>`
@@ -499,15 +508,41 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can send any object down the pipeline to `Format-Table`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.Commands.Internal.Format
 
-`Format-Table` returns format objects that represent the table.
+This cmdlet returns format objects that represent the table.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Format-Table`:
+
+- `ft`
+
+If you want to use `Format-Table` with the **Property** parameter, you need to include the **Force**
+parameter under any of the following conditions:
+
+- The input objects are normally formatted out-of-band using the `ToString()` method. This applies
+  to `[string]` and .NET primitive types, which are a superset of the built-in numeric types such as
+  `[int]`, `[long]`, and others.
+
+- The input objects have no public properties.
+
+- The input objects are instances of the wrapper types PowerShell uses for output streams other
+  than the Success output stream. This applies only when these wrapper types are sent to the Success
+  output stream that requires either having captured them via common parameters such as
+  **ErrorVariable** first or using a redirection such as `*>&1`.
+
+  - The wrapper types include:
+
+    - [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+    - [System.Management.Automation.WarningRecord](/dotnet/api/System.Management.Automation.WarningRecord)
+    - [System.Management.Automation.VerboseRecord](/dotnet/api/System.Management.Automation.VerboseRecord)
+    - [System.Management.Automation.DebugRecord](/dotnet/api/System.Management.Automation.DebugRecord)
+    - [System.Management.Automation.InformationRecord](/dotnet/api/System.Management.Automation.InformationRecord)
 
 ## RELATED LINKS
 

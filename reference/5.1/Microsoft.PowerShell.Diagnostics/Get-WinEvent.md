@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 10/26/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WinEvent
 ---
@@ -230,15 +230,15 @@ is a property of the object with a non-null value.
 ### Example 5: Get event logs from multiple servers
 
 This example gets objects that represent the **Application** event logs on three computers:
-Server01, Server02, and Server03. The **ForEach** keyword is used because the **ComputerName**
+Server01, Server02, and Server03. The `foreach` keyword is used because the **ComputerName**
 parameter accepts only one value. For more information, see [about_Foreach](../Microsoft.PowerShell.Core/about/about_Foreach.md).
 
 ```powershell
 $S = 'Server01', 'Server02', 'Server03'
-ForEach ($Server in $S) {
+foreach ($Server in $S) {
   Get-WinEvent -ListLog Application -ComputerName $Server |
     Select-Object LogMode, MaximumSizeInBytes, RecordCount, LogName,
-      @{name='ComputerName'; expression={$Server}} |
+      @{Name='ComputerName'; Expression={$Server}} |
     Format-Table -AutoSize
 }
 ```
@@ -252,7 +252,7 @@ Circular           15532032        5309 Application Server03
 ```
 
 The variable `$S` stores the names three servers: **Server01**, **Server02**, and **Server03**. The
-**ForEach** statement uses a loop to process each server, `($Server in $S)`. The script block in the
+`foreach` statement uses a loop to process each server, `($Server in $S)`. The script block in the
 curly braces (`{ }`) runs the `Get-WinEvent` command. The **ListLog** parameter specifies the
 **Application** log. The **ComputerName** parameter uses the variable `$Server` to get log
 information from each server.
@@ -556,14 +556,14 @@ $xmlQuery = @'
 <QueryList>
   <Query Id="0" Path="Windows PowerShell">
     <Select Path="System">*[System[(Level=3) and
-        TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]</Select>
+        TimeCreated[timediff(@SystemTime) &amp;lt;= 86400000]]]</Select>
   </Query>
 </QueryList>
 '@
 Get-WinEvent -FilterXML $xmlQuery
 
 # Using the FilterXPath parameter:
-$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &lt;= 86400000]]]'
+$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &amp;lt;= 86400000]]]'
 Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 ```
 
@@ -671,7 +671,7 @@ Hash table queries have the following rules:
 - The **Path** value takes paths to `.etl`, `.evt`, and `.evtx` log files.
 - The **LogName**, **Path**, and **ProviderName** keys can be used in the same query.
 - The **UserID** key can take a valid security identifier (SID) or a domain account name that can be
-  used to construct a valid **System.Security.Principal.NTAccount object**.
+  used to construct a valid **System.Security.Principal.NTAccount** object.
 - The **Data** value takes event data in an unnamed field. For example, events in classic event
   logs.
 
@@ -752,7 +752,7 @@ Accept wildcard characters: False
 ### -Force
 
 Gets debug and analytic logs, in addition to other event logs. The **Force** parameter is required
-to get a debug or analytic log when the value of the name parameter includes wildcard characters.
+to get a debug or analytic log when the value of the Name parameter includes wildcard characters.
 
 By default, the `Get-WinEvent` cmdlet excludes these logs unless you specify the full name of a
 debug or analytic log.
@@ -816,7 +816,7 @@ cmdlet.
 > PowerShell does not limit the amount of logs you can request. However, the `Get-WinEvent` cmdlet
 > queries the Windows API which has a limit of 256. This can make it difficult to filter through all
 > of your logs at one time. You can work around this by using a `foreach` loop to iterate through each
-> log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.Logname }`
+> log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.LogName }`
 
 ```yaml
 Type: System.String[]
@@ -917,23 +917,31 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String, System.Xml.XmlDocument, System.Collections.Hashtable
+### System.String
 
-You can pipeline a **LogName** (string), a **FilterXML** query, or a **FilterHashtable** query to
-`Get-WinEvent`.
+You can pipe a **LogName** (string) to this cmdlet.
+
+### System.Xml.XmlDocument
+
+You can pipe a **FilterXML** query to this cmdlet.
+
+### System.Collections.Hashtable
+
+You can pipe a **FilterHashtable** query to this cmdlet.
 
 ## OUTPUTS
 
-### System.Diagnostics.Eventing.Reader.EventLogConfiguration, System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics.Eventing.Reader.ProviderMetadata
+### System.Diagnostics.Eventing.Reader.EventLogConfiguration
 
-With the **ListLog** parameter, `Get-WinEvent` returns
-**System.Diagnostics.Eventing.Reader.EventLogConfiguration** objects.
+With the **ListLog** parameter, this cmdlet returns **EventLogConfiguration** objects.
 
-With the **ListProvider** parameter, `Get-WinEvent` returns
-**System.Diagnostics.Eventing.Reader.ProviderMetadata** objects.
+### System.Diagnostics.Eventing.Reader.EventLogRecord
 
-With all other parameters, `Get-WinEvent` returns
-**System.Diagnostics.Eventing.Reader.EventLogRecord** objects.
+By default, this cmdlet returns **EventLogRecord** objects.
+
+### System.Diagnostics.Eventing.Reader.ProviderMetadata
+
+With the **ListProvider** parameter, this cmdlet returns **ProviderMetadata** objects.
 
 ## NOTES
 

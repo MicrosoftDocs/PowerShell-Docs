@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/26/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-pssessionconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PSSessionConfiguration
 ---
@@ -98,7 +98,7 @@ OutputBufferingMode           : Block
 AutoRestart                   : false
 MaxShells                     : 300
 MaxMemoryPerShellMB           : 1024
-MaxIdleTimeoutms              : 43200000
+MaxIdleTimeoutMs              : 43200000
 SDKVersion                    : 1
 Name                          : Full
 XmlRenderingType              : text
@@ -129,7 +129,7 @@ the content of the Plugin node. This is another way to look at the session confi
 computer.
 
 ```powershell
-dir wsman:\localhost\plugin
+dir WSMan:\localhost\plugin
 ```
 
 ```Output
@@ -206,7 +206,7 @@ Name                      PSVersion  StartupScript        Permission            
 ----                      ---------  -------------        ----------                          --------------
 microsoft.powershell      5.1                             BUILTIN\Administrators AccessAll... server02.corp.fabrikam.com
 microsoft.powershell32    5.1                             BUILTIN\Administrators AccessAll... server02.corp.fabrikam.com
-MyX86Shell                5.1        c:\test\x86Shell.ps1 BUILTIN\Administrators AccessAll... server02.corp.fabrikam.com
+MyX86Shell                5.1        C:\test\x86Shell.ps1 BUILTIN\Administrators AccessAll... server02.corp.fabrikam.com
 ```
 
 The `Enable-WSManCredSSP` cmdlet enables **CredSSP** delegation on Server01, the local computer. The
@@ -225,7 +225,7 @@ This example is useful for setting the value of the `$PSSessionConfigurationName
 variable, which takes a resource URI.
 
 ```
-(Get-PSSessionConfiguration -Name CustomShell).resourceURI
+(Get-PSSessionConfiguration -Name CustomShell).ResourceUri
 ```
 
 ```Output
@@ -283,7 +283,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 

@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/register-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/register-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ScheduledJob
 ---
@@ -84,13 +84,13 @@ This example creates a scheduled job on the local computer.
 
 ```powershell
 Register-ScheduledJob -Name "Archive-Scripts" -ScriptBlock {
-  Get-ChildItem $home\*.ps1 -Recurse |
-    Copy-Item -Destination "\\Server\Share\PSScriptArchive"
+  Get-ChildItem $HOME\*.ps1 -Recurse |
+  Copy-Item -Destination "\\Server\Share\PSScriptArchive"
 }
 ```
 
 `Register-ScheduledJob` uses the **Name** parameter to create the `Archive-Scripts` scheduled job.
-The **ScriptBlock** parameter runs `Get-ChildItem` that searches the `$home` directory recursively
+The **ScriptBlock** parameter runs `Get-ChildItem` that searches the `$HOME` directory recursively
 for `.ps1` files. The `Copy-Item` cmdlet copies the files to a directory specified by the
 **Destination** parameter.
 
@@ -118,7 +118,7 @@ starts a job every other Monday at 9:00 PM.
 
 The `$path` variable stores the path to the `UpdateVersion.ps1` script file.
 
-`Register-ScheduledJob` uses the **Name** paramter to create the **UpdateVersion** scheduled job.
+`Register-ScheduledJob` uses the **Name** parameter to create the **UpdateVersion** scheduled job.
 The **FilePath** parameter uses `$path` to specify the script that the job runs. The
 **ScheduledJobOption** parameter uses the job options stored in `$O`. The **Trigger** parameter uses
 the job triggers stored in `$T`.
@@ -141,7 +141,13 @@ $O = @{
   StartIfNotIdle=$false
   MultipleInstancePolicy="Queue"
 }
-Register-ScheduledJob -Trigger $T -ScheduledJobOption $O -Name UpdateVersion -FilePath "\\Srv01\Scripts\Update-Version.ps1"
+$registerScheduledJobSplat = @{
+    Trigger = $T
+    ScheduledJobOption = $O
+    Name = 'UpdateVersion'
+    FilePath = "\\Srv01\Scripts\Update-Version.ps1"
+}
+Register-ScheduledJob @registerScheduledJobSplat
 ```
 
 ### Example 4: Create scheduled jobs on remote computers
@@ -158,8 +164,8 @@ Invoke-Command -ComputerName (Get-Content Servers.txt) -Credential $Cred -Script
   $params = @{
       Name = "Get-EnergyData"
       FilePath = "\\Srv01\Scripts\Get-EnergyData.ps1"
-      ScheduledJobOption = $using:O
-      Trigger = $using:T
+      ScheduledJobOption = $Using:O
+      Trigger = $Using:T
   }
   Register-ScheduledJob @params
 }
@@ -196,7 +202,7 @@ Register-ScheduledJob -Name "CollectEnergyData" -Trigger $T -MaxResultCount 99 -
     AsJob = $true
     ComputerName = (Get-Content Servers.txt)
     FilePath = '\\Srv01\Scripts\Get-EnergyData.ps1'
-    Credential = $using:Admin
+    Credential = $Using:Admin
     Authentication = 'CredSSP'
   }
   Invoke-Command @params
@@ -359,7 +365,7 @@ Windows PowerShell deletes the results of the oldest job instance to make room f
 the newest job instance.
 
 The job execution history and job results are saved in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\<JobName>\Output\<Timestamp>`
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\<JobName>\Output\<Timestamp>`
 directories on the computer on which the job is created. To see the execution history, use the
 `Get-Job` cmdlet. To get the job results, use the `Receive-Job` cmdlet.
 
@@ -464,7 +470,7 @@ options, including the default values, see `New-ScheduledJobOption`.
 To submit a hash table, use the following keys. In the following hash table, the keys are shown with
 their default values.
 
-`@{StartIfOnBattery=$False; StopIfGoingOnBattery=$True; WakeToRun=$False; StartIfNotIdle=$False; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$True; RestartOnIdleResume=$False; ShowInTaskScheduler=$True; RunElevated=$False; RunWithoutNetwork=$False; DoNotAllowDemandStart=$False; MultipleInstancePolicy="IgnoreNew"}`
+`@{StartIfOnBattery=$false; StopIfGoingOnBattery=$true; WakeToRun=$false; StartIfNotIdle=$false; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$true; RestartOnIdleResume=$false; ShowInTaskScheduler=$true; RunElevated=$false; RunWithoutNetwork=$false; DoNotAllowDemandStart=$false; MultipleInstancePolicy="IgnoreNew"}`
 
 ```yaml
 Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
@@ -581,16 +587,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't send input down the pipeline to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
+This cmdlet returns a **ScheduledJobDefinition** object representing the registered job.
+
 ## NOTES
 
 Each scheduled job is saved in a subdirectory of the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the local computer.
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the local computer.
 The subdirectory is named for the scheduled job and contains an XML file for the scheduled job and
 records of its execution history. For more information about scheduled jobs on disk, see
 [about_Scheduled_Jobs_Advanced](./about/about_scheduled_jobs_advanced.md).

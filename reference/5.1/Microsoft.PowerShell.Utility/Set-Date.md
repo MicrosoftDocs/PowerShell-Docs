@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/10/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Date
 ---
+
 # Set-Date
 
 ## SYNOPSIS
@@ -32,14 +33,17 @@ The `Set-Date` cmdlet changes the system date and time on the computer to a date
 specify.
 
 You can specify a new date and/or time by typing a string or by passing a **DateTime** or
-**TimeSpan** object to `Set-Date`. To specify a new date or time, use the **Date** parameter.
-To specify a change interval, use the **Adjust** parameter.
+**TimeSpan** object to `Set-Date`. To specify a new date or time, use the **Date** parameter. To
+specify a change interval, use the **Adjust** parameter.
+
+You must have administrative rights to change the system date and time. On Windows, start PowerShell
+with the **Run as administrator** option.
 
 ## EXAMPLES
 
 ### Example 1: Add three days to the system date
 
-This command adds three days to the current system date. It does not affect the time. The command
+This command adds three days to the current system date. It doesn't affect the time. The command
 uses the **Date** parameter to specify the date.
 
 The `Get-Date` cmdlet returns the current date as a **DateTime** object. The **DateTime** object's
@@ -56,8 +60,8 @@ This example sets the current system time back by 10 minutes.
 The **Adjust** parameter allows you to specify an interval of change (minus ten minutes) in the
 standard time format for the locale.
 
-The **DisplayHint** parameter tells PowerShell to display only the time, but it does not
-affect the **DateTime** object that `Set-Date` returns.
+The **DisplayHint** parameter tells PowerShell to display only the time, but it doesn't affect the
+**DateTime** object that `Set-Date` returns.
 
 ```powershell
 Set-Date -Adjust -0:10:0 -DisplayHint Time
@@ -91,13 +95,27 @@ $90mins = New-TimeSpan -Minutes 90
 Set-Date -Adjust $90mins
 ```
 
+### 5: Change to a specific date and time
+
+The following example sets the date and time to a specific value.
+
+```powershell
+PS> Get-Date
+
+Monday, June 10, 2024 2:05:48 PM
+
+PS> Set-Date '6/11/2024 2:05:48 PM'
+
+Tuesday, June 11, 2024 2:05:48 PM
+```
+
 ## PARAMETERS
 
 ### -Adjust
 
-Specifies the value for which this cmdlet adds or subtracts from the current date and time.
-can type an adjustment in standard date and time format for your locale or use the **Adjust**
-parameter to pass a **TimeSpan** object from `New-TimeSpan` to `Set-Date`.
+Specifies the value for which this cmdlet adds or subtracts from the current date and time. You can
+type an adjustment in standard date and time format for your locale or use the **Adjust** parameter
+to pass a **TimeSpan** object from `New-TimeSpan` to `Set-Date`.
 
 ```yaml
 Type: System.TimeSpan
@@ -113,12 +131,12 @@ Accept wildcard characters: False
 
 ### -Date
 
-Changes the date and time to the specified values.
-You can type a new date in the short date format and a time in the standard time format for your
-locale. Or, you can pass a **DateTime** object from `Get-Date`.
+Changes the date and time to the specified values. You can type a new date in the short date format
+and a time in the standard time format for your locale. Or, you can pass a **DateTime** object from
+`Get-Date`.
 
 If you specify a date, but not a time, `Set-Date` changes the time to midnight on the specified
-date. If you specify only a time, it does not change the date.
+date. If you specify only a time, it doesn't change the date.
 
 ```yaml
 Type: System.DateTime
@@ -134,15 +152,15 @@ Accept wildcard characters: False
 
 ### -DisplayHint
 
-Specifies which elements of the date and time are displayed.The acceptable values for this parameter
-are:
+Specifies which elements of the date and time are displayed. The acceptable values for this
+parameter are:
 
 - `Date` - displays only the date.
 - `Time` - displays only the time.
 - `DateTime` - displays the date and time.
 
-This parameter affects only the display.
-It does not affect the **DateTime** object that `Get-Date` retrieves.
+This parameter affects only the display. It doesn't affect the **DateTime** object that `Get-Date`
+retrieves.
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.DisplayHintType
@@ -175,8 +193,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -194,19 +211,20 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.DateTime
 
-You can pipe a date to `Set-Date`.
+You can pipe a date to this cmdlet.
 
 ## OUTPUTS
 
 ### System.DateTime
 
-`Set-Date` returns an object that represents the date that it set.
+This cmdlet returns an object that represents the date that it set.
 
 ## NOTES
 

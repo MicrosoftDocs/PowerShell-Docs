@@ -2,9 +2,9 @@
 description: Exits the current scope, which can be a function, script, or script block.
 Locale: en-US
 ms.date: 01/03/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Return
+title: about_Return
 ---
 # about_Return
 
@@ -22,14 +22,14 @@ Users who are familiar with languages like C or C\# might want to use the
 `return` keyword to make the logic of leaving a scope explicit.
 
 In PowerShell, the results of each statement are returned as output, even
-without a statement that contains the Return keyword. Languages like C or C\#
+without a statement that contains the `return` keyword. Languages like C or C\#
 return only the value or values that are specified by the `return` keyword.
 
 > [!NOTE]
 > Beginning in PowerShell 5.0, PowerShell added language for defining
 > classes, by using formal syntax.  In the context of a PowerShell class,
-> nothing is output from a method except what you specify using a
-> `return` statement. You can read more about PowerShell classes in
+> nothing is output from a method except what you specify using a `return`
+> statement. You can read more about PowerShell classes in
 > [about_Classes](about_Classes.md).
 
 ### Syntax
@@ -58,16 +58,16 @@ because the return statement exits before that statement can execute.
 ```powershell
 function MultiplyEven
 {
-    param($number)
+    param($Number)
 
-    if ($number % 2) { return "$number is not even" }
-    $number * 2
+    if ($Number % 2) { return "$Number is not even" }
+    $Number * 2
 }
 
 1..10 | ForEach-Object {MultiplyEven -Number $_}
 ```
 
-```output
+```Output
 1 is not even
 4
 3 is not even
@@ -99,15 +99,15 @@ The following example includes a statement intended to let the user know that
 the function is performing a calculation:
 
 ```powershell
-function calculation {
-    param ($value)
+function Calculation {
+    param ($Value)
 
     "Please wait. Working on calculation..."
-    $value += 73
-    return $value
+    $Value += 73
+    return $Value
 }
 
-$a = calculation 14
+$a = Calculation 14
 ```
 
 The "Please wait. Working on calculation..." string is not displayed. Instead,
@@ -125,23 +125,25 @@ by the function and assigned to the `$a` variable.
 If you would like to display a message within your function, beginning in
 PowerShell 5.0, you can use the `Information` stream. The code below corrects
 the above example using the `Write-Information` cmdlet with a
-`InformationAction` of **Continue**.
+**InformationAction** set to `Continue`.
 
 ```powershell
-function calculation {
-    param ($value)
+function Calculation {
+    param ($Value)
 
     Write-Information "Please wait. Working on calculation..." -InformationAction Continue
-    $value += 73
-    return $value
+    $Value += 73
+    return $Value
 }
-
-$a = calculation 14
 ```
 
-```output
+Now the information message to display in the host and not assigned to the
+variable.
+
+```powershell
+PS> $a = Calculation 14
 Please wait. Working on calculation...
-C:\PS> $a
+PS> $a
 87
 ```
 
@@ -150,7 +152,7 @@ C:\PS> $a
 When you return a collection from your script block or function, PowerShell
 automatically unrolls the members and passes them one at a time through the
 pipeline. This is due to PowerShell's one-at-a-time processing. For more
-information, see [about_pipelines](about_pipelines.md).
+information, see [about_Pipelines](about_pipelines.md).
 
 This concept is illustrated by the following sample function that returns an
 array of numbers. The output from the function is piped to the `Measure-Object`

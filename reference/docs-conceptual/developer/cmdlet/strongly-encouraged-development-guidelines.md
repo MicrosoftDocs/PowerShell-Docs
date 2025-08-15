@@ -1,7 +1,7 @@
 ---
 description: Strongly Encouraged Development Guidelines
 ms.date: 10/05/2021
-ms.topic: reference
+ms.topic: design-pattern
 title: Strongly Encouraged Development Guidelines
 ---
 # Strongly Encouraged Development Guidelines
@@ -102,7 +102,7 @@ properties.
 #### Use Consistent Parameter Types
 
 When the same parameter is used by multiple cmdlets, always use the same parameter type. For
-example, if the `Process` parameter is an [System.Int16](/dotnet/api/System.Int16) type for one
+example, if the `Process` parameter is a [System.Int16](/dotnet/api/System.Int16) type for one
 cmdlet, do not make the `Process` parameter for another cmdlet a
 [System.Uint16](/dotnet/api/System.UInt16) type.
 
@@ -135,11 +135,11 @@ By default, many cmdlets that modify the system, such as the
 parameter to force the cmdlet to return an object. When the `PassThru` parameter is specified, the
 cmdlet returns an object by using a call to the
 [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
-method. For example, the following command stops the Calc process and passes the resultant process
+method. For example, the following command stops the Calc (CalculatorApp.exe) and passes the resultant process
 to the pipeline.
 
 ```powershell
-Stop-Process calc -passthru
+Stop-Process -Name CalculatorApp -PassThru
 ```
 
 In most cases, Add, Set, and New cmdlets should support a `PassThru` parameter.
@@ -258,7 +258,7 @@ characters is not required, define a `LiteralPath` parameter.
 
 If the data that the cmdlet reads or writes has to be a file, the cmdlet should accept Windows
 PowerShell path input, and the cmdlet should use the
-[System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path)
+[System.Management.Automation.SessionState.Path](/dotnet/api/System.Management.Automation.SessionState.Path)
 property to translate the Windows PowerShell paths into paths that the file system recognizes. The
 specific mechanisms include the following methods:
 

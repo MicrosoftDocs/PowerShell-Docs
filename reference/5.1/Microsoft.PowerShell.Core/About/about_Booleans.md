@@ -1,12 +1,17 @@
 ---
 description: Describes how boolean expressions are evaluated.
 Locale: en-US
-ms.date: 06/10/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_booleans?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/19/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_booleans?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Booleans
+title: about_Booleans
 ---
 # about_Booleans
+
+## Short description
+Describes how boolean expressions are evaluated.
+
+## Long description
 
 PowerShell can implicitly treat any type as a **Boolean**. It is important to
 understand the rules that PowerShell uses to convert other types to **Boolean**
@@ -14,8 +19,8 @@ values.
 
 ## Converting from scalar types
 
-A scalar type is an atomic quantity that can hold only one value at a time. The
-following types evaluate to `$false`:
+A [scalar][02] type is an atomic quantity that can hold only one value at a
+time. The following types evaluate to `$false`:
 
 - Empty strings like `''` or `""`
 - Null values like `$null`
@@ -69,8 +74,7 @@ MethodInvocationException: Exception calling "Parse" with "1" argument(s):
 ## Converting from collection types
 
 Arrays are the most common collection type in PowerShell. These rules apply to
-any collection-like types that implement the
-[IList](/dotnet/api/system.collections.ilist) interface.
+any collection-like types that implement the [IList][01] interface.
 
 - Empty collections are always `$false`
 - The special null value indicating the absence of output from a command,
@@ -86,7 +90,7 @@ Examples:
 # Empty collections
 PS> [bool]@()
 False
-PS> [bool](Get-ChildItem | Where-Object Name -eq 'Non-existent-File.txt')
+PS> [bool](Get-ChildItem | Where-Object Name -EQ 'Non-existent-File.txt')
 False
 # Single-element collections
 PS> $a = @(0)
@@ -103,4 +107,9 @@ True
 
 ## See also
 
-- [about_Arrays](about_Arrays.md#where)
+- [about_Arrays][03]
+
+<!-- link references -->
+[01]: /dotnet/api/system.collections.ilist
+[02]: /powershell/scripting/learn/glossary#scalar-value
+[03]: about_Arrays.md#where

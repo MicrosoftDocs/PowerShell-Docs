@@ -1,7 +1,6 @@
 ---
 description: StopProcessSample04 (VB.NET) Sample Code
 ms.date: 09/13/2016
-ms.topic: reference
 title: StopProcessSample04 (VB.NET) Sample Code
 ---
 # StopProcessSample04 (VB.NET) Sample Code
@@ -29,7 +28,7 @@ Namespace Microsoft.Samples.PowerShell.Commands
 #Region "StopProcCommand"
 
     ''' <summary>
-    ''' Class that implements the stop-proc cmdlet.
+    ''' Class that implements the Stop-Proc cmdlet.
     ''' </summary>
     <Cmdlet(VerbsLifecycle.Stop, "Proc", DefaultParameterSetName:="ProcessId", _
     SupportsShouldProcess:=True)> _
@@ -405,7 +404,7 @@ ContinueForEach1:
 
 #Region "PowerShell snap-in" '
     ''' <summary>
-    ''' Create this sample as an PowerShell snap-in
+    ''' Create this sample as a PowerShell snap-in
     ''' </summary>
     <RunInstaller(True)> _
     Public Class StopProcPSSnapIn04
@@ -454,7 +453,7 @@ ContinueForEach1:
         Public Overrides ReadOnly Property Description() As String
             Get
                 Return "This is a PowerShell snap-in that includes " & _
-                    "the stop-proc cmdlet."
+                    "the Stop-Proc cmdlet."
             End Get
         End Property
     End Class 'StopProcPSSnapIn04

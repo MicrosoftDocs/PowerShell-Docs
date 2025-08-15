@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Operation.Validation-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Operation.Validation
-ms.date: 10/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.operation.validation/invoke-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.operation.validation/invoke-operationvalidation?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Invoke-OperationValidation
 ---
@@ -84,7 +84,7 @@ pass it to the `Invoke-OperationValidation` cmdlet, which runs the test.
 
 ### -IncludePesterOutput
 
-Includes Pester test output. The default is `$False`.
+Includes Pester test output. The default is `$false`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -208,15 +208,15 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### PSCustomObject
+### System.Management.Automation.PSCustomObject
 
 You can pipe the output of `Get-OperationValidation` to this cmdlet.
 
 ## OUTPUTS
 
-### PSCustomObject
+### System.Management.Automation.PSCustomObject
 
-The **PSCustomObject** describes whether the validation was successful.
+This cmdlet returns a **PSCustomObject** object describing whether the validation was successful.
 
 ## NOTES
 

@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/14/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - etsn
 title: Enter-PSSession
 ---
 # Enter-PSSession
@@ -89,6 +91,11 @@ interactive session. However, you cannot use the `Disconnect-PSSession`, `Connec
 To end the interactive session and disconnect from the remote computer, use the `Exit-PSSession`
 cmdlet, or type `exit`.
 
+> [!IMPORTANT]
+> `Enter-PSSession` is designed to substitute the current interactive session with a new interactive
+> remote session. You shouldn't call it from within a function or script or by passing it as a
+> command to the `powershell.exe` executable.
+
 ## EXAMPLES
 
 ### Example 1: Start an interactive session
@@ -112,20 +119,20 @@ remote computer. When the session starts, the command prompt changes to include 
 The second command gets the PowerShell process and redirects the output to the `Process.txt` file.
 The command is submitted to the remote computer, and the file is saved on the remote computer.
 
-The third command uses the **Exit** keyword to end the interactive session and close the connection.
+The third command uses the `exit` keyword to end the interactive session and close the connection.
 The fourth command confirms that the Process.txt file is on the remote computer. A `Get-ChildItem`
 ("dir") command on the local computer cannot find the file.
 
 ```powershell
 PS C:\> Enter-PSSession -ComputerName Server01
 [Server01]: PS C:\>
-[Server01]: PS C:\> Get-Process PowerShell > C:\ps-test\Process.txt
+[Server01]: PS C:\> Get-Process powershell > C:\ps-test\Process.txt
 [Server01]: PS C:\> exit
 PS C:\>
 PS C:\> dir C:\ps-test\Process.txt
 Get-ChildItem : Cannot find path 'C:\ps-test\Process.txt' because it does not exist.
 At line:1 char:4
-+ dir <<<<  c:\ps-test\Process.txt
++ dir <<<<  C:\ps-test\Process.txt
 ```
 
 This command shows how to work in an interactive session with a remote computer.
@@ -164,7 +171,7 @@ This example shows how to start and stop an interactive session. The first comma
 `Enter-PSSession` cmdlet to start an interactive session with the Server01 computer.
 
 The second command uses the `Exit-PSSession` cmdlet to end the session. You can also use the
-**Exit** keyword to end the interactive session. `Exit-PSSession` and **Exit** have the same effect.
+`exit` keyword to end the interactive session. `Exit-PSSession` and `exit` have the same effect.
 
 ## PARAMETERS
 
@@ -316,17 +323,17 @@ Accept wildcard characters: False
 
 ### -ConfigurationName
 
-Specifies the session configuration that is used for the interactive session.
+Specifies the session configuration that's used for the interactive session.
 
 Enter a configuration name or the fully qualified resource URI for a session configuration. If you
 specify only the configuration name, the following schema URI is prepended:
 `http://schemas.microsoft.com/powershell`.
 
 The session configuration for a session is located on the remote computer. If the specified session
-configuration does not exist on the remote computer, the command fails.
+configuration doesn't exist on the remote computer, the command fails.
 
 The default value is the value of the `$PSSessionConfigurationName` preference variable on the local
-computer. If this preference variable is not set, the default is Microsoft.PowerShell. For more
+computer. If this preference variable isn't set, the default is Microsoft.PowerShell. For more
 information, see [about_Preference_Variables](About/about_Preference_Variables.md).
 
 ```yaml
@@ -352,11 +359,11 @@ The default value is as follows:
 
 `http://localhost:5985/WSMAN`
 
-If you do not specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**,
+If you don't specify a **ConnectionURI**, you can use the **UseSSL**, **ComputerName**, **Port**,
 and **ApplicationName** parameters to specify the **ConnectionURI** values.
 
 Valid values for the Transport segment of the URI are HTTP and HTTPS. If you specify a connection
-URI with a Transport segment, but do not specify a port, the session is created by using standards
+URI with a Transport segment, but don't specify a port, the session is created by using standards
 ports: 80 for HTTP and 443 for HTTPS. To use the default ports for PowerShell remoting, specify port
 5985 for HTTP or 5986 for HTTPS.
 
@@ -479,7 +486,7 @@ Specifies the instance ID of an existing session. `Enter-PSSession` uses the spe
 the interactive session.
 
 The instance ID is a GUID. To find the instance ID of a session, use the `Get-PSSession` cmdlet. You
-can also use the **Session**, **Name**, or **ID** parameters to specify an existing session. Or, you
+can also use the **Session**, **Name**, or **Id** parameters to specify an existing session. Or, you
 can use the **ComputerName** parameter to start a temporary session.
 
 ```yaml
@@ -500,7 +507,7 @@ Specifies the friendly name of an existing session. `Enter-PSSession` uses the s
 the interactive session.
 
 If the name that you specify matches more than one session, the command fails. You can also use the
-**Session**, **InstanceID**, or **ID** parameters to specify an existing session. Or, you can use
+**Session**, **InstanceId**, or **Id** parameters to specify an existing session. Or, you can use
 the **ComputerName** parameter to start a temporary session.
 
 To establish a friendly name for a session, use the **Name** parameter of the `New-PSSession`
@@ -520,7 +527,7 @@ Accept wildcard characters: False
 
 ### -Port
 
-Specifies the network port on the remote computer that is used for this command. To connect to a
+Specifies the network port on the remote computer that's used for this command. To connect to a
 remote computer, the remote computer must be listening on the port that the connection uses. The
 default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for
 HTTPS.
@@ -531,7 +538,7 @@ listen at that port. Use the following commands to configure the listener:
 1. `winrm delete winrm/config/listener?Address=*+Transport=HTTP`
 2. `winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number\>"}`
 
-Do not use the **Port** parameter unless you must. The port setting in the command applies to all
+Don't use the **Port** parameter unless you must. The port setting in the command applies to all
 computers or sessions on which the command runs. An alternate port setting might prevent the command
 from running on all computers.
 
@@ -565,16 +572,16 @@ Accept wildcard characters: False
 
 ### -Session
 
-Specifies a Windows PowerShell session (**PSSession**) to use for the interactive session. This
-parameter takes a session object. You can also use the **Name**, **InstanceID**, or **ID**
-parameters to specify a **PSSession**.
+Specifies a PowerShell session (**PSSession**) to use for the interactive session. This parameter
+takes a session object. You can also use the **Name**, **InstanceId**, or **Id** parameters to
+specify a **PSSession**.
 
 Enter a variable that contains a session object or a command that creates or gets a session object,
 such as a `New-PSSession` or `Get-PSSession` command. You can also pipe a session object to
 `Enter-PSSession`. You can submit only one **PSSession** by using this parameter. If you enter a
 variable that contains more than one **PSSession**, the command fails.
 
-When you use `Exit-PSSession` or the **EXIT** keyword, the interactive session ends, but the
+When you use `Exit-PSSession` or the `exit` keyword, the interactive session ends, but the
 **PSSession** that you created remains open and available for use.
 
 ```yaml
@@ -596,11 +603,11 @@ by using the `New-PSSessionOption` cmdlet, or a hash table in which the keys are
 names and the values are session option values.
 
 The default values for the options are determined by the value of the `$PSSessionOption` preference
-variable, if it is set. Otherwise, the default values are established by options set in the session
+variable, if it's set. Otherwise, the default values are established by options set in the session
 configuration.
 
 The session option values take precedence over default values for sessions set in the
-`$PSSessionOption` preference variable and in the session configuration. However, they do not take
+`$PSSessionOption` preference variable and in the session configuration. However, they don't take
 precedence over maximum values, quotas or limits set in the session configuration.
 
 For a description of the session options, including the default values, see `New-PSSessionOption`.
@@ -623,13 +630,13 @@ Accept wildcard characters: False
 ### -UseSSL
 
 Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to establish a connection to
-the remote computer. By default, SSL is not used.
+the remote computer. By default, SSL isn't used.
 
-WS-Management encrypts all Windows PowerShell content transmitted over the network. The **UseSSL**
-parameter is an additional protection that sends the data across an HTTPS connection instead of an
-HTTP connection.
+WS-Management encrypts all PowerShell content transmitted over the network. The **UseSSL** parameter
+is an additional protection that sends the data across an HTTPS connection instead of an HTTP
+connection.
 
-If you use this parameter, but SSL is not available on the port that is used for the command, the
+If you use this parameter, but SSL isn't available on the port that's used for the command, the
 command fails.
 
 ```yaml
@@ -685,17 +692,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String, System.Management.Automation.Runspaces.PSSession
+### System.String
 
-You can pipe a computer name, as a string, or a session object to this cmdlet.
+You can pipe a computer name as a string to this cmdlet.
+
+### System.Management.Automation.Runspaces.PSSession
+
+You can pipe a session object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-The cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Enter-PSSession`:
+
+- `etsn`
 
 To connect to a remote computer, you must be a member of the Administrators group on the remote
 computer. To start an interactive session on the local computer, you must start PowerShell with the
@@ -709,7 +724,7 @@ to change the command prompt, run before the remote prompt is displayed.
 find the local UI culture, use the `$UICulture` automatic variable.
 
 `Enter-PSSession` requires the `Get-Command`, `Out-Default`, and `Exit-PSSession` cmdlets. If these
-cmdlets are not included in the session configuration on the remote computer, the `Enter-PSSession`
+cmdlets aren't included in the session configuration on the remote computer, the `Enter-PSSession`
 commands fails.
 
 Unlike `Invoke-Command`, which parses and interprets the commands before it sends them to the remote

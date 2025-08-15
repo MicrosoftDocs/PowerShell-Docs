@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 04/10/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
 ---
+
 # Get-AuthenticodeSignature
 
 ## SYNOPSIS
@@ -64,7 +65,9 @@ command line. In this example, the name of the **FilePath** parameter, which is 
 ### Example 3: Get only valid Authenticode signatures for multiple files
 
 ```powershell
-Get-ChildItem $PSHOME\*.* | ForEach-object {Get-AuthenticodeSignature $_} | Where-Object {$_.status -eq "Valid"}
+Get-ChildItem $PSHOME\*.* |
+    ForEach-Object {Get-AuthenticodeSignature $_} |
+    Where-Object {$_.Status -eq "Valid"}
 ```
 
 This command lists all of the files in the `$PSHOME` directory that have a valid Authenticode
@@ -175,13 +178,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a file path to `Get-AuthenticodeSignature`.
+You can pipe a string that contains a file path to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Signature
 
-`Get-AuthenticodeSignature` returns a signature object for each signature that it gets.
+This cmdlet returns a signature object for each signature that it gets.
 
 ## NOTES
 

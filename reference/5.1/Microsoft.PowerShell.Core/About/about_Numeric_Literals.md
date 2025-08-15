@@ -1,14 +1,18 @@
 ---
 description: Both integer and real numeric literals can have type and multiplier suffixes.
 Locale: en-US
-ms.date: 09/12/2022
+ms.date: 10/30/2024
 no-loc: [482gb]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Numeric Literals
+title: about_Numeric_Literals
 ---
 # about_Numeric_Literals
 
+## Short description
+This article describes the syntax and usage of numeric values in PowerShell.
+
+## Long description
 There are two kinds of numeric literals: integer and real. Both can have type
 and multiplier suffixes.
 
@@ -19,14 +23,14 @@ literals are prefixed with `0x` to distinguish them from decimal numbers.
 
 Integer literals can have a type suffix and a multiplier suffix.
 
-| Suffix |       Meaning       |
-| ------ | ------------------- |
-| `l`    | long data type      |
-| `kb`   | kilobyte multiplier |
-| `mb`   | megabyte multiplier |
-| `gb`   | gigabyte multiplier |
-| `tb`   | terabyte multiplier |
-| `Pb`   | petabyte multiplier |
+| Suffix |                Meaning                 |
+| ------ | -------------------------------------- |
+| `l`    | long data type                         |
+| `kb`   | kibibyte (1024<sup>1</sup>) multiplier |
+| `mb`   | mebibyte (1024<sup>2</sup>) multiplier |
+| `gb`   | gigibyte (1024<sup>3</sup>) multiplier |
+| `tb`   | teribyte (1024<sup>4</sup>) multiplier |
+| `pb`   | petibyte (1024<sup>5</sup>) multiplier |
 
 The type of an integer literal is determined by its value, the type suffix, and
 the numeric multiplier suffix.
@@ -61,14 +65,14 @@ the numeric value 100.
 
 Real literals can have a type suffix and a multiplier suffix.
 
-| Suffix |       Meaning       |
-| ------ | ------------------- |
-| `d`    | decimal data type   |
-| `kb`   | kilobyte multiplier |
-| `mb`   | megabyte multiplier |
-| `gb`   | gigabyte multiplier |
-| `tb`   | terabyte multiplier |
-| `pb`   | petabyte multiplier |
+| Suffix |                Meaning                 |
+| ------ | -------------------------------------- |
+| `d`    | decimal data type                      |
+| `kb`   | kibibyte (1024<sup>1</sup>) multiplier |
+| `mb`   | mebibyte (1024<sup>2</sup>) multiplier |
+| `gb`   | gigibyte (1024<sup>3</sup>) multiplier |
+| `tb`   | teribyte (1024<sup>4</sup>) multiplier |
+| `pb`   | petibyte (1024<sup>5</sup>) multiplier |
 
 There are two kinds of real literal: double and decimal. These are indicated by
 the absence or presence, respectively, of decimal-type suffix. PowerShell does
@@ -129,14 +133,14 @@ PowerShell supports the following type accelerators:
 | ----------- | -------------------- | -------------------------------- |
 | `[byte]`    |                      | Byte (unsigned)                  |
 | `[sbyte]`   |                      | Byte (signed)                    |
-| `[Int16]`   |                      | 16-bit integer                   |
-| `[UInt16]`  |                      | 16-bit integer (unsigned)        |
-| `[Int32]`   |                      | 32-bit integer                   |
+| `[int16]`   |                      | 16-bit integer                   |
+| `[uint16]`  |                      | 16-bit integer (unsigned)        |
+| `[int32]`   |                      | 32-bit integer                   |
 | `[int]`     | alias for `[int32]`  | 32-bit integer                   |
-| `[UInt32]`  |                      | 32-bit integer (unsigned)        |
-| `[Int64]`   |                      | 64-bit integer                   |
+| `[uint32]`  |                      | 32-bit integer (unsigned)        |
+| `[int64]`   |                      | 64-bit integer                   |
 | `[long]`    | alias for `[int64]`  | 64-bit integer                   |
-| `[UInt64]`  |                      | 64-bit integer (unsigned)        |
+| `[uint64]`  |                      | 64-bit integer (unsigned)        |
 | `[bigint]`  |                      | See [BigInteger Struct][bigint]  |
 | `[single]`  |                      | Single precision floating point  |
 | `[float]`   | alias for `[single]` | Single precision floating point  |
@@ -194,7 +198,7 @@ supported. Those additional formats are not recognized as literals.
 
 ### Commands that look like numeric literals
 
-Any command that looks like a numeric literal must be executed using the the
+Any command that looks like a numeric literal must be executed using the
 call operator (`&`), otherwise it is interpreted as a number of the associated
 type.
 

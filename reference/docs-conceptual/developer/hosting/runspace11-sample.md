@@ -1,12 +1,11 @@
 ---
 description: Runspace11 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Runspace11 Sample
 ---
 # Runspace11 Sample
 
-This sample shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters. The proxy command is then added to an initial session state that is used to create a constrained runspace. This means that the user can access the functionality of the cmdlet only through the proxy command.
+This sample shows how to use the [System.Management.Automation.ProxyCommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters. The proxy command is then added to an initial session state that is used to create a constrained runspace. This means that the user can access the functionality of the cmdlet only through the proxy command.
 
 ## Requirements
 
@@ -16,21 +15,21 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.
+- Creating a [System.Management.Automation.CommandMetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.
 
-- Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Creating a [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
 - Modifying the cmdlet metadata to remove a parameter of the cmdlet.
 
-- Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.
+- Adding the cmdlet to the [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.
 
 - Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.
 
 - Adding the proxy function to the initial session state.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.
 
-- Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.
+- Calling the private cmdlet and the proxy function using a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.
 
 ## Example
 
@@ -49,7 +48,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
   #region GetProcCommand
 
   /// <summary>
-  /// This class implements the get-proc cmdlet. It has been copied
+  /// This class implements the Get-Proc cmdlet. It has been copied
   /// verbatim from the GetProcessSample02.cs sample.
   /// </summary>
   [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -139,8 +138,8 @@ namespace Microsoft.Samples.PowerShell.Runspaces
       // includes all the elements that are provided by Windows PowerShell.
       InitialSessionState iss = InitialSessionState.CreateDefault();
 
-      // Add the get-proc cmdlet to the initial session state.
-      SessionStateCmdletEntry cmdletEntry = new SessionStateCmdletEntry("get-proc", typeof(GetProcCommand), null);
+      // Add the Get-Proc cmdlet to the initial session state.
+      SessionStateCmdletEntry cmdletEntry = new SessionStateCmdletEntry("Get-Proc", typeof(GetProcCommand), null);
       iss.Commands.Add(cmdletEntry);
 
       // Make the cmdlet private so that it is not accessible.
@@ -152,7 +151,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
       iss.LanguageMode = PSLanguageMode.NoLanguage;
 
       // Create the proxy command using cmdlet metadata to expose the
-      // get-proc cmdlet.
+      // Get-Proc cmdlet.
       CommandMetadata cmdletMetadata = new CommandMetadata(typeof(GetProcCommand));
 
       // Remove one of the parameters from the command metadata.
@@ -166,7 +165,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
       // function can be the same as the name of the cmdlet, but to clearly
       // demonstrate that the original cmdlet is not available a different name is
       // used for the proxy function.
-      iss.Commands.Add(new SessionStateFunctionEntry("get-procProxy", bodyOfProxyFunction));
+      iss.Commands.Add(new SessionStateFunctionEntry("Get-ProcProxy", bodyOfProxyFunction));
 
       // Create the constrained runspace using the initial session state.
       using (Runspace myRunspace = RunspaceFactory.CreateRunspace(iss))
@@ -179,14 +178,14 @@ namespace Microsoft.Samples.PowerShell.Runspaces
           using (PowerShell powershell = PowerShell.Create())
           {
             powershell.Runspace = myRunspace;
-            powershell.AddCommand("get-proc").AddParameter("Name", "*explore*");
+            powershell.AddCommand("Get-Proc").AddParameter("Name", "*explore*");
             powershell.Invoke();
           }
         }
         catch (CommandNotFoundException e)
         {
           System.Console.WriteLine(
-                        "Invoking 'get-proc' failed as expected: {0}: {1}",
+                        "Invoking 'Get-Proc' failed as expected: {0}: {1}",
                         e.GetType().FullName,
                         e.Message);
         }
@@ -198,14 +197,14 @@ namespace Microsoft.Samples.PowerShell.Runspaces
           using (PowerShell powershell = PowerShell.Create())
           {
             powershell.Runspace = myRunspace;
-            powershell.AddCommand("get-procProxy").AddParameter("Name", "idle");
+            powershell.AddCommand("Get-ProcProxy").AddParameter("Name", "idle");
             powershell.Invoke();
           }
         }
         catch (ParameterBindingException e)
         {
           System.Console.WriteLine(
-                        "\nInvoking 'get-procProxy -Name idle' failed as expected: {0}: {1}",
+                        "\nInvoking 'Get-ProcProxy -Name idle' failed as expected: {0}: {1}",
                         e.GetType().FullName,
                         e.Message);
         }
@@ -215,10 +214,10 @@ namespace Microsoft.Samples.PowerShell.Runspaces
         using (PowerShell powershell = PowerShell.Create())
         {
           powershell.Runspace = myRunspace;
-          powershell.AddCommand("get-procProxy");
+          powershell.AddCommand("Get-ProcProxy");
           List<Process> processes = new List<Process>(powershell.Invoke<Process>());
           System.Console.WriteLine(
-                        "\nInvoking the get-procProxy function called into the get-proc cmdlet and returned {0} processes",
+                        "\nInvoking the Get-ProcProxy function called into the Get-Proc cmdlet and returned {0} processes",
                         processes.Count);
         }
 

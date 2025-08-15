@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 10/15/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - sasv
 title: Start-Service
 ---
+
 # Start-Service
 
 ## SYNOPSIS
@@ -93,7 +96,7 @@ Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the followin
 At line:1 char:14
 + Start-Service  <<<< tlntsvr
 
-PS> Get-CimInstance win32_service | Where-Object Name -eq "tlntsvr"
+PS> Get-CimInstance Win32_Service | Where-Object Name -EQ "tlntsvr"
 ExitCode  : 0
 Name      : TlntSvr
 ProcessId : 0
@@ -255,24 +258,34 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.ServiceProcess.ServiceController, System.String
+### System.ServiceProcess.ServiceController
 
-You can pipe objects that represent the services or strings that contain the service names to this
-cmdlet.
+You can pipe a service object to this cmdlet.
+
+### System.String
+
+You can pipe a string that contains the service name to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.ServiceProcess.ServiceController
+### None
 
-This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
-service, if you specify **PassThru**. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.ServiceProcess.ServiceController
+
+When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object
+representing the service.
 
 ## NOTES
 
-- You can also refer to `Start-Service` by its built-in alias, `sasv`. For more information, see
-  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
-- `Start-Service` can control services only if the current user has permission to do this. If a
-  command does not work correctly, you might not have the required permissions.
+Windows PowerShell includes the following aliases for `Start-Service`:
+
+- `sasv`
+
+- By default, only members of the Administrators group can start, stop, pause, resume, or restart a
+  service. If you are a member of the Administrators group, you need to run `Start-Service` from an
+  elevated PowerShell session. Use the **Run as Administrator** option to start PowerShell.
 - To find the service names and display names of the services on your system, type `Get-Service`.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.

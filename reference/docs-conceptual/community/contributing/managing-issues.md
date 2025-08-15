@@ -1,14 +1,13 @@
 ---
 description: This article explains how the PowerShell-Docs team manages issues.
-ms.date: 07/25/2022
-ms.topic: conceptual
+ms.date: 03/30/2025
 title: How we manage issues
 ---
 # How we manage issues
 
 This article documents how we manage issues in the PowerShell-Docs repository. This article is
-designed to be a job aid for members of the PowerShell-Docs team. It's published here to provide
-process transparency for our public contributors.
+designed to be a job aid for members of the PowerShell-Docs team. We publish this information here
+to provide process transparency for our public contributors.
 
 ## Sources of issues
 
@@ -21,7 +20,7 @@ process transparency for our public contributors.
 
 80% of new issues are closed within 3 business days.
 
-- Triaged - 1 business days
+- Triaged - 1 business day
 - Fix or change - 10 business days
 
 ### Labeling & Milestones
@@ -31,16 +30,19 @@ process transparency for our public contributors.
 - **Area** - Identifies the part of PowerShell or the docs that the issue is discussing
 - **Issue** - The type of issue: like bug, feedback, or idea
 - **Priority** - The priority of the issue; value range 0-3 (high-low)
+- **Quality** - The [quality improvement][03] effort the issue commits to resolving
 - **Status** - The status of the work item or why it was closed
 - **Tag** - Used to for additional classification like availability or doc-a-thons
 - **Waiting** - Shows that we're waiting on some external person or event
+
+For more information on specific labels, see [Labeling][02].
 
 #### Milestones
 
 Issues and PRs should be tagged with the appropriate milestone. If the issue doesn't apply to a
 specific version, then no milestone is used. PRs and related issues for changes that have yet to be
-merged into the PowerShell code base should be assigned to the **Future** milestone. After the code
-change has been merged, change the milestone to the appropriate version.
+merged into the PowerShell code base should be assigned to the **Future** milestone. After you merge
+the change, update the milestone to the appropriate version.
 
 | Milestone |                Description                |
 | --------- | ----------------------------------------- |
@@ -61,7 +63,7 @@ meets weekly to discuss difficult issues need triage and prioritize the work.
   item, and close the issue.
 
   The default location for PowerShell issues is
-  [https://github.com/PowerShell/PowerShell/issues/new/choose][1].
+  [https://github.com/PowerShell/PowerShell/issues/new/choose][01].
 
 ### Support requests
 
@@ -72,7 +74,7 @@ meets weekly to discuss difficult issues need triage and prioritize the work.
   ```Markdown
   > This is not the right forum for these kinds of questions. Try posting your question in a
   > community support forum. For a list of community forums see:
-  > https://docs.microsoft.com/powershell/scripting/community/community-support
+  > https://learn.microsoft.com/powershell/scripting/community/community-support
   ```
 
 ### Code of conduct violations
@@ -80,7 +82,9 @@ meets weekly to discuss difficult issues need triage and prioritize the work.
 - Edit the issue to remove any offensive content, if necessary
 - Enter a comment indicating the issue is spam, close the issue, and then lock it to prevent further
   comments
-- Each violation should be discussed in the weekly triage to determine the need for further action
+- Discuss each violation in the regular triage meeting to determine the need for further action
 
 <!-- link references -->
-[1]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[01]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[02]: labelling-in-github.md
+[03]: quality-improvements.md

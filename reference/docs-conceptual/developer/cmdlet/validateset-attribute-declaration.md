@@ -1,7 +1,6 @@
 ---
 description: ValidateSet Attribute Declaration
 ms.date: 09/13/2016
-ms.topic: reference
 title: ValidateSet Attribute Declaration
 ---
 # ValidateSet Attribute Declaration
@@ -36,10 +35,10 @@ Optional named parameter. The default value of `true` indicates that case is ign
 
 - If the parameter value is an array, every element of the array must match an element of the attribute set.
 
-- The ValidateSetAttribute attribute is defined by the [System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute) class.
+- The ValidateSetAttribute attribute is defined by the [System.Management.Automation.ValidateSetAttribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute) class.
 
 ## See Also
 
-[System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
+[System.Management.Automation.ValidateSetAttribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
 
 [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

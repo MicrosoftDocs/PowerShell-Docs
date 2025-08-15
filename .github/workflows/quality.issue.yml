@@ -1,0 +1,64 @@
+name: "Quality Contribution Issues"
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  # Check if the issue is for quality contributions; all other jobs depend on this one.
+  quality:
+    name: Is Quality Contribution?
+    runs-on: ubuntu-latest
+    outputs:
+      check: ${{ steps.is-quality.outputs.match != '' }}
+    steps:
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: is-quality
+        with:
+          text: ${{ github.event.issue.body }}
+          regex: "Quality: Foo"
+          flags: gm
+
+  assign:
+    name: Assign to author
+    needs: quality
+    if: needs.quality.outputs.check == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-add-assignees@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          assignees: ${{ github.event.issue.user.login }}
+
+  label:
+    name: Add quality labels
+    needs: quality
+    if: needs.quality.outputs.check == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - regex: Aliases
+            label: quality-aliases
+          - regex: Formatting code samples
+            label: quality-format-code-samples
+          - regex: Formatting command syntax
+            label: quality-format-command-syntax
+          - regex: Link references
+            label: quality-link-references
+          - regex: Markdown linting
+            label: quality-markdownlint
+          - regex: Spelling
+            label: quality-spelling
+    steps:
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: matcher
+        with:
+          text: ${{ github.event.issue.body }}
+          regex: '^### Quality Areas\s*^.*${{ matrix.regex }}.*$'
+          flags: gm
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: steps.matcher.outputs.match != ''
+        with:
+          labels: ${{ matrix.label }}

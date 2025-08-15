@@ -1,14 +1,15 @@
 ---
 description: Explains how to use the Split operator to split one or more strings into substrings.
 Locale: en-US
-ms.date: 03/30/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/09/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Split
+title: about_Split
 ---
 # about_Split
 
 ## Short description
+
 Explains how to use the Split operator to split one or more strings into
 substrings.
 
@@ -35,15 +36,15 @@ The parameter names do not appear in the command. Include only the parameter
 values. The values must appear in the order specified in the syntax diagram.
 
 ```
--Split <String>
--Split (<String[]>)
-<String> -Split <Delimiter>[,<Max-substrings>[,"<Options>"]]
-<String> -Split {<ScriptBlock>} [,<Max-substrings>]
+-split <String>
+-split (<String[]>)
+<String> -split <Delimiter>[,<Max-substrings>[,"<Options>"]]
+<String> -split {<ScriptBlock>} [,<Max-substrings>]
 ```
 
-You can substitute `-iSplit` or `-cSplit` for `-split` in any binary Split
+You can substitute `-isplit` or `-csplit` for `-split` in any binary Split
 statement (a Split statement that includes a delimiter or script block). The
-`-iSplit` and `-split` operators are case-insensitive. The `-cSplit` operator
+`-isplit` and `-split` operators are case-insensitive. The `-csplit` operator
 is case-sensitive, meaning that case is considered when the delimiter rules
 are applied.
 
@@ -161,8 +162,24 @@ Vanilla
 Strawberry-Blueberry
 ```
 
-Negative values are ignored.
+Negative values return the amount of substrings requested starting
+from the end of the input string.
 
+> [!NOTE]
+> Support for negative values was added in PowerShell 7.
+
+```powershell
+$c = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune"
+$c -split ",", -5
+```
+
+```Output
+Mercury,Venus,Earth,Mars
+Jupiter
+Saturn
+Uranus
+Neptune
+```
 
 ### \<ScriptBlock\>
 
@@ -206,7 +223,7 @@ The SimpleMatch options are:
 
 - **SimpleMatch**: Use simple string comparison when evaluating the
   delimiter. Cannot be used with RegexMatch.
-- **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
+- **IgnoreCase**: Forces case-insensitive matching, even if the -csplit
   operator is specified.
 
 The RegexMatch options are:
@@ -214,28 +231,19 @@ The RegexMatch options are:
 - **RegexMatch**: Use regular expression matching to evaluate the
   delimiter. This is the default behavior. Cannot be used with
   SimpleMatch.
-- **IgnoreCase**: Forces case-insensitive matching, even if the -cSplit
+- **IgnoreCase**: Forces case-insensitive matching, even if the -csplit
   operator is specified.
-- **CultureInvariant**: Ignores cultural differences in language
-  when evaluting the delimiter. Valid only with RegexMatch.
-- **IgnorePatternWhitespace**: Ignores unescaped whitespace and
-  comments marked with the number sign (#). Valid only with
-  RegexMatch.
-- **Multiline**: Multiline mode forces `^` and `$` to match the beginning
-  end of every line instead of the beginning and end of the input string.
-- **Singleline**: Singleline mode treats the input string as a *SingleLine*.
-  It forces the `.` character to match every character (including newlines),
+- **CultureInvariant**: Ignores cultural differences in language when
+  evaluating the delimiter. Valid only with RegexMatch.
+- **IgnorePatternWhitespace**: Ignores unescaped whitespace and comments marked
+  with the hash character (`#`). Valid only with RegexMatch.
+- **Multiline**: Multiline mode forces `^` and `$` to match the beginning end
+  of every line instead of the beginning and end of the input string.
+- **Singleline**: Singleline mode treats the input string as a *SingleLine*. It
+  forces the `.` character to match every character (including newlines),
   instead of matching every character EXCEPT the newline `\n`.
-- **ExplicitCapture**: Ignores non-named match groups so that only
-  explicit capture groups are returned in the result list. Valid
-  only with RegexMatch.
-
-> [!NOTE]
-> SingleLine is the default behavior. Singleline and Multiline
-> cannot be used together with the options parameter. This was resolved in
-> PowerShell 6.0.
-> The work around is by using *Mode-Modifiers* in your regular expression.
-> You can read more about mode modifiers in [Regular Expression Options](/dotnet/standard/base-types/regular-expression-options)
+- **ExplicitCapture**: Ignores non-named match groups so that only explicit
+  capture groups are returned in the result list. Valid only with RegexMatch.
 
 ## UNARY and BINARY SPLIT OPERATORS
 
@@ -335,7 +343,7 @@ cury,Venus,Earth,Mars,Jupit
 The following statement performs a case-sensitive split at the letter "N".
 
 ```powershell
-"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -cSplit 'N'
+"Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune" -csplit 'N'
 ```
 
 ```Output
@@ -390,6 +398,19 @@ b
 c,d,e,f,g,h
 ```
 
+The following statement splits a string into three substrings
+starting from the end of the string.
+
+```powershell
+"a,b,c,d,e,f,g,h" -split ",", -3
+```
+
+```Output
+a,b,c,d,e,f
+g
+h
+```
+
 The following statement splits two strings into three substrings.
 (The limit is applied to each string independently.)
 
@@ -420,10 +441,10 @@ $a = @'
 2The second line.
 3The third of three lines.
 '@
-$a -split "^\d", 0, "multiline"
+$a -split "^\d", 0, "Multiline"
 ```
 
-```output
+```Output
 
 The first line.
 
@@ -459,7 +480,7 @@ can use options, such as SimpleMatch, only when the Max-substrings value is
 specified.
 
 ```powershell
-"This.is.a.test" -split ".", 0, "simplematch"
+"This.is.a.test" -split ".", 0, "SimpleMatch"
 ```
 
 ```Output

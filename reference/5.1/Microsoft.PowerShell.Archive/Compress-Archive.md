@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Archive-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Archive
-ms.date: 02/20/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 10/06/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.archive/compress-archive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Compress-Archive
 ---
@@ -18,55 +18,61 @@ Creates a compressed archive, or zipped file, from specified files and directori
 ### Path (Default)
 
 ```
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithUpdate
 
 ```
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] -Update
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] -Update [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### PathWithForce
 
 ```
-Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-CompressionLevel <String>] -Force
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive [-Path] <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] -Force [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithUpdate
 
 ```
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
- -Update [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] -Update [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPathWithForce
 
 ```
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
- -Force [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] -Force [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-CompressionLevel <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String>
+ [-CompressionLevel <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 The `Compress-Archive` cmdlet creates a compressed, or zipped, archive file from one or more
 specified files or directories. An archive packages multiple files, with optional compression, into
-a single zipped file for easier distribution and storage. An archive file can be compressed by using
+a single zipped file for easier distribution and storage. An archive file can be compressed using
 the compression algorithm specified by the **CompressionLevel** parameter.
 
-The `Compress-Archive` cmdlet uses the Microsoft .NET API
-[System.IO.Compression.ZipArchive](/dotnet/api/system.io.compression.ziparchive) to compress files.
-The maximum file size is 2 GB because there's a limitation of the underlying API.
+The `Compress-Archive` cmdlet uses the **System.IO.Compression.ZipArchive** API to compress files.
+The API limits the maximum file size to 2GB. For more information, see
+[System.IO.Compression.ZipArchive](xref:System.IO.Compression.ZipArchive).
+
+> [!NOTE]
+> The `Compress-Archive` cmdlet ignores hidden files and folders when creating or updating the
+> archive file.
+>
+> To ensure hidden files and folders are compressed into the archive, use the .NET API instead.
 
 Some examples use splatting to reduce the line length of the code samples. For more information, see
 [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md).
@@ -83,7 +89,7 @@ archive file because the **Path** only specifies file names.
 $compress = @{
   Path = "C:\Reference\Draftdoc.docx", "C:\Reference\Images\*.vsd"
   CompressionLevel = "Fastest"
-  DestinationPath = "C:\Archives\Draft.Zip"
+  DestinationPath = "C:\Archives\Draft.zip"
 }
 Compress-Archive @compress
 ```
@@ -103,7 +109,7 @@ structure in the archive file because the **Path** only specifies file names.
 $compress = @{
 LiteralPath= "C:\Reference\Draft Doc.docx", "C:\Reference\Images\diagram2.vsd"
 CompressionLevel = "Fastest"
-DestinationPath = "C:\Archives\Draft.Zip"
+DestinationPath = "C:\Archives\Draft.zip"
 }
 Compress-Archive @compress
 ```
@@ -178,7 +184,8 @@ This example sends a directory down the pipeline to create an archive. Files are
 doesn't include the root directory, but its files and subdirectories are included in the archive.
 
 ```powershell
-Get-ChildItem -Path C:\LogFiles | Compress-Archive -DestinationPath C:\Archives\PipelineDir.zip
+Get-ChildItem -Path C:\LogFiles |
+    Compress-Archive -DestinationPath C:\Archives\PipelineDir.zip
 ```
 
 `Get-ChildItem` uses the **Path** parameter to specify the `C:\LogFiles` root directory. Each
@@ -220,16 +227,16 @@ duplicate file:
 
 ### Example 9: Update an existing archive file
 
-This example updates an existing archive file, `Draft.Zip`, in the `C:\Archives` directory. In this
+This example updates an existing archive file, `Draft.zip`, in the `C:\Archives` directory. In this
 example, the existing archive file contains the root directory, and its files and subdirectories.
 
 ```powershell
-Compress-Archive -Path C:\Reference -Update -DestinationPath C:\Archives\Draft.Zip
+Compress-Archive -Path C:\Reference -Update -DestinationPath C:\Archives\Draft.zip
 ```
 
-The command updates `Draft.Zip` with newer versions of existing files in the `C:\Reference`
+The command updates `Draft.zip` with newer versions of existing files in the `C:\Reference`
 directory and its subdirectories. And, new files that were added to `C:\Reference` or its
-subdirectories are included in the updated `Draft.Zip` archive.
+subdirectories are included in the updated `Draft.zip` archive.
 
 ## PARAMETERS
 
@@ -283,7 +290,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-Forces the command to run without asking for user confirmation.
+Use this parameter to overwrite an existing archive file.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -421,12 +428,10 @@ Using recursion and sending objects down the pipeline can duplicate files in you
 example, if you use `Get-ChildItem` with the **Recurse** parameter, each **FileInfo** and
 **DirectoryInfo** object that's sent down the pipeline is added to the archive.
 
-The [ZIP file specification](https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT) does not
-specify a standard way of encoding filenames that contain non-ASCII characters. The
-`Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different encoding
-scheme. When extracting files with filenames not stored using UTF-8 encoding, `Expand-Archive` uses
-the raw value found in the archive. This can result in a filename that is different than the source
-filename stored in the archive.
+The `Compress-Archive` cmdlet uses UTF-8 encoding. Other ZIP archive tools may use a different
+encoding scheme. When extracting files with filenames not stored using UTF-8 encoding,
+`Expand-Archive` uses the raw value found in the archive. This can result in a filename that's
+different than the source filename stored in the archive.
 
 ## RELATED LINKS
 

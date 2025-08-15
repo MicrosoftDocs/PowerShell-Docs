@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/21/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 10/02/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - npssc
 title: New-PSSessionConfigurationFile
 ---
 # New-PSSessionConfigurationFile
@@ -169,7 +171,7 @@ True
 ```
 
 Use the **Verbose** parameter with `Test-PSSessionConfigurationFile` to display any errors that are
-detected. The cmdlet returns `$True` if no errors are detected in the file.
+detected. The cmdlet returns `$true` if no errors are detected in the file.
 
 ### Example 5: Create a sample configuration file
 
@@ -473,7 +475,7 @@ Accept wildcard characters: False
 
 ### -FormatsToProcess
 
-Specifies the formatting files (.ps1xml) that run in sessions that use the session configuration.
+Specifies the formatting files (`.ps1xml`) that run in sessions that use the session configuration.
 The value of this parameter must be a full or absolute path of the formatting files.
 
 ```yaml
@@ -516,7 +518,7 @@ the following keys:
   values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
 For example:
-`@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process PowerShell};Options='AllScope'}`
+`@{Name='Get-PowerShellProcess';ScriptBlock={Get-Process powershell};Options='AllScope'}`
 
 ```yaml
 Type: System.Collections.IDictionary[]
@@ -583,7 +585,7 @@ The acceptable values for this parameter are:
   elements, such as script blocks, variables, or operators.
 - RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use script
   blocks or variables except for the following permitted variables: `$PSCulture`, `$PSUICulture`,
-  `$True`, `$False`, and `$Null`. Users may use only the basic comparison operators (`-eq`, `-gt`,
+  `$true`, `$false`, and `$null`. Users may use only the basic comparison operators (`-eq`, `-gt`,
   `-lt`). Assignment statements, property references, and method calls are not permitted.
 
 The default value of the **LanguageMode** parameter depends on the value of the **SessionType**
@@ -644,10 +646,10 @@ Accept wildcard characters: False
 
 Configures sessions that use this session configuration to expose the `User:` PSDrive. User drives
 are unique for each connecting user and allow users to copy data to and from PowerShell endpoints
-even if the File System provider is not exposed. User drive roots are created under
-`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
-endpoint, a folder is created with the name `${env:USERDOMAIN}_${env:USERNAME}`. For computers in
-workgroups, the value of `$env:USERDOMAIN` is the hostname.
+even if the FileSystem provider is not exposed. User drive roots are created under
+`$Env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\`. For each user connecting to the
+endpoint, a folder is created with the name `${Env:USERDOMAIN}_${Env:USERNAME}`. For computers in
+workgroups, the value of `$Env:USERDOMAIN` is the hostname.
 
 Contents in the user drive persist across user sessions and are not automatically removed. By
 default, users can only store up to 50MB of data in the user drive. This can be customized with the
@@ -910,10 +912,8 @@ the following keys:
 
 - Name - Name of the variable. This key is required.
 - Value - Variable value. This key is required.
-- Options - Variable options. This key is optional. The default value is **None**. The acceptable
-  values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
-For example: `@{Name='WarningPreference';Value='SilentlyContinue';Options='AllScope'}`
+For example: `@{Name='WarningPreference';Value='SilentlyContinue'}`
 
 ```yaml
 Type: System.Object
@@ -973,7 +973,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -VisibleExternalCommands
@@ -1058,34 +1058,39 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe any objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 
-- Parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the
-  session. Instead, they select from among the items imported into the session. For example, if the
-  value of the **VisibleProviders** parameter is the Certificate provider, but the
-  **ModulesToImport** parameter does not specify the **Microsoft.PowerShell.Security** module that
-  contains the Certificate provider, the Certificate provider is not visible in the session.
-- `New-PSSessionConfigurationFile` creates a session configuration file that has a .pssc file name
-  extension in the path that you specify in the **Path** parameter. When you use the session
-  configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet
-  copies the configuration file and saves an active copy of the file in the **SessionConfig**
-  subdirectory of the `$PSHOME` directory.
+Windows PowerShell includes the following aliases for `New-PSSessionConfigurationFile`:
 
-  The **ConfigFilePath** property of the session configuration contains the fully qualified path of
-  the active session configuration file. You can modify the active configuration file in the
-  `$PSHOME` directory at any time using any text editor. The changes that you make affect all new
-  sessions that use the session configuration, but not existing sessions.
+- `npssc`
 
-  Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile`
-  cmdlet to verify that the configuration file entries are valid.
+Parameters, such as **VisibleCmdlets** and **VisibleProviders**, do not import items into the
+session. Instead, they select from among the items imported into the session. For example, if the
+value of the **VisibleProviders** parameter is the Certificate provider, but the **ModulesToImport**
+parameter does not specify the **Microsoft.PowerShell.Security** module that contains the
+Certificate provider, the Certificate provider is not visible in the session.
+
+`New-PSSessionConfigurationFile` creates a session configuration file that has a `.pssc` file name
+extension in the path that you specify in the **Path** parameter. When you use the session
+configuration file to create a session configuration, the `Register-PSSessionConfiguration` cmdlet
+copies the configuration file and saves an active copy of the file in the **SessionConfig**
+subdirectory of the `$PSHOME` directory.
+
+The **ConfigFilePath** property of the session configuration contains the fully qualified path of
+the active session configuration file. You can modify the active configuration file in the `$PSHOME`
+directory at any time using any text editor. The changes that you make affect all new sessions that
+use the session configuration, but not existing sessions.
+
+Before using an edited session configuration file, use the `Test-PSSessionConfigurationFile` cmdlet
+to verify that the configuration file entries are valid.
 
 ## RELATED LINKS
 

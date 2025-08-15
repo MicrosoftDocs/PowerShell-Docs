@@ -1,7 +1,6 @@
 ---
 description: SelectionSetName Element for EntrySelectedBy for Controls for View
 ms.date: 08/25/2021
-ms.topic: reference
 title: SelectionSetName Element for EntrySelectedBy for Controls for View
 ---
 # SelectionSetName Element for EntrySelectedBy for Controls for View

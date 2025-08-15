@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/26/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 03/06/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
 ---
+
 # Add-Member
 
 ## SYNOPSIS
@@ -30,22 +31,23 @@ Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
 ### NotePropertySingleMemberSet
 
 ```
-Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru] [-NotePropertyName] <String>
- [-NotePropertyValue] <Object> [<CommonParameters>]
+Add-Member -InputObject <PSObject> [-TypeName <String>] [-Force] [-PassThru]
+ [-NotePropertyName] <String> [-NotePropertyValue] <Object> [<CommonParameters>]
 ```
 
 ### MemberSet
 
 ```
-Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String> [[-Value] <Object>]
- [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru] [<CommonParameters>]
+Add-Member -InputObject <PSObject> [-MemberType] <PSMemberTypes> [-Name] <String>
+ [[-Value] <Object>] [[-SecondValue] <Object>] [-TypeName <String>] [-Force] [-PassThru]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 The `Add-Member` cmdlet lets you add members (properties and methods) to an instance of a PowerShell
-object. For instance, you can add a NoteProperty member that contains a description of the object or
-a **ScriptMethod** member that runs a script to change the object.
+object. For instance, you can add a **NoteProperty** member that contains a description of the
+object or a **ScriptMethod** member that runs a script to change the object.
 
 To use `Add-Member`, pipe the object to `Add-Member`, or use the **InputObject** parameter to
 specify the object.
@@ -55,18 +57,17 @@ parameter assigns a name to the new member, and the **Value** parameter sets the
 member.
 
 The properties and methods that you add are added only to the particular instance of the object that
-you specify. `Add-Member` does not change the object type. To create a new object type, use the
+you specify. `Add-Member` doesn't change the object type. To create a new object type, use the
 `Add-Type` cmdlet.
 
 You can also use the `Export-Clixml` cmdlet to save the instance of the object, including the
 additional members, in a file. Then you can use the `Import-Clixml` cmdlet to re-create the instance
-of the object from the information that is stored in the exported file.
+of the object from the information that's stored in the exported file.
 
 Beginning in Windows PowerShell 3.0, `Add-Member` has new features that make it easier to add note
-properties to objects.
-You can use the **NotePropertyName** and **NotePropertyValue** parameters to define a note property
-or use the **NotePropertyMembers** parameter, which takes a hash table of note property names and
-values.
+properties to objects. You can use the **NotePropertyName** and **NotePropertyValue** parameters to
+define a note property or use the **NotePropertyMembers** parameter, which takes a hash table of
+note property names and values.
 
 Also, beginning in Windows PowerShell 3.0, the **PassThru** parameter, which generates an output
 object, is needed less frequently. `Add-Member` now adds the new members directly to the input
@@ -85,10 +86,10 @@ the `Test.txt` file. It saves it in the `$a` variable.
 The second command adds the note property to the object in `$a`.
 
 The third command uses dot notation to get the value of the **Status** property of the object in
-`$a`. As the output shows, the value is "Done".
+`$a`. As the output shows, the value is `Done`.
 
 ```powershell
-$A = Get-ChildItem c:\ps-test\test.txt
+$A = Get-ChildItem C:\ps-test\test.txt
 $A | Add-Member -NotePropertyName Status -NotePropertyValue Done
 $A.Status
 ```
@@ -104,8 +105,8 @@ file. The new property is an alias for the **Length** property.
 
 The first command uses the `Get-ChildItem` cmdlet to get the `Test.txt` **FileInfo** object.
 
-The second command adds the **Size** alias property.
-The third command uses dot notation to get the value of the new **Size** property.
+The second command adds the **Size** alias property. The third command uses dot notation to get the
+value of the new **Size** property.
 
 ```powershell
 $A = Get-ChildItem C:\Temp\test.txt
@@ -119,9 +120,9 @@ $A.Size
 
 ### Example 3: Add a StringUse note property to a string
 
-This example adds the **StringUse** note property to a string.
-Because `Add-Member` cannot add types to **String** input objects, you can specify the **PassThru**
-parameter to generate an output object. The last command in the example displays the new property.
+This example adds the **StringUse** note property to a string. Because `Add-Member` can't add types
+to **String** input objects, you can specify the **PassThru** parameter to generate an output
+object. The last command in the example displays the new property.
 
 This example uses the **NotePropertyMembers** parameter. The value of the **NotePropertyMembers**
 parameter is a hash table. The key is the note property name, **StringUse**, and the value is the
@@ -139,19 +140,19 @@ Display
 
 ### Example 4: Add a script method to a FileInfo object
 
-This example adds the **SizeInMB** script method to a **FileInfo** object which calculates the
-file size to the nearest MegaByte. The second command creates a **ScriptBlock** that uses the
-**Round** static method from the `[math]` type to round the file size to the second decimal place.
+This example adds the **SizeInMB** script method to a **FileInfo** object that calculates the file
+size to the nearest MegaByte. The second command creates a **ScriptBlock** that uses the **Round**
+static method from the `[Math]` type to round the file size to the second decimal place.
 
-The **Value** parameter also uses the `$This` automatic variable, which represents the current
-object. The `$This` variable is valid only in script blocks that define new properties and methods.
+The **Value** parameter also uses the `$this` automatic variable, which represents the current
+object. The `$this` variable is valid only in script blocks that define new properties and methods.
 
 The last command uses dot notation to call the new **SizeInMB** script method on the object in the
 `$A` variable.
 
 ```powershell
 $A = Get-ChildItem C:\Temp\test.txt
-$S = {[math]::Round(($this.Length / 1MB), 2)}
+$S = {[Math]::Round(($this.Length / 1MB), 2)}
 $A | Add-Member -MemberType ScriptMethod -Name "SizeInMB" -Value $S
 $A.SizeInMB()
 ```
@@ -164,25 +165,19 @@ $A.SizeInMB()
 
 This example creates an **Asset** custom object.
 
-The `New-Object` cmdlet creates a **PSObject**. The example saves the **PSObject** in the `$Asset`
-variable.
-
-The second command uses the `[ordered]` type accelerator to create an ordered dictionary of names
-and values. The command saves the result in the `$D` variable.
-
-The third command uses the **NotePropertyMembers** parameter of the `Add-Member` cmdlet to add the
-dictionary in the `$D` variable to the **PSObject**.
-The **TypeName** property assigns a new name, **Asset**, to the **PSObject**.
-
-The last command pipes the new **Asset** object to the `Get-Member`
-cmdlet. The output shows that the object has a type name of **Asset** and the note properties that
-we defined in the ordered dictionary.
+The `New-Object` cmdlet creates a **PSObject** that's saved in the `$Asset` variable. The
+`[ordered]` type accelerator creates an ordered dictionary that's stored in the `$d` variable.
+Piping `$Asset` to `Add-Member` adds the key-value pairs in the dictionary to the object as
+**NoteProperty** members. **TypeName** parameter assigns the type `Asset` to the **PSObject**. The
+`Get-Member` cmdlet shows the type and properties of the object. However, the properties are listed
+in alphabetical order, not in the order that they were added.
 
 ```powershell
-$Asset = New-Object -TypeName PSObject
-$d = [ordered]@{Name="Server30";System="Server Core";PSVersion="4.0"}
-$Asset | Add-Member -NotePropertyMembers $d -TypeName Asset
-$Asset | Get-Member
+$Asset = New-Object -TypeName psobject
+$Asset | Add-Member -NotePropertyMembers @{Name="Server30"} -TypeName Asset
+$Asset | Add-Member -NotePropertyMembers @{System="Server Core"}
+$Asset | Add-Member -NotePropertyMembers @{PSVersion="4.0"}
+$Asset | Get-Member -MemberType Properties
 ```
 
 ```Output
@@ -190,21 +185,133 @@ $Asset | Get-Member
 
 Name        MemberType   Definition
 ----        ----------   ----------
-Equals      Method       bool Equals(System.Object obj)
-GetHashCode Method       int GetHashCode()
-GetType     Method       type GetType()
-ToString    Method       string ToString()
-Name        NoteProperty System.String Name=Server30
-PSVersion   NoteProperty System.String PSVersion=4.0
-System      NoteProperty System.String System=Server Core
+Name        NoteProperty string Name=Server30
+PSVersion   NoteProperty string PSVersion=4.0
+System      NoteProperty string System=Server Core
 ```
+
+```powershell
+$Asset.psobject.Properties | Format-Table Name, MemberType, TypeNameOfValue, Value
+```
+
+```Output
+Name        MemberType TypeNameOfValue Value
+----        ---------- --------------- -----
+Name      NoteProperty System.String   Server30
+System    NoteProperty System.String   Server Core
+PSVersion NoteProperty System.String   4.0
+```
+
+Inspecting the raw list of properties shows the properties in the order that they were added to
+the object. `Format-Table` is used in this example to create output similar to `Get-Member`.
+
+### Example 6: Add an AliasProperty to an object
+
+In this example we create a custom object that contains two **NoteProperty** members. The type for a
+**NoteProperty** reflects the type of the value stored in the property. In this case, the **Age**
+property is a string.
+
+```powershell
+PS> $obj = [pscustomobject]@{
+      Name = 'Doris'
+      Age = '20'
+}
+PS> $obj | Add-Member -MemberType AliasProperty -Name 'IntAge' -Value Age -SecondValue uint32
+PS> $obj | Get-Member
+
+   TypeName: System.Management.Automation.PSCustomObject
+
+Name        MemberType    Definition
+----        ----------    ----------
+IntAge      AliasProperty IntAge = (System.UInt32)Age
+Equals      Method        bool Equals(System.Object obj)
+GetHashCode Method        int GetHashCode()
+GetType     Method        type GetType()
+ToString    Method        string ToString()
+Age         NoteProperty  string Age=20
+Name        NoteProperty  string Name=Doris
+
+PS> $obj
+
+Name   : Doris
+Age    : 20
+IntAge : 20
+
+PS> $obj.Age + 1
+
+201
+
+PS> $obj.IntAge + 1
+
+21
+```
+
+The **IntAge** property is an **AliasProperty** for the **Age** property, but the type is guaranteed
+to be **uint32**.
+
+### Example 7: Add get and set methods to a custom object
+
+This examples shows how to define **Get** and **Set** methods that access a deeply nested property.
+
+```powershell
+$user = [pscustomobject]@{
+    Name      = 'User1'
+    Age       = 29
+    StartDate = [datetime]'2019-05-05'
+    Position  = [pscustomobject]@{
+        DepartmentName = 'IT'
+        Role = 'Manager'
+    }
+}
+$addMemberSplat = @{
+    MemberType = 'ScriptProperty'
+    Name = 'Title'
+    Value = { $this.Position.Role }                  # getter
+    SecondValue = { $this.Position.Role = $args[0] } # setter
+}
+$user | Add-Member @addMemberSplat
+$user | Get-Member
+```
+
+```Output
+   TypeName: System.Management.Automation.PSCustomObject
+
+Name        MemberType     Definition
+----        ----------     ----------
+Equals      Method         bool Equals(System.Object obj)
+GetHashCode Method         int GetHashCode()
+GetType     Method         type GetType()
+ToString    Method         string ToString()
+Age         NoteProperty   int Age=29
+Name        NoteProperty   string Name=User1
+Position    NoteProperty   System.Management.Automation.PSCustomObject Position=@{DepartmentName=IT; Role=Manager}
+StartDate   NoteProperty   datetime StartDate=5/5/2019 12:00:00 AM
+Title       ScriptProperty System.Object Title {get= $this.Position.Role ;set= $this.Position.Role = $args[0] ;}
+```
+
+```powershell
+$user.Title = 'Dev Manager'
+```
+
+```Output
+Name      : User1
+Age       : 29
+StartDate : 5/5/2019 12:00:00 AM
+Position  : @{DepartmentName=IT; Role=Dev Manager}
+Title     : Dev Manager
+```
+
+Notice that the **Title** property is a **ScriptProperty** that has a **Get** and **Set** method.
+When we assign a new value to the **Title** property, the **Set** method is called and changes the
+value of the **Role** property in the **Position** property.
 
 ## PARAMETERS
 
 ### -Force
 
-Indicates that this cmdlet adds a new member even the object has a custom member with the same name.
-You cannot use the **Force** parameter to replace a standard member of a type.
+By default, `Add-Member` can't add a new member if the object already has a member with the same.
+When you use the **Force** parameter, `Add-Member` replaces the existing member with the new member.
+You can't use the **Force** parameter to replace a standard member of a type.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -220,8 +327,8 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the object to which the new member is added.
-Enter a variable that contains the objects, or type a command or expression that gets the objects.
+Specifies the object to which the new member is added. Enter a variable that contains the objects,
+or type a command or expression that gets the objects.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -237,28 +344,27 @@ Accept wildcard characters: False
 
 ### -MemberType
 
-Specifies the type of the member to add.
-This parameter is required.
-The acceptable values for this parameter are:
+Specifies the type of the member to add. This parameter is required. The acceptable values for this
+parameter are:
 
-- NoteProperty
 - AliasProperty
-- ScriptProperty
-- CodeProperty
-- ScriptMethod
 - CodeMethod
+- CodeProperty
+- NoteProperty
+- ScriptMethod
+- ScriptProperty
 
-For information about these values, see [PSMemberTypes Enumeration](/dotnet/api/system.management.automation.psmembertypes)
-in the PowerShell SDK.
+For information about these values, see
+[PSMemberTypes Enumeration](xref:System.Management.Automation.PSMemberTypes) in the PowerShell SDK.
 
-Not all objects have every type of member.
-If you specify a member type that the object does not have, PowerShell returns an error.
+Not all objects have every type of member. If you specify a member type that the object doesn't
+have, PowerShell returns an error.
 
 ```yaml
 Type: System.Management.Automation.PSMemberTypes
 Parameter Sets: MemberSet
 Aliases: Type
-Accepted values: AliasProperty, CodeProperty, Property, NoteProperty, ScriptProperty, Properties, PropertySet, Method, CodeMethod, ScriptMethod, Methods, ParameterizedProperty, MemberSet, Event, Dynamic, All
+Accepted values: AliasProperty, CodeMethod, CodeProperty, NoteProperty, ScriptMethod, ScriptProperty
 
 Required: True
 Position: 0
@@ -285,11 +391,9 @@ Accept wildcard characters: False
 
 ### -NotePropertyMembers
 
-Specifies a hash table or ordered dictionary of note property names and values.
-Type a hash table or dictionary in which the keys are note property names and the values are note
-property values.
-
-For more information about hash tables and ordered dictionaries in PowerShell, see
+Specifies a hashtable or ordered dictionary that contains key-value pair representing
+**NoteProperty** names and their values. For more information about hash tables and ordered
+dictionaries in PowerShell, see
 [about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md).
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -310,8 +414,7 @@ Accept wildcard characters: False
 
 Specifies the note property name.
 
-Use this parameter with the **NotePropertyValue** parameter.
-This parameter is optional.
+Use this parameter with the **NotePropertyValue** parameter. This parameter is optional.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -331,8 +434,7 @@ Accept wildcard characters: False
 
 Specifies the note property value.
 
-Use this parameter with the **NotePropertyName** parameter.
-This parameter is optional.
+Use this parameter with the **NotePropertyName** parameter. This parameter is optional.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -350,17 +452,16 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-Returns an object representing the item with which you are working.
-By default, this cmdlet does not generate any output.
+Returns an object representing the item with which you are working. By default, this cmdlet doesn't
+generate any output.
 
-For most objects, `Add-Member` adds the new members to the input object.
-However, when the input object is a string, `Add-Member` cannot add the member to the input object.
-For these objects, use the **PassThru** parameter to create an output object.
+For most objects, `Add-Member` adds the new members to the input object. However, when the input
+object is a string, `Add-Member` can't add the member to the input object. For these objects, use
+the **PassThru** parameter to create an output object.
 
 In Windows PowerShell 2.0, `Add-Member` added members only to the **PSObject** wrapper of objects,
-not to the object.
-Use the **PassThru** parameter to create an output object for any object that has a **PSObject**
-wrapper.
+not to the object. Use the **PassThru** parameter to create an output object for any object that has
+a **PSObject** wrapper.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -376,21 +477,22 @@ Accept wildcard characters: False
 
 ### -SecondValue
 
-Specifies optional additional information about **AliasProperty**, **ScriptProperty**,
-**CodeProperty**, or **CodeMethod** members.
+Specifies optional additional information about **AliasProperty**, **ScriptProperty**, or
+**CodeProperty** members.
 
-If used when adding an **AliasProperty**, this parameter must be a data type.
-A conversion to the specified data type is added to the value of the **AliasProperty**.
+If used when adding an **AliasProperty**, this parameter must be a data type. A conversion to the
+specified data type is added to the value of the **AliasProperty**. For example, if you add an
+**AliasProperty** that provides an alternate name for a string property, you can also specify a
+**SecondValue** parameter of **System.Int32** to indicate that the value of that string property
+should be converted to an integer when accessed using the corresponding **AliasProperty**.
 
-For example, if you add an **AliasProperty** that provides an alternate name for a string property,
-you can also specify a **SecondValue** parameter of **System.Int32** to indicate that the value of
-that string property should be converted to an integer when accessed by using the corresponding
-**AliasProperty**.
+For a **CodeProperty**, the value must be a reference to a method that implements a **Set**
+accessor. Use the `GetMethod()` method of a type reference to get a reference to a method. The
+method must take a single parameter that's a **PSObject**. The **Get** accessor is assigned using
+the **Value** parameter.
 
-You can use the **SecondValue** parameter to specify an additional **ScriptBlock** when adding a
-**ScriptProperty** member. The first **ScriptBlock**, specified in the **Value** parameter, is
-used to get the value of a variable. The second **ScriptBlock**, specified in the
-**SecondValue** parameter, is used to set the value of a variable.
+For a **ScriptProperty**, the value must be a script block that implements a **Set** accessor. The
+**Get** accessor is assigned using the **Value** parameter.
 
 ```yaml
 Type: System.Object
@@ -409,8 +511,8 @@ Accept wildcard characters: False
 Specifies a name for the type.
 
 When the type is a class in the **System** namespace or a type that has a type accelerator, you can
-enter the short name of the type. Otherwise, the full type name is required.
-This parameter is effective only when the **InputObject** is a **PSObject**.
+enter the short name of the type. Otherwise, the full type name is required. This parameter is
+effective only when the **InputObject** is a **PSObject**.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -428,9 +530,20 @@ Accept wildcard characters: False
 
 ### -Value
 
-Specifies the initial value of the added member.
-If you add an **AliasProperty**, **CodeProperty**, **ScriptProperty** or **CodeMethod** member, you
-can supply optional, additional information by using the **SecondValue** parameter.
+Specifies the initial value of the added member. If you add an **AliasProperty**, **CodeProperty**,
+or **ScriptProperty** member, you can supply additional information using the **SecondValue**
+parameter.
+
+- For an **AliasProperty**, the value must be the name of the property being aliased.
+- For a **CodeMethod**, the value must be a reference to a method. Use the `GetMethod()` method of
+  a type reference to get a reference to a method.
+- For a **CodeProperty**, the value must be a reference to a method that implements a **Get**
+  accessor. Use the `GetMethod()` method of a type reference to get a reference to a method.
+  reference. The method must take a single parameter that's a **PSObject**. The **Set** accessor is
+  assigned using the **SecondValue** parameter.
+- For a **ScriptMethod**, the value must be a script block.
+- For a **ScriptProperty**, the value must be a script block that implements a **Get** accessor. The
+  **Set** accessor is assigned using the **SecondValue** parameter.
 
 ```yaml
 Type: System.Object
@@ -448,27 +561,33 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object type to this cmdlet.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Object
+### None
 
-When you use the **PassThru** parameter, this cmdlet returns the newly-extended object.
-Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Object
+
+When you use the **PassThru** parameter, this cmdlet returns the newly extended object.
 
 ## NOTES
 
-You can add members only to **PSObject** objects. To determine whether an object is a **PSObject**
-object, use the `-is` operator.
+You can add members only to **PSObject** type objects. To determine whether an object is a
+**PSObject** object, use the `-is` operator. For instance, to test an object stored in the `$obj`
+variable, type `$obj -is [psobject]`.
 
-For instance, to test an object stored in the `$obj` variable, type `$obj -is [PSObject]`.
+**PSObject** type objects maintain their list of members in the order that the members were added to
+the object.
 
 The names of the **MemberType**, **Name**, **Value**, and **SecondValue** parameters are optional.
 If you omit the parameter names, the unnamed parameter values must appear in this order:
@@ -477,9 +596,9 @@ If you omit the parameter names, the unnamed parameter values must appear in thi
 If you include the parameter names, the parameters can appear in any order.
 
 You can use the `$this` automatic variable in script blocks that define the values of new properties
-and methods.
-The `$this` variable refers to the instance of the object to which the properties and methods are
-being added. For more information about the `$this` variable, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+and methods. The `$this` variable refers to the instance of the object to which the properties and
+methods are being added. For more information about the `$this` variable, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ## RELATED LINKS
 
@@ -492,3 +611,5 @@ being added. For more information about the `$this` variable, see [about_Automat
 [New-Object](New-Object.md)
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+
+[System.Type.GetMethod()](/dotnet/api/system.type.getmethod)

@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-wmiobject?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 03/10/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-wmiobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gwmi
 title: Get-WmiObject
 ---
 # Get-WmiObject
@@ -104,7 +106,7 @@ Get-WmiObject -Class Win32_Service -ComputerName 10.1.4.62
 This example gets the WMI classes in the root or default namespace of the local computer.
 
 ```powershell
-Get-WmiObject -Namespace "root/default" -List
+Get-WmiObject -Namespace "root/DEFAULT" -List
 ```
 
 ### Example 4: Get a named service on multiple computers
@@ -113,8 +115,8 @@ This example gets the WinRM service on the computers specified by the value of t
 parameter.
 
 ```powershell
-Get-WmiObject -Query "select * from win32_service where name='WinRM'" -ComputerName Server01, Server02 |
-  Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessID, StartMode, State, Status
+Get-WmiObject -Query "select * from Win32_Service where name='WinRM'" -ComputerName Server01, Server02 |
+  Format-List -Property PSComputerName, Name, ExitCode, Name, ProcessId, StartMode, State, Status
 ```
 
 ```Output
@@ -122,7 +124,7 @@ PSComputerName : SERVER01
 Name           : WinRM
 ExitCode       : 0
 Name           : WinRM
-ProcessID      : 844
+ProcessId      : 844
 StartMode      : Auto
 State          : Running
 Status         : OK
@@ -131,7 +133,7 @@ PSComputerName : SERVER02
 Name           : WinRM
 ExitCode       : 0
 Name           : WinRM
-ProcessID      : 932
+ProcessId      : 932
 StartMode      : Auto
 State          : Running
 Status         : OK
@@ -161,7 +163,7 @@ This example gets the BIOS information from the local computer. The **Property**
 only the subset of properties defined in the `Types.ps1xml` configuration file are displayed.
 
 ```powershell
-Get-WmiObject -Class Win32_Bios | Format-List -Property *
+Get-WmiObject -Class Win32_BIOS | Format-List -Property *
 ```
 
 ```Output
@@ -253,16 +255,10 @@ finish.
 
 When you use the **AsJob** parameter, the command returns an object that represents the background
 job and then displays the command prompt. You can continue to work in the session while the job
-finishes. If `Get-WmiObject` is used on a remote computer, the job is created on the local
-computer, and the results from remote computers are automatically returned to the local computer. To
-manage the job, use the cmdlets that contain the `Job` noun. To get the job results, use the
-`Receive-Job` cmdlet.
-
-> [!NOTE]
-> To use this parameter with remote computers, the local and remote computers must be configured for
-> remoting. Additionally, you must start Windows PowerShell by using the **Run as administrator**
-> option in Windows Vista and later versions of Windows. For more information, see
-> [about_Remote_Requirements](../Microsoft.PowerShell.Core/about/about_Remote_Requirements.md).
+finishes. If `Get-WmiObject` is used with the **ComputerName** parameter, the job is created on the
+local computer, and the results from remote computers are automatically returned to the local
+computer. To manage the job, use the cmdlets that contain the `Job` noun. To get the job results,
+use the `Receive-Job` cmdlet.
 
 For more information about Windows PowerShell background jobs, see
 [about_Jobs](../Microsoft.PowerShell.Core/about/about_Jobs.md) and
@@ -357,6 +353,9 @@ local computer, the fully qualified domain name is required.
 The default is the local computer. To specify the local computer, such as in a list of computer
 names, use `localhost`, the local computer name, or a dot (`.`).
 
+When specifying a remote computer, your current account or the one you specify with the
+**Credential** parameter must have appropriate permissions to access the information.
+
 This parameter does not rely on Windows PowerShell remoting, which uses WS-Management. You can use
 the **ComputerName** parameter of `Get-WmiObject` even if your computer is not configured to run
 WS-Management remote commands.
@@ -432,12 +431,12 @@ Specifies a **Where** clause to use as a filter. Uses the syntax of the WMI Quer
 
 > [!IMPORTANT]
 > Do not include the **Where** keyword in the value of the parameter. For example, the following
-> commands return only the logical disks that have a **DeviceID** of `c:` and services that have the
+> commands return only the logical disks that have a **DeviceID** of `C:\ and services that have the
 > name 'WinRM' without using the **Where** keyword.
 
-`Get-WmiObject Win32_LogicalDisk -filter "DeviceID = 'c:' "`
+`Get-WmiObject Win32_LogicalDisk -Filter "DeviceID = 'C:' "`
 
-`Get-WmiObject win32_service -filter "name='WinRM'"`
+`Get-WmiObject Win32_Service -Filter "name='WinRM'"`
 
 ```yaml
 Type: System.String
@@ -483,7 +482,7 @@ Gets the names of the WMI classes in the WMI repository namespace that is specif
 **Namespace** parameter.
 
 If you specify the **List** parameter, but not the **Namespace** parameter, `Get-WmiObject` uses
-the **Root\Cimv2** namespace by default. This cmdlet does not use the **Default Namespace** registry
+the **root/CIMV2** namespace by default. This cmdlet does not use the **Default Namespace** registry
 entry in the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WBEM\Scripting` registry key to determine the
 default namespace.
 
@@ -621,6 +620,10 @@ When you use the **AsJob** parameter, the cmdlet returns a job object. Otherwise
 `Get-WmiObject` returns depends on the value of the **Class** parameter.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-WmiObject`:
+
+- `gwmi`
 
 To access WMI information on a remote computer, the cmdlet must run under an account that is a
 member of the local administrators group on the remote computer. Or, the default access control on

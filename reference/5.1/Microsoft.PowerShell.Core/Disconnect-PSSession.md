@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - dnsn
 title: Disconnect-PSSession
 ---
 
@@ -141,8 +143,8 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
  1 ITTask          Srv1            Disconnected  Microsoft.PowerShell          None
 
 PS> $s = Connect-PSSession -ComputerName Srv1 -Name ITTask -Credential Domain01\User01
-PS> Invoke-Command -Session $s {dir $home\Scripts\PatchStatusOutput.ps1}
-PS> Invoke-Command -Session $s {mkdir $home\Scripts\PatchStatusOutput}
+PS> Invoke-Command -Session $s {dir $HOME\Scripts\PatchStatusOutput.ps1}
+PS> Invoke-Command -Session $s {mkdir $HOME\Scripts\PatchStatusOutput}
 PS> Invoke-Command -Session $s -FilePath \\Server01\Scripts\Get-PatchStatus.ps1
 PS> Disconnect-PSSession -Session $s
 ```
@@ -221,7 +223,7 @@ OutputBufferingMode           : Block
 AutoRestart                   : false
 SecurityDescriptorSddl        : O:NSG:BAD:P(A;;GA;;;BA)S:P(AU;FA;GA;;;WD)(AU;SA;GXGW;;;WD)
 MaxMemoryPerShellMB           : 1024
-MaxIdleTimeoutms              : 2147483647
+MaxIdleTimeoutMs              : 2147483647
 Uri                           : http://schemas.microsoft.com/powershell/microsoft.powershell
 SDKVersion                    : 2
 Name                          : microsoft.powershell
@@ -296,7 +298,7 @@ violation can go undetected while the session is in use.
 The fourth command uses the `Invoke-Command` cmdlet to run a `Get-PSSessionConfiguration` command
 for the `Microsoft.PowerShell` session configuration on the Server01 computer. The command uses the
 `Format-List` cmdlet to display all properties of the session configuration in a list.The output
-shows that the **MaxIdleTimeoutMS** property, which establishes the maximum permitted
+shows that the **MaxIdleTimeoutMs** property, which establishes the maximum permitted
 **IdleTimeout** value for sessions that use the session configuration, is `43200000` milliseconds
 (12 hours).
 
@@ -321,7 +323,7 @@ which is measured in milliseconds. The output confirms that the command was succ
 Disconnects from sessions with the specified session ID. Type one or more IDs (separated by
 commas), or use the range operator (`..`) to specify a range of IDs.
 
-To get the ID of a session, use the `Get-PSSession` cmdlet. The instance ID is stored in the **ID**
+To get the ID of a session, use the `Get-PSSession` cmdlet. The instance ID is stored in the **Id**
 property of the session.
 
 ```yaml
@@ -376,7 +378,7 @@ The instance ID is a GUID that uniquely identifies a session on a local or remot
 instance ID is unique, even across multiple sessions on multiple computers.
 
 To get the instance ID of a session, use the `Get-PSSession` cmdlet. The instance ID is stored in
-the **InstanceID** property of the session.
+the **InstanceId** property of the session.
 
 ```yaml
 Type: System.Guid[]
@@ -527,15 +529,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.Runspaces.PSSession
 
-You can pipe a session to `Disconnect-PSSession`.
+You can pipe a session to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
-`Disconnect-PSSession` returns an object that represents the session that it disconnected.
+This cmdlet returns an object representing the session that it disconnected.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Disconnect-PSSession`:
+
+- `dnsn`
 
 - The `Disconnect-PSSession` cmdlet works only when the local and remote computers are running
   PowerShell 3.0 or later.

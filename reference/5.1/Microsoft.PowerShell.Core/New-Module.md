@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-module?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - nmo
 title: New-Module
 ---
 # New-Module
@@ -84,7 +86,7 @@ This example demonstrates that dynamic modules are not returned by the `Get-Modu
 members that they export are returned by the `Get-Command` cmdlet.
 
 ```powershell
-new-module -scriptblock {function Hello {"Hello!"}}
+New-Module -ScriptBlock {function Hello {"Hello!"}}
 ```
 
 ```Output
@@ -122,7 +124,7 @@ This example uses the `Export-ModuleMember` cmdlet to export a variable into the
 Without the `Export-ModuleMember` command, only the function is exported.
 
 ```powershell
-New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($name) { "Hello, $name" }; Export-ModuleMember -function SayHello -Variable SayHelloHelp}
+New-Module -ScriptBlock {$SayHelloHelp="Type 'SayHello', a space, and a name."; function SayHello ($Name) { "Hello, $Name" }; Export-ModuleMember -Function SayHello -Variable SayHelloHelp}
 $SayHelloHelp
 ```
 
@@ -151,7 +153,7 @@ return any objects by default, there is no output from this command. `Get-Module
 **GreetingModule** has been imported into the current session.
 
 ```powershell
-New-Module -ScriptBlock {function Hello {"Hello!"}} -name GreetingModule | Import-Module
+New-Module -ScriptBlock {function Hello {"Hello!"}} -Name GreetingModule | Import-Module
 Get-Module
 ```
 
@@ -173,7 +175,7 @@ NestedModules     : {}
 ```
 
 ```powershell
-Get-Command hello
+Get-Command Hello
 ```
 
 ```Output
@@ -196,8 +198,8 @@ The `$m` variable appears to have no assigned value.
 
 ```powershell
 $m = New-Module -ScriptBlock {
-  function Hello ($name) {"Hello, $name"}
-  function Goodbye ($name) {"Goodbye, $name"}
+  function Hello ($Name) {"Hello, $Name"}
+  function Goodbye ($Name) {"Goodbye, $Name"}
 } -AsCustomObject
 $m
 $m | Get-Member
@@ -217,7 +219,7 @@ Hello       ScriptMethod System.Object Hello();
 ```
 
 ```powershell
-$m.goodbye("Jane")
+$m.Goodbye("Jane")
 ```
 
 ```Output
@@ -225,7 +227,7 @@ Goodbye, Jane
 ```
 
 ```powershell
-$m.hello("Manoj")
+$m.Hello("Manoj")
 ```
 
 ```Output
@@ -397,13 +399,24 @@ You can pipe a module name to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.Automation.PSModuleInfo, System.Management.Automation.PSCustomObject, or None
+### System.Management.Automation.PSModuleInfo
 
-This cmdlet generates a **PSModuleInfo** object, by default. If you use the **AsCustomObject**
-parameter, it generates a **PSCustomObject** object. If you use the **ReturnResult** parameter, it
-returns the result of evaluating the script block in the dynamic module.
+This cmdlet generates a **PSModuleInfo** object by default.
+
+### System.Management.Automation.PSCustomObject
+
+If you use the **AsCustomObject** parameter, it generates a **PSCustomObject** object.
+
+### System.Object
+
+If you use the **ReturnResult** parameter, this cmdlet returns the result of evaluating the script
+block in the dynamic module.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `New-Module`:
+
+- `nmo`
 
 You can also refer to `New-Module` by its alias, `nmo`. For more information, see
 [about_Aliases](About/about_Aliases.md).

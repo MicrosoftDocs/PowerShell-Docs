@@ -5,6 +5,8 @@ title: Variables
 ---
 # 5. Variables
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 A variable represents a storage location for a value, and that value has a type. Traditional
 procedural programming languages are statically typed; that is, the runtime type of a variable is
 that with which it was declared at compile time. Object-oriented languages add the idea of
@@ -58,9 +60,9 @@ function F ($p1, $p2) {
     $h1.FirstName = "Smith"
 
     $Alias:A = "Help"
-    $Env:MyPath = "e:\Temp"
+    $Env:MyPath = "E:\Temp"
     ${E:output.txt} = 123
-    $function:F = { "Hello there" }
+    $Function:F = { "Hello there" }
     $Variable:v = 10
 }
 ```
@@ -72,7 +74,7 @@ function F ($p1, $p2) {
 - `$p1` and `$p2` are parameters
 - `$radius`, `$circumference`, `$date`, `$month`, `$values`, `$value`, and `$h1` are ordinary
   variables
-- `$Alias:A`, `$Env:MyPath`, `${E:output.txt}`, and `$function:F` are variables on the corresponding
+- `$Alias:A`, `$Env:MyPath`, `${E:output.txt}`, and `$Function:F` are variables on the corresponding
   provider drives.
 - `$Variable:v` is actually an ordinary variable written with its fully qualified provider drive.
 

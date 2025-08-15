@@ -2,15 +2,17 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/18/2018
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/copy-itemproperty?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - cpp
 title: Copy-ItemProperty
 ---
+
 # Copy-ItemProperty
 
 ## SYNOPSIS
-
 Copies a property and value from a specified location to another location.
 
 ## SYNTAX
@@ -283,7 +285,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`, `-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`, `-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
+`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
+`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -293,14 +298,24 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSCustomObject
+### None
 
-When you use the **Passthru** parameter, this cmdlet generates a **PsCustomObject** representing the copied item property.
-Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSCustomObject
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSCustomObject** representing the
+copied item property.
 
 ## NOTES
 
-This cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+Windows PowerShell includes the following aliases for `Copy-ItemProperty`:
+
+- `cpp`
+
+This cmdlet is designed to work with the data exposed by any provider. To list the providers
+available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 
@@ -317,3 +332,5 @@ This cmdlet is designed to work with the data exposed by any provider. To list t
 [Set-ItemProperty](Set-ItemProperty.md)
 
 [Get-PSProvider](Get-PSProvider.md)
+
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)

@@ -1,7 +1,6 @@
 ---
 description: Scheduling Jobs with the Windows PowerShell API
 ms.date: 09/13/2016
-ms.topic: reference
 title: Scheduling Jobs with the Windows PowerShell API
 ---
 # Scheduling Jobs with the Windows PowerShell API
@@ -189,7 +188,7 @@ namespace Microsoft.Samples.PowerShell.ScheduledJob
                 // Since the PowerShell job runs in a non-interactive Task Scheduler
                 // process the job status and output data is written to a file based
                 // job store and the directory location is the current user local app
-                // data ($env:LOCALAPPDATA).
+                // data ($Env:LOCALAPPDATA).
                 // This job store can be accessed through the ScheduledJobSourceAdapter class.
                 ScheduledJobSourceAdapter schedJobSourceAdapter = new ScheduledJobSourceAdapter();
                 IList<Job2> jobRuns = schedJobSourceAdapter.GetJobs();

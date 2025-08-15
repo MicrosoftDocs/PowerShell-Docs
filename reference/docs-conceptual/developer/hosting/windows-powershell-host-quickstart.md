@@ -1,7 +1,6 @@
 ---
 description: Windows PowerShell Host Quickstart
 ms.date: 01/25/2022
-ms.topic: reference
 no-loc: [AddCommand, AddScript, AddStatement, AddParameter]
 title: Windows PowerShell Host Quickstart
 ---
@@ -61,11 +60,11 @@ The previous example executes a single command without any parameters. You can a
 command by using the
 [System.Management.Automation.PSCommand.AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)
 method. For example, the following code gets a list of all of the processes that are named
-`PowerShell` running on the machine.
+`powershell` running on the machine.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
-                   .AddParameter("Name", "PowerShell")
+                   .AddParameter("Name", "powershell")
                    .Invoke();
 ```
 
@@ -73,7 +72,7 @@ You can add additional parameters by calling the AddParameter method repeatedly.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-ChildItem")
-                   .AddParameter("Path", @"c:\Windows")
+                   .AddParameter("Path", @"C:\Windows")
                    .AddParameter("Filter", "*.exe")
                    .Invoke();
 ```
@@ -84,7 +83,7 @@ method.
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
-parameters.Add("Path", @"c:\Windows");
+parameters.Add("Path", @"C:\Windows");
 parameters.Add("Filter", "*.exe");
 
 PowerShell.Create().AddCommand("Get-Process")
@@ -98,11 +97,11 @@ PowerShell.Create().AddCommand("Get-Process")
 You can simulate batching by using the
 [System.Management.Automation.PowerShell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)
 method, which adds an additional statement to the end of the pipeline. The following code gets a
-list of running processes with the name `PowerShell`, and then gets the list of running services.
+list of running processes with the name `powershell`, and then gets the list of running services.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddCommand("Get-Process").AddParameter("Name", "PowerShell");
+ps.AddCommand("Get-Process").AddParameter("Name", "powershell");
 ps.AddStatement().AddCommand("Get-Service");
 ps.Invoke();
 ```
@@ -143,7 +142,7 @@ classes.
 
 ### Creating an InitialSessionState object
 
-To create a custom runspace, you must first create an
+To create a custom runspace, you must first create a
 [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)
 object. In the following example, we use the
 [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)
@@ -157,6 +156,7 @@ PowerShell ps = PowerShell.Create();
 ps.Runspace = rs;
 ps.AddCommand("Get-Command");
 ps.Invoke();
+rs.Close();
 ```
 
 ### Constraining the runspace
@@ -216,6 +216,12 @@ foreach (var entry in result)
 {
     Console.WriteLine(entry.Name);
 }
+```
+
+Close the runspace.
+
+```csharp
+rs.Close();
 ```
 
 When run, the output of this code will look as follows.

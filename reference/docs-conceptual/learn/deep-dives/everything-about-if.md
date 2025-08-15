@@ -1,7 +1,7 @@
 ---
 description: Like many other languages, PowerShell has statements for conditionally executing code in your scripts.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 11/16/2022
 title: Everything you wanted to know about the if statement
 ---
 # Everything you wanted to know about the `if` statement
@@ -244,7 +244,7 @@ PS> 1,2,3,4 -eq 3
 3
 ```
 
-This still works correctly in a `if` statement. So a value is returned by your operator, then the
+This still works correctly in an `if` statement. So a value is returned by your operator, then the
 whole statement is `$true`.
 
 ```powershell
@@ -397,8 +397,7 @@ why I would ever use it.
 ## Bitwise operators
 
 Bitwise operators perform calculations on the bits within the values and produce a new value as the
-result. Teaching [bitwise operators][bitwise operators] is beyond the scope of this article, but here is the list the
-them.
+result. Teaching [bitwise operators][bitwise operators] is beyond the scope of this article, but here is the list of them.
 
 - `-band` binary AND
 - `-bor` binary OR
@@ -422,11 +421,11 @@ other values.
 if ( Get-Process Notepad* )
 ```
 
-It evaluates to `$true` if there's a returned process and `$false` if there'sn'thing. It's
+It evaluates to `$true` if there's a returned process and `$false` if there isn't. It's
 perfectly valid to use pipeline expressions or other PowerShell statements like this:
 
 ```powershell
-if ( Get-Process | Where Name -eq Notepad )
+if ( Get-Process | where Name -EQ Notepad )
 ```
 
 These expressions can be combined with each other with the `-and` and `-or` operators, but you may
@@ -453,7 +452,7 @@ in diving deeper, I have an article about [everything you wanted to know about $
 I almost forgot to add this one until [Prasoon Karunan V][Prasoon Karunan V] reminded me of it.
 
 ```powershell
-if ($process=Get-Process notepad -ErrorAction ignore) {$process} else {$false}
+if ($process=Get-Process notepad -ErrorAction Ignore) {$process} else {$false}
 ```
 
 Normally when you assign a value to a variable, the value isn't passed onto the pipeline or
@@ -644,7 +643,7 @@ fall into the `$snowSqlParam` in the correct place. Same holds true for the `$Pa
 ## Simplify complex operations
 
 It's inevitable that you run into a situation that has way too many comparisons to check and your
-`If` statement scrolls way off the right side of the screen.
+`if` statement scrolls way off the right side of the screen.
 
 ```powershell
 $user = Get-ADUser -Identity $UserName

@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - sbp
 title: Set-PSBreakpoint
 ---
+
 # Set-PSBreakpoint
 
 ## SYNOPSIS
@@ -158,8 +161,8 @@ HitCount : 0
 Action   :
 
 function CheckLog {
->> get-eventlog -log Application |
->> where {($_.source -like "TestApp") -and ($_.Message -like "*failed*")}
+>> Get-EventLog -Log Application |
+>> Where-Object {($_.Source -like "TestApp") -and ($_.Message -like "*failed*")}
 >>}
 >>
 PS> Checklog
@@ -219,9 +222,9 @@ tasks, such as testing or logging.
 If this parameter is omitted, or no action is specified, execution stops at the breakpoint, and the
 debugger starts.
 
-When the **Action** parameter is used, the Action script block runs at each breakpoint. Execution does
-not stop unless the script block includes the Break keyword. If you use the Continue keyword in the
-script block, execution resumes until the next breakpoint.
+When the **Action** parameter is used, the Action script block runs at each breakpoint. Execution
+does not stop unless the script block includes the `break` keyword. If you use the `continue`
+keyword in the script block, execution resumes until the next breakpoint.
 
 For more information, see [about_Script_Blocks](../Microsoft.PowerShell.Core/About/about_Script_Blocks.md),
 [about_Break](../Microsoft.PowerShell.Core/About/about_Break.md), and
@@ -271,7 +274,7 @@ Sets a command breakpoint. Enter cmdlet names, such as `Get-Process`, or functio
 are permitted.
 
 Execution stops just before each instance of each command is executed. If the command is a function,
-execution stops each time the function is called and at each BEGIN, PROCESS, and END section.
+execution stops each time the function is called and at each `begin`, `process`, and `end` block.
 
 ```yaml
 Type: System.String[]
@@ -383,7 +386,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ### None
-You cannot pipe input to `Set-PSBreakpoint`.
+
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
@@ -396,6 +400,10 @@ You cannot pipe input to `Set-PSBreakpoint`.
 `Set-PSBreakpoint` returns an object that represents each breakpoint that it sets.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Set-PSBreakpoint`:
+
+- `sbp`
 
 - `Set-PSBreakpoint` cannot set a breakpoint on a remote computer. To debug a script on a remote
   computer, copy the script to the local computer and then debug it locally.

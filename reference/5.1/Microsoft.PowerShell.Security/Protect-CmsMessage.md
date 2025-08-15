@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
 ms.date: 02/03/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/protect-cmsmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/protect-cmsmessage?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Protect-CmsMessage
 ---
@@ -110,10 +110,10 @@ PS C:\> cd Cert:\CurrentUser\My
 PS Cert:\CurrentUser\My> Get-ChildItem -DocumentEncryptionCert
 ```
 
-To view document encryption certificates in the certificate provider, you can add the
+To view document encryption certificates in the Certificate provider, you can add the
 **DocumentEncryptionCert** dynamic parameter of
 [Get-ChildItem](../Microsoft.PowerShell.Management/Get-ChildItem.md), available only when the
-certificate provider is loaded.
+Certificate provider is loaded.
 
 ## PARAMETERS
 
@@ -193,7 +193,7 @@ Accept wildcard characters: False
 
 Specifies one or more CMS message recipients, identified in any of the following formats:
 
-- An actual certificate (as retrieved from the certificate provider).
+- An actual certificate (as retrieved from the Certificate provider).
 - Path to the file containing the certificate.
 - Path to a directory containing the certificate.
 - Thumbprint of the certificate (used to look in the certificate store).

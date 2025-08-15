@@ -1,0 +1,604 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/find-package?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Find-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/find-packageprovider?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Find-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-package?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Get-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-packageprovider?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Get-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-packagesource?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Get-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/import-packageprovider?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Import-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/install-package?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Install-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/install-packageprovider?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Install-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/packagemanagement?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/PackageManagement.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/register-packagesource?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Register-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/save-package?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Save-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/set-packagesource?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Set-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/uninstall-package?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Uninstall-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/unregister-packagesource?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PackageManagement/Unregister-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-command?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Find-Command.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-dscresource?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Find-DscResource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-module?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Find-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-rolecapability?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Find-RoleCapability.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-script?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Find-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-installedmodule?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Get-InstalledModule.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-installedscript?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Get-InstalledScript.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-psrepository?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Get-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/install-module?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Install-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/install-script?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Install-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/new-scriptfileinfo?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/New-ScriptFileInfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/powershellget?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/PowerShellGet.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/publish-module?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Publish-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/publish-script?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Publish-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/register-psrepository?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Register-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/save-module?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Save-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/save-script?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Save-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/set-psrepository?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Set-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/test-scriptfileinfo?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Test-ScriptFileInfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/uninstall-module?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Uninstall-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/uninstall-script?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Uninstall-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/unregister-psrepository?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Unregister-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-module?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Update-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-modulemanifest?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Update-ModuleManifest.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-script?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Update-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-scriptfileinfo?view=powershellget-1.x",
+      "source_path": "../reference/5.1/PowershellGet/Update-ScriptFileInfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/find-package?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Find-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/find-packageprovider?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Find-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-package?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Get-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-packageprovider?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Get-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-packagesource?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Get-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/import-packageprovider?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Import-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/install-package?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Install-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/install-packageprovider?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Install-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/packagemanagement?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/PackageManagement.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/register-packagesource?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Register-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/save-package?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Save-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/set-packagesource?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Set-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/uninstall-package?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Uninstall-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/unregister-packagesource?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PackageManagement/Unregister-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-command?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Find-Command.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-dscresource?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Find-DscResource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-module?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Find-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-rolecapability?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Find-RoleCapability.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-script?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Find-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-installedmodule?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Get-InstalledModule.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-installedscript?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Get-InstalledScript.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-psrepository?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Get-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/install-module?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Install-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/install-script?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Install-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/new-scriptfileinfo?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/New-ScriptFileInfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/powershellget?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/PowerShellGet.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/publish-module?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Publish-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/publish-script?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Publish-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/register-psrepository?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Register-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/save-module?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Save-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/save-script?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Save-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/set-psrepository?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Set-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/test-scriptfileinfo?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Test-ScriptFileInfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/uninstall-module?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Uninstall-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/uninstall-script?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Uninstall-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/unregister-psrepository?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Unregister-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-module?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Update-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-modulemanifest?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Update-ModuleManifest.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-script?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Update-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-scriptfileinfo?view=powershellget-2.x",
+      "source_path": "../reference/7.2/PowerShellGet/Update-ScriptFileInfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/find-package?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Find-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/find-packageprovider?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Find-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-package?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Get-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-packageprovider?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Get-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/get-packagesource?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Get-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/import-packageprovider?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Import-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/install-package?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Install-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/install-packageprovider?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Install-PackageProvider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/packagemanagement?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/PackageManagement.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/register-packagesource?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Register-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/save-package?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Save-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/set-packagesource?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Set-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/uninstall-package?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Uninstall-Package.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/packagemanagement/unregister-packagesource?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PackageManagement/Unregister-PackageSource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-command?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Find-Command.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-dscresource?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Find-DscResource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-module?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Find-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-rolecapability?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Find-RoleCapability.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/find-script?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Find-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-installedmodule?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Get-InstalledModule.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-installedscript?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Get-InstalledScript.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/get-psrepository?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Get-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/install-module?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Install-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/install-script?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Install-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/new-scriptfileinfo?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/New-ScriptFileInfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/powershellget?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/PowerShellGet.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/publish-module?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Publish-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/publish-script?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Publish-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/register-psrepository?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Register-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/save-module?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Save-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/save-script?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Save-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/set-psrepository?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Set-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/test-scriptfileinfo?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Test-ScriptFileInfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/uninstall-module?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Uninstall-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/uninstall-script?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Uninstall-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/unregister-psrepository?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Unregister-PSRepository.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-module?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Update-Module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-modulemanifest?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Update-ModuleManifest.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-script?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Update-Script.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/powershellget/update-scriptfileinfo?view=powershellget-2.x",
+      "source_path": "../reference/7.4/PowerShellGet/Update-ScriptFileInfo.md"
+    }
+  ]
+}

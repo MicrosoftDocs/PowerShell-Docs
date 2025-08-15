@@ -1,12 +1,11 @@
 ---
 description: Creating multiple runspaces
 ms.date: 09/13/2016
-ms.topic: reference
 title: Creating multiple runspaces
 ---
 # Creating multiple runspaces
 
-If you create a large number of runspaces, you might consider creating a runspace pool. Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.
+If you create a large number of runspaces, you might consider creating a runspace pool. Using a [System.Management.Automation.Runspaces.RunspacePool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.
 
 ## Creating and using a runspace pool.
 
@@ -42,7 +41,7 @@ namespace HostRunspacePool
         rsp.Open();
 
         // Create a PowerShell object to run the following command.
-        //  get-process wmi*
+        //  Get-Process wmi*
         PowerShell gpc = PowerShell.Create();
         // Specify the runspace to use and add commands.
         gpc.RunspacePool = rsp;
@@ -54,7 +53,7 @@ namespace HostRunspacePool
         PSDataCollection<PSObject> gpcOutput = gpc.EndInvoke(gpcAsyncResult);
 
         // Process the output.
-        Console.WriteLine("The output from running the command: get-process wmi*");
+        Console.WriteLine("The output from running the command: Get-Process wmi*");
         for (int i= 0; i < gpcOutput.Count; i++)
         {
          Console.WriteLine(

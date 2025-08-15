@@ -1,7 +1,6 @@
 ---
 description: Host05 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Host05 Sample
 ---
 # Host05 Sample
@@ -9,8 +8,8 @@ title: Host05 Sample
 This sample shows how to build an interactive console-based host application that reads commands
 from the command line, executes the commands, and then displays the results to the console. This
 host application also supports calls to remote computers by using the
-[Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and
-[Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
+[Enter-PSSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and
+[Exit-PSSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
 
 ## Requirements
 
@@ -23,14 +22,14 @@ host application also supports calls to remote computers by using the
 - Creating a custom host whose classes derive from the
   [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
   class, the
-  [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+  [System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
   class, and the
-  [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+  [System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
   class.
 
 - Building a console application that uses these host classes to build an interactive Windows PowerShell shell.
 
-- Creating a `$profile` variable and loading the following profiles.
+- Creating a `$PROFILE` variable and loading the following profiles.
 
   - current user, current host
   - current user, all hosts
@@ -44,8 +43,8 @@ host application also supports calls to remote computers by using the
 - Implement the
   [System.Management.Automation.Host.IHostSupportsInteractiveSession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)
   interface to support interactive remoting by using the
-  [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and
-  [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
+  [Enter-PSSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and
+  [Exit-PSSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.
 
 ## Example 1
 
@@ -159,7 +158,7 @@ namespace Microsoft.Samples.PowerShell.Host
       this.myRunSpace.Open();
 
       // Create a PowerShell object to run the commands used to create
-      // $profile and load the profiles.
+      // $PROFILE and load the profiles.
       lock (this.instanceLock)
       {
         this.currentPowerShell = PowerShell.Create();
@@ -226,7 +225,7 @@ namespace Microsoft.Samples.PowerShell.Host
         // error streams from the pipeline. This will result in the
         // output being written using the PSHost and PSHostUserInterface
         // classes instead of returning objects to the host application.
-        this.currentPowerShell.AddCommand("out-default");
+        this.currentPowerShell.AddCommand("Out-Default");
         this.currentPowerShell.Commands.Commands[0].MergeMyResults(PipelineResultTypes.Error, PipelineResultTypes.Output);
 
         // If there is any input pass it in, otherwise just invoke the
@@ -286,7 +285,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
         try
         {
-          this.currentPowerShell.AddScript("$input").AddCommand("out-string");
+          this.currentPowerShell.AddScript("$input").AddCommand("Out-String");
 
           // Do not merge errors, this function will swallow errors.
           Collection<PSObject> result;
@@ -643,7 +642,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ## Example 3
 
 The following code is the implementation of the
-[System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+[System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 class that is used by this host application.
 
 ```csharp
@@ -1164,7 +1163,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ## Example 4
 
 The following code is the implementation of the
-[System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+[System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
 class that is used by this host application. Those elements that are not implemented throw an
 exception or return nothing.
 
@@ -1380,6 +1379,6 @@ namespace Microsoft.Samples.PowerShell.Host
 
  [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

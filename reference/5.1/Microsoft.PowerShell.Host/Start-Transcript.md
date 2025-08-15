@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 01/26/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/06/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
 ---
@@ -41,16 +41,21 @@ The `Start-Transcript` cmdlet creates a record of all or part of a PowerShell se
 file. The transcript includes all command that the user types and all output that appears on the
 console.
 
+By default, `Start-Transcript` stores the transcript in the following location using the default
+name:
+
+- Default location: `$HOME\Documents`
+- Default filename: `PowerShell_transcript.<computername>.<random>.<timestamp>.txt`
+
 Starting in Windows PowerShell 5.0, `Start-Transcript` includes the hostname in the generated file
-name of all transcripts. This is especially useful when your enterprise's logging is centralized.
-Files that are created by the `Start-Transcript` cmdlet include random characters in names to
-prevent potential overwrites or duplication when two or more transcripts are started simultaneously.
-This also prevents unauthorized discovery of transcripts that are stored in a centralized file
-share.
+name of all transcripts. The filename also includes random characters in names to prevent potential
+overwrites or duplication when you start two or more transcripts simultaneously. Including the
+computer name is useful if you store your transcripts in a centralized location. The random
+character string prevents guessing of the filename to gain unauthorized access to the file.
 
 When using the **Append** parameter, if the target file doesn't have a Byte Order Mark (BOM)
 `Start-Transcript` defaults to `ASCII` encoding in the target file. This behavior can result in
-improper encoding of mulitbyte characters in the transcript.
+improper encoding of multibyte characters in the transcript.
 
 ## EXAMPLES
 
@@ -68,9 +73,31 @@ This command starts a transcript in the default file location.
 Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
 ```
 
-This command starts a transcript in the `Transcript0.txt` file in `C:\transcripts`. Since the
-**NoClobber** parameter is used, the command prevents any existing files from being overwritten. If
-the `Transcript0.txt` file already exists, the command fails.
+This command starts a transcript in the `Transcript0.txt` file in `C:\transcripts`. **NoClobber**
+parameter prevents any existing files from being overwritten. If the `Transcript0.txt` file already
+exists, the command fails.
+
+### Example 3: Start a transcript file with a unique name and store it on a file share
+
+The following example creates a transcript file with a name unique enough to be stored on in a
+shared location. The filename is constructed from the user's name, the hostname of the computer
+running PowerShell, the version of PowerShell, and the date and time. The transcript is stored in
+the `\\Server01\Transcripts` file share.
+
+```powershell
+$sharePath  = '\\Server01\Transcripts'
+$username   = $Env:USERNAME
+$hostname   = hostname
+$version    = $PSVersionTable.PSVersion.ToString()
+$datetime   = Get-Date -F 'yyyyMMddHHmmss'
+$filename   = "Transcript-${username}-${hostname}-${version}-${datetime}.txt"
+$Transcript = (Join-Path -Path $sharePath -ChildPath $filename).ToString()
+Start-Transcript
+```
+
+The full path to the transcript file is stored in the `$Transcript` preference variable. For more
+information about the `$Transcript` preference variable, see
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md#transcript).
 
 ## PARAMETERS
 
@@ -94,7 +121,7 @@ Accept wildcard characters: False
 ### -Force
 
 Allows the cmdlet to append the transcript to an existing read-only file. When used on a read-only
-file, the cmdlet changes the file permission to read-write. The cmdlet cannot override security
+file, the cmdlet changes the file permission to read-write. The cmdlet can't override security
 restrictions when this parameter is used.
 
 ```yaml
@@ -128,9 +155,9 @@ Accept wildcard characters: False
 ### -LiteralPath
 
 Specifies a location to the transcript file. Unlike the **Path** parameter, the value of the
-**LiteralPath** parameter is used exactly as it is typed. No characters are interpreted as
-wildcards. If the path includes escape characters, enclose it in single quotation marks. Single
-quotation marks inform PowerShell not to interpret any characters as escape sequences.
+**LiteralPath** parameter is used exactly as it's typed. No characters are interpreted as wildcards.
+If the path includes escape characters, enclose it in single quotation marks. Single quotation marks
+inform PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: System.String
@@ -146,7 +173,7 @@ Accept wildcard characters: False
 
 ### -NoClobber
 
-Indicates that this cmdlet does not overwrite an existing file. By default, if a transcript file
+Indicates that this cmdlet doesn't overwrite an existing file. By default, if a transcript file
 exists in the specified path, `Start-Transcript` overwrites the file without warning.
 
 ```yaml
@@ -180,14 +207,12 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a location to the transcript file. Enter a path to a `.txt` file. Wildcards are not
-permitted.
+Specifies a location to the transcript file. Enter a path to a `.txt` file. Wildcards aren't
+permitted. If any of the directories in the path don't exist, the command fails.
 
-If you do not specify a path, `Start-Transcript` uses the path in the value of the `$Transcript`
-global variable. If you have not created this variable, `Start-Transcript` stores the transcripts in
-the `$Home\My Documents directory as \PowerShell_transcript.<time-stamp>.txt` files.
-
-If any of the directories in the path do not exist, the command fails.
+If you don't specify a path, `Start-Transcript` uses the path in the value of the `$Transcript`
+global variable. If you haven't created this variable, `Start-Transcript` stores the transcripts in
+the default location and filename.
 
 ```yaml
 Type: System.String
@@ -220,7 +245,7 @@ Accept wildcard characters: False
 ### -WhatIf
 
 Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -238,19 +263,21 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+
 
 ## INPUTS
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.String
 
-This cmdlet returns a string that contains a confirmation message and the path to the output file.
+This cmdlet returns a string containing a confirmation message and the path to the output file.
 
 ## NOTES
 
@@ -259,6 +286,15 @@ To stop a transcript, use the `Stop-Transcript` cmdlet.
 To record an entire session, add the `Start-Transcript` command to your profile. For more
 information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
+> [!NOTE]
+> When you use `Start-Transcript`, the default value of `$InformationPreference` is changed to
+> `Continue`. Output from `Write-Information` is written to the console, but not to the transcript
+> file. If the `$InformationPreference` is set to `SilentlyContinue`, Information messages aren't
+> written to the console, but are written to the transcript file. This is fixed in PowerShell 6 and
+> higher.
+
 ## RELATED LINKS
 
 [Stop-Transcript](Stop-Transcript.md)
+
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md#transcript)

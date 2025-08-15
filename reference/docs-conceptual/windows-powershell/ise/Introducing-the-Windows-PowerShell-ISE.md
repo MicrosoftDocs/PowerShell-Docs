@@ -1,6 +1,7 @@
 ---
 description: The PowerShell ISE is a host application for Windows PowerShell that allows you to run commands and write, test, and debug scripts in a single Windows-based graphic user interface.
-ms.date: 10/07/2021
+ms.date: 03/27/2025
+ms.topic: overview
 title: Introducing the Windows PowerShell ISE
 ---
 
@@ -21,13 +22,12 @@ ISE is supported in all supported versions of Windows PowerShell up to and inclu
 PowerShell V5.1.
 
 > [!NOTE]
-> The PowerShell ISE is no longer in active feature development. As a shipping component of
-> Windows, it continues to be officially supported for security and high-priority servicing fixes.
-> We currently have no plans to remove the ISE from Windows.
+> The PowerShell ISE is no longer in active feature development. As a shipping component of Windows,
+> it continues to be officially supported for security and high-priority servicing fixes. We
+> currently have no plans to remove the ISE from Windows.
 >
 > There is no support for the ISE in PowerShell v6 and beyond. Users looking for replacement for the
-> ISE should use [Visual Studio Code](https://code.visualstudio.com/) with the
-> [PowerShell Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell).
+> ISE should use [Visual Studio Code][01] with the [PowerShell Extension][02].
 
 ## Key Features
 
@@ -53,3 +53,7 @@ Alternately, you can type `powershell_ise.exe` in any command shell or in the Ru
 On the **Help** menu, click **Windows PowerShell Help**. Or, press <kbd>F1</kbd>. The file that
 opens describes Windows PowerShell ISE and Windows PowerShell, including all the help available from
 the `Get-Help` cmdlet.
+
+<!-- link references -->
+[01]: https://code.visualstudio.com/
+[02]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell

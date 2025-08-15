@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 09/03/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/restart-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Service
 ---
+
 # Restart-Service
 
 ## SYNOPSIS
@@ -83,7 +84,7 @@ you run it.
 
 ### -DisplayName
 
-Specifies the display names of services to restarted. Wildcard characters are permitted.
+Specifies the display names of the services to restarted. Wildcard characters are permitted.
 
 ```yaml
 Type: System.String[]
@@ -237,17 +238,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.ServiceProcess.ServiceController, System.String
+### System.ServiceProcess.ServiceController
 
-You can pipe a service object or a string that contains a service name to this cmdlet.
+You can pipe a service object to this cmdlet.
+
+### System.String
+
+You can pipe a string that contains a service name to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.ServiceProcess.ServiceController
+### None
 
-This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
-restarted service, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not
-generate any output.
+By default, this cmdlet returns no output.
+
+### System.ServiceProcess.ServiceController
+
+When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object
+representing the restarted service.
 
 ## NOTES
 

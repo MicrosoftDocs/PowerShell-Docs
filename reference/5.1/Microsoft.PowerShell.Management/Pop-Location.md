@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/04/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/pop-location?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/pop-location?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - popd
 title: Pop-Location
 ---
+
 # Pop-Location
 
 ## SYNOPSIS
@@ -49,7 +52,7 @@ For more information about location stacks, see the [Notes](#notes).
 ```
 PS C:\> pushd HKLM:\Software\Microsoft\PowerShell
 PS HKLM:\Software\Microsoft\PowerShell> pushd Cert:\LocalMachine\TrustedPublisher
-PS cert:\LocalMachine\TrustedPublisher> popd
+PS Cert:\LocalMachine\TrustedPublisher> popd
 PS HKLM:\Software\Microsoft\PowerShell> popd
 PS C:\>
 ```
@@ -62,7 +65,7 @@ The first command pushes the current file system location onto the stack and mov
 supported by the PowerShell Registry provider.
 
 The second command pushes the registry location onto the stack and moves to a location supported by
-the PowerShell certificate provider.
+the PowerShell Certificate provider.
 
 The last two commands pop those locations off the stack. The first `popd` command returns to the
 Registry drive, and the second command returns to the file system drive.
@@ -139,17 +142,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Management.Automation.PathInfo
+### None
 
-This cmdlet generates a **System.Management.Automation.PathInfo** object that represents the
-location, if you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any
-output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PathInfo
+
+When you use the **PassThru** parameter, this cmdlet returns a **PathInfo** object representing the
+current path after the cmdlet's operation.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Pop-Location`:
+
+- `popd`
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue
@@ -191,10 +201,7 @@ If you make a named location stack the current location stack, you can no longer
 `Push-Location` or `Pop-Location` cmdlets to add or get items from the default stack or use the
 `Get-Location` cmdlet to display the locations in the unnamed stack. To make the unnamed stack
 the current stack, use the **StackName** parameter of the `Set-Location` cmdlet with a value of
-`$Null` or an empty string (`""`).
-
-You can also refer to `Pop-Location` by its built-in alias, `popd`. For more information, see
-[about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+`$null` or an empty string (`""`).
 
 `Pop-Location` is designed to work with the data exposed by any provider. To list the
 providers available in your session, type `Get-PSProvider`. For more information, see

@@ -2,9 +2,9 @@
 description: Describes the Checkpoint-Workflow activity, which takes a checkpoint in a workflow.
 Locale: en-US
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_checkpoint-workflow?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psworkflow/about/about_checkpoint-workflow?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Checkpoint-Workflow
+title: about_Checkpoint-Workflow
 ---
 
 # about_Checkpoint-Workflow
@@ -23,8 +23,7 @@ The Checkpoint-Workflow activity is valid only in a workflow.
 ### SYNTAX
 
 ```
-Workflow <Verb-Noun>
-{
+workflow <Verb-Noun> {
     Checkpoint-Workflow
 }
 ```
@@ -33,7 +32,7 @@ The Checkpoint-Workflow activity does not accept any parameters, including commo
 workflow common parameters.
 
 You can place the Checkpoint-Activity checkpoint anywhere in a workflow after the CmdletBinding or
-Param statement. However, when placing checkpoints, consider the performance cost of collecting the
+`param` statement. However, when placing checkpoints, consider the performance cost of collecting the
 data and writing it to disk on the computer that is running the workflow.
 
 Be sure that the time it takes to rerun a section of the workflow if it is interrupted is greater
@@ -72,14 +71,12 @@ The following workflow includes a call to the Checkpoint-Workflow activity after
 long-running function and a script that share data.
 
 ```powershell
-Workflow Test-Workflow
-{
+workflow Test-Workflow {
     $a = Invoke-LongRunningFunction
-    InlineScript { \\Server\Share\Get-DataPacks.ps1 $Using:a}
+    inlinescript { \\Server\Share\Get-DataPacks.ps1 $Using:a}
     Checkpoint-Workflow
 
-    Invoke-LongRunningFunction
-    {
+    Invoke-LongRunningFunction {
         ...
     }
 }

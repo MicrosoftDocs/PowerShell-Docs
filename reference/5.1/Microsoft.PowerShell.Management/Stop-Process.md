@@ -2,11 +2,15 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 09/30/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-process?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/05/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - kill
+  - spps
 title: Stop-Process
 ---
+
 # Stop-Process
 
 ## SYNOPSIS
@@ -101,7 +105,7 @@ to `Stop-Process`.
 The last command gets all of the processes on the computer that were running but that are now
 stopped. It uses `Get-Process` to get all of the processes on the computer. The pipeline operator
 (`|`) passes the results to the `Where-Object` cmdlet, which selects the ones where the value of the
-**HasExited** property is $True. **HasExited** is just one property of process objects. To find all
+**HasExited** property is $true. **HasExited** is just one property of process objects. To find all
 the properties, type `Get-Process | Get-Member`.
 
 ### Example 4: Stop a process not owned by the current user
@@ -280,15 +284,21 @@ You can pipe a process object to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Diagnostics.Process
+### None
 
-This cmdlet returns a **System.Diagnostics.Process** object that represents the stopped process, if
-you specify the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Diagnostics.Process
+
+When you use the **PassThru** parameter, this cmdlet returns a **Process** object representing the
+stopped process.
 
 ## NOTES
 
-- You can also refer to `Stop-Process` by its built-in aliases, `kill` and `spps` For more
-  information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+Windows PowerShell includes the following aliases for `Stop-Process`:
+
+- `kill`
+- `spps`
 
   You can also use the properties and methods of the Windows Management Instrumentation (WMI)
   **Win32_Process** object in Windows PowerShell. For more information, see `Get-CimInstance` and

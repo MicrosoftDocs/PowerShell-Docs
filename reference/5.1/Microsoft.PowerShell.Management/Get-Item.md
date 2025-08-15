@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 04/19/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 02/14/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gi
 title: Get-Item
 ---
 # Get-Item
@@ -14,18 +16,56 @@ Gets the item at the specified location.
 
 ## SYNTAX
 
-### Path (Default)
+### Path (Default) - FileSystem provider
 
 ```
-Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-UseTransaction]
+ [-Stream <String[]>] [<CommonParameters>]
 ```
 
-### LiteralPath
+### LiteralPath - FileSystem provider
 
 ```
-Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-UseTransaction] [-Stream <String[]>] [<CommonParameters>]
+Get-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Force] [-Credential <PSCredential>] [-UseTransaction]
+ [-Stream <String[]>] [<CommonParameters>]
+```
+
+### Path (Default) - Certificate provider
+
+```
+Get-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Force] [-Credential <pscredential>]  [-UseTransaction]
+ [-CodeSigningCert] [-DocumentEncryptionCert] [-SSLServerAuthentication]
+ [-DnsName <string>] [-Eku <string[]>] [-ExpiringInDays <int>]
+ [<CommonParameters>]
+```
+
+### LiteralPath - Certificate provider
+
+```
+Get-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-UseTransaction]
+ [-CodeSigningCert] [-DocumentEncryptionCert] [-SSLServerAuthentication]
+ [-DnsName <string>] [-Eku <string[]>] [-ExpiringInDays <int>]
+ [<CommonParameters>]
+```
+
+### Path (Default) - All providers
+
+```
+Get-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-UseTransaction]
+ [<CommonParameters>]
+```
+
+### LiteralPath - All providers
+
+```
+Get-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -35,6 +75,8 @@ item at the location unless you use a wildcard character (`*`) to request all th
 item.
 
 This cmdlet is used by PowerShell providers to navigate through different types of data stores.
+Some parameters are only available for a specific provider. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## EXAMPLES
 
@@ -115,7 +157,7 @@ cmdlet with the PowerShell Registry provider to get registry keys and subkeys, b
 `Get-ItemProperty` cmdlet to get the registry values and data.
 
 ```powershell
-Get-Item HKLM:\Software\Microsoft\Powershell\1\Shellids\Microsoft.Powershell\
+Get-Item HKLM:\Software\Microsoft\PowerShell\1\Shellids\Microsoft.PowerShell\
 ```
 
 ### Example 7: Get items in a directory that have an exclusion
@@ -129,6 +171,28 @@ Get-Item C:\Windows\*.* -Exclude "w*"
 ```
 
 ## PARAMETERS
+
+### -CodeSigningCert
+
+This is a dynamic parameter made available by the **Certificate** provider.
+
+To get certificates that have `Code Signing` in their **EnhancedKeyUsageList** property value, use
+the **CodeSigningCert** parameter.
+
+For more information, see
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Credential
 
@@ -149,6 +213,78 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -DnsName
+
+This is a dynamic parameter made available by the **Certificate** provider.
+
+Specifies a domain name or name pattern to match with the **DNSNameList** property of certificates
+the cmdlet gets. The value of this parameter can either be `Unicode` or `ASCII`. Punycode values
+are converted to Unicode. Wildcard characters (`*`) are permitted.
+
+This parameter was reintroduced in PowerShell 7.1
+
+For more information, see
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
+
+```yaml
+Type: Microsoft.PowerShell.Commands.DnsNameRepresentation
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### -DocumentEncryptionCert
+
+This is a dynamic parameter made available by the **Certificate** provider.
+
+To get certificates that have `Document Encryption` in their **EnhancedKeyUsageList** property
+value, use the **DocumentEncryptionCert** parameter.
+
+For more information, see
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Eku
+
+This is a dynamic parameter made available by the **Certificate** provider.
+
+Specifies text or a text pattern to match with the **EnhancedKeyUsageList** property of
+certificates the cmdlet gets. Wildcard characters (`*`) are permitted. The **EnhancedKeyUsageList**
+property contains the friendly name and the OID fields of the EKU.
+
+This parameter was reintroduced in PowerShell 7.1
+
+For more information, see
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
 ### -Exclude
 
 Specifies, as a string array, an item or items that this cmdlet excludes in the operation. The value
@@ -167,6 +303,30 @@ Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: True
+```
+
+### -ExpiringInDays
+
+This is a dynamic parameter made available by the **Certificate** provider.
+
+Specifies that the cmdlet should only return certificates that are expiring in or before the
+specified number of days. A value of zero (`0`) gets certificates that have expired.
+
+This parameter was reintroduced in PowerShell 7.1
+
+For more information, see
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
 ### -Filter
@@ -270,13 +430,39 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
+### -SSLServerAuthentication
+
+This is a dynamic parameter made available by the **Certificate** provider.
+
+To get certificates that have `Server Authentication` in their **EnhancedKeyUsageList** property
+value, use the **SSLServerAuthentication** parameter.
+
+For more information, see
+[about_Certificate_Provider](../Microsoft.PowerShell.Security/About/about_Certificate_Provider.md).
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Stream
+
+This is a dynamic parameter made available by the **FileSystem** provider.
 
 Gets the specified alternate NTFS file stream from the file. Enter the stream name. Wildcards are
 supported. To get all streams, use an asterisk (`*`). This parameter isn't valid on folders.
 
-**Stream** is a dynamic parameter that the **FileSystem** provider adds to the `Get-Item` cmdlet.
-This parameter works only in file system drives.
+This parameter was introduced in PowerShell 3.0.
+
+For more information, see
+[about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
 
 ```yaml
 Type: System.String[]
@@ -323,12 +509,53 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.Object
+### System.Management.Automation.AliasInfo
 
-This cmdlet returns the objects that it gets. The type is determined by the type of objects in the
-path.
+The cmdlet outputs this type when accessing the `Alias:` drive.
+
+### Microsoft.PowerShell.Commands.X509StoreLocation
+
+### System.Security.Cryptography.X509Certificates.X509Store
+
+### System.Security.Cryptography.X509Certificates.X509Certificate2
+
+The cmdlet outputs these types when accessing the `Cert:` drive.
+
+### System.Collections.DictionaryEntry
+
+The cmdlet outputs this type when accessing the `Env:` drive.
+
+### System.IO.DirectoryInfo
+
+### System.IO.FileInfo
+
+The cmdlet outputs these types when accessing the FileSystem drives.
+
+### System.Management.Automation.FunctionInfo
+
+### System.Management.Automation.FilterInfo
+
+The cmdlet outputs these types when accessing the `Function:` drives.
+
+### Microsoft.Win32.RegistryKey
+
+The cmdlet outputs this type when accessing the Registry drives.
+
+### System.Management.Automation.PSVariable
+
+The cmdlet outputs this type when accessing the `Variable:` drives.
+
+### Microsoft.WSMan.Management.WSManConfigContainerElement
+
+### Microsoft.WSMan.Management.WSManConfigLeafElement
+
+The cmdlet outputs these types when accessing the `WSMan:` drives.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-Item`:
+
+- `gi`
 
 This cmdlet does not have a **Recurse** parameter, because it gets only an item, not its contents.
 To get the contents of an item recursively, use `Get-ChildItem`.
@@ -338,7 +565,7 @@ to get registry values and data. The registry values are considered to be proper
 registry key.
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PsProvider`. For more information, see
+available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS

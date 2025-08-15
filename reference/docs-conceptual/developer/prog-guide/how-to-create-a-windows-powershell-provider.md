@@ -1,7 +1,6 @@
 ---
 description: How to Create a Windows PowerShell Provider
 ms.date: 09/13/2016
-ms.topic: reference
 title: How to Create a Windows PowerShell Provider
 ---
 # How to Create a Windows PowerShell Provider
@@ -23,7 +22,7 @@ Windows PowerShell provides several providers (such as the FileSystem provider, 
 and Alias provider) that are used to access known data stores. For more information about the
 providers supplied by Windows PowerShell, use the following command to access online Help:
 
-**PS>get-help about_providers**
+**PS>Get-Help about_Providers**
 
 ## Accessing the Stored Data Using Windows PowerShell Paths
 

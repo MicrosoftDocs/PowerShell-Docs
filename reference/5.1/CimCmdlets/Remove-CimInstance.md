@@ -2,9 +2,11 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/remove-ciminstance?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/cimcmdlets/remove-ciminstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rcim
 title: Remove-CimInstance
 ---
 # Remove-CimInstance
@@ -17,31 +19,33 @@ Removes a CIM instance from a computer.
 ### CimInstanceComputerSet (Default)
 
 ```
-Remove-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-CimInstance [-ResourceUri <Uri>] [-ComputerName <String[]>]
+ [-OperationTimeoutSec <UInt32>] [-InputObject] <CimInstance> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### CimInstanceSessionSet
 
 ```
-Remove-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>] [-OperationTimeoutSec <UInt32>]
- [-InputObject] <CimInstance> [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-CimInstance -CimSession <CimSession[]> [-ResourceUri <Uri>]
+ [-OperationTimeoutSec <UInt32>] [-InputObject] <CimInstance> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### QuerySessionSet
 
 ```
 Remove-CimInstance -CimSession <CimSession[]> [[-Namespace] <String>]
- [-OperationTimeoutSec <UInt32>] [-Query] <String> [-QueryDialect <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-OperationTimeoutSec <UInt32>] [-Query] <String> [-QueryDialect <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### QueryComputerSet
 
 ```
 Remove-CimInstance [-ComputerName <String[]>] [[-Namespace] <String>]
- [-OperationTimeoutSec <UInt32>] [-Query] <String> [-QueryDialect <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-OperationTimeoutSec <UInt32>] [-Query] <String> [-QueryDialect <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -151,7 +155,7 @@ Accept wildcard characters: False
 
 ### -Namespace
 
-Specifies the namespace for the CIM operation. The default namespace is `root/cimv2`. You can use
+Specifies the namespace for the CIM operation. The default namespace is **root/CIMV2**. You can use
 tab completion to browse the list of namespaces, because PowerShell gets a list of namespaces from
 the local WMI server to provide the list of namespaces.
 
@@ -242,11 +246,11 @@ A URI consists of a prefix and a path to a resource. For example:
 By default, if you do not specify this parameter, the DMTF standard resource URI
 `http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/` is used and the class name is appended to it.
 
-ResourceURI can only be used with CIM sessions created using the WSMan protocol, or when specifying
-the ComputerName parameter, which creates a CIM session using WSMan. If you specify this parameter
-without specifying the ComputerName parameter, or if you specify a CIM session created using DCOM
-protocol, you get an error, because the DCOM protocol does not support the **ResourceURI**
-parameter.
+**ResourceUri** can only be used with CIM sessions created using the WSMan protocol, or when
+specifying the **ComputerName** parameter, which creates a CIM session using WSMan. If you specify
+this parameter without specifying the **ComputerName** parameter, or if you specify a CIM session
+created using DCOM protocol, you get an error, because the DCOM protocol does not support the
+**ResourceUri** parameter.
 
 If both the **ResourceUri** parameter and the **Filter** parameter are specified, the **Filter**
 parameter is ignored.
@@ -306,13 +310,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet accepts no input objects.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet produces no outputs.
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -320,6 +324,6 @@ This cmdlet produces no outputs.
 
 [New-CimInstance](New-CimInstance.md)
 
-[Get-CimInstance](get-ciminstance.md)
+[Get-CimInstance](Get-CimInstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)

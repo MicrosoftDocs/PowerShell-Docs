@@ -1,20 +1,20 @@
 ---
 description: Hashtables are really important in PowerShell so it's good to have a solid understanding of them.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 06/25/2023
 title: Everything you wanted to know about hashtables
 ---
 # Everything you wanted to know about hashtables
 
-I want to take a step back and talk about [hashtables][hashtables]. I use them all the time now. I was
-teaching someone about them after our user group meeting last night and I realized I had the same
-confusion about them as he had. Hashtables are really important in PowerShell so it's good to have a
-solid understanding of them.
+I want to take a step back and talk about [hashtables][hashtables]. I use them all the time now. I
+was teaching someone about them after our user group meeting last night and I realized I had the
+same confusion about them as he had. Hashtables are really important in PowerShell so it's good to
+have a solid understanding of them.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
-> PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][original version] of this article appeared on the blog written by
+> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
+> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
 
 ## Hashtable as a collection of things
 
@@ -24,8 +24,8 @@ for more advanced stuff later. Skipping this understanding is often a source of 
 
 ## What is an array?
 
-Before I jump into what a **Hashtable** is, I need to mention [arrays][arrays] first. For the purpose of
-this discussion, an array is a list or collection of values or objects.
+Before I jump into what a **Hashtable** is, I need to mention [arrays][arrays] first. For the
+purpose of this discussion, an array is a list or collection of values or objects.
 
 ```powershell
 $array = @(1,2,3,5,7,11)
@@ -70,9 +70,9 @@ using a key like this:
 ```powershell
 $key = 'Kevin'
 $value = 36
-$ageList.add( $key, $value )
+$ageList.Add( $key, $value )
 
-$ageList.add( 'Alex', 9 )
+$ageList.Add( 'Alex', 9 )
 ```
 
 The person's name is the key and their age is the value that I want to save.
@@ -88,7 +88,7 @@ $ageList['Alex']
 ```
 
 When I want Kevin's age, I use his name to access it. We can use this approach to add or update
-values into the hashtable too. This is just like using the `add()` function above.
+values into the hashtable too. This is just like using the `Add()` method above.
 
 ```powershell
 $ageList = @{}
@@ -168,17 +168,17 @@ PS> $ageList | Measure-Object
 count : 1
 ```
 
-Even though the `.count` property tells you how many values it contains.
+Even though the `Count` property tells you how many values it contains.
 
 ```powershell
-PS> $ageList.count
+PS> $ageList.Count
 2
 ```
 
-You get around this issue by using the `.values` property if all you need is just the values.
+You get around this issue by using the `Values` property if all you need is just the values.
 
 ```powershell
-PS> $ageList.values | Measure-Object -Average
+PS> $ageList.Values | Measure-Object -Average
 Count   : 2
 Average : 22.5
 ```
@@ -186,7 +186,7 @@ Average : 22.5
 It's often more useful to enumerate the keys and use them to access the values.
 
 ```powershell
-PS> $ageList.keys | ForEach-Object{
+PS> $ageList.Keys | ForEach-Object{
     $message = '{0} is {1} years old!' -f $_, $ageList[$_]
     Write-Output $message
 }
@@ -197,7 +197,7 @@ Alex is 9 years old
 Here is the same example with a `foreach(){...}` loop.
 
 ```powershell
-foreach($key in $ageList.keys)
+foreach($key in $ageList.Keys)
 {
     $message = '{0} is {1} years old' -f $key, $ageList[$key]
     Write-Output $message
@@ -213,7 +213,7 @@ That brings us to `GetEnumerator()` for iterating over our hashtable.
 
 ```powershell
 $ageList.GetEnumerator() | ForEach-Object{
-    $message = '{0} is {1} years old!' -f $_.key, $_.value
+    $message = '{0} is {1} years old!' -f $_.Key, $_.Value
     Write-Output $message
 }
 ```
@@ -242,15 +242,17 @@ $environments.Keys | ForEach-Object {
     $environments[$_] = 'SrvDev03'
 }
 
-An error occurred while enumerating through a collection: Collection was modified; enumeration operation may not execute.
-+ CategoryInfo          : InvalidOperation: tableEnumerator:HashtableEnumerator) [], RuntimeException
+An error occurred while enumerating through a collection: Collection was modified;
+enumeration operation may not execute.
++ CategoryInfo          : InvalidOperation: tableEnumerator:HashtableEnumerator) [],
+ RuntimeException
 + FullyQualifiedErrorId : BadEnumeration
 ```
 
 This will also fail even though it looks like it should also be fine:
 
 ```powershell
-foreach($key in $environments.keys) {
+foreach($key in $environments.Keys) {
     $environments[$key] = 'SrvDev03'
 }
 
@@ -325,7 +327,7 @@ if( $person.age -ne $null ){...}
 ```
 
 This works around that issue for zero values but not $null vs non-existent keys. Most of the time
-you don't need to make that distinction but there are functions for when you do.
+you don't need to make that distinction but there are methods for when you do.
 
 ```powershell
 if( $person.ContainsKey('age') ){...}
@@ -336,10 +338,10 @@ knowing the key or iterating the whole collection.
 
 ### Removing and clearing keys
 
-You can remove keys with the `.Remove()` function.
+You can remove keys with the `Remove()` method.
 
 ```powershell
-$person.remove('age')
+$person.Remove('age')
 ```
 
 Assigning them a `$null` value just leaves you with a key that has a `$null` value.
@@ -350,13 +352,13 @@ A common way to clear a hashtable is to just initialize it to an empty hashtable
 $person = @{}
 ```
 
-While that does work, try to use the `clear()` function instead.
+While that does work, try to use the `Clear()` method instead.
 
 ```powershell
-$person.clear()
+$person.Clear()
 ```
 
-This is one of those instances where using the function creates self-documenting code and it makes
+This is one of those instances where using the method creates self-documenting code and it makes
 the intentions of the code very clean.
 
 ## All the fun stuff
@@ -395,28 +397,28 @@ special syntax that looks like this when fully expanded.
 
 ```powershell
 $property = @{
-    name = 'totalSpaceGB'
-    expression = { ($_.used + $_.free) / 1GB }
+    Name = 'TotalSpaceGB'
+    Expression = { ($_.Used + $_.Free) / 1GB }
 }
 ```
 
-The `name` is what the cmdlet would label that column. The `expression` is a script block that is
+The `Name` is what the cmdlet would label that column. The `Expression` is a script block that is
 executed where `$_` is the value of the object on the pipe. Here is that script in action:
 
 ```powershell
-$drives = Get-PSDrive | Where Used
-$drives | Select-Object -Property name, $property
+$drives = Get-PSDrive | where Used
+$drives | Select-Object -Property Name, $property
 
-Name     totalSpaceGB
+Name     TotalSpaceGB
 ----     ------------
 C    238.472652435303
 ```
 
-I placed that in a variable but it could easily be defined inline and you can shorten `name` to `n`
-and `expression` to `e` while you're at it.
+I placed that in a variable but it could easily be defined inline and you can shorten `Name` to `n`
+and `Expression` to `e` while you're at it.
 
 ```powershell
-$drives | Select-Object -property name, @{n='totalSpaceGB';e={($_.used + $_.free) / 1GB}}
+$drives | Select-Object -Property Name, @{n='TotalSpaceGB';e={($_.Used + $_.Free) / 1GB}}
 ```
 
 I personally don't like how long that makes commands and it often promotes some bad behaviors that I
@@ -432,7 +434,7 @@ either add the data to the object before you sort it or create a custom expressi
 `Sort-Object`.
 
 ```powershell
-Get-ADUser | Sort-Object -Parameter @{ e={ Get-TotalSales $_.Name } }
+Get-ADUser | Sort-Object -Property @{ e={ Get-TotalSales $_.Name } }
 ```
 
 In this example I'm taking a list of users and using some custom cmdlet to get additional
@@ -458,30 +460,30 @@ $data | Sort-Object -Property @{e={$_.name}}
 
 ## Splatting hashtables at cmdlets
 
-This is one of my favorite things about hashtables that many people don't discover early on.
-The idea is that instead of providing all the properties to a cmdlet on one line, you can instead
-pack them into a hashtable first. Then you can give the hashtable to the function in a special way.
-Here is an example of creating a DHCP scope the normal way.
+This is one of my favorite things about hashtables that many people don't discover early on. The
+idea is that instead of providing all the properties to a cmdlet on one line, you can instead pack
+them into a hashtable first. Then you can give the hashtable to the function in a special way. Here
+is an example of creating a DHCP scope the normal way.
 
 ```powershell
-Add-DhcpServerv4Scope -Name 'TestNetwork' -StartRange'10.0.0.2' -EndRange '10.0.0.254' -SubnetMask '255.255.255.0' -Description 'Network for testlab A' -LeaseDuration (New-TimeSpan -Days 8) -Type "Both"
+Add-DhcpServerV4Scope -Name 'TestNetwork' -StartRange '10.0.0.2' -EndRange '10.0.0.254' -SubnetMask '255.255.255.0' -Description 'Network for testlab A' -LeaseDuration (New-TimeSpan -Days 8) -Type "Both"
 ```
 
-Without using [splatting][splatting], all those things need to be defined on a single line. It either scrolls
-off the screen or will wrap where ever it feels like. Now compare that to a command that uses
-splatting.
+Without using [splatting][splatting], all those things need to be defined on a single line. It
+either scrolls off the screen or will wrap where ever it feels like. Now compare that to a command
+that uses splatting.
 
 ```powershell
 $DHCPScope = @{
-    Name        = 'TestNetwork'
-    StartRange  = '10.0.0.2'
-    EndRange    = '10.0.0.254'
-    SubnetMask  = '255.255.255.0'
-    Description = 'Network for testlab A'
+    Name          = 'TestNetwork'
+    StartRange    = '10.0.0.2'
+    EndRange      = '10.0.0.254'
+    SubnetMask    = '255.255.255.0'
+    Description   = 'Network for testlab A'
     LeaseDuration = (New-TimeSpan -Days 8)
-    Type = "Both"
+    Type          = "Both"
 }
-Add-DhcpServerv4Scope @DHCPScope
+Add-DhcpServerV4Scope @DHCPScope
 ```
 
 The use of the `@` sign instead of the `$` is what invokes the splat operation.
@@ -496,12 +498,12 @@ hashtable.
 ### Splatting for optional parameters
 
 One of the most common ways I use splatting is to deal with optional parameters that come from
-some place else in my script. Let's say I have a function that wraps a `Get-CIMInstance` call that
+some place else in my script. Let's say I have a function that wraps a `Get-CimInstance` call that
 has an optional `$Credential` argument.
 
 ```powershell
 $CIMParams = @{
-    ClassName = 'Win32_Bios'
+    ClassName = 'Win32_BIOS'
     ComputerName = $ComputerName
 }
 
@@ -510,11 +512,11 @@ if($Credential)
     $CIMParams.Credential = $Credential
 }
 
-Get-CIMInstance @CIMParams
+Get-CimInstance @CIMParams
 ```
 
 I start by creating my hashtable with common parameters. Then I add the `$Credential` if it exists.
-Because I'm using splatting here, I only need to have the call to `Get-CIMInstance` in my code
+Because I'm using splatting here, I only need to have the call to `Get-CimInstance` in my code
 once. This design pattern is very clean and can handle lots of optional parameters easily.
 
 To be fair, you could write your commands to allow `$null` values for parameters. You just don't
@@ -646,7 +648,7 @@ defined statically in my code and I know them off the top of my head. If I need 
 programmatically access the keys, I use the brackets to provide the key name.
 
 ```powershell
-foreach($name in $people.keys)
+foreach($name in $people.Keys)
 {
     $person = $people[$name]
     '{0}, age {1}, is in {2}' -f $name, $person.age, $person.city
@@ -669,7 +671,7 @@ Kevin                          {age, city}
 Alex                           {age, city}
 ```
 
-My go to command for looking at these things is `ConvertTo-JSON` because it's very clean and I
+My go to command for looking at these things is `ConvertTo-Json` because it's very clean and I
 frequently use JSON on other things.
 
 ```powershell
@@ -737,7 +739,7 @@ if you start with a `pscustomobject` so the column order is preserved. But you c
 `pscustomobject` inline if needed.
 
 ```powershell
-$person | ForEach-Object{ [pscustomobject]$_ } | Export-CSV -Path $path
+$person | ForEach-Object{ [pscustomobject]$_ } | Export-Csv -Path $path
 ```
 
 Again, check out my write-up on using a [pscustomobject][pscustomobject].
@@ -748,8 +750,8 @@ If I need to save a nested hashtable to a file and then read it back in again, I
 cmdlets to do it.
 
 ```powershell
-$people | ConvertTo-JSON | Set-Content -Path $path
-$people = Get-Content -Path $path -Raw | ConvertFrom-JSON
+$people | ConvertTo-Json | Set-Content -Path $path
+$people = Get-Content -Path $path -Raw | ConvertFrom-Json
 ```
 
 There are two important points about this method. First is that the JSON is written out multiline so
@@ -829,7 +831,7 @@ $hashtable = ( & $scriptBlock )
 It imports the contents of the file into a `scriptblock`, then checks to make sure it doesn't have
 any other PowerShell commands in it before it executes it.
 
-On that note, did you know that a module manifest (the psd1 file) is just a hashtable?
+On that note, did you know that a module manifest (the `.psd1` file) is just a hashtable?
 
 ## Keys can be any object
 
@@ -870,7 +872,7 @@ Name                           Value
 Accessing a value in the hashtable by its key doesn't always work. For example:
 
 ```powershell
-$key = $ht.keys[0]
+$key = $ht.Keys[0]
 $ht.$($key)
 a
 $ht[$key]
@@ -910,7 +912,7 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "UTF8"
 
 This adds an entry to the `$PSDefaultParameterValues` hashtable that sets `UTF8` as the default
 value for the `Out-File -Encoding` parameter. This is session-specific so you should place it in
-your `$profile`.
+your `$PROFILE`.
 
 I use this often to pre-assign values that I type quite often.
 
@@ -930,7 +932,7 @@ For a more in-depth breakdown, see this great article on [Automatic Defaults][Au
 
 ## Regex $Matches
 
-When you use the `-match` operator, an automatic variable called `$matches` is created with the
+When you use the `-match` operator, an automatic variable called `$Matches` is created with the
 results of the match. If you have any sub expressions in your regex, those sub matches are also
 listed.
 
@@ -966,7 +968,7 @@ One little known feature of `Group-Object` is that it can turn some datasets int
 you.
 
 ```powershell
-Import-CSV $Path | Group-Object -AsHashtable -Property email
+Import-Csv $Path | Group-Object -AsHashtable -Property Email
 ```
 
 This will add each row into a hashtable and use the specified property as the key to access it.
@@ -998,7 +1000,7 @@ make changes to that hashtable, your original is also altered.
 
 ### Shallow copies, single level
 
-If we have a simple hashtable like our example above, we can use `.Clone()` to make a shallow copy.
+If we have a simple hashtable like our example above, we can use `Clone()` to make a shallow copy.
 
 ```powershell
 PS> $orig = @{name='orig'}
@@ -1053,7 +1055,7 @@ function Get-DeepClone
     {
         if($InputObject -is [hashtable]) {
             $clone = @{}
-            foreach($key in $InputObject.keys)
+            foreach($key in $InputObject.Keys)
             {
                 $clone[$key] = Get-DeepClone $InputObject[$key]
             }
@@ -1067,7 +1069,7 @@ function Get-DeepClone
 
 It doesn't handle any other reference types or arrays, but it's a good starting point.
 
-Another way is to use .Net to deserialize it using **CliXml** like in this function:
+Another way is to use .NET to deserialize it using **CliXml** like in this function:
 
 ```powershell
 function Get-DeepClone

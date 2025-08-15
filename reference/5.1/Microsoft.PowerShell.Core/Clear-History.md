@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/13/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/clear-history?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - clhy
 title: Clear-History
 ---
 
@@ -379,15 +381,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to `Clear-History`.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Clear-History` does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Clear-History`:
+
+  - `clhy`
 
 The PowerShell session history is a list of the commands entered during a PowerShell session. You
 can view the history, add and delete commands, and run commands from the history. For more

@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
 ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/export-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/export-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Counter
 ---
@@ -38,7 +38,7 @@ This cmdlet runs only on Windows 7, Windows Server 2008 R2, and later versions o
 This example exports counter data to a BLG file.
 
 ```powershell
-Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $home\Counters.blg
+Get-Counter "\Processor(*)\% Processor Time" | Export-Counter -Path $HOME\Counters.blg
 ```
 
 The command uses the `Get-Counter` cmdlet to collect processor time data. It uses a pipeline

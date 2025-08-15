@@ -1,0 +1,42 @@
+{
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/powershell:1": {
+			"modules": "Documentarian,Documentarian.Vale,Documentarian.MicrosoftDocs,Documentarian.ModuleAuthor"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"chrischinchilla.vale-vscode",
+				"davidanson.vscode-markdownlint",
+				"docsmsft.docs-images",
+				"docsmsft.docs-linting",
+				"docsmsft.docs-markdown",
+				"docsmsft.docs-preview",
+				"docsmsft.docs-yaml",
+				"eamodio.gitlens",
+				"marvhen.reflow-markdown",
+				"ms-vscode.powershell",
+				"ms-vscode.wordcount",
+				"nhoizey.gremlins",
+				"redhat.vscode-yaml",
+				"shuworks.vscode-table-formatter",
+				"streetsidesoftware.code-spell-checker",
+				"tyriar.sort-lines",
+				"usernamehw.errorlens",
+				"wmaurer.change-case"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "pwsh",
+				"vale.valeCLI.path": "",
+				"vale.valeCLI.config": ""
+			}
+		}
+	},
+	"postStartCommand": "vale sync"
+}

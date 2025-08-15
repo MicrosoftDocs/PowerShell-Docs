@@ -2,9 +2,11 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/new-cimsessionoption?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/cimcmdlets/new-cimsessionoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ncso
 title: New-CimSessionOption
 ---
 
@@ -18,8 +20,8 @@ Specifies advanced options for the New-CimSession cmdlet.
 ### ProtocolTypeSet (Default)
 
 ```
-New-CimSessionOption [-Protocol] <ProtocolType> [-UICulture <CultureInfo>] [-Culture <CultureInfo>]
- [<CommonParameters>]
+New-CimSessionOption [-Protocol] <ProtocolType> [-UICulture <CultureInfo>]
+ [-Culture <CultureInfo>] [<CommonParameters>]
 ```
 
 ### WSManParameterSet
@@ -28,15 +30,16 @@ New-CimSessionOption [-Protocol] <ProtocolType> [-UICulture <CultureInfo>] [-Cul
 New-CimSessionOption [-NoEncryption] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck]
  [-EncodePortInServicePrincipalName] [-Encoding <PacketEncoding>] [-HttpPrefix <Uri>]
  [-MaxEnvelopeSizeKB <UInt32>] [-ProxyAuthentication <PasswordAuthenticationMechanism>]
- [-ProxyCertificateThumbprint <String>] [-ProxyCredential <PSCredential>] [-ProxyType <ProxyType>]
- [-UseSsl] [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
+ [-ProxyCertificateThumbprint <String>] [-ProxyCredential <PSCredential>]
+ [-ProxyType <ProxyType>] [-UseSsl] [-UICulture <CultureInfo>] [-Culture <CultureInfo>]
+ [<CommonParameters>]
 ```
 
 ### DcomParameterSet
 
 ```
-New-CimSessionOption [-Impersonation <ImpersonationType>] [-PacketIntegrity] [-PacketPrivacy]
- [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
+New-CimSessionOption [-Impersonation <ImpersonationType>] [-PacketIntegrity]
+ [-PacketPrivacy] [-UICulture <CultureInfo>] [-Culture <CultureInfo>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -59,7 +62,7 @@ named `$so`. The contents of the variable are then passed to the `New-CimSession
 options defined in the variable.
 
 ```powershell
-$so = New-CimSessionOption -Protocol DCOM
+$so = New-CimSessionOption -Protocol Dcom
 New-CimSession -ComputerName Server01 -SessionOption $so
 ```
 
@@ -71,13 +74,20 @@ parameter, the credentials specified by the **ProxyCredential** parameter, and s
 command is to skip the CA check, skip the CN check, and use SSL.
 
 ```powershell
-New-CimSessionOption -ProxyAuthentication Kerberos -ProxyCredential $cred -SkipCACheck -SkipCNCheck -UseSsl
+$option = @{
+    ProxyAuthentication = 'Kerberos'
+    ProxyCredential = $cred
+    SkipCACheck = $true
+    SkipCNCheck = $true
+    UseSsl = $true
+}
+New-CimSessionOption @option
 ```
 
 ### Example 3: Create a CIM session options object with the culture specified
 
 ```powershell
-New-CimSessionOption -Culture Fr-Fr -Protocol Wsman
+New-CimSessionOption -Culture fr-FR -Protocol Wsman
 ```
 
 This example specifies the culture that is used for the CIM session. By default, the culture of the
@@ -91,9 +101,10 @@ client is used when performing operations. However, the default culture can be o
 Specifies the user interface culture to use for the CIM session. Specify the value for this
 parameter using one of the following formats:
 
-- A culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
+- A culture name in `<languagecode2>-<country/regioncode2>` format such as "en-US".
 - A variable that contains a **CultureInfo** object.
-- A command that gets a **CultureInfo** object, such as [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
+- A command that gets a **CultureInfo** object, such as
+  [Get-Culture](../Microsoft.PowerShell.Utility/Get-Culture.md)
 
 ```yaml
 Type: System.Globalization.CultureInfo
@@ -257,7 +268,7 @@ Accept wildcard characters: False
 
 ### -Protocol
 
-Specifies the protocol to use. The acceptable values for this parameter are: **DCOM**, **Default**,
+Specifies the protocol to use. The acceptable values for this parameter are: **Dcom**, **Default**,
 or **Wsman**.
 
 ```yaml
@@ -416,7 +427,7 @@ Accept wildcard characters: False
 Specifies the user interface culture to use for the CIM session. Specify the value for this
 parameter using one of the following formats:
 
-- A culture name in `<languagecode2>-<country/regioncode2>` format such as "EN-US".
+- A culture name in `<languagecode2>-<country/regioncode2>` format such as "en-US".
 - A variable that contains a CultureInfo object.
 - A command that gets a CultureInfo object, such as `Get-Culture`.
 
@@ -467,11 +478,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet accepts no input objects.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### CIMSessionOption
+### Microsoft.Management.Infrastructure.Options.CimSessionOptions
 
 This cmdlet returns an object that contains CIM session options information.
 
@@ -479,12 +490,12 @@ This cmdlet returns an object that contains CIM session options information.
 
 ## RELATED LINKS
 
-[Get-ChildItem](../microsoft.powershell.management/get-childitem.md)
+[Get-ChildItem](../Microsoft.Powershell.Management/Get-ChildItem.md)
 
-[Get-Credential](../microsoft.powershell.security/get-credential.md)
+[Get-Credential](../Microsoft.Powershell.Security/Get-Credential.md)
 
-[Get-Culture](../microsoft.powershell.utility/get-culture.md)
+[Get-Culture](../Microsoft.Powershell.Utility/Get-Culture.md)
 
-[Get-Item](../microsoft.powershell.management/get-item.md)
+[Get-Item](../Microsoft.Powershell.Management/Get-Item.md)
 
 [New-CimSession](New-CimSession.md)

@@ -1,10 +1,11 @@
 ---
-description: How to Add Input Types to a Cmdlet Help Topic
-ms.date: 09/12/2016
-ms.topic: reference
-title: How to Add Input Types to a Cmdlet Help Topic
+description: How to add input types to a cmdlet help topic
+ms.date: 07/10/2023
+title: How to add input types to a cmdlet help topic
 ---
-# How to Add Input Types to a Cmdlet Help Topic
+# How to add input types to a cmdlet help topic
+
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
 
 This section describes how to add an **INPUTS** section to a PowerShell cmdlet Help topic. The
 **INPUTS** section lists the .NET classes of objects that the cmdlet accepts as input from the
@@ -45,7 +46,7 @@ The following XML shows an example of using the `<maml:inputTypes>` node to docu
   <command:inputType>
     <dev:type>
       <maml:name>System.DateTime</maml:name>
-      <maml:uri>https://docs.microsoft.com/dotnet/api/system.datetime</maml:uri>
+      <maml:uri>https://learn.microsoft.com/dotnet/api/system.datetime</maml:uri>
       <maml:description/>
     </dev:type>
     <maml:description>

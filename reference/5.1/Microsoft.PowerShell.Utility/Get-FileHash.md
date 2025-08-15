@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Utility-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-FileHash
 ---
+
 # Get-FileHash
 
 ## SYNOPSIS
@@ -57,7 +58,7 @@ is supported by the target operating system can be used.
 
 ### Example 1: Compute the hash value for a file
 
-This example uses the `Get-FileHash` cmdlet to compute the hash value for the `Powershell.exe` file.
+This example uses the `Get-FileHash` cmdlet to compute the hash value for the `powershell.exe` file.
 The hash algorithm used is the default, SHA256. The output is piped to the `Format-List` cmdlet to
 format the output as a list.
 
@@ -90,7 +91,7 @@ Path      : C:\Users\user1\Downloads\Contoso8_1_ENT.iso
 ### Example 3: Compute the hash value of a stream
 
 For this example, we get are using **System.Net.WebClient** to download a package from the
-[Powershell release page](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4). The release
+[PowerShell release page](https://github.com/PowerShell/PowerShell/releases/tag/v6.2.4). The release
 page also documents the SHA256 hash of each package file. We can compare the published hash value
 with the one we calculate with `Get-FileHash`.
 
@@ -114,7 +115,7 @@ string to a stream and use the **InputStream** parameter of `Get-FileHash` to ge
 ```powershell
 $stringAsStream = [System.IO.MemoryStream]::new()
 $writer = [System.IO.StreamWriter]::new($stringAsStream)
-$writer.write("Hello world")
+$writer.Write("Hello world")
 $writer.Flush()
 $stringAsStream.Position = 0
 Get-FileHash -InputStream $stringAsStream | Select-Object Hash
@@ -224,13 +225,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string to the `Get-FileHash` cmdlet that contains a path to one or more files.
+You can pipe a string containing a path to a file to this cmdlet.
 
 ## OUTPUTS
 
-### Microsoft.Powershell.Utility.FileHash
+### Microsoft.PowerShell.Utility.FileHash
 
-`Get-FileHash` returns an object that represents the path to the specified file, the value of the
+This cmdlet returns an object representing the path to the specified file, the value of the
 computed hash, and the algorithm used to compute the hash.
 
 ## NOTES

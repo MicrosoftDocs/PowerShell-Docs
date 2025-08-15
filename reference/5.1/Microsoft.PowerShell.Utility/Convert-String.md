@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 10/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convert-string?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convert-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Convert-String
 ---
@@ -91,7 +91,7 @@ $composers = @("Antonio Vivaldi", "Richard Wagner ", "Franz Schubert", "Johannes
 $composers | Convert-String -Example "Patti Fuller = Fuller, P."
 ```
 
-```)utput
+```Output
  Wagner, R.
  Brahms, J.
 ```
@@ -195,7 +195,7 @@ examples:
 - `-Example "Hello World=World: Hello",'"Hello","1"=1: Hello'`
 
 > [!NOTE]
->T he second example uses a list of patterns
+> The second example uses a list of patterns
 
 Alternatively, specify a list of hash tables that contain **Before** and
 **After** properties.

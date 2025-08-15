@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Utility-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/22/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-sddlstring?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-sddlstring?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-SddlString
 ---
+
 # ConvertFrom-SddlString
 
 ## SYNOPSIS
@@ -64,11 +65,11 @@ It uses the `-Type` parameter to specify that SDDL string represents a registry 
 ```powershell
 $acl = Get-Acl -Path HKLM:\SOFTWARE\Microsoft\
 
-ConvertFrom-SddlString -Sddl $acl.Sddl | Foreach-Object {$_.DiscretionaryAcl[0]}
+ConvertFrom-SddlString -Sddl $acl.Sddl | ForEach-Object {$_.DiscretionaryAcl[0]}
 
 BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateDirectories, Delete, ExecuteKey, FullControl, GenericExecute, GenericWrite, ListDirectory, ReadExtendedAttributes, ReadPermissions, TakeOwnership, Traverse, WriteData, WriteExtendedAttributes, WriteKey)
 
-ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights | Foreach-Object {$_.DiscretionaryAcl[0]}
+ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights | ForEach-Object {$_.DiscretionaryAcl[0]}
 
 BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateLink, CreateSubKey, Delete, EnumerateSubKeys, ExecuteKey, FullControl, GenericExecute, GenericWrite, Notify, QueryValues, ReadPermissions, SetValue, TakeOwnership, WriteKey)
 ```
@@ -87,7 +88,7 @@ rights returned are for registry.
 ### Example 4: Convert Active Directory access rights SDDL to a PSCustomObject
 
 ```powershell
-$user = [ADSI]"LDAP://CN=username,CN=Users,DC=domain,DC=com"
+$user = [adsi]"LDAP://CN=username,CN=Users,DC=domain,DC=com"
 ConvertFrom-SddlString $user.psbase.ObjectSecurity.Sddl -Type ActiveDirectoryRights
 ```
 
@@ -157,7 +158,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a SDDL string to `ConvertFrom-SddlString`.
+You can pipe a SDDL string to this cmdlet.
 
 ## OUTPUTS
 

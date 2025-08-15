@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/disable-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/disable-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-JobTrigger
 ---
@@ -29,18 +29,20 @@ To use this cmdlet, use the `Get-JobTrigger` cmdlet to get the job triggers. The
 triggers to `Disable-JobTrigger` or use its **InputObject** parameter.
 
 To disable a job trigger, the `Disable-JobTrigger` cmdlet sets the Enabled property of the job
-trigger to `$False`. To re-enable the job trigger, use the `Enable-JobTrigger` cmdlet, which sets
-the **Enabled** property of the job trigger to $True. Disabling a job trigger does not disable the
+trigger to `$false`. To re-enable the job trigger, use the `Enable-JobTrigger` cmdlet, which sets
+the **Enabled** property of the job trigger to $true. Disabling a job trigger does not disable the
 scheduled job, such as is done by the `Disable-ScheduledJob` cmdlet, but if you disable all job
 triggers, the effect is the same as disabling the scheduled job.
 
 If you disable a scheduled job or disable all job triggers of a scheduled job, you can still start
 the job by using the `Start-Job` cmdlet or use the disabled scheduled job as a template.
 
-`Disable-ScheduledJob` is one of a collection of job scheduling cmdlets in the **PSScheduledJob** module that is included in Windows PowerShell.
+`Disable-ScheduledJob` is one of a collection of job scheduling cmdlets in the **PSScheduledJob**
+module that is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
-the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -51,7 +53,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 This example disables the first trigger a scheduled job on the local computer.
 
 ```powershell
-PS C:\> Get-JobTrigger -Name "Backup-Archives" -TriggerID 1 | Disable-JobTrigger
+PS C:\> Get-JobTrigger -Name "Backup-Archives" -TriggerId 1 | Disable-JobTrigger
 ```
 
 The command uses the `Get-JobTrigger` cmdlet to get the job trigger. A pipeline operator (`|`)sends
@@ -61,8 +63,10 @@ the job trigger to the `Disable-JobTrigger` cmdlet, which disables it.
 
 ```powershell
 Get-ScheduledJob -Name "Backup-Archives,Inventory" | Get-JobTrigger | Disable-JobTrigger
-Get-ScheduledJob -Name "Backup-Archives,Inventory" | Get-JobTrigger |
-    Format-Table -Property ID, Frequency, At, DaysOfWeek, Enabled, @{Label="JobName";Expression={$_.JobDefinition.Name}} -AutoSize
+Get-ScheduledJob -Name "Backup-Archives,Inventory" | 
+    Get-JobTrigger |
+    Format-Table -Property Id, Frequency, At, DaysOfWeek, Enabled,
+    @{Label="JobName";Expression={$_.JobDefinition.Name}} -AutoSize
 ```
 
 ```Output
@@ -93,7 +97,11 @@ These commands disable all job triggers on two scheduled jobs and display the re
 This example disables the daily job triggers for a scheduled job on a remote computer
 
 ```powershell
-Invoke-Command -ComputerName Server01 {Get-JobTrigger -Name DeployPackage | Where-Object {$_.Frequency -eq "Daily"} | Disable-JobTrigger}
+Invoke-Command -ComputerName Server01 {
+    Get-JobTrigger -Name DeployPackage | 
+    Where-Object {$_.Frequency -eq "Daily"} |
+    Disable-JobTrigger
+}
 ```
 
 The command uses the `Invoke-Command` cmdlet to run the commands on the Server01 computer. The
@@ -176,19 +184,20 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
-You can pipe job triggers to `Disable-JobTrigger`.
+You can pipe a job trigger to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

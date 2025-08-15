@@ -1,7 +1,7 @@
 @{
   Parameters = @(
     @{
-      Name = 'Relative_Folder_Path'
+      Name = 'relative_folder_path'
       Type = 'String[]'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -33,7 +33,7 @@
     }
 
     @{
-      Name = 'Exclude_Folder_Segment'
+      Name = 'exclude_folder_segment'
       Type = 'String[]'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -56,7 +56,7 @@
     }
 
     @{
-      Name = 'Days_Until_Stale'
+      Name = 'days_until_stale'
       Type = 'Int'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -91,7 +91,7 @@
     }
 
     @{
-      Name = 'Stale_Since_Date'
+      Name = 'stale_since_date'
       Type = 'DateTime'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -105,7 +105,7 @@
         }
 
         # Because DaysUntilStale and StaleSinceDate belong to different
-        # parameter sets, remove DaysUntilStale before adding  StaleSinceDate.
+        # parameter sets, remove DaysUntilStale before adding StaleSinceDate.
         if ($Parameters.ContainsKey('DaysUntilStale')) {
           $Message = @(
             'Specified both days_until_stale and stale_since_date parameters;'
@@ -125,7 +125,7 @@
     }
 
     @{
-      Name = 'Upload_Artifact'
+      Name = 'upload_artifact'
       Type = 'Bool'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -133,7 +133,7 @@
       }
       Process = {
         param($Parameters, $Value, $ErrorTarget)
-        
+
         if ([string]::IsNullOrEmpty($Value)) {
           return $Parameters
         }
@@ -142,7 +142,7 @@
           $Message = @(
             'Specified both export_as_csv and upload_artifact parameters;'
             'upload_artifact implies export_as_csv, so you do not need to'
-            'specify both. The stale content report willbe exported as a'
+            'specify both. The stale content report will be exported as a'
             'CSV and uploaded as an artifact in this action.'
           ) -join ' '
           Write-Warning $Message
@@ -166,7 +166,7 @@
     }
 
     @{
-      Name = 'Export_As_Csv'
+      Name = 'export_as_csv'
       Type = 'Bool'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -183,7 +183,7 @@
           $Message = @(
             'Specified both export_as_csv and upload_artifact parameters;'
             'upload_artifact implies export_as_csv, so you do not need to'
-            'specify both. The stale content report willbe exported as a'
+            'specify both. The stale content report will be exported as a'
             'CSV and uploaded as an artifact in this action.'
           ) -join ' '
           Write-Warning $Message
@@ -206,7 +206,7 @@
     }
 
     @{
-      Name = 'Export_Path'
+      Name = 'export_path'
       Type = 'string'
       IfNullOrEmpty = {
         param($ErrorTarget)

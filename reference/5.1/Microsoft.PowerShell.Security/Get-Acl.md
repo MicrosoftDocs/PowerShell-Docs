@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 03/25/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Acl
 ---
+
 # Get-Acl
 
 ## SYNOPSIS
@@ -65,7 +66,7 @@ Get-Acl C:\Windows\s*.log | Format-List -Property PSPath, Sddl
 
 The command uses the `Get-Acl` cmdlet to get objects representing the security descriptors of each
 log file. It uses a pipeline operator (`|`) to send the results to the `Format-List` cmdlet. The
-command uses the **Property** parameter of `Format-List` to display only the **PsPath** and **SDDL**
+command uses the **Property** parameter of `Format-List` to display only the **PSPath** and **SDDL**
 properties of each security descriptor object.
 
 Lists are often used in PowerShell, because long values appear truncated in tables.
@@ -294,14 +295,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a path to `Get-Acl`.
+You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.Security.AccessControl.FileSecurity, System.Security.AccessControl.DirectorySecurity, System.Security.AccessControl.RegistrySecurity
+### System.Security.AccessControl.FileSecurity
 
-`Get-Acl` returns an object that represents the ACLs that it gets. The object type depends upon the
-ACL type.
+### System.Security.AccessControl.DirectorySecurity
+
+### System.Security.AccessControl.RegistrySecurity
+
+This cmdlet returns an object that represents the ACLs that it gets. The object type depends upon
+the ACL type.
 
 ## NOTES
 
@@ -320,7 +325,7 @@ and access list, PowerShell displays the following properties and property value
   Descriptor Definition Language format. PowerShell uses the **GetSddlForm** method of security
   descriptors to get this data.
 
-Because `Get-Acl` is supported by the file system and registry providers, you can use `Get-Acl` to
+Because `Get-Acl` is supported by the FileSystem and Registry providers, you can use `Get-Acl` to
 view the ACL of file system objects, such as files and directories, and registry objects, such as
 registry keys and entries.
 

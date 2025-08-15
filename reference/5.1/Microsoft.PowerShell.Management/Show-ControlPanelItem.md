@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 04/22/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/show-controlpanelitem?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/show-controlpanelitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-ControlPanelItem
 ---
@@ -43,8 +43,7 @@ user interface. You can pipe control panel items from the `Get-ControlPanelItem`
 computers that do not have **Control Panel** or **File Explorer**, `Show-ControlPanelItem` searches
 only control panel items that can open without these components.
 
-This cmdlet was introduced in Windows PowerShell 3.0 and works on Windows 8, Windows Server 2012,
-and higher versions.
+This cmdlet was introduced in Windows PowerShell 3.0.
 
 ## EXAMPLES
 
@@ -81,7 +80,7 @@ This method is an alternative to using a `Show-ControlPanelItem` command.
 
 > [!NOTE]
 > In PowerShell, you can omit the .cpl file extension for control panel files because it's included
-> in the value of the `$env:PathExt` environment variable.
+> in the value of the `$Env:PATHEXT` environment variable.
 
 ## PARAMETERS
 

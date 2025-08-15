@@ -1,7 +1,6 @@
 ---
 description: HelpInfo XML Schema
-ms.date: 09/12/2016
-ms.topic: reference
+ms.date: 07/10/2023
 title: HelpInfo XML Schema
 ---
 # HelpInfo XML Schema
@@ -61,5 +60,10 @@ The HelpInfo XML file includes the following elements.
 
 - **UICultureVersion** - Contains a 4-part version number in "N1.N2.N3.N4" format that represents
   the version of the help CAB file in the UI culture. Increment this version number whenever you
-  upload new help CAB files in the UI culture that is specified by **UICultureName**. For more
-  information about this value, see [Version Class](/dotnet/api/system.version).
+  upload new help CAB files in the UI culture that's specified by **UICultureName**. For more
+  information about this value, see [Version Class][01].
+
+[!INCLUDE [use-platyps](../../../includes/use-platyps.md)]
+
+<!-- link references -->
+[01]: /dotnet/api/system.version

@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/27/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - spsv
 title: Stop-Service
 ---
+
 # Stop-Service
 
 ## SYNOPSIS
@@ -257,21 +260,30 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.ServiceProcess.ServiceController, System.String
+### System.ServiceProcess.ServiceController
 
-You can pipe a service object or a string that contains the name of a service to this cmdlet.
+You can pipe a service object to this cmdlet.
+
+### System.String
+
+You can pipe a string that contains the name of a service to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.ServiceProcess.ServiceController
+### None
 
-This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the
-service, if you use the **PassThru** parameter. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.ServiceProcess.ServiceController
+
+When you use the **PassThru** parameter, this cmdlet returns a **ServiceController** object
+representing the service.
 
 ## NOTES
 
-You can also refer to `Stop-Service` by its built-in alias, **spsv**. For more information, see
-about_Aliases.
+Windows PowerShell includes the following aliases for `Stop-Service`:
+
+- `spsv`
 
 `Stop-Service` can control services only when the current user has permission to do this. If a
 command does not work correctly, you might not have the required permissions.

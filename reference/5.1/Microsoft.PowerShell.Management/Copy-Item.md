@@ -2,9 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/22/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 11/04/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - copy
+  - cp
+  - cpi
 title: Copy-Item
 ---
 
@@ -15,22 +19,41 @@ Copies an item from one location to another.
 
 ## SYNTAX
 
-### Path (Default)
+### Path (Default) - FileSystem provider
 
 ```
-Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Recurse] [-PassThru] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [-FromSession <PSSession>] [-ToSession <PSSession>]
+Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Force]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
+ [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [-FromSession <PSSession>] [-ToSession <PSSession>] [<CommonParameters>]
+```
+
+### LiteralPath - FileSystem provider
+
+```
+Copy-Item -LiteralPath <String[]> [[-Destination] <String>] [-Container]
+ [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [-UseTransaction] [-FromSession <PSSession>] [-ToSession <PSSession>]
  [<CommonParameters>]
 ```
 
-### LiteralPath
+### Path (Default) - All providers
 
 ```
-Copy-Item -LiteralPath <String[]> [[-Destination] <String>] [-Container] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Recurse] [-PassThru] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [-FromSession <PSSession>] [-ToSession <PSSession>]
+Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Force]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse]
+ [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
  [<CommonParameters>]
+```
+
+### LiteralPath - All providers
+
+```
+Copy-Item -LiteralPath <String[]> [[-Destination] <String>] [-Container]
+ [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Recurse] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -72,7 +95,7 @@ Copy-Item -Path "C:\Logfiles\*" -Destination "C:\Drawings" -Recurse
 
 > [!NOTE]
 > If the path `C:\Drawings` doesn't exist the cmdlet copies all the files from the `Logfiles`
-> folder into a single file `C:\Drawings`.
+> folder tree into a single folder `C:\Drawings`, overwriting any files with the same name.
 
 ### Example 3: Copy directory and contents to a new directory
 
@@ -276,7 +299,7 @@ The **Include** parameter is applied to the contents of `D:\temp\tree` folder to
 match `ex*`. Notice that, without recursion, the `D:\temp\out\examples` folder is copied, but none
 of its contents are copied.
 
-### Example 15: Using filters to copy items with recursion
+### Example 14: Using filters to copy items with recursion
 
 This example shows the results using the **Include** parameter to select the items to be copied.
 
@@ -469,9 +492,14 @@ Accept wildcard characters: False
 
 ### -FromSession
 
-Specifies the **PSSession** object from which a remote file is being copied. When you use this
+This is a dynamic parameter made available by the **FileSystem** provider.
+
+Specify the **PSSession** object from which a remote file is being copied. When you use this
 parameter, the **Path** and **LiteralPath** parameters refer to the local path on the remote
 machine.
+
+For more information, see
+[about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession
@@ -578,8 +606,13 @@ Accept wildcard characters: False
 
 ### -ToSession
 
-Specifies the **PSSession** object to which a remote file is being copied. When you use this
+This is a dynamic parameter made available by the **FileSystem** provider.
+
+Specify the **PSSession** object to which a remote file is being copied. When you use this
 parameter, the **Destination** parameter refers to the local path on the remote machine.
+
+For more information, see
+[about_FileSystem_Provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession
@@ -658,12 +691,22 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### None or an object representing the copied item
+### None
 
-When you use the **PassThru** parameter, this cmdlet returns an object that represents the copied
-item. Otherwise, this cmdlet doesn't generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSObject
+
+When you use the **PassThru** parameter, this cmdlet returns an object representing the copied
+item.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Copy-Item`:
+
+- `copy`
+- `cp`
+- `cpi`
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see

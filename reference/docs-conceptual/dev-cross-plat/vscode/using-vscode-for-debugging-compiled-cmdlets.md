@@ -1,6 +1,6 @@
 ---
 description: How to set a build task and launch configuration for a PSModule project in .NET Core
-ms.date: 10/22/2021
+ms.date: 11/16/2022
 title: Using Visual Studio Code to debug compiled cmdlets
 ---
 # Using Visual Studio Code to debug compiled cmdlets
@@ -10,14 +10,13 @@ using Visual Studio Code (VS Code) and the C# extension.
 
 Some familiarity with the Visual Studio Code debugger is assumed.
 
-- For a general introduction to the VS Code debugger, see
-  [Debugging in Visual Studio Code][vsdebug].
+- For a general introduction to the VS Code debugger, see [Debugging in Visual Studio Code][02].
 
 - For examples of debugging PowerShell script files and modules, see
-  [Using Visual Studio Code for remote editing and debugging][using-vscode].
+  [Using Visual Studio Code for remote editing and debugging][10].
 
-This guide assumes you have read and followed the instructions in the [Writing Portable Modules][writing]
-guide.
+This guide assumes you have read and followed the instructions in the
+[Writing Portable Modules][01] guide.
 
 ## Creating a build task
 
@@ -28,7 +27,7 @@ Configure a build task:
 
 1. In the **Command Palette**, run the **Configure Default Build Task** command.
 
-   ![Run Configure Default Build Task](media/using-vscode-for-debugging-compiled-cmdlets/configure-default-build-task.png)
+   [Run Configure Default Build Task][05]
 
 1. In the **Select a task to configure** dialog, choose **Create tasks.json file from template**.
 
@@ -95,7 +94,7 @@ your source code.
 
 ### Configuring launch.json for PowerShell
 
-1. Install the [C# for Visual Studio Code][csext] extension
+1. Install the [C# for Visual Studio Code][03] extension
 
 1. In the Debug pane, add a debug configuration
 
@@ -107,7 +106,7 @@ your source code.
 
 1. To create a default debug configuration, select **Launch .NET Core Console App**:
 
-   ![Launch .NET Core Console App](media/using-vscode-for-debugging-compiled-cmdlets/add-configuration-dialog.png)
+   [Launch .NET Core Console App][04]
 
 1. Edit the `name`, `program`, `args`, and `console` fields as follows:
 
@@ -133,9 +132,9 @@ your source code.
 The `program` field is used to launch `pwsh` so that the cmdlet being debugged can be run. The
 `-NoExit` argument prevents the PowerShell session from exiting as soon as the module is imported.
 The path in the `Import-Module` argument is the default build output path when you've followed the
-[Writing Portable Modules][writing] guide. If you've created a module manifest (`.psd1` file), you
-should use the path to that instead. The `/` path separator works on Windows, Linux, and macOS. You
-must use the integrated terminal to run the PowerShell commands you want to debug.
+[Writing Portable Modules][01] guide. If you've created a module manifest (`.psd1` file), you should
+use the path to that instead. The `/` path separator works on Windows, Linux, and macOS. You must
+use the integrated terminal to run the PowerShell commands you want to debug.
 
 > [!NOTE]
 > If the debugger doesn't stop at any breakpoints, look in the Visual Studio Code Debug Console for
@@ -186,30 +185,36 @@ Now everything is ready to begin debugging.
 
 - Place a breakpoint in the source code for the cmdlet you want to debug:
 
-  ![A breakpoint shows as a red dot in the gutter](media/using-vscode-for-debugging-compiled-cmdlets/set-breakpoint.png)
+  [A breakpoint shows as a red dot in the gutter][08]
 
 - Ensure that the relevant **PowerShell cmdlets** configuration is selected in the configuration
   drop-down menu in the **Debug** view:
 
-  ![Select the launch configuration](media/using-vscode-for-debugging-compiled-cmdlets/select-launch-configuration.png)
+  [Select the launch configuration][07]
 
 - Press <kbd>F5</kbd> or click on the **Start Debugging** button
 
 - Switch to the terminal pane and invoke your cmdlet:
 
-  ![Invoke the cmdlet](media/using-vscode-for-debugging-compiled-cmdlets/invoke-the-cmdlet.png)
+  [Invoke the cmdlet][06]
 
 - Execution stops at the breakpoint:
 
-  ![Executions halts at breakpoint](media/using-vscode-for-debugging-compiled-cmdlets/stopped-at-breakpoint.png)
+  [Executions halts at breakpoint][09]
 
 You can step through the source code, inspect variables, and inspect the call stack.
 
-To end debugging, click **Stop** in the debug toolbar or press <kbd>Shift</kbd>-<kbd>F5</kbd>. The
+To end debugging, click **Stop** in the debug toolbar or press <kbd>Shift</kbd>+<kbd>F5</kbd>. The
 shell used for debugging exits and releases the lock on the compiled DLL file.
 
-<!-- reference links -->
-[vsdebug]: https://code.visualstudio.com/docs/editor/debugging
-[using-vscode]: using-vscode-for-remote-editing-and-debugging.md
-[writing]: ../writing-portable-modules.md
-[csext]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
+<!-- link references -->
+[01]: ../writing-portable-modules.md
+[02]: https://code.visualstudio.com/docs/editor/debugging
+[03]: https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
+[04]: media/using-vscode-for-debugging-compiled-cmdlets/add-configuration-dialog.png
+[05]: media/using-vscode-for-debugging-compiled-cmdlets/configure-default-build-task.png
+[06]: media/using-vscode-for-debugging-compiled-cmdlets/invoke-the-cmdlet.png
+[07]: media/using-vscode-for-debugging-compiled-cmdlets/select-launch-configuration.png
+[08]: media/using-vscode-for-debugging-compiled-cmdlets/set-breakpoint.png
+[09]: media/using-vscode-for-debugging-compiled-cmdlets/stopped-at-breakpoint.png
+[10]: using-vscode-for-remote-editing-and-debugging.md

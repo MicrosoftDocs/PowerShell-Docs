@@ -3,8 +3,10 @@ external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 09/28/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rsnp
 title: Remove-PSSnapin
 ---
 
@@ -42,7 +44,7 @@ is complete, the cmdlets and providers that the snap-in supported are not availa
 ### Example 2: Remove snap-ins by using names with the pipeline
 
 ```powershell
-Get-PSSnapIn smp* | Remove-PSSnapIn
+Get-PSSnapin smp* | Remove-PSSnapin
 ```
 
 This command removes the Windows PowerShell snap-ins that have names that start with smp from the
@@ -153,11 +155,16 @@ any output.
 
 ## NOTES
 
-- `Remove-PSSnapin` does not check the version of Windows PowerShell before removing a snap-in from
-  the session. If a snap-in cannot be removed, a warning appears and the command fails.
-- `Remove-PSSnapin` affects only the current session. If you have added an `Add-PSSnapin` command to
-  your Windows PowerShell profile, you should delete the command to remove the snap-in from future
-  sessions. For instructions, type `Get-Help about_Profiles`.
+Windows PowerShell includes the following aliases for `Remove-PSSnapin`:
+
+- `rsnp`
+
+`Remove-PSSnapin` does not check the version of Windows PowerShell before removing a snap-in from
+the session. If a snap-in cannot be removed, a warning appears and the command fails.
+
+`Remove-PSSnapin` affects only the current session. If you have added an `Add-PSSnapin` command to
+your Windows PowerShell profile, you should delete the command to remove the snap-in from future
+sessions. For instructions, type `Get-Help about_Profiles`.
 
 ## RELATED LINKS
 

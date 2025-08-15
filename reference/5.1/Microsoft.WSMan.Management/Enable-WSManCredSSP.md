@@ -2,8 +2,8 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 08/20/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/enable-wsmancredssp?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-WSManCredSSP
 ---
@@ -133,7 +133,7 @@ the WSMan provider must be set to true.
 
 ```powershell
 Connect-WSMan -ComputerName "server02"
-Set-Item -Path "WSMan:\server02\service\auth\credSSP" -Value $True
+Set-Item -Path "WSMan:\server02\service\auth\credSSP" -Value $true
 ```
 
 `Connect-WSMan` creates a connection to the remote computer, server02. `Set-Item` uses the **Path**
@@ -221,13 +221,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet doesn't accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Xml.XmlElement
 
-If CredSSP authentication is successfully enabled, this cmdlet generates an **XMLElement** object.
+If CredSSP authentication is successfully enabled, this cmdlet returns an **XMLElement** object.
 
 ## NOTES
 

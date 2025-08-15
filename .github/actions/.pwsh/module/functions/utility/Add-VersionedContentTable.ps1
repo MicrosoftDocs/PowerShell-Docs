@@ -37,9 +37,9 @@
         [PSCustomObject]@{
             VersionRelativePath = 'foo.md'
             Versions = @(
-                @{ Version = '1.1'; ChangeType =  'N/A' }
-                @{ Version = '1.2'; ChangeType =  'unchanged' }
-                @{ Version = '1.3'; ChangeType =  'modified' }
+                @{ Version = '1.1'; ChangeType = 'N/A' }
+                @{ Version = '1.2'; ChangeType = 'unchanged' }
+                @{ Version = '1.3'; ChangeType = 'modified' }
             )
         }
         [PSCustomObject]@{
@@ -56,7 +56,7 @@
     $Summary.ToString()
     ```
 
-    ```output
+    ```Output
     | Version-Relative Path        | 1.1        | 1.2        | 1.3        |
     |:-----------------------------|:----------:|:----------:|:----------:|
     | `foo.md`                     | N/A        | Unchanged  | Modified   |
@@ -70,12 +70,12 @@
     - The file `bar/baz.md` was added in all three versions.
 
     The second command creates a new **StringBuilder** object to write the table to.
-    
+
     The third command uses this cmdlet to write a versioned content summary table to `$Summary`.
     Because neither **RelativePathWidth** nor **VersionWidth** were passed to the cmdlet, it
-    calculates the required column withs dynamically.
-    
-    The final command displays the string built in the third command.
+    calculates the required column widths dynamically.
+
+    The final command displays the string the third command has built.
 #>
 function Add-VersionedContentTable {
     [CmdletBinding()]
@@ -99,7 +99,7 @@ function Add-VersionedContentTable {
         }
     }
     process {
-        #region    Column Widths
+        #region Column Widths
         if (($RelativePathWidth -eq 0) -and ($VersionWidth -eq 0)) {
             $RelativePathWidth, $VersionWidth = Get-VersionedContentTableColumnWidth @WidthParams
         } elseif ($RelativePathWidth -eq 0) {
@@ -109,8 +109,8 @@ function Add-VersionedContentTable {
             $WidthParams.Add('Version', $true)
             $VersionWidth = Get-VersionedContentTableColumnWidth @WidthParams
         }
-        #endregion ColumnWidths
-        #region    Setup the table header
+        #endregion Column Widths
+        #region Setup the table header
         $null = $Summary.Append("|$(' Version-Relative Path'.PadRight($RelativePathWidth))")
         # Retrieve the list of unique versions
         $VersionList = $ChangeSet.Versions.Version | Select-Object -Unique

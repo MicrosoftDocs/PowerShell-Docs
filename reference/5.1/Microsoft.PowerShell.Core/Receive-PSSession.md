@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/11/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rcsn
 title: Receive-PSSession
 ---
 
@@ -248,7 +250,7 @@ disconnected and get the results of jobs that were running in the sessions.
 
 ```
 PS> $parms = @{
-      InDisconnectedSession = $True
+      InDisconnectedSession = $true
       ComputerName = "Server01", "Server02", "Server30"
       FilePath = "\\Server12\Scripts\SharedScripts\Get-BugStatus.ps1"
       Name = "BugStatus"
@@ -256,7 +258,7 @@ PS> $parms = @{
       ConfigurationName = "ITTasks"
     }
 PS> Invoke-Command @parms
-PS> Exit
+PS> exit
 
 
 PS> $s = Get-PSSession -ComputerName Server01, Server02, Server30 -Name BugStatus
@@ -318,7 +320,7 @@ This example shows what happens to a job that's running in a disconnected sessio
 
 ```
 PS> $s = New-PSSession -ComputerName Server01 -Name Test
-PS> $j = Invoke-Command -Session $s { 1..1500 | Foreach-Object {"Return $_"; sleep 30}} -AsJob
+PS> $j = Invoke-Command -Session $s { 1..1500 | ForEach-Object {"Return $_"; sleep 30}} -AsJob
 PS> $j
 
 Id     Name           State         HasMoreData     Location
@@ -501,7 +503,7 @@ computer.
 
 Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of one computer.
 Wildcard characters aren't permitted. To specify the local computer, type the computer name, a dot
-(`.`), `$env:COMPUTERNAME`, or localhost.
+(`.`), `$Env:COMPUTERNAME`, or localhost.
 
 ```yaml
 Type: System.String
@@ -633,7 +635,7 @@ Accept wildcard characters: False
 
 Specifies the instance ID of the disconnected session. The instance ID is a GUID that uniquely
 identifies a **PSSession** on a local or remote computer. The instance ID is stored in the
-**InstanceID** property of the **PSSession**.
+**InstanceId** property of the **PSSession**.
 
 ```yaml
 Type: System.Guid
@@ -882,13 +884,20 @@ You can pipe session names to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.Automation.Job or PSObject
+### System.Management.Automation.Job
 
-This cmdlet returns the results of commands that ran in the disconnected session, if any. If the
-value or default value of the **OutTarget** parameter is Job, `Receive-PSSession` returns a job
-object. Otherwise, it returns objects that represent that command results.
+If the value or default value of the **OutTarget** parameter is `Job`, `Receive-PSSession` returns a
+job object.
+
+### System.Management.Automation.PSObject
+
+This cmdlet returns the results of commands that ran in the disconnected session, if any.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Receive-PSSession`:
+
+- `rcsn`
 
 `Receive-PSSession` gets results only from sessions that were disconnected. Only sessions that are
 connected to, or terminate at, computers that run PowerShell 3.0 or later versions can be

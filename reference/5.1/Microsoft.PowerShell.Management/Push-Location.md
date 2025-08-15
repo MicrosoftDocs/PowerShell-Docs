@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/04/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/push-location?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/push-location?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - pushd
 title: Push-Location
 ---
+
 # Push-Location
 
 ## SYNOPSIS
@@ -81,7 +84,7 @@ PS C:\>
 
 The first command pushes the current location onto a new stack named Stack2, and then changes the
 current location to the home directory, represented in the command by the tilde symbol (`~`),
-which when used on a FileSystem provider drives is equivalent to `$HOME` and `$env:USERPROFILE`.
+which when used on a FileSystem provider drives is equivalent to `$HOME`.
 
 If Stack2 does not already exist in the session, `Push-Location` creates it. The second command uses
 the `Pop-Location` cmdlet to pop the original location (`C:\`) from the Stack2 stack. Without the
@@ -200,17 +203,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains a path (but not a literal path) to `Push-Location`.
+You can pipe a string that contains a path (but not a literal path) to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PathInfo
+### None
 
-When you use the **PassThru** parameter, `Push-Location` generates a
-**System.Management.Automation.PathInfo** object that represents the location. Otherwise, this
-cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PathInfo
+
+When you use the **PassThru** parameter, this cmdlet returns a **PathInfo** object representing the
+current path after the cmdlet's operation.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Push-Location`:
+
+- `pushd`
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue

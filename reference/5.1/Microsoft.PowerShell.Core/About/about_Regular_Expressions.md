@@ -1,35 +1,36 @@
 ---
 description: Describes regular expressions in PowerShell.
 Locale: en-US
-ms.date: 08/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/30/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Regular Expressions
+title: about_Regular_Expressions
 ---
 # about_Regular_Expressions
 
 ## Short description
+
 Describes regular expressions in PowerShell.
 
 ## Long description
 
 > [!NOTE]
-> This article will show you the syntax and methods for using regular
-> expressions in PowerShell, not all syntax is discussed. For a more complete
-> reference, see the
-> [Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
+> This article shows the syntax and methods for using regular expressions in
+> PowerShell. It doesn't cover all possible expressions. For a more complete
+> reference, see the [Regular Expression Language - Quick Reference][02].
 
 A regular expression is a pattern used to match text. It can be made up of
-literal characters, operators, and other constructs.
+literal characters, operators, and other constructs. PowerShell uses the
+[.NET regex][03] engine.
 
 This article demonstrates regular expression syntax in PowerShell. PowerShell
 has several operators and cmdlets that use regular expressions. You can read
 more about their syntax and usage at the links below.
 
-- [Select-String](xref:Microsoft.PowerShell.Utility.Select-String)
-- [-match and -replace operators](about_Comparison_Operators.md#matching-operators)
-- [-split operator](about_Split.md)
-- [switch statement with -regex option](about_Switch.md)
+- [Select-String][11]
+- [-match and -replace operators][07]
+- [-split operator][09]
+- [switch statement with -Regex option][10]
 
 PowerShell regular expressions are case-insensitive by default. Each method
 shown above has a different way to force case sensitivity.
@@ -37,7 +38,7 @@ shown above has a different way to force case sensitivity.
 - For `Select-String`, use the **CaseSensitive** parameter.
 - For operators that use regular expressions, use the case-sensitive version:
   `-cmatch`, `-creplace`, or `-csplit`
-- For the `switch` statement, use the `-casesensitive` option
+- For the `switch` statement, use the `-CaseSensitive` option
 
 ## Character literals
 
@@ -70,8 +71,9 @@ range expression.
 
 ### Character ranges
 
-A pattern can also be a range of characters. The characters can be alphabetic `[A-Z]`,
-numeric `[0-9]`, or even ASCII-based `[ -~]` (all printable characters).
+A pattern can also be a range of characters. The characters can be alphabetic
+`[A-Z]`, numeric `[0-9]`, or even ASCII-based `[ -~]` (all printable
+characters).
 
 ```powershell
 # This expression returns true if the pattern matches any 2 digit number.
@@ -80,8 +82,8 @@ numeric `[0-9]`, or even ASCII-based `[ -~]` (all printable characters).
 
 ### Numbers
 
-The `\d` character class will match any decimal digit. Conversely, `\D` will
-match any non-decimal digit.
+The `\d` character class matches any decimal digit. Conversely, `\D` matches any
+character except decimal digits.
 
 ```powershell
 # This expression returns true if it matches a server name.
@@ -91,7 +93,7 @@ match any non-decimal digit.
 
 ### Word characters
 
-The `\w` character class will match any word character `[a-zA-Z_0-9]`. To match
+The `\w` character class matches any word character `[a-zA-Z_0-9]`. To match
 any non-word character, use `\W`.
 
 ```powershell
@@ -102,8 +104,8 @@ any non-word character, use `\W`.
 
 ### Wildcards
 
-The period (`.`) is a wildcard character in regular expressions. It will match
-any character except a newline (`\n`).
+The period (`.`) is a wildcard character in regular expressions. It matches any
+character except a newline (`\n`).
 
 ```powershell
 # This expression returns true.
@@ -113,13 +115,14 @@ any character except a newline (`\n`).
 
 ### Whitespace
 
-Whitespace is matched using the `\s` character class. Any non-whitespace
-character is matched using `\S`. Literal space characters `' '` can also be
-used.
+You can match any whitespace character with the `\s` character class. You can
+match any non-whitespace character with `\S`. You can match literal space
+characters with ` `.
 
 ```powershell
 # This expression returns true.
-# The pattern uses both methods to match the space.
+# The pattern uses the whitespace character class to match the leading
+# space and a literal space to matching the trailing space.
 ' - ' -match '\s- '
 ```
 
@@ -153,7 +156,7 @@ The plus sign (`+`) matches the previous element one or more times.
 ```
 
 The question mark `?` matches the previous element zero or one time. Like
-asterisk `*`, it will even match strings where the element is absent.
+asterisk `*`, it even matches strings where the element is absent.
 
 ```powershell
 # This returns true for any server name, even server names without dashes.
@@ -192,28 +195,28 @@ characters.
 ```
 
 > [!NOTE]
-> When defining a regex containing an `$` anchor, be sure to enclose the regex
-> using single quotes (`'`) instead of double quotes (`"`) or PowerShell will
-> expand the expression as a variable.
+> When defining a regex containing an anchor (`$` ), you should enclose the
+> regex in single quotes (`'`). If you use double quotes (`"`), PowerShell
+> interprets the string as an expandable variable expression.
 
 When using anchors in PowerShell, you should understand the difference between
 **Singleline** and **Multiline** regular expression options.
 
-- **Multiline**: Multiline mode forces `^` and `$` to match the beginning end
-  of every LINE instead of the beginning and end of the input string.
+- **Multiline**: Multiline mode forces `^` and `$` to match the beginning and
+  end of every LINE instead of the beginning and end of the input string.
 - **Singleline**: Singleline mode treats the input string as a **SingleLine**.
   It forces the `.` character to match every character (including newlines),
   instead of matching every character EXCEPT the newline `\n`.
 
 To read more about these options and how to use them, visit the
-[Regular Expression Language - Quick Reference](/dotnet/standard/base-types/regular-expression-language-quick-reference).
+[Regular Expression Language - Quick Reference][02].
 
 ## Escaping characters
 
 The backslash (`\`) is used to escape characters so they aren't parsed by the
 regular expression engine.
 
-The following characters are reserved: `[]().\^$|?*+{}`.
+The following characters are reserved: `[().\^$|?*+{`.
 
 You'll need to escape these characters in your patterns to match them in your
 input strings.
@@ -224,10 +227,10 @@ input strings.
 '3.141' -match '3\.\d{2,}'
 ```
 
-There`s a static method of the regex class that can escape text for you.
+There's a static method of the regex class that can escape text for you.
 
 ```powershell
-[regex]::escape('3.\d{2,}')
+[regex]::Escape('3.\d{2,}')
 ```
 
 ```Output
@@ -272,7 +275,7 @@ True
 ```
 
 Use the `$Matches` **Hashtable** automatic variable to retrieve captured text.
-The text representing the entire match is stored at key `0`. It is important to
+The text representing the entire match is stored at key `0`. It's important to
 note that the `$Matches` hashtable contains only the first occurrence of any
 matching pattern.
 
@@ -352,7 +355,7 @@ The provided regular expression extracts the username and domain from the
 message and stores them under the keys:**N** for name and **D** for domain.
 
 ```powershell
-$log = (Get-EventLog -LogName Security -Newest 1 -InstanceId 4689).message
+$log = (Get-WinEvent -LogName Security -MaxEvents 1).Message
 $r = '(?s).*Account Name:\s*(?<N>.*).*Account Domain:\s*(?<D>[A-Z,0-9]*)'
 $log -match $r
 ```
@@ -370,30 +373,30 @@ Name                           Value
 ----                           -----
 D                              CONTOSO
 N                              jsmith
-0                              A process has exited....
+0                              A process has exited...
 ```
 
-For more information, see
-[Grouping Constructs in Regular Expressions](/dotnet/standard/base-types/grouping-constructs-in-regular-expressions).
+For more information, see [Grouping Constructs in Regular Expressions][01].
 
 ### Substitutions in Regular Expressions
 
-Using the regular expressions with the `-replace` operator allows you to
-dynamically replace text using captured text.
+Using the regular expressions (regex) with the `-replace` operator allows you
+to dynamically replace text using captured text.
 
 `<input> -replace <original>, <substitute>`
 
 - `<input>`: The string to be searched
 - `<original>`: A regular expression used to search the input string
-- `<substitute>`: A regular expression substitution expression to replace
-  matches found in the input string.
+- `<substitute>`: A regex substitution expression to replace matches found in
+  the input string.
 
-> [!NOTE]
-> The `<original>` and `<substitute>` operands are subject to rules of the
-> regular expression engine such as character escaping.
+The `<original>` and `<substitute>` operands are subject to rules of the
+regular expression engine such as character escaping or substitution
+expressions. The replacement pattern can consist of one or more substitutions
+along with literal characters.
 
-Capturing groups can be referenced in the `<substitute>` string. The
-substitution is done by using the `$` character before the group identifier.
+Capture groups can be referenced in the `<substitute>` string using the `$`
+character before the group identifier.
 
 Two ways to reference capturing groups are by **Number** and by **Name**.
 
@@ -407,7 +410,7 @@ Two ways to reference capturing groups are by **Number** and by **Name**.
   John.D.Smith@contoso.com
   ```
 
-- By **Name** - Capturing Groups can also be referenced by name.
+- By **Name** - Capture Groups can also be referenced by name.
 
   ```powershell
   'CONTOSO\Administrator' -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
@@ -456,9 +459,35 @@ Gobble Gobble
 > $5.72
 > ```
 
-For more information, see [Substitutions in Regular Expressions](/dotnet/standard/base-types/substitutions-in-regular-expressions).
+For detailed information on substitution expressions, see
+[Substitutions in Regular Expressions][04].
+
+## Comments in regular expressions
+
+Regular expressions can be very complex and difficult to read. You can use
+comments to make them more understandable. There are two types of comments
+allowed in regular expressions.
+
+- Inline comment (`(?#)`)
+- End-of-line comment (`#`)
+
+For more information, see the _Regular expression comments_ section of
+[about_Comments][05].
 
 ## See also
 
-- [about_Operators](about_Operators.md)
-- [about_Comparison_Operators](about_Comparison_Operators.md)
+- [about_Operators][08]
+- [about_Comparison_Operators][06]
+
+<!-- link references -->
+[01]: /dotnet/standard/base-types/grouping-constructs-in-regular-expressions
+[02]: /dotnet/standard/base-types/regular-expression-language-quick-reference
+[03]: /dotnet/standard/base-types/regular-expressions
+[04]: /dotnet/standard/base-types/substitutions-in-regular-expressions
+[05]: about_Comments.md#regular-expression-comments
+[06]: about_Comparison_Operators.md
+[07]: about_Comparison_Operators.md#matching-operators
+[08]: about_Operators.md
+[09]: about_Split.md
+[10]: about_Switch.md
+[11]: xref:Microsoft.PowerShell.Utility.Select-String

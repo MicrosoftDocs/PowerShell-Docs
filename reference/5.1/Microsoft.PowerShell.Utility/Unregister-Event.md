@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/unregister-event?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/20/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/unregister-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-Event
 ---
@@ -43,40 +43,37 @@ created by using the `New-Event` cmdlet, the new event is also deleted from the 
 
 ### Example 1: Cancel an event subscription by source identifier
 
-```
-PS C:\> Unregister-Event -SourceIdentifier "ProcessStarted"
-```
-
 This command cancels the event subscription that has a source identifier of ProcessStarted.
 
+```powershell
+Unregister-Event -SourceIdentifier "ProcessStarted"
+```
+
 To find the source identifier of an event, use the `Get-Event` cmdlet. To find the source identifier
-of an event subscription, use the `Get-EventSubscriber` cmdlet.
+of an event subscription, use the `Get-EventSubscriber` cmdlet
 
 ### Example 2: Cancel an event subscription by subscription identifier
 
-```
-PS C:\> Unregister-Event -SubscriptionId 2
-```
-
 This command cancels the event subscription that has a subscription identifier of 2.
+
+```powershell
+Unregister-Event -SubscriptionId 2
+```
 
 To find the subscription identifier of an event subscription, use the `Get-EventSubscriber` cmdlet.
 
 ### Example 3: Cancel all event subscriptions
 
+This example cancels all event subscriptions in the session.
+
+```powershell
+Get-EventSubscriber -Force | Unregister-Event -Force
 ```
-PS C:\> Get-EventSubscriber -Force | Unregister-Event -Force
-```
 
-This command cancels all event subscriptions in the session.
-
-The command uses the `Get-EventSubscriber` cmdlet to get all event subscriber objects in the
-session, including the subscribers that are hidden by using the **SupportEvent** parameter of the
-event registration cmdlets.
-
-It uses a pipeline operator (`|`) to send the subscriber objects to `Unregister-Event`, which
-deletes them from the session. To complete the task, the **Force** parameter is also required on
-`Unregister-Event`.
+Using the **Force** parameter with `Get-EventSubscriber` gets all event subscriber objects in the
+session, including the subscribers that are hidden. The output is piped to `Unregister-Event`, which
+deletes the subscribers from the session. The **Force** parameter is required on `Unregister-Event`
+to remove any hidden subscribers.
 
 ## PARAMETERS
 
@@ -177,13 +174,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSEventSubscriber
 
-You can pipe the output from `Get-EventSubscriber` to `Unregister-Event`.
+You can pipe the output from `Get-EventSubscriber` to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
 

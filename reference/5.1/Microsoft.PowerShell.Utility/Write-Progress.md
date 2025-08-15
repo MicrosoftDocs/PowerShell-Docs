@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/05/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
 ---
+
 # Write-Progress
 
 ## SYNOPSIS
@@ -16,8 +17,8 @@ Displays a progress bar within a PowerShell command window.
 
 ```
 Write-Progress [-Activity] <String> [[-Status] <String>] [[-Id] <Int32>] [-PercentComplete <Int32>]
- [-SecondsRemaining <Int32>] [-CurrentOperation <String>] [-ParentId <Int32>] [-Completed] [-SourceId <Int32>]
- [<CommonParameters>]
+ [-SecondsRemaining <Int32>] [-CurrentOperation <String>] [-ParentId <Int32>] [-Completed]
+ [-SourceId <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,7 +29,7 @@ text that appears above and below the progress bar.
 
 ## EXAMPLES
 
-### Example 1: Display the progress of a For loop
+### Example 1: Display the progress of a `for` loop
 
 ```powershell
 for ($i = 1; $i -le 100; $i++ ) {
@@ -37,12 +38,13 @@ for ($i = 1; $i -le 100; $i++ ) {
 }
 ```
 
-This command displays the progress of a For loop that counts from 1 to 100.
+This command displays the progress of a `for` loop that counts from 1 to 100.
 
 The `Write-Progress` cmdlet includes a status bar heading `Activity`, a status line, and the
-variable `$i` (the counter in the For loop), which indicates the relative completeness of the task.
+variable `$i` (the counter in the `for` loop), which indicates the relative completeness of the
+task.
 
-### Example 2: Display the progress of nested For loops
+### Example 2: Display the progress of nested `for` loops
 
 ```powershell
 for($I = 0; $I -lt 10; $I++ ) {
@@ -78,7 +80,7 @@ Progress
 InnerLoop
 ```
 
-This example displays the progress of two nested For loops, each of which is represented by a
+This example displays the progress of two nested `for` loops, each of which is represented by a
 progress bar.
 
 The `Write-Progress` command for the second progress bar includes the **Id** parameter that
@@ -91,18 +93,18 @@ displayed one below the other.
 
 ```powershell
 # Use Get-EventLog to get the events in the System log and store them in the $Events variable.
-$Events = Get-EventLog -LogName system
+$Events = Get-EventLog -LogName System
 # Pipe the events to the ForEach-Object cmdlet.
 $Events | ForEach-Object -Begin {
     # In the Begin block, use Clear-Host to clear the screen.
     Clear-Host
     # Set the $i counter variable to zero.
     $i = 0
-    # Set the $out variable to a empty string.
+    # Set the $out variable to an empty string.
     $out = ""
 } -Process {
     # In the Process script block search the message property of each incoming object for "bios".
-    if($_.message -like "*bios*")
+    if($_.Message -like "*bios*")
     {
         # Append the matching message to the out variable.
         $out=$out + $_.Message
@@ -110,7 +112,7 @@ $Events | ForEach-Object -Begin {
     # Increment the $i counter variable which is used to create the progress bar.
     $i = $i+1
     # Determine the completion percentage
-    $Completed = ($i/$Events.count*100)
+    $Completed = ($i/$Events.Count) * 100
     # Use Write-Progress to output a progress bar.
     # The Activity and Status parameters create the first and second lines of the progress bar
     # heading, respectively.
@@ -124,7 +126,7 @@ $Events | ForEach-Object -Begin {
 This command displays the progress of a command to find the string "bios" in the System event log.
 
 The **PercentComplete** parameter value is calculated by dividing the number of events that have
-been processed `$I` by the total number of events retrieved `$Events.count` and then multiplying
+been processed `$i` by the total number of events retrieved `$Events.Count` and then multiplying
 that result by 100.
 
 ### Example 4: Display progress for each level of a nested process
@@ -151,15 +153,15 @@ Step 1
              Processing
 ```
 
-In this example you can use the **ParentId** parameter to have indented output to show parent/child
+In this example you can use the **ParentId** parameter to have indented output to show parent-child
 relationships in the progress of each step.
 
 ## PARAMETERS
 
 ### -Activity
 
-Specifies the first line of text in the heading above the status bar.
-This text describes the activity whose progress is being reported.
+Specifies the first line of text in the heading above the status bar. This text describes the
+activity whose progress is being reported.
 
 ```yaml
 Type: System.String
@@ -175,8 +177,8 @@ Accept wildcard characters: False
 
 ### -Completed
 
-Indicates whether the progress bar is visible.
-If this parameter is omitted, `Write-Progress` displays progress information.
+Indicates whether the progress bar is visible. If this parameter is omitted, `Write-Progress`
+displays progress information.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -192,8 +194,8 @@ Accept wildcard characters: False
 
 ### -CurrentOperation
 
-Specifies the line of text below the progress bar.
-This text describes the operation that is currently taking place.
+Specifies the line of text below the progress bar. This text describes the operation that's
+currently taking place.
 
 ```yaml
 Type: System.String
@@ -210,9 +212,9 @@ Accept wildcard characters: False
 ### -Id
 
 Specifies an ID that distinguishes each progress bar from the others. Use this parameter when you
-are creating more than one progress bar in a single command. If the progress bars do not have
-different IDs, they are superimposed instead of being displayed in a series. Negative values are
-not allowed.
+are creating more than one progress bar in a single command. If the progress bars don't have
+different IDs, they're superimposed instead of being displayed in a series. Negative values aren't
+allowed.
 
 ```yaml
 Type: System.Int32
@@ -228,8 +230,8 @@ Accept wildcard characters: False
 
 ### -ParentId
 
-Specifies the parent activity of the current activity.
-Use the value -1 if the current activity has no parent activity.
+Specifies the parent activity of the current activity. Use the value `-1` if the current activity has
+no parent activity.
 
 ```yaml
 Type: System.Int32
@@ -245,8 +247,8 @@ Accept wildcard characters: False
 
 ### -PercentComplete
 
-Specifies the percentage of the activity that is completed.
-Use the value -1 if the percentage complete is unknown or not applicable.
+Specifies the percentage of the activity that's completed. Use the value `-1` if the percentage
+complete is unknown or not applicable.
 
 ```yaml
 Type: System.Int32
@@ -262,8 +264,8 @@ Accept wildcard characters: False
 
 ### -SecondsRemaining
 
-Specifies the projected number of seconds remaining until the activity is completed.
-Use the value -1 if the number of seconds remaining is unknown or not applicable.
+Specifies the projected number of seconds remaining until the activity is completed. Use the value
+`-1` if the number of seconds remaining is unknown or not applicable.
 
 ```yaml
 Type: System.Int32
@@ -279,7 +281,7 @@ Accept wildcard characters: False
 
 ### -SourceId
 
-Specifies the source of the record. You can use this in place of **Id** but cannot be used with
+Specifies the source of the record. You can use this in place of **Id** but can't be used with
 other parameters like **ParentId**.
 
 ```yaml
@@ -296,8 +298,8 @@ Accept wildcard characters: False
 
 ### -Status
 
-Specifies the second line of text in the heading above the status bar.
-This text describes current state of the activity.
+Specifies the second line of text in the heading above the status bar. This text describes current
+state of the activity.
 
 ```yaml
 Type: System.String
@@ -322,18 +324,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Write-Progress` does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 
-If the progress bar does not appear, check the value of the `$ProgressPreference` variable. If the
-value is set to SilentlyContinue, the progress bar is not displayed. For more information about
+If the progress bar doesn't appear, check the value of the `$ProgressPreference` variable. If the
+value is set to `SilentlyContinue`, the progress bar isn't displayed. For more information about
 PowerShell preferences, see
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
 

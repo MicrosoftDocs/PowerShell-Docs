@@ -1,10 +1,10 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 07/14/2022
-online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.3&WT.mc_id=ps-gethelp
+ms.date: 03/03/2025
+online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PSReadLine
+title: about_PSReadLine
 ---
 # about_PSReadLine
 
@@ -13,12 +13,25 @@ title: about PSReadLine
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
+There have been many updates to PSReadLine since the version that ships in
+Windows PowerShell 5.1.
+
+- v2.3.6 first shipped in PowerShell 7.4.7 and 7.5.0
+- v2.3.5 first shipped in PowerShell 7.4.2 and 7.5.0-preview.3
+- v2.3.4 first shipped in PowerShell 7.4.0-rc.1
+- v2.2.6 first shipped in PowerShell 7.3.0
+- v2.1.0 first shipped in PowerShell 7.2.5
+- v2.0.4 first shipped in PowerShell 7.0.11
+- v2.0.0 ships in Windows PowerShell 5.1
+
+For more information about version differences, see
+[about_PSReadLine_Release_Notes](about_PSReadLine_Release_Notes.md).
+
 ## Long Description
 
-PowerShell 5.1 ships with PSReadLine 2.0.0. There are newer versions
-available. The current version of PSReadLine can be installed and used on
-Windows PowerShell 5.1 and newer. For some features, you need to be running
-PowerShell 7.2 or higher.
+The current version of PSReadLine can be installed and used on Windows
+PowerShell 5.1 and newer. For some features, you need to be running PowerShell
+7.2 or higher.
 
 PSReadLine provides a powerful command-line editing experience for the
 PowerShell console. It provides:
@@ -34,7 +47,7 @@ PowerShell console. It provides:
 - PowerShell token based "word" movement and deletion
 
 PSReadLine requires PowerShell 5.1, or newer. PSReadLine works with the default
-Windows console host, Window Terminal, and Visual Studio Code. It doesn't work
+Windows console host, Windows Terminal, and Visual Studio Code. It doesn't work
 in the Windows PowerShell ISE.
 
 PSReadLine can be installed from the PowerShell Gallery. To install PSReadLine
@@ -47,8 +60,8 @@ Install-Module -Name PSReadLine -AllowClobber -Force
 ## Custom Key Bindings
 
 PSReadLine supports custom key bindings using the `Set-PSReadLineKeyHandler`
-cmdlet. Most custom key bindings call one of the
-[bindable functions](about_PSReadLine_Functions.md), for example
+cmdlet. Most custom key bindings call one of the [bindable functions][02], for
+example
 
 ```powershell
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
@@ -104,28 +117,28 @@ You can see many more examples in the file `SamplePSReadLineProfile.ps1`, which
 is installed in the **PSReadLine** module folder.
 
 Most key bindings use some helper functions for editing the command line. Those
-APIs are documented in
-[about_PSReadLine_Functions](about_PSReadLine_Functions.md).
+APIs are documented in [about_PSReadLine_Functions][02].
 
 ## Notes
 
 ### Command History
 
-PSReadLine maintains a history file containing all the commands and data you've entered from the command line. The history files are a file named
-`$($host.Name)_history.txt`. On Windows systems the history file is stored at
-`$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`.
+PSReadLine maintains a history file containing all the commands and data you've
+entered from the command line. The history files are a file named
+`$($Host.Name)_history.txt`. On Windows systems the history file is stored at
+`$Env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`.
 
 The history can contain sensitive data including passwords. PSReadLine attempts
 to filter out sensitive information. Any command lines containing the following
 strings aren't written to the history file.
 
-- password
-- asplaintext
-- token
-- apikey
-- secret
+- `password`
+- `asplaintext`
+- `token`
+- `apikey`
+- `secret`
 
-PSReadLine 2.2.0 improves the filtering of sensitive data in the following ways:
+#### PSReadLine 2.2.0 improves the filtering of sensitive data
 
 - Uses the PowerShell Abstract Syntax Tree (AST) of the parsed command line to
   look for sensitive data.
@@ -152,7 +165,7 @@ $token = Get-Secret -Name github-token -Vault MySecret
 $template -f $token
 ```
 
-The following command isn't be written to the history file:
+The following commands aren't being written to the history file:
 
 ```powershell
 $token = 'abcd' # Assign expr-value to sensitive variable name.
@@ -162,70 +175,59 @@ Invoke-WebRequest -Token xxx # Expr-value as argument to '-Token'.
 Get-ResultFromTwo -Secret1 (Get-Secret -Name blah -AsPlainText) -Secret2 sdv87ysdfayf798hfasd8f7ha # '-Secret2' has expr-value argument.
 ```
 
-### PSReadLine release history
+If there are other commands you don't want written to the history files, you
+can use the **AddToHistoryHandler** parameter of the `Set-PSReadLineOption`
+cmdlet. For an example of how to use **AddToHistoryHandler**, see Example 7 of
+[Set-PSReadLineOption][01].
 
-There have been many updates to PSReadLine since the version that ships in
-Windows PowerShell 5.1.
+#### PSReadLine 2.3.4 improves the filtering of sensitive data
 
-- PowerShell 7.3-preview.5 ships with PSReadLine 2.2.5
-- PowerShell 7.2.5 ships with PSReadLine 2.1.0
-- PowerShell 7.0.11 ships with PSReadLine 2.0.4
-- PowerShell 5.1 ships with PSReadLine 2.0.0
+Improved the default sensitive history scrubbing to allow the history to
+contain safe property access.
 
-For a full list of changes, see the PSReadLine
-[ChangeLog](https://github.com/PowerShell/PSReadLine/blob/master/PSReadLine/Changes.txt).
+When the sensitive string is part of a property access:
 
-- **PSReadLine 2.2.6**
+- If this member access operation isn't part of an assignment, then we
+  consider it safe
+- Otherwise, if the right-hand side is a pipeline or a variable, we also
+  consider it safe
 
-  In this release, the Predictive IntelliSense feature is enabled by default
-  depending on the following conditions:
+For example, the following use cases are considered safe and can be saved to
+the history.
 
-  - If Virtual Terminal (VT) is supported and PSReadLine running in PowerShell
-    7.2 or higher, **PredictionSource** is set to `HistoryAndPlugin`
-  - If VT is supported and PSReadLine running in PowerShell prior to 7.2,
-    **PredictionSource** is set to `History`
-  - If VT isn't supported, **PredictionSource** is set to `None`
+```powershell
+$a.Secret = Get-Secret -Name github-token -Vault MySecret
+$a.Secret = $secret
+$a.Password.Secret | Set-Value
+$token = (Get-AzAccessToken -ResourceUrl 'https://app.contoso.com').Token
+```
 
-- **PSReadLine 2.2.5**
+The release also improved the sensitive history scrubbing to allow retrieving
+token using the `az`, `gcloud`, and `kubectl` command-line tools.
 
-  Official servicing release with minor bug fixes.
+For example, the following use cases are considered safe and can be saved to
+the history.
 
-- **PSReadLine 2.2.2**
-
-  - PSReadLine added two new predictive IntelliSense features:
-    - Added the **PredictionViewStyle** parameter to allow for the selection of
-      the new `ListView`.
-    - Connected PSReadLine to the `CommandPrediction` APIs introduced in
-      PowerShell 7.2 to allow a user can import a predictor module that can
-      render the suggestions from a custom source.
-  - Updated to use the 1.0.0 version of `Microsoft.PowerShell.Pager` for
-    dynamic help
-  - Improved the scrubbing of sensitive history items
-  - Lots of bug fixes and smaller improvements
-
-- **PSReadLine 2.1.0**
-
-  This release rolls up the following enhancements added since the 2.0.4
-  release:
-
-  - Add Predictive IntelliSense suggestions from the command history
-  - Many bug fixes and API enhancements
-
-- **PSReadLine 2.0.4**
-
-  This release rolls up the following enhancements added since the 2.0.0
-  release:
-
-  - Added the `-Chord` parameter to `Get-PSReadLineKeyHandler` to allow
-    searching for specific key bindings
+```powershell
+kubectl get secrets
+kubectl get secret db-user-pass -o jsonpath='{.data.password}' | base64 --decode
+kubectl describe secret db-user-pass
+az account get-access-token --resource=https://app.contoso.com --query accessToken --output tsv
+$Env:PGPASS = gcloud auth print-access-token
+```
 
 ### Feedback & contributing to PSReadLine
 
-[PSReadLine on GitHub](https://github.com/PowerShell/PSReadLine)
+[PSReadLine on GitHub][03]
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
 ## See Also
 
-- PSReadLine is heavily influenced by the GNU
-  [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) library.
+- PSReadLine is heavily influenced by the GNU [readline][04] library.
+
+<!-- link references -->
+[01]: xref:PSReadLine.Set-PSReadLineOption#example-7-use-historyhandler-to-filter-commands-added-to-history
+[02]: about_PSReadLine_Functions.md
+[03]: https://github.com/PowerShell/PSReadLine
+[04]: https://tiswww.case.edu/php/chet/readline/rltop.html

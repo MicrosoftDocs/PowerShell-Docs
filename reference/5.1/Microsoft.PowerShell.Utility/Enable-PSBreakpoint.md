@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/19/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/enable-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/enable-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ebp
 title: Enable-PSBreakpoint
 ---
 
@@ -212,16 +214,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.Breakpoint
 
-You can pipe a breakpoint object to `Enable-PSBreakpoint`.
+You can pipe a breakpoint object to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.Breakpoint
+### None
 
-When you use the **PassThru** parameter, `Enable-PSBreakpoint` returns a breakpoint object that
-represents that breakpoint that was enabled. Otherwise, this cmdlet doesn't generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.Breakpoint
+
+When you use the **PassThru** parameter, this cmdlet returns a breakpoint object representing the
+enabled breakpoint.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Enable-PSBreakpoint`:
+
+- `ebp`
 
 - The `Enable-PSBreakpoint` cmdlet doesn't generate an error if you try to enable a breakpoint that
   is already enabled. As such, you can enable all breakpoints without error, even when only a few

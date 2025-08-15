@@ -1,10 +1,10 @@
 ---
 description: Explains how to create objects in PowerShell.
 Locale: en-US
-ms.date: 09/22/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_object_creation?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/05/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_object_creation?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Object Creation
+title: about_Object_Creation
 ---
 # about_Object_Creation
 
@@ -19,31 +19,27 @@ commands and scripts.
 
 There are many ways to create objects, this list is not definitive:
 
-- [New-Object](xref:Microsoft.PowerShell.Utility.New-Object): Creates an
-  instance of a .NET Framework object or COM object.
-- [Import-Csv](xref:Microsoft.PowerShell.Utility.Import-Csv)/
-  [ConvertFrom-CSV](xref:Microsoft.PowerShell.Utility.ConvertFrom-Csv):
-  Creates custom objects (**PSCustomObject**) from the items defined as comma
-  separated values.
-- [ConvertFrom-Json](xref:Microsoft.PowerShell.Utility.ConvertFrom-Json):
-  Creates custom objects defined in JavaScript Object Notation (JSON).
-- [ConvertFrom-String](xref:Microsoft.PowerShell.Utility.ConvertFrom-String):
-  Built on top of [FlashExtract](https://www.microsoft.com/research/publication/flashextract-framework-data-extraction-examples),
-  `ConvertFrom-String` creates custom objects from structured string data.
-  This topic will demonstrate and discuss each of these methods.
-- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData):
-  Creates custom objects defined as key value pairs.
-- [Add-Type](xref:Microsoft.PowerShell.Utility.Add-Type): Allows you to
-  define a class in your PowerShell session that you can instantiate with
-  `New-Object`.
-- [New-Module](xref:Microsoft.PowerShell.Core.New-Module): The **AsCustomObject** parameter creates a
-  custom object you define using script block.
-- [Add-Member](xref:Microsoft.PowerShell.Utility.Add-Member): Adds
-  properties to existing objects. You can use `Add-Member` to create a custom
-  object out of a simple type, like `[System.Int32]`.
-- [Select-Object](xref:Microsoft.PowerShell.Utility.Select-Object): Selects
-  properties on an object. You can use `Select-Object` to create custom and
-  calculated properties on an already instantiated object.
+- [New-Object][16]: Creates an instance of a .NET Framework object or COM
+  object.
+- [Import-Csv][15] / [ConvertFrom-Csv][11]: Creates custom objects
+  (**PSCustomObject**) from the items defined as character separated values.
+- [ConvertFrom-Json][12]: Creates custom objects defined in JavaScript Object
+  Notation (JSON).
+- [ConvertFrom-String][13]: Built on top of [FlashExtract][07],
+  `ConvertFrom-String` creates custom objects from structured string data. This
+  topic will demonstrate and discuss each of these methods.
+- [ConvertFrom-StringData][14]: Creates custom objects defined as key value
+  pairs.
+- [Add-Type][10]: Allows you to define a class in your PowerShell session that
+  you can instantiate with `New-Object`.
+- [New-Module][08]: The **AsCustomObject** parameter creates a custom object
+  you define using script block.
+- [Add-Member][09]: Adds properties to existing objects. You can use
+  `Add-Member` to create a custom object out of a simple type, like
+  `[System.Int32]`.
+- [Select-Object][17]: Selects properties on an object. You can use
+  `Select-Object` to create custom and calculated properties on an already
+  instantiated object.
 
 The following additional methods are covered in this article:
 
@@ -138,7 +134,8 @@ Count Name
    18 Method
 ```
 
-For more information about the Extended Type System, see [about_Types.ps1xml](about_Types.ps1xml.md).
+For more information about the Extended Type System, see
+[about_Types.ps1xml][06].
 
 This feature was added in PowerShell 5.0
 
@@ -176,17 +173,17 @@ the example section of the `Update-Help` cmdlet help topic.
 ```powershell
 function Test-Object {
   $ModuleName = "PSScheduledJob"
-  $HelpCulture = "en-us"
+  $HelpCulture = "en-US"
   $HelpVersion = "3.1.0.0"
-  [PSCustomObject]@{
+  [pscustomobject]@{
     "ModuleName"=$ModuleName
     "UICulture"=$HelpCulture
     "Version"=$HelpVersion
   }
   $ModuleName = "PSWorkflow"
-  $HelpCulture = "en-us"
+  $HelpCulture = "en-US"
   $HelpVersion = "3.0.0.0"
-  [PSCustomObject]@{
+  [pscustomobject]@{
     "ModuleName"=$ModuleName
     "UICulture"=$HelpCulture
     "Version"=$HelpVersion
@@ -201,8 +198,8 @@ table by default.
 ```Output
 ModuleName        UICulture      Version
 ---------         ---------      -------
-PSScheduledJob    en-us          3.1.0.0
-PSWorkflow        en-us          3.0.0.0
+PSScheduledJob    en-US          3.1.0.0
+PSWorkflow        en-US          3.0.0.0
 ```
 
 Users can manage the properties of the custom objects just as they do with
@@ -217,6 +214,32 @@ standard objects.
  PSWorkflow
 ```
 
+**PSObject** type objects maintain the list of members in the order that the
+members were added to the object. Even though **Hashtable** objects don't
+guarantee the order of the key-value pairs, casting a literal hashtable to
+`[pscustomobject]` maintains the order.
+
+The hashtable must be a literal. If you wrap the hashtable in parentheses or if
+you cast a variable containing a hashtable, there is no guarantee that the
+order is preserved.
+
+```powershell
+$hash = @{
+    Name      = "Server30"
+    System    = "Server Core"
+    PSVersion = "4.0"
+}
+$Asset = [pscustomobject]$hash
+$Asset
+```
+
+```output
+PSVersion Name     System
+--------- ----     ------
+4.0       Server30 Server Core
+
+```
+
 ## Create non-custom objects from hash tables
 
 You can also use hash tables to create objects for non-custom classes. When you
@@ -228,7 +251,7 @@ For example, the following command creates a session option object.
 ```powershell
 [System.Management.Automation.Remoting.PSSessionOption]@{
   IdleTimeout=43200000
-  SkipCnCheck=$True
+  SkipCnCheck=$true
 }
 ```
 
@@ -268,9 +291,9 @@ cmdlet can be a hash table.
 ```powershell
 New-PSSession -ComputerName Server01 -SessionOption @{
   IdleTimeout=43200000
-  SkipCnCheck=$True
+  SkipCnCheck=$true
 }
-Register-ScheduledJob Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
+Register-ScheduledJob -Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
   Frequency="Daily"
   At="15:00"
 }
@@ -296,12 +319,31 @@ Key Value
 One     1
 ```
 
-For more information on Generics, see [Generics in .NET](/dotnet/standard/generics).
+For more information on Generics, see [Generics in .NET][01].
 
 ## See also
 
-- [about_Methods](about_Methods.md)
-- [about_Objects](about_Objects.md)
-- [about_Pipelines](about_Pipelines.md)
-- [about_Properties](about_Properties.md)
-- [about_Types.ps1xml](about_Types.ps1xml.md)
+- [about_Methods][02]
+- [about_Objects][03]
+- [about_Pipelines][04]
+- [about_Properties][05]
+- [about_Types.ps1xml][06]
+
+<!-- link references -->
+[01]: /dotnet/standard/generics
+[02]: about_Methods.md
+[03]: about_Objects.md
+[04]: about_Pipelines.md
+[05]: about_Properties.md
+[06]: about_Types.ps1xml.md
+[07]: https://www.microsoft.com/research/publication/flashextract-framework-data-extraction-examples
+[08]: xref:Microsoft.PowerShell.Core.New-Module
+[09]: xref:Microsoft.PowerShell.Utility.Add-Member
+[10]: xref:Microsoft.PowerShell.Utility.Add-Type
+[11]: xref:Microsoft.PowerShell.Utility.ConvertFrom-Csv
+[12]: xref:Microsoft.PowerShell.Utility.ConvertFrom-Json
+[13]: xref:Microsoft.PowerShell.Utility.ConvertFrom-String
+[14]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
+[15]: xref:Microsoft.PowerShell.Utility.Import-Csv
+[16]: xref:Microsoft.PowerShell.Utility.New-Object
+[17]: xref:Microsoft.PowerShell.Utility.Select-Object

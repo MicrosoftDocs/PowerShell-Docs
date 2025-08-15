@@ -1,7 +1,6 @@
 ---
 description: SelectionCondition Element for EntrySelectedBy for TableControl
 ms.date: 08/25/2021
-ms.topic: reference
 title: SelectionCondition Element for EntrySelectedBy for TableControl
 ---
 # SelectionCondition Element for EntrySelectedBy for TableControl

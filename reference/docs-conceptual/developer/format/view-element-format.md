@@ -1,7 +1,6 @@
 ---
 description: View Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: View Element
 ---
 # View Element
@@ -77,7 +76,7 @@ topics:
 
 ## Example
 
-This example shows a `View` element that defines a table view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+This example shows a `View` element that defines a table view for the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object.
 
 ```xml

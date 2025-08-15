@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/28/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/wait-job?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 09/29/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/wait-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - wjb
 title: Wait-Job
 ---
 # Wait-Job
@@ -123,8 +125,8 @@ to determine how many of the jobs are finished.
 ### Example 3: Determine when the first job finishes
 
 ```powershell
-$s = New-PSSession (Get-Content Machines.txt)
-$c = 'Get-EventLog -LogName System | where {$_.EntryType -eq "error" --and $_.Source -eq "LSASRV"} | Out-File Errors.txt'
+$s = New-PSSession -ComputerName (Get-Content -Path .\Machines.txt)
+$c = 'Get-EventLog -LogName System | Where-Object {$PSItem.EntryType -eq "error" --and $PSItem.Source -eq "LSASRV"} | Out-File -FilePath Errors.txt'
 Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {$Using:c}
 Invoke-Command -Session $s -ScriptBlock {Wait-Job -Any}
 ```
@@ -144,9 +146,9 @@ The third command uses `Invoke-Command` cmdlet to run `Start-Job` in each of the
 The `Start-Job` command starts a job that runs the `Get-EventLog` command in the `$c`
 variable.
 
-The command uses the **Using** scope modifier to indicate that the `$c` variable was defined on the
-local computer. The **Using** scope modifier is introduced in Windows PowerShell 3.0. For more
-information about the **Using** scope modifier, see
+The command uses the `Using:` scope modifier to indicate that the `$c` variable was defined on the
+local computer. The `Using:` scope modifier is introduced in Windows PowerShell 3.0. For more
+information about the `Using:` scope modifier, see
 [about_Remote_Variables](./about/about_Remote_Variables.md).
 
 The fourth command uses `Invoke-Command` to run a `Wait-Job` command in the sessions. It uses the
@@ -155,7 +157,7 @@ The fourth command uses `Invoke-Command` to run a `Wait-Job` command in the sess
 ### Example 4: Set a wait time for jobs on remote computers
 
 ```powershell
-PS> $s = New-PSSession Server01, Server02, Server03
+PS> $s = New-PSSession -ComputerName Server01, Server02, Server03
 PS> $jobs = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-Date}}
 PS> $done = Invoke-Command -Session $s -ScriptBlock {Wait-Job -Timeout 30}
 PS>
@@ -184,7 +186,7 @@ The `$done` variable contains a job object that represents the job that ran on S
 ### Example 5: Wait until one of several jobs finishes
 
 ```powershell
-Wait-Job -id 1,2,5 -Any
+Wait-Job -Id 1,2,5 -Any
 ```
 
 This command identifies three jobs by their IDs and waits until any one of them are in a terminating
@@ -211,7 +213,7 @@ This command uses the job name to identify the job for which to wait.
 ### Example 8: Wait for jobs on local computer started with Start-Job
 
 ```powershell
-$j = Start-Job -ScriptBlock {Get-ChildItem *.ps1| where {$_.lastwritetime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
+$j = Start-Job -ScriptBlock {Get-ChildItem -Filter *.ps1| Where-Object {$PSItem.LastWriteTime -gt ((Get-Date) - (New-TimeSpan -Days 7))}}
 $j | Wait-Job
 ```
 
@@ -222,7 +224,7 @@ These commands start a job that gets the Windows PowerShell script files that we
 in the last week.
 
 The first command uses `Start-Job` to start a job on the local computer. The job runs a
-`Get-ChildItem` command that gets all of the files that have a .ps1 file name extension that were
+`Get-ChildItem` command that gets all of the files that have a `.ps1` file name extension that were
 added or updated in the last week.
 
 The third command uses `Wait-Job` to wait until the job is in a terminating state. When the job
@@ -231,7 +233,7 @@ finishes, the command displays the job object, which contains information about 
 ### Example 9: Wait for jobs started on remote computers by using Invoke-Command
 
 ```powershell
-$s = New-PSSession Server01, Server02, Server03
+$s = New-PSSession -ComputerName Server01, Server02, Server03
 $j = Invoke-Command -Session $s -ScriptBlock {Get-Process} -AsJob
 $j | Wait-Job
 ```
@@ -265,7 +267,7 @@ Get-Job
 ```Output
 Id   Name     State      HasMoreData     Location             Command
 --   ----     -----      -----------     --------             -------
-1    Job1     Completed  True            localhost,Server01.. get-service
+1    Job1     Completed  True            localhost,Server01.. Get-Service
 4    Job4     Completed  True            localhost            dir | where
 ```
 
@@ -491,6 +493,10 @@ This cmdlet returns job objects that represent the jobs in a terminating state. 
 because the value of the **Timeout** parameter is exceeded, `Wait-Job` does not return any objects.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Wait-Job`:
+
+- `wjb`
 
 By default, `Wait-Job` returns, or ends the wait, when jobs are in one of the following states:
 

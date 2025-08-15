@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 09/30/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/complete-transaction?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/complete-transaction?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Complete-Transaction
 ---
@@ -35,7 +35,7 @@ For more information, see [about_Transactions](../Microsoft.PowerShell.Core/Abou
 ### Example 1: Commit a transaction
 
 ```powershell
-Set-Location hkcu:\software
+Set-Location HKCU:\software
 Start-Transaction
 New-Item MyCompany -UseTransaction
 Get-ChildItem m*
@@ -78,7 +78,7 @@ effective. As a result, the second `Get-ChildItem` command shows that the regist
 ### Example 2: Commit a transaction that has more than one subscriber
 
 ```powershell
-Set-Location hkcu:\software
+Set-Location HKCU:\software
 Start-Transaction
 New-Item MyCompany -UseTransaction
 ```
@@ -179,7 +179,7 @@ registry. This is confirmed by a second `Get-ChildItem m*` command, which shows 
 ### Example 3: Perform a transaction that does not change any data
 
 ```powershell
-Set-Location hkcu:\software
+Set-Location HKCU:\software
 Start-Transaction
 New-Item MyCompany -UseTransaction
 Get-ChildItem m*

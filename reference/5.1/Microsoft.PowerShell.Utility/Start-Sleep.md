@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/25/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - sleep
 title: Start-Sleep
 ---
+
 # Start-Sleep
 
 ## SYNOPSIS
@@ -34,12 +37,12 @@ repeating an operation.
 
 ## EXAMPLES
 
-### Example 1: Pause execution for 1.5 seconds
+### Example 1: Pause execution for 1 second
 
-In this example, the execution of commands pauses for one and one-half seconds.
+In this example, the execution of commands pauses for one second.
 
 ```powershell
-Start-Sleep -Seconds 1.5
+Start-Sleep -Seconds 1
 ```
 
 ### Example 2: Pause execution at the command line
@@ -76,7 +79,7 @@ Accept wildcard characters: False
 ### -Seconds
 
 Specifies how long the resource sleeps in seconds. You can omit the parameter name or you can
-abbreviate it as **s**. 
+abbreviate it as **s**.
 
 ```yaml
 Type: System.Int32
@@ -101,18 +104,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Int32
 
-You can pipe the number of seconds to `Start-Sleep`.
+You can pipe the number of seconds to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
 
-- You can also refer to `Start-Sleep` by its built-in alias, `sleep`. For more information, see
-  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
+Windows PowerShell includes the following aliases for `Start-Sleep`:
+
+- `sleep`
+
 - `Ctrl+C` breaks out of `Start-Sleep`.
 - `Ctrl+C` does not break out of `[Threading.Thread]::Sleep`. For more information, see
   [Thread.Sleep Method](/dotnet/api/system.threading.thread.sleep).

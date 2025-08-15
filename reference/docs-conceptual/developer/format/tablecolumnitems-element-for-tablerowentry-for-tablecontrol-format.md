@@ -1,7 +1,6 @@
 ---
 description: TableColumnItems Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: TableColumnItems
 ---
 # TableColumnItems Element
@@ -21,7 +20,7 @@ Defines the properties or scripts whose values are displayed in a row.
 ## Syntax
 
 ```xml
-TableColumnItems>
+<TableColumnItems>
   <TableColumnItem>...</TableColumnItem>
 </TableColumnItems>
 ```

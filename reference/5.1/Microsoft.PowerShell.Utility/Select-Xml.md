@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 06/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-xml?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-xml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Xml
 ---
@@ -61,7 +61,7 @@ the XPath statement from the `Types.ps1xml` file. The command uses a pipeline op
 **Node** object and returns its **Name** and **ReferencedMemberName** properties.
 
 ```powershell
-$Path = "$Pshome\Types.ps1xml"
+$Path = "$PSHOME\Types.ps1xml"
 $XPath = "/Types/Type/Members/AliasProperty"
 Select-Xml -Path $Path -XPath $Xpath | Select-Object -ExpandProperty Node
 ```
@@ -92,7 +92,7 @@ file. For example, there is a **Count** property that is an alias of the **Lengt
 
 ### Example 2: Input an XML document
 
-This example shows how to use the **XML** parameter to provide an XML document to the `Select-Xml`
+This example shows how to use the **Xml** parameter to provide an XML document to the `Select-Xml`
 cmdlet.
 
 The `Get-Content` cmdlet gets the content of the `Types.ps1xml` file and saves it in the `$Types`
@@ -103,7 +103,7 @@ the **Xml** parameter to specify the XML content in the `$Types` variable and th
 parameter to specify the path to the **MethodName** node.
 
 ```powershell
-[xml]$Types = Get-Content $Pshome\Types.ps1xml
+[xml]$Types = Get-Content $PSHOME\Types.ps1xml
 Select-Xml -Xml $Types -XPath "//MethodName"
 ```
 
@@ -124,10 +124,10 @@ information about Updatable Help, see
 The `Select-Xml` cmdlet searches the XML files for cmdlet names by finding `Command:Name` element
 anywhere in the files. The results are stored in the `$Xml` variable. `Select-Xml` returns a
 **SelectXmlInfo** object that has a **Node** property, which is a **System.Xml.XmlElement** object.
-The **Node** property has an **InnerXML** property that contains the actual XML that is retrieved.
+The **Node** property has an **InnerXml** property that contains the actual XML that is retrieved.
 
 The `$Xml` variable is piped to the `Format-Table` cmdlet. The `Format-Table` command uses a
-calculated property to get the **Node.InnerXML** property of each object in the `$Xml` variable,
+calculated property to get the **Node.InnerXml** property of each object in the `$Xml` variable,
 trim the white space before and after the text, and display it in the table, along with the **Path**
 to the source file.
 
@@ -138,21 +138,21 @@ $Namespace = @{
     dev = "http://schemas.microsoft.com/maml/dev/2004/10"
 }
 
-$Path = "$Pshome\en-us\*dll-Help.xml"
+$Path = "$PSHOME\en-US\*dll-Help.xml"
 $Xml = Select-Xml -Path $Path -Namespace $Namespace -XPath "//command:name"
-$Xml | Format-Table @{Label="Name"; Expression= {($_.node.innerxml).trim()}}, Path -AutoSize
+$Xml | Format-Table @{Label="Name"; Expression= {($_.Node.InnerXml).Trim()}}, Path -AutoSize
 ```
 
 ```Output
 Name                    Path
 ----                    ----
-Export-Counter          C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-Get-Counter             C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-Get-WinEvent            C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-Import-Counter          C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
-Add-Computer            C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microsoft.PowerShell.Commands.Management.dll-Help.xml
-Add-Content             C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microsoft.PowerShell.Commands.Management.dll-Help.xml
-Checkpoint-Computer     C:\Windows\system32\WindowsPowerShell\v1.0\en-us\Microsoft.PowerShell.Commands.Management.dll-Help.xml
+Export-Counter          C:\Windows\system32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+Get-Counter             C:\Windows\system32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+Get-WinEvent            C:\Windows\system32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+Import-Counter          C:\Windows\system32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
+Add-Computer            C:\Windows\system32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Management.dll-Help.xml
+Add-Content             C:\Windows\system32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Management.dll-Help.xml
+Checkpoint-Computer     C:\Windows\system32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Management.dll-Help.xml
 ...
 ```
 
@@ -187,14 +187,14 @@ $Xml = @"
 </Book>
 "@
 
-Select-Xml -Content $Xml -XPath "//edition" | foreach {$_.node.InnerXML}
+Select-Xml -Content $Xml -XPath "//edition" | foreach {$_.Node.InnerXml}
 
 En.Book1.com
 Ge.Book1.Com
 Fr.Book1.com
 Pl.Book1.com
 
-$Xml | Select-Xml -XPath "//edition" | foreach {$_.node.InnerXML}
+$Xml | Select-Xml -XPath "//edition" | foreach {$_.Node.InnerXml}
 
 En.Book1.com
 Ge.Book1.Com
@@ -221,7 +221,7 @@ value of the **InnerXml** property of the node.
 ```powershell
 $SnippetNamespace = @{snip = "http://schemas.microsoft.com/PowerShell/Snippets"}
 
-Select-Xml -Path $Home\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" |
+Select-Xml -Path $HOME\Documents\WindowsPowerShell\Snippets -Namespace $SnippetNamespace -XPath "//snip:Title" |
     ForEach-Object {$_.Node.Innerxml}
 ```
 

@@ -1,38 +1,41 @@
 ---
 description: A PowerShell one-liner is one continuous pipeline, containing multiple commands, to accomplish a single task.
 ms.custom: Contributor-mikefrobbins
-ms.date: 10/05/2021
+ms.date: 01/08/2025
 ms.reviewer: mirobb
 title: One-liners and the pipeline
 ---
-# Chapter 4 - One-liners and the pipeline
 
-When I first started learning PowerShell, if I couldn't accomplish a task with a PowerShell
-one-liner, I went back to the GUI. Over time, I built my skills up to writing scripts, functions,
-and modules. Don't allow yourself to become overwhelmed by some of the more advanced examples you
-may see on the internet. No one is a natural expert with PowerShell. We were all beginners at
-one time.
+# Chapter 4 - One-Liners and the pipeline
 
-I have a bit of advice to offer those of you who are still using the GUI for administration:
-install the management tools on your admin workstation and manage your servers remotely. This way it
-won't matter if the server is running a GUI or Server Core installation of the operating system.
-It's going to help prepare you for managing servers remotely with PowerShell.
+When I started learning PowerShell, I initially relied on the Graphical User Interface (GUI) for
+tasks that seemed too complex for simple PowerShell commands. However, as I continued to learn, I
+improved my skills and moved from basic one-liners to creating scripts, functions, and modules. It's
+important to remember that feeling overwhelmed by advanced examples online is normal. No one starts
+as an expert in PowerShell; we all start as beginners.
 
-As with previous chapters, be sure to follow along on your Windows 10 lab environment computer.
+For those who primarily use the GUI for administrative tasks, install the management tools on your
+administrative workstation to remotely manage your servers. Whether your server uses a GUI or the
+Server Core OS installation, this approach is beneficial. It's a practical way to familiarize
+yourself with remote server management in preparation for performing administrative tasks with
+PowerShell.
+
+As with the previous chapters, try these concepts in your lab environment.
 
 ## One-Liners
 
-A PowerShell one-liner is one continuous pipeline and not necessarily a command that's on one
-physical line. Not all commands that are on one physical line are one-liners.
+A PowerShell one-liner is one continuous pipeline. It's a common misconception that a command on one
+physical line is a PowerShell one-liner, but this isn't always true.
 
-Even though the following command is on multiple physical lines, it's a PowerShell one-liner because
-it's one continuous pipeline. It could be written on one physical line, but I've chosen to line
-break at the pipe symbol. The pipe symbol is one of the characters where a natural line break is
-allowed in PowerShell.
+For instance, consider the following example: the command extends over multiple physical lines, yet
+it's a PowerShell one-liner because it forms a continuous pipeline. Line-breaking a lengthy
+one-liner at the pipe symbol, a natural breaking point in PowerShell, is recommended to enhance
+readability and clarity. This strategic use of line breaks improves readability without disrupting
+the flow of the pipeline.
 
 ```powershell
 Get-Service |
-  Where-Object CanPauseAndContinue -eq $true |
+    Where-Object CanPauseAndContinue -EQ $true |
     Select-Object -Property *
 ```
 
@@ -43,13 +46,13 @@ CanPauseAndContinue : True
 CanShutdown         : False
 CanStop             : True
 DisplayName         : Workstation
-DependentServices   : {SessionEnv, Netlogon, Browser}
+DependentServices   : {SessionEnv, Netlogon}
 MachineName         : .
 ServiceName         : LanmanWorkstation
 ServicesDependedOn  : {NSI, MRxSmb20, Bowser}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 StartType           : Automatic
 Site                :
 Container           :
@@ -64,7 +67,7 @@ DependentServices   : {}
 MachineName         : .
 ServiceName         : Netlogon
 ServicesDependedOn  : {LanmanWorkstation}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
 ServiceType         : Win32ShareProcess
 StartType           : Automatic
@@ -81,9 +84,9 @@ DependentServices   : {}
 MachineName         : .
 ServiceName         : vmicheartbeat
 ServicesDependedOn  : {}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 StartType           : Manual
 Site                :
 Container           :
@@ -98,9 +101,9 @@ DependentServices   : {}
 MachineName         : .
 ServiceName         : vmickvpexchange
 ServicesDependedOn  : {}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 StartType           : Manual
 Site                :
 Container           :
@@ -115,9 +118,9 @@ DependentServices   : {}
 MachineName         : .
 ServiceName         : vmicrdv
 ServicesDependedOn  : {}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 StartType           : Manual
 Site                :
 Container           :
@@ -132,26 +135,9 @@ DependentServices   : {}
 MachineName         : .
 ServiceName         : vmicshutdown
 ServicesDependedOn  : {}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
-ServiceType         : Win32ShareProcess
-StartType           : Manual
-Site                :
-Container           :
-
-Name                : vmictimesync
-RequiredServices    : {VmGid}
-CanPauseAndContinue : True
-CanShutdown         : False
-CanStop             : True
-DisplayName         : Hyper-V Time Synchronization Service
-DependentServices   : {}
-MachineName         : .
-ServiceName         : vmictimesync
-ServicesDependedOn  : {VmGid}
-ServiceHandle       : SafeServiceHandle
-Status              : Running
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 StartType           : Manual
 Site                :
 Container           :
@@ -166,10 +152,44 @@ DependentServices   : {}
 MachineName         : .
 ServiceName         : vmicvss
 ServicesDependedOn  : {}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 StartType           : Manual
+Site                :
+Container           :
+
+Name                : webthreatdefsvc
+RequiredServices    : {RpcSs, wtd}
+CanPauseAndContinue : True
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Web Threat Defense Service
+DependentServices   : {}
+MachineName         : .
+ServiceName         : webthreatdefsvc
+ServicesDependedOn  : {RpcSs, wtd}
+ServiceHandle       :
+Status              : Running
+ServiceType         : Win32OwnProcess, Win32ShareProcess
+StartType           : Manual
+Site                :
+Container           :
+
+Name                : webthreatdefusersvc_644de
+RequiredServices    : {}
+CanPauseAndContinue : True
+CanShutdown         : True
+CanStop             : True
+DisplayName         : Web Threat Defense User Service_644de
+DependentServices   : {}
+MachineName         : .
+ServiceName         : webthreatdefusersvc_644de
+ServicesDependedOn  : {}
+ServiceHandle       :
+Status              : Running
+ServiceType         : 240
+StartType           : Automatic
 Site                :
 Container           :
 
@@ -179,30 +199,38 @@ CanPauseAndContinue : True
 CanShutdown         : True
 CanStop             : True
 DisplayName         : Windows Management Instrumentation
-DependentServices   : {wscsvc, NcaSvc, iphlpsvc}
+DependentServices   : {}
 MachineName         : .
 ServiceName         : Winmgmt
 ServicesDependedOn  : {RPCSS}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 StartType           : Automatic
 Site                :
 Container           :
 ```
 
-Natural line breaks can occur at commonly used characters including comma (`,`) and opening brackets
-(`[`), braces (`{`), and parenthesis (`(`). Others that aren't so common include the semicolon
-(`;`), equals sign (`=`), and both opening single and double quotes (`'`,`"`).
+Natural line breaks can occur at commonly used characters, including comma (`,`) and opening
+brackets (`[`), braces (`{`), and parenthesis (`(`). Others that aren't so common include the
+semicolon (`;`), equals sign (`=`), and both opening single and double quotes (`'`,`"`).
 
-Using the backtick (`` ` ``) or grave accent character as a line continuation character is a
-controversial topic. My recommendation is to try to avoid it if at all possible. I often see
-PowerShell commands written using a backtick immediately after a natural line break character.
-There's no reason for it to be there.
+Using the backtick (`` ` ``) or grave accent character as a line continuation is controversial. It's
+best to avoid it if possible. Using a backtick following a natural line break character is a common
+mistake. This redundancy is unnecessary and can clutter the code.
+
+The commands in the following example execute correctly from the PowerShell console. However,
+attempting to run them in the console pane of the PowerShell Integrated Scripting Environment (ISE)
+results in an error. This difference occurs because, unlike the PowerShell console, the console pane
+of the ISE doesn't automatically anticipate the continuation of a command onto the next line. To
+prevent this issue, press <kbd>Shift</kbd>+<kbd>Enter</kbd> in the console pane of the ISE instead
+of <kbd>Enter</kbd> when you need to extend a command across multiple lines. This key combination
+signals to the ISE that the command is continuing on the following line, preventing the execution
+that leads to errors.
 
 ```powershell
 Get-Service -Name w32time |
->> Select-Object -Property *
+    Select-Object -Property *
 ```
 
 ```Output
@@ -216,49 +244,44 @@ DependentServices   : {}
 MachineName         : .
 ServiceName         : w32time
 ServicesDependedOn  : {}
-ServiceHandle       : SafeServiceHandle
+ServiceHandle       :
 Status              : Running
-ServiceType         : Win32ShareProcess
+ServiceType         : Win32OwnProcess, Win32ShareProcess
 StartType           : Manual
 Site                :
 Container           :
 ```
 
-The commands shown in the previous two examples work fine in the PowerShell console. But if you try
-to run them in the console pane of the PowerShell ISE, they'll generate an error. The console pane
-of the PowerShell ISE doesn't wait for the rest of the command to be entered on the next line like
-the PowerShell console does. To avoid this problem in the console pane of the PowerShell ISE, use
-<kbd>Shift</kbd>+<kbd>Enter</kbd> instead of just pressing <kbd>Enter</kbd> when continuing a
-command on another line.
-
-This next example isn't a PowerShell one-liner because it's not one continuous pipeline. It's two
-separate commands on one line, separated by a semicolon.
+This next example doesn't qualify as a PowerShell one-liner because it's not one continuous
+pipeline. Instead, it's two separate commands placed on a single line, separated by a semicolon.
+This semicolon indicates the end of one command and the beginning of another.
 
 ```powershell
 $Service = 'w32time'; Get-Service -Name $Service
 ```
 
-```powershell
+```Output
 Status   Name               DisplayName
 ------   ----               -----------
 Running  w32time            Windows Time
 ```
 
-Many programming and scripting languages require a semicolon at the end of each line. While they can
-be used that way in PowerShell, it's not recommended because they're not needed.
+Many programming and scripting languages require a semicolon at the end of each line. However, in
+PowerShell, semicolons at the end of lines are unnecessary and not recommended. You should avoid
+them for cleaner and more readable code.
 
-## Filtering Left
+## Filter Left
 
-The results of the commands shown in this chapter have been filtered down to a subset. For example,
-`Get-Service` was used with the **Name** parameter to filter the list of services that were returned
-to only the Windows Time service.
+This chapter demonstrates how to filter the results of various commands.
 
-In the pipeline, you always want to filter the results down to what you're looking for as early as
-possible. This is accomplished using parameters on the first command or, the one to the far left.
-This is sometimes called _filtering left_.
+It's a best practice in PowerShell to filter the results as early as possible in the pipeline.
+Achieving this involves applying filters using parameters on the initial command, usually at the
+beginning of the pipeline. This is commonly referred to as _filtering left_.
 
-The following example uses the **Name** parameter of `Get-Service` to immediately filter the results
-to the Windows Time service only.
+To illustrate this concept, consider the following example: Use the **Name** parameter of
+`Get-Service` to filter the results at the beginning of the pipeline, returning only the details for
+the Windows Time service. This method demonstrates efficient data retrieval, ensuring you only
+return the necessary and relevant information.
 
 ```powershell
 Get-Service -Name w32time
@@ -270,11 +293,12 @@ Status   Name               DisplayName
 Running  w32time            Windows Time
 ```
 
-It's not uncommon to see examples where the command is piped to `Where-Object` to perform the
-filtering.
+It's common to see online examples of a PowerShell command being piped to the `Where-Object` cmdlet
+to filter its results. This technique is inefficient if an earlier command in the pipeline has a
+parameter to perform the filtering.
 
 ```powershell
-Get-Service | Where-Object Name -eq w32time
+Get-Service | Where-Object Name -EQ w32time
 ```
 
 ```Output
@@ -283,107 +307,127 @@ Status   Name               DisplayName
 Running  W32Time            Windows Time
 ```
 
-The first example filters at the source and only returns the results for the Windows Time service.
-The second example returns all the services then pipes them to another command to perform the
-filtering. While this may not seem like a big deal in this example, imagine if you were querying a
-list of Active Directory users. Do you really want to return the information for many thousands of
-user accounts from Active Directory only to pipe them to another command that filters them down to a
-tiny subset? My recommendation is to always filter left even when it doesn't seem to matter. You'll
-be so use to it that you'll automatically filter left when it really does matter.
+The first example demonstrates filtering directly at the source, returning results specifically for
+the Windows Time service. In contrast, the second example retrieves all services and then uses
+another command to filter the results. This might seem insignificant in small-scale scenarios, but
+consider a situation involving a large dataset, like Active Directory. It's inefficient to retrieve
+details for thousands of user accounts only to narrow them down to a small subset. Practice
+_filtering left_ — applying filters as early as possible in the command sequence — even in seemingly
+trivial cases. This habit ensures efficiency in more complex scenarios where it becomes more
+important.
 
-I once had someone tell me that the order you specify the commands in doesn't matter. That couldn't
-be further from the truth. The order that the commands are specified in does indeed matter when
-performing filtering. For example, consider the scenario where you are using `Select-Object` to
-select only a few properties and `Where-Object` to filter on properties that won't be in the
-selection. In that scenario, the filtering must occur first, otherwise the property won't exist
-in the pipeline when try to perform the filtering.
+### Command sequencing for effective filtering
+
+There's a misconception that the order of commands in PowerShell is inconsequential, but this is a
+misunderstanding. The sequence in which you arrange commands, particularly when filtering, is
+important. For example, suppose you're using `Select-Object` to choose specific properties and
+`Where-Object` to filter. In that case, it's essential to apply the filtering first. Failing to do
+so means the necessary properties might not be available in the pipeline for filtering, leading to
+ineffective or erroneous results.
+
+The following example fails to produce results because the **CanPauseAndContinue** property is
+absent when `Select-Object` is piped to `Where-Object`. This is because the **CanPauseAndContinue**
+property wasn't included in the selection made by `Select-Object`. Effectively, it's excluded or
+filtered out.
 
 ```powershell
 Get-Service |
-Select-Object -Property DisplayName, Running, Status |
-Where-Object CanPauseAndContinue
+    Select-Object -Property DisplayName, Running, Status |
+    Where-Object CanPauseAndContinue
 ```
 
-The command in the previous example doesn't return any results because the **CanStopAndContinue**
-property doesn't exist when the results of `Select-Object` are piped to `Where-Object`. That
-particular property wasn't "selected". In essence, it was filtered out. Reversing the order of
-`Select-Object` and `Where-Object` produces the desired results.
+Reversing the order of `Select-Object` and `Where-Object` produces the desired results.
 
 ```powershell
 Get-Service |
-Where-Object CanPauseAndContinue |
-Select-Object -Property DisplayName, Status
+    Where-Object CanPauseAndContinue |
+    Select-Object -Property DisplayName, Status
 ```
 
 ```Output
 DisplayName                                    Status
 -----------                                    ------
-Workstation                                    Running
-Netlogon                                       Running
-Hyper-V Heartbeat Service                      Running
-Hyper-V Data Exchange Service                  Running
-Hyper-V Remote Desktop Virtualization Service  Running
-Hyper-V Guest Shutdown Service                 Running
-Hyper-V Time Synchronization Service           Running
-Hyper-V Volume Shadow Copy Requestor           Running
-Windows Management Instrumentation             Running
+Workstation                                   Running
+Netlogon                                      Running
+Hyper-V Heartbeat Service                     Running
+Hyper-V Data Exchange Service                 Running
+Hyper-V Remote Desktop Virtualization Service Running
+Hyper-V Guest Shutdown Service                Running
+Hyper-V Volume Shadow Copy Requestor          Running
+Web Threat Defense Service                    Running
+Web Threat Defense User Service_644de         Running
+Windows Management Instrumentation            Running
 ```
 
 ## The Pipeline
 
-As you've seen in many of the examples shown so far throughout this book, many times the output of
-one command can be used as input for another command. In Chapter 3, `Get-Member` was used to
-determine what type of object a command produces. Chapter 3 also showed using the **ParameterType**
-parameter of `Get-Command` to determine what commands accepted that type of input, although not
-necessarily by pipeline input.
+As seen in many examples throughout this book, you can often use the output of one command as input
+for another command. In Chapter 3, `Get-Member` was used to determine what type of object a command
+produces.
 
-Depending on how thorough a commands help is, it may include an **INPUTS** and **OUTPUTS** section.
+Chapter 3 also showed using the **ParameterType** parameter of `Get-Command` to determine what
+commands accepted that type of input. Depending on how thorough help for a command is, it might
+include an **INPUTS** and **OUTPUTS** section.
+
+The **INPUTS** section indicates that you can pipe a **ServiceController** or a **String** object to
+the `Stop-Service` cmdlet.
 
 ```powershell
 help Stop-Service -Full
 ```
+
+The following output is abbreviated to show the relevant portion of the help.
 
 ```Output
 ...
 INPUTS
-    System.ServiceProcess.ServiceController, System.String
-        You can pipe a service object or a string that contains the name of a service
-        to this cmdlet.
+    System.ServiceProcess.ServiceController
+        You can pipe a service object to this cmdlet.
+
+    System.String
+        You can pipe a string that contains the name of a service to this
+        cmdlet.
+
 
 OUTPUTS
-    None, System.ServiceProcess.ServiceController
-        This cmdlet generates a System.ServiceProcess.ServiceController object that
-        represents the service, if you use the PassThru parameter. Otherwise, this
-        cmdlet does not generate any output.
+    None
+        By default, this cmdlet returns no output.
+
+    System.ServiceProcess.ServiceController
+        When you use the PassThru parameter, this cmdlet returns a
+        ServiceController object representing the service.
 ...
 ```
 
-Only the relevant section of the help is shown in the previous results. As you can see, the
-**INPUTS** section states that a **ServiceController** or a **String** object can be piped to the
-`Stop-Service` cmdlet. It doesn't tell you which parameters accept that type of input. One of the
-easiest ways to determine that information is to look through the different parameters in the full
-version of the help for the `Stop-Service` cmdlet.
+However, it doesn't specify which parameters accept this type of input. You can determine that
+information by checking the different parameters in the full version of the help for the
+`Stop-Service` cmdlet.
 
 ```powershell
 help Stop-Service -Full
 ```
 
+Once again, only the relevant help is shown in the following results. Notice that the
+**DisplayName** parameter doesn't accept pipeline input. The **InputObject** parameter accepts
+pipeline input by value for **ServiceController** objects. The Name parameter accepts pipeline input
+by value for **String** objects and pipeline input **by property name**.
+
 ```Output
 ...
--DisplayName <String[]>
-    Specifies the display names of the services to stop. Wildcard characters are
-    permitted.
+-DisplayName <System.String[]>
+    Specifies the display names of the services to stop. Wildcard
+    characters are permitted.
 
     Required?                    true
     Position?                    named
     Default value                None
     Accept pipeline input?       False
-    Accept wildcard characters?  false
+    Accept wildcard characters?  true
 
--InputObject <ServiceController[]>
-    Specifies ServiceController objects that represent the services to stop. Enter a
-    variable that contains the objects, or type a command or expression that gets the
-    objects.
+-InputObject <System.ServiceProcess.ServiceController[]>
+    Specifies ServiceController objects that represent the services to
+    stop. Enter a variable that contains the objects, or type a command
+    or expression that gets the objects.
 
     Required?                    true
     Position?                    0
@@ -391,33 +435,29 @@ help Stop-Service -Full
     Accept pipeline input?       True (ByValue)
     Accept wildcard characters?  false
 
--Name <String[]>
-    Specifies the service names of the services to stop. Wildcard characters are
-    permitted.
+-Name <System.String[]>
+    Specifies the service names of the services to stop. Wildcard
+    characters are permitted.
 
     Required?                    true
     Position?                    0
     Default value                None
     Accept pipeline input?       True (ByPropertyName, ByValue)
-    Accept wildcard characters?  false
+    Accept wildcard characters?  true
 ...
 ```
 
-Once again, I've only shown the relevant portion of the help in the previous set of results. Notice
-that the **DisplayName** parameter doesn't accept pipeline input, the **InputObject** parameter
-accepts pipeline input **by value** for **ServiceController** objects, and the **Name** parameter
-accepts pipeline input **by value** for **string** objects. It also accepts pipeline input **by
-property name**.
+When handling pipeline input, a parameter that accepts pipeline input both **by property name** and
+**by value** prioritizes **by value** binding first. If this method fails, it attempts to process
+pipeline input **by property name**. However, the term **by value** can be misleading. A more
+accurate description is **by type**.
 
-When a parameter accepts pipeline input by both property name and by value, it always tries **by
-value** first. If **by value** fails, then it tries **by property name**. **By value** is a little
-misleading. I prefer to call it **by type**. This means if you pipe the results of a command that
-produces a **ServiceController** object type to `Stop-Service`, it binds that input to the
-**InputObject** parameter. But if you pipe the results of a command that produces **String** output
-to `Stop-Service`, it binds it to the **Name** parameter. If you pipe the results of a command that
-doesn't produce a **ServiceController** or **String** object to `Stop-Service`, but it does produce
-output containing a property called **Name**, then it binds the **Name** property from the output to
-the **Name** parameter of `Stop-Service`.
+For instance, if you pipe the output of a command that generates a **ServiceController** object to
+`Stop-Service`, this output is bound to the **InputObject** parameter. If the piped command produces
+a **String** object, it associates the output with the **Name** parameter. If you pipe output from a
+command that doesn't produce a **ServiceController** or **String** object, but does include a
+property named **Name**, `Stop-Service` binds the value of the **Name** property to its **Name**
+parameter.
 
 Determine what type of output the `Get-Service` command produces.
 
@@ -425,22 +465,22 @@ Determine what type of output the `Get-Service` command produces.
 Get-Service -Name w32time | Get-Member
 ```
 
+`Get-Service` produces a **ServiceController** object type.
+
 ```Output
    TypeName: System.ServiceProcess.ServiceController
 ```
 
-`Get-Service` produces a ServiceController object type.
-
-As you previously saw in the help, the **InputObject** parameter of `Stop-Service` accepts
-**ServiceController** objects via the pipeline **by value** (by type). This means that when the
-results of the `Get-Service` cmdlet are piped to `Stop-Service`, they bind to the **InputObject**
-parameter of `Stop-Service`.
+As shown in the help for `Stop-Service` cmdlet, the **InputObject** parameter accepts
+**ServiceController** objects through the pipeline **by value**. This implies that when you pipe the
+output of the `Get-Service` cmdlet to `Stop-Service`, the **ServiceController** objects produced by
+`Get-Service` bind to the **InputObject** parameter of `Stop-Service`.
 
 ```powershell
 Get-Service -Name w32time | Stop-Service
 ```
 
-Now to try string input. Pipe `w32time` to `Get-Member` just to confirm that it's a string.
+Now try string input. Pipe `w32time` to `Get-Member` to confirm that it's a string.
 
 ```powershell
 'w32time' | Get-Member
@@ -450,33 +490,37 @@ Now to try string input. Pipe `w32time` to `Get-Member` just to confirm that it'
    TypeName: System.String
 ```
 
-As previously shown in the help, piping a string to `Stop-Service` binds it **by value** to the
-**Name** parameter of `Stop-Service`. Test this by piping `w32time` to `Stop-Service`.
+The PowerShell help documentation illustrates that when you pipe a string to `Stop-Service`, it
+binds to the **Name** parameter **by value**. Conduct a practical test to see this in action: pipe
+the string `w32time` to `Stop-Service`. This example demonstrates how `Stop-Service` processes the
+string `w32time` as the name of the service to stop. Execute the following command to observe this
+binding and command execution in action.
+
+Notice that `w32time` is enclosed in single quotes. In PowerShell, it's a best practice to use
+single quotes for static strings, reserving double quotes for situations where the string contains
+variables that require expansion. Single quotes tell PowerShell to treat the content literally
+without parsing for variables. This approach not only ensures accuracy in how your script interprets
+the string but also enhances performance, as PowerShell expends less processing effort on strings
+within single quotes.
 
 ```powershell
 'w32time' | Stop-Service
 ```
 
-Notice that in the previous example, I used single quotes around the string `w32time`. In
-PowerShell, you should always use single quotes instead of double quotes unless the contents of the
-quoted string contains a variable that needs to be expanded to its actual value. By using single
-quotes, PowerShell doesn't have to parse the contents contained within the quotes so your code runs
-a little faster.
-
 Create a custom object to test pipeline input by property name for the **Name** parameter of
 `Stop-Service`.
 
 ```powershell
-$CustomObject = [pscustomobject]@{
- Name = 'w32time'
- }
+$customObject = [pscustomobject]@{
+    Name = 'w32time'
+}
 ```
 
 The contents of the **CustomObject** variable is a **PSCustomObject** object type and it contains a
 property named **Name**.
 
 ```powershell
-$CustomObject | Get-Member
+$customObject | Get-Member
 ```
 
 ```Output
@@ -491,96 +535,115 @@ ToString    Method       string ToString()
 Name        NoteProperty string Name=w32time
 ```
 
-If you were to surround the `$CustomObject` variable with quotes, you want to use double quotes.
-Otherwise, using single quotes, the literal string `$CustomObject` is piped to `Get-Member` instead
-of the value contained by the variable.
+When working with variables in PowerShell, such as `$customObject` in this example, it's important
+to use double quotes if you need to enclose the variable in quotes. Double quotes allow for variable
+expansion — PowerShell evaluates the variable and uses its value. For example, if you enclose
+`$customObject` in double quotes and pipe it to `Get-Member`, PowerShell processes the value of
+`$customObject`. In contrast, using single quotes would result in piping the literal string
+`$customObject` to `Get-Member`, not the value of the variable. This distinction is important for
+scenarios where you need to evaluate the value of variables.
 
-Although piping the contents of `$CustomObject` to `Stop-Service` cmdlet binds to the **Name**
-parameter, this time it binds **by property name** instead of **by value** because the contents of
-`$CustomObject` is an object that has a property named **Name**.
+When piping the contents of the `$customObject` variable to the `Stop-Service` cmdlet, the binding
+to the **Name** parameter occurs by **property name** rather than **by value**. This is because
+`$customObject` is an object that contains a property named **Name**. In this scenario, PowerShell
+identifies the **Name** property within `$customObject` and uses its value for the **Name**
+parameter of `Stop-Service`.
 
-In this example, I create another custom object using a different property name, such as
-**Service**.
+Create another custom object using a different property name, such as **Service**.
 
 ```powershell
-$CustomObject = [pscustomobject]@{
-  Service = 'w32time'
+$customObject = [pscustomobject]@{
+    Service = 'w32time'
 }
 ```
 
-An error is generated when trying to pipe `$CustomObject` to `Stop-Service` because it doesn't
-produce a **ServiceController** or **String** object, and it doesn't have a property named **Name**.
+An error occurs while trying to stop the `w32time` service by piping `$customObject` to
+`Stop-Service`. The pipeline binding fails because `$customObject` doesn't produce a
+**ServiceController** or **String** object and doesn't contain a **Name** property.
 
 ```powershell
-$CustomObject | Stop-Service
+$customObject | Stop-Service
 ```
 
 ```Output
-Stop-Service : Cannot find any service with service name '@{Service=w32time}'.
+Stop-Service : Cannot find any service with service name
+'@{Service=w32time}'.
 At line:1 char:17
-+ $CustomObject | Stop-Service
-+
-    + CategoryInfo          : ObjectNotFound: (@{Service=w32time}:String) [Stop-Service]
-   , ServiceCommandException
-    + FullyQualifiedErrorId : NoServiceFoundForGivenName,Microsoft.PowerShell.Commands.S
-   topServiceCommand
++ $customObject | Stop-Service
++                 ~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (@{Service=w32time}:String) [
+   Stop-Service], ServiceCommandException
+    + FullyQualifiedErrorId : NoServiceFoundForGivenName,Microsoft.PowerShe
+   ll.Commands.StopServiceCommand
 ```
 
-If the output of one command doesn't line up with the pipeline input options for another command,
-`Select-Object` can be used to rename the property so that the properties lineup correctly.
+When the output property names of one command don't match the pipeline input requirements of another
+command, you can use `Select-Object` to rename the property names so they line up correctly.
+
+In the following example, use `Select-Object` to rename the **Service** property to a property named
+**Name**.
+
+At first glance, the syntax of this example might appear complex. However, it's essential to
+understand that more than copying and pasting code is required to learn the syntax. Instead, take
+the time to type out the code manually. This hands-on practice helps you remember the syntax, and it
+becomes more intuitive with repeated effort. Utilizing multiple monitors or split screen can also
+aid in the learning process. Display the example code on one screen while actively typing and
+experimenting with it on another. This setup makes it easier to follow along and enhances your
+understanding and retention of the syntax.
 
 ```powershell
-$CustomObject |
-  Select-Object -Property @{name='Name';expression={$_.Service}} |
+$customObject |
+    Select-Object -Property @{Name='Name';Expression={$_.Service}} |
     Stop-Service
 ```
 
-In this example, `Select-Object` was used to rename the **Service** property to a property named
-**Name**.
-
-The syntax this example may seem a little complicated at first. What I have learned is that you'll
-never learn the syntax by copy and pasting code. Take the time to type the code in. After a few
-times, it becomes second nature. Having multiple monitors is a huge benefit because you can display
-the example code on one screen and type it in on another one.
-
-Occasionally, you may want to use a parameter that doesn't accept pipeline input. The following
-example demonstrates using the output of one command as input for another. First save the display
-name for a couple of Windows services into a text file.
+There are instances where you might need to use a parameter that doesn't accept pipeline input. In
+such cases, you can still use the output of one command as the input for another. First, capture and
+save the display names of a few specific Windows services into a text file. This step allows you to
+use the saved data as input for another command.
 
 ```powershell
 'Background Intelligent Transfer Service', 'Windows Time' |
-Out-File -FilePath $env:TEMP\services.txt
+    Out-File -FilePath $env:TEMP\services.txt
 ```
 
-You can run the command that provides the needed output within parentheses as the value for the
-parameter of the command requiring the input.
+You can use parentheses to pass the output of one command as input for a parameter to another
+command.
 
 ```powershell
 Stop-Service -DisplayName (Get-Content -Path $env:TEMP\services.txt)
 ```
 
-This is just like order of operations in Algebra for those of you who remember how it works. The
-command within parentheses always runs prior to the outer portion of the command.
+This concept is like the order of operations in Algebra. Just as mathematical operations within
+parentheses are computed first, the command enclosed in parentheses is executed before the outer
+command.
 
 ## PowerShellGet
 
-PowerShellGet is a PowerShell module that contains commands for discovering, installing, publishing,
-and updating PowerShell modules (and other artifacts) to or from a NuGet repository. PowerShellGet
-ships with PowerShell version 5.0 and higher. It is available as a separate download for PowerShell
-version 3.0 and higher.
+**PowerShellGet**, a module included with PowerShell version 5.0 and higher, provides commands to
+discover, install, update, and publish PowerShell modules and other items in a NuGet repository. For
+those using PowerShell version 3.0 and above, PowerShellGet is also available as a separate
+download.
 
-Microsoft hosts an online NuGet repository called the [PowerShell Gallery][PowerShell Gallery].
-Although this repository is hosted by Microsoft, the majority of the modules contained within the
-repository aren't written by Microsoft. Any code obtain from the PowerShell Gallery should be
-thoroughly reviewed in an isolated test environment before being considered suitable for use in a
-production environment.
+The [PowerShell Gallery][powerShell-gallery] is an online repository hosted by Microsoft, designed
+as a central hub for sharing PowerShell modules, scripts, and other resources. While Microsoft hosts
+the PowerShell Gallery, the PowerShell community contributes most of the available modules and
+scripts. Given the source of these modules and scripts, exercise caution before integrating any code
+from the PowerShell Gallery into your environment. Review and test downloads from the PowerShell
+Gallery in an isolated test environment. This process ensures the code is secure and reliable, works
+as expected, and safeguards your environment from potential issues or vulnerabilities arising from
+unvetted code.
 
-Most companies will want to host their own internal private NuGet repository where they can post
-their internal use only modules as well as modules that they've downloaded from other sources once
-they've validated them as being non-malicious.
+Many organizations opt to establish their own internal, private NuGet repository. This repository
+serves a dual purpose. First, it acts as a secure location for storing modules developed in-house,
+intended solely for internal use. Secondly, it provides a vetted collection of modules sourced
+externally, including those from public repositories. Companies typically undertake a thorough
+validation process before adding these external modules to the internal repository. This process is
+important to ensure the modules are free from malicious content and align with the security and
+operational standards of the company.
 
-Use the `Find-Module` cmdlet that's part of the PowerShellGet module to find a module in the
-PowerShell Gallery that I wrote named MrToolkit.
+Use the `Find-Module` cmdlet that's part of the **PowerShellGet** module to find a module in the
+PowerShell Gallery that I wrote named **MrToolkit**.
 
 ```powershell
 Find-Module -Name MrToolkit
@@ -588,36 +651,37 @@ Find-Module -Name MrToolkit
 
 ```Output
 NuGet provider is required to continue
-PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with
-NuGet-based repositories. The NuGet provider must be available in 'C:\Program
-Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\MrAdmin\AppData\Local\PackageManagement\ProviderAssemblies'. You can also
-install the NuGet provider by running 'Install-PackageProvider -Name NuGet
--MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the
-NuGet provider now?
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to
+interact with NuGet-based repositories. The NuGet provider must be available
+ in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
+'C:\Users\mikefrobbins\AppData\Local\PackageManagement\ProviderAssemblies'.
+You can also install the NuGet provider by running 'Install-PackageProvider
+-Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to
+install and import the NuGet provider now?
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
 
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.1        MrToolkit                           PSGallery            Misc PowerShell Tools
+Version    Name                      Repository        Description
+-------    ----                      ----------        -----------
+1.3        MrToolkit                 PSGallery         Misc PowerShell Tools
 ```
 
-The first time you use one of the commands from the PowerShellGet module, you'll be prompted to
+The first time you use one of the commands from the **PowerShellGet** module, you're prompted to
 install the NuGet provider.
 
-To install the MrToolkit module, pipe the previous command to `Install-Module`.
+To install the **MrToolkit** module, pipe the previous command to `Install-Module`.
 
 ```powershell
-Find-Module -Name MrToolkit | Install-Module
+Find-Module -Name MrToolkit | Install-Module -Scope CurrentUser
 ```
 
 ```Output
 Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this
-repository, change its InstallationPolicy value by running the Set-PSRepository cmdlet.
-Are you sure you want to install the modules from
-'https://www.powershellgallery.com/api/v2/'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): y
+You are installing the modules from an untrusted repository. If you trust
+this repository, change its InstallationPolicy value by running the
+Set-PSRepository cmdlet. Are you sure you want to install the modules from
+'https://www.powershellgallery.com/api/v2'?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
+(default is "N"):y
 ```
 
 Since the PowerShell Gallery is an untrusted repository, it prompts you to approve the installation
@@ -625,48 +689,66 @@ of the module.
 
 ## Finding pipeline input the easy way
 
-The MrToolkit module contains a function named `Get-MrPipelineInput`. This cmdlet can be used to
-easily determine which parameters of a command accept pipeline input, what type of object they
-accept, and if they accept pipeline input **by value** or **by property name**.
+The **MrToolkit** module includes a function named `Get-MrPipelineInput`. This cmdlet is designed to
+provide users with a convenient method for identifying the parameters of a command capable of
+accepting pipeline input. Specifically, it reveals three key aspects:
+
+- Which parameters of a command can receive pipeline input
+- The type of object each parameter accepts
+- Whether they accept pipeline input **by value** or **by property name**
+
+This capability dramatically simplifies the process of understanding and utilizing the pipeline
+capabilities of PowerShell commands.
+
+The information previously obtained by analyzing the help documentation can be determined using this
+function.
 
 ```powershell
-Get-MrPipelineInput -Name Stop-Service
+Get-MrPipelineInput -Name Stop-Service | Format-List
 ```
 
 ```Output
-ParameterName ParameterType                             ValueFromPipeline ValueFromPipelineByPropertyName
-------------- -------------                             ----------------- ---------------
-InputObject   System.ServiceProcess.ServiceController[]              True           False
-Name          System.String[]                                        True            True
-```
+ParameterName                   : InputObject
+ParameterType                   : System.ServiceProcess.ServiceController[]
+ValueFromPipeline               : True
+ValueFromPipelineByPropertyName : False
 
-As you can see, the same information we previously determined by sifting through the help can easily
-be determined with this function.
+ParameterName                   : Name
+ParameterType                   : System.String[]
+ValueFromPipeline               : True
+ValueFromPipelineByPropertyName : True
+```
 
 ## Summary
 
-In this chapter, you've learned about PowerShell one-liners. You've learned that the number of
-physical lines that a command is on has nothing to do with whether or not it's a PowerShell
-one-liner. You've also learned about filtering left, the pipeline, and PowerShellGet.
+In this chapter, you learned about the intricacies of PowerShell one-liners. You also learned that
+the physical line count of a command is irrelevant to its classification as a PowerShell one-liner.
+Additionally, you learned about key concepts such as filtering left, the pipeline, and
+**PowerShellGet**.
 
 ## Review
 
-1. What is a PowerShell one-liner?
-1. What are some of the characters where natural line breaks can occur in PowerShell?
+1. What's a PowerShell one-liner?
+1. What are some characters where natural line breaks can occur in PowerShell?
 1. Why should you filter left?
 1. What are the two ways that a PowerShell command can accept pipeline input?
 1. Why shouldn't you trust commands found in the PowerShell Gallery?
 
-## Recommended Reading
+## References
 
-- [about_Pipelines][about_Pipelines]
-- [about_Command_Syntax][about_Command_Syntax]
-- [about_Parameters][about_Parameters]
+- [about_Pipelines][about-pipelines]
+- [about_Command_Syntax][about-command-syntax]
+- [about_Parameters][about-parameters]
 - [PowerShellGet: The BIG EASY way to discover, install, and update PowerShell modules][psget]
 
+## Next steps
+
+In the next chapter, you'll learn about formatting, aliases, providers, and comparison operators.
+
 <!-- link references-->
-[about_Pipelines]: /powershell/module/microsoft.powershell.core/about/about_pipelines
-[about_Command_Syntax]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
-[about_Parameters]: /powershell/module/microsoft.powershell.core/about/about_parameters
+
+[about-pipelines]: /powershell/module/microsoft.powershell.core/about/about_pipelines
+[about-command-syntax]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
+[about-parameters]: /powershell/module/microsoft.powershell.core/about/about_parameters
 [psget]: https://mikefrobbins.com/2015/04/23/powershellget-the-big-easy-way-to-discover-install-and-update-powershell-modules/
-[PowerShell Gallery]: https://www.powershellgallery.com/
+[powerShell-gallery]: https://www.powershellgallery.com/

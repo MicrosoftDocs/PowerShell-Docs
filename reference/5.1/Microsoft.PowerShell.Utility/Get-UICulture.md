@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/04/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-uiculture?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-uiculture?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-UICulture
 ---
+
 # Get-UICulture
 
 ## SYNOPSIS
@@ -78,15 +79,18 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### System.Globalization.CultureInfo, Microsoft.PowerShell.VistaCultureInfo
+### System.Globalization.CultureInfo
 
-`Get-UICulture` returns an object that represents the current UI culture. In Windows PowerShell 3.0,
-it returns a **CultureInfo** object. In Windows PowerShell 2.0, it returns a **VistaCultureInfo**
-object.
+This cmdlet returns an object representing the current UI culture. In PowerShell 3.0 and later,
+it returns a **CultureInfo** object.
+
+### Microsoft.PowerShell.VistaCultureInfo
+
+In Windows PowerShell 2.0 and earlier, this cmdlet returns a **VistaCultureInfo** object.
 
 ## NOTES
 

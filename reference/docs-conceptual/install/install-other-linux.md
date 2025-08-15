@@ -1,18 +1,18 @@
 ---
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 05/31/2022
+ms.date: 07/03/2025
 title: Alternate ways to install PowerShell on Linux
 ---
 # Alternate ways to install PowerShell on Linux
 
-All packages are available on our GitHub [releases][releases] page. After the package is installed,
-run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
+All packages are available on our GitHub [releases][14] page. After the package is installed, run
+`pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
 
 There are three other ways to install PowerShell on a Linux distribution:
 
-- Install using a [Snap Package](#snap-package)
-- Install using the [binary archives](#binary-archives)
-- Install as a [.NET Global tool](#install-as-a-net-global-tool)
+- Install using a [Snap Package][11]
+- Install using the [binary archives][09]
+- Install as a [.NET Global tool][10]
 
 ## Snap Package
 
@@ -22,20 +22,20 @@ the distribution you're running the package on.
 
 > [!IMPORTANT]
 > The Snap Store contains PowerShell snap packages for many Linux distributions that are not
-> officially supported by Microsoft. For support, see the list of available
-> [Community Support][community] options.
+> officially supported by Microsoft. For support, see the list of available [Community Support][08]
+> options.
 
 ### Getting snapd
 
-`snapd` is required to run snaps. Use [these instructions](https://docs.snapcraft.io/core/install)
-to make sure you have `snapd` installed.
+`snapd` is required to run snaps. Use [these instructions][15] to make sure you have `snapd`
+installed.
 
 ### Installation via Snap
 
-PowerShell for Linux is published to the [Snap store](https://snapcraft.io/store) for easy
-installation and updates.
+There are two PowerShell for Linux is published to the [Snap store][17]: `powershell` and
+`powershell-preview`.
 
-The preferred method is as follows:
+Use the following command to install the latest stable version of PowerShell:
 
 ```sh
 # Install PowerShell
@@ -44,6 +44,21 @@ sudo snap install powershell --classic
 # Start PowerShell
 pwsh
 ```
+
+If you don't specify the `--channel` parameter, Snap installs the latest stable version. To install
+the latest LTS version, use the following method:
+
+```sh
+# Install PowerShell
+sudo snap install powershell --channel=lts/stable --classic
+
+# Start PowerShell
+pwsh
+```
+
+> [!NOTE]
+> Microsoft only supports the `latest/stable` and `lts/stable` channels for the `powershell`
+> package. Do not install packages from the other channels.
 
 To install a preview version, use the following method:
 
@@ -54,6 +69,10 @@ sudo snap install powershell-preview --classic
 # Start PowerShell
 pwsh-preview
 ```
+
+> [!NOTE]
+> Microsoft only supports the `latest/stable` channel for the `powershell-preview` package. Do not
+> install packages from the other channels.
 
 After installation, Snap will automatically upgrade. You can trigger an upgrade using
 `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.
@@ -78,9 +97,9 @@ scenarios.
 > [!NOTE]
 > You can use this method to install any version of PowerShell including the latest:
 >
-> - Stable release: [https://aka.ms/powershell-release?tag=stable][current]
-> - LTS release: [https://aka.ms/powershell-release?tag=lts][lts]
-> - Preview release: [https://aka.ms/powershell-release?tag=preview][preview]
+> - Stable release: [https://aka.ms/powershell-release?tag=stable][00]
+> - LTS release: [https://aka.ms/powershell-release?tag=lts][12]
+> - Preview release: [https://aka.ms/powershell-release?tag=preview][13]
 
 ### Dependencies
 
@@ -92,37 +111,37 @@ when manually installing from the binary archives. The following list details Li
 that are supported by Microsoft and have dependencies you may need to install. Check the
 distribution page for more information:
 
-- [Alpine](/dotnet/core/install/linux-alpine#dependencies)
-- [Debian](/dotnet/core/install/linux-debian#dependencies)
-- [RHEL](/dotnet/core/install/linux-rhel#dependencies)
-- [SLES](/dotnet/core/install/linux-sles#dependencies)
-- [Ubuntu](/dotnet/core/install/linux-ubuntu#dependencies)
+- [Alpine][01]
+- [Debian][02]
+- [RHEL][03]
+- [SLES][04]
+- [Ubuntu][05]
 
 To deploy PowerShell binaries on Linux distributions that aren't officially supported, you need to
 install the necessary dependencies for the target OS in separate steps. For example, our
-[Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the
-Linux `tar.gz` archive.
+[Amazon Linux dockerfile][16] installs dependencies first, and then extracts the Linux `tar.gz`
+archive.
 
 ### Installation using a binary archive file
 
 > [!IMPORTANT]
 > This method can be used to install PowerShell on any version of Linux, including distributions
 > that are not officially supported by Microsoft. Be sure to install any necessary dependencies. For
-> support, see the list of available [Community Support][community] options.
+> support, see the list of available [Community Support][08] options.
 
 The following example shows the steps for installing the x64 binary archive. You must choose the
 correct binary archive that matches the processor type for your platform.
 
-- powershell-7.2.3-linux-arm32.tar.gz
-- powershell-7.2.3-linux-arm64.tar.gz
-- powershell-7.2.3-linux-x64.tar.gz
+- `powershell-7.5.2-linux-arm32.tar.gz`
+- `powershell-7.5.2-linux-arm64.tar.gz`
+- `powershell-7.5.2-linux-x64.tar.gz`
 
 Use the following shell commands to download and install PowerShell from the `tar.gz` binary
 archive. Change the URL to match the version of PowerShell you want to install.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.2.3/powershell-7.2.3-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell-7.5.2-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -145,8 +164,8 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## Install as a .NET Global tool
 
-If you already have the [.NET Core SDK](/dotnet/core/sdk) installed, it's easy to install PowerShell
-as a [.NET Global tool](/dotnet/core/tools/global-tools).
+If you already have the [.NET Core SDK][06] installed, it's easy to install PowerShell
+as a [.NET Global tool][07].
 
 ```sh
 dotnet tool install --global PowerShell
@@ -156,9 +175,22 @@ The dotnet tool installer adds `~/.dotnet/tools` to your `PATH` environment vari
 currently running shell does not have the updated `PATH`. You should be able to start PowerShell
 from a new shell by typing `pwsh`.
 
-[releases]: https://aka.ms/PowerShell-Release?tag=stable
-[community]: /powershell/scripting/community/community-support
-[amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
-[current]: https://aka.ms/powershell-release?tag=stable
-[lts]: https://aka.ms/powershell-release?tag=lts
-[preview]: https://aka.ms/powershell-release?tag=preview
+<!-- link references -->
+[00]: https://aka.ms/powershell-release?tag=stable
+[01]: /dotnet/core/install/linux-alpine#dependencies
+[02]: /dotnet/core/install/linux-debian#dependencies
+[03]: /dotnet/core/install/linux-rhel#dependencies
+[04]: /dotnet/core/install/linux-sles#dependencies
+[05]: /dotnet/core/install/linux-ubuntu#dependencies
+[06]: /dotnet/core/sdk
+[07]: /dotnet/core/tools/global-tools
+[08]: /powershell/scripting/community/community-support
+[09]: #binary-archives
+[10]: #install-as-a-net-global-tool
+[11]: #snap-package
+[12]: https://aka.ms/powershell-release?tag=lts
+[13]: https://aka.ms/powershell-release?tag=preview
+[14]: https://aka.ms/PowerShell-Release?tag=stable
+[15]: https://docs.snapcraft.io/core/install
+[16]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/unstable/amazonlinux/docker/Dockerfile
+[17]: https://snapcraft.io/store

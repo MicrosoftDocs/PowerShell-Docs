@@ -2,8 +2,8 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 10/04/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/test-wsman?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/test-wsman?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-WSMan
 ---
@@ -49,24 +49,24 @@ This command determines whether the WinRM service is running on the server01 com
 ### Example 3: Determine the status of the WinRM service and the operating system version
 
 ```powershell
-Test-WSMan -Authentication default
+Test-WSMan -Authentication Default
 ```
 
 This command tests to see whether the WS-Management (WinRM) service is running on the local computer
-by using the authentication parameter.
+by using the **Authentication** parameter.
 
-Using the authentication parameter enables `Test-WSMan` to return the operating system version.
+Using the **Authentication** parameter enables `Test-WSMan` to return the operating system version.
 
 ### Example 4: Determine the status of the WinRM service and the OS version on a remote computer
 
 ```powershell
-Test-WSMan -ComputerName "server01" -Authentication default
+Test-WSMan -ComputerName "server01" -Authentication Default
 ```
 
 This command tests to see whether the WS-Management (WinRM) service is running on the computer named
-server01 using the authentication parameter.
+server01 using the **Authentication** parameter.
 
-Using the authentication parameter enables `Test-WSMan` to return the operating system version.
+Using the **Authentication** parameter enables `Test-WSMan` to return the operating system version.
 
 ## PARAMETERS
 
@@ -123,7 +123,7 @@ parameter are:
 > credentials are passed to it, the credentials can be used to control the network session.
 
 > [!IMPORTANT]
-> If you do not specify the **Authentication** parameter,, the `Test-WSMan` request is sent to the
+> If you do not specify the **Authentication** parameter, the `Test-WSMan` request is sent to the
 > remote computer anonymously, without using authentication. If the request is made anonymously, it
 > returns no information that is specific to the operating-system version. Instead, this cmdlet
 > displays null values for the operating system version and service pack level (OS: 0.0.0 SP: 0.0).
@@ -256,13 +256,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output object.
+This cmdlet returns no output.
 
 ## NOTES
 

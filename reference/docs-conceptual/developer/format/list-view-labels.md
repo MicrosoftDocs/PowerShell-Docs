@@ -1,13 +1,12 @@
 ---
 description: List View (Labels)
 ms.date: 08/23/2021
-ms.topic: reference
 title: List View (Labels)
 ---
 # List View (Labels)
 
 This example shows how to implement a list view that displays a custom label for each row of the
-list. This list view displays the properties of the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+list. This list view displays the properties of the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object that is returned by the [Get-Service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)
 cmdlet. For more information about the components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
@@ -19,12 +18,12 @@ cmdlet. For more information about the components of a list view, see [Creating 
    formatting file.
 
 1. Open Windows PowerShell, and run the following command to load the formatting file into the
-   current session: `Update-formatdata -prependpath PathToFormattingFile`.
+   current session: `Update-FormatData -PrependPath PathToFormattingFile`.
 
 > [!WARNING]
 
 > This formatting file defines the display of an object that is already defined by a Windows
-> PowerShell formatting file. You must use the `prependPath` parameter when you run the cmdlet, and
+> PowerShell formatting file. You must use the `PrependPath` parameter when you run the cmdlet, and
 > you cannot load this formatting file as a module.
 
 ## Demonstrates
@@ -92,7 +91,7 @@ the name of the property is displayed followed by the value of the property.
 </Configuration>
 ```
 
-The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+The following example shows how Windows PowerShell displays the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 objects after this format file is loaded.
 
 ```powershell

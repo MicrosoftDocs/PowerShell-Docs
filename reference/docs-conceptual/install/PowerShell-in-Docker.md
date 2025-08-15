@@ -1,73 +1,71 @@
 ---
-description: How to use PowerShell that is preinstalled in a Docker image.
-ms.date: 05/31/2022
+description: How to use PowerShell in a Docker image.
+ms.date: 03/11/2025
 ms.devlang: powershell
-ms.topic: conceptual
-title: Using PowerShell in Docker
+title: Use PowerShell in Docker
 ---
 
-# Using PowerShell in Docker
+# Use PowerShell in Docker
 
-We publish Docker images with PowerShell preinstalled. This article shows you how to get
-started using PowerShell in the Docker container.
+The .NET team publishes Docker images with PowerShell preinstalled. This article shows you how to
+get started using PowerShell in the Docker container.
 
-## Finding available images
+## Find available images
 
-The released images require Docker 17.05 or newer. It is also expected that you are able to run
-Docker without `sudo` or local administrative rights. Please follow Docker's official
-[instructions][install] to install `docker` correctly.
+These images require Docker 17.05 or newer. Also, you must be able to run Docker without `sudo` or
+local administrative rights. For install instructions, see Docker's official [documentation][02].
 
-The release containers derive from the official distribution image, then install dependencies, and
-finally install the PowerShell package.
+The .NET team publishes several Docker images designed for different development scenarios. Only the
+image for the .NET SDK contains PowerShell. For more information, see
+[Official .NET Docker images][01].
 
-These containers live at [hub.docker.com/r/microsoft/powershell][docker-release].
+## Use PowerShell in a container
 
-For more information about these Docker images, visit the [PowerShell-Docker][PowerShell-Docker]
-repository on GitHub.
-
-## Using PowerShell in a container
-
-The following steps show the Docker commands required to download the image and start an interactive
-PowerShell session.
+The following command downloads the image containing the latest available stable versions of the
+.NET SDK and PowerShell.
 
 ```console
-docker run -it mcr.microsoft.com/powershell
+docker pull mcr.microsoft.com/dotnet/sdk:9.0
 ```
 
-### Remove the image when no longer needed
-
-The following command is used to delete the Docker image when you no longer need it.
+Use the following command to start an interactive PowerShell session in the container.
 
 ```console
-docker rmi mcr.microsoft.com/powershell
+docker run -it mcr.microsoft.com/dotnet/sdk:9.0 pwsh
 ```
 
-## Legal and Licensing
+To download and run the latest Long Term Support (LTS) version of PowerShell, change the image name
+to `mcr.microsoft.com/dotnet/sdk:8.0`. When you use these image tags, Docker downloads the
+appropriate image for your host operating system. If you want an image for a specific operating
+system, you can specify the operating system in the image tag. See the
+[Microsoft Artifact Registry][07] for a list of available tags.
 
-PowerShell is licensed under the [MIT license][mit].
+- For more information about tags, the [Supported tag policy][06]
+- For more information about supported operating systems, see the [Supported platforms policy][05]
 
-### Windows Docker File and Image Licenses
+## Support lifecycle
 
-By requesting and using the Container OS Image for Windows containers, you acknowledge,
-understand, and consent to the Supplemental License Terms available on Docker hub:
+The [.NET support policy][03] defines how these images are supported. These images are provided for
+development and testing purposes only. If you need a production-ready image, you should build your
+own images. For more information about these Docker images, visit the [dotnet-docker][04] repository
+on GitHub.
 
-- [Window Server Core][Window Server Core]
-- [Nano Server][Nano Server]
+The images previously published by the PowerShell team will be marked as deprecated in the Microsoft
+Container Registry (MCR).
 
-### Telemetry
+## Telemetry
 
-By default, PowerShell collects limited telemetry without personally identifiable information to
-help aid development of future versions of PowerShell. To opt-out of sending telemetry, create an
-environment variable called `POWERSHELL_TELEMETRY_OPTOUT` set to a value of `1` before starting
-PowerShell from the installed location. The telemetry we collect falls under the
-[Microsoft Privacy Statement][privacy].
+By default, PowerShell collects limited telemetry without personal data to help aid development of
+future versions of PowerShell. To opt-out of sending telemetry, create an environment variable
+called `POWERSHELL_TELEMETRY_OPTOUT` set to a value of `1` before starting PowerShell from the
+installed location. The telemetry we collect falls under the [Microsoft Privacy Statement][08].
 
 <!-- link references -->
-[install]: https://docs.docker.com/engine/installation/
-[docker-release]: https://hub.docker.com/r/microsoft/powershell/
-[appinsights]: https://azure.microsoft.com/services/application-insights/
-[mit]: https://github.com/PowerShell/PowerShell/tree/master/LICENSE.txt
-[PowerShell-Docker]: https://github.com/PowerShell/PowerShell-Docker
-[Window Server Core]: https://hub.docker.com/r/microsoft/windowsservercore/
-[Nano Server]: https://hub.docker.com/r/microsoft/nanoserver/
-[privacy]: https://privacy.microsoft.com/privacystatement/
+[01]: /dotnet/architecture/microservices/net-core-net-framework-containers/official-net-docker-images
+[02]: https://docs.docker.com/engine/installation/
+[03]: https://github.com/dotnet/core/blob/main/support.md
+[04]: https://github.com/dotnet/dotnet-docker
+[05]: https://github.com/dotnet/dotnet-docker/blob/main/documentation/supported-platforms.md
+[06]: https://github.com/dotnet/dotnet-docker/blob/main/documentation/supported-tags.md
+[07]: https://mcr.microsoft.com/en-us/artifact/mar/dotnet/sdk/about
+[08]: https://privacy.microsoft.com/privacystatement/

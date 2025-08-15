@@ -2,9 +2,9 @@
 description: Describes the `Suspend-Workflow` activity, which suspends the workflow in which the activity appears.
 Locale: en-US
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_suspend-workflow?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psworkflow/about/about_suspend-workflow?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Suspend-Workflow
+title: about_Suspend-Workflow
 ---
 
 # about_Suspend-Workflow
@@ -27,8 +27,7 @@ cmdlet. You can't resume a workflow from within the workflow.
 ## Syntax
 
 ```
-workflow <Verb-Noun>
-{
+workflow <Verb-Noun> {
     Suspend-Workflow
 }
 ```
@@ -54,8 +53,7 @@ that represents the suspended workflow. The job type is **PSWorkflowJob**.
 You can use the job cmdlets, such as `Get-Job`, to manage the workflow job.
 
 ```powershell
-Workflow Test-Suspend
-{
+workflow Test-Suspend {
     $a = Get-Date
     Suspend-Workflow
     (Get-Date)- $a

@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/12/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/convert-path?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 09/05/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/convert-path?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - cvpa
 title: Convert-Path
 ---
 # Convert-Path
@@ -66,9 +68,12 @@ C:\Users\User01
 ### -LiteralPath
 
 Specifies, as a string array, the path to be converted. The value of the **LiteralPath** parameter
-is used exactly as it is typed. No characters are interpreted as wildcards. If the path includes
+is used exactly as it's typed. No characters are interpreted as wildcards. If the path includes
 escape characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not
 to interpret any characters as escape sequences.
+
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -95,13 +100,13 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName, ByValue)
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see [about_transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -136,19 +141,23 @@ This cmdlet returns a string that contains the converted path.
 
 ## NOTES
 
-The cmdlets that contain the Path noun manipulate path names and return the names in a concise
-format that all PowerShell providers can interpret. They are designed for use in programs and
-scripts where you want to display all or part of a path name in a particular format. Use them like
-you would use **Dirname**, **Normpath**, **Realpath**, **Join**, or other path manipulators.
+Windows PowerShell includes the following aliases for `Convert-Path`:
 
-You can use the path cmdlets with several providers, including the FileSystem, Registry, and
-Certificate providers.
+- `cvpa`
+
+The cmdlets that contain the Path noun manipulate path names and return the names in a concise
+format that all PowerShell providers can interpret. They're designed for use in programs and
+scripts where you want to display all or part of a path in a particular format. Use them like you
+would use **Dirname**, **Normpath**, **Realpath**, **Join**, or other path manipulators.
+
+You can use the path cmdlets with several providers, including the **FileSystem**, **Registry**,
+and **Certificate** providers.
 
 This cmdlet is designed to work with the data exposed by any provider. To list the providers
 available in your session, type `Get-PSProvider`. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-`Convert-Path` only converts existing paths. It cannot be used to convert a location that does not
+`Convert-Path` only converts existing paths. It can't be used to convert a location that doesn't
 exist yet.
 
 ## RELATED LINKS

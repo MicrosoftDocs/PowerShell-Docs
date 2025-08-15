@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 09/30/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-EventLog
 ---
@@ -119,7 +119,7 @@ The third command lists the event logs again. The ZapLog event log no longer app
 ### Example 5: Remove an event source and confirm the action
 
 ```powershell
-Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'" | foreach {$_.sources}
+Get-WmiObject Win32_NTEventlogFile -Filter "logfilename='TestLog'" | foreach {$_.Sources}
 ```
 
 ```Output
@@ -129,7 +129,7 @@ TestApp
 
 ```powershell
 Remove-Eventlog -Source "MyApp"
-Get-WmiObject win32_nteventlogfile -Filter "logfilename='TestLog'"} | foreach {$_.sources}
+Get-WmiObject Win32_NTEventlogFile -Filter "logfilename='TestLog'"} | foreach {$_.Sources}
 ```
 
 ```Output

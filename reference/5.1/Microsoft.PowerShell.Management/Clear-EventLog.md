@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/clear-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-EventLog
 ---
@@ -51,7 +51,7 @@ Office Sessions (OSession) logs on the local computer and the Server02 remote co
 ### Example 3: Clear all logs on the specified computers then display the event log list
 
 ```powershell
-Clear-EventLog -LogName application, system -confirm
+Clear-EventLog -LogName Application, System -Confirm
 ```
 
 This command prompts you for confirmation before deleting the entries in the specified event logs.
@@ -59,11 +59,11 @@ This command prompts you for confirmation before deleting the entries in the spe
 ### Example 4: Clear all logs on the specified computers then display the event log list
 
 ```powershell
-function clear-all-event-logs ($computerName="localhost")
+function clear-all-event-logs ($ComputerName="localhost")
 {
-   $logs = Get-EventLog -ComputerName $computername -List | ForEach-Object {$_.Log}
-   $logs | ForEach-Object {Clear-EventLog -ComputerName $computername -LogName $_ }
-   Get-EventLog -ComputerName $computername -list
+   $logs = Get-EventLog -ComputerName $ComputerName -List | ForEach-Object {$_.Log}
+   $logs | ForEach-Object {Clear-EventLog -ComputerName $ComputerName -LogName $_ }
+   Get-EventLog -ComputerName $ComputerName -List
 }
 
 clear-all-event-logs -ComputerName Server01

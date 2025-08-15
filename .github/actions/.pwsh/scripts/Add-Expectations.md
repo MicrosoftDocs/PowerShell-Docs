@@ -8,7 +8,7 @@ Ensures all open community PRs have an expectations comment.
 
 ### __AllParameterSets (default)
 
-```syntax
+```Syntax
 .\Add-Expectations.ps1
     [-Owner] <string>
     [-Repo] <string>

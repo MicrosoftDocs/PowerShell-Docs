@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/04/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-pscallstack?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/28/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-pscallstack?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gcs
 title: Get-PSCallStack
 ---
+
 # Get-PSCallStack
 
 ## SYNOPSIS
@@ -32,32 +35,32 @@ To run a `Get-PSCallStack` command while in the debugger, type `k` or `Get-PSCal
 ### Example 1: Get the call stack for a function
 
 ```powershell
-PS C:\> function my-alias {
+PS C:\> function My-Alias {
 $p = $args[0]
-Get-Alias | where {$_.definition -like "*$p"} | format-table definition, name -auto
+Get-Alias | where {$_.Definition -like "*$p"} | Format-Table Definition, Name -Auto
 }
-PS C:\ps-test> Set-PSBreakpoint -Command my-alias
-Command    : my-alias
+PS C:\ps-test> Set-PSBreakpoint -Command My-Alias
+Command    : My-Alias
 Action     :
 Enabled    : True
 HitCount   : 0
 Id         : 0
-Script     : prompt PS C:\> my-alias Get-Content
+Script     : prompt PS C:\> My-Alias Get-Content
 
 Entering debug mode. Use h or ? for help.
-Hit Command breakpoint on 'prompt:my-alias'
-my-alias get-content
+Hit Command breakpoint on 'prompt:My-Alias'
+My-Alias Get-Content
 [DBG]: PS C:\ps-test> s
 $p = $args[0]
 DEBUG: Stepped to ':    $p = $args[0]    '
 [DBG]: PS C:\ps-test> s
-get-alias | Where {$_.Definition -like "*$p*"} | format-table Definition,
-[DBG]: PS C:\ps-test>get-pscallstack
+Get-Alias | where {$_.Definition -like "*$p*"} | Format-Table Definition,
+[DBG]: PS C:\ps-test>Get-PSCallStack
 
 Name        CommandLineParameters         UnboundArguments              Location
 ----        ---------------------         ----------------              --------
 prompt      {}                            {}                            prompt
-my-alias    {}                            {get-content}                 prompt
+My-Alias    {}                            {Get-Content}                 prompt
 prompt      {}                            {}                            prompt
 
 PS C:\> [DBG]: PS C:\ps-test> o
@@ -95,15 +98,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.CallStackFrame
 
-`Get-PSCallStack` returns an object that represents the items in the call stack.
+This cmdlet returns an object representing the items in the call stack.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-PSCallStack`:
+
+- `gcs`
 
 ## RELATED LINKS
 

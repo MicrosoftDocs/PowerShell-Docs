@@ -5,6 +5,8 @@ title: Statements
 ---
 # 8. Statements
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 ## 8.1 Statement blocks and lists
 
 Syntax:
@@ -61,10 +63,10 @@ labeled-statement:
 
 Description:
 
-An iteration statement ([§8.4][§8.4]) or a switch statement ([§8.6][§8.6]) may optionally be preceded
-immediately by one statement label, *label*. A statement label is used as the optional target of a
-break ([§8.5.1][§8.5.1]) or continue ([§8.5.2][§8.5.2]) statement. However, a label does not alter the flow of
-control.
+An iteration statement ([§8.4][§8.4]) or a switch statement ([§8.6][§8.6]) may optionally be
+preceded immediately by one statement label, *label*. A statement label is used as the optional
+target of a break ([§8.5.1][§8.5.1]) or continue ([§8.5.2][§8.5.2]) statement. However, a label
+does not alter the flow of control.
 
 White space is not permitted between the colon (`:`) and the token that follows it.
 
@@ -226,14 +228,14 @@ governing arguments are as follows:
 - Putting parentheses around an argument causes that expression to be evaluated with the result
   being passed instead of the text of the original expression.
 
-- To pass an argument that looks like a switch parameter ([§2.3.4][§2.3.4]) but is not intended as such,
-  enclose that argument in quotes.
+- To pass an argument that looks like a switch parameter ([§2.3.4][§2.3.4]) but is not intended as
+  such, enclose that argument in quotes.
 
 - When specifying an argument that matches a parameter having the `[switch]` type constraint
-  ([§8.10.5][§8.10.5]), the presence of the argument name on its own causes that parameter to be set to
-  `$true`. However, the parameter's value can be set explicitly by appending a suffix to the
-  argument. For example, given a type constrained parameter *p*, an argument of `-p:$true` sets p to
-  True, while `-p:$false` sets p to False.
+  ([§8.10.5][§8.10.5]), the presence of the argument name on its own causes that parameter to be
+  set to `$true`. However, the parameter's value can be set explicitly by appending a suffix to the
+  argument. For example, given a type constrained parameter *p*, an argument of `-p:$true` sets p
+  to True, while `-p:$false` sets p to False.
 
 - An argument of `--` indicates that all arguments following it are to be passed in their actual
   form as though double quotes were placed around them.
@@ -247,7 +249,7 @@ If the command type is Application, the parameter `--%` is not passed to the com
 after `--%` have any environment variables (strings surrounded by `%`) expanded. For example:
 
 ```powershell
-echoargs.exe --% "%path%" # %path% is replaced with the value $env:path
+echoargs.exe --% "%path%" # %path% is replaced with the value $Env:path
 ```
 
 The order of evaluation of arguments is unspecified.
@@ -256,16 +258,16 @@ For information about parameter binding see [§8.14][§8.14]. For information ab
 [§3.8][§3.8].
 
 Once argument processing has been completed, the command is invoked. If the invoked command
-terminates normally ([§8.5.4][§8.5.4]), control reverts to the point in the script or function immediately
-following the command invocation. For a description of the behavior on abnormal termination see
-`break` ([§8.5.1][§8.5.1]), `continue` ([§8.5.2][§8.5.2]), `throw` ([§8.5.3][§8.5.3]), `exit` ([§8.5.5][§8.5.5]), `try`
-([§8.7][§8.7]), and `trap` ([§8.8][§8.8]).
+terminates normally ([§8.5.4][§8.5.4]), control reverts to the point in the script or function
+immediately following the command invocation. For a description of the behavior on abnormal
+termination see `break` ([§8.5.1][§8.5.1]), `continue` ([§8.5.2][§8.5.2]), `throw`
+([§8.5.3][§8.5.3]), `exit` ([§8.5.5][§8.5.5]), `try` ([§8.7][§8.7]), and `trap` ([§8.8][§8.8]).
 
 Ordinarily, a command is invoked by using its name followed by any arguments. However, the
 command-invocation operator, &, can be used. If the command name contains unescaped white space, it
-must be quoted and invoked with this operator. As a script block has no name, it too must be invoked
-with this operator. For example, the following invocations of a command call `Get-Factorial` are
-equivalent:
+must be quoted and invoked with this operator. As a script block has no name, it too must be
+invoked with this operator. For example, the following invocations of a command call
+`Get-Factorial` are equivalent:
 
 ```powershell
 Get-Factorial 5
@@ -288,9 +290,11 @@ Examples:
 New-Object 'int[,]' 3,2
 New-Object -ArgumentList 3,2 -TypeName 'int[,]'
 
-dir e:\PowerShell\Scripts\*statement*.ps1 | Foreach-Object {$_.Length}
+dir E:\PowerShell\Scripts\*statement*.ps1 | ForEach-Object {$_.Length}
 
-dir e:\PowerShell\Scripts\*.ps1 | Select-String -List "catch" | Format-Table path,linenumber -AutoSize
+dir E:\PowerShell\Scripts\*.ps1 |
+    Select-String -List "catch" |
+    Format-Table Path, LineNumber -AutoSize
 ```
 
 ## 8.3 The if statement
@@ -784,15 +788,15 @@ switch-parameters:
     switch-parameters switch-parameter
 
 switch-parameter:
-    -regex
-    -wildcard
-    -exact
-    -casesensitive
-    -parallel
+    -Regex
+    -Wildcard
+    -Exact
+    -CaseSensitive
+    -Parallel
 
 switch-condition:
     ( new-lines~opt~ pipeline new-lines~opt~ )
-    -file new-lines~opt~ switch-filename
+    -File new-lines~opt~ switch-filename
 
 switch-filename:
     command-argument
@@ -845,26 +849,26 @@ that *statement-block*'s *switch-clause-condition*.
 Matching of non-strings is done by testing for equality ([§7.8.1][§7.8.1]).
 
 If the matching involves strings, by default, the comparison is case-insensitive. The presence of
-the *switch-parameter* `-casesensitive` makes the comparison case-sensitive.
+the *switch-parameter* `-CaseSensitive` makes the comparison case-sensitive.
 
 A pattern may contain wildcard characters ([§3.15][§3.15]), in which case, wildcard string comparisons
-are performed, but only if the *switch-parameter* -wildcard is present. By default, the comparison
+are performed, but only if the *switch-parameter* `-Wildcard` is present. By default, the comparison
 is case-insensitive.
 
 A pattern may contain a regular expression ([§3.16][§3.16]), in which case, regular expression string
-comparisons are performed, but only if the *switch-parameter* `-regex` is present. By default, the
-comparison is case-insensitive. If `-regex` is present and a pattern is matched, `$matches` is
+comparisons are performed, but only if the *switch-parameter* `-Regex` is present. By default, the
+comparison is case-insensitive. If `-Regex` is present and a pattern is matched, `$Matches` is
 defined in the *switch-clause* *statement-block* for that pattern.
 
 A *switch-parameter* may be abbreviated; any distinct leading part of a parameter may be used. For
-example, `‑regex`, `‑rege`, `‑reg`, `‑re`, and `‑r` are equivalent.
+example, `‑Regex`, `‑Rege`, `‑Reg`, `‑Re`, and `‑R` are equivalent.
 
 If conflicting *switch-parameter*s are specified, the lexically final one prevails. The presence of
-`‑exact` disables `-regex` and `-wildcard`; it has no affect on `‑case`, however.
+`‑Exact` disables `-Regex` and `-Wildcard`; it has no affect on `‑Case`, however.
 
-If the *switch-parameter* `‑parallel` is specified, the behavior is implementation defined.
+If the *switch-parameter* `‑Parallel` is specified, the behavior is implementation defined.
 
-The *switch-parameter* `‑parallel` is only allowed in a workflow ([§8.10.2][§8.10.2]).
+The *switch-parameter* `‑Parallel` is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
 If a pattern is a *script-block-expression*, that block is evaluated and the result is converted to
 bool, if necessary. If the result has the value `$true`, the corresponding *statement-block* is
@@ -878,7 +882,7 @@ while that switch is executing.
 A switch statement may have a label, and it may contain labeled and unlabeled break ([§8.5.1][§8.5.1]) and
 continue ([§8.5.2][§8.5.2]) statements.
 
-If *switch-condition* is `-file` *switch-filename*, instead of iterating over the values in an
+If *switch-condition* is `-File` *switch-filename*, instead of iterating over the values in an
 expression, the switch iterates over the values in the file designated by *switch-filename*.The file
 is read a line at a time with each line comprising a value. Line terminator characters are not
 included in the values.
@@ -899,13 +903,13 @@ for ($i = 0; $i -lt $s.Length; ++$i) {
     }
 }
 
-switch -wildcard ("abc") {
+switch -Wildcard ("abc") {
     a* { "a*, $_" }
     ?B? { "?B? , $_" }
     default { "default, $_" }
 }
 
-switch -regex -casesensitive ("abc") {
+switch -Regex -CaseSensitive ("abc") {
     ^a* { "a*" }
     ^A* { "A*" }
 }
@@ -1009,7 +1013,7 @@ the `throw` statement.
 Examples:
 
 ```powershell
-$a = new-object 'int[]' 10
+$a = New-Object 'int[]' 10
 $i = 20 # out-of-bounds subscript
 
 while ($true) {
@@ -1141,7 +1145,7 @@ data-name:
     simple-name
 
 data-commands-allowed:
-    new-lines~opt~ -supportedcommand data-commands-list
+    new-lines~opt~ -SupportedCommand data-commands-list
 
 data-commands-list:
     new-lines~opt~ data-command
@@ -1165,14 +1169,14 @@ only:
 
 - All operators except `-match`
 - The `if` statement
-- The following automatic variables: `$PsCulture`, `$PsUICulture`, `$true`, `$false`, and `$null`.
+- The following automatic variables: `$PSCulture`, `$PSUICulture`, `$true`, `$false`, and `$null`.
 - Comments
 - Pipelines
 - Statements separated by semicolons (`;`)
 - Literals
 - Calls to the [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
   cmdlet
-- Any other cmdlets identified via the **supportedcommand** parameter
+- Any other cmdlets identified via the **SupportedCommand** parameter
 
 If the `ConvertFrom-StringData` cmdlet is used, the key/value pairs can be expressed using any form
 of string literal. However, *expandable-string-literal*s and *expandable-here-string-literal*s must
@@ -1181,12 +1185,12 @@ not contain any variable substitutions or sub-expression expansions.
 Examples:
 
 The **SupportedCommand** parameter indicates that the given cmdlets or functions generate data only.
-For example, the following data section includes a user-written cmdlet, `ConvertTo-XML`, which
+For example, the following data section includes a user-written cmdlet, `ConvertTo-Xml`, which
 formats data in an XML file:
 
 ```powershell
-data -supportedCommand ConvertTo-XML {
-    Format-XML -strings string1, string2, string3
+data -SupportedCommand ConvertTo-Xml {
+    Format-Xml -Strings string1, string2, string3
 }
 ```
 
@@ -1195,7 +1199,7 @@ command that converts the strings into a hash table, whose value is assigned to 
 
 ```powershell
 $messages = data {
-    ConvertFrom-StringData -stringdata @'
+    ConvertFrom-StringData -StringData @'
     Greeting = Hello
     Yes = yes
     No = no
@@ -1211,7 +1215,7 @@ be created in separate files, with the following data sections:
 
 ```powershell
 $messages = data {
-    ConvertFrom-StringData -stringdata @"
+    ConvertFrom-StringData -StringData @"
     Greeting = Guten Tag
     Yes = ja
     No = nein
@@ -1219,7 +1223,7 @@ $messages = data {
 }
 
 $messagesS = data {
-    ConvertFrom-StringData -stringdata @"
+    ConvertFrom-StringData -StringData @"
     Greeting = Buenos días
     Yes = sí
     No = no
@@ -1327,17 +1331,17 @@ Windows Workflow Foundation engine.
 Consider the following definition for a function called `Get-Power`:
 
 ```powershell
-function Get-Power ([long]$base, [int]$exponent) {
+function Get-Power ([long]$Base, [int]$Exponent) {
     $result = 1
-    for ($i = 1; $i -le $exponent; ++$i) {
-        $result *= $base
+    for ($i = 1; $i -le $Exponent; ++$i) {
+        $result *= $Base
     }
     return $result
 }
 ```
 
-This function has two parameters, `$base` and `$exponent`. It also contains a set of statements
-that, for non-negative exponent values, computes `$base^$exponent^` and returns the result to
+This function has two parameters, `$Base` and `$Exponent`. It also contains a set of statements
+that, for non-negative exponent values, computes `$Base^$Exponent^` and returns the result to
 `Get-Power`'s caller.
 
 When a script, function, or filter begins execution, each parameter is initialized to its
@@ -1374,10 +1378,10 @@ value is used to initialize *p* provided *p* is not bound to any arguments in th
 Consider the following function definition and calls:
 
 ```powershell
-function Find-Str ([string]$str, [int]$start_pos = 0) { ... }
+function Find-Str ([string]$Str, [int]$StartPos = 0) { ... }
 
-Find-Str "abcabc" # 2nd argument omitted, 0 used for $start_pos
-Find-Str "abcabc" 2 # 2nd argument present, so it is used for $start_pos
+Find-Str "abcabc" # 2nd argument omitted, 0 used for $StartPos
+Find-Str "abcabc" 2 # 2nd argument present, so it is used for $StartPos
 ```
 
 ### 8.10.5 The [switch] type constraint
@@ -1388,13 +1392,13 @@ the type switch. Type switch has two values, True and False.
 Consider the following function definition and calls:
 
 ```powershell
-function Process ([switch]$trace, $p1, $p2) { ... }
+function Process ([switch]$Trace, $P1, $P2) { ... }
 
-Process 10 20                # $trace is False, $p1 is 10, $p2 is 20
-Process 10 -trace 20         # $trace is True, $p1 is 10, $p2 is 20
-Process 10 20 -trace         # $trace is True, $p1 is 10, $p2 is 20
-Process 10 20 -trace:$false  # $trace is False, $p1 is 10, $p2 is 20
-Process 10 20 -trace:$true   # $trace is True, $p1 is 10, $p2 is 20
+Process 10 20                # $Trace is False, $P1 is 10, $P2 is 20
+Process 10 -Trace 20         # $Trace is True, $P1 is 10, $P2 is 20
+Process 10 20 -Trace         # $Trace is True, $P1 is 10, $P2 is 20
+Process 10 20 -Trace:$false  # $Trace is False, $P1 is 10, $P2 is 20
+Process 10 20 -Trace:$true   # $Trace is True, $P1 is 10, $P2 is 20
 ```
 
 ### 8.10.6 Pipelines and functions
@@ -1436,11 +1440,11 @@ as there is no current collection object.
 The statements in an *end block* (i.e.; one marked with the keyword end) are executed once, after
 the last pipeline object has been delivered.
 
-### 8.10.8 dynamicParam block
+### 8.10.8 dynamicparam block
 
 The subsections of [§8.10][§8.10] thus far deal with *static parameters*, which are defined as part of
-the source code. It is also possible to define *dynamic parameters* via a *dynamicParam block*,
-another form of named block ([§8.10.7][§8.10.7]), which is marked with the keyword `dynamicParam`. Much of
+the source code. It is also possible to define *dynamic parameters* via a *dynamicparam block*,
+another form of named block ([§8.10.7][§8.10.7]), which is marked with the keyword `dynamicparam`. Much of
 this machinery is implementation defined.
 
 Dynamic parameters are parameters of a cmdlet, function, filter, or script that are available under
@@ -1460,10 +1464,10 @@ registry drive.
 
 ```powershell
 function Sample {
-    Param ([String]$Name, [String]$Path)
-    DynamicParam {
-        if ($path -match "*HKLM*:") {
-            $dynParam1 = New-Object System.Management.Automation.RuntimeDefinedParameter("dp1", [Int32], $attributeCollection)
+    param ([string]$Name, [string]$Path)
+    dynamicparam {
+        if ($Path -match "*HKLM*:") {
+            $dynParam1 = New-Object System.Management.Automation.RuntimeDefinedParameter("dp1", [int32], $attributeCollection)
 
             $attributes = New-Object System.Management.Automation.ParameterAttribute
             $attributes.ParameterSetName = 'pset1'
@@ -1495,9 +1499,9 @@ A *param-block* provides an alternate way of declaring parameters. For example, 
 of parameter declarations are equivalent:
 
 ```powershell
-function FindStr1 ([string]$str, [int]$start_pos = 0) { ... }
+function FindStr1 ([string]$Str, [int]$StartPos = 0) { ... }
 function FindStr2 {
-    param ([string]$str, [int]$start_pos = 0) ...
+    param ([string]$Str, [int]$StartPos = 0) ...
 }
 ```
 
@@ -1559,7 +1563,7 @@ inlinescript-statement:
 The inlinescript statement contains zero or more statements that are executed in an implementation
 defined manner.
 
-A inlinescript statement is only allowed in a workflow ([§8.10.2][§8.10.2]).
+An inlinescript statement is only allowed in a workflow ([§8.10.2][§8.10.2]).
 
 ## 8.14 Parameter binding
 
@@ -1569,16 +1573,16 @@ corresponding parameter by position, with the first parameter having position ze
 Consider the following definition fragment for a function called `Get-Power`, and the calls to it:
 
 ```powershell
-function Get-Power ([long]$base, [int]$exponent) { ... }
+function Get-Power ([long]$Base, [int]$Exponent) { ... }
 
-Get-Power 5 3       # argument 5 is bound to parameter $base in position 0
-                    # argument 3 is bound to parameter $exponent in position 1
+Get-Power 5 3       # argument 5 is bound to parameter $Base in position 0
+                    # argument 3 is bound to parameter $Exponent in position 1
                     # no conversion is needed, and the result is 5 to the power 3
 
 Get-Power 4.7 3.2   # double argument 4.7 is rounded to int 5, double argument
                     # 3.2 is rounded to int 3, and result is 5 to the power 3
 
-Get-Power 5         # $exponent has value $null, which is converted to int 0
+Get-Power 5         # $Exponent has value $null, which is converted to int 0
 
 Get-Power           # both parameters have value $null, which is converted to int 0
 ```
@@ -1593,24 +1597,24 @@ designates the corresponding parameter. When choosing parameter names, avoid usi
 Consider the following calls to function `Get-Power`:
 
 ```powershell
-Get-Power -base 5 -exponent 3   # -base designates $base, so 5 is
-                                # bound to that, exponent designates
-                                # $exponent, so 3 is bound to that
+Get-Power -Base 5 -Exponent 3   # -Base designates $Base, so 5 is
+                                # bound to that, -Exponent designates
+                                # $Exponent, so 3 is bound to that
 
-Get-Power -Exp 3 -BAs 5         # $base takes on 5 and $exponent takes on 3
+Get-Power -Exp 3 -Bas 5         # $Base takes on 5 and $Exponent takes on 3
 
-Get-Power -e 3 -b 5             # $base takes on 5 and $exponent takes on 3
+Get-Power -E 3 -B 5             # $Base takes on 5 and $Exponent takes on 3
 ```
 
 On the other hand, calls to the following function
 
 ```powershell
-function Get-Hypot ([double]$side1, [double]$side2) {
-    return [Math]::Sqrt($side1 * $side1 + $side2 * $side2)
+function Get-Hypot ([double]$Side1, [double]$Side2) {
+    return [Math]::Sqrt($Side1 * $Side1 + $Side2 * $Side2)
 }
 ```
 
-must use parameters `-side1` and `-side2`, as there is no prefix that uniquely designates the
+must use parameters `-Side1` and `-Side2`, as there is no prefix that uniquely designates the
 parameter.
 
 The same parameter name cannot be used multiple times with or without different associated argument
@@ -1650,13 +1654,13 @@ Positional parameters prefer to be bound without type conversion, if possible. F
 
 ```powershell
 function Test {
-    [CmdletBinding(DefaultParameterSetname = "SetB")]
-    param([Parameter(Position = 0, ParameterSetname = "SetA")]
-        [decimal]$dec,
-        [Parameter(Position = 0, ParameterSetname = "SetB")]
-        [int]$in
+    [CmdletBinding(DefaultParameterSetName = "SetB")]
+    param([Parameter(Position = 0, ParameterSetName = "SetA")]
+        [decimal]$Dec,
+        [Parameter(Position = 0, ParameterSetName = "SetB")]
+        [int]$In
     )
-    $PsCmdlet.ParameterSetName
+    $PSCmdlet.ParameterSetName
 }
 
 Test 42d   # outputs "SetA"

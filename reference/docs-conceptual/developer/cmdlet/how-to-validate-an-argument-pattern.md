@@ -1,7 +1,6 @@
 ---
 description: How to Validate an Argument Pattern
 ms.date: 09/13/2016
-ms.topic: reference
 title: How to Validate an Argument Pattern
 ---
 # How to Validate an Argument Pattern
@@ -9,7 +8,7 @@ title: How to Validate an Argument Pattern
 This example shows how to specify a validation rule that the Windows PowerShell runtime can use to check the character pattern of the parameter argument before the cmdlet is run. You set this validation rule by declaring the ValidatePattern attribute.
 
 > [!NOTE]
-> For more information about the class that defines this attribute, see [System.Management.Automation.Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute).
+> For more information about the class that defines this attribute, see [System.Management.Automation.ValidatePatternAttribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute).
 
 ## To validate an argument pattern
 

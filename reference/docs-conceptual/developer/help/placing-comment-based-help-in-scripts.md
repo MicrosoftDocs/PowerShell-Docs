@@ -1,7 +1,6 @@
 ---
 description: Placing Comment-Based Help in Scripts
-ms.date: 09/12/2016
-ms.topic: reference
+ms.date: 07/10/2023
 title: Placing Comment-Based Help in Scripts
 ---
 # Placing Comment-Based Help in Scripts
@@ -32,7 +31,7 @@ The following example shows comment-based at the beginning of a script.
 
 ```powershell
 <#
-.Description
+.DESCRIPTION
 This script performs a series of network connection tests.
 #>
 
@@ -49,7 +48,7 @@ param [string]$ComputerName
 function Ping { Test-Connection -ComputerName $ComputerName }
 
 <#
-.Description
+.DESCRIPTION
 This script performs a series of network connection tests.
 #>
 ```

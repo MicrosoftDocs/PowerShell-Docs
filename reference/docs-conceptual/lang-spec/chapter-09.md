@@ -1,9 +1,11 @@
 ---
 description: PowerShell supports arrays of one or more dimensions with each dimension having zero or more elements.
-ms.date: 05/19/2021
+ms.date: 12/09/2022
 title: Arrays
 ---
 # 9. Arrays
+
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
 
 ## 9.1 Introduction
 
@@ -25,7 +27,7 @@ with each row having *N* columns, can be accessed using the expressions
 `B[0,0], B[0,1], ..., B[0,N-1], B[1,0], B[1,1], ..., B[1,N-1], ..., B[M-1,0], B[M-1,1], ..., B[M-1,N-1]`.
 And so on for arrays with three or more dimensions.
 
-By default, an array is *polymorphic*; i.e., its elements need not all have the same type. For
+By default, an array is *polymorphic*; i.e., its elements do not need to all have the same type. For
 example,
 
 ```powershell
@@ -224,14 +226,14 @@ elements from a collection. An array slice is created via the subscript operator
 ## 9.10 Copying an array
 
 A contiguous set of elements can be copied from one array to another using the method
-`[Array]::Copy`. For example,
+`[array]::Copy`. For example,
 
 ```powershell
 $a = [int[]](10,20,30)
 $b = [int[]](0,1,2,3,4,5)
-[Array]::Copy($a, $b, 2)        # $a[0]->$b[0],
+[array]::Copy($a, $b, 2)        # $a[0]->$b[0],
 $a[1]->$b[1]
-[Array]::Copy($a, 1, $b, 3, 2)  # $a[1]->$b[3],
+[array]::Copy($a, 1, $b, 3, 2)  # $a[1]->$b[3],
 $a[2]->$b[4]
 ```
 
@@ -244,16 +246,16 @@ multidimensional array, the elements are processed in row-major order. For examp
 ```powershell
 $a = 10, 53, 16, -43
 foreach ($elem in $a) {
-    # do something with element via $e
+    # do something with element via $elem
 }
 
 foreach ($elem in -5..5) {
-    # do something with element via $e
+    # do something with element via $elem
 }
 
 $a = New-Object 'int[,]' 3, 2
 foreach ($elem in $a) {
-    # do something with element via $e
+    # do something with element via $elem
 }
 ```
 

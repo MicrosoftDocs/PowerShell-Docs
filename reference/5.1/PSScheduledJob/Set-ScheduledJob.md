@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-Help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/set-scheduledjob?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-ScheduledJob
 ---
@@ -67,7 +67,8 @@ as a template for other jobs.
 that is included in Windows PowerShell.
 
 For more information about Scheduled Jobs, see the About topics in the PSScheduledJob module. Import
-the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+the PSScheduledJob module and then type: `Get-Help about_Scheduled*` or see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -88,7 +89,8 @@ Id         Name            Triggers        Command                              
 ```
 
 ```powershell
-Get-ScheduledJob -Name "Inventory" | Set-ScheduledJob -FilePath "C:\Scripts\Get-FullInventory.ps1" -Passthru
+Get-ScheduledJob -Name "Inventory" |
+    Set-ScheduledJob -FilePath "C:\Scripts\Get-FullInventory.ps1" -PassThru
 ```
 
 ```Output
@@ -103,7 +105,7 @@ shows that the job runs the Get-Inventory.ps1 script.
 The second command uses the `Get-ScheduledJob` cmdlet to get the Inventory scheduled job. A pipeline
 operator (`|`) sends the scheduled job to the `Set-ScheduledJob` cmdlet. The `Set-ScheduledJob`
 cmdlet uses the **Script** parameter to specify a new script, `Get-FullInventory.ps1`. The command
-uses the **Passthru** parameter to return the scheduled job after the change.
+uses the **PassThru** parameter to return the scheduled job after the change.
 
 This command is not required; it is included only to show the effect of the script change.
 
@@ -120,14 +122,15 @@ operator (`|`) sends the job to the `Set-ScheduledJob` cmdlet to change it. The 
 cmdlet uses the **ClearExecutionHistory** parameter to delete the execution history and saved
 results.
 
-For more information about the execution history and saved job results of scheduled jobs, see [about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
+For more information about the execution history and saved job results of scheduled jobs, see
+[about_Scheduled_Jobs](About/about_Scheduled_Jobs.md).
 
 ### Example 3: Change scheduled jobs on a remote computer
 
 This command changes the initialization script in all scheduled jobs on remote computers.
 
 ```powershell
-Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob | 
+Invoke-Command -Computer "Server01, Server02" -ScriptBlock {Get-ScheduledJob |
     Set-ScheduledJob -InitializationScript \\SrvA\Scripts\SetForRun.ps1}
 ```
 
@@ -170,7 +173,8 @@ for this parameter are:
 - `Negotiate`
 - `NegotiateWithImplicitCredential`
 
-The default value is `Default`. For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)
+The default value is `Default`. For more information about the values of this parameter, see
+[AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)
 in the PowerShell SDK.
 
 > [!CAUTION]
@@ -198,7 +202,7 @@ Accept wildcard characters: False
 Deletes the current execution history and the saved results of the scheduled job.
 
 The job execution history and job results are saved with the scheduled job in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the computer on which
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on the computer on which
 the job is created. To see the execution history, use the `Get-Job` cmdlet. To get the job results,
 use the `Receive-Job` cmdlet.
 
@@ -241,9 +245,9 @@ Accept wildcard characters: False
 
 ### -FilePath
 
-Specifies a script that the scheduled job runs. Enter the path to a .ps1 file on the local computer.
-To specify default values for the script parameters, use the **ArgumentList** parameter. Every
-scheduled job must have either a **ScriptBlock** or **FilePath** value.
+Specifies a script that the scheduled job runs. Enter the path to a `.ps1` file on the local
+computer. To specify default values for the script parameters, use the **ArgumentList** parameter.
+Every scheduled job must have either a **ScriptBlock** or **FilePath** value.
 
 ```yaml
 Type: System.String
@@ -314,7 +318,7 @@ Windows PowerShell deletes the results of the oldest job instance to make room f
 the newest job instance.
 
 The job execution history and job results are saved in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\<JobName>\Output\<Timestamp>`
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs\<JobName>\Output\<Timestamp>`
 directories on the computer on which the job is created. To see the execution history, use the
 `Get-Job` cmdlet. To get the job results, use the `Receive-Job` cmdlet.
 
@@ -443,7 +447,7 @@ options, including the default values, see `New-ScheduledJobOption`.
 To submit a hash table, use the following keys.
 In the following hash table, the keys are shown with their default values.
 
-`@{# Power SettingsStartIfOnBattery=$False;StopIfGoingOnBattery=$True; WakeToRun=$False; # Idle SettingsStartIfNotIdle=$False; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$True; RestartOnIdleResume=$False;# Security settingsShowInTaskScheduler=$TrueRunElevated=$False;# MiscRunWithoutNetwork=$False;DoNotAllowDemandStart=$False;MultipleInstancePolicy=IgnoreNew# Can be IgnoreNew, Parallel, Queue, StopExisting}`
+`@{# Power SettingsStartIfOnBattery=$false;StopIfGoingOnBattery=$true; WakeToRun=$false; # Idle SettingsStartIfNotIdle=$false; IdleDuration="00:10:00"; IdleTimeout="01:00:00"; StopIfGoingOffIdle=$true; RestartOnIdleResume=$false;# Security settingsShowInTaskScheduler=$trueRunElevated=$false;# MiscRunWithoutNetwork=$false;DoNotAllowDemandStart=$false;MultipleInstancePolicy=IgnoreNew# Can be IgnoreNew, Parallel, Queue, StopExisting}`
 
 ```yaml
 Type: Microsoft.PowerShell.ScheduledJob.ScheduledJobOptions
@@ -518,20 +522,24 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
 
-You can pipe scheduled jobs to `Set-ScheduledJob`.
+You can pipe a scheduled job to this cmdlet.
 
 ## OUTPUTS
 
-### None or Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+### None
 
-If you use the **Passthru** parameter, `Set-ScheduledJob` returns the scheduled job that was
-changed. Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
+When you use the **PassThru** parameter, this cmdlet returns the scheduled job that it changed.
 
 ## NOTES
 

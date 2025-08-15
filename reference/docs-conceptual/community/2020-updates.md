@@ -1,13 +1,13 @@
 ---
 description: List of changes to the PowerShell documentation for 2020
-ms.date: 05/05/2022
+ms.date: 03/30/2025
 title: What's New in PowerShell Docs for 2020
 ---
 
 # What's new in PowerShell Docs for 2020
 
-This article lists some of the major changes to docs during this previous month and celebrates the
-contributions from the community.
+This article lists notable changes made to docs each month and celebrates the contributions from the
+community.
 
 Help us make the documentation better for you. Read the [Contributor's Guide][contrib] to learn how
 to get started.
@@ -57,7 +57,7 @@ issues. Thank you!
 
 - Blog posts
   - [You've got Help!](https://devblogs.microsoft.com/powershell/youve-got-help/)
-  - [Updating help for the PSReadLine module](https://devblogs.microsoft.com/powershell/updating-help-for-the-psreadline-module/)
+  - [Updating help for the PSReadLine module](https://devblogs.microsoft.com/powershell/updating-help-for-the-psreadline-module-in-windows-powershell-5-1/)
 
 - Documentation maintenance
   - Updated 137 articles to remove MSDN and TechNet references
@@ -165,7 +165,7 @@ issues. Thank you!
 
 - New PowerShell documentation
   - [About_Calculated_Properties](/powershell/module/microsoft.powershell.core/about/about_calculated_properties)
-  - [Writing Progress across multiple threads with Foreach Parallel](/powershell/scripting/learn/deep-dives/write-progress-across-multiple-threads)
+  - [Writing Progress across multiple threads with ForEach-Object -Parallel](/powershell/scripting/learn/deep-dives/write-progress-across-multiple-threads)
 - Documentation maintenance
   - Updates for 7.1-preview content
 
@@ -342,7 +342,7 @@ issues. Thank you!
     - [Variables can be assigned values as part of an expression (with limitations)](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/Variables-can-be-assigned-values-as-part-of-an-expression-(with-limitations))
 
 - Documentation maintenance
-  - Now publishing updates to Microsoft Docs on a daily schedule
+  - Now publishing updates to Microsoft Learn on a daily schedule
     - Monday-Friday 3pm Redmond Time (UTC-8)
   - Restructured the Community content
   - Many editorial cleanups

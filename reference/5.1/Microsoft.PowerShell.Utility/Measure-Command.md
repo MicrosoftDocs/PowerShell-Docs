@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/10/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
 ---
+
 # Measure-Command
 
 ## SYNOPSIS
@@ -34,7 +35,7 @@ This example measures the time it takes to run a `Get-EventLog` command that get
 Windows PowerShell event log.
 
 ```powershell
-Measure-Command { Get-EventLog "windows powershell" }
+Measure-Command { Get-EventLog "Windows PowerShell" }
 ```
 
 ### Example 2: Compare two outputs from Measure-Command
@@ -207,13 +208,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe an object to `Measure-Command`.
+You can pipe an object to this cmdlet.
 
 ## OUTPUTS
 
 ### System.TimeSpan
 
-`Measure-Command` returns a time span object that represents the result.
+This cmdlet returns a time span object representing the result.
 
 ## NOTES
 

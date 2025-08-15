@@ -1,7 +1,6 @@
 ---
 description: Host04 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Host04 Sample
 ---
 # Host04 Sample
@@ -27,7 +26,7 @@ This sample requires Windows PowerShell 2.0.
 - Building a console application that uses these host classes to build an interactive Windows
   PowerShell shell.
 
-- Creating a `$profile` variable and loading the following profiles.
+- Creating a `$PROFILE` variable and loading the following profiles.
 
   - current user, current host
   - current user, all hosts
@@ -145,7 +144,7 @@ namespace Microsoft.Samples.PowerShell.Host
       this.myRunSpace.Open();
 
       // Create a PowerShell object that will be used to execute the commands
-      // to create $profile and load the profiles.
+      // to create $PROFILE and load the profiles.
       lock (this.instanceLock)
       {
         this.currentPowerShell = PowerShell.Create();
@@ -213,7 +212,7 @@ namespace Microsoft.Samples.PowerShell.Host
         // commands. This will result in the output being written using the PSHost
         // and PSHostUserInterface classes instead of returning objects to the hosting
         // application.
-        this.currentPowerShell.AddCommand("out-default");
+        this.currentPowerShell.AddCommand("Out-Default");
         this.currentPowerShell.Commands.Commands[0].MergeMyResults(PipelineResultTypes.Error, PipelineResultTypes.Output);
 
         // If there was any input specified, pass it in, otherwise just
@@ -244,7 +243,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// using the display formatter. To do this we run
     /// a second pipeline passing in the error record.
     /// The runtime will bind this to the $input variable
-    /// which is why $input is being piped to out-string.
+    /// which is why $input is being piped to Out-String.
     /// We then call WriteErrorLine to make sure the error
     /// gets displayed in the correct error color.
     /// </summary>
@@ -273,7 +272,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
         try
         {
-          this.currentPowerShell.AddScript("$input").AddCommand("out-string");
+          this.currentPowerShell.AddScript("$input").AddCommand("Out-String");
 
           // Do not merge errors, this function will swallow errors.
           Collection<PSObject> result;
@@ -287,7 +286,7 @@ namespace Microsoft.Samples.PowerShell.Host
             string str = result[0].BaseObject as string;
             if (!string.IsNullOrEmpty(str))
             {
-              // Remove \r\n that is added by out-string.
+              // Remove \r\n that is added by Out-String.
               this.myHost.UI.WriteErrorLine(str.Substring(0, str.Length - 2));
             }
           }
@@ -566,7 +565,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ## Example 3
 
 The following code is the implementation of the
-[System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+[System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 class that is used by this host application.
 
 ```csharp
@@ -1086,7 +1085,7 @@ namespace Microsoft.Samples.PowerShell.Host
 ## Example 4
 
 The following code is the implementation of the
-[System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+[System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
 class that is used by this host application. Those elements that are not implemented throw an
 exception or return nothing.
 
@@ -1302,6 +1301,6 @@ namespace Microsoft.Samples.PowerShell.Host
 
  [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

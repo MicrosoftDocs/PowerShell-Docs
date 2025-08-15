@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/05/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/update-help?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Help
 ---
@@ -42,7 +42,7 @@ for a module or if your help files are outdated, `Update-Help` downloads the new
 help files can be downloaded and installed from the internet or a file share.
 
 Without parameters, `Update-Help` updates the help files for modules that support updateable help
-and are loaded in the session or installed in a location included in the `$env:PSModulePath`. For
+and are loaded in the session or installed in a location included in the `$Env:PSModulePath`. For
 more information, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 
 `Update-Help` checks the version of the help installed. If `Update-Help` can't find updated help
@@ -105,18 +105,26 @@ Update-Help -Module Microsoft.PowerShell*
 ### Example 3: Updating help on a system not set to the en-US locale
 
 The `Update-Help` cmdlet is designed to download help in multiple languages. However, when there is
-no help available for the language your system uses, an error message is displayed for the module
-and UI culture.
+no help available for the language your system uses, `Update-Help` fails silently unless you use
+the **UICulture** parameter.
 
 In this example, `Update-Help` is being run on a system that's set to the `en-GB` locale.
 
 ```powershell
 Update-Help Microsoft.PowerShell.Utility -Force
+Update-Help Microsoft.PowerShell.Utility -Force -UICulture en-GB
 ```
 
 ```Output
-Update-Help : Failed to update Help for the module(s) 'Microsoft.PowerShell.Utility' with UI
-culture(s) {en-GB} No UI culture was found that matches the following pattern: en-GB.
+Update-Help : Failed to update Help for the module(s) 'Microsoft.PowerShell.Utility'
+with UI culture(s) {en-GB} : The specified culture is not supported: en-GB. Specify a
+culture from the following list: {en-US}.
+At line:1 char:1
++ Update-Help Microsoft.PowerShell.Utility -Force -UICulture en-GB
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Update-Help], Exception
+    + FullyQualifiedErrorId : HelpCultureNotSupported,Microsoft.PowerShell.Commands
+   .UpdateHelpCommand
 ```
 
 The help files are always published for the `en-US` locale. To download the English help, run
@@ -206,7 +214,7 @@ Get-Module -ListAvailable | Where-Object -Property HelpInfoUri
 ```
 
 ```output
-   Directory: C:\program files\powershell\6\Modules
+   Directory: C:\Program Files\PowerShell\6\Modules
 
 ModuleType Version    Name                                PSEdition ExportedCommands
 ---------- -------    ----                                --------- ----------------
@@ -236,9 +244,9 @@ The script uses the **PSCustomObject** class and a hash table to create a custom
 
 ```powershell
 # Get-UpdateHelpVersion.ps1
-Param(
-    [parameter(Mandatory=$False)]
-    [String[]]
+param (
+    [Parameter(Mandatory=$false)]
+    [string[]]
     $Module
 )
 $HelpInfoNamespace = @{helpInfo='http://schemas.microsoft.com/powershell/help/2010/05'}
@@ -260,7 +268,7 @@ foreach ($mModule in $Modules)
             $mCulture=$mNode.Node.UICultureName
             $mVer=$mNode.Node.UICultureVersion
 
-            [PSCustomObject]@{"ModuleName"=$mName; "Culture"=$mCulture; "Version"=$mVer}
+            [pscustomobject]@{"ModuleName"=$mName; "Culture"=$mCulture; "Version"=$mVer}
         }
     }
 }
@@ -411,7 +419,7 @@ are permitted. You can pipeline modules from the `Get-Module` cmdlet to the `Upd
 
 The modules that you specify must be installed on the computer, but they don't have to be imported
 into the current session. You can specify any module in the session or any module that's installed
-in a location listed in the `$env:PSModulePath` environment variable.
+in a location listed in the `$Env:PSModulePath` environment variable.
 
 A value of `*` (all) attempts to update help for all modules that are installed on the computer.
 Modules that don't support Updatable Help are included. This value might generate errors when the
@@ -419,7 +427,7 @@ command encounters modules that don't support Updatable Help. Instead, run `Upda
 parameters.
 
 The **Module** parameter of the `Update-Help` cmdlet doesn't accept the full path of a module file
-or module manifest file. To update help for a module that isn't in a `$env:PSModulePath` location,
+or module manifest file. To update help for a module that isn't in a `$Env:PSModulePath` location,
 import the module into the current session before you run the `Update-Help` command.
 
 ```yaml
@@ -567,17 +575,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.IO.DirectoryInfo
 
-You can pipe a directory path to `Update-Help`.
+You can pipe a directory path object to this cmdlet.
 
 ### System.Management.Automation.PSModuleInfo
 
-You can pipe a module object from the `Get-Module` cmdlet to `Update-Help`.
+You can pipe a module object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Update-Help` doesn't generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 
@@ -610,7 +618,7 @@ for HTTP and port 443 for HTTPS.
 `Update-Help` supports all modules and the core PowerShell snap-ins. It doesn't support any other
 snap-ins.
 
-To update help for a module in a location that isn't listed in the `$env:PSModulePath` environment
+To update help for a module in a location that isn't listed in the `$Env:PSModulePath` environment
 variable, import the module into the current session and then run an `Update-Help` command. Run
 `Update-Help` without parameters or use the **Module** parameter to specify the module name. The
 **Module** parameter of the `Update-Help` and `Save-Help` cmdlets doesn't accept the full path of a

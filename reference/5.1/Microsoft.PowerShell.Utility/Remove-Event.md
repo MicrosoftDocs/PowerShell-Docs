@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-event?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/remove-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Event
 ---
@@ -139,13 +139,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSEventArgs
 
-You can pipe events from `Get-Event` to `Remove-Event`.
+You can pipe events from `Get-Event` to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-The cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

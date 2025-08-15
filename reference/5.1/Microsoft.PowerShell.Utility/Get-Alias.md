@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gal
 title: Get-Alias
 ---
+
 # Get-Alias
 
 ## SYNOPSIS
@@ -89,7 +92,7 @@ parameter gets the alias when you know the item name.
 ### Example 4: Get aliases by property
 
 ```powershell
-Get-Alias | Where-Object {$_.Options -Match "ReadOnly"}
+Get-Alias | Where-Object {$_.Options -match "ReadOnly"}
 ```
 
 This command gets all aliases in which the value of the **Options** property is **ReadOnly**. This
@@ -97,7 +100,7 @@ command provides a quick way to find the aliases that are built into PowerShell,
 the **ReadOnly** option.
 
 **Options** is just one property of the **AliasInfo** objects that `Get-Alias` gets. To find all
-properties and methods of **AliasInfo** objects, type `Get-Alias | get-member`.
+properties and methods of **AliasInfo** objects, type `Get-Alias | Get-Member`.
 
 ### Example 5: Get aliases by name and filter by beginning letter
 
@@ -203,17 +206,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe alias names to `Get-Alias`.
+You can pipe a string containing an alias name to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.AliasInfo
 
-`Get-Alias` returns an object that represents each alias. `Get-Alias` returns the same object for
+This cmdlet returns an object that represents each alias. It returns the same type of object for
 every alias, but PowerShell uses an arrow-based format to display the names of non-hyphenated
 aliases.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Get-Alias`:
+
+  - `gal`
 
 - To create a new alias, use `Set-Alias` or `New-Alias`. To delete an alias, use `Remove-Item`.
 - The arrow-based alias name format is not used for aliases that include a hyphen. These are likely

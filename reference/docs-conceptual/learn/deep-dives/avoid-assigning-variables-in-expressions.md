@@ -1,7 +1,7 @@
 ---
 description: This article covers the limitations of assigning variables in expressions.
 ms.custom: wiki-migration
-ms.date: 06/06/2022
+ms.date: 11/16/2022
 title: Avoid assigning variables in expressions
 ---
 # Avoid assigning variables in expressions

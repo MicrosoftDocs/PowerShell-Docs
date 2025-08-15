@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/28/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/out-null?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Null
 ---
@@ -21,7 +21,7 @@ Out-Null [-InputObject <PSObject>] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Out-Null` cmdlet sends its output to NULL, in effect, removing it from the pipeline and
-preventing the output to be displayed at the screen. This only affects the standard output stream.
+preventing the output from being displayed on screen. This only affects the standard output stream.
 Other output streams, like the Error stream are not affected. Exceptions will be displayed. This
 makes it easier to test your command for any errors.
 
@@ -71,7 +71,7 @@ You can pipe any object to this cmdlet.
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

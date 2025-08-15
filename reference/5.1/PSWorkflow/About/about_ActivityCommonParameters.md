@@ -2,9 +2,9 @@
 description: Describes the parameters that Windows PowerShell Workflow adds to activities.
 Locale: en-US
 ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about ActivityCommonParameters
+title: about_ActivityCommonParameters
 ---
 # about_ActivityCommonParameters
 
@@ -16,15 +16,15 @@ Describes the parameters that Windows PowerShell Workflow adds to activities.
 
 Windows PowerShell Workflow adds the activity common parameters to activities
 that are derived from the **PSActivity** base class. This category includes the
-**InlineScript** activity and Windows PowerShell cmdlets that are implemented as
+`inlinescript` activity and Windows PowerShell cmdlets that are implemented as
 activities, such as `Get-Process` and `Get-WinEvent`.
 
 The activity common parameters are not valid on the `Suspend-Workflow` and
 `Checkpoint-Workflow` activities and they are not added to cmdlets or
 expressions that Windows PowerShell Workflow automatically runs in an
-**InlineScript** script block or similar activity. The activity common
-parameters are available on the **InlineScript** activity, but not on commands
-in the **InlineScript** script block.
+`inlinescript` script block or similar activity. The activity common
+parameters are available on the `inlinescript` activity, but not on commands
+in the `inlinescript` script block.
 
 Several of the activity common parameters are also workflow common parameters
 or Windows PowerShell common parameters. Other activity common parameters are
@@ -64,16 +64,15 @@ This section describes the activity common parameters.
 
 #### AppendOutput \<Boolean\>
 
-A value of `$True` adds the output of the activity to the value of the variable.
-A value of `$False` has no effect. By default, assigning a value to a variable
+A value of `$true` adds the output of the activity to the value of the variable.
+A value of `$false` has no effect. By default, assigning a value to a variable
 replaces the variable value.
 
 For example, the following commands add a process object to the service object
 in the `$x` variable.
 
 ```powershell
-Workflow Test-Workflow
-{
+workflow Test-Workflow {
     $x = Get-Service
     $x = Get-Process -AppendOutput $true
 }
@@ -84,8 +83,7 @@ can also use the `+=` assignment operator to add output to the value of a
 variable, as shown in the following example.
 
 ```powershell
-Workflow Test-Workflow
-{
+workflow Test-Workflow {
     $x = Get-Service
     $x += Get-Process
 }
@@ -144,8 +142,8 @@ piping objects to the activity one at a time.
 
 #### MergeErrorToOutput \<Boolean\>
 
-A value of `$True` adds errors to the output stream. A value of `$False` has
-no effect. Use this parameter with the **Parallel** and `ForEach -Parallel`
+A value of `$true` adds errors to the output stream. A value of `$false` has
+no effect. Use this parameter with the `parallel` and `foreach -Parallel`
 keywords to collect errors and output from multiple parallel commands
 in a single collection.
 
@@ -169,14 +167,14 @@ affected target computer.
 
 #### PSAllowRedirection \<Boolean\>
 
-A value of `$True` allows redirection of the connection to the target computers.
-A value of `$False` has no effect. This activity common parameter is also a
+A value of `$true` allows redirection of the connection to the target computers.
+A value of `$false` has no effect. This activity common parameter is also a
 workflow common parameter.
 
 When you use the **PSConnectionURI** parameter, the remote destination can return
 an instruction to redirect to a different URI. By default, Windows PowerShell
 does not redirect connections, but you can use the **PSAllowRedirection** parameter
-with a value of `$True` to allow redirection of the connection to the target
+with a value of `$true` to allow redirection of the connection to the target
 computer.
 
 You can also limit the number of times that the connection is redirected by
@@ -334,12 +332,11 @@ in a variable. Then, use the variable as the value of the **PSDebug** parameter
 of one or more activities, as shown in the following example.
 
 ```powershell
-Workflow Test-Workflow
-{
+workflow Test-Workflow {
     $debugCollection = New-Object -Type `
     System.Management.Automation.PSDataCollection[System.Management.Automation.DebugRecord]
-    InlineScript {\Server01\Share01\Get-AssetData.ps1} -PSDebug $debugCollection -Debug $True
-    InlineScript {\Server01\Share01\Set-AssetData.ps1} -PSDebug $debugCollection -Debug $True
+    inlinescript {\Server01\Share01\Get-AssetData.ps1} -PSDebug $debugCollection -Debug $true
+    inlinescript {\Server01\Share01\Set-AssetData.ps1} -PSDebug $debugCollection -Debug $true
     if ($debugCollection -like "Missing") { ...}
 }
 ```
@@ -362,10 +359,10 @@ Valid values:
 - (Default) If omitted, and you have also not added the
   **PSDisableSerialization** parameter to an activity, objects are serialized.
 
-- `$True`. Directs all activities within a workflow to return
+- `$true`. Directs all activities within a workflow to return
   "live" (not serialized) objects. The resulting objects have methods, as well
   as properties, but they cannot be saved when a checkpoint is taken.
-- `$False`. Workflow objects are serialized.
+- `$false`. Workflow objects are serialized.
 
 #### PSError \<PSDataCollection[ErrorRecord]\>
 
@@ -380,15 +377,13 @@ in a variable. Then, use the variable as the value of the **PSError** parameter
 of one or more activities, as shown in the following example.
 
 ```powershell
-Workflow Test-Workflow
-{
+workflow Test-Workflow {
    $typeName = "System.Management.Automation.PSDataCollection"
    $typeName += '[System.Management.Automation.ErrorRecord]'
    $ec = New-Object $typeName
-   InlineScript {\Server01\Share01\Get-AssetData.ps1} -PSError $ec
-   InlineScript {\Server01\Share01\Set-AssetData.ps1} -PSError $ec
-   if ($ec.Count -gt 2)
-   {
+   inlinescript {\Server01\Share01\Get-AssetData.ps1} -PSError $ec
+   inlinescript {\Server01\Share01\Set-AssetData.ps1} -PSError $ec
+   if ($ec.Count -gt 2) {
       # Do Some Work.
    }
 }
@@ -411,10 +406,10 @@ Valid values:
 - (Default) If you omit this parameter, no checkpoints are added. Checkpoints
   are taken based on the settings for the workflow.
 
-- `$True`. Takes a checkpoint after the activity completes. This checkpoint is
+- `$true`. Takes a checkpoint after the activity completes. This checkpoint is
   in addition to any checkpoints that are specified in the workflow.
 
-- `$False`. No checkpoints are added. Checkpoints are taken only when specified
+- `$false`. No checkpoints are added. Checkpoints are taken only when specified
   in the workflow.
 
 #### PSPort \<Int32\>
@@ -445,7 +440,7 @@ also included in the command, the progress bar content appears in
 `<DisplayName>:<PSProgressMessage>` format.
 
 This parameter is particularly useful for identifying activities in a
-`ForEach -Parallel` script block. Without this message, activities in all
+`foreach -Parallel` script block. Without this message, activities in all
 parallel branches are identified by the same name.
 
 #### PSRemotingBehavior \<RemotingBehavior\>
@@ -499,9 +494,9 @@ For more information about the `$PSSessionOption` preference variable, see
 
 #### PSUseSSL \<Boolean\>
 
-A value of `$True` uses the Secure Sockets Layer (SSL) protocol to establish a
+A value of `$true` uses the Secure Sockets Layer (SSL) protocol to establish a
 connection to the target computer. By default, SSL is not used. A value of
-`$False` has no effect. This activity common parameter is also a workflow common
+`$false` has no effect. This activity common parameter is also a workflow common
 parameter.
 
 WS-Management encrypts all Windows PowerShell content transmitted over the
@@ -537,9 +532,8 @@ the workflow. When you run the workflow with input, that input is used by the
 activity.
 
 ```powershell
-workflow Test-Workflow
-{
-    Get-Service -UseDefaultInput $True
+workflow Test-Workflow {
+    Get-Service -UseDefaultInput $true
 }
 
 PS C:> Test-Workflow -InputObject WinRm
@@ -600,24 +594,16 @@ parameters to run a `Get-EventLog` activity only on computers it a particular
 domain.
 
 ```powershell
-Workflow Test-Workflow
-{
+workflow Test-Workflow {
     $UserDomain = Get-Content -Path '.\UserComputers.txt'
     $Log = (Get-EventLog -LogName "Windows PowerShell" `
       -PSComputerName $UserDomain)
 
-    if ($Log)
-    {
+    if ($Log) {
         # Do Work Here.
     }
 }
 ```
-
-<!--
-# KEYWORDS
-[about_Activity_Common_Parameters](about_Activity_Common_Parameters.md)
-[about_Activity_Parameters](about_Activity_Parameters.md)
-[about_ActivityParameters]()about_ActivityParameters.md) -->
 
 ## See Also
 

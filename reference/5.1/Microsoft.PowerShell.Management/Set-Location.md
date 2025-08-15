@@ -2,11 +2,16 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/25/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-location?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-location?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - cd
+  - chdir
+  - sl
 title: Set-Location
 ---
+
 # Set-Location
 
 ## SYNOPSIS
@@ -217,14 +222,27 @@ You can pipe a string that contains a path, but not a literal path, to this cmdl
 
 ## OUTPUTS
 
-### None, System.Management.Automation.PathInfo, System.Management.Automation.PathInfoStack
+### None
 
-This cmdlet does not generate any output unless you specify the **PassThru** parameter. Using
-**PassThru** with **Path** or **LiteralPath** generates a **PathInfo** object that represents the
-new location. Using **PassThru** with **StackName** generates a **PathInfoStack** object
-representing the new stack context.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PathInfo
+
+When you use the **PassThru** parameter with **Path** or **LiteralPath**, this cmdlet returns a
+**PathInfo** object representing the new location.
+
+### System.Management.Automation.PathInfoStack
+
+When you use the **PassThru** parameter with  **StackName**, this cmdlet returns a **PathInfoStack**
+object representing the new stack context.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Set-Location`:
+
+- `cd`
+- `chdir`
+- `sl`
 
 PowerShell supports multiple runspaces per process. Each runspace has its own _current directory_.
 This is not the same as `[System.Environment]::CurrentDirectory`. This behavior can be an issue

@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/27/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-typedata?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/remove-typedata?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-TypeData
 ---
@@ -224,19 +224,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.Runspaces.TypeData
 
-You can pipe **TypeData** object, such as the ones that the `Get-TypeData` cmdlet returns, to
-`Remove-TypeData`.
+You can pipe a **TypeData** object, such as the ones that the `Get-TypeData` cmdlet returns, to
+this cmdlet.
 
 ### System.String
 
-You can pipe the type names to `Remove-TypeData`. When you pipe an object to `Remove-TypeData`,
-`Remove-TypeData` gets the type name of the object and removes all type data for the object type.
+You can pipe a string containing the type name to this cmdlet. When you pipe an object to this
+cmdlet, it gets the type name of the object and removes all type data for the object type.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

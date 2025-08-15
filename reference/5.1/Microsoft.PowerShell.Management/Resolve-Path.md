@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 05/16/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rvpa
 title: Resolve-Path
 ---
+
 # Resolve-Path
 
 ## SYNOPSIS
@@ -17,7 +20,8 @@ Resolves the wildcard characters in a path, and displays the path contents.
 ### Path (Default)
 
 ```
-Resolve-Path [-Path] <String[]> [-Relative] [-Credential <PSCredential>] [-UseTransaction] [<CommonParameters>]
+Resolve-Path [-Path] <String[]> [-Relative] [-Credential <PSCredential>] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
@@ -41,7 +45,7 @@ The tilde character (`~`) is shorthand notation for the current user's home fold
 shows `Resolve-Path` returning the fully qualified path value.
 
 ```powershell
-PS C:\> Resolve-Path ~
+Resolve-Path ~
 ```
 
 ```Output
@@ -53,7 +57,7 @@ C:\Users\User01
 ### Example 2: Resolve the path of the Windows folder
 
 ```powershell
-PS C:\> Resolve-Path -Path "windows"
+Resolve-Path -Path "windows"
 ```
 
 ```Output
@@ -68,7 +72,7 @@ the `C:` drive.
 ### Example 3: Get all paths in the Windows folder
 
 ```powershell
-PS C:\> "C:\windows\*" | Resolve-Path
+"C:\windows\*" | Resolve-Path
 ```
 
 This command returns all the files and folders in the `C:\Windows` folder. The command uses a
@@ -77,7 +81,7 @@ pipeline operator (`|`) to send a path string to `Resolve-Path`.
 ### Example 4: Resolve a UNC path
 
 ```powershell
-PS C:\> Resolve-Path -Path "\\Server01\public"
+Resolve-Path -Path "\\Server01\public"
 ```
 
 This command resolves a Universal Naming Convention (UNC) path and returns the shares in the path.
@@ -85,7 +89,7 @@ This command resolves a Universal Naming Convention (UNC) path and returns the s
 ### Example 5: Get relative paths
 
 ```powershell
-PS C:\> Resolve-Path -Path "c:\prog*" -Relative
+Resolve-Path -Path "C:\prog*" -Relative
 ```
 
 ```Output
@@ -103,7 +107,7 @@ Using **LiteralPath** causes the brackets to be treated as normal characters rat
 expression.
 
 ```powershell
-PS C:\> Resolve-Path -LiteralPath 'test[xml]'
+Resolve-Path -LiteralPath 'test[xml]'
 ```
 
 ## PARAMETERS
@@ -186,7 +190,7 @@ Accept wildcard characters: False
 ### -UseTransaction
 Includes the command in the active transaction.
 This parameter is valid only when a transaction is in progress.
-For more information, see [about_transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -215,18 +219,25 @@ You can pipe a string that contains a path to this cmdlet.
 
 ## OUTPUTS
 
-### System.Management.Automation.PathInfo, System.String
+### System.Management.Automation.PathInfo
 
-Returns a **PathInfo** object. Returns a string value for the resolved path if you specify the
-**Relative** parameter.
+By default, this cmdlet returns a **PathInfo** object.
+
+### System.String
+
+If you specify the **Relative** parameter, this cmdlet returns a string value for the resolved path.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Resolve-Path`:
+
+- `rvpa`
 
 The `*-Path` cmdlets work with the **FileSystem**, **Registry**, and **Certificate** providers.
 
 `Resolve-Path` is designed to work with any provider. To list the providers available in your
 session, type `Get-PSProvider`. For more information, see
-[about_providers](../microsoft.powershell.core/about/about_providers.md).
+[about_Providers](../microsoft.powershell.core/about/about_providers.md).
 
 `Resolve-Path` only resolves existing paths. It cannot be used to resolve a location that does not
 exist yet.

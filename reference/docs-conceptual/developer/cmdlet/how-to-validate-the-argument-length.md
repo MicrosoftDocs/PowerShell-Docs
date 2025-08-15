@@ -1,7 +1,6 @@
 ---
 description: How to Validate the Argument Length
 ms.date: 09/13/2016
-ms.topic: reference
 title: How to Validate the Argument Length
 ---
 # How to Validate the Argument Length
@@ -9,7 +8,7 @@ title: How to Validate the Argument Length
 This example shows how to specify a validation rule that the Windows PowerShell runtime can use to check the number of characters (the length) of the parameter argument before the cmdlet is run. You set this validation rule by declaring the ValidateLength attribute.
 
 > [!NOTE]
-> For more information about the class that defines this attribute, see [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute).
+> For more information about the class that defines this attribute, see [System.Management.Automation.ValidateLengthAttribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute).
 
 ## To validate the argument length
 

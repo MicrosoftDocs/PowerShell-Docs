@@ -2,8 +2,8 @@
 external help file: Microsoft.WSMan.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.WSMan.Management
-ms.date: 10/04/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/disconnect-wsman?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.wsman.management/disconnect-wsman?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-WSMan
 ---
@@ -36,12 +36,12 @@ For more information about how to connect to the WinRM service on a remote compu
 ### Example 1: Delete a connection to a remote computer
 
 ```powershell
-PS C:\> Disconnect-WSMan -computer server01
+PS C:\> Disconnect-WSMan -Computer server01
 PS C:\> cd WSMan:
 PS WSMan:\> dir
 ```
 
-```Outpue
+```Output
 WSManConfig: Microsoft.WSMan.Management\WSMan::WSMan
 ComputerName                                  Type
 ------------                                  ----
@@ -91,13 +91,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not accept any input.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - nsn
 title: New-PSSession
 ---
 # New-PSSession
@@ -148,7 +150,7 @@ the `$s` variable. It uses the credentials of the `Domain1\Admin01` user to comp
 ### Example 6: Create a session with a global scope in a different domain
 
 ```powershell
-$global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
+$Global:s = New-PSSession -ComputerName Server1.Domain44.Corpnet.Fabrikam.com -Credential Domain01\Admin01
 ```
 
 This example shows how to create a **PSSession** with a global scope on a computer in a different
@@ -181,7 +183,7 @@ text file, or other text-convertible format.
 ### Example 8: Create a session by using a URI
 
 ```powershell
-$s = New-PSSession -URI http://Server01:91/NewSession -Credential Domain01\User01
+$s = New-PSSession -Uri http://Server01:91/NewSession -Credential Domain01\User01
 ```
 
 This command creates a **PSSession** on the Server01 computer and stores it in the `$s` variable. It
@@ -193,7 +195,7 @@ that has permission to create a session on the remote computer.
 
 ```powershell
 $s = New-PSSession -ComputerName (Get-Content Servers.txt) -Credential Domain01\Admin01 -ThrottleLimit 16
-Invoke-Command -Session $s -ScriptBlock {Get-Process PowerShell} -AsJob
+Invoke-Command -Session $s -ScriptBlock {Get-Process powershell} -AsJob
 ```
 
 These commands create a set of **PSSession** objects and then run a background job in each of the
@@ -210,7 +212,7 @@ command to `16` concurrent connections. The command saves the **PSSession** obje
 variable.
 
 The second command uses the **AsJob** parameter of the `Invoke-Command` cmdlet to start a background
-job that runs a `Get-Process PowerShell` command in each of the **PSSession** objects in `$s`.
+job that runs a `Get-Process powershell` command in each of the **PSSession** objects in `$s`.
 
 For more information about PowerShell background jobs, see
 [about_Jobs](About/about_Jobs.md) and [about_Remote_Jobs](About/about_Remote_Jobs.md).
@@ -263,7 +265,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -530,7 +532,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -595,7 +597,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -694,18 +696,18 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: None
+Default value: False
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -VMId
 
-Specifies an array of virtual machine IDs. This cmdlet starts an interactive session with each of
-the specified virtual machines. To see the virtual machines that are available to you, use the
-following command:
+Specifies an array of virtual machine IDs. This cmdlet starts a PowerShell Direct interactive
+session with each of the specified virtual machines. For more information, see
+[Virtual Machine automation and management using PowerShell](/virtualization/hyper-v-on-windows/user-guide/powershell-direct).
 
-`Get-VM | Select-Object -Property Name, ID`
+Use `Get-VM` to see the virtual machines that are available on your Hyper-V host.
 
 ```yaml
 Type: System.Guid[]
@@ -721,9 +723,11 @@ Accept wildcard characters: False
 
 ### -VMName
 
-Specifies an array of names of virtual machines. This cmdlet starts an interactive session with each
-of the specified virtual machines. To see the virtual machines that are available to you, use the
-`Get-VM` cmdlet.
+Specifies an array of names of virtual machines. This cmdlet starts a PowerShell Direct interactive
+session with each of the specified virtual machines. For more information, see
+[Virtual Machine automation and management using PowerShell](/virtualization/hyper-v-on-windows/user-guide/powershell-direct).
+
+Use `Get-VM` to see the virtual machines that are available on your Hyper-V host.
 
 ```yaml
 Type: System.String[]
@@ -746,15 +750,27 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String, System.URI, System.Management.Automation.Runspaces.PSSession
+### System.String
 
-You can pipe a string, URI, or session object to this cmdlet.
+You can pipe a string to this cmdlet.
+
+### System.URI
+
+You can pipe a URI to this cmdlet.
+
+### System.Management.Automation.Runspaces.PSSession
+
+You can pipe a session object to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.Runspaces.PSSession
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `New-PSSession`:
+
+- `nsn`
 
 - This cmdlet uses the PowerShell remoting infrastructure. To use this cmdlet, the local
   computer and any remote computers must be configured for PowerShell remoting. For more

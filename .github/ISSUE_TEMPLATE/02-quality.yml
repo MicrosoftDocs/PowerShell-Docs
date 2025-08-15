@@ -1,0 +1,87 @@
+name: "🦾 Commit to a Quality Contribution"
+description: >-
+  File an issue to take part in the PowerShell Docs Quality Contributions project.
+title: "Quality: "
+labels:
+  - project-quality
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue template is for the [PowerShell Docs Quality Contributions project][a1].
+        
+        For more more info, see [Contributing quality improvements][a2] in our Contributor's Guide.
+
+        [a1]: https://github.com/orgs/MicrosoftDocs/projects/15
+        [a2]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: >-
+        These steps are required. After you've completed each step, check the box for it before
+        moving on.
+      options:
+        - label: |
+            **Existing Issue:**
+
+            Search the existing [quality issues][b1] for this repository. If there's an issue that
+            covers the quality area and articles you want to improve, pick a different quality area
+            or article set. Don't file a new issue for the same work. Subscribe, react, or comment
+            on that issue instead.
+
+            [b1]: https://github.com/orgs/MicrosoftDocs/projects/15/views/3?filterQuery=repo%3A%22MicrosoftDocs%2FPowerShell-Docs%22+is%3Aissue
+          required: true
+        - label: |
+            **Descriptive Title:**
+
+            Write the title for this issue as a short synopsis. If possible, provide context. For
+            example, "Quality: Command Syntax in Foo" instead of "Quality: Foo"
+          required: true
+  - type: dropdown
+    id: QualityArea
+    validations:
+      required: true
+    attributes:
+      label: Quality Areas
+      description: |
+        Select one or more quality areas to improve on with your contribution.
+
+        For more information, see the relevant section in the meta issue:
+
+        - [Aliases][c1]: Ensure cmdlet aliases are documented
+        - [Formatting code samples][c2]: Ensure proper casing, line length, etc in code samples
+        - [Formatting command syntax][c3]: Ensure proper casing and formatting for command syntax, including cmdlets, types, etc.
+        - [Link References][c4]: Ensure links in conceptual docs are defined as numbered references
+        - [Markdown linting][c5]: Ensure content follows markdownlint rules
+        - [Spelling][c6]: Ensure proper casing and spelling for words
+
+        [c1]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#aliases
+        [c2]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#formatting-code-samples
+        [c3]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#formatting-command-syntax
+        [c4]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#link-references
+        [c5]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#markdown-linting
+        [c6]: https://learn.microsoft.com/powershell/scripting/community/contributing/quality-improvements#spelling
+      multiple: true
+      options:
+        - Aliases
+        - Formatting code samples
+        - Formatting command syntax
+        - Link References
+        - Markdown linting
+        - Spelling
+  - type: textarea
+    id: ArticleList
+    validations:
+      required: true
+    attributes:
+      label: Article List
+      description: >-
+        Specify the articles you are committing to work on, one per line. You can specify each entry
+        as a path, the article's title, or the link to the article on Learn. If you specify an
+        article by path for a reference article, such as a cmdlet or about topic, specify the
+        version segment as `*.*`.
+      placeholder: |
+        - reference/*.*/Microsoft.PowerShell.Core/Add-History.md
+        - Add-History
+        - https://learn.microsoft.com/powershell/module/microsoft.powershell.core/add-history

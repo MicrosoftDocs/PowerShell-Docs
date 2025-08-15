@@ -1,30 +1,30 @@
 ---
 description: This article shows several examples of how to get instances of WMI objects from a computer system.
-ms.date: 10/07/2021
-title: Getting WMI Objects Get CimInstance
+ms.date: 12/08/2022
+title: Getting WMI objects with Get-CimInstance
 ---
-# Getting WMI Objects (Get-CimInstance)
+# Getting WMI objects with Get-CimInstance
 
-## Getting WMI Objects (Get-CimInstance)
+> This sample only applies to Windows platforms.
 
 Windows Management Instrumentation (WMI) is a core technology for Windows system administration
 because it exposes a wide range of information in a uniform manner. Because of how much WMI makes
-possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is one of the
-most useful for doing real work. We are going to discuss how to use the CimCmdlets to access WMI
-objects and then how to use WMI objects to do specific things.
+possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is one of the most
+useful for doing real work. We're going to discuss how to use the CIM cmdlets to access WMI objects
+and then how to use WMI objects to do specific things.
 
-### Listing WMI Classes
+## Listing WMI classes
 
-The first problem most WMI users encounter is trying to find out what can be done with WMI. WMI
-classes describe the resources that can be managed. There are hundreds of WMI classes, some of which
-contain dozens of properties.
+The first problem most WMI users face is trying to find out what can be done with WMI. WMI classes
+describe the resources that can be managed. There are hundreds of WMI classes, some of which contain
+dozens of properties.
 
 `Get-CimClass` addresses this problem by making WMI discoverable. You can get a list of the WMI
 classes available on the local computer by typing:
 
 ```powershell
-Get-CimClass -Namespace root/CIMV2 |
-  Where-Object CimClassName -like Win32* |
+Get-CimClass -Namespace root/CIMV2 | 
+    Where-Object CimClassName -Like Win32* | 
     Select-Object CimClassName
 ```
 
@@ -44,23 +44,23 @@ Win32_ThreadStopTrace
 ...
 ```
 
-You can retrieve the same information from a remote computer by using the **ComputerName**
-parameter, specifying a computer name or IP address:
+You can retrieve the same information from a remote computer using the **ComputerName** parameter,
+specifying a computer name or IP address:
 
 ```powershell
 Get-CimClass -Namespace root/CIMV2 -ComputerName 192.168.1.29
 ```
 
 The class listing returned by remote computers may vary due to the specific operating system the
-computer is running and the particular WMI extensions added by installed applications.
+computer is running and the particular WMI extensions are added by installed applications.
 
 > [!NOTE]
 > When using CIM cmdlets to connect to a remote computer, the remote computer must be running WMI
-> and the account you are using must be in the local administrators group on the remote computer.
-> The remote system does not need to have PowerShell installed. This allows you to administer
-> operating systems that are not running PowerShell, but do have WMI available.
+> and the account you are using must be in the local **Administrators** group on the remote
+> computer. The remote system doesn't need to have PowerShell installed. This allows you to
+> administer operating systems that aren't running PowerShell, but do have WMI available.
 
-### Displaying WMI Class Details
+## Displaying WMI class details
 
 If you already know the name of a WMI class, you can use it to get information immediately. For
 example, one of the WMI classes commonly used for retrieving information about a computer is
@@ -73,15 +73,16 @@ Get-CimInstance -Class Win32_OperatingSystem
 ```Output
 SystemDirectory     Organization BuildNumber RegisteredUser SerialNumber            Version
 ---------------     ------------ ----------- -------------- ------------            -------
-C:\WINDOWS\system32 Microsoft    18362       USER1          00330-80000-00000-AA175 10.0.18362
+C:\WINDOWS\system32 Microsoft    22621       USER1          00330-80000-00000-AA175 10.0.22621
 ```
 
-Although we are showing all of the parameters, the command can be expressed in a more succinct way.
-The **ComputerName** parameter is not necessary when connecting to the local system. We show it to
+Although we're showing all of the parameters, the command can be expressed in a more succinct way.
+The **ComputerName** parameter isn't necessary when connecting to the local system. We show it to
 demonstrate the most general case and remind you about the parameter. The **Namespace** defaults to
-`root/CIMV2`, and can be omitted as well. Finally, most cmdlets allow you to omit the name of common
-parameters. With `Get-CimInstance`, if no name is specified for the first parameter, PowerShell
-treats it as the **Class** parameter. This means the last command could have been issued by typing:
+**root/CIMV2**, and can be omitted as well. Finally, most cmdlets allow you to omit the name of
+common parameters. With `Get-CimInstance`, if no name is specified for the first parameter,
+PowerShell treats it as the **Class** parameter. This means the last command could have been issued
+by typing:
 
 ```powershell
 Get-CimInstance Win32_OperatingSystem
@@ -109,28 +110,26 @@ CreationClassName                         Property   string CreationClassName {g
 CSCreationClassName                       Property   string CSCreationClassName {get;}
 CSDVersion                                Property   string CSDVersion {get;}
 CSName                                    Property   string CSName {get;}
-CurrentTimeZone                           Property   short CurrentTimeZone {get;}
+CurrentTimeZone                           Property   int16 CurrentTimeZone {get;}
 DataExecutionPrevention_32BitApplications Property   bool DataExecutionPrevention_32BitApplications {get;}
 DataExecutionPrevention_Available         Property   bool DataExecutionPrevention_Available {get;}
 ...
 ```
 
-### Displaying Non-Default Properties with Format Cmdlets
+## Displaying non-default properties with Format cmdlets
 
-If you want information contained in the **Win32_OperatingSystem** class that is not displayed by
+If you want the information contained in the **Win32_OperatingSystem** class that isn't displayed by
 default, you can display it by using the **Format** cmdlets. For example, if you want to display
 available memory data, type:
 
 ```powershell
-Get-CimInstance -Class Win32_OperatingSystem |
-  Format-Table -Property TotalVirtualMemorySize, TotalVisibleMemorySize,
-    FreePhysicalMemory, FreeVirtualMemory, FreeSpaceInPagingFiles
+Get-CimInstance -Class Win32_OperatingSystem | Format-Table -Property TotalVirtualMemorySize, TotalVisibleMemorySize, FreePhysicalMemory, FreeVirtualMemory, FreeSpaceInPagingFiles
 ```
 
 ```Output
 TotalVirtualMemorySize TotalVisibleMemorySize FreePhysicalMemory FreeVirtualMemory FreeSpaceInPagingFiles
 ---------------------- ---------------------- ------------------ ----------------- ----------------------
-              33449088               16671872            6451868          18424496               16285032
+              41787920               16622096            9537952          33071884               25056628
 ```
 
 > [!NOTE]
@@ -144,10 +143,10 @@ Get-CimInstance -Class Win32_OperatingSystem | Format-List Total*Memory*, Free*
 ```
 
 ```Output
-TotalVirtualMemorySize : 33449088
-TotalVisibleMemorySize : 16671872
-FreePhysicalMemory     : 6524456
-FreeSpaceInPagingFiles : 16285808
-FreeVirtualMemory      : 18393668
-Name                   : Microsoft Windows 10 Pro|C:\WINDOWS|\Device\Harddisk0\Partition2
+TotalVirtualMemorySize : 41787920
+TotalVisibleMemorySize : 16622096
+FreePhysicalMemory     : 9365296
+FreeSpaceInPagingFiles : 25042952
+FreeVirtualMemory      : 33013484
+Name                   : Microsoft Windows 11 Pro|C:\Windows|\Device\Harddisk0\Partition2
 ```

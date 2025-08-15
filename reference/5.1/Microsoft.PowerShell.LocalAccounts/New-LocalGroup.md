@@ -2,9 +2,11 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 09/28/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/04/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/new-localgroup?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - nlg
 title: New-LocalGroup
 ---
 
@@ -41,7 +43,7 @@ This command creates a group named SecurityGroup04.
 
 ### -Description
 
-Specifies a comment for the group. The maximum length is 48 characters.
+Specifies a comment for the group. The maximum length is 256 characters.
 
 ```yaml
 Type: System.String
@@ -57,7 +59,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-Specifies a name for the group. The maximum length is 256 characters.
+Specifies a name for the group. The maximum length is 48 characters.
 
 ```yaml
 Type: System.String
@@ -107,7 +109,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -119,18 +122,22 @@ You can pipe a string to this cmdlet.
 
 ### System.Management.Automation.SecurityAccountsManager.LocalGroup
 
-This cmdlet returns a security group.
+This cmdlet returns a **LocalGroup** object representing the created security group.
 
 ## NOTES
 
-` The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
+Windows PowerShell includes the following aliases for `New-LocalGroup`:
+
+- `nlg`
+
+The **PrincipalSource** property is a property on **LocalUser**, **LocalGroup**, and
 **LocalPrincipal** objects that describes the source of the object. The possible sources are as
 follows:
 
-- Local
-- Active Directory
-- Azure Active Directory group
-- Microsoft Account
+- `Local`
+- `Active Directory`
+- `AzureAD`
+- `MicrosoftAccount`
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the
 Windows operating system. For earlier versions, the property is blank.

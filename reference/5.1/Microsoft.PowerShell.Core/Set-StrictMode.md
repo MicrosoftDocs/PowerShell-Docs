@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/24/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
 ---
@@ -40,10 +40,10 @@ override the setting inherited from the global scope.
 
 When `Set-StrictMode` is off, PowerShell has the following behaviors:
 
-- Uninitialized variables are assumed to have a value of `0` (zero) or `$Null`, depending on type
-- References to non-existent properties return `$Null`
+- Uninitialized variables are assumed to have a value of `0` (zero) or `$null`, depending on type
+- References to non-existent properties return `$null`
 - Results of improper function syntax vary with the error conditions
-- Attempting to retrieve a value using an invalid index in an array returns `$Null`
+- Attempting to retrieve a value using an invalid index in an array returns `$null`
 
 ## EXAMPLES
 
@@ -151,7 +151,7 @@ which nothing is added. With version `2.0` strict mode, it's correctly interpret
 syntax for submitting two values.
 
 Without version `2.0`, the reference to the non-existent **Month** property of a string returns only
-`$Null`. With version `2.0`, it's interpreted correctly as a reference error.
+`$null`. With version `2.0`, it's interpreted correctly as a reference error.
 
 ### Example 3: Turn on strict mode as version 3.0
 
@@ -268,13 +268,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet doesn't return any output.
+This cmdlet returns no output.
 
 ## NOTES
 

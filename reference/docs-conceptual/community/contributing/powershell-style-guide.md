@@ -1,107 +1,64 @@
 ---
 description: This article provides the rules of style for writing PowerShell documentation.
-ms.date: 08/29/2022
-ms.topic: conceptual
+ms.date: 03/30/2025
 title: PowerShell-Docs style guide
 ---
 # PowerShell-Docs style guide
 
 This article provides style guidance specific to the PowerShell-Docs content. It builds on the
-information outlined in the [Overview][1].
-
-## Product Terminology
-
-There are several variants of PowerShell and related modules.
-
-### PowerShell
-
-- **PowerShell** - PowerShell is a scripting language and an interactive shell. This is the default
-  name.
-  - **PowerShell Core** - The name used for PowerShell v6, built on .NET Core. This name
-    should not be used anymore.
-- **Windows PowerShell** - * Windows PowerShell is a trademarked name that refers to the version of
-  PowerShell that's included in Windows and requires the full .NET Framework.
-
-  In general, references to "Windows PowerShell" in documentation can be changed to _PowerShell_.
-  "Windows PowerShell" should be used when _Windows PowerShell_-specific behavior is being
-  discussed.
-
-### Azure PowerShell
-
-- **Azure PowerShell** is the name of the collection of PowerShell modules designed for Azure.
-- The name **Azure PowerShell** should always be used when referring to these modules, collectively.
-  Never just **PowerShell**.
-- Use the more specific name (listed below) when referring to a specific version.
-- There are many versions of Azure PowerShell and many Azure PowerShell related modules.
-  - **Az PowerShell** - the currently supported collection of modules for use with Azure
-  - **AzureRM PowerShell** - the older collection of modules that use the Azure Resource Manager
-    model for managing your Azure resources (deprecated and no longer supported after 29 February
-    2024)
-  - **Azure Service Management PowerShell** - the oldest collection of modules are for managing
-    legacy Azure resources that use Service Management APIs.
-  - **Azure Stack PowerShell** - this is a collection of PowerShell modules used to manage Azure
-    Stack environments. These modules are used together with other Azure PowerShell modules.
-- Azure PowerShell related modules - These are individual modules that aren't included in the Azure
-  PowerShell collection, but are used to manage Azure resources. These should always be referred to
-  by their full name.
-  - Azure Active Directory PowerShell
-  - AIP PowerShell
-  - Azure Deployment Manager PowerShell
-  - Azure Elastic DB Jobs PowerShell
-  - Azure Service Fabric PowerShell
-
-### Other PowerShell modules
-
-There are many other Microsoft products and services that publish PowerShell modules designed to
-manage those offerings. Those modules should always be referred to by their collective names or by
-the specific module name. For example:
-
-- "Windows management modules" (collectively) or the Hyper-V PowerShell module (specifically)
-
-### Related products
-
-- **Visual Studio Code (VS Code)** - This is Microsoft's free, open source editor. At first mention,
-  the full name should be used. After that you may use **VS Code**. Don't use **VSCode**.
-- **PowerShell Extension for Visual Studio Code** - The extension turns VS Code into the preferred
-  IDE for PowerShell. At first mention, the full name should be used. After that you may use
-  **PowerShell extension**.
+information outlined in the [Overview][10].
 
 ## Formatting command syntax elements
 
-- Always use the full name for cmdlets and parameters. Avoid using aliases unless you're
-  specifically demonstrating the alias.
-- Property, parameter, object, type names, class names, class methods should be **bold**.
-  - Property and parameter values should be wrapped in backticks (`` ` ``).
-  - When referring to types using the bracketed style, use backticks. For example:
-    `[System.Io.FileInfo]`
-- Language keywords, cmdlet names, functions, variables, native EXEs, file paths, and inline syntax
-  examples should be wrapped in backtick (`` ` ``) characters.
+Use the following rules to format elements of the PowerShell language when the elements are used in
+a sentence.
 
-  For example:
+- Always use the full name for cmdlets and parameters in the proper Pascal case
+- Only use an alias when you're specifically demonstrating the alias
+- PowerShell keywords and operators should be all lowercase
 
-  ~~~markdown
-  The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
-  the output to the `$files` variable.
+- The following items should be formatted using **bold** text:
+  - Type names
+  - Class names
+  - Property names
+  - Parameter names
+    - By default, use the parameter without the hyphen prefix.
+    - Use parameter name with the hyphen if you're illustrating syntax. Wrap the parameter in
+      backticks.
 
-  ```powershell
-  $files = Get-ChildItem C:\Windows
-  ```
-  ~~~
-
-  - PowerShell keywords and operators should be all lowercase
-
-  - Use proper (Pascal) casing for cmdlet names and parameters
-
-  - When referring to a parameter by name, the name should be **bold**. When illustrating the use of
-    a parameter with the hyphen prefix, the parameter should be wrapped in backticks. For example:
+    For example:
 
     ```markdown
     The parameter's name is **Name**, but it's typed as `-Name` when used on the command
     line as a parameter.
     ```
 
-  - When showing example usage of an external command, the example should be wrapped in backticks.
-    Always include the file extension in the native command. For example:
+- The following items should be formatted using backticks (`` ` ``):
+  - Property and parameter values
+  - Type names that use the bracketed style - For example: `[System.Io.FileInfo]`
+  - Referring to characters by name. For example: Use the asterisk character (`*`) to as a wildcard.
+  - Language keywords and operators
+  - Cmdlet, function, and script names
+  - Command and parameter aliases
+  - Method names - For example: The `ToString()` method returns a string representation of the
+    object
+  - Variables
+  - Native commands
+  - File and directory paths
+  - Inline command syntax examples - See [Markdown for code samples][04]
+
+    This example shows some backtick examples:
+
+    ~~~markdown
+    The following code uses `Get-ChildItem` to list the contents of `C:\Windows` and assigns
+    the output to the `$files` variable.
+
+    ```powershell
+    $files = Get-ChildItem C:\Windows
+    ```
+    ~~~
+
+    This example shows command syntax inline:
 
     ```markdown
     To start the spooler service on a remote computer named DC01, you type:
@@ -118,7 +75,7 @@ Markdown supports two different code styles:
 - **Code spans (inline)** - marked by a single backtick (`` ` ``) character. Used within a paragraph
   rather than as a standalone block.
 - **Code blocks** - a multi-line block surrounded by triple-backtick (`` ``` ``) strings. Code
-  blocks may also have a language label following the backticks. The language label enables syntax
+  blocks can also have a language label following the backticks. The language label enables syntax
   highlighting for the contents of the code block.
 
 All code blocks should be contained in a code fence. Never use indentation for code blocks. Markdown
@@ -126,10 +83,10 @@ allows this pattern but it can be problematic and should be avoided.
 
 A code block is one or more lines of code surrounded by a triple-backtick (`` ``` ``) code fence.
 The code fence markers must be on their own line before and after the code sample. The opening
-marker may have an optional language label. The language label enables syntax highlighting on the
+marker can have an optional language label. The language label enables syntax highlighting on the
 rendered webpage.
 
-For a full list of supported language tags, see [Fenced code blocks][2] in the centralized
+For a full list of supported language tags, see [Fenced code blocks][01] in the centralized
 contributor guide.
 
 Publishing also adds a **Copy** button that can copy the contents of the code block to the
@@ -169,12 +126,14 @@ for (<init>; <condition>; <repeat>)
 
 ### Illustrative examples
 
-Illustrative examples are used to explain a PowerShell concept. They aren't meant to be copied and
-pasted for execution. These are most commonly used for simple examples that are easy to understand.
-The code block can include the PowerShell prompt and example output.
+Illustrative examples are used to explain a PowerShell concept. Yo`u should
+[Avoid using PowerShell prompts in examples][03] whenever possible. However, illustrative examples
+aren't meant to be copied and pasted for execution. They're most commonly used for simple examples
+that are easy to understand. You may include the PowerShell prompt and example output.
 
 Here's a simple example illustrating the PowerShell comparison operators. In this case, we don't
-intend the reader to copy and run this example.
+intend the reader to copy and run this example. Notice that this example uses `PS>` as a simplified
+prompt string.
 
 ~~~markdown
 ```powershell
@@ -238,18 +197,18 @@ Cmdlet       Unprotect-CmsMessage        3.0.0.0    Microsoft.PowerShell.Securit
 ```
 ~~~
 
-The **Output** code label isn't an official "language" supported by the syntax highlighting system.
-However, this label is useful because our publishing system adds the "Output" label to the code box
-frame on the web page. The "Output" code box has no syntax highlighting.
+The `Output` code label isn't an official _language_ supported by the syntax highlighting system.
+However, this label is useful because our publishing system adds the **Output** label to the code
+box frame on the web page. The **Output** code box has no syntax highlighting.
 
 ## Coding style rules
 
 ### Avoid line continuation in code samples
 
-Avoid using line continuation characters (`` ` ``) in PowerShell code examples. These are hard to
-see and can cause problems if there are extra spaces at the end of the line.
+Avoid using line continuation characters (`` ` ``) in PowerShell code examples. Backtick characters
+are difficult to see and can cause problems if there are extra spaces at the end of the line.
 
-- Use PowerShell [splatting][3] to reduce line length for cmdlets that have several parameters.
+- Use PowerShell [splatting][02] to reduce line length for cmdlets that have several parameters.
 - Take advantage of PowerShell's natural line break opportunities, like after pipe (`|`) characters,
   opening braces (`{`), parentheses (`(`), and brackets (`[`).
 
@@ -283,32 +242,33 @@ GameConfigStore        GameDVR_Enabled                       : 1
 ### Don't use aliases in examples
 
 Use the full name of all cmdlets and parameters unless you're specifically documenting the alias.
-Cmdlet and parameter names must use the proper [Pascal-cased][4] names.
+Cmdlet and parameter names must use the proper [Pascal-cased][06] names.
 
 ### Using parameters in examples
 
-Avoid using positional parameters. In general, you should always include the parameter name in an
-example, even if the parameter is positional. This reduces the chance of confusion in your examples.
+Avoid using positional parameters. To reduce the chance of confusion, you should include the
+parameter name in an example, even if the parameter is positional.
 
 ## Formatting cmdlet reference articles
 
-Cmdlet reference articles have a specific structure. This structure is defined by [PlatyPS][5].
-PlatyPS generates the cmdlet help for PowerShell modules in Markdown. After editing the Markdown
-files, PlatyPS is used create the MAML help files used by the `Get-Help` cmdlet.
+Cmdlet reference articles have a specific structure. [PlatyPS][07] defines this structure. PlatyPS
+generates the cmdlet help for PowerShell modules in Markdown. After you edit the Markdown files,
+PlatyPS can create the MAML help files used by the `Get-Help` cmdlet.
 
-PlatyPS has a schema that expects a specific structure for cmdlet reference. The
-[platyPS.schema.md][6] document attempts to describe this structure. Schema violations cause build
-errors that must be fixed before we can accept your contribution.
+PlatyPS has a schema that expects a specific structure for cmdlet reference. The PlatyPS
+[schema document][08] describes this structure. Schema violations cause build errors that must be
+fixed before we can accept your contribution.
 
-- Don't remove any of the ATX header structures. PlatyPS expects a specific set of headers.
-- The **Input type** and **Output type** headers must have a type. If the cmdlet doesn't take input
-  or return a value, then use the value `None`.
+- Don't remove any of the ATX header structures. PlatyPS expects a specific set of headers in a
+  specific order.
+- The H2 **INPUTS** and **OUTPUTS** headers must have an H3 type. If the cmdlet doesn't take input
+  or return a value, then use the value `None` for the H3.
 - Inline code spans can be used in any paragraph.
 - Fenced code blocks are only allowed in the **EXAMPLES** section.
 
 In the PlatyPS schema, **EXAMPLES** is an H2 header. Each example is an H3 header. Within an
-example, the schema doesn't allow code blocks to be separated by paragraphs. The schema allows the
-following structure:
+example, the schema doesn't allow code blocks to be separated by paragraphs. The schema only allows
+the following structure:
 
 ```
 ### Example X - Title sentence
@@ -341,7 +301,7 @@ Get-Command -ListImported
 
 ## Formatting About_ files
 
-`About_*` files are written in Markdown but are shipped as plain text files. We use [Pandoc][7] to
+`About_*` files are written in Markdown but are shipped as plain text files. We use [Pandoc][09] to
 convert the Markdown to plain text. `About_*` files are formatted for the best compatibility across
 all versions of PowerShell and with the publishing tools.
 
@@ -362,20 +322,22 @@ Basic formatting guidelines:
     ```
 
 - Markdown tables
-  - For `About_*` topics, tables must fit within 76 characters
+  - For `About_*` articles, tables must fit within 76 characters
     - If the content doesn't fit within 76 character limit, use bullet lists instead
   - Use opening and closing `|` characters on each line
 
 ## Next steps
 
-[Editorial checklist][8]
+[Editorial checklist][05]
 
 <!-- link references -->
-[1]: overview.md#get-started-writing-docs
-[2]: /contribute/code-in-docs#fenced-code-blocks
-[3]: /powershell/module/microsoft.powershell.core/about/about_splatting
-[4]: https://en.wikipedia.org/wiki/PascalCase
-[5]: https://github.com/powershell/platyps
-[6]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
-[7]: https://pandoc.org
-[8]: editorial-checklist.md
+[01]: /contribute/code-in-docs#inline-code-blocks
+[02]: /powershell/module/microsoft.powershell.core/about/about_splatting
+[03]: #avoid-using-powershell-prompts-in-examples
+[04]: #markdown-for-code-samples
+[05]: editorial-checklist.md
+[06]: https://en.wikipedia.org/wiki/PascalCase
+[07]: https://github.com/powershell/platyps
+[08]: https://github.com/PowerShell/platyPS/blob/master/docs/developer/platyPS/platyPS.schema.md
+[09]: https://pandoc.org
+[10]: overview.md#get-started-writing-docs

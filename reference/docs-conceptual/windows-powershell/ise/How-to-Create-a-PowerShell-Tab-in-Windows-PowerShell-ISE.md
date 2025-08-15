@@ -1,6 +1,7 @@
 ---
 description: Tabs in the Windows PowerShell Integrated Scripting Environment (ISE) allow you to simultaneously create and use several execution environments within the same application. Each PowerShell tab corresponds to a separate execution environment or session.
-ms.date: 10/07/2021
+ms.date: 03/27/2025
+ms.topic: ui-reference
 title: How to Create a PowerShell Tab in Windows PowerShell ISE
 ---
 
@@ -11,21 +12,20 @@ create and use several execution environments within the same application. Each 
 corresponds to a separate execution environment or session.
 
 > [!NOTE]
-> Variables, functions, and aliases that you create in one tab do not carry over to another. They
+> Variables, functions, and aliases that you create in one tab don't carry over to another. They
 > are different Windows PowerShell sessions.
 
 Use the following steps to open or close a tab in Windows PowerShell. To rename a tab, set the
-[DisplayName](object-model/The-PowerShellTab-Object.md#displayname) property on the Windows
-PowerShell Tab scripting object.
+[DisplayName][04] property on the Windows PowerShell Tab scripting object.
 
 ## To create and use a new PowerShell Tab
 
 On the **File** menu, click **New PowerShell Tab**. The new PowerShell tab always opens as the
-active window. PowerShell tabs are incrementally numbered in the order that they are opened. Each
-tab is associated with its own Windows PowerShell console window. You can have up to 32 PowerShell
-tabs with their own session open at a time (this is limited to 8 on Windows PowerShell ISE 2.0.)
+active window. PowerShell tabs are incrementally numbered in the order that they're opened. Each tab
+is associated with its own Windows PowerShell console window. You can have up to 32 PowerShell tabs
+with their own session open at a time (this is limited to 8 on Windows PowerShell ISE 2.0.)
 
-Note that clicking the **New** or **Open** icons on the toolbar does not create a new tab with a
+Note that clicking the **New** or **Open** icons on the toolbar doesn't create a new tab with a
 separate session. Instead, those buttons open a new or existing script file on the currently active
 tab with a session. You can have multiple script files open with each tab and session. The script
 tabs for a session only appear below the session tabs when the associated session is active.
@@ -50,10 +50,15 @@ To close a tab, you can use any of the following techniques:
   active tab to close the tab.
 
 If you have unsaved files open in the PowerShell tab that you are closing, you are prompted to save
-or discard them. For more information about how to save a script, see
-[How to Save a Script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script).
+or discard them. For more information about how to save a script, see [How to Save a Script][02].
 
 ## See Also
 
-- [Introducing the Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
-- [How to Use the Console Pane in the Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [Introducing the Windows PowerShell ISE][03]
+- [How to Use the Console Pane in the Windows PowerShell ISE][01]
+
+<!-- link references -->
+[01]: How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md
+[02]: How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script
+[03]: Introducing-the-Windows-PowerShell-ISE.md
+[04]: object-model/The-PowerShellTab-Object.md#displayname

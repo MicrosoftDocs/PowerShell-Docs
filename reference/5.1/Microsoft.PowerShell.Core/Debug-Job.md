@@ -3,7 +3,7 @@ external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
 ms.date: 08/19/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/debug-job?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/debug-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Debug-Job
 ---
@@ -54,7 +54,7 @@ command detaches the debugger, and allows the job to continue to run.
 This command breaks into a running job with an ID of 3.
 
 ```powershell
-Debug-Job -ID 3
+Debug-Job -Id 3
 ```
 
 ```Output

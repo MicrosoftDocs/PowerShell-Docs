@@ -1,12 +1,11 @@
 ---
 description: RunSpace04 Code Samples
 ms.date: 01/04/2021
-ms.topic: reference
 title: RunSpace04 Code Samples
 ---
 # RunSpace04 Code Samples
 
-Here is a code sample for a runspace that uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)
+Here is a code sample for a runspace that uses the [System.Management.Automation.RunspaceInvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)
 class to execute a script that generates a terminating error. The host application is responsible
 for catching the error and interpreting the error record.
 

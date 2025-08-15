@@ -2,11 +2,15 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/04/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - set
+  - sv
 title: Set-Variable
 ---
+
 # Set-Variable
 
 ## SYNOPSIS
@@ -49,7 +53,7 @@ This example creates a global, read-only variable that contains all processes on
 then it displays all properties of the variable.
 
 ```powershell
-Set-Variable -Name "processes" -Value (Get-Process) -Option constant -Scope global -Description "All processes" -PassThru |
+Set-Variable -Name "processes" -Value (Get-Process) -Option Constant -Scope Global -Description "All processes" -PassThru |
     Format-List -Property *
 ```
 
@@ -373,17 +377,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Object
 
-You can pipe an object that represents the value of the variable to `Set-Variable`.
+You can pipe an object representing the value of the variable to this cmdlet.
 
 ## OUTPUTS
 
-### None or System.Management.Automation.PSVariable
+### None
 
-When you use the **PassThru** parameter, `Set-Variable` generates a
-**System.Management.Automation.PSVariable** object representing the new or changed variable.
-Otherwise, this cmdlet does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSVariable
+
+When you use the **PassThru** parameter, this cmdlet returns a **PSVariable** object representing
+the new or changed variable.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Set-Variable`:
+
+- `set`
+- `sv`
 
 ## RELATED LINKS
 

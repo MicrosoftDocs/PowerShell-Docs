@@ -2,9 +2,9 @@
 description: Explains advanced scheduled job topics, including the file structure that underlies scheduled jobs.
 Locale: en-US
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_advanced?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/about/about_scheduled_jobs_advanced?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Scheduled Jobs Advanced
+title: about_Scheduled_Jobs_Advanced
 ---
 
 # about_Scheduled_Jobs_Advanced
@@ -27,13 +27,13 @@ Microsoft .NET Framework Serialization XML format.
 
 When you create a scheduled job, PowerShell creates a directory for the
 scheduled job in the
-`$home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on
+`$HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs` directory on
 the local computer. The directory name is the same as the job name.
 
 The following is a sample **ScheduledJobs** directory.
 
 ```powershell
-Get-ChildItem $home\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
+Get-ChildItem $HOME\AppData\Local\Microsoft\Windows\PowerShell\ScheduledJobs
 ```
 
 ```Output
@@ -55,7 +55,7 @@ Each scheduled job has its own directory. The directory contains the scheduled
 job XML file and an **Output** subdirectory.
 
 ```powershell
-$Path = "$home\AppData\Local\Microsoft\Windows\PowerShell"
+$Path = "$HOME\AppData\Local\Microsoft\Windows\PowerShell"
 $Path += "\ScheduledJobs\ProcessJob"
 Get-ChildItem $Path
 ```
@@ -80,7 +80,7 @@ The following command shows the execution history directories for the
 **ProcessJob** scheduled job.
 
 ```powershell
-$Path = "$home\AppData\Local\Microsoft"
+$Path = "$HOME\AppData\Local\Microsoft"
 $Path += "\Windows\PowerShell\ScheduledJobs\ProcessJob\Output"
 Get-ChildItem $Path
 ```
@@ -101,7 +101,7 @@ d----         11/7/2011   3:00 AM            20111107-030002-376
 ```
 
 ```powershell
-$Path = "$home\AppData\Local\Microsoft\Windows\PowerShell\"
+$Path = "$HOME\AppData\Local\Microsoft\Windows\PowerShell\"
 $Path += "ScheduledJobs\ProcessJob\Output\20111102-030002-260"
 Get-ChildItem $Path
 ```
@@ -117,7 +117,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 You can open and examine the **ScheduledJobDefinition.xml**, **Results.xml**
-and **Status.xml** files or use the `Select-XML` cmdlet to parse the files.
+and **Status.xml** files or use the `Select-Xml` cmdlet to parse the files.
 
 > [!WARNING]
 > Do not edit the XML files. If any XML file contains invalid XML, PowerShell
@@ -145,7 +145,8 @@ Start-Job -DefinitionName ProcessJob
 ```
 
 To manage the job and get the job results, use the job cmdlets. For more
-information about the job cmdlets, see [about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
+information about the job cmdlets, see
+[about_Jobs](../../Microsoft.PowerShell.Core/About/about_Jobs.md).
 
 > [!NOTE]
 > To use the Job cmdlets on instances of scheduled jobs, the **PSScheduledJob**
@@ -172,9 +173,9 @@ instance in a table. A calculated property named **Label** displays the elapsed
 time of each job instance.
 
 ```powershell
-Get-job -Name UpdateHelpJob | 
-  Format-Table -Property ID, PSBeginTime, PSEndTime,
-@{Label="Elapsed Time";Expression={$.PsEndTime - $.PSBeginTime}}
+Get-Job -Name UpdateHelpJob |
+    Format-Table -Property Id, PSBeginTime, PSEndTime,
+    @{Label="Elapsed Time";Expression={$.PSEndTime - $.PSBeginTime}}
 ```
 
 ```Output
@@ -213,7 +214,8 @@ new instances of the scheduled job.
 
 The following example uses splatting to create `$JobParms` which are parameter
 values that are passed to the `Register-ScheduledJob` cmdlet. For more
-information, see [about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md).
+information, see
+[about_Splatting.md](../../Microsoft.PowerShell.Core/About/about_Splatting.md).
 The `Register-ScheduledJob` uses `@JobParms` to create a scheduled job. The
 command uses the **MaxResultCount** parameter with a value of 12 to save only
 the 12 newest job instance results of the scheduled job.
@@ -248,7 +250,7 @@ The following command gets the values of the name and
 displays them in a table.
 
 ```powershell
-Get-ScheduledJob | 
+Get-ScheduledJob |
   Format-Table -Property Name, ExecutionHistoryLength -AutoSize
 ```
 

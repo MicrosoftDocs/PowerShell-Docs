@@ -1,7 +1,7 @@
 @{
   Parameters = @(
     @{
-      Name = 'Repository'
+      Name = 'repository'
       Type = 'string'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -29,9 +29,26 @@
         return $Parameters
       }
     }
+    @{
+      Name = 'authorized_accounts'
+      Type = 'String[]'
+      Process = {
+        param($Parameters, $Value, $ErrorTarget)
+
+        [string[]]$SpecifiedAccounts = $Value -split ',' | Where-Object {
+           -not [string]::IsNullOrEmpty($_)
+        }
+
+        if ($SpecifiedAccounts.Count -gt 0) {
+          $Parameters.AuthorizedAccounts = $SpecifiedAccounts
+          Write-HostParameter -Name AuthorizedAccounts -Value $Parameters.AuthorizedAccounts
+        }
+        return $Parameters
+      }
+    }
 
     @{
-      Name = 'Permissions'
+      Name = 'permissions'
       Type = 'String[]'
       IfNullOrEmpty = {
           param($ErrorTarget)
@@ -99,7 +116,7 @@
     }
 
     @{
-      Name = 'Target'
+      Name = 'target'
       Type = 'String[]'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -172,7 +189,7 @@
     }
 
     @{
-      Name = 'User'
+      Name = 'user'
       Type = 'String'
       IfNullOrEmpty = {
         param($ErrorTarget)

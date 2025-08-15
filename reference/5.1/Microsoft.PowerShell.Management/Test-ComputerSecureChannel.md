@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
 ms.date: 10/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/test-computersecurechannel?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/test-computersecurechannel?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-ComputerSecureChannel
 ---
@@ -11,6 +11,7 @@ title: Test-ComputerSecureChannel
 # Test-ComputerSecureChannel
 
 ## SYNOPSIS
+
 Tests and repairs the secure channel between the local computer and its domain.
 
 ## SYNTAX
@@ -26,12 +27,17 @@ The `Test-ComputerSecureChannel` cmdlet verifies that the channel between the lo
 domain is working correctly by checking the status of its trust relationships. If a connection
 fails, you can use the **Repair** parameter to try to restore it.
 
-`Test-ComputerSecureChannel` returns $True if the channel is working correctly and $False if it is
+`Test-ComputerSecureChannel` returns $true if the channel is working correctly and $false if it is
 not. This result lets you use the cmdlet in conditional statements in functions and scripts. To get
 more detailed test results, use the **Verbose** parameter.
 
 This cmdlet works much like `NetDom.exe`. Both NetDom and `Test-ComputerSecureChannel` use the
 **NetLogon** service to perform the actions.
+
+> [!NOTE]
+> This cmdlet only works on Domain Member computers. When you run it on Domain Controllers, it
+> returns false positive errors. To verify and reset the secure  channels for Domain Controllers,
+> use `netdom.exe` or `nltest.exe`.
 
 ## EXAMPLES
 
@@ -73,7 +79,8 @@ VERBOSE: "The secure channel between 'SERVER01' and 'net.fabrikam.com' is alive 
 ```
 
 This command uses the **Verbose** common parameter to request detailed messages about the operation.
-For more information about **Verbose**, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+For more information about **Verbose**, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ### Example 5: Test a connection before you run a script
 
@@ -89,11 +96,7 @@ else {
 This example shows how to use `Test-ComputerSecureChannel` to test a connection before you run a
 script that requires the connection.
 
-The first command uses the Set-Alias cmdlet to create an alias for the cmdlet name. This saves space
-and prevents typing errors.
-
-The `if` statement checks the value that `Test-ComputerSecureChannel` returns before it runs a
-script.
+The `if` statement checks the value that `Test-ComputerSecureChannel` returns before it runs a script.
 
 ## PARAMETERS
 
@@ -173,7 +176,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs. The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet isn't run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -191,7 +194,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see 
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -203,7 +207,7 @@ You cannot pipe input to this cmdlet.
 
 ### System.Boolean
 
-This cmdlet returns `$True` if the connection is working correctly and `$False` if it is not.
+This cmdlet returns `$true` if the connection is working correctly and `$false` if it is not.
 
 ## NOTES
 
@@ -221,3 +225,7 @@ This cmdlet returns `$True` if the connection is working correctly and `$False` 
 [Restart-Computer](Restart-Computer.md)
 
 [Stop-Computer](Stop-Computer.md)
+
+[Use Netdom.exe to reset machine account passwords of a Windows Server domain controller](/troubleshoot/windows-server/windows-security/use-netdom-reset-domain-controller-password)
+
+[Nltest.exe](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc731935(v=ws.11))

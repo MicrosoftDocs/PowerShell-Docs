@@ -1,12 +1,11 @@
 ---
 description: Runspace04 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Runspace04 Sample
 ---
 # Runspace04 Sample
 
-This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run commands, and how to catch terminating errors that are thrown when running the commands. Two commands are run, and the last command is passed a parameter argument that is not valid. As a result, no objects are returned and a terminating error is thrown.
+This sample shows how to use the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) class to run commands, and how to catch terminating errors that are thrown when running the commands. Two commands are run, and the last command is passed a parameter argument that is not valid. As a result, no objects are returned and a terminating error is thrown.
 
 ## Requirements
 
@@ -16,9 +15,9 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
-- Adding commands to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Adding commands to the pipeline of the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 - Adding parameter arguments to the pipeline.
 

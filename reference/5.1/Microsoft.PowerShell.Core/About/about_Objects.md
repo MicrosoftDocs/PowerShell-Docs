@@ -1,21 +1,21 @@
 ---
-description: Provides essential information about objects in Windows PowerShell.
+description: Provides essential information about objects in PowerShell.
 Locale: en-US
 ms.date: 06/02/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_objects?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Objects
+title: about_Objects
 ---
 
 # about_Objects
 
 ## Short description
 
-Provides essential information about objects in Windows PowerShell.
+Provides essential information about objects in PowerShell.
 
 ## Long description
 
-Every action you take in Windows PowerShell occurs within the context of
+Every action you take in PowerShell occurs within the context of
 objects. As data moves from one command to the next, it moves as one or
 more identifiable objects. An object, then, is a collection of data that
 represents an item. An object is made up of three types of data: the
@@ -39,8 +39,8 @@ in commands to take action and manage data.
 
 You can discover an objects properties and methods using
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) or the `psobject`
- [intrinsic member](about_Intrinsic_Members.md).
- 
+[intrinsic member](about_Intrinsic_Members.md).
+
 ## Objects in Pipelines
 
 When commands are combined in a pipeline, they pass information to each
@@ -54,18 +54,18 @@ The following example demonstrates how objects are passed from one
 command to the next:
 
 ```powershell
-Get-ChildItem C: | where { $_.PsIsContainer -eq $false } | Format-List
+Get-ChildItem C: | where { $_.PSIsContainer -eq $false } | Format-List
 ```
 
 The first command `Get-ChildItem C:` returns a file or directory object
 for each item in the root directory of the file system. The file and
 directory objects are passed down the pipeline to the second command.
 
-The second command `where { $_.PsIsContainer -eq $false }` uses the
-**PsIsContainer** property of all file system objects to select only
-files, which have a value of False (`$false`) in their **PsIsContainer**
+The second command `where { $_.PSIsContainer -eq $false }` uses the
+**PSIsContainer** property of all file system objects to select only
+files, which have a value of False (`$false`) in their **PSIsContainer**
 property. Folders, which are containers and, thus, have a value of
-True (`$true`) in their **PsIsContainer** property, are not selected.
+True (`$true`) in their **PSIsContainer** property, are not selected.
 
 The second command passes only the file objects to the third command
 `Format-List`, which displays the file objects in a list.

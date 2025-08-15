@@ -1,7 +1,6 @@
 ---
 description: ListEntry Element
 ms.date: 08/23/2021
-ms.topic: reference
 title: ListEntry Element
 ---
 # ListEntry Element
@@ -53,7 +52,7 @@ more information about list views, see [Creating a List View](./creating-a-list-
 
 ## Example
 
-This example shows the XML elements that define the list view for the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+This example shows the XML elements that define the list view for the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object.
 
 ```xml

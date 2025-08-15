@@ -1,18 +1,18 @@
 ---
 description: The PowerShellTab collection object is a collection of PowerShellTab objects. Each PowerShellTab object functions as a separate runtime environment.
-ms.date: 06/05/2017
+ms.date: 03/27/2025
 title: The PowerShellTabCollection Object
 ---
 # The PowerShellTabCollection Object
 
 The **PowerShellTab** collection object is a collection of **PowerShellTab** objects. Each
-**PowerShellTab** object functions as a separate runtime environment. It is an instance of
+**PowerShellTab** object functions as a separate runtime environment. It's an instance of
 Microsoft.PowerShell.Host.ISE.PowerShellTabs class. An example is the `$psISE.PowerShellTabs`
 object.
 
 ## Methods
 
-### Add\(\)
+### `Add()`
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
@@ -23,14 +23,13 @@ $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### `Remove(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab)`
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Removes the tab that is specified by the **psTab** parameter.
+Removes the tab that's specified by the **psTab** parameter.
 
-**psTab**
-The PowerShell tab to remove.
+- **psTab** - The PowerShell tab to remove.
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -40,15 +39,14 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-### SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### `SetSelectedPowerShellTab(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab)`
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently
+Selects the PowerShell tab that's specified by the **psTab** parameter to make it the currently
 active PowerShell tab.
 
-**psTab**
-The PowerShell tab to select.
+- **psTab** - The PowerShell tab to select.
 
 ```powershell
 # Save the current tab in a variable and rename it
@@ -63,6 +61,11 @@ $psISE.PowerShellTabs.SelectedPowerShellTab = $oldTab
 
 ## See Also
 
-- [The PowerShellTab Object](The-PowerShellTab-Object.md)
-- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The PowerShellTab Object][03]
+- [Purpose of the Windows PowerShell ISE Scripting Object Model][01]
+- [The ISE Object Model Hierarchy][02]
+
+<!-- link references -->
+[01]: Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md
+[02]: The-ISE-Object-Model-Hierarchy.md
+[03]: The-PowerShellTab-Object.md

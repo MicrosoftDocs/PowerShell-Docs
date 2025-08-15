@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 05/17/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 05/08/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
 ---
@@ -190,10 +190,10 @@ $DiskReads | Get-Counter -ComputerName Server01, Server02 -MaxSamples 10
 ```Output
 Timestamp                 CounterSamples
 ---------                 --------------
-6/21/2019 10:51:04        \\Server01\logicaldisk(c:)\disk reads/sec :
+6/21/2019 10:51:04        \\Server01\logicaldisk(C:)\disk reads/sec :
                           0
 
-                          \\Server02\logicaldisk(c:)\disk reads/sec :
+                          \\Server02\logicaldisk(C:)\disk reads/sec :
                           0.983050344269146
 ```
 
@@ -475,7 +475,7 @@ Accept wildcard characters: False
 
 ### -Continuous
 
-When the **Continuous** is specified, `Get-Counter` gets samples until you press
+When **Continuous** is specified, `Get-Counter` gets samples until you press
 <kbd>CTRL</kbd>+<kbd>C</kbd>. Samples are obtained every second for each specified performance
 counter. Use the **SampleInterval** parameter to increase the interval between continuous samples.
 
@@ -610,16 +610,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.GetCounter.CounterSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet, Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample
+### Microsoft.PowerShell.Commands.GetCounter.CounterSet
 
-To view an object's properties, send the output down the pipeline to `Get-Member`. The object types
-that are output are as follows:
+With the **ListSet** parameter, this cmdlet returns **CounterSet** objects.
 
-**ListSet** parameter: **Microsoft.PowerShell.Commands.GetCounter.CounterSet**
+### Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet
 
-**Counter** parameter: **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSampleSet**
-
-**CounterSamples** property: **Microsoft.PowerShell.Commands.GetCounter.PerformanceCounterSample**
+By default and with the **Counter** parameter, this cmdlet returns **PerformanceCounterSampleSet**
+objects.
 
 ## NOTES
 

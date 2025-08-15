@@ -1,17 +1,17 @@
 ---
 description: Describes a statement you can use to immediately exit `foreach`, `for`, `while`, `do`, `switch`, or `trap` statements.
 Locale: en-US
-ms.date: 06/04/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_break?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 04/29/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_break?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Break
+title: about_Break
 ---
 # about_Break
 
 ## Short description
 
-Describes a statement you can use to immediately exit `foreach`, `for`,
-`while`, `do`, `switch`, or `trap` statements.
+Describes the `break` statement, which provides a way to exit the current
+control block.
 
 ## Long description
 
@@ -79,7 +79,7 @@ example has a `while` statement with a `for` statement:
 
 ```powershell
 :myLabel while (<condition 1>) {
-  for ($item in $items) {
+  foreach ($item in $items) {
     if (<condition 2>) {
       break myLabel
     }
@@ -123,7 +123,8 @@ even pass control across script and function call boundaries.
 
 ## Using `break` in a `switch` statement
 
-In a `switch`construct, `break` causes PowerShell to exit the `switch` code block.
+In a `switch` construct, `break` causes PowerShell to exit the `switch` code
+block.
 
 The `break` keyword is used to leave the `switch` construct. For example, the
 following `switch` statement uses `break` statements to test for the most
@@ -131,7 +132,7 @@ specific condition:
 
 ```powershell
 $var = "word2"
-switch -regex ($var) {
+switch -Regex ($var) {
     "word2" {
       Write-Host "Exact" $_
       break
@@ -170,7 +171,7 @@ when the most specific condition is met.
 If the final statement executed in the body of a `trap` statement is `break`,
 the error object is suppressed and the exception is re-thrown.
 
-The following example create a **DivideByZeroException** exception that is
+The following example creates a **DivideByZeroException** exception that is
 trapped using the `trap` statement.
 
 ```powershell
@@ -190,8 +191,8 @@ function test {
 test
 ```
 
-Notice that execution stops at the exception. The `After loop` is never reached.
-The exception is re-thrown after the `trap` executes.
+Notice that execution stops at the exception. The `After loop` is never
+reached. The exception is re-thrown after the `trap` executes.
 
 ```Output
 Before loop

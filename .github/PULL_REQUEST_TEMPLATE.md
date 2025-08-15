@@ -21,7 +21,7 @@
 
 - [ ] **Descriptive Title:** This PR's title is a synopsis of the changes it proposes.
 - [ ] **Summary:** This PR's summary describes the scope and intent of the change.
-- [ ] **Contributor's Guide:** I have read the [contributors guide][contrib].
+- [ ] **Contributor's Guide:** I have read the [contributor's guide][contrib].
 - [ ] **Style:** This PR adheres to the [style guide][style].
 
 <!--
@@ -31,5 +31,5 @@
     This helps us understand whether or not your PR is ready to review.
 -->
 
-[contrib]: https://docs.microsoft.com/powershell/scripting/community/contributing/overview
-[style]: https://docs.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide
+[contrib]: https://learn.microsoft.com/powershell/scripting/community/contributing/overview
+[style]: https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide

@@ -1,7 +1,6 @@
 ---
 description: Alias Attribute Declaration
 ms.date: 06/07/2021
-ms.topic: reference
 title: Alias Attribute Declaration
 ---
 # Alias Attribute Declaration
@@ -24,7 +23,7 @@ Required. Specifies a set of comma-separated alias names for the cmdlet paramete
 ## Remarks
 
 The **Alias** attribute is defined by the
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)
+[System.Management.Automation.AliasAttribute](/dotnet/api/System.Management.Automation.AliasAttribute)
 class.
 
 ### Cmdlet aliases

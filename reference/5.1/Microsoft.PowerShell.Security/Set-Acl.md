@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 01/31/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 10/23/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Acl
 ---
+
 # Set-Acl
 
 ## SYNOPSIS
@@ -18,14 +19,14 @@ Changes the security descriptor of a specified item, such as a file or a registr
 
 ```
 Set-Acl [-Path] <String[]> [-AclObject] <Object> [[-CentralAccessPolicy] <String>] [-ClearCentralAccessPolicy]
- [-Passthru] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
+ [-PassThru] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
  [-UseTransaction] [<CommonParameters>]
 ```
 
 ### ByInputObject
 
 ```
-Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-Passthru] [-Filter <String>] [-Include <String[]>]
+Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-PassThru] [-Filter <String>] [-Include <String[]>]
  [-Exclude <String[]>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
@@ -33,7 +34,7 @@ Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-Passthru] [-Filter <St
 
 ```
 Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [[-CentralAccessPolicy] <String>]
- [-ClearCentralAccessPolicy] [-Passthru] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-ClearCentralAccessPolicy] [-PassThru] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
@@ -104,7 +105,7 @@ The first command in the pipeline uses the Get-ChildItem cmdlet to get all of th
 `C:\Temp` directory. The **Recurse** parameter extends the command to all subdirectories of
 `C:\temp`. The **Include** parameter limits the files retrieved to those with the `.txt` file name
 extension. The **Force** parameter gets hidden files, which would otherwise be excluded. (You cannot
-use `c:\temp\*.txt`, because the **Recurse** parameter works on directories, not on files.)
+use `C:\temp\*.txt`, because the **Recurse** parameter works on directories, not on files.)
 
 The pipeline operator (`|`) sends the objects representing the retrieved files to the `Set-Acl`
 cmdlet, which applies the security descriptor in the **AclObject** parameter to all of the files in
@@ -204,8 +205,9 @@ Accept wildcard characters: False
 Establishes or changes the central access policy of the item.
 Enter the CAP ID or friendly name of a central access policy on the computer.
 
-Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set central access policies for users and groups.
-For more information, see [Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
+Beginning in Windows Server 2012, administrators can use Active Directory and Group Policy to set
+central access policies for users and groups. For more information, see
+[Dynamic Access Control: Scenario Overview](/windows-server/identity/solution-guides/dynamic-access-control--scenario-overview).
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -339,7 +341,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Passthru
+### -PassThru
 
 Returns an object that represents the security descriptor that was changed. By default, this cmdlet
 does not generate any output.
@@ -437,20 +439,28 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Security.AccessControl.ObjectSecurity, System.Security.AccessControl.CommonSecurityDescriptor
+### System.Security.AccessControl.ObjectSecurity
 
-You can pipe an ACL object or a security descriptor to `Set-Acl`.
+You can pipe an ACL object to this cmdlet.
+
+### System.Security.AccessControl.CommonSecurityDescriptor
+
+You can pipe a security descriptor to this cmdlet.
 
 ## OUTPUTS
 
+### None
+
+By default, this cmdlet returns no output.
+
 ### System.Security.AccessControl.FileSecurity
 
-By default, `Set-Acl` does not generate any output. However, if you use the **Passthru** parameter,
-it generates a security object. The type of the security object depends on the type of the item.
+When you use the **PassThru** parameter, this cmdlet returns a security object. The type of the
+security object depends on the type of the item.
 
 ## NOTES
 
-The `Set-Acl` cmdlet is supported by the PowerShell file system and registry providers. As such, you
+The `Set-Acl` cmdlet is supported by the PowerShell FileSystem and Registry providers. As such, you
 can use it to change the security descriptors of files, directories, and registry keys.
 
 ## RELATED LINKS

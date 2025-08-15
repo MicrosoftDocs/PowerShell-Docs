@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 09/29/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - sajb
 title: Start-Job
 ---
 
@@ -168,11 +170,11 @@ computer.
 This example uses a background job to get a specified process by name.
 
 ```powershell
-Start-Job -Name PShellJob -ScriptBlock { Get-Process -Name PowerShell }
+Start-Job -Name PShellJob -ScriptBlock { Get-Process -Name powershell }
 ```
 
 `Start-Job` uses the **Name** parameter to specify a friendly job name, **PShellJob**. The
-**ScriptBlock** parameter specifies `Get-Process` to get processes with the name **PowerShell**.
+**ScriptBlock** parameter specifies `Get-Process` to get processes with the name `powershell`.
 
 ### Example 6: Collect and save data by using a background job
 
@@ -180,7 +182,7 @@ This example starts a job that collects a large amount of map data and then save
 file.
 
 ```powershell
-Start-Job -Name GetMappingFiles -InitializationScript {Import-Module MapFunctions} -ScriptBlock {
+Start-Job -Name GetMappingFiles -InitializationScript {Import-Module -Name MapFunctions} -ScriptBlock {
    Get-Map -Name * | Set-Content -Path D:\Maps.tif } -RunAs32
 ```
 
@@ -196,7 +198,7 @@ This example uses the `$input` automatic variable to process an input object. Us
 view the job's output.
 
 ```powershell
-Start-Job -ScriptBlock { Get-Content $input } -InputObject "C:\Servers.txt"
+Start-Job -ScriptBlock { Get-Content -Path $input } -InputObject "C:\Servers.txt"
 Receive-Job -Name Job45 -Keep
 ```
 
@@ -360,7 +362,7 @@ qualified path of the job definition. Use this parameter to start custom job typ
 definition path, such as scheduled jobs.
 
 For scheduled jobs, the value of the **DefinitionPath** parameter is
-`$home\AppData\Local\Windows\PowerShell\ScheduledJob`.
+`$HOME\AppData\Local\Windows\PowerShell\ScheduledJob`.
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -567,16 +569,20 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can use the pipeline to send an object with the **Name** property to the **Name** parameter. For
-example, you can pipeline a **FileInfo** object from `Get-ChildItem` to `Start-Job`.
+You can pipe an object with the **Name** property to the **Name** parameter to this cmdlet. For
+example, you can pipe a **FileInfo** object from `Get-ChildItem`.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSRemotingJob
 
-`Start-Job` returns a **PSRemotingJob** object that represents the job that it started.
+This cmdlet returns a **PSRemotingJob** object representing the job that it started.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Start-Job`:
+
+- `sajb`
 
 To run in the background, `Start-Job` runs in its own session in the current session. When you use
 the `Invoke-Command` cmdlet to run a `Start-Job` command in a session on a remote computer,

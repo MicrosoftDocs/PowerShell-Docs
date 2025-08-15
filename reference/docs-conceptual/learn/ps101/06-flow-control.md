@@ -1,42 +1,43 @@
 ---
 description: PowerShell provides methods to create loops, make decisions, and logically control the flow of code in scripts.
 ms.custom: Contributor-mikefrobbins
-ms.date: 10/05/2021
+ms.date: 3/20/2025
 ms.reviewer: mirobb
 title: Flow control
 ---
+
 # Chapter 6 - Flow control
 
 ## Scripting
 
-When you move from writing PowerShell one-liners to writing scripts, it sounds a lot more
-complicated than it really is. A script is nothing more than the same or similar commands that you
-would run interactively in the PowerShell console, except they're saved as a `.PS1` file. There are
-some scripting constructs that you may use such as a `foreach` loop instead of the `ForEach-Object`
-cmdlet. To beginners, the differences can be confusing especially when you consider that `foreach`
-is both a scripting construct and an alias for the `ForEach-Object` cmdlet.
+When you move from writing PowerShell one-liners to writing scripts, it sounds more complicated than
+it is. A script is nothing more than the same or similar commands you run interactively in the
+PowerShell console, except you save them as a `.ps1` file. There are some scripting constructs that
+you might use, such as a `foreach` loop instead of the `ForEach-Object` cmdlet. The differences can
+be confusing for beginners when considering that `foreach` is both a language keyword and an
+alias for the `ForEach-Object` cmdlet.
 
 ## Looping
 
-One of the great things about PowerShell is, once you figure out how to do something for one item,
-it's almost as easy to do the same task for hundreds of items. Simply loop through the items using
-one of the many different types of loops in PowerShell.
+One of the best aspects of PowerShell is its scalability. Once you learn how to perform a task for a
+single item, applying the same action to hundreds of items is almost as straightforward. Loop
+through the items using one of the different types of loops in PowerShell.
 
 ### ForEach-Object
 
-`ForEach-Object` is a cmdlet for iterating through items in a pipeline such as with PowerShell
+`ForEach-Object` is a cmdlet for iterating through items in a pipeline, such as with PowerShell
 one-liners. `ForEach-Object` streams the objects through the pipeline.
 
-Although the **Module** parameter of `Get-Command` accepts multiple values that are strings, it only
-accepts them via pipeline input by property name or via parameter input. In the following scenario,
-if I want to pipe two strings by value to `Get-Command` for use with the **Module** parameter, I
-would need to use the `ForEach-Object` cmdlet.
+Although the **Module** parameter of `Get-Command` accepts multiple string values, it only accepts
+them via pipeline input by property name. In the following scenario, if you want to pipe two string
+values to `Get-Command` for use with the **Module** parameter, you need to use the `ForEach-Object`
+cmdlet.
 
 ```powershell
 'ActiveDirectory', 'SQLServer' |
-   ForEach-Object {Get-Command -Module $_} |
-     Group-Object -Property ModuleName -NoElement |
-         Sort-Object -Property Count -Descending
+    ForEach-Object {Get-Command -Module $_} |
+    Group-Object -Property ModuleName -NoElement |
+    Sort-Object -Property Count -Descending
 ```
 
 ```Output
@@ -47,16 +48,16 @@ Count Name
 ```
 
 In the previous example, `$_` is the current object. Beginning with PowerShell version 3.0,
-`$PSItem` can be used instead of `$_`. But I find that most experienced PowerShell users still
-prefer using `$_` since it's backward compatible and less to type.
+`$PSItem` can be used instead of `$_`. Most experienced PowerShell users prefer using `$_` since
+it's backward compatible and less to type.
 
-When using the `foreach` keyword, you must store all of the items in memory before iterating through
-them, which could be difficult if you don't know how many items you're working with.
+When using the `foreach` keyword, you must store the items in memory before iterating through them,
+which could be difficult if you don't know how many items you're working with.
 
 ```powershell
 $ComputerName = 'DC01', 'WEB01'
 foreach ($Computer in $ComputerName) {
-  Get-ADComputer -Identity $Computer
+    Get-ADComputer -Identity $Computer
 }
 ```
 
@@ -82,8 +83,8 @@ SID               : S-1-5-21-2989741381-570885089-3319121794-1107
 UserPrincipalName :
 ```
 
-Many times a loop such as `foreach` or `ForEach-Object` is necessary. Otherwise you'll receive an
-error message.
+Many times a loop such as `foreach` or `ForEach-Object` is necessary. Otherwise you receive an error
+message.
 
 ```powershell
 Get-ADComputer -Identity 'DC01', 'WEB01'
@@ -91,19 +92,19 @@ Get-ADComputer -Identity 'DC01', 'WEB01'
 
 ```Output
 Get-ADComputer : Cannot convert 'System.Object[]' to the type
-'Microsoft.ActiveDirectory.Management.ADComputer' required by parameter 'Identity'.
-Specified method is not supported.
+'Microsoft.ActiveDirectory.Management.ADComputer' required by parameter
+'Identity'. Specified method is not supported.
 At line:1 char:26
 + Get-ADComputer -Identity 'DC01', 'WEB01'
-+                          ```````````````
-    + CategoryInfo          : InvalidArgument: (:) [Get-ADComputer], ParameterBindingExc
-   eption
-    + FullyQualifiedErrorId : CannotConvertArgument,Microsoft.ActiveDirectory.Management
-   .Commands.GetADComputer
++                          ~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ADComputer], Parame
+   terBindingException
+    + FullyQualifiedErrorId : CannotConvertArgument,Microsoft.ActiveDirecto
+   ry.Management.Commands.GetADComputer
 ```
 
-Other times, you can get the same results while eliminating the loop altogether. Consult the cmdlet
-help to understand your options.
+Other times, you can get the same results while eliminating the loop. Consult the cmdlet help to
+understand your options.
 
 ```powershell
 'DC01', 'WEB01' | Get-ADComputer
@@ -131,19 +132,19 @@ SID               : S-1-5-21-2989741381-570885089-3319121794-1107
 UserPrincipalName :
 ```
 
-As you can see in the previous examples, the **Identity** parameter for `Get-ADComputer` only accepts a
-single value when provided via parameter input, but it allows for multiple items when the input is
-provided via pipeline input.
+As you can see in the previous examples, the **Identity** parameter for `Get-ADComputer` only
+accepts a single value when provided via parameter input. However, by using the pipeline, you can
+send multiple values to the command because the values are processed one at a time.
 
 ### For
 
-A `for` loop iterates while a specified condition is true. The `for` loop is not something that I
-use often, but it does have its uses.
+A `for` loop iterates while a specified condition is true. I don't use the `for` loop often, but it
+has uses.
 
 ```powershell
 for ($i = 1; $i -lt 5; $i++) {
-  Write-Output "Sleeping for $i seconds"
-  Start-Sleep -Seconds $i
+    Write-Output "Sleeping for $i seconds"
+    Start-Sleep -Seconds $i
 }
 ```
 
@@ -154,25 +155,26 @@ Sleeping for 3 seconds
 Sleeping for 4 seconds
 ```
 
-In the previous example, the loop will iterate four times by starting off with the number one and
-continue as long as the counter variable `$i` is less than 5. It will sleep for a total of 10
-seconds.
+In the previous example, the loop iterates four times by starting with the number one and continuing
+as long as the counter variable `$i` is less than 5. It sleeps for a total of 10 seconds.
 
 ### Do
 
-There are two different `do` loops in PowerShell. `Do Until` runs while the specified condition is
-false.
+There are two different `do` loops in PowerShell: `do until` and `do while`. `do until` runs until
+the specified condition is false.
+
+The following example is a numbers game that continues until the value you guess equals the same
+number that the `Get-Random` cmdlet generated.
 
 ```powershell
 $number = Get-Random -Minimum 1 -Maximum 10
 do {
-  $guess = Read-Host -Prompt "What's your guess?"
-  if ($guess -lt $number) {
-    Write-Output 'Too low!'
-  }
-  elseif ($guess -gt $number) {
-    Write-Output 'Too high!'
-  }
+    $guess = Read-Host -Prompt "What's your guess?"
+    if ($guess -lt $number) {
+        Write-Output 'Too low!'
+    } elseif ($guess -gt $number) {
+        Write-Output 'Too high!'
+    }
 }
 until ($guess -eq $number)
 ```
@@ -185,20 +187,17 @@ Too low!
 What's your guess?: 3
 ```
 
-The previous example is a numbers game that continues until the value you guess equals the same
-number that the `Get-Random` cmdlet generated.
-
-`Do While` is just the opposite. It runs as long as the specified condition evaluates to true.
+`Do While` is the opposite. It runs as long as the specified condition is evaluated as true.
 
 ```powershell
 $number = Get-Random -Minimum 1 -Maximum 10
 do {
-  $guess = Read-Host -Prompt "What's your guess?"
-  if ($guess -lt $number) {
-    Write-Output 'Too low!'
-  } elseif ($guess -gt $number) {
-    Write-Output 'Too high!'
-  }
+    $guess = Read-Host -Prompt "What's your guess?"
+    if ($guess -lt $number) {
+        Write-Output 'Too low!'
+    } elseif ($guess -gt $number) {
+        Write-Output 'Too high!'
+    }
 }
 while ($guess -ne $number)
 ```
@@ -215,18 +214,23 @@ What's your guess?: 4
 
 The same results are achieved with a `Do While` loop by reversing the test condition to not equals.
 
-`Do` loops always run at least once because the condition is evaluated at the end of the loop.
+`do` loops always run at least once because the condition is evaluated at the end of the loop.
 
 ### While
 
-Similar to the `Do While` loop, a `While` loop runs as long as the specified condition is true. The
-difference however, is that a `While` loop evaluates the condition at the top of the loop before any
-code is run. So it doesn't run if the condition evaluates to false.
+Like the `do while` loop, a `while` loop runs as long as the specified condition is true. The
+difference, however, is that a `while` loop evaluates the condition at the top of the loop before
+any code is run. So, it doesn't run if the condition is evaluated as false.
+
+The following example calculates what day Thanksgiving Day is on in the United States. It's always
+on the fourth Thursday of November. The loop starts with the 22nd day of November and adds a day,
+while the day of the week isn't equal to Thursday. If the 22nd is a Thursday, the loop doesn't run
+at all.
 
 ```powershell
 $date = Get-Date -Date 'November 22'
 while ($date.DayOfWeek -ne 'Thursday') {
-  $date = $date.AddDays(1)
+    $date = $date.AddDays(1)
 }
 Write-Output $date
 ```
@@ -235,20 +239,16 @@ Write-Output $date
 Thursday, November 23, 2017 12:00:00 AM
 ```
 
-The previous example calculates what day Thanksgiving Day is on in the United States. It's always on
-the fourth Thursday of November. So the loop starts with the 22nd day of November and adds a day
-while the day of the week isn't equal to Thursday. If the 22nd is a Thursday, the loop doesn't run
-at all.
+## break, continue, and return
 
-## Break, Continue, and Return
-
-`Break` is designed to break out of a loop. It's also commonly used with the `switch` statement.
+The `break` keyword is designed to exit a loop and is often used with the `switch` statement. In
+the following example, `break` causes the loop to end after the first iteration.
 
 ```powershell
 for ($i = 1; $i -lt 5; $i++) {
-  Write-Output "Sleeping for $i seconds"
-  Start-Sleep -Seconds $i
-  break
+    Write-Output "Sleeping for $i seconds"
+    Start-Sleep -Seconds $i
+    break
 }
 ```
 
@@ -256,17 +256,20 @@ for ($i = 1; $i -lt 5; $i++) {
 Sleeping for 1 seconds
 ```
 
-The `break` statement shown in the previous example causes the loop to exit on the first iteration.
+The `continue` keyword is designed to skip to the next iteration of a loop.
 
-Continue is designed to skip to the next iteration of a loop.
+The following example outputs the numbers 1, 2, 4, and 5. It skips number 3 and continues with the
+next iteration of the loop. Like `break`, `continue` breaks out of the loop except only for the
+current iteration. Execution continues with the next iteration instead of breaking out of the loop
+altogether and stopping.
 
 ```powershell
 while ($i -lt 5) {
-  $i += 1
-  if ($i -eq 3) {
-    continue
-  }
-  Write-Output $i
+    $i += 1
+    if ($i -eq 3) {
+        continue
+    }
+    Write-Output $i
 }
 ```
 
@@ -277,19 +280,17 @@ while ($i -lt 5) {
 5
 ```
 
-The previous example will output the numbers 1, 2, 4, and 5. It skips number 3 and continues with
-the next iteration of the loop. Similar to `break`, `continue` breaks out of the loop except only
-for the current iteration. Execution continues with the next iteration instead of breaking out of
-the loop and stopping.
+The `return` keyword is designed to exit out of the existing scope.
 
-Return is designed to exit out of the existing scope.
+Notice in the following example that `return` outputs the first result and then exits out of the
+loop.
 
 ```powershell
 $number = 1..10
 foreach ($n in $number) {
-  if ($n -ge 4) {
-    Return $n
-  }
+    if ($n -ge 4) {
+        return $n
+    }
 }
 ```
 
@@ -297,38 +298,38 @@ foreach ($n in $number) {
 4
 ```
 
-Notice that in the previous example, return outputs the first result and then exits out of the
-loop. A more thorough explanation of the result statement can be found in one of my blog articles:
-["The PowerShell return keyword"]["The PowerShell return keyword"].
+A more thorough explanation of the result statement can be found in one of my blog articles:
+[The PowerShell return keyword][the-powershell-return-keyword].
 
 ## Summary
 
-In this chapter, you've learned about the different types of loops that exist in PowerShell.
+In this chapter, you learned about the different types of loops that exist in PowerShell.
 
 ## Review
 
-1. What is the difference in the `ForEach-Object` cmdlet and the foreach scripting construct?
-1. What is the primary advantage of using a While loop instead of a Do While or Do Until loop.
-1. How do the break and continue statements differ?
+1. What's the difference between the `ForEach-Object` cmdlet and the `foreach` statement?
+1. What's the primary advantage of using a `while` loop instead of a `do while` or `do until` loop?
+1. How do the `break` and `continue` statements differ?
 
-## Recommended Reading
+## References
 
-- [ForEach-Object][ForEach-Object]
-- [about_ForEach][about_ForEach]
-- [about_For][about_For]
-- [about_Do][about_Do]
-- [about_While][about_While]
-- [about_Break][about_Break]
-- [about_Continue][about_Continue]
-- [about_Return][about_Return]
+- [ForEach-Object][foreach-object]
+- [about_Foreach][about-foreach]
+- [about_For][about-for]
+- [about_Do][about-do]
+- [about_While][about-while]
+- [about_Break][about-break]
+- [about_Continue][about-continue]
+- [about_Return][about-return]
 
 <!-- link references -->
-[ForEach-Object]: /powershell/module/microsoft.powershell.core/foreach-object
-[about_ForEach]: /powershell/module/microsoft.powershell.core/about/about_foreach
-[about_For]: /powershell/module/microsoft.powershell.core/about/about_for
-[about_Do]: /powershell/module/microsoft.powershell.core/about/about_do
-[about_While]: /powershell/module/microsoft.powershell.core/about/about_while
-[about_Break]: /powershell/module/microsoft.powershell.core/about/about_break
-[about_Continue]: /powershell/module/microsoft.powershell.core/about/about_continue
-[about_Return]: /powershell/module/microsoft.powershell.core/about/about_return
-["The PowerShell return keyword"]: https://mikefrobbins.com/2015/07/23/the-powershell-return-keyword/
+
+[foreach-object]: /powershell/module/microsoft.powershell.core/foreach-object
+[about-foreach]: /powershell/module/microsoft.powershell.core/about/about_foreach
+[about-for]: /powershell/module/microsoft.powershell.core/about/about_for
+[about-do]: /powershell/module/microsoft.powershell.core/about/about_do
+[about-while]: /powershell/module/microsoft.powershell.core/about/about_while
+[about-break]: /powershell/module/microsoft.powershell.core/about/about_break
+[about-continue]: /powershell/module/microsoft.powershell.core/about/about_continue
+[about-return]: /powershell/module/microsoft.powershell.core/about/about_return
+[the-powershell-return-keyword]: https://mikefrobbins.com/2015/07/23/the-powershell-return-keyword/

@@ -1,12 +1,11 @@
 ---
 description: Wide View (GroupBy)
 ms.date: 08/25/2021
-ms.topic: reference
 title: Wide View (GroupBy)
 ---
 # Wide View (GroupBy)
 
-This example shows how to implement a wide view that displays groups of [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+This example shows how to implement a wide view that displays groups of [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 objects returned by the `Get-Service` cmdlet. For more information about the components of a wide
 view, see [Creating a Wide View](./creating-a-wide-view.md).
 
@@ -40,7 +39,7 @@ This formatting file demonstrates the following XML elements:
 ## Example
 
 The following XML defines a wide view that displays groups of objects. Each new group is started
-when the value of the [System.Serviceprocess.Servicecontroller.Servicetype](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType)
+when the value of the [System.ServiceProcess.ServiceController.ServiceType](/dotnet/api/System.ServiceProcess.ServiceController.ServiceType)
 property changes.
 
 ```xml
@@ -71,7 +70,7 @@ property changes.
 </Configuration>
 ```
 
-The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+The following example shows how Windows PowerShell displays the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 objects after this format file is loaded.
 
 ```powershell

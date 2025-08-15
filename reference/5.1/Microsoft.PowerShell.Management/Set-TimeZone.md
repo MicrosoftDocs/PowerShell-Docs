@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/28/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - stz
 title: Set-TimeZone
 ---
+
 # Set-TimeZone
 
 ## SYNOPSIS
@@ -188,11 +191,25 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.String, System.TimeZoneInfo, System.String
+### System.String
+
+### System.TimeZoneInfo
 
 ## OUTPUTS
 
+### None
+
+By default, this cmdlet returns no output.
+
+### System.TimeZoneInfo
+
+When you use the **PassThru** parameter, this cmdlet returns a **TimeZoneInfo** object.
+
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Set-TimeZone`:
+
+- `stz`
 
 ## RELATED LINKS
 

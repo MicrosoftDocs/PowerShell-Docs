@@ -1,7 +1,7 @@
 ---
 description: There are many ways to use variables in strings to create formatted text.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/10/2021
+ms.date: 06/20/2024
 title: Everything you wanted to know about variable substitution in strings
 ---
 # Everything you wanted to know about variable substitution in strings
@@ -11,9 +11,9 @@ referring to any time you want to format a string to include values from variabl
 something that I often find myself explaining to new scripters.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by [@KevinMarquette][@KevinMarquette]. The
-> PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
-> [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][14] of this article appeared on the blog written by
+> [@KevinMarquette][16]. The PowerShell team thanks Kevin for sharing this content with us. Please
+> check out his blog at [PowerShellExplained.com][13].
 
 ## Concatenation
 
@@ -60,12 +60,12 @@ is where many new people get tripped up. First let me show you what they think s
 face value almost looks like it should).
 
 ```powershell
-$directory = Get-Item 'c:\windows'
+$directory = Get-Item 'C:\windows'
 $message = "Time: $directory.CreationTime"
 ```
 
 You would be expecting to get the `CreationTime` off of the `$directory`, but instead you get this
-`Time: c:\windows.CreationTime` as your value. The reason is that this type of substitution only
+`Time: C:\windows.CreationTime` as your value. The reason is that this type of substitution only
 sees the base variable. It considers the period as part of the string so it stops resolving the
 value any deeper.
 
@@ -129,7 +129,7 @@ This is not splatting because I'm passing the whole array in, but the idea is si
 ## Advanced formatting
 
 I intentionally called these out as coming from .NET because there are lots of formatting options
-already well [documented][documented] on it. There are built in ways to format various data types.
+already well [documented][01] on it. There are built-in ways to format various data types.
 
 ```powershell
 "{0:yyyyMMdd}" -f (Get-Date)
@@ -175,14 +175,14 @@ This is often overlooked but a great cmdlet for building a file path.
 
 ```powershell
 $folder = 'Temp'
-Join-Path -Path 'c:\windows' -ChildPath $folder
+Join-Path -Path 'C:\windows' -ChildPath $folder
 ```
 
 The great thing about this is it works out the backslashes correctly when it puts the values
 together. This is especially important if you are taking values from users or config files.
 
 This also goes well with `Split-Path` and `Test-Path`. I also cover these in my post about
-[reading and saving to files][reading and saving to files].
+[reading and saving to files][15].
 
 ## Strings are arrays
 
@@ -234,7 +234,7 @@ $tester = "Better"
 Write-Host "$test $tester ${test}ter"
 ```
 
-Thank you [/u/real_parbold][/u/real_parbold] for that one.
+Thank you Redditor `u/real_parbold` for that one.
 
 Here is an alternate to this approach:
 
@@ -243,7 +243,7 @@ Write-Host "$test $tester $($test)ter"
 Write-Host "{0} {1} {0}ter" -f $test, $tester
 ```
 
-I personally use format string for this, but this is good to know incase you see it in the wild.
+I personally use format string for this, but this is good to know in case you see it in the wild.
 
 ## Find and replace tokens
 
@@ -296,11 +296,11 @@ $name = 'Kevin Marquette'
 $string = $ExecutionContext.InvokeCommand.ExpandString($message)
 ```
 
-The call to `.InvokeCommand.ExpandString` on the current execution context uses the variables in
+The call to `InvokeCommand.ExpandString` on the current execution context uses the variables in
 the current scope for substitution. The key thing here is that the `$message` can be defined very
 early before the variables even exist.
 
-If we expand on that just a little bit, we can perform this substitution over and over wih different
+If we expand on that just a little bit, we can perform this substitution over and over with different
 values.
 
 ```powershell
@@ -312,7 +312,7 @@ foreach($name in $nameList){
 ```
 
 To keep going on this idea; you could be importing a large email template from a text file to do
-this. I have to thank [Mark Kraus][Mark Kraus] for this [suggestion][suggestion].
+this. I have to thank [Mark Kraus][02] for this suggestion.
 
 ## Whatever works the best for you
 
@@ -323,12 +323,37 @@ if there are multiple variables. On anything that is very short, I may use any o
 
 I covered a lot of ground on this one. My hope is that you walk away learning something new.
 
+## Links
+
+If you'd like to learn more about the methods and features that make string interpolation possible,
+see the following list for the reference documentation.
+
+- Concatenation uses the [addition operator][05]
+- Variable and command substitution follow the [quoting rules][10]
+- Formatting uses the [format operator][09]
+- Joining strings uses the [join operator][08] and references [`Join-Path`][11], but you could also
+  read about [`Join-String`][12]
+- Arrays are documented in [About arrays][06]
+- StringBuilder is a .NET class, with its [own documentation][04]
+- Braces in strings is also covered in the [quoting rules][10]
+- Token replacement uses the [replace operator][07]
+- The `$ExecutionContext.InvokeCommand.ExpandString()` method has
+  [.NET API reference documentation][03]
+
 <!-- link references -->
-[original version]: https://powershellexplained.com/2017-01-13-powershell-variable-substitution-in-strings/
-[powershellexplained.com]: https://powershellexplained.com/
-[@KevinMarquette]: https://twitter.com/KevinMarquette
-[Mark Kraus]: https://get-powershellblog.blogspot.com/
-[suggestion]: https://www.reddit.com/r/PowerShell/comments/5npf8h/kevmar_everything_you_wanted_to_know_about/dcdfia5/
-[/u/real_parbold]: https://www.reddit.com/r/PowerShell/comments/5npf8h/kevmar_everything_you_wanted_to_know_about/dcdfm6p/
-[reading and saving to files]: https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files/
-[documented]: /dotnet/api/system.string.format#overloads
+[01]: /dotnet/api/system.string.format#overloads
+[02]: https://get-powershellblog.blogspot.com/
+[03]: /dotnet/api/system.management.automation.commandinvocationintrinsics.expandstring
+[04]: /dotnet/api/system.text.stringbuilder
+[05]: /powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#adding-and-multiplying-non-numeric-types
+[06]: /powershell/module/microsoft.powershell.core/about/about_arrays
+[07]: /powershell/module/microsoft.powershell.core/about/about_comparison_operators#replacement-operator
+[08]: /powershell/module/microsoft.powershell.core/about/about_join
+[09]: /powershell/module/microsoft.powershell.core/about/about_operators#format-operator--f
+[10]: /powershell/module/microsoft.powershell.core/about/about_quoting_rules
+[11]: /powershell/module/microsoft.powershell.management/join-path
+[12]: /powershell/module/microsoft.powershell.utility/join-string
+[13]: https://powershellexplained.com/
+[14]: https://powershellexplained.com/2017-01-13-powershell-variable-substitution-in-strings/
+[15]: https://powershellexplained.com/2017-03-18-Powershell-reading-and-saving-data-to-files/
+[16]: https://twitter.com/KevinMarquette

@@ -1,7 +1,6 @@
 ---
 description: TableControl Element
 ms.date: 08/25/2021
-ms.topic: reference
 title: TableControl Element
 ---
 # TableControl Element
@@ -56,7 +55,7 @@ For more information about the components of a table view, see [Creating a Table
 
 ## Example
 
-This example shows a `TableControl` element that is used to display the properties of the [System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)
+This example shows a `TableControl` element that is used to display the properties of the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 object.
 
 ```xml

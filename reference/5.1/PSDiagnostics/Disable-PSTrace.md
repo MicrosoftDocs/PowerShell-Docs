@@ -2,11 +2,12 @@
 external help file: PSDiagnostics-help.xml
 Locale: en-US
 Module Name: PSDiagnostics
-ms.date: 11/27/2018
-online version: https://docs.microsoft.com/powershell/module/psdiagnostics/disable-pstrace?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/psdiagnostics/disable-pstrace?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSTrace
 ---
+
 # Disable-PSTrace
 
 ## SYNOPSIS
@@ -59,9 +60,13 @@ Accept wildcard characters: False
 
 ### None
 
+You can't pipe objects to this cmdlet.
+
 ## OUTPUTS
 
-### System.Object
+### None
+
+This cmdlet returns no output.
 
 ## NOTES
 

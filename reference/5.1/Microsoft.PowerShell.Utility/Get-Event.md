@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-event?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-event?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Event
 ---
+
 # Get-Event
 
 ## SYNOPSIS
@@ -71,7 +72,7 @@ SourceEventArgs  : System.Management.EventArrivedEventArgs
 SourceArgs       : {System.Management.ManagementEventWatcher, System.Management.EventArrivedEventArgs}
 SourceIdentifier : ProcessStarted
 TimeGenerated    : 11/13/2008 12:09:32 PM
-MessageData      : PS C:\> Get-Event | Where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
+MessageData      : PS C:\> Get-Event | where {$_.TimeGenerated -ge "11/13/2008 12:15:00 PM"}
 ComputerName     :
 RunspaceId       : c2153740-256d-46c0-a57c-b8059325d1a0
 EventIdentifier  : 1
@@ -149,13 +150,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSEventArgs
 
-`Get-Event` returns a **PSEventArgs** object for each event. To see a description of this object,
+This cmdlet returns a **PSEventArgs** object for each event. To see a description of this object,
 type `Get-Help Get-Event -Full` and see the Notes section of the help topic.
 
 ## NOTES
@@ -185,8 +186,8 @@ The `Get-Event` cmdlet returns a **PSEventArgs** object
   automatic variable contains this value.
 
 - SourceArgs. All parameters of the original event signature. For a standard event signature,
-  `$Args[0]` represents the sender, and `$Args[1]` represents the **SourceEventArgs**. In the
-  value of the **Action** parameter, the `$Args` automatic variable contains this value.
+  `$args[0]` represents the sender, and `$args[1]` represents the **SourceEventArgs**. In the
+  value of the **Action** parameter, the `$args` automatic variable contains this value.
 
 - SourceIdentifier. A string that identifies the event subscription. In the value of the
   **Action** parameter, the **SourceIdentifier** property of the `$Event` automatic variable

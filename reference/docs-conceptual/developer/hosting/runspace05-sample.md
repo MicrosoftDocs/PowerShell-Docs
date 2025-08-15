@@ -1,12 +1,11 @@
 ---
 description: Runspace05 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Runspace05 Sample
 ---
 # Runspace05 Sample
 
-This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened. The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+This sample shows how to add a snap-in to a [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened. The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 ## Requirements
 
@@ -16,15 +15,15 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Creating a [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
-- Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Adding the snap-in to the [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
-- Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
+- Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.
 
-- Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Adding the snap-in's Get-Proc cmdlet to the pipeline of the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 - Running the command synchronously.
 
@@ -32,7 +31,7 @@ This sample demonstrates the following.
 
 ## Example
 
-This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened. In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.
+This sample creates a runspace that uses a [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened. In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -55,7 +54,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// </summary>
     /// <param name="args">The parameter is not used.</param>
     /// <remarks>
-    /// This sample assumes that user has coppied the GetProcessSample01.dll
+    /// This sample assumes that user has copied the GetProcessSample01.dll
     /// that is produced by the GetProcessSample01 sample to the current
     /// directory.
     /// This sample demonstrates the following:
@@ -63,7 +62,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
     /// 2. Adding a snap-in to the initial session state.
     /// 3. Creating a runspace that uses the initial session state.
     /// 4. Creating a PowerShell object that uses the runspace.
-    /// 5. Adding the snap-in's get-proc cmdlet to the PowerShell object.
+    /// 5. Adding the snap-in's Get-Proc cmdlet to the PowerShell object.
     /// 6. Using PSObject objects to extract and display properties from
     ///    the objects returned by the cmdlet.
     /// </remarks>
@@ -87,7 +86,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
         using (PowerShell powershell = PowerShell.Create())
         {
           // Add the snap-in cmdlet and specify the runspace.
-          powershell.AddCommand("GetProcPSSnapIn01\\get-proc");
+          powershell.AddCommand("GetProcPSSnapIn01\\Get-Proc");
           powershell.Runspace = myRunSpace;
 
           // Run the cmdlet synchronously.

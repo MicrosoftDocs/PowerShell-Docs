@@ -1,7 +1,6 @@
 ---
 description: Host02 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Host02 Sample
 ---
 # Host02 Sample
@@ -31,7 +30,7 @@ This sample requires Windows PowerShell 2.0.
 - Setting the host culture to German.
 
 - Creating a
-  [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)
+  [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell)
   object that runs a script to retrieve and sort the processes, then retrieves the current date
   which is displayed in German.
 
@@ -84,7 +83,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
     /// <summary>
     /// This sample uses the PowerShell runtime along with a host
-    /// implementation to call get-process and display the results
+    /// implementation to call Get-Process and display the results
     /// as you would see them in powershell.exe.
     /// </summary>
     /// <param name="args">Ignored</param>
@@ -110,9 +109,9 @@ namespace Microsoft.Samples.PowerShell.Host
       // date displayed in German.
 
       pipe.Commands.AddScript(@"
-                    get-process | sort handlecount
+                    Get-Process | sort HandleCount
                     # This should display the date in German...
-                    get-date | out-string
+                    Get-Date | Out-String
                     ");
 
       // Add the default outputter to the end of the pipe and indicate
@@ -120,7 +119,7 @@ namespace Microsoft.Samples.PowerShell.Host
       // commands. This will result in the output being written using the PSHost
       // and PSHostUserInterface classes instead of returning objects to the hosting
       // application.
-      pipe.Commands.Add("out-default");
+      pipe.Commands.Add("Out-Default");
       pipe.Commands[0].MergeMyResults(PipelineResultTypes.Error,PipelineResultTypes.Output);
 
       // Invoke the pipeline. There will not be any objects
@@ -796,10 +795,10 @@ namespace Microsoft.Samples.PowerShell.Host
 
 ## See Also
 
- [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)
+ [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell)
 
  [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

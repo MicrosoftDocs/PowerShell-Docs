@@ -1,7 +1,6 @@
 ---
 description: GetProc05 (VB.NET) Sample Code
 ms.date: 09/13/2016
-ms.topic: reference
 title: GetProc05 (VB.NET) Sample Code
 ---
 # GetProc05 (VB.NET) Sample Code
@@ -21,11 +20,11 @@ Imports System.ComponentModel
 
 Namespace Microsoft.Samples.PowerShell.Commands
 
-    ' This sample is a complete implementation of the get-proc Cmdlet.
+    ' This sample is a complete implementation of the Get-Proc Cmdlet.
 #Region "GetProcCommand"
 
     ''' <summary>
-    ''' This class implements the get-proc cmdlet
+    ''' This class implements the Get-Proc cmdlet
     ''' </summary>
     <Cmdlet(VerbsCommon.Get, "Proc", _
     DefaultParameterSetName:="ProcessName")> _
@@ -358,7 +357,7 @@ ContinueForEach1:
 
 #Region "PowerShell snap-in" '
     ''' <summary>
-    ''' Create this sample as an PowerShell snap-in
+    ''' Create this sample as a PowerShell snap-in
     ''' </summary>
     <RunInstaller(True)> _
     Public Class GetProcPSSnapIn05
@@ -411,7 +410,7 @@ ContinueForEach1:
         Public Overrides ReadOnly Property Description() As String
             Get
                 Return "This is a PowerShell snap-in that includes " & _
-                    "the get-proc sample."
+                    "the Get-Proc sample."
             End Get
         End Property
     End Class 'GetProcPSSnapIn05

@@ -2,9 +2,11 @@
 external help file: Microsoft.Powershell.LocalAccounts.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.LocalAccounts
-ms.date: 04/09/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.localaccounts/add-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/28/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.localaccounts/add-localgroupmember?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - algm
 title: Add-LocalGroupMember
 ---
 
@@ -55,8 +57,8 @@ accounts from that domain and from trusted domains to a local group.
 ### Example 1: Add members to the Administrators group
 
 This command adds several members to the local Administrators group. The new members include a local
-user account, a Microsoft account, an Azure Active Directory account, and a domain group. This
-example uses a placeholder value for the user name of an account at Outlook.com.
+user account, a Microsoft account, a Microsoft Entra account, and a domain group. This example uses a
+placeholder value for the user name of an account at Outlook.com.
 
 ```powershell
 Add-LocalGroupMember -Group "Administrators" -Member "Admin02", "MicrosoftAccount\username@Outlook.com", "AzureAD\DavidChew@contoso.com", "CONTOSO\Domain Admins"
@@ -170,17 +172,29 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Management.Automation.SecurityAccountsManager.LocalGroup, System.String, System.Security.Principal.SecurityIdentifier
+### System.Management.Automation.SecurityAccountsManager.LocalGroup
 
-You can pipe a local principal, a string, or a SID to this cmdlet.
+You can pipe a local principal to this cmdlet.
+
+### System.String
+
+You can pipe a string to this cmdlet.
+
+### System.Security.Principal.SecurityIdentifier
+
+You can pipe a SID to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Add-LocalGroupMember`:
+
+- `algm`
 
 The Microsoft.PowerShell.LocalAccounts module is not available in 32-bit PowerShell on a 64-bit
 system.
@@ -191,7 +205,7 @@ follows:
 
 - Local
 - Active Directory
-- Azure Active Directory group
+- Microsoft Entra group
 - Microsoft Account
 
 **PrincipalSource** is supported only by Windows 10, Windows Server 2016, and later versions of the

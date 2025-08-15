@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 10/22/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-SecureString
 ---
+
 # ConvertTo-SecureString
 
 ## SYNOPSIS
@@ -227,13 +228,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a standard encrypted string to `ConvertTo-SecureString`.
+You can pipe a standard encrypted string to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Security.SecureString
 
-`ConvertTo-SecureString` returns a **SecureString** object.
+This cmdlet returns the created **SecureString** object.
 
 ## NOTES
 

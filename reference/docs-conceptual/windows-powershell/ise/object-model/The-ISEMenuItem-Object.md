@@ -1,6 +1,6 @@
 ---
 description: An ISEMenuItem object is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItem class. All menu objects on the **Add-ons** menu are instances of the ISEMenuItem class.
-ms.date: 10/05/2021
+ms.date: 03/27/2025
 title: The ISEMenuItem Object
 ---
 
@@ -59,7 +59,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 
 Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the [list of submenus](The-ISEMenuItemCollection-Object.md) of the
+The read-only property that gets the [list of submenus][03] of the
 menu item.
 
 ```powershell
@@ -79,9 +79,11 @@ following scripting example.
 # Clear the Add-ons menu if any entries currently exist
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
-# Add an Add-ons menu item with an shortcut and fast access key.
-# Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
-$menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
+# Add an Add-ons menu item with a shortcut and fast access key.
+# Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter
+# for the menu item.
+$menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process',
+    {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
 $parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('Parent', $null, $null)
 $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
@@ -89,6 +91,11 @@ $parentAdded.SubMenus.Add('_Dir', {dir}, 'Alt+D')
 
 ## See Also
 
-- [The ISEMenuItemCollection Object](The-ISEMenuItemCollection-Object.md)
-- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [The ISEMenuItemCollection Object][03]
+- [Purpose of the Windows PowerShell ISE Scripting Object Model][01]
+- [The ISE Object Model Hierarchy][02]
+
+<!-- link references -->
+[01]: Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md
+[02]: The-ISE-Object-Model-Hierarchy.md
+[03]: The-ISEMenuItemCollection-Object.md

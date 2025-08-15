@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.ScheduledJob.dll-help.xml
 Locale: en-US
 Module Name: PSScheduledJob
-ms.date: 10/05/2021
-online version: https://docs.microsoft.com/powershell/module/psscheduledjob/add-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/psscheduledjob/add-jobtrigger?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-JobTrigger
 ---
@@ -42,7 +42,7 @@ triggers to multiple scheduled jobs.
 A job trigger starts a scheduled job on a one-time or recurring schedule or when an event occurs.
 
 Use the **Trigger** parameter of `Add-JobTrigger` to identify the job triggers to add. Use the
-**Name**, **ID**, or **InputObject** parameters of `Add-JobTrigger` to identify the scheduled job to
+**Name**, **Id**, or **InputObject** parameters of `Add-JobTrigger` to identify the scheduled job to
 which the triggers are added.
 
 To create job triggers for the value of the **Trigger** parameter, use the `New-JobTrigger` cmdlet
@@ -188,15 +188,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger, Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+### Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger
 
-You can pipe job triggers or scheduled jobs to `Add-JobTrigger`.
+You can pipe a job trigger to this cmdlet.
+
+### Microsoft.PowerShell.ScheduledJob.ScheduledJobDefinition
+
+You can pipe a scheduled job to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
 

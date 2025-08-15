@@ -2,9 +2,9 @@
 description: Describes how the `continue` statement immediately returns the program flow to the top of a program loop, a `switch` statement, or a `trap` statement.
 Locale: en-US
 ms.date: 06/04/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_continue?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Continue
+title: about_Continue
 ---
 # about_Continue
 
@@ -88,13 +88,13 @@ is **True** and iteration continues with the second `for` loop at `labelB`.
 ## Using continue in a switch statement
 
 An unlabeled `continue` statement within a `switch` terminates execution of the
-current `switch` iteration and transfers control to the top of the `switch` to get
-the next input item.
+current `switch` iteration and transfers control to the top of the `switch` to
+get the next input item.
 
-When there is a single input item `continue` exits the entire `switch` statement.
-When the `switch` input is a collection, the `switch` tests each element of the
-collection. The `continue` exits the current iteration and the `switch` continues
-with the next element.
+When there is a single input item `continue` exits the entire `switch`
+statement. When the `switch` input is a collection, the `switch` tests each
+element of the collection. The `continue` exits the current iteration and the
+`switch` continues with the next element.
 
 ```powershell
 switch (1,2,3) {

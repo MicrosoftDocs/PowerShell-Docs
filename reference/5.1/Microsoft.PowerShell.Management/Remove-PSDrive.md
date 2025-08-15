@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-psdrive?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/18/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-psdrive?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rdr
 title: Remove-PSDrive
 ---
+
 # Remove-PSDrive
 
 ## SYNOPSIS
@@ -212,16 +215,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSDriveInfo
 
-You can pipe a drive object, such as one from the `Get-PSDrive` cmdlet, to the `Remove-PSDrive`
-cmdlet.
+You can pipe a drive object, such as from the `Get-PSDrive` cmdlet, to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Remove-PSDrive`:
+
+- `rdr`
 
 - The `Remove-PSDrive` cmdlet is designed to work with the data exposed by any PowerShell provider.
   To list the providers in your session, use the `Get-PSProvider` cmdlet. For more information, see

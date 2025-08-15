@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 07/21/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/remove-variable?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rv
 title: Remove-Variable
 ---
+
 # Remove-Variable
 
 ## SYNOPSIS
@@ -173,21 +176,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSVariable
 
-You can pipe a variable object to `Remove-Variable`.
+You can pipe a variable object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not return any output.
+This cmdlet returns no output.
 
 ## NOTES
 
+Windows PowerShell includes the following aliases for `Remove-Variable`:
+
+- `rv`
+
 - Changes affect only the current scope, such as a session. To delete a variable from all sessions,
   add a `Remove-Variable` command to your PowerShell profile.
-
-- You can also refer to `Remove-Variable` by its built-in alias, `rv`. For more information, see
-  [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).
 
 ## RELATED LINKS
 

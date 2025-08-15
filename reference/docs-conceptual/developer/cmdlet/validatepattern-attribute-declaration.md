@@ -1,7 +1,6 @@
 ---
 description: ValidatePattern Attribute Declaration
 ms.date: 09/13/2016
-ms.topic: reference
 title: ValidatePattern Attribute Declaration
 ---
 # ValidatePattern Attribute Declaration
@@ -22,8 +21,8 @@ When ValidatePattern is invoked within a cmdlet, the Windows PowerShell runtime 
 `RegexString` ([System.String](/dotnet/api/System.String))
 Required. Specifies a regular expression that validates the parameter argument.
 
-Options ([System.Text.Regularexpressions.Regexoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions))
-Optional named parameter. Specifies a bitwise combination of [System.Text.Regularexpressions.Regexoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions) flags that specify regular expression options.
+Options ([System.Text.RegularExpressions.RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions))
+Optional named parameter. Specifies a bitwise combination of [System.Text.RegularExpressions.RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions) flags that specify regular expression options.
 
 ## Remarks
 
@@ -33,10 +32,10 @@ Optional named parameter. Specifies a bitwise combination of [System.Text.Regula
 
 - If this attribute is applied to a collection, each element in the collection must match the pattern.
 
-- The ValidatePattern attribute is defined by the [System.Management.Automation.Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute) class.
+- The ValidatePattern attribute is defined by the [System.Management.Automation.ValidatePatternAttribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute) class.
 
 ## See Also
 
-[System.Management.Automation.Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)
+[System.Management.Automation.ValidatePatternAttribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)
 
 [Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

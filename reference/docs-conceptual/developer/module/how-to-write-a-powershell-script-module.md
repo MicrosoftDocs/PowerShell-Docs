@@ -1,7 +1,6 @@
 ---
 description: How to Write a PowerShell Script Module
 ms.date: 11/21/2019
-ms.topic: reference
 title: How to Write a PowerShell Script Module
 ---
 
@@ -18,7 +17,7 @@ To create a script module, save a valid PowerShell script to a `.psm1` file. The
 directory where it's stored must use the same name. For example, a script named `MyPsScript.psm1` is
 stored in a directory named `MyPsScript`.
 
-The module's directory needs to be in a path specified in `$env:PSModulePath`. The module's
+The module's directory needs to be in a path specified in `$Env:PSModulePath`. The module's
 directory can contain any resources that are needed to run the script, and a module manifest file
 that describes to PowerShell how your module works.
 
@@ -43,11 +42,11 @@ The following steps describe how to create a PowerShell module.
    ```powershell
    function Show-Calendar {
    param(
-       [DateTime] $start = [DateTime]::Today,
-       [DateTime] $end = $start,
-       $firstDayOfWeek,
-       [int[]] $highlightDay,
-       [string[]] $highlightDate = [DateTime]::Today.ToString('yyyy-MM-dd')
+       [datetime] $Start = [datetime]::Today,
+       [datetime] $End = $Start,
+       $FirstDayOfWeek,
+       [int[]] $HighlightDay,
+       [string[]] $HighlightDate = [datetime]::Today.ToString('yyyy-MM-dd')
        )
 
        #actual code for the function goes here see the end of the topic for the complete code sample
@@ -103,7 +102,7 @@ The following steps describe how to create a PowerShell module.
 1. To install and run your module, save the module to one of the appropriate PowerShell paths, and
    use `Import-Module`.
 
-   The paths where you can install your module are located in the `$env:PSModulePath` global
+   The paths where you can install your module are located in the `$Env:PSModulePath` global
    variable. For example, a common path to save a module on a system would be
    `%SystemRoot%/users/<user>/Documents/PowerShell/Modules/<moduleName>`. Be sure to create a
    directory for your module that uses the same name as the script module, even if it's only a
@@ -135,70 +134,70 @@ member.
 
 ```powershell
 <#
- .Synopsis
+ .SYNOPSIS
   Displays a visual representation of a calendar.
 
- .Description
+ .DESCRIPTION
   Displays a visual representation of a calendar. This function supports multiple months
   and lets you highlight specific date ranges or days.
 
- .Parameter Start
+ .PARAMETER Start
   The first month to display.
 
- .Parameter End
+ .PARAMETER End
   The last month to display.
 
- .Parameter FirstDayOfWeek
+ .PARAMETER FirstDayOfWeek
   The day of the month on which the week begins.
 
- .Parameter HighlightDay
+ .PARAMETER HighlightDay
   Specific days (numbered) to highlight. Used for date ranges like (25..31).
   Date ranges are specified by the Windows PowerShell range syntax. These dates are
   enclosed in square brackets.
 
- .Parameter HighlightDate
+ .PARAMETER HighlightDate
   Specific days (named) to highlight. These dates are surrounded by asterisks.
 
- .Example
+ .EXAMPLE
    # Show a default display of this month.
    Show-Calendar
 
- .Example
+ .EXAMPLE
    # Display a date range.
    Show-Calendar -Start "March, 2010" -End "May, 2010"
 
- .Example
+ .EXAMPLE
    # Highlight a range of days.
    Show-Calendar -HighlightDay (1..10 + 22) -HighlightDate "2008-12-25"
 #>
 function Show-Calendar {
 param(
-    [DateTime] $start = [DateTime]::Today,
-    [DateTime] $end = $start,
-    $firstDayOfWeek,
-    [int[]] $highlightDay,
-    [string[]] $highlightDate = [DateTime]::Today.ToString('yyyy-MM-dd')
+    [datetime] $Start = [datetime]::Today,
+    [datetime] $End = $Start,
+    $FirstDayOfWeek,
+    [int[]] $HighlightDay,
+    [string[]] $HighlightDate = [datetime]::Today.ToString('yyyy-MM-dd')
     )
 
 ## Determine the first day of the start and end months.
-$start = New-Object DateTime $start.Year,$start.Month,1
-$end = New-Object DateTime $end.Year,$end.Month,1
+$Start = New-Object DateTime $Start.Year,$Start.Month,1
+$End = New-Object DateTime $End.Year,$End.Month,1
 
 ## Convert the highlighted dates into real dates.
-[DateTime[]] $highlightDate = [DateTime[]] $highlightDate
+[datetime[]] $HighlightDate = [datetime[]] $HighlightDate
 
 ## Retrieve the DateTimeFormat information so that the
 ## calendar can be manipulated.
 $dateTimeFormat  = (Get-Culture).DateTimeFormat
-if($firstDayOfWeek)
+if($FirstDayOfWeek)
 {
-    $dateTimeFormat.FirstDayOfWeek = $firstDayOfWeek
+    $dateTimeFormat.FirstDayOfWeek = $FirstDayOfWeek
 }
 
-$currentDay = $start
+$currentDay = $Start
 
 ## Process the requested months.
-while($start -le $end)
+while($Start -le $End)
 {
     ## Return to an earlier point in the function if the first day of the month
     ## is in the middle of the week.
@@ -215,7 +214,7 @@ while($start -le $end)
     ## Continue processing dates until the function reaches the end of the month.
     ## The function continues until the week is completed with
     ## days from the next month.
-    while(($currentDay -lt $start.AddMonths(1)) -or
+    while(($currentDay -lt $Start.AddMonths(1)) -or
         ($currentDay.DayOfWeek -ne $dateTimeFormat.FirstDayOfWeek))
     {
         ## Determine the day names to use to label the columns.
@@ -229,21 +228,21 @@ while($start -le $end)
         $displayDay = " {0,2} " -f $currentDay.Day
 
         ## Determine whether to highlight a specific date.
-        if($highlightDate)
+        if($HighlightDate)
         {
             $compareDate = New-Object DateTime $currentDay.Year,
                 $currentDay.Month,$currentDay.Day
-            if($highlightDate -contains $compareDate)
+            if($HighlightDate -contains $compareDate)
             {
                 $displayDay = "*" + ("{0,2}" -f $currentDay.Day) + "*"
             }
         }
 
         ## Otherwise, highlight as part of a date range.
-        if($highlightDay -and ($highlightDay[0] -eq $currentDay.Day))
+        if($HighlightDay -and ($HighlightDay[0] -eq $currentDay.Day))
         {
             $displayDay = "[" + ("{0,2}" -f $currentDay.Day) + "]"
-            $null,$highlightDay = $highlightDay
+            $null,$HighlightDay = $HighlightDay
         }
 
         ## Add the day of the week and the day of the month as note properties.
@@ -266,13 +265,13 @@ while($start -le $end)
 
     ## Add a centered header.
     $width = ($calendar.Split("`n") | Measure-Object -Maximum Length).Maximum
-    $header = "{0:MMMM yyyy}" -f $start
+    $header = "{0:MMMM yyyy}" -f $Start
     $padding = " " * (($width - $header.Length) / 2)
     $displayCalendar = " `n" + $padding + $header + "`n " + $calendar
     $displayCalendar.TrimEnd()
 
     ## Move to the next month.
-    $start = $start.AddMonths(1)
+    $Start = $Start.AddMonths(1)
 
 }
 }

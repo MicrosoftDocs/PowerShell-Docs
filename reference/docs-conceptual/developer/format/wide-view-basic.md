@@ -1,12 +1,11 @@
 ---
 description: Wide View (Basic)
 ms.date: 08/25/2021
-ms.topic: reference
 title: Wide View (Basic)
 ---
 # Wide View (Basic)
 
-This example shows how to implement a basic wide view that displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+This example shows how to implement a basic wide view that displays the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 objects returned by the `Get-Service` cmdlet. For more information about the components of a wide
 view, see [Creating a Wide View](./creating-a-wide-view.md).
 
@@ -37,7 +36,7 @@ This formatting file demonstrates the following XML elements:
 
 ## Example
 
-The following XML defines a wide view that displays the value of the [System.Serviceprocess.Servicecontroller.Servicename](/dotnet/api/System.ServiceProcess.ServiceController.ServiceName) property.
+The following XML defines a wide view that displays the value of the [System.ServiceProcess.ServiceController.ServiceName](/dotnet/api/System.ServiceProcess.ServiceController.ServiceName) property.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -63,7 +62,7 @@ The following XML defines a wide view that displays the value of the [System.Ser
 </Configuration>
 ```
 
-The following example shows how Windows PowerShell displays the [System.Serviceprocess.Servicecontroller?Displayproperty=Fullname](/dotnet/api/System.ServiceProcess.ServiceController)
+The following example shows how Windows PowerShell displays the [System.ServiceProcess.ServiceController](/dotnet/api/System.ServiceProcess.ServiceController)
 objects after this format file is loaded.
 
 ```powershell

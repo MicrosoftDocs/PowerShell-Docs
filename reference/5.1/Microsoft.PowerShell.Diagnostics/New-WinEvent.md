@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 05/04/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.diagnostics/new-winevent?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/new-winevent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-WinEvent
 ---
+
 # New-WinEvent
 
 ## SYNOPSIS
@@ -44,7 +45,7 @@ In version 0, the **IsMachine** field is a boolean value. In version 1, the **Is
 an unsigned integer value.
 
 ```powershell
-(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Where-Object Id -eq 8007
+(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Where-Object Id -EQ 8007
 ```
 
 ```Output
@@ -85,7 +86,7 @@ Description : Completed periodic policy processing for user %3 in %1 seconds.
 
 The **Description** property contains the message that gets written to the event log. The `%3` and
 `%1` value are placeholders for the values passed into the template. The `%3` string is replace with
-the value passed to the **PrincipalSamName** field. The `%1` string is replaced withe value passed
+the value passed to the **PrincipalSamName** field. The `%1` string is replaced with value passed
 to the **PolicyElaspedTimeInSeconds** field.
 
 ### Example 3 - Create a new event using a versioned template
@@ -93,9 +94,9 @@ to the **PolicyElaspedTimeInSeconds** field.
 This example shows how to create an event using a specific template version.
 
 ```powershell
-$Payload = @(300, [uint32]'0x8001011f', $env:USERNAME, 0, 1)
+$Payload = @(300, [uint32]'0x8001011f', $Env:USERNAME, 0, 1)
 New-WinEvent -ProviderName Microsoft-Windows-GroupPolicy -Id 8007 -Version 1 -Payload $Payload
-Get-winEvent -ProviderName Microsoft-Windows-GroupPolicy -MaxEvents 1
+Get-WinEvent -ProviderName Microsoft-Windows-GroupPolicy -MaxEvents 1
 ```
 
 ```Output
@@ -194,13 +195,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not take input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does to generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

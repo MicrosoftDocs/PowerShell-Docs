@@ -1,0 +1,2754 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets",
+      "source_path": "../reference/virtual-directory-module/5.1/Microsoft.PowerShell.Core/About/about_WS-Management_Cmdlets.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/ise/",
+      "source_path": "../reference/virtual-directory-module/5.1/ise.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/ise/get-isesnippet",
+      "source_path": "../reference/virtual-directory-module/5.1/ise/get-isesnippet.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/ise/import-isesnippet",
+      "source_path": "../reference/virtual-directory-module/5.1/ise/import-isesnippet.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/ise/",
+      "source_path": "../reference/virtual-directory-module/5.1/ise/ise.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/ise/new-isesnippet",
+      "source_path": "../reference/virtual-directory-module/5.1/ise/new-isesnippet.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.archive/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.archive.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.archive/compress-archive",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.archive/compress-archive.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.archive/expand-archive",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.archive/expand-archive.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.archive/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.archive/microsoft.powershell.archive.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_aliases",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_aliases.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_arithmetic_operators.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_arrays",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_arrays.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_assignment_operators",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_assignment_operators.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_automatic_variables",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_automatic_variables.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_break",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_break.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_classes",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_classes.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_command_precedence",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_command_precedence.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_command_syntax",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_command_syntax.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_comment_based_help",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_comment_based_help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_commonparameters",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_commonparameters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_comparison_operators",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_comparison_operators.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_continue",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_continue.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_core_commands",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_core_commands.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_data_sections",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_data_sections.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_debuggers",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_debuggers.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_desiredstateconfiguration.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_do",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_do.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_dsclogresource",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_dsclogresource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_enum",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_enum.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_environment_variables",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_environment_variables.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_special_characters",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_escape_characters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_eventlogs",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_eventlogs.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_execution_policies",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_execution_policies.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_for",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_for.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_foreach",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_foreach.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_format.ps1xml",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_format.ps1xml.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_functions",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_functions.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_functions_advanced",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_functions_advanced.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_functions_advanced_methods.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_functions_advanced_parameters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_functions_outputtypeattribute.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_group_policy_settings",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_group_policy_settings.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_hash_tables",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_hash_tables.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_hidden",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_hidden.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_history",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_history.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_if",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_if.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_job_details",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_job_details.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_jobs",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_jobs.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_join",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_join.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_language_keywords",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_language_keywords.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_language_modes",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_language_modes.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_line_editing",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_line_editing.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_locations",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_locations.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_logical_operators",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_logical_operators.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_methods",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_methods.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_modules",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_modules.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_object_creation",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_object_creation.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_objects",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_objects.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_operator_precedence",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_operator_precedence.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_operators",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_operators.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_packagemanagement",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_packagemanagement.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_parameters",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_parameters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_parameters_default_values",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_parameters_default_values.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_parsing",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_parsing.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_path_syntax",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_path_syntax.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_pipelines",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_pipelines.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_powershell_exe",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_powershell_exe.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_powershell_ise_exe",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_powershell_ise_exe.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_preference_variables",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_preference_variables.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_profiles",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_profiles.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_prompts",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_prompts.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_properties",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_properties.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_providers",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_providers.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_psconsolehostreadline",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_psconsolehostreadline.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psreadline/about/about_psreadline",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_psreadline.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_pssession_details",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_pssession_details.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_pssessions",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_pssessions.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_pssnapins",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_pssnapins.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_quoting_rules",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_quoting_rules.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_redirection",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_redirection.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_ref",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_ref.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_regular_expressions",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_regular_expressions.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_remote",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_remote.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_remote_disconnected_sessions",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_remote_disconnected_sessions.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_remote_faq",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_remote_faq.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_remote_jobs",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_remote_jobs.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_remote_output",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_remote_output.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_remote_requirements",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_remote_requirements.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_remote_troubleshooting.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_remote_variables",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_remote_variables.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_requires",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_requires.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_reserved_words",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_reserved_words.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_return",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_return.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_run_with_powershell",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_run_with_powershell.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_scopes",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_scopes.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_script_blocks",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_script_blocks.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_script_internationalization",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_script_internationalization.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_scripts",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_scripts.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_session_configuration_files",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_session_configuration_files.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_session_configurations",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_session_configurations.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_signing",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_signing.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_simplified_syntax",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_simplified_syntax.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_special_characters",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_special_characters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_splatting",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_splatting.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_split",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_split.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_switch",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_switch.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_throw",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_throw.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_transactions",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_transactions.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_trap",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_trap.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_try_catch_finally",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_try_catch_finally.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_type_accelerators",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_type_accelerators.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_type_operators",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_type_operators.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_types.ps1xml",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_types.ps1xml.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_updatable_help",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_updatable_help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_variables",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_variables.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_while",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_while.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_wildcards",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_wildcards.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.1",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_windows_powershell_5.1.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_windows_powershell_ise.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_windows_rt",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_windows_rt.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_wmi",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_wmi.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_wmi_cmdlets",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_wmi_cmdlets.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_wql",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_wql.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/add-history",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/add-history.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/add-pssnapin",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/add-pssnapin.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_alias_provider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/alias-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/clear-history",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/clear-history.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/connect-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/connect-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/debug-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/debug-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/disable-psremoting",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/disable-psremoting.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/disable-pssessionconfiguration",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/disable-pssessionconfiguration.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/disconnect-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/disconnect-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/enable-psremoting",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/enable-psremoting.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/enable-pssessionconfiguration",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/enable-pssessionconfiguration.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/enter-pshostprocess",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/enter-pshostprocess.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/enter-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/enter-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_environment_provider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/environment-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/exit-pshostprocess",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/exit-pshostprocess.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/exit-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/exit-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/export-console",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/export-console.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/export-modulemember",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/export-modulemember.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_filesystem_provider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/filesystem-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/foreach-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/foreach-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_function_provider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/function-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/clear-host",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/functions/clear-host.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/clear-host",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/clear-host.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-verb",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/functions/get-verb.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-verb",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-verb.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-command",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-command.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-help",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-history",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-history.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-module",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-pshostprocessinfo",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-pshostprocessinfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-pssessioncapability",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-pssessioncapability.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-pssessionconfiguration",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-pssessionconfiguration.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/get-pssnapin",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/get-pssnapin.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/import-module",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/import-module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/invoke-command",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/invoke-command.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/invoke-history",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/invoke-history.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/microsoft.powershell.core.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/new-module",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/new-module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/new-modulemanifest",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/new-modulemanifest.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/new-psrolecapabilityfile.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/new-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/new-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/new-pssessionconfigurationfile.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/new-pssessionoption",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/new-pssessionoption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/new-pstransportoption",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/new-pstransportoption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/out-default",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/out-default.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/out-host",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/out-host.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/out-null",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/out-null.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/receive-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/receive-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/receive-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/receive-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/register-argumentcompleter",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/register-argumentcompleter.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/register-pssessionconfiguration",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/register-pssessionconfiguration.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_registry_provider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/registry-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/remove-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/remove-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/remove-module",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/remove-module.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/remove-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/remove-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/remove-pssnapin",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/remove-pssnapin.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/resume-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/resume-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/save-help",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/save-help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/set-psdebug",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/set-psdebug.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/set-pssessionconfiguration",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/set-pssessionconfiguration.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/set-strictmode",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/set-strictmode.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/start-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/start-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/stop-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/stop-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/suspend-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/suspend-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/test-modulemanifest",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/test-modulemanifest.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/test-pssessionconfigurationfile.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/unregister-pssessionconfiguration",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/unregister-pssessionconfiguration.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/update-help",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/update-help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_variable_provider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/variable-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/wait-job",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/wait-job.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/where-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/where-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.diagnostics/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.diagnostics.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.diagnostics/export-counter",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.diagnostics/export-counter.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.diagnostics/get-counter",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.diagnostics/get-counter.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.diagnostics/get-winevent",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.diagnostics/get-winevent.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.diagnostics/import-counter",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.diagnostics/import-counter.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.diagnostics/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.diagnostics/microsoft.powershell.diagnostics.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.diagnostics/new-winevent",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.diagnostics/new-winevent.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.host/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.host.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.host/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.host/microsoft.powershell.host.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.host/start-transcript",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.host/start-transcript.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.host/stop-transcript",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.host/stop-transcript.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/add-localgroupmember",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/add-localgroupmember.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/disable-localuser",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/disable-localuser.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/enable-localuser",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/enable-localuser.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/get-localgroup",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/get-localgroup.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/get-localgroupmember",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/get-localgroupmember.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/get-localuser",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/get-localuser.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/microsoft.powershell.localaccounts.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/new-localgroup",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/new-localgroup.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/new-localuser",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/new-localuser.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/remove-localgroup",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/remove-localgroup.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/remove-localgroupmember",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/remove-localgroupmember.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/remove-localuser",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/remove-localuser.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/rename-localgroup",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/rename-localgroup.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/rename-localuser",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/rename-localuser.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/set-localgroup",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/set-localgroup.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.localaccounts/set-localuser",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.localaccounts/set-localuser.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/add-computer",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/add-computer.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/add-content",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/add-content.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/checkpoint-computer",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/checkpoint-computer.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/clear-content",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/clear-content.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/clear-eventlog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/clear-eventlog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/clear-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/clear-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/clear-itemproperty",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/clear-itemproperty.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/clear-recyclebin",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/clear-recyclebin.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/complete-transaction",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/complete-transaction.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/convert-path",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/convert-path.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/copy-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/copy-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/copy-itemproperty",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/copy-itemproperty.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/debug-process",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/debug-process.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/disable-computerrestore",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/disable-computerrestore.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/enable-computerrestore",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/enable-computerrestore.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-childitem",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-childitem.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-clipboard",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-clipboard.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-computerinfo",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-computerinfo.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-computerrestorepoint",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-computerrestorepoint.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-content",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-content.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-controlpanelitem",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-controlpanelitem.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-eventlog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-eventlog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-hotfix",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-hotfix.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-itemproperty",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-itemproperty.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-itempropertyvalue",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-itempropertyvalue.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-location",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-location.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-process",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-process.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-psdrive",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-psdrive.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-psprovider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-psprovider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-service",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-service.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-timezone",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-timezone.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-transaction",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-transaction.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/get-wmiobject",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/get-wmiobject.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/invoke-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/invoke-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/invoke-wmimethod",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/invoke-wmimethod.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/join-path",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/join-path.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/limit-eventlog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/limit-eventlog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/microsoft.powershell.management.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/move-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/move-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/move-itemproperty",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/move-itemproperty.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/new-eventlog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/new-eventlog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/new-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/new-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/new-itemproperty",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/new-itemproperty.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/new-psdrive",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/new-psdrive.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/new-service",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/new-service.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/new-webserviceproxy",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/new-webserviceproxy.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/pop-location",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/pop-location.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/push-location",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/push-location.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/register-wmievent",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/register-wmievent.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/remove-computer",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/remove-computer.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/remove-eventlog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/remove-eventlog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/remove-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/remove-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/remove-itemproperty",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/remove-itemproperty.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/remove-psdrive",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/remove-psdrive.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/remove-wmiobject",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/remove-wmiobject.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/rename-computer",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/rename-computer.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/rename-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/rename-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/rename-itemproperty",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/rename-itemproperty.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/reset-computermachinepassword",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/reset-computermachinepassword.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/resolve-path",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/resolve-path.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/restart-computer",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/restart-computer.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/restart-service",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/restart-service.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/restore-computer",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/restore-computer.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/resume-service",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/resume-service.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/set-clipboard",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/set-clipboard.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/set-content",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/set-content.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/set-item",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/set-item.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/set-itemproperty",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/set-itemproperty.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/set-location",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/set-location.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/set-service",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/set-service.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/set-timezone",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/set-timezone.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/set-wmiinstance",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/set-wmiinstance.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/show-controlpanelitem",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/show-controlpanelitem.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/show-eventlog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/show-eventlog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/split-path",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/split-path.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/start-process",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/start-process.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/start-service",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/start-service.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/start-transaction",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/start-transaction.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/stop-computer",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/stop-computer.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/stop-process",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/stop-process.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/stop-service",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/stop-service.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/suspend-service",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/suspend-service.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/test-computersecurechannel",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/test-computersecurechannel.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/test-connection",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/test-connection.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/test-path",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/test-path.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/undo-transaction",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/undo-transaction.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/use-transaction",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/use-transaction.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/wait-process",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/wait-process.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.management/write-eventlog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.management/write-eventlog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.odatautils/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.odatautils.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.odatautils/export-odataendpointproxy",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.odatautils/export-odataendpointproxy.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.odatautils/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.odatautils/microsoft.powershell.odatautils.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.operation.validation/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.operation.validation.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.operation.validation/get-operationvalidation",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.operation.validation/get-operationvalidation.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.operation.validation/invoke-operationvalidation",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.operation.validation/invoke-operationvalidation.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.operation.validation/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.operation.validation/microsoft.powershell.operation.validation.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/about/about_certificate_provider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/certificate-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/convertfrom-securestring",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/convertfrom-securestring.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/convertto-securestring",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/convertto-securestring.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/get-acl",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/get-acl.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/get-authenticodesignature",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/get-authenticodesignature.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/get-cmsmessage",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/get-cmsmessage.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/get-credential",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/get-credential.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/get-executionpolicy",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/get-executionpolicy.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/get-pfxcertificate",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/get-pfxcertificate.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/microsoft.powershell.security.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/new-filecatalog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/new-filecatalog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/protect-cmsmessage",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/protect-cmsmessage.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/set-acl",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/set-acl.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/set-authenticodesignature",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/set-authenticodesignature.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/set-executionpolicy",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/set-executionpolicy.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/test-filecatalog",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/test-filecatalog.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/unprotect-cmsmessage",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.security/unprotect-cmsmessage.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/add-member",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/add-member.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/add-type",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/add-type.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/clear-variable",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/clear-variable.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/compare-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/compare-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertfrom-csv",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertfrom-csv.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertfrom-json",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertfrom-json.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertfrom-sddlstring",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertfrom-sddlstring.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertfrom-string",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertfrom-string.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertfrom-stringdata",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertfrom-stringdata.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convert-string",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convert-string.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertto-csv",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertto-csv.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertto-html",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertto-html.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertto-json",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertto-json.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/convertto-xml",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/convertto-xml.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/debug-runspace",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/debug-runspace.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/disable-psbreakpoint",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/disable-psbreakpoint.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/disable-runspacedebug",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/disable-runspacedebug.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/enable-psbreakpoint",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/enable-psbreakpoint.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/enable-runspacedebug",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/enable-runspacedebug.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/export-alias",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/export-alias.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/export-clixml",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/export-clixml.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/export-csv",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/export-csv.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/export-formatdata",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/export-formatdata.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/export-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/export-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/format-custom",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/format-custom.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/format-hex",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/format-hex.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/format-list",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/format-list.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/format-table",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/format-table.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/format-wide",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/format-wide.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-alias",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-alias.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-culture",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-culture.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-date",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-date.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-event",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-event.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-eventsubscriber",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-eventsubscriber.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-filehash",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-filehash.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-formatdata",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-formatdata.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-host",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-host.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-member",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-member.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-psbreakpoint",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-psbreakpoint.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-pscallstack",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-pscallstack.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-random",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-random.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-runspace",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-runspace.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-runspacedebug",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-runspacedebug.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-tracesource",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-tracesource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-typedata",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-typedata.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-uiculture",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-uiculture.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-unique",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-unique.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/get-variable",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/get-variable.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/group-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/group-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/import-alias",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/import-alias.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/import-clixml",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/import-clixml.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/import-csv",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/import-csv.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/import-localizeddata",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/import-localizeddata.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/import-powershelldatafile",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/import-powershelldatafile.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/import-pssession",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/import-pssession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/invoke-expression",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/invoke-expression.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/invoke-restmethod",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/invoke-restmethod.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/invoke-webrequest",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/invoke-webrequest.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/measure-command",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/measure-command.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/measure-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/measure-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/microsoft.powershell.utility.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/new-alias",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/new-alias.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/new-event",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/new-event.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/new-guid",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/new-guid.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/new-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/new-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/new-temporaryfile",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/new-temporaryfile.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/new-timespan",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/new-timespan.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/new-variable",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/new-variable.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/out-file",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/out-file.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/out-gridview",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/out-gridview.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/out-printer",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/out-printer.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/out-string",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/out-string.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/read-host",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/read-host.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/register-engineevent",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/register-engineevent.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/register-objectevent",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/register-objectevent.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/remove-event",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/remove-event.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/remove-psbreakpoint",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/remove-psbreakpoint.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/remove-typedata",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/remove-typedata.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/remove-variable",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/remove-variable.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/select-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/select-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/select-string",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/select-string.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/select-xml",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/select-xml.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/send-mailmessage",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/send-mailmessage.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/set-alias",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/set-alias.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/set-date",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/set-date.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/set-psbreakpoint",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/set-psbreakpoint.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/set-tracesource",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/set-tracesource.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/set-variable",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/set-variable.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/show-command",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/show-command.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/sort-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/sort-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/start-sleep",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/start-sleep.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/tee-object",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/tee-object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/trace-command",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/trace-command.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/unblock-file",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/unblock-file.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/unregister-event",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/unregister-event.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/update-formatdata",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/update-formatdata.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/update-list",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/update-list.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/update-typedata",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/update-typedata.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/wait-debugger",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/wait-debugger.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/wait-event",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/wait-event.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/write-debug",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/write-debug.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/write-error",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/write-error.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/write-host",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/write-host.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/write-information",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/write-information.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/write-output",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/write-output.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/write-progress",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/write-progress.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/write-verbose",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/write-verbose.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.utility/write-warning",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.utility/write-warning.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/about_ws-management_cmdlets.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/connect-wsman",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/connect-wsman.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/disable-wsmancredssp",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/disable-wsmancredssp.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/disconnect-wsman",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/disconnect-wsman.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/enable-wsmancredssp",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/enable-wsmancredssp.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/get-wsmancredssp",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/get-wsmancredssp.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/get-wsmaninstance",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/get-wsmaninstance.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/invoke-wsmanaction",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/invoke-wsmanaction.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/microsoft.wsman.management.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/new-wsmaninstance",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/new-wsmaninstance.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/new-wsmansessionoption",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/new-wsmansessionoption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/remove-wsmaninstance",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/remove-wsmaninstance.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/set-wsmaninstance",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/set-wsmaninstance.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/set-wsmanquickconfig",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/set-wsmanquickconfig.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/test-wsman",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/test-wsman.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.wsman.management/wsman-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psreadline/",
+      "source_path": "../reference/virtual-directory-module/5.1/psreadline.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psreadline/get-psreadlinekeyhandler",
+      "source_path": "../reference/virtual-directory-module/5.1/psreadline/get-psreadlinekeyhandler.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psreadline/get-psreadlineoption",
+      "source_path": "../reference/virtual-directory-module/5.1/psreadline/get-psreadlineoption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psreadline/",
+      "source_path": "../reference/virtual-directory-module/5.1/psreadline/psreadline.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psreadline/remove-psreadlinekeyhandler",
+      "source_path": "../reference/virtual-directory-module/5.1/psreadline/remove-psreadlinekeyhandler.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psreadline/set-psreadlinekeyhandler",
+      "source_path": "../reference/virtual-directory-module/5.1/psreadline/set-psreadlinekeyhandler.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psreadline/set-psreadlineoption",
+      "source_path": "../reference/virtual-directory-module/5.1/psreadline/set-psreadlineoption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/about/about_scheduled_jobs",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/about/about_scheduled_jobs.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/about/about_scheduled_jobs_advanced",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/about/about_scheduled_jobs_advanced.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/about/about_scheduled_jobs_basics",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/about/about_scheduled_jobs_basics.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/about/about_scheduled_jobs_troubleshooting.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/add-jobtrigger",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/add-jobtrigger.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/disable-jobtrigger",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/disable-jobtrigger.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/disable-scheduledjob",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/disable-scheduledjob.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/enable-jobtrigger",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/enable-jobtrigger.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/enable-scheduledjob",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/enable-scheduledjob.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/get-jobtrigger",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/get-jobtrigger.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/get-scheduledjob",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/get-scheduledjob.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/get-scheduledjoboption",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/get-scheduledjoboption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/new-jobtrigger",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/new-jobtrigger.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/new-scheduledjoboption",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/new-scheduledjoboption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/psscheduledjob.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/register-scheduledjob",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/register-scheduledjob.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/remove-jobtrigger",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/remove-jobtrigger.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/set-jobtrigger",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/set-jobtrigger.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/set-scheduledjob",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/set-scheduledjob.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/set-scheduledjoboption",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/set-scheduledjoboption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/unregister-scheduledjob",
+      "source_path": "../reference/virtual-directory-module/5.1/psscheduledjob/unregister-scheduledjob.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_activitycommonparameters",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_activitycommonparameters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_checkpoint-workflow",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_checkpoint-workflow.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_foreach-parallel",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_foreach-parallel.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_inlinescript",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_inlinescript.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_parallel",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_parallel.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_sequence",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_sequence.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_suspend-workflow",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_suspend-workflow.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_workflowcommonparameters",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_workflowcommonparameters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_workflows",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/about/about_workflows.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/new-psworkflowexecutionoption",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/new-psworkflowexecutionoption.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/new-psworkflowsession",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/new-psworkflowsession.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflow/psworkflow.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflowutility/",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflowutility.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflowutility/invoke-asworkflow",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflowutility/invoke-asworkflow.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflowutility/",
+      "source_path": "../reference/virtual-directory-module/5.1/psworkflowutility/psworkflowutility.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_pwsh",
+      "source_path": "../reference/virtual-directory-module/5.1/microsoft.powershell.core/about/about_pwsh.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_pwsh",
+      "source_path": "../reference/virtual-directory-module/7.0/microsoft.powershell.core/about/about_powershell_exe.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_pwsh",
+      "source_path": "../reference/virtual-directory-module/7.1/microsoft.powershell.core/about/about_powershell_exe.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_pwsh",
+      "source_path": "../reference/virtual-directory-module/7.2/microsoft.powershell.core/about/about_powershell_exe.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/about.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_alias_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/alias-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_environment_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/environment-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_filesystem_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/filesystem-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_function_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/function-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_alias_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/providers/alias-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_environment_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/providers/environment-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_filesystem_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/providers/filesystem-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_function_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/providers/function-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_registry_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/providers/registry-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_variable_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/providers/variable-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_registry_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/registry-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_variable_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.core/variable-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/about/about_certificate_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.security/certificate-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.security/about/about_certificate_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.powershell.security/providers/certificate-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets",
+      "source_path": "../reference/virtual-directory-module/microsoft.wsman.management/about_ws-management_cmdlets.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.wsman.management/providers/wsman-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.wsman.management/about/about_wsman_provider",
+      "source_path": "../reference/virtual-directory-module/microsoft.wsman.management/wsman-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/about/about_scheduled_jobs",
+      "source_path": "../reference/virtual-directory-module/psscheduledjob/about_scheduled_jobs.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/about/about_scheduled_jobs_advanced",
+      "source_path": "../reference/virtual-directory-module/psscheduledjob/about_scheduled_jobs_advanced.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/about/about_scheduled_jobs_basics",
+      "source_path": "../reference/virtual-directory-module/psscheduledjob/about_scheduled_jobs_basics.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psscheduledjob/about/about_scheduled_jobs_troubleshooting",
+      "source_path": "../reference/virtual-directory-module/psscheduledjob/about_scheduled_jobs_troubleshooting.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_activitycommonparameters",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_activitycommonparameters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_checkpoint-workflow",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_checkpoint-workflow.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_foreach-parallel",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_foreach-parallel.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_inlinescript",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_inlinescript.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_parallel",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_parallel.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_sequence",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_sequence.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_suspend-workflow",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_suspend-workflow.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_workflowcommonparameters",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_workflowcommonparameters.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/psworkflow/about/about_workflows",
+      "source_path": "../reference/virtual-directory-module/psworkflow/about_workflows.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/overview",
+      "source_path": "../reference/virtual-directory-module/readme.md"
+    }
+  ]
+}

@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/07/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/07/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - sls
 title: Select-String
 ---
 
@@ -42,7 +44,7 @@ Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-Cas
 ## DESCRIPTION
 
 The `Select-String` cmdlet uses regular expression matching to search for text patterns in input
-strings and files. You can use `Select-String` similar to `grep` in UNIX or `findstr.exe` in
+strings and files. You can use `Select-String` similar to `grep` in Unix or `findstr.exe` in
 Windows.
 
 `Select-String` is based on lines of text. By default, `Select-String` finds the first match in each
@@ -148,7 +150,7 @@ C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.
 C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_ActivityCommonParameters.help.txt:33:  about_CommonParameters.
 ```
 
-The function is created on the PowerShell command line. The `Function` command uses the name
+The function is created on the PowerShell command line. The `function` keyword uses the name
 `Search-Help`. Press **Enter** to begin adding statements to the function. From the `>>` prompt,
 add each statement and press **Enter** as shown in the example. After the closing bracket is added,
 you're returned to a PowerShell prompt.
@@ -171,7 +173,7 @@ object in the pipeline. For more information, see [about_Automatic_Variables](..
 
 ```powershell
 $Events = Get-WinEvent -LogName Application -MaxEvents 50
-$Events | Select-String -InputObject {$_.message} -Pattern 'Failed'
+$Events | Select-String -InputObject {$_.Message} -Pattern 'Failed'
 ```
 
 The `Get-WinEvent` cmdlet uses the **LogName** parameter to specify the Application log. The
@@ -179,9 +181,9 @@ The `Get-WinEvent` cmdlet uses the **LogName** parameter to specify the Applicat
 the variable named `$Events`.
 
 The `$Events` variable is sent down the pipeline to the `Select-String` cmdlet. `Select-String` uses
-the **InputObject** parameter. The `$_` variable represents the current object and `message` is a
-property of the event. The **Pattern** parameter species the string **Failed** and searches for
-matches in `$_.message`. `Select-String` displays the output in the PowerShell console.
+the **InputObject** parameter. The `$_` variable represents the current object and `Message` is a
+property of the event. The **Pattern** parameter specifies the string **Failed** and searches for
+matches in `$_.Message`. `Select-String` displays the output in the PowerShell console.
 
 ### Example 6: Find a string in subdirectories
 
@@ -615,8 +617,9 @@ Accept wildcard characters: False
 
 ### -Quiet
 
-Indicates that the cmdlet returns a Boolean value (True or False), instead of a **MatchInfo**
-object. The value is True if the pattern is found; otherwise the value is False.
+Indicates that the cmdlet returns a simple response instead of a **MatchInfo**
+object. The returned value is `$true` if the pattern is found or `$null` if the
+pattern is not found.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -665,20 +668,26 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object that has a **ToString** method to `Select-String`.
+You can pipe any object that has a `ToString()` method to this cmdlet.
 
 ## OUTPUTS
 
-### Microsoft.PowerShell.Commands.MatchInfo or System.Boolean
+### Microsoft.PowerShell.Commands.MatchInfo
 
-By default, the output is a set of **MatchInfo** objects with one for each match found. If you use
-the **Quiet** parameter, the output is a Boolean value indicating whether the pattern was found.
+By default, this cmdlet returns a **MatchInfo** object for each match found.
+
+### System.Boolean
+
+When you use the **Quiet** parameter, this cmdlet returns a **Boolean** value indicating whether
+the pattern was found.
 
 ## NOTES
 
-`Select-String` is similar to `grep` in UNIX or `findstr.exe` in Windows.
+Windows PowerShell includes the following aliases for `Select-String`:
 
-The `sls` alias for the `Select-String` cmdlet was introduced in PowerShell 3.0.
+- `sls`
+
+`Select-String` is similar to `grep` in Unix or `findstr.exe` in Windows.
 
 > [!NOTE]
 > According to

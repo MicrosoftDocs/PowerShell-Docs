@@ -1,7 +1,6 @@
 ---
 description: Windows PowerShell Session State
 ms.date: 09/13/2016
-ms.topic: reference
 title: Windows PowerShell Session State
 ---
 # Windows PowerShell Session State
@@ -32,13 +31,13 @@ Session-state data is stored by the current instance of the execution engine wit
 
 ## Accessing Session-State Data Within Cmdlets
 
-Cmdlets can access session-state data either indirectly through the [System.Management.Automation.PSCmdlet.Sessionstate*](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState) property of the cmdlet class or directly through the [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) class. The [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) class provides properties that can be used to investigate different types of session-state data.
+Cmdlets can access session-state data either indirectly through the [System.Management.Automation.PSCmdlet.SessionState*](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState) property of the cmdlet class or directly through the [System.Management.Automation.SessionState](/dotnet/api/System.Management.Automation.SessionState) class. The [System.Management.Automation.SessionState](/dotnet/api/System.Management.Automation.SessionState) class provides properties that can be used to investigate different types of session-state data.
 
 ## See Also
 
-[System.Management.Automation.PSCmdlet.Sessionstate](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
+[System.Management.Automation.PSCmdlet.SessionState](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
 
-[System.Management.Automation.Sessionstate?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.SessionState)
+[System.Management.Automation.SessionState](/dotnet/api/System.Management.Automation.SessionState)
 
 [Windows PowerShell Cmdlets](./cmdlet-overview.md)
 

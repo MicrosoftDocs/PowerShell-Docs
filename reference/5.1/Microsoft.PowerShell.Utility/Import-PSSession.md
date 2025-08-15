@@ -2,11 +2,14 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/import-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ipsn
 title: Import-PSSession
 ---
+
 # Import-PSSession
 
 ## SYNOPSIS
@@ -102,7 +105,7 @@ need to use the `Invoke-Command` cmdlet to run an imported command.
 ```
 $S1 = New-PSSession -ComputerName s1
 $S2 = New-PSSession -ComputerName s2
-Import-PSSession -Session s1 -Type cmdlet -Name New-Test, Get-Test -FormatTypeName *
+Import-PSSession -Session s1 -Type Cmdlet -Name New-Test, Get-Test -FormatTypeName *
 Import-PSSession -Session s2 -Type Cmdlet -Name Set-Test -FormatTypeName *
 New-Test Test1 | Set-Test -RunType Full
 ```
@@ -198,7 +201,7 @@ function into the current session.
 
 The `Import-PSSession` cmdlet returns a **PSModuleInfo** object that represents the temporary
 module. The value of the **Path** property shows that `Import-PSSession` created a script module
-(.psm1) file in a temporary location. The **ExportedFunctions** property shows that the `Get-Date`
+(`.psm1`) file in a temporary location. The **ExportedFunctions** property shows that the `Get-Date`
 cmdlet and the SearchHelp function were both imported as functions.
 
 ### Example 7: Run a command that is hidden by an imported command
@@ -326,7 +329,7 @@ Accept wildcard characters: False
 Specifies an array of commands that results from using the specified arguments (parameter values).
 
 For instance, to import the variant of the `Get-Item` command in the certificate (Cert:) drive in
-the PSSession in `$S`, type `Import-PSSession -Session $S -Command Get-Item -ArgumentList cert:`.
+the PSSession in `$S`, type `Import-PSSession -Session $S -Command Get-Item -ArgumentList Cert:`.
 
 ```yaml
 Type: System.Object[]
@@ -343,7 +346,7 @@ Accept wildcard characters: False
 ### -Certificate
 
 Specifies the client certificate that is used to sign the format files (*.Format.ps1xml) or script
-module files (.psm1) in the temporary module that `Import-PSSession` creates.
+module files (`.psm1`) in the temporary module that `Import-PSSession` creates.
 
 Enter a variable that contains a certificate or a command or expression that gets the certificate.
 
@@ -397,11 +400,11 @@ alias, **Type**. The acceptable values for this parameter are:
 - `Alias`: The Windows PowerShell aliases in the remote session.
 - `All`: The cmdlets and functions in the remote session.
 - `Application`: All the files other than Windows-PowerShell files in the paths that are listed in
-  the Path environment variable (`$env:path`) in the remote session, including .txt, .exe, and .dll
+  the PATH environment variable (`$Env:PATH`) in the remote session, including .txt, .exe, and .dll
   files.
 - `Cmdlet`: The cmdlets in the remote session. "Cmdlet" is the default.
-- `ExternalScript`: The .ps1 files in the paths listed in the Path environment variable
-  (`$env:path`) in the remote session.
+- `ExternalScript`: The `.ps1` files in the paths listed in the PATH environment variable
+  (`$Env:PATH`) in the remote session.
 - `Filter` and `Function`: The Windows PowerShell functions in the remote session.
 - `Script`: The script blocks in the remote session.
 
@@ -593,17 +596,21 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe objects to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSModuleInfo
 
-`Import-PSSession` returns the same module object that `New-Module` and `Get-Module` cmdlets return.
+This cmdlet returns the same module object that `New-Module` and `Get-Module` cmdlets return.
 However, the imported module is temporary and exists only in the current session. To create a
 permanent module on disk, use the `Export-PSSession` cmdlet.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Import-PSSession`:
+
+- `ipsn`
 
 - `Import-PSSession` relies on the  PowerShell remoting infrastructure. To use this cmdlet,
   the computer must be configured for WS-Management remoting. For more information, see

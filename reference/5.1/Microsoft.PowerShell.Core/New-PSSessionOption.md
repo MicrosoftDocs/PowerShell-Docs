@@ -2,8 +2,8 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/01/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
 ---
@@ -88,7 +88,7 @@ IdleTimeout                       : 00:04:00
 This example shows how to use a **SessionOption** object to configure a session.
 
 ```powershell
-$pso = New-PSSessionOption -Culture "fr-fr" -MaximumReceivedObjectSize 10MB
+$pso = New-PSSessionOption -Culture "fr-FR" -MaximumReceivedObjectSize 10MB
 New-PSSession -ComputerName Server01 -SessionOption $pso
 ```
 
@@ -138,7 +138,7 @@ TotalMilliseconds : 180000
 
 ```powershell
 $a.UICulture = (Get-UICulture)
-$a.OpenTimeout = (New-Timespan -Minutes 4)
+$a.OpenTimeout = (New-TimeSpan -Minutes 4)
 $a.MaximumConnectionRedirectionCount = 1
 $a
 ```
@@ -314,7 +314,7 @@ Specifies the culture to use for the session. Enter a culture name in
 `<languagecode2>-<country/regioncode2>` format (like `ja-JP`), a variable that contains a
 **CultureInfo** object, or a command that gets a **CultureInfo** object.
 
-The default value is `$Null`, and the culture that is set in the operating system is used in the
+The default value is `$null`, and the culture that is set in the operating system is used in the
 session.
 
 ```yaml
@@ -339,7 +339,7 @@ The idle time-out value is of significant importance if you intend to disconnect
 session. You can reconnect only if the session has not timed out.
 
 Enter a value in milliseconds. The minimum value is `60000` (1 minute). The maximum is the value of
-the **MaxIdleTimeoutms** property of the session configuration. The default value, `-1`, does not
+the **MaxIdleTimeoutMs** property of the session configuration. The default value, `-1`, does not
 set an idle time-out.
 
 The session uses the idle time-out that is set in the session options, if any. If none is set
@@ -794,7 +794,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 

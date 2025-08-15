@@ -1,7 +1,6 @@
 ---
 description: Host03 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Host03 Sample
 ---
 # Host03 Sample
@@ -155,7 +154,7 @@ namespace Microsoft.Samples.PowerShell.Host
         // commands. This will result in the output being written using the PSHost
         // and PSHostUserInterface classes instead of returning objects to the hosting
         // application.
-        this.currentPowerShell.AddCommand("out-default");
+        this.currentPowerShell.AddCommand("Out-Default");
         this.currentPowerShell.Commands.Commands[0].MergeMyResults(PipelineResultTypes.Error, PipelineResultTypes.Output);
 
         // If there was any input specified, pass it in, otherwise just
@@ -185,7 +184,7 @@ namespace Microsoft.Samples.PowerShell.Host
     /// using the display formatter. To do this we run
     /// a second pipeline passing in the error record.
     /// The runtime will bind this to the $input variable
-    /// which is why $input is being piped to out-string.
+    /// which is why $input is being piped to Out-String.
     /// We then call WriteErrorLine to make sure the error
     /// gets displayed in the correct error color.
 
@@ -214,7 +213,7 @@ namespace Microsoft.Samples.PowerShell.Host
 
         try
         {
-          this.currentPowerShell.AddScript("$input").AddCommand("out-string");
+          this.currentPowerShell.AddScript("$input").AddCommand("Out-String");
 
           // Do not merge errors, this function will swallow errors.
           Collection<PSObject> result;
@@ -228,7 +227,7 @@ namespace Microsoft.Samples.PowerShell.Host
             string str = result[0].BaseObject as string;
             if (!string.IsNullOrEmpty(str))
             {
-              // Remove \r\n that is added by Out-string.
+              // Remove \r\n that is added by Out-String.
               this.myHost.UI.WriteErrorLine(str.Substring(0, str.Length - 2));
             }
           }
@@ -435,7 +434,7 @@ namespace Microsoft.Samples.PowerShell.Host
         // commands. This will result in the output being written using the PSHost
         // and PSHostUserInterface classes instead of returning objects to the hosting
         // application.
-        currentPipeline.Commands.Add("out-default");
+        currentPipeline.Commands.Add("Out-Default");
         currentPipeline.Commands[0].MergeMyResults(PipelineResultTypes.Error, PipelineResultTypes.Output);
 
         // If there was any input specified, pass it in, otherwise just
@@ -479,8 +478,8 @@ namespace Microsoft.Samples.PowerShell.Host
         // using the display formatter. To do this we run
         // a second pipeline passing in the error record.
         // The runtime will bind this to the $input variable
-        // which is why $input is being piped to out-default
-        executeHelper("$input | out-default", rte.ErrorRecord);
+        // which is why $input is being piped to Out-Default
+        executeHelper("$input | Out-Default", rte.ErrorRecord);
       }
     }
 
@@ -1185,6 +1184,6 @@ namespace Microsoft.Samples.PowerShell.Host
 
  [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [System.Management.Automation.Host.PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [System.Management.Automation.Host.PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

@@ -1,0 +1,38 @@
+name: "Quality Contributions"
+on:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - edited
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  # Check if the PR is for quality contributions; all other jobs depend on this one.
+  check:
+    name: Is Quality Contribution?
+    outputs:
+      title:   ${{ steps.title.outputs.check   == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: title
+        run: |
+          $Check = "${{ contains(github.event.pull_request.title, 'Quality:') }}"
+          "Check: $Check"
+          "check=$Check" >> $env:GITHUB_OUTPUT
+
+  project:
+    name: Add pull request to project
+    needs: check
+    if: |
+      needs.check.outputs.title == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: project-quality

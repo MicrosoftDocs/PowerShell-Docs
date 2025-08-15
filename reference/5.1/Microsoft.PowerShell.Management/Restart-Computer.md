@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/17/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/restart-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Computer
 ---
@@ -298,7 +298,7 @@ The acceptable values for this parameter are:
 
 - **Default**: Waits for PowerShell to restart.
 - **PowerShell**: Can run commands in a PowerShell remote session on the computer.
-- **WMI**: Receives a reply to a Win32_ComputerSystem query for the computer.
+- **WMI**: Receives a reply to a **Win32_ComputerSystem** query for the computer.
 - **WinRM**: Can establish a remote session to the computer by using WS-Management.
 
 This parameter was introduced in Windows PowerShell 3.0.
@@ -519,18 +519,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-`Restart-Computer` accepts computer names from the pipeline or variables.
-
-In Windows PowerShell 2.0, the **ComputerName** parameter takes input from the pipeline only by
-property name. In Windows PowerShell 3.0, and later, the **ComputerName** parameter takes input from
-the pipeline by value.
+You can pipe a string that contains a computer name to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Management.Automation.RemotingJob
+### None
 
-If you specify the **AsJob** parameter, `Restart-Computer` returns a job object. Otherwise, no
-output is generated.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.RemotingJob
+
+When you use the **AsJob** parameter, this cmdlet returns a job object.
 
 ## NOTES
 

@@ -2,9 +2,9 @@
 description: Lists the cmdlets that are designed for use with PowerShell providers.
 Locale: en-US
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_core_commands?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_core_commands?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Core Commands
+title: about_Core_Commands
 ---
 
 # about_Core_Commands
@@ -19,7 +19,7 @@ PowerShell includes a set of cmdlets that are specifically designed to manage
 the items in the data stores that are exposed by Windows PowerShell providers.
 You can use these cmdlets in the same ways to manage all the different types
 of data that the providers make available to you. For more information about
-providers, type "get-help about_providers".
+providers, type "Get-Help about_Providers".
 
 For example, you can use the Get-ChildItem cmdlet to list the files in a file
 system directory, the keys under a registry key, or the items that are exposed
@@ -87,7 +87,7 @@ PSProvider cmdlets
 
 - Get-PSProvider
 
-For more information about a cmdlet, type `get-help <cmdlet-name>`.
+For more information about a cmdlet, type `Get-Help <cmdlet-name>`.
 
 ## See also
 

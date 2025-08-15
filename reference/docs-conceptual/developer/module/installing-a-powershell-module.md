@@ -1,14 +1,13 @@
 ---
 description: Installing a PowerShell Module
-ms.date: 09/13/2016
-ms.topic: reference
+ms.date: 11/15/2022
 title: Installing a PowerShell Module
 ---
 # Installing a PowerShell Module
 
 After you have created your PowerShell module, you will likely want to install the module on a
 system, so that you or others may use it. Generally speaking, this consists of copying the module
-files (ie, the .psm1, or the binary assembly, the module manifest, and any other associated files)
+files (ie, the `.psm1`, or the binary assembly, the module manifest, and any other associated files)
 onto a directory on that computer. For a very small project, this may be as simple as copying and
 pasting the files with Windows Explorer onto a single remote computer; however, for larger solutions
 you may wish to use a more sophisticated installation process. Regardless of how you get your module
@@ -33,13 +32,13 @@ PowerShell modules. Cmdlets rely on the value of this environment variable to fi
 By default, the **PSModulePath** environment variable value contains the following system and user
 module directories, but you can add to and edit the value.
 
-- `$PSHome\Modules` (`%Windir%\System32\WindowsPowerShell\v1.0\Modules`)
+- `$PSHOME\Modules` (`%windir%\System32\WindowsPowerShell\v1.0\Modules`)
 
   > [!WARNING]
   > This location is reserved for modules that ship with Windows. Do not install modules to this
   > location.
 
-- `$Home\Documents\WindowsPowerShell\Modules` (`%UserProfile%\Documents\WindowsPowerShell\Modules`)
+- `$HOME\Documents\WindowsPowerShell\Modules` (`%HOMEDRIVE%%HOMEPATH%\Documents\WindowsPowerShell\Modules`)
 
 - `$Env:ProgramFiles\WindowsPowerShell\Modules` (`%ProgramFiles%\WindowsPowerShell\Modules`)
 
@@ -142,7 +141,7 @@ If you create your own module or get a module from another party, such as a Wind
 community website, and you want the module to be available for your user account only, install the
 module in your user-specific Modules directory.
 
-`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
+`$HOME\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 The user-specific Modules directory is added to the value of the **PSModulePath** environment
 variable by default.
@@ -209,13 +208,13 @@ C:\Program Files
 ```
 
 Then, the installer assures the value of the **PSModulePath** environment variable includes the path
-of the common files modules subdirectory.
+of the `Common Files\Modules` subdirectory.
 
 ```powershell
-$m = $env:ProgramFiles + '\Common Files\Modules'
+$m = $Env:ProgramFiles + '\Common Files\Modules'
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
 $q = $p -split ';'
-if ($q -notContains $m) {
+if ($q -notcontains $m) {
     $q += ";$m"
 }
 $p = $q -join ';'
@@ -229,7 +228,7 @@ To install multiple versions of the same module, use the following procedure.
 1. Create a directory for each version of the module. Include the version number in the directory
    name.
 1. Create a module manifest for each version of the module. In the value of the **ModuleVersion**
-   key in the manifest, enter the module version number. Save the manifest file (.psd1) in the
+   key in the manifest, enter the module version number. Save the manifest file (`.psd1`) in the
    version-specific directory for the module.
 1. Add the module root folder path to the value of the **PSModulePath** environment variable, as
    shown in the following examples.

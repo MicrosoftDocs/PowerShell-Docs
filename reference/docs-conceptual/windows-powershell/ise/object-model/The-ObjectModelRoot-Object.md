@@ -1,12 +1,12 @@
 ---
 description: The $psISE object, which is the principal root object in PowerShell ISE is an instance of the Microsoft.PowerShell.Host.ISE.ObjectModelRoot class. This topic describes the properties of the ObjectModelRoot object.
-ms.date: 08/25/2017
+ms.date: 03/27/2025
 title: The ObjectModelRoot Object
 ---
 
 # The ObjectModelRoot Object
 
-The `$psISE` object, which is the principal root object in Windows PowerShell&reg; Integrated Scripting
+The `$psISE` object, which is the principal root object in Windows PowerShell Integrated Scripting
 Environment (ISE) is an instance of the Microsoft.PowerShell.Host.ISE.ObjectModelRoot class. This
 topic describes the properties of the **ObjectModelRoot** object.
 
@@ -29,15 +29,14 @@ The read-only property that gets the PowerShell tab that has the focus.
 
 > Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the currently visible
-Windows PowerShell ISE add-on tool that is located in
-the horizontal tool pane at the bottom of the editor.
+The read-only property that gets the currently visible Windows PowerShell ISE add-on tool that's
+located in the horizontal tool pane at the bottom of the editor.
 
 ### CurrentVisibleVerticalTool
 
 > Supported in Windows PowerShell ISE 2.0 and later.
 
-The read-only property that gets the currently visible Windows PowerShell ISE add-on tool that is
+The read-only property that gets the currently visible Windows PowerShell ISE add-on tool that's
 located in the vertical tool pane on the right side of the editor.
 
 ### Options
@@ -57,5 +56,9 @@ PowerShell tabs to this object by using scripts or by using the menus in Windows
 
 ## See Also
 
-- [Purpose of the Windows PowerShell ISE Scripting Object Model](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+- [Purpose of the Windows PowerShell ISE Scripting Object Model][01]
+- [The ISE Object Model Hierarchy][02]
+
+<!-- link references -->
+[01]: Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md
+[02]: The-ISE-Object-Model-Hierarchy.md

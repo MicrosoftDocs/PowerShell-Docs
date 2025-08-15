@@ -1,7 +1,6 @@
 ---
 description: How to Create a Windows PowerShell Snap-in
 ms.date: 09/13/2016
-ms.topic: reference
 title: How to Create a Windows PowerShell Snap-in
 ---
 # How to Create a Windows PowerShell Snap-in
@@ -12,7 +11,7 @@ Snap-in assemblies should be installed in a protected directory, just as they wo
 
 ## Windows PowerShell Snap-in Classes
 
-All Windows PowerShell snap-in classes derive from the [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) classes.
+All Windows PowerShell snap-in classes derive from the [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.CustomPSSnapIn](/dotnet/api/System.Management.Automation.CustomPSSnapIn) classes.
 
 ## Examples
 
@@ -24,7 +23,7 @@ All Windows PowerShell snap-in classes derive from the [System.Management.Automa
 
 [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn)
 
-[System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)
+[System.Management.Automation.CustomPSSnapIn](/dotnet/api/System.Management.Automation.CustomPSSnapIn)
 
 [Registering Cmdlets](./registering-cmdlets.md)
 

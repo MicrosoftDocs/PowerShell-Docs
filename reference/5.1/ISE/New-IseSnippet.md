@@ -2,8 +2,8 @@
 external help file: ISE-help.xml
 Locale: en-US
 Module Name: ISE
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/ise/new-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/13/2022
+online version: https://learn.microsoft.com/powershell/module/ise/new-isesnippet?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-IseSnippet
 ---
@@ -15,8 +15,8 @@ Creates a Windows PowerShell ISE code snippet.
 ## SYNTAX
 
 ```
-New-IseSnippet [-Title] <String> [-Description] <String> [-Text] <String> [-Author <String>]
- [-CaretOffset <Int32>] [-Force] [<CommonParameters>]
+New-IseSnippet [-Title] <String> [-Description] <String> [-Text] <String>
+ [-Author <String>] [-CaretOffset <Int32>] [-Force] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,7 +32,7 @@ PowerShell modules. To see snippets in Windows PowerShell ISE, from the **Edit**
 **Start Snippets** or press <kbd>CTRL</kbd>+<kbd>J</kbd>.
 
 The `New-ISESnippet` cmdlet creates a `<Title>.Snippets.ps1xml` file in the
-`$home\Documents\WindowsPowerShell\Snippets` directory with the title that you specify. To include a
+`$HOME\Documents\WindowsPowerShell\Snippets` directory with the title that you specify. To include a
 snippet file in a module that you are authoring, add the snippet file to a Snippets subdirectory of
 your module directory.
 
@@ -45,7 +45,7 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 ### Example 1: Create a Comment-Based help snippet
 
-```
+```powershell
 New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-based help." -Text "<#
     .SYNOPSIS
 
@@ -60,21 +60,28 @@ New-IseSnippet -Title Comment-BasedHelp -Description "A template for comment-bas
 
 This command creates a Comment-BasedHelp snippet for Windows PowerShell ISE. It creates a file named
 `Comment-BasedHelp.snippets.ps1xml` in the user's Snippets directory
-`$home\Documents\WindowsPowerShell\Snippets`.
+`$HOME\Documents\WindowsPowerShell\Snippets`.
 
 ### Example 2: Create a mandatory snippet
 
-```
+```powershell
 $M = @'
-Param
+param
 (
-  [parameter(Mandatory=$true)]
-  [String[]]
+  [Parameter(Mandatory=$true)]
+  [string[]]
   $<ParameterName>
 )
 '@
 
-New-ISESnippet -Text $M -Title Mandatory -Description "Adds a mandatory function parameter." -Author "Patti Fuller, Fabrikam Corp." -Force
+$snippet = @{
+    Text = $M
+    Title = 'Mandatory'
+    Description = 'Adds a mandatory function parameter.'
+    Author = 'Patti Fuller, Fabrikam Corp.'
+    Force = $true
+}
+New-ISESnippet @snippet
 ```
 
 This example creates a snippet named **Mandatory** for Windows PowerShell ISE. The first command
@@ -84,8 +91,10 @@ the same name.
 
 ### Example 3: Copy a mandatory snippet from a folder to a destination folder
 
-```
-Copy-Item "$Home\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml" -Destination "\\Server\Share"
+```powershell
+$path = "$HOME\Documents\WindowsPowerShell\Snippets\Mandatory.Snippets.ps1xml"
+$destination = "\\Server\Share"
+Copy-Item -Path $path -Destination $destination
 ```
 
 This command uses the `Copy-Item` cmdlet to copy the **Mandatory** snippet from the folder where
@@ -208,17 +217,17 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet does not take input from the pipeline.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 
-`New-IseSnippet` stores new user-created snippets in unsigned .ps1xml files. As such, Windows
+`New-IseSnippet` stores new user-created snippets in unsigned `.ps1xml` files. As such, Windows
 PowerShell cannot add them to a session in which the execution policy is **AllSigned** or
 **Restricted**. In a **Restricted** or **AllSigned** session, you can create, get, and import
 unsigned user-created snippets, but you cannot use them in the session.
@@ -228,13 +237,14 @@ is created, but an error message appears when Windows PowerShell tries to add th
 snippet to the session. To use the new snippet (and other unsigned user-created snippets), change
 the execution policy, and then restart Windows PowerShell ISE.
 
-For more information about Windows PowerShell execution policies, see [about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
+For more information about Windows PowerShell execution policies, see
+[about_Execution_Policies](../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
 
 - To change a snippet, edit the snippet file. You can edit snippet files in the Script pane of
   Windows PowerShell ISE.
 - To delete a snippet that you added, delete the snippet file.
 - You cannot delete a built-in snippet, but you can hide all built-in snippets by using the
-  "$psise.Options.ShowDefaultSnippets=$false" command.
+  "$psISE.Options.ShowDefaultSnippets=$false" command.
 - You can create a snippet that has the same name as a built-in snippet. Both snippets appear in the
   snippet menu in Windows PowerShell ISE.
 

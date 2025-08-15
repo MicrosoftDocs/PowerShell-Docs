@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/01/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-eventsubscriber?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/20/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-eventsubscriber?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-EventSubscriber
 ---
+
 # Get-EventSubscriber
 
 ## SYNOPSIS
@@ -110,9 +111,9 @@ Id  Name           State      HasMoreData  Location  Command
 ```
 
 ```powershell
-$Timer.Enabled = $True
+$Timer.Enabled = $true
 $Subscriber = Get-EventSubscriber -SourceIdentifier Timer.Random
-($Subscriber.action).gettype().fullname
+($Subscriber.Action).GetType().FullName
 ```
 
 ```Output
@@ -120,7 +121,7 @@ System.Management.Automation.PSEventJob
 ```
 
 ```powershell
-$Subscriber.action | Format-List -Property *
+$Subscriber.Action | Format-List -Property *
 ```
 
 ```Output
@@ -140,7 +141,7 @@ ChildJobs     : {}
 ```
 
 ```powershell
-& $Subscriber.action.module {$Random}
+& $Subscriber.Action.Module {$Random}
 ```
 
 The third command uses the `Register-ObjectEvent` cmdlet to register the Elapsed event of the timer
@@ -172,6 +173,32 @@ being generated when the Elapsed event occurs.
 
 For more information about modules, see
 [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
+
+### Example 3: Get hidden event subscribers
+
+This example registers an event subscriber for the **PowerShell.Exiting** event. The subscription is
+registered using the **SupportEvent** parameter, which hides the event subscriber from the default
+output of the `Get-EventSubscriber` cmdlet. You must use the **Force** parameter to get all event
+subscribers, including hidden subscribers.
+
+```powershell
+Register-EngineEvent -SourceIdentifier PowerShell.Exiting -SupportEvent -Action {
+    Get-History | Export-Clixml D:\temp\history.clixml
+}
+Get-EventSubscriber  # No output - must use -Force
+Get-EventSubscriber -Force
+```
+
+```Output
+SubscriptionId   : 1
+SourceObject     :
+EventName        :
+SourceIdentifier : PowerShell.Exiting
+Action           : System.Management.Automation.PSEventJob
+HandlerDelegate  :
+SupportEvent     : True
+ForwardEvent     : False
+```
 
 ## PARAMETERS
 
@@ -239,13 +266,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
 ### System.Management.Automation.PSEventSubscriber
 
-`Get-EventSubscriber` returns an object that represents each event subscriber.
+This cmdlet returns a **PSEventSubscriber** object for each event subscriber.
 
 ## NOTES
 

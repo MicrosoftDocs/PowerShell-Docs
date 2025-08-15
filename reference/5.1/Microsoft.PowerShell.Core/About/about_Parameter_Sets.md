@@ -1,13 +1,14 @@
 ---
 description: Describes how to define and use parameter sets in advanced functions.
 Locale: en-US
-ms.date: 03/11/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-5.1&WT.mc_id=ps-gethelp
-title: about Parameter Sets
+ms.date: 03/26/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameter_sets?view=powershell-5.1&WT.mc_id=ps-gethelp
+title: about_Parameter_Sets
 ---
 # about_Parameter_Sets
 
 ## Short description
+
 Describes how to define and use parameter sets in advanced functions.
 
 ## Long description
@@ -32,10 +33,6 @@ The following requirements apply to all parameter sets.
   unique positions for each parameter. No two positional parameters can specify
   the same position.
 
-- Only one parameter in a set can declare the `ValueFromPipeline` keyword with
-  a value of `true`. Multiple parameters can define the
-  `ValueFromPipelineByPropertyName` keyword with a value of `true`.
-
 > [!NOTE]
 > There is a limit of 32 parameter sets.
 
@@ -46,7 +43,7 @@ of the **CmdletBinding** attribute specifies the default parameter set.
 PowerShell uses the default parameter set when it can't determine the parameter
 set to use based on the information provided to the command. For more
 information about the **CmdletBinding** attribute, see
-[about_functions_cmdletbindingattribute](about_functions_cmdletbindingattribute.md).
+[about_Functions_CmdletBindingAttribute][01].
 
 ## Declaring parameter sets
 
@@ -63,12 +60,29 @@ one unique parameter.
 Parameters that don't have an assigned parameter set name belong to all
 parameter sets.
 
-### Example
+## Reserved parameter set name
+
+PowerShell reserves the parameter set name `__AllParameterSets` for special
+handling.
+
+`__AllParameterSets` is the name of the default parameter set when an explicit
+default name is not used.
+
+Setting the `ParameterSetName` of a the **Parameter** attribute to
+`__AllParameterSets` is equivalent to not assigning a `ParameterSetName`. In
+both cases the parameter belongs to all parameter sets.
+
+> [!NOTE]
+> The **CmdletBinding** attribute doesn't prevent you from setting the
+> `DefaultParameterSetName` to be to `__AllParameterSets`. If you do this,
+> PowerShell creates an explicit parameter set that can't be properly
+> referenced by the **Parameter** attribute.
+
+## Examples
 
 The following example function counts the number lines, characters, and words
-in a text file. Using parameters, you can specify which values you want
-returned and which files you want to measure. There are four parameter sets
-defined:
+in a text file. Using parameters, you can specify the values you want returned
+and the files you want to measure. There are four parameter sets defined:
 
 - Path
 - PathAll
@@ -79,21 +93,13 @@ defined:
 function Measure-Lines {
     [CmdletBinding(DefaultParameterSetName = 'Path')]
     param (
-        [Parameter(Mandatory = $true,
-            ParameterSetName = 'Path',
-            HelpMessage = 'Enter one or more filenames',
-            Position = 0)]
-        [Parameter(Mandatory = $true,
-            ParameterSetName = 'PathAll',
-            Position = 0)]
+        [Parameter(Mandatory, ParameterSetName = 'Path', Position = 0)]
+        [Parameter(Mandatory, ParameterSetName = 'PathAll', Position = 0)]
         [string[]]$Path,
 
-        [Parameter(Mandatory = $true, ParameterSetName = 'LiteralPathAll')]
-        [Parameter(Mandatory = $true,
-            ParameterSetName = 'LiteralPath',
-            HelpMessage = 'Enter a single filename',
-            ValueFromPipeline = $true)]
-        [string]$LiteralPath,
+        [Parameter(Mandatory, ParameterSetName = 'LiteralPathAll', ValueFromPipeline)]
+        [Parameter(Mandatory, ParameterSetName = 'LiteralPath', ValueFromPipeline)]
+        [string[]]$LiteralPath,
 
         [Parameter(ParameterSetName = 'Path')]
         [Parameter(ParameterSetName = 'LiteralPath')]
@@ -107,8 +113,8 @@ function Measure-Lines {
         [Parameter(ParameterSetName = 'LiteralPath')]
         [switch]$Characters,
 
-        [Parameter(Mandatory = $true, ParameterSetName = 'PathAll')]
-        [Parameter(Mandatory = $true, ParameterSetName = 'LiteralPathAll')]
+        [Parameter(Mandatory, ParameterSetName = 'PathAll')]
+        [Parameter(Mandatory, ParameterSetName = 'LiteralPathAll')]
         [switch]$All,
 
         [Parameter(ParameterSetName = 'Path')]
@@ -121,28 +127,27 @@ function Measure-Lines {
             $Lines = $Words = $Characters = $true
         }
         elseif (($Words -eq $false) -and ($Characters -eq $false)) {
-            $Lines = $true
-        }
-
-        if ($Path) {
-            $Files = Get-ChildItem -Path $Path -Recurse:$Recurse
-        }
-        else {
-            $Files = Get-ChildItem -LiteralPath $LiteralPath
+            $Lines  = $true
         }
     }
     process {
+        if ($Path) {
+            $Files = Get-ChildItem -Path $Path -Recurse:$Recurse -File
+        }
+        else {
+            $Files = Get-ChildItem -LiteralPath $LiteralPath -File
+        }
         foreach ($file in $Files) {
             $result = [ordered]@{ }
-            $result.Add('File', $file.fullname)
+            $result.Add('File', $file.FullName)
 
-            $content = Get-Content -LiteralPath $file.fullname
+            $content = Get-Content -LiteralPath $file.FullName
 
             if ($Lines) { $result.Add('Lines', $content.Length) }
 
             if ($Words) {
                 $wc = 0
-                foreach ($line in $content) { $wc += $line.split(' ').Length }
+                foreach ($line in $content) { $wc += $line.Split(' ').Length }
                 $result.Add('Words', $wc)
             }
 
@@ -166,12 +171,12 @@ with the `LiteralPath` and `LiteralPathAll` parameter sets. Even though the
 the **Path** and **LiteralPath** parameters differentiate them.
 
 Use `Get-Command -Syntax` shows you the syntax of each parameter set. However
-it does not show the name of the parameter set. The following example shows
+it doesn't show the name of the parameter set. The following example shows
 which parameters can be used in each parameter set.
 
 ```powershell
 (Get-Command Measure-Lines).ParameterSets |
-  Select-Object -Property @{n='ParameterSetName';e={$_.name}},
+  Select-Object -Property @{n='ParameterSetName';e={$_.Name}},
     @{n='Parameters';e={$_.ToString()}}
 ```
 
@@ -180,13 +185,13 @@ ParameterSetName Parameters
 ---------------- ----------
 Path             [-Path] <string[]> [-Lines] [-Words] [-Characters] [-Recurse] [<CommonParameters>]
 PathAll          [-Path] <string[]> -All [-Recurse] [<CommonParameters>]
-LiteralPath      -LiteralPath <string> [-Lines] [-Words] [-Characters] [<CommonParameters>]
-LiteralPathAll   -LiteralPath <string> -All [<CommonParameters>]
+LiteralPath      -LiteralPath <string[]> [-Lines] [-Words] [-Characters] [<CommonParameters>]
+LiteralPathAll   -LiteralPath <string[]> -All [<CommonParameters>]
 ```
 
 ### Parameter sets in action
 
-In this example, we are using the `PathAll` parameter set.
+The example uses the `PathAll` parameter set.
 
 ```powershell
 Measure-Lines test* -All
@@ -210,7 +215,7 @@ Get-ChildItem -Path $PSHOME -LiteralPath $PSHOME
 ```
 
 ```Output
-Get-ChildItem : Parameter set cannot be resolved using the specified named parameters.
+Get-ChildItem : Parameter set can't be resolved using the specified named parameters.
 At line:1 char:1
 + Get-ChildItem -Path $PSHOME -LiteralPath $PSHOME
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -222,3 +227,65 @@ The **Path** and **LiteralPath** parameters are unique to different parameter
 sets of the `Get-ChildItem` cmdlet. When the parameters are run together in the
 same cmdlet, an error is thrown. Only one parameter set can be used per cmdlet
 call at a time.
+
+### How to know which parameter set is used
+
+The automatic variable `$PSCmdlet` provides the **ParameterSetName** property.
+This property contains the name of the parameter set being used. You can use
+this property in your function to determine which parameter set is being used
+to select parameter set-specific behavior.
+
+```powershell
+function Get-ParameterSetName {
+
+    [CmdletBinding(DefaultParameterSetName = 'Set1')]
+    param (
+        [Parameter(ParameterSetName = 'Set1', Position = 0)]
+        $Var1,
+
+        [Parameter(ParameterSetName = 'Set2', Position = 0)]
+        $Var2,
+
+        [Parameter(ParameterSetName = 'Set1', Position = 1)]
+        [Parameter(ParameterSetName = 'Set2', Position = 1)]
+        $Var3,
+
+        [Parameter(Position = 2)]
+        $Var4
+    )
+
+    "Using Parameter set named '$($PSCmdlet.ParameterSetName)'"
+
+    switch ($PSCmdlet.ParameterSetName) {
+        'Set1' {
+            "`$Var1 = $Var1"
+            "`$Var3 = $Var3"
+            "`$Var4 = $Var4"
+            break
+        }
+        'Set2' {
+            "`$Var2 = $Var2"
+            "`$Var3 = $Var3"
+            "`$Var4 = $Var4"
+            break
+        }
+    }
+}
+
+PS> Get-ParameterSetName 1 2 3
+
+Using Parameter set named 'Set1'
+$Var1 = 1
+$Var3 = 2
+$Var4 = 3
+
+PS> Get-ParameterSetName -Var2 1 2 3
+
+Using Parameter set named 'Set2'
+$Var2 = 1
+$Var3 = 2
+$Var4 = 3
+```
+
+<!-- link references -->
+[01]: about_Functions_CmdletBindingAttribute.md

@@ -1,0 +1,134 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/starting-the-windows-powershell-2.0-engine",
+      "source_path": "../reference/docs-conceptual/windows-powershell/Starting-the-Windows-PowerShell-2.0-Engine.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/install/installing-the-windows-powershell-2.0-engine",
+      "source_path": "../reference/docs-conceptual/windows-powershell/install/Installing-the-Windows-PowerShell-2.0-Engine.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/windows-powershell/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/install/Installing-Windows-PowerShell.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/windows-powershell/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/install/Windows-PowerShell-System-Requirements.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/whats-new/what-s-new-in-the-powershell-50-ise",
+      "source_path": "../reference/docs-conceptual/windows-powershell/whats-new/What-s-New-in-the-PowerShell-50-ISE.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/whats-new/what-s-new-in-windows-powershell-50",
+      "source_path": "../reference/docs-conceptual/windows-powershell/whats-new/What-s-New-in-Windows-PowerShell-50.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf-overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/overview.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "https://learn.microsoft.com/en-us/previous-versions/powershell/scripting/windows-powershell/wmf/known-issues/known-issues-50",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/known-issues/known-issues-50.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "https://learn.microsoft.com/en-us/previous-versions/powershell/scripting/windows-powershell/wmf/known-issues/known-issues-51",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/known-issues/known-issues-51.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "https://learn.microsoft.com/en-us/previous-versions/powershell/scripting/windows-powershell/wmf/known-issues/known-issues-dsc",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/known-issues/known-issues-dsc.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf-overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/setup/install-configure.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf-overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/setup/uninstall.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/windows-powershell/wmf-overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/bugfixes.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_classes",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/class-overview.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/compatibility.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/console-improvements.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/debug-overview.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/DSC-improvements.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/engine-improvements.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/informationstream-overview.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/jea-improvements.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/new-updated-cmdlets.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/package-management-improvements.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/release-notes.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/script-logging.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/overview",
+      "source_path": "../reference/docs-conceptual/windows-powershell/wmf/whats-new/sil-overview.md"
+    }
+  ]
+}

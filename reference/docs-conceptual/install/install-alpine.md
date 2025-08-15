@@ -1,29 +1,31 @@
 ---
 description: Information about installing PowerShell on Alpine Linux
-ms.date: 05/18/2022
+ms.date: 07/03/2025
 title: Installing PowerShell on Alpine Linux
 ---
 # Installing PowerShell on Alpine Linux
 
-All packages are available on our GitHub [releases][releases] page. After the package is installed,
-run `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release. Before
-installing, check the list of [Supported versions](#supported-versions) below.
+All packages are available on our GitHub [releases][03] page. After the package is installed, run
+`pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release. Before installing,
+check the list of [Supported versions][02] below.
 
 > [!NOTE]
-> PowerShell 7.2 is an in-place upgrade that removes previous versions of PowerShell.
->
-> If you need to run PowerShell 7.2 side-by-side with a previous version, reinstall the previous
-> version using the [binary archive](install-other-linux.md#binary-archives) method.
+> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
+> versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
+> need to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version
+> using the [binary archive][05] method.
+
+[!INCLUDE [Latest version](../../includes/latest-install.md)]
 
 ## Installation steps
 
-Installation on Alpine is based on downloading tar.gz package from the [releases][releases] page.
-The URL to the package depends on the version of PowerShell you want to install.
+Installation on Alpine is based on downloading tar.gz package from the [releases][03] page. The URL
+to the package depends on the version of PowerShell you want to install.
 
-- PowerShell 7.2.6 - `https://github.com/PowerShell/PowerShell/releases/download/v7.2.6/powershell-7.2.6-linux-alpine-x64.tar.gz`
-- PowerShell 7.0.12 - `https://github.com/PowerShell/PowerShell/releases/download/v7.0.12/powershell-7.0.12-linux-alpine-x64.tar.gz`
+- PowerShell 7.4 - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.11/powershell-7.4.11-linux-musl-x64.tar.gz`
+- PowerShell 7.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell-7.5.2-linux-musl-x64.tar.gz`
 
-Then, in the terminal, execute the following shell commands to install PowerShell 7.2:
+Then, in the terminal, execute the following shell commands to install PowerShell 7.4:
 
 ```sh
 # install the requirements
@@ -34,7 +36,7 @@ sudo apk add --no-cache \
     krb5-libs \
     libgcc \
     libintl \
-    libssl1.1 \
+    libssl3 \
     libstdc++ \
     tzdata \
     userspace-rcu \
@@ -42,11 +44,12 @@ sudo apk add --no-cache \
     icu-libs \
     curl
 
-sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
-    lttng-ust
+apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
+    lttng-ust \
+    openssh-client \
 
 # Download the powershell '.tar.gz' archive
-curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.2.6/powershell-7.2.6-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell-7.5.2-linux-musl-x64.tar.gz -o /tmp/powershell.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7
@@ -64,7 +67,7 @@ sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-## Uninstall PowerShell from Alpine
+## Uninstall PowerShell
 
 ```sh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
@@ -73,17 +76,21 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## PowerShell paths
 
 - `$PSHOME` is `/opt/microsoft/powershell/7/`
-- User profiles are read from `~/.config/powershell/profile.ps1`
-- Default profiles are read from `$PSHOME/profile.ps1`
-- User modules are read from `~/.local/share/powershell/Modules`
-- Shared modules are read from `/usr/local/share/powershell/Modules`
-- Default modules are read from `$PSHOME/Modules`
-- PSReadLine history is recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+- The profiles scripts are stored in the following locations:
+  - AllUsersAllHosts - `$PSHOME/profile.ps1`
+  - AllUsersCurrentHost - `$PSHOME/Microsoft.PowerShell_profile.ps1`
+  - CurrentUserAllHosts - `~/.config/powershell/profile.ps1`
+  - CurrentUserCurrentHost - `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
+- Modules are stored in the following locations:
+  - User modules - `~/.local/share/powershell/Modules`
+  - Shared modules - `/usr/local/share/powershell/Modules`
+  - Default modules - `$PSHOME/Modules`
+- PSReadLine history is recorded in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 The profiles respect PowerShell's per-host configuration, so the default host-specific profiles
 exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 
-PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.
+PowerShell respects the [XDG Base Directory Specification][04] on Linux.
 
 ## Supported versions
 
@@ -93,10 +100,10 @@ PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.
 
 Microsoft supports the installation methods in this document. There may be other methods of
 installation available from other third-party sources. While those tools and methods may work,
-Microsoft cannot support those methods.
+Microsoft can't support those methods.
 
 <!-- link references -->
-[releases]: https://aka.ms/PowerShell-Release?tag=stable
-[xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-[lifecycle]: ../PowerShell-Support-Lifecycle.md
-[eol-alpine]: https://alpinelinux.org/releases/
+[02]: #supported-versions
+[03]: https://aka.ms/PowerShell-Release?tag=stable
+[04]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[05]: install-other-linux.md#binary-archives

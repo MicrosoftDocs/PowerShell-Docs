@@ -1,17 +1,16 @@
 ---
 description: Adding Non-Terminating Error Reporting to Your Cmdlet
 ms.date: 09/13/2016
-ms.topic: reference
 title: Adding Non-Terminating Error Reporting to Your Cmdlet
 ---
 # Adding Non-Terminating Error Reporting to Your Cmdlet
 
-Cmdlets can report nonterminating errors by calling the
+Cmdlets can report non-terminating errors by calling the
 [System.Management.Automation.Cmdlet.WriteError][WriteError] method and still continue to operate on
 the current input object or on further incoming pipeline objects. This section explains how to
-create a cmdlet that reports nonterminating errors from its input processing methods.
+create a cmdlet that reports non-terminating errors from its input processing methods.
 
-For nonterminating errors (as well as terminating errors), the cmdlet must pass an
+For non-terminating errors (as well as terminating errors), the cmdlet must pass an
 [System.Management.Automation.ErrorRecord][ErrorRecord] object identifying the error. Each error
 record is identified by a unique string called the "error identifier". In addition to the
 identifier, the category of each error is specified by constants defined by a
@@ -140,9 +139,9 @@ Unhandled exceptions are not caught by PowerShell in the following conditions:
 - If an object has code in its destructor or Dispose methods that causes an unhandled exception,
   PowerShell will not catch the error and will terminate the process.
 
-## Reporting Nonterminating Errors
+## Reporting Non-terminating Errors
 
-Any one of the input processing methods can report a nonterminating error to the output stream using
+Any one of the input processing methods can report a non-terminating error to the output stream using
 the [System.Management.Automation.Cmdlet.WriteError][WriteError] method.
 
 Here is a code example from this Get-Proc cmdlet that illustrates the call to
@@ -162,7 +161,7 @@ protected override void ProcessRecord()
     {
       // If a name parameter is passed to cmdlet, get and write
       // the associated processes.
-      // Write a nonterminating error for failure to retrieve
+      // Write a non-terminating error for failure to retrieve
       // a process.
       foreach (string name in processNames)
       {
@@ -188,18 +187,18 @@ protected override void ProcessRecord()
   }
 ```
 
-### Things to Remember About Writing Nonterminating Errors
+### Things to Remember About Writing Non-terminating Errors
 
-For a nonterminating error, the cmdlet must generate a specific error identifier for each specific
+For a non-terminating error, the cmdlet must generate a specific error identifier for each specific
 input object.
 
-A cmdlet frequently needs to modify the PowerShell action produced by a nonterminating error. It can
+A cmdlet frequently needs to modify the PowerShell action produced by a non-terminating error. It can
 do this by defining the `ErrorAction` and `ErrorVariable` parameters. If defining the `ErrorAction`
 parameter, the cmdlet presents the user options
 [System.Management.Automation.ActionPreference][ActionPreference], you can also directly influence
 the action by setting the `$ErrorActionPreference` variable.
 
-The cmdlet can save nonterminating errors to a variable using the `ErrorVariable` parameter, which
+The cmdlet can save non-terminating errors to a variable using the `ErrorVariable` parameter, which
 is not affected by the setting of `ErrorAction`. Failures can be appended to an existing error
 variable by adding a plus sign (+) to the front of the variable name.
 
@@ -228,32 +227,32 @@ line. Let's test the sample Get-Proc cmdlet to see whether it reports an error:
 - Start PowerShell, and use the Get-Proc cmdlet to retrieve the processes named "TEST".
 
   ```powershell
-  get-proc -name test
+  Get-Proc -Name test
   ```
 
   The following output appears.
 
   ```
-  get-proc : Operation is not valid due to the current state of the object.
+  Get-Proc : Operation is not valid due to the current state of the object.
   At line:1 char:9
-  + get-proc  <<<< -name test
+  + Get-Proc  <<<< -Name test
   ```
 
 ## See Also
 
-[Adding Parameters that Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md)
+- [Adding Parameters that Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md)
 
-[Adding Parameters that Process Command-Line Input](./adding-parameters-that-process-command-line-input.md)
+- [Adding Parameters that Process Command-Line Input](./adding-parameters-that-process-command-line-input.md)
 
-[Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
+- [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[Extending Object Types and Formatting](/previous-versions/ms714665(v=vs.85))
+- [Extending Object Types and Formatting](/previous-versions/ms714665(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85))
+- [How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85))
 
-[Windows PowerShell Reference](../windows-powershell-reference.md)
+- [Windows PowerShell Reference](../windows-powershell-reference.md)
 
-[Cmdlet Samples](./cmdlet-samples.md)
+- [Cmdlet Samples](./cmdlet-samples.md)
 
 [Exception]: /dotnet/api/System.Exception
 [ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference

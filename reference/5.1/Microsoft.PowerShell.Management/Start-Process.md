@@ -2,11 +2,15 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/25/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 11/01/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - saps
+  - start
 title: Start-Process
 ---
+
 # Start-Process
 
 ## SYNOPSIS
@@ -17,17 +21,17 @@ Starts one or more processes on the local computer.
 ### Default (Default)
 
 ```
-Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-Credential <pscredential>] 
- [-WorkingDirectory <string>] [-LoadUserProfile] [-NoNewWindow] [-PassThru] 
- [-RedirectStandardError <string>] [-RedirectStandardInput <string>] 
- [-RedirectStandardOutput <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait] 
+Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-Credential <pscredential>]
+ [-WorkingDirectory <string>] [-LoadUserProfile] [-NoNewWindow] [-PassThru]
+ [-RedirectStandardError <string>] [-RedirectStandardInput <string>]
+ [-RedirectStandardOutput <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait]
  [-UseNewEnvironment] [<CommonParameters>]
 ```
 
 ### UseShellExecute
 
 ```
-Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-WorkingDirectory <string>] 
+Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-WorkingDirectory <string>]
  [-PassThru] [-Verb <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait] [<CommonParameters>]
 ```
 
@@ -108,7 +112,7 @@ verbs are determined by the filename extension of the file that runs in the proc
 
 ```powershell
 $startExe = New-Object System.Diagnostics.ProcessStartInfo -Args powershell.exe
-$startExe.verbs
+$startExe.Verbs
 ```
 
 ```Output
@@ -130,29 +134,9 @@ Note that the first command specifies a string as **ArgumentList**. The second c
 array.
 
 ```powershell
-Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%SystemDrive%\Program Files`""
-Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%SystemDrive%\Program Files`""
+Start-Process -FilePath "$Env:ComSpec" -ArgumentList "/c dir `"%SystemDrive%\Program Files`""
+Start-Process -FilePath "$Env:ComSpec" -ArgumentList "/c","dir","`"%SystemDrive%\Program Files`""
 ```
-
-### Example 8: Run a command as an Administrator using alternate credentials
-
-On Windows, you can run `Start-Process -Verb RunAs` to start a process with elevated permissions.
-This elevates the current user's context. The **Credential** parameter allows you to specify an
-alternate username and password, allowing you to start a process in a different user content.
-However, the **Credential** and **Verb** parameters can't be used together.
-
-To start a process with elevated rights, using alternate credentials, you must first start
-PowerShell using the alternate credentials, then use `Start-Process` to start the process with
-elevated rights.
-
-```powershell
-$cred = Get-Credential
-$args = '-noprofile -command "Start-Process cmd.exe -Verb RunAs -args /k"'
-Start-Process pwsh.exe -Credential $cred -WindowStyle Hidden -ArgumentList $args
-```
-
-The example starts `cmd.exe` with elevated permissions from a PowerShell session that is running
-under alternate credentials.
 
 ## PARAMETERS
 
@@ -362,12 +346,12 @@ determined by the filename extension of the file that runs in the process.
 
 The following table shows the verbs for some common process file types.
 
-| File type |                Verbs                |
-| --------- | ----------------------------------- |
-| .cmd      | Edit, Open, Print, RunAs, RunAsUser |
-| .exe      | Open, RunAs, RunAsUser              |
-| .txt      | Open, Print, PrintTo                |
-| .wav      | Open, Play                          |
+| File type |                     Verbs                     |
+| --------- | --------------------------------------------- |
+| .cmd      | `Edit`, `Open`, `Print`, `RunAs`, `RunAsUser` |
+| .exe      | `Open`, `RunAs`, `RunAsUser`                  |
+| .txt      | `Open`, `Print`, `PrintTo`                    |
+| .wav      | `Open`, `Play`                                |
 
 To find the verbs that can be used with the file that runs in a process, use the `New-Object` cmdlet
 to create a **System.Diagnostics.ProcessStartInfo** object for the file. The available verbs are in
@@ -457,16 +441,24 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-You can't pipe input to this cmdlet.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Diagnostics.Process
+### None
 
-This cmdlet generates a **System.Diagnostics.Process** object, if you specify the **PassThru**
-parameter. Otherwise, this cmdlet doesn't return any output.
+By default, this cmdlet returns no output.
+
+### System.Diagnostics.Process
+
+When you use the **PassThru** parameter, this cmdlet returns a **Process** object.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Start-Process`:
+
+- `saps`
+- `start`
 
 Native commands are executable files installed in the operating system. These executables can be run
 from any command-line shell, like PowerShell. Usually you run the command exactly as you would in

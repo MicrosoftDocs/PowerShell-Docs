@@ -17,3 +17,4 @@ updatablehelp/
 xhtml/
 **/settings.json
 StaleContentReport.*.csv
+.vale/

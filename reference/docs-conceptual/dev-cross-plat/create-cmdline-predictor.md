@@ -1,6 +1,6 @@
 ---
 description: This article describes how to create a command-line predictor to help with command completion in PowerShell.
-ms.date: 04/06/2022
+ms.date: 12/01/2022
 title: How to create a command-line predictor
 ---
 # How to create a command-line predictor
@@ -198,12 +198,22 @@ Create a new PowerShell module project by following these steps:
    ```
 
    The following example code returns the string "HELLO WORLD" for the prediction result for all
-   user input. Since the sample predictor doesn't process any feedback, the code does not implement
+   user input. Since the sample predictor doesn't process any feedback, the code doesn't implement
    the feedback methods from the interface. Change the prediction and feedback code to meet the
    needs of your predictor.
 
+   > [!NOTE]
+   > The list view of **PSReadLine** doesn't support multiline suggestions. Each suggestion
+   > should be a single line. If your code has a multiline suggestion, you should split the lines
+   > into separate suggestions or join the lines with a semicolon (`;`).
+
 1. Run `dotnet build` to produce the assembly. You can find the compiled assembly in the
    `bin/Debug/net6.0` location of your project folder.
+
+   > [!NOTE]
+   > To ensure a responsive user experience, the ICommandPredictor interface has a 20ms time out
+   > for responses from the Predictors. Your predictor code must return results in less than 20ms
+   > to be displayed.
 
 ## Using your predictor plugin
 
@@ -214,12 +224,11 @@ Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Import-Module .\bin\Debug\net6.0\SamplePredictor.dll
 ```
 
-With the assembly is loaded in the session, you will see the text "HELLO WORLD" appear as you type
-in the terminal. You can press <kbd>F2</kbd> to switch between the `Inline` view and the `List`
-view.
+With the assembly is loaded in the session, you see the text "HELLO WORLD" appear as you type in the
+terminal. You can press <kbd>F2</kbd> to switch between the `Inline` view and the `List` view.
 
 For more information about PSReadLine options, see
-[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.3&preserve-view=true).
+[Set-PSReadLineOption](/powershell/module/psreadline/set-psreadlineoption).
 
 You can get a list of installed predictors, using the following command:
 

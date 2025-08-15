@@ -1,14 +1,15 @@
 ---
 description: Describes the operators that perform arithmetic in PowerShell.
 Locale: en-US
-ms.date: 08/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 04/05/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Arithmetic Operators
+title: about_Arithmetic_Operators
 ---
 # about_Arithmetic_Operators
 
 ## Short description
+
 Describes the operators that perform arithmetic in PowerShell.
 
 ## Long description
@@ -178,7 +179,7 @@ PS> [int]( 7 / 2 )  # Result is rounded up
 You can use the `[Math]` class to get different rounding behavior.
 
 ```powershell
-PS> [int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero
+PS> [int][Math]::Round(5 / 2,[MidpointRounding]::AwayFromZero)
 3
 
 PS> [int][Math]::Ceiling(5 / 2)
@@ -190,6 +191,123 @@ PS> [int][Math]::Floor(5 / 2)
 
 For more information, see the [Math.Round](/dotnet/api/system.math.round)
 method.
+
+## Type conversion to accommodate result
+
+PowerShell automatically selects the .NET numeric type that best expresses the
+result without losing precision. For example:
+
+```powershell
+2 + 3.1
+(2).GetType().FullName
+(2 + 3.1).GetType().FullName
+```
+
+```Output
+5.1
+System.Int32
+System.Double
+```
+
+If the result of an operation is too large for the type, the type of the result
+is widened to accommodate the result, as in the following example:
+
+```powershell
+(512MB).GetType().FullName
+(512MB * 512MB).GetType().FullName
+```
+
+```Output
+System.Int32
+System.Double
+```
+
+The type of the result isn't always the same as one of the operands. In the
+following example, the negative value can't be cast to an unsigned integer, and
+the unsigned integer is too large to be cast to `Int32`:
+
+```powershell
+([int32]::MinValue + [uint32]::MaxValue).GetType().FullName
+```
+
+```Output
+System.Int64
+```
+
+In this example, `Int64` can accommodate both types.
+
+The `System.Decimal` type is an exception. If either operand has the
+**Decimal** type, the result is **Decimal** type. Any result too large for the
+**Decimal** value is an error.
+
+```powershell
+PS> [decimal]::MaxValue
+79228162514264337593543950335
+
+PS> [decimal]::MaxValue + 1
+RuntimeException: Value was either too large or too small for a Decimal.
+```
+
+### Potential loss of precision
+
+Anytime you have a result that exceeds the range of the type, you risk losing
+precision due to type conversion. For example, adding a sufficiently large
+`[long]` and `[int]` results in the operands being converted to `[double]`. In
+this example, `9223372036854775807` is the maximum value of a `[long]` integer.
+Adding to value overflows the range of `[long]`.
+
+```powershell
+PS> (9223372036854775807 + 2).GetType().FullName
+System.Double
+```
+
+Casting the result to `[ulong]` yields an inaccurate result, because the
+operands were coerced to `[double]` first.
+
+```powershell
+PS> [ulong](9223372036854775807 + 2)
+9223372036854775808
+```
+
+Defining the larger value as `[ulong]` first avoids the problem and produces
+the correct result.
+
+```powershell
+PS> 9223372036854775807ul + 2
+9223372036854775809
+```
+
+However, exceeding the range of `[ulong]` results in a `[double]`.
+
+```powershell
+PS> ([ulong]::MaxValue + 1).GetType().FullName
+System.Double
+```
+
+### Bigint arithmetic
+
+When you perform arithmetic operations on `[bigint]` numbers, PowerShell uses
+converts all operands to `[bigint]`, which results in truncation of non-integer
+values. For example, the `[double]` value `1.9` is truncated to `1` when
+converted to `[bigint]`.
+
+```powershell
+PS> [bigint]1 / 1.9
+1
+PS> 1 / [bigint]1.9
+1
+```
+
+This behavior is different from the behavior of other numeric types. In this
+example, an `[int]` divided by a `[double]` results in a `[double]`. Casting
+`1.9` to an `[int]` rounds the value up to `2`.
+
+```powershell
+PS> 1 / 1.9
+0.526315789473684
+PS> 1 / [int]1.9
+0.5
+```
 
 ## Adding and multiplying non numeric types
 
@@ -209,7 +327,7 @@ $b = "A","B","C"
 $a + $b
 ```
 
-```output
+```Output
 1
 2
 3
@@ -272,7 +390,7 @@ $hash2 = @{c1="Server01"; c2="Server02"}
 $hash1 + $hash2
 ```
 
-```output
+```Output
 Name                           Value
 ----                           -----
 c2                             Server02
@@ -291,7 +409,7 @@ $hash2 = @{c1="Server01"; c="Server02"}
 $hash1 + $hash2
 ```
 
-```output
+```Output
 OperationStopped:
 Line |
    3 |  $hash1 + $hash2
@@ -309,7 +427,7 @@ $array2 = $array1 + $hash1
 $array2
 ```
 
-```output
+```Output
 0
 Hello World
 
@@ -330,81 +448,25 @@ However, you can't add any other type to a hash table.
 $hash1 + 2
 ```
 
-```output
+```Output
 InvalidOperation: A hash table can only be added to another hash table.
 ```
 
 Although the addition operators are very useful, use the assignment operators
 to add elements to hash tables and arrays. For more information see
-[about_assignment_operators](about_Assignment_Operators.md). The following
+[about_Assignment_Operators](about_Assignment_Operators.md). The following
 examples use the `+=` assignment operator to add items to an array:
 
 ```powershell
 $array = @()
-(0..9).foreach{ $array += $_ }
+(0..2).ForEach{ $array += $_ }
 $array
 ```
 
-```output
+```Output
 0
 1
 2
-```
-
-## Type conversion to accommodate result
-
-PowerShell automatically selects the .NET numeric type that best expresses the
-result without losing precision. For example:
-
-```powershell
-2 + 3.1
-(2).GetType().FullName
-(2 + 3.1).GetType().FullName
-```
-
-```output
-5.1
-System.Int32
-System.Double
-```
-
-If the result of an operation is too large for the type, the type of the result
-is widened to accommodate the result, as in the following example:
-
-```powershell
-(512MB).GetType().FullName
-(512MB * 512MB).GetType().FullName
-```
-
-```output
-System.Int32
-System.Double
-```
-
-The type of the result isn't always the same as one of the operands. In the
-following example, the negative value can't be cast to an unsigned integer, and
-the unsigned integer is too large to be cast to `Int32`:
-
-```powershell
-([int32]::minvalue + [uint32]::maxvalue).gettype().fullname
-```
-
-```output
-System.Int64
-```
-
-In this example, `Int64` can accommodate both types.
-
-The `System.Decimal` type is an exception. If either operand has the
-**Decimal** type, the result is **Decimal** type. Any result too large for the
-**Decimal** value is an error.
-
-```powershell
-PS> [Decimal]::maxvalue
-79228162514264337593543950335
-
-PS> [Decimal]::maxvalue + 1
-RuntimeException: Value was either too large or too small for a Decimal.
 ```
 
 ## Arithmetic operators and variables
@@ -435,7 +497,7 @@ The following examples show how to use the arithmetic operators in expressions
 with PowerShell commands:
 
 ```powershell
-(get-date) + (new-timespan -day 1)
+(Get-Date) + (New-TimeSpan -Day 1)
 ```
 
 The parenthesis operator forces the evaluation of the `Get-Date` cmdlet and the
@@ -443,10 +505,10 @@ evaluation of the `New-TimeSpan -Day 1` cmdlet expression, in that order. Both
 results are then added using the `+` operator.
 
 ```powershell
-Get-Process | Where-Object { ($_.ws * 2) -gt 50mb }
+Get-Process | Where-Object { ($_.WS * 2) -gt 50mb }
 ```
 
-```output
+```Output
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
    1896      39    50968      30620   264 1,572.55   1104 explorer
@@ -457,7 +519,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     967      30    58804      59496   416   930.97   2508 WINWORD
 ```
 
-In the above expression, each process working space (`$_.ws`) is multiplied by
+In the above expression, each process working space (`$_.WS`) is multiplied by
 `2`; and, the result, compared against `50mb` to see if it's greater than that.
 
 ## Bitwise operators
@@ -478,7 +540,7 @@ PowerShell supports the following bitwise operators.
 | `-band`  | Bitwise AND            | `10 -band 3` | 2      |
 | `-bor`   | Bitwise OR (inclusive) | `10 -bor 3`  | 11     |
 | `-bxor`  | Bitwise OR (exclusive) | `10 -bxor 3` | 9      |
-| `-bnot`  | Bitwise NOT            | `-bNot 10`   | -11    |
+| `-bnot`  | Bitwise NOT            | `-bnot 10`   | -11    |
 | `-shl`   | Shift-left             | `102 -shl 2` | 408    |
 | `-shr`   | Shift-right            | `102 -shr 1` | 51     |
 
@@ -522,10 +584,10 @@ The bitwise NOT operator is a unary operator that produces the binary
 complement of the value. A bit of 1 is set to 0 and a bit of 0 is set to 1.
 
 For example, the binary complement of 0 is -1, the maximum unsigned integer
-(0xffffffff), and the binary complement of -1 is 0.
+(0xFFFFFFFF), and the binary complement of -1 is 0.
 
 ```powershell
--bNot 10
+-bnot 10
 ```
 
 ```Output
@@ -535,18 +597,12 @@ For example, the binary complement of 0 is -1, the maximum unsigned integer
 ```
 0000 0000 0000 1010  (10)
 ------------------------- bNOT
-1111 1111 1111 0101  (-11, xfffffff5)
+1111 1111 1111 0101  (-11, 0xFFFFFFF5)
 ```
 
 In a bitwise shift-left operation, all bits are moved "n" places to the left,
 where "n" is the value of the right operand. A zero is inserted in the ones
 place.
-
-When the left operand is an Integer (32-bit) value, the lower 5 bits of the
-right operand determine how many bits of the left operand are shifted.
-
-When the left operand is a Long (64-bit) value, the lower 6 bits of the right
-operand determine how many bits of the left operand are shifted.
 
 | Expression  | Result | Binary Result |
 | ----------- | ------ | ------------- |
@@ -555,29 +611,25 @@ operand determine how many bits of the left operand are shifted.
 | `21 -shl 2` | 84     | 0101 0100     |
 
 In a bitwise shift-right operation, all bits are moved "n" places to the right,
-where "n" is specified by the right operand. The shift-right operator (-shr)
-inserts a zero in the left-most place when shifting a positive or unsigned
-value to the right.
+where "n" is specified by the right operand. The shift-right operator (`-shr`)
+copies the sign bit to the left-most place when shifting a signed value. For
+unsigned values, a zero is inserted in the left-most position.
 
-When the left operand is an Integer (32-bit) value, the lower 5 bits of the
-right operand determine how many bits of the left operand are shifted.
-
-When the left operand is a Long (64-bit) value, the lower 6 bits of the right
-operand determine how many bits of the left operand are shifted.
-
-|        Expression        |   Result    |  Binary   |    Hex     |
-| ------------------------ | ----------- | --------- | ---------- |
-| `21 -shr 0`              | 21          | 0001 0101 | 0x15       |
-| `21 -shr 1`              | 10          | 0000 1010 | 0x0A       |
-| `21 -shr 2`              | 5           | 0000 0101 | 0x05       |
-| `21 -shr 31`             | 0           | 0000 0000 | 0x00       |
-| `21 -shr 32`             | 21          | 0001 0101 | 0x15       |
-| `21 -shr 64`             | 21          | 0001 0101 | 0x15       |
-| `21 -shr 65`             | 10          | 0000 1010 | 0x0A       |
-| `21 -shr 66`             | 5           | 0000 0101 | 0x05       |
-| `[int]::MaxValue -shr 1` | 1073741823  |           | 0x3FFFFFFF |
-| `[int]::MinValue -shr 1` | -1073741824 |           | 0xC0000000 |
-| `-1 -shr 1`              | -1          |           | 0xFFFFFFFF |
+|        Expression        |   Result    |              Binary              |    Hex     |
+| :----------------------: | ----------: | -------------------------------: | ---------: |
+|       `21 -shr 0`        |          21 |                         00010101 |       0x15 |
+|       `21 -shr 1`        |          10 |                         00001010 |       0x0A |
+|       `21 -shr 2`        |           5 |                         00000101 |       0x05 |
+|       `21 -shr 31`       |           0 |                         00000000 |       0x00 |
+|       `21 -shr 32`       |          21 |                         00010101 |       0x15 |
+|       `21 -shr 64`       |          21 |                         00010101 |       0x15 |
+|       `21 -shr 65`       |          10 |                         00001010 |       0x0A |
+|       `21 -shr 66`       |           5 |                         00000101 |       0x05 |
+| `[int]::MaxValue -shr 1` |  1073741823 | 00111111111111111111111111111111 | 0x3FFFFFFF |
+| `[int]::MinValue -shr 1` | -1073741824 | 11000000000000000000000000000000 | 0xC0000000 |
+|       `-1 -shr 1`        |          -1 | 11111111111111111111111111111111 | 0xFFFFFFFF |
+|      `(-21 -shr 1)`      |         -11 | 11111111111111111111111111110101 | 0xFFFFFFF5 |
+|      `(-21 -shr 2)`      |          -6 | 11111111111111111111111111111010 | 0xFFFFFFF4 |
 
 ## See also
 

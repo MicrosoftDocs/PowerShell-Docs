@@ -1,12 +1,11 @@
 ---
 description: Runspace02 Sample
 ms.date: 09/13/2016
-ms.topic: reference
 title: Runspace02 Sample
 ---
 # Runspace02 Sample
 
-This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously. The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer, and the `Sort-Object` sorts the objects based on their [System.Diagnostics.Process.Id*](/dotnet/api/System.Diagnostics.Process.Id) property. The results of these commands is displayed by using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.
+This sample shows how to use the [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously. The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer, and the `Sort-Object` sorts the objects based on their [System.Diagnostics.Process.Id*](/dotnet/api/System.Diagnostics.Process.Id) property. The results of these commands is displayed by using a [System.Windows.Forms.DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) control.
 
 ## Requirements
 
@@ -16,17 +15,17 @@ This sample requires Windows PowerShell 2.0.
 
 This sample demonstrates the following.
 
-- Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run commands.
+- Creating a [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object to run commands.
 
-- Adding commands to the pipeline of [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.
+- Adding commands to the pipeline of [System.Management.Automation.PowerShell](/dotnet/api/system.management.automation.powershell) object.
 
 - Running the commands synchronously.
 
-- Using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control to display the output of the commands in a Windows Forms application.
+- Using a [System.Windows.Forms.DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) control to display the output of the commands in a Windows Forms application.
 
 ## Example
 
-This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously in the default runspace provided by Windows PowerShell. The output is displayed in a form using a [System.Windows.Forms.Datagridview](/dotnet/api/System.Windows.Forms.DataGridView) control.
+This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets synchronously in the default runspace provided by Windows PowerShell. The output is displayed in a form using a [System.Windows.Forms.DataGridView](/dotnet/api/System.Windows.Forms.DataGridView) control.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -58,7 +57,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
       // building all of the other data structures needed to run the command.
       using (PowerShell powershell = PowerShell.Create())
       {
-        powershell.AddCommand("get-process").AddCommand("sort-object").AddArgument("ID");
+        powershell.AddCommand("Get-Process").AddCommand("Sort-Object").AddArgument("ID");
         if (Runspace.DefaultRunspace == null)
         {
           Runspace.DefaultRunspace = powershell.Runspace;

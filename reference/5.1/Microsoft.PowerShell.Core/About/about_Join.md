@@ -1,17 +1,17 @@
 ---
-description: Describes how the join operator (-join) combines multiple strings into a single string.
+description: Describes how the join operator (`-join`) combines multiple strings into a single string.
 Locale: en-US
 ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_join?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_join?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Join
+title: about_Join
 ---
 
 # about_Join
 
 ## Short description
 
-Describes how the join operator (-join) combines multiple strings into a
+Describes how the join operator (`-join`) combines multiple strings into a
 single string.
 
 ## Long description
@@ -25,8 +25,8 @@ in the command.
 The following diagram shows the syntax for the join operator.
 
 ```powershell
--Join <String[]>
-<String[]> -Join <Delimiter>
+-join <String[]>
+<String[]> -join <Delimiter>
 ```
 
 #### Parameters
@@ -38,7 +38,7 @@ concatenated strings. The default is no delimiter ("").
 
 Remarks
 
-The unary join operator (-join <string[]>) has higher precedence than a
+The unary join operator (`-join <string[]>`) has higher precedence than a
 comma. As a result, if you submit a comma-separated list of strings to the
 unary join operator, only the first string (before the first comma) is
 submitted to the join operator.

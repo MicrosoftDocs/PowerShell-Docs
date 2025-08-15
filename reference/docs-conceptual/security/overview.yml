@@ -1,0 +1,112 @@
+### YamlMime:Landing
+title: PowerShell Security
+summary: Learn about PowerShell's security features and best practices.
+
+metadata:
+  title: PowerShell Security
+  description: Learn about PowerShell's security features and best practices.
+  ms.topic: landing-page
+  ms.date: 03/28/2024
+
+# linkListType: architecture | concept | deploy | download | get-started |
+#               how-to-guide | tutorial | overview | quickstart | reference |
+#               sample | tutorial | video | whats-new
+
+landingContent:
+  # Card
+  - title: Security features
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: PowerShell security features
+            url: security-features.md
+          - text: Using App Control for Business
+            url: application-control.md
+      - linkListType: how-to-guide
+        links:
+          - text: Preventing script injection attacks
+            url: preventing-script-injection.md
+          - text: Securing a restricted PowerShell remoting session
+            url: securing-restricted-sessions.md
+
+  # Card
+  - title: PowerShell remoting
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Running remote commands
+            url: remoting/running-remote-commands.md
+          - text: Using WS-Management (WSMan) Remoting in PowerShell
+            url: remoting/wsman-remoting-in-powershell.md
+          - text: Security Considerations for PowerShell Remoting using WinRM
+            url: remoting/winrm-security.md
+          - text: PowerShell Remoting FAQ
+            url: remoting/powershell-remoting-faq.yml
+      - linkListType: how-to-guide
+        links:
+          - text: Making the second hop in PowerShell Remoting
+            url: remoting/ps-remoting-second-hop.md
+          - text: PowerShell remoting over SSH
+            url: remoting/ssh-remoting-in-powershell.md
+
+  # Card
+  - title: Just Enough Administration (JEA)
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Overview
+            url: remoting/jea/overview.md
+          - text: Prerequisites
+            url: remoting/jea/prerequisites.md
+          - text: JEA Role Capabilities
+            url: remoting/jea/role-capabilities.md
+          - text: Session configurations
+            url: remoting/jea/session-configurations.md
+          - text: Security considerations
+            url: remoting/jea/security-considerations.md
+      - linkListType: how-to-guide
+        links:
+          - text: Registering JEA Configurations
+            url: remoting/jea/register-jea.md
+          - text: Using JEA
+            url: remoting/jea/using-jea.md
+          - text: Auditing and Reporting on JEA
+            url: remoting/jea/audit-and-report.md
+
+  # Card
+  - title: Using App Control
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Using App Control for Business
+            url: app-control/application-control.md
+          - text: How App Control works with PowerShell
+            url: app-control/how-app-control-works.md
+      - linkListType: how-to-guide
+        links:
+          - text: How to use App Control to secure PowerShell
+            url: app-control/how-to-use-app-control.md
+
+  # Card
+  - title: Managing secrets
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Overview of the SecretManagement and SecretStore modules
+            url: /powershell/utility-modules/secretmanagement/overview
+          - text: Understanding the security features of SecretManagement and SecretStore
+            url: /powershell/utility-modules/secretmanagement/security-concepts
+      - linkListType: how-to-guide
+        links:
+          - text: Managing a SecretStore vault
+            url: /powershell/utility-modules/secretmanagement/how-to/manage-secretstore
+          - text: Use the SecretStore in automation
+            url: /powershell/utility-modules/secretmanagement/how-to/using-secrets-in-automation
+          - text: Use Azure Key Vault in automation
+            url: /powershell/utility-modules/secretmanagement/how-to/using-azure-keyvault
+      - linkListType: reference
+        links:
+          - text: Microsoft.PowerShell.SecretManagement module
+            url: /powershell/module/microsoft.powershell.secretmanagement
+          - text: Microsoft.PowerShell.SecretStore module
+            url: /powershell/module/microsoft.powershell.secretstore

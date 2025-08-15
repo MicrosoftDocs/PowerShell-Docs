@@ -1,7 +1,7 @@
 @{
   Parameters = @(
     @{
-      Name = 'Repository'
+      Name = 'repository'
       Type = 'String'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -31,7 +31,7 @@
     }
 
     @{
-      Name = 'Number'
+      Name = 'number'
       Type = 'Int'
       IfNullOrEmpty = {
         param($ErrorTarget)
@@ -61,7 +61,7 @@
     }
 
     @{
-      Name = 'Include_Path_Pattern'
+      Name = 'include_path_pattern'
       Type = 'String[]'
       IfNullOrEmpty = {
         # It's okay if this parameter is not specified.
@@ -84,7 +84,7 @@
       }
     }
     @{
-      Name = 'Exclude_Path_Pattern'
+      Name = 'exclude_path_pattern'
       Type = 'String[]'
       IfNullOrEmpty = {
         # It's okay if this parameter is not specified.

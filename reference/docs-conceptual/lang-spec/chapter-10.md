@@ -5,6 +5,8 @@ title: Hashtables
 ---
 # 10. Hashtables
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 Syntax:
 
 > [!TIP]

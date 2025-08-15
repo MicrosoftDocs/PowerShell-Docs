@@ -3,13 +3,14 @@ description: Describes how to use alternate names for cmdlets and commands in Po
 Locale: en-US
 ms.date: 11/27/2017
 no-loc: [Authenticode, Alias]
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Aliases
+title: about_Aliases
 ---
 # about_Aliases
 
 ## Short description
+
 Describes how to use alternate names for cmdlets and commands in PowerShell.
 
 ## Long description
@@ -46,7 +47,7 @@ If you create `word` as the alias for Microsoft Office Word, you can type
 "C:\Program Files\Microsoft Office\Office11\Winword.exe"
 ```
 
-## Built in aliases
+## Built-in aliases
 
 PowerShell includes a set of built-in aliases, including `cd` and `chdir` for
 the `Set-Location` cmdlet, and `ls` and `dir` for the `Get-ChildItem` cmdlet.
@@ -126,8 +127,8 @@ in the current session, type:
 Get-Alias
 ```
 
-To get particular aliases, use the Name parameter of the `Get-Alias` cmdlet. For
-example, to get aliases that begin with "p", type:
+To get particular aliases, use the Name parameter of the `Get-Alias` cmdlet.
+For example, to get aliases that begin with "p", type:
 
 ```powershell
 Get-Alias -Name p*

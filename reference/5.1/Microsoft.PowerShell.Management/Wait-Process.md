@@ -2,11 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/11/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/12/2022
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/wait-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Wait-Process
 ---
+
 # Wait-Process
 
 ## SYNOPSIS
@@ -46,7 +47,7 @@ stopped. You can specify a process by process name or process ID (PID), or pipe 
 ### Example 1: Stop a process and wait
 
 ```
-PS C:\> $nid = (Get-Process notepad).id
+PS C:\> $nid = (Get-Process notepad).Id
 PS C:\> Stop-Process -Id $nid
 PS C:\> Wait-Process -Id $nid
 ```
@@ -66,7 +67,7 @@ The third command uses `Wait-Process` to wait until the Notepad process is stopp
 
 ```
 PS C:\> $p = Get-Process notepad
-PS C:\> Wait-Process -Id $p.id
+PS C:\> Wait-Process -Id $p.Id
 PS C:\> Wait-Process -Name "notepad"
 PS C:\> Wait-Process -InputObject $p
 ```
@@ -177,7 +178,7 @@ You can pipe a process object to this cmdlet.
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet returns no output.
 
 ## NOTES
 

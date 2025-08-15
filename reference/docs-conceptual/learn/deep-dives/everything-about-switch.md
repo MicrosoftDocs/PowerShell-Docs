@@ -1,7 +1,7 @@
 ---
 description: The switch statement in PowerShell offers features that aren't found in other languages.
 ms.custom: contributor-KevinMarquette
-ms.date: 01/28/2022
+ms.date: 11/16/2022
 title: Everything you ever wanted to know about the switch statement
 ---
 # Everything you ever wanted to know about the switch statement
@@ -28,7 +28,7 @@ if ( Test-Path $Path )
 }
 ```
 
-You can have much more complicated logic by using `elseif` and `else` statements. Here is an example
+You can have much more complicated logic using `elseif` and `else` statements. Here is an example
 where I have a numeric value for day of the week and I want to get the name as a string.
 
 ``` powershell
@@ -79,7 +79,7 @@ $result
 ```
 
 For this example, the value of `$day` matches one of the numeric values, then the correct name is
-assigned to `$result`. We are only doing a variable assignment in this example, but any PowerShell
+assigned to `$result`. We're only doing a variable assignment in this example, but any PowerShell
 can be executed in those script blocks.
 
 ### Assign to a variable
@@ -99,7 +99,7 @@ $result = switch ( $day )
 }
 ```
 
-We are placing the value on the PowerShell pipeline and assigning it to the `$result`. You can do
+We're placing the value on the PowerShell pipeline and assigning it to the `$result`. You can do
 this same thing with the `if` and `foreach` statements.
 
 ### Default
@@ -175,7 +175,7 @@ section.
 ### PSItem
 
 You can use the `$PSItem` or `$_` to reference the current item that was processed. When we do a
-simple match, `$PSItem` is the value that we are matching. I'll be performing some advanced matches
+simple match, `$PSItem` is the value that we're matching. I'll be performing some advanced matches
 in the next section where this variable is used.
 
 ## Parameters
@@ -190,7 +190,7 @@ The matches aren't case-sensitive by default. If you need to be case-sensitive, 
 
 ### -Wildcard
 
-We can enable wildcard support with the `-wildcard` switch. This uses the same wildcard logic as the
+We can enable wildcard support with the `-Wildcard` switch. This uses the same wildcard logic as the
 `-like` operator to do each match.
 
 ``` powershell
@@ -217,7 +217,7 @@ switch -Wildcard ( $message )
 WARNING: Warning, out of disk space
 ```
 
-Here we are processing a message and then outputting it on different streams based on the contents.
+Here we're processing a message and then outputting it on different streams based on the contents.
 
 ### -Regex
 
@@ -247,7 +247,7 @@ I have more examples of using regex in another article I wrote:
 ### -File
 
 A little known feature of the switch statement is that it can process a file with the `-File`
-parameter. You use `-file` with a path to a file instead of giving it a variable expression.
+parameter. You use `-File` with a path to a file instead of giving it a variable expression.
 
 ``` powershell
 switch -Wildcard -File $path
@@ -281,7 +281,7 @@ advanced processing.
 The `switch` can be on an expression instead of a variable.
 
 ``` powershell
-switch ( ( Get-Service | Where status -eq 'running' ).name ) {...}
+switch ( ( Get-Service | where Status -EQ 'running' ).Name ) {...}
 ```
 
 Whatever the expression evaluates to is the value used for the match.
@@ -289,8 +289,8 @@ Whatever the expression evaluates to is the value used for the match.
 ### Multiple matches
 
 You may have already picked up on this, but a `switch` can match to multiple conditions. This is
-especially true when using `-wildcard` or `-regex` matches. You can add the same condition multiple
-times and all of them are triggered.
+especially true when using `-Wildcard` or `-Regex` matches. You can add the same condition multiple
+times and all are triggered.
 
 ``` powershell
 switch ( 'Word' )
@@ -411,7 +411,7 @@ switch -Wildcard ($Messages)
 ```Output
 Downloading update
 WARNING: Ran into errors downloading file
-write-error -message $PSItem : Error: out of disk space
+Write-Error -Message $PSItem : Error: out of disk space
 + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
 + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException
 ```
@@ -558,29 +558,29 @@ switch ( $age )
 
 It still executes the same way and gives a better visual break when quickly looking at it.
 
-### Regex $matches
+### Regex $Matches
 
 We need to revisit regex to touch on something that isn't immediately obvious. The use of regex
-populates the `$matches` variable. I do go into the use of `$matches` more when I talk about
+populates the `$Matches` variable. I do go into the use of `$Matches` more when I talk about
 [The many ways to use regex][The many ways to use regex]. Here is a quick sample to show it in
 action with named matches.
 
 ``` powershell
 $message = 'my ssn is 123-23-3456 and credit card: 1234-5678-1234-5678'
 
-switch -regex ($message)
+switch -Regex ($message)
 {
     '(?<SSN>\d\d\d-\d\d-\d\d\d\d)'
     {
-        Write-Warning "message contains a SSN: $($matches.SSN)"
+        Write-Warning "message contains a SSN: $($Matches.SSN)"
     }
     '(?<CC>\d\d\d\d-\d\d\d\d-\d\d\d\d-\d\d\d\d)'
     {
-        Write-Warning "message contains a credit card number: $($matches.CC)"
+        Write-Warning "message contains a credit card number: $($Matches.CC)"
     }
     '(?<Phone>\d\d\d-\d\d\d-\d\d\d\d)'
     {
-        Write-Warning "message contains a phone number: $($matches.Phone)"
+        Write-Warning "message contains a phone number: $($Matches.Phone)"
     }
 }
 ```
@@ -598,24 +598,41 @@ You can match a `$null` value that doesn't have to be the default.
 $values = '', 5, $null
 switch ( $values )
 {
-    $null   { "Value '$_' is `$null or an empty string" }
-    ''      { "Value '$_' is an empty string" }
-    default { "Value [$_] is not an empty string or `$null" }
+    $null          { "Value '$_' is `$null" }
+    { '' -eq $_ }  { "Value '$_' is an empty string" }
+    default        { "Value [$_] isn't an empty string or `$null" }
 }
 ```
 
-Notice that the empty string value doesn't match `$null` but `$null` matches both `$null` and an
-empty string.
+```Output
+Value '' is an empty string
+Value [5] isn't an empty string or $null
+Value '' is $null
+```
+
+When testing for an empty string in a `switch` statement, it's important to use the comparison
+statement as shown in this example instead of the raw value `''`. In a `switch` statement, the raw
+value `''` also matches `$null`. For example:
+
+```powershell
+$values = '', 5, $null
+switch ( $values )
+{
+    $null          { "Value '$_' is `$null" }
+    ''             { "Value '$_' is an empty string" }
+    default        { "Value [$_] isn't an empty string or `$null" }
+}
+```
 
 ```Output
 Value '' is an empty string
-Value [5] is not an empty string or $null
-Value '' is $null or an empty string
+Value [5] isn't an empty string or $null
+Value '' is $null
 Value '' is an empty string
 ```
 
 Also, be careful with empty returns from cmdlets. Cmdlets or pipelines that have no output are
-treated as an empty array that does not match anything, including the `default` case.
+treated as an empty array that doesn't match anything, including the `default` case.
 
 ```powershell
 $file = Get-ChildItem NonExistantFile*
@@ -724,7 +741,7 @@ access that value directly. I would call it madness.
 ### Hashtables
 
 One of my most popular posts is the one I did on [hashtables][hashtables]. One of the use cases for
-a `hashtable` is to be a lookup table. That is an alternate approach to a common pattern that a
+a `hashtable` is to be a lookup table. That's an alternate approach to a common pattern that a
 `switch` statement is often addressing.
 
 ``` powershell
@@ -751,7 +768,7 @@ If I'm only using a `switch` as a lookup, I often use a `hashtable` instead.
 
 ### Enum
 
-PowerShell 5.0 introduced the `Enum` and it's also an option in this case.
+PowerShell 5.0 introduced the `enum` and it's also an option in this case.
 
 ``` powershell
 $day = 3
@@ -789,3 +806,4 @@ you learned something that you had not realized before.
 [switch]: /powershell/module/microsoft.powershell.core/about/about_switch
 [The many ways to use regex]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression
 [hashtables]: everything-about-hashtable.md
+

@@ -1,7 +1,6 @@
 ---
 description: CustomControl Element for Control for Controls for Configuration
 ms.date: 09/13/2016
-ms.topic: reference
 title: CustomControl Element for Control for Controls for Configuration
 ---
 # CustomControl Element for Control for Controls for Configuration

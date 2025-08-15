@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/18/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/stop-job?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 09/29/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/stop-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - spjb
 title: Stop-Job
 ---
 # Stop-Job
@@ -76,8 +78,8 @@ feature.
 
 ```powershell
 $s = New-PSSession -ComputerName Server01 -Credential Domain01\Admin02
-$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog System}}
-Invoke-Command -Session $s -ScriptBlock { Stop-job -Job $Using:j }
+$j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventLog -LogName System}}
+Invoke-Command -Session $s -ScriptBlock { Stop-Job -Job $Using:j }
 ```
 
 This example shows how to use the `Stop-Job` cmdlet to stop a job that is running on a remote
@@ -98,8 +100,8 @@ stored in the `$j` variable.
 
 The third command stops the job. It uses the `Invoke-Command` cmdlet to run a `Stop-Job` command in
 the **PSSession** on Server01. Because the job objects are stored in `$j`, which is a variable on
-the local computer, the command uses the **Using** scope modifier to identify `$j` as a local
-variable. For more information about the **Using** scope modifier, see
+the local computer, the command uses the `Using:` scope modifier to identify `$j` as a local
+variable. For more information about the `Using:` scope modifier, see
 [about_Remote_Variables](about/about_Remote_Variables.md).
 
 When the command finishes, the job is stopped and the **PSSession** in `$s` is available for use.
@@ -140,42 +142,42 @@ This command stops all the jobs that are blocked.
 
 ```powershell
 Get-Job | Format-Table ID, Name, Command, @{Label="State";Expression={$_.JobStateInfo.State}},
-InstanceID -Auto
+InstanceId -Auto
 ```
 
 ```Output
 Id Name Command                 State  InstanceId
 -- ---- -------                 -----  ----------
-1 Job1 start-service schedule Running 05abb67a-2932-4bd5-b331-c0254b8d9146
-3 Job3 start-service schedule Running c03cbd45-19f3-4558-ba94-ebe41b68ad03
-5 Job5 get-service s*         Blocked e3bbfed1-9c53-401a-a2c3-a8db34336adf
+1 Job1 Start-Service schedule Running 05abb67a-2932-4bd5-b331-c0254b8d9146
+3 Job3 Start-Service schedule Running c03cbd45-19f3-4558-ba94-ebe41b68ad03
+5 Job5 Get-Service s*         Blocked e3bbfed1-9c53-401a-a2c3-a8db34336adf
 ```
 
 ```powershell
 Stop-Job -InstanceId e3bbfed1-9c53-401a-a2c3-a8db34336adf
 ```
 
-These commands show how to stop a job based on its **InstanceID**.
+These commands show how to stop a job based on its **InstanceId**.
 
 The first command uses the `Get-Job` cmdlet to get the jobs in the current session. The command uses
 a pipeline operator (`|`) to send the jobs to a `Format-Table` command, which displays a table of
-the specified properties of each job. The table includes the **InstanceID** of each job. It uses a
+the specified properties of each job. The table includes the **InstanceId** of each job. It uses a
 calculated property to display the job state.
 
-The second command uses a `Stop-Job` command that has the **InstanceID** parameter to stop a
+The second command uses a `Stop-Job` command that has the **InstanceId** parameter to stop a
 selected job.
 
 ### Example 7: Stop a job on a remote computer
 
 ```powershell
-$j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog System} -AsJob
+$j = Invoke-Command -ComputerName Server01 -ScriptBlock {Get-EventLog -LogName System} -AsJob
 $j | Stop-Job -PassThru
 ```
 
 ```Output
 Id    Name    State      HasMoreData     Location         Command
 --    ----    ----       -----------     --------         -------
-5     Job5    Stopped    True            user01-tablet    get-eventlog system
+5     Job5    Stopped    True            user01-tablet    Get-EventLog -LogName Sy...
 ```
 
 This example shows how to use the `Stop-Job` cmdlet to stop a job that is running on a remote
@@ -397,12 +399,19 @@ You can pipe a job object to this cmdlet.
 
 ## OUTPUTS
 
-### None, System.Management.Automation.PSRemotingJob
+### None
 
-This cmdlet returns a job object, if you specify the **PassThru** parameter. Otherwise, this cmdlet
-does not generate any output.
+By default, this cmdlet returns no output.
+
+### System.Management.Automation.PSRemotingJob
+
+When you use the **PassThru** parameter, this cmdlet returns a job object.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Stop-Job`:
+
+- `spjb`
 
 ## RELATED LINKS
 

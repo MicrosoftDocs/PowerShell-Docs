@@ -1,19 +1,21 @@
 ---
-description: Explains the differences between PSObject and PSCustomObject.
+description: Explains the differences between the [psobject] and [pscustomobject] type accelerators.
 Locale: en-US
-ms.date: 03/08/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 07/02/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pscustomobject?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about PSCustomObject
+title: about_PSCustomObject
 ---
 # about_PSCustomObject
 
 ## Short description
-Explains the differences between **PSObject** and **PSCustomObject**.
+
+Explains the differences between the `[psobject]` and `[pscustomobject]` type
+accelerators.
 
 ## Long description
 
-The `[pscustomobject]` type accelerator was added in PowerShell 4.0.
+The `[pscustomobject]` type accelerator was added in PowerShell 3.0.
 
 Prior to adding this type accelerator, creating an object with member
 properties and values was more complicated. Originally, you had to use
@@ -94,11 +96,37 @@ one two
   1   2
 ```
 
+**PSObject** type objects maintain the list of members in the order that the
+members were added to the object. Even though **Hashtable** objects don't
+guarantee the order of the key-value pairs, casting a literal hashtable to
+`[pscustomobject]` maintains the order.
+
+The hashtable must be a literal. If you wrap the hashtable in parentheses or if
+you cast a variable containing a hashtable, there is no guarantee that the
+order is preserved.
+
+```powershell
+$hash = @{
+    Name      = "Server30"
+    System    = "Server Core"
+    PSVersion = "4.0"
+}
+$Asset = [pscustomobject]$hash
+$Asset
+```
+
+```output
+PSVersion Name     System
+--------- ----     ------
+4.0       Server30 Server Core
+
+```
+
 ## Understanding the type accelerators
 
 `[psobject]` and `[pscustomobject]` are type accelerators.
 
-For more information, see [about_Type_Accelerators](about_type_accelerators.md).
+For more information, see [about_Type_Accelerators][03].
 
 Even though you might think that `[pscustomobject]` should map to
 **System.Management.Automation.PSCustomObject**, the types are different.
@@ -124,11 +152,11 @@ IsPublic IsSerial Name                                     BaseType
 True     True     PSObject                                 System.Object
 ```
 
-When the `[pscustomobject]` type accelerator was added, it included extra code
-to handle conversion of **Hashtable** objects. This extra code is only invoked
-when a new object is being created. Therefore, you can't use
-`[pscustomobject]` for type coercion or type comparison, because all objects
-are treated as a **PSObject** types.
+When the `[pscustomobject]` type accelerator was added to PowerShell, it
+included extra code to handle conversion of a **Hashtable** to a **PSObject**
+type. This extra code is only invoked when a new object is being created.
+Therefore, you can't use `[pscustomobject]` for type coercion or type
+comparison, because all objects are treated as **PSObject** types.
 
 For example, using the `-is` operator to check that an object returned by a
 cmdlet is a `[pscustomobject]` is the same as comparing it to `[psobject]`.
@@ -146,26 +174,99 @@ object. Therefore, casting anything other than a **Hashtable** to
 `[pscustomobject]` results in the same type.
 
 ```powershell
-PS> ([PSObject]@{Property = 'Value'}).GetType().FullName
+PS> ([psobject]@{Property = 'Value'}).GetType().FullName
 System.Collections.Hashtable
 
 PS> ([pscustomobject]123).GetType().Name
 Int32
 
-PS> ([PSCustomObject]@{Property = 'Value'}).GetType().FullName
+PS> ([pscustomobject]@{Property = 'Value'}).GetType().FullName
 System.Management.Automation.PSCustomObject
+```
+
+While, casting an object to `[psobject]` appears to have no affect on the type,
+PowerShell adds an _invisible_ `[psobject]` wrapper around the object. This can
+have subtle side effects.
+
+- Wrapped objects match their original type and the `[psobject]` type.
+
+  ```powershell
+  PS> 1 -is [int32]
+  True
+  PS> 1 -is [psobject]
+  False
+  PS> ([psobject] 1) -is [int32]
+  True
+  PS> ([psobject] 1) -is [psobject]
+  True
+  ```
+
+- The format operator (`-f`) doesn't recognized an array wrapped by
+  `[psobject]`.
+
+  ```powershell
+  PS> '{0} {1}' -f (1, 2)
+  1 2
+  PS> '{0} {1}' -f ([psobject] (1, 2))
+  Error formatting a string: Index (zero based) must be greater than or equal
+  to zero and less than the size of the argument list..
+  ```
+
+## Conversion of hashtables containing similar keys
+
+Case-sensitive dictionaries might contain key names that only differ by case.
+When you cast such a dictionary to a `[pscustomobject]`, PowerShell preserves
+that case of the keys but isn't case-sensitive. As a result:
+
+- The case of the first duplicate key becomes the name of that key.
+- The value of the last case-variant key becomes the property value.
+
+The following example demonstrates this behavior:
+
+```powershell
+$OrderedHashTable = [System.Collections.Specialized.OrderedDictionary]::new()
+$OrderedHashTable['One'] = 1
+$OrderedHashTable['TWO'] = 2
+$OrderedHashTable['two'] = 3  # case variation
+$OrderedHashTable['Three'] = 3
+$OrderedHashTable
+```
+
+Notice that the ordered hashtable contains multiple keys that differ only by
+case.
+
+```Output
+Name                           Value
+----                           -----
+One                            1
+TWO                            2
+two                            3
+Three                          3
+```
+
+When that hashtable is cast to a `[pscustomobject]`, the case of the name of
+first key is used, but that value of the last matching key name is used.
+
+```powershell
+[pscustomobject]$OrderedHashTable
+```
+
+```Output
+One TWO Three
+--- --- -----
+  1   3     3
 ```
 
 ## Notes
 
 In Windows PowerShell, objects created by casting a **Hashtable** to
-`[pscustomobject]` do not have the **Length** or **Count** properties.
+`[pscustomobject]` don't have the **Length** or **Count** properties.
 Attempting to access these members returns `$null`.
 
 For example:
 
 ```powershell
-PS> $object = [PSCustomObject]@{key = 'value'}
+PS> $object = [pscustomobject]@{key = 'value'}
 PS> $object
 
 key
@@ -176,9 +277,20 @@ PS> $object.Count
 PS> $object.Length
 ```
 
+Starting in PowerShell 6, objects created by casting a **Hashtable** to
+`[pscustomobject]` always have a value of `1` for the **Length** and **Count**
+properties.
+
 ## See also
 
-- [about_Object_Creation](about_Object_Creation.md)
-- [about_Objects](about_Objects.md)
-- [System.Management.Automation.PSObject](xref:System.Management.Automation.PSObject)
-- [System.Management.Automation.PSCustomObject](xref:System.Management.Automation.PSCustomObject)
+- [about_Object_Creation][01]
+- [about_Objects][02]
+- [System.Management.Automation.PSObject][05]
+- [System.Management.Automation.PSCustomObject][04]
+
+<!-- link references -->
+[01]: about_Object_Creation.md
+[02]: about_Objects.md
+[03]: about_Type_Accelerators.md
+[04]: xref:System.Management.Automation.PSCustomObject
+[05]: xref:System.Management.Automation.PSObject

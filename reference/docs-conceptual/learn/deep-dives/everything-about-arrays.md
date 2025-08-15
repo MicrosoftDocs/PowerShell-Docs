@@ -1,19 +1,19 @@
 ---
 description: Arrays are a fundamental language feature of most programming languages.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/05/2021
+ms.date: 06/20/2024
 title: Everything you wanted to know about arrays
 ---
 # Everything you wanted to know about arrays
 
-[Arrays][Arrays] are a fundamental language feature of most programming languages. They're a
-collection of values or objects that are difficult to avoid. Let's take a close look at arrays and
-everything they have to offer.
+[Arrays][02] are a fundamental language feature of most programming languages. They're a collection
+of values or objects that are difficult to avoid. Let's take a close look at arrays and everything
+they have to offer.
 
 > [!NOTE]
-> The [original version][original version] of this article appeared on the blog written by
-> [@KevinMarquette][@KevinMarquette]. The PowerShell team thanks Kevin for sharing this content with
-> us. Please check out his blog at [PowerShellExplained.com][PowerShellExplained.com].
+> The [original version][12] of this article appeared on the blog written by [@KevinMarquette][13].
+> The PowerShell team thanks Kevin for sharing this content with us. Please check out his blog at
+> [PowerShellExplained.com][09].
 
 ## What is an array?
 
@@ -37,7 +37,7 @@ An empty array can be created by using `@()`
 
 ```powershell
 PS> $data = @()
-PS> $data.count
+PS> $data.Count
 0
 ```
 
@@ -45,7 +45,7 @@ We can create an array and seed it with values just by placing them in the `@()`
 
 ```powershell
 PS> $data = @('Zero','One','Two','Three')
-PS> $data.count
+PS> $data.Count
 4
 
 PS> $data
@@ -231,26 +231,26 @@ So make sure your arrays are not `$null` before you try to access elements insid
 
 #### Count
 
-Arrays and other collections have a count property that tells you how many items are in the array.
+Arrays and other collections have a `Count` property that tells you how many items are in the array.
 
 ```powershell
-PS> $data.count
+PS> $data.Count
 4
 ```
 
-PowerShell 3.0 added a count property to most objects. you can have a single object and it should
+PowerShell 3.0 added a `Count` property to most objects. you can have a single object and it should
 give you a count of `1`.
 
 ```powershell
 PS> $date = Get-Date
-PS> $date.count
+PS> $date.Count
 1
 ```
 
-Even `$null` has a count property except it returns `0`.
+Even `$null` has a `Count` property except it returns `0`.
 
 ```powershell
-PS> $null.count
+PS> $null.Count
 0
 ```
 
@@ -267,14 +267,14 @@ the third item. Or by thinking that you have four items and you want last item, 
 to access the last item.
 
 ```powershell
-$data[ $data.count ]
+$data[ $data.Count ]
 ```
 
 PowerShell is perfectly happy to let you do that and give you exactly what item exists at index 4:
-`$null`. You should be using `$data.count - 1` or the `-1` that we learned about above.
+`$null`. You should be using `$data.Count - 1` or the `-1` that we learned about above.
 
 ```powershell
-PS> $data[ $data.count - 1 ]
+PS> $data[ $data.Count - 1 ]
 Three
 ```
 
@@ -348,7 +348,7 @@ one because they both represent the current object in the pipeline.
 
 #### ForEach loop
 
-The `ForEach` loop works well with collections. Using the syntax:
+The `foreach` loop works well with collections. Using the syntax:
 `foreach ( <variable> in <collection> )`
 
 ```powershell
@@ -361,24 +361,24 @@ foreach ( $node in $data )
 #### ForEach method
 
 I tend to forget about this one but it works well for simple operations. PowerShell allows you to
-call `.ForEach()` on a collection.
+call `ForEach()` on a collection.
 
 ```powershell
-PS> $data.foreach({"Item [$PSItem]"})
+PS> $data.ForEach({"Item [$PSItem]"})
 Item [Zero]
 Item [One]
 Item [Two]
 Item [Three]
 ```
 
-The `.foreach()` takes a parameter that is a script block. You can drop the parentheses and just
+The `ForEach()` takes a parameter that is a script block. You can drop the parentheses and just
 provide the script block.
 
 ```powershell
-$data.foreach{"Item [$PSItem]"}
+$data.ForEach{"Item [$PSItem]"}
 ```
 
-This is a lesser known syntax but it works just the same. This `foreach` method was added in
+This is a lesser known syntax but it works just the same. This `ForEach` method was added in
 PowerShell 4.0.
 
 #### For loop
@@ -387,28 +387,27 @@ The `for` loop is used heavily in most other languages but you don't see it much
 you do see it, it's often in the context of walking an array.
 
 ```powershell
-for ( $index = 0; $index -lt $data.count; $index++)
+for ( $index = 0; $index -lt $data.Count; $index++)
 {
     "Item: [{0}]" -f $data[$index]
 }
 ```
 
 The first thing we do is initialize an `$index` to `0`. Then we add the condition that `$index` must
-be less than `$data.count`. Finally, we specify that every time we loop that me must increase the
-index by `1`. In this case `$index++` is short for `$index = $index + 1`. The
-[format operator](/powershell/module/microsoft.powershell.core/about/about_operators#format-operator--f)
+be less than `$data.Count`. Finally, we specify that every time we loop that we must increase the
+index by `1`. In this case `$index++` is short for `$index = $index + 1`. The [format operator][03]
 (`-f`) is used to insert the value of `$data[$index]` in the output string.
 
 Whenever you're using a `for` loop, pay special attention to the condition. I used
-`$index -lt $data.count` here. It's easy to get the condition slightly wrong to get an off-by-one
-error in your logic. Using `$index -le $data.count` or `$index -lt ($data.count - 1)` are ever so
+`$index -lt $data.Count` here. It's easy to get the condition slightly wrong to get an off-by-one
+error in your logic. Using `$index -le $data.Count` or `$index -lt ($data.Count - 1)` are ever so
 slightly wrong. That would cause your result to process too many or too few items. This is the
 classic off-by-one error.
 
 #### Switch loop
 
-This is one that is easy to overlook. If you provide an array to a [switch statement][switch statement], it
-checks each item in the array.
+This is one that is easy to overlook. If you provide an array to a [switch statement][06], it checks
+each item in the array.
 
 ```powershell
 $data = 'Zero','One','Two','Three'
@@ -439,7 +438,7 @@ Tock
 There are a lot of cool things that we can do with the switch statement. I have another article
 dedicated to this.
 
-- [Everything you ever wanted to know about the switch statement][switch statement]
+- [Everything you ever wanted to know about the switch statement][06]
 
 #### Updating values
 
@@ -452,7 +451,7 @@ The exception to that statement is the `for` loop. If you want to walk an array 
 inside it, then the `for` loop is what you're looking for.
 
 ```powershell
-for ( $index = 0; $index -lt $data.count; $index++ )
+for ( $index = 0; $index -lt $data.Count; $index++ )
 {
     $data[$index] = "Item: [{0}]" -f $data[$index]
 }
@@ -557,7 +556,7 @@ Kevin     Marquette
 We can write that same query to get the `FirstName` we are looking for.
 
 ```powershell
-$data | Where FirstName -eq Kevin
+$data | where FirstName -EQ Kevin
 ```
 
 #### Where()
@@ -723,7 +722,8 @@ red
 blue
 ```
 
-When you use this in an `if()` statement, a value that is returned is a `True` value. If no value is returned, then it's a `False` value. Both of these next statements evaluate to `True`.
+When you use this in an `if()` statement, a value that is returned is a `True` value. If no value is
+returned, then it's a `False` value. Both of these next statements evaluate to `True`.
 
 ```powershell
 $data = @('red','green','blue')
@@ -764,8 +764,8 @@ We can take the same approach with `Select-String`.
 $servers | Select-String SQL
 ```
 
-I take a closer look at `Select-String`,`-match` and the `$matches` variable in another post called
-[The many ways to use regex][The many ways to use regex].
+I take a closer look at `Select-String`,`-match` and the `$Matches` variable in another post called
+[The many ways to use regex][10].
 
 ### $null or empty
 
@@ -805,19 +805,19 @@ A `$null` array isn't the same thing as an empty array. If you know you have an 
 count of objects in it. If the array is `$null`, the count is `0`.
 
 ```powershell
-if ( $array.count -gt 0 )
+if ( $array.Count -gt 0 )
 {
     "Array isn't empty"
 }
 ```
 
-There is one more trap to watch out for here. You can use the `count` even if you have a single
+There is one more trap to watch out for here. You can use the `Count` even if you have a single
 object, unless that object is a `PSCustomObject`. This is a bug that is fixed in PowerShell 6.1.
 That's good news, but a lot of people are still on 5.1 and need to watch out for it.
 
 ```powershell
-PS> $object = [PSCustomObject]@{Name='TestObject'}
-PS> $object.count
+PS> $object = [pscustomobject]@{Name='TestObject'}
+PS> $object.Count
 $null
 ```
 
@@ -825,7 +825,7 @@ If you're still on PowerShell 5.1, you can wrap the object in an array before ch
 get an accurate count.
 
 ```powershell
-if ( @($array).count -gt 0 )
+if ( @($array).Count -gt 0 )
 {
     "Array isn't empty"
 }
@@ -834,7 +834,7 @@ if ( @($array).count -gt 0 )
 To fully play it safe, check for `$null`, then check the count.
 
 ```powershell
-if ( $null -ne $array -and @($array).count -gt 0 )
+if ( $null -ne $array -and @($array).Count -gt 0 )
 {
     "Array isn't empty"
 }
@@ -842,8 +842,8 @@ if ( $null -ne $array -and @($array).count -gt 0 )
 
 ### All -eq
 
-I recently saw someone ask [how to verify that every value in an array matches a given value][how to verify that every value in an array matches a given value].
-Reddit user **/u/bis** had this clever [solution][solution] that checks for any incorrect values and then
+I recently saw someone on Reddit ask how to verify that every value in an array matches a given
+value. Reddit user `u/bis` had this clever solution that checks for any incorrect values and then
 flips the result.
 
 ```powershell
@@ -864,7 +864,7 @@ implements the addition operator (`+`) for arrays.
 
 > [!NOTE]
 > PowerShell does not implement a subtraction operation. If you want a flexible alternative to an
-> array, you need to use a [generic `List`](#generic-list) object.
+> array, you need to use a [generic `List`][04] object.
 
 ### Array addition
 
@@ -933,7 +933,7 @@ $array = foreach ( $node in (1..5))
 
 ## Array Types
 
-By default, an array in PowerShell is created as a `[PSObject[]]` type. This allows it to contain
+By default, an array in PowerShell is created as a `[psobject[]]` type. This allows it to contain
 any type of object or value. This works because everything is inherited from the `PSObject` type.
 
 ### Strongly typed arrays
@@ -968,11 +968,11 @@ $myarray = [System.Collections.ArrayList]::new()
 We are calling into .NET to get this type. In this case, we are using the default constructor to
 create it. Then we call the `Add` method to add an item to it.
 
-The reason I'm using `[void]` at the beginning of the line is to suppress the return code. Some
-.NET calls do this and can create unexpected output.
+The reason I'm using `[void]` at the beginning of the line is to suppress the return code. Some .NET
+calls do this and can create unexpected output.
 
 If the only data that you have in your array is strings, then also take a look at using
-[StringBuilder][StringBuilder]. It's almost the same thing but has some methods that are just for dealing with
+[StringBuilder][11]. It's almost the same thing but has some methods that are just for dealing with
 strings. The `StringBuilder` is specially designed for performance.
 
 It's common to see people move to `ArrayList` from arrays. But it comes from a time where C# didn't
@@ -981,8 +981,8 @@ have generic support. The `ArrayList` is deprecated in support for the generic `
 ### Generic List
 
 A generic type is a special type in C# that defines a generalized class and the user specifies the
-data types it uses when created. So if you want a list of numbers or strings, you would define
-that you want list of `int` or `string` types.
+data types it uses when created. So if you want a list of numbers or strings, you would define that
+you want list of `int` or `string` types.
 
 Here is how you create a List for strings.
 
@@ -1027,13 +1027,13 @@ PS> $myList[-1]
 10
 ```
 
-#### List[PSObject]
+#### List[psobject]
 
 You can have a list of any type, but when you don't know the type of objects, you can use
-`[List[PSObject]]` to contain them.
+`[List[psobject]]` to contain them.
 
 ```powershell
-$list = [List[PSObject]]::new()
+$list = [List[psobject]]::new()
 ```
 
 #### Remove()
@@ -1049,18 +1049,18 @@ One
 Three
 ```
 
-When working with value types, it removes the first one from the list. You can call it over and
-over again to keep removing that value. If you have reference types, you have to provide the object
-that you want removed.
+When working with value types, it removes the first one from the list. You can call it over and over
+again to keep removing that value. If you have reference types, you have to provide the object that
+you want removed.
 
 ```powershell
-[list[System.Management.Automation.PSDriveInfo]]$drives = Get-PSDrive
-$drives.remove($drives[2])
+[List[System.Management.Automation.PSDriveInfo]]$drives = Get-PSDrive
+$drives.Remove($drives[2])
 ```
 
 ```powershell
 $delete = $drives[2]
-$drives.remove($delete)
+$drives.Remove($delete)
 ```
 
 The remove method returns `true` if it was able to find and remove the item from the collection.
@@ -1068,9 +1068,8 @@ The remove method returns `true` if it was able to find and remove the item from
 ### More collections
 
 There are many other collections that can be used but these are the good generic array replacements.
-If you're interested in learning about more of these options, take a look at this
-[Gist](https://gist.github.com/kevinblumenfeld/4a698dbc90272a336ed9367b11d91f1c) that
-[Mark Kraus](https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html) put together.
+If you're interested in learning about more of these options, take a look at this [Gist][08] that
+[Mark Kraus][07] put together.
 
 ## Other nuances
 
@@ -1084,7 +1083,7 @@ a pre-determined size by calling it with the `new($size)` constructor.
 
 ```powershell
 $data = [Object[]]::new(4)
-$data.count
+$data.Count
 4
 ```
 
@@ -1200,7 +1199,8 @@ TypeName: System.Object[]
 ```
 
 I have a second way that's more of a hack (and I try to avoid hacks like this). You can place a
-comma in front of the array before you pipe it.
+comma in front of the array before you pipe it. This wraps `$data` into another array where it is
+the only element, so after the unwrapping the outer array we get back `$data` unwrapped.
 
 ```powershell
 PS> ,$data | Get-Member
@@ -1218,21 +1218,22 @@ The catch is that you have a new array. If that is ever a problem, you can use
 
 ## Anything else?
 
-I know this is all a lot to take in. My hope is that you learn something from this article
-every time you read it and that it turns out to be a good reference for you for a long time to
-come. If you found this to be helpful, please share it with others you think may get value out
-of it.
+I know this is all a lot to take in. My hope is that you learn something from this article every
+time you read it and that it turns out to be a good reference for you for a long time to come. If
+you found this to be helpful, please share it with others you think may get value out of it.
 
-From here, I would recommend you check out a similar post that I wrote about [hashtables][hashtables].
+From here, I would recommend you check out a similar post that I wrote about [hashtables][05].
 
 <!-- link references -->
-[original version]: https://powershellexplained.com/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/
-[powershellexplained.com]: https://powershellexplained.com/
-[@KevinMarquette]: https://twitter.com/KevinMarquette
-[Arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[switch statement]: everything-about-switch.md
-[hashtables]: everything-about-hashtable.md
-[The many ways to use regex]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
-[how to verify that every value in an array matches a given value]: https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition
-[solution]: https://www.reddit.com/r/PowerShell/comments/9mzo09/if_statement_multiple_variables_but_1_condition/e7iizca
-[StringBuilder]: https://powershellexplained.com/2017-11-20-Powershell-StringBuilder/
+[02]: /powershell/module/microsoft.powershell.core/about/about_arrays
+[03]: /powershell/module/microsoft.powershell.core/about/about_operators#format-operator--f
+[04]: #generic-list
+[05]: everything-about-hashtable.md
+[06]: everything-about-switch.md
+[07]: https://get-powershellblog.blogspot.com/2016/11/about-mark-kraus.html
+[08]: https://gist.github.com/kevinblumenfeld/4a698dbc90272a336ed9367b11d91f1c
+[09]: https://powershellexplained.com/
+[10]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
+[11]: https://powershellexplained.com/2017-11-20-Powershell-StringBuilder/
+[12]: https://powershellexplained.com/2018-10-15-Powershell-arrays-Everything-you-wanted-to-know/
+[13]: https://twitter.com/KevinMarquette

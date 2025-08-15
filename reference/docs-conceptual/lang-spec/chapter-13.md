@@ -5,6 +5,8 @@ title: Cmdlets
 ---
 # 13. Cmdlets
 
+[!INCLUDE [Disclaimer](../../includes/language-spec.md)]
+
 A cmdlet is a single-feature command that manipulates objects in PowerShell. Cmdlets can be
 recognized by their name format, a verb and noun separated by a dash (`-`), such as `Get-Help`,
 `Get-Process`, and `Start-Service`. A *verb pattern* is a verb expressed using wildcards, as
@@ -17,7 +19,7 @@ specified destination.
 
 For each cmdlet, provide a help file that can be accessed by typing:
 
-`get-help *cmdlet-name* -detailed`
+`Get-Help *cmdlet-name* -Detailed`
 
 The detailed view of the cmdlet help file should include a description of the cmdlet, the command
 syntax, descriptions of the parameters, and an example that demonstrate the use of that cmdlet.

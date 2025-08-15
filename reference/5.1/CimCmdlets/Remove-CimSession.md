@@ -2,9 +2,11 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/09/2017
-online version: https://docs.microsoft.com/powershell/module/cimcmdlets/remove-cimsession?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 12/09/2022
+online version: https://learn.microsoft.com/powershell/module/cimcmdlets/remove-cimsession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rcms
 title: Remove-CimSession
 ---
 
@@ -124,7 +126,8 @@ Specifies the ID of the CIM session to remove. Specify one or more IDs separated
 the range operator (`..`) to specify a range of IDs. An **Id** is an integer that uniquely
 identifies the CIM session in the current PowerShell session.
 
-For more information about the range operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
+For more information about the range operator, see
+[about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md).
 
 ```yaml
 Type: System.UInt32[]
@@ -144,7 +147,8 @@ Specifies the instance ID of the CIM session to remove. **InstanceId** is a Glob
 Identifier (GUID) that uniquely identifies a CIM session. The **InstanceId** is unique, even when
 you have multiple sessions running in PowerShell.
 
-The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM session.
+The **InstanceId** is stored in the **InstanceId** property of the object that represents a CIM
+session.
 
 ```yaml
 Type: System.Guid[]
@@ -218,7 +222,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### None
 
-This cmdlet accepts no input objects.
+You can't pipe objects to this cmdlet.
 
 ## OUTPUTS
 

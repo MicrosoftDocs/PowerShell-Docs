@@ -1,10 +1,10 @@
 ---
 description: Describes the attribute that makes a function work like a compiled cmdlet.
 Locale: en-US
-ms.date: 09/23/2021
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 07/02/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Functions CmdletBindingAttribute
+title: about_Functions_CmdletBindingAttribute
 ---
 # about_Functions_CmdletBindingAttribute
 
@@ -17,10 +17,14 @@ The `CmdletBinding` attribute is an attribute of functions that makes them
 operate like compiled cmdlets written in C#. It provides access to the features
 of cmdlets.
 
+When you use the `CmdletBinding` attribute, PowerShell automatically adds the
+Common Parameters. You can't create any parameters that use the same names as
+the Common Parameters. For more information, see [about_CommonParameters][02].
+
 PowerShell binds the parameters of functions that have the `CmdletBinding`
 attribute in the same way that it binds the parameters of compiled cmdlets. The
 `$PSCmdlet` automatic variable is available to functions with the
-`CmdletBinding` attribute, but the `$Args` variable is not available.
+`CmdletBinding` attribute, but the `$args` variable is not available.
 
 In functions that have the `CmdletBinding` attribute, unknown parameters and
 positional arguments that have no matching positional parameters cause
@@ -40,15 +44,15 @@ each argument follows this example.
 {
     [CmdletBinding(ConfirmImpact=<String>,
     DefaultParameterSetName=<String>,
-    HelpURI=<URI>,
+    HelpUri=<URI>,
     SupportsPaging=<Boolean>,
     SupportsShouldProcess=<Boolean>,
     PositionalBinding=<Boolean>)]
 
-    Param ($Parameter1)
-    Begin{}
-    Process{}
-    End{}
+    param ($Parameter1)
+    begin {}
+    process {}
+    end {}
 }
 ```
 
@@ -61,10 +65,10 @@ value to `$true` or just list the argument by name. For example, the following
 {
     [CmdletBinding(SupportsPaging=$true)]
 
-    Param ($Parameter1)
-    Begin{}
-    Process{}
-    End{}
+    param ($Parameter1)
+    begin {}
+    process {}
+    end {}
 }
 
 # Boolean arguments can be defined using this shorthand syntax
@@ -72,10 +76,10 @@ value to `$true` or just list the argument by name. For example, the following
 {
     [CmdletBinding(SupportsPaging)]
 
-    Param ($Parameter1)
-    Begin{}
-    Process{}
-    End{}
+    param ($Parameter1)
+    begin {}
+    process {}
+    end {}
 }
 ```
 
@@ -90,7 +94,7 @@ be confirmed by a call to the **ShouldProcess** method. The call to the
 argument is also specified.
 
 For more information about confirmation requests, see
-[Requesting Confirmation](/powershell/scripting/developer/cmdlet/requesting-confirmation).
+[Requesting Confirmation][01].
 
 ## DefaultParameterSetName
 
@@ -99,22 +103,22 @@ set that PowerShell will attempt to use when it cannot determine which
 parameter set to use. You can avoid this issue by making the unique parameter
 of each parameter set a mandatory parameter.
 
-## HelpURI
+## HelpUri
 
-The **HelpURI** argument specifies the internet address of the online version
-of the help topic that describes the function. The value of the **HelpURI**
+The **HelpUri** argument specifies the internet address of the online version
+of the help topic that describes the function. The value of the **HelpUri**
 argument must begin with "http" or "https".
 
-The **HelpURI** argument value is used for the value of the **HelpURI**
+The **HelpUri** argument value is used for the value of the **HelpUri**
 property of the **CommandInfo** object that `Get-Command` returns for the
 function.
 
 However, when help files are installed on the computer and the value of the
 first link in the **RelatedLinks** section of the help file is a URI, or the
-value of the first `.Link` directive in comment-based help is a URI, the URI in
+value of the first `.LINK` keyword in comment-based help is a URI, the URI in
 the help file is used as the value of the **HelpUri** property of the function.
 
-The `Get-Help` cmdlet uses the value of the **HelpURI** property to locate the
+The `Get-Help` cmdlet uses the value of the **HelpUri** property to locate the
 online version of the function help topic when the **Online** parameter of
 `Get-Help` is specified in a command.
 
@@ -170,8 +174,8 @@ lists the changes that the command would make, instead of running the command.
 ## PositionalBinding
 
 The **PositionalBinding** argument determines whether parameters in the
-function are positional by default. The default value is `$True`. You can use
-the **PositionalBinding** argument with a value of `$False` to disable
+function are positional by default. The default value is `$true`. You can use
+the **PositionalBinding** argument with a value of `$false` to disable
 positional binding.
 
 The **PositionalBinding** argument is introduced in Windows PowerShell 3.0.
@@ -184,11 +188,11 @@ function command.
 When parameters are not positional (they are "named"), the parameter
 name (or an abbreviation or alias of the name) is required in the command.
 
-When **PositionalBinding** is `$True`, function parameters are positional by
+When **PositionalBinding** is `$true`, function parameters are positional by
 default. PowerShell assigns position number to the parameters in the order in
 which they are declared in the function.
 
-When **PositionalBinding** is `$False`, function parameters are not positional
+When **PositionalBinding** is `$false`, function parameters are not positional
 by default. Unless the **Position** argument of the **Parameter** attribute is
 declared on the parameter, the parameter name (or an alias or abbreviation)
 must be included when the parameter is used in a function.
@@ -197,7 +201,7 @@ The **Position** argument of the **Parameter** attribute takes precedence over
 the **PositionalBinding** default value. You can use the **Position** argument
 to specify a position value for a parameter. For more information about the
 **Position** argument, see
-[about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md).
+[about_Functions_Advanced_Parameters][04].
 
 ## Notes
 
@@ -209,8 +213,17 @@ about_Functions_CmdletBinding_Attribute
 
 ## See also
 
-- [about_Functions](about_Functions.md)
-- [about_Functions_Advanced](about_Functions_Advanced.md)
-- [about_Functions_Advanced_Methods](about_Functions_Advanced_Methods.md)
-- [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
-- [about_Functions_OutputTypeAttribute](about_Functions_OutputTypeAttribute.md)
+- [about_Functions][07]
+- [about_Functions_Advanced][05]
+- [about_Functions_Advanced_Methods][03]
+- [about_Functions_Advanced_Parameters][04]
+- [about_Functions_OutputTypeAttribute][06]
+
+<!-- link references -->
+[01]: /powershell/scripting/developer/cmdlet/requesting-confirmation
+[02]: about_CommonParameters.md
+[03]: about_Functions_Advanced_Methods.md
+[04]: about_Functions_Advanced_Parameters.md
+[05]: about_Functions_Advanced.md
+[06]: about_Functions_OutputTypeAttribute.md
+[07]: about_Functions.md

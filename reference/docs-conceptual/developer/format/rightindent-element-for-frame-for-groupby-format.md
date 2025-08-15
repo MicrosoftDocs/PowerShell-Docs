@@ -1,7 +1,6 @@
 ---
 description: RightIndent Element for Frame for GroupBy
 ms.date: 08/24/2021
-ms.topic: reference
 title: RightIndent Element for Frame for GroupBy
 ---
 # RightIndent Element for Frame for GroupBy

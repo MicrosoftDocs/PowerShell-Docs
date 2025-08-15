@@ -2,8 +2,8 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/12/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/02/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-list?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-List
 ---
@@ -25,7 +25,8 @@ Update-List [-Add <Object[]>] [-Remove <Object[]>] [-InputObject <PSObject>] [[-
 ### ReplaceSet
 
 ```
-Update-List -Replace <Object[]> [-InputObject <PSObject>] [[-Property] <String>] [<CommonParameters>]
+Update-List -Replace <Object[]> [-InputObject <PSObject>] [[-Property] <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,16 +38,12 @@ objects.
 The **Add** and **Remove** parameters add individual items to and remove them from the collection.
 The **Replace** parameter replaces the entire collection.
 
-If you do not specify a property in the command, `Update-List` returns an object that describes the
-update instead of updating the object. You can submit the update object to cmdlets that change
-objects, such as `Set` cmdlets.
+If you don't specify a property in the command, `Update-List` returns a hashtable that describes the
+update instead of updating the object. Later, you can use this change set to update a list object.
 
-This cmdlet works only when the property that is being updated supports the **IList** interface that
+This cmdlet works only when the property that's being updated supports the **IList** interface that
 `Update-List` uses. Also, any `Set` cmdlets that accept an update must support the **IList**
 interface.
-
-The core cmdlets that are installed with PowerShell do not support this interface. To
-determine whether a cmdlet supports `Update-List`, see the cmdlet Help topic.
 
 ## EXAMPLES
 
@@ -54,43 +51,43 @@ determine whether a cmdlet supports `Update-List`, see the cmdlet Help topic.
 
 In this example we create a class that represents a deck of cards where the cards are stored as a
 **List** collection object. The **NewDeck()** method uses `Update-List`to add a complete deck of
-card values to the **cards** collection.
+card values to the **Cards** collection.
 
 ```powershell
 class Cards {
 
-    [System.Collections.Generic.List[string]]$cards
-    [string]$name
+    [System.Collections.Generic.List[string]]$Cards
+    [string]$Name
 
     Cards([string]$_name) {
-        $this.name = $_name
-        $this.cards = [System.Collections.Generic.List[string]]::new()
+        $this.Name = $_name
+        $this.Cards = [System.Collections.Generic.List[string]]::new()
     }
 
     NewDeck() {
         $_suits = [char]0x2663,[char]0x2666,[char]0x2665,[char]0x2660
         $_values = 'A',2,3,4,5,6,7,8,9,10,'J','Q','K'
         $_deck = foreach ($s in $_suits){ foreach ($v in $_values){ "$v$s"} }
-        $this | Update-List -Property cards -Add $_deck | Out-Null
+        $this | Update-List -Property Cards -Add $_deck | Out-Null
     }
 
     Show() {
         Write-Host
-        Write-Host $this.name ": " $this.cards[0..12]
-        if ($this.cards.count -gt 13) {
-            Write-Host (' ' * ($this.name.length+3)) $this.cards[13..25]
+        Write-Host $this.Name ": " $this.Cards[0..12]
+        if ($this.Cards.Count -gt 13) {
+            Write-Host (' ' * ($this.Name.Length+3)) $this.Cards[13..25]
         }
-        if ($this.cards.count -gt 26) {
-            Write-Host (' ' * ($this.name.length+3)) $this.cards[26..38]
+        if ($this.Cards.Count -gt 26) {
+            Write-Host (' ' * ($this.Name.Length+3)) $this.Cards[26..38]
         }
-        if ($this.cards.count -gt 39) {
-            Write-Host (' ' * ($this.name.length+3)) $this.cards[39..51]
+        if ($this.Cards.Count -gt 39) {
+            Write-Host (' ' * ($this.Name.Length+3)) $this.Cards[39..51]
         }
     }
 
-    Shuffle() { $this.cards = Get-Random -InputObject $this.cards -Count 52 }
+    Shuffle() { $this.Cards = Get-Random -InputObject $this.Cards -Count 52 }
 
-    Sort() { $this.cards.Sort() }
+    Sort() { $this.Cards.Sort() }
 }
 ```
 
@@ -114,10 +111,10 @@ $deck.Shuffle()
 $deck.Show()
 
 # Deal two hands
-$player1 | Update-List -Property cards -Add $deck.cards[0,2,4,6,8] | Out-Null
-$player2 | Update-List -Property cards -Add $deck.cards[1,3,5,7,9] | Out-Null
-$deck | Update-List -Property cards -Remove $player1.cards | Out-Null
-$deck | Update-List -Property cards -Remove $player2.cards | Out-Null
+$player1 | Update-List -Property Cards -Add $deck.Cards[0,2,4,6,8] | Out-Null
+$player2 | Update-List -Property Cards -Add $deck.Cards[1,3,5,7,9] | Out-Null
+$deck | Update-List -Property Cards -Remove $player1.Cards | Out-Null
+$deck | Update-List -Property Cards -Remove $player2.Cards | Out-Null
 
 $player1.Show()
 $player2.Show()
@@ -153,11 +150,11 @@ example, Player 1 wants to discard the `4♦` and `6♦` and get two new cards.
 
 ```powershell
 # Player 1 wants two new cards - remove 2 cards & add 2 cards
-$player1 | Update-List -Property cards -Remove $player1.cards[0,4] -Add $deck.cards[0..1] | Out-Null
+$player1 | Update-List -Property Cards -Remove $player1.Cards[0,4] -Add $deck.Cards[0..1] | Out-Null
 $player1.Show()
 
 # remove dealt cards from deck
-$deck | Update-List -Property cards -Remove $deck.cards[0..1] | Out-Null
+$deck | Update-List -Property Cards -Remove $deck.Cards[0..1] | Out-Null
 $deck.Show()
 ```
 
@@ -168,6 +165,36 @@ Deck :  2♣ K♥ 4♠ 10♥ 8♠ 10♦ 9♠ 6♠ K♦ 7♣ 3♣ Q♣ A♥
         Q♠ 3♥ 5♥ 2♦ 5♠ J♥ J♠ 10♣ 4♥ Q♦ 10♠ 4♣ 2♠
         2♥ 6♥ 7♦ A♠ 5♦ 8♣ 9♥ K♠ 7♠ 3♠ 9♣ A♦ K♣
         8♥
+```
+
+### Example 4: Apply a change set to a list object
+
+If you don't specify a property, `Update-List` returns a hashtable that describes the update instead
+of updating the object. You can cast the hashtable to a **System.PSListModifier** object and use the
+`ApplyTo()` method to apply the change set to a list.
+
+```powershell
+$list = [System.Collections.ArrayList] (1, 43, 2)
+$changeInstructions = Update-List -Remove 43 -Add 42
+$changeInstructions
+```
+
+```Output
+Name                           Value
+----                           -----
+Add                            {42}
+Remove                         {43}
+```
+
+```powershell
+([pslistmodifier]($changeInstructions)).ApplyTo($list)
+$list
+```
+
+```Output
+1
+2
+42
 ```
 
 ## PARAMETERS
@@ -207,7 +234,7 @@ Accept wildcard characters: False
 
 ### -Property
 
-Specifies the property that contains the collection that is being updated. If you omit this
+Specifies the property that contains the collection that's being updated. If you omit this
 parameter, `Update-List` returns an object that represents the change instead of changing the
 object.
 
@@ -260,19 +287,24 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Management.Automation.PSObject
 
-You can pipe the objects to be updated to `Update-List`.
+You can pipe the object to be updated to this cmdlet.
 
 ## OUTPUTS
 
-### Objects or System.Management.Automation.PSListModifier
+### System.Collections.Hashtable
 
-`Update-List` returns the updated object, or it returns an object that represents the update action.
+By default, this cmdlet returns a hashtable that describes the update.
+
+### System.Object
+
+When you specify the **Property** parameter, this cmdlet returns the updated object.
 
 ## NOTES
 

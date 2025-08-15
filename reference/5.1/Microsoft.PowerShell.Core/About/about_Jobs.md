@@ -1,10 +1,10 @@
 ---
 description: Provides information about how PowerShell background jobs run a command or expression in the background without interacting with the current session.
 Locale: en-US
-ms.date: 08/29/2022
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 01/07/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Jobs
+title: about_Jobs
 ---
 # about_Jobs
 
@@ -242,17 +242,17 @@ results would be incomplete. You can use the `Receive-Job` cmdlet repeatedly to
 get all of the results. Use the **State** property to determine when the job is
 complete.
 
-You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When use
+You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When you
 use this parameter, the cmdlet doesn't return the command prompt until the job
 is completed and all results are available.
 
 You can also use the `Wait-Job` cmdlet to wait for any or all of the results of
 the job. `Wait-Job` lets you wait for one or more specific job or for all jobs.
-The following command uses the `Wait-Job` cmdlet to wait for a job with **ID**
+The following command uses the `Wait-Job` cmdlet to wait for a job with **Id**
 10.
 
 ```powershell
-Wait-Job -ID 10
+Wait-Job -Id 10
 ```
 
 As a result, the PowerShell prompt is suppressed until the job is completed.
@@ -262,7 +262,7 @@ You can also wait for a predetermined period of time. This command uses the
 the command prompt returns, but the job continues to run in the background.
 
 ```powershell
-Wait-Job -ID 10 -Timeout 120
+Wait-Job -Id 10 -Timeout 120
 ```
 
 ## Stopping a job

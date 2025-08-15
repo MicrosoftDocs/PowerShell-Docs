@@ -2,13 +2,14 @@
 description: Describes the script internationalization features that make it easy for scripts to display messages and instructions to users in their user interface (UI) language.
 Locale: en-US
 ms.date: 03/20/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_internationalization?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_script_internationalization?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-title: about Script Internationalization
+title: about_Script_Internationalization
 ---
 # about_Script_Internationalization
 
 ## Short description
+
 Describes the script internationalization features that make it easy for
 scripts to display messages and instructions to users in their user interface
 (UI) language.
@@ -30,8 +31,7 @@ To support international Help text, PowerShell includes the following
 features:
 
 - A Data section that separates text strings from code instructions. For more
-  information about the Data section, see
-  [about_Data_Sections](about_Data_Sections.md).
+  information about the Data section, see [about_Data_Sections][01].
 
 - New automatic variables, `$PSCulture` and `$PSUICulture`. `$PSCulture` stores
   the name of the UI language used on the system for elements such as the date,
@@ -41,7 +41,7 @@ features:
 
 - A cmdlet, `ConvertFrom-StringData`, that converts text strings into
   dictionary-like hash tables to facilitate translation. For more information,
-  see [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData).
+  see [ConvertFrom-StringData][02].
 
 - A new file type, `.psd1`, that stores translated text strings. The `.psd1`
   files are stored in language-specific subdirectories of the script directory.
@@ -49,7 +49,7 @@ features:
 - A cmdlet, `Import-LocalizedData`, that imports translated text strings for a
   specified language into a script at runtime. This cmdlet recognizes and
   imports strings in any Windows-supported language. For more information see
-  [Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData).
+  [Import-LocalizedData][03].
 
 ### The Data Section: Storing Default Strings
 
@@ -68,7 +68,7 @@ the English-United States (en-US) set of prompt messages for a script. The
 stores them in the `$msgtable` variable.
 
 ```powershell
-$msgTable = Data {
+$msgTable = data {
     #culture="en-US"
     ConvertFrom-StringData @'
     helloWorld = Hello, World.
@@ -78,8 +78,7 @@ $msgTable = Data {
 }
 ```
 
-For more information about here-strings, see
-[about_Quoting_Rules](about_Quoting_Rules.md).
+For more information about here-strings, see [about_Quoting_Rules][04].
 
 ### PSD1 Files: Storing Translated Strings
 
@@ -161,7 +160,7 @@ if (!($username)) { $msgTable.promptMsg }
 ```
 
 If `Import-LocalizedData` cannot find a `.psd1` file that matches the value of
-`$PSUIculture`, the value of `$msgTable` is not replaced, and the call to
+`$PSUICulture`, the value of `$msgTable` is not replaced, and the call to
 `$msgTable.promptMsg` displays the fallback en-US strings.
 
 ## Examples
@@ -187,7 +186,7 @@ are defined in the Data section.
 The remaining commands load the strings into an array and display them.
 
 ```powershell
-$Day = Data {
+$Day = data {
 #culture="en-US"
 ConvertFrom-StringData -StringData @'
     messageDate = Today is
@@ -241,9 +240,18 @@ Heute ist Freitag
 
 ## See also
 
-- [about_Data_Sections](about_Data_Sections.md)
-- [about_Automatic_Variables](about_Automatic_Variables.md)
-- [about_Hash_Tables](about_Hash_Tables.md)
-- [about_Quoting_Rules](about_Quoting_Rules.md)
-- [Import-LocalizedData](xref:Microsoft.PowerShell.Utility.Import-LocalizedData)
-- [ConvertFrom-StringData](xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData)
+- [about_Data_Sections][01]
+- [about_Automatic_Variables][05]
+- [about_Hash_Tables][06]
+- [about_Quoting_Rules][07]
+- [Import-LocalizedData][03]
+- [ConvertFrom-StringData][02]
+
+<!-- link references -->
+[01]: about_Data_Sections.md
+[02]: xref:Microsoft.PowerShell.Utility.ConvertFrom-StringData
+[03]: xref:Microsoft.PowerShell.Utility.Import-LocalizedData
+[04]: about_Quoting_Rules.md
+[05]: about_Automatic_Variables.md
+[06]: about_Hash_Tables.md
+[07]: about_Quoting_Rules.md

@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/28/2019
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-5.1&WT.mc_id=ps-gethelp
+ms.date: 06/28/2023
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - lp
 title: Out-Printer
 ---
 
@@ -22,7 +24,8 @@ Out-Printer [[-Name] <String>] [-InputObject <PSObject>] [<CommonParameters>]
 ## DESCRIPTION
 
 The `Out-Printer` cmdlet sends output to the default printer or to an alternate printer, if one is
-specified.
+specified. Since the cmdlet doesn't have any way to configure the print job, the resulting print job
+uses the default settings defined for the printer.
 
 > [!NOTE]
 > This cmdlet was reintroduced in PowerShell 7. This cmdlet is only available on Windows systems
@@ -32,7 +35,8 @@ specified.
 
 ### Example 1 - Send a file to be printed on the default printer
 
-This example shows how to print a file, even though `Out-Printer` does not have a **Path** parameter.
+This example shows how to print a file, even though `Out-Printer` does not have a **Path**
+parameter.
 
 ```powershell
 Get-Content -Path ./readme.txt | Out-Printer
@@ -109,15 +113,19 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.PSObject
 
-You can pipe any object to `Out-Printer`.
+You can pipe any object to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-`Out-Printer` does not return any objects.
+This cmdlet returns no output.
 
 ## NOTES
+
+Windows PowerShell includes the following aliases for `Out-Printer`:
+
+- `lp`
 
 The cmdlets that contain the `Out` verb do not format objects. They just render them and send them
 to the specified display destination. If you send an unformatted object to an `Out` cmdlet, the

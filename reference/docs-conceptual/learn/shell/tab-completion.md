@@ -13,7 +13,7 @@ entry. Command names, parameter names, argument values and file paths can all be
 pressing the <kbd>Tab</kbd> key.
 
 The <kbd>Tab</kbd> key is the default key binding on Windows. **PSReadLine** also provides a
-`MenuComplete` function that's bound to <kbd>Ctrl</kbd>-<kbd>Space</kbd>. The `MenuComplete`
+`MenuComplete` function that's bound to <kbd>Ctrl</kbd>+<kbd>Space</kbd>. The `MenuComplete`
 function displays a list of matching completions below the command line.
 
 These keybindings can be changed using **PSReadLine** cmdlets or the application that's hosting
@@ -61,7 +61,7 @@ PowerShell 7.2
 - Fix tab completion for unlocalized `about*` topics
 - Fix splatting being treated as positional parameter in completions
 - Add completions for Comment-based Help keywords
-- Add completion for `#requires` statements
+- Add completion for `#Requires` statements
 - Add tab completion for **View** parameter of `Format-*` cmdlets
 - Add support for class-based argument completers
 

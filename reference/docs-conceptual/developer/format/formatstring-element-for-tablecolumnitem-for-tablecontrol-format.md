@@ -1,7 +1,6 @@
 ---
 description: FormatString Element for TableColumnItem for TableControl
 ms.date: 08/23/2021
-ms.topic: reference
 title: FormatString Element for TableColumnItem for TableControl
 ---
 # FormatString Element for TableColumnItem for TableControl
@@ -48,7 +47,7 @@ None.
 ## Text Value
 
 Specify the pattern that is used to format the data. For example, this pattern can be used to format
-the value of any property that is of type [System.Timespan](/dotnet/api/System.TimeSpan):
+the value of any property that is of type [System.TimeSpan](/dotnet/api/System.TimeSpan):
 {0:MMM}{0:dd}{0:HH}:{0:mm}.
 
 ## Remarks
