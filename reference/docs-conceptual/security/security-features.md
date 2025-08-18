@@ -104,9 +104,12 @@ transferred. The exchange involves the following steps:
 1. The server uses the public key to encrypt the session key and sends it to the client.
 1. Both the client and server use the new session key to encrypt a **SecureString** object.
 
-The PowerShell Remoting Protocol (PSRP) uses the `RSAEncryptionPadding.Pkcs1` during the key
-exchange. The algorithm, is **NOT** secure, therefore, the key exchange doesn't provide any extra
-security. PSRP requires a secure transport layer for secure data transfer.
+The PowerShell Remoting Protocol (PSRP) uses the `RSAEncryptionPadding.Pkcs1` algorithm during the
+key exchange. The algorithm is **NOT** secure, so the key exchange doesn't provide any extra
+security.
+
+> [!IMPORTANT]
+> You must use a secure transport layer to ensure secure data transfer over PSRP.
 
 Beginning in PowerShell v7.6-preview5, the key exchange was deprecated. The version of PSRP was
 incremented to v2.4 and includes the following changes:
@@ -120,13 +123,13 @@ incremented to v2.4 and includes the following changes:
 - The encryption and decryption steps for `SecureString` are skipped when both client and server are
   v2.4 or higher.
 
+This change is backward compatible.
+
+- For old clients or servers (v2.3 or lower), the key exchange is still used when needed.
 - PSRP can use a named pipe remote sessions when both client and server are on the same machine.
   Since it's possible for a remote client to connect to named pipe and the data is no longer
   encrypted with a session key, the named pipe (used for `Enter-PSHostProcess`) rejects the remote
   client.
-
-This change is backward compatible. For old clients or servers (v2.3 or lower), the key exchange is
-still used when needed.
 
 ## Security Servicing Criteria
 
