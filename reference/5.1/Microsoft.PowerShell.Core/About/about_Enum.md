@@ -1,7 +1,7 @@
 ---
 description: The `enum` statement is used to declare an enumeration. An enumeration is a distinct type that consists of a set of named labels called the enumerator list.
 Locale: en-US
-ms.date: 11/20/2023
+ms.date: 08/20/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_enum?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Enum
@@ -21,45 +21,51 @@ can use that enumeration in the code without having to parse or check for
 spelling errors.
 
 Enumerations are internally represented as integral value types with a starting
-value of zero. PowerShell enumerations use **System.Int32** (`[int]`) as the
-underlying type. By default, PowerShell assigns the first label in the list the
-value zero. By default, PowerShell assigns the remaining labels with
-consecutive integers.
+value of zero. By default, PowerShell enumerations use **System.Int32**
+(`[int]`) as the underlying type. By default, PowerShell assigns the first
+label in the list the value zero. By default, PowerShell assigns the remaining
+labels with consecutive integers.
+
+## Syntax
 
 In the definition, you can give labels any integer value. Labels with no value
 assigned take the next integer value.
 
-## Syntax
+Enum labels can only contain letters, underscores and digits, but must not
+start with a digit. The label can't be a quoted string; it must parse as a
+bareword string. Labels are parsed as strings not keywords. Therefore, it's
+possible to create a label that's the same name as a language keyword (such as
+`return`).
 
 Enumerations use the following syntaxes:
 
-### Integer enumeration definition syntax
+- Integer enumeration definition syntax
 
-```Syntax
-[[<attribute>]...] enum <enum-name> {
-    <label> [= <int-value>]
-    ...
-}
-```
+  ```Syntax
+  [[<attribute>]...] enum <enum-name> {
+      <label> [= <int-value>]
+      ...
+  }
+  ```
 
-### Flag enumeration definition syntax
+- Flag enumeration definition syntax
 
-```Syntax
-[[<attribute>]...] [Flags()] enum <enum-name>[ : <underlying-type-name>] {
-    <label 0> [= 1]
-    <label 1> [= 2]
-    <label 2> [= 4]
-    <label 3> [= 8]
-    ...
-    ...
-}
-```
+  ```Syntax
+  [[<attribute>]...] [Flags()] enum <enum-name>[ : <underlying-type-name>] {
+      <label 0> [= 1]
+      <label 1> [= 2]
+      <label 2> [= 4]
+      <label 3> [= 8]
+      ...
+      ...
+  }
+  ```
 
-### Enumeration access syntax
+- Enumeration access syntax
 
-```Syntax
-[<enum-name>]::<label>
-```
+  ```Syntax
+  [<enum-name>]::<label>
+  ```
 
 ## Examples
 
