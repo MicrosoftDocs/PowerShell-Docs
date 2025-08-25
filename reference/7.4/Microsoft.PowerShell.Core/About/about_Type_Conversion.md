@@ -536,9 +536,9 @@ For more information, see [about_Comparison_Operators][05].
 [13]: xref:System.ComponentModel.TypeConverter
 [14]: xref:System.ComponentModel.TypeConverterAttribute
 [15]: xref:System.Enum
-[16]: xref:System.Globalization.CultureInfo.InvariantCulture*
+[16]: xref:System.Globalization.CultureInfo.InvariantCulture%2A
 [17]: xref:System.Management.Automation.ArgumentTransformationAttribute
 [18]: xref:System.Management.Automation.PSTypeConverter
-[19]: xref:System.Math.DivRem*
-[20]: xref:System.Math.Round*#midpoint-values-and-rounding-conventions
-[21]: xref:System.Math.Truncate*
+[19]: xref:System.Math.DivRem%2A
+[20]: xref:System.Math.Round%2A#midpoint-values-and-rounding-conventions
+[21]: xref:System.Math.Truncate%2A
