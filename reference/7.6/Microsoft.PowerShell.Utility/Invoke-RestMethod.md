@@ -410,7 +410,7 @@ You can also pipe a body value to `Invoke-RestMethod`.
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
 the request. For query parameters, the cmdlet uses the **System.Net.WebUtility.UrlEncode** method
 method to encode the key-value pairs. For more information about encoding strings for URLs, see
-[the UrlEncode() method reference](xref:System.Net.WebUtility.UrlEncode*).
+[the UrlEncode() method reference](xref:System.Net.WebUtility.UrlEncode%2A).
 
 When the input is a POST request and the body is a **String**, the value to the left of the first
 equals sign (`=`) is set as a key in the form data and the remaining text is set as the value. To
@@ -1502,7 +1502,7 @@ PowerShell includes the following aliases for `Invoke-RestMethod`:
 Some features may not be available on all platforms.
 
 Because of changes in .NET Core 3.1, PowerShell 7.0 and higher use the
-[HttpClient.DefaultProxy](xref:System.Net.Http.HttpClient.DefaultProxy*) property to determine the
+[HttpClient.DefaultProxy](xref:System.Net.Http.HttpClient.DefaultProxy%2A) property to determine the
 proxy configuration.
 
 The value of this property differ depending on your platform:

@@ -230,4 +230,4 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [about_Tab_Expansion](./about/about_Tab_Expansion.md)
 
-[CompleteInput() method](xref:System.Management.Automation.CommandCompletion.CompleteInput*)
+[CompleteInput() method](xref:System.Management.Automation.CommandCompletion.CompleteInput%2A)

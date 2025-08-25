@@ -940,8 +940,8 @@ Iterations Test                                 TotalMilliseconds RelativeSpeed
 [10]: xref:Microsoft.PowerShell.Utility.Write-Host
 [11]: xref:System.Collections.ArrayList
 [12]: xref:System.Collections.Generic.List%601.ToArray%2A#system-collections-generic-list-1-toarray
-[13]: xref:System.Collections.Generic.List`1
-[14]: xref:System.Collections.Generic.List`1.Add%2A
+[13]: xref:System.Collections.Generic.List%601
+[14]: xref:System.Collections.Generic.List%601.Add%2A
 [15]: xref:System.Int32
 [16]: xref:System.IO.File.ReadLines%2A
 [17]: xref:System.IO.StreamReader
