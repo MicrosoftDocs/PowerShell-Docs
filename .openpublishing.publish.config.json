@@ -71,6 +71,7 @@
   "need_generate_pdf_url_template": false,
   "need_preview_pull_request": true,
   "notification_subscribers": [],
+  "package_version" : "latest",
   "redirection_files": [
     "redir/.openpublishing.redirection.json",
     "redir/.openpublishing.redirection.51.json",
