@@ -41,7 +41,7 @@ licenses.
   other rights in the material. A licensor may make special requests, such as
   asking that all changes be marked or described. Although not required by our
   licenses, you are encouraged to respect those requests where reasonable.
-  More_considerations for the public:
+  More considerations for the public:
   [wiki.creativecommons.org/Considerations_for_licensors][03]
 
 ---
