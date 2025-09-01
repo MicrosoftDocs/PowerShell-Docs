@@ -210,7 +210,7 @@ switch ( ([datetime]'1 Jan 1970').DayOfWeek ) {
 
 The **DayOfWeek** property of the date object is an enumeration. While
 enumerations can be compared to their numeric or string values, the `switch`
-statement converts the value to a the string representation of the enumeration.
+statement converts the value to a string representation of the enumeration.
 
 ```Output
 The string value matches a Thursday.

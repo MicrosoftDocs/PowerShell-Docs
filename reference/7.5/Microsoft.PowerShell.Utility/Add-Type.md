@@ -625,7 +625,7 @@ them. However, using `Add-Type` is still permitted to allow scripts to be implic
 any version of PowerShell.
 
 Assemblies in the GAC can be loaded by type name, rather than by path. Loading assemblies from an
-arbitrary path requires `Add-Type`, since those assemblies can't not be loaded automatically.
+arbitrary path requires `Add-Type`, since those assemblies can't be loaded automatically.
 
 ## RELATED LINKS
 
