@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 04/24/2025
+ms.date: 09/02/2025
 no-loc: [Debug, Verbose, Confirm]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -21,7 +21,7 @@ they're automatically available to any cmdlet.
 
 You can use the common parameters with any cmdlet, but they might not have an
 effect on all cmdlets. For example, if a cmdlet doesn't generate any verbose
-output, using the **Verbose** common parameter has no effect.
+output, using the `Verbose` common parameter has no effect.
 
 The common parameters are also available on advanced functions that use the
 `CmdletBinding` attribute or the `Parameter` attribute. When you use these
@@ -37,21 +37,21 @@ For more information, see [about_Preference_Variables][03].
 The following list displays the common parameters. Their aliases are listed in
 parentheses.
 
-- **Debug** (db)
-- **ErrorAction** (ea)
-- **ErrorVariable** (ev)
-- **InformationAction** (infa)
-- **InformationVariable** (iv)
-- **OutVariable** (ov)
-- **OutBuffer** (ob)
-- **PipelineVariable** (pv)
-- **ProgressAction** (proga)
-- **Verbose** (vb)
-- **WarningAction** (wa)
-- **WarningVariable** (wv)
+- `Debug` (db)
+- `ErrorAction` (ea)
+- `ErrorVariable` (ev)
+- `InformationAction` (infa)
+- `InformationVariable` (iv)
+- `OutVariable` (ov)
+- `OutBuffer` (ob)
+- `PipelineVariable` (pv)
+- `ProgressAction` (proga)
+- `Verbose` (vb)
+- `WarningAction` (wa)
+- `WarningVariable` (wv)
 
-The **Action** parameters are **ActionPreference** type values.
-**ActionPreference** is an enumeration with the following values:
+The **Action** parameters are `ActionPreference` type values.
+`ActionPreference` is an enumeration with the following values:
 
 |        Name        | Value |
 | ------------------ | ----- |
@@ -71,8 +71,8 @@ offer these parameters.
 
 The risk mitigation parameters are:
 
-- **WhatIf** (wi)
-- **Confirm** (cf)
+- `WhatIf` (wi)
+- `Confirm` (cf)
 
 ## Common parameter descriptions
 
@@ -93,15 +93,14 @@ Accept wildcard characters: False
 ```
 
 By default, debugging messages aren't displayed because the value of the
-`$DebugPreference` variable is **SilentlyContinue**.
+`$DebugPreference` variable is `SilentlyContinue`.
 
-The **Debug** parameter overrides the value of the `$DebugPreference` variable
-for the current command, setting the value of `$DebugPreference` to
-**Continue**.
+The `Debug` parameter overrides the value of the `$DebugPreference` variable
+for the current command, setting the value of `$DebugPreference` to `Continue`.
 
-`-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to
-suppress the display of debugging messages when `$DebugPreference` isn't
-**SilentlyContinue**, which is the default.
+`-Debug:$true` has the same effect as `-Debug`. Use `-Debug:$false` to suppress
+the display of debugging messages when `$DebugPreference` isn't
+`SilentlyContinue`, which is the default.
 
 ### -ErrorAction
 
@@ -120,13 +119,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **ErrorAction** parameter overrides the value of the
-`$ErrorActionPreference` variable for the current command. Because the default
-value of the `$ErrorActionPreference` variable is **Continue**, error messages
-are displayed and execution continues unless you use the **ErrorAction**
-parameter.
+The `ErrorAction` parameter overrides the value of the `$ErrorActionPreference`
+variable for the current command. Because the default value of the
+`$ErrorActionPreference` variable is `Continue`, error messages are displayed
+and execution continues unless you use the `ErrorAction` parameter.
 
-The **ErrorAction** parameter has no effect on terminating errors (such as
+The `ErrorAction` parameter has no effect on terminating errors (such as
 missing data, parameters that aren't valid, or insufficient permissions) that
 prevent a command from completing successfully.
 
@@ -134,8 +132,8 @@ prevent a command from completing successfully.
 - `Continue` displays the error message and continues executing the command.
   `Continue` is the default.
 - `Ignore` suppresses the error message and continues executing the command.
-  Unlike **SilentlyContinue**, **Ignore** doesn't add the error message to the
-  `$Error` automatic variable. The **Ignore** value is introduced in PowerShell
+  Unlike `SilentlyContinue`, `Ignore` doesn't add the error message to the
+  `$Error` automatic variable. The `Ignore` value is introduced in PowerShell
   3.0.
 - `Inquire` displays the error message and prompts you for confirmation before
   continuing execution. This value is rarely used.
@@ -146,7 +144,7 @@ prevent a command from completing successfully.
   PowerShell 6 and beyond.
 
 > [!NOTE]
-> The **ErrorAction** parameter overrides, but doesn't replace the value of the
+> The `ErrorAction` parameter overrides, but doesn't replace the value of the
 > `$ErrorActionPreference` variable when the parameter is used in a command to
 > run a script or function.
 
@@ -155,9 +153,9 @@ prevent a command from completing successfully.
 Error records are automatically store in the `$Error` automatic variable. For
 more information, see [about_Automatic_Variables][02].
 
-When you use the **ErrorVariable** parameter on a command, PowerShell also
-stores the error records emitted by the command in the variable specified by
-the parameter.
+When you use the `ErrorVariable` parameter on a command, PowerShell also stores
+the error records emitted by the command in the variable specified by the
+parameter.
 
 ```yaml
 Type: String
@@ -205,11 +203,11 @@ from all the commands in the session. You can use array notation, such as
 ### -InformationAction
 
 Introduced in PowerShell 5.0. Within the command or script in which it's used,
-the **InformationAction** common parameter overrides the value of the
+the `InformationAction` common parameter overrides the value of the
 `$InformationPreference` preference variable, which by default is set to
-**SilentlyContinue**. When you use `Write-Information` in a script with
-**InformationAction**, `Write-Information` values are shown depending on the
-value of the **InformationAction** parameter. For more information about
+`SilentlyContinue`. When you use `Write-Information` in a script with
+`InformationAction`, `Write-Information` values are shown depending on the
+value of the `InformationAction` parameter. For more information about
 `$InformationPreference`, see [about_Preference_Variables][03].
 
 ```yaml
@@ -228,7 +226,7 @@ Accept wildcard characters: False
 - `Stop` stops a command or script at an occurrence of the `Write-Information`
   command.
 - `Ignore` suppresses the informational message and continues running the
-  command. Unlike **SilentlyContinue**, **Ignore** completely forgets the
+  command. Unlike `SilentlyContinue`, `Ignore` completely forgets the
   informational message; it doesn't add the informational message to the
   information stream.
 - `Inquire` displays the informational message that you specify in a
@@ -240,22 +238,22 @@ Accept wildcard characters: False
   displayed, and the script continues without interruption.
 
 > [!NOTE]
-> The **InformationAction** parameter overrides, but doesn't replace the
+> The `InformationAction` parameter overrides, but doesn't replace the
 > value of the `$InformationAction` preference variable when the parameter
 > is used in a command to run a script or function.
 
 ### -InformationVariable
 
-Introduced in PowerShell 5.0. When you use the **InformationVariable** common
+Introduced in PowerShell 5.0. When you use the `InformationVariable` common
 parameter, information records are stored in the variable specified by the
 parameter. And PowerShell cmdlet can write information records to the
-**Information** stream. You can also use the `Write-Information` cmdlet to
-write information records.
+`Information` stream. You can also use the `Write-Information` cmdlet to write
+information records.
 
 Information records are displayed as messages in the console by default. You
-can control the display of information record by using the
-**InformationAction** common parameter. You can also change the behavior using
-the `$InformationPreference` preference variable. For more information about
+can control the display of information record by using the `InformationAction`
+common parameter. You can also change the behavior using the
+`$InformationPreference` preference variable. For more information about
 `$InformationPreference`, see [about_Preference_Variables][03].
 
 > [!NOTE]
@@ -357,19 +355,19 @@ $out
 ```
 
 > [!NOTE]
-> The variable created by the **OutVariable** parameter is a
+> The variable created by the `OutVariable` parameter is a
 > `[System.Collections.ArrayList]`.
 
 ### -PipelineVariable
 
-**PipelineVariable** allows access to the most recent value passed into the
-next pipeline segment by the command that uses this parameter. Any command in
-the pipeline can access the value using the named **PipelineVariable**. The
-value is assigned to the variable when it's passed into the next pipeline
-segment. This makes the **PipelineVariable** easier to use than a specific
-temporary variable, which might need to be assigned in multiple locations.
+`PipelineVariable` allows access to the most recent value passed into the next
+pipeline segment by the command that uses this parameter. Any command in the
+pipeline can access the value using the named `PipelineVariable`. The value is
+assigned to the variable when it's passed into the next pipeline segment. This
+makes the `PipelineVariable` easier to use than a specific temporary variable,
+which might need to be assigned in multiple locations.
 
-Unlike `$_` or `$PSItem`, using a **PipelineVariable** allows any pipeline
+Unlike `$_` or `$PSItem`, using a `PipelineVariable` allows any pipeline
 command to access pipeline values passed (and saved) by commands other than the
 immediately preceding command. Pipeline commands can access the last value
 piped from while processing the next item passing through the pipeline. This
@@ -377,7 +375,7 @@ allows a command to _feed back_ its output to a previous command (or itself).
 
 >[!NOTE]
 > Advanced functions can have up to three script blocks: `begin`, `process`,
-> and `end`. When using the **PipelineVariable** parameter with advanced
+> and `end`. When using the `PipelineVariable` parameter with advanced
 > functions, only values from the first defined script block are assigned to
 > the variable as the function runs. For more information, see
 > [Advanced functions][05]. PowerShell 7.2 corrects this behavior.
@@ -395,22 +393,22 @@ Accept wildcard characters: False
 Valid values are strings, the same as for any variable names.
 
 > [!CAUTION]
-> The **PipelineVariable** is scoped to the pipeline in which it's invoked.
+> The `PipelineVariable` is scoped to the pipeline in which it's invoked.
 > Variables outside the pipeline, which use same name, are cleared before the
-> pipeline is executed. The **PipelineVariable** goes out of scope when the
+> pipeline is executed. The `PipelineVariable` goes out of scope when the
 > pipeline terminates. If multiple commands within the pipeline specify the
-> same **PipelineVariable** then there is only one shared variable. That
-> variable is updated with the most recent piped output from the command that
-> specifies the variable.
+> same `PipelineVariable` then there is only one shared variable. That variable
+> is updated with the most recent piped output from the command that specifies
+> the variable.
 >
 > Some _blocking_ commands collect all the pipeline items before producing any
 > output, for example `Sort-Object` or `Select-Object -Last`. Any
-> **PipelineVariable** assigned in a command before such a blocking command
+> `PipelineVariable` assigned in a command before such a blocking command
 > always contains the final piped item from the preceding command when used in
 > a command after the blocking command.
 
-The following is an example of how **PipelineVariable** works. In this example,
-the **PipelineVariable** parameter is added to a `ForEach-Object` command to
+The following is an example of how `PipelineVariable` works. In this example,
+the `PipelineVariable` parameter is added to a `ForEach-Object` command to
 store the results of the command in variables. A range of numbers, 1 to 5, are
 piped into the first `ForEach-Object` command, the results of which are stored
 in a variable named `$temp`.
@@ -460,13 +458,13 @@ temp
 ```
 
 > [!CAUTION]
-> There are two known issues with using the **PipelineVariable** parameter in a
+> There are two known issues with using the `PipelineVariable` parameter in a
 > pipeline that includes CimCmdlets or CDXML cmdlets. In the following
 > examples, `Get-Partition` is a CDXML function and `Get-CimInstance` is a
 > CimCmdlet.
 
 1. When the first command is a CDXML function and downstream contains either a
-   CimCmdlet cmdlet or CDXML function, **PipelineVariable** is reset to
+   CimCmdlet cmdlet or CDXML function, `PipelineVariable` is reset to
    `$null`.
 
    ```powershell
@@ -500,7 +498,7 @@ temp
    ```
 
 1. When the preceding command is _not_ a CDXML command and the downstream
-   contains either command type, the **PipelineVariable** remains as the last
+   contains either command type, the `PipelineVariable` remains as the last
    accumulated object.
 
    ```powershell
@@ -535,10 +533,10 @@ temp
 Determines how PowerShell responds to progress updates generated by a script,
 cmdlet, or provider, such as the progress bars generated by the
 [Write-Progress][06] cmdlet. The `Write-Progress` cmdlet creates progress bars
-that show a command's status. The **ProgressAction** parameter was added in
+that show a command's status. The `ProgressAction` parameter was added in
 PowerShell 7.4.
 
-The **ProgressAction** parameter takes one of the [`ActionPreference`][07]
+The `ProgressAction` parameter takes one of the [`ActionPreference`][07]
 enumeration values: `SilentlyContinue`, `Stop`, `Continue`, `Inquire`,
 `Ignore`, `Suspend`, or `Break`.
 
@@ -581,20 +579,20 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **Verbose** parameter overrides the value of the `$VerbosePreference`
+The `Verbose` parameter overrides the value of the `$VerbosePreference`
 variable for the current command. Because the default value of the
-`$VerbosePreference` variable is **SilentlyContinue**, verbose messages aren't
+`$VerbosePreference` variable is `SilentlyContinue`, verbose messages aren't
 displayed by default.
 
 - `-Verbose:$true` has the same effect as `-Verbose`
 - `-Verbose:$false` suppresses the display of verbose messages. Use this
-  parameter when the value of `$VerbosePreference` isn't **SilentlyContinue**
+  parameter when the value of `$VerbosePreference` isn't `SilentlyContinue`
   (the default).
 
 ### -WarningAction
 
-Determines how the cmdlet responds to a warning from the command. **Continue**
-is the default value. This parameter works only when the command generates a
+Determines how the cmdlet responds to a warning from the command. `Continue` is
+the default value. This parameter works only when the command generates a
 warning message. For example, this parameter works when a command contains the
 `Write-Warning` cmdlet.
 
@@ -609,10 +607,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **WarningAction** parameter overrides the value of the `$WarningPreference`
+The `WarningAction` parameter overrides the value of the `$WarningPreference`
 variable for the current command. Because the default value of the
-`$WarningPreference` variable is **Continue**, warnings are displayed and
-execution continues unless you use the **WarningAction** parameter.
+`$WarningPreference` variable is `Continue`, warnings are displayed and
+execution continues unless you use the `WarningAction` parameter.
 
 - `Break` enters the debugger when a warning occurs.
 - `Continue` displays the warning messages and continues executing the command.
@@ -624,9 +622,9 @@ execution continues unless you use the **WarningAction** parameter.
 - `Stop` displays the warning message and stops executing the command.
 
 > [!NOTE]
-> The **WarningAction** parameter overrides, but doesn't replace the value of
-> the `$WarningAction` preference variable when the parameter is used in a
-> command to run a script or function.
+> The `WarningAction` parameter overrides, but doesn't replace the value of the
+> `$WarningAction` preference variable when the parameter is used in a command
+> to run a script or function.
 
 ### -WarningVariable
 
@@ -693,11 +691,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **WhatIf** parameter overrides the value of the `$WhatIfPreference`
-variable for the current command. Because the default value of the
-`$WhatIfPreference` variable is 0 (disabled), **WhatIf** behavior isn't done
-without the **WhatIf** parameter. For more information, see
-[about_Preference_Variables][03].
+The `WhatIf` parameter overrides the value of the `$WhatIfPreference` variable
+for the current command. Because the default value of the `$WhatIfPreference`
+variable is 0 (disabled), `WhatIf` behavior isn't done without the `WhatIf`
+parameter. For more information, see [about_Preference_Variables][03].
 
 - `$true` has the same effect as `-WhatIf`.
 - `$false` suppresses the automatic WhatIf behavior that results when the value
@@ -732,7 +729,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-The **Confirm** parameter overrides the value of the `$ConfirmPreference`
+The `Confirm` parameter overrides the value of the `$ConfirmPreference`
 variable for the current command. The default value is true. For more
 information, see [about_Preference_Variables][03].
 
@@ -741,7 +738,7 @@ information, see [about_Preference_Variables][03].
   `$ConfirmPreference` is less than or equal to the estimated risk of the
   cmdlet.
 
-For example, the following command uses the **Confirm** parameter with a
+For example, the following command uses the `Confirm` parameter with a
 `Remove-Item` command. Before removing the item, PowerShell lists the
 operations it would do and the items that would be affected, and asks for
 approval.
@@ -769,14 +766,14 @@ The Confirm response options are as follows:
 | `Suspend` (`S`):   | Pause the command and create a temporary session.   |
 | `Help` (`?`)       | Display help for these options.                     |
 
-The **Suspend** option places the command on hold and creates a temporary
-nested session in which you can work until you're ready to choose a **Confirm**
-option. The command prompt for the nested session has two extra carets (>>) to
-indicate that it's a child operation of the original parent command. You can
-run commands and scripts in the nested session. To end the nested session and
+The `Suspend` option places the command on hold and creates a temporary nested
+session in which you can work until you're ready to choose a `Confirm` option.
+The command prompt for the nested session has two extra carets (>>) to indicate
+that it's a child operation of the original parent command. You can run
+commands and scripts in the nested session. To end the nested session and
 return to the Confirm options for the original command, type "exit".
 
-In the following example, the **Suspend** option (S) is used to halt a command
+In the following example, the `Suspend` option (S) is used to halt a command
 temporarily while the user checks the help for a command parameter. After
 obtaining the needed information, the user types "exit" to end the nested
 prompt and then selects the Yes (y) response to the Confirm query.
