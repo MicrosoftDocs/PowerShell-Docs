@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
-ms.date: 08/04/2025
+ms.date: 09/02/2025
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -17,7 +17,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |     PRs Merged     | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | Grand Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community          |    3 |  194 |  446 |  467 |  321 |  160 |   99 |  121 |  108 |   81 |  128 |        2128 |
+| Community          |    3 |  194 |  446 |  467 |  321 |  160 |   99 |  121 |  108 |   81 |  132 |        2132 |
 | matt9ucci          |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |      |         274 |
 | nschonni           |      |      |      |   14 |  138 |   10 |      |      |      |      |      |         162 |
 | kiazhi             |      |   25 |   79 |   12 |      |      |      |      |      |      |      |         116 |
@@ -28,7 +28,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | ehmiiz             |      |      |      |      |      |      |      |   22 |   14 |      |      |          36 |
 | ArieHein           |      |      |      |      |    1 |      |      |      |      |    7 |   25 |          33 |
 | yecril71pl         |      |      |      |      |      |   21 |    3 |    3 |      |      |      |          27 |
-| changeworld        |      |      |      |      |      |      |      |    3 |      |      |   20 |          23 |
+| changeworld        |      |      |      |      |      |      |      |    3 |      |      |   22 |          25 |
 | skycommand         |      |      |    1 |    3 |    3 |    6 |      |    1 |    4 |    1 |    2 |          21 |
 | Dan1el42           |      |   20 |      |      |      |      |      |      |      |      |      |          20 |
 | NReilingh          |      |    2 |      |   13 |    3 |      |      |      |      |      |      |          18 |
@@ -48,15 +48,15 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |   Issues Opened    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | Grand Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community          |    3 |   54 |   95 |  211 |  562 |  557 |  363 |  225 |  270 |  220 |  105 |        2665 |
+| Community          |    3 |   54 |   95 |  210 |  562 |  557 |  363 |  225 |  270 |  220 |  114 |        2673 |
 | mklement0          |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   24 |    2 |         278 |
 | ehmiiz             |      |      |      |      |      |      |      |   20 |   14 |      |      |          34 |
 | iSazonov           |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |    1 |      |          31 |
+| iRon7              |      |      |      |      |      |    2 |    2 |    2 |   10 |    8 |    3 |          27 |
 | jszabo98           |      |      |      |    2 |   15 |    6 |    1 |      |    1 |    2 |      |          27 |
-| iRon7              |      |      |      |      |      |    2 |    2 |    2 |   10 |    8 |    2 |          26 |
 | juvtib             |      |      |      |      |      |   15 |    7 |      |      |      |      |          22 |
+| surfingoldelephant |      |      |      |      |      |      |      |      |      |    6 |   15 |          21 |
 | doctordns          |      |      |    5 |    3 |    5 |    7 |    1 |      |      |      |      |          21 |
-| surfingoldelephant |      |      |      |      |      |      |      |      |      |    6 |   14 |          20 |
 | peetrike           |      |      |      |    1 |      |    4 |    2 |    6 |    4 |    3 |      |          20 |
 | JustinGrote        |      |      |      |    1 |    3 |    6 |    1 |    1 |    2 |    2 |    2 |          18 |
 | vexx32             |      |      |      |    3 |   11 |      |      |    3 |      |      |      |          17 |
