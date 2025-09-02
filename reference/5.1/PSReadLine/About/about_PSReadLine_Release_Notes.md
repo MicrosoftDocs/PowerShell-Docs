@@ -1,7 +1,7 @@
 ---
 description: This article contains the list of changes for each released version of PSReadLine.
 Locale: en-US
-ms.date: 08/18/2025
+ms.date: 09/02/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_release_notes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Release_Notes
@@ -11,7 +11,7 @@ title: about_PSReadLine_Release_Notes
 This is a summary of changes to the **PSReadLine** module. For a full list of
 changes, see the **PSReadLine** [ChangeLog][01].
 
-- Current preview: v2.4.0-beta1
+- Current preview: v2.4.4-beta4
 - Current stable release: v2.3.6
 
 ## PSReadLine release history
@@ -28,6 +28,12 @@ Windows PowerShell 5.1.
 - v2.0.0 ships in Windows PowerShell 5.1
 
 ## Release Notes
+
+### 2.4.4-beta4 - 2025-08-28
+
+- Added screen reader support to PSReadLine - The new render implementation
+  redrawing the terminal buffer to avoid unnecessary and confusing output for
+  screen readers.
 
 ### v2.4.3-beta3 - 2025-07-23
 
