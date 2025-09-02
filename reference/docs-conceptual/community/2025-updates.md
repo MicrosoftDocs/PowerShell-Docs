@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 08/04/2025
+ms.date: 09/02/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -13,6 +13,33 @@ get started.
 
 <!-- Link references -->
 [01]: contributing/overview.md
+
+## 2025-August
+
+Content updates
+
+- AI Shell updates for preview 6 release
+- [MCP support](/powershell/utility-modules/aishell/how-to/mcp-support)
+- DSC updates for v3.1.1 release
+
+GitHub stats
+
+- 16 PRs merged (3 from Community)
+- 34 issues opened (31 from Community)
+- 36 issues closed (32 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| changeworld |     3      |               |
+| sethvs      |     2      |               |
+| yashanshh   |     2      |               |
+| Gijsreyn    |     2      |               |
+| TNGBBK      |            |       2       |
 
 ## 2025-July
 
