@@ -25,17 +25,17 @@ required to export an assembly that is installed in the [Global Assembly Cache][
 manifest is also required for modules that support the Updatable Help feature. Updatable Help uses
 the **HelpInfoUri** key in the module manifest to find the Help information (HelpInfo XML) file that
 contains the location of the updated help files for the module. For more information about Updatable
-Help, see [Supporting Updatable Help][06].
+Help, see [Supporting Updatable Help][07].
 
 ### To create and use a module manifest
 
-1. The best practice to create a module manifest is to use the [New-ModuleManifest][09] cmdlet. You
+1. The best practice to create a module manifest is to use the [New-ModuleManifest][10] cmdlet. You
    can use parameters to specify one or more of the manifest's default keys and values. The only
    requirement is to name the file. `New-ModuleManifest` creates a module manifest with your
    specified values, and includes the remaining keys and their default values. If you need to create
    multiple modules, use `New-ModuleManifest` to create a module manifest template that can be
    modified for your different modules. For an example of a default module manifest, see the
-   [Sample module manifest][05].
+   [Sample module manifest][06].
 
    `New-ModuleManifest -Path C:\myModuleName.psd1 -ModuleVersion "2.0" -Author "YourNameHere"`
 
@@ -52,8 +52,8 @@ Help, see [Supporting Updatable Help][06].
    **ModuleVersion** number.
 
    For descriptions of the keys and values you can include in a module manifest, see the
-   [Module manifest elements][04] table. For more information, see the parameter descriptions in the
-   [New-ModuleManifest][09] cmdlet.
+   [Module manifest elements][05] table. For more information, see the parameter descriptions in the
+   [New-ModuleManifest][10] cmdlet.
 
 1. To address any scenarios that might not be covered by the base module manifest elements, you have
    the option to add additional code to your module manifest.
@@ -63,7 +63,7 @@ Help, see [Supporting Updatable Help][06].
    operators, and the basic PowerShell data types.
 
 1. After you've created your module manifest, you can test it to confirm that any paths described in
-   the manifest are correct. To test your module manifest, use [Test-ModuleManifest][10].
+   the manifest are correct. To test your module manifest, use [Test-ModuleManifest][11].
 
    `Test-ModuleManifest myModuleName.psd1`
 
@@ -73,14 +73,15 @@ Help, see [Supporting Updatable Help][06].
    When you copy your module onto a system and import it, PowerShell uses the module manifest to
    import your module.
 
-1. Optionally, you can directly test your module manifest with a call to [Import-Module][08] by
+1. Optionally, you can directly test your module manifest with a call to [Import-Module][09] by
    dot-sourcing the manifest itself.
 
    `Import-Module .\myModuleName.psd1`
 
 ## Module manifest elements
 
-The following table describes the elements you can include in a module manifest.
+The following table describes the elements you can include in a module manifest. For more detailed
+information, see [about_Module_Manifests][04].
 
 |                            Element                            |                Default                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -118,7 +119,7 @@ The following table describes the elements you can include in a module manifest.
 | **ReleaseNotes**<br /> Type: `String`                         | `<empty string>`                       | Specifies the module's release notes. <br /> Example: `ReleaseNotes = 'The release notes provide information about the module.`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | **PreRelease**<br /> Type: `String`                           | `<empty string>`                       | This parameter was added in PowerShellGet 1.6.6. A **PreRelease** string that identifies the module as a prerelease version in online galleries. <br /> Example: `PreRelease = 'alpha'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **RequireLicenseAcceptance**<br /> Type: `Boolean`            | `$false`                               | This parameter was added in PowerShellGet 1.5. Flag to indicate whether the module requires explicit user acceptance for install, update, or save. <br /> Example: `RequireLicenseAcceptance = $false`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **ExternalModuleDependencies**<br /> Type: `String[]`         | `@()`                                  | This parameter was added in PowerShellGet v2. A list of external modules that this module is dependent upon. <br /> Example: `ExternalModuleDependencies =  @("ExtModule1", "ExtModule2", "ExtModule3")`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **ExternalModuleDependencies**<br /> Type: `String[]`         | `@()`                                  | This parameter was added in PowerShellGet v2. A list of external modules that this module is dependent upon. <br /> Example: `ExternalModuleDependencies =  @("ExtModule1", "ExtModule2", "ExtModule3")`. This list is informational only. Unlike **RequiredModules**, it isn't used to enforce dependencies.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | **HelpInfoURI**<br /> Type: `String`                          | `<empty string>`                       | HelpInfo URI of this module. <br /> Example: `HelpInfoURI = 'https://www.contoso.com/help'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | **DefaultCommandPrefix**<br /> Type: `String`                 | `<empty string>`                       | Default prefix for commands exported from this module. Override the default prefix using `Import-Module -Prefix`. <br /> Example: `DefaultCommandPrefix = 'My'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
@@ -266,21 +267,22 @@ PrivateData = @{
 - [about_Comparison_Operators][02]
 - [about_If][03]
 - [Global Assembly Cache][01]
-- [Import-Module][08]
-- [New-ModuleManifest][09]
-- [Test-ModuleManifest][10]
-- [Update-ModuleManifest][11]
-- [Writing a Windows PowerShell Module][07]
+- [Import-Module][09]
+- [New-ModuleManifest][10]
+- [Test-ModuleManifest][11]
+- [Update-ModuleManifest][12]
+- [Writing a Windows PowerShell Module][08]
 
 <!-- link references -->
 [01]: /dotnet/framework/app-domains/gac
 [02]: /powershell/module/microsoft.powershell.core/about/about_comparison_operators
 [03]: /powershell/module/microsoft.powershell.core/about/about_if
-[04]: #module-manifest-elements
-[05]: #sample-module-manifest
-[06]: supporting-updatable-help.md
-[07]: writing-a-windows-powershell-module.md
-[08]: xref:Microsoft.PowerShell.Core.Import-Module
-[09]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
-[10]: xref:Microsoft.PowerShell.Core.Test-ModuleManifest
-[11]: xref:PowerShellGet.Update-ModuleManifest
+[04]: /powershell/module/microsoft.powershell.core/about/about_module_manifests
+[05]: #module-manifest-elements
+[06]: #sample-module-manifest
+[07]: supporting-updatable-help.md
+[08]: writing-a-windows-powershell-module.md
+[09]: xref:Microsoft.PowerShell.Core.Import-Module
+[10]: xref:Microsoft.PowerShell.Core.New-ModuleManifest
+[11]: xref:Microsoft.PowerShell.Core.Test-ModuleManifest
+[12]: xref:PowerShellGet.Update-ModuleManifest

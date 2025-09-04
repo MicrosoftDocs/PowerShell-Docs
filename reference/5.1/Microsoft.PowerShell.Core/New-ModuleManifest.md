@@ -252,8 +252,9 @@ $moduleSettings = @{
 New-ModuleManifest @moduleSettings
 ```
 
-For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
-For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
+For information about Updatable Help, see [about_Updatable_Help](About/about_Updatable_Help.md).
+For information about the HelpInfo XML file, see
+[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 ### Example 5 - Getting module information
 
@@ -951,8 +952,9 @@ Enter each module name as a string or as a hash table with **ModuleName** and **
 keys. The hash table can also have an optional **GUID** key. You can combine strings and hash tables
 in the parameter value.
 
-In PowerShell 2.0, `Import-Module` doesn't import required modules automatically. It just verifies
-that the required modules are in the global session state.
+When you install a module using the `Install-Module` or `Install-PSResource` commands, these
+commands check this list. If the required modules aren't installed, the commands attempt to install
+required modules.
 
 ```yaml
 Type: System.Object[]
@@ -1139,10 +1141,6 @@ that is installed in the global assembly cache.
 To add or change files in the `$PSHOME\Modules` directory, start PowerShell with the **Run as
 administrator** option.
 
-In PowerShell 2.0, many parameters of `New-ModuleManifest` were mandatory, even though they weren't
-required in a module manifest. Beginning in PowerShell 3.0, only the **Path** parameter is
-mandatory.
-
 A session is an instance of the PowerShell execution environment. A session can have one or more
 session states. By default, a session has only a global session state, but each imported module has
 its own session state. Session states allow the commands in a module to run without affecting the
@@ -1151,6 +1149,13 @@ global session state.
 The caller's session state is the session state into which a module is imported. Typically, it
 refers to the global session state, but when a module imports nested modules, the caller is the
 module and the caller's session state is the module's session state.
+
+In PowerShell 2.0, many parameters of `New-ModuleManifest` were mandatory, even though they weren't
+required in a module manifest. Beginning in PowerShell 3.0, only the **Path** parameter is
+mandatory.
+
+In PowerShell 2.0, `Import-Module` doesn't import required modules automatically. It just verifies
+that the required modules are in the global session state.
 
 ## RELATED LINKS
 

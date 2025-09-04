@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/19/2024
+ms.date: 09/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -217,9 +217,9 @@ outputted objects have a specific standard format, the expanded property might n
 
 ```powershell
 # Create a custom object to use for the Select-Object example.
-$object = [pscustomobject]@{Name="CustomObject";Expand=@(1,2,3,4,5)}
+$object = [pscustomobject]@{Name="CustomObject";List=@(1,2,3,4,5)}
 # Use the ExpandProperty parameter to Expand the property.
-$object | Select-Object -ExpandProperty Expand -Property Name
+$object | Select-Object -ExpandProperty List -Property Name
 ```
 
 ```Output
@@ -233,7 +233,7 @@ $object | Select-Object -ExpandProperty Expand -Property Name
 ```powershell
 # The output did not contain the Name property, but it was added successfully.
 # Use Get-Member to confirm the Name property was added and populated.
-$object | Select-Object -ExpandProperty Expand -Property Name | Get-Member
+$object | Select-Object -ExpandProperty List -Property Name | Get-Member -MemberType Properties
 ```
 
 ```Output
@@ -241,27 +241,6 @@ $object | Select-Object -ExpandProperty Expand -Property Name | Get-Member
 
 Name        MemberType   Definition
 ----        ----------   ----------
-CompareTo   Method       int CompareTo(System.Object value), int CompareTo(int value), ...
-Equals      Method       bool Equals(System.Object obj), bool Equals(int obj), bool IEq...
-GetHashCode Method       int GetHashCode()
-GetType     Method       type GetType()
-GetTypeCode Method       System.TypeCode GetTypeCode(), System.TypeCode IConvertible.Ge...
-ToBoolean   Method       bool IConvertible.ToBoolean(System.IFormatProvider provider)
-ToByte      Method       byte IConvertible.ToByte(System.IFormatProvider provider)
-ToChar      Method       char IConvertible.ToChar(System.IFormatProvider provider)
-ToDateTime  Method       datetime IConvertible.ToDateTime(System.IFormatProvider provider)
-ToDecimal   Method       decimal IConvertible.ToDecimal(System.IFormatProvider provider)
-ToDouble    Method       double IConvertible.ToDouble(System.IFormatProvider provider)
-ToInt16     Method       int16 IConvertible.ToInt16(System.IFormatProvider provider)
-ToInt32     Method       int IConvertible.ToInt32(System.IFormatProvider provider)
-ToInt64     Method       long IConvertible.ToInt64(System.IFormatProvider provider)
-ToSByte     Method       sbyte IConvertible.ToSByte(System.IFormatProvider provider)
-ToSingle    Method       float IConvertible.ToSingle(System.IFormatProvider provider)
-ToString    Method       string ToString(), string ToString(string format), string ToS...
-ToType      Method       System.Object IConvertible.ToType(type conversionType, System...
-ToUInt16    Method       uint16 IConvertible.ToUInt16(System.IFormatProvider provider)
-ToUInt32    Method       uint32 IConvertible.ToUInt32(System.IFormatProvider provider)
-ToUInt64    Method       uint64 IConvertible.ToUInt64(System.IFormatProvider provider)
 Name        NoteProperty string Name=CustomObject
 ```
 
@@ -425,6 +404,30 @@ name children
 USA  @{name=Southwest}
 ```
 
+### Example 15: Use wildcards with the -ExpandProperty parameter
+
+This example demonstrates using wildcards with the **ExpandProperty** parameter. The wildcard
+character must resolve to a single property name. If the wildcard character resolves to more than
+one property name, `Select-Object` returns an error.
+
+```powershell
+# Create a custom object.
+$object = [pscustomobject]@{
+    Label   = "MyObject"
+    Names   = @("John","Jane","Joe")
+    Numbers = @(1,2,3,4,5)
+}
+# Try to expand multiple properties using a wildcard.
+$object | Select-Object -ExpandProperty N*
+Select-Object: Multiple properties cannot be expanded.
+
+# Use a wildcard that resolves to a single property.
+$object | Select-Object -ExpandProperty Na*
+John
+Jane
+Joe
+```
+
 ## PARAMETERS
 
 ### -ExcludeProperty
@@ -448,17 +451,19 @@ Accept wildcard characters: True
 
 Specifies a property to select, and indicates that an attempt should be made to expand that
 property. If the input object pipeline doesn't have the property named, `Select-Object` returns an
-error.
+error. This parameter supports wildcards. However, the wildcard character must resolve to a single
+property name. If the wildcard character resolves to more than one property name, `Select-Object`
+returns an error.
+
+When you use **ExpandProperty**, `Select-Object` attempts to expand the specified property for every
 
 - If the specified property is an array, each value of the array is included in the output.
 - If the specified property is an object, the objects properties are expanded for every
   **InputObject**
 
-In either case, the output objects' **Type** matches the expanded property's **Type**.
-
-> [!NOTE]
-> There is a side-effect when using **ExpandProperty**. The `Select-Object` adds the selected
-> properties to the original object as **NoteProperty** members.
+In either case, the output objects' **Type** matches the expanded property's **Type**. There is a
+side-effect when using **ExpandProperty**. The `Select-Object` adds the selected properties to the
+original object as **NoteProperty** members.
 
 If the **Property** parameter is specified, `Select-Object` attempts to add each selected property
 as a **NoteProperty** to every outputted object.
@@ -481,7 +486,7 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
-Accept wildcard characters: False
+Accept wildcard characters: True
 ```
 
 ### -First

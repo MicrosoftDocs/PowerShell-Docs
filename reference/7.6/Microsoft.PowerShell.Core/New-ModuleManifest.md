@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 09/04/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
@@ -121,10 +121,12 @@ Copyright = '(c) ContosoAdmin. All rights reserved.'
 # Minimum version of the PowerShell host required by this module
 # PowerShellHostVersion = ''
 
-# Minimum version of Microsoft .NET Framework required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
+# Minimum version of Microsoft .NET Framework required by this module. This prerequisite
+# is valid for the PowerShell Desktop edition only.
 # DotNetFrameworkVersion = ''
 
-# Minimum version of the common language runtime (CLR) required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
+# Minimum version of the common language runtime (CLR) required by this module. This
+# prerequisite is valid for the PowerShell Desktop edition only.
 # CLRVersion = ''
 
 # Processor architecture (None, X86, Amd64) required by this module
@@ -136,7 +138,8 @@ Copyright = '(c) ContosoAdmin. All rights reserved.'
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
 
-# Script files (.ps1) that are run in the caller's environment prior to importing this module.
+# Script files (.ps1) that are run in the caller's environment prior to importing this
+# module.
 # ScriptsToProcess = @()
 
 # Type files (.ps1xml) to be loaded when importing this module
@@ -148,16 +151,19 @@ Copyright = '(c) ContosoAdmin. All rights reserved.'
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 # NestedModules = @()
 
-# Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
+# Functions to export from this module, for best performance, do not use wildcards and do
+# not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = @()
 
-# Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+# Cmdlets to export from this module, for best performance, do not use wildcards and do
+# not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
 
 # Variables to export from this module
 VariablesToExport = '*'
 
-# Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
+# Aliases to export from this module, for best performance, do not use wildcards and do
+# not delete the entry, use an empty array if there are no aliases to export.
 AliasesToExport = @()
 
 # DSC resources to export from this module
@@ -169,7 +175,8 @@ AliasesToExport = @()
 # List of all files packaged with this module
 # FileList = @()
 
-# Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
+# Private data to pass to the module specified in RootModule/ModuleToProcess. This may
+also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
 
     PSData = @{
@@ -205,7 +212,8 @@ PrivateData = @{
 # HelpInfo URI of this module
 # HelpInfoURI = ''
 
-# Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
+# Default prefix for commands exported from this module. Override the default prefix
+# using Import-Module -Prefix.
 # DefaultCommandPrefix = ''
 
 }
@@ -265,8 +273,9 @@ $moduleSettings = @{
 New-ModuleManifest @moduleSettings
 ```
 
-For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
-For information about the HelpInfo XML file, see [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
+For information about Updatable Help, see [about_Updatable_Help](About/about_Updatable_Help.md).
+For information about the HelpInfo XML file, see
+[Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
 ### Example 5 - Getting module information
 
@@ -549,7 +558,9 @@ Accept wildcard characters: True
 
 ### -ExternalModuleDependencies
 
-A list of external modules that this module is depends on.
+A list of external modules that this module is depends on. This list is only used to document the
+module's dependencies and is not enforced by PowerShell. It's not used by the PowerShellGet or
+PSResourceGet commands, or by the PowerShell Gallery.
 
 ```yaml
 Type: System.String[]
@@ -608,7 +619,7 @@ Specifies the functions that the module exports. Wildcards are permitted.
 You can use this parameter to restrict the functions that are exported by the module. It can remove
 functions from the list of exported aliases, but it can't add functions to the list.
 
-If you omit this parameter, `New-ModuleManifest` creates an **FunctionsToExport** key with a value
+If you omit this parameter, `New-ModuleManifest` creates a **FunctionsToExport** key with a value
 of `*` (all), meaning that all functions defined in the module are exported by the manifest.
 
 ```yaml
@@ -1000,8 +1011,9 @@ Enter each module name as a string or as a hash table with **ModuleName** and **
 keys. The hash table can also have an optional **GUID** key. You can combine strings and hash tables
 in the parameter value.
 
-In PowerShell 2.0, `Import-Module` doesn't import required modules automatically. It just verifies
-that the required modules are in the global session state.
+When you install a module using the `Install-Module` or `Install-PSResource` commands, these
+commands check this list. If the required modules aren't installed, the commands attempt to install
+required modules.
 
 ```yaml
 Type: System.Object[]
@@ -1211,10 +1223,6 @@ administrator** option.
 > and the error is ignored. All managed DLLs are loaded in the process. This behavior was removed in
 > PowerShell 7.1.
 
-In PowerShell 2.0, many parameters of `New-ModuleManifest` were mandatory, even though they weren't
-required in a module manifest. Beginning in PowerShell 3.0, only the **Path** parameter is
-mandatory.
-
 A session is an instance of the PowerShell execution environment. A session can have one or more
 session states. By default, a session has only a global session state, but each imported module has
 its own session state. Session states allow the commands in a module to run without affecting the
@@ -1223,6 +1231,13 @@ global session state.
 The caller's session state is the session state into which a module is imported. Typically, it
 refers to the global session state, but when a module imports nested modules, the caller is the
 module and the caller's session state is the module's session state.
+
+In PowerShell 2.0, many parameters of `New-ModuleManifest` were mandatory, even though they weren't
+required in a module manifest. Beginning in PowerShell 3.0, only the **Path** parameter is
+mandatory.
+
+In PowerShell 2.0, `Import-Module` doesn't import required modules automatically. It just verifies
+that the required modules are in the global session state.
 
 ## RELATED LINKS
 
