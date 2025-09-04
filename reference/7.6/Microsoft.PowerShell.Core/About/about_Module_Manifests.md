@@ -1,7 +1,7 @@
 ---
 description: Describes the settings and practices for writing module manifest files.
 Locale: en-US
-ms.date: 07/07/2023
+ms.date: 09/04/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Module_Manifests
@@ -64,6 +64,7 @@ PrivateData = @{
         # ProjectUri = ''
         # IconUri = ''
         # ReleaseNotes = ''
+        # ExternalModuleDependencies = @()
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 # HelpInfoURI = ''
@@ -1470,9 +1471,9 @@ The **PSData** child property is used for the following scenarios:
 
 - PowerShell Gallery - When you create a module manifest using
   `New-ModuleManifest` the cmdlet prepopulates the **PSData** hashtable with
-  place holder keys that are needed when publishing the module to the
-  PowerShell Gallery. For more information on module manifests and the
-  publishing to the PowerShell Gallery, see
+  placeholder keys needed when publishing the module to the PowerShell Gallery.
+  For more information on module manifests and the publishing to the PowerShell
+  Gallery, see
   [Package manifest values that impact the PowerShell Gallery UI][03].
 - Experimental features - Metadata about an experimental feature is kept in the
   **ExperimentalFeatures** property of **PSData**. The **ExperimentalFeatures**
@@ -1484,6 +1485,9 @@ The **PSData** child property is used for the following scenarios:
   **PSData.Tags** property. You can use this tag to find modules in the
   PowerShell Gallery that were created using Crescendo. For more information,
   see [Export-CrescendoModule][15].
+- The **PSData.ExternalModuleDependencies** property is an array of module names
+  that are dependencies for this module. This property is informational only and
+  doesn't affect module installation or loading.
 
 ### HelpInfoURI
 
