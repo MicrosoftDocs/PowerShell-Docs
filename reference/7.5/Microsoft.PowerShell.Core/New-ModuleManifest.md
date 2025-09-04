@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 09/04/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
@@ -558,7 +558,9 @@ Accept wildcard characters: True
 
 ### -ExternalModuleDependencies
 
-A list of external modules that this module is depends on.
+A list of external modules that this module is depends on. This list is only used to document the
+module's dependencies and is not enforced by PowerShell. It's not used by the PowerShellGet or
+PSResourceGet commands, or by the PowerShell Gallery.
 
 ```yaml
 Type: System.String[]
@@ -617,7 +619,7 @@ Specifies the functions that the module exports. Wildcards are permitted.
 You can use this parameter to restrict the functions that are exported by the module. It can remove
 functions from the list of exported aliases, but it can't add functions to the list.
 
-If you omit this parameter, `New-ModuleManifest` creates an **FunctionsToExport** key with a value
+If you omit this parameter, `New-ModuleManifest` creates a **FunctionsToExport** key with a value
 of `*` (all), meaning that all functions defined in the module are exported by the manifest.
 
 ```yaml
@@ -663,7 +665,7 @@ The HelpInfo XML file supports the Updatable Help feature that was introduced in
 contains information about the location of downloadable help files for the module and the version
 numbers of the newest help files for each supported locale.
 
-For information about Updatable Help, see [about_Updatable_Help](About/about_Updatable_Help.md).
+For information about Updatable Help, see [about_Updatable_Help](./About/about_Updatable_Help.md).
 For information about the HelpInfo XML file, see
 [Supporting Updatable Help](/powershell/scripting/developer/module/supporting-updatable-help).
 
@@ -1009,8 +1011,9 @@ Enter each module name as a string or as a hash table with **ModuleName** and **
 keys. The hash table can also have an optional **GUID** key. You can combine strings and hash tables
 in the parameter value.
 
-In PowerShell 2.0, `Import-Module` doesn't import required modules automatically. It just verifies
-that the required modules are in the global session state.
+When you install a module using the `Install-Module` or `Install-PSResource` commands, these
+commands check this list. If the required modules aren't installed, the commands attempt to install
+required modules.
 
 ```yaml
 Type: System.Object[]
@@ -1220,10 +1223,6 @@ administrator** option.
 > and the error is ignored. All managed DLLs are loaded in the process. This behavior was removed in
 > PowerShell 7.1.
 
-In PowerShell 2.0, many parameters of `New-ModuleManifest` were mandatory, even though they weren't
-required in a module manifest. Beginning in PowerShell 3.0, only the **Path** parameter is
-mandatory.
-
 A session is an instance of the PowerShell execution environment. A session can have one or more
 session states. By default, a session has only a global session state, but each imported module has
 its own session state. Session states allow the commands in a module to run without affecting the
@@ -1232,6 +1231,13 @@ global session state.
 The caller's session state is the session state into which a module is imported. Typically, it
 refers to the global session state, but when a module imports nested modules, the caller is the
 module and the caller's session state is the module's session state.
+
+In PowerShell 2.0, many parameters of `New-ModuleManifest` were mandatory, even though they weren't
+required in a module manifest. Beginning in PowerShell 3.0, only the **Path** parameter is
+mandatory.
+
+In PowerShell 2.0, `Import-Module` doesn't import required modules automatically. It just verifies
+that the required modules are in the global session state.
 
 ## RELATED LINKS
 
@@ -1247,4 +1253,4 @@ module and the caller's session state is the module's session state.
 
 [Test-ModuleManifest](Test-ModuleManifest.md)
 
-[about_Modules](About/about_Modules.md)
+[about_Modules](./About/about_Modules.md)
