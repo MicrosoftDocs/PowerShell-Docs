@@ -257,6 +257,40 @@ specific overload of the **Bar** method.
 int: 1
 ```
 
+## Finding what overload was used
+
+Since PowerShell 7.6, it is now possible to see what method overload was chosen
+by PowerShell. This is achieved through the new `MethodInvocation` tracing
+command.
+
+This example shows how to use `Trace-Command` to display the overload chosen
+when calling the [String.Split method](/dotnet/api/system.string.split).
+
+```powershell
+Trace-Command -PSHost -Name MethodInvocation -Expression {
+    "a 1 b 1 c 1 d".Split(1)
+}
+
+Trace-Command -PSHost -Name MethodInvocation -Expression {
+    "a 1 b 1 c 1 d".Split("1")
+}
+```
+
+```Output
+DEBUG: ... MethodInvocation Information: 0 : Invoking method: string[] Split(char separator, System.StringSplitOptions options = System.StringSplitOptions.None)
+
+a 1 b 1 c 1 d
+
+DEBUG: ... MethodInvocation Information: 0 : Invoking method: string[] Split(string separator, System.StringSplitOptions options = System.StringSplitOptions.None)
+a
+ b
+ c
+ d
+```
+
+In the first example the `1` was casted as a `[char]` and not a string causing
+the split output to split by `[char]1` and not the character `"1"`.
+
 ## Using .NET methods that take filesystem paths
 
 PowerShell supports multiple runspaces per process. Each runspace has its own
@@ -275,3 +309,4 @@ method.
 - [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
 - [about_Properties](about_Properties.md)
 - [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
+- [Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command)
