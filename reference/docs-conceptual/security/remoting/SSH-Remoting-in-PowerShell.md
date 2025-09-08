@@ -1,6 +1,6 @@
 ---
 description: Explains how to set up the SSH protocol for PowerShell remoting.
-ms.date: 11/06/2023
+ms.date: 09/08/2025
 title: PowerShell Remoting Over SSH
 ---
 
@@ -409,6 +409,6 @@ GitCommitId                    v6.0.0-alpha.17
 [05]: /windows-server/administration/openssh/openssh_keymanagement
 [06]: /windows-server/administration/openssh/openssh_overview
 [07]: /windows-server/administration/openssh/openssh_server_configuration
-[08]: http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html
+[08]: https://man.openbsd.org/ssh-keygen
 [09]: https://github.com/PowerShell/Win32-OpenSSH/issues/784
 [10]: https://ubuntu.com/server/docs/service-openssh
