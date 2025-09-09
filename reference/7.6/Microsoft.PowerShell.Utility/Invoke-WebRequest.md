@@ -13,6 +13,7 @@ title: Invoke-WebRequest
 # Invoke-WebRequest
 
 ## SYNOPSIS
+
 Gets content from a web page on the internet.
 
 ## SYNTAX
@@ -399,6 +400,18 @@ Unix socket.
 ```powershell
 Invoke-WebRequest -Uri "http://localhost/v1.40/images/json/" -UnixSocket "/var/run/docker.sock"
 ```
+
+### Example 12: Send a request over a Windows named pipe
+
+This example sends a request to a local service that exposes an HTTP endpoint over a Windows named
+pipe.
+
+```powershell
+Invoke-WebRequest -Uri 'http://localhost/status' -PipeName 'MyLocalHttpPipe'
+```
+
+The host portion of the `-Uri` isn't used for network routing when `-PipeName` is supplied, but it
+is included in the `Host` header of the HTTP request.
 
 ## PARAMETERS
 
@@ -1331,6 +1344,36 @@ This parameter was added in PowerShell 7.4.
 
 ```yaml
 Type: System.Net.Sockets.UnixDomainSocketEndPoint
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PipeName
+
+Specifies the name of a local Windows named pipe to use instead of a TCP socket when sending the
+HTTP request. This lets you communicate with services that expose an HTTP-compatible protocol over
+a named pipe without opening a TCP port.
+
+Only the local machine is supported. Remote / UNC pipe names aren't supported. Supplying a value
+that doesn't correspond to a listening named pipe endpoint results in a connection failure.
+
+When `-PipeName` is specified, the `-Uri` still determines the request path, query, and scheme used
+to build the HTTP request. The host portion of the `-Uri` is ignored for network routing because
+the named pipe transport is always local, but it still appears in headers such as `Host`.
+
+Security and access control for the pipe are governed by the server that created the pipe. The
+client (this cmdlet) doesn't modify pipe ACLs.
+
+This parameter was added in PowerShell 7.6.
+
+```yaml
+Type: System.String
 Parameter Sets: (All)
 Aliases:
 
