@@ -74,6 +74,7 @@ racoon      =>
 dog         <=
 squirrel    <=
 ```
+If you're specifically looking for differences after comparing both objects, refer to the side indicator column. (`<=`) indicates an item missing from the difference object, while (`=>`) indicates an item missing from the reference object.
 
 ### Example 2 - Compare each line of content and exclude the differences
 
