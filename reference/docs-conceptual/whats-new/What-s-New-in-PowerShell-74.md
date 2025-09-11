@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 06/16/2025
+ms.date: 09/11/2025
 ---
 
 # What's New in PowerShell 7.4
 
-PowerShell 7.4.11 includes the following features, updates, and breaking changes. PowerShell 7.4.10
-is built on .NET 8.0.411.
+PowerShell 7.4.12 includes the following features, updates, and breaking changes. PowerShell 7.4.12
+is built on .NET 8.0.413.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
@@ -41,11 +41,11 @@ For more information, see [Install the msi package from the command line][01].
 
 ## Updated versions of PSResourceGet and PSReadLine
 
-PowerShell 7.4 includes **Microsoft.PowerShell.PSResourceGet** v1.0.1. This module is installed
+PowerShell 7.4 includes **Microsoft.PowerShell.PSResourceGet** v1.1.1. This module is installed
 side-by-side with **PowerShellGet** v2.2.5 and **PackageManagement** v1.4.8.1. For more information,
 see the documentation for [Microsoft.PowerShell.PSResourceGet][12].
 
-PowerShell 7.4 now includes **PSReadLine** v2.3.4. For more information, see the documentation for
+PowerShell 7.4 now includes **PSReadLine** v2.3.6. For more information, see the documentation for
 [PSReadLine][13].
 
 ## Tab completion improvements
