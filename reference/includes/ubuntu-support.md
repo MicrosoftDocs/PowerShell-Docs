@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 07/03/2025
+ms.date: 09/16/2025
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -10,8 +10,8 @@ Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycl
 
 Install package files (`.deb`) are also available from [https://packages.microsoft.com/][pcm].
 
-The Docker images for the .NET SDK contain the latest versions of PowerShell. These images are
-available from the [Microsoft Artifact Registry][mcr].
+The Docker images for the .NET SDK contain the latest versions of PowerShell. You can download these
+images from the [Microsoft Artifact Registry][mcr].
 
 These images are built from official operating system (OS) images provide by the OS distributor.
 These images may not have the latest security updates. Microsoft recommends that you update the OS
@@ -21,7 +21,7 @@ These images are provided for testing purposes. If you need a Docker image for a
 workload, you should build and maintain your own.
 
 > [!NOTE]
-> Ubuntu 24.10 (Oracular Oriole) is an interim release. Microsoft doesn't support
+> Ubuntu 25.04 (Plucky Puffin) is an interim release. Microsoft doesn't support
 > [interim releases][interim] of Ubuntu. For more information, see
 > [Community supported distributions][community].
 
