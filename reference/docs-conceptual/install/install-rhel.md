@@ -66,10 +66,10 @@ package from the [releases][02] page onto your RHEL machine.
 
 The link to the current version is:
 
-- PowerShell 7.4.11 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.11/powershell-7.4.11-1.rh.x86_64.rpm`
-- PowerShell 7.5.2 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell-7.5.2-1.rh.x86_64.rpm`
+- PowerShell 7.4.12 universal package for supported versions of RHEL
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.12/powershell-7.4.12-1.rh.x86_64.rpm`
+- PowerShell 7.5.3 universal package for supported versions of RHEL
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.3/powershell-7.5.3-1.rh.x86_64.rpm`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
 change the URL to download the version of PowerShell that you want to install.
@@ -77,7 +77,7 @@ change the URL to download the version of PowerShell that you want to install.
 On RHEL 8 or 9:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.5.2/powershell-7.5.2-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.5.3/powershell-7.5.3-1.rh.x86_64.rpm
 ```
 
 ## Uninstall PowerShell
