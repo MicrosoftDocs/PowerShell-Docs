@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/25/2023
+ms.date: 09/17/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/tee-object?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -37,10 +37,14 @@ Tee-Object [-InputObject <PSObject>] -Variable <String> [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `Tee-Object` cmdlet redirects output, that is, it sends the output of a command in two
-directions (like the letter T). It stores the output in a file or variable and also sends it down
-the pipeline. If `Tee-Object` is the last command in the pipeline, the command output is displayed
-at the prompt.
+The `Tee-Object` cmdlet write output in two directions. It stores the output in a file or variable
+and also sends it down the pipeline. If `Tee-Object` is the last command in the pipeline, the
+command output is displayed in the console.
+
+Internally, `Tee-Object` uses the `Set-Variable` and `Out-File` commands. These commands support the
+**WhatIf** parameter. The `Tee-Object` command doesn't support the **WhatIf** parameter. However, if
+you wrap `Tee-Object` in a script or function that support the **WhatIf** parameter, `Tee-Object`
+passes the state of **WhatIf** to the `Set-Variable` and `Out-File` commands.
 
 ## EXAMPLES
 
@@ -150,6 +154,31 @@ and comparing that string to `$frontMatterPattern`.
 
 Finally, the example prints the names of the files in the folder that have a defined front matter
 metadata block.
+
+### Example 5: Use `Tee-Object` in a script with the **WhatIf** parameter
+
+The `Tee-Object` command doesn't support the **WhatIf** parameter. However, if you wrap `Tee-Object`
+in a script or function that support the **WhatIf** parameter, `Tee-Object` passes the state of
+**WhatIf** to the `Set-Variable` and `Out-File` commands it uses internally.
+
+```powershell
+PS> function Test-Tee {
+    [Cmdletbinding(SupportsShouldProcess)]
+    Param()
+    $true|tee -Variable b
+    "Variable `$b is set to '$b'"
+}
+
+PS> Test-Tee
+
+True
+Variable $b is set to 'True'
+
+PS> Test-Tee -WhatIf
+True
+What if: Performing the operation "Set variable" on target "Name: b Value: True".
+Variable $b is set to ''
+```
 
 ## PARAMETERS
 
