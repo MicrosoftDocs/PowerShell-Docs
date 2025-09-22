@@ -324,14 +324,16 @@ comment-based help, even if it can't find a help topic that matches the value
 of the `.EXTERNALHELP` keyword.
 
 If the function is exported by a module, set the value of the `.EXTERNALHELP`
-keyword to a filename without a path. `Get-Help` looks for the specified file
-name in a language-specific subdirectory of the module directory. There are no
-requirements for the name of the XML-based help file for a function, but a best
-practice is to use the following format:
-
-```Syntax
-<ScriptModule.psm1>-help.xml
-```
+keyword to a filename without a path. `Get-Help` looks for the specified
+filename in a language-specific subdirectory of the module directory. There are
+no requirements for the name of the XML-based help file for a function.
+Beginning in PowerShell 5.0, functions that are exported by a module can be
+documented in a help file that's named for the module. You don't need to use
+`.EXTERNALHELP` comment keyword. For example, if the `Test-Function` function
+is exported by the `MyModule` module, you can name the help file
+`MyModule-help.xml`. The `Get-Help` cmdlet looks for help for the
+`Test-Function` function in the `MyModule-help.xml` file in the module
+directory.
 
 If the function isn't included in a module, include a path to the XML-based
 help file. If the value includes a path and the path contains
