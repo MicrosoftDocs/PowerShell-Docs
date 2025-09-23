@@ -150,12 +150,14 @@ example adds tab-completion for the `dotnet` Command Line Interface (CLI).
 ```powershell
 $scriptblock = {
     param(
+        $commandName,
+        $parameterName,
         $wordToComplete,
         $commandAst,
-        $cursorPosition
+        $fakeBoundParameters
     )
 
-    dotnet complete --position $cursorPosition $commandAst.ToString() | ForEach-Object {
+    dotnet complete --position $wordToComplete $parameterName | ForEach-Object {
         [System.Management.Automation.CompletionResult]::new(
             $_,               # completionText
             $_,               # listItemText
