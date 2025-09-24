@@ -8,11 +8,11 @@ title: about_Parameters
 ---
 # about_Parameters
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to work with command parameters in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 Most PowerShell commands, such as cmdlets, functions, and scripts, rely on
 parameters to allow users to select options or provide input. The parameters
@@ -235,7 +235,7 @@ Common parameters are parameters that you can use with any cmdlet. For more
 information about common parameters, see
 [about_CommonParameters](about_CommonParameters.md).
 
-## See also
+## SEE ALSO
 
 - [about_Command_Syntax](about_Command_Syntax.md)
 - [about_Comment_Based_Help](about_Comment_Based_Help.md)

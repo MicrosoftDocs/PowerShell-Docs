@@ -8,11 +8,11 @@ title: about_PowerShell_Editions
 ---
 # about_PowerShell_Editions
 
-## Short description
+## SHORT DESCRIPTION
 
 Different editions of PowerShell run on different underlying runtimes.
 
-## Long description
+## LONG DESCRIPTION
 
 From PowerShell 5.1, there are multiple _editions_ of PowerShell that each run
 on a different .NET runtime. As of PowerShell 6.0 there are two editions of
@@ -33,7 +33,7 @@ primary indicator of .NET API and PowerShell module compatibility; some .NET
 APIs, types or methods are not available in both .NET runtimes and this affects
 PowerShell scripts and modules that depend on them.
 
-## The `$PSEdition` automatic variable
+## THE `$PSEDITION` AUTOMATIC VARIABLE
 
 In PowerShell 5.1 and above, you can find out what edition you are running with
 the `$PSEdition` automatic variable:
@@ -75,7 +75,7 @@ WSManStackVersion              3.0
 The **PSEdition** field has the same value as the `$PSEdition` automatic
 variable.
 
-## The `CompatiblePSEditions` module manifest field
+## THE `COMPATIBLEPSEDITIONS` MODULE MANIFEST FIELD
 
 PowerShell modules can declare what editions of PowerShell they are compatible
 with using the `CompatiblePSEditions` field of the module manifest.
@@ -157,7 +157,7 @@ Script     1.0.0      WindowsCompatibility   Core      {Initialize-WinSession, A
 
 ```
 
-## Edition-compatibility for modules that ship as part of Windows
+## EDITION-COMPATIBILITY FOR MODULES THAT SHIP AS PART OF WINDOWS
 
 For modules that come as part of Windows (or are installed as part of a role or
 feature), PowerShell 6.1 and above treat the `CompatiblePSEditions` field
@@ -221,7 +221,7 @@ Manifest   2.0.0.0    BitsTransfer   Desk      {Add-BitsFile, Complete-BitsTrans
 > while loading the module initially succeeds, a command may later call an
 > incompatible API and fail spontaneously.
 
-## Authoring PowerShell modules for edition cross-compatibility
+## AUTHORING POWERSHELL MODULES FOR EDITION CROSS-COMPATIBILITY
 
 When writing a PowerShell module to target both `Desktop` and `Core` editions
 of PowerShell, there are things you can do to ensure cross-edition
@@ -256,7 +256,7 @@ Although these libraries are able to check some compatibility at compile time,
 they won't be able to catch possible behavioral differences between editions.
 For this you must still write tests.
 
-## See also
+## SEE ALSO
 
 - [about_Automatic_Variables][05]
 - [Get-Module][09]

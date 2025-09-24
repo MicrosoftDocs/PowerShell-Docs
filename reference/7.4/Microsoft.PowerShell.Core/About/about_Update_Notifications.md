@@ -9,12 +9,12 @@ title: about_Update_Notifications
 
 # about_Update_Notifications
 
-## Short description
+## SHORT DESCRIPTION
 
 Notifies users on startup of PowerShell that a new version of PowerShell has
 been released.
 
-## Long description
+## LONG DESCRIPTION
 
 Beginning with PowerShell 7.0, PowerShell uses update notifications to alert
 users to the existence of updates to PowerShell. Once per day, PowerShell
@@ -31,7 +31,7 @@ on its version and branch. Generally Available (GA) versions of PowerShell only
 return notifications for updated GA releases. Preview and Release Candidate
 (RC) versions notify of updates to preview, RC, and GA releases.
 
-## Manage notification behavior
+## MANAGE NOTIFICATION BEHAVIOR
 
 You can change the behavior of the update notification by setting the
 `POWERSHELL_UPDATECHECK` environment variable. The following values are
@@ -47,7 +47,7 @@ You must set this environment variable before PowerShell starts. For more
 information about setting environment variables, see
 [about_Environment_Variables][01].
 
-## Notification endpoints
+## NOTIFICATION ENDPOINTS
 
 PowerShell uses the following endpoints for determining the latest version
 available for each channel:

@@ -9,11 +9,11 @@ title: about_Windows_PowerShell_5.1
 
 # about_Windows_PowerShell_5.1
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes new features that are included in Windows PowerShell 5.1.
 
-## Long description
+## LONG DESCRIPTION
 
 Windows PowerShell 5.1 includes significant new features that extend its use,
 improve its usability, and allow you to control and manage Windows-based

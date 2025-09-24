@@ -9,12 +9,12 @@ title: about_Arrays
 ---
 # about_Arrays
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes arrays, which are data structures designed to store collections of
 items.
 
-## Long description
+## LONG DESCRIPTION
 
 An array is a data structure that's designed to store a collection of items.
 The items can be the same type or different types.
@@ -22,7 +22,7 @@ The items can be the same type or different types.
 Beginning in Windows PowerShell 3.0, a collection of zero or one object has
 some properties of arrays.
 
-## Creating and initializing an array
+## CREATING AND INITIALIZING AN ARRAY
 
 To create and initialize an array, assign multiple values to a variable. The
 values stored in the array are delimited with a comma and separated from the
@@ -82,7 +82,7 @@ process objects, enter the following command:
 [Diagnostics.Process[]]$zz = Get-Process
 ```
 
-## The array sub-expression operator
+## THE ARRAY SUB-EXPRESSION OPERATOR
 
 The array sub-expression operator creates an array from the statements inside
 it. Whatever the statement inside the operator produces, the operator places it
@@ -125,7 +125,7 @@ $p = @(Get-Process Notepad)
 For more information about the array sub-expression operator, see
 [about_Operators][11].
 
-## Accessing and using array elements
+## ACCESSING AND USING ARRAY ELEMENTS
 
 ### Reading an array
 
@@ -338,7 +338,7 @@ while($i -lt 4) {
 3
 ```
 
-## Properties of arrays
+## PROPERTIES OF ARRAYS
 
 ### Count or Length or LongLength
 
@@ -463,7 +463,7 @@ True
 40
 ```
 
-## Methods of arrays
+## METHODS OF ARRAYS
 
 ### Clear
 
@@ -803,7 +803,7 @@ Stopped  AppIDSvc           Application Identity
 > Both `ForEach()` and `Where()` methods are intrinsic members. For more
 > information about intrinsic members, see [about_Intrinsic_Members][08].
 
-## Get the members of an array
+## GET THE MEMBERS OF AN ARRAY
 
 To get the properties and methods of an array, such as the **Length** property
 and the **SetValue** method, use the **InputObject** parameter of the
@@ -833,7 +833,7 @@ and `Get-Member` returns the members of the array. Like the next two examples.
 ,(1,2,3) | Get-Member
 ```
 
-## Manipulating an array
+## MANIPULATING AN ARRAY
 
 You can change the elements in an array, add an element to an array, and
 combine the values from two arrays into a third array.
@@ -899,7 +899,7 @@ command deletes the array in the `$a` variable.
 You can also use the `Remove-Item` cmdlet, but assigning a value of `$null` is
 faster, especially for large arrays.
 
-## Arrays of zero or one
+## ARRAYS OF ZERO OR ONE
 
 Beginning in Windows PowerShell 3.0, a scalar types and collection of zero or
 one objects has the **Count** and **Length** properties. Also, you can use
@@ -977,7 +977,7 @@ PS> $result[0].Length
 4
 ```
 
-## Indexing support for System.Tuple objects
+## INDEXING SUPPORT FOR SYSTEM.TUPLE OBJECTS
 
 PowerShell 6.1 added the support for indexed access of **Tuple** objects,
 similar to arrays. For example:
@@ -1001,7 +1001,7 @@ arrays of objects.
 
 For more information, see [System.Tuple][01].
 
-## Indexing .NET types that implement `IDictionary<TKey, TValue>`
+## INDEXING .NET TYPES THAT IMPLEMENT `IDICTIONARY<TKEY, TVALUE>`
 
 PowerShell doesn't call a type's true indexer for types that implement the
 generic `IDictionary<TKey, TValue>` interface. Instead, when given a key,
@@ -1022,7 +1022,7 @@ GetValueInvocationException: Exception getting "Item": "The given key
 'nosuchkey' was not present in the dictionary."
 ```
 
-## Member-access enumeration
+## MEMBER-ACCESS ENUMERATION
 
 Starting in PowerShell 3.0, when you use the member-access operator to access a
 member that doesn't exist on a list collection, PowerShell automatically
@@ -1098,7 +1098,7 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 > Since the method is executed for each item in the collection, care should be
 > taken when calling methods using member enumeration.
 
-## See also
+## SEE ALSO
 
 - [about_For][05]
 - [about_Foreach][06]

@@ -8,17 +8,17 @@ title: about_Booleans
 ---
 # about_Booleans
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how boolean expressions are evaluated.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell can implicitly treat any type as a **Boolean**. It is important to
 understand the rules that PowerShell uses to convert other types to **Boolean**
 values.
 
-## Converting from scalar types
+## CONVERTING FROM SCALAR TYPES
 
 A [scalar][02] type is an atomic quantity that can hold only one value at a
 time. The following types evaluate to `$false`:
@@ -72,7 +72,7 @@ MethodInvocationException: Exception calling "Parse" with "1" argument(s):
 "String 'Not True' was not recognized as a valid Boolean."
 ```
 
-## Converting from collection types
+## CONVERTING FROM COLLECTION TYPES
 
 Arrays are the most common collection type in PowerShell. These rules apply to
 any collection-like types that implement the [IList][01] interface.
@@ -106,7 +106,7 @@ PS> [bool]$c
 True
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Arrays][03]
 

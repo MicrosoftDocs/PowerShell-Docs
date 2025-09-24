@@ -8,11 +8,11 @@ title: about_Remote_Variables
 ---
 # about_Remote_Variables
 
-## Short description
+## SHORT DESCRIPTION
 
 Explains how to use local and remote variables in remote commands.
 
-## Long description
+## LONG DESCRIPTION
 
 You can use variables in commands that you run on remote computers. Assign a
 value to the variable and then use the variable in place of the value.
@@ -21,7 +21,7 @@ By default, the variables in remote commands are assumed to be defined in the
 session that runs the command. Variables that are defined in a local session,
 must be identified as local variables in the command.
 
-## Using remote variables
+## USING REMOTE VARIABLES
 
 PowerShell assumes that the variables used in remote commands are defined in
 the session in which the command runs.
@@ -44,7 +44,7 @@ Invoke-Command -Session $s -ScriptBlock {$ps = "*PowerShell*"}
 Invoke-Command -Session $s -ScriptBlock {Get-WinEvent -LogName $ps}
 ```
 
-## Using local variables
+## USING LOCAL VARIABLES
 
 You can use local variables in remote commands, but the variable must be
 defined in the local session.
@@ -125,7 +125,7 @@ copies of the data in the caller's scope or references to it. In remote and
 out-of-process sessions, they are always independent copies. In thread
 sessions, they are passed by reference.
 
-## Serialization of variable values
+## SERIALIZATION OF VARIABLE VALUES
 
 Remotely executed commands and background jobs run out-of-process.
 Out-of-process sessions use XML-based serialization and deserialization to make
@@ -144,7 +144,7 @@ Instances of all other types are **PSObject** instances. The **pstypenames**
 property contains the original type name prefixed with **Deserialized**, for
 example, **Deserialized.System.Data.DataTable**
 
-## Using local variables with **ArgumentList** parameter
+## USING LOCAL VARIABLES WITH **ARGUMENTLIST** PARAMETER
 
 You can use local variables in a remote command by defining parameters for the
 remote command and using the **ArgumentList** parameter of the `Invoke-Command`
@@ -171,7 +171,7 @@ Invoke-Command -ComputerName S1 -ScriptBlock {
 } -ArgumentList $ps
 ```
 
-## See also
+## SEE ALSO
 
 - [about_PSSessions](about_PSSessions.md)
 - [about_Remote](about_Remote.md)

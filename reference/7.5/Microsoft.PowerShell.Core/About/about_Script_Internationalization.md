@@ -8,13 +8,13 @@ title: about_Script_Internationalization
 ---
 # about_Script_Internationalization
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the script internationalization features that make it easy for
 scripts to display messages and instructions to users in their user interface
 (UI) language.
 
-## Long description
+## LONG DESCRIPTION
 
 The PowerShell script internationalization features allow you to better serve
 users throughout the world by displaying help and user messages in the user's
@@ -163,7 +163,7 @@ If `Import-LocalizedData` cannot find a `.psd1` file that matches the value of
 `$PSUICulture`, the value of `$msgTable` is not replaced, and the call to
 `$msgTable.promptMsg` displays the fallback en-US strings.
 
-## Examples
+## EXAMPLES
 
 This example shows how the script internationalization features are used in a
 script to display a day of the week to users in the language that is set on the
@@ -238,7 +238,7 @@ As a result, when you run Sample.ps1 on a system on which the value of
 Heute ist Freitag
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Data_Sections][01]
 - [about_Automatic_Variables][05]

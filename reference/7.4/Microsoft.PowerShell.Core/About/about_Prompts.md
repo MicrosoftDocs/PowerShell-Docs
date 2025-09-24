@@ -8,11 +8,11 @@ title: about_Prompts
 ---
 # about_Prompts
 
-## Short description
+## SHORT DESCRIPTION
 Describes the `prompt` function and demonstrates how to create a custom
 `prompt` function.
 
-## Long description
+## LONG DESCRIPTION
 
 The PowerShell command prompt indicates that PowerShell is ready to run a
 command:
@@ -24,7 +24,7 @@ PS C:\>
 PowerShell has a built-in `prompt` function. You can define your own customized
 `prompt` function in your PowerShell profile script.
 
-## About the `prompt` function
+## ABOUT THE `PROMPT` FUNCTION
 
 The `prompt` function determines the appearance of the PowerShell prompt.
 PowerShell comes with a built-in `prompt` function, but you can override it by
@@ -271,7 +271,7 @@ Like any function, the `prompt` function exists only in the current session. To
 save the `prompt` function for future sessions, add it to your PowerShell
 profiles. For more information about profiles, see [about_Profiles][04].
 
-## See also
+## SEE ALSO
 
 - [about_Automatic_Variables][01]
 - [about_Debuggers][02]

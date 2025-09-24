@@ -9,11 +9,11 @@ title: about_PowerShell_exe
 ---
 # about_PowerShell_exe
 
-## Short description
+## SHORT DESCRIPTION
 Explains how to use the `powershell.exe` command-line interface. Displays the
 command-line parameters and describes the syntax.
 
-## Long description
+## LONG DESCRIPTION
 
 For information about the command-line options for PowerShell 7, see
 [about_Pwsh][01].
@@ -43,7 +43,7 @@ PowerShell[.exe]
 PowerShell[.exe] -Help | -? | /?
 ```
 
-## Parameters
+## PARAMETERS
 
 All parameters are case-insensitive.
 

@@ -9,19 +9,19 @@ title: about_Intrinsic_Members
 
 # About intrinsic members
 
-## Short description
+## SHORT DESCRIPTION
 
 Provides information about PowerShell's intrinsic members that are available to
 all PowerShell objects.
 
-## Detailed description
+## LONG DESCRIPTION
 
 When objects are created, PowerShell adds some "hidden" properties and methods
 to each object. These properties and methods are known as _intrinsic members_.
 These intrinsic members are normally hidden from view. These hidden members can
 be seen using the **Force** parameter of [Get-Member][07].
 
-## Object views
+## OBJECT VIEWS
 
 The intrinsic members include a set of **MemberSet** properties that represent
 a view of the object. For more information about **MemberSet** properties, see
@@ -134,7 +134,7 @@ psextended  MemberSet    psextended {Age, Name}
 psobject    MemberSet    psobject {Members, Properties, Methods, ImmediateBaseObject, BaseObject, TypeNames, get_Membe…
 ```
 
-## Type information
+## TYPE INFORMATION
 
 The `pstypenames` **CodeProperty** lists the object type hierarchy in order of
 inheritance. For example:
@@ -154,7 +154,7 @@ System.Object
 The Output starts with the most specific object type, `System.IO.FileInfo`, and
 continues down to the most generic type, `System.Object`.
 
-## Methods
+## METHODS
 
 PowerShell adds two hidden methods to all PowerShell objects. These methods are
 not visible using the `Get-Member -Force` command or tab completion.
@@ -165,7 +165,7 @@ The `ForEach()` and `Where()` methods are available to all PowerShell objects.
 However, they're most useful when working with collections. For more
 information on how to use these methods, see [about_Arrays][01].
 
-## Properties
+## PROPERTIES
 
 Not all scalar type have **Count** or **Length** properties in the base type.
 PowerShell adds the missing property as an intrinsic member for all scalar
@@ -190,7 +190,7 @@ PS> $str.Count
 
 For more information about these properties, see [about_Properties][04].
 
-## Array indexing scalar types
+## ARRAY INDEXING SCALAR TYPES
 
 When an object isn't an indexed collection, using the index operator to access
 the first element returns the object itself. Index values beyond the first
@@ -209,7 +209,7 @@ True
 
 For more information, see [about_Operators][03].
 
-## New() method for types
+## NEW() METHOD FOR TYPES
 
 Beginning in PowerShell 5.0, PowerShell adds a static `new()` method for all
 .NET types. The following examples produce the same result.

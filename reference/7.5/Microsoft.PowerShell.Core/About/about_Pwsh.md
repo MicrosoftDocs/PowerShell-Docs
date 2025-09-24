@@ -9,17 +9,17 @@ title: about_Pwsh
 ---
 # about_Pwsh
 
-## Short description
+## SHORT DESCRIPTION
 
 Explains how to use the `pwsh` command-line interface. Displays the
 command-line parameters and describes the syntax.
 
-## Long description
+## LONG DESCRIPTION
 
 For information about the command-line options for Windows PowerShell 5.1, see
 [about_PowerShell_exe][01].
 
-## Syntax
+## SYNTAX
 
 ```
 Usage: pwsh[.exe]
@@ -52,7 +52,7 @@ Usage: pwsh[.exe]
 pwsh[.exe] -h | -Help | -? | /?
 ```
 
-## Parameters
+## PARAMETERS
 
 All parameters are case-insensitive.
 

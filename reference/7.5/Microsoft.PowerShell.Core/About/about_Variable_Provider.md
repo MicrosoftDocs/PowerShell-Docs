@@ -8,23 +8,23 @@ title: about_Variable_Provider
 ---
 # about_Variable_Provider
 
-## Provider name
+## PROVIDER NAME
 
 Variable
 
-## Drives
+## DRIVES
 
 `Variable:`
 
-## Capabilities
+## CAPABILITIES
 
 **ShouldProcess**
 
-## Short description
+## SHORT DESCRIPTION
 
 Provides access to the PowerShell variables and to their values.
 
-## Detailed description
+## DETAILED DESCRIPTION
 
 The PowerShell **Variable** provider lets you get, add, change, clear, and
 delete PowerShell variables in the current console.
@@ -65,7 +65,7 @@ the `Variable:` drive in the name. This article does not cover working with
 > For example, `$p = Get-Process` creates the `p` variable and stores the
 > results of a `Get-Process` command in it.
 
-## Types exposed by this provider
+## TYPES EXPOSED BY THIS PROVIDER
 
 Variables can be one of several different types. Most variables will be
 instances of the `PSVariable` class. Other variables and their types are
@@ -84,7 +84,7 @@ listed below.
   - `args`
   - `input`
 
-## Navigating the Variable drives
+## NAVIGATING THE VARIABLE DRIVES
 
 The **Variable** provider exposes its data store in the `Variable:` drive. To
 work with variables, you can change your location to the `Variable:` drive
@@ -112,7 +112,7 @@ drive. To reference a variable from another location, use the drive name
 > [Get-ChildItem][12], `cd` is an alias for [Set-Location][13]. and `pwd` is
 > an alias for [Get-Location][14].
 
-## Displaying the value of variables
+## DISPLAYING THE VALUE OF VARIABLES
 
 ### Get all variables in the current session
 
@@ -167,7 +167,7 @@ Get-ChildItem -Path Variable: |
     Format-List -Property Name, Value, Options
 ```
 
-## Creating variables
+## CREATING VARIABLES
 
 ### Create a new variable
 
@@ -195,7 +195,7 @@ New-Item -Path Variable:services -Value Get-Service
 
  To create a variable without a value, omit the assignment operator.
 
-## Changing variables
+## CHANGING VARIABLES
 
 ### Rename a variable
 
@@ -215,7 +215,7 @@ This command uses the `Set-Item` cmdlet to change the value of the
 Set-Item -Path Variable:ErrorActionPreference -Value Stop
 ```
 
-## Copy a variable
+## COPY A VARIABLE
 
 This command uses the `Copy-Item` cmdlet to copy the `processes` variable to
 `old_processes`. This creates a new variable named `old_processes` that has the
@@ -225,7 +225,7 @@ same value as the `processes` variable.
 Copy-Item -Path Variable:processes -Destination Variable:old_processes
 ```
 
-## Delete a variable
+## DELETE A VARIABLE
 
 This command deletes the `serv` variable from the current session. You can use
 this command in any PowerShell drive.
@@ -245,7 +245,7 @@ property has a value of `ReadOnly`.
 Remove-Item Variable:* -Force
 ```
 
-## Setting the value of a variable to NULL
+## SETTING THE VALUE OF A VARIABLE TO NULL
 
 This command uses the `Clear-Item` cmdlet to change the value of the
 `processes` variable to NULL.
@@ -254,14 +254,14 @@ This command uses the `Clear-Item` cmdlet to change the value of the
 Clear-Item -Path Variable:processes
 ```
 
-## Using the pipeline
+## USING THE PIPELINE
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
 task by sending provider data from one cmdlet to another provider cmdlet.
 To read more about how to use the pipeline with provider cmdlets, see the
 cmdlet references provided throughout this article.
 
-## Getting help
+## GETTING HELP
 
 Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
@@ -278,7 +278,7 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path Variable:
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Automatic_Variables][16]
 - [about_Providers][17]

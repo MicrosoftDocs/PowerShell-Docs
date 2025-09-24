@@ -8,11 +8,11 @@ title: about_Remote_Jobs
 ---
 # about_Remote_Jobs
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to run background jobs on remote computers.
 
-## Detailed Description
+## LONG DESCRIPTION
 
 PowerShell concurrently runs commands and scripts through jobs. There are three
 jobs types provided by PowerShell to support concurrency.
@@ -49,7 +49,7 @@ There are two ways work around this situation:
    information, see
    [Start-Process](xref:Microsoft.PowerShell.Management.Start-Process).
 
-## Remote Jobs
+## REMOTE JOBS
 
 You can run jobs on remote computers by using three different
 methods.
@@ -347,7 +347,7 @@ commands remotely to manage a local job on the remote computer.
    }
    ```
 
-## How to run as a detached process
+## HOW TO RUN AS A DETACHED PROCESS
 
 As previously mentioned, when the parent session is terminated, all running
 child jobs are terminated along with their child processes. You can use
@@ -400,7 +400,7 @@ For this example, the jobs are still attached to a parent PowerShell session.
 However, the parent session is not the original PowerShell session where
 `Invoke-Command` was run.
 
-## See also
+## SEE ALSO
 
 - [about_Jobs](about_Jobs.md)
 - [about_Job_Details](about_Job_Details.md)

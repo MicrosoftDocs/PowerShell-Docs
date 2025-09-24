@@ -8,12 +8,12 @@ title: about_While
 ---
 # about_While
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes a language statement that you can use to run a command block based on
 the results of a conditional test.
 
-## Long description
+## LONG DESCRIPTION
 
 The `while` statement (also known as a `while` loop) is a language construct
 for creating a loop that runs commands in a command block as long as a
@@ -68,7 +68,7 @@ while($val -ne 3){$val++; Write-Host $val}
 Notice that the semicolon separates the first command that adds 1 to `$val`
 from the second command that writes the value of `$val` to the console.
 
-## See also
+## SEE ALSO
 
 - [about_Booleans](about_Booleans.md)
 - [about_Break](about_Break.md)

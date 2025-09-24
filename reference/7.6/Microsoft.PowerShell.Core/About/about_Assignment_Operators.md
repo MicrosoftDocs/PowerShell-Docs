@@ -8,11 +8,11 @@ title: about_Assignment_Operators
 ---
 # about_Assignment_Operators
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to use operators to assign values to variables.
 
-## Long description
+## LONG DESCRIPTION
 
 Assignment operators assign one or more values to a variable. The equals sign
 (`=`) is the PowerShell assignment operator. PowerShell also has the following
@@ -20,7 +20,7 @@ _compound_ assignment operators: `+=`, `-=`, `*=`, `%=`, `++`, `--`, `??=`.
 Compound assignment operators perform operations on the values before the
 assignment.
 
-## Syntax
+## SYNTAX
 
 The syntax of the assignment operators is as follows:
 
@@ -38,7 +38,7 @@ postfix versions.
 The value of the assignable expression must be a number or it must be
 convertible to a number.
 
-## Using the assignment operator
+## USING THE ASSIGNMENT OPERATOR
 
 Variables are named memory spaces that store values. You store the values in
 variables using the assignment operator `=`. The new value can replace the
@@ -137,7 +137,7 @@ variable, type:
 $a = 10kb
 ```
 
-## Using compound assignment operators
+## USING COMPOUND ASSIGNMENT OPERATORS
 
 Compound assignment operators perform numeric operations on the values before
 the assignment.
@@ -648,7 +648,7 @@ $x
 
 For more information, see [Null-coalescing operator][04].
 
-## Microsoft .NET types
+## MICROSOFT .NET TYPES
 
 By default, when a variable has only one value, the value that's assigned to
 the variable determines the data type of the variable. For example, the
@@ -808,7 +808,7 @@ data type. The value of the `$a` variable would be the following:
 Tuesday, May 31, 2005 12:00:00 AM
 ```
 
-## Assigning multiple variables
+## ASSIGNING MULTIPLE VARIABLES
 
 In PowerShell, you can assign values to multiple variables using a single
 command. The first element of the assignment value is assigned to the first
@@ -861,7 +861,7 @@ four variables:
 $a = $b = $c = $d = "three"
 ```
 
-## Variable-related cmdlets
+## VARIABLE-RELATED CMDLETS
 
 In addition to using an assignment operation to set a variable value, you can
 also use the [Set-Variable][09] cmdlet. For example, the following command uses
@@ -871,7 +871,7 @@ also use the [Set-Variable][09] cmdlet. For example, the following command uses
 Set-Variable -Name a -Value 1, 2, 3
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Arrays][02]
 - [about_Hash_Tables][03]

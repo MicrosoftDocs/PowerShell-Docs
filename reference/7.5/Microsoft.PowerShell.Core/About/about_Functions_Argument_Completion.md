@@ -8,12 +8,12 @@ title: about_Functions_Argument_Completion
 ---
 # about_Functions_Argument_Completion
 
-## Short description
+## SHORT DESCRIPTION
 
 Argument completion is a feature of PowerShell that provide hints, enables
 discovery, and speeds up input entry of argument values.
 
-## Long description
+## LONG DESCRIPTION
 
 This article describes the different ways you can implement argument completers
 for PowerShell functions. Argument completers provide the possible values for a
@@ -28,7 +28,7 @@ define an argument completer for a parameter.
 > information, see
 > [about_PSReadLine](/powershell/module/psreadline/about/about_psreadline#completion-functions).
 
-## ValidateSet attribute
+## VALIDATESET ATTRIBUTE
 
 The **ValidateSet** attribute specifies a set of valid values for a parameter
 or variable and enables tab completion. PowerShell generates an error if a
@@ -111,7 +111,7 @@ param (
 > [!NOTE]
 > The `IValidateSetValuesGenerator` class was introduced in PowerShell 6.0.
 
-## ArgumentCompletions attribute
+## ARGUMENTCOMPLETIONS ATTRIBUTE
 
 The **ArgumentCompletions** attribute allows you to add tab completion values
 to a specific parameter. An **ArgumentCompletions** attribute must be defined
@@ -152,7 +152,7 @@ Each of the parameters is provided a list of options to the
 
 This attribute was introduced in PowerShell 6.0.
 
-## ArgumentCompleter attribute
+## ARGUMENTCOMPLETER ATTRIBUTE
 
 The **ArgumentCompleter** attribute allows you to add tab completion values to
 a specific parameter. An **ArgumentCompleter** attribute must be defined for
@@ -253,7 +253,7 @@ function Test-ArgumentCompleter {
 }
 ```
 
-## Class-based argument completers
+## CLASS-BASED ARGUMENT COMPLETERS
 
 Beginning in PowerShell 7.2, a new feature was added that allows you to define
 more generic implementations of parameterized argument completers.
@@ -341,7 +341,7 @@ function Add{
 }
 ```
 
-## Register-ArgumentCompleter
+## REGISTER-ARGUMENTCOMPLETER
 
 The `Register-ArgumentCompleter` cmdlet registers a custom argument completer.
 An argument completer allows you to provide dynamic tab completion, at run time
@@ -350,7 +350,7 @@ for any command that you specify.
 For more information, see
 [Register-ArgumentCompleter](xref:Microsoft.PowerShell.Core.Register-ArgumentCompleter).
 
-## See also
+## SEE ALSO
 
 - [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 - [about_Tab_Expansion](about_Tab_Expansion.md)

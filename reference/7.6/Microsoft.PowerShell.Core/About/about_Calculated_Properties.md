@@ -8,12 +8,12 @@ title: about_Calculated_Properties
 ---
 # about_Calculated_Properties
 
-## Short description
+## SHORT DESCRIPTION
 
 PowerShell provides the ability to dynamically add new properties and alter
 the formatting of objects output to the pipeline.
 
-## Long description
+## LONG DESCRIPTION
 
 Several PowerShell cmdlets transform, group, or process input objects into
 output objects using parameters that allow the addition of new properties to
@@ -23,7 +23,7 @@ calculated property is defined by a [hashtable][03] containing key-value pairs
 that specify the name of the new property, an expression to calculate the
 value, and optional formatting information.
 
-## Supported cmdlets
+## SUPPORTED CMDLETS
 
 The following cmdlets support calculated property values for the **Property**
 parameter. The `Format-*` cmdlets also support calculated values for the
@@ -83,7 +83,7 @@ the key-value pairs that each cmdlet supports.
 > The value of the `Expression` can be a script block instead of a
 > hashtable. For more information, see the [Notes][02] section.
 
-## Hashtable key definitions
+## HASHTABLE KEY DEFINITIONS
 
 - `Name`/`Label` - Specifies the name of the property being created. You can
   use `Name` or its alias, `Label`, interchangeably.
@@ -109,7 +109,7 @@ You don't need to spell out the hashtable keys as long as the specified name
 prefix is unambiguous. For example, you can use `n` instead of `Name` and `e`
 instead of `Expression`.
 
-## Examples
+## EXAMPLES
 
 ### Compare-Object
 
@@ -472,7 +472,7 @@ Date       Salesperson UnitsSold
 2020-08-04 Sally       2
 ```
 
-## Notes
+## NOTES
 
 - You may specify the expression script block _directly_, as an argument,
   rather than specifying it as the `Expression` entry in a hashtable. For
@@ -500,7 +500,7 @@ Date       Salesperson UnitsSold
   For `Sort-Object`, statement-terminating and script-terminating errors are
   _output_ but they don't terminate the statement.
 
-## See also
+## SEE ALSO
 
 - [about_Hash_Tables][03]
 - [ConvertTo-Html][05]

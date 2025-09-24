@@ -8,12 +8,12 @@ title: about_Hidden
 ---
 # about_Hidden
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the `hidden` keyword, which hides class members from default
 `Get-Member` results.
 
-## Long description
+## LONG DESCRIPTION
 
 When you use the `hidden` keyword in a script, you hide the members of a class
 by default. Hidden members do not display in the default results of the
@@ -150,7 +150,7 @@ Rides         Property     int Rides {get;set;}
 
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Classes](about_Classes.md)
 - [about_Language_Keywords](about_Language_Keywords.md)

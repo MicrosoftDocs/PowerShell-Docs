@@ -8,10 +8,10 @@ title: about_Path_Syntax
 ---
 # about_Path_Syntax
 
-## Short description
+## SHORT DESCRIPTION
 Describes the full and relative path formats in  PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 All items in a data store accessible through a PowerShell provider can be
 uniquely identified by their path names. A path is a combination of the
@@ -115,7 +115,7 @@ first file (`C:\TechDocs\Jan\Results.txt`) and the path for the second file
 (`C:\TechDocs\Feb\Results.txt`) allow you to clearly distinguish between the
 two files.
 
-## Support for the Win32 File namespace
+## SUPPORT FOR THE WIN32 FILE NAMESPACE
 
 On Windows, the cmdlets that support the FileSystem provider also support the
 paths that use the Win32 File namespace format. You can only use these paths
@@ -130,7 +130,7 @@ enforced by the Windows APIs.
 For more information, see _Win32 File Namespaces_ in
 [Naming Files, Paths, and Namespaces][01].
 
-## See also
+## SEE ALSO
 
 - [about_Locations][02]
 - [Convert-Path][03]

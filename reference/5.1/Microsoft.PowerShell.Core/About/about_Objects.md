@@ -9,11 +9,11 @@ title: about_Objects
 
 # about_Objects
 
-## Short description
+## SHORT DESCRIPTION
 
 Provides essential information about objects in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 Every action you take in PowerShell occurs within the context of
 objects. As data moves from one command to the next, it moves as one or
@@ -21,7 +21,7 @@ more identifiable objects. An object, then, is a collection of data that
 represents an item. An object is made up of three types of data: the
 objects type, its methods, and its properties.
 
-## Types, Methods, and Properties
+## TYPES, METHODS, AND PROPERTIES
 
 The object type tells what kind of object it is. For example, an object
 that represents a file is a **FileInfo** object.
@@ -41,7 +41,7 @@ You can discover an objects properties and methods using
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) or the `psobject`
 [intrinsic member](about_Intrinsic_Members.md).
 
-## Objects in Pipelines
+## OBJECTS IN PIPELINES
 
 When commands are combined in a pipeline, they pass information to each
 other as objects. When the first command runs, it sends one or more
@@ -70,7 +70,7 @@ True (`$true`) in their **PSIsContainer** property, are not selected.
 The second command passes only the file objects to the third command
 `Format-List`, which displays the file objects in a list.
 
-## See also
+## SEE ALSO
 
 - [about_Methods](about_Methods.md)
 - [about_Object_Creation](about_Object_Creation.md)

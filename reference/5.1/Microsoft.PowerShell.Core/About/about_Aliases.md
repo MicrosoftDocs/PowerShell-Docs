@@ -9,11 +9,11 @@ title: about_Aliases
 ---
 # about_Aliases
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to use alternate names for cmdlets and commands in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 An alias is an alternate name or nickname for a cmdlet or for a command
 element, such as a function, script, file, or executable file. You can use the
@@ -47,7 +47,7 @@ If you create `word` as the alias for Microsoft Office Word, you can type
 "C:\Program Files\Microsoft Office\Office11\Winword.exe"
 ```
 
-## Built-in aliases
+## BUILT-IN ALIASES
 
 PowerShell includes a set of built-in aliases, including `cd` and `chdir` for
 the `Set-Location` cmdlet, and `ls` and `dir` for the `Get-ChildItem` cmdlet.
@@ -58,7 +58,7 @@ To get all the aliases on the computer, including the built-in aliases, type:
 Get-Alias
 ```
 
-## Alias cmdlets
+## ALIAS CMDLETS
 
 PowerShell includes the following cmdlets, which are designed for working with
 aliases:
@@ -81,7 +81,7 @@ For example, type:
 Get-Help Export-Alias -Detailed
 ```
 
-## Creating an alias
+## CREATING AN ALIAS
 
 To create a new alias, use the `New-Alias` cmdlet. For example, to create the
 `gh` alias for `Get-Help`, type:
@@ -105,7 +105,7 @@ Or, type:
 gh Get-CimInstance -Detailed
 ```
 
-## Saving aliases
+## SAVING ALIASES
 
 The aliases that you create are saved only in the current session. To use the
 aliases in a different session, add the alias to your PowerShell profile. Or,
@@ -117,7 +117,7 @@ For more information, type:
 Get-Help about_Profiles
 ```
 
-## Getting aliases
+## GETTING ALIASES
 
 To get all the aliases in the current session, including the built-in aliases,
 the aliases in your PowerShell profiles, and the aliases that you have created
@@ -164,7 +164,7 @@ hyphen. These are likely to be preferred substitute names for cmdlets and
 functions, instead of typical abbreviations or nicknames, and the author might
 not want them to be as evident.
 
-## Alternate names for commands with parameters
+## ALTERNATE NAMES FOR COMMANDS WITH PARAMETERS
 
 You can assign an alias to a cmdlet, script, function, or executable file. You
 cannot assign an alias to a command and its parameters. For example, you can
@@ -192,7 +192,7 @@ For more information about functions, type:
 Get-Help about_Functions
 ```
 
-## Alias objects
+## ALIAS OBJECTS
 
 PowerShell aliases are represented by objects that are instances of the
 System.Management.Automation.AliasInfo class. For more information about this
@@ -216,7 +216,7 @@ the `dir` alias. The following command performs these tasks:
 Get-Alias -Name dir | Format-List -Property *
 ```
 
-## PowerShell Alias provider
+## POWERSHELL ALIAS PROVIDER
 
 PowerShell includes the Alias provider. The Alias provider lets you view the
 aliases in PowerShell as though they were on a file system drive.
@@ -255,7 +255,7 @@ For more information about the PowerShell Alias provider, type:
 Get-Help Alias
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Functions](about_Functions.md)
 - [about_Profiles](about_Profiles.md)

@@ -9,11 +9,11 @@ title: about_Pipeline_Chain_Operators
 
 # about_Pipeline_Chain_Operators
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes chaining pipelines with the `&&` and `||` operators in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 Beginning in PowerShell 7, PowerShell implements the `&&` and `||` operators to
 conditionally chain pipelines. These operators are known in PowerShell as
@@ -307,7 +307,7 @@ Test-NotTwo : Input is 2
 Note that `Write-Output 'All done!'` is not executed, since `Test-NotTwo` is
 deemed to have failed after generating the non-terminating error.
 
-## See also
+## SEE ALSO
 
 - [about_Automatic_Variables][02]
 - [about_Operators][03]

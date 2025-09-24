@@ -8,12 +8,12 @@ title: about_Member-Access_Enumeration
 ---
 # about_Member-Access_Enumeration
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the automatic enumeration of collections when using the member-access
 operator.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell maintains a list of types that are enumerable. Starting in
 PowerShell 3.0, the _member-access enumeration_ feature improves the
@@ -70,7 +70,7 @@ exception.
 > error. For additional safety, consider manually enumerating the items and
 > explicitly handling any errors.
 
-## Access members of a non-enumerable object
+## ACCESS MEMBERS OF A NON-ENUMERABLE OBJECT
 
 When you use the member-access operator on an object that isn't an enumerable
 collection, PowerShell invokes the member to returns the value of the property
@@ -102,7 +102,7 @@ At line:1 char:1
 
 ```
 
-## Access members of a collection object
+## ACCESS MEMBERS OF A COLLECTION OBJECT
 
 When you use the member-access operator on a collection object that has the
 member, it always returns the property value or method result for the
@@ -268,7 +268,7 @@ FOO
 When you use the member-access operator, PowerShell enumerates the items in
 `$a` and calls the `ToUpper()` method on all items.
 
-## Notes
+## NOTES
 
 As previously stated, there can be subtle behavior and performance differences
 between the various enumeration methods.
@@ -366,7 +366,7 @@ item that doesn't have the property.
 
 For more information on this behavior, see PowerShell Issue [#13752][13752].
 
-## See Also
+## SEE ALSO
 
 - [about_Arrays][01]
 - [about_Intrinsic_Members][03]

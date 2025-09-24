@@ -9,11 +9,11 @@ title: about_Wildcards
 
 # about_Wildcards
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to use wildcard characters in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 Wildcard characters represent one or many characters. You can use them to
 create word patterns in commands. Wildcard expressions are used with the
@@ -99,7 +99,7 @@ foreach ($point in $p) {
 }
 ```
 
-## See also
+## SEE ALSO
 
 - [about_If][02]
 - [about_Language_Keywords][03]

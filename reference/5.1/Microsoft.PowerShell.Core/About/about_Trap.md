@@ -8,11 +8,11 @@ title: about_Trap
 ---
 # about_Trap
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes a keyword that handles a terminating error.
 
-## Long description
+## LONG DESCRIPTION
 
 A terminating error stops a statement from running. If PowerShell doesn't
 handle a terminating error in some way, PowerShell also stops running the
@@ -478,7 +478,7 @@ End of function
 The function resumes after the error is trapped, and the `End of function`
 statement runs. No error is written to the error stream.
 
-## Notes
+## NOTES
 
 `trap` statements provide a way to ensure all terminating errors within a
 script block are handled. For more finer-grained error handling, use
@@ -487,7 +487,7 @@ script block are handled. For more finer-grained error handling, use
 statement. For more information, see
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md).
 
-## See also
+## SEE ALSO
 
 - [about_Break](about_Break.md)
 - [about_Continue](about_Continue.md)
