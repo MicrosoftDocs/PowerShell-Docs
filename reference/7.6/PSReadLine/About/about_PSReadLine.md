@@ -13,6 +13,8 @@ title: about_PSReadLine
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
+## LONG DESCRIPTION
+
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
@@ -26,8 +28,6 @@ Windows PowerShell 5.1.
 
 For more information about version differences, see
 [about_PSReadLine_Release_Notes](about_PSReadLine_Release_Notes.md).
-
-## LONG DESCRIPTION
 
 The current version of PSReadLine can be installed and used on Windows
 PowerShell 5.1 and newer. For some features, you need to be running PowerShell

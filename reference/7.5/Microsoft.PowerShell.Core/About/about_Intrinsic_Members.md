@@ -14,7 +14,7 @@ title: about_Intrinsic_Members
 Provides information about PowerShell's intrinsic members that are available to
 all PowerShell objects.
 
-## DETAILED DESCRIPTION
+## LONG DESCRIPTION
 
 When objects are created, PowerShell adds some "hidden" properties and methods
 to each object. These properties and methods are known as _intrinsic members_.

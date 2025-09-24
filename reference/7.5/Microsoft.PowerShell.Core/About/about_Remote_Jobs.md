@@ -12,7 +12,7 @@ title: about_Remote_Jobs
 
 Describes how to run background jobs on remote computers.
 
-## DETAILED DESCRIPTION
+## LONG DESCRIPTION
 
 PowerShell concurrently runs commands and scripts through jobs. There are three
 jobs types provided by PowerShell to support concurrency.

@@ -8,11 +8,15 @@ title: about_PSReadLine_Release_Notes
 ---
 # about_PSReadLine_Release_Notes
 
+## SHORT DESCRIPTION
+
 This is a summary of changes to the **PSReadLine** module. For a full list of
 changes, see the **PSReadLine** [ChangeLog][01].
 
 - Current preview: v2.4.4-beta4
 - Current stable release: v2.3.6
+
+## LONG DESCRIPTION
 
 ## PSREADLINE RELEASE HISTORY
 
@@ -26,8 +30,6 @@ Windows PowerShell 5.1.
 - v2.1.0 shipped in PowerShell 7.2.5
 - v2.0.4 shipped in PowerShell 7.0.11
 - v2.0.0 ships in Windows PowerShell 5.1
-
-## RELEASE NOTES
 
 ### 2.4.4-beta4 - 2025-08-28
 

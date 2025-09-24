@@ -12,7 +12,7 @@ title: about_Job_Details
 
 Provides details about background jobs on local and remote computers.
 
-## DETAILED DESCRIPTION
+## LONG DESCRIPTION
 
 This topic explains the concept of a background job and provides technical
 information about how background jobs work in PowerShell.
