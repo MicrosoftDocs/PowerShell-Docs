@@ -8,11 +8,11 @@ title: about_Using
 ---
 # about_Using
 
-## Short description
+## SHORT DESCRIPTION
 
 Allows you to specify namespaces to use in the session.
 
-## Long description
+## LONG DESCRIPTION
 
 The `using` statement allows you to specify namespaces to use in the session.
 Adding namespaces simplifies usage of .NET classes and members and allows you
@@ -27,7 +27,7 @@ The `using` statement isn't the same as the `Using:` scope modifier for
 variables. For more information, see
 [about_Remote_Variables](about_Remote_Variables.md).
 
-## Namespace syntax
+## NAMESPACE SYNTAX
 
 To resolve types from a .NET namespace:
 
@@ -50,7 +50,7 @@ using namespace System.Text
 using namespace System.IO
 
 [string]$string = "Hello World"
-## Valid values are "SHA1", "SHA256", "SHA384", "SHA512", "MD5"
+## VALID VALUES ARE "SHA1", "SHA256", "SHA384", "SHA512", "MD5"
 [string]$algorithm = "SHA256"
 
 [byte[]]$stringBytes = [UnicodeEncoding]::Unicode.GetBytes($string)
@@ -64,7 +64,7 @@ $hashFromStream = Get-FileHash @getFileHashSplat
 $hashFromStream.Hash.ToString()
 ```
 
-## Module syntax
+## MODULE SYNTAX
 
 To load classes and enumerations from a PowerShell module:
 
@@ -134,7 +134,7 @@ $deck.Shuffle()
 [Card[]]$hand3 = $deck.Deal(5)
 ```
 
-## Assembly syntax
+## ASSEMBLY SYNTAX
 
 The following syntax loads .NET types from an assembly into a script at the
 beginning of execution. You must use a fully-qualified path to the assembly

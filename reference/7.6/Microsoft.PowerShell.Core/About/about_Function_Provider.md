@@ -8,23 +8,23 @@ title: about_Function_Provider
 ---
 # about_Function_Provider
 
-## Provider name
+## PROVIDER NAME
 
 Function
 
-## Drives
+## DRIVES
 
 `Function:`
 
-## Capabilities
+## CAPABILITIES
 
 **ShouldProcess**
 
-## Short description
+## SHORT DESCRIPTION
 
 Provides access to the functions defined in PowerShell.
 
-## Detailed description
+## DETAILED DESCRIPTION
 
 The PowerShell **Function** provider lets you get, add, change, clear, and
 delete the functions and filters in PowerShell.
@@ -47,13 +47,13 @@ in this article.
 - [Remove-Item][05]
 - [Clear-Item][06]
 
-## Types exposed by this provider
+## TYPES EXPOSED BY THIS PROVIDER
 
 Each function is an instance of the
 [System.Management.Automation.FunctionInfo][07] class. Each filter is an
 instance of the [System.Management.Automation.FilterInfo][08] class.
 
-## Navigating the Function drive
+## NAVIGATING THE FUNCTION DRIVE
 
 The **Function** provider exposes its data store in the `Function:` drive. To
 work with functions, you can change your location to the `Function:` drive
@@ -81,7 +81,7 @@ drive. To reference a function from another location, use the drive name
 > [Get-ChildItem][09], `cd` is an alias for [Set-Location][10] and `pwd` is an
 > alias for [Get-Location][01].
 
-## Getting functions
+## GETTING FUNCTIONS
 
 This command gets the list of all the functions in the current session. You can
 use this command from any PowerShell drive.
@@ -143,7 +143,7 @@ PS C:\> Get-Item -Path Function:c:
 PS Function:\> Get-Item -Path .\c:
 ```
 
-## Creating a function
+## CREATING A FUNCTION
 
 This command uses the `New-Item` cmdlet to create a function called `Win32:`.
 The expression in braces is the script block that is represented by the
@@ -181,7 +181,7 @@ Without the `Global:` scope modifier, the function would be created in the
 local scope. When `New-Function` exits the newly created function would no
 longer exist.
 
-## Deleting a function
+## DELETING A FUNCTION
 
 This command deletes the `more` function from the current session.
 
@@ -189,7 +189,7 @@ This command deletes the `more` function from the current session.
 Remove-Item Function:more
 ```
 
-## Changing a function
+## CHANGING A FUNCTION
 
 This command uses the `Set-Item` cmdlet to change the `prompt` function so that
 it displays the time before the path.
@@ -209,7 +209,7 @@ function to `gh`.
 Rename-Item -Path Function:help -NewName gh
 ```
 
-## Copying a function
+## COPYING A FUNCTION
 
 This command copies the `prompt` function to `oldPrompt`, effectively creating
 a new name for the script block that is associated with the prompt function.
@@ -221,7 +221,7 @@ the value of the **Options** property, use `Set-Item`.
 Copy-Item -Path Function:prompt -Destination Function:oldPrompt
 ```
 
-## Dynamic parameters
+## DYNAMIC PARAMETERS
 
 Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
@@ -248,14 +248,14 @@ Determines the value of the **Options** property of a function.
 
 - [Set-Item][11]
 
-## Using the pipeline
+## USING THE PIPELINE
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
 task by sending provider data from one cmdlet to another provider cmdlet.
 To read more about how to use the pipeline with provider cmdlets, see the
 cmdlet references provided throughout this article.
 
-## Getting help
+## GETTING HELP
 
 Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
@@ -272,7 +272,7 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path Function:
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Functions][13]
 - [about_Providers][14]

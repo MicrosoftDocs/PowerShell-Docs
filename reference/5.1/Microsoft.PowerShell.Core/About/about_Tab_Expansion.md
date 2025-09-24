@@ -9,13 +9,13 @@ title: about_Tab_Expansion
 ---
 # about_Tab_Expansion
 
-## Short description
+## SHORT DESCRIPTION
 
 PowerShell provides completions on input to provide hints, enable discovery,
 and speed up input entry. Command names, parameter names, argument values and
 file paths can all be completed by pressing the <kbd>Tab</kbd> key.
 
-## Long description
+## LONG DESCRIPTION
 
 Tab expansion is controlled by the internal function **TabExpansion2**. Since
 this function can be modified or overridden, this discussion is a guide to the
@@ -37,7 +37,7 @@ information, see [about_PSReadLine][02].
 > contain tabs. If it does, the results will be unpredictable and will almost
 > certainly not be what you intended.
 
-## File and cmdlet name completion
+## FILE AND CMDLET NAME COMPLETION
 
 To fill in a filename or path from the available choices automatically, type
 part of the name and press the <kbd>Tab</kbd> key. PowerShell automatically
@@ -45,7 +45,7 @@ expands the name to the first match that it finds. Pressing the <kbd>Tab</kbd>
 key repeatedly cycles through all the available choices.
 
 
-## Cmdlet name completion
+## CMDLET NAME COMPLETION
 
 The tab expansion of cmdlet names is slightly different. To use tab expansion
 on a cmdlet name, type the entire first part of the name (the verb) and the
@@ -105,7 +105,7 @@ In this example the string 'fore' is matched to `foreach` (PowerShell alias),
 `ForEach-Object` (cmdlet), and `foreach.cmd` (native command). Use the arrow
 keys to select the value you want.
 
-## Parameter argument completion
+## PARAMETER ARGUMENT COMPLETION
 
 Tab completion can also work to complete parameter arguments. You can use the
 <kbd>Tab</kbd> key to cycle through a list of possible values that are valid
@@ -113,7 +113,7 @@ for some parameter.
 
 For more information, see [about_Functions_Argument_Completion][04].
 
-## See also
+## SEE ALSO
 
 - [TabExpansion2][06]
 - [about_Comment_Based_Help][03]

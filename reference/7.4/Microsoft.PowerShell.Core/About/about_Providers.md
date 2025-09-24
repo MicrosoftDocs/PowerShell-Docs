@@ -8,12 +8,12 @@ title: about_Providers
 ---
 # about_Providers
 
-## Short description
+## SHORT DESCRIPTION
 Describes how PowerShell providers provide access to data and components that
 wouldn't otherwise be easily accessible at the command line. The data is
 presented in a consistent format that resembles a file system drive.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell providers are .NET programs that provide access to specialized data
 stores for easier viewing and management. The data appears in a drive, and you
@@ -25,7 +25,7 @@ for the data.
 The providers can also add dynamic parameters to the built-in cmdlets. These
 parameters are only available when you use the cmdlet with the provider data.
 
-## Built-in providers
+## BUILT-IN PROVIDERS
 
 PowerShell includes a set of built-in providers that provide access to
 different types of objects.
@@ -68,7 +68,7 @@ Get-PSProvider
 > The **Certificate**, **Registry**, and **WSMan** providers are only
 > available on the Windows platform.
 
-## Installing and removing providers
+## INSTALLING AND REMOVING PROVIDERS
 
 Providers are typically installed via PowerShell modules. Importing the module
 loads the provider into your session. You can't uninstall the built-in
@@ -82,7 +82,7 @@ You can also use the `Remove-PSDrive` cmdlet to remove any drive from the
 current session. This data on the drive isn't affected, but the drive is no
 longer available in that session.
 
-## Viewing providers
+## VIEWING PROVIDERS
 
 To view the PowerShell providers on your computer, type:
 
@@ -93,7 +93,7 @@ Get-PSProvider
 The output lists the built-in providers and the providers that you added to
 the session.
 
-## The provider cmdlets
+## THE PROVIDER CMDLETS
 
 The following cmdlets are designed to work with the data exposed by any
 provider. You can use the same cmdlets in the same way to manage the different
@@ -171,7 +171,7 @@ Get-Help <cmdlet-name> -Detailed
 
 - [Get-PSProvider](xref:Microsoft.PowerShell.Management.Get-PSProvider)
 
-## Viewing provider data
+## VIEWING PROVIDER DATA
 
 The primary benefit of a provider is that it exposes its data in a familiar and
 consistent way. The model for data presentation is a file system drive.
@@ -221,7 +221,7 @@ Then, to view the contents of the `Cert:` drive, type:
 Get-ChildItem
 ```
 
-## Moving through hierarchical data
+## MOVING THROUGH HIERARCHICAL DATA
 
 You can move through a provider drive just as you would a hard disk drive. If
 the data is arranged in a hierarchy of items within items, use a backslash
@@ -264,7 +264,7 @@ PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\> cd ..\..\La
 PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters>
 ```
 
-## Provider Home
+## PROVIDER HOME
 
 Providers also have a **Home** location. This location is shared by all
 `PSDrives` backed by the provider. It can be retrieved by viewing the **Home**
@@ -315,7 +315,7 @@ At line:1 char:1
 ...
 ```
 
-## Finding dynamic parameters
+## FINDING DYNAMIC PARAMETERS
 
 Dynamic parameters are cmdlet parameters that are added to a cmdlet by a
 provider. These parameters are available only when the cmdlet is used with the
@@ -338,7 +338,7 @@ For example:
 Get-Help Certificate
 ```
 
-## Learning about providers
+## LEARNING ABOUT PROVIDERS
 
 Although all provider data appears in drives and you use the same methods to
 move through them, the similarity stops there. The data stores that the
@@ -363,7 +363,7 @@ For a list of Help topics about the providers, type:
 Get-Help * -Category Provider
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Locations](about_Locations.md)
 - [about_Path_Syntax](about_Path_Syntax.md)

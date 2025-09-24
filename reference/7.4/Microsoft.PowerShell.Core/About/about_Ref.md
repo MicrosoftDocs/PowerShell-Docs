@@ -8,11 +8,11 @@ title: about_Ref
 ---
 # about_Ref
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to create and use a reference type variable.
 
-## Long description
+## LONG DESCRIPTION
 
 You can pass variables to functions _by reference_ or _by value_. When you pass
 a variable _by value_, you are passing a copy of the data. When you pass a
@@ -73,7 +73,7 @@ Test                           New Text
 The function adds a new key-value pair that persists outside of the function's
 scope.
 
-## Writing functions to accept reference parameters
+## WRITING FUNCTIONS TO ACCEPT REFERENCE PARAMETERS
 
 You can code your functions to take a parameter as a reference, regardless of
 the type of data passed. This requires that you specify the parameters type
@@ -105,7 +105,7 @@ $var
 3
 ```
 
-## Passing references to .NET methods
+## PASSING REFERENCES TO .NET METHODS
 
 Some .NET methods may require you to pass a variable as a reference. When the
 method's definition uses the keywords `in`, `out`, or `ref` on a parameter, it
@@ -133,7 +133,7 @@ PS> $number
 15
 ```
 
-## References and scopes
+## REFERENCES AND SCOPES
 
 References allow the value of a variable in the parent scope to be changed
 within a child scope.
@@ -155,7 +155,7 @@ $i = 0;$iRef = 1
 
 Only the reference type's variable was changed.
 
-## Using `[ref]` as a general-purpose object holder
+## USING `[REF]` AS A GENERAL-PURPOSE OBJECT HOLDER
 
 You can also use `[ref]` as a general-purpose object holder. In this usage,
 `[ref]` is applied to a _value_ instead of a variable. Typically, the value is
@@ -181,7 +181,7 @@ Get-ChildItem -File $setPath |
     Rename-Item -NewName { '{0} - {1}' -f $iRef.Value++,$_.Name }
 ```
 
-## Difference between `[ref]` and `[System.Management.Automation.PSReference]`
+## DIFFERENCE BETWEEN `[REF]` AND `[SYSTEM.MANAGEMENT.AUTOMATION.PSREFERENCE]`
 
 A reference type variable is created using the `[ref]` type accelerator or by
 specifying the `[System.Management.Automation.PSReference]` type directly. Even
@@ -230,7 +230,7 @@ Value
     6
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Variables][06]
 - [about_Environment_Variables][01]

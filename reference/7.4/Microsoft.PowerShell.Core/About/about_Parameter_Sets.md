@@ -7,11 +7,11 @@ title: about_Parameter_Sets
 ---
 # about_Parameter_Sets
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to define and use parameter sets in advanced functions.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell uses parameter sets to enable you to write a single function that
 can do different actions for different scenarios. Parameter sets enable you to
@@ -19,7 +19,7 @@ expose different parameters to the user. And, to return different information
 based on the parameters specified by the user. You can only use one parameter
 set at a time.
 
-## Parameter set requirements
+## PARAMETER SET REQUIREMENTS
 
 The following requirements apply to all parameter sets.
 
@@ -36,7 +36,7 @@ The following requirements apply to all parameter sets.
 > [!NOTE]
 > There is a limit of 32 parameter sets.
 
-## Default parameter sets
+## DEFAULT PARAMETER SETS
 
 When multiple parameter sets are defined, the `DefaultParameterSetName` keyword
 of the **CmdletBinding** attribute specifies the default parameter set.
@@ -45,7 +45,7 @@ set to use based on the information provided to the command. For more
 information about the **CmdletBinding** attribute, see
 [about_Functions_CmdletBindingAttribute][01].
 
-## Declaring parameter sets
+## DECLARING PARAMETER SETS
 
 To create a parameter set, you must specify the `ParameterSetName` keyword of
 the **Parameter** attribute for every parameter in the parameter set. For
@@ -60,7 +60,7 @@ one unique parameter.
 Parameters that don't have an assigned parameter set name belong to all
 parameter sets.
 
-## Reserved parameter set name
+## RESERVED PARAMETER SET NAME
 
 PowerShell reserves the parameter set name `__AllParameterSets` for special
 handling.
@@ -78,7 +78,7 @@ both cases the parameter belongs to all parameter sets.
 > PowerShell creates an explicit parameter set that can't be properly
 > referenced by the **Parameter** attribute.
 
-## Examples
+## EXAMPLES
 
 The following example function counts the number lines, characters, and words
 in a text file. Using parameters, you can specify the values you want returned

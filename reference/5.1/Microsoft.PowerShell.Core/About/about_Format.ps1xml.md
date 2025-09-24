@@ -9,14 +9,14 @@ title: about_Format.ps1xml
 
 # about_Format.ps1xml
 
-## Short description
+## SHORT DESCRIPTION
 
 The `Format.ps1xml` files in PowerShell define the default display of objects
 in the PowerShell console. You can create your own `Format.ps1xml` files to
 change the display of objects or to define default displays for new object
 types that you create in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 The `Format.ps1xml` files in PowerShell define the default display of objects
 in PowerShell. You can create your own `Format.ps1xml` files to change the
@@ -88,7 +88,7 @@ headers, and the properties that are displayed in the body of the view. The
 format in `Format.ps1xml` files is applied just before the data is presented to
 the user.
 
-## Creating new Format.ps1xml files
+## CREATING NEW FORMAT.PS1XML FILES
 
 The `.ps1xml` files that are installed with PowerShell are digitally signed to
 prevent tampering because the formatting can include script blocks. To change
@@ -308,7 +308,7 @@ LCID Name  Calendar                               DisplayName
 1033 en-US System.Globalization.GregorianCalendar English (United States)
 ```
 
-## The XML in Format.ps1xml files
+## THE XML IN FORMAT.PS1XML FILES
 
 The full schema definition can be found in [Format.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd)
 in the PowerShell source code repository on GitHub.
@@ -396,7 +396,7 @@ multiple `<CustomEntry>` tags. Each `<CustomEntry>` tag contains a
 formatting of the specified location in the view, including `<Text>`,
 `<Indentation>`, `<ExpressionBinding>`, and `<NewLine>` tags.
 
-## Default displays in Types.ps1xml
+## DEFAULT DISPLAYS IN TYPES.PS1XML
 
 The default displays of some basic object types are defined in the
 `Types.ps1xml` file in the `$PSHOME` directory. The nodes are named
@@ -408,7 +408,7 @@ The default displays of some basic object types are defined in the
 
 For more information, see [about_Types.ps1xml](about_Types.ps1xml.md).
 
-## Tracing Format.ps1xml file use
+## TRACING FORMAT.PS1XML FILE USE
 
 To detect errors in the loading or application of `Format.ps1xml` files, use
 the `Trace-Command` cmdlet with any of the following format components as the
@@ -421,13 +421,13 @@ For more information, see
 [Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command) and
 [Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource).
 
-## Signing a Format.ps1xml file
+## SIGNING A FORMAT.PS1XML FILE
 
 To protect the users of your `Format.ps1xml` file, sign the file using a
 digital signature. For more information, see
 [about_Signing](about_Signing.md).
 
-## Sample XML for a Format-Table custom view
+## SAMPLE XML FOR A FORMAT-TABLE CUSTOM VIEW
 
 The following sample creates a `Format-Table` custom view for the
 **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects created by
@@ -568,7 +568,7 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 </Configuration>
 ```
 
-## See also
+## SEE ALSO
 
 - [Trace-Command][05]
 - [Export-FormatData][02]

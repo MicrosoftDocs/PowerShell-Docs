@@ -8,11 +8,11 @@ title: about_Module_Manifests
 ---
 # about_Module_Manifests
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the settings and practices for writing module manifest files.
 
-## Long description
+## LONG DESCRIPTION
 
 A module manifest is a PowerShell data file (`.psd1`) containing a hash table.
 The keys-value pairs in the hash table describe the contents and attributes of
@@ -77,7 +77,7 @@ publish your module. `Test-ModuleManifest` returns an error if the manifest is
 invalid or the module can't be imported into the current session because the
 session doesn't meet requirements set in the manifest.
 
-## Using script code in a module manifest
+## USING SCRIPT CODE IN A MODULE MANIFEST
 
 The values assigned the settings in the manifest file can be expressions that
 are evaluated by PowerShell. This allows you to construct paths and
@@ -104,7 +104,7 @@ Allowed variables
 
 For more information, see [about_Language_Modes][08].
 
-## Manifest settings
+## MANIFEST SETTINGS
 
 The following sections detail every available setting in a module manifest and
 how you can use them. They start with a synopsis of the setting and are
@@ -1548,7 +1548,7 @@ imported as `Get-ExampleItem`.
 }
 ```
 
-## See also
+## SEE ALSO
 
 - [about_PowerShell_Editions][09]
 - [New-ModuleManifest][13]

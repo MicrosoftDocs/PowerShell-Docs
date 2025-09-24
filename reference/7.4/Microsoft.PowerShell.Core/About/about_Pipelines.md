@@ -8,11 +8,11 @@ title: about_Pipelines
 ---
 # about_Pipelines
 
-## Short description
+## SHORT DESCRIPTION
 
 Combining commands into pipelines in the PowerShell
 
-## Long description
+## LONG DESCRIPTION
 
 A pipeline is a series of commands connected by pipeline operators (`|`)
 (ASCII 124). Each pipeline operator sends the results of the preceding command
@@ -96,7 +96,7 @@ tmp2.txt                   114000
 tmp3.txt                   114000
 ```
 
-## Using pipelines
+## USING PIPELINES
 
 Most PowerShell cmdlets are designed to support pipelines. In most cases, you
 can _pipe_ the results of a **Get** cmdlet to another cmdlet of the same noun.
@@ -159,7 +159,7 @@ PS> ipconfig.exe | Select-String -Pattern 'IPv4'
 With a bit of practice, you'll find that combining simple commands into
 pipelines saves time and typing, and makes your scripting more efficient.
 
-## How pipelines work
+## HOW PIPELINES WORK
 
 This section explains how input objects are bound to cmdlet parameters and
 processed during pipeline execution.
@@ -397,7 +397,7 @@ For example,
 It's important to remember that objects sent down the pipeline are delivered
 one at a time.
 
-## Using native commands in the pipeline
+## USING NATIVE COMMANDS IN THE PIPELINE
 
 PowerShell allows you to include native external commands in the pipeline.
 However, it's important to note that PowerShell's pipeline is object-oriented
@@ -448,7 +448,7 @@ This feature doesn't support byte-stream data when redirecting **stderr**
 output to **stdout**. When you combine the **stderr** and **stdout** streams,
 the combined streams are treated as string data.
 
-## Investigating pipeline errors
+## INVESTIGATING PIPELINE ERRORS
 
 When PowerShell can't associate the piped objects with a parameter of the
 receiving cmdlet, the command fails.
@@ -572,7 +572,7 @@ Get-Item -Path HKLM:\Software\MyCompany\design |
 Move-ItemProperty -Destination HKLM:\Software\MyCompany\sales -Name product
 ```
 
-## Intrinsic line continuation
+## INTRINSIC LINE CONTINUATION
 
 As already discussed, a pipeline is a series of commands connected by pipeline
 operators (`|`), usually written on a single line. However, for readability,
@@ -622,7 +622,7 @@ Get-Process | Where-Object CPU | Where-Object Path
 > doesn't end with a pipeline character, PowerShell considers the input to be
 > complete and executes that line as entered.
 
-## See also
+## SEE ALSO
 
 - [about_Objects][05]
 - [about_Parameters][06]

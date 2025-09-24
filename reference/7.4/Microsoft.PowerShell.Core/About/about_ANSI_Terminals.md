@@ -7,11 +7,11 @@ title: about_ANSI_Terminals
 ---
 # about_ANSI_Terminals
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the support available for ANSI escape sequences in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell has many features that support the use of ANSI escape sequences to
 control the rendering of output in the terminal application that's hosting
@@ -20,7 +20,7 @@ PowerShell.
 PowerShell 7.2 added a new automatic variable, `$PSStyle`, and changes to the
 PowerShell engine to support the output of ANSI-decorated text.
 
-## ANSI Terminal support
+## ANSI TERMINAL SUPPORT
 
 The ANSI features are designed to be compatible with the xterm-based terminals.
 For more information, see [xterm][05] in Wikipedia.
@@ -34,7 +34,7 @@ For Linux, each distribution ships with a different terminal application.
 Consult the documentation for your distribution to find a suitable terminal
 application.
 
-## $PSStyle
+## $PSSTYLE
 
 The variable has the following properties:
 
@@ -185,7 +185,7 @@ The following members control how or when ANSI formatting is used:
     extensions. The **Extension** member pre-includes extensions for archive
     and PowerShell files.
 
-## Cmdlets that generate ANSI output
+## CMDLETS THAT GENERATE ANSI OUTPUT
 
 - The markdown cmdlets - the [Show-Markdown][11] cmdlet displays the contents
   of a file containing markdown text. The output is rendered using ANSI
@@ -202,7 +202,7 @@ The following members control how or when ANSI formatting is used:
 - `Write-Progress` - ANSI output is managed using `$PSStyle.Progress`, as
   described above. For more information, see [Write-Progress][12]
 
-## Redirecting output in `Host` mode
+## REDIRECTING OUTPUT IN `HOST` MODE
 
 By default, `$PSStyle.OutputRendering` is a set to **Host**. The ANSI escape
 sequences are removed from redirected or piped output.
@@ -244,7 +244,7 @@ pwsh -NoProfile -Command 'Get-ChildItem > out.txt'
 
 When you inspect the contents of `out.txt` there are no ANSI escape sequences.
 
-## Disabling ANSI output
+## DISABLING ANSI OUTPUT
 
 Support for ANSI escape sequences can be turned off using the **TERM** or
 **NO_COLOR** environment variables.
@@ -259,7 +259,7 @@ If `$Env:NO_COLOR` exists, then `$PSStyle.OutputRendering` is set to
 **PlainText**. For more information about the **NO_COLOR** environment
 variable, see [https://no-color.org/][04].
 
-## Using `$PSStyle` from C\#
+## USING `$PSSTYLE` FROM C\#
 
 C# developers can access `PSStyle` as a singleton, as shown in the following
 example:
@@ -293,7 +293,7 @@ The PowerShell engine includes the following changes:
   hosts, like the [Windows Terminal][06], support this markup, which makes the
   rendered text clickable in the terminal.
 
-## Static methods of the PSStyle class
+## STATIC METHODS OF THE PSSTYLE CLASS
 
 PowerShell 7.4 adds three new static methods to the
 `[System.Management.Automation.PSStyle]` class.
@@ -360,7 +360,7 @@ using namespace System.Management.Automation
 0000000000000000 1B 5B 39 31 3B 34 30 6D                         �[91;40m
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Experimental_Features][03]
 - [Using Experimental Features][01]

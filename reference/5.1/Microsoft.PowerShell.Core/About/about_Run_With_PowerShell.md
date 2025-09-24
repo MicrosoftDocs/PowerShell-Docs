@@ -9,12 +9,12 @@ title: about_Run_With_PowerShell
 
 # about_Run_With_PowerShell
 
-## Short description
+## SHORT DESCRIPTION
 
 Explains how to use the **Run with PowerShell** feature to run a script from a
 file system drive.
 
-## Long description
+## LONG DESCRIPTION
 
 Beginning in Windows PowerShell 3.0, you can use the **Run with PowerShell**
 feature to run scripts from File Explorer. PowerShell 7 adds the **Run with
@@ -56,7 +56,7 @@ more information, see [about_Execution_Policies][01].
 > to a change in the context menus on Windows 11, the **Run with PowerShell 7**
 > menu item does not appear. This issue is being investigated.
 
-## See also
+## SEE ALSO
 
 - [about_Execution_Policies][01]
 - [about_Group_Policy_Settings][02]

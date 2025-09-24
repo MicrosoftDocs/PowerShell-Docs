@@ -8,11 +8,11 @@ title: about_Return
 ---
 # about_Return
 
-## Short description
+## SHORT DESCRIPTION
 
 Exits the current scope, which can be a function, script, or script block.
 
-## Long description
+## LONG DESCRIPTION
 
 The `return` keyword exits a function, script, or script block. It can be used
 to exit a scope at a specific point, to return a value, or to indicate that the
@@ -228,7 +228,7 @@ object to the pipeline, use one of the following two methods:
   Property :
   ```
 
-## See also
+## SEE ALSO
 
 - [about_Classes](about_Classes.md)
 - [about_Functions](about_Functions.md)

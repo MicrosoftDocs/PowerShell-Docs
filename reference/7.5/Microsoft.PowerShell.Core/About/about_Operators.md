@@ -8,16 +8,16 @@ title: about_Operators
 ---
 # about_Operators
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the operators that are supported by PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 An operator is a language element that you can use in a command or expression.
 PowerShell supports several types of operators to help you manipulate values.
 
-## Arithmetic Operators
+## ARITHMETIC OPERATORS
 
 Use arithmetic operators (`+`, `-`, `*`, `/`, `%`) to calculate values in a
 command or expression. With these operators, you can add, subtract, multiply,
@@ -34,7 +34,7 @@ manipulate the bit patterns in values.
 
 For more information, see [about_Arithmetic_Operators][05].
 
-## Assignment Operators
+## ASSIGNMENT OPERATORS
 
 Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign, change,
 or append values to variables. You can combine arithmetic operators with
@@ -42,7 +42,7 @@ assignment to assign the result of the arithmetic operation to a variable.
 
 For more information, see [about_Assignment_Operators][06].
 
-## Comparison Operators
+## COMPARISON OPERATORS
 
 Use comparison operators (`-eq`, `-ne`, `-gt`, `-lt`, `-le`, `-ge`) to compare
 values and test conditions. For example, you can compare two string values to
@@ -60,7 +60,7 @@ given type.
 
 For more information, see [about_Comparison_Operators][07].
 
-## Logical Operators
+## LOGICAL OPERATORS
 
 Use logical operators (`-and`, `-or`, `-xor`, `-not`, `!`) to connect
 conditional statements into a single complex conditional. For example, you can
@@ -69,7 +69,7 @@ conditions.
 
 For more information, see [about_Logical_Operators][13].
 
-## Redirection Operators
+## REDIRECTION OPERATORS
 
 Use redirection operators (`>`, `>>`, `2>`, `2>>`, and `2>&1`) to send the
 output of a command or expression to a text file. The redirection operators
@@ -79,7 +79,7 @@ cmdlet to redirect output.
 
 For more information, see [about_Redirection][18]
 
-## Split and Join Operators
+## SPLIT AND JOIN OPERATORS
 
 The `-split` and `-join` operators divide and combine substrings. The `-split`
 operator splits a string into substrings. The `-join` operator concatenates
@@ -87,14 +87,14 @@ multiple strings into a single string.
 
 For more information, see [about_Split][21] and [about_Join][12].
 
-## Type Operators
+## TYPE OPERATORS
 
 Use the type operators (`-is`, `-isnot`, `-as`) to find or change the .NET type
 of an object.
 
 For more information, see [about_Type_Operators][22].
 
-## Unary Operators
+## UNARY OPERATORS
 
 Use the unary `++`  and `--` operators to increment or decrement values and
 `-` for negation. For example, to increment the variable `$a` from `9` to
@@ -102,7 +102,7 @@ Use the unary `++`  and `--` operators to increment or decrement values and
 
 For more information, see [about_Arithmetic_Operators][05].
 
-## Special Operators
+## SPECIAL OPERATORS
 
 Special operators have specific use-cases that don't fit into any other
 operator group. For example, special operators allow you to run commands,
@@ -846,7 +846,7 @@ $a = $null
 ${a}?[0]
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Arithmetic_Operators][05]
 - [about_Assignment_Operators][06]

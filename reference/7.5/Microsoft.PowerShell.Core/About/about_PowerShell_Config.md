@@ -8,11 +8,11 @@ title: about_PowerShell_Config
 ---
 # about_PowerShell_Config
 
-## Short description
+## SHORT DESCRIPTION
 
 Configuration files for PowerShell, replacing Registry configuration.
 
-## Long description
+## LONG DESCRIPTION
 
 The `powershell.config.json` file contains configuration settings for
 PowerShell. PowerShell loads this configuration at startup. The settings can
@@ -20,7 +20,7 @@ also be modified at runtime. Previously, these settings were stored in the
 Windows Registry for PowerShell, but are now contained in a file to enable
 configuration on macOS and Linux.
 
-## Summary of settings
+## SUMMARY OF SETTINGS
 
 The `powershell.config.json` file can contain the following keys:
 
@@ -54,7 +54,7 @@ also apply to all platforms when defined at the root level of the JSON file.
 > start an interactive session. If this occurs, you must fix the configuration
 > file.
 
-## Configuration scope
+## CONFIGURATION SCOPE
 
 Configuration settings can be defined for all users or at the individual user
 level.
@@ -86,7 +86,7 @@ platforms.
 After Group Policy, settings defined at the **AllUsers** level take precedence
 over settings defined for the **CurrentUser** level.
 
-## Windows-specific settings
+## WINDOWS-SPECIFIC SETTINGS
 
 The following settings only apply to Windows platforms.
 
@@ -186,7 +186,7 @@ JSON configuration.
 
 For more information, see [about_Group_Policy_Settings][07].
 
-## Settings for non-Windows platforms
+## SETTINGS FOR NON-WINDOWS PLATFORMS
 
 The following settings only apply to Linux and macOS platforms.
 
@@ -201,7 +201,7 @@ macOS.
 For a full description of PowerShell logging for non-Windows systems, see
 [about_Logging_Non-Windows][02].
 
-## Common configuration settings
+## COMMON CONFIGURATION SETTINGS
 
 The following settings are available on all supported platforms.
 

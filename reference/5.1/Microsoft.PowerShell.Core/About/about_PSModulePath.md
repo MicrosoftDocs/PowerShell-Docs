@@ -8,12 +8,12 @@ title: about_PSModulePath
 ---
 # about_PSModulePath
 
-## Short description
+## SHORT DESCRIPTION
 
 This article describes the purpose and usage of the `$Env:PSModulePath`
 environment variable.
 
-## Long description
+## LONG DESCRIPTION
 
 The `$Env:PSModulePath` environment variable contains a list of folder
 locations. PowerShell recursively searches each folder for module (`.psd1` or
@@ -28,7 +28,7 @@ By default, the effective locations assigned to `$Env:PSModulePath` are:
 - Modules that ship with Windows PowerShell stored in `$PSHOME\Modules`, which
   is `$Env:SystemRoot\System32\WindowsPowerShell\1.0\Modules`.
 
-## PowerShell PSModulePath construction
+## POWERSHELL PSMODULEPATH CONSTRUCTION
 
 The value of `$Env:PSModulePath` is constructed each time PowerShell starts.
 The value varies by version of PowerShell and how you launched it.
@@ -51,7 +51,7 @@ The **CurrentUser** module path is prefixed only if the User scope
 `$Env:PSModulePath` doesn't exist. Otherwise, the User scope
 `$Env:PSModulePath` is used as defined.
 
-## Module search behavior
+## MODULE SEARCH BEHAVIOR
 
 PowerShell recursively searches each folder in the **PSModulePath** for module
 (`.psd1` or `.psm1`) files. This search pattern allows multiple versions of the
@@ -71,7 +71,7 @@ multiple versions are found. To load a specific version, use `Import-Module`
 with the **FullyQualifiedName** parameter. For more information, see
 [Import-Module][03].
 
-## Modifying PSModulePath
+## MODIFYING PSMODULEPATH
 
 For most situations, you should be installing modules in the default module
 locations. However, you might need to change the value of the `PSModulePath`
@@ -110,7 +110,7 @@ $path += ';%ProgramFiles%\Fabrikam\Modules'
 $key.SetValue('PSModulePath',$path,[Microsoft.Win32.RegistryValueKind]::ExpandString)
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Modules][01]
 - [about_Windows_PowerShell_Compatibility][02]

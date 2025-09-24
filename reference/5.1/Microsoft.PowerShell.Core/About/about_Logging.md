@@ -9,11 +9,11 @@ title: about_Logging
 
 # about_Logging
 
-## Short description
+## SHORT DESCRIPTION
 PowerShell logs internal operations from the engine, providers, and cmdlets to
 the Windows event log.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell logs details about PowerShell operations, such as starting and
 stopping the engine and providers, and executing PowerShell commands.
@@ -31,7 +31,7 @@ For information about logging in PowerShell 7, see the following articles:
 - [about_Logging_Windows][04]
 - [about_Logging_Non-Windows][03]
 
-## Viewing the PowerShell event log entries on Windows
+## VIEWING THE POWERSHELL EVENT LOG ENTRIES ON WINDOWS
 
 PowerShell logs can be viewed using the Windows Event Viewer. The event log is
 located in the **Application and Services Logs** group and is named
@@ -50,7 +50,7 @@ the **Microsoft-Windows-PowerShell/Operational** log:
 | Task    | `CommandStart`    |
 | Keyword | `Runspace`        |
 
-## Enabling Script Block Logging
+## ENABLING SCRIPT BLOCK LOGGING
 
 When you enable Script Block Logging, PowerShell records the content of all
 script blocks that it processes. Once enabled, any new PowerShell session logs
@@ -87,7 +87,7 @@ function Enable-PSScriptBlockLogging {
 }
 ```
 
-## Protected Event Logging
+## PROTECTED EVENT LOGGING
 
 Increasing the level of logging on a system increases the possibility that
 logged content may contain sensitive data. For example, with script logging
@@ -151,7 +151,7 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
     Unprotect-CmsMessage
 ```
 
-## See also
+## SEE ALSO
 
 - [PowerShell the Blue Team][05]
 - [Generic SIEM integration][01]

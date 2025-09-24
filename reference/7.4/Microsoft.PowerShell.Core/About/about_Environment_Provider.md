@@ -8,23 +8,23 @@ title: about_Environment_Provider
 ---
 # about_Environment_Provider
 
-## Provider name
+## PROVIDER NAME
 
 Environment
 
-## Drives
+## DRIVES
 
 `Env:`
 
-## Capabilities
+## CAPABILITIES
 
 **ShouldProcess**
 
-## Short description
+## SHORT DESCRIPTION
 
 Provides access to the Windows environment variables.
 
-## Detailed description
+## DETAILED DESCRIPTION
 
 The PowerShell **Environment** provider lets you get, add, change, clear, and
 delete environment variables and values in PowerShell.
@@ -49,13 +49,13 @@ in this article.
 - [Remove-Item][05]
 - [Clear-Item][06]
 
-## Types exposed by this provider
+## TYPES EXPOSED BY THIS PROVIDER
 
 Each environment variable is an instance of the
 [System.Collections.DictionaryEntry][07] class. The name of the variable is the
 dictionary key. The value of the environment variable is the dictionary value.
 
-## Navigating the Environment drive
+## NAVIGATING THE ENVIRONMENT DRIVE
 
 The **Environment** provider exposes its data store in the `Env:` drive. To
 work with environment variables, change your location to the `Env:` drive
@@ -97,7 +97,7 @@ session for as long as it is active.
 > [Get-ChildItem][08], `cd` is an alias for [Set-Location][02] and `pwd` is
 > an alias for [Get-Location][01].
 
-## Getting environment variables
+## GETTING ENVIRONMENT VARIABLES
 
 This command lists all the environment variables in the current session.
 
@@ -128,7 +128,7 @@ You can also use the variable prefix format as well.
 $Env:windir
 ```
 
-## Create an environment variable
+## CREATE AN ENVIRONMENT VARIABLE
 
 This command creates the `USERMODE` environment variable with a value of
 "Non-Admin". The `-Path` parameter value creates the new item in the `Env:`
@@ -139,7 +139,7 @@ session for as long as it is active.
 PS C:\> New-Item -Path Env: -Name USERMODE -Value Non-Admin
 ```
 
-## Changing an environment variable
+## CHANGING AN ENVIRONMENT VARIABLE
 
 ### Rename an environment variable
 
@@ -162,7 +162,7 @@ environment variable to "Administrator".
 Set-Item -Path Env:USERROLE -Value Administrator
 ```
 
-## Copy an environment variable
+## COPY AN ENVIRONMENT VARIABLE
 
 This command copies the value of the `USERROLE` environment variable to the
 `USERROLE2` environment Variable.
@@ -171,7 +171,7 @@ This command copies the value of the `USERROLE` environment variable to the
 Copy-Item -Path Env:USERROLE -Destination Env:USERROLE2
 ```
 
-## Remove an environment variable
+## REMOVE AN ENVIRONMENT VARIABLE
 
 This command deletes the `USERROLE2` environment variable from the current
 session.
@@ -180,7 +180,7 @@ session.
 Remove-Item -Path Env:USERROLE2
 ```
 
-## Remove an environment variable with Clear-Item
+## REMOVE AN ENVIRONMENT VARIABLE WITH CLEAR-ITEM
 
 This command deletes the `USERROLE` environment variable by clearing its
 value.
@@ -189,14 +189,14 @@ value.
 Clear-Item -Path Env:USERROLE
 ```
 
-## Using the pipeline
+## USING THE PIPELINE
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
 task by sending provider data from one cmdlet to another provider cmdlet.
 To read more about how to use the pipeline with provider cmdlets, see the
 cmdlet references provided throughout this article.
 
-## Getting help
+## GETTING HELP
 
 Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
@@ -213,7 +213,7 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path Env:
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Providers][10]
 

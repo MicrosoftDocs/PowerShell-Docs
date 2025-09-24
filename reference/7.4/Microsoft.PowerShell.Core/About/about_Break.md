@@ -8,19 +8,19 @@ title: about_Break
 ---
 # about_Break
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the `break` statement, which provides a way to exit the current
 control block.
 
-## Long description
+## LONG DESCRIPTION
 
 The `break` statement provides a way to exit the current control block.
 Execution continues at the next statement after the control block. The
 statement supports labels. A label is a name you assign to a statement in a
 script.
 
-## Using `break` in loops
+## USING `BREAK` IN LOOPS
 
 When a `break` statement appears in a loop, such as a `foreach`, `for`, `do`,
 or `while` loop, PowerShell immediately exits the loop.
@@ -121,7 +121,7 @@ loop. No label is needed.
 PowerShell does not limit how far labels can resume execution. The label can
 even pass control across script and function call boundaries.
 
-## Using `break` in a `switch` statement
+## USING `BREAK` IN A `SWITCH` STATEMENT
 
 In a `switch` construct, `break` causes PowerShell to exit the `switch` code
 block.
@@ -166,7 +166,7 @@ exits. If the four `break` statements are removed from the example, all four
 conditions are met. This example uses the `break` statement to display results
 when the most specific condition is met.
 
-## Using `break` in a `trap` statement
+## USING `BREAK` IN A `TRAP` STATEMENT
 
 If the final statement executed in the body of a `trap` statement is `break`,
 the error object is suppressed and the exception is re-thrown.
@@ -207,7 +207,7 @@ Line |
      | Attempted to divide by zero.
 ```
 
-## Do not use `break` outside of a loop, `switch`, or `trap`
+## DO NOT USE `BREAK` OUTSIDE OF A LOOP, `SWITCH`, OR `TRAP`
 
 When `break` is used outside of a construct that directly supports it
 (loops, `switch`, `trap`), PowerShell looks _up the call stack_ for an
@@ -222,7 +222,7 @@ Using `break` inside a pipeline `break`, such as a `ForEach-Object` script
 block, not only exits the pipeline, it potentially terminates the entire
 runspace.
 
-## See also
+## SEE ALSO
 
 - [about_Comparison_Operators](about_Comparison_Operators.md)
 - [about_Continue](about_Continue.md)

@@ -8,10 +8,12 @@ title: about_PSReadLine
 ---
 # about_PSReadLine
 
-## Short Description
+## SHORT DESCRIPTION
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
+
+## LONG DESCRIPTION
 
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
@@ -26,8 +28,6 @@ Windows PowerShell 5.1.
 
 For more information about version differences, see
 [about_PSReadLine_Release_Notes](about_PSReadLine_Release_Notes.md).
-
-## Long Description
 
 The current version of PSReadLine can be installed and used on Windows
 PowerShell 5.1 and newer. For some features, you need to be running PowerShell
@@ -57,7 +57,7 @@ in a supported version of PowerShell run the following command.
 Install-Module -Name PSReadLine -AllowClobber -Force
 ```
 
-## Custom Key Bindings
+## CUSTOM KEY BINDINGS
 
 PSReadLine supports custom key bindings using the `Set-PSReadLineKeyHandler`
 cmdlet. Most custom key bindings call one of the [bindable functions][02], for
@@ -119,7 +119,7 @@ is installed in the **PSReadLine** module folder.
 Most key bindings use some helper functions for editing the command line. Those
 APIs are documented in [about_PSReadLine_Functions][02].
 
-## Notes
+## NOTES
 
 ### Command History
 
@@ -225,7 +225,7 @@ $Env:PGPASS = gcloud auth print-access-token
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
-## See Also
+## SEE ALSO
 
 - PSReadLine is heavily influenced by the GNU [readline][04] library.
 

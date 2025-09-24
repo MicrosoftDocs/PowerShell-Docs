@@ -8,12 +8,12 @@ title: about_Split
 ---
 # about_Split
 
-## Short description
+## SHORT DESCRIPTION
 
 Explains how to use the Split operator to split one or more strings into
 substrings.
 
-## Long description
+## LONG DESCRIPTION
 
 The Split operator splits one or more strings into substrings. You can
 change the following elements of the Split operation:
@@ -28,7 +28,7 @@ change the following elements of the Split operation:
 - Options that specify the conditions under which the delimiter is matched,
   such as SimpleMatch and Multiline.
 
-## Syntax
+## SYNTAX
 
 The following diagram shows the syntax for the -split operator.
 
@@ -48,7 +48,7 @@ statement (a Split statement that includes a delimiter or script block). The
 is case-sensitive, meaning that case is considered when the delimiter rules
 are applied.
 
-## Parameters
+## PARAMETERS
 
 ### \<String\> or \<String[]\>
 
@@ -245,7 +245,7 @@ The RegexMatch options are:
 - **ExplicitCapture**: Ignores non-named match groups so that only explicit
   capture groups are returned in the result list. Valid only with RegexMatch.
 
-## UNARY and BINARY SPLIT OPERATORS
+## UNARY AND BINARY SPLIT OPERATORS
 
 The unary split operator (`-split <string>`) has higher precedence than a
 comma. As a result, if you submit a comma-separated list of strings to the
@@ -292,7 +292,7 @@ a
 b
 ```
 
-## Examples
+## EXAMPLES
 
 The following statement splits the string at whitespace.
 
@@ -504,7 +504,7 @@ LastName, FirstName
  Address, City, State, Zip
 ```
 
-## See also
+## SEE ALSO
 
 - [Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
 - [about_Operators](about_Operators.md)

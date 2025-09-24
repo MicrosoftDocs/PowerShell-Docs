@@ -8,12 +8,12 @@ title: about_Character_Encoding
 ---
 # about_Character_Encoding
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how PowerShell uses character encoding for input and output of string
 data.
 
-## Long description
+## LONG DESCRIPTION
 
 Unicode is a worldwide character-encoding standard. The system uses Unicode
 exclusively for character and string manipulation. For a detailed description
@@ -45,7 +45,7 @@ The following cmdlets have the **Encoding** parameter:
   - Select-String
   - Send-MailMessage
 
-## The byte-order-mark
+## THE BYTE-ORDER-MARK
 
 The byte-order-mark (BOM) is a _Unicode signature_ in the first few bytes of a
 file or text stream that indicate which Unicode encoding used for the data. For
@@ -72,7 +72,7 @@ UTF-8 BOM can be problematic on Unix-like platforms. Many Unix tools such as
 `cat`, `sed`, `awk`, and some editors such as `gedit` don't know how to treat
 the BOM.
 
-## Character encoding in Windows PowerShell
+## CHARACTER ENCODING IN WINDOWS POWERSHELL
 
 In PowerShell 5.1, the **Encoding** parameter supports the following values:
 
@@ -151,7 +151,7 @@ For cmdlets that read string data in the absence of a BOM:
 - `Import-Csv`, `Import-Clixml`, and `Select-String` assume `Utf8` in the
   absence of a BOM.
 
-## Character encoding in PowerShell
+## CHARACTER ENCODING IN POWERSHELL
 
 In PowerShell (v7.1 and higher), the **Encoding** parameter supports the
 following values:
@@ -174,7 +174,7 @@ IDs of registered code pages (like `-Encoding 1251`) or string names of
 registered code pages (like `-Encoding "windows-1251"`). For more information,
 see the .NET documentation for [Encoding.CodePage][04].
 
-## Changing the default encoding
+## CHANGING THE DEFAULT ENCODING
 
 PowerShell has two default variables that can be used to change the default
 encoding behavior.
@@ -213,7 +213,7 @@ The automatic variable `$OutputEncoding` affects the encoding PowerShell uses
 to communicate with external programs. It has no effect on the encoding that
 the output redirection operators and PowerShell cmdlets use to save to files.
 
-## See also
+## SEE ALSO
 
 - [about_Preference_Variables][05]
 - [Byte order mark](https://wikipedia.org/wiki/Byte_order_mark)

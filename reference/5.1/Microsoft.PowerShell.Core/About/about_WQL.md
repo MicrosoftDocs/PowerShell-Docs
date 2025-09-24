@@ -9,12 +9,12 @@ title: about_WQL
 
 # about_WQL
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes WMI Query Language (WQL), which can be used to get WMI objects in
 Windows PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 WQL is the Windows Management Instrumentation (WMI) query language, which is
 the language used to get information from WMI.
@@ -28,7 +28,7 @@ query doesn't outweigh the performance improvement.
 
 The basic WQL statements you need to use WQL are `SELECT`, `WHERE`, and `FROM`.
 
-## When to use WQL
+## WHEN TO USE WQL
 
 When working with WMI, and especially with WQL, don't forget that you are
 also using Windows PowerShell. Often, if a WQL query doesn't work as
@@ -40,7 +40,7 @@ bandwidth-constrained remote systems, it's rarely productive to spend hours
 trying to perfect a complicated WQL query when there is an acceptable
 PowerShell cmdlet that does the same thing.
 
-## Using the SELECT statement
+## USING THE SELECT STATEMENT
 
 A typical WMI query begins with a `SELECT` statement that gets all properties
 or particular properties of a WMI class. To select all properties of a WMI
@@ -82,7 +82,7 @@ WMI class. The command saves the query in the `$queryNameVersion` variable.
 SELECT name, version FROM Win32_BIOS
 ```
 
-## Using the WQL query
+## USING THE WQL QUERY
 
 There are three ways to use WQL query in Windows PowerShell command.
 
@@ -90,7 +90,7 @@ There are three ways to use WQL query in Windows PowerShell command.
 - Use the `Get-CimInstance` cmdlet
 - Use the `[wmisearcher]` type accelerator.
 
-## Using the Get-WmiObject cmdlet
+## USING THE GET-WMIOBJECT CMDLET
 
 The most basic way to use the WQL query is to enclose it in quotation marks (as
 a string) and then use the query string as the value of the **Query** parameter
@@ -166,7 +166,7 @@ Version          : LENOVO - 1270
 PSComputerName   :
 ```
 
-## Using the Get-CimInstance cmdlet
+## USING THE GET-CIMINSTANCE CMDLET
 
 Beginning in Windows PowerShell 3.0, you can use the `Get-CimInstance` cmdlet
 to run WQL queries.
@@ -207,7 +207,7 @@ PS> (Get-WmiObject -Query "SELECT * FROM Win32_BIOS").GetType().FullName
 System.Management.ManagementObject
 ```
 
-## Using the wmisearcher type accelerator
+## USING THE WMISEARCHER TYPE ACCELERATOR
 
 The `[wmisearcher]` type accelerator creates a **ManagementObjectSearcher**
 object from a WQL statement string. The **ManagementObjectSearcher** object has
@@ -293,7 +293,7 @@ Name             : S03KT39A
 PSComputerName   :
 ```
 
-## Using the basic WQL WHERE statement
+## USING THE BASIC WQL WHERE STATEMENT
 
 A `WHERE` statement establishes conditions for the data that a `SELECT`
 statement returns.
@@ -333,7 +333,7 @@ However, the following command fails, because the process name includes the
 Get-WmiObject -Query "SELECT * FROM Win32_Process WHERE name='Notepad'"
 ```
 
-## WHERE statement comparison operators
+## WHERE STATEMENT COMPARISON OPERATORS
 
 The following operators are valid in a WQL `WHERE` statement.
 
@@ -366,7 +366,7 @@ $highPriority = "Select Name, Priority from Win32_Process " +
 Get-WmiObject -Query $highPriority
 ```
 
-## Using the WQL operators in the -Filter parameter
+## USING THE WQL OPERATORS IN THE -FILTER PARAMETER
 
 The WQL operators can also be used in the value of the **Filter** parameter of
 the `Get-WmiObject` or `Get-CimInstance` cmdlets, as well as in the value of
@@ -398,7 +398,7 @@ SnagIt32.exe                              4748
 WmiPrvSE.exe                              5056
 ```
 
-## using the LIKE operator
+## USING THE LIKE OPERATOR
 
 The `LIKE` operator lets you use wildcard characters to filter the results of a
 WQL query.
@@ -537,7 +537,7 @@ Name                                 ProcessId
 WLIDSVC.exe                                84
 ```
 
-## Using the OR operator
+## USING THE OR OPERATOR
 
 To specify multiple independent conditions, use the `OR` keyword. The `OR`
 keyword appears in the `WHERE` clause. It performs an inclusive `OR` operation
@@ -567,7 +567,7 @@ $q = "SELECT * FROM Win32_Process WHERE Name='winword.exe'" +
   " OR Name='excel.exe' OR Name='powershell.exe'"
 ```
 
-## Using the AND operator
+## USING THE AND OPERATOR
 
 To specify multiple related conditions, use the `AND` keyword. The `AND`
 keyword appears in the `WHERE` clause. It returns items that meet all the
@@ -603,7 +603,7 @@ with parentheses that tell WMI which clauses to process first.
 This command uses the Windows PowerShell continuation character (`` ` ``)
 divide the command into two lines.
 
-## Searching for null values
+## SEARCHING FOR NULL VALUES
 
 Searching for null values in WMI is challenging, because it can lead to
 unpredictable results. `Null` isn't zero and it isn't equivalent to an empty
@@ -638,7 +638,7 @@ string, use two consecutive single quotation marks.
 $q = "SELECT * FROM Win32_UserAccount WHERE Description = '' "
 ```
 
-## Using true or false
+## USING TRUE OR FALSE
 
 To get boolean values in the properties of WMI objects, use `True` and `False`.
 They aren't case sensitive.
@@ -659,7 +659,7 @@ $q = "SELECT * FROM Win32_UserAccount WHERE LocalAccount = False"
 Get-CimInstance -Query $q
 ```
 
-## Using the escape character
+## USING THE ESCAPE CHARACTER
 
 WQL uses the backslash (`\`) as its escape character. This is different from
 Windows PowerShell, which uses the backtick character (`` ` ``).
@@ -707,7 +707,7 @@ $q = "SELECT * FROM Win32_UserAccount WHERE Caption = 'Fabrikam\\TimO'"
 Get-CimInstance -Query $q
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Special_Characters][02]
 - [about_Quoting_Rules][01]

@@ -8,12 +8,12 @@ title: about_Simplified_Syntax
 ---
 # about_Simplified_Syntax
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes easier, more natural-language ways of scripting filters for
 collections of objects.
 
-## Long description
+## LONG DESCRIPTION
 
 Simplified syntax, introduced in Windows PowerShell 3.0, lets you build some
 filter commands without using script blocks. The simplified syntax more closely
@@ -93,7 +93,7 @@ pattern parameter `.*` for each **System.IO.DirectoryInfo** object returned by
 Get-ChildItem /home -Directory | foreach GetFiles .*
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Comparison_Operators](about_Comparison_Operators.md)
 - [about_Foreach](about_Foreach.md)

@@ -8,11 +8,11 @@ title: about_Arithmetic_Operators
 ---
 # about_Arithmetic_Operators
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the operators that perform arithmetic in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 Arithmetic operators calculate numeric values. You can use one or more
 arithmetic operators to add, subtract, multiply, and divide values, and to
@@ -107,7 +107,7 @@ PowerShell supports the following arithmetic operators:
   102 -shr 2  # result = 25
   ```
 
-## Operator precedence
+## OPERATOR PRECEDENCE
 
 PowerShell processes arithmetic operators in the following order:
 
@@ -160,7 +160,7 @@ $a = $a + 1
 $b[$a] = $tmp
 ```
 
-## Division and rounding
+## DIVISION AND ROUNDING
 
 When the quotient of a division operation is an integer, PowerShell rounds the
 value to the nearest integer. When the value is `.5`, it rounds to the nearest
@@ -192,7 +192,7 @@ PS> [int][Math]::Floor(5 / 2)
 For more information, see the [Math.Round](/dotnet/api/system.math.round)
 method.
 
-## Type conversion to accommodate result
+## TYPE CONVERSION TO ACCOMMODATE RESULT
 
 PowerShell automatically selects the .NET numeric type that best expresses the
 result without losing precision. For example:
@@ -309,7 +309,7 @@ PS> 1 / [int]1.9
 0.5
 ```
 
-## Adding and multiplying non numeric types
+## ADDING AND MULTIPLYING NON NUMERIC TYPES
 
 You can add numbers, strings, arrays, and hash tables. And, you can multiply
 numbers, strings, and arrays. However, you can't multiply hash tables.
@@ -469,7 +469,7 @@ $array
 2
 ```
 
-## Arithmetic operators and variables
+## ARITHMETIC OPERATORS AND VARIABLES
 
 You can also use arithmetic operators with variables. The operators act on the
 values of the variables. The following examples demonstrate the use of
@@ -487,7 +487,7 @@ PS> $a + $b
 PowerShell
 ```
 
-## Arithmetic operators and commands
+## ARITHMETIC OPERATORS AND COMMANDS
 
 Typically, you use the arithmetic operators in expressions with numbers,
 strings, and arrays. However, you can also use arithmetic operators with the
@@ -522,7 +522,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 In the above expression, each process working space (`$_.WS`) is multiplied by
 `2`; and, the result, compared against `50mb` to see if it's greater than that.
 
-## Bitwise operators
+## BITWISE OPERATORS
 
 PowerShell supports the standard bitwise operators, including bitwise-AND
 (`-band`), the inclusive and exclusive bitwise-OR operators (`-bor` and
@@ -631,7 +631,7 @@ unsigned values, a zero is inserted in the left-most position.
 |      `(-21 -shr 1)`      |         -11 | 11111111111111111111111111110101 | 0xFFFFFFF5 |
 |      `(-21 -shr 2)`      |          -6 | 11111111111111111111111111111010 | 0xFFFFFFF4 |
 
-## See also
+## SEE ALSO
 
 - [about_Arrays](about_Arrays.md)
 - [about_Hash_Tables](about_Hash_Tables.md)

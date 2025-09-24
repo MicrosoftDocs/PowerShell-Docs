@@ -8,11 +8,11 @@ title: about_PSConsoleHostReadLine
 ---
 # about_PSConsoleHostReadLine
 
-## Short description
+## SHORT DESCRIPTION
 
 Explains how to customize how PowerShell reads input at the console prompt.
 
-## Long description
+## LONG DESCRIPTION
 
 Starting in Windows PowerShell 3.0, you can write a function named
 `PSConsoleHostReadLine` that overrides the default way that console input is
@@ -51,7 +51,7 @@ the `PSConsoleHostReadLine` function solves this issue. When you define a
 function named `PSConsoleHostReadline` in the PowerShell console host,
 PowerShell calls that function instead of the "Cooked Mode" input mechanism.
 
-## See Also
+## SEE ALSO
 
 - [about_Prompts](about_Prompts.md)
 - [PSConsoleHostReadLine](/powershell/module/psreadline/psconsolehostreadline)

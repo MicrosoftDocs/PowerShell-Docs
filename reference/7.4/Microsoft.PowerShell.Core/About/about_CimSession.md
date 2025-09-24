@@ -8,12 +8,12 @@ title: about_CimSession
 ---
 # about_CimSession
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes a **CimSession** object and the difference between CIM sessions and
 PowerShell sessions.
 
-## Long description
+## LONG DESCRIPTION
 
 > This information only applies to PowerShell running on Windows.
 
@@ -38,7 +38,7 @@ connection. If you use CIM sessions, PowerShell does not open a network
 connection until needed. For more information about PowerShell sessions, see
 [about_PSSessions][01].
 
-## When to use a CIM session
+## WHEN TO USE A CIM SESSION
 
 Only cmdlets that work with a Windows Management Instrumentation (WMI) provider
 or CIM over WS-Man accept CIM sessions. For other cmdlets, use **PSSessions**.
@@ -53,7 +53,7 @@ back to the local computer. PowerShell manages the data sent over the
 connection, and keeps the size within the limits set by Windows Remote
 Management (WinRM). CIM sessions do not impose the WinRM limits.
 
-## Using CDXML cmdlets
+## USING CDXML CMDLETS
 
 CIM-based Cmdlet Definition XML (CDXML) cmdlets can be written to use any WMI
 Provider. All WMI providers use **CimSession** objects. For more information
@@ -65,7 +65,7 @@ CIM Connections to 15. This limit can be overridden by CDXML cmdlets that
 implement the **ThrottleLimit**. See the individual cmdlet documentation to
 understand the **ThrottleLimit**.
 
-## See also
+## SEE ALSO
 
 - [about_PSSessions][01]
 - [New-CimSession][03]

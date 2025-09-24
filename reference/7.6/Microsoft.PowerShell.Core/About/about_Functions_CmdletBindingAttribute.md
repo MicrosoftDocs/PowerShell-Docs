@@ -8,11 +8,11 @@ title: about_Functions_CmdletBindingAttribute
 ---
 # about_Functions_CmdletBindingAttribute
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the attribute that makes a function work like a compiled cmdlet.
 
-## Long description
+## LONG DESCRIPTION
 
 The `CmdletBinding` attribute is an attribute of functions that makes them
 operate like compiled cmdlets written in C#. It provides access to the features
@@ -35,7 +35,7 @@ parameter binding to fail.
 > Compiled cmdlets use the required `Cmdlet` attribute, which is similar
 > to the `CmdletBinding` attribute that is described in this topic.
 
-## Syntax
+## SYNTAX
 
 The following example shows the format of a function that specifies all the
 optional arguments of the `CmdletBinding` attribute. A brief description of
@@ -84,7 +84,7 @@ value to `$true` or just list the argument by name. For example, the following
 }
 ```
 
-## ConfirmImpact
+## CONFIRMIMPACT
 
 The **ConfirmImpact** argument specifies when the action of the function should
 be confirmed by a call to the **ShouldProcess** method. The call to the
@@ -97,14 +97,14 @@ argument is also specified.
 For more information about confirmation requests, see
 [Requesting Confirmation][01].
 
-## DefaultParameterSetName
+## DEFAULTPARAMETERSETNAME
 
 The **DefaultParameterSetName** argument specifies the name of the parameter
 set that PowerShell will attempt to use when it cannot determine which
 parameter set to use. You can avoid this issue by making the unique parameter
 of each parameter set a mandatory parameter.
 
-## HelpUri
+## HELPURI
 
 The **HelpUri** argument specifies the internet address of the online version
 of the help topic that describes the function. The value of the **HelpUri**
@@ -123,7 +123,7 @@ The `Get-Help` cmdlet uses the value of the **HelpUri** property to locate the
 online version of the function help topic when the **Online** parameter of
 `Get-Help` is specified in a command.
 
-## SupportsPaging
+## SUPPORTSPAGING
 
 The **SupportsPaging** argument adds the **First**, **Skip**, and
 **IncludeTotalCount** parameters to the function. These parameters allow users
@@ -165,14 +165,14 @@ function Get-Numbers {
 }
 ```
 
-## SupportsShouldProcess
+## SUPPORTSSHOULDPROCESS
 
 The **SupportsShouldProcess** argument adds **Confirm** and **WhatIf**
 parameters to the function. The **Confirm** parameter prompts the user before
 it runs the command on each object in the pipeline. The **WhatIf** parameter
 lists the changes that the command would make, instead of running the command.
 
-## PositionalBinding
+## POSITIONALBINDING
 
 The **PositionalBinding** argument determines whether parameters in the
 function are positional by default. The default value is `$true`. You can use
@@ -204,15 +204,15 @@ to specify a position value for a parameter. For more information about the
 **Position** argument, see
 [about_Functions_Advanced_Parameters][04].
 
-## Notes
+## NOTES
 
 The **SupportsTransactions** argument is not supported in advanced functions.
 
-## Keywords
+## KEYWORDS
 
 about_Functions_CmdletBinding_Attribute
 
-## See also
+## SEE ALSO
 
 - [about_Functions][07]
 - [about_Functions_Advanced][05]

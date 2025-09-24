@@ -8,11 +8,11 @@ title: about_Quoting_Rules
 ---
 # about_Quoting_Rules
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes rules for using single and double quotation marks in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 When parsing, PowerShell first looks to interpret input as an expression. But
 when a command invocation is encountered, parsing continues in argument mode.
@@ -44,7 +44,7 @@ on the local computer or on the remote computer.
 > more information about smart quotation marks, see the _Smart Quotes_ section
 > in the Wikipedia article [Quotation marks in English][06].
 
-## Double-quoted strings
+## DOUBLE-QUOTED STRINGS
 
 A string enclosed in double quotation marks is an _expandable_ string. Variable
 names preceded by a dollar sign (`$`) are replaced with the variable's value
@@ -113,7 +113,7 @@ The output of this command is:
 The value of $i is 5.
 ```
 
-## Single-quoted strings
+## SINGLE-QUOTED STRINGS
 
 A string enclosed in single quotation marks is a _verbatim_ string. The string
 is passed to the command exactly as you type it. No substitution is performed.
@@ -143,7 +143,7 @@ The output of this command is:
 The value of $(2+3) is 5.
 ```
 
-## Including quote characters in a string
+## INCLUDING QUOTE CHARACTERS IN A STRING
 
 To make double-quotation marks appear in a string, enclose the entire string
 in single quotation marks. For example:
@@ -228,7 +228,7 @@ Double “smart quotation marks” must be escaped in a double-quoted string.
 Single ‘smart quotation marks’ must be escaped in a single-quoted string.
 ```
 
-## Here-strings
+## HERE-STRINGS
 
 The quotation rules for here-strings are slightly different.
 
@@ -376,7 +376,7 @@ For more information, see `ConvertFrom-StringData`.
 > without using the `@` syntax of here-strings. However, full here-string
 > syntax is the preferred usage.
 
-## Interpretation of expandable strings
+## INTERPRETATION OF EXPANDABLE STRINGS
 
 Expanded strings don't necessarily look the same as the default output that you
 see in the console.
@@ -413,7 +413,7 @@ Name                           Value
 key                            value
 ```
 
-## Culture settings affect string interpretation
+## CULTURE SETTINGS AFFECT STRING INTERPRETATION
 
 The `ToString()` methods uses the current configured culture settings to
 convert values to strings. For example, the culture of the following PowerShell
@@ -448,7 +448,7 @@ PS> "$(Get-Date 2024-03-19)"
 03/19/2024 00:00:00
 ```
 
-## Passing quoted strings to external commands
+## PASSING QUOTED STRINGS TO EXTERNAL COMMANDS
 
 Some native commands expect arguments that contain quote characters. PowerShell
 interprets the quoted string before passing it to the external command. This
@@ -456,7 +456,7 @@ interpretation removes the outer quote characters.
 
 For more information about this behavior, see the [about_Parsing][03] article.
 
-## See also
+## SEE ALSO
 
 - [about_Special_Characters][05]
 - [ConvertFrom-StringData][07]
