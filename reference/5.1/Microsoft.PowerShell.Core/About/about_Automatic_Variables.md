@@ -66,8 +66,6 @@ Here is a list of the automatic variables in PowerShell:
 - [`$this`][47]
 - [`$true`][48]
 
-## LONG DESCRIPTION
-
 ### `$$`
 
 Contains the last token in the last line received by the session.
