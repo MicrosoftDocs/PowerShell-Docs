@@ -9,11 +9,11 @@ title: about_Remote_Output
 
 # about_Remote_Output
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to interpret and format the output of remote commands.
 
-## Long description
+## LONG DESCRIPTION
 
 The output of a command that was run on a remote computer might look like
 output of the same command run on a local computer, but there are some
@@ -22,7 +22,7 @@ significant differences.
 This topic explains how to interpret, format, and display the output of
 commands that are run on remote computers.
 
-## Displaying the computer name
+## DISPLAYING THE COMPUTER NAME
 
 When you use the `Invoke-Command` cmdlet to run a command on a remote computer,
 the command returns an object that includes the name of the computer that
@@ -90,7 +90,7 @@ Monday, July 21, 2008 7:16:58 PM    Server01
 Monday, July 21, 2008 7:16:58 PM    Server02
 ```
 
-## Deserialized objects
+## DESERIALIZED OBJECTS
 
 When you run remote commands that generate output, the command output is
 transmitted across the network back to the local computer.
@@ -131,7 +131,7 @@ Some object types, such as **DirectoryInfo** objects and GUIDs, are converted
 back into live objects when they're received. These objects don't need any
 special handling or formatting.
 
-## Ordering the results
+## ORDERING THE RESULTS
 
 The order of the computer names in the **ComputerName** parameter of cmdlets
 determines the order in which PowerShell connects to the remote computers.
@@ -142,7 +142,7 @@ You can use the `Sort-Object` cmdlet to sort the results on the
 **PSComputerName**. When you any other property of the object, the results from
 different computers are interspersed interleaved in the output
 
-## See also
+## SEE ALSO
 
 - [about_Remote][02]
 - [about_Remote_Variables][01]

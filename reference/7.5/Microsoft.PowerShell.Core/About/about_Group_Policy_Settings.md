@@ -8,11 +8,11 @@ title: about_Group_Policy_Settings
 ---
 # about_Group_Policy_Settings
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the Group Policy settings for PowerShell
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell includes Group Policy settings to help you define consistent
 configuration values for Windows computers in an enterprise environment.
@@ -96,14 +96,14 @@ User Configuration\
 > [How to create and manage the Central Store for Group Policy Administrative
 > Templates in Windows][gpstore].
 
-## Console session configuration
+## CONSOLE SESSION CONFIGURATION
 
 The **Console session configuration** policy setting specifies a configuration
 endpoint that PowerShell runs in. This can be any endpoint registered on the
 local machine including the default PowerShell remoting endpoints or a custom
 endpoint having specific user role capabilities.
 
-## Turn on module logging
+## TURN ON MODULE LOGGING
 
 The **Turn on Module Logging** policy setting turns on logging for selected
 PowerShell modules. The setting is effective in all sessions on all affected
@@ -137,7 +137,7 @@ previous commands to the 'All Users' PowerShell profile
 For more information about module logging, see
 [about_Modules](about_Modules.md).
 
-## Turn on PowerShell script block logging
+## TURN ON POWERSHELL SCRIPT BLOCK LOGGING
 
 The **Turn on PowerShell Script Block Logging** policy setting enables logging
 of all PowerShell script input to the Microsoft-Windows-PowerShell/Operational
@@ -150,7 +150,7 @@ you enable the Script Block Invocation Logging, PowerShell also logs events
 when invocation of a command, script block, function, or script starts or
 stops. Enabling Invocation Logging generates a high volume of event logs.
 
-## Turn on script execution
+## TURN ON SCRIPT EXECUTION
 
 The **Turn on Script Execution** policy setting sets the execution policy for
 computers and users. The execution policy determines whether to permit scripts
@@ -181,7 +181,7 @@ scripts are permitted to run. The default value is `Restricted`.
 For more information, see
 [about_Execution_Policies](about_Execution_Policies.md).
 
-## Turn on PowerShell transcription
+## TURN ON POWERSHELL TRANSCRIPTION
 
 The **Turn on PowerShell Transcription** policy setting lets you capture the
 input and output of PowerShell commands into text-based transcripts. If you
@@ -200,7 +200,7 @@ Limit access to the directory when setting **OutputDirectory** to a shared
 location for transcript logging to prevent users from viewing the transcripts
 of other users or computers.
 
-## Set the default source path for Update-Help
+## SET THE DEFAULT SOURCE PATH FOR UPDATE-HELP
 
 The **Set the Default Source Path for Update-Help** policy setting sets a
 default value for the **SourcePath** parameter of the `Update-Help` cmdlet.
@@ -239,12 +239,12 @@ download help from the Internet or from any file system location.
 
 For more information, see [about_Updatable_Help](about_Updatable_Help.md).
 
-## Keywords
+## KEYWORDS
 
 about_Group_Policies
 about_GroupPolicy
 
-## See also
+## SEE ALSO
 
 - [about_Execution_Policies](about_Execution_Policies.md)
 - [about_Modules](about_Modules.md)

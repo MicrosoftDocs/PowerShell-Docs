@@ -8,18 +8,18 @@ title: about_Continue
 ---
 # about_Continue
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how the `continue` statement immediately returns the program flow
 to the top of a program loop, a `switch` statement, or a `trap` statement.
 
-## Long description
+## LONG DESCRIPTION
 
 The `continue` statement provides a way to exit the current control block but
 continue execution, rather than exit completely. The statement supports labels.
 A label is a name you assign to a statement in a script.
 
-## Using continue in loops
+## USING CONTINUE IN LOOPS
 
 An unlabeled `continue` statement immediately returns the program flow to
 the top of the innermost loop that is controlled by a `for`, `foreach`, `do`,
@@ -85,7 +85,7 @@ is **True** and iteration continues with the second `for` loop at `labelB`.
 }
 ```
 
-## Using continue in a switch statement
+## USING CONTINUE IN A SWITCH STATEMENT
 
 An unlabeled `continue` statement within a `switch` terminates execution of the
 current `switch` iteration and transfers control to the top of the `switch` to
@@ -108,13 +108,13 @@ switch (1,2,3) {
 3
 ```
 
-## Using continue in a trap statement
+## USING CONTINUE IN A TRAP STATEMENT
 
 If the final statement executed in the body a `trap` statement is `continue`,
 the trapped error is silently ignored and execution continues with the
 statement immediately following the one that caused `trap` to occur.
 
-## Do not use continue outside of a loop, switch, or trap
+## DO NOT USE CONTINUE OUTSIDE OF A LOOP, SWITCH, OR TRAP
 
 When `continue` is used outside of a construct that directly supports it
 (loops, `switch`, `trap`), PowerShell looks _up the call stack_ for an
@@ -128,7 +128,7 @@ their _callers_.
 Using `continue` inside a pipeline, such as a `ForEach-Object` script block,
 not only exits the pipeline, it potentially terminates the entire runspace.
 
-## See also
+## SEE ALSO
 
 - [about_Break](about_Break.md)
 - [about_Comparison_Operators](about_Comparison_Operators.md)

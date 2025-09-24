@@ -9,11 +9,11 @@ title: about_Core_Commands
 
 # about_Core_Commands
 
-## Short description
+## SHORT DESCRIPTION
 
 Lists the cmdlets that are designed for use with PowerShell providers.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell includes a set of cmdlets that are specifically designed to manage
 the items in the data stores that are exposed by Windows PowerShell providers.
@@ -89,6 +89,6 @@ PSProvider cmdlets
 
 For more information about a cmdlet, type `Get-Help <cmdlet-name>`.
 
-## See also
+## SEE ALSO
 
 - [about_Providers](about_Providers.md)

@@ -7,17 +7,17 @@ title: about_ANSI_Terminals
 ---
 # about_ANSI_Terminals
 
-## Short description
+## SHORT DESCRIPTION
 Describes the support available for ANSI escape sequences in Windows PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 Unlike newer versions of PowerShell, the Windows PowerShell 5.1 engine and core
 cmdlets don't output ANSI escape sequences to format the text displayed on your
 screen. However, that doesn't prevent you from using ANSI escape sequences for
 text formatting in terminals that support it.
 
-## ANSI Terminal support
+## ANSI TERMINAL SUPPORT
 
 On Windows 10 and higher, the Windows Console Host is [xterm][02] compatible.
 The [Windows Terminal][03] application is also xterm compatible. These
@@ -31,7 +31,7 @@ The default colors were chosen for use with terminals that have a dark
 background. You can change the colors needed for your environment. For more
 information, see [Customizing your shell experience][01].
 
-## Redirecting output
+## REDIRECTING OUTPUT
 
 You should be careful about creating output that's decorated with ANSI escape
 sequences. The formatting is intended for display in the terminal. When you

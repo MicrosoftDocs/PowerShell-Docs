@@ -9,11 +9,11 @@ title: about_Splatting
 
 # about_Splatting
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to use splatting to pass parameters to commands in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 Splatting is a method of passing a collection of parameter values to a command
 as a unit. PowerShell associates each value in the collection with a command
@@ -30,7 +30,7 @@ functions.
 Beginning in Windows PowerShell 3.0, you can also use splatting to represent
 all parameters of a command.
 
-## Syntax
+## SYNTAX
 
 ```
 <CommandName> <optional parameters> @<HashTable> <optional parameters>
@@ -50,7 +50,7 @@ command so you don't pass more than one value for each parameter.
 As of PowerShell 7.1, you can override a splatted parameter by explicitly
 defining a parameter in a command.
 
-## Splatting with hash tables
+## SPLATTING WITH HASH TABLES
 
 Use a hash table to splat parameter name and value pairs. You can use this
 format for all parameter types, including positional and switch parameters.
@@ -89,7 +89,7 @@ Copy-Item @HashArguments
 > splatted value. The syntax for hash tables in PowerShell is:
 > `@{<name>=<value>; <name>=<value>; ...}`
 
-## Splatting with arrays
+## SPLATTING WITH ARRAYS
 
 Use an array to splat values for positional parameters, which do not require
 parameter names. The values must be in position-number order in the array.
@@ -156,7 +156,7 @@ array is passed to the script block as a single object.
 Hello World!
 ```
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Reuse splatted parameters in different commands
 
@@ -295,7 +295,7 @@ $c = @{
 Write-Host @a @b @c
 ```
 
-## Splatting command parameters
+## SPLATTING COMMAND PARAMETERS
 
 You can use splatting to represent the parameters of a command. This technique
 is useful when you are creating a proxy function, that is, a function that
@@ -388,7 +388,7 @@ FileVersionInfo    : File:             C:\Windows\System32\WindowsPowerShell\v1.
                      Language:         English (United States)
 ```
 
-## Notes
+## NOTES
 
 If you make a function into an advanced function by using either the
 **CmdletBinding** or **Parameter** attributes, the `$args` automatic variable
@@ -399,7 +399,7 @@ PowerShell Desired State Configuration (DSC) was not designed to use splatting.
 You cannot use splatting to pass values into a DSC resource. For more
 information, see Gael Colas' article [Pseudo-Splatting DSC Resources][05].
 
-## See also
+## SEE ALSO
 
 - [about_Arrays][01]
 - [about_Automatic_Variables][02]

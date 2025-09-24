@@ -9,12 +9,12 @@ title: about_Logging_Windows
 
 # about_Logging_Windows
 
-## Short description
+## SHORT DESCRIPTION
 
 PowerShell logs internal operations from the engine, providers, and cmdlets to
 the Windows event log.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell logs details about PowerShell operations, such as starting and
 stopping the engine and providers, and executing PowerShell commands.
@@ -55,7 +55,7 @@ PowerShell supports configuring two categories of logging:
   logs this information. For more information, see
   [Enabling Script Block Logging][03].
 
-## Registering the PowerShell event provider on Windows
+## REGISTERING THE POWERSHELL EVENT PROVIDER ON WINDOWS
 
 Unlike Linux or macOS, Windows requires the event provider to be registered
 before events can be written to the event log. To enable the PowerShell event
@@ -65,7 +65,7 @@ provider, run the following command from an elevated PowerShell prompt.
 $PSHOME\RegisterManifest.ps1
 ```
 
-## Viewing the PowerShell event log entries on Windows
+## VIEWING THE POWERSHELL EVENT LOG ENTRIES ON WINDOWS
 
 PowerShell logs can be viewed using the Windows Event Viewer. The event log is
 located in the **Application and Services Logs** group and is named
@@ -100,7 +100,7 @@ $PSHOME\RegisterManifest.ps1 -Unregister
 After updating PowerShell, run `$PSHOME\RegisterManifest.ps1` to register the
 updated event provider.
 
-## Enabling Script Block Logging
+## ENABLING SCRIPT BLOCK LOGGING
 
 When you enable Script Block Logging, PowerShell records the content of all
 script blocks that it processes. Once enabled, any new PowerShell session logs
@@ -143,7 +143,7 @@ You can set the `ScriptBlockLogging` option in the `powershell.config.json`
 file that controls how PowerShell behaves. For more information, see
 [about_PowerShell_Config][06].
 
-## Protected Event Logging
+## PROTECTED EVENT LOGGING
 
 Increasing the level of logging on a system increases the possibility that
 logged content may contain sensitive data. For example, with script logging
@@ -206,7 +206,7 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
     Where-Object Id -EQ 4104 | Unprotect-CmsMessage
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Logging_Non-Windows][04]
 - [PowerShell the Blue Team][07]

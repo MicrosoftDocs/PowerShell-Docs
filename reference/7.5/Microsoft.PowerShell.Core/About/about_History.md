@@ -8,11 +8,11 @@ title: about_History
 ---
 # about_History
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to get and run commands in the command history.
 
-## Long description
+## LONG DESCRIPTION
 
 When you enter a command at the command prompt, PowerShell saves the command in
 the command history. You can use the commands in the history as a record of
@@ -23,7 +23,7 @@ history managed by the **PSReadLine** module. The histories are managed
 separately, but both histories are available in sessions where **PSReadLine**
 is loaded.
 
-## Using the PSReadLine history
+## USING THE PSREADLINE HISTORY
 
 The PSReadLine history tracks the commands used in all PowerShell sessions.
 The history is written to a central file per host. That history file is
@@ -31,7 +31,7 @@ available to all sessions and contains all past history. The history is not
 deleted when the session ends. Also, that history cannot be managed by the
 `*-History` cmdlets. For more information, see [about_PSReadLine][01].
 
-## Using the built-in session history
+## USING THE BUILT-IN SESSION HISTORY
 
 The built-in history only tracks the commands used in the current session. The
 history is not available to other sessions and is deleted when the session
@@ -104,7 +104,7 @@ commands are executing in a nested prompt, the commands might appear to be out
 of order in the history. Commands that are executing in a nested prompt are
 completed only when you exit the prompt level.
 
-## See also
+## SEE ALSO
 
 - [about_Line_Editing][04]
 - [about_Preference_Variables][03]

@@ -9,7 +9,7 @@ title: about_Format.ps1xml
 
 # about_Format.ps1xml
 
-## Short description
+## SHORT DESCRIPTION
 
 Beginning in PowerShell 6, the default views for objects are defined in
 PowerShell source code.
@@ -18,7 +18,7 @@ You can create your own `Format.ps1xml` files to change the display of objects
 or to define default displays for new object types that you create in
 PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 Beginning in PowerShell 6, the default views are defined in PowerShell source
 code. The `Format.ps1xml` files from PowerShell 5.1 and earlier versions don't
@@ -58,7 +58,7 @@ the column headers, and the properties that are displayed in the body of the
 view. The format in `Format.ps1xml` files is applied just before the data is
 presented to the user.
 
-## Creating new Format.ps1xml files
+## CREATING NEW FORMAT.PS1XML FILES
 
 To change the display format of an existing object view, or to add views for
 new objects, create your own `Format.ps1xml` files, and then add them to your
@@ -210,7 +210,7 @@ LCID  Name   Calendar                                DisplayName
 1033  en-US  System.Globalization.GregorianCalendar  English (United States)
 ```
 
-## The XML in Format.ps1xml files
+## THE XML IN FORMAT.PS1XML FILES
 
 The full schema definition can be found in [Format.xsd][04] in the PowerShell
 source code repository on GitHub.
@@ -298,7 +298,7 @@ multiple `<CustomEntry>` tags. Each `<CustomEntry>` tag contains a
 formatting of the specified location in the view, including `<Text>`,
 `<Indentation>`, `<ExpressionBinding>`, and `<NewLine>` tags.
 
-## Tracing Format.ps1xml file use
+## TRACING FORMAT.PS1XML FILE USE
 
 To detect errors in the loading or application of `Format.ps1xml` files, use
 the `Trace-Command` cmdlet with any of the following format components as the
@@ -309,12 +309,12 @@ value of the **Name** parameter:
 
 For more information, see [Trace-Command][05] and [Get-TraceSource][06].
 
-## Signing a Format.ps1xml file
+## SIGNING A FORMAT.PS1XML FILE
 
 To protect the users of your `Format.ps1xml` file, sign the file using a
 digital signature. For more information, see [about_Signing][07].
 
-## Sample XML for a Format-Table custom view
+## SAMPLE XML FOR A FORMAT-TABLE CUSTOM VIEW
 
 The following XML sample creates a `Format-Table` custom view for the
 **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects created by
@@ -421,7 +421,7 @@ Update-FormatData -AppendPath ./MyGciView.Format.ps1xml
 </Configuration>
 ```
 
-## See also
+## SEE ALSO
 
 - [Trace-Command][05]
 - [Export-FormatData][02]

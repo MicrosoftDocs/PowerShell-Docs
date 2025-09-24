@@ -8,12 +8,12 @@ title: about_Signing
 ---
 # about_Signing
 
-## Short description
+## SHORT DESCRIPTION
 
 Explains how to sign scripts so that they comply with the PowerShell execution
 policies.
 
-## Long description
+## LONG DESCRIPTION
 
 > This information only applies to PowerShell running on Windows.
 
@@ -37,7 +37,7 @@ PowerShell checks the Authenticode signature of the following type types:
 For more information about PowerShell execution policies, see
 [about_Execution_Policies][03].
 
-## Permit the execution of signed scripts
+## PERMIT THE EXECUTION OF SIGNED SCRIPTS
 
 When you start PowerShell on a computer for the first time, the **Restricted**
 execution policy, which is the default, is likely to be in effect.
@@ -67,7 +67,7 @@ must be issued by a certification authority that is trusted on the computer.
 Self-signed certificates must be installed in the **Trusted Root Certificates**
 store on the computer.
 
-## Run unsigned scripts using the RemoteSigned policy
+## RUN UNSIGNED SCRIPTS USING THE REMOTESIGNED POLICY
 
 If your PowerShell execution policy is **RemoteSigned**, PowerShell won't run
 unsigned scripts that are downloaded from the internet, including unsigned
@@ -112,7 +112,7 @@ trust the publisher, select either **Never run** or **Do not run**. If you
 select **Never run** or **Always run**, PowerShell won't prompt you again for
 this publisher.
 
-## Methods of signing scripts
+## METHODS OF SIGNING SCRIPTS
 
 You can sign the scripts that you write and the scripts that you get from other
 sources. Before you sign any script, examine each command to verify that it's
@@ -151,7 +151,7 @@ protection on your certificate. This prevents malicious programs from signing
 scripts on your behalf. The instructions are included at the end of this
 topic.
 
-## Create a self-signed certificate
+## CREATE A SELF-SIGNED CERTIFICATE
 
 To create a self-signed certificate, use the [New-SelfSignedCertificate][08]
 cmdlet in the PKI module. This module is introduced in PowerShell 3.0. For more
@@ -223,7 +223,7 @@ Thumbprint                                Subject
 4D4917CB140714BA5B81B96E0B18AAF2C4564FDF  CN=PowerShell User
 ```
 
-## Sign a script
+## SIGN A SCRIPT
 
 After you create a self-signed certificate, you can sign scripts. If you use
 the **AllSigned** execution policy, signing a script permits you to run the
@@ -242,7 +242,7 @@ To use this script, copy the following text into a text file, and name it
 `Add-Signature.ps1`.
 
 ```powershell
-## Signs a file
+## SIGNS A FILE
 [CmdletBinding()]
 param(
     [Parameter(Mandatory=$true)]
@@ -285,7 +285,7 @@ If PowerShell displays this message when you run a script that you didn't
 write, treat the file as you would treat any unsigned script. Review the code
 to determine whether you can trust the script.
 
-## Enable strong protection for your private key
+## ENABLE STRONG PROTECTION FOR YOUR PRIVATE KEY
 
 If you have a private key and certificate on your computer, malicious programs
 might be able to sign scripts on your behalf, which authorizes PowerShell to
@@ -318,7 +318,7 @@ To re-import the certificate:
 1. Select the **Personal** certificate store.
 1. Click **Finish**.
 
-## Prevent the signature from expiring
+## PREVENT THE SIGNATURE FROM EXPIRING
 
 The digital signature in a script is valid until the signing certificate
 expires or as long as a timestamp server can verify that the script was signed
@@ -327,7 +327,7 @@ while the signing certificate was valid.
 Because most signing certificates are valid for one year only, using a time
 stamp server ensures that users can use your script for many years to come.
 
-## See also
+## SEE ALSO
 
 - [about_Execution_Policies][03]
 - [about_Profiles][04]

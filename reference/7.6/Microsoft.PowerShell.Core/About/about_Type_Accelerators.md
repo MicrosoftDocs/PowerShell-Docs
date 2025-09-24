@@ -8,11 +8,11 @@ title: about_Type_Accelerators
 ---
 # about_Type_Accelerators
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the type accelerators available for .NET types.
 
-## Long description
+## LONG DESCRIPTION
 
 Type accelerators are aliases for .NET types. They allow you to access specific
 .NET types without explicitly using the full type name. For example, you can
@@ -21,7 +21,7 @@ shorten `[System.Management.Automation.AliasAttribute]` to `[Alias]`.
 Type accelerator names are mostly lowercase, but some are defined using
 Pascal-case. PowerShell is case-insensitive, so you can use either.
 
-## Using type accelerators
+## USING TYPE ACCELERATORS
 
 For most type accelerators, you use type accelerators in the same way as
 you would use the full type name. However, PowerShell has special handling for
@@ -60,7 +60,7 @@ example:
 In other contexts, like reflection, you must use the full type name as a string
 rather than the type accelerator name.
 
-## Default type accelerators
+## DEFAULT TYPE ACCELERATORS
 
 |       Accelerator name       |                                                                 Full type name                                                                  |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |

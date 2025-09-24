@@ -8,11 +8,11 @@ title: about_Functions_Advanced
 ---
 # about_Functions_Advanced
 
-## Short description
+## SHORT DESCRIPTION
 
 Introduces advanced functions that are a way to create cmdlets using scripts.
 
-## Long description
+## LONG DESCRIPTION
 
 A cmdlet is a single command that participates in the pipeline semantics of
 PowerShell. This includes binary cmdlets, PowerShell advanced functions,
@@ -69,7 +69,7 @@ Advanced functions differ from compiled cmdlets in the following ways:
   named parameters.
 - Advanced functions can't be used in transactions.
 
-## See also
+## SEE ALSO
 
 - [about_Functions][05]
 - [about_Functions_Advanced_Methods][01]

@@ -8,11 +8,11 @@ title: about_Functions_Advanced
 ---
 # about_Functions_Advanced
 
-## Short description
+## SHORT DESCRIPTION
 
 Introduces advanced functions that are a way to create cmdlets using scripts.
 
-## Long description
+## LONG DESCRIPTION
 
 A cmdlet is a single command that participates in the pipeline semantics of
 PowerShell. This includes binary cmdlets, PowerShell advanced functions, and
@@ -69,7 +69,7 @@ Advanced functions differ from compiled cmdlets in the following ways:
   named parameters.
 - Advanced functions can't be used in transactions.
 
-## PipelineStopToken
+## PIPELINESTOPTOKEN
 
 Beginning with PowerShell 7.6-preview.4, `$PSCmdlet` includes the
 `PipelineStopToken` property allowing access a [CancellationToken][07] tied to
@@ -101,7 +101,7 @@ Invoke-CancelableWebRequest -Url https://httpbin.org/delay/10
 # Press ctrl+c to cancel
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Functions][05]
 - [about_Functions_Advanced_Methods][01]

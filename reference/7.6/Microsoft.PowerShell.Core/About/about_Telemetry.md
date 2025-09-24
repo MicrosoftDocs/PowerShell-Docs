@@ -9,11 +9,11 @@ title: about_Telemetry
 ---
 # about_Telemetry
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the telemetry collected in PowerShell and how to opt-out.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell sends basic telemetry data to Microsoft using Application Insights.
 This data allows us to better understand the environments using PowerShell and

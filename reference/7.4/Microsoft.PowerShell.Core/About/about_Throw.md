@@ -8,10 +8,10 @@ title: about_Throw
 ---
 # about_Throw
 
-## Short description
+## SHORT DESCRIPTION
 Describes the `throw` keyword that generates a terminating error.
 
-## Long description
+## LONG DESCRIPTION
 
 The `throw` keyword causes a terminating error. You can use the `throw` keyword
 to stop the processing of a command, function, or script.
@@ -23,7 +23,7 @@ statement to respond to a condition or in the `catch` block of a
 The `throw` keyword can throw any object, such as a user message string or the
 object that caused the error.
 
-## Syntax
+## SYNTAX
 
 The syntax of the `throw` keyword is as follows:
 
@@ -47,7 +47,7 @@ If the `throw` keyword is used in a `catch` block without an expression, it
 throws the current RuntimeException again. For more information, see
 [about_Try_Catch_Finally](about_Try_Catch_Finally.md).
 
-## Throwing a string
+## THROWING A STRING
 
 The optional expression in a `throw` statement can be a string, as shown in the
 following example:
@@ -60,7 +60,7 @@ throw "This is an error."
 Exception: This is an error.
 ```
 
-## Throwing other objects
+## THROWING OTHER OBJECTS
 
 The expression can also be an object that throws the object that represents the
 PowerShell process, as shown in the following example:
@@ -101,7 +101,7 @@ throw $formatError
 OperationStopped: One of the identified items was in an invalid format.
 ```
 
-## The resulting error
+## THE RESULTING ERROR
 
 The `throw` keyword can generate an **ErrorRecord** object. The **Exception**
 property of the **ErrorRecord** object contains a **RuntimeException** object.
@@ -111,14 +111,14 @@ varies depending on the object thrown.
 The `throw` object is wrapped in an **ErrorRecord** object, and the ErrorRecord
 object is automatically saved in the `$Error` automatic variable.
 
-## Using `throw` to create a mandatory parameter
+## USING `THROW` TO CREATE A MANDATORY PARAMETER
 
 Unlike past versions of PowerShell, don't use the `throw` keyword for parameter
 validation. See
 [about_Functions_Advanced_Parameters](about_Functions_Advanced_Parameters.md)
 for the correct way.
 
-## See also
+## SEE ALSO
 
 - [about_Break](about_Break.md)
 - [about_Continue](about_Continue.md)

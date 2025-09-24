@@ -8,13 +8,13 @@ title: about_Enum
 ---
 # about_Enum
 
-## Short description
+## SHORT DESCRIPTION
 
 The `enum` statement declares an enumeration. An enumeration is a
 distinct type that consists of a set of named labels called the enumerator
 list.
 
-## Long description
+## LONG DESCRIPTION
 
 The `enum` statement allows you to create a strongly typed set of labels. You
 can use that enumeration in the code without having to parse or check for
@@ -26,7 +26,7 @@ value of zero. By default, PowerShell enumerations use **System.Int32**
 label in the list the value zero. By default, PowerShell assigns the remaining
 labels with consecutive integers.
 
-## Syntax
+## SYNTAX
 
 In the definition, you can give labels any integer value. Labels with no value
 assigned take the next integer value.
@@ -67,7 +67,7 @@ Enumerations use the following syntaxes:
   [<enum-name>]::<label>
   ```
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Minimal enumeration
 
@@ -390,7 +390,7 @@ At line:1 char:40
    To-LineEndingRegex
 ```
 
-## Enumeration methods
+## ENUMERATION METHODS
 
 The following list includes useful methods available to enumerations in
 PowerShell and how to use them.
@@ -736,7 +736,7 @@ numValue StringValue IntegerValue
     Black Black                  2
 ```
 
-## Enumeration value synonyms
+## ENUMERATION VALUE SYNONYMS
 
 You can define enumerations that give different names to the same integer
 value. When you do, the names that point to the same underlying value are
@@ -771,7 +771,7 @@ True
 True
 ```
 
-## Enumerations as flags
+## ENUMERATIONS AS FLAGS
 
 One common use of an enumeration is to represent a set of mutually exclusive
 values. For example, an **ArrivalStatus** instance can have a value of Early,
@@ -798,7 +798,7 @@ method on the value or use the binary comparison operator `-band`.
 For a sample showing how to use flag enumerations and check whether a flag is
 set, see [Example 3][05].
 
-## Enumerations as parameters
+## ENUMERATIONS AS PARAMETERS
 
 You can define cmdlet parameters that use an enum as their type. When you
 specify an enum as the type for a parameter, users get automatic completion for
@@ -814,7 +814,7 @@ When a parameter has an enum as its type, you can specify any of:
 For a sample showing the behavior of an enumeration-typed parameter, see
 [Example 4][06].
 
-## Formatting enumeration values
+## FORMATTING ENUMERATION VALUES
 
 You can convert enumeration values to their string representations by calling
 the static [Format][08] method, as well as the overloads of the instance
@@ -900,7 +900,7 @@ doesn't list any flags because it's not actually a valid flag set. You can't
 combine the enumeration flags to get a sum of `8` without duplicating at least
 one flag.
 
-## Defining extension methods with Update-TypeData
+## DEFINING EXTENSION METHODS WITH UPDATE-TYPEDATA
 
 You can't define methods in the declaration for an enumeration. To extend the
 functionality of an enumeration, you can use the [Update-TypeData][10] cmdlet
@@ -944,7 +944,7 @@ Directory
 Encrypted
 ```
 
-## Exporting enumerations with type accelerators
+## EXPORTING ENUMERATIONS WITH TYPE ACCELERATORS
 
 By default, PowerShell modules don't automatically export classes and
 enumerations defined in PowerShell. The custom types aren't available outside
@@ -1014,7 +1014,7 @@ When users import the module, any types added to the type accelerators for the
 session are immediately available for IntelliSense and completion. When the
 module is removed, so are the type accelerators.
 
-## Manually importing enumerations from a PowerShell module
+## MANUALLY IMPORTING ENUMERATIONS FROM A POWERSHELL MODULE
 
 `Import-Module` and the `#Requires` statement only import the module functions,
 aliases, and variables, as defined by the module. Enumerations aren't imported.
@@ -1030,7 +1030,7 @@ to be available to users outside of the module directly in the root module.
 
 For more information about the `using` statement, see [about_Using][11].
 
-## Loading newly changed code during development
+## LOADING NEWLY CHANGED CODE DURING DEVELOPMENT
 
 During development of a script module, it's common to make changes to the code
 then load the new version of the module using `Import-Module` with the
@@ -1047,7 +1047,7 @@ files. If you have function in one file that use enumerations defined in
 another module, you should using the `using module` statement to ensure that
 the functions have the enumeration definitions that are needed.
 
-## Limitations
+## LIMITATIONS
 
 - You can't define enumerations in Windows PowerShell with a specific
   underlying type. You can only define enumerations with an underlying type of

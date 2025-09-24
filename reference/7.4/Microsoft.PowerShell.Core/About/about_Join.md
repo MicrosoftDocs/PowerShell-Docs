@@ -8,12 +8,12 @@ title: about_Join
 ---
 # about_Join
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how the join operator (`-join`) combines multiple strings into a
 single string.
 
-## Long description
+## LONG DESCRIPTION
 
 The join operator concatenates a set of strings into a single string. The
 strings are appended to the resulting string in the order that they appear
@@ -102,7 +102,7 @@ c
 a b c
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Operators](about_Operators.md)
 - [about_Comparison_Operators](about_Comparison_Operators.md)

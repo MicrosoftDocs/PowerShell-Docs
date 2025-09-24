@@ -8,11 +8,11 @@ title: about_Parsing
 ---
 # about_Parsing
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how PowerShell parses commands.
 
-## Long description
+## LONG DESCRIPTION
 
 When you enter a command at the command prompt, PowerShell breaks the command
 text into a series of segments called _tokens_ and then determines how to
@@ -42,7 +42,7 @@ expression mode and argument mode.
 > - The command name may be a reserved word or a language keyword. `Process` is
 >   both, and can't be resolved to `Get-Process`.
 
-## Expression mode
+## EXPRESSION MODE
 
 Expression mode is intended for combining expressions, required for value
 manipulation in a scripting language. Expressions are representations of values
@@ -83,7 +83,7 @@ $input.Length -gt 1
   forbidden and causes a parser error.
 - Anything else is treated as a command to be invoked.
 
-## Argument mode
+## ARGUMENT MODE
 
 When parsing, PowerShell first looks to interpret input as an expression. But
 when a command invocation is encountered, parsing continues in argument mode.
@@ -183,7 +183,7 @@ values returned by the expressions.
 | `CMD /CECHO $AB`      | expression | 'A B' (array)   |
 | `CMD /CECHO :$AB`     | argument   | ':A B' (string) |
 
-## Handling special characters
+## HANDLING SPECIAL CHARACTERS
 
 The backtick character (`` ` ``) can be used to escape any special character in
 an expression. This is most useful for escaping the argument-mode
@@ -199,7 +199,7 @@ expandable string:
 The value of $ErrorActionPreference is 'Continue'.
 ```
 
-## Line continuation
+## LINE CONTINUATION
 
 The backtick character can also be used at the end of a line to allow you to
 continue the input on the next line. This is improve the readability of a
@@ -247,7 +247,7 @@ $parameters = @{
 New-AzVm @parameters
 ```
 
-## Passing arguments to native commands
+## PASSING ARGUMENTS TO NATIVE COMMANDS
 
 When running native commands from PowerShell, the arguments are first parsed by
 PowerShell. The parsed arguments are then joined into a single string with each
@@ -414,7 +414,7 @@ TestExe -echoargs --% """%ProgramFiles(x86)%\Microsoft\\""
 PowerShell 7.3 also added the ability to trace parameter binding for native
 commands. For more information, see [Trace-Command][07].
 
-## Passing arguments to PowerShell commands
+## PASSING ARGUMENTS TO POWERSHELL COMMANDS
 
 Beginning in PowerShell 3.0, you can use the _end-of-parameters_ token (`--`)
 to stop PowerShell from interpreting input as PowerShell parameters. This is a
@@ -464,7 +464,7 @@ Arg 2 is <-->
 Arg 3 is <-c>
 ```
 
-## Tilde (~)
+## TILDE (~)
 
 The tilde character (`~`) has special meaning in PowerShell. When it's used
 with PowerShell commands at the beginning of a path, PowerShell expands the
@@ -532,7 +532,7 @@ PS D:\temp> more.com ~\repocache.clixml
 Cannot access file D:\temp\~\repocache.clixml
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Command_Syntax][04]
 

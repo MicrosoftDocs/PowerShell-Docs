@@ -8,12 +8,12 @@ title: about_Parameters_Default_Values
 ---
 # about_Parameters_Default_Values
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to set custom default values for cmdlet parameters, advanced
 functions, and scripts.
 
-## Long description
+## LONG DESCRIPTION
 
 The `$PSDefaultParameterValues` preference variable lets you specify custom
 default parameter values for any cmdlet, advanced function, or script that uses
@@ -32,7 +32,7 @@ PowerShell profile.
 
 `$PSDefaultParameterValues` was introduced in PowerShell 3.0.
 
-## Syntax
+## SYNTAX
 
 The `$PSDefaultParameterValues` variable is an object type of
 **System.Management.Automation.DefaultParameterDictionary**. The
@@ -70,7 +70,7 @@ $PSDefaultParameterValues = @{
 }
 ```
 
-## Examples
+## EXAMPLES
 
 Use the `Add()` and `Remove()` methods to add or remove a specific key-value
 pair from `$PSDefaultParameterValues` without overwriting other existing
@@ -279,7 +279,7 @@ Get-*:Verbose                  True
 Send-MailMessage:SmtpServer    ServerXYZ
 ```
 
-## See also
+## SEE ALSO
 
 - [about_CommonParameters][01]
 - [about_Functions_Advanced][02]

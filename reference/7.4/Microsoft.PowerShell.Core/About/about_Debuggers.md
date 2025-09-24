@@ -8,11 +8,11 @@ title: about_Debuggers
 ---
 # about_Debuggers
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the PowerShell debugger.
 
-## Long description
+## LONG DESCRIPTION
 
 Debugging is the process of examining a script while it's running to identify
 and correct errors in the script instructions. The PowerShell debugger can help
@@ -31,7 +31,7 @@ in either the console or Windows PowerShell Integrated Scripting Environment
 > PowerShell. For more information, see
 > [Debugging with Visual Studio Code][01].
 
-## Debugger cmdlets
+## DEBUGGER CMDLETS
 
 The PowerShell debugger includes the following set of cmdlets:
 
@@ -42,7 +42,7 @@ The PowerShell debugger includes the following set of cmdlets:
 - `Remove-PSBreakpoint`: Deletes breakpoints from the current session.
 - `Get-PSCallStack`: Displays the current call stack.
 
-## Starting and stopping the debugger
+## STARTING AND STOPPING THE DEBUGGER
 
 To start the debugger, set one or more breakpoints then run the script,
 command, or function that you want to debug.
@@ -53,7 +53,7 @@ debugger.
 To stop the debugger, run the script, command, or function until it's complete.
 Or, type `stop` or `t`.
 
-## Debugger commands
+## DEBUGGER COMMANDS
 
 When you use the debugger in the PowerShell console, use the following commands
 to control the execution. In Windows PowerShell ISE, use commands on the Debug
@@ -117,7 +117,7 @@ continue running the script until you have identified a problem.
 > If you step into a statement with a redirection operator, such as `>`, the
 > PowerShell debugger steps over all remaining statements in the script.
 
-## Displaying the values of script variables
+## DISPLAYING THE VALUES OF SCRIPT VARIABLES
 
 While you are in the debugger, you can also enter commands, display the value
 of variables, use cmdlets, and run scripts at the command line. You can display
@@ -148,7 +148,7 @@ $scriptArgs = $args
 $scriptname = $MyInvocation.PSCommandPath
 ```
 
-## The debugger environment
+## THE DEBUGGER ENVIRONMENT
 
 When you reach a breakpoint, you enter the debugger environment. The command
 prompt changes so that it begins with "[DBG]:". Also, in some host
@@ -179,7 +179,7 @@ Name   CommandLineParameters  UnboundArguments  Location
 =      {}                     {}                C:\ps-test\vote.ps1 (1)
 ```
 
-## Debugging and scope
+## DEBUGGING AND SCOPE
 
 Breaking into the debugger doesn't change the scope in which you are operating,
 but when you reach a breakpoint in a script, you move into the script scope.
@@ -198,7 +198,7 @@ Get-Variable -Scope 0
 This is a useful way to see only the variables that you defined in the script
 and that you defined while debugging.
 
-## Debugging at the command line
+## DEBUGGING AT THE COMMAND LINE
 
 When you set a variable breakpoint or a command breakpoint, you can set the
 breakpoint only in a script file. However, by default, the breakpoint is set on
@@ -215,7 +215,7 @@ in the user's profile.
 Line breakpoints are specific to script files, so they're set only in script
 files.
 
-## Debugging functions
+## DEBUGGING FUNCTIONS
 
 When you set a breakpoint on a function that has `begin`, `process`, and `end`
 sections, the debugger breaks at the first line of each section.
@@ -265,7 +265,7 @@ Test-Cmdlet
 [DBG]: C:\PS>
 ```
 
-## Debugging remote scripts
+## DEBUGGING REMOTE SCRIPTS
 
 You can run `Enter-PSSession` to start an interactive remote PowerShell session
 in which you can set breakpoints and debug script files and commands on the
@@ -334,7 +334,7 @@ At C:\psscripts\ttest19.ps1:12 char:1
 PS C:\psscripts>
 ```
 
-## Examples
+## EXAMPLES
 
 This test script detects the version of PowerShell and displays a
 version-appropriate message. It includes a function, a function call, and a
@@ -669,7 +669,7 @@ DBG> k
 This example demonstrates just a few of the many ways to use the PowerShell
 debugger.
 
-## Other Debugging Features in PowerShell
+## OTHER DEBUGGING FEATURES IN POWERSHELL
 
 In addition to the PowerShell debugger, PowerShell includes several other
 features that you can use to debug scripts and functions.
@@ -687,7 +687,7 @@ features that you can use to debug scripts and functions.
   the Write verb for this task, such as `Write-Host`, `Write-Debug`,
   `Write-Warning`, and `Write-Verbose`.
 
-## See also
+## SEE ALSO
 
 - [Disable-PSBreakpoint][05]
 - [Enable-PSBreakpoint][06]

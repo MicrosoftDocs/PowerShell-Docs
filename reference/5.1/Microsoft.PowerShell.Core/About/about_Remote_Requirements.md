@@ -9,11 +9,11 @@ title: about_Remote_Requirements
 
 # about_Remote_Requirements
 
-## Short description
+## SHORT DESCRIPTION
 Describes the system requirements and configuration requirements for running
 remote commands in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 This topic describes the system requirements, user requirements, and resource
 requirements for establishing remote connections and running remote commands
@@ -30,7 +30,7 @@ To find the cmdlets that have a **ComputerName** parameter but don't use
 PowerShell remoting, read the description of the **ComputerName** parameter of
 the cmdlets.
 
-## System requirements
+## SYSTEM REQUIREMENTS
 
 In Windows, PowerShell remoting uses Windows Remote Management (WinRM), which
 is provided by the Windows Management Framework (WMF). To run remote sessions
@@ -64,7 +64,7 @@ remoting over SSH allows you to connect to any Windows, macOS, or Linux host
 that is running SSH. For more information, see
 [PowerShell Remoting Over SSH][01].
 
-## User permissions
+## USER PERMISSIONS
 
 To create remote sessions and run remote commands, by default, the current user
 must be a member of the **Administrators** group on the remote computer or
@@ -91,7 +91,7 @@ different endpoints.
 For more information about session configurations, see
 [about_Session_Configurations][07].
 
-## Windows network locations
+## WINDOWS NETWORK LOCATIONS
 
 Beginning in Windows PowerShell 3.0, the `Enable-PSRemoting` cmdlet can enable
 remoting on client and server versions of Windows.
@@ -135,7 +135,7 @@ In Windows PowerShell 2.0, on client versions of Windows, `Enable-PSRemoting`
 creates firewall rules only on private and domain networks. If the network
 location is public, `Enable-PSRemoting` fails.
 
-## Run as administrator
+## RUN AS ADMINISTRATOR
 
 Administrator privileges are required for the following remoting operations:
 
@@ -151,7 +151,7 @@ are a member of the **Administrators** group on the local computer.
 When you start Windows PowerShell from another program such as `cmd.exe`, use
 the **Run as administrator** option to start the program.
 
-## How to configure your computer for remoting
+## HOW TO CONFIGURE YOUR COMPUTER FOR REMOTING
 
 Computers running any supported version of Windows can establish remote
 connections and run remote commands in PowerShell without any configuration.
@@ -191,7 +191,7 @@ Id Name        ComputerName    State    ConfigurationName
 
 If the command fails, see [about_Remote_Troubleshooting][04].
 
-## Understand policies
+## UNDERSTAND POLICIES
 
 When you work remotely, you use two instances of PowerShell, one on the local
 computer and one on the remote computer. As a result, your work is affected by
@@ -201,7 +201,7 @@ Before you connect and while establishing the connection, the policies on
 the local computer are in effect. When you are using the connection, the
 policies on the remote computer are in effect.
 
-## See also
+## SEE ALSO
 
 - [about_Remote][06]
 - [about_Remote_Variables][05]

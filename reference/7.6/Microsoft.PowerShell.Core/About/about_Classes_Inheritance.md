@@ -9,11 +9,11 @@ title: about_Classes_Inheritance
 
 # about_Classes_Inheritance
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how you can define classes that extend other types.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell classes support _inheritance_, which allows you to define a child
 class that reuses (inherits), extends, or modifies the behavior of a parent
@@ -68,7 +68,7 @@ base class.
 class Derived : Base, Interface {...}
 ```
 
-## Syntax
+## SYNTAX
 
 Class inheritance uses the following syntaxes:
 
@@ -111,7 +111,7 @@ class Derived : Base,
 }
 ```
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Inheriting and overriding from a base class
 
@@ -1382,7 +1382,7 @@ The module loads without errors because the **InventoryItem** class is defined
 in a different module file than the **Inventory** class. Both classes are
 available to module users.
 
-## Inheriting a base class
+## INHERITING A BASE CLASS
 
 When a class inherits from a base class, it inherits the properties and methods
 of the base class. It doesn't inherit the base class constructors directly,
@@ -1531,7 +1531,7 @@ them can be used for.
   managing lists of a specific data type easier.
 - **System.Exception** - Derive classes to define custom errors.
 
-## Implementing interfaces
+## IMPLEMENTING INTERFACES
 
 A PowerShell class that implements an interface must implement all the members
 of that interface. Omitting the implementation interface members causes a
@@ -1570,7 +1570,7 @@ derived from them can be used for.
   of the class to other runtime types. This is useful for classes that have an
   underlying numerical value or can be converted to one.
 
-## Limitations
+## LIMITATIONS
 
 - PowerShell doesn't support defining interfaces in script code.
 
@@ -1589,7 +1589,7 @@ derived from them can be used for.
   to load the type. There's no workaround for a custom type to use itself as
   the type parameter when inheriting from a generic.
 
-## See Also
+## SEE ALSO
 
 - [about_Classes][08]
 - [about_Classes_Constructors][09]

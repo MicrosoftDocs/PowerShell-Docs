@@ -9,13 +9,13 @@ title: about_WMI
 
 # about_WMI
 
-## Short description
+## SHORT DESCRIPTION
 
 Windows Management Instrumentation (WMI) uses the Common Information Model
 (CIM) to represent systems, applications, networks, devices, and other
 manageable components of the modern enterprise.
 
-## Long description
+## LONG DESCRIPTION
 
 Windows Management Instrumentation (WMI) is Microsoft's implementation of
 Web-Based Enterprise Management (WBEM), the industry standard.

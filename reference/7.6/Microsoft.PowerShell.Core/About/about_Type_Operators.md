@@ -9,11 +9,11 @@ title: about_Type_Operators
 ---
 # about_Type_Operators
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes the operators that work with Microsoft .NET types.
 
-## Long description
+## LONG DESCRIPTION
 
 The Boolean type operators (`-is` and `-isnot`) tell whether an object is an
 instance of a specified .NET type. The `-is` operator returns a value of
@@ -144,7 +144,7 @@ PS> (Get-Culture).GetType().FullName
 System.Globalization.CultureInfo
 ```
 
-## Examples
+## EXAMPLES
 
 The following examples show some uses of the Type operators:
 
@@ -231,6 +231,6 @@ PS> 1031 -as [System.Diagnostics.Process]
 PS>
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Operators](about_Operators.md)

@@ -8,12 +8,12 @@ title: about_Comparison_Operators
 ---
 # about_Comparison_Operators
 
-## Short description
+## SHORT DESCRIPTION
 
 The comparison operators in PowerShell can either compare two values or filter
 elements of a collection against an input value.
 
-## Long description
+## LONG DESCRIPTION
 
 Comparison operators let you compare values or finding values that match
 specified patterns. PowerShell includes the following comparison operators:
@@ -52,7 +52,7 @@ specified patterns. PowerShell includes the following comparison operators:
 - `-is` - both objects are the same type
 - `-isnot` - the objects aren't the same type
 
-## Common features
+## COMMON FEATURES
 
 String comparisons are case-insensitive unless you use the explicit
 case-sensitive operator. To make a comparison operator case-sensitive, add a
@@ -93,7 +93,7 @@ There are a few exceptions:
 - The `-match` and `-notmatch` operators also populate the `$Matches` automatic
   variable unless the left-hand side of the expression is a collection.
 
-## Equality operators
+## EQUALITY OPERATORS
 
 ### -eq and -ne
 
@@ -343,7 +343,7 @@ $a -gt 'a'
 If the two sides of the operators aren't reasonably comparable, these operators
 raise a non-terminating error.
 
-## Matching operators
+## MATCHING OPERATORS
 
 The matching operators (`-like`, `-notlike`, `-match`, and `-notmatch`) find
 elements that match or don't match a specified pattern. The pattern for `-like`
@@ -513,7 +513,7 @@ if ('<version>1.0.0</version>' -match '<version>(.*?)</version>') {
 For details, see [about_Regular_Expressions][10] and
 [about_Automatic_Variables][06].
 
-## Replacement operator
+## REPLACEMENT OPERATOR
 
 ### Replacement with regular expressions
 
@@ -622,7 +622,7 @@ a4
 a5
 ```
 
-## Containment operators
+## CONTAINMENT OPERATORS
 
 The containment operators (`-contains`, `-notcontains`, `-in`, and `-notin`)
 are similar to the equality operators, except that they always return a
@@ -731,7 +731,7 @@ $a -in '$a', 'ghi'         # Output: True
 $a -in 'abc def', 'ghi'    # Output: True
 ```
 
-## Type comparison
+## TYPE COMPARISON
 
 The type comparison operators (`-is` and `-isnot`) are used to determine if an
 object is a specific type.
@@ -754,7 +754,7 @@ $b -isnot [int]        # Output: True
 $a -isnot $b.GetType() # Output: True
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Booleans][07]
 - [about_Operators][08]

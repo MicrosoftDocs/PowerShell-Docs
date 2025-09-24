@@ -9,11 +9,11 @@ title: about_Classes_Constructors
 
 # about_Classes_Constructors
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to define constructors for PowerShell classes.
 
-## Long description
+## LONG DESCRIPTION
 
 Constructors enable you to set default values and validate object logic at the
 moment of creating the instance of the class. Constructors have the same name
@@ -41,7 +41,7 @@ is needed.
 
 You can also define a parameterless [static constructor][02].
 
-## Syntax
+## SYNTAX
 
 Class constructors use the following syntaxes:
 
@@ -80,7 +80,7 @@ static <class-name> () [: base([<params>])] {
 }
 ```
 
-## Examples
+## EXAMPLES
 
 ### Example 1 - Defining a class with the default constructor
 
@@ -382,7 +382,7 @@ VERBOSE: [BaseExample] default constructor
 VERBOSE: [DerivedExample] param constructor (foo)
 ```
 
-## Constructor run ordering
+## CONSTRUCTOR RUN ORDERING
 
 When a class instantiates, the code for one or more constructors executes.
 
@@ -405,7 +405,7 @@ In all cases, static constructors only run once in a session.
 
 For an example of constructor behavior and ordering, see [Example 5][06].
 
-## Hidden constructors
+## HIDDEN CONSTRUCTORS
 
 You can hide constructors of a class by declaring them with the `hidden`
 keyword. Hidden class constructors are:
@@ -426,7 +426,7 @@ keyword. Hidden class constructors are:
 
 For more information about the `hidden` keyword, see [about_Hidden][04].
 
-## Static constructors
+## STATIC CONSTRUCTORS
 
 You can define a constructor as belonging to the class itself instead of
 instances of the class by declaring the constructor with the `static` keyword.
@@ -437,7 +437,7 @@ Static class constructors:
 - Can't have any parameters.
 - Can't access instance properties or methods with the `$this` variable.
 
-## Constructors for derived classes
+## CONSTRUCTORS FOR DERIVED CLASSES
 
 When a class inherits from another class, constructors can invoke a constructor
 from the base class with the `base` keyword. If the derived class doesn't
@@ -464,14 +464,14 @@ can be any of the following items:
 
 For an example of constructors on a derived class, see [Example 5][06].
 
-## Chaining constructors
+## CHAINING CONSTRUCTORS
 
 Unlike C#, PowerShell class constructors can't use chaining with the
 `: this(<parameters>)` syntax. To reduce code duplication, use a hidden
 `Init()` method with multiple overloads to the same effect. [Example 4][05]
 shows a class using this pattern.
 
-## Adding instance properties and methods with Update-TypeData
+## ADDING INSTANCE PROPERTIES AND METHODS WITH UPDATE-TYPEDATA
 
 Beyond declaring properties and methods directly in the class definition, you
 can define properties for instances of a class in the static constructor using
@@ -512,7 +512,7 @@ For more information about defining instance methods with `Update-TypeData`,
 see [about_Classes_Methods][07]. For more information about defining instance
 properties with `Update-TypeData`, see [about_Classes_Properties][08].
 
-## Limitations
+## LIMITATIONS
 
 PowerShell class constructors have the following limitations:
 
@@ -534,7 +534,7 @@ PowerShell class constructors have the following limitations:
 
   Workaround: None.
 
-## See also
+## SEE ALSO
 
 - [about_Classes][10]
 - [about_Classes_Inheritance][11]

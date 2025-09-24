@@ -8,11 +8,11 @@ title: about_Modules
 ---
 # about_Modules
 
-## Short description
+## SHORT DESCRIPTION
 
 Explains how to install, import, and use PowerShell modules.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell is both a command shell and a scripting language. Commands in
 PowerShell are implemented as scripts, functions, or cmdlets. The language
@@ -45,7 +45,7 @@ to create PowerShell modules, see [Writing a PowerShell Module][02].
 > remaining in PowerShell. All other snap-ins were converted to modules.
 > Creation of new snap-ins is no longer supported.
 
-## Default module locations
+## DEFAULT MODULE LOCATIONS
 
 PowerShell stores modules in the following default locations:
 
@@ -68,7 +68,7 @@ These locations are automatically included in the `$Env:PSModulePath`
 environment variable. For more information about the default module locations,
 see [about_PSModulePath][10].
 
-## Module autoloading
+## MODULE AUTOLOADING
 
 The first time that you run a command from an installed module, PowerShell
 automatically imports (loads) that module. The module must be stored in the
@@ -100,7 +100,7 @@ When you use `Get-Command` with a wildcard character (`*`), PowerShell doesn't
 import any modules. You can use wildcards for command discovery without loading
 modules that you might not need in your session.
 
-## Manually import a module
+## MANUALLY IMPORT A MODULE
 
 Manually importing a module is required when a module isn't installed in the
 locations specified by the `$Env:PSModulePath` environment variable, or when
@@ -146,7 +146,7 @@ Import-Module C:\ps-test\TestCmdlets.dll
 For more information about adding modules to your session, see
 [Import-Module][14].
 
-## Import a module at the start of every session
+## IMPORT A MODULE AT THE START OF EVERY SESSION
 
 The `Import-Module` command imports modules into your current PowerShell
 session. To import a module into every PowerShell session that you start, add
@@ -154,7 +154,7 @@ the `Import-Module` command to your PowerShell profile.
 
 For more information about profiles, see [about_Profiles][09].
 
-## Install a published module
+## INSTALL A PUBLISHED MODULE
 
 A published module is a module that's available from a registered repository,
 such as the PowerShell Gallery. The **PowerShellGet** and
@@ -182,7 +182,7 @@ Cmdlet       Install-PSResource  1.0.0      Microsoft.PowerShell.PSResourceGet
 
 For more information, see [PowerShellGet Overview][01].
 
-## Manually install a module
+## MANUALLY INSTALL A MODULE
 
 You can manually install a module by copying the module contents from another
 folder. That folder can be in another location on the local machine or
@@ -200,7 +200,7 @@ Copy-Item -Path C:\PSTest\MyModule\* -Destination $modulePath -Recurse
 You can install a module in any location, but installing your modules in a
 default module location makes them easier to manage.
 
-## Find installed modules
+## FIND INSTALLED MODULES
 
 The `Get-Module` cmdlet gets the PowerShell modules that are loaded in the
 current PowerShell session.
@@ -225,7 +225,7 @@ doesn't list modules that are installed in other locations.
 
 For more information, see [Get-Module][13].
 
-## List the commands in a module
+## LIST THE COMMANDS IN A MODULE
 
 Use the `Get-Command` cmdlet to find all available commands. You can use the
 parameters of the `Get-Command` cmdlet to filter commands such as by module,
@@ -245,7 +245,7 @@ Get-Command -Module BitsTransfer
 
 For more information about the `Get-Command` cmdlet, see [Get-Command][11].
 
-## Remove a module
+## REMOVE A MODULE
 
 When you remove a module, the commands that the module added are deleted from
 the session. For example, the following command removes the **BitsTransfer**
@@ -299,7 +299,7 @@ Remove-Item Function:Get-Date
 For more information about the `Function:` drive, see
 [about_Function_Provider][05].
 
-## Manage name conflicts
+## MANAGE NAME CONFLICTS
 
 Name conflicts occur when more than one command in the session has the same
 name. Importing a module causes a name conflict when commands in the module
@@ -350,7 +350,7 @@ property of the module manifest to add a default prefix to all command names.
 The value of the **Prefix** parameter takes precedence over the value of
 **DefaultCommandPrefix**.
 
-## See also
+## SEE ALSO
 
 - [about_Command_Precedence][04]
 - [about_Group_Policy_Settings][06]

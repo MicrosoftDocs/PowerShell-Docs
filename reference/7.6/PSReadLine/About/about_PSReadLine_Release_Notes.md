@@ -14,7 +14,7 @@ changes, see the **PSReadLine** [ChangeLog][01].
 - Current preview: v2.4.4-beta4
 - Current stable release: v2.3.6
 
-## PSReadLine release history
+## PSREADLINE RELEASE HISTORY
 
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
@@ -27,7 +27,7 @@ Windows PowerShell 5.1.
 - v2.0.4 shipped in PowerShell 7.0.11
 - v2.0.0 ships in Windows PowerShell 5.1
 
-## Release Notes
+## RELEASE NOTES
 
 ### 2.4.4-beta4 - 2025-08-28
 

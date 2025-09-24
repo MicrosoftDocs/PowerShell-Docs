@@ -8,11 +8,11 @@ title: about_Locations
 ---
 # about_Locations
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes how to access items from the working location in PowerShell.
 
-## Long description
+## LONG DESCRIPTION
 
 The current working location is the default location to which commands point.
 In other words, this is the location that PowerShell uses if you don't supply
@@ -125,7 +125,7 @@ If you specify a filename rather than a directory name, PowerShell returns
 details about that file (assuming that file is located in the current working
 location).
 
-## See also
+## SEE ALSO
 
 - [about_Path_Syntax](about_Path_Syntax.md)
 - [about_Providers](about_Providers.md)

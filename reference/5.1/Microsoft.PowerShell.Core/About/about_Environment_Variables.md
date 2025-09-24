@@ -8,7 +8,7 @@ title: about_Environment_Variables
 ---
 # about_Environment_Variables
 
-## Short description
+## SHORT DESCRIPTION
 Describes how to access and manage environment variables in PowerShell.
 
 Environment variables store data that's used by the operating system and other
@@ -22,7 +22,7 @@ programs. PowerShell creates the following environment variables:
 For full descriptions of these variables, see the
 [PowerShell environment variables][03] of this article.
 
-## Long description
+## LONG DESCRIPTION
 
 PowerShell can access and manage environment variables in any of the supported
 operating system platforms. The PowerShell Environment provider lets you get,
@@ -62,7 +62,7 @@ environment variables.
 - The Environment provider and Item cmdlets
 - The .NET **System.Environment** class
 
-## Use the variable syntax
+## USE THE VARIABLE SYNTAX
 
 You can display and change the values of environment variables with the
 following syntax:
@@ -149,7 +149,7 @@ Length Property   int Length {get;}
 
 For more information about variables in PowerShell, see [about_Variables][11].
 
-## Use the Environment provider and Item cmdlets
+## USE THE ENVIRONMENT PROVIDER AND ITEM CMDLETS
 
 PowerShell's **Environment** provider gives you an interface for interacting
 with environment variables in a format that resembles a file system drive. It
@@ -202,7 +202,7 @@ Get-ChildItem Env:
 For more information on using the **Environment** provider to manage
 environment variables, see [about_Environment_Provider][04].
 
-## Use the System.Environment methods
+## USE THE SYSTEM.ENVIRONMENT METHODS
 
 The **System.Environment** class provides the `GetEnvironmentVariable()` and
 `SetEnvironmentVariable()` methods to get and modify environment variables.
@@ -235,7 +235,7 @@ to remove the `Foo` environment variable:
 For more information about the methods of the **System.Environment** class, see
 [Environment Methods][01].
 
-## Create persistent environment variables in Windows
+## CREATE PERSISTENT ENVIRONMENT VARIABLES IN WINDOWS
 
 On Windows, there are three methods for making a persistent change to an
 environment variable:
@@ -299,7 +299,7 @@ System Control Panel:
 1. Select **Environment Variables...**.
 1. Make your changes.
 
-## PowerShell environment variables
+## POWERSHELL ENVIRONMENT VARIABLES
 
 PowerShell features can use environment variables to store user preferences.
 These variables work like preference variables, but they're inherited by child
@@ -409,7 +409,7 @@ The environment variables that store preferences include:
   previous sections for information about creating persistent environment
   variables.
 
-## Other environment variables used by PowerShell
+## OTHER ENVIRONMENT VARIABLES USED BY POWERSHELL
 
 ### Path information
 
@@ -439,7 +439,7 @@ The environment variables that store preferences include:
   PowerShell scripts always start in the current console session. You don't
   need to add the `.ps1` extension.
 
-## See also
+## SEE ALSO
 
 - [about_Environment_Provider][04]
 - [about_Profiles][07]

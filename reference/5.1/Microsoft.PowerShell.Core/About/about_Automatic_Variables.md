@@ -10,7 +10,7 @@ title: about_Automatic_Variables
 
 # about_Automatic_Variables
 
-## Short description
+## SHORT DESCRIPTION
 
 Describes variables that store state information for and are created and
 maintained by PowerShell.
@@ -64,7 +64,7 @@ Here is a list of the automatic variables in PowerShell:
 - [`$this`][47]
 - [`$true`][48]
 
-## Long description
+## LONG DESCRIPTION
 
 ### `$$`
 
@@ -685,7 +685,7 @@ object originating the event, known as the event sender.
 Contains **True**. You can use this variable to represent **True** in commands
 and scripts.
 
-## Using Enumerators
+## USING ENUMERATORS
 
 The `$input`, `$foreach`, and `$switch` variables are all enumerators used to
 iterate through the values processed by their containing code block.
@@ -734,7 +734,7 @@ the current position of the enumerator.
 The **Current** property continues to return the same property until
 **MoveNext** is called.
 
-## Examples
+## EXAMPLES
 
 ### Example 1: Using the $input variable
 
@@ -1024,7 +1024,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## See also
+## SEE ALSO
 
 - [about_Functions][62]
 - [about_Functions_Advanced][59]
