@@ -409,52 +409,65 @@ Valid values are strings, the same as for any variable names.
 
 The following is an example of how `PipelineVariable` works. In this example,
 the `PipelineVariable` parameter is added to a `ForEach-Object` command to
-store the results of the command in variables. A range of numbers, 1 to 5, are
-piped into the first `ForEach-Object` command, the results of which are stored
-in a variable named `$temp`.
+store the results of the command in variables. Five number are piped into the
+first `ForEach-Object` command, the results of which are stored in a variable
+named `$Temp`.
 
-The results of the first `ForEach-Object` command are piped into a second
-`ForEach-Object` command, which displays the current values of `$temp` and
-`$_`.
+The results of the first `ForEach-Object` command are piped into a downstream
+`ForEach-Object` command, which displays the current values of `$Temp` and 
+`$PSItem`.
 
 ```powershell
-# Create a variable named $temp
-$temp=8
-Get-Variable temp
+# Create a variable named $Temp
+$Temp = 8
+Get-Variable Temp | Format-Table
+
 # Note that the variable just created isn't available on the
 # pipeline when -PipelineVariable creates the same variable name
-1..5 | ForEach-Object -PipelineVariable temp -Begin {
-    Write-Host "Step1[BEGIN]:`$temp=$temp"
+$InformationPreference = 'Continue'
+Write-Information '-----------------------------------------------------------'
+111,222,333,444,555 | ForEach-Object -PipelineVariable Temp -Begin {
+
+  Write-Information "Upstream (Begin):   Temp = '$Temp'"
+
 } -Process {
-  Write-Host "Step1[PROCESS]:`$temp=$temp - `$_=$_"
-  Write-Output $_
-} | ForEach-Object {
-  Write-Host "`tStep2[PROCESS]:`$temp=$temp - `$_=$_"
+
+  Write-Information "Upstream (Process): Temp = '$Temp', PSItem = '$PSItem'"
+  Return $PSItem
+
+} | ForEach-Object -Process {
+
+  Write-Information "`t`t Downstream: Temp = '$Temp', PSItem = '$PSItem'"
+
 }
-# The $temp variable is deleted when the pipeline finishes
-Get-Variable temp
+Write-Information '-----------------------------------------------------------'
+
+# The $Temp variable is deleted when the pipeline finishes
+Get-Variable Temp | Format-Table
 ```
 
 ```Output
 Name                           Value
 ----                           -----
-temp                           8
+Temp                           8
 
-Step1[BEGIN]:$temp=
-Step1[PROCESS]:$temp= - $_=1
-        Step2[PROCESS]:$temp=1 - $_=1
-Step1[PROCESS]:$temp=1 - $_=2
-        Step2[PROCESS]:$temp=2 - $_=2
-Step1[PROCESS]:$temp=2 - $_=3
-        Step2[PROCESS]:$temp=3 - $_=3
-Step1[PROCESS]:$temp=3 - $_=4
-        Step2[PROCESS]:$temp=4 - $_=4
-Step1[PROCESS]:$temp=4 - $_=5
-        Step2[PROCESS]:$temp=5 - $_=5
+-----------------------------------------------------------
+Upstream (Begin):   Temp = ''
+Upstream (Process): Temp = '', PSItem = '111'
+                 Downstream: Temp = '111', PSItem = '111'
+Upstream (Process): Temp = '111', PSItem = '222'
+                 Downstream: Temp = '222', PSItem = '222'
+Upstream (Process): Temp = '222', PSItem = '333'
+                 Downstream: Temp = '333', PSItem = '333'
+Upstream (Process): Temp = '333', PSItem = '444'
+                 Downstream: Temp = '444', PSItem = '444'
+Upstream (Process): Temp = '444', PSItem = '555'
+                 Downstream: Temp = '555', PSItem = '555'
+-----------------------------------------------------------
 
 Name                           Value
 ----                           -----
-temp
+Temp
 ```
 
 > [!CAUTION]
