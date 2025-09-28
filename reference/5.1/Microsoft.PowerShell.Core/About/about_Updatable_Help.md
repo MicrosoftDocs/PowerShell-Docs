@@ -8,11 +8,11 @@ title: about_Updatable_Help
 ---
 # about_Updatable_Help
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the updatable help system in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell provides several different ways to access the most up-to-date help
 topics for PowerShell cmdlets and concepts.
@@ -48,7 +48,7 @@ PowerShell doesn't come with Help files. You can use the Updatable Help feature
 to install the help files for all the commands that are included by default
 in PowerShell and for all Windows modules.
 
-## UPDATABLE HELP CMDLETS
+## Updatable Help cmdlets
 
 - `Update-Help`: Downloads the newest help files from the internet or a file
   share, and installs them on the local computer.
@@ -70,7 +70,7 @@ menu in PowerShell Integrated Scripting Environment (ISE).
 The **Update PowerShell Help** item runs an `Update-Help` command without
 parameters.
 
-## AUTO-GENERATED HELP: HELP WITHOUT HELP FILES
+## Auto-generated help: Help without help files
 
 If you don't have the help file for a cmdlet, function, or workflow on the
 computer, the `Get-Help` cmdlet displays auto-generated help and prompts you to
@@ -102,7 +102,7 @@ REMARKS
     type: Update-Help.
 ```
 
-## HELP FILES FOR MODULES
+## Help files for modules
 
 The smallest unit of Updatable Help is help for a module. Module help includes
 help for all the cmdlets, functions, workflows, providers, scripts, and
@@ -139,7 +139,7 @@ Set-ExecutionPolicy cmdlet, type:
 Update-Help -Module Microsoft.PowerShell.Security
 ```
 
-## PERMISSIONS FOR UPDATABLE HELP
+## Permissions for Updatable Help
 
 To update help for the modules in the directory `$PSHOME/Modules`, you must be
 member of the Administrators group on the computer.
@@ -161,7 +161,7 @@ on a third computer. The **Credential** parameter is valid only when you use
 the SourcePath or **LiteralPath** parameters of `Update-Help` and the
 **DestinationPath** or **LiteralPath** parameters of `Save-Help`.
 
-## HOW TO INSTALL AND UPDATE HELP FILES
+## How to install and update help files
 
 To download and install help files for the first time, or to update the help
 files on your computer, use the `Update-Help` cmdlet.
@@ -210,7 +210,7 @@ to update help for all installed modules, including modules that don't support
 Updatable Help. This command typically generates many errors as the cmdlet
 encounters modules that don't support Updatable Help.
 
-## HOW TO UPDATE HELP FROM A FILE SHARE
+## How to update help from a file share
 
 To support computers that aren't connected to the internet, or to control or
 streamline help updating in an enterprise, use the `Save-Help` cmdlet. The
@@ -317,7 +317,7 @@ modules must be installed in directories that are listed in the value of the
 remote computer for which you want to save help. These are also modules that
 are returned by running a `Get-Help -ListAvailable` command.
 
-## HOW TO UPDATE HELP FILES IN DIFFERENT LANGUAGES
+## How to update help files in different languages
 
 By default, the `Update-Help` and `Save-Help` cmdlets download help in the UI
 culture and language that's set for Windows on the local computer. If help
@@ -344,7 +344,7 @@ choose the alternative that best meets your needs.
 > [!NOTE]
 > Currently, Updateable Help content is only published in English (en-US).
 
-## HOW TO USE ONLINE HELP
+## How to use online help
 
 If you can't or choose not to update the help files on your local computer, you
 can still get the newest help files online.
@@ -366,7 +366,7 @@ The **Online** parameter doesn't work with About topics. To see the about
 topics for PowerShell, including help topics about the PowerShell language, see
 [PowerShell About Topics][05].
 
-## HOW TO MINIMIZE OR PREVENT INTERNET DOWNLOADS
+## How to minimize or prevent internet downloads
 
 To minimize internet downloads and provide Updatable Help to users who aren't
 connected to the internet, use the `Save-Help` cmdlet. Download help from the
@@ -393,7 +393,7 @@ to specify a different filesystem location, but they can't exclude the
 
 For more information, see [about_Group_Policy_Settings][04].
 
-## HOW TO UPDATE HELP FOR NON-STANDARD MODULES
+## How to update help for non-standard modules
 
 To update or save help for a module that's not returned by the
 **ListAvailable** parameter of the `Get-Module` cmdlet, import the module into
@@ -416,7 +416,7 @@ environment variable, or a module that's not well-formed (the module directory
 doesn't contain at least one file whose basename is the same as the directory
 name).
 
-## HOW TO SUPPORT UPDATABLE HELP
+## How to support Updatable Help
 
 If you author a module, you can support online help and Updatable Help for your
 modules. For more information, see [Supporting Updatable Help][01] and
@@ -424,12 +424,12 @@ modules. For more information, see [Supporting Updatable Help][01] and
 
 Updatable help not available for PowerShell snap-ins or comment-based help.
 
-## REMARKS
+## Remarks
 
 The `Update-Help` and `Save-Help` cmdlets aren't supported on Windows
 Preinstallation Environment (Windows PE).
 
-## SEE ALSO
+## See also
 
 - [Get-Help][06]
 - [Save-Help][07]

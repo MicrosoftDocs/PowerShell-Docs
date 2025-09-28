@@ -8,10 +8,11 @@ title: about_Classes
 ---
 # about_Classes
 
-## SHORT DESCRIPTION
+## Short description
+
 Describes how you can use classes to create your own custom types.
 
-## LONG DESCRIPTION
+## Long description
 
 Starting with version 5.0, PowerShell has a formal syntax to define classes and
 other user-defined types. The addition of classes enables developers and IT
@@ -24,7 +25,7 @@ example, if you declare a class named **Device** and initialize a variable
 **Device**. Each instance of **Device** can have different values in its
 properties.
 
-## SUPPORTED SCENARIOS
+## Supported scenarios
 
 - Define custom types in PowerShell using object-oriented programming semantics
   like classes, properties, methods, inheritance, etc.
@@ -34,7 +35,7 @@ properties.
   definitions.
 - Define custom exceptions that can be caught by their type name.
 
-## SYNTAX
+## Syntax
 
 ### Definition syntax
 
@@ -76,7 +77,7 @@ To instantiate an instance of a class, use one of the following syntaxes:
 > properties. If any key in the hashtable isn't a valid property name,
 > PowerShell raises an error.
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Minimal definition
 
@@ -362,7 +363,7 @@ At C:\code\classes.examples.ps1:114 char:13
    already in list
 ```
 
-## CLASS PROPERTIES
+## Class properties
 
 Properties are variables declared in the class scope. A property can be of any
 built-in type or an instance of another class. Classes can have zero or more
@@ -370,7 +371,7 @@ properties. Classes don't have a maximum property count.
 
 For more information, see [about_Classes_Properties][01].
 
-## CLASS METHODS
+## Class methods
 
 Methods define the actions that a class can perform. Methods can take
 parameters that specify input data. Methods always define an output type. If a
@@ -380,7 +381,7 @@ method doesn't explicitly define an output type, the method's output type is
 
 For more information, see [about_Classes_Methods][02].
 
-## CLASS CONSTRUCTORS
+## Class constructors
 
 Constructors enable you to set default values and validate object logic at the
 moment of creating the instance of the class. Constructors have the same name
@@ -389,7 +390,7 @@ members of the new object.
 
 For more information, see [about_Classes_Constructors][03].
 
-## HIDDEN KEYWORD
+## Hidden keyword
 
 The `hidden` keyword hides a class member. The member is still accessible to
 the user and is available in all scopes in which the object is available.
@@ -422,7 +423,7 @@ more information about hidden methods, see [about_Classes_Methods][06]. For
 more information about hidden constructors, see
 [about_Classes_Constructors][07].
 
-## STATIC KEYWORD
+## Static keyword
 
 The `static` keyword defines a property or a method that exists in the class
 and needs no instance.
@@ -438,7 +439,7 @@ For more information about static properties, see
 [about_Classes_Methods][09]. For more information about static constructors,
 see [about_Classes_Constructors][10].
 
-## INHERITANCE IN POWERSHELL CLASSES
+## Inheritance in PowerShell classes
 
 You can extend a class by creating a new class that derives from an existing
 class. The derived class inherits the properties and methods of the base class.
@@ -455,7 +456,7 @@ For more information about deriving classes that inherit from a base class or
 implement interfaces, see
 [about_Classes_Inheritance][11].
 
-## EXPORTING CLASSES WITH TYPE ACCELERATORS
+## Export classes with type accelerators
 
 By default, PowerShell modules don't automatically export classes and
 enumerations defined in PowerShell. The custom types aren't available outside
@@ -525,7 +526,7 @@ When users import the module, any types added to the type accelerators for the
 session are immediately available for IntelliSense and completion. When the
 module is removed, so are the type accelerators.
 
-## MANUALLY IMPORTING CLASSES FROM A POWERSHELL MODULE
+## Manually import classes from a PowerShell module
 
 `Import-Module` and the `#Requires` statement only import the module functions,
 aliases, and variables, as defined by the module. Classes aren't imported.
@@ -541,7 +542,7 @@ to be available to users outside of the module directly in the root module.
 
 For more information about the `using` statement, see [about_Using][12].
 
-## LOADING NEWLY CHANGED CODE DURING DEVELOPMENT
+## Load newly changed code during development
 
 During development of a script module, it's common to make changes to the code
 then load the new version of the module using `Import-Module` with the
@@ -558,7 +559,7 @@ files. If you have function in one file that use classes defined in another
 module, you should use the `using module` statement to ensure that the
 functions have the class definitions that are needed.
 
-## THE PSREFERENCE TYPE ISN'T SUPPORTED WITH CLASS MEMBERS
+## The PSReference type isn't supported with class members
 
 The `[ref]` type accelerator is shorthand for the **PSReference** class. Using
 `[ref]` to type-cast a class member fails silently. APIs that use `[ref]`
@@ -568,7 +569,7 @@ a value in by reference.
 
 For more information, see [PSReference Class][13].
 
-## LIMITATIONS
+## Limitations
 
 The following lists include limitations for defining PowerShell classes and
 workaround for those limitations, if any.
@@ -678,7 +679,7 @@ workaround for those limitations, if any.
   statement to load the type. There's no workaround for a custom type to use
   itself as the type parameter when inheriting from a generic.
 
-## SEE ALSO
+## See also
 
 - [about_Classes_Constructors][03]
 - [about_Classes_Inheritance][11]

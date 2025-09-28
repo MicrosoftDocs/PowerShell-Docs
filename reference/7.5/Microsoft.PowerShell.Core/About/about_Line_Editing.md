@@ -9,11 +9,11 @@ title: about_Line_Editing
 
 # about_Line_Editing
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to edit commands at the PowerShell command prompt.
 
-## LONG DESCRIPTION
+## Long description
 
 The PSReadLine module provides useful keyboard shortcuts to help you edit
 commands at the PowerShell command prompt. The key bindings discussed in this
@@ -83,7 +83,7 @@ press <kbd>Insert</kbd> again.
 To complete a cmdlet name, a parameter, or a path, press the <kbd>Tab</kbd>
 key. To scroll through a list of values, press the <kbd>Tab</kbd> key again.
 
-## SEE ALSO
+## See also
 
 - [about_PSReadLine](../../PSReadLine/About/about_PSReadLine.md)
 - [about_Tab_Expansion](about_Tab_Expansion.md)

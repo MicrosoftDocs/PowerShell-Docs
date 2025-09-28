@@ -8,11 +8,11 @@ title: about_Arithmetic_Operators
 ---
 # about_Arithmetic_Operators
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the operators that perform arithmetic in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Arithmetic operators calculate numeric values. You can use one or more
 arithmetic operators to add, subtract, multiply, and divide values, and to
@@ -631,7 +631,7 @@ unsigned values, a zero is inserted in the left-most position.
 |      `(-21 -shr 1)`      |         -11 | 11111111111111111111111111110101 | 0xFFFFFFF5 |
 |      `(-21 -shr 2)`      |          -6 | 11111111111111111111111111111010 | 0xFFFFFFF4 |
 
-## SEE ALSO
+## See also
 
 - [about_Arrays](about_Arrays.md)
 - [about_Hash_Tables](about_Hash_Tables.md)

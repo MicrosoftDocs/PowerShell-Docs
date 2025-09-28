@@ -8,12 +8,12 @@ title: about_Reserved_Words
 ---
 # about_Reserved_Words
 
-## SHORT DESCRIPTION
+## Short description
 
 Lists the reserved words that cannot be used as identifiers because they
 have a special meaning in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 There are certain words that have special meaning in PowerShell. When these
 words appear without quotation marks, PowerShell attempts to apply their
@@ -75,7 +75,7 @@ Get-Help <Reserved_Word>
 > Get-Help <Reserved_Word> -Category:HelpFile
 > ```
 
-## SEE ALSO
+## See also
 
 - [about_Command_Syntax](about_Command_Syntax.md)
 - [about_Language_Keywords](about_Language_Keywords.md)

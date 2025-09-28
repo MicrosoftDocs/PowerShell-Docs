@@ -8,11 +8,11 @@ title: about_Built-in_Functions
 ---
 # about_Built-in_Functions
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the built-in functions in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell includes a set of functions that are loaded into every PowerShell
 session. These functions are similar to cmdlets but they're not included in any
@@ -21,19 +21,19 @@ module. They're defined in the PowerShell engine itself.
 These functions are provided as shorthand helpers for common tasks. In many
 cases, these functions call an existing cmdlet with an additional parameter.
 
-## `CD..`
+## `cd..`
 
 In the Windows CMD shell it's common to run the `cd` command without any spaces
 between the command and the destination path. This function runs
 `Set-Location ..` to change to the parent folder.
 
-## `CD\`
+## `cd\`
 
 In the Windows CMD shell it's common to run the `cd` command without any spaces
 between the command and the destination path. This function runs
 `Set-Location \` to change to the root folder.
 
-## `CD~`
+## `cd~`
 
 In the Windows CMD shell it's common to run the `cd` command without any spaces
 between the command and the destination path. This function runs
@@ -41,12 +41,12 @@ between the command and the destination path. This function runs
 
 This function was added in PowerShell 7.4.
 
-## `PAUSE`
+## `pause`
 
 This function replicates the behavior of the `pause` command from `cmd.exe`.
 The script pauses execution and prompts the user to hit a key to continue.
 
-## `HELP`
+## `help` (alias: `man`)
 
 This function invokes `Get-Help` with your parameters and passes the output to
 the system's pager command. PowerShell uses a different default pager for
@@ -56,35 +56,35 @@ Windows and non-Windows systems. On Windows systems, the default pager is
 If the `$Env:PAGER` environment variable is defined, PowerShell uses the
 specified program instead of the system default.
 
-## `PROMPT`
+## `prompt`
 
 This is the function that creates the default prompt for the PowerShell command
 line. You can customize your prompt by overriding this function with your own.
 For more information see [about_Prompts](about_Prompts.md).
 
-## `CLEAR-HOST`
+## `Clear-Host`
 
 This function clears the screen. For more information, see
 [Clear-Host](xref:Microsoft.PowerShell.Core.Clear-Host).
 
-## `TABEXPANSION2`
+## `TabExpansion2`
 
 This is the default function to use for tab expansion. For more information,
 see [TabExpansion2](xref:Microsoft.PowerShell.Core.TabExpansion2).
 
-## `OSS`
+## `oss`
 
 This function provides a short hand way to run `Out-String -Stream` in a
 pipeline. For more information, see
 [Out-String](xref:Microsoft.PowerShell.Utility.Out-String).
 
-## `MKDIR`
+## `mkdir` (alias: `md`)
 
 This function provides a short hand way to run `New-Item -Type Directory` with
 your parameters. This function is only defined for Windows systems. Linux and
 macOS system use the native `mkdir` command.
 
-## `EXEC`
+## `exec`
 
 Some native Unix commands shell out to run something (like ssh) and use the
 built-in bash command `exec` to spawn a new process that replaces the current

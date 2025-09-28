@@ -8,12 +8,12 @@ title: about_Foreach
 ---
 # about_Foreach
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes a language command you can use to traverse all the items in a
 collection of items.
 
-## LONG DESCRIPTION
+## Long description
 
 The `foreach` statement is a language construct for iterating over a set of
 values in a collection.
@@ -22,7 +22,7 @@ The simplest and most typical type of collection to traverse is an array.
 Within a `foreach` loop, it's common to run one or more commands against each
 item in an array.
 
-## SYNTAX
+## Syntax
 
 The following shows the `foreach` syntax:
 
@@ -209,7 +209,7 @@ function Get-FunctionPosition {
 }
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables][01]
 - [about_If][03]

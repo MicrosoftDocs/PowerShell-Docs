@@ -8,12 +8,12 @@ title: about_PSCustomObject
 ---
 # about_PSCustomObject
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains the differences between the `[psobject]` and `[pscustomobject]` type
 accelerators.
 
-## LONG DESCRIPTION
+## Long description
 
 The `[pscustomobject]` type accelerator was added in PowerShell 3.0.
 
@@ -122,7 +122,7 @@ PSVersion Name     System
 
 ```
 
-## UNDERSTANDING THE TYPE ACCELERATORS
+## Understanding the type accelerators
 
 `[psobject]` and `[pscustomobject]` are type accelerators.
 
@@ -212,7 +212,7 @@ have subtle side effects.
   to zero and less than the size of the argument list..
   ```
 
-## CONVERSION OF HASHTABLES CONTAINING SIMILAR KEYS
+## Conversion of hashtables containing similar keys
 
 Case-sensitive dictionaries might contain key names that only differ by case.
 When you cast such a dictionary to a `[pscustomobject]`, PowerShell preserves
@@ -257,7 +257,7 @@ One TWO Three
   1   3     3
 ```
 
-## NOTES
+## Notes
 
 In Windows PowerShell, objects created by casting a **Hashtable** to
 `[pscustomobject]` don't have the **Length** or **Count** properties.
@@ -281,7 +281,7 @@ Starting in PowerShell 6, objects created by casting a **Hashtable** to
 `[pscustomobject]` always have a value of `1` for the **Length** and **Count**
 properties.
 
-## SEE ALSO
+## See also
 
 - [about_Object_Creation][01]
 - [about_Objects][02]

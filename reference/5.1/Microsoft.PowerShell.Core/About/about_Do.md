@@ -8,11 +8,12 @@ title: about_Do
 ---
 # about_Do
 
-## SHORT DESCRIPTION
+## Short description
+
 Runs a statement list one or more times, subject to a `while` or `until`
 condition.
 
-## LONG DESCRIPTION
+## Long description
 
 The `do` keyword works with the `while` keyword or the `until` keyword to run
 the statements in a script block, subject to a condition. Unlike the related
@@ -83,7 +84,7 @@ do {
 while (++$a -lt 10)
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Booleans](about_Booleans.md)
 - [about_Break](about_Break.md)

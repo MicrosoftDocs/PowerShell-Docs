@@ -9,13 +9,13 @@ title: about_Tab_Expansion
 ---
 # about_Tab_Expansion
 
-## SHORT DESCRIPTION
+## Short description
 
 PowerShell provides completions on input to provide hints, enable discovery,
 and speed up input entry. Command names, parameter names, argument values and
 file paths can all be completed by pressing the <kbd>Tab</kbd> key.
 
-## LONG DESCRIPTION
+## Long description
 
 Tab expansion is controlled by the internal function **TabExpansion2**. Since
 this function can be modified or overridden, this discussion is a guide to the
@@ -51,7 +51,7 @@ this interpretation. Beginning in PowerShell 7.5-preview.3 on Windows, the
 tilde character is character is expanded to `$HOME` when using tab completion.
 This expansion works with Windows native commands.
 
-## CMDLET NAME COMPLETION
+## Cmdlet name completion
 
 The tab expansion of cmdlet names is slightly different. To use tab expansion
 on a cmdlet name, type the entire first part of the name (the verb) and the
@@ -115,7 +115,7 @@ In this example the string 'fore' is matched to `foreach` (PowerShell alias),
 `ForEach-Object` (cmdlet), and `foreach.cmd` (native command). Use the arrow
 keys to select the value you want.
 
-## PARAMETER ARGUMENT COMPLETION
+## Parameter argument completion
 
 Tab completion can also work to complete parameter arguments. You can use the
 <kbd>Tab</kbd> key to cycle through a list of possible values that are valid
@@ -123,7 +123,7 @@ for some parameter.
 
 For more information, see [about_Functions_Argument_Completion][04].
 
-## ENUMERATED VALUE COMPLETION
+## Enumerated value completion
 
 PowerShell 7.0 added support for tab completion of enums. You can use tab
 completion to select the value you want anywhere you use an enum. For example:
@@ -177,7 +177,7 @@ When you hit the <kbd>Tab</kbd> key, you would get the following result:
 $flavor = 'Chocolate'
 ```
 
-## TAB COMPLETIONS FOR COMMENT-BASED KEYWORDS
+## Tab completions for comment-based keywords
 
 Beginning in PowerShell 7.2, support was added for tab completion of the
 `#Requires` parameters and the keywords for comment-based help.
@@ -212,7 +212,7 @@ DESCRIPTION    FORWARDHELPCATEGORY    INPUTS            OUTPUTS       ROLE
 EXAMPLE        FORWARDHELPTARGETNAME  LINK              PARAMETER     SYNOPSIS
 ```
 
-## SEE ALSO
+## See also
 
 - [TabExpansion2][06]
 - [about_Comment_Based_Help][03]

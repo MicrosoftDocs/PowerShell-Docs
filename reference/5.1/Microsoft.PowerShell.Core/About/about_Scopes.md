@@ -8,19 +8,19 @@ title: about_Scopes
 ---
 # about_Scopes
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains the concept of scope in PowerShell and shows how to set and change
 the scope of elements.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell protects access to variables, aliases, functions, and PowerShell
 drives (PSDrives) by limiting where they can be read and changed. PowerShell
 uses scope rules to ensure that you don't make unintentional changes to items
 in other scopes.
 
-## SCOPE RULES
+## Scope rules
 
 When you start PowerShell, the host (`pwsh.exe`) creates a PowerShell runspace.
 Host processes can have multiple runspaces. Each runspace has its own session
@@ -49,7 +49,7 @@ The following are the basic rules of scope:
   different scope, the original item might be hidden by the new item, but it
   isn't overridden or changed.
 
-## PARENT AND CHILD SCOPES
+## Parent and child scopes
 
 You can create a new child scope by calling a script or function. The calling
 scope is the parent scope. The called script or function is the child scope.
@@ -94,7 +94,7 @@ private in a parent scope, the search through continues through the scope
 chain. [Example 4][02] shows the effect of a private variable in a scope
 search.
 
-## POWERSHELL SCOPES NAMES
+## PowerShell scope names
 
 PowerShell defines names for some scopes to allow easier access to that scope.
 PowerShell defines the following named scopes:
@@ -117,7 +117,7 @@ current (local) scope, scope 1 is the current scope's parent, scope 2 is the
 current scope's grandparent. This pattern continues until you reach the root
 scope.
 
-## SCOPE MODIFIERS
+## Scope modifiers
 
 A variable, alias, or function name can include any one of the following
 optional scope modifiers:
@@ -417,7 +417,7 @@ before the path to the script:
 Now, any functions, aliases, or variables defined in the script are added to
 the current scope.
 
-## RESTRICTING WITHOUT SCOPE
+## Restricting without scope
 
 PowerShell has some options and features that are similar to scope and may
 interact with scopes. These feature may be confused with scope or the behavior
@@ -544,7 +544,7 @@ Because visibility is designed for containers, it works differently in a scope.
 You can use the `New-Variable` and `Set-Variable` cmdlets to create a variable
 that has private visibility.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Change a variable value only in a script
 
@@ -752,7 +752,7 @@ Invoke-Command $s {Remove-Item .\Test*.ps1 -Credential $Using:Cred}
 
 The `Using:` scope modifier was introduced in PowerShell 3.0.
 
-## SEE ALSO
+## See also
 
 - [about_Environment_Variables][05]
 - [about_Functions][06]

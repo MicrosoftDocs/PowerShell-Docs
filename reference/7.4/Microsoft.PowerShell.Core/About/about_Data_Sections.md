@@ -8,12 +8,12 @@ title: about_Data_Sections
 ---
 # about_Data_Sections
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains `data` sections, which isolate text strings and other read-only
 data from script logic.
 
-## LONG DESCRIPTION
+## Long description
 
 Scripts that are designed for PowerShell can have one or more `data` sections
 that contain only data. You can include one or more `data` sections in any
@@ -199,7 +199,7 @@ data -SupportedCommand Format-Xml {
 }
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables][01]
 - [about_Comparison_Operators][02]

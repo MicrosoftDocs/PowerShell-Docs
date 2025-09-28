@@ -8,20 +8,20 @@ title: about_WSMan_Provider
 ---
 # about_WSMan_Provider
 
-## PROVIDER NAME
+## Provider name
 
 WSMan
 
-## DRIVES
+## Drives
 
 `WSMan:`
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides access to Web Services for Management (WS-Management) configuration
 information.
 
-## DETAILED DESCRIPTION
+## Detailed description
 
 > This information only applies to PowerShell running on Windows.
 
@@ -122,7 +122,7 @@ computer, the name of the remote computer shows up in the provider.
 WSMan:\<Remote_Computer_Name>
 ```
 
-## NAVIGATING THE WSMAN: DRIVE
+## Navigating the WSMan: drive
 
 This command uses the `Set-Location` cmdlet to change the current location to
 the `WSMan:` drive.
@@ -151,7 +151,7 @@ Set-Location -Path  WSMan:\SERVER01
 > The above command assume that a connection to the remote system already
 > exists.
 
-## DISPLAYING THE CONTENTS OF THE WSMAN: DRIVE
+## Displaying the contents of the WSMan: drive
 
 This command uses the `Get-ChildItem` cmdlet to display the WS-Management stores
 in the Localhost store location.
@@ -173,7 +173,7 @@ Get-ChildItem -Path WSMan:\SERVER01
 > The above command assume that a connection to the remote system already
 > exists.
 
-## SETTING THE VALUE OF ITEMS IN THE  WSMAN: DRIVE
+## Setting the value of items in the WSMan: drive
 
 You can use the `Set-Item` cmdlet to change configuration settings in the
 `WSMan:` drive. The following example sets the **TrustedHosts** value to
@@ -192,7 +192,7 @@ new value "*.domain2.com" to the old value stored in `TrustedHost:`
 Set-Item WSMan:\localhost\Client\TrustedHosts *.domain2.com -Concatenate
 ```
 
-## CREATING ITEMS IN THE WSMAN: DRIVE
+## Creating items in the WSMan: drive
 
 ### Creating a new listener
 
@@ -273,7 +273,7 @@ New-Item -Path WSMan:\localhost\Plugin\TestPlugin\InitializationParameters `
          -ParamValue testparametervalue
 ```
 
-## DYNAMIC PARAMETERS
+## Dynamic parameters
 
 Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
@@ -569,14 +569,14 @@ Specifies the format in which XML is passed to plug-ins through the
 
 - [New-Item](xref:Microsoft.PowerShell.Management.New-Item)
 
-## USING THE PIPELINE
+## Using the pipeline
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
 task by sending provider data from one cmdlet to another provider cmdlet.
 To read more about how to use the pipeline with provider cmdlets, see the
 cmdlet references provided throughout this article.
 
-## GETTING HELP
+## Getting help
 
 Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
@@ -595,6 +595,6 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path WSMan:
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Providers](../../Microsoft.PowerShell.Core/About/about_Providers.md)

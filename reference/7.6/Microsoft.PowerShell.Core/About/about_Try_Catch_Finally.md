@@ -8,12 +8,12 @@ title: about_Try_Catch_Finally
 ---
 # about_Try_Catch_Finally
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to use the `try`, `catch`, and `finally` blocks to handle
 terminating errors.
 
-## LONG DESCRIPTION
+## Long description
 
 Use `try`, `catch`, and `finally` blocks to respond to or handle terminating
 errors in scripts. The `trap` statement can also be used to handle terminating
@@ -45,7 +45,7 @@ by your script.
 `try`, `catch`, and `finally` resemble the `try`, `catch`, and `finally`
 keywords used in the C\# programming language.
 
-## SYNTAX
+## Syntax
 
 A `try` statement contains a `try` block, zero or more `catch` blocks, and zero
 or one `finally` block. A `try` statement must have at least one `catch` block
@@ -103,7 +103,7 @@ you include a statement to be displayed, such as "Finally block has run", it
 will not be displayed after you press <kbd>CTRL</kbd>+<kbd>C</kbd>, even if the
 `finally` block ran.
 
-## CATCHING ERRORS
+## Catching errors
 
 The following sample script shows a `try` block with a `catch` block:
 
@@ -177,7 +177,7 @@ block for the derived class before the `catch` block for the general class.
 > specifying the error type **System.Management.Automation.RuntimeException**
 > behaves the same as an unqualified catch block.
 
-## USING TRAPS IN A TRY CATCH
+## Using traps in a try catch
 
 When a terminating error occurs in a `try` block with a `trap` defined within
 the `try` block, even if there is a matching `catch` block, the `trap`
@@ -187,7 +187,7 @@ If a `trap` exists at a higher block than the `try`, and there is no matching
 `catch` block within the current scope, the `trap` will take control, even if
 any parent scope has a matching `catch` block.
 
-## ACCESSING EXCEPTION INFORMATION
+## Accessing exception information
 
 Within a `catch` block, the current error can be accessed using `$_`, which is
 also known as `$PSItem`. The object is of type **ErrorRecord**.
@@ -228,7 +228,7 @@ An Error occurred:
 at <ScriptBlock>, <No file>: line 2
 ```
 
-## FREEING RESOURCES USING FINALLY
+## Freeing resources using finally
 
 To free resources used by a script, add a `finally` block after the `try` and
 `catch` blocks. The `finally` block statements run regardless of whether the
@@ -259,7 +259,7 @@ try {
 }
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Break][01]
 - [about_Continue][02]

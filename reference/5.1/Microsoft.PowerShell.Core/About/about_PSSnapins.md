@@ -8,11 +8,11 @@ title: about_PSSnapins
 ---
 # about_PSSnapins
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes  Windows PowerShell snap-ins and shows how to use and manage them.
 
-## LONG DESCRIPTION
+## Long description
 
 A Windows PowerShell snap-in is a Microsoft .NET Framework assembly that can
 contain Windows PowerShell providers and cmdlets. Windows PowerShell includes a
@@ -34,7 +34,7 @@ the only remaining snap-in. The **Microsoft.PowerShell.Core** snap-in is loaded
 in every session by default. The remaining modules are loaded automatically on
 first-use. For more information, see [about_Modules][02].
 
-## FIND A SNAP-IN
+## Find a snap-in
 
 To get a list of the  Windows PowerShell snap-ins on your computer, type:
 
@@ -61,14 +61,14 @@ To get a list of the cmdlets in a  Windows PowerShell snap-in, type:
 Get-Command -Module <snap-in_name>
 ```
 
-## INSTALL A SNAP-IN
+## Install a snap-in
 
 The built-in snap-ins are registered in the system and added to the default
 session when you start Windows PowerShell. However, you have to register
 snap-ins that you create or obtain from others and then add the snap-ins to
 your session.
 
-## ADD A SNAP-IN TO THE CURRENT SESSION
+## Add a snap-in to the current session
 
 To add a registered snap-in to the current session, use the `Add-PSSnapin`
 cmdlet. For example, to add the Microsoft SQL Server snap-in to the session,
@@ -82,7 +82,7 @@ After the command is completed, the providers and cmdlets in the snap-in are
 available in the session. However, they're available only in the current
 session unless you save them.
 
-## SAVE A SNAP-INS
+## Save snap-ins
 
 To use a snap-in in future Windows PowerShell sessions, add the `Add-PSSnapin`
 command to your Windows PowerShell profile. Or, export the snap-in names to a
@@ -107,7 +107,7 @@ Export-Console NewConsole
 
 For more information, see [Export-Console][05].
 
-## OPEN WINDOWS POWERSHELL USING A CONSOLE FILE
+## Open Windows PowerShell using a console file
 
 To use a console file that includes the snap-in, start Windows PowerShell
 (`powershell.exe`) from the command prompt in `cmd.exe` or in another Windows
@@ -122,7 +122,7 @@ powershell.exe -PSConsoleFile NewConsole.psc1
 The providers and cmdlets in the snap-in are now available for use in the
 session.
 
-## REMOVE A SNAP-IN
+## Remove a snap-in
 
 To remove a Windows PowerShell snap-in from the current session, use the
 `Remove-PSSnapin` cmdlet. For example, to remove the SQL Server snap-in from the
@@ -135,14 +135,14 @@ Remove-PSSnapin sql
 This cmdlet removes the snap-in from the session. The snap-in is still loaded,
 but the providers and cmdlets that it supports are no longer available.
 
-## LOG SNAP-IN EVENTS
+## Log snap-in events
 
 Beginning in Windows PowerShell 3.0, you can record execution events for the
 cmdlets in Windows PowerShell modules and snap-ins by setting the
 **LogPipelineExecutionDetails** property of modules and snap-ins to `$true`.
 For more information, see [about_EventLogs][01].
 
-## SEE ALSO
+## See also
 
 - [about_Modules][02]
 - [about_Profiles][03]

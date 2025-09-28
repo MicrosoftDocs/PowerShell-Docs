@@ -9,10 +9,10 @@ title: about_Eventlogs
 
 # about_Eventlogs
 
-## SHORT DESCRIPTION
+## Short description
 This article describes how PowerShell logs events to the Windows Event log.
 
-## LONG DESCRIPTION
+## Long description
 
 Windows PowerShell creates a Windows event log that's named "Windows
 PowerShell" to record Windows PowerShell events. You can view this log in Event
@@ -27,7 +27,7 @@ stopping the Windows PowerShell providers. You can also log details about
 Windows PowerShell commands.
 
 
-## VIEWING THE WINDOWS POWERSHELL EVENT LOG
+## Viewing the Windows PowerShell event log
 
 You can view the Windows PowerShell event log in Event Viewer or by using the
 `Get-EventLog` and `Get-WmiObject` cmdlets. To view the contents of the Windows
@@ -79,7 +79,7 @@ Get-WmiObject -List | where Name -Like "Win32*Event*"
 
 For more information, see [Get-EventLog][05] and [Get-WmiObject][06].
 
-## SELECTING EVENTS FOR THE WINDOWS POWERSHELL EVENT LOG
+## Selecting events for the Windows PowerShell event log
 
 You can use the event log preference variables to determine which events are
 recorded in the Windows PowerShell event log.
@@ -139,7 +139,7 @@ The variable settings apply only for the current Windows PowerShell session. To
 apply them to all Windows PowerShell sessions, add them to your Windows
 PowerShell profile.
 
-## LOGGING MODULE EVENTS
+## Logging module events
 
 Beginning in Windows PowerShell 3.0, you can record execution events for the
 cmdlets and functions in Windows PowerShell modules and snap-ins by setting the
@@ -201,7 +201,7 @@ LogPipelineExecutionDetails property of modules and snap-ins.
 For more information about this Group Policy setting, see
 [about_Group_Policy_Settings][03].
 
-## SECURITY AND AUDITING
+## Security and auditing
 
 The Windows PowerShell event log is designed to indicate activity and to
 provide operational details for troubleshooting.
@@ -215,12 +215,12 @@ and write to the log. A malicious user could read an event log on a local or
 remote computer, record false data, and then prevent the logging of their
 activities.
 
-## NOTES
+## Notes
 
 Authors of module authors can add logging features to their modules. For more
 information, see [Writing a Windows PowerShell Module][02].
 
-## SEE ALSO
+## See also
 
 - [about_Group_Policy_Settings][03]
 - [about_Preference_Variables][04]

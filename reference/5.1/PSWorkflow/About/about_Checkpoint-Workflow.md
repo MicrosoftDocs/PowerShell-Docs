@@ -9,10 +9,10 @@ title: about_Checkpoint-Workflow
 
 # about_Checkpoint-Workflow
 
-## SHORT DESCRIPTION
+## Short description
 Describes the Checkpoint-Workflow activity, which takes a checkpoint in a workflow.
 
-## LONG DESCRIPTION
+## Long description
 
 The Checkpoint-Workflow activity takes a checkpoint, which saves state and data in the workflow. If
 the workflow is suspended or interrupted, it can be resumed from the most recent checkpoint, rather
@@ -20,7 +20,7 @@ than having to be restarted.
 
 The Checkpoint-Workflow activity is valid only in a workflow.
 
-### SYNTAX
+### Syntax
 
 ```
 workflow <Verb-Noun> {
@@ -41,7 +41,7 @@ than the time it takes to write the checkpoint state and data to disk.
 Consider taking checkpoints after critical steps so the workflow can be resumed rather than
 restarted. For example, take a checkpoint after commands that are not idempotent.
 
-### ABOUT CHECKPOINTS
+### About checkpoints
 
 A checkpoint is a snapshot of the current state of the workflow, including the current values of
 variables, and any output generated up to that point, and it saves it to disk.
@@ -53,7 +53,7 @@ When you run the workflow as a job, such as by using the AsJob workflow common p
 workflow checkpoints are retained until you delete the job, such as by using the Remove-Job cmdlet.
 Otherwise, workflow checkpoints are deleted when the workflow completes.
 
-### OTHER CHECKPOINTING TECHNIQUES
+### Other checkpointing techniques
 
 In addition to the Checkpoint-Workflow activity, Windows PowerShell Workflow supports other
 checkpointing techniques, including the following:

@@ -8,13 +8,13 @@ title: about_Session_Configuration_Files
 ---
 # about_Session_Configuration_Files
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes session configuration files, which are used in a session
 configuration (also known as an "endpoint") to define the environment of
 sessions that use the session configuration.
 
-## LONG DESCRIPTION
+## Long description
 
 > This information only applies to PowerShell running on Windows.
 
@@ -39,7 +39,7 @@ Windows PowerShell 3.0 to include a session configuration file in a session
 configuration. However, users of Windows PowerShell 2.0 (and later) are
 affected by the settings in the session configuration.
 
-## CREATING CUSTOM SESSIONS
+## Creating custom sessions
 
 You can customize many features of a PowerShell session by specifying session
 properties in a session configuration. You can customize a session by writing a
@@ -65,7 +65,7 @@ based on group membership.
 For more information about RoleDefinitions and how to define this Value, see
 the help topic for the `New-PSRoleCapabilityFile` Cmdlet.
 
-## CREATING A SESSION CONFIGURATION FILE
+## Creating a session configuration file
 
 The easiest way to create a session configuration file is by using the
 `New-PSSessionConfigurationFile` cmdlet. This cmdlet generates a file that uses
@@ -197,7 +197,7 @@ ParseException
 + FullyQualifiedErrorId : ScriptsNotAllowed
 ```
 
-## EDITING A SESSION CONFIGURATION FILE
+## Editing a session configuration file
 
 All settings in a session configuration except for RunAsVirtualAccount and
 RunAsVirtualAccountGroups can be modified by editing the session configuration
@@ -232,7 +232,7 @@ If you need to modify the RunAsVirtualAccount or the RunAsVirtualAccountGroups
 settings, you must un-register the session configuration and re-register a
 session configuration file that includes the edited values.
 
-## TESTING A SESSION CONFIGURATION FILE
+## Testing a session configuration file
 
 Use the Test-PSSessionConfigurationFile cmdlet to test manually edited session
 configuration files. That's important: if the file syntax and values are not
@@ -257,7 +257,7 @@ file, including files that the New-PSSessionConfiguration cmdlet creates. For
 more information, see the help topic for the `Test-PSSessionConfigurationFile`
 cmdlet.
 
-## REMOVING A SESSION CONFIGURATION FILE
+## Removing a session configuration file
 
 You cannot remove a session configuration file from a session configuration.
 However, you can replace the file with a new file that uses the default
@@ -366,7 +366,7 @@ use the `Get-PSSessionCapability` cmdlet. This cmdlet enables you to determine
 the commands and environment available to specific users in specific
 endpoints.
 
-## NOTES
+## Notes
 
 Session configurations also support a type of session known as an "empty"
 session. An Empty session type enables you to create custom sessions with
@@ -375,7 +375,7 @@ empty session, the session is limited to expressions and might not be of any
 practical use. The SessionType property tells you whether or not you are
 working with an empty session.
 
-## SEE ALSO
+## See also
 
 - [about_Session_Configurations][01]
 - [New-PSRoleCapabilityFile][02]

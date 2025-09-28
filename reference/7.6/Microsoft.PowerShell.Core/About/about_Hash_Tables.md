@@ -9,11 +9,11 @@ title: about_Hash_Tables
 ---
 # about_Hash_Tables
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to create, use, and sort hashtables in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 A hashtable, also known as a dictionary or associative array, is a compact data
 structure that stores one or more key-value pairs. For example, a hashtable
@@ -40,7 +40,7 @@ retrieving data. You can use hashtables to store lists and to create calculated
 properties in PowerShell. And, the `ConvertFrom-StringData` cmdlet converts
 structured string data to a hashtable.
 
-## SYNTAX
+## Syntax
 
 The syntax of a hashtable is as follows:
 
@@ -75,7 +75,7 @@ You can use ordered dictionaries in the same way that you use hashtables.
 Either type can be used as the value of parameters that take a hashtable or
 dictionary (**iDictionary**) type objects.
 
-## CREATING HASHTABLES AND ORDERED DICTIONARIES
+## Creating hashtables and ordered dictionaries
 
 Consider the following hashtable and ordered dictionary examples:
 
@@ -162,7 +162,7 @@ Shape                          Square
 Number                         1
 ```
 
-## HASHTABLE AND DICTIONARY PROPERTIES
+## Hashtable and dictionary properties
 
 Hashtables and ordered dictionaries share several properties. Consider the
 `$hash` and `$dictionary` variables defined in the previous examples.
@@ -246,7 +246,7 @@ The most-used properties are **Count**, **Keys**, **Values**, and **Item**.
   parameterized property, while dictionaries use the index by default. This
   difference affects how you access the values for each type.
 
-## ACCESSING VALUES
+## Accessing values
 
 There are two common ways to access the values in a hashtable or dictionary:
 member notation or array index notation.
@@ -326,7 +326,7 @@ $hashtable.psbase.Keys
 This requirement applies for other types that implement the
 **System.Collections.IDictionary** interface, like **OrderedDictionary**.
 
-## ITERATING OVER KEYS AND VALUES
+## Iterating over keys and values
 
 You can iterate over the keys in a hashtable to process the values in several
 ways. Each of the examples in this section has identical output. They iterate
@@ -381,7 +381,7 @@ each key-value pair.
 $hash.GetEnumerator().ForEach({"The value of '$($_.Key)' is: $($_.Value)"})
 ```
 
-## ADDING AND REMOVING KEYS AND VALUES
+## Adding and removing keys and values
 
 Typically, when you create a hashtable you include the key-value pairs in the
 definition. However, you can add and remove key-value pairs from a hashtable at
@@ -445,7 +445,7 @@ The following example removes the `Time` key-value pair from `$hash`.
 $hash.Remove("Time")
 ```
 
-## OBJECT TYPES IN HASHTABLES
+## Object types in hashtables
 
 The keys and values in a hashtable can have any .NET object type, and a single
 hashtable can have keys and values of multiple types.
@@ -552,7 +552,7 @@ PS> $p.Hash2.b
 2
 ```
 
-## SORTING KEYS AND VALUES
+## Sorting keys and values
 
 The items in a hashtable are intrinsically unordered. The key-value pairs might
 appear in a different order each time that you display them.
@@ -589,7 +589,7 @@ Hash2                          {[a, 1], [b, 2], [c, 3]}
 WinRM                          Running
 ```
 
-## CREATING OBJECTS FROM HASHTABLES
+## Creating objects from hashtables
 
 Beginning in PowerShell 3.0, you can create an object from a hashtable of
 properties and property values.
@@ -608,7 +608,7 @@ parameters. The object properties must be public and settable.
 
 For more information, see [about_Object_Creation][02].
 
-## CONVERTFROM-STRINGDATA
+## ConvertFrom-StringData
 
 The `ConvertFrom-StringData` cmdlet converts a string or a here-string of
 key-value pairs into a hashtable. You can use the `ConvertFrom-StringData`
@@ -650,7 +650,7 @@ Msg1                           Type "Windows".
 
 For more information about here-strings, see [about_Quoting_Rules][03].
 
-## SEE ALSO
+## See also
 
 - [about_Arrays][04]
 - [about_Intrinsic_Members][01]

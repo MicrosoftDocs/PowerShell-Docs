@@ -8,11 +8,11 @@ title: about_Comments
 ---
 # about_Comments
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to use PowerShell comments and lists special use cases.
 
-## LONG DESCRIPTION
+## Long description
 
 You can write comments to annotate or structure your PowerShell code to help
 with readability. When your code is run, comment text is ignored by PowerShell.
@@ -27,7 +27,7 @@ comments for the following purposes:
 
 Some comments have special meaning in PowerShell. See [Special comments][04].
 
-## POWERSHELL COMMENT STYLES
+## PowerShell comment styles
 
 PowerShell supports two comment styles:
 
@@ -45,7 +45,7 @@ PowerShell supports two comment styles:
   > can't nest block comments. If you attempt to nest block comments, the outer
   > block comment ends at the first `#>` encountered.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Single-line comment
 
@@ -99,7 +99,7 @@ $var.Where(
 )
 ```
 
-## SPECIAL COMMENTS
+## Special comments
 
 PowerShell includes several comment keywords to support specific uses.
 
@@ -177,7 +177,7 @@ comments.
 For more information, see the _Folding_ section of the
 [Basic editing in Visual Studio Code][11] documentation.
 
-## COMMENTS IN STRING TOKENS
+## Comments in string tokens
 
 `#` and `<# #>` don't have special meaning within an [expandable][06] or
 [verbatim][07] string. PowerShell interprets the characters literally.
@@ -322,7 +322,7 @@ beginning with `#` as comments. For more information, see:
 
 - [Example 3: Convert a here-string containing a comment][18]
 
-## NOTES
+## Notes
 
 - Block comments can't be nested. In the following example, `Baz` is not a
   part of the comment.

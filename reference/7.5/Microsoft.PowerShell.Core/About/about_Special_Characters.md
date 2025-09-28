@@ -9,12 +9,12 @@ title: about_Special_Characters
 
 # about_Special_Characters
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the special character sequences that control how PowerShell
 interprets the next characters in the sequence.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell supports a set of special character sequences that are used to
 represent characters that aren't part of the standard character set. The
@@ -54,7 +54,7 @@ Special parsing tokens:
 | `--%`    | Stop parsing anything that follows                     |
 | `~`      | Tilde                                                  |
 
-## NULL (`0)
+## Null (`0)
 
 The null (`` `0 ``) character appears as an empty space in PowerShell output.
 This functionality allows you to use PowerShell to read and process text files
@@ -62,7 +62,7 @@ that use null characters, such as string termination or record termination
 indicators. The null special character isn't equivalent to the `$null`
 variable, which stores a **null** value.
 
-## ALERT (`A)
+## Alert (`a)
 
 The alert (`` `a ``) character sends a beep signal to the computer's speaker.
 You can use this character to warn a user about an impending action. The
@@ -72,7 +72,7 @@ following example sends two beep signals to the local computer's speaker.
 for ($i = 0; $i -le 1; $i++){"`a"}
 ```
 
-## BACKSPACE (`B)
+## Backspace (`b)
 
 The backspace (`` `b ``) character moves the cursor back one character, but it
 doesn't delete any characters.
@@ -88,7 +88,7 @@ Then, at the new position, writes a space followed by the word **out**.
 back out
 ```
 
-## ESCAPE (`E)
+## Escape (`e)
 
 > [!NOTE]
 > This special character was added in PowerShell 6.0.
@@ -115,13 +115,13 @@ $fgColor = 32 # green
 Green text
 ```
 
-## FORM FEED (`F)
+## Form feed (`f)
 
 The form feed (`` `f ``) character is a print instruction that ejects the
 current page and continues printing on the next page. The form feed character
 only affects printed documents. It doesn't affect screen output.
 
-## NEW LINE (`N)
+## New line (`n)
 
 The new line (`` `n ``) character inserts a line break immediately after the
 character.
@@ -139,7 +139,7 @@ There are two line breaks to create a blank line
 between the words.
 ```
 
-## CARRIAGE RETURN (`R)
+## Carriage return (`r)
 
 The carriage return (`` `r ``) character moves the output cursor to the
 beginning of the current line and continues writing. Any characters on the
@@ -158,7 +158,7 @@ overwritten.
 I want this text instead written.
 ```
 
-## HORIZONTAL TAB (`T)
+## Horizontal tab (`t)
 
 The horizontal tab (`` `t ``) character advances to the next tab stop and
 continues writing at that point. By default, the PowerShell console has a tab
@@ -174,7 +174,7 @@ This example inserts two tabs between each column.
 Column1         Column2         Column3
 ```
 
-## UNICODE CHARACTER (`U{X})
+## Unicode character (`u{x})
 
 > [!NOTE]
 > This special character was added in PowerShell 6.0.
@@ -193,7 +193,7 @@ This example outputs the **up down arrow** (&#x2195;) symbol.
 "`u{2195}"
 ```
 
-## VERTICAL TAB (`V)
+## Vertical tab (`v)
 
 The vertical tab (`` `v ``) character advances to the next vertical tab stop
 and writes the remaining output at that point. The rendering of the
@@ -230,13 +230,13 @@ There is a vertical tab
                        between the words.
 ```
 
-## LINE CONTINUATION
+## Line continuation
 
 The backtick character can also be used at the end of a line as a signal to the
 PowerShell parser that the command continues on the next line. For more
 information, see [about_Parsing][01].
 
-## THE END-OF-PARAMETERS TOKEN (`--`)
+## The end-of-parameters token (`--`)
 
 The end-of-parameters token (`--`) indicates that all arguments following it
 are to be passed in their actual form as though double quotes were placed
@@ -253,7 +253,7 @@ Write-Output -- -InputObject
 
 This is a convention specified in the POSIX Shell and Utilities specification.
 
-## STOP-PARSING TOKEN (--%)
+## Stop-parsing token (--%)
 
 The stop-parsing (`--%`) token prevents PowerShell from interpreting strings as
 PowerShell commands and expressions. This allows those strings to be passed to
@@ -292,7 +292,7 @@ C:\Users\username  $HOME
 
 For more information about the stop-parsing token, see [about_Parsing][02].
 
-## TILDE (~)
+## Tilde (~)
 
 The tilde character (`~`) has special meaning in PowerShell. When it's used
 with PowerShell commands at the beginning of a path, PowerShell expands the
@@ -301,7 +301,7 @@ anywhere else in a path, it's treated as a literal character.
 
 For more information about the stop-parsing token, see [about_Parsing][03].
 
-## SEE ALSO
+## See also
 
 - [about_Quoting_Rules][04]
 

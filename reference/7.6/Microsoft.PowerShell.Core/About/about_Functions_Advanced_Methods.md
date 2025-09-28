@@ -9,12 +9,12 @@ title: about_Functions_Advanced_Methods
 
 # about_Functions_Advanced_Methods
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how functions that specify the `CmdletBinding` attribute can use the
 methods and properties that are available to compiled cmdlets.
 
-## LONG DESCRIPTION
+## Long description
 
 Functions that specify the `CmdletBinding` attribute can access additional
 methods and properties through the `$PSCmdlet` variable. These methods include
@@ -35,7 +35,7 @@ For more information about the `CmdletBinding` attribute, see
 **CmdletBindingAttribute** class, see
 [System.Management.Automation.Cmdlet.CmdletBindingAttribute][11].
 
-## INPUT PROCESSING METHODS
+## Input processing methods
 
 The methods described in this section are referred to as the input processing
 methods. For functions, these three methods are represented by the `begin`,
@@ -156,7 +156,7 @@ The clean block discards any output that's written to the **Success** stream.
 > problem. The command can still be invoked using the call operator
 > (`& clean`).
 
-## CONFIRMATION METHODS
+## Confirmation methods
 
 ### ShouldProcess
 
@@ -180,7 +180,7 @@ called when the `ShouldProcess` method returns `$true`. For more information
 about this method, see
 [System.Management.Automation.Cmdlet.ShouldContinue][01].
 
-## ERROR METHODS
+## Error methods
 
 Functions can call two different methods when errors occur. When a
 non-terminating error occurs, the function should call the `WriteError` method,
@@ -192,7 +192,7 @@ terminating errors and the [Write-Error][22] cmdlet for non-terminating errors.
 For more information, see
 [System.Management.Automation.Cmdlet.ThrowTerminatingError][03].
 
-## WRITE METHODS
+## Write methods
 
 A function can call the following methods to return different types of output.
 Notice that not all the output goes to the next command in the pipeline. You
@@ -255,7 +255,7 @@ user. By default, warning messages are displayed. For more information, see
 > information about the `$WarningPreference` variable, see
 > [about_Preference_Variables][21].
 
-## OTHER METHODS AND PROPERTIES
+## Other methods and properties
 
 For information about the other methods and properties that can be accessed
 through the `$PSCmdlet` variable, see
@@ -266,7 +266,7 @@ parameter set that's being used. Parameter sets allow you to create a function
 that performs different tasks based on the parameters that are specified when
 the function is run.
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables][15]
 - [about_Functions][20]

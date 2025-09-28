@@ -8,11 +8,11 @@ title: about_Remote_Troubleshooting
 ---
 # about_Remote_Troubleshooting
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to troubleshoot remote operations in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Before using PowerShell remoting, see [about_Remote][08] and
 [about_Remote_Requirements][06] for guidance on configuration and basic use.
@@ -23,7 +23,7 @@ trusted hosts, ports, or listeners.
 
 You must run PowerShell with the **Run as administrator** option.
 
-## HOW TO RUN AS ADMINISTRATOR
+## How to run as administrator
 
 For error:
 
@@ -34,7 +34,7 @@ To start Windows PowerShell with the **Run as administrator** option,
 right-click on the PowerShell icon in the Start Menu and select **Run as
 administrator**.
 
-## HOW TO ENABLE REMOTING
+## How to enable remoting
 
 For errors:
 
@@ -49,7 +49,7 @@ computer. Windows PowerShell remoting is enabled by default on Windows Server
 re-enable remoting if it was disabled. For more information, see
 [Enable-PSRemoting][10].
 
-## HOW TO ENABLE REMOTING IN AN ENTERPRISE
+## How to enable remoting in an enterprise
 
 For errors:
 
@@ -208,7 +208,7 @@ $invokeCimMethodSplat = @{
 Invoke-CimMethod @invokeCimMethodSplat
 ```
 
-## HOW TO RECREATE THE DEFAULT SESSION CONFIGURATIONS
+## How to recreate the default session configurations
 
 For error:
 
@@ -249,7 +249,7 @@ change the security descriptor of a session configuration, use the
 
 For more information about the `WSMan:` drive, see [about_WSMan_Provider][01].
 
-## HOW TO PROVIDE ADMINISTRATOR CREDENTIALS
+## How to provide administrator credentials
 
 For error:
 
@@ -269,7 +269,7 @@ Invoke-Command -ComputerName Server01 -Credential Domain01\Admin01
 For more information about the **Credential** parameter, see the help for
 [New-PSSession][14], [Enter-PSSession][11] or [Invoke-Command][13].
 
-## HOW TO ENABLE REMOTING FOR NON-ADMINISTRATIVE USERS
+## How to enable remoting for non-administrative users
 
 For error:
 
@@ -293,7 +293,7 @@ Set-PSSessionConfiguration Microsoft.PowerShell -ShowSecurityDescriptorUI
 
 For more information, see [about_Session_Configurations][09].
 
-## HOW TO ENABLE REMOTING FOR ADMINISTRATORS IN OTHER DOMAINS
+## How to enable remoting for administrators in other domains
 
 For error:
 
@@ -326,7 +326,7 @@ $newItemPropertySplat = @{
 New-ItemProperty @newItemPropertySplat
 ```
 
-## HOW TO USE AN IP ADDRESS IN A REMOTE COMMAND
+## How to use an IP address in a remote command
 
 For error:
 
@@ -347,7 +347,7 @@ To support NTLM authentication, you must meet the following requirements:
 - Use the **Credential** parameter in all remote commands. This is required
   even when you connect as the current user.
 
-## HOW TO CONNECT REMOTELY FROM A WORKGROUP-BASED COMPUTER
+## How to connect remotely from a workgroup-based computer
 
 For error
 
@@ -366,7 +366,7 @@ requirements:
 - Use the **Credential** parameter in all remote commands. This is required
   even when you connect as the current user.
 
-## HOW TO ADD A COMPUTER TO THE TRUSTED HOSTS LIST
+## How to add a computer to the trusted hosts list
 
 The **TrustedHosts** item can contain a comma-separated list of computer names,
 IP addresses, and fully-qualified domain names. Wildcards are permitted.
@@ -439,7 +439,7 @@ To add a computer to the **TrustedHosts** list of a remote computer, use the
 
 For more information about, see the help for [Connect-WSMan][18].
 
-## HOW TO CONFIGURE REMOTING ON ALTERNATE PORTS
+## How to configure remoting on alternate ports
 
 For error:
 
@@ -459,7 +459,7 @@ For example, the following command changes the default port to 8080.
 Set-Item WSMan:\localhost\listener\listener*\port -Value 8080
 ```
 
-## HOW TO CONFIGURE REMOTING WITH A PROXY SERVER
+## How to configure remoting with a proxy server
 
 For error:
 
@@ -508,7 +508,7 @@ local computer, add the `$PSSessionOption` preference variable to your
 PowerShell profile. For more information about PowerShell profiles, see
 [about_Profiles][05].
 
-## HOW TO DETECT A 32-BIT SESSION ON A 64-BIT COMPUTER
+## How to detect a 32-bit session on a 64-bit computer
 
 For error:
 
@@ -538,12 +538,12 @@ x86
 
 For more information, see [about_Session_Configurations][09].
 
-## TROUBLESHOOTING POLICY AND PREFERENCE ISSUES
+## Troubleshooting policy and preference issues
 
 This section discusses remoting problems that are related to policies and
 preferences set on the local and remote computers.
 
-## HOW TO CHANGE THE EXECUTION POLICY FOR IMPORT-PSSESSION AND IMPORT-MODULE
+## How to change the execution policy for Import-PSSession and Import-Module
 
 For error:
 
@@ -575,7 +575,7 @@ a single session with a less restrictive execution policy.
 pwsh.exe -ExecutionPolicy RemoteSigned
 ```
 
-## HOW TO SET AND CHANGE QUOTAS
+## How to set and change quotas
 
 You can use quotas to protect the local computer and the remote computer from
 excessive resource use, both accidental and malicious. When quotas conflict
@@ -617,7 +617,7 @@ Set-PSSessionConfiguration @setPSSessionConfigurationSplat
 For more information about the WS-Management quotas, see
 [about_WSMan_Provider][01].
 
-## HOW TO RESOLVE TIMEOUT ERRORS
+## How to resolve timeout errors
 
 You can use timeouts to protect the local computer and the remote computer from
 excessive resource use, both accidental and malicious. When timeouts are set on
@@ -656,7 +656,7 @@ New-PSSession -ComputerName Server01 -SessionOption $pso
 For more information about the WS-Management timeouts, see
 [about_WSMan_Provider][01].
 
-## HOW TO INTERRUPT A COMMAND THAT IS UNRESPONSIVE
+## How to interrupt a command that is unresponsive
 
 Some native programs, such as programs with a user interface, console
 applications that prompt for input, and console applications that use the Win32
@@ -669,7 +669,7 @@ To end an unresponsive program, type <kbd>Ctrl</kbd>+<kbd>c</kbd>. Use
 `Get-Error` in the local host and the remote session to view any errors that
 might have been reported.
 
-## HOW TO RECOVER FROM AN OPERATION FAILURE
+## How to recover from an operation failure
 
 The following error is returned when an operation is terminated before it
 completes.
@@ -690,12 +690,12 @@ command again.
 
 1. Re-run the command that generated the error.
 
-## LINUX AND MACOS LIMITATIONS
+## Linux and macOS limitations
 
 PowerShell remoting is Linux and macOS using remoting over SSH. For more
 information, see [PowerShell Remoting Over SSH][02].
 
-## SEE ALSO
+## See also
 
 - [about_Remote][08]
 - [about_Remote_Requirements][06]

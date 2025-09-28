@@ -8,10 +8,11 @@ title: about_Profiles
 ---
 # about_Profiles
 
-## SHORT DESCRIPTION
+## Short description
+
 Describes how to create and use a PowerShell profile.
 
-## LONG DESCRIPTION
+## Long description
 
 You can create a PowerShell profile to customize your environment and add
 session-specific elements to every PowerShell session that you start.
@@ -25,7 +26,7 @@ available in every session without having to import or re-create them.
 PowerShell supports several profiles for users and host programs. However, it
 doesn't create the profiles for you.
 
-## PROFILE TYPES AND LOCATIONS
+## Profile types and locations
 
 PowerShell supports several profile files that are scoped to users and
 PowerShell hosts. You can have any or all these profiles on your computer.
@@ -50,14 +51,6 @@ paths are the default locations.
   - Linux - `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
   - macOS - `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
 
-> [!NOTE]
-> In Windows, the location of the `Documents` folder can be changed by folder
-> redirection or OneDrive. We don't recommend redirecting the `Documents`
-> folder to a network share or including it in OneDrive. Redirecting the folder
-> can cause modules to fail to load and create errors in your profile scripts.
-> For information about removing the `Documents` folder from OneDrive
-> management, consult the [OneDrive documentation](/onedrive/).
-
 The profile scripts are executed in the order listed. This means that changes
 made in the **AllUsersAllHosts** profile can be overridden by any of the other
 profile scripts. The **CurrentUserCurrentHost** profile always runs last. In
@@ -77,7 +70,15 @@ The profile paths include the following variables:
 - The `$PSHOME` variable stores the installation directory for PowerShell
 - The `$HOME` variable stores the current user's home directory
 
-## THE $PROFILE VARIABLE
+> [!NOTE]
+> In Windows, the location of the `Documents` folder can be changed by folder
+> redirection or OneDrive. We don't recommend redirecting the `Documents`
+> folder to a network share or including it in OneDrive. Redirecting the folder
+> can cause modules to fail to load and create errors in your profile scripts.
+> For information about removing the `Documents` folder from OneDrive
+> management, consult the [OneDrive documentation](/onedrive/).
+
+## The $PROFILE variable
 
 The `$PROFILE` automatic variable stores the paths to the PowerShell profiles
 that are available in the current session.
@@ -122,7 +123,7 @@ been created on the local computer:
 Test-Path -Path $PROFILE.AllUsersAllHosts
 ```
 
-## HOW TO CREATE A PROFILE
+## How to create a profile
 
 To create a PowerShell profile, use the following command format:
 
@@ -149,7 +150,7 @@ profile file that you want to create.
 > To create "All Users" profiles in Windows Vista and later versions of
 > Windows, start PowerShell with the **Run as administrator** option.
 
-## HOW TO EDIT A PROFILE
+## How to edit a profile
 
 You can open any PowerShell profile in a text editor, such as Notepad.
 
@@ -169,7 +170,7 @@ notepad $PROFILE.AllUsersAllHosts
 
 To apply the changes, save the profile file, and then restart PowerShell.
 
-## HOW TO CHOOSE A PROFILE
+## How to choose a profile
 
 If you use multiple host applications, put the items that you use in all the
 host applications into your `$PROFILE.CurrentUserAllHosts` profile. Put items
@@ -189,7 +190,7 @@ users, follow these guidelines:
 Be sure to check the host application documentation for any special
 implementation of PowerShell profiles.
 
-## HOW TO USE A PROFILE
+## How to use a profile
 
 Many of the items that you create in PowerShell and most commands that you run
 affect only the current session. When you end the session, the items are
@@ -206,7 +207,7 @@ Another common use for profiles is to save frequently used functions, aliases,
 and variables. When you save the items in a profile, you can use them in any
 applicable session without recreating them.
 
-## HOW TO START A PROFILE
+## How to start a profile
 
 When you open the profile file, it's blank. However, you can fill it with the
 variables, aliases, and commands that you use frequently.
@@ -247,7 +248,7 @@ For more information about the PowerShell prompt, see [about_Prompts][04].
 
 For other profile examples, see [Customizing your shell environment][10].
 
-## THE NOPROFILE PARAMETER
+## The NoProfile parameter
 
 To start PowerShell without profiles, use the **NoProfile** parameter of
 `pwsh.exe`, the program that starts PowerShell.
@@ -267,7 +268,7 @@ For a complete list of the parameters of `pwsh.exe`, type:
 pwsh -?
 ```
 
-## PROFILES AND EXECUTION POLICY
+## Profiles and execution policy
 
 The PowerShell execution policy determines, in part, whether you can run
 scripts and load configuration files, including the profiles. The
@@ -281,7 +282,7 @@ value is saved in the registry. You don't have to set it when you open the
 console, and you don't have to store a `Set-ExecutionPolicy` command in your
 profile.
 
-## PROFILES AND REMOTE SESSIONS
+## Profiles and remote sessions
 
 PowerShell profiles aren't run automatically in remote sessions, so the
 commands that the profiles add aren't present in the remote session. In
@@ -311,7 +312,7 @@ Invoke-Command -Session $s -ScriptBlock {
 After running this command, the commands that the profile adds to the session
 are available in `$s`.
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables][01]
 - [about_Execution_Policies][02]

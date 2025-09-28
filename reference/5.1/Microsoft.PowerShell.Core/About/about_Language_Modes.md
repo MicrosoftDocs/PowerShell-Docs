@@ -9,11 +9,11 @@ title: about_Language_Modes
 ---
 # about_Language_Modes
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains language modes and their effect on PowerShell sessions.
 
-## LONG DESCRIPTION
+## Long description
 
 The language mode of a PowerShell session determines which elements of the
 PowerShell language can be used in the session.
@@ -25,7 +25,7 @@ PowerShell supports the following language modes:
 - `ConstrainedLanguage` (introduced in PowerShell 3.0)
 - `NoLanguage`
 
-## WHAT IS A LANGUAGE MODE?
+## What is a language mode?
 
 The language mode determines the language elements that are permitted in the
 session.
@@ -40,7 +40,7 @@ session configuration determines the language mode of the session. To specify
 the session configuration of a PSSession, use the **ConfigurationName**
 parameter of cmdlets that create a session.
 
-## FINDING THE LANGUAGE MODE OF A SESSION
+## Finding the language mode of a session
 
 You can find the language mode of a `FullLanguage` or `ConstrainedLanguage`
 session by getting the value of the **LanguageMode** property of the session
@@ -78,7 +78,7 @@ message.
 - **ScriptsNotAllowed**: The syntax isn't supported by this runspace. This
   might be because it's in no-language mode.
 
-## FINDING THE LANGUAGE MODE OF A SESSION CONFIGURATION
+## Finding the language mode of a session configuration
 
 When a session configuration is created using a session configuration file, the
 session configuration has a **LanguageMode** property. You can find the
@@ -96,7 +96,7 @@ On other session configurations, you can find the language mode indirectly by
 finding the language mode of a session that's created using the session
 configuration.
 
-## SETTING THE LANGUAGE MODE
+## Setting the language mode
 
 The language mode in a PowerShell session can be set through the built-in
 `$ExecutionContext` variable.
@@ -148,7 +148,7 @@ system, or other system resources.
 For more information, see [JEA Session configurations][01] and
 [New-PSSessionConfigurationFile][05].
 
-## LANGUAGE MODE FEATURES AND LIMITATIONS
+## Language mode features and limitations
 
 This section describes the language modes in PowerShell sessions.
 
@@ -336,7 +336,7 @@ cmdlets.
 Beginning in PowerShell 7.2, the `New-Object` cmdlet is disabled in
 `NoLanguage` mode when system lockdown is configured.
 
-## SEE ALSO
+## See also
 
 - [about_Session_Configuration_Files][03]
 - [about_Session_Configurations][04]

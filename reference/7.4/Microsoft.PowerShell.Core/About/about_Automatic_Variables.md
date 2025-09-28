@@ -10,12 +10,12 @@ title: about_Automatic_Variables
 
 # about_Automatic_Variables
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes variables that store state information for and are created and
 maintained by PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Conceptually, most of these variables are considered to be read-only. Even
 though they _can_ be written to, for backward compatibility they _should not_
@@ -725,7 +725,7 @@ object originating the event, known as the event sender.
 Contains **True**. You can use this variable to represent **True** in commands
 and scripts.
 
-## USING ENUMERATORS
+## Using enumerators
 
 The `$input`, `$foreach`, and `$switch` variables are all enumerators used to
 iterate through the values processed by their containing code block.
@@ -774,7 +774,7 @@ the current position of the enumerator.
 The **Current** property continues to return the same property until
 **MoveNext** is called.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Using the $input variable
 
@@ -1064,7 +1064,7 @@ Default (Current): Start
 Default (Current): End
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Functions][62]
 - [about_Functions_Advanced][59]

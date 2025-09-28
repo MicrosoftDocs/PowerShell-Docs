@@ -8,11 +8,11 @@ title: about_Properties
 ---
 # about_Properties
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to use object properties in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell uses structured collections of information called objects to
 represent the items in data stores or the state of the computer. Typically, you
@@ -33,7 +33,7 @@ it doesn't. A **DirectoryInfo** object, which represents a file system
 directory, has a **Parent** property that contains the path to the parent
 directory.
 
-## OBJECT PROPERTIES
+## Object properties
 
 To get the properties of an object, use the `Get-Member` cmdlet. For example,
 to get the properties of a **FileInfo** object, use the `Get-ChildItem` cmdlet
@@ -82,7 +82,7 @@ Name              Property   System.String Name {get;}
 
 After you find the properties, you can use them in your PowerShell commands.
 
-## PROPERTY VALUES
+## Property values
 
 Although every object of a specific type has the same properties, the values of
 those properties describe the particular object. For example, every
@@ -218,7 +218,7 @@ property of the `System.DateTime` class.
 [System.DateTime]::UtcNow
 ```
 
-## MEMBER-ACCESS ENUMERATION
+## Member-access enumeration
 
 Starting in PowerShell 3.0, when you use the member-access operator (`.`) to
 access a property that doesn't exist, PowerShell automatically enumerates the
@@ -272,7 +272,7 @@ bar
 
 For more information, see [about_Member-Access_Enumeration][01].
 
-## SEE ALSO
+## See also
 
 - [about_Objects][03]
 - [about_Member-Access_Enumeration][01]

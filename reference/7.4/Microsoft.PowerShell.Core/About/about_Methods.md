@@ -8,11 +8,11 @@ title: about_Methods
 ---
 # about_Methods
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to use methods to perform actions on objects in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell uses objects to represent the items in data stores or the state of
 the computer. For example, FileInfo objects represent the files in file system
@@ -92,7 +92,7 @@ results in an object (like a string in quotes).
 Starting in PowerShell 4.0, method invocation by using dynamic method names is
 supported.
 
-## LEARNING ABOUT METHODS
+## Learning about methods
 
 To find definitions of the methods of an object, go to help topic for the
 object type and look for its methods page. For example, the following page
@@ -141,7 +141,7 @@ file to the `C:\Bin` directory, and to overwrite existing files.
 (Get-ChildItem C:\final.txt).CopyTo("C:\bin\final.txt", $true)
 ```
 
-## MEMBER-ACCESS ENUMERATION
+## Member-access enumeration
 
 Starting in PowerShell 3.0, when you use the member-access operator (`.`) to
 access a method that does not exist on a list collection, PowerShell
@@ -205,7 +205,7 @@ supported. This allows use of two new methods when dealing with collections
 
 You can read more about these methods in [about_Arrays](about_arrays.md)
 
-## CALLING A SPECIFIC METHOD WHEN MULTIPLE OVERLOADS EXIST
+## Calling a specific method when multiple overloads exist
 
 Consider the following scenario when calling .NET methods. If a method takes an
 object but has an overload via an interface taking a more specific type,
@@ -257,7 +257,7 @@ specific overload of the **Bar** method.
 int: 1
 ```
 
-## USING .NET METHODS THAT TAKE FILESYSTEM PATHS
+## Using .NET methods that take filesystem paths
 
 PowerShell supports multiple runspaces per process. Each runspace has its own
 _current directory_. This is not the same as the working directory of the
@@ -269,7 +269,7 @@ not PowerShell Path objects. To use PowerShell paths with .NET methods, you
 must resolve the path to a filesystem-native path before passing it to the .NET
 method.
 
-## SEE ALSO
+## See also
 
 - [about_Objects](about_Objects.md)
 - [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)

@@ -9,11 +9,11 @@ title: about_Classes_Inheritance
 
 # about_Classes_Inheritance
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how you can define classes that extend other types.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell classes support _inheritance_, which allows you to define a child
 class that reuses (inherits), extends, or modifies the behavior of a parent
@@ -68,7 +68,7 @@ base class.
 class Derived : Base, Interface {...}
 ```
 
-## SYNTAX
+## Syntax
 
 Class inheritance uses the following syntaxes:
 
@@ -111,7 +111,7 @@ class Derived : Base,
 }
 ```
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Inheriting and overriding from a base class
 
@@ -1104,11 +1104,13 @@ class Temperature : System.IFormattable,
         if ($null -eq $Other) {
             return $false
         }
+
         # If the other object isn't a temperature, we can't compare it.
         $OtherTemperature = $Other -as [Temperature]
         if ($null -eq $OtherTemperature) {
             return $false
         }
+
         # Compare the temperatures as Kelvin.
         return $this.ToKelvin() -eq $OtherTemperature.ToKelvin()
     }
@@ -1171,8 +1173,8 @@ $Celsius -gt $Kelvin            = True
 
 ### Example 3 - Inheriting from a generic base class
 
-This example shows how you can derive from a generic class like
-**System.Collections.Generic.List**.
+This example shows how you can derive from a generic type as long as the
+type parameter is already defined at parse time.
 
 #### Using a built-in class as the type parameter
 
@@ -1386,7 +1388,7 @@ The module loads without errors because the **InventoryItem** class is defined
 in a different module file than the **Inventory** class. Both classes are
 available to module users.
 
-## INHERITING A BASE CLASS
+## Inheriting a base class
 
 When a class inherits from a base class, it inherits the properties and methods
 of the base class. It doesn't inherit the base class constructors directly,
@@ -1535,7 +1537,7 @@ them can be used for.
   managing lists of a specific data type easier.
 - **System.Exception** - Derive classes to define custom errors.
 
-## IMPLEMENTING INTERFACES
+## Implementing interfaces
 
 A PowerShell class that implements an interface must implement all the members
 of that interface. Omitting the implementation interface members causes a
@@ -1574,7 +1576,7 @@ derived from them can be used for.
   of the class to other runtime types. This is useful for classes that have an
   underlying numerical value or can be converted to one.
 
-## LIMITATIONS
+## Limitations
 
 - PowerShell doesn't support defining interfaces in script code.
 
@@ -1593,7 +1595,7 @@ derived from them can be used for.
   to load the type. There's no workaround for a custom type to use itself as
   the type parameter when inheriting from a generic.
 
-## SEE ALSO
+## See also
 
 - [about_Classes][08]
 - [about_Classes_Constructors][09]
