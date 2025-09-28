@@ -9,11 +9,11 @@ title: about_Requires
 
 # about_Requires
 
-## SHORT DESCRIPTION
+## Short description
 
 Prevents a script from running without the required elements.
 
-## LONG DESCRIPTION
+## Long description
 
 The `#Requires` statement prevents a script from running unless the PowerShell
 version, modules (and version), and edition prerequisites are met. If the
@@ -213,7 +213,7 @@ param
 ...
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables](about_Automatic_Variables.md)
 - [about_Language_Keywords](about_Language_Keywords.md)

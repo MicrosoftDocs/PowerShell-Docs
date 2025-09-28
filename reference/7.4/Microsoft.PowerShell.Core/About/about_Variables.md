@@ -9,11 +9,11 @@ title: about_Variables
 
 # about_Variables
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how variables store values that can be used in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 You can store all types of values in PowerShell variables. For example, store
 the results of commands, and store elements that are used in commands and
@@ -55,7 +55,7 @@ There are several different types of variables in PowerShell.
   For more information, a list, and a description of the preference variables,
   see [about_Preference_Variables][08].
 
-## WORKING WITH VARIABLES
+## Working with variables
 
 To create a new variable, use an assignment statement to assign a value to the
 variable. You don't have to declare the variable before using it. The default
@@ -169,7 +169,7 @@ $i,$j = 10, "red", $true       # $i is 10, $j is [Object[]], Length 2
 For more detailed information, see the **Assigning multiple variables** section
 of [about_Assignment_Operators][03].
 
-## TYPES OF VARIABLES
+## Types of variables
 
 You can store any type of object in a variable, including integers, strings,
 arrays, and hash tables. And, objects that represent processes, services, event
@@ -249,7 +249,7 @@ $dates
 Monday, January 1, 0001 00:00:00
 ```
 
-## USING VARIABLES IN COMMANDS AND EXPRESSIONS
+## Using variables in commands and expressions
 
 To use a variable in a command or expression, type the variable name, preceded
 by the dollar (`$`) sign.
@@ -304,7 +304,7 @@ $PROFILE
 Use the $PROFILE variable.
 ```
 
-## VARIABLE NAMES THAT INCLUDE SPECIAL CHARACTERS
+## Variable names that include special characters
 
 Variable names begin with a dollar (`$`) sign and can include alphanumeric
 characters and special characters. The variable name length is limited only by
@@ -383,7 +383,7 @@ ${this`{value`}is}
 This variable name uses braces and backticks.
 ```
 
-## VARIABLES AND SCOPE
+## Variables and scope
 
 By default, variables are only available in the scope in which they're created.
 
@@ -406,7 +406,7 @@ out of session code can access them.
 
 For more information, see [about_Remote_Variables][11].
 
-## SAVING VARIABLES
+## Saving variables
 
 Variables that you create are available only in the session in which you create
 them. They're lost when you close your session.
@@ -425,7 +425,7 @@ You can add this command to your PowerShell profile by opening the `$PROFILE`
 file in a text editor, such as **notepad.exe**. For more information about
 PowerShell profiles, see [about_Profiles][09].
 
-## THE VARIABLE: DRIVE
+## The Variable: drive
 
 The PowerShell Variable provider creates a `Variable:` drive that looks and
 acts like a file system drive, but it contains the variables in your session
@@ -465,7 +465,7 @@ Variable provider, type:
 Get-Help Variable
 ```
 
-## VARIABLE SYNTAX WITH PROVIDER PATHS
+## Variable syntax with provider paths
 
 You can prefix a provider path with the dollar (`$`) sign, and access the
 content of any provider that implements the [IContentCmdletProvider][18]
@@ -478,7 +478,7 @@ The following built-in PowerShell providers support this notation:
 - [about_Function_Provider][07]
 - [about_Alias_Provider][02]
 
-## THE VARIABLE CMDLETS
+## The Variable cmdlets
 
 PowerShell includes a set of cmdlets that are designed to manage variables.
 
@@ -502,7 +502,7 @@ Get-Help <cmdlet-name>
 | `Remove-Variable` | Deletes a variable and its value.          |
 | `Set-Variable`    | Changes the value of a variable.           |
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables][04]
 - [about_Environment_Variables][06]

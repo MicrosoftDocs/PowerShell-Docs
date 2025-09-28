@@ -8,11 +8,11 @@ title: about_PSItem
 ---
 # about_PSItem
 
-## SHORT DESCRIPTION
+## Short description
 
 The automatic variable that contains the current object in the pipeline object.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell includes the `$PSItem` variable and its alias, `$_`, as
 [automatic variables][03] in scriptblocks that process the current object, such
@@ -40,7 +40,7 @@ There are a few common use cases for `$PSItem`:
 The rest of this article includes examples of using `$PSItem` for these use
 cases.
 
-## FOREACH-OBJECT PROCESS
+## ForEach-Object Process
 
 The [ForEach-Object][15] cmdlet is designed to operate on objects in the
 pipeline, executing the **Process** parameter's scriptblock once for every
@@ -75,7 +75,7 @@ PSItem in End is:
 Result is: 2 3 4
 ```
 
-## WHERE-OBJECT FILTERSCRIPT
+## Where-Object FilterScript
 
 The [Where-Object][16] cmdlet is designed to filter objects in the pipeline.
 
@@ -94,7 +94,7 @@ In this example, the **FilterScript** checks to see if the current object is
 even, filtering out any odd values, and returns only `2` from the original
 list.
 
-## FOREACH AND WHERE METHODS
+## ForEach and Where methods
 
 Both the [ForEach][01] and [Where][02] intrinsic methods for arrays take a
 scriptblock as an input parameter. You can use the `$PSItem` in those
@@ -111,7 +111,7 @@ B
 In this example, the scriptblock of the **ForEach** method uppercases the
 current object. Then the scriptblock of the **Where** method returns only `B`.
 
-## DELAY-BIND SCRIPTBLOCK PARAMETERS
+## Delay-bind ScriptBlock parameters
 
 [Delay-bind scriptblocks][12] let you use `$PSItem` to define parameters for a
 pipelined cmdlet before executing it.
@@ -120,7 +120,7 @@ pipelined cmdlet before executing it.
 dir config.log | Rename-Item -NewName { "old_$($_.Name)" }
 ```
 
-## SWITCH STATEMENT SCRIPTBLOCKS
+## Switch statement ScriptBlocks
 
 In [switch statements][13], you can use `$PSItem` in both action scriptblocks
 and statement condition scriptblocks.
@@ -147,7 +147,7 @@ message indicating the current object is even.
 The action scriptblock for the `default` condition outputs a message indicating
 the current object is odd.
 
-## FUNCTION PROCESS BLOCKS
+## Function process blocks
 
 When you define a [function][09], you can use `$PSItem` in the `process` block
 definition but not in the `begin` or `end` block definitions. If you
@@ -275,7 +275,7 @@ VERBOSE: Input object 3 is:
 ]
 ```
 
-## FILTER DEFINITIONS
+## Filter definitions
 
 You can use `$PSItem` in the statement list of a [filter][10]'s definition.
 
@@ -297,7 +297,7 @@ False
 In this example, the `Test-IsEven` filter outputs `$true` if the current object
 is an even number and `$false` if it isn't.
 
-## THE VALIDATESCRIPT ATTRIBUTE SCRIPTBLOCK
+## The ValidateScript attribute ScriptBlock
 
 You can use `$PSItem` in the scriptblock of a [ValidateScript][07] attribute.
 When used with **ValidateScript**, `$PSItem` is the value of the current object
@@ -353,7 +353,7 @@ value isn't even.
 The `Add-EvenNumber` function adds the valid input numbers and returns the
 total.
 
-## THE CATCH STATEMENT SCRIPTBLOCK
+## The `catch` statement ScriptBlock
 
 Within a `catch` block, the current error can be accessed using `$PSItem`. The
 object is of type **ErrorRecord**.
@@ -378,7 +378,7 @@ was included, verify that the path is correct and try again.
 For more examples, see the _Accessing exception information_ section in
 [about_Try_Catch_Finally][14].
 
-## THE `-REPLACE` OPERATOR'S SUBSTITUTION SCRIPTBLOCK
+## The `-replace` operator's substitution ScriptBlock
 
 Starting in PowerShell 6, you can use `$PSItem` when calling the [-replace][04]
 operator and defining a [substitution scriptblock][05]. When you do, the value
@@ -397,7 +397,7 @@ In this example, the substitution scriptblock replaces the original date string
 with the default format for the current culture by casting the value to
 **datetime**.
 
-## SEE ALSO
+## See also
 
 - [about_Arrays][01]
 - [about_Automatic_Variables][03]

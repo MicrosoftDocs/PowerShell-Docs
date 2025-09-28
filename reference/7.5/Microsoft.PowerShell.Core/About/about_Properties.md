@@ -8,11 +8,11 @@ title: about_Properties
 ---
 # about_Properties
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to use object properties in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell uses structured collections of information called objects to
 represent the items in data stores or the state of the computer. Typically, you
@@ -33,7 +33,7 @@ it doesn't. A **DirectoryInfo** object, which represents a file system
 directory, has a **Parent** property that contains the path to the parent
 directory.
 
-## OBJECT PROPERTIES
+## Object properties
 
 To get the properties of an object, use the `Get-Member` cmdlet. For example,
 to get the properties of a **FileInfo** object, use the `Get-ChildItem` cmdlet
@@ -82,7 +82,7 @@ Name              Property   System.String Name {get;}
 
 After you find the properties, you can use them in your PowerShell commands.
 
-## PROPERTY VALUES
+## Property values
 
 Although every object of a specific type has the same properties, the values of
 those properties describe the particular object. For example, every
@@ -155,11 +155,11 @@ VersionInfo         : File:             C:\Program Files\PowerShell\7-preview\pw
                       PrivateBuild:     False
                       SpecialBuild:     False
                       Language:         Language Neutral
-                      
+
 BaseName            : pwsh
 ResolvedTarget      : C:\Program Files\PowerShell\7-preview\pwsh.exe
-Target              : 
-LinkType            : 
+Target              :
+LinkType            :
 Name                : pwsh.exe
 Length              : 284704
 DirectoryName       : C:\Program Files\PowerShell\7-preview
@@ -174,7 +174,7 @@ LastAccessTime      : 1/3/2025 1:38:13 PM
 LastAccessTimeUtc   : 1/3/2025 7:38:13 PM
 LastWriteTime       : 11/13/2024 10:12:26 PM
 LastWriteTimeUtc    : 11/14/2024 4:12:26 AM
-LinkTarget          : 
+LinkTarget          :
 UnixFileMode        : -1
 Attributes          : Archive
 ```
@@ -218,7 +218,7 @@ property of the `System.DateTime` class.
 [System.DateTime]::UtcNow
 ```
 
-## MEMBER-ACCESS ENUMERATION
+## Member-access enumeration
 
 Starting in PowerShell 3.0, when you use the member-access operator (`.`) to
 access a property that doesn't exist, PowerShell automatically enumerates the
@@ -272,7 +272,7 @@ bar
 
 For more information, see [about_Member-Access_Enumeration][01].
 
-## SEE ALSO
+## See also
 
 - [about_Objects][03]
 - [about_Member-Access_Enumeration][01]

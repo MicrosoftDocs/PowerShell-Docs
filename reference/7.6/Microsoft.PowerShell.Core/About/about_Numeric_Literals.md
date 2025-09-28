@@ -9,16 +9,16 @@ title: about_Numeric_Literals
 ---
 # about_Numeric_Literals
 
-## SHORT DESCRIPTION
+## Short description
 
 This article describes the syntax and usage of numeric values in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 There are two kinds of numeric literals: integer and real. Both can have type
 and multiplier suffixes.
 
-## INTEGER LITERALS
+## Integer literals
 
 Integer literals can be written in decimal, hexadecimal, or binary notation.
 Hexadecimal literals are prefixed with `0x` and binary literals are prefixed
@@ -63,7 +63,7 @@ For an integer literal with a type suffix:
 - If its value can be represented by type specified then that is its type.
 - Otherwise, that literal is malformed.
 
-## REAL LITERALS
+## Real literals
 
 Real literals can only be written in decimal notation. This notation can
 include fractional values following a decimal point and scientific notation
@@ -107,7 +107,7 @@ than the maximum supported, that literal is malformed.
 > value 12, and `1.2345e-5L` has value 0, none of which are immediately
 > obvious.
 
-## NUMERIC MULTIPLIERS
+## Numeric multipliers
 
 For convenience, integer and real literals can contain a numeric multiplier,
 which indicates one of a set of commonly used powers of 2. The numeric
@@ -141,7 +141,7 @@ PS> 0x12Lpb
 20266198323167232
 ```
 
-## NUMERIC TYPE ACCELERATORS
+## Numeric type accelerators
 
 PowerShell supports the following type accelerators:
 
@@ -171,7 +171,7 @@ PowerShell supports the following type accelerators:
 > The following type accelerators were added in PowerShell 6.2: `[short]`,
 > `[ushort]`, `[uint]`, `[ulong]`.
 
-## EXAMPLES
+## Examples
 
 The following table contains several examples of numeric literals and lists
 their type and value:
@@ -305,7 +305,7 @@ The first two examples work without enclosing the literal value in parentheses
 because the PowerShell parser can determine where the numeric literal ends and
 the **GetType** method starts.
 
-## HOW POWERSHELL PARSES NUMERIC LITERALS
+## How PowerShell parses numeric literals
 
 PowerShell v7.0 changed the way numeric literals are parsed to enable the new
 features.

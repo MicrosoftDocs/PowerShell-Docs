@@ -8,12 +8,12 @@ title: about_PSReadLine
 ---
 # about_PSReadLine
 
-## SHORT DESCRIPTION
+## Short description
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
-## LONG DESCRIPTION
+## Long description
 
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
@@ -67,7 +67,7 @@ Install-Module -Name PSReadLine -AllowClobber -Force
 > PowerShell 7.0 on Windows works properly. You can manually load the module if
 > necessary.
 
-## PREDICTIVE INTELLISENSE
+## Predictive IntelliSense
 
 Predictive IntelliSense is an addition to the concept of tab completion that
 assists the user in successfully completing commands. It enables users to
@@ -92,7 +92,7 @@ To disable Predictive IntelliSense, just run:
 Set-PSReadLineOption -PredictionSource None
 ```
 
-## CUSTOM KEY BINDINGS
+## Custom key bindings
 
 PSReadLine supports custom key bindings using the `Set-PSReadLineKeyHandler`
 cmdlet. Most custom key bindings call one of the [bindable functions][02], for
@@ -154,7 +154,7 @@ is installed in the **PSReadLine** module folder.
 Most key bindings use some helper functions for editing the command line. Those
 APIs are documented in [about_PSReadLine_Functions][02].
 
-## NOTES
+## Notes
 
 ### Command History
 
@@ -264,7 +264,7 @@ $Env:PGPASS = gcloud auth print-access-token
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
-## SEE ALSO
+## See also
 
 - PSReadLine is heavily influenced by the GNU [readline][04] library.
 

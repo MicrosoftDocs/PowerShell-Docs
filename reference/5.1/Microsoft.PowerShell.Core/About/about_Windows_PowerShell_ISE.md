@@ -9,12 +9,12 @@ title: about_Windows_PowerShell_ISE
 
 # about_Windows_PowerShell_ISE
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the features and system requirements of Windows PowerShell
 Integrated Scripting Environment (ISE).
 
-## LONG DESCRIPTION
+## Long description
 
 Windows PowerShell ISE is a graphical host application for Windows PowerShell.
 In Windows PowerShell ISE, you can run commands and write, test, and debug
@@ -43,7 +43,7 @@ Windows PowerShell ISE introduces two new features in Windows PowerShell 4.0.
 - IntelliSense support has been added for Windows PowerShell Desired State
   Configuration providers and configurations.
 
-## STARTING WINDOWS POWERSHELL ISE
+## Starting Windows PowerShell ISE
 
 Windows PowerShell ISE is installed, enabled, and ready to use in all
 supported versions of Windows.
@@ -56,7 +56,7 @@ supported versions of Windows.
   parameters, including the NoProfile switch. For more information, see
   [about_PowerShell_ISE_exe][03].
 
-## RUNNING INTERACTIVE COMMANDS
+## Running interactive commands
 
 You can run any Windows PowerShell expression or command in Windows PowerShell
 ISE. You can use cmdlets, providers, snap-ins, and modules as you would use
@@ -71,7 +71,7 @@ the previous command, all the lines in the command are recalled. When you type
 commands, press SHIFT+ENTER to make a new blank line appear under the current
 line.
 
-## VIEWING OUTPUT
+## Viewing output
 
 The results of commands and scripts are displayed in the Console pane. You can
 move or copy the results from the Console pane by using keyboard shortcuts or
@@ -84,7 +84,7 @@ Clear-Host
 cls
 ```
 
-## WRITING SCRIPTS AND FUNCTIONS
+## Writing scripts and functions
 
 In the Script pane, you can open, compose, edit, and run scripts. The Script
 pane lets you edit scripts by using buttons and keyboard shortcuts. You can
@@ -98,7 +98,7 @@ Advanced editing features include brace-matching, expand-collapse, line
 numbers, error indicators, block editing and indenting, rich copy, and case
 conversion.
 
-## GETTING HELP
+## Getting help
 
 Windows PowerShell ISE includes help topics that describe its use. In
 addition, all installed help files are accessible from the Script and Command
@@ -121,7 +121,7 @@ PowerShell ISE, just as you use it in the Windows PowerShell console. However,
 in Windows PowerShell ISE, the Help function displays the entire help topic,
 not one page at a time.
 
-## DEBUGGING SCRIPTS
+## Debugging scripts
 
 You can use the Windows PowerShell ISE debugger to debug a Windows PowerShell
 script or function. When you debug a script, you can use menu items and
@@ -146,7 +146,7 @@ spots.
 You can also use the Windows PowerShell debugger cmdlets in the Command pane
 just as you would use them in the console.
 
-## RUNNING REMOTE COMMANDS
+## Running remote commands
 
 The New Remote PowerShell Tab feature makes it easy to establish a persistent
 user-managed Windows PowerShell session ("PSSession") to the local computer or
@@ -154,7 +154,7 @@ a remote computer. The command opens a pop-up window that prompts you for a
 computer name and for the user account that has permission to run commands on
 the remote computer.
 
-## CUSTOMIZING THE VIEW
+## Customizing the view
 
 You can use Windows PowerShell ISE features to move and to resize the Console
 pane and the Script pane. You can show and hide either pane, and you can
@@ -165,7 +165,7 @@ of Windows PowerShell ISE. In addition, Windows PowerShell ISE has a custom
 host variable, $psISE, that you can use to customize Windows PowerShell ISE,
 including adding menus and menu items.
 
-## WINDOWS POWERSHELL ISE PROFILE
+## Windows PowerShell ISE profile
 
 Windows PowerShell ISE has its own Windows PowerShell profile,
 Microsoft.PowerShellISE_profile.ps1. In this profile, you can store functions,
@@ -179,7 +179,7 @@ PowerShell console profiles are not available in Windows PowerShell ISE.
 Instructions for moving and reconfiguring your profiles are available in
 Windows PowerShell ISE Help and in [about_Profiles][04].
 
-## NOTES
+## Notes
 
 Windows PowerShell ISE is an optional Windows Feature that is turned on by
 default on client and server versions of Windows. To enable and disable
@@ -200,7 +200,7 @@ WPF Hardware acceleration" graphics rendering settings on your system. For more
 information, see
 [Graphics Rendering Registry Settings][01].
 
-## SEE ALSO
+## See also
 
 - [about_Debuggers][02]
 - [about_Profiles][04]

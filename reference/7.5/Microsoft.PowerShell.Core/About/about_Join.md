@@ -6,15 +6,14 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_Join
 ---
-
 # about_Join
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how the join operator (`-join`) combines multiple strings into a
 single string.
 
-## LONG DESCRIPTION
+## Long description
 
 The join operator concatenates a set of strings into a single string. The
 strings are appended to the resulting string in the order that they appear
@@ -103,7 +102,7 @@ c
 a b c
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Operators](about_Operators.md)
 - [about_Comparison_Operators](about_Comparison_Operators.md)

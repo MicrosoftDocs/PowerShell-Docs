@@ -10,12 +10,12 @@ title: about_PSReadLine_Functions
 ---
 # about_PSReadLine_Functions
 
-## SHORT DESCRIPTION
+## Short description
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell 7.3 ships with PSReadLine 2.2.6. The current version is PSReadLine
 2.3.6. The current version of PSReadLine can be installed and used on Windows
@@ -25,12 +25,12 @@ PowerShell 5.1 and newer. For some features, you need to be running PowerShell
 This article documents the functions provided by PSReadLine 2.3.6. These
 functions can be bound to keystrokes for easy access and invocation.
 
-## USING THE MICROSOFT.POWERSHELL.PSCONSOLEREADLINE CLASS
+## Using the Microsoft.PowerShell.PSConsoleReadLine class
 
 The following functions are available in the class
 **Microsoft.PowerShell.PSConsoleReadLine**.
 
-## BASIC EDITING FUNCTIONS
+## Basic editing functions
 
 ### Abort
 
@@ -778,7 +778,7 @@ text with the next killed text from the kill-ring.
 
 - Emacs mode: `Alt+y`, `Escape,y`
 
-## COMPLETION FUNCTIONS
+## Completion functions
 
 ### Complete
 
@@ -835,7 +835,7 @@ Ends the current edit group, if needed, and invokes TabCompletePrevious.
 
 - Vi insert mode: `Shift+Tab`
 
-## CURSOR MOVEMENT FUNCTIONS
+## Cursor movement functions
 
 ### BackwardChar
 
@@ -1067,7 +1067,7 @@ The characters that define word boundaries are configured in the
 view or change the **WordDelimiters** property, see [Get-PSReadLineOption][04]
 and [Set-PSReadLineOption][05].
 
-## HISTORY FUNCTIONS
+## History functions
 
 ### BeginningOfHistory
 
@@ -1143,7 +1143,7 @@ Prompts for a search string and initiates search upon AcceptLine.
 
 - Vi command mode: `</>`
 
-## MISCELLANEOUS FUNCTIONS
+## Miscellaneous functions
 
 ### CaptureScreen
 
@@ -1300,7 +1300,7 @@ Read a key and tell me what the key is bound to.
 - Windows mode: `Alt+?`
 - Emacs mode: `Alt+?`
 
-## PREDICTION FUNCTIONS
+## Prediction functions
 
 ### AcceptNextSuggestionWord
 
@@ -1345,7 +1345,7 @@ Switch the view style for prediction between `InlineView` and `ListView`.
 - Emacs mode: `F2`
 - Vi insert mode: `F2`
 
-## SEARCH FUNCTIONS
+## Search functions
 
 ### CharacterSearch
 
@@ -1425,7 +1425,7 @@ Prompts for a search string and initiates search upon AcceptLine.
 
 - Vi command mode: `<?>`
 
-## SELECTION FUNCTIONS
+## Selection functions
 
 ### ExchangePointAndMark
 
@@ -1528,7 +1528,7 @@ command.
 
 - Emacs mode: `Ctrl+@`
 
-## CUSTOM KEY BINDING SUPPORT APIS
+## Custom key binding support APIs
 
 The following functions are public in Microsoft.PowerShell.PSConsoleReadLine,
 but can't be directly bound to a key. Most are useful in custom key bindings.
@@ -1650,7 +1650,7 @@ typical call looks like
   [ref]$numericArg, 1)
 ```
 
-## NOTES
+## Notes
 
 Behavior of the OnIdle event
 
@@ -1663,7 +1663,7 @@ Behavior of the OnIdle event
   the event only if there's a `ReadKey()` timeout and the current editing
   buffer is empty.
 
-## SEE ALSO
+## See also
 
 - [about_PSReadLine][02]
 

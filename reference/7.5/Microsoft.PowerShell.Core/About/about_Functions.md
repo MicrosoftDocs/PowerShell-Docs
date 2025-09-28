@@ -9,11 +9,11 @@ title: about_Functions
 
 # about_Functions
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to create and use functions in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 A function is a list of PowerShell statements that has a name that you assign.
 When you run a function, you type the function name.
@@ -38,7 +38,7 @@ like a cmdlet without using `C#` programming. For more information, see
 > Within script files and script-based modules, functions must be defined
 > before they can be called.
 
-## FUNCTION SYNTAX
+## Function syntax
 
 Functions are defined using the following syntax:
 
@@ -94,7 +94,7 @@ return output. The `return` keyword doesn't affect or suppress other output
 returned from your function. However, the `return` keyword exits the function
 at that line. For more information, see [about_Return][15].
 
-## FILTER SYNTAX
+## Filter syntax
 
 The intent of the `filter` function is to provide a shorthand way of defining a
 function that runs on each object in the pipeline.
@@ -127,7 +127,7 @@ It can be used as follows:
 Get-WinEvent -LogName System -MaxEvents 100 | Get-EventMessage -MessageOnly
 ```
 
-## INPUT PROCESSING METHODS
+## Input processing methods
 
 The methods described in this section are referred to as the input processing
 methods. For functions, these three methods named using the `begin`,
@@ -211,7 +211,7 @@ The clean block discards any output written to the **Success** stream.
 > problem. You can still invoke the command using the call operator
 > (`& clean`).
 
-## SIMPLE FUNCTIONS
+## Simple functions
 
 Functions don't have to be complicated to be useful. The simplest functions
 have the following format:
@@ -247,7 +247,7 @@ You can create a toolbox of useful small functions. Add these functions to your
 PowerShell profile, as described in [about_Profiles][14] and later in this
 article.
 
-## FUNCTION NAMES
+## Function names
 
 You can assign any name to a function. However, for functions that you share
 with others, you should follow the standard PowerShell naming rules.
@@ -261,7 +261,7 @@ with others, you should follow the standard PowerShell naming rules.
 For more information about the standard PowerShell verbs, see
 [Approved Verbs][02].
 
-## FUNCTIONS WITH PARAMETERS
+## Functions with parameters
 
 You can use parameters with functions, including named parameters, positional
 parameters, switch parameters, and dynamic parameters. For more information
@@ -458,7 +458,7 @@ Switch-Item -On:$false
 Switch off
 ```
 
-## USE SPLATTING TO PASS PARAMETER VALUES
+## Use splatting to pass parameter values
 
 You can use splatting to represent the parameters of a command. This feature is
 introduced in Windows PowerShell 3.0.
@@ -493,7 +493,7 @@ undeclared cmdlet parameters and values from remaining arguments.
 
 For more information, see [about_Splatting][18].
 
-## PIPING OBJECTS TO FUNCTIONS
+## Piping objects to functions
 
 Any function can take input from the pipeline. You can control how a function
 processes input from the pipeline using `begin`, `process`, `end`, and `clean`
@@ -641,7 +641,7 @@ enforced for the following scenarios:
 > problem. The command can still be invoked using the call operator
 > (`& clean`).
 
-## FUNCTION SCOPE
+## Function scope
 
 A function exists in the scope in which you create it.
 
@@ -666,7 +666,7 @@ variables, exist only in the function scope.
 
 For more information, see [about_Scopes][16].
 
-## FIND AND MANAGE FUNCTIONS USING THE `FUNCTION:` DRIVE
+## Find and manage functions using the `Function:` drive
 
 All the functions and filters in PowerShell are automatically stored in the
 `Function:` drive. This drive is exposed by the PowerShell **Function**
@@ -699,7 +699,7 @@ $Function:help
 For more information, see
 [about_Function_Provider][07].
 
-## REUSE FUNCTIONS IN NEW SESSIONS
+## Reuse functions in new sessions
 
 When you type a function at the PowerShell command prompt, the function becomes
 part of the current session. The function is available until the session ends.
@@ -711,7 +711,7 @@ PowerShell profile. For more information about profiles, see
 You can also save your function in a PowerShell script file. Type your function
 in a text file, and then save the file with the `.ps1` filename extension.
 
-## CREATE HELP FOR FUNCTIONS
+## Create help for functions
 
 The `Get-Help` cmdlet gets help for functions, cmdlets, providers, and scripts.
 To get help for a function, type `Get-Help` followed by the function name.
@@ -742,7 +742,7 @@ You can write help for a function using either of the two following methods:
   [about_Comment_Based_Help][06]. For more information about XML-based help,
   see [How to Write Cmdlet Help][03].
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables][04]
 - [about_Comment_Based_Help][06]

@@ -9,11 +9,11 @@ title: about_Output_Streams
 ---
 # about_Output_Streams
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains the availability and purpose of output streams in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell provides multiple output streams. The streams provide channels for
 different types of messages. You can write to these streams using the
@@ -35,7 +35,7 @@ PowerShell supports the following output streams.
 > [!NOTE]
 > The **Progress** stream doesn't support redirection.
 
-## SUCCESS STREAM
+## Success stream
 
 The **Success** stream is the default stream for normal, successful results.
 Use the `Write-Output` cmdlet to explicitly write objects to this stream. This
@@ -43,7 +43,7 @@ stream is used for passing objects through the PowerShell pipeline. The
 **Success** stream is connected to the **stdout** stream for native
 applications.
 
-## ERROR STREAM
+## Error stream
 
 The **Error** stream is the default stream for error results. Use the
 `Write-Error` cmdlet to explicitly write to this stream. The **Error** stream
@@ -52,7 +52,7 @@ conditions, these errors can terminate the execution pipeline. Errors written
 to this stream are also added to the `$Error` automatic variable. For more
 information, see [about_Automatic_Variables][01].
 
-## WARNING STREAM
+## Warning stream
 
 The **Warning** stream is intended for error conditions that are less severe
 than errors written to the **Error** stream. Under normal conditions, these
@@ -60,7 +60,7 @@ warnings don't terminate execution. Warnings aren't written to the `$Error`
 automatic variable. Use the `Write-Warning` cmdlet to explicitly write to this
 stream.
 
-## VERBOSE STREAM
+## Verbose stream
 
 The **Verbose** stream is intended for messages that help users troubleshoot
 commands as they're run interactively or from a script. Use the `Write-Verbose`
@@ -69,7 +69,7 @@ verbose output that's useful for understanding the internal workings of the
 cmdlet. The verbose messages are output only when you use the `-Verbose` common
 parameter. For more information, see [about_CommonParameters][02].
 
-## DEBUG STREAM
+## Debug stream
 
 The **Debug** stream is used for messages that help scripters understand why
 their code is failing. Use the `Write-Debug` cmdlet to explicitly write to this
@@ -80,7 +80,7 @@ Debug messages are intended for script and cmdlet developers more than end
 users. These debug messages can contain internal details necessary for deep
 troubleshooting.
 
-## INFORMATION STREAM
+## Information stream
 
 The **Information** stream is intended to provide messages that help a user
 understand what a script is doing. It can also be used by developers as an
@@ -93,14 +93,14 @@ the cmdlets is that `Write-Host` also writes to the host console unless you
 redirect the **Information** stream. `Write-Information` only writes to the
 **Information** stream.
 
-## PROGRESS STREAM
+## Progress stream
 
 The **Progress** stream is used for messages that communicate progress in
 longer running commands and scripts. Use the `Write-Progress` cmdlet to
 explicitly write messages to this stream. The **Progress** stream doesn't
 support redirection.
 
-## SEE ALSO
+## See also
 
 - [about_CommonParameters][02]
 - [about_Redirection][03]

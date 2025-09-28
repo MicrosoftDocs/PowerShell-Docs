@@ -9,14 +9,14 @@ title: about_Format.ps1xml
 
 # about_Format.ps1xml
 
-## SHORT DESCRIPTION
+## Short description
 
 The `Format.ps1xml` files in PowerShell define the default display of objects
 in the PowerShell console. You can create your own `Format.ps1xml` files to
 change the display of objects or to define default displays for new object
 types that you create in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 The `Format.ps1xml` files in PowerShell define the default display of objects
 in PowerShell. You can create your own `Format.ps1xml` files to change the
@@ -292,7 +292,7 @@ higher precedence order than the original file. For more information, see
 [Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData).
 
 ```powershell
-Update-FormatData -PrependPath $PSHOME\MyDotNetTypes.Format.ps1xml
+Update-FormatData -PrependPath $HOME\Format\CultureInfo.Format.ps1xml
 ```
 
 To test the change, type `Get-Culture` and review the output that includes the
@@ -308,7 +308,7 @@ LCID Name  Calendar                               DisplayName
 1033 en-US System.Globalization.GregorianCalendar English (United States)
 ```
 
-## THE XML IN FORMAT.PS1XML FILES
+## The XML in Format.ps1xml files
 
 The full schema definition can be found in [Format.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd)
 in the PowerShell source code repository on GitHub.
@@ -408,7 +408,7 @@ The default displays of some basic object types are defined in the
 
 For more information, see [about_Types.ps1xml](about_Types.ps1xml.md).
 
-## TRACING FORMAT.PS1XML FILE USE
+## Tracing Format.ps1xml file use
 
 To detect errors in the loading or application of `Format.ps1xml` files, use
 the `Trace-Command` cmdlet with any of the following format components as the
@@ -421,13 +421,13 @@ For more information, see
 [Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command) and
 [Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource).
 
-## SIGNING A FORMAT.PS1XML FILE
+## Signing a Format.ps1xml file
 
 To protect the users of your `Format.ps1xml` file, sign the file using a
 digital signature. For more information, see
 [about_Signing](about_Signing.md).
 
-## SAMPLE XML FOR A FORMAT-TABLE CUSTOM VIEW
+## Sample XML for a Format-Table custom view
 
 The following sample creates a `Format-Table` custom view for the
 **System.IO.DirectoryInfo** and **System.IO.FileInfo** objects created by
@@ -460,7 +460,7 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 > compress some indentation and use line breaks within the code.
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Configuration>
     <SelectionSets>
         <SelectionSet>
@@ -568,7 +568,7 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 </Configuration>
 ```
 
-## SEE ALSO
+## See also
 
 - [Trace-Command][05]
 - [Export-FormatData][02]

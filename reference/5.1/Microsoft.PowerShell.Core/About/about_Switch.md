@@ -8,11 +8,11 @@ title: about_Switch
 ---
 # about_Switch
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to use a switch to handle multiple conditional statements.
 
-## LONG DESCRIPTION
+## Long description
 
 To check a condition in a script or function, you can use an `if` statement.
 The `if` statement can check many types of conditions, including the value of
@@ -26,7 +26,7 @@ condition matches, the action is performed.
 > [!IMPORTANT]
 > The `switch` statement converts all values to strings before comparison.
 
-## SYNTAX
+## Syntax
 
 A basic `switch` statement has the following format:
 
@@ -122,7 +122,7 @@ conditions. It's equivalent to an `else` clause in an `if` statement. Only one
 > ignored. Multiple instances of parameters are also permitted. However, only
 > the last parameter listed is used.
 
-## EXAMPLES
+## Examples
 
 The following examples demonstrate the use of the `switch` statement.
 
@@ -440,7 +440,7 @@ switch -File $fileEscaped { foo { 'Foo' } }
 # Foo
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Break][04]
 - [about_Continue][05]

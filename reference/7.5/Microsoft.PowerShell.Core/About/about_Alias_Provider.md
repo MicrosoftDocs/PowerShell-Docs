@@ -1,5 +1,5 @@
 ---
-description: Alias
+description: The Alias provider enables access to the PowerShell aliases and the values that they represent.
 Locale: en-US
 ms.date: 10/18/2018
 no-loc: [Alias, Definition, AllScope, Option, None, Constant, Private]
@@ -9,23 +9,19 @@ title: about_Alias_Provider
 ---
 # about_Alias_Provider
 
-## PROVIDER NAME
+## Provider name
 
 Alias
 
-## DRIVES
+## Drives
 
 `Alias:`
 
-## CAPABILITIES
+## Capabilities
 
 **ShouldProcess**
 
-## SHORT DESCRIPTION
-
-Provides access to the PowerShell aliases and the values that they represent.
-
-## DETAILED DESCRIPTION
+## Detailed description
 
 The PowerShell **Alias** provider lets you get, add, change, clear, and delete
 aliases in PowerShell.
@@ -58,12 +54,12 @@ cmdlets.
 - [New-Alias][10]
 - [Set-Alias][11]
 
-## TYPES EXPOSED BY THIS PROVIDER
+## Types exposed by this provider
 
 Each alias is an instance of the [System.Management.Automation.AliasInfo][12]
 class.
 
-## NAVIGATING THE ALIAS DRIVE
+## Navigating the alias drive
 
 The **Alias** provider exposes its data store in the `Alias:` drive. To work
 with aliases, you can change your location to the `Alias:` drive by using the
@@ -139,7 +135,7 @@ cmdlet name.
 Get-Item -Path Alias:* | Where-Object {$_.Definition -eq "Get-ChildItem"}
 ```
 
-## CREATING ALIASES
+## Creating aliases
 
 ### Create an alias from the Alias: drive
 
@@ -181,7 +177,7 @@ function CD32 {Set-Location -Path C:\windows\system32}
 Set-Item -Path Alias:go -Value CD32
 ```
 
-## CHANGING ALIASES
+## Changing aliases
 
 ### Change the options of an alias
 
@@ -226,7 +222,7 @@ This command uses the `Rename-Item` cmdlet to change the `popd` alias to `pop`.
 Rename-Item -Path Alias:popd -NewName pop
 ```
 
-## COPYING AN ALIAS
+## Copying an alias
 
 This command copies the `pushd` alias so that a new `push` alias is created for
 the `Push-Location` cmdlet.
@@ -240,7 +236,7 @@ the `-Path` parameter.
 Copy-Item -Path Alias:pushd -Destination Alias:push
 ```
 
-## DELETING AN ALIAS
+## Deleting an alias
 
 This command deletes the `serv` alias from the current session.
 You can use this command in any PowerShell drive.
@@ -267,7 +263,7 @@ allows the command to delete aliases whose **Options** property has a value of
 Remove-Item Alias:* -Force
 ```
 
-## DYNAMIC PARAMETERS
+## Dynamic parameters
 
 Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
@@ -292,14 +288,14 @@ Determines the value of the **Options** property of an alias.
 - [New-Item][04]
 - [Set-Item][14]
 
-## USING THE PIPELINE
+## Using the pipeline
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
 task by sending provider data from one cmdlet to another provider cmdlet.
 To read more about how to use the pipeline with provider cmdlets, see the
 cmdlet references provided throughout this article.
 
-## GETTING HELP
+## Getting help
 
 Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
@@ -316,7 +312,7 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path Alias:
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Aliases][16]
 - [about_Providers][17]

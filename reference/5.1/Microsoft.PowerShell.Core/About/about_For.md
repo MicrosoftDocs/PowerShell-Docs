@@ -8,12 +8,12 @@ title: about_For
 ---
 # about_For
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes a language command you can use to run statements based on a
 conditional test.
 
-## LONG DESCRIPTION
+## Long description
 
 The `for` statement (also known as a `for` loop) is a language construct you
 can use to create a loop that runs commands in a command block while a
@@ -404,7 +404,7 @@ Index Original       Padded
 
 In the output, the sorted work items after padding are in the expected order.
 
-## SEE ALSO
+## See also
 
 - [about_Comparison_Operators][02]
 - [about_Foreach][03]

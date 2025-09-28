@@ -8,11 +8,11 @@ title: about_Object_Creation
 ---
 # about_Object_Creation
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to create objects in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 You can create objects in PowerShell and use the objects that you create in
 commands and scripts.
@@ -46,7 +46,7 @@ The following additional methods are covered in this article:
 - By calling a type's constructor using a static `new()` method
 - By typecasting hash tables of property names and property values
 
-## STATIC NEW() METHOD
+## Static new() method
 
 All .NET types have a `new()` method that allows you to construct instances
 more easily. You can also see all the available constructors for a given type.
@@ -139,7 +139,7 @@ For more information about the Extended Type System, see
 
 This feature was added in PowerShell 5.0
 
-## CREATE OBJECTS FROM HASH TABLES
+## Create objects from hash tables
 
 You can create an object from a hash table of properties and property values.
 
@@ -157,7 +157,7 @@ object properties must be public and settable.
 
 This feature was added in PowerShell version 3.0
 
-## CREATE CUSTOM OBJECTS FROM HASH TABLES
+## Create custom objects from hash tables
 
 Custom objects are very useful and are easy to create using the hash table
 method. The **PSCustomObject** class is designed specifically for this purpose.
@@ -240,7 +240,7 @@ PSVersion Name     System
 
 ```
 
-## CREATE NON-CUSTOM OBJECTS FROM HASH TABLES
+## Create non-custom objects from hash tables
 
 You can also use hash tables to create objects for non-custom classes. When you
 create an object for a non-custom class, the namespace-qualified type name is
@@ -299,7 +299,7 @@ Register-ScheduledJob -Name Test -FilePath .\Get-Inventory.ps1 -Trigger @{
 }
 ```
 
-## GENERIC OBJECTS
+## Generic objects
 
 You can also create generic objects in PowerShell. Generics are classes,
 structures, interfaces, and methods that have placeholders (type parameters)
@@ -321,7 +321,7 @@ One     1
 
 For more information on Generics, see [Generics in .NET][01].
 
-## SEE ALSO
+## See also
 
 - [about_Methods][02]
 - [about_Objects][03]

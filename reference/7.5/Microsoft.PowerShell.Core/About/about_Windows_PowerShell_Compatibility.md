@@ -8,18 +8,18 @@ title: about_Windows_PowerShell_Compatibility
 ---
 # about_Windows_PowerShell_Compatibility
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the Windows PowerShell Compatibility functionality for PowerShell 7.
 
-## LONG DESCRIPTION
+## Long description
 
 Unless the module manifest indicates that module is compatible with PowerShell
 Core, modules in the `%windir%\system32\WindowsPowerShell\v1.0\Modules` folder
 are loaded in a background Windows PowerShell 5.1 process by Windows PowerShell
 Compatibility feature.
 
-## USING THE COMPATIBILITY FEATURE
+## Using the Compatibility feature
 
 When the first module is imported using Windows PowerShell Compatibility
 feature, PowerShell creates a remote session named `WinPSCompatSession` that
@@ -80,7 +80,7 @@ The default value of this setting is:
 ]
 ```
 
-## MANAGING IMPLICIT MODULE LOADING
+## Managing implicit module loading
 
 To disable implicit import behavior of the Windows PowerShell Compatibility
 feature, use the `DisableImplicitWinCompat` setting in a PowerShell
@@ -103,7 +103,7 @@ pwsh -SettingsFile $ConfigPath
 For more the latest information about module compatibility, see the
 [PowerShell 7 module compatibility][03] list.
 
-## MANAGING CMDLET CLOBBERING
+## Managing cmdlet clobbering
 
 The Windows PowerShell Compatibility feature uses implicit remoting to load
 modules in compatibility mode. The result is that commands exported by the
@@ -133,7 +133,7 @@ list of module names. The default value of this setting is:
 "WindowsPowerShellCompatibilityNoClobberModuleList": [ ]
 ```
 
-## LIMITATIONS
+## Limitations
 
 The Windows PowerShell Compatibility functionality:
 
@@ -144,7 +144,7 @@ The Windows PowerShell Compatibility functionality:
 1. Shares a single runspace for all modules imported into the Windows
    PowerShell remoting session
 
-## TEMPORARY FILES
+## Temporary files
 
 The Windows PowerShell Compatibility feature uses implicit remoting to make
 Windows PowerShell 5.1 modules available in PowerShell 7. Implicit remoting
@@ -156,7 +156,7 @@ stored in a separate folder with the following naming convention:
 PowerShell removes the temporary files when you remove the last proxied module
 from the session or close the session.
 
-## SEE ALSO
+## See also
 
 - [about_Modules][01]
 - [Import-Module][04]

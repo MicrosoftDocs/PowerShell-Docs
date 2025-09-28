@@ -8,12 +8,12 @@ title: about_Script_Blocks
 ---
 # about_Script_Blocks
 
-## SHORT DESCRIPTION
+## Short description
 
 Defines what a script block is and explains how to use script blocks in
 the PowerShell programming language.
 
-## LONG DESCRIPTION
+## Long description
 
 In the PowerShell programming language, a script block is a collection of
 statements or expressions that can be used as a single unit. The collection of
@@ -54,7 +54,7 @@ Like functions, script blocks can include the `dynamicparam`, `begin`,
 `process`, and `end` keywords. For more information, see [about_Functions][02]
 and [about_Functions_Advanced][01].
 
-## USING SCRIPT BLOCKS
+## Using script blocks
 
 A script block is an instance of a Microsoft .NET Framework type
 `System.Management.Automation.ScriptBlock`. Commands can have script
@@ -147,7 +147,7 @@ PS>  $b
 
 For more information about the call operator, see [about_Operators][03].
 
-## USING DELAY-BIND SCRIPT BLOCKS WITH PARAMETERS
+## Using delay-bind script blocks with parameters
 
 A typed parameter that accepts pipeline input enables use of _delay-bind_
 script blocks on the parameter. You can use delay-bind script blocks as a
@@ -195,7 +195,7 @@ Notes on delay-bind script blocks as parameters:
         Microsoft.PowerShell.Commands.RenameItemCommand
   ```
 
-## SEE ALSO
+## See also
 
 - [about_Functions][02]
 - [about_Functions_Advanced][01]

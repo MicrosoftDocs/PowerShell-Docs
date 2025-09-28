@@ -8,11 +8,11 @@ title: about_Case-Sensitivity
 ---
 # about_Case-Sensitivity
 
-## SHORT DESCRIPTION
+## Short description
 
 PowerShell is as case-insensitive as possible while preserving case.
 
-## LONG DESCRIPTION
+## Long description
 
 As a general principle, PowerShell is as case insensitive as possible while
 preserving case and not breaking the underlying OS.
@@ -23,7 +23,7 @@ On Unix-based systems, PowerShell is case-sensitive because filesystem
 manipulation and environment variables directly affect the underlying
 operating system and integration with other tools.
 
-## ON ALL SYSTEMS
+## On all systems
 
 - PowerShell variables are case-insensitive
 
@@ -45,7 +45,7 @@ operating system and integration with other tools.
   case-sensitive filesystem. When the case of the imported name of the module
   doesn't match, `Update-Help` can't find the help files and reports an error.
 
-## RELATED LINKS
+## See also
 
 - [about_Environment_Variables](about_Environment_Variables.md)
 - [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)

@@ -8,23 +8,23 @@ title: about_FileSystem_Provider
 ---
 # about_FileSystem_Provider
 
-## PROVIDER NAME
+## Provider name
 
 FileSystem
 
-## DRIVES
+## Drives
 
 `C:`, `D:`, `Temp:` ...
 
-## CAPABILITIES
+## Capabilities
 
 **Filter**, **ShouldProcess**
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides access to files and directories.
 
-## DETAILED DESCRIPTION
+## Detailed description
 
 The PowerShell **FileSystem** provider lets you get, add, change, clear, and
 delete files and directories in PowerShell.
@@ -65,7 +65,7 @@ in this article.
 - [Get-Content][17]
 - [Set-Content][27]
 
-## TYPES EXPOSED BY THIS PROVIDER
+## Types exposed by this provider
 
 Files are instances of the [System.IO.FileInfo][04] class. Directories are
 instances of the [System.IO.DirectoryInfo][02] class.
@@ -95,7 +95,7 @@ Mode                 LastWriteTime         Length Name
 la---            6/8/2023 12:20 PM              0 winget.exe ->
 ```
 
-## NAVIGATING THE FILESYSTEM DRIVES
+## Navigating the filesystem drives
 
 The **FileSystem** provider exposes its data stores by mapping any logical
 drives on the computer as PowerShell drives. To work with a **FileSystem**
@@ -116,7 +116,7 @@ name (`C:`, `D:`, ...) in the path.
 > `Get-ChildItem`, `cd` is an alias for `Set-Location`. and `pwd` is an
 > alias for `Get-Location`.
 
-## GETTING FILES AND DIRECTORIES
+## Getting files and directories
 
 The `Get-ChildItem` cmdlet returns all files and directories in the
 current location. You can specify a different path to search and use built
@@ -128,7 +128,7 @@ Get-ChildItem
 
 To read more about cmdlet usage, see [Get-ChildItem][16].
 
-## COPYING FILES AND DIRECTORIES
+## Copying files and directories
 
 The `Copy-Item` cmdlet copies files and directories to a location you specify.
 Parameters are available to filter and recurse, similar to `Get-ChildItem`.
@@ -160,7 +160,7 @@ Copy-Item -Path C:\a\* -Destination C:\c -Recurse
 
 For more information, see [Copy-Item][15].
 
-## MOVING FILES AND DIRECTORIES
+## Moving files and directories
 
 This command moves the `c.txt` file in the `C:\a` directory to the `C:\a\aa`
 directory:
@@ -188,7 +188,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : InvalidOperation,Microsoft.PowerShell.Commands.MoveItemCommand
 ```
 
-## MANAGING FILE CONTENT
+## Managing file content
 
 ### Get the content of a file
 
@@ -264,7 +264,7 @@ $e = Get-Content C:\test\employees.txt -Delimited "End Of Employee Record"
 $e[0]
 ```
 
-## MANAGING SECURITY DESCRIPTORS
+## Managing security descriptors
 
 ### View the ACL for a file
 
@@ -277,7 +277,7 @@ Get-Acl -Path test.txt | Format-List -Property *
 For more information about this object, pipe the command to the
 [Get-Member][38] cmdlet or see the [FileSecurity][06] Class.
 
-## CREATING FILES AND DIRECTORIES
+## Creating files and directories
 
 ### Create a directory
 
@@ -308,7 +308,7 @@ string "test log" to the file.
 New-Item -Path C:\logfiles -Name log2.txt -Type File -Value "test log"
 ```
 
-## RENAMING FILES AND DIRECTORIES
+## Renaming files and directories
 
 ### Rename a file
 
@@ -326,7 +326,7 @@ This command renames the `C:\a\cc` directory to `C:\a\dd`:
 Rename-Item -Path C:\a\cc -NewName dd
 ```
 
-## DELETING FILES AND DIRECTORIES
+## Deleting files and directories
 
 ### Delete a file
 
@@ -345,7 +345,7 @@ This command deletes all the files in the current directory that have the
 Remove-Item -Path *.xml
 ```
 
-## STARTING A PROGRAM BY INVOKING AN ASSOCIATED FILE
+## Starting a program by invoking an associated file
 
 ### Invoke a file
 
@@ -361,7 +361,7 @@ Get-Service | Export-Csv -Path services.csv
 Invoke-Item -Path services.csv
 ```
 
-## GETTING FILES AND FOLDERS WITH SPECIFIED ATTRIBUTES
+## Getting files and folders with specified attributes
 
 ### Get System files
 
@@ -403,7 +403,7 @@ operator.
 Get-ChildItem -Attributes Compressed,Encrypted
 ```
 
-## DYNAMIC PARAMETERS
+## Dynamic parameters
 
 Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
@@ -654,14 +654,14 @@ In a `FileSystem` drive, the following values are allowed:
 
 - `New-Item`
 
-## USING THE PIPELINE
+## Using the pipeline
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
 task by sending provider data from one cmdlet to another provider cmdlet. To
 read more about how to use the pipeline with provider cmdlets, see the cmdlet
 references provided throughout this article.
 
-## GETTING HELP
+## Getting help
 
 Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
@@ -678,7 +678,7 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path c:
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Providers][08]
 

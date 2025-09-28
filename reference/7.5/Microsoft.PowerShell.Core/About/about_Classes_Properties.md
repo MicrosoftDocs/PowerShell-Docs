@@ -9,11 +9,11 @@ title: about_Classes_Properties
 
 # about_Classes_Properties
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to define properties for PowerShell classes.
 
-## LONG DESCRIPTION
+## Long description
 
 Properties are members of the class that contain data. Properties are declared
 as variables in the class scope. A property can be of any built-in type or an
@@ -24,7 +24,7 @@ Class properties can have any number of attributes, including the [hidden][01]
 and [static][02] attributes. Every property definition must include a type for
 the property. You can define a default value for a property.
 
-## SYNTAX
+## Syntax
 
 Class properties use the following syntaxes:
 
@@ -42,7 +42,7 @@ Class properties use the following syntaxes:
 $<property-name> [= <default-value>]
 ```
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Minimal class properties
 
@@ -448,7 +448,7 @@ DueDate   : 1/1/0001 12:00:00 AM
 With the properties set correctly, the **Duration** property returns a timespan
 representing how long the project ran.
 
-## DEFAULT PROPERTY VALUES
+## Default property values
 
 Every class property has an implicit default value depending on the type of the
 property.
@@ -491,7 +491,7 @@ Name Description Guid
 
 Hidden and static properties can also have default values.
 
-## HIDDEN PROPERTIES
+## Hidden properties
 
 You can hide properties of a class by declaring them with the `hidden` keyword.
 Hidden class properties are:
@@ -508,7 +508,7 @@ Hidden class properties are:
 
 For more information about the `hidden` keyword, see [about_Hidden][07].
 
-## STATIC PROPERTIES
+## Static properties
 
 You can define a property as belonging to the class itself instead of instances
 of the class by declaring the property with the `static` keyword. Static class
@@ -526,7 +526,7 @@ properties:
 > can be overridden to any valid value, as defined by the static property's
 > type and attributes.
 
-## DERIVED CLASS PROPERTIES
+## Derived class properties
 
 When a class derives from a base class, it inherits the properties of the base
 class. Any properties defined on the base class, including hidden properties,
@@ -628,7 +628,7 @@ changed value affects every class except for **DerivedClassD**.
 For more information about class inheritance, including a comprehensive
 example, see [about_Classes_Inheritance][08].
 
-## USING PROPERTY ATTRIBUTES
+## Use property attributes
 
 PowerShell includes several attribute classes that you can use to enhance data
 type information and validate the data assigned to a property. Validation
@@ -638,7 +638,7 @@ requirements. Validation is triggered the moment that the value is assigned.
 For more information on available attributes, see
 [about_Functions_Advanced_Parameters][09].
 
-## DEFINING INSTANCE PROPERTIES WITH UPDATE-TYPEDATA
+## Define instance properties with Update-TypeData
 
 Beyond declaring properties directly in the class definition, you can define
 properties for instances of a class in the static constructor using the
@@ -910,7 +910,7 @@ The updated size is: 2, Medium
 The final size is:   3, Large
 ```
 
-## LIMITATIONS
+## Limitations
 
 PowerShell class properties have the following limitations:
 
@@ -938,7 +938,7 @@ PowerShell class properties have the following limitations:
 
   Workaround: None
 
-## SEE ALSO
+## See also
 
 - [about_Classes][10]
 - [about_Classes_Constructors][11]

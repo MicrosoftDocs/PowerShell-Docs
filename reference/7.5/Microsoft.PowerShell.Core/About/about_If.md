@@ -8,12 +8,12 @@ title: about_If
 ---
 # about_If
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes a language command you can use to run statement lists based on the
 results of one or more conditional tests.
 
-## LONG DESCRIPTION
+## Long description
 
 You can use the `if` statement to run code blocks if a specified conditional
 test evaluates to true. You can also specify one or more additional conditional
@@ -170,7 +170,7 @@ And this example parses:
 exists
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Booleans](about_Booleans.md)
 - [about_Comparison_Operators](about_Comparison_Operators.md)

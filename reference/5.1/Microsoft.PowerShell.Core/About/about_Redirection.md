@@ -8,11 +8,11 @@ title: about_Redirection
 ---
 # about_Redirection
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to redirect output from PowerShell to text files.
 
-## LONG DESCRIPTION
+## Long description
 
 By default, PowerShell sends output to the PowerShell host. Usually this is the
 console application. However, you can redirect the output to a text file and
@@ -35,7 +35,7 @@ You can use the following methods to redirect output:
 
 For more information about streams, see [about_Output_Streams][04].
 
-## REDIRECTABLE OUTPUT STREAMS
+## Redirectable output streams
 
 PowerShell supports redirection of the following output streams.
 
@@ -57,7 +57,7 @@ redirection.
 > streams of other shells. However, stdin isn't connected to the PowerShell
 > pipeline for input.
 
-## POWERSHELL REDIRECTION OPERATORS
+## PowerShell redirection operators
 
 The PowerShell redirection operators are as follows, where `n` represents
 the stream number. The **Success** stream ( `1` ) is the default if no stream
@@ -73,7 +73,7 @@ is specified.
 > Unlike some Unix shells, you can only redirect other streams to the
 > **Success** stream.
 
-## EXAMPLES
+## Examples
 
 ### Example 1: Redirect errors and output to a file
 
@@ -205,7 +205,7 @@ Ignore
 Inquire
 ```
 
-## NOTES
+## Notes
 
 The redirection operators that don't append data (`>` and `n>`) overwrite the
 current contents of the specified file without warning.
@@ -320,7 +320,7 @@ If numeric comparison is the required operation, `-lt` and `-gt` should be
 used. For more information, see the `-gt` operator in
 [about_Comparison_Operators][02].
 
-## SEE ALSO
+## See also
 
 - [about_Command_Syntax][01]
 - [about_Operators][03]

@@ -9,11 +9,11 @@ title: about_Remote_Disconnected_Sessions
 
 # about_Remote_Disconnected_Sessions
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to disconnect and reconnect to a PowerShell Session (PSSession).
 
-## LONG DESCRIPTION
+## Long description
 
 Beginning in PowerShell 3.0, you can disconnect from a PSSession and reconnect
 to the PSSession from the same computer or a different computer. The session
@@ -31,7 +31,7 @@ You can't disconnect from an interactive session that's started using the
 You can use disconnected sessions to manage PSSessions that were disconnected
 unintentionally as the result of a computer or network outage.
 
-## DISCONNECTED SESSION CMDLETS
+## Disconnected session cmdlets
 
 The following cmdlets support the Disconnected Sessions feature:
 
@@ -44,7 +44,7 @@ The following cmdlets support the Disconnected Sessions feature:
 - `Invoke-Command`: **InDisconnectedSession** parameter creates a PSSession and
   disconnects immediately.
 
-## HOW THE DISCONNECTED SESSIONS FEATURE WORKS
+## How the disconnected sessions feature works
 
 Beginning in PowerShell 3.0, PSSessions are independent of the sessions in
 which they're created. Active PSSessions are maintained on the remote computer
@@ -84,7 +84,7 @@ Another user can connect to PSSessions that you created, but only if they can
 provide the credentials that were used to create the session, or use the
 `RunAs` credentials of the session configuration.
 
-## HOW TO GET PSSESSIONS
+## How to get PSSessions
 
 Beginning in PowerShell 3.0, the `Get-PSSession` cmdlet gets PSSessions on the
 local computer and remote computers. It can also get PSSessions that were
@@ -147,7 +147,7 @@ Id Name      ComputerName  State    ConfigurationName     Availability
  2 Session2  Server01      Opened   Microsoft.PowerShell     Available
 ```
 
-## HOW TO DISCONNECT SESSIONS
+## How to disconnect sessions
 
 Use the `Disconnect-PSSession` cmdlet to disconnect a session. To identify the
 PSSession, use the **Session** parameter, or pipe a PSSession object from the
@@ -185,7 +185,7 @@ Id Name      ComputerName  State         ConfigurationName     Availability
  4 Session3  Server02      Disconnected  Microsoft.PowerShell          None
 ```
 
-## HOW TO CONNECT TO DISCONNECTED SESSIONS
+## How to connect to disconnected sessions
 
 To connect a disconnected session, use the `Connect-PSSession` cmdlet with the
 **ComputerName** or **ConnectionUri** parameters. Alternatively, you could pipe
@@ -218,7 +218,7 @@ Id Name      ComputerName    State    ConfigurationName     Availability
  2 Session2  juneb-srv8320   Opened   Microsoft.PowerShell     Available
 ```
 
-## HOW TO GET THE RESULTS
+## How to get the results
 
 To get the results of commands that ran in a disconnected PSSession, use the
 `Receive-PSSession` cmdlet.
@@ -266,7 +266,7 @@ TimeCreated             Id LevelDisplayName Message     PSComputerName
 5/14/2012 7:26:03 PM   600 Information      Provider "V Server02
 ```
 
-## STATE AND AVAILABILITY PROPERTIES
+## State and availability properties
 
 The **State** and **Availability** properties of a disconnected PSSession tell
 you whether the session is available for you to reconnect to it.
@@ -360,7 +360,7 @@ them, such as by using the `Remove-PSSession` cmdlet, or they time out. The
 **IdleTimeout** property of a PSSession determines how long a disconnected
 session is maintained before it's deleted.
 
-## IDLE TIMEOUT VALUES
+## Idle timeout values
 
 PSSessions are idle when the _heartbeat thread_ receives no response.
 Disconnecting a session makes it idle and starts the **IdleTimeout** clock,
@@ -469,7 +469,7 @@ $o = New-PSTransportOption -IdleTimeoutSec 172800 -MaxIdleTimeoutSec 259200
 Set-PSSessionConfiguration -Name Test -TransportOption $o
 ```
 
-## OUTPUT BUFFERING MODE
+## Output buffering mode
 
 The output buffering mode of a PSSession determines how command output is
 managed when the output buffer of the PSSession is full.
@@ -583,7 +583,7 @@ $o = New-PSTransportOption -OutputBufferingMode Drop
 Set-PSSessionConfiguration -Name Test -TransportOption $o
 ```
 
-## DISCONNECTING LOOPBACK SESSIONS
+## Disconnecting loopback sessions
 
 Loopback sessions, or local sessions, are PSSessions that originate and
 terminate on the same computer. Like other PSSessions, active loopback sessions
@@ -606,7 +606,7 @@ to them from the same session or a different session on the same computer.
 However, to prevent malicious access, you can reconnect to loopback sessions
 with interactive tokens only from the computer on which they were created.
 
-## WAITING FOR JOBS IN DISCONNECTED SESSIONS
+## Waiting for jobs in disconnected sessions
 
 The `Wait-Job` cmdlet waits until a job completes and then returns to the
 command prompt or the next command. By default, `Wait-Job` returns if the
@@ -614,7 +614,7 @@ session in which a job is running is disconnected. To direct the `Wait-Job`
 cmdlet to wait until the session is reconnected, in the **Opened** state, use
 the **Force** parameter. For more information, see [Wait-Job][11].
 
-## ROBUST SESSIONS AND UNINTENTIONAL DISCONNECTION
+## Robust sessions and unintentional disconnection
 
 A PSSession might be unintentionally disconnected because of a computer failure
 or network outage. PowerShell attempts to recover the PSSession, but its
@@ -634,7 +634,7 @@ are running in the PSSession, PowerShell maintains the PSSession in the
 in which a PSSession was created, but no commands are running in the PSSession,
 PowerShell doesn't attempt to maintain the PSSession.
 
-## SEE ALSO
+## See also
 
 - [about_Jobs][01]
 - [about_Remote][04]

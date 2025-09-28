@@ -8,11 +8,11 @@ title: about_Scripts
 ---
 # about_Scripts
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to run and write scripts in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 A script is a plain text file that contains one or more PowerShell commands.
 PowerShell scripts have a `.ps1` file extension.
@@ -30,7 +30,7 @@ Scripts have additional features, such as the `#Requires` special comment, the
 use of parameters, support for data sections, and digital signing for security.
 You can also write Help topics for scripts and for any functions in the script.
 
-## HOW TO RUN A SCRIPT
+## How to run a script
 
 Before you can run a script on Windows, you need to change the default
 PowerShell execution policy. Execution policy does not apply to PowerShell
@@ -128,7 +128,7 @@ $invokeCommandSplat = @{
 Invoke-Command @invokeCommandSplat
 ```
 
-## GET HELP FOR SCRIPTS
+## Get help for scripts
 
 The Get-Help cmdlet gets the help topics for scripts as well as for cmdlets
 and other types of commands. To get the help topic for a script, type
@@ -141,7 +141,7 @@ For example, to get help for the ServicesLog.ps1 script, type:
 Get-Help C:\admin\scripts\ServicesLog.ps1
 ```
 
-## HOW TO WRITE A SCRIPT
+## How to write a script
 
 A script can contain any valid PowerShell commands, including single commands,
 commands that use the pipeline, functions, and control structures such as `if`
@@ -263,7 +263,7 @@ value of the `%ERRORLEVEL%` environment variable.
 Any argument that is non-numeric or outside the platform-specific range is
 translated to the value of `0`.
 
-## SCRIPT SCOPE AND DOT SOURCING
+## Script scope and dot sourcing
 
 Each script runs in its own scope. The functions, variables, aliases, and
 drives that are created in the script exist only in the script scope. You
@@ -357,7 +357,7 @@ Microsoft.PowerShellISE_profile.ps1
 
 For more information about scope, see [about_Scopes][08].
 
-## SCRIPTS IN MODULES
+## Scripts in modules
 
 A module is a set of related PowerShell resources that can be distributed as a
 unit. You can use modules to organize your scripts, functions, and other
@@ -371,7 +371,7 @@ extension.
 
 For more information about modules, see [about_Modules][09].
 
-## OTHER SCRIPT FEATURES
+## Other script features
 
 PowerShell has many useful features that you can use in scripts.
 
@@ -421,7 +421,7 @@ PowerShell has many useful features that you can use in scripts.
   of scripts that could include unsafe commands. For more information, see
   [about_Execution_Policies][01] and [about_Signing][13].
 
-## SEE ALSO
+## See also
 
 - [about_Command_Precedence][02]
 - [about_Comment_Based_Help][06]

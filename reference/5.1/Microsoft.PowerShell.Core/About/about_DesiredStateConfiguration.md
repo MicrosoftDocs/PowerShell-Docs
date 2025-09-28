@@ -9,12 +9,12 @@ title: about_DesiredStateConfiguration
 
 # about_DesiredStateConfiguration
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides a brief introduction to the PowerShell Desired State
 Configuration (DSC) feature.
 
-## LONG DESCRIPTION
+## Long description
 
 DSC is a management platform in PowerShell that enables deploying and managing
 configuration data for software services, and managing the environment in
@@ -30,13 +30,13 @@ DSC is introduced in PowerShell 4.0.
 For detailed information about DSC, see
 [PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview).
 
-## DEVELOPING DSC RESOURCES WITH CLASSES
+## Developing DSC resources with classes
 
 Starting in PowerShell 5.0, you can develop DSC resources by using classes.
 For more information, see [about_Classes](about_Classes.md), and
 [Writing a custom DSC resource with PowerShell classes](/powershell/scripting/dsc/resources/authoringresourceclass).
 
-## USING DSC
+## Using DSC
 
 To use DSC to configure your environment, first define a PowerShell
 script block using the Configuration keyword, followed by an identifier, which
@@ -106,7 +106,7 @@ create a separate MOF file for class-based DSC resources.
 Start-DscConfiguration -Verbose -Wait -Path "C:\Windows\system32\Temp"
 ```
 
-## USING DSC TO MAINTAIN CONFIGURATION STATE
+## Using DSC to maintain configuration state
 
 With DSC, configuration is idempotent. This means that if you use DSC to enact
 the same configuration more than once, the resulting configuration state will
@@ -126,7 +126,7 @@ $session = New-CimSession -ComputerName "localhost"
 Test-DscConfiguration -CimSession $session
 ```
 
-## BUILT-IN DSC RESOURCES
+## Built-in DSC resources
 
 You can use the following built-in resources in your configuration scripts:
 
@@ -161,14 +161,14 @@ resources. To see all properties that you can use with a resource, insert the
 cursor in the resource keyword (for example, File) within your configuration
 script in PowerShell ISE, hold down <kbd>CTRL</kbd>+<kbd>SPACEBAR</kbd>
 
-## FIND MORE RESOURCES
+## Find more resources
 
 You can download, install, and learn about many other available DSC resources
 that have been created by the PowerShell and DSC user community, and by
 Microsoft. Visit the [PowerShell Gallery](https://www.powershellgallery.com/)
 to browse and learn about available DSC resources.
 
-## SEE ALSO
+## See also
 
 - [PowerShell Desired State Configuration Overview](/powershell/scripting/dsc/overview/)
 - [Built-In PowerShell Desired State Configuration Resources](/powershell/scripting/dsc/resources/resources)

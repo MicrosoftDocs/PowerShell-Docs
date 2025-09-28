@@ -9,11 +9,11 @@ title: about_Transactions
 
 # about_Transactions
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to manage transacted operations in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Transactions are supported in PowerShell beginning in PowerShell 2.0. This
 feature enables you to start a transaction, to indicate which commands are part
@@ -33,7 +33,7 @@ when the worst-case scenario for a set of commands isn't that they all fail,
 but that some commands succeed while others fail, leaving the system in a
 damaged, false, or uninterpretable state that's difficult to repair.
 
-## TRANSACTION CMDLETS
+## Transaction cmdlets
 
 PowerShell includes several cmdlets designed for managing transactions.
 
@@ -58,7 +58,7 @@ For detailed information about the cmdlets, type:
 Get-Help Use-Transaction -Detailed
 ```
 
-## TRANSACTION-ENABLED ELEMENTS
+## Transaction-enabled elements
 
 To participate in a transaction, both the cmdlet and the provider must support
 transactions. This feature is built into the objects that are affected by the
@@ -90,7 +90,7 @@ For example, to get Help for the Registry provider, type:
 Get-Help Registry
 ```
 
-## THE **USETRANSACTION** PARAMETER
+## The **UseTransaction** parameter
 
 Cmdlets that can support transactions have a **UseTransaction** parameter. This
 parameter includes the command in the active transaction. You can use the full
@@ -113,7 +113,7 @@ transactions.
 For more information about PowerShell providers, see
 [about_Providers](about_Providers.md).
 
-## THE TRANSACTION OBJECT
+## The transaction object
 
 Transactions are represented in PowerShell by a transaction object,
 **System.Management.Automation.Transaction**.
@@ -136,7 +136,7 @@ The object has the following properties:
   another transaction is in progress. The subscriber count is decremented when
   a subscriber commits the transaction.
 
-## ACTIVE TRANSACTIONS
+## Active transactions
 
 In PowerShell, only one transaction is active at a time, and you can manage
 only the active transaction. Multiple transactions can be in progress in the
@@ -157,7 +157,7 @@ previous transaction becomes active automatically. Transactions become active
 in the reverse of order of which they're started, so that the most recently
 started transaction is always active.
 
-## SUBSCRIBERS AND INDEPENDENT TRANSACTIONS
+## Subscribers and independent transactions
 
 If you start a transaction while another transaction is in progress, by
 default, PowerShell doesn't start a new transaction. Instead, it adds a
@@ -195,7 +195,7 @@ original transaction.
 When the independent transaction is finished (committed or rolled back), the
 original transaction becomes the active transaction again.
 
-## CHANGING DATA
+## Changing data
 
 When you use transactions to change data, the data that's affected by the
 transaction isn't changed until you commit the transaction. However, the same
@@ -210,7 +210,7 @@ However, the lock is a feature of the database. It isn't related to
 transactions. If you are working in a transaction-enabled file system or other
 data store, the data can be changed while the transaction is in progress.
 
-## EXAMPLES
+## Examples
 
 The examples in this section use the PowerShell Registry provider and assume
 that you are familiar with it. For information about the Registry provider,
@@ -834,7 +834,7 @@ SKC  VC Name                           Property
   0   0 MyCompany                      {}
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Providers](about_Providers.md)
 - [Get-ChildItem](xref:Microsoft.PowerShell.Management.Get-ChildItem)
