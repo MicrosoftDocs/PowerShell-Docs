@@ -1141,6 +1141,8 @@ different application name for a particular session, use the **ConnectionURI**
 or **ApplicationName** parameters of the [New-PSSession][46],
 [Enter-PSSession][43], or [Invoke-Command][45] cmdlets.
 
+## `$PSSessionApplicationName`
+
 The `$PSSessionApplicationName` preference variable is set on the local
 computer, but it specifies a listener on the remote computer. If the
 application name that you specify doesn't exist on the remote computer, the

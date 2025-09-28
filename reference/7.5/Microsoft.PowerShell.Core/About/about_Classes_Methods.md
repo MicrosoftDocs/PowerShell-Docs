@@ -802,7 +802,7 @@ PowerShell class methods have the following limitations:
 [03]: #static-methods
 [04]: about_Functions_Advanced_Parameters.md#parameter-and-variable-validation-attributes
 [05]: #example-4---static-method-with-overloads
-[06]: #defining-instance-methods-with-update-typedata
+[06]: #define-instance-methods-with-update-typedata
 [07]: about_Automatic_Variables.md
 [08]: about_Hidden.md
 [09]: about_Classes.md

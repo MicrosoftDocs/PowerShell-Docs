@@ -548,8 +548,8 @@ PowerShell class constructors have the following limitations:
 [04]: about_Hidden.md
 [05]: #example-4---chaining-constructors-with-a-shared-method
 [06]: #example-5---derived-class-constructors
-[07]: about_Classes_Methods.md#defining-instance-methods-with-update-typedata
-[08]: about_Classes_Properties.md#defining-instance-properties-with-update-typedata
+[07]: about_Classes_Methods.md#define-instance-methods-with-update-typedata
+[08]: about_Classes_Properties.md#define-instance-properties-with-update-typedata
 [09]: about_Classes_Properties.md
 [10]: about_Classes.md
 [11]: about_Classes_Inheritance.md

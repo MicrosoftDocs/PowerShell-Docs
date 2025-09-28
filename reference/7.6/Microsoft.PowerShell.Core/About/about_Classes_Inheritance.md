@@ -1602,7 +1602,7 @@ derived from them can be used for.
 [01]: /dotnet/api/system.iformattable#methods
 [02]: /dotnet/api/system.iequatable-1#methods
 [03]: /dotnet/api/system.icomparable#methods
-[04]: about_Classes.md#exporting-classes-with-type-accelerators
+[04]: about_Classes.md#export-classes-with-type-accelerators
 [05]: #example-1---inheriting-and-overriding-from-a-base-class
 [06]: #example-3---inheriting-from-a-generic-base-class
 [07]: #example-2---implementing-interfaces
