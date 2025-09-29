@@ -8,23 +8,23 @@ title: about_Certificate_Provider
 ---
 # about_Certificate_Provider
 
-## PROVIDER NAME
+## Provider name
 
 Certificate
 
-## DRIVES
+## Drives
 
 `Cert:`
 
-## CAPABILITIES
+## Capabilities
 
 **ShouldProcess**
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides access to X.509 certificate stores and certificates in PowerShell.
 
-## DETAILED DESCRIPTION
+## Detailed description
 
 > This information only applies to PowerShell running on Windows.
 
@@ -50,7 +50,7 @@ The **Certificate** provider supports the following cmdlets.
 - [Get-AuthenticodeSignature][16]
 - [Set-AuthenticodeSignature][18]
 
-## TYPES EXPOSED BY THIS PROVIDER
+## Types exposed by this provider
 
 The Certificate drive exposes the following types.
 
@@ -64,7 +64,7 @@ The Certificate drive exposes the following types.
   representing an X.509 certificate on the computer. Certificates are
   identified by their thumbprints.
 
-## NAVIGATING THE CERTIFICATE DRIVE
+## Navigating the Certificate drive
 
 The **Certificate** provider exposes the certificate namespace as the `Cert:`
 drive in PowerShell. This command uses the `Set-Location` command to change the
@@ -96,7 +96,7 @@ Set-Location C:
 > [Get-ChildItem][06], `cd` is an alias for [Set-Location][15], and `pwd` is an
 > alias for [Get-Location][09].
 
-## DISPLAYING THE CONTENTS OF THE CERT: DRIVE
+## Displaying the contents of the Cert: drive
 
 This command uses the `Get-ChildItem` cmdlet to display the certificate stores
 in the `CurrentUser` certificate store location.
@@ -201,7 +201,7 @@ Get-ChildItem @getChildItemSplat |
     }
 ```
 
-## OPENING THE CERTIFICATES MMC SNAP-IN
+## Opening the Certificates MMC snap-in
 
 The `Invoke-Item` cmdlet uses the default application to open a path you
 specify. For certificates, the default application is the Certificates MMC
@@ -214,7 +214,7 @@ certificate.
 Invoke-Item Cert:\CurrentUser\my\6B8223358119BB08840DEE50FD8AF9EA776CE66B
 ```
 
-## COPYING CERTIFICATES
+## Copying certificates
 
 Copying certificates isn't supported by the **Certificate** provider. When you
 attempt to copy a certificate, you see this error.
@@ -236,7 +236,7 @@ At line:1 char:1
                               Microsoft.PowerShell.Commands.CopyItemCommand
 ```
 
-## MOVING CERTIFICATES
+## Moving certificates
 
 ### Move all SSL Server authentication certs to the WebHosting store
 
@@ -260,7 +260,7 @@ Get-ChildItem Cert:\LocalMachine\My -SSLServerAuthentication |
     Move-Item -Destination Cert:\LocalMachine\WebHosting
 ```
 
-## DELETING CERTIFICATES AND PRIVATE KEYS
+## Deleting certificates and private keys
 
 The `Remove-Item` cmdlet deletes certificates that you specify. The
 **DeleteKey** dynamic parameter deletes the private key.
@@ -353,13 +353,13 @@ $expired = Get-ChildItem Cert:\LocalMachine\WebHosting -ExpiringInDays 0
 $expired | Remove-Item -DeleteKey
 ```
 
-## CREATING CERTIFICATES
+## Creating certificates
 
 The `New-Item` cmdlet doesn't create new certificates in the **Certificate**
 provider. Use the [New-SelfSignedCertificate][03] cmdlet to create a
 certificate for testing purposes.
 
-## CREATING CERTIFICATE STORES
+## Creating certificate stores
 
 In the `Cert:` drive, the `New-Item` cmdlet creates certificate stores in the
 `LocalMachine` store location. It supports the **Name**, **Path**, **WhatIf**,
@@ -390,7 +390,7 @@ Invoke-Command -ComputerName Server01 -ScriptBlock {
 }
 ```
 
-## CREATING CLIENT CERTIFICATES FOR WS-MAN
+## Creating client certificates for WS-MAN
 
 This command creates **ClientCertificate** entry that can be used by the
 **WS-Management** client. The new **ClientCertificate** shows up under the
@@ -408,7 +408,7 @@ $newItemSplat = @{
 New-Item @newItemSplat
 ```
 
-## DELETING CERTIFICATE STORES
+## Deleting certificate stores
 
 ### Delete a certificate store from a remote computer
 
@@ -423,7 +423,7 @@ Invoke-Command -ComputerName S1, S2 -ScriptBlock {
 }
 ```
 
-## DYNAMIC PARAMETERS
+## Dynamic parameters
 
 Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
@@ -542,7 +542,7 @@ certificates that have `Server Authentication` in their
 
 This parameter was reintroduced in PowerShell 7.1
 
-## SCRIPT PROPERTIES
+## Script properties
 
 New script properties have been added to the **X509Certificate2** object that
 represents the certificates to make it easy to search and manage the
@@ -564,14 +564,14 @@ These new features let you search for certificates based on their DNS names and
 expiration dates, and distinguish client and server authentication certificates
 by the value of their Enhanced Key Usage (EKU) properties.
 
-## USING THE PIPELINE
+## Using the pipeline
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
 tasks by sending provider data from one cmdlet to another provider cmdlet. To
 read more about how to use the pipeline with provider cmdlets, see the cmdlet
 references provided throughout this article.
 
-## GETTING HELP
+## Getting help
 
 Beginning in PowerShell 3.0, you can get customized help topics for provider
 cmdlets that explain how those cmdlets behave in a file system drive.
@@ -588,7 +588,7 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path Cert:
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Providers][01]
 - [about_Signing][02]

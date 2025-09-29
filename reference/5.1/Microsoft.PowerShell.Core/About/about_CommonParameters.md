@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 09/02/2025
+ms.date: 09/29/2025
 no-loc: [Debug, Verbose, Confirm]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -9,11 +9,11 @@ title: about_CommonParameters
 ---
 # about_CommonParameters
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the parameters that can be used with any cmdlet.
 
-## LONG DESCRIPTION
+## Long description
 
 The common parameters are a set of cmdlet parameters that you can use with any
 cmdlet. They're implemented by PowerShell, not by the cmdlet developer, and
@@ -73,7 +73,7 @@ The risk mitigation parameters are:
 - `WhatIf` (wi)
 - `Confirm` (cf)
 
-## COMMON PARAMETER DESCRIPTIONS
+## Common parameters
 
 ### -Debug
 
@@ -417,57 +417,66 @@ Valid values are strings, the same as for any variable names.
 > always contains the final piped item from the preceding command when used in
 > a command after the blocking command.
 
-The following is an example of how `PipelineVariable` works. In this example,
-the `PipelineVariable` parameter is added to a `ForEach-Object` command to
-store the results of the command in variables. A range of numbers, 1 to 5, are
-piped into the first `ForEach-Object` command, the results of which are stored
-in a variable named `$temp`.
+The following example illustrates how the `PipelineVariable` works. In this
+example, five numbers are piped into the first `ForEach-Object` command. Each
+item in the pipeline is stored in the pipeline variable named `$Temp`.
 
-The results of the first `ForEach-Object` command are piped into a second
-`ForEach-Object` command, which displays the current values of `$temp` and
-`$_`.
+The `Process` block of the first `ForEach-Object` command pipes the pipeline
+item into the downstream `ForEach-Object` command. The state of the variables
+is displayed in each step.
 
 ```powershell
-# Create a variable named $temp
-$temp=8
-Get-Variable temp
-# Note that the variable just created isn't available on the
-# pipeline when -PipelineVariable creates the same variable name
-1..5 | ForEach-Object -PipelineVariable temp -Begin {
-    Write-Host "Step1[BEGIN]:`$temp=$temp"
+# Create a variable named $Temp
+$Temp = 8
+Get-Variable Temp | Format-Table
+
+$InformationPreference = 'Continue'
+Write-Information '-------------------------------------------------'
+111,222,333,444,555 | ForEach-Object -PipelineVariable Temp -Begin {
+
+  # Note that the newly create $Temp variable doesn't contain the value 8
+  # assigned before the pipeline started and that $PSItem is empty in
+  # the Begin block.
+  Write-Information "Upstream (Begin):   PSItem = '$PSItem', Temp = '$Temp'"
+
 } -Process {
-  Write-Host "Step1[PROCESS]:`$temp=$temp - `$_=$_"
-  Write-Output $_
-} | ForEach-Object {
-  Write-Host "`tStep2[PROCESS]:`$temp=$temp - `$_=$_"
+
+  Write-Information "Upstream (Process): PSItem = '$PSItem', Temp = '$Temp'"
+  return $PSItem
+
+} | ForEach-Object -Process {
+
+  Write-Information "`tDownstream: PSItem = '$PSItem', Temp = '$Temp'"
+
 }
-# The $temp variable is deleted when the pipeline finishes
-Get-Variable temp
+Write-Information '-------------------------------------------------'
+
+# The $Temp variable is deleted when the pipeline finishes
+Get-Variable Temp | Format-Table
 ```
 
 ```Output
 Name                           Value
 ----                           -----
-temp                           8
+Temp                           8
 
-Step1[BEGIN]:$temp=
-Step1[PROCESS]:$temp= - $_=1
-        Step2[PROCESS]:$temp=1 - $_=1
-Step1[PROCESS]:$temp=1 - $_=2
-        Step2[PROCESS]:$temp=2 - $_=2
-Step1[PROCESS]:$temp=2 - $_=3
-        Step2[PROCESS]:$temp=3 - $_=3
-Step1[PROCESS]:$temp=3 - $_=4
-        Step2[PROCESS]:$temp=4 - $_=4
-Step1[PROCESS]:$temp=4 - $_=5
-        Step2[PROCESS]:$temp=5 - $_=5
+-------------------------------------------------
+Upstream (Begin):   PSItem = '', Temp = ''
+Upstream (Process): PSItem = '111', Temp = ''
+        Downstream: PSItem = '111', Temp = '111'
+Upstream (Process): PSItem = '222', Temp = '111'
+        Downstream: PSItem = '222', Temp = '222'
+Upstream (Process): PSItem = '333', Temp = '222'
+        Downstream: PSItem = '333', Temp = '333'
+Upstream (Process): PSItem = '444', Temp = '333'
+        Downstream: PSItem = '444', Temp = '444'
+Upstream (Process): PSItem = '555', Temp = '444'
+        Downstream: PSItem = '555', Temp = '555'
+-------------------------------------------------
 
-Get-Variable : Cannot find a variable with the name 'temp'.
-At line:1 char:1
-+ Get-Variable temp
-+ ~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (temp:String) [Get-Variable], ItemNotFoundException
-    + FullyQualifiedErrorId : VariableNotFound,Microsoft.PowerShell.Commands.GetVariableCommand
+Name                           Value
+----                           -----
+Temp
 ```
 
 > [!CAUTION]
@@ -476,57 +485,55 @@ At line:1 char:1
 > examples, `Get-Partition` is a CDXML function and `Get-CimInstance` is a
 > CimCmdlet.
 
-1. CDXML functions use `[CmdletBinding()]`, which allows the
-   **PipelineVariable** parameter.
+**Issue 1**: CDXML functions use `[CmdletBinding()]`, which allows the
+**PipelineVariable** parameter.
 
-   ```powershell
-   Get-Partition -pv pvar
-   ```
+```powershell
+Get-Partition -pv pvar
+```
 
-   However, when you use **PipelineVariable** in Windows PowerShell v5.1, you
-   receive the following error.
+However, when you use **PipelineVariable** in Windows PowerShell v5.1, you
+receive the following error.
 
-   ```Output
-   Get-Partition : Cannot retrieve the dynamic parameters for the cmdlet.
-   Object reference not set to an instance of an object.
+```Output
+Get-Partition : Cannot retrieve the dynamic parameters for the cmdlet.
+Object reference not set to an instance of an object.
 
-   At line:1 char:1
-   + get-partition -PipelineVariable pvar
-   + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-       + CategoryInfo          : InvalidArgument: (:) [Get-Partition], ParameterBindingException
-       + FullyQualifiedErrorId : GetDynamicParametersException,Get-Partition
-   ```
+At line:1 char:1
++ get-partition -PipelineVariable pvar
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Partition], ParameterBindingException
+    + FullyQualifiedErrorId : GetDynamicParametersException,Get-Partition
+```
 
-1. When the preceding command is _not_ a CDXML command and the downstream
-   contains either command type, the **PipelineVariable** remains as the last
-   accumulated object.
+**Issue 2**: When the preceding command is _not_ a CDXML command and the
+downstream contains either command type, the **PipelineVariable** remains as
+the last accumulated object.
 
-   ```powershell
-   Get-CimInstance Win32_DiskDrive -pv pvar |
-       ForEach-Object {
-           Write-Host "Before: $($pvar.Index)"
-           [pscustomobject]@{ DiskNumber = $_.Index }
-       } |
-       Get-Partition |
-       ForEach-Object {
-           Write-Host "After: $($pvar.Index)"
-       }
-   ```
+```powershell
+Get-CimInstance Win32_DiskDrive -pv pvar |
+    ForEach-Object {
+        Write-Host "Upstream: Disk $($pvar.Index)"
+        return [pscustomobject]@{ DiskNumber = $_.Index }
+    } | Get-Partition | ForEach-Object {
+        Write-Host "Downstream: Disk $($pvar.Index)"
+    }
+```
 
-   Notice that the value of `$pvar` set to the last object in the pipeline for
-   the second `ForEach-Object` command.
+Notice that the value of `$pvar` set to the last object in the pipeline for
+the second `ForEach-Object` command.
 
-   ```Output
-   Before: 1
-   Before: 2
-   Before: 0
-   After: 0
-   After: 0
-   After: 0
-   After: 0
-   After: 0
-   After: 0
-   ```
+```Output
+Upstream: Disk 1
+Upstream: Disk 2
+Upstream: Disk 0
+Downstream: Disk 0
+Downstream: Disk 0
+Downstream: Disk 0
+Downstream: Disk 0
+Downstream: Disk 0
+Downstream: Disk 0
+```
 
 ### -ProgressAction
 
@@ -676,7 +683,7 @@ from specific commands. You can use array notation, such as `$a[0]` or
 > The warning variable contains all warnings generated by the command,
 > including warnings from calls to nested functions or scripts.
 
-## RISK MANAGEMENT PARAMETER DESCRIPTIONS
+## Risk management parameters
 
 ### -WhatIf
 
@@ -818,7 +825,7 @@ Mode                LastWriteTime     Length Name
 -a---         8/27/2010   2:41 PM          0 test.txt
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Preference_Variables][03]
 - [Write-Debug][11]

@@ -9,11 +9,11 @@ title: about_Functions_Advanced_Parameters
 
 # about_Functions_Advanced_Parameters
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to add parameters to advanced functions.
 
-## LONG DESCRIPTION
+## Long description
 
 You can add parameters to the advanced functions that you write, and use
 parameter attributes and arguments to limit the parameter values that function
@@ -28,7 +28,7 @@ the parameters in a command. Splatting is valid on simple and advanced
 functions. For more information, see [about_Functions][14] and
 [about_Splatting][17].
 
-## PARAMETER DECLARATION
+## Parameter declaration
 
 Parameters are variables declared in the `param()` statement of a function or
 script block. You can use the optional `[Parameter()]` attribute alone or in
@@ -82,7 +82,7 @@ $args:
 
 For more information, see [about_Splatting][17].
 
-## TYPE CONVERSION OF PARAMETER VALUES
+## Type conversion of parameter values
 
 When you supply strings as arguments to parameters that expect a different
 type, PowerShell implicitly converts the strings to the parameter target type.
@@ -155,7 +155,7 @@ Cannot convert value "19-06-2018" to type "System.DateTime". Error:
 
 For more information, see [about_Type_Conversion](about_Type_Conversion.md).
 
-## STATIC PARAMETERS
+## Static parameters
 
 Static parameters are parameters that are always available in the function.
 Most parameters in PowerShell cmdlets and scripts are static parameters.
@@ -174,7 +174,7 @@ param(
 )
 ```
 
-## SWITCH PARAMETERS
+## Switch parameters
 
 Switch parameters are parameters that take no parameter value. Instead, they
 convey a Boolean true-or-false value through their presence or absence, so that
@@ -243,7 +243,7 @@ value is required.
   parameter, the command behaves as if the switch value is `$true` instead of
   `$false`.
 
-## DYNAMIC PARAMETERS
+## Dynamic parameters
 
 Dynamic parameters are parameters of a cmdlet, function, or script that are
 available only under certain conditions.
@@ -311,7 +311,7 @@ function Get-Sample {
 For more information, see the documentation for the
 [RuntimeDefinedParameter][02] type.
 
-## ATTRIBUTES OF PARAMETERS
+## Attributes of parameters
 
 This section describes the attributes that you can add to function parameters.
 
@@ -805,7 +805,7 @@ developer must implement the code to handle the wildcard input. The wildcards
 supported can vary according to the underlying API or PowerShell provider. For
 more information, see [about_Wildcards][19].
 
-## ARGUMENT COMPLETION ATTRIBUTES
+## Argument Completion attributes
 
 ### ArgumentCompletions attribute
 
@@ -830,7 +830,7 @@ after the parameter name.
 
 For more information, see [about_Functions_Argument_Completion][10].
 
-## PARAMETER AND VARIABLE VALIDATION ATTRIBUTES
+## Parameter and variable validation attributes
 
 Validation attributes direct PowerShell to test the parameter values that users
 submit when they call the advanced function. If the parameter values fail the
@@ -1348,7 +1348,7 @@ external usage.
 
 This attribute was added in PowerShell 6.1.1.
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables][05]
 - [about_Functions][14]

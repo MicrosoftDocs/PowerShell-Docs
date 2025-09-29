@@ -9,11 +9,11 @@ title: about_Classes_Methods
 
 # about_Classes_Methods
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how to define methods for PowerShell classes.
 
-## LONG DESCRIPTION
+## Long description
 
 Methods define the actions that a class can perform. Methods can take
 parameters that specify input data. Methods always define an output type. If a
@@ -44,7 +44,7 @@ methods.
 Class methods can have any number of attributes, including the [hidden][02] and
 [static][03] attributes.
 
-## SYNTAX
+## Syntax
 
 Class methods use the following syntaxes:
 
@@ -65,7 +65,7 @@ Class methods use the following syntaxes:
 }
 ```
 
-## EXAMPLES
+## Examples
 
 ### Example 1 - Minimal method definition
 
@@ -284,7 +284,7 @@ VERBOSE: Called [ExampleCube4]::GetVolume(2, 2, 0, False)
 0
 ```
 
-## METHOD SIGNATURES AND OVERLOADS
+## Method signatures and overloads
 
 Every class method has a unique signature that defines how to call the method.
 The method's output type, name, and parameters define the method signature.
@@ -342,14 +342,14 @@ class CardDeck {
 }
 ```
 
-## METHOD OUTPUT
+## Method output
 
 By default, methods don't have any output. If a method signature includes an
 explicit output type other than **Void**, the method must return an object of
 that type. Methods don't emit any output except when the `return` keyword
 explicitly returns an object.
 
-## METHOD PARAMETERS
+## Method parameters
 
 Class methods can define input parameters to use in the method body. Method
 parameters are enclosed in parentheses and are separated by commas. Empty
@@ -392,7 +392,7 @@ parameters:
    For more information, see the
    [Defining instance methods with Update-TypeData][06] section.
 
-## AUTOMATIC VARIABLES IN METHODS
+## Automatic variables in methods
 
 Not all automatic variables are available in methods. The following list
 includes automatic variables and suggestions for whether and how to use them in
@@ -446,7 +446,7 @@ available to class methods.
 For more information about automatic variables, see
 [about_Automatic_Variables][07].
 
-## HIDDEN METHODS
+## Hidden methods
 
 You can hide methods of a class by declaring them with the `hidden` keyword.
 Hidden class methods are:
@@ -466,7 +466,7 @@ Hidden class methods are:
 
 For more information about the `hidden` keyword, see [about_Hidden][08].
 
-## STATIC METHODS
+## Static methods
 
 You can define a method as belonging to the class itself instead of instances
 of the class by declaring the method with the `static` keyword. Static class
@@ -479,7 +479,7 @@ methods:
   properties.
 - Live for the entire session span.
 
-## DERIVED CLASS METHODS
+## Derived class methods
 
 When a class derives from a base class, it inherits the methods of the base
 class and their overloads. Any method overloads defined on the base class,
@@ -653,7 +653,7 @@ $b.SetTimeStamp()    => 2023-11-06
 $c.SetTimeStamp()    => 10/27/2023 9:53:58 AM
 ```
 
-## DEFINING INSTANCE METHODS WITH UPDATE-TYPEDATA
+## Define instance methods with Update-TypeData
 
 Beyond declaring methods directly in the class definition, you can define
 methods for instances of a class in the static constructor using the
@@ -764,7 +764,7 @@ You ate 6 cookies. There are 4 left.
 > raise a meaningful error instead. That way, users can understand why they're
 > seeing the error and what to do about it.
 
-## LIMITATIONS
+## Limitations
 
 PowerShell class methods have the following limitations:
 
@@ -787,7 +787,7 @@ PowerShell class methods have the following limitations:
 
   Workaround: None.
 
-## SEE ALSO
+## See also
 
 - [about_Automatic_Variables][07]
 - [about_Classes][09]
@@ -802,7 +802,7 @@ PowerShell class methods have the following limitations:
 [03]: #static-methods
 [04]: about_Functions_Advanced_Parameters.md#parameter-and-variable-validation-attributes
 [05]: #example-4---static-method-with-overloads
-[06]: #defining-instance-methods-with-update-typedata
+[06]: #define-instance-methods-with-update-typedata
 [07]: about_Automatic_Variables.md
 [08]: about_Hidden.md
 [09]: about_Classes.md

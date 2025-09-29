@@ -8,10 +8,11 @@ title: about_Remote
 ---
 # about_Remote
 
-## SHORT DESCRIPTION
+## Short description
+
 Describes how to run remote commands in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 You can run remote commands on a single or multiple remote computers using a
 temporary or persistent connection. You can also start an interactive session
@@ -21,7 +22,7 @@ with a single remote computer.
 > To use PowerShell remoting, you must configure the local and remote computers
 > for remoting. For more information, see [about_Remote_Requirements][06].
 
-## HOW TO START AN INTERACTIVE SESSION
+## How to start an interactive session
 
 The easiest way to run remote commands is to start an interactive session with
 a remote computer.
@@ -96,7 +97,7 @@ Get-Command | Where-Object {
 }
 ```
 
-## HOW TO RUN A REMOTE COMMAND
+## How to run a remote command
 
 To run other commands on remote computers, use the `Invoke-Command` cmdlet.
 
@@ -111,7 +112,7 @@ computer.
 Invoke-Command -ComputerName Server01 -ScriptBlock {Get-Culture}
 ```
 
-## HOW TO CREATE A PERSISTENT CONNECTION
+## How to create a persistent connection
 
 When you use the **ComputerName** parameter of the `Invoke-Command` cmdlet,
 PowerShell establishes a temporary connection to the remote computer. It closes
@@ -126,7 +127,7 @@ and Server02 computers and then saves the PSSessions in the `$s` variable.
 $s = New-PSSession -ComputerName Server01, Server02
 ```
 
-## HOW TO RUN COMMANDS IN A PSSESSION
+## How to run commands in a PSSession
 
 With a PSSession, you can run a series of remote commands that share data, like
 functions, aliases, and the values of variables. To run commands in a
@@ -148,7 +149,7 @@ the number of processes saved in `$p`.
 Invoke-Command -Session $s -ScriptBlock {$p.Count}
 ```
 
-## HOW TO RUN A REMOTE COMMAND ON MULTIPLE COMPUTERS
+## How to run a remote command on multiple computers
 
 To run a remote command on multiple computers, type all the computer names in
 the value of the **ComputerName** parameter of `Invoke-Command`. Separate the
@@ -177,7 +178,7 @@ computer, type a dot (`.`), or type `localhost`.
 Invoke-Command -ComputerName S1, S2, S3, localhost -ScriptBlock {Get-Culture}
 ```
 
-## HOW TO RUN A SCRIPT ON REMOTE COMPUTERS
+## How to run a script on remote computers
 
 To run a local script on remote computers, use the **FilePath** parameter of
 `Invoke-Command`. You don't need to copy any files. For example, the following
@@ -189,13 +190,13 @@ Invoke-Command -ComputerName S1, S2 -FilePath C:\Test\Sample.ps1
 
 PowerShell returns the results of the script to the local computer.
 
-## HOW TO STOP A REMOTE COMMAND
+## How to stop a remote command
 
 To interrupt a command, press <kbd>Ctrl</kbd>+<kbd>c</kbd>. PowerShell passes
 the interrupt request to the remote computer where it terminates the remote
 command.
 
-## FOR MORE INFORMATION
+## For more information
 
 - For information about the system requirements for remoting, see
   [about_Remote_Requirements][06].
@@ -214,7 +215,7 @@ command.
 
 - For information about PowerShell background jobs, see [about_Jobs][02].
 
-## SEE ALSO
+## See also
 
 - [about_Remote_Disconnected_Sessions][04]
 - [about_Remote_Variables][08]

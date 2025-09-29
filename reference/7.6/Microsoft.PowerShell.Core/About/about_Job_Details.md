@@ -2,17 +2,17 @@
 description: Provides details about background jobs on local and remote computers.
 Locale: en-US
 ms.date: 03/24/2025
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_job_details?view=powershell-7.5&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_job_details?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Job_Details
 ---
 # about_Job_Details
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides details about background jobs on local and remote computers.
 
-## LONG DESCRIPTION
+## Long description
 
 This topic explains the concept of a background job and provides technical
 information about how background jobs work in PowerShell.
@@ -297,7 +297,7 @@ For more information, see the following articles:
 - [about_Scheduled_Jobs][01]
 - [about_Workflows][02]
 
-## EXAMPLES
+## Examples
 
 The following commands create a local background job, a remote background job,
 a workflow job, and a scheduled job. Then, it uses the `Get-Job` cmdlet to get
@@ -332,7 +332,7 @@ Id  Name        PSJobTypeName  State   HasMoreData   Location   Command
 2   RemoteData  RemoteJob      Running        True   Server01   Get-Process
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Jobs][03]
 - [about_Remote][05]

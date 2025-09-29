@@ -8,11 +8,11 @@ title: about_Pipelines
 ---
 # about_Pipelines
 
-## SHORT DESCRIPTION
+## Short description
 
 Combining commands into pipelines in the PowerShell
 
-## LONG DESCRIPTION
+## Long description
 
 A pipeline is a series of commands connected by pipeline operators (`|`)
 (ASCII 124). Each pipeline operator sends the results of the preceding command
@@ -96,7 +96,7 @@ tmp2.txt                   114000
 tmp3.txt                   114000
 ```
 
-## USING PIPELINES
+## Using pipelines
 
 Most PowerShell cmdlets are designed to support pipelines. In most cases, you
 can _pipe_ the results of a **Get** cmdlet to another cmdlet of the same noun.
@@ -159,7 +159,7 @@ PS> ipconfig.exe | Select-String -Pattern 'IPv4'
 With a bit of practice, you'll find that combining simple commands into
 pipelines saves time and typing, and makes your scripting more efficient.
 
-## HOW PIPELINES WORK
+## How pipelines work
 
 This section explains how input objects are bound to cmdlet parameters and
 processed during pipeline execution.
@@ -397,7 +397,7 @@ For example,
 It's important to remember that objects sent down the pipeline are delivered
 one at a time.
 
-## USING NATIVE COMMANDS IN THE PIPELINE
+## Using native commands in the pipeline
 
 PowerShell allows you to include native external commands in the pipeline.
 However, it's important to note that PowerShell's pipeline is object-oriented
@@ -410,7 +410,7 @@ the raw data output.
 As a workaround, call the native commands using `cmd.exe /c` and use the `|`
 and `>` operators provided by the native shell.
 
-## INVESTIGATING PIPELINE ERRORS
+## Investigating pipeline errors
 
 When PowerShell can't associate the piped objects with a parameter of the
 receiving cmdlet, the command fails.
@@ -534,7 +534,7 @@ Get-Item -Path HKLM:\Software\MyCompany\design |
 Move-ItemProperty -Destination HKLM:\Software\MyCompany\sales -Name product
 ```
 
-## INTRINSIC LINE CONTINUATION
+## Intrinsic line continuation
 
 As already discussed, a pipeline is a series of commands connected by pipeline
 operators (`|`), usually written on a single line. However, for readability,
@@ -559,7 +559,7 @@ Command-1 |
 The leading spaces on the subsequent lines aren't significant. The indentation
 enhances readability.
 
-## SEE ALSO
+## See also
 
 - [about_Objects][05]
 - [about_Parameters][06]

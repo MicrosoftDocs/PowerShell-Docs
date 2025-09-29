@@ -8,11 +8,11 @@ title: about_Jobs
 ---
 # about_Jobs
 
-## SHORT DESCRIPTION
+## Short description
 Provides information about how PowerShell background jobs run a command or
 expression in the background without interacting with the current session.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell concurrently runs commands and scripts through jobs. There are three
 jobs types provided by PowerShell to support concurrency.
@@ -58,7 +58,7 @@ There are two ways work around this situation:
    information, see
    [Start-Process](xref:Microsoft.PowerShell.Management.Start-Process).
 
-## THE JOB CMDLETS
+## The job cmdlets
 
 - `Start-Job` - Starts a background job on a local computer.
 - `Get-Job` - Gets the background jobs that were started in the current
@@ -72,7 +72,7 @@ There are two ways work around this situation:
   remote computer. You can use `Invoke-Command` to run any job command
   remotely, including `Start-Job`.
 
-## HOW TO START A JOB ON THE LOCAL COMPUTER
+## How to start a job on the local computer
 
 To start a background job on the local computer, use the `Start-Job` cmdlet.
 
@@ -113,7 +113,7 @@ Using the background operator is functionally equivalent to using the
 $job = Get-Process &
 ```
 
-## GETTING JOB OBJECTS
+## Getting job objects
 
 The `Get-Job` cmdlet returns objects that represent the background jobs that
 were started in the current session. Without parameters, `Get-Job` returns all
@@ -141,7 +141,7 @@ later command. The following command gets the job with ID 1 and saves it in the
 $job = Get-Job -Id 1
 ```
 
-## GETTING THE RESULTS OF A JOB
+## Getting the results of a job
 
 When you run a background job, the results don't appear immediately. To get
 the results of a background job, use the `Receive-Job` cmdlet.
@@ -276,7 +276,7 @@ the command prompt returns, but the job continues to run in the background.
 Wait-Job -Id 10 -Timeout 120
 ```
 
-## STOPPING A JOB
+## Stopping a job
 
 To stop a background job, use the `Stop-Job` cmdlet. The following command
 starts a job to get every entry in the System event log. It saves the job
@@ -293,7 +293,7 @@ the job in the `$job` variable to `Stop-Job`.
 $job | Stop-Job
 ```
 
-## DELETING A JOB
+## Deleting a job
 
 To delete a background job, use the `Remove-Job` cmdlet. The following command
 deletes the job in the `$job` variable.
@@ -302,7 +302,7 @@ deletes the job in the `$job` variable.
 Remove-Job -Job $job
 ```
 
-## INVESTIGATING A FAILED JOB
+## Investigating a failed job
 
 Jobs can fail for many reasons. the job object contains a **Reason** property
 that contains information about the cause of the failure.
@@ -331,7 +331,7 @@ message:
 > Connecting to remote server failed with the following error message: "Access
 > is denied".
 
-## SEE ALSO
+## See also
 
 - [about_Job_Details](about_Job_Details.md)
 - [about_PSSessions](about_PSSessions.md)

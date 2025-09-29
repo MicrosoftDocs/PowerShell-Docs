@@ -8,11 +8,11 @@ title: about_Regular_Expressions
 ---
 # about_Regular_Expressions
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes regular expressions in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 > [!NOTE]
 > This article shows the syntax and methods for using regular expressions in
@@ -40,7 +40,7 @@ shown above has a different way to force case sensitivity.
   `-cmatch`, `-creplace`, or `-csplit`
 - For the `switch` statement, use the `-CaseSensitive` option
 
-## CHARACTER LITERALS
+## Character literals
 
 A regular expression can be a literal character or a string. The expression
 causes the engine to match the text specified exactly.
@@ -50,12 +50,12 @@ causes the engine to match the text specified exactly.
 'book' -match 'oo'
 ```
 
-## CHARACTER CLASSES
+## Character classes
 
 While character literals work if you know the exact pattern, character classes
 allow you to be less specific.
 
-## CHARACTER GROUPS
+## Character groups
 
 `[character group]` allows you to match any number of characters one time,
 while `[^character group]` only matches characters NOT in the group.
@@ -126,7 +126,7 @@ characters with ` `.
 ' - ' -match '\s- '
 ```
 
-## QUANTIFIERS
+## Quantifiers
 
 Quantifiers control how many instances of each element should be present in the
 input string.
@@ -178,7 +178,7 @@ optional.
 '111-222-3333' -match '\d{3}-\d{3}-\d{4}'
 ```
 
-## ANCHORS
+## Anchors
 
 Anchors allow you to cause a match to succeed or fail based on the matches
 position within the input string.
@@ -211,7 +211,7 @@ When using anchors in PowerShell, you should understand the difference between
 To read more about these options and how to use them, visit the
 [Regular Expression Language - Quick Reference][02].
 
-## ESCAPING CHARACTERS
+## Escaping characters
 
 The backslash (`\`) is used to escape characters so they aren't parsed by the
 regular expression engine.
@@ -255,7 +255,7 @@ The following are a few commonly used character escapes:
 | `\n`             | Matches a newline         |
 | `\r`             | Matches a carriage return |
 
-## GROUPS, CAPTURES, AND SUBSTITUTIONS
+## Groups, captures, and substitutions
 
 Grouping constructs separate an input string into substrings that can be
 captured or ignored. Grouped substrings are called subexpressions. By default
@@ -462,7 +462,7 @@ Gobble Gobble
 For detailed information on substitution expressions, see
 [Substitutions in Regular Expressions][04].
 
-## COMMENTS IN REGULAR EXPRESSIONS
+## Comments in regular expressions
 
 Regular expressions can be very complex and difficult to read. You can use
 comments to make them more understandable. There are two types of comments
@@ -474,7 +474,7 @@ allowed in regular expressions.
 For more information, see the _Regular expression comments_ section of
 [about_Comments][05].
 
-## SEE ALSO
+## See also
 
 - [about_Operators][08]
 - [about_Comparison_Operators][06]

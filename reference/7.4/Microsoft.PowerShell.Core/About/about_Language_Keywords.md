@@ -8,11 +8,11 @@ title: about_Language_Keywords
 ---
 # about_Language_Keywords
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the keywords in the PowerShell scripting language.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell has the following language keywords. For more information, see the
 about topic for the keyword and the information that follows the table.
@@ -66,7 +66,7 @@ The following keywords are used by PowerShell workflows:
 PowerShell workflows are only supported in PowerShell 5.1. For more information
 about workflows, see [Running PowerShell Commands in a Workflow][01].
 
-## `BEGIN`
+## `begin`
 
 Specifies one part of the body of a function, along with the `dynamicparam`,
 `process`, and `end` keywords. The `begin` statement list runs one time before
@@ -83,7 +83,7 @@ function <name> {
 }
 ```
 
-## `BREAK`
+## `break`
 
 Causes a script to exit a loop.
 
@@ -101,7 +101,7 @@ while (<condition>) {
 }
 ```
 
-## `CATCH`
+## `catch`
 
 Specifies a statement list to run if an error occurs in the accompanying `try`
 statement list. An error type requires brackets. The second pair of brackets
@@ -114,7 +114,7 @@ try {<statement list>}
 catch [[<error type>]] {<statement list>}
 ```
 
-## `CLASS`
+## `class`
 
 Specifies a new class in PowerShell.
 
@@ -128,14 +128,14 @@ class <class-name> {
 }
 ```
 
-## `CLEAN`
+## `clean`
 
 The `clean` keyword was added in PowerShell 7.3. The keyword defines a block of
 code that's guaranteed to run after the `begin`, `process` and `end` blocks of
 a function. Unlike the `end` block, the `clean` block is always executed, even
 when there is a terminating error in one of the other blocks.
 
-## `CONTINUE`
+## `continue`
 
 Causes a script to stop running a loop and to go back to the condition. If the
 condition is met, the script begins the loop again.
@@ -154,7 +154,7 @@ while (<condition>) {
 }
 ```
 
-## `DATA`
+## `data`
 
 In a script, defines a section that isolates data from the script logic. Can
 also include `if` statements and some limited commands.
@@ -165,7 +165,7 @@ Syntax:
 data <variable> [-SupportedCommand <cmdlet-name>] {<permitted content>}
 ```
 
-## `DO`
+## `do`
 
 Used with the `while` or `until` keyword as a looping construct. PowerShell
 runs the statement list at least one time, unlike a loop that uses `while`.
@@ -182,7 +182,7 @@ Syntax for `until`:
 do {<statement list>} until (<condition>)
 ```
 
-## `DYNAMICPARAM`
+## `dynamicparam`
 
 Specifies one part of the body of a function, along with the `begin`,
 `process`, and `end` keywords. Dynamic parameters are added at runtime.
@@ -198,7 +198,7 @@ function <name> {
 }
 ```
 
-## `ELSE`
+## `else`
 
 Used with the `if` keyword to specify the default statement list.
 
@@ -209,7 +209,7 @@ if (<condition>) {<statement list>}
 else {<statement list>}
 ```
 
-## `ELSEIF`
+## `elseif`
 
 Used with the `if` and `else` keywords to specify additional conditionals. The
 `else` keyword is optional.
@@ -222,7 +222,7 @@ elseif (<condition>) {<statement list>}
 else {<statement list>}
 ```
 
-## `END`
+## `end`
 
 Specifies one part of the body of a function, along with the `dynamicparam`,
 `begin`, and `end` keywords. The `end` statement list runs one time after all
@@ -239,7 +239,7 @@ function <name> {
 }
 ```
 
-## `ENUM`
+## `enum`
 
 `enum` is used to declare an enumeration; a distinct type that consists of a
 set of named labels called the enumerator list.
@@ -253,7 +253,7 @@ enum <enum-name> {
 }
 ```
 
-## `EXIT`
+## `exit`
 
 Causes PowerShell to exit a script or a PowerShell instance.
 
@@ -309,7 +309,7 @@ the `exit` command. If the script has no `exit` statement, the exit code is
 always `0` when the script completes without error or `1` when the script
 terminates from an unhandled exception.
 
-## `FILTER`
+## `filter`
 
 Specifies a function in which the statement list runs one time for each input
 object. It has the same effect as a function that contains only a `process`
@@ -321,7 +321,7 @@ Syntax:
 filter <name> {<statement list>}
 ```
 
-## `FINALLY`
+## `finally`
 
 Defines a statement list that runs after statements that are associated with
 `try` and `catch`. A `finally` statement list runs even if you press
@@ -336,7 +336,7 @@ catch [<error type>] {<statement list>}
 finally {<statement list>}
 ```
 
-## `FOR`
+## `for`
 
 Defines a loop with a condition.
 
@@ -346,7 +346,7 @@ Syntax:
 for (<initialize>; <condition>; <iterate>) { <statement list> }
 ```
 
-## `FOREACH`
+## `foreach`
 
 Defines a loop using each member of a collection.
 
@@ -356,11 +356,11 @@ Syntax:
 foreach (<item> in <collection>) { <statement list> }
 ```
 
-## `FROM`
+## `from`
 
 Reserved for future use.
 
-## `FUNCTION`
+## `function`
 
 Creates a named statement list of reusable code. You can name the scope a
 function belongs to. You can also specify one or more named parameters by using
@@ -393,7 +393,7 @@ function [<scope:>]<name> [([type]<$PName1>, [[type]<$PName2>])] {
 }
 ```
 
-## `IF`
+## `if`
 
 Defines a conditional.
 
@@ -403,7 +403,7 @@ Syntax:
 if (<condition>) {<statement list>}
 ```
 
-## `HIDDEN`
+## `hidden`
 
 Hides class members from the default results of the `Get-Member` cmdlet,
 IntelliSense, and tab completion results.
@@ -414,7 +414,7 @@ Syntax:
 hidden [data type] $member_name
 ```
 
-## `IN`
+## `in`
 
 Used in a `foreach` statement to create a loop that uses each member of a
 collection.
@@ -425,7 +425,7 @@ Syntax:
 foreach (<item> in <collection>){<statement list>}
 ```
 
-## `PARAM`
+## `param`
 
 Defines the parameters in a function.
 
@@ -438,7 +438,7 @@ function [<scope:>]<name> {
 }
 ```
 
-## `PROCESS`
+## `process`
 
 Specifies a part of the body of a function, along with the `dynamicparam`,
 `begin`, and `end` keywords. When a `process` statement list receives input
@@ -458,7 +458,7 @@ function <name> {
 }
 ```
 
-## `RETURN`
+## `return`
 
 Causes PowerShell to leave the current scope, such as a script or function, and
 writes the optional expression to the output.
@@ -469,14 +469,14 @@ Syntax:
 return [<expression>]
 ```
 
-## `STATIC`
+## `static`
 
 Specifies the property or method defined is common to all instances of the
 class in which it is defined.
 
 See `class` for usage examples.
 
-## `SWITCH`
+## `switch`
 
 To check multiple conditions, use a `switch` statement. The `switch` statement
 is equivalent to a series of `if` statements, but it is simpler.
@@ -510,7 +510,7 @@ switch [-Regex|-Wildcard|-Exact][-CaseSensitive] -File <filename>
 }
 ```
 
-## `THROW`
+## `throw`
 
 Throws an object as an error.
 
@@ -520,7 +520,7 @@ Syntax:
 throw [<object>]
 ```
 
-## `TRAP`
+## `trap`
 
 Defines a statement list to be run if an error is encountered. An error type
 requires brackets. The second pair of brackets indicates that the error type
@@ -532,7 +532,7 @@ Syntax:
 trap [[<error type>]] {<statement list>}
 ```
 
-## `TRY`
+## `try`
 
 Defines a statement list to be checked for errors while the statements run. If
 an error occurs, PowerShell continues running in a `catch` or `finally`
@@ -547,7 +547,7 @@ catch [[<error type>]] {<statement list>}
 finally {<statement list>}
 ```
 
-## `UNTIL`
+## `until`
 
 Used in a `do` statement as a looping construct where the statement list is
 executed at least one time.
@@ -558,7 +558,7 @@ Syntax:
 do {<statement list>} until (<condition>)
 ```
 
-## `USING`
+## `using`
 
 Allows you to indicate which namespaces are used in the session. Type names,
 classes, and members require less typing to reference them. You can also
@@ -584,7 +584,7 @@ using assembly <.NET-assembly-path>
 
 For more information, see [about_Using][23].
 
-## `WHILE`
+## `while`
 
 The `while` statement is a looping construct where the condition is tested
 before the statements are executed. If the condition is false, then the
@@ -607,7 +607,7 @@ the statement list is executed at least one time.
 do {<statement list>} while (<condition>)
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Special_Characters][18]
 - [about_Wildcards][25]

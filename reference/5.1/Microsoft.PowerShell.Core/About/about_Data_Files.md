@@ -8,23 +8,23 @@ title: about_Data_Files
 ---
 # about_Data_Files
 
-## SHORT DESCRIPTION
+## Short description
 
 PowerShell data files are used to store arbitrary data using PowerShell syntax.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell data (`.psd1`) files can store arbitrary data in PowerShell syntax.
 That data can be imported into variables in a PowerShell session. PowerShell
 has three types of data files and provides a cmdlet to import each type.
 
-## BASIC DATA FILES
+## Basic data files
 
 The `Import-PowerShellDataFile` cmdlet imports basic data files. The data in
 the file must be contained in a hashtable. This format only supports constant
 values. You can't use code or PowerShell expressions.
 
-## MODULE MANIFESTS
+## Module manifests
 
 Module manifests are PowerShell data files. The data in the file must be
 contained in a hashtable. The structure of that hashtable only supports
@@ -40,7 +40,7 @@ that can be used.
 
 For more information, see [about_Module_Manifests][03].
 
-## LOCALIZED DATA
+## Localized data
 
 The `Import-LocalizedData` cmdlet imports localized data files. During import,
 the file is processed in `Constrained` language mode. `Constrained` mode limits
@@ -59,7 +59,7 @@ supported by the PowerShell syntax, such as `data` sections.
 
 For more information, see [about_Data_Sections][01].
 
-## SEE ALSO
+## See also
 
 - [Import-LocalizedData][05]
 - [Import-Module][04]

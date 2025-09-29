@@ -8,23 +8,23 @@ title: about_Registry_Provider
 ---
 # about_Registry_Provider
 
-## PROVIDER NAME
+## Provider name
 
 Registry
 
-## DRIVES
+## Drives
 
 `HKLM:`, `HKCU:`
 
-## CAPABILITIES
+## Capabilities
 
 **ShouldProcess**, **UseTransactions**
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides access to the registry keys, entries, and values in PowerShell.
 
-## DETAILED DESCRIPTION
+## Detailed description
 
 > This information only applies to PowerShell running on Windows.
 
@@ -53,14 +53,14 @@ The **Registry** provider supports the following cmdlets:
 - [Get-Acl][24]
 - [Set-Acl][25]
 
-## TYPES EXPOSED BY THIS PROVIDER
+## Types exposed by this provider
 
 The **Registry** provider returns registry data in one of two types:
 
 - [Microsoft.Win32.RegistryKey][01] for registry keys
 - [PSCustomObject][02] for registry values
 
-## NAVIGATING THE REGISTRY DRIVES
+## Navigating the registry drives
 
 The **Registry** provider exposes its data store as two default drives.
 
@@ -104,7 +104,7 @@ mapped drive name `HKLM`.
 cd "Registry::HKEY_LOCAL_MACHINE\Software"
 ```
 
-## DISPLAYING THE CONTENTS OF REGISTRY KEYS
+## Displaying the contents of registry keys
 
 The registry is divided into keys, subkeys, and entries. For more information
 about registry structure, see [Structure of the Registry][03].
@@ -196,7 +196,7 @@ articles.
 -[Get-Item][10]
 -[Get-ChildItem][09]
 
-## VIEWING REGISTRY KEY VALUES
+## Viewing registry key values
 
 Registry key values are stored as properties of each registry key. The
 `Get-ItemProperty` cmdlet views registry key properties using the name you
@@ -266,7 +266,7 @@ articles.
 - [Get-ItemProperty][11]
 - [Get-ItemPropertyValue][12]
 
-## CHANGING REGISTRY KEY VALUES
+## Changing registry key values
 
 The `Set-ItemProperty` cmdlet sets registry values associated with a registry
 key. The following example uses `Set-ItemProperty` to change the spooler
@@ -313,7 +313,7 @@ articles.
 - [Set-Item][21]
 - [Set-ItemProperty][22]
 
-## CREATING REGISTRY KEYS AND VALUES
+## Creating registry keys and values
 
 The `New-Item` cmdlet creates new registry keys with a name that you provide.
 You can also use the `mkdir` function, which calls the `New-Item` cmdlet
@@ -346,7 +346,7 @@ New-ItemProperty -Path $path -Name Test -Type DWord -Value 1
 
 For detailed cmdlet usage, see [New-ItemProperty][18].
 
-## COPYING REGISTRY KEYS AND VALUES
+## Copying registry keys and values
 
 In the **Registry** provider, use the `Copy-Item` cmdlet copies registry keys
 and values. Use the `Copy-ItemProperty` cmdlet to copy registry values only.
@@ -376,7 +376,7 @@ articles.
 - [Copy-Item][07]
 - [Copy-ItemProperty][08]
 
-## MOVING REGISTRY KEYS AND VALUES
+## Moving registry keys and values
 
 The `Move-Item` and `Move-ItemProperty` cmdlets behave like their "Copy"
 counterparts. If the destination exists, `Move-Item` moves the source key
@@ -405,7 +405,7 @@ articles.
 - [Move-Item][15]
 - [Move-ItemProperty][16]
 
-## RENAMING REGISTRY KEYS AND VALUES
+## Renaming registry keys and values
 
 You can rename registry keys and values just like you would files and folders.
 `Rename-Item` renames registry keys, while `Rename-ItemProperty` renames
@@ -417,7 +417,7 @@ Rename-ItemProperty -Path $path -Name ContosoTest -NewName FabrikamTest
 Rename-Item -Path $path -NewName Fabrikam
 ```
 
-## CHANGING SECURITY DESCRIPTORS
+## Changing security descriptors
 
 You can restrict access to registry keys using the `Get-Acl` and `Set-Acl`
 cmdlets. The following example adds a new user with full control to the
@@ -436,7 +436,7 @@ For more examples and cmdlet usage details see the following articles.
 - [Get-Acl][24]
 - [Set-Acl][25]
 
-## REMOVING AND CLEARING REGISTRY KEYS AND VALUES
+## Removing and clearing registry keys and values
 
 You can remove contained items using `Remove-Item`. You are prompted to confirm
 the removal if the item contains anything else. The following example attempts
@@ -527,7 +527,7 @@ For more examples and cmdlet usage details see the following articles.
 - [Remove-Item][19]
 - [Remove-ItemProperty][20]
 
-## DYNAMIC PARAMETERS
+## Dynamic parameters
 
 Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
@@ -559,14 +559,14 @@ no effect.
 - `Unknown` - Indicates an unsupported registry data type, such as
   REG_RESOURCE_LIST values.
 
-## USING THE PIPELINE
+## Using the pipeline
 
 Provider cmdlets accept pipeline input. You can use the pipeline to simplify
 task by sending provider data from one cmdlet to another provider cmdlet. To
 read more about how to use the pipeline with provider cmdlets, see the cmdlet
 references provided throughout this article.
 
-## GETTING HELP
+## Getting help
 
 Beginning in Windows PowerShell 3.0, you can get customized help topics for
 provider cmdlets that explain how those cmdlets behave in a file system drive.
@@ -583,7 +583,7 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path HKLM:
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Providers][04]
 

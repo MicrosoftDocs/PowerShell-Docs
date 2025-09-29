@@ -8,11 +8,11 @@ title: about_Group_Policy_Settings
 ---
 # about_Group_Policy_Settings
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the Group Policy settings for Windows PowerShell
 
-## LONG DESCRIPTION
+## Long description
 
 Windows PowerShell includes Group Policy settings to help you define
 consistent configuration values for Windows computers in an enterprise
@@ -51,7 +51,7 @@ For more information about acquiring other templates and configuring Group
 policy, see
 [How to create and manage the Central Store for Group Policy Administrative Templates in Windows][gpstore].
 
-## TURN ON MODULE LOGGING
+## Turn on module logging
 
 The **Turn on Module Logging** policy setting turns on logging for selected
 PowerShell modules. The setting is effective in all sessions on all affected
@@ -85,7 +85,7 @@ previous commands to the 'All Users' PowerShell profile
 For more information about module logging, see
 [about_Modules](about_Modules.md).
 
-## TURN ON POWERSHELL SCRIPT BLOCK LOGGING
+## Turn on PowerShell script block logging
 
 The **Turn on PowerShell Script Block Logging** policy setting enables logging
 of all PowerShell script input to the Microsoft-Windows-PowerShell/Operational
@@ -98,7 +98,7 @@ you enable the Script Block Invocation Logging, PowerShell also logs events
 when invocation of a command, script block, function, or script starts or
 stops. Enabling Invocation Logging generates a high volume of event logs.
 
-## TURN ON SCRIPT EXECUTION
+## Turn on script execution
 
 The **Turn on Script Execution** policy setting sets the execution policy for
 computers and users. The execution policy determines whether to permit scripts
@@ -129,7 +129,7 @@ scripts are permitted to run. The default value is `Restricted`.
 For more information, see
 [about_Execution_Policies](about_Execution_Policies.md).
 
-## TURN ON POWERSHELL TRANSCRIPTION
+## Turn on PowerShell transcription
 
 The **Turn on PowerShell Transcription** policy setting lets you capture the
 input and output of PowerShell commands into text-based transcripts. If you
@@ -148,7 +148,7 @@ Limit access to the directory when setting **OutputDirectory** to a shared
 location for transcript logging to prevent users from viewing the transcripts
 of other users or computers.
 
-## SET THE DEFAULT SOURCE PATH FOR UPDATE-HELP
+## Set the default source path for Update-Help
 
 The **Set the Default Source Path for Update-Help** policy setting sets a
 default value for the **SourcePath** parameter of the `Update-Help` cmdlet.
@@ -187,12 +187,12 @@ download help from the Internet or from any file system location.
 
 For more information, see [about_Updatable_Help](about_Updatable_Help.md).
 
-## KEYWORDS
+## Keywords
 
 about_Group_Policies
 about_GroupPolicy
 
-## SEE ALSO
+## See also
 
 - [about_Execution_Policies](about_Execution_Policies.md)
 - [about_Modules](about_Modules.md)

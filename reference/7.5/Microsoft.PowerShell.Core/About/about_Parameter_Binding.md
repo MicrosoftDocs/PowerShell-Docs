@@ -8,13 +8,13 @@ title: about_Parameter_Binding
 ---
 # about_Parameter_Binding
 
-## SHORT DESCRIPTION
+## Short description
 
 Parameter binding is the process that PowerShell uses to determine which
 parameter set is being used and to associate (bind) values to the parameters of
 a command. These values can come from the command line and the pipeline.
 
-## LONG DESCRIPTION
+## Long description
 
 The parameter binding process starts by binding command-line arguments.
 
@@ -73,7 +73,7 @@ PowerShell tries to bind pipeline input in the following order:
    aliases. If the input type doesn't match, attempt to convert the input to
    the matching type. If the conversion fails, the parameter isn't bound.
 
-## VISUALIZE PARAMETER BINDING
+## Visualize parameter binding
 
 Troubleshooting parameter binding issues can be challenging. You can use the
 [Trace-Command][04] cmdlet to visualize the parameter binding process. The

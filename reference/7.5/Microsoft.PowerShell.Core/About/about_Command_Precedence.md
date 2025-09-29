@@ -8,11 +8,11 @@ title: about_Command_Precedence
 ---
 # about_Command_Precedence
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes how PowerShell determines which command to run.
 
-## LONG DESCRIPTION
+## Long description
 
 Command precedence describes how PowerShell determines which command to run
 when a session contains more than one command with the same name. Commands
@@ -20,7 +20,7 @@ within a session can be hidden or replaced by commands with the same name. This
 article shows you how to run hidden commands and how to avoid command-name
 conflicts.
 
-## COMMAND PRECEDENCE
+## Command precedence
 
 When a PowerShell session includes more than one command that has the same
 name, PowerShell determines which command to run using the following rules.
@@ -72,7 +72,7 @@ For example, if your session contains a cmdlet and a function, both named
 > executable. It's only when no external executable is found that an alias,
 > function, or cmdlet with the given name is invoked.
 
-## RESOLVING ITEMS WITH THE SAME NAMES
+## Resolve items with the same names
 
 As a result of these rules, items can be replaced or hidden by items with the
 same name.
@@ -94,7 +94,7 @@ with a module name.
 If you create a function at the command line and then import a function with
 the same name, the original function is replaced.
 
-## FINDING HIDDEN COMMANDS
+## Find hidden commands
 
 The **All** parameter of the [Get-Command][10] cmdlet gets all commands with
 the specified name, even if they're hidden or replaced. Beginning in PowerShell
@@ -251,7 +251,7 @@ $myMap = (Get-Command -Name map -CommandType Function)
 & ($myMap)
 ```
 
-## REPLACED ITEMS
+## Replaced items
 
 A _replaced_ item is one that you can no longer access. You can replace items
 by importing items of the same name from a module.
@@ -264,7 +264,7 @@ Variables and aliases can't be hidden because you can't use a call operator or
 a qualified name to run them. When you import variables and aliases from a
 module, they replace variables in the session with the same name.
 
-## CMDLET NAME RESOLUTION
+## Cmdlet name resolution
 
 When you don't use the qualified name of a cmdlet, PowerShell checks to see if
 the cmdlet is loaded in the current session. If there are multiple modules
@@ -278,7 +278,7 @@ environment variable. The paths are searched in the order that they're listed
 in the variable. Within each path, the modules are searched in alphabetical
 order. PowerShell uses the cmdlet from the first match it finds.
 
-## AVOIDING NAME CONFLICTS
+## Avoid name conflicts
 
 The best way to manage command name conflicts is to prevent them. When you name
 your commands, use a unique name. For example, add your initials or company
@@ -297,7 +297,7 @@ For example, the following command avoids any conflict with the `Get-Date` and
 Import-Module -Name DateFunctions -Prefix ZZ
 ```
 
-## RUNNING EXTERNAL EXECUTABLES
+## Run external executables
 
 On Windows. PowerShell treats the file extensions listed in the `$Env:PATHEXT`
 environment variable as executable files. Files that aren't Windows executables
@@ -314,7 +314,7 @@ the [ftype][04] command.
 For PowerShell to see a file extension as executable in the current session,
 you must add the extension to the `$Env:PATHEXT` environment variable.
 
-## SEE ALSO
+## See also
 
 - [about_Aliases][06]
 - [about_Functions][07]

@@ -8,12 +8,12 @@ title: about_Hidden
 ---
 # about_Hidden
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the `hidden` keyword, which hides class members from default
 `Get-Member` results.
 
-## LONG DESCRIPTION
+## Long description
 
 When you use the `hidden` keyword in a script, you hide the members of a class
 by default. Hidden members do not display in the default results of the
@@ -45,7 +45,7 @@ case-sensitive, and hidden members are still public.
 The `hidden` keyword, along with custom classes, was introduced in Windows
 PowerShell 5.0.
 
-## EXAMPLE
+## Example
 
 The following example shows how to use the `hidden` keyword in a class
 definition. The **Car** class method, **Drive**, has a property, **Rides**,
@@ -150,7 +150,7 @@ Rides         Property     int Rides {get;set;}
 
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Classes](about_Classes.md)
 - [about_Language_Keywords](about_Language_Keywords.md)

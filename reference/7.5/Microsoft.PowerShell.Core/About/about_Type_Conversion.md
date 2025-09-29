@@ -8,12 +8,12 @@ title: about_Type_Conversion
 ---
 # about_Type_Conversion
 
-## SHORT DESCRIPTION
+## Short description
 
 PowerShell has a flexible type system that makes it easier to use. However, you
 must understand how it works to avoid unexpected results.
 
-## LONG DESCRIPTION
+## Long description
 
 By default, PowerShell _variables_ aren't _type-constrained_. You can create a
 variable containing an instance of one type and later assign values of any
@@ -22,7 +22,7 @@ explicitly and implicitly. While implicit type conversion can be helpful, there
 are pitfalls, especially for users more familiar with languages that have
 stricter type handling.
 
-## TYPE-CONSTRAINED VARIABLES AND EXPLICIT TYPES CONVERSION
+## Type-constrained variables and explicit type conversion
 
 To type-constrain a variable, place a type literal to the left of the variable
 name in an assignment. For example:
@@ -189,7 +189,7 @@ For example, the following two lines are equivalent:
 [regex]::new('a|b')`
 ```
 
-## IMPLICIT TYPES
+## Implicit types
 
 PowerShell also assigns types to literal values automatically.
 
@@ -205,7 +205,7 @@ Literal strings are implicitly typed as **String**. Single-character **String**
 instances can be converted to and from the **Char** type. However, PowerShell
 has no literal **Char** type.
 
-## IMPLICIT TYPE CONVERSION
+## Implicit type conversion
 
 In certain contexts, PowerShell can implicitly convert values to other types.
 These contexts include:
@@ -360,7 +360,7 @@ Int32
 
 The conversion works because the string `'43'` can be converted to a number.
 
-## OPERATOR CONVERSIONS
+## Operator conversions
 
 PowerShell can implicitly convert the operands in an expression to produce a
 reasonable result. Also, some operators have type-specific behaviors.

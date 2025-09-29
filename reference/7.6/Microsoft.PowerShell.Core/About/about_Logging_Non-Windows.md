@@ -9,11 +9,11 @@ title: about_Logging_Non-Windows
 
 # about_Logging_Non-Windows
 
-## SHORT DESCRIPTION
+## Short description
 
 PowerShell logs internal operations from the engine, providers, and cmdlets.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell logs details of PowerShell operations, such as starting and stopping
 the engine and starting and stopping providers. It also logs details about
@@ -67,7 +67,7 @@ PowerShell supports configuring two categories of logging:
   > Logging for anything other than diagnostics purposes. For more information,
   > see [about_PowerShell_Config][06].
 
-## CONFIGURING LOGGING ON LINUX OR MACOS
+## Configuring logging on Linux or macOS
 
 The configuration for logging on Linux and macOS is stored in the
 `powershell.config.json` file. The `powershell.config.json` file is a **JSON**
@@ -130,7 +130,7 @@ value.
     **ModuleLogging**, **ProtectedEventLogging**, and **ScriptBlockLogging**
     options. For more information, see [Common configuration settings][04].
 
-## VIEWING POWERSHELL LOG DATA IN JOURNALD ON LINUX
+## Viewing PowerShell log data in journald on Linux
 
 PowerShell logs to the **systemd journal** using the **journald** daemon on
 Linux distributions such as Ubuntu and Red Hat Enterprise Linux (RHEL).
@@ -148,7 +148,7 @@ The **journald** daemon can forward log messages to a System Logging Protocol
 use **syslog** logging on your Linux system. This is the default configuration
 for many Linux distributions.
 
-## VIEWING POWERSHELL LOG DATA IN SYSLOG ON LINUX
+## Viewing PowerShell log data in syslog on Linux
 
 Use the package manager for your Linux distribution to install a **syslog**
 server such as **rsyslog** if you want to use syslog logging on your Linux
@@ -277,7 +277,7 @@ log file named `powershell.log`.
    cat /var/log/powershell.log
    ```
 
-## VIEWING POWERSHELL LOG DATA ON MACOS
+## Viewing PowerShell log data on macOS
 
 PowerShell logs to Apple's unified logging system, a feature of macOS that
 allows for the collection and storage of system and application logs in a
@@ -355,7 +355,7 @@ PowerShell subsystem:
 sudo log config --subsystem com.microsoft.powershell --reset
 ```
 
-## SEE ALSO
+## See also
 
 - For Linux **syslog** and **rsyslog.conf** information, refer to the Linux
   computer's local `man` pages

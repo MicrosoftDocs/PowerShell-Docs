@@ -10,11 +10,11 @@ title: about_Execution_Policies
 
 # about_Execution_Policies
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the PowerShell execution policies and explains how to manage them.
 
-## LONG DESCRIPTION
+## Long description
 
 PowerShell's execution policy is a safety feature that controls the conditions
 under which PowerShell loads configuration files and runs scripts. This feature
@@ -42,7 +42,7 @@ PowerShell displays a console message that it's not supported. While
 behavior really matches **Bypass** because those platforms do not implement the
 Windows Security Zones.
 
-## POWERSHELL EXECUTION POLICIES
+## PowerShell execution policies
 
 Enforcement of these policies only occurs on Windows platforms. The PowerShell
 execution policies are as follows:
@@ -109,7 +109,7 @@ execution policies are as follows:
   > from internet paths, scripts that are identified by a UNC path might not be
   > permitted to run with the **RemoteSigned** execution policy.
 
-## EXECUTION POLICY SCOPE
+## Execution policy scope
 
   You can set an execution policy that is effective only in a particular scope.
 
@@ -148,7 +148,7 @@ execution policies are as follows:
   The execution policy affects all users on the current computer. It's stored
   in the **AllUsers** configuration file.
 
-## MANAGING THE EXECUTION POLICY WITH POWERSHELL
+## Managing the execution policy with PowerShell
 
 To get the effective execution policy for the current PowerShell session, use
 the `Get-ExecutionPolicy` cmdlet.
@@ -288,7 +288,7 @@ precedence over an execution policy that is set in the configuration file for
 the local computer or current user. However, it doesn't take precedence over
 the execution policy set by using a Group Policy.
 
-## USE GROUP POLICY TO MANAGE EXECUTION POLICY
+## Use Group Policy to manage execution policy
 
 You can use the **Turn on Script Execution** Group Policy setting to manage the
 execution policy of computers in your enterprise. The Group Policy setting
@@ -335,7 +335,7 @@ Execution Policy: LocalMachine
 Execution Policy: CurrentUser
 ```
 
-## MANAGE SIGNED AND UNSIGNED SCRIPTS
+## Manage signed and unsigned scripts
 
 In Windows, programs like Internet Explorer and Microsoft Edge add an alternate
 data stream to files that are downloaded. This marks the file as "coming from
@@ -362,7 +362,7 @@ For more information, see [about_Signing][04], [Get-Item][05], and
 > - `Invoke-RestMethod`
 > - `Invoke-WebRequest`
 
-## EXECUTION POLICY ON WINDOWS SERVER CORE AND WINDOWS NANO SERVER
+## Execution policy on Windows Server Core and Windows Nano Server
 
 When PowerShell 6 is run on Windows Server Core or Windows Nano Server under
 certain conditions, execution policies can fail with the following error:
@@ -388,7 +388,7 @@ resulting in failure.
 Using an execution policy of **ByPass** or **AllSigned** does not require a
 Zone check which avoids the problem.
 
-## SEE ALSO
+## See also
 
 - [about_Environment_Variables][01]
 - [about_Group_Policy_Settings][02]

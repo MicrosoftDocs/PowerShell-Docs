@@ -6,15 +6,14 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_PSSession_Details
 ---
-
 # about_PSSession_Details
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides detailed information about PowerShell sessions and the
 role they play in remote commands.
 
-## LONG DESCRIPTION
+## Long description
 
 A session is an environment in which PowerShell runs. A session is created for
 you whenever you start PowerShell. You can create additional sessions, called
@@ -33,7 +32,7 @@ This topic provides detailed information about sessions and PSSessions in
 PowerShell. For basic information about the tasks that you can perform with
 sessions, see [about_PSSessions][01].
 
-## ABOUT SESSIONS
+## About sessions
 
 Technically, a session is an execution environment in which PowerShell runs.
 Each session includes an instance of the System.Management.Automation engine
@@ -54,7 +53,7 @@ A second command run synchronously (one at a time) waits up to four minutes for
 the first command to be completed. A second command run asynchronously
 (concurrently) fails.
 
-## ABOUT PSSESSIONS
+## About PSSessions
 
 A session is created each time that you start PowerShell. And, PowerShell
 creates temporary sessions to run individual commands. However, you can also
@@ -78,7 +77,7 @@ local computer to the process on the remote computer. When you create a
 PSSession on the local computer, both the new process and the connections are
 created on the local computer.
 
-## WHEN DO I NEED A PSSESSION?
+## When do I need a PSSession?
 
 The `Invoke-Command` and `Enter-PSSession` cmdlets have both **ComputerName**
 and **Session** parameters. You can use either to run a remote command.
@@ -96,12 +95,12 @@ parameter. They use technologies other than PowerShell remoting to gather data
 remotely. These cmdlets do not have a **Session** parameter, but you can use
 the `Invoke-Command` cmdlet to run these commands in a PSSession.
 
-## HOW DO I CREATE A PSSESSION?
+## How do I create a PSSession?
 
 To create a PSSession, use the `New-PSSession` cmdlet. You can use
 `New-PSSession` to create a PSSession on a local or remote computer.
 
-## CAN I CREATE A PSSESSION ON ANY COMPUTER?
+## Can I create a PSSession on any computer?
 
 To create a PSSession that is connected to a remote computer, the computer
 must be configured for remoting in PowerShell. The current user must be a
@@ -109,7 +108,7 @@ member of the Administrators group on the remote computer, or the current user
 must be able to supply the credentials of a member of the Administrators group.
 For more information, see [about_Remote_Requirements][02].
 
-## CAN I SEE MY PSSESSIONS IN OTHER SESSIONS?
+## Can I see my PSSessions in other sessions?
 
 Beginning in Windows PowerShell 3.0, the **ComputerName** parameter of the
 `Get-PSSession` cmdlet gets PSSessions that you created on the specified
@@ -133,14 +132,14 @@ In Windows PowerShell 2.0, you can get only the PSSessions that you have
 created in the current session. You cannot get PSSessions that you created in
 other sessions. For more information, see [Get-PSSession][03].
 
-## CAN I SEE THE PSSESSIONS THAT OTHERS HAVE CREATED ON MY COMPUTER?
+## Can I see the PSSessions that others have created on my computer?
 
 You can get and manage only the PSSessions that others have created only if you
 can supply the credentials of the user who created the PSSession or the session
 configuration that the PSSession uses includes RunAs credentials. Otherwise,
 you can get, connect to, use, and manage only the PSSessions that you created.
 
-## CAN I CONNECT TO A PSSESSION FROM A DIFFERENT COMPUTER?
+## Can I connect to a PSSession from a different computer?
 
 Beginning in Windows PowerShell 3.0, PSSessions on Windows computers are
 independent of the sessions in which they were created. Active PSSessions
@@ -158,7 +157,7 @@ PSSession and the `Connect-PSSession` cmdlet to connect to the PSSession from
 a new session on a different Windows computer. For more information, see
 [about_Remote_Disconnected_Sessions][04].
 
-## WHAT HAPPENS TO MY PSSESSION IF MY COMPUTER STOPS?
+## What happens to my PSSession if my computer stops?
 
 Disconnected PSSessions are independent of the sessions in which they were
 created. If you disconnect a PSSession and then close the originating computer,
@@ -177,7 +176,7 @@ remote computer. However, if no commands are running in the PSSession,
 PowerShell closes the PSSession when the connected session closes. For more
 information, see [about_Remote_Disconnected_Sessions][04].
 
-## CAN I RUN A BACKGROUND JOB IN A PSSESSION?
+## Can I run a background job in a PSSession?
 
 Yes. A background job is a command that runs asynchronously in the background
 without interacting with the current session. When you submit a command to
@@ -200,7 +199,7 @@ ends the connection when the job object returns, and the job is interrupted.
 
 For more information, see [about_Jobs][05].
 
-## CAN I RUN AN INTERACTIVE SESSION?
+## Can I run an interactive session?
 
 Yes. To start an interactive session with a remote computer, use the
 `Enter-PSSession` cmdlet. In an interactive session, the commands that you
@@ -218,7 +217,7 @@ available for use.
 
 For more information, see [Enter-PSSession][06] and [Exit-PSSession][07].
 
-## MUST I DELETE THE PSSESSIONS?
+## Must I delete the PSSessions?
 
 Yes. A PSSession is a process, which is a self-contained environment that
 uses memory and other resources even when you are not using it. When you are
@@ -237,13 +236,13 @@ If you save a PSSession object in a variable and then delete the PSSession
 or let it time out, the variable still contains the PSSession object, but
 the PSSession is not active and cannot be used or repaired.
 
-## ARE ALL SESSIONS AND PSSESSIONS ALIKE?
+## Are all sessions and PSSessions alike?
 
 No. Developers can create custom sessions that include only selected
 providers and cmdlets. If a command works in one session but not in another,
 it might be because the session is restricted.
 
-## SEE ALSO
+## See also
 
 - [about_Jobs][05]
 - [about_PSSessions][01]

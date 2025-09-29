@@ -268,7 +268,7 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [04]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
 [05]: ../learn/experimental-features.md#psredirecttovariable
 [06]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
-[07]: /dotnet/core/whats-new/dotnet-9/overview)
+[07]: /dotnet/core/whats-new/dotnet-9/overview
 
 [19896]: https://github.com/PowerShell/PowerShell/pull/19896
 [20014]: https://github.com/PowerShell/PowerShell/pull/20014

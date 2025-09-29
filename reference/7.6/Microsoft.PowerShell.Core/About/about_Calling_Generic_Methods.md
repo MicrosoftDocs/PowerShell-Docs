@@ -8,13 +8,13 @@ title: about_Calling_Generic_Methods
 ---
 # about_Calling_Generic_Methods
 
-## SHORT DESCRIPTION
+## Short description
 
 A generic type is a parameterized type definition that you instantiate with
 concrete type arguments (like `List<T>`), giving reusable, type-safe code that
 the compiler and CLR handle efficiently.
 
-## LONG DESCRIPTION
+## Long description
 
 Generics let you tailor a method, class, structure, or interface to the precise
 data type it acts upon. For example, instead of using the
@@ -39,7 +39,7 @@ blog post [Invoking generic methods on non-generic classes in PowerShell][03].
 
 Beginning with PowerShell 7.3, you can specify the types for a generic method.
 
-## SYNTAX
+## Syntax
 
 A generic method is a method with two parameter lists: a list of generic types
 and a list of method arguments.
@@ -63,7 +63,7 @@ The `method_arguments` can be zero or more items.
 
 For more information, see [Generics in .NET][04].
 
-## EXAMPLE
+## Example
 
 In this example, we create a list of integers then use the
 `System.Linq.Enumerable` class to enumerate the values and transform them to a

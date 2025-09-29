@@ -8,12 +8,12 @@ title: about_Types.ps1xml
 ---
 # about_Types.ps1xml
 
-## SHORT DESCRIPTION
+## Short description
 
 Explains how to use `Types.ps1xml` files to extend the types of objects that
 are used in PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 Extended type data defines additional properties and methods ("members") of
 object types in PowerShell. There are two techniques for adding extended type
@@ -27,7 +27,7 @@ This topic describes `Types.ps1xml` files. For more information about using the
 `Update-TypeData` cmdlet to add dynamic extended type data to the current
 session see [Update-TypeData][01].
 
-## ABOUT EXTENDED TYPE DATA
+## About extended type data
 
 Extended type data defines additional properties and methods ("members") of
 object types in PowerShell. You can extend any type that is supported by
@@ -55,7 +55,7 @@ property is part of this default set. Prior to PowerShell 6, the type
 definitions were stored the `Types.ps1xml` file in the PowerShell installation
 directory (`$PSHOME`).
 
-## ADDING EXTENDED TYPE DATA TO POWERSHELL
+## Adding extended type data to PowerShell
 
 There are three sources of extended type data in PowerShell sessions.
 
@@ -73,7 +73,7 @@ In the session, the extended type data from the three sources is applied
 to objects in the same way and is available on all objects of the specified
 types.
 
-## THE TYPEDATA CMDLETS
+## The TypeData cmdlets
 
 The following cmdlets are included in the **Microsoft.PowerShell.Utility**
 module in PowerShell 3.0 and later.
@@ -85,7 +85,7 @@ module in PowerShell 3.0 and later.
 
 For more information about these cmdlets, see the help topic for each cmdlet.
 
-## BUILT-IN TYPES.PS1XML FILES
+## Built-in Types.ps1xml files
 
 The `Types.ps1xml` files in the `$PSHOME` directory are added automatically to
 every session.
@@ -150,7 +150,7 @@ property of arrays in PowerShell. For example:
 4
 ```
 
-## CREATING NEW TYPES.PS1XML FILES
+## Creating new Types.ps1xml files
 
 The `.ps1xml` files that are installed with PowerShell are
 digitally signed to prevent tampering because the formatting can include
@@ -171,14 +171,14 @@ the `Update-TypeData` cmdlet. `Update-TypeData` affects only the current
 session. To make the change to all future sessions, export the console, or add
 the `Update-TypeData` command to your PowerShell profile.
 
-## TYPES.PS1XML AND ADD-MEMBER
+## Types.ps1xml and Add-Member
 
 The `Types.ps1xml` files add properties and methods to all the instances of the
 objects of the specified .NET type in the affected PowerShell session. However,
 if you need to add properties or methods only to one instance of an object, use
 the `Add-Member` cmdlet. For more information, see [Add-Member][03].
 
-## EXAMPLE: ADDING AN AGE MEMBER TO FILEINFO OBJECTS
+## Example: Adding an Age member to FileInfo objects
 
 This example shows how to add an **Age** property to **System.IO.FileInfo**
 objects. The age of a file is the difference between its creation time and the
@@ -228,7 +228,7 @@ Get-ChildItem $PSHOME\pwsh.exe | Select-Object Age
 142
 ```
 
-## THE XML IN TYPES.PS1XML FILES
+## The XML in Types.ps1xml files
 
 The full schema definition can be found in [Types.xsd][04] in the PowerShell
 source code repository on GitHub.
@@ -514,7 +514,7 @@ objects.
 For more information, see the
 [Windows PowerShell Software Development Kit (SDK)][05].
 
-## UPDATE-TYPEDATA
+## Update-TypeData
 
 To load your `Types.ps1xml` files into a PowerShell session, run the
 `Update-TypeData` cmdlet. If you want the types in your file to take precedence
@@ -537,12 +537,12 @@ following example:
 Note that method syntax can only be used with .NET properties. Properties that
 are added by running the `Update-TypeData` cmdlet cannot use method syntax.
 
-## SIGNING A TYPES.PS1XML FILE
+## Signing a Types.ps1xml file
 
 To protect users of your `Types.ps1xml` file, you can sign the file using a
 digital signature. For more information, see [about_Signing][06].
 
-## SEE ALSO
+## See also
 
 - [about_Signing][06]
 - [Copy-Item][07]

@@ -8,11 +8,11 @@ title: about_PackageManagement
 ---
 # about_PackageManagement
 
-## SHORT DESCRIPTION
+## Short description
 
 PackageManagement is an aggregator for software package managers.
 
-## LONG DESCRIPTION
+## Long description
 
 PackageManagement functionality was introduced in Windows PowerShell 5.0.
 
@@ -102,7 +102,7 @@ For more information about the PackageManagement open development project,
 including how to create a PackageManagement package provider, see the
 PackageManagement project on GitHub at [https://oneget.org][02].
 
-## SEE ALSO
+## See also
 
 - [Find-Package](xref:PackageManagement.Find-Package)
 - [Get-Package](xref:PackageManagement.Get-Package)
