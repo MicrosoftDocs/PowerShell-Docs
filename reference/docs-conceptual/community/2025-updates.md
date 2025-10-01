@@ -14,6 +14,34 @@ get started.
 <!-- Link references -->
 [01]: contributing/overview.md
 
+## 2025-September
+
+Content updates
+
+- Update release notes for PowerShell v7.5.3 and v7.4.12 releases
+- Update release notes for PSReadLine v2.4.4-beta4
+- Improved the documentation for comment-based help and creating `about_*` topics
+
+GitHub stats
+
+- 21 PRs merged (6 from Community)
+- 28 issues opened (25 from Community)
+- 31 issues closed (28 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|   GitHub Id    | PRs merged | Issues opened |
+| -------------- | :--------: | :-----------: |
+| skycommand     |     2      |               |
+| lukebarone     |     1      |               |
+| PraveenGururaj |     1      |               |
+| Blake-Madden   |     1      |               |
+| Gijsreyn       |     1      |               |
+| TMA-2          |     1      |       1       |
+
 ## 2025-August
 
 Content updates
@@ -33,13 +61,11 @@ Top Community Contributors
 The following people contributed to PowerShell docs this month by submitting pull requests or
 filing issues. Thank you!
 
-|  GitHub Id  | PRs merged | Issues opened |
-| ----------- | :--------: | :-----------: |
-| changeworld |     3      |               |
-| sethvs      |     2      |               |
-| yashanshh   |     2      |               |
-| Gijsreyn    |     2      |               |
-| TNGBBK      |            |       2       |
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| changeworld     |     2      |               |
+| Dickson-Mwendia |     1      |               |
+| chwarr          |     1      |               |
 
 ## 2025-July
 
