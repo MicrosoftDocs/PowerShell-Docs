@@ -86,8 +86,8 @@ A module can include the following types of Help.
   special rendering of the text in the PowerShell console. The following suggestions ensure the best
   display results and readability.
 
-  - UTF-8 with BOM encoding to ensure any special (multi-byte) characters display correctly.
-  - Underline section headers or use all uppercase letters to make them stand out. This makes the
+  - Use UTF-8 with BOM encoding to ensure any special (multi-byte) characters display correctly.
+  - Underline section headers or use all uppercase letters to make they stand out. This makes the
     content easier to scan.
   - Limit the length of each line to 80 characters.
   - Indent code blocks and example output to separate them from the surrounding prose.
