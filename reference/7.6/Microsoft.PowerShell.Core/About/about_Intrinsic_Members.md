@@ -1,7 +1,7 @@
 ---
 description: Describes automatic members in all PowerShell objects
 Locale: en-US
-ms.date: 01/03/2025
+ms.date: 10/01/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Intrinsic_Members?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Intrinsic_Members
@@ -164,6 +164,13 @@ not visible using the `Get-Member -Force` command or tab completion.
 The `ForEach()` and `Where()` methods are available to all PowerShell objects.
 However, they're most useful when working with collections. For more
 information on how to use these methods, see [about_Arrays][01].
+
+PowerShell 7.6-preview.5 added `PSForEach()` as an alias for the `ForEach()`
+method and `PSWhere()` as an alias for the `Where()` method. Use these aliases
+to avoid conflicts with `ForEach()` and `Where()` that might be defined on the
+base class of the object. For example, the `System.Collections.Generic.List<T>`
+class defines its own `ForEach()` method. Use `PSForEach()` to avoid calling
+the base class method.
 
 ## Properties
 
