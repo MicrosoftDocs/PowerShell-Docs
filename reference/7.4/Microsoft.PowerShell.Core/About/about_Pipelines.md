@@ -1,7 +1,7 @@
 ---
 description: Combining commands into pipelines in the PowerShell
 Locale: en-US
-ms.date: 12/05/2023
+ms.date: 10/02/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pipelines
@@ -151,7 +151,7 @@ PS> ipconfig.exe | Select-String -Pattern 'IPv4'
 ```
 
 > [!IMPORTANT]
-> The **Success** and **Error** streams are similar to the stdin and stderr
+> The **Success** and **Error** streams are similar to the stdout and stderr
 > streams of other shells. However, stdin isn't connected to the PowerShell
 > pipeline for input. For more information, see
 > [about_Redirection][07].
