@@ -111,7 +111,7 @@ security.
 > [!IMPORTANT]
 > You must use a secure transport layer to ensure secure data transfer over PSRP.
 
-Beginning in PowerShell v7.6-preview5, the key exchange was deprecated. The version of PSRP was
+Beginning in PowerShell v7.6-preview.5, the key exchange was deprecated. The version of PSRP was
 incremented to v2.4 and includes the following changes:
 
 - The following PSRP messages are deprecated when both client and server are v2.4 or higher:

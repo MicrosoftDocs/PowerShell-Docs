@@ -19,15 +19,21 @@ Registers a custom argument completer.
 ### NativeSet
 
 ```
-Register-ArgumentCompleter -CommandName <String[]> -ScriptBlock <ScriptBlock> [-Native]
+Register-ArgumentCompleter -CommandName <string[]> -ScriptBlock <scriptblock> [-Native]
  [<CommonParameters>]
 ```
 
 ### PowerShellSet
 
 ```
-Register-ArgumentCompleter [-CommandName <String[]>] -ParameterName <String>
- -ScriptBlock <ScriptBlock> [<CommonParameters>]
+Register-ArgumentCompleter -ParameterName <string> -ScriptBlock <scriptblock>
+ [-CommandName <string[]>] [<CommonParameters>]
+```
+
+### NativeFallbackSet
+
+```
+Register-ArgumentCompleter -ScriptBlock <scriptblock> [-NativeFallback] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -211,6 +217,30 @@ parameter names.
 ```yaml
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: NativeSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NativeFallback
+
+When you use this parameter, PowerShell registers a cover-all argument completer for native
+commands. When a native command doesn't have a specific completer for it, it uses the cover-all
+completer. A cover-all completer allows a module like Microsoft.PowerShell.UnixTabCompletion to be
+registered to provide tab completion for many native commands on Linux and macOS systems.
+
+> [!NOTE]
+> You can only register one cover-all completer.
+
+This parameter was added in PowerShell 7.6-preview.5.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: NativeFallbackSet
 Aliases:
 
 Required: False
