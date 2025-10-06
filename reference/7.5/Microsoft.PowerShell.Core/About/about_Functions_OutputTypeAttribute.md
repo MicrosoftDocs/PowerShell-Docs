@@ -20,7 +20,7 @@ returns. You can use its optional **ParameterSetName** parameter to list
 different output types for each parameter set.
 
 The **OutputType** attribute is supported on simple and advanced functions.
-It's independent of the **CmdletBinding** attribute.The **OutputType**
+It's independent of the **CmdletBinding** attribute. The **OutputType**
 attribute provides the value of the **OutputType** property of the
 **System.Management.Automation.FunctionInfo** object that the `Get-Command`
 cmdlet returns.
