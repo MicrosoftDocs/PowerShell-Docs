@@ -1,7 +1,7 @@
 ---
 description: Describes an attribute that reports the type of object that the function returns.
 Locale: en-US
-ms.date: 04/14/2023
+ms.date: 10/06/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_outputtypeattribute?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_OutputTypeAttribute
@@ -16,19 +16,22 @@ returns.
 ## Long description
 
 The **OutputType** attribute lists the .NET types of objects that the functions
-returns. You can use its optional ParameterSetName parameter to list different
-output types for each parameter set.
+returns. You can use its optional **ParameterSetName** parameter to list
+different output types for each parameter set.
 
 The **OutputType** attribute is supported on simple and advanced functions.
-It's independent of the **CmdletBinding** attribute.
+It's independent of the **CmdletBinding** attribute.The **OutputType**
+attribute provides the value of the **OutputType** property of the
+**System.Management.Automation.FunctionInfo** object that the `Get-Command`
+cmdlet returns.
 
-The **OutputType** attribute provides the value of the **OutputType** property
-of the **System.Management.Automation.FunctionInfo** object that the
-`Get-Command` cmdlet returns.
+> [!NOTE]
+> The **OutputType** attribute value isn't derived from the function code or
+> compared to the actual function output. As such, the value might be
+> inaccurate.
 
-The **OutputType** attribute value is only a documentation note. It's not
-derived from the function code or compared to the actual function output. As
-such, the value might be inaccurate.
+The **OutputType** attribute also informs tab completion results for situations
+like: `Command | Select <Tab>` and `Command | Where <Tab>`.
 
 ## Syntax
 
@@ -235,8 +238,8 @@ Or its shorter version.
 ```
 
 The value of the **OutputType** property can be null. Use a null value when the
-output isn't a .NET type, such as a **WMI** object or a formatted view of an
-object.
+function doesn't write any output to the **Success** stream. If the function
+writes output, but you don't know the type, use **System.Object**.
 
 ## See also
 
