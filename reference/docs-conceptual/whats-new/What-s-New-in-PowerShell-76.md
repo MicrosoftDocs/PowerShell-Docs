@@ -137,7 +137,8 @@ name, the **ThreadJob** v2.1.0 module is a proxy module that points to the
 
 ## Engine improvements
 
-- Update the PSDiagnostics module to manage the PowerShellCore provider in PowerShell 7 ([#25590][25590])
+- Update the **PSDiagnostics** module to manage the PowerShellCore provider in PowerShell 7
+  ([#25590][25590])
 - Allow opt-out of the named-pipe listener using the environment variable
   `POWERSHELL_DIAGNOSTICS_OPTOUT` ([#26086][26086])
 - Ensure that socket timeouts are set only during the token validation ([#26066][26066])

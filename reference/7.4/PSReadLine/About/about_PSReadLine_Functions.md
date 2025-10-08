@@ -1181,10 +1181,10 @@ Similarly, you can use this with other operations, like `<Delete>` or
 
 Attempt to erase the current prompt and call the prompt function to redisplay
 the prompt. Useful for custom key handlers that change state. For example,
-change the current directory. This method can't overwrite a prompt that has
+changing the current directory. This method can't overwrite a prompt that has
 left the screen buffer.
 
-Calls to InvokePrompt with no Y position argument immediately return if the
+Calls to `InvokePrompt` with no Y position argument immediately return if the
 prompt can't be overwritten. This change was made in PSReadLine v2.4.3-beta3.
 
 - Function is unbound.
