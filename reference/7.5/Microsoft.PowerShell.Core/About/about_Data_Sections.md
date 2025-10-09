@@ -1,7 +1,7 @@
 ---
 description: Explains Data sections, which isolate text strings and other read-only data from script logic.
 Locale: en-US
-ms.date: 01/09/2025
+ms.date: 10/09/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_data_sections?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Data_Sections
@@ -60,13 +60,13 @@ is limited to the following elements:
   "PowerShell 2.0"
   @( "red", "green", "blue" )
   @{ a = 0x1; b = "great"; c ="script" }
-  [xml] @'
+  @'
   <p> Hello, World </p>
   '@
   ```
 
-- Cmdlets that are permitted in a `data` section. By default, only the
-  `ConvertFrom-StringData` cmdlet is permitted.
+- Cmdlets that are permitted in a `data` section by default. By default, only
+  the `ConvertFrom-StringData` cmdlet is permitted.
 - Cmdlets that you permit in a `data` section by using the `-SupportedCommand`
   parameter.
 
