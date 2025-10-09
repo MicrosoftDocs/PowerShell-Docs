@@ -3,7 +3,7 @@ description: >
     This article documents the functions provided by PSReadLine. These functions
     can be bound to keystrokes for easy access and invocation.
 Locale: en-US
-ms.date: 03/03/2025
+ms.date: 10/01/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_functions?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Functions
@@ -1179,9 +1179,13 @@ Similarly, you can use this with other operations, like `<Delete>` or
 
 ### InvokePrompt
 
-Erases the current prompt and calls the prompt function to redisplay the
-prompt. Useful for custom key handlers that change state. For example, change
-the current directory.
+Attempt to erase the current prompt and call the prompt function to redisplay
+the prompt. Useful for custom key handlers that change state. For example,
+changing the current directory. This method can't overwrite a prompt that has
+left the screen buffer.
+
+Calls to `InvokePrompt` with no Y position argument immediately return if the
+prompt can't be overwritten. This change was made in PSReadLine v2.4.3-beta3.
 
 - Function is unbound.
 

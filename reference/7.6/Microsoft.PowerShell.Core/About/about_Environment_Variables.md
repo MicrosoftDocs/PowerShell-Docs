@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 08/27/2025
+ms.date: 10/01/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
@@ -20,6 +20,7 @@ programs. PowerShell creates the following environment variables:
 - `POWERSHELL_TELEMETRY_OPTOUT`
 - `POWERSHELL_DISTRIBUTION_CHANNEL`
 - `POWERSHELL_UPDATECHECK`
+- `POWERSHELL_DIAGNOSTICS_OPTOUT`
 - `PSExecutionPolicyPreference`
 - `PSModulePath`
 - `PSModuleAnalysisCachePath`
@@ -412,6 +413,21 @@ The environment variables that store preferences include:
   Non-default values of environment variable must be set before starting the
   PowerShell process. See the previous sections for information about creating
   persistent environment variables.
+
+- `POWERSHELL_DIAGNOSTICS_OPTOUT`
+
+  This environment variable was added in PowerShell 7.6-preview.5. By default,
+  PowerShell creates a named pipe that is uses for Interprocess Communication
+  (IPC), such as `Enter-PSHostProcess`. PowerShell creates the named pipe at
+  startup so that it's available for use when needed.
+
+  On non-Windows platforms, named pipes are implemented as files in the `/tmp`
+  folder. If PowerShell crashes, these files may not be deleted. Over time,
+  these files can accumulate.
+
+  Beginning in PowerShell 7.6, `POWERSHELL_DIAGNOSTICS_OPTOUT` is set to
+  `false`. To turn off the creation of the named pipe, set the environment
+  variable to `true`, `yes`, or `1`.
 
 - `PSExecutionPolicyPreference`
 
