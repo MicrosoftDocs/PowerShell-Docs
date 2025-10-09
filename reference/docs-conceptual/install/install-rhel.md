@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 07/03/2025
+ms.date: 10/01/2025
 title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 ---
 # Installing PowerShell on Red Hat Enterprise Linux (RHEL)
@@ -29,7 +29,7 @@ known as _PMC_.
 Installing PowerShell from PMC is the preferred method of installation.
 
 > [!NOTE]
-> This script only works for supported versions of RHEL.
+> This script only works for supported versions of RHEL that are published to PMC.
 
 ```sh
 ###################################
@@ -62,7 +62,8 @@ sudo dnf install powershell -y
 ## Installation via direct download
 
 PowerShell 7.2 introduced a universal package that makes installation easier. Download the universal
-package from the [releases][02] page onto your RHEL machine.
+package from the [releases][02] page onto your RHEL machine. Use this method to install PowerShell
+on systems running RHEL 10.
 
 The link to the current version is:
 
