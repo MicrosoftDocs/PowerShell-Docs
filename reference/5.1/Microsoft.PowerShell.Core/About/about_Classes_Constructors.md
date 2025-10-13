@@ -449,7 +449,7 @@ constructor parameters and before the body block.
 
 ```Syntax
 class <derived-class> : <base-class> {
-    <derived-class>(<derived-parameters>) : <base-class>(<base-parameters>) {
+    <derived-class>(<derived-parameters>) : <base>(<base-parameters>) {
         # initialization code
     }
 }
