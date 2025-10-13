@@ -1,7 +1,7 @@
 ---
 description: Describes how to define constructors for PowerShell classes.
 Locale: en-US
-ms.date: 11/13/2023
+ms.date: 10/13/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes_constructors?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes_Constructors
@@ -448,7 +448,7 @@ constructor parameters and before the body block.
 
 ```Syntax
 class <derived-class> : <base-class> {
-    <derived-class>(<derived-parameters>) : <base-class>(<base-parameters>) {
+    <derived-class>(<derived-parameters>) : <base>(<base-parameters>) {
         # initialization code
     }
 }
