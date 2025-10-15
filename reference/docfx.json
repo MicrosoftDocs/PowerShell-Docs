@@ -58,6 +58,21 @@
         "docs-conceptual/windows-powershell/ise/*.md": "ui-reference",
         "docs-conceptual/windows-powershell/ise/object-model/*.md": "reference"
       },
+      "ms.update-cycle": {
+        "docs-conceptual/community/*-updates.md": "1825-days",
+        "docs-conceptual/community/community-update.yml": "1825-days",
+        "docs-conceptual/community/contributing/**": "1825-days",
+        "docs-conceptual/community/digital-art.md": "3650-days",
+        "docs-conceptual/community/hall-of-fame.md": "1825-days",
+        "docs-conceptual/developer/**": "3650-days",
+        "docs-conceptual/gallery/overview.md": "3650-days",
+        "docs-conceptual/learn/deep-dives/**": "3650-days",
+        "docs-conceptual/learn/ps101/**": "3650-days",
+        "docs-conceptual/samples/**": "3650-days",
+        "docs-conceptual/security/remoting/jea/**": "3650-days",
+        "docs-conceptual/whats-new/**": "1825-days",
+        "docs-conceptual/windows-powershell/**": "3650-days"
+      },
       "products": {
         "5.1/**/*": [
           "https://authoring-docs-microsoft.poolparty.biz/devrel/56936876-97d9-45cc-ad1b-9d63320447c8",
