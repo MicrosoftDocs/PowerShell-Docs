@@ -38,7 +38,7 @@
         "5.1/*.md": "conceptual",
         "5.1/*.yml": "cmdlets",
         "7*/*.md": "conceptual",
-        "docs-conceptual/**/*.md": "conceptual-article"
+        "docs-conceptual/**/*.md": "conceptual"
       },
       "ms.topic": {
         "5.1/**/*": "reference",
