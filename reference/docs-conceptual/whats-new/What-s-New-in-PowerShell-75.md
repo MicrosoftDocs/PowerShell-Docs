@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 09/11/2025
+ms.date: 10/16/2025
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.3 includes the following features, updates, and breaking changes. PowerShell
-7.5 is built on .NET 9.0.304 release.
+PowerShell 7.5.4 includes the following features, updates, and breaking changes. PowerShell
+7.5.4 is built on .NET 9.0.306 release.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
@@ -25,7 +25,7 @@ information about .NET 9, see [What's new in .NET 9][07].
 
 ## Updated modules
 
-PowerShell 7.5.3 includes the following updated modules:
+PowerShell 7.5.4 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.1.1
 - **PSReadLine** v2.3.6
