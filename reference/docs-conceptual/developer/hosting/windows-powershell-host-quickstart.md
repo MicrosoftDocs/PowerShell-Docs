@@ -14,6 +14,10 @@ runspace. The default runspace contains all of the core Windows PowerShell comma
 your application to expose only a subset of the Windows PowerShell commands, you must create a
 custom runspace.
 
+> [!NOTE]
+> To run the following samples, you need to have the `Microsoft.PowerShell.SDK` NuGet
+> package installed.
+
 ## Using the default runspace
 
 To start, we'll use the default runspace, and use the methods of the
@@ -82,14 +86,15 @@ You can also add a dictionary of parameter names and values by calling the
 method.
 
 ```csharp
-IDictionary parameters = new Dictionary<String, String>();
-parameters.Add("Path", @"C:\Windows");
-parameters.Add("Filter", "*.exe");
+var parameters = new Dictionary<string, string>
+{
+    { "Path", @"C:\Windows" },
+    { "Filter", "*.exe" }
+};
 
 PowerShell.Create().AddCommand("Get-Process")
-   .AddParameters(parameters)
-      .Invoke()
-
+                   .AddParameters(parameters)
+                   .Invoke()
 ```
 
 ### AddStatement
@@ -115,7 +120,7 @@ is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
-ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
+ps.AddScript(@"D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
 There is also a version of the AddScript method that takes a boolean parameter named
@@ -150,12 +155,15 @@ to create a runspace after creating a default InitialSessionState object.
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
+
 Runspace rs = RunspaceFactory.CreateRunspace(iss);
 rs.Open();
+
 PowerShell ps = PowerShell.Create();
 ps.Runspace = rs;
 ps.AddCommand("Get-Command");
 ps.Invoke();
+
 rs.Close();
 ```
 
@@ -194,6 +202,7 @@ SessionStateCmdletEntry getCommand = new SessionStateCmdletEntry(
     "Get-Command", typeof(Microsoft.PowerShell.Commands.GetCommandCommand), "");
 SessionStateCmdletEntry importModule = new SessionStateCmdletEntry(
     "Import-Module", typeof(Microsoft.PowerShell.Commands.ImportModuleCommand), "");
+
 iss.Commands.Add(getCommand);
 iss.Commands.Add(importModule);
 ```
@@ -211,8 +220,10 @@ Execute a command and show the result.
 PowerShell ps = PowerShell.Create();
 ps.Runspace = rs;
 ps.AddCommand("Get-Command");
+
 Collection<CommandInfo> result = ps.Invoke<CommandInfo>();
-foreach (var entry in result)
+
+foreach (CommandInfo entry in result)
 {
     Console.WriteLine(entry.Name);
 }
