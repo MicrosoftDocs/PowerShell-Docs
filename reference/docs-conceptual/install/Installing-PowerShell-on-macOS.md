@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on macOS
-ms.date: 07/03/2025
+ms.date: 10/16/2025
 title: Installing PowerShell on macOS
 ---
 
@@ -126,12 +126,12 @@ Starting with version 7.2, PowerShell supports the Apple M-series Arm-based proc
 install package from the [releases][09] page onto your Mac. The links to the current versions are:
 
 - PowerShell 7.5
-  - Arm64 processors - [powershell-7.5.3-arm64.pkg][22]
-  - x64 processors - [powershell-7.5.3-osx-x64.pkg][24]
+  - Arm64 processors - [powershell-7.5.4-arm64.pkg][22]
+  - x64 processors - [powershell-7.5.4-osx-x64.pkg][24]
 
 - PowerShell 7.4
-  - Arm64 processors - [powershell-7.4.12-osx-arm64.pkg][18]
-  - x64 processors - [powershell-7.4.12-osx-x64.pkg][20]
+  - Arm64 processors - [powershell-7.4.13-osx-arm64.pkg][18]
+  - x64 processors - [powershell-7.4.13-osx-x64.pkg][20]
 
 There are two ways to install PowerShell using the Direct Download method.
 
@@ -146,7 +146,7 @@ Install PowerShell using Finder:
 
 You might receive the following error message when installing the package:
 
-> "powershell-7.5.3-osx-arm64.pkg" cannot be opened because Apple cannot check it for malicious
+> "powershell-7.5.4-osx-arm64.pkg" cannot be opened because Apple cannot check it for malicious
 > software.
 
 To work around this issue using Finder:
@@ -160,12 +160,12 @@ To work around this issue using Finder:
 Install PowerShell from the terminal. Change the filename to match the package you downloaded.
 
 ```sh
-sudo installer -pkg ./Downloads/powershell-7.5.3-osx-arm64.pkg -target /
+sudo installer -pkg ./Downloads/powershell-7.5.4-osx-arm64.pkg -target /
 ```
 
 You might receive the following error message when installing the package:
 
-> "powershell-7.5.3-osx-arm64.pkg" cannot be opened because Apple cannot check it for malicious
+> "powershell-7.5.4-osx-arm64.pkg" cannot be opened because Apple cannot check it for malicious
 > software.
 
 There are a few different ways to work around this issue from the command line:
@@ -173,12 +173,12 @@ There are a few different ways to work around this issue from the command line:
 - Run the `installer` command with the **allowUntrusted** flag:
 
   ```sh
-  `sudo installer -allowUntrusted -pkg ./Downloads/powershell-7.5.3-osx-arm64.pkg -target /`
+  `sudo installer -allowUntrusted -pkg ./Downloads/powershell-7.5.4-osx-arm64.pkg -target /`
   ```
 
 - Or install the package as you normally would after running one of the following commands:
 
-  - Run `sudo xattr -rd com.apple.quarantine ./Downloads/powershell-7.5.3-osx-arm64.pkg`.
+  - Run `sudo xattr -rd com.apple.quarantine ./Downloads/powershell-7.5.4-osx-arm64.pkg`.
   - Use the `Unblock-File` cmdlet if you're using PowerShell. Include the full path to the `.pkg`
     file.
 
@@ -214,19 +214,19 @@ Download the install package from the [releases][09] page onto your Mac. The lin
 versions are:
 
 - PowerShell 7.5-preview
-  - Arm64 processors - [powershell-7.5.3-osx-arm64.tar.gz][23]
-  - x64 processors - [powershell-7.5.3-osx-x64.tar.gz][25]
+  - Arm64 processors - [powershell-7.5.4-osx-arm64.tar.gz][23]
+  - x64 processors - [powershell-7.5.4-osx-x64.tar.gz][25]
 
 - PowerShell 7.4 (LTS)
-  - Arm64 processors - [powershell-7.4.12-osx-arm64.tar.gz][19]
-  - x64 processors - [powershell-7.4.12-osx-x64.tar.gz][21]
+  - Arm64 processors - [powershell-7.4.13-osx-arm64.tar.gz][19]
+  - x64 processors - [powershell-7.4.13-osx-x64.tar.gz][21]
 
 Use the following commands to install PowerShell from the binary archive. Change the download URL to
 match the version you want to install.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.3/powershell-7.5.3-osx-arm64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.tar.gz
 
 # Create the target folder where powershell is placed
 sudo mkdir -p /usr/local/microsoft/powershell/7
@@ -305,14 +305,14 @@ support those methods.
 [11]: https://docs.brew.sh/Manpage#link-ln-options-formula
 [12]: https://github.com/Homebrew
 [13]: https://github.com/Homebrew/homebrew-cask
-[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.12/powershell-7.4.12-osx-arm64.pkg
-[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.12/powershell-7.4.12-osx-arm64.tar.gz
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.12/powershell-7.4.12-osx-x64.pkg
-[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.12/powershell-7.4.12-osx-x64.tar.gz
-[22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.3/powershell-7.5.3-osx-arm64.pkg
-[23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.3/powershell-7.5.3-osx-arm64.tar.gz
-[24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.3/powershell-7.5.3-osx-x64.pkg
-[25]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.3/powershell-7.5.3-osx-x64.tar.gz
+[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-arm64.pkg
+[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-arm64.tar.gz
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-x64.pkg
+[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-x64.tar.gz
+[22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.pkg
+[23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.tar.gz
+[24]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-x64.pkg
+[25]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-x64.tar.gz
 [26]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [27]: #install-using-homebrew
 [28]: #install-as-a-net-global-tool
