@@ -16,13 +16,12 @@ Provides a brief introduction to the PowerShell Workflow feature.
 ## Long description
 
 PowerShell Workflow brings the benefits of the
-[Windows Workflow Foundation](/dotnet/framework/windows-workflow-foundation) to
-PowerShell and enables you to write and run workflows.
+[Windows Workflow Foundation][05] to PowerShell and enables you to write and
+run workflows.
 
 PowerShell Workflow was introduced in PowerShell 3.0 and the module is
 available up to PowerShell 5.1. For more information about PowerShell Workflow,
-see the [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
-and [Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow).
+see the [Workflows Guide][07] and [Writing a Windows PowerShell Workflow][08].
 
 ## About workflows
 
@@ -34,7 +33,7 @@ environments.
 Workflows can be written in XAML, the language used in Windows Workflow
 Foundation, or in the PowerShell language. Workflows are typically packaged in
 modules and include help topics. For more information, see
-[XAML Overview (WPF)](/dotnet/framework/wpf/advanced/xaml-overview-wpf).
+[XAML Overview (WPF)][06].
 
 Workflows are critical in an IT environment because they can survive reboots
 and recover automatically from common failures. You can disconnect and
@@ -65,7 +64,7 @@ A PowerShell Workflow configuration consists of the following elements:
 The workflow session isn't required, but is recommended. **PSSessions** can
 take advantage of the robust recovery and Disconnected Sessions features of
 PowerShell to recover disconnected workflow sessions. For more information, see
-[about_Remote_Disconnected_Sessions](../../Microsoft.PowerShell.Core/About/about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions][03]
 
 Because the client computer and the computer on which the workflow session runs
 can be managed nodes, you can run a workflow on a single computer that fulfills
@@ -122,11 +121,9 @@ To run a workflow, use the following procedure.
    Enable-PSRemoting -Force
    ```
 
-   You can enable remoting by using the **Turn on Script Execution** Group Policy
-   setting. For more information, see
-   [about_Group_Policy_Settings](../../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md)
-   and
-   [about_Execution_Policies](../../Microsoft.PowerShell.Core/About/about_Execution_Policies.md).
+   You can enable remoting by using the **Turn on Script Execution** Group
+   Policy setting. For more information, see [about_Group_Policy_Settings][02]
+   and [about_Execution_Policies][01].
 
 1. Use the `New-PSWorkflowSession` or `New-PSSession` cmdlets to create the
    workflow session.
@@ -136,8 +133,8 @@ To run a workflow, use the following procedure.
    computer. This session configuration includes scripts, type and formatting
    files, and options that are designed for workflows.
 
-   Or, use the `New-PSSession` cmdlet. Use the **ConfigurationName** parameter to
-   specify the **Microsoft.PowerShell.Workflow** session configuration. This
+   Or, use the `New-PSSession` cmdlet. Use the **ConfigurationName** parameter
+   to specify the **Microsoft.PowerShell.Workflow** session configuration. This
    command is the same as using the `New-PSWorkflowSession` cmdlet.
 
    An alternative is to use the `New-PSSession` cmdlet. Use the
@@ -160,10 +157,10 @@ To run a workflow, use the following procedure.
    $ws = New-PSWorkflowSession @newPSWorkflowSessionSplat
    ```
 
-   If you are an Administrator on the workflow session computer, you can use the
-   `New-PSWorkflowExecutionOption` cmdlet to create custom option settings for the
-   workflow session configuration. And, use the `Set-PSSessionConfiguration`
-   cmdlet to change the session configuration.
+   If you are an Administrator on the workflow session computer, you can use
+   the `New-PSWorkflowExecutionOption` cmdlet to create custom option settings
+   for the workflow session configuration. And, use the
+   `Set-PSSessionConfiguration` cmdlet to change the session configuration.
 
    ```powershell
    $newPSWorkflowExecutionOptionSplat = @{
@@ -204,13 +201,13 @@ To run a workflow, use the following procedure.
    ```
 
    The following example runs the `Test-Workflow` on hundreds of computers. The
-   `Get-Content` cmdlet gets the computer names from a text file and saves them in
-   the `$Servers` variable on the local computer.
+   `Get-Content` cmdlet gets the computer names from a text file and saves them
+   in the `$Servers` variable on the local computer.
 
    `Invoke-Command` uses the `Using:` scope modifier to define the `$Servers`
    variable in the local session. For more information about the `Using:` scope
    modifier, see
-   [about_Remote_Variables](../../Microsoft.PowerShell.Core/About/about_Remote_Variables.md).
+   [about_Remote_Variables][04].
 
    ```powershell
    $Servers = Get-Content Servers.txt
@@ -291,12 +288,26 @@ Some workflow common parameters are unique to workflows, such as the
 **PSParameterCollection** parameter that lets you specify different workflow
 common parameter values for different remote nodes. For a list and description
 of the workflow common parameters, see
-[about_WorkflowCommonParameters](about_WorkflowCommonParameters.md).
+[about_WorkflowCommonParameters][09].
 
 ## See also
 
-- [Invoke-AsWorkflow](xref:PSWorkflowUtility.Invoke-AsWorkflow)
-- [New-PSSession](xref:Microsoft.PowerShell.Core.New-PSSession)
-- [PSWorkflow](xref:PSWorkflow) cmdlets
-- [Workflows Guide](/previous-versions/powershell/scripting/components/workflows-guide)
-- [Writing a Windows PowerShell Workflow](/previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow)
+- [Invoke-AsWorkflow][12]
+- [New-PSSession][10]
+- [PSWorkflow][11] cmdlets
+- [Workflows Guide][07]
+- [Writing a Windows PowerShell Workflow][08]
+
+<!-- link references -->
+[01]: ../../Microsoft.PowerShell.Core/About/about_Execution_Policies.md
+[02]: ../../Microsoft.PowerShell.Core/About/about_Group_Policy_Settings.md
+[03]: ../../Microsoft.PowerShell.Core/About/about_Remote_Disconnected_Sessions.md
+[04]: ../../Microsoft.PowerShell.Core/About/about_Remote_Variables.md
+[05]: /dotnet/framework/windows-workflow-foundation
+[06]: /dotnet/desktop/wpf/xaml
+[07]: /previous-versions/powershell/scripting/components/workflows-guide
+[08]: /previous-versions/powershell/scripting/developer/workflow/writing-a-windows-powershell-workflow
+[09]: about_WorkflowCommonParameters.md
+[10]: xref:Microsoft.PowerShell.Core.New-PSSession
+[11]: xref:PSWorkflow
+[12]: xref:PSWorkflowUtility.Invoke-AsWorkflow

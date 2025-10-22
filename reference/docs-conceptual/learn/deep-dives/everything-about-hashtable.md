@@ -1,7 +1,7 @@
 ---
 description: Hashtables are really important in PowerShell so it's good to have a solid understanding of them.
 ms.custom: contributor-KevinMarquette
-ms.date: 06/25/2023
+ms.date: 10/22/2025
 title: Everything you wanted to know about hashtables
 ---
 # Everything you wanted to know about hashtables
@@ -265,6 +265,16 @@ The trick to this situation is to clone the keys before doing the enumeration.
 
 ```powershell
 $environments.Keys.Clone() | ForEach-Object {
+    $environments[$_] = 'SrvDev03'
+}
+```
+
+> [!NOTE]
+> You can't clone a hashtable containing a single key. PowerShell throws an error. Instead, you
+> convert the **Keys** property to an array, then iterate over the array.
+
+```powershell
+@($environments.Keys) | ForEach-Object {
     $environments[$_] = 'SrvDev03'
 }
 ```
