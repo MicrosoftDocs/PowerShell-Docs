@@ -269,6 +269,14 @@ $environments.Keys.Clone() | ForEach-Object {
 }
 ```
 
+Do note, you can not clone a hashtable containing a single key, that will throw an error. In such case where you want to clone the keys its better to cast the key(s) to an array instead and iterate over them. 
+
+```powershell
+@($environments.Keys) | ForEach-Object {
+    $environments[$_] = 'SrvDev03'
+}
+```
+
 ## Hashtable as a collection of properties
 
 So far the type of objects we placed in our hashtable were all the same type of object. I used ages
