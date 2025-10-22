@@ -1,7 +1,7 @@
 ---
 description: Describes how to define constructors for PowerShell classes.
 Locale: en-US
-ms.date: 10/13/2025
+ms.date: 10/22/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes_constructors?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes_Constructors
@@ -392,8 +392,11 @@ For classes that don't inherit from another class, the ordering is:
 
 For derived classes that inherit from another class, the ordering is:
 
-1. The static constructor for the base class.
-1. The static constructor for the derived class.
+1. If the static constructor of the derived class doesn't depend on the base
+   class, the static constructor of the derived class is called first.
+1. If the static constructor of the derived class depends on the base class,
+   the static constructor of the base class is called before executing the line
+   of code in the derived class that depends on base.
 1. If the derived class constructor explicitly calls a base constructor
    overload, it runs that constructor for the base class. If it doesn't
    explicitly call a base constructor, it runs the default constructor for the
