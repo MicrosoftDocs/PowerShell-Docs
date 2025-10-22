@@ -1,7 +1,7 @@
 ---
 description: Hashtables are really important in PowerShell so it's good to have a solid understanding of them.
 ms.custom: contributor-KevinMarquette
-ms.date: 06/25/2023
+ms.date: 10/22/2025
 title: Everything you wanted to know about hashtables
 ---
 # Everything you wanted to know about hashtables
@@ -269,7 +269,9 @@ $environments.Keys.Clone() | ForEach-Object {
 }
 ```
 
-Do note, you cannot clone a hashtable containing a single key, that will throw an error. In such case where you want to clone the keys its better to cast the key(s) to an array instead and iterate over them. 
+> [!NOTE]
+> You can't clone a hashtable containing a single key. PowerShell throws an error. Instead, you
+> convert the **Keys** property to an array, then iterate over the array.
 
 ```powershell
 @($environments.Keys) | ForEach-Object {
