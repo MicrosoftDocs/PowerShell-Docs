@@ -269,7 +269,7 @@ $environments.Keys.Clone() | ForEach-Object {
 }
 ```
 
-Do note, you can not clone a hashtable containing a single key, that will throw an error. In such case where you want to clone the keys its better to cast the key(s) to an array instead and iterate over them. 
+Do note, you cannot clone a hashtable containing a single key, that will throw an error. In such case where you want to clone the keys its better to cast the key(s) to an array instead and iterate over them. 
 
 ```powershell
 @($environments.Keys) | ForEach-Object {
