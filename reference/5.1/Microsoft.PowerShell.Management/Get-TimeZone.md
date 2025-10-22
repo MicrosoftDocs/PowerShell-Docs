@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 11/11/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-timezone?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gtz
 title: Get-TimeZone
 ---
 # Get-TimeZone

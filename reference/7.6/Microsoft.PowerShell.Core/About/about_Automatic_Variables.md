@@ -15,6 +15,8 @@ title: about_Automatic_Variables
 Describes variables that store state information for and are created and
 maintained by PowerShell.
 
+## Long description
+
 Conceptually, most of these variables are considered to be read-only. Even
 though they _can_ be written to, for backward compatibility they _should not_
 be written to.
@@ -68,8 +70,6 @@ Here is a list of the automatic variables in PowerShell:
 - [`$switch`][46]
 - [`$this`][47]
 - [`$true`][48]
-
-## Long description
 
 ### `$$`
 
@@ -725,7 +725,7 @@ object originating the event, known as the event sender.
 Contains **True**. You can use this variable to represent **True** in commands
 and scripts.
 
-## Using Enumerators
+## Using enumerators
 
 The `$input`, `$foreach`, and `$switch` variables are all enumerators used to
 iterate through the values processed by their containing code block.

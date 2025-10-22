@@ -5,6 +5,8 @@ Module Name: PSWorkflow
 ms.date: 06/28/2023
 online version: https://learn.microsoft.com/powershell/module/psworkflow/new-psworkflowsession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - nwsn
 title: New-PSWorkflowSession
 ---
 

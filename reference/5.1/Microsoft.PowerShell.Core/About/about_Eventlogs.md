@@ -27,7 +27,7 @@ stopping the Windows PowerShell providers. You can also log details about
 Windows PowerShell commands.
 
 
-## Viewing the Windows PowerShell Event Log
+## Viewing the Windows PowerShell event log
 
 You can view the Windows PowerShell event log in Event Viewer or by using the
 `Get-EventLog` and `Get-WmiObject` cmdlets. To view the contents of the Windows
@@ -79,7 +79,7 @@ Get-WmiObject -List | where Name -Like "Win32*Event*"
 
 For more information, see [Get-EventLog][05] and [Get-WmiObject][06].
 
-## Selecting Events for the Windows PowerShell Event Log
+## Selecting events for the Windows PowerShell event log
 
 You can use the event log preference variables to determine which events are
 recorded in the Windows PowerShell event log.
@@ -139,7 +139,7 @@ The variable settings apply only for the current Windows PowerShell session. To
 apply them to all Windows PowerShell sessions, add them to your Windows
 PowerShell profile.
 
-## Logging Module Events
+## Logging module events
 
 Beginning in Windows PowerShell 3.0, you can record execution events for the
 cmdlets and functions in Windows PowerShell modules and snap-ins by setting the
@@ -201,7 +201,7 @@ LogPipelineExecutionDetails property of modules and snap-ins.
 For more information about this Group Policy setting, see
 [about_Group_Policy_Settings][03].
 
-## Security and Auditing
+## Security and auditing
 
 The Windows PowerShell event log is designed to indicate activity and to
 provide operational details for troubleshooting.

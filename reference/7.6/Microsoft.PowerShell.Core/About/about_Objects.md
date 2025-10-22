@@ -20,7 +20,7 @@ more identifiable objects. An object, then, is a collection of data that
 represents an item. An object is made up of three types of data: the
 objects type, its methods, and its properties.
 
-## Types, Methods, and Properties
+## Types, methods, and properties
 
 The object type tells what kind of object it is. For example, an object
 that represents a file is a **FileInfo** object.
@@ -40,7 +40,7 @@ You can discover an objects properties and methods using
 [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member) or the `psobject`
 [intrinsic member](about_Intrinsic_Members.md).
 
-## Objects in Pipelines
+## Objects in pipelines
 
 When commands are combined in a pipeline, they pass information to each
 other as objects. When the first command runs, it sends one or more

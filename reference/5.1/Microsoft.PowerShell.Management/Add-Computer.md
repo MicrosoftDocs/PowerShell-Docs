@@ -458,7 +458,7 @@ FQDN format. By default, no domain controller is specified.
 
 Beginning in August 2024, security hardening for domain join requires that you use the FQDN of the
 domain controller. For example: `DC1.contoso.com`. For more information, see
-[NetJoin Domain Join Hardning Changes](https://support.microsoft.com/topic/kb5020276-netjoin-domain-join-hardening-changes-2b65a0f3-1f4c-42ef-ac0f-1caaf421baf8).
+[NetJoin Domain Join Hardening Changes](https://support.microsoft.com/topic/kb5020276-netjoin-domain-join-hardening-changes-2b65a0f3-1f4c-42ef-ac0f-1caaf421baf8).
 
 ```yaml
 Type: System.String

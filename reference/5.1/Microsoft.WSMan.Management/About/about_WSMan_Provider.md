@@ -120,7 +120,7 @@ computer, the name of the remote computer shows up in the provider.
 WSMan:\<Remote_Computer_Name>
 ```
 
-## Navigating the WSMan: Drive
+## Navigating the WSMan: drive
 
 This command uses the `Set-Location` cmdlet to change the current location to
 the `WSMan:` drive.
@@ -149,7 +149,7 @@ Set-Location -Path  WSMan:\SERVER01
 > The above command assume that a connection to the remote system already
 > exists.
 
-## Displaying the Contents of the WSMan: Drive
+## Displaying the contents of the WSMan: drive
 
 This command uses the `Get-ChildItem` cmdlet to display the WS-Management stores
 in the Localhost store location.
@@ -171,7 +171,7 @@ Get-ChildItem -Path WSMan:\SERVER01
 > The above command assume that a connection to the remote system already
 > exists.
 
-## Setting the value of items in the  WSMan: drive
+## Setting the value of items in the WSMan: drive
 
 You can use the `Set-Item` cmdlet to change configuration settings in the
 `WSMan:` drive. The following example sets the **TrustedHosts** value to

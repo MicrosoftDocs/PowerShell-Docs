@@ -111,7 +111,7 @@ B
 In this example, the scriptblock of the **ForEach** method uppercases the
 current object. Then the scriptblock of the **Where** method returns only `B`.
 
-## Delay-bind scriptblock parameters
+## Delay-bind ScriptBlock parameters
 
 [Delay-bind scriptblocks][12] let you use `$PSItem` to define parameters for a
 pipelined cmdlet before executing it.
@@ -120,7 +120,7 @@ pipelined cmdlet before executing it.
 dir config.log | Rename-Item -NewName { "old_$($_.Name)" }
 ```
 
-## Switch statement scriptblocks
+## Switch statement ScriptBlocks
 
 In [switch statements][13], you can use `$PSItem` in both action scriptblocks
 and statement condition scriptblocks.
@@ -297,7 +297,7 @@ False
 In this example, the `Test-IsEven` filter outputs `$true` if the current object
 is an even number and `$false` if it isn't.
 
-## The ValidateScript attribute scriptblock
+## The ValidateScript attribute ScriptBlock
 
 You can use `$PSItem` in the scriptblock of a [ValidateScript][07] attribute.
 When used with **ValidateScript**, `$PSItem` is the value of the current object
@@ -353,7 +353,7 @@ value isn't even.
 The `Add-EvenNumber` function adds the valid input numbers and returns the
 total.
 
-## The catch statement scriptblock
+## The `catch` statement ScriptBlock
 
 Within a `catch` block, the current error can be accessed using `$PSItem`. The
 object is of type **ErrorRecord**.
@@ -378,7 +378,7 @@ was included, verify that the path is correct and try again.
 For more examples, see the _Accessing exception information_ section in
 [about_Try_Catch_Finally][14].
 
-## The `-replace` operator's substitution scriptblock
+## The `-replace` operator's substitution ScriptBlock
 
 Starting in PowerShell 6, you can use `$PSItem` when calling the [-replace][04]
 operator and defining a [substitution scriptblock][05]. When you do, the value

@@ -268,7 +268,7 @@ For a complete list of the parameters of `pwsh.exe`, type:
 pwsh -?
 ```
 
-## Profiles and Execution Policy
+## Profiles and execution policy
 
 The PowerShell execution policy determines, in part, whether you can run
 scripts and load configuration files, including the profiles. The

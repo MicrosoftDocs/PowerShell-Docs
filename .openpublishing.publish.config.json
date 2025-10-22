@@ -49,15 +49,15 @@
         ">=powershell-5.1"
       ],
       "monikerPath": [
-        "mapping/MAML2Yaml/monikerMapping.json"
+        "mapping/monikerMapping.json"
       ],
       "monikers": [],
       "open_to_public_contributors": true,
       "template_folder": "_themes",
       "type_mapping": {
         "Conceptual": "Content",
-        "PowershellCmdlet": "Content",
-        "PowershellModule": "Content"
+        "PowerShellCmdlet1": "Content",
+        "PowerShellModule1": "Content"
       },
       "version": 0,
       "xref_query_tags": [
@@ -71,6 +71,7 @@
   "need_generate_pdf_url_template": false,
   "need_preview_pull_request": true,
   "notification_subscribers": [],
+  "package_version" : "latest",
   "redirection_files": [
     "redir/.openpublishing.redirection.json",
     "redir/.openpublishing.redirection.51.json",

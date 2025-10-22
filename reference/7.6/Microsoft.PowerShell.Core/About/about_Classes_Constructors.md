@@ -1,7 +1,7 @@
 ---
 description: Describes how to define constructors for PowerShell classes.
 Locale: en-US
-ms.date: 11/13/2023
+ms.date: 10/22/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes_constructors?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes_Constructors
@@ -392,8 +392,11 @@ For classes that don't inherit from another class, the ordering is:
 
 For derived classes that inherit from another class, the ordering is:
 
-1. The static constructor for the base class.
-1. The static constructor for the derived class.
+1. If the static constructor of the derived class doesn't depend on the base
+   class, the static constructor of the derived class is called first.
+1. If the static constructor of the derived class depends on the base class,
+   the static constructor of the base class is called before executing the line
+   of code in the derived class that depends on base.
 1. If the derived class constructor explicitly calls a base constructor
    overload, it runs that constructor for the base class. If it doesn't
    explicitly call a base constructor, it runs the default constructor for the
@@ -448,7 +451,7 @@ constructor parameters and before the body block.
 
 ```Syntax
 class <derived-class> : <base-class> {
-    <derived-class>(<derived-parameters>) : <base-class>(<base-parameters>) {
+    <derived-class>(<derived-parameters>) : <base>(<base-parameters>) {
         # initialization code
     }
 }
@@ -540,15 +543,15 @@ PowerShell class constructors have the following limitations:
 - [about_Classes_Methods][01]
 - [about_Classes_Properties][09]
 
-<!-- Link reference definitions -->
+<!-- link references -->
 [01]: about_Classes_Methods.md
 [02]: #static-constructors
 [03]: about_Classes_Properties.md#default-property-values
 [04]: about_Hidden.md
 [05]: #example-4---chaining-constructors-with-a-shared-method
 [06]: #example-5---derived-class-constructors
-[07]: about_Classes_Methods.md#defining-instance-methods-with-update-typedata
-[08]: about_Classes_Properties.md#defining-instance-properties-with-update-typedata
+[07]: about_Classes_Methods.md#define-instance-methods-with-update-typedata
+[08]: about_Classes_Properties.md#define-instance-properties-with-update-typedata
 [09]: about_Classes_Properties.md
 [10]: about_Classes.md
 [11]: about_Classes_Inheritance.md

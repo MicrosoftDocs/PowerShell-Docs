@@ -54,7 +54,7 @@ Like functions, script blocks can include the `dynamicparam`, `begin`,
 `process`, and `end` keywords. For more information, see [about_Functions][02]
 and [about_Functions_Advanced][01].
 
-## Using Script Blocks
+## Using script blocks
 
 A script block is an instance of a Microsoft .NET Framework type
 `System.Management.Automation.ScriptBlock`. Commands can have script

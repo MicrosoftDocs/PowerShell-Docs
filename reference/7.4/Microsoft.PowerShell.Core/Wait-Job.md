@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 09/29/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/wait-job?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - wjb
 title: Wait-Job
 ---
 # Wait-Job

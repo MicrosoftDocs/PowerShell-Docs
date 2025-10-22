@@ -9,6 +9,7 @@ title: about_Path_Syntax
 # about_Path_Syntax
 
 ## Short description
+
 Describes the full and relative path formats in  PowerShell.
 
 ## Long description
@@ -86,7 +87,7 @@ The following examples are based on the current working directory being set to
 When using a path in a command, you can use a fully qualified path or a
 relative one. For example, suppose that your current working directory is
 `C:\Windows`. The following `Get-ChildItem` command retrieves all items in the
-`C:\TechDocs `directory:
+`C:\TechDocs` directory:
 
 ```powershell
 Get-ChildItem \TechDocs
@@ -115,7 +116,7 @@ first file (`C:\TechDocs\Jan\Results.txt`) and the path for the second file
 (`C:\TechDocs\Feb\Results.txt`) allow you to clearly distinguish between the
 two files.
 
-## Support for the Win32 File namespace
+## Support for the Win32 file namespace
 
 On Windows, the cmdlets that support the FileSystem provider also support the
 paths that use the Win32 File namespace format. You can only use these paths

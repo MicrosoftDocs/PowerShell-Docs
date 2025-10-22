@@ -450,7 +450,7 @@ that is passed to it.
 
 ### [about_Registry_Provider](about_Registry_Provider.md)
 
-Describes teh features and functions of the Registry provider.
+Describes the features and functions of the Registry provider.
 
 ### [about_Regular_Expressions](about_Regular_Expressions.md)
 

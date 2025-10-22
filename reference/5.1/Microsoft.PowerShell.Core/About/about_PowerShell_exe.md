@@ -9,16 +9,16 @@ title: about_PowerShell_exe
 ---
 # about_PowerShell_exe
 
-## Short description
+## SHORT DESCRIPTION
 Explains how to use the `powershell.exe` command-line interface. Displays the
 command-line parameters and describes the syntax.
 
-## Long description
+## LONG DESCRIPTION
 
 For information about the command-line options for PowerShell 7, see
 [about_Pwsh][01].
 
-## SYNTAX
+## Syntax
 
 ```
 PowerShell[.exe]
@@ -284,12 +284,12 @@ command in a PowerShell session, prepend the command parameters with a hyphen
 (`-`), not a forward slash (`/`). You can use either a hyphen or forward slash
 in `cmd.exe`.
 
-## REMARKS
+## Remarks
 
 Troubleshooting note: In PowerShell 2.0, starting some programs from the
 PowerShell console fails with a **LastExitCode** of 0xc0000142.
 
-## EXAMPLES
+## Examples
 
 ```powershell
 # Create a new PowerShell session and load a saved console file

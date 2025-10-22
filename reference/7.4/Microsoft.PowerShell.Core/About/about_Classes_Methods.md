@@ -654,7 +654,7 @@ $b.SetTimeStamp()    => 2023-11-06
 $c.SetTimeStamp()    => 10/27/2023 9:53:58 AM
 ```
 
-## Defining instance methods with Update-TypeData
+## Define instance methods with Update-TypeData
 
 Beyond declaring methods directly in the class definition, you can define
 methods for instances of a class in the static constructor using the
@@ -802,7 +802,7 @@ PowerShell class methods have the following limitations:
 [03]: #static-methods
 [04]: about_Functions_Advanced_Parameters.md#parameter-and-variable-validation-attributes
 [05]: #example-4---static-method-with-overloads
-[06]: #defining-instance-methods-with-update-typedata
+[06]: #define-instance-methods-with-update-typedata
 [07]: about_Automatic_Variables.md
 [08]: about_Hidden.md
 [09]: about_Classes.md

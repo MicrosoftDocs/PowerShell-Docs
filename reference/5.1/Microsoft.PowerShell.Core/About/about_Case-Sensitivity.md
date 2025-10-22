@@ -45,7 +45,7 @@ operating system and integration with other tools.
   case-sensitive filesystem. When the case of the imported name of the module
   doesn't match, `Update-Help` can't find the help files and reports an error.
 
-## Related links
+## See also
 
 - [about_Environment_Variables](about_Environment_Variables.md)
 - [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)

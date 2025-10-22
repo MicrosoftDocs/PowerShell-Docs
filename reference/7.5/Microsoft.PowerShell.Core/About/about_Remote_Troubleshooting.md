@@ -326,7 +326,7 @@ $newItemPropertySplat = @{
 New-ItemProperty @newItemPropertySplat
 ```
 
-## How to use an ip address in a remote command
+## How to use an IP address in a remote command
 
 For error:
 
@@ -477,7 +477,7 @@ To resolve this problem, use proxy setting options in your remote command.
   parameters of the `New-PSSessionOption` cmdlet to create a variable
   containing a **PSSessionOption** object with the proxy settings for your
   enterprise.
-- Use the variable containing the **PSSessionOption** object wit the
+- Use the variable containing the **PSSessionOption** object with the
   **SessionOption** parameter of a `New-PSSession`, `Enter-PSSession`, or
   `Invoke-Command` command.
 

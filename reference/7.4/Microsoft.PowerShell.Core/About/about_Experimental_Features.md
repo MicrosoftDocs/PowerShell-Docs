@@ -29,7 +29,7 @@ specific user.
 > Experimental features enabled in the user configuration file take precedence
 > over experimental features listed in the system configuration file.
 
-## The Experimental Attribute
+## The Experimental attribute
 
 Use the `Experimental` attribute to declare some code as experimental.
 
@@ -48,7 +48,7 @@ specified and the only valid values are:
 - `Show` means to show this experimental feature if the feature is enabled
 - `Hide` means to hide this experimental feature if the feature is enabled
 
-## Declaring Experimental Features in Modules Written in C\#
+## Declaring experimental features in modules written in C\#
 
 Module authors who want to use the Experimental Feature flags can declare a
 cmdlet as experimental by using the `Experimental` attribute.
@@ -59,7 +59,7 @@ cmdlet as experimental by using the `Experimental` attribute.
 public class InvokeWebRequestCommandV2 : WebCmdletBaseV2 { ... }
 ```
 
-## Declaring Experimental Features in Modules written in PowerShell
+## Declaring experimental features in modules written in PowerShell
 
 Module written in PowerShell can also use the `Experimental` attribute to
 declare experimental cmdlets:
@@ -98,7 +98,7 @@ PrivateData = @{
 }
 ```
 
-## Mutually Exclusive Experimental Features
+## Mutually exclusive experimental features
 
 There are cases where an experimental feature cannot co-exist side-by-side with
 an existing feature or another experimental feature.
@@ -133,7 +133,7 @@ existing `InvokeWebRequestCommand` implementation is hidden and the
 This allows users to try out the new cmdlet and provide feedback then revert
 to the non-experimental version when needed.
 
-## Experimental Parameters in Cmdlets
+## Experimental parameters in cmdlets
 
 The `Experimental` attribute can also be applied to individual parameters. This
 allows you to create an experimental set of parameters for an existing cmdlet
@@ -163,7 +163,7 @@ param(
 )
 ```
 
-## Checking if an Experimental Feature is Enabled
+## Checking if an experimental feature is enabled
 
 In your code, you will need to check if your experimental feature is enabled
 before taking appropriate action. You can determine if an experimental feature

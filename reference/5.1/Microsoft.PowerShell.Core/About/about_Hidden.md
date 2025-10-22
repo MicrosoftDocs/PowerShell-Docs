@@ -45,7 +45,7 @@ case-sensitive, and hidden members are still public.
 The `hidden` keyword, along with custom classes, was introduced in Windows
 PowerShell 5.0.
 
-## EXAMPLE
+## Example
 
 The following example shows how to use the `hidden` keyword in a class
 definition. The **Car** class method, **Drive**, has a property, **Rides**,

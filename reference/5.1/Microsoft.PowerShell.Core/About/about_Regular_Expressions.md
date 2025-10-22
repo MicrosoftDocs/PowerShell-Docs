@@ -30,7 +30,7 @@ more about their syntax and usage at the links below.
 - [Select-String][11]
 - [-match and -replace operators][07]
 - [-split operator][09]
-- [switch statement with -Regex option][10]
+- [switch statement with -regex option][10]
 
 PowerShell regular expressions are case-insensitive by default. Each method
 shown above has a different way to force case sensitivity.
@@ -82,7 +82,7 @@ characters).
 
 ### Numbers
 
-The `\d` character class matchs any decimal digit. Conversely, `\D` matches any
+The `\d` character class matches any decimal digit. Conversely, `\D` matches any
 character except decimal digits.
 
 ```powershell
@@ -255,7 +255,7 @@ The following are a few commonly used character escapes:
 | `\n`             | Matches a newline         |
 | `\r`             | Matches a carriage return |
 
-## Groups, Captures, and Substitutions
+## Groups, captures, and substitutions
 
 Grouping constructs separate an input string into substrings that can be
 captured or ignored. Grouped substrings are called subexpressions. By default

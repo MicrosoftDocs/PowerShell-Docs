@@ -5,6 +5,10 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 08/09/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - dir
+  - gci
+  - ls
 title: Get-ChildItem
 ---
 

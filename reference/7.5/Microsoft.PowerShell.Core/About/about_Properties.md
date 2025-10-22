@@ -155,11 +155,11 @@ VersionInfo         : File:             C:\Program Files\PowerShell\7-preview\pw
                       PrivateBuild:     False
                       SpecialBuild:     False
                       Language:         Language Neutral
-                      
+
 BaseName            : pwsh
 ResolvedTarget      : C:\Program Files\PowerShell\7-preview\pwsh.exe
-Target              : 
-LinkType            : 
+Target              :
+LinkType            :
 Name                : pwsh.exe
 Length              : 284704
 DirectoryName       : C:\Program Files\PowerShell\7-preview
@@ -174,7 +174,7 @@ LastAccessTime      : 1/3/2025 1:38:13 PM
 LastAccessTimeUtc   : 1/3/2025 7:38:13 PM
 LastWriteTime       : 11/13/2024 10:12:26 PM
 LastWriteTimeUtc    : 11/14/2024 4:12:26 AM
-LinkTarget          : 
+LinkTarget          :
 UnixFileMode        : -1
 Attributes          : Archive
 ```

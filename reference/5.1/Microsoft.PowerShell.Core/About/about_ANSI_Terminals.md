@@ -8,6 +8,7 @@ title: about_ANSI_Terminals
 # about_ANSI_Terminals
 
 ## Short description
+
 Describes the support available for ANSI escape sequences in Windows PowerShell.
 
 ## Long description

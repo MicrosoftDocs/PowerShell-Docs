@@ -21,10 +21,6 @@ Alias
 
 **ShouldProcess**
 
-## Short description
-
-Provides access to the PowerShell aliases and the values that they represent.
-
 ## Detailed description
 
 The PowerShell **Alias** provider lets you get, add, change, clear, and delete
@@ -63,7 +59,7 @@ cmdlets.
 Each alias is an instance of the [System.Management.Automation.AliasInfo][12]
 class.
 
-## Navigating the Alias drive
+## Navigating the alias drive
 
 The **Alias** provider exposes its data store in the `Alias:` drive. To work
 with aliases, you can change your location to the `Alias:` drive by using the
@@ -86,8 +82,8 @@ path.
 > [!NOTE]
 > PowerShell uses aliases to allow you a familiar way to work with provider
 > paths. Commands such as `dir` and `ls` are now aliases for
-> [Get-ChildItem][13], `cd` is an alias for [Set-Location][02], and `pwd` is an
-> alias for [Get-Location][01].
+> [Get-ChildItem][13], `cd` is an alias for [Set-Location][02], and `pwd` is
+> an alias for [Get-Location][01].
 
 ### Displaying the Contents of the Alias: drive
 

@@ -805,7 +805,7 @@ developer must implement the code to handle the wildcard input. The wildcards
 supported can vary according to the underlying API or PowerShell provider. For
 more information, see [about_Wildcards][19].
 
-## Argument completion attributes
+## Argument Completion attributes
 
 ### ArgumentCompletions attribute
 

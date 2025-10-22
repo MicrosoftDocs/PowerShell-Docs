@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 10/15/2024
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - sasv
 title: Start-Service
 ---
 

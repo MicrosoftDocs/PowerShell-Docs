@@ -1,7 +1,7 @@
 @{
     Parameters = @(
       @{
-        Name = 'Repository'
+        Name = 'repository'
         Type = 'string'
         IfNullOrEmpty = {
           param($ErrorTarget)
@@ -31,7 +31,7 @@
       }
 
       @{
-        Name = 'Message_Body'
+        Name = 'message_body'
         Type = 'String'
         IfNullOrEmpty = {
           param($ErrorTarget)
@@ -75,7 +75,7 @@
       }
 
       @{
-        Name = 'Message_Path'
+        Name = 'message_path'
         Type = 'String'
         IfNullOrEmpty = {
           param($ErrorTarget)

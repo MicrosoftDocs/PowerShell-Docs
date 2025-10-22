@@ -361,7 +361,7 @@ item that doesn't have the property.
 
 For more information on this behavior, see PowerShell Issue [#13752][13752].
 
-## See Also
+## See also
 
 - [about_Arrays][01]
 - [about_Intrinsic_Members][03]

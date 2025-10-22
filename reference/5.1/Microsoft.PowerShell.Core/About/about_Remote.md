@@ -9,6 +9,7 @@ title: about_Remote
 # about_Remote
 
 ## Short description
+
 Describes how to run remote commands in PowerShell.
 
 ## Long description
@@ -54,7 +55,7 @@ Exit-PSSession
 
 For more information, see [Enter-PSSession][09].
 
-## How to use cmdlets that have a ComputerName parameter
+## HOW TO USE CMDLETS THAT HAVE A COMPUTERNAME PARAMETER
 
 Several cmdlets have a **ComputerName** parameter that lets you get objects
 from remote computers.

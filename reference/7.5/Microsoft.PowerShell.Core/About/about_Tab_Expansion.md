@@ -37,7 +37,7 @@ information, see [about_PSReadLine][02].
 > contain tabs. If it does, the results will be unpredictable and will almost
 > certainly not be what you intended.
 
-## File and cmdlet name completion
+## FILE AND CMDLET NAME COMPLETION
 
 To fill in a filename or path from the available choices automatically, type
 part of the name and press the <kbd>Tab</kbd> key. PowerShell automatically

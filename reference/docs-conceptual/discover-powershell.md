@@ -1,6 +1,6 @@
 ---
 description: Learn what PowerShell is and some essential commands used to discover more about PowerShell.
-ms.date: 01/31/2023
+ms.date: 09/02/2025
 ms.topic: overview
 title: Discover PowerShell
 ---
@@ -11,28 +11,25 @@ PowerShell is a command-line shell and a scripting language in one. PowerShell s
 Windows to help automate administrative tasks. Now, it runs cross platform and can be used for
 various tasks.
 
-The thing that makes PowerShell unique is that it accepts and returns .NET objects, rather than
-text. This feature makes it easier to connect different commands in a _pipeline_.
+What makes PowerShell unique is that it accepts and returns .NET objects, rather than text. This
+feature makes it easier to connect different commands in a _pipeline_.
 
 ## What can PowerShell be used for?
 
-Usage of PowerShell has grown since the days when it was Windows-only. It's still used for Windows
-task automation, but today, you can use it for tasks like:
+Initially, PowerShell was Windows-only. Now, it's cross-platform and can be used for various tasks
+like:
 
 - **Cloud management**. PowerShell can be used to manage cloud resources. For example, you can
-  retrieve information about cloud resources, as well as update or deploy new resources.
+  retrieve information, update, or deploy new resources.
 - **CI/CD**. It can also be used as part of a Continuous Integration/Continuous Deployment pipeline.
 - **Automate tasks for Active Directory and Exchange**. You can use it to automate almost any task
   on Windows like creating users in Active Directory and mailboxes in Exchange.
 
-There are many more areas of usage but the preceding list gives you a hint that PowerShell has come
-a long way.
-
 ## Who uses PowerShell?
 
 PowerShell is a powerful tool that can help people working in a multitude of roles. Traditionally,
-PowerShell has been used by the System Administrator role but is now being used by people calling
-themselves DevOps, Cloud Ops, and even Developers.
+PowerShell was used by the System Administrators. Now it's being used by people calling themselves
+DevOps, Cloud Ops, and even Developers.
 
 ## PowerShell cmdlets
 
@@ -53,8 +50,8 @@ discover what commands are available, what they do, and what types they operate 
 
 - `Get-Verb`. Running this command returns a list of verbs that most commands adhere to. The
   response includes a description of what these verbs do. Since most commands follow this naming
-  convention, it sets expectations on what a command does. This helps you select the appropriate
-  command and what to name a command, should you be creating one.
+  convention, it sets expectations on what a command does. This command helps you select the
+  appropriate verb and what to name a command when you create your own commands.
 - `Get-Command`. This command retrieves a list of all commands installed on your machine.
 - `Get-Member`. It operates on object based output and is able to discover what object, properties
   and methods are available for a command.
@@ -92,8 +89,8 @@ Exit    ex            Common    Sets the current environment or context to the m
 ## Find commands with Get-Command
 
 The `Get-Command` cmdlet returns a list of all available commands installed on your system. The list
-you get back is quite large. You can limit the amount of information that comes back by filtering
-the response using parameters or helper cmdlets.
+can be large. You can limit the amount of information that comes back by filtering the response
+using parameters or helper cmdlets.
 
 ### Filter on name
 
@@ -205,9 +202,9 @@ You can also use other cmdlets to filter results.
 
 ## Explore objects with Get-Member
 
-Once you've been able to locate the cmdlet you want, you want to know more about what output it
-produces. The `Get-Member` cmdlet displays the type, properties, and methods of an object. Pipe the
-output you want to inspect to `Get-Member`.
+Once you locate the cmdlet you want, you want to know more about what output it produces. The
+`Get-Member` cmdlet displays the type, properties, and methods of an object. Pipe the output you
+want to inspect to `Get-Member`.
 
 ```powershell
 Get-Process | Get-Member
@@ -233,8 +230,8 @@ Get-Process | Get-Member -MemberType Method
 ```
 
 By default PowerShell only displays a few properties. The previous example displayed the `Name`,
-`MemberType` and `Definition` members. You can use `Select-Object` to specify properties you want to
-see. For example, you want to display only the `Name` and `Definition` properties:
+`MemberType`, and `Definition` members. You can use `Select-Object` to specify properties you want
+to see. For example, you want to display only the `Name` and `Definition` properties:
 
 ```powershell
 Get-Process | Get-Member | Select-Object Name, Definition

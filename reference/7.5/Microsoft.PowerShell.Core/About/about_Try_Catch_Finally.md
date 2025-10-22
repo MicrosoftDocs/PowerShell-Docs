@@ -125,7 +125,7 @@ An error occurred.
 When the script encounters "NonsenseString", it causes a terminating error. The
 `catch` block handles the error by running the statement list inside the block.
 
-## Using multiple catch statements
+## USING MULTIPLE CATCH STATEMENTS
 
 A `try` statement can have any number of `catch` blocks. For example, the
 following script has a `try` block that downloads `MyDoc.doc`, and it contains
@@ -177,7 +177,7 @@ block for the derived class before the `catch` block for the general class.
 > specifying the error type **System.Management.Automation.RuntimeException**
 > behaves the same as an unqualified catch block.
 
-## Using Traps in a Try Catch
+## Using traps in a try catch
 
 When a terminating error occurs in a `try` block with a `trap` defined within
 the `try` block, even if there is a matching `catch` block, the `trap`

@@ -96,7 +96,7 @@ Set-Location C:
 > [Get-ChildItem][06], `cd` is an alias for [Set-Location][15], and `pwd` is an
 > alias for [Get-Location][09].
 
-## Displaying the Contents of the Cert: drive
+## Displaying the contents of the Cert: drive
 
 This command uses the `Get-ChildItem` cmdlet to display the certificate stores
 in the `CurrentUser` certificate store location.
@@ -201,7 +201,7 @@ Get-ChildItem @getChildItemSplat |
     }
 ```
 
-## Opening the Certificates MMC Snap-in
+## Opening the Certificates MMC snap-in
 
 The `Invoke-Item` cmdlet uses the default application to open a path you
 specify. For certificates, the default application is the Certificates MMC
@@ -214,7 +214,7 @@ certificate.
 Invoke-Item Cert:\CurrentUser\my\6B8223358119BB08840DEE50FD8AF9EA776CE66B
 ```
 
-## Copying Certificates
+## Copying certificates
 
 Copying certificates isn't supported by the **Certificate** provider. When you
 attempt to copy a certificate, you see this error.
@@ -236,7 +236,7 @@ At line:1 char:1
                               Microsoft.PowerShell.Commands.CopyItemCommand
 ```
 
-## Moving Certificates
+## Moving certificates
 
 ### Move all SSL Server authentication certs to the WebHosting store
 
@@ -260,7 +260,7 @@ Get-ChildItem Cert:\LocalMachine\My -SSLServerAuthentication |
     Move-Item -Destination Cert:\LocalMachine\WebHosting
 ```
 
-## Deleting Certificates and Private Keys
+## Deleting certificates and private keys
 
 The `Remove-Item` cmdlet deletes certificates that you specify. The
 **DeleteKey** dynamic parameter deletes the private key.
@@ -353,13 +353,13 @@ $expired = Get-ChildItem Cert:\LocalMachine\WebHosting -ExpiringInDays 0
 $expired | Remove-Item -DeleteKey
 ```
 
-## Creating Certificates
+## Creating certificates
 
 The `New-Item` cmdlet doesn't create new certificates in the **Certificate**
 provider. Use the [New-SelfSignedCertificate][03] cmdlet to create a
 certificate for testing purposes.
 
-## Creating Certificate Stores
+## Creating certificate stores
 
 In the `Cert:` drive, the `New-Item` cmdlet creates certificate stores in the
 `LocalMachine` store location. It supports the **Name**, **Path**, **WhatIf**,
@@ -390,7 +390,7 @@ Invoke-Command -ComputerName Server01 -ScriptBlock {
 }
 ```
 
-## Creating Client Certificates for WS-Man
+## Creating client certificates for WS-MAN
 
 This command creates **ClientCertificate** entry that can be used by the
 **WS-Management** client. The new **ClientCertificate** shows up under the
@@ -408,7 +408,7 @@ $newItemSplat = @{
 New-Item @newItemSplat
 ```
 
-## Deleting Certificate Stores
+## Deleting certificate stores
 
 ### Delete a certificate store from a remote computer
 

@@ -81,7 +81,7 @@ For example, type:
 Get-Help Export-Alias -Detailed
 ```
 
-## Creating an alias
+## CREATING AN ALIAS
 
 To create a new alias, use the `New-Alias` cmdlet. For example, to create the
 `gh` alias for `Get-Help`, type:
@@ -105,7 +105,7 @@ Or, type:
 gh Get-CimInstance -Detailed
 ```
 
-## Saving aliases
+## SAVING ALIASES
 
 The aliases that you create are saved only in the current session. To use the
 aliases in a different session, add the alias to your PowerShell profile. Or,

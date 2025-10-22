@@ -245,7 +245,7 @@ The RegexMatch options are:
 - **ExplicitCapture**: Ignores non-named match groups so that only explicit
   capture groups are returned in the result list. Valid only with RegexMatch.
 
-## UNARY and BINARY SPLIT OPERATORS
+## Unary and binary split operators
 
 The unary split operator (`-split <string>`) has higher precedence than a
 comma. As a result, if you submit a comma-separated list of strings to the

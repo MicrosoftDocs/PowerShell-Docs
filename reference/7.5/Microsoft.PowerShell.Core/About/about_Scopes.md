@@ -94,7 +94,7 @@ private in a parent scope, the search through continues through the scope
 chain. [Example 4][02] shows the effect of a private variable in a scope
 search.
 
-## PowerShell scopes names
+## PowerShell scope names
 
 PowerShell defines names for some scopes to allow easier access to that scope.
 PowerShell defines the following named scopes:

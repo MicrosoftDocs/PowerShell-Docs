@@ -6,7 +6,6 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_Session_Configuration_Files
 ---
-
 # about_Session_Configuration_Files
 
 ## Short description
@@ -38,7 +37,7 @@ Windows PowerShell 3.0 to include a session configuration file in a session
 configuration. However, users of Windows PowerShell 2.0 (and later) are
 affected by the settings in the session configuration.
 
-## Creating Custom Sessions
+## Creating custom sessions
 
 You can customize many features of a PowerShell session by specifying session
 properties in a session configuration. You can customize a session by writing a
@@ -64,7 +63,7 @@ based on group membership.
 For more information about RoleDefinitions and how to define this Value, see
 the help topic for the `New-PSRoleCapabilityFile` Cmdlet.
 
-## Creating a Session Configuration File
+## Creating a session configuration file
 
 The easiest way to create a session configuration file is by using the
 `New-PSSessionConfigurationFile` cmdlet. This cmdlet generates a file that uses
@@ -196,7 +195,7 @@ ParseException
 + FullyQualifiedErrorId : ScriptsNotAllowed
 ```
 
-## Editing a Session Configuration File
+## Editing a session configuration file
 
 All settings in a session configuration except for RunAsVirtualAccount and
 RunAsVirtualAccountGroups can be modified by editing the session configuration
@@ -231,7 +230,7 @@ If you need to modify the RunAsVirtualAccount or the RunAsVirtualAccountGroups
 settings, you must un-register the session configuration and re-register a
 session configuration file that includes the edited values.
 
-## Testing a Session Configuration File
+## Testing a session configuration file
 
 Use the Test-PSSessionConfigurationFile cmdlet to test manually edited session
 configuration files. That's important: if the file syntax and values are not
@@ -256,7 +255,7 @@ file, including files that the New-PSSessionConfiguration cmdlet creates. For
 more information, see the help topic for the `Test-PSSessionConfigurationFile`
 cmdlet.
 
-## Removing a Session Configuration File
+## Removing a session configuration file
 
 You cannot remove a session configuration file from a session configuration.
 However, you can replace the file with a new file that uses the default

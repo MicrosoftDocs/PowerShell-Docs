@@ -10,9 +10,11 @@ title: about_Numeric_Literals
 # about_Numeric_Literals
 
 ## Short description
+
 This article describes the syntax and usage of numeric values in PowerShell.
 
 ## Long description
+
 There are two kinds of numeric literals: integer and real. Both can have type
 and multiplier suffixes.
 

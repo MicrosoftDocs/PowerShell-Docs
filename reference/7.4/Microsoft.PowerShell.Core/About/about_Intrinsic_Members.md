@@ -14,7 +14,7 @@ title: about_Intrinsic_Members
 Provides information about PowerShell's intrinsic members that are available to
 all PowerShell objects.
 
-## Detailed description
+## Long description
 
 When objects are created, PowerShell adds some "hidden" properties and methods
 to each object. These properties and methods are known as _intrinsic members_.
@@ -209,7 +209,7 @@ True
 
 For more information, see [about_Operators][03].
 
-## New() method for types
+## `new()` method for types
 
 Beginning in PowerShell 5.0, PowerShell adds a static `new()` method for all
 .NET types. The following examples produce the same result.

@@ -69,7 +69,7 @@ Advanced functions differ from compiled cmdlets in the following ways:
   named parameters.
 - Advanced functions can't be used in transactions.
 
-## PipelineStopToken
+## PIPELINESTOPTOKEN
 
 Beginning with PowerShell 7.6-preview.4, `$PSCmdlet` includes the
 `PipelineStopToken` property allowing access a [CancellationToken][07] tied to

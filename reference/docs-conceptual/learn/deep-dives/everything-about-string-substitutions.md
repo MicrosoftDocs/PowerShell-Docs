@@ -243,7 +243,7 @@ Write-Host "$test $tester $($test)ter"
 Write-Host "{0} {1} {0}ter" -f $test, $tester
 ```
 
-I personally use format string for this, but this is good to know incase you see it in the wild.
+I personally use format string for this, but this is good to know in case you see it in the wild.
 
 ## Find and replace tokens
 

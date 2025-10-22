@@ -56,7 +56,7 @@ supported versions of Windows.
   parameters, including the NoProfile switch. For more information, see
   [about_PowerShell_ISE_exe][03].
 
-## Running Interactive Commands
+## Running interactive commands
 
 You can run any Windows PowerShell expression or command in Windows PowerShell
 ISE. You can use cmdlets, providers, snap-ins, and modules as you would use
@@ -71,7 +71,7 @@ the previous command, all the lines in the command are recalled. When you type
 commands, press SHIFT+ENTER to make a new blank line appear under the current
 line.
 
-## Viewing Output
+## Viewing output
 
 The results of commands and scripts are displayed in the Console pane. You can
 move or copy the results from the Console pane by using keyboard shortcuts or
@@ -84,7 +84,7 @@ Clear-Host
 cls
 ```
 
-## Writing Scripts and Functions
+## Writing scripts and functions
 
 In the Script pane, you can open, compose, edit, and run scripts. The Script
 pane lets you edit scripts by using buttons and keyboard shortcuts. You can
@@ -98,7 +98,7 @@ Advanced editing features include brace-matching, expand-collapse, line
 numbers, error indicators, block editing and indenting, rich copy, and case
 conversion.
 
-## Getting Help
+## Getting help
 
 Windows PowerShell ISE includes help topics that describe its use. In
 addition, all installed help files are accessible from the Script and Command
@@ -121,7 +121,7 @@ PowerShell ISE, just as you use it in the Windows PowerShell console. However,
 in Windows PowerShell ISE, the Help function displays the entire help topic,
 not one page at a time.
 
-## Debugging Scripts
+## Debugging scripts
 
 You can use the Windows PowerShell ISE debugger to debug a Windows PowerShell
 script or function. When you debug a script, you can use menu items and
@@ -146,7 +146,7 @@ spots.
 You can also use the Windows PowerShell debugger cmdlets in the Command pane
 just as you would use them in the console.
 
-## Running Remote Commands
+## Running remote commands
 
 The New Remote PowerShell Tab feature makes it easy to establish a persistent
 user-managed Windows PowerShell session ("PSSession") to the local computer or
@@ -154,7 +154,7 @@ a remote computer. The command opens a pop-up window that prompts you for a
 computer name and for the user account that has permission to run commands on
 the remote computer.
 
-## Customizing the View
+## Customizing the view
 
 You can use Windows PowerShell ISE features to move and to resize the Console
 pane and the Script pane. You can show and hide either pane, and you can
@@ -165,7 +165,7 @@ of Windows PowerShell ISE. In addition, Windows PowerShell ISE has a custom
 host variable, $psISE, that you can use to customize Windows PowerShell ISE,
 including adding menus and menu items.
 
-## Windows PowerShell ISE Profile
+## Windows PowerShell ISE profile
 
 Windows PowerShell ISE has its own Windows PowerShell profile,
 Microsoft.PowerShellISE_profile.ps1. In this profile, you can store functions,

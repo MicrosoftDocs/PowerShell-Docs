@@ -48,7 +48,7 @@ PowerShell doesn't come with Help files. You can use the Updatable Help feature
 to install the help files for all the commands that are included by default
 in PowerShell and for all Windows modules.
 
-## Updatable help cmdlets
+## Updatable Help cmdlets
 
 - `Update-Help`: Downloads the newest help files from the internet or a file
   share, and installs them on the local computer.
@@ -62,7 +62,7 @@ in PowerShell and for all Windows modules.
   that don't have help files. Opens online help topics for cmdlets, functions,
   scripts, and workflows in your default internet browser.
 
-## Auto-generated help: help without help files
+## Auto-generated help: Help without help files
 
 If you don't have the help file for a cmdlet, function, or workflow on the
 computer, the `Get-Help` cmdlet displays auto-generated help and prompts you to
@@ -131,7 +131,7 @@ Set-ExecutionPolicy cmdlet, type:
 Update-Help -Module Microsoft.PowerShell.Security
 ```
 
-## Permissions for updatable help
+## Permissions for Updatable Help
 
 To update help for the modules in the directory `$PSHOME/Modules`, you must be
 member of the Administrators group on the computer.
@@ -408,7 +408,7 @@ environment variable, or a module that's not well-formed (the module directory
 doesn't contain at least one file whose basename is the same as the directory
 name).
 
-## How to support updatable help
+## How to support Updatable Help
 
 If you author a module, you can support online help and Updatable Help for your
 modules. For more information, see [Supporting Updatable Help][01] and

@@ -21,10 +21,6 @@ Alias
 
 **ShouldProcess**
 
-## Short description
-
-Provides access to the PowerShell aliases and the values that they represent.
-
 ## Detailed description
 
 The PowerShell **Alias** provider lets you get, add, change, clear, and delete
@@ -63,7 +59,7 @@ cmdlets.
 Each alias is an instance of the [System.Management.Automation.AliasInfo][12]
 class.
 
-## Navigating the Alias drive
+## Navigating the alias drive
 
 The **Alias** provider exposes its data store in the `Alias:` drive. To work
 with aliases, you can change your location to the `Alias:` drive by using the

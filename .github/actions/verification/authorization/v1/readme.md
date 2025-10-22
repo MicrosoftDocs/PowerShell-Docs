@@ -54,6 +54,7 @@ jobs:
         uses: MicrosoftDocs/PowerShell-Docs/.github/actions/verification/authorization/v1@main
         with:
           token: ${{ github.token }}
+          authorized_accounts: 'learn-build-service-prod[bot]'
 ```
 
 This workflow uses the `pull_request_target` trigger to check whether a Pull Request author is
@@ -61,7 +62,10 @@ permitted to submit their Pull Request to the `live` branch. It only runs on Pul
 target the `live` branch, so other Pull Requests don't get a skipped message for this check.
 
 It passes the GitHub token to the action but does not specify a target, relying on the default for
-that input, which is the `live` branch.
+that input, which is the `live` branch. It does specify that the `learn-build-service-prod[bot]`
+managed account is authorized with the `authorized_accounts` parameter. If the account creating a
+PR to the `live` branch is the managed account or has either the `Maintain` or `Admin` permission,
+the workflow will pass.
 
 ### Verifying authorization to change sensitive files
 
@@ -103,6 +107,21 @@ needed to be specified as a comma-separated string. Finally, it specifies the **
 authorization to change files in those paths.
 
 ## Inputs
+
+### `authorized_accounts`
+
+Defines one or more authorized accounts to skip permission-checking for. This is best used for bot
+accounts, which may not have specific permissions to a repository but are used by the
+organization's automation. Must be a comma-separated string of account names.
+
+If a user is in the authorized accounts list, the action skips checking permissions and passes for
+that user.
+
+```yaml
+required : false
+type     : string
+default  : ''
+```
 
 ### `permissions`
 

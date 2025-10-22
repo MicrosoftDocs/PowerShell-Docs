@@ -1,25 +1,29 @@
 ---
 description: This article contains the list of changes for each released version of PSReadLine.
 Locale: en-US
-ms.date: 03/03/2025
+ms.date: 09/02/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_release_notes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Release_Notes
 ---
 # about_PSReadLine_Release_Notes
 
+## Short description
+
 This is a summary of changes to the **PSReadLine** module. For a full list of
 changes, see the **PSReadLine** [ChangeLog][01].
 
-- Current preview: v2.4.0-beta1
+- Current preview: v2.4.4-beta4
 - Current stable release: v2.3.6
 
-## PSReadLine release history
+## Long description
+
+## PSReadline release history
 
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
-- v2.3.6 shipped in PowerShell 7.5.0
+- v2.3.6 shipped in PowerShell 7.4.7 and 7.5.0
 - v2.3.5 shipped in PowerShell 7.4.2 and 7.5.0-preview.3
 - v2.3.4 shipped in PowerShell 7.4.0-rc.1
 - v2.2.6 shipped in PowerShell 7.3.0
@@ -27,9 +31,39 @@ Windows PowerShell 5.1.
 - v2.0.4 shipped in PowerShell 7.0.11
 - v2.0.0 ships in Windows PowerShell 5.1
 
-## Release Notes
+### 2.4.4-beta4 - 2025-08-28
 
-### v2.4.0-beta1 - 2025-02-28
+- Added screen reader support to PSReadLine - The new render implementation
+  redrawing the terminal buffer to avoid unnecessary and confusing output for
+  screen readers.
+
+### v2.4.3-beta3 - 2025-07-23
+
+You can get the v2.4.3-beta3 version of the PSReadLine module from PowerShell
+Gallery.
+
+This release includes the following changes:
+
+- Allow accepting the current input automatically from within an OnIdle event
+  handler
+- Add VS Code tasks and debug config
+- Add bound check for the cursor top value to InvokePrompt
+- Fix typo in SamplePSReadLineProfile.ps1
+- Fix line ending and cache some reflection operations
+- Improve test reliability by making sure the PSReadLine one-time
+  initialization is done
+
+### v2.4.2-beta2 - 2025-04-16
+
+You can get the v2.4.2-beta2 version of the PSReadLine module from PowerShell
+Gallery.
+
+This release includes the following changes:
+
+- Add a private field to indicate if PSReadLine is initialized and ready
+- Use CFS for installing module and deploy box for module publish
+
+### v2.4.1-beta1 - 2025-02-28
 
 - Avoid querying for cursor position when it's not necessary
 - Handle buffer changes made by an event handler

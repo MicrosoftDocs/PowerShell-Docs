@@ -12,6 +12,8 @@ title: about_Environment_Variables
 
 Describes how to access and manage environment variables in PowerShell.
 
+## Long description
+
 Environment variables store data that's used by the operating system and other
 programs. PowerShell creates the following environment variables:
 
@@ -25,8 +27,6 @@ programs. PowerShell creates the following environment variables:
 
 For full descriptions of these variables, see the
 [PowerShell environment variables][03] of this article.
-
-## Long description
 
 PowerShell can access and manage environment variables in any of the supported
 operating system platforms. The PowerShell Environment provider lets you get,

@@ -35,7 +35,7 @@ capabilities. To get WMI providers, run a WMI query that gets instances of the
 Get-WmiObject -Class __Provider
 ```
 
-## THREE COMPONENTS OF WMI
+## Three components of WMI
 
 The following three components of WMI interact with Windows PowerShell:
 Namespaces, Providers, and Classes.
@@ -70,7 +70,7 @@ management application, such as Windows PowerShell. Most WMI providers are
 dynamic providers, which means that they obtain the data dynamically when it's
 requested through the management application.
 
-## FINDING WMI CLASSES
+## Finding WMI classes
 
 In a default Windows 8 installation, there are more than 1,100 WMI classes in
 **root/CIMV2**. With this many WMI classes, the challenge becomes identifying

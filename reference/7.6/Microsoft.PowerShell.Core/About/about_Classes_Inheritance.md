@@ -1103,11 +1103,13 @@ class Temperature : System.IFormattable,
         if ($null -eq $Other) {
             return $false
         }
+
         # If the other object isn't a temperature, we can't compare it.
         $OtherTemperature = $Other -as [Temperature]
         if ($null -eq $OtherTemperature) {
             return $false
         }
+
         # Compare the temperatures as Kelvin.
         return $this.ToKelvin() -eq $OtherTemperature.ToKelvin()
     }
@@ -1170,8 +1172,8 @@ $Celsius -gt $Kelvin            = True
 
 ### Example 3 - Inheriting from a generic base class
 
-This example shows how you can derive from a generic class like
-**System.Collections.Generic.List**.
+This example shows how you can derive from a generic type as long as the
+type parameter is already defined at parse time.
 
 #### Using a built-in class as the type parameter
 
@@ -1589,7 +1591,7 @@ derived from them can be used for.
   to load the type. There's no workaround for a custom type to use itself as
   the type parameter when inheriting from a generic.
 
-## See Also
+## See also
 
 - [about_Classes][08]
 - [about_Classes_Constructors][09]
@@ -1600,7 +1602,7 @@ derived from them can be used for.
 [01]: /dotnet/api/system.iformattable#methods
 [02]: /dotnet/api/system.iequatable-1#methods
 [03]: /dotnet/api/system.icomparable#methods
-[04]: about_Classes.md#exporting-classes-with-type-accelerators
+[04]: about_Classes.md#export-classes-with-type-accelerators
 [05]: #example-1---inheriting-and-overriding-from-a-base-class
 [06]: #example-3---inheriting-from-a-generic-base-class
 [07]: #example-2---implementing-interfaces

@@ -381,7 +381,7 @@ each key-value pair.
 $hash.GetEnumerator().ForEach({"The value of '$($_.Key)' is: $($_.Value)"})
 ```
 
-## Adding and Removing Keys and Values
+## Adding and removing keys and values
 
 Typically, when you create a hashtable you include the key-value pairs in the
 definition. However, you can add and remove key-value pairs from a hashtable at
@@ -445,7 +445,7 @@ The following example removes the `Time` key-value pair from `$hash`.
 $hash.Remove("Time")
 ```
 
-## Object Types in HashTables
+## Object types in hashtables
 
 The keys and values in a hashtable can have any .NET object type, and a single
 hashtable can have keys and values of multiple types.
@@ -552,7 +552,7 @@ PS> $p.Hash2.b
 2
 ```
 
-## Sorting Keys and Values
+## Sorting keys and values
 
 The items in a hashtable are intrinsically unordered. The key-value pairs might
 appear in a different order each time that you display them.
@@ -589,7 +589,7 @@ Hash2                          {[a, 1], [b, 2], [c, 3]}
 WinRM                          Running
 ```
 
-## Creating Objects from hashtables
+## Creating objects from hashtables
 
 Beginning in PowerShell 3.0, you can create an object from a hashtable of
 properties and property values.

@@ -82,7 +82,7 @@ process objects, enter the following command:
 [Diagnostics.Process[]]$zz = Get-Process
 ```
 
-## The array sub-expression operator
+## The array subexpression operator
 
 The array sub-expression operator creates an array from the statements inside
 it. Whatever the statement inside the operator produces, the operator places it
@@ -1018,7 +1018,7 @@ PS> [Collections.Generic.Dictionary[string, int]]::new()['nosuchkey']
 # No output ($null)
 
 PS> [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey')
-GetValueInvocationException: Exception getting "Item": "The given key 
+GetValueInvocationException: Exception getting "Item": "The given key
 'nosuchkey' was not present in the dictionary."
 ```
 

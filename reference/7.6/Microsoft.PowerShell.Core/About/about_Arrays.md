@@ -1,7 +1,7 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 01/03/2025
+ms.date: 10/01/2025
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -82,7 +82,7 @@ process objects, enter the following command:
 [Diagnostics.Process[]]$zz = Get-Process
 ```
 
-## The array sub-expression operator
+## The array subexpression operator
 
 The array sub-expression operator creates an array from the statements inside
 it. Whatever the statement inside the operator produces, the operator places it
@@ -515,6 +515,13 @@ ForEach(string methodName)
 ForEach(string methodName, object[] arguments)
 ```
 
+PowerShell 7.6-preview.5 added `PSForEach()` as an alias for the `ForEach()`
+method and `PSWhere()` as an alias for the `Where()` method. Use these aliases
+to avoid conflicts with `ForEach()` and `Where()` that might be defined on the
+base class of the object. For example, the `System.Collections.Generic.List<T>`
+class defines its own `ForEach()` method. Use `PSForEach()` to avoid calling
+the base class method.
+
 #### ForEach(scriptblock expression)
 
 #### ForEach(scriptblock expression, object[] arguments)
@@ -670,6 +677,13 @@ The next example shows how to select all non-empty strings.
 hi
 there
 ```
+
+PowerShell 7.6-preview.5 added `PSForEach()` as an alias for the `ForEach()`
+method and `PSWhere()` as an alias for the `Where()` method. Use these aliases
+to avoid conflicts with `ForEach()` and `Where()` that might be defined on the
+base class of the object. For example, the `System.Collections.Generic.List<T>`
+class defines its own `ForEach()` method. Use `PSForEach()` to avoid calling
+the base class method.
 
 #### Default
 
@@ -1018,7 +1032,7 @@ PS> [Collections.Generic.Dictionary[string, int]]::new()['nosuchkey']
 # No output ($null)
 
 PS> [Collections.Generic.Dictionary[string, int]]::new().Item('nosuchkey')
-GetValueInvocationException: Exception getting "Item": "The given key 
+GetValueInvocationException: Exception getting "Item": "The given key
 'nosuchkey' was not present in the dictionary."
 ```
 

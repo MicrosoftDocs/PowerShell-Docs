@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell.
-ms.date: 02/25/2025
+ms.date: 10/22/2025
 ms.topic: lifecycle
 title: PowerShell Support Lifecycle
 ---
@@ -15,7 +15,7 @@ PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. Support dates fo
 [.NET Support Policy][06]. In this servicing approach, customers can choose Long Term Support (LTS)
 releases or current releases.
 
-An **LTS** release of PowerShell is built on an **LTS** release of .NET. Updates to an **LTS**
+An **LTS** release of PowerShell is an **LTS** release of .NET. Updates to an **LTS**
 release only contain critical security updates and servicing fixes that are designed to minimize
 impact on existing workloads.
 
@@ -110,23 +110,23 @@ guarantees of responsiveness or fixes.
 The PowerShell support lifecycle follows the [support lifecycle of .NET][06]. The following table
 lists the end-of-support dates for the current versions of PowerShell:
 
-|         Version          | Release Date | End-of-support |       .NET Version        |
-| ------------------------ | :----------: | :------------: | ------------------------- |
-| PowerShell 7.6 (preview) | Future date  |  Future date   | Built on [.NET 9.0.0][14] |
-| PowerShell 7.5           | 23-Jan-2025  |  12-May-2026   | Built on [.NET 9.0.0][14] |
-| PowerShell 7.4 (LTS)     | 16-Nov-2023  |  10-Nov-2026   | Built on [.NET 8.0.0][13] |
+|         Version          | Release Date | End-of-support |  .NET Version   |
+| ------------------------ | :----------: | :------------: | --------------- |
+| PowerShell 7.6 (preview) | Future date  |  Future date   | [.NET 10.0][19] |
+| PowerShell 7.5           | 23-Jan-2025  |  12-May-2026   | [.NET 9.0][14]  |
+| PowerShell 7.4 (LTS)     | 16-Nov-2023  |  10-Nov-2026   | [.NET 8.0][13]  |
 
 The following table lists the end-of-support dates for retired versions of PowerShell:
 
-|       Version        | Release Date | End-of-support |         .NET Version         |
-| -------------------- | :----------: | :------------: | ---------------------------- |
-| PowerShell 7.3       | 09-Nov-2022  |  08-May-2024   | Built on [.NET 7.0][12]      |
-| PowerShell 7.2 (LTS) | 08-Nov-2021  |  08-Nov-2024   | Built on [.NET 6.0][11]      |
-| PowerShell 7.1       | 11-Nov-2020  |  08-May-2022   | Built on [.NET 5.0][10]      |
-| PowerShell 7.0 (LTS) | 04-Mar-2020  |  03-Dec-2022   | Built on [.NET Core 3.1][09] |
-| PowerShell 6.2       | 29-Mar-2019  |  04-Sep-2020   | Built on [.NET Core 2.1][08] |
-| PowerShell 6.1       | 13-Sep-2018  |  28-Sep-2019   | Built on [.NET Core 2.1][08] |
-| PowerShell 6.0       | 20-Jan-2018  |  13-Feb-2019   | Built on [.NET Core 2.0][07] |
+|       Version        | Release Date | End-of-support |    .NET Version     |
+| -------------------- | :----------: | :------------: | ------------------- |
+| PowerShell 7.3       | 09-Nov-2022  |  08-May-2024   | [.NET 7.0][12]      |
+| PowerShell 7.2 (LTS) | 08-Nov-2021  |  08-Nov-2024   | [.NET 6.0][11]      |
+| PowerShell 7.1       | 11-Nov-2020  |  08-May-2022   | [.NET 5.0][10]      |
+| PowerShell 7.0 (LTS) | 04-Mar-2020  |  03-Dec-2022   | [.NET Core 3.1][09] |
+| PowerShell 6.2       | 29-Mar-2019  |  04-Sep-2020   | [.NET Core 2.1][08] |
+| PowerShell 6.1       | 13-Sep-2018  |  28-Sep-2019   | [.NET Core 2.1][08] |
+| PowerShell 6.0       | 20-Jan-2018  |  13-Feb-2019   | [.NET Core 2.0][07] |
 
 ## Windows PowerShell release history
 
@@ -168,3 +168,4 @@ you're running:
 [16]: https://github.com/PowerShell/PowerShell/issues/new/choose
 [17]: https://support.microsoft.com/contactus
 [18]: https://support.serviceshub.microsoft.com/
+[19]: https://github.com/dotnet/core/blob/main/release-notes/10.0/supported-os.md

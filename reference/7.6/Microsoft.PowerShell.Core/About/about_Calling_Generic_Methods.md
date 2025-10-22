@@ -8,6 +8,14 @@ title: about_Calling_Generic_Methods
 ---
 # about_Calling_Generic_Methods
 
+## Short description
+
+A generic type is a parameterized type definition that you instantiate with
+concrete type arguments (like `List<T>`), giving reusable, type-safe code that
+the compiler and CLR handle efficiently.
+
+## Long description
+
 Generics let you tailor a method, class, structure, or interface to the precise
 data type it acts upon. For example, instead of using the
 [System.Collections.Hashtable][01] class, which allows keys and values to be

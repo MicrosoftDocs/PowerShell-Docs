@@ -2,7 +2,7 @@
 description: Provides details about background jobs on local and remote computers.
 Locale: en-US
 ms.date: 03/24/2025
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_job_details?view=powershell-7.5&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_job_details?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Job_Details
 ---
@@ -12,7 +12,7 @@ title: about_Job_Details
 
 Provides details about background jobs on local and remote computers.
 
-## Detailed description
+## Long description
 
 This topic explains the concept of a background job and provides technical
 information about how background jobs work in PowerShell.

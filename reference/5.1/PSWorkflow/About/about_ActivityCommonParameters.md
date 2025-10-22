@@ -8,11 +8,11 @@ title: about_ActivityCommonParameters
 ---
 # about_ActivityCommonParameters
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the parameters that Windows PowerShell Workflow adds to activities.
 
-## LONG DESCRIPTION
+## Long description
 
 Windows PowerShell Workflow adds the activity common parameters to activities
 that are derived from the **PSActivity** base class. This category includes the

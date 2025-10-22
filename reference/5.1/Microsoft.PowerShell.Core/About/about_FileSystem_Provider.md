@@ -89,7 +89,7 @@ Mode                 LastWriteTime         Length Name
 -a---l          6/8/2023  12:20 PM              0 winget.exe
 ```
 
-## Navigating the FileSystem drives
+## Navigating the filesystem drives
 
 The **FileSystem** provider exposes its data stores by mapping any logical
 drives on the computer as PowerShell drives. To work with a **FileSystem**
@@ -403,7 +403,7 @@ Dynamic parameters are cmdlet parameters that are added by a PowerShell
 provider and are available only when the cmdlet is being used in the
 provider-enabled drive.
 
-### Encoding \<FileSystemCmdletProviderEncoding\>
+### Encoding \<Encoding\>
 
 Specifies the file encoding. The default is ASCII.
 

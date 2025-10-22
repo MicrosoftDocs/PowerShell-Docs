@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 12/05/2024
+ms.date: 08/18/2025
 title: PowerShell scripting performance considerations
 ---
 
@@ -116,7 +116,7 @@ $results
 >[!NOTE]
 > In PowerShell 7.5, array addition was optimized and no longer creates a new array for each
 > operation. The performance considerations described here still apply to PowerShell versions
-> prior to 7.5. For more information, see [What's New in PowerShell 7.5][01].
+> prior to 7.5. For more information, see [What's New in PowerShell 7.5][02].
 
 Array addition is inefficient because arrays have a fixed size. Each addition to the array creates
 a new array big enough to hold all elements of both the left and right operands. The elements of
@@ -276,7 +276,7 @@ performance and memory consumption.
 
 There are at least two alternatives:
 
-- The [`-join` operator][13] concatenates strings
+- The [`-join` operator][07] concatenates strings
 - The .NET `[StringBuilder]` class provides a mutable string
 
 The following example compares the performance of these three methods of building a string.
@@ -438,7 +438,7 @@ $Results = $Employees | ForEach-Object -Process {
 However, that implementation has to filter all 5000 items in the `$Accounts` collection once for
 every item in the `$Employee` collection. That can take minutes, even for this single-value lookup.
 
-Instead, you can make a [Hash Table][02] that uses the shared **Name** property as a key and the
+Instead, you can make a [Hash Table][01] that uses the shared **Name** property as a key and the
 matching account as the value.
 
 ```powershell
@@ -632,6 +632,49 @@ Unwrapped = 42.92 ms
 The unwrapped example is **372 times faster**. Also, notice that the first implementation requires
 the **Append** parameter, which isn't required for the later implementation.
 
+## Avoid unnecessary collection enumeration
+
+The [PowerShell comparison operators][05] have a convience feature when comparing collections. When
+the left-hand value in the expression is a collection, the operator returns the elements of the
+collection that match the right-hand value of the expression.
+
+This feature provides a simple way to filter a collection. For example:
+
+```powershell
+PS> $Collection = 1..99
+PS> ($Collection -like '*1*') -join ' '
+
+1 10 11 12 13 14 15 16 17 18 19 21 31 41 51 61 71 81 91
+```
+
+However, when you use a collection comparison in a conditional statement that only expects a
+[boolean][04] result, this feature can result in poor performance.
+
+Take for example:
+
+```powershell
+if ($Collection -like '*1*') { 'Found' }
+```
+
+In this example, PowerShell compares the right-hand value to every value in the collection and
+returns a collection of results. Since the result isn't empty, the non-null result evaluates as
+`$true`. The condition is true when the first match is found, but PowerShell still enumerates the
+entire collection. This enumeration can have a significant performance impact for large collections.
+
+One way to improve performance is to use the [`Where()`][03] method of the collection. The `Where()`
+method stops evaluating the collection after it finds the first match.
+
+```powershell
+# Create an array of 1048576 items
+$Collection = foreach ($x in 1..1MB) { $x }
+(Measure-Command { if ($Collection -like '*1*') { 'Found' } }).TotalMilliseconds
+633.3695
+(Measure-Command { if ($Collection.Where({ $_ -like '*1*' }, 'first')) { 'Found' } }).TotalMilliseconds
+2.607
+```
+
+For a million items, using the `Where()` method is significantly faster.
+
 ## Object creation
 
 Creating objects using the `New-Object` cmdlet can be slow. The following code compares the
@@ -701,7 +744,7 @@ perhaps most commonly used way to create a new **PSObject** and then add new pro
 negligible however it can become very noticeable for big collections. In that case, the recommended
 approach is to use an `[OrderedDictionary]` and then convert it to a **PSObject** using the
 `[pscustomobject]` type accelerator. For more information, see the _Creating ordered dictionaries_
-section of [about_Hash_Tables][19].
+section of [about_Hash_Tables][06].
 
 Assume you have the following API response stored in the variable `$json`.
 
@@ -868,39 +911,41 @@ Iterations Test                                 TotalMilliseconds RelativeSpeed
 
 ## Related links
 
-- [`$null`][03]
-- [`[void]`][04]
-- [Out-Null][05]
-- [`List<T>`][06]
-- [`Add(T)` method][07]
-- [`[string]`][08]
-- [`[int]`][09]
-- [`[Object]`][10]
-- [`ToArray()` method][11]
-- [`[ArrayList]`][12]
-- [`[StringBuilder]`][14]
-- [`[StreamReader]`][15]
-- [`[File]::ReadLines()` method][16]
-- [Write-Host][17]
-- [Add-Member][18]
+- [`$null`][01]
+- [System.Void][21]
+- [Out-Null][08]
+- [List\<T\>][13]
+- [Add(T) method][14]
+- [System.String][19]
+- [System.Int32][15]
+- [System.Object][18]
+- [ToArray() method][12]
+- [System.Collections.ArrayList][11]
+- [System.Text.StringBuilder][20]
+- [System.IO.StreamReader][17]
+- [File::ReadLines() method][16]
+- [Write-Host][10]
+- [Add-Member][09]
 
-<!-- Link reference definitions -->
-[01]: ../../whats-new/what-s-new-in-powershell-75.md#engine-improvements
-[02]: ../../learn/deep-dives/everything-about-hashtable.md
-[03]: ../../learn/deep-dives/everything-about-null.md
-[04]: xref:System.Void
-[05]: xref:Microsoft.PowerShell.Core.Out-Null
-[06]: xref:System.Collections.Generic.List`1
-[07]: xref:System.Collections.Generic.List`1.Add%2A
-[08]: xref:System.String
-[09]: xref:System.Int32
-[10]: xref:System.Object
-[11]: xref:System.Collections.Generic.List%601.ToArray%2A#system-collections-generic-list-1-toarray
-[12]: xref:System.Collections.ArrayList
-[13]: /powershell/module/microsoft.powershell.core/about/about_join
-[14]: xref:System.Text.StringBuilder
-[15]: xref:System.IO.StreamReader
+<!-- link references -->
+[01]: ../../learn/deep-dives/everything-about-hashtable.md
+[02]: ../../whats-new/what-s-new-in-powershell-75.md#engine-improvements
+[03]: /powershell/module/microsoft.powershell.core/about/about_arrays#where
+[04]: /powershell/module/microsoft.powershell.core/about/about_booleans
+[05]: /powershell/module/microsoft.powershell.core/about/about_comparison_operators
+[06]: /powershell/module/microsoft.powershell.core/about/about_hash_tables#creating-ordered-dictionaries
+[07]: /powershell/module/microsoft.powershell.core/about/about_join
+[08]: xref:Microsoft.PowerShell.Core.Out-Null
+[09]: xref:Microsoft.PowerShell.Utility.Add-Member
+[10]: xref:Microsoft.PowerShell.Utility.Write-Host
+[11]: xref:System.Collections.ArrayList
+[12]: xref:System.Collections.Generic.List%601.ToArray%2A#system-collections-generic-list-1-toarray
+[13]: xref:System.Collections.Generic.List%601
+[14]: xref:System.Collections.Generic.List%601.Add%2A
+[15]: xref:System.Int32
 [16]: xref:System.IO.File.ReadLines%2A
-[17]: xref:Microsoft.PowerShell.Utility.Write-Host
-[18]: xref:Microsoft.PowerShell.Utility.Add-Member
-[19]: /powershell/module/microsoft.powershell.core/about/about_hash_tables#creating-ordered-dictionaries
+[17]: xref:System.IO.StreamReader
+[18]: xref:System.Object
+[19]: xref:System.String
+[20]: xref:System.Text.StringBuilder
+[21]: xref:System.Void

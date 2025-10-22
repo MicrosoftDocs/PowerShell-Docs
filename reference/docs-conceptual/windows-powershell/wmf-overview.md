@@ -1,6 +1,6 @@
 ---
 description: WMF is a prerequisite for Windows PowerShell. This article shows the history of WMF versions and provides information about how to find and install WMF.
-ms.date: 03/27/2025
+ms.date: 08/29/2025
 ms.topic: overview
 title: Windows Management Framework (WMF)
 ---
@@ -53,7 +53,7 @@ for each version of WMF:
 | Windows Server 2008 SP2    | [_Out of support_][01] |                   |          |          | Yes      | Yes      |
 | Windows Vista              | [_Out of support_][01] |                   |          |          |          | Yes      |
 | Windows Server 2003        | [_Out of support_][01] |                   |          |          |          | Yes      |
-| Windows XP                 | [_Out of support_][01] |                   |          |          | Yes      | Yes      |
+| Windows XP                 | [_Out of support_][01] |                   |          |          |          | Yes      |
 
 - **Included**: The features of the specified version of WMF were shipped in the indicated version
   of Windows client or Windows Server.

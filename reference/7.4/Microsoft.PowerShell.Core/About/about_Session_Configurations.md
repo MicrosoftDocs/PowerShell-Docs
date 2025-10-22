@@ -148,7 +148,7 @@ Container  {Name=microsoft.powershell32}     microsoft.powershell32
 ### Viewing Session Configurations on a Remote Computer
 
 To view the session configurations on a remote computer, use the
-`Connect-WSMan` cmdlet to add a note for the remote computer to the
+`Connect-WSMan` cmdlet to add a node for the remote computer to the
 WSMan: drive on your local computer, and then use the WSMan: drive to view the
 session configurations.
 
@@ -327,7 +327,7 @@ the default session configuration on the computer. For more information about
 the $PSSessionConfigurationName preference variable, see
 [about_Preference_Variables][02].
 
-## KEYWORDS
+## Keywords
 
 about_Endpoints
 about_SessionConfigurations

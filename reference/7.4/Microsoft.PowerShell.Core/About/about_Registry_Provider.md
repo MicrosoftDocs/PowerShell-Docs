@@ -60,7 +60,7 @@ The **Registry** provider returns registry data in one of two types:
 - [Microsoft.Win32.RegistryKey][01] for registry keys
 - [PSCustomObject][02] for registry values
 
-## Navigating the Registry drives
+## Navigating the registry drives
 
 The **Registry** provider exposes its data store as two default drives.
 

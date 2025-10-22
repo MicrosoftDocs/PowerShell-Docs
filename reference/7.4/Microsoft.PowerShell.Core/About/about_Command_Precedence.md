@@ -72,7 +72,7 @@ For example, if your session contains a cmdlet and a function, both named
 > executable. It's only when no external executable is found that an alias,
 > function, or cmdlet with the given name is invoked.
 
-## Resolving items with the same names
+## Resolve items with the same names
 
 As a result of these rules, items can be replaced or hidden by items with the
 same name.
@@ -94,7 +94,7 @@ with a module name.
 If you create a function at the command line and then import a function with
 the same name, the original function is replaced.
 
-## Finding hidden commands
+## Find hidden commands
 
 The **All** parameter of the [Get-Command][10] cmdlet gets all commands with
 the specified name, even if they're hidden or replaced. Beginning in PowerShell
@@ -278,7 +278,7 @@ environment variable. The paths are searched in the order that they're listed
 in the variable. Within each path, the modules are searched in alphabetical
 order. PowerShell uses the cmdlet from the first match it finds.
 
-## Avoiding name conflicts
+## Avoid name conflicts
 
 The best way to manage command name conflicts is to prevent them. When you name
 your commands, use a unique name. For example, add your initials or company
@@ -297,7 +297,7 @@ For example, the following command avoids any conflict with the `Get-Date` and
 Import-Module -Name DateFunctions -Prefix ZZ
 ```
 
-## Running external executables
+## Run external executables
 
 On Windows. PowerShell treats the file extensions listed in the `$Env:PATHEXT`
 environment variable as executable files. Files that aren't Windows executables

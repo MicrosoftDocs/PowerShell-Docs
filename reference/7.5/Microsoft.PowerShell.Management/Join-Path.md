@@ -163,6 +163,7 @@ Accept wildcard characters: False
 ### -ChildPath
 
 Specifies the elements to append to the value of the `Path` parameter. Wildcards are permitted.
+
 ```yaml
 Type: System.String
 Parameter Sets: (All)

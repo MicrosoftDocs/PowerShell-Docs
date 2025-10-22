@@ -1,5 +1,5 @@
 ---
-description: Alias
+description: The Alias provider enables access to the PowerShell aliases and the values that they represent.
 Locale: en-US
 ms.date: 10/18/2018
 no-loc: [Alias, Definition, AllScope, Option, None, Constant, Private]
@@ -20,10 +20,6 @@ Alias
 ## Capabilities
 
 **ShouldProcess**
-
-## Short description
-
-Provides access to the PowerShell aliases and the values that they represent.
 
 ## Detailed description
 
@@ -63,7 +59,7 @@ cmdlets.
 Each alias is an instance of the [System.Management.Automation.AliasInfo][12]
 class.
 
-## Navigating the Alias drive
+## Navigating the alias drive
 
 The **Alias** provider exposes its data store in the `Alias:` drive. To work
 with aliases, you can change your location to the `Alias:` drive by using the

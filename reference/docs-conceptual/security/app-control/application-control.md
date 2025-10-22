@@ -1,6 +1,6 @@
 ---
 description: This article explains the features of Application Control that can be used to secure your PowerShell environment.
-ms.date: 10/21/2024
+ms.date: 09/25/2025
 title: Use App Control to secure PowerShell
 ---
 # Use App Control to secure PowerShell
@@ -23,8 +23,8 @@ doesn't have way to query the policy enforcement status. To detect if a system w
 control policy is being enforced by AppLocker, PowerShell creates two temporary files and tests if
 they can be executed. The filenames use the following name format:
 
-- `$Env:TEMP/__PSAppLockerTest__<random-8dot3-name>.ps1`
-- `$Env:TEMP/__PSAppLockerTest__<random-8dot3-name>.psm1`
+- `$Env:TEMP/__PSScriptPolicyTest_<random-8dot3-name>.ps1`
+- `$Env:TEMP/__PSScriptPolicyTest_<random-8dot3-name>.psm1`
 
 App Control for Business is the preferred application control system for Windows. App Control
 provides APIs that allow you to discover the policy configuration. App Control is designed as a

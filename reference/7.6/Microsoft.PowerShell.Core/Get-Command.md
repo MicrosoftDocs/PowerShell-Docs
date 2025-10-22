@@ -2,9 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/17/2025
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.6&WT.mc_id=ps-gethelp
+ms.date: 08/19/2025
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gcm
 title: Get-Command
 ---
 # Get-Command
@@ -37,8 +39,8 @@ Get-Command [[-Name] <string[]>] [[-ArgumentList] <Object[]>] [-Module <string[]
 
 The `Get-Command` cmdlet gets all commands that are installed on the computer, including cmdlets,
 aliases, functions, filters, scripts, and applications. `Get-Command` gets the commands from
-PowerShell modules and commands that were imported from other sessions. To get only commands that
-have been imported into the current session, use the **ListImported** parameter.
+PowerShell modules and commands available on your system. To get only commands that have been
+imported into the current session, use the **ListImported** parameter.
 
 Without parameters, `Get-Command` gets all the cmdlets, functions, and aliases installed on the
 computer. `Get-Command *` gets all types of commands, including all the non-PowerShell files in the
@@ -789,15 +791,22 @@ PowerShell includes the following aliases for `Get-Command`:
 - All platforms:
   - `gcm`
 
-- When more than one command that has the same name is available to the session, `Get-Command`
-  returns the command that runs when you type the command name. To get commands that have the same
-  name, listed in run order, use the **All** parameter. For more information, see
-  [about_Command_Precedence](../Microsoft.PowerShell.Core/About/about_Command_Precedence.md).
-- When a module is imported automatically, the effect is the same as using the `Import-Module`
-  cmdlet. The module can add commands, types and formatting files, and run scripts in the session.
-  To enable, disable, and configuration automatic importing of modules, use the
-  `$PSModuleAutoLoadingPreference` preference variable. For more information, see
-  [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md).
+When more than one command that has the same name is available to the session, `Get-Command` returns
+the command that runs when you type the command name. To get commands that have the same name,
+listed in run order, use the **All** parameter. For more information, see
+[about_Command_Precedence](About/about_Command_Precedence.md).
+
+If you run `Get-Command` with the exact name of the command, without wildcard characters, PowerShell
+searches for the command in all available modules. If the module containing the command isn't loaded
+yet, the result returned by `Get-Command` only contains information that can be discovered from the
+module manifest. For example, the **ScriptBlock** property might not be populated in the initial
+result. However, PowerShell automatically imports the module after it returns the initial result.
+
+When a module is imported automatically, the effect is the same as using the `Import-Module` cmdlet.
+The module can add commands, types and formatting files, and run scripts in the session. To enable,
+disable, and configuration automatic importing of modules, use the `$PSModuleAutoLoadingPreference`
+preference variable. For more information, see
+[about_Preference_Variables](About/about_Preference_Variables.md).
 
 ## RELATED LINKS
 

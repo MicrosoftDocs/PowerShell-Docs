@@ -177,7 +177,7 @@ LastWriteTimeUtc  : 1/24/2024 7:18:29 AM
 Attributes        : Archive
 ```
 
-## Static properties
+### Static properties
 
 You can use the static properties of .NET classes in PowerShell. Static
 properties are properties of the class, unlike standard properties, which are

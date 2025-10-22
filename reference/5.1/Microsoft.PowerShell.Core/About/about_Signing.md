@@ -240,7 +240,7 @@ To use this script, copy the following text into a text file, and name it
 `Add-Signature.ps1`.
 
 ```powershell
-## Signs a file
+## SIGNS A FILE
 [CmdletBinding()]
 param(
     [Parameter(Mandatory=$true)]

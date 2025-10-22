@@ -9,12 +9,12 @@ title: about_WS-Management_Cmdlets
 
 # about_WS-Management_Cmdlets
 
-## SHORT DESCRIPTION
+## Short description
 
 Provides an overview of Web Services for Management (WS-Management) as
 background for using the WS-Management cmdlets in Windows PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 This topic provides an overview of Web Services for Management (WS-Management)
 as background for using the WS-Management cmdlets in Windows PowerShell. This
@@ -50,13 +50,13 @@ services, or processes in your enterprise through the existing set of WMI
 classes. You can also access the hardware data that is available from the
 standard WMI IPMI provider.
 
-## WS-Management Windows PowerShell Provider (WSMan)
+## WS-Management Windows PowerShell provider (WSMan)
 
 The WSMan provider provides a hierarchical view into the available
 WS-Management configuration settings. The provider allows you to explore and
 set the various WS-Management configuration options.
 
-## WS-Management Configuration
+## WS-Management configuration
 
 If WS-Management is not installed and configured, Windows PowerShell remoting
 is not available, the WS-Management cmdlets do not run, WS-Management scripts
@@ -64,7 +64,7 @@ do not run, and the WSMan provider cannot perform data operations. The
 WS-Management command-line tool, WinRM, and event forwarding also depend on
 the WS-Management configuration.
 
-## WS-Management Cmdlets
+## WS-Management cmdlets
 
 WS-Management functionality is implemented in Windows PowerShell through a
 module that contains a set of cmdlets and the WSMan provider. You can use
@@ -73,7 +73,7 @@ WS-Management settings on local and remote computers.
 
 The following WS-Management cmdlets are available.
 
-## Connection Cmdlets
+## Connection cmdlets
 
 - Connect-WSMan: Connects the local computer to the WS-Management (WinRM)
   service on a remote computer.
@@ -81,7 +81,7 @@ The following WS-Management cmdlets are available.
 - Disconnect-WSMan: Disconnects the local computer from the WS-Management
   (WinRM) service on a remote computer.
 
-## Management-Data Cmdlets
+## Management-data cmdlets
 
 - Get-WSManInstance: Displays management information for a resource instance
   that is specified by a resource URI.
@@ -96,7 +96,7 @@ The following WS-Management cmdlets are available.
 - Set-WSManInstance: Modifies the management information that is related to a
   resource.
 
-## Setup and Configuration Cmdlets
+## Setup and configuration cmdlets
 
 - Set-WSManQuickConfig: Configures the local computer for remote management.
   You can use the Set-WSManQuickConfig cmdlet to configure WS-Management to
@@ -125,12 +125,12 @@ The following WS-Management cmdlets are available.
 - Get-WSManCredSSP: Gets the CredSSP-related configuration for a client
   computer.
 
-## WS-Management-Specific Cmdlets
+## WS-Management-specific cmdlets
 
 - New-WSManSessionOption: Creates a WSManSessionOption object to use as input
   to one or more parameters of a WS-Management cmdlet.
 
-## Additional WS-Management Information
+## Additional WS-Management information
 
 For more information about WS-Management, see the following topics in the
 Windows documentation.

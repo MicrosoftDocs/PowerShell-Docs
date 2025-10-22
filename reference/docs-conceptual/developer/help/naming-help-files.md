@@ -1,6 +1,6 @@
 ---
 description: Naming Help files
-ms.date: 07/10/2023
+ms.date: 09/22/2025
 title: Naming Help files
 ---
 # Naming Help files
@@ -49,10 +49,16 @@ There are no technical requirements for the name of a function help file. Howeve
 is to name the help file for the script module in which the function is defined. For example, the
 following function is defined in the `MyModule.psm1` file.
 
-```csharp
+```powershell
 #.EXTERNALHELP MyModule.psm1-help.xml
 function Test-Function { ... }
 ```
+
+Beginning in PowerShell 5.0, functions that are exported by a module can be documented in a help file
+that is named for the module. You don't need to use `.EXTERNALHELP` comment keyword. For example, if
+the `Test-Function` function is exported by the `MyModule` module, you can name the help file
+`MyModule-help.xml`. The `Get-Help` cmdlet looks for help for the `Test-Function` function in the
+`MyModule-help.xml` file in the module directory.
 
 ## CIM Command Help files
 

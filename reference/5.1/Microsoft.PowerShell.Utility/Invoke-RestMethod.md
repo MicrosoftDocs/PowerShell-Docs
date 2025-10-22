@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 02/05/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - irm
 title: Invoke-RestMethod
 ---
 
@@ -182,8 +184,9 @@ Specifies the body of the request. The body is the content of the request that f
 You can also pipe a body value to `Invoke-RestMethod`.
 
 The **Body** parameter can be used to specify a list of query parameters or specify the content of
-the response.
+the .
 
+request.
 When the input is a GET request, and the body is an IDictionary (typically, a hash table), the body
 is added to the URI as query parameters. For other request types (such as POST), the body is set as
 the value of the request body in the standard name=value format.

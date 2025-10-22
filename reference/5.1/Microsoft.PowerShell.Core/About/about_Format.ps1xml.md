@@ -88,7 +88,7 @@ headers, and the properties that are displayed in the body of the view. The
 format in `Format.ps1xml` files is applied just before the data is presented to
 the user.
 
-## Creating new Format.ps1xml files
+## CREATING NEW FORMAT.PS1XML FILES
 
 The `.ps1xml` files that are installed with PowerShell are digitally signed to
 prevent tampering because the formatting can include script blocks. To change
@@ -292,7 +292,7 @@ higher precedence order than the original file. For more information, see
 [Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData).
 
 ```powershell
-Update-FormatData -PrependPath $PSHOME\MyDotNetTypes.Format.ps1xml
+Update-FormatData -PrependPath $HOME\Format\CultureInfo.Format.ps1xml
 ```
 
 To test the change, type `Get-Culture` and review the output that includes the
@@ -396,7 +396,7 @@ multiple `<CustomEntry>` tags. Each `<CustomEntry>` tag contains a
 formatting of the specified location in the view, including `<Text>`,
 `<Indentation>`, `<ExpressionBinding>`, and `<NewLine>` tags.
 
-## Default displays in Types.ps1xml
+## DEFAULT DISPLAYS IN TYPES.PS1XML
 
 The default displays of some basic object types are defined in the
 `Types.ps1xml` file in the `$PSHOME` directory. The nodes are named
@@ -460,7 +460,7 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 > compress some indentation and use line breaks within the code.
 
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Configuration>
     <SelectionSets>
         <SelectionSet>

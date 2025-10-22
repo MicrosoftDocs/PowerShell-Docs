@@ -100,7 +100,7 @@ $PSHOME\RegisterManifest.ps1 -Unregister
 After updating PowerShell, run `$PSHOME\RegisterManifest.ps1` to register the
 updated event provider.
 
-## Enabling Script Block Logging
+## Enabling script block logging
 
 When you enable Script Block Logging, PowerShell records the content of all
 script blocks that it processes. Once enabled, any new PowerShell session logs
@@ -143,7 +143,7 @@ You can set the `ScriptBlockLogging` option in the `powershell.config.json`
 file that controls how PowerShell behaves. For more information, see
 [about_PowerShell_Config][06].
 
-## Protected Event Logging
+## Protected event logging
 
 Increasing the level of logging on a system increases the possibility that
 logged content may contain sensitive data. For example, with script logging

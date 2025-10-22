@@ -2,9 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/22/2023
+ms.date: 06/25/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - sleep
 title: Start-Sleep
 ---
 
@@ -35,12 +37,12 @@ repeating an operation.
 
 ## EXAMPLES
 
-### Example 1: Pause execution for 1.5 seconds
+### Example 1: Pause execution for 1 second
 
-In this example, the execution of commands pauses for one and one-half seconds.
+In this example, the execution of commands pauses for one second.
 
 ```powershell
-Start-Sleep -Seconds 1.5
+Start-Sleep -Seconds 1
 ```
 
 ### Example 2: Pause execution at the command line

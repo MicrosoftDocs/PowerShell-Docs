@@ -187,6 +187,7 @@ are reading and maintaining your scripts.
 - [about_Redirection][redir]
 - [about_Scopes][scopes]
 - [about_Split][split]
+- [about_Type_Operators][type]
 
 <!-- reference links -->
 [math]: about_Arithmetic_Operators.md

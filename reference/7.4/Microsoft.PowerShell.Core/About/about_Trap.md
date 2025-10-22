@@ -255,7 +255,7 @@ By default, when a terminating error is thrown, execution transfers to the trap
 statement. After the `trap` block is run, control returns to the next statement
 block after the location of the error.
 
-For example, when a terminating error occurs in an `foreach` statement, the
+For example, when a terminating error occurs in a `foreach` statement, the
 `trap` statement is run and execution continues at the next statement after the
 `foreach` block, not within the `foreach` block.
 

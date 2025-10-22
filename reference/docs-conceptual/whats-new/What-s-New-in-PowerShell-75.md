@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 04/25/2025
+ms.date: 10/16/2025
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.1 includes the following features, updates, and breaking changes. PowerShell
-7.5 is built on .NET 9.0.203 release.
+PowerShell 7.5.4 includes the following features, updates, and breaking changes. PowerShell
+7.5.4 is built on .NET 9.0.306 release.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
@@ -22,15 +22,12 @@ information about .NET 9, see [What's new in .NET 9][07].
 - The Windows installer now remembers installation options used and uses them to initialize options
   for the next installation ([#20420][20420]) (Thanks @reduckted!)
 - `ConvertTo-Json` now serializes `BigInteger` as a number ([#21000][21000]) (Thanks @jborean93!)
-- .NET 9 removed the `BinaryFormatter` implementation causing a regression in the `Out-GridView`
-  cmdlet. The search feature of `Out-GridView` doesn't work in PowerShell 7.5. This problem is
-  tracked in [Issue #24749][24749].
 
 ## Updated modules
 
-PowerShell 7.5.0 includes the following updated modules:
+PowerShell 7.5.4 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** v1.1.0
+- **Microsoft.PowerShell.PSResourceGet** v1.1.1
 - **PSReadLine** v2.3.6
 
 ## Tab completion improvements
@@ -72,6 +69,8 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Other cmdlet improvements
 
+- Fix `Out-GridView` by replacing the use of obsolete `BinaryFormatter` with custom implementation
+  ([#25559][25559])
 - Enable `-NoRestart` to work with `Register-PSSessionConfiguration` ([#23891][23891])
 - Add `IgnoreComments` and `AllowTrailingCommas` options to `Test-Json` cmdlet ([#23817][23817])
   (Thanks @ArmaanMcleod!)
@@ -115,9 +114,16 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
   data first ([#24236][24236]) (Thanks @MartinGC94)
 - Add `-Force` parameter to `Resolve-Path` and `Convert-Path` cmdlets to support wildcard hidden
   files [#20981][20981] (Thanks @ArmaanMcleod!)
+- Set standard handles explicitly when starting a process with `-NoNewWindow` ([#25324][25324])
+- Make inherited protected internal instance members accessible in class scope. ([#25547][25547])
+  (Thanks @mawosoft!)
+- Remove the old fuzzy suggestion and fix the local script file name suggestion ([#25330][25330])
+- Fix `PSMethodInvocationConstraints.GetHashCode` method ([#25306][25306]) (Thanks @crazyjncsu!)
 
 ## Engine improvements
 
+- Move .NET method invocation logging to after the needed type conversion is done for method
+  arguments ([#25357][25357])
 - Fallback to AppLocker after `WldpCanExecuteFile` ([#25305][25305])
 - Explicitly start and stop ANSI Error Color ([#24065][24065]) (Thanks @JustinGrote!)
 - Improve .NET overload definition of generic methods ([#21326][21326]) (Thanks @jborean93!)
@@ -262,7 +268,7 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [04]: ../learn/experimental-features.md#psmoduleautoloadskipofflinefiles
 [05]: ../learn/experimental-features.md#psredirecttovariable
 [06]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
-[07]: /dotnet/core/whats-new/dotnet-9/overview)
+[07]: /dotnet/core/whats-new/dotnet-9/overview
 
 [19896]: https://github.com/PowerShell/PowerShell/pull/19896
 [20014]: https://github.com/PowerShell/PowerShell/pull/20014
@@ -334,5 +340,10 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [24115]: https://github.com/PowerShell/PowerShell/pull/24115
 [24228]: https://github.com/PowerShell/PowerShell/pull/24228
 [24236]: https://github.com/PowerShell/PowerShell/pull/24236
-[24749]: https://github.com/PowerShell/PowerShell/issues/24749
 [25305]: https://github.com/PowerShell/PowerShell/pull/25305
+[25306]: https://github.com/PowerShell/PowerShell/pull/25306
+[25324]: https://github.com/PowerShell/PowerShell/pull/25324
+[25330]: https://github.com/PowerShell/PowerShell/pull/25330
+[25357]: https://github.com/PowerShell/PowerShell/pull/25357
+[25547]: https://github.com/PowerShell/PowerShell/pull/25547
+[25559]: https://github.com/PowerShell/PowerShell/pull/25559

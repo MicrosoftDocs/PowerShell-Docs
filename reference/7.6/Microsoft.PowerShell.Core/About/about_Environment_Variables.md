@@ -1,7 +1,7 @@
 ---
 description: Describes how to access and manage environment variables in PowerShell.
 Locale: en-US
-ms.date: 09/05/2024
+ms.date: 10/01/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Environment_Variables
@@ -12,12 +12,15 @@ title: about_Environment_Variables
 
 Describes how to access and manage environment variables in PowerShell.
 
+## Long description
+
 Environment variables store data that's used by the operating system and other
 programs. PowerShell creates the following environment variables:
 
 - `POWERSHELL_TELEMETRY_OPTOUT`
 - `POWERSHELL_DISTRIBUTION_CHANNEL`
 - `POWERSHELL_UPDATECHECK`
+- `POWERSHELL_DIAGNOSTICS_OPTOUT`
 - `PSExecutionPolicyPreference`
 - `PSModulePath`
 - `PSModuleAnalysisCachePath`
@@ -25,8 +28,6 @@ programs. PowerShell creates the following environment variables:
 
 For full descriptions of these variables, see the
 [PowerShell environment variables][03] of this article.
-
-## Long description
 
 PowerShell can access and manage environment variables in any of the supported
 operating system platforms. The PowerShell Environment provider lets you get,
@@ -122,38 +123,24 @@ The 'Foo' environment variable is set to: An example
 An example!
 ```
 
-In PowerShell, an environment variable can't be set to an empty string. Setting
-an environment variable to `$null` or an empty string removes it from the
-current session. For example:
+Beginning in PowerShell 7.5, you can set an environment variable to an empty string. Setting an
+environment variable to `$null` removes it from the current session. For example:
 
 ```powershell
-$Env:Foo = ''
-$Env:Foo | Get-Member -MemberType Properties
-```
+PS> $env:TEST = ''
+PS> Get-ChildItem env:TEST
 
-```Output
-Get-Member : You must specify an object for the Get-Member cmdlet.
-At line:1 char:12
-+ $Env:foo | Get-Member
-+            ~~~~~~~~~~
-    + CategoryInfo          : CloseError: (:) [Get-Member], InvalidOperationException
-    + FullyQualifiedErrorId : NoObjectInGetMember,Microsoft.PowerShell.Commands.GetMemberCommand
-```
+Name                           Value
+----                           -----
+TEST
 
-`Get-Member` returned an error because the environment variable was removed.
-You can see that it doesn't return an error when you use it on an empty
-string:
+PS> $env:TEST = $null
+PS> $env:TEST.Length
+0
 
-```powershell
-'' | Get-Member -MemberType Properties
-```
+PS> Get-ChildItem env:TEST
 
-```Output
-   TypeName: System.String
-
-Name   MemberType Definition
-----   ---------- ----------
-Length Property   int Length {get;}
+Get-ChildItem: Cannot find path 'TEST' because it does not exist.
 ```
 
 For more information about variables in PowerShell, see [about_Variables][11].
@@ -208,6 +195,31 @@ Use the `Get-ChildItem` cmdlet to see a full list of environment variables:
 Get-ChildItem Env:
 ```
 
+Beginning in PowerShell 7.5, you can set an environment variable to an empty
+string using the environment provider and `Set-Item` cmdlet. Setting an
+environment variable to `$null` removes it from the current session. For
+example:
+
+```powershell
+PS> Set-Item env:TEST 'Foo'
+PS> Get-ChildItem env:TEST
+
+Name                           Value
+----                           -----
+TEST                           Foo
+
+PS> Set-Item env:TEST ''
+PS> Get-ChildItem env:TEST
+
+Name                           Value
+----                           -----
+TEST
+
+PS> Set-Item -Path env:TEST -Value $null
+PS> Get-ChildItem env:TEST
+Get-ChildItem: Cannot find path 'TEST' because it does not exist.
+```
+
 For more information on using the **Environment** provider to manage
 environment variables, see [about_Environment_Provider][04].
 
@@ -228,18 +240,44 @@ of `Bar` and then returns its value.
 Bar
 ```
 
-You can remove an environment variable with the `SetEnvironmentVariable()`
-method by specifying an empty string for the variable's value. For example,
-to remove the `Foo` environment variable:
+Beginning in PowerShell 7.5, you can set an environment variable to an empty
+string using the `SetEnvironmentVariable()` method and specifying an empty
+string or `$null` for the variable's value. For example:
 
 ```powershell
-[Environment]::SetEnvironmentVariable('Foo','')
-[Environment]::GetEnvironmentVariable('Foo')
+PS> [Environment]::SetEnvironmentVariable('Foo','Bar')
+PS> Get-ChildItem env:Foo
+
+Name                           Value
+----                           -----
+Foo                            Bar
+
+PS> [Environment]::SetEnvironmentVariable('Foo','')
+PS> Get-ChildItem env:Foo
+
+Name                           Value
+----                           -----
+Foo
+
+PS> [Environment]::SetEnvironmentVariable('Foo','bar')
+PS> Get-ChildItem env:Foo
+
+Name                           Value
+----                           -----
+Foo                            bar
+
+PS> [Environment]::SetEnvironmentVariable('Foo',$null)
+PS> Get-ChildItem env:Foo
+
+Name                           Value
+----                           -----
+Foo
 ```
 
-```Output
-
-```
+> [!NOTE]
+> Unlike the variable syntax and provider cases, assigning the value to `$null`
+> using the `SetEnvironmentVariable()` method doesn't remove the environment
+> variable.
 
 For more information about the methods of the **System.Environment** class, see
 [Environment Methods][01].
@@ -375,6 +413,21 @@ The environment variables that store preferences include:
   Non-default values of environment variable must be set before starting the
   PowerShell process. See the previous sections for information about creating
   persistent environment variables.
+
+- `POWERSHELL_DIAGNOSTICS_OPTOUT`
+
+  This environment variable was added in PowerShell 7.6-preview.5. By default,
+  PowerShell creates a named pipe that is uses for Interprocess Communication
+  (IPC), such as `Enter-PSHostProcess`. PowerShell creates the named pipe at
+  startup so that it's available for use when needed.
+
+  On non-Windows platforms, named pipes are implemented as files in the `/tmp`
+  folder. If PowerShell crashes, these files may not be deleted. Over time,
+  these files can accumulate.
+
+  Beginning in PowerShell 7.6, `POWERSHELL_DIAGNOSTICS_OPTOUT` is set to
+  `false`. To turn off the creation of the named pipe, set the environment
+  variable to `true`, `yes`, or `1`.
 
 - `PSExecutionPolicyPreference`
 

@@ -6,7 +6,6 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: about_Core_Commands
 ---
-
 # about_Core_Commands
 
 ## Short description
@@ -16,7 +15,7 @@ Lists the cmdlets that are designed for use with PowerShell providers.
 ## Long description
 
 PowerShell includes a set of cmdlets that are specifically designed to manage
-the items in the data stores that are exposed by Windows PowerShell providers.
+the items in the data stores that are exposed by PowerShell providers.
 You can use these cmdlets in the same ways to manage all the different types
 of data that the providers make available to you. For more information about
 providers, type "Get-Help about_Providers".

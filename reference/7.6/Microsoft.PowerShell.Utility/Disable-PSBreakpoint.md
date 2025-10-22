@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/20/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/disable-psbreakpoint?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - dbp
 title: Disable-PSBreakpoint
 ---
 

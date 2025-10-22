@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 06/02/2025
+ms.date: 09/02/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -14,6 +14,116 @@ get started.
 <!-- Link references -->
 [01]: contributing/overview.md
 
+## 2025-September
+
+Content updates
+
+- Update release notes for PowerShell v7.5.3 and v7.4.12 releases
+- Update release notes for PSReadLine v2.4.4-beta4
+- Improved the documentation for comment-based help and creating `about_*` topics
+
+GitHub stats
+
+- 21 PRs merged (6 from Community)
+- 28 issues opened (25 from Community)
+- 31 issues closed (28 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|   GitHub Id    | PRs merged | Issues opened |
+| -------------- | :--------: | :-----------: |
+| skycommand     |     2      |               |
+| lukebarone     |     1      |               |
+| PraveenGururaj |     1      |               |
+| Blake-Madden   |     1      |               |
+| Gijsreyn       |     1      |               |
+| TMA-2          |     1      |       1       |
+
+## 2025-August
+
+Content updates
+
+- AI Shell updates for preview 6 release
+- [MCP support](/powershell/utility-modules/aishell/how-to/mcp-support)
+- DSC updates for v3.1.1 release
+
+GitHub stats
+
+- 16 PRs merged (3 from Community)
+- 34 issues opened (31 from Community)
+- 36 issues closed (32 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| changeworld     |     2      |               |
+| Dickson-Mwendia |     1      |               |
+| chwarr          |     1      |               |
+
+## 2025-July
+
+New content
+
+- [The Monad Manifesto](../developer/monad-manifesto.md) - No new but certainly a classic.
+
+Content updates
+
+- In July, we completed the deployment of a new build pipeline for PowerShell reference content. Now
+  all reference content for Microsoft products and services is using the new build system. The
+  webpage has a new right-hand navigation menu and we greatly improved the documentation of
+  parameters by including full details about each parameter set.
+
+GitHub stats
+
+- 19 PRs merged (8 from Community)
+- 31 issues opened (31 from Community)
+- 30 issues closed (30 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| changeworld |     3      |               |
+| sethvs      |     2      |               |
+| yashanshh   |     2      |               |
+| Gijsreyn    |     1      |               |
+| TNGBBK      |            |       2       |
+
+## 2025-June
+
+No new content this month. Only minor edits and bug fixes.
+
+GitHub stats
+
+- 18 PRs merged (5 from Community)
+- 22 issues opened (22 from Community)
+- 22 issues closed (22 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|  GitHub Id  | PRs merged | Issues opened |
+| ----------- | :--------: | :-----------: |
+| skycommand  |     2      |               |
+| JustinGrote |     1      |               |
+| OranguTech  |     1      |               |
+| changeworld |     1      |               |
+| ThomasNieto |     1      |               |
+| SamErde     |     1      |               |
+| vlad1300    |            |       2       |
+
 ## 2025-May
 
 Content updates
@@ -21,7 +131,7 @@ Content updates
 - Add new article - [Optimize performance using parallel execution](../dev-cross-plat/performance/parallel-execution.md)
 - Updated release notes for the PowerShell 7.4.10 release
 - Updated release notes for AIShell 1.0.0-preview.4
-- Updated docs for PSResoureGet 1.1.1 release - no supporting MAR
+- Updated docs for PSResoureGet 1.1.1 release - now supporting MAR
 - Retired PowerShell content for Windows Server 20212/2012r2/MDOP (5338 articles)
 
 GitHub stats

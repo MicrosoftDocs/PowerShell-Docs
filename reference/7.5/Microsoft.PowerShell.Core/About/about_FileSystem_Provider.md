@@ -95,7 +95,7 @@ Mode                 LastWriteTime         Length Name
 la---            6/8/2023 12:20 PM              0 winget.exe ->
 ```
 
-## Navigating the FileSystem drives
+## Navigating the filesystem drives
 
 The **FileSystem** provider exposes its data stores by mapping any logical
 drives on the computer as PowerShell drives. To work with a **FileSystem**

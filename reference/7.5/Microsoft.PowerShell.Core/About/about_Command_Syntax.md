@@ -94,7 +94,7 @@ The output of `Get-Help` is slightly different from the output of
 parameter. `Get-Command` shows the parameter type as the `[CommandTypes]`
 enumeration, while `Get-Help` show the possible values for the enumeration.
 
-## Parameter Sets
+## Parameter sets
 
 The parameters of a PowerShell command are listed in parameter sets. A
 PowerShell command can have one or more parameter sets. The `Get-Command`
@@ -145,7 +145,7 @@ example, if you use `Get-Random` without parameters, PowerShell assumes that
 you're using the **RandomNumberParameterSet** parameter set and it returns a
 random number.
 
-## Symbols in Syntax Diagrams
+## Symbols in syntax diagrams
 
 The syntax diagram lists the command name, the command parameters, and the
 parameter values.

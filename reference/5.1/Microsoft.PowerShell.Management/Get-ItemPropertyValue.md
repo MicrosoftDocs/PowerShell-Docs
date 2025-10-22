@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 03/10/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-itempropertyvalue?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gpv
 title: Get-ItemPropertyValue
 ---
 

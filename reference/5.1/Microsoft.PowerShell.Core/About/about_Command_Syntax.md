@@ -9,6 +9,7 @@ title: about_Command_Syntax
 # about_Command_Syntax
 
 ## Short description
+
 Describes the syntax diagrams that are used in PowerShell.
 
 ## Long description
@@ -93,7 +94,7 @@ The output of `Get-Help` is slightly different from the output of
 parameter. `Get-Command` shows the parameter type as the `[CommandTypes]`
 enumeration, while `Get-Help` show the possible values for the enumeration.
 
-## Parameter Sets
+## Parameter sets
 
 The parameters of a PowerShell command are listed in parameter sets. A
 PowerShell command can have one or more parameter sets. The `Get-Command`
@@ -144,7 +145,7 @@ example, if you use `Get-Random` without parameters, PowerShell assumes that
 you're using the **RandomNumberParameterSet** parameter set and it returns a
 random number.
 
-## Symbols in Syntax Diagrams
+## Symbols in syntax diagrams
 
 The syntax diagram lists the command name, the command parameters, and the
 parameter values.
@@ -165,7 +166,7 @@ The syntax diagrams use the following symbols:
 
   The placeholder inside the angle brackets identifies the .NET type of the
   value that a parameter takes. For example, to use the **Name** parameter of
-  the `Get-Command ` cmdlet, you replace the `<string[]>` with one or more
+  the `Get-Command` cmdlet, you replace the `<string[]>` with one or more
   strings separated by commas (`,`).
 
 <!-- `[]` - also known as binkies -->

@@ -50,7 +50,7 @@ using namespace System.Text
 using namespace System.IO
 
 [string]$string = "Hello World"
-## Valid values are "SHA1", "SHA256", "SHA384", "SHA512", "MD5"
+## VALID VALUES ARE "SHA1", "SHA256", "SHA384", "SHA512", "MD5"
 [string]$algorithm = "SHA256"
 
 [byte[]]$stringBytes = [UnicodeEncoding]::Unicode.GetBytes($string)

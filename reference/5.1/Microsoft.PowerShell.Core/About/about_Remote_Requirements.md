@@ -10,6 +10,7 @@ title: about_Remote_Requirements
 # about_Remote_Requirements
 
 ## Short description
+
 Describes the system requirements and configuration requirements for running
 remote commands in PowerShell.
 

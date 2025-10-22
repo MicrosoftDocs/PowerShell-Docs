@@ -9,6 +9,7 @@ title: about_Providers
 # about_Providers
 
 ## Short description
+
 Describes how PowerShell providers provide access to data and components that
 wouldn't otherwise be easily accessible at the command line. The data is
 presented in a consistent format that resembles a file system drive.
@@ -228,7 +229,7 @@ drive:\location\child-location\...
 ```
 
 For example, to change your location to the `HKLM\Software` registry key, type
-a `Set-Location `command, such as:
+a `Set-Location` command, such as:
 
 ```powershell
 Set-Location HKLM:\SOFTWARE\
@@ -260,7 +261,7 @@ PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\> cd ..\..\La
 PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters>
 ```
 
-## Provider Home
+## Provider home
 
 Providers also have a **Home** location. This location is shared by all
 `PSDrives` backed by the provider. It can be retrieved by viewing the **Home**

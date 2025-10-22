@@ -51,7 +51,7 @@ the `PSConsoleHostReadLine` function solves this issue. When you define a
 function named `PSConsoleHostReadline` in the PowerShell console host,
 PowerShell calls that function instead of the "Cooked Mode" input mechanism.
 
-## See Also
+## See also
 
 - [about_Prompts](about_Prompts.md)
 - [PSConsoleHostReadLine](/powershell/module/psreadline/psconsolehostreadline)

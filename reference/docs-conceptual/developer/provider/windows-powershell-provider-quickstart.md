@@ -2,6 +2,7 @@
 description: Windows PowerShell Provider Quickstart
 ms.date: 09/13/2016
 title: Windows PowerShell Provider Quickstart
+ms.custom: sfi-ropc-nochange
 ---
 # Windows PowerShell Provider Quickstart
 

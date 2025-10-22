@@ -41,12 +41,12 @@ between the command and the destination path. This function runs
 
 This function was added in PowerShell 7.4.
 
-## `Pause`
+## `pause`
 
 This function replicates the behavior of the `pause` command from `cmd.exe`.
 The script pauses execution and prompts the user to hit a key to continue.
 
-## `help`
+## `help` (alias: `man`)
 
 This function invokes `Get-Help` with your parameters and passes the output to
 the system's pager command. PowerShell uses a different default pager for
@@ -78,7 +78,7 @@ This function provides a short hand way to run `Out-String -Stream` in a
 pipeline. For more information, see
 [Out-String](xref:Microsoft.PowerShell.Utility.Out-String).
 
-## `mkdir`
+## `mkdir` (alias: `md`)
 
 This function provides a short hand way to run `New-Item -Type Directory` with
 your parameters. This function is only defined for Windows systems. Linux and
@@ -93,7 +93,7 @@ one. PowerShell 7.3.1 adds the `exec` function to wrap the
 `Switch-Process` calls the native Unix `execv()` function to provide similar
 behavior as POSIX shells.
 
-## Windows drive letter functions
+## WINDOWS DRIVE LETTER FUNCTIONS
 
 In Windows, drive mount points are associated with a drive letter like `C:`.
 You can switch to the current location on another drive just by entering that

@@ -110,4 +110,4 @@ foreach ($point in $p) {
 [02]: about_If.md
 [03]: about_Language_Keywords.md
 [04]: about_Script_Blocks.md
-[05]: xref:System.IO.DirectoryInfo.GetFiles*#system-io-directoryinfo-getfiles(system-string-system-io-enumerationoptions)
+[05]: xref:System.IO.DirectoryInfo.GetFiles%2A#system-io-directoryinfo-getfiles(system-string-system-io-enumerationoptions)

@@ -44,7 +44,7 @@ The following cmdlets support the Disconnected Sessions feature:
 - `Invoke-Command`: **InDisconnectedSession** parameter creates a PSSession and
   disconnects immediately.
 
-## How the Disconnected Sessions feature works
+## How the disconnected sessions feature works
 
 Beginning in PowerShell 3.0, PSSessions are independent of the sessions in
 which they're created. Active PSSessions are maintained on the remote computer
@@ -266,7 +266,7 @@ TimeCreated             Id LevelDisplayName Message     PSComputerName
 5/14/2012 7:26:03 PM   600 Information      Provider "V Server02
 ```
 
-## State and Availability properties
+## State and availability properties
 
 The **State** and **Availability** properties of a disconnected PSSession tell
 you whether the session is available for you to reconnect to it.

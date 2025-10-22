@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 04/28/2025
+ms.date: 10/16/2025
 title: Alternate ways to install PowerShell on Linux
 ---
 # Alternate ways to install PowerShell on Linux
@@ -132,16 +132,16 @@ archive.
 The following example shows the steps for installing the x64 binary archive. You must choose the
 correct binary archive that matches the processor type for your platform.
 
-- `powershell-7.5.1-linux-arm32.tar.gz`
-- `powershell-7.5.1-linux-arm64.tar.gz`
-- `powershell-7.5.1-linux-x64.tar.gz`
+- `powershell-7.5.4-linux-arm32.tar.gz`
+- `powershell-7.5.4-linux-arm64.tar.gz`
+- `powershell-7.5.4-linux-x64.tar.gz`
 
 Use the following shell commands to download and install PowerShell from the `tar.gz` binary
 archive. Change the URL to match the version of PowerShell you want to install.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
 sudo mkdir -p /opt/microsoft/powershell/7

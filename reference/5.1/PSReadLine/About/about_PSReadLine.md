@@ -1,17 +1,19 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 03/03/2025
+ms.date: 08/18/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine
 ---
 # about_PSReadLine
 
-## Short Description
+## SHORT DESCRIPTION
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
+
+## LONG DESCRIPTION
 
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
@@ -26,8 +28,6 @@ Windows PowerShell 5.1.
 
 For more information about version differences, see
 [about_PSReadLine_Release_Notes](about_PSReadLine_Release_Notes.md).
-
-## Long Description
 
 The current version of PSReadLine can be installed and used on Windows
 PowerShell 5.1 and newer. For some features, you need to be running PowerShell
@@ -57,7 +57,7 @@ in a supported version of PowerShell run the following command.
 Install-Module -Name PSReadLine -AllowClobber -Force
 ```
 
-## Custom Key Bindings
+## CUSTOM KEY BINDINGS
 
 PSReadLine supports custom key bindings using the `Set-PSReadLineKeyHandler`
 cmdlet. Most custom key bindings call one of the [bindable functions][02], for
@@ -119,13 +119,16 @@ is installed in the **PSReadLine** module folder.
 Most key bindings use some helper functions for editing the command line. Those
 APIs are documented in [about_PSReadLine_Functions][02].
 
-## Notes
+## NOTES
 
 ### Command History
 
 PSReadLine maintains a history file containing all the commands and data you've
-entered from the command line. The history files are a file named
-`$($Host.Name)_history.txt`. On Windows systems the history file is stored at
+entered from the command line. The history file is a file named
+`$($Host.Name)_history.txt`, which results in a unique file for each host. For
+example, the history file for the PowerShell Extension console in Visual Studio
+Code is `Visual Studio Code Host_history.txt`.
+The history file is stored at
 `$Env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine`.
 
 The history can contain sensitive data including passwords. PSReadLine attempts
@@ -222,7 +225,7 @@ $Env:PGPASS = gcloud auth print-access-token
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
-## See Also
+## SEE ALSO
 
 - PSReadLine is heavily influenced by the GNU [readline][04] library.
 

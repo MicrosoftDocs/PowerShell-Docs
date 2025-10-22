@@ -4,6 +4,16 @@ description: |
   branch of a repository or to submit a PR editing repo configuration.
 author: PowerShell Docs Team
 inputs:
+  authorized_accounts:
+    description: |
+      Defines one or more authorized accounts to skip permission-checking for. This is best used
+      for bot accounts, which may not have specific permissions to a repository but are used by
+      the organization's automation. Must be a comma-separated string of account names.
+
+      If a user is in the authorized accounts list, the action skips checking permissions and
+      passes for that user.
+    required: false
+    default: ''
   permissions:
     description: |
       The permissions a user requires to perform a given task. Must be a comma-separated string of
@@ -84,6 +94,7 @@ runs:
         INPUT_PERMISSIONS: ${{ inputs.permissions }}
         INPUT_TARGET: ${{ inputs.target }}
         INPUT_USER: ${{ inputs.user }}
+        INPUT_AUTHORIZED_ACCOUNTS: ${{ inputs.authorized_accounts }}
         GITHUB_TOKEN: ${{ inputs.token }}
       run: |
         Write-Output "::group::Generic Setup"

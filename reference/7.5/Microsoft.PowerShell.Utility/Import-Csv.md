@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Utility
 ms.date: 01/09/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ipcsv
 title: Import-Csv
 ---
 

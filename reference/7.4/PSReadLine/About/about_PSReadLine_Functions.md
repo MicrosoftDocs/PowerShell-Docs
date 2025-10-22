@@ -3,19 +3,19 @@ description: >
     This article documents the functions provided by PSReadLine. These functions
     can be bound to keystrokes for easy access and invocation.
 Locale: en-US
-ms.date: 06/17/2025
+ms.date: 10/01/2025
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_functions?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Functions
 ---
 # about_PSReadLine_Functions
 
-## Short Description
+## Short description
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
-## Long Description
+## Long description
 
 PowerShell 7.3 ships with PSReadLine 2.2.6. The current version is PSReadLine
 2.3.6. The current version of PSReadLine can be installed and used on Windows
@@ -1179,11 +1179,13 @@ Similarly, you can use this with other operations, like `<Delete>` or
 
 ### InvokePrompt
 
-Attempts to erase the current prompt and call the prompt function to redisplay
+Attempt to erase the current prompt and call the prompt function to redisplay
 the prompt. Useful for custom key handlers that change state. For example,
-change the current directory. This method can't overwrite a prompt that has
-left the screen buffer. Calls to `InvokePrompt` with no `Y` position argument
-return immediately if the prompt can't be overwritten.
+changing the current directory. This method can't overwrite a prompt that has
+left the screen buffer.
+
+Calls to `InvokePrompt` with no Y position argument immediately return if the
+prompt can't be overwritten. This change was made in PSReadLine v2.4.3-beta3.
 
 - Function is unbound.
 
@@ -1530,7 +1532,7 @@ command.
 
 - Emacs mode: `Ctrl+@`
 
-## Custom Key Binding Support APIs
+## Custom key binding support APIs
 
 The following functions are public in Microsoft.PowerShell.PSConsoleReadLine,
 but can't be directly bound to a key. Most are useful in custom key bindings.
@@ -1665,7 +1667,7 @@ Behavior of the OnIdle event
   the event only if there's a `ReadKey()` timeout and the current editing
   buffer is empty.
 
-## See Also
+## See also
 
 - [about_PSReadLine][02]
 

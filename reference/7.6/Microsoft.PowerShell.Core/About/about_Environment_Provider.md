@@ -55,7 +55,7 @@ Each environment variable is an instance of the
 [System.Collections.DictionaryEntry][07] class. The name of the variable is the
 dictionary key. The value of the environment variable is the dictionary value.
 
-## Navigating the Environment drive
+## Navigating the environment drive
 
 The **Environment** provider exposes its data store in the `Env:` drive. To
 work with environment variables, change your location to the `Env:` drive

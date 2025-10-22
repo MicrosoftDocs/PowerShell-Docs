@@ -10,12 +10,12 @@ title: about_PSReadLine_Functions
 ---
 # about_PSReadLine_Functions
 
-## Short Description
+## Short description
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
-## Long Description
+## Long description
 
 PowerShell 5.1 ships with PSReadLine 2.0.0. The current version is PSReadLine
 2.3.6. The current version of PSReadLine can be installed and used on Windows
@@ -1261,7 +1261,7 @@ Prompts for a search string and initiates search upon AcceptLine.
 - Vi insert mode: `<Ctrl+s>`
 - Vi command mode: `<?>`, `<Ctrl+s>`
 
-## Custom Key Binding Support APIs
+## Custom key binding support APIs
 
 The following functions are public in Microsoft.PowerShell.PSConsoleReadLine,
 but can't be directly bound to a key. Most are useful in custom key bindings.
@@ -1394,6 +1394,6 @@ Behavior of the OnIdle event
   the event only if there's a `ReadKey()` timeout and the current editing
   buffer is empty.
 
-## See Also
+## See also
 
 - [about_PSReadLine](about_PSReadLine.md)

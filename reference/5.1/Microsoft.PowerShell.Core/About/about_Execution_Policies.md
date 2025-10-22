@@ -281,7 +281,7 @@ precedence over an execution policy that is set in the registry for the local
 computer or current user. However, it doesn't take precedence over the
 execution policy set by using a Group Policy.
 
-## Use Group Policy to Manage Execution Policy
+## Use Group Policy to manage execution policy
 
 You can use the **Turn on Script Execution** Group Policy setting to manage the
 execution policy of computers in your enterprise. The Group Policy setting

@@ -9,6 +9,7 @@ title: about_Profiles
 # about_Profiles
 
 ## Short description
+
 Describes how to create and use a PowerShell profile.
 
 ## Long description
@@ -256,7 +257,7 @@ For a complete list of the parameters of powershell.exe, type:
 powershell -?
 ```
 
-## Profiles and Execution Policy
+## Profiles and execution policy
 
 The PowerShell execution policy determines, in part, whether you can run
 scripts and load configuration files, including the profiles. The

@@ -1,6 +1,6 @@
 ---
 description: PowerShell has several features designed to improve the security of your scripting environment.
-ms.date: 05/22/2025
+ms.date: 08/18/2025
 title: PowerShell security features
 ---
 # PowerShell security features
@@ -91,6 +91,45 @@ You can find SBOM files in the following locations:
 The creation and publishing of the SBOM is the first step to modernize Federal Government
 cybersecurity and enhance software supply chain security. For more information about this
 initiative, see the blog post [Generating SBOMs with SPDX at Microsoft][11].
+
+## Secure data transfer in PowerShell remoting
+
+Prior to PowerShell v7.6-preview5, a `Session_Key` is used to encrypt a **SecureString** before
+sending it a PowerShell remote session. The PowerShell Remoting Protocol (PSRP) performs a
+key exchange between client and server when a `SecureString` object needs to be
+transferred. The exchange involves the following steps:
+
+1. The client side generates a public/private key pair and sends the public key to the server.
+1. The server generates a session key for symmetric encryption.
+1. The server uses the public key to encrypt the session key and sends it to the client.
+1. Both the client and server use the new session key to encrypt a **SecureString** object.
+
+The PowerShell Remoting Protocol (PSRP) uses the `RSAEncryptionPadding.Pkcs1` algorithm during the
+key exchange. The algorithm is **NOT** secure, so the key exchange doesn't provide any extra
+security.
+
+> [!IMPORTANT]
+> You must use a secure transport layer to ensure secure data transfer over PSRP.
+
+Beginning in PowerShell v7.6-preview.5, the key exchange was deprecated. The version of PSRP was
+incremented to v2.4 and includes the following changes:
+
+- The following PSRP messages are deprecated when both client and server are v2.4 or higher:
+
+  - PUBLIC_KEY
+  - PUBLIC_KEY_REQUEST
+  - ENCRYPTED_SESSION_KEY
+
+- The encryption and decryption steps for `SecureString` are skipped when both client and server are
+  v2.4 or higher.
+
+This change is backward compatible.
+
+- For old clients or servers (v2.3 or lower), the key exchange is still used when needed.
+- PSRP can use a named pipe remote sessions when both client and server are on the same machine.
+  Since it's possible for a remote client to connect to named pipe and the data is no longer
+  encrypted with a session key, the named pipe (used for `Enter-PSHostProcess`) rejects the remote
+  client.
 
 ## Security Servicing Criteria
 

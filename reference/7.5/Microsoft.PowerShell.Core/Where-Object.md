@@ -5,6 +5,9 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 04/23/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ?
+  - where
 title: Where-Object
 ---
 # Where-Object
@@ -278,7 +281,7 @@ command.
   is a positional parameter mapped to position `1`. The switch parameter, used to specify the
   comparison, can be used in any position.
 
-  The simplfied syntax was introduced in Windows PowerShell 3.0. For more information, see
+  The simplified syntax was introduced in Windows PowerShell 3.0. For more information, see
   [about_Simplified_Syntax](About/about_Simplified_Syntax.md).
 
 When you provide a single **Property** to `Where-Object`, the cmdlet treats the value of the

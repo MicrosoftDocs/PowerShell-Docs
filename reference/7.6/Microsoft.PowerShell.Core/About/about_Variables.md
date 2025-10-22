@@ -478,7 +478,7 @@ The following built-in PowerShell providers support this notation:
 - [about_Function_Provider][07]
 - [about_Alias_Provider][02]
 
-## The variable cmdlets
+## The Variable cmdlets
 
 PowerShell includes a set of cmdlets that are designed to manage variables.
 

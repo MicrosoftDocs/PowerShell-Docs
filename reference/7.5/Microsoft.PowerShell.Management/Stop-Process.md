@@ -5,6 +5,9 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 01/05/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - kill
+  - spps
 title: Stop-Process
 ---
 

@@ -161,9 +161,9 @@ This command gets the variables that have the values of `ReadOnly` or
 ```powershell
 Get-ChildItem -Path Variable: |
     Where-Object {
-        $_.Options -match 'Constant' -or 
+        $_.Options -match 'Constant' -or
         $_.Options -match 'ReadOnly'
-    } | 
+    } |
     Format-List -Property Name, Value, Options
 ```
 
@@ -245,7 +245,7 @@ property has a value of `ReadOnly`.
 Remove-Item Variable:* -Force
 ```
 
-## Setting the value of a variable to NULL
+## Setting the value of a variable to null
 
 This command uses the `Clear-Item` cmdlet to change the value of the
 `processes` variable to NULL.

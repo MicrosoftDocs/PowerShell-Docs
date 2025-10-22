@@ -10,6 +10,7 @@ title: about_Comment_Based_Help
 # about_Comment_Based_Help
 
 ## Short description
+
 Describes how to write comment-based help content for functions and scripts.
 
 ## Long description
@@ -324,14 +325,16 @@ comment-based help, even if it can't find a help topic that matches the value
 of the `.EXTERNALHELP` keyword.
 
 If the function is exported by a module, set the value of the `.EXTERNALHELP`
-keyword to a filename without a path. `Get-Help` looks for the specified file
-name in a language-specific subdirectory of the module directory. There are no
-requirements for the name of the XML-based help file for a function, but a best
-practice is to use the following format:
-
-```Syntax
-<ScriptModule.psm1>-help.xml
-```
+keyword to a filename without a path. `Get-Help` looks for the specified
+filename in a language-specific subdirectory of the module directory. There are
+no requirements for the name of the XML-based help file for a function.
+Beginning in PowerShell 5.0, functions that are exported by a module can be
+documented in a help file that's named for the module. You don't need to use
+`.EXTERNALHELP` comment keyword. For example, if the `Test-Function` function
+is exported by the `MyModule` module, you can name the help file
+`MyModule-help.xml`. The `Get-Help` cmdlet looks for help for the
+`Test-Function` function in the `MyModule-help.xml` file in the module
+directory.
 
 If the function isn't included in a module, include a path to the XML-based
 help file. If the value includes a path and the path contains
@@ -362,7 +365,7 @@ script syntax. To add detail to the help topic syntax, such as the .NET type of
 a parameter, add the detail to the syntax. If you don't specify a parameter
 type, the **Object** type is inserted as the default value.
 
-### Parameter List
+### Parameter list
 
 The parameter list in the help topic is generated from the function or script
 syntax and from the descriptions that you add by using the `.PARAMETER`
@@ -378,7 +381,7 @@ The **Common parameters** are added to the syntax and parameter list of the
 help topic, even if they have no effect. For more information about the common
 parameters, see [about_CommonParameters][02].
 
-### Parameter Attribute Table
+### Parameter attribute table
 
 `Get-Help` generates the table of parameter attributes that appears when you
 use the **Full** or **Parameter** parameter of `Get-Help`. The value of the

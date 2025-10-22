@@ -9,6 +9,7 @@ title: about_If
 # about_If
 
 ## Short description
+
 Describes a language command you can use to run statement lists based on the
 results of one or more conditional tests.
 
@@ -131,7 +132,6 @@ $service.Status -eq 'Running' ? (Stop-Service $service) : (Start-Service $servic
 
 In this example, if the service is running, it's stopped, and if its status is
 not **Running**, it's started.
-
 
 If a `<condition>`, `<if-true>`, or `<if-false>` expression calls a command,
 you must wrap it in parentheses. If you don't, PowerShell raises an argument

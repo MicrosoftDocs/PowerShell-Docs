@@ -2,9 +2,12 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/11/2024
+ms.date: 09/11/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - compare
+  - diff
 title: Compare-Object
 ---
 
@@ -17,8 +20,8 @@ Compares two sets of objects.
 
 ```
 Compare-Object [-ReferenceObject] <PSObject[]> [-DifferenceObject] <PSObject[]>
- [-SyncWindow <Int32>] [-Property <Object[]>] [-ExcludeDifferent] [-IncludeEqual] [-PassThru]
- [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
+ [-SyncWindow <Int32>] [-Property <Object[]>] [-ExcludeDifferent] [-IncludeEqual]
+ [-PassThru] [-Culture <String>] [-CaseSensitive] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,12 +54,15 @@ with each value on a separate line.
 - `Testfile1.txt` contains the values: dog, squirrel, and bird.
 - `Testfile2.txt` contains the values: cat, bird, and racoon.
 
-The output displays only the lines that are different between the files. `Testfile1.txt` is the
-**reference** object (`<=`) and `Testfile2.txt`is the **difference** object (`=>`). Lines with
-content that appear in both files aren't displayed.
+The output displays only the lines that are different between the files. Lines with content that
+appear in both files aren't displayed.
 
 ```powershell
-Compare-Object -ReferenceObject (Get-Content -Path C:\Test\Testfile1.txt) -DifferenceObject (Get-Content -Path C:\Test\Testfile2.txt)
+$objects = @{
+  ReferenceObject = (Get-Content -Path C:\Test\Testfile1.txt)
+  DifferenceObject = (Get-Content -Path C:\Test\Testfile2.txt)
+}
+Compare-Object @objects
 ```
 
 ```Output
@@ -68,10 +74,17 @@ dog         <=
 squirrel    <=
 ```
 
+For this example, the output shows the following information
+
+- `cat` and `racoon` are found in the difference object file, but missing from the reference object
+  file
+- `dog` and `squirrel` are found in the reference object file, but missing from the difference
+  object file
+
 ### Example 2 - Compare each line of content and exclude the differences
 
-This example uses the **ExcludeDifferent** parameter to compare each line of
-content in two text files.
+This example uses the **ExcludeDifferent** parameter to compare each line of content in two text
+files.
 
 As of PowerShell 7.1, when using the **ExcludeDifferent** parameter, **IncludeEqual** is inferred
 and the output only contains lines contained in both files, as shown by the **SideIndicator**
@@ -174,7 +187,12 @@ output displayed by the default format for **System.Boolean** objects didn't dis
 In this example, we compare two different string that have the same length.
 
 ```powershell
-Compare-Object -ReferenceObject 'abc' -DifferenceObject 'xyz' -Property Length -IncludeEqual
+$objects = @{
+  ReferenceObject = 'abc'
+  DifferenceObject = 'xyz'
+  Property = 'Length'
+}
+Compare-Object @objects -IncludeEqual
 ```
 
 ```Output

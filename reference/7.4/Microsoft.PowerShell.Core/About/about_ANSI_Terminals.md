@@ -2,6 +2,7 @@
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
 ms.date: 08/27/2024
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ansi_terminals?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ANSI_Terminals
 ---
@@ -202,7 +203,7 @@ The following members control how or when ANSI formatting is used:
 - `Write-Progress` - ANSI output is managed using `$PSStyle.Progress`, as
   described above. For more information, see [Write-Progress][12]
 
-## Redirecting output in `Host` mode
+## Redirecting output in Host mode
 
 By default, `$PSStyle.OutputRendering` is a set to **Host**. The ANSI escape
 sequences are removed from redirected or piped output.

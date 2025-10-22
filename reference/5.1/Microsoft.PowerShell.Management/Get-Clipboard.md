@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 01/08/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - gcb
 title: Get-Clipboard
 ---
 

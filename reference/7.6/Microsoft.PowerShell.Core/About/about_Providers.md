@@ -265,7 +265,7 @@ PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\> cd ..\..\La
 PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters>
 ```
 
-## Provider Home
+## Provider home
 
 Providers also have a **Home** location. This location is shared by all
 `PSDrives` backed by the provider. It can be retrieved by viewing the **Home**

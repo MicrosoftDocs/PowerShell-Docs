@@ -1,6 +1,6 @@
 ---
 description: Writing Help for PowerShell Modules
-ms.date: 07/10/2023
+ms.date: 10/01/2025
 title: Writing Help for PowerShell Modules
 ---
 # Writing Help for PowerShell Modules
@@ -17,47 +17,80 @@ guidelines for module Help content.
 
 A module can include the following types of Help.
 
-- **Cmdlet Help**. The Help topics that describe cmdlets in a module are XML files that use the
-  command help schema
+- XML-based help
+  - **Cmdlet Help**. The Help topics that describe cmdlets in a module are XML files that use the
+    command help schema
+  - **Provider Help**. The Help topics that describe providers in a module are XML files that use
+    the provider help schema.
+  - **Function Help**. The Help topics that describe functions in a module can be XML files that use
+    the command help schema or comment-based Help topics within the function, or the script or
+    script module
+  - **Script Help**. The Help topics that describe scripts in a module can be XML files that use the
+    command help schema or comment-based Help topics in the script or script module.
+  - The `$PSHOME\Schemas\PSMaml` folder contains the schema files that define the XML format.
 
-- **Provider Help**. The Help topics that describe providers in a module are XML files that use the
-  provider help schema.
+- Conceptual ("About") help text files
 
-- **Function Help**. The Help topics that describe functions in a module can be XML files that use
-  the command help schema or comment-based Help topics within the function, or the script or script
-  module
+  You can use a conceptual ("about") Help topic to describe the module and its members and to
+  explain how the members can be used together to perform tasks. By default, PowerShell includes
+  over 100 of these conceptual About Help topics. The filename must use the `about_<name>.help.txt`
+  format, such as `about_MyModule.help.txt`.
 
-- **Script Help**. The Help topics that describe scripts in a module can be XML files that use the
-  command help schema or comment-based Help topics in the script or script module.
+  > [!NOTE]
+  > The `TOPIC` section header must start in the first column of the first line of the file. The
+  > section content on the second line should match the filename, without the `.help.txt` suffix.
+  > You must indent the content exactly 4 spaces. The third line must be blank. The `SYNOPSIS`
+  > section header must start in the first column of the fourth line. You must indent the content
+  > on the fifth line exactly 4 spaces. These requirements are necessary for the `Get-Help` cmdlet
+  > to recognize the content correctly.
 
-- **Conceptual ("About") Help**. You can use a conceptual ("about") Help topic to describe the
-  module and its members and to explain how the members can be used together to perform tasks.
-  Conceptual Help topics are text files with Unicode (UTF-8) encoding. The filename must use the
-  `about_<name>.help.txt` format, such as `about_MyModule.help.txt`. By default, PowerShell includes
-  over 100 of these conceptual About Help topics, and they're formatted like the following example.
-
-  ```Output
+  ```
   TOPIC
       about_<subject or module name>
 
-  SHORT DESCRIPTION
+  SYNOPSIS
+      A short, one-line description of the topic contents.
+  ```
+
+  You can use the following sample template as a starting point for writing conceptual Help topics.
+  Except for the first two sections, the structure of conceptual Help topics is arbitrary. The
+  remaining section titles can be whatever is appropriate for your content.
+
+  ```
+  TOPIC
+      about_<subject or module name>
+
+  SYNOPSIS
       A short, one-line description of the topic contents.
 
   LONG DESCRIPTION
-      A detailed, full description of the subject or purpose of the module.
+
+  A detailed, full description of the subject or purpose of the module.
 
   EXAMPLES
-      Examples of how to use the module or how the subject feature works in practice.
 
-  KEYWORDS
-      Terms or titles on which you might expect your users to search for the information in this topic.
+  Examples of how to use the module or how the subject feature works in
+  practice.
+
+  TROUBLESHOOTING
+
+  Instructions for resolving common problems.
 
   SEE ALSO
-      Text-only references for further reading. Hyperlinks can't work in the PowerShell console.
 
+  Text-only references for further reading. Hyperlinks can't work in the
+  PowerShell console.
   ```
 
-All the schema files can be found in the `$PSHOME\Schemas\PSMaml` folder.
+  You can use any style and markup you want, but PowerShell sees it as plain text and there is no
+  special rendering of the text in the PowerShell console. The following suggestions ensure the best
+  display results and readability.
+
+  - Use UTF-8 with BOM encoding to ensure any special (multi-byte) characters display correctly.
+  - Underline section headers or use all uppercase letters to make they stand out. This makes the
+    content easier to scan.
+  - Limit the length of each line to 80 characters.
+  - Indent code blocks and example output to separate them from the surrounding prose.
 
 ## Placement of Module Help
 

@@ -20,7 +20,7 @@ This topic provides information about WMI technology, the WMI cmdlets for
 Windows PowerShell, WMI-based remoting, WMI accelerators, and WMI
 troubleshooting. This topic also provides links to more information about WMI.
 
-### ABOUT WMI
+### About WMI
 
 Windows Management Instrumentation (WMI) is the Microsoft implementation of
 Web-Based Enterprise Management (WBEM), which is an industry initiative to
@@ -37,7 +37,7 @@ computers. For example, you can use WMI to do the following:
   computer.
 - Query the Windows event logs on a local or remote computer.
 
-### THE WMI CMDLETS FOR WINDOWS POWERSHELL
+### The WMI cmdlets for Windows PowerShell
 
 Windows PowerShell implements WMI functionality through a set of cmdlets that
 are available in Windows PowerShell by default. You can use these cmdlets to
@@ -54,7 +54,8 @@ The following WMI cmdlets are included.
 |Remove-WmiObject |Deletes WMI classes and instances.            |
 |Set-WmiInstance  |Creates or modifies instances of WMI classes. |
 
-### SAMPLE COMMANDS
+### Sample commands
+
 The following command displays the BIOS information for the local computer.
 
 ```powershell
@@ -78,7 +79,7 @@ C:\PS> $np = Get-WmiObject -Query $wql
 C:\PS> $np | Remove-WmiObject
 ```
 
-### WMI-BASED REMOTING
+### WMI-based remoting
 
 While the ability to manage a local system through WMI is useful, it is the
 remoting capabilities that make WMI a powerful administrative tool. WMI uses
@@ -87,7 +88,7 @@ systems. You might have to configure some systems to allow DCOM connections.
 Firewall settings and locked-down DCOM permissions can block WMI's ability to
 remotely manage systems.
 
-### WMI TYPE ACCELERATORS
+### WMI type accelerators
 
 Windows PowerShell includes WMI type accelerators. These WMI type accelerators
 (shortcuts) allow more direct access to a WMI objects than a non-type
@@ -156,7 +157,7 @@ PS> $p.Name
 OUTLOOK.EXE
 ```
 
-### WMI TROUBLESHOOTING
+### WMI troubleshooting
 
 The following problems are the most common problems that might occur when you
 try to connect to a remote computer.

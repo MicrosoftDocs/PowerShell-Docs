@@ -9,6 +9,7 @@ title: about_Classes
 # about_Classes
 
 ## Short description
+
 Describes how you can use classes to create your own custom types.
 
 ## Long description
@@ -455,7 +456,7 @@ For more information about deriving classes that inherit from a base class or
 implement interfaces, see
 [about_Classes_Inheritance][11].
 
-## Exporting classes with type accelerators
+## Export classes with type accelerators
 
 By default, PowerShell modules don't automatically export classes and
 enumerations defined in PowerShell. The custom types aren't available outside
@@ -525,7 +526,7 @@ When users import the module, any types added to the type accelerators for the
 session are immediately available for IntelliSense and completion. When the
 module is removed, so are the type accelerators.
 
-## Manually importing classes from a PowerShell module
+## Manually import classes from a PowerShell module
 
 `Import-Module` and the `#Requires` statement only import the module functions,
 aliases, and variables, as defined by the module. Classes aren't imported.
@@ -541,7 +542,7 @@ to be available to users outside of the module directly in the root module.
 
 For more information about the `using` statement, see [about_Using][12].
 
-## Loading newly changed code during development
+## Load newly changed code during development
 
 During development of a script module, it's common to make changes to the code
 then load the new version of the module using `Import-Module` with the

@@ -628,7 +628,7 @@ changed value affects every class except for **DerivedClassD**.
 For more information about class inheritance, including a comprehensive
 example, see [about_Classes_Inheritance][08].
 
-## Using property attributes
+## Use property attributes
 
 PowerShell includes several attribute classes that you can use to enhance data
 type information and validate the data assigned to a property. Validation
@@ -638,7 +638,7 @@ requirements. Validation is triggered the moment that the value is assigned.
 For more information on available attributes, see
 [about_Functions_Advanced_Parameters][09].
 
-## Defining instance properties with Update-TypeData
+## Define instance properties with Update-TypeData
 
 Beyond declaring properties directly in the class definition, you can define
 properties for instances of a class in the static constructor using the

@@ -9,6 +9,7 @@ title: about_Profiles
 # about_Profiles
 
 ## Short description
+
 Describes how to create and use a PowerShell profile.
 
 ## Long description
@@ -50,14 +51,6 @@ paths are the default locations.
   - Linux - `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
   - macOS - `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
 
-> [!NOTE]
-> In Windows, the location of the `Documents` folder can be changed by folder
-> redirection or OneDrive. We don't recommend redirecting the `Documents`
-> folder to a network share or including it in OneDrive. Redirecting the folder
-> can cause modules to fail to load and create errors in your profile scripts.
-> For information about removing the `Documents` folder from OneDrive
-> management, consult the [OneDrive documentation](/onedrive/).
-
 The profile scripts are executed in the order listed. This means that changes
 made in the **AllUsersAllHosts** profile can be overridden by any of the other
 profile scripts. The **CurrentUserCurrentHost** profile always runs last. In
@@ -76,6 +69,14 @@ The profile paths include the following variables:
 
 - The `$PSHOME` variable stores the installation directory for PowerShell
 - The `$HOME` variable stores the current user's home directory
+
+> [!NOTE]
+> In Windows, the location of the `Documents` folder can be changed by folder
+> redirection or OneDrive. We don't recommend redirecting the `Documents`
+> folder to a network share or including it in OneDrive. Redirecting the folder
+> can cause modules to fail to load and create errors in your profile scripts.
+> For information about removing the `Documents` folder from OneDrive
+> management, consult the [OneDrive documentation](/onedrive/).
 
 ## The $PROFILE variable
 
@@ -267,7 +268,7 @@ For a complete list of the parameters of `pwsh.exe`, type:
 pwsh -?
 ```
 
-## Profiles and Execution Policy
+## Profiles and execution policy
 
 The PowerShell execution policy determines, in part, whether you can run
 scripts and load configuration files, including the profiles. The

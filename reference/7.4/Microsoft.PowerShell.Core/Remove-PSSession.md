@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Core
 ms.date: 12/09/2022
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/remove-pssession?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - rsn
 title: Remove-PSSession
 ---
 # Remove-PSSession

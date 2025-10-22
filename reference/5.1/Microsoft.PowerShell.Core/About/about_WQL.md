@@ -398,7 +398,7 @@ SnagIt32.exe                              4748
 WmiPrvSE.exe                              5056
 ```
 
-## using the LIKE operator
+## Using the LIKE operator
 
 The `LIKE` operator lets you use wildcard characters to filter the results of a
 WQL query.

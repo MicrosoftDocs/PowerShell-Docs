@@ -68,7 +68,7 @@ handling.
 `__AllParameterSets` is the name of the default parameter set when an explicit
 default name is not used.
 
-Setting the `ParameterSetName` of a the **Parameter** attribute to
+Setting the `ParameterSetName` of the **Parameter** attribute to
 `__AllParameterSets` is equivalent to not assigning a `ParameterSetName`. In
 both cases the parameter belongs to all parameter sets.
 

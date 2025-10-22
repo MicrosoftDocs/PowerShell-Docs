@@ -520,8 +520,7 @@ test.ps1:12  psversion
 ```
 
 At this point, the `$scriptName` variable is populated, but you verify the
-value of the variable by displaying its value. In this case, the value is set
-to the script path.
+value of the variable. In this case, the value is set to the script path.
 
 ```powershell
 DBG> $scriptName
@@ -754,7 +753,7 @@ DBG> k
 This example demonstrates just a few of the many ways to use the PowerShell
 debugger.
 
-## Other Debugging Features in PowerShell
+## Other debugging features in PowerShell
 
 In addition to the PowerShell debugger, PowerShell includes several other
 features that you can use to debug scripts and functions.

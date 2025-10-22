@@ -884,7 +884,7 @@ Set-Variable -Name a -Value 1, 2, 3
 [01]: /powershell/scripting/learn/glossary#scalar-value
 [02]: about_Arrays.md
 [03]: about_Hash_Tables.md
-[04]: about_operators.md#null-coalescing-operator-
+[04]: about_Operators.md#null-coalescing-operator-
 [05]: about_Variables.md
 [06]: xref:Microsoft.PowerShell.Management.Clear-Item
 [07]: xref:Microsoft.PowerShell.Utility.Clear-Variable

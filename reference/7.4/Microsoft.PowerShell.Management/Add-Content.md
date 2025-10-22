@@ -5,6 +5,8 @@ Module Name: Microsoft.PowerShell.Management
 ms.date: 10/31/2023
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/add-content?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ac
 title: Add-Content
 ---
 

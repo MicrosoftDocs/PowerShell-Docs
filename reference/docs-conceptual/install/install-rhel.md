@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 04/28/2025
+ms.date: 10/16/2025
 title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 ---
 # Installing PowerShell on Red Hat Enterprise Linux (RHEL)
@@ -29,7 +29,7 @@ known as _PMC_.
 Installing PowerShell from PMC is the preferred method of installation.
 
 > [!NOTE]
-> This script only works for supported versions of RHEL.
+> This script only works for supported versions of RHEL that are published to PMC.
 
 ```sh
 ###################################
@@ -62,14 +62,15 @@ sudo dnf install powershell -y
 ## Installation via direct download
 
 PowerShell 7.2 introduced a universal package that makes installation easier. Download the universal
-package from the [releases][02] page onto your RHEL machine.
+package from the [releases][02] page onto your RHEL machine. Use this method to install PowerShell
+on systems running RHEL 10.
 
 The link to the current version is:
 
-- PowerShell 7.4.10 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.10/powershell-7.4.10-1.rh.x86_64.rpm`
-- PowerShell 7.5.1 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-1.rh.x86_64.rpm`
+- PowerShell 7.4.13 universal package for supported versions of RHEL
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-1.rh.x86_64.rpm`
+- PowerShell 7.5.4 universal package for supported versions of RHEL
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-1.rh.x86_64.rpm`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
 change the URL to download the version of PowerShell that you want to install.
@@ -77,7 +78,7 @@ change the URL to download the version of PowerShell that you want to install.
 On RHEL 8 or 9:
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.5.1/powershell-7.5.1-1.rh.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-1.rh.x86_64.rpm
 ```
 
 ## Uninstall PowerShell

@@ -6,6 +6,8 @@ ms.date: 06/07/2024
 no-loc: [Import-Module, -Scope]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
+aliases:
+  - ipmo
 title: Import-Module
 ---
 

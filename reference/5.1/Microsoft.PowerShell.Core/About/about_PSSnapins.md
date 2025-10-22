@@ -82,7 +82,7 @@ After the command is completed, the providers and cmdlets in the snap-in are
 available in the session. However, they're available only in the current
 session unless you save them.
 
-## Save a snap-ins
+## Save snap-ins
 
 To use a snap-in in future Windows PowerShell sessions, add the `Add-PSSnapin`
 command to your Windows PowerShell profile. Or, export the snap-in names to a

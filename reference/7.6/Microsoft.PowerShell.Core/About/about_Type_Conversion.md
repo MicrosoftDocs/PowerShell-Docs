@@ -22,7 +22,7 @@ explicitly and implicitly. While implicit type conversion can be helpful, there
 are pitfalls, especially for users more familiar with languages that have
 stricter type handling.
 
-## Type-constrained variables and explicit types conversion
+## Type-constrained variables and explicit type conversion
 
 To type-constrain a variable, place a type literal to the left of the variable
 name in an assignment. For example:
@@ -536,9 +536,9 @@ For more information, see [about_Comparison_Operators][05].
 [13]: xref:System.ComponentModel.TypeConverter
 [14]: xref:System.ComponentModel.TypeConverterAttribute
 [15]: xref:System.Enum
-[16]: xref:System.Globalization.CultureInfo.InvariantCulture*
+[16]: xref:System.Globalization.CultureInfo.InvariantCulture%2A
 [17]: xref:System.Management.Automation.ArgumentTransformationAttribute
 [18]: xref:System.Management.Automation.PSTypeConverter
-[19]: xref:System.Math.DivRem*
-[20]: xref:System.Math.Round*#midpoint-values-and-rounding-conventions
-[21]: xref:System.Math.Truncate*
+[19]: xref:System.Math.DivRem%2A
+[20]: xref:System.Math.Round%2A#midpoint-values-and-rounding-conventions
+[21]: xref:System.Math.Truncate%2A
