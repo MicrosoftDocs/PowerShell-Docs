@@ -1,7 +1,7 @@
 ---
 description: Describes how to use methods to perform actions on objects in PowerShell.
 Locale: en-US
-ms.date: 03/16/2022
+ms.date: 10/21/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
@@ -257,10 +257,57 @@ specific overload of the **Bar** method.
 int: 1
 ```
 
+## Finding which overload was used
+
+Beginning in PowerShell 7.6, you can see which method overload PowerShell chose
+by using `MethodInvocation` tracing.
+
+The following examples use `Trace-Command` to display the overload chosen when
+calling the [String.Split method](xref:System.String.Split%2A).
+
+```powershell
+Trace-Command -PSHost -Name MethodInvocation -Expression {
+    "a 1 b 1 c 1 d".Split(1)
+}
+```
+
+In the first example, the integer `1` was converted to a `[char]` instead of a
+`[string]`, which results in string being split by `[char]1` instead of the
+string `"1"`.
+
+```Output
+DEBUG: ... MethodInvocation Information: 0 : Invoking method: string[] Spli
+t(char separator, System.StringSplitOptions options = System.StringSplitOpt
+ions.None)
+
+a 1 b 1 c 1 d
+```
+
+In the second example, the `Split()` method is called with the string `"1"`.
+
+```powershell
+Trace-Command -PSHost -Name MethodInvocation -Expression {
+    "a 1 b 1 c 1 d".Split("1")
+}
+```
+
+PowerShell chose the overload that takes a `[string]` separator.
+
+```Output
+DEBUG: ... MethodInvocation Information: 0 : Invoking method: string[] Spli
+t(string separator, System.StringSplitOptions options = System.StringSplitO
+ptions.None)
+
+a
+ b
+ c
+ d
+```
+
 ## Using .NET methods that take filesystem paths
 
 PowerShell supports multiple runspaces per process. Each runspace has its own
-_current directory_. This is not the same as the working directory of the
+_current directory_. This isn't the same as the working directory of the
 current process: `[System.Environment]::CurrentDirectory`.
 
 .NET methods use the process working directory. PowerShell cmdlets use the
@@ -275,3 +322,4 @@ method.
 - [about_Member-Access_Enumeration](about_Member-Access_Enumeration.md)
 - [about_Properties](about_Properties.md)
 - [Get-Member](xref:Microsoft.PowerShell.Utility.Get-Member)
+- [Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command)
