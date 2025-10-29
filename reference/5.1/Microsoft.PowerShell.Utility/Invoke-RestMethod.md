@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/05/2025
+ms.date: 10/29/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -37,16 +37,12 @@ the Item or Entry XML nodes. For JavaScript Object Notation (JSON) or XML, Power
 deserializes, the content into `[pscustomobject]` objects. Comments aren't permitted in the JSON
 data.
 
-> [!NOTE]
-> When the REST endpoint returns multiple objects, the objects are received as an array. If you pipe
-> the output from `Invoke-RestMethod` to another command, it is sent as a single `[Object[]]`
-> object. The contents of that array are not enumerated for the next command on the pipeline.
+> [!WARNING]
+> By default, `Invoke-RestMethod` parses the content of the web page. Script code in the web page
+> might be run when the page is parsed. Use the `-UseBasicParsing` switch to avoid script code
+> execution.
 
-This cmdlet is introduced in Windows PowerShell 3.0.
-
-> [!NOTE]
-> By default, script code in the web page may be run when the page is being parsed to populate the
-> `ParsedHtml` property. Use the **UseBasicParsing** switch to suppress this.
+This cmdlet is introduced in Windows PowerShell 3.0. This command can be run using the `irm` alias.
 
 ## EXAMPLES
 
@@ -736,6 +732,10 @@ When the request returns JSON strings, this cmdlet returns a **PSObject** repres
 Windows PowerShell includes the following aliases for `Invoke-RestMethod`:
 
 - `irm`
+
+When the REST endpoint returns multiple objects, the objects are received as an array. If you pipe
+the output from `Invoke-RestMethod` to another command, it's sent as a single `[Object[]]` object.
+The contents of that array aren't enumerated for the next command on the pipeline.
 
 ## RELATED LINKS
 

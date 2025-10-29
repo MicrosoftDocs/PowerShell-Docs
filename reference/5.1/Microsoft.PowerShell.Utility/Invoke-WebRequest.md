@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/25/2024
+ms.date: 10/29/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -37,15 +37,12 @@ significant HTML elements.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
-> [!NOTE]
-> By default, script code in the web page may be run when the page is being parsed to populate the
-> `ParsedHtml` property. Use the `-UseBasicParsing` switch to suppress this.
+> [!WARNING]
+> By default, `Invoke-WebRequest` parses the content of the web page. Script code in the web page
+> might be run when the page is parsed. Use the `-UseBasicParsing` switch to avoid script code
+> execution.
 
-> [!IMPORTANT]
-> The examples in this article reference hosts in the `contoso.com` domain. This is a fictitious
-> domain used by Microsoft for examples. The examples are designed to show how to use the cmdlets.
-> However, since the `contoso.com` sites don't exist, the examples don't work. Adapt the examples
-> to hosts in your environment.
+This command can be run using the `iwr`, `curl`, or `wget` aliases.
 
 ## EXAMPLES
 
@@ -155,7 +152,7 @@ $StatusCode
 The terminating error is caught by the `catch` block, which retrieves the **StatusCode** from the
 **Exception** object.
 
-### Example 8: Download multiple files at the same time
+### Example 5: Download multiple files at the same time
 
 The `Invoke-WebRequest` cmdlet can only download one file at a time. The following example uses
 `Start-ThreadJob` to create multiple thread jobs to download multiple files at the same time.
@@ -221,13 +218,13 @@ request content to the form fields.
 For example:
 
 `$r = Invoke-WebRequest https://website.com/login.aspx`
-`$r.Forms\[0\].Name = "MyName"`
-`$r.Forms\[0\].Password = "MyPassword"`
+`$r.Forms[0].Name = "MyName"`
+`$r.Forms[0].Password = "MyPassword"`
 `Invoke-RestMethod https://website.com/service.aspx -Body $r`
 
 - or -
 
-`Invoke-RestMethod https://website.com/service.aspx -Body $r.Forms\[0\]`
+`Invoke-RestMethod https://website.com/service.aspx -Body $r.Forms[0]`
 
 ```yaml
 Type: System.Object
@@ -761,6 +758,8 @@ This cmdlet returns the response object representing the result of the web reque
 Windows PowerShell includes the following aliases for `Invoke-WebRequest`:
 
 - `iwr`
+- `curl`
+- `wget`
 
 ## RELATED LINKS
 
