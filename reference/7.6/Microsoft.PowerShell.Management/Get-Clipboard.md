@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/30/2024
+ms.date: 11/01/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -80,7 +80,8 @@ You can't pipe objects to this cmdlet.
 
 ### System.String
 
-This cmdlet returns a string containing the contents of the clipboard.
+By default, this cmdlet returns the content as an array of strings, one per line. When you use the
+**Raw** parameter, it returns a single string containing every line in the file.
 
 ## NOTES
 
