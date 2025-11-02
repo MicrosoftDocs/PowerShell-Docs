@@ -8,9 +8,11 @@ ms.topic: conceptual
 # about_SecureCode
 
 ## Short description
+
 Best practices for writing secure PowerShell code and scripts.
 
 ## Long description
+
 PowerShell is a powerful automation platform, but with great flexibility comes the need for careful attention to security.  
 This article provides guidelines and recommendations for writing secure PowerShell scripts, functions, and modules.
 
