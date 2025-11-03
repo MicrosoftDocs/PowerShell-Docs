@@ -164,5 +164,5 @@ Microsoft can't support those methods.
 [04]: #supported-versions
 [05]: https://aka.ms/PowerShell-Release?tag=stable
 [06]: https://packages.microsoft.com
-[07]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[07]: https://specifications.freedesktop.org/basedir/latest/
 [08]: install-other-linux.md#binary-archives
