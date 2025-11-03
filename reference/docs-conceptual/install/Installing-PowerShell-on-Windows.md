@@ -256,7 +256,7 @@ Windows 10 IoT Enterprise comes with Windows PowerShell, which we can use to dep
 
 ```powershell
 # Replace the placeholder information for the following variables:
-$deviceip = '<device ip address'
+$deviceip = '<device ip address>'
 $zipfile = 'PowerShell-7.5.4-win-arm64.zip'
 $downloadfolder = 'U:\Users\Administrator\Downloads'  # The download location is local to the device.
     # There should be enough  space for the zip file and the unzipped contents.
