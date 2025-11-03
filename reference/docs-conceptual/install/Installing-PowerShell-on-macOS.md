@@ -313,5 +313,5 @@ support those methods.
 [21]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.tar.gz
 [22]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-x64.pkg
 [23]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-x64.tar.gz
-[24]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[24]: https://specifications.freedesktop.org/basedir/latest/
 [25]: https://support.apple.com/102445

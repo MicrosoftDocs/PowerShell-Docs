@@ -607,5 +607,5 @@ or `NO_COLOR` environment variables.
 [10]: about_Update_Notifications.md
 [11]: about_Variables.md
 [12]: https://no-color.org/
-[13]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[13]: https://specifications.freedesktop.org/basedir/latest/
 [14]: xref:PowerShellGet.Install-Module
