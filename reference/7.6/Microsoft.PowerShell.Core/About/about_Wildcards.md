@@ -1,7 +1,7 @@
 ---
 description: Describes how to use wildcard characters in PowerShell.
 Locale: en-US
-ms.date: 05/14/2024
+ms.date: 11/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
@@ -61,11 +61,6 @@ through **l**, type:
 Get-ChildItem C:\Techdocs\[a-l]*.txt
 ```
 
-> [!NOTE]
-> Wildcard matching for filesystem items works differently than for strings.
-> For more information, see the _Remarks_ section of the
-> [DirectoryInfo.GetFiles(String, EnumerationOptions)][05] method.
-
 There may be cases where you want to match the literal character rather than
 treat it as a wildcard character. In those cases you can use the backtick
 (`` ` ``) character to escape the wildcard character so that it is compared
@@ -98,6 +93,77 @@ foreach ($point in $p) {
   }
 }
 ```
+
+## Escaping wildcard characters in file and directory names
+
+> [!NOTE]
+> Wildcard matching for filesystem items works differently than for strings.
+> For more information, see the _Remarks_ section of the
+> [DirectoryInfo.GetFiles(String, EnumerationOptions)][05] method.
+
+When you try to access a file or directory that contains wildcard characters
+the name, you must escape the wildcard characters. Consider the following files:
+
+```powershell
+PS> Get-ChildItem
+
+    Directory: D:\temp\test
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           11/3/2025  3:39 PM             41 file[1].txt
+-a---           11/3/2025  3:39 PM             41 file[2].txt
+-a---           11/3/2025  3:39 PM             41 file[3].txt
+```
+
+The square-bracket (`[]`) characters are wildcards so they must be escaped when
+trying to get the file using one of the Item cmdlets, such as `Get-Item`.
+
+```powershell
+PS> Get-Item file`[1`].txt
+```
+
+However, this example failed because the filename value is bound to the
+**Path** parameter, which supports wildcard characters. In this case, the
+`` `[ `` pattern resolves to plain `[`, which the **Path** parameter interprets
+as a wildcard. There are three ways to resolve this:
+
+- Escape the backtick characters.
+
+  ```powershell
+  PS> Get-Item -Path file``[1``].txt
+
+      Directory: D:\temp\test
+
+  Mode                 LastWriteTime         Length Name
+  ----                 -------------         ------ ----
+  -a---           11/3/2025  3:39 PM             41 file[1].txt
+  ```
+
+- Put the filename in single quotes so that the backticks aren't expanded
+  before being bound to the **Path** parameter.
+
+  ```powershell
+  PS> Get-Item -Path 'file`[1`].txt'
+
+      Directory: D:\temp\test
+
+  Mode                 LastWriteTime         Length Name
+  ----                 -------------         ------ ----
+  -a---           11/3/2025  3:39 PM             41 file[1].txt
+  ```
+
+- Use the **LiteralPath** parameter
+
+  ```powershell
+  PS> Get-Item -LiteralPath file[1].txt
+
+      Directory: D:\temp\test
+
+  Mode                 LastWriteTime         Length Name
+  ----                 -------------         ------ ----
+  -a---           11/3/2025  3:39 PM             41 file[1].txt
+  ```
 
 ## See also
 
