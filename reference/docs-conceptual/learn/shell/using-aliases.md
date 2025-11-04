@@ -81,7 +81,7 @@ alias:
 | `dir`                         | `ls`         | `Get-ChildItem`   | `gci`, `dir`, `ls`                        |
 | `echo`                        | `echo`       | `Write-Output`    | `write` `echo`                            |
 | `md`                          | `mkdir`      | `New-Item`        | `ni`                                      |
-| `move`                        | `mv`         | `Move-Item`       | `mi`, `move`, `mi`                        |
+| `move`                        | `mv`         | `Move-Item`       | `mi`, `move`, `mv`                        |
 | `popd`                        | `popd`       | `Pop-Location`    | `popd`                                    |
 |                               | `pwd`        | `Get-Location`    | `gl`, `pwd`                               |
 | `pushd`                       | `pushd`      | `Push-Location`   | `pushd`                                   |
