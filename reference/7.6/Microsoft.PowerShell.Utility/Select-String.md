@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 06/07/2024
+ms.date: 11/05/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -743,9 +743,8 @@ Accept wildcard characters: False
 
 ### -Raw
 
-Causes the cmdlet to output only the matching strings, rather than **MatchInfo** objects. This is
-the results in behavior that's the most similar to the Unix **grep** or Windows **findstr.exe**
-commands.
+Causes the cmdlet to output only the matching strings, rather than **MatchInfo** objects. This
+behavior is most similar to the Unix `grep` or Windows `findstr.exe` commands.
 
 This parameter was introduced in PowerShell 7.
 
