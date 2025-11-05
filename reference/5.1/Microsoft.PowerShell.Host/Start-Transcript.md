@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ConsoleHost.dll-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Host
-ms.date: 01/06/2025
+ms.date: 11/05/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Transcript
@@ -98,6 +98,19 @@ Start-Transcript
 The full path to the transcript file is stored in the `$Transcript` preference variable. For more
 information about the `$Transcript` preference variable, see
 [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md#transcript).
+### Example 4: Start a transcript using a relative path on Windows systems
+
+When you use a relative path with the **OutputDirectory** parameter on Windows, the path is relative
+to your `Documents` directory.
+
+```powershell
+Start-Transcript -Path .\transcripts
+```
+
+```Output
+Transcript started, output file is C:\Users\username\Documents\.\transcripts\PowerShell_transcript.HOSTNAME.8S6RpEfN.20251105152247.txt
+```
+
 
 ## PARAMETERS
 
@@ -191,7 +204,8 @@ Accept wildcard characters: False
 ### -OutputDirectory
 
 Specifies a specific path and folder in which to save a transcript. PowerShell automatically assigns
-the transcript name.
+the transcript name. If you use a relative path, the path is relative to your `Documents` directory
+on Windows.
 
 ```yaml
 Type: System.String
