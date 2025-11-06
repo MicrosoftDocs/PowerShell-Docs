@@ -356,10 +356,10 @@ Sometimes, your module might include helper functions you don't want to expose t
 private functions are used internally by other functions in the module but aren't exposed to users.
 There are a few ways to handle this scenario.
 
-If you're not following best practices and only have a `.psm1` file without a proper module
-structure, your only option is to control visibility using the `Export-ModuleMember` cmdlet. This
-option lets you explicitly define which functions should be exposed directly from within the `.psm1`
-script module file, keeping everything else private by default.
+If you're not following best practices and only have a `.psm1` file without a module manifest, your
+only option is to control visibility using the `Export-ModuleMember` cmdlet. This option lets you
+explicitly define which functions should be exposed directly from within the `.psm1` script module
+file, keeping everything else private by default.
 
 In the following example, only the `Get-MrPSVersion` function is exposed to users of your module,
 while the `Get-MrComputerName` function remains accessible internally to other functions within the
