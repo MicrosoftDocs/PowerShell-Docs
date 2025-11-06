@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 09/02/2025
+ms.date: 11/06/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -13,6 +13,37 @@ get started.
 
 <!-- Link references -->
 [01]: contributing/overview.md
+
+## 2025-October
+
+Content updates
+
+- [What's New in PowerShell 7.6](/powershell/scripting/whats-new/what-s-new-in-powershell-76)
+- New PlatyPS documentation
+  - [Types of help in PowerShell](/powershell/utility-modules/platyps/types-of-help)
+  - [Create new command help Markdown using PlatyPS](/powershell/utility-modules/platyps/step-1-create-new-markdown-help)
+  - [Update Markdown help files using Microsoft.PowerShell.PlatyPS](/powershell/utility-modules/platyps/step-1-update-markdown-help)
+  - [Edit Markdown help files](/powershell/utility-modules/platyps/step-2-edit-markdown-help)
+  - [Test Markdown help files](/powershell/utility-modules/platyps/step-3-test-markdown-help)
+  - [Convert and publish the help files](/powershell/utility-modules/platyps/step-4-convert-publish-help)
+
+GitHub stats
+
+- 18 PRs merged (3 from Community)
+- 32 issues opened (29 from Community)
+- 34 issues closed (29 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|   GitHub Id    | PRs merged | Issues opened |
+| -------------- | :--------: | :-----------: |
+| OscarFalck17   |     1      |               |
+| StuartMosquera |     1      |               |
+| kMitty         |            |       2       |
+| MartinGC94     |            |       2       |
 
 ## 2025-September
 
