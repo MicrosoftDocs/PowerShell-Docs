@@ -1,7 +1,7 @@
 ---
 description: Describes the system requirements and configuration requirements for running remote commands in PowerShell.
 Locale: en-US
-ms.date: 07/03/2023
+ms.date: 11/07/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Requirements
@@ -49,7 +49,7 @@ computers must have the following:
 - Windows Remote Management 2.0
 
 To be fully supported, you should be using WMF 5.1. For more information about
-WMF support, see [Windows Management Framework (WMF)][02].
+WMF support, see [Windows Management Framework (WMF)][03].
 
 You can create a remote session between a computer running Windows PowerShell
 2.0 and one running a newer version of PowerShell. However, features that run
@@ -67,9 +67,9 @@ that is running SSH. For more information, see
 
 ## User permissions
 
-To create remote sessions and run remote commands, by default, the current user
-must be a member of the **Administrators** group on the remote computer or
-provide the credentials of an administrator. Otherwise, the command fails.
+To create remote sessions and run remote commands connect with a user account
+that's a member of the **Administrators** or **Remote Management Users** group
+on the remote computer.
 
 The permissions required to create sessions and run commands on a remote
 computer are established by the session configuration. The session
@@ -90,7 +90,7 @@ configurations with different security descriptors. Users can use the
 different endpoints.
 
 For more information about session configurations, see
-[about_Session_Configurations][07].
+[about_Session_Configurations][08].
 
 ## Windows network locations
 
@@ -190,7 +190,11 @@ Id Name        ComputerName    State    ConfigurationName
 1  Session1    localhost       Opened   Microsoft.PowerShell
 ```
 
-If the command fails, see [about_Remote_Troubleshooting][04].
+If the command fails, see [about_Remote_Troubleshooting][05].
+
+The PowerShell Remoting Protocol (PSRP) requires a secure transport layer for
+secure data transfer. For more information, see _Secure data transfer in
+PowerShell remoting_ section of [PowerShell security features][02].
 
 ## Understand policies
 
@@ -204,21 +208,22 @@ policies on the remote computer are in effect.
 
 ## See also
 
-- [about_Remote][06]
-- [about_Remote_Variables][05]
-- [about_PSSessions][03]
-- [Invoke-Command][09]
-- [Enter-PSSession][08]
-- [New-PSSession][10]
+- [about_Remote][07]
+- [about_Remote_Variables][06]
+- [about_PSSessions][04]
+- [Invoke-Command][10]
+- [Enter-PSSession][09]
+- [New-PSSession][11]
 
 <!-- link references -->
 [01]: /powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core
-[02]: /powershell/scripting/windows-powershell/wmf/overview
-[03]: about_PSSessions.md
-[04]: about_Remote_Troubleshooting.md
-[05]: about_Remote_Variables.md
-[06]: about_Remote.md
-[07]: about_Session_Configurations.md
-[08]: xref:Microsoft.PowerShell.Core.Enter-PSSession
-[09]: xref:Microsoft.PowerShell.Core.Invoke-Command
-[10]: xref:Microsoft.PowerShell.Core.New-PSSession
+[02]: /powershell/scripting/security/security-features#secure-data-transfer-in-powershell-remoting
+[03]: /powershell/scripting/windows-powershell/wmf/overview
+[04]: about_PSSessions.md
+[05]: about_Remote_Troubleshooting.md
+[06]: about_Remote_Variables.md
+[07]: about_Remote.md
+[08]: about_Session_Configurations.md
+[09]: xref:Microsoft.PowerShell.Core.Enter-PSSession
+[10]: xref:Microsoft.PowerShell.Core.Invoke-Command
+[11]: xref:Microsoft.PowerShell.Core.New-PSSession

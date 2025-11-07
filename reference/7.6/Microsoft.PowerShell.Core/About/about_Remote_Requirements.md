@@ -1,7 +1,7 @@
 ---
 description: Describes the system requirements and configuration requirements for running remote commands in PowerShell.
 Locale: en-US
-ms.date: 08/18/2025
+ms.date: 11/07/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Remote_Requirements
@@ -67,9 +67,9 @@ that is running SSH. For more information, see
 
 ## User permissions
 
-To create remote sessions and run remote commands, by default, the current user
-must be a member of the **Administrators** group on the remote computer or
-provide the credentials of an administrator. Otherwise, the command fails.
+To create remote sessions and run remote commands connect with a user account
+that's a member of the **Administrators** or **Remote Management Users** group
+on the remote computer.
 
 The permissions required to create sessions and run commands on a remote
 computer are established by the session configuration. The session
