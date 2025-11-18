@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/29/2022
+ms.date: 11/18/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Csv
@@ -147,6 +147,31 @@ When the **UseCulture** parameter is used, be sure that the current culture's de
 separator matches the delimiter used in the CSV strings. Otherwise, `ConvertFrom-Csv` can't
 generate objects from the CSV strings.
 
+### Example 5: Convert CSV data in W3C Extended Log Format
+
+This example shows how to convert CSV data in W3C Extended Log Format to objects.
+
+```powershell
+$logData = @"
+#Version: 1.0
+#Fields: time,cs-method,cs-uri
+00:34:23,GET,/foo/bar.html
+12:21:16,GET,/foo/bar.html
+12:45:52,GET,/foo/bar.html
+12:57:34,GET,/foo/bar.html
+"@
+ConvertFrom-Csv $logData
+```
+
+```Output
+time     cs-method cs-uri
+----     --------- ------
+00:34:23 GET       /foo/bar.html
+12:21:16 GET       /foo/bar.html
+12:45:52 GET       /foo/bar.html
+12:57:34 GET       /foo/bar.html
+```
+
 ## PARAMETERS
 
 ### -Delimiter
@@ -256,6 +281,12 @@ This cmdlet returns the objects described by the properties in the CSV strings.
 In CSV format, each object is represented by a character-separated list of the property values of
 the object. The property values are converted to strings, using the `ToString()` method of the
 object. There is no way to export the methods of the object.
+
+`ConvertFrom-Csv` also supports the W3C Extended Log format. Lines starting with the hash character
+(`#`) are treated as comments and ignored unless the comment starts with `#Fields:` and contains
+comma-delimited list of column names. In that case, the cmdlet uses those column names. This is the
+standard format for Windows IIS and other web server logs. For more information, see [Extended Log
+File Format](https://www.w3.org/TR/WD-logfile.html).
 
 ## RELATED LINKS
 
