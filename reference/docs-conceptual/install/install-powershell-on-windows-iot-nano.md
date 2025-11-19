@@ -15,8 +15,9 @@ Windows 11 IoT Enterprise comes with Windows PowerShell, which is used to deploy
 # Replace the placeholder information for the following variables:
 $deviceip = '<device ip address>'
 $zipfile = 'PowerShell-7.5.4-win-arm64.zip'
-$downloadfolder = 'U:\Users\Administrator\Downloads'  # The download location is local to the device.
-    # There should be enough  space for the zip file and the unzipped contents.
+$downloadfolder = 'U:\Users\Administrator\Downloads'
+# The download location is local to the device.
+# There should be enough space for the zip file and the unzipped contents.
 
 # Create PowerShell session to target device
 Set-Item -Path WSMan:\localhost\Client\TrustedHosts $deviceip
@@ -48,8 +49,8 @@ Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration
 Windows 11 IoT Core adds Windows PowerShell when you include _IOT_POWERSHELL_ feature. Use Windows
 PowerShell to deploy PowerShell 7 using the same steps as Windows 11 IoT Enterprise.
 
-To add the latest PowerShell in the shipping image, use [Import-PSCoreRelease][02] command to
-include the package in the workarea and add _OPENSRC_POWERSHELL_ feature to your image.
+To add the latest PowerShell in the shipping image, use the [Import-PSCoreRelease][02] command to
+include the package in the workarea and add the _OPENSRC_POWERSHELL_ feature to your image.
 
 > [!NOTE]
 > For ARM64 architecture, Windows PowerShell isn't added when you include _IOT_POWERSHELL_. So the
