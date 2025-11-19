@@ -1,19 +1,18 @@
 ---
-description: Information about installing PowerShell on Debian Linux
-ms.date: 10/16/2025
-title: Installing PowerShell on Debian
+description: How to install PowerShell on Debian Linux
+ms.date: 11/19/2025
+title: Install PowerShell on Debian
 ---
-# Installing PowerShell on Debian
+# Install PowerShell on Debian
 
 All packages are available on our GitHub [releases][02] page. Before installing, check the list of
 [Supported versions][01] below. After the package is installed, run `pwsh` from a terminal. Run
 `pwsh-lts` if you installed a preview release.
 
-> [!NOTE]
-> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
-> versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
-> need to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version
-> using the [binary archive][05] method.
+Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
+of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
+versions replace existing previous preview versions. If you need to run PowerShell 7.5 side-by-side
+with a previous version, reinstall the previous version using the [binary archive][05] method.
 
 Debian uses APT (Advanced Package Tool) as a package manager.
 
@@ -75,6 +74,8 @@ The link to the current version is:
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell_7.4.13-1.deb_amd64.deb`
 - PowerShell 7.5 universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell_7.5.4-1.deb_amd64.deb`
+- PowerShell 7.6-preview universal package for supported versions of Debian
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.5/powershell-preview_7.6.0-preview.5-1.deb_amd64.deb`
 
 The following shell script downloads and installs the current release of PowerShell. You can
 change the URL to download the version of PowerShell that you want to install.

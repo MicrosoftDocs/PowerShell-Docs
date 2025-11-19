@@ -1,13 +1,13 @@
 ### YamlMime:Landing
 
 title: Install PowerShell on Windows, Linux, and macOS
-summary: Learn about installing PowerShell on Windows, Linux, and macOS.
+summary: Learn how to install PowerShell on Windows, Linux, and macOS.
 
 metadata:
   title: Install PowerShell on Windows, Linux, and macOS
-  description: Learn about installing PowerShell on Windows, Linux, and macOS.
+  description: Learn how to install PowerShell on Windows, Linux, and macOS.
   ms.topic: landing-page
-  ms.date: 11/16/2023
+  ms.date: 11/19/2025
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -19,9 +19,11 @@ landingContent:
       - linkListType: overview
         links:
           - text: Install PowerShell on Windows
-            url: Installing-PowerShell-on-Windows.md
+            url: install-powershell-on-windows.md
+          - text: Install PowerShell on Windows IoT and Nano Server
+            url: install-powershell-on-windows-iot-nano.md
           - text: Supported Windows releases
-            url: Installing-PowerShell-on-Windows.md#supported-versions-of-windows
+            url: install-powershell-on-windows.md#supported-versions-of-windows
 
   # Card
   - title: macOS
@@ -29,9 +31,9 @@ landingContent:
       - linkListType: overview
         links:
           - text: Install on macOS
-            url: Installing-PowerShell-on-macOS.md
+            url: install-powershell-on-macos.md
           - text: Supported macOS releases
-            url: Installing-PowerShell-on-macOS.md#supported-versions
+            url: install-powershell-on-macos.md#supported-versions
 
   # Card
   - title: Linux
@@ -39,7 +41,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Linux overview
-            url: Installing-PowerShell-on-Linux.md
+            url: install-powershell-on-linux.md
           - text: Alpine
             url: install-alpine.md
           - text: Debian

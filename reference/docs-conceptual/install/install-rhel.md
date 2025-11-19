@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 10/16/2025
+ms.date: 11/19/2025
 title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
 ---
 # Installing PowerShell on Red Hat Enterprise Linux (RHEL)
@@ -9,11 +9,10 @@ All packages are available on our GitHub [releases][02] page. Before installing,
 [Supported versions][01] below. After the package is installed, run `pwsh` from a terminal. Run
 `pwsh-preview` if you installed a preview release.
 
-> [!NOTE]
-> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
-> versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
-> need to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version
-> using the [binary archive][05] method.
+Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
+of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
+versions replace existing previous preview versions. If you need to run PowerShell 7.5 side-by-side
+with a previous version, reinstall the previous version using the [binary archive][05] method.
 
 RHEL 7 uses `yum` and RHEL 8 and higher uses the `dnf` package manager.
 
