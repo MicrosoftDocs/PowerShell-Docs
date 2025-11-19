@@ -1,19 +1,18 @@
 ---
-description: Information about installing PowerShell on Alpine Linux
-ms.date: 10/16/2025
-title: Installing PowerShell on Alpine Linux
+description: How to install PowerShell on Alpine Linux
+ms.date: 11/19/2025
+title: Install PowerShell on Alpine Linux
 ---
-# Installing PowerShell on Alpine Linux
+# Install PowerShell on Alpine Linux
 
 All packages are available on our GitHub [releases][03] page. After the package is installed, run
 `pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release. Before installing,
 check the list of [Supported versions][02] below.
 
-> [!NOTE]
-> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
-> versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
-> need to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version
-> using the [binary archive][05] method.
+Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
+of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
+versions replace existing previous preview versions. If you need to run PowerShell 7.4 side-by-side
+with a previous version, reinstall the previous version using the [binary archive][05] method.
 
 [!INCLUDE [Latest version](../../includes/latest-install.md)]
 
@@ -24,6 +23,7 @@ to the package depends on the version of PowerShell you want to install.
 
 - PowerShell 7.4 - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-linux-musl-x64.tar.gz`
 - PowerShell 7.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-linux-musl-x64.tar.gz`
+- PowerShell 7.6-preview - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.5/powershell-7.6.0-preview.5-linux-musl-x64.tar.gz`
 
 Then, in the terminal, execute the following shell commands to install PowerShell 7.4:
 

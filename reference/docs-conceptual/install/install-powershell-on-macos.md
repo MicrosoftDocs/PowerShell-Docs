@@ -1,20 +1,19 @@
 ---
-description: Information about installing PowerShell on macOS
-ms.date: 10/23/2025
-title: Installing PowerShell on macOS
+description: How to install PowerShell on macOS
+ms.date: 11/19/2025
+title: Install PowerShell on macOS
 ---
 
-# Installing PowerShell on macOS
+# Install PowerShell on macOS
 
 PowerShell 7 or higher requires macOS 13 and higher. All packages are available on the GitHub
 [releases][11] page for PowerShell. After the package is installed, run `pwsh` from a terminal.
 Before installing, check the list of [Supported versions][08].
 
-> [!NOTE]
-> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. You can
-> install preview versions of PowerShell side-by-side with other versions of PowerShell. If you need
-> to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version using
-> the [binary archive][03] method.
+Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
+of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
+versions replace existing previous preview versions.If you need to run PowerShell 7.4 side-by-side
+with a previous version, reinstall the previous version using the [binary archive][03] method.
 
 [!INCLUDE [Latest version](../../includes/latest-install.md)]
 

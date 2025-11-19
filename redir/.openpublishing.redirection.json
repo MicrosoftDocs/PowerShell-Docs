@@ -161,19 +161,24 @@
       "source_path": "../reference/docs-conceptual/install/install-raspbian.md"
     },
     {
-      "redirect_document_id": true,
-      "redirect_url": "/powershell/scripting/install/installing-powershell-on-linux",
-      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-Core-on-Linux.md"
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/install/install-powershell-on-windows",
+      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-on-Windows.md"
     },
     {
-      "redirect_document_id": true,
-      "redirect_url": "/powershell/scripting/install/installing-powershell-on-windows",
-      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-Core-on-Windows.md"
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/install/install-powershell-on-linux",
+      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-on-Linux.md"
     },
     {
-      "redirect_document_id": true,
-      "redirect_url": "/powershell/scripting/install/installing-powershell-on-macos",
-      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-Core-on-macOS.md"
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/install/install-powershell-on-macos",
+      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-on-macOS.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/install/install-powershell",
+      "source_path": "../reference/docs-conceptual/install/Installing-PowerShell.yml"
     },
     {
       "redirect_document_id": true,
@@ -407,7 +412,7 @@
     },
     {
       "redirect_document_id": true,
-      "redirect_url": "/powershell/scripting/windows-powershell/install/installing-windows-powershell",
+      "redirect_url": "/powershell/scripting/what-is-windows-powershell",
       "source_path": "../reference/docs-conceptual/install/installing-windows-powershell.md"
     },
     {
