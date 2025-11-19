@@ -17,28 +17,30 @@ items:
   - name: Install
     items:
       - name: Overview
-        href: install/installing-powershell.yml
-      - name: Installing PowerShell on Windows
-        href: install/installing-powershell-on-windows.md
-      - name: Installing PowerShell on Linux
+        href: install/install-powershell.yml
+      - name: Install PowerShell on Windows
+        href: install/install-powershell-on-windows.md
+      - name: Install PowerShell on Linux
         items:
           - name: Overview
-            href: install/installing-powershell-on-linux.md
-          - name: Installing on Alpine
+            href: install/install-powershell-on-linux.md
+          - name: Install on Alpine
             href: install/install-alpine.md
-          - name: Installing on Debian
+          - name: Install on Debian
             href: install/install-debian.md
-          - name: Installing on RHEL
+          - name: Install on RHEL
             href: install/install-rhel.md
-          - name: Installing on Ubuntu
+          - name: Install on Ubuntu
             href: install/install-ubuntu.md
           - name: Community support for Linux
             href: install/community-support.md
           - name: Alternate ways to install on Linux
             href: install/install-other-linux.md
-      - name: Installing PowerShell on macOS
-        href: install/installing-powershell-on-macos.md
-      - name: Installing PowerShell on Arm
+      - name: Install PowerShell on macOS
+        href: install/install-powershell-on-macos.md
+      - name: Install PowerShell on Windows IoT and Nano Server
+        href: install/install-powershell-on-windows-iot-nano.md
+      - name: Install PowerShell on Arm
         href: install/powershell-on-arm.md
       - name: Using PowerShell in Docker
         href: install/PowerShell-in-Docker.md
