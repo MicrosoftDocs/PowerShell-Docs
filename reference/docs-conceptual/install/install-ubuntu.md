@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 10/16/2025
+ms.date: 11/19/2025
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -9,11 +9,10 @@ All packages are available on our GitHub [releases][05] page. Before installing,
 check the list of [Supported versions][04] below. After the package is installed, run
 `pwsh` from a terminal. Run `pwsh-lts` if you installed a preview release.
 
-> [!NOTE]
-> PowerShell 7.4 is an in-place upgrade that removes previous versions of PowerShell 7. Preview
-> versions of PowerShell can be installed side-by-side with other versions of PowerShell. If you
-> need to run PowerShell 7.4 side-by-side with a previous version, reinstall the previous version
-> using the [binary archive][08] method.
+Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
+of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
+versions replace existing previous preview versions. If you need to run PowerShell 7.5 side-by-side
+with a previous version, reinstall the previous version using the [binary archive][08] method.
 
 Ubuntu uses APT (Advanced Package Tool) as a package manager.
 

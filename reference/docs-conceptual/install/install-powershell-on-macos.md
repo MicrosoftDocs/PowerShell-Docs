@@ -12,7 +12,7 @@ Before installing, check the list of [Supported versions][08].
 
 Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
 of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
-versions replace existing previous preview versions.If you need to run PowerShell 7.4 side-by-side
+versions replace existing previous preview versions.If you need to run PowerShell 7.5 side-by-side
 with a previous version, reinstall the previous version using the [binary archive][03] method.
 
 [!INCLUDE [Latest version](../../includes/latest-install.md)]
