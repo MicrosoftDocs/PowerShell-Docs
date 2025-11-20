@@ -1,10 +1,9 @@
 ---
 description: This topic describes the accessibility features of Windows PowerShell Integrated Scripting Environment (ISE) that you might find helpful.
-ms.date: 03/27/2025
+ms.date: 11/20/2025
 ms.topic: ui-reference
 title: Accessibility in Windows PowerShell ISE
 ---
-
 # Accessibility in Windows PowerShell ISE
 
 This topic describes the accessibility features of Windows PowerShell Integrated Scripting
@@ -29,7 +28,7 @@ make Windows PowerShell ISE more accessible for people with disabilities:
 - Keyboard Shortcuts
 
 - Syntax Coloring Table and the ability to modify several other color settings using the
-  [$psISE.Options][13] scripting object.
+  `$psISE.Options` scripting object.
 
 - Text Size Change
 
@@ -42,8 +41,8 @@ retained.
 ### To resize the Script Pane and Console Pane
 
 1. Pause the pointer on the split line between the Script Pane and Console Pane.
-
-2. When the mouse pointer changes to a two-headed arrow, drag the border to change the size of the pane.
+1. When the mouse pointer changes to a two-headed arrow, drag the border to change the size of the
+   pane.
 
 ### To move the Script Pane and Console Pane
 
@@ -52,19 +51,15 @@ Do one of the following:
 - To move the Script Pane above the Console Pane, press <kbd>CTRL</kbd>+<kbd>1</kbd> or, on the
   toolbar, click the **Show Script Pane Top** icon, or in the **View** menu, click **Show Script
   Pane Top**.
-
 - To move the Script Pane to the right of the Console Pane, press <kbd>CTRL</kbd>+<kbd>2</kbd> or,
   on the toolbar, click the **Show Script Pane Right** icon, or in the **View** menu, click **Show
   Script Pane Right**.
-
 - To maximize the Script Pane, press <kbd>CTRL</kbd>+<kbd>3</kbd> or, on the toolbar, click the
   **Show Script Pane Maximized** icon, or in the **View** menu, click **Show Script Pane
   Maximized**.
-
 - To maximize the Console Pane and hide the Script Pane, on the far right edge of the row of tabs,
   click the **Hide Script Pane** icon, in the **View** menu, click to deselect the **Show Script
   Pane** menu option.
-
 - To display the Script Pane when the Console Pane is maximized, on the far right edge of the row of
   tabs, click the **Show Script Pane** icon, or in the **View** menu, click to select the **Show
   Script Pane** menu option.
@@ -139,17 +134,17 @@ You can use the following keyboard shortcuts when you debug scripts.
 > scripts in Windows PowerShell ISE. To use these shortcuts, you must type the shortcut in the
 > Console Pane and press <kbd>ENTER</kbd>.
 
-|                 Action                  |      Keyboard Shortcut       |                Use in                 |
-| --------------------------------------- | ---------------------------- | ------------------------------------- |
-| **Continue**                            | <kbd>C</kbd>                 | Console Pane, when debugging a script |
-| **Step Into**                           | <kbd>S</kbd>                 | Console Pane, when debugging a script |
-| **Step Over**                           | <kbd>V</kbd>                 | Console Pane, when debugging a script |
-| **Step Out**                            | <kbd>O</kbd>                 | Console Pane, when debugging a script |
-| **Repeat Last Command**(Step Into/Over) | <kbd>ENTER</kbd>             | Console Pane, when debugging a script |
-| **Display Call Stack**                  | <kbd>K</kbd>                 | Console Pane, when debugging a script |
-| **Stop Debugging**                      | <kbd>Q</kbd>                 | Console Pane, when debugging a script |
-| **List the Script**                     | <kbd>L</kbd>                 | Console Pane, when debugging a script |
-| **Display Console Debugging Commands**  | <kbd>H</kbd> or <kbd>?</kbd> | Console Pane, when debugging a script |
+|                    Action                    |      Keyboard Shortcut       |                Use in                 |
+| -------------------------------------------- | ---------------------------- | ------------------------------------- |
+| **Continue**                                 | <kbd>C</kbd>                 | Console Pane, when debugging a script |
+| **Step Into**                                | <kbd>S</kbd>                 | Console Pane, when debugging a script |
+| **Step Over**                                | <kbd>V</kbd>                 | Console Pane, when debugging a script |
+| **Step Out**                                 | <kbd>O</kbd>                 | Console Pane, when debugging a script |
+| **Repeat Last Command**</br>(Step Into/Over) | <kbd>ENTER</kbd>             | Console Pane, when debugging a script |
+| **Display Call Stack**                       | <kbd>K</kbd>                 | Console Pane, when debugging a script |
+| **Stop Debugging**                           | <kbd>Q</kbd>                 | Console Pane, when debugging a script |
+| **List the Script**                          | <kbd>L</kbd>                 | Console Pane, when debugging a script |
+| **Display Console Debugging Commands**       | <kbd>H</kbd> or <kbd>?</kbd> | Console Pane, when debugging a script |
 
 ## Keyboard shortcuts for Windows PowerShell tabs
 
@@ -195,4 +190,4 @@ see 'How to manage breakpoints' in [How to Debug Scripts in the Windows PowerShe
 [10]: #keyboard-shortcuts-for-windows-powershell-tabs
 [11]: How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md
 [12]: Introducing-the-Windows-PowerShell-ISE.md
-[13]: object-model/The-ISEOptions-Object.md
+

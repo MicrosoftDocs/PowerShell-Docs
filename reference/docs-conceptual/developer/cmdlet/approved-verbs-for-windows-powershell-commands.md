@@ -252,11 +252,9 @@ lifecycle, or security verb names verbs.
 - [System.Management.Automation.VerbsSecurity][104]
 - [System.Management.Automation.VerbsOther][102]
 - [Cmdlet Declaration][03]
-- [Windows PowerShell Programmer's Guide][01]
 - [Windows PowerShell Shell SDK][02]
 
 <!-- link references -->
-[01]: ../prog-guide/windows-powershell-programmer-s-guide.md
 [02]: ../windows-powershell-reference.md
 [03]: ./cmdlet-class-declaration.md
 [04]: xref:System.Management.Automation.Host.BufferCellType

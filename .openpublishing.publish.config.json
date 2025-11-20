@@ -78,6 +78,7 @@
     "redir/.openpublishing.redirection.dsc.json",
     "redir/.openpublishing.redirection.gallery.json",
     "redir/.openpublishing.redirection.psget.json",
+    "redir/.openpublishing.redirection.sdk.json",
     "redir/.openpublishing.redirection.virtual.json",
     "redir/.openpublishing.redirection.wmf.json"
   ],

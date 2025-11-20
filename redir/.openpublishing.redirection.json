@@ -207,11 +207,6 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_psmodulepath",
-      "source_path": "../reference/docs-conceptual/developer/module/modifying-the-psmodulepath-installation-path.md"
-    },
-    {
-      "redirect_document_id": false,
       "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_Tab_Expansion",
       "source_path": "../reference/docs-conceptual/learn/Using-Tab-Expansion.md"
     },
@@ -257,11 +252,6 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects",
-      "source_path": "../reference/docs-conceptual/samples/Other-Useful-Scripting-Objects.md"
-    },
-    {
-      "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/overview",
       "source_path": "../reference/docs-conceptual/index.md"
     },
@@ -294,11 +284,6 @@
       "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/community/2020-update",
       "source_path": "../reference/docs-conceptual/community/2020-Q4.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/windows-powershell",
-      "source_path": "../reference/docs-conceptual/developer/index.md"
     },
     {
       "redirect_document_id": false,
@@ -397,31 +382,6 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/cmdlet/cmdlet-overview",
-      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-windows-powershell-cmdlet.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/format/wide-view-basic",
-      "source_path": "../reference/docs-conceptual/developer/format/examples-of-formatting-files.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/format/formatting-file-overview",
-      "source_path": "../reference/docs-conceptual/developer/format/writing-a-powershell-formatting-file.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/hosting/windows-powershell-host-quickstart",
-      "source_path": "../reference/docs-conceptual/developer/hosting/writing-a-windows-powershell-host-application.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/provider/windows-powershell-provider-quickstart",
-      "source_path": "../reference/docs-conceptual/developer/provider/writing-a-windows-powershell-provider.md"
-    },
-    {
-      "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/overview",
       "source_path": "../reference/docs-conceptual/getting-started/getting-started-with-windows-powershell.md"
     },
@@ -497,77 +457,162 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects",
+      "source_path": "../reference/docs-conceptual/samples/Other-Useful-Scripting-Objects.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISE-Object-Model-Hierarchy",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISE-Object-Model-Hierarchy.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEAddOnTool-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEAddOnTool-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEAddOnToolCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEAddOnToolCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEEditor-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEEditor-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEFile-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEFile-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEFileCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEFileCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEMenuItem-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEMenuItem-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEMenuItemCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEMenuItemCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEOptions-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEOptions-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISESnippetCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISESnippetCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISESnippetObject",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISESnippetObject.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ObjectModelRoot-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ObjectModelRoot-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-PowerShellTab-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-PowerShellTab-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-PowerShellTabCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-PowerShellTabCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontoolcollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontoolcollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseaddontoolcollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontool-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontool-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseaddontool-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseeditor-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-iseeditor-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseeditor-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isefilecollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isefilecollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isefilecollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isefile-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isefile-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isefile-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitemcollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitemcollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isemenuitemcollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitem-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitem-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isemenuitem-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-ise-object-model-hierarchy",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-ise-object-model-hierarchy",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-ise-object-model-hierarchy.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseoptions-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-iseoptions-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseoptions-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetcollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetcollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isesnippetcollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetobject",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetobject",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isesnippetobject.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-objectmodelroot-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-objectmodelroot-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-objectmodelroot-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-powershelltabcollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-powershelltabcollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-powershelltabcollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-powershelltab-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-powershelltab-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-powershelltab-object.md"
     },
     {
@@ -589,126 +634,6 @@
       "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/dev-cross-plat/vscode/using-vscode-for-remote-editing-and-debugging",
       "source_path": "../reference/docs-conceptual/components/vscode/using-vscode-for-remote-editing-and-debugging.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/module/how-to-create-a-windows-powershell-snap-in",
-      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/module/how-to-import-cmdlets-using-modules",
-      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-import-cmdlets-using-modules.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/module/modules-and-snap-ins",
-      "source_path": "../reference/docs-conceptual/developer/cmdlet/modules-and-snap-ins.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/module/registering-cmdlets",
-      "source_path": "../reference/docs-conceptual/developer/cmdlet/registering-cmdlets.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/module/writing-a-custom-windows-powershell-snap-in",
-      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/module/writing-a-windows-powershell-snap-in",
-      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-windows-powershell-snap-in.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/file-types-permitted-in-an-updatable-help-cab-file",
-      "source_path": "../reference/docs-conceptual/developer/module/file-types-permitted-in-an-updatable-help-cab-file.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/helpinfo-xml-sample-file",
-      "source_path": "../reference/docs-conceptual/developer/module/helpinfo-xml-sample-file.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/helpinfo-xml-schema",
-      "source_path": "../reference/docs-conceptual/developer/module/helpinfo-xml-schema.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-to-create-a-helpinfo-xml-file",
-      "source_path": "../reference/docs-conceptual/developer/module/how-to-create-a-helpinfo-xml-file.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-to-create-and-upload-cab-files",
-      "source_path": "../reference/docs-conceptual/developer/module/how-to-create-and-upload-cab-files.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-to-name-a-helpinfo-xml-file",
-      "source_path": "../reference/docs-conceptual/developer/module/how-to-name-a-helpinfo-xml-file.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-to-name-an-updatable-help-cab-file",
-      "source_path": "../reference/docs-conceptual/developer/module/how-to-name-an-updatable-help-cab-file.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-to-prepare-updatable-help-cab-files",
-      "source_path": "../reference/docs-conceptual/developer/module/how-to-prepare-updatable-help-cab-files.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-to-set-helpinfo-xml-version-numbers",
-      "source_path": "../reference/docs-conceptual/developer/module/how-to-set-helpinfo-xml-version-numbers.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-to-test-updatable-help",
-      "source_path": "../reference/docs-conceptual/developer/module/how-to-test-updatable-help.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-to-update-help-files",
-      "source_path": "../reference/docs-conceptual/developer/module/how-to-update-help-files.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/how-updatable-help-works",
-      "source_path": "../reference/docs-conceptual/developer/module/how-updatable-help-works.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/naming-help-files",
-      "source_path": "../reference/docs-conceptual/developer/module/naming-help-files.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/supporting-online-help",
-      "source_path": "../reference/docs-conceptual/developer/module/supporting-online-help.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/supporting-updatable-help",
-      "source_path": "../reference/docs-conceptual/developer/module/supporting-updatable-help.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/updatable-help-authoring-step-by-step",
-      "source_path": "../reference/docs-conceptual/developer/module/updatable-help-authoring-step-by-step.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/updatable-help-overview",
-      "source_path": "../reference/docs-conceptual/developer/module/updatable-help-overview.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/help/writing-help-for-windows-powershell-modules",
-      "source_path": "../reference/docs-conceptual/developer/module/writing-help-for-windows-powershell-modules.md"
     },
     {
       "redirect_document_id": false,
@@ -824,16 +749,6 @@
       "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/windows-powershell/wmf/whats-new/sil-overview",
       "source_path": "../reference/docs-conceptual/wmf/whats-new/sil-overview.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/cmdlet/requesting-confirmation-from-cmdlets",
-      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-request-confirmations.md"
-    },
-    {
-      "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
-      "source_path": "../reference/docs-conceptual/developer/prog-guide/how-to-create-a-console-shell.md"
     }
   ]
 }

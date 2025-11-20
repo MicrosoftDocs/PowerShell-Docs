@@ -1,11 +1,10 @@
 ---
 description: This article is an overview of the features of the Windows PowerShell ISE
 ms.custom: ISE-F1-page
-ms.date: 03/27/2025
+ms.date: 11/20/2025
 ms.topic: ui-reference
 title: Exploring the Windows PowerShell ISE
 ---
-
 # Exploring the Windows PowerShell ISE
 
 You can use the Windows PowerShell Integrated Scripting Environment (ISE) to create, run, and debug
@@ -24,8 +23,7 @@ The menu bar contains the **File**, **Edit**, **View**, **Tools**, **Debug**, **
 ![Screenshot of the menu bar.][11]
 
 The buttons on the menus allow you to perform tasks related to writing and running scripts and
-running commands in the Windows PowerShell ISE. Additionally, an [add-on tool][17] may be placed on
-the menu bar by running scripts that use the [The ISE Object Model Hierarchy][16].
+running commands in the Windows PowerShell ISE.
 
 ## Toolbar
 
@@ -134,5 +132,4 @@ to fill in the parameters in an easy-to-use form.
 [13]: media/exploring-the-windows-powershell-ise/ise-powershell-tabs.png
 [14]: media/exploring-the-windows-powershell-ise/ise-script-tabs.png
 [15]: media/exploring-the-windows-powershell-ise/ise-tool-bar.png
-[16]: object-model/The-ISE-Object-Model-Hierarchy.md
-[17]: object-model/The-ISEAddOnTool-Object.md
+

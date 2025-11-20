@@ -129,6 +129,6 @@ see [Submitting a pull request][8].
 [3]: https://github.com/MicrosoftDocs/PowerShell-Docs/tree/main/reference/docs-conceptual
 [4]: https://github.com/PowerShell/powershell-rfc/blob/master/RFC0000-RFC-Process.md
 [5]: /contribute/content/how-to-write-quick-edits
-[6]: /contribute/how-to-write-workflows-major#making-your-changes
+[6]: /contribute/content/how-to-write-major-edits
 [7]: /contribute/get-started-setup-local#fork-the-repository
 [8]: pull-requests.md

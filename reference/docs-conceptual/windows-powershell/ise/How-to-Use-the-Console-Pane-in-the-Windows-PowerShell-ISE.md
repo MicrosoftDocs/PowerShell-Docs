@@ -1,10 +1,9 @@
 ---
 description: How to Use the Console Pane in the Windows PowerShell ISE
-ms.date: 03/27/2025
+ms.date: 11/20/2025
 ms.topic: ui-reference
 title: How to Use the Console Pane in the Windows PowerShell ISE
 ---
-
 # How to Use the Console Pane in the Windows PowerShell ISE
 
 The Console pane in the Windows PowerShell Integrated Scripting Environment (ISE) operates exactly
@@ -41,3 +40,4 @@ in procedures that were needed when they were separate. You can:
 <!-- link references -->
 [01]: How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md
 [02]: Introducing-the-Windows-PowerShell-ISE.md
+

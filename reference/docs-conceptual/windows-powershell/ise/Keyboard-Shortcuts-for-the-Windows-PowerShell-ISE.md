@@ -1,10 +1,9 @@
 ---
 description: This article is a list of the keyboard shortcuts used in the PowerShell ISE.
-ms.date: 03/27/2025
+ms.date: 11/20/2025
 ms.topic: ui-reference
 title: Keyboard Shortcuts for the Windows PowerShell ISE
 ---
-
 # Keyboard Shortcuts for the Windows PowerShell ISE
 
 Use the following keyboard shortcuts to perform actions in Windows PowerShell Integrated Scripting
@@ -131,3 +130,4 @@ Windows PowerShell session outside of the ISE.
 
 <!-- link references -->
 [01]: https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/
+
