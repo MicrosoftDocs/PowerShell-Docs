@@ -1,9 +1,8 @@
 ---
 description: How to Use Tab Completion in the Script Pane and Console Pane
-ms.date: 03/27/2025
+ms.date: 11/20/2025
 title: How to Use Tab Completion in the Script Pane and Console Pane
 ---
-
 # How to Use Tab Completion in the Script Pane and Console Pane
 
 Tab completion provides automatic help when you are typing in the Script Pane or in the Command
@@ -36,3 +35,4 @@ the parameters for the cmdlet in turn.
 <!-- link references -->
 [01]: How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md
 [02]: Introducing-the-Windows-PowerShell-ISE.md
+

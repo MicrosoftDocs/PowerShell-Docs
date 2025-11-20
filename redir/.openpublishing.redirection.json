@@ -257,11 +257,6 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects",
-      "source_path": "../reference/docs-conceptual/samples/Other-Useful-Scripting-Objects.md"
-    },
-    {
-      "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/overview",
       "source_path": "../reference/docs-conceptual/index.md"
     },
@@ -497,77 +492,162 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects",
+      "source_path": "../reference/docs-conceptual/samples/Other-Useful-Scripting-Objects.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/Other-Useful-Scripting-Objects.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISE-Object-Model-Hierarchy",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISE-Object-Model-Hierarchy.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEAddOnTool-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEAddOnTool-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEAddOnToolCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEAddOnToolCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEEditor-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEEditor-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEFile-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEFile-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEFileCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEFileCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEMenuItem-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEMenuItem-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEMenuItemCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEMenuItemCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISEOptions-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISEOptions-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISESnippetCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISESnippetCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ISESnippetObject",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ISESnippetObject.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-ObjectModelRoot-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-ObjectModelRoot-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-PowerShellTab-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-PowerShellTab-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/The-PowerShellTabCollection-Object",
+      "source_path": "../reference/docs-conceptual/windows-powershell/ise/object-model/The-PowerShellTabCollection-Object.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontoolcollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontoolcollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseaddontoolcollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontool-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-iseaddontool-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseaddontool-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseeditor-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-iseeditor-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseeditor-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isefilecollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isefilecollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isefilecollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isefile-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isefile-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isefile-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitemcollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitemcollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isemenuitemcollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitem-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isemenuitem-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isemenuitem-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-ise-object-model-hierarchy",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-ise-object-model-hierarchy",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-ise-object-model-hierarchy.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-iseoptions-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-iseoptions-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-iseoptions-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetcollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetcollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isesnippetcollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetobject",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-isesnippetobject",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-isesnippetobject.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-objectmodelroot-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-objectmodelroot-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-objectmodelroot-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-powershelltabcollection-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-powershelltabcollection-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-powershelltabcollection-object.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/windows-powershell/ise/object-model/the-powershelltab-object",
+      "redirect_url": "/previous-versions/powershell/scripting/windows-powershell/ise/object-model/the-powershelltab-object",
       "source_path": "../reference/docs-conceptual/components/ise/object-model/the-powershelltab-object.md"
     },
     {
