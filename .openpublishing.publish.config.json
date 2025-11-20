@@ -19,12 +19,6 @@
       "url": "https://github.com/Microsoft/templates.docs.msft"
     },
     {
-      "branch": "main",
-      "branch_mapping": {},
-      "path_to_root": "powershell-sdk-samples",
-      "url": "https://github.com/MicrosoftDocs/powershell-sdk-samples"
-    },
-    {
       "branch": "master",
       "path_to_root": "_themes.pdf",
       "url": "https://github.com/Microsoft/templates.docs.msft.pdf"
@@ -78,6 +72,7 @@
     "redir/.openpublishing.redirection.dsc.json",
     "redir/.openpublishing.redirection.gallery.json",
     "redir/.openpublishing.redirection.psget.json",
+    "redir/.openpublishing.redirection.sdk.json",
     "redir/.openpublishing.redirection.virtual.json",
     "redir/.openpublishing.redirection.wmf.json"
   ],

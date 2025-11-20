@@ -9,13 +9,13 @@ This example shows how to write a Windows PowerShell snap-in that registers spec
 
 With this type of snap-in, you specify which cmdlets, providers, types, or formats to register. For
 more information about how to write a snap-in that registers all the cmdlets and providers in an
-assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powershell-snap-in.md).
+assembly, see [Writing a Windows PowerShell Snap-in][02].
 
 ## To write a Windows PowerShell Snap-in that registers specific cmdlets.
 
 1. Add the RunInstallerAttribute attribute.
 2. Create a public class that derives from the
-   [System.Management.Automation.CustomPSSnapIn](/dotnet/api/System.Management.Automation.CustomPSSnapIn)
+   [System.Management.Automation.CustomPSSnapIn][03]
    class.
 
    In this example, the class name is "CustomPSSnapinTest".
@@ -47,7 +47,7 @@ assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powersh
    > Test-HelloWorld and Test-CustomSnapinTest cmdlets".
 
 8. Specify the cmdlets that belong to the custom snap-in (optional) using the
-   [System.Management.Automation.Runspaces.CmdletConfigurationEntry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)
+   [System.Management.Automation.Runspaces.CmdletConfigurationEntry][04]
    class. The information added here includes the name of the cmdlet, its .NET type, and the cmdlet
    Help file name (the format of the cmdlet Help file name should be `name.dll-help.xml`).
 
@@ -212,13 +212,19 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-For more information about registering snap-ins, see
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85))
-in the
-[Windows PowerShell Programmer's Guide](../prog-guide/windows-powershell-programmer-s-guide.md).
+For more information about registering snap-ins, see [How to Register Cmdlets, Providers, and Host
+Applications][05] in the [Windows PowerShell Programmer's Guide][06].
 
 ## See Also
 
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications][05]
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell Shell SDK][01]
+
+<!-- link references -->
+[01]: ../windows-powershell-reference.md
+[02]: ./writing-a-windows-powershell-snap-in.md
+[03]: /dotnet/api/System.Management.Automation.CustomPSSnapIn
+[04]: /dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry
+[05]: /previous-versions/ms714644(v=vs.85)
+[06]: /previous-versions/powershell/scripting/developer/prog-guide/designing-your-windows-powershell-provider

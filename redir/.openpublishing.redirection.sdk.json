@@ -1,0 +1,444 @@
+{
+  "redirections": [
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/windows-powershell",
+      "source_path": "../reference/docs-conceptual/developer/index.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/accessdbprovidersample01-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/accessdbprovidersample02-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/accessdbprovidersample03-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/accessdbprovidersample04-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/accessdbprovidersample05-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/accessdbprovidersample06-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/creating-a-basic-windows-powershell-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/creating-a-windows-powershell-container-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/creating-a-windows-powershell-content-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/creating-a-windows-powershell-drive-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/creating-a-windows-powershell-item-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/creating-a-windows-powershell-navigation-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/creating-a-windows-powershell-property-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/designing-your-windows-powershell-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc01-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc01-csharp-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc01-vb-net-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc02-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc02-csharp-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc02-vb-net-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc03-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc03-csharp-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc03-vb-net-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc04-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc04-csharp-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc04-vb-net-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc05-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc05-csharp-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/getproc05-vb-net-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/how-to-create-a-windows-powershell-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace01-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace01-csharp-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace01-vb-net-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace02-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace02-csharp-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace02-vb-net-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace03-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace03-csharp-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace03-vb-net-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace04-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace04-vb-net-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace05-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace06-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace07-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace08-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace09-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/runspace10-code-sample.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/stopproc01-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/stopproc01-csharp-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/stopprocesssample04-code-samples.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/stopprocesssample04-csharp-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/stopprocesssample04-vb-net-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/windows-powershell-concepts.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/windows-powershell-programmer-s-guide.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "reference/docs-conceptual/developer/prog-guide/windows-powershell-sample-code.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/module/microsoft.powershell.core/about/about_psmodulepath",
+      "source_path": "../reference/docs-conceptual/developer/module/modifying-the-psmodulepath-installation-path.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/cmdlet/cmdlet-overview",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-windows-powershell-cmdlet.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/format/wide-view-basic",
+      "source_path": "../reference/docs-conceptual/developer/format/examples-of-formatting-files.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/format/formatting-file-overview",
+      "source_path": "../reference/docs-conceptual/developer/format/writing-a-powershell-formatting-file.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/hosting/windows-powershell-host-quickstart",
+      "source_path": "../reference/docs-conceptual/developer/hosting/writing-a-windows-powershell-host-application.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/provider/windows-powershell-provider-quickstart",
+      "source_path": "../reference/docs-conceptual/developer/provider/writing-a-windows-powershell-provider.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/module/how-to-create-a-windows-powershell-snap-in",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/module/how-to-import-cmdlets-using-modules",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-import-cmdlets-using-modules.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/module/modules-and-snap-ins",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/modules-and-snap-ins.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/module/registering-cmdlets",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/registering-cmdlets.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/module/writing-a-custom-windows-powershell-snap-in",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/module/writing-a-windows-powershell-snap-in",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/writing-a-windows-powershell-snap-in.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/file-types-permitted-in-an-updatable-help-cab-file",
+      "source_path": "../reference/docs-conceptual/developer/module/file-types-permitted-in-an-updatable-help-cab-file.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/helpinfo-xml-sample-file",
+      "source_path": "../reference/docs-conceptual/developer/module/helpinfo-xml-sample-file.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/helpinfo-xml-schema",
+      "source_path": "../reference/docs-conceptual/developer/module/helpinfo-xml-schema.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-create-a-helpinfo-xml-file",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-create-a-helpinfo-xml-file.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-create-and-upload-cab-files",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-create-and-upload-cab-files.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-name-a-helpinfo-xml-file",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-name-a-helpinfo-xml-file.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-name-an-updatable-help-cab-file",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-name-an-updatable-help-cab-file.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-prepare-updatable-help-cab-files",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-prepare-updatable-help-cab-files.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-set-helpinfo-xml-version-numbers",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-set-helpinfo-xml-version-numbers.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-test-updatable-help",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-test-updatable-help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-to-update-help-files",
+      "source_path": "../reference/docs-conceptual/developer/module/how-to-update-help-files.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/how-updatable-help-works",
+      "source_path": "../reference/docs-conceptual/developer/module/how-updatable-help-works.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/naming-help-files",
+      "source_path": "../reference/docs-conceptual/developer/module/naming-help-files.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/supporting-online-help",
+      "source_path": "../reference/docs-conceptual/developer/module/supporting-online-help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/supporting-updatable-help",
+      "source_path": "../reference/docs-conceptual/developer/module/supporting-updatable-help.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/updatable-help-authoring-step-by-step",
+      "source_path": "../reference/docs-conceptual/developer/module/updatable-help-authoring-step-by-step.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/updatable-help-overview",
+      "source_path": "../reference/docs-conceptual/developer/module/updatable-help-overview.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/help/writing-help-for-windows-powershell-modules",
+      "source_path": "../reference/docs-conceptual/developer/module/writing-help-for-windows-powershell-modules.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/cmdlet/requesting-confirmation-from-cmdlets",
+      "source_path": "../reference/docs-conceptual/developer/cmdlet/how-to-request-confirmations.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide",
+      "source_path": "../reference/docs-conceptual/developer/prog-guide/how-to-create-a-console-shell.md"
+    }
+  ]
+}
