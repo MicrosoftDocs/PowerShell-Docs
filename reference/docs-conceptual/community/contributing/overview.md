@@ -96,7 +96,7 @@ Additional resources
 [8]: /contribute/get-started-setup-local
 [9]: /contribute/git-github-fundamentals
 [10]: /contribute/content/how-to-write-quick-edits
-[11]: /contribute/how-to-write-workflows-major
+[11]: /contribute/content/how-to-write-major-edits
 [12]: /contribute/style-quick-start
 [13]: /style-guide/welcome/
 [14]: /legal/termsofuse

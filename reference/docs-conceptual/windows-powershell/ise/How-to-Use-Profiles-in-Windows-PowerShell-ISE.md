@@ -1,9 +1,8 @@
 ---
 description: This article explains how to use Profiles in Windows PowerShell ISE.
-ms.date: 03/27/2025
+ms.date: 11/20/2025
 title: How to Use Profiles in Windows PowerShell ISE
 ---
-
 # How to Use Profiles in Windows PowerShell ISE
 
 This article explains how to use Profiles in Windows PowerShell&reg; Integrated Scripting
@@ -93,8 +92,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts)) {
 1. Add some items to your profile. The following are a few examples to get you started:
 
    - To change the default background color of the Console Pane to blue, in the profile file type:
-     `$psISE.Options.OutputPaneBackground = 'blue'` . For more information about the `$psISE`
-     variable, see [Windows PowerShell ISE Object Model Reference][04].
+     `$psISE.Options.OutputPaneBackground = 'blue'` .
 
    - To change font size to 20, in the profile file type: `$psISE.Options.FontSize =20`
 
@@ -110,4 +108,4 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts)) {
 [01]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [02]: /powershell/module/microsoft.powershell.core/about/about_profiles
 [03]: Introducing-the-Windows-PowerShell-ISE.md
-[04]: object-model/The-ISE-Object-Model-Hierarchy.md
+

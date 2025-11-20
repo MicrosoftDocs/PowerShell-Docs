@@ -1,9 +1,8 @@
 ---
 description: This article describes how to create, edit, run, and save scripts in the Script Pane.
-ms.date: 03/27/2025
+ms.date: 11/20/2025
 title: How to Write and Run Scripts in the Windows PowerShell ISE
 ---
-
 # How to Write and Run Scripts in the Windows PowerShell ISE
 
 This article describes how to create, edit, run, and save scripts in the Script Pane.
@@ -54,7 +53,7 @@ On the toolbar, click **Run Script**, or on the **File** menu, click **Run**.
 ### To run a portion of a script
 
 1. In the Script Pane, select a portion of a script.
-2. On the **File** menu, click **Run Selection**, or on the toolbar, click **Run Selection**.
+1. On the **File** menu, click **Run Selection**, or on the toolbar, click **Run Selection**.
 
 ### To stop a running script
 
@@ -100,13 +99,11 @@ text you want to find and the replacement text, then press <kbd>ENTER</kbd>.
 
 1. In the Script Pane, press <kbd>CTRL</kbd>+<kbd>G</kbd> or, on the **Edit** menu, click **Go to
    Line**.
-
 1. Enter a line number.
 
 ### To copy text in the Script Pane
 
 1. In the Script Pane, select the text that you want to copy.
-
 1. Press <kbd>CTRL</kbd>+<kbd>C</kbd> or, on the toolbar, click the **Copy** icon, or on the
    **Edit** menu, click **Copy**.
 
@@ -145,15 +142,15 @@ menu, click **Save**.
 
 1. On the **File** menu, click **Save As**. The **Save As** dialog box will appear.
 1. In the **File name** box, enter a name for the file.
-1. In the **Save as type** box, select a file type. For example, in the **Save as type** box,
-   select 'PowerShell Scripts (`*.ps1`)'.
+1. In the **Save as type** box, select a file type. For example, in the **Save as type** box, select
+   'PowerShell Scripts (`*.ps1`)'.
 1. Click **Save**.
 
 ### To save a script in ASCII encoding
 
 By default, Windows PowerShell ISE saves new script files (`.ps1`), script data files (`.psd1`), and
 script module files (`.psm1`) as Unicode (BigEndianUnicode). To save a script in another encoding,
-such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the [$psISE.CurrentFile][05] object.
+such as ASCII (ANSI), use the **Save** or **SaveAs** methods on the `$psISE.CurrentFile` object.
 
 The following command saves a new script as MyScript.ps1 with ASCII encoding.
 
@@ -189,4 +186,4 @@ commands.
 [02]: /powershell/module/microsoft.powershell.security/set-executionpolicy
 [03]: exploring-the-windows-powershell-ise.md
 [04]: How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md
-[05]: object-model/the-ise-object-model-hierarchy.md
+
