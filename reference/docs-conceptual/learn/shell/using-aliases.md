@@ -1,6 +1,6 @@
 ---
-description: This article describe how to use aliases in PowerShell.
-ms.date: 07/23/2024
+description: This article describes how to use aliases in PowerShell.
+ms.date: 11/21/2025
 title: Using aliases
 ---
 # Using aliases
@@ -69,7 +69,7 @@ Set-Alias -Name cmpo  -Value Compare-Object
 ## Compatibility aliases in Windows
 
 PowerShell has several aliases that allow **Unix** and `cmd.exe` users to use familiar commands in
-Windows. The following table show common commands, the related PowerShell cmdlet, and the PowerShell
+Windows. The following table shows common commands, the related PowerShell cmdlet, and the PowerShell
 alias:
 
 |     Windows Command Shell     | Unix command | PowerShell cmdlet |             PowerShell alias              |
@@ -83,22 +83,22 @@ alias:
 | `md`                          | `mkdir`      | `New-Item`        | `ni`                                      |
 | `move`                        | `mv`         | `Move-Item`       | `mi`, `move`, `mv`                        |
 | `popd`                        | `popd`       | `Pop-Location`    | `popd`                                    |
-|                               | `pwd`        | `Get-Location`    | `gl`, `pwd`                               |
+|                               | `pwd`        | `Get-Location`    | `gl`, `pwd`, `$PWD`                       |
 | `pushd`                       | `pushd`      | `Push-Location`   | `pushd`                                   |
 | `ren`                         | `mv`         | `Rename-Item`     | `rni`, `ren`                              |
 | `type`                        | `cat`        | `Get-Content`     | `gc`, `cat`, `type`                       |
 
 > [!NOTE]
-> The aliases in this table are Windows-specific. Some aliases aren't available on other platforms.
-> This is to allow the native command to work in a PowerShell session. For example, `ls` isn't
-> defined as a PowerShell alias on macOS or Linux so that the native command is run instead of
-> `Get-ChildItem`.
+> The aliases in this table are Windows-specific. Some aliases aren't available on other platforms
+> to allow an existing native command to work in a PowerShell session. For example, `ls` isn't
+> defined as a PowerShell alias on macOS or Linux so that PowerShell runs the native command instead
+> of `Get-ChildItem`.
 
 ## Creating alternate names for commands with parameters
 
 You can assign an alias to a cmdlet, script, function, or executable file. Unlike some Unix shells,
-you cannot assign an alias to a command with parameters. For example, you can assign an alias to the
-`Get-Eventlog` cmdlet, but you cannot assign an alias to the `Get-Eventlog -LogName System` command.
+the definition of the alias can't include parameters. For example, you can assign an alias to the
+`Get-Eventlog` cmdlet, but you can't assign an alias to the `Get-Eventlog -LogName System` command.
 You must create a function that contains the command with parameters.
 
 For more information, see [about_Aliases][02].
@@ -106,14 +106,14 @@ For more information, see [about_Aliases][02].
 ## Parameter aliases and shorthand names
 
 PowerShell also provides ways to create shorthand names for parameters. Parameter aliases are
-defined using the `Alias` attribute when you declare the parameter. These can't be defined using the
-`*-Alias` cmdlets.
+defined using the `Alias` attribute when you declare the parameter. Parameter aliases can't be
+defined using the `*-Alias` cmdlets.
 
 For more information, see the [Alias attribute][03] documentation.
 
 In addition to parameter aliases, PowerShell lets you specify the parameter name using the fewest
 characters needed to uniquely identify the parameter. For example, the `Get-ChildItem` cmdlet has
-the **Recurse** and **ReadOnly** parameters. To uniquely identify the **Recurse** parameter you only
+the **Recurse** and **ReadOnly** parameters. To uniquely identify the Recurse parameter, you only
 need to provide `-Rec`. If you combine that with the command alias, `Get-ChildItem -Recurse` can be
 shortened to `dir -Rec`.
 
@@ -122,8 +122,8 @@ shortened to `dir -Rec`.
 Aliases are a convenience feature to be used interactively in the shell. You should always use the
 full command and parameter names in your scripts.
 
-- Aliases can be deleted or redefined in a profile script
-- Any aliases you define may not be available to the user of your scripts
+- You can delete or redefine aliases in a profile script
+- Aliases you define in your profile aren't be available to other users
 - Aliases make your code harder to read and maintain
 
 <!-- link references -->

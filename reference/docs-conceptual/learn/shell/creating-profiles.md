@@ -2,7 +2,7 @@
 description: >
   This article explains how to use your profile to save preferred PowerShell settings and optimize
   your shell experience.
-ms.date: 02/26/2025
+ms.date: 11/21/2025
 title: Customizing your shell environment
 ---
 # Customizing your shell environment
@@ -22,7 +22,7 @@ on your system.
 > [!NOTE]
 > To run scripts in Windows, the PowerShell execution policy needs to be set to `RemoteSigned` at a
 > minimum. Execution policies don't apply to macOS and Linux. For more information, see
-> [about_Execution_Policy][1].
+> [about_Execution_Policy][03].
 
 ## The $PROFILE variable
 
@@ -73,7 +73,7 @@ Console Host on Windows or the default terminal application on other platforms i
 `Microsoft.PowerShell_profile.ps1`. For Visual Studio Code (VS Code), the filename is
 `Microsoft.VSCode_profile.ps1`.
 
-For more information, see [about_Profiles][2].
+For more information, see [about_Profiles][05].
 
 ## How to create your personal profile
 
@@ -93,14 +93,14 @@ environment.
 
 ## Adding customizations to your profile
 
-The previous articles talked about using [tab completion][3], [command predictors][4], and
-[aliases][5]. These articles showed the commands used to load the required modules, create custom
-completers, define key bindings, and other settings. These are the kinds of customizations that you
-want to have available in every PowerShell interactive session. The profile script is the place for
-these settings.
+The previous articles talked about using [tab completion][09], [command predictors][11], and
+[aliases][10]. These articles showed the commands used to load the required modules, create custom
+completers, define key bindings, and other settings. These customizations are the kind that you want
+to have available in every PowerShell interactive session. The profile script is the place for these
+settings.
 
 The simplest way to edit your profile script is to open the file in your favorite code editor. For
-example, the following command opens the profile in [VS Code][6].
+example, the following command opens the profile in [VS Code][08].
 
 ```powershell
 code $PROFILE
@@ -177,24 +177,23 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 
 This profile script provides examples for the following customization:
 
-- Adds two new [PSDrives][7] for the other root registry hives.
-- Creates a [customized prompt][8] that changes if you're running in an elevated session.
-- Configures **PSReadLine** and adds key binding. The color settings use the [$PSStyle][9] feature
+- Adds two new [PSDrives][04] for the other root registry hives.
+- Creates a [customized prompt][06] that changes if you're running in an elevated session.
+- Configures **PSReadLine** and adds key binding. The color settings use the [$PSStyle][02] feature
   to define the ANSI color settings.
-- Adds tab completion for the [dotnet CLI][10] tool. The tool provides parameters to help resolve
-  the command-line arguments. The script block for [Register-ArgumentCompleter][11] uses that
+- Adds tab completion for the [dotnet CLI][01] tool. The tool provides parameters to help resolve
+  the command-line arguments. The script block for [Register-ArgumentCompleter][07] uses that
   feature to provide the tab completion.
 
 <!-- link references -->
-
-[1]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
-[2]: /powershell/module/microsoft.powershell.core/about/about_profiles
-[3]: tab-completion.md
-[4]: using-predictors.md
-[5]: using-aliases.md
-[6]: https://code.visualstudio.com/
-[7]: /powershell/module/microsoft.powershell.core/about/about_filesystem_provider
-[8]: /powershell/module/microsoft.powershell.core/about/about_prompts
-[9]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals
-[10]: /dotnet/core/tools/
-[11]: /powershell/module/microsoft.powershell.core/register-argumentcompleter
+[01]: /dotnet/core/tools/
+[02]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals
+[03]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
+[04]: /powershell/module/microsoft.powershell.core/about/about_filesystem_provider
+[05]: /powershell/module/microsoft.powershell.core/about/about_profiles
+[06]: /powershell/module/microsoft.powershell.core/about/about_prompts
+[07]: /powershell/module/microsoft.powershell.core/register-argumentcompleter
+[08]: https://code.visualstudio.com/
+[09]: tab-completion.md
+[10]: using-aliases.md
+[11]: using-predictors.md

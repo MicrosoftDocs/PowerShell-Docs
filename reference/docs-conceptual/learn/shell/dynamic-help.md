@@ -1,7 +1,7 @@
 ---
 description: This article explains how to use the dynamic help feature of PSReadLine.
 title: Using dynamic help
-ms.date: 03/24/2023
+ms.date: 11/21/2025
 ---
 # Using dynamic help
 
@@ -32,11 +32,12 @@ the fully expanded parameter name when you press the <kbd>Alt</kbd>+<kbd>h</kbd>
 
 ![Focused help for a parameter using Alt-h][02]
 
-## Selecting arguments on the command line
+## Select arguments on the command line
 
-To quickly select and edit the arguments of a cmdlet without disturbing your syntax using
-<kbd>Alt</kbd>+<kbd>a</kbd>. Based on the cursor position, it searches from the current cursor
-position and stops when it finds any arguments on the command line.
+To quickly select and edit the arguments of a cmdlet without disturbing your syntax, use
+<kbd>Alt</kbd>+<kbd>a</kbd>. It searches from the current cursor position and stops when it finds
+an argument on the command line. It selects the full argument, making it simple to replace or edit
+the argument.
 
 ![Argument selection using Alt-A][03]
 

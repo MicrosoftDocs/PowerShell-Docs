@@ -1,14 +1,14 @@
 ---
 description: >
   This article shows how to configure PSReadLine color settings for a light themed terminal.
-ms.date: 12/17/2022
+ms.date: 11/21/2025
 title: Configuring a light colored theme
 ---
 # Configuring a light colored theme
 
 The default colors for both PowerShell and **PSReadLine** are selected for a dark background
-terminal. However, some users may choose to use a light background with dark text. Since most of the
-default colors don't set the background, using light foreground colors on a light background
+terminal. However, some users might choose to use a light background with dark text. Since most of
+the default colors don't set the background, using light foreground colors on a light background
 produces unreadable text.
 
 **PSReadLine** allows you to define colors for 18 different syntax elements. You can view the
@@ -141,8 +141,8 @@ $PSStyle.FileInfo.Extension['.psm1']   = "`e[36m"
 
 ## Choosing colors for accessibility
 
-The ISE color theme may not work for users with color-blindness or other conditions that limit their
-ability to see colors.
+The ISE color theme might not work for users with color-blindness or other conditions that limit
+their ability to see colors.
 
 The [World Wide Web Consortium (W3C)][05] has recommendations for using colors for accessibility.
 The Web Content Accessibility Guidelines (WCAG) 2.1 recommends that "visual presentation of text and
