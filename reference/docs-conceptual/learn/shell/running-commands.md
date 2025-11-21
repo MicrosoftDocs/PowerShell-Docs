@@ -2,13 +2,13 @@
 description: >
   This article shows how to run commands in PowerShell.
 title: Running commands in the shell
-ms.date: 01/23/2025
+ms.date: 11/21/2025
 ---
 # Running commands in the shell
 
 PowerShell is a command-line shell and a scripting language used for automation. Similar to other
-shells, like `bash` on Linux or the Windows Command Shell (`cmd.exe`), PowerShell lets you to run
-any command available on your system, not just PowerShell commands.
+shells, like `bash` on Linux or the Windows Command Shell (`cmd.exe`), PowerShell lets you run any
+command available on your system, not just PowerShell commands.
 
 ## Types of commands
 
@@ -20,18 +20,18 @@ For any shell in any operating system there are three types of commands:
   - Examples of `cmd.exe` keywords include: `dir`, `copy`, `move`, `if`, and `echo`.
   - Examples of PowerShell keywords include: `for`, `foreach`, `try`, `catch`, and `trap`.
 
-  Shell language keywords can only be used within the runtime environment of the shell. There is no
+  Shell language keywords can only be used within the runtime environment of the shell. There's no
   executable file, external to the shell, that provides the keyword's functionality.
 
 - **OS-native commands** are executable files installed in the operating system. The executables can
-  be run from any command-line shell, like PowerShell. This includes script files that may require
-  other shells to work properly. For example, if you run a Windows batch script (`.cmd` file) in
+  be run from any command-line shell, like PowerShell. This includes script files that require other
+  shells to work properly. For example, if you run a Windows batch script (`.cmd` file) in
   PowerShell, PowerShell runs `cmd.exe` and passes in the batch file for execution.
 
 - **Shell environment-specific commands** are commands defined in external files that can only be
-  used within the runtime environment of the shell. These include scripts and functions, or they can
-  be specially compiled modules that add commands to the shell runtime. In PowerShell, these
-  commands are known as _cmdlets_ (pronounced "command-lets").
+  used within the runtime environment of the shell. This include scripts, functions, and modules
+  that add commands to the shell runtime. In PowerShell, these commands added by a module are known
+  as _cmdlets_ (pronounced "command-lets").
 
 ## Running native commands
 
@@ -61,11 +61,11 @@ sdwheeler:x:1000:1000:,,,:/home/sdwheeler:/bin/bash
 
 Most shells include features for using variables, evaluating expressions, and handling strings. But
 each shell does these things differently. In PowerShell, all parameters start with a hyphen (`-`)
-character. In `cmd.exe`, most parameters use a slash (`/`) character. Other command-line tools may
-not have a special character for parameters.
+character. In `cmd.exe`, most command parameters use a forward slash (`/`) character. Other
+command-line tools might use spaces, hyphens, double-dash (`--`).
 
 Each shell has its own way of handling and evaluating strings on the command line. When running
-native commands in PowerShell that expect strings to be quoted in a specific way, you may need
+native commands in PowerShell that expect strings to be quoted in a specific way, you might need to
 adjust how you pass those strings.
 
 For more information, see the following articles:
@@ -86,11 +86,11 @@ In general, the output sent to **stdout** by a native command is sent to the **S
 PowerShell. Output sent to **stderr** by a native command is sent to the **Error** stream in
 PowerShell.
 
-When a native command has a non-zero exit code, `$?` is set to `$false`. If the exit code is zero,
+When a native command has a nonzero exit code, `$?` is set to `$false`. If the exit code is zero,
 `$?` is set to `$true`.
 
-However, this changed in PowerShell 7.2. Error records redirected from native commands, like when
-using redirection operators (`2>&1`), aren't written to PowerShell's `$Error` variable and the
+However, PowerShell 7.2 changed this behavior. Error records redirected from native commands, like
+when using redirection operators (`2>&1`), aren't written to PowerShell's `$Error` variable and the
 preference variable `$ErrorActionPreference` doesn't affect the redirected output.
 
 Many native commands write to **stderr** as an alternative stream for additional information. This
@@ -110,9 +110,9 @@ the PowerShell scripting language itself.
 ### PowerShell commands that run other commands
 
 The PowerShell **call operator** (`&`) lets you run commands that are stored in variables and
-represented by strings or script blocks. You can use this to run any native command or PowerShell
-command. This is useful in a script when you need to dynamically construct the command-line
-parameters for a native command. For more information, see the [call operator][7].
+represented by strings or script blocks. You can use the operator to run any native command or
+PowerShell command. This is useful in a script when you need to dynamically construct the
+command-line parameters for a native command. For more information, see the [call operator][7].
 
 The `Start-Process` cmdlet can be used to run native commands, but should only be used when you need
 to control how the command is executed. The cmdlet has parameters to support the following
@@ -140,8 +140,8 @@ For more information, see [Start-Process][8].
 
 On Windows, the `Invoke-Item` cmdlet performs the default action for the specified item. For
 example, it runs an executable file or opens a document file using the application associated with
-the document file type. The default action depends on the type of item and is resolved by the
-PowerShell provider that provides access to the item.
+the document file type. The default action depends on the type of item and the PowerShell provider
+that provides access to the item.
 
 The following example opens the PowerShell source code repository in your default web browser.
 

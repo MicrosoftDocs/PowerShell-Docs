@@ -1,7 +1,7 @@
 ---
 description: This article aims to guide you through methods to output from PowerShell in formats that are friendly for screen readers, enhancing the accessibility of your scripts.
 ms.custom: experience
-ms.date: 09/12/2024
+ms.date: 11/21/2025
 title: Improve the accessibility of output in PowerShell
 ---
 # Improve the accessibility of output in PowerShell
