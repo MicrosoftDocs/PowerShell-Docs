@@ -56,7 +56,6 @@
         "docs-conceptual/samples/**/*.md": "sample",
         "docs-conceptual/whats-new/**/*.md": "whats-new",
         "docs-conceptual/windows-powershell/ise/*.md": "ui-reference",
-        "docs-conceptual/windows-powershell/ise/object-model/*.md": "reference"
       },
       "ms.update-cycle": {
         "docs-conceptual/community/*-updates.md": "1825-days",
@@ -71,7 +70,19 @@
         "docs-conceptual/samples/**": "3650-days",
         "docs-conceptual/security/remoting/jea/**": "3650-days",
         "docs-conceptual/whats-new/**": "1825-days",
-        "docs-conceptual/windows-powershell/**": "3650-days"
+        "docs-conceptual/windows-powershell/**": "3650-days",
+
+        "index.yml": "1825-days",
+        "docs-conceptual/discover-powershell.md": "1825-days",
+        "docs-conceptual/overview.md": "1825-days",
+        "docs-conceptual/powershell-commands.md": "1825-days",
+        "docs-conceptual/what-is-a-command-shell.md": "1825-days",
+        "docs-conceptual/what-is-windows-powershell.md": "1825-days",
+        "docs-conceptual/community/community-support.md": "1825-days",
+        "docs-conceptual/learn/glossary.md": "1825-days",
+        "docs-conceptual/install/installing-powershell.yml": "1825-days",
+        "docs-conceptual/security/overview.yml": "1825-days",
+        "module/index.md": "1825-days"
       },
       "products": {
         "5.1/**/*": [

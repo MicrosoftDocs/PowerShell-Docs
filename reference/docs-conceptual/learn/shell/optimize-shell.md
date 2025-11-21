@@ -3,7 +3,7 @@ description: >
   This article provides an overview of the shell features that help users improve
   their user experience.
 title: Optimizing your shell experience
-ms.date: 7/14/2022
+ms.date: 11/21/2025
 ---
 # Optimizing your shell experience
 

@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 01/23/2025
+ms.date: 11/21/2025
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -33,15 +33,14 @@ Get-ExperimentalFeature
 ```
 
 ```Output
-Name                             Enabled Source   Description
-----                             ------- ------   -----------
-PSCommandNotFoundSuggestion        False PSEngine Recommend potential commands based on fuzzy searc…
-PSCommandWithArgs                  False PSEngine Enable `-CommandWithArgs` parameter for pwsh
-PSFeedbackProvider                  True PSEngine Replace the hard-coded suggestion framework with …
-PSLoadAssemblyFromNativeCode       False PSEngine Expose an API to allow assembly loading from nati…
-PSModuleAutoLoadSkipOfflineFiles    True PSEngine Module discovery will skip over files that are ma…
-PSSerializeJSONLongEnumAsNumber     True PSEngine Serialize enums based on long or ulong as an nume…
-PSSubsystemPluginModel              True PSEngine A plugin model for registering and un-registering…
+Name                            Enabled Source   Description
+----                            ------- ------   -----------
+PSFeedbackProvider                 True PSEngine Replace the hard-coded suggestion framework with the extensible feedb…
+PSLoadAssemblyFromNativeCode      False PSEngine Expose an API to allow assembly loading from native code
+PSNativeWindowsTildeExpansion      True PSEngine On windows, expand unquoted tilde (`~`) with the user's current home …
+PSRedirectToVariable               True PSEngine Add support for redirecting to the variable drive
+PSSerializeJSONLongEnumAsNumber    True PSEngine Serialize enums based on long or ulong as an numeric value rather tha…
+PSSubsystemPluginModel             True PSEngine A plugin model for registering and un-registering PowerShell subsyste…
 ```
 
 Use the [Enable-ExperimentalFeature][18] and [Disable-ExperimentalFeature][17] cmdlets to enable or
@@ -49,7 +48,7 @@ disable a feature. You must start a new PowerShell session for this change to be
 following command to enable the `PSCommandNotFoundSuggestion` feature:
 
 ```powershell
-Enable-ExperimentalFeature PSCommandNotFoundSuggestion
+Enable-ExperimentalFeature PSFeedbackProvider
 ```
 
 ```Output
@@ -85,15 +84,15 @@ Legend
 |                        Name                         |         7.4         |         7.5         |    7.6 (preview)    |
 | --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: |
 | [PSCommandNotFoundSuggestion][06]                   | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
-| [PSDesiredStateConfiguration.InvokeDscResource][08] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSSubsystemPluginModel][15]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSLoadAssemblyFromNativeCode][10]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSFeedbackProvider][09]                            | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSModuleAutoLoadSkipOfflineFiles][11]              | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
 | [PSCommandWithArgs][07]                             | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
+| [PSDesiredStateConfiguration.InvokeDscResource][08] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSFeedbackProvider][09]                            | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSLoadAssemblyFromNativeCode][10]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSModuleAutoLoadSkipOfflineFiles][11]              | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
 | [PSNativeWindowsTildeExpansion][12]                 |                     | ![Experimental][02] | ![Experimental][02] |
 | [PSRedirectToVariable][13]                          |                     | ![Experimental][02] | ![Experimental][02] |
 | [PSSerializeJSONLongEnumAsNumber][14]               |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSSubsystemPluginModel][15]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
 
 ### PSCommandNotFoundSuggestion
 

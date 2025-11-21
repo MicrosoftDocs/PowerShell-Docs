@@ -1,6 +1,6 @@
 ---
 description: PowerShell on Arm-based systems
-ms.date: 08/28/2024
+ms.date: 11/21/2025
 title: PowerShell on Arm-based systems
 ---
 
@@ -13,17 +13,16 @@ the versions that have been tested.
 It may be possible to use Arm-based versions of PowerShell on other Linux distributions and
 versions, but we don't officially support it.
 
-## PowerShell 7.4
+## PowerShell 7
 
-Arm versions of PowerShell 7.4 can be installed on the following platforms:
+Arm versions of PowerShell 7 can be installed on the following platforms:
 
 |                OS                | Architectures |               Lifecycle                |
 | -------------------------------- | ------------- | -------------------------------------- |
 | Windows 11 Client Version 22000+ | Arm64         | [Windows][05]                          |
-| Windows 10 Client Version 1607+  | Arm64         | [Windows][05]                          |
 | macOS                            | Arm64         | [macOS][04]                            |
 | Raspberry Pi OS (Debian 12)      | Arm32         | [Raspberry Pi OS][08] and [Debian][06] |
-| Ubuntu 22.04, 20.04              | Arm32         | [Ubuntu][07]                           |
+| Ubuntu 22.04                     | Arm32         | [Ubuntu][07]                           |
 
 Support is based on the [.NET 8.0 Supported OS Lifecycle Policy][03].
 
@@ -33,9 +32,8 @@ For installation instructions, see the following articles:
 
 Windows
 
-- [Windows 10 on Arm][13]
-- [Windows 10 IoT Enterprise][12]
-- [Windows 10 IoT Core][11]
+- [Windows 11 on Arm][13]
+- [Windows 11 IoT][11]
 
 Linux - install from the binary archives
 
@@ -58,7 +56,6 @@ Raspberry Pi
 [07]: https://wiki.ubuntu.com/Releases
 [08]: https://www.raspberrypi.com/software/operating-systems/
 [09]: install-other-linux.md#binary-archives
-[10]: installing-powershell-on-macos.md
-[11]: installing-powershell-on-windows.md#deploying-on-windows-10-iot-core
-[12]: installing-powershell-on-windows.md#deploying-on-windows-10-iot-enterprise
-[13]: installing-powershell-on-windows.md#installing-the-zip-package
+[10]: install-powershell-on-macos.md
+[11]: install-powershell-on-windows-iot-nano.md#deploy-on-windows-11-iot
+[13]: install-powershell-on-windows.md#zip
