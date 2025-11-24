@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout Repository
         id: checkout_repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Write Report
         uses: ./.github/actions/reporting/versioned-content/v1
         with:
