@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Checkout Repository
         id: checkout_repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Verify Checklist
         id: verify_checklist
         uses: ./.github/actions/verification/checklist/v1
