@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout Repository
         id: checkout_repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Comment on Community PRs
         uses: ./.github/actions/commenting/expectations/v1
         with:
