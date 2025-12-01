@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 06/17/2024
+ms.date: 12/01/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
@@ -19,8 +19,8 @@ behavior. These preference variables work like the options in GUI-based
 systems.
 
 The preference variables affect the PowerShell operating environment and all
-commands run in the environment. In many cases, the cmdlets have parameters
-that you can use to override the preference behavior for a specific command.
+commands run in the environment. Some cmdlets have parameters that allow you to
+override the preference behavior for a specific command.
 
 The following table lists the preference variables and their default values.
 

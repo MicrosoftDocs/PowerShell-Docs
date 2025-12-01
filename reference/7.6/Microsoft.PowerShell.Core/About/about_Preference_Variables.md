@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 04/06/2024
+ms.date: 12/01/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
@@ -119,7 +119,8 @@ Cmdlets and functions are assigned a risk of **High**, **Medium**, or **Low**.
 When the value of the `$ConfirmPreference` variable is less than or equal to
 the risk assigned to a cmdlet or function, PowerShell automatically prompts you
 for confirmation before running the cmdlet or function. For more information
-about assigning a risk to cmdlets or functions, see [about_Functions_CmdletBindingAttribute][66].
+about assigning a risk to cmdlets or functions, see
+[about_Functions_CmdletBindingAttribute][66].
 
 If the value of the `$ConfirmPreference` variable is **None**, PowerShell never
 automatically prompts you before running a cmdlet or function.
@@ -167,11 +168,12 @@ Cmdlets and functions that might pose a risk to the system have a **Confirm**
 parameter that you can use to request or suppress confirmation for a single
 command.
 
-Most cmdlets and functions keep the default value of **Medium** for **ConfirmImpact**.
-`$ConfirmPreference` is set to **High** by default. Therefore, it's rare that commands
-automatically prompt for confirmation when users don't specify the **Confirm** parameter.
-To extend automatic confirmation prompting to more cmdlets and functions, set the value
-of `$ConfirmPreference` to **Medium** or **Low**.
+Most cmdlets and functions keep the default value of **Medium** for
+**ConfirmImpact**. `$ConfirmPreference` is set to **High** by default.
+Therefore, it's rare that commands automatically prompt for confirmation when
+users don't specify the **Confirm** parameter. To extend automatic confirmation
+prompting to more cmdlets and functions, set the value of `$ConfirmPreference`
+to **Medium** or **Low**.
 
 ### Examples
 
