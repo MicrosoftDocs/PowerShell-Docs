@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 11/06/2025
+ms.date: 12/01/2025
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -13,6 +13,40 @@ get started.
 
 <!-- Link references -->
 [01]: contributing/overview.md
+<!--------------------->
+
+## 2025-November
+
+Content updates
+
+- Retired the Windows PowerShell Programmer's Guide
+  - 82 out-of-date articles moved to the
+    [archive](/previous-versions/powershell/scripting/developer/prog-guide/windows-powershell-programmer-s-guide)
+    site
+- Retired the Windows PowerShell ISE Scripting Object Model
+  - 15 articles moved to the
+    [archive](/previous-versions/powershell/scripting/windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model)
+    site
+- Refactored the instructions for installing PowerShell on Windows
+  - Split out instructions for
+    [Install PowerShell on Windows IoT and Nano Server](/powershell/scripting/install/install-powershell-on-windows-iot-nano)
+
+GitHub stats
+
+- 20 PRs merged (2 from Community)
+- 34 issues opened (11 from Community)
+- 32 issues closed (9 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+| GitHub Id | PRs merged | Issues opened |
+| --------- | :--------: | :-----------: |
+| alirobe   |     1      |               |
+| sleggy    |     1      |               |
+| iRon7     |            |       2       |
 
 ## 2025-October
 
