@@ -2,7 +2,7 @@
 description: >
   This article shows how to run commands in PowerShell.
 title: Running commands in the shell
-ms.date: 11/21/2025
+ms.date: 12/01/2025
 ---
 # Running commands in the shell
 
@@ -70,17 +70,17 @@ adjust how you pass those strings.
 
 For more information, see the following articles:
 
-- [about_Parsing][1]
-- [about_Quoting_Rules][2]
+- [about_Parsing][03]
+- [about_Quoting_Rules][06]
 
 PowerShell 7.2 introduced a new experimental feature `PSNativeCommandArgumentPassing` that improved
-native command handling. For more information, see [`$PSNativeCommandArgumentPassing`][3].
+native command handling. For more information, see [`$PSNativeCommandArgumentPassing`][04].
 
 ### Handling output and errors
 
 PowerShell also has several more output streams than other shells. The `bash` and `cmd.exe` shells
 have **stdout** and **stderr**. PowerShell has six output streams. For more information, see
-[about_Redirection][4] and [about_Output_Streams][5].
+[about_Redirection][07] and [about_Output_Streams][02].
 
 In general, the output sent to **stdout** by a native command is sent to the **Success** stream in
 PowerShell. Output sent to **stderr** by a native command is sent to the **Error** stream in
@@ -98,8 +98,8 @@ behavior can cause confusion in PowerShell when looking through errors and the a
 information can be lost if `$ErrorActionPreference` is set to a state that mutes the output.
 
 PowerShell 7.3 added a new experimental feature `PSNativeCommandErrorActionPreference` that allows
-you to control whether output to `stderr` is treated as an error. For more information, see
-[`$PSNativeCommandUseErrorActionPreference`][6].
+you to control how you handle non-zero exit codes from native commands. For more information, see
+[`$PSNativeCommandUseErrorActionPreference`][05].
 
 ## Running PowerShell commands
 
@@ -112,7 +112,7 @@ the PowerShell scripting language itself.
 The PowerShell **call operator** (`&`) lets you run commands that are stored in variables and
 represented by strings or script blocks. You can use the operator to run any native command or
 PowerShell command. This is useful in a script when you need to dynamically construct the
-command-line parameters for a native command. For more information, see the [call operator][7].
+command-line parameters for a native command. For more information, see the [call operator][01].
 
 The `Start-Process` cmdlet can be used to run native commands, but should only be used when you need
 to control how the command is executed. The cmdlet has parameters to support the following
@@ -136,7 +136,7 @@ $processOptions = @{
 Start-Process @processOptions
 ```
 
-For more information, see [Start-Process][8].
+For more information, see [Start-Process][09].
 
 On Windows, the `Invoke-Item` cmdlet performs the default action for the specified item. For
 example, it runs an executable file or opens a document file using the application associated with
@@ -149,15 +149,15 @@ The following example opens the PowerShell source code repository in your defaul
 Invoke-Item https://github.com/PowerShell/PowerShell
 ```
 
-For more information, see [Invoke-Item][9].
+For more information, see [Invoke-Item][08].
 
 <!-- link references -->
-[1]: /powershell/module/microsoft.powershell.core/about/about_parsing#passing-arguments-to-native
-[2]: /powershell/module/microsoft.powershell.core/about/about_quoting_rules
-[3]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommandargumentpassing
-[4]: /powershell/module/microsoft.powershell.core/about/about_redirection
-[5]: /powershell/module/microsoft.powershell.core/about/about_output_streams
-[6]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommanduseerroractionpreference
-[7]: /powershell/module/microsoft.powershell.core/about/about_operators#call-operator-
-[8]: /powershell/module/microsoft.powershell.management/start-process
-[9]: /powershell/module/microsoft.powershell.management/invoke-item
+[01]: /powershell/module/microsoft.powershell.core/about/about_operators#call-operator-
+[02]: /powershell/module/microsoft.powershell.core/about/about_output_streams
+[03]: /powershell/module/microsoft.powershell.core/about/about_parsing#passing-arguments-to-native
+[04]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommandargumentpassing
+[05]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommanduseerroractionpreference
+[06]: /powershell/module/microsoft.powershell.core/about/about_quoting_rules
+[07]: /powershell/module/microsoft.powershell.core/about/about_redirection
+[08]: /powershell/module/microsoft.powershell.management/invoke-item
+[09]: /powershell/module/microsoft.powershell.management/start-process
