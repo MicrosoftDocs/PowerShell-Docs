@@ -30,9 +30,9 @@ The process creation has a few steps:
 
 1. Create a Host window
 
-   On Windows, the Host can be Windows Terminal, the Windows Console Host, the ISE, Visual Studio
-   Code, or any other hosting application. Problems that occur here are usually unrelated to
-   PowerShell, but also extremely rare.
+   On Windows, the Host can be Windows Terminal, the Windows Console Host, Visual Studio Code, or
+   any other hosting application. Problems that occur here are usually unrelated to PowerShell, but
+   also extremely rare.
 
 1. Start the process host process
 
@@ -169,7 +169,7 @@ understand it's trying to do.
 - Determine where the delay occurs
 
   If there are profile scripts for the **AllUsers** scope, you might not be able to edit those
-  files. Work with your system administrator to review those files. For the **CurrentUse** scope
+  files. Work with your system administrator to review those files. For the **CurrentUser** scope
   profile scripts, edit those files to add timing messages to help you find where the delay occurs.
   For example, you can add the following line at various points in your profile script.
 
@@ -214,7 +214,7 @@ understand it's trying to do.
 
 ### PowerShell 7 starts slowing in an isolated network
 
-In this scenario, your Windows computer in on a network that is not connected to the internet. For
+In this scenario, your Windows computer is on a network that is not connected to the internet. For
 interactive PowerShell sessions, PowerShell loads the PSReadLine module automatically. PSReadLine is
 a signed module. PowerShell must verify the digital signature of the module. This verification can
 cause delays in a disconnected environment. To test this theory, start PowerShell 7 in
