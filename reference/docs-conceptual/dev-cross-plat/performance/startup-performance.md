@@ -208,13 +208,12 @@ understand it's trying to do.
 
   Steve Lee, the PowerShell Dev Manager, has a blog post that describes how to measure the
   performance of your profile. It includes instructions for establishing a baseline for performance,
-  how to get detailed timing information, and ways to optimize your profile.
+  how to get detailed timing information, and ways to optimize your profile. See
+  [Optimizing your $Profile][05].
 
-  See [Optimizing your $Profile][05].
+### PowerShell 7 starts slowly in an isolated network
 
-### PowerShell 7 starts slowing in an isolated network
-
-In this scenario, your Windows computer is on a network that is not connected to the internet. For
+In this scenario, your Windows computer is on a network that's not connected to the internet. For
 interactive PowerShell sessions, PowerShell loads the PSReadLine module automatically. PSReadLine is
 a signed module. PowerShell must verify the digital signature of the module. This verification can
 cause delays in a disconnected environment. To test this theory, start PowerShell 7 in
