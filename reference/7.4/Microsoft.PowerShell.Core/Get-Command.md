@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 08/19/2025
+ms.date: 12/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -429,27 +429,17 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-The value can be a module name, a full module specification, or a path to a module file.
-
-When the value is a path, the path can be fully qualified or relative. A relative path is resolved
-relative to the script that contains the using statement.
-
-When the value is a name or module specification, PowerShell searches the **PSModulePath** for the
-specified module.
+The value can be a module name or a full module specification. PowerShell searches the
+**PSModulePath** for the specified module.
 
 A module specification is a hashtable that has the following keys.
 
 - `ModuleName` - **Required** Specifies the module name.
-
 - `GUID` - **Optional** Specifies the GUID of the module.
-
 - It's also **Required** to specify at least one of the three below keys.
-
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
-
   - `MaximumVersion` - Specifies the maximum acceptable version of the module.
-
-  - `RequiredVersion` - Specifies an exact, required version of the module. This can't be used with
+  - `RequiredVersion` - Specifies an exact, required version of the module. You can't use this with
     the other Version keys.
 
 You can't specify the **FullyQualifiedModule** parameter in the same command as a **Module**
