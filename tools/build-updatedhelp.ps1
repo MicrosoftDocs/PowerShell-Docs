@@ -37,7 +37,7 @@ $docToolsPath = New-Item (Join-Path $tempDir "doctools") -ItemType Directory -Fo
 
 $pandoc = Get-Command pandoc.exe -ErrorAction SilentlyContinue
 if ($pandoc) {
-    $version = (& $pandoc.Source --version | Select-String -Pattern 'pandoc\.exe').Line.Split(' ')[-1]
+    $version = (& $pandoc.Source --version | Select-String -Pattern 'pandoc(\.exe|\s)').Line.Split(' ')[-1]
     if ($version -ge $panDocVersion) {
         Write-Host "Found Pandoc version $version."
         $pandocExePath = $pandoc.Source
@@ -165,7 +165,7 @@ Get-ChildItem $VersionFolder -Directory | ForEach-Object -Process {
         if ($cabInfo.Count -eq 8) { $cabInfo[-1].FullName }
     }
     catch {
-        Write-Error -Message "PlatyPS failure: $ModuleName -- $Version" -Exception $_
+        Write-Error -Message "PlatyPS failure: $ModuleName -- $Version" -Exception $_.Exception
     }
 }
 
