@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell uses character encoding for input and output of string data.
 Locale: en-US
-ms.date: 10/21/2025
+ms.date: 12/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Character_Encoding
@@ -208,7 +208,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
 > [!IMPORTANT]
 > Putting this command in your PowerShell profile makes the preference a
-> session-global setting that affects all commands and scripts that do not
+> session-global setting that affects all commands and scripts that don't
 > explicitly specify an encoding.
 >
 > Similarly, you should include such commands in your scripts or modules that
