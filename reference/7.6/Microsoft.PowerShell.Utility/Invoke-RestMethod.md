@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/05/2025
+ms.date: 12/04/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -329,8 +329,8 @@ pipe.
 Invoke-RestMethod -Uri 'http://localhost/status' -PipeName 'MyLocalHttpPipe'
 ```
 
-The host portion of the `-Uri` isn't used for network routing when `-PipeName` is supplied, but it
-is included in the `Host` header of the HTTP request.
+The hostname portion of the **Uri** is ignored for network routing when you supply **PipeName**, but
+it's included in the `Host` header of the HTTP request.
 
 ## PARAMETERS
 
@@ -1369,15 +1369,15 @@ Specifies the name of a local Windows named pipe to use instead of a TCP socket 
 HTTP request. This lets you communicate with services that expose an HTTP-compatible protocol over
 a named pipe without opening a TCP port.
 
-Only the local machine is supported. Remote / UNC pipe names aren't supported. Supplying a value
-that doesn't correspond to a listening named pipe endpoint results in a connection failure.
+Only the local machine is supported. Remote UNC pipe names aren't supported. Supplying a value that
+doesn't correspond to a listening named pipe endpoint results in a connection failure.
 
-When `-PipeName` is specified, the `-Uri` still determines the request path, query, and scheme used
-to build the HTTP request. The host portion of the `-Uri` is ignored for network routing because
-the named pipe transport is always local, but it still appears in headers such as `Host`.
+When you specify **PipeName**, the hostname portion of the **Uri** is ignored for network routing.
+The **Uri** still determines the request path, query, and scheme used to build the HTTP request. The
+named pipe transport is always local, but the hostname still appears in HTTP headers.
 
-Security and access control for the pipe are governed by the server that created the pipe. The
-client (this cmdlet) doesn't modify pipe ACLs.
+The server that creates the pipe governs security and access control for the pipe. This cmdlet,
+acting as the client, doesn't modify pipe ACLs.
 
 This parameter was added in PowerShell 7.6.
 
