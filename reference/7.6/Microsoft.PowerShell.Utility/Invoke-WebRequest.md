@@ -982,6 +982,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PipeName
+
+Specifies the name of a local Windows named pipe to use instead of a TCP socket when sending the
+HTTP request. This lets you communicate with services that expose an HTTP-compatible protocol over
+a named pipe without opening a TCP port.
+
+Only the local machine is supported. Remote UNC pipe names aren't supported. Supplying a value that
+doesn't correspond to a listening named pipe endpoint results in a connection failure.
+
+When you specify **PipeName**, the hostname portion of the **Uri** is ignored for network routing.
+The **Uri** still determines the request path, query, and scheme used to build the HTTP request. The
+named pipe transport is always local, but the hostname still appears in HTTP headers.
+
+The server that creates the pipe governs security and access control for the pipe. This cmdlet,
+acting as the client, doesn't modify pipe ACLs.
+
+The **PipeName** parameter is supported only on Windows operating systems. The values for
+**UnixSocket** and **PipeName** are mutually exclusive. If you specify both parameters, the cmdlet
+only uses the value of **UnixSocket**.
+
+This parameter was added in PowerShell 7.6.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PreserveAuthorizationOnRedirect
 
 Indicates the cmdlet should preserve the `Authorization` header, when present, across redirections.
@@ -1344,36 +1378,6 @@ This parameter was added in PowerShell 7.4.
 
 ```yaml
 Type: System.Net.Sockets.UnixDomainSocketEndPoint
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PipeName
-
-Specifies the name of a local Windows named pipe to use instead of a TCP socket when sending the
-HTTP request. This lets you communicate with services that expose an HTTP-compatible protocol over
-a named pipe without opening a TCP port.
-
-Only the local machine is supported. Remote UNC pipe names aren't supported. Supplying a value that
-doesn't correspond to a listening named pipe endpoint results in a connection failure.
-
-When you specify **PipeName**, the hostname portion of the **Uri** is ignored for network routing.
-The **Uri** still determines the request path, query, and scheme used to build the HTTP request. The
-named pipe transport is always local, but the hostname still appears in HTTP headers.
-
-The server that creates the pipe governs security and access control for the pipe. This cmdlet,
-acting as the client, doesn't modify pipe ACLs.
-
-This parameter was added in PowerShell 7.6.
-
-```yaml
-Type: System.String
 Parameter Sets: (All)
 Aliases:
 
