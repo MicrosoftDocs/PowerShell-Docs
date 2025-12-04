@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 10/21/2025
+ms.date: 12/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
@@ -977,7 +977,7 @@ The valid values are as follows:
 
 ## `$PSApplicationOutputEncoding`
 
-This variable was introduced in PowerShell 7.6-preview.
+This variable was introduced in PowerShell 7.6-preview.6
 
 Determines the character encoding method that PowerShell uses when it reads
 text from an external application on the stdout or stderr pipe.
