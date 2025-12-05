@@ -216,7 +216,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 > behave the same way even when run by another user, on a different computer,
 > or in a different version of PowerShell.
 
-The automatic variables `$OutputEncoding` affects the encoding PowerShell uses
+The automatic variable `$OutputEncoding` affects the encoding PowerShell uses
 to when sending data to external programs. The `$PSApplicationOutputEncoding`
 variable affects the encoding PowerShell uses to read data from external
 programs. They have no effect on the encoding that the output redirection
