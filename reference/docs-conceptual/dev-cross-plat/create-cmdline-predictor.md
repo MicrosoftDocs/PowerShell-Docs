@@ -1,6 +1,6 @@
 ---
 description: This article describes how to create a command-line predictor to help with command completion in PowerShell.
-ms.date: 12/01/2022
+ms.date: 12/08/2025
 title: How to create a command-line predictor
 ---
 # How to create a command-line predictor

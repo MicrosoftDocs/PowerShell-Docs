@@ -1,6 +1,6 @@
 ---
 description: PowerShell module authoring considerations
-ms.date: 11/16/2022
+ms.date: 12/08/2025
 title: PowerShell module authoring considerations
 ---
 

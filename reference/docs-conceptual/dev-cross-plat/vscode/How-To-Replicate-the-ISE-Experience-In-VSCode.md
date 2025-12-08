@@ -1,6 +1,6 @@
 ---
 description: How to replicate the ISE experience in Visual Studio Code
-ms.date: 11/16/2022
+ms.date: 12/08/2025
 title: How to replicate the ISE experience in Visual Studio Code
 ---
 
