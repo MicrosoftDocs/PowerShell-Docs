@@ -1,6 +1,6 @@
 ---
 description: This article describes how to create a feedback provider.
-ms.date: 11/14/2023
+ms.date: 12/08/2025
 title: How to create a feedback provider
 ---
 # How to create a feedback provider

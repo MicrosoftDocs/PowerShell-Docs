@@ -1,6 +1,5 @@
 ---
 description: When writing a binary PowerShell module in C#, it's natural to take dependencies on other packages or libraries to provide functionality.
-ms.custom: rjmholt
 ms.date: 08/08/2022
 title: Resolving PowerShell module assembly dependency conflicts
 ---
@@ -14,7 +13,7 @@ unrelated modules in the same PowerShell session.
 
 If you've had this problem, you've seen an error message like this:
 
-![Assembly load conflict error message][1]
+![Assembly load conflict error message][06]
 
 This article looks at some ways dependency conflicts occur in PowerShell and ways to mitigate
 dependency conflict issues. Even if you're not a module author, there are some tricks in here that
@@ -24,7 +23,7 @@ might help you with dependency conflicts occurring in modules that you use.
 
 In .NET, dependency conflicts occur when two versions of the same assembly are loaded into the same
 _Assembly Load Context_. This term means slightly different things on different .NET platforms,
-which is covered [later][2] in this article. This conflict is a common problem that occurs in any
+which is covered [later][17] in this article. This conflict is a common problem that occurs in any
 software where versioned dependencies are used.
 
 Conflict issues are compounded by the fact that a project almost never deliberately or directly
@@ -34,7 +33,7 @@ that each require a different version of the same dependency.
 For example, say your .NET application, `DuckBuilder`, brings in two dependencies, to perform parts
 of its functionality and looks like this:
 
-![Two dependencies of DuckBuilder rely on different versions of Newtonsoft.Json][3]
+![Two dependencies of DuckBuilder rely on different versions of Newtonsoft.Json][03]
 
 Because `Contoso.ZipTools` and `Fabrikam.FileHelpers` both depend on different versions of
 **Newtonsoft.Json**, there may be a dependency conflict depending on how each dependency is loaded.
@@ -45,7 +44,7 @@ In PowerShell, the dependency conflict issue is magnified because PowerShell's o
 loaded into the same shared context. This means the PowerShell engine and all loaded PowerShell
 modules must not have conflicting dependencies. A classic example of this is **Newtonsoft.Json**:
 
-![FictionalTools module depends on newer version of Newtonsoft.Json than PowerShell][4]
+![FictionalTools module depends on newer version of Newtonsoft.Json than PowerShell][04]
 
 In this example, the module `FictionalTools` depends on **Newtonsoft.Json** version `12.0.3`, which is
 a newer version of **Newtonsoft.Json** than `11.0.2` that ships in the example PowerShell.
@@ -66,7 +65,7 @@ assembly.
 
 This often looks like the following:
 
-![Two PowerShell modules require different versions of the Microsoft.Extensions.Logging dependency][5]
+![Two PowerShell modules require different versions of the Microsoft.Extensions.Logging dependency][05]
 
 In this case, the `FictionalTools` module requires a newer version of `Microsoft.Extensions.Logging`
 than the `FilesystemManager` module.
@@ -100,7 +99,7 @@ in each ALC.
 
 The semantics of assembly loading depend on both the .NET implementation (.NET Core vs .NET
 Framework) and the .NET API used to load a particular assembly. Rather than go into detail here,
-there are links in the [Further reading][6] section that go into great detail on how .NET assembly
+there are links in the [Further reading][16] section that go into great detail on how .NET assembly
 loading works in each .NET implementation.
 
 In this article we'll refer to the following mechanisms:
@@ -115,7 +114,7 @@ In this article we'll refer to the following mechanisms:
 ### Differences in .NET Framework vs .NET Core
 
 The way these APIs work has changed in subtle ways between .NET Core and .NET Framework, so it's
-worth reading through the included [links][7]. Importantly, Assembly Load Contexts and other
+worth reading through the included [links][16]. Importantly, Assembly Load Contexts and other
 assembly resolution mechanisms have changed between .NET Framework and .NET Core.
 
 In particular, .NET Framework has the following features:
@@ -132,7 +131,7 @@ In particular, .NET Framework has the following features:
   - The mysterious void that assemblies loaded with `Assembly.LoadFile(string path)` and
     `Assembly.Load(byte[] asmBytes)` live in
 
-For more information, see [Best Practices for Assembly Loading][8].
+For more information, see [Best Practices for Assembly Loading][12].
 
 .NET Core (and .NET 5+) has replaced this complexity with a simpler model:
 
@@ -338,7 +337,7 @@ In PowerShell, there are several ways to achieve this:
 
   Be aware that modules may not be compatible with or may work differently with Windows PowerShell.
 
-#### When out-of-process invocation should not be used
+#### When out-of-process invocation shouldn't be used
 
 As a module author, out-of-process command invocation is difficult to bake into a module and may
 have edge cases that cause issues. In particular, remoting and jobs may not be available in all
@@ -349,7 +348,7 @@ be applicable.
 As a module user, there are cases where out-of-process invocation won't work:
 
 - When PowerShell remoting is unavailable because you don't have privileges to use it or it
-  is not enabled.
+  isn't enabled.
 - When a particular .NET type is needed from output as input to a method or another command.
   Commands running over PowerShell remoting emit deserialized objects rather than strongly-typed
   .NET objects. This means that method calls and strongly typed APIs don't work with the output of
@@ -364,20 +363,20 @@ carefully.
 
 ### Loading through .NET Core Assembly Load Contexts
 
-[Assembly Load Contexts][9] (ALCs) were introduced in .NET Core 1.0 to specifically address the need
+[Assembly Load Contexts][31] (ALCs) were introduced in .NET Core 1.0 to specifically address the need
 to load multiple versions of the same assembly into the same runtime.
 
 Within .NET, they offer the most robust solution to the problem of loading conflicting versions of
-an assembly. However, custom ALCs are not available in .NET Framework. This means that this solution
+an assembly. However, custom ALCs aren't available in .NET Framework. This means that this solution
 only works in PowerShell 6 and above.
 
 Currently, the best example of using an ALC for dependency isolation in PowerShell is in PowerShell
 Editor Services, the language server for the PowerShell extension for Visual Studio Code. An
-[ALC is used][10] to prevent PowerShell Editor Services' own dependencies from clashing with those
+[ALC is used][24] to prevent PowerShell Editor Services' own dependencies from clashing with those
 in PowerShell modules.
 
 Implementing module dependency isolation with an ALC is conceptually difficult, but we will work
-through a minimal example. Imagine we have a simple module that is only intended to work in
+through a minimal example. Imagine we've a simple module that's only intended to work in
 PowerShell 7. The source code is organized as follows:
 
 ```
@@ -473,7 +472,7 @@ To mediate these two requirements, we must break up our module into two assembli
 
 Using this bridge concept, our new assembly situation looks like this:
 
-![Diagram representing AlcModule.Engine.dll bridging the two ALCs][11]
+![Diagram representing AlcModule.Engine.dll bridging the two ALCs][01]
 
 To make sure the default ALC's dependency probing logic doesn't resolve the dependencies to be
 loaded into the custom ALC, we need to separate these two parts of the module in different
@@ -610,7 +609,7 @@ namespace AlcModule.Cmdlets
             // all of *its* dependencies will be resolved
             // by the logic we defined for that ALC's implementation.
             //
-            // Note that we are safe in our assumption that the name is enough
+            // Note that we're safe in our assumption that the name is enough
             // to distinguish our assembly here,
             // since it's unique to our module.
             // There should be no other AlcModule.Engine.dll on the system.
@@ -633,7 +632,7 @@ namespace AlcModule.Cmdlets
 With the new implementation, take a look at the sequence of calls that occurs when the
 module is loaded and `Test-AlcModule` is run:
 
-![Sequence diagram of calls using the custom ALC to load dependencies][12]
+![Sequence diagram of calls using the custom ALC to load dependencies][02]
 
 Some points of interest are:
 
@@ -757,15 +756,15 @@ Get-ChildItem -Path "$cmdletsSrc/bin/$Configuration/$netcore/publish/" |
     ForEach-Object { Copy-Item -Path $_.FullName -Destination $outDir }
 ```
 
-Finally, we have a general way to isolate our module's dependencies in an Assembly Load Context that
+Finally, we've a general way to isolate our module's dependencies in an Assembly Load Context that
 remains robust over time as more dependencies are added.
 
-For a more detailed example, go to this [GitHub repository][13]. This example demonstrates how to
+For a more detailed example, go to this [GitHub repository][26]. This example demonstrates how to
 migrate a module to use an ALC, while keeping that module working in .NET Framework. It also shows
 how to use .NET Standard and PowerShell Standard to simplify the core implementation.
 
-This solution is also used by the [Bicep PowerShell module][14], and the blog post
-[Resolving PowerShell Module Conflicts][15] is another good read about this solution.
+This solution is also used by the [Bicep PowerShell module][25], and the blog post
+[Resolving PowerShell Module Conflicts][28] is another good read about this solution.
 
 ### Assembly resolving handler for side-by-side loading
 
@@ -780,21 +779,21 @@ this solution:
 
 There is a simplified solution to achieve side-by-side assembly loading, by hooking up a `Resolving`
 event with a custom `AssemblyLoadContext` instance. Using this method is easier for the module
-author but has two limitations. Check out the [PowerShell-ALC-Samples][16] repository for sample
+author but has two limitations. Check out the [PowerShell-ALC-Samples][19] repository for sample
 code and documentation that describes these limitations and detailed scenarios for this solution.
 
 > [!IMPORTANT]
-> Do not use `Assembly.LoadFile` for the dependency isolation purpose. Using `Assembly.LoadFile`
+> Don't use `Assembly.LoadFile` for the dependency isolation purpose. Using `Assembly.LoadFile`
 > creates a _Type Identity_ issue when another module loads a different version of the same assembly
 > into the default `AssemblyLoadContext`. While this API loads an assembly to a separate
 > `AssemblyLoadContext` instance, the assemblies loaded are discoverable by PowerShell's
-> [type resolution code][33]. Therefore, there could be duplicate types with the same fully qualifed
+> [type resolution code][21]. Therefore, there could be duplicate types with the same fully qualifed
 > type name available from two different ALCs.
 
 ### Custom Application Domains
 
 The final and most extreme option for assembly isolation is to use custom **Application Domains**.
-**Application Domains** are only available in .NET Framework. They are used to provide in-process
+**Application Domains** are only available in .NET Framework. They're used to provide in-process
 isolation between parts of a .NET application. One of the uses is to isolate assembly loads from
 each other within the same process.
 
@@ -811,15 +810,15 @@ mentioning as a possibility, they're not recommended.
 
 If you're interested in trying to use a custom application domain, the following links might help:
 
-- [Conceptual documentation on Application Domains][17]
-- [Examples for using Application Domains][18]
+- [Conceptual documentation on Application Domains][09]
+- [Examples for using Application Domains][10]
 
 ## Solutions for dependency conflicts that don't work for PowerShell
 
 Finally, we'll address some possibilities that come up when researching .NET dependency conflicts in
 .NET that can look promising, but generally won't work for PowerShell.
 
-These solutions have the common theme that they are changes to deployment configurations for an
+These solutions have the common theme that they're changes to deployment configurations for an
 environment where you control the application and possibly the entire machine. These solutions are
 oriented toward scenarios like web servers and other applications deployed to server environments,
 where the environment is intended to host the application and is free to be configured by the
@@ -841,12 +840,12 @@ Two issues with this for PowerShell are:
 
 - .NET Core doesn't support `app.config`, so this solution only applies to `powershell.exe`.
 - `powershell.exe` is a shared application that lives in the `System32` directory. It's likely that
-  your module won't be able to modify its contents on many systems. Even if it can, modifying
-  the `app.config` could break an existing configuration or affect the loading of other modules.
+  your module won't be able to modify its contents on many systems. Even if it can, modifying the
+  `app.config` could break an existing configuration or affect the loading of other modules.
 
 ### Setting `codebase` with app.config
 
-For the same reasons, trying to configure the `codebase` setting in `app.config` is not going to
+For the same reasons, trying to configure the `codebase` setting in `app.config` isn't going to
 work in PowerShell modules.
 
 ### Installing dependencies to the Global Assembly Cache (GAC)
@@ -856,7 +855,7 @@ the GAC, so that different versions can be loaded side-by-side from the GAC.
 
 Again, for PowerShell modules, the chief issues here are:
 
-- The GAC only applies to .NET Framework, so this does not help in PowerShell 6 and above.
+- The GAC only applies to .NET Framework, so this doesn't help in PowerShell 6 and above.
 - Installing assemblies to the GAC is a modification of global machine state and may cause
   side-effects in other applications or to other modules. It may also be difficult to do correctly,
   even when your module has the required access privileges. Getting it wrong could cause serious,
@@ -867,52 +866,50 @@ Again, for PowerShell modules, the chief issues here are:
 There's plenty more to read on .NET assembly version dependency conflicts. Here are some nice
 jumping off points:
 
-- [.NET: Assemblies in .NET][19]
-- [.NET Core: The managed assembly loading algorithm][20]
-- [.NET Core: Understanding System.Runtime.Loader.AssemblyLoadContext][21]
-- [.NET Core: Discussion about side-by-side assembly loading solutions][22]
-- [.NET Framework: Redirecting assembly versions][23]
-- [.NET Framework: Best practices for assembly loading][24]
-- [.NET Framework: How the runtime locates assemblies][25]
-- [.NET Framework: Resolve assembly loads][26]
-- [Stack Overflow: Assembly binding redirect, how and why?][27]
-- [PowerShell: Discussion about implementing AssemblyLoadContexts][28]
-- [PowerShell: `Assembly.LoadFile()` doesn't load into default AssemblyLoadContext][29]
+- [.NET: Assemblies in .NET][14]
+- [.NET Core: The managed assembly loading algorithm][07]
+- [.NET Core: Understanding System.Runtime.Loader.AssemblyLoadContext][08]
+- [.NET Core: Discussion about side-by-side assembly loading solutions][13471]
+- [.NET Framework: Redirecting assembly versions][11]
+- [.NET Framework: Best practices for assembly loading][12]
+- [.NET Framework: How the runtime locates assemblies][13]
+- [.NET Framework: Resolve assembly loads][15]
+- [Stack Overflow: Assembly binding redirect, how and why?][29]
+- [PowerShell: Discussion about implementing AssemblyLoadContexts][11571]
+- [PowerShell: `Assembly.LoadFile()` doesn't load into default AssemblyLoadContext][12052]
 - [Rick Strahl: When does a .NET assembly dependency get loaded?][30]
-- [Jon Skeet: Summary of versioning in .NET][31]
-- [Nate McMaster: Deep dive into .NET Core primitives][32]
+- [Jon Skeet: Summary of versioning in .NET][18]
+- [Nate McMaster: Deep dive into .NET Core primitives][27]
 
 <!-- link references -->
-[1]: ./media/resolving-dependency-conflicts/moduleconflict.png
-[2]: #powershell-and-net
-[3]: ./media/resolving-dependency-conflicts/dep-conflict.jpg
-[4]: ./media/resolving-dependency-conflicts/engine-conflict.jpg
-[5]: ./media/resolving-dependency-conflicts/mod-conflict.jpg
-[6]: #further-reading
-[7]: #further-reading
-[8]: /dotnet/framework/deployment/best-practices-for-assembly-loading
-[9]: /dotnet/api/system.runtime.loader.assemblyloadcontext
-[10]: https://github.com/PowerShell/PowerShellEditorServices/blob/master/src/PowerShellEditorServices.Hosting/Internal/PsesLoadContext.cs
-[11]: ./media/resolving-dependency-conflicts/alc-diagram.jpg
-[12]: ./media/resolving-dependency-conflicts/alc-sequence.png
-[13]: https://github.com/rjmholt/ModuleDependencyIsolationExample
-[14]: https://github.com/PSBicep/PSBicep
-[15]: https://pipe.how/get-assemblyloadcontext/
-[16]: https://github.com/daxian-dbw/PowerShell-ALC-Samples
-[17]: /dotnet/framework/app-domains/application-domains
-[18]: /dotnet/framework/app-domains/use
-[19]: /dotnet/standard/assembly/
-[20]: /dotnet/core/dependency-loading/loading-managed
-[21]: /dotnet/core/dependency-loading/understanding-assemblyloadcontext
-[22]: https://github.com/dotnet/runtime/issues/13471
-[23]: /dotnet/framework/configure-apps/redirect-assembly-versions
-[24]: /dotnet/framework/deployment/best-practices-for-assembly-loading
-[25]: /dotnet/framework/deployment/how-the-runtime-locates-assemblies
-[26]: /dotnet/standard/assembly/resolve-loads
-[27]: https://stackoverflow.com/questions/43365736/assembly-binding-redirect-how-and-why
-[28]: https://github.com/PowerShell/PowerShell/issues/11571
-[29]: https://github.com/PowerShell/PowerShell/issues/12052
+[01]: ./media/resolving-dependency-conflicts/alc-diagram.jpg
+[02]: ./media/resolving-dependency-conflicts/alc-sequence.png
+[03]: ./media/resolving-dependency-conflicts/dep-conflict.jpg
+[04]: ./media/resolving-dependency-conflicts/engine-conflict.jpg
+[05]: ./media/resolving-dependency-conflicts/mod-conflict.jpg
+[06]: ./media/resolving-dependency-conflicts/moduleconflict.png
+[07]: /dotnet/core/dependency-loading/loading-managed
+[08]: /dotnet/core/dependency-loading/understanding-assemblyloadcontext
+[09]: /dotnet/framework/app-domains/application-domains
+[10]: /dotnet/framework/app-domains/use
+[11]: /dotnet/framework/configure-apps/redirect-assembly-versions
+[12]: /dotnet/framework/deployment/best-practices-for-assembly-loading
+[13]: /dotnet/framework/deployment/how-the-runtime-locates-assemblies
+[14]: /dotnet/standard/assembly/
+[15]: /dotnet/standard/assembly/resolve-loads
+[16]: #further-reading
+[17]: #powershell-and-net
+[18]: https://codeblog.jonskeet.uk/2019/06/30/versioning-limitations-in-net/
+[19]: https://github.com/daxian-dbw/PowerShell-ALC-Samples
+[21]: https://github.com/PowerShell/PowerShell/blob/918bb8c952af1d461abfc98bc709a1d359168a1c/src/System.Management.Automation/utils/ClrFacade.cs#L56-L61
+[24]: https://github.com/PowerShell/PowerShellEditorServices/blob/master/src/PowerShellEditorServices.Hosting/Internal/PsesLoadContext.cs
+[25]: https://github.com/PSBicep/PSBicep
+[26]: https://github.com/rjmholt/ModuleDependencyIsolationExample
+[27]: https://natemcmaster.com/blog/2017/12/21/netcore-primitives/
+[28]: https://pipe.how/get-assemblyloadcontext/
+[29]: https://stackoverflow.com/questions/43365736/assembly-binding-redirect-how-and-why
 [30]: https://weblog.west-wind.com/posts/2012/Nov/03/Back-to-Basics-When-does-a-NET-Assembly-Dependency-get-loaded
-[31]: https://codeblog.jonskeet.uk/2019/06/30/versioning-limitations-in-net/
-[32]: https://natemcmaster.com/blog/2017/12/21/netcore-primitives/
-[33]: https://github.com/PowerShell/PowerShell/blob/918bb8c952af1d461abfc98bc709a1d359168a1c/src/System.Management.Automation/utils/ClrFacade.cs#L56-L61
+[31]: xref:System.Runtime.Loader.AssemblyLoadContext
+[11571]: https://github.com/PowerShell/PowerShell/issues/11571
+[12052]: https://github.com/PowerShell/PowerShell/issues/12052
+[13471]: https://github.com/dotnet/runtime/issues/13471
