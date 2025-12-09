@@ -1,15 +1,15 @@
 ---
 description: Remoting in PowerShell using WSMan
-ms.date: 01/27/2025
+ms.date: 12/09/2025
 title: Using WS-Management (WSMan) Remoting in PowerShell
 ---
 # Using WS-Management (WSMan) Remoting in PowerShell
 
 ## Enabling PowerShell remoting
 
-To enable PowerShell remoting run the `Enable-PSRemoting` cmdlet in an elevated PowerShell session.
+To enable PowerShell remoting, run the `Enable-PSRemoting` cmdlet in an elevated PowerShell session.
 Running `Enable-PSRemoting` configures a remoting endpoint for the specific installation version
-that you are running the cmdlet in. For example, when you run `Enable-PSRemoting` while running
+that you're running the cmdlet in. For example, when you run `Enable-PSRemoting` while running
 PowerShell 7.4, PowerShell creates a remoting endpoint runs PowerShell 7.4. If you run
 `Enable-PSRemoting` while running PowerShell 7-preview, PowerShell creates a remoting endpoint that
 runs PowerShell 7-preview. You can create multiple remoting endpoints for different versions of that
@@ -41,22 +41,13 @@ of Windows.
 ## WSMan remoting isn't supported on non-Windows platforms
 
 Since the release of PowerShell 6, support for remoting over WS-Management (WSMan) on non-Windows
-platforms has only been available to a limited set of Linux distributions. All versions of those
-distributions that supported WSMan are no longer supported by the Linux vendors that created them.
+platforms is only available to a limited set of Linux distributions. On non-Windows, WSMan relied on
+the [Open Management Infrastructure (OMI)][02] project. The OMI WSMan client depends on **OpenSSL
+1.0**. All Linux distributions use **OpenSSL 2.0**, which isn't backward-compatible. There are no
+supported distributions that have the dependencies needed for the OMI WSMan client to work.
 
-On non-Windows, WSMan relied on the [Open Management Infrastructure (OMI)][02] project, which no
-longer supports PowerShell remoting. The OMI WSMan client is dependent on **OpenSSL 1.0**. Most
-Linux distributions have moved to **OpenSSL 2.0**, which isn't backward-compatible. At this time,
-there is no supported distribution that has the dependencies needed for the OMI WSMan client to
-work.
-
-The outdated libraries and supporting code have been removed for non-Windows platforms. WSMan-based
-remoting is still supported between Windows systems. Remoting over SSH is supported for all
-platforms. For more information, see [PowerShell remoting over SSH][05].
-
-> [!NOTE]
-> Users may be able to get WSMan remoting to work using the [PSWSMan][04] module. This module isn't
-> supported or maintained by Microsoft.
+WSMan-based remoting is still supported between Windows systems. Remoting over SSH is supported for
+all platforms. For more information, see [PowerShell remoting over SSH][05].
 
 ## Further reading
 

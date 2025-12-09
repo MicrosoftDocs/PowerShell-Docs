@@ -1,6 +1,6 @@
 ---
 description: This article explains how App Control for Business works to secure PowerShell and the restrictions it imposes.
-ms.date: 09/19/2024
+ms.date: 12/09/2025
 title: How App Control for Business works with PowerShell
 ---
 # How App Control works with PowerShell
@@ -25,11 +25,11 @@ All versions of PowerShell (v5.1 - v7.x) support this App Control policy detecti
 
 ### Latest App Control policy enforcement detection
 
-App Control introduced new APIs in recent versions of Windows. Beginning with version 7.3, PowerShell uses
-the new `WldpCanExecuteFile` API to decide how a file should be handled. Windows PowerShell 5.1
-doesn't support this new API. The new API takes precedence over the legacy API for individual files.
-However, PowerShell continues to use the legacy API to get the system wide policy configuration. If
-the new API isn't available, PowerShell falls back to the old API behavior.
+App Control introduced new APIs in recent versions of Windows. Beginning with version 7.3,
+PowerShell uses the new `WldpCanExecuteFile` API to decide how a file should be handled. Windows
+PowerShell 5.1 doesn't support this new API. The new API takes precedence over the legacy API for
+individual files. However, PowerShell continues to use the legacy API to get the system wide policy
+configuration. If the new API isn't available, PowerShell falls back to the old API behavior.
 
 The new API provides the following information for each file:
 
@@ -54,18 +54,18 @@ this mode, see the [PowerShell restrictions under lockdown policy][02] section o
 
 ### Noninteractive mode running under policy enforcement
 
-When PowerShell runs a script or loads a module, it uses the App Control API to get the policy enforcement
-for the file.
+When PowerShell runs a script or loads a module, it uses the App Control API to get the policy
+enforcement for the file.
 
-PowerShell version 7.3 or higher uses the `WldpCanExecuteFile` API if available. This API returns one
-of the following results:
+PowerShell version 7.3 or higher uses the `WldpCanExecuteFile` API if available. This API returns
+one of the following results:
 
-- `WLDP_CAN_EXECUTE_ALLOWED`: The file is approved by policy and is used in `FullLanguage` mode with
-  a few restrictions.
-- `WLDP_CAN_EXECUTE_BLOCKED`: The file isn't approved by policy. PowerShell throws an error when the
+- `WLDP_CAN_EXECUTE_ALLOWED`: The policy allows the file for use in `FullLanguage` mode with a few
+  restrictions.
+- `WLDP_CAN_EXECUTE_BLOCKED`: The policy disallows the file. PowerShell throws an error when the
   file is run or loaded.
-- `WLDP_CAN_EXECUTE_REQUIRE_SANDBOX`: The file isn't approved by the policy but it can still be run
-  or loaded in `ConstrainedLanguage` mode.
+- `WLDP_CAN_EXECUTE_REQUIRE_SANDBOX`: The policy doesn't approve the file, but it can be run or
+  loaded in `ConstrainedLanguage` mode.
 
 In Windows PowerShell 5.1 or if `WldpCanExecuteFile` API isn't available, PowerShell's per file
 behavior is:
@@ -77,7 +77,7 @@ behavior is:
 
 ## PowerShell restrictions under lockdown policy
 
-When PowerShell detects the system is under a App Control lockdown policy, it applies restrictions even if
+When PowerShell detects the system is under an App Control lockdown policy, it applies restrictions even if
 the script is trusted and running in `FullLanguage` mode. These restrictions prevent known behaviors
 of PowerShell that could result in arbitrary code execution on a locked-down system. The lockdown
 policy enforces the following restrictions:
@@ -128,7 +128,7 @@ policy enforces the following restrictions:
 
 ## PowerShell restrictions under constrained language mode
 
-Script or function that isn't approved by the App Control policy is untrusted. When you run an untrusted
+A script or function not approved by the App Control policy is untrusted. When you run an untrusted
 command, PowerShell either blocks the command from running (new behavior) or runs the command in
 `ConstrainedLanguage` mode. The following restrictions apply to `ConstrainedLanguage` mode:
 
