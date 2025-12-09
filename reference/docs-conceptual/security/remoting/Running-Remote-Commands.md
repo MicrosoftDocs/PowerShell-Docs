@@ -1,6 +1,6 @@
 ---
 description: Explains the methods for running commands on remote systems using PowerShell.
-ms.date: 07/03/2023
+ms.date: 12/09/2025
 title: Running Remote Commands
 ---
 # Running Remote Commands
@@ -48,15 +48,15 @@ Get-Command | Where-Object {
 
 ## Windows PowerShell remoting
 
-Using the WS-Management protocol, Windows PowerShell remoting lets you run any Windows PowerShell
+By using the WS-Management protocol, Windows PowerShell remoting lets you run any Windows PowerShell
 command on one or more remote computers. You can establish persistent connections, start interactive
 sessions, and run scripts on remote computers.
 
 To use Windows PowerShell remoting, the remote computer must be configured for remote management.
 For more information, including instructions, see [About Remote Requirements][04].
 
-Once you have configured Windows PowerShell remoting, many remoting strategies are available to you.
-This article lists just a few of them. For more information, see [About Remote][02].
+Once you configure Windows PowerShell remoting, many remoting strategies are available to you. This
+article lists just a few of them. For more information, see [About Remote][02].
 
 ### Start an interactive session
 

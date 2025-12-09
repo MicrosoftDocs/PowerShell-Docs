@@ -1,14 +1,14 @@
 ---
 description: This article explains the various methods for configuring second-hop authentication for PowerShell remoting, including the security implications and recommendations.
-ms.date: 10/23/2023
+ms.date: 12/09/2025
 title: Making the second hop in PowerShell Remoting
 ---
 
 # Making the second hop in PowerShell Remoting
 
-The "second hop problem" refers to a situation like the following:
+The following scenario outlines the _second hop problem_:
 
-1. You are logged in to _ServerA_.
+1. You're logged in to _ServerA_.
 1. From _ServerA_, you start a remote PowerShell session to connect to _ServerB_.
 1. A command you run on _ServerB_ via your PowerShell Remoting session attempts to access a resource
    on _ServerC_.
@@ -86,9 +86,9 @@ transition.
 
 ## Resource-based Kerberos constrained delegation
 
-Using resource-based Kerberos constrained delegation (introduced in Windows Server 2012), you
-configure credential delegation on the server object where resources reside. In the second hop
-scenario described above, you configure _ServerC_ to specify from where it accepts delegated
+Windows Server 2012 introduced resource-based Kerberos constrained delegation. You configure
+credential delegation on the server object where resources reside. In the second hop scenario
+described previously, you configure _ServerC_ to specify from where it accepts delegated
 credentials.
 
 ### Pros
@@ -113,8 +113,8 @@ credentials.
 ### Example
 
 Let's look at a PowerShell example that configures resource-based constrained delegation on
-_ServerC_ to allow delegated credentials from a _ServerB_. This example assumes that all servers are
-running supported versions of Windows Server, and that there is at least one Windows domain
+_ServerC_ that allow delegated credentials from a _ServerB_. This example assumes that all servers
+are running supported versions of Windows Server, and that there is at least one Windows domain
 controller for each trusted domain.
 
 Before you can configure constrained delegation, you must add the `RSAT-AD-PowerShell` feature to
@@ -140,11 +140,11 @@ Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
 The **PrincipalsAllowedToDelegateToAccount** parameter sets the Active Directory object attribute
-**msDS-AllowedToActOnBehalfOfOtherIdentity**, which contains an access control list (ACL) that
-specifies which accounts have permission to delegate credentials to the associated account (in our
-example, it will be the machine account for _ServerA_).
+**msDS-AllowedToActOnBehalfOfOtherIdentity**. This attribute contains an access control list (ACL)
+that specifies the accounts that have permission to delegate credentials to the associated account.
+For this example, it's the machine account for _ServerA_.
 
-Now let's set up the variables we'll use to represent the servers:
+Now let's create the variables that represent the servers:
 
 ```powershell
 # Set up variables for reuse
@@ -182,8 +182,8 @@ Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccou
 ```
 
 The Kerberos [Key Distribution Center (KDC)][13] caches denied-access attempts (negative cache) for
-15 minutes. If _ServerB_ has previously attempted to access _ServerC_, you need to clear the
-cache on _ServerB_ by invoking the following command:
+15 minutes. If _ServerB_ previously attempted to access _ServerC_, you need to clear the cache on
+_ServerB_ by invoking the following command:
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -232,7 +232,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $servers
 ```
 
 If you want to make the second hop across domains, use the **Server** parameter to specify
-fully-qualified domain name (FQDN) of the domain controller of the domain to which _ServerB_
+fully qualified domain name (FQDN) of the domain controller of the domain to which _ServerB_
 belongs:
 
 ```powershell

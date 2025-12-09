@@ -1,6 +1,6 @@
 ---
 description: This article explains the features of Application Control that can be used to secure your PowerShell environment.
-ms.date: 09/25/2025
+ms.date: 12/09/2025
 title: Use App Control to secure PowerShell
 ---
 # Use App Control to secure PowerShell
@@ -19,9 +19,9 @@ Control (WDAC), allows you to control which drivers and applications are allowed
 ## Lockdown policy detection
 
 PowerShell detects both AppLocker and App Control for Business system wide policies. AppLocker
-doesn't have way to query the policy enforcement status. To detect if a system wide application
-control policy is being enforced by AppLocker, PowerShell creates two temporary files and tests if
-they can be executed. The filenames use the following name format:
+doesn't have way to query the policy enforcement status. To detect that AppLocker is enforcing a
+policy, PowerShell creates two temporary files and tries to run them. The filenames use the
+following name format:
 
 - `$Env:TEMP/__PSScriptPolicyTest_<random-8dot3-name>.ps1`
 - `$Env:TEMP/__PSScriptPolicyTest_<random-8dot3-name>.psm1`
@@ -35,8 +35,7 @@ security feature under the servicing criteria defined by the Microsoft Security 
 > [!NOTE]
 > When [choosing between App Control or AppLocker][03], we recommend that you implement application
 > control using App Control for Business rather than AppLocker. Microsoft is no longer investing in
-> AppLocker. Although AppLocker may continue to receive security fixes, it won't receive feature
-> enhancements.
+> AppLocker. AppLocker will only receive security fixes.
 
 ## App Control policy enforcement
 
@@ -59,7 +58,7 @@ policy were in **Enforce** mode.
 Windows PowerShell 5.1 was the first version of PowerShell to support App Control. The security
 features of App Control and AppLocker improve with each new release of PowerShell. The following
 sections describe how this support changed in each version of PowerShell. The changes are
-cumulative, so the features described in the later versions include those from earlier versions.
+cumulative, so the features described in the later versions include changes from earlier versions.
 
 ### Changes in PowerShell 7.4
 

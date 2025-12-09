@@ -1,6 +1,6 @@
 ---
 description: Using Visual Studio Code for PowerShell Development
-ms.date: 09/09/2022
+ms.date: 12/08/2025
 title: Using Visual Studio Code for PowerShell Development
 ---
 

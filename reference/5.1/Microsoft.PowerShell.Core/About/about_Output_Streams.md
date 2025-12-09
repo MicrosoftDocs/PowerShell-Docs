@@ -1,7 +1,7 @@
 ---
 description: Explains the availability and purpose of output streams in PowerShell.
 Locale: en-US
-ms.date: 01/22/2023
+ms.date: 12/09/2025
 no-loc: [Success, Error, Warning, Verbose, Debug, Information, Progress]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_output_streams?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -102,16 +102,17 @@ support redirection.
 
 ## See also
 
+<!-- Using backtick on cmdlet names to avoid localization -->
 - [about_CommonParameters][02]
 - [about_Redirection][03]
-- [Write-Debug][04]
-- [Write-Error][05]
-- [Write-Host][06]
-- [Write-Information][07]
-- [Write-Output][08]
-- [Write-Progress][09]
-- [Write-Verbose][10]
-- [Write-Warning][11]
+- [`Write-Debug`][04]
+- [`Write-Error`][05]
+- [`Write-Host`][06]
+- [`Write-Information`][07]
+- [`Write-Output`][08]
+- [`Write-Progress`][09]
+- [`Write-Verbose`][10]
+- [`Write-Warning`][11]
 
 <!-- link references -->
 [01]: about_Automatic_Variables.md

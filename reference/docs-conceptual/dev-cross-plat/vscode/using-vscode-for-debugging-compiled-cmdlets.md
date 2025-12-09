@@ -1,6 +1,6 @@
 ---
 description: How to set a build task and launch configuration for a PSModule project in .NET Core
-ms.date: 11/16/2022
+ms.date: 12/08/2025
 title: Using Visual Studio Code to debug compiled cmdlets
 ---
 # Using Visual Studio Code to debug compiled cmdlets
