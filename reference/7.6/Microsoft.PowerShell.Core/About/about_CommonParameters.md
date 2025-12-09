@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 09/29/2025
+ms.date: 12/09/2025
 no-loc: [Debug, Verbose, Confirm]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -37,18 +37,18 @@ For more information, see [about_Preference_Variables][03].
 The following list displays the common parameters. Their aliases are listed in
 parentheses.
 
-- `Debug` (db)
-- `ErrorAction` (ea)
-- `ErrorVariable` (ev)
-- `InformationAction` (infa)
-- `InformationVariable` (iv)
-- `OutVariable` (ov)
-- `OutBuffer` (ob)
-- `PipelineVariable` (pv)
-- `ProgressAction` (proga)
-- `Verbose` (vb)
-- `WarningAction` (wa)
-- `WarningVariable` (wv)
+- `Debug` (`db`)
+- `ErrorAction` (`ea`)
+- `ErrorVariable` (`ev`)
+- `InformationAction` (`infa`)
+- `InformationVariable` (`iv`)
+- `OutVariable` (`ov`)
+- `OutBuffer` (`ob`)
+- `PipelineVariable` (`pv`)
+- `ProgressAction` (`proga`)
+- `Verbose` (`vb`)
+- `WarningAction` (`wa`)
+- `WarningVariable` (`wv`)
 
 The **Action** parameters are `ActionPreference` type values.
 `ActionPreference` is an enumeration with the following values:
@@ -815,11 +815,12 @@ Mode                LastWriteTime     Length Name
 
 ## See also
 
+<!-- Using backtick on cmdlet names to avoid localization -->
 - [about_Preference_Variables][03]
-- [Write-Debug][11]
-- [Write-Error][12]
-- [Write-Verbose][13]
-- [Write-Warning][14]
+- [`Write-Debug`][11]
+- [`Write-Error`][12]
+- [`Write-Verbose`][13]
+- [`Write-Warning`][14]
 
 <!-- link references -->
 [02]: about_Automatic_Variables.md
