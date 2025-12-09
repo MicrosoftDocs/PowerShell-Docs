@@ -1,6 +1,6 @@
 ---
 description: This article explains how to configure and use App Control to secure PowerShell.
-ms.date: 10/21/2024
+ms.date: 12/09/2025
 title: How to use App Control to secure PowerShell
 ---
 # How to use App Control to secure PowerShell
@@ -157,8 +157,8 @@ information helps you understand where you need to change your script so that it
 policy.
 
 > [!IMPORTANT]
-> Once you have reviewed the audit events, you should disable the Analytic log. Analytic logs grow
-> quickly and consume large amounts of disk space.
+> After you review the audit events, you should disable the Analytic log. Analytic logs grow quickly
+> and consume large amounts of disk space.
 
 ### Viewing audit events in the PowerShell debugger
 

@@ -2,7 +2,7 @@
 metadata:
   description: Contains questions and answers about running remote commands in PowerShell.
   Locale: en-US
-  ms.date: 04/18/2022
+  ms.date: 12/09/2025
   online version: https
   schema: 2.0.0
   title: PowerShell Remoting FAQ
@@ -58,9 +58,10 @@ sections:
           [WS-Management Protocol](/windows/win32/winrm/ws-management-protocol) in the Windows
           documentation.
 
-          Beginning in Windows PowerShell 3.0, remote sessions are stored on the remote computer.
-          This enables you to disconnect from the session and reconnect from a different session or
-          a different computer without interrupting the commands or losing state.
+          Beginning in Windows PowerShell 3.0, PowerShell store remote session information on the
+          remote computer. This enables you to disconnect from the session and reconnect from a
+          different session or a different computer without interrupting the commands or losing
+          state.
 
       - question: |
           Is PowerShell remoting secure?
@@ -70,11 +71,11 @@ sections:
           you in to the remote computer. The credentials and the rest of the transmission are
           encrypted.
 
-          To add additional protection, you can configure the remote computer to use Secure Sockets
-          Layer (SSL) instead of HTTP to listen for Windows Remote Management (WinRM) requests.
-          Then, users can use the **UseSSL** parameter of the `Invoke-Command`, `New-PSSession`, and
-          `Enter-PSSession` cmdlets when establishing a connection. This option uses the more secure
-          HTTPS channel instead of HTTP.
+          To increase protection, you can configure the remote computer to use Secure Sockets Layer
+          (SSL) instead of HTTP for Windows Remote Management (WinRM) requests. Then, users can use
+          the **UseSSL** parameter of the `Invoke-Command`, `New-PSSession`, and `Enter-PSSession`
+          cmdlets when establishing a connection. This option uses the more secure HTTPS channel
+          instead of HTTP.
 
       - question: |
           Do all remote commands require PowerShell remoting?
@@ -82,11 +83,8 @@ sections:
           No. Some cmdlets have a **ComputerName** parameter that lets you get objects from the
           remote computer.
 
-          These cmdlets do not use PowerShell remoting. So, you can use them on any computer that is
-          running PowerShell, even if the computer is not configured for PowerShell remoting or if
-          the computer does not meet the requirements for PowerShell remoting.
-
-          These cmdlets include the following:
+          These cmdlets don't use PowerShell remoting. You can use them on any computer running
+          PowerShell. The following cmdlets don't require PowerShell remoting:
 
           - `Get-HotFix`
           - `Rename-Computer`
@@ -105,13 +103,13 @@ sections:
           PowerShell remoting, see the parameter description. To display the parameter description,
           type:
 
-          ```PowerShell
+          ```powershell
           Get-Help <cmdlet-name> -Parameter ComputerName
           ```
 
           For example:
 
-          ```PowerShell
+          ```powershell
           Get-Help Get-HotFix -Parameter ComputerName
           ```
 
@@ -120,14 +118,13 @@ sections:
       - question: |
           How do I run a command on a remote computer?
         answer: |
-          To run a command on a remote computer, use the `Invoke-Command` cmdlet.
+          To run a command on a remote computer, use the `Invoke-Command` cmdlet. Enclose your
+          command in braces (`{}`). Use the **ScriptBlock** parameter of `Invoke-Command` to specify
+          the command.
 
-          Enclose your command in braces (`{}`) to make it a script block. Use the **ScriptBlock**
-          parameter of `Invoke-Command` to specify the command.
-
-          You can use the **ComputerName** parameter of `Invoke-Command` to specify a remote
-          computer. Or, you can create a persistent connection to a remote computer (a session) and
-          then use the **Session** parameter of `Invoke-Command` to run the command in the session.
+          Use the **ComputerName** parameter of `Invoke-Command` to specify a remote computer. Or,
+          you can create a persistent connection to a remote computer (a session) and then use the
+          **Session** parameter of `Invoke-Command` to run the command in the session.
 
           For example, the following commands run a `Get-Process` command remotely.
 
@@ -139,11 +136,12 @@ sections:
           Invoke-Command -Session $s -ScriptBlock {Get-Process}
           ```
 
-          To interrupt a remote command, type <kbd>CTRL</kbd>+<kbd>C</kbd>. The interruption request
+          To interrupt a remote command, type <kbd>Ctrl</kbd>+<kbd>C</kbd>. The interruption request
           is passed to the remote computer, where it terminates the remote command.
 
-          For more information about remote commands, see about_Remote and the Help topics for the
-          cmdlets that support remoting.
+          For more information about remote commands, see
+          [about_Remote](/powershell/module/microsoft.powershell.core/about/about_remote)
+          and the Help for the cmdlets that support remoting.
 
       - question: |
           Can I just telnet into a remote computer?
@@ -163,8 +161,8 @@ sections:
           <ComputerName>\C:>
           ```
 
-          Now, the commands that you type run on the remote computer just as though you typed them
-          directly on the remote computer.
+          The commands you enter run on the remote computer as though you entered them directly on
+          the remote computer.
 
           To end the interactive session, type:
 
@@ -172,8 +170,8 @@ sections:
           Exit-PSSession
           ```
 
-          An interactive session is a persistent session that uses the WS-Management protocol. It is
-          not the same as using Telnet, but it provides a similar experience.
+          An interactive session is a persistent session that uses the WS-Management protocol. It
+          isn't the same as using Telnet, but it provides a similar experience.
 
           For more information, see `Enter-PSSession`.
 
@@ -182,12 +180,12 @@ sections:
         answer: |
           Yes. You can run remote commands by specifying the name of the remote computer, its
           NetBIOS name, or its IP address. Or, you can run remote commands by specifying a
-          PowerShell session (PSSession) that is connected to the remote computer.
+          PowerShell session (PSSession) that's connected to the remote computer.
 
           When you use the **ComputerName** parameter of `Invoke-Command` or `Enter-PSSession`,
           PowerShell establishes a temporary connection. PowerShell uses the connection to run only
-          the current command, and then it closes the connection. This is a very efficient method
-          for running a single command or several unrelated commands, even on many remote computers.
+          the current command, and then it closes the connection. This behavior works well for
+          running a single command or several unrelated commands, even on many remote computers.
 
           When you use the `New-PSSession` cmdlet to create a PSSession, PowerShell establishes a
           persistent connection for the PSSession. Then, you can run multiple commands in the
@@ -210,17 +208,17 @@ sections:
           specified computers or in all of the specified PSSessions.
 
           PowerShell can manage hundreds of concurrent remote connections. However, the number of
-          remote commands that you can send might be limited by the resources of your computer and
+          remote commands that you can send can be limited by the resources of your computer and
           its capacity to establish and maintain multiple network connections.
 
-          For more information, see the example in the `Invoke-Command` Help topic.
+          For more information, see the example in the `Invoke-Command` Help article.
 
       - question: |
           Where are my profiles?
         answer: |
-          PowerShell profiles are not run automatically in remote sessions, so the commands that the
-          profile adds are not present in the session. In addition, the `$PROFILE` automatic
-          variable is not populated in remote sessions.
+          PowerShell profiles aren't run automatically in remote sessions, so the commands that the
+          profile adds aren't present in the session. In addition, the `$PROFILE` automatic
+          variable isn't populated in remote sessions.
 
           To run a profile in a session, use the `Invoke-Command` cmdlet.
 
@@ -232,8 +230,7 @@ sections:
           ```
 
           The following command runs the **CurrentUserCurrentHost** profile from the remote computer
-          in the session in `$s`. Because the `$PROFILE` variable is not populated, the command uses
-          the explicit path to the profile.
+          in the session in `$s`.
 
           ```powershell
           Invoke-Command -Session $s {
@@ -241,7 +238,7 @@ sections:
           }
           ```
 
-          After running this command, the commands that the profile adds to the session are
+          After you run this command, the commands that the profile adds to the session are
           available in `$s`.
 
           You can also use a startup script in a session configuration to run a profile in every
@@ -261,10 +258,10 @@ sections:
           The default is 32 concurrent connections, but you can use the **ThrottleLimit** parameter
           of the cmdlets to set a custom throttle limit for particular commands.
 
-          When you use the throttling feature, remember that it is applied to each command, not to
-          the entire session or to the computer. If you are running commands concurrently in several
-          sessions or PSSessions, the number of concurrent connections is the sum of the concurrent
-          connections in all the sessions.
+          The throttling feature applies to each command, not to the entire session or to the
+          computer. If you're running commands concurrently in several sessions or PSSessions, the
+          number of concurrent connections is the sum of the concurrent connections in all the
+          sessions.
 
           To find cmdlets with a **ThrottleLimit** parameter, type:
 
@@ -283,23 +280,21 @@ sections:
           the actual program or component. And, when the properties of a program or component
           change, the properties of the object that represent them also change.
 
-          However, because most live objects cannot be transmitted over the network, PowerShell
-          "serializes" most of the objects sent in remote commands, that is, it converts each object
-          into a series of XML (Constraint Language in XML [CLiXML]) data elements for transmission.
+          However, because most live objects can't be transmitted over the network, PowerShell
+          _serializes_ the objects returned by remote commands. Serialization converts each object
+          into Common Language Infrastructure XML (CLIXML) data elements for transmission.
 
-          When PowerShell receives a serialized object, it converts the XML into a deserialized
+          When PowerShell receives a serialized object, it converts the CLIXML into a deserialized
           object type. The deserialized object is an accurate record of the properties of the
-          program or component at a previous time, but it is no longer "live", that is, it is no
-          longer directly associated with the component. And, the methods are removed because they
-          are no longer effective.
+          object, but it's no longer a _live_ object. The deserialized object has no methods because
+          they're no longer effective.
 
           Typically, you can use deserialized objects just as you would use live objects, but you
-          must be aware of their limitations. Also, the objects that are returned by the
-          `Invoke-Command` cmdlet have additional properties that help you to determine the origin
-          of the command.
+          must be aware of their limitations. Also, the objects returned by `Invoke-Command` have
+          additional properties that help you to determine the origin of the command.
 
           Some object types, such as DirectoryInfo objects and GUIDs, are converted back into live
-          objects when they are received. These objects do not need any special handling or
+          objects when they're received. These objects don't need any special handling or
           formatting.
 
           For information about interpreting and formatting remote output, see
@@ -310,8 +305,7 @@ sections:
         answer: |
           Yes. A PowerShell background job is a PowerShell command that runs asynchronously without
           interacting with the session. When you start a background job, the command prompt returns
-          immediately, and you can continue to work in the session while the job runs even if it
-          runs for an extended period of time.
+          immediately. You can continue to work in the session while the job runs.
 
           You can start a background job even while other commands are running because background
           jobs always run asynchronously in a temporary session.
@@ -321,7 +315,7 @@ sections:
           `Invoke-Command` cmdlet to run any remote command as a background job. And, you can use
           `Invoke-Command` to run a `Start-Job` command remotely.
 
-          For more information about background jobs in PowerShell , see
+          For more information about background jobs in PowerShell, see
           [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs) and
           [about_Remote_Jobs](/powershell/module/microsoft.powershell.core/about/about_remote_jobs).
 
@@ -331,33 +325,32 @@ sections:
           You can use PowerShell remote commands to run Windows-based programs on remote computers.
           For example, you can run `Shutdown.exe` or `Ipconfig.exe` on a remote computer.
 
-          However, you cannot use PowerShell commands to open the user interface for any program on
+          However, you can't use PowerShell commands to open the user interface for any program on
           a remote computer.
 
-          When you start a Windows program on a remote computer, the command is not completed, and
-          the PowerShell command prompt does not return, until the program is finished or until you
-          press <kbd>CTRL</kbd>+<kbd>C</kbd> to interrupt the command. For example, if you run the
-          `Ipconfig.exe` program on a remote computer, the command prompt does not return until
-          `Ipconfig.exe` is completed.
+          When you start a Windows program on a remote computer, the PowerShell command prompt
+          doesn't return until the program is finished or until you press
+          <kbd>Ctrl</kbd>+<kbd>C</kbd> to interrupt the command. For example, if you run the
+          `ipconfig.exe` program on a remote computer, the command prompt doesn't return until
+          `ipconfig.exe` is completed.
 
           If you use remote commands to start a program that has a user interface, the program
-          process starts, but the user interface does not appear. The PowerShell command is not
-          completed, and the command prompt does not return until you stop the program process or
-          until you press <kbd>CTRL</kbd>+<kbd>C</kbd>, which interrupts the command and stops the
-          process.
+          process starts, but the user interface doesn't appear. The program is still running. The
+          command prompt doesn't return until you stop the program or you press
+          <kbd>Ctrl</kbd>+<kbd>C</kbd>, which interrupts the command and stops the process.
 
           For example, if you use a PowerShell command to run `Notepad` on a remote computer, the
-          Notepad process starts on the remote computer, but the Notepad user interface does not
+          Notepad process starts on the remote computer, but the Notepad user interface doesn't
           appear. To interrupt the command and restore the command prompt, press
-          <kbd>CTRL</kbd>+<kbd>C</kbd>.
+          <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
       - question: |
           Can I limit the commands that users can run remotely on my computer?
         answer: |
           Yes. Every remote session must use one of the session configurations on the remote
-          computer. You can manage the session configurations on your computer (and the permissions
-          to those session configurations) to determine who can run commands remotely on your
-          computer and which commands they can run.
+          computer. You can manage the session configurations on your computer. You can set
+          permissions on those session configurations to limit who can run commands remotely on your
+          computer. You can also limit which commands they can run.
 
           A session configuration configures the environment for the session. You can define the
           configuration by using an assembly that implements a new configuration class or by using a
@@ -383,7 +376,7 @@ sections:
           sessions that use the session configuration.
 
           When users use the `Invoke-Command`, `New-PSSession`, or `Enter-PSSession` cmdlets, they
-          can use the **ConfigurationName** parameter to indicate the session configuration that is
+          can use the **ConfigurationName** parameter to indicate the session configuration that's
           used for the session. And, they can change the default configuration that their sessions
           use by changing the value of the `$PSSessionConfigurationName` preference variable in the
           session.
@@ -403,7 +396,7 @@ sections:
           PowerShell commands on numerous remote computers. This is known as the "fan-out" scenario.
 
           However, in some enterprises, the configuration is many-to-one, where many client
-          computers connect to a single remote computer that is running PowerShell, such as a file
+          computers connect to a single remote computer that's running PowerShell, such as a file
           server or a kiosk. This is known as the "fan-in" configuration.
 
           PowerShell remoting supports both fan-out and fan-in configurations.
@@ -420,7 +413,7 @@ sections:
           scenario, instead of starting each PowerShell session in a separate process, all
           PowerShell sessions run in the same host process.
 
-          IIS hosting and fan-in remote management is not supported in Windows XP or in Windows
+          IIS hosting and fan-in remote management aren't supported in Windows XP or in Windows
           Server 2003.
 
           In a fan-in configuration, the user can specify a connection URI and an HTTP endpoint,
@@ -434,7 +427,7 @@ sections:
       - question: |
           Can I test remoting on a single computer not in a domain?
         answer: |
-          Yes. PowerShell remoting is available even when the local computer is not in a domain. You
+          Yes. PowerShell remoting is available even when the local computer isn't in a domain. You
           can use the remoting features to connect to sessions and to create sessions on the same
           computer. The features work the same as they do when you connect to a remote computer.
 
@@ -464,20 +457,18 @@ sections:
 
           - Windows Server 2003, Windows Server 2008, Windows Server 2012, Windows Server 2012 R2:
 
-            No changes are needed because the default setting of the "Network Access: Sharing and
-            security model for local accounts" policy is "Classic". Verify the setting in case it
-            has changed.
+            The default setting of the **Network Access: Sharing and security model for local
+            accounts** policy is `Classic`. Verify the setting is set to `Classic`.
 
       - question: |
           Can I run remote commands on a computer in another domain?
         answer: |
-          Yes. Typically, the commands run without error, although you might need to use the
-          **Credential** parameter of the `Invoke-Command`, `New-PSSession`, or `Enter-PSSession`
-          cmdlets to provide the credentials of a member of the Administrators group on the remote
-          computer. This is sometimes required even when the current user is a member of the
+          Yes. Typically, the commands run without error. However, you might need to use the
+          **Credential** parameter with `Invoke-Command`, `New-PSSession`, or `Enter-PSSession`
+          cmdlets. The credentials can be required even when the current user is a member of the
           Administrators group on the local and remote computers.
 
-          However, if the remote computer is not in a domain that the local computer trusts, the
+          However, if the remote computer isn't in a domain that the local computer trusts, the
           remote computer might not be able to authenticate the user's credentials.
 
           To enable authentication, use the following command to add the remote computer to the list

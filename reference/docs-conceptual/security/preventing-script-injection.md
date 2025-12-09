@@ -1,6 +1,6 @@
 ---
 description: This article explains how to prevent script injection attacks using single quote escaping.
-ms.date: 02/10/2023
+ms.date: 12/09/2025
 title: Preventing script injection attacks
 ---
 # Preventing script injection attacks
@@ -12,12 +12,12 @@ vulnerability. For example, a malicious user could abuse the vulnerable function
 code on a remote computer, possibly compromising that computer and gaining access to other machines
 on the network.
 
-Once you are aware of the issue, there are several ways to protect against injection attacks.
+Once you're aware of the issue, there are several ways to protect against injection attacks.
 
 ## Example of vulnerable code
 
 PowerShell code injection vulnerabilities involve user input that contains script code. The user
-input is added to vulnerable script where it's parsed and run by PowerShell.
+input is added to vulnerable script where PowerShell parses and runs it.
 
 ```powershell
 function Get-ProcessById
@@ -30,8 +30,8 @@ function Get-ProcessById
 
 The `Get-ProcessById` function looks up a local process by its Id value. It takes a `$ProcId`
 parameter argument of any type. The `$ProcId` is then converted to a string and inserted into
-another script that's parsed and run using the `Invoke-Expression` cmdlet. This function works fine
-when a valid process Id integer is passed in.
+another script. `Invoke-Expression` cmdlet parses and runs the provided string. This function works
+fine when a valid process Id integer is passed in.
 
 ```powershell
 Get-ProcessById $PID
@@ -141,8 +141,8 @@ Get-Process: Cannot bind parameter 'Id'. Cannot convert value "8064; Write-Host 
 "System.Int32". Error: "The input string '8064; Write-Host' was not in a correct format."
 ```
 
-However, this version of the function isn't yet completely safe from injection attacks. A malicious
-user can still use single quotes in their input to inject code.
+However, this version of the function isn't safe from injection attacks. A malicious user can still
+use single quotes in their input to inject code.
 
 ```powershell
 Get-ProcessById "$PID'; Write-Host 'pwnd!';'"
@@ -160,10 +160,11 @@ pwnd!
 
 #### Use the `EscapeSingleQuotedStringContent()` method
 
-To protect against the user inserting their own single quote characters to exploit the function you
-must use the `EscapeSingleQuotedStringContent()` API. This is a static public method of the PowerShell
-**System.Management.Automation.Language.CodeGeneration** class. This method makes the user input safe
-by escaping any single quotes included in the user input.
+To protect against the user inserting their own single quote characters to exploit the function, you
+must use the `EscapeSingleQuotedStringContent()` API. `EscapeSingleQuotedStringContent()` is a
+public static method of the PowerShell **System.Management.Automation.Language.CodeGeneration**
+class. This method makes the user-provided input safe by escaping any single quotes included in the
+user input.
 
 ```powershell
 function Get-ProcessById
@@ -198,8 +199,8 @@ Install-Module InjectionHunter
 Install-PSResource InjectionHunter
 ```
 
-You can use this to automate security analysis during builds, continuous integration processes,
-deployments, and other scenarios.
+You can use this module to automate security analysis during builds, continuous integration
+processes, deployments, and other scenarios.
 
 ```powershell
 $RulePath = (Get-Module -List InjectionHunter).Path
@@ -223,15 +224,13 @@ InjectionRisk.InvokeExpression      Warning      Invoke-Dan 3     Possible scrip
 
 For more information, see [PSScriptAnalyzer][02].
 
-<!-- TODO: Add instructions for VS Code once it gets fixed -->
-
 ## Related links
 
 - [Lee Holmes' blog post about Injection Hunter][03]
 - [Injection Hunter][04]
 
 <!-- link references -->
-[01]: /dotnet/api/system.management.automation.language.codegeneration.escapesinglequotedstringcontent
+[01]: xref:System.Management.Automation.Language.CodeGeneration.EscapeSingleQuotedStringContent%2A
 [02]: /powershell/utility-modules/psscriptanalyzer/overview
 [03]: https://devblogs.microsoft.com/powershell/powershell-injection-hunter-security-auditing-for-powershell-scripts/
 [04]: https://www.powershellgallery.com/packages/InjectionHunter

@@ -1,6 +1,6 @@
 ---
 description: This document covers security concerns, recommendations, and best practices when using PowerShell Remoting.
-ms.date: 03/24/2025
+ms.date: 12/09/2025
 title: Security considerations for PowerShell Remoting using WinRM
 ---
 
@@ -113,8 +113,8 @@ authentication protocol.
 
 - Basic authentication provides no encryption.
 - NTLM authentication uses an RC4 cipher with a 128-bit key.
-- The `etype` in the TGS ticket determines Kerberos authentication encryption. This is AES-256
-  on modern systems.
+- The `etype` in the TGS ticket determines Kerberos authentication encryption. Modern systems use
+  the AES-256 algorithm.
 - CredSSP encryption uses the TLS cipher suite negotiated in the handshake.
 
 ## Making the second hop
