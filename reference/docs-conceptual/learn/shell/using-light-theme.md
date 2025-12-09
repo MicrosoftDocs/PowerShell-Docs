@@ -1,7 +1,7 @@
 ---
 description: >
   This article shows how to configure PSReadLine color settings for a light themed terminal.
-ms.date: 11/21/2025
+ms.date: 12/09/2025
 title: Configuring a light colored theme
 ---
 # Configuring a light colored theme
@@ -10,6 +10,14 @@ The default colors for both PowerShell and **PSReadLine** are selected for a dar
 terminal. However, some users might choose to use a light background with dark text. Since most of
 the default colors don't set the background, using light foreground colors on a light background
 produces unreadable text.
+
+Beginning in PowerShell 7.2, PowerShell adds colorized output to the default console experience. The
+`$PSStyle` feature is not natively available in Windows PowerShell. However, using the [PSStyle][05]
+module from the PowerShell Gallery, you can set color values using these same techniques described
+in this article.
+
+The colors used are defined in the `$PSStyle` variable and are designed for a dark background. You
+can change these colors to work better for a light background terminal.
 
 **PSReadLine** allows you to define colors for 18 different syntax elements. You can view the
 current settings using the `Get-PSReadLineOption` cmdlet.
@@ -96,13 +104,9 @@ $ISETheme = @{
 ```
 
 > [!NOTE]
-> In PowerShell 7.2 and higher you can use the `FromRGB()` method of `$PSStyle` to create the ANSI
-> escape sequences for the colors you want.
->
-> For more information about `$PSStyle`, see [about_ANSI_Terminals][01].
->
-> For more information about ANSI escape sequences, see the [ANSI escape code][04] article in
-> Wikipedia.
+> You can use the `FromRGB()` method to create the ANSI escape sequences for the colors you want.
+> For more information about `$PSStyle`, see [about_ANSI_Terminals][01]. For more information about
+> ANSI escape sequences, see the [ANSI escape code][04] article in Wikipedia.
 
 ## Setting the color theme in your profile
 
@@ -116,27 +120,25 @@ Add the `$ISETheme` variable and the following `Set-PSReadLineOption` command to
 Set-PSReadLineOption -Colors $ISETheme
 ```
 
-Beginning in PowerShell 7.2, PowerShell adds colorized output to the default console experience. The
-colors used are defined in the `$PSStyle` variable and are designed for a dark background. The
-following settings work better for a light background terminal.
+The following settings work better for a light background terminal.
 
 ```powershell
-$PSStyle.Formatting.FormatAccent       = "`e[32m"
-$PSStyle.Formatting.TableHeader        = "`e[32m"
-$PSStyle.Formatting.ErrorAccent        = "`e[36m"
-$PSStyle.Formatting.Error              = "`e[31m"
-$PSStyle.Formatting.Warning            = "`e[33m"
-$PSStyle.Formatting.Verbose            = "`e[33m"
-$PSStyle.Formatting.Debug              = "`e[33m"
-$PSStyle.Progress.Style                = "`e[33m"
+$PSStyle.Formatting.FormatAccent       = $PSStyle.Foreground.Green
+$PSStyle.Formatting.TableHeader        = $PSStyle.Foreground.Green
+$PSStyle.Formatting.ErrorAccent        = $PSStyle.Foreground.Cyan
+$PSStyle.Formatting.Error              = $PSStyle.Foreground.Red
+$PSStyle.Formatting.Warning            = $PSStyle.Foreground.Yellow
+$PSStyle.Formatting.Verbose            = $PSStyle.Foreground.Yellow
+$PSStyle.Formatting.Debug              = $PSStyle.Foreground.Yellow
+$PSStyle.Progress.Style                = $PSStyle.Foreground.Yellow
 $PSStyle.FileInfo.Directory            = $PSStyle.Background.FromRgb(0x2f6aff) +
                                          $PSStyle.Foreground.BrightWhite
-$PSStyle.FileInfo.SymbolicLink         = "`e[36m"
-$PSStyle.FileInfo.Executable           = "`e[95m"
-$PSStyle.FileInfo.Extension['.ps1']    = "`e[36m"
-$PSStyle.FileInfo.Extension['.ps1xml'] = "`e[36m"
-$PSStyle.FileInfo.Extension['.psd1']   = "`e[36m"
-$PSStyle.FileInfo.Extension['.psm1']   = "`e[36m"
+$PSStyle.FileInfo.SymbolicLink         = $PSStyle.Foreground.Cyan
+$PSStyle.FileInfo.Executable           = $PSStyle.Foreground.BrightMagenta
+$PSStyle.FileInfo.Extension['.ps1']    = $PSStyle.Foreground.Cyan
+$PSStyle.FileInfo.Extension['.ps1xml'] = $PSStyle.Foreground.Cyan
+$PSStyle.FileInfo.Extension['.psd1']   = $PSStyle.Foreground.Cyan
+$PSStyle.FileInfo.Extension['.psm1']   = $PSStyle.Foreground.Cyan
 ```
 
 ## Choosing colors for accessibility
@@ -144,10 +146,10 @@ $PSStyle.FileInfo.Extension['.psm1']   = "`e[36m"
 The ISE color theme might not work for users with color-blindness or other conditions that limit
 their ability to see colors.
 
-The [World Wide Web Consortium (W3C)][05] has recommendations for using colors for accessibility.
+The [World Wide Web Consortium (W3C)][06] has recommendations for using colors for accessibility.
 The Web Content Accessibility Guidelines (WCAG) 2.1 recommends that "visual presentation of text and
 images of text has a contrast ratio of at least 4.5:1." For more information, see
-[Success Criterion 1.4.3 Contrast (Minimum)][06].
+[Success Criterion 1.4.3 Contrast (Minimum)][07].
 
 The [Contrast Ratio][03] website provides a tool that lets you pick foreground and background
 colors and measure the contrast. You can use this tool to find color combinations that work best for
@@ -158,5 +160,6 @@ you.
 [02]: creating-profiles.md
 [03]: https://contrast-ratio.com/
 [04]: https://en.wikipedia.org/wiki/ANSI_escape_code
-[05]: https://www.w3.org/
-[06]: https://www.w3.org/TR/WCAG/#contrast-minimum
+[05]: https://www.powershellgallery.com/packages/PSStyle
+[06]: https://www.w3.org/
+[07]: https://www.w3.org/TR/WCAG/#contrast-minimum

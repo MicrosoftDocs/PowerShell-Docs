@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 08/27/2024
+ms.date: 12/09/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ansi_terminals?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ANSI_Terminals
@@ -183,8 +183,23 @@ The following members control how or when ANSI formatting is used:
   - **SymbolicLink** - Built-in member to specify color for symbolic links
   - **Executable** - Built-in member to specify color for executables.
   - **Extension** - Use this member to define colors for different file
-    extensions. The **Extension** member pre-includes extensions for archive
-    and PowerShell files.
+    extensions. The **Extension** member predefines colors for archive and
+    PowerShell file extensions.
+
+    The following example shows how to change the colors for various `FileInfo`
+    settings and specific file extensions. The colors are chosen to work well
+    on a light terminal background.
+
+    ```powershell
+    $PSStyle.FileInfo.Directory = $PSStyle.Background.FromRgb(0x2f6aff) +
+        $PSStyle.Foreground.BrightWhite
+    $PSStyle.FileInfo.SymbolicLink = $PSStyle.Foreground.Cyan
+    $PSStyle.FileInfo.Executable = $PSStyle.Foreground.BrightMagenta
+    $PSStyle.FileInfo.Extension['.ps1'] = $PSStyle.Foreground.Cyan
+    $PSStyle.FileInfo.Extension['.ps1xml'] = $PSStyle.Foreground.Cyan
+    $PSStyle.FileInfo.Extension['.psd1'] = $PSStyle.Foreground.Cyan
+    $PSStyle.FileInfo.Extension['.psm1'] = $PSStyle.Foreground.Cyan
+    ```
 
 ## Cmdlets that generate ANSI output
 
