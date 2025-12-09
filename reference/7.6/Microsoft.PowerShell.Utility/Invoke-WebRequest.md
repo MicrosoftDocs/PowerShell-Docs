@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/05/2025
+ms.date: 12/04/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -13,6 +13,7 @@ title: Invoke-WebRequest
 # Invoke-WebRequest
 
 ## SYNOPSIS
+
 Gets content from a web page on the internet.
 
 ## SYNTAX
@@ -399,6 +400,18 @@ Unix socket.
 ```powershell
 Invoke-WebRequest -Uri "http://localhost/v1.40/images/json/" -UnixSocket "/var/run/docker.sock"
 ```
+
+### Example 12: Send a request over a Windows named pipe
+
+This example sends a request to a local service that exposes an HTTP endpoint over a Windows named
+pipe.
+
+```powershell
+Invoke-WebRequest -Uri 'http://localhost/status' -PipeName 'MyLocalHttpPipe'
+```
+
+The hostname portion of the **Uri** is ignored for network routing when you supply **PipeName**, but
+it's included in the `Host` header of the HTTP request.
 
 ## PARAMETERS
 
@@ -965,6 +978,40 @@ Aliases:
 Required: False
 Position: Named
 Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PipeName
+
+Specifies the name of a local Windows named pipe to use instead of a TCP socket when sending the
+HTTP request. This lets you communicate with services that expose an HTTP-compatible protocol over
+a named pipe without opening a TCP port.
+
+Only the local machine is supported. Remote UNC pipe names aren't supported. Supplying a value that
+doesn't correspond to a listening named pipe endpoint results in a connection failure.
+
+When you specify **PipeName**, the hostname portion of the **Uri** is ignored for network routing.
+The **Uri** still determines the request path, query, and scheme used to build the HTTP request. The
+named pipe transport is always local, but the hostname still appears in HTTP headers.
+
+The server that creates the pipe governs security and access control for the pipe. This cmdlet,
+acting as the client, doesn't modify pipe ACLs.
+
+The **PipeName** parameter is supported only on Windows operating systems. The values for
+**UnixSocket** and **PipeName** are mutually exclusive. If you specify both parameters, the cmdlet
+only uses the value of **UnixSocket**.
+
+This parameter was added in PowerShell 7.6.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
