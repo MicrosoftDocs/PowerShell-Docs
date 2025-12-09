@@ -12,10 +12,10 @@ recommendations, and best practices when using PowerShell Remoting.
 
 ## What is PowerShell Remoting?
 
-PowerShell Remoting uses [Windows Remote Management (WinRM)][04] to allow users to run PowerShell
+PowerShell Remoting uses [Windows Remote Management (WinRM)][05] to allow users to run PowerShell
 commands on remote computers. WinRM is the Microsoft implementation of the
-[Web Services for Management (WS-Management)][05] protocol. You can find more information about
-using PowerShell Remoting at [Running Remote Commands][08].
+[Web Services for Management (WS-Management)][07] protocol. You can find more information about
+using PowerShell Remoting at [Running Remote Commands][09].
 
 PowerShell Remoting isn't the same as using the **ComputerName** parameter of a cmdlet to run it on
 a remote computer, which uses Remote Procedure Call (RPC) as its underlying protocol.
@@ -38,7 +38,8 @@ PowerShell Remoting to all connections on a public network.
 
 > [!WARNING]
 > The firewall rule for public networks is meant to protect the computer from potentially malicious
-> external connection attempts. Use caution when removing this rule.
+> external connection attempts. Use caution when removing this rule. For more information about
+> configuring WinRM, see [Installation and configuration for Windows Remote Management][04].
 
 ## Process isolation
 
@@ -126,12 +127,12 @@ it can't access other computers and services on the user's behalf. This is known
 problem_.
 
 There are several ways to avoid this problem. For descriptions of these methods, and the pros and
-cons of each, see [Making the second hop in PowerShell Remoting][07].
+cons of each, see [Making the second hop in PowerShell Remoting][08].
 
 ## References
 
-- [Windows Remote Management (WinRM)][04]
-- [Web Services for Management (WS-Management)][05]
+- [Windows Remote Management (WinRM)][05]
+- [Web Services for Management (WS-Management)][07]
 - [2.2.9.1 Encrypted Message Types][01]
 - [Kerberos][02]
 - [NTLM authentication protocol][03]
@@ -141,8 +142,9 @@ cons of each, see [Making the second hop in PowerShell Remoting][07].
 [01]: /openspecs/windows_protocols/ms-wsmv/58421aa4-861a-4410-831a-c999f094cdb7
 [02]: /windows/win32/secauthn/microsoft-kerberos
 [03]: /windows/win32/secauthn/microsoft-ntlm
-[04]: /windows/win32/winrm/portal
-[05]: https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf
+[04]: /windows/win32/winrm/installation-and-configuration-for-windows-remote-management
+[05]: /windows/win32/winrm/portal
 [06]: https://www.blackhat.com/docs/us-14/materials/us-14-Kazanciyan-Investigating-Powershell-Attacks-WP.pdf
-[07]: PS-remoting-second-hop.md
-[08]: running-remote-commands.md
+[07]: https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf
+[08]: PS-remoting-second-hop.md
+[09]: running-remote-commands.md
