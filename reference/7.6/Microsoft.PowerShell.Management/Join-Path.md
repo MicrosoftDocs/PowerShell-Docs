@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/25/2025
+ms.date: 12/10/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/join-path?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Join-Path
@@ -16,7 +16,7 @@ Combines a path and a child path into a single path.
 
 ```
 Join-Path [-Path] <String[]> [-ChildPath] <String> [[-AdditionalChildPath] <String[]>] [-Resolve]
- [-Credential <PSCredential>] [<CommonParameters>]
+ [-Credential <PSCredential>] [-Extension <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,6 +150,46 @@ Join-Path -Path a -ChildPath b, c, d, e, f, g
 a\b\c\d\e\f\g
 ```
 
+### Example 9: Add extension to file without extension
+
+```powershell
+Join-Path C:\Temp myfile -Extension txt
+```
+
+```Output
+C:\Temp\myfile.txt
+```
+
+### Example 10: Change existing extension
+
+```powershell
+Join-Path C:\Temp myfile.txt -Extension .log
+```
+
+```Output
+C:\Temp\myfile.log
+```
+
+### Example 11: Extension without leading dot
+
+```powershell
+Join-Path C:\Temp file.txt -Extension log
+```
+
+```Output
+C:\Temp\file.log
+```
+
+### Example 12: Remove extension with empty string
+
+```powershell
+Join-Path C:\Temp file.txt -Extension ""
+```
+
+```Output
+C:\Temp\file
+```
+
 ## PARAMETERS
 
 ### -AdditionalChildPath
@@ -209,6 +249,28 @@ Position: Named
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
+```
+
+### -Extension
+
+Specifies the extension to use for the resulting path. If not specified, the original extension is
+preserved. The leading dot in the extension is optional. If omitted, the command adds it
+automatically.
+
+- If the path has an existing extension, it's replaced with the specified extension.
+- If the path has no extension, the specified extension is added.
+- If you provide an empty string, the existing extension is removed.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: True
 ```
 
 ### -Path

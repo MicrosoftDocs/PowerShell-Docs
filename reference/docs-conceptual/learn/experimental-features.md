@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 11/21/2025
+ms.date: 12/09/2025
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -15,14 +15,14 @@ breaking changes.
 > [!CAUTION]
 > Experimental features aren't intended to be used in production since the changes are allowed to be
 > breaking. Experimental features aren't officially supported. However, we appreciate any feedback
-> and bug reports. You can file issues in the [GitHub source repository][16].
+> and bug reports. You can file issues in the [GitHub source repository][17].
 
 For more information about enabling or disabling these features, see
 [about_Experimental_Features][05].
 
 ## Experimental feature lifecycle
 
-The [Get-ExperimentalFeature][19] cmdlet returns all experimental features available to PowerShell.
+The [Get-ExperimentalFeature][20] cmdlet returns all experimental features available to PowerShell.
 Experimental features can come from modules or the PowerShell engine. Module-based experimental
 features are only available after you import the module. In the following example, the
 **PSDesiredStateConfiguration** isn't loaded, so the `PSDesiredStateConfiguration.InvokeDscResource`
@@ -43,7 +43,7 @@ PSSerializeJSONLongEnumAsNumber    True PSEngine Serialize enums based on long o
 PSSubsystemPluginModel             True PSEngine A plugin model for registering and un-registering PowerShell subsyste…
 ```
 
-Use the [Enable-ExperimentalFeature][18] and [Disable-ExperimentalFeature][17] cmdlets to enable or
+Use the [Enable-ExperimentalFeature][19] and [Disable-ExperimentalFeature][18] cmdlets to enable or
 disable a feature. You must start a new PowerShell session for this change to be in effect. Run the
 following command to enable the `PSCommandNotFoundSuggestion` feature:
 
@@ -86,13 +86,14 @@ Legend
 | [PSCommandNotFoundSuggestion][06]                   | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
 | [PSCommandWithArgs][07]                             | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
 | [PSDesiredStateConfiguration.InvokeDscResource][08] | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
-| [PSFeedbackProvider][09]                            | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSFeedbackProvider][09]                            | ![Experimental][02] | ![Experimental][02] |  ![Mainstream][01]  |
 | [PSLoadAssemblyFromNativeCode][10]                  | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
 | [PSModuleAutoLoadSkipOfflineFiles][11]              | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
-| [PSNativeWindowsTildeExpansion][12]                 |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSRedirectToVariable][13]                          |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSSerializeJSONLongEnumAsNumber][14]               |                     | ![Experimental][02] | ![Experimental][02] |
-| [PSSubsystemPluginModel][15]                        | ![Experimental][02] | ![Experimental][02] | ![Experimental][02] |
+| [PSNativeWindowsTildeExpansion][12]                 |                     | ![Experimental][02] |  ![Mainstream][01]  |
+| [PSProfileDSCResource][13]                          |                     |                     | ![Experimental][02] |
+| [PSRedirectToVariable][14]                          |                     | ![Experimental][02] |  ![Mainstream][01]  |
+| [PSSerializeJSONLongEnumAsNumber][15]               |                     | ![Experimental][02] | ![Experimental][02] |
+| [PSSubsystemPluginModel][16]                        | ![Experimental][02] | ![Experimental][02] |  ![Mainstream][01]  |
 
 ### PSCommandNotFoundSuggestion
 
@@ -155,6 +156,10 @@ use or support MOF compilation. For more information, see
 
 ### PSFeedbackProvider
 
+> [!NOTE]
+> This experimental feature was added in PowerShell 7.4-preview.3. This feature became mainstream in
+> PowerShell 7.6-preview.6.
+
 When you enable this feature, PowerShell uses a new feedback provider to give you feedback when a
 command can't be found. The feedback provider is extensible, and can be implemented by third-party
 modules. The feedback provider can be used by other subsystems, such as the predictor subsystem, to
@@ -169,8 +174,6 @@ This feature includes two built-in feedback providers:
   from command-not-found command is used both for providing the feedback when command can't be found
   in an interactive run, and for providing predictive IntelliSense results for the next command
   line.
-
-This feature was added in PowerShell 7.4-preview.3.
 
 ### PSLoadAssemblyFromNativeCode
 
@@ -190,10 +193,54 @@ always kept on disk.
 
 This feature was added in PowerShell 7.4-preview.1.
 
+### PSNativeWindowsTildeExpansion
+
+> [!NOTE]
+> This experimental feature was added in PowerShell 7.5-preview.2. This feature became mainstream in
+> PowerShell 7.6-preview.6.
+
+When this feature is enabled, PowerShell expands unquoted tilde (`~`) to the user's current home
+folder before invoking native commands. The following examples show how the feature works.
+
+With the feature disabled, the tilde is passed to the native command as a literal string.
+
+```powershell
+PS> cmd.exe /c echo ~
+~
+```
+
+With the feature enabled, PowerShell expands the tilde before it's passed to the native command.
+
+```powershell
+PS> cmd.exe /c echo ~
+C:\Users\username
+```
+
+This feature only applies to Windows. On non-Windows platforms, tilde expansion is handled natively.
+
+### PSProfileDSCResource
+
+> [!NOTE]
+> This experimental feature was added in PowerShell 7.6-preview.6.
+
+The PowerShell 7.6-preview.6 release added this feature as an advertisement for a new DSCv3
+resource. The experimental feature flag doesn't do anything. You can use the new DSC v3 resource
+regardless of whether this feature is enabled or disabled.
+
+The `Microsoft.PowerShell/Profile` resource enables you to manage PowerShell profiles using Desired
+State Configuration (DSC) v3. This release includes two new files in the `$PSHOME` folder:
+
+- `pwsh.profile.dsc.resource.json` - DSC v3 resource manifest file
+- `pwsh.profile.resource.ps1` - DSC v3 resource implementation file
+
+The resource supports operations to get, set, and export profile content for different profile
+types. For more information, see the notes in the PR [PowerShell/PowerShell#26157][26157].
+
 ### PSRedirectToVariable
 
 > [!NOTE]
-> This experimental feature was added in PowerShell 7.5-preview.4.
+> This experimental feature was added in PowerShell 7.5-preview.4. This feature became mainstream in
+> PowerShell 7.6-preview.6.
 
 When enabled, this feature adds support for redirecting to the Variable: drive. This feature allows
 you to redirect data to a variable using the `Variable:name` syntax. PowerShell inspects the target
@@ -217,48 +264,12 @@ Output 2
 WARNING: Warning, Warning!
 ```
 
-### PSSubsystemPluginModel
-
-This feature enables the subsystem plugin model in PowerShell. The feature makes it possible to
-separate components of `System.Management.Automation.dll` into individual subsystems that reside in
-their own assembly. This separation reduces the disk footprint of the core PowerShell engine and
-allows these components to become optional features for a minimal PowerShell installation.
-
-Currently, only the **CommandPredictor** subsystem is supported. This subsystem is used along with
-the PSReadLine module to provide custom prediction plugins. In future, **Job**,
-**CommandCompleter**, **Remoting** and other components could be separated into subsystem assemblies
-outside of `System.Management.Automation.dll`.
-
-The experimental feature includes a new cmdlet, [Get-PSSubsystem][20]. This cmdlet is only available
-when the feature is enabled. This cmdlet returns information about the subsystems that are available
-on the system.
-
-### PSNativeWindowsTildeExpansion
-
-When this feature is enabled, PowerShell expands unquoted tilde (`~`) to the user's current home
-folder before invoking native commands. The following examples show how the feature works.
-
-With the feature disabled, the tilde is passed to the native command as a literal string.
-
-```powershell
-PS> cmd.exe /c echo ~
-~
-```
-
-With the feature enabled, PowerShell expands the tilde before it's passed to the native command.
-
-```powershell
-PS> cmd.exe /c echo ~
-C:\Users\username
-```
-
-This feature only applies to Windows. On non-Windows platforms, tilde expansion is handled natively.
-
-This feature was added in PowerShell 7.5-preview.2.
-
 ### PSSerializeJSONLongEnumAsNumber
 
-This feature enables the cmdlet [ConvertTo-Json][21] to serialize any enum values based on
+> [!NOTE]
+> This experimental feature was added in PowerShell 7.5-preview.5.
+
+This feature enables the cmdlet [ConvertTo-Json][22] to serialize any enum values based on
 `Int64/long` or `UInt64/ulong` as a numeric value rather than the string representation of that enum
 value. This aligns the behavior of enum serialization with other enum base types where the cmdlet
 serializes enums as their numeric value. Use the **EnumsAsStrings** parameter to serialize as the
@@ -286,6 +297,25 @@ For example:
 # { "Key": "Cmdlets" }
 ```
 
+### PSSubsystemPluginModel
+
+> [!NOTE]
+> This feature became mainstream in PowerShell 7.6-preview.6.
+
+This feature enables the subsystem plugin model in PowerShell. The feature makes it possible to
+separate components of `System.Management.Automation.dll` into individual subsystems that reside in
+their own assembly. This separation reduces the disk footprint of the core PowerShell engine and
+allows these components to become optional features for a minimal PowerShell installation.
+
+Currently, only the **CommandPredictor** subsystem is supported. This subsystem is used along with
+the PSReadLine module to provide custom prediction plugins. In future, **Job**,
+**CommandCompleter**, **Remoting** and other components could be separated into subsystem assemblies
+outside of `System.Management.Automation.dll`.
+
+The experimental feature includes a new cmdlet, [Get-PSSubsystem][21]. This cmdlet is only available
+when the feature is enabled. This cmdlet returns information about the subsystems that are available
+on the system.
+
 <!-- link references -->
 [01]: ../../media/shared/check-mark-button-2705.svg
 [02]: ../../media/shared/construction-sign-1f6a7.svg
@@ -299,12 +329,14 @@ For example:
 [10]: #psloadassemblyfromnativecode
 [11]: #psmoduleautoloadskipofflinefiles
 [12]: #psnativewindowstildeexpansion
-[13]: #psredirecttovariable
-[14]: #psserializejsonlongenumasnumber
-[15]: #pssubsystempluginmodel
-[16]: https://github.com/PowerShell/PowerShell/issues/new/choose
-[17]: xref:Microsoft.PowerShell.Core.Disable-ExperimentalFeature
-[18]: xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature
-[19]: xref:Microsoft.PowerShell.Core.Get-ExperimentalFeature
-[20]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
-[21]: xref:Microsoft.PowerShell.Utility.ConvertTo-Json
+[13]: #psprofiledscresource
+[14]: #psredirecttovariable
+[15]: #psserializejsonlongenumasnumber
+[16]: #pssubsystempluginmodel
+[17]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[18]: xref:Microsoft.PowerShell.Core.Disable-ExperimentalFeature
+[19]: xref:Microsoft.PowerShell.Core.Enable-ExperimentalFeature
+[20]: xref:Microsoft.PowerShell.Core.Get-ExperimentalFeature
+[21]: xref:Microsoft.PowerShell.Core.Get-PSSubsystem
+[22]: xref:Microsoft.PowerShell.Utility.ConvertTo-Json
+[26157]: https://github.com/PowerShell/PowerShell/pull/26157

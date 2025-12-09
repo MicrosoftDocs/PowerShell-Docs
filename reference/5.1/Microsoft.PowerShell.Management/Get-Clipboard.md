@@ -28,17 +28,15 @@ returned as an array of strings similar to `Get-Content`.
 
 ## EXAMPLES
 
-### Example 1: Get the content of the clipboard and display it to the command-line
-
-In this example we have right-clicked on an image in a browser and chose the **Copy** action. The
-following command displays the link, as a URL, of the image that is stored in the clipboard.
+### Example 1: Get the content of the clipboard
 
 ```powershell
+Set-Clipboard -Value 'hello world'
 Get-Clipboard
 ```
 
 ```Output
-https://en.wikipedia.org/wiki/PowerShell
+hello world
 ```
 
 ### Example 2: Get the content of the clipboard in a specific format

@@ -32,16 +32,15 @@ returned as an array of strings similar to `Get-Content`.
 
 ## EXAMPLES
 
-### Example 1: Get the content of the clipboard and display it to the command-line
-
-In this example we have copied the text "hello" into the clipboard.
+### Example 1: Get the content of the clipboard
 
 ```powershell
+Set-Clipboard -Value 'hello world'
 Get-Clipboard
 ```
 
 ```Output
-hello
+hello world
 ```
 
 ## PARAMETERS
