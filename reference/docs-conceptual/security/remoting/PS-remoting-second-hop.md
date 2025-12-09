@@ -6,7 +6,7 @@ title: Making the second hop in PowerShell Remoting
 
 # Making the second hop in PowerShell Remoting
 
-The following scenario outlines the _second hop problem_":
+The following scenario outlines the _second hop problem_:
 
 1. You're logged in to _ServerA_.
 1. From _ServerA_, you start a remote PowerShell session to connect to _ServerB_.
@@ -82,7 +82,7 @@ transition.
 > Active Directory accounts that have the **Account is sensitive and can't be delegated** property
 > set can't be delegated. For more information, see
 > [Security Focus: Analysing 'Account is sensitive and can't be delegated' for Privileged Accounts][01]
-> and [Kerberos Authentication Tools and > Settings][09].
+> and [Kerberos Authentication Tools and Settings][09].
 
 ## Resource-based Kerberos constrained delegation
 
