@@ -104,9 +104,9 @@ $ISETheme = @{
 ```
 
 > [!NOTE]
-> You can use the `$PSStyle.FromRGB()` method to create the ANSI escape sequences for the colors you
-> want. For more information about `$PSStyle`, see [about_ANSI_Terminals][01]. For more information
-> about ANSI escape sequences, see the [ANSI escape code][04] article in Wikipedia.
+> You can use the `FromRGB()` method to create the ANSI escape sequences for the colors you want.
+> For more information about `$PSStyle`, see [about_ANSI_Terminals][01]. For more information about
+> ANSI escape sequences, see the [ANSI escape code][04] article in Wikipedia.
 
 ## Setting the color theme in your profile
 
@@ -123,22 +123,22 @@ Set-PSReadLineOption -Colors $ISETheme
 The following settings work better for a light background terminal.
 
 ```powershell
-$PSStyle.Formatting.FormatAccent       = "`e[32m"
-$PSStyle.Formatting.TableHeader        = "`e[32m"
-$PSStyle.Formatting.ErrorAccent        = "`e[36m"
-$PSStyle.Formatting.Error              = "`e[31m"
-$PSStyle.Formatting.Warning            = "`e[33m"
-$PSStyle.Formatting.Verbose            = "`e[33m"
-$PSStyle.Formatting.Debug              = "`e[33m"
-$PSStyle.Progress.Style                = "`e[33m"
+$PSStyle.Formatting.FormatAccent       = $PSStyle.Foreground.Green
+$PSStyle.Formatting.TableHeader        = $PSStyle.Foreground.Green
+$PSStyle.Formatting.ErrorAccent        = $PSStyle.Foreground.Cyan
+$PSStyle.Formatting.Error              = $PSStyle.Foreground.Red
+$PSStyle.Formatting.Warning            = $PSStyle.Foreground.Yellow
+$PSStyle.Formatting.Verbose            = $PSStyle.Foreground.Yellow
+$PSStyle.Formatting.Debug              = $PSStyle.Foreground.Yellow
+$PSStyle.Progress.Style                = $PSStyle.Foreground.Yellow
 $PSStyle.FileInfo.Directory            = $PSStyle.Background.FromRgb(0x2f6aff) +
                                          $PSStyle.Foreground.BrightWhite
-$PSStyle.FileInfo.SymbolicLink         = "`e[36m"
-$PSStyle.FileInfo.Executable           = "`e[95m"
-$PSStyle.FileInfo.Extension['.ps1']    = "`e[36m"
-$PSStyle.FileInfo.Extension['.ps1xml'] = "`e[36m"
-$PSStyle.FileInfo.Extension['.psd1']   = "`e[36m"
-$PSStyle.FileInfo.Extension['.psm1']   = "`e[36m"
+$PSStyle.FileInfo.SymbolicLink         = $PSStyle.Foreground.Cyan
+$PSStyle.FileInfo.Executable           = $PSStyle.Foreground.BrightMagenta
+$PSStyle.FileInfo.Extension['.ps1']    = $PSStyle.Foreground.Cyan
+$PSStyle.FileInfo.Extension['.ps1xml'] = $PSStyle.Foreground.Cyan
+$PSStyle.FileInfo.Extension['.psd1']   = $PSStyle.Foreground.Cyan
+$PSStyle.FileInfo.Extension['.psm1']   = $PSStyle.Foreground.Cyan
 ```
 
 ## Choosing colors for accessibility
