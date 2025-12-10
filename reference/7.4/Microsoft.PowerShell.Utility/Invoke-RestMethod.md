@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 02/05/2025
+ms.date: 12/10/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -316,7 +316,7 @@ a list of Docker images using the Docker API. The cmdlet connects to the Docker 
 Unix socket.
 
 ```powershell
-Invoke-RestMethod -Uri "http://localhost/v1.40/images/json/" -UnixSocket "/var/run/docker.sock"
+Invoke-RestMethod -Uri http://localhost/v1.40/images/json -UnixSocket '/var/run/docker.sock'
 ```
 
 ## PARAMETERS
