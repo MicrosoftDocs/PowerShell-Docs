@@ -73,8 +73,8 @@ Get-Clipboard -Delimiter "`r`n", "`n"
 ### -Delimiter
 
 Specifies one or more delimiters to use when the clipboard content is returned as an array of
-strings. The contents of the clipboard are split at each occurrence of any of the specified
-delimiters. If not specified, the default delimiter is the platform-specific newline.
+strings. The command splits the contents of the clipboard at each occurrence of any of the specified
+delimiters. If not specified, the default delimiter is `[Environment.NewLine]`.
 
 - On Windows, the default delimiter is ``"`r`n"``.
 - On Linux and macOS, the default delimiter is ``"`n"``.
@@ -86,7 +86,7 @@ Aliases:
 
 Required: False
 Position: Named
-Default value: [Environment.NewLine]
+Default value: Platform specific newline
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
