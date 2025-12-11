@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2024
+ms.date: 12/04/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
@@ -11,13 +11,32 @@ title: ConvertTo-Json
 # ConvertTo-Json
 
 ## SYNOPSIS
+
 Converts an object to a JSON-formatted string.
 
 ## SYNTAX
 
+### Default (Default)
+
 ```
 ConvertTo-Json [-InputObject] <Object> [-Depth <Int32>] [-Compress]
- [-EnumsAsStrings] [-AsArray] [-EscapeHandling <StringEscapeHandling>]
+ [-EnumsAsStrings] [-EscapeHandling <StringEscapeHandling>]
+ [<CommonParameters>]
+```
+
+### Array
+
+```
+ConvertTo-Json [-InputObject] <Object> -AsArray [-Depth <Int32>] [-Compress]
+ [-EnumsAsStrings] [-EscapeHandling <StringEscapeHandling>]
+ [<CommonParameters>]
+```
+
+### Stream
+
+```
+ConvertTo-Json [-InputObject] <Object> -AsStream [-Depth <Int32>] [-Compress]
+ [-EnumsAsStrings] [-EscapeHandling <StringEscapeHandling>]
  [<CommonParameters>]
 ```
 
@@ -38,8 +57,8 @@ object, which is easily managed in PowerShell.
 Many web sites use JSON instead of XML to serialize data for communication between servers and
 web-based apps.
 
-As of PowerShell 7.1, `ConvertTo-Json` emits a warning if the depth of the input object exceeds
-the depth specified for the command. This prevents unwanted data loss when converting objects.
+As of PowerShell 7.1, `ConvertTo-Json` emits a warning if the depth of the input object exceeds the
+depth specified for the command. This prevents unwanted data loss when converting objects.
 
 As of PowerShell 7.5-preview.3, `ConvertTo-Json` can serialize **BigInteger** values as raw JSON
 numbers.
@@ -180,7 +199,24 @@ Outputs the object in array brackets, even if the input is a single object.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: Array
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AsStream
+
+Converts each input object to a separate, complete JSON object string, rather than combining all
+input objects into a single JSON array.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: Stream
 Aliases:
 
 Required: False
@@ -192,7 +228,7 @@ Accept wildcard characters: False
 
 ### -Compress
 
-Omits white space and indented formatting in the output string.
+Omits whitespace and indented formatting in the output string.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -304,7 +340,8 @@ You can pipe any object to this cmdlet.
 
 ### System.String
 
-This cmdlet returns a string representing the input object converted to a JSON string.
+This cmdlet returns a string representing the input object(s) converted to a JSON string.
+When AsStream is specified, each object is converted to a complete JSON string.
 
 ## NOTES
 
