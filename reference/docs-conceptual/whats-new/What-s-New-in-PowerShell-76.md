@@ -1,21 +1,21 @@
 ---
 title: What's New in PowerShell 7.6
 description: New features and changes released in PowerShell 7.6
-ms.date: 10/09/2025
+ms.date: 12/09/2025
 ---
 
 # What's New in PowerShell 7.6
 
-PowerShell 7.6-preview.5 includes the following features, updates, and breaking changes. PowerShell
+PowerShell 7.6-preview.6 includes the following features, updates, and breaking changes. PowerShell
 7.6 is built on .NET 9.0.101 GA release.
 
-For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
+For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
 ## Updated modules
 
-PowerShell 7.6-preview.5 includes the following updated modules:
+PowerShell 7.6-preview.6 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** v1.1.0
+- **Microsoft.PowerShell.PSResourceGet** v1.2.0-preview5
 - **PSReadLine** v2.4.4-beta4
 - **Microsoft.PowerShell.ThreadJob** v2.2.0
 - **ThreadJob** v2.1.0
@@ -35,9 +35,12 @@ name, the **ThreadJob** v2.1.0 module is a proxy module that points to the
 
 ## Tab completion improvements
 
-- Use parameter `HelpMessage` for tool tip in parameter completion ([#25108][25108]) (Thanks @jborean93!)
+- Properly Expand Aliases to their actual ResolvedCommand ([#26571][26571]) (Thanks @kilasuit!)
+- Use parameter `HelpMessage` for tool tip in parameter completion ([#25108][25108]) (Thanks
+  @jborean93!)
 - Remove duplicate modules from completion results ([#25538][25538]) (Thanks @MartinGC94!)
-- Add completion for variables assigned in `ArrayLiteralAst` and `ParenExpressionAst` ([#25303][25303]) (Thanks @MartinGC94!)
+- Add completion for variables assigned in `ArrayLiteralAst` and `ParenExpressionAst`
+  ([#25303][25303]) (Thanks @MartinGC94!)
 - Fix tab completion for env/function variables ([#25346][25346]) (Thanks @jborean93!)
 - Update Named and Statement block type inference to not consider **AssignmentStatements** and
   Increment/decrement operators as part of their output ([#21137][21137]) (Thanks @MartinGC94!)
@@ -88,8 +91,9 @@ name, the **ThreadJob** v2.1.0 module is a proxy module that points to the
 
 ## Cmdlet improvements
 
-- Fix Out-GridView by replacing use of obsolete BinaryFormatter with custom implementation ([#25497][25497])
-  (Thanks @mawosoft!)
+- Add `-Delimiter` parameter to `Get-Clipboard` ([#26572][26572]) (Thanks @MartinGC94!)
+- Fix Out-GridView by replacing use of obsolete BinaryFormatter with custom implementation
+  ([#25497][25497]) (Thanks @mawosoft!)
 - Improve verbose and debug logging level messaging in web cmdlets ([#25510][25510]) (Thanks
   @JustinGrote!)
 - Improve debug logging of Web cmdlet request and response ([#25479][25479]) (Thanks @JustinGrote!)
@@ -137,6 +141,9 @@ name, the **ThreadJob** v2.1.0 module is a proxy module that points to the
 
 ## Engine improvements
 
+- Fix a regression in the API `CompletionCompleters.CompleteFilename()` that causes null reference
+  exception ([#26487][26487])
+- Close pipe client handles after creating the child ssh process ([#26564][26564])
 - Update the **PSDiagnostics** module to manage the PowerShellCore provider in PowerShell 7
   ([#25590][25590])
 - Allow opt-out of the named-pipe listener using the environment variable
@@ -176,18 +183,30 @@ name, the **ThreadJob** v2.1.0 module is a proxy module that points to the
 
 ## Experimental features
 
-The following experimental features are included in PowerShell 7.6-preview.3:
+PowerShell 7.6-preview.6 includes the following changes to experimental features.
 
-- [PSNativeWindowsTildeExpansion][01] - Add tilde expansion for Windows-native executables
-- [PSRedirectToVariable][02] - Allow redirecting to a variable
-- [PSSerializeJSONLongEnumAsNumber][03] - `ConvertTo-Json` now treats large enums as numbers
+The following features have been converted to mainstream features:
+
+- [PSFeedbackProvider][01]
+- [PSNativeWindowsTildeExpansion][02]
+- [PSRedirectToVariable][04]
+- [PSSubsystemPluginModel][06]
+
+This release includes the following experimental features:
+
+- [PSSerializeJSONLongEnumAsNumber][05] - `ConvertTo-Json` now treats large enums as numbers
+- [PSProfileDSCResource][03] - Add DSC v3 resource for PowerShell Profiles
 
 <!-- end of content -->
 <!-- reference links -->
-[01]: ../learn/experimental-features.md#psnativewindowstildeexpansion
-[02]: ../learn/experimental-features.md#psredirecttovariable
-[03]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
-[04]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
+[01]: ../learn/experimental-features.md#psfeedbackprovider
+[02]: ../learn/experimental-features.md#psnativewindowstildeexpansion
+[03]: ../learn/experimental-features.md#psprofiledscresource
+[04]: ../learn/experimental-features.md#psredirecttovariable
+[05]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
+[06]: ../learn/experimental-features.md#pssubsystempluginmodel
+
+[log]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 
 [14553]: https://github.com/PowerShell/PowerShell/pull/14553
 [17687]: https://github.com/PowerShell/PowerShell/pull/17687
@@ -278,3 +297,7 @@ The following experimental features are included in PowerShell 7.6-preview.3:
 [26081]: https://github.com/PowerShell/PowerShell/pull/26081
 [26086]: https://github.com/PowerShell/PowerShell/pull/26086
 [26118]: https://github.com/PowerShell/PowerShell/pull/26118
+[26487]: https://github.com/PowerShell/PowerShell/pull/26487
+[26564]: https://github.com/PowerShell/PowerShell/pull/26564
+[26571]: https://github.com/PowerShell/PowerShell/pull/26571
+[26572]: https://github.com/PowerShell/PowerShell/pull/26572
