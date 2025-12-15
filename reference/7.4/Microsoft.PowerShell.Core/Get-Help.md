@@ -256,7 +256,7 @@ Import-Clixml
 ```
 
 `Get-Help` uses the **Full** parameter to get help information for `Add-Member` and returns a
-**MamlCommandHelpInfo** . `Out-String` uses the **Stream** parameter to convert the object into a
+**MamlCommandHelpInfo**. `Out-String` uses the **Stream** parameter to convert the object into a
 string. `Select-String` uses the **Pattern** parameter to search the string for **Clixml**.
 
 ### Example 10: Display a list of articles that include a word
