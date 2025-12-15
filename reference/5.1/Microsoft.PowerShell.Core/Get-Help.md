@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/21/2023
+ms.date: 12/15/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-help?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Help
@@ -255,10 +255,9 @@ Export-Clixml
 Import-Clixml
 ```
 
-`Get-Help` uses the **Full** parameter to get help information for `Add-Member`. The
-**MamlCommandHelpInfo** object is sent down the pipeline. `Out-String` uses the **Stream** parameter
-to convert the object into a string. `Select-String` uses the **Pattern** parameter to search the
-string for **Clixml**.
+`Get-Help` uses the **Full** parameter to get help information for `Add-Member` and returns a
+**MamlCommandHelpInfo**. `Out-String` uses the **Stream** parameter to convert the object into a
+string. `Select-String` uses the **Pattern** parameter to search the string for **Clixml**.
 
 ### Example 10: Display a list of articles that include a word
 
@@ -654,6 +653,13 @@ can also use it to update the help files so that the help on your computer is ne
 
 You can also read the help articles about the commands that come with PowerShell online starting at
 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+
+You can use `Get-Help` to search for help articles by keyword or wildcard pattern. `Get-Help`
+displays a list of the matching articles. If the search term matches an approved verb, `Get-Help`
+displays a list of commands that use that verb. It doesn't include other help articles that include
+the matching search term. If the search term doesn't match an approved verb, `Get-Help` displays
+a list of articles that include that text in their contents. For more information about approved
+verbs, see [Get-Verb](xref:Microsoft.PowerShell.Utility.Get-Verb).
 
 `Get-Help` displays help in the locale set for the Windows operating system or in the fallback
 language for that locale. If you don't have help files for the primary or fallback locale,
