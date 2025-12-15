@@ -657,7 +657,7 @@ You can also read the help articles about the commands that come with PowerShell
 You can use `Get-Help` to search for help articles by keyword or wildcard pattern. `Get-Help`
 displays a list of the matching articles. If the search term matches an approved verb, `Get-Help`
 displays a list of commands that use that verb. It doesn't include other help articles that include
-the matching search term. If the search term doesn't match any an approved verb, `Get-Help` displays
+the matching search term. If the search term doesn't match an approved verb, `Get-Help` displays
 a list of articles that include that text in their contents. For more information about approved
 verbs, see [Get-Verb](xref:Microsoft.PowerShell.Utility.Get-Verb).
 
