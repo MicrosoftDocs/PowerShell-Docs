@@ -5,10 +5,13 @@
     "Acrolinx.vscode-sidebar",
     "docsmsft.docs-authoring-pack",
     "marvhen.reflow-markdown",
+    "chrischinchilla.vale-vscode",
     "ms-vscode.powershell",
+    "nhoizey.gremlins",
     "shuworks.vscode-table-formatter",
+    "bierner.markdown-yaml-preamble",
     "streetsidesoftware.code-spell-checker",
-    "wmaurer.change-case",
-    "yzane.markdown-pdf"
+    "usernamehw.errorlens",
+    "wmaurer.change-case"
   ]
 }
