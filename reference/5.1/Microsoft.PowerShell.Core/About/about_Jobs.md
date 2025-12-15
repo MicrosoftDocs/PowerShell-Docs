@@ -1,7 +1,7 @@
 ---
 description: Provides information about how PowerShell background jobs run a command or expression in the background without interacting with the current session.
 Locale: en-US
-ms.date: 01/07/2025
+ms.date: 12/15/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Jobs
@@ -9,6 +9,7 @@ title: about_Jobs
 # about_Jobs
 
 ## Short description
+
 Provides information about how PowerShell background jobs run a command or
 expression in the background without interacting with the current session.
 
@@ -239,12 +240,12 @@ Id Name  PSJobTypeName State    HasMoreData Location  Command
 In this case, the **State** property reveals that Job 2 is still running. If
 you were to use the `Receive-Job` cmdlet to get the job results now, the
 results would be incomplete. You can use the `Receive-Job` cmdlet repeatedly to
-get all of the results. Use the **State** property to determine when the job is
+get all the results. Use the **State** property to determine when the job is
 complete.
 
-You can also use the **Wait** parameter of the `Receive-Job` cmdlet. When you
-use this parameter, the cmdlet doesn't return the command prompt until the job
-is completed and all results are available.
+You can also the `Receive-Job -Wait` command. When you use this parameter, the
+cmdlet doesn't return the command prompt until the job is completed and all
+results are available.
 
 You can also use the `Wait-Job` cmdlet to wait for any or all of the results of
 the job. `Wait-Job` lets you wait for one or more specific job or for all jobs.
