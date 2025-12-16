@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/29/2025
+ms.date: 12/16/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -39,8 +39,29 @@ This cmdlet was introduced in Windows PowerShell 3.0.
 
 > [!WARNING]
 > By default, `Invoke-WebRequest` parses the content of the web page. Script code in the web page
-> might be run when the page is parsed. Use the `-UseBasicParsing` switch to avoid script code
-> execution.
+> might be run when the page is parsed. On **December 9, 2025**, Microsoft released a security
+> update for [CVE-2025-54100](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-54100)
+> that changes the default behavior of `Invoke-WebRequest`. After you install the updates, when you
+> use the `Invoke-WebRequest` command you see the following confirmation prompt with security
+> warning of script execution risk:
+>
+> ```
+> Security Warning: Script Execution Risk
+> Invoke-WebRequest parses the content of the web page. Script code in the web page might be
+> run when the page is parsed.
+>       RECOMMENDED ACTION:
+>       Use the -UseBasicParsing switch to avoid script code execution.
+>       Do you want to continue?
+> ```
+>
+> To avoid the confirmation prompt, you must use the **UseBasicParsing** parameter. There is no way
+> to bypass this prompt without using the **UseBasicParsing** parameter. If you answer "Y" to the
+> prompt, the command runs with full parsing of the web page content, which could run script code in
+> the web page.
+>
+> For more information about this security update, see
+> [PowerShell 5.1: Preventing script execution from web content](https://support.microsoft.com/KB/5074596).
+
 
 This command can be run using the `iwr`, `curl`, or `wget` aliases.
 
