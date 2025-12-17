@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/26/2025
+ms.date: 12/17/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -42,9 +42,6 @@ container, it gets the items inside the container, known as child items. You can
 parameter to get items in all child containers and use the **Depth** parameter to limit the number
 of levels to recurse.
 
-`Get-ChildItem` doesn't display empty directories. When a `Get-ChildItem` command includes the
-**Depth** or **Recurse** parameters, empty directories aren't included in the output.
-
 The `Get-ChildItem` cmdlet is designed to work with the items exposed by any provider. For example,
 items can be a file system file or directory, registry hive, or a certificate store. To list the
 providers available in your session, use the `Get-PSProvider` command. Some parameters are only
@@ -55,9 +52,9 @@ available for a specific provider. For more information, see
 
 ### Example 1: Get child items from a file system directory
 
-This example gets the child items from a file system directory. The filenames and subdirectory
-names are displayed. For empty locations, the command doesn't return any output and returns to the
-PowerShell prompt.
+This example gets the child items from a file system directory. The filenames and subdirectory names
+are displayed. For empty locations (directories or folders), the command doesn't return any output
+and returns to the PowerShell prompt.
 
 The `Get-ChildItem` cmdlet uses the **Path** parameter to specify the directory `C:\Test`.
 `Get-ChildItem` displays the files and directories in the PowerShell console.
