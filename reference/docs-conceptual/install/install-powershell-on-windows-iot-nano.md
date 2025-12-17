@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows IoT and Nano Server.
-ms.date: 11/19/2025
+ms.date: 12/15/2025
 title: Install PowerShell on Windows IoT and Nano Server
 ---
 # Install PowerShell on Windows IoT and Nano Server
