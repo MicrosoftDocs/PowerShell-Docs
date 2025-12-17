@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows
-ms.date: 11/19/2025
+ms.date: 12/15/2025
 title: Install PowerShell on Windows
 ---
 # Install PowerShell on Windows
@@ -82,9 +82,9 @@ Latest stable release:
 
 Latest Preview release:
 
-- [PowerShell-7.6.0-preview.5-win-x64.msi][19]
-- [PowerShell-7.6.0-preview.5-win-x86.msi][20]
-- [PowerShell-7.6.0-preview.5-win-arm64.msi][18]
+- [PowerShell-7.6.0-preview.6-win-x64.msi][19]
+- [PowerShell-7.6.0-preview.6-win-x86.msi][20]
+- [PowerShell-7.6.0-preview.6-win-arm64.msi][18]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -296,9 +296,9 @@ can't support those methods.
 [15]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x64.zip
 [16]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x86.msi
 [17]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x86.zip
-[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.5/PowerShell-7.6.0-preview.5-win-arm64.msi
-[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.5/PowerShell-7.6.0-preview.5-win-x64.msi
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.5/PowerShell-7.6.0-preview.5-win-x86.msi
+[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.6/PowerShell-7.6.0-preview.6-win-arm64.msi
+[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.6/PowerShell-7.6.0-preview.6-win-x64.msi
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.6/PowerShell-7.6.0-preview.6-win-x86.msi
 [21]: https://github.com/PowerShell/PowerShell/releases/latest
 [22]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [23]: microsoft-update-faq.yml

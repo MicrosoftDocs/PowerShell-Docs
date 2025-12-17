@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/01/2025
+ms.date: 12/10/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-clipboard?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -18,7 +18,7 @@ Gets the contents of the clipboard.
 ## SYNTAX
 
 ```
-Get-Clipboard [-Raw] [<CommonParameters>]
+Get-Clipboard [-Raw] [-Delimiter <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,19 +32,64 @@ returned as an array of strings similar to `Get-Content`.
 
 ## EXAMPLES
 
-### Example 1: Get the content of the clipboard and display it to the command-line
-
-In this example we have copied the text "hello" into the clipboard.
+### Example 1: Get the content of the clipboard
 
 ```powershell
+Set-Clipboard -Value 'hello world'
 Get-Clipboard
 ```
 
 ```Output
-hello
+hello world
+```
+
+### Example 2: Get the content of the clipboard using a custom delimiter
+
+This example gets the content of the clipboard. The content is a string containing the pipe
+character. `Get-Clipboard` splits the content at each occurrence of the specified delimiter.
+
+```powershell
+Set-Clipboard -Value 'line1|line2|line3'
+Get-Clipboard -Delimiter '|'
+```
+
+```Output
+line1
+line2
+line3
+```
+
+### Example 3: Get the content of the clipboard using custom delimiters
+
+This example gets the content of the clipboard delimited by the line ending for both Windows and
+Linux.
+
+```powershell
+Get-Clipboard -Delimiter "`r`n", "`n"
 ```
 
 ## PARAMETERS
+
+### -Delimiter
+
+Specifies one or more delimiters to use when the clipboard content is returned as an array of
+strings. The command splits the contents of the clipboard at each occurrence of any of the specified
+delimiters. If not specified, the default delimiter is `[Environment.NewLine]`.
+
+- On Windows, the default delimiter is ``"`r`n"``.
+- On Linux and macOS, the default delimiter is ``"`n"``.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: Platform specific newline
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Raw
 
