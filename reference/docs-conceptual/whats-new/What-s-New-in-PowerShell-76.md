@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.6
 description: New features and changes released in PowerShell 7.6
-ms.date: 12/09/2025
+ms.date: 12/17/2025
 ---
 
 # What's New in PowerShell 7.6
 
 PowerShell 7.6-preview.6 includes the following features, updates, and breaking changes. PowerShell
-7.6 is built on .NET 9.0.101 GA release.
+7.6 is built on .NET 10.0.0 GA release.
 
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
