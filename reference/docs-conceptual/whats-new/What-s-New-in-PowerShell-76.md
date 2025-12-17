@@ -9,6 +9,7 @@ ms.date: 12/17/2025
 PowerShell 7.6-preview.6 includes the following features, updates, and breaking changes. PowerShell
 7.6 is built on .NET 10.0.0 GA release.
 
+
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
 ## Updated modules
