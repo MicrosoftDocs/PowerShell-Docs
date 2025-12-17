@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/09/2024
+ms.date: 12/17/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -43,9 +43,6 @@ The `Get-ChildItem` cmdlet gets the items in one or more specified locations. If
 container, it gets the items inside the container, known as child items. You can use the **Recurse**
 parameter to get items in all child containers and use the **Depth** parameter to limit the number
 of levels to recurse.
-
-`Get-ChildItem` doesn't display empty directories. When a `Get-ChildItem` command includes the
-**Depth** or **Recurse** parameters, empty directories aren't included in the output.
 
 The `Get-ChildItem` cmdlet is designed to work with the items exposed by any provider. For example,
 items can be a file system file or directory, registry hive, or a certificate store. To list the
