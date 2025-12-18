@@ -217,7 +217,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 > or in a different version of PowerShell.
 
 The automatic variable `$OutputEncoding` affects the encoding PowerShell uses
-to when sending data to external programs. The `$PSApplicationOutputEncoding`
+when sending data to external programs. The `$PSApplicationOutputEncoding`
 variable affects the encoding PowerShell uses to read data from external
 programs. They have no effect on the encoding that the output redirection
 operators and PowerShell cmdlets use to save to files.
