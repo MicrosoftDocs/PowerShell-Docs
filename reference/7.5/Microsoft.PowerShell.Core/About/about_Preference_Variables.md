@@ -1060,7 +1060,7 @@ behavior when the variable isn't defined is the same as
 
 To automatically import a module, get or use a command contained in the module.
 
-The `$PSModuleAutoloadingPreference` variable takes one of the
+The `$PSModuleAutoLoadingPreference` variable takes one of the
 [`PSModuleAutoLoadingPreference`][58] enumeration values:
 
 - `All`: Modules are imported automatically on first-use.
