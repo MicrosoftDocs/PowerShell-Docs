@@ -87,9 +87,14 @@ cmdlet, overwrite the following methods of
 - [MoveItem][55]
 - [MoveItemDynamicParameters][56]
 
-### `New-ItemProperty`
+### `New-Item`
 
-This cmdlet allows the user to create a new item in the data store.
+This cmdlet allows the user to create a new item in the data store. To support this
+cmdlet, overwrite the following methods of
+[System.Management.Automation.Provider.ContainerCmdletProvider][01] class:
+
+- [NewItem][57]
+- [NewItemDynamicParameters][58]
 
 ### `Remove-Item`
 
@@ -342,3 +347,5 @@ overwrite any methods to support this cmdlet.
 [54]: xref:System.Management.Automation.Provider.NavigationCmdletProvider.MakePath%2A
 [55]: xref:System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem%2A
 [56]: xref:System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters%2A
+[57]: xref:System.Management.Automation.Provider.ContainerCmdletProvider.NewItem%2A
+[58]: xref:System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters%2A
