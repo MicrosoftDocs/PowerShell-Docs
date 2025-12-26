@@ -98,9 +98,7 @@ session.
 
 To create a new file, copy an existing `Format.ps1xml` file. The new file can
 have any name, but it must have a `.ps1xml` file name extension. You can place
-the new file in any directory that is accessible to PowerShell, but it's useful
-to place the files in the PowerShell installation directory (`$PSHOME`) or in a
-subdirectory of the installation directory.
+the new file in any directory that is accessible to PowerShell.
 
 To change the formatting of a current view, locate the view in the formatting
 file, and then use the tags to change the view. To create a view for a new
@@ -144,13 +142,15 @@ C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:115:
 This command reveals that the definition is in the `DotNetTypes.format.ps1xml`
 file.
 
-The next command copies the file contents to a new file,
-`MyDotNetTypes.Format.ps1xml`.
+The following commands copy the file contents to a new file named
+`MyDotNetTypes.Format.ps1xml` in a newly created `$HOME\Format` directory.
 
 ```powershell
+[void] (New-Item -Path $HOME\Format -ItemType Directory -Force)
+
 $copyParams = @{
     LiteralPath = "$PSHOME\DotNetTypes.format.ps1xml"
-    Destination = '.\MyDotNetTypes.Format.ps1xml'
+    Destination = "$HOME\Format\MyDotNetTypes.Format.ps1xml"
 }
 Copy-Item @copyParams
 ```
@@ -295,7 +295,7 @@ higher precedence order than the original file. For more information, see
 [Update-FormatData][03].
 
 ```powershell
-Update-FormatData -PrependPath .\MyDotNetTypes.Format.ps1xml
+Update-FormatData -PrependPath $HOME\Format\MyDotNetTypes.Format.ps1xml
 ```
 
 To test the change, type `Get-Culture` and review the output that includes the
@@ -461,11 +461,11 @@ Select-String @selectParams
 
 $copyParams = @{
     LiteralPath = "$PSHOME\FileSystem.format.ps1xml"
-    Destination = '.\MyFileSystem.Format.ps1xml'
+    Destination = "$HOME\Format\MyFileSystem.Format.ps1xml"
 }
 Copy-Item @copyParams
 
-Update-FormatData -PrependPath .\MyFileSystem.Format.ps1xml
+Update-FormatData -PrependPath $HOME\Format\MyFileSystem.Format.ps1xml
 ```
 
 > [!NOTE]
