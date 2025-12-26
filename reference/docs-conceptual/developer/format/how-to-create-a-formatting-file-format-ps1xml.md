@@ -11,8 +11,8 @@ This topic describes how to create a formatting file (`Format.ps1xml`).
 > You can also create a formatting file by making a copy of one of the files provided by Windows
 > PowerShell. To protect the users of your `Format.ps1xml` file, sign the file using a digital
 > signature. For more information, see [about_Signing][01].
-## Create a Format.ps1xml file
 
+## Create a Format.ps1xml file
 
 1. Open a new text file using a text editor such as Visual Studio Code.
 
