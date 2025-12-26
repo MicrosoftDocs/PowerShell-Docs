@@ -1,18 +1,18 @@
 ---
-description: How to Create a Formatting File (.format.ps1xml)
-ms.date: 08/23/2021
-title: How to Create a Formatting File (.format.ps1xml)
+description: How to Create a Formatting File (Format.ps1xml)
+ms.date: 12/26/2025
+title: How to Create a Formatting File (Format.ps1xml)
 ---
-# How to Create a Formatting File (.format.ps1xml)
+# How to Create a Formatting File (Format.ps1xml)
 
-This topic describes how to create a formatting file (.format.ps1xml).
+This topic describes how to create a formatting file (`Format.ps1xml`).
 
 > [!NOTE]
 > You can also create a formatting file by making a copy of one of the files provided by Windows
 > PowerShell. If you make a copy of an existing file, delete the existing digital signature, and add
 > your own signature to the new file.
 
-## Create a .format.ps1xml file.
+## Create a Format.ps1xml file
 
 1. Create a text file (.txt) using a text editor such as Notepad.
 
@@ -34,7 +34,7 @@ This topic describes how to create a formatting file (.format.ps1xml).
 
 1. Save the file to the Windows PowerShell installation folder, to your module folder, or to a
    subfolder of the module folder. Use the following name format when you save the file:
-   `MyFile.format.ps1xml`. Formatting files must use the `.format.ps1xml` extension.
+   `MyFile.Format.ps1xml`. Formatting files must use the `.ps1xml` extension.
 
    You are now ready to add views to the formatting file. There is no limit to the number of views
    that can be defined in a formatting file. You can add a single view for each object, multiple
