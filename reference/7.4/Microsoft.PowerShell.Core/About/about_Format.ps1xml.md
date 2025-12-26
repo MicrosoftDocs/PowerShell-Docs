@@ -1,7 +1,7 @@
 ---
 description: Beginning in PowerShell 6, the default views for objects are defined in PowerShell source code.  You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell.
 Locale: en-US
-ms.date: 04/25/2022
+ms.date: 12/26/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Format.ps1xml
@@ -93,8 +93,10 @@ To begin, get the format data from the source code file and create a
 `Format.ps1xml` file that contains the current view of the culture objects.
 
 ```powershell
+[void] (New-Item -Path $HOME\Format -ItemType Directory)
+
 Get-FormatData -TypeName System.Globalization.CultureInfo |
-  Export-FormatData -Path $HOME\Format\CultureInfo.Format.ps1xml
+  Export-FormatData -LiteralPath $HOME\Format\CultureInfo.Format.ps1xml
 ```
 
 Open the `CultureInfo.Format.ps1xml` file in any XML or text editor, such as
@@ -349,8 +351,8 @@ specific PowerShell version.
 
 ```powershell
 Get-FormatData -PowerShellVersion 5.1 -TypeName System.IO.DirectoryInfo |
-   Export-FormatData -Path ./MyGciView.Format.ps1xml
-Update-FormatData -AppendPath ./MyGciView.Format.ps1xml
+   Export-FormatData -LiteralPath $HOME\Format\MyGciView.Format.ps1xml
+Update-FormatData -AppendPath $HOME\Format\MyGciView.Format.ps1xml
 ```
 
 ```xml
