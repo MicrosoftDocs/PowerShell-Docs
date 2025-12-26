@@ -88,7 +88,7 @@ headers, and the properties that are displayed in the body of the view. The
 format in `Format.ps1xml` files is applied just before the data is presented to
 the user.
 
-## CREATING NEW FORMAT.PS1XML FILES
+## Creating new Format.ps1xml files
 
 The `.ps1xml` files that are installed with PowerShell are digitally signed to
 prevent tampering because the formatting can include script blocks. To change
@@ -292,7 +292,7 @@ the current PowerShell session.
 
 This example uses the **PrependPath** parameter to place the new file in a
 higher precedence order than the original file. For more information, see
-[Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData).
+[Update-FormatData][03].
 
 ```powershell
 Update-FormatData -PrependPath .\MyDotNetTypes.Format.ps1xml
@@ -313,8 +313,8 @@ LCID Name  Calendar                               DisplayName
 
 ## The XML in Format.ps1xml files
 
-The full schema definition can be found in [Format.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd)
-in the PowerShell source code repository on GitHub.
+The full schema definition can be found in [Format.xsd][04] in the PowerShell
+source code repository on GitHub.
 
 The **ViewDefinitions** section of each `Format.ps1xml` file contains the
 `<View>` tags that define each view. A typical `<View>` tag includes the
@@ -379,13 +379,13 @@ that the `<ListControl>` tag is intended to display.
 ### WideControl tag
 
 The `<WideControl>` tag typically contains a `<WideEntries>` tag. The
-`<WideEntries>` tag contains one or more `<WideEntry>` tags. A `<WideEntry>` tag
-contains one `<WideItem>` tag.
+`<WideEntries>` tag contains one or more `<WideEntry>` tags. A `<WideEntry>`
+tag contains one `<WideItem>` tag.
 
 A `<WideItem>` tag must include either a `<PropertyName>` tag or a
-`<ScriptBlock>` tag. A `<PropertyName>` tag specifies the property to display at
-the specified location in the view. A `<ScriptBlock>` tag specifies a script to
-evaluate and display at the specified location in the view.
+`<ScriptBlock>` tag. A `<PropertyName>` tag specifies the property to display
+at the specified location in the view. A `<ScriptBlock>` tag specifies a script
+to evaluate and display at the specified location in the view.
 
 A `<WideItem>` tag can contain a `<FormatString>` tag that specifies how to
 display the property.
@@ -399,7 +399,7 @@ multiple `<CustomEntry>` tags. Each `<CustomEntry>` tag contains a
 formatting of the specified location in the view, including `<Text>`,
 `<Indentation>`, `<ExpressionBinding>`, and `<NewLine>` tags.
 
-## DEFAULT DISPLAYS IN TYPES.PS1XML
+## Default displays in Types.ps1xml
 
 The default displays of some basic object types are defined in the
 `Types.ps1xml` file in the `$PSHOME` directory. The nodes are named
@@ -420,15 +420,12 @@ value of the **Name** parameter:
 - FormatFileLoading
 - FormatViewBinding
 
-For more information, see
-[Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command) and
-[Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource).
+For more information, see [Trace-Command][05] and [Get-TraceSource][06].
 
 ## Signing a Format.ps1xml file
 
 To protect the users of your `Format.ps1xml` file, sign the file using a
-digital signature. For more information, see
-[about_Signing](about_Signing.md).
+digital signature. For more information, see [about_Signing][07].
 
 ## Sample XML for a Format-Table custom view
 
@@ -598,9 +595,10 @@ Update-FormatData -PrependPath .\MyFileSystem.Format.ps1xml
 [01]: xref:Microsoft.PowerShell.Utility.Get-FormatData
 [02]: xref:Microsoft.PowerShell.Utility.Export-FormatData
 [03]: xref:Microsoft.PowerShell.Utility.Update-FormatData
-
+[04]: https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd
 [05]: xref:Microsoft.PowerShell.Utility.Trace-Command
 [06]: xref:Microsoft.PowerShell.Utility.Get-TraceSource
+[07]: about_Signing.md
 [08]: xref:Microsoft.PowerShell.Utility.Format-Table
 [09]: /powershell/scripting/developer/format/format-schema-xml-reference
 [10]: /powershell/scripting/developer/format/writing-a-powershell-formatting-file
