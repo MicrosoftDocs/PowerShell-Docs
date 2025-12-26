@@ -46,6 +46,6 @@ This topic describes how to create a formatting file (`Format.ps1xml`).
 - [Formatting File Concepts][03]
 
 <!-- link references -->
-[01]: /powershell/module/microsoft.powershell.core/about/about_signing.md
+[01]: /powershell/module/microsoft.powershell.core/about/about_signing
 [02]: ./formatting-file-overview.md
 [03]: ./formatting-file-concepts.md
