@@ -9,17 +9,17 @@ This topic describes how to create a formatting file (`Format.ps1xml`).
 
 > [!NOTE]
 > You can also create a formatting file by making a copy of one of the files provided by Windows
-> PowerShell. If you make a copy of an existing file, delete the existing digital signature, and add
-> your own signature to the new file.
-
+> PowerShell. To protect the users of your `Format.ps1xml` file, sign the file using a digital
+> signature. For more information, see [about_Signing][01].
 ## Create a Format.ps1xml file
 
-1. Create a text file (.txt) using a text editor such as Notepad.
+
+1. Open a new text file using a text editor such as Visual Studio Code.
 
 1. Copy the following lines into the formatting file.
 
    ```xml
-   <?xml version="1.0" encoding="utf-8" ?>
+   <?xml version="1.0" encoding="utf-8"?>
    <Configuration>
    <ViewDefinitions>
    </ViewDefinitions>
@@ -32,7 +32,7 @@ This topic describes how to create a formatting file (`Format.ps1xml`).
    - The `<ViewDefinitions></ViewDefinitions>` tags define the `ViewDefinitions` node. All views are
      defined within this node.
 
-1. Save the file to the Windows PowerShell installation folder, to your module folder, or to a
+1. Save the file to a folder of your choice. If you are writing a module, save the file to a
    subfolder of the module folder. Use the following name format when you save the file:
    `MyFile.Format.ps1xml`. Formatting files must use the `.ps1xml` extension.
 
@@ -40,6 +40,10 @@ This topic describes how to create a formatting file (`Format.ps1xml`).
    that can be defined in a formatting file. You can add a single view for each object, multiple
    views for the same object, or a single view that is used by multiple objects.
 
-## See Also
+## See also
 
-[Writing a Windows PowerShell Formatting and Types File](./writing-a-powershell-formatting-file.md)
+- [Writing a Windows PowerShell Formatting and Types File][02]
+
+<!-- link references -->
+[01]: /powershell/module/microsoft.powershell.core/about/about_signing.md
+[02]: (./writing-a-powershell-formatting-file.md)
