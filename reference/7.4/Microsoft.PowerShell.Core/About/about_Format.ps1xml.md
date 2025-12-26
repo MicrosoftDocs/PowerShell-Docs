@@ -280,8 +280,8 @@ that the `<ListControl>` tag is intended to display.
 ### WideControl tag
 
 The `<WideControl>` tag typically contains a `<WideEntries>` tag. The
-`<WideEntries>` tag contains one or more `<WideEntry>` tags. A `<WideEntry>` tag
-contains one `<WideItem>` tag.
+`<WideEntries>` tag contains one or more `<WideEntry>` tags. A `<WideEntry>`
+tag contains one `<WideItem>` tag.
 
 A `<WideItem>` tag must include either a `<PropertyName>` tag or a
 `<ScriptBlock>` tag. A `<PropertyName>` tag specifies the property to display
