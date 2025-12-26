@@ -93,7 +93,7 @@ To begin, get the format data from the source code file and create a
 `Format.ps1xml` file that contains the current view of the culture objects.
 
 ```powershell
-[void] (New-Item -Path $HOME\Format -ItemType Directory)
+[void] (New-Item -Path $HOME\Format -ItemType Directory -Force)
 
 Get-FormatData -TypeName System.Globalization.CultureInfo |
   Export-FormatData -LiteralPath $HOME\Format\CultureInfo.Format.ps1xml
