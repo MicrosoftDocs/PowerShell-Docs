@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/14/2023
+ms.date: 12/27/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
@@ -11,6 +11,7 @@ title: ConvertTo-Csv
 # ConvertTo-Csv
 
 ## SYNOPSIS
+
 Converts .NET objects into a series of character-separated value (CSV) strings.
 
 ## SYNTAX
@@ -186,7 +187,10 @@ only the key is converted to CSV.
 ### -Delimiter
 
 Specifies the delimiter to separate the property values in CSV strings. The default is a comma
-(`,`). Enter a character, such as a colon (`:`). To specify a semicolon (`;`) enclose it in single
+(`,`).
+
+Enter a character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in single
+quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
 quotation marks.
 
 ```yaml

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/15/2023
+ms.date: 12/27/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -13,6 +13,7 @@ title: Export-Csv
 # Export-Csv
 
 ## SYNOPSIS
+
 Converts objects into a series of character-separated value (CSV) strings and saves the strings to a
 file.
 
@@ -179,10 +180,13 @@ This example describes how to export objects to a CSV file and use the **Append*
 objects to an existing file.
 
 ```powershell
-$AppService = (Get-Service -DisplayName *Application* | Select-Object -Property DisplayName, Status)
+$AppService = Get-Service -DisplayName *Application* | 
+    Select-Object -Property DisplayName, Status
 $AppService | Export-Csv -Path .\Services.Csv -NoTypeInformation
 Get-Content -Path .\Services.Csv
-$WinService = (Get-Service -DisplayName *Windows* | Select-Object -Property DisplayName, Status)
+
+$WinService = Get-Service -DisplayName *Windows* | 
+    Select-Object -Property DisplayName, Status
 $WinService | Export-Csv -Path .\Services.csv -NoTypeInformation -Append
 Get-Content -Path .\Services.Csv
 ```
@@ -221,7 +225,7 @@ unexpected output is received, troubleshoot the pipeline syntax.
 
 ```powershell
 Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear |
- Export-Csv -Path .\DateTime.csv -NoTypeInformation
+    Export-Csv -Path .\DateTime.csv -NoTypeInformation
 Get-Content -Path .\DateTime.csv
 ```
 
@@ -232,7 +236,7 @@ Get-Content -Path .\DateTime.csv
 
 ```powershell
 Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear |
- Export-Csv -Path .\FTDateTime.csv -NoTypeInformation
+    Export-Csv -Path .\FTDateTime.csv -NoTypeInformation
 Get-Content -Path .\FTDateTime.csv
 ```
 
@@ -456,8 +460,11 @@ Accept wildcard characters: False
 
 ### -Delimiter
 
-Specifies a delimiter to separate the property values. The default is a comma (`,`). Enter a
-character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in quotation marks.
+Specifies a delimiter to separate the property values. The default is a comma (`,`).
+
+Enter a character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in single
+quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
+quotation marks.
 
 ```yaml
 Type: System.Char
