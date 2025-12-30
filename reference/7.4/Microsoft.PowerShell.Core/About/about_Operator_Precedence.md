@@ -1,7 +1,7 @@
 ---
 description: Lists the PowerShell operators in precedence order.
 Locale: en-US
-ms.date: 06/29/2021
+ms.date: 12/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
@@ -176,6 +176,27 @@ parentheses to force the evaluation order, even when it forces the default
 operator precedence. The parentheses make your intentions clear to people who
 are reading and maintaining your scripts.
 
+The following example demonstrates the precedence between the `-and` and `-or`
+logical operators.
+
+```powershell
+PS> $true -or $false -and $false
+False
+```
+
+In other languages such as C#, logical AND typically has a higher precedence
+than logical OR, so you may expect the above expression to yield TRUE.
+
+However, the `-and` and `-or` operators have equal precedence in PowerShell.
+They are evaluated from the left to right as they appear within the expression.
+As `$true -or $false` is TRUE and `$true -and $false` is FALSE, the result of
+the expression is FALSE.
+
+> [!IMPORTANT]
+> Other contexts within PowerShell such as [WMI Query Language (WQL)][wql] and
+> the Active Directory filter have their own operator precedence that might
+> differ from PowerShell logical operator precedence.
+
 ## See also
 
 - [about_Operators][ops]
@@ -200,3 +221,4 @@ are reading and maintaining your scripts.
 [scopes]: about_Scopes.md
 [split]: about_Split.md
 [type]: about_Type_Operators.md
+[wql]: about_WQL.md
