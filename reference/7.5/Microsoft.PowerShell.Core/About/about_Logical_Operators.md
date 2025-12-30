@@ -27,6 +27,11 @@ If the left operand in a statement that contains the `-or` statement is TRUE,
 the right operand isn't evaluated. As a result, you can use these statements in
 the same way that you would use the `if` statement.
 
+> [!IMPORTANT]
+> The `-and`, `-or` and `-xor` operators have equal precedence. They are
+> evaluated from left to right as they appear within the expression. For more
+> information, see [about_Operator_Precedence][01].
+
 ## Syntax
 
 The syntax of the logical operators is as follows:
