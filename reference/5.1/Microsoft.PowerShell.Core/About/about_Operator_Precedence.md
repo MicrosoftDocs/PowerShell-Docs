@@ -1,7 +1,7 @@
 ---
 description: Lists the PowerShell operators in precedence order.
 Locale: en-US
-ms.date: 06/29/2021
+ms.date: 12/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
@@ -39,9 +39,9 @@ type `Get-Help <topic-name>`.
 |          OPERATOR           |              REFERENCE               |
 | --------------------------- | ------------------------------------ |
 | `$() @() () @{}`            | [about_Operators][ops]               |
-| `. ?.` (member access)      | [about_Operators][ops]               |
+| `.` (member access)         | [about_Operators][ops]               |
 | `::` (static)               | [about_Operators][ops]               |
-| `[0] ?[0]` (index operator) | [about_Operators][ops]               |
+| `[0]`      (index operator) | [about_Operators][ops]               |
 | `[int]` (cast operators)    | [about_Operators][ops]               |
 | `-split` (unary)            | [about_Split][split]                 |
 | `-join` (unary)             | [about_Join][join]                   |
@@ -85,12 +85,9 @@ that happens.
 | ------------------------------------------------------- | ------------------------------------ |
 | `.` (dot-source)                                        | [about_Operators][ops]               |
 | `&` (call)                                              | [about_Operators][ops]               |
-| `? <if-true> : <if-false>` (Ternary operator)           | [about_Operators][ops]               |
-| `??` (null-coalese operator)                            | [about_Operators][ops]               |
 | <code>&#124;</code> (pipeline operator)                 | [about_Operators][ops]               |
 | `> >> 2> 2>> 2>&1`                                      | [about_Redirection][redir]           |
-| <code>&& &#124;&#124;</code> (pipeline chain operators) | [about_Operators][ops]               |
-| `= += -= *= /= %= ??=`                                  | [about_Assignment_Operators][assign] |
+| `= += -= *= /= %=`                                      | [about_Assignment_Operators][assign] |
 
 ## Examples
 
