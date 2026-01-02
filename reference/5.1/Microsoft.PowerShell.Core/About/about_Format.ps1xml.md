@@ -146,7 +146,7 @@ The following commands copy the file contents to a new file named
 `MyDotNetTypes.Format.ps1xml` in a newly created `$HOME\Format` directory.
 
 ```powershell
-[void] (New-Item -Path $HOME\Format -ItemType Directory -Force)
+New-Item -Path $HOME\Format -ItemType Directory -Force
 
 $copyParams = @{
     LiteralPath = "$PSHOME\DotNetTypes.format.ps1xml"
