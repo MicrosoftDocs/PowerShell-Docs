@@ -27,7 +27,7 @@ For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repositor
 - Output from `Test-Connection` now includes more detailed information about TCP connection tests
 - .NET introduced changes that affected `Test-Connection`. The cmdlet now returns an error about
   the need to use `sudo` on Linux platforms when using a custom buffer size ([#20369][20369])
-- Experimental feature [PSNativeCommandPreserveBytePipe][10] is now mainstream. PowerShell now
+- Experimental feature [PSNativeCommandPreserveBytePipe][11] is now mainstream. PowerShell now
   preserves the byte-stream data when redirecting the **stdout** stream of a native command to a
   file or when piping byte-stream data to the stdin stream of a native command.
 - Change how relative paths in `Resolve-Path` are handled when using the **RelativeBasePath**
@@ -232,7 +232,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [08]: /powershell/module/microsoft.powershell.core/about/about_ansi_terminals
 [09]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommandargumentpassing
 [10]: /powershell/module/microsoft.powershell.core/about/about_preference_variables#psnativecommanduseerroractionpreference
-[11]: /powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7.4&preserve-view=true#redirecting-output-from-native-commands
+[11]: /powershell/module/microsoft.powershell.core/about/about_pipelines#using-native-commands-in-the-pipeline
 [12]: /powershell/module/microsoft.powershell.psresourceget
 [13]: /powershell/module/psreadline
 [14]: https://json-schema.org/understanding-json-schema/reference/schema

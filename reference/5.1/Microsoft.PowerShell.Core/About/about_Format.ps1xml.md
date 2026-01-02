@@ -1,7 +1,7 @@
 ---
 description: The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell console. You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell.
 Locale: en-US
-ms.date: 04/25/2022
+ms.date: 12/26/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Format.ps1xml
@@ -88,7 +88,7 @@ headers, and the properties that are displayed in the body of the view. The
 format in `Format.ps1xml` files is applied just before the data is presented to
 the user.
 
-## CREATING NEW FORMAT.PS1XML FILES
+## Creating new Format.ps1xml files
 
 The `.ps1xml` files that are installed with PowerShell are digitally signed to
 prevent tampering because the formatting can include script blocks. To change
@@ -98,9 +98,7 @@ session.
 
 To create a new file, copy an existing `Format.ps1xml` file. The new file can
 have any name, but it must have a `.ps1xml` file name extension. You can place
-the new file in any directory that is accessible to PowerShell, but it's useful
-to place the files in the PowerShell installation directory (`$PSHOME`) or in a
-subdirectory of the installation directory.
+the new file in any directory that is accessible to PowerShell.
 
 To change the formatting of a current view, locate the view in the formatting
 file, and then use the tags to change the view. To create a view for a new
@@ -127,12 +125,11 @@ view of the culture objects. The following `Select-String` command finds the
 file:
 
 ```powershell
-$Parms = @{
-  Path = "$PSHOME\*Format.ps1xml"
-  Pattern = "System.Globalization.CultureInfo"
+$selectParams = @{
+  Path    = "$PSHOME\*Format.ps1xml"
+  Pattern = 'System.Globalization.CultureInfo'
 }
-
-Select-String @Parms
+Select-String @selectParams
 ```
 
 ```Output
@@ -142,14 +139,20 @@ C:\Windows\System32\WindowsPowerShell\v1.0\DotNetTypes.format.ps1xml:115:
 <TypeName>System.Globalization.CultureInfo</TypeName>
 ```
 
-This command reveals that the definition is in the `DotNetTypes.Format.ps1xml`
+This command reveals that the definition is in the `DotNetTypes.format.ps1xml`
 file.
 
-The next command copies the file contents to a new file,
-`MyDotNetTypes.Format.ps1xml`.
+The following commands copy the file contents to a new file named
+`MyDotNetTypes.Format.ps1xml` in a newly created `$HOME\Format` directory.
 
 ```powershell
-Copy-Item $PSHOME\DotNetTypes.format.ps1xml MyDotNetTypes.Format.ps1xml
+New-Item -Path $HOME\Format -ItemType Directory -Force
+
+$copyParams = @{
+    LiteralPath = "$PSHOME\DotNetTypes.format.ps1xml"
+    Destination = "$HOME\Format\MyDotNetTypes.Format.ps1xml"
+}
+Copy-Item @copyParams
 ```
 
 Open the `MyDotNetTypes.Format.ps1xml` file in any XML or text editor, such as
@@ -289,10 +292,10 @@ the current PowerShell session.
 
 This example uses the **PrependPath** parameter to place the new file in a
 higher precedence order than the original file. For more information, see
-[Update-FormatData](xref:Microsoft.PowerShell.Utility.Update-FormatData).
+[Update-FormatData][03].
 
 ```powershell
-Update-FormatData -PrependPath $HOME\Format\CultureInfo.Format.ps1xml
+Update-FormatData -PrependPath $HOME\Format\MyDotNetTypes.Format.ps1xml
 ```
 
 To test the change, type `Get-Culture` and review the output that includes the
@@ -310,8 +313,8 @@ LCID Name  Calendar                               DisplayName
 
 ## The XML in Format.ps1xml files
 
-The full schema definition can be found in [Format.xsd](https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd)
-in the PowerShell source code repository on GitHub.
+The full schema definition can be found in [Format.xsd][04] in the PowerShell
+source code repository on GitHub.
 
 The **ViewDefinitions** section of each `Format.ps1xml` file contains the
 `<View>` tags that define each view. A typical `<View>` tag includes the
@@ -376,13 +379,13 @@ that the `<ListControl>` tag is intended to display.
 ### WideControl tag
 
 The `<WideControl>` tag typically contains a `<WideEntries>` tag. The
-`<WideEntries>` tag contains one or more `<WideEntry>` tags. A `<WideEntry>` tag
-contains one `<WideItem>` tag.
+`<WideEntries>` tag contains one or more `<WideEntry>` tags. A `<WideEntry>`
+tag contains one `<WideItem>` tag.
 
 A `<WideItem>` tag must include either a `<PropertyName>` tag or a
-`<ScriptBlock>` tag. A `<PropertyName>` tag specifies the property to display at
-the specified location in the view. A `<ScriptBlock>` tag specifies a script to
-evaluate and display at the specified location in the view.
+`<ScriptBlock>` tag. A `<PropertyName>` tag specifies the property to display
+at the specified location in the view. A `<ScriptBlock>` tag specifies a script
+to evaluate and display at the specified location in the view.
 
 A `<WideItem>` tag can contain a `<FormatString>` tag that specifies how to
 display the property.
@@ -396,7 +399,7 @@ multiple `<CustomEntry>` tags. Each `<CustomEntry>` tag contains a
 formatting of the specified location in the view, including `<Text>`,
 `<Indentation>`, `<ExpressionBinding>`, and `<NewLine>` tags.
 
-## DEFAULT DISPLAYS IN TYPES.PS1XML
+## Default displays in Types.ps1xml
 
 The default displays of some basic object types are defined in the
 `Types.ps1xml` file in the `$PSHOME` directory. The nodes are named
@@ -417,15 +420,12 @@ value of the **Name** parameter:
 - FormatFileLoading
 - FormatViewBinding
 
-For more information, see
-[Trace-Command](xref:Microsoft.PowerShell.Utility.Trace-Command) and
-[Get-TraceSource](xref:Microsoft.PowerShell.Utility.Get-TraceSource).
+For more information, see [Trace-Command][05] and [Get-TraceSource][06].
 
 ## Signing a Format.ps1xml file
 
 To protect the users of your `Format.ps1xml` file, sign the file using a
-digital signature. For more information, see
-[about_Signing](about_Signing.md).
+digital signature. For more information, see [about_Signing][07].
 
 ## Sample XML for a Format-Table custom view
 
@@ -434,25 +434,38 @@ The following sample creates a `Format-Table` custom view for the
 `Get-ChildItem`. The custom view is named **MyGciView** and adds the
 **CreationTime** column to the table.
 
+Use `Select-String` to identify which `Format.ps1xml` file contains data for
+the type you're looking for.
+
 The custom view is created from an edited version of the
 `FileSystem.Format.ps1xml` file that's stored in `$PSHOME` on PowerShell 5.1.
 
-After your custom `.ps1xml` file is saved, use `Update-FormatData` to include
-the view in a PowerShell session. For this example, the custom view must use
-the table format, otherwise, `Format-Table` fails.
+After the custom `.ps1xml` file is saved, use the `Update-FormatData` cmdlet to
+include the view in the current PowerShell session. Or, add the update command
+to your PowerShell profile if you need the view available in all PowerShell
+sessions.
+
+For this example, the custom view must use the table format, otherwise,
+`Format-Table` fails.
 
 Use `Format-Table` with the **View** parameter to specify the custom view's
-name and format the table's output. For an example of how the command is run,
-see [Format-Table](xref:Microsoft.PowerShell.Utility.Format-Table).
+name, **MyGciView**, and format the table's output with the **CreationTime**
+column. For an example of how the command is run, see [Format-Table][08].
 
 ```powershell
-$Parms = @{
-  Path = "$PSHOME\*Format.ps1xml"
-  Pattern = "System.IO.DirectoryInfo"
+$selectParams = @{
+  Path    = "$PSHOME\*format.ps1xml"
+  Pattern = 'System.IO.DirectoryInfo'
 }
-Select-String @Parms
-Copy-Item $PSHOME\FileSystem.format.ps1xml .\MyFileSystem.Format.ps1xml
-Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
+Select-String @selectParams
+
+$copyParams = @{
+    LiteralPath = "$PSHOME\FileSystem.format.ps1xml"
+    Destination = "$HOME\Format\MyFileSystem.Format.ps1xml"
+}
+Copy-Item @copyParams
+
+Update-FormatData -PrependPath $HOME\Format\MyFileSystem.Format.ps1xml
 ```
 
 > [!NOTE]
@@ -582,9 +595,10 @@ Update-FormatData -PrependPath $PSHOME\Format\MyFileSystem.Format.ps1xml
 [01]: xref:Microsoft.PowerShell.Utility.Get-FormatData
 [02]: xref:Microsoft.PowerShell.Utility.Export-FormatData
 [03]: xref:Microsoft.PowerShell.Utility.Update-FormatData
-
+[04]: https://github.com/PowerShell/PowerShell/blob/master/src/Schemas/Format.xsd
 [05]: xref:Microsoft.PowerShell.Utility.Trace-Command
 [06]: xref:Microsoft.PowerShell.Utility.Get-TraceSource
-
+[07]: about_Signing.md
+[08]: xref:Microsoft.PowerShell.Utility.Format-Table
 [09]: /powershell/scripting/developer/format/format-schema-xml-reference
 [10]: /powershell/scripting/developer/format/writing-a-powershell-formatting-file

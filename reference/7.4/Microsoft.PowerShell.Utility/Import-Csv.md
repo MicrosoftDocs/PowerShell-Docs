@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/09/2025
+ms.date: 12/27/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-csv?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -13,6 +13,7 @@ title: Import-Csv
 # Import-Csv
 
 ## SYNOPSIS
+
 Creates table-like custom objects from the items in a character-separated value (CSV) file.
 
 ## SYNTAX
@@ -284,8 +285,8 @@ Import-Csv -Path .\Projects.csv
 ```
 
 ```Output
-WARNING: One or more headers weren't specified. Default names starting with "H" have been used in
-place of any missing headers.
+WARNING: One or more headers weren't specified. Default names starting with "H" have been
+used in place of any missing headers.
 
 ProjectID ProjectName H1      Completed
 --------- ----------- --      ---------
@@ -305,12 +306,14 @@ displays a warning message because **H1** is a default header name.
 Specifies the delimiter that separates the property values in the CSV file. The default is a comma
 (`,`).
 
-Enter a character, such as a colon (`:`). To specify a semicolon (`;`) enclose it in single
+Enter a character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in single
 quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
 quotation marks.
 
-If you specify a character other than the actual string delimiter in the file, `Import-Csv` can't
-create the objects from the CSV strings and returns the full CSV strings.
+If the specified character doesn't match the actual delimiter in the CSV data, `Import-Csv` can't
+parse each column into distinct properties. In this case, it outputs one **PSCustomObject** per
+row, each containing a single property whose name is the full header and whose value is the row
+text.
 
 ```yaml
 Type: System.Char
