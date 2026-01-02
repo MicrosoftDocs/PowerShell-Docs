@@ -614,7 +614,7 @@ Get-Process | Where-Object CPU | Where-Object Path
 ```
 
 > [!IMPORTANT]
-> When working interactively in the shell, paste code with pipelines at the
+> When working interactively in the shell, pasting code with pipelines at the
 > beginning of a line only when using <kbd>Ctrl</kbd>+<kbd>V</kbd> to paste.
 > Right-click paste operations insert the lines one at a time. Since the line
 > doesn't end with a pipeline character, PowerShell considers the input to be
