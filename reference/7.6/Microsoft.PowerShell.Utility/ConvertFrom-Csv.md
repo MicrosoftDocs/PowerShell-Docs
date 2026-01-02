@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/18/2025
+ms.date: 12/27/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-csv?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertFrom-Csv
@@ -10,6 +10,7 @@ title: ConvertFrom-Csv
 # ConvertFrom-Csv
 
 ## SYNOPSIS
+
 Converts object properties in character-separated value (CSV) format into CSV versions of the
 original objects.
 
@@ -145,7 +146,7 @@ the **InputObject** parameter and converts the CSV strings from the `$Services` 
 
 When the **UseCulture** parameter is used, be sure that the current culture's default list
 separator matches the delimiter used in the CSV strings. Otherwise, `ConvertFrom-Csv` can't
-generate objects from the CSV strings.
+can't parse each column into distinct properties.
 
 ### Example 5: Convert CSV data in W3C Extended Log Format
 
@@ -177,12 +178,17 @@ time     cs-method cs-uri
 
 ### -Delimiter
 
-Specifies the delimiter that separates the property values in the CSV strings. The default is a
-comma (`,`). Enter a character, such as a colon (`:`). To specify a semicolon (`;`) enclose it in
-single quotation marks.
+Specifies the delimiter that separates the property values in the CSV data. The default is a comma
+(`,`).
 
-If you specify a character other than the actual string delimiter in the file, `ConvertFrom-Csv`
-can't create the objects from the CSV strings and returns the CSV strings.
+Enter a character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in single
+quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
+quotation marks.
+
+If the specified character doesn't match the actual delimiter in the CSV data, `ConvertFrom-Csv`
+can't parse each column into distinct properties. In this case, it outputs one **PSCustomObject**
+per row, each containing a single property whose name is the full header and whose value is the row
+text.
 
 ```yaml
 Type: System.Char

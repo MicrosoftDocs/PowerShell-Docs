@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/15/2023
+ms.date: 12/27/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -13,6 +13,7 @@ title: Export-Csv
 # Export-Csv
 
 ## SYNOPSIS
+
 Converts objects into a series of character-separated value (CSV) strings and saves the strings to a
 file.
 
@@ -144,11 +145,12 @@ Get-Content -Path .\Processes.csv
 The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays
 the current culture's default list separator. The `Get-Process` cmdlet gets **Process** objects. The
 process objects are sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv` converts the
-process objects to a series of CSV strings. The **Path** parameter specifies that the `Processes.csv`
-file is saved in the current directory. The **UseCulture** parameter uses the current culture's
-default list separator as the delimiter. The **NoTypeInformation** parameter removes the **#TYPE**
-information header from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet
-uses the **Path** parameter to display the file located in the current directory.
+process objects to a series of CSV strings. The **Path** parameter specifies that the
+`Processes.csv` file is saved in the current directory. The **UseCulture** parameter uses the
+current culture's default list separator as the delimiter. The **NoTypeInformation** parameter
+removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.
+The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current
+directory.
 
 ### Example 5: Export processes with type information
 
@@ -179,10 +181,15 @@ This example describes how to export objects to a CSV file and use the **Append*
 objects to an existing file.
 
 ```powershell
-$AppService = (Get-Service -DisplayName *Application* | Select-Object -Property DisplayName, Status)
+$AppService = Get-Service -DisplayName *Application* | 
+    Select-Object -Property DisplayName, Status
+
 $AppService | Export-Csv -Path .\Services.Csv -NoTypeInformation
 Get-Content -Path .\Services.Csv
-$WinService = (Get-Service -DisplayName *Windows* | Select-Object -Property DisplayName, Status)
+
+$WinService = Get-Service -DisplayName *Windows* | 
+    Select-Object -Property DisplayName, Status
+
 $WinService | Export-Csv -Path .\Services.csv -NoTypeInformation -Append
 Get-Content -Path .\Services.Csv
 ```
@@ -221,7 +228,8 @@ unexpected output is received, troubleshoot the pipeline syntax.
 
 ```powershell
 Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear |
- Export-Csv -Path .\DateTime.csv -NoTypeInformation
+    Export-Csv -Path .\DateTime.csv -NoTypeInformation
+
 Get-Content -Path .\DateTime.csv
 ```
 
@@ -232,7 +240,8 @@ Get-Content -Path .\DateTime.csv
 
 ```powershell
 Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear |
- Export-Csv -Path .\FTDateTime.csv -NoTypeInformation
+    Export-Csv -Path .\FTDateTime.csv -NoTypeInformation
+
 Get-Content -Path .\FTDateTime.csv
 ```
 
@@ -248,10 +257,10 @@ Get-Content -Path .\FTDateTime.csv
 The `Get-Date` cmdlet gets the **DateTime** object. The object is sent down the pipeline to the
 `Select-Object` cmdlet. `Select-Object` uses the **Property** parameter to select a subset of object
 properties. The object is sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv` converts
-the object to a CSV format. The **Path** parameter specifies that the `DateTime.csv` file is saved in
-the current directory. The **NoTypeInformation** parameter removes the **#TYPE** information header
-from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet uses the **Path**
-parameter to display the CSV file located in the current directory.
+the object to a CSV format. The **Path** parameter specifies that the `DateTime.csv` file is saved
+in the current directory. The **NoTypeInformation** parameter removes the **#TYPE** information
+header from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet uses the
+**Path** parameter to display the CSV file located in the current directory.
 
 When the `Format-Table` cmdlet is used within the pipeline to select properties unexpected results
 are received. `Format-Table` sends table format objects down the pipeline to the `Export-Csv` cmdlet
@@ -456,8 +465,11 @@ Accept wildcard characters: False
 
 ### -Delimiter
 
-Specifies a delimiter to separate the property values. The default is a comma (`,`). Enter a
-character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in quotation marks.
+Specifies a delimiter to separate the property values. The default is a comma (`,`).
+
+Enter a character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in single
+quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
+quotation marks.
 
 ```yaml
 Type: System.Char

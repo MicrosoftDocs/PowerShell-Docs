@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/15/2023
+ms.date: 12/27/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -13,6 +13,7 @@ title: Export-Csv
 # Export-Csv
 
 ## SYNOPSIS
+
 Converts objects into a series of character-separated value (CSV) strings and saves the strings to a
 file.
 
@@ -460,8 +461,11 @@ Accept wildcard characters: False
 
 ### -Delimiter
 
-Specifies a delimiter to separate the property values. The default is a comma (`,`). Enter a
-character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in quotation marks.
+Specifies a delimiter to separate the property values. The default is a comma (`,`).
+
+Enter a character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in single
+quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
+quotation marks.
 
 ```yaml
 Type: System.Char
