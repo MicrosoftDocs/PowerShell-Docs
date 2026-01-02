@@ -1,7 +1,7 @@
 ---
 description: Combining commands into pipelines in the PowerShell
 Locale: en-US
-ms.date: 10/02/2025
+ms.date: 12/28/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Pipelines
@@ -400,17 +400,15 @@ one at a time.
 ## Using native commands in the pipeline
 
 PowerShell allows you to include native external commands in the pipeline.
-However, it's important to note that PowerShell's pipeline is object-oriented
-and doesn't support raw byte data.
 
-Piping or redirecting output from a native program that outputs raw byte data
-converts the output to .NET strings. This conversion can cause corruption of
-the raw data output.
+Before PowerShell 7.4, piping or redirecting output from a native program that
+outputs raw byte data converted the output to .NET strings. This conversion
+caused corruption of the raw data output.
 
-However, PowerShell 7.4 added the `PSNativeCommandPreserveBytePipe`
-experimental feature that preserves byte-stream data when redirecting the
-**stdout** stream of a native command to a file or when piping byte-stream data
-to the **stdin** stream of a native command.
+In PowerShell 7.4 or higher, the `PSNativeCommandPreserveBytePipe` experimental
+feature is mainstream. This feature preserves byte-stream data when
+redirecting the **stdout** stream of a native command to a file or when piping
+byte-stream data to the **stdin** stream of a native command.
 
 For example, using the native command `curl` you can download a binary file and
 save it to disk using redirection.
