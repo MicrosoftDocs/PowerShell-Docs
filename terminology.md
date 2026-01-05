@@ -50,7 +50,7 @@ keywords rather than spaces or dashes.
 
 Example:
 
-> A `do/until` loop consists of a `do` statement block followed by an `until` statement block
+> A `do/until` loop consists of a `do` statement block followed by an `until` scriptblock
 > containing a conditional expression.
 
 Cmdlet names and parameters usually use PascalCase, but verify the correct casing by inspecting the
@@ -170,10 +170,20 @@ A _script block_ is a generic description we have used historically, but can be 
 confusion. Use the following terminology instead:
 
 - A _statement block_ to refers to `{}` expressions in a statement. This is how the AST refers to
-  them. Statement blocks don't take parameters.
+  them. Statement blocks don't take parameters or create new scopes.
 - _scriptblock_ should be used to refer to `{}` expressions of type `[scriptblock]`. For example,
   the **FilterScript** parameter of `Where-Object` expects a scriptblock. Scriptblocks can take
-  parameters.
+  parameters and create new scopes.
+
+### `$_` vs. `$PSItem`
+
+`$_` and `$PSItem` are automatic varidables that refer to the current object in the pipeline.
+Technically, neither variable is an alias. Both variables contain the same value.
+
+`$PSItem` was added to PowerShell later in an attempt to provide a clearer purpose to the name.
+However in practice, the _dollar underscore_ form `$_` is most commonly used.
+
+`$_` is the preferred usage.
 
 <!-- link references -->
 [01]: https://learn.microsoft.com/en-us/style-guide/punctuation/
