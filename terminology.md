@@ -85,6 +85,23 @@ commands.
   - `Using:`
   - `Workflow:`
 
+  The `Env:` modifier is a special case. When used in the PSDrive context, it's capitalized:
+
+  ```powershell
+  Get-Item Env:\COMPUTERNAME
+
+  Name           Value
+  ----           -----
+  COMPUTERNAME   COMPUTER01
+  ```
+
+  When identifying the environment variable namespace, use lowercase:
+
+  ```powershell
+  $env:COMPUTERNAME
+  COMPUTER01
+  ```
+
 ## Terms
 
 ### Declare vs. initialize
