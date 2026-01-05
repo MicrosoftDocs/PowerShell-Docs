@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2025
-ms.date: 12/01/2025
+ms.date: 01/05/2026
 title: What's New in PowerShell-Docs for 2025
 ---
 # What's new in PowerShell Docs for 2025
@@ -14,6 +14,39 @@ get started.
 <!-- Link references -->
 [01]: contributing/overview.md
 <!--------------------->
+
+## 2025-December
+
+New content
+
+- [Troubleshoot PowerShell startup issues](/powershell/scripting/dev-cross-plat/performance/startup-performance)
+
+Updated content
+
+- Updated PSResourceGet docs for 1.2.0-preview5 release
+  - [Use the Azure Artifacts Credential Provider with Azure Artifacts feeds](/powershell/gallery/powershellget/how-to/use-credential-provider-with-azure-artifacts)
+  - Retired 26 obsolete reference articles for PowerShellGet proxy module
+- Updated
+  [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-5.1&preserve-view=true)
+  in PowerShell 5.1 for a breaking change introduced by a CVE security patch.
+
+GitHub stats
+
+- 22 PRs merged (3 from Community)
+- 31 issues opened (16 from Community)
+- 30 issues closed (15 Community issues closed)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|     GitHub Id      | PRs merged | Issues opened |
+| ------------------ | :--------: | :-----------: |
+| surfingoldelephant |     3      |       4       |
+| kborowinski        |     1      |               |
+| aberus             |     1      |               |
+| iRon7              |            |       3       |
 
 ## 2025-November
 
