@@ -196,7 +196,7 @@ following areas:
     # B${A}${A}r
     ```
 
-- [`-split` operator](about_split):
+- [`-split` operator][10]:
   - `-split` and `-isplit` are case-insensitive.
   - `-csplit` is case-sensitive, _unless_ the `IgnoreCase` option is specified.
 
@@ -238,6 +238,7 @@ following areas:
 [07]: about_tab_expansion.md
 [08]: about_using.md
 [09]: about_wildcards.md
+[10]: about_split.md
 [11]: xref:Microsoft.PowerShell.Core.Compare-Object
 [12]: xref:Microsoft.PowerShell.Core.Compare-Object#-casesensitive
 [13]: xref:Microsoft.PowerShell.Core.ConvertFrom-Json#-ashashtable
