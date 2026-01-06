@@ -9,7 +9,7 @@ title: about_Case-Sensitivity
 
 ## Short description
 
-PowerShell is as case-insensitive while preserving case.
+PowerShell is as case-insensitive as possible while preserving case.
 
 ## Long description
 
@@ -50,7 +50,7 @@ following areas:
 
   The name of a module is stored in the session state using the case by which
   it was imported. The name, as stored in the session state, is used
-  `Update-Help` when looking for new help files. The web service that serves
+  by `Update-Help` when looking for new help files. The web service that serves
   the help files for Microsoft uses a case-sensitive file system. When the case
   of the imported name of the module doesn't match, `Update-Help` can't find
   the help files and reports an error.
@@ -106,7 +106,7 @@ following areas:
   - [`Select-Object -Unique`][21] and [`Get-Unique`][15] are case-sensitive by
     default. The [`-CaseInsensitive`][20] switch was added in PS v7.4.
   - [`Sort-Object -Unique`][25] is case-insensitive by default, but has always
-    had [`-CaseSensitive`][24] switch.
+    had the [`-CaseSensitive`][24] switch.
 
 - [`Compare-Object`][11] is case-insensitive by default, but has a
   [`-CaseSensitive`][12] switch. Comparison of `[char]` types is case-sensitive
