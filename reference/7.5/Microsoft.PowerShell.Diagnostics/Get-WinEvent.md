@@ -151,9 +151,9 @@ with the asterisk (`*`) wildcard to display each property.
 
 ### Example 3: Configure the classic Security log
 
-This command gets an **EventLogConfiguration** object that represents the classic **Security** log.
-The object is then used to configure settings for the log, such as max file size, file path, and
-whether the log is enabled.
+This command gets an **EventLogConfiguration** object that represents the classic **Security** log. The
+object is then used to configure settings for the log, such as max file size, file path, and whether the
+log is enabled.
 
 ```powershell
 $log = Get-WinEvent -ListLog Security
@@ -196,18 +196,17 @@ ProviderLatency                : 1000
 ProviderControlGuid            :
 ```
 
-The `Get-WinEvent` cmdlet uses the **ListLog** parameter to specify the **Security** log. The object
-is saved to a variable. The **MaximumSizeInBytes** property is set to 1 gigabyte on the object. The
+The `Get-WinEvent` cmdlet uses the **ListLog** parameter to specify the **Security** log. The object is
+saved to a variable. The **MaximumSizeInBytes** property is set to 1 gigabyte on the object. The
 **SaveChanges** method is called to push the change to the system inside of a try block to handle
-access violations. The `Get-WinEvent` cmdlet is called again on the **Security** log and piped to
-the `Format-List` cmdlet to verify that the **MaximumSizeInBytes** property has been saved on the
-machine.
+access violations. The `Get-WinEvent` cmdlet is called again on the **Security** log and piped to the
+`Format-List` cmdlet to verify that the **MaximumSizeInBytes** property has been saved on the machine.
 
 ### Example 4: Get event logs from a server
 
 This command only gets event logs on the local computer that contain events. It's possible for a
 log's **RecordCount** to be null or zero. The example uses the `$_` variable. For more information,
-see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+see [about_Automatic_Variables](../Microsoft.PowerShell.Core/about/about_automatic_variables.md).
 
 ```powershell
 Get-WinEvent -ListLog * -ComputerName localhost | Where-Object { $_.RecordCount }
@@ -234,8 +233,7 @@ is a property of the object with a non-null value.
 
 This example gets objects that represent the **Application** event logs on three computers:
 Server01, Server02, and Server03. The `foreach` keyword is used because the **ComputerName**
-parameter accepts only one value. For more information, see
-[about_Foreach](../Microsoft.PowerShell.Core/About/about_Foreach.md).
+parameter accepts only one value. For more information, see [about_Foreach](../Microsoft.PowerShell.Core/about/about_Foreach.md).
 
 ```powershell
 $S = 'Server01', 'Server02', 'Server03'
@@ -347,8 +345,7 @@ This command lists the Event Ids that the **Microsoft-Windows-GroupPolicy** even
 along with the event description.
 
 ```powershell
-(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events |
-    Format-Table Id, Description
+(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Format-Table Id, Description
 ```
 
 ```Output
@@ -508,7 +505,7 @@ is required.
 
 ```powershell
 Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -Oldest |
-    Sort-Object -Property TimeCreated -Descending |
+  Sort-Object -Property TimeCreated -Descending |
     Select-Object -First 100
 ```
 
@@ -529,7 +526,7 @@ reading from an `.etl` file, but the **Oldest** parameter applies to each file.
 
 ```powershell
 Get-WinEvent -Path 'C:\Tracing\TraceLog.etl', 'C:\Test\Windows PowerShell.evtx' -Oldest |
-    Where-Object { $_.Id -eq '403' }
+  Where-Object { $_.Id -eq '403' }
 ```
 
 The `Get-WinEvent` cmdlet gets log information from the archived files. The **Path** parameter uses
@@ -561,14 +558,14 @@ $xmlQuery = @'
 <QueryList>
   <Query Id="0" Path="Windows PowerShell">
     <Select Path="System">*[System[(Level=3) and
-        TimeCreated[timediff(@SystemTime) &amp;lt;= 86400000]]]</Select>
+        TimeCreated[timediff(@SystemTime) >= 86400000]]]</Select>
   </Query>
 </QueryList>
 '@
 Get-WinEvent -FilterXML $xmlQuery
 
 # Using the FilterXPath parameter:
-$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &amp;lt;= 86400000]]]'
+$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) >= 86400000]]]'
 Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 ```
 
@@ -576,9 +573,10 @@ Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 
 This example uses the **FilterHashtable** parameter to get events from the **Application** log. The
 hash table uses **key/value** pairs. For more information about the **FilterHashtable** parameter,
-see [Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/creating-get-winevent-queries-with-filterhashtable).
+see
+[Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/Creating-Get-WinEvent-queries-with-FilterHashtable).
 For more information about hash tables, see
-[about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md).
+[about_Hash_Tables](../Microsoft.PowerShell.Core/about/about_hash_tables.md).
 
 ```powershell
 $Date = (Get-Date).AddDays(-2)
@@ -600,7 +598,7 @@ that occurred within the last week.
 ```powershell
 $StartTime = (Get-Date).AddDays(-7)
 Get-WinEvent -FilterHashtable @{
-  LogName='Application'
+  Logname='Application'
   ProviderName='Application Error'
   Data='iexplore.exe'
   StartTime=$StartTime
@@ -766,8 +764,8 @@ Accept wildcard characters: False
 Specifies an XPath query that this cmdlet select events from one or more logs.
 
 For more information about the XPath language, see
-[XPath Reference](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))
-and the Selection Filters section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
+[XPath Reference](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100)) and the
+_Selection Filters_ section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
 
 ```yaml
 Type: System.String
@@ -987,13 +985,13 @@ Environment (Windows PE).
 
 ## RELATED LINKS
 
-[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/about/about_automatic_variables.md)
 
-[about_Foreach](../Microsoft.PowerShell.Core/About/about_Foreach.md)
+[about_Foreach](../Microsoft.PowerShell.Core/about/about_Foreach.md)
 
-[about_Hash_Tables](../Microsoft.PowerShell.Core/About/about_Hash_Tables.md)
+[about_Hash_Tables](../Microsoft.PowerShell.Core/about/about_hash_tables.md)
 
-[Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/creating-get-winevent-queries-with-filterhashtable)
+[Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/Creating-Get-WinEvent-queries-with-FilterHashtable)
 
 [Format-Table](../Microsoft.PowerShell.Utility/Format-Table.md)
 

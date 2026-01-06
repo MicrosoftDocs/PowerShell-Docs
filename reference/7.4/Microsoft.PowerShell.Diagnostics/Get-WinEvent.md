@@ -558,14 +558,14 @@ $xmlQuery = @'
 <QueryList>
   <Query Id="0" Path="Windows PowerShell">
     <Select Path="System">*[System[(Level=3) and
-        TimeCreated[timediff(@SystemTime) &amp;lt;= 86400000]]]</Select>
+        TimeCreated[timediff(@SystemTime) >= 86400000]]]</Select>
   </Query>
 </QueryList>
 '@
 Get-WinEvent -FilterXML $xmlQuery
 
 # Using the FilterXPath parameter:
-$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) &amp;lt;= 86400000]]]'
+$XPath = '*[System[Level=3 and TimeCreated[timediff(@SystemTime) >= 86400000]]]'
 Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 ```
 
@@ -573,8 +573,10 @@ Get-WinEvent -LogName 'Windows PowerShell' -FilterXPath $XPath
 
 This example uses the **FilterHashtable** parameter to get events from the **Application** log. The
 hash table uses **key/value** pairs. For more information about the **FilterHashtable** parameter,
-see [Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/Creating-Get-WinEvent-queries-with-FilterHashtable).
-For more information about hash tables, see [about_Hash_Tables](../Microsoft.PowerShell.Core/about/about_hash_tables.md).
+see
+[Creating Get-WinEvent queries with FilterHashtable](/powershell/scripting/samples/Creating-Get-WinEvent-queries-with-FilterHashtable).
+For more information about hash tables, see
+[about_Hash_Tables](../Microsoft.PowerShell.Core/about/about_hash_tables.md).
 
 ```powershell
 $Date = (Get-Date).AddDays(-2)
@@ -739,8 +741,9 @@ Help.
 
 Use an XML query to create a complex query that contains several XPath statements. The XML format
 also allows you to use a **Suppress XML** element that excludes events from the query. For more
-information about the XML schema for event log queries, see [Query Schema](/windows/win32/wes/queryschema-schema)
-and the XML Event Queries section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
+information about the XML schema for event log queries, see
+[Query Schema](/windows/win32/wes/queryschema-schema) and the XML Event Queries section of
+[Event Selection](/previous-versions/aa385231(v=vs.85)).
 
 You may also create a **Suppress** element using the **FilterHashtable** parameter.
 
@@ -760,8 +763,9 @@ Accept wildcard characters: False
 
 Specifies an XPath query that this cmdlet select events from one or more logs.
 
-For more information about the XPath language, see [XPath Reference](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100))
-and the Selection Filters section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
+For more information about the XPath language, see
+[XPath Reference](/previous-versions/dotnet/netframework-4.0/ms256115(v=vs.100)) and the
+_Selection Filters_ section of [Event Selection](/previous-versions/aa385231(v=vs.85)).
 
 ```yaml
 Type: System.String
@@ -841,8 +845,8 @@ cmdlet.
 > [!NOTE]
 > PowerShell does not limit the amount of logs you can request. However, the `Get-WinEvent` cmdlet
 > queries the Windows API which has a limit of 256. This can make it difficult to filter through all
-> of your logs at one time. You can work around this by using a `foreach` loop to iterate through each
-> log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.LogName }`
+> of your logs at one time. You can work around this by using a `foreach` loop to iterate through
+> each log like this: `Get-WinEvent -ListLog * | ForEach-Object{ Get-WinEvent -LogName $_.LogName }`
 
 ```yaml
 Type: System.String[]
@@ -939,7 +943,8 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
