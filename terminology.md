@@ -56,10 +56,33 @@ Example:
 Command names and parameters usually use PascalCase, but verify the correct casing by inspecting the
 command definitions.
 
-Example:
+For example, the parameters of the `TabExpansion2` function don't use PascalCase:
 
 ```powershell
-TabExpansion2 -inputScript Foo
+TabExpansion2 -inputScript "TabExpansion2 -" | Select-Object -ExpandProperty CompletionMatches
+```
+
+```Output
+CompletionText       ListItemText           ResultType ToolTip
+--------------       ------------           ---------- -------
+-inputScript         inputScript         ParameterName [string] inputScript
+-cursorColumn        cursorColumn        ParameterName [int] cursorColumn
+-ast                 ast                 ParameterName [Ast] ast
+-tokens              tokens              ParameterName [Token[]] tokens
+-positionOfCursor    positionOfCursor    ParameterName [IScriptPosition] positionOfCursor
+-options             options             ParameterName [hashtable] options
+-Verbose             Verbose             ParameterName [switch] Verbose
+-Debug               Debug               ParameterName [switch] Debug
+-ErrorAction         ErrorAction         ParameterName [ActionPreference] ErrorAction
+-WarningAction       WarningAction       ParameterName [ActionPreference] WarningAction
+-InformationAction   InformationAction   ParameterName [ActionPreference] InformationAction
+-ProgressAction      ProgressAction      ParameterName [ActionPreference] ProgressAction
+-ErrorVariable       ErrorVariable       ParameterName [string] ErrorVariable
+-WarningVariable     WarningVariable     ParameterName [string] WarningVariable
+-InformationVariable InformationVariable ParameterName [string] InformationVariable
+-OutVariable         OutVariable         ParameterName [string] OutVariable
+-OutBuffer           OutBuffer           ParameterName [int] OutBuffer
+-PipelineVariable    PipelineVariable    ParameterName [string] PipelineVariable
 ```
 
 ### Specific examples
@@ -197,7 +220,7 @@ confusion. Use the following terminology instead:
 
 ### `$_` vs. `$PSItem`
 
-`$_` and `$PSItem` are automatic varidables that refer to the current object in the pipeline.
+`$_` and `$PSItem` are automatic variables that refer to the current object in the pipeline.
 Technically, neither variable is an alias. Both variables contain the same value.
 
 `$PSItem` was added to PowerShell later in an attempt to provide a clearer purpose to the name.
