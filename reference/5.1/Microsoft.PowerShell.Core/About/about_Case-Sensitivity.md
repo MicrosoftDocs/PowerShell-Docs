@@ -65,19 +65,22 @@ following areas:
   case-insensitive, irrespective of the system.
 
   ```powershell
-  [void] (New-Item -Path Temp:foo.txt -Force)
+  PS /home/user01> New-Item -Path Temp:foo.txt -Force
 
-  (Get-Item -Path Temp:FOO.txt).Name
-  # Get-Item: Cannot find path 'Temp:/FOO.txt' because it does not exist.
+      Directory: /tmp
 
-  (Get-Item -Path Temp:F[O]*.txt).Name
-  # foo.txt
+  UnixMode      User Group      LastWriteTime         Size Name
+  --------      ---- -----      -------------         ---- ----
+  -rw-r--r--  user01 user01    1/6/2026 10:53            0 foo.txt
 
-  (Get-Item -Path Env:hOME).Name
-  # Get-Item: Cannot find path 'Env:/hOME' because it does not exist.
+  PS /home/user01> (Get-Item -Path Temp:FOO.txt).Name
+  Get-Item: Cannot find path 'Temp:/FOO.txt' because it does not exist.
 
-  (Get-Item -Path Env:hOM[E]).Name
-  # HOME
+  PS /home/user01> (Get-Item -Path Temp:F[O]*.txt).Name
+  foo.txt
+
+  PS /home/user01> (Get-Item -Path Env:hOM[E]).Name
+  HOME
   ```
 
 - Parameter set names are case-sensitive.
