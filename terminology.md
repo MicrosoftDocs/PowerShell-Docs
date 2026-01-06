@@ -11,7 +11,7 @@ content to the PowerShell-Docs style guide.
 
 For general rules, see [Punctuation - Microsoft Style Guide][01].
 
-For PowerShell-specific terminology, see [PowerShell-Docs style guide][03]
+For PowerShell-specific terminology, see [PowerShell-Docs style guide][03].
 
 ### Hyphenation
 
