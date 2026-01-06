@@ -117,13 +117,16 @@ TabExpansion2 -inputScript Foo
 
 ### Declare vs. initialize
 
-PowerShell has no concept of declaring variables, unless you count using `New-Variable` as a
-declaration. Even then, the new variable is given a default value. Essentially, variables are
-declared on first use. If the variable was not assigned a value, it is initialized to a default
-value depending on its type.
-
 _Initialize_ is the correct term to use when referring to assigning a value to a variable for the
 first time.
+
+The `New-Variable` cmdlet is used to declare variables. This is the only way to create a variable
+without a value. When you don't provide a value, the value is set to `$null` by default.
+
+When you reference a variable that hasn't been declared yet (such as `$var`) for the first time,
+PowerShell creates the variable. If you didn't initialize the variable, PowerShell assigns a default
+value depending on its type. Variables that are not explicitly typed are assigned a value of
+`$null`. In practice, it's difficult to create a variable without initializing it.
 
 ### Native vs. external commands
 
@@ -163,8 +166,14 @@ Use `DBNull` to refer to the `[System.DBNull]` type.
 
 ### Boolean values
 
-Use _FALSE_ or _TRUE_ (all uppercase) to refer to boolean values in general writing. Use `$true` and
-`$false` (all lowercase) when referring to the boolean constants.
+It's preferred to use `$true` and `$false` (all lowercase) when referring to the boolean values.
+Alternatively, you can ise _FALSE_ or _TRUE_ (all uppercase) to refer to boolean values in general
+writing. Showing boolean values in output should always match the output. For example:
+
+```powershell
+PS> $true
+True
+```
 
 ### Hash tables
 
