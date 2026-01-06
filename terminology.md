@@ -50,8 +50,8 @@ keywords rather than spaces or dashes.
 
 Example:
 
-> A `do/until` loop consists of a `do` statement block followed by an `until` scriptblock
-> containing a conditional expression.
+> A `do/until` loop consists of a `do` statement block followed by `until` and a
+> conditional expression.
 
 Command names and parameters usually use PascalCase, but verify the correct casing by inspecting the
 command definitions.
