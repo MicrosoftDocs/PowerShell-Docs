@@ -53,13 +53,19 @@ Example:
 > A `do/until` loop consists of a `do` statement block followed by an `until` scriptblock
 > containing a conditional expression.
 
-Cmdlet names and parameters usually use PascalCase, but verify the correct casing by inspecting the
-commands.
+Command names and parameters usually use PascalCase, but verify the correct casing by inspecting the
+command definitions.
+
+Example:
+
+```powershell
+TabExpansion2 -inputScript Foo
+```
 
 ### Specific examples
 
-- _filesystem_ - no space
-- _filename_ - no space
+- _file system_
+- _file name_
 - _localhost_ - lowercase
 - _CIM session_ - refers to the concept of a CIM session
 - _CimSession_ - refers to the PowerShell object of type `[CimSession]`
@@ -74,32 +80,37 @@ commands.
     `winrm` command-line tool, or in schema URIs and other properties).
 - Variable scopes and scope modifiers
 
-  See [Appendix A - Grammar - B.1.6 Variables][04]
+  See [Appendix A - Grammar - B.1.6 Variables][04].
 
   Scope names and modifiers are capitalized:
 
-  - `Global:`
-  - `Local:`
+  - `Global:` and **Global** scope
+  - `Local:` and **Local** scope
+  - `Script:` and **Script** scope
   - `Private:`
-  - `Script:`
   - `Using:`
   - `Workflow:`
 
-  The `Env:` modifier is a special case. When used in the PSDrive context, it's capitalized:
+  PowerShell drive names such as `Env` are capitalized.
 
   ```powershell
-  Get-Item Env:\COMPUTERNAME
+  Get-Item -Path Env:COMPUTERNAME
 
   Name           Value
   ----           -----
   COMPUTERNAME   COMPUTER01
   ```
 
-  When identifying the environment variable namespace, use lowercase:
+  `Env` is a special case when used in variable namespace notation.
+  Use lowercase for `$env:`. For all other PowerShell drives, use normal
+  capitalization.
 
   ```powershell
   $env:COMPUTERNAME
   COMPUTER01
+
+  $Alias:dir
+  Get-ChildItem
   ```
 
 ## Terms
@@ -169,7 +180,7 @@ Use _FALSE_ or _TRUE_ (all uppercase) to refer to boolean values in general writ
 A _script block_ is a generic description we have used historically, but can be a source of
 confusion. Use the following terminology instead:
 
-- A _statement block_ to refers to `{}` expressions in a statement. This is how the AST refers to
+- A _statement block_ refers to `{}` expressions in a statement. This is how the AST refers to
   them. Statement blocks don't take parameters or create new scopes.
 - _scriptblock_ should be used to refer to `{}` expressions of type `[scriptblock]`. For example,
   the **FilterScript** parameter of `Where-Object` expects a scriptblock. Scriptblocks can take
