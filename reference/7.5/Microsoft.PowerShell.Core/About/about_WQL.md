@@ -712,10 +712,8 @@ Get-CimInstance -Query $q
 - [about_Special_Characters][02]
 - [about_Quoting_Rules][01]
 - [about_WMI][04]
-- [about_WMI_Cmdlets][03]
 
 <!-- link references -->
 [01]: about_Quoting_Rules.md
 [02]: about_Special_Characters.md
-[03]: about_WMI_Cmdlets.md
 [04]: about_WMI.md
