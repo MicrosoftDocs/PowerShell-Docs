@@ -7,8 +7,7 @@ title: README
 # PowerShell Reference
 
 Reference material is organized into release versions. The content for each
-version is organized by module name. `About` topics are in a distinct folder
-within the `Microsoft.PowerShell.Core` module.
+version is organized by module name. `about_*` articles are in an `About` folder under the module folder they are related to. Most of them are under `Microsoft.PowerShell.Core/About`.
 
 ## Modules
 
