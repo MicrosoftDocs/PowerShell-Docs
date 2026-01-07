@@ -1,7 +1,7 @@
 ---
 description: Lists the PowerShell operators in precedence order.
 Locale: en-US
-ms.date: 06/29/2021
+ms.date: 12/30/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
@@ -33,8 +33,8 @@ evaluated. Operators on the same line, or in the same group, have equal
 precedence.
 
 The Operator column lists the operators. The Reference column lists the
-PowerShell Help topic in which the operator is described. To display the topic,
-type `Get-Help <topic-name>`.
+PowerShell Help topic in which the operator is described. To display the topic
+interactively, use `Get-Help -Name <topic-name>`.
 
 |          OPERATOR           |              REFERENCE               |
 | --------------------------- | ------------------------------------ |
@@ -85,8 +85,8 @@ that happens.
 | ------------------------------------------------------- | ------------------------------------ |
 | `.` (dot-source)                                        | [about_Operators][ops]               |
 | `&` (call)                                              | [about_Operators][ops]               |
-| `? <if-true> : <if-false>` (Ternary operator)           | [about_Operators][ops]               |
-| `??` (null-coalese operator)                            | [about_Operators][ops]               |
+| `? <if-true> : <if-false>` (ternary operator)           | [about_Operators][ops]               |
+| `??` (null-coalescing operator)                         | [about_Operators][ops]               |
 | <code>&#124;</code> (pipeline operator)                 | [about_Operators][ops]               |
 | `> >> 2> 2>> 2>&1`                                      | [about_Redirection][redir]           |
 | <code>&& &#124;&#124;</code> (pipeline chain operators) | [about_Operators][ops]               |
@@ -94,7 +94,7 @@ that happens.
 
 ## Examples
 
-The following two commands show the arithmetic operators and the effect of
+The following two examples show the arithmetic operators and the effect of
 using parentheses to force PowerShell to evaluate the enclosed part of the
 expression first.
 
@@ -107,28 +107,28 @@ PS> (2 + 3) * 4
 ```
 
 The following example gets the read-only text files from the local directory
-and saves them in the `$read_only` variable.
+and saves them in the `$readOnly` variable.
 
 ```powershell
-$read_only = Get-ChildItem *.txt | Where-Object {$_.IsReadOnly}
+$readOnly = Get-ChildItem -Path *.txt | Where-Object { $_.IsReadOnly }
 ```
 
 It is equivalent to the following example.
 
 ```powershell
-$read_only = ( Get-ChildItem *.txt | Where-Object {$_.IsReadOnly} )
+$readOnly = (Get-ChildItem -Path *.txt | Where-Object { $_.IsReadOnly })
 ```
 
 Because the pipeline operator (`|`) has a higher precedence than the assignment
 operator (`=`), the files that the `Get-ChildItem` cmdlet gets are sent to the
 `Where-Object` cmdlet for filtering before they are assigned to the
-`$read_only` variable.
+`$readOnly` variable.
 
 The following example demonstrates that the index operator takes precedence
 over the cast operator.
 
 This expression creates an array of three strings. Then, it uses the index
-operator with a value of 0 to select the first object in the array, which is
+operator with a value of `0` to select the first object in the array, which is
 the first string. Finally, it casts the selected object as a string. In this
 case, the cast has no effect.
 
@@ -163,7 +163,7 @@ PS> (2 -gt 4) -and 1
 False
 ```
 
-If the -and operator had higher precedence, the answer would be TRUE.
+If the `-and` operator had higher precedence, the result would be TRUE.
 
 ```powershell
 PS> 2 -gt (4 -and 1)
@@ -175,6 +175,27 @@ precedence. When an expression is difficult for people to interpret, use
 parentheses to force the evaluation order, even when it forces the default
 operator precedence. The parentheses make your intentions clear to people who
 are reading and maintaining your scripts.
+
+The following example demonstrates the precedence between the `-and` and `-or`
+logical operators.
+
+```powershell
+PS> $true -or $false -and $false
+False
+```
+
+In other languages such as C#, logical AND typically has a higher precedence
+than logical OR, so you may expect the above expression to yield TRUE.
+
+However, the `-and` and `-or` operators have equal precedence in PowerShell.
+They are evaluated from the left to right as they appear within the expression.
+As `$true -or $false` is TRUE and `$true -and $false` is FALSE, the result of
+the expression is FALSE.
+
+> [!IMPORTANT]
+> Other contexts within PowerShell such as [WMI Query Language (WQL)][wql] and
+> the Active Directory filter have their own operator precedence that might
+> differ from PowerShell logical operator precedence.
 
 ## See also
 
@@ -189,7 +210,7 @@ are reading and maintaining your scripts.
 - [about_Split][split]
 - [about_Type_Operators][type]
 
-<!-- reference links -->
+<!-- link references -->
 [math]: about_Arithmetic_Operators.md
 [assign]: about_Assignment_Operators.md
 [compare]: about_Comparison_Operators.md
@@ -200,3 +221,4 @@ are reading and maintaining your scripts.
 [scopes]: about_Scopes.md
 [split]: about_Split.md
 [type]: about_Type_Operators.md
+[wql]: about_WQL.md
