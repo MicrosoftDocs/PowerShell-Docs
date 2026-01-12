@@ -1,8 +1,8 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 12/09/2025
-no-loc: [Debug, Verbose, Confirm]
+ms.date: 01/12/2026
+no-loc: [Confirm, Debug, ErrorAction, ErrorVariable, InformationAction, InformationVariable, OutBuffer, OutVariable, PipelineVariable, ProgressAction, Verbose, WarningAction, WarningVariable, WhatIf]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_CommonParameters

@@ -1,0 +1,241 @@
+---
+ms.date: 01/05/2026
+---
+# Terminology and format guidelines
+
+When writing about PowerShell, use the following terminology guidelines to ensure consistency across
+documentation. This is a draft document that's subject to change. Eventually, we will move this
+content to the PowerShell-Docs style guide.
+
+## Punctuation
+
+For general rules, see [Punctuation - Microsoft Style Guide][01].
+
+For PowerShell-specific terminology, see [PowerShell-Docs style guide][03].
+
+### Hyphenation
+
+See [Hyphens - Microsoft Style Guide][08].
+
+In general, don't include a hyphen after prefixes unless omitting the hyphen could confuse the
+reader. See the style guide for specific examples.
+
+- _subexpression_ not _sub-expression_
+
+Hyphenate two or more words that precede and modify a noun.
+
+- dot-source
+
+  Use the _dot-source operator_ to _dot-source_ a script.
+
+- _built-in_ drive
+- _high-level-language_ compiler
+- _member-access_ operator
+
+## Capitalization and space conventions
+
+For general guidelines, see [Capitalization - Microsoft Style Guide][07]. For PowerShell:
+
+Microsoft product names have specific capitalization requirements that must be followed. See
+[Microsoft Product Style Guide][05].
+
+All keywords should be lowercase and backticked in a paragraph. See [about_Language_Keywords][02].
+When referring to statements that consist of multiple keywords, use slashes to separate the
+keywords rather than spaces or dashes.
+
+- `do/until`
+- `do/while`
+- `try/catch/finally`
+- `if/elseif/else`
+
+Example:
+
+> A `do/until` loop consists of a `do` statement block followed by `until` and a
+> conditional expression.
+
+Command names and parameters usually use PascalCase, but verify the correct casing by inspecting the
+command definitions.
+
+For example, the parameters of the `TabExpansion2` function don't use PascalCase:
+
+```powershell
+TabExpansion2 -inputScript "TabExpansion2 -" | Select-Object -ExpandProperty CompletionMatches
+```
+
+```Output
+CompletionText       ListItemText           ResultType ToolTip
+--------------       ------------           ---------- -------
+-inputScript         inputScript         ParameterName [string] inputScript
+-cursorColumn        cursorColumn        ParameterName [int] cursorColumn
+-ast                 ast                 ParameterName [Ast] ast
+-tokens              tokens              ParameterName [Token[]] tokens
+-positionOfCursor    positionOfCursor    ParameterName [IScriptPosition] positionOfCursor
+-options             options             ParameterName [hashtable] options
+-Verbose             Verbose             ParameterName [switch] Verbose
+-Debug               Debug               ParameterName [switch] Debug
+-ErrorAction         ErrorAction         ParameterName [ActionPreference] ErrorAction
+-WarningAction       WarningAction       ParameterName [ActionPreference] WarningAction
+-InformationAction   InformationAction   ParameterName [ActionPreference] InformationAction
+-ProgressAction      ProgressAction      ParameterName [ActionPreference] ProgressAction
+-ErrorVariable       ErrorVariable       ParameterName [string] ErrorVariable
+-WarningVariable     WarningVariable     ParameterName [string] WarningVariable
+-InformationVariable InformationVariable ParameterName [string] InformationVariable
+-OutVariable         OutVariable         ParameterName [string] OutVariable
+-OutBuffer           OutBuffer           ParameterName [int] OutBuffer
+-PipelineVariable    PipelineVariable    ParameterName [string] PipelineVariable
+```
+
+### Specific examples
+
+- _file system_
+- _file name_
+- _localhost_ - lowercase
+- _CIM session_ - refers to the concept of a CIM session
+- _CimSession_ - refers to the PowerShell object of type `[CimSession]`
+- _PSSnapin_ - refers to an instance of a PowerShell snap-in assembly (such as
+  Microsoft.PowerShell.Core)
+- _snap-in_ - the general term for a PowerShell snap-in assembly
+- _SDDL_ - abbreviation of Security Descriptor Definition Language
+- _WSMan_ and _WinRM_
+  - _WSMan_ - Microsoft's abbreviation for the WS-Management (Web Services-Management) open standard
+  - _WinRM_ - Windows Remote Management - Microsoft's implementation of the WSMan standard
+  - Use lowercase instances only where the name is lowercase in the service interfaces (such as
+    `winrm` command-line tool, or in schema URIs and other properties).
+- Variable scopes and scope modifiers
+
+  See [Appendix A - Grammar - B.1.6 Variables][04].
+
+  Scope names and modifiers are capitalized:
+
+  - `Global:` and **Global** scope
+  - `Local:` and **Local** scope
+  - `Script:` and **Script** scope
+  - `Private:`
+  - `Using:`
+  - `Workflow:`
+
+  PowerShell drive names such as `Env` are capitalized.
+
+  ```powershell
+  Get-Item -Path Env:COMPUTERNAME
+
+  Name           Value
+  ----           -----
+  COMPUTERNAME   COMPUTER01
+  ```
+
+  `Env` is a special case when used in variable namespace notation.
+  Use lowercase for `$env:`. For all other PowerShell drives, use normal
+  capitalization.
+
+  ```powershell
+  $env:COMPUTERNAME
+  COMPUTER01
+
+  $Alias:dir
+  Get-ChildItem
+  ```
+
+## Terms
+
+### Declare vs. initialize
+
+_Initialize_ is the correct term to use when referring to assigning a value to a variable for the
+first time.
+
+The `New-Variable` cmdlet is used to declare variables. This is the only way to create a variable
+without a value. When you don't provide a value, the value is set to `$null` by default.
+
+When you reference a variable that hasn't been declared yet (such as `$var`) for the first time,
+PowerShell creates the variable. If you didn't initialize the variable, PowerShell assigns a default
+value depending on its type. Variables that are not explicitly typed are assigned a value of
+`$null`. In practice, it's difficult to create a variable without initializing it.
+
+### Native vs. external commands
+
+Not all external commands are native commands. A PowerShell script can be an _external command_, but
+it's not a native command.
+
+_Native commands_ are executables that can be run from any shell or other invocation method
+supported by the OS.
+
+### Scalar vs. single vs. singleton
+
+See [Scalar data type - Wikipedia][10].
+
+A scalar data type, or just scalar, is any non-composite value.
+
+Generally, all basic primitive data types are considered scalar:
+
+- The Boolean data type (bool)
+- Numeric types (int, the floating point types float and double)
+- Character types (char)
+
+The term _single_ should only refer to a single-precision floating point type `[single]`.
+
+A _singleton_ is a single instance of an object that may be scalar or complex.
+
+## Language elements and terms
+
+### Null values
+
+See [null, NULL, Null - Microsoft Style Guide][06].
+
+Use lowercase _null_ to refer to a null value. Better yet, use _null value_ to avoid confusion with
+the constant.
+
+Use `$null`, `NULL`, or `Null` (depending on the language context) only to refer to the constant.
+Use `DBNull` to refer to the `[System.DBNull]` type.
+
+### Boolean values
+
+It's preferred to use `$true` and `$false` (all lowercase) when referring to the boolean values.
+Alternatively, you can ise _FALSE_ or _TRUE_ (all uppercase) to refer to boolean values in general
+writing. Showing boolean values in output should always match the output. For example:
+
+```powershell
+PS> $true
+True
+```
+
+### Hash tables
+
+- Use _hash table_ (two words, all lowercase) to refer to the computer science concept in general
+  writing. See [Hash table - Wikipedia][09].
+- Use _hashtable_ (all lowercase) when referring to the PowerShell objects of type `[hashtable]`.
+  May be capitalized as _Hashtable_ when it begins a sentence.
+- `[hashtable]` (with backticks) when referring to the type more specifically.
+- Full type names should match the .NET definition: `[System.Collections.Hashtable]`
+
+### Statements and script blocks
+
+A _script block_ is a generic description we have used historically, but can be a source of
+confusion. Use the following terminology instead:
+
+- A _statement block_ refers to `{}` expressions in a statement. This is how the AST refers to
+  them. Statement blocks don't take parameters or create new scopes.
+- _scriptblock_ should be used to refer to `{}` expressions of type `[scriptblock]`. For example,
+  the **FilterScript** parameter of `Where-Object` expects a scriptblock. Scriptblocks can take
+  parameters and create new scopes.
+
+### `$_` vs. `$PSItem`
+
+`$_` and `$PSItem` are automatic variables that refer to the current object in the pipeline.
+Technically, neither variable is an alias. Both variables contain the same value.
+
+`$PSItem` was added to PowerShell later in an attempt to provide a clearer purpose to the name.
+However in practice, the _dollar underscore_ form `$_` is most commonly used.
+
+`$_` is the preferred usage.
+
+<!-- link references -->
+[01]: https://learn.microsoft.com/en-us/style-guide/punctuation/
+[02]: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_keywords
+[03]: https://learn.microsoft.com/powershell/scripting/community/contributing/powershell-style-guide
+[04]: https://learn.microsoft.com/powershell/scripting/lang-spec/chapter-15#b16-variables
+[05]: https://learn.microsoft.com/product-style-guide-msft-internal/welcome/
+[06]: https://learn.microsoft.com/style-guide/a-z-word-list-term-collections/n/null
+[07]: https://learn.microsoft.com/style-guide/capitalization
+[08]: https://learn.microsoft.com/style-guide/punctuation/dashes-hyphens/hyphens
+[09]: https://wikipedia.org/wiki/Hash_table
+[10]: https://wikipedia.org/wiki/Scalar_processor#Scalar_data_type

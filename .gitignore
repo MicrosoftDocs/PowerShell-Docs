@@ -5,6 +5,8 @@ _themes/
 .openpublishing.buildcore.ps1
 .optemp/
 .vale/
+.vscode/launch.json
+.vscode/styles/
 *.orig
 **/.ignore/**
 **/settings.json
