@@ -128,7 +128,7 @@ matches include: -Filter -Force.
 To uniquely identify the **Filter** parameter, you need to use `-Fi`.
 
 > [!NOTE]
-> The `Get-ChildItem` cmdlet also has a dynamic parameter, `-File`. Using `-f`, `-fi` and -`fil`
+> The `Get-ChildItem` cmdlet also has a dynamic parameter, `-File`. Using `-f`, `-fi` and `-fil`
 > doesn't create ambiguity with `-File` because `-File` is a dynamic `FileSystem` provider
 > parameter. PowerShell binds dynamic parameters after binding static parameters. The only way to
 > specify the parameter is to use the full name, `-File`.
