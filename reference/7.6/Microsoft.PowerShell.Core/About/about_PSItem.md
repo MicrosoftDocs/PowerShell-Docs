@@ -1,7 +1,7 @@
 ---
 description: The automatic variable that contains the current object in the pipeline object.
 Locale: en-US
-ms.date: 01/31/2025
+ms.date: 01/13/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_psitem?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSItem
@@ -14,13 +14,15 @@ The automatic variable that contains the current object in the pipeline object.
 
 ## Long description
 
-PowerShell includes the `$PSItem` variable and its alias, `$_`, as
-[automatic variables][03] in scriptblocks that process the current object, such
-as in the pipeline. This article uses `$PSItem` in the examples, but `$PSItem`
-can be replaced with `$_` in every example.
+PowerShell includes two [automatic variables][03], `$_` and '$PSItem` that
+refer to the current object in the pipeline.
 
-You can use this variable in commands that perform an action on every object in
-a pipeline.
+`$PSItem` was added to PowerShell in an attempt to provide a clearer meaning to
+the variable name. However, in practice, the _dollar sign underscore_ form `$_`
+is most commonly used.
+
+While this article uses `$PSItem` in the examples, `$PSItem` can be replaced
+with `$_` in every example. `$_` is the preferred usage.
 
 There are a few common use cases for `$PSItem`:
 
@@ -30,17 +32,17 @@ There are a few common use cases for `$PSItem`:
   cmdlet
 - In the intrinsic methods **ForEach** and **Where**
 - with delay-bind scriptblock parameters
-- In a `switch` statement's conditional values and associated scriptblocks
-- In the `process` block of a function
+- In a `switch` statement's conditional values and associated statements
+- In the `process` statement block of a function
 - In a `filter` definition
 - In the scriptblock of the **ValidateScript** attribute
-- In the scriptblock of a `catch` statement
+- In the statement block of a `catch`
 - In the substitution operand scriptblock of the `-replace` operator
 
 The rest of this article includes examples of using `$PSItem` for these use
 cases.
 
-## ForEach-Object Process
+## ForEach-Object Process parameter
 
 The [ForEach-Object][15] cmdlet is designed to operate on objects in the
 pipeline, executing the **Process** parameter's scriptblock once for every
@@ -111,7 +113,7 @@ B
 In this example, the scriptblock of the **ForEach** method uppercases the
 current object. Then the scriptblock of the **Where** method returns only `B`.
 
-## Delay-bind ScriptBlock parameters
+## Delay-bind scriptblocks
 
 [Delay-bind scriptblocks][12] let you use `$PSItem` to define parameters for a
 pipelined cmdlet before executing it.
@@ -120,7 +122,7 @@ pipelined cmdlet before executing it.
 dir config.log | Rename-Item -NewName { "old_$($_.Name)" }
 ```
 
-## Switch statement ScriptBlocks
+## Switch statements
 
 In [switch statements][13], you can use `$PSItem` in both action scriptblocks
 and statement condition scriptblocks.
@@ -140,23 +142,23 @@ switch ($numbers) {
 3 is odd
 ```
 
-In this example, the statement condition scriptblock checks whether the current
-object is even. If it's even, the associated action scriptblock outputs a
+In this example, the condition statement block checks whether the current
+object is even. If it's even, the associated action statement block outputs a
 message indicating the current object is even.
 
-The action scriptblock for the `default` condition outputs a message indicating
-the current object is odd.
+The action statement block for the `default` condition outputs a message
+indicating the current object is odd.
 
-## Function process blocks
+## Function process statement blocks
 
 When you define a [function][09], you can use `$PSItem` in the `process` block
 definition but not in the `begin` or `end` block definitions. If you
 reference `$PSItem` in the `begin` or `end` blocks, the value is `$null`
 because those blocks don't operate on each object in the pipeline.
 
-When you use `$PSItem` in the `process` block definition, the value is the
-value is the current object if the function is called in the pipeline and
-otherwise `$null`.
+When you use `$PSItem` in the `process` statement block definition, the value
+is the current object if the function is called in the pipeline and otherwise
+`$null`.
 
 ```powershell
 function Add-One {
@@ -174,9 +176,10 @@ function Add-One {
 
 > [!TIP]
 > While you can use `$PSItem` in [advanced functions][08], there's little
-> reason to do so. If you intend to receive input from the pipeline,
-> it's best to define parameters with one of the `ValueFromPipeline*` arguments
-> for the [Parameter][06] attribute.
+> reason to do so. If you intend to receive input from the pipeline, it's best
+> to define parameters with using either the `ValueFromPipeline` or
+> `ValueFromPipelineByPropertyName` arguments in the [Parameter][06]
+> attribute.
 
 Using the **Parameter** attribute and cmdlet binding for advanced functions
 makes the implementation more explicit and predictable than processing the
@@ -353,23 +356,23 @@ value isn't even.
 The `Add-EvenNumber` function adds the valid input numbers and returns the
 total.
 
-## The `catch` statement ScriptBlock
+## The `catch` statement block
 
-Within a `catch` block, the current error can be accessed using `$PSItem`. The
+Within a `catch` statement block, `$PSItem` contains the current error. The
 object is of type **ErrorRecord**.
 
 ```powershell
 try { NonsenseString }
 catch {
     Write-Host "An error occurred:"
-    Write-Host $_
+    Write-Host $PSItem
 }
 ```
 
 Running this script returns the following result:
 
 ```Output
-An Error occurred:
+An error occurred:
 The term 'NonsenseString' is not recognized as the name of a cmdlet, function,
 script file, or operable program. Check the spelling of the name, or if a path
 was included, verify that the path is correct and try again.
@@ -378,7 +381,7 @@ was included, verify that the path is correct and try again.
 For more examples, see the _Accessing exception information_ section in
 [about_Try_Catch_Finally][14].
 
-## The `-replace` operator's substitution ScriptBlock
+## The `-replace` operator's substitution scriptblock
 
 Starting in PowerShell 6, you can use `$PSItem` when calling the [-replace][04]
 operator and defining a [substitution scriptblock][05]. When you do, the value
@@ -396,6 +399,36 @@ Today is 12/31/1999 00:00:00
 In this example, the substitution scriptblock replaces the original date string
 with the default format for the current culture by casting the value to
 **datetime**.
+
+## Changing the value of `$PSItem`
+
+You can change the value of `$PSItem` by assigning a new value to it. However,
+doing so can change the expected behavior of any code that relies on `$PSItem`.
+Consider the following example. Normally, the `switch` statement would process
+all values in the array `$names`. Because the value of `$PSItem` is changed
+inside the action statement block, the `switch` statement processes only the
+first value.
+
+```powershell
+$names = 'Alice', 'Charlie'
+switch ($names) {
+    Alice   { "$PSItem says 'Hello!'"; $PSItem = 'Bob' }
+    Bob     { "$PSItem says 'Goodbye.'"; $PSItem = 'Charlie'; break }
+    Charlie { "$PSItem says 'How are you?'" }
+}
+```
+
+When the `switch` statement evaluates the first value, `Alice`, it matches the
+first condition and executes the associated action statement block. Inside that
+block, the value of `$PSItem` is changed to `Bob`, which also affects the
+evaluation of the `switch` statement.
+
+```Output
+Alice says 'Hello!'
+Bob says 'Goodbye.'
+```
+
+You should avoid changing the value of `$PSItem`.
 
 ## See also
 
