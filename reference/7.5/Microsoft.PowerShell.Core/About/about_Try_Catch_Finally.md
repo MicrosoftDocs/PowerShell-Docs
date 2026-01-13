@@ -1,7 +1,7 @@
 ---
 description: Describes how to use the `try`, `catch`, and `finally` blocks to handle terminating errors.
 Locale: en-US
-ms.date: 05/14/2025
+ms.date: 01/13/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Try_Catch_Finally
@@ -189,8 +189,8 @@ any parent scope has a matching `catch` block.
 
 ## Accessing exception information
 
-Within a `catch` block, the current error can be accessed using `$_`, which is
-also known as `$PSItem`. The object is of type **ErrorRecord**.
+Within a `catch` block, the current error can be accessed using the `$_` or
+`$PSItem` automatic variable. The object is of type **ErrorRecord**.
 
 ```powershell
 try { NonsenseString }

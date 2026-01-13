@@ -1,7 +1,7 @@
 ---
 description: PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
 Locale: en-US
-ms.date: 09/03/2024
+ms.date: 01/13/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calculated_properties?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Calculated_Properties
@@ -16,12 +16,16 @@ the formatting of objects output to the pipeline.
 ## Long description
 
 Several PowerShell cmdlets transform, group, or process input objects into
-output objects using parameters that allow the addition of new properties to
+output objects using parameters that allow you to create new properties on
 those output objects. You can use these parameters to generate new, calculated
-properties on output objects based on the values of input objects. The
-calculated property is defined by a [hashtable][03] containing key-value pairs
-that specify the name of the new property, an expression to calculate the
-value, and optional formatting information.
+properties on output objects based on the values of input objects. The input
+object can be accessed using the `$_` or `$PSItem` automatic variable within
+the `Expression` member a calculated property.
+
+The calculated property is defined as a [hashtable][03] containing key-value
+pairs that specify the value of the newly calculated property. Some commands
+support other key-value pairs that control how the property is displayed in the
+output.
 
 ## Supported cmdlets
 

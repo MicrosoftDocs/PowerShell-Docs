@@ -1,7 +1,7 @@
 ---
 description: Describes a keyword that handles a terminating error.
 Locale: en-US
-ms.date: 07/05/2024
+ms.date: 01/13/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_trap?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Trap
@@ -28,10 +28,10 @@ following ways:
   the default.
 
   > [!NOTE]
-  > When the terminating error occurs in a subordinate script block, such as
+  > When the terminating error occurs in a subordinate statement block, such as
   > an `if` statement or `foreach` loop, the statements in the `trap` block are
   > run and execution continues at the next statement outside the subordinate
-  > script block.
+  > block.
 
 - Display the error and abort execution of the script or function containing
   the `trap` using `break` in the `trap` statement.
@@ -42,7 +42,7 @@ following ways:
 The statement list of the `trap` can include multiple conditions or function
 calls. A `trap` can write logs, test conditions, or even run another program.
 
-### Syntax
+## Syntax
 
 The `trap` statement has the following syntax:
 
@@ -59,7 +59,7 @@ types of errors the `trap` catches.
 A script or command can have multiple `trap` statements. `trap` statements can
 appear anywhere in the script or command.
 
-### Trapping all terminating errors
+## Trapping all terminating errors
 
 When a terminating error occurs that isn't handled in another way in a script
 or command, PowerShell checks for a `trap` statement that handles the error. If
@@ -103,7 +103,7 @@ At line:3 char:5
 ```
 
 The following example includes a `trap` statement that displays the error by
-using the `$_` automatic variable:
+using the `$_` or `$PSItem` automatic variable:
 
 ```powershell
 function TrapTest {
@@ -134,17 +134,16 @@ At line:3 char:5
 ```
 
 > [!IMPORTANT]
-> `trap` statements may be defined anywhere within a given script block, but
-> always apply to all statements in that script block. At runtime, `trap`
+> `trap` statements can be defined anywhere within a given scriptblock, but
+> always apply to all statements in that scriptblock. At runtime, `trap`
 > statements in a block are defined before any other statements are executed.
-> In JavaScript, this is known as
-> [hoisting](https://wikipedia.org/wiki/JavaScript_syntax#hoisting). This means
-> that `trap` statements apply to all statements in that block even if
+> In other languages, such as JavaScript, this is known as [hoisting][06]. This
+> means that `trap` statements apply to all statements in that block even if
 > execution hasn't advanced past the point at which they're defined. For
 > example, defining a `trap` at the end of a script and throwing an error in
 > the first statement still triggers that `trap`.
 
-### Trapping specific errors
+## Trapping specific errors
 
 A script or command can have multiple `trap` statements. A `trap` can be
 defined to handle specific errors.
@@ -201,7 +200,7 @@ System.Management.Automation.CommandNotFoundException
 You can have more than one `trap` statement in a script. Only one `trap`
 statement can trap each error type. When a terminating error occurs, PowerShell
 searches for the `trap` with the most specific match, starting in the current
-script block of execution.
+scriptblock of execution.
 
 The following script example contains an error. The script includes a general
 `trap` statement that traps any terminating error and a specific `trap`
@@ -262,13 +261,13 @@ The attempt to divide by zero doesn't create a **CommandNotFoundException**
 error. The other `trap` statement, which traps any terminating error, traps the
 divide by zero error.
 
-### Trapping errors in a script block
+## Trapping errors in a scriptblock
 
 By default, when a terminating error is thrown, execution transfers to the trap
 statement. After the `trap` block is run, control returns to the next statement
 block after the location of the error.
 
-For example, when a terminating error occurs in an `foreach` statement, the
+For example, when a terminating error occurs in a `foreach` statement, the
 `trap` statement is run and execution continues at the next statement after the
 `foreach` block, not within the `foreach` block.
 
@@ -302,16 +301,16 @@ after loop
 
 In the output, you can see the loops continue until the last iteration. When
 the script tries to divide 1 by 0, PowerShell throws a terminating error. The
-script skips the rest of the `foreach` script block, runs the `try` statement,
-and continues after the `foreach` script block.
+script skips the rest of the `foreach` statement, runs the `try` statement,
+and continues after the `foreach` statement.
 
-### Trapping errors and scope
+## Trapping errors and scope
 
-If a terminating error occurs in the same script block as the `trap` statement,
+If a terminating error occurs in the same scriptblock as the `trap` statement,
 PowerShell runs the list of statements defined by the `trap`. Execution
 continues at the statement after the error. If the `trap` statement is in a
-different script block from the error, execution continues at the next
-statement that's in the same script block as the `trap` statement.
+different scriptblock from the error, execution continues at the next
+statement that's in the same scriptblock as the `trap` statement.
 
 For example, if an error occurs in a function, and the `trap` statement is in
 the function, the script continues at the next statement. The following script
@@ -387,7 +386,7 @@ back into the function after the `trap` statement runs.
 
 > [!CAUTION]
 > When multiple traps are defined for the same error condition, the first
-> `trap` defined lexically (highest in the script block) is used.
+> `trap` defined lexically (highest in the scriptblock) is used.
 
 In the following example, only the `trap` with `whoops 1` runs.
 
@@ -402,7 +401,7 @@ trap { 'whoops 2'; continue }
 > statement inside a function or dot sourced script, when the function or dot
 > sourced script exits, all `trap` statements inside are removed.
 
-### Using the break and continue keywords
+## Using the break and continue keywords
 
 You can use the `break` and `continue` keywords in a `trap` statement to
 determine whether a script or command continues to run after a terminating
@@ -481,11 +480,11 @@ statement runs. No error is written to the error stream.
 ## Notes
 
 `trap` statements provide a way to ensure all terminating errors within a
-script block are handled. For more finer-grained error handling, use
-`try`/`catch` blocks where traps are defined using `catch` statements. The
+scriptblock are handled. For more fine-grained error handling, use
+`try/catch` blocks where traps are defined using `catch` statements. The
 `catch` statements only apply to the code inside the associated `try`
 statement. For more information, see
-[about_Try_Catch_Finally](about_Try_Catch_Finally.md).
+[about_Try_Catch_Finally][05].
 
 ## See also
 
