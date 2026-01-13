@@ -1,6 +1,6 @@
 ---
 description: This article describes how to use aliases in PowerShell.
-ms.date: 11/21/2025
+ms.date: 01/13/2026
 title: Using aliases
 ---
 # Using aliases
@@ -113,9 +113,25 @@ For more information, see the [Alias attribute][03] documentation.
 
 In addition to parameter aliases, PowerShell lets you specify the parameter name using the fewest
 characters needed to uniquely identify the parameter. For example, the `Get-ChildItem` cmdlet has
-the **Recurse** and **ReadOnly** parameters. To uniquely identify the Recurse parameter, you only
-need to provide `-Rec`. If you combine that with the command alias, `Get-ChildItem -Recurse` can be
-shortened to `dir -Rec`.
+the **Filter** and **Force** parameters. Using `-F` is ambiguous because both parameters start with
+the letter `F`. If you try to use `-F`, PowerShell returns an error:
+
+```powershell
+PS> Get-ChildItem -f
+```
+
+```Output
+Get-ChildItem : Parameter cannot be processed because the parameter name 'f' is ambiguous. Possible
+matches include: -Filter -Force.
+```
+
+To uniquely identify the **Filter** parameter, you need to use `-Fi`.
+
+> [!NOTE]
+> The `Get-ChildItem` cmdlet also has a dynamic parameter, `-File`. Using `-f`, `-fi` and `-fil`
+> doesn't create ambiguity with `-File` because `-File` is a dynamic `FileSystem` provider
+> parameter. PowerShell binds dynamic parameters after binding static parameters. The only way to
+> specify the parameter is to use the full name, `-File`.
 
 ## Don't use aliases in scripts
 
