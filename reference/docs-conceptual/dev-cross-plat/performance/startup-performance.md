@@ -1,6 +1,6 @@
 ---
 description: How to identify and troubleshoot PowerShell startup issues, including performance problems and crashes.
-ms.date: 12/01/2025
+ms.date: 01/14/2026
 title: Troubleshoot PowerShell startup issues
 ---
 # Troubleshoot PowerShell startup issues
@@ -209,7 +209,7 @@ understand it's trying to do.
   Steve Lee, the PowerShell Dev Manager, has a blog post that describes how to measure the
   performance of your profile. It includes instructions for establishing a baseline for performance,
   how to get detailed timing information, and ways to optimize your profile. See
-  [Optimizing your $Profile][05].
+  [Optimizing your $Profile][07].
 
 ### PowerShell 7 starts slowly in an isolated network
 
@@ -242,13 +242,13 @@ There are three possible workarounds for this problem:
 - Reduce CRL Timeout
 
   Reducing the CRL lookup timeout is possible, but doing so risks other lookups to fail, that can't
-  complete in the time specified. For details about how to change the timeout, see [Manage Network
-  Retrieval and Path Validation][04].
+  complete in the time specified. For details about how to change the timeout, see
+  [Manage Network Retrieval and Path Validation][06].
 
 - Remove CRL checking
 
-  The CRL checking settings are managed by Group Policy. For more information, see [Manage Trusted
-  Publishers][03].
+  The CRL checking settings are managed by Group Policy. For more information, see
+  [Manage Trusted Publishers][05].
 
   > [!WARNING]
   > It's possible to disable the CRL check however, it's not recommended. Disabling CRL checking
@@ -281,18 +281,20 @@ need code that must run in **FullLanguage** mode during your profile, move it in
 file that's exempted or signed. Call (don't dot-source) that script file from within your profile.
 
 For more information on this issue, see
-[PowerShell Constrained Language mode and the Dot-Source Operator][06].
+[PowerShell Constrained Language mode and the Dot-Source Operator][08].
 
 ## Further reading
 
 - [about_Language_Modes][03]
-- [Measure-Command][07]
+- [Measure-Command][09]
 
 <!-- link references -->
 [01]: ../../security/security-features.md
 [02]: /dotnet/framework/install/repair
 [03]: /powershell/module/microsoft.powershell.core/about/about_language_modes
 [04]: /powershell/module/microsoft.powershell.core/about/about_profiles
-[05]: https://devblogs.microsoft.com/powershell/optimizing-your-profile/
-[06]: https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode-and-the-dot-source-operator/
-[07]: xref:Microsoft.PowerShell.Utility.Measure-Command
+[05]: /previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc733026(v=ws.10)
+[06]: /previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771429(v=ws.10)
+[07]: https://devblogs.microsoft.com/powershell/optimizing-your-profile/
+[08]: https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode-and-the-dot-source-operator/
+[09]: xref:Microsoft.PowerShell.Utility.Measure-Command
