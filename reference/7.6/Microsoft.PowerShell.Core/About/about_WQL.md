@@ -1,7 +1,7 @@
 ---
-description: Describes WMI Query Language (WQL), which can be used to get WMI objects in Windows PowerShell.
+description: Describes WMI Query Language (WQL), which can be used to get WMI objects in PowerShell.
 Locale: en-US
-ms.date: 01/06/2026
+ms.date: 01/15/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wql?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WQL
@@ -12,33 +12,30 @@ title: about_WQL
 ## Short description
 
 Describes WMI Query Language (WQL), which can be used to get WMI objects in
-Windows PowerShell.
+PowerShell.
 
 ## Long description
 
 WQL is the Windows Management Instrumentation (WMI) query language, which is
 the language used to get information from WMI.
 
-You aren't required to use WQL to perform a WMI query in Windows PowerShell.
-Instead, you can use the parameters of the `Get-WmiObject` or `Get-CimInstance`
-cmdlets. WQL queries are somewhat faster than standard `Get-WmiObject` commands
-and the improved performance is evident when the commands run on hundreds of
-systems. However, be sure that the time you spend to write a successful WQL
-query doesn't outweigh the performance improvement.
+You aren't required to use WQL to perform a WMI query in PowerShell. Instead,
+you can use the parameters of the CIM cmdlets. WQL queries are somewhat faster
+than standard CIM commands and the improved performance is evident when the
+commands run on hundreds of systems. However, be sure that the time you spend
+to write a successful WQL query doesn't outweigh the performance improvement.
 
 The basic WQL statements you need to use WQL are `SELECT`, `WHERE`, and `FROM`.
 
 ## When to use WQL
 
-When working with WMI, and especially with WQL, don't forget that you are
-also using Windows PowerShell. Often, if a WQL query doesn't work as
-expected, it's easier to use a standard Windows PowerShell command than to
-debug the WQL query.
+When working with WMI, and especially with WQL, don't forget that you are also
+using PowerShell. Often, if a WQL query doesn't work as expected, it's easier
+to use a standard PowerShell command than to debug the WQL query.
 
-Unless you are returning massive amounts of data from across
-bandwidth-constrained remote systems, it's rarely productive to spend hours
-trying to perfect a complicated WQL query when there is an acceptable
-PowerShell cmdlet that does the same thing.
+Unless your query returns massive amounts of data, it's rarely productive to
+spend hours trying to perfect a complicated WQL query when there is an
+acceptable PowerShell cmdlet that does the same thing.
 
 ## Using the SELECT statement
 
@@ -84,99 +81,19 @@ SELECT name, version FROM Win32_BIOS
 
 ## Using the WQL query
 
-There are three ways to use WQL query in Windows PowerShell command.
+There are two ways to use WQL query in PowerShell command.
 
-- Use the `Get-WmiObject` cmdlet
-- Use the `Get-CimInstance` cmdlet
-- Use the `[wmisearcher]` type accelerator.
-
-## Using the Get-WmiObject cmdlet
-
-The most basic way to use the WQL query is to enclose it in quotation marks (as
-a string) and then use the query string as the value of the **Query** parameter
-of the `Get-WmiObject` cmdlet, as shown in the following example.
-
-```powershell
-Get-WmiObject -Query "SELECT * FROM Win32_BIOS"
-```
-
-```output
-SMBIOSBIOSVersion : 8BET56WW (1.36 )
-Manufacturer      : LENOVO
-Name              : Default System BIOS
-SerialNumber      : R9FPY3P
-Version           : LENOVO - 1360
-```
-
-You can also save the WQL statement in a variable and then use the variable as
-the value of the **Query** parameter, as shown in the following command.
-
-```powershell
-$query = "SELECT * FROM Win32_BIOS"
-Get-WmiObject -Query $query
-```
-
-You can use either format with any WQL statement. The following command uses
-the query in the `$queryName` variable to get only the **Name** and **Version**
-properties of the system BIOS.
-
-```powershell
-$queryNameVersion = "SELECT Name, Version FROM Win32_BIOS"
-Get-WmiObject -Query $queryNameVersion
-```
-
-```output
-__GENUS          : 2
-__CLASS          : Win32_BIOS
-__SUPERCLASS     :
-__DYNASTY        :
-__RELPATH        :
-__PROPERTY_COUNT : 2
-__DERIVATION     : {}
-__SERVER         :
-__NAMESPACE      :
-__PATH           :
-Name             : S03KT39A
-Version          : LENOVO - 1270
-PSComputerName   :
-```
-
-Remember that you can use the parameters of the `Get-WmiObject` cmdlet to get
-the same result. For example, the following command also gets the values of the
-**Name** and **Version** properties of instances of the **Win32_BIOS** WMI
-class.
-
-```powershell
-Get-WmiObject -Class Win32_BIOS -Property Name, Version
-```
-
-```output
-__GENUS          : 2
-__CLASS          : Win32_BIOS
-__SUPERCLASS     :
-__DYNASTY        :
-__RELPATH        :
-__PROPERTY_COUNT : 2
-__DERIVATION     : {}
-__SERVER         :
-__NAMESPACE      :
-__PATH           :
-Name             : S03KT39A
-Version          : LENOVO - 1270
-PSComputerName   :
-```
+- Use the CIM cmdlets
+- Use the `[wmisearcher]` type accelerator
 
 ## Using the Get-CimInstance cmdlet
 
-Beginning in Windows PowerShell 3.0, you can use the `Get-CimInstance` cmdlet
-to run WQL queries.
-
 `Get-CimInstance` gets instances of CIM-compliant classes, including WMI
-classes. The CIM cmdlets, introduced Windows PowerShell 3.0, perform the same
-tasks as the WMI cmdlets. The CIM cmdlets comply with WS-Management (WSMan)
-standards and with the Common Information Model (CIM) standard, which enables
-the cmdlets to use the same techniques to manage Windows computers and
-computers that are running other operating systems.
+classes. The CIM cmdlets, introduced PowerShell 3.0, perform the same tasks as
+the WMI cmdlets. The CIM cmdlets comply with WS-Management (WSMan) standards
+and with the Common Information Model (CIM) standard, which enables the cmdlets
+to use the same techniques to manage Windows computers and computers that are
+running other operating systems.
 
 The following command uses the `Get-CimInstance` cmdlet to run a WQL query.
 
@@ -207,7 +124,7 @@ PS> (Get-WmiObject -Query "SELECT * FROM Win32_BIOS").GetType().FullName
 System.Management.ManagementObject
 ```
 
-## Using the wmisearcher type accelerator
+## Using the `[wmisearcher]` type accelerator
 
 The `[wmisearcher]` type accelerator creates a **ManagementObjectSearcher**
 object from a WQL statement string. The **ManagementObjectSearcher** object has
@@ -323,14 +240,14 @@ For example, the following command gets the Notepad processes on the local
 computer.
 
 ```powershell
-Get-WmiObject -Query "SELECT * FROM Win32_Process WHERE name='Notepad.exe'"
+Get-CimInstance -Query "SELECT * FROM Win32_Process WHERE name='Notepad.exe'"
 ```
 
 However, the following command fails, because the process name includes the
 `.exe` file extension.
 
 ```powershell
-Get-WmiObject -Query "SELECT * FROM Win32_Process WHERE name='Notepad'"
+Get-CimInstance -Query "SELECT * FROM Win32_Process WHERE name='Notepad'"
 ```
 
 ## WHERE statement comparison operators
@@ -363,14 +280,14 @@ query.
 ```powershell
 $highPriority = "Select Name, Priority from Win32_Process " +
   "WHERE Priority >= 11"
-Get-WmiObject -Query $highPriority
+Get-CimInstance -Query $highPriority
 ```
 
 ## Using the WQL operators in the -Filter parameter
 
 The WQL operators can also be used in the value of the **Filter** parameter of
-the `Get-WmiObject` or `Get-CimInstance` cmdlets, as well as in the value of
-the **Query** parameters of these cmdlets.
+the `Get-CimInstance` cmdlet, as well as in the value of the **Query**
+parameters of these cmdlets.
 
 For example, the following command gets the **Name** and **ProcessId**
 properties of the last five processes that have **ProcessId** values greater
@@ -378,12 +295,12 @@ than 1004. The command uses the **Filter** parameter to specify the
 **ProcessId** condition.
 
 ```powershell
-$getWmiObjectSplat = @{
+$getCimInstance = @{
     Class = 'Win32_Process'
     Property = 'Name', 'ProcessId'
     Filter = "ProcessId >= 1004"
 }
-Get-WmiObject @getWmiObjectSplat |
+Get-CimInstance @getCimInstance |
     Sort-Object ProcessId |
     Select-Object Name, ProcessId -Last 5
 ```
@@ -444,7 +361,7 @@ The query should return any process from `Hotepad.exe` through `Notepad.exe`.
 ```powershell
 Notepad   # Starts Notepad
 $query = "SELECT * FROM Win32_Process WHERE Name LIKE '[H-N]otepad.exe'"
-Get-WmiObject -Query $query | select Name, ProcessId
+Get-CimInstance -Query $query | select Name, ProcessId
 ```
 
 ```output
@@ -459,13 +376,13 @@ The following commands select all process that have a name that begins with a
 letter between A and P (case-insensitive) followed by zero or more letters in
 any combination.
 
-The `Get-WmiObject` cmdlet runs the query, the `Select-Object` cmdlet gets the
+The `Get-CimInstance` cmdlet runs the query, the `Select-Object` cmdlet gets the
 **Name** and **ProcessId** properties, and the `Sort-Object` cmdlet sorts the
 results in alphabetical order by name.
 
 ```powershell
 $query = "SELECT * FROM Win32_Process WHERE name LIKE '[A-P]%'"
-Get-WmiObject -Query $query |
+Get-CimInstance -Query $query |
     Select-Object -Property Name, ProcessId |
     Sort-Object -Property Name
 ```
@@ -479,7 +396,7 @@ and followed zero or more letters.
 
 ```powershell
 $query = "SELECT * FROM Win32_Process WHERE name LIKE '[^ASWPRCUN]%'"
-Get-WmiObject -Query $query |
+Get-CimInstance -Query $query |
     Select-Object -Property Name, ProcessId |
     Sort-Object -Property Name
 ```
@@ -487,12 +404,12 @@ Get-WmiObject -Query $query |
 #### Example 4: Any characters -- or none (%)
 
 The following commands get processes that have names that begin with `calc`.
-The percent (`%`) symbol is the WQL wildcard character. It's equivalent to the
+The percent symbol (`%`) is the WQL wildcard character. It's equivalent to the
 asterisk (`*`) wildcard in PowerShell.
 
 ```powershell
 $query = "SELECT * FROM Win32_Process WHERE Name LIKE 'calc%'"
-Get-WmiObject -Query $query | Select-Object -Property Name, ProcessId
+Get-CimInstance -Query $query | Select-Object -Property Name, ProcessId
 ```
 
 ```output
@@ -511,7 +428,7 @@ more than one character.
 
 ```powershell
 $query = "SELECT * FROM Win32_Process WHERE Name LIKE 'c_lc.exe'"
-Get-WmiObject -Query $query | Select-Object -Property Name, ProcessId
+Get-CimInstance -Query $query | Select-Object -Property Name, ProcessId
 ```
 
 ```output
@@ -528,8 +445,8 @@ include any wildcard characters.
 
 ```powershell
 $query = "SELECT * FROM Win32_Process WHERE name LIKE 'WLIDSVC.exe'"
-Get-WmiObject -Query $query | Select-Object -Property Name, ProcessId
-```powershell
+Get-CimInstance -Query $query | Select-Object -Property Name, ProcessId
+```
 
 ```output
 Name                                 ProcessId
@@ -556,7 +473,7 @@ WMI class but returns them only if the process name is `winword.exe` or
 ```powershell
 $q = "SELECT * FROM Win32_Process WHERE Name='winword.exe'" +
   " OR Name='excel.exe'"
-Get-WmiObject -Query $q
+Get-CimInstance -Query $q
 ```
 
 The `OR` statement can be used with more than two conditions. In the following
@@ -600,7 +517,7 @@ All operators, including the `LIKE` operators are valid with the `OR` and `AND`
 operators. And, you can combine the `OR` and `AND` operators in a single query
 with parentheses that tell WMI which clauses to process first.
 
-This command uses the Windows PowerShell continuation character (`` ` ``)
+This command uses the PowerShell continuation character (`` ` ``)
 divide the command into two lines.
 
 ## Searching for null values
@@ -613,11 +530,11 @@ search for null might not work for all properties.
 To search for null values, use the Is operator with a value of `null`.
 
 For example, the following commands get processes that have a null value for
-the **IntallDate** property. The commands return many processes.
+the **InstallDate** property. The commands return many processes.
 
 ```powershell
 $q = "SELECT * FROM Win32_Process WHERE InstallDate is null"
-Get-WmiObject -Query $q
+Get-CimInstance -Query $q
 ```
 
 In contrast, the following command, gets user accounts that have a null value
@@ -627,7 +544,7 @@ accounts, even though most user accounts don't have any value for the
 
 ```powershell
 $q = "SELECT * FROM Win32_UserAccount WHERE Description is null"
-Get-WmiObject -Query $q
+Get-CimInstance -Query $q
 ```
 
 To find the user accounts that have no value for the **Description** property,
@@ -662,7 +579,7 @@ Get-CimInstance -Query $q
 ## Using the escape character
 
 WQL uses the backslash (`\`) as its escape character. This is different from
-Windows PowerShell, which uses the backtick character (`` ` ``).
+PowerShell, which uses the backtick character (`` ` ``).
 
 Quotation marks, and the characters used for quotation marks, often need to be
 escaped so that they aren't misinterpreted.
