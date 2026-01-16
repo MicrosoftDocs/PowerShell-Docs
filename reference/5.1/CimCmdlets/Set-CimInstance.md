@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 12/09/2022
+ms.date: 01/16/2026
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/set-ciminstance?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -445,3 +445,5 @@ When you use the **PassThru** parameter, this cmdlet returns the modified CIM in
 [New-CimInstance](New-CimInstance.md)
 
 [Remove-CimInstance](Remove-CimInstance.md)
+
+[about_WQL](../Microsoft.PowerShell.Core/About/about_WQL.md)

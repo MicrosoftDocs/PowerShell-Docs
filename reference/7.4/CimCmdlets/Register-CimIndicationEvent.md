@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/28/2023
+ms.date: 01/16/2026
 no-loc: [-Forward]
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -426,3 +426,5 @@ This cmdlet is only available on Windows platforms.
 [Get-CimSession](Get-CimSession.md)
 
 [New-CimSession](New-CimSession.md)
+
+[about_WQL](../Microsoft.PowerShell.Core/About/about_WQL.md)
