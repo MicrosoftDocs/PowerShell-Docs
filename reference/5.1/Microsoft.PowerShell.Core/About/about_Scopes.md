@@ -1,7 +1,7 @@
 ---
 description: Explains the concept of scope in PowerShell and shows how to set and change the scope of elements.
 Locale: en-US
-ms.date: 02/02/2025
+ms.date: 01/16/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Scopes
@@ -124,7 +124,10 @@ optional scope modifiers:
 
 - `Global:` - Specifies that the name exists in the **Global** scope.
 - `Local:` - Specifies that the name exists in the **Local** scope. The current
-  scope is always the **Local** scope.
+  scope is always the **Local** scope. When you use the `Local:` scope
+  modifier, PowerShell doesn't search parent scopes. If the item exists in the
+  current scope, it's used. If the item doesn't exist in the current scope,
+  PowerShell creates a new item in the current scope.
 - `Private:` - Specifies that the name is **Private** and only visible to the
   current scope.
 

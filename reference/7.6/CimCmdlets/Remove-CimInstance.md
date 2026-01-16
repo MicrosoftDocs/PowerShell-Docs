@@ -2,7 +2,7 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 06/28/2023
+ms.date: 01/16/2026
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/remove-ciminstance?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -336,3 +336,5 @@ This cmdlet is only available on Windows platforms.
 [Get-CimInstance](Get-CimInstance.md)
 
 [Set-CimInstance](Set-CimInstance.md)
+
+[about_WQL](../Microsoft.PowerShell.Core/About/about_WQL.md)
