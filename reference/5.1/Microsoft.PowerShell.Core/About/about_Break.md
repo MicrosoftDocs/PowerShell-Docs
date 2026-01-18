@@ -1,5 +1,10 @@
 ---
+description: Describes a statement you can use to immediately exit `foreach`, `for`, `while`, `do`, `switch`, or `trap` statements.
+Locale: en-US
 ms.date: 01/18/2026
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_break?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Break
 ---
 # about_Break
 
@@ -229,6 +234,4 @@ runspace.
 - [about_Trap](about_Trap.md)
 - [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 - [about_While](about_While.md)
-
-
 

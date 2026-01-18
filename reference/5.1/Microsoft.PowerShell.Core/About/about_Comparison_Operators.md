@@ -1,5 +1,10 @@
 ---
+description: Describes the operators that compare values in PowerShell.
+Locale: en-US
 ms.date: 01/18/2026
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Comparison_Operators
 ---
 # about_Comparison_Operators
 
@@ -775,6 +780,4 @@ $a -isnot $b.GetType() # Output: True
 [13]: xref:Microsoft.PowerShell.Core.Where-Object
 [14]: xref:Microsoft.PowerShell.Utility.Compare-Object
 [15]: /powershell/scripting/learn/glossary#scalar-value
-
-
 

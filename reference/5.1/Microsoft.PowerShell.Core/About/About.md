@@ -1,5 +1,9 @@
 ---
+description: About topics cover a range of concepts about PowerShell.
+Help Version: 6.0
+Locale: en-US
 ms.date: 01/18/2026
+title: About topics
 ---
 # About topics
 

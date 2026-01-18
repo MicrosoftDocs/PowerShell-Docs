@@ -1,5 +1,10 @@
 ---
+description: Describes how PowerShell determines which command to run.
+Locale: en-US
 ms.date: 01/18/2026
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Command_Precedence
 ---
 # about_Command_Precedence
 
@@ -336,6 +341,4 @@ you must add the extension to the `$Env:PATHEXT` environment variable.
 [13]: xref:Microsoft.PowerShell.Management.Get-ChildItem
 [14]: xref:Microsoft.PowerShell.Utility.Get-Date
 [15]: xref:Microsoft.PowerShell.Utility.Import-PSSession
-
-
 

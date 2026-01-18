@@ -1272,7 +1272,7 @@ True
 [13]: about_Functions_OutputTypeAttribute.md
 [14]: about_Functions.md
 [15]: about_parameter_sets.md
-[16]: about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters
+[16]: about_Script_Blocks.md#using-delay-bind-scriptblocks-with-parameters
 [17]: about_Splatting.md
 [18]: about_Tab_Expansion.md
 [19]: about_Wildcards.md

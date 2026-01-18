@@ -1,5 +1,14 @@
 ---
+external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
+Locale: en-US
+Module Name: CimCmdlets
 ms.date: 01/18/2026
+no-loc: [-Forward]
+online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+aliases:
+  - rcie
+title: Register-CimIndicationEvent
 ---
 # Register-CimIndicationEvent
 
@@ -410,6 +419,4 @@ This cmdlet returns an **EventSubscription** object.
 [New-CimSession](New-CimSession.md)
 
 [about_WQL](../Microsoft.PowerShell.Core/About/about_WQL.md)
-
-
 

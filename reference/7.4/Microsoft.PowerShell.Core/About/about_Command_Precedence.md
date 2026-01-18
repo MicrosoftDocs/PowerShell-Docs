@@ -1,5 +1,10 @@
 ---
+description: Describes how PowerShell determines which command to run.
+Locale: en-US
 ms.date: 01/18/2026
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Command_Precedence
 ---
 # about_Command_Precedence
 

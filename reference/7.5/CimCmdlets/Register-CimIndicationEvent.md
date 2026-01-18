@@ -3,12 +3,11 @@ external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
 ms.date: 01/18/2026
-no-loc:
-- -Forward
+no-loc: [-Forward]
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-- rcie
+  - rcie
 title: Register-CimIndicationEvent
 ---
 # Register-CimIndicationEvent

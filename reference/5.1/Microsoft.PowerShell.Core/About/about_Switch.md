@@ -1,5 +1,10 @@
 ---
+description: Explains how to use a switch to handle multiple `if` statements.
+Locale: en-US
 ms.date: 01/18/2026
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Switch
 ---
 # about_Switch
 
