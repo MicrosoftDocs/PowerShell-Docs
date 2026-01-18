@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 02/24/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
-
 # Set-PSReadLineOption
 
 ## SYNOPSIS
@@ -141,8 +140,8 @@ Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnVi
 ```
 
 The **OnViModeChange** function sets the cursor options for the **Vi** modes: insert and command.
-**ViModeChangeHandler** uses the `Function:` provider to reference **OnViModeChange** as a script
-block object.
+**ViModeChangeHandler** uses the `Function:` provider to reference **OnViModeChange** as a
+scriptblock object.
 
 For more information, see
 [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers).
@@ -797,8 +796,8 @@ Accept wildcard characters: False
 
 ### -ViModeChangeHandler
 
-When the **ViModeIndicator** is set to `Script`, the script block provided will be invoked every
-time the mode changes. The script block is provided one argument of type `ViMode`.
+When the **ViModeIndicator** is set to `Script`, the scriptblock provided will be invoked every time
+the mode changes. The scriptblock is provided one argument of type `ViMode`.
 
 This parameter was introduced in PowerShell 7.
 

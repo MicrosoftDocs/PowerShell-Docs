@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/register-objectevent?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ObjectEvent
 ---
-
 # Register-ObjectEvent
 
 ## SYNOPSIS
@@ -192,12 +191,13 @@ For more information about modules, see [about_Modules](../Microsoft.PowerShell.
 ### -Action
 
 Specifies the commands to handle the event. The commands in the **Action** run when an event is
-raised, instead of sending the event to the event queue. Enclose the commands in braces ( { } ) to
-create a script block.
+raised, instead of sending the event to the event queue. Enclose the commands in braces (`{}`) to
+create a scriptblock.
 
 The value of the **Action** parameter can include the `$Event`, `$EventSubscriber`, `$Sender`,
 `$EventArgs`, and `$args` automatic variables. These variables provide information about the event
-to the **Action** script block. For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+to the **Action** scriptblock. For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 When you specify an action, `Register-ObjectEvent` returns an event job object that represents
 that action. You can use the Job cmdlets to manage the event job.

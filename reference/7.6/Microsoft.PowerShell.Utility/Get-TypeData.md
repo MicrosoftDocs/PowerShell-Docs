@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-typedata?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TypeData
 ---
-
 # Get-TypeData
 
 ## SYNOPSIS
@@ -64,9 +63,9 @@ System.IO.DirectoryInfo {[Mode, System.Management.Automation.Runspaces.CodePrope
 System.IO.FileInfo      {[Mode, System.Management.Automation.Runspaces.CodePropert…
 ```
 
-### Example 3: Get the script block that creates a property value
+### Example 3: Get the scriptblock that creates a property value
 
-This example gets the script block that creates the value of the **EventID** property of
+This example gets the scriptblock that creates the value of the **EventID** property of
 **EventLogEntry** objects.
 
  ```powershell
@@ -79,9 +78,9 @@ GetScriptBlock                     SetScriptBlock     IsHidden Name
 $this.get_EventID() -band 0xFFFF                         False EventID
 ```
 
-### Example 4: Get the script block that defines a property for a specified object
+### Example 4: Get the scriptblock that defines a property for a specified object
 
-This example gets the script block that defines the **DateTime** property of **System.DateTime**
+This example gets the scriptblock that defines the **DateTime** property of **System.DateTime**
 objects in PowerShell.
 
  ```powershell
@@ -106,7 +105,7 @@ definition of the property or method value.
 
 The command gets the **DateTime** key in **Members** and its **GetScriptBlock** property value.
 
-The output shows the script block that creates the value of the **DateTime** property of every
+The output shows the scriptblock that creates the value of the **DateTime** property of every
 **System.DateTime** object in PowerShell.
 
 ## PARAMETERS

@@ -1,7 +1,7 @@
 ---
 description: Describes a language command you can use to traverse all the items in a collection of items.
 Locale: en-US
-ms.date: 10/20/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_foreach?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Foreach
@@ -139,7 +139,7 @@ format specifier show no decimal places.
 The following function parses PowerShell scripts and script modules and returns
 the location of functions contained within. The example demonstrates how to use
 the `MoveNext` method and the `Current` property of the `$foreach` variable
-inside of a `foreach` script block.
+inside of a `foreach` statement block.
 
 For more information, see [Using Enumerators][02].
 

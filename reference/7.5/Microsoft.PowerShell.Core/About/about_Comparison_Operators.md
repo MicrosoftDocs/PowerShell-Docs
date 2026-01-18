@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 06/20/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -645,10 +645,10 @@ a4
 a5
 ```
 
-### Replacement with a script block
+### Replacement with a scriptblock
 
-In PowerShell 6 and later, the `-replace` operator also accepts a script block
-that performs the replacement. The script block runs once for every match.
+In PowerShell 6 and later, the `-replace` operator also accepts a scriptblock
+that performs the replacement. The scriptblock runs once for every match.
 
 Syntax:
 
@@ -656,12 +656,12 @@ Syntax:
 <String> -replace <regular-expression>, {<Script-block>}
 ```
 
-Within the script block, use the `$_` automatic variable to access the input
+Within the scriptblock, use the `$_` automatic variable to access the input
 text being replaced and other useful information. This variable's class type is
 [System.Text.RegularExpressions.Match][04].
 
 The following example replaces each sequence of three digits with the character
-equivalents. The script block runs for each set of three digits that needs to
+equivalents. The scriptblock runs for each set of three digits that needs to
 be replaced.
 
 ```powershell
@@ -830,3 +830,4 @@ $a -isnot $b.GetType() # Output: True
 [13]: xref:Microsoft.PowerShell.Core.Where-Object
 [14]: xref:Microsoft.PowerShell.Utility.Compare-Object
 [15]: /powershell/scripting/learn/glossary#scalar-value
+

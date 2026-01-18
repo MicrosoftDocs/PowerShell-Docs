@@ -1,12 +1,11 @@
 ---
 description: PowerShell logs internal operations from the engine, providers, and cmdlets.
 Locale: en-US
-ms.date: 08/29/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging_Non-Windows
 ---
-
 # about_Logging_Non-Windows
 
 ## Short description
@@ -55,11 +54,11 @@ PowerShell supports configuring two categories of logging:
   PSReadLine                        True
   ```
 
-- Script block logging - Record the processing of commands, script blocks,
+- Script block logging - Record the processing of commands, scriptblocks,
   functions, and scripts whether invoked interactively, or through automation.
 
   When you enable Script Block Logging, PowerShell records the content of all
-  script blocks that it processes. Once enabled, any new PowerShell session
+  scriptblocks that it processes. Once enabled, any new PowerShell session
   logs this information.
 
   > [!NOTE]

@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/23/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -39,9 +39,9 @@ input objects can be piped to the cmdlet or specified using the **InputObject** 
 Starting in Windows PowerShell 3.0, there are two different ways to construct a `ForEach-Object`
 command.
 
-- **Script block syntax**. You can use a script block to specify the operation. Within the script block,
-  use the `$_` variable to represent the current object. The script block is the value of the
-  **Process** parameter. The script block can contain any PowerShell script.
+- **Scriptblock syntax**. You can use a scriptblock to specify the operation. Within the
+  scriptblock, use the `$_` variable to represent the current object. The scriptblock is the value
+  of the **Process** parameter. The scriptblock can contain any PowerShell script.
 
   For example, the following command gets the value of the **ProcessName** property of each process
   on the computer.
@@ -52,7 +52,7 @@ command.
   [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
   > [!NOTE]
-  > The script blocks run in the caller's scope. Therefore, the blocks have access to variables in
+  > The scriptblocks run in the caller's scope. Therefore, the blocks have access to variables in
   > that scope and can create new variables that persist in that scope after the cmdlet completes.
 
 - **Simplified syntax**. Using the simplified syntax, you specify a property or method name of the
@@ -93,7 +93,7 @@ Get-ChildItem $PSHOME | ForEach-Object -Process {
 }
 ```
 
-If the object isn't a directory, the script block gets the name of the file, divides the value of
+If the object isn't a directory, the scriptblock gets the name of the file, divides the value of
 its **Length** property by 1024, and adds a space (" ") to separate it from the next entry. The
 cmdlet uses the **PSIsContainer** property to determine whether an object is a directory.
 
@@ -204,7 +204,7 @@ PowerShell
 Host
 ```
 
-The first command uses the traditional syntax, which includes a script block and the current object
+The first command uses the traditional syntax, which includes a scriptblock and the current object
 operator `$_`. It uses the dot syntax to specify the method and parentheses to enclose the delimiter
 argument.
 
@@ -214,9 +214,9 @@ The second command uses the **MemberName** parameter to specify the **Split** me
 The third command uses the `foreach` alias of the `ForEach-Object` cmdlet and omits the names of
 the **MemberName** and **ArgumentList** parameters, which are optional.
 
-### Example 8: Using ForEach-Object with two script blocks
+### Example 8: Using ForEach-Object with two scriptblocks
 
-In this example, we pass two script blocks positionally. All the script blocks bind to the
+In this example, we pass two scriptblocks positionally. All the scriptblocks bind to the
 **Process** parameter. However, they're treated as if they had been passed to the **Begin** and
 **Process** parameters.
 
@@ -230,14 +230,14 @@ process
 process
 ```
 
-### Example 9: Using ForEach-Object with more than two script blocks
+### Example 9: Using ForEach-Object with more than two scriptblocks
 
-In this example, we pass four script blocks positionally. All the script blocks bind to the
+In this example, we pass four scriptblocks positionally. All the scriptblocks bind to the
 **Process** parameter. However, they're treated as if they had been passed to the **Begin**,
 **Process**, and **End** parameters.
 
 ```powershell
-1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' }  { 'end' }
+1..2 | ForEach-Object { 'begin' } { 'process A' }  { 'process B' } { 'end' }
 ```
 
 ```Output
@@ -250,12 +250,12 @@ end
 ```
 
 > [!NOTE]
-> The first script block is always mapped to the `begin` block, the last block is mapped to the
+> The first scriptblock is always mapped to the `begin` block, the last block is mapped to the
 > `end` block, and the two middle blocks are mapped to the `process` block.
 
-### Example 10: Run multiple script blocks for each pipeline item
+### Example 10: Run multiple scriptblocks for each pipeline item
 
-As shown in the previous example, multiple script blocks passed using the **Process** parameter get
+As shown in the previous example, multiple scriptblocks passed using the **Process** parameter get
 mapped to the **Begin** and **End** parameters. To avoid this mapping, you must provide explicit
 values for the **Begin** and **End** parameters.
 
@@ -295,7 +295,7 @@ Accept wildcard characters: False
 
 ### -Begin
 
-Specifies a script block that runs before this cmdlet processes any input objects. This script block
+Specifies a scriptblock that runs before this cmdlet processes any input objects. This scriptblock
 is only run once for the entire pipeline. For more information about the `begin` block, see
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
@@ -313,7 +313,7 @@ Accept wildcard characters: False
 
 ### -End
 
-Specifies a script block that runs after this cmdlet processes all input objects. This script block
+Specifies a scriptblock that runs after this cmdlet processes all input objects. This scriptblock
 is only run once for the entire pipeline. For more information about the `end` block, see
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
@@ -331,7 +331,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the input objects. `ForEach-Object` runs the script block or operation statement on each
+Specifies the input objects. `ForEach-Object` runs the scriptblock or operation statement on each
 input object. Enter a variable that contains the objects, or type a command or expression that gets
 the objects.
 
@@ -380,13 +380,13 @@ Accept wildcard characters: True
 
 ### -Process
 
-Specifies the operation that's performed on each input object. This script block is run for every
+Specifies the operation that's performed on each input object. This scriptblock is run for every
 object in the pipeline. For more information about the `process` block, see
 [about_Functions](about/about_functions.md#piping-objects-to-functions).
 
-When you provide multiple script blocks to the **Process** parameter, the first script block is
-always mapped to the `begin` block. If there are only two script blocks, the second block is mapped
-to the `process` block. If there are three or more script blocks, first script block is always
+When you provide multiple scriptblocks to the **Process** parameter, the first scriptblock is
+always mapped to the `begin` block. If there are only two scriptblocks, the second block is mapped
+to the `process` block. If there are three or more scriptblocks, first scriptblock is always
 mapped to the `begin` block, the last block is mapped to the `end` block, and the middle blocks are
 mapped to the `process` block.
 
@@ -404,7 +404,7 @@ Accept wildcard characters: False
 
 ### -RemainingScripts
 
-Specifies all script blocks that aren't taken by the **Process** parameter.
+Specifies all scriptblocks that aren't taken by the **Process** parameter.
 
 This parameter was introduced in Windows PowerShell 3.0.
 

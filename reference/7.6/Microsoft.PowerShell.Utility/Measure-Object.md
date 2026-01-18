@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - measure
 title: Measure-Object
 ---
-
 # Measure-Object
 
 ## SYNOPSIS
@@ -459,7 +458,7 @@ Specifies one or more properties to measure. If you do not specify any other mea
 `Measure-Object` counts the objects that have the properties you specify.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
-must be a script block. For more information, see
+must be a scriptblock. For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).
 
 ```yaml

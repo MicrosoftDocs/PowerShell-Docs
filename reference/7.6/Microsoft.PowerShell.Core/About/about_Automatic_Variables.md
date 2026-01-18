@@ -1,13 +1,27 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 01/07/2025
-no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline, PSEventArgs, PSEventSubscriber, PSEdition]
+ms.date: 01/18/2026
+no-loc:
+- Reset
+- Current
+- Background
+- Blink
+- Bold
+- Foreground
+- Formatting
+- Hidden
+- Italic
+- Reset
+- Reverse
+- Underline
+- PSEventArgs
+- PSEventSubscriber
+- PSEdition
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Automatic_Variables
 ---
-
 # about_Automatic_Variables
 
 ## Short description
@@ -138,7 +152,7 @@ For more information, see [about_PSItem][67].
 ### `$args`
 
 Contains an array of values for undeclared parameters that are passed to a
-function, script, or script block. When you create a function, you can declare
+function, script, or scriptblock. When you create a function, you can declare
 the parameters with the `param` keyword or by adding a comma-separated list of
 parameters in parentheses after the function name.
 
@@ -179,7 +193,7 @@ processed. This variable is populated only within the `Action` block of an
 event registration command, such as `Register-ObjectEvent`. The value of this
 variable is the same object that the `Get-Event` cmdlet returns. You can use
 the properties of the `Event` variable, such as `$Event.TimeGenerated`, in an
-`Action` script block.
+`Action` scriptblock.
 
 ### `$EventArgs`
 
@@ -245,8 +259,8 @@ display or change the properties of the host, such as `$Host.Version` or
 ### `$input`
 
 Contains an enumerator that enumerates all input that's passed to a function.
-The `$input` variable is available only to functions, script blocks (which
-are unnamed functions), and script files (which are saved script blocks).
+The `$input` variable is available only to functions, scriptblocks (which
+are unnamed functions), and script files (which are saved scriptblocks).
 
 - In a function without a `begin`, `process`, or `end` block, the `$input`
   variable enumerates the collection of all input to the function.
@@ -261,7 +275,7 @@ are unnamed functions), and script files (which are saved script blocks).
 
   > [!NOTE]
   > You can't use the `$input` variable inside both the `process` block and the
-  > `end` block in the same function or script block.
+  > `end` block in the same function or scriptblock.
 
 Since `$input` is an enumerator, accessing any of its properties causes
 `$input` to no longer be available. You can store `$input` in another variable
@@ -369,7 +383,7 @@ Contains information about the current command, such as the name, parameters,
 parameter values, and information about how the command was started, called, or
 invoked, such as the name of the script that called the current command.
 
-`$MyInvocation` is populated only for scripts, function, and script blocks. You
+`$MyInvocation` is populated only for scripts, function, and scriptblocks. You
 can use the information in the **System.Management.Automation.InvocationInfo**
 object that `$MyInvocation` returns in the current script, such as the name of
 a function (`$MyInvocation.MyCommand.Name`) to identify the current command.
@@ -690,11 +704,11 @@ and change the current loop iteration. For more information, see
 
 ### `$this`
 
-The `$this` variable is used in script blocks that extend classes to refer to
+The `$this` variable is used in scriptblocks that extend classes to refer to
 the instance of the class itself.
 
 PowerShell's Extensible Type System (ETS) allows you to add properties to
-classes using script blocks. In a script block that defines a script property
+classes using scriptblocks. In a scriptblock that defines a script property
 or script method, the `$this` variable refers to an instance of object of the
 class that's being extended. For example, PowerShell uses ETS to add the
 **BaseName** property to the **FileInfo** class.
@@ -716,7 +730,7 @@ In a PowerShell class, the `$this` variable refers to the instance object of
 the class itself, allowing access to properties and methods defined in the
 class. For more information, see [about_Classes][52].
 
-The `$this` variable is also used by .NET event classes that take script blocks
+The `$this` variable is also used by .NET event classes that take scriptblocks
 as delegates for the event handler. In this scenario, `$this` represents the
 object originating the event, known as the event sender.
 
@@ -1155,3 +1169,4 @@ Default (Current): End
 [75]: xref:System.Collections.IEnumerator.Current
 [76]: xref:System.Collections.IEnumerator.MoveNext
 [77]: xref:System.Collections.IEnumerator.Reset
+

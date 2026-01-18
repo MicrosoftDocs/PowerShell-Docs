@@ -1,9 +1,5 @@
 ---
-description: About topics cover a range of concepts about PowerShell.
-Help Version: 7.4.0.0
-Locale: en-US
-ms.date: 01/21/2025
-title: About topics
+ms.date: 01/18/2026
 ---
 # About topics
 
@@ -460,7 +456,7 @@ that is passed to it.
 
 ### [about_Registry_Provider](about_Registry_Provider.md)
 
-Describes teh features and functions of the Registry provider.
+Describes the features and functions of the Registry provider.
 
 ### [about_Regular_Expressions](about_Regular_Expressions.md)
 
@@ -506,7 +502,7 @@ special meaning in PowerShell.
 
 ### [about_Return](about_Return.md)
 
-Exits the current scope, which can be a function, script, or script block.
+Exits the current scope, which can be a function, script, or scriptblock.
 
 ### [about_Run_With_PowerShell](about_Run_With_PowerShell.md)
 
@@ -520,7 +516,7 @@ scope of elements.
 
 ### [about_Script_Blocks](about_Script_Blocks.md)
 
-Defines what a script block is and explains how to use script blocks in the
+Defines what a scriptblock is and explains how to use scriptblocks in the
 PowerShell programming language.
 
 ### [about_Script_Internationalization](about_Script_Internationalization.md)
@@ -651,3 +647,6 @@ Describes how to use wildcard characters in PowerShell.
 ### [about_Windows_PowerShell_Compatibility](about_Windows_PowerShell_Compatibility.md)
 
 Describes the Windows PowerShell Compatibility functionality for PowerShell 7.
+
+
+

@@ -1,23 +1,23 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 04/30/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
 ---
 # about_Operators
 
-## SHORT DESCRIPTION
+## Short description
 
 Describes the operators that are supported by PowerShell.
 
-## LONG DESCRIPTION
+## Long description
 
 An operator is a language element that you can use in a command or expression.
 PowerShell supports several types of operators to help you manipulate values.
 
-## ARITHMETIC OPERATORS
+## Arithmetic operators
 
 Use arithmetic operators (`+`, `-`, `*`, `/`, `%`) to calculate values in a
 command or expression. With these operators, you can add, subtract, multiply,
@@ -34,7 +34,7 @@ manipulate the bit patterns in values.
 
 For more information, see [about_Arithmetic_Operators][05].
 
-## ASSIGNMENT OPERATORS
+## Assignment operators
 
 Use assignment operators (`=`, `+=`, `-=`, `*=`, `/=`, `%=`) to assign, change,
 or append values to variables. You can combine arithmetic operators with
@@ -42,7 +42,7 @@ assignment to assign the result of the arithmetic operation to a variable.
 
 For more information, see [about_Assignment_Operators][06].
 
-## COMPARISON OPERATORS
+## Comparison operators
 
 Use comparison operators (`-eq`, `-ne`, `-gt`, `-lt`, `-le`, `-ge`) to compare
 values and test conditions. For example, you can compare two string values to
@@ -60,7 +60,7 @@ given type.
 
 For more information, see [about_Comparison_Operators][07].
 
-## LOGICAL OPERATORS
+## Logical operators
 
 Use logical operators (`-and`, `-or`, `-xor`, `-not`, `!`) to connect
 conditional statements into a single complex conditional. For example, you can
@@ -69,7 +69,7 @@ conditions.
 
 For more information, see [about_Logical_Operators][13].
 
-## REDIRECTION OPERATORS
+## Redirection operators
 
 Use redirection operators (`>`, `>>`, `2>`, `2>>`, and `2>&1`) to send the
 output of a command or expression to a text file. The redirection operators
@@ -79,7 +79,7 @@ cmdlet to redirect output.
 
 For more information, see [about_Redirection][18]
 
-## SPLIT AND JOIN OPERATORS
+## Split and join operators
 
 The `-split` and `-join` operators divide and combine substrings. The `-split`
 operator splits a string into substrings. The `-join` operator concatenates
@@ -87,14 +87,14 @@ multiple strings into a single string.
 
 For more information, see [about_Split][21] and [about_Join][12].
 
-## TYPE OPERATORS
+## Type operators
 
 Use the type operators (`-is`, `-isnot`, `-as`) to find or change the .NET type
 of an object.
 
 For more information, see [about_Type_Operators][22].
 
-## UNARY OPERATORS
+## Unary operators
 
 Use the unary `++`  and `--` operators to increment or decrement values and
 `-` for negation. For example, to increment the variable `$a` from `9` to
@@ -102,7 +102,7 @@ Use the unary `++`  and `--` operators to increment or decrement values and
 
 For more information, see [about_Arithmetic_Operators][05].
 
-## SPECIAL OPERATORS
+## Special operators
 
 Special operators have specific use-cases that don't fit into any other
 operator group. For example, special operators allow you to run commands,
@@ -262,9 +262,9 @@ table. For more information, see [about_Hash_Tables][09].
 
 ### Call operator `&`
 
-Runs a command, script, or script block. The call operator, also known as the
+Runs a command, script, or scriptblock. The call operator, also known as the
 _invocation operator_, lets you run commands that are stored in variables and
-represented by strings or script blocks. The call operator executes in a child
+represented by strings or scriptblocks. The call operator executes in a child
 scope. For more about scopes, see [about_Scopes][19]. You can use this to build
 strings containing the command, parameters, and arguments you need, and then
 invoke the string as if it were a command. The strings that you create must
@@ -341,7 +341,7 @@ PS C:\Scripts> & ".\script name with spaces.ps1"
 Hello World!
 ```
 
-For more about script blocks, see [about_Script_Blocks][20].
+For more about scriptblocks, see [about_Script_Blocks][20].
 
 ### Cast operator `[ ]`
 
@@ -598,7 +598,7 @@ properties and methods of an object, use the Static parameter of the
 'MinValue', 'MaxValue' | ForEach-Object { [int]:: $_ }
 ```
 
-## SEE ALSO
+## See also
 
 - [about_Arithmetic_Operators][05]
 - [about_Assignment_Operators][06]

@@ -1,7 +1,7 @@
 ---
 description: Exits the current scope, which can be a function, script, or script block.
 Locale: en-US
-ms.date: 01/03/2018
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_return?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Return
@@ -10,11 +10,11 @@ title: about_Return
 
 ## Short description
 
-Exits the current scope, which can be a function, script, or script block.
+Exits the current scope, which can be a function, script, or scriptblock.
 
 ## Long description
 
-The `return` keyword exits a function, script, or script block. It can be used
+The `return` keyword exits a function, script, or scriptblock. It can be used
 to exit a scope at a specific point, to return a value, or to indicate that the
 end of the scope has been reached.
 
@@ -149,7 +149,7 @@ PS> $a
 
 ### Return values and the Pipeline
 
-When you return a collection from your script block or function, PowerShell
+When you return a collection from your scriptblock or function, PowerShell
 automatically unrolls the members and passes them one at a time through the
 pipeline. This is due to PowerShell's one-at-a-time processing. For more
 information, see [about_Pipelines](about_pipelines.md).
@@ -176,7 +176,7 @@ Minimum  :
 Property :
 ```
 
-To force a script block or function to return collection as a single
+To force a scriptblock or function to return collection as a single
 object to the pipeline, use one of the following two methods:
 
 - Unary array expression

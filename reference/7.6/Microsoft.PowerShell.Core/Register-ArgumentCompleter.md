@@ -2,12 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/10/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/register-argumentcompleter?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-ArgumentCompleter
 ---
-
 # Register-ArgumentCompleter
 
 ## SYNOPSIS
@@ -75,11 +74,11 @@ $s = {
 Register-ArgumentCompleter -CommandName Set-TimeZone -ParameterName Id -ScriptBlock $s
 ```
 
-The first command creates a script block that takes the required parameters, which are passed in
+The first command creates a scriptblock that takes the required parameters, which are passed in
 when the user presses <kbd>Tab</kbd>. For more information, see the **ScriptBlock** parameter
 description.
 
-Within the script block, the available values for **Id** are retrieved using the `Get-TimeZone`
+Within the scriptblock, the available values for **Id** are retrieved using the `Get-TimeZone`
 cmdlet. The **Id** property for each Time Zone is piped to the `Where-Object` cmdlet. The
 `Where-Object` cmdlet filters out any ids that don't start with the value provided by
 `$wordToComplete`, which represents the text the user typed before they pressed <kbd>Tab</kbd>. The
@@ -121,11 +120,11 @@ $s = {
 Register-ArgumentCompleter -CommandName Stop-Service -ParameterName Name -ScriptBlock $s
 ```
 
-The first command creates a script block that takes the required parameters, which are passed in
+The first command creates a scriptblock that takes the required parameters, which are passed in
 when the user presses <kbd>Tab</kbd>. For more information, see the **ScriptBlock** parameter
 description.
 
-Within the script block, the first command retrieves all running services using the `Where-Object`
+Within the scriptblock, the first command retrieves all running services using the `Where-Object`
 cmdlet. The services are piped to the `ForEach-Object` cmdlet. The `ForEach-Object` cmdlet creates
 a new
 [System.Management.Automation.CompletionResult](/dotnet/api/system.management.automation.completionresult)
@@ -174,11 +173,11 @@ $scriptblock = {
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock $scriptblock
 ```
 
-The first command creates a script block that takes the required parameters, which are passed in
+The first command creates a scriptblock that takes the required parameters, which are passed in
 when the user presses <kbd>Tab</kbd>. For more information, see the **ScriptBlock** parameter
 description.
 
-Within the script block, the `dotnet complete` command performs the tab completion. The results are
+Within the scriptblock, the `dotnet complete` command performs the tab completion. The results are
 piped to the `ForEach-Object` cmdlet, which uses the **new** static method of the
 [System.Management.Automation.CompletionResult](/dotnet/api/system.management.automation.completionresult)
 class to create a **CompletionResult** object for each value.
@@ -276,26 +275,26 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run to perform tab completion. The script block you provide should return
-the values that complete the input. The script block must unroll the values using the pipeline
+Specifies the commands to run to perform tab completion. The scriptblock you provide should return
+the values that complete the input. The scriptblock must unroll the values using the pipeline
 (`ForEach-Object`, `Where-Object`, etc.), or another suitable method. Returning an array of values
 causes PowerShell to treat the entire array as **one** tab completion value.
 
-The script block can also return
+The scriptblock can also return
 [System.Management.Automation.CompletionResult](/dotnet/api/system.management.automation.completionresult)
 objects for each value to enhance the user experience. Returning **CompletionResult** objects
 enables you to define tooltips and custom list entries displayed when users press
 <kbd>Ctrl</kbd>+<kbd>Space</kbd> to show the list of available completions.
 
-The script block must accept the following parameters in the order specified below. The names of the
+The scriptblock must accept the following parameters in the order specified below. The names of the
 parameters aren't important because PowerShell passes in the values by position.
 
 - `$commandName` (Position 0, **String**) - This parameter is set to the name of the
-  command for which the script block is providing tab completion.
+  command for which the scriptblock is providing tab completion.
 - `$parameterName` (Position 1, **String**) - This parameter is set to the parameter
   whose value requires tab completion.
 - `$wordToComplete` (Position 2, **String**) - This parameter is set to value the user has provided
-  before they pressed <kbd>Tab</kbd>. Your script block should use this value to determine tab
+  before they pressed <kbd>Tab</kbd>. Your scriptblock should use this value to determine tab
   completion values.
 - `$commandAst` (Position 3, **CommandAst**) - This parameter is set to the Abstract Syntax
   Tree (AST) for the current input line. For more information, see
@@ -304,12 +303,12 @@ parameters aren't important because PowerShell passes in the values by position.
   containing the `$PSBoundParameters` for the cmdlet, before the user pressed <kbd>Tab</kbd>. For
   more information, see [about_Automatic_Variables](./About/about_Automatic_Variables.md).
 
-When you specify the **Native** parameter, the script block must take the following parameters in
+When you specify the **Native** parameter, the scriptblock must take the following parameters in
 the specified order. The names of the parameters aren't important because PowerShell passes in the
 values by position.
 
 - `$wordToComplete` (Position 0, **String**) - This parameter is set to value the user has provided
-  before they pressed <kbd>Tab</kbd>. Your script block should use this value to determine tab
+  before they pressed <kbd>Tab</kbd>. Your scriptblock should use this value to determine tab
   completion values.
 - `$commandAst` (Position 1, **CommandAst**) - This parameter is set to the Abstract Syntax Tree
   (AST) for the current input line. For more information, see

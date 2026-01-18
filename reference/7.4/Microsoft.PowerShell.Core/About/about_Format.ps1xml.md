@@ -1,12 +1,11 @@
 ---
-description: Beginning in PowerShell 6, the default views for objects are defined in PowerShell source code.  You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell.
+description: The `Format.ps1xml` files in PowerShell define the default display of objects in the PowerShell console. You can create your own `Format.ps1xml` files to change the display of objects or to define default displays for new object types that you create in PowerShell.
 Locale: en-US
-ms.date: 12/26/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_format.ps1xml?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Format.ps1xml
 ---
-
 # about_Format.ps1xml
 
 ## Short description
@@ -259,7 +258,7 @@ the object property to be displayed in the defined location, or a
 to be displayed in the location.
 
 > [!NOTE]
-> Script blocks can also be used elsewhere in locations where calculated
+> Scriptblocks can also be used elsewhere in locations where calculated
 > results can be useful.
 
 The `<TableColumnItem>` tag can also contain a `<FormatString>` tag that
@@ -293,7 +292,7 @@ display the property.
 
 ### CustomControl tag
 
-The `<CustomControl>` tag lets you use a script block to define a format. A
+The `<CustomControl>` tag lets you use a scriptblock to define a format. A
 `<CustomControl>` tag typically contains a `<CustomEntries>` tag that contains
 multiple `<CustomEntry>` tags. Each `<CustomEntry>` tag contains a
 `<CustomItem>` tag that can contain a variety of tags that specify contents and

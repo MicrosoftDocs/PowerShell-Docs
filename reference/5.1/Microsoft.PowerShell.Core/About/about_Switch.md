@@ -1,10 +1,5 @@
 ---
-description: Explains how to use a switch to handle multiple `if` statements.
-Locale: en-US
-ms.date: 05/19/2025
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-5.1&WT.mc_id=ps-gethelp
-schema: 2.0.0
-title: about_Switch
+ms.date: 01/18/2026
 ---
 # about_Switch
 
@@ -32,8 +27,8 @@ A basic `switch` statement has the following format:
 
 ```Syntax
 switch (<test-expression>) {
-    <result1-to-be-matched> {<action>}
-    <result2-to-be-matched> {<action>}
+    <result1-to-be-matched> {<action-statement>}
+    <result2-to-be-matched> {<action-statement>}
 }
 ```
 
@@ -70,8 +65,8 @@ The complete `switch` statement syntax is as follows:
 ```Syntax
 switch [-Regex | -Wildcard | -Exact] [-CaseSensitive] (<test-expression>) {
     string | number | variable | { <value-scriptblock> }
-        { <action-scriptblock> }
-    default { <action-scriptblock> } # optional
+        { <action-statement> }
+    default { <action-statement> } # optional
 }
 ```
 
@@ -80,8 +75,8 @@ or
 ```Syntax
 switch [-Regex | -Wildcard | -Exact] [-CaseSensitive] -File filename {
     string | number | variable | { <value-scriptblock> }
-        { <action-scriptblock> }
-    default { <action-scriptblock> }  # optional
+        { <action-statement> }
+    default { <action-statement> }  # optional
 }
 ```
 
@@ -196,7 +191,7 @@ switch (1,4,-1,3,"Hello",2,1) {
 ### Impact of string conversion
 
 All values, both input and the comparison value are converted to strings for
-comparison. To avoid unintended string conversion, use script blocks to
+comparison. To avoid unintended string conversion, use scriptblocks to
 evaluate the switch value.
 
 ```powershell
@@ -264,8 +259,8 @@ Hashtable string coercion
 
 In this example, the `switch` statement is testing for the type of the value in
 the hashtable. We must enumerate the items in the hashtable before we can test
-the values. To avoid the complications of string conversion, use a script block
-that returns a boolean value to select the action scriptblock to execute.
+the values. To avoid the complications of string conversion, use a scriptblock
+that returns a boolean value to select the action statement to execute.
 
 ```powershell
 $var = @{A = 10; B = 'abc'}
@@ -361,7 +356,7 @@ switch -Regex ($target) {
 https://bing.com is a web address that uses https
 ```
 
-The following example demonstrates the use of script blocks as `switch`
+The following example demonstrates the use of scriptblocks as `switch`
 statement conditions.
 
 ```powershell
@@ -378,7 +373,7 @@ This Test executes as well
 
 The following example processes an array containing two date values. The
 `<value-scriptblock>` compares the **Year** property of each date. The
-`<action-scriptblock>` displays a welcome message or the number of days until
+`<action-statement>` displays a welcome message or the number of days until
 the beginning of the year 2022.
 
 ```powershell

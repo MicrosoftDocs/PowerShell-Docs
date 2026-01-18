@@ -1,12 +1,11 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 10/16/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Methods
 ---
-
 # about_Functions_Advanced_Methods
 
 ## Short description
@@ -82,7 +81,7 @@ the function receives.
 
 The automatic variable `$_` or `$PSItem` contains the current object in the
 pipeline for use in the `process` block. The `$input` automatic variable
-contains an enumerator that's only available to functions and script blocks.
+contains an enumerator that's only available to functions and scriptblocks.
 For more information, see [about_Automatic_Variables][15].
 
 - Calling the function at the beginning, or outside of a pipeline, executes the
@@ -152,7 +151,7 @@ The clean block discards any output that's written to the **Success** stream.
 > [!CAUTION]
 > Adding the `clean` block is a breaking change. Because `clean` is parsed as a
 > keyword, it prevents users from directly calling a command named `clean` as
-> the first statement in a script block. However, it's not likely to be a
+> the first statement in a scriptblock. However, it's not likely to be a
 > problem. The command can still be invoked using the call operator
 > (`& clean`).
 

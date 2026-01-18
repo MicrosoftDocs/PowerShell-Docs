@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -10,7 +10,6 @@ aliases:
   - rni
 title: Rename-Item
 ---
-
 # Rename-Item
 
 ## SYNOPSIS
@@ -75,8 +74,8 @@ Use the `Move-Item` cmdlet, instead.
 
 ### Example 3: Rename a registry key
 
-This example renames a registry key from **Advertising** to **Marketing**. When the command is
-complete, the key is renamed, but the registry entries in the key are unchanged.
+This example renames a registry key from **Advertising** to **Marketing**. When the command is complete,
+the key is renamed, but the registry entries in the key are unchanged.
 
 ```powershell
 Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"
@@ -116,11 +115,11 @@ Mode                LastWriteTime         Length Name
 ```
 
 The `Get-ChildItem` cmdlet gets all the files in the current folder that have a `.txt` file
-extension then pipes them to `Rename-Item`. The value of **NewName** is a script block that runs
+extension then pipes them to `Rename-Item`. The value of **NewName** is a scriptblock that runs
 before the value is submitted to the **NewName** parameter.
 
-In the script block, the `$_` automatic variable represents each file object as it comes to the
-command through the pipeline. The script block uses the `-replace` operator to replace the file
+In the scriptblock, the `$_` automatic variable represents each file object as it comes to the
+command through the pipeline. The scriptblock uses the `-replace` operator to replace the file
 extension of each file with `.log`. Notice that matching using the `-replace` operator is not case
 sensitive.
 

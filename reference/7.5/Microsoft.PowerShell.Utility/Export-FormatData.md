@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-formatdata?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-FormatData
 ---
-
 # Export-FormatData
 
 ## SYNOPSIS
@@ -59,7 +58,7 @@ The command uses the `Get-FormatData` cmdlet to get the format data in the sessi
 The command uses a pipeline operator (`|`) to send the format data from the `Get-FormatData` command
 to the `Export-FormatData` cmdlet, which exports the format data to the `AllFormat.ps1xml` file.
 
-The `Export-FormatData` command uses the **IncludeScriptBlock** parameter to include script blocks
+The `Export-FormatData` command uses the **IncludeScriptBlock** parameter to include scriptblocks
 in the format data in the file.
 
 ### Example 2: Export format data for a type
@@ -77,9 +76,9 @@ type, and it saves it in the `$F` variable.
 
 The second command uses the **InputObject** parameter of the `Export-FormatData` cmdlet to enter the
 format data saved in the `$F` variable. It also uses the **IncludeScriptBlock** parameter to include
-script blocks in the output.
+scriptblocks in the output.
 
-### Example 3: Export format data without a script block
+### Example 3: Export format data without a scriptblock
 
 ```powershell
 Get-FormatData -TypeName "System.Diagnostics.Process" |
@@ -113,7 +112,7 @@ data for process objects.
 
 The third command shows the effects of this change. The command uses the `Get-Process` cmdlet to
 get processes that have names that begin with P. The output shows that property values that are
-calculated by using script blocks are missing from the display.
+calculated by using scriptblocks are missing from the display.
 
 ## PARAMETERS
 
@@ -135,9 +134,9 @@ Accept wildcard characters: False
 
 ### -IncludeScriptBlock
 
-Indicates whether script blocks in the format data are exported.
+Indicates whether scriptblocks in the format data are exported.
 
-Because script blocks contain code and can be used maliciously, they are not exported by default.
+Because scriptblocks contain code and can be used maliciously, they are not exported by default.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

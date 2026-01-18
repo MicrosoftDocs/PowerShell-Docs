@@ -4,7 +4,7 @@ Help Version: 7.5.0.0
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/26/2022
+ms.date: 01/18/2026
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
 ---
@@ -44,7 +44,7 @@ Converts object properties in character-separated value (CSV) format into CSV ve
 
 ### [ConvertFrom-Json](ConvertFrom-Json.md)
 
-Converts a JSON-formatted string to a custom object or a hash table.
+Converts a JSON-formatted string to a custom object or a hashtable.
 
 ### [ConvertFrom-Markdown](ConvertFrom-Markdown.md)
 
@@ -280,7 +280,7 @@ Combines objects from the pipeline into a single string.
 
 ### [Measure-Command](Measure-Command.md)
 
-Measures the time it takes to run script blocks and cmdlets.
+Measures the time it takes to run scriptblocks and cmdlets.
 
 ### [Measure-Object](Measure-Object.md)
 
@@ -328,7 +328,7 @@ Sends output to a printer.
 
 ### [Out-String](Out-String.md)
 
-Outputs input objects as a string.
+Outputs input objects as strings.
 
 ### [Read-Host](Read-Host.md)
 

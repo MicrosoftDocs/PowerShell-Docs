@@ -1,9 +1,8 @@
 ---
 description: >
-    This article documents the functions provided by PSReadLine. These functions
-    can be bound to keystrokes for easy access and invocation.
+  This article documents the functions provided by PSReadLine. These functions can be bound to keystrokes for easy access and invocation.
 Locale: en-US
-ms.date: 10/01/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_functions?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Functions
@@ -1469,9 +1468,9 @@ Adjust the current selection to include the previous word.
 ### SelectCommandArgument
 
 Make visual selection of the command arguments. Selection of arguments is
-scoped within a script block. Based on the cursor position, it searches from
-the innermost script block to the outmost script block, and stops when it finds
-any arguments in a script block scope.
+scoped within a scriptblock. Based on the cursor position, it searches from
+the innermost scriptblock to the outmost scriptblock, and stops when it finds
+any arguments in a scriptblock scope.
 
 This function honors DigitArgument. It treats the positive or negative argument
 values as the forward or backward offsets from the currently selected argument,

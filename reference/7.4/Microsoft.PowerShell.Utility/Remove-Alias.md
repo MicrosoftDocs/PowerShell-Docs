@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/07/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/remove-alias?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Alias
 ---
-
 # Remove-Alias
 
 ## SYNOPSIS
@@ -49,7 +48,7 @@ Get-Alias | Where-Object { $_.Options -ne "Constant" } | Remove-Alias -Force
 ```
 
 `Get-Alias` gets all the aliases in the PowerShell session and sends the objects down the pipeline.
-`Where-Object` uses a script block, and the automatic variable (`$_`) and **Options** property
+`Where-Object` uses a scriptblock, and the automatic variable (`$_`) and **Options** property
 represent the current pipeline object. The `-ne` (not equal) operator selects objects that don't
 have an **Options** value set to **Constant**. `Remove-Alias` uses the **Force** parameter to remove
 aliases, including read-only aliases, from the PowerShell session. The **Force** parameter can't

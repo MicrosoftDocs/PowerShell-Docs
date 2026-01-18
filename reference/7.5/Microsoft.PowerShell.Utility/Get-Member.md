@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/10/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-member?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - gm
 title: Get-Member
 ---
-
 # Get-Member
 
 ## SYNOPSIS
@@ -509,7 +508,7 @@ PowerShell includes the following aliases for `Get-Member`:
 You can get information about a collection object either using the **InputObject** parameter or by
 piping the object, preceded by a comma, to `Get-Member`.
 
-You can use the `$this` automatic variable in script blocks that define the values of new properties
+You can use the `$this` automatic variable in scriptblocks that define the values of new properties
 and methods. The `$this` variable refers to the instance of the object to which the properties and
 methods are being added. For more information about the `$this` variable, see
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).

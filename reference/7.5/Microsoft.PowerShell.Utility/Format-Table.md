@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - ft
 title: Format-Table
 ---
-
 # Format-Table
 
 ## SYNOPSIS
@@ -144,7 +143,7 @@ Get-Service | Format-Table -Property Name, DependentServices
 displayed in the table.
 
 **Name** and **DependentServices** are two of the object type's properties. To view all the
-properties: `Get-Service | Get-Member -MemberType Properties`
+properties: `Get-Service | Get-Member -MemberType Properties`.
 
 ### Example 6: Format a process and calculate its running time
 
@@ -205,7 +204,7 @@ The process objects in the `$Processes` variable are sent down the pipeline to `
 displays the **ProcessName** property and a new calculated property, **Total Running Time**.
 
 The command assigns the name of the new calculated property, **Total Running Time**, to the
-**Label** key. The **Expression** key's script block calculates how long the process has been
+**Label** key. The **Expression** key's scriptblock calculates how long the process has been
 running by subtracting the processes creation date from the current date. The `Get-Date` cmdlet gets
 the current date. The creation date is subtracted from the current date. The result is the value of
 **Total Running Time**.
@@ -330,10 +329,10 @@ Enter an expression or a property. The **GroupBy** parameter expects that the ob
 Use the `Sort-Object` cmdlet before using `Format-Table` to group the objects.
 
 The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
-be a script block or a hash table. Valid key-value pairs are:
+be a scriptblock or a hashtable. Valid key-value pairs are:
 
 - Name (or Label) - `<string>`
-- Expression - `<string>` or `<script block>`
+- Expression - `<string>` or `<scriptblock>`
 - FormatString - `<string>`
 
 For more information, see
@@ -399,10 +398,10 @@ The **Property** parameter is optional. You can't use the **Property** and **Vie
 the same command.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
-can be a script block or a hash table. Valid key-value pairs are:
+can be a scriptblock or a hash table. Valid key-value pairs are:
 
 - Name (or Label) `<string>`
-- Expression - `<string>` or `<script block>`
+- Expression - `<string>` or `<scriptblock>`
 - FormatString - `<string>`
 - Width - `<int32>` - must be greater than `0`
 - Alignment - value can be `Left`, `Center`, or `Right`

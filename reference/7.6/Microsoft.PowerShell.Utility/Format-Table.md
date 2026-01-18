@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-table?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - ft
 title: Format-Table
 ---
-
 # Format-Table
 
 ## SYNOPSIS
@@ -20,9 +19,9 @@ Formats the output as a table.
 ### All
 
 ```
-Format-Table [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap]
- [-GroupBy <Object>] [-View <string>] [-ShowError] [-DisplayError] [-Force] [-Expand <string>]
- [-InputObject <psobject>] [<CommonParameters>]
+Format-Table [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders]
+ [-Wrap] [-GroupBy <Object>] [-View <string>] [-ShowError] [-DisplayError] [-Force]
+ [-Expand <string>] [-InputObject <psobject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,7 +61,8 @@ table. The **AutoSize** parameter adjusts the column widths to minimize truncati
 In this example, processes are displayed in groups that have the same **BasePriority** property.
 
 ```powershell
-Get-Process | Sort-Object -Property BasePriority | Format-Table -GroupBy BasePriority -Wrap
+Get-Process | Sort-Object -Property BasePriority |
+    Format-Table -GroupBy BasePriority -Wrap
 ```
 
 The `Get-Process` cmdlet gets objects that represent each process on the computer and sends them
@@ -153,7 +153,10 @@ process from the current time.
 
 ```powershell
 Get-Process notepad |
-  Format-Table ProcessName, @{Label="TotalRunningTime"; Expression={(Get-Date) - $_.StartTime}}
+  Format-Table ProcessName, @{
+    Label = "TotalRunningTime"
+    Expression = {(Get-Date) - $_.StartTime}
+}
 ```
 
 ```Output
@@ -182,7 +185,7 @@ from remote computers.
 $Processes = Get-CimInstance -Class Win32_Process -Filter "name='notepad.exe'"
 $Processes | Format-Table ProcessName, @{
     Label = "Total Running Time"
-    Expression={(Get-Date) - $_.CreationDate}
+    Expression = {(Get-Date) - $_.CreationDate}
 }
 ```
 
@@ -201,7 +204,7 @@ The process objects in the `$Processes` variable are sent down the pipeline to `
 displays the **ProcessName** property and a new calculated property, **Total Running Time**.
 
 The command assigns the name of the new calculated property, **Total Running Time**, to the
-**Label** key. The **Expression** key's script block calculates how long the process has been
+**Label** key. The **Expression** key's scriptblock calculates how long the process has been
 running by subtracting the processes creation date from the current date. The `Get-Date` cmdlet gets
 the current date. The creation date is subtracted from the current date. The result is the value of
 **Total Running Time**.
@@ -212,7 +215,7 @@ The following examples show the results of adding the **DisplayError** or **Show
 with an expression.
 
 ```powershell
-Get-Date | Format-Table DayOfWeek,{ $_ / $null } -DisplayError
+Get-Date | Format-Table DayOfWeek, { $_ / $null } -DisplayError
 ```
 
 ```Output
@@ -222,7 +225,7 @@ Wednesday #ERR
 ```
 
 ```powershell
-Get-Date | Format-Table DayOfWeek,{ $_ / $null } -ShowError
+Get-Date | Format-Table DayOfWeek, { $_ / $null } -ShowError
 ```
 
 ```Output
@@ -274,8 +277,8 @@ Accept wildcard characters: False
 
 Specifies the format of the collection object and the objects in the collection. This parameter is
 designed to format objects that support the
-[ICollection](/dotnet/api/system.collections.icollection)
-([System.Collections](/dotnet/api/system.collections)) interface. The default value is **EnumOnly**.
+[ICollection](xref:System.Collections.ICollection)([System.Collections](xref:System.Collections))
+interface. The default value is **EnumOnly**.
 The acceptable values for this parameter are as follows:
 
 - **EnumOnly**: Displays the properties of the objects in the collection.
@@ -326,10 +329,10 @@ Enter an expression or a property. The **GroupBy** parameter expects that the ob
 Use the `Sort-Object` cmdlet before using `Format-Table` to group the objects.
 
 The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
-be a script block or a hash table. Valid key-value pairs are:
+be a scriptblock or a hashtable. Valid key-value pairs are:
 
 - Name (or Label) - `<string>`
-- Expression - `<string>` or `<script block>`
+- Expression - `<string>` or `<scriptblock>`
 - FormatString - `<string>`
 
 For more information, see
@@ -395,10 +398,10 @@ The **Property** parameter is optional. You can't use the **Property** and **Vie
 the same command.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
-can be a script block or a hash table. Valid key-value pairs are:
+can be a scriptblock or a hash table. Valid key-value pairs are:
 
 - Name (or Label) `<string>`
-- Expression - `<string>` or `<script block>`
+- Expression - `<string>` or `<scriptblock>`
 - FormatString - `<string>`
 - Width - `<int32>` - must be greater than `0`
 - Alignment - value can be `Left`, `Center`, or `Right`
@@ -544,11 +547,11 @@ parameter under any of the following conditions:
 
   - The wrapper types include:
 
-    - [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
-    - [System.Management.Automation.WarningRecord](/dotnet/api/System.Management.Automation.WarningRecord)
-    - [System.Management.Automation.VerboseRecord](/dotnet/api/System.Management.Automation.VerboseRecord)
-    - [System.Management.Automation.DebugRecord](/dotnet/api/System.Management.Automation.DebugRecord)
-    - [System.Management.Automation.InformationRecord](/dotnet/api/System.Management.Automation.InformationRecord)
+    - [System.Management.Automation.ErrorRecord](xref:System.Management.Automation.ErrorRecord)
+    - [System.Management.Automation.WarningRecord](xref:System.Management.Automation.WarningRecord)
+    - [System.Management.Automation.VerboseRecord](xref:System.Management.Automation.VerboseRecord)
+    - [System.Management.Automation.DebugRecord](xref:System.Management.Automation.DebugRecord)
+    - [System.Management.Automation.InformationRecord](xref:System.Management.Automation.InformationRecord)
 
 ## RELATED LINKS
 

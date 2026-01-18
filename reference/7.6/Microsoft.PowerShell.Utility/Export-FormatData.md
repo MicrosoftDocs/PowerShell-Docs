@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-formatdata?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-FormatData
 ---
-
 # Export-FormatData
 
 ## SYNOPSIS
@@ -39,14 +38,16 @@ PowerShell uses the data in formatting files (`format.ps1xml`) to generate the d
 Microsoft .NET Framework objects in the session. You can view and edit the formatting files and
 use the Update-FormatData cmdlet to add the formatting data to a session.
 
-For more information about formatting files in PowerShell, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
+For more information about formatting files in PowerShell, see
+[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
 
 ## EXAMPLES
 
 ### Example 1: Export session format data
 
 ```powershell
-Get-FormatData -TypeName "*" | Export-FormatData -Path "AllFormat.ps1xml" -IncludeScriptBlock
+Get-FormatData -TypeName "*" |
+    Export-FormatData -Path "AllFormat.ps1xml" -IncludeScriptBlock
 ```
 
 This command exports all of the format data in the session to the `AllFormat.ps1xml` file.
@@ -57,13 +58,13 @@ The command uses the `Get-FormatData` cmdlet to get the format data in the sessi
 The command uses a pipeline operator (`|`) to send the format data from the `Get-FormatData` command
 to the `Export-FormatData` cmdlet, which exports the format data to the `AllFormat.ps1xml` file.
 
-The `Export-FormatData` command uses the **IncludeScriptBlock** parameter to include script blocks
+The `Export-FormatData` command uses the **IncludeScriptBlock** parameter to include scriptblocks
 in the format data in the file.
 
 ### Example 2: Export format data for a type
 
 ```powershell
-$F = Get-FormatData -TypeName "helpinfoshort"
+$F = Get-FormatData -TypeName "HelpInfoShort"
 Export-FormatData -InputObject $F -Path "C:\test\Help.format.ps1xml" -IncludeScriptBlock
 ```
 
@@ -75,12 +76,13 @@ type, and it saves it in the `$F` variable.
 
 The second command uses the **InputObject** parameter of the `Export-FormatData` cmdlet to enter the
 format data saved in the `$F` variable. It also uses the **IncludeScriptBlock** parameter to include
-script blocks in the output.
+scriptblocks in the output.
 
-### Example 3: Export format data without a script block
+### Example 3: Export format data without a scriptblock
 
 ```powershell
-Get-FormatData -TypeName "System.Diagnostics.Process" | Export-FormatData -Path Process.format.ps1xml
+Get-FormatData -TypeName "System.Diagnostics.Process" |
+    Export-FormatData -Path Process.format.ps1xml
 Update-FormatData -PrependPath ".\Process.format.ps1xml"
 Get-Process p*
 ```
@@ -110,7 +112,7 @@ data for process objects.
 
 The third command shows the effects of this change. The command uses the `Get-Process` cmdlet to
 get processes that have names that begin with P. The output shows that property values that are
-calculated by using script blocks are missing from the display.
+calculated by using scriptblocks are missing from the display.
 
 ## PARAMETERS
 
@@ -132,9 +134,9 @@ Accept wildcard characters: False
 
 ### -IncludeScriptBlock
 
-Indicates whether script blocks in the format data are exported.
+Indicates whether scriptblocks in the format data are exported.
 
-Because script blocks contain code and can be used maliciously, they are not exported by default.
+Because scriptblocks contain code and can be used maliciously, they are not exported by default.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -206,9 +208,9 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies a location for the output file.
-Enter a path (optional) and file name with a `format.ps1xml` file name extension.
-If you omit the path, `Export-FormatData` creates the file in the current directory.
+Specifies a location for the output file. Enter a path (optional) and file name with a
+`format.ps1xml` file name extension. If you omit the path, `Export-FormatData` creates the file in
+the current directory.
 
 If you use a file name extension other than `.ps1xml`, the `Update-FormatData` cmdlet will not
 recognize the file.
@@ -233,7 +235,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

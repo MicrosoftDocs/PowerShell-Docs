@@ -2,17 +2,17 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/15/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - epsn
 title: Export-PSSession
 ---
-
 # Export-PSSession
 
 ## SYNOPSIS
+
 Exports commands from another session and saves them in a PowerShell module.
 
 ## SYNTAX
@@ -292,9 +292,8 @@ The acceptable values for this parameter are as follows:
 - `ExternalScript`: All `.ps1` files in the paths listed in the PATH environment variable
   (`$Env:PATH`).
 - `Filter` and `Function`: All PowerShell functions.
-- `Script` Script blocks in the current session.
-- `Workflow` A PowerShell workflow. For more information, see
-  [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
+- `Script` Script files accessible in the current session.
+- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **CommandType** parameter
@@ -337,7 +336,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2a).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.

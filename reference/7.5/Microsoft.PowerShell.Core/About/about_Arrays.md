@@ -1,8 +1,21 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 01/03/2025
-no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
+ms.date: 01/18/2026
+no-loc:
+- Count
+- Length
+- LongLength
+- Rank
+- ForEach
+- Clear
+- Default
+- First
+- Last
+- SkipUntil
+- Until
+- Split
+- Tuple
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
@@ -522,7 +535,7 @@ ForEach(string methodName, object[] arguments)
 This method was added in PowerShell v4.
 
 > [!NOTE]
-> The syntax requires the usage of a script block. Parentheses are optional if
+> The syntax requires the usage of a scriptblock. Parentheses are optional if
 > the scriptblock is the only parameter. Also, there must not be a space
 > between the method and the opening parenthesis or brace.
 
@@ -542,7 +555,7 @@ $a.ForEach({ $_ * $_})
 ```
 
 Just like the **ArgumentList** parameter of `ForEach-Object`, the `arguments`
-parameter allows the passing of an array of arguments to a script block
+parameter allows the passing of an array of arguments to a scriptblock
 configured to accept them.
 
 For more information about the behavior of **ArgumentList**, see
@@ -601,7 +614,7 @@ THREE
 ```
 
 Just like the **ArgumentList** parameter of `ForEach-Object`, the `arguments`
-parameter allows the passing of an array of values to a script block configured
+parameter allows the passing of an array of values to a scriptblock configured
 to accept them.
 
 > [!NOTE]
@@ -625,7 +638,7 @@ Where(scriptblock expression[, WhereOperatorSelectionMode mode
 ```
 
 > [!NOTE]
-> The syntax requires the usage of a script block. Parentheses are optional if
+> The syntax requires the usage of a scriptblock. Parentheses are optional if
 > the scriptblock is the only parameter. Also, there must not be a space
 > between the method and the opening parenthesis or brace.
 
@@ -701,7 +714,7 @@ $logs.Where({$_.CreationTime -gt $h}, 'Last', 5)
 #### SkipUntil
 
 The `SkipUntil` mode skips all objects in a collection until an object passes
-the script block expression filter. It then returns **ALL** remaining
+the scriptblock expression filter. It then returns **ALL** remaining
 collection items without testing them. _Only one passing item is tested_.
 
 This means the returned collection contains both _passing_ and
@@ -723,7 +736,7 @@ localhost
 #### Until
 
 The `Until` mode inverts the `SkipUntil` mode. It returns **ALL** items in a
-collection until an item passes the script block expression. Once an item
+collection until an item passes the scriptblock expression. Once an item
 _passes_ the scriptblock expression, the `Where()` method stops processing
 items.
 
@@ -1123,3 +1136,4 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 [12]: about_Splatting.md#splatting-with-arrays
 [13]: about_While.md
 [14]: https://wikipedia.org/wiki/Row-_and_column-major_order
+

@@ -1,10 +1,5 @@
 ---
-description: Describes how PowerShell determines which command to run.
-Locale: en-US
-ms.date: 03/05/2024
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_command_precedence?view=powershell-5.1&WT.mc_id=ps-gethelp
-schema: 2.0.0
-title: about_Command_Precedence
+ms.date: 01/18/2026
 ---
 # about_Command_Precedence
 
@@ -225,7 +220,7 @@ You can also use the call operator (`&`) to run hidden commands by combining it
 with a call to [Get-ChildItem][13] (the alias is `dir`), `Get-Command` or
 [Get-Module][11].
 
-The call operator executes strings and script blocks in a child scope. For more
+The call operator executes strings and scriptblocks in a child scope. For more
 information, see [about_Operators][08].
 
 For example, use the following command to run the function named `Map` that's
@@ -341,3 +336,6 @@ you must add the extension to the `$Env:PATHEXT` environment variable.
 [13]: xref:Microsoft.PowerShell.Management.Get-ChildItem
 [14]: xref:Microsoft.PowerShell.Utility.Get-Date
 [15]: xref:Microsoft.PowerShell.Utility.Import-PSSession
+
+
+

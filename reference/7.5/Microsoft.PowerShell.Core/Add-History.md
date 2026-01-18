@@ -2,12 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/15/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/add-history?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-History
 ---
-
 # Add-History
 
 ## SYNOPSIS
@@ -31,8 +30,7 @@ about the session history, see [about_History](About/about_History.md).
 
 The session history is managed separately from the history maintained by the **PSReadLine** module.
 Both histories are available in sessions where **PSReadLine** is loaded. This cmdlet only works with
-the session history. For more information see,
-[about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
+the session history. For more information see, [about_PSReadLine](../PSReadLine/About/about_PSReadLine.md).
 
 You can use the `Get-History` cmdlet to get the commands and pass them to `Add-History`, or you can
 export the commands to a CSV or XML file, then import the commands, and pass the imported file to
@@ -65,7 +63,9 @@ This example imports commands from the `History.xml` file, adds them to the curr
 and then runs the commands in the combined history.
 
 ```powershell
-Import-Clixml -Path C:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
+Import-Clixml -Path C:\temp\history.xml |
+    Add-History -PassThru |
+    ForEach-Object -Process {Invoke-History}
 ```
 
 The first command uses the `Import-Clixml` cmdlet to import a command history that was exported to
@@ -74,7 +74,7 @@ adds the commands to the current session history. The **PassThru** parameter pas
 representing the added commands down the pipeline.
 
 The command then uses the `ForEach-Object` cmdlet to apply the `Invoke-History` command to each of
-the commands in the combined history. The `Invoke-History` command is formatted as a script block,
+the commands in the combined history. The `Invoke-History` command is formatted as a scriptblock,
 enclosed in braces (`{}`), as required by the **Process** parameter of the `ForEach-Object` cmdlet.
 
 ### Example 3: Add commands in the history to the end of the history

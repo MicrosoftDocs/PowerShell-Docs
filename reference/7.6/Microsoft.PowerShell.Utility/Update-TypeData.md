@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/07/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-typedata?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-TypeData
 ---
-
 # Update-TypeData
 
 ## SYNOPSIS
@@ -139,7 +138,7 @@ property to specify the **ScriptProperty** type, and the **Value** parameter to 
 that determines the annual quarter.
 
 The value of the **Value** property is a script that calculates the current annual quarter. The
-script block uses the `$this` automatic variable to represent the current instance of the object and
+scriptblock uses the `$this` automatic variable to represent the current instance of the object and
 the In operator to determine whether the month value appears in each integer array. For more
 information about the `-in` operator, see
 [about_Comparison_Operators](../Microsoft.PowerShell.Core/about/about_Comparison_Operators.md).
@@ -626,8 +625,8 @@ a string property, you can also specify a **SecondValue** of **System.Int32** to
 string value to an integer.
 
 When the value of the **MemberType** parameter is `ScriptProperty`, you can use the **SecondValue**
-parameter to specify an additional script block. The script block in the value of the **Value**
-parameter gets the value of a variable. The script block in the value of the **SecondValue** parameter
+parameter to specify an additional scriptblock. The scriptblock in the value of the **Value**
+parameter gets the value of a variable. The scriptblock in the value of the **SecondValue** parameter
 set the value of the variable.
 
 This parameter was introduced in Windows PowerShell 3.0.

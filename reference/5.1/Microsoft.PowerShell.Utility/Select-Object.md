@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/03/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - select
 title: Select-Object
 ---
-
 # Select-Object
 
 ## SYNOPSIS
@@ -309,7 +308,7 @@ Diagnostics.Format.ps1xml   4.955078125     223
 DotNetTypes.format.ps1xml   134.9833984375  223
 ```
 
-### Example 12: Selecting the keys of a hashtable with calculated properties
+### Example 12: Select hashtable keys without using calculated properties
 
 This example shows how you can use `Select-Object` to display the key-value pairs of a
 **hashtable** object with calculated properties. Each calculated property **hashtable** specifies

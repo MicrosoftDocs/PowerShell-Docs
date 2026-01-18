@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/sort-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - sort
 title: Sort-Object
 ---
-
 # Sort-Object
 
 ## SYNOPSIS
@@ -27,9 +26,10 @@ Sort-Object [[-Property] <Object[]>] [-Descending] [-Unique] [-InputObject <psob
 ## DESCRIPTION
 
 The `Sort-Object` cmdlet sorts objects in ascending or descending order based on object property
-values. If sort properties aren't included in a command, PowerShell uses default sort properties of
-the first input object. If the input object's type has no default sort properties, PowerShell
-attempts to compare the objects themselves. For more information, see the [Notes](#notes) section.
+values. If sort properties aren't included in a command, PowerShell uses default sort properties
+of the first input object. If the input object's type has no default sort properties,
+PowerShell attempts to compare the objects themselves. For more information, see the [Notes](#notes)
+section.
 
 You can sort objects by a single property or multiple properties. Multiple properties use hash
 tables to sort in ascending order, descending order, or a combination of sort orders. Properties are
@@ -336,7 +336,7 @@ Get-Content -Path C:\Test\ProductId.txt | Sort-Object {[int]$_}
 ```
 
 In the second example, `Get-Content` gets the contents of the file and pipes lines to the
-`Sort-Object` cmdlet. `Sort-Object` uses a script block to convert the strings to integers. In the
+`Sort-Object` cmdlet. `Sort-Object` uses a scriptblock to convert the strings to integers. In the
 sample code, `[int]` converts the string to an integer and `$_` represents each string as it comes
 down the pipeline. The integer objects are sent down the pipeline to the `Sort-Object` cmdlet.
 `Sort-Object` sorts the integer objects in numeric order.
@@ -480,7 +480,7 @@ use a scriptblock or a hashtable.
 
 Valid keys for a hash table are as follows:
 
-- `Expression` - `<string>` or `<script block>`
+- `Expression` - `<string>` or `<scriptblock>`
 - `Ascending` or `Descending` - `<boolean>`
 
 For more information, see

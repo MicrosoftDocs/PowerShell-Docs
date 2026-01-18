@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/13/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
 ---
-
 # Register-EngineEvent
 
 ## SYNOPSIS
@@ -76,7 +75,7 @@ this case, the command history from the exiting session is exported an XML file 
 
 This example creates a subscription for events from the source **MyEventSource**. This is an
 arbitrary source that we are going to use to monitor the progress of a job. `Register-EngineEvent`
-is used to create the subscription. The script block for the **Action** parameter logs the event
+is used to create the subscription. The scriptblock for the **Action** parameter logs the event
 data to a text file.
 
 ```powershell
@@ -157,11 +156,11 @@ the unneeded job objects. `Get-Content` displays the contents of the log file.
 
 Specifies commands to handle the events. The commands in the **Action** run when an event is raised,
 instead of sending the event to the event queue. Enclose the commands in braces (`{}`) to create a
-script block.
+scriptblock.
 
 The value of the **Action** parameter can include the `$Event`, `$EventSubscriber`, `$Sender`,
 `$EventArgs`, and `$args` automatic variables, which provide information about the event to the
-**Action** script block. For more information, see
+**Action** scriptblock. For more information, see
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 When you specify an action, `Register-EngineEvent` returns an event job object that represents that

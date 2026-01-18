@@ -1,7 +1,7 @@
 ---
 description: This article contains the list of changes for each released version of PSReadLine.
 Locale: en-US
-ms.date: 09/02/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_release_notes?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Release_Notes
@@ -218,7 +218,7 @@ release:
 - Make `y0` yank up to the start of the logical line in `VI` mode
 - Add API to detect if the screen reader is active
 - Make `PageUp/PageDown` and `CtrlPageUp/CtrlPageDown` Windows-only
-- Add script block vi mode indicator option
+- Add scriptblock vi mode indicator option
 - Support vi mode `G` and `gg` movements in multi-line buffers
 - Supports `_` and `$` to move to the beginning and end of the logical line in
   vi mode

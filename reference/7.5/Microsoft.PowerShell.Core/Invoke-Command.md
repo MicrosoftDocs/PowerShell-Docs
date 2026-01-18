@@ -2,14 +2,13 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/21/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - icm
+- icm
 title: Invoke-Command
 ---
-
 # Invoke-Command
 
 ## SYNOPSIS
@@ -178,11 +177,11 @@ persistent connection) on the remote computer, and then use the **Session** para
 session, use the **InDisconnectedSession** parameter. To run a command in a background job, use the
 **AsJob** parameter.
 
-You can also use `Invoke-Command` on a local computer to a run script block as a command. PowerShell
-runs the script block immediately in a child scope of the current scope.
+You can also use `Invoke-Command` on a local computer to run a scriptblock as a command. PowerShell
+runs the scriptblock immediately in a child scope of the current scope.
 
 Before using `Invoke-Command` to run commands on a remote computer, read
-[about_Remote](About/about_Remote.md).
+[about_Remote](./About/about_Remote.md).
 
 Starting with PowerShell 6.0 you can use Secure Shell (SSH) to establish a connection to and invoke
 commands on remote computers. SSH must be installed on the local computer and the remote computer
@@ -193,7 +192,7 @@ connection information. For more information about how to set up PowerShell SSH 
 [PowerShell Remoting Over SSH](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core).
 
 Some code samples use splatting to reduce the line length. For more information, see
-[about_Splatting](About/about_Splatting.md).
+[about_Splatting](./About/about_Splatting.md).
 
 ## EXAMPLES
 
@@ -280,10 +279,10 @@ session in the `$s` variable. The `Invoke-Command` lines that follow use the **S
 to run both of the commands in the same session. Since both commands run in the same session, the
 `$p` value remains active.
 
-### Example 5: Invoke a command with a script block stored in a variable
+### Example 5: Invoke a command with a scriptblock stored in a variable
 
-This example shows how to run a command that is stored as a script block in a variable. When the
-script block is saved in a variable, you can specify the variable as the value of the
+This example shows how to run a command that is stored as a scriptblock in a variable. When the
+scriptblock is saved in a variable, you can specify the variable as the value of the
 **ScriptBlock** parameter.
 
 ```powershell
@@ -294,7 +293,7 @@ $command = {
 Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
 ```
 
-The `$command` variable stores the `Get-WinEvent` command that's formatted as a script block. The
+The `$command` variable stores the `Get-WinEvent` command that's formatted as a scriptblock. The
 `Invoke-Command` runs the command stored in `$command` on the S1 and S2 remote computers.
 
 ### Example 6: Run a single command on several computers
@@ -399,8 +398,8 @@ This example shows how to include the values of local variables in a command run
 computer. The command uses the `Using:` scope modifier to identify a local variable in a remote
 command. By default, all variables are assumed to be defined in the remote session. The `Using:`
 scope modifier was introduced in PowerShell 3.0. For more information about the `Using:` scope
-modifier, see [about_Remote_Variables](About/about_Remote_Variables.md) and
-[about_Scopes](About/about_scopes.md).
+modifier, see [about_Remote_Variables](./About/about_Remote_Variables.md) and
+[about_Scopes](./about/about_scopes.md).
 
 ```powershell
 $Log = 'PowerShellCore/Operational'
@@ -450,14 +449,14 @@ process. The output of the first command includes the **PsComputerName** propert
 the name of the computer on which the command ran. The output of the second command, which uses
 **HideComputerName**, doesn't include the **PsComputerName** column.
 
-### Example 11: Use the `param` keyword in a script block
+### Example 11: Use the `param` keyword in a scriptblock
 
 The `param` keyword and the **ArgumentList** parameter are used to pass variable values to named
-parameters in a script block. This example displays filenames that begin with the letter `a` and
+parameters in a scriptblock. This example displays filenames that begin with the letter `a` and
 have the `.pdf` extension.
 
 For more information about the `param` keyword, see
-[about_Language_Keywords](About/about_language_keywords.md#param).
+[about_Language_Keywords](./about/about_language_keywords.md#param).
 
 ```powershell
 $parameters = @{
@@ -482,15 +481,15 @@ az.pdf
 `$Param2`. `Get-ChildItem` uses the named parameters, **Name** and **Include** with the variable
 names. The **ArgumentList** passes the values to the variables.
 
-### Example 12: Use the $args automatic variable in a script block
+### Example 12: Use the $args automatic variable in a scriptblock
 
 The `$args` automatic variable and the **ArgumentList** parameter are used to pass array values to
-parameter positions in a script block. This example displays a server's directory contents of `.txt`
+parameter positions in a scriptblock. This example displays a server's directory contents of `.txt`
 files. The `Get-ChildItem` **Path** parameter is position 0 and the **Filter** parameter is position
 1.
 
 For more information about the `$args` variable, see
-[about_Automatic_Variables](About/about_automatic_variables.md#args)
+[about_Automatic_Variables](./about/about_automatic_variables.md#args)
 
 ```powershell
 $parameters = @{
@@ -531,8 +530,8 @@ $parameters = @{
 Invoke-Command @parameters
 ```
 
-When you submit the command, the content of the `Sample.ps1` file is copied into a script block and
-the script block is run on each of the remote computers. This procedure is equivalent to using the
+When you submit the command, the content of the `Sample.ps1` file is copied into a scriptblock and
+the scriptblock is run on each of the remote computers. This procedure is equivalent to using the
 **ScriptBlock** parameter to submit the contents of the script.
 
 ### Example 14: Run a command on a remote computer using a URI
@@ -560,7 +559,7 @@ The `$parameters` variable is a hash table containing the parameters to be passe
 **Microsoft.Exchange** session configuration. The **ConnectionURI** parameter specifies the URL of
 the Exchange server endpoint. The **Credential** parameter specifies the credentials stored in the
 `$LiveCred` variable. The **AuthenticationMechanism** parameter specifies the use of basic
-authentication. The **ScriptBlock** parameter specifies a script block that contains the command.
+authentication. The **ScriptBlock** parameter specifies a scriptblock that contains the command.
 
 ### Example 15: Use a session option
 
@@ -787,7 +786,7 @@ application name when you aren't using the **ConnectionURI** parameter in the co
 The default value is the value of the `$PSSessionApplicationName` preference variable on the local
 computer. If this preference variable isn't defined, the default value is WSMAN. This value is
 appropriate for most uses. For more information, see
-[about_Preference_Variables](About/about_Preference_Variables.md).
+[about_Preference_Variables](./About/about_Preference_Variables.md).
 
 The WinRM service uses the application name to select a listener to service the connection request.
 The value of this parameter should match the value of the **URLPrefix** property of a listener on
@@ -807,10 +806,10 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-Supplies the values of parameters for the scriptblock. The parameters in the script block are
+Supplies the values of parameters for the scriptblock. The parameters in the scriptblock are
 passed by position from the array value supplied to **ArgumentList**. This is known as array
 splatting. For more information about the behavior of **ArgumentList**, see
-[about_Splatting](About/about_Splatting.md#splatting-with-arrays).
+[about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
 Type: System.Object[]
@@ -968,7 +967,7 @@ configuration doesn't exist on the remote computer, the command fails.
 
 The default value is the value of the `$PSSessionConfigurationName` preference variable on the local
 computer. If this preference variable isn't set, the default is **Microsoft.PowerShell**. For more
-information, see [about_Preference_Variables](About/about_Preference_Variables.md).
+information, see [about_Preference_Variables](about/about_Preference_Variables.md).
 
 ```yaml
 Type: System.String
@@ -1129,7 +1128,7 @@ local computer or in a directory that the local computer can access. Use **Argum
 the values of parameters in the script.
 
 When you use this parameter, PowerShell converts the contents of the specified script file to a
-script block, transmits the script block to the remote computer, and runs it on the remote computer.
+scriptblock, transmits the scriptblock to the remote computer, and runs it on the remote computer.
 
 ```yaml
 Type: System.String
@@ -1206,10 +1205,10 @@ provides sufficient time for you to connect before deleting the session.
 
 You can set the output buffering mode and idle time-out in the **SessionOption** parameter or in the
 `$PSSessionOption` preference variable. For more information about session options, see
-`New-PSSessionOption` and [about_Preference_Variables](About/about_preference_variables.md).
+`New-PSSessionOption` and [about_Preference_Variables](./about/about_preference_variables.md).
 
 For more information about the Disconnected Sessions feature, see
-[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md).
+[about_Remote_Disconnected_Sessions](about/about_Remote_Disconnected_Sessions.md).
 
 This parameter was introduced in PowerShell 3.0.
 
@@ -1253,7 +1252,7 @@ is an ordinal number.
 If you use the **JobName** parameter in a command, the command is run as a job, and `Invoke-Command`
 returns a job object, even if you don't include **AsJob** in the command.
 
-For more information about PowerShell background jobs, see [about_Jobs](About/about_Jobs.md).
+For more information about PowerShell background jobs, see [about_Jobs](./About/about_Jobs.md).
 
 ```yaml
 Type: System.String
@@ -1398,7 +1397,7 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run. Enclose the commands in braces (`{ }`) to create a script block. When
+Specifies the commands to run. Enclose the commands in braces (`{}`) to create a scriptblock. When
 using `Invoke-Command` to run a command remotely, any variables in the command are evaluated on the
 remote computer.
 
@@ -1428,7 +1427,7 @@ Specifies an array of sessions in which this cmdlet runs the command. Enter a va
 When you create a **PSSession**, PowerShell establishes a persistent connection to the remote
 computer. Use a **PSSession** to run a series of related commands that share data. To run a single
 command or a series of unrelated commands, use the **ComputerName** parameter. For more information,
-see [about_PSSessions](About/about_PSSessions.md).
+see [about_PSSessions](./About/about_PSSessions.md).
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession[]
@@ -1691,7 +1690,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.ScriptBlock
 
-You can pipe a command in a script block to `Invoke-Command`. Use the `$input` automatic variable to
+You can pipe a command in a scriptblock to `Invoke-Command`. Use the `$input` automatic variable to
 represent the input objects in the command.
 
 ## OUTPUTS
@@ -1782,17 +1781,17 @@ hashtable. For more information about `ssh_config` files, see
 
 ## RELATED LINKS
 
-[about_PSSessions](About/about_PSSessions.md)
+[about_PSSessions](./About/about_PSSessions.md)
 
-[about_Remote](About/about_Remote.md)
+[about_Remote](./About/about_Remote.md)
 
-[about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
+[about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md)
 
-[about_Remote_Troubleshooting](About/about_Remote_Troubleshooting.md)
+[about_Remote_Troubleshooting](./About/about_remote_troubleshooting.md)
 
-[about_Remote_Variables](About/about_Remote_Variables.md)
+[about_Remote_Variables](./About/about_Remote_Variables.md)
 
-[about_Scopes](About/about_Scopes.md)
+[about_Scopes](./About/about_scopes.md)
 
 [Enter-PSSession](Enter-PSSession.md)
 

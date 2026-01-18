@@ -1,7 +1,7 @@
 ---
 description: Describes the Group Policy settings for PowerShell
 Locale: en-US
-ms.date: 08/17/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_group_policy_settings?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Group_Policy_Settings
@@ -137,17 +137,17 @@ previous commands to the 'All Users' PowerShell profile
 For more information about module logging, see
 [about_Modules](about_Modules.md).
 
-## Turn on PowerShell script block logging
+## Turn on PowerShell scriptblock logging
 
 The **Turn on PowerShell Script Block Logging** policy setting enables logging
 of all PowerShell script input to the Microsoft-Windows-PowerShell/Operational
 event log. If you enable this policy setting, PowerShell logs the processing of
-commands, script blocks, functions, and scripts - whether invoked
+commands, scriptblocks, functions, and scripts - whether invoked
 interactively, or through automation.
 
 If you disable this policy setting, PowerShell script input isn't logged. If
 you enable the Script Block Invocation Logging, PowerShell also logs events
-when invocation of a command, script block, function, or script starts or
+when invocation of a command, scriptblock, function, or script starts or
 stops. Enabling Invocation Logging generates a high volume of event logs.
 
 ## Turn on script execution

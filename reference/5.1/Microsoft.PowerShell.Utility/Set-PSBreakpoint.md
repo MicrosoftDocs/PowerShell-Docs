@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - sbp
 title: Set-PSBreakpoint
 ---
-
 # Set-PSBreakpoint
 
 ## SYNOPSIS
@@ -140,7 +139,7 @@ of the `$Disk` variable is greater than 2.
 Set-PSBreakpoint -Script "test.ps1" -Command "DiskTest" -Action { if ($Disk -gt 2) { break } }
 ```
 
-The value of the **Action** is a script block that tests the value of the `$Disk` variable in the
+The value of the **Action** is a scriptblock that tests the value of the `$Disk` variable in the
 function.
 
 The action uses the `break` keyword to stop execution if the condition is met. The alternative (and
@@ -215,16 +214,16 @@ ScriptName : C:\ps-test\sample.ps1
 
 ### -Action
 
-Specifies commands that run at each breakpoint instead of breaking. Enter a script block that
+Specifies commands that run at each breakpoint instead of breaking. Enter a scriptblock that
 contains the commands. You can use this parameter to set conditional breakpoints or to perform other
 tasks, such as testing or logging.
 
 If this parameter is omitted, or no action is specified, execution stops at the breakpoint, and the
 debugger starts.
 
-When the **Action** parameter is used, the Action script block runs at each breakpoint. Execution
-does not stop unless the script block includes the `break` keyword. If you use the `continue`
-keyword in the script block, execution resumes until the next breakpoint.
+When the **Action** parameter is used, the Action scriptblock runs at each breakpoint. Execution
+does not stop unless the scriptblock includes the `break` keyword. If you use the `continue`
+keyword in the scriptblock, execution resumes until the next breakpoint.
 
 For more information, see [about_Script_Blocks](../Microsoft.PowerShell.Core/About/about_Script_Blocks.md),
 [about_Break](../Microsoft.PowerShell.Core/About/about_Break.md), and

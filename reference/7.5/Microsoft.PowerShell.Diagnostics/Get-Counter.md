@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 05/08/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
@@ -419,7 +419,7 @@ Path                                         InstanceName        CookedValue
 
 `Get-Counter` uses the **Counter** parameter to specify the counter
 `\Processor(*)\% Processor Time`. The values are stored in the `$Counter` variable. The objects
-stored in `$Counter.CounterSamples` are sent down the pipeline. `Where-Object` uses a script block
+stored in `$Counter.CounterSamples` are sent down the pipeline. `Where-Object` uses a scriptblock
 to compare each objects value against a specified value of `20`. The `$_.CookedValue` is a variable
 for the current object in the pipeline. Counters with a **CookedValue** that is less than 20 are
 displayed.
