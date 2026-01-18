@@ -2,7 +2,9 @@
 description: PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
 Locale: en-US
 ms.date: 01/18/2026
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calculated_properties?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calculated_properties?view=powershell-7.4&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Calculated_Properties
 ---
 # about_Calculated_Properties
 
@@ -531,6 +533,3 @@ Date       Salesperson UnitsSold
 [11]: xref:Microsoft.PowerShell.Utility.Measure-Object
 [12]: xref:Microsoft.PowerShell.Utility.Select-Object
 [13]: xref:Microsoft.PowerShell.Utility.Sort-Object
-
-
-

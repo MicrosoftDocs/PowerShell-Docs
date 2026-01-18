@@ -214,7 +214,7 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 <!-- link references -->
 [01]: /cloud-app-security/siem
 [02]: /powershell/module/microsoft.powershell.core/about/about_logging?view=powershell-5.1&preserve-view=true
-[03]: #enabling-script-block-logging
+[03]: #enabling-scriptblock-logging
 [04]: about_Logging_Non-Windows.md
 [05]: about_PowerShell_Config.md#modulelogging
 [06]: about_PowerShell_Config.md#scriptblocklogging
