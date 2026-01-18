@@ -1,7 +1,7 @@
 ---
 description: Describes the parameters that can be used with any cmdlet.
 Locale: en-US
-ms.date: 01/12/2026
+ms.date: 01/18/2026
 no-loc: [Confirm, Debug, ErrorAction, ErrorVariable, InformationAction, InformationVariable, OutBuffer, OutVariable, PipelineVariable, ProgressAction, Verbose, WarningAction, WarningVariable, WhatIf]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_commonparameters?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -374,9 +374,9 @@ piped from while processing the next item passing through the pipeline. This
 allows a command to _feed back_ its output to a previous command (or itself).
 
 >[!NOTE]
-> Advanced functions can have up to three script blocks: `begin`, `process`,
+> Advanced functions can have up to three scriptblocks: `begin`, `process`,
 > and `end`. When using the `PipelineVariable` parameter with advanced
-> functions, only values from the first defined script block are assigned to
+> functions, only values from the first defined scriptblock are assigned to
 > the variable as the function runs. For more information, see
 > [Advanced functions][05]. PowerShell 7.2 corrects this behavior.
 
@@ -832,3 +832,4 @@ Mode                LastWriteTime     Length Name
 [12]: xref:Microsoft.PowerShell.Utility.Write-Error
 [13]: xref:Microsoft.PowerShell.Utility.Write-Verbose
 [14]: xref:Microsoft.PowerShell.Utility.Write-Warning
+

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/11/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -10,7 +10,6 @@ aliases:
   - diff
 title: Compare-Object
 ---
-
 # Compare-Object
 
 ## SYNOPSIS
@@ -386,9 +385,9 @@ Accept wildcard characters: False
 Specifies an array of properties of the **reference** and **difference** objects to compare.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
-can be a script block or a hash table. Valid key-value pairs are:
+can be a scriptblock or a hash table. Valid key-value pairs are:
 
-- Expression - `<string>` or `<script block>`
+- Expression - `<string>` or `<scriptblock>`
 
 For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).

@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/10/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/group-object?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - group
 title: Group-Object
 ---
-
 # Group-Object
 
 ## SYNOPSIS
@@ -73,7 +72,7 @@ Count Name
 
 ### Example 2: Group integers by odds and evens
 
-This example shows how to use script blocks as the value of the **Property** parameter. This command
+This example shows how to use scriptblocks as the value of the **Property** parameter. This command
 displays the integers from 1 to 20, grouped by odds and even.
 
 ```powershell
@@ -236,7 +235,7 @@ Cmdlet          Get-AppLockerPolicy               2.0.0.0    AppLocker
 ...
 ```
 
-### Example 8: Create a case-sensitive hash table
+### Example 8: Create a case-sensitive hashtable
 
 This example combines the **CaseSensitive** and **AsHashTable** parameters to create a
 case-sensitive hash table. The files in the example have extensions of `.txt` and `.TXT`.
@@ -388,9 +387,9 @@ the `ToString()` representation of their value. The output is sorted in ascendin
 names.
 
 The value of the **Property** parameter can be a new calculated property. The calculated property
-can be a script block or a hash table. Valid key-value pairs are:
+can be a scriptblock or a hashtable. Valid key-value pairs are:
 
-- Expression - `<string>` or `<script block>`
+- Expression - `<string>` or `<scriptblock>`
 
 For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).

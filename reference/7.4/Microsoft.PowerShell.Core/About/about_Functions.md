@@ -1,12 +1,11 @@
 ---
 description: Describes how to create and use functions in PowerShell.
 Locale: en-US
-ms.date: 07/16/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions
 ---
-
 # about_Functions
 
 ## Short description
@@ -26,9 +25,9 @@ PowerShell defines two kinds of functions:
   pipeline. Filters are defined using the `filter` keyword.
 
 You can group the statements in a function into one of four different
-predefined script blocks. These script blocks are named using the keywords
-`begin`, `process`, `end`, and `clean`. If you don't use these keywords,
-PowerShell puts the statements in the appropriate code block.
+predefined statement blocks. These statement blocks are named using the
+keywords `begin`, `process`, `end`, and `clean`. If you don't use these
+keywords, PowerShell puts the statements in the appropriate code block.
 
 Functions can also act like cmdlets. You can create a function that works just
 like a cmdlet without using `C#` programming. For more information, see
@@ -105,7 +104,7 @@ The syntax of a filter is as follows:
 filter [<scope:>]<name> {<statement list>}
 ```
 
-To simplify the syntax for `filter` functions, omit the script block keyword
+To simplify the syntax for `filter` functions, omit the statement block keyword
 (`begin`, `process`, `end`, `clean`). PowerShell puts the statements in the
 `process` block. You can use any of the other blocks in a filter function, but
 the intent was to provide a shorthand way of defining a function that has the
@@ -168,7 +167,7 @@ the function receives.
 
 The automatic variable `$_` or `$PSItem` contains the current object in the
 pipeline for use in the `process` block. The `$input` automatic variable
-contains an enumerator that's only available to functions and script blocks.
+contains an enumerator that's only available to functions and scriptblocks.
 For more information, see [about_Automatic_Variables][04].
 
 - If the function is invoked without pipeline input, PowerShell executes the
@@ -207,7 +206,7 @@ The clean block discards any output written to the **Success** stream.
 > [!CAUTION]
 > Adding the `clean` block is a breaking change. Because `clean` is parsed as a
 > keyword, it prevents users from directly calling a command named `clean` as
-> the first statement in a script block. However, it's not likely to be a
+> the first statement in a scriptblock. However, it's not likely to be a
 > problem. You can still invoke the command using the call operator
 > (`& clean`).
 
@@ -564,12 +563,12 @@ Sum = 10
 
 When you use a function in a pipeline, the objects piped to the function are
 assigned to the `$input` automatic variable. The function runs statements with
-the `begin` script block before any objects come from the pipeline. The
-function runs statements with the `end` script block when there are no more
+the `begin` statement block before any objects come from the pipeline. The
+function runs statements with the `end` statement block when there are no more
 objects in the pipeline.
 
 The following example shows the `$input` automatic variable used int the
-`begin` and `end` script blocks.
+`begin` and `end` statement blocks.
 
 ```powershell
 function Get-PipelineBeginEnd {
@@ -637,7 +636,7 @@ enforced for the following scenarios:
 > [!CAUTION]
 > Adding the `clean` block is a breaking change. Because `clean` is parsed as a
 > keyword, it prevents users from directly calling a command named `clean` as
-> the first statement in a script block. However, it's not likely to be a
+> the first statement in a scriptblock. However, it's not likely to be a
 > problem. The command can still be invoked using the call operator
 > (`& clean`).
 
@@ -682,7 +681,7 @@ PowerShell:
 Get-ChildItem Function:
 ```
 
-The commands in the function are stored as a script block in the definition
+The commands in the function are stored as a scriptblock in the definition
 property of the function. For example, to display the commands in the Help
 function that comes with PowerShell, type:
 

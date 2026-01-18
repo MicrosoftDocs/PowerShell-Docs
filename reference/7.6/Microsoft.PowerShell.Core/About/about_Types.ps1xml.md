@@ -1,7 +1,7 @@
 ---
 description: Explains how to use `Types.ps1xml` files to extend the types of objects that are used in PowerShell.
 Locale: en-US
-ms.date: 08/07/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_types.ps1xml?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Types.ps1xml
@@ -154,7 +154,7 @@ property of arrays in PowerShell. For example:
 
 The `.ps1xml` files that are installed with PowerShell are
 digitally signed to prevent tampering because the formatting can include
-script blocks. Therefore, to add a property or method to a .NET
+scriptblocks. Therefore, to add a property or method to a .NET
 type, create your own `Types.ps1xml` files, and then add them to your
 PowerShell session.
 
@@ -184,7 +184,7 @@ This example shows how to add an **Age** property to **System.IO.FileInfo**
 objects. The age of a file is the difference between its creation time and the
 current time in days.
 
-Because the **Age** property is calculated by using a script block, find a
+Because the **Age** property is calculated by using a scriptblock, find a
 `<ScriptProperty>` tag to use as a model for the new **Age** property.
 
 Save the follow XML code to the file `$PSHOME\MyTypes.ps1xml`.
@@ -455,9 +455,9 @@ For example, the following XML creates a **PropertySet** named
 
 Defines a method whose value is the output of a script.
 
-The `<ScriptMethod>` tag must have a `<Name>` tag that specifies the
-name of the new method and a `<Script>` tag that encloses the script
-block that returns the method result.
+The `<ScriptMethod>` tag must have a `<Name>` tag that specifies the name of
+the new method and a `<Script>` tag that encloses the scriptblock that returns
+the method result.
 
 For example, the `ConvertToDateTime` and `ConvertFromDateTime` methods of
 management objects (`System.System.Management.ManagementObject`) are script
@@ -490,7 +490,7 @@ Defines a property whose value is the output of a script.
 
 The `<ScriptProperty>` tag must have a `<Name>` tag that specifies the
 name of the new property and a `<GetScriptBlock>` tag that encloses the
-script block that returns the property value.
+scriptblock that returns the property value.
 
 For example, the **VersionInfo** property of the **System.IO.FileInfo** object
 is a script property that results from using the **FullName** property of the

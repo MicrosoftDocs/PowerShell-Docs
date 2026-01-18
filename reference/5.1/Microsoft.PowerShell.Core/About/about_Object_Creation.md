@@ -1,7 +1,7 @@
 ---
 description: Explains how to create objects in PowerShell.
 Locale: en-US
-ms.date: 12/05/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_object_creation?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Object_Creation
@@ -33,7 +33,7 @@ There are many ways to create objects, this list is not definitive:
 - [Add-Type][10]: Allows you to define a class in your PowerShell session that
   you can instantiate with `New-Object`.
 - [New-Module][08]: The **AsCustomObject** parameter creates a custom object
-  you define using script block.
+  you define using scriptblock.
 - [Add-Member][09]: Adds properties to existing objects. You can use
   `Add-Member` to create a custom object out of a simple type, like
   `[System.Int32]`.

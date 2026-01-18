@@ -1,7 +1,7 @@
 ---
 description: Describes the `throw` keyword, which generates a terminating error.
 Locale: en-US
-ms.date: 08/24/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Throw
@@ -17,9 +17,9 @@ Describes the `throw` keyword that generates a terminating error.
 The `throw` keyword causes a terminating error. You can use the `throw` keyword
 to stop the processing of a command, function, or script.
 
-For example, you can use the `throw` keyword in the script block of an `if`
+For example, you can use the `throw` keyword in the statement block of an `if`
 statement to respond to a condition or in the `catch` block of a
-`try`-`catch`-`finally` statement.
+`try/catch/finally` statement.
 
 The `throw` keyword can throw any object, such as a user message string or the
 object that caused the error.

@@ -1,12 +1,11 @@
 ---
 description: Describes how to use splatting to pass parameters to commands in PowerShell.
 Locale: en-US
-ms.date: 01/29/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Splatting
 ---
-
 # about_Splatting
 
 ## Short description
@@ -119,14 +118,14 @@ Copy-Item @ArrayArguments -WhatIf
 ### Using the ArgumentList parameter
 
 Several cmdlets have an **ArgumentList** parameter that is used to pass
-parameter values to a script block that is executed by the cmdlet. The
+parameter values to a scriptblock that is executed by the cmdlet. The
 **ArgumentList** parameter takes an array of values that is passed to the
-script block. PowerShell is effectively using array splatting to bind the
-values to the parameters of the script block. When using **ArgumentList**, if
+scriptblock. PowerShell is effectively using array splatting to bind the
+values to the parameters of the scriptblock. When using **ArgumentList**, if
 you need to pass an array as a single object bound to a single parameter, you
 must wrap the array as the only element of another array.
 
-The following example has a script block that takes a single parameter that is
+The following example has a scriptblock that takes a single parameter that is
 an array of strings.
 
 ```powershell
@@ -136,7 +135,7 @@ Invoke-Command -ScriptBlock {
   } -ArgumentList $array
 ```
 
-In this example, only the first item in `$array` is passed to the script block.
+In this example, only the first item in `$array` is passed to the scriptblock.
 
 ```Output
 Hello
@@ -150,7 +149,7 @@ Invoke-Command -ScriptBlock {
 ```
 
 In this example, `$array` is wrapped in an array so that the entire
-array is passed to the script block as a single object.
+array is passed to the scriptblock as a single object.
 
 ```Output
 Hello World!

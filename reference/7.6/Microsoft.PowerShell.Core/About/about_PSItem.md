@@ -446,14 +446,14 @@ You should avoid changing the value of `$PSItem`.
 [02]: about_Arrays.md#where
 [03]: about_Automatic_Variables.md
 [04]: about_Comparison_Operators.md#replacement-operator
-[05]: about_Comparison_Operators.md#replacement-with-a-script-block
+[05]: about_Comparison_Operators.md#replacement-with-a-scriptblock
 [06]: about_Functions_Advanced_Parameters.md#parameter-attribute
 [07]: about_Functions_Advanced_Parameters.md#validatescript-validation-attribute
 [08]: about_Functions_Advanced.md
 [09]: about_Functions.md
 [10]: about_Functions.md#filter-syntax
 [11]: about_Script_Blocks.md
-[12]: about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters
+[12]: about_Script_Blocks.md#using-delay-bind-scriptblocks-with-parameters
 [13]: about_Switch.md
 [14]: about_Try_Catch_Finally.md#accessing-exception-information
 [15]: xref:Microsoft.PowerShell.Core.ForEach-Object

@@ -2,14 +2,13 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/21/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - icm
+- icm
 title: Invoke-Command
 ---
-
 # Invoke-Command
 
 ## SYNOPSIS
@@ -178,8 +177,8 @@ persistent connection) on the remote computer, and then use the **Session** para
 session, use the **InDisconnectedSession** parameter. To run a command in a background job, use the
 **AsJob** parameter.
 
-You can also use `Invoke-Command` on a local computer to a run script block as a command. PowerShell
-runs the script block immediately in a child scope of the current scope.
+You can also use `Invoke-Command` on a local computer to run a scriptblock as a command. PowerShell
+runs the scriptblock immediately in a child scope of the current scope.
 
 Before using `Invoke-Command` to run commands on a remote computer, read
 [about_Remote](./About/about_Remote.md).
@@ -280,10 +279,10 @@ session in the `$s` variable. The `Invoke-Command` lines that follow use the **S
 to run both of the commands in the same session. Since both commands run in the same session, the
 `$p` value remains active.
 
-### Example 5: Invoke a command with a script block stored in a variable
+### Example 5: Invoke a command with a scriptblock stored in a variable
 
-This example shows how to run a command that is stored as a script block in a variable. When the
-script block is saved in a variable, you can specify the variable as the value of the
+This example shows how to run a command that is stored as a scriptblock in a variable. When the
+scriptblock is saved in a variable, you can specify the variable as the value of the
 **ScriptBlock** parameter.
 
 ```powershell
@@ -294,7 +293,7 @@ $command = {
 Invoke-Command -ComputerName S1, S2 -ScriptBlock $command
 ```
 
-The `$command` variable stores the `Get-WinEvent` command that's formatted as a script block. The
+The `$command` variable stores the `Get-WinEvent` command that's formatted as a scriptblock. The
 `Invoke-Command` runs the command stored in `$command` on the S1 and S2 remote computers.
 
 ### Example 6: Run a single command on several computers
@@ -450,10 +449,10 @@ process. The output of the first command includes the **PsComputerName** propert
 the name of the computer on which the command ran. The output of the second command, which uses
 **HideComputerName**, doesn't include the **PsComputerName** column.
 
-### Example 11: Use the `param` keyword in a script block
+### Example 11: Use the `param` keyword in a scriptblock
 
 The `param` keyword and the **ArgumentList** parameter are used to pass variable values to named
-parameters in a script block. This example displays filenames that begin with the letter `a` and
+parameters in a scriptblock. This example displays filenames that begin with the letter `a` and
 have the `.pdf` extension.
 
 For more information about the `param` keyword, see
@@ -482,10 +481,10 @@ az.pdf
 `$Param2`. `Get-ChildItem` uses the named parameters, **Name** and **Include** with the variable
 names. The **ArgumentList** passes the values to the variables.
 
-### Example 12: Use the $args automatic variable in a script block
+### Example 12: Use the $args automatic variable in a scriptblock
 
 The `$args` automatic variable and the **ArgumentList** parameter are used to pass array values to
-parameter positions in a script block. This example displays a server's directory contents of `.txt`
+parameter positions in a scriptblock. This example displays a server's directory contents of `.txt`
 files. The `Get-ChildItem` **Path** parameter is position 0 and the **Filter** parameter is position
 1.
 
@@ -531,8 +530,8 @@ $parameters = @{
 Invoke-Command @parameters
 ```
 
-When you submit the command, the content of the `Sample.ps1` file is copied into a script block and
-the script block is run on each of the remote computers. This procedure is equivalent to using the
+When you submit the command, the content of the `Sample.ps1` file is copied into a scriptblock and
+the scriptblock is run on each of the remote computers. This procedure is equivalent to using the
 **ScriptBlock** parameter to submit the contents of the script.
 
 ### Example 14: Run a command on a remote computer using a URI
@@ -560,7 +559,7 @@ The `$parameters` variable is a hash table containing the parameters to be passe
 **Microsoft.Exchange** session configuration. The **ConnectionURI** parameter specifies the URL of
 the Exchange server endpoint. The **Credential** parameter specifies the credentials stored in the
 `$LiveCred` variable. The **AuthenticationMechanism** parameter specifies the use of basic
-authentication. The **ScriptBlock** parameter specifies a script block that contains the command.
+authentication. The **ScriptBlock** parameter specifies a scriptblock that contains the command.
 
 ### Example 15: Use a session option
 
@@ -807,7 +806,7 @@ Accept wildcard characters: False
 
 ### -ArgumentList
 
-Supplies the values of parameters for the scriptblock. The parameters in the script block are
+Supplies the values of parameters for the scriptblock. The parameters in the scriptblock are
 passed by position from the array value supplied to **ArgumentList**. This is known as array
 splatting. For more information about the behavior of **ArgumentList**, see
 [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
@@ -1129,7 +1128,7 @@ local computer or in a directory that the local computer can access. Use **Argum
 the values of parameters in the script.
 
 When you use this parameter, PowerShell converts the contents of the specified script file to a
-script block, transmits the script block to the remote computer, and runs it on the remote computer.
+scriptblock, transmits the scriptblock to the remote computer, and runs it on the remote computer.
 
 ```yaml
 Type: System.String
@@ -1398,7 +1397,7 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run. Enclose the commands in braces (`{ }`) to create a script block. When
+Specifies the commands to run. Enclose the commands in braces (`{}`) to create a scriptblock. When
 using `Invoke-Command` to run a command remotely, any variables in the command are evaluated on the
 remote computer.
 
@@ -1691,7 +1690,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Management.Automation.ScriptBlock
 
-You can pipe a command in a script block to `Invoke-Command`. Use the `$input` automatic variable to
+You can pipe a command in a scriptblock to `Invoke-Command`. Use the `$input` automatic variable to
 represent the input objects in the command.
 
 ## OUTPUTS

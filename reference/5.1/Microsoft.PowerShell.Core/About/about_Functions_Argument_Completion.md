@@ -1,7 +1,7 @@
 ---
 description: Explains the various argument completion options available for function parameters.
 Locale: en-US
-ms.date: 01/04/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_Functions_Argument_Completion?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Argument_Completion
@@ -117,8 +117,8 @@ The **ArgumentCompleter** attribute allows you to add tab completion values to
 a specific parameter. An **ArgumentCompleter** attribute must be defined for
 each parameter that needs tab completion.
 
-To add an **ArgumentCompleter** attribute, you need to define a script block
-that determines the values. The script block must take the following
+To add an **ArgumentCompleter** attribute, you need to define a scriptblock
+that determines the values. The scriptblock must take the following
 parameters in the order specified below. The parameter's names don't matter as
 the values are provided positionally.
 
@@ -141,16 +141,16 @@ function MyArgumentCompleter {
 }
 ```
 
-### ArgumentCompleter script block
+### ArgumentCompleter scriptblock
 
-The script block parameters are set to the following values:
+The scriptblock parameters are set to the following values:
 
 - `$commandName` (Position 0) - This parameter is set to the name of the
-  command for which the script block is providing tab completion.
+  command for which the scriptblock is providing tab completion.
 - `$parameterName` (Position 1) - This parameter is set to the parameter whose
   value requires tab completion.
 - `$wordToComplete` (Position 2) - This parameter is set to value the user has
-  provided before they pressed <kbd>Tab</kbd>. Your script block should use
+  provided before they pressed <kbd>Tab</kbd>. Your scriptblock should use
   this value to determine tab completion values.
 - `$commandAst` (Position 3) - This parameter is set to the Abstract Syntax
   Tree (AST) for the current input line. For more information, see the
@@ -161,7 +161,7 @@ The script block parameters are set to the following values:
   <kbd>Tab</kbd>. For more information, see
   [about_Automatic_Variables](about_Automatic_Variables.md).
 
-The **ArgumentCompleter** script block must unroll the values using the
+The **ArgumentCompleter** scriptblock must unroll the values using the
 pipeline, such as `ForEach-Object`, `Where-Object`, or another suitable method.
 Returning an array of values causes PowerShell to treat the entire array as
 **one** tab completion value.

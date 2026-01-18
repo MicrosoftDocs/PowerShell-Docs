@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-pssession?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - ipsn
 title: Import-PSSession
 ---
-
 # Import-PSSession
 
 ## SYNOPSIS
@@ -406,7 +405,7 @@ alias, **Type**. The acceptable values for this parameter are:
 - `ExternalScript`: The `.ps1` files in the paths listed in the PATH environment variable
   (`$Env:PATH`) in the remote session.
 - `Filter` and `Function`: The Windows PowerShell functions in the remote session.
-- `Script`: The script blocks in the remote session.
+- `Script`: The script files accessible in the remote session.
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **CommandType** parameter

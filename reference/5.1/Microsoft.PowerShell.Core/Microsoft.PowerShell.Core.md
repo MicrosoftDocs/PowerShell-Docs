@@ -4,7 +4,7 @@ Help Version: 5.2.0.0
 Locale: en-US
 Module Guid: 00000000-0000-0000-0000-000000000000
 Module Name: Microsoft.PowerShell.Core
-ms.date: 05/08/2025
+ms.date: 01/18/2026
 schema: 2.0.0
 title: Microsoft.PowerShell.Core
 ---
@@ -182,7 +182,7 @@ Turns script debugging features on and off, sets the trace level, and toggles st
 Changes the properties of a registered session configuration.
 
 ### [Set-StrictMode](Set-StrictMode.md)
-Establishes and enforces coding rules in expressions, scripts, and script blocks.
+Establishes and enforces coding rules in expressions, scripts, and scriptblocks.
 
 ### [Start-Job](Start-Job.md)
 Starts a PowerShell background job.

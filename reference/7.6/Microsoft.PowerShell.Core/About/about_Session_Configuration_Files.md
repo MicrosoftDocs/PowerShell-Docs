@@ -1,7 +1,7 @@
 ---
 description: Describes session configuration files, which are used in a session configuration (also known as an endpoint) to define the environment of sessions that use the session configuration.
 Locale: en-US
-ms.date: 03/07/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Session_Configuration_Files
@@ -55,7 +55,7 @@ the modules required for those tasks; and sessions where unprivileged users
 can only run specific commands as a privileged account.
 
 In addition to that, you can manage whether users of the session can use
-PowerShell language elements such as script blocks, or whether they can only
+PowerShell language elements such as scriptblocks, or whether they can only
 run commands. You can manage the version of PowerShell users can run in the
 session; manage which modules are imported into the session; and manage which
 cmdlets, functions, and aliases session users can run. When using the

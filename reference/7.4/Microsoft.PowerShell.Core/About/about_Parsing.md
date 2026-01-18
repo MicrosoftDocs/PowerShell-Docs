@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 05/06/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Parsing
@@ -108,7 +108,7 @@ uses one of the following syntaxes:
 
 - Quotation marks (`'` and `"`) begin strings
 
-- Braces (`{}`) begin a new script blocks
+- Braces (`{}`) begin a new scriptblock
 
 - Commas (`,`) introduce lists passed as arrays, unless the command being
   called is a native application, in which case they're interpreted as part of

@@ -2,11 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - nmo
+- nmo
 title: New-Module
 ---
 # New-Module
@@ -32,7 +32,7 @@ New-Module [-Name] <String> [-ScriptBlock] <ScriptBlock> [-Function <String[]>] 
 
 ## DESCRIPTION
 
-The `New-Module` cmdlet creates a dynamic module from a script block. The members of the dynamic
+The `New-Module` cmdlet creates a dynamic module from a scriptblock. The members of the dynamic
 module, such as functions and variables, are immediately available in the session and remain
 available until you close the session.
 
@@ -238,10 +238,10 @@ Piping `$m` to the `Get-Member` cmdlet displays the properties and methods of th
 output shows that the object has script methods that represent the `Hello` and `Goodbye` functions.
 Finally, we call these script methods and display the results.
 
-### Example 6: Get the results of the script block
+### Example 6: Get the results of the scriptblock
 
-This example uses the **ReturnResult** parameter to request the results of running the script block
-instead of requesting a module object. The script block in the new module defines the `SayHello`
+This example uses the **ReturnResult** parameter to request the results of running the scriptblock
+instead of requesting a module object. The scriptblock in the new module defines the `SayHello`
 function and then calls the function.
 
 ```powershell
@@ -256,7 +256,7 @@ Hello, World!
 
 ### -ArgumentList
 
-Specifies an array of arguments which are parameter values that are passed to the script block. For
+Specifies an array of arguments which are parameter values that are passed to the scriptblock. For
 more information about the behavior of **ArgumentList**, see [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
 ```yaml
@@ -298,7 +298,7 @@ Specifies an array of cmdlets that this cmdlet exports from the module into the 
 Enter a comma-separated list of cmdlets. Wildcard characters are permitted. By default, all cmdlets
 in the module are exported.
 
-You cannot define cmdlets in a script block, but a dynamic module can include cmdlets if it imports
+You cannot define cmdlets in a scriptblock, but a dynamic module can include cmdlets if it imports
 the cmdlets from a binary module.
 
 ```yaml
@@ -352,7 +352,7 @@ Accept wildcard characters: False
 
 ### -ReturnResult
 
-Indicates that this cmdlet runs the script block and returns the script block results instead of
+Indicates that this cmdlet runs the scriptblock and returns the scriptblock results instead of
 returning a module object.
 
 ```yaml
@@ -370,7 +370,7 @@ Accept wildcard characters: False
 ### -ScriptBlock
 
 Specifies the contents of the dynamic module. Enclose the contents in braces (`{}`) to create a
-script block. This parameter is required.
+scriptblock. This parameter is required.
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -409,8 +409,8 @@ If you use the **AsCustomObject** parameter, it generates a **PSCustomObject** o
 
 ### System.Object
 
-If you use the **ReturnResult** parameter, this cmdlet returns the result of evaluating the script
-block in the dynamic module.
+If you use the **ReturnResult** parameter, this cmdlet returns the result of evaluating the
+scriptblock in the dynamic module.
 
 ## NOTES
 

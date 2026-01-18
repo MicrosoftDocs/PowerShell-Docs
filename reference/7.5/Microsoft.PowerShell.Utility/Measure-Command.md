@@ -2,16 +2,15 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
 ---
-
 # Measure-Command
 
 ## SYNOPSIS
-Measures the time it takes to run script blocks and cmdlets.
+Measures the time it takes to run scriptblocks and cmdlets.
 
 ## SYNTAX
 
@@ -21,11 +20,11 @@ Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonPa
 
 ## DESCRIPTION
 
-The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the
+The `Measure-Command` cmdlet runs a scriptblock or cmdlet internally, times the execution of the
 operation, and returns the execution time.
 
 > [!NOTE]
-> Script blocks run by `Measure-Command` run in the current scope, not a child scope.
+> scriptblocks run by `Measure-Command` run in the current scope, not a child scope.
 
 ## EXAMPLES
 
@@ -87,8 +86,8 @@ TotalMilliseconds : 1140.9189
 
 ### Example 3: Piping input to Measure-Command
 
-Objects that are piped to `Measure-Command` are available to the script block that is passed to the
-**Expression** parameter. The script block is executed once for each object on the pipeline.
+Objects that are piped to `Measure-Command` are available to the scriptblock that is passed to the
+**Expression** parameter. The scriptblock is executed once for each object on the pipeline.
 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
@@ -141,8 +140,8 @@ TotalMilliseconds : 11.3745
 
 ### Example 5: Measuring execution in a child scope
 
-`Measure-Command` runs the script block in the current scope, so the script block can modify values
-in the current scope. To avoid changes to the current scope, you must wrap the script block in
+`Measure-Command` runs the scriptblock in the current scope, so the scriptblock can modify values
+in the current scope. To avoid changes to the current scope, you must wrap the scriptblock in
 braces (`{}`) and use the invocation operator (`&`) to execute the block in a child scope.
 
 ```powershell
@@ -181,8 +180,8 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Objects bound to the **InputObject** parameter are optional input for the script block passed to the
-**Expression** parameter. Inside the script block, `$_` can be used to reference the current object
+Objects bound to the **InputObject** parameter are optional input for the scriptblock passed to the
+**Expression** parameter. Inside the scriptblock, `$_` can be used to reference the current object
 in the pipeline.
 
 ```yaml

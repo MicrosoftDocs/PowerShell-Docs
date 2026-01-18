@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/06/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
 ---
-
 # Add-Member
 
 ## SYNOPSIS
@@ -145,7 +144,7 @@ size to the nearest MegaByte. The second command creates a **ScriptBlock** that 
 static method from the `[Math]` type to round the file size to the second decimal place.
 
 The **Value** parameter also uses the `$this` automatic variable, which represents the current
-object. The `$this` variable is valid only in script blocks that define new properties and methods.
+object. The `$this` variable is valid only in scriptblocks that define new properties and methods.
 
 The last command uses dot notation to call the new **SizeInMB** script method on the object in the
 `$A` variable.
@@ -212,13 +211,21 @@ In this example we create a custom object that contains two **NoteProperty** mem
 property is a string.
 
 ```powershell
-PS> $obj = [pscustomobject]@{
-      Name = 'Doris'
-      Age = '20'
+$user = [pscustomobject]@{
+    Name = 'Doris'
+    Age = '20'
 }
-PS> $obj | Add-Member -MemberType AliasProperty -Name 'IntAge' -Value Age -SecondValue uint32
-PS> $obj | Get-Member
+$addMemberSplat = @{
+    MemberType = 'AliasProperty'
+    Name = 'IntAge'
+    Value = 'Age'
+    SecondValue = 'UInt32'
+}
+$user | Add-Member @addMemberSplat
+$user | Get-Member
+```
 
+```Output
    TypeName: System.Management.Automation.PSCustomObject
 
 Name        MemberType    Definition
@@ -230,7 +237,9 @@ GetType     Method        type GetType()
 ToString    Method        string ToString()
 Age         NoteProperty  string Age=20
 Name        NoteProperty  string Name=Doris
+```
 
+```powershell
 PS> $obj
 
 Name   : Doris
@@ -491,7 +500,7 @@ accessor. Use the `GetMethod()` method of a type reference to get a reference to
 method must take a single parameter that's a **PSObject**. The **Get** accessor is assigned using
 the **Value** parameter.
 
-For a **ScriptProperty**, the value must be a script block that implements a **Set** accessor. The
+For a **ScriptProperty**, the value must be a scriptblock that implements a **Set** accessor. The
 **Get** accessor is assigned using the **Value** parameter.
 
 ```yaml
@@ -541,8 +550,8 @@ parameter.
   accessor. Use the `GetMethod()` method of a type reference to get a reference to a method.
   reference. The method must take a single parameter that's a **PSObject**. The **Set** accessor is
   assigned using the **SecondValue** parameter.
-- For a **ScriptMethod**, the value must be a script block.
-- For a **ScriptProperty**, the value must be a script block that implements a **Get** accessor. The
+- For a **ScriptMethod**, the value must be a scriptblock.
+- For a **ScriptProperty**, the value must be a scriptblock that implements a **Get** accessor. The
   **Set** accessor is assigned using the **SecondValue** parameter.
 
 ```yaml
@@ -562,7 +571,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -595,7 +604,7 @@ If you omit the parameter names, the unnamed parameter values must appear in thi
 
 If you include the parameter names, the parameters can appear in any order.
 
-You can use the `$this` automatic variable in script blocks that define the values of new properties
+You can use the `$this` automatic variable in scriptblocks that define the values of new properties
 and methods. The `$this` variable refers to the instance of the object to which the properties and
 methods are being added. For more information about the `$this` variable, see
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
@@ -612,4 +621,4 @@ methods are being added. For more information about the `$this` variable, see
 
 [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 
-[System.Type.GetMethod()](/dotnet/api/system.type.getmethod)
+[System.Type.GetMethod()](xref:System.Type.GetMethod%2A)

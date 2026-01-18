@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-list?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - fl
 title: Format-List
 ---
-
 # Format-List
 
 ## SYNOPSIS
@@ -182,10 +181,10 @@ property of the output. The **GroupBy** parameter expects that the objects are s
 `Sort-Object` cmdlet before using `Format-List` to group the objects.
 
 The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
-be a script block or a hash table. Valid key-value pairs are:
+be a scriptblock or a hash table. Valid key-value pairs are:
 
 - `Name` (or `Label`) - `<string>`
-- `Expression` - `<string>` or `<script block>`
+- `Expression` - `<string>` or `<scriptblock>`
 - `FormatString` - `<string>`
 
 For more information, see
@@ -233,7 +232,7 @@ The value of the **Property** parameter can be a new calculated property. The ca
 can be a script block or a hash table. Valid key-value pairs are:
 
 - `Name` (or `Label`) - `<string>`
-- `Expression` - `<string>` or `<script block>`
+- `Expression` - `<string>` or `<scriptblock>`
 - `FormatString` - `<string>`
 
 For more information, see

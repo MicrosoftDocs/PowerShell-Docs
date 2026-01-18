@@ -2,12 +2,11 @@
 external help file: System.Management.Automation.dll-help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/15/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/add-history?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-History
 ---
-
 # Add-History
 
 ## SYNOPSIS
@@ -64,7 +63,9 @@ This example imports commands from the `History.xml` file, adds them to the curr
 and then runs the commands in the combined history.
 
 ```powershell
-Import-Clixml -Path C:\temp\history.xml | Add-History -PassThru | ForEach-Object -Process {Invoke-History}
+Import-Clixml -Path C:\temp\history.xml |
+    Add-History -PassThru |
+    ForEach-Object -Process {Invoke-History}
 ```
 
 The first command uses the `Import-Clixml` cmdlet to import a command history that was exported to
@@ -73,7 +74,7 @@ adds the commands to the current session history. The **PassThru** parameter pas
 representing the added commands down the pipeline.
 
 The command then uses the `ForEach-Object` cmdlet to apply the `Invoke-History` command to each of
-the commands in the combined history. The `Invoke-History` command is formatted as a script block,
+the commands in the combined history. The `Invoke-History` command is formatted as a scriptblock,
 enclosed in braces (`{}`), as required by the **Process** parameter of the `ForEach-Object` cmdlet.
 
 ### Example 3: Add commands in the history to the end of the history
@@ -122,9 +123,9 @@ PowerShell. The `Add-History` cmdlet then adds the commands in the file to the s
 
 ### -InputObject
 
-Specifies an array of entries to add to the history as **HistoryInfo** object to the session history.
-You can use this parameter to submit a **HistoryInfo** object, such as the ones that are returned by
-the `Get-History`, `Import-Clixml`, or `Import-Csv` cmdlets, to `Add-History`.
+Specifies an array of entries to add to the history as **HistoryInfo** object to the session
+history. You can use this parameter to submit a **HistoryInfo** object, such as the ones that are
+returned by the `Get-History`, `Import-Clixml`, or `Import-Csv` cmdlets, to `Add-History`.
 
 ```yaml
 Type: System.Management.Automation.PSObject[]

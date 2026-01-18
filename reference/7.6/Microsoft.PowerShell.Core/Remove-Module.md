@@ -2,11 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 07/10/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/remove-module?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - rmo
+- rmo
 title: Remove-Module
 ---
 # Remove-Module
@@ -126,9 +126,9 @@ $registerEngineEventSplat = @{
 Register-EngineEvent @registerEngineEventSplat
 ```
 
-The `$OnRemoveScript` variable contains the script block that cleans up the resources. You register
-the script block by assigning it to `$ExecutionContext.SessionState.Module.OnRemove`. You can also
-use `Register-EngineEvent` to have the script block execute when the PowerShell session ends.
+The `$OnRemoveScript` variable contains the scriptblock that cleans up the resources. You register
+the scriptblock by assigning it to `$ExecutionContext.SessionState.Module.OnRemove`. You can also
+use `Register-EngineEvent` to have the scriptblock execute when the PowerShell session ends.
 
 For script-based modules, you would add this code to the `.psm1` file or put it in a startup script
 that is listed in the **ScriptsToProcess** property of the module manifest.

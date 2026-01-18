@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
@@ -86,8 +86,8 @@ progress bar.
 The `Write-Progress` command for the second progress bar includes the **Id** parameter that
 distinguishes it from the first progress bar.
 
-Without the **Id** parameter, the progress bars would be superimposed on each other instead of being
-displayed one below the other.
+Without the **Id** parameter, the progress bars would be superimposed on each other instead of
+being displayed one below the other.
 
 ### Example 3: Display the progress while searching for a string
 
@@ -103,7 +103,7 @@ $Events | ForEach-Object -Begin {
     # Set the $out variable to an empty string.
     $out = ""
 } -Process {
-    # In the Process script block search the message property of each incoming object for "bios".
+    # In the Process scriptblock search the message property of each incoming object for "bios".
     if($_.Message -like "*bios*")
     {
         # Append the matching message to the out variable.
@@ -230,8 +230,8 @@ Accept wildcard characters: False
 
 ### -ParentId
 
-Specifies the parent activity of the current activity. Use the value `-1` if the current activity has
-no parent activity.
+Specifies the parent activity of the current activity. Use the value `-1` if the current activity
+has no parent activity.
 
 ```yaml
 Type: System.Int32

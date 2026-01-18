@@ -2,9 +2,9 @@
 external help file: Microsoft.Management.Infrastructure.CimCmdlets.dll-Help.xml
 Locale: en-US
 Module Name: CimCmdlets
-ms.date: 01/16/2026
+ms.date: 01/18/2026
 no-loc: [-Forward]
-online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-7.4&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - rcie
@@ -98,7 +98,7 @@ Register-CimIndicationEvent -Query $query -SourceIdentifier "Timer"
 ### Example 3: Run a script when the event arrives
 
 This example shows how to use an action in response to an event. The variable `$action` holds the
-script block for **Action**, which uses the `$Event` variable to access the event received from CIM.
+scriptblock for **Action**, which uses the `$Event` variable to access the event received from CIM.
 
 ```powershell
 $action = {
@@ -139,11 +139,11 @@ Get-Event -SourceIdentifier "ProcessStarted"
 
 Specifies the commands that handle the events. The commands specified by this parameter run when an
 event is raised, instead of sending the event to the event queue. Enclose the commands in braces
-(`{}`) to create a script block.
+(`{}`) to create a scriptblock.
 
-The script block specified with **Action** can include the `$Event`, `$EventSubscriber`, `$Sender`,
+The scriptblock specified with **Action** can include the `$Event`, `$EventSubscriber`, `$Sender`,
 `$SourceEventArgs`, and `$SourceArgs` automatic variables, which provide information about the event
-to the **Action** script block. For more information, see
+to the **Action** scriptblock. For more information, see
 [About Automatic Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ```yaml
@@ -428,3 +428,6 @@ This cmdlet is only available on Windows platforms.
 [New-CimSession](New-CimSession.md)
 
 [about_WQL](../Microsoft.PowerShell.Core/About/about_WQL.md)
+
+
+

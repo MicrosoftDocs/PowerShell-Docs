@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/23/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -251,8 +251,8 @@ particular version of Windows.
 Starting in Windows PowerShell 3.0, there are two different ways to construct a `Where-Object`
 command.
 
-- **Script block syntax**. You can use a script block to specify the property name, a comparison operator,
-  and a property value. `Where-Object` returns all objects for which the script block statement is
+- **Scriptblock syntax**. You can use a scriptblock to specify the property name, a comparison operator,
+  and a property value. `Where-Object` returns all objects for which the scriptblock statement is
   true.
 
   For example, the following command gets processes where the value of the **PriorityClass**
@@ -260,12 +260,12 @@ command.
 
   `Get-Process | Where-Object {$_.PriorityClass -eq "Normal"}`
 
-  All PowerShell comparison operators are valid in the script block format. For more information,
+  All PowerShell comparison operators are valid in the scriptblock format. For more information,
   see [about_Comparison_Operators](./About/about_Comparison_Operators.md).
 
 - **Simplified syntax**. To enable the simiplified syntax, `Where-Object` includes 31 switch
   parameters that represent the comparison operators. The simplified syntax is easier to read and
-  write than the script block syntax. You can combine one of the switch parameters with the
+  write than the scriptblock syntax. You can combine one of the switch parameters with the
   **Property** and **Value** parameters to create a command that filters objects based on the
   values of their properties.
 
@@ -303,7 +303,7 @@ For more information about how PowerShell evaluates booleans, see
 These commands get a list of all services that are stopped. The `$_` automatic variable represents
 each object that's passed to the `Where-Object` cmdlet.
 
-The first command uses the script block format, the second command uses the comparison statement
+The first command uses the scriptblock format, the second command uses the comparison statement
 format. The commands filter the services the same way and return the same output. Only the syntax
 is different.
 
@@ -357,7 +357,7 @@ Get-Process | where Handles -GE 1000
 ### Example 5: Get commands based on properties
 
 This example shows how to write commands that return items that are true or false or have any value
-for a specified property. Each example shows both the script block and comparison statement formats
+for a specified property. Each example shows both the scriptblock and comparison statement formats
 for the command.
 
 The commands filter their input the same way and return the same output. Only the syntax is
@@ -404,8 +404,8 @@ names don't begin with `Microsoft` or `PS`, and have a value for the **HelpInfoU
 which tells PowerShell where to find updated help files for the module. The `-and` logical operator
 connects the comparison statements.
 
-The example uses the script block command format. Logical operators, such as `-and`,`-or`, and
-`-not` are valid only in script blocks. You can't use them in the comparison statement format of a
+The example uses the scriptblock command format. Logical operators, such as `-and`,`-or`, and
+`-not` are valid only in scriptblocks. You can't use them in the comparison statement format of a
 `Where-Object` command.
 
 - For more information about PowerShell logical operators, see
@@ -762,7 +762,7 @@ Accept wildcard characters: False
 
 ### -FilterScript
 
-Specifies the script block that's used to filter the objects. Enclose the script block in braces
+Specifies the scriptblock that's used to filter the objects. Enclose the scriptblock in braces
 (`{}`).
 
 The parameter name, **FilterScript**, is optional.

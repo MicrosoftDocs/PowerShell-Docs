@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 07/30/2020
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/register-wmievent?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-WmiEvent
@@ -86,7 +86,7 @@ any `Start-Process` commands in the current session are written to an XML file.
 
 ```powershell
 $action = {
-    Get-History | 
+    Get-History |
     Where-Object { $_.CommandLine -like "*Start-Process*" } |
     Export-CliXml "commandHistory.clixml"
 }

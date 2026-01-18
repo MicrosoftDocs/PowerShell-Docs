@@ -1,12 +1,11 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 02/25/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
 ---
-
 # about_Functions_Advanced_Parameters
 
 ## Short description
@@ -31,7 +30,7 @@ functions. For more information, see [about_Functions][14] and
 ## Parameter declaration
 
 Parameters are variables declared in the `param()` statement of a function or
-script block. You can use the optional `[Parameter()]` attribute alone or in
+scriptblock. You can use the optional `[Parameter()]` attribute alone or in
 combination with the `[Alias()]` attribute or any of the parameter validation
 attributes.
 
@@ -561,14 +560,14 @@ Saw that ComputerName was 'HelloWorld'
 
 > [!NOTE]
 > A typed parameter that accepts pipeline input (`by Value`) or
-> (`by PropertyName`) enables use of _delay-bind_ script blocks on the
+> (`by PropertyName`) enables use of _delay-bind_ scriptblocks on the
 > parameter.
 >
-> The _delay-bind_ script block is run automatically during
+> The _delay-bind_ scriptblock is run automatically during
 > **ParameterBinding**. The result is bound to the parameter. Delay binding
 > doesn't work for parameters defined as type **ScriptBlock** or
-> **System.Object**. The script block is passed through _without_ being
-> invoked. For more information about _delay-bind_ script blocks, see
+> **System.Object**. The scriptblock is passed through _without_ being
+> invoked. For more information about _delay-bind_ scriptblocks, see
 > [about_Script_Blocks][16].
 
 #### ValueFromRemainingArguments argument
@@ -1273,7 +1272,7 @@ True
 [13]: about_Functions_OutputTypeAttribute.md
 [14]: about_Functions.md
 [15]: about_parameter_sets.md
-[16]: about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters
+[16]: about_Script_Blocks.md#using-delay-bind-scriptblocks-with-parameters
 [17]: about_Splatting.md
 [18]: about_Tab_Expansion.md
 [19]: about_Wildcards.md

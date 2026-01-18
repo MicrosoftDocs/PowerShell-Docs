@@ -2,7 +2,7 @@
 description: About topics cover a range of concepts about PowerShell.
 Help Version: 6.0
 Locale: en-US
-ms.date: 04/01/2025
+ms.date: 01/18/2026
 title: About topics
 ---
 # About topics
@@ -496,7 +496,7 @@ special meaning in PowerShell.
 
 ### [about_Return](about_Return.md)
 
-Exits the current scope, which can be a function, script, or script block.
+Exits the current scope, which can be a function, script, or scriptblock.
 
 ### [about_Run_With_PowerShell](about_Run_With_PowerShell.md)
 
@@ -510,7 +510,7 @@ scope of elements.
 
 ### [about_Script_Blocks](about_Script_Blocks.md)
 
-Defines what a script block is and explains how to use script blocks in the
+Defines what a scriptblock is and explains how to use scriptblocks in the
 PowerShell programming language.
 
 ### [about_Script_Internationalization](about_Script_Internationalization.md)
@@ -655,3 +655,6 @@ manageable components of the modern enterprise.
 
 Describes WMI Query Language (WQL), which can be used to get WMI objects in
 Windows PowerShell.
+
+
+

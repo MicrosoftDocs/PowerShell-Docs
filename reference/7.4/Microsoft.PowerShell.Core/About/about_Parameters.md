@@ -1,7 +1,7 @@
 ---
 description: Describes how to work with command parameters in PowerShell.
 Locale: en-US
-ms.date: 09/28/2021
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Parameters
@@ -211,16 +211,16 @@ has a property called **Name**.
 
 > [!NOTE]
 > A typed parameter that accepts pipeline input (`by Value`) or
-> (`by PropertyName`) enables use of **delay-bind** script blocks on the
+> (`by PropertyName`) enables use of **delay-bind** scriptblocks on the
 > parameter.
 >
-> The **delay-bind** script block is run automatically during
+> The **delay-bind** scriptblock is run automatically during
 > **ParameterBinding**. The result is bound to the parameter. Delay binding
 > does **not** work for parameters defined as type `ScriptBlock` or
-> `System.Object`, the script block is passed through
+> `System.Object`, the scriptblock is passed through
 > **without** being invoked.
 >
-> You can read about **delay-bind** script blocks here
+> You can read about **delay-bind** scriptblocks here
 > [about_Script_Blocks.md](about_Script_Blocks.md)
 
 #### Accepts Wildcard Characters

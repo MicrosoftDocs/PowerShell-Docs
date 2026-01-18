@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-winevent?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-WinEvent
 ---
-
 # Get-WinEvent
 
 ## SYNOPSIS
@@ -254,10 +253,9 @@ Circular           15532032        5309 Application Server03
 ```
 
 The variable `$S` stores the names three servers: **Server01**, **Server02**, and **Server03**. The
-`foreach` statement uses a loop to process each server, `($Server in $S)`. The script block in the
-curly braces (`{ }`) runs the `Get-WinEvent` command. The **ListLog** parameter specifies the
-**Application** log. The **ComputerName** parameter uses the variable `$Server` to get log
-information from each server.
+`foreach` statement uses a loop to process each server, `($Server in $S)`. The `foreach` statement
+block runs the `Get-WinEvent` command. The **ListLog** parameter specifies the **Application** log.
+The **ComputerName** parameter uses the variable `$Server` to get log information from each server.
 
 The objects are sent down the pipeline to the `Select-Object` cmdlet. `Select-Object` gets the
 properties **LogMode**, **MaximumSizeInBytes**, **RecordCount**, **LogName**, and uses a calculated
@@ -532,13 +530,13 @@ Get-WinEvent -Path 'C:\Tracing\TraceLog.etl', 'C:\Test\Windows PowerShell.evtx' 
 The `Get-WinEvent` cmdlet gets log information from the archived files. The **Path** parameter uses
 a comma-separated list to specify each files directory and file name. The **Oldest** parameter is
 used to output events in the order they're written, oldest to newest. The objects are sent down the
-pipeline to the `Where-Object` cmdlet. `Where-Object` uses a script block to find events with an
+pipeline to the `Where-Object` cmdlet. `Where-Object` uses a scriptblock to find events with an
 **Id** of **403**. The `$_` variable represents the current object in the pipeline and **Id** is the
 Event Id property.
 
 ### Example 16: Filter event log results
 
-This example shows a variety of methods to filter and select events from an event log. All of these
+This example shows a variety of methods to filter and select events from an event log. All these
 commands get events that occurred in the last 24-hours from the **Windows PowerShell** event log.
 The filter methods are more efficient than using the `Where-Object` cmdlet. Filters are applied as
 the objects are retrieved. `Where-Object` retrieves all of the objects, then applies filters to all

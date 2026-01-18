@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/format-list?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - fl
 title: Format-List
 ---
-
 # Format-List
 
 ## SYNOPSIS
@@ -19,7 +18,8 @@ Formats the output as a list of properties in which each property appears on a n
 
 ```
 Format-List [[-Property] <Object[]>] [-GroupBy <Object>] [-View <string>] [-ShowError]
- [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>] [<CommonParameters>]
+ [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -94,12 +94,12 @@ The following examples show of the results of adding the **DisplayError** or **S
 parameters with an expression.
 
 ```powershell
-PC /> Get-Date | Format-List DayOfWeek,{ $_ / $null } -DisplayError
+PC /> Get-Date | Format-List DayOfWeek, { $_ / $null } -DisplayError
 
 DayOfWeek    : Friday
  $_ / $null  : #ERR
 
-PC /> Get-Date | Format-List DayOfWeek,{ $_ / $null } -ShowError
+PC /> Get-Date | Format-List DayOfWeek, { $_ / $null } -ShowError
 
 DayOfWeek    : Friday
  $_ / $null  :
@@ -181,10 +181,10 @@ property of the output. The **GroupBy** parameter expects that the objects are s
 `Sort-Object` cmdlet before using `Format-List` to group the objects.
 
 The value of the **GroupBy** parameter can be a new calculated property. The calculated property can
-be a script block or a hash table. Valid key-value pairs are:
+be a scriptblock or a hash table. Valid key-value pairs are:
 
 - `Name` (or `Label`) - `<string>`
-- `Expression` - `<string>` or `<script block>`
+- `Expression` - `<string>` or `<scriptblock>`
 - `FormatString` - `<string>`
 
 For more information, see
@@ -232,7 +232,7 @@ The value of the **Property** parameter can be a new calculated property. The ca
 can be a script block or a hash table. Valid key-value pairs are:
 
 - `Name` (or `Label`) - `<string>`
-- `Expression` - `<string>` or `<script block>`
+- `Expression` - `<string>` or `<scriptblock>`
 - `FormatString` - `<string>`
 
 For more information, see
@@ -341,11 +341,11 @@ parameter under any of the following conditions:
 
   - The wrapper types include:
 
-    - [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
-    - [System.Management.Automation.WarningRecord](/dotnet/api/System.Management.Automation.WarningRecord)
-    - [System.Management.Automation.VerboseRecord](/dotnet/api/System.Management.Automation.VerboseRecord)
-    - [System.Management.Automation.DebugRecord](/dotnet/api/System.Management.Automation.DebugRecord)
-    - [System.Management.Automation.InformationRecord](/dotnet/api/System.Management.Automation.InformationRecord)
+    - [System.Management.Automation.ErrorRecord](xref:System.Management.Automation.ErrorRecord)
+    - [System.Management.Automation.WarningRecord](xref:System.Management.Automation.WarningRecord)
+    - [System.Management.Automation.VerboseRecord](xref:System.Management.Automation.VerboseRecord)
+    - [System.Management.Automation.DebugRecord](xref:System.Management.Automation.DebugRecord)
+    - [System.Management.Automation.InformationRecord](xref:System.Management.Automation.InformationRecord)
 
 ## RELATED LINKS
 

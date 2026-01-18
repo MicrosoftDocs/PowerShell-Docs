@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Split operator to split one or more strings into substrings.
 Locale: en-US
-ms.date: 01/09/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
@@ -19,7 +19,7 @@ The Split operator splits one or more strings into substrings. You can
 change the following elements of the Split operation:
 
 - Delimiter. The default is whitespace, but you can specify characters,
-  strings, patterns, or script blocks that specify the delimiter. The Split
+  strings, patterns, or scriptblocks that specify the delimiter. The Split
   operator in PowerShell uses a regular expression in the delimiter,
   rather than a simple character.
 - Maximum number of substrings. The default is to return all substrings. If
@@ -43,7 +43,7 @@ values. The values must appear in the order specified in the syntax diagram.
 ```
 
 You can substitute `-isplit` or `-csplit` for `-split` in any binary Split
-statement (a Split statement that includes a delimiter or script block). The
+statement (a Split statement that includes a delimiter or scriptblock). The
 `-isplit` and `-split` operators are case-insensitive. The `-csplit` operator
 is case-sensitive, meaning that case is considered when the delimiter rules
 are applied.
@@ -184,7 +184,7 @@ Neptune
 ### \<ScriptBlock\>
 
 An expression that specifies rules for applying the delimiter. The expression
-must evaluate to $true or $false. Enclose the script block in braces.
+must evaluate to $true or $false. Enclose the scriptblock in braces.
 
 Example:
 

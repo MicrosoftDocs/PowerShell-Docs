@@ -1,7 +1,7 @@
 ---
 description: Describes how to set custom default values for cmdlet parameters and advanced functions.
 Locale: en-US
-ms.date: 01/02/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parameters_default_values?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Parameters_Default_Values
@@ -55,8 +55,8 @@ name must match the name as reported by
 > aliases.
 
 The _value_ can be an object of a type that's compatible with the parameter or
-a **ScriptBlock** that returns such a value. When the value is a script block,
-PowerShell evaluates the script block and uses the result for the parameter
+a **ScriptBlock** that returns such a value. When the value is a scriptblock,
+PowerShell evaluates the scriptblock and uses the result for the parameter
 value. If the specified parameter expects a **ScriptBlock** type, you must
 enclose the value in another set of braces. When PowerShell evaluates the outer
 **ScriptBlock**, the result is the inner **ScriptBlock**. The inner
@@ -156,10 +156,10 @@ PS> $PSDefaultParameterValues.'Get-*:Verbose' # member access notation
 True
 ```
 
-### Use a script block for the default value
+### Use a scriptblock for the default value
 
-You can use a script block to specify different default values for a parameter
-under different conditions. PowerShell evaluates the script block and uses the
+You can use a scriptblock to specify different default values for a parameter
+under different conditions. PowerShell evaluates the scriptblock and uses the
 result as the default parameter value.
 
 The `Format-Table:AutoSize` key sets that switch parameter to a default value

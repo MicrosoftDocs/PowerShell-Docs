@@ -1,7 +1,7 @@
 ---
 description: This article contains the list of changes for each released version of PSReadLine.
 Locale: en-US
-ms.date: 09/02/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_release_notes?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Release_Notes

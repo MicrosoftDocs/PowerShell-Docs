@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/19/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/join-string?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Join-String
 ---
-
 # Join-String
 
 ## SYNOPSIS
@@ -61,7 +60,7 @@ default separator `$OFS`.
 By specifying a property name, the property's value is converted to a string and joined into a
 string.
 
-Instead of a property name, a script block can be used. The script block's result is converted to a
+Instead of a property name, a scriptblock can be used. The scriptblock's result is converted to a
 string before it's joined to form the result. It can either combine the text of an object's property
 or the result of the object that was converted to a string.
 
@@ -108,7 +107,7 @@ Get-ChildItem -Directory C:\ | Join-String -Property {$_.Name.SubString(0,4)} -S
 `Get-ChildItem` uses the **Directory** parameter to get all the directory names for the `C:\` drive.
 The objects are sent down the pipeline to `Join-String`.
 
-The **Property** parameter script block uses automatic variable (`$_`) to specify each object's
+The **Property** parameter scriptblock uses automatic variable (`$_`) to specify each object's
 **Name** property substring. The substring gets the first four letters of each directory name. The
 substring specifies the character start and end positions. The **SingleQuote** parameter wraps the
 directory names with single-quote marks. The **Separator** parameter specifies to use a semicolon

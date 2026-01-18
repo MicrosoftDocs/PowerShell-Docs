@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/15/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - epsn
 title: Export-PSSession
 ---
-
 # Export-PSSession
 
 ## SYNOPSIS
@@ -71,8 +70,23 @@ formatting data into the Server01 module.
 This example exports all of the `Get` and `Set` commands from a server.
 
 ```powershell
-$S = New-PSSession -ConnectionUri https://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
-Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $PSHOME\Modules\Exchange -Encoding ascii
+$newSession = @{
+    ConnectionUri = 'https://exchange.microsoft.com/mailbox'
+    Credential = 'exchangeadmin01@hotmail.com'
+    Authentication = 'Negotiate'
+}
+$S = New-PSSession @newSession
+
+$exportSession = @{
+    Session = $S
+    Module = 'exch*'
+    CommandName = 'Get-*', 'Set-*'
+    FormatTypeName = '*'
+    OutputModule = "$PSHOME\Modules\Exchange"
+    Encoding = 'ascii'
+}
+
+Export-PSSession @exportSession
 ```
 
 These commands export the `Get` and `Set` commands from a Microsoft Exchange Server snap-in on a
@@ -87,8 +101,21 @@ the local computer. The cmdlets from the module are added to the current session
 be used.
 
 ```powershell
-$S = New-PSSession -ComputerName Server01 -Credential Server01\User01
-Export-PSSession -Session $S -OutputModule TestCmdlets -Type Cmdlet -CommandName *test* -FormatTypeName *
+$newSession = @{
+    ComputerName = 'Server01'
+    Credential = 'Server01\User01'
+}
+$S = New-PSSession @newSession
+
+$exportSession = @{
+    Session = $S
+    OutputModule = 'TestCmdlets'
+    Type = 'Cmdlet'
+    CommandName = '*test*'
+    FormatTypeName = '*'
+}
+Export-PSSession @exportSession
+
 Remove-PSSession $S
 Import-Module TestCmdlets
 Get-Help Test*
@@ -265,7 +292,7 @@ The acceptable values for this parameter are as follows:
 - `ExternalScript`: All `.ps1` files in the paths listed in the PATH environment variable
   (`$Env:PATH`).
 - `Filter` and `Function`: All PowerShell functions.
-- `Script` Script blocks in the current session.
+- `Script` Script files accessible in the current session.
 - `Workflow` A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
@@ -309,7 +336,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.
