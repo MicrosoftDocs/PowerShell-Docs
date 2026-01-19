@@ -48,6 +48,9 @@ The **TypeNames** property contains the original type name prefixed with `Deseri
 `Import-Clixml` uses the byte-order-mark (BOM) to detect the encoding format of the file. If the
 file has no BOM, it assumes the encoding is UTF8.
 
+> [!NOTE]
+>**Scriptblocks** are always deserialized to **strings** due to security concerns regarding automatic code execution.
+
 For more information about CLI, see
 [Language independence](/dotnet/standard/language-independence).
 
