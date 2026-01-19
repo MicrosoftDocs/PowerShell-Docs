@@ -2,14 +2,13 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/29/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - sajb
+- sajb
 title: Start-Job
 ---
-
 # Start-Job
 
 ## SYNOPSIS
@@ -187,7 +186,7 @@ Start-Job -Name GetMappingFiles -InitializationScript {Import-Module -Name MapFu
 ```
 
 `Start-Job` uses the **Name** parameter to specify a friendly job name, **GetMappingFiles**. The
-**InitializationScript** parameter runs a script block that imports the **MapFunctions** module. The
+**InitializationScript** parameter runs a scriptblock that imports the **MapFunctions** module. The
 **ScriptBlock** parameter runs `Get-Map` and `Set-Content` saves the data in the location specified
 by the **Path** parameter. The **RunAs32** parameter runs the process as 32-bit, even on a 64-bit
 operating system.
@@ -385,7 +384,7 @@ the script or use the pipeline to send a script path to `Start-Job`. The script 
 computer or in a folder that the local computer can access.
 
 When you use this parameter, PowerShell converts the contents of the specified script file to a
-script block and runs the script block as a background job.
+scriptblock and runs the scriptblock as a background job.
 
 ```yaml
 Type: System.String
@@ -401,7 +400,7 @@ Accept wildcard characters: False
 
 ### -InitializationScript
 
-Specifies commands that run before the job starts. To create a script block, enclose the commands in
+Specifies commands that run before the job starts. To create a scriptblock, enclose the commands in
 curly braces (`{}`).
 
 Use this parameter to prepare the session in which the job runs. For example, you can use it to add
@@ -523,7 +522,7 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run in the background job. To create a script block, enclose the commands
+Specifies the commands to run in the background job. To create a scriptblock, enclose the commands
 in curly braces (`{}`). Use the `$input` automatic variable to access the value of the
 **InputObject** parameter. This parameter is required.
 

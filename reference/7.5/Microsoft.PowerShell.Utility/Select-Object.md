@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/03/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - select
 title: Select-Object
 ---
-
 # Select-Object
 
 ## SYNOPSIS
@@ -356,11 +355,11 @@ This example demonstrates the side-effect of using the **ExpandProperty** parame
 
 ```powershell
 PS> $object = [pscustomobject]@{
-        name = 'USA'
-        children = [pscustomobject]@{
-            name = 'Southwest'
-        }
+    name = 'USA'
+    children = [pscustomobject]@{
+        name = 'Southwest'
     }
+}
 PS> $object
 
 name children
@@ -612,7 +611,7 @@ property, use a hash table.
 Valid keys are:
 
 - Name (or Label) - `<string>`
-- Expression - `<string>` or `<script block>`
+- Expression - `<string>` or `<scriptblock>`
 
 For more information, see
 [about_Calculated_Properties](../Microsoft.PowerShell.Core/About/about_Calculated_Properties.md).

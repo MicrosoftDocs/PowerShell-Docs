@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the `pwsh` command-line interface. Displays the command-line parameters and describes the syntax.
 Locale: en-US
-ms.date: 09/24/2024
+ms.date: 01/18/2026
 no-loc: [-File, -f, -Command, -c, -CommandWithArgs, -cwa, -ConfigurationName, -config, -CustomPipeName, -EncodedCommand, -e, -ec, -ExecutionPolicy, -ex, -ep, -InputFormat, -inp, -if, -Interactive, -i, -Login, -l, -MTA, -NoExit, -noe, -NoLogo, -nol, -NonInteractive, -noni, -NoProfile, -nop, -OutputFormat, -o, -of, -SettingsFile, -settings, -SSHServerMode, -sshs, -STA, -Version, -v, -WindowStyle, -w, -WorkingDirectory, -wd, -Help]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pwsh?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -127,29 +127,29 @@ see `$LASTEXITCODE` in [about_Automatic_Variables][02].
 
 ### -Command | -c
 
-The value of **Command** can be `-`, a script block, or a string. If the value
+The value of **Command** can be `-`, a scriptblock, or a string. If the value
 of **Command** is `-`, the command text is read from standard input.
 
-The **Command** parameter only accepts a script block for execution when it can
+The **Command** parameter only accepts a scriptblock for execution when it can
 recognize the value passed to **Command** as a **ScriptBlock** type. This is
 _only_ possible when running `pwsh` from another PowerShell host. The
 **ScriptBlock** type may be contained in an existing variable, returned from an
-expression, or parsed by the PowerShell host as a literal script block enclosed
+expression, or parsed by the PowerShell host as a literal scriptblock enclosed
 in curly braces (`{}`), before being passed to `pwsh`.
 
 ```powershell
 pwsh -Command {Get-WinEvent -LogName Security}
 ```
 
-In `cmd.exe`, there is no such thing as a script block (or **ScriptBlock**
+In `cmd.exe`, there is no such thing as a scriptblock (or **ScriptBlock**
 type), so the value passed to **Command** is _always_ a string. You can write a
-script block inside the string, but instead of being executed it behaves
+scriptblock inside the string, but instead of being executed it behaves
 exactly as though you typed it at a typical PowerShell prompt, printing the
-contents of the script block back out to you.
+contents of the scriptblock back out to you.
 
 A string passed to **Command** is still executed as PowerShell code, so the
-script block curly braces are often not required in the first place when
-running from `cmd.exe`. To execute an inline script block defined inside a
+scriptblock curly braces are often not required in the first place when
+running from `cmd.exe`. To execute an inline scriptblock defined inside a
 string, the [call operator][03] `&` can be used:
 
 ```powershell
@@ -203,7 +203,7 @@ a script-terminating (runspace-terminating) error, such as a `throw` or
 <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 To preserve the specific exit code, add `exit $LASTEXITCODE` to your command
-string or script block. For more information, see `$LASTEXITCODE` in
+string or scriptblock. For more information, see `$LASTEXITCODE` in
 [about_Automatic_Variables][02].
 
 ### -CommandWithArgs | -cwa

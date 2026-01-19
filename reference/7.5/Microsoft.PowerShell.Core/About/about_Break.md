@@ -1,7 +1,7 @@
 ---
 description: Describes a statement you can use to immediately exit `foreach`, `for`, `while`, `do`, `switch`, or `trap` statements.
 Locale: en-US
-ms.date: 04/29/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_break?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Break
@@ -218,8 +218,8 @@ This means that functions and scripts that inadvertently use a `break` outside
 of an enclosing construct that supports it can inadvertently terminate their
 _callers_.
 
-Using `break` inside a pipeline `break`, such as a `ForEach-Object` script
-block, not only exits the pipeline, it potentially terminates the entire
+Using `break` inside a pipeline `break`, such as a `ForEach-Object`
+scriptblock, not only exits the pipeline, it potentially terminates the entire
 runspace.
 
 ## See also
@@ -233,3 +233,4 @@ runspace.
 - [about_Trap](about_Trap.md)
 - [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 - [about_While](about_While.md)
+

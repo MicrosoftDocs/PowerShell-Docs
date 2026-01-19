@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/04/2024
+ms.date: 01/17/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -113,6 +113,10 @@ Copy-Item -Path "C:\Logfiles" -Destination "C:\Drawings\Logs" -Recurse
 > trees, are copied to the new destination directory. For example:
 >
 > `Copy-Item -Path "C:\Logfiles\*" -Destination "C:\Drawings\Logs" -Recurse`
+>
+> If the `C:\Logfiles` only contains files and no subdirectories and `C:\Drawings\Logs` doesn't
+> exist, all files in `C:\Logfiles` are copied to `C:\Drawings\Logs` as a file. The `C:\Drawings`
+> file is a copy of the last file in the `C:\Logfiles` directory.
 
 ### Example 4: Copy a file to the specified directory and rename the file
 

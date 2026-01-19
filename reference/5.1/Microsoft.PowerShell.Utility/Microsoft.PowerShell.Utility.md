@@ -4,7 +4,7 @@ Help Version: 5.2.0.0
 Locale: en-US
 Module Guid: 1da87e53-152b-403e-98dc-74d7b4d63d59
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/08/2025
+ms.date: 01/18/2026
 schema: 2.0.0
 title: Microsoft.PowerShell.Utility
 ---
@@ -175,7 +175,8 @@ Imports a CLIXML file and creates corresponding objects in PowerShell.
 Creates table-like custom objects from the items in a character-separated value (CSV) file.
 
 ### [Import-LocalizedData](Import-LocalizedData.md)
-Imports language-specific data into scripts and functions based on the UI culture that is selected for the operating system.
+
+Imports language-specific data into scripts and functions based on the UI culture that's selected for the operating system.
 
 ### [Import-PowerShellDataFile](Import-PowerShellDataFile.md)
 Imports values from a `.psd1` file without invoking its contents.
@@ -193,7 +194,8 @@ Sends an HTTP or HTTPS request to a RESTful web service.
 Gets content from a web page on the Internet.
 
 ### [Measure-Command](Measure-Command.md)
-Measures the time it takes to run script blocks and cmdlets.
+
+Measures the time it takes to run scriptblocks and cmdlets.
 
 ### [Measure-Object](Measure-Object.md)
 Calculates the numeric properties of objects, and the characters, words, and lines in string objects, such as files of text.
@@ -229,7 +231,8 @@ Sends output to an interactive table in a separate window.
 Sends output to a printer.
 
 ### [Out-String](Out-String.md)
-Outputs input objects as a strings.
+
+Outputs input objects as strings.
 
 ### [Read-Host](Read-Host.md)
 Reads a line of input from the console.
@@ -295,7 +298,8 @@ Saves command output in a file or variable and also sends it down the pipeline.
 Configures and starts a trace of the specified expression or command.
 
 ### [Unblock-File](Unblock-File.md)
-Unblocks files that were downloaded from the Internet.
+
+Unblocks files that were downloaded from the internet.
 
 ### [Unregister-Event](Unregister-Event.md)
 Cancels an event subscription.

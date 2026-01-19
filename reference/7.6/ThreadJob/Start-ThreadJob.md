@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.ThreadJob.dll-Help.xml
 Locale: en-US
 Module Name: ThreadJob
-ms.date: 07/07/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/threadjob/start-threadjob?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-ThreadJob
@@ -84,7 +84,7 @@ jobs. The results may vary in your environment but the relative improvement shou
 
 ### Example 3 - Create jobs using InputObject
 
-In this example, the script block uses the `$input` variable to receive input from the
+In this example, the scriptblock uses the `$input` variable to receive input from the
 **InputObject** parameter. This can also be done by piping objects to `Start-ThreadJob`.
 
 ```powershell
@@ -210,7 +210,7 @@ Specifies a script file to run as a background job. Enter the path and filename 
 script must be on the local computer or in a folder that the local computer can access.
 
 When you use this parameter, PowerShell converts the contents of the specified script file to a
-script block and runs the script block as a background job.
+scriptblock and runs the scriptblock as a background job.
 
 ```yaml
 Type: System.String
@@ -227,7 +227,7 @@ Accept wildcard characters: False
 ### -InitializationScript
 
 Specifies commands that run before the job starts. Enclose the commands in braces (`{}`) to create
-a script block.
+a scriptblock.
 
 Use this parameter to prepare the session in which the job runs. For example, you can use it to add
 functions and modules to the session.
@@ -246,8 +246,8 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-Specifies the objects used as input to the script block. It also allows for pipeline input. Use the
-`$input` automatic variable in the script block to access the input objects.
+Specifies the objects used as input to the scriptblock. It also allows for pipeline input. Use the
+`$input` automatic variable in the scriptblock to access the input objects.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -284,7 +284,7 @@ Accept wildcard characters: False
 ### -ScriptBlock
 
 Specifies the commands to run in the background job. Enclose the commands in braces (`{}`) to create
-a script block. Use the `$input` automatic variable to access the value of the **InputObject**
+a scriptblock. Use the `$input` automatic variable to access the value of the **InputObject**
 parameter. This parameter is required.
 
 ```yaml

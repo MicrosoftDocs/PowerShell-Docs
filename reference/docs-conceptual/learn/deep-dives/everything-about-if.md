@@ -1,7 +1,7 @@
 ---
 description: Like many other languages, PowerShell has statements for conditionally executing code in your scripts.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/16/2022
+ms.date: 01/18/2026
 title: Everything you wanted to know about the if statement
 ---
 # Everything you wanted to know about the `if` statement
@@ -35,15 +35,15 @@ if ( $condition )
 ```
 
 The first thing the `if` statement does is evaluate the expression in parentheses. If it evaluates
-to `$true`, then it executes the `scriptblock` in the braces. If the value was `$false`, then it
-would skip over that scriptblock.
+to `$true`, then it executes the statements in the braces. If the value was `$false`, then it
+would skip over that statement block.
 
 In the previous example, the `if` statement was just evaluating the `$condition` variable. It was
-`$true` and would have executed the `Write-Output` command inside the scriptblock.
+`$true` and would have executed the `Write-Output` command inside the statement block.
 
 In some languages, you can place a single line of code after the `if` statement and it gets
-executed. That isn't the case in PowerShell. You must provide a full `scriptblock` with braces for
-it to work correctly.
+executed. That isn't the case in PowerShell. You must provide a full `statement block` with braces
+for it to work correctly.
 
 ## Comparison operators
 
@@ -481,9 +481,9 @@ If `$process` gets assigned a value, then the statement is `$true` and `$process
 Make sure you don't confuse this with `-eq` because this isn't an equality check. This is a more
 obscure feature that most people don't realize works this way.
 
-## Variable assignment from the scriptblock
+## Variable assignment from the statement block
 
-You can also use the `if` statement scriptblock to assign a value to a variable.
+You can also use the `if` statement statement block to assign a value to a variable.
 
 ```powershell
 $discount = if ( $age -ge 55 )
@@ -502,8 +502,8 @@ else
 
 Each script block is writing the results of the commands, or the value, as output. We can assign the
 result of the `if` statement to the `$discount` variable. That example could have just as easily
-assigned those values to the `$discount` variable directly in each scriptblock. I can't say that I
-use this with the `if` statement often, but I do have an example where I used this recently.
+assigned those values to the `$discount` variable directly in each statement block. I can't say that
+I use this with the `if` statement often, but I do have an example where I used this recently.
 
 ## Alternate execution path
 
@@ -800,3 +800,4 @@ understanding than you had before.
 [Prasoon Karunan V]: https://twitter.com/prasoonkarunan
 [everything you ever wanted to know about the switch statement]: everything-about-switch.md
 [Invoke-SnowSql]: https://github.com/loanDepot/SnowSQL/blob/a3731b52e4ab4ecb503fb81e2d8cb131e8f90410/SnowSQL/public/Invoke-SnowSql.ps1#L90
+

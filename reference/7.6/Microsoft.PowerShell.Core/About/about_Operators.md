@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 04/30/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -239,9 +239,9 @@ table. For more information, see [about_Hash_Tables][09].
 
 ### Call operator `&`
 
-Runs a command, script, or script block. The call operator, also known as the
+Runs a command, script, or scriptblock. The call operator, also known as the
 _invocation operator_, lets you run commands that are stored in variables and
-represented by strings or script blocks. The call operator executes in a child
+represented by strings or scriptblocks. The call operator executes in a child
 scope. For more about scopes, see [about_Scopes][19]. You can use this to build
 strings containing the command, parameters, and arguments you need, and then
 invoke the string as if it were a command. The strings that you create must
@@ -309,7 +309,7 @@ PS C:\Scripts> & ".\script name with spaces.ps1"
 Hello World!
 ```
 
-For more about script blocks, see [about_Script_Blocks][20].
+For more about scriptblocks, see [about_Script_Blocks][20].
 
 ### Background operator `&`
 

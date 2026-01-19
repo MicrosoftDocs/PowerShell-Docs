@@ -1,7 +1,7 @@
 ---
 description: Function
 Locale: en-US
-ms.date: 03/06/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_function_provider?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Function_Provider
@@ -146,7 +146,7 @@ PS Function:\> Get-Item -Path .\c:
 ## Creating a function
 
 This command uses the `New-Item` cmdlet to create a function called `Win32:`.
-The expression in braces is the script block that is represented by the
+The expression in braces is the scriptblock that is represented by the
 function name.
 
 ```powershell
@@ -212,7 +212,7 @@ Rename-Item -Path Function:help -NewName gh
 ## Copying a function
 
 This command copies the `prompt` function to `oldPrompt`, effectively creating
-a new name for the script block that is associated with the prompt function.
+a new name for the scriptblock that is associated with the prompt function.
 You can use this to save the original prompt function if you plan to change it.
 The **Options** property of the new function has a value of `None`. To change
 the value of the **Options** property, use `Set-Item`.

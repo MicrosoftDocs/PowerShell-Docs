@@ -1,7 +1,7 @@
 ---
 description: The switch statement in PowerShell offers features that aren't found in other languages.
 ms.custom: contributor-KevinMarquette
-ms.date: 11/16/2022
+ms.date: 01/18/2026
 title: Everything you ever wanted to know about the switch statement
 ---
 # Everything you ever wanted to know about the switch statement
@@ -55,7 +55,7 @@ of them is with a `switch`.
 ## Switch statement
 
 The `switch` statement allows you to provide a variable and a list of possible values. If the value
-matches the variable, then its scriptblock is executed.
+matches the variable, then its statement block is executed.
 
 ``` powershell
 $day = 3
@@ -709,8 +709,8 @@ Show-Animation
 ```
 
 Setting `$isEnabled` to `$true` in this example makes sure that `$isVisible` is also set to `$true`.
-Then when `$isVisible` gets evaluated, its scriptblock is invoked. This is a bit counter-intuitive
-but is a clever use of the mechanics.
+Then when `$isVisible` gets evaluated, its statement block is invoked. This is a bit
+counter-intuitive but is a clever use of the mechanics.
 
 ### $switch automatic variable
 
@@ -806,4 +806,5 @@ you learned something that you had not realized before.
 [switch]: /powershell/module/microsoft.powershell.core/about/about_switch
 [The many ways to use regex]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression
 [hashtables]: everything-about-hashtable.md
+
 

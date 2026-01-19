@@ -1,12 +1,11 @@
 ---
 description: Describes how to use wildcard characters in PowerShell.
 Locale: en-US
-ms.date: 11/03/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_wildcards?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Wildcards
 ---
-
 # about_Wildcards
 
 ## Short description
@@ -71,7 +70,7 @@ Many cmdlets accept wildcard characters in parameter values. The Help topic for
 each cmdlet describes which parameters accept wildcard characters. For
 parameters that accept wildcard characters, their use is case-insensitive.
 
-You can use wildcard characters in commands and script blocks, such as to
+You can use wildcard characters in commands and scriptblocks, such as to
 create a word pattern that represents property values. For example, the
 following command gets services in which the **ServiceType** property value
 includes **Interactive**.

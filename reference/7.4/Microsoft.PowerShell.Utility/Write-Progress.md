@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/26/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-progress?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Progress
 ---
-
 # Write-Progress
 
 ## SYNOPSIS
@@ -127,7 +126,7 @@ $Events | ForEach-Object -Begin {
     # Set the $out variable to an empty string.
     $out = ""
 } -Process {
-    # In the Process script block search the message property of each incoming object for "bios".
+    # In the Process scriptblock search the message property of each incoming object for "bios".
     if($_.Message -like "*bios*")
     {
         # Append the matching message to the out variable.

@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Diagnostics.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Diagnostics
-ms.date: 05/08/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.diagnostics/get-counter?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Counter
 ---
-
 # Get-Counter
 
 ## SYNOPSIS
@@ -171,7 +170,9 @@ In this example, `Start-Job` runs a `Get-Counter` command as a background job on
 To view the performance counter output from the job, use the `Receive-Job` cmdlet.
 
 ```powershell
-Start-Job -ScriptBlock {Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000}
+Start-Job -ScriptBlock {
+    Get-Counter -Counter "\LogicalDisk(_Total)\% Free Space" -MaxSamples 1000
+}
 ```
 
 ```Output
@@ -262,7 +263,8 @@ The pipeline is used with the `Where-Object` cmdlet to find a subset of the path
 counter sets complete list of counter paths, remove the pipeline (`|`) and `Where-Object` command.
 
 The `$_` is an automatic variable for the current object in the pipeline.
-For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ```powershell
 (Get-Counter -ListSet Memory).Paths | Where-Object { $_ -like "*Cache*" }
@@ -416,7 +418,7 @@ Path                                         InstanceName        CookedValue
 
 `Get-Counter` uses the **Counter** parameter to specify the counter
 `\Processor(*)\% Processor Time`. The values are stored in the `$Counter` variable. The objects
-stored in `$Counter.CounterSamples` are sent down the pipeline. `Where-Object` uses a script block
+stored in `$Counter.CounterSamples` are sent down the pipeline. `Where-Object` uses a scriptblock
 to compare each objects value against a specified value of `20`. The `$_.CookedValue` is a variable
 for the current object in the pipeline. Counters with a **CookedValue** that is less than 20 are
 displayed.
@@ -659,4 +661,4 @@ In PowerShell 7, when using the **ListSet** parameter, `Get-Counter` can't retri
 
 [Start-Job](../Microsoft.PowerShell.Core/Start-Job.md)
 
-[Where-Object](..//Microsoft.PowerShell.Core/Where-Object.md)
+[Where-Object](../Microsoft.PowerShell.Core/Where-Object.md)

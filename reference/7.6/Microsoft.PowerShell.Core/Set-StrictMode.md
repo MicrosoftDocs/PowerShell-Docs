@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/set-strictmode?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-StrictMode
@@ -10,7 +10,7 @@ title: Set-StrictMode
 # Set-StrictMode
 
 ## SYNOPSIS
-Establishes and enforces coding rules in expressions, scripts, and script blocks.
+Establishes and enforces coding rules in expressions, scripts, and scriptblocks.
 
 ## SYNTAX
 
@@ -30,7 +30,7 @@ Set-StrictMode [-Off] [<CommonParameters>]
 
 The `Set-StrictMode` cmdlet configures strict mode for the current scope and all child scopes, and
 turns it on and off. When strict mode is on, PowerShell generates a terminating error when the
-content of an expression, script, or script block violates basic best-practice coding rules.
+content of an expression, script, or scriptblock violates basic best-practice coding rules.
 
 Use the **Version** parameter to determine the coding rules to enforce.
 

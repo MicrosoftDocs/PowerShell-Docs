@@ -2,14 +2,13 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 09/29/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - sajb
+- sajb
 title: Start-Job
 ---
-
 # Start-Job
 
 ## SYNOPSIS
@@ -89,7 +88,8 @@ directory of the caller that started the job.
 > PowerShell, it's directly using the PowerShell NuGet SDK packages and won't have `pwsh` shipped
 > along.
 >
-> The substitute in that scenario is `Start-ThreadJob` from the module **[ThreadJob](https://www.powershellgallery.com/packages/ThreadJob)**.
+> The substitute in that scenario is `Start-ThreadJob` from the module
+> **[ThreadJob](https://www.powershellgallery.com/packages/ThreadJob)**.
 
 ## EXAMPLES
 
@@ -227,7 +227,7 @@ Start-Job -Name GetMappingFiles -InitializationScript {Import-Module -Name MapFu
 ```
 
 `Start-Job` uses the **Name** parameter to specify a friendly job name, **GetMappingFiles**. The
-**InitializationScript** parameter runs a script block that imports the **MapFunctions** module. The
+**InitializationScript** parameter runs a scriptblock that imports the **MapFunctions** module. The
 **ScriptBlock** parameter runs `Get-Map` and `Set-Content` saves the data in the location specified
 by the **Path** parameter.
 
@@ -259,8 +259,9 @@ The **WorkingDirectory** allows you to specify an alternate directory for a job 
 run scripts or open files. In this example, the background job specifies a working directory that's
 different than the current directory location.
 
-```
-PS C:\Test> Start-Job -WorkingDirectory C:\Test\Scripts { $PWD } | Receive-Job -AutoRemoveJob -Wait
+```powershell
+PS C:\Test> Start-Job -WorkingDirectory C:\Test\Scripts { $PWD } | 
+    Receive-Job -AutoRemoveJob -Wait
 
 Path
 ----
@@ -469,7 +470,7 @@ the script or use the pipeline to send a script path to `Start-Job`. The script 
 computer or in a folder that the local computer can access.
 
 When you use this parameter, PowerShell converts the contents of the specified script file to a
-script block and runs the script block as a background job.
+scriptblock and runs the scriptblock as a background job.
 
 ```yaml
 Type: System.String
@@ -485,7 +486,7 @@ Accept wildcard characters: False
 
 ### -InitializationScript
 
-Specifies commands that run before the job starts. To create a script block, enclose the commands in
+Specifies commands that run before the job starts. To create a scriptblock, enclose the commands in
 curly braces (`{}`).
 
 Use this parameter to prepare the session in which the job runs. For example, you can use it to add
@@ -613,7 +614,7 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies the commands to run in the background job. To create a script block, enclose the commands
+Specifies the commands to run in the background job. To create a scriptblock, enclose the commands
 in curly braces (`{}`). Use the `$input` automatic variable to access the value of the
 **InputObject** parameter. This parameter is required.
 
@@ -673,7 +674,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -2,11 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/02/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - npssc
+- npssc
 title: New-PSSessionConfigurationFile
 ---
 # New-PSSessionConfigurationFile
@@ -519,7 +519,7 @@ Adds the specified functions to sessions that use the session configuration. Ent
 the following keys:
 
 - Name - Name of the function. This key is required.
-- ScriptBlock - Function body. Enter a script block. This key is required.
+- ScriptBlock - Function body. Enter a scriptblock. This key is required.
 - Options - Function options. This key is optional. The default value is **None**. The acceptable
   values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
@@ -588,11 +588,12 @@ The acceptable values for this parameter are:
   ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or
   methods.
 - NoLanguage - Users may run cmdlets and functions, but are not permitted to use any language
-  elements, such as script blocks, variables, or operators.
-- RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use script
-  blocks or variables except for the following permitted variables: `$PSCulture`, `$PSUICulture`,
-  `$true`, `$false`, and `$null`. Users may use only the basic comparison operators (`-eq`, `-gt`,
-  `-lt`). Assignment statements, property references, and method calls are not permitted.
+  elements, such as scriptblocks, variables, or operators.
+- RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use
+  scriptblocks or variables except for the following permitted variables: `$PSCulture`,
+  `$PSUICulture`, `$true`, `$false`, and `$null`. Users may use only the basic comparison operators
+  (`-eq`, `-gt`, `-lt`). Assignment statements, property references, and method calls are not
+  permitted.
 
 The default value of the **LanguageMode** parameter depends on the value of the **SessionType**
 parameter.

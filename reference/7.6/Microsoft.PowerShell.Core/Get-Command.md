@@ -2,11 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/03/2025
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/get-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - gcm
+- gcm
 title: Get-Command
 ---
 # Get-Command
@@ -417,7 +417,7 @@ The acceptable values for this parameter are:
 
 - `Filter` and `Function`: Gets all PowerShell advanced and simple functions and filters.
 
-- `Script`: Gets all script blocks. To get PowerShell scripts (`.ps1` files), use the
+- `Script`: Gets all scriptblocks. To get PowerShell scripts (`.ps1` files), use the
   `ExternalScript` value.
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to

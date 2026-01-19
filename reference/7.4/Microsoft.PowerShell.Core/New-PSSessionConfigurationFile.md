@@ -2,11 +2,11 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 10/02/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-  - npssc
+- npssc
 title: New-PSSessionConfigurationFile
 ---
 # New-PSSessionConfigurationFile
@@ -236,13 +236,15 @@ CompanyName = 'Fabrikam Corporation'
 # Copyright statement for this document
 Copyright = '(c) Fabrikam Corporation. All rights reserved.'
 
-# Session type defaults to apply for this session configuration. Can be 'RestrictedRemoteServer' (recommended), 'Empty', or 'Default'
+# Session type defaults to apply for this session configuration. Can be
+# 'RestrictedRemoteServer' (recommended), 'Empty', or 'Default'
 SessionType = 'Default'
 
 # Directory to place session transcripts for this session configuration
 # TranscriptDirectory = 'C:\Transcripts\'
 
-# Whether to run this session configuration as the machine's (virtual) administrator account
+# Whether to run this session configuration as the machine's (virtual) administrator
+# account
 RunAsVirtualAccount = $true
 
 # Groups associated with machine's (virtual) administrator account
@@ -251,10 +253,12 @@ RunAsVirtualAccountGroups = 'Backup Operators'
 # Scripts to run when applied to a session
 ScriptsToProcess = 'Get-Inputs.ps1'
 
-# User roles (security groups), and the role capabilities that should be applied to them when applied to a session
+# User roles (security groups), and the role capabilities that should be applied to them
+# when applied to a session
 # RoleDefinitions = @{ 'CONTOSO\SqlAdmins' = @{ RoleCapabilities = 'SqlAdministration' }; 'CONTOSO\SqlManaged' = @{ RoleCapabilityFiles = 'C:\RoleCapability\SqlManaged.psrc' }; 'CONTOSO\ServerMonitors' = @{ VisibleCmdlets = 'Get-Process' } }
 
-# Language mode to apply when applied to a session. Can be 'NoLanguage' (recommended), 'RestrictedLanguage', 'ConstrainedLanguage', or 'FullLanguage'
+# Language mode to apply when applied to a session. Can be 'NoLanguage' (recommended),
+# 'RestrictedLanguage', 'ConstrainedLanguage', or 'FullLanguage'
 LanguageMode = 'FullLanguage'
 
 # Execution policy to apply when applied to a session
@@ -460,7 +464,7 @@ Accept wildcard characters: False
 Specifies the execution policy of sessions that use the session configuration. If you omit this
 parameter, the value of the **ExecutionPolicy** key in the session configuration file is
 **Restricted**. For information about execution policies in PowerShell, see
-[about_Execution_Policies](about/about_Execution_Policies.md).
+[about_Execution_Policies](About/about_Execution_Policies.md).
 
 ```yaml
 Type: Microsoft.PowerShell.ExecutionPolicy
@@ -515,7 +519,7 @@ Adds the specified functions to sessions that use the session configuration. Ent
 the following keys:
 
 - Name - Name of the function. This key is required.
-- ScriptBlock - Function body. Enter a script block. This key is required.
+- ScriptBlock - Function body. Enter a scriptblock. This key is required.
 - Options - Function options. This key is optional. The default value is **None**. The acceptable
   values for this parameter are: None, ReadOnly, Constant, Private, or AllScope.
 
@@ -584,11 +588,12 @@ The acceptable values for this parameter are:
   ConstrainedLanguage mode restricts user access to Microsoft .NET Framework types, objects, or
   methods.
 - NoLanguage - Users may run cmdlets and functions, but are not permitted to use any language
-  elements, such as script blocks, variables, or operators.
-- RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use script
-  blocks or variables except for the following permitted variables: `$PSCulture`, `$PSUICulture`,
-  `$true`, `$false`, and `$null`. Users may use only the basic comparison operators (`-eq`, `-gt`,
-  `-lt`). Assignment statements, property references, and method calls are not permitted.
+  elements, such as scriptblocks, variables, or operators.
+- RestrictedLanguage - Users may run cmdlets and functions, but are not permitted to use
+  scriptblocks or variables except for the following permitted variables: `$PSCulture`,
+  `$PSUICulture`, `$true`, `$false`, and `$null`. Users may use only the basic comparison operators
+  (`-eq`, `-gt`, `-lt`). Assignment statements, property references, and method calls are not
+  permitted.
 
 The default value of the **LanguageMode** parameter depends on the value of the **SessionType**
 parameter.

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/18/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -11,7 +11,6 @@ aliases:
   - type
 title: Get-Content
 ---
-
 # Get-Content
 
 ## SYNOPSIS
@@ -69,7 +68,7 @@ This is line 100.
 ```
 
 The array values 1-100 are sent down the pipeline to the `ForEach-Object` cmdlet. `ForEach-Object`
-uses a script block with the `Add-Content` cmdlet to create the `LineNumbers.txt` file. The variable
+uses a scriptblock with the `Add-Content` cmdlet to create the `LineNumbers.txt` file. The variable
 `$_` represents the array values as each object is sent down the pipeline. The `Get-Content` cmdlet
 uses the **Path** parameter to specify the `LineNumbers.txt` file and displays the content in the
 PowerShell console.

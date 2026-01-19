@@ -1,7 +1,7 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 04/03/2025
+ms.date: 01/18/2026
 no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -165,7 +165,7 @@ versions of Windows.
 ### `RestrictedLanguage` mode
 
 In `RestrictedLanguage` mode, users can run commands (cmdlets, functions, CIM
-commands, and workflows), but can't use script blocks. This mode is also used
+commands, and workflows), but can't use scriptblocks. This mode is also used
 to process modules manifests loaded by `Import-Module`.
 
 Beginning in PowerShell 7.2, the `New-Object` cmdlet is disabled in

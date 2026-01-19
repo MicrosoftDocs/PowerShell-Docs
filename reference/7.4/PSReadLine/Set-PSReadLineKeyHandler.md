@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 10/02/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
 ---
-
 # Set-PSReadLineKeyHandler
 
 ## SYNOPSIS
@@ -46,10 +45,10 @@ searches command history for command lines that start with the current contents 
 Set-PSReadLineKeyHandler -Chord UpArrow -Function HistorySearchBackward
 ```
 
-### Example 2: Bind a key to a script block
+### Example 2: Bind a key to a scriptblock
 
 This example shows how a single key can be used to run a command. The command binds the key `Ctrl+b`
-to a script block that clears the line, inserts the word "build", and then accepts the line.
+to a scriptblock that clears the line, inserts the word "build", and then accepts the line.
 
 ```powershell
 Set-PSReadLineKeyHandler -Chord Ctrl+b -ScriptBlock {
@@ -80,7 +79,7 @@ Accept wildcard characters: False
 
 ### -Chord
 
-The key or sequence of keys to be bound to a function or script block. Use a single string to
+The key or sequence of keys to be bound to a function or scriptblock. Use a single string to
 specify a single binding. If the binding is a sequence of keys, separate the keys by a comma. For
 example: `Ctrl+x,Ctrl+l`
 
@@ -139,8 +138,8 @@ Accept wildcard characters: False
 
 ### -ScriptBlock
 
-Specifies a script block value to run when the chord is entered. PSReadLine passes one or two
-parameters to this script block. The first parameter is a **ConsoleKeyInfo** object representing the
+Specifies a scriptblock value to run when the chord is entered. PSReadLine passes one or two
+parameters to this scriptblock. The first parameter is a **ConsoleKeyInfo** object representing the
 key pressed. The second argument can be any object depending on the context.
 
 ```yaml

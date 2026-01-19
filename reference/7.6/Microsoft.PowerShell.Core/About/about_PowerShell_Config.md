@@ -1,7 +1,7 @@
 ---
 description: Configuration files for PowerShell, replacing Registry configuration.
 Locale: en-US
-ms.date: 12/07/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PowerShell_Config
@@ -381,9 +381,9 @@ This setting controls logging of all PowerShell script input. This setting
 contains two subkeys:
 
 - `EnableScriptBlockLogging` - If you enable this policy setting, PowerShell
-  logs the processing of commands, script blocks, functions, and scripts
+  logs the processing of commands, scriptblocks, functions, and scripts
   whether invoked interactively, or through automation.
-- `EnableScriptBlockInvocationLogging` - enables logging of script block start
+- `EnableScriptBlockInvocationLogging` - enables logging of scriptblock start
   and stop events.
 
 Example:

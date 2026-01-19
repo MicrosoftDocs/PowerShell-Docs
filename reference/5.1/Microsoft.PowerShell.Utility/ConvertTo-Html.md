@@ -2,12 +2,11 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Html
 ---
-
 # ConvertTo-Html
 
 ## SYNOPSIS
@@ -359,10 +358,10 @@ Accept wildcard characters: False
 ### -Property
 
 Includes the specified properties of the objects in the HTML. The value of the **Property**
-parameter can be a new calculated property. The calculated property can be a script block or a hash
+parameter can be a new calculated property. The calculated property can be a scriptblock or a hash
 table. Valid key-value pairs are:
 
-- `Expression` - `<string>` or `<script block>`
+- `Expression` - `<string>` or `<scriptblock>`
 - `FormatString` - `<string>`
 - `Width` - `<int32>` - must be greater than `0`
 - `Alignment` - value can be `Left`, `Center`, or `Right`

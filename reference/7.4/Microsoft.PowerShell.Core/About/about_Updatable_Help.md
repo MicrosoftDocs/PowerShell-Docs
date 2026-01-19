@@ -1,7 +1,7 @@
 ---
 description: Describes the updatable help system in PowerShell.
 Locale: en-US
-ms.date: 10/20/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_updatable_help?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Updatable_Help
@@ -391,7 +391,7 @@ To update or save help for a module that's not returned by the
 **ListAvailable** parameter of the `Get-Module` cmdlet, import the module into
 the current session before running an `Update-Help` or `Save-Help` command. On
 a remote computer, before running the `Save-Help` command, import the module
-into the current Session, or `Invoke-Command` script block, that's connected to
+into the current Session, or `Invoke-Command` scriptblock, that's connected to
 the remote computer.
 
 When the module is in the current session, run the `Update-Help` or `Save-Help`

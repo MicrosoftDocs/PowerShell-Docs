@@ -1,7 +1,7 @@
 ---
 description: Describes easier, more natural-language ways of scripting filters for collections of objects.
 Locale: en-US
-ms.date: 04/26/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_simplified_syntax?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Simplified_Syntax
@@ -16,13 +16,13 @@ collections of objects.
 ## Long description
 
 Simplified syntax, introduced in Windows PowerShell 3.0, lets you build some
-filter commands without using script blocks. The simplified syntax more closely
+filter commands without using scriptblocks. The simplified syntax more closely
 resembles natural language, and is primarily useful with collections of objects
 that get piped into commands `Where-Object` and `ForEach-Object` or their
 corresponding aliases `where` and `foreach`.
 
 You can use a method on the members of a collection (most commonly, an array)
-without referring to the automatic variable `$_` inside a script block.
+without referring to the automatic variable `$_` inside a scriptblock.
 
 Consider the following two invocations:
 
@@ -45,7 +45,7 @@ Get-ChildItem Cert:\ -Recurse |
 Under the simplified syntax, comparison operators that work on members of
 objects in a collection are implemented as parameters. Also, you can invoke a
 method on objects in a collection without referring to the automatic variable
-`$_` inside a script block. Compare the following two invocations to the
+`$_` inside a scriptblock. Compare the following two invocations to the
 standard syntax examples:
 
 ```powershell
@@ -65,7 +65,7 @@ dir Cert:\ -Recurse | foreach GetKeyAlgorithm
 ```
 
 While both syntaxes work, the simplified syntax returns results without
-referring to the automatic variable `$_` inside a script block. The simplified
+referring to the automatic variable `$_` inside a scriptblock. The simplified
 syntax reads more like a natural language statement and can be easier to
 understand.
 

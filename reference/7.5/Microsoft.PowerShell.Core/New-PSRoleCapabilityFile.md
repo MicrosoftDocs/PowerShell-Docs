@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 03/21/2023
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSRoleCapabilityFile
@@ -229,7 +229,7 @@ Adds the specified functions to sessions that expose the role capability. Enter 
 the following keys:
 
 - Name. Name of the function. This key is required.
-- ScriptBlock. Function body. Enter a script block. This key is required.
+- ScriptBlock. Function body. Enter a scriptblock. This key is required.
 - Options. Function options. This key is optional. The default value is None. The acceptable values
   for this parameter are: are None, ReadOnly, Constant, Private, or AllScope.
 

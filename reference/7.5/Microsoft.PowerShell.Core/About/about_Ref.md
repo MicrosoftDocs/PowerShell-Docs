@@ -1,7 +1,7 @@
 ---
 description: Describes how to create and use a reference type variable. You can use reference type variables to permit a function to change the value of a variable that is passed to it.
 Locale: en-US
-ms.date: 12/12/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ref?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Ref
@@ -166,13 +166,13 @@ not possible, such as in script-block parameter values.
 
 For example, you can use script-block parameter values to calculate the value
 of **NewName** parameter of the `Rename-Item` cmdlet. The `Rename-Item` cmdlet
-allows you to pipe items to it. The command run the script block passed to the
-**NewName** for each item in the pipeline. The script block run in a child
+allows you to pipe items to it. The command run the scriptblock passed to the
+**NewName** for each item in the pipeline. The scriptblock run in a child
 scope. Modifying a variable in the caller's scope directly won't help and you
-can't pass arguments to the script block in this context.
+can't pass arguments to the scriptblock in this context.
 
-In this example, the script block passed to the **NewName** parameter
-increments the value of `$iRef` for each item in the pipeline. The script block
+In this example, the scriptblock passed to the **NewName** parameter
+increments the value of `$iRef` for each item in the pipeline. The scriptblock
 creates a new name by adding a number to the beginning of the filename.
 
 ```powershell

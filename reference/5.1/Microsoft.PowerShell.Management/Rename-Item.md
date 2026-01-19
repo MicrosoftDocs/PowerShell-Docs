@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -116,11 +116,11 @@ Mode                LastWriteTime         Length Name
 ```
 
 The `Get-ChildItem` cmdlet gets all the files in the current folder that have a `.txt` file
-extension then pipes them to `Rename-Item`. The value of **NewName** is a script block that runs
+extension then pipes them to `Rename-Item`. The value of **NewName** is a scriptblock that runs
 before the value is submitted to the **NewName** parameter.
 
-In the script block, the `$_` automatic variable represents each file object as it comes to the
-command through the pipeline. The script block uses the `-replace` operator to replace the file
+In the scriptblock, the `$_` automatic variable represents each file object as it comes to the
+command through the pipeline. The scriptblock uses the `-replace` operator to replace the file
 extension of each file with `.log`. Notice that matching using the `-replace` operator is not case
 sensitive.
 
@@ -130,7 +130,8 @@ sensitive.
 
 > [!NOTE]
 > This parameter is not supported by any providers installed with PowerShell. To impersonate another
-> user, or elevate your credentials when running this cmdlet, use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
+> user, or elevate your credentials when running this cmdlet, use
+> [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -148,7 +149,8 @@ Accept wildcard characters: False
 
 Forces the cmdlet to rename items that can't otherwise be changed, such as hidden or read-only files
 or read-only aliases or variables. The cmdlet can't change constant aliases or variables.
-Implementation varies from provider to provider. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+Implementation varies from provider to provider. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 Even using the **Force** parameter, the cmdlet can't override security restrictions.
 
@@ -171,12 +173,13 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String
 Parameter Sets: ByLiteralPath
-Aliases: PSPath
+Aliases: PSPath, LP
 
 Required: True
 Position: Named
@@ -193,7 +196,8 @@ To rename and move an item, use `Move-Item`.
 
 You can't use wildcard characters in the value of the **NewName** parameter. To specify a name for
 multiple files, use the `-replace` operator in a regular expression. For more information about the
-`-replace` operator, see [about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
+`-replace` operator, see
+[about_Comparison_Operators](../Microsoft.PowerShell.Core/About/about_Comparison_Operators.md).
 
 ```yaml
 Type: System.String
@@ -295,7 +299,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -322,7 +327,8 @@ Windows PowerShell includes the following aliases for `Rename-Item`:
 - `rni`
 
 `Rename-Item` is designed to work with the data exposed by any provider. To list the providers
-available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

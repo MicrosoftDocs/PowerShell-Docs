@@ -435,7 +435,7 @@ You should avoid changing the value of `$PSItem`.
 [09]: about_Functions.md
 [10]: about_Functions.md#filter-syntax
 [11]: about_Script_Blocks.md
-[12]: about_Script_Blocks.md#using-delay-bind-script-blocks-with-parameters
+[12]: about_Script_Blocks.md#using-delay-bind-scriptblocks-with-parameters
 [13]: about_Switch.md
 [14]: about_Try_Catch_Finally.md#accessing-exception-information
 [15]: xref:Microsoft.PowerShell.Core.ForEach-Object

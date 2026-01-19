@@ -1,12 +1,11 @@
 ---
 description: Provides information about PowerShell thread-based jobs. A thread job is a type of background job that runs a command or expression in a separate thread within the current session process.
 Locale: en-US
-ms.date: 11/11/2020
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/psscheduledjob/about/about_thread_jobs?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Thread_Jobs
 ---
-
 # about_Thread_Jobs
 
 ## Short description
@@ -84,11 +83,11 @@ are being generated.
 ### Using `ForEach-Object -Parallel -AsJob`
 
 PowerShell 7.0 added a new parameter set to the `ForEach-Object` cmdlet. The
-new parameters allow you to run script blocks in parallel threads as PowerShell
+new parameters allow you to run scriptblocks in parallel threads as PowerShell
 jobs.
 
 You can pipe data to `ForEach-Object -Parallel`. The data is passed to the
-script block that is run in parallel. The `-AsJob` parameter creates jobs
+scriptblock that is run in parallel. The `-AsJob` parameter creates jobs
 objects for each of the parallel threads.
 
 The following command starts a job that contains child jobs for each input value
@@ -218,7 +217,7 @@ $logs.Count
 There are multiple ways to pass values into the thread-based jobs.
 
 `Start-ThreadJob` can accept variables that are piped to the cmdlet, passed in
-to the script block via the `Using:` scope modifier, or passed in via the
+to the scriptblock via the `Using:` scope modifier, or passed in via the
 **ArgumentList** parameter.
 
 ```powershell
@@ -233,7 +232,7 @@ Start-ThreadJob { param ([string] $Message) Write-Output $Message } -ArgumentLis
 ```
 
 `ForEach-Object -Parallel` accepts piped in variables, and variables passed
-directly to the script block via the `Using:` scope modifier.
+directly to the scriptblock via the `Using:` scope modifier.
 
 ```powershell
 $msg = "Hello"

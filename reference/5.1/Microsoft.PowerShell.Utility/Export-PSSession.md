@@ -2,14 +2,13 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - epsn
 title: Export-PSSession
 ---
-
 # Export-PSSession
 
 ## SYNOPSIS
@@ -70,7 +69,7 @@ This example exports all of the `Get` and `Set` commands from a server.
 
 ```powershell
 $S = New-PSSession -ConnectionUri https://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
-Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $PSHOME\Modules\Exchange -Encoding ASCII
+Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $PSHOME\Modules\Exchange -Encoding ascii
 ```
 
 These commands export the `Get` and `Set` commands from a Microsoft Exchange Server snap-in on a
@@ -263,8 +262,8 @@ The acceptable values for this parameter are as follows:
 - `ExternalScript`: All `.ps1` files in the paths listed in the PATH environment variable
   (`$Env:PATH`).
 - `Filter` and `Function`: All PowerShell functions.
-- `Script` Script blocks in the current session.
-- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](../PSWorkflow/About/about_Workflows.md).
+- `Script` Script files accessible in the current session.
+- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **CommandType** parameter

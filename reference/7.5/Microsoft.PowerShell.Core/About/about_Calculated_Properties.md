@@ -1,7 +1,7 @@
 ---
 description: PowerShell provides the ability to dynamically add new properties and alter the formatting of objects output to the pipeline.
 Locale: en-US
-ms.date: 01/13/2026
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_calculated_properties?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Calculated_Properties
@@ -72,7 +72,7 @@ the key-value pairs that each cmdlet supports.
   - `Expression`
 
 - `Measure-Object`
-  - Only supports a script block for the expression, not a hashtable.
+  - Only supports a scriptblock for the expression, not a hashtable.
   - Not supported in PowerShell 5.1 and older.
 
 - `Select-Object`
@@ -84,14 +84,14 @@ the key-value pairs that each cmdlet supports.
   - `Ascending`/`Descending` - optional
 
 > [!NOTE]
-> The value of the `Expression` can be a script block instead of a
+> The value of the `Expression` can be a scriptblock instead of a
 > hashtable. For more information, see the [Notes][02] section.
 
 ## Hashtable key definitions
 
 - `Name`/`Label` - Specifies the name of the property being created. You can
   use `Name` or its alias, `Label`, interchangeably.
-- `Expression` - A string or script block used to calculate the value of the
+- `Expression` - A string or scriptblock used to calculate the value of the
   new property. If the `Expression` is a string, the value is interpreted as a
   property name on the input object. This is a shorter option than
   `Expression = { $_.<PropertyName> }`.
@@ -368,7 +368,7 @@ The `Measure-Object` cmdlet calculates the numeric properties of objects. In
 this example, we use a calculated property to get the count of the numbers
 between 1 and 10 that are evenly divisible by 3.
 
-The script block returns `$true` if the number is divisible by 3 and `$false`
+The scriptblock returns `$true` if the number is divisible by 3 and `$false`
 for all other numbers. The **Sum** operation treats `$true` values as `1` and
 `$false` values as `0`.
 
@@ -388,7 +388,7 @@ Property          : ($_ % 3) -eq 0
 
 > [!NOTE]
 > Unlike the other cmdlets, `Measure-Object` doesn't accept a hashtable for
-> calculated properties. You must use a script block.
+> calculated properties. You must use a scriptblock.
 
 ### Select-Object
 
@@ -478,7 +478,7 @@ Date       Salesperson UnitsSold
 
 ## Notes
 
-- You may specify the expression script block _directly_, as an argument,
+- You may specify the expression scriptblock _directly_, as an argument,
   rather than specifying it as the `Expression` entry in a hashtable. For
   example:
 
@@ -490,17 +490,17 @@ Date       Salesperson UnitsSold
   naming a property via the `Name` key, such as `Sort-Object`, `Group-Object`,
   and `Measure-Object`.
 
-  For cmdlets that support naming the property, the script block is converted
+  For cmdlets that support naming the property, the scriptblock is converted
   to a string and used as the name of the property in the output.
 
-- `Expression` script blocks run in _child_ scopes, meaning that the caller's
+- `Expression` scriptblocks run in _child_ scopes, meaning that the caller's
   variables can't be directly modified.
 
-- Pipeline logic is applied to the output from `Expression` script blocks. This
+- Pipeline logic is applied to the output from `Expression` scriptblocks. This
   means that outputting a single-element array causes that array to be
   unwrapped.
 
-- For most cmdlets, errors inside expression script blocks are quietly ignored.
+- For most cmdlets, errors inside expression scriptblocks are quietly ignored.
   For `Sort-Object`, statement-terminating and script-terminating errors are
   _output_ but they don't terminate the statement.
 
@@ -533,3 +533,4 @@ Date       Salesperson UnitsSold
 [11]: xref:Microsoft.PowerShell.Utility.Measure-Object
 [12]: xref:Microsoft.PowerShell.Utility.Select-Object
 [13]: xref:Microsoft.PowerShell.Utility.Sort-Object
+

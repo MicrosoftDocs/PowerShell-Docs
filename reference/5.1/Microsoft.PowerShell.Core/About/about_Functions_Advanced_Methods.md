@@ -1,7 +1,7 @@
 ---
 description: Describes how functions that specify the `CmdletBinding` attribute can use the methods and properties that are available to compiled cmdlets.
 Locale: en-US
-ms.date: 10/16/2024
+ms.date: 01/18/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_methods?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Methods
@@ -80,7 +80,7 @@ the function receives.
 
 The automatic variable `$_` or `$PSItem` contains the current object in the
 pipeline for use in the `process` block. The `$input` automatic variable
-contains an enumerator that's only available to functions and script blocks.
+contains an enumerator that's only available to functions and scriptblocks.
 For more information, see [about_Automatic_Variables][15].
 
 - Calling the function at the beginning, or outside of a pipeline, executes the
