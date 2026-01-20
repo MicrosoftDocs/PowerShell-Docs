@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/31/2024
+ms.date: 01/20/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-clixml?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Clixml
@@ -47,6 +47,10 @@ The **TypeNames** property contains the original type name prefixed with `Deseri
 
 `Import-Clixml` uses the byte-order-mark (BOM) to detect the encoding format of the file. If the
 file has no BOM, it assumes the encoding is UTF8.
+
+> [!NOTE]
+> `[System.Management.Automation.ScriptBlock]` objects are serialized into the `<SKB>` element in
+> CLIXML. However, the `<SKB>` element is always deserialized to **Strings**.
 
 For more information about CLI, see
 [Language independence](/dotnet/standard/language-independence).

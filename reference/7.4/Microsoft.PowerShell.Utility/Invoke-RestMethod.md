@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/10/2025
+ms.date: 01/20/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -115,6 +115,14 @@ variables. See the [NOTES](#notes) section of this article.
 
 Beginning in PowerShell 7.4, character encoding for requests defaults to UTF-8 instead of ASCII. If
 you need a different encoding, you must set the `charset` attribute in the `Content-Type` header.
+
+By default, the HTTP request includes default values for the following HTTP headers:
+
+- `Accept-Encoding`
+- `Host`
+- `User-Agent`
+
+Use the **Headers** parameter to add other headers or override the default values.
 
 ## EXAMPLES
 

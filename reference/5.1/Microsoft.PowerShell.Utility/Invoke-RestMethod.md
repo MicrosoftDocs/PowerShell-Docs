@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 10/29/2025
+ms.date: 01/20/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -43,6 +43,13 @@ data.
 > execution.
 
 This cmdlet is introduced in Windows PowerShell 3.0. This command can be run using the `irm` alias.
+
+By default, the HTTP request includes default values for the following HTTP headers:
+
+- `Host`
+- `User-Agent`
+
+Use the **Headers** parameter to add other headers or override the default values.
 
 ## EXAMPLES
 
