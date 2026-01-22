@@ -1,7 +1,7 @@
 ---
 description: Describes how you can use classes to create your own custom types.
 Locale: en-US
-ms.date: 01/23/2024
+ms.date: 01/22/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Classes
@@ -64,18 +64,17 @@ To instantiate an instance of a class, use one of the following syntaxes:
 ```
 
 ```Syntax
-[$<variable-name> =] [<class-name>]@{[<class-property-hashtable>]}
+[$<variable-name> =] [<class-name>]<convertable-value-type>
 ```
 
 > [!NOTE]
 > When using the `[<class-name>]::new()` syntax, brackets around the class name
 > are mandatory. The brackets signal a type definition for PowerShell.
 >
-> The hashtable syntax only works for classes that have a default constructor
-> that doesn't expect any parameters. It creates an instance of the class with
-> the default constructor and then assigns the key-value pairs to the instance
-> properties. If any key in the hashtable isn't a valid property name,
-> PowerShell raises an error.
+> The `<convertable-value-type>` syntax only works for classes that have a
+> default constructor that doesn't expect any parameters. It creates an
+> instance of the class with the default constructor and then uses runtime type
+> conversion to assign the values provided.
 
 ## Examples
 
@@ -99,7 +98,67 @@ Brand
 Fabrikam, Inc.
 ```
 
-### Example 2 - Class with instance members
+### Example 2 - Using instantiation syntax
+
+This example defines a **Book** class with several properties, but no
+constructor.
+
+```powershell
+class Book {
+    # Class properties
+    [string]   $Title
+    [string]   $Author
+    [string]   $Synopsis
+    [string]   $Publisher
+    [datetime] $PublishDate
+    [int]      $PageCount
+    [string[]] $Tags
+}
+```
+
+The following example shows how the default constructor can assign the values
+of a compatible using type coercion. In this example, a hashtable is used to
+provide the property values.
+
+```powershell
+$Book1 = [Book] @{
+    Title       = '1984'
+    Author      = 'George Orwell'
+    Synopsis    = ''
+    Publisher   = 'Secker & Warburg'
+    PublishDate = '1949-06-08'
+    PageCount   = 328
+    Tags        = @('Dystopian', 'Political Fiction', 'Social Science Fiction')
+}
+$Book1
+```
+
+```Output
+Title       : 1984
+Author      : George Orwell
+Synopsis    :
+Publisher   : Secker & Warburg
+PublishDate : 6/8/1949 12:00:00 AM
+PageCount   : 328
+Tags        : {Dystopian, Political Fiction, Social Science Fiction}
+```
+
+The key-value pairs of the hashtable are assigned to the instance properties.
+If any key in the hashtable isn't a valid property name, instantiation fails.
+
+In this example, an array is used to provide the values for the generic list.
+
+```powershell
+$List =  [System.Collections.Generic.List[int]] @(42, 43)
+$List
+```
+
+```Output
+42
+43
+```
+
+### Example 3 - Class with instance members
 
 This example defines a **Book** class with several properties, constructors,
 and methods. Every defined member is an _instance_ member, not a static member.
@@ -190,7 +249,7 @@ It takes 10 hours and 20 minutes to read The Hobbit by J.R.R. Tolkien (1937),
 which was published 86 years ago.
 ```
 
-### Example 3 - Class with static members
+### Example 4 - Class with static members
 
 The **BookList** class in this example builds on the **Book** class in example
 2. While the **BookList** class can't be marked static itself, the
@@ -360,7 +419,7 @@ Line |
      | Book 'The Hobbit by J.R.R. Tolkien (1937)' already in list
 ```
 
-### Example 4 - Class definition with and without Runspace affinity
+### Example 5 - Class definition with and without Runspace affinity
 
 The `ShowRunspaceId()` method of `[UnsafeClass]` reports different thread Ids
 but the same runspace ID. Eventually, the session state is corrupted causing
