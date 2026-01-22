@@ -26,7 +26,7 @@ sections:
 
       - question: I opened the URL but it didn't install an update.
         answer: |
-          The `aka.ms` takes you to this page. If you want to install the latest version of
+          The `aka.ms` link takes you to this page. If you want to install the latest version of
           PowerShell, follow the instructions in
           [Install PowerShell on Windows](../install/install-powershell-on-windows.md).
 
