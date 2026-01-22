@@ -251,10 +251,10 @@ which was published 86 years ago.
 
 ### Example 4 - Class with static members
 
-The **BookList** class in this example builds on the **Book** class in example
-2. While the **BookList** class can't be marked static itself, the
-implementation only defines the **Books** static property and a set of static
-methods for managing that property.
+The **BookList** class in this example builds on the **Book** class in the
+previous example. While the **BookList** class can't be marked static itself,
+the implementation only defines the **Books** static property and a set of
+static methods for managing that property.
 
 ```powershell
 class BookList {
@@ -485,7 +485,7 @@ Properties are variables declared in the class scope. A property can be of any
 built-in type or an instance of another class. Classes can have zero or more
 properties. Classes don't have a maximum property count.
 
-For more information, see [about_Classes_Properties][01].
+For more information, see [about_Classes_Properties][09].
 
 ## Class methods
 
@@ -495,7 +495,7 @@ method doesn't return any output, it must have the **Void** output type. If a
 method doesn't explicitly define an output type, the method's output type is
 **Void**.
 
-For more information, see [about_Classes_Methods][02].
+For more information, see [about_Classes_Methods][06].
 
 ## Class constructors
 
@@ -504,7 +504,7 @@ moment of creating the instance of the class. Constructors have the same name
 as the class. Constructors might have parameters, to initialize the data
 members of the new object.
 
-For more information, see [about_Classes_Constructors][03].
+For more information, see [about_Classes_Constructors][02].
 
 ## Hidden keyword
 
@@ -533,11 +533,11 @@ Hidden class members are:
 > When you hide any constructor, the `new()` option is removed from
 > IntelliSense and completion results.
 
-For more information about the keyword, see [about_Hidden][04]. For more
-information about hidden properties, see [about_Classes_Properties][05]. For
-more information about hidden methods, see [about_Classes_Methods][06]. For
+For more information about the keyword, see [about_Hidden][13]. For more
+information about hidden properties, see [about_Classes_Properties][10]. For
+more information about hidden methods, see [about_Classes_Methods][07]. For
 more information about hidden constructors, see
-[about_Classes_Constructors][07].
+[about_Classes_Constructors][03].
 
 ## Static keyword
 
@@ -551,9 +551,9 @@ available always. All static properties live for the entire session span.
 The `static` keyword only applies to class members, not a class itself.
 
 For more information about static properties, see
-[about_Classes_Properties][08]. For more information about static methods, see
-[about_Classes_Methods][09]. For more information about static constructors,
-see [about_Classes_Constructors][10].
+[about_Classes_Properties][11]. For more information about static methods, see
+[about_Classes_Methods][08]. For more information about static constructors,
+see [about_Classes_Constructors][04].
 
 ## Inheritance in PowerShell classes
 
@@ -569,8 +569,7 @@ inherits from an interface must implement that contract. When it does, the
 class can be used like any other class implementing that interface.
 
 For more information about deriving classes that inherit from a base class or
-implement interfaces, see
-[about_Classes_Inheritance][11].
+implement interfaces, see [about_Classes_Inheritance][05].
 
 ## NoRunspaceAffinity attribute
 
@@ -592,8 +591,7 @@ thread and the thread's current session state.
 The attribute was added in PowerShell 7.4.
 
 For an illustration of the difference in behavior for classes with and without
-the `NoRunspaceAffinity` attribute, see
-[Example 4](#example-4---class-definition-with-and-without-runspace-affinity).
+the `NoRunspaceAffinity` attribute, see [Example 5][01].
 
 ## Export classes with type accelerators
 
@@ -679,7 +677,7 @@ consistently import classes defined in nested modules or classes defined in
 scripts that are dot-sourced into the root module. Define classes that you want
 to be available to users outside of the module directly in the root module.
 
-For more information about the `using` statement, see [about_Using][12].
+For more information about the `using` statement, see [about_Using][16].
 
 ## Load newly changed code during development
 
@@ -706,7 +704,7 @@ parameters can't be used with class members. The **PSReference** class was
 designed to support COM objects. COM objects have cases where you need to pass
 a value in by reference.
 
-For more information, see [PSReference Class][13].
+For more information, see [PSReference Class][17].
 
 ## Limitations
 
@@ -826,30 +824,31 @@ workaround for those limitations, if any.
 
 ## See also
 
-- [about_Classes_Constructors][03]
-- [about_Classes_Inheritance][11]
-- [about_Classes_Methods][02]
-- [about_Classes_Properties][01]
-- [about_Enum][14]
-- [about_Hidden][04]
-- [about_Language_Keywords][15]
-- [about_Methods][16]
-- [about_Using][12]
+- [about_Classes_Constructors][02]
+- [about_Classes_Inheritance][05]
+- [about_Classes_Methods][06]
+- [about_Classes_Properties][09]
+- [about_Enum][12]
+- [about_Hidden][13]
+- [about_Language_Keywords][14]
+- [about_Methods][15]
+- [about_Using][16]
 
 <!-- link references -->
-[01]: about_Classes_Properties.md
-[02]: about_Classes_Methods.md
-[03]: about_Classes_Constructors.md
-[04]: about_Hidden.md
-[05]: about_Classes_Properties.md#hidden-properties
-[06]: about_Classes_Methods.md#hidden-methods
-[07]: about_Classes_Constructors.md#hidden-constructors
-[08]: about_Classes_Properties.md#static-properties
-[09]: about_Classes_Methods.md#static-methods
-[10]: about_Classes_Constructors.md#static-constructors
-[11]: about_Classes_Inheritance.md
-[12]: about_Using.md
-[13]: /dotnet/api/system.management.automation.psreference
-[14]: about_Enum.md
-[15]: about_language_keywords.md
-[16]: about_methods.md
+[01]: #example-5---class-definition-with-and-without-runspace-affinity
+[02]: about_Classes_Constructors.md
+[03]: about_Classes_Constructors.md#hidden-constructors
+[04]: about_Classes_Constructors.md#static-constructors
+[05]: about_Classes_Inheritance.md
+[06]: about_Classes_Methods.md
+[07]: about_Classes_Methods.md#hidden-methods
+[08]: about_Classes_Methods.md#static-methods
+[09]: about_Classes_Properties.md
+[10]: about_Classes_Properties.md#hidden-properties
+[11]: about_Classes_Properties.md#static-properties
+[12]: about_Enum.md
+[13]: about_Hidden.md
+[14]: about_language_keywords.md
+[15]: about_methods.md
+[16]: about_Using.md
+[17]: xref:System.Management.Automation.PSReference
