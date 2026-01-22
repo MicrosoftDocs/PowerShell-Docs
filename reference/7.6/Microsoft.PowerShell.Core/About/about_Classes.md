@@ -117,7 +117,7 @@ class Book {
 ```
 
 The following example shows how the default constructor can assign the values
-of a compatible using type coercion. In this example, a hashtable is used to
+from a compatible hashtable using type coercion. In this example, a hashtable is used to
 provide the property values.
 
 ```powershell
