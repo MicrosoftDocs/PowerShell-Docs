@@ -1,6 +1,6 @@
 ---
 description: Scripting for Performance in PowerShell
-ms.date: 08/18/2025
+ms.date: 01/21/2026
 title: PowerShell scripting performance considerations
 ---
 
@@ -266,6 +266,42 @@ $results = @(
 In this example, PowerShell creates an `[ArrayList]` to hold the results written to the pipeline
 inside the array expression. Just before assigning to `$results`, PowerShell converts the
 `[ArrayList]` to an `[Object[]]`.
+
+### Type-safe collections
+
+PowerShell is a loosely typed language, which makes coding easier but can have performance
+implications. Consider using type-safe (or type-specific) collections. Type-safe collections consume
+less memory and are faster. Compare the following examples:
+
+```powershell
+$Stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+$ListInt = [System.Collections.Generic.List[int]]::new()
+for ($i = 0; $i -lt 1mb; $i++) {
+    $ListInt.Add($i)
+}
+$Stopwatch.Stop()
+Write-Host "Time to add 1mb integers to List[int]: $($Stopwatch.Elapsed.TotalSeconds) seconds."
+```
+
+```Output
+Time to add 1mb integers to List[int]: 9.8841501 seconds.
+```
+
+Creating a list of `[int]` is faster than creating a list of `[Object]`.
+
+```powershell
+$Stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+$ListObject = [System.Collections.Generic.List[Object]]::new()
+for ($i = 0; $i -lt 1mb; $i++) {
+    $ListObject.Add($i)
+}
+$Stopwatch.Stop()
+Write-Host "Time to add 1mb integers to List[Object]: $($Stopwatch.Elapsed.TotalSeconds) seconds."
+```
+
+```Output
+Time to add 1mb integers to List[Object]: 10.5677782 seconds.
+```
 
 ## String addition
 
