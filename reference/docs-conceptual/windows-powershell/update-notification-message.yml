@@ -21,7 +21,7 @@ sections:
     questions:
       - question: Why am I seeing this message?
         answer: |
-          Windows PowerShell displays this messages at startup to make you aware that there is a
+          Windows PowerShell displays this message at startup to make you aware that there is a
           newer version of PowerShell available.
 
       - question: I opened the `aka.ms` link but it didn't install the update.
@@ -36,16 +36,16 @@ sections:
           replace Windows PowerShell 5.1. It installs side-by-side. You can run either version.
 
       - question: Can I disable the message?
-        answer: No. There is now way to disable the message.
+        answer: No. There is no way to disable the message.
 
   - name: Windows PowerShell 5.1
     questions:
       - question: How does Windows PowerShell 5.1 get updated?
         answer: |
           Windows PowerShell 5.1 is a built-in component of Windows. It's important to understand
-          that Windows PowerShell is no longer being developed. The only updates to published for
-          Windows PowerShell 5.1 are security updates. All updates are managed through standard
-          Windows update channels.
+          that Windows PowerShell is no longer being developed. Microsoft only publishes security
+          updates for Windows PowerShell 5.1. All updates are managed through standard Windows
+          update channels.
 
       - question: My install of Windows is up-to-date. Why am I still getting this message?
         answer: |
