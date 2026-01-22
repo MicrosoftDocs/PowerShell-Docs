@@ -241,6 +241,8 @@ items:
     items:
       - name: ISE
         items:
+          - name: Windows PowerShell update message
+            href: windows-powershell/update-notification-message.yml
           - name: Introducing the Windows PowerShell ISE
             href: windows-powershell/ise/introducing-the-windows-powershell-ise.md
           - name: Using the Windows PowerShell ISE
