@@ -17,14 +17,14 @@ summary: |
   questions.
 
 sections:
-  - name: General Information
+  - name: Frequently asked questions
     questions:
       - question: Why am I seeing this message?
         answer: |
           Windows PowerShell displays this message at startup to make you aware that there is a
           newer version of PowerShell available.
 
-      - question: I opened the `aka.ms` link but it didn't install the update.
+      - question: I opened the URL but it didn't install an update.
         answer: |
           The `aka.ms` takes you to this page. If you want to install the latest version of
           PowerShell, follow the instructions in
@@ -33,13 +33,12 @@ sections:
       - question: But I installed PowerShell 7, why am I still seeing this message?
         answer: |
           You always get the message when you run Windows PowerShell 5.1. PowerShell 7 doesn't
-          replace Windows PowerShell 5.1. It installs side-by-side. You can run either version.
+          replace Windows PowerShell 5.1. PowerShell 7 installs side-by-side. You can run either
+          version.
 
       - question: Can I disable the message?
         answer: No. There is no way to disable the message.
 
-  - name: Windows PowerShell 5.1
-    questions:
       - question: How does Windows PowerShell 5.1 get updated?
         answer: |
           Windows PowerShell 5.1 is a built-in component of Windows. It's important to understand
@@ -52,8 +51,6 @@ sections:
           This message appears every time you start Windows PowerShell 5.1. It doesn't mean that
           Windows PowerShell 5.1 is not up-to-date. It means that you are not running PowerShell 7.
 
-  - name: PowerShell 7
-    questions:
       - question: Why would I want to install PowerShell 7?
         answer: |
           Windows PowerShell 5.1 is no longer being developed. PowerShell 7 is actively developed
