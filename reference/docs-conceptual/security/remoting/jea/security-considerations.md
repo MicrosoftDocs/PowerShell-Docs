@@ -187,7 +187,9 @@ configured session.
 ### Don't allow commands that can create new runspaces.
 
 > [!WARNING]
-> The `*-Job` cmdlets can create new runspaces without the restrictions.
+> The Windows Compatibility feature in PowerShell 7 creates a new runspace to host Windows
+> PowerShell. Don't allow any commands that would run via the Windows Compatibility feature. The
+> `*-Job` cmdlets can create new runspaces without the restrictions.
 
 ### Don't allow the `Trace-Command` cmdlet.
 
