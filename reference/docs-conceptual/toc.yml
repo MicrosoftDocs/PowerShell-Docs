@@ -241,32 +241,30 @@ items:
     items:
       - name: Windows PowerShell update message
         href: windows-powershell/update-notification-message.yml
-      - name: ISE
-        items:
-          - name: Introducing the Windows PowerShell ISE
-            href: windows-powershell/ise/introducing-the-windows-powershell-ise.md
-          - name: Using the Windows PowerShell ISE
-            items:
-              - name: Exploring the Windows PowerShell ISE
-                href: windows-powershell/ise/exploring-the-windows-powershell-ise.md
-              - name: How to Create a PowerShell Tab in Windows PowerShell ISE
-                href: windows-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-              - name: How to debug scripts in Windows PowerShell ISE
-                href: windows-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-              - name: How to use profiles in Windows PowerShell ISE
-                href: windows-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
-              - name: How to use tab completion in the script and console panes
-                href: windows-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-              - name: How to use the console pane in the Windows PowerShell ISE
-                href: windows-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-              - name: How to write and run scripts in the Windows PowerShell ISE
-                href: windows-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-              - name: Keyboard shortcuts for the Windows PowerShell ISE
-                href: windows-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-              - name: Accessibility in Windows PowerShell ISE
-                href: windows-powershell/ise/accessibility-in-windows-powershell-ise.md
       - name: Starting Windows PowerShell
         href: windows-powershell/starting-windows-powershell.md
+      - name: Windows PowerShell ISE
+        items:
+          - name: Introducing the ISE
+            href: windows-powershell/ise/introducing-the-windows-powershell-ise.md
+          - name: Exploring the Windows PowerShell ISE
+            href: windows-powershell/ise/exploring-the-windows-powershell-ise.md
+          - name: How to Create a PowerShell Tab in Windows PowerShell ISE
+            href: windows-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+          - name: How to debug scripts in Windows PowerShell ISE
+            href: windows-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+          - name: How to use profiles in Windows PowerShell ISE
+            href: windows-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
+          - name: How to use tab completion in the script and console panes
+            href: windows-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+          - name: How to use the console pane in the Windows PowerShell ISE
+            href: windows-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+          - name: How to write and run scripts in the Windows PowerShell ISE
+            href: windows-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+          - name: Keyboard shortcuts for the Windows PowerShell ISE
+            href: windows-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+          - name: Accessibility in Windows PowerShell ISE
+            href: windows-powershell/ise/accessibility-in-windows-powershell-ise.md
       - name: Windows Management Framework (WMF)
         href: windows-powershell/wmf-overview.md
   - name: Security
