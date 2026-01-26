@@ -2,7 +2,7 @@
 description: >-
     Since JEA allows these users to run administrative commands without having full administrator
     access, you can then remove those users from highly privileged security groups.
-ms.date: 10/10/2023
+ms.date: 01/26/2026
 title: JEA Security Considerations
 ---
 # JEA Security Considerations
@@ -102,8 +102,16 @@ access to all mapped users. For example, a JEA session configured using the foll
 grants full access to `CONTOSO\JEA_Lev1` and `CONTOSO\JEA_Lev2`.
 
 ```powershell
-$roles = @{ 'CONTOSO\JEA_Lev1' = 'Lev1Role'; 'CONTOSO\JEA_Lev2' = 'Lev2Role' }
-New-PSSessionConfigurationFile -Path '.\jea.pssc' -SessionType RestrictedRemoteServer -RoleDefinitions $roles -RunAsVirtualAccount
+$newPSSessionConfigurationFileSplat = @{
+    Path = '.\jea.pssc'
+    SessionType = 'RestrictedRemoteServer'
+    RoleDefinitions = @{
+        'CONTOSO\JEA_Lev1' = 'Lev1Role'
+        'CONTOSO\JEA_Lev2' = 'Lev2Role'
+    }
+    RunAsVirtualAccount = $true
+}
+New-PSSessionConfigurationFile @newPSSessionConfigurationFileSplat
 Register-PSSessionConfiguration -Path '.\jea.pssc' -Name 'MyJEAEndpoint'
 ```
 
@@ -187,7 +195,9 @@ configured session.
 ### Don't allow commands that can create new runspaces.
 
 > [!WARNING]
-> The `*-Job` cmdlets can create new runspaces without the restrictions.
+> The Windows Compatibility feature in PowerShell 7 creates a new runspace to host Windows
+> PowerShell. Don't allow any commands that would run via the Windows Compatibility feature. The
+> `*-Job` cmdlets can create new runspaces without the restrictions.
 
 ### Don't allow the `Trace-Command` cmdlet.
 

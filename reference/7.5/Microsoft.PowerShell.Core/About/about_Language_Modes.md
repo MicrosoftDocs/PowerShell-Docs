@@ -1,7 +1,7 @@
 ---
 description: Explains language modes and their effect on PowerShell sessions.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 01/26/2026
 no-loc: [FullLanguage, ConstrainedLanguage, RestrictedLanguage, NoLanguage]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -60,7 +60,7 @@ ConstrainedLanguage
 ```
 
 However, in sessions with `RestrictedLanguage` and `NoLanguage` modes, you
-can't use the [member-access operator][02] (`.`) to get property values.
+can't use the [member-access operator][03] (`.`) to get property values.
 Instead, the error message reveals the language mode.
 
 When you access `$ExecutionContext.SessionState.LanguageMode` in a
@@ -150,7 +150,7 @@ running a defined set of commands and can't directly access APIs, the file
 system, or other system resources.
 
 For more information, see [JEA Session configurations][01] and
-[New-PSSessionConfigurationFile][05].
+[New-PSSessionConfigurationFile][06].
 
 ## Language mode features and limitations
 
@@ -222,6 +222,12 @@ The features of `ConstrainedLanguage` mode are as follows:
 - The `ToString()` method and the .NET methods of allowed types can be invoked.
 - Users can get all properties of allowed types. Users can set the values of
   properties only on allowed types.
+
+> [!IMPORTANT]
+> You must use `ConstrainedLanguage` mode in System Lockdown mode with App
+> Control for Business to ensure that `ConstrainedLanguage` mode can't be
+> bypassed. For more information about how PowerShell supports AppLocker and
+> App Control, see [Use App Control to secure PowerShell][02].
 
 The following .NET types are permitted in `ConstrainedLanguage` mode. Users can
 get properties, invoke methods, and convert objects to these types.
@@ -346,12 +352,13 @@ Beginning in PowerShell 7.2, the `New-Object` cmdlet is disabled in
 
 ## See also
 
-- [about_Session_Configuration_Files][03]
-- [about_Session_Configurations][04]
+- [about_Session_Configuration_Files][04]
+- [about_Session_Configurations][05]
 
 <!-- link references -->
 [01]: /powershell/scripting/learn/remoting/jea/session-configurations
-[02]: about_Member-Access_Enumeration.md
-[03]: about_Session_Configuration_Files.md
-[04]: about_Session_Configurations.md
-[05]: xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
+[02]: /powershell/scripting/security/app-control/application-control
+[03]: about_Member-Access_Enumeration.md
+[04]: about_Session_Configuration_Files.md
+[05]: about_Session_Configurations.md
+[06]: xref:Microsoft.PowerShell.Core.New-PSSessionConfigurationFile
