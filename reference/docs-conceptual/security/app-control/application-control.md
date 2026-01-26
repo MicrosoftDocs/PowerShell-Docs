@@ -1,6 +1,6 @@
 ---
 description: This article explains the features of Application Control that can be used to secure your PowerShell environment.
-ms.date: 12/09/2025
+ms.date: 01/26/2026
 title: Use App Control to secure PowerShell
 ---
 # Use App Control to secure PowerShell
@@ -26,11 +26,13 @@ following name format:
 - `$Env:TEMP/__PSScriptPolicyTest_<random-8dot3-name>.ps1`
 - `$Env:TEMP/__PSScriptPolicyTest_<random-8dot3-name>.psm1`
 
-App Control for Business is the preferred application control system for Windows. App Control
-provides APIs that allow you to discover the policy configuration. App Control is designed as a
-security feature under the servicing criteria defined by the Microsoft Security Response Center
-(MSRC). For more information, see [Application Controls for Windows][04] and
-[App Control and AppLocker feature availability][02].
+App Control for Business is the preferred application control system for Windows. App Control puts
+the system into System Lockdown mode. System Lockdown mode is the feature that detects the policies
+and determines if a context needs to be initialized or changed to a specific language mode.
+
+App Control is designed as a security feature under the servicing criteria defined by the Microsoft
+Security Response Center (MSRC). For more information, see [Application Controls for Windows][04]
+and [App Control and AppLocker feature availability][02].
 
 > [!NOTE]
 > When [choosing between App Control or AppLocker][03], we recommend that you implement application
