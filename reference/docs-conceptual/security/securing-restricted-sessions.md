@@ -1,6 +1,6 @@
 ---
 description: This article explains how to secure a restricted PowerShell session that is used for secure remote access.
-ms.date: 10/10/2023
+ms.date: 01/26/2026
 title: Securing a restricted PowerShell remoting session
 ---
 # Securing a restricted PowerShell remoting session
