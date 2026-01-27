@@ -1,16 +1,3 @@
-docsmd.alert: true
-docsmd.codesnippet: true
-docsmd.column: true
-docsmd.image: true
-docsmd.moniker: true
-docsmd.no-loc: true
-docsmd.row: true
-docsmd.securelinks: true
-docsmd.syntax: true
-docsmd.video: true
-docsmd.xref: true
-docsmd.zone: true
-
 MD001: true  # header-increment
 # MD002      # first-header-h1 - Superceded by MD041
 MD003:       # header-style
@@ -116,14 +103,19 @@ MD051: true  # link-fragments
 MD052: true  # reference-links-images
 MD053: true  # link-image-reference-definitions
 MD054:       # link-image-style
-  autolink: false
-  collapsed: false
-  full: true
-  inline: true
-  shortcut: false
-  url_inline: true
+  autolink:   false  # Allow autolinks (default true)
+  collapsed:  false  # Allow collapsed reference links and images (default true)
+  full:       true   # Allow full reference links and images (default true)
+  inline:     true   # Allow inline links and images (default true)
+  shortcut:   false  # Allow shortcut reference links and images (default true)
+  url_inline: true   # Allow URLs as inline links (default true)
 MD055:       # table-pipe-style
   style: leading_and_trailing
 MD056: true  # table-column-count
-# MD057      # undefined
+# MD057:     # not used by linter - never defined
 MD058: true  # blanks-around-tables
+MD059:       # descriptive-link-text
+  prohibited_texts: ["click here","here","link","more"]
+MD060:       # table-column-style
+  aligned_delimiter: false
+  style: any
