@@ -25,9 +25,6 @@ to. Most of them are under `Microsoft.PowerShell.Core/About`.
 | Microsoft.PowerShell.Security             |   X   |   X   |   X   |   X   |
 | Microsoft.PowerShell.Utility              |   X   |   X   |   X   |   X   |
 | Microsoft.WSMan.Management                |   X   |   X   |   X   |   X   |
-| PackageManagement                         |       |       |       |       |
-| PowershellGet                             |       |       |       |       |
-| PSDesiredStateConfiguration               |       |       |       |       |
 | PSDiagnostics                             |   X   |   X   |   X   |   X   |
 | PSReadLine                                |   X   |   X   |   X   |   X   |
 | PSScheduledJob                            |   X   |       |       |       |
@@ -37,7 +34,7 @@ to. Most of them are under `Microsoft.PowerShell.Core/About`.
 
 ## History
 
-- `PackageManagement` and `PowershellGet` content moved to the [PowerShell-Docs-PSGet][02]
+- `PackageManagement` and `PowerShellGet` content moved to the [PowerShell-Docs-PSGet][02]
   repository.
 - `PSDesiredStateConfiguration` content moved to the [PowerShell-Docs-DSC][01] repository with the
   release of PowerShell DSC 2.0.

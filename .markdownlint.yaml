@@ -1,11 +1,11 @@
 MD001: true  # header-increment
-# MD002      # first-header-h1 - Superceded by MD041
+# MD002      # first-header-h1 - Superseded by MD041
 MD003:       # header-style
   style: atx
 MD004:       # ul-style
   style: dash
 MD005: true  # list-indent
-# MD006      # ul-start-left - Superceded by MD007's start_indented option
+# MD006      # ul-start-left - Superseded by MD007
 MD007:       # ul-indent
   indent: 2
   start_indented: false
