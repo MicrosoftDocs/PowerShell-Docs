@@ -1,6 +1,7 @@
 ---
 description: DSC is a management platform that enables you to manage your IT and development infrastructure with configuration as code.
 ms.date: 03/18/2025
+ms.update-cycle: 3650-days
 title: Desired State Configuration (DSC)
 ---
 

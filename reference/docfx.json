@@ -138,6 +138,7 @@
       "ms.devlang": "powershell",
       "ms.service": "powershell",
       "ms.tgt_pltfr": "windows, macos, linux",
+      "ms.update-cycle": "365-days",
       "searchScope": [
         "PowerShell"
       ],
