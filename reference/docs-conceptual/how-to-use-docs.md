@@ -1,6 +1,8 @@
 ---
 description: This article explains how to use the features of this site including search filtering and version selection.
 ms.date: 01/28/2026
+description: This article explains how to use the features of this site including search filtering and version selection.
+ms.date: 01/28/2026
 ms.topic: how-to
 title: How to use the PowerShell documentation
 ---
@@ -8,11 +10,9 @@ title: How to use the PowerShell documentation
 
 Welcome to the PowerShell online documentation.
 
-## Features of the Learn platform
+![Screenshot showing the various elements of the web page.][02]
 
 The web page contains multiple elements that help you use and navigate the documentation.
-
-![Screenshot showing the various elements of the web page.][02]
 
 ### Navigation elements
 
@@ -21,6 +21,11 @@ The web page contains multiple elements that help you use and navigate the docum
 - **Related content navigation** - The related content bar is immediately below the site level
   navigation. It contains links to content related to the current documentation set, which is
   PowerShell in this case.
+- **Article navigation** - The article navigation appears at the top right of the article. It
+  contains links to sections within the article.
+
+### Table of Contents
+
 - **Article navigation** - The article navigation appears at the top right of the article. It
   contains links to sections within the article.
 
@@ -46,15 +51,59 @@ These buttons provide other ways of interacting with the content.
 - The **Menu** button provides a way to add content to a collection, provide feedback, edit the
   content, or share the content with others.
 
-### Feedback elements
+### Feedback
 
 There are two ways to provide feedback on the documentation.
 
 - **Anonymous feedback** - The **Was this helpful?** section on the right side of the article allows
   you to provide a thumbs-up or thumbs-down rating. You can also enter more feedback in a text box.
-- **Feedback on GitHub** - At the bottom of each article, you can provide feedback on the
+- **Feeback on GitHub** - At the bottom of each article, you can provide feedback on the
   documentation or the product. These links take you to the GitHub repository where you can open an
   issue and give feedback.
+
+## Selecting the version of PowerShell
+
+This site contains cmdlet reference for the following versions of PowerShell:
+
+- PowerShell 7.6 (preview)
+- PowerShell 7.5
+- PowerShell 7.4 (LTS)
+- PowerShell 5.1
+
+This site contains cmdlet reference for the following versions of PowerShell:
+
+- PowerShell 7.6 (preview)
+- PowerShell 7.5
+- PowerShell 7.4 (LTS)
+- PowerShell 5.1
+
+Use the version selector located above the TOC to select the version of PowerShell you want. By
+default, the page loads with the most current stable release version selected. The version selector
+controls which version of the cmdlet reference appears in the TOC under the **Reference** node. Some
+cmdlets work differently in different versions of PowerShell you're using. Be sure you're viewing
+cmdlets work differently in different versions of PowerShell you're using. Be sure you're viewing
+the documentation for the correct version of PowerShell.
+
+The version selector doesn't affect conceptual documentation. The conceptual documents appear above
+the **Reference** node in the TOC. The same conceptual articles appear for every version selected.
+If there are version-specific differences, the documentation makes note of those differences.
+
+![Animation showing how to use the version selector.][06]
+
+You can verify the version of PowerShell you're using by inspecting the `$PSVersionTable.PSVersion`
+You can verify the version of PowerShell you're using by inspecting the `$PSVersionTable.PSVersion`
+value. The following example shows the output for Windows PowerShell 5.1.
+
+```powershell
+$PSVersionTable.PSVersion
+```
+
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      26100  7705
+5      1      26100  7705
+```
 
 ## Filter and search for articles
 
@@ -68,7 +117,7 @@ There are two ways to search for content in Docs.
   matching articles from all documentation sets.
 
 In the following example, you see how the drop-down list is filtered to show the `Get-ChildItem`
-command as you type the name. When you enter `gci`, the filter shows the `Get-CimInstance` and
+command as you type the name. When you enter `gci`, it the filter shows the `Get-CimInstance` and
 `Get-ChildItem` commands because the alias for both commands starts with `gci`.
 
 Next, the word `idempotent` is entered. The filter shows no articles. Clicking the search link
@@ -78,47 +127,26 @@ returns 1,096 articles from the entire Microsoft Learn site.
 
 ![Animation showing how to use the search features.][05]
 
-## Selecting the version of PowerShell
+## Download the documentation as a PDF
 
-This site contains cmdlet reference for the following versions of PowerShell:
+To download the documentation as a PDF, select the **Download PDF** button at the bottom of the TOC.
 
-- PowerShell 7.6 (preview)
-- PowerShell 7.5
-- PowerShell 7.4 (LTS)
-- PowerShell 5.1
+![Screenshot of the Download PDF button.][03]
 
-Use the version selector located above the TOC to select the version of PowerShell you want. By
-default, the page loads with the most current stable release version selected. The version selector
-controls which version of the cmdlet reference appears in the TOC under the **Reference** node. Some
-cmdlets work differently in different versions of PowerShell you're using. Be sure you're viewing
-the documentation for the correct version of PowerShell.
+- If you're viewing a conceptual article, the Learn platform creates a PDF containing the conceptual
+  content for the selected version.
+- If you're viewing a reference article, the Learn platform creates a PDF containing the reference
+  content for the selected version.
 
-The version selector doesn't affect conceptual documentation. The conceptual documents appear above
-the **Reference** node in the TOC. The same conceptual articles appear for every version selected.
-If there are version-specific differences, the documentation makes note of those differences.
-
-![Animation showing how to use the version selector.][06]
-
-You can verify the version of PowerShell you're using by inspecting the `$PSVersionTable.PSVersion`
-value. The following example shows the output for Windows PowerShell 5.1.
-
-```powershell
-$PSVersionTable.PSVersion
-```
-
-```Output
-Major  Minor  Build  Revision
------  -----  -----  --------
-5      1      26100  7705
-```
-
-### Find articles for older versions of PowerShell
+## Find articles for older versions of PowerShell
 
 Documentation for older versions of PowerShell is archived in our [Previous Versions][01] site. You
 can choose **Previous Versions** from the version selector.
 
 ![Screenshot of the Previous Versions option.][04]
 
+The **Previous versions** option takes you to the site containing documentation for older and
+unsupported versions of PowerShell:
 The **Previous versions** option takes you to the site containing documentation for older and
 unsupported versions of PowerShell:
 
@@ -128,6 +156,8 @@ unsupported versions of PowerShell:
 - PowerShell 7.0
 - PowerShell 6
 - PowerShell 5.0
+  - WMF 5.x Release notes
+  - PowerShell ISE object model
   - WMF 5.x Release notes
   - PowerShell ISE object model
   - PowerShell Workflows
@@ -149,6 +179,8 @@ To download the documentation as a PDF, select the **Download PDF** button at th
 <!-- link references -->
 [01]: https://aka.ms/PSLegacyDocs
 [02]: media/how-to-use-docs/how-to-use.gif
+[03]: media/how-to-use-docs/pdf-button.png
+[04]: media/how-to-use-docs/previous-versions.png
 [03]: media/how-to-use-docs/pdf-button.png
 [04]: media/how-to-use-docs/previous-versions.png
 [05]: media/how-to-use-docs/search-scope.gif
