@@ -1,7 +1,13 @@
 ---
 description: Describes the settings and practices for writing module manifest files.
 Locale: en-US
-ms.date: 09/04/2025
+ms.date: 01/28/2026
+no-loc:
+- Windows PowerShell 5.1 Workflow
+- PowerShell Gallery
+- Author
+- Copyright
+- Description
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_module_manifests?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Module_Manifests
@@ -112,8 +118,8 @@ followed by a matrix that lists:
 
 - **Input type**: The object type that you can specify for this setting in the
   manifest.
-- **Required**: If this value is `Yes`, the setting is required both to import
-  the module and to publish it to the PowerShell Gallery. If it's `No`, it's
+- **Required**: If this value is "Yes", the setting is required both to import
+  the module and to publish it to the PowerShell Gallery. If it's "No", it's
   required for neither. If it's `PowerShell Gallery`, it's only required for
   publishing to the PowerShell Gallery.
 - **Value if unset**: The value this setting has when imported and not

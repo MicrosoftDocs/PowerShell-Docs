@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/14/2023
+ms.date: 01/28/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/remove-item?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -130,7 +130,18 @@ cmdlet interprets the subject of the search to be a file that has no child items
 fails.
 
 > [!NOTE]
-> This behavior was fixed in Windows versions 1909 and up.
+> Starting in Windows version 1909, specifying the file type in the **Path** parameter when using
+> the **Recurse** parameter does recursively discover child items with the given file extension.
+>
+> In Windows version 1909 and later, the following statements will discover and remove the same
+> files:
+>
+> ```powershell
+> # Works in all versions of Windows:
+> Get-ChildItem -Path * -Include *.csv -Recurse | Remove-Item
+> # Only correctly finds and removes nested CSV files in Windows 1909 and later:
+> Get-ChildItem -Path *.csv -Recurse | Remove-Item
+> ```
 
 ### Example 5: Delete subkeys recursively
 
