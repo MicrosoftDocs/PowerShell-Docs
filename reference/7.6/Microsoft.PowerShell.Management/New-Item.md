@@ -1,8 +1,10 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
+no-loc:
+- Target
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/23/2024
+ms.date: 01/28/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/new-item?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
