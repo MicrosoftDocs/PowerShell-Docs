@@ -57,7 +57,7 @@ There are two ways to provide feedback on the documentation.
 
 - **Anonymous feedback** - The **Was this helpful?** section on the right side of the article allows
   you to provide a thumbs-up or thumbs-down rating. You can also enter more feedback in a text box.
-- **Feeback on GitHub** - At the bottom of each article, you can provide feedback on the
+- **Feedback on GitHub** - At the bottom of each article, you can provide feedback on the
   documentation or the product. These links take you to the GitHub repository where you can open an
   issue and give feedback.
 
@@ -117,7 +117,7 @@ There are two ways to search for content in Docs.
   matching articles from all documentation sets.
 
 In the following example, you see how the drop-down list is filtered to show the `Get-ChildItem`
-command as you type the name. When you enter `gci`, it the filter shows the `Get-CimInstance` and
+command as you type the name. When you enter `gci`, the filter shows the `Get-CimInstance` and
 `Get-ChildItem` commands because the alias for both commands starts with `gci`.
 
 Next, the word `idempotent` is entered. The filter shows no articles. Clicking the search link
