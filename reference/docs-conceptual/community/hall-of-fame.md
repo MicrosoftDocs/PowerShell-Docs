@@ -1,6 +1,6 @@
 ---
-description: List of the GitHub users that have the most contributions to the PowerShell-Doc project.
-ms.date: 01/05/2026
+description: List of the GitHub users that have the most contributions to PowerShell documentation.
+ms.date: 02/02/2026
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -15,63 +15,67 @@ These GitHub users are the All-Time Top Community Contributors.
 
 Pull Requests help us fix those issues and make the documentation better for everyone.
 
-|     PRs Merged     | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | Grand Total |
-| ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community          |    3 |  194 |  446 |  467 |  321 |  160 |   99 |  121 |  108 |   81 |  146 |        2146 |
-| matt9ucci          |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |      |         274 |
-| nschonni           |      |      |      |   14 |  138 |   10 |      |      |      |      |      |         162 |
-| kiazhi             |      |   25 |   79 |   12 |      |      |      |      |      |      |      |         116 |
-| alexandair         |      |   57 |    7 |   26 |    2 |    1 |      |      |      |      |      |          93 |
-| sethvs             |      |      |    1 |   44 |      |   20 |    1 |   10 |      |    6 |    2 |          84 |
-| doctordns          |      |    5 |   32 |   20 |    7 |    9 |    5 |      |    1 |      |      |          79 |
-| surfingoldelephant |      |      |      |      |      |      |      |      |      |      |   58 |          58 |
-| ehmiiz             |      |      |      |      |      |      |      |   22 |   14 |      |      |          36 |
-| ArieHein           |      |      |      |      |    1 |      |      |      |      |    7 |   25 |          33 |
-| yecril71pl         |      |      |      |      |      |   21 |    3 |    3 |      |      |      |          27 |
-| changeworld        |      |      |      |      |      |      |      |    3 |      |      |   22 |          25 |
-| skycommand         |      |      |    1 |    3 |    3 |    6 |      |    1 |    4 |    1 |    4 |          23 |
-| Dan1el42           |      |   20 |      |      |      |      |      |      |      |      |      |          20 |
-| NReilingh          |      |    2 |      |   13 |    3 |      |      |      |      |      |      |          18 |
-| it-praktyk         |      |      |      |   16 |    1 |      |      |      |      |      |      |          17 |
-| vors               |      |   15 |    1 |      |      |      |      |      |      |      |      |          16 |
-| markekraus         |      |      |   11 |    5 |      |      |      |      |      |      |      |          16 |
-| kvprasoon          |      |    2 |    1 |    7 |    2 |    2 |    2 |      |      |      |      |          16 |
-| k-takai            |      |      |      |    5 |    1 |    7 |      |      |      |      |      |          13 |
-| purdo17            |      |      |      |   13 |      |      |      |      |      |      |      |          13 |
-| bergmeister        |      |      |    1 |    3 |    3 |    1 |    1 |    1 |    1 |      |      |          11 |
-| exchange12rocks    |      |      |    7 |    3 |      |      |    1 |      |      |      |      |          11 |
-| PlagueHO           |      |   10 |      |      |    1 |      |      |      |      |      |      |          11 |
+|     PRs Merged     | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Grand Total |
+| ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
+| Community          |    3 |  194 |  446 |  455 |  321 |  160 |   99 |  135 |  118 |   95 |  163 |    7 |        2196 |
+| matt9ucci          |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |      |      |         274 |
+| nschonni           |      |      |      |   14 |  138 |   10 |      |      |      |      |      |      |         162 |
+| kiazhi             |      |   25 |   79 |   12 |      |      |      |      |      |      |      |      |         116 |
+| alexandair         |      |   57 |    7 |   24 |    2 |    1 |      |      |      |    1 |      |      |          92 |
+| sethvs             |      |      |    1 |   42 |      |   20 |    1 |   10 |      |    6 |    2 |      |          82 |
+| doctordns          |      |    5 |   32 |   20 |    7 |    9 |    5 |      |    1 |      |      |      |          79 |
+| surfingoldelephant |      |      |      |      |      |      |      |      |      |      |   58 |    5 |          63 |
+| ehmiiz             |      |      |      |      |      |      |      |   22 |   14 |      |      |      |          36 |
+| ArieHein           |      |      |      |      |    1 |      |      |      |      |    8 |   25 |      |          34 |
+| yecril71pl         |      |      |      |      |      |   21 |    3 |    3 |      |      |      |      |          27 |
+| changeworld        |      |      |      |      |      |      |      |    3 |      |      |   22 |      |          25 |
+| skycommand         |      |      |    1 |    3 |    3 |    6 |      |    1 |    4 |    1 |    4 |      |          23 |
+| Dan1el42           |      |   20 |      |      |      |      |      |      |      |      |      |      |          20 |
+| NReilingh          |      |    2 |      |   13 |    3 |      |      |      |      |      |      |      |          18 |
+| it-praktyk         |      |      |      |   16 |    1 |      |      |      |      |      |      |      |          17 |
+| vors               |      |   15 |    1 |      |      |      |      |      |      |      |      |      |          16 |
+| kvprasoon          |      |    2 |    1 |    6 |    2 |    2 |    2 |      |      |      |      |      |          15 |
+| purdo17            |      |      |      |   13 |      |      |      |      |      |      |      |      |          13 |
+| k-takai            |      |      |      |    5 |    1 |    7 |      |      |      |      |      |      |          13 |
+| bergmeister        |      |      |    1 |    3 |    3 |    1 |    1 |    2 |    1 |    1 |      |      |          13 |
+| markekraus         |      |      |   11 |    1 |      |      |      |      |      |      |      |      |          12 |
+| PlagueHO           |      |   10 |      |      |    1 |      |      |      |      |      |      |      |          11 |
+| hrxn               |      |      |      |      |      |      |    2 |    2 |    2 |    5 |      |      |          11 |
+| exchange12rocks    |      |      |    7 |    3 |      |      |    1 |      |      |      |      |      |          11 |
+
 
 ## GitHub issues opened
 
 GitHub issues help us identify errors and gaps in our documentation.
 
-|   Issues Opened    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | Grand Total |
-| ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community          |    3 |   54 |   95 |  209 |  557 |  552 |  363 |  224 |  270 |  219 |  156 |        2702 |
-| mklement0          |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   24 |    2 |         278 |
-| ehmiiz             |      |      |      |      |      |      |      |   20 |   14 |      |      |          34 |
-| iRon7              |      |      |      |      |      |    2 |    2 |    2 |   10 |    8 |    8 |          32 |
-| iSazonov           |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |    1 |      |          31 |
-| jszabo98           |      |      |      |    2 |   15 |    6 |    1 |      |    1 |    2 |      |          27 |
-| surfingoldelephant |      |      |      |      |      |      |      |      |      |    6 |   19 |          25 |
-| juvtib             |      |      |      |      |      |   15 |    7 |      |      |      |      |          22 |
-| peetrike           |      |      |      |    1 |      |    4 |    2 |    6 |    4 |    3 |    1 |          21 |
-| doctordns          |      |      |    5 |    3 |    5 |    7 |    1 |      |      |      |      |          21 |
-| kilasuit           |      |      |      |      |    3 |    2 |    1 |    4 |    1 |    3 |    4 |          18 |
-| JustinGrote        |      |      |      |    1 |    3 |    6 |    1 |    1 |    2 |    2 |    2 |          18 |
-| vexx32             |      |      |      |    3 |   11 |      |      |    3 |      |      |      |          17 |
-| KirkMunro          |      |      |      |    7 |    7 |    1 |      |      |      |      |      |          15 |
-| alexandair         |      |    9 |    4 |    2 |      |      |      |      |      |      |      |          15 |
-| rkeithhill         |      |      |    1 |    2 |    2 |    2 |    3 |    1 |    2 |      |    1 |          14 |
-| clamb123           |      |      |      |      |      |      |   14 |      |      |      |      |          14 |
-| tabad              |      |      |      |      |      |      |      |      |   11 |    2 |      |          13 |
-| trollyanov         |      |      |      |      |      |      |   11 |    1 |      |      |      |          12 |
-| jsilverm           |      |      |      |      |      |    8 |      |      |    4 |      |      |          12 |
-| CarloToso          |      |      |      |      |      |      |      |      |   11 |      |      |          11 |
-| Liturgist          |      |      |      |      |    1 |    1 |    1 |    2 |    4 |    2 |      |          11 |
-| ArmaanMcleod       |      |      |      |      |      |      |      |      |    4 |    6 |      |          10 |
-| UberKluger         |      |      |      |      |      |    1 |    7 |    2 |      |      |      |          10 |
-| vors               |    1 |    6 |    2 |    1 |      |      |      |      |      |      |      |          10 |
-| matt9ucci          |      |      |    2 |    5 |      |      |    2 |      |    1 |      |      |          10 |
-| LaurentDardenne    |      |      |    3 |    2 |      |      |      |    5 |      |      |      |          10 |
+|   Issues Opened    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Grand Total |
+| ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----------: |
+| Community          |    3 |   54 |   95 |  210 |  556 |  553 |  366 |  237 |  291 |  244 |  183 |   18 |        2810 |
+| mklement0          |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   24 |    2 |      |         278 |
+| ehmiiz             |      |      |      |      |      |      |      |   21 |   14 |      |      |      |          35 |
+| iRon7              |      |      |      |      |      |    2 |    2 |    2 |   10 |    8 |    8 |      |          32 |
+| iSazonov           |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |    1 |      |      |          31 |
+| jszabo98           |      |      |      |    2 |   15 |    6 |    1 |      |    1 |    2 |      |    1 |          28 |
+| surfingoldelephant |      |      |      |      |      |      |      |      |      |    6 |   19 |    2 |          27 |
+| juvtib             |      |      |      |      |      |   15 |    7 |      |      |      |      |      |          22 |
+| peetrike           |      |      |      |    1 |      |    4 |    2 |    6 |    4 |    3 |    1 |      |          21 |
+| doctordns          |      |      |    5 |    3 |    5 |    7 |    1 |      |      |      |      |      |          21 |
+| kilasuit           |      |      |      |      |    3 |    2 |    1 |    4 |    1 |    4 |    5 |      |          20 |
+| JustinGrote        |      |      |      |    1 |    3 |    6 |    1 |    1 |    3 |    2 |    3 |      |          20 |
+| vexx32             |      |      |      |    3 |   11 |      |      |    3 |      |      |      |      |          17 |
+| KirkMunro          |      |      |      |    7 |    7 |    1 |      |      |      |      |      |      |          15 |
+| alexandair         |      |    9 |    4 |    2 |      |      |      |      |      |      |      |      |          15 |
+| rkeithhill         |      |      |    1 |    2 |    2 |    2 |    3 |    1 |    2 |      |    1 |      |          14 |
+| clamb123           |      |      |      |      |      |      |   14 |      |      |      |      |      |          14 |
+| tabad              |      |      |      |      |      |      |      |      |   11 |    2 |      |      |          13 |
+| ThomasNieto        |      |      |      |      |      |    3 |      |    2 |    4 |    3 |      |      |          12 |
+| trollyanov         |      |      |      |      |      |      |   11 |    1 |      |      |      |      |          12 |
+| LaurentDardenne    |      |      |    3 |    2 |      |      |      |    5 |    2 |      |      |      |          12 |
+| Liturgist          |      |      |      |      |    1 |    1 |    1 |    2 |    5 |    2 |      |      |          12 |
+| jsilverm           |      |      |      |      |      |    8 |      |      |    4 |      |      |      |          12 |
+| CarloToso          |      |      |      |      |      |      |      |      |   11 |      |      |      |          11 |
+| vors               |    1 |    6 |    2 |    1 |      |      |      |      |      |      |      |      |          10 |
+| UberKluger         |      |      |      |      |      |    1 |    7 |    2 |      |      |      |      |          10 |
+| o-l-a-v            |      |      |      |      |    1 |      |    1 |      |    4 |    2 |    2 |      |          10 |
+| matt9ucci          |      |      |    2 |    5 |      |      |    2 |      |    1 |      |      |      |          10 |
+| ArmaanMcleod       |      |      |      |      |      |      |      |      |    4 |    6 |      |      |          10 |
