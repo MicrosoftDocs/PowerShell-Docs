@@ -1,8 +1,6 @@
 ---
 description: This article explains how to use the features of this site including search filtering and version selection.
 ms.date: 01/28/2026
-description: This article explains how to use the features of this site including search filtering and version selection.
-ms.date: 01/28/2026
 ms.topic: how-to
 title: How to use the PowerShell documentation
 ---
@@ -23,11 +21,6 @@ The web page contains multiple elements that help you use and navigate the docum
 - **Related content navigation** - The related content bar is immediately below the site level
   navigation. It contains links to content related to the current documentation set, which is
   PowerShell in this case.
-- **Article navigation** - The article navigation appears at the top right of the article. It
-  contains links to sections within the article.
-
-### Table of Contents
-
 - **Article navigation** - The article navigation appears at the top right of the article. It
   contains links to sections within the article.
 
@@ -94,17 +87,9 @@ This site contains cmdlet reference for the following versions of PowerShell:
 - PowerShell 7.4 (LTS)
 - PowerShell 5.1
 
-This site contains cmdlet reference for the following versions of PowerShell:
-
-- PowerShell 7.6 (preview)
-- PowerShell 7.5
-- PowerShell 7.4 (LTS)
-- PowerShell 5.1
-
 Use the version selector located above the TOC to select the version of PowerShell you want. By
 default, the page loads with the most current stable release version selected. The version selector
 controls which version of the cmdlet reference appears in the TOC under the **Reference** node. Some
-cmdlets work differently in different versions of PowerShell you're using. Be sure you're viewing
 cmdlets work differently in different versions of PowerShell you're using. Be sure you're viewing
 the documentation for the correct version of PowerShell.
 
@@ -115,7 +100,6 @@ If there are version-specific differences, the documentation makes note of those
 ![Animation showing how to use the version selector.][06]
 
 You can verify the version of PowerShell you're using by inspecting the `$PSVersionTable.PSVersion`
-You can verify the version of PowerShell you're using by inspecting the `$PSVersionTable.PSVersion`
 value. The following example shows the output for Windows PowerShell 5.1.
 
 ```powershell
@@ -125,7 +109,6 @@ $PSVersionTable.PSVersion
 ```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
-5      1      26100  7705
 5      1      26100  7705
 ```
 
@@ -138,8 +121,6 @@ can choose **Previous Versions** from the version selector.
 
 The **Previous versions** option takes you to the site containing documentation for older and
 unsupported versions of PowerShell:
-The **Previous versions** option takes you to the site containing documentation for older and
-unsupported versions of PowerShell:
 
 - PowerShell 7.3
 - PowerShell 7.2
@@ -147,8 +128,6 @@ unsupported versions of PowerShell:
 - PowerShell 7.0
 - PowerShell 6
 - PowerShell 5.0
-  - WMF 5.x Release notes
-  - PowerShell ISE object model
   - WMF 5.x Release notes
   - PowerShell ISE object model
   - PowerShell Workflows
@@ -170,8 +149,6 @@ To download the documentation as a PDF, select the **Download PDF** button at th
 <!-- link references -->
 [01]: https://aka.ms/PSLegacyDocs
 [02]: media/how-to-use-docs/how-to-use.gif
-[03]: media/how-to-use-docs/pdf-button.png
-[04]: media/how-to-use-docs/previous-versions.png
 [03]: media/how-to-use-docs/pdf-button.png
 [04]: media/how-to-use-docs/previous-versions.png
 [05]: media/how-to-use-docs/search-scope.gif
