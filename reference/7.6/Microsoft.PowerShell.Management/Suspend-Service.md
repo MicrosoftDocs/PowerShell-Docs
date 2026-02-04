@@ -79,7 +79,7 @@ This command uses the `Get-Service` cmdlet to get an object that represents the 
 
 ```powershell
 Get-Service |
-    Where-Object {$_.CanPauseAndContinue -eq "True"} |
+    Where-Object { $_.CanPauseAndContinue } |
     Suspend-Service -Confirm
 ```
 

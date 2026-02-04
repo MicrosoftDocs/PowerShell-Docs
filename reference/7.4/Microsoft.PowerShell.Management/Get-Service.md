@@ -340,7 +340,7 @@ This cmdlet is only available on Windows platforms.
 
 PowerShell 6.0 introduced the following changes:
 
-- The **ServiceController** objects now includes the following properties:
+- The **ServiceController** objects now include the following properties:
   - **UserName**
   - **Description**
   - **DelayedAutoStart**

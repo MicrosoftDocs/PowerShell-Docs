@@ -305,8 +305,8 @@ This cmdlet is only available on Windows platforms.
   work to do. When PowerShell starts a service that stops itself almost immediately, it displays the
   following message: `Service \<display-name\> start failed.`
 
-Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
-this command on a remote computer, use the `Invoke-Command` to target a remote system.
+Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To run
+`Start-Service` on a remote computer, use `Invoke-Command`.
 
 ## RELATED LINKS
 

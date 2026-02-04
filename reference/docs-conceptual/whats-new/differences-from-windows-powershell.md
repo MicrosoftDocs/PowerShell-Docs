@@ -249,7 +249,7 @@ and a redesigned syntax.
 
 ### `New-WebServiceProxy` cmdlet removed
 
-.NET Core doesn't support the Windows Communication Framework, which provide services for using the
+.NET Core doesn't support the Windows Communication Framework, which provides services for using the
 SOAP protocol. This cmdlet was removed because it requires SOAP.
 
 ### `*-Transaction` cmdlets removed
@@ -572,7 +572,8 @@ $a = $null
 ${a}?[0]
 ```
 
-> [!NOTE] The variable name syntax of `${<name>}` shouldn't be confused with the `$()` subexpression
+> [!NOTE]
+> The variable name syntax of `${<name>}` shouldn't be confused with the `$()` subexpression
 > operator. For more information, see Variable name section of [about_Variables][08].
 
 ### Added `&` operator for job control
@@ -1123,7 +1124,7 @@ After this change, the returned object is the underlying object.
 ## Remoting Support
 
 PowerShell Remoting (PSRP) using WinRM isn't supported for non-Windows platforms. You can use
-PowerShell Remoting (PSRP) over WinRM from Windows to connect to other Windows machines. PowerShel
+PowerShell Remoting (PSRP) over WinRM from Windows to connect to other Windows machines. PowerShell
 also supports remoting over SSH on all platforms (Windows, macOS, and Linux). For more information,
 see [SSH remoting in PowerShell][25].
 
