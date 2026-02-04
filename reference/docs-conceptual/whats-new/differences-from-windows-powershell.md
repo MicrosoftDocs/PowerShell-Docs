@@ -1,7 +1,7 @@
 ---
-ms.date: 04/02/2024
+ms.date: 02/04/2026
 title: Differences between Windows PowerShell 5.1 and PowerShell 7.x
-description: This article summarizes the differences and breaking changes from Windows PowerShell 5.1 and the current version of PowerShell that is based on .NET Core.
+description: This article summarizes the differences and breaking changes from Windows PowerShell 5.1 and the current version of PowerShell that's based on .NET Core.
 ---
 # Differences between Windows PowerShell 5.1 and PowerShell 7.x
 
@@ -16,9 +16,9 @@ and non-Windows platforms and the changes that stem from the differences between
 and .NET Core.
 
 This article summarizes the significant differences and breaking changes between Windows PowerShell
-and the current version of PowerShell. This summary does not include new features or cmdlets that
+and the current version of PowerShell. This summary doesn't include new features or cmdlets that
 have been added. Nor does this article discuss what changed between versions. The goal of this
-article is to present the current state of PowerShell and how that is different from Windows
+article is to present the current state of PowerShell and how that's different from Windows
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
 
@@ -41,12 +41,13 @@ Core, see [Breaking changes for migration from .NET Framework to .NET Core][03].
 Each new release of PowerShell is built on a newer version of .NET. There can be breaking changes in
 .NET that affect PowerShell.
 
+- PowerShell 7.6 - Built on .NET 10.0 (LTS)
 - PowerShell 7.5 - Built on .NET 9.0
-- PowerShell 7.4 - Built on .NET 8.0
+- PowerShell 7.4 - Built on .NET 8.0 (LTS)
 - PowerShell 7.3 - Built on .NET 7.0
-- PowerShell 7.2 (LTS-current) - Built on .NET 6.0 (LTS-current)
+- PowerShell 7.2 - Built on .NET 6.0 (LTS)
 - PowerShell 7.1 - Built on .NET 5.0
-- PowerShell 7.0 (LTS) - Built on .NET Core 3.1 (LTS)
+- PowerShell 7.0 - Built on .NET Core 3.1 (LTS)
 - PowerShell 6.2 - Built on .NET Core 2.1
 - PowerShell 6.1 - Built on .NET Core 2.1
 - PowerShell 6.0 - Built on .NET Core 2.0
@@ -63,7 +64,7 @@ For more information see:
 
 ### Be aware of .NET method changes
 
-While .NET method changes are not specific to PowerShell, they can affect your scripts, especially
+While .NET method changes aren't specific to PowerShell, they can affect your scripts, especially
 if you are calling .NET methods directly. Also, there might be new overloads for constructors. This
 can have an impact on how you create objects using `New-Object` or the `[type]::new()` method.
 
@@ -153,9 +154,9 @@ Workflow from PowerShell.
 In the future, we would like to enable native parallelism/concurrency in the PowerShell language
 without the need for PowerShell Workflow.
 
-If there is a need to use checkpoints to resume a script after the OS restarts, we recommend
-using Task Scheduler to run a script on OS startup, but the script would need to maintain
-its own state (like persisting it to a file).
+If there is a need to use checkpoints to resume a script after the OS restarts, we recommend using
+Task Scheduler to run a script on OS startup, but the script would need to maintain its own state
+(like persisting it to a file).
 
 ## Cmdlets removed from PowerShell
 
@@ -248,7 +249,7 @@ and a redesigned syntax.
 
 ### `New-WebServiceProxy` cmdlet removed
 
-.NET Core does not support the Windows Communication Framework, which provide services for using the
+.NET Core doesn't support the Windows Communication Framework, which provide services for using the
 SOAP protocol. This cmdlet was removed because it requires SOAP.
 
 ### `*-Transaction` cmdlets removed
@@ -298,8 +299,8 @@ Additional changes to `pwsh(.exe)` from `powershell.exe`:
   on non-Windows platforms. It also means that you can run commands like `pwsh foo.ps1` or
   `pwsh fooScript` without specifying `-File`. However, this change requires that you explicitly
   specify `-c` or `-Command` when trying to run commands like `pwsh.exe -Command Get-Command`.
-- `pwsh` accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell.
-  This allows PowerShell to be used as a default shell on Unix platforms.
+- `pwsh` accepts the `-i` (or `-Interactive`) switch to indicate an interactive shell. This allows
+  PowerShell to be used as a default shell on Unix platforms.
 - Removed parameters `-ImportSystemModules` and `-PSConsoleFile` from `pwsh.exe`.
 - Changed `pwsh -Version` and built-in help for `pwsh.exe` to align with other native tools.
 - Invalid argument error messages for `-File` and `-Command` and exit codes consistent with Unix
@@ -334,23 +335,23 @@ The PowerShell 7.2 MSI package includes following command-line options:
 
 - `USE_MU` - This property has two possible values:
   - `1` (default) - Opts into updating through Microsoft Update or WSUS
-  - `0` -  Do not opt into updating through Microsoft Update or WSUS
+  - `0` -  Don't opt into updating through Microsoft Update or WSUS
 - `ENABLE_MU`
   - `1` (default) - Opts into using Microsoft Update the Automatic Updates or Windows Update
-  - `0` - Do not opt into using Microsoft Update the Automatic Updates or Windows Update
+  - `0` - Don't opt into using Microsoft Update the Automatic Updates or Windows Update
 
 ## Engine changes
 
 ### Support PowerShell as a default Unix shell
 
-On Unix, it is a convention for shells to accept `-i` for an interactive shell and many tools
-expect this behavior (`script` for example, and when setting PowerShell as the default shell) and
-calls the shell with the `-i` switch. This change is breaking in that `-i` previously could be used
-as short hand to match `-InputFormat`, which now needs to be `-in`.
+On Unix, it's a convention for shells to accept `-i` for an interactive shell and many tools expect
+this behavior (`script` for example, and when setting PowerShell as the default shell) and calls the
+shell with the `-i` switch. This change is breaking in that `-i` previously could be used as short
+hand to match `-InputFormat`, which now needs to be `-in`.
 
 ### Custom snap-ins
 
-[PowerShell snap-ins][07] are a predecessor to PowerShell modules that do not have widespread
+[PowerShell snap-ins][07] are a predecessor to PowerShell modules that don't have widespread
 adoption in the PowerShell community.
 
 Due to the complexity of supporting snap-ins and their lack of usage in the community, we no longer
@@ -378,18 +379,18 @@ the null-element check if the collection's element type is value type.
 ### Preserve `$?` for **ParenExpression**, **SubExpression** and **ArrayExpression**
 
 This PR alters the way we compile subpipelines `(...)`, subexpressions `$(...)` and array
-expressions `@()` so that `$?` is not automatically **true**. Instead the value of `$?` depends on
+expressions `@()` so that `$?` isn't automatically **true**. Instead the value of `$?` depends on
 the result of the pipeline or statements executed.
 
 ### Fix `$?` to not be `$false` when native command writes to `stderr`
 
-`$?` is not set to `$false` when native command writes to `stderr`. It is common for native commands
+`$?` isn't set to `$false` when native command writes to `stderr`. It's common for native commands
 to write to `stderr` without intending to indicate a failure. `$?` is set to `$false` only when the
 native command has a non-zero exit code.
 
 ### Make `$ErrorActionPreference` not affect `stderr` output of native commands
 
-It is common for native commands to write to `stderr` without intending to indicate a failure. With
+It's common for native commands to write to `stderr` without intending to indicate a failure. With
 this change, `stderr` output is still captured in **ErrorRecord** objects, but the runtime no longer
 applies `$ErrorActionPreference` if the **ErrorRecord** comes from a native command.
 
@@ -433,8 +434,8 @@ core.
 ### Allow explicitly specified named parameter to supersede the same one from hashtable splatting
 
 With this change, the named parameters from splatting are moved to the end of the parameter list so
-that they are bound after all explicitly specified named parameters are bound. Parameter binding for
-simple functions doesn't throw an error when a specified named parameter cannot be found. Unknown
+that they're bound after all explicitly specified named parameters are bound. Parameter binding for
+simple functions doesn't throw an error when a specified named parameter can't be found. Unknown
 named parameters are bound to the `$args` parameter of the simple function. Moving splatting to the
 end of the argument list changes the order the parameters appears in `$args`.
 
@@ -450,7 +451,7 @@ function SimpleTest {
 }
 ```
 
-In the previous behavior, **MyPath** is not bound to `-Path` because it's the third argument in the
+In the previous behavior, **MyPath** isn't bound to `-Path` because it's the third argument in the
 argument list. ## So it ends up being stuffed into '$args' along with `Blah = "World"`
 
 ```powershell
@@ -460,7 +461,7 @@ Name: Hello; Path: ; Args: -Blah: World MyPath
 ```
 
 With this change, the arguments from `@hash` are moved to the end of the argument list. **MyPath**
-becomes the first argument in the list, so it is bound to `-Path`.
+becomes the first argument in the list, so it's bound to `-Path`.
 
 ```powershell
 PS> SimpleTest @hash "MyPath"
@@ -531,7 +532,7 @@ A null-conditional operator applies a member access, `?.`, or element access, `?
 its operand only if that operand evaluates to non-null; otherwise, it returns null.
 
 Since PowerShell allows `?` to be part of the variable name, formal specification of the variable
-name is required for using these operators. So it is required to use `{}` around the variable names
+name is required for using these operators. So it's required to use `{}` around the variable names
 like `${a}` or when `?` is part of the variable name `${a?}`.
 
 In the following example, the value of **PropName** is returned.
@@ -571,8 +572,7 @@ $a = $null
 ${a}?[0]
 ```
 
-> [!NOTE]
-> The variable name syntax of `${<name>}` should not be confused with the `$()` subexpression
+> [!NOTE] The variable name syntax of `${<name>}` shouldn't be confused with the `$()` subexpression
 > operator. For more information, see Variable name section of [about_Variables][08].
 
 ### Added `&` operator for job control
@@ -669,17 +669,17 @@ True
 
 ## New cmdlets
 
-### New Get-Uptime cmdlet
+### New `Get-Uptime` cmdlet
 
 The [Get-Uptime][19] cmdlet returns the time elapsed since the last boot of the operating system.
 The cmdlet was introduced in PowerShell 6.0.
 
-### New Remove-Alias cmdlet
+### New `Remove-Alias` cmdlet
 
 The [Remove-Alias][21] cmdlet removes an alias from the current PowerShell session. The cmdlet was
 introduced in PowerShell 6.0.
 
-### New cmdlet Remove-Service
+### New `Remove-Service` cmdlet
 
 The [Remove-Service][15] cmdlet removes a Windows service in the registry and in the service
 database. The `Remove-Service` cmdlet was introduced in PowerShell 6.0.
@@ -699,7 +699,7 @@ The following cmdlets were added in PowerShell 6.1:
   console.
 - [Show-Markdown][23] - Displays Markdown content in the console or as HTML
 
-### New Test-Json cmdlet
+### New `Test-Json` cmdlet
 
 The [Test-Json][24] cmdlet tests whether a string is a valid JavaScript Object Notation (JSON)
 document and can optionally verify that JSON document against a provided schema.
@@ -714,18 +714,18 @@ The following cmdlets were added in PowerShell 6.2 to support Experimental Featu
 - [Enable-ExperimentalFeature][11]
 - [Get-ExperimentalFeature][13]
 
-### New Join-String cmdlet
+### New `Join-String` cmdlet
 
 The [Join-String][20] cmdlet combines objects from the pipeline into a single string. This cmdlet
 was added in PowerShell 6.2.
 
-### New view ConciseView and cmdlet Get-Error
+### New view **ConciseView** and cmdlet `Get-Error`
 
 PowerShell 7.0 enhances the display of error messages to improve the readability of interactive and
 script errors with a new default view, **ConciseView**. The views are user-selectable through the
 preference variable `$ErrorView`.
 
-With **ConciseView**, if an error is not from a script or parser error, then it's a single line
+With **ConciseView**, if an error isn't from a script or parser error, then it's a single line
 error message:
 
 ```powershell
@@ -733,12 +733,12 @@ Get-ChildItem -Path C:\NotReal
 ```
 
 ```Output
-Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
+Get-ChildItem: Can't find path 'C:\NotReal' because it doesn't exist
 ```
 
 If the error occurs during script execution or is a parsing error, PowerShell returns a multiline
 error message that contains the error, a pointer, and an error message showing where the error is in
-that line. If the terminal doesn't support ANSI color escape sequences (VT100), then colors are not
+that line. If the terminal doesn't support ANSI color escape sequences (VT100), then colors aren't
 displayed.
 
 The default view in PowerShell 7 is **ConciseView**. The previous default view was **NormalView**
@@ -775,7 +775,7 @@ For more information, see [Get-Error][17].
 
 ## Cmdlet changes
 
-### Parallel execution added to ForEach-Object
+### Parallel execution added to `ForEach-Object`
 
 Beginning in PowerShell 7.0, the `ForEach-Object` cmdlet, which iterates items in a collection, now
 has built-in parallelism with the new **Parallel** parameter.
@@ -797,7 +797,7 @@ $logEntries.Count
 50000
 ```
 
-The **Parallel** parameter specifies the script block that is run in parallel for each input log
+The **Parallel** parameter specifies the script block that's run in parallel for each input log
 name.
 
 The new **ThrottleLimit** parameter limits the number of script blocks running in parallel at a
@@ -838,19 +838,18 @@ The `Start-Job` cmdlet now uses the current directory as the working directory f
 
 ### Remove `-Protocol` from `*-Computer` cmdlets
 
-Due to issues with RPC remoting in CoreFX (particularly on non-Windows platforms) and ensuring a
-consistent remoting experience in PowerShell, the `-Protocol` parameter was removed from the
-`\*-Computer` cmdlets. DCOM is no longer supported for remoting. The following cmdlets only support
-WSMAN remoting:
+The `-Protocol` parameter was removed from following cmdlets:
 
 - `Rename-Computer`
 - `Restart-Computer`
 - `Stop-Computer`
 
+DCOM is no longer supported for remoting. The cmdlets only support WSMAN remoting.
+
 ### Remove `-ComputerName` from `*-Service` cmdlets
 
 In order to encourage the consistent use of PSRP, the `-ComputerName` parameter was removed from
-`*-Service` cmdlets.
+`*-Service` cmdlets. Use `Invoke-Command` to run the cmdlets on remote computers instead.
 
 ### Fix `Get-Content -Delimiter` to not include the delimiter in the returned lines
 
@@ -860,21 +859,22 @@ in returned lines.
 
 ### Changes to `Format-Hex`
 
-The `-Raw` parameter is now a "no-op" (in that it does nothing). Going forward all output is
-displayed with a true representation of numbers that includes all of the bytes for its type. This is
-what the `-Raw` parameter was doing prior to this change.
+The `-Raw` parameter now does nothing. The `Format-Hex` cmdlet displays a true representation of
+numbers that includes all the bytes for its type. This is what the `-Raw` parameter did prior
+to this change.
 
-### Typo fix in Get-ComputerInfo property name
+### Typo fix in `Get-ComputerInfo` property name
 
 `BiosSerialNumber` was misspelled as `BiosSeralNumber` and has been changed to the correct spelling.
 
-### Add `Get-StringHash` and `Get-FileHash` cmdlets
+### Changes to available hash algorithms
 
-This change is that some hash algorithms are not supported by CoreFX, therefore they are no longer
-available:
+The following hash algorithms have been removed from .NET:
 
 - `MACTripleDES`
 - `RIPEMD160`
+
+This change affects the `Get-FileHash` cmdlet.
 
 ### Add validation on `Get-*` cmdlets where passing $null returns all objects instead of error
 
@@ -895,14 +895,14 @@ Passing `$null` to any of the following now throws an error:
 
 ### Add support for the W3C Extended Log File Format in `Import-Csv`
 
-Previously, the `Import-Csv` cmdlet cannot be used to directly import the log files in W3C extended
+Previously, the `Import-Csv` cmdlet can't be used to directly import the log files in W3C extended
 log format and additional action would be required. With this change, W3C extended log format is
 supported.
 
 ### `Import-Csv` applies `pstypenames` upon import when type information is present in the CSV
 
 Previously, objects exported using `Export-Csv` with `TypeInformation` imported with
-`ConvertFrom-Csv` were not retaining the type information. This change adds the type information to
+`ConvertFrom-Csv` weren't retaining the type information. This change adds the type information to
 `pstypenames` member if available from the CSV file.
 
 ### `-NoTypeInformation` is the default on `Export-Csv`
@@ -920,10 +920,10 @@ found no files, it would silently exit. Correct behavior should be that `-Litera
 if the file doesn't exist, it should error. Change is to treat wildcards used with `-Literal` as
 literal.
 
-### Group-Object now sorts the groups
+### `Group-Object` now sorts the groups
 
 As part of the performance improvement, `Group-Object` now returns a sorted listing of the groups.
-Although you should not rely on the order, you could be broken by this change if you wanted the
+Although you shouldn't rely on the order, you could be broken by this change if you wanted the
 first group. We decided that this performance improvement was worth the change since the impact of
 being dependent on previous behavior is low.
 
@@ -1027,7 +1027,7 @@ Internet Explorer have resulted in several breaking changes within `Invoke-WebRe
 - `-MaximumRedirection` now produces a terminating error when redirection attempts exceed the
   provided limit instead of returning the results of the last redirection.
 - In PowerShell 6.2, a change was made to default to UTF-8 encoding for JSON responses. When a
-  charset is not supplied for a JSON response, the default encoding should be UTF-8 per RFC 8259.
+  charset isn't supplied for a JSON response, the default encoding should be UTF-8 per RFC 8259.
 - Default encoding set to UTF-8 for `application-json` responses
 - Added `-SkipHeaderValidation` parameter to allow `Content-Type` headers that aren't
   standards-compliant
@@ -1035,7 +1035,7 @@ Internet Explorer have resulted in several breaking changes within `Invoke-WebRe
 - Compliant, case-insensitive handling of relation keys
 - Added `-Resume` parameter for web cmdlets
 
-### Invoke-RestMethod returns useful info when no data is returned
+### `Invoke-RestMethod` returns useful info when no data is returned
 
 When an API returns just `null`, `Invoke-RestMethod` was serializing this as the string `"null"`
 instead of `$null`. This change fixes the logic in `Invoke-RestMethod` to properly serialize a valid
@@ -1050,14 +1050,14 @@ this by using the `-AllowUnencryptedAuthentication` switch.
 ### Make `-OutFile` parameter in web cmdlets to work like `-LiteralPath`
 
 Beginning in PowerShell 7.1, the **OutFile** parameter of the web cmdlets works like **LiteralPath**
-and does not process wildcards.
+and doesn't process wildcards.
 
 ## API changes
 
 ### Remove `AddTypeCommandBase` class
 
 The `AddTypeCommandBase` class was removed from `Add-Type` to improve performance. This class is
-only used by the `Add-Type` cmdlet and should not impact users.
+only used by the `Add-Type` cmdlet and shouldn't impact users.
 
 ### Removed `VisualBasic` as a supported language in Add-Type
 
@@ -1076,10 +1076,10 @@ An incorrect position of a parameter resulted in the args passed as input instea
 
 ### Remove `ClrVersion` and `BuildVersion` properties from `$PSVersionTable`
 
-The `ClrVersion` property of `$PSVersionTable` is not useful with CoreCLR. End users should not be
+The `ClrVersion` property of `$PSVersionTable` isn't useful with CoreCLR. End users shouldn't be
 using that value to determine compatibility.
 
-The `BuildVersion` property was tied to the Windows build version, which is not available on
+The `BuildVersion` property was tied to the Windows build version, which isn't available on
 non-Windows platforms. Use the `GitCommitId` property to retrieve the exact build version of
 PowerShell.
 
@@ -1104,11 +1104,11 @@ These minor breaking changes mainly affect help provider code.
   so it makes sense to not allow people to create `Workflow` instances.
 - Remove the type **System.Management.Automation.DebugSource** since it's only used for workflow
   debugging.
-- Remove the overload of `SetParent` from the abstract class **Debugger** that is only used for
+- Remove the overload of `SetParent` from the abstract class **Debugger** that's only used for
   workflow debugging.
 - Remove the same overload of `SetParent` from the derived class **RemotingJobDebugger**.
 
-### Do not wrap return result in `PSObject` when converting a `ScriptBlock` to a delegate
+### Don't wrap return result in `PSObject` when converting a `ScriptBlock` to a delegate
 
 When a `ScriptBlock` is converted to a delegate type to be used in C# context, wrapping the result
 in a `PSObject` brings unneeded troubles:
@@ -1122,12 +1122,10 @@ After this change, the returned object is the underlying object.
 
 ## Remoting Support
 
-PowerShell Remoting (PSRP) using WinRM on Unix platforms requires NTLM/Negotiate or Basic Auth over
-HTTPS. PSRP on macOS only supports Basic Auth over HTTPS. Kerberos-based authentication is not
-supported for non-Windows platforms.
-
-PowerShell also supports PowerShell Remoting (PSRP) over SSH on all platforms (Windows, macOS, and
-Linux). For more information, see [SSH remoting in PowerShell][25].
+PowerShell Remoting (PSRP) using WinRM isn't supported for non-Windows platforms. You can use
+PowerShell Remoting (PSRP) over WinRM from Windows to connect to other Windows machines. PowerShel
+also supports remoting over SSH on all platforms (Windows, macOS, and Linux). For more information,
+see [SSH remoting in PowerShell][25].
 
 ### PowerShell Direct for Containers tries to use `pwsh` first
 
@@ -1207,7 +1205,7 @@ string:
 
 ## Telemetry can only be disabled with an environment variable
 
-PowerShell sends basic telemetry data to Microsoft when it is launched. The data includes the OS
+PowerShell sends basic telemetry data to Microsoft when it's launched. The data includes the OS
 name, OS version, and PowerShell version. This data allows us to better understand the environments
 where PowerShell is used and enables us to prioritize new features and fixes.
 

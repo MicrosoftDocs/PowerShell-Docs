@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/20/2024
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -73,8 +73,8 @@ Get-Service "wmi*"
 ### Example 3: Display services that include a search string
 
 This example displays services with a display name that includes the word `network`. Searching the
-display name finds network-related services even when the service name doesn't include `Net`, such
-as xmlprov, the Network Provisioning Service.
+display name finds network-related services even when the service name doesn't include `Net`, such as
+xmlprov, the Network Provisioning Service.
 
 ```powershell
 Get-Service -DisplayName "*network*"
@@ -110,8 +110,8 @@ This example gets services that have dependent services.
 ```powershell
 Get-Service | Where-Object {$_.DependentServices} |
     Format-List -Property Name, DependentServices, @{
-        Label="NoOfDependentServices"
-        Expression={$_.DependentServices.Count}
+        Label = "NoOfDependentServices"
+        Expression = {$_.DependentServices.Count}
     }
 ```
 
@@ -338,9 +338,16 @@ PowerShell includes the following aliases for `Get-Service`:
 
 This cmdlet is only available on Windows platforms.
 
-Beginning in PowerShell 6.0, the following properties are added to the **ServiceController**
-objects: **UserName**, **Description**, **DelayedAutoStart**, **BinaryPathName**, and
-**StartupType** .
+PowerShell 6.0 introduced the following changes:
+
+- The **ServiceController** objects now includes the following properties:
+  - **UserName**
+  - **Description**
+  - **DelayedAutoStart**
+  - **BinaryPathName**
+  - **StartupType**
+- The command no longer includes the **ComputerName** parameter. To use this command on a remote computer,
+  use the `Invoke-Command` to target a remote system.
 
 This cmdlet can display services only when the current user has permission to see them. If this
 cmdlet does not display services, you might not have permission to see them.
@@ -362,9 +369,12 @@ When you sort in ascending order by status value, `Stopped` services appear befo
 services. The **Status** property of a service is an enumerated value in which the names of the
 statuses represent integer values. The sort is based on the integer value, not the name. `Running`
 appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value of `4`. For
-more information, see [ServiceControllerStatus](xref:System.ServiceProcess.ServiceControllerStatus).
+more information, see
+[ServiceControllerStatus](xref:System.ServiceProcess.ServiceControllerStatus).
 
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [New-Service](New-Service.md)
 
