@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Debian Linux
-ms.date: 12/15/2025
+ms.date: 02/04/2026
 title: Install PowerShell on Debian
 ---
 # Install PowerShell on Debian
@@ -31,6 +31,7 @@ Installing PowerShell from PMC is the preferred method of installation.
 > This script only works for supported versions of Debian.
 
 ```sh
+#!/bin/bash
 ###################################
 # Prerequisites
 
@@ -81,6 +82,7 @@ The following shell script downloads and installs the current release of PowerSh
 change the URL to download the version of PowerShell that you want to install.
 
 ```sh
+#!/bin/bash
 ###################################
 # Prerequisites
 

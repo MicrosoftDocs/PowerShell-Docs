@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 12/15/2025
+ms.date: 02/04/2026
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -31,6 +31,7 @@ Installing PowerShell from PMC is the preferred method of installation.
 > This script only works for supported versions of Ubuntu.
 
 ```sh
+#!/bin/bash
 ###################################
 # Prerequisites
 
@@ -93,6 +94,7 @@ The following shell script downloads and installs the current preview release of
 change the URL to download the version of PowerShell that you want to install.
 
 ```sh
+#!/bin/bash
 ###################################
 # Prerequisites
 
