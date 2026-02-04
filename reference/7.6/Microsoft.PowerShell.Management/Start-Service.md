@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/15/2024
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -92,9 +92,10 @@ existing file.
 
 This example shows how to start a service when the start type of the service is **Disabled**.
 
-```
+```powershell
 PS> Start-Service tlntsvr
-Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the following error: Cannot start service TlntSvr on computer '.'.
+Start-Service : Service 'Telnet (TlntSvr)' cannot be started due to the following error: Cannot
+start service TlntSvr on computer '.'.
 At line:1 char:14
 + Start-Service  <<<< tlntsvr
 
@@ -256,7 +257,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -303,7 +305,12 @@ This cmdlet is only available on Windows platforms.
   work to do. When PowerShell starts a service that stops itself almost immediately, it displays the
   following message: `Service \<display-name\> start failed.`
 
+Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To run
+`Start-Service` on a remote computer, use `Invoke-Command`.
+
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Get-Service](Get-Service.md)
 

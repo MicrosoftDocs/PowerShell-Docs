@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/20/2024
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
@@ -168,6 +168,7 @@ Name      StartType
 spooler   Automatic
 SQLWriter Automatic
 ```
+
 ## PARAMETERS
 
 ### -ComputerName
@@ -291,18 +292,18 @@ Accept wildcard characters: False
 
 Sets the startup type of the service. The acceptable values for this parameter are:
 
-- **Automatic** - The service is started or was started by the operating system, at system start-up.
+- `Automatic` - The service is started or was started by the operating system, at system start-up.
   If an automatically started service depends on a manually started service, the manually started
   service is also started automatically at system startup.
-- **Disabled** - The service is disabled and cannot be started by a user or application.
-- **Manual** - The service is started only manually, by a user, using the Service Control Manager,
+- `Disabled` - The service is disabled and cannot be started by a user or application.
+- `Manual` - The service is started only manually, by a user, using the Service Control Manager,
   or by an application.
-- **Boot** - Indicates that the service is a device driver started by the system loader. This
+- `Boot` - Indicates that the service is a device driver started by the system loader. This
   value is valid only for device drivers.
-- **System** - Indicates that the service is a device driver started by the 'IOInitSystem()'
+- `System` - Indicates that the service is a device driver started by the 'IOInitSystem()'
   function. This value is valid only for device drivers.
 
- The default value is **Automatic**.
+ The default value is `Automatic`.
 
 ```yaml
 Type: System.ServiceProcess.ServiceStartMode
@@ -323,9 +324,9 @@ Specifies the status for the service.
 
 The acceptable values for this parameter are as follows:
 
-- **Paused**. Suspends the service.
-- **Running**. Starts the service.
-- **Stopped**. Stops the service.
+- `Paused`. Suspends the service.
+- `Running`. Starts the service.
+- `Stopped`. Stops the service.
 
 ```yaml
 Type: System.String

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/suspend-service?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Suspend-Service
@@ -50,16 +50,16 @@ object that represents the services that you want to suspend.
 
 ### Example 1: Suspend a service
 
-```
-PS C:\> Suspend-Service -DisplayName "Telnet"
+```powershell
+Suspend-Service -DisplayName "Telnet"
 ```
 
 This command suspends the Telnet service (Tlntsvr) service on the local computer.
 
 ### Example 2: Display what would happen if you suspend services
 
-```
-PS C:\> Suspend-Service -Name lanman* -WhatIf
+```powershell
+Suspend-Service -Name lanman* -WhatIf
 ```
 
 This command tells what would happen if you suspended the services that have a service name that
@@ -67,8 +67,8 @@ starts with lanman. To suspend the services, rerun the command without the **Wha
 
 ### Example 3: Get and suspend a service
 
-```
-PS C:\> Get-Service schedule | Suspend-Service
+```powershell
+Get-Service schedule | Suspend-Service
 ```
 
 This command uses the `Get-Service` cmdlet to get an object that represents the Task Scheduler
@@ -77,8 +77,10 @@ This command uses the `Get-Service` cmdlet to get an object that represents the 
 
 ### Example 4: Suspend all services that can be suspended
 
-```
-PS C:\> Get-Service | Where-Object {$_.CanPauseAndContinue -eq "True"} | Suspend-Service -Confirm
+```powershell
+Get-Service |
+    Where-Object { $_.CanPauseAndContinue } |
+    Suspend-Service -Confirm
 ```
 
 This command suspends all of the services on the computer that can be suspended. It uses
@@ -270,7 +272,12 @@ This cmdlet is only available on Windows platforms.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.
 
+Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
+this command on a remote computer, use the `Invoke-Command` to target a remote system.
+
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Get-Service](Get-Service.md)
 

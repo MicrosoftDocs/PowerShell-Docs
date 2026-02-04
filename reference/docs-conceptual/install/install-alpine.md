@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Alpine Linux
-ms.date: 12/15/2025
+ms.date: 02/04/2026
 title: Install PowerShell on Alpine Linux
 ---
 # Install PowerShell on Alpine Linux
@@ -28,6 +28,7 @@ to the package depends on the version of PowerShell you want to install.
 Then, in the terminal, execute the following shell commands to install PowerShell 7.4:
 
 ```sh
+#!/bin/bash
 # install the requirements
 sudo apk add --no-cache \
     ca-certificates \

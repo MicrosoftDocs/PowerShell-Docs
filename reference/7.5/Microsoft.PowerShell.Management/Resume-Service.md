@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/resume-service?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Resume-Service
@@ -247,7 +247,12 @@ This cmdlet is only available on Windows platforms.
   The service names appear in the **Name** column, and the display names appear in the
   **DisplayName** column.
 
+Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
+this command on a remote computer, use the `Invoke-Command` to target a remote system.
+
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Get-Service](Get-Service.md)
 

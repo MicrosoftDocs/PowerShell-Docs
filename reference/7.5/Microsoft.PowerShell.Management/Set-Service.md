@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/20/2024
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
@@ -391,14 +391,14 @@ Specifies the start mode of the service.
 
 The acceptable values for this parameter are as follows:
 
-- **Automatic** - The service is started or was started by the operating system, at system start-up.
+- `Automatic` - The service is started or was started by the operating system, at system start-up.
   If an automatically started service depends on a manually started service, the manually started
   service is also started automatically at system startup.
-- **AutomaticDelayedStart** - Starts shortly after the system boots.
-- **Disabled** - The service is disabled and cannot be started by a user or application.
-- **InvalidValue** - Has no effect. The cmdlet does not return an error but the StartupType of the
+- `AutomaticDelayedStart` - Starts shortly after the system boots.
+- `Disabled` - The service is disabled and cannot be started by a user or application.
+- `InvalidValue` - Has no effect. The cmdlet does not return an error but the StartupType of the
   service is not changed.
-- **Manual** - The service is started only manually, by a user, using the Service Control Manager,
+- `Manual` - The service is started only manually, by a user, using the Service Control Manager,
   or by an application.
 
 ```yaml
@@ -420,9 +420,9 @@ Specifies the status for the service.
 
 The acceptable values for this parameter are as follows:
 
-- **Paused**. Suspends the service.
-- **Running**. Starts the service.
-- **Stopped**. Stops the service.
+- `Paused`. Suspends the service.
+- `Running`. Starts the service.
+- `Stopped`. Stops the service.
 
 ```yaml
 Type: System.String
@@ -508,7 +508,12 @@ a command doesn't work correctly, you might not have the required permissions.
 To find a service's service name or display name, use `Get-Service`. The service names are in the
 **Name** column and the display names are in the **DisplayName** column.
 
+Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
+this command on a remote computer, use the `Invoke-Command` to target a remote system.
+
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Get-Service](Get-Service.md)
 

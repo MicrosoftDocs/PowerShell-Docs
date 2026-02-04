@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/20/2024
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -108,10 +108,10 @@ Status is only one property of service objects. To see all of the properties, ty
 This example gets services that have dependent services.
 
 ```powershell
-Get-Service |
-  Where-Object {$_.DependentServices} |
+Get-Service | Where-Object {$_.DependentServices} |
     Format-List -Property Name, DependentServices, @{
-      Label="NoOfDependentServices"; Expression={$_.DependentServices.Count}
+        Label = "NoOfDependentServices"
+        Expression = {$_.DependentServices.Count}
     }
 ```
 
@@ -140,7 +140,7 @@ This example shows that when you sort services in ascending order by the value o
 property, stopped services appear before running services. This happens because the value of
 **Status** is an enumeration, in which `Stopped` has a value of `1`, and `Running` has a value of
 `4`. For more information, see
-[ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+[ServiceControllerStatus](xref:System.ServiceProcess.ServiceControllerStatus).
 
 To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.
 
@@ -338,9 +338,16 @@ PowerShell includes the following aliases for `Get-Service`:
 
 This cmdlet is only available on Windows platforms.
 
-Beginning in PowerShell 6.0, the following properties are added to the **ServiceController**
-objects: **UserName**, **Description**, **DelayedAutoStart**, **BinaryPathName**, and
-**StartupType** .
+PowerShell 6.0 introduced the following changes:
+
+- The **ServiceController** objects now include the following properties:
+  - **UserName**
+  - **Description**
+  - **DelayedAutoStart**
+  - **BinaryPathName**
+  - **StartupType**
+- The command no longer includes the **ComputerName** parameter. To use this command on a remote computer,
+  use the `Invoke-Command` to target a remote system.
 
 This cmdlet can display services only when the current user has permission to see them. If this
 cmdlet does not display services, you might not have permission to see them.
@@ -363,9 +370,11 @@ services. The **Status** property of a service is an enumerated value in which t
 statuses represent integer values. The sort is based on the integer value, not the name. `Running`
 appears before `Stopped` because `Stopped` has a value of `1`, and `Running` has a value of `4`. For
 more information, see
-[ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).
+[ServiceControllerStatus](xref:System.ServiceProcess.ServiceControllerStatus).
 
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [New-Service](New-Service.md)
 
