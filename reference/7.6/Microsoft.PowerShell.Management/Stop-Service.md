@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/27/2023
+ms.date: 02/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -51,7 +51,7 @@ to stop.
 
 ### Example 1: Stop a service on the local computer
 
-```
+```powershell
 PS C:\> Stop-Service -Name "sysmonlog"
 ```
 
@@ -59,7 +59,7 @@ This command stops the Performance Logs and Alerts (SysmonLog) service on the lo
 
 ### Example 2: Stop a service by using the display name
 
-```
+```powershell
 PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
 ```
 
@@ -69,7 +69,7 @@ an object that represents the Telnet service. The pipeline operator (`|`) pipes 
 
 ### Example 3: Stop a service that has dependent services
 
-```
+```powershell
 PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServices
 PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
 ```
@@ -297,7 +297,12 @@ To find the service names and display names of the services on your system, type
 service names appear in the **Name** column and the display names appear in the **DisplayName**
 column.
 
+Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
+this command on a remote computer, use the `Invoke-Command` to target a remote system.
+
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Get-Service](Get-Service.md)
 

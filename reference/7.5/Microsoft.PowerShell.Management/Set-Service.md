@@ -508,7 +508,12 @@ a command doesn't work correctly, you might not have the required permissions.
 To find a service's service name or display name, use `Get-Service`. The service names are in the
 **Name** column and the display names are in the **DisplayName** column.
 
+Beginning in PowerShell 6.0, the command no longer includes the **ComputerName** parameter. To use
+this command on a remote computer, use the `Invoke-Command` to target a remote system.
+
 ## RELATED LINKS
+
+[Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
 [Get-Service](Get-Service.md)
 
