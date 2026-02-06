@@ -396,6 +396,12 @@ protocols.
 - [CimCmdlets Module][cimcmdlets-module]
 - [Video: Using CIM Cmdlets and CIM Sessions][video-using-cim-cmdlets]
 
+## Next steps
+
+In [Chapter 8][chapter-8], you'll learn about PowerShell remoting. You'll explore how to run
+commands on remote systems, understand one-to-one and one-to-many remoting scenarios, and learn how
+remoting enables scalable automation across multiple computers.
+
 <!-- link references -->
 
 [about-wmi]: /powershell/module/microsoft.powershell.core/about/about_wmi
@@ -404,3 +410,4 @@ protocols.
 [cimcmdlets-module]: /powershell/module/cimcmdlets/
 [video-using-cim-cmdlets]: https://mikefrobbins.com/2013/09/12/phillyposh-user-group-meeting-presentation-follow-up-powershell-second-hop-problem-with-cimsessions/
 [cimsessions-with-fallback-to-dcom]: https://mikefrobbins.com/2014/08/28/powershell-function-to-create-cimsessions-to-remote-computers-with-fallback-to-dcom/
+[chapter-8]: 08-powershell-remoting.md

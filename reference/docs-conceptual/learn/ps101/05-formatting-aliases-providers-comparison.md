@@ -652,7 +652,7 @@ Comparison Operators.
 
 ## Next steps
 
-In the next chapter, you'll learn about flow control, scripting, loops, and conditional logic.
+In [Chapter 6][chapter-6], you'll learn about flow control, scripting, loops, and conditional logic.
 
 <!-- link references -->
 
@@ -665,3 +665,4 @@ In the next chapter, you'll learn about flow control, scripting, loops, and cond
 [about-comparison-operators]: /powershell/module/microsoft.powershell.core/about/about_comparison_operators
 [about-arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
 [pester-test-other-cultures]: https://mikefrobbins.com/2015/10/22/using-pester-to-test-powershell-code-with-other-cultures/
+[chapter-6]: 06-flow-control.md

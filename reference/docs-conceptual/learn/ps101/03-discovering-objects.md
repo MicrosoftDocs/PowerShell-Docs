@@ -785,7 +785,7 @@ properties returned by default.
 
 ## Next steps
 
-In the next chapter, you'll learn about one-liners and the pipeline.
+In [Chapter 4][chapter-4], you'll learn about one-liners and the pipeline.
 
 <!-- link references -->
 
@@ -798,3 +798,4 @@ In the next chapter, you'll learn about one-liners and the pipeline.
 [about-properties]: /powershell/module/microsoft.powershell.core/about/about_properties
 [about-methods]: /powershell/module/microsoft.powershell.core/about/about_methods
 [use-methods]: https://mikefrobbins.com/2016/12/15/no-powershell-cmdlet-to-start-or-stop-something-dont-forget-to-check-for-methods-on-the-get-cmdlets/
+[chapter-4]: 04-pipelines.md

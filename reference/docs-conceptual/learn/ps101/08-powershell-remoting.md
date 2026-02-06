@@ -389,6 +389,12 @@ running multiple commands against the same remote computer.
 - [about_Remote_Variables][about-remote-variables]
 - [PowerShell Remoting FAQ][remoting-faq]
 
+## Next steps
+
+In [Chapter 9][chapter-9], you'll learn how to write reusable PowerShell functions. You'll explore
+function design, parameters, pipeline input, error handling, and best practices for turning
+one-liners and scripts into reliable tools.
+
 <!-- link references -->
 
 [about-remote]: /powershell/module/microsoft.powershell.core/about/about_remote
@@ -397,3 +403,4 @@ running multiple commands against the same remote computer.
 [about-remote-troubleshooting]: /powershell/module/microsoft.powershell.core/about/about_remote_troubleshooting
 [about-remote-variables]: /powershell/module/microsoft.powershell.core/about/about_remote_variables
 [remoting-faq]: /powershell/scripting/learn/remoting/powershell-remoting-faq
+[chapter-9]: 09-functions.md
