@@ -940,7 +940,8 @@ articles.
 
 ## Next steps
 
-In the next chapter, you'll learn about objects, properties, methods, and the `Get-Member` cmdlet.
+In [Chapter 3][chapter-3], you'll learn about objects, properties, methods, and the `Get-Member`
+cmdlet.
 
 <!-- link references -->
 [help]: /powershell/module/microsoft.powershell.core/get-help
@@ -949,3 +950,4 @@ In the next chapter, you'll learn about objects, properties, methods, and the `G
 [save-help]: /powershell/module/microsoft.powershell.core/save-help
 [updatable-help]: /powershell/module/microsoft.powershell.core/about/about_updatable_help
 [command-syntax]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
+[chapter-3]: 03-discovering-objects.md

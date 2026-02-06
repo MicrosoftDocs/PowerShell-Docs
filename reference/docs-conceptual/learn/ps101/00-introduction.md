@@ -69,6 +69,12 @@ When Mike's not writing documentation for Microsoft, he shares his thoughts and 
 at [mikefrobbins.com][mikefrobbins-com] and interacts with his followers on Twitter
 [@mikefrobbins][mikefrobbins-x].
 
+## Where to begin
+
+If you're new to PowerShell or want to ensure you have a solid foundation, start with [Chapter
+1][chapter-1]. It covers finding and launching PowerShell, understanding versions, and setting up
+your environment so you can follow along with the examples throughout the rest of this book.
+
 <!-- link references -->
 
 [azps-docs]: /powershell/azure
@@ -78,3 +84,4 @@ at [mikefrobbins.com][mikefrobbins-com] and interacts with his followers on Twit
 [ps-deep-dives]: https://www.manning.com/books/powershell-deep-dives
 [mikefrobbins-com]: https://mikefrobbins.com/
 [mikefrobbins-x]: https://twitter.com/mikefrobbins
+[chapter-1]: 01-getting-started.md

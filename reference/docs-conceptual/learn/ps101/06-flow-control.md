@@ -322,6 +322,13 @@ In this chapter, you learned about the different types of loops that exist in Po
 - [about_Continue][about-continue]
 - [about_Return][about-return]
 
+## Next steps
+
+In [Chapter 7][chapter-7], you'll learn how to retrieve and work with system information using
+Windows Management Instrumentation (WMI) and the Common Information Model (CIM). You'll explore
+modern CIM-based cmdlets, understand how they differ from legacy WMI commands, and use them to query
+local and remote systems efficiently.
+
 <!-- link references -->
 
 [foreach-object]: /powershell/module/microsoft.powershell.core/foreach-object
@@ -333,3 +340,4 @@ In this chapter, you learned about the different types of loops that exist in Po
 [about-continue]: /powershell/module/microsoft.powershell.core/about/about_continue
 [about-return]: /powershell/module/microsoft.powershell.core/about/about_return
 [the-powershell-return-keyword]: https://mikefrobbins.com/2015/07/23/the-powershell-return-keyword/
+[chapter-7]: 07-working-with-wmi.md

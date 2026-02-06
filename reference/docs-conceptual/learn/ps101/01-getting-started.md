@@ -357,8 +357,9 @@ articles.
 
 ## Next steps
 
-In the next chapter, you'll learn about the discoverability of commands in PowerShell. You'll also
-learn how to download PowerShell's help files so you can view the help in your PowerShell session.
+In [Chapter 2][chapter-2], you'll learn about the discoverability of commands in PowerShell. You'll
+also learn how to download PowerShell's help files so you can view the help in your PowerShell
+session.
 
 <!-- link references -->
 
@@ -369,3 +370,4 @@ learn how to download PowerShell's help files so you can view the help in your P
 [migrate-ps]: /powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7
 [execution-policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [auto-variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
+[chapter-2]: 02-help-system.md

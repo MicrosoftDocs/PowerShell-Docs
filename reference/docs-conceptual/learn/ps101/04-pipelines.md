@@ -743,7 +743,8 @@ Additionally, you learned about key concepts such as filtering left, the pipelin
 
 ## Next steps
 
-In the next chapter, you'll learn about formatting, aliases, providers, and comparison operators.
+In [Chapter 5][chapter-5], you'll learn about formatting, aliases, providers, and comparison
+operators.
 
 <!-- link references-->
 
@@ -752,3 +753,4 @@ In the next chapter, you'll learn about formatting, aliases, providers, and comp
 [about-parameters]: /powershell/module/microsoft.powershell.core/about/about_parameters
 [psget]: https://mikefrobbins.com/2015/04/23/powershellget-the-big-easy-way-to-discover-install-and-update-powershell-modules/
 [powerShell-gallery]: https://www.powershellgallery.com/
+[chapter-5]: 05-formatting-aliases-providers-comparison.md

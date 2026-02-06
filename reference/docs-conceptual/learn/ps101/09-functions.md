@@ -883,6 +883,12 @@ In this chapter, you learned the basics of writing functions in PowerShell, incl
 - [about_Comment_Based_Help][about_Comment_Based_Help]
 - [Video: PowerShell Toolmaking with Advanced Functions and Script Modules][Video: PowerShell Toolmaking with Advanced Functions and Script Modules]
 
+## Next steps
+
+In [Chapter 10][chapter-10], you'll learn how to package functions into script modules. You'll
+explore module structure, manifests, exporting public commands, and best practices for organizing,
+sharing, and maintaining reusable PowerShell tooling.
+
 <!-- link references -->
 
 [about_Functions]: /powershell/module/microsoft.powershell.core/about/about_functions
@@ -894,3 +900,4 @@ In this chapter, you learned the basics of writing functions in PowerShell, incl
 [about_Comment_Based_Help]: /powershell/module/microsoft.powershell.core/about/about_comment_based_help
 [Video: PowerShell Toolmaking with Advanced Functions and Script Modules]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/
 [Pascal case]: /dotnet/standard/design-guidelines/capitalization-conventions
+[chapter-10]: 10-script-modules.md
