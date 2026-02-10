@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 02/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
@@ -267,14 +267,20 @@ The final `Invoke-Command` shows how the data might be used.
 
 ### -ApplicationArguments
 
-Specifies a **PrimitiveDictionary** that is sent to the remote session. Commands and scripts in the
+Specifies a **PrimitiveDictionary** that's sent to the remote session. Commands and scripts in the
 remote session, including startup scripts in the session configuration, can find this dictionary in
 the **ApplicationArguments** property of the `$PSSenderInfo` automatic variable. You can use this
 parameter to send data to the remote session.
 
-For more information, see [about_Hash_Tables](about/about_Hash_Tables.md),
+> [!IMPORTANT]
+> Since this property contains data explicitly provided by the client, using this for security
+> decisions could allow attackers to bypass authorization controls. Never use this data for trust
+> decisions. [Validate all user input](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/)
+> when used for other application logic.
+
+For more information, see [about_Hash_Tables](About/about_Hash_Tables.md),
 [about_Session_Configurations](About/about_Session_Configurations.md), and
-[about_Automatic_Variables](about/about_Automatic_Variables.md).
+[about_Automatic_Variables](About/about_Automatic_Variables.md).
 
 ```yaml
 Type: System.Management.Automation.PSPrimitiveDictionary

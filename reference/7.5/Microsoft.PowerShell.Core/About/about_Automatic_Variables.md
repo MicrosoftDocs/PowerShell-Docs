@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 02/10/2026
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline, PSEventArgs, PSEventSubscriber, PSEdition]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -619,6 +619,12 @@ from the originating session. To add data to the **ApplicationArguments**
 property, use the **ApplicationArguments** parameter of the
 `New-PSSessionOption` cmdlet.
 
+> [!IMPORTANT]
+> Since this property contains data explicitly provided by the client, using
+> this for security decisions could allow attackers to bypass authorization
+> controls. Never use this data for trust decisions.
+> [Validate all user input][78] when used for other application logic.
+
 ### `$PSUICulture`
 
 Contains the name of the user interface (UI) culture that's configured in the
@@ -1154,4 +1160,4 @@ Default (Current): End
 [75]: xref:System.Collections.IEnumerator.Current
 [76]: xref:System.Collections.IEnumerator.MoveNext
 [77]: xref:System.Collections.IEnumerator.Reset
-
+[78]: https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/
