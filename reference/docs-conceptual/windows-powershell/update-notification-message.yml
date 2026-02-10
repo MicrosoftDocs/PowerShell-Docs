@@ -2,11 +2,11 @@
 metadata:
   description: >-
     This article explains the intent of the update notification message in Windows PowerShell.
-  ms.date: 01/22/2026
+  ms.date: 02/10/2026
   ms.topic: faq
-  title: Windows PowerShell update message
+  title: Windows PowerShell update message FAQ
 
-title: Windows PowerShell update message
+title: Windows PowerShell update message FAQ
 summary: |
   When you start Windows PowerShell you see a message that tells you to install the latest version
   of PowerShell along with a URL.
@@ -28,13 +28,14 @@ sections:
         answer: |
           The `aka.ms` link takes you to this page. If you want to install the latest version of
           PowerShell, follow the instructions in
-          [Install PowerShell on Windows](../install/install-powershell-on-windows.md).
+          [**Install PowerShell on Windows**](../install/install-powershell-on-windows.md).
 
       - question: But I installed PowerShell 7, why am I still seeing this message?
         answer: |
-          You always get the message when you run Windows PowerShell 5.1. PowerShell 7 doesn't
-          replace Windows PowerShell 5.1. PowerShell 7 installs side-by-side. You can run either
-          version.
+          **You always get the message when you run Windows PowerShell 5.1.**
+
+          PowerShell 7 doesn't replace Windows PowerShell 5.1. PowerShell 7 installs side-by-side.
+          You can run either version.
 
       - question: Can I disable the message?
         answer: No. There is no way to disable the message.
@@ -48,8 +49,10 @@ sections:
 
       - question: My install of Windows is up-to-date. Why am I still getting this message?
         answer: |
-          This message appears every time you start Windows PowerShell 5.1. It doesn't mean that
-          Windows PowerShell 5.1 is not up-to-date. It means that you are not running PowerShell 7.
+          **This message appears every time you start Windows PowerShell 5.1.**
+
+          It doesn't mean that Windows PowerShell 5.1 is not up-to-date. **It means that you didn't
+          run PowerShell 7.**
 
       - question: Why would I want to install PowerShell 7?
         answer: |
