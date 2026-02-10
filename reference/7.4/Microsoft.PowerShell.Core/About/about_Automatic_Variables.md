@@ -622,8 +622,8 @@ property, use the **ApplicationArguments** parameter of the
 > [!IMPORTANT]
 > Since this property contains data explicitly provided by the client, using
 > this for security decisions could allow attackers to bypass authorization
-> controls. Never use this data for trust decisions. Validate all user input
-> when used for other application logic.
+> controls. Never use this data for trust decisions.
+> [Validate all user input][78] when used for other application logic.
 
 ### `$PSUICulture`
 
@@ -1160,4 +1160,4 @@ Default (Current): End
 [75]: xref:System.Collections.IEnumerator.Current
 [76]: xref:System.Collections.IEnumerator.MoveNext
 [77]: xref:System.Collections.IEnumerator.Reset
-
+[78]: https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/

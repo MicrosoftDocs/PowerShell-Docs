@@ -275,11 +275,12 @@ parameter to send data to the remote session.
 > [!IMPORTANT]
 > Since this property contains data explicitly provided by the client, using this for security
 > decisions could allow attackers to bypass authorization controls. Never use this data for trust
-> decisions. Validate all user input when used for other application logic.
+> decisions. [Validate all user input](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/)
+> when used for other application logic.
 
-For more information, see [about_Hash_Tables](about/about_Hash_Tables.md),
+For more information, see [about_Hash_Tables](About/about_Hash_Tables.md),
 [about_Session_Configurations](About/about_Session_Configurations.md), and
-[about_Automatic_Variables](about/about_Automatic_Variables.md).
+[about_Automatic_Variables](About/about_Automatic_Variables.md).
 
 ```yaml
 Type: System.Management.Automation.PSPrimitiveDictionary
