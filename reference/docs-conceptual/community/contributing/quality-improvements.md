@@ -75,7 +75,7 @@ The [Packages tab][01] displays all available packages in the PowerShell Gallery
 
 > [!NOTE]
 > When you replace an inline link, reflow the content to wrap at 100 characters. You can use the
-> [reflow-markdown][30] VS Code extension to quickly reflow the paragraph.
+> [reflow-markdown][09] VS Code extension to quickly reflow the paragraph.
 
 At the bottom of the file, add a markdown comment before the definition of the links.
 
@@ -86,10 +86,11 @@ At the bottom of the file, add a markdown comment before the definition of the l
 
 Make sure that:
 
-1. The links are defined in the order they appear in the document.
 1. Every link points to the correct location.
+1. Don't duplicate link reference definitions. If a link reference definition already exists for a
+   URL, reuse the existing reference instead of creating a new one.
 1. The link reference definitions are at the bottom of the file after the markdown comment and are
-   in the correct order.
+   in the numeric order.
 
 ## Markdown linting
 
