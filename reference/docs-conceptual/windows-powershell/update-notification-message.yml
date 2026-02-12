@@ -2,7 +2,7 @@
 metadata:
   description: >-
     This article explains the intent of the update notification message in Windows PowerShell.
-  ms.date: 02/10/2026
+  ms.date: 02/12/2026
   ms.topic: faq
   title: Windows PowerShell update message FAQ
 
@@ -34,8 +34,9 @@ sections:
         answer: |
           **You always get the message when you run Windows PowerShell 5.1.**
 
-          PowerShell 7 doesn't replace Windows PowerShell 5.1. PowerShell 7 installs side-by-side.
-          You can run either version.
+          PowerShell 7 and Windows PowerShell 5.1 are separate products. PowerShell 7 doesn't
+          replace Windows PowerShell 5.1. PowerShell 7 installs side-by-side. You can run either
+          version.
 
       - question: Can I disable the message?
         answer: No. There is no way to disable the message.
@@ -43,9 +44,9 @@ sections:
       - question: How does Windows PowerShell 5.1 get updated?
         answer: |
           Windows PowerShell 5.1 is a built-in component of Windows. It's important to understand
-          that Windows PowerShell is no longer being developed. Microsoft only publishes security
-          updates for Windows PowerShell 5.1. All updates are managed through standard Windows
-          update channels.
+          that Windows PowerShell 5.1 is no longer being developed. Microsoft only publishes
+          security updates for Windows PowerShell 5.1. All updates are managed through standard
+          Windows update channels.
 
       - question: My install of Windows is up-to-date. Why am I still getting this message?
         answer: |
