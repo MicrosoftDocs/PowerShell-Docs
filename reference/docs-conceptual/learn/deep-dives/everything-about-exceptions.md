@@ -599,7 +599,7 @@ terminating error by using `-ErrorAction Stop` or calling it from within a `try{
 
 ### Public function templates
 
-One last take a way I had with my conversation with Kirk Munro was that he places a
+One last takeaway I had with my conversation with Kirk Munro was that he places a
 `try{...}catch{...}` around every `begin`, `process` and `end` block in all of his advanced
 functions. In those generic catch blocks, he has a single line using
 `$PSCmdlet.ThrowTerminatingError($PSItem)` to deal with all exceptions leaving his functions.
