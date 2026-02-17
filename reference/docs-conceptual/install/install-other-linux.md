@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on various Linux distributions
-ms.date: 10/16/2025
+ms.date: 02/17/2026
 title: Alternate ways to install PowerShell on Linux
 ---
 # Alternate ways to install PowerShell on Linux
@@ -27,8 +27,9 @@ the distribution you're running the package on.
 
 ### Getting snapd
 
-`snapd` is required to run snaps. Use [these instructions][15] to make sure you have `snapd`
-installed.
+The snap daemon, known as `snapd`, is the background service that manages and maintains your snaps.
+It needs to be running before a snap can be installed. For instructions on how to install `snapd`,
+see the [Snapcraft documentation][16].
 
 ### Installation via Snap
 
@@ -97,7 +98,7 @@ scenarios.
 > [!NOTE]
 > You can use this method to install any version of PowerShell including the latest:
 >
-> - Stable release: [https://aka.ms/powershell-release?tag=stable][00]
+> - Stable release: [https://aka.ms/powershell-release?tag=stable][14]
 > - LTS release: [https://aka.ms/powershell-release?tag=lts][12]
 > - Preview release: [https://aka.ms/powershell-release?tag=preview][13]
 
@@ -119,7 +120,7 @@ distribution page for more information:
 
 To deploy PowerShell binaries on Linux distributions that aren't officially supported, you need to
 install the necessary dependencies for the target OS in separate steps. For example, our
-[Amazon Linux dockerfile][16] installs dependencies first, and then extracts the Linux `tar.gz`
+[Amazon Linux dockerfile][15] installs dependencies first, and then extracts the Linux `tar.gz`
 archive.
 
 ### Installation using a binary archive file
@@ -176,7 +177,6 @@ currently running shell does not have the updated `PATH`. You should be able to 
 from a new shell by typing `pwsh`.
 
 <!-- link references -->
-[00]: https://aka.ms/powershell-release?tag=stable
 [01]: /dotnet/core/install/linux-alpine#dependencies
 [02]: /dotnet/core/install/linux-debian#dependencies
 [03]: /dotnet/core/install/linux-rhel#dependencies
@@ -191,6 +191,6 @@ from a new shell by typing `pwsh`.
 [12]: https://aka.ms/powershell-release?tag=lts
 [13]: https://aka.ms/powershell-release?tag=preview
 [14]: https://aka.ms/PowerShell-Release?tag=stable
-[15]: https://docs.snapcraft.io/core/install
-[16]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/unstable/amazonlinux/docker/Dockerfile
+[15]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/unstable/amazonlinux/docker/Dockerfile
+[16]: https://snapcraft.io/docs/tutorials/install-the-daemon/
 [17]: https://snapcraft.io/store
