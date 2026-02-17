@@ -112,8 +112,8 @@ lists the end-of-support dates for the current versions of PowerShell:
 
 |         Version          | Release Date | End-of-support |  .NET Version   |
 | ------------------------ | :----------: | :------------: | --------------- |
-| PowerShell 7.6 (preview) | Future date  |  Future date   | [.NET 10.0][19] |
-| PowerShell 7.5           | 23-Jan-2025  |  12-May-2026   | [.NET 9.0][14]  |
+| PowerShell 7.6 (preview) | Future date  |  14-Nov-2028   | [.NET 10.0][19] |
+| PowerShell 7.5           | 23-Jan-2025  |  10-Nov-2026   | [.NET 9.0][14]  |
 | PowerShell 7.4 (LTS)     | 16-Nov-2023  |  10-Nov-2026   | [.NET 8.0][13]  |
 
 The following table lists the end-of-support dates for retired versions of PowerShell:
