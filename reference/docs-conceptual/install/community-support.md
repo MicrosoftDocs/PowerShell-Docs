@@ -59,7 +59,7 @@ information about installing these packages, see the [PowerShell][06] page in th
 
 ## SLES and openSUSE
 
-You may be able to install PowerShell on SLES and openSUSE using the SNAP package manager. Also,
+You may be able to install PowerShell on SLES and openSUSE using the Snap package manager. Also,
 the following article provides information on how to install PowerShell on openSUSE:
 
 - [PowerShell - openSUSE Wiki][03]
@@ -74,8 +74,8 @@ the following article provides information on how to install PowerShell on openS
 
 ### Install on Raspberry Pi OS
 
-Being Debian-based, you can install PowerShell on Raspberry Pi OS using the SNAP package. For more
-information, see the [SNAP installation instructions][10].
+Being Debian-based, you can install PowerShell on Raspberry Pi OS using the Snap package. For more
+information, see the [Snap installation instructions][10].
 
 Or you can install PowerShell on Raspberry Pi OS using the binary archives. Download the tar.gz
 package from the [releases][09] page onto your Raspberry Pi computer. The links to the current
