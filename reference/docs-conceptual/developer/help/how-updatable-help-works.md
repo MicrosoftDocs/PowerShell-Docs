@@ -20,7 +20,7 @@ to update the help files for a module in a particular UI culture.
 
 1. `Update-Help` compares the version number of the help files for the specified UI culture in the
    remote and local HelpInfo XML files for the module. If the version number on the remote file is
-   greater than version number on the local file, or if the there is no local HelpInfo XML file for
+   greater than version number on the local file, or if there is no local HelpInfo XML file for
    the module, `Update-Help` prepares to download new help files.
 
 1. `Update-Help` selects the CAB file for the module from the location specified by the
@@ -52,7 +52,7 @@ files for a module in a file share that's specified by the **DestinationPath** p
 
 1. `Save-Help` compares the version number of the help files for the specified UI culture in the
    remote and local HelpInfo XML files for the module. If the version number on the remote file is
-   greater than version number on the local file, or if the there is no local HelpInfo XML file for
+   greater than version number on the local file, or if there is no local HelpInfo XML file for
    the module in the **DestinationPath** directory, `Save-Help` prepares to download new help files.
 
 1. `Save-Help` selects the CAB file for the module from the location specified by the
@@ -76,7 +76,7 @@ files for a module in a file share that's specified by the **DestinationPath** p
 
 1. `Update-Help` compares the version number of the help files for the specified UI culture in the
    remote and local HelpInfo XML files for the module. If the version number on the remote file is
-   greater than version number on the local file, or if the there is no local HelpInfo XML file,
+   greater than version number on the local file, or if there is no local HelpInfo XML file,
    `Update-Help` prepares to install new help files.
 
 1. `Update-Help` selects the CAB file for the module from **SourcePath** directory. It uses the
