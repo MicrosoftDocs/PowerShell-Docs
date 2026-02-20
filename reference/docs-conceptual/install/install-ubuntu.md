@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 02/04/2026
+ms.date: 02/20/2026
 title: Installing PowerShell on Ubuntu
 ---
 # Installing PowerShell on Ubuntu
@@ -88,7 +88,7 @@ The link to the current version is:
 - PowerShell 7.5 universal package for supported versions of Ubuntu
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell_7.5.4-1.deb_amd64.deb`
 - PowerShell 7.6-preview universal package for supported versions of Ubuntu
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-preview.6/powershell-preview_7.6.0-preview.6-1.deb_amd64.deb`
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-preview_7.6.0-rc1-1.deb_amd64.deb`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
 change the URL to download the version of PowerShell that you want to install.

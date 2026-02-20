@@ -1,33 +1,30 @@
 ---
 title: What's New in PowerShell 7.6
 description: New features and changes released in PowerShell 7.6
-ms.date: 12/17/2025
+ms.date: 02/20/2026
 ---
 
 # What's New in PowerShell 7.6
 
-PowerShell 7.6-preview.6 includes the following features, updates, and breaking changes. PowerShell
-7.6 is built on .NET 10.0.0 GA release.
-
+PowerShell 7.6-rc1 includes the following features, updates, and breaking changes. PowerShell
+7.6 is built on .NET 10.0.
 
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
 ## Updated modules
 
-PowerShell 7.6-preview.6 includes the following updated modules:
+PowerShell 7.6-rc1 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** v1.2.0-preview5
-- **PSReadLine** v2.4.4-beta4
+- **Microsoft.PowerShell.PSResourceGet** v1.2.0-rc3
+- **PSReadLine** v2.4.5
 - **Microsoft.PowerShell.ThreadJob** v2.2.0
-- **ThreadJob** v2.1.0
-
-The **ThreadJob** was renamed to **Microsoft.PowerShell.ThreadJob** module. There is no difference
-in the functionality of the module. To ensure backward compatibility for scripts that use the old
-name, the **ThreadJob** v2.1.0 module is a proxy module that points to the
-**Microsoft.PowerShell.ThreadJob** v2.2.0.
 
 ## Breaking Changes
 
+- The **Microsoft.PowerShell.ThreadJob** replaces the **ThreadJob** module. The `Start-ThreadJob`
+  cmdlet hasn't changed, so there shouldn't be an impact unless you have scripts that use the module
+  qualified name. If you are using the module qualified name, update the name to
+  `Microsoft.PowerShell.ThreadJob\Start-ThreadJob`.
 - Fix `WildcardPattern.Escape` to escape lone backticks correctly ([#25211][25211]) (Thanks
   @ArmaanMcleod!)
 - Convert `-ChildPath` parameter to `string[]` for `Join-Path` cmdlet ([#24677][24677]) (Thanks
