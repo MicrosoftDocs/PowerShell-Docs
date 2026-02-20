@@ -1,7 +1,7 @@
 ---
 description: This article contains the list of changes for each released version of PSReadLine.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 02/20/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline_release_notes?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine_Release_Notes
@@ -13,8 +13,7 @@ title: about_PSReadLine_Release_Notes
 This is a summary of changes to the **PSReadLine** module. For a full list of
 changes, see the **PSReadLine** [ChangeLog][01].
 
-- Current preview: v2.4.4-beta4
-- Current stable release: v2.3.6
+- Current stable release: v2.4.5
 
 ## Long description
 
@@ -23,6 +22,7 @@ changes, see the **PSReadLine** [ChangeLog][01].
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
+- v2.4.5 shipped in PowerShell 7.6.0-rc.1
 - v2.3.6 shipped in PowerShell 7.4.7 and 7.5.0
 - v2.3.5 shipped in PowerShell 7.4.2 and 7.5.0-preview.3
 - v2.3.4 shipped in PowerShell 7.4.0-rc.1
@@ -30,6 +30,13 @@ Windows PowerShell 5.1.
 - v2.1.0 shipped in PowerShell 7.2.5
 - v2.0.4 shipped in PowerShell 7.0.11
 - v2.0.0 ships in Windows PowerShell 5.1
+
+### 2.4.5 - 2025-10-22
+
+- Replace `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` with `DOTNET_NOLOGO`
+- Add the **ScreenReaderModeEnabled** property to formatting so it's displayed
+  in the default formatting for `Get-PSReadLineOption`.
+- Fix a null reference exception when showing parameter help
 
 ### 2.4.4-beta4 - 2025-08-28
 
