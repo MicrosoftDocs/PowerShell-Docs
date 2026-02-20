@@ -15,7 +15,7 @@ For a complete list of changes, see the [CHANGELOG][log] in the GitHub repositor
 
 PowerShell 7.6-rc1 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** 1.2.0-rc3
+- **Microsoft.PowerShell.PSResourceGet** v1.2.0-rc3
 - **PSReadLine** v2.4.5
 - **Microsoft.PowerShell.ThreadJob** v2.2.0
 
