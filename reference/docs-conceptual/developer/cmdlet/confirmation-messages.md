@@ -6,22 +6,20 @@ title: Confirmation Messages
 # Confirmation Messages
 
 Here are different confirmation messages that can be displayed depending on the variants of the
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-and
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
-methods that are called.
+[System.Management.Automation.Cmdlet.ShouldProcess][04] and
+[System.Management.Automation.Cmdlet.ShouldContinue][03] methods that are called.
 
 > [!IMPORTANT]
 > For sample code that shows how to request confirmations, see
-> [How to Request Confirmations](./how-to-request-confirmations.md).
+> [Requesting Confirmation from Cmdlets][01].
 
 ## Specifying the Resource
 
 You can specify the resource that is about to be changed by calling the
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-method. In this case, you supply the resource by using the `target` parameter of the method, and the
-operation is added by Windows PowerShell. In the following message, the text "MyResource" is the
-resource acted on and the operation is the name of the command that makes the call.
+[System.Management.Automation.Cmdlet.ShouldProcess][04] method. In this case, you supply the
+resource by using the `target` parameter of the method, and the operation is added by Windows
+PowerShell. In the following message, the text "MyResource" is the resource acted on and the
+operation is the name of the command that makes the call.
 
 ```Output
 Confirm
@@ -31,9 +29,8 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 ```
 
 If the user selects **Yes** or **Yes to All** to the confirmation request (as shown in the following
-example), a call to the
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
-method is made, which causes a second confirmation message to be displayed.
+example), a call to the [System.Management.Automation.Cmdlet.ShouldContinue][03] method is made,
+which causes a second confirmation message to be displayed.
 
 ```Output
 Confirm
@@ -49,11 +46,10 @@ Continue with this operation?
 ## Specifying the Operation and Resource
 
 You can specify the resource that is about to be changed and the operation that the command is about
-to perform by calling the
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-method. In this case, you supply the resource by using the `target` parameter and the operation by
-using the `target` parameter. In the following message, the text "MyResource" is the resource acted
-on and "MyAction" is the operation to be performed.
+to perform by calling the [System.Management.Automation.Cmdlet.ShouldProcess][04] method. In this
+case, you supply the resource by using the `target` parameter and the operation by using the
+`target` parameter. In the following message, the text "MyResource" is the resource acted on and
+"MyAction" is the operation to be performed.
 
 ```Output
 Confirm
@@ -63,8 +59,8 @@ Performing operation "MyAction" on Target "MyResource".
 ```
 
 If the user selects **Yes** or **Yes to All** to the previous message, a call to the
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
-method is made, which causes a second confirmation message to be displayed.
+[System.Management.Automation.Cmdlet.ShouldContinue][03] method is made, which causes a second
+confirmation message to be displayed.
 
 ```Output
 Confirm
@@ -79,4 +75,10 @@ Continue with this operation?
 
 ## See Also
 
-[Writing a Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet][02]
+
+<!-- link references -->
+[01]: ./requesting-confirmation-from-cmdlets.md
+[02]: ./writing-a-windows-powershell-cmdlet.md
+[03]: xref:System.Management.Automation.Cmdlet.ShouldContinue%2A
+[04]: xref:System.Management.Automation.Cmdlet.ShouldProcess%2A

@@ -12,17 +12,17 @@ not to make the change.
 To support confirmation a cmdlet must do two things.
 
 - Declare that the cmdlet supports confirmation when you specify the
-  [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+  [System.Management.Automation.CmdletAttribute][15]
   attribute by setting the SupportsShouldProcess keyword to `true`.
 
 - Call
-  [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
+  [System.Management.Automation.Cmdlet.ShouldProcess][13]
   during the execution of the cmdlet (as shown in the following example).
 
 By supporting confirmation, a cmdlet exposes the `Confirm` and `WhatIf` parameters that are provided
 by Windows PowerShell, and also meets the development guidelines for cmdlets (For more information
 about cmdlet development guidelines, see
-[Cmdlet Development Guidelines](./cmdlet-development-guidelines.md).).
+[Cmdlet Development Guidelines][04].).
 
 ## Changing the System
 
@@ -33,8 +33,8 @@ In contrast, operations that read data or establish transient connections do not
 and generally do not require confirmation. Confirmation is also not needed for actions whose effect
 is limited to inside the Windows PowerShell runtime, such as `Set-Variable`. Cmdlets that might or
 might not make a persistent change should declare `SupportsShouldProcess` and call
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-only if they are about to make a persistent change.
+[System.Management.Automation.Cmdlet.ShouldProcess][13] only if they are about to make a persistent
+change.
 
 > [!NOTE]
 > ShouldProcess confirmation applies only to cmdlets. If a command or script modifies the running
@@ -44,19 +44,16 @@ only if they are about to make a persistent change.
 ## The StopProc Cmdlet
 
 This topic describes a Stop-Proc cmdlet that attempts to stop processes that are retrieved using the
-Get-Proc cmdlet (described in
-[Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)).
+Get-Proc cmdlet (described in [Creating Your First Cmdlet][06]).
 
 ## Defining the Cmdlet
 
 The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that
 implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named
 accordingly. This cmdlet stops system processes, so the verb name chosen here is "Stop", defined by
-the
-[System.Management.Automation.VerbsLifecycle](/dotnet/api/System.Management.Automation.VerbsLifecycle)
-class, with the noun "Proc" to indicate that the cmdlet stops processes. For more information about
-approved cmdlet verbs, see
-[Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
+the [System.Management.Automation.VerbsLifecycle][17] class, with the noun "Proc" to indicate that
+the cmdlet stops processes. For more information about approved cmdlet verbs, see [Cmdlet Verb
+Names][03].
 
 The following is the class definition for this Stop-Proc cmdlet.
 
@@ -66,39 +63,32 @@ The following is the class definition for this Stop-Proc cmdlet.
 public class StopProcCommand : Cmdlet
 ```
 
-Be aware that in the
-[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
-declaration, the `SupportsShouldProcess` attribute keyword is set to `true` to enable the cmdlet to
-make calls to
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-and
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
-Without this keyword set, the `Confirm` and `WhatIf` parameters will not be available to the user.
+Be aware that in the [System.Management.Automation.CmdletAttribute][15] declaration, the
+`SupportsShouldProcess` attribute keyword is set to `true` to enable the cmdlet to make calls to
+[System.Management.Automation.Cmdlet.ShouldProcess][13] and
+[System.Management.Automation.Cmdlet.ShouldContinue][12]. Without this keyword set, the `Confirm`
+and `WhatIf` parameters will not be available to the user.
 
 ### Extremely Destructive Actions
 
 Some operations are extremely destructive, such as reformatting an active hard disk partition. In
 these cases, the cmdlet should set `ConfirmImpact` = `ConfirmImpact.High` when declaring the
-[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
-attribute. This setting forces the cmdlet to request user confirmation even when the user has not
-specified the `Confirm` parameter. However, cmdlet developers should avoid overusing `ConfirmImpact`
-for operations that are just potentially destructive, such as deleting a user account. Remember that
-if `ConfirmImpact` is set to
-[System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact)
-**High**.
+[System.Management.Automation.CmdletAttribute][15] attribute. This setting forces the cmdlet to
+request user confirmation even when the user has not specified the `Confirm` parameter. However,
+cmdlet developers should avoid overusing `ConfirmImpact` for operations that are just potentially
+destructive, such as deleting a user account. Remember that if `ConfirmImpact` is set to
+[System.Management.Automation.ConfirmImpact][16] **High**.
 
 Similarly, some operations are unlikely to be destructive, although they do in theory modify the
 running state of a system outside Windows PowerShell. Such cmdlets can set `ConfirmImpact` to
-[System.Management.Automation.ConfirmImpact.Low](/dotnet/api/system.management.automation.confirmimpact).
-This will bypass confirmation requests where the user has asked to confirm only medium-impact and
-high-impact operations.
+[System.Management.Automation.ConfirmImpact.Low][16]. This will bypass confirmation requests where
+the user has asked to confirm only medium-impact and high-impact operations.
 
 ## Defining Parameters for System Modification
 
 This section describes how to define the cmdlet parameters, including those that are needed to
-support system modification. See
-[Adding Parameters that Process CommandLine Input](./adding-parameters-that-process-command-line-input.md)
-if you need general information about defining parameters.
+support system modification. See [Adding Parameters that Process CommandLine Input][03] if you need
+general information about defining parameters.
 
 The Stop-Proc cmdlet defines three parameters: `Name`, `Force`, and `PassThru`.
 
@@ -107,13 +97,11 @@ the `Name` parameter in this sample is mandatory, as the cmdlet will fail if it 
 named process to stop.
 
 The `Force` parameter allows the user to override calls to
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue).
-In fact, any cmdlet that calls
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
-should have a `Force` parameter so that when `Force` is specified, the cmdlet skips the call to
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
-and proceeds with the operation. Be aware that this does not affect calls to
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess).
+[System.Management.Automation.Cmdlet.ShouldContinue][12]. In fact, any cmdlet that calls
+[System.Management.Automation.Cmdlet.ShouldContinue][12] should have a `Force` parameter so that
+when `Force` is specified, the cmdlet skips the call to
+[System.Management.Automation.Cmdlet.ShouldContinue][12] and proceeds with the operation. Be aware
+that this does not affect calls to [System.Management.Automation.Cmdlet.ShouldProcess][13].
 
 The `PassThru` parameter allows the user to indicate whether the cmdlet passes an output object
 through the pipeline, in this case, after a process is stopped. Be aware that this parameter is tied
@@ -165,10 +153,10 @@ private bool passThru;
 ## Overriding an Input Processing Method
 
 The cmdlet must override an input processing method. The following code illustrates the
-[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
-override used in the sample Stop-Proc cmdlet. For each requested process name, this method ensures
-that the process is not a special process, tries to stop the process, and then sends an output
-object if the `PassThru` parameter is specified.
+[System.Management.Automation.Cmdlet.ProcessRecord][11] override used in the sample Stop-Proc
+cmdlet. For each requested process name, this method ensures that the process is not a special
+process, tries to stop the process, and then sends an output object if the `PassThru` parameter is
+specified.
 
 ```csharp
 protected override void ProcessRecord()
@@ -273,27 +261,23 @@ protected override void ProcessRecord()
 ## Calling the ShouldProcess Method
 
 The input processing method of your cmdlet should call the
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-method to confirm execution of an operation before a change (for example, deleting files) is made to
-the running state of the system. This allows the Windows PowerShell runtime to supply the correct
-"WhatIf" and "Confirm" behavior within the shell.
+[System.Management.Automation.Cmdlet.ShouldProcess][13] method to confirm execution of an operation
+before a change (for example, deleting files) is made to the running state of the system. This
+allows the Windows PowerShell runtime to supply the correct "WhatIf" and "Confirm" behavior within
+the shell.
 
 > [!NOTE]
 > If a cmdlet states that it supports should process and fails to make the
-> [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-> call, the user might modify the system unexpectedly.
+> [System.Management.Automation.Cmdlet.ShouldProcess][13] call, the user might modify the system
+> unexpectedly.
 
-The call to
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking
-into account any command-line settings or preference variables in determining what should be
-displayed to the user.
+The call to [System.Management.Automation.Cmdlet.ShouldProcess][13] sends the name of the resource
+to be changed to the user, with the Windows PowerShell runtime taking into account any command-line
+settings or preference variables in determining what should be displayed to the user.
 
-The following example shows the call to
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-from the override of the
-[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
-method in the sample Stop-Proc cmdlet.
+The following example shows the call to [System.Management.Automation.Cmdlet.ShouldProcess][13] from
+the override of the [System.Management.Automation.Cmdlet.ProcessRecord][11] method in the sample
+Stop-Proc cmdlet.
 
 ```csharp
 if (!ShouldProcess(string.Format("{0} ({1})", processName,
@@ -305,21 +289,17 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 ## Calling the ShouldContinue Method
 
-The call to the
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
-method sends a secondary message to the user. This call is made after the call to
-[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
-returns `true` and if the `Force` parameter was not set to `true`. The user can then provide
-feedback to say whether the operation should be continued. Your cmdlet calls
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
-as an additional check for potentially dangerous system modifications or when you want to provide
+The call to the [System.Management.Automation.Cmdlet.ShouldContinue][12] method sends a secondary
+message to the user. This call is made after the call to
+[System.Management.Automation.Cmdlet.ShouldProcess][13] returns `true` and if the `Force` parameter
+was not set to `true`. The user can then provide feedback to say whether the operation should be
+continued. Your cmdlet calls [System.Management.Automation.Cmdlet.ShouldContinue][12] as an
+additional check for potentially dangerous system modifications or when you want to provide
 yes-to-all and no-to-all options to the user.
 
-The following example shows the call to
-[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
-from the override of the
-[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
-method in the sample Stop-Proc cmdlet.
+The following example shows the call to [System.Management.Automation.Cmdlet.ShouldContinue][12]
+from the override of the [System.Management.Automation.Cmdlet.ProcessRecord][11] method in the
+sample Stop-Proc cmdlet.
 
 ```csharp
 if (criticalProcess &&!force)
@@ -346,37 +326,33 @@ if (criticalProcess &&!force)
 
 The input processing method of a cmdlet that makes system modifications must provide a way of
 stopping the processing of input. In the case of this Stop-Proc cmdlet, a call is made from the
-[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
-method to the [System.Diagnostics.Process.Kill*](/dotnet/api/System.Diagnostics.Process.Kill)
-method. Because the `PassThru` parameter is set to `true`,
-[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
-also calls
-[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)
-to send the process object to the pipeline.
+[System.Management.Automation.Cmdlet.ProcessRecord][11] method to the
+[System.Diagnostics.Process.Kill*][10] method. Because the `PassThru` parameter is set to `true`,
+[System.Management.Automation.Cmdlet.ProcessRecord][11] also calls
+[System.Management.Automation.Cmdlet.WriteObject][14] to send the process object to the pipeline.
 
 ## Code Sample
 
-For the complete C# sample code, see [StopProcessSample01 Sample](./stopprocesssample01-sample.md).
+For the complete C# sample code, see [StopProcessSample01 Sample][07].
 
 ## Defining Object Types and Formatting
 
 Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet may
 need to define its own type, or the cmdlet may need to extend an existing type provided by another
 cmdlet. For more information about defining new types or extending existing types, see
-[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
+[Extending Object Types and Formatting][09].
 
 ## Building the Cmdlet
 
 After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows
 PowerShell snap-in. For more information about registering cmdlets, see
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
+[How to Register Cmdlets, Providers, and Host Applications][08].
 
 ## Testing the Cmdlet
 
 When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the
 command line. Here are several tests that test the Stop-Proc cmdlet. For more information about
-using cmdlets from the command line, see the
-[Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+using cmdlets from the command line, see the [Running commands in the shell][01].
 
 - Start Windows PowerShell and use the Stop-Proc cmdlet to stop processing as shown below. Because
   the cmdlet specifies the `Name` parameter as mandatory, the cmdlet queries for the parameter.
@@ -446,12 +422,27 @@ using cmdlets from the command line, see the
 
 ## See Also
 
-[Adding Parameters that Process Command-Line Input](./adding-parameters-that-process-command-line-input.md)
+- [Adding Parameters that Process Command-Line Input][03]
+- [Extending Object Types and Formatting][09]
+- [How to Register Cmdlets, Providers, and Host Applications][08]
+- [Windows PowerShell SDK][02]
+- [Cmdlet Samples][05]
 
-[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
-
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
-
-[Windows PowerShell SDK](../windows-powershell-reference.md)
-
-[Cmdlet Samples](./cmdlet-samples.md)
+<!-- link references -->
+[01]: ../../learn/shell/running-commands.md
+[02]: ../windows-powershell-reference.md
+[03]: ./adding-parameters-that-process-command-line-input.md
+[04]: ./cmdlet-development-guidelines.md
+[05]: ./cmdlet-samples.md
+[06]: ./creating-a-cmdlet-without-parameters.md
+[07]: ./stopprocesssample01-sample.md
+[08]: /previous-versions/ms714644(v=vs.85)
+[09]: /previous-versions/ms714665(v=vs.85)
+[10]: xref:System.Diagnostics.Process.Kill%2A
+[11]: xref:System.Management.Automation.Cmdlet.ProcessRecord%2A
+[12]: xref:System.Management.Automation.Cmdlet.ShouldContinue%2A
+[13]: xref:System.Management.Automation.Cmdlet.ShouldProcess%2A
+[14]: xref:System.Management.Automation.Cmdlet.WriteObject%2A
+[15]: xref:System.Management.Automation.CmdletAttribute
+[16]: xref:System.Management.Automation.ConfirmImpact
+[17]: xref:System.Management.Automation.VerbsLifecycle
