@@ -45,7 +45,7 @@ command you're looking for. When looking for a cmdlet to use, you can filter on 
 When you first pick up PowerShell, it might feel intimidating as there seems to be so much to learn.
 PowerShell is designed to help you learn a little at a time, as you need it.
 
-PowerShell includes cmdlets that help you discover PowerShell. Using these three cmdlets, you can
+PowerShell includes cmdlets that help you discover PowerShell. Using these four cmdlets, you can
 discover what commands are available, what they do, and what types they operate on.
 
 - `Get-Verb`. Running this command returns a list of verbs that most commands adhere to. The
