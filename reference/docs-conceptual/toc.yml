@@ -207,7 +207,7 @@ items:
       - name: Using Experimental Features
         href: learn/experimental-features.md
       - name: Compatibility aliases
-        href: learn/compatibility-aliases.md
+        href: learn/shell/using-aliases.md
       - name: Additional resources
         href: learn/more-powershell-learning.md
       - name: Glossary
@@ -278,9 +278,9 @@ items:
           - name: Using Application Control
             href: security/app-control/application-control.md
           - name: How WDAC works with PowerShell
-            href: security/app-control/how-wdac-works.md
+            href: security/app-control/how-app-control-works.md
           - name: How to use WDAC to secure PowerShell
-            href: security/app-control/how-to-use-wdac.md
+            href: security/app-control/how-to-use-app-control.md
       - name: Preventing script injection attacks
         href: security/preventing-script-injection.md
       - name: PowerShell remoting
