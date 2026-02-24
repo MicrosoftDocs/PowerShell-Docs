@@ -178,8 +178,6 @@ items:
             href: cmdlet/how-to-invoke-scripts-within-a-cmdlet.md
           - name: How to Override Input Processing Methods
             href: cmdlet/how-to-override-input-processing-methods.md
-          - name: How to Request Confirmations
-            href: cmdlet/how-to-request-confirmations.md
           - name: How to Support Transactions
             href: cmdlet/how-to-support-transactions.md
           - name: How to Support Jobs
