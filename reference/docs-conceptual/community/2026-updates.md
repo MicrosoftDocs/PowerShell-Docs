@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2026.
-ms.date: 02/02/2026
+ms.date: 03/02/2026
 title: What's New in PowerShell-Docs for 2026
 ---
 # What's new in PowerShell Docs for 2026
@@ -14,6 +14,32 @@ get started.
 <!-- Link references -->
 [01]: contributing/overview.md
 <!--------------------->
+
+## 2026-February
+
+New and updated content
+
+- Update PSResourceGet release notes for RC3
+- Other general maintenance updates
+
+
+GitHub stats
+
+- 20 PRs merged (4 from Community)
+- 46 issues opened (13 from Community, 32 Spam)
+- 45 issues closed (13 from Community, 32 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| manpritxelentor |     1      |               |
+| putku45         |     1      |               |
+| sethvs          |     1      |               |
+| umutKaracelebi  |     1      |               |
 
 ## 2026-January
 
