@@ -587,14 +587,18 @@ that doesn't have the member, PowerShell automatically enumerates the items in
 that collection and uses the operator on each of them. For more information,
 see [about_Member-Access_Enumeration][14].
 
-When you access a member that doesn't exist or could throw an exception,
-PowerShell returns `$null` instead of throwing an error. This behavior follows
-.NET CA rule [CA1065][02] that states:
+When you use the member-access operator to read a property that doesn't exist,
+or when a property getter method throws an exception, PowerShell returns
+`$null` instead of throwing an error. This behavior is specific to property
+access. This behavior follows .NET CA rule [CA1065][02] that states:
 
 > Properties are basically smart fields. Therefore, they should behave like a
 > field as much as possible. Fields don't throw exceptions and neither should
 > properties. If you have a property that throws an exception, consider making
 > it a method.
+
+Exceptions thrown by method invocations (including calling the underlying
+`get_<PropertyName()>` method directly) aren't suppressed.
 
 ### Static member operator `::`
 
