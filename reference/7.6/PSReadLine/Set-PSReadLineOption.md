@@ -4,7 +4,7 @@ Locale: en-US
 Module Name: PSReadLine
 ms.date: 03/04/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.6&WT.mc_id=ps-gethelp
-no-loc: Windows
+no-loc: [Windows]
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
