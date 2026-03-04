@@ -407,7 +407,7 @@ Accept wildcard characters: False
 
 ### -DingDuration
 
-Specifies the duration of the beep when **BellStyle** is set to **Audible**.
+Specifies the duration of the beep when **BellStyle** is set to `Audible`.
 
 ```yaml
 Type: System.Int32
@@ -423,7 +423,7 @@ Accept wildcard characters: False
 
 ### -DingTone
 
-Specifies the tone in Hertz (Hz) of the beep when **BellStyle** is set to **Audible**.
+Specifies the tone in Hertz (Hz) of the beep when **BellStyle** is set to `Audible`
 
 ```yaml
 Type: System.Int32
