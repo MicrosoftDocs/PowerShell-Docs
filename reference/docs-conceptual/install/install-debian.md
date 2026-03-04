@@ -1,34 +1,36 @@
 ---
 description: How to install PowerShell on Debian Linux
-ms.date: 02/20/2026
-title: Install PowerShell on Debian
+ms.date: 03/06/2026
+title: Install PowerShell 7 on Debian
 ---
-# Install PowerShell on Debian
+# Install PowerShell 7 on Debian
 
-All packages are available on our GitHub [releases][02] page. Before installing, check the list of
-[Supported versions][01] below. After the package is installed, run `pwsh` from a terminal. Run
-`pwsh-lts` if you installed a preview release.
+There are multiple package versions of PowerShell 7 that can be installed. This article focuses on
+installing the latest stable release package. For more information about the package versions, see
+the [PowerShell Support Lifecycle][05] article.
 
 Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
 of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
 versions replace existing previous preview versions. If you need to run PowerShell 7.5 side-by-side
-with a previous version, reinstall the previous version using the [binary archive][05] method.
+with a previous version, reinstall the previous version using the [binary archive][04] method.
 
-Debian uses APT (Advanced Package Tool) as a package manager.
+## Choose and installation method
 
-[!INCLUDE [Latest version](../../includes/latest-install.md)]
+On Debian Linux, you can install PowerShell using the universal `.deb` package from the Microsoft
+package repository or by downloading file from the GitHub [release][01] page.
 
-## Installation on Debian 11 or 12 via the Package Repository
+### Install PowerShell 7 from the Package Repository
 
 Microsoft builds and supports a variety of software products for Linux systems and makes them
 available via Linux packaging clients (apt, dnf, yum, etc). These Linux software packages are hosted
-on the _Linux package repository for Microsoft products_, [https://packages.microsoft.com][03], also
+on the _Linux package repository for Microsoft products_, [https://packages.microsoft.com][02], also
 known as _PMC_.
 
 Installing PowerShell from PMC is the preferred method of installation.
 
 > [!NOTE]
-> This script only works for supported versions of Debian.
+> This script only works for supported versions of Debian that have a package published to the
+> Microsoft package repository.
 
 ```sh
 #!/bin/bash
@@ -64,17 +66,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-## Installation via direct download
+### Manually download and install PowerShell 7
 
-PowerShell 7.2 introduced a universal package that makes installation easier. Download the universal
-package from the [releases][02] page onto your Debian machine.
+Download the universal package from the GitHub releases page. Choose the link for the version you
+want to install.
 
-The link to the current version is:
-
-- PowerShell 7.4 (LTS) universal package for supported versions of Debian
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell_7.4.13-1.deb_amd64.deb`
 - PowerShell 7.5 universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell_7.5.4-1.deb_amd64.deb`
+- PowerShell 7.4 (LTS) universal package for supported versions of Debian
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell_7.4.13-1.deb_amd64.deb`
 - PowerShell 7.6-preview universal package for supported versions of Debian
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-preview_7.6.0-rc1-1.deb_amd64.deb`
 
@@ -109,15 +109,14 @@ rm powershell_7.5.4-1.deb_amd64.deb
 pwsh
 ```
 
-## Uninstall PowerShell
+## Start PowerShell 7
 
-```sh
-sudo apt-get remove powershell
-```
+After the package is installed, run `pwsh` from a terminal. If you have installed a Preview package,
+run `pwsh-preview`.
 
-## PowerShell paths
-
-- `$PSHOME` is `/opt/microsoft/powershell/7/`
+- The location of `$PSHOME` varies based on the package you installed.
+  - For Stable and LTS packages: `/opt/microsoft/powershell/7/`
+  - For Preview packages: `/opt/microsoft/powershell/7-preview/`
 - The profiles scripts are stored in the following locations:
   - AllUsersAllHosts - `$PSHOME/profile.ps1`
   - AllUsersCurrentHost - `$PSHOME/Microsoft.PowerShell_profile.ps1`
@@ -129,21 +128,30 @@ sudo apt-get remove powershell
   - Default modules - `$PSHOME/Modules`
 - PSReadLine history is recorded in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-PowerShell respects the [XDG Base Directory Specification][04] on Linux.
+The profiles respect PowerShell's per-host configuration, so the default host-specific profiles
+exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 
-## Supported versions
+PowerShell respects the [XDG Base Directory Specification][03] on Linux.
+
+## Uninstall PowerShell 7
+
+```sh
+sudo apt-get remove powershell
+```
+
+## Supported OS versions
 
 [!INCLUDE [Debian support](../../includes/debian-support.md)]
 
-## Installation support
+## Supported installation methods
 
 Microsoft supports the installation methods in this document. There may be other methods of
 installation available from other third-party sources. While those tools and methods may work,
 Microsoft can't support those methods.
 
 <!-- link references -->
-[01]: #supported-versions
-[02]: https://aka.ms/PowerShell-Release?tag=stable
-[03]: https://packages.microsoft.com
-[04]: https://specifications.freedesktop.org/basedir/latest/
-[05]: install-other-linux.md#binary-archives
+[01]: https://github.com/PowerShell/PowerShell/releases
+[02]: https://packages.microsoft.com
+[03]: https://specifications.freedesktop.org/basedir/latest/
+[04]: install-other-linux.md#binary-archives
+[05]: PowerShell-Support-Lifecycle.md

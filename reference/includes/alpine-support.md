@@ -1,17 +1,24 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 07/03/2025
+ms.date: 03/06/2026
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
 Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycle] or the version of
 [Alpine reaches end-of-life][eol-alpine].
 
+Support for these versions of Alpine ends on the following dates:
+
+- Alpine 3.23 - 2027-11-01
+- Alpine 3.22 - 2027-05-01
+- Alpine 3.21 - 2026-11-01
+- Alpine 3.20 - 2026-04-01
+
 The Docker images for the .NET SDK contain the latest versions of PowerShell. These images are
 available from the [Microsoft Artifact Registry][mcr].
 
-These images are built from official operating system (OS) images provide by the OS distributor.
+These images are built from official operating system (OS) images provided by the OS distributor.
 These images may not have the latest security updates. Microsoft recommends that you update the OS
 packages to the latest version to ensure the latest security updates are applied.
 

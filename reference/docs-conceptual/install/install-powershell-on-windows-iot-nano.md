@@ -1,11 +1,11 @@
 ---
 description: How to install PowerShell on Windows IoT and Nano Server.
-ms.date: 12/15/2025
-title: Install PowerShell on Windows IoT and Nano Server
+ms.date: 03/06/2026
+title: Install PowerShell 7 on Windows IoT and Nano Server
 ---
-# Install PowerShell on Windows IoT and Nano Server
+# Install PowerShell 7 on Windows IoT and Nano Server
 
-This article describes how to install PowerShell on Windows IoT and Nano Server.
+This article describes how to install PowerShell 7 on Windows IoT and Nano Server.
 
 ## Deploy on Windows 11 IoT
 
@@ -104,7 +104,7 @@ Expand-Archive -Path C:\PowerShell-7.5.4-win-x64.zip -DestinationPath 'C:\Progra
 
 You can check the version that you are using by running `winver.exe`.
 
-## Installation support
+## Supported installation methods
 
 Microsoft supports the installation methods in this document. There may be other third-party methods
 of installation available from other sources. While those tools and methods may work, Microsoft

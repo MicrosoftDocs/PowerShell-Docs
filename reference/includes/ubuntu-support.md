@@ -1,12 +1,17 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 09/16/2025
+ms.date: 03/06/2026
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
 Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycle] or the version of
 [Ubuntu reaches end-of-support][eol-ubuntu].
+
+Support for these versions of Ubuntu ends on the following dates:
+
+- Ubuntu 24.04 - 2029-05-31
+- Ubuntu 22.04 - 2027-04-01
 
 Install package files (`.deb`) are also available from [https://packages.microsoft.com/][pcm].
 
@@ -21,7 +26,7 @@ These images are provided for testing purposes. If you need a Docker image for a
 workload, you should build and maintain your own.
 
 > [!NOTE]
-> Ubuntu 25.04 (Plucky Puffin) is an interim release. Microsoft doesn't support
+> Ubuntu 25.10 (Questing Quokka) is an interim release. Microsoft doesn't test or support
 > [interim releases][interim] of Ubuntu. For more information, see
 > [Community supported distributions][community].
 
