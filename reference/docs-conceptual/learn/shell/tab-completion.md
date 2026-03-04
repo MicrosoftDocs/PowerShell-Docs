@@ -4,7 +4,7 @@ description: >
     extend its capabilities.
 no-loc: [<kbd>Tab</kbd>, <kbd>Ctrl</kbd>, <kbd>Space</kbd>]
 title: Using tab-completion in the shell
-ms.date: 11/21/2025
+ms.date: 03/04/2026
 ---
 # Using tab-completion in the shell
 
@@ -126,6 +126,11 @@ PSReadLine 2.2.2 extends the power of Predictive IntelliSense by adding support 
 that use advanced logic to provide suggestions for full commands. The **Az.Tools.Predictor** module
 was the first plug-in for Predictive IntelliSense. It uses Machine Learning to predict what Azure
 PowerShell command you want to run and the parameters you want to use.
+
+Prediction suggestions aren't tab-completion suggestions. They're generated from a different
+source. By default, prediction suggestions appear in gray text following the cursor. Use the
+<kbd>RightArrow</kbd> key to accept the suggestion. If you hit the <kbd>Tab</kbd> key instead, the
+suggestion will be ignored and the next tab-completion option is offered.
 
 For more information, see [Using predictors][08].
 
