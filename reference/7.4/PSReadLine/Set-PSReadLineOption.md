@@ -2,8 +2,9 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 01/18/2026
+ms.date: 03/04/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.4&WT.mc_id=ps-gethelp
+no-loc: Windows
 schema: 2.0.0
 title: Set-PSReadLineOption
 ---
@@ -278,9 +279,9 @@ Specifies how **PSReadLine** responds to various error and ambiguous conditions.
 
 The valid values are as follows:
 
-- **Audible**: A short beep.
-- **Visual**: Text flashes briefly.
-- **None**: No feedback.
+- `Audible`: A short beep.
+- `Visual`: Text flashes briefly.
+- `None`: No feedback.
 
 ```yaml
 Type: Microsoft.PowerShell.BellStyle
@@ -309,9 +310,9 @@ sequence is `` `e[91m``. You can specify other escape sequences including the fo
 
 Two color settings were added to support customization of the `ListView` in PSReadLine 2.2.0:
 
-- **ListPredictionColor** - set color for the leading `>` character and the trailing source name,
+- `ListPredictionColor` - set color for the leading `>` character and the trailing source name,
   such as `[History]`. By default, it uses `DarkYellow` as the foreground color.
-- **ListPredictionSelectedColor** - set color for indicating a list item is selected. By default, it
+- `ListPredictionSelectedColor` - set color for indicating a list item is selected. By default, it
   uses `DarkBlack` as the background color.
 
 - 256 color
@@ -324,24 +325,24 @@ For more information about ANSI color codes, see the Wikipedia article
 
 The valid keys include:
 
-- **ContinuationPrompt**: The color of the continuation prompt.
-- **Emphasis**: The emphasis color. For example, the matching text when searching history.
-- **Error**: The error color. For example, in the prompt.
-- **Selection**: The color to highlight the menu selection or selected text.
-- **Default**: The default token color.
-- **Comment**: The comment token color.
-- **Keyword**: The keyword token color.
-- **String**: The string token color.
-- **Operator**: The operator token color.
-- **Variable**: The variable token color.
-- **Command**: The command token color.
-- **Parameter**: The parameter token color.
-- **Type**: The type token color.
-- **Number**: The number token color.
-- **Member**: The member name token color.
-- **InlinePrediction**: The color for the inline view of the predictive suggestion.
-- **ListPrediction**: The color for the leading `>` character and prediction source name.
-- **ListPredictionSelected**: The color for the selected prediction in list view.
+- `ContinuationPrompt`: The color of the continuation prompt.
+- `Emphasis`: The emphasis color. For example, the matching text when searching history.
+- `Error`: The error color. For example, in the prompt.
+- `Selection`: The color to highlight the menu selection or selected text.
+- `Default`: The default token color.
+- `Comment`: The comment token color.
+- `Keyword`: The keyword token color.
+- `String`: The string token color.
+- `Operator`: The operator token color.
+- `Variable`: The variable token color.
+- `Command`: The command token color.
+- `Parameter`: The parameter token color.
+- `Type`: The type token color.
+- `Number`: The number token color.
+- `Member`: The member name token color.
+- `InlinePrediction`: The color for the inline view of the predictive suggestion.
+- `ListPrediction`: The color for the leading `>` character and prediction source name.
+- `ListPredictionSelected`: The color for the selected prediction in list view.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -453,9 +454,9 @@ Specifies the command line editing mode. Using this parameter resets any key bin
 
 The valid values are as follows:
 
-- **Windows**: Key bindings emulate PowerShell, cmd, and Visual Studio. (default on Windows)
-- **Emacs**: Key bindings emulate Bash or Emacs. (default on non-Windows platforms)
-- **Vi**: Key bindings emulate Vi.
+- `Windows`: Key bindings emulate PowerShell, cmd, and Visual Studio. (default on Windows)
+- `Emacs`: Key bindings emulate Bash or Emacs. (default on non-Windows platforms)
+- `Vi`: Key bindings emulate Vi.
 
 Use `Get-PSReadLineKeyHandler` to see the key bindings for the currently configured **EditMode**.
 
@@ -671,12 +672,12 @@ Specifies the source for PSReadLine to get predictive suggestions.
 
 Valid values are:
 
-- **None** - disable the predictive IntelliSense feature (default).
-- **History** - enable the predictive IntelliSense feature and use the PSReadLine history as the
+- `None` - disable the predictive IntelliSense feature (default).
+- `History` - enable the predictive IntelliSense feature and use the PSReadLine history as the
   only source.
-- **Plugin** - enable the predictive IntelliSense feature and use the plugins (`CommandPrediction`)
+- `Plugin` - enable the predictive IntelliSense feature and use the plugins (`CommandPrediction`)
   as the only source. This value was added in PSReadLine 2.2.0
-- **HistoryAndPlugin** - enable the predictive IntelliSense feature and use both history and plugin
+- `HistoryAndPlugin` - enable the predictive IntelliSense feature and use both history and plugin
   as the sources. This value was added in PSReadLine 2.2.0
 
 ```yaml
@@ -693,10 +694,10 @@ Accept wildcard characters: False
 
 ### -PredictionViewStyle
 
-Sets the style for the display of the predictive text. The default is **InlineView**.
+Sets the style for the display of the predictive text. The default is `InlineView`.
 
-- **InlineView** - the style as existing today, similar as in fish shell and zsh. (default)
-- **ListView** - suggestions are rendered in a drop down list, and users can select using
+- `InlineView` - the style as existing today, similar as in fish shell and zsh. (default)
+- `ListView` - suggestions are rendered in a drop down list, and users can select using
   <kbd>UpArrow</kbd> and <kbd>DownArrow</kbd>.
 
 This parameter was added in PSReadLine 2.2.0
@@ -815,15 +816,15 @@ Accept wildcard characters: False
 
 ### -ViModeIndicator
 
-This option sets the visual indicator for the current **Vi** mode. Either insert mode or command
+This option sets the visual indicator for the current `Vi` mode. Either insert mode or command
 mode.
 
 The valid values are as follows:
 
-- **None**: There's no indicator.
-- **Prompt**: The prompt changes color.
-- **Cursor**: The cursor changes size.
-- **Script**: User-specified text is printed.
+- `None`: There's no indicator.
+- `Prompt`: The prompt changes color.
+- `Cursor`: The cursor changes size.
+- `Script`: User-specified text is printed.
 
 ```yaml
 Type: Microsoft.PowerShell.ViModeStyle
