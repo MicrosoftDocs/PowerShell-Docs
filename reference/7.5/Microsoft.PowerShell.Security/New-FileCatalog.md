@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Security.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Security
-ms.date: 05/29/2024
+ms.date: 03/05/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.security/new-filecatalog?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-FileCatalog
@@ -91,8 +91,18 @@ Accept wildcard characters: False
 
 ### -Path
 
-Accepts a path or array of paths to files or folders that should be included in the catalog file. If
-a folder is specified, the command includes all files in the folder.
+Accepts a path or array of paths to files or folders that should be included in the catalog file.
+When you specify a folder, the command enumerates the contents of the folder recursively to include
+all subfolders and their contents. The catalog file contains relative paths to the files included in
+the catalog.
+
+> [!IMPORTANT]
+> When you provide a list of files or folders, the cmdlet can't compute a relative path since the
+> files and folders can be anywhere on the filesystem. Under this condition, the cmdlet only uses
+> the filename for the hash, which means that you can't have duplicate filenames in different paths.
+> For the best results, pass in a single folder and let the cmdlet enumerate the contents. The
+> cmdlet uses that initial path to calculate relative paths so that duplicate filenames are still
+> unique within the folder tree.
 
 ```yaml
 Type: System.String[]
