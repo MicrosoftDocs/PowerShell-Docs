@@ -1,34 +1,35 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 02/20/2026
-title: Installing PowerShell on Red Hat Enterprise Linux (RHEL)
+ms.date: 03/06/2026
+title: Install PowerShell 7 on Red Hat Enterprise Linux (RHEL)
 ---
-# Installing PowerShell on Red Hat Enterprise Linux (RHEL)
+# Install PowerShell 7 on Red Hat Enterprise Linux (RHEL)
 
-All packages are available on our GitHub [releases][02] page. Before installing, check the list of
-[Supported versions][01] below. After the package is installed, run `pwsh` from a terminal. Run
-`pwsh-preview` if you installed a preview release.
+There are multiple package versions of PowerShell 7 that can be installed. This article focuses on
+installing the latest stable release package. For more information about the package versions, see
+the [PowerShell Support Lifecycle][03] article.
 
 Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
 of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
-versions replace existing previous preview versions. If you need to run PowerShell 7.5 side-by-side
-with a previous version, reinstall the previous version using the [binary archive][05] method.
+versions replace existing previous preview versions.
 
-RHEL 7 uses `yum` and RHEL 8 and higher uses the `dnf` package manager.
+## Choose an installation method
 
-[!INCLUDE [Latest version](../../includes/latest-install.md)]
+On RHEL, you can install PowerShell using the universal `.rpm` package from the Microsoft
+package repository or by downloading file from the GitHub release page.
 
-## Installation via the Package Repository
+### Install PowerShell 7 from the Package Repository
 
 Microsoft builds and supports a variety of software products for Linux systems and makes them
 available via Linux packaging clients (apt, dnf, yum, etc). These Linux software packages are hosted
-on the _Linux package repository for Microsoft products_, [https://packages.microsoft.com][03], also
+on the _Linux package repository for Microsoft products_, [https://packages.microsoft.com][01], also
 known as _PMC_.
 
 Installing PowerShell from PMC is the preferred method of installation.
 
 > [!NOTE]
-> This script only works for supported versions of RHEL that are published to PMC.
+> This script only works for supported versions of RHEL that have a package published to the
+> Microsoft package repository.
 
 ```sh
 #!/bin/bash
@@ -37,11 +38,10 @@ Installing PowerShell from PMC is the preferred method of installation.
 
 # Get version of RHEL
 source /etc/os-release
-if [ ${VERSION_ID%.*} -lt 8 ]
-then majorver=7
-elif [ ${VERSION_ID%.*} -lt 9 ]
+if [ ${VERSION_ID%.*} -ge 8 ]
 then majorver=8
-else majorver=9
+elif [ ${VERSION_ID%.*} -ge 9 ]
+then majorver=9
 fi
 
 # Download the Microsoft RedHat repository package
@@ -59,47 +59,33 @@ sudo dnf update
 sudo dnf install powershell -y
 ```
 
-## Installation via direct download
+### Manually download and install PowerShell 7
 
-PowerShell 7.2 introduced a universal package that makes installation easier. Download the universal
-package from the [releases][02] page onto your RHEL machine. Use this method to install PowerShell
-on systems running RHEL 10.
+Download the universal package from the GitHub releases page. Select the URL of the package version
+you want to install.
 
-The link to the current version is:
-
-- PowerShell 7.4.13 universal package for supported versions of RHEL
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-1.rh.x86_64.rpm`
-- PowerShell 7.5.4 universal package for supported versions of RHEL
+- PowerShell 7.5 universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-1.rh.x86_64.rpm`
-- PowerShell 7.6-preview universal package for supported versions of RHEL
+- PowerShell 7.4 (LTS) universal package
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-1.rh.x86_64.rpm`
+- PowerShell 7.6-preview universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-preview-7.6.0-rc1-1.rh.x86_64.rpm`
 
-The following shell script downloads and installs the current preview release of PowerShell. You can
-change the URL to download the version of PowerShell that you want to install.
-
-On RHEL 8 or 9:
+The following shell script downloads and installs the current release of PowerShell. You can change
+the URL to download the version of PowerShell that you want to install.
 
 ```sh
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-1.rh.x86_64.rpm
 ```
 
-## Uninstall PowerShell
+## Start PowerShell 7
 
-On RHEL 8 or 9:
+After the package is installed, run `pwsh` from a terminal. If you have installed a Preview package,
+run `pwsh-preview`.
 
-```sh
-sudo dnf remove powershell
-```
-
-## Support for Arm processors
-
-PowerShell 7.2 and newer supports running on RHEL using a 64-bit Arm processor. Use the binary
-archive installation method of installing PowerShell that's described in
-[Alternate ways to install PowerShell on Linux][05].
-
-## PowerShell paths
-
-- `$PSHOME` is `/opt/microsoft/powershell/7/`
+- The location of `$PSHOME` varies based on the package you installed.
+  - For Stable and LTS packages: `/opt/microsoft/powershell/7/`
+  - For Preview packages: `/opt/microsoft/powershell/7-preview/`
 - The profiles scripts are stored in the following locations:
   - AllUsersAllHosts - `$PSHOME/profile.ps1`
   - AllUsersCurrentHost - `$PSHOME/Microsoft.PowerShell_profile.ps1`
@@ -111,21 +97,28 @@ archive installation method of installing PowerShell that's described in
   - Default modules - `$PSHOME/Modules`
 - PSReadLine history is recorded in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
-PowerShell respects the [XDG Base Directory Specification][04] on Linux.
+The profiles respect PowerShell's per-host configuration, so the default host-specific profiles
+exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 
-## Supported versions
+PowerShell respects the [XDG Base Directory Specification][02] on Linux.
+
+## Uninstall PowerShell 7
+
+```sh
+sudo dnf remove powershell
+```
+
+## Supported versions of RHEL
 
 [!INCLUDE [RHEL support](../../includes/rhel-support.md)]
 
-## Installation support
+## Supported installation methods
 
-Microsoft supports the installation methods in this document. There may be other methods of
-installation available from other third-party sources. While those tools and methods may work,
-Microsoft can't support those methods.
+Microsoft supports the installation methods in this document. There may be other third-party methods
+of installation available from other sources. While those tools and methods may work, Microsoft
+can't support those methods.
 
 <!-- link references -->
-[01]: #supported-versions
-[02]: https://aka.ms/PowerShell-Release?tag=stable
-[03]: https://packages.microsoft.com
-[04]: https://specifications.freedesktop.org/basedir/latest/
-[05]: install-other-linux.md#binary-archives
+[01]: https://packages.microsoft.com
+[02]: https://specifications.freedesktop.org/basedir/latest/
+[03]: PowerShell-Support-Lifecycle.md

@@ -1,18 +1,20 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 07/03/2025
+ms.date: 03/06/2026
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
 Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycle] or the version of
 [RHEL reaches end-of-support][eol-rhel].
 
-Install package files (`.rpm`) are also available from [https://packages.microsoft.com/][pcm].
+Support for these versions of RHEL ends on the following dates:
 
-- RHEL 10 - OS support ends on 2035-05-31
-- RHEL 9 - OS support ends on 2032-05-31
-- RHEL 8 - OS support ends on 2029-05-31
+- RHEL 10 - 2035-05-31
+- RHEL 9 - 2032-05-31
+- RHEL 8 - 2029-05-31
+
+Install package files (`.rpm`) are also available from [https://packages.microsoft.com/][pcm].
 
 PowerShell is tested on Red Hat Universal Base Images (UBI). For more information, see the
 [UBI information page][ubi].

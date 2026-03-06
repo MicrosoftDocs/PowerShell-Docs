@@ -1,32 +1,43 @@
 ---
 description: Details the policies governing support for PowerShell.
-ms.date: 10/22/2025
+ms.date: 03/06/2026
 ms.topic: lifecycle
 title: PowerShell Support Lifecycle
 ---
 # PowerShell Support Lifecycle
 
+There are multiple versions of PowerShell 7 that can be installed.
+
+- **Stable release** - A stable release is a release that occurs between LTS releases. Stable
+  releases can contain critical fixes, innovations, and new features. Microsoft supports a Stable
+  release for about six months after the next LTS release.
+
+  The current Stable release is PowerShell v7.5.4.
+- **Long Term Servicing (LTS) release** - An LTS release of PowerShell is an LTS release of .NET.
+  Updates to an LTS release only contain critical security updates and servicing fixes that are
+  designed to minimize impact on existing workloads.
+
+  The current LTS release is PowerShell v7.4.13.
+- **Preview release** - A preview release is a version of PowerShell that's currently in
+  development. Preview releases can contain bug fixes, new features, and experiments. Preview
+  releases can contain bugs and might not be stable. For that reason, you shouldn't use them in
+  production environments. Preview versions aren't officially supported. They allow you to test out
+  new features and provide feedback. Your feedback is important and can influence the features that
+  get released.
+
+  The current Preview release is PowerShell v7.6.0-rc1.
+
+PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. The End of Support dates follow the
+[.NET Support Policy][06] for the version of .NET that the release of PowerShell was built upon.
+Both LTS and Stable releases of PowerShell receive security updates and bug fixes. Microsoft only
+supports the latest update version of a release.
+
 > [!NOTE]
-> This document is about support for PowerShell. Windows PowerShell (1.0 - 5.1) is a component of
-> the Windows operating system. For more information, see
-> [Product and Services Lifecycle Information][03].
+> This document is about support for PowerShell, not Windows PowerShell. Windows PowerShell is a
+> component of the Windows operating system and is subject to the Windows support lifecycle. For
+> more information, see [Product and Services Lifecycle Information][03].
 
-PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. Support dates follow the
-[.NET Support Policy][06]. In this servicing approach, customers can choose Long Term Support (LTS)
-releases or current releases.
-
-An **LTS** release of PowerShell is an **LTS** release of .NET. Updates to an **LTS**
-release only contain critical security updates and servicing fixes that are designed to minimize
-impact on existing workloads.
-
-A **current** release is a release that occurs between **LTS** releases. Current releases can
-contain critical fixes, innovations, and new features. Microsoft supports a **current** release for
-six months after the next **LTS** release.
-
-Both **LTS** and **current** versions of PowerShell receive security updates and bug fixes.
-Microsoft only supports the latest update version of a release.
-
-## Getting support
+## Support options
 
 Microsoft provides support for PowerShell on a best-effort basis. Support for Windows PowerShell 5.1
 is provided through Windows support channels. You can use the standard paid support channels to get
