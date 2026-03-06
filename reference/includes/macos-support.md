@@ -8,6 +8,8 @@ ms.topic: include
 Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycle] or the version of
 macOS reaches end-of-support.
 
+The following versions of macOS are supported:
+
 - macOS 26 (Tahoe) x64 and Arm64
 - macOS 15 (Sequoia) x64 and Arm64
 - macOS 14 (Sonoma) x64 and Arm64

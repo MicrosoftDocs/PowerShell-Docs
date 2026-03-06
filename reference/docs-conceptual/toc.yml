@@ -14,13 +14,13 @@ items:
         href: powershell-commands.md
       - name: Discover PowerShell
         href: discover-powershell.md
-  - name: Install
+  - name: Install PowerShell 7
     items:
       - name: Overview
         href: install/install-powershell.yml
-      - name: Install PowerShell on Windows
+      - name: Install PowerShell 7 on Windows
         href: install/install-powershell-on-windows.md
-      - name: Install PowerShell on Linux
+      - name: Install PowerShell 7 on Linux
         items:
           - name: Overview
             href: install/install-powershell-on-linux.md
@@ -36,13 +36,13 @@ items:
             href: install/community-support.md
           - name: Alternate ways to install on Linux
             href: install/install-other-linux.md
-      - name: Install PowerShell on macOS
+      - name: Install PowerShell 7 on macOS
         href: install/install-powershell-on-macos.md
       - name: Install PowerShell on Windows IoT and Nano Server
         href: install/install-powershell-on-windows-iot-nano.md
-      - name: Install PowerShell on Arm
+      - name: Install PowerShell 7 on Arm
         href: install/powershell-on-arm.md
-      - name: Using PowerShell in Docker
+      - name: Using PowerShell 7 in Docker
         href: install/PowerShell-in-Docker.md
       - name: Microsoft Update FAQ for PowerShell
         href: install/microsoft-update-faq.yml

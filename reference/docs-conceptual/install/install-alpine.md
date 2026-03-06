@@ -1,31 +1,29 @@
 ---
 description: How to install PowerShell on Alpine Linux
-ms.date: 02/20/2026
-title: Install PowerShell on Alpine Linux
+ms.date: 03/06/2026
+title: Install PowerShell 7 on Alpine Linux
 ---
-# Install PowerShell on Alpine Linux
+# Install PowerShell 7 on Alpine Linux
 
-All packages are available on our GitHub [releases][03] page. After the package is installed, run
-`pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release. Before installing,
-check the list of [Supported versions][02] below.
+There are multiple package versions of PowerShell 7 that can be installed. This article focuses on
+installing the latest stable release package. For more information about the package versions, see
+the [PowerShell Support Lifecycle][04] article.
 
 Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
 of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
 versions replace existing previous preview versions. If you need to run PowerShell 7.5 side-by-side
-with a previous version, reinstall the previous version using the [binary archive][05] method.
+with a previous version, reinstall the previous version using the [binary archive][03] method.
 
-[!INCLUDE [Latest version](../../includes/latest-install.md)]
+## Install PowerShell 7
 
-## Installation steps
+On Alpine Linux, PowerShell is installed from the `tar.gz` package downloaded from the
+[releases][01] page. Select the URL of the package version you want to install.
 
-Installation on Alpine is based on downloading tar.gz package from the [releases][03] page. The URL
-to the package depends on the version of PowerShell you want to install.
-
-- PowerShell 7.4 (LTS) - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-linux-musl-x64.tar.gz`
 - PowerShell 7.5 - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-linux-musl-x64.tar.gz`
+- PowerShell 7.4 (LTS) - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-linux-musl-x64.tar.gz`
 - PowerShell 7.6-preview - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-linux-musl-x64.tar.gz`
 
-Then, in the terminal, execute the following shell commands to install PowerShell 7.4:
+Use the following shell commands to install PowerShell 7:
 
 ```sh
 #!/bin/bash
@@ -68,15 +66,14 @@ sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-## Uninstall PowerShell
+## Start PowerShell 7
 
-```sh
-sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
-```
+After the package is installed, run `pwsh` from a terminal. If you have installed a Preview package,
+run `pwsh-preview`.
 
-## PowerShell paths
-
-- `$PSHOME` is `/opt/microsoft/powershell/7/`
+- The location of `$PSHOME` varies based on the package you installed.
+  - For Stable and LTS packages: `/opt/microsoft/powershell/7/`
+  - For Preview packages: `/opt/microsoft/powershell/7-preview/`
 - The profiles scripts are stored in the following locations:
   - AllUsersAllHosts - `$PSHOME/profile.ps1`
   - AllUsersCurrentHost - `$PSHOME/Microsoft.PowerShell_profile.ps1`
@@ -91,20 +88,26 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 The profiles respect PowerShell's per-host configuration, so the default host-specific profiles
 exists at `Microsoft.PowerShell_profile.ps1` in the same locations.
 
-PowerShell respects the [XDG Base Directory Specification][04] on Linux.
+PowerShell respects the [XDG Base Directory Specification][02] on Linux.
 
-## Supported versions
+## Uninstall PowerShell 7
+
+```sh
+sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
+```
+
+## Supported OS versions
 
 [!INCLUDE [Alpine support](../../includes/alpine-support.md)]
 
-## Installation support
+## Supported installation methods
 
-Microsoft supports the installation methods in this document. There may be other methods of
-installation available from other third-party sources. While those tools and methods may work,
-Microsoft can't support those methods.
+Microsoft supports the installation methods in this document. There may be other third-party methods
+of installation available from other sources. While those tools and methods may work, Microsoft
+can't support those methods.
 
 <!-- link references -->
-[02]: #supported-versions
-[03]: https://aka.ms/PowerShell-Release?tag=stable
-[04]: https://specifications.freedesktop.org/basedir/latest/
-[05]: install-other-linux.md#binary-archives
+[01]: https://github.com/PowerShell/PowerShell/releases
+[02]: https://specifications.freedesktop.org/basedir/latest/
+[03]: install-other-linux.md#binary-archives
+[04]: PowerShell-Support-Lifecycle.md

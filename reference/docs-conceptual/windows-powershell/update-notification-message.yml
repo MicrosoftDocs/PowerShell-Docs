@@ -2,7 +2,7 @@
 metadata:
   description: >-
     This article explains the intent of the update notification message in Windows PowerShell.
-  ms.date: 02/12/2026
+  ms.date: 03/06/2026
   ms.topic: faq
   title: Windows PowerShell update message FAQ
 
@@ -24,45 +24,48 @@ sections:
           Windows PowerShell displays this message at startup to make you aware that there is a
           newer version of PowerShell available.
 
-      - question: I opened the URL but it didn't install an update.
+      - question: I opened the URL but it didn't install an update. How do I install PowerShell 7?
         answer: |
-          The `aka.ms` link takes you to this page. If you want to install the latest version of
-          PowerShell, follow the instructions in
-          [**Install PowerShell on Windows**](../install/install-powershell-on-windows.md).
+          The `aka.ms` link shown in the Windows PowerShell console takes you to this page. To
+          install the latest version of PowerShell 7, follow the instructions in the
+          [**Install PowerShell on Windows**](../install/install-powershell-on-windows.md) article.
 
       - question: But I installed PowerShell 7, why am I still seeing this message?
         answer: |
-          **You always get the message when you run Windows PowerShell 5.1.**
+          Because you ran Windows PowerShell instead of PowerShell 7. PowerShell 7 and Windows
+          PowerShell 5.1 are separate products. PowerShell 7 doesn't replace Windows PowerShell 5.1.
+          PowerShell 7 installs side-by-side. You can run either version.
 
-          PowerShell 7 and Windows PowerShell 5.1 are separate products. PowerShell 7 doesn't
-          replace Windows PowerShell 5.1. PowerShell 7 installs side-by-side. You can run either
-          version.
-
-      - question: Can I disable the message?
-        answer: No. There is no way to disable the message.
-
-      - question: How does Windows PowerShell 5.1 get updated?
+      - question: How do I run PowerShell 7?
         answer: |
-          Windows PowerShell 5.1 is a built-in component of Windows. It's important to understand
-          that Windows PowerShell 5.1 is no longer being developed. Microsoft only publishes
-          security updates for Windows PowerShell 5.1. All updates are managed through standard
-          Windows update channels.
-
-      - question: My install of Windows is up-to-date. Why am I still getting this message?
-        answer: |
-          **This message appears every time you start Windows PowerShell 5.1.**
-
-          It doesn't mean that Windows PowerShell 5.1 is not up-to-date. **It means that you didn't
-          run PowerShell 7.**
+          For instructions, see the _Start PowerShell 7_ section of the
+          [Install PowerShell on Windows](../install/install-powershell-on-windows.md#start-powershell-7)
+          article.
 
       - question: Why would I want to install PowerShell 7?
         answer: |
-          Windows PowerShell 5.1 is no longer being developed. PowerShell 7 is actively developed
-          and supported. PowerShell 7 is faster, more secure, and is available for Windows, Linux
-          and macOS. For more information, see
-          [Differences between Windows PowerShell 5.1 and PowerShell 7](../whats-new/differences-from-windows-powershell.md).
+          PowerShell 7 is faster, more secure, and is available for Windows, Linux and macOS.
+          PowerShell 7 is actively developed and supported. Windows PowerShell 5.1 is no longer
+          being developed. For more information, see the
+          [Differences between Windows PowerShell 5.1 and PowerShell 7](../whats-new/differences-from-windows-powershell.md)
+          article.
 
       - question: Do I need to install PowerShell 7?
         answer: |
           No, you don't need to install PowerShell 7 unless you have a specific requirement for the
           features it provides.
+
+      - question: My install of Windows is up-to-date. Why am I still getting this message?
+        answer: |
+          This message appears every time you start Windows PowerShell 5.1. It doesn't mean that
+          Windows PowerShell 5.1 is not up-to-date.
+
+      - question: How does Windows PowerShell 5.1 get updated?
+        answer: |
+          Microsoft only publishes security updates for Windows PowerShell 5.1. It's important to
+          understand that Windows PowerShell 5.1 is no longer being developed. Windows PowerShell
+          5.1 is a built-in component of Windows. All updates are managed through standard Windows
+          update channels.
+
+      - question: Can I disable the message?
+        answer: No. There is no way to disable the message.
