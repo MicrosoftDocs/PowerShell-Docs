@@ -23,7 +23,7 @@ On Alpine Linux, PowerShell is installed from the `tar.gz` package downloaded fr
 - PowerShell 7.4 (LTS) - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-linux-musl-x64.tar.gz`
 - PowerShell 7.6-preview - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-linux-musl-x64.tar.gz`
 
-Then, in the terminal, execute the following shell commands to install PowerShell 7.4:
+Use the following shell commands to install PowerShell 7:
 
 ```sh
 #!/bin/bash

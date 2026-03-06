@@ -29,7 +29,7 @@ different scenarios and workflows. Choose the method that best suits your needs.
 
 ### Install PowerShell using WinGet (recommended)
 
-<a id="winget"></a>WinGet, the Windows Package Manager, is a command-line tool enables users to
+<a id="winget"></a>WinGet, the Windows Package Manager, is a command-line tool that enables you to
 discover, install, upgrade, remove, and configure applications on Windows client computers. This
 tool is the client interface to the Windows Package Manager service. The `winget` command-line tool
 is included in Windows 11 and Windows Server 2025 as part of the **App Installer**.
@@ -219,7 +219,8 @@ to your `$Env:PATH` environment variable.
 > [!NOTE]
 > To run PowerShell 7.5 side-by-side with other versions of PowerShell 7, use the [ZIP install][12]
 > method to install the other version to a different folder. When you install using the ZIP method,
-> must manually add a shortcut the Start Menu and add it to the PATH environment variable.
+> you must manually add a shortcut to the Start Menu and add the location to the PATH environment
+> variable.
 
 The following screenshot shows multiple versions of PowerShell in the Start Menu. Select the item
 labeled **PowerShell 7**.

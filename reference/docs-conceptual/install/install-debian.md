@@ -14,10 +14,10 @@ of PowerShell can be installed side-by-side with other versions of PowerShell. N
 versions replace existing previous preview versions. If you need to run PowerShell 7.5 side-by-side
 with a previous version, reinstall the previous version using the [binary archive][04] method.
 
-## Choose and installation method
+## Choose an installation method
 
 On Debian Linux, you can install PowerShell using the universal `.deb` package from the Microsoft
-package repository or by downloading file from the GitHub [release][01] page.
+package repository or by downloading a file from the GitHub [releases][01] page.
 
 ### Install PowerShell 7 from the Package Repository
 

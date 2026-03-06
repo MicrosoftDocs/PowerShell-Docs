@@ -12,7 +12,7 @@ the [PowerShell Support Lifecycle][22] article.
 
 Newer versions of PowerShell 7 replace existing previous versions of PowerShell 7. Preview versions
 of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
-versions replace existing previous preview versions.If you need to run PowerShell 7.5 side-by-side
+versions replace existing previous preview versions. If you need to run PowerShell 7.5 side-by-side
 with a previous version, reinstall the previous version using the binary archive method.
 
 ## Choose an installation method
@@ -51,8 +51,8 @@ brew install powershell/tap/powershell-preview
 
 ### Manually download and install the package
 
-Download the install package from the [releases][03] page onto your Mac. Select the package version
-you want to install.
+Download the install package from the [releases][03] page. Select the package version you want to
+install.
 
 - PowerShell 7.5
   - Arm64 processors - [powershell-7.5.4-arm64.pkg][12]
@@ -168,7 +168,6 @@ sudo ln -s /usr/local/microsoft/powershell/7/pwsh /usr/local/bin/pwsh
 After the package is installed, run `pwsh` from a terminal. If you have installed a Preview package,
 run `pwsh-preview`.
 
-- `$PSHOME` is `/usr/local/microsoft/powershell/7`
 - The location of `$PSHOME` varies based on the package you installed.
   - For Stable and LTS packages: `/usr/local/microsoft/powershell/7/`
   - For Preview packages: `/usr/local/microsoft/powershell/7-preview/`

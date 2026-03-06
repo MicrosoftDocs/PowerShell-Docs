@@ -13,7 +13,7 @@ Newer versions of PowerShell 7 replace existing previous versions of PowerShell 
 of PowerShell can be installed side-by-side with other versions of PowerShell. Newer preview
 versions replace existing previous preview versions.
 
-## Choose and installation method
+## Choose an installation method
 
 On RHEL, you can install PowerShell using the universal `.rpm` package from the Microsoft
 package repository or by downloading file from the GitHub release page.
@@ -38,11 +38,10 @@ Installing PowerShell from PMC is the preferred method of installation.
 
 # Get version of RHEL
 source /etc/os-release
-if [ ${VERSION_ID%.*} -lt 8 ]
-then majorver=7
-elif [ ${VERSION_ID%.*} -lt 9 ]
+if [ ${VERSION_ID%.*} -ge 8 ]
 then majorver=8
-else majorver=9
+elif [ ${VERSION_ID%.*} -ge 9 ]
+then majorver=9
 fi
 
 # Download the Microsoft RedHat repository package
@@ -72,8 +71,8 @@ you want to install.
 - PowerShell 7.6-preview universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-preview-7.6.0-rc1-1.rh.x86_64.rpm`
 
-The following shell script downloads and installs the current preview release of PowerShell. You can
-change the URL to download the version of PowerShell that you want to install.
+The following shell script downloads and installs the current release of PowerShell. You can change
+the URL to download the version of PowerShell that you want to install.
 
 ```sh
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-1.rh.x86_64.rpm

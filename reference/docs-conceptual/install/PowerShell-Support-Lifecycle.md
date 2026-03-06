@@ -29,8 +29,8 @@ There are multiple versions of PowerShell 7 that can be installed.
 
 PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. The End of Support dates follow the
 [.NET Support Policy][06] for the version of .NET that the release of PowerShell was built upon.
-Both LTS and **current** versions of PowerShell receive security updates and bug fixes. Microsoft
-only supports the latest update version of a release.
+Both LTS and Stable releases of PowerShell receive security updates and bug fixes. Microsoft only
+supports the latest update version of a release.
 
 > [!NOTE]
 > This document is about support for PowerShell, not Windows PowerShell. Windows PowerShell is a
