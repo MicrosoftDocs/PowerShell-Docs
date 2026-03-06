@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell uses character encoding for input and output of string data.
 Locale: en-US
-ms.date: 03/09/2023
+ms.date: 12/03/2025
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Character_Encoding
@@ -17,7 +17,7 @@ data.
 
 Unicode is a worldwide character-encoding standard. The system uses Unicode
 exclusively for character and string manipulation. For a detailed description
-of all aspects of Unicode, refer to [The Unicode Standard][01].
+of all aspects of Unicode, refer to [The Unicode Standard][07].
 
 Windows supports Unicode and traditional character sets. Traditional character
 sets, such as Windows code pages, use 8-bit values or combinations of 8-bit
@@ -91,7 +91,7 @@ In PowerShell 5.1, the **Encoding** parameter supports the following values:
 - `UTF7` Uses UTF-7.
 - `UTF8` Uses UTF-8 (with BOM).
 
-In general, Windows PowerShell uses the Unicode [UTF-16LE][03] encoding by
+In general, Windows PowerShell uses the Unicode [UTF-16LE][06] encoding by
 default. However, the default encoding used by cmdlets in Windows PowerShell
 is not consistent.
 
@@ -174,7 +174,7 @@ PowerShell defaults to `utf8NoBOM` for all output.
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric
 IDs of registered code pages (like `-Encoding 1251`) or string names of
 registered code pages (like `-Encoding "windows-1251"`). For more information,
-see the .NET documentation for [Encoding.CodePage][04].
+see the .NET documentation for [Encoding.CodePage][08].
 
 Starting with PowerShell 7.4, you can use the `ANSI` value for the **Encoding**
 parameter to pass the numeric ID for the current culture's ANSI code page
@@ -182,13 +182,14 @@ without having to specify it manually.
 
 ## Changing the default encoding
 
-PowerShell has two default variables that can be used to change the default
+PowerShell has three default variables that can be used to change the default
 encoding behavior.
 
 - `$PSDefaultParameterValues`
 - `$OutputEncoding`
+- `$PSApplicationOutputEncoding`
 
-For more information, see [about_Preference_Variables][05].
+For more information, see [about_Preference_Variables][04].
 
 Beginning in PowerShell 5.1, the redirection operators (`>` and `>>`) call the
 `Out-File` cmdlet. Therefore, you can set the default encoding of them using
@@ -207,7 +208,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
 > [!IMPORTANT]
 > Putting this command in your PowerShell profile makes the preference a
-> session-global setting that affects all commands and scripts that do not
+> session-global setting that affects all commands and scripts that don't
 > explicitly specify an encoding.
 >
 > Similarly, you should include such commands in your scripts or modules that
@@ -216,22 +217,27 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 > or in a different version of PowerShell.
 
 The automatic variable `$OutputEncoding` affects the encoding PowerShell uses
-to communicate with external programs. It has no effect on the encoding that
-the output redirection operators and PowerShell cmdlets use to save to files.
+when sending data to external programs. The `$PSApplicationOutputEncoding`
+variable affects the encoding PowerShell uses to read data from external
+programs. They have no effect on the encoding that the output redirection
+operators and PowerShell cmdlets use to save to files.
 
 ## See also
 
-- [about_Preference_Variables][05]
-- [Byte order mark](https://wikipedia.org/wiki/Byte_order_mark)
-- [Code Pages - Win32 apps](/windows/win32/intl/code-pages)
-- [Encoding.CodePage][04]
-- [Introduction to character encoding in .NET](/dotnet/standard/base-types/character-encoding-introduction)
-- [The Unicode Standard][01]
-- [UTF-16LE][03]
+- [about_Preference_Variables][04]
+- [Byte order mark][05]
+- [Code Pages - Win32 apps][03]
+- [Encoding.CodePage][08]
+- [Introduction to character encoding in .NET][01]
+- [The Unicode Standard][07]
+- [UTF-16LE][06]
 
 <!-- link references -->
-[01]: https://www.unicode.org/standard/standard.html
+[01]: /dotnet/standard/base-types/character-encoding-introduction
 [02]: /globalization/encoding/byte-order-mark
-[03]: https://wikipedia.org/wiki/UTF-16
-[04]: /dotnet/api/system.text.encoding.codepage
-[05]: about_Preference_Variables.md
+[03]: /windows/win32/intl/code-pages
+[04]: about_Preference_Variables.md
+[05]: https://wikipedia.org/wiki/Byte_order_mark
+[06]: https://wikipedia.org/wiki/UTF-16
+[07]: https://www.unicode.org/standard/standard.html
+[08]: xref:System.Text.Encoding.CodePage%2A
