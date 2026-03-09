@@ -1,7 +1,7 @@
 ---
 description: Hashtables are really important in PowerShell so it's good to have a solid understanding of them.
 ms.custom: contributor-KevinMarquette
-ms.date: 10/22/2025
+ms.date: 03/09/2026
 title: Everything you wanted to know about hashtables
 ---
 # Everything you wanted to know about hashtables
@@ -333,7 +333,7 @@ detail in my logic. I started to use it to test if a key was present. When the v
 zero, that statement would return `$false` unexpectedly.
 
 ```powershell
-if( $person.age -ne $null ){...}
+if( $null -ne $person.age ){...}
 ```
 
 This works around that issue for zero values but not $null vs non-existent keys. Most of the time
@@ -1087,7 +1087,8 @@ function Get-DeepClone
     param(
         $InputObject
     )
-    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize($obj, [int32]::MaxValue)
+    $TempCliXmlString = [System.Management.Automation.PSSerializer]::Serialize(
+        $InputObject, [int32]::MaxValue)
     return [System.Management.Automation.PSSerializer]::Deserialize($TempCliXmlString)
 }
 ```
