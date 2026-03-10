@@ -34,7 +34,7 @@ Once `brew` is installed, install PowerShell.
 The following command installs the latest stable release of PowerShell:
 
 ```sh
-brew install --cask powershell
+brew install powershell
 ```
 
 If you want the LTS or Preview version of PowerShell, you can install it using Homebrew's tap
