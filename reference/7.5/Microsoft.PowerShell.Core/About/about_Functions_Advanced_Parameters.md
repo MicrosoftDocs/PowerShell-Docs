@@ -591,7 +591,7 @@ function Test-Remainder {
         "${i}: $($Remaining[$i])"
     }
 }
-Test-Remainder first one, two
+Test-Remainder first one two
 ```
 
 ```Output
