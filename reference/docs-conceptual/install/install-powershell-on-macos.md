@@ -205,7 +205,7 @@ brew upgrade powershell
 If you installed PowerShell with Homebrew, use the following command to uninstall:
 
 ```sh
-brew uninstall --cask powershell
+brew uninstall powershell
 ```
 
 If you manually installed PowerShell 7, you must manually remove it. The following command removes
