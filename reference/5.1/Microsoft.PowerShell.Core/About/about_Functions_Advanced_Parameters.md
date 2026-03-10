@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 03/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -576,13 +576,8 @@ The `ValueFromRemainingArguments` argument indicates that the parameter accepts
 all the parameter's values in the command that aren't assigned to other
 parameters of the function.
 
-There's a known issue for using collections with
-**ValueFromRemainingArguments** where the passed-in collection is treated as a
+Collections passed to **ValueFromRemainingArguments** are always treated as a
 single element.
-
-The following example demonstrates this known issue. The **Remaining**
-parameter should contain **one** at **index 0** and **two** at **index 1**.
-Instead, both elements are combined into a single entity.
 
 ```powershell
 function Test-Remainder {
@@ -590,26 +585,27 @@ function Test-Remainder {
         [Parameter(Mandatory, Position=0)]
         [string]$Value,
 
-        [Parameter(Position=1, ValueFromRemainingArguments)]
+        [Parameter(ValueFromRemainingArguments, Position=1)]
         [string[]]$Remaining
     )
 
-    "Found $($Remaining.Count) elements"
+    "Value = $Value"
+    "Found $($Remaining.Count) remaining values"
 
     for ($i = 0; $i -lt $Remaining.Count; $i++) {
         "${i}: $($Remaining[$i])"
     }
 }
-Test-Remainder first one, two
 ```
 
-```Output
-Found 1 elements
-0: one two
-```
+```powershell
+PS> Test-Remainder first one two, three
 
-> [!NOTE]
-> This issue is resolved in PowerShell 6.2.
+Value = first
+Found 2 remaining values
+0: one
+1: two three
+```
 
 #### HelpMessage argument
 
