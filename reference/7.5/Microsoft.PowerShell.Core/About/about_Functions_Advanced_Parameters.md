@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 03/10/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -581,23 +581,54 @@ function Test-Remainder {
         [Parameter(Mandatory, Position=0)]
         [string]$Value,
 
-        [Parameter(Position=1, ValueFromRemainingArguments)]
+        [Parameter(ValueFromRemainingArguments, Position=1)]
         [string[]]$Remaining
     )
 
-    "Found $($Remaining.Count) elements"
+    "Value = $Value"
+    "Found $($Remaining.Count) remaining values"
 
     for ($i = 0; $i -lt $Remaining.Count; $i++) {
         "${i}: $($Remaining[$i])"
     }
 }
-Test-Remainder first one, two
 ```
 
-```Output
-Found 2 elements
+```powershell
+PS> Test-Remainder first one two three
+
+Value = first
+Found 3 remaining values
 0: one
 1: two
+2: three
+```
+
+Beginning in PowerShell 6.2, collections are handled differently when passed to
+**ValueFromRemainingArguments**. If you only pass a collection, then each value
+in the collection is treated as a separate item.
+
+```powershell
+PS> Test-Remainder first one, two, three
+
+Value = first
+Found 3 remaining values
+0: one
+1: two
+2: three
+```
+
+When you pass multiple values where at least one isn't a collection, the
+collection is treated as a single item.
+
+```powershell
+PS> Test-Remainder first one, two three four
+
+Value = first
+Found 3 remaining values
+0: one two
+1: three
+2: four
 ```
 
 #### HelpMessage argument
