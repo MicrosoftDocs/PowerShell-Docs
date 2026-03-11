@@ -60,8 +60,8 @@ Get-Content -Path .\LineNumbers.txt
 ```
 
 ```Output
-This is Line 1
-This is Line 2
+This is Line 1.
+This is Line 2.
 ...
 This is line 99.
 This is line 100.
@@ -83,11 +83,11 @@ Get-Content -Path .\LineNumbers.txt -TotalCount 5
 ```
 
 ```Output
-This is Line 1
-This is Line 2
-This is Line 3
-This is Line 4
-This is Line 5
+This is Line 1.
+This is Line 2.
+This is Line 3.
+This is Line 4.
+This is Line 5.
 ```
 
 ### Example 3: Get a specific line of content from a text file
@@ -101,7 +101,7 @@ that content. The **TotalCount** parameter gets the first 25 lines of content. T
 ```
 
 ```Output
-This is Line 25
+This is Line 25.
 ```
 
 The `Get-Content` command is wrapped in parentheses so that the command completes before going to
@@ -119,7 +119,7 @@ Get-Item -Path .\LineNumbers.txt | Get-Content -Tail 1
 ```
 
 ```Output
-This is Line 100
+This is Line 100.
 ```
 
 This example uses the `Get-Item` cmdlet to demonstrate that you can pipe files to `Get-Content`. The
