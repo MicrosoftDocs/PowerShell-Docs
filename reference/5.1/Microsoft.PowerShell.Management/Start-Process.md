@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/01/2023
+ms.date: 03/11/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -202,6 +202,11 @@ an executable file or of a document, such as a `.txt` or `.doc` file, that's ass
 program on the computer. This parameter is required.
 
 If you specify only a filename, use the **WorkingDirectory** parameter to specify the path.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String
@@ -417,6 +422,11 @@ Accept wildcard characters: False
 Specifies the location that the new process should start in. The default is the location of the
 executable file or document being started. Wildcards aren't supported. The path must not contain
 characters that would be interpreted as wildcards.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String

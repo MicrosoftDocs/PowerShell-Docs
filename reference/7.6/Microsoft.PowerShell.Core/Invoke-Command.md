@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/18/2026
+ms.date: 03/24/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -811,6 +811,11 @@ passed by position from the array value supplied to **ArgumentList**. This is kn
 splatting. For more information about the behavior of **ArgumentList**, see
 [about_Splatting](about/about_Splatting.md#splatting-with-arrays).
 
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
+
 ```yaml
 Type: System.Object[]
 Parameter Sets: (All)
@@ -1130,6 +1135,11 @@ the values of parameters in the script.
 When you use this parameter, PowerShell converts the contents of the specified script file to a
 scriptblock, transmits the scriptblock to the remote computer, and runs it on the remote computer.
 
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
+
 ```yaml
 Type: System.String
 Parameter Sets: FilePathRunspace, FilePathComputerName, FilePathUri, FilePathVMId, FilePathVMName, FilePathContainerId, FilePathSSHHost, FilePathSSHHostHash
@@ -1403,7 +1413,7 @@ remote computer.
 
 > [!NOTE]
 > Parameters for the scriptblock can only be passed in from **ArgumentList** by position. Switch
-> parameters cannot be passed by position. If you need a parameter that behaves like a
+> parameters can't be passed by position. If you need a parameter that behaves like a
 > **SwitchParameter** type, use a **Boolean** type instead.
 
 ```yaml
