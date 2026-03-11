@@ -25,7 +25,7 @@ Download the install package from the [releases][04] page. Select the package ve
 install.
 
 - PowerShell 7.5
-  - Arm64 processors - [powershell-7.5.4-arm64.pkg][09]
+  - Arm64 processors - [powershell-7.5.4-osx-arm64.pkg][09]
   - x64 processors - [powershell-7.5.4-osx-x64.pkg][11]
 - PowerShell 7.4 (LTS)
   - Arm64 processors - [powershell-7.4.13-osx-arm64.pkg][05]

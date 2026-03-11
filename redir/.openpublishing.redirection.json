@@ -2,7 +2,7 @@
   "redirections": [
     {
       "redirect_document_id": false,
-      "redirect_url": "/reference/docs-conceptual/install/alternate-install-methods",
+      "redirect_url": "/powershell/scripting/install/alternate-install-methods",
       "source_path": "../reference/docs-conceptual/install/install-other-linux.md"
     },
     {

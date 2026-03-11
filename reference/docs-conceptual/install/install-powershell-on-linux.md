@@ -75,6 +75,6 @@ information, see [Alternate ways to install PowerShell on Linux][05].
 [02]: community-support.md
 [03]: install-alpine.md
 [04]: install-debian.md
-[05]: install-other-linux.md
+[05]: install/alternate-install-methods.md
 [06]: install-rhel.md
 [07]: install-ubuntu.md
