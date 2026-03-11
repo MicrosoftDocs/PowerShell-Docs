@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/18/2026
+ms.date: 03/11/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -60,8 +60,8 @@ Get-Content -Path .\LineNumbers.txt
 ```
 
 ```Output
-This is Line 1
-This is Line 2
+This is line 1.
+This is line 2.
 ...
 This is line 99.
 This is line 100.
@@ -83,11 +83,11 @@ Get-Content -Path .\LineNumbers.txt -TotalCount 5
 ```
 
 ```Output
-This is Line 1
-This is Line 2
-This is Line 3
-This is Line 4
-This is Line 5
+This is line 1.
+This is line 2.
+This is line 3.
+This is line 4.
+This is line 5.
 ```
 
 ### Example 3: Get a specific line of content from a text file
@@ -101,7 +101,7 @@ that content. The **TotalCount** parameter gets the first 25 lines of content. T
 ```
 
 ```Output
-This is Line 25
+This is line 25.
 ```
 
 The `Get-Content` command is wrapped in parentheses so that the command completes before going to
@@ -119,7 +119,7 @@ Get-Item -Path .\LineNumbers.txt | Get-Content -Tail 1
 ```
 
 ```Output
-This is Line 100
+This is line 100.
 ```
 
 This example uses the `Get-Item` cmdlet to demonstrate that you can pipe files to `Get-Content`. The
