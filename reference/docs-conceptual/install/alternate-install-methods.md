@@ -26,6 +26,10 @@ Once `brew` is installed, install PowerShell using the following command:
 brew install powershell
 ```
 
+> [!NOTE]
+> The brew formula builds PowerShell from source code rather than installing a package built by
+> Microsoft.
+
 ### Update PowerShell 7
 
 Run the following commands to update the installed version of PowerShell to the latest release.
@@ -55,8 +59,7 @@ Use `sudo rm` to remove any other remaining PowerShell files and folders.
 ## Install on Linux using a Snap package
 
 Snaps are application packages that are easy to install if your platform supports Snap. You can find
-and install Snap packages from the Snap Store. Snap packages build PowerShell from source code
-rather than installing a package built by Microsoft.
+and install Snap packages from the Snap Store.
 
 > [!IMPORTANT]
 > The Snap Store contains PowerShell snap packages for many Linux distributions that aren't
@@ -114,6 +117,10 @@ pwsh-preview
 
 After installation, Snap will automatically upgrade. You can trigger an upgrade using
 `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.
+
+> [!NOTE]
+> Snap packages build PowerShell from source code rather than installing a package built by
+> Microsoft.
 
 ### Uninstall using Snap
 
@@ -213,21 +220,6 @@ The .NET team publishes Docker images containing the .NET SDK with PowerShell al
 can find those images on the [Microsoft Container Registry][13].
 
 <!-- link references -->
-[01]: /dotnet/core/install/linux-alpine#dependencies
-[02]: /dotnet/core/install/linux-debian#dependencies
-[03]: /dotnet/core/install/linux-rhel#dependencies
-[04]: /dotnet/core/install/linux-sles#dependencies
-[05]: /dotnet/core/install/linux-ubuntu#dependencies
-[06]: /dotnet/core/sdk
-[07]: /dotnet/core/tools/global-tools
-[08]: /powershell/scripting/community/community-support
-[12]: https://aka.ms/powershell-release?tag=lts
-[13]: https://aka.ms/powershell-release?tag=preview
-[14]: https://aka.ms/PowerShell-Release?tag=stable
-[16]: https://snapcraft.io/docs/tutorials/install-the-daemon/
-[17]: https://snapcraft.io/store
-[15]: https://mcr.microsoft.com/en-us/artifact/mar/dotnet/sdk/
-<!-- updated link references -->
 [01]: /dotnet/core/install/linux-alpine#dependencies
 [02]: /dotnet/core/install/linux-debian#dependencies
 [03]: /dotnet/core/install/linux-rhel#dependencies
