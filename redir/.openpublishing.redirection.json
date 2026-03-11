@@ -2,6 +2,11 @@
   "redirections": [
     {
       "redirect_document_id": false,
+      "redirect_url": "/reference/docs-conceptual/install/alternate-install-methods",
+      "source_path": "../reference/docs-conceptual/install/install-other-linux.md"
+    },
+    {
+      "redirect_document_id": false,
       "redirect_url": "/powershell/scripting/security/app-control/how-to-use-app-control",
       "source_path": "../reference/docs-conceptual/security/app-control/how-to-use-wdac.md"
     },

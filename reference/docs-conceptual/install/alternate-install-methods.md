@@ -1,39 +1,76 @@
 ---
-description: Information about installing PowerShell on various Linux distributions
-ms.date: 02/17/2026
-title: Alternate ways to install PowerShell on Linux
+description: Alternate ways to install PowerShell on non-Windows platforms.
+ms.date: 03/11/2026
+title: Alternate ways to install PowerShell
 ---
-# Alternate ways to install PowerShell on Linux
+# Alternate ways to install PowerShell
 
-All packages are available on our GitHub [releases][14] page. After the package is installed, run
-`pwsh` from a terminal. Run `pwsh-preview` if you installed a preview release.
+There are other ways to install PowerShell on non-Windows platforms.
 
-There are three other ways to install PowerShell on a Linux distribution:
+These methods may work but aren't officially supported by Microsoft. You may be able to get support
+from the PowerShell Community or the operating system vendor. For support options, see
+[Community Support][08].
 
-- Install using a [Snap Package][11]
-- Install using the [binary archives][09]
-- Install as a [.NET Global tool][10]
+## Install on macOS using Homebrew
 
-## Snap Package
+Homebrew is the preferred package manager for macOS. If the `brew` command isn't found, you need to
+install Homebrew following [their instructions][12].
 
-Snaps are application packages that are easy to install, secure, cross‐platform and dependency‐free.
-Snaps are discoverable and installable from the Snap Store. Snap packages are supported the same as
-the distribution you're running the package on.
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Once `brew` is installed, install PowerShell using the following command:
+
+```sh
+brew install powershell
+```
+
+### Update PowerShell 7
+
+Run the following commands to update the installed version of PowerShell to the latest release.
+
+```sh
+brew update
+brew upgrade powershell
+```
+
+### Uninstall PowerShell 7
+
+If you installed PowerShell with Homebrew, use the following command to uninstall:
+
+```sh
+brew uninstall powershell
+```
+
+If you manually installed PowerShell 7, you must manually remove it. The following command removes
+the symbolic link and PowerShell files.
+
+```sh
+sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
+```
+
+Use `sudo rm` to remove any other remaining PowerShell files and folders.
+
+## Install on Linux using a Snap package
+
+Snaps are application packages that are easy to install if your platform supports Snap. You can find
+and install Snap packages from the Snap Store. Snap packages build PowerShell from source code
+rather than installing a package built by Microsoft.
 
 > [!IMPORTANT]
-> The Snap Store contains PowerShell snap packages for many Linux distributions that are not
-> officially supported by Microsoft. For support, see the list of available [Community Support][08]
-> options.
+> The Snap Store contains PowerShell snap packages for many Linux distributions that aren't
+> officially supported by Microsoft.
 
 ### Getting snapd
 
 The snap daemon, known as `snapd`, is the background service that manages and maintains your snaps.
 It needs to be running before a snap can be installed. For instructions on how to install `snapd`,
-see the [Snapcraft documentation][16].
+see the [Snapcraft documentation][14].
 
 ### Installation via Snap
 
-There are two PowerShell for Linux is published to the [Snap store][17]: `powershell` and
+There are two PowerShell for Linux is published to the [Snap store][15]: `powershell` and
 `powershell-preview`.
 
 Use the following command to install the latest stable version of PowerShell:
@@ -78,7 +115,7 @@ pwsh-preview
 After installation, Snap will automatically upgrade. You can trigger an upgrade using
 `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.
 
-### Uninstallation
+### Uninstall using Snap
 
 ```sh
 sudo snap remove powershell
@@ -90,7 +127,7 @@ or
 sudo snap remove powershell-preview
 ```
 
-## Binary Archives
+## Install from binary archives
 
 PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment
 scenarios.
@@ -98,19 +135,19 @@ scenarios.
 > [!NOTE]
 > You can use this method to install any version of PowerShell including the latest:
 >
-> - Stable release: [https://aka.ms/powershell-release?tag=stable][14]
-> - LTS release: [https://aka.ms/powershell-release?tag=lts][12]
-> - Preview release: [https://aka.ms/powershell-release?tag=preview][13]
+> - Stable release: [https://aka.ms/powershell-release?tag=stable][11]
+> - LTS release: [https://aka.ms/powershell-release?tag=lts][09]
+> - Preview release: [https://aka.ms/powershell-release?tag=preview][10]
 
 ### Dependencies
 
-PowerShell builds portable binaries for all Linux distributions. But, .NET Core runtime requires
-different dependencies on different distributions, and PowerShell does too.
+PowerShell builds portable binaries for all supported Linux distributions. But, PowerShell and the
+.NET runtime require different dependencies on different distributions.
 
 It's possible that when you install PowerShell, specific dependencies may not be installed, such as
 when manually installing from the binary archives. The following list details Linux distributions
 that are supported by Microsoft and have dependencies you may need to install. Check the
-distribution page for more information:
+Linux distribution page for more information:
 
 - [Alpine][01]
 - [Debian][02]
@@ -119,11 +156,7 @@ distribution page for more information:
 - [Ubuntu][05]
 
 To deploy PowerShell binaries on Linux distributions that aren't officially supported, you need to
-install the necessary dependencies for the target OS in separate steps. For example, our
-[Amazon Linux dockerfile][15] installs dependencies first, and then extracts the Linux `tar.gz`
-archive.
-
-### Installation using a binary archive file
+install the necessary dependencies for the target OS in separate steps.
 
 > [!IMPORTANT]
 > This method can be used to install PowerShell on any version of Linux, including distributions
@@ -173,8 +206,11 @@ dotnet tool install --global PowerShell
 ```
 
 The dotnet tool installer adds `~/.dotnet/tools` to your `PATH` environment variable. However, the
-currently running shell does not have the updated `PATH`. You should be able to start PowerShell
+currently running shell doesn't have the updated `PATH`. You should be able to start PowerShell
 from a new shell by typing `pwsh`.
+
+The .NET team publishes Docker images containing the .NET SDK with PowerShell already installed. You
+can find those images on the [Microsoft Container Registry][13].
 
 <!-- link references -->
 [01]: /dotnet/core/install/linux-alpine#dependencies
@@ -185,12 +221,25 @@ from a new shell by typing `pwsh`.
 [06]: /dotnet/core/sdk
 [07]: /dotnet/core/tools/global-tools
 [08]: /powershell/scripting/community/community-support
-[09]: #binary-archives
-[10]: #install-as-a-net-global-tool
-[11]: #snap-package
 [12]: https://aka.ms/powershell-release?tag=lts
 [13]: https://aka.ms/powershell-release?tag=preview
 [14]: https://aka.ms/PowerShell-Release?tag=stable
-[15]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/unstable/amazonlinux/docker/Dockerfile
 [16]: https://snapcraft.io/docs/tutorials/install-the-daemon/
 [17]: https://snapcraft.io/store
+[15]: https://mcr.microsoft.com/en-us/artifact/mar/dotnet/sdk/
+<!-- updated link references -->
+[01]: /dotnet/core/install/linux-alpine#dependencies
+[02]: /dotnet/core/install/linux-debian#dependencies
+[03]: /dotnet/core/install/linux-rhel#dependencies
+[04]: /dotnet/core/install/linux-sles#dependencies
+[05]: /dotnet/core/install/linux-ubuntu#dependencies
+[06]: /dotnet/core/sdk
+[07]: /dotnet/core/tools/global-tools
+[08]: /powershell/scripting/community/community-support
+[09]: https://aka.ms/powershell-release?tag=lts
+[10]: https://aka.ms/powershell-release?tag=preview
+[11]: https://aka.ms/PowerShell-Release?tag=stable
+[12]: https://brew.sh/
+[13]: https://mcr.microsoft.com/en-us/artifact/mar/dotnet/sdk/
+[14]: https://snapcraft.io/docs/tutorials/install-the-daemon/
+[15]: https://snapcraft.io/store
