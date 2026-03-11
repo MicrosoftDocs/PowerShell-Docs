@@ -1,6 +1,7 @@
 ---
 description: List of resources created for and by PowerShell users
-ms.date: 03/30/2025
+ms.date: 03/10/2026
+no-loc: [Discord, Slack, Spiceworks, "Stack Overflow" ]
 title: PowerShell community support resources
 ---
 # Getting support from the community
