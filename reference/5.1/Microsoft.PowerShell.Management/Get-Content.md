@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/18/2026
+ms.date: 03/11/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/get-content?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -58,8 +58,8 @@ Get-Content -Path .\LineNumbers.txt
 ```
 
 ```Output
-This is Line 1
-This is Line 2
+This is line 1.
+This is line 2.
 ...
 This is line 99.
 This is line 100.
@@ -81,11 +81,11 @@ Get-Content -Path .\LineNumbers.txt -TotalCount 5
 ```
 
 ```Output
-This is Line 1
-This is Line 2
-This is Line 3
-This is Line 4
-This is Line 5
+This is line 1.
+This is line 2.
+This is line 3.
+This is line 4.
+This is line 5.
 ```
 
 ### Example 3: Get a specific line of content from a text file
@@ -99,7 +99,7 @@ that content. The **TotalCount** parameter gets the first 25 lines of content. T
 ```
 
 ```Output
-This is Line 25
+This is line 25.
 ```
 
 The `Get-Content` command is wrapped in parentheses so that the command completes before going to
@@ -117,7 +117,7 @@ Get-Item -Path .\LineNumbers.txt | Get-Content -Tail 1
 ```
 
 ```Output
-This is Line 100
+This is line 100.
 ```
 
 This example uses the `Get-Item` cmdlet to demonstrate that you can pipe files to `Get-Content`. The
@@ -132,7 +132,8 @@ to create sample content in a file named `Stream.txt`.
 
 ```powershell
 Set-Content -Path .\Stream.txt -Value 'This is the content of the Stream.txt file'
-# Specify a wildcard to the Stream parameter to display all streams of the recently created file.
+# Specify a wildcard to the Stream parameter to display all streams of the recently
+# created file.
 Get-Item -Path .\Stream.txt -Stream *
 ```
 
@@ -171,7 +172,8 @@ This is the content of the Stream.txt file
 ```
 
 ```powershell
-# Use the Stream parameter of Add-Content to create a new Stream containing sample content.
+# Use the Stream parameter of Add-Content to create a new Stream containing sample
+# content.
 $addContentSplat = @{
     Path = '.\Stream.txt'
     Stream = 'NewStream'
@@ -215,7 +217,7 @@ Added a stream named NewStream to Stream.txt
 ```
 
 The **Stream** parameter is a dynamic parameter of the
-[FileSystem provider](../microsoft.powershell.core/about/about_filesystem_provider.md#stream-string).
+[FileSystem provider](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md#stream-string).
 By default `Get-Content` only retrieves data from the default, or `:$DATA` stream. **Streams** can
 be used to store hidden data such as attributes, security settings, or other data. They can also be
 stored on directories without being child items.
@@ -457,7 +459,7 @@ it in single quotation marks. Single quotation marks tell PowerShell not to inte
 as escape sequences.
 
 For more information, see
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
