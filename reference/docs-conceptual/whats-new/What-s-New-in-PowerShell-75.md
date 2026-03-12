@@ -6,8 +6,8 @@ ms.date: 10/16/2025
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.4 includes the following features, updates, and breaking changes. PowerShell
-7.5.4 is built on .NET 9.0.306 release.
+PowerShell 7.5.5 includes the following features, updates, and breaking changes. PowerShell
+7.5.5 is built on .NET 9.0.312 release.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
@@ -69,6 +69,8 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Other cmdlet improvements
 
+- Close pipe client handles after creating the child ssh process ([#26822][26822])
+- Fix the progress preference variable in script cmdlets ([#26791][26791]) (Thanks @cmkb3!)
 - Fix `Out-GridView` by replacing the use of obsolete `BinaryFormatter` with custom implementation
   ([#25559][25559])
 - Enable `-NoRestart` to work with `Register-PSSessionConfiguration` ([#23891][23891])
@@ -122,6 +124,7 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Engine improvements
 
+- Fix the logic for finding the ssh executable in the PATH ([#26165][26165]) (Thanks @jborean93!)
 - Move .NET method invocation logging to after the needed type conversion is done for method
   arguments ([#25357][25357])
 - Fallback to AppLocker after `WldpCanExecuteFile` ([#25305][25305])
@@ -347,3 +350,6 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [25357]: https://github.com/PowerShell/PowerShell/pull/25357
 [25547]: https://github.com/PowerShell/PowerShell/pull/25547
 [25559]: https://github.com/PowerShell/PowerShell/pull/25559
+[26165]: https://github.com/PowerShell/PowerShell/pull/26165
+[26791]: https://github.com/PowerShell/PowerShell/pull/26791
+[26822]: https://github.com/PowerShell/PowerShell/pull/26822

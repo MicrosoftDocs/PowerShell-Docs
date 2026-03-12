@@ -1,6 +1,6 @@
 ---
 description: This article lists the Linux distributions and package managers that are supported for installing PowerShell.
-ms.date: 11/21/2025
+ms.date: 03/12/2026
 title: Install PowerShell on Linux
 ---
 # Install PowerShell on Linux
