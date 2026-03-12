@@ -1,6 +1,6 @@
 ---
 description: PowerShell on Arm-based systems
-ms.date: 02/17/2026
+ms.date: 03/12/2026
 title: PowerShell on Arm-based systems
 ---
 

@@ -25,11 +25,11 @@ Download the install package from the [releases][04] page. Select the package ve
 install.
 
 - PowerShell 7.5
-  - Arm64 processors - [powershell-7.5.4-osx-arm64.pkg][09]
-  - x64 processors - [powershell-7.5.4-osx-x64.pkg][11]
+  - Arm64 processors - [powershell-7.5.5-osx-arm64.pkg][09]
+  - x64 processors - [powershell-7.5.5-osx-x64.pkg][11]
 - PowerShell 7.4 (LTS)
-  - Arm64 processors - [powershell-7.4.13-osx-arm64.pkg][05]
-  - x64 processors - [powershell-7.4.13-osx-x64.pkg][07]
+  - Arm64 processors - [powershell-7.4.14-osx-arm64.pkg][05]
+  - x64 processors - [powershell-7.4.14-osx-x64.pkg][07]
 - PowerShell 7.6-preview
   - Arm64 processors - [powershell-7.6.0-rc1-osx-arm64.pkg][13]
   - x64 processors - [powershell-7.6.0-rc1-osx-x64.pkg][15]
@@ -46,9 +46,9 @@ Install PowerShell using Finder:
 
    You will receive the following error message when installing the package:
 
-   > "powershell-7.5.4-osx-arm64.pkg" Not Opened
+   > "powershell-7.5.5-osx-arm64.pkg" Not Opened
    >
-   > Apple could not verify "powershell-7.5.4-osx-arm64.pkg" is free from malware that may harm
+   > Apple could not verify "powershell-7.5.5-osx-arm64.pkg" is free from malware that may harm
    > your Mac or compromise your privacy.
 
 1. Select the **Done** button to close the prompt.
@@ -72,12 +72,12 @@ one of the following methods to install the package:
 - Run the `installer` command with the **allowUntrusted** flag:
 
   ```sh
-  sudo installer -allowUntrusted -pkg ./Downloads/powershell-7.5.4-osx-arm64.pkg -target /
+  sudo installer -allowUntrusted -pkg ./Downloads/powershell-7.5.5-osx-arm64.pkg -target /
   ```
 
 - Or install the package as you normally would after running one of the following commands:
 
-  - Run `sudo xattr -rd com.apple.quarantine ./Downloads/powershell-7.5.4-osx-arm64.pkg`.
+  - Run `sudo xattr -rd com.apple.quarantine ./Downloads/powershell-7.5.5-osx-arm64.pkg`.
   - Use the `Unblock-File` cmdlet if you're using PowerShell. Include the full path to the `.pkg`
     file.
 
@@ -104,11 +104,11 @@ Download the install package from the [releases][04] page onto your Mac.  Select
 you want to install.
 
 - PowerShell 7.4 (LTS)
-  - Arm64 processors - [powershell-7.4.13-osx-arm64.tar.gz][06]
-  - x64 processors - [powershell-7.4.13-osx-x64.tar.gz][08]
+  - Arm64 processors - [powershell-7.4.14-osx-arm64.tar.gz][06]
+  - x64 processors - [powershell-7.4.14-osx-x64.tar.gz][08]
 - PowerShell 7.5
-  - Arm64 processors - [powershell-7.5.4-osx-arm64.tar.gz][10]
-  - x64 processors - [powershell-7.5.4-osx-x64.tar.gz][12]
+  - Arm64 processors - [powershell-7.5.5-osx-arm64.tar.gz][10]
+  - x64 processors - [powershell-7.5.5-osx-x64.tar.gz][12]
 - PowerShell 7.6-preview
   - Arm64 processors - [powershell-7.6.0-rc1-osx-arm64.tar.gz][14]
   - x64 processors - [powershell-7.6.0-rc1-osx-x64.tar.gz][16]
@@ -118,7 +118,7 @@ match the version you want to install.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.5-osx-arm64.tar.gz
 
 # Create the target folder where powershell is placed
 sudo mkdir -p /usr/local/microsoft/powershell/7
@@ -182,14 +182,14 @@ can't support those methods. For more information, see [Alternate ways to instal
 [02]: /dotnet/core/tools/global-tools
 [03]: alternate-install-methods.md
 [04]: https://aka.ms/powershell-release?tag=stable
-[05]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-arm64.pkg
-[06]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-arm64.tar.gz
-[07]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-x64.pkg
-[08]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-x64.tar.gz
-[09]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.pkg
-[10]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.tar.gz
-[11]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-x64.pkg
-[12]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-x64.tar.gz
+[05]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell-7.4.14-osx-arm64.pkg
+[06]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell-7.4.14-osx-arm64.tar.gz
+[07]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell-7.4.14-osx-x64.pkg
+[08]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell-7.4.14-osx-x64.tar.gz
+[09]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.5-osx-arm64.pkg
+[10]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.5-osx-arm64.tar.gz
+[11]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.5-osx-x64.pkg
+[12]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.5-osx-x64.tar.gz
 [13]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-osx-arm64.pkg
 [14]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-osx-arm64.tar.gz
 [15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-osx-x64.pkg
