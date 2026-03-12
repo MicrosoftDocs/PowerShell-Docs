@@ -25,7 +25,7 @@ information about .NET 9, see [What's new in .NET 9][07].
 
 ## Updated modules
 
-PowerShell 7.5.4 includes the following updated modules:
+PowerShell 7.5.5 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.1.1
 - **PSReadLine** v2.3.6
