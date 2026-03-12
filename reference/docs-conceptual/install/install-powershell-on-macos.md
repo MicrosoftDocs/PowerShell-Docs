@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on macOS
-ms.date: 03/11/2026
+ms.date: 03/12/2026
 title: Install PowerShell 7 on macOS
 ---
 
@@ -158,8 +158,8 @@ To update PowerShell, download the new version of the package or binary archive 
 
 ## Uninstall PowerShell 7
 
-If you manually installed PowerShell 7, you must manually remove it. The following command removes
-the symbolic link and PowerShell files.
+To uninstall PowerShell you need to delete the application folder and other support files. The
+following command removes the symbolic link and PowerShell files.
 
 ```sh
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell

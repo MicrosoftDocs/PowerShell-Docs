@@ -1,6 +1,6 @@
 ---
 description: Alternate ways to install PowerShell on non-Windows platforms.
-ms.date: 03/11/2026
+ms.date: 03/12/2026
 title: Alternate ways to install PowerShell
 ---
 # Alternate ways to install PowerShell
@@ -26,9 +26,9 @@ Once `brew` is installed, install PowerShell using the following command:
 brew install powershell
 ```
 
-> [!NOTE]
-> The brew formula builds PowerShell from source code rather than installing a package built by
-> Microsoft.
+> [!IMPORTANT]
+> The brew formula is maintained and supported by the Homebrew community. The brew formula builds
+> PowerShell from source code rather than installing a package built by Microsoft.
 
 ### Update PowerShell 7
 
@@ -61,7 +61,7 @@ Use `sudo rm` to remove any other remaining PowerShell files and folders.
 Snaps are application packages that are easy to install if your platform supports Snap. You can find
 and install Snap packages from the Snap Store.
 
-> [!IMPORTANT]
+> [!NOTE]
 > The Snap Store contains PowerShell snap packages for many Linux distributions that aren't
 > officially supported by Microsoft.
 
@@ -97,10 +97,6 @@ sudo snap install powershell --channel=lts/stable --classic
 pwsh
 ```
 
-> [!NOTE]
-> Microsoft only supports the `latest/stable` and `lts/stable` channels for the `powershell`
-> package. Do not install packages from the other channels.
-
 To install a preview version, use the following method:
 
 ```sh
@@ -112,15 +108,16 @@ pwsh-preview
 ```
 
 > [!NOTE]
-> Microsoft only supports the `latest/stable` channel for the `powershell-preview` package. Do not
-> install packages from the other channels.
+> Microsoft only supports the `latest/stable` and `lts/stable` channels for the `powershell`
+> package. Microsoft only supports the `latest/stable` channel for the `powershell-preview` package.
+> Do not install packages from the other channels.
 
 After installation, Snap will automatically upgrade. You can trigger an upgrade using
 `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.
 
-> [!NOTE]
-> Snap packages build PowerShell from source code rather than installing a package built by
-> Microsoft.
+> [!IMPORTANT]
+> The Snap packages are maintained and supported by Canonical. Snap packages build PowerShell from
+> source code rather than installing a package built by Microsoft.
 
 ### Uninstall using Snap
 
