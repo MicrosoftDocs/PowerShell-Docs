@@ -34,10 +34,10 @@ items:
             href: install/install-ubuntu.md
           - name: Community support for Linux
             href: install/community-support.md
-          - name: Alternate ways to install PowerShell
-            href: install/alternate-install-methods.md
       - name: Install PowerShell 7 on macOS
         href: install/install-powershell-on-macos.md
+      - name: Alternate ways to install PowerShell
+        href: install/alternate-install-methods.md
       - name: Install PowerShell on Windows IoT and Nano Server
         href: install/install-powershell-on-windows-iot-nano.md
       - name: Install PowerShell 7 on Arm
