@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell.
-ms.date: 03/06/2026
+ms.date: 03/12/2026
 ms.topic: lifecycle
 title: PowerShell Support Lifecycle
 ---
@@ -12,12 +12,12 @@ There are multiple versions of PowerShell 7 that can be installed.
   releases can contain critical fixes, innovations, and new features. Microsoft supports a Stable
   release for about six months after the next LTS release.
 
-  The current Stable release is PowerShell v7.5.4.
+  The current Stable release is PowerShell v7.5.5.
 - **Long Term Servicing (LTS) release** - An LTS release of PowerShell is an LTS release of .NET.
   Updates to an LTS release only contain critical security updates and servicing fixes that are
   designed to minimize impact on existing workloads.
 
-  The current LTS release is PowerShell v7.4.13.
+  The current LTS release is PowerShell v7.4.14.
 - **Preview release** - A preview release is a version of PowerShell that's currently in
   development. Preview releases can contain bug fixes, new features, and experiments. Preview
   releases can contain bugs and might not be stable. For that reason, you shouldn't use them in

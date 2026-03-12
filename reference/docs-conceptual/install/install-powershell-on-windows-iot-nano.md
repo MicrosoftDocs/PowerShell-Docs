@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows IoT and Nano Server.
-ms.date: 03/06/2026
+ms.date: 03/12/2026
 title: Install PowerShell 7 on Windows IoT and Nano Server
 ---
 # Install PowerShell 7 on Windows IoT and Nano Server
@@ -115,4 +115,4 @@ can't support those methods.
 <!-- link references -->
 [01]: /windows-server/get-started/deploy-nano-server
 [02]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
-[03]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x64.zip
+[03]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.4-win-x64.zip

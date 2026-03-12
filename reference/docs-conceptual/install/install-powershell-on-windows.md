@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows
-ms.date: 03/06/2026
+ms.date: 03/12/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -323,12 +323,12 @@ can't support those methods.
 [10]: #msstore
 [11]: #winget
 [12]: #zip
-[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-arm64.msi
-[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-arm64.zip
-[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x64.msi
-[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x64.zip
-[17]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x86.msi
-[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x86.zip
+[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.4-win-arm64.msi
+[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.4-win-arm64.zip
+[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.4-win-x64.msi
+[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.4-win-x64.zip
+[17]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.4-win-x86.msi
+[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.4-win-x86.zip
 [19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/PowerShell-7.6.0-rc1-win-arm64.msi
 [20]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/PowerShell-7.6.0-rc1-win-x64.msi
 [21]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/PowerShell-7.6.0-rc1-win-x86.msi

@@ -118,7 +118,7 @@ match the version you want to install.
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.4-osx-arm64.tar.gz
 
 # Create the target folder where powershell is placed
 sudo mkdir -p /usr/local/microsoft/powershell/7
@@ -182,14 +182,14 @@ can't support those methods. For more information, see [Alternate ways to instal
 [02]: /dotnet/core/tools/global-tools
 [03]: alternate-install-methods.md
 [04]: https://aka.ms/powershell-release?tag=stable
-[05]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-arm64.pkg
-[06]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-arm64.tar.gz
-[07]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-x64.pkg
-[08]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.13/powershell-7.4.13-osx-x64.tar.gz
-[09]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.pkg
-[10]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-arm64.tar.gz
-[11]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-x64.pkg
-[12]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/powershell-7.5.4-osx-x64.tar.gz
+[05]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell-7.4.13-osx-arm64.pkg
+[06]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell-7.4.13-osx-arm64.tar.gz
+[07]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell-7.4.13-osx-x64.pkg
+[08]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell-7.4.13-osx-x64.tar.gz
+[09]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.4-osx-arm64.pkg
+[10]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.4-osx-arm64.tar.gz
+[11]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.4-osx-x64.pkg
+[12]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell-7.5.4-osx-x64.tar.gz
 [13]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-osx-arm64.pkg
 [14]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-osx-arm64.tar.gz
 [15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-osx-x64.pkg
