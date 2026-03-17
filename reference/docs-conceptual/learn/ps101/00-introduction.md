@@ -62,7 +62,6 @@ published author of several books, including:
 
 - Author of [PowerShell 101: The No-Nonsense Guide to Windows PowerShell][powershell-101]
 - Creator of [The PowerShell Conference Book][psconf-book]
-- Coauthor of [Windows PowerShell TFM 4th Edition][tfm4]
 - Contributing author in the [PowerShell Deep Dives][ps-deep-dives] book
 
 When Mike's not writing documentation for Microsoft, he shares his thoughts and insights on his blog
@@ -80,7 +79,6 @@ your environment so you can follow along with the examples throughout the rest o
 [azps-docs]: /powershell/azure
 [powershell-101]: https://leanpub.com/powershell101
 [psconf-book]: https://leanpub.com/powershell-conference-book
-[tfm4]: https://www.sapien.com/books_training/Windows-PowerShell-4
 [ps-deep-dives]: https://www.manning.com/books/powershell-deep-dives
 [mikefrobbins-com]: https://mikefrobbins.com/
 [mikefrobbins-x]: https://twitter.com/mikefrobbins
