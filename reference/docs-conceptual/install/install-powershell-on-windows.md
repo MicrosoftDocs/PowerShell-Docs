@@ -83,9 +83,9 @@ Latest stable release:
 
 Latest Preview release:
 
-- [PowerShell-7.6.0-rc1-win-x64.msi][20]
-- [PowerShell-7.6.0-rc1-win-x86.msi][21]
-- [PowerShell-7.6.0-rc1-win-arm64.msi][19]
+- [PowerShell-7.6.0-rc.1-win-x64.msi][20]
+- [PowerShell-7.6.0-rc.1-win-x86.msi][21]
+- [PowerShell-7.6.0-rc.1-win-arm64.msi][19]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -329,9 +329,9 @@ can't support those methods.
 [16]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-x64.zip
 [17]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-x86.msi
 [18]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-x86.zip
-[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/PowerShell-7.6.0-rc1-win-arm64.msi
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/PowerShell-7.6.0-rc1-win-x64.msi
-[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/PowerShell-7.6.0-rc1-win-x86.msi
+[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/PowerShell-7.6.0-rc.1-win-arm64.msi
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/PowerShell-7.6.0-rc.1-win-x64.msi
+[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/PowerShell-7.6.0-rc.1-win-x86.msi
 [22]: https://github.com/PowerShell/PowerShell/releases/latest
 [23]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [24]: media/install-powershell-on-windows/powershell-start-menu.png
