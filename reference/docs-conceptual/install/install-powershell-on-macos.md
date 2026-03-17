@@ -193,7 +193,7 @@ can't support those methods. For more information, see [Alternate ways to instal
 [13]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/powershell-7.6.0-rc.1-osx-arm64.pkg
 [14]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/powershell-7.6.0-rc.1-osx-arm64.tar.gz
 [15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/powershell-7.6.0-rc.1-osx-x64.pkg
-[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-7.6.0-rc1-osx-x64.tar.gz
+[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/powershell-7.6.0-rc.1-osx-x64.tar.gz
 [17]: https://specifications.freedesktop.org/basedir/latest/
 [18]: https://support.apple.com/102445
 [19]: PowerShell-Support-Lifecycle.md
