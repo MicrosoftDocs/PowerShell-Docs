@@ -1,6 +1,6 @@
 ---
 description: This article explains how to use the features of this site including search filtering and version selection.
-ms.date: 01/28/2026
+ms.date: 03/18/2026
 ms.topic: how-to
 title: How to use the PowerShell documentation
 ---
@@ -82,7 +82,7 @@ returns 1,096 articles from the entire Microsoft Learn site.
 
 This site contains cmdlet reference for the following versions of PowerShell:
 
-- PowerShell 7.6 (preview)
+- PowerShell 7.6 (LTS)
 - PowerShell 7.5
 - PowerShell 7.4 (LTS)
 - PowerShell 5.1

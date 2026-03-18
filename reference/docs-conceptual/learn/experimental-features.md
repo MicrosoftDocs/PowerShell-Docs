@@ -1,6 +1,6 @@
 ---
 description: Lists the currently available experimental features and how to use them.
-ms.date: 12/09/2025
+ms.date: 03/18/2026
 title: Using Experimental Features in PowerShell
 ---
 # Using Experimental Features in PowerShell
@@ -81,7 +81,7 @@ Legend
 - The ![Discontinued][03] icon indicates the version of PowerShell where the experimental feature
   was removed
 
-|                        Name                         |         7.4         |         7.5         |    7.6 (preview)    |
+|                        Name                         |         7.4         |         7.5         |         7.6         |
 | --------------------------------------------------- | :-----------------: | :-----------------: | :-----------------: |
 | [PSCommandNotFoundSuggestion][06]                   | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |
 | [PSCommandWithArgs][07]                             | ![Experimental][02] |  ![Mainstream][01]  |  ![Mainstream][01]  |

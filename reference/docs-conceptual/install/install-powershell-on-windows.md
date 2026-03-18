@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows
-ms.date: 03/12/2026
+ms.date: 03/18/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -48,10 +48,10 @@ winget search --id Microsoft.PowerShell
 ```
 
 ```Output
-Name               Id                           Version Source
----------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.5.5.0 winget
-PowerShell Preview Microsoft.PowerShell.Preview 7.6.0.6 winget
+Name               Id                           Version   Source
+-----------------------------------------------------------------
+PowerShell         Microsoft.PowerShell         7.6.0.0   winget
+PowerShell Preview Microsoft.PowerShell.Preview 7.6.0.101 winget
 ```
 
 Install PowerShell 7:
@@ -67,8 +67,7 @@ winget install --id Microsoft.PowerShell.Preview --source winget
 ```
 
 > [!NOTE]
-> On Windows systems using X86 or X64 processor, `winget` installs the MSI package. On systems using
-> the Arm64 processor, `winget` installs the Microsoft Store (MSIX) package.
+> On systems using the Arm64 processor, `winget` installs the Microsoft Store (MSIX) package.
 
 ### Install the MSI package
 
@@ -77,15 +76,15 @@ package from GitHub.
 
 Latest stable release:
 
-- [PowerShell-7.5.5-win-x64.msi][15]
-- [PowerShell-7.5.5-win-x86.msi][17]
-- [PowerShell-7.5.5-win-arm64.msi][13]
+- [PowerShell-7.6.0-win-x64.msi][15]
+- [PowerShell-7.6.0-win-arm64.msi][13]
 
+<!-- Update the links below to the latest preview release when available.
 Latest Preview release:
 
 - [PowerShell-7.6.0-rc.1-win-x64.msi][20]
-- [PowerShell-7.6.0-rc.1-win-x86.msi][21]
 - [PowerShell-7.6.0-rc.1-win-arm64.msi][19]
+-->
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -128,7 +127,7 @@ installation options:
 The following example shows how to silently install PowerShell with all the install options enabled.
 
 ```powershell
-msiexec.exe /package PowerShell-7.5.5-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1
+msiexec.exe /package PowerShell-7.6.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1 USE_MU=1 ENABLE_MU=1 ADD_PATH=1
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see [Command line options][05].
@@ -138,9 +137,8 @@ For a full list of command-line options for `Msiexec.exe`, see [Command line opt
 <a id="zip"></a>PowerShell binary ZIP archives are provided to enable advanced deployment scenarios.
 Download one of the following ZIP archives from the [current release][22] page.
 
-- [PowerShell-7.5.5-win-x64.zip][16]
-- [PowerShell-7.5.5-win-x86.zip][18]
-- [PowerShell-7.5.5-win-arm64.zip][14]
+- [PowerShell-7.6.0-win-x64.zip][16]
+- [PowerShell-7.6.0-win-arm64.zip][14]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -175,7 +173,7 @@ Benefits of the Microsoft Store package:
 
 - Automatic updates built right into Windows
 - Integrates with other software distribution mechanisms like Intune and Configuration Manager
-- Can install on Windows systems using x86, x64, or Arm64 processors
+- Can install on Windows systems using x64 or Arm64 processors
 
 #### Limitations of a Store-based installation
 
@@ -253,8 +251,8 @@ If you aren't sure how PowerShell was installed, you can check the value of the 
 which always points to the directory containing PowerShell that the current session is running.
 
 - If the value is `$HOME\.dotnet\tools`, PowerShell was installed with the [.NET Global tool][08].
-- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was installed as an
-  [MSI package][09] or with [WinGet][11] on a computer with an X86 or x64 processor.
+- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was installed as an [MSI package][09]
+  or with [WinGet][11] on a computer with an x64 processor.
 - If the value starts with `$Env:ProgramFiles\WindowsApps\`, PowerShell was installed as a
   [Microsoft Store package][10] or with [WinGet][11] on computer with an ARM processor.
 - If the value is anything else, it's likely that PowerShell was installed as a [ZIP package][12].
@@ -323,15 +321,10 @@ can't support those methods.
 [10]: #msstore
 [11]: #winget
 [12]: #zip
-[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-arm64.msi
-[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-arm64.zip
-[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-x64.msi
-[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-x64.zip
-[17]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-x86.msi
-[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/PowerShell-7.5.5-win-x86.zip
-[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/PowerShell-7.6.0-rc.1-win-arm64.msi
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/PowerShell-7.6.0-rc.1-win-x64.msi
-[21]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc.1/PowerShell-7.6.0-rc.1-win-x86.msi
+[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-arm64.msi
+[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-arm64.zip
+[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-x64.msi
+[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-x64.zip
 [22]: https://github.com/PowerShell/PowerShell/releases/latest
 [23]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [24]: media/install-powershell-on-windows/powershell-start-menu.png
