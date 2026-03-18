@@ -1,7 +1,7 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 02/20/2026
+ms.date: 03/18/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine
@@ -60,13 +60,6 @@ in a supported version of PowerShell run the following command.
 ```powershell
 Install-Module -Name PSReadLine -AllowClobber -Force
 ```
-
-> [!NOTE]
-> Beginning with PowerShell 7.0, PowerShell skips autoloading PSReadLine on
-> Windows if a screen reader program is detected. Currently, PSReadLine doesn't
-> work well with the screen readers. The default rendering and formatting of
-> PowerShell 7.0 on Windows works properly. You can manually load the module if
-> necessary.
 
 ## Predictive IntelliSense
 
