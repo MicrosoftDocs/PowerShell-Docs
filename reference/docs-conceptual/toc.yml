@@ -213,7 +213,6 @@ items:
       - name: Glossary
         href: learn/glossary.md
   - name: What's New in PowerShell
-    expanded: true
     items:
       - name: Overview
         href: whats-new/overview.yml
