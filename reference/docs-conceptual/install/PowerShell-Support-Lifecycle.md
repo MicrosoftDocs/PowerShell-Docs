@@ -17,7 +17,7 @@ There are multiple versions of PowerShell 7 that can be installed.
   Updates to an LTS release only contain critical security updates and servicing fixes that are
   designed to minimize impact on existing workloads.
 
-  The current LTS release is PowerShell v7.6.0. The previous LTS release is PowerShell v7.4.14 is
+  The current LTS release is PowerShell v7.6.0. The previous LTS release, PowerShell v7.4.14, is
   still supported until 10-Nov-2026.
 - **Preview release** - A preview release is a version of PowerShell that's currently in
   development. Preview releases can contain bug fixes, new features, and experiments. Preview
