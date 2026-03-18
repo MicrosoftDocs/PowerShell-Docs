@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell.
-ms.date: 03/12/2026
+ms.date: 03/18/2026
 ms.topic: lifecycle
 title: PowerShell Support Lifecycle
 ---
@@ -17,7 +17,8 @@ There are multiple versions of PowerShell 7 that can be installed.
   Updates to an LTS release only contain critical security updates and servicing fixes that are
   designed to minimize impact on existing workloads.
 
-  The current LTS release is PowerShell v7.4.14.
+  The current LTS release is PowerShell v7.6.0. The previous LTS release is PowerShell v7.4.14 is
+  still supported until 10-Nov-2026.
 - **Preview release** - A preview release is a version of PowerShell that's currently in
   development. Preview releases can contain bug fixes, new features, and experiments. Preview
   releases can contain bugs and might not be stable. For that reason, you shouldn't use them in
@@ -25,7 +26,7 @@ There are multiple versions of PowerShell 7 that can be installed.
   new features and provide feedback. Your feedback is important and can influence the features that
   get released.
 
-  The current Preview release is PowerShell v7.6.0-rc1.
+  There is no current Preview release.
 
 PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. The End of Support dates follow the
 [.NET Support Policy][06] for the version of .NET that the release of PowerShell was built upon.
@@ -123,7 +124,7 @@ lists the end-of-support dates for the current versions of PowerShell:
 
 |         Version          | Release Date | End-of-support |  .NET Version   |
 | ------------------------ | :----------: | :------------: | --------------- |
-| PowerShell 7.6 (preview) | Future date  |  14-Nov-2028   | [.NET 10.0][19] |
+| PowerShell 7.6 (preview) | 18-Mar-2028  |  14-Nov-2028   | [.NET 10.0][19] |
 | PowerShell 7.5           | 23-Jan-2025  |  10-Nov-2026   | [.NET 9.0][14]  |
 | PowerShell 7.4 (LTS)     | 16-Nov-2023  |  10-Nov-2026   | [.NET 8.0][13]  |
 
