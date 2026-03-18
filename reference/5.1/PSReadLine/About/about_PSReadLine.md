@@ -1,23 +1,24 @@
 ---
 description: PSReadLine provides an improved command-line editing experience in the PowerShell console.
 Locale: en-US
-ms.date: 08/18/2025
+ms.date: 03/18/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSReadLine
 ---
 # about_PSReadLine
 
-## SHORT DESCRIPTION
+## Short description
 
 PSReadLine provides an improved command-line editing experience in the
 PowerShell console.
 
-## LONG DESCRIPTION
+## Long description
 
 There have been many updates to PSReadLine since the version that ships in
 Windows PowerShell 5.1.
 
+- v2.4.5 first shipped in PowerShell 7.6.0-rc.1
 - v2.3.6 first shipped in PowerShell 7.4.7 and 7.5.0
 - v2.3.5 first shipped in PowerShell 7.4.2 and 7.5.0-preview.3
 - v2.3.4 first shipped in PowerShell 7.4.0-rc.1
@@ -45,6 +46,9 @@ PowerShell console. It provides:
 - Bash style completion (optional in Cmd mode, default in Emacs mode)
 - Emacs yank/kill-ring
 - PowerShell token based "word" movement and deletion
+- Predictive IntelliSense
+- Dynamic display of Help in the console without losing your place on the
+  command line
 
 PSReadLine requires PowerShell 5.1, or newer. PSReadLine works with the default
 Windows console host, Windows Terminal, and Visual Studio Code. It doesn't work
@@ -57,7 +61,32 @@ in a supported version of PowerShell run the following command.
 Install-Module -Name PSReadLine -AllowClobber -Force
 ```
 
-## CUSTOM KEY BINDINGS
+## Predictive IntelliSense
+
+Predictive IntelliSense is an addition to the concept of tab completion that
+assists the user in successfully completing commands. It enables users to
+discover, edit, and execute full commands based on matching predictions from the
+user's history and additional domain specific plugins.
+
+### Enable Predictive IntelliSense
+
+Predictive IntelliSense is disabled by default. To enable predictions, just run
+the following command:
+
+```powershell
+Set-PSReadLineOption -PredictionSource History
+```
+
+The **PredictionSource** parameter can also accept plugins for domain specific
+and custom requirements.
+
+To disable Predictive IntelliSense, just run:
+
+```powershell
+Set-PSReadLineOption -PredictionSource None
+```
+
+## Custom key bindings
 
 PSReadLine supports custom key bindings using the `Set-PSReadLineKeyHandler`
 cmdlet. Most custom key bindings call one of the [bindable functions][02], for
@@ -119,7 +148,7 @@ is installed in the **PSReadLine** module folder.
 Most key bindings use some helper functions for editing the command line. Those
 APIs are documented in [about_PSReadLine_Functions][02].
 
-## NOTES
+## Notes
 
 ### Command History
 
@@ -225,7 +254,7 @@ $Env:PGPASS = gcloud auth print-access-token
 
 Feel free to submit a pull request or submit feedback on the GitHub page.
 
-## SEE ALSO
+## See also
 
 - PSReadLine is heavily influenced by the GNU [readline][04] library.
 
