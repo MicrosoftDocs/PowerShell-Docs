@@ -9,7 +9,7 @@ metadata:
   ms.topic: landing-page
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 01/17/2025
+  ms.date: 03/18/2026
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn |
 #               overview | quickstart | reference | tutorial | video | whats-new
@@ -21,9 +21,9 @@ landingContent:
     linkLists:
       - linkListType: whats-new
         links:
-          - text: What's new in PowerShell 7.6 (preview)
+          - text: What's new in PowerShell 7.6 (LTS)
             url: ./What-s-New-in-PowerShell-76.md
-          - text: What's new in PowerShell 7.5 (RC)
+          - text: What's new in PowerShell 7.5
             url: ./What-s-New-in-PowerShell-75.md
           - text: What's new in PowerShell 7.4 (LTS)
             url: ./What-s-New-in-PowerShell-74.md
