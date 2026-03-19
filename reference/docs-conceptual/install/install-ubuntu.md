@@ -83,12 +83,12 @@ pwsh
 Download the universal package from the GitHub releases page. Select the URL of the package version
 you want to install.
 
-- PowerShell 7.4 (LTS) universal package
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell_7.4.14-1.deb_amd64.deb`
+- PowerShell 7.6 (LTS) universal package
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/powershell_7.6.0-1.deb_amd64.deb`
 - PowerShell 7.5 universal package
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.5.5/powershell_7.5.5-1.deb_amd64.deb`
-- PowerShell 7.6-preview universal
-  - `https://github.com/PowerShell/PowerShell/releases/download/v7.6.0-rc1/powershell-preview_7.6.0-rc1-1.deb_amd64.deb`
+- PowerShell 7.4 (LTS) universal package
+  - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.14/powershell_7.4.14-1.deb_amd64.deb`
 
 The following shell script downloads and installs the current preview release of PowerShell. You can
 change the URL to download the version of PowerShell that you want to install.

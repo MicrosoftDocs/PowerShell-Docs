@@ -6,16 +6,16 @@ ms.date: 02/20/2026
 
 # What's New in PowerShell 7.6
 
-PowerShell 7.6-rc1 includes the following features, updates, and breaking changes. PowerShell
+PowerShell 7.6 includes the following features, updates, and breaking changes. PowerShell
 7.6 is built on .NET 10.0.
 
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
 ## Updated modules
 
-PowerShell 7.6-rc1 includes the following updated modules:
+PowerShell 7.6 includes the following updated modules:
 
-- **Microsoft.PowerShell.PSResourceGet** v1.2.0-rc3
+- **Microsoft.PowerShell.PSResourceGet** v1.2.0
 - **PSReadLine** v2.4.5
 - **Microsoft.PowerShell.ThreadJob** v2.2.0
 
@@ -181,7 +181,7 @@ PowerShell 7.6-rc1 includes the following updated modules:
 
 ## Experimental features
 
-PowerShell 7.6-preview.6 includes the following changes to experimental features.
+PowerShell 7.6 includes the following changes to experimental features.
 
 The following features have been converted to mainstream features:
 
