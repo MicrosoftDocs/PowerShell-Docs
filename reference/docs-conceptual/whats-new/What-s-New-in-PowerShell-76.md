@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.6
 description: New features and changes released in PowerShell 7.6
-ms.date: 02/20/2026
+ms.date: 03/20/2026
 ---
 
 # What's New in PowerShell 7.6
@@ -89,6 +89,8 @@ PowerShell 7.6 includes the following updated modules:
 
 ## Cmdlet improvements
 
+- Add implicit localization fallback to `Import-LocalizedData` ([#19896][19896]) (Thanks
+  @chrisdent-de!)
 - Add `-Delimiter` parameter to `Get-Clipboard` ([#26572][26572]) (Thanks @MartinGC94!)
 - Fix Out-GridView by replacing use of obsolete BinaryFormatter with custom implementation
   ([#25497][25497]) (Thanks @mawosoft!)
@@ -214,6 +216,7 @@ This release includes the following experimental features:
 [18955]: https://github.com/PowerShell/PowerShell/pull/18955
 [19440]: https://github.com/PowerShell/PowerShell/pull/19440
 [19830]: https://github.com/PowerShell/PowerShell/pull/19830
+[19896]: https://github.com/PowerShell/PowerShell/pull/19896
 [20017]: https://github.com/PowerShell/PowerShell/pull/20017
 [20330]: https://github.com/PowerShell/PowerShell/pull/20330
 [20340]: https://github.com/PowerShell/PowerShell/pull/20340
