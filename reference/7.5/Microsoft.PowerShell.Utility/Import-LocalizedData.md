@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/19/2023
+ms.date: 03/20/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-localizeddata?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-LocalizedData
@@ -378,6 +378,11 @@ parameter.
   If `Import-LocalizedData` finds the subdirectory and the `.psd1` file, it imports the hashtable of
   user messages into the value of the **BindingVariable** parameter in the command. Then, when you
   display a message from the hashtable in the variable, the localized message is displayed.
+
+  Beginning in PowerShell 7.5.5, the cmdlet falls back to `en-US` and then `en` for any
+  `<language>-<Region>` when you don't use the **UICulture** parameter. Therefore, if the command
+  can't find a localized data for the current culture (`$PSUICulture`), the search falls back to
+  `en-US` and then to `en` eventually.
 
   For more information, see
   [about_Script_Internationalization](../Microsoft.Powershell.Core/About/about_Script_Internationalization.md).
