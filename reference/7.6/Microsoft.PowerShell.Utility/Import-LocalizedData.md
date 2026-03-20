@@ -381,8 +381,8 @@ parameter.
 
   Beginning in PowerShell 7.5.5, the cmdlet falls back to `en-US` and then `en` for any
   `<language>-<Region>` when you don't use the **UICulture** parameter. Therefore, if the command
-  can't find a localized data for the current culture (`$PSUICulture`), the search falls back to
-  `en-US` and then to `en` eventually.
+  can't find localized data for the current culture (`$PSUICulture`), the search falls back to
+  `en-US` and then to `en`.
 
   For more information, see
   [about_Script_Internationalization](../Microsoft.Powershell.Core/About/about_Script_Internationalization.md).
