@@ -832,10 +832,10 @@ authentication method depends on how Secure Shell (SSH) is configured on the rem
 
 If SSH is configured for basic password authentication then you are prompted for the user password.
 
-If SSH is configured for key based user authentication then uou aren't prompted for a password. You
+If SSH is configured for key-based user authentication then you aren't prompted for a password. You
 must provide a path to an SSH key file. If the user key file is located in an SSH known location
 then the **KeyFilePath** parameter isn't needed. User authentication occurs automatically based on
-the user name. See SSH documentation about key based user authentication for more information.
+the user name. See SSH documentation about key-based user authentication for more information.
 
 If the **UserName** parameter isn't specified then the current logged on username is used.
 
