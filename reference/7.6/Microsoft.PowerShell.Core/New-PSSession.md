@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 12/09/2022
+ms.date: 03/23/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/new-pssession?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -91,7 +91,7 @@ remote computer.
 Use a **PSSession** to run multiple commands that share data, such as a function or the value of a
 variable. To run commands in a **PSSession**, use the `Invoke-Command` cmdlet. To use the
 **PSSession** to interact directly with a remote computer, use the `Enter-PSSession` cmdlet. For
-more information, see [about_PSSessions](about/about_PSSessions.md).
+more information, see [about_PSSessions](About/about_PSSessions.md).
 
 You can run commands on a remote computer without creating a **PSSession** with the **ComputerName**
 parameters of `Enter-PSSession` or `Invoke-Command`. When you use the **ComputerName** parameter,
@@ -140,7 +140,7 @@ help you manage the **PSSession** objects in subsequent commands.
 ### Example 3: Create sessions on multiple computers
 
 ```powershell
-$s1, $s2, $s3 = New-PSSession -ComputerName Server01,Server02,Server03
+$s1, $s2, $s3 = New-PSSession -ComputerName Server01, Server02, Server03
 ```
 
 This command creates three **PSSession** objects, one on each of the computers specified by the
@@ -463,7 +463,7 @@ To use an IP address in the value of the **ComputerName** parameter, the command
 address of the remote computer must be included in the WinRM TrustedHosts list on the local
 computer. For instructions for adding a computer name to the TrustedHosts list, see "How to Add a
 Computer to the Trusted Host List" in
-[about_Remote_Troubleshooting](about/about_Remote_Troubleshooting.md).
+[about_Remote_Troubleshooting](About/about_Remote_Troubleshooting.md).
 
 To include the local computer in the value of the **ComputerName** parameter, start Windows
 PowerShell by using the **Run as administrator option**.
@@ -742,7 +742,7 @@ Before using another port, you must configure the WinRM listener on the remote c
 that port. Use the following commands to configure the listener:
 
 1. `winrm delete winrm/config/listener?Address=*+Transport=HTTP`
-2. `winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number\>"}`
+1. `winrm create winrm/config/listener?Address=*+Transport=HTTP @{Port="\<port-number\>"}`
 
 Do not use the **Port** parameter unless you must. The port setting in the command applies to all
 computers or sessions on which the command runs. An alternate port setting might prevent the command
@@ -922,20 +922,13 @@ Accept wildcard characters: False
 
 ### -UserName
 
-Specifies the username for the account used to create a session on the remote computer. The user
+Specifies the user name for the account used to create a session on the remote computer. If the
+**UserName** parameter isn't specified then the current logged on username is used. User
 authentication method depends on how Secure Shell (SSH) is configured on the remote computer.
 
-If SSH is configured for basic password authentication then you'll be prompted for the user
-password.
-
-If SSH is configured for key-based user authentication then a key file path can be provided via the
-**KeyFilePath** parameter and you won't be prompted for a password. Note that if the client user key
-file is located in an SSH known location then the **KeyFilePath** parameter is not needed for
-key-based authentication, and user authentication occurs automatically based on the username. See
-SSH documentation about key-based user authentication for more information.
-
-This is not a required parameter. If no **UserName** parameter is specified then the current log on
-username is used for the connection.
+- If SSH is configured for password authentication then you are prompted for the user password.
+- If SSH is configured for key-based user authentication then you must have an SSH key file. If the
+  user key file is located in an SSH-known location then the **KeyFilePath** parameter isn't needed.
 
 This parameter was introduced in PowerShell 6.0.
 
@@ -1035,8 +1028,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see about_CommonParameters
-(https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
