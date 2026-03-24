@@ -1,9 +1,9 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 03/24/2026
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-5.1&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Arrays
 ---
@@ -583,6 +583,47 @@ every item in the collection.
 Wednesday, June 20, 2018 9:21:57 AM
 ```
 
+> [!NOTE]
+> The `ForEach()` method wraps properties into a collection before enumeration.
+> This wrapping means that accessing the first element of the original
+> collection requires two indices `[0][0]`.
+
+Consider the following example:
+
+```powershell
+$c = [pscustomobject]@{
+    Value = @(0..10)
+}
+$d = [pscustomobject]@{
+    Value = @(11..21)
+}
+```
+
+As you can see, both `$c` and `$d` have a property named **Value** that
+contains an array of 11 integers. When you use the `ForEach()` method to access
+the **Value** property of both objects, the result is a collection of two
+arrays. To access the first element of the first array, you need to use two
+indices.
+
+```powershell
+PS> ($c, $d).ForEach('Value').Count     # 2-element collection
+2
+PS> ($c, $d).ForEach('Value')[0].Count  # Each is an array with 11 elements
+11
+PS> ($c, $d).ForEach('Value')[0][0]     # First element of the first array
+0
+PS> ($c, $d).ForEach('Value')[1][0]     # First element of the second array
+11
+```
+
+This is different that using the `ForEach()` method using a scriptblock to
+access the **Value** property of each object.
+
+```powershell
+PS> ($c, $d).ForEach({$_.Value}).Count   # 22-element collection
+22
+```
+
 #### ForEach(string methodName)
 
 #### ForEach(string methodName, object[] arguments)
@@ -1123,6 +1164,4 @@ LastWriteTimeUtc  Property   datetime LastWriteTimeUtc {get;set;}
 [12]: about_Splatting.md#splatting-with-arrays
 [13]: about_While.md
 [14]: https://wikipedia.org/wiki/Row-_and_column-major_order
-
-
 
