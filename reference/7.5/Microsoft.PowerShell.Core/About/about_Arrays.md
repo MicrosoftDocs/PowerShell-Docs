@@ -585,51 +585,65 @@ Wednesday, June 20, 2018 9:21:57 AM
 
 > [!NOTE]
 > The `ForEach()` method wraps properties into a collection before enumeration.
-> This wrapping means that accessing the first element of the original
-> collection requires two indices `[0][0]`.
+> Using `ForEach()` normally returns all items in both array. However, if you
+> want to access elements of the wrapped collection, you need to use two
+> indices.
 
-Consider the following example:
+Consider the following example where the object `$myObject` has a property with
+single value and a property containing an array of 11 integers.
 
 ```powershell
-$c = [pscustomobject]@{
-    Value = @(0..10)
-}
-$d = [pscustomobject]@{
-    Value = @(11..21)
+$myObject = [pscustomobject]@{
+    singleValue = 'Hello'
+    arrayValue  = @(0..10)
 }
 ```
 
-As you can see, both `$c` and `$d` have a property named **Value** that
-contains an array of 11 integers. When you use the `ForEach()` method to access
-the **Value** property of both objects, the result is a collection of two
-arrays. To access the first element of the first array, you need to use two
-indices.
+When you use the `ForEach()` method to access a property of the object, the
+property is wrapped in a collection.
 
 ```powershell
-PS> ($c, $d).ForEach('Value').Count     # 2-element collection
-2
-PS> ($c, $d).ForEach('Value')[0].Count  # Each is an array with 11 elements
+PS> $myObject.ForEach('singleValue').GetType().Name
+Collection`1
+PS> $myObject.ForEach('singleValue')[0].GetType().Name
+String
+PS> $myObject.ForEach('singleValue') # Enumerate the collection object
+Hello
+```
+
+To access the an element of the array, you need to use two indices.
+
+```powershell
+PS> $myObject.ForEach('arrayValue').GetType().Name
+Collection`1
+# A single Collection item
+PS> $myObject.ForEach('arrayValue').Count
+1
+# First item in the collection is an array of 11 items
+PS> $myObject.ForEach('Value')[0].Count
 11
-PS> ($c, $d).ForEach('Value')[0][0]     # First element of the first array
+# Access the first item in the array of 11 items
+PS> $myObject.ForEach('Value')[0][0]
 0
-PS> ($c, $d).ForEach('Value')[1][0]     # First element of the second array
-11
 ```
 
-This is different that using the `ForEach()` method using a scriptblock to
+This is different than using the `ForEach()` method using with a scriptblock to
 access the **Value** property of each object.
 
 ```powershell
-PS> ($c, $d).ForEach({$_.Value}).Count   # 22-element collection
-22
+PS> $myObject.ForEach({$_.Value}).Count    # An array of 11 items
+11
 ```
+
+Use the scriptblock syntax to avoid the wrapping behavior when you want to
+access complex property types, such as arrays or nested objects.
 
 #### ForEach(string methodName)
 
 #### ForEach(string methodName, object[] arguments)
 
-Lastly, `ForEach()` methods can be used to execute a method on every item in
-the collection.
+You can use the `ForEach()` method to execute an object's method on every item
+in the collection.
 
 ```powershell
 ("one", "two", "three").ForEach("ToUpper")
