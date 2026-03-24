@@ -144,13 +144,18 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it's
 typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
 For more information, see
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String[]
