@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/14/2024
+ms.date: 03/23/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -827,17 +827,13 @@ Accept wildcard characters: False
 
 ### -UserName
 
-Specifies the user name for the account used to create a session on the remote computer. User
+Specifies the user name for the account used to create a session on the remote computer. If the
+**UserName** parameter isn't specified then the current logged on username is used. User
 authentication method depends on how Secure Shell (SSH) is configured on the remote computer.
 
-If SSH is configured for basic password authentication then you are prompted for the user password.
-
-If SSH is configured for key based user authentication then uou aren't prompted for a password. You
-must provide a path to an SSH key file. If the user key file is located in an SSH known location
-then the **KeyFilePath** parameter isn't needed. User authentication occurs automatically based on
-the user name. See SSH documentation about key based user authentication for more information.
-
-If the **UserName** parameter isn't specified then the current logged on username is used.
+- If SSH is configured for password authentication then you are prompted for the user password.
+- If SSH is configured for key-based user authentication then you must have an SSH key file. If the
+  user key file is located in an SSH-known location then the **KeyFilePath** parameter isn't needed.
 
 This parameter was introduced in PowerShell 6.0.
 
