@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 12/12/2022
+ms.date: 03/11/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/invoke-item?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -144,13 +144,18 @@ Accept wildcard characters: True
 
 ### -LiteralPath
 
-Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it is
+Specifies a path to one or more locations. The value of **LiteralPath** is used exactly as it's
 typed. No characters are interpreted as wildcards. If the path includes escape characters, enclose
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
 For more information, see
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String[]
@@ -166,8 +171,12 @@ Accept wildcard characters: False
 
 ### -Path
 
-Specifies the path to the selected item.
-Wildcard characters are permitted.
+Specifies the path to the selected item. Wildcard characters are permitted.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String[]

@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that are supported by PowerShell.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 03/24/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
@@ -301,7 +301,7 @@ At line:1 char:2
     + FullyQualifiedErrorId : CommandNotFoundException
 ```
 
-The [Invoke-Expression][26] cmdlet can execute code that causes parsing errors
+The [Invoke-Expression][27] cmdlet can execute code that causes parsing errors
 when using the call operator.
 
 ```powershell
@@ -342,6 +342,11 @@ Hello World!
 ```
 
 For more about scriptblocks, see [about_Script_Blocks][21].
+
+> [!IMPORTANT]
+> Using this operator with untrusted data is a security risk. Only use trusted
+> data with this operator. For more information, see
+> [Validate All Inputs][26].
 
 ### Cast operator `[ ]`
 
@@ -644,4 +649,5 @@ properties and methods of an object, use the Static parameter of the
 [22]: about_Split.md
 [23]: about_Type_Operators.md
 [24]: about_Variables.md
-[26]: xref:Microsoft.PowerShell.Utility.Invoke-Expression
+[26]: https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/
+[27]: xref:Microsoft.PowerShell.Utility.Invoke-Expression

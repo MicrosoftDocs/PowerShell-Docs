@@ -24,12 +24,8 @@ Show-EventLog [[-ComputerName] <String>] [<CommonParameters>]
 The `Show-EventLog` cmdlet opens Event Viewer on the local computer and displays in it all of the
 classic event logs on the local computer or a remote computer.
 
-To open Event Viewer on Windows Vista and later versions of the Windows operating system, the
-current user must be a member of the Administrators group on the local computer.
-
-The cmdlets that contain the **EventLog** noun (the **EventLog** cmdlets) work only on classic event
-logs. To get events from logs that use the Windows Event Log technology in Windows Vista and later
-versions of the Windows operating system, use the `Get-WinEvent` cmdlet.
+The cmdlets that contain the **EventLog** noun work only on classic event logs. To get events from
+logs that use the Windows Event Log technology, use the `Get-WinEvent` cmdlet.
 
 ## EXAMPLES
 
@@ -54,12 +50,13 @@ This command opens Event Viewer and displays in it the classic event logs on the
 ### -ComputerName
 
 Specifies a remote computer. `Show-EventLog` displays the event logs from the specified computer in
-Event Viewer on the local computer. The default is the local computer.
+Event Viewer on the local computer. The default is the local computer. When you use this parameter,
+the command runs `eventvwr.exe` and passes the value of this parameter.
 
-Type the NetBIOS name, an IP address, or a fully qualified domain name of a remote computer.
-
-This parameter does not rely on Windows PowerShell remoting. You can use the **ComputerName**
-parameter even if your computer is not configured to run remote commands.
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String
@@ -77,26 +74,27 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### None
 
-You cannot pipe input to this cmdlet.
+You can't pipe input to this cmdlet.
 
 ## OUTPUTS
 
 ### None
 
-This cmdlet does not generate any output.
+This cmdlet doesn't generate any output.
 
 ## NOTES
 
 - The Windows PowerShell command prompt returns as soon as Event Viewer opens. You can work in the
   current session while Event Viewer is open.
 
-  Because this cmdlet requires a user interface, it does not work on Server Core installations of
+  Because this cmdlet requires a user interface, it doesn't work on Server Core installations of
   Windows Server.
 
 ## RELATED LINKS

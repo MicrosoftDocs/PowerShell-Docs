@@ -1,7 +1,7 @@
 ---
 description: Describes arrays, which are data structures designed to store collections of items.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 03/24/2026
 no-loc: [Count, Length, LongLength, Rank, ForEach, Clear, Default, First, Last, SkipUntil, Until, Split, Tuple]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_arrays?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -583,12 +583,67 @@ every item in the collection.
 Wednesday, June 20, 2018 9:21:57 AM
 ```
 
+> [!NOTE]
+> The `ForEach()` method wraps properties into a collection before enumeration.
+> Using `ForEach()` normally returns all items in both array. However, if you
+> want to access elements of the wrapped collection, you need to use two
+> indices.
+
+Consider the following example where the object `$myObject` has a property with
+single value and a property containing an array of 11 integers.
+
+```powershell
+$myObject = [pscustomobject]@{
+    singleValue = 'Hello'
+    arrayValue  = @(0..10)
+}
+```
+
+When you use the `ForEach()` method to access a property of the object, the
+property is wrapped in a collection.
+
+```powershell
+PS> $myObject.ForEach('singleValue').GetType().Name
+Collection`1
+PS> $myObject.ForEach('singleValue')[0].GetType().Name
+String
+PS> $myObject.ForEach('singleValue') # Enumerate the collection object
+Hello
+```
+
+To access the an element of the array, you need to use two indices.
+
+```powershell
+PS> $myObject.ForEach('arrayValue').GetType().Name
+Collection`1
+# A single Collection item
+PS> $myObject.ForEach('arrayValue').Count
+1
+# First item in the collection is an array of 11 items
+PS> $myObject.ForEach('Value')[0].Count
+11
+# Access the first item in the array of 11 items
+PS> $myObject.ForEach('Value')[0][0]
+0
+```
+
+This is different than using the `ForEach()` method using with a scriptblock to
+access the **Value** property of each object.
+
+```powershell
+PS> $myObject.ForEach({$_.Value}).Count    # An array of 11 items
+11
+```
+
+Use the scriptblock syntax to avoid the wrapping behavior when you want to
+access complex property types, such as arrays or nested objects.
+
 #### ForEach(string methodName)
 
 #### ForEach(string methodName, object[] arguments)
 
-Lastly, `ForEach()` methods can be used to execute a method on every item in
-the collection.
+You can use the `ForEach()` method to execute an object's method on every item
+in the collection.
 
 ```powershell
 ("one", "two", "three").ForEach("ToUpper")

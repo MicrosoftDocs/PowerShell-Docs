@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 11/01/2023
+ms.date: 03/11/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -274,8 +274,13 @@ Specifies the optional path and filename of the program that runs in the process
 an executable file or of a document, such as a `.txt` or `.doc` file, that's associated with a
 program on the computer. This parameter is required.
 
-If you specify only a filename that does not correspond to a system command, use the
+If you specify only a filename that doesn't correspond to a system command, use the
 **WorkingDirectory** parameter to specify the path.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String
@@ -502,11 +507,16 @@ Accept wildcard characters: False
 Specifies the location that the new process should start in.
 
 When not specified, the cmdlet defaults to the fully-qualified location specified in the
-**FilePath** parameter. If the value of the **FilePath** parameter is not fully-qualified, it
+**FilePath** parameter. If the value of the **FilePath** parameter isn't fully-qualified, it
 defaults to the current working directory of the calling process.
 
 Wildcards aren't supported. The path must not contain characters that would be interpreted as
 wildcards.
+
+> [!IMPORTANT]
+> Using this parameter with untrusted data is a security risk. Only use trusted data with this
+> parameter. For more information, see
+> [Validate All Inputs](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/).
 
 ```yaml
 Type: System.String
