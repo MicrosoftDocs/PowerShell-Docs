@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 10/16/2025
+ms.date: 03/26/2026
 ---
 
 # What's New in PowerShell 7.5
 
 PowerShell 7.5.5 includes the following features, updates, and breaking changes. PowerShell
-7.5.5 is built on .NET 9.0.312 release.
+7.5.5 is built on the .NET 9.0.14 runtime.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
