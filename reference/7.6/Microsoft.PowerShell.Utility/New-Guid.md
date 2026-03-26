@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/24/2024
+ms.date: 03/26/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-guid?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Guid
@@ -34,8 +34,14 @@ New-Guid [-InputObject <String>] [<CommonParameters>]
 
 ## DESCRIPTION
 
-The `New-Guid` cmdlet creates a random globally unique identifier (GUID). If you need a unique ID in
-a script, you can create a GUID, as needed.
+The `New-Guid` cmdlet creates a Version 7 globally unique identifier (GUID). Version 7 UUIDs
+contain a millisecond-precision timestamp and are sortable. If you need a unique ID in a script,
+you can create a GUID, as needed.
+
+> [!NOTE]
+> In PowerShell 7.5 and earlier, `New-Guid` created Version 4 (random) UUIDs. Starting in
+> PowerShell 7.6, the default changed to Version 7. If you need a Version 4 UUID, use
+> `[guid]::NewGuid()` directly.
 
 ## EXAMPLES
 
@@ -45,7 +51,7 @@ a script, you can create a GUID, as needed.
 New-Guid
 ```
 
-This command creates a random GUID. Alternatively, you could store the output of this cmdlet in a
+This command creates a GUID. Alternatively, you could store the output of this cmdlet in a
 variable to use elsewhere in a script.
 
 ### Example 2: Create an empty GUID
@@ -94,6 +100,25 @@ Guid
 0f8fad5b-d9cb-469f-a165-70867728950e
 01234567-89ab-cdef-0123-456789abcdef
 ```
+
+### Example 5: Create specific UUID versions using .NET APIs
+
+This example shows how to create specific UUID versions using .NET APIs directly.
+
+```powershell
+[guid]::CreateVersion7()
+[guid]::NewGuid()
+```
+
+```Output
+Guid
+----
+019588a4-dbe2-7f30-8b9f-4a1c0e5d3a28
+d61bbeca-0186-48fa-90e1-ff7aa5d33e2d
+```
+
+The version number appears in the third group of the GUID string. Version 7 UUIDs start with a
+`7` in that position (`7f30`), while Version 4 UUIDs show a `4` (`48fa`).
 
 ## PARAMETERS
 
@@ -150,8 +175,15 @@ The cmdlet passes string input to the constructor of the **System.Guid** class. 
 support strings in several formats. For more information, see
 [System.Guid(String)](/dotnet/api/system.guid.-ctor#system-guid-ctor(system-string)).
 
-When used without string input or the **Empty** parameter, the cmdlet creates a Version 4
-Universally Unique Identifier (UUID). For more information, see
-[System.Guid.NewGuid](xref:System.Guid.NewGuid).
+When used without string input or the **Empty** parameter, the cmdlet creates a Version 7
+Universally Unique Identifier (UUID) as defined in
+[RFC 9562](https://www.rfc-editor.org/rfc/rfc9562).
+
+In PowerShell 7.5 and earlier, the cmdlet created a Version 4 (random) UUID. If you need a
+Version 4 UUID, use `[guid]::NewGuid()`. To explicitly create a Version 7 UUID, use
+`[guid]::CreateVersion7()`.
+
+For more information, see
+[System.Guid.CreateVersion7](xref:System.Guid.CreateVersion7).
 
 ## RELATED LINKS
