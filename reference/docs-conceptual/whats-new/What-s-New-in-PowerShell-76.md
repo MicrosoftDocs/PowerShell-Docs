@@ -7,7 +7,7 @@ ms.date: 03/26/2026
 # What's New in PowerShell 7.6
 
 PowerShell 7.6 includes the following features, updates, and breaking changes. PowerShell
-7.6 is built on the .NET 10.0.5 runtime.
+7.6.0 is built on the .NET 10.0.5 runtime.
 
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
