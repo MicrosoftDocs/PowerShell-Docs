@@ -172,7 +172,9 @@ error at index `0`. The list holds up to `$MaximumErrorCount` entries (default
 256).
 
 All non-terminating and terminating errors are added to `$Error` unless
-`-ErrorAction Ignore` is used, which prevents both display and recording.
+`-ErrorAction Ignore` is used on non-terminating errors, which prevents both
+display and recording. For terminating errors, `Ignore` suppresses display but
+still records the error in `$Error`.
 
 ### $LASTEXITCODE
 
@@ -193,7 +195,7 @@ errors from that command.
 | `Continue`         | Display the error and continue (default)          |
 | `SilentlyContinue` | Suppress display, add to `$Error`, continue      |
 | `Ignore`           | Suppress display and do not add to `$Error`       |
-| `Stop`             | **Escalate** to a script-terminating error         |
+| `Stop`             | **Escalate** to a terminating error (see [How escalation works][05]) |
 | `Inquire`          | Prompt the user for a decision                    |
 | `Break`            | Enter the debugger                                |
 
@@ -208,7 +210,7 @@ current scope and child scopes. It accepts the same values as `-ErrorAction`.
 
 ```powershell
 $ErrorActionPreference = 'Stop'
-# All non-terminating errors in this scope now become script-terminating
+# All non-terminating errors in this scope now become terminating
 Write-Error 'This now throws'   # Generates ActionPreferenceStopException
 ```
 
@@ -260,7 +262,7 @@ try {
 }
 
 try {
-    # With -ErrorAction Stop: escalated to script-terminating
+    # With -ErrorAction Stop: escalated to terminating
     Write-Error 'This becomes terminating' -ErrorAction Stop
 } catch {
     Write-Output "Caught: $_"   # Reached
