@@ -92,7 +92,7 @@ At line:1 char:1
 #### Write-Error -ErrorAction Stop
 
 I mentioned that `Write-Error` doesn't throw a terminating error by default. If you specify
-`-ErrorAction Stop`, `Write-Error` generates a script-terminating error that can be handled with a
+`-ErrorAction Stop`, `Write-Error` generates a terminating error that can be handled with a
 `catch`.
 
 ```powershell
@@ -104,7 +104,7 @@ Thank you to Lee Dailey for reminding about using `-ErrorAction Stop` this way.
 #### Cmdlet -ErrorAction Stop
 
 If you specify `-ErrorAction Stop` on any advanced function or cmdlet, it turns all `Write-Error`
-statements into script-terminating errors that stop execution or that can be handled by a `catch`.
+statements into terminating errors that stop execution or that can be handled by a `catch`.
 
 ```powershell
 Start-Something -ErrorAction Stop

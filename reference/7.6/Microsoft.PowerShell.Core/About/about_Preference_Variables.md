@@ -391,7 +391,9 @@ The valid values are as follows:
   command. Unlike **SilentlyContinue**, **Ignore** doesn't add the error
   message to the `$Error` automatic variable. The **Ignore** value is also
   valid for `$ErrorActionPreference`, where it suppresses both non-terminating
-  and statement-terminating errors without recording them in `$Error`.
+  and statement-terminating errors. However, **Ignore** only prevents `$Error`
+  recording for non-terminating errors. Terminating errors that are suppressed
+  by `Ignore` are still recorded in `$Error`.
 - **Inquire**: Displays the error message and asks you whether you want to
   continue.
 - **SilentlyContinue**: No effect. The error message isn't displayed and

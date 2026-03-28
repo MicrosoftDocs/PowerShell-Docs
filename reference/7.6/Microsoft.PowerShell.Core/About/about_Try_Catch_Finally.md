@@ -1,7 +1,7 @@
 ---
 description: Describes how to use the `try`, `catch`, and `finally` blocks to handle statement-terminating and script-terminating errors.
 Locale: en-US
-ms.date: 01/13/2026
+ms.date: 03/29/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Try_Catch_Finally
@@ -27,8 +27,13 @@ A statement-terminating error stops the current statement from running, but
 PowerShell continues at the next statement unless the error is also
 script-terminating. A script-terminating error (such as an error produced by
 the `throw` keyword) stops the entire script unless caught by a `try/catch`
-block or `trap` statement. In other languages, such as C\#, terminating errors
-are referred to as exceptions.
+block or `trap` statement.
+
+> [!NOTE]
+> `$ErrorActionPreference` can suppress `throw`. When set to
+> `SilentlyContinue` or `Ignore`, the error does not propagate and
+> execution continues at the next statement. For details, see the
+> [_throw_ suppression section][07] in **about_Error_Handling**.
 
 Use the `try` block to define a section of a script in which you want
 PowerShell to monitor for errors. When an error occurs within the `try` block,
@@ -261,7 +266,7 @@ try {
     "An error occurred that could not be resolved."
 } finally {
     $wc.Dispose()
-    if (Test-Path $tempPath) { Remove-Item $tempFile }
+    if (Test-Path $tempFile) { Remove-Item $tempFile }
 }
 ```
 
@@ -281,3 +286,4 @@ try {
 [04]: about_Throw.md
 [05]: about_Trap.md
 [06]: about_Error_Handling.md
+[07]: about_Error_Handling.md#script-terminating-errors
