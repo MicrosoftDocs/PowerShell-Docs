@@ -136,9 +136,9 @@ catchable by `try/catch`. For more information about error categories, see
 - `Continue` displays the error message and continues executing the command.
   `Continue` is the default.
 - `Ignore` suppresses the error message and continues executing the command.
-  Unlike `SilentlyContinue`, `Ignore` doesn't add the error message to the
-  `$Error` automatic variable. The `Ignore` value is introduced in PowerShell
-  3.0.
+  Unlike `SilentlyContinue`, `Ignore` doesn't add the non-terminating error to
+  the `$Error` automatic variable. The `Ignore` value is introduced in
+  PowerShell 3.0.
 - `Inquire` displays the error message and prompts you for confirmation before
   continuing execution. This value is rarely used.
 - `SilentlyContinue` suppresses the error message and continues executing the

@@ -167,8 +167,8 @@ Contains a list of names of the experimental features that are enabled.
 Contains an array of error objects that represent the most recent errors. The
 most recent error is the first error object in the array `$Error[0]`.
 
-To prevent an error from being added to the `$Error` array, use the
-**ErrorAction** common parameter with a value of **Ignore**. For more
+To prevent a non-terminating error from being added to the `$Error` array, use
+the **ErrorAction** common parameter with a value of **Ignore**. For more
 information, see [about_CommonParameters][53].
 
 ### `$Event`

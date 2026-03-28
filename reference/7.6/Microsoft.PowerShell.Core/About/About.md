@@ -589,7 +589,8 @@ the current session process.
 
 ### [about_Throw](about_Throw.md)
 
-Describes the `throw` keyword that generates a terminating error.
+Describes the `throw` keyword that generates a script-terminating error by
+default.
 
 ### [about_Trap](about_Trap.md)
 
