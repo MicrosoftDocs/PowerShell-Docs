@@ -128,8 +128,8 @@ and execution continues unless you use the `ErrorAction` parameter.
 The `-ErrorAction` parameter doesn't prevent statement-terminating errors
 (such as missing data, parameters that aren't valid, or insufficient
 permissions) from stopping the current statement. However, when set to `Stop`,
-it escalates non-terminating errors to statement-terminating errors, making
-them catchable by `try/catch`. For more information about error categories, see
+it escalates non-terminating errors to script-terminating errors, making them
+catchable by `try/catch`. For more information about error categories, see
 [about_Error_Handling][15].
 
 - `Break` Enters the debugger when an error occurs or an exception is raised.

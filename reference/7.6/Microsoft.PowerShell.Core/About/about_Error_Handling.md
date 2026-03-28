@@ -130,7 +130,10 @@ By default, a non-zero exit code from a native program:
 Starting in PowerShell 7.3, the
 `$PSNativeCommandUseErrorActionPreference`
 experimental preference variable, when set to `$true`, causes a non-zero exit
-code to generate an error record that respects `$ErrorActionPreference`.
+code to emit a **non-terminating error** whose message states the specific exit
+code (a `NativeCommandExitException`). This error then respects
+`$ErrorActionPreference`, so setting it to `Stop` promotes the error to a
+script-terminating error that can be caught with `try`/`catch`.
 
 ## Error state variables
 
@@ -176,7 +179,7 @@ errors from that command.
 | `Continue`         | Display the error and continue (default)          |
 | `SilentlyContinue` | Suppress display, add to `$Error`, continue      |
 | `Ignore`           | Suppress display and do not add to `$Error`       |
-| `Stop`             | **Escalate** to a statement-terminating error     |
+| `Stop`             | **Escalate** to a script-terminating error         |
 | `Inquire`          | Prompt the user for a decision                    |
 | `Break`            | Enter the debugger                                |
 
@@ -187,12 +190,11 @@ statement-terminating regardless of the caller's preference.
 ### The $ErrorActionPreference variable
 
 The `$ErrorActionPreference` preference variable applies to all commands in the
-current scope and child scopes. It accepts the same values as `-ErrorAction`
-except `Ignore` (which is valid only as a parameter value).
+current scope and child scopes. It accepts the same values as `-ErrorAction`.
 
 ```powershell
 $ErrorActionPreference = 'Stop'
-# All non-terminating errors in this scope now become statement-terminating
+# All non-terminating errors in this scope now become script-terminating
 Write-Error 'This now throws'   # Generates ActionPreferenceStopException
 ```
 
