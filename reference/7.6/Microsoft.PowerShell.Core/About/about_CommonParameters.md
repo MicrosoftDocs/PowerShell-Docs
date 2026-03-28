@@ -144,7 +144,7 @@ catchable by `try/catch`. For more information about error categories, see
 - `SilentlyContinue` suppresses the error message and continues executing the
   command.
 - `Stop` displays the error message and stops executing the command. The
-  `Stop` value escalates the non-terminating error to a statement-terminating
+  `Stop` value escalates the non-terminating error to a script-terminating
   error by generating an `ActionPreferenceStopException`. The error can then
   be caught by a `try/catch` block or `trap` statement.
 - `Suspend` is only available for workflows which aren't supported in

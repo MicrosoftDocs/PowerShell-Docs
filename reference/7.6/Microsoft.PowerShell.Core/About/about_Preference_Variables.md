@@ -388,9 +388,10 @@ The valid values are as follows:
   raised.
 - **Continue**: (Default) Displays the error message and continues executing.
 - **Ignore**: Suppresses the error message and continues to execute the
-  command. The **Ignore** value is intended for per-command use, not for use as
-  saved preference. **Ignore** isn't a valid value for the
-  `$ErrorActionPreference` variable.
+  command. Unlike **SilentlyContinue**, **Ignore** doesn't add the error
+  message to the `$Error` automatic variable. The **Ignore** value is also
+  valid for `$ErrorActionPreference`, where it suppresses both non-terminating
+  and statement-terminating errors without recording them in `$Error`.
 - **Inquire**: Displays the error message and asks you whether you want to
   continue.
 - **SilentlyContinue**: No effect. The error message isn't displayed and
