@@ -32,8 +32,8 @@ block or `trap` statement.
 > [!NOTE]
 > `$ErrorActionPreference` can suppress `throw`. When set to
 > `SilentlyContinue` or `Ignore`, the error does not propagate and
-> execution continues at the next statement. For details, see the
-> [_throw_ suppression section][07] in **about_Error_Handling**.
+> execution continues at the next statement. For details, see
+> [Script-terminating errors][07] in **about_Error_Handling**.
 
 Use the `try` block to define a section of a script in which you want
 PowerShell to monitor for errors. When an error occurs within the `try` block,

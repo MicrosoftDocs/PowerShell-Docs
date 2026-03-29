@@ -167,6 +167,13 @@ Provides access to the Windows environment variables.
 
 Describes how to access and manage environment variables in PowerShell.
 
+### [about_Error_Handling](about_Error_Handling.md)
+
+Describes the three categories of PowerShell errors — non-terminating,
+statement-terminating, and script-terminating — and explains how error
+action preferences, `try/catch/trap`, and error state variables control
+error handling behavior.
+
 ### [about_Execution_Policies](about_Execution_Policies.md)
 
 Describes the PowerShell execution policies and explains how to manage them.
@@ -594,12 +601,13 @@ default.
 
 ### [about_Trap](about_Trap.md)
 
-Describes a keyword that handles a terminating error.
+Describes a keyword that handles statement-terminating and script-terminating
+errors.
 
 ### [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
 
 Describes how to use the `try`, `catch`, and `finally` blocks to handle
-terminating errors.
+statement-terminating and script-terminating errors.
 
 ### [about_Type_Accelerators](about_Type_Accelerators.md)
 

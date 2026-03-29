@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 12/01/2025
+ms.date: 03/29/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
