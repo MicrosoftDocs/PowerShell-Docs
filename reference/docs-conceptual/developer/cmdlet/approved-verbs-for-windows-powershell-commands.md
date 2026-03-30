@@ -129,7 +129,7 @@ that apply to communications. The following table lists most of the defined verb
 |       Verb (alias)        |                                          Action                                           |         Synonyms to avoid         |
 | ------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------- |
 | [`Connect`][39] (`cc`)    | Creates a link between a source and a destination. This verb is paired with `Disconnect`. | `Join`, `Telnet`, `Login`         |
-| [`Disconnect`][40] (`dc`) | Breaks the link between a source and a destination. This verb is paired with `Connect`.   | `Break`, Lo`goff                  |
+| [`Disconnect`][40] (`dc`) | Breaks the link between a source and a destination. This verb is paired with `Connect`.   | `Break`, `Logoff`                 |
 | [`Read`][41] (`rd`)       | Acquires information from a source. This verb is paired with `Write`.                     | `Acquire`, `Prompt`, `Get`        |
 | [`Receive`][42] (`rc`)    | Accepts information sent from a source. This verb is paired with `Send`.                  | `Read`, `Accept`, `Peek`          |
 | [`Send`][43] (`sd`)       | Delivers information to a destination. This verb is paired with `Receive`.                | `Put`, `Broadcast`, `Mail`, `Fax` |
