@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows
-ms.date: 03/18/2026
+ms.date: 03/30/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -32,7 +32,9 @@ different scenarios and workflows. Choose the method that best suits your needs.
 <a id="winget"></a>WinGet, the Windows Package Manager, is a command-line tool that enables you to
 discover, install, upgrade, remove, and configure applications on Windows client computers. This
 tool is the client interface to the Windows Package Manager service. The `winget` command-line tool
-is included in Windows 11 and Windows Server 2025 as part of the **App Installer**.
+is included in Windows 11 and Windows Server 2025 as part of the **App Installer**. The `winget`
+command can be run from any command shell, including the Windows Command shell (`cmd.exe`), Windows
+PowerShell (`powershell.exe`), or PowerShell (`pwsh.exe`).
 
 > [!NOTE]
 > See the [winget documentation][07] for a list of system requirements and install instructions.
