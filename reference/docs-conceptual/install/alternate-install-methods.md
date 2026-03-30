@@ -1,6 +1,6 @@
 ---
 description: Alternate ways to install PowerShell on non-Windows platforms.
-ms.date: 03/18/2026
+ms.date: 03/30/2026
 title: Alternate ways to install PowerShell
 ---
 # Alternate ways to install PowerShell
@@ -13,32 +13,28 @@ from the PowerShell Community or the operating system vendor. For support option
 
 ## Install on macOS using Homebrew
 
-Homebrew is the preferred package manager for macOS. If the `brew` command isn't found, you need to
-install Homebrew following [their instructions][12].
+Homebrew is a popular package manager for macOS. To install Homebrew, follow the instructions on the
+[Homebrew website][12].
 
 > [!IMPORTANT]
 > The brew formula is maintained and supported by the Homebrew community. The brew formula builds
 > PowerShell from source code rather than installing a package built by Microsoft.
+>
+> If you previously installed PowerShell using the Homebrew cask, you must first uninstall the cask
+> before you can successfully install using the Homebrew formula. Use the following commands to
+> uninstall the cask:
+>
+> ```sh
+> # Uninstall the PowerShell cask instance
+> brew uninstall --cask powershell
+> # Uninstall the PowerShell Preview cask instance
+> brew uninstall --cask powershell-preview
+> ```
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Once `brew` is installed, install PowerShell using the following command:
+Run the following command to install PowerShell using the Homebrew formula:
 
 ```sh
 brew install powershell
-```
-
-If you previously installed PowerShell using the Homebrew cask, you must first uninstall the cask
-before you can successfully install using the Homebrew formula. Use the following commands to
-uninstall the cask:
-
-```sh
-# Uninstall the PowerShell cask instance
-brew uninstall --cask powershell
-# Uninstall the PowerShell Preview cask instance
-brew uninstall --cask powershell-preview
 ```
 
 ### Update PowerShell 7
