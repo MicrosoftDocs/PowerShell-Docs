@@ -1,7 +1,7 @@
 ---
 author: sdwheeler
 ms.author: sewhee
-ms.date: 03/06/2026
+ms.date: 03/30/2026
 ms.topic: include
 ---
 <!-- markdownlint-disable first-line-h1 -->
@@ -9,13 +9,10 @@ Microsoft supports PowerShell until [PowerShell reaches end-of-support][lifecycl
 [Windows reaches end-of-support][eol-windows].
 
 The Docker images for the .NET SDK contain the latest versions of PowerShell. These images are
-available from the [Microsoft Artifact Registry][mcr].
-
-These images may not have the latest security updates. Microsoft recommends that you update the OS
-packages to the latest version to ensure the latest security updates are applied.
-
-These images are provided for testing purposes. If you need a Docker image for a production
-workload, you should build and maintain your own.
+available from the [Microsoft Artifact Registry][mcr]. These images may not have the latest security
+updates. Microsoft recommends that you update the OS packages to the latest version to ensure the
+latest security updates are applied. These images are provided for testing purposes. If you need a
+Docker image for a production workload, you should build and maintain your own image.
 
 > [!NOTE]
 > Support for a specific version of Windows is determined by the Microsoft Support Lifecycle
@@ -28,4 +25,4 @@ workload, you should build and maintain your own.
 [eol-windows]: /lifecycle/products/?terms=Windows%20Server&products=windows
 [client-faq]: /lifecycle/faq/windows
 [modern]: /lifecycle/policies/modern
-[mcr]: https://mcr.microsoft.com/product/powershell/tags
+[mcr]: https://mcr.microsoft.com/artifact/mar/dotnet/sdk/tags
