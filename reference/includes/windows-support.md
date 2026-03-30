@@ -25,4 +25,4 @@ Docker image for a production workload, you should build and maintain your own i
 [eol-windows]: /lifecycle/products/?terms=Windows%20Server&products=windows
 [client-faq]: /lifecycle/faq/windows
 [modern]: /lifecycle/policies/modern
-[mcr]: https://mcr.microsoft.com/product/powershell/tags
+[mcr]: https://mcr.microsoft.com/artifact/mar/dotnet/sdk/tags
