@@ -160,7 +160,7 @@ as long as the counter variable `$i` is less than 5. It sleeps for a total of 10
 
 ### Do
 
-There are two different `do` loops in PowerShell: `do until` and `do while`. `do until` runs until
+There are two different `do` loops in PowerShell: `do until` and `do while`. `do until` runs while
 the specified condition is false.
 
 The following example is a numbers game that continues until the value you guess equals the same
