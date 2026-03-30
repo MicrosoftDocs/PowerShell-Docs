@@ -2,7 +2,7 @@
 external help file: System.Management.Automation.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 01/18/2026
+ms.date: 03/30/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/start-job?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -260,7 +260,7 @@ run scripts or open files. In this example, the background job specifies a worki
 different than the current directory location.
 
 ```powershell
-PS C:\Test> Start-Job -WorkingDirectory C:\Test\Scripts { $PWD } | 
+PS C:\Test> Start-Job -WorkingDirectory C:\Test\Scripts { $PWD } |
     Receive-Job -AutoRemoveJob -Wait
 
 Path
@@ -351,15 +351,15 @@ Specifies the mechanism that is used to authenticate user credentials.
 
 The acceptable values for this parameter are as follows:
 
-- Default
-- Basic
-- Credssp
-- Digest
-- Kerberos
-- Negotiate
-- NegotiateWithImplicitCredential
+- `Default`
+- `Basic`
+- `Credssp`
+- `Digest`
+- `Kerberos`
+- `Negotiate`
+- `NegotiateWithImplicitCredential`
 
-The default value is Default.
+The default value is `Default`.
 
 CredSSP authentication is available only in Windows Vista, Windows Server 2008, and later versions
 of the Windows operating system.
