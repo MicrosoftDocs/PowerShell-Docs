@@ -177,12 +177,17 @@
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/install/install-powershell-on-linux",
+      "redirect_url": "/powershell/scripting/install/linux-overview",
+      "source_path": "../reference/docs-conceptual/install/install-powershell-on-linux.md"
+    },
+    {
+      "redirect_document_id": false,
+      "redirect_url": "/powershell/scripting/install/linux-overview",
       "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-Core-on-Linux.md"
     },
     {
       "redirect_document_id": false,
-      "redirect_url": "/powershell/scripting/install/install-powershell-on-linux",
+      "redirect_url": "/powershell/scripting/install/linux-overview",
       "source_path": "../reference/docs-conceptual/install/Installing-PowerShell-on-Linux.md"
     },
     {
