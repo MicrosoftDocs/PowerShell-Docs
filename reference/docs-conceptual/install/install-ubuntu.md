@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Ubuntu
-ms.date: 03/12/2026
+ms.date: 03/31/2026
 title: Install PowerShell 7 on Ubuntu
 ---
 # Install PowerShell 7 on Ubuntu
@@ -30,7 +30,8 @@ Installing PowerShell from PMC is the preferred method of installation.
 
 > [!NOTE]
 > This script only works for supported versions of Ubuntu that have a package published to the
-> Microsoft package repository.
+> Microsoft package repository. For other versions of Ubuntu, use the
+> [manual installation method][08].
 
 ```sh
 #!/bin/bash
@@ -172,3 +173,4 @@ Microsoft can't support those methods.
 [05]: https://specifications.freedesktop.org/basedir/latest/
 [06]: install-other-linux.md#binary-archives
 [07]: PowerShell-Support-Lifecycle.md
+[08]: #manually-download-and-install-powershell-7
