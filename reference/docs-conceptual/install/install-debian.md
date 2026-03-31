@@ -30,8 +30,8 @@ Installing PowerShell from PMC is the preferred method of installation.
 
 > [!NOTE]
 > This script only works for supported versions of Debian that have a package published to the
-> Microsoft package repository. For other supported versions of Debian, use the [manual installation
-> method][01].
+> Microsoft package repository. For other supported versions of Debian, use the
+> [manual installation method][01].
 
 ```sh
 #!/bin/bash
