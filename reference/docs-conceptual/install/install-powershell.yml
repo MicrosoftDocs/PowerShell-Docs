@@ -34,6 +34,8 @@ landingContent:
             url: install-powershell-on-macos.md
           - text: Supported macOS releases
             url: install-powershell-on-macos.md#supported-versions-of-macos
+          - text: Alternate install methods
+            url: alternate-install-methods.md
 
   # Card
   - title: Linux
@@ -41,7 +43,7 @@ landingContent:
       - linkListType: overview
         links:
           - text: Linux overview
-            url: install-powershell-on-linux.md
+            url: linux-overview.md
           - text: Alpine
             url: install-alpine.md
           - text: Debian
@@ -57,7 +59,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Alternate install methods
-            url: install-other-linux.md
+            url: alternate-install-methods.md
           - text: Community supported Linux
             url: community-support.md
           - text: Using PowerShell in Docker

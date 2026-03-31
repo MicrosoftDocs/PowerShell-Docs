@@ -1,17 +1,15 @@
 ---
 description: This article lists the Linux distributions and package managers that are supported for installing PowerShell.
-ms.date: 03/12/2026
-title: Install PowerShell on Linux
+ms.date: 03/31/2026
+title: PowerShell support for Linux
 ---
-# Install PowerShell on Linux
+# PowerShell support for Linux
 
 PowerShell can be installed on several different Linux distributions. Most Linux platforms and
 distributions have a major release each year, and provide a package manager that's used to install
 PowerShell. PowerShell can be installed on some distributions of Linux that aren't supported by
 Microsoft. In those cases, you may find support from the community for PowerShell on those
-platforms.
-
-For more information, see the [PowerShell Support Lifecycle][01] documentation.
+platforms. For more information, see the [PowerShell Support Lifecycle][01] documentation.
 
 This article lists the supported Linux distributions and package managers. All PowerShell releases
 remain supported until either the version of PowerShell or the version of the Linux distribution
@@ -52,7 +50,7 @@ For more information, see [Install PowerShell on Ubuntu][07].
 ## Community supported distributions
 
 PowerShell can be installed on many distributions of Linux that aren't supported by Microsoft. In
-those cases, you may find support from the community for PowerShell on those platforms
+those cases, you may find support from the community for PowerShell on those platforms.
 
 To be supported by Microsoft, the Linux distribution must meet the following criteria:
 
@@ -65,10 +63,10 @@ For more information, see [Community support for PowerShell on Linux][02].
 
 ## Alternate installation methods
 
-There are three other ways to install PowerShell on Linux, including Linux distributions that aren't
+There are other ways to install PowerShell on Linux, including Linux distributions that aren't
 officially supported. You can try to install PowerShell using the PowerShell Snap Package. You can
 also try deploying PowerShell binaries directly using the Linux `tar.gz` package. For more
-information, see [Alternate ways to install PowerShell on Linux][05].
+information, see [Alternate ways to install PowerShell][05].
 
 <!-- link references -->
 [01]: ../PowerShell-Support-Lifecycle.md

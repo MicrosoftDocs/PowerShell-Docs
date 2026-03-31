@@ -23,7 +23,7 @@ items:
       - name: Install PowerShell 7 on Linux
         items:
           - name: Overview
-            href: install/install-powershell-on-linux.md
+            href: install/linux-overview.md
           - name: Install on Alpine
             href: install/install-alpine.md
           - name: Install on Debian
