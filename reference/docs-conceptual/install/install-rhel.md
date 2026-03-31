@@ -1,6 +1,6 @@
 ---
 description: Information about installing PowerShell on Red Hat Enterprise Linux (RHEL)
-ms.date: 03/18/2026
+ms.date: 03/31/2026
 title: Install PowerShell 7 on Red Hat Enterprise Linux (RHEL)
 ---
 # Install PowerShell 7 on Red Hat Enterprise Linux (RHEL)
@@ -29,7 +29,8 @@ Installing PowerShell from PMC is the preferred method of installation.
 
 > [!NOTE]
 > This script only works for supported versions of RHEL that have a package published to the
-> Microsoft package repository.
+> Microsoft package repository. For other supported versions of RHEL, use the
+> [manual installation method][04].
 
 ```sh
 #!/bin/bash
@@ -122,3 +123,4 @@ can't support those methods.
 [01]: https://packages.microsoft.com
 [02]: https://specifications.freedesktop.org/basedir/latest/
 [03]: PowerShell-Support-Lifecycle.md
+[04]: #manually-download-and-install-powershell-7
