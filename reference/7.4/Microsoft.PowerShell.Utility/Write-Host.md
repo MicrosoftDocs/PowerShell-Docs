@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 09/26/2023
+ms.date: 04/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-Host
@@ -261,8 +261,28 @@ cmdlet sends to it.
   separated by a single space. This can be overridden with the **Separator** parameter.
 
 - Non-primitive data types such as objects with properties can cause unexpected results and not
-  provide meaningful output. For example, `Write-Host @{a = 1; b = 2}` will print
-  `System.Collections.DictionaryEntry System.Collections.DictionaryEntry` to the host.
+  provide meaningful output. For example, `@{a = 1; b = 2} | Write-Host` will print
+  `System.Collections.Hashtable` to the host.
+
+  To work around this issue, you can manually create the string format you need with either string
+  interpolation or the format operator (`-f`). You can also pass the object to the
+  [Out-String](Out-String.md) command before passing it to `Write-Host`. The following snippet
+  shows examples of each approach:
+
+  ```powershell
+  $ht = @{a = 1; b = 2}
+  # String interpolation
+  $ht.Keys.ForEach({ "[$_, $($ht[$_])]" }) -join ' ' | Write-Host
+  # Format operator
+  "[{0}, {1}] [{2}, {3}]" -f @('a', $ht.a, 'b', $ht.b) | Write-Host
+  # Out-String
+  $ht | Out-String | Write-Host -NoNewline
+  ```
+
+  For more information about string interpolation, see the article
+  [Everything you wanted to know about variable substitution in strings](/powershell/scripting/learn/deep-dives/everything-about-string-substitutions).
+  For more information about the format operator, see
+  [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#format-operator--f).
 
 ## RELATED LINKS
 
