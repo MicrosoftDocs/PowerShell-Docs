@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to PowerShell documentation.
-ms.date: 03/02/2026
+ms.date: 04/01/2026
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -9,7 +9,8 @@ The PowerShell Community is a vibrant and collaborative group. We greatly apprec
 and support we get from the community. You can be a contributor too. To learn how, read our
 [Contributor's Guide](contributing/overview.md).
 
-These GitHub users are the All-Time Top Community Contributors.
+These GitHub users are the All-Time Top Community Contributors. These tables list the top
+contributors and the total contributions from the community for each year.
 
 ## Pull Requests merged
 
@@ -17,7 +18,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |     PRs Merged     | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: |
-| Community          |    3 |  194 |  446 |  455 |  321 |  160 |   99 |  134 |  118 |   95 |  163 |   11 |  2199 |
+| Community Total    |    8 |  189 |  452 |  468 |  321 |  165 |  101 |  134 |  117 |   95 |  160 |   13 |  2223 |
 | matt9ucci          |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |      |      |   274 |
 | nschonni           |      |      |      |   14 |  138 |   10 |      |      |      |      |      |      |   162 |
 | kiazhi             |      |   25 |   79 |   12 |      |      |      |      |      |      |      |      |   116 |
@@ -39,9 +40,8 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | purdo17            |      |      |      |   13 |      |      |      |      |      |      |      |      |    13 |
 | bergmeister        |      |      |    1 |    3 |    3 |    1 |    1 |    2 |    1 |    1 |      |      |    13 |
 | markekraus         |      |      |   11 |    1 |      |      |      |      |      |      |      |      |    12 |
-| PlagueHO           |      |   10 |      |      |    1 |      |      |      |      |      |      |      |    11 |
-| hrxn               |      |      |      |      |      |      |    2 |    2 |    2 |    5 |      |      |    11 |
 | exchange12rocks    |      |      |    7 |    3 |      |      |    1 |      |      |      |      |      |    11 |
+| hrxn               |      |      |      |      |      |      |    2 |    2 |    2 |    5 |      |      |    11 |
 
 ## GitHub issues opened
 
@@ -49,32 +49,32 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |   Issues Opened    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: |
-| Community          |    3 |   54 |   95 |  210 |  556 |  553 |  366 |  237 |  291 |  244 |  183 |   30 |  2822 |
+| Community Total    |    6 |   52 |   96 |  213 |  567 |  564 |  367 |  244 |  291 |  243 |  183 |   48 |  2874 |
 | mklement0          |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   24 |    2 |      |   278 |
 | ehmiiz             |      |      |      |      |      |      |      |   21 |   14 |      |      |      |    35 |
 | iRon7              |      |      |      |      |      |    2 |    2 |    2 |   10 |    8 |    8 |      |    32 |
 | iSazonov           |      |      |    1 |    4 |   10 |    8 |    4 |    3 |      |    1 |      |      |    31 |
 | jszabo98           |      |      |      |    2 |   15 |    6 |    1 |      |    1 |    2 |      |    1 |    28 |
 | surfingoldelephant |      |      |      |      |      |      |      |      |      |    6 |   19 |    2 |    27 |
+| kilasuit           |      |      |      |      |    3 |    2 |    1 |    4 |    1 |    4 |    5 |    3 |    23 |
 | juvtib             |      |      |      |      |      |   15 |    7 |      |      |      |      |      |    22 |
 | peetrike           |      |      |      |    1 |      |    4 |    2 |    6 |    4 |    3 |    1 |      |    21 |
-| kilasuit           |      |      |      |      |    3 |    2 |    1 |    4 |    1 |    4 |    5 |    1 |    21 |
 | doctordns          |      |      |    5 |    3 |    5 |    7 |    1 |      |      |      |      |      |    21 |
 | JustinGrote        |      |      |      |    1 |    3 |    6 |    1 |    1 |    3 |    2 |    3 |      |    20 |
 | vexx32             |      |      |      |    3 |   11 |      |      |    3 |      |      |      |      |    17 |
+| rkeithhill         |      |      |    1 |    2 |    2 |    2 |    3 |    1 |    2 |      |    1 |    1 |    15 |
 | KirkMunro          |      |      |      |    7 |    7 |    1 |      |      |      |      |      |      |    15 |
 | alexandair         |      |    9 |    4 |    2 |      |      |      |      |      |      |      |      |    15 |
-| rkeithhill         |      |      |    1 |    2 |    2 |    2 |    3 |    1 |    2 |      |    1 |      |    14 |
 | clamb123           |      |      |      |      |      |      |   14 |      |      |      |      |      |    14 |
 | tabad              |      |      |      |      |      |      |      |      |   11 |    2 |      |      |    13 |
-| trollyanov         |      |      |      |      |      |      |   11 |    1 |      |      |      |      |    12 |
 | ThomasNieto        |      |      |      |      |      |    3 |      |    2 |    4 |    3 |      |      |    12 |
-| Liturgist          |      |      |      |      |    1 |    1 |    1 |    2 |    5 |    2 |      |      |    12 |
+| trollyanov         |      |      |      |      |      |      |   11 |    1 |      |      |      |      |    12 |
 | LaurentDardenne    |      |      |    3 |    2 |      |      |      |    5 |    2 |      |      |      |    12 |
+| Liturgist          |      |      |      |      |    1 |    1 |    1 |    2 |    5 |    2 |      |      |    12 |
 | jsilverm           |      |      |      |      |      |    8 |      |      |    4 |      |      |      |    12 |
 | CarloToso          |      |      |      |      |      |      |      |      |   11 |      |      |      |    11 |
-| UberKluger         |      |      |      |      |      |    1 |    7 |    2 |      |      |      |      |    10 |
 | vors               |    1 |    6 |    2 |    1 |      |      |      |      |      |      |      |      |    10 |
-| o-l-a-v            |      |      |      |      |    1 |      |    1 |      |    4 |    2 |    2 |      |    10 |
+| UberKluger         |      |      |      |      |      |    1 |    7 |    2 |      |      |      |      |    10 |
 | matt9ucci          |      |      |    2 |    5 |      |      |    2 |      |    1 |      |      |      |    10 |
+| o-l-a-v            |      |      |      |      |    1 |      |    1 |      |    4 |    2 |    2 |      |    10 |
 | ArmaanMcleod       |      |      |      |      |      |      |      |      |    4 |    6 |      |      |    10 |
