@@ -27,6 +27,7 @@ New and updated content
   - [AvoidLongLines](/powershell/utility-modules/psscriptanalyzer/rules/avoidlonglines)
   - [UseConsistentParameterSetName](/powershell/utility-modules/psscriptanalyzer/rules/useconsistentparametersetname)
   - [UseConsistentParametersKind](/powershell/utility-modules/psscriptanalyzer/rules/useconsistentparameterskind)
+  - [UseConstrainedLanguageMode](/powershell/utility-modules/psscriptanalyzer/rules/useconstrainedlanguagemode)
   - [UseSingleValueFromPipelineParameter](/powershell/utility-modules/psscriptanalyzer/rules/usesinglevaluefrompipelineparameter)
 
 GitHub stats
