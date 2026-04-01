@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 01/18/2026
+ms.date: 04/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/rename-item?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -38,6 +38,10 @@ content of the item being renamed.
 
 You can't use `Rename-Item` to move an item, such as by specifying a path together with the new
 name. To move and rename an item, use the `Move-Item` cmdlet.
+
+You can't use `Rename-Item` to replace an existing item, such as renaming `log_new.txt` to
+`log_current.txt` when `log_current.txt` already exists. To replace an existing item, use the
+`Move-Item` cmdlet with the **Force** parameter.
 
 ## EXAMPLES
 
@@ -151,7 +155,8 @@ or read-only aliases or variables. The cmdlet can't change constant aliases or v
 Implementation varies from provider to provider. For more information, see
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
-Even using the **Force** parameter, the cmdlet can't override security restrictions.
+Even using the **Force** parameter, the cmdlet can't override security restrictions or replace an
+existing item at the destination name specified by **NewName**.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
