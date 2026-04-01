@@ -21,7 +21,7 @@ New and updated content
 
 - Updated release notes for PowerShell 7.6.0 GA release
 - Major rework of setup articles to simplify the structure
-  - Moved Homebrew installation instructions for macOS to [Alternate ways to install PowerShell](powershell/scripting/install/alternate-install-methods)
+  - Moved Homebrew installation instructions for macOS to [Alternate ways to install PowerShell](/powershell/scripting/install/alternate-install-methods)
 - Updated PSScriptAnalyzer docs for v1.25 release including 6 new or updated rules
   - [AlignAssignmentStatement](/powershell/utility-modules/psscriptanalyzer/rules/alignassignmentstatement)
   - [AvoidLongLines](/powershell/utility-modules/psscriptanalyzer/rules/avoidlonglines)
