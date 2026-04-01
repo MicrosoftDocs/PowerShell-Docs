@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2026.
-ms.date: 03/02/2026
+ms.date: 04/01/2026
 title: What's New in PowerShell-Docs for 2026
 ---
 # What's new in PowerShell Docs for 2026
@@ -15,13 +15,46 @@ get started.
 [01]: contributing/overview.md
 <!--------------------->
 
+## 2026-March
+
+New and updated content
+
+- Updated release notes for PowerShell 7.6.0 GA release
+- Major rework of setup articles to simplify the structure
+  - Moved Homebrew installation instructions for macOS to [Alternate ways to install PowerShell](/powershell/scripting/install/alternate-install-methods)
+- Updated PSScriptAnalyzer docs for v1.25 release including 6 new or updated rules
+  - [AlignAssignmentStatement](/powershell/utility-modules/psscriptanalyzer/rules/alignassignmentstatement)
+  - [AvoidLongLines](/powershell/utility-modules/psscriptanalyzer/rules/avoidlonglines)
+  - [UseConsistentParameterSetName](/powershell/utility-modules/psscriptanalyzer/rules/useconsistentparametersetname)
+  - [UseConsistentParametersKind](/powershell/utility-modules/psscriptanalyzer/rules/useconsistentparameterskind)
+  - [UseConstrainedLanguageMode](/powershell/utility-modules/psscriptanalyzer/rules/useconstrainedlanguagemode)
+  - [UseSingleValueFromPipelineParameter](/powershell/utility-modules/psscriptanalyzer/rules/usesinglevaluefrompipelineparameter)
+
+GitHub stats
+
+- 40 PRs merged (3 from Community)
+- 56 issues opened (18 from Community, 33 Spam)
+- 47 issues closed (12 from Community, 33 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id     | PRs merged | Issues opened |
+| ---------------- | :--------: | :-----------: |
+| baardhermansen   |     1      |               |
+| derkallevombau   |     1      |               |
+| dodexahedron     |     1      |               |
+| SufficientDaikon |            |       3       |
+| kilasuit         |            |       2       |
+
 ## 2026-February
 
 New and updated content
 
 - Update PSResourceGet release notes for RC3
 - Other general maintenance updates
-
 
 GitHub stats
 
