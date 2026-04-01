@@ -44,11 +44,10 @@ For example, it can move a file or subdirectory from one directory to another or
 subkey from one key to another. When you move an item, it is added to the new location and deleted
 from its original location.
 
-If the specified destination path resolves to an existing non-container item, or you're renaming
-and an item with the target name already exists, this cmdlet raises an error. To overwrite an
-existing item in these cases, specify the **Force** parameter. When the destination is an existing
-container (such as a directory), the item is moved into that container, if supported by the
-provider.
+If the specified destination path resolves to an existing non-container item, or you're moving and
+the target name already exists, this cmdlet raises an error. To overwrite an existing item, use the
+**Force** parameter. When the destination is an existing container (such as a directory), the item
+is moved into that container, if supported by the provider.
 
 ## EXAMPLES
 
