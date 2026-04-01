@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 02/26/2024
+ms.date: 04/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/move-item?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -43,6 +43,12 @@ location to another location. The locations must be supported by the same provid
 For example, it can move a file or subdirectory from one directory to another or move a registry
 subkey from one key to another. When you move an item, it is added to the new location and deleted
 from its original location.
+
+If the specified destination path resolves to an existing non-container item, or you're moving and
+the target name already exists, this cmdlet raises an error. To overwrite an existing item, use the
+**Force** parameter. When the destination is an existing container (such as a directory), the item
+is moved into that container, if supported by the provider.
+provider.
 
 ## EXAMPLES
 
