@@ -1,7 +1,7 @@
 ---
-description: Describes a keyword that handles a terminating error.
+description: Describes a keyword that handles statement-terminating and script-terminating errors.
 Locale: en-US
-ms.date: 01/13/2026
+ms.date: 04/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_trap?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Trap
@@ -10,14 +10,16 @@ title: about_Trap
 
 ## Short description
 
-Describes a keyword that handles a terminating error.
+Describes a keyword that handles statement-terminating and script-terminating
+errors.
 
 ## Long description
 
-A terminating error stops a statement from running. If PowerShell doesn't
-handle a terminating error in some way, PowerShell also stops running the
-function or script in the current pipeline. In other languages, such as C#,
-terminating errors are known as exceptions.
+A terminating error stops a statement from running. PowerShell distinguishes
+_statement-terminating_ errors (which stop only the current statement) from
+_script-terminating_ errors (which unwind the entire call stack). The `trap`
+keyword can handle both kinds. For more information about error categories, see
+[about_Error_Handling][07].
 
 The `trap` keyword specifies a list of statements to run when a terminating
 error occurs. `trap` statements can handle the terminating errors in the
@@ -286,7 +288,7 @@ after loop
 
 In the output, you can see the loops continue until the last iteration. When
 the script tries to divide 1 by 0, PowerShell throws a terminating error. The
-script skips the rest of the `foreach` statement, runs the `try` statement,
+script skips the rest of the `foreach` statement, runs the `trap` statement,
 and continues after the `foreach` statement.
 
 ## Trapping errors and scope
@@ -468,6 +470,7 @@ statement. For more information, see
 
 - [about_Break][01]
 - [about_Continue][02]
+- [about_Error_Handling][07]
 - [about_Scopes][03]
 - [about_Throw][04]
 - [about_Try_Catch_Finally][05]
@@ -479,3 +482,4 @@ statement. For more information, see
 [04]: about_Throw.md
 [05]: about_Try_Catch_Finally.md
 [06]: https://wikipedia.org/wiki/JavaScript_syntax#hoisting
+[07]: about_Error_Handling.md
