@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 11/05/2025
+ms.date: 04/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -706,7 +706,9 @@ Accept wildcard characters: True
 
 ### -Pattern
 
-Specifies the text to find on each line. The pattern value is treated as a regular expression.
+Specifies the text to find on each line. The pattern value is treated as a regular expression. The
+parameter accepts multiple patterns in an array. If you specify more than one pattern,
+`Select-String` returns matches for each pattern.
 
 To learn about regular expressions, see
 [about_Regular_Expressions](../Microsoft.PowerShell.Core/About/about_Regular_Expressions.md).
