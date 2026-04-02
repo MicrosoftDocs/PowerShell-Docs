@@ -1,7 +1,7 @@
 ---
-description: Describes a keyword that handles a terminating error.
+description: Describes a keyword that handles statement-terminating and script-terminating errors.
 Locale: en-US
-ms.date: 01/13/2026
+ms.date: 04/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_trap?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Trap
@@ -10,14 +10,16 @@ title: about_Trap
 
 ## Short description
 
-Describes a keyword that handles a terminating error.
+Describes a keyword that handles statement-terminating and script-terminating
+errors.
 
 ## Long description
 
-A terminating error stops a statement from running. If PowerShell doesn't
-handle a terminating error in some way, PowerShell also stops running the
-function or script in the current pipeline. In other languages, such as C#,
-terminating errors are known as exceptions.
+A terminating error stops a statement from running. PowerShell distinguishes
+_statement-terminating_ errors (which stop only the current statement) from
+_script-terminating_ errors (which unwind the entire call stack). The `trap`
+keyword can handle both kinds. For more information about error categories, see
+[about_Error_Handling][07].
 
 The `trap` keyword specifies a list of statements to run when a terminating
 error occurs. `trap` statements can handle the terminating errors in the
@@ -488,8 +490,18 @@ statement. For more information, see
 
 ## See also
 
-- [about_Break](about_Break.md)
-- [about_Continue](about_Continue.md)
-- [about_Scopes](about_Scopes.md)
-- [about_Throw](about_Throw.md)
-- [about_Try_Catch_Finally](about_Try_Catch_Finally.md)
+- [about_Break][01]
+- [about_Continue][02]
+- [about_Error_Handling][07]
+- [about_Scopes][03]
+- [about_Throw][04]
+- [about_Try_Catch_Finally][05]
+
+<!-- link references -->
+[01]: about_Break.md
+[02]: about_Continue.md
+[03]: about_Scopes.md
+[04]: about_Throw.md
+[05]: about_Try_Catch_Finally.md
+[06]: https://wikipedia.org/wiki/JavaScript_syntax#hoisting
+[07]: about_Error_Handling.md

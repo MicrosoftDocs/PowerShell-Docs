@@ -1,7 +1,7 @@
 ---
 description: Describes variables that store state information for PowerShell. These variables are created and maintained by PowerShell.
 Locale: en-US
-ms.date: 02/10/2026
+ms.date: 04/02/2026
 no-loc: [Reset, Current, Background, Blink, Bold, Foreground, Formatting, Hidden, Italic, Reset, Reverse, Underline, PSEventArgs, PSEventSubscriber, PSEdition]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -167,8 +167,8 @@ Contains a list of names of the experimental features that are enabled.
 Contains an array of error objects that represent the most recent errors. The
 most recent error is the first error object in the array `$Error[0]`.
 
-To prevent an error from being added to the `$Error` array, use the
-**ErrorAction** common parameter with a value of **Ignore**. For more
+To prevent a non-terminating error from being added to the `$Error` array, use
+the **ErrorAction** common parameter with a value of **Ignore**. For more
 information, see [about_CommonParameters][53].
 
 ### `$Event`
