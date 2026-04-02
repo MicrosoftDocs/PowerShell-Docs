@@ -1,7 +1,7 @@
 ---
 description: Describes a keyword that handles statement-terminating and script-terminating errors.
 Locale: en-US
-ms.date: 03/29/2026
+ms.date: 04/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_trap?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Trap

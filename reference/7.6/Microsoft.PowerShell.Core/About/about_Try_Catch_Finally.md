@@ -1,7 +1,7 @@
 ---
 description: Describes how to use the `try`, `catch`, and `finally` blocks to handle statement-terminating and script-terminating errors.
 Locale: en-US
-ms.date: 03/29/2026
+ms.date: 04/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Try_Catch_Finally
@@ -17,10 +17,12 @@ statement-terminating and script-terminating errors.
 
 Use `try`, `catch`, and `finally` blocks to respond to or handle terminating
 errors in scripts. PowerShell has two kinds of terminating errors:
-_statement-terminating_ errors that stop the current statement and
-_script-terminating_ errors that unwind the entire call stack. Both kinds are
-caught by `try/catch`. The `trap` statement can also be used to handle
-terminating errors. For more information, see [about_Trap][05]. For a
+
+- _statement-terminating_ errors that stop the current statement and
+- _script-terminating_ errors that unwind the entire call stack
+
+Both kinds are caught by `try/catch`. You can also use the `trap` statement to
+handle terminating errors. For more information, see [about_Trap][05]. For a
 comprehensive overview of all error types, see [about_Error_Handling][06].
 
 A statement-terminating error stops the current statement from running, but
@@ -30,10 +32,10 @@ the `throw` keyword) stops the entire script unless caught by a `try/catch`
 block or `trap` statement.
 
 > [!NOTE]
-> `$ErrorActionPreference` can suppress `throw`. When set to
-> `SilentlyContinue` or `Ignore`, the error does not propagate and
-> execution continues at the next statement. For details, see
-> [Script-terminating errors][07] in **about_Error_Handling**.
+> `$ErrorActionPreference` can suppress `throw`. When set to `SilentlyContinue`
+> or `Ignore`, the error doesn't propagate and execution continues at the next
+> statement. For details, see the _Script-terminating errors_ section of
+> [about_Error_Handling][07].
 
 Use the `try` block to define a section of a script in which you want
 PowerShell to monitor for errors. When an error occurs within the `try` block,
