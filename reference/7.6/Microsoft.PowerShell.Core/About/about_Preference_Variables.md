@@ -426,10 +426,9 @@ like when using redirection operators (`2>&1`), aren't written to the `$Error`
 variable and the preference variable `$ErrorActionPreference` doesn't affect
 the redirected output.
 
-PowerShell 7.3 added an experimental feature that allows you to control how
-messages written to `stderr` are handled.
-
-For more information see, [$PSNativeCommandUseErrorActionPreference][18].
+PowerShell 7.4 added a feature that allows you to control how messages written
+to `stderr` are handled. For more information, see
+[$PSNativeCommandUseErrorActionPreference][18].
 
 ### Examples
 
