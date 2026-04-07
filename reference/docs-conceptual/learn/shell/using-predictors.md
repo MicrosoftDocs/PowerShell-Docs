@@ -1,7 +1,7 @@
 ---
 description: This article describes the features and usage of Predictive IntelliSense in PSReadLine.
 title: Using predictors in PSReadLine
-ms.date: 11/21/2025
+ms.date: 04/07/2026
 ---
 # Using predictors in PSReadLine
 
@@ -154,7 +154,7 @@ For more information, see [How to create a command-line predictor][02].
 <!-- link references -->
 [01]: /powershell/module/psreadline/about/about_psreadline#command-history
 [02]: /powershell/scripting/dev-cross-plat/create-cmdline-predictor
-[03]: https://techcommunity.microsoft.com/t5/azure-tools-blog/announcing-general-availability-of-az-tools-predictor/ba-p/3297956
+[03]: https://techcommunity.microsoft.com/blog/azuretoolsblog/announcing-general-availability-of-az-tools-predictor/3297956
 [04]: https://www.powershellgallery.com/packages/CompletionPredictor
 [05]: https://www.powershellgallery.com/packages/Microsoft.PowerShell.PSResourceGet
 [06]: media/using-predictors/completion-predictor.gif
