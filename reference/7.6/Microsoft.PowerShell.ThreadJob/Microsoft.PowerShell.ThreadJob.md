@@ -9,7 +9,7 @@ schema: 2.0.0
 title: Microsoft.PowerShell.ThreadJob
 ---
 
-# Microsoft.PowerShell. Module
+# Microsoft.PowerShell.ThreadJob Module
 
 ## Description
 
@@ -17,7 +17,7 @@ This module extends the existing PowerShell **BackgroundJob** to include a new t
 (**ThreadJob**). This is a lighter weight solution for running concurrent PowerShell scripts that
 works within the existing PowerShell job infrastructure.
 
-## ThreadJob Cmdlets
+## Microsoft.PowerShell.ThreadJob Cmdlets
 
 ### [Start-ThreadJob](Start-ThreadJob.md)
 
