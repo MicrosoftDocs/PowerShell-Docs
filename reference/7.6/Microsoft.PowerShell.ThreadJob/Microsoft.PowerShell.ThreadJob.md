@@ -5,10 +5,11 @@ Locale: en-US
 Module Guid: a84b375d-c1d6-4a1c-bcb7-8059bc28cd98
 Module Name: Microsoft.PowerShell.ThreadJob
 ms.date: 04/07/2026
-title: Microsoft.PowerShell.ThreadJob Module
+schema: 2.0.0
+title: Microsoft.PowerShell.ThreadJob
 ---
 
-# ThreadJob Module
+# Microsoft.PowerShell. Module
 
 ## Description
 
