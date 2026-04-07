@@ -1,5 +1,5 @@
 ---
-Download Help Link: https://aka.ms/powershell75-help
+Download Help Link: https://aka.ms/powershell76-help
 Help Version: 7.6.0.0
 Locale: en-US
 Module Guid: fb6cc51d-c096-4b38-b78d-0fed6277096a

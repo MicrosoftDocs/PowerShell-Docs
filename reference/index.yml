@@ -10,7 +10,7 @@ metadata:
   ms.collection: collection
   author: sdwheeler
   ms.author: sewhee
-  ms.date: 03/18/2025
+  ms.date: 04/07/2026
   no-loc: [Discord, Slack, Spiceworks, "Stack Overflow" ]
 
 # highlightedContent section (optional)
@@ -138,7 +138,7 @@ tools:
     # Card 2
     - title: PowerShell Tech Community
       imageSrc: /media/hubs/powershell/i_group-feedback.svg
-      url: https://techcommunity.microsoft.com/t5/powershell/ct-p/WindowsPowerShell
+      url: https://techcommunity.microsoft.com/category/WindowsPowerShell
     # Card 3
     - title: DSC Community
       imageSrc: /media/hubs/powershell/i_group-feedback.svg

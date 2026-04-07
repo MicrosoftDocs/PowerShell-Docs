@@ -1,6 +1,6 @@
 ---
 description: List of resources created for and by PowerShell users
-ms.date: 03/10/2026
+ms.date: 04/07/2026
 no-loc: [Discord, Slack, Spiceworks, "Stack Overflow" ]
 title: PowerShell community support resources
 ---
@@ -34,5 +34,5 @@ For information about our support policy, see the [PowerShell Support Lifecycle]
 [06]: https://forums.powershell.org/
 [07]: https://github.com/powershell/powershell/issues
 [08]: https://stackoverflow.com/questions/tagged/powershell
-[09]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
+[09]: https://techcommunity.microsoft.com/category/WindowsPowerShell
 [10]: https://www.reddit.com/r/PowerShell/
