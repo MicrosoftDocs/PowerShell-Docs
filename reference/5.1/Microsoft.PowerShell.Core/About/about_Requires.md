@@ -211,11 +211,11 @@ For example:
 
 #### -RunAsAdministrator
 
-When this switch parameter is added to your `#Requires` statement, it specifies
-that the PowerShell session in which you're running the script must be started
-with elevated user rights. The **RunAsAdministrator** parameter is ignored on a
-non-Windows operating system. The **RunAsAdministrator** parameter was
-introduced in PowerShell 4.0.
+When this `[switch]` parameter is added to your `#Requires` statement, it
+specifies that the PowerShell session in which you're running the script must
+be started with elevated user rights. The **RunAsAdministrator** parameter is
+ignored on a non-Windows operating system. The **RunAsAdministrator** parameter
+was introduced in PowerShell 4.0.
 
 For example:
 

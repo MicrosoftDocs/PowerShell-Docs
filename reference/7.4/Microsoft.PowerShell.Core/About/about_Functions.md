@@ -263,7 +263,7 @@ For more information about the standard PowerShell verbs, see
 ## Functions with parameters
 
 You can use parameters with functions, including named parameters, positional
-parameters, switch parameters, and dynamic parameters. For more information
+parameters, `[switch]` parameters, and dynamic parameters. For more information
 about dynamic parameters in functions, see
 [about_Functions_Advanced_Parameters][09].
 
@@ -403,13 +403,12 @@ Get-Extension myTextFile
 myTextFile.txt
 ```
 
-### Switch parameters
+### `[switch]` parameters
 
 A switch is a parameter that doesn't require a value. Instead, you type the
-function name followed by the name of the switch parameter.
+function name followed by the name of the `[switch]` parameter.
 
-To define a switch parameter, specify the type `[switch]` before the parameter
-name, as shown in the following example:
+The following example shows how you define a `[switch]` parameter:
 
 ```powershell
 function Switch-Item {
@@ -419,8 +418,9 @@ function Switch-Item {
 }
 ```
 
-When you type the `On` switch parameter after the function name, the function
-displays `Switch on`. Without the switch parameter, it displays `Switch off`.
+When you type the `On` `[switch]` parameter after the function name, the
+function displays `Switch on`. Without the `[switch]` parameter, it displays
+`Switch off`.
 
 ```powershell
 Switch-Item -On
