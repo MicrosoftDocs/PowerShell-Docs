@@ -84,13 +84,14 @@ S - Pause the current pipeline and return to the command prompt. Type "exit" to 
 This prompt is localized in PowerShell so the language changes based on the language of your
 operating system. This is one more thing that PowerShell manages for you.
 
-### Switch parameters
+### `[switch]` parameters
 
-Let's take quick moment to look at ways to pass a value to a switch parameter. The main reason I
-call this out is that you often want to pass parameter values to functions you call.
+Let's take a quick moment to look at ways to pass a value to a `[switch]` parameter. The main
+reason I call this out is that you often want to pass parameter values to functions you call.
 
-The first approach is a specific parameter syntax that can be used for all parameters but you mostly
-see it used for switch parameters. You specify a colon to attach a value to the parameter.
+The first approach is a specific parameter syntax that can be used for all parameters but you
+mostly see it used for `[switch]` parameters. You specify a colon to attach a value to the
+parameter.
 
 ```powershell
 Remove-Item -Path:* -WhatIf:$true

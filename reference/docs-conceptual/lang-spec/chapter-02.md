@@ -556,7 +556,7 @@ matching parameters to arguments is called _parameter binding_.
 
 There are three kinds of argument:
 
-- Switch parameter ([§8.10.5][§8.10.5]) -- This has the form _command-parameter_ where
+- `[switch]` parameter ([§8.10.5][§8.10.5]) -- This has the form _command-parameter_ where
   _first-parameter-char_ and _parameter-chars_ together make up the switch name, which corresponds
   to the name of a parameter (without its leading `-`) in the command being invoked. If the trailing
   colon is omitted, the presence of this argument indicates that the corresponding parameter be set

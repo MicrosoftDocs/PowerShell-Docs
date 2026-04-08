@@ -196,10 +196,10 @@ a module manifest. The script defines the members that the script module exports
 
 The command interpreter that's used to pass commands to the operating system.
 
-### switch parameter
+### `[switch]` parameter
 
-A parameter that doesn't take an argument. The value of a switch parameter defaults to `$false`.
-When a switch parameter is used, its value becomes `$true`.
+A parameter that doesn't take an argument. The value of a `[switch]` parameter defaults to
+`$false`. When a `[switch]` parameter is used, its value becomes `$true`.
 
 ## T
 

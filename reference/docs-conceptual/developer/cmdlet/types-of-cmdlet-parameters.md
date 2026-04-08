@@ -6,7 +6,7 @@ title: Types of Cmdlet Parameters
 # Types of Cmdlet Parameters
 
 This topic describes the different types of parameters that you can declare in cmdlets. Cmdlet
-parameters can be positional, named, required, optional, or switch parameters.
+parameters can be positional, named, required, optional, or `[switch]` parameters.
 
 ## Positional and Named Parameters
 
@@ -98,18 +98,17 @@ public string UserName
 private string userName;
 ```
 
-## Switch Parameters
+## `[switch]` parameters
 
 PowerShell provides a [System.Management.Automation.SwitchParameter][02] type that allows you to
 define a parameter whose default value `false` unless the parameter is specified when the cmdlet is
-called. Whenever possible, use switch parameters instead of Boolean parameters.
+called. Whenever possible, use `[switch]` parameters instead of Boolean parameters.
 
 Consider the following example. Many PowerShell cmdlets return output. However, these cmdlets have a
-`PassThru` switch parameter that overrides the default behavior. When you use the `PassThru`
+`PassThru` `[switch]` parameter that overrides the default behavior. When you use the `PassThru`
 parameter, the cmdlet returns output objects to the pipeline.
 
-To define a switch parameter, declare the property as the `[SwitchParameter]` type, as shown in the
-following sample.
+The following sample shows how to define a `[switch]` parameter:
 
 ```csharp
 [Parameter()]
@@ -135,18 +134,18 @@ protected override void ProcessRecord()
 } // End ProcessRecord
 ```
 
-By default, switch parameters are excluded from positional parameters. You _can_ override that in
-the **Parameter** attribute, but it can confuse users.
+By default, `[switch]` parameters are excluded from positional parameters. You _can_ override that
+in the **Parameter** attribute, but it can confuse users.
 
-Design switch parameters so that using parameter changes the default behavior of the command to a
-less common or more complicated mode. The simplest behavior of a command should be the default
-behavior that doesn't require the use of switch parameters. Base the behavior controlled by the
-switch on the value of the switch, not the presence of the parameter.
+Design `[switch]` parameters so that using the parameter changes the default behavior of the
+command to a less common or more complicated mode. The simplest behavior of a command should be the
+default behavior that doesn't require the use of `[switch]` parameters. Base the behavior
+controlled by the `[switch]` parameter on the _value_ of the parameter, not its _presence_.
 
-There are several ways to test for the presence of a switch parameters:
+There are several ways to test for the presence of a `[switch]` parameter:
 
-- `Invocation.BoundParameters` contains the switch parameter name as a key
-- `PSCmdlet.ParameterSetName` when the switch defines a unique parameter set
+- `MyInvocation.BoundParameters` contains the `[switch]` parameter name as a key
+- `PSCmdlet.ParameterSetName` when the `[switch]` parameter defines a unique parameter set
 
 For example, it's possible to provide an explicit value for the switch using `-MySwitch:$false` or
 splatting. If you only test for the presence of the parameter, the command behaves as if the switch

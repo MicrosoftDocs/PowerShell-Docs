@@ -115,8 +115,8 @@ If a provider doesn't implement any dynamic parameters, the provider help topic 
 
 1. Add the `PossibleValues` element and its child elements. Together, these elements describe the
    values of the dynamic parameter. This element is designed for enumerated values. If the dynamic
-   parameter doesn't take a value, such as is the case with a switch parameter, or the values can't
-   be enumerated, add an empty `PossibleValues` element.
+   parameter doesn't take a value, such as is the case with a `[switch]` parameter, or the values
+   can't be enumerated, add an empty `PossibleValues` element.
 
    The following table lists and describes the `PossibleValues` element and its child elements.
 

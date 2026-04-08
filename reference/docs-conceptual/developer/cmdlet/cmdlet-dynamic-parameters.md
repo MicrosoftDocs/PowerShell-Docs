@@ -9,7 +9,7 @@ title: Cmdlet Dynamic Parameters
 Cmdlets can define parameters that are available to the user under special conditions, such as when
 the argument of another parameter is a specific value. These parameters are added at runtime and are
 referred to as dynamic parameters because they're only added when needed. For example, you can
-design a cmdlet that adds several parameters only when a specific switch parameter is specified.
+design a cmdlet that adds several parameters only when a specific `[switch]` parameter is specified.
 
 > [!NOTE]
 > Providers and PowerShell functions can also define dynamic parameters.

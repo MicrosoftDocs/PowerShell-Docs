@@ -48,9 +48,10 @@ additional confirmation. For these cases, supplement the
 to more finely control the scope of the **Yes to all** response to the confirmation prompt.
 
 If a cmdlet calls the [System.Management.Automation.Cmdlet.ShouldContinue][02] method, the cmdlet
-must also provide a `Force` switch parameter. If the user specifies `Force` when the user invokes
-the cmdlet, the cmdlet should still call [System.Management.Automation.Cmdlet.ShouldProcess][03],
-but it should bypass the call to [System.Management.Automation.Cmdlet.ShouldContinue][02].
+must also provide a `Force` `[switch]` parameter. If the user specifies `Force` when the user
+invokes the cmdlet, the cmdlet should still call
+[System.Management.Automation.Cmdlet.ShouldProcess][03], but it should bypass the call to
+[System.Management.Automation.Cmdlet.ShouldContinue][02].
 
 [System.Management.Automation.Cmdlet.ShouldContinue][02] will throw an exception when it's called
 from a non-interactive environment where the user can't be prompted. Adding a `Force` parameter
