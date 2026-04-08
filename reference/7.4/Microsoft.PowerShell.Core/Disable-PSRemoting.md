@@ -235,7 +235,7 @@ A loopback connection is created when the following conditions are met:
 - The computer name to connect to is 'localhost'.
 - No credentials are passed in. Current logged in user (implicit credentials) is used for the
   connection.
-- The **EnableNetworkAccess** switch parameter is used.
+- The **EnableNetworkAccess** `[switch]` parameter is used.
 
 For more information on loopback connections, see [New-PSSession](New-PSSession.md) document.
 
