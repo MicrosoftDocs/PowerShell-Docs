@@ -318,8 +318,8 @@ was added. Switch values are also supported.
 
 ## Improved backwards compatibility with Windows PowerShell
 
-For Windows, a new switch parameter **UseWindowsPowerShell** is added to `Import-Module`. This
-switch creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
+For Windows, a new `[switch]` parameter **UseWindowsPowerShell** is added to `Import-Module`. This
+parameter creates a proxy module in PowerShell 7 that uses a local Windows PowerShell process to
 implicitly run any cmdlets contained in that module. For more information, see [Import-Module][14].
 
 For more information on which Microsoft modules work with PowerShell 7.0, see the
@@ -818,8 +818,8 @@ When PowerShell starts up, it automatically includes `$windir\System32` as part 
 `PSModulePath` environment variable. However, it only exposes modules to `Get-Module` and
 `Import-Module` if its `CompatiblePSEdition` is marked as compatible with `Core`.
 
-You can override this behavior to show all modules using the `-SkipEditionCheck` switch parameter.
-We've also added a `PSEdition` property to the table output.
+You can override this behavior to show all modules using the `-SkipEditionCheck` `[switch]`
+parameter. We've also added a `PSEdition` property to the table output.
 
 ### `-lp` alias for all `-LiteralPath` parameters
 

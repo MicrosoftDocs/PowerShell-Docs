@@ -5,7 +5,8 @@ title: How to Declare Cmdlet Parameters
 ---
 # How to Declare Cmdlet Parameters
 
-These examples show how to declare named, positional, required, optional, and switch parameters. These examples also show how to define a parameter alias.
+These examples show how to declare named, positional, required, optional, and `[switch]`
+parameters. These examples also show how to define a parameter alias.
 
 ## How to Declare a Named Parameter
 
@@ -69,7 +70,7 @@ For more information about the Parameter attribute, see [Parameter Attribute Dec
     private string userName;
     ```
 
-## How to Declare a Switch Parameter
+## How to Declare a `[switch]` parameter
 
 - Define a public property as type [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter), and then declare the Parameter attribute.
 

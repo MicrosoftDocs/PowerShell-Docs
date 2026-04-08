@@ -36,7 +36,7 @@ The rules for converting any value to type bool are as follows:
   converted to True.
 - A value of null type is converted to False.
 - A string of length 0 is converted to False; a string of length > 0 is converted to True.
-- A switch parameter with value `$true` is converted to True, and one with value `$false` is
+- A `[switch]` parameter with value `$true` is converted to True, and one with value `$false` is
   converted to False.
 - All other non-null reference type values are converted to True.
 

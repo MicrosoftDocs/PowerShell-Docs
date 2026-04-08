@@ -23,7 +23,8 @@ For more information about how background jobs are handled at the command line, 
 
 To write a cmdlet that can be run as a background job, you must complete the following tasks:
 
-- Define an `asJob` switch parameter so that the user can decide whether to run the cmdlet as a background job.
+- Define an `AsJob` `[switch]` parameter so that the user can decide whether to run the cmdlet as a
+  background job.
 
 - Create an object that derives from the [System.Management.Automation.Job](/dotnet/api/System.Management.Automation.Job) class. This object can be a custom job object or a job object provided by Windows PowerShell, such as a [System.Management.Automation.PSEventJob](/dotnet/api/System.Management.Automation.PSEventJob) object.
 

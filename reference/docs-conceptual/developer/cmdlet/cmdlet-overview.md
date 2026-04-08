@@ -49,8 +49,8 @@ about this attribute, see [Cmdlet Attribute Declaration](cmdlet-attribute-declar
 ### Cmdlet parameter
 
 The public properties that define the parameters that are available to the user or to the
-application that is running the cmdlet. Cmdlets can have required, named, positional, and *switch*
-parameters. Switch parameters allow you to define parameters that are evaluated only if the
+application that is running the cmdlet. Cmdlets can have required, named, positional, and `[switch]`
+parameters. `[switch]` parameters allow you to define parameters that are evaluated only if the
 parameters are specified in the call. For more information about the different types of parameters,
 see [Cmdlet Parameters](cmdlet-parameters.md).
 

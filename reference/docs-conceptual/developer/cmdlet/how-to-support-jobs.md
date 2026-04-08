@@ -11,8 +11,8 @@ information about background jobs, see [Background Jobs](./background-jobs.md).
 
 ## To support jobs
 
-1. Define an `AsJob` switch parameter so that the user can decide whether to run the cmdlet as a
-   job.
+1. Define an `AsJob` `[switch]` parameter so that the user can decide whether to run the cmdlet as
+   a job.
 
     The following example shows an AsJob parameter declaration.
 

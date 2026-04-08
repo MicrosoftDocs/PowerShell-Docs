@@ -160,7 +160,7 @@ Many thanks to **@CarloToso** and others for all the work on improving web cmdle
 - Add `Get-SecureRandom` cmdlet ([#19587][19587])
 - `Set-Clipboard -AsOSC52` for remote usage ([#18222][18222]) (Thanks @dkaszews!)
 - Speed up `Resolve-Path` relative path resolution ([#19171][19171]) (Thanks @MartinGC94!)
-- Added the switch parameter `-CaseInsensitive` to `Select-Object` and `Get-Unique` cmdlets
+- Added the `[switch]` parameter `-CaseInsensitive` to `Select-Object` and `Get-Unique` cmdlets
   ([#19683][19683]) (Thanks @ArmaanMcleod!)
 - `Restart-Computer` and `Stop-Computer` should fail with error when not running via sudo on Unix
   ([#19824][19824])
