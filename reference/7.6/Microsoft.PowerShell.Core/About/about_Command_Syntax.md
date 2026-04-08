@@ -203,7 +203,7 @@ The syntax diagrams use the following symbols:
   `[switch]` parameter, the value is set to `$true`.
 
   For example, the **ListImported** parameter of `Get-Command` is a `[switch]`
-  parameter. When you use the **ListImported** parameter, the cmdlet return
+  parameter. When you use the **ListImported** parameter, the cmdlet returns
   only commands that were imported from modules in the current session.
 
   ```Syntax

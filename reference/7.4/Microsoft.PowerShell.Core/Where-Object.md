@@ -263,7 +263,7 @@ command.
   All PowerShell comparison operators are valid in the scriptblock format. For more information,
   see [about_Comparison_Operators](./About/about_Comparison_Operators.md).
 
-- **Simplified syntax**. To enable the simiplified syntax, `Where-Object` includes 31 `[switch]`
+- **Simplified syntax**. To enable the simplified syntax, `Where-Object` includes 31 `[switch]`
   parameters that represent the comparison operators. The simplified syntax is easier to read and
   write than the scriptblock syntax. You can combine one of the `[switch]` parameters with the
   **Property** and **Value** parameters to create a command that filters objects based on the

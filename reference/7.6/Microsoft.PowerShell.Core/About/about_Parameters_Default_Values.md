@@ -163,7 +163,7 @@ under different conditions. PowerShell evaluates the scriptblock and uses the
 result as the default parameter value.
 
 The `Format-Table:AutoSize` key sets that `[switch]` parameter to a default
-value of `$true` The `if` statement contains a condition that the `$Host.Name`
+value of `$true`. The `if` statement contains a condition that the `$Host.Name`
 must be `ConsoleHost`.
 
 ```powershell
