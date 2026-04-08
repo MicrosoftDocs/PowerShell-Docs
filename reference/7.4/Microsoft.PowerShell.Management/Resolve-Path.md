@@ -113,8 +113,8 @@ Resolve-Path -LiteralPath 'test[xml]'
 ### Example 7: Resolve a path relative to another folder
 
 This example uses the **RelativeBasePath** parameter to resolve the path of the `pwsh` executable
-relative to `$Env:TEMP`. When the command includes the **Relative** switch parameter, it returns a
-**String** representing the relative path from `$Env:TEMP` to the `pwsh` executable.
+relative to `$Env:TEMP`. When the command includes the **Relative** `[switch]` parameter, it
+returns a **String** representing the relative path from `$Env:TEMP` to the `pwsh` executable.
 
 ```powershell
 $ExecutablePath = Get-Command -Name pwsh | Select-Object -ExpandProperty Source
@@ -211,7 +211,7 @@ Accept wildcard characters: False
 Specifies a path to resolve the relative path from. When you use this parameter, the cmdlet returns
 the **System.Management.Automation.PathInfo** object for the resolved path.
 
-When you use this parameter with the **Relative** switch parameter, the cmdlet returns a string
+When you use this parameter with the **Relative** `[switch]` parameter, the cmdlet returns a string
 representing the relative path from **RelativeBasePath** to **Path**.
 
 This parameter was added in PowerShell 7.4.
