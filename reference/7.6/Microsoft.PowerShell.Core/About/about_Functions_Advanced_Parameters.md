@@ -1,7 +1,7 @@
 ---
 description: Explains how to add parameters to advanced functions.
 Locale: en-US
-ms.date: 03/10/2026
+ms.date: 04/08/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions_Advanced_Parameters
@@ -173,29 +173,28 @@ param(
 )
 ```
 
-## Switch parameters
+## `[switch]` parameters
 
-Switch parameters are parameters that take no parameter value. Instead, they
-convey a Boolean true-or-false value through their presence or absence, so that
-when a switch parameter is present it has a **true** value and when absent it
-has a **false** value.
+`[switch]` parameters are parameters that take no parameter value. Instead,
+they convey a Boolean true-or-false value through their presence or absence, so
+that when a `[switch]` parameter is present it has a **true** value and when
+absent it has a **false** value.
 
-For example, the **Recurse** parameter of `Get-ChildItem` is a switch
+For example, the **Recurse** parameter of `Get-ChildItem` is a `[switch]`
 parameter.
 
-To create a switch parameter in a function, specify the `[switch]` type in the
-parameter definition. The following example shows the definition of a switch
-parameter that could be used to provide an option to output data as a byte
-array:
+The following example shows the definition of a `[switch]` parameter that could
+be used to provide an option to output data as a byte array:
 
 ```powershell
 param([switch]$AsByteArray)
 ```
 
-Switch parameters are easy to use and are preferred over Boolean parameters
+`[switch]` parameters are easy to use and are preferred over Boolean parameters
 that have a less natural syntax for PowerShell.
 
-To use a switch parameter, include the parameter in the command. For example:
+To use a `[switch]` parameter, include the parameter in the command. For
+example:
 
 `-IncludeAll`
 
@@ -203,38 +202,39 @@ To use a Boolean parameter, you must provide the parameter and a Boolean value.
 
 `-IncludeAll $true`
 
-When creating switch parameters, choose the parameter name carefully. Be sure
-that the parameter name communicates the effect of the parameter to the user.
-Avoid ambiguous terms, such as **Filter** or **Maximum** that might imply a
-value is required.
+When creating `[switch]` parameters, choose the parameter name carefully. Be
+sure that the parameter name communicates the effect of the parameter to the
+user. Avoid ambiguous terms, such as **Filter** or **Maximum** that might imply
+a value is required.
 
-### Switch parameter design considerations
+### `[switch]` parameter design considerations
 
-- Don't set a default value for a switch parameter. Switch parameter always
-  default to false.
-- Don't make switch parameters positional. By default, switch parameters are
-  excluded from positional parameters. You _can_ override that in the
-  **Parameter** attribute, but it can confuse users.
-- Design switch parameters so that using parameter changes the default behavior
+- Don't set a default value for a `[switch]` parameter. `[switch]` parameters
+  always default to false.
+- Don't make `[switch]` parameters positional. By default, `[switch]`
+  parameters are excluded from positional parameters. You _can_ override that
+  in the **Parameter** attribute, but it can confuse users.
+- Design `[switch]` parameters so that using them changes the default behavior
   of the command to a less common or more complicated mode. The simplest
   behavior of a command should be the default behavior that doesn't require the
-  use of switch parameters.
-- Don't make switch parameters mandatory. The only case where it's helpful to
-  make a switch parameter mandatory is when it's needed to differentiate a
-  parameter set.
-- Use the switch parameter variable directly in a conditional expression. The
-  `SwitchParameter` type implicitly converts to Boolean. For example:
+  use of `[switch]` parameters.
+- Don't make `[switch]` parameters mandatory. The only case where it's helpful
+  to make a `[switch]` parameter mandatory is when it's needed to differentiate
+  a parameter set.
+- Use the `[switch]` parameter variable directly in a conditional expression.
+  The `SwitchParameter` type implicitly converts to Boolean. For example:
 
   ```powershell
   if ($MySwitch) { ... }
   ```
 
-- Always base the behavior controlled by the switch on the value of the switch,
-  not the presence of the parameter. There are several ways to test for the
-  presence of a switch parameters:
+- Always base the behavior controlled by the `[switch]` parameter on the
+  _value_ of the parameter, not its _presence_. There are several ways to test
+  for the presence of a `[switch]` parameters:
 
-  - `$PSBoundParameters` contains the switch parameter name as a key
-  - `$MyInvocation.BoundParameters` contains the switch parameter name as a key
+  - `$PSBoundParameters` contains the `[switch]` parameter name as a key
+  - `$MyInvocation.BoundParameters` contains the `[switch]` parameter name as a
+    key
   - `$PSCmdlet.ParameterSetName` when the switch defines a unique parameter set
 
   For example, it's possible to provide an explicit value for the switch using
@@ -802,7 +802,7 @@ Use the **System.Obsolete** attribute to mark parameters that are no longer
 supported. This can be useful when you want to remove a parameter from a
 function but you don't want to break existing scripts that use the function.
 
-For example, consider a function that has a **NoTypeInformation** switch
+For example, consider a function that has a **NoTypeInformation** `[switch]`
 parameter that controls whether type information is included in the output. You
 want to make that behavior the default and remove the parameter from the
 function. However, you don't want to break existing scripts that use the
@@ -812,7 +812,7 @@ explains the change.
 ```powershell
 param(
     [System.Obsolete("The NoTypeInformation parameter is obsolete.")]
-    [SwitchParameter]$NoTypeInformation
+    [switch]$NoTypeInformation
 )
 ```
 

@@ -180,18 +180,18 @@ in the next section where this variable is used.
 
 ## Parameters
 
-A unique feature of the PowerShell `switch` is that it has a number of switch parameters that
+A unique feature of the PowerShell `switch` is that it has a number of `[switch]` parameters that
 change how it performs.
 
 ### -CaseSensitive
 
 The matches aren't case-sensitive by default. If you need to be case-sensitive, you can use
-`-CaseSensitive`. This can be used in combination with the other switch parameters.
+`-CaseSensitive`. This can be used in combination with the other `[switch]` parameters.
 
 ### -Wildcard
 
-We can enable wildcard support with the `-Wildcard` switch. This uses the same wildcard logic as the
-`-like` operator to do each match.
+We can enable wildcard support with the `-Wildcard` `[switch]` parameter. This uses the same
+wildcard logic as the `-like` operator to do each match.
 
 ``` powershell
 $Message = 'Warning, out of disk space'

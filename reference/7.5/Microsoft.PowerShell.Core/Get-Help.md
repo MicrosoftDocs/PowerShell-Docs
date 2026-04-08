@@ -191,7 +191,7 @@ Get-Help Format-Table -Parameter GroupBy
 ```
 
 The **Examples** parameter displays the help file's **NAME** and **SYNOPSIS** sections, and all the
-Examples. You can't specify an Example number because the **Examples** parameter is a switch
+Examples. You can't specify an Example number because the **Examples** parameter is a `[switch]`
 parameter.
 
 The **Parameter** parameter displays only the descriptions of the specified parameters. If you

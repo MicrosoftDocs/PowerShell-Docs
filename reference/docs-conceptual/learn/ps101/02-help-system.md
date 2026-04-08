@@ -251,14 +251,14 @@ Furthermore, **InstanceId** has its own pair of square brackets, indicating that
 parameter similar to the **LogName** parameter. Following the datatype, an empty set of square
 brackets implies that **InstanceId** can accept multiple values.
 
-### Switch parameters
+### `[switch]` parameters
 
-A parameter that doesn't require a value is called a switch parameter. You can easily identify
-switch parameters because there's no datatype following the parameter name. When you specify a
-switch parameter, its value is `true`. When you don't specify a switch parameter, its value is
-`false`.
+A parameter that doesn't require a value is called a `[switch]` parameter. You can easily identify
+`[switch]` parameters because there's no datatype following the parameter name. When you specify a
+`[switch]` parameter, its value is `true`. When you don't specify a `[switch]` parameter, its value
+is `false`.
 
-The second parameter set includes a **List** parameter, which is a switch parameter. When you
+The second parameter set includes a **List** parameter, which is a `[switch]` parameter. When you
 specify the **List** parameter, it returns a list of event logs on the local computer.
 
 ```Syntax

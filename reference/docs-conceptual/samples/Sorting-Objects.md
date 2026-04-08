@@ -35,7 +35,8 @@ LastWriteTime          Name
 ...
 ```
 
-You can also sort the objects in reverse order by specifying the **Descending** switch parameter.
+You can also sort the objects in reverse order by specifying the **Descending** `[switch]`
+parameter.
 
 ```powershell
 Get-ChildItem |

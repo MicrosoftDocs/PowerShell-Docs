@@ -110,9 +110,9 @@ cmdlet, do not make the `Process` parameter for another cmdlet a
 
 If your parameter takes only `true` and `false`, define the parameter as type
 [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter).
-A switch parameter is treated as `true` when it is specified in a command. If the parameter is not
-included in a command, Windows PowerShell considers the value of the parameter to be `false`. Do not
-define Boolean parameters.
+A `[switch]` parameter is treated as `true` when it is specified in a command. If the parameter is
+not included in a command, Windows PowerShell considers the value of the parameter to be `false`.
+Do not define Boolean parameters.
 
 If your parameter needs to differentiate between 3 values: $true, $false and "unspecified", then
 define a parameter of type Nullable\<bool>. The need for a 3rd, "unspecified" value typically occurs

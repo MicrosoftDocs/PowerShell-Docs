@@ -145,10 +145,11 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-The `SimpleMatch` parameter is a switch parameter that indicates whether the cmdlet is to explicitly
-match the patterns as they are supplied. When the user specifies the parameter at the command line
-(`true`), the cmdlet uses the patterns as they are supplied. If the parameter is not specified
-(`false`), the cmdlet uses regular expressions. The default for this parameter is `false`.
+The `SimpleMatch` parameter is a `[switch]` parameter that indicates whether the cmdlet is to
+explicitly match the patterns as they are supplied. When the user specifies the parameter at the
+command line (`true`), the cmdlet uses the patterns as they are supplied. If the parameter is not
+specified (`false`), the cmdlet uses regular expressions. The default for this parameter is
+`false`.
 
 ```csharp
 [Parameter]
@@ -160,12 +161,12 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-The `CaseSensitive` parameter is a switch parameter that indicates whether a case-sensitive search
-is performed. When the user specifies the parameter at the command line (`true`), the cmdlet checks
-for the uppercase and lowercase of characters when comparing patterns. If the parameter is not
-specified (`false`), the cmdlet does not distinguish between uppercase and lowercase. For example
-"MyFile" and "myfile" would both be returned as positive hits. The default for this parameter is
-`false`.
+The `CaseSensitive` parameter is a `[switch]` parameter that indicates whether a case-sensitive
+search is performed. When the user specifies the parameter at the command line (`true`), the cmdlet
+checks for the uppercase and lowercase of characters when comparing patterns. If the parameter is
+not specified (`false`), the cmdlet does not distinguish between uppercase and lowercase. For
+example "MyFile" and "myfile" would both be returned as positive hits. The default for this
+parameter is `false`.
 
 ```csharp
 [Parameter]

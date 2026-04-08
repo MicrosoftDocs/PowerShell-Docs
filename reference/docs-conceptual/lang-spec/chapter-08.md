@@ -228,8 +228,8 @@ governing arguments are as follows:
 - Putting parentheses around an argument causes that expression to be evaluated with the result
   being passed instead of the text of the original expression.
 
-- To pass an argument that looks like a switch parameter ([§2.3.4][§2.3.4]) but is not intended as
-  such, enclose that argument in quotes.
+- To pass an argument that looks like a `[switch]` parameter ([§2.3.4][§2.3.4]) but is not intended
+  as such, enclose that argument in quotes.
 
 - When specifying an argument that matches a parameter having the `[switch]` type constraint
   ([§8.10.5][§8.10.5]), the presence of the argument name on its own causes that parameter to be
@@ -1386,7 +1386,7 @@ Find-Str "abcabc" 2 # 2nd argument present, so it is used for $StartPos
 
 ### 8.10.5 The [switch] type constraint
 
-When a switch parameter is passed, the corresponding parameter in the command must be constrained by
+When a `[switch]` parameter is passed, the corresponding parameter in the command must be constrained by
 the type switch. Type switch has two values, True and False.
 
 Consider the following function definition and calls:
@@ -1637,8 +1637,8 @@ Several of these steps involve conversion, as described in [§6.][§6.] However,
 used in binding is not exactly the same as that used in language conversions. Specifically,
 
 - Although the value `$null` can be cast to bool, `$null` cannot be bound to `bool`.
-- When the value `$null` is passed to a switch parameter for a cmdlet, it is treated as if `$true`
-  was passed. However, when passed to a switch parameter for a function, it is treated as if
+- When the value `$null` is passed to a `[switch]` parameter for a cmdlet, it is treated as if `$true`
+  was passed. However, when passed to a `[switch]` parameter for a function, it is treated as if
   `$false` was passed.
 - Parameters of type bool or switch can only bind to numeric or bool arguments.
 - If the parameter type is not a collection, but the argument is some sort of collection, no

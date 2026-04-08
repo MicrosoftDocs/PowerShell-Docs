@@ -104,8 +104,8 @@ $PSDefaultParameterValues = @{
 ```
 
 The cmdlet and parameter names can contain wildcard characters. Use `$true` and
-`$false` to set values for switch parameters, such as **Verbose**. This example
-sets the common parameter **Verbose** to `$true` for all commands.
+`$false` to set values for `[switch]` parameters, such as **Verbose**. This
+example sets the common parameter **Verbose** to `$true` for all commands.
 
 ```powershell
 $PSDefaultParameterValues = @{'*:Verbose'=$true}
@@ -162,9 +162,9 @@ You can use a scriptblock to specify different default values for a parameter
 under different conditions. PowerShell evaluates the scriptblock and uses the
 result as the default parameter value.
 
-The `Format-Table:AutoSize` key sets that switch parameter to a default value
-of `$true` The `if` statement contains a condition that the `$Host.Name` must
-be `ConsoleHost`.
+The `Format-Table:AutoSize` key sets that `[switch]` parameter to a default
+value of `$true`. The `if` statement contains a condition that the `$Host.Name`
+must be `ConsoleHost`.
 
 ```powershell
 $PSDefaultParameterValues = @{

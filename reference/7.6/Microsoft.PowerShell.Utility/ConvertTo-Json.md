@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/16/2024
+ms.date: 04/08/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-json?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Json
@@ -28,21 +28,19 @@ The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript O
 property values, and the methods are removed.
 
 > [!NOTE]
-> As of PowerShell 7.2, Extended Type System properties of **DateTime** and
-> **String** objects are no longer serialized and only the simple object is
-> converted to JSON format
+> As of PowerShell 7.2, Extended Type System properties of **DateTime** and **String** objects are
+> no longer serialized and only the simple object is converted to JSON format
 
-You can then use the `ConvertFrom-Json` cmdlet to convert a JSON-formatted string to a JSON
-object, which is easily managed in PowerShell.
+You can then use the `ConvertFrom-Json` cmdlet to convert a JSON-formatted string to a JSON object,
+which is easily managed in PowerShell.
 
 Many web sites use JSON instead of XML to serialize data for communication between servers and
 web-based apps.
 
-As of PowerShell 7.1, `ConvertTo-Json` emits a warning if the depth of the input object exceeds
-the depth specified for the command. This prevents unwanted data loss when converting objects.
+As of PowerShell 7.1, `ConvertTo-Json` emits a warning if the depth of the input object exceeds the
+depth specified for the command. This prevents unwanted data loss when converting objects.
 
-As of PowerShell 7.5-preview.3, `ConvertTo-Json` can serialize **BigInteger** values as raw JSON
-numbers.
+As of PowerShell 7.5, `ConvertTo-Json` can serialize **BigInteger** values as raw JSON numbers.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -209,8 +207,8 @@ Accept wildcard characters: False
 ### -Depth
 
 Specifies how many levels of contained objects are included in the JSON representation. The value
-can be any number from `0` to `100`. The default value is `2`. `ConvertTo-Json` emits a
-warning if the number of levels in an input object exceeds this number.
+can be any number from `0` to `100`. The default value is `2`. `ConvertTo-Json` emits a warning if
+the number of levels in an input object exceeds this number.
 
 ```yaml
 Type: System.Int32
@@ -226,7 +224,8 @@ Accept wildcard characters: False
 
 ### -EnumsAsStrings
 
-Provides an alternative serialization option that converts all enumerations to their string representation.
+Provides an alternative serialization option that converts all enumerations to their string
+representation.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,9 +246,9 @@ characters (like newline) are escaped.
 
 Acceptable values are:
 
-- Default - Only control characters are escaped.
-- EscapeNonAscii - All non-ASCII and control characters are escaped.
-- EscapeHtml - HTML (`<`, `>`, `&`, `'`, `"`) and control characters are escaped.
+- `Default` - Only control characters are escaped.
+- `EscapeNonAscii` - All non-ASCII and control characters are escaped.
+- `EscapeHtml` - HTML (`<`, `>`, `&`, `'`, `"`) and control characters are escaped.
 
 This parameter was introduced in PowerShell 6.2.
 
@@ -292,7 +291,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -23,9 +23,9 @@ method. We recommend that you call this method instead of the
 [System.Management.Automation.Host.PSHostUserInterface.WriteLine](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.WriteLine)
 methods.
 
-You can provide a **PassThru** switch parameter for cmdlets that do not typically return objects.
-When the **PassThru** switch parameter is specified at the command line, the cmdlet is asked to
-return an object. For an example of a cmdlet that has a **PassThru** parameter, see
+You can provide a **PassThru** `[switch]` parameter for cmdlets that do not typically return
+objects. When the **PassThru** `[switch]` parameter is specified at the command line, the cmdlet is
+asked to return an object. For an example of a cmdlet that has a **PassThru** parameter, see
 [Add-History](/powershell/module/Microsoft.PowerShell.Core/Add-History).
 
 ### Error output

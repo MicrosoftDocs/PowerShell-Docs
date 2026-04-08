@@ -7,7 +7,7 @@ title: How to Declare Dynamic Parameters
 
 This example shows how to define dynamic parameters that are added to the cmdlet at runtime. In this
 example, the `Department` parameter is added to the cmdlet whenever the user specifies the
-`Employee` switch parameter. For more information about dynamic parameters, see
+`Employee` `[switch]` parameter. For more information about dynamic parameters, see
 [Cmdlet Dynamic Parameters][02].
 
 ## To define dynamic parameters

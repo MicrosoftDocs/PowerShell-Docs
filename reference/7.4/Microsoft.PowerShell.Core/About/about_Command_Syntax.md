@@ -198,19 +198,18 @@ The syntax diagrams use the following symbols:
 - Parameters with no values
 
   Some parameters don't accept input, so they don't have a parameter value.
-  Parameters without values are _switch parameters_. Switch parameters are used
-  like boolean values. They default to `$false`. When you use a switch
-  parameter, the value is set to `$true`.
+  Parameters without values are _`[switch]` parameters_. `[switch]` parameters
+  are used like boolean values. They default to `$false`. When you use a
+  `[switch]` parameter, the value is set to `$true`.
 
-  For example, the **ListImported** parameter of `Get-Command` is a switch
-  parameter. When you use the **ListImported** parameter, the cmdlet return
+  For example, the **ListImported** parameter of `Get-Command` is a `[switch]`
+  parameter. When you use the **ListImported** parameter, the cmdlet returns
   only commands that were imported from modules in the current session.
 
   ```Syntax
   Get-Command [-ListImported]
   ```
 
-<!-- So what are these `[    ]`? - square brackets, duh! -->
 - Brackets `[  ]` around parameters indicate optional items. A parameter and
   its value can be optional. For example, the **CommandType** parameter of
   `Get-Command` and its value are enclosed in brackets because they're both

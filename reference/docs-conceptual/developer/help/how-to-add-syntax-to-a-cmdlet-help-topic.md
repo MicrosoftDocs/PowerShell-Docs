@@ -109,7 +109,7 @@ aren't required, because they're one of several values that might be used with t
    List all values of enumerations, such as the `-Type` parameter in the previous example, which can
    be set to **basic** or **advanced**.
 
-   Switch parameters, such as `-List` in the previous example, don't have values.
+   `[switch]` parameters, such as `-List` in the previous example, don't have values.
 
 1. Add angle brackets to parameters values that are placeholder, as compared to parameter values
    that are literals.
