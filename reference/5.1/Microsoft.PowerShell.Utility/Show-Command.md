@@ -35,10 +35,10 @@ all installed modules. To find the commands in a module, select the module from 
 drop-down list. To select a command, click the command name.
 
 To use the command window, select a command, either by using the Name or by clicking the command
-name in the **Commands** list. Each parameter set is displayed on a separate tab. Asterisks indicate
-the mandatory parameters. To enter values for a parameter, type the value in the text box or select
-the value from the drop-down box. To add a switch parameter, click to select the parameter check
-box.
+name in the **Commands** list. Each parameter set is displayed on a separate tab. Asterisks
+indicate the mandatory parameters. To enter values for a parameter, type the value in the text box
+or select the value from the drop-down box. To add a `[switch]` parameter, click to select the
+parameter check box.
 
 When you're ready, you can click **Copy** to copy the command that you've created to the clipboard
 or click **Run** to run the command. You can also use the **PassThru** parameter to return the

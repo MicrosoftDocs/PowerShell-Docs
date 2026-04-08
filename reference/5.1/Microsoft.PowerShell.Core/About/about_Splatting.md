@@ -49,7 +49,7 @@ command so you don't pass more than one value for each parameter.
 ## Splatting with hash tables
 
 Use a hash table to splat parameter name and value pairs. You can use this
-format for all parameter types, including positional and switch parameters.
+format for all parameter types, including positional and `[switch]` parameters.
 Positional parameters must be assigned by name.
 
 The following examples compare two `Copy-Item` commands that copy the Test.txt
@@ -68,7 +68,7 @@ table of parameter-name and parameter-value pairs and stores it in the
 variable in a command with splatting. The At symbol (`@HashArguments`) replaces
 the dollar sign (`$HashArguments`) in the command.
 
-To provide a value for the **WhatIf** switch parameter, use `$true` or
+To provide a value for the **WhatIf** `[switch]` parameter, use `$true` or
 `$false`.
 
 ```powershell

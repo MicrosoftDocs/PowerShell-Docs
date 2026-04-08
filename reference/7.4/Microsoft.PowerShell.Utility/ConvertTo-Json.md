@@ -81,8 +81,8 @@ Get-Date | ConvertTo-Json; Get-Date | ConvertTo-Json -AsArray
 ]
 ```
 
-This example shows the output from `ConvertTo-Json` cmdlet with and without the **AsArray** switch
-parameter. You can see the second portion of the output is wrapped in array brackets.
+This example shows the output from the `ConvertTo-Json` cmdlet with and without the **AsArray**
+`[switch]` parameter. You can see the second portion of the output is wrapped in array brackets.
 
 ### Example 3
 

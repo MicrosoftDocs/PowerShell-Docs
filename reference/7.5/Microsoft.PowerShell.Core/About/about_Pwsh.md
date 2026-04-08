@@ -69,15 +69,15 @@ and any parameters. File must be the last parameter in the command, because all
 characters typed after the File parameter name are interpreted as the script
 filepath followed by the script parameters.
 
-Typically, the switch parameters of a script are either included or omitted.
-For example, the following command uses the **All** parameter of the
+Typically, the `[switch]` parameters of a script are either included or
+omitted. For example, the following command uses the **All** parameter of the
 `Get-Script.ps1` script file: `-File .\Get-Script.ps1 -All`
 
-In rare cases, you might need to provide a **Boolean** value for a switch
-parameter. To provide a **Boolean** value for a switch parameter in the value
-of the **File** parameter, Use the parameter normally followed immediately by a
-colon and the boolean value, such as the following:
-`-File .\Get-Script.ps1 -All:$false`.
+In rare cases, you might need to provide a **Boolean** value for a `[switch]`
+parameter. To provide a **Boolean** value for a `[switch]` parameter in the
+value of the **File** parameter, use the parameter normally followed
+immediately by a colon and the boolean value, such as the following: `-File
+.\Get-Script.ps1 -All:$false`.
 
 Parameters passed to the script are passed as literal strings, after
 interpretation by the current shell. For example, if you are in `cmd.exe` and

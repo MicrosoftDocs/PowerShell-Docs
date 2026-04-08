@@ -333,8 +333,8 @@ By default, the `New-CimSession` cmdlet establishes a connection with a remote W
 endpoint for two reasons: to verify that the remote server is listening on the port number that is
 specified using the **Port** parameter, and to verify the specified account credentials. The
 verification is accomplished using a standard WS-Identity operation. You can add the
-**SkipTestConnection** switch parameter if the remote WS-Management endpoint cannot use WS-Identify,
-or to reduce some data transmission time.
+**SkipTestConnection** `[switch]` parameter if the remote WS-Management endpoint cannot use
+WS-Identify, or to reduce some data transmission time.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

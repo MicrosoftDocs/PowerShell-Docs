@@ -198,8 +198,8 @@ Get-Module -ListAvailable BitsTransfer
 # No output
 ```
 
-In both cases, the `-SkipEditionCheck` switch parameter can be used to override
-this behavior:
+In both cases, the `-SkipEditionCheck` `[switch]` parameter can be used to
+override this behavior:
 
 ```powershell
 Get-Module -ListAvailable -SkipEditionCheck BitsTransfer
