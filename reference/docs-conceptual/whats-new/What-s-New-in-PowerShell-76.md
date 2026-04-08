@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.6
 description: New features and changes released in PowerShell 7.6
-ms.date: 03/26/2026
+ms.date: 04/07/2026
 ---
 
 # What's New in PowerShell 7.6
@@ -10,6 +10,8 @@ PowerShell 7.6 includes the following features, updates, and breaking changes. P
 7.6.0 is built on the .NET 10.0.5 runtime.
 
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
+
+[log]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.6.md
 
 ## Updated modules
 
@@ -205,8 +207,6 @@ This release includes the following experimental features:
 [04]: ../learn/experimental-features.md#psredirecttovariable
 [05]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
 [06]: ../learn/experimental-features.md#pssubsystempluginmodel
-
-[log]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/preview.md
 
 [14553]: https://github.com/PowerShell/PowerShell/pull/14553
 [17687]: https://github.com/PowerShell/PowerShell/pull/17687
