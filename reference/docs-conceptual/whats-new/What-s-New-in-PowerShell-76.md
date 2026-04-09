@@ -32,6 +32,9 @@ PowerShell 7.6 includes the following updated modules:
 - Convert `-ChildPath` parameter to `string[]` for `Join-Path` cmdlet ([#24677][24677]) (Thanks
   @ArmaanMcleod!)
 - Remove trailing space from event source name ([#24192][24192]) (Thanks @MartinGC94!)
+- `New-Guid` now generates Version 7 (time-sortable) UUIDs by default instead of Version 4
+  (random). The output format is unchanged. Scripts that depend on fully random GUIDs should use
+  `[guid]::NewGuid()` directly. ([#27033][27033])
 
 ## Tab completion improvements
 
@@ -91,6 +94,8 @@ PowerShell 7.6 includes the following updated modules:
 
 ## Cmdlet improvements
 
+- Change `New-Guid` to generate UUID v7 by default using `Guid.CreateVersion7()`
+  ([#27033][27033])
 - Add implicit localization fallback to `Import-LocalizedData` ([#19896][19896]) (Thanks
   @chrisdent-de!)
 - Add `-Delimiter` parameter to `Get-Clipboard` ([#26572][26572]) (Thanks @MartinGC94!)
@@ -302,3 +307,4 @@ This release includes the following experimental features:
 [26564]: https://github.com/PowerShell/PowerShell/pull/26564
 [26571]: https://github.com/PowerShell/PowerShell/pull/26571
 [26572]: https://github.com/PowerShell/PowerShell/pull/26572
+[27033]: https://github.com/PowerShell/PowerShell/pull/27033
