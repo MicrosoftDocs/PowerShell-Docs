@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 03/26/2026
+ms.date: 04/21/2026
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.5 includes the following features, updates, and breaking changes. PowerShell
-7.5.5 is built on the .NET 9.0.14 runtime.
+PowerShell 7.5.6 includes the following features, updates, and breaking changes. PowerShell
+7.5.6 is built on the .NET 9.0.15 runtime.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
@@ -25,7 +25,7 @@ information about .NET 9, see [What's new in .NET 9][07].
 
 ## Updated modules
 
-PowerShell 7.5.5 includes the following updated modules:
+PowerShell 7.5.6 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.1.1
 - **PSReadLine** v2.3.6
@@ -69,6 +69,8 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Other cmdlet improvements
 
+- Update `MaxVisitCount` and `MaxHashtableKeyCount` if `VisitorSafeValueContext` indicates
+  `SkipLimitCheck` is true for `Import-PowerShellDataFile`
 - Close pipe client handles after creating the child ssh process ([#26822][26822])
 - Fix the progress preference variable in script cmdlets ([#26791][26791]) (Thanks @cmkb3!)
 - Fix `Out-GridView` by replacing the use of obsolete `BinaryFormatter` with custom implementation
@@ -147,6 +149,7 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 - Validate the value for using namespace during semantic checks to prevent declaring invalid
   namespaces ([#21162][21162])
 - Handle global tool specially when prepending `$PSHOME` to PATH ([#24228][24228])
+- Delay update notification for one week to ensure all packages become available ([#27220][27220])
 
 ## Experimental features
 
@@ -353,3 +356,4 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [26165]: https://github.com/PowerShell/PowerShell/pull/26165
 [26791]: https://github.com/PowerShell/PowerShell/pull/26791
 [26822]: https://github.com/PowerShell/PowerShell/pull/26822
+[27220]: https://github.com/PowerShell/PowerShell/pull/27220

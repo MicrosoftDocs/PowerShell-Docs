@@ -1,6 +1,6 @@
 ---
 description: The article discusses the performance characteristics of parallel execution to help you choose the best approach for your code.
-ms.date: 05/15/2025
+ms.date: 04/21/2026
 title: Optimize performance using parallel execution
 ---
 # Optimize performance using parallel execution
@@ -258,7 +258,7 @@ Conclusions
 Much of the information is this article is based on the answers from [Santiago Squarzon][04] and
 [mklement0][05] in this [Stack Overflow post][03].
 
-You may also be interested in the [PSParallelPipeline][06] module created by Santiago Squarzon.
+You might also be interested in the [PSParallelPipeline][06] module created by Santiago Squarzon.
 
 ## Further reading
 
