@@ -90,6 +90,7 @@ versions are:
 - PowerShell 7.4 - previous LTS release
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.15/powershell-7.4.15-linux-arm32.tar.gz`
   - `https://github.com/PowerShell/PowerShell/releases/download/v7.4.15/powershell-7.4.15-linux-arm64.tar.gz`
+
 Use the following shell commands to download and install the package. This script detects whether
 you're running a 32-bit or 64-bit OS and installs the latest stable version of PowerShell for that
 processor type.

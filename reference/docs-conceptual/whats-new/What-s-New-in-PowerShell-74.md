@@ -196,7 +196,6 @@ Other Engine updates
 - Fix incorrect string to type conversion ([#19560][19560]) (Thanks @MartinGC94!)
 - Fix slow execution when many breakpoints are used ([#14953][14953]) (Thanks @nohwnd!)
 - Remove code related to `#Requires -PSSnapin` ([#19320][19320])
-- Delay update notification for one week to ensure all packages become available ([#27220][27220])
 
 ## Experimental Features
 
@@ -345,5 +344,4 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [25229]: https://github.com/PowerShell/PowerShell/pull/25229
 [25568]: https://github.com/PowerShell/PowerShell/pull/25568
 [27139]: https://github.com/PowerShell/PowerShell/pull/27139
-[27220]: https://github.com/PowerShell/PowerShell/pull/27220
 [27229]: https://github.com/PowerShell/PowerShell/pull/27229
