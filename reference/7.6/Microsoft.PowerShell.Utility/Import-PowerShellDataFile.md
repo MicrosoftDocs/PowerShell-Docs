@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/19/2023
+ms.date: 04/20/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/import-powershelldatafile?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-PowerShellDataFile
@@ -33,8 +33,7 @@ The `Import-PowerShellDataFile` cmdlet safely imports key-value pairs from hasht
 `.psd1` file. The values could be imported using `Invoke-Expression` on the contents of the file.
 However, `Invoke-Expression` runs any code contained in the file. This could produce unwanted
 results or execute unsafe code. `Import-PowerShellDataFile` imports the data without invoking the
-code. By default there is a 500 key limit, but this can be bypassed with the **SkipLimitCheck**
-switch.
+code.
 
 ## EXAMPLES
 
@@ -106,8 +105,13 @@ Accept wildcard characters: True
 
 ### -SkipLimitCheck
 
-By default `Import-PowerShellDataFile` imports only 500 keys from a `.psd1` file. Use
-**SkipLimitCheck** to import more than 500 keys.
+By default `Import-PowerShellDataFile` is limited to 500 keys containing a maximum of 5000 AST
+nodes when importing from a `.psd1` file. Use **SkipLimitCheck** to bypass these limits.
+
+> [!IMPORTANT]
+> You should only bypass the limits if you are sure the file is safe to import. It's possible for a
+> malicious actor to create a `.psd1` file with a large number of keys or AST nodes that could
+> result in a denial of service.
 
 ```yaml
 Type: Switch
