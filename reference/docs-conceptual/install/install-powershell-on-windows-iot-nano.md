@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows IoT and Nano Server.
-ms.date: 03/18/2026
+ms.date: 04/21/2026
 title: Install PowerShell 7 on Windows IoT and Nano Server
 ---
 # Install PowerShell 7 on Windows IoT and Nano Server
@@ -14,7 +14,7 @@ Windows 11 IoT Enterprise comes with Windows PowerShell, which is used to deploy
 ```powershell
 # Replace the placeholder information for the following variables:
 $deviceip = '<device ip address>'
-$zipfile = 'PowerShell-7.6.0-win-arm64.zip'
+$zipfile = 'PowerShell-7.6.1-win-arm64.zip'
 $downloadfolder = 'U:\Users\Administrator\Downloads'
 # The download location is local to the device.
 # There should be enough space for the zip file and the unzipped contents.
@@ -28,10 +28,10 @@ Copy-Item $zipfile -Destination $downloadfolder -ToSession $S
 #Connect to the device and expand the archive
 Enter-PSSession $S
 Set-Location U:\Users\Administrator\Downloads
-Expand-Archive .\PowerShell-7.6.0-win-arm64.zip
+Expand-Archive .\PowerShell-7.6.1-win-arm64.zip
 
 # Set up remoting to PowerShell 7
-Set-Location .\PowerShell-7.6.0-win-arm64
+Set-Location .\PowerShell-7.6.1-win-arm64
 # Be sure to use the -PowerShellHome parameter otherwise it tries to create a new
 # endpoint with Windows PowerShell 5.1
 .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -43,7 +43,7 @@ PowerShell has to restart WinRM. Now you can connect to PowerShell 7 endpoint on
 ```powershell
 
 # Be sure to use the -Configuration parameter. If you omit it, you connect to Windows PowerShell 5.1
-Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.6.0
+Enter-PSSession -ComputerName $deviceIp -Credential Administrator -Configuration PowerShell.7.6.1
 ```
 
 Windows 11 IoT Core adds Windows PowerShell when you include _IOT_POWERSHELL_ feature. Use Windows
@@ -87,7 +87,7 @@ Deploy PowerShell to Nano Server using the following steps.
 # Replace the placeholder information for the following variables:
 $ipaddr = '<Nano Server IP address>'
 $credential = Get-Credential # <An Administrator account on the system>
-$zipfile = 'PowerShell-7.6.0-win-x64.zip'
+$zipfile = 'PowerShell-7.6.1-win-x64.zip'
 # Connect to the built-in instance of Windows PowerShell
 $session = New-PSSession -ComputerName $ipaddr -Credential $credential
 # Copy the file to the Nano Server instance
@@ -95,7 +95,7 @@ Copy-Item $zipfile C:\ -ToSession $session
 # Enter the interactive remote session
 Enter-PSSession $session
 # Extract the ZIP file
-Expand-Archive -Path C:\PowerShell-7.6.0-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
+Expand-Archive -Path C:\PowerShell-7.6.1-win-x64.zip -DestinationPath 'C:\Program Files\PowerShell 7'
 ```
 
 ## Supported versions of Windows
@@ -115,4 +115,4 @@ can't support those methods.
 <!-- link references -->
 [01]: /windows-server/get-started/deploy-nano-server
 [02]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
-[03]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.0/PowerShell-7.6.0-win-x64.zip
+[03]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-x64.zip

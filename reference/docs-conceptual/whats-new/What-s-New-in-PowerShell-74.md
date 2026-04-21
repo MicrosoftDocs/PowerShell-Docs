@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 03/26/2026
+ms.date: 04/21/2026
 ---
 
 # What's New in PowerShell 7.4
 
-PowerShell 7.4.14 includes the following features, updates, and breaking changes. PowerShell 7.4.14
-is built on the .NET 8.0.25 runtime.
+PowerShell 7.4.15 includes the following features, updates, and breaking changes. PowerShell 7.4.15
+is built on the .NET 8.0.26 runtime.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
@@ -133,6 +133,8 @@ Many thanks to **@CarloToso** and others for all the work on improving web cmdle
 
 ## Other cmdlet improvements
 
+- Update `MaxVisitCount` and `MaxHashtableKeyCount` if `VisitorSafeValueContext` indicates
+  `SkipLimitCheck` is true for `Import-PowerShellDataFile`
 - `Test-Connection` now returns error about the need to use `sudo` on Linux platforms when using a
   custom buffer size ([#20369][20369])
 - Add output types to Format commands ([#18746][18746]) (Thanks @MartinGC94!)
@@ -178,6 +180,8 @@ Updates to `$PSStyle`
 
 Other Engine updates
 
+- Delay update notification for one week to ensure all packages become available ([#27229][27229])
+- Close pipe client handles after creating the child ssh process ([#27139][27139])
 - Move .NET method invocation logging to after the needed type conversion is done for method
   arguments ([#25568][25568])
 - Fallback to AppLocker after WldpCanExecuteFile ([#25229][25229])
@@ -339,3 +343,5 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [21529]: https://github.com/PowerShell/PowerShell/pull/21529
 [25229]: https://github.com/PowerShell/PowerShell/pull/25229
 [25568]: https://github.com/PowerShell/PowerShell/pull/25568
+[27139]: https://github.com/PowerShell/PowerShell/pull/27139
+[27229]: https://github.com/PowerShell/PowerShell/pull/27229
