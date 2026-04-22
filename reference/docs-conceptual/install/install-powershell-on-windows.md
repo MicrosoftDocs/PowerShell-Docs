@@ -91,7 +91,7 @@ Latest stable release:
 
 Once downloaded, double-click the installer file and follow the prompts.
 
-### Install the MSI package from the command line
+### Install the MSI package with command-line options
 
 MSI packages can be installed from the command line allowing administrators to deploy packages
 without user interaction. The MSI package includes the following properties to control the
@@ -131,7 +131,7 @@ The following example shows how to silently install PowerShell with all the inst
 
 ```powershell
 $msiParams = @(
-    '/package PowerShell-7.6.0-win-x64.msi'
+    '/package PowerShell-7.6.1-win-x64.msi'
     '/quiet'
     'ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1'
     'ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1'
@@ -141,12 +141,12 @@ $msiParams = @(
     'ENABLE_MU=1'
     'ADD_PATH=1'
 )
-msiexec.exe @msiParams`
+msiexec.exe @msiParams
 ```
 
 For a full list of command-line options for `Msiexec.exe`, see [Command line options][05].
 
-### Install from the ZIP package
+### Install the ZIP package
 
 <a id="zip"></a>PowerShell binary ZIP archives are provided to enable advanced deployment scenarios.
 Download one of the following ZIP archives from the [current release][21] page.
@@ -178,7 +178,7 @@ The dotnet tool installer adds `$HOME\.dotnet\tools` to your `$Env:PATH` environ
 However, the currently running shell doesn't have the updated `$Env:PATH`. You can start PowerShell
 from a new shell by typing `pwsh`.
 
-### Install using the MSIX package
+### Install the MSIX package
 
 <a id="msstore"></a>PowerShell can be installed from the [Microsoft Store][22] or by manually
 downloading the MSIX package.
@@ -196,7 +196,7 @@ releases page and double-click the file to install it.
 - Latest stable - [PowerShell-7.5.6.msixbundle][14]
 - Previous LTS - [PowerShell-7.4.15.msixbundle][13]
 
-Alternately, you can use the following command to install the MSIX package from the command line:
+Alternatively, you can use the following command to install the MSIX package from the command line:
 
 ```powershell
 Add-AppxPackage -Path ".\PowerShell-7.6.1.msixbundle"
@@ -278,8 +278,9 @@ If you aren't sure how PowerShell was installed, you can check the value of the 
 which always points to the directory containing PowerShell that the current session is running.
 
 - If the value is `$HOME\.dotnet\tools`, PowerShell was installed with the [.NET Global tool][08].
-- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was installed using the
-  [MSI package][09]. You can verify this by checking the **Programs and Features** Control Panel.
+- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was probably installed using the [MSI
+  package][09]. You can verify this by looking for PowerShell in the **Programs and Features**
+  Control Panel.
 - If the value starts with `$Env:ProgramFiles\WindowsApps\`, PowerShell was installed using the
   [MSIX package][10].
 - If the value is anything else, it's likely that PowerShell was installed as a [ZIP package][12].
@@ -296,6 +297,10 @@ following command to upgrade PowerShell using WinGet:
 ```powershell
 winget upgrade --id Microsoft.PowerShell
 ```
+
+If available in the new version, Winget uses the same package format (MSI or MSIX) that was used to
+install the current version of PowerShell. Alternatively, you can manually download and install
+the package you want.
 
 ## Uninstall PowerShell 7
 
