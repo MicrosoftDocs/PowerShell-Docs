@@ -23,7 +23,7 @@ different scenarios and workflows. Choose the method that best suits your needs.
 - [MSI package][09] - Best choice for Windows Servers and enterprise deployment scenarios
 - [MSIX package][10] - An easy way to install for casual users of PowerShell but has limitations
 - [ZIP package][12] - Easiest way to _side load_ or install multiple versions or install on Windows
-  Core Server, Windows IoT, and Arm-based systems
+  Server Core, Windows IoT, and Arm-based systems
 - [.NET Global tool][08] - A good choice for .NET developers that install and use other global tools
 
 ### Install PowerShell using WinGet
@@ -71,9 +71,9 @@ winget install --id Microsoft.PowerShell --source winget --installer-type wix
 Alternatively, you can manually download and install the [MSI package][09].
 
 Beginning with the winget package for PowerShell 7.7.0-preview.1, there is no MSI package available.
-Winget only installs the MSIX package.
+WinGet only installs the MSIX package.
 
-Using the following command to install PowerShell 7.7-preview packages:
+Use the following command to install PowerShell 7.7-preview packages:
 
 ```powershell
 winget install --id Microsoft.PowerShell.Preview --source winget
@@ -278,8 +278,8 @@ If you aren't sure how PowerShell was installed, you can check the value of the 
 which always points to the directory containing PowerShell that the current session is running.
 
 - If the value is `$HOME\.dotnet\tools`, PowerShell was installed with the [.NET Global tool][08].
-- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was probably installed using the [MSI
-  package][09]. You can verify this by looking for PowerShell in the **Programs and Features**
+- If the value is `$Env:ProgramFiles\PowerShell\7`, PowerShell was probably installed using the
+  [MSI package][09]. You can verify this by looking for PowerShell in the **Programs and Features**
   Control Panel.
 - If the value starts with `$Env:ProgramFiles\WindowsApps\`, PowerShell was installed using the
   [MSIX package][10].
@@ -298,7 +298,7 @@ following command to upgrade PowerShell using WinGet:
 winget upgrade --id Microsoft.PowerShell
 ```
 
-If available in the new version, Winget uses the same package format (MSI or MSIX) that was used to
+If available in the new version, WinGet uses the same package format (MSI or MSIX) that was used to
 install the current version of PowerShell. Alternatively, you can manually download and install
 the package you want.
 
