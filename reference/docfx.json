@@ -22,6 +22,9 @@
       { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.6", "src": "7.6" },
       { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.6", "src": "7.6" },
 
+      { "dest": "module/psdocs", "files": [ "toc.yml" ], "group": "powershell-7.7", "src": "7.7" },
+      { "dest": "module", "exclude": [ "docs-conceptual/**" ], "files": [ "**/*.yml", "**/About/*.md" ], "group": "powershell-7.7", "src": "7.7" },
+
       { "dest": "scripting", "files": [ "**/*.md" ], "src": "virtual-directory" },
       { "dest": "module", "files": [ "**/*.md" ], "src": "virtual-directory-module" }
     ],
@@ -89,28 +92,16 @@
           "https://authoring-docs-microsoft.poolparty.biz/devrel/56936876-97d9-45cc-ad1b-9d63320447c8",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ],
-        "7.2/**/*": [
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
+        "docs-conceptual/windows-powershell/**/*": [
+          "https://authoring-docs-microsoft.poolparty.biz/devrel/56936876-97d9-45cc-ad1b-9d63320447c8",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ],
-        "7.4/**/*": [
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
-        ],
-        "7.5/**/*": [
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
-        ],
-        "7.6/**/*": [
+        "7.*/**/*": [
           "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ],
         "docs-conceptual/**/*": [
           "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
-        ],
-        "docs-conceptual/windows-powershell/**/*": [
-          "https://authoring-docs-microsoft.poolparty.biz/devrel/56936876-97d9-45cc-ad1b-9d63320447c8",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ]
       }
@@ -152,7 +143,8 @@
       "powershell-5.1": { "moniker_range": "powershell-5.1" },
       "powershell-7.4": { "moniker_range": "powershell-7.4" },
       "powershell-7.5": { "moniker_range": "powershell-7.5" },
-      "powershell-7.6": { "moniker_range": "powershell-7.6" }
+      "powershell-7.6": { "moniker_range": "powershell-7.6" },
+      "powershell-7.7": { "moniker_range": "powershell-7.7" }
     },
     "markdownEngineName": "markdig",
     "overwrite": [],
