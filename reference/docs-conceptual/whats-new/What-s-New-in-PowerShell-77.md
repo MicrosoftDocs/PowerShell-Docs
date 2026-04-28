@@ -1,5 +1,5 @@
 ---
-title: What's New in PowerShell 7.6
+title: What's New in PowerShell 7.7
 description: New features and changes released in PowerShell 7.7
 ms.date: 04/07/2026
 ---
@@ -7,13 +7,13 @@ ms.date: 04/07/2026
 # What's New in PowerShell 7.7
 
 PowerShell 7.7-preview.1 includes the following features, updates, and breaking changes. PowerShell
-7.7.0 is built on the .NET 11.0.0-preview.2 runtime.
+7.7.0 is built on the .NET 11.0.0-preview.3 runtime.
 
 For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
 
 ## Updated modules
 
-PowerShell 7.6 includes the following updated modules:
+PowerShell 7.7 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.2.0
 - **PSReadLine** v2.4.5
