@@ -22,5 +22,11 @@
         "conceptualTocUrl": "/powershell/scripting/toc.json",
         "packageRoot": "7.6",
         "referenceTocUrl": "/powershell/module/psdocs/toc.json"
+    },
+    "powershell-7.7": {
+        "conceptualToc": "docs-conceptual/TOC.yml",
+        "conceptualTocUrl": "/powershell/scripting/toc.json",
+        "packageRoot": "7.7",
+        "referenceTocUrl": "/powershell/module/psdocs/toc.json"
     }
 }
