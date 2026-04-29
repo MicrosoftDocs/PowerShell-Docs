@@ -1,6 +1,6 @@
 ---
 description: Details the policies governing support for PowerShell.
-ms.date: 04/21/2026
+ms.date: 04/29/2026
 ms.topic: lifecycle
 title: PowerShell Support Lifecycle
 ---
@@ -12,23 +12,25 @@ There are multiple versions of PowerShell 7 that can be installed.
   releases can contain critical fixes, innovations, and new features. Microsoft supports a Stable
   release for about six months after the next LTS release.
 
-  The current Stable release is PowerShell v7.5.6.
+  The current Stable release is PowerShell 7.5.6.
+
 - **Long Term Servicing (LTS) release** - An LTS release of PowerShell is an LTS release of .NET.
   Updates to an LTS release only contain critical security updates and servicing fixes that are
   designed to minimize impact on existing workloads.
 
-  The current LTS release is PowerShell v7.6.1. The previous LTS release, PowerShell v7.4.15, is
+  The current LTS release is PowerShell 7.6.1. The previous LTS release, PowerShell 7.4.15, is
   still supported until 10-Nov-2026.
+
 - **Preview release** - A preview release is a version of PowerShell that's currently in
-  development. Preview releases can contain bug fixes, new features, and experiments. Preview
-  releases can contain bugs and might not be stable. For that reason, you shouldn't use them in
-  production environments. Preview versions aren't officially supported. They allow you to test out
-  new features and provide feedback. Your feedback is important and can influence the features that
-  get released.
+  development. Preview releases can contain breaking changes, bug fixes, new features, and
+  experiments. Preview releases might contain bugs and might not be stable. For that reason, you
+  shouldn't use them in production environments. Preview versions aren't officially supported. They
+  allow you to test out new features and provide feedback. Your feedback is important and can
+  influence the features that get released.
 
-  There is no current Preview release.
+  PowerShell 7.7-preview.1 is the current preview release.
 
-PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. The End of Support dates follow the
+PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. The end-of-support dates follow the
 [.NET Support Policy][06] for the version of .NET that the release of PowerShell was built upon.
 Both LTS and Stable releases of PowerShell receive security updates and bug fixes. Microsoft only
 supports the latest update version of a release.
@@ -44,15 +46,15 @@ Microsoft provides support for PowerShell on a best-effort basis. Support for Wi
 is provided through Windows support channels. You can use the standard paid support channels to get
 support for PowerShell.
 
-- [Support for business][18]
-- [Contact support][17]
+- [Support for business][20]
+- [Contact support][19]
 
 There are many free support options available from the PowerShell community. The most active
 community support channels are available through **Discord** or **Slack**. The discussion channels
 are mirrored on both platforms, so you can choose the platform that you prefer. These channels can
 help you troubleshoot issues, answer questions, and provide guidance on how to use PowerShell.
 
-If you think that you found a bug, you can file an issue on [GitHub][16]. The PowerShell team can't
+If you think that you found a bug, you can file an issue on [GitHub][18]. The PowerShell team can't
 provide support through GitHub, but they welcome bug reports. The [community support][04] page
 provides links to the most popular community support channels.
 
@@ -61,11 +63,11 @@ provides links to the most popular community support channels.
 PowerShell runs on multiple operating systems (OS) and processor architecture platforms. The
 platform must meet the following criteria:
 
-- The target platform (OS version and processor architecture) is supported by .NET.
-- Microsoft has tested and approved PowerShell on the target platform.
-- The OS version is supported by the distributor for at least one year.
-- The OS version isn't an interim release or equivalent.
-- The OS version is currently supported by the distributor.
+- The target platform (OS version and processor architecture) is supported by .NET
+- Microsoft has tested and approved PowerShell on the target platform
+- The OS version is supported by the distributor for at least one year
+- The OS version isn't an interim release or equivalent
+- The OS version is currently supported by the distributor
 
 Support for PowerShell ends when either of the following conditions are met:
 
@@ -113,7 +115,7 @@ feedback on experimental features and we provide best-effort support for them.
 
 ## Notes on licensing
 
-PowerShell is released under the [MIT license][15]. Under this license, and without a paid support
+PowerShell is released under the [MIT license][17]. Under this license, and without a paid support
 agreement, users are limited to [community support][04]. With community support, Microsoft makes no
 guarantees of responsiveness or fixes.
 
@@ -124,21 +126,22 @@ lists the end-of-support dates for the current versions of PowerShell:
 
 |         Version          | Release Date | End-of-support |  .NET Version   |
 | ------------------------ | :----------: | :------------: | --------------- |
-| PowerShell 7.6 (LTS)     | 18-Mar-2026  |  14-Nov-2028   | [.NET 10.0][19] |
-| PowerShell 7.5           | 23-Jan-2025  |  10-Nov-2026   | [.NET 9.0][14]  |
-| PowerShell 7.4 (LTS)     | 16-Nov-2023  |  10-Nov-2026   | [.NET 8.0][13]  |
+| PowerShell 7.7 (preview) |              |                | [.NET 11.0][08] |
+| PowerShell 7.6 (LTS)     | 18-Mar-2026  |  14-Nov-2028   | [.NET 10.0][07] |
+| PowerShell 7.5           | 23-Jan-2025  |  10-Nov-2026   | [.NET 9.0][16]  |
+| PowerShell 7.4 (LTS)     | 16-Nov-2023  |  10-Nov-2026   | [.NET 8.0][15]  |
 
 The following table lists the end-of-support dates for retired versions of PowerShell:
 
 |       Version        | Release Date | End-of-support |    .NET Version     |
 | -------------------- | :----------: | :------------: | ------------------- |
-| PowerShell 7.3       | 09-Nov-2022  |  08-May-2024   | [.NET 7.0][12]      |
-| PowerShell 7.2 (LTS) | 08-Nov-2021  |  08-Nov-2024   | [.NET 6.0][11]      |
-| PowerShell 7.1       | 11-Nov-2020  |  08-May-2022   | [.NET 5.0][10]      |
-| PowerShell 7.0 (LTS) | 04-Mar-2020  |  03-Dec-2022   | [.NET Core 3.1][09] |
-| PowerShell 6.2       | 29-Mar-2019  |  04-Sep-2020   | [.NET Core 2.1][08] |
-| PowerShell 6.1       | 13-Sep-2018  |  28-Sep-2019   | [.NET Core 2.1][08] |
-| PowerShell 6.0       | 20-Jan-2018  |  13-Feb-2019   | [.NET Core 2.0][07] |
+| PowerShell 7.3       | 09-Nov-2022  |  08-May-2024   | [.NET 7.0][14]      |
+| PowerShell 7.2 (LTS) | 08-Nov-2021  |  08-Nov-2024   | [.NET 6.0][13]      |
+| PowerShell 7.1       | 11-Nov-2020  |  08-May-2022   | [.NET 5.0][12]      |
+| PowerShell 7.0 (LTS) | 04-Mar-2020  |  03-Dec-2022   | [.NET Core 3.1][11] |
+| PowerShell 6.2       | 29-Mar-2019  |  04-Sep-2020   | [.NET Core 2.1][10] |
+| PowerShell 6.1       | 13-Sep-2018  |  28-Sep-2019   | [.NET Core 2.1][10] |
+| PowerShell 6.0       | 20-Jan-2018  |  13-Feb-2019   | [.NET Core 2.0][09] |
 
 ## Windows PowerShell release history
 
@@ -168,16 +171,17 @@ you're running:
 [04]: /powershell/scripting/community/community-support
 [05]: /powershell/scripting/learn/experimental-features
 [06]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
-[07]: https://github.com/dotnet/core/blob/main/release-notes/2.0/2.0-supported-os.md
-[08]: https://github.com/dotnet/core/blob/main/release-notes/2.1/2.1-supported-os.md
-[09]: https://github.com/dotnet/core/blob/main/release-notes/3.1/3.1-supported-os.md
-[10]: https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0-supported-os.md
-[11]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
-[12]: https://github.com/dotnet/core/blob/main/release-notes/7.0/supported-os.md
-[13]: https://github.com/dotnet/core/blob/main/release-notes/8.0/supported-os.md
-[14]: https://github.com/dotnet/core/blob/main/release-notes/9.0/supported-os.md
-[15]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[16]: https://github.com/PowerShell/PowerShell/issues/new/choose
-[17]: https://support.microsoft.com/contactus
-[18]: https://support.serviceshub.microsoft.com/
-[19]: https://github.com/dotnet/core/blob/main/release-notes/10.0/supported-os.md
+[07]: https://github.com/dotnet/core/blob/main/release-notes/10.0/supported-os.md
+[08]: https://github.com/dotnet/core/blob/main/release-notes/11.0/supported-os.md
+[09]: https://github.com/dotnet/core/blob/main/release-notes/2.0/2.0-supported-os.md
+[10]: https://github.com/dotnet/core/blob/main/release-notes/2.1/2.1-supported-os.md
+[11]: https://github.com/dotnet/core/blob/main/release-notes/3.1/3.1-supported-os.md
+[12]: https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0-supported-os.md
+[13]: https://github.com/dotnet/core/blob/main/release-notes/6.0/supported-os.md
+[14]: https://github.com/dotnet/core/blob/main/release-notes/7.0/supported-os.md
+[15]: https://github.com/dotnet/core/blob/main/release-notes/8.0/supported-os.md
+[16]: https://github.com/dotnet/core/blob/main/release-notes/9.0/supported-os.md
+[17]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[18]: https://github.com/PowerShell/PowerShell/issues/new/choose
+[19]: https://support.microsoft.com/contactus
+[20]: https://support.serviceshub.microsoft.com/
