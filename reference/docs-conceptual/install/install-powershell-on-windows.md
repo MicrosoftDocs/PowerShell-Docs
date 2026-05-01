@@ -362,7 +362,7 @@ can't support those methods.
 [17]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-x64.msi
 [18]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-x64.zip
 [19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1.msixbundle
-[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.7.0-preview.1/PowerShell-7.7.0-preview.1.msixbundle
+[20]: https://github.com/PowerShell/PowerShell/releases/download/v7.7.0-preview.1/PowerShellPreview-7.7.0-preview.1.msixbundle
 [21]: https://github.com/PowerShell/PowerShell/releases/latest
 [22]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D
 [23]: media/install-powershell-on-windows/powershell-start-menu.png
