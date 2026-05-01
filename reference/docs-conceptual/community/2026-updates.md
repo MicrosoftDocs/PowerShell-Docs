@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2026.
-ms.date: 04/01/2026
+ms.date: 05/01/2026
 title: What's New in PowerShell-Docs for 2026
 ---
 # What's new in PowerShell Docs for 2026
@@ -14,6 +14,40 @@ get started.
 <!-- Link references -->
 [01]: contributing/overview.md
 <!--------------------->
+
+## 2026-April
+
+New content
+
+- [about_Error_Handling](/powershell/module/microsoft.powershell.core/about/about_error_handling)
+  - Special thanks to @SufficientDaikon for their hard work creating this new article and updating
+    all related content.
+- PowerShell 7.7-preview.1 release
+  - [What's New in PowerShell 7.7 - PowerShell](/powershell/scripting/whats-new/what-s-new-in-powershell-77)
+  - Now, you can select PowerShell 7.7 from the version selector to view documentation PowerShell
+    7.7 cmdlet reference.
+
+Updated content
+
+- Updated release notes for minor releases of 7.4, 7.5, and 7.6.
+
+GitHub stats
+
+- 26 PRs merged (4 from Community)
+- 40 issues opened (8 from Community, 29 Spam)
+- 40 issues closed (9 from Community, 29 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id     | PRs merged | Issues opened |
+| ---------------- | :--------: | :-----------: |
+| Anyplace7803     |     1      |               |
+| Gijsreyn         |     1      |               |
+| MukundaKatta     |     1      |               |
+| SufficientDaikon |     1      |       1       |
 
 ## 2026-March
 
