@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to PowerShell documentation.
-ms.date: 04/01/2026
+ms.date: 05/01/2026
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -18,7 +18,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |     PRs Merged     | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: |
-| Community Total    |    8 |  189 |  452 |  468 |  321 |  165 |  101 |  134 |  117 |   95 |  160 |   13 |  2223 |
+| Community          |    8 |  189 |  452 |  468 |  321 |  165 |  101 |  134 |  117 |   95 |  160 |   17 |  2227 |
 | matt9ucci          |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |      |      |   274 |
 | nschonni           |      |      |      |   14 |  138 |   10 |      |      |      |      |      |      |   162 |
 | kiazhi             |      |   25 |   79 |   12 |      |      |      |      |      |      |      |      |   116 |
@@ -49,7 +49,7 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |   Issues Opened    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: |
-| Community Total    |    6 |   52 |   96 |  213 |  567 |  564 |  367 |  244 |  291 |  243 |  183 |   48 |  2874 |
+| Community          |    6 |   52 |   96 |  213 |  567 |  564 |  367 |  244 |  291 |  243 |  183 |   56 |  2882 |
 | mklement0          |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   24 |    2 |      |   278 |
 | ehmiiz             |      |      |      |      |      |      |      |   21 |   14 |      |      |      |    35 |
 | iRon7              |      |      |      |      |      |    2 |    2 |    2 |   10 |    8 |    8 |      |    32 |
