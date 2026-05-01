@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows
-ms.date: 04/22/2026
+ms.date: 05/01/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -206,9 +206,9 @@ Add-AppxPackage -Path ".\PowerShell-7.6.1.msixbundle"
 #### Limitations of a MSIX-based installation
 
 Store-based installations are installed for a single user. There is no option to install it for all
-users. By default, Microsoft Store packages run in an application sandbox that virtualizes access to
-some filesystem and registry locations. Changes to virtualized file and registry locations don't
-persist outside of the application sandbox.
+users. Microsoft Store packages run in an application sandbox that virtualizes access to some
+filesystem and registry locations. Changes to virtualized file and registry locations don't persist
+outside of the application sandbox.
 
 Store-based installations don't support PowerShell remoting. The application sandbox blocks all
 changes to the application's root folder. Any system-level configuration settings stored in
@@ -224,11 +224,14 @@ need write access to `$PSHOME`.
 - `Enable-ExperimentalFeature -Scope AllUsers`
 - `Set-ExecutionPolicy -Scope LocalMachine`
 
-For more information, see [Understanding how packaged desktop apps run on Windows][06].
+For MSIX-based installations, you can't create profile scripts for the **AllUsersAllHosts** and
+**AllUsersCurrentHost** because those profile scripts must be in `$PSHOME`.
 
-Beginning in PowerShell 7.2, the PowerShell package is now exempt from file and registry
-virtualization. Changes to virtualized file and registry locations now persist outside of the
-application sandbox. However, changes to the application's root folder are still blocked.
+The PowerShell package is exempt from file and registry virtualization. Changes to virtualized file
+and registry locations now persist outside of the application sandbox. However, changes to the
+application's root folder are still blocked.
+
+For more information, see [Understanding how packaged desktop apps run on Windows][06].
 
 > [!IMPORTANT]
 > You must be running on Windows build 1903 or higher for this exemption to work.
