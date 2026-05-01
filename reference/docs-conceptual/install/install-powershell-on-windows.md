@@ -224,8 +224,9 @@ need write access to `$PSHOME`.
 - `Enable-ExperimentalFeature -Scope AllUsers`
 - `Set-ExecutionPolicy -Scope LocalMachine`
 
-For MSIX-based installations, you can't create profile scripts for the **AllUsersAllHosts** and
-**AllUsersCurrentHost** because those profile scripts must be in `$PSHOME`.
+For MSIX-based installations, you can't create or modify the all-users profile scripts
+`$PROFILE.AllUsersAllHosts` and `$PROFILE.AllUsersCurrentHost` because those profiles must be
+stored in `$PSHOME`. Current-user profiles are still supported.
 
 The PowerShell package is exempt from file and registry virtualization. Changes to virtualized file
 and registry locations now persist outside of the application sandbox. However, changes to the

@@ -317,9 +317,10 @@ are available in `$s`.
 For MSIX-based installations of PowerShell, the **AllUsersAllHosts** and
 **AllUsersCurrentHost** profile scripts must reside in the `$PSHOME` directory.
 Because the MSIX package is installed in a read-only location, you can't create
-or modify profile scripts in `$PSHOME`. Therefore, these profiles aren't
-available for MSIX-based installations, and you can only create and use the
-**CurrentUserAllHosts** and **CurrentUserCurrentHost** profiles.
+or modify profile scripts in `$PSHOME`. Therefore, user customization through
+these all-users profiles isn't supported for MSIX-based installations, and you
+can only create and use the **CurrentUserAllHosts** and
+**CurrentUserCurrentHost** profiles.
 
 ## See also
 
