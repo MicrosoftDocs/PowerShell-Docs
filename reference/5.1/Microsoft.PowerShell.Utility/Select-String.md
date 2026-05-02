@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/02/2026
+ms.date: 05/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -545,7 +545,8 @@ Accept wildcard characters: False
 Specifies the path to the files to be searched. The value of the **LiteralPath** parameter is used
 exactly as it's typed. No characters are interpreted as wildcards. If the path includes escape
 characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
-interpret any characters as escape sequences. For more information, see
+interpret any characters as escape sequences. Paths containing space must be enclosed in quotes. For
+more information, see
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
@@ -579,10 +580,10 @@ Accept wildcard characters: False
 ### -Path
 
 Specifies the path to the files to search. Wildcards are permitted. The default location is the
-local directory.
-
-Specify files in the directory, such as `log1.txt`, `*.doc`, or `*.*`. If you specify only a
-directory, the command fails.
+local directory. Specify files in the directory, such as `log1.txt`, `*.doc`, or `*.*`. If you
+specify only a directory, the command fails. Paths containing space must be enclosed in quotes. For
+more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
