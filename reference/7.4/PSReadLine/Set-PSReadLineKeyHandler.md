@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.PSReadLine2.dll-Help.xml
 Locale: en-US
 Module Name: PSReadLine
-ms.date: 01/18/2026
+ms.date: 05/02/2026
 online version: https://learn.microsoft.com/powershell/module/psreadline/set-psreadlinekeyhandler?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSReadLineKeyHandler
@@ -121,8 +121,10 @@ Accept wildcard characters: False
 
 ### -Function
 
-Specifies the name of an existing key handler provided by PSReadLine. This parameter lets you rebind
-existing key bindings, or bind a handler that's currently unbound.
+Specifies the name of an existing key handler provided by PSReadLine. This parameter lets you change
+existing key bindings, or bind a handler that's currently unbound. Use `Get-PSReadLineKeyHandler` to
+get a list of function names. You can also use tab-completion with this parameter to see the
+available key handler functions.
 
 ```yaml
 Type: System.String
