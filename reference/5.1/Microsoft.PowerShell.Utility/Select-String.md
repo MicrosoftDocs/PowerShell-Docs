@@ -545,7 +545,7 @@ Accept wildcard characters: False
 Specifies the path to the files to be searched. The value of the **LiteralPath** parameter is used
 exactly as it's typed. No characters are interpreted as wildcards. If the path includes escape
 characters, enclose it in single quotation marks. Single quotation marks tell PowerShell not to
-interpret any characters as escape sequences. Paths containing space must be enclosed in quotes. For
+interpret any characters as escape sequences. Paths containing spaces must be enclosed in quotes. For
 more information, see
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
@@ -581,7 +581,7 @@ Accept wildcard characters: False
 
 Specifies the path to the files to search. Wildcards are permitted. The default location is the
 local directory. Specify files in the directory, such as `log1.txt`, `*.doc`, or `*.*`. If you
-specify only a directory, the command fails. Paths containing space must be enclosed in quotes. For
+specify only a directory, the command fails. Paths containing spaces must be enclosed in quotes. For
 more information, see
 [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
