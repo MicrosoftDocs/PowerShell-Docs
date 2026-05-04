@@ -1,7 +1,7 @@
 ---
 description: Describes the settings and practices for writing module manifest files.
 Locale: en-US
-ms.date: 01/28/2026
+ms.date: 05/04/2026
 no-loc:
 - Windows PowerShell 5.1 Workflow
 - PowerShell Gallery
@@ -141,12 +141,13 @@ caller's session state.
 
 The value must be the path to one of the following:
 
-- a script (`.ps1`)
+- a script (`.ps1`) - not supported in Constrained Language mode
 - a script module (`.psm1`)
 - a module manifest (`.psd1`)
 - an assembly (`.dll`)
 - a cmdlet definition XML file (`.cdxml`)
-- a Windows PowerShell 5.1 Workflow (`.xaml`)
+- a Windows PowerShell 5.1 Workflow (`.xaml`) - Only supported in Windows
+  PowerShell 5.1
 
 The path should be relative to the module manifest.
 
@@ -861,6 +862,11 @@ Example State is: Initialized
 Example already initialized.
 ```
 
+> [!NOTE]
+> The **ScriptsToProcess** key isn't supported when the module is running in
+> Constrained Language mode. The scripts listed can't run when the module is
+> imported in that mode.
+
 ### TypesToProcess
 
 This setting specifies the type files (`.ps1xml`) that run when the module is
@@ -936,9 +942,13 @@ listed.
 | **Accepts wildcards** | No                                                  |
 
 Entries for this setting can be a module name, a full module specification, or
-a path to a module or script file.
+a path to a module or script file. When the value is a path, the path can be
+fully qualified or relative.
 
-When the value is a path, the path can be fully qualified or relative.
+> [!NOTE]
+> Modules specified as `.ps1` files aren't supported when the module is running
+> in Constrained Language mode. The files listed can't run when the module is
+> imported in that mode.
 
 When the value is a module name or specification, PowerShell searches the
 **PSModulePath** for the specified module.
@@ -952,12 +962,10 @@ A module specification is a hash table that has the following keys.
   `MaximumVersion` keys. You can define an acceptable version range for the
   module by specifying the `ModuleVersion` and `MaximumVersion` keys together.
   - `ModuleVersion` - Specifies a minimum acceptable version of the module.
-  - `RequiredVersion` - Specifies an exact, required version of the module.
-  - `MaximumVersion` - Specifies the maximum acceptable version of the module.
-
-> [!NOTE]
-> `RequiredVersion` was added in Windows PowerShell 5.0.
-> `MaximumVersion` was added in Windows PowerShell 5.1.
+  - `RequiredVersion` - Specifies an exact, required version of the module
+    (added in Windows PowerShell 5.0).
+  - `MaximumVersion` - Specifies the maximum acceptable version of the module
+    (added in Windows PowerShell 5.1).
 
 Any items that need to be exported from a nested module must be exported by the
 nested module using the `Export-ModuleMember` cmdlet or be listed in one of the
