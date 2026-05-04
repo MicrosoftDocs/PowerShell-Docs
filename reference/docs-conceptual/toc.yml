@@ -230,6 +230,21 @@ items:
         href: whats-new/what-s-new-in-powershell-72.md
       - name: Migrating from Windows PowerShell 5.1 to PowerShell 7
         href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
+        items:
+          - name: Script compatibility audit
+            href: whats-new/migration/script-compatibility-audit.md
+          - name: Module compatibility strategy
+            href: whats-new/migration/module-compatibility-strategy.md
+          - name: Encoding changes
+            href: whats-new/migration/encoding-changes.md
+          - name: Profile migration
+            href: whats-new/migration/profile-migration.md
+          - name: Enterprise deployment
+            href: whats-new/migration/enterprise-deployment.md
+          - name: Scheduled tasks and automation
+            href: whats-new/migration/scheduled-tasks-automation.md
+          - name: Testing and rollback
+            href: whats-new/migration/testing-and-rollback.md
       - name: Differences between Windows PowerShell 5.1 and PowerShell 7.x
         href: whats-new/differences-from-windows-powershell.md
       - name: PowerShell differences on non-Windows platforms
