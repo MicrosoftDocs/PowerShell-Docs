@@ -311,6 +311,8 @@ In this chapter, you learned about the different types of loops that exist in Po
 1. What's the primary advantage of using a `while` loop instead of a `do while` or `do until` loop?
 1. How do the `break` and `continue` statements differ?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 - [ForEach-Object][foreach-object]
@@ -341,3 +343,4 @@ local and remote systems efficiently.
 [about-return]: /powershell/module/microsoft.powershell.core/about/about_return
 [the-powershell-return-keyword]: https://mikefrobbins.com/2015/07/23/the-powershell-return-keyword/
 [chapter-7]: 07-working-with-wmi.md
+[appendix]: 11-appendix.md

@@ -72,6 +72,8 @@ items:
             href: learn/ps101/09-functions.md
           - name: Script modules
             href: learn/ps101/10-script-modules.md
+          - name: Appendix
+            href: learn/ps101/11-appendix.md
       - name: Optimizing your shell experience
         items:
           - name: Overview of the Shell

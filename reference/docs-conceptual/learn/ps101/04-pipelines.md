@@ -734,6 +734,8 @@ Additionally, you learned about key concepts such as filtering left, the pipelin
 1. What are the two ways that a PowerShell command can accept pipeline input?
 1. Why shouldn't you trust commands found in the PowerShell Gallery?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 - [about_Pipelines][about-pipelines]
@@ -754,3 +756,4 @@ operators.
 [psget]: https://mikefrobbins.com/2015/04/23/powershellget-the-big-easy-way-to-discover-install-and-update-powershell-modules/
 [powerShell-gallery]: https://www.powershellgallery.com/
 [chapter-5]: 05-formatting-aliases-providers-comparison.md
+[appendix]: 11-appendix.md

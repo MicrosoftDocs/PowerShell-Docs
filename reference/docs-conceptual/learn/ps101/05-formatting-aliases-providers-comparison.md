@@ -640,6 +640,8 @@ Comparison Operators.
 1. Perform a directory listing on the drives that are associated with the Registry provider.
 1. What's one of the main benefits of using the replace operator instead of the replace method?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 - [Format-Table][format-table]
@@ -666,3 +668,4 @@ In [Chapter 6][chapter-6], you'll learn about flow control, scripting, loops, an
 [about-arrays]: /powershell/module/microsoft.powershell.core/about/about_arrays
 [pester-test-other-cultures]: https://mikefrobbins.com/2015/10/22/using-pester-to-test-powershell-code-with-other-cultures/
 [chapter-6]: 06-flow-control.md
+[appendix]: 11-appendix.md

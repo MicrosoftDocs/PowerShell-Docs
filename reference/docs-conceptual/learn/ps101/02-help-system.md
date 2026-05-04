@@ -926,6 +926,8 @@ available.
    computer?
 1. How do you update the PowerShell help content stored on your computer?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 To learn more about the concepts covered in this chapter, read the following PowerShell help
@@ -951,3 +953,4 @@ cmdlet.
 [updatable-help]: /powershell/module/microsoft.powershell.core/about/about_updatable_help
 [command-syntax]: /powershell/module/microsoft.powershell.core/about/about_command_syntax
 [chapter-3]: 03-discovering-objects.md
+[appendix]: 11-appendix.md

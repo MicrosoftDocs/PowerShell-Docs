@@ -414,6 +414,8 @@ manifest to define metadata and manage exported commands.
 1. What are the two ways to export only specific functions from a module?
 1. What conditions must be met for a module to autoload when you run one of its commands?
 
+For answers to the review questions, see the [Appendix][appendix] of this book.
+
 ## References
 
 - [How to Create PowerShell Script Modules and Module Manifests][create-modules-and-manifests]
@@ -427,3 +429,4 @@ manifest to define metadata and manage exported commands.
 [about-modules]: /powershell/module/microsoft.powershell.core/about/about_modules
 [new-modulemanifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [export-modulemember]: /powershell/module/microsoft.powershell.core/export-modulemember
+[appendix]: 11-appendix.md
