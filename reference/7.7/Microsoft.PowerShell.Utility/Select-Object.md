@@ -530,7 +530,7 @@ Accept wildcard characters: True
 
 ### -First
 
-Specifies the number of objects to select from the beginning of an collection of input objects. When
+Specifies the number of objects to select from the beginning of a collection of input objects. When
 you use this parameter with the **Skip** parameter, `Select-Object` selects the first number of
 objects after skipping the number of objects specified by **Skip**.
 
@@ -587,7 +587,7 @@ Accept wildcard characters: False
 
 ### -Last
 
-Specifies the number of objects to select from the end of an collection of input objects. If the
+Specifies the number of objects to select from the end of a collection of input objects. If the
 command uses the **Skip** parameter it skips items from the end of the collection, then returns the
 last number of objects specified by the **Last** parameter after skipping.
 

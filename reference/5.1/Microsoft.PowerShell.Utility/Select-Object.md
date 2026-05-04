@@ -3,7 +3,7 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 05/04/2026
-online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.4&WT.mc_id=ps-gethelp
+online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
   - select
@@ -490,7 +490,7 @@ Accept wildcard characters: True
 
 ### -First
 
-Specifies the number of objects to select from the beginning of an collection of input objects. When
+Specifies the number of objects to select from the beginning of a collection of input objects. When
 you use this parameter with the **Skip** parameter, `Select-Object` selects the first number of
 objects after skipping the number of objects specified by **Skip**.
 
@@ -547,7 +547,7 @@ Accept wildcard characters: False
 
 ### -Last
 
-Specifies the number of objects to select from the end of an collection of input objects. If the
+Specifies the number of objects to select from the end of a collection of input objects. If the
 command uses the **Skip** parameter it skips items from the end of the collection, then returns the
 last number of objects specified by the **Last** parameter after skipping.
 
