@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/18/2026
+ms.date: 05/04/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-object?view=powershell-7.5&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -530,7 +530,9 @@ Accept wildcard characters: True
 
 ### -First
 
-Specifies the number of objects to select from the beginning of an array of input objects.
+Specifies the number of objects to select from the beginning of an collection of input objects. When
+you use this parameter with the **Skip** parameter, `Select-Object` selects the first number of
+objects after skipping the number of objects specified by **Skip**.
 
 ```yaml
 Type: System.Int32
@@ -585,7 +587,9 @@ Accept wildcard characters: False
 
 ### -Last
 
-Specifies the number of objects to select from the end of an array of input objects.
+Specifies the number of objects to select from the end of an collection of input objects. If the
+command uses the **Skip** parameter it skips items from the end of the collection, then returns the
+last number of objects specified by the **Last** parameter after skipping.
 
 ```yaml
 Type: System.Int32
@@ -631,10 +635,14 @@ Accept wildcard characters: True
 ### -Skip
 
 Skips (doesn't select) the specified number of items. By default, the **Skip** parameter counts from
-the beginning of the collection of objects. If the command uses the **Last** parameter, it counts
-from the end of the collection.
+the beginning of the collection of objects. Unlike the **Index** parameter, which starts counting at
+0, the **Skip** parameter begins at 1.
 
-Unlike the **Index** parameter, which starts counting at 0, the **Skip** parameter begins at 1.
+When you use this parameter with the **First** parameter, `Select-Object` selects the first number
+of objects after skipping the number of objects specified by **Skip**.
+
+If the command uses the **Last** parameter it skips items from the end of the collection, then
+returns the last number of objects specified by the **Last** parameter after skipping.
 
 Beginning in PowerShell 7.4, you can use the **Skip** parameter with the **SkipLast** parameter to
 skip items from both the beginning and end of the collection.
