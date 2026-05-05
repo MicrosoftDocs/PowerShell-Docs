@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 03/11/2026
+ms.date: 05/05/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -229,7 +229,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Management.Automation.PSCredential

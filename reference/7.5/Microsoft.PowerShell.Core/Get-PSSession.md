@@ -530,7 +530,7 @@ object and the password is stored as a [SecureString](/dotnet/api/system.securit
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 This parameter configures to the temporary connection that is created to run a `Get-PSSession`
 command with the **ComputerName** or **ConnectionUri** parameter.

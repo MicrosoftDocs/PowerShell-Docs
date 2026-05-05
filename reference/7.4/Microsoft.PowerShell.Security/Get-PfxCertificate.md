@@ -125,7 +125,7 @@ This parameter was introduced in PowerShell 6.1.
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
-> [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).
+> [How secure is SecureString?](/dotnet/fundamentals/runtime-libraries/system-security-securestring#how-secure-is-securestring).
 
 ```yaml
 Type: System.Security.SecureString
