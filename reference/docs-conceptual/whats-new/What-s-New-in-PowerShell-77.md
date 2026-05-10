@@ -1,7 +1,7 @@
 ---
 title: What's New in PowerShell 7.7
 description: New features and changes released in PowerShell 7.7
-ms.date: 07/15/2026
+ms.date: 07/20/2026
 ---
 
 # What's New in PowerShell 7.7
@@ -20,6 +20,9 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Breaking Changes
 
+- `New-Guid` now generates Version 7 (time-sortable) UUIDs by default instead of Version 4
+  (random). The output format is unchanged. Scripts that depend on fully random GUIDs should use
+  `[guid]::NewGuid()` directly. ([#27033][27033])
 - Add `ValidateNotNullOrEmpty` attribute to the `-Property` of `Format-Table`, `Format-List`, and
   `Format-Custom` ([#26552][26552])
 - Use ArgumentException.ThrowIfNullOrEmpty for not-null-not-empty argument validation.
@@ -166,6 +169,7 @@ PowerShell 7.7 includes the following experimental features.
 [27095]: https://github.com/PowerShell/PowerShell/pull/27095
 [27106]: https://github.com/PowerShell/PowerShell/pull/27106
 [27109]: https://github.com/PowerShell/PowerShell/pull/27109
+[27033]: https://github.com/PowerShell/PowerShell/pull/27033
 [27123]: https://github.com/PowerShell/PowerShell/pull/27123
 [27266]: https://github.com/PowerShell/PowerShell/pull/27266
 [27328]: https://github.com/PowerShell/PowerShell/pull/27328
