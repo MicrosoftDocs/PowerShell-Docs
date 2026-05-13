@@ -34,10 +34,10 @@ config:
 ---
 treeView-beta
     "📁 PowerShell-Docs"
-        "� .devcontainer - VS Code Remote Containers configuration"
+        "📁 .devcontainer - VS Code Remote Containers configuration"
         "⚙️ .github - GitHub repository configuration and workflows"
         "💻 .vscode - VS Code settings and recommended extensions"
-        "�📦 assets - Downloadable files linked in documentation"
+        "📁 assets - Downloadable files linked in documentation"
         "🔀 redir - URL redirection mapping files"
         "📚 reference - Published documentation content"
             "📘 5.1 - PowerShell 5.1 cmdlet reference"
@@ -45,8 +45,8 @@ treeView-beta
             "📘 7.5 - PowerShell 7.5 cmdlet reference"
             "📘 7.6 - PowerShell 7.6 cmdlet reference"
             "📘 7.7 - PowerShell 7.7 cmdlet reference"
-            "📖 docs-conceptual - Conceptual articles published to learn.ms"
             "🍞 bread - Breadcrumb navigation TOC"
+            "📖 docs-conceptual - Conceptual articles published to learn.ms"
             "📄 includes - Markdown include files"
             "🗺️ mapping - Version mapping configuration"
             "🖼️ media - Images used in documentation"
