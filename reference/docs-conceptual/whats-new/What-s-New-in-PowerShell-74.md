@@ -1,13 +1,13 @@
 ---
 title: What's New in PowerShell 7.4
 description: New features and changes released in PowerShell 7.4
-ms.date: 04/21/2026
+ms.date: 05/20/2026
 ---
 
 # What's New in PowerShell 7.4
 
-PowerShell 7.4.15 includes the following features, updates, and breaking changes. PowerShell 7.4.15
-is built on the .NET 8.0.26 runtime.
+PowerShell 7.4.16 includes the following features, updates, and breaking changes. PowerShell 7.4.16
+is built on the .NET 8.0.27 runtime.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository.
 
@@ -36,8 +36,11 @@ For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repositor
 
 ## Installer updates
 
-The Windows MSI package now provides an option to disable PowerShell telemetry during installation.
-For more information, see [Install the msi package from the command line][01].
+The macOS PKG package is now notarized and signed by Microsoft. For more information, see
+[Install PowerShell 7 on macOS][15].
+
+The Windows MSI package provides an option to disable PowerShell telemetry during installation. For
+more information, see [Install the msi package from the command line][01].
 
 ## Updated versions of PSResourceGet and PSReadLine
 
@@ -133,6 +136,8 @@ Many thanks to **@CarloToso** and others for all the work on improving web cmdle
 
 ## Other cmdlet improvements
 
+- Fix `Out-GridView` by replacing use of obsolete BinaryFormatter with custom implementation
+  ([#27426][27426])
 - Update `MaxVisitCount` and `MaxHashtableKeyCount` if `VisitorSafeValueContext` indicates
   `SkipLimitCheck` is true for `Import-PowerShellDataFile`
 - `Test-Connection` now returns error about the need to use `sudo` on Linux platforms when using a
@@ -180,6 +185,9 @@ Updates to `$PSStyle`
 
 Other Engine updates
 
+- Fix checks for local user config file paths ([#27454][27454])
+- Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows
+  ([#27430][27430])
 - Delay update notification for one week to ensure all packages become available ([#27229][27229])
 - Close pipe client handles after creating the child ssh process ([#27139][27139])
 - Move .NET method invocation logging to after the needed type conversion is done for method
@@ -227,6 +235,7 @@ For more information about the Experimental Features, see [Using Experimental Fe
 <!-- end of content -->
 <!-- reference links -->
 [01]: ../install/installing-powershell-on-windows.md
+[15]: ../install/installing-powershell-on-macos.md
 [02]: ../security/application-control.md#wdac-policy-auditing
 [03]: ../learn/experimental-features.md
 [04]: ../learn/experimental-features.md#pscommandnotfoundsuggestion
@@ -345,3 +354,6 @@ For more information about the Experimental Features, see [Using Experimental Fe
 [25568]: https://github.com/PowerShell/PowerShell/pull/25568
 [27139]: https://github.com/PowerShell/PowerShell/pull/27139
 [27229]: https://github.com/PowerShell/PowerShell/pull/27229
+[27454]: https://github.com/PowerShell/PowerShell/pull/27454
+[27426]: https://github.com/PowerShell/PowerShell/pull/27426
+[27430]: https://github.com/PowerShell/PowerShell/pull/27430
