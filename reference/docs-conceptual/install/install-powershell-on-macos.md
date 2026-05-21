@@ -38,8 +38,10 @@ install.
 There are two ways to install PowerShell using the downloaded package.
 
 Beginning with the May 2026 releases of PowerShell, the macOS PKG package is notarized and signed by
-Microsoft. To install the package, download the PKG file and open it. For previous versions of
-PowerShell, you must bypass the Gatekeeper checks to install the package.
+Microsoft. To install the package, download the PKG file and open it.
+
+For previous versions of PowerShell, use the following instructions to bypass the Gatekeeper checks
+and install the package.
 
 #### Install the package using Finder
 
@@ -51,9 +53,9 @@ Install PowerShell using Finder:
 
    You will receive the following error message when installing the package:
 
-   > "powershell-7.5.7-osx-arm64.pkg" Not Opened
+   > "powershell-7.5.6-osx-arm64.pkg" Not Opened
    >
-   > Apple could not verify "powershell-7.5.7-osx-arm64.pkg" is free from malware that may harm
+   > Apple could not verify "powershell-7.5.6-osx-arm64.pkg" is free from malware that may harm
    > your Mac or compromise your privacy.
 
 1. Select the **Done** button to close the prompt.
@@ -77,12 +79,12 @@ one of the following methods to install the package:
 - Run the `installer` command with the **allowUntrusted** flag:
 
   ```sh
-  sudo installer -allowUntrusted -pkg ./Downloads/powershell-7.5.7-osx-arm64.pkg -target /
+  sudo installer -allowUntrusted -pkg ./Downloads/powershell-7.5.6-osx-arm64.pkg -target /
   ```
 
 - Or install the package as you normally would after running one of the following commands:
 
-  - Run `sudo xattr -rd com.apple.quarantine ./Downloads/powershell-7.5.7-osx-arm64.pkg`.
+  - Run `sudo xattr -rd com.apple.quarantine ./Downloads/powershell-7.5.6-osx-arm64.pkg`.
   - Use the `Unblock-File` cmdlet if you're using PowerShell. Include the full path to the `.pkg`
     file.
 
