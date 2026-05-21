@@ -1,16 +1,21 @@
 ---
 title: What's New in PowerShell 7.5
 description: New features and changes released in PowerShell 7.5
-ms.date: 04/21/2026
+ms.date: 05/20/2026
 ---
 
 # What's New in PowerShell 7.5
 
-PowerShell 7.5.6 includes the following features, updates, and breaking changes. PowerShell
-7.5.6 is built on the .NET 9.0.15 runtime.
+PowerShell 7.5.7 includes the following features, updates, and breaking changes. PowerShell
+7.5.7 is built on the .NET 9.0.16 runtime.
 
 For a complete list of changes, see the [CHANGELOG][chg] in the GitHub repository. For more
 information about .NET 9, see [What's new in .NET 9][07].
+
+## Installer updates
+
+The macOS PKG package is now notarized and signed by Microsoft. For more information, see
+[Install PowerShell 7 on macOS][08].
 
 ## Breaking Changes
 
@@ -126,6 +131,8 @@ Many thanks to **@ArmaanMcleod** and others for all their work to improve tab co
 
 ## Engine improvements
 
+- Fix checks for local user config file paths ([#27479][27479])
+- Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows ([#27472][27472])
 - Fix the logic for finding the ssh executable in the PATH ([#26165][26165]) (Thanks @jborean93!)
 - Move .NET method invocation logging to after the needed type conversion is done for method
   arguments ([#25357][25357])
@@ -275,6 +282,7 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [05]: ../learn/experimental-features.md#psredirecttovariable
 [06]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
 [07]: /dotnet/core/whats-new/dotnet-9/overview
+[08]: ../install/install-powershell-on-macos.md
 
 [19896]: https://github.com/PowerShell/PowerShell/pull/19896
 [20014]: https://github.com/PowerShell/PowerShell/pull/20014
@@ -357,3 +365,5 @@ CollectionSize Test                TotalMilliseconds RelativeSpeed
 [26791]: https://github.com/PowerShell/PowerShell/pull/26791
 [26822]: https://github.com/PowerShell/PowerShell/pull/26822
 [27220]: https://github.com/PowerShell/PowerShell/pull/27220
+[27472]: https://github.com/PowerShell/PowerShell/pull/27472
+[27479]: https://github.com/PowerShell/PowerShell/pull/27479

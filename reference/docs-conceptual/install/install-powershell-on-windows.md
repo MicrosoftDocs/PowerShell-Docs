@@ -1,6 +1,6 @@
 ---
 description: How to install PowerShell on Windows
-ms.date: 05/01/2026
+ms.date: 05/20/2026
 title: Install PowerShell 7 on Windows
 ---
 # Install PowerShell 7 on Windows
@@ -51,7 +51,7 @@ winget search --id Microsoft.PowerShell --exact
 ```Output
 Name               Id                           Version   Source
 -----------------------------------------------------------------
-PowerShell         Microsoft.PowerShell         7.6.1.0   winget
+PowerShell         Microsoft.PowerShell         7.6.2.0   winget
 ```
 
 Beginning with the winget package for PowerShell 7.6.0, winget installs the MSIX package by default.
@@ -86,8 +86,8 @@ package from GitHub.
 
 Latest stable release:
 
-- [PowerShell-7.6.1-win-x64.msi][17]
-- [PowerShell-7.6.1-win-arm64.msi][15]
+- [PowerShell-7.6.2-win-x64.msi][17]
+- [PowerShell-7.6.2-win-arm64.msi][15]
 
 Once downloaded, double-click the installer file and follow the prompts.
 
@@ -131,7 +131,7 @@ The following example shows how to silently install PowerShell with all the inst
 
 ```powershell
 $msiParams = @(
-    '/package PowerShell-7.6.1-win-x64.msi'
+    '/package PowerShell-7.6.2-win-x64.msi'
     '/quiet'
     'ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1'
     'ADD_FILE_CONTEXT_MENU_RUNPOWERSHELL=1'
@@ -151,8 +151,8 @@ For a full list of command-line options for `Msiexec.exe`, see [Command line opt
 <a id="zip"></a>PowerShell binary ZIP archives are provided to enable advanced deployment scenarios.
 Download one of the following ZIP archives from the [current release][21] page.
 
-- [PowerShell-7.6.1-win-x64.zip][18]
-- [PowerShell-7.6.1-win-arm64.zip][16]
+- [PowerShell-7.6.2-win-x64.zip][18]
+- [PowerShell-7.6.2-win-arm64.zip][16]
 
 Depending on how you download the file you may need to unblock the file using the `Unblock-File`
 cmdlet. Unzip the contents to the location of your choice and run `pwsh.exe` from there. Unlike
@@ -192,15 +192,15 @@ Benefits of the Microsoft Store package:
 To manually install the MSIX package, download one of the following packages from the GitHub
 releases page and double-click the file to install it.
 
-- Latest LTS - [PowerShell-7.6.1.msixbundle][19]
-- Latest stable - [PowerShell-7.5.6.msixbundle][14]
-- Previous LTS - [PowerShell-7.4.15.msixbundle][13]
+- Latest LTS - [PowerShell-7.6.2.msixbundle][19]
+- Latest stable - [PowerShell-7.5.7.msixbundle][14]
+- Previous LTS - [PowerShell-7.4.16.msixbundle][13]
 - Current preview - [PowerShell-7.7.0-preview.1.msixbundle][20]
 
 Alternatively, you can use the following command to install the MSIX package from the command line:
 
 ```powershell
-Add-AppxPackage -Path ".\PowerShell-7.6.1.msixbundle"
+Add-AppxPackage -Path ".\PowerShell-7.6.2.msixbundle"
 ```
 
 #### Limitations of a MSIX-based installation
@@ -355,13 +355,13 @@ can't support those methods.
 [10]: #msstore
 [11]: #winget
 [12]: #zip
-[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.15/PowerShell-7.4.15.msixbundle
-[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.6/PowerShell-7.5.6.msixbundle
-[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-arm64.msi
-[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-arm64.zip
-[17]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-x64.msi
-[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-x64.zip
-[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1.msixbundle
+[13]: https://github.com/PowerShell/PowerShell/releases/download/v7.4.16/PowerShell-7.4.16.msixbundle
+[14]: https://github.com/PowerShell/PowerShell/releases/download/v7.5.7/PowerShell-7.5.7.msixbundle
+[15]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.2/PowerShell-7.6.2-win-arm64.msi
+[16]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.2/PowerShell-7.6.2-win-arm64.zip
+[17]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.2/PowerShell-7.6.2-win-x64.msi
+[18]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.2/PowerShell-7.6.2-win-x64.zip
+[19]: https://github.com/PowerShell/PowerShell/releases/download/v7.6.2/PowerShell-7.6.2.msixbundle
 [20]: https://github.com/PowerShell/PowerShell/releases/download/v7.7.0-preview.1/PowerShellPreview-7.7.0-preview.1.msixbundle
 [21]: https://github.com/PowerShell/PowerShell/releases/latest
 [22]: https://www.microsoft.com/store/apps/9MZ1SNWT0N5D

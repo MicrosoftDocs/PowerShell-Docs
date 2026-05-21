@@ -1,21 +1,26 @@
 ---
 title: What's New in PowerShell 7.6
 description: New features and changes released in PowerShell 7.6
-ms.date: 04/21/2026
+ms.date: 05/20/2026
 ---
 
 # What's New in PowerShell 7.6
 
-PowerShell 7.6.1 includes the following features, updates, and breaking changes. PowerShell
-7.6.1 is built on the .NET 10.0.6 runtime.
+PowerShell 7.6.2 includes the following features, updates, and breaking changes. PowerShell
+7.6.2 is built on the .NET 10.0.6 runtime.
 
 For a complete list of changes, see the [CHANGELOG][log] in the GitHub repository.
 
 [log]: https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG/7.6.md
 
+## Installer updates
+
+The macOS PKG package is now notarized and signed by Microsoft. For more information, see
+[Install PowerShell 7 on macOS][07].
+
 ## Updated modules
 
-PowerShell 7.6.1 includes the following updated modules:
+PowerShell 7.6.2 includes the following updated modules:
 
 - **Microsoft.PowerShell.PSResourceGet** v1.2.0
 - **PSReadLine** v2.4.5
@@ -145,6 +150,9 @@ PowerShell 7.6.1 includes the following updated modules:
 
 ## Engine improvements
 
+- Fix checks for local user config file paths ([#27432][27432])
+- Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows ([#27438][27438])
+- Enable usage in AppContainers ([#27423][27423])
 - Delay update notification for one week to ensure all packages become available ([#27220][27220])
 - Fix a regression in the API `CompletionCompleters.CompleteFilename()` that causes null reference
   exception ([#26487][26487])
@@ -210,6 +218,7 @@ This release includes the following experimental features:
 [04]: ../learn/experimental-features.md#psredirecttovariable
 [05]: ../learn/experimental-features.md#psserializejsonlongenumasnumber
 [06]: ../learn/experimental-features.md#pssubsystempluginmodel
+[07]: ../install/install-powershell-on-macos.md
 
 [14553]: https://github.com/PowerShell/PowerShell/pull/14553
 [17687]: https://github.com/PowerShell/PowerShell/pull/17687
@@ -306,3 +315,6 @@ This release includes the following experimental features:
 [26571]: https://github.com/PowerShell/PowerShell/pull/26571
 [26572]: https://github.com/PowerShell/PowerShell/pull/26572
 [27220]: https://github.com/PowerShell/PowerShell/pull/27220
+[27423]: https://github.com/PowerShell/PowerShell/pull/27423
+[27432]: https://github.com/PowerShell/PowerShell/pull/27432
+[27438]: https://github.com/PowerShell/PowerShell/pull/27438
