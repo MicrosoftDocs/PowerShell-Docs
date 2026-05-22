@@ -37,6 +37,13 @@ Run the following command to install PowerShell using the Homebrew formula:
 brew install powershell
 ```
 
+If you receive the message: _"Warning: PowerShell is already installed, it's just not linked."_, run
+the following command:
+
+```sh
+brew link powershell
+```
+
 ### Update PowerShell 7
 
 Run the following commands to update the installed version of PowerShell to the latest release.
