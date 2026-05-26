@@ -19,14 +19,15 @@ been released.
 Beginning with PowerShell 7.0, PowerShell uses update notifications to alert
 users to the existence of updates to PowerShell. Every time PowerShell starts,
 PowerShell waits 3 seconds before it checks for updated versions. Since
-PowerShell waits 3 seconds before checking for updates, you might not see the
-update notification until the next time you start PowerShell.
+PowerShell waits 3 seconds before checking for updates and the notification
+message is displayed with the startup banner, you might not see the update
+notification until the next time you start PowerShell.
 
 If update notification is enabled, it checks to see if it has been more than 24
 hours since the last check for updates. If it has been more than 24 hours, it
 checks the appropriate endpoint for the latest version of PowerShell.
 PowerShell only displays the update notification when the release date of the
-the newer version is more than 7 days old. This delay allows time for the
+newer version is more than 7 days old. This delay allows time for the
 publication of the various package types to become available before you are
 notified of the update.
 
