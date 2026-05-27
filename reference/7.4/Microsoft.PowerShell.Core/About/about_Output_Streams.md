@@ -1,7 +1,7 @@
 ---
 description: Explains the availability and purpose of output streams in PowerShell.
 Locale: en-US
-ms.date: 12/09/2025
+ms.date: 05/27/2026
 no-loc: [Success, Error, Warning, Verbose, Debug, Information, Progress]
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_output_streams?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
@@ -22,15 +22,15 @@ associated cmdlet or redirection. For more information, see
 
 PowerShell supports the following output streams.
 
-| Stream # |      Description       | Introduced in  |    Write Cmdlet     |
-| -------- | ---------------------- | -------------- | ------------------- |
-| 1        | **Success** stream     | PowerShell 2.0 | `Write-Output`      |
-| 2        | **Error** stream       | PowerShell 2.0 | `Write-Error`       |
-| 3        | **Warning** stream     | PowerShell 2.0 | `Write-Warning`     |
-| 4        | **Verbose** stream     | PowerShell 2.0 | `Write-Verbose`     |
-| 5        | **Debug** stream       | PowerShell 2.0 | `Write-Debug`       |
-| 6        | **Information** stream | PowerShell 5.0 | `Write-Information` |
-| n/a      | **Progress** stream    | PowerShell 2.0 | `Write-Progress`    |
+| Stream # |      Description       | Introduced in  |            Write Cmdlet             |
+| -------- | ---------------------- | -------------- | ----------------------------------- |
+| 1        | **Success** stream     | PowerShell 2.0 | `Write-Output`                      |
+| 2        | **Error** stream       | PowerShell 2.0 | `Write-Error`                       |
+| 3        | **Warning** stream     | PowerShell 2.0 | `Write-Warning`                     |
+| 4        | **Verbose** stream     | PowerShell 2.0 | `Write-Verbose`                     |
+| 5        | **Debug** stream       | PowerShell 2.0 | `Write-Debug`                       |
+| 6        | **Information** stream | PowerShell 5.0 | `Write-Information` or `Write-Host` |
+| n/a      | **Progress** stream    | PowerShell 2.0 | `Write-Progress`                    |
 
 > [!NOTE]
 > The **Progress** stream doesn't support redirection.

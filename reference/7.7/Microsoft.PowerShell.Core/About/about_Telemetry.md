@@ -1,9 +1,8 @@
 ---
 description: Describes the telemetry collected in PowerShell and how to opt-out.
 Locale: en-US
-ms.date: 09/24/2024
+ms.date: 05/27/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_telemetry?view=powershell-7.7&WT.mc_id=ps-gethelp
-ms.custom: 7.5-preview.5
 schema: 2.0.0
 title: about_Telemetry
 ---
@@ -52,32 +51,40 @@ PowerShell sends the following information during the session:
 - Value of `$PSNativeCommandUseErrorActionPreference` preference variable,
   either `true`, `false` or `unset`
 - The count of remote session open operations
-- The names of registered subsystems: `Completion` and `general`. If the name
-  of the subsystem name not one of those, then `anonymous` is submitted as the
-  name.
-- The count of `CommandNotFound` feedback suggestions provided.
-- The count of `PowerShellUnsafeAssemblyLoad` usage and whether the load was
-  successful or not.
-
-PowerShell sends this information periodically during the lifetime of the
-session for all host applications.
-
-To opt-out of this telemetry, set the environment variable
-`$Env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`. For this
-environment variable to have effect, it must be set before starting the
-PowerShell process. For more information, see
-[about_Environment_Variables][01].
 
 The `$Env:POWERSHELL_DISTRIBUTION_CHANNEL` environment variable is set by the
 installer packages to record the method and source of installation for
 PowerShell. Since this information is included in the telemetry data sent to
 Microsoft, users shouldn't change this value.
 
-For more information about these environment variables, see
-[about_Environment_Variables][01].
+PowerShell sends this information periodically during the lifetime of the
+session for all host applications on all platforms.
 
-For more information about Microsoft's statement on privacy, see
-[Microsoft Privacy Statement][03]
+### Disable telemetry
+
+There are two ways to disable the sending of telemetry.
+
+- On all platforms, set the environment variable
+  `$Env:POWERSHELL_TELEMETRY_OPTOUT` to `true`, `yes`, or `1`. For this
+  environment variable to have effect, it must be set before starting the
+  PowerShell process. For more information, see
+  [about_Environment_Variables][01].
+
+- Beginning with PowerShell 7.7-preview.2 on Windows, PowerShell respects the
+  **Diagnostics & feedback** setting in Windows. Use the following steps to
+  disable telemetry in Windows.
+
+  1. Open the **Settings** app and navigate to **Privacy & security** >
+     **Diagnostics & feedback**.
+  1. Expand the **Diagnostic data** section.
+  1. Under **Send optional diagnostic data**, set the toggle to **Off**.
+
+## Further reading
+
+- For more information about these environment variables, see
+  [about_Environment_Variables][01].
+- For more information about Microsoft's statement on privacy, see
+  [Microsoft Privacy Statement][03]
 
 <!-- link references -->
 [01]: about_Environment_Variables.md#powershell-environment-variables
