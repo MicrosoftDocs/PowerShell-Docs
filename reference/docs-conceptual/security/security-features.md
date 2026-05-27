@@ -77,6 +77,19 @@ system for Windows.
 For more information about how PowerShell supports AppLocker and App Control, see
 [Use App Control to secure PowerShell][10].
 
+### System Lockdown mode
+
+In PowerShell, System Lockdown mode is an abstraction of the system-wide application control policy
+enforced by Windows through App Control for Business or AppLocker. When an application control
+policy is active, PowerShell enters System Lockdown mode. In System Lockdown mode, the application
+control policy determines the language mode for each runspace.
+
+> [!IMPORTANT]
+> Without System Lockdown mode, language mode doesn't propagate between runspaces. Each runspace
+> independently queries the Windows application control policy to determine its language mode.
+> Setting the language mode on one runspace doesn't affect other runspaces. Without an active
+> application control policy, new runspaces default to `FullLanguage` mode.
+
 ## Software Bill of Materials (SBOM)
 
 Beginning with PowerShell 7.2, all install packages contain a Software Bill of Materials (SBOM). The
