@@ -443,7 +443,7 @@ This provides us a simpler prompt with fewer options.
 ```powershell
 Test-ShouldContinue
 
-Second
+OPERATION
 TARGET
 [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
 ```
