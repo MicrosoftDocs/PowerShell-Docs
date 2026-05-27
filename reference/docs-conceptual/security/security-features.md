@@ -86,8 +86,8 @@ ConstrainedLanguage mode as the default for all runspaces.
 
 **Without SLM, language mode does not propagate between runspaces.** Each runspace independently
 queries the Windows application control policy to determine its language mode. Setting the language
-mode on one runspace does not affect other runspaces. Without an active application control policy,
-new runspaces default to FullLanguage mode.
+mode on one runspace does not affect other runspaces. **Without an active application control policy,
+new runspaces default to FullLanguage mode.**
 
 ## Software Bill of Materials (SBOM)
 
