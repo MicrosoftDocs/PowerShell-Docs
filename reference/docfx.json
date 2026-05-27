@@ -104,6 +104,9 @@
           "https://authoring-docs-microsoft.poolparty.biz/devrel/2bdae855-045f-4535-b365-7b2e23824328",
           "https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3"
         ]
+      },
+      "titleSuffix": {
+        "docs-conceptual/learn/ps101/*.md": "PowerShell 101"
       }
     },
     "globalMetadata": {
