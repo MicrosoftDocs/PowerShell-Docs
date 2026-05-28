@@ -36,6 +36,12 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Cmdlet improvements
 
+- Handle empty-string and null-value results returned from custom argument completer more properly
+  ([#27398][27398])
+- Add missing resource strings for `Get-WinEvent` ([#27397][27397]) (Thanks @MartinGC94!)
+- Improve `Get-WinEvent -ListLog` exception handling ([#27395][27395]) (Thanks @MartinGC94!)
+- Update `MaxVisitCount` and `MaxHashtableKeyCount` if `VisitorSafeValueContext` indicates
+  `SkipLimitCheck` is true for `Import-PowerShellDataFile`
 - Correct handling of explicit `-<SwitchParameter>:$false` parameter values for the following
   cmdlets:
   - `ConvertFrom-Csv`, `ConvertTo-Csv`, `Export-Csv`, and `Import-Csv` ([#26719][26719]) (Thanks
@@ -88,6 +94,8 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Engine improvements
 
+- Update PowerShell telemetry to respect the diagnostics and feedback setting on Windows
+  ([#27328][27328])
 - Fix up default value for parameters with the `in` modifier ([#26785][26785]) (Thanks @jborean93!)
 - Fix `WSManInstance` COM interface with `ResourceURI` ([#26692][26692]) (Thanks @jborean93!)
 - Refactor the module path construction code to make it more robust and easier to maintain
@@ -155,3 +163,7 @@ PowerShell 7.7 includes the following experimental features.
 [27109]: https://github.com/PowerShell/PowerShell/pull/27109
 [27123]: https://github.com/PowerShell/PowerShell/pull/27123
 [27266]: https://github.com/PowerShell/PowerShell/pull/27266
+[27328]: https://github.com/PowerShell/PowerShell/pull/27328
+[27395]: https://github.com/PowerShell/PowerShell/pull/27395
+[27397]: https://github.com/PowerShell/PowerShell/pull/27397
+[27398]: https://github.com/PowerShell/PowerShell/pull/27398
