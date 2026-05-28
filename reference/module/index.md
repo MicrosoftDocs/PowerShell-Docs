@@ -9,7 +9,6 @@ ms.author: sewhee
 ms.date: 05/05/2026
 ms.devlang: powershell
 ms.manager: sewhee
-ms.product: powershell
 ms.topic: landing-page
 quickFilterColumn1: powershell-7.4,windowsserver2025-ps
 quickFilterColumn2: azps-15.6.0,sqlserver-ps
