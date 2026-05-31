@@ -188,7 +188,7 @@ Invoke-WmiMethod @invokeWmiMethodSplat
 ### -ArgumentList
 
 Specifies the parameters to pass to the called method. The value of this parameter must be an array
-of objects, and they must appear in the order required by the called method. The `Invoke-CimCommand`
+of objects, and they must appear in the order required by the called method. The `Invoke-CimMethod`
 cmdlet does not have these limitations.
 
 To determine the order in which to list those objects, run the `GetMethodParameters()` method on the
