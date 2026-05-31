@@ -20,6 +20,9 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Breaking Changes
 
+- `New-Guid` now generates Version 7 (time-sortable) UUIDs by default instead of Version 4
+  (random). The output format is unchanged. Scripts that depend on fully random GUIDs should use
+  `[guid]::NewGuid()` directly. ([#27033][27033])
 - Add `ValidateNotNullOrEmpty` attribute to the `-Property` of `Format-Table`, `Format-List`, and
   `Format-Custom` ([#26552][26552])
 - Use ArgumentException.ThrowIfNullOrEmpty for not-null-not-empty argument validation.
@@ -36,6 +39,8 @@ PowerShell 7.7 includes the following updated modules:
 
 ## Cmdlet improvements
 
+- Change `New-Guid` to generate UUID v7 by default using `Guid.CreateVersion7()`
+  ([#27033][27033])
 - Correct handling of explicit `-<SwitchParameter>:$false` parameter values for the following
   cmdlets:
   - `ConvertFrom-Csv`, `ConvertTo-Csv`, `Export-Csv`, and `Import-Csv` ([#26719][26719]) (Thanks
@@ -153,5 +158,6 @@ PowerShell 7.7 includes the following experimental features.
 [27095]: https://github.com/PowerShell/PowerShell/pull/27095
 [27106]: https://github.com/PowerShell/PowerShell/pull/27106
 [27109]: https://github.com/PowerShell/PowerShell/pull/27109
+[27033]: https://github.com/PowerShell/PowerShell/pull/27033
 [27123]: https://github.com/PowerShell/PowerShell/pull/27123
 [27266]: https://github.com/PowerShell/PowerShell/pull/27266
