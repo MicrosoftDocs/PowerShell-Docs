@@ -259,7 +259,7 @@ The scope of the escalated error depends on context:
   'after'
   ```
 
-- ADVANCED: statement-terminating ('after' does NOT print)
+- ADVANCED: script-terminating ('after' does NOT print)
 
   ```powershell
   & {
