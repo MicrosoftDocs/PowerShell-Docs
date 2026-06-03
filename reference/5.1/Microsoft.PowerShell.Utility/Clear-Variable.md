@@ -219,9 +219,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### System.Management.Automation.PSVariable
 
-You can't pipe objects to this cmdlet.
+You can pipe a variable object to this cmdlet.
 
 ## OUTPUTS
 
