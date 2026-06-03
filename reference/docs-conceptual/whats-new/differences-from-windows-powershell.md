@@ -5,6 +5,11 @@ description: This article summarizes the differences and breaking changes from W
 ---
 # Differences between Windows PowerShell 5.1 and PowerShell 7.x
 
+> [!TIP]
+> This article is a technical reference of all differences between editions.
+> For a step-by-step migration guide, see
+> [Migrating from Windows PowerShell 5.1 to PowerShell 7][migration-guide].
+
 Windows PowerShell 5.1 is built on top of the .NET Framework v4.5. With the release of PowerShell
 6.0, PowerShell became an open source project built on .NET Core 2.0. Moving from the .NET Framework
 to .NET Core allowed PowerShell to become a cross-platform solution. PowerShell runs on Windows,
@@ -1251,3 +1256,4 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 [34]: What-s-New-in-PowerShell-73.md
 [35]: What-s-New-in-PowerShell-74.md
 [36]: What-s-New-in-PowerShell-75.md
+[migration-guide]: ./Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
