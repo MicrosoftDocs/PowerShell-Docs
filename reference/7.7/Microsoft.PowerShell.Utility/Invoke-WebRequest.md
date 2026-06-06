@@ -21,66 +21,76 @@ Gets content from a web page on the internet.
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
- [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
+ [-WebSession <WebRequestSession>] [-SessionVariable <String>]
+ [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>]
+ [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
+ [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
  [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect]
  [-UnixSocket <UnixDomainSocketEndPoint>] [-Proxy <Uri>] [-ProxyCredential <PSCredential>]
- [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [<CommonParameters>]
+ [-ProxyUseDefaultCredentials] [-Body <Object>] [-Form <IDictionary>]
+ [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
+ [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### StandardMethodNoProxy
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
- [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
+ [-WebSession <WebRequestSession>] [-SessionVariable <String>]
+ [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>]
+ [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
+ [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
  [-Method <WebRequestMethod>] [-PreserveHttpMethodOnRedirect]
- [-UnixSocket <UnixDomainSocketEndPoint>] [-NoProxy] [-Body <Object>] [-Form <IDictionary>]
- [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>]
- [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
+ [-UnixSocket <UnixDomainSocketEndPoint>] [-NoProxy] [-Body <Object>]
+ [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
+ [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck]
+ [<CommonParameters>]
 ```
 
 ### CustomMethod
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
- [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
- -CustomMethod <String> [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
- [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
- [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>] [-InFile <String>]
- [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck] [<CommonParameters>]
+ [-WebSession <WebRequestSession>] [-SessionVariable <String>]
+ [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>]
+ [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
+ [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>] -CustomMethod <String>
+ [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
+ [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
+ [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
+ [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
 
 ```
 Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
- [-WebSession <WebRequestSession>] [-SessionVariable <String>] [-AllowUnencryptedAuthentication]
- [-Authentication <WebAuthenticationType>] [-Credential <PSCredential>] [-UseDefaultCredentials]
- [-CertificateThumbprint <String>] [-Certificate <X509Certificate>] [-SkipCertificateCheck]
- [-SslProtocol <WebSslProtocol>] [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
- [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>] [-Headers <IDictionary>]
- [-SkipHeaderValidation] [-AllowInsecureRedirect] [-MaximumRedirection <Int32>]
- [-MaximumRetryCount <Int32>] [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>]
- -CustomMethod <String> [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
+ [-WebSession <WebRequestSession>] [-SessionVariable <String>]
+ [-AllowUnencryptedAuthentication] [-Authentication <WebAuthenticationType>]
+ [-Credential <PSCredential>] [-UseDefaultCredentials] [-CertificateThumbprint <String>]
+ [-Certificate <X509Certificate>] [-SkipCertificateCheck] [-SslProtocol <WebSslProtocol>]
+ [-Token <SecureString>] [-UserAgent <String>] [-DisableKeepAlive]
+ [-ConnectionTimeoutSeconds <Int32>] [-OperationTimeoutSeconds <Int32>]
+ [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
+ [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
+ [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>] -CustomMethod <String>
+ [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
  [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
  [-SkipHttpErrorCheck] [<CommonParameters>]
@@ -1416,7 +1426,10 @@ properties of the [PSUserAgent](/dotnet/api/microsoft.powershell.commands.psuser
 as Chrome, Firefox, InternetExplorer, Opera, and Safari.
 
 For example, the following command uses the user agent string for Internet Explorer:
-`Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)`
+
+```powershell
+Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+```
 
 ```yaml
 Type: System.String

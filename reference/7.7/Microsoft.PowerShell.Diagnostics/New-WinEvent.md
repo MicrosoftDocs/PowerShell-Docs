@@ -16,8 +16,8 @@ Creates a new Windows event for the specified event provider.
 ## SYNTAX
 
 ```
-New-WinEvent [-ProviderName] <String> [-Id] <Int32> [-Version <Byte>] [[-Payload] <Object[]>]
- [<CommonParameters>]
+New-WinEvent [-ProviderName] <String> [-Id] <Int32> [-Version <Byte>]
+ [[-Payload] <Object[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

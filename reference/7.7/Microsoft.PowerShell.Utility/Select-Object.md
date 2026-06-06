@@ -19,31 +19,31 @@ Selects objects or object properties.
 ### DefaultParameter (Default)
 
 ```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-CaseInsensitive] [-Last <Int32>] [-First <Int32>]
- [-Skip <Int32>] [-Wait] [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>]
+ [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-CaseInsensitive]
+ [-Last <Int32>] [-First <Int32>] [-Skip <Int32>] [-Wait] [<CommonParameters>]
 ```
 
 ### SkipLastParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>] [-ExcludeProperty <String[]>]
- [-ExpandProperty <String>] [-Unique] [-CaseInsensitive] [-Skip <Int32>] [-SkipLast <Int32>]
- [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [[-Property] <Object[]>]
+ [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-CaseInsensitive]
+ [-Skip <Int32>] [-SkipLast <Int32>] [<CommonParameters>]
 ```
 
 ### IndexParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [-Unique] [-CaseInsensitive] [-Wait] [-Index <Int32[]>]
- [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [-Unique] [-CaseInsensitive] [-Wait]
+ [-Index <Int32[]>] [<CommonParameters>]
 ```
 
 ### SkipIndexParameter
 
 ```
-Select-Object [-InputObject <PSObject>] [-Unique] [-CaseInsensitive] [-SkipIndex <Int32[]>]
- [<CommonParameters>]
+Select-Object [-InputObject <PSObject>] [-Unique] [-CaseInsensitive]
+ [-SkipIndex <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

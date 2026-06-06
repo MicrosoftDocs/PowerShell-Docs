@@ -16,16 +16,17 @@ Customizes the behavior of command line editing in **PSReadLine**.
 ## SYNTAX
 
 ```
-Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <string>] [-HistoryNoDuplicates]
- [-AddToHistoryHandler <Func[string,Object]>] [-CommandValidationHandler <Action[CommandAst]>]
- [-HistorySearchCursorMovesToEnd] [-MaximumHistoryCount <int>] [-MaximumKillRingCount <int>]
- [-ShowToolTips] [-ExtraPromptLineCount <int>] [-DingTone <int>] [-DingDuration <int>]
+Set-PSReadLineOption [-EditMode <EditMode>] [-ContinuationPrompt <string>]
+ [-HistoryNoDuplicates] [-AddToHistoryHandler <Func[string,Object]>]
+ [-CommandValidationHandler <Action[CommandAst]>] [-HistorySearchCursorMovesToEnd]
+ [-MaximumHistoryCount <int>] [-MaximumKillRingCount <int>] [-ShowToolTips]
+ [-ExtraPromptLineCount <int>] [-DingTone <int>] [-DingDuration <int>]
  [-BellStyle <BellStyle>] [-CompletionQueryItems <int>] [-WordDelimiters <string>]
- [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>] [-HistorySavePath <string>]
- [-AnsiEscapeTimeout <int>] [-PromptText <string[]>] [-ViModeIndicator <ViModeStyle>]
- [-ViModeChangeHandler <scriptblock>] [-PredictionSource <PredictionSource>]
- [-PredictionViewStyle <PredictionViewStyle>] [-Colors <hashtable>]
- [-TerminateOrphanedConsoleApps] [<CommonParameters>]
+ [-HistorySearchCaseSensitive] [-HistorySaveStyle <HistorySaveStyle>]
+ [-HistorySavePath <string>] [-AnsiEscapeTimeout <int>] [-PromptText <string[]>]
+ [-ViModeIndicator <ViModeStyle>] [-ViModeChangeHandler <scriptblock>]
+ [-PredictionSource <PredictionSource>] [-PredictionViewStyle <PredictionViewStyle>]
+ [-Colors <hashtable>] [-TerminateOrphanedConsoleApps] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

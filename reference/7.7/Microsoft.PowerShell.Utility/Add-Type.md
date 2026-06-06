@@ -18,8 +18,9 @@ Adds a Microsoft .NET class to a PowerShell session.
 ### FromSource (Default)
 
 ```
-Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblies <String[]>]
- [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
+Add-Type [-TypeDefinition] <String> [-Language <Language>]
+ [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
  [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
@@ -28,24 +29,24 @@ Add-Type [-TypeDefinition] <String> [-Language <Language>] [-ReferencedAssemblie
 ```
 Add-Type [-Name] <String> [-MemberDefinition] <String[]> [-Namespace <String>]
  [-UsingNamespace <String[]>] [-Language <Language>] [-ReferencedAssemblies <String[]>]
- [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
- [-CompilerOptions <String[]>] [<CommonParameters>]
+ [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru]
+ [-IgnoreWarnings] [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
 ### FromPath
 
 ```
 Add-Type [-Path] <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
- [<CommonParameters>]
+ [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings]
+ [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
 ### FromLiteralPath
 
 ```
-Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>] [-OutputAssembly <String>]
- [-OutputType <OutputAssemblyType>] [-PassThru] [-IgnoreWarnings] [-CompilerOptions <String[]>]
- [<CommonParameters>]
+Add-Type -LiteralPath <String[]> [-ReferencedAssemblies <String[]>]
+ [-OutputAssembly <String>] [-OutputType <OutputAssemblyType>] [-PassThru]
+ [-IgnoreWarnings] [-CompilerOptions <String[]>] [<CommonParameters>]
 ```
 
 ### FromAssemblyName

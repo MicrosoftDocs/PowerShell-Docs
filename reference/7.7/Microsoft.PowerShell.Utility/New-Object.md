@@ -18,7 +18,8 @@ Creates an instance of a Microsoft .NET Framework or COM object.
 ### Net (Default)
 
 ```
-New-Object [-TypeName] <String> [[-ArgumentList] <Object[]>] [-Property <IDictionary>] [<CommonParameters>]
+New-Object [-TypeName] <String> [[-ArgumentList] <Object[]>] [-Property <IDictionary>]
+ [<CommonParameters>]
 ```
 
 ### Com
@@ -92,11 +93,11 @@ At line:1 char:14
 This example shows how to create and use a COM object to manage your Windows desktop.
 
 The first command uses the **ComObject** parameter of the `New-Object` cmdlet to create a COM object
-with the **Shell.Application** ProgID. It stores the resulting object in the `$objShell` variable. The
-second command pipes the `$objShell` variable to the `Get-Member` cmdlet, which displays the
-properties and methods of the COM object. Among the methods is the **ToggleDesktop** method. The
-third command calls the **ToggleDesktop** method of the object to minimize the open windows on your
-desktop.
+with the **Shell.Application** ProgID. It stores the resulting object in the `$objShell` variable.
+The second command pipes the `$objShell` variable to the `Get-Member` cmdlet, which displays the
+properties and methods of the COM object. Among the methods is the **ToggleDesktop** method.
+The third command calls the **ToggleDesktop** method of the object to minimize the open windows on
+your desktop.
 
 ```powershell
 $objShell = New-Object -ComObject "Shell.Application"
@@ -209,9 +210,12 @@ Specifies an array of arguments to pass to the constructor of the .NET Framework
 constructor takes a single parameter that is an array, you must wrap that parameter inside another
 array. For example:
 
-`$cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList (,$bytes)`
+```powershell
+$cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList (,$bytes)
+```
 
-For more information about the behavior of **ArgumentList**, see [about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md#splatting-with-arrays).
+For more information about the behavior of **ArgumentList**, see
+[about_Splatting](../Microsoft.PowerShell.Core/About/about_Splatting.md#splatting-with-arrays).
 
 The alias for **ArgumentList** is **Args**.
 
@@ -306,7 +310,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

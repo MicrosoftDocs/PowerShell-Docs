@@ -30,7 +30,8 @@ Get-AuthenticodeSignature -LiteralPath <String[]> [<CommonParameters>]
 ### ByContent
 
 ```
-Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]> [<CommonParameters>]
+Get-AuthenticodeSignature -SourcePathOrExtension <String[]> -Content <Byte[]>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -15,8 +15,8 @@ Combines a path and a child path into a single path.
 ## SYNTAX
 
 ```
-Join-Path [-Path] <String[]> [-ChildPath] <String> [[-AdditionalChildPath] <String[]>] [-Resolve]
- [-Credential <PSCredential>] [-Extension <String>] [<CommonParameters>]
+Join-Path [-Path] <String[]> [-ChildPath] <String> [[-AdditionalChildPath] <String[]>]
+ [-Resolve] [-Credential <PSCredential>] [-Extension <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

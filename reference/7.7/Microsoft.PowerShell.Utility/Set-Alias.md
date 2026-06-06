@@ -20,8 +20,9 @@ Creates or changes an alias for a cmdlet or other command in the current PowerSh
 ### Default (Default)
 
 ```
-Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <ScopedItemOptions>]
- [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Alias [-Name] <string> [-Value] <string> [-Description <string>]
+ [-Option <ScopedItemOptions>] [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

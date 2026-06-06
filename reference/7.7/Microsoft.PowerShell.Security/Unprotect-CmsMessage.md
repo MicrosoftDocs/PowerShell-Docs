@@ -39,8 +39,8 @@ Unprotect-CmsMessage [-Path] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeC
 ### ByLiteralPath
 
 ```
-Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-IncludeContext]
- [<CommonParameters>]
+Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>]
+ [-IncludeContext] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

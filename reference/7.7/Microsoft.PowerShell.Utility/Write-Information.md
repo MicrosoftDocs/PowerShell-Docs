@@ -11,7 +11,6 @@ title: Write-Information
 # Write-Information
 
 ## SYNOPSIS
-
 Specifies how PowerShell handles information stream data for a command.
 
 ## SYNTAX

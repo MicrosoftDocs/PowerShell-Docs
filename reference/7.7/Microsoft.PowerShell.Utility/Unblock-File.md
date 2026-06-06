@@ -70,7 +70,7 @@ PS C:\> dir C:\Downloads\*PowerShell* | Unblock-File
 
 This command shows how to find and unblock PowerShell scripts.
 
-The first command uses the **Stream** parameter of the *Get-Item* cmdlet get files with the
+The first command uses the **Stream** parameter of the `Get-Item` cmdlet get files with the
 **Zone.Identifier** stream.
 
 The second command shows what happens when you run a blocked script in a PowerShell session in which

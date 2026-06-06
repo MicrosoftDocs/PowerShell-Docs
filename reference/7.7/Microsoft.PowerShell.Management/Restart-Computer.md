@@ -19,8 +19,8 @@ Restarts the operating system on local and remote computers.
 
 ```
 Restart-Computer [-WsmanAuthentication <String>] [[-ComputerName] <String[]>]
- [[-Credential]<PSCredential>] [-Force] [-Wait] [-Timeout <Int32>] [-For <WaitForServiceTypes>]
- [-Delay <Int16>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [[-Credential]<PSCredential>] [-Force] [-Wait] [-Timeout <Int32>]
+ [-For <WaitForServiceTypes>] [-Delay <Int16>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -39,8 +39,6 @@ scripts and functions.
 In PowerShell 7.1, `Restart-Computer` was added for Linux and macOS. The non-Windows platforms only
 have the **WhatIf**, **Confirm**, and **CommonParameters** parameters. The cmdlet is just calling
 the native command `/sbin/shutdown`.
-
-## EXAMPLES
 
 ## EXAMPLES
 

@@ -16,9 +16,10 @@ Creates a new Windows service.
 ## SYNTAX
 
 ```
-New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] [-Description <String>]
- [-SecurityDescriptorSddl <String>] [-StartupType <ServiceStartupType>] [-Credential <PSCredential>]
- [-DependsOn <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>]
+ [-Description <String>] [-SecurityDescriptorSddl <String>]
+ [-StartupType <ServiceStartupType>] [-Credential <PSCredential>] [-DependsOn <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,7 +77,7 @@ Status    : OK
 This command uses `Get-CimInstance` to get the **Win32_Service** object for the new service. This
 object includes the start mode and the service description.
 
-### Example 4: Set the SecurityDescriptor of a service when creating.
+### Example 4: Set the SecurityDescriptor of a service when creating
 
 This example adds the **SecurityDescriptor** of the service being created.
 

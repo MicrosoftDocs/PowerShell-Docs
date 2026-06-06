@@ -17,9 +17,10 @@ Formats objects as a wide table that displays only one property of each object.
 ## SYNTAX
 
 ```
-Format-Wide [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap]
- [-ExcludeProperty <string[]>] [-GroupBy <Object>] [-View <string>] [-ShowError] [-DisplayError]
- [-Force] [-Expand <string>] [-InputObject <psobject>] [<CommonParameters>]
+Format-Wide [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders]
+ [-Wrap] [-ExcludeProperty <string[]>] [-GroupBy <Object>] [-View <string>] [-ShowError]
+ [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
