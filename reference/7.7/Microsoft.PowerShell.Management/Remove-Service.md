@@ -24,7 +24,8 @@ Remove-Service [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ### InputObject
 
 ```
-Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

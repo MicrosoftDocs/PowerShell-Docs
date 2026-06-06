@@ -18,7 +18,8 @@ Enables Credential Security Support Provider (CredSSP) authentication on a compu
 ### All
 
 ```
-Enable-WSManCredSSP [[-DelegateComputer] <String[]>] [-Force] [-Role] <String> [<CommonParameters>]
+Enable-WSManCredSSP [[-DelegateComputer] <String[]>] [-Force] [-Role] <String>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -217,7 +218,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

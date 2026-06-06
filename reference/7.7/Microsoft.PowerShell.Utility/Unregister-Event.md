@@ -18,13 +18,15 @@ Cancels an event subscription.
 ### BySource (Default)
 
 ```
-Unregister-Event [-SourceIdentifier] <String> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Unregister-Event [-SourceIdentifier] <String> [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ById
 
 ```
-Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

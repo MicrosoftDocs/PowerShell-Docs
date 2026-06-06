@@ -26,9 +26,9 @@ Test-Connection [-TargetName] <string[]> [-Ping] [-IPv4] [-IPv6] [-ResolveDestin
 ### RepeatPing
 
 ```
-Test-Connection [-TargetName] <string[]> -Repeat [-Ping] [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <string>] [-MaxHops <int>] [-Delay <int>] [-BufferSize <int>] [-DontFragment] [-Quiet]
- [-TimeoutSeconds <int>] [<CommonParameters>]
+Test-Connection [-TargetName] <string[]> -Repeat [-Ping] [-IPv4] [-IPv6]
+ [-ResolveDestination] [-Source <string>] [-MaxHops <int>] [-Delay <int>]
+ [-BufferSize <int>] [-DontFragment] [-Quiet] [-TimeoutSeconds <int>] [<CommonParameters>]
 ```
 
 ### TraceRoute
@@ -41,16 +41,16 @@ Test-Connection [-TargetName] <string[]> -Traceroute [-IPv4] [-IPv6] [-ResolveDe
 ### MtuSizeDetect
 
 ```
-Test-Connection [-TargetName] <string[]> -MtuSize [-IPv4] [-IPv6] [-ResolveDestination] [-Quiet]
- [-TimeoutSeconds <int>] [<CommonParameters>]
+Test-Connection [-TargetName] <string[]> -MtuSize [-IPv4] [-IPv6] [-ResolveDestination]
+ [-Quiet] [-TimeoutSeconds <int>] [<CommonParameters>]
 ```
 
 ### TcpPort
 
 ```
-Test-Connection [-TargetName] <string[]> -TcpPort <int> [-IPv4] [-IPv6] [-ResolveDestination]
- [-Source <string>] [-Count <int>] [-Delay <int>] [-Repeat] [-Quiet] [-TimeoutSeconds <int>]
- [-Detailed] [<CommonParameters>]
+Test-Connection [-TargetName] <string[]> -TcpPort <int> [-IPv4] [-IPv6]
+ [-ResolveDestination] [-Source <string>] [-Count <int>] [-Delay <int>] [-Repeat]
+ [-Quiet] [-TimeoutSeconds <int>] [-Detailed] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

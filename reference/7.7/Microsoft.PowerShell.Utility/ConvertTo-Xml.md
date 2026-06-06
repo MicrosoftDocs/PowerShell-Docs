@@ -16,8 +16,8 @@ Creates an XML-based representation of an object.
 ## SYNTAX
 
 ```
-ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation] [-As <String>]
- [<CommonParameters>]
+ConvertTo-Xml [-Depth <Int32>] [-InputObject] <PSObject> [-NoTypeInformation]
+ [-As <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

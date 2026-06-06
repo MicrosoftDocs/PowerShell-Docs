@@ -28,15 +28,15 @@ New-Item [-Path] <String[]> [-ItemType <String>] [-Value <Object>] [-Force]
 ### nameSet - All providers
 
 ```
-New-Item [[-Path] <String[]>] -Name <String> [-ItemType <String>] [-Value <Object>] [-Force]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-Item [[-Path] <String[]>] -Name <String> [-ItemType <String>] [-Value <Object>]
+ [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### pathSet (Default) - WSMan provider
 
 ```
-New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-OptionSet <hashtable>]
+New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <Object>]
+ [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-OptionSet <hashtable>]
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <string>]
  [-SessionOption <SessionOption>] [-Port <int>] [<CommonParameters>]
 ```
@@ -44,8 +44,8 @@ New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <O
 ### nameSet - WSMan provider
 
 ```
-New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-OptionSet <hashtable>]
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>]
+ [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-OptionSet <hashtable>]
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <string>]
  [-SessionOption <SessionOption>] [-ApplicationName <string>] [-Port <int>] [-UseSSL]
  [<CommonParameters>]
@@ -62,8 +62,8 @@ New-Item [-Path] <string[]> [-ItemType <string>] [-Value <Object>] [-Force]
 ### nameSet - Alias provider
 
 ```
-New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Options <ScopedItemOptions>]
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>]
+ [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Options <ScopedItemOptions>]
  [<CommonParameters>]
 ```
 
@@ -112,7 +112,8 @@ profile path, even when the directories in the path do not exist.
 After you create a profile, you can enter aliases, functions, and scripts in the profile to
 customize your shell.
 
-For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
+For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md)
 and [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).
 
 ```powershell

@@ -20,22 +20,22 @@ Starts one or more stopped services.
 ### InputObject (Default)
 
 ```
-Start-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-Service [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
 
 ```
-Start-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Start-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Start-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

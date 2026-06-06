@@ -10,7 +10,6 @@ title: ConvertFrom-Csv
 # ConvertFrom-Csv
 
 ## SYNOPSIS
-
 Converts object properties in character-separated value (CSV) format into CSV versions of the
 original objects.
 
@@ -26,7 +25,8 @@ ConvertFrom-Csv [[-Delimiter] <Char>] [-InputObject] <PSObject[]> [-Header <Stri
 ### UseCulture
 
 ```
-ConvertFrom-Csv -UseCulture [-InputObject] <PSObject[]> [-Header <String[]>] [<CommonParameters>]
+ConvertFrom-Csv -UseCulture [-InputObject] <PSObject[]> [-Header <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
