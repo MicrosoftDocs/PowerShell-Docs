@@ -23,16 +23,16 @@ Moves an item from one location to another.
 
 ```
 Move-Item [-Path] <String[]> [[-Destination] <String>] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

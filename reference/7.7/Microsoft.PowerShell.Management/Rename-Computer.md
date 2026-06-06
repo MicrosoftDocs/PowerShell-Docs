@@ -17,8 +17,8 @@ Renames a computer.
 
 ```
 Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCredential>]
- [-LocalCredential <PSCredential>] [-NewName] <String> [-Force] [-Restart] [-WsmanAuthentication <String>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-LocalCredential <PSCredential>] [-NewName] <String> [-Force] [-Restart]
+ [-WsmanAuthentication <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -215,7 +215,8 @@ WSMan protocol. The acceptable values for this parameter are:
 
 The default value is **Default**.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
+For more information about the values of this parameter, see
+[AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
 
 > [!WARNING]
 > Credential Security Service Provider (CredSSP) authentication, in which the user

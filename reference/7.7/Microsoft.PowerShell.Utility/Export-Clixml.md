@@ -18,15 +18,15 @@ Creates an XML-based representation of an object or objects and stores it in a f
 ### ByPath (Default)
 
 ```
-Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Export-Clixml [-Depth <Int32>] [-Path] <String> -InputObject <PSObject> [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Export-Clixml [-Depth <Int32>] -LiteralPath <String> -InputObject <PSObject> [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

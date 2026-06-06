@@ -17,25 +17,29 @@ Finds text in an XML string or document.
 ### Xml (Default)
 
 ```
-Select-Xml [-XPath] <string> [-Xml] <XmlNode[]> [-Namespace <hashtable>] [<CommonParameters>]
+Select-Xml [-XPath] <string> [-Xml] <XmlNode[]> [-Namespace <hashtable>]
+ [<CommonParameters>]
 ```
 
 ### Path
 
 ```
-Select-Xml [-XPath] <string> [-Path] <string[]> [-Namespace <hashtable>] [<CommonParameters>]
+Select-Xml [-XPath] <string> [-Path] <string[]> [-Namespace <hashtable>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Select-Xml [-XPath] <string> -LiteralPath <string[]> [-Namespace <hashtable>] [<CommonParameters>]
+Select-Xml [-XPath] <string> -LiteralPath <string[]> [-Namespace <hashtable>]
+ [<CommonParameters>]
 ```
 
 ### Content
 
 ```
-Select-Xml [-XPath] <string> -Content <string[]> [-Namespace <hashtable>] [<CommonParameters>]
+Select-Xml [-XPath] <string> -Content <string[]> [-Namespace <hashtable>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -56,9 +60,9 @@ The first command saves the path to the `Types.ps1xml` file in the `$Path` varia
 The second command saves the XML path to the **AliasProperty** node in the `$XPath` variable.
 
 The `Select-Xml` cmdlet gets the **AliasProperty** nodes that are identified by
-the XPath statement from the `Types.ps1xml` file. The command uses a pipeline operator (`|`) to send the
-**AliasProperty** nodes to the `Select-Object` cmdlet. The **ExpandProperty** parameter expands the
-**Node** object and returns its **Name** and **ReferencedMemberName** properties.
+the XPath statement from the `Types.ps1xml` file. The command uses a pipeline operator (`|`) to send
+the **AliasProperty** nodes to the `Select-Object` cmdlet. The **ExpandProperty** parameter expands
+the **Node** object and returns its **Name** and **ReferencedMemberName** properties.
 
 ```powershell
 $Path = "$PSHOME\Types.ps1xml"

@@ -57,8 +57,8 @@ in this article.
 
 ### Organization of the WSMan: Drive
 
-- **Client**: You can configure various aspects of the WS-Management client. The
-  configuration information is stored in the registry.
+- **Client**: You can configure various aspects of the WS-Management client.
+  The configuration information is stored in the registry.
 
 - **Service**: You can configure various aspects of the WS-Management service.
   The configuration information is stored in the registry.
@@ -115,8 +115,9 @@ WSMan:\localhost
 The directory hierarchy of the WSMan provider for a remote computer is the same
 as a local computer. However, in order to access the configuration settings of
 a remote computer, you need to make a connection to the remote computer using
-[Connect-WSMan](xref:Microsoft.WSMan.Management.Connect-WSMan). Once a connection is made to a remote
-computer, the name of the remote computer shows up in the provider.
+[Connect-WSMan](xref:Microsoft.WSMan.Management.Connect-WSMan). Once a
+connection is made to a remote computer, the name of the remote computer shows
+up in the provider.
 
 ```
 WSMan:\<Remote_Computer_Name>
@@ -153,8 +154,8 @@ Set-Location -Path  WSMan:\SERVER01
 
 ## Displaying the contents of the WSMan: drive
 
-This command uses the `Get-ChildItem` cmdlet to display the WS-Management stores
-in the Localhost store location.
+This command uses the `Get-ChildItem` cmdlet to display the WS-Management
+stores in the Localhost store location.
 
 ```powershell
 Get-ChildItem -Path WSMan:\Localhost
@@ -199,8 +200,8 @@ Set-Item WSMan:\localhost\Client\TrustedHosts *.domain2.com -Concatenate
 The `New-Item` cmdlet creates items within a provider drive. Each provider
 has different item types that you can create. In the `WSMan:` drive, you can
 create *Listeners* which you configure to receive and respond to remote
-requests. The following command creates a new HTTP listener using the `New-Item`
-cmdlet.
+requests. The following command creates a new HTTP listener using the
+`New-Item` cmdlet.
 
 ```powershell
 New-Item -Path WSMan:\localhost\Listener -Address * -Transport http -Force
@@ -358,8 +359,8 @@ These attributes include **SupportsFiltering** and **SupportsFragment**.
 - **Subscribe**: Subscribe operations are supported on the URI.
   - The **SupportFragment** attribute is not supported for Subscribe operations
     and should be set to False.
-  - The **SupportFiltering** attribute is not valid for Subscribe operations and
-    should be set to "False".
+  - The **SupportFiltering** attribute is not valid for Subscribe operations
+    and should be set to "False".
   > [!NOTE]
   > This operation is not valid for a URI if Shell operations are also
   > supported.
@@ -390,8 +391,8 @@ Thumbprint field of the certificate. It specifies the digital public key
 certificate (X509) of a user account that has permission to perform this
 action. Certificates are used in client certificate-based authentication. They
 can be mapped only to local user accounts, and they do not work with domain
-accounts. To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem`
-cmdlets in the PowerShell `Cert:` drive.
+accounts. To get a certificate thumbprint, use the `Get-Item` or
+`Get-ChildItem` cmdlets in the PowerShell `Cert:` drive.
 
 #### Cmdlets supported
 

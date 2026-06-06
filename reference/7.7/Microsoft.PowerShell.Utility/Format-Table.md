@@ -17,9 +17,10 @@ Formats the output as a table.
 ## SYNTAX
 
 ```
-Format-Table [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders] [-Wrap]
- [-ExcludeProperty <string[]>] [-GroupBy <Object>] [-View <string>] [-ShowError] [-DisplayError]
- [-Force] [-Expand <string>] [-InputObject <psobject>] [<CommonParameters>]
+Format-Table [[-Property] <Object[]>] [-AutoSize] [-RepeatHeader] [-HideTableHeaders]
+ [-Wrap] [-ExcludeProperty <string[]>] [-GroupBy <Object>] [-View <string>] [-ShowError]
+ [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -18,19 +18,22 @@ Converts a secure string to an encrypted standard string.
 ### Secure (Default)
 
 ```
-ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureString>] [<CommonParameters>]
+ConvertFrom-SecureString [-SecureString] <SecureString> [[-SecureKey] <SecureString>]
+ [<CommonParameters>]
 ```
 
 ### AsPlainText
 
 ```
-ConvertFrom-SecureString [-SecureString] <SecureString> [-AsPlainText] [<CommonParameters>]
+ConvertFrom-SecureString [-SecureString] <SecureString> [-AsPlainText]
+ [<CommonParameters>]
 ```
 
 ### Open
 
 ```
-ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>] [<CommonParameters>]
+ConvertFrom-SecureString [-SecureString] <SecureString> [-Key <Byte[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -173,7 +176,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -20,15 +20,17 @@ Clears the contents of an item, but does not delete the item.
 ### Path (Default)
 
 ```
-Clear-Item [-Path] <String[]> [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Clear-Item [-Path] <String[]> [-Force] [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Clear-Item -LiteralPath <String[]> [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Clear-Item -LiteralPath <String[]> [-Force] [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -182,7 +184,8 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]

@@ -11,14 +11,13 @@ title: Write-Host
 # Write-Host
 
 ## SYNOPSIS
-
 Writes customized output to a host.
 
 ## SYNTAX
 
 ```
-Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>] [-ForegroundColor <ConsoleColor>]
- [-BackgroundColor <ConsoleColor>] [<CommonParameters>]
+Write-Host [[-Object] <Object>] [-NoNewline] [-Separator <Object>]
+ [-ForegroundColor <ConsoleColor>] [-BackgroundColor <ConsoleColor>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

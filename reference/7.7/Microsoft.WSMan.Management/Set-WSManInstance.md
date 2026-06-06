@@ -18,19 +18,21 @@ Modifies the management information that is related to a resource.
 ### ComputerName (Default)
 
 ```
-Set-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Dialect <Uri>] [-FilePath <String>]
- [-Fragment <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri>
- [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-UseSSL] [-ValueSet <Hashtable>]
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+Set-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Dialect <Uri>]
+ [-FilePath <String>] [-Fragment <String>] [-OptionSet <Hashtable>] [-Port <Int32>]
+ [-ResourceURI] <Uri> [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]
+ [-UseSSL] [-ValueSet <Hashtable>] [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
  [<CommonParameters>]
 ```
 
 ### URI
 
 ```
-Set-WSManInstance [-ConnectionURI <Uri>] [-Dialect <Uri>] [-FilePath <String>] [-Fragment <String>]
- [-OptionSet <Hashtable>] [-ResourceURI] <Uri> [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]
- [-ValueSet <Hashtable>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+Set-WSManInstance [-ConnectionURI <Uri>] [-Dialect <Uri>] [-FilePath <String>]
+ [-Fragment <String>] [-OptionSet <Hashtable>] [-ResourceURI] <Uri>
+ [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-ValueSet <Hashtable>]
+ [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
  [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
@@ -316,7 +318,9 @@ Specifies the path of a file that is used to update a management resource. You s
 management resource by using the **ResourceURI** parameter and the **SelectorSet** parameter. For
 example, the following command uses the **FilePath** parameter:
 
-`Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:C:\input.xml -Authentication Default`
+```powershell
+Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:C:\input.xml -Authentication Default
+```
 
 This command calls the **StopService** method on the Spooler service by using input from a file.
 The file, `Input.xml`, contains the following content:

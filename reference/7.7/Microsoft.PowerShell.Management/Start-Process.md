@@ -19,19 +19,21 @@ Starts one or more processes on the local computer.
 ## SYNTAX
 
 ```
-Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-Credential <pscredential>]
- [-WorkingDirectory <string>] [-LoadUserProfile] [-NoNewWindow] [-PassThru]
- [-RedirectStandardError <string>] [-RedirectStandardInput <string>]
- [-RedirectStandardOutput <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait]
- [-UseNewEnvironment] [-Environment <hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>]
+ [-Credential <pscredential>] [-WorkingDirectory <string>] [-LoadUserProfile]
+ [-NoNewWindow] [-PassThru] [-RedirectStandardError <string>]
+ [-RedirectStandardInput <string>] [-RedirectStandardOutput <string>]
+ [-WindowStyle <ProcessWindowStyle>] [-Wait] [-UseNewEnvironment]
+ [-Environment <hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseShellExecute
 
 ```
-Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>] [-WorkingDirectory <string>]
- [-PassThru] [-Verb <string>] [-WindowStyle <ProcessWindowStyle>] [-Wait]
- [-Environment <hashtable>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Start-Process [-FilePath] <string> [[-ArgumentList] <string[]>]
+ [-WorkingDirectory <string>] [-PassThru] [-Verb <string>]
+ [-WindowStyle <ProcessWindowStyle>] [-Wait] [-Environment <hashtable>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

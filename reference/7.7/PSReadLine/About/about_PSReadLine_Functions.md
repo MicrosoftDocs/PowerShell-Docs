@@ -1170,8 +1170,8 @@ pressing the `#` key sends 10 `#` characters (`##########`) to the input line.
 Similarly, you can use this with other operations, like `<Delete>` or
 `Left-Arrow`.
 
-- Windows mode: `Alt+0`, `Alt+1`, `Alt+2`, `Alt+3`, `Alt+4`, `Alt+5`, `Alt+6`, `Alt+7`,
-  `Alt+8`, `Alt+9`, `Alt+-`
+- Windows mode: `Alt+0`, `Alt+1`, `Alt+2`, `Alt+3`, `Alt+4`, `Alt+5`, `Alt+6`,
+  `Alt+7`, `Alt+8`, `Alt+9`, `Alt+-`
 - Emacs mode: `Alt+0`, `Alt+1`, `Alt+2`, `Alt+3`, `Alt+4`, `Alt+5`, `Alt+6`,
   `Alt+7`, `Alt+8`, `Alt+9`, `Alt+-`
 - Vi command mode: `<0>`, `<1>`, `<2>`, `<3>`, `<4>`, `<5>`, `<6>`, `<7>`,

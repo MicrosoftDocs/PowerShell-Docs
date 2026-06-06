@@ -20,17 +20,17 @@ Exports information about currently defined aliases to a file.
 ### ByPath (Default)
 
 ```
-Export-Alias [-Path] <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>] [-Append]
- [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Alias [-Path] <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>]
+ [-Append] [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru] [-As <ExportAliasFormat>]
- [-Append] [-Force] [-NoClobber] [-Description <String>] [-Scope <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Alias -LiteralPath <String> [[-Name] <String[]>] [-PassThru]
+ [-As <ExportAliasFormat>] [-Append] [-Force] [-NoClobber] [-Description <String>]
+ [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

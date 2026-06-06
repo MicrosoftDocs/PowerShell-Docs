@@ -16,7 +16,8 @@ Gets the formatting data in the current session.
 ## SYNTAX
 
 ```
-Get-FormatData [[-TypeName] <String[]>] [-PowerShellVersion <Version>] [<CommonParameters>]
+Get-FormatData [[-TypeName] <String[]>] [-PowerShellVersion <Version>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
