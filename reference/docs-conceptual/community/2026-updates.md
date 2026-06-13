@@ -1,6 +1,6 @@
 ---
 description: List of changes to the PowerShell documentation for 2026.
-ms.date: 05/01/2026
+ms.date: 06/13/2026
 title: What's New in PowerShell-Docs for 2026
 ---
 # What's new in PowerShell Docs for 2026
@@ -13,7 +13,36 @@ get started.
 
 <!-- Link references -->
 [01]: contributing/overview.md
-<!--------------------->
+<!-- --------------- -->
+
+## 2026-May
+
+Updated content
+
+- Updated release notes for minor releases of 7.4, 7.5, 7.6, and 7.7-preview.
+- Update release notes for Microsoft.PowerShell.PSResourceGet v1.3.0-preview1
+- Start work on PSScriptAnalyzer rule documentation refresh
+  - Standardizing the structure and formatting
+  - Add links to related documentation
+  - Grammar and style edits
+
+GitHub stats
+
+- 30 PRs merged (4 from Community)
+- 44 issues opened (10 from Community, 33 Spam)
+- 46 issues closed (10 from Community, 33 Spam)
+
+Top Community Contributors
+
+The following people contributed to PowerShell docs this month by submitting pull requests or
+filing issues. Thank you!
+
+|    GitHub Id    | PRs merged | Issues opened |
+| --------------- | :--------: | :-----------: |
+| Anyplace7803    |     1      |               |
+| exchange12rocks |     1      |               |
+| Gijsreyn        |     1      |               |
+| jsuther1974     |     1      |               |
 
 ## 2026-April
 
