@@ -464,7 +464,7 @@ Accept wildcard characters: False
 Specifies a delimiter to separate the property values. The default is a comma (`,`).
 
 Enter a character, such as a colon (`:`). To specify a semicolon (`;`), enclose it in single
-quotation marks. To specify escaped special characters such as tab (`` `t ``), enclose it in double
+quotation marks. To specify escaped special characters such as tab (`` t ``), enclose it in double
 quotation marks.
 
 ```yaml
