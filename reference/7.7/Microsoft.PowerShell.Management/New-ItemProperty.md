@@ -18,17 +18,17 @@ Creates a new property for an item and sets its value.
 ### Path (Default)
 
 ```
-New-ItemProperty [-Path] <String[]> [-Name] <String> [-PropertyType <String>] [-Value <Object>] [-Force]
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+New-ItemProperty [-Path] <String[]> [-Name] <String> [-PropertyType <String>]
+ [-Value <Object>] [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-New-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PropertyType <String>] [-Value <Object>] [-Force]
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+New-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PropertyType <String>]
+ [-Value <Object>] [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

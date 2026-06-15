@@ -18,22 +18,24 @@ Changes the security descriptor of a specified item, such as a file or a registr
 ### ByPath (Default)
 
 ```
-Set-Acl [-Path] <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-PassThru] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Acl [-Path] <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-PassThru]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### ByInputObject
 
 ```
-Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-PassThru] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-PassThru] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-PassThru]
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy]
+ [-PassThru] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

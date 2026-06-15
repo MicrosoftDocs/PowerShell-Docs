@@ -13,7 +13,6 @@ title: Export-Csv
 # Export-Csv
 
 ## SYNOPSIS
-
 Converts objects into a series of character-separated value (CSV) strings and saves the strings to a
 file.
 
@@ -22,19 +21,19 @@ file.
 ### Delimiter (Default)
 
 ```
-Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>] [-IncludeTypeInformation]
- [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-Append] [[-Delimiter] <Char>]
+ [-IncludeTypeInformation] [-NoTypeInformation] [-QuoteFields <String[]>]
+ [-UseQuotes <QuoteKind>] [-NoHeader] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
- [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation] [-NoTypeInformation]
- [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force]
+ [-NoClobber] [-Encoding <Encoding>] [-Append] [-UseCulture] [-IncludeTypeInformation]
+ [-NoTypeInformation] [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-NoHeader]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -145,11 +144,12 @@ Get-Content -Path .\Processes.csv
 The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays
 the current culture's default list separator. The `Get-Process` cmdlet gets **Process** objects. The
 process objects are sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv` converts the
-process objects to a series of CSV strings. The **Path** parameter specifies that the `Processes.csv`
-file is saved in the current directory. The **UseCulture** parameter uses the current culture's
-default list separator as the delimiter. The **NoTypeInformation** parameter removes the **#TYPE**
-information header from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet
-uses the **Path** parameter to display the file located in the current directory.
+process objects to a series of CSV strings. The **Path** parameter specifies that the
+`Processes.csv` file is saved in the current directory. The **UseCulture** parameter uses the
+current culture's default list separator as the delimiter. The **NoTypeInformation** parameter
+removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.
+The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current
+directory.
 
 ### Example 5: Export processes with type information
 
@@ -256,10 +256,10 @@ Get-Content -Path .\FTDateTime.csv
 The `Get-Date` cmdlet gets the **DateTime** object. The object is sent down the pipeline to the
 `Select-Object` cmdlet. `Select-Object` uses the **Property** parameter to select a subset of object
 properties. The object is sent down the pipeline to the `Export-Csv` cmdlet. `Export-Csv` converts
-the object to a CSV format. The **Path** parameter specifies that the `DateTime.csv` file is saved in
-the current directory. The **NoTypeInformation** parameter removes the **#TYPE** information header
-from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet uses the **Path**
-parameter to display the CSV file located in the current directory.
+the object to a CSV format. The **Path** parameter specifies that the `DateTime.csv` file is saved
+in the current directory. The **NoTypeInformation** parameter removes the **#TYPE** information
+header from the CSV output and is not required in PowerShell 6. The `Get-Content` cmdlet uses the
+**Path** parameter to display the CSV file located in the current directory.
 
 When the `Format-Table` cmdlet is used within the pipeline to select properties unexpected results
 are received. `Format-Table` sends table format objects down the pipeline to the `Export-Csv` cmdlet

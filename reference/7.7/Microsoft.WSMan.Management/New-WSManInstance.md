@@ -18,18 +18,21 @@ Creates a new instance of a management resource.
 ### ComputerName (Default)
 
 ```
-New-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-FilePath <String>]
- [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet] <Hashtable>
- [-SessionOption <SessionOption>] [-UseSSL] [-ValueSet <Hashtable>] [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
+New-WSManInstance [-ApplicationName <String>] [-ComputerName <String>]
+ [-FilePath <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri>
+ [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>] [-UseSSL]
+ [-ValueSet <Hashtable>] [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+ [<CommonParameters>]
 ```
 
 ### URI
 
 ```
-New-WSManInstance [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hashtable>] [-ResourceURI] <Uri>
- [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>] [-ValueSet <Hashtable>]
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+New-WSManInstance [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hashtable>]
+ [-ResourceURI] <Uri> [-SelectorSet] <Hashtable> [-SessionOption <SessionOption>]
+ [-ValueSet <Hashtable>] [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
  [<CommonParameters>]
 ```
 
@@ -128,8 +131,8 @@ this action. Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication. They can be mapped only to local
 user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the PowerShell Cert:
-drive.
+To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the PowerShell
+Cert: drive.
 
 ```yaml
 Type: System.String
@@ -213,7 +216,16 @@ Specifies the path of a file that is used to create a management resource. You s
 management resource using the **ResourceURI** parameter and the **SelectorSet** parameter . For
 example, the following command uses the **File** parameter:
 
-`Invoke-WSManAction -Action StopService -ResourceUri wmi/cimv2/Win32_Service -SelectorSet @{Name="spooler"} -File C:\input.xml -Authentication Default`
+```powershell
+$params = @{
+    Action         = 'StopService'
+    ResourceUri    = 'wmi/cimv2/Win32_Service'
+    SelectorSet    = @{Name = 'spooler'}
+    File           = 'C:\input.xml'
+    Authentication = 'Default'
+}
+Invoke-WSManAction @params
+```
 
 This command calls the **StopService** method on the Spooler service using input from a file. The
 file, `Input.xml`, contains the following content:
@@ -347,9 +359,9 @@ Specifies that the Secure Sockets Layer (SSL) protocol should be used to establi
 the remote computer. By default, SSL is not used.
 
 WS-Management encrypts all the Windows PowerShell content that is transmitted over the network. The
-**UseSSL** parameter lets you specify the additional protection of HTTPS instead of HTTP. If SSL is not
-available on the port that is used for the connection and you specify this parameter, the command
-fails.
+**UseSSL** parameter lets you specify the additional protection of HTTPS instead of HTTP. If SSL is
+not available on the port that is used for the connection and you specify this parameter, the
+command fails.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

@@ -20,15 +20,16 @@ objects, such as files of text.
 ### GenericMeasure (Default)
 
 ```
-Measure-Object [[-Property] <PSPropertyExpression[]>] [-InputObject <PSObject>] [-StandardDeviation]
- [-Sum] [-AllStats] [-Average] [-Maximum] [-Minimum] [<CommonParameters>]
+Measure-Object [[-Property] <PSPropertyExpression[]>] [-InputObject <PSObject>]
+ [-StandardDeviation] [-Sum] [-AllStats] [-Average] [-Maximum] [-Minimum]
+ [<CommonParameters>]
 ```
 
 ### TextMeasure
 
 ```
-Measure-Object [[-Property] <PSPropertyExpression[]>] [-InputObject <PSObject>] [-Line] [-Word]
- [-Character] [-IgnoreWhiteSpace] [<CommonParameters>]
+Measure-Object [[-Property] <PSPropertyExpression[]>] [-InputObject <PSObject>] [-Line]
+ [-Word] [-Character] [-IgnoreWhiteSpace] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -529,7 +530,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -18,8 +18,8 @@ Formats the output as a list of properties in which each property appears on a n
 
 ```
 Format-List [[-Property] <Object[]>] [-ExcludeProperty <string[]>] [-GroupBy <Object>]
- [-View <string>] [-ShowError] [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
- [<CommonParameters>]
+ [-View <string>] [-ShowError] [-DisplayError] [-Force] [-Expand <string>]
+ [-InputObject <psobject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -18,8 +18,9 @@ Configures, starts, and stops a trace of PowerShell components.
 ### optionsSet (Default)
 
 ```
-Set-TraceSource [-Name] <String[]> [[-Option] <PSTraceSourceOptions>] [-ListenerOption <TraceOptions>]
- [-FilePath <String>] [-Force] [-Debugger] [-PSHost] [-PassThru] [<CommonParameters>]
+Set-TraceSource [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force] [-Debugger] [-PSHost]
+ [-PassThru] [<CommonParameters>]
 ```
 
 ### removeAllListenersSet
@@ -43,7 +44,7 @@ can use it to specify which components will be traced and where the tracing outp
 
 ### Example 1: Trace the ParameterBinding component
 
-```
+```powershell
 Set-TraceSource -Name "ParameterBinding" -Option ExecutionFlow -PSHost -ListenerOption "ProcessId,TimeStamp"
 ```
 
@@ -297,7 +298,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

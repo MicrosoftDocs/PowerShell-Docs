@@ -24,7 +24,8 @@ Get-Credential [[-Credential] <PSCredential>] [<CommonParameters>]
 ### MessageSet
 
 ```
-Get-Credential [-Message <String>] [[-UserName] <String>] [-Title <String>] [<CommonParameters>]
+Get-Credential [-Message <String>] [[-UserName] <String>] [-Title <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

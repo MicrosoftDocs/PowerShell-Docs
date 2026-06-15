@@ -16,8 +16,8 @@ Converts a JSON-formatted string to a custom object or a hash table.
 ## SYNTAX
 
 ```
-ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-DateKind <JsonDateKind>] [-Depth <Int32>]
- [-NoEnumerate] [<CommonParameters>]
+ConvertFrom-Json [-InputObject] <String> [-AsHashtable] [-DateKind <JsonDateKind>]
+ [-Depth <Int32>] [-NoEnumerate] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
