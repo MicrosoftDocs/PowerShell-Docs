@@ -428,6 +428,3 @@ This cmdlet is only available on Windows platforms.
 [New-CimSession](New-CimSession.md)
 
 [about_WQL](../Microsoft.PowerShell.Core/About/about_WQL.md)
-
-
-

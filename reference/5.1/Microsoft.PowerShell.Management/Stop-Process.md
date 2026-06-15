@@ -21,19 +21,22 @@ Stops one or more running processes.
 ### Id (Default)
 
 ```
-Stop-Process [-Id] <Int32[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process [-Id] <Int32[]> [-PassThru] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Name
 
 ```
-Stop-Process -Name <String[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process -Name <String[]> [-PassThru] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Process [-InputObject] <Process[]> [-PassThru] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -78,7 +81,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 This command stops a particular instance of the Notepad process. It uses the process ID, 3952, to
 identify the process. The **Confirm** parameter directs PowerShell to prompt you before it stops the
-process. Because the prompt includes the process namein addition to its ID, this is best practice.
+process. Because the prompt includes the process name in addition to its ID, this is best practice.
 The **PassThru** parameter passes the process object to the formatter for display. Without this
 parameter, there would be no display after a `Stop-Process` command.
 
@@ -274,7 +277,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -300,9 +304,9 @@ Windows PowerShell includes the following aliases for `Stop-Process`:
 - `kill`
 - `spps`
 
-  You can also use the properties and methods of the Windows Management Instrumentation (WMI)
-  **Win32_Process** object in Windows PowerShell. For more information, see `Get-CimInstance` and
-  the WMI SDK.
+You can also use the properties and methods of the Windows Management Instrumentation (WMI)
+**Win32_Process** object in Windows PowerShell. For more information, see `Get-CimInstance` and
+the WMI SDK.
 
 - When stopping processes, realize that stopping a process can stop process and services that depend
   on the process. In an extreme case, stopping a process can stop Windows.

@@ -21,9 +21,9 @@ Creates temporary and persistent drives that are associated with a location in a
 ### All
 
 ```
-New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String> [-Description <String>]
- [-Scope <String>] [-Persist] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-PSDrive [-Name] <String> [-PSProvider] <String> [-Root] <String>
+ [-Description <String>] [-Scope <String>] [-Persist] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

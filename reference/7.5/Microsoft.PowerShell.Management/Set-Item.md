@@ -21,48 +21,50 @@ Changes the value of an item to the value specified in the command.
 
 ```
 Set-Item [-Path] <String[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath - All providers
 
 ```
-Set-Item -LiteralPath <String[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Item -LiteralPath <String[]> [[-Value] <Object>] [-Force] [-PassThru]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Path (Default) - Alias and Function providers
 
 ```
 Set-Item [-Path] <string[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-Options <ScopedItemOptions>] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-Options <ScopedItemOptions>] [<CommonParameters>]
 ```
 
 ### LiteralPath - Alias and Function providers
 
 ```
-Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-Options <ScopedItemOptions>] [<CommonParameters>]
+Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Options <ScopedItemOptions>]
+ [<CommonParameters>]
 ```
 
 ### Path (Default) - Registry provider
 
 ```
 Set-Item [-Path] <string[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-Type <RegistryValueKind>] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ### LiteralPath - Registry provider
 
 ```
-Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-Type <RegistryValueKind>] [<CommonParameters>]
+Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Type <RegistryValueKind>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -153,12 +155,12 @@ Accept wildcard characters: True
 ### -Filter
 
 Specifies a filter to qualify the **Path** parameter. The
-[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
-installed PowerShell provider that supports the use of filters. You can find the syntax for the
-**FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more efficient
-than other parameters, because the provider applies them when the cmdlet gets the objects rather
-than having PowerShell filter the objects after they are retrieved.
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: System.String

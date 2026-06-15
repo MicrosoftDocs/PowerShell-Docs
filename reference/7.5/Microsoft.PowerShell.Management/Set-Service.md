@@ -20,15 +20,17 @@ Starts, stops, and suspends a service, and changes its properties.
 ```
 Set-Service [-Name] <String> [-DisplayName <String>] [-Credential <PSCredential>]
  [-Description <String>] [-StartupType <ServiceStartupType>] [-Status <String>]
- [-SecurityDescriptorSddl <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-SecurityDescriptorSddl <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Set-Service [-InputObject] <ServiceController> [-DisplayName <String>] [-Credential <PSCredential>]
- [-Description <String>] [-StartupType <ServiceStartupType>] [-SecurityDescriptorSddl <String>]
- [-Status <String>] [-Force] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Service [-InputObject] <ServiceController> [-DisplayName <String>]
+ [-Credential <PSCredential>] [-Description <String>] [-StartupType <ServiceStartupType>]
+ [-SecurityDescriptorSddl <String>] [-Status <String>] [-Force] [-PassThru] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

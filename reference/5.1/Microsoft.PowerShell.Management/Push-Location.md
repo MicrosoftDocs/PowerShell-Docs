@@ -20,13 +20,15 @@ Adds the current location to the top of a location stack.
 ### Path (Default)
 
 ```
-Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
+Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>]
+ [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [-UseTransaction] [<CommonParameters>]
+Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>]
+ [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

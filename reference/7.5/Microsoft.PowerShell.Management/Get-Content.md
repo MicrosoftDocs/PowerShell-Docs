@@ -30,10 +30,10 @@ Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <
 ### LiteralPath
 
 ```
-Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-Credential <PSCredential>] [-Delimiter <String>] [-Wait] [-Raw] [-Encoding <Encoding>]
- [-AsByteStream] [-Stream <String>] [<CommonParameters>]
+Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>]
+ -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Force] [-Credential <PSCredential>] [-Delimiter <String>] [-Wait] [-Raw]
+ [-Encoding <Encoding>] [-AsByteStream] [-Stream <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

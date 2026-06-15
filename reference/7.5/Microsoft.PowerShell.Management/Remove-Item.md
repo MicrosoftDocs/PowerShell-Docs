@@ -24,47 +24,49 @@ Deletes the specified items.
 ### Path (Default) - FileSystem provider
 
 ```
-Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>]
- [<CommonParameters>]
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath - FileSystem provider
 
 ```
-Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>]
- [<CommonParameters>]
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### Path (Default) - Certificate provider
 
 ```
-Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-DeleteKey]
- [<CommonParameters>]
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-DeleteKey] [<CommonParameters>]
 ```
 
 ### LiteralPath - Certificate provider
 
 ```
-Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-DeleteKey]
- [<CommonParameters>]
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-DeleteKey] [<CommonParameters>]
 ```
 
 ### Path (Default) - All providers
 
 ```
-Remove-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath - All providers
 
 ```
-Remove-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

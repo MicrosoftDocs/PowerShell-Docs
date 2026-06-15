@@ -21,15 +21,17 @@ Renames an item in a PowerShell provider namespace.
 ### ByPath (Default)
 
 ```
-Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru]
+ [-Credential <PSCredential>]  [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
 Rename-Item -LiteralPath <String> [-NewName] <String> [-Force] [-PassThru]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,8 +81,8 @@ Use the `Move-Item` cmdlet, instead.
 
 ### Example 3: Rename a registry key
 
-This example renames a registry key from **Advertising** to **Marketing**. When the command is complete,
-the key is renamed, but the registry entries in the key are unchanged.
+This example renames a registry key from **Advertising** to **Marketing**. When the command is
+complete, the key is renamed, but the registry entries in the key are unchanged.
 
 ```powershell
 Rename-Item -Path "HKLM:\Software\MyCompany\Advertising" -NewName "Marketing"
@@ -251,9 +253,9 @@ Accept wildcard characters: False
 
 ### -UseTransaction
 
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+Includes the command in the active transaction. This parameter is valid only when a transaction is
+in progress. For more information, see
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

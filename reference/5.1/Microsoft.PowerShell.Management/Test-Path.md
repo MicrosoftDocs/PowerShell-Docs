@@ -166,7 +166,7 @@ False
 This command uses the **NewerThan** dynamic parameter to determine whether the `powershell.exe`
 file on the computer is newer than `July 13, 2009`.
 
-The NewerThan parameter works only in file system drives.
+The **NewerThan** parameter works only in file system drives.
 
 ```powershell
 Test-Path $PSHOME\powershell.exe -NewerThan "July 13, 2009"
@@ -464,7 +464,8 @@ Accept wildcard characters: False
 ### -UseTransaction
 
 Includes the command in the active transaction. This parameter is valid only when a transaction is
-in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
+in progress. For more information, see
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

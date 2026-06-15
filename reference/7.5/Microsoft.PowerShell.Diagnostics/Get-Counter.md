@@ -7,7 +7,6 @@ online version: https://learn.microsoft.com/powershell/module/microsoft.powershe
 schema: 2.0.0
 title: Get-Counter
 ---
-
 # Get-Counter
 
 ## SYNOPSIS
@@ -18,8 +17,8 @@ Gets performance counter data from local and remote computers.
 ### GetCounterSet (Default)
 
 ```
-Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int64>] [-Continuous]
- [-ComputerName <String[]>] [<CommonParameters>]
+Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int64>]
+ [-Continuous] [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
 ### ListSetSet

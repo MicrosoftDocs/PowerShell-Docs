@@ -25,7 +25,8 @@ Split-Path [-Path] <String[]> [-Parent] [-Resolve] [-Credential <PSCredential>]
 ### LeafSet
 
 ```
-Split-Path [-Path] <String[]> -Leaf [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path [-Path] <String[]> -Leaf [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ### LeafBaseSet
@@ -66,7 +67,8 @@ Split-Path [-Path] <String[]> [-Resolve] -IsAbsolute [-Credential <PSCredential>
 ### LiteralPathSet
 
 ```
-Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>] [<CommonParameters>]
+Split-Path -LiteralPath <String[]> [-Resolve] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -299,8 +301,8 @@ Accept wildcard characters: False
 ### -NoQualifier
 
 Indicates that this cmdlet returns the path without the qualifier. For the FileSystem or registry
-providers, the qualifier is the drive of the provider path, such as `C:` or `HKCU:`. For example, in the
-path `C:\Test\Logs\Pass1.log`, it returns only `\Test\Logs\Pass1.log`.
+providers, the qualifier is the drive of the provider path, such as `C:` or `HKCU:`. For example, in
+the path `C:\Test\Logs\Pass1.log`, it returns only `\Test\Logs\Pass1.log`.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

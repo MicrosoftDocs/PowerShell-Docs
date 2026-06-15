@@ -18,28 +18,30 @@ Gets events from event logs and event tracing log files on local and remote comp
 
 ```
 Get-WinEvent [[-LogName] <String[]>] [-MaxEvents <Int64>] [-ComputerName <String>]
- [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
+ [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest]
+ [<CommonParameters>]
 ```
 
 ### ListLogSet
 
 ```
-Get-WinEvent [-ListLog] <String[]> [-ComputerName <String>] [-Credential <PSCredential>] [-Force]
- [<CommonParameters>]
+Get-WinEvent [-ListLog] <String[]> [-ComputerName <String>] [-Credential <PSCredential>]
+ [-Force] [<CommonParameters>]
 ```
 
 ### ListProviderSet
 
 ```
-Get-WinEvent [-ListProvider] <String[]> [-ComputerName <String>] [-Credential <PSCredential>]
- [<CommonParameters>]
+Get-WinEvent [-ListProvider] <String[]> [-ComputerName <String>]
+ [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ### GetProviderSet
 
 ```
 Get-WinEvent [-ProviderName] <String[]> [-MaxEvents <Int64>] [-ComputerName <String>]
- [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest] [<CommonParameters>]
+ [-Credential <PSCredential>] [-FilterXPath <String>] [-Force] [-Oldest]
+ [<CommonParameters>]
 ```
 
 ### FileSet
@@ -148,9 +150,9 @@ with the asterisk (`*`) wildcard to display each property.
 
 ### Example 3: Configure the classic Security log
 
-This command gets an **EventLogConfiguration** object that represents the classic **Security** log. The
-object is then used to configure settings for the log, such as max file size, file path, and whether the
-log is enabled.
+This command gets an **EventLogConfiguration** object that represents the classic **Security** log.
+The object is then used to configure settings for the log, such as max file size, file path, and
+whether the log is enabled.
 
 ```powershell
 $log = Get-WinEvent -ListLog Security
@@ -193,11 +195,12 @@ ProviderLatency                : 1000
 ProviderControlGuid            :
 ```
 
-The `Get-WinEvent` cmdlet uses the **ListLog** parameter to specify the **Security** log. The object is
-saved to a variable. The **MaximumSizeInBytes** property is set to 1 gigabyte on the object. The
+The `Get-WinEvent` cmdlet uses the **ListLog** parameter to specify the **Security** log. The object
+is saved to a variable. The **MaximumSizeInBytes** property is set to 1 gigabyte on the object. The
 **SaveChanges** method is called to push the change to the system inside of a try block to handle
-access violations. The `Get-WinEvent` cmdlet is called again on the **Security** log and piped to the
-`Format-List` cmdlet to verify that the **MaximumSizeInBytes** property has been saved on the machine.
+access violations. The `Get-WinEvent` cmdlet is called again on the **Security** log and piped to
+the `Format-List` cmdlet to verify that the **MaximumSizeInBytes** property has been saved on the
+machine.
 
 ### Example 4: Get event logs from a server
 
@@ -230,7 +233,8 @@ is a property of the object with a non-null value.
 
 This example gets objects that represent the **Application** event logs on three computers:
 Server01, Server02, and Server03. The `foreach` keyword is used because the **ComputerName**
-parameter accepts only one value. For more information, see [about_Foreach](../Microsoft.PowerShell.Core/about/about_Foreach.md).
+parameter accepts only one value. For more information, see
+[about_Foreach](../Microsoft.PowerShell.Core/about/about_Foreach.md).
 
 ```powershell
 $S = 'Server01', 'Server02', 'Server03'
@@ -341,7 +345,8 @@ This command lists the Event Ids that the **Microsoft-Windows-GroupPolicy** even
 along with the event description.
 
 ```powershell
-(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events | Format-Table Id, Description
+(Get-WinEvent -ListProvider Microsoft-Windows-GroupPolicy).Events |
+    Format-Table Id, Description
 ```
 
 ```Output
@@ -367,7 +372,8 @@ Event objects are stored in a variable and then grouped and counted by **Event I
 ```powershell
 $Event = Get-WinEvent -LogName 'Windows PowerShell'
 $Event.Count
-$Event | Group-Object -Property Id -NoElement | Sort-Object -Property Count -Descending
+$Event | Group-Object -Property Id -NoElement |
+    Sort-Object -Property Count -Descending
 $Event | Group-Object -Property LevelDisplayName -NoElement
 ```
 
@@ -414,7 +420,7 @@ error or warning and the log name.
 
 ```powershell
 Get-WinEvent -LogName *PowerShell*, Microsoft-Windows-Kernel-WHEA* |
-  Group-Object -Property LevelDisplayName, LogName -NoElement |
+    Group-Object -Property LevelDisplayName, LogName -NoElement |
     Format-Table -AutoSize
 ```
 
@@ -507,10 +513,10 @@ Get-WinEvent -Path 'C:\Tracing\TraceLog.etl' -Oldest |
 
 The `Get-WinEvent` cmdlet gets log information from the archived file. The **Path** parameter
 specifies the directory and file name. The **Oldest** parameter is used to output events in the
-order they're written, oldest to newest. The objects are sent down the pipeline to the
-`Sort-Object` cmdlet `Sort-Object` sorts the objects in descending order by the value of the
-**TimeCreated** property. The objects are sent down the pipeline to the `Select-Object` cmdlet that
-displays the 100 newest events.
+order they're written, oldest to newest. The objects are sent down the pipeline to the `Sort-Object`
+cmdlet `Sort-Object` sorts the objects in descending order by the value of the **TimeCreated**
+property. The objects are sent down the pipeline to the `Select-Object` cmdlet that displays the 100
+newest events.
 
 ### Example 15: Get events from an event trace log
 
@@ -521,8 +527,9 @@ filter them with the same properties. The command requires the **Oldest** parame
 reading from an `.etl` file, but the **Oldest** parameter applies to each file.
 
 ```powershell
-Get-WinEvent -Path 'C:\Tracing\TraceLog.etl', 'C:\Test\Windows PowerShell.evtx' -Oldest |
-  Where-Object { $_.Id -eq '403' }
+$logfiles = 'C:\Tracing\TraceLog.etl', 'C:\Test\Windows PowerShell.evtx'
+Get-WinEvent -Path $logfiles -Oldest |
+    Where-Object { $_.Id -eq '403' }
 ```
 
 The `Get-WinEvent` cmdlet gets log information from the archived files. The **Path** parameter uses
@@ -543,11 +550,16 @@ of the objects.
 ```powershell
 # Using the Where-Object cmdlet:
 $Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
-Get-WinEvent -LogName 'Windows PowerShell' | Where-Object { $_.TimeCreated -ge $Yesterday }
+Get-WinEvent -LogName 'Windows PowerShell' |
+    Where-Object { $_.TimeCreated -ge $Yesterday }
 
 # Using the FilterHashtable parameter:
 $Yesterday = (Get-Date) - (New-TimeSpan -Day 1)
-Get-WinEvent -FilterHashtable @{ LogName='Windows PowerShell'; Level=3; StartTime=$Yesterday }
+Get-WinEvent -FilterHashtable @{
+    LogName   = 'Windows PowerShell'
+    Level     = 3
+    StartTime = $Yesterday
+}
 
 # Using the FilterXML parameter:
 $xmlQuery = @'
@@ -576,7 +588,11 @@ For more information about hash tables, see
 
 ```powershell
 $Date = (Get-Date).AddDays(-2)
-Get-WinEvent -FilterHashtable @{ LogName='Application'; StartTime=$Date; Id='1003' }
+Get-WinEvent -FilterHashtable @{
+    LogName   = 'Application'
+    StartTime = $Date
+    Id        = '1003'
+}
 ```
 
 The `Get-Date` cmdlet uses the **AddDays** method to get a date that's two days before the current
@@ -594,10 +610,10 @@ that occurred within the last week.
 ```powershell
 $StartTime = (Get-Date).AddDays(-7)
 Get-WinEvent -FilterHashtable @{
-  Logname='Application'
-  ProviderName='Application Error'
-  Data='iexplore.exe'
-  StartTime=$StartTime
+  LogName      = 'Application'
+  ProviderName = 'Application Error'
+  Data         = 'iexplore.exe'
+  StartTime = $StartTime
 }
 ```
 

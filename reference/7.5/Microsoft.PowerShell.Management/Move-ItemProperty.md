@@ -20,16 +20,16 @@ Moves a property from one location to another.
 ### Path (Default)
 
 ```
-Move-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Destination] <String> [-PassThru]
- [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+Move-ItemProperty [-Path] <String[]> [-Name] <String[]> [-Destination] <String>
+ [-PassThru] [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
  [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Move-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Destination] <String> [-PassThru]
- [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+Move-ItemProperty -LiteralPath <String[]> [-Name] <String[]> [-Destination] <String>
+ [-PassThru] [-Force] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
  [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -48,12 +48,7 @@ This command moves the Version registry value, and its data, from the "MyApp" su
 subkey of the `HKLM\Software\MyCompany` registry key.
 
 ```powershell
-$moveParams = @{
-    Path        = "HKLM:\Software\MyCompany\MyApp"
-    Name        = "Version"
-    Destination = "HKLM:\Software\MyCompany\NewApp"
-}
-Move-ItemProperty @moveParams
+Move-ItemProperty "HKLM:\Software\MyCompany\MyApp" -Name "Version" -Destination "HKLM:\Software\MyCompany\NewApp"
 ```
 
 ## PARAMETERS
@@ -116,12 +111,12 @@ Accept wildcard characters: True
 ### -Filter
 
 Specifies a filter to qualify the **Path** parameter. The
-[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
-installed PowerShell provider that supports the use of filters. You can find the syntax for the
-**FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more efficient
-than other parameters, because the provider applies them when the cmdlet gets the objects rather
-than having PowerShell filter the objects after they are retrieved.
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: System.String
@@ -137,9 +132,9 @@ Accept wildcard characters: True
 
 ### -Force
 
-Forces the command to run without asking for user confirmation. Implementation varies from provider
-to provider. For more information, see
-[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+Forces the command to run without asking for user confirmation.
+Implementation varies from provider to provider.
+For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

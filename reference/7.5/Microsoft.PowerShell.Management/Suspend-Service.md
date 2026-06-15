@@ -32,8 +32,8 @@ Suspend-Service [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <
 ### DisplayName
 
 ```
-Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Suspend-Service [-PassThru] -DisplayName <String[]> [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,7 +79,7 @@ This command uses the `Get-Service` cmdlet to get an object that represents the 
 
 ```powershell
 Get-Service |
-    Where-Object {$_.CanPauseAndContinue -eq "True"} |
+    Where-Object { $_.CanPauseAndContinue } |
     Suspend-Service -Confirm
 ```
 

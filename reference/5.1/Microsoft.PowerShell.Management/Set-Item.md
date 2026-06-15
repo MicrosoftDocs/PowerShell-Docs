@@ -20,48 +20,48 @@ Changes the value of an item to the value specified in the command.
 
 ```
 Set-Item [-Path] <string[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath - All providers
 
 ```
 Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### Path (Default) - Alias and Function providers
 
 ```
 Set-Item [-Path] <string[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [-Options <ScopedItemOptions>] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [-Options <ScopedItemOptions>] [<CommonParameters>]
 ```
 
 ### LiteralPath - Alias and Function providers
 
 ```
 Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [-Options <ScopedItemOptions>] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [-Options <ScopedItemOptions>] [<CommonParameters>]
 ```
 
 ### Path (Default) - Registry provider
 
 ```
 Set-Item [-Path] <string[]> [[-Value] <Object>] [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [-Type <RegistryValueKind>] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ### LiteralPath - Registry provider
 
 ```
 Set-Item [[-Value] <Object>] -LiteralPath <string[]> [-Force] [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [-Type <RegistryValueKind>] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [-UseTransaction] [-Type <RegistryValueKind>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -92,7 +92,9 @@ Set-Item -Path Env:UserRole -Value "Administrator"
 This command changes the prompt function so that it displays the time before the path.
 
 ```powershell
-Set-Item -Path Function:prompt -Value {'PS '+ (Get-Date -Format t) + " " + (Get-Location) + '> '}
+Set-Item -Path Function:prompt -Value {
+    'PS '+ (Get-Date -Format t) + " " + (Get-Location) + '> '
+}
 ```
 
 ### Example 4: Set options for your prompt function
@@ -149,9 +151,11 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+Specifies a filter to qualify the **Path** parameter. The
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
 provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+the syntax for the **FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
@@ -214,7 +218,8 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -417,16 +422,17 @@ Windows PowerShell includes the following aliases for `Set-Item`:
 
 - `si`
 
-- `Set-Item` is not supported by the PowerShell FileSystem provider. To change the values of items in
-  the file system, use the `Set-Content` cmdlet.
-- In the Registry drives, `HKLM:` and `HKCU:`, `Set-Item` changes the data in the (Default) value of a
-  registry key.
+- `Set-Item` is not supported by the PowerShell FileSystem provider. To change the values of items
+  in the file system, use the `Set-Content` cmdlet.
+- In the Registry drives, `HKLM:` and `HKCU:`, `Set-Item` changes the data in the (Default) value of
+  a registry key.
   - To create and change the names of registry keys, use the `New-Item` and `Rename-Item` cmdlet.
-  - To change the names and data in registry values, use the `New-ItemProperty`, `Set-ItemProperty`, and
-    `Rename-ItemProperty` cmdlets.
+  - To change the names and data in registry values, use the `New-ItemProperty`, `Set-ItemProperty`,
+    and `Rename-ItemProperty` cmdlets.
 - `Set-Item` is designed to work with the data exposed by any provider.
   To list the providers available in your session, type `Get-PSProvider`.
-  For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+  For more information, see
+  [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

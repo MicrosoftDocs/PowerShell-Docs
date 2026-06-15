@@ -23,16 +23,16 @@ Moves an item from one location to another.
 
 ```
 Move-Item [-Path] <String[]> [[-Destination] <String>] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Move-Item -LiteralPath <String[]> [[-Destination] <String>] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-PassThru] [-Credential <PSCredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,7 +48,6 @@ If the specified destination path resolves to an existing non-container item, or
 the target name already exists, this cmdlet raises an error. To overwrite an existing item, use the
 **Force** parameter. When the destination is an existing container (such as a directory), the item
 is moved into that container, if supported by the provider.
-provider.
 
 ## EXAMPLES
 
