@@ -43,8 +43,7 @@ Wait-Event
 
 ### Example 2: Wait for an event with a specified source identifier
 
-This example waits for the next event that is raised and that has a source identifier of
-ProcessStarted.
+This example waits for the next event that has a source identifier of ProcessStarted.
 
 ```powershell
 Wait-Event -SourceIdentifier "ProcessStarted"
@@ -52,7 +51,7 @@ Wait-Event -SourceIdentifier "ProcessStarted"
 
 ### Example 3: Wait for a timer elapsed event
 
-This example uses the `Wait-Event` cmdlet to wait for a timer event on a timer that is set for 2000
+This example uses the `Wait-Event` cmdlet to wait for a timer event that's set for 2000
 milliseconds.
 
 ```powershell

@@ -95,9 +95,9 @@ This example shows how to create and use a COM object to manage your Windows des
 The first command uses the **ComObject** parameter of the `New-Object` cmdlet to create a COM object
 with the **Shell.Application** ProgID. It stores the resulting object in the `$objShell` variable.
 The second command pipes the `$objShell` variable to the `Get-Member` cmdlet, which displays the
-properties and methods of the COM object. Among the methods is the **ToggleDesktop** method.
-The third command calls the **ToggleDesktop** method of the object to minimize the open windows on
-your desktop.
+properties and methods of the COM object. Among the methods is the **ToggleDesktop** method. The
+third command calls the **ToggleDesktop** method of the object to minimize the open windows on your
+desktop.
 
 ```powershell
 $objShell = New-Object -ComObject "Shell.Application"
@@ -211,7 +211,11 @@ constructor takes a single parameter that is an array, you must wrap that parame
 array. For example:
 
 ```powershell
-$cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList (,$bytes)
+$params = @{
+    TypeName     = 'System.Security.Cryptography.X509Certificates.X509Certificate'
+    ArgumentList = (,$bytes)
+}
+$cert = New-Object @params
 ```
 
 For more information about the behavior of **ArgumentList**, see

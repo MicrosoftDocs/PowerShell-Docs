@@ -1428,7 +1428,11 @@ as Chrome, Firefox, InternetExplorer, Opera, and Safari.
 For example, the following command uses the user agent string for Internet Explorer:
 
 ```powershell
-Invoke-WebRequest -Uri https://website.com/ -UserAgent ([Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer)
+$params = @{
+    Uri       = 'https://website.com/'
+    UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer
+}
+Invoke-WebRequest @params
 ```
 
 ```yaml

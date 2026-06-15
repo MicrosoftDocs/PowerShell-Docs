@@ -217,7 +217,14 @@ management resource using the **ResourceURI** parameter and the **SelectorSet** 
 example, the following command uses the **File** parameter:
 
 ```powershell
-Invoke-WSManAction -Action StopService -ResourceUri wmi/cimv2/Win32_Service -SelectorSet @{Name="spooler"} -File C:\input.xml -Authentication Default
+$params = @{
+    Action         = 'StopService'
+    ResourceUri    = 'wmi/cimv2/Win32_Service'
+    SelectorSet    = @{Name = 'spooler'}
+    File           = 'C:\input.xml'
+    Authentication = 'Default'
+}
+Invoke-WSManAction @params
 ```
 
 This command calls the **StopService** method on the Spooler service using input from a file. The

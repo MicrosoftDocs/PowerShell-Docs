@@ -36,9 +36,8 @@ Import-Alias -LiteralPath <String> [-Scope <String>] [-PassThru] [-Force] [-What
 The `Import-Alias` cmdlet imports an alias list from a file.
 
 Beginning in Windows PowerShell 3.0, as a security feature, `Import-Alias` does not overwrite
-existing aliases by default.
-To overwrite an existing alias, after assuring that the contents of the alias file is safe, use the
-**Force** parameter.
+existing aliases by default. To overwrite an existing alias, after assuring that the contents of the
+alias file is safe, use the **Force** parameter.
 
 ## EXAMPLES
 
@@ -50,12 +49,9 @@ Import-Alias test.txt
 
 This command imports alias information from a file named test.txt.
 
-## PARAMETERS
+### Example 2: Get a list of defined aliases and their options
 
-### -Force
-
-Allows the cmdlet to import an alias that is already defined or is read only.
-You can use the following command to display information about the currently-defined aliases:
+Use the following command to display information about the currently-defined aliases:
 
 ```powershell
 Get-Alias | Select-Object Name, Options
@@ -63,6 +59,12 @@ Get-Alias | Select-Object Name, Options
 
 If the corresponding alias is read-only, it will be displayed in the value of the **Options**
 property.
+
+## PARAMETERS
+
+### -Force
+
+Allows the cmdlet to import an alias that is already defined or is read only.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -78,11 +80,10 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-Specifies the path to a file that includes exported alias information.
-Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is
-typed. No characters are interpreted as wildcards.
-If the path includes escape characters, enclose it in single quotation marks.
-Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
+Specifies the path to a file that includes exported alias information. Unlike the **Path**
+parameter, the value of the **LiteralPath** parameter is used exactly as it is typed. No characters
+are interpreted as wildcards. If the path includes escape characters, enclose it in single quotation
+marks. Single quotation marks tell PowerShell not to interpret any characters as escape sequences.
 
 ```yaml
 Type: System.String

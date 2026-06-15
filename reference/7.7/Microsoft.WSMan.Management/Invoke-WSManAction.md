@@ -50,7 +50,13 @@ This cmdlet uses the WSMan connection/transport layer to run the action.
 ### Example 1: Invoke a method
 
 ```powershell
-Invoke-WSManAction -Action StartService -ResourceURI wmicimv2/Win32_Service -SelectorSet @{name="spooler"} -Authentication Default
+$params = @{
+    Action         = 'StartService'
+    ResourceURI    = 'wmicimv2/Win32_Service'
+    SelectorSet    = @{name = 'spooler'}
+    Authentication = 'Default'
+}
+Invoke-WSManAction @params
 ```
 
 ```Output
@@ -304,7 +310,14 @@ management resource by using the ResourceURI parameter and the SelectorSet param
 the following command uses the FilePath parameter:
 
 ```powershell
-Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath C:\input.xml -Authentication Default
+$params = @{
+    Action         = 'StopService'
+    ResourceUri    = 'wmicimv2/Win32_Service'
+    SelectorSet    = @{Name = 'spooler'}
+    FilePath       = 'C:\input.xml'
+    Authentication = 'Default'
+}
+Invoke-WSManAction @params
 ```
 
 This command calls the **StopService** method on the Spooler service by using input from a file. The
