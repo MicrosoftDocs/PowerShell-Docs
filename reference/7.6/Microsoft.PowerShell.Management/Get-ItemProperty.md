@@ -20,15 +20,17 @@ Gets the properties of a specified item.
 ### Path (Default)
 
 ```
-Get-ItemProperty [-Path] <String[]> [[-Name] <String[]>] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+Get-ItemProperty [-Path] <String[]> [[-Name] <String[]>] [-Filter <String>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Get-ItemProperty -LiteralPath <String[]> [[-Name] <String[]>] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -21,14 +21,16 @@ Clears the contents of an item, but does not delete the item.
 
 ```
 Clear-Item [-Path] <String[]> [-Force] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Clear-Item -LiteralPath <String[]> [-Force] [-Filter <String>] [-Include <String[]>]
- [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

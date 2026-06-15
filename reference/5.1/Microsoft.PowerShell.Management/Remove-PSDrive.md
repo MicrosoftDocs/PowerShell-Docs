@@ -20,15 +20,15 @@ Deletes temporary PowerShell drives and disconnects mapped network drives.
 ### Name (Default)
 
 ```
-Remove-PSDrive [-Name] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force] [-WhatIf]
- [-Confirm] [-UseTransaction] [<CommonParameters>]
+Remove-PSDrive [-Name] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
+ [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralName
 
 ```
-Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
- [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
+Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <String>]
+ [-Force] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -20,22 +20,22 @@ Gets the services on the computer.
 ### Default (Default)
 
 ```
-Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
- [-Exclude <String[]>] [<CommonParameters>]
+Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices]
+ [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Get-Service [-DependentServices] [-RequiredServices] -DisplayName <String[]> [-Include <String[]>]
- [-Exclude <String[]>] [<CommonParameters>]
+Get-Service [-DependentServices] [-RequiredServices] -DisplayName <String[]>
+ [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exclude <String[]>]
- [-InputObject <ServiceController[]>] [<CommonParameters>]
+Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>]
+ [-Exclude <String[]>] [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -73,8 +73,8 @@ Get-Service "wmi*"
 ### Example 3: Display services that include a search string
 
 This example displays services with a display name that includes the word `network`. Searching the
-display name finds network-related services even when the service name doesn't include `Net`, such as
-xmlprov, the Network Provisioning Service.
+display name finds network-related services even when the service name doesn't include `Net`, such
+as xmlprov, the Network Provisioning Service.
 
 ```powershell
 Get-Service -DisplayName "*network*"
@@ -346,8 +346,8 @@ PowerShell 6.0 introduced the following changes:
   - **DelayedAutoStart**
   - **BinaryPathName**
   - **StartupType**
-- The command no longer includes the **ComputerName** parameter. To use this command on a remote computer,
-  use the `Invoke-Command` to target a remote system.
+- The command no longer includes the **ComputerName** parameter. To use this command on a remote
+  computer, use the `Invoke-Command` to target a remote system.
 
 This cmdlet can display services only when the current user has permission to see them. If this
 cmdlet does not display services, you might not have permission to see them.

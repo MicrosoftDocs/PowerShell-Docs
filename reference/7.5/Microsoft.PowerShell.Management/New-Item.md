@@ -28,15 +28,15 @@ New-Item [-Path] <String[]> [-ItemType <String>] [-Value <Object>] [-Force]
 ### nameSet - All providers
 
 ```
-New-Item [[-Path] <String[]>] -Name <String> [-ItemType <String>] [-Value <Object>] [-Force]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-Item [[-Path] <String[]>] -Name <String> [-ItemType <String>] [-Value <Object>]
+ [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### pathSet (Default) - WSMan provider
 
 ```
-New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-OptionSet <hashtable>]
+New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <Object>]
+ [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-OptionSet <hashtable>]
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <string>]
  [-SessionOption <SessionOption>] [-Port <int>] [<CommonParameters>]
 ```
@@ -44,8 +44,8 @@ New-Item [-Path] <string[]> -ConnectionURI <uri> [-ItemType <string>] [-Value <O
 ### nameSet - WSMan provider
 
 ```
-New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-OptionSet <hashtable>]
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>]
+ [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-OptionSet <hashtable>]
  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <string>]
  [-SessionOption <SessionOption>] [-ApplicationName <string>] [-Port <int>] [-UseSSL]
  [<CommonParameters>]
@@ -62,8 +62,8 @@ New-Item [-Path] <string[]> [-ItemType <string>] [-Value <Object>] [-Force]
 ### nameSet - Alias provider
 
 ```
-New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>] [-Force]
- [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Options <ScopedItemOptions>]
+New-Item [[-Path] <string[]>] -Name <string> [-ItemType <string>] [-Value <Object>]
+ [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Options <ScopedItemOptions>]
  [<CommonParameters>]
 ```
 
@@ -179,7 +179,7 @@ to verify the paths of the newly created files.
 
 ### Example 7: Create a symbolic link to a file or folder
 
-This example creates a symbolic link to the Notice.txt file in the current folder.
+This example creates a symbolic link to the `Notice.txt` file in the current folder.
 
 ```powershell
 $link = New-Item -ItemType SymbolicLink -Path .\link -Target .\Notice.txt
@@ -223,10 +223,10 @@ Mode                LastWriteTime         Length Name
 -a----         5/1/2020   8:03 AM              0 TestFile.txt
 ```
 
-### Example 9: Use the Force parameter to overwrite existing files
+### Example 9: Use the -Force parameter to overwrite existing files
 
-This example creates a file with a value and then recreates the file using the **Force** parameter.
-This overwrites the existing file, as you can see by the **Length** property.
+This example creates a file with a value and then recreates the file using `-Force`. This overwrites
+the existing file, as you can see by the **Length** property.
 
 ```powershell
 PS> New-Item ./TestFile.txt -ItemType File -Value 'This is just a test file'

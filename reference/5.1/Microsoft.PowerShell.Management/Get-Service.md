@@ -20,29 +20,30 @@ Gets the services on a local or remote computer.
 ### Default (Default)
 
 ```
-Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices]
- [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
+Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices]
+ [-RequiredServices] [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] -DisplayName <String[]>
- [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
+Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices]
+ -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
-Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
- [-Exclude <String[]>] [-InputObject <ServiceController[]>] [<CommonParameters>]
+Get-Service [-ComputerName <String[]>] [-DependentServices] [-RequiredServices]
+ [-Include <String[]>] [-Exclude <String[]>] [-InputObject <ServiceController[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Get-Service` cmdlet gets objects that represent the services on a local computer or on a remote
-computer, including running and stopped services. By default, when `Get-Service` is run without
-parameters, all the local computer's services are returned.
+The `Get-Service` cmdlet gets objects that represent the services on a computer, including running
+and stopped services. By default, when `Get-Service` is run without parameters, all the local
+computer's services are returned.
 
 You can direct this cmdlet to get only particular services by specifying the service name or the
 display name of the services, or you can pipe service objects to this cmdlet.
@@ -71,8 +72,8 @@ Get-Service "wmi*"
 ### Example 3: Display services that include a search string
 
 This example displays services with a display name that includes the word `network`. Searching the
-display name finds network-related services even when the service name doesn't include `Net`, such as
-xmlprov, the Network Provisioning Service.
+display name finds network-related services even when the service name doesn't include `Net`, such
+as xmlprov, the Network Provisioning Service.
 
 ```powershell
 Get-Service -DisplayName "*network*"
@@ -119,7 +120,7 @@ This example gets services that have dependent services.
 
 ```powershell
 Get-Service |
-  Where-Object {$_.DependentServices} |
+    Where-Object {$_.DependentServices} |
     Format-List -Property Name, DependentServices, @{
       Label="NoOfDependentServices"; Expression={$_.DependentServices.Count}
     }

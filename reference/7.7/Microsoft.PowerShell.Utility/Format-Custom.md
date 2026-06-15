@@ -18,8 +18,8 @@ Uses a customized view to format the output.
 
 ```
 Format-Custom [[-Property] <Object[]>] [-ExcludeProperty <string[]>] [-Depth <Int32>]
- [-GroupBy <Object>] [-View <String>] [-ShowError] [-DisplayError] [-Force] [-Expand <String>]
- [-InputObject <PSObject>] [<CommonParameters>]
+ [-GroupBy <Object>] [-View <String>] [-ShowError] [-DisplayError] [-Force]
+ [-Expand <String>] [-InputObject <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

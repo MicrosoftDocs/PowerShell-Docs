@@ -21,18 +21,18 @@ Adds content to the specified items, such as adding words to a file.
 
 ```
 Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
- [-Confirm] [-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>]
- [-Stream <string>] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [-NoNewline]
+ [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <string>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
- [-Confirm] [-UseTransaction] [-NoNewline] [-Encoding <FileSystemCmdletProviderEncoding>]
- [-Stream <string>] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [-UseTransaction] [-NoNewline]
+ [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -55,7 +55,7 @@ Add-Content -Path .\*.txt -Exclude help* -Value 'End of file'
 
 The **Path** parameter specifies all `.txt` files in the current directory, but the **Exclude**
 parameter ignores file names that match the specified pattern. The **Value** parameter specifies the
-text string that is written to the files.
+text string that's written to the files.
 
 Use [Get-Content](Get-Content.md) to display the contents of these files.
 
@@ -77,7 +77,7 @@ Tuesday, May 14, 2019 8:24:27 AM
 
 The `Add-Content` cmdlet creates two new files in the current directory. The **Value** parameter
 contains the output of the `Get-Date` cmdlet. The **PassThru** parameter outputs the added contents
-to the pipeline. Because there is no other cmdlet to receive the output, it is displayed in the
+to the pipeline. Because there is no other cmdlet to receive the output, it's displayed in the
 PowerShell console. The `Get-Content` cmdlet displays the updated file, `DateTimeFile1.log`.
 
 ### Example 3: Add the contents of a specified file to another file
@@ -400,7 +400,8 @@ Accept wildcard characters: False
 ### -UseTransaction
 
 Includes the command in the active transaction. This parameter is valid only when a transaction is
-in progress. For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+in progress. For more information, see
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

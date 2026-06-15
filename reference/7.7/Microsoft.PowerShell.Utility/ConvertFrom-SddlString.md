@@ -18,7 +18,8 @@ Converts a SDDL string to a custom object.
 ### All
 
 ```
-ConvertFrom-SddlString [-Sddl] <String> [-Type <AccessRightTypeNames>] [<CommonParameters>]
+ConvertFrom-SddlString [-Sddl] <String> [-Type <AccessRightTypeNames>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

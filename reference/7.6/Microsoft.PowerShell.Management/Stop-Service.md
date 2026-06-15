@@ -20,22 +20,22 @@ Stops one or more running services.
 ### InputObject (Default)
 
 ```
-Stop-Service [-Force] [-NoWait] [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
- [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Service [-Force] [-NoWait] [-InputObject] <ServiceController[]> [-PassThru]
+ [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### Default
 
 ```
-Stop-Service [-Force] [-NoWait] [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Service [-Force] [-NoWait] [-Name] <String[]> [-PassThru] [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DisplayName
 
 ```
-Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Stop-Service [-Force] [-NoWait] [-PassThru] -DisplayName <String[]> [-Include <String[]>]
+ [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -52,7 +52,7 @@ to stop.
 ### Example 1: Stop a service on the local computer
 
 ```powershell
-PS C:\> Stop-Service -Name "sysmonlog"
+Stop-Service -Name "sysmonlog"
 ```
 
 This command stops the Performance Logs and Alerts (SysmonLog) service on the local computer.
@@ -60,7 +60,7 @@ This command stops the Performance Logs and Alerts (SysmonLog) service on the lo
 ### Example 2: Stop a service by using the display name
 
 ```powershell
-PS C:\> Get-Service -DisplayName "telnet" | Stop-Service
+Get-Service -DisplayName "telnet" | Stop-Service
 ```
 
 This command stops the Telnet service on the local computer. The command uses `Get-Service` to get
@@ -70,8 +70,8 @@ an object that represents the Telnet service. The pipeline operator (`|`) pipes 
 ### Example 3: Stop a service that has dependent services
 
 ```powershell
-PS C:\> Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServices
-PS C:\> Stop-Service -Name "iisadmin" -Force -Confirm
+Get-Service -Name "iisadmin" | Format-List -Property Name, DependentServices
+Stop-Service -Name "iisadmin" -Force -Confirm
 ```
 
 This example stops the IISAdmin service on the local computer. Because stopping this service also

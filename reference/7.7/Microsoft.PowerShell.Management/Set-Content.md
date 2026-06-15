@@ -22,8 +22,8 @@ Writes new content or replaces existing content in a file.
 ```
 Set-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
  [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream] [-Stream <string>]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream]
+ [-Stream <string>] [<CommonParameters>]
 ```
 
 ### LiteralPath - FileSystem provider
@@ -31,24 +31,24 @@ Set-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>
 ```
 Set-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
  [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream] [-Stream <string>]
- [<CommonParameters>]
+ [-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream]
+ [-Stream <string>] [<CommonParameters>]
 ```
 
 ### Path (Default) - All providers
 
 ```
 Set-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath - All providers
 
 ```
 Set-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

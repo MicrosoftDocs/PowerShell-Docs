@@ -18,16 +18,16 @@ Converts .NET objects into HTML that can be displayed in a Web browser.
 
 ```
 ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [[-Body] <String[]>]
- [[-Head] <String[]>] [[-Title] <String>] [-As <String>] [-CssUri <Uri>] [-PostContent <String[]>]
- [-PreContent <String[]>] [-Meta <Hashtable>] [-Charset <String>] [-Transitional]
- [<CommonParameters>]
+ [[-Head] <String[]>] [[-Title] <String>] [-As <String>] [-CssUri <Uri>]
+ [-PostContent <String[]>] [-PreContent <String[]>] [-Meta <Hashtable>]
+ [-Charset <String>] [-Transitional] [<CommonParameters>]
 ```
 
 ### Fragment
 
 ```
-ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>] [-Fragment]
- [-PostContent <String[]>] [-PreContent <String[]>] [<CommonParameters>]
+ConvertTo-Html [-InputObject <PSObject>] [[-Property] <Object[]>] [-As <String>]
+ [-Fragment] [-PostContent <String[]>] [-PreContent <String[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

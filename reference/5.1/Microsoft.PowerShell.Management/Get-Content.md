@@ -22,18 +22,19 @@ Gets the content of the item at the specified location.
 
 ```
 Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] [-Path] <String[]>
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
- [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force]
+ [-Credential <PSCredential>] [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw]
  [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>] -LiteralPath <String[]>
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Credential <PSCredential>]
- [-UseTransaction] [-Delimiter <String>] [-Wait] [-Raw]
- [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>] [<CommonParameters>]
+Get-Content [-ReadCount <Int64>] [-TotalCount <Int64>] [-Tail <Int32>]
+ -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Force] [-Credential <PSCredential>] [-UseTransaction] [-Delimiter <String>] [-Wait]
+ [-Raw] [-Encoding <FileSystemCmdletProviderEncoding>] [-Stream <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -53,7 +54,9 @@ This example gets the content of a file in the current directory. The `LineNumbe
 has 100 lines in the format, **This is Line X** and is used in several examples.
 
 ```powershell
-1..100 | ForEach-Object { Add-Content -Path .\LineNumbers.txt -Value "This is line $_." }
+1..100 | ForEach-Object {
+    Add-Content -Path .\LineNumbers.txt -Value "This is line $_."
+}
 Get-Content -Path .\LineNumbers.txt
 ```
 
@@ -258,7 +261,7 @@ This example demonstrates how to get the contents of a file as a `[byte[]]` as a
 
 ```powershell
 $byteArray = Get-Content -Path C:\temp\test.txt -Encoding Byte -Raw
-Get-Member -InputObject $bytearray
+Get-Member -InputObject $byteArray
 ```
 
 ```Output

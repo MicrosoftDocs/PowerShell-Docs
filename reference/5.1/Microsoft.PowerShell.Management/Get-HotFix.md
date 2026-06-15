@@ -25,8 +25,8 @@ Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredent
 ### DESCRIPTION
 
 ```
-Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
- [<CommonParameters>]
+Get-HotFix [-Description <String[]>] [-ComputerName <String[]>]
+ [-Credential <PSCredential>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -27,8 +27,8 @@ Remove-PSDrive [-Name] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-F
 ### LiteralName
 
 ```
-Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <String>] [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-PSDrive [-LiteralName] <String[]> [-PSProvider <String[]>] [-Scope <String>]
+ [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

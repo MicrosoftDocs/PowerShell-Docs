@@ -20,15 +20,17 @@ Performs the default action on the specified item.
 ### Path (Default)
 
 ```
-Invoke-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Invoke-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Invoke-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -226,7 +226,8 @@ Accept wildcard characters: False
 
 ### -EnumsAsStrings
 
-Provides an alternative serialization option that converts all enumerations to their string representation.
+Provides an alternative serialization option that converts all enumerations to their string
+representation.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

@@ -7,7 +7,7 @@ no-loc: [-Forward]
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-- rcie
+  - rcie
 title: Register-CimIndicationEvent
 ---
 # Register-CimIndicationEvent
@@ -428,4 +428,3 @@ This cmdlet is only available on Windows platforms.
 [New-CimSession](New-CimSession.md)
 
 [about_WQL](../Microsoft.PowerShell.Core/About/about_WQL.md)
-

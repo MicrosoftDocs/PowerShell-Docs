@@ -1,6 +1,6 @@
 ---
 description: List of the GitHub users that have the most contributions to PowerShell documentation.
-ms.date: 05/01/2026
+ms.date: 06/13/2026
 title: Community contributor Hall of Fame
 ---
 # Community Contributor Hall of Fame
@@ -18,7 +18,7 @@ Pull Requests help us fix those issues and make the documentation better for eve
 
 |     PRs Merged     | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: |
-| Community          |    8 |  189 |  452 |  468 |  321 |  165 |  101 |  134 |  117 |   95 |  160 |   17 |  2227 |
+| Community          |    8 |  189 |  452 |  468 |  321 |  165 |  101 |  134 |  117 |   95 |  160 |   21 |  2231 |
 | matt9ucci          |      |      |  157 |   80 |   30 |    1 |    6 |      |      |      |      |      |   274 |
 | nschonni           |      |      |      |   14 |  138 |   10 |      |      |      |      |      |      |   162 |
 | kiazhi             |      |   25 |   79 |   12 |      |      |      |      |      |      |      |      |   116 |
@@ -36,11 +36,11 @@ Pull Requests help us fix those issues and make the documentation better for eve
 | it-praktyk         |      |      |      |   16 |    1 |      |      |      |      |      |      |      |    17 |
 | vors               |      |   15 |    1 |      |      |      |      |      |      |      |      |      |    16 |
 | kvprasoon          |      |    2 |    1 |    6 |    2 |    2 |    2 |      |      |      |      |      |    15 |
-| k-takai            |      |      |      |    5 |    1 |    7 |      |      |      |      |      |      |    13 |
 | purdo17            |      |      |      |   13 |      |      |      |      |      |      |      |      |    13 |
+| k-takai            |      |      |      |    5 |    1 |    7 |      |      |      |      |      |      |    13 |
 | bergmeister        |      |      |    1 |    3 |    3 |    1 |    1 |    2 |    1 |    1 |      |      |    13 |
 | markekraus         |      |      |   11 |    1 |      |      |      |      |      |      |      |      |    12 |
-| exchange12rocks    |      |      |    7 |    3 |      |      |    1 |      |      |      |      |      |    11 |
+| exchange12rocks    |      |      |    7 |    3 |      |      |    1 |      |      |      |      |    1 |    12 |
 | hrxn               |      |      |      |      |      |      |    2 |    2 |    2 |    5 |      |      |    11 |
 
 ## GitHub issues opened
@@ -49,7 +49,7 @@ GitHub issues help us identify errors and gaps in our documentation.
 
 |   Issues Opened    | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 | Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ----: |
-| Community          |    6 |   52 |   96 |  213 |  567 |  564 |  367 |  244 |  291 |  243 |  183 |   56 |  2882 |
+| Community          |    6 |   52 |   96 |  213 |  567 |  564 |  367 |  244 |  291 |  243 |  182 |   65 |  2890 |
 | mklement0          |      |      |   19 |   60 |   56 |   61 |   28 |    8 |   20 |   24 |    2 |      |   278 |
 | ehmiiz             |      |      |      |      |      |      |      |   21 |   14 |      |      |      |    35 |
 | iRon7              |      |      |      |      |      |    2 |    2 |    2 |   10 |    8 |    8 |      |    32 |
@@ -67,8 +67,8 @@ GitHub issues help us identify errors and gaps in our documentation.
 | alexandair         |      |    9 |    4 |    2 |      |      |      |      |      |      |      |      |    15 |
 | clamb123           |      |      |      |      |      |      |   14 |      |      |      |      |      |    14 |
 | tabad              |      |      |      |      |      |      |      |      |   11 |    2 |      |      |    13 |
-| ThomasNieto        |      |      |      |      |      |    3 |      |    2 |    4 |    3 |      |      |    12 |
 | trollyanov         |      |      |      |      |      |      |   11 |    1 |      |      |      |      |    12 |
+| ThomasNieto        |      |      |      |      |      |    3 |      |    2 |    4 |    3 |      |      |    12 |
 | LaurentDardenne    |      |      |    3 |    2 |      |      |      |    5 |    2 |      |      |      |    12 |
 | Liturgist          |      |      |      |      |    1 |    1 |    1 |    2 |    5 |    2 |      |      |    12 |
 | jsilverm           |      |      |      |      |      |    8 |      |      |    4 |      |      |      |    12 |

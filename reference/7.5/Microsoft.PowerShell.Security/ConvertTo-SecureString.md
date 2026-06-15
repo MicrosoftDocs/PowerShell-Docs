@@ -18,7 +18,8 @@ Converts plain text or encrypted strings to secure strings.
 ### Secure (Default)
 
 ```
-ConvertTo-SecureString [-String] <String> [[-SecureKey] <SecureString>] [<CommonParameters>]
+ConvertTo-SecureString [-String] <String> [[-SecureKey] <SecureString>]
+ [<CommonParameters>]
 ```
 
 ### PlainText
@@ -47,8 +48,8 @@ specified key, that same key must be provided as the value of the **Key** or **S
 of the `ConvertTo-SecureString` cmdlet.
 
 > [!NOTE]
-> For more information about **SecureString** data protection, see
-> [How secure is SecureString?](xref:System.Security.SecureString#how-secure-is-securestring).
+> Note that per [DotNet](xref:System.Security.SecureString#remarks), the
+> contents of a SecureString are not encrypted on non-Windows systems.
 
 ## EXAMPLES
 
@@ -87,8 +88,10 @@ The fourth command displays the encrypted string in the value of the `$Encrypted
 
 The fifth command uses the `ConvertTo-SecureString` cmdlet to convert the encrypted standard string
 in the `$Encrypted` variable back into a secure string. It saves the result in the `$Secure2`
-variable. The sixth command displays the value of the `$Secure2` variable. The SecureString type
-indicates that the command was successful.
+variable.
+
+The sixth command displays the value of the `$Secure2` variable. The SecureString type indicates
+that the command was successful.
 
 ### Example 2: Create a secure string from an encrypted string in a file
 

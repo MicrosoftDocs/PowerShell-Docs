@@ -419,4 +419,3 @@ This cmdlet returns an **EventSubscription** object.
 [New-CimSession](New-CimSession.md)
 
 [about_WQL](../Microsoft.PowerShell.Core/About/about_WQL.md)
-
