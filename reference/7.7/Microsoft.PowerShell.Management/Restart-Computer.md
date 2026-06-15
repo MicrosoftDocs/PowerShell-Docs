@@ -388,9 +388,8 @@ This cmdlet returns no output.
 
 ## NOTES
 
-- In Windows, `Restart-Computer` uses the
+- On Windows, `Restart-Computer` uses the
   [Win32Shutdown method](/windows/desktop/CIMWin32Prov/win32shutdown-method-in-class-win32-operatingsystem)
-  of the Windows Management Instrumentation (WMI)
   [Win32_OperatingSystem](/windows/desktop/CIMWin32Prov/win32-operatingsystem) class. This method
   requires the **SeShutdownPrivilege** privilege be enabled for the user account used to restart
   the machine.

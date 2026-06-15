@@ -24,47 +24,49 @@ Deletes the specified items.
 ### Path (Default) - FileSystem provider
 
 ```
-Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>]
- [<CommonParameters>]
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### LiteralPath - FileSystem provider
 
 ```
-Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-Stream <String[]>]
- [<CommonParameters>]
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-Stream <String[]>] [<CommonParameters>]
 ```
 
 ### Path (Default) - Certificate provider
 
 ```
-Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-DeleteKey]
- [<CommonParameters>]
+Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-DeleteKey] [<CommonParameters>]
 ```
 
 ### LiteralPath - Certificate provider
 
 ```
-Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
- [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-DeleteKey]
- [<CommonParameters>]
+Remove-Item -LiteralPath <String[]> [-Filter <String>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf]
+ [-Confirm] [-DeleteKey] [<CommonParameters>]
 ```
 
 ### Path (Default) - All providers
 
 ```
-Remove-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Item [-Path] <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### LiteralPath - All providers
 
 ```
-Remove-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
- [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-Item -LiteralPath <string[]> [-Filter <string>] [-Include <string[]>]
+ [-Exclude <string[]>] [-Recurse] [-Force] [-Credential <pscredential>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -371,7 +373,7 @@ it in single quotation marks. Single quotation marks tell PowerShell not to inte
 as escape sequences.
 
 For more information, see
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -457,8 +459,8 @@ Accept wildcard characters: True
 Prompts you for confirmation before running the cmdlet. For more information, see the following
 articles:
 
-- [about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
-- [about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
+- [about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md#confirmpreference)
+- [about_Functions_CmdletBindingAttribute](../Microsoft.PowerShell.Core/About/about_Functions_CmdletBindingAttribute.md#confirmimpact)
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -550,6 +552,6 @@ design.
 
 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
-[about_Preference_Variables](../microsoft.powershell.core/about/about_preference_variables.md#confirmpreference)
+[about_Preference_Variables](../Microsoft.PowerShell.Core/About/about_Preference_Variables.md#confirmpreference)
 
-[about_Functions_CmdletBindingAttribute](../microsoft.powershell.core/about/about_functions_cmdletbindingattribute.md?#confirmimpact)
+[about_Functions_CmdletBindingAttribute](../Microsoft.PowerShell.Core/About/about_Functions_CmdletBindingAttribute.md#confirmimpact)

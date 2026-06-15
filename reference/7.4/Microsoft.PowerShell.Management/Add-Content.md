@@ -21,18 +21,18 @@ Adds content to the specified items, such as adding words to a file.
 
 ```
 Add-Content [-Path] <string[]> [-Value] <Object[]> [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
- [-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream] [-Stream <string>]
- [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream]
+ [-Stream <string>] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Add-Content [-Value] <Object[]> -LiteralPath <string[]> [-PassThru] [-Filter <string>]
- [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>] [-WhatIf]
- [-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream] [-Stream <string>]
- [<CommonParameters>]
+ [-Include <string[]>] [-Exclude <string[]>] [-Force] [-Credential <pscredential>]
+ [-WhatIf] [-Confirm] [-NoNewline] [-Encoding <Encoding>] [-AsByteStream]
+ [-Stream <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -433,7 +433,6 @@ the `Unblock-File` cmdlet.
 
 This parameter was introduced in PowerShell 3.0.  As of PowerShell 7.2, `Add-Content` can
 target alternative data streams on both files and directories.
-
 
 ```yaml
 Type: System.String

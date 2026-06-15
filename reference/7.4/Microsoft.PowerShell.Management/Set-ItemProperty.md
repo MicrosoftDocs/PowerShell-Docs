@@ -20,65 +20,69 @@ Creates or changes the value of a property of an item.
 ### propertyValuePathSet (Default) - All providers
 
 ```
-Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru]
+ [-Force] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### propertyPSObjectPathSet - All providers
 
 ```
 Set-ItemProperty [-Path] <string[]> -InputObject <psobject> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### propertyValueLiteralPathSet - All providers
 
 ```
-Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru]
+ [-Force] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### propertyPSObjectLiteralPathSet - All providers
 
 ```
 Set-ItemProperty -LiteralPath <string[]> -InputObject <psobject> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### propertyValuePathSet (Default) - Registry provider
 
 ```
-Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
+Set-ItemProperty [-Path] <string[]> [-Name] <string> [-Value] <Object> [-PassThru]
+ [-Force] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Type <RegistryValueKind>]
+ [<CommonParameters>]
 ```
 
 ### propertyPSObjectPathSet - Registry provider
 
 ```
 Set-ItemProperty [-Path] <string[]> -InputObject <psobject> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Type <RegistryValueKind>]
+ [<CommonParameters>]
 ```
 
 ### propertyValueLiteralPathSet - Registry provider
 
 ```
-Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
+Set-ItemProperty [-Name] <string> [-Value] <Object> -LiteralPath <string[]> [-PassThru]
+ [-Force] [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Type <RegistryValueKind>]
+ [<CommonParameters>]
 ```
 
 ### propertyPSObjectLiteralPathSet - Registry provider
 
 ```
 Set-ItemProperty -LiteralPath <string[]> -InputObject <psobject> [-PassThru] [-Force]
- [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>] [-Credential <pscredential>]
- [-WhatIf] [-Confirm] [-Type <RegistryValueKind>] [<CommonParameters>]
+ [-Filter <string>] [-Include <string[]>] [-Exclude <string[]>]
+ [-Credential <pscredential>] [-WhatIf] [-Confirm] [-Type <RegistryValueKind>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

@@ -48,7 +48,7 @@ specified key, that same key must be provided as the value of the **Key** or **S
 of the `ConvertTo-SecureString` cmdlet.
 
 > [!NOTE]
-> Note that per [DotNet](/dotnet/api/system.security.securestring#remarks), the
+> Note that per [DotNet](xref:System.Security.SecureString#remarks), the
 > contents of a SecureString are not encrypted on non-Windows systems.
 
 ## EXAMPLES

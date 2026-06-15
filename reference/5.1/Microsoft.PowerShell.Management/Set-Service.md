@@ -19,16 +19,16 @@ Starts, stops, and suspends a service, and changes its properties.
 
 ```
 Set-Service [-ComputerName <String[]>] [-Name] <String> [-DisplayName <String>]
- [-Description <String>] [-StartupType <ServiceStartMode>] [-Status <String>] [-PassThru] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+ [-Description <String>] [-StartupType <ServiceStartMode>] [-Status <String>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### InputObject
 
 ```
 Set-Service [-ComputerName <String[]>] [-DisplayName <String>] [-Description <String>]
- [-StartupType <ServiceStartMode>] [-Status <String>] [-InputObject <ServiceController>] [-PassThru]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-StartupType <ServiceStartMode>] [-Status <String>] [-InputObject <ServiceController>]
+ [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

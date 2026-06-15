@@ -26,7 +26,8 @@ Push-Location [[-Path] <String>] [-PassThru] [-StackName <String>] [<CommonParam
 ### LiteralPath
 
 ```
-Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>] [<CommonParameters>]
+Push-Location [-LiteralPath <String>] [-PassThru] [-StackName <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

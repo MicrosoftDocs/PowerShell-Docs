@@ -179,7 +179,7 @@ to verify the paths of the newly created files.
 
 ### Example 7: Create a symbolic link to a file or folder
 
-This example creates a symbolic link to the Notice.txt file in the current folder.
+This example creates a symbolic link to the `Notice.txt` file in the current folder.
 
 ```powershell
 $link = New-Item -ItemType SymbolicLink -Path .\link -Target .\Notice.txt
@@ -245,9 +245,9 @@ Mode                LastWriteTime         Length Name
 ```
 
 > [!NOTE]
-> When using `New-Item` with the `-Force` switch to create registry keys, the command will behave
+> When using `New-Item` with the **Force** parameter to create registry keys, the command behaves
 > the same as when overwriting a file. If the registry key already exists, the key and all
-> properties and values will be overwritten with an empty registry key.
+> properties and values are overwritten with an empty registry key.
 
 ## PARAMETERS
 

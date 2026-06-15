@@ -17,14 +17,14 @@ Renames a computer.
 
 ```
 Rename-Computer [-ComputerName <String>] [-PassThru] [-DomainCredential <PSCredential>]
- [-LocalCredential <PSCredential>] [-NewName] <String> [-Force] [-Restart] [-WsmanAuthentication <String>]
- [-Protocol <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+ [-LocalCredential <PSCredential>] [-NewName] <String> [-Force] [-Restart]
+ [-WsmanAuthentication <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-The `Rename-Computer` cmdlet renames the local computer or a remote computer.
-It renames one computer in each command.
+The `Rename-Computer` cmdlet renames the local computer or a remote computer. It renames one
+computer in each command.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -49,7 +49,13 @@ computers in the domain.
 The **Force** parameter suppresses the confirmation prompt.
 
 ```powershell
-Rename-Computer -ComputerName "Srv01" -NewName "Server001" -DomainCredential Domain01\Admin01 -Force
+$renameParams = @{
+    ComputerName = "Srv01"
+    NewName = "Server001"
+    DomainCredential = "Domain01\Admin01"
+    Force = $true
+}
+Rename-Computer @renameParams
 ```
 
 ## PARAMETERS
@@ -184,9 +190,8 @@ Accept wildcard characters: False
 
 ### -Protocol
 
-Specifies which protocol to use to rename the computer.
-The acceptable values for this parameter are: WSMan and DCOM.
-The default value is DCOM.
+Specifies which protocol to use to rename the computer. The acceptable values for this parameter
+are: WSMan and DCOM. The default value is DCOM.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -205,8 +210,8 @@ Accept wildcard characters: False
 
 ### -Restart
 
-Indicates that this cmdlet restarts the computer that was renamed.
-A restart is often required to make the change effective.
+Indicates that this cmdlet restarts the computer that was renamed. A restart is often required to
+make the change effective.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -234,15 +239,15 @@ WSMan protocol. The acceptable values for this parameter are:
 
 The default value is **Default**.
 
-For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).
+For more information about the values of this parameter, see
+[AuthenticationMechanism Enumeration](xref:System.Management.Automation.Runspaces.AuthenticationMechanism).
 
 > [!WARNING]
-> Credential Security Service Provider (CredSSP) authentication, in which the user
-> credentials are passed to a remote computer to be authenticated, is designed for commands that
-> require authentication on more than one resource, such as accessing a remote network share.
-> This mechanism increases the security risk of the remote operation.
-> If the remote computer is compromised, the credentials that are passed to it can be used to
-> control > the network session.
+> Credential Security Service Provider (CredSSP) authentication, in which the user credentials are
+> passed to a remote computer to be authenticated, is designed for commands that require
+> authentication on more than one resource, such as accessing a remote network share. This mechanism
+> increases the security risk of the remote operation. If the remote computer is compromised, the
+> credentials that are passed to it can be used to control > the network session.
 
 This parameter was introduced in Windows PowerShell 3.0.
 
@@ -297,7 +302,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

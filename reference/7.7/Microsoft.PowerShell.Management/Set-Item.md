@@ -95,7 +95,9 @@ Set-Item -Path Env:UserRole -Value "Administrator"
 This command changes the prompt function so that it displays the time before the path.
 
 ```powershell
-Set-Item -Path Function:prompt -Value {'PS '+ (Get-Date -Format t) + " " + (Get-Location) + '> '}
+Set-Item -Path Function:prompt -Value {
+    'PS '+ (Get-Date -Format t) + " " + (Get-Location) + '> '
+}
 ```
 
 ### Example 4: Set options for your prompt function

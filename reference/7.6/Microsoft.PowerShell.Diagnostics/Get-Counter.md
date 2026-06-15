@@ -17,8 +17,8 @@ Gets performance counter data from local and remote computers.
 ### GetCounterSet (Default)
 
 ```
-Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int64>] [-Continuous]
- [-ComputerName <String[]>] [<CommonParameters>]
+Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int64>]
+ [-Continuous] [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
 ### ListSetSet

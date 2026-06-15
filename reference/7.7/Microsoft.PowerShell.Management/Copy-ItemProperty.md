@@ -36,9 +36,8 @@ Copy-ItemProperty -LiteralPath <String[]> [-Name] <String> [-Destination] <Strin
 ## DESCRIPTION
 
 The `Copy-ItemProperty` cmdlet copies a property and value from a specified location to another
-location.
-For instance, you can use this cmdlet to copy one or more registry entries from one registry key to
-another registry key.
+location. For instance, you can use this cmdlet to copy one or more registry entries from one
+registry key to another registry key.
 
 ## EXAMPLES
 
@@ -48,7 +47,12 @@ This command copies the property named "MyProperty" from the "MyApplication" reg
 "MyApplicationRev2" registry key.
 
 ```powershell
-Copy-ItemProperty -Path "MyApplication" -Destination "HKLM:\Software\MyApplicationRev2" -Name "MyProperty"
+$copyParams = @{
+    Path        = "MyApplication"
+    Destination = "HKLM:\Software\MyApplicationRev2"
+    Name        = "MyProperty"
+}
+Copy-ItemProperty @copyParams
 ```
 
 ## PARAMETERS

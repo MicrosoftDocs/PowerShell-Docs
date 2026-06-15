@@ -17,8 +17,8 @@ Gets performance counter data from local and remote computers.
 ### GetCounterSet (Default)
 
 ```
-Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int64>] [-Continuous]
- [-ComputerName <String[]>] [<CommonParameters>]
+Get-Counter [[-Counter] <String[]>] [-SampleInterval <Int32>] [-MaxSamples <Int64>]
+ [-Continuous] [-ComputerName <String[]>] [<CommonParameters>]
 ```
 
 ### ListSetSet
@@ -244,11 +244,11 @@ Timestamp                 CounterSamples
                           5.35768447160776
 ```
 
-The `Get-Random` cmdlet uses `Get-Content` to select 50 random computer names from the
-`Servers.txt` file. The remote computer names are stored in the `$Servers` variable. The
-`\Processor(*)\% Processor Time` counter's path is stored in the `$Counter` variable. `Get-Counter`
-uses the **Counter** parameter to specify the counters in the `$Counter` variable. The
-**ComputerName** parameter specifies the computer names in the `$Servers` variable.
+The `Get-Random` cmdlet uses `Get-Content` to select 50 random computer names from the `Servers.txt`
+file. The remote computer names are stored in the `$Servers` variable. The `\Processor(*)\%
+Processor Time` counter's path is stored in the `$Counter` variable. `Get-Counter` uses the
+**Counter** parameter to specify the counters in the `$Counter` variable. The **ComputerName**
+parameter specifies the computer names in the `$Servers` variable.
 
 ### Example 8: Use the Path property to get formatted path names
 

@@ -21,14 +21,16 @@ Gets the value for one or more properties of a specified item.
 
 ```
 Get-ItemPropertyValue [[-Path] <String[]>] [-Name] <String[]> [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
 Get-ItemPropertyValue -LiteralPath <String[]> [-Name] <String[]> [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [<CommonParameters>]
+ [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -41,7 +43,7 @@ parameters.
 
 ### Example 1: Get the value of the ProductID property
 
-This command gets the value of the **ProductID** property of the
+This command gets the value of the **ProductID** property of the 
 `\SOFTWARE\Microsoft\Windows NT\CurrentVersion` object in the Windows Registry provider.
 
 ```powershell
@@ -143,12 +145,12 @@ Accept wildcard characters: True
 ### -Filter
 
 Specifies a filter to qualify the **Path** parameter. The
-[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md) provider is the only
-installed PowerShell provider that supports the use of filters. You can find the syntax for the
-**FileSystem** filter language in
-[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md). Filters are more
-efficient than other parameters, because the provider applies them when the cmdlet gets the objects
-rather than having PowerShell filter the objects after they are retrieved.
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+provider is the only installed PowerShell provider that supports the use of filters. You can find
+the syntax for the **FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+Filters are more efficient than other parameters, because the provider applies them when the cmdlet
+gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
 ```yaml
 Type: System.String

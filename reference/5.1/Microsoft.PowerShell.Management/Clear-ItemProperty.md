@@ -20,17 +20,17 @@ Clears the value of a property but does not delete the property.
 ### Path (Default)
 
 ```
-Clear-ItemProperty [-Path] <String[]> [-Name] <String> [-PassThru] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [<CommonParameters>]
+Clear-ItemProperty [-Path] <String[]> [-Name] <String> [-PassThru] [-Force]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ### LiteralPath
 
 ```
-Clear-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PassThru] [-Force] [-Filter <String>]
- [-Include <String[]>] [-Exclude <String[]>] [-Credential <PSCredential>] [-WhatIf] [-Confirm]
- [-UseTransaction] [<CommonParameters>]
+Clear-ItemProperty -LiteralPath <String[]> [-Name] <String> [-PassThru] [-Force]
+ [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>]
+ [-Credential <PSCredential>] [-WhatIf] [-Confirm] [-UseTransaction] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,9 +54,9 @@ Clear-ItemProperty -Path "HKLM:\Software\MyCompany\MyApp" -Name "Options"
 ### -Credential
 
 > [!NOTE]
-> This parameter is not supported by any providers installed with PowerShell.
-> To impersonate another user, or elevate your credentials when running this cmdlet,
-> use [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
+> This parameter is not supported by any providers installed with PowerShell. To impersonate another
+> user, or elevate your credentials when running this cmdlet, use
+> [Invoke-Command](../Microsoft.PowerShell.Core/Invoke-Command.md).
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -92,9 +92,11 @@ Accept wildcard characters: True
 
 ### -Filter
 
-Specifies a filter to qualify the **Path** parameter. The [FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
+Specifies a filter to qualify the **Path** parameter. The
+[FileSystem](../Microsoft.PowerShell.Core/About/about_FileSystem_Provider.md)
 provider is the only installed PowerShell provider that supports the use of filters. You can find
-the syntax for the **FileSystem** filter language in [about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
+the syntax for the **FileSystem** filter language in
+[about_Wildcards](../Microsoft.PowerShell.Core/About/about_Wildcards.md).
 Filters are more efficient than other parameters, because the provider applies them when the cmdlet
 gets the objects rather than having PowerShell filter the objects after they are retrieved.
 
@@ -113,8 +115,8 @@ Accept wildcard characters: True
 ### -Force
 
 Indicates that this cmdlet deletes properties from items that cannot otherwise be accessed by the
-user. Implementation varies from provider to provider.
-For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+user. Implementation varies from provider to provider. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -155,7 +157,8 @@ typed. No characters are interpreted as wildcards. If the path includes escape c
 it in single quotation marks. Single quotation marks tell PowerShell not to interpret any characters
 as escape sequences.
 
-For more information, see [about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+For more information, see
+[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]
@@ -222,9 +225,9 @@ Accept wildcard characters: True
 
 ### -UseTransaction
 
-Includes the command in the active transaction.
-This parameter is valid only when a transaction is in progress.
-For more information, see [about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
+Includes the command in the active transaction. This parameter is valid only when a transaction is
+in progress. For more information, see
+[about_Transactions](../Microsoft.PowerShell.Core/About/about_Transactions.md).
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -256,8 +259,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-Shows what would happen if the cmdlet runs.
-The cmdlet is not run.
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -273,10 +275,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: `-Debug`, `-ErrorAction`, `-ErrorVariable`,
-`-InformationAction`, `-InformationVariable`, `-OutVariable`, `-OutBuffer`, `-PipelineVariable`,
-`-Verbose`, `-WarningAction`, and `-WarningVariable`. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -301,9 +303,13 @@ Windows PowerShell includes the following aliases for `Clear-ItemProperty`:
 
 - `clp`
 
-You can use `Clear-ItemProperty` to delete the data in registry values without deleting the value. If the data type of the value is Binary or DWORD, clearing the data sets the value to zero. Otherwise, the value is empty.
+You can use `Clear-ItemProperty` to delete the data in registry values without deleting the value.
+If the data type of the value is Binary or DWORD, clearing the data sets the value to zero.
+Otherwise, the value is empty.
 
-The `Clear-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list the providers available in your session, type `Get-PSProvider`. For more information, see [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
+The `Clear-ItemProperty` cmdlet is designed to work with the data exposed by any provider. To list
+the providers available in your session, type `Get-PSProvider`. For more information, see
+[about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md).
 
 ## RELATED LINKS
 

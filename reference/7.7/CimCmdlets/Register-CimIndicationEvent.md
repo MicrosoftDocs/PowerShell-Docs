@@ -7,7 +7,7 @@ no-loc: [-Forward]
 online version: https://learn.microsoft.com/powershell/module/cimcmdlets/register-cimindicationevent?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
-- rcie
+  - rcie
 title: Register-CimIndicationEvent
 ---
 # Register-CimIndicationEvent

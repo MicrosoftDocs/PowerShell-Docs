@@ -172,7 +172,8 @@ In PowerShell 6.2, an alternate view was added to get hardlink information. To g
 information, pipe the output to `Format-Table -View childrenWithHardlink`
 
 ```powershell
-Get-Item C:\Windows\System32\ntoskrnl.exe | Format-Table -view childrenWithHardLink
+Get-Item C:\Windows\System32\ntoskrnl.exe |
+    Format-Table -View childrenWithHardLink
 ```
 
 ```Output

@@ -53,8 +53,8 @@ you are not prompted for confirmation unless you specify the **Confirm** paramet
 
 ### Example 1: Stop all instances of a process
 
-```
-PS C:\> Stop-Process -Name "notepad"
+```powershell
+Stop-Process -Name "notepad"
 ```
 
 This command stops all instances of the Notepad process on the computer. Each instance of Notepad
@@ -65,7 +65,7 @@ list the process IDs of each instance of Notepad.
 ### Example 2: Stop a specific instance of a process
 
 ```powershell
-PS C:\> Stop-Process -Id 3952 -Confirm -PassThru
+Stop-Process -Id 3952 -Confirm -PassThru
 ```
 
 ```Output
@@ -136,7 +136,6 @@ Performing operation 'Stop-Process' on Target 'lsass(596)'
 
 ```powershell
 [ADMIN]: PS> Get-Process -Name "lsass" | Stop-Process -Force
-[ADMIN]: PS>
 ```
 
 These commands show the effect of using **Force** to stop a process that is not owned by the user.
