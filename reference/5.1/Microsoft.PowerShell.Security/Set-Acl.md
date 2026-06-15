@@ -141,7 +141,7 @@ Set the `$preserveInheritance` variable to `$true` to preserve inherited access 
 remove inherited access rules. Then the access rule protection is updated using the
 **SetAccessRuleProtection()** method.
 
-The last command uses `Set-Acl` to apply the security descriptor of to `Dog.txt`. When the command
+The last command uses `Set-Acl` to apply the security descriptor to `Dog.txt`. When the command
 completes, the ACLs of the `Dog.txt` that were inherited from the Pets folder will be applied directly
 to `Dog.txt`, and new access policies added to Pets will not change the access to `Dog.txt`.
 

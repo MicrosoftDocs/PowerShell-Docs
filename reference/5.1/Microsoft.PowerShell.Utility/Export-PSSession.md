@@ -68,9 +68,10 @@ formatting data into the Server01 module.
 This example exports all of the `Get` and `Set` commands from a server.
 
 ```powershell
+$credential = Get-Credential -UserName 'exchangeadmin01@contoso.com' -Message 'Enter Exchange credentials'
 $newSession = @{
-    ConnectionUri = 'https://exchange.microsoft.com/mailbox'
-    Credential = 'exchangeadmin01@hotmail.com'
+    ConnectionUri  = 'https://exchange.microsoft.com/mailbox'
+    Credential     = $credential
     Authentication = 'Negotiate'
 }
 $S = New-PSSession @newSession
@@ -99,9 +100,10 @@ the local computer. The cmdlets from the module are added to the current session
 be used.
 
 ```powershell
+$credential = Get-Credential -UserName 'Server01\User01' -Message 'Enter credentials for Server01'
 $newSession = @{
     ComputerName = 'Server01'
-    Credential = 'Server01\User01'
+    Credential   = $credential
 }
 $S = New-PSSession @newSession
 
