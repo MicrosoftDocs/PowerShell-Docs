@@ -62,7 +62,7 @@ are filtered by a specified description string.
 ```powershell
 $hotFixParams = @{
     Description = "Security*"
-    ComputerName = "Server01, Server02"
+    ComputerName = "Server01", "Server02"
     Credential = "Domain01\admin01"
 }
 Get-HotFix @hotFixParams

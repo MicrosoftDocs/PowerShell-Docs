@@ -58,7 +58,7 @@ path of the "SmpApplication" subkey, including the drive, `HKLM:`, and the "Soft
 These commands delete the "Options" registry value, and its data, from the "MyApp" subkey of
 "HKEY_CURRENT_USER\Software\MyCompany".
 
-```
+```powershell
 PS C:\> Set-Location HKCU:\Software\MyCompany\MyApp
 PS HKCU:\Software\MyCompany\MyApp> Remove-ItemProperty -Path . -Name "Options" -Confirm
 ```

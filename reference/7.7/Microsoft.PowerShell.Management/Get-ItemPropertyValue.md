@@ -43,7 +43,7 @@ parameters.
 
 ### Example 1: Get the value of the ProductID property
 
-This command gets the value of the **ProductID** property of the 
+This command gets the value of the **ProductID** property of the
 `\SOFTWARE\Microsoft\Windows NT\CurrentVersion` object in the Windows Registry provider.
 
 ```powershell
