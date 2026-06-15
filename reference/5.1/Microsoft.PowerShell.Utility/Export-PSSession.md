@@ -68,8 +68,24 @@ formatting data into the Server01 module.
 This example exports all of the `Get` and `Set` commands from a server.
 
 ```powershell
-$S = New-PSSession -ConnectionUri https://exchange.microsoft.com/mailbox -Credential exchangeadmin01@hotmail.com -Authentication Negotiate
-Export-PSSession -Session $S -Module exch* -CommandName Get-*, Set-* -FormatTypeName * -OutputModule $PSHOME\Modules\Exchange -Encoding ascii
+$credential = Get-Credential -UserName 'exchangeadmin01@contoso.com' -Message 'Enter Exchange credentials'
+$newSession = @{
+    ConnectionUri  = 'https://exchange.microsoft.com/mailbox'
+    Credential     = $credential
+    Authentication = 'Negotiate'
+}
+$S = New-PSSession @newSession
+
+$exportSession = @{
+    Session = $S
+    Module = 'exch*'
+    CommandName = 'Get-*', 'Set-*'
+    FormatTypeName = '*'
+    OutputModule = "$PSHOME\Modules\Exchange"
+    Encoding = 'ascii'
+}
+
+Export-PSSession @exportSession
 ```
 
 These commands export the `Get` and `Set` commands from a Microsoft Exchange Server snap-in on a
@@ -84,8 +100,22 @@ the local computer. The cmdlets from the module are added to the current session
 be used.
 
 ```powershell
-$S = New-PSSession -ComputerName Server01 -Credential Server01\User01
-Export-PSSession -Session $S -OutputModule TestCmdlets -Type Cmdlet -CommandName *test* -FormatTypeName *
+$credential = Get-Credential -UserName 'Server01\User01' -Message 'Enter credentials for Server01'
+$newSession = @{
+    ComputerName = 'Server01'
+    Credential   = $credential
+}
+$S = New-PSSession @newSession
+
+$exportSession = @{
+    Session = $S
+    OutputModule = 'TestCmdlets'
+    Type = 'Cmdlet'
+    CommandName = '*test*'
+    FormatTypeName = '*'
+}
+Export-PSSession @exportSession
+
 Remove-PSSession $S
 Import-Module TestCmdlets
 Get-Help Test*
@@ -263,7 +293,8 @@ The acceptable values for this parameter are as follows:
   (`$Env:PATH`).
 - `Filter` and `Function`: All PowerShell functions.
 - `Script` Script files accessible in the current session.
-- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
+- `Workflow` A PowerShell workflow. For more information, see
+  [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **CommandType** parameter

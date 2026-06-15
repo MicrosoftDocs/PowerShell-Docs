@@ -26,7 +26,8 @@ ConvertFrom-Csv [-InputObject] <psobject[]> [[-Delimiter] <char>] [-Header <stri
 ### UseCulture
 
 ```
-ConvertFrom-Csv [-InputObject] <psobject[]> -UseCulture [-Header <string[]>] [<CommonParameters>]
+ConvertFrom-Csv [-InputObject] <psobject[]> -UseCulture [-Header <string[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

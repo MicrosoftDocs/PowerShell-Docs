@@ -17,8 +17,8 @@ Formats the output as a list of properties in which each property appears on a n
 ## SYNTAX
 
 ```
-Format-List [[-Property] <Object[]>] [-GroupBy <Object>] [-View <string>] [-ShowError]
- [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
+Format-List [[-Property] <Object[]>] [-GroupBy <Object>] [-View <string>]
+ [-ShowError] [-DisplayError] [-Force] [-Expand <string>] [-InputObject <psobject>]
  [<CommonParameters>]
 ```
 

@@ -18,8 +18,8 @@ Gets the variables in the current console.
 ## SYNTAX
 
 ```
-Get-Variable [[-Name] <String[]>] [-ValueOnly] [-Include <String[]>] [-Exclude <String[]>] [-Scope <String>]
- [<CommonParameters>]
+Get-Variable [[-Name] <String[]>] [-ValueOnly] [-Include <String[]>] [-Exclude <String[]>]
+ [-Scope <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -168,7 +168,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 
@@ -180,7 +181,7 @@ You can pipe a string that contains the variable name to this cmdlet.
 
 ### System.Management.Automation.PSVariable
 
-By default, this cmdlet returns a **AutomationPSVariable** object for each variable that it gets.
+By default, this cmdlet returns an **AutomationPSVariable** object for each variable that it gets.
 The object type depends on the variable.
 
 ### System.Object[]

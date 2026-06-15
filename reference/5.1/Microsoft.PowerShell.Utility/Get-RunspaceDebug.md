@@ -41,7 +41,8 @@ Get-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 ### ProcessNameParameterSet
 
 ```
-Get-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
+Get-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

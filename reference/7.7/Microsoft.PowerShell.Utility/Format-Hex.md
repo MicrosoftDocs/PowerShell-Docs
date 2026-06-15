@@ -108,7 +108,8 @@ It will pass each object through the Pipeline and process individually. However,
 data, and the adjacent object is also numeric, it will group them into a single output block.
 
 ```powershell
-'Hello world!', 1, 1138, 'foo', 'bar', 0xdeadbeef, 1gb, 0b1101011100 , $true, $false | Format-Hex
+'Hello world!', 1, 1138, 'foo', 'bar', 0xdeadbeef, 1gb, 0b1101011100 , $true, $false |
+    Format-Hex
 ```
 
 ```Output
@@ -198,7 +199,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.
@@ -261,7 +262,7 @@ This parameter does not accept wildcard characters. To specify multiple paths to
 paths with a comma. If the **LiteralPath** parameter includes escape characters, enclose the path in
 single quotation marks. PowerShell does not interpret any characters in a single quoted string as
 escape sequences. For more information, see
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]

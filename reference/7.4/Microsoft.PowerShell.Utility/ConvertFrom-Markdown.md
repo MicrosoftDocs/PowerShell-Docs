@@ -11,8 +11,7 @@ title: ConvertFrom-Markdown
 # ConvertFrom-Markdown
 
 ## SYNOPSIS
-Convert the contents of a string or a file to a **MarkdownInfo**
-object.
+Convert the contents of a string or a file to a **MarkdownInfo** object.
 
 ## SYNTAX
 
@@ -161,7 +160,8 @@ Accept wildcard characters: True
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -178,4 +178,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Markdown Parser](https://github.com/lunet-io/markdig)
 
 [ANSI escape code](https://wikipedia.org/wiki/ANSI_escape_code)
-

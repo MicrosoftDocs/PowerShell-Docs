@@ -13,7 +13,6 @@ title: Import-Csv
 # Import-Csv
 
 ## SYNOPSIS
-
 Creates table-like custom objects from the items in a character-separated value (CSV) file.
 
 ## SYNTAX
@@ -21,15 +20,15 @@ Creates table-like custom objects from the items in a character-separated value 
 ### DelimiterPath (Default)
 
 ```
-Import-Csv [[-Delimiter] <Char>] [-Path] <String[]> [-Header <String[]>] [-Encoding <Encoding>]
- [<CommonParameters>]
+Import-Csv [[-Delimiter] <Char>] [-Path] <String[]> [-Header <String[]>]
+ [-Encoding <Encoding>] [<CommonParameters>]
 ```
 
 ### DelimiterLiteralPath
 
 ```
-Import-Csv [[-Delimiter] <Char>] -LiteralPath <String[]> [-Header <String[]>] [-Encoding <Encoding>]
- [<CommonParameters>]
+Import-Csv [[-Delimiter] <Char>] -LiteralPath <String[]> [-Header <String[]>]
+ [-Encoding <Encoding>] [<CommonParameters>]
 ```
 
 ### CulturePath

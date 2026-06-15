@@ -41,7 +41,8 @@ Disable-RunspaceDebug [-RunspaceInstanceId] <Guid[]> [<CommonParameters>]
 ### ProcessNameParameterSet
 
 ```
-Disable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>] [<CommonParameters>]
+Disable-RunspaceDebug [[-ProcessName] <String>] [[-AppDomainName] <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -180,4 +181,3 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Enable-RunspaceDebug](Enable-RunspaceDebug.md)
 
 [Get-RunspaceDebug](Get-RunspaceDebug.md)
-

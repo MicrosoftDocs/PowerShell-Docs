@@ -41,7 +41,7 @@ This command removes the value of global variables that have names that begin wi
 ### Example 2: Clear a variable in a child scope but not the parent scope
 
 ```powershell
-$a=3
+$a = 3
 &{ Clear-Variable a }
 $a
 ```

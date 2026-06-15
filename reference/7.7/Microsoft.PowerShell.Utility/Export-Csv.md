@@ -13,6 +13,7 @@ title: Export-Csv
 # Export-Csv
 
 ## SYNOPSIS
+
 Converts objects into a series of character-separated value (CSV) strings and saves the strings to a
 file.
 
@@ -55,7 +56,7 @@ file.
 
 ```powershell
 Get-Process -Name WmiPrvSE |
-    Select-Object -Property BasePriority,Id,SessionId,WorkingSet |
+    Select-Object -Property BasePriority, Id, SessionId, WorkingSet |
     Export-Csv -Path .\WmiData.csv -NoTypeInformation
 Import-Csv -Path .\WmiData.csv
 ```
@@ -365,7 +366,7 @@ the file located in the current directory.
 This example converts a **DateTime** object to a CSV string.
 
 ```powershell
-Get-Date | Export-Csv  -QuoteFields "DateTime","Date" -Path .\FTDateTime.csv
+Get-Date | Export-Csv -QuoteFields "DateTime", "Date" -Path .\FTDateTime.csv
 Get-Content -Path .\FTDateTime.csv
 ```
 
@@ -379,7 +380,7 @@ DateTime,"Thursday, August 22, 2019 11:27:34 AM","8/22/2019 12:00:00 AM",22,Thur
 This example converts a **DateTime** object to a CSV string.
 
 ```powershell
-Get-Date | Export-Csv  -UseQuotes AsNeeded -Path .\FTDateTime.csv
+Get-Date | Export-Csv -UseQuotes AsNeeded -Path .\FTDateTime.csv
 Get-Content -Path .\FTDateTime.csv
 ```
 
@@ -401,7 +402,7 @@ $person1 = @{
 
 $person2 = @{
     Name = 'Jane Smith'
-    Number = 1
+    Number = 2
 }
 
 $allPeople = $person1, $person2
@@ -507,7 +508,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.

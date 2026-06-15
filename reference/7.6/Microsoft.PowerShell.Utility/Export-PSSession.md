@@ -12,7 +12,6 @@ title: Export-PSSession
 # Export-PSSession
 
 ## SYNOPSIS
-
 Exports commands from another session and saves them in a PowerShell module.
 
 ## SYNTAX
@@ -22,9 +21,9 @@ Exports commands from another session and saves them in a PowerShell module.
 ```
 Export-PSSession [-OutputModule] <String> [-Force] [-Encoding <Encoding>]
  [[-CommandName] <String[]>] [-AllowClobber] [-ArgumentList <Object[]>]
- [-CommandType <CommandTypes>] [-Module <String[]>] [-FullyQualifiedModule <ModuleSpecification[]>]
- [[-FormatTypeName] <String[]>] [-Certificate <X509Certificate2>] [-Session] <PSSession>
- [<CommonParameters>]
+ [-CommandType <CommandTypes>] [-Module <String[]>]
+ [-FullyQualifiedModule <ModuleSpecification[]>] [[-FormatTypeName] <String[]>]
+ [-Certificate <X509Certificate2>] [-Session] <PSSession> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -293,7 +292,8 @@ The acceptable values for this parameter are as follows:
   (`$Env:PATH`).
 - `Filter` and `Function`: All PowerShell functions.
 - `Script` Script files accessible in the current session.
-- `Workflow` A PowerShell workflow. For more information, see [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
+- `Workflow` A PowerShell workflow. For more information, see
+  [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows).
 
 These values are defined as a flag-based enumeration. You can combine multiple values together to
 set multiple flags using this parameter. The values can be passed to the **CommandType** parameter

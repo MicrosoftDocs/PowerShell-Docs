@@ -33,9 +33,9 @@ Set-Acl [-InputObject] <PSObject> [-AclObject] <Object> [-PassThru] [-Filter <St
 ### ByLiteralPath
 
 ```
-Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy] [-PassThru]
- [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Set-Acl -LiteralPath <String[]> [-AclObject] <Object> [-ClearCentralAccessPolicy]
+ [-PassThru] [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,18 +60,18 @@ $DogACL = Get-Acl -Path "C:\Dog.txt"
 Set-Acl -Path "C:\Cat.txt" -AclObject $DogACL
 ```
 
-These commands copy the values from the security descriptor of the `Dog.txt` file to the security
-descriptor of the Cat.txt file. When the commands complete, the security descriptors of the
-`Dog.txt` and Cat.txt files are identical.
+These commands copy the values from the security descriptor of the Dog.txt file to the security
+descriptor of the Cat.txt file. When the commands complete, the security descriptors of the Dog.txt
+and Cat.txt files are identical.
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor of the `Dog.txt` file.
-The assignment operator (`=`) stores the security descriptor in the value of the `$DogACL` variable.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file.
+The assignment operator (`=`) stores the security descriptor in the value of the $DogACL variable.
 
 The second command uses `Set-Acl` to change the values in the ACL of Cat.txt to the values in
 `$DogACL`.
 
 The value of the **Path** parameter is the path to the Cat.txt file. The value of the **AclObject**
-parameter is the model ACL, in this case, the ACL of `Dog.txt` as saved in the `$DogACL` variable.
+parameter is the model ACL, in this case, the ACL of Dog.txt as saved in the `$DogACL` variable.
 
 ### Example 2: Use the pipeline operator to pass a descriptor
 
@@ -83,12 +83,12 @@ This command is almost the same as the command in the previous example, except t
 pipeline operator (`|`) to send the security descriptor from a `Get-Acl` command to a `Set-Acl`
 command.
 
-The first command uses the `Get-Acl` cmdlet to get the security descriptor of the `Dog.txt` file.
-The pipeline operator (`|`) passes an object that represents the `Dog.txt` security descriptor to
-the `Set-Acl` cmdlet.
+The first command uses the `Get-Acl` cmdlet to get the security descriptor of the Dog.txt file. The
+pipeline operator (`|`) passes an object that represents the Dog.txt security descriptor to the
+`Set-Acl` cmdlet.
 
-The second command uses `Set-Acl` to apply the security descriptor of `Dog.txt` to Cat.txt.
-When the command completes, the ACLs of the `Dog.txt` and Cat.txt files are identical.
+The second command uses `Set-Acl` to apply the security descriptor of Dog.txt to Cat.txt.
+When the command completes, the ACLs of the Dog.txt and Cat.txt files are identical.
 
 ### Example 3: Apply a security descriptor to multiple files
 
@@ -97,8 +97,8 @@ $NewAcl = Get-Acl File0.txt
 Get-ChildItem -Path "C:\temp" -Recurse -Include "*.txt" -Force | Set-Acl -AclObject $NewAcl
 ```
 
-These commands apply the security descriptors in the File0.txt file to all text files in the
-`C:\Temp` directory and all of its subdirectories.
+These commands apply the security descriptors in the File0.txt file to all text files in the `C:\Temp`
+directory and all of its subdirectories.
 
 The first command gets the security descriptor of the File0.txt file in the current directory and
 uses the assignment operator (`=`) to store it in the `$NewACL` variable.
