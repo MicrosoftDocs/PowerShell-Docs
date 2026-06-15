@@ -181,13 +181,15 @@ This example describes how to export objects to a CSV file and use the **Append*
 objects to an existing file.
 
 ```powershell
-$AppService = (Get-Service -DisplayName *Application* |
-    Select-Object -Property DisplayName, Status)
+$AppService = Get-Service -DisplayName *Application* |
+    Select-Object -Property DisplayName, Status
+
 $AppService | Export-Csv -Path .\Services.Csv -NoTypeInformation
 Get-Content -Path .\Services.Csv
 
-$WinService = (Get-Service -DisplayName *Windows* |
-    Select-Object -Property DisplayName, Status)
+$WinService = Get-Service -DisplayName *Windows* |
+    Select-Object -Property DisplayName, Status
+
 $WinService | Export-Csv -Path .\Services.csv -NoTypeInformation -Append
 Get-Content -Path .\Services.Csv
 ```
@@ -227,6 +229,7 @@ unexpected output is received, troubleshoot the pipeline syntax.
 ```powershell
 Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear |
     Export-Csv -Path .\DateTime.csv -NoTypeInformation
+
 Get-Content -Path .\DateTime.csv
 ```
 
@@ -238,6 +241,7 @@ Get-Content -Path .\DateTime.csv
 ```powershell
 Get-Date | Format-Table -Property DateTime, Day, DayOfWeek, DayOfYear |
     Export-Csv -Path .\FTDateTime.csv -NoTypeInformation
+
 Get-Content -Path .\FTDateTime.csv
 ```
 
@@ -362,7 +366,7 @@ the file located in the current directory.
 This example converts a **DateTime** object to a CSV string.
 
 ```powershell
-Get-Date | Export-Csv -QuoteFields "DateTime","Date" -Path .\FTDateTime.csv
+Get-Date | Export-Csv -QuoteFields "DateTime", "Date" -Path .\FTDateTime.csv
 Get-Content -Path .\FTDateTime.csv
 ```
 

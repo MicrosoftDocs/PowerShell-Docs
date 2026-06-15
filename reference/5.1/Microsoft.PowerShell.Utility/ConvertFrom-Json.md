@@ -147,7 +147,7 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 ## NOTES
 
 The `ConvertFrom-Json` cmdlet is implemented using the
-[JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
+[JavaScriptSerializer class](xref:System.Web.Script.Serialization.JavaScriptSerializer).
 
 The **PSObject** type maintains the order of the properties as presented in the JSON string. While
 the key-value pairs are added to the **Hashtable** in the order presented in the JSON string,

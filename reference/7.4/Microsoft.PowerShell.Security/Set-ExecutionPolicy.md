@@ -18,8 +18,8 @@ Sets the PowerShell execution policies for Windows computers.
 ### All
 
 ```
-Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPolicyScope>] [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPolicyScope>]
+ [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

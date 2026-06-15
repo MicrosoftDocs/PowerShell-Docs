@@ -18,14 +18,15 @@ Sets the PowerShell execution policies for Windows computers.
 ### All
 
 ```
-Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPolicyScope>] [-Force]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-ExecutionPolicy [-ExecutionPolicy] <ExecutionPolicy> [[-Scope] <ExecutionPolicyScope>]
+ [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
 The `Set-ExecutionPolicy` cmdlet changes PowerShell execution policies for Windows computers. For
-more information, see [about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
+more information, see
+[about_Execution_Policies](../Microsoft.PowerShell.Core/about/about_Execution_Policies.md).
 
 An execution policy is part of the PowerShell security strategy. Execution policies determine
 whether you can load configuration files, such as your PowerShell profile, or run scripts. And,

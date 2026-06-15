@@ -157,8 +157,8 @@ TypeNames                               FormatViewDefinition
 Specify the version of PowerShell this cmdlet gets for the formatting data. Enter a two digit number
 separated by a period.
 
-This parameter was added in PowerShell 5.1 to improve compatibility when remoting to computers
-running older versions of PowerShell.
+This parameter was added in PowerShell 5.1 to improve compatibility when remoting computers running
+older versions of PowerShell.
 
 ```yaml
 Type: System.Version

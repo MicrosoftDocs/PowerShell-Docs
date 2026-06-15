@@ -22,17 +22,17 @@ file.
 ### Delimiter (Default)
 
 ```
-Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject> [-LiteralPath <string>]
- [-Force] [-NoClobber] [-Encoding <string>] [-Append] [-NoTypeInformation] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Csv [[-Path] <string>] [[-Delimiter] <char>] -InputObject <psobject>
+ [-LiteralPath <string>] [-Force] [-NoClobber] [-Encoding <string>] [-Append]
+ [-NoTypeInformation] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### UseCulture
 
 ```
-Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force] [-NoClobber]
- [-Encoding <string>] [-Append] [-UseCulture] [-NoTypeInformation] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Export-Csv [[-Path] <string>] -InputObject <psobject> [-LiteralPath <string>] [-Force]
+ [-NoClobber] [-Encoding <string>] [-Append] [-UseCulture] [-NoTypeInformation] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -178,13 +178,13 @@ This example describes how to export objects to a CSV file and use the **Append*
 objects to an existing file.
 
 ```powershell
-$AppService = Get-Service -DisplayName *Application* | 
+$AppService = Get-Service -DisplayName *Application* |
     Select-Object -Property DisplayName, Status
 
 $AppService | Export-Csv -Path .\Services.Csv -NoTypeInformation
 Get-Content -Path .\Services.Csv
 
-$WinService = Get-Service -DisplayName *Windows* | 
+$WinService = Get-Service -DisplayName *Windows* |
     Select-Object -Property DisplayName, Status
 
 $WinService | Export-Csv -Path .\Services.csv -NoTypeInformation -Append
@@ -226,7 +226,7 @@ unexpected output is received, troubleshoot the pipeline syntax.
 ```powershell
 Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear |
     Export-Csv -Path .\DateTime.csv -NoTypeInformation
-    
+
 Get-Content -Path .\DateTime.csv
 ```
 

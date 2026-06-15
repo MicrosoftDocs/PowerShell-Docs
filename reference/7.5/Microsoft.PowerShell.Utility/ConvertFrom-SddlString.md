@@ -69,20 +69,25 @@ It uses the `-Type` parameter to specify that SDDL string represents a registry 
 
 ```powershell
 $acl = Get-Acl -Path HKLM:\SOFTWARE\Microsoft\
-
-ConvertFrom-SddlString -Sddl $acl.Sddl | ForEach-Object {$_.DiscretionaryAcl[0]}
+ConvertFrom-SddlString -Sddl $acl.Sddl |
+    ForEach-Object {$_.DiscretionaryAcl[0]}
 ```
 
 ```Output
-BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateDirectories, Delete, ExecuteKey, FullControl, GenericExecute, GenericWrite, ListDirectory, ReadExtendedAttributes, ReadPermissions, TakeOwnership, Traverse, WriteData, WriteExtendedAttributes, WriteKey)
+BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateDirectories, Delete, ExecuteKey,
+FullControl, GenericExecute, GenericWrite, ListDirectory, ReadExtendedAttributes, ReadPermissions,
+TakeOwnership, Traverse, WriteData, WriteExtendedAttributes, WriteKey)
 ```
 
 ```powershell
-ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights | ForEach-Object {$_.DiscretionaryAcl[0]}
+ConvertFrom-SddlString -Sddl $acl.Sddl -Type RegistryRights |
+    ForEach-Object {$_.DiscretionaryAcl[0]}
 ```
 
 ```Output
-BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateLink, CreateSubKey, Delete, EnumerateSubKeys, ExecuteKey, FullControl, GenericExecute, GenericWrite, Notify, QueryValues, ReadPermissions, SetValue, TakeOwnership, WriteKey)
+BUILTIN\Administrators: AccessAllowed (ChangePermissions, CreateLink, CreateSubKey, Delete,
+EnumerateSubKeys, ExecuteKey, FullControl, GenericExecute, GenericWrite, Notify, QueryValues,
+ReadPermissions, SetValue, TakeOwnership, WriteKey)
 ```
 
 The first command uses the `Get-Acl` cmdlet to get the security descriptor for the

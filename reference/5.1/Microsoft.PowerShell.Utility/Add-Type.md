@@ -731,7 +731,7 @@ Otherwise, the command fails.
 The **CodeDomProvider** class for some languages, such as IronPython and J#, doesn't generate
 output. As a result, types written in these languages can't be used with `Add-Type`.
 
-This cmdlet is based on the Microsoft .NET Framework [CodeDomProvider Class](/dotnet/api/system.codedom.compiler.codedomprovider).
+This cmdlet is based on the Microsoft .NET Framework [CodeDomProvider Class](xref:System.CodeDom.Compiler.CodeDomProvider).
 
 ## RELATED LINKS
 

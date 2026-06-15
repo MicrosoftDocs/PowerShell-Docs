@@ -278,12 +278,12 @@ Accept wildcard characters: False
 Specifies the format of the collection object and the objects in the collection. This parameter is
 designed to format objects that support the
 [ICollection](xref:System.Collections.ICollection)([System.Collections](xref:System.Collections))
-interface. The default value is **EnumOnly**.
-The acceptable values for this parameter are as follows:
+interface. The default value is **EnumOnly**. The acceptable values for this parameter are as
+follows:
 
-- **EnumOnly**: Displays the properties of the objects in the collection.
-- **CoreOnly**: Displays the properties of the collection object.
-- **Both**: Displays the properties of the collection object and the properties of objects in the
+- `EnumOnly`: Displays the properties of the objects in the collection.
+- `CoreOnly`: Displays the properties of the collection object.
+- `Both`: Displays the properties of the collection object and the properties of objects in the
   collection.
 
 ```yaml

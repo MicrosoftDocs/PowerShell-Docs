@@ -206,7 +206,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
@@ -223,7 +223,7 @@ This cmdlet returns a string representing the input object converted to a JSON s
 ## NOTES
 
 The `ConvertTo-Json` cmdlet is implemented using the
-[JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
+[JavaScriptSerializer class](xref:System.Web.Script.Serialization.JavaScriptSerializer).
 
 ## RELATED LINKS
 
