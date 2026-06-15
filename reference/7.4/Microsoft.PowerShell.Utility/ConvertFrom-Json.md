@@ -123,10 +123,8 @@ This command shows an example where the `-NoEnumerate` switch is used to round-t
 JSON array.
 
 ```powershell
-Write-Output "With -NoEnumerate: $('[1]' | ConvertFrom-Json -NoEnumerate |
-    ConvertTo-Json -Compress)"
-Write-Output "Without -NoEnumerate: $('[1]' | ConvertFrom-Json |
-    ConvertTo-Json -Compress)"
+Write-Output "With -NoEnumerate: $('[1]' | ConvertFrom-Json -NoEnumerate | ConvertTo-Json -Compress)"
+Write-Output "Without -NoEnumerate: $('[1]' | ConvertFrom-Json | ConvertTo-Json -Compress)"
 ```
 
 ```Output
