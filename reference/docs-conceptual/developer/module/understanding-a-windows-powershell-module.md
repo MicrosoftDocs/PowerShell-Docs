@@ -32,7 +32,7 @@ A module is made up of four basic components:
 1. A directory that contains all of the above content, and is located where PowerShell can
    reasonably find it.
 
-   >[!NOTE]
+   > [!NOTE]
    > None of these components, by themselves, are actually necessary. For example, a module can
    > technically be only a script stored in a `.psm1` file. You can also have a module that is
    > nothing but a manifest file, which is used mainly for organizational purposes. You can also
@@ -101,14 +101,14 @@ table do the following things:
 
 - Determine how the components are processed.
 
-  Manifests are not required for a module. Modules can reference script files (`.ps1`), script
-  module files (`.psm1`), manifest files (`.psd1`), formatting and type files (`.ps1xml`), cmdlet
-  and provider assemblies (`.dll`), resource files, Help files, localization files, or any other
-  type of file or resource that is bundled as part of the module. For an internationalized script,
-  the module folder also contains a set of message catalog files. If you add a manifest file to the
-  module folder, you can reference the multiple files as a single unit by referencing the manifest.
+Manifests are not required for a module. Modules can reference script files (`.ps1`), script
+module files (`.psm1`), manifest files (`.psd1`), formatting and type files (`.ps1xml`), cmdlet
+and provider assemblies (`.dll`), resource files, Help files, localization files, or any other
+type of file or resource that is bundled as part of the module. For an internationalized script,
+the module folder also contains a set of message catalog files. If you add a manifest file to the
+module folder, you can reference the multiple files as a single unit by referencing the manifest.
 
-  The manifest itself describes the following categories of information:
+The manifest itself describes the following categories of information:
 
 - Metadata about the module, such as the module version number, the author, and the description.
 
@@ -120,7 +120,7 @@ table do the following things:
 - Restrictions on the members of the module to export, such as the aliases, functions, variables,
   and cmdlets to export.
 
-  For more information, see [How to Write a PowerShell Module Manifest](./how-to-write-a-powershell-module-manifest.md).
+For more information, see [How to Write a PowerShell Module Manifest](./how-to-write-a-powershell-module-manifest.md).
 
 ## Storing and Installing a Module
 
@@ -144,48 +144,36 @@ name, with the following exceptions:
 - Modules imported from assembly objects by the `Import-Module -Assembly` command are named
   according to the following syntax: `"dynamic_code_module_" + assembly.GetName()`.
 
-  For more information, see [Installing a PowerShell Module](./installing-a-powershell-module.md)
-  and [about_PSModulePath](/powershell/module/microsoft.powershell.core/about/about_psmodulepath).
+For more information, see [Installing a PowerShell Module](./installing-a-powershell-module.md)
+and [about_PSModulePath](/powershell/module/microsoft.powershell.core/about/about_psmodulepath).
 
 ## Module Cmdlets and Variables
 
 The following cmdlets and variables are provided by Windows PowerShell for the creation and
 management of modules.
 
-[New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) cmdlet This cmdlet creates a
-new dynamic module that exists only in memory. The module is created from a script block, and its
-exported members, such as its functions and variables, are immediately available in the session and
-remain available until the session is closed.
+[New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) creates a new dynamic module that exists only in memory. The module is created from a script block, and its
+exported members, such as its functions and variables, are immediately available in the session and remain available until the session is closed.
 
-[New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) cmdlet This
-cmdlet creates a new module manifest (`.psd1`) file, populates its values, and saves the manifest
-file to the specified path. This cmdlet can also be used to create a module manifest template that
-can be filled in manually.
+[New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) creates a new module manifest (`.psd1`) file, populates its values, and saves the manifest
+file to the specified path. This cmdlet can also be used to create a module manifest template that can be filled in manually.
 
-[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet This cmdlet adds
-one or more modules to the current session.
+[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) adds one or more modules to the current session.
 
-[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet This cmdlet retrieves
-information about the modules that have been or that can be imported into the current session.
+[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) retrieves information about the modules that have been or that can be imported into the current session.
 
-[Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) cmdlet This
-cmdlet specifies the module members (such as cmdlets, functions, variables, and aliases) that are
-exported from a script module (`.psm1`) file or from a dynamic module created by using the
-`New-Module` cmdlet.
+[Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) specifies the module members (such as cmdlets, functions, variables, and aliases) that are
+exported from a script module (`.psm1`) file or from a dynamic module created by using the `New-Module` cmdlet.
 
-[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) cmdlet This cmdlet
-removes modules from the current session.
+[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) removes modules from the current session.
 
-[Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) cmdlet This
-cmdlet verifies that a module manifest accurately describes the components of a module by verifying
-that the files that are listed in the module manifest file (`.psd1`) actually exist in the specified
-paths.
+[Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) verifies that a module manifest accurately describes the components of a module by verifying
+that the files that are listed in the module manifest file (`.psd1`) actually exist in the specified paths.
 
-$PSScriptRoot This variable contains the directory from which the script module is being executed.
+$PSScriptRoot contains the directory from which the script module is being executed.
 It enables scripts to use the module path to access other resources.
 
-$Env:PSModulePath This environment variable contains a list of the directories in which Windows
-PowerShell modules are stored. Windows PowerShell uses the value of this variable when importing
+$Env:PSModulePath contains a list of the directories in which Windows PowerShell modules are stored. Windows PowerShell uses the value of this variable when importing
 modules automatically and updating Help topics for modules.
 
 ## See Also
