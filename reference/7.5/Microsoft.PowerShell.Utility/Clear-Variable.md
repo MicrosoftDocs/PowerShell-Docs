@@ -18,8 +18,8 @@ Deletes the value of a variable.
 ## SYNTAX
 
 ```
-Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force]
- [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Clear-Variable [-Name] <String[]> [-Include <String[]>] [-Exclude <String[]>] [-Force] [-PassThru]
+ [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -221,9 +221,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### None
+### System.String
 
-You can't pipe objects to this cmdlet.
+The **Name** parameter accepts string input from from the pipeline for objects with a **Name**
+property.
 
 ## OUTPUTS
 
