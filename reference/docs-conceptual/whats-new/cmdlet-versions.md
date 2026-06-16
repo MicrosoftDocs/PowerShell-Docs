@@ -9,6 +9,8 @@ This article lists the modules and cmdlets that are included in various versions
 is a summary of information found in the release notes. More detailed information can be found in
 the release notes:
 
+- [What's new in PowerShell 7.7][34]
+- [What's new in PowerShell 7.6][33]
 - [What's new in PowerShell 7.5][32]
 - [What's new in PowerShell 7.4][31]
 - [What's new in PowerShell 7.3][30]
@@ -699,3 +701,5 @@ Microsoft.PowerShell.ThreadJob in PowerShell 7.6.
 [30]: what-s-new-in-powershell-73.md
 [31]: what-s-new-in-powershell-74.md
 [32]: what-s-new-in-powershell-75.md
+[33]: what-s-new-in-powershell-76.md
+[34]: what-s-new-in-powershell-77.md
