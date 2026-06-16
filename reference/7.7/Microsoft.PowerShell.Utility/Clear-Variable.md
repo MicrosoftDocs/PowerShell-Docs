@@ -221,9 +221,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### System.Management.Automation.PSVariable
+### System.String
 
-You can pipe a variable object to this cmdlet.
+The **Name** parameter accepts string input from from the pipeline for objects with a **Name**
+property.
 
 ## OUTPUTS
 
