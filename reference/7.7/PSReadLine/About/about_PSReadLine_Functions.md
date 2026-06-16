@@ -1672,7 +1672,7 @@ Behavior of the OnIdle event
 - [about_PSReadLine][02]
 
 <!-- link references -->
-[01]: /dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters
+[01]: xref:Microsoft.PowerShell.PSConsoleReadLineOptions.WordDelimiters%2A#microsoft-powershell-psconsolereadlineoptions-worddelimiters
 [02]: about_PSReadLine.md
 [03]: https://apps.microsoft.com/detail/9N0DX20HK701
 [04]: xref:PSReadLine.Get-PSReadLineOption

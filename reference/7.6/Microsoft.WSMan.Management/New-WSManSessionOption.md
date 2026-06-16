@@ -16,8 +16,9 @@ Creates session option hash table to use as input parameters for WS-Management c
 ## SYNTAX
 
 ```
-New-WSManSessionOption [-ProxyAccessType <ProxyAccessType>] [-ProxyAuthentication <ProxyAuthentication>]
- [-ProxyCredential <PSCredential>] [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck] [-SPNPort <Int32>]
+New-WSManSessionOption [-ProxyAccessType <ProxyAccessType>]
+ [-ProxyAuthentication <ProxyAuthentication>] [-ProxyCredential <PSCredential>]
+ [-SkipCACheck] [-SkipCNCheck] [-SkipRevocationCheck] [-SPNPort <Int32>]
  [-OperationTimeout <Int32>] [-NoEncryption] [-UseUTF16] [<CommonParameters>]
 ```
 
@@ -265,7 +266,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

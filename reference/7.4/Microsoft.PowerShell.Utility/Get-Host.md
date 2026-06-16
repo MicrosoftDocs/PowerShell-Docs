@@ -234,7 +234,8 @@ use these features interchangeably.
 > variable. For more information, see
 > [about_ANSI_Terminals](../Microsoft.PowerShell.Core/About/about_ANSI_Terminals.md).
 
-For more information, see [about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
+For more information, see
+[about_Automatic_Variables](../Microsoft.PowerShell.Core/About/about_Automatic_Variables.md).
 
 ## RELATED LINKS
 

@@ -84,7 +84,8 @@ that can be managed in PowerShell.
 ```powershell
 # Ensures that Invoke-WebRequest uses TLS 1.2
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' | ConvertFrom-Json
+$j = Invoke-WebRequest 'https://api.github.com/repos/PowerShell/PowerShell/issues' |
+    ConvertFrom-Json
 ```
 
 You can also use the `Invoke-RestMethod` cmdlet, which automatically converts JSON content to
@@ -147,7 +148,7 @@ You can pipe a JSON string to `ConvertFrom-Json`.
 ## NOTES
 
 The `ConvertFrom-Json` cmdlet is implemented using the
-[JavaScriptSerializer class](/dotnet/api/system.web.script.serialization.javascriptserializer).
+[JavaScriptSerializer class](xref:System.Web.Script.Serialization.JavaScriptSerializer).
 
 The **PSObject** type maintains the order of the properties as presented in the JSON string. While
 the key-value pairs are added to the **Hashtable** in the order presented in the JSON string,

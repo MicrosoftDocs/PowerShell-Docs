@@ -17,8 +17,9 @@ for the operating system.
 ## SYNTAX
 
 ```
-Import-LocalizedData [[-BindingVariable] <String>] [[-UICulture] <String>] [-BaseDirectory <String>]
- [-FileName <String>] [-SupportedCommand <String[]>] [<CommonParameters>]
+Import-LocalizedData [[-BindingVariable] <String>] [[-UICulture] <String>]
+ [-BaseDirectory <String>] [-FileName <String>] [-SupportedCommand <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

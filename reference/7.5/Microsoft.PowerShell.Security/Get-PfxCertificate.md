@@ -17,15 +17,15 @@ Gets information about PFX certificate files on the computer.
 ### ByPath (Default)
 
 ```
-Get-PfxCertificate [-FilePath] <String[]> [-Password <SecureString>] [-NoPromptForPassword]
- [<CommonParameters>]
+Get-PfxCertificate [-FilePath] <String[]> [-Password <SecureString>]
+ [-NoPromptForPassword] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Get-PfxCertificate -LiteralPath <String[]> [-Password <SecureString>] [-NoPromptForPassword]
- [<CommonParameters>]
+Get-PfxCertificate -LiteralPath <String[]> [-Password <SecureString>]
+ [-NoPromptForPassword] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

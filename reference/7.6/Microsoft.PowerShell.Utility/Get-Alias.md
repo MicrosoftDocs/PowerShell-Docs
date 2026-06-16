@@ -20,13 +20,15 @@ Gets the aliases for the current session.
 ### Default (Default)
 
 ```
-Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>] [<CommonParameters>]
+Get-Alias [[-Name] <String[]>] [-Exclude <String[]>] [-Scope <String>]
+ [<CommonParameters>]
 ```
 
 ### Definition
 
 ```
-Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>] [<CommonParameters>]
+Get-Alias [-Exclude <String[]>] [-Scope <String>] [-Definition <String[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -182,7 +184,8 @@ are:
 - A number relative to the current scope (0 through the number of scopes, where 0 is the current
   scope and 1 is its parent)
 
-`Local` is the default. For more information, see [about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
+`Local` is the default. For more information, see
+[about_Scopes](../Microsoft.PowerShell.Core/About/about_Scopes.md).
 
 ```yaml
 Type: System.String
@@ -200,7 +203,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

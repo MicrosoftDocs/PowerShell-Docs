@@ -262,7 +262,7 @@ This parameter does not accept wildcard characters. To specify multiple paths to
 paths with a comma. If the **LiteralPath** parameter includes escape characters, enclose the path in
 single quotation marks. PowerShell does not interpret any characters in a single quoted string as
 escape sequences. For more information, see
-[about_Quoting_Rules](../Microsoft.Powershell.Core/About/about_Quoting_Rules.md).
+[about_Quoting_Rules](../Microsoft.PowerShell.Core/About/about_Quoting_Rules.md).
 
 ```yaml
 Type: System.String[]

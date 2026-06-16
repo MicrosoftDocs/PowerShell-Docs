@@ -47,8 +47,8 @@ order and uses the first path found:
 $TempFile = New-TemporaryFile
 ```
 
-This command generates a `.tmp` file in your temporary folder, and then stores a reference to the file
-in the `$TempFile` variable. You can use this file later in your script.
+This command generates a `.tmp` file in your temporary folder, and then stores a reference to the
+file in the `$TempFile` variable. You can use this file later in your script.
 
 ## PARAMETERS
 
@@ -89,7 +89,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

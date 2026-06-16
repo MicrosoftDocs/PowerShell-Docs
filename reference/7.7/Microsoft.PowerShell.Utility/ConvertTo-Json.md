@@ -28,9 +28,8 @@ The `ConvertTo-Json` cmdlet converts any .NET object to a string in JavaScript O
 property values, and the methods are removed.
 
 > [!NOTE]
-> As of PowerShell 7.2, Extended Type System properties of **DateTime** and
-> **String** objects are no longer serialized and only the simple object is
-> converted to JSON format
+> As of PowerShell 7.2, Extended Type System properties of **DateTime** and **String** objects are
+> no longer serialized and only the simple object is converted to JSON format
 
 You can then use the `ConvertFrom-Json` cmdlet to convert a JSON-formatted string to a JSON
 object, which is easily managed in PowerShell.
@@ -41,8 +40,7 @@ web-based apps.
 As of PowerShell 7.1, `ConvertTo-Json` emits a warning if the depth of the input object exceeds
 the depth specified for the command. This prevents unwanted data loss when converting objects.
 
-As of PowerShell 7.5-preview.3, `ConvertTo-Json` can serialize **BigInteger** values as raw JSON
-numbers.
+As of PowerShell 7.5, `ConvertTo-Json` can serialize **BigInteger** values as raw JSON numbers.
 
 This cmdlet was introduced in Windows PowerShell 3.0.
 
@@ -293,7 +291,7 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
 -WarningAction, and -WarningVariable. For more information, see
-[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

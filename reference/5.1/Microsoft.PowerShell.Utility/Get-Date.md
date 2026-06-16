@@ -18,17 +18,17 @@ Gets the current date and time.
 ### net (Default)
 
 ```
-Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
- [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-Format <String>] [<CommonParameters>]
+Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
+ [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
+ [-DisplayHint <DisplayHintType>] [-Format <String>] [<CommonParameters>]
 ```
 
 ### UFormat
 
 ```
-Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>] [-Hour <Int32>]
- [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>] [-DisplayHint <DisplayHintType>]
- [-UFormat <String>] [<CommonParameters>]
+Get-Date [[-Date] <DateTime>] [-Year <Int32>] [-Month <Int32>] [-Day <Int32>]
+ [-Hour <Int32>] [-Minute <Int32>] [-Second <Int32>] [-Millisecond <Int32>]
+ [-DisplayHint <DisplayHintType>] [-UFormat <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

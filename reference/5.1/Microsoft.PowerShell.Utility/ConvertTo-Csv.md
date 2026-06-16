@@ -26,7 +26,8 @@ ConvertTo-Csv [-InputObject] <psobject> [[-Delimiter] <char>] [-NoTypeInformatio
 ### UseCulture
 
 ```
-ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-NoTypeInformation] [<CommonParameters>]
+ConvertTo-Csv [-InputObject] <psobject> [-UseCulture] [-NoTypeInformation]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -147,7 +148,7 @@ Accept wildcard characters: False
 
 ### -NoTypeInformation
 
-Removes the **#TYPE** information header from the output. This parameter became the default in
+Removes the `#TYPE` information header from the output. This parameter became the default in
 PowerShell 6.0 and is included for backwards compatibility.
 
 ```yaml

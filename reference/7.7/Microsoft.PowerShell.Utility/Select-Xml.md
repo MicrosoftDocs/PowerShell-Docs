@@ -96,7 +96,7 @@ file. For example, there is a **Count** property that is an alias of the **Lengt
 
 ### Example 2: Input an XML document
 
-This example shows how to use the **XML** parameter to provide an XML document to the `Select-Xml`
+This example shows how to use the **Xml** parameter to provide an XML document to the `Select-Xml`
 cmdlet.
 
 The `Get-Content` cmdlet gets the content of the `Types.ps1xml` file and saves it in the `$Types`

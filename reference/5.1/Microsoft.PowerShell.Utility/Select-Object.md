@@ -19,22 +19,24 @@ Selects objects or object properties.
 ### DefaultParameter (Default)
 
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <psobject>] [-ExcludeProperty <string[]>]
- [-ExpandProperty <string>] [-Unique] [-Last <int>] [-First <int>] [-Skip <int>] [-Wait]
- [<CommonParameters>]
+Select-Object [[-Property] <Object[]>] [-InputObject <psobject>]
+ [-ExcludeProperty <string[]>] [-ExpandProperty <string>] [-Unique] [-Last <int>]
+ [-First <int>] [-Skip <int>] [-Wait] [<CommonParameters>]
 ```
 
 ### SkipLastParameter
 
 ```
-Select-Object [[-Property] <Object[]>] [-InputObject <psobject>] [-ExcludeProperty <string[]>]
- [-ExpandProperty <string>] [-Unique] [-SkipLast <int>] [<CommonParameters>]
+Select-Object [[-Property] <Object[]>] [-InputObject <psobject>]
+ [-ExcludeProperty <string[]>] [-ExpandProperty <string>] [-Unique] [-SkipLast <int>]
+ [<CommonParameters>]
 ```
 
 ### IndexParameter
 
 ```
-Select-Object [-InputObject <psobject>] [-Unique] [-Wait] [-Index <int[]>] [<CommonParameters>]
+Select-Object [-InputObject <psobject>] [-Unique] [-Wait] [-Index <int[]>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

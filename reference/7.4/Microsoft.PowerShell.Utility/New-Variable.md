@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/16/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/new-variable?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -18,9 +18,9 @@ Creates a new variable.
 ## SYNTAX
 
 ```
-New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>] [-Option <ScopedItemOptions>]
- [-Visibility <SessionStateEntryVisibility>] [-Force] [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+New-Variable [-Name] <String> [[-Value] <Object>] [-Description <String>]
+ [-Option <ScopedItemOptions>] [-Visibility <SessionStateEntryVisibility>] [-Force]
+ [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -359,13 +359,21 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
+-InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 
 ### System.Object
 
-You can pipe any object to `New-Variable`.
+The **Value** parameter accepts object input from the pipeline by value or from objects with a
+**Value** property.
+
+### System.String
+
+The **Name** parameter accepts string input from pipeline objects with a **Name** property.
 
 ## OUTPUTS
 

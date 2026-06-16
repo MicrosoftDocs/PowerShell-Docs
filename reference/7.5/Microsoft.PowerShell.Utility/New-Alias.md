@@ -18,8 +18,9 @@ Creates a new alias.
 ## SYNTAX
 
 ```
-New-Alias [-Name] <String> [-Value] <String> [-Description <String>] [-Option <ScopedItemOptions>]
- [-PassThru] [-Scope <String>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-Alias [-Name] <String> [-Value] <String> [-Description <String>]
+ [-Option <ScopedItemOptions>] [-PassThru] [-Scope <String>] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

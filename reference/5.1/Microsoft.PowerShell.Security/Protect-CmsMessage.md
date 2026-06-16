@@ -17,21 +17,22 @@ Encrypts content by using the Cryptographic Message Syntax format.
 ### ByContent (Default)
 
 ```
-Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-Content] <PSObject> [[-OutFile] <String>]
- [<CommonParameters>]
+Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-Content] <PSObject>
+ [[-OutFile] <String>] [<CommonParameters>]
 ```
 
 ### ByPath
 
 ```
-Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-Path] <String> [[-OutFile] <String>] [<CommonParameters>]
+Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-Path] <String> [[-OutFile] <String>]
+ [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-LiteralPath] <String> [[-OutFile] <String>]
- [<CommonParameters>]
+Protect-CmsMessage [-To] <CmsMessageRecipient[]> [-LiteralPath] <String>
+ [[-OutFile] <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

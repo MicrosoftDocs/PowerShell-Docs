@@ -17,15 +17,15 @@ Saves formatting data from the current session in a formatting file.
 ### ByPath (Default)
 
 ```
-Export-FormatData -InputObject <ExtendedTypeDefinition[]> -Path <String> [-Force] [-NoClobber]
- [-IncludeScriptBlock] [<CommonParameters>]
+Export-FormatData -InputObject <ExtendedTypeDefinition[]> -Path <String> [-Force]
+ [-NoClobber] [-IncludeScriptBlock] [<CommonParameters>]
 ```
 
 ### ByLiteralPath
 
 ```
-Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> [-Force] [-NoClobber]
- [-IncludeScriptBlock] [<CommonParameters>]
+Export-FormatData -InputObject <ExtendedTypeDefinition[]> -LiteralPath <String> [-Force]
+ [-NoClobber] [-IncludeScriptBlock] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

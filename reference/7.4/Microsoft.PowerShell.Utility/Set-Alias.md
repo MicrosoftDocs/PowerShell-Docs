@@ -20,8 +20,9 @@ Creates or changes an alias for a cmdlet or other command in the current PowerSh
 ### Default (Default)
 
 ```
-Set-Alias [-Name] <string> [-Value] <string> [-Description <string>] [-Option <ScopedItemOptions>]
- [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Alias [-Name] <string> [-Value] <string> [-Description <string>]
+ [-Option <ScopedItemOptions>] [-PassThru] [-Scope <string>] [-Force] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -421,7 +422,7 @@ cmdlet displays the aliases available in a PowerShell session.
 To create an alias, use the cmdlets `Set-Alias` or `New-Alias`. In PowerShell 6, to delete an alias,
 use the `Remove-Alias` cmdlet. `Remove-Item` is accepted for backwards compatibility such as for
 scripts created with prior versions of PowerShell. Use a command such as
-`Remove-Item -Path Alias:aliasname`.
+`Remove-Item -Path Alias:AliasName`.
 
 To create an alias that's available in each PowerShell session, add it to your PowerShell profile.
 For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).

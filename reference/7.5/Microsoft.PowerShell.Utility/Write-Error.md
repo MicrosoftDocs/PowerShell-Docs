@@ -150,7 +150,8 @@ for this parameter are:
 - QuotaExceeded
 - NotEnabled
 
-For information about the error categories, see [ErrorCategory Enumeration](https://go.microsoft.com/fwlink/?LinkId=143600).
+For information about the error categories, see
+[ErrorCategory Enumeration](https://go.microsoft.com/fwlink/?LinkId=143600).
 
 ```yaml
 Type: System.Management.Automation.ErrorCategory

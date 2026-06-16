@@ -217,7 +217,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet counts the number of characters in the input objects.
 
 > [!NOTE]
-> The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
+> The **Word**, **Char** and **Line** switches count _inside_ each input object, as well as _across_
 > input objects. See Example 7.
 
 ```yaml
@@ -277,7 +277,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet counts the number of lines in the input objects.
 
 > [!NOTE]
-> The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
+> The **Word**, **Char** and **Line** switches count _inside_ each input object, as well as _across_
 > input objects. See Example 7.
 
 ```yaml
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 Indicates that the cmdlet counts the number of words in the input objects.
 
 > [!NOTE]
-> The **Word**, **Char** and **Line** switches count *inside* each input object, as well as *across*
+> The **Word**, **Char** and **Line** switches count _inside_ each input object, as well as _across_
 > input objects. See Example 7.
 
 ```yaml
@@ -381,7 +381,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

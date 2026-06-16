@@ -17,17 +17,19 @@ Creates background jobs similar to the `Start-Job` cmdlet.
 ### ScriptBlock
 
 ```
-Start-ThreadJob [-ScriptBlock] <ScriptBlock> [-Name <String>] [-InitializationScript <ScriptBlock>]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>]
- [-StreamingHost <PSHost>] [<CommonParameters>]
+Start-ThreadJob [-ScriptBlock] <ScriptBlock> [-Name <String>]
+ [-InitializationScript <ScriptBlock>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>] [-StreamingHost <PSHost>]
+ [<CommonParameters>]
 ```
 
 ### FilePath
 
 ```
-Start-ThreadJob [-FilePath] <String> [-Name <String>] [-InitializationScript <ScriptBlock>]
- [-InputObject <PSObject>] [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>]
- [-StreamingHost <PSHost>] [<CommonParameters>]
+Start-ThreadJob [-FilePath] <String> [-Name <String>]
+ [-InitializationScript <ScriptBlock>] [-InputObject <PSObject>]
+ [-ArgumentList <Object[]>] [-ThrottleLimit <Int32>] [-StreamingHost <PSHost>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

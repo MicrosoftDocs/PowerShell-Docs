@@ -20,14 +20,15 @@ Enables the breakpoints in the current console.
 ### Id (Default)
 
 ```
-Enable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-WhatIf] [-Confirm] [<CommonParameters>]
+Enable-PSBreakpoint [-PassThru] [-Id] <Int32[]> [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### Breakpoint
 
 ```
-Enable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Enable-PSBreakpoint [-PassThru] [-Breakpoint] <Breakpoint[]> [-WhatIf]
+ [-Confirm]  [<CommonParameters>]
 ```
 
 ## DESCRIPTION

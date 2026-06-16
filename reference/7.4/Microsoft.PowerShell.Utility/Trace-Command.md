@@ -20,17 +20,19 @@ Configures and starts a trace of the specified expression or command.
 ### expressionSet (Default)
 
 ```
-Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Expression] <ScriptBlock> [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force]
- [-Debugger] [-PSHost] [<CommonParameters>]
+Trace-Command [-InputObject <PSObject>] [-Name] <String[]>
+ [[-Option] <PSTraceSourceOptions>] [-Expression] <ScriptBlock>
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force] [-Debugger] [-PSHost]
+ [<CommonParameters>]
 ```
 
 ### commandSet
 
 ```
-Trace-Command [-InputObject <PSObject>] [-Name] <String[]> [[-Option] <PSTraceSourceOptions>]
- [-Command] <String> [-ArgumentList <Object[]>] [-ListenerOption <TraceOptions>]
- [-FilePath <String>] [-Force] [-Debugger] [-PSHost] [<CommonParameters>]
+Trace-Command [-InputObject <PSObject>] [-Name] <String[]>
+ [[-Option] <PSTraceSourceOptions>] [-Command] <String> [-ArgumentList <Object[]>]
+ [-ListenerOption <TraceOptions>] [-FilePath <String>] [-Force] [-Debugger] [-PSHost]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -125,7 +127,6 @@ Specifies a command that's being processed during the trace.
 
 When you use this parameter, PowerShell processes the command just as it would be processed in a
 pipeline. For example, command discovery isn't repeated for each incoming object.
-
 
 ```yaml
 Type: System.String
