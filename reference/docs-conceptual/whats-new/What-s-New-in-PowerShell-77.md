@@ -6,8 +6,8 @@ ms.date: 06/12/2026
 
 # What's New in PowerShell 7.7
 
-PowerShell 7.7-preview.3 includes the following features, updates, and breaking changes. PowerShell
-7.7.0 is built on the .NET 11.0.100-preview.5 runtime.
+PowerShell 7.7-preview.2 includes the following features, updates, and breaking changes. PowerShell
+7.7.0 is built on the .NET 11.0.100-preview.4 runtime.
 
 For a complete list of changes, see the [CHANGELOG][04] in the GitHub repository.
 

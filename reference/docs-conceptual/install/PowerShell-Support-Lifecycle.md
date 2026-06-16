@@ -28,7 +28,7 @@ There are multiple versions of PowerShell 7 that can be installed.
   allow you to test out new features and provide feedback. Your feedback is important and can
   influence the features that get released.
 
-  PowerShell 7.7-preview.1 is the current preview release.
+  PowerShell 7.7-preview.2 is the current preview release.
 
 PowerShell follows the [Microsoft Modern Lifecycle Policy][02]. The end-of-support dates follow the
 [.NET Support Policy][06] for the version of .NET that the release of PowerShell was built upon.
