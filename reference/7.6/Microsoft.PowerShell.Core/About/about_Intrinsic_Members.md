@@ -49,7 +49,7 @@ Every PowerShell object includes the following properties.
 
 - `psobject`
 
-  The `psobject` **MemberSet** a rich source of reflection for any object that
+  The `psobject` **MemberSet** is a rich source of reflection for any object that
   includes methods, properties, and other information about the object.
 
 ### Examples
