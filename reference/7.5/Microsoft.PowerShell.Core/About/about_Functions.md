@@ -460,7 +460,7 @@ Switch off
 ## Use splatting to pass parameter values
 
 You can use splatting to represent the parameters of a command. This feature is
-introduced in Windows PowerShell 3.0.
+introduced in Windows PowerShell 2.0.
 
 Use this technique in functions that call commands in the session. You don't
 need to declare or enumerate the command parameters, or change the function
