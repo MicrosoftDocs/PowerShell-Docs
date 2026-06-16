@@ -22,6 +22,8 @@ article is to present the current state of PowerShell and how that's different f
 PowerShell. For a detailed discussion of changes between versions and the addition of new features,
 see the **What's New** articles for each version.
 
+- [What's new in PowerShell 7.7][38]
+- [What's new in PowerShell 7.6][37]
 - [What's new in PowerShell 7.5][36]
 - [What's new in PowerShell 7.4][35]
 - [What's new in PowerShell 7.3][34]
@@ -1251,3 +1253,5 @@ To opt-out of this telemetry, set the environment variable `POWERSHELL_TELEMETRY
 [34]: What-s-New-in-PowerShell-73.md
 [35]: What-s-New-in-PowerShell-74.md
 [36]: What-s-New-in-PowerShell-75.md
+[37]: What-s-New-in-PowerShell-76.md
+[38]: What-s-New-in-PowerShell-77.md
