@@ -15,9 +15,9 @@ Tests whether the WinRM service is running on a local or remote computer.
 ## SYNTAX
 
 ```
-Test-WSMan [[-ComputerName] <String>] [-Authentication <AuthenticationMechanism>] [-Port <Int32>] [-UseSSL]
- [-ApplicationName <String>] [-Credential <PSCredential>] [-CertificateThumbprint <String>]
- [<CommonParameters>]
+Test-WSMan [[-ComputerName] <String>] [-Authentication <AuthenticationMechanism>]
+ [-Port <Int32>] [-UseSSL] [-ApplicationName <String>] [-Credential <PSCredential>]
+ [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

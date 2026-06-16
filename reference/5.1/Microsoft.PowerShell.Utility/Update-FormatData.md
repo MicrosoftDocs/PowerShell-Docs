@@ -16,8 +16,8 @@ Updates the formatting data in the current session.
 ## SYNTAX
 
 ```
-Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf] [-Confirm]
- [<CommonParameters>]
+Update-FormatData [[-AppendPath] <String[]>] [-PrependPath <String[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -36,7 +36,8 @@ installation directory (`$PSHOME`) into the session. You can use `Update-FormatD
 formatting data into the current session without restarting PowerShell. This is useful when you have
 added or changed a formatting file, but do not want to interrupt the session.
 
-For more information about formatting files in PowerShell, see [about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
+For more information about formatting files in PowerShell, see
+[about_Format.ps1xml](../Microsoft.PowerShell.Core/About/about_Format.ps1xml.md).
 
 ## EXAMPLES
 
@@ -57,8 +58,8 @@ Update-FormatData -AppendPath Trace.format.ps1xml, Log.format.ps1xml
 This command reloads the formatting files into the session, including two new files,
 `Trace.format.ps1xml` and `Log.format.ps1xml`.
 
-Because the command uses the **AppendPath** parameter, the formatting data in the new files is loaded
-after the formatting data from the built-in files.
+Because the command uses the **AppendPath** parameter, the formatting data in the new files is
+loaded after the formatting data from the built-in files.
 
 The **AppendPath** parameter is used because the new files contain formatting data for objects that
 are not referenced in the built-in files.
@@ -93,9 +94,9 @@ without using parameters.
 Specifies formatting files that this cmdlet adds to the session. The files are loaded after
 PowerShell loads the built-in formatting files.
 
-When formatting .NET objects,Windows PowerShell uses the first formatting definition that it finds
-for each .NET type. If you use the **AppendPath** parameter, Windows PowerShell searches the data
-from the built-in files before it encounters the formatting data that you are adding.
+When formatting .NET objects, PowerShell uses the first formatting definition that it finds for each
+.NET type. If you use the **AppendPath** parameter, PowerShell searches the data from the built-in
+files before it encounters the formatting data that you are adding.
 
 Use this parameter to add a file that formats a .NET object that is not referenced in the built-in
 formatting files.
@@ -117,9 +118,9 @@ Accept wildcard characters: False
 Specifies formatting files that this cmdlet adds to the session. The files are loaded before
 PowerShell loads the built-in formatting files.
 
-When formatting .NET objects, Windows PowerShell uses the first formatting definition that it finds
-for each .NET type. If you use the **PrependPath** parameter, Windows PowerShell searches the data
-from the files that you are adding before it encounters the formatting data from the built-in files.
+When formatting .NET objects, PowerShell uses the first formatting definition that it finds for each
+.NET type. If you use the **PrependPath** parameter, PowerShell searches the data from the files
+that you are adding before it encounters the formatting data from the built-in files.
 
 Use this parameter to add a file that formats a .NET object that is also referenced in the built-in
 formatting files.
@@ -173,7 +174,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

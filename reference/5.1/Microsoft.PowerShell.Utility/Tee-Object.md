@@ -20,7 +20,8 @@ Saves command output in a file or variable and also sends it down the pipeline.
 ### File (Default)
 
 ```
-Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append] [<CommonParameters>]
+Tee-Object [-InputObject <PSObject>] [-FilePath] <String> [-Append]
+ [<CommonParameters>]
 ```
 
 ### LiteralFile
@@ -227,7 +228,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

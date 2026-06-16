@@ -18,19 +18,22 @@ Displays management information for a resource instance specified by a Resource 
 ### GetInstance (Default)
 
 ```
-Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-ConnectionURI <Uri>] [-Dialect <Uri>]
- [-Fragment <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet <Hashtable>]
+Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>]
+ [-ConnectionURI <Uri>] [-Dialect <Uri>] [-Fragment <String>] [-OptionSet <Hashtable>]
+ [-Port <Int32>] [-ResourceURI] <Uri> [-SelectorSet <Hashtable>]
  [-SessionOption <SessionOption>] [-UseSSL] [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+ [<CommonParameters>]
 ```
 
 ### Enumerate
 
 ```
-Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly] [-ComputerName <String>]
- [-ConnectionURI <Uri>] [-Dialect <Uri>] [-Enumerate] [-Filter <String>] [-OptionSet <Hashtable>]
- [-Port <Int32>] [-Associations] [-ResourceURI] <Uri> [-ReturnType <String>] [-SessionOption <SessionOption>]
- [-Shallow] [-UseSSL] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly]
+ [-ComputerName <String>] [-ConnectionURI <Uri>] [-Dialect <Uri>] [-Enumerate]
+ [-Filter <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-Associations]
+ [-ResourceURI] <Uri> [-ReturnType <String>] [-SessionOption <SessionOption>] [-Shallow]
+ [-UseSSL] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
  [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
@@ -575,7 +578,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md).
 
 ## INPUTS
 

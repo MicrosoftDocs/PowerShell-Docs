@@ -18,19 +18,22 @@ Invokes an action on the object that is specified by the Resource URI and by the
 ### URI (Default)
 
 ```
-Invoke-WSManAction [-Action] <String> [-ConnectionURI <Uri>] [-FilePath <String>] [-OptionSet <Hashtable>]
- [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-ValueSet <Hashtable>] [-ResourceURI] <Uri>
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+Invoke-WSManAction [-Action] <String> [-ConnectionURI <Uri>] [-FilePath <String>]
+ [-OptionSet <Hashtable>] [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]
+ [-ValueSet <Hashtable>] [-ResourceURI] <Uri> [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
  [<CommonParameters>]
 ```
 
 ### ComputerName
 
 ```
-Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName <String>] [-FilePath <String>]
- [-OptionSet <Hashtable>] [-Port <Int32>] [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]
- [-UseSSL] [-ValueSet <Hashtable>] [-ResourceURI] <Uri> [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
+Invoke-WSManAction [-Action] <String> [-ApplicationName <String>] [-ComputerName <String>]
+ [-FilePath <String>] [-OptionSet <Hashtable>] [-Port <Int32>]
+ [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-UseSSL]
+ [-ValueSet <Hashtable>] [-ResourceURI] <Uri> [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,7 +50,13 @@ This cmdlet uses the WSMan connection/transport layer to run the action.
 ### Example 1: Invoke a method
 
 ```powershell
-Invoke-WSManAction -Action StartService -ResourceURI wmicimv2/Win32_Service -SelectorSet @{name="spooler"} -Authentication Default
+$params = @{
+    Action         = 'StartService'
+    ResourceURI    = 'wmicimv2/Win32_Service'
+    SelectorSet    = @{name = 'spooler'}
+    Authentication = 'Default'
+}
+Invoke-WSManAction @params
 ```
 
 ```Output
@@ -86,7 +95,12 @@ The file, `Input.xml`, contains the following content:
 ### Example 3: Invoke a method with specified parameter values
 
 ```powershell
-Invoke-WSManAction -Action Create -ResourceURI wmicimv2/Win32_Process -ValueSet @{CommandLine="notepad.exe";CurrentDirectory="C:\"}
+$invokeWSManActionSplat = @{
+    Action = 'Create'
+    ResourceURI = 'wmicimv2/Win32_Process'
+    ValueSet = @{CommandLine="notepad.exe";CurrentDirectory="C:\"}
+}
+Invoke-WSManAction @invokeWSManActionSplat
 ```
 
 ```Output
@@ -105,7 +119,14 @@ the current directory of the new process is set to `C:\`.
 ### Example 4: Invoke a method on a remote computer
 
 ```powershell
-Invoke-WSManAction -Action StartService -ResourceURI wmicimv2/Win32_Service -SelectorSet @{name="spooler"} -ComputerName server01 -Authentication Default
+$invokeWSManActionSplat = @{
+    Action = 'StartService'
+    ResourceURI = 'wmicimv2/Win32_Service'
+    SelectorSet = @{name="spooler"}
+    ComputerName = 'server01'
+    Authentication = 'Default'
+}
+Invoke-WSManAction @invokeWSManActionSplat
 ```
 
 ```Output
@@ -216,7 +237,8 @@ this action. Enter the certificate thumbprint of the certificate.
 Certificates are used in client certificate-based authentication. They can be mapped only to local
 user accounts; they do not work with domain accounts.
 
-To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the Windows PowerShell Cert: drive.
+To get a certificate thumbprint, use the `Get-Item` or `Get-ChildItem` command in the Windows
+PowerShell Cert: drive.
 
 ```yaml
 Type: System.String
@@ -299,7 +321,16 @@ Specifies the path of a file that is used to update a management resource. You s
 management resource by using the ResourceURI parameter and the SelectorSet parameter. For example,
 the following command uses the FilePath parameter:
 
-`Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath C:\input.xml -Authentication Default`
+```powershell
+$params = @{
+    Action         = 'StopService'
+    ResourceUri    = 'wmicimv2/Win32_Service'
+    SelectorSet    = @{Name = 'spooler'}
+    FilePath       = 'C:\input.xml'
+    Authentication = 'Default'
+}
+Invoke-WSManAction @params
+```
 
 This command calls the **StopService** method on the Spooler service by using input from a file. The
 file, `Input.xml`, contains the following content:
@@ -470,7 +501,8 @@ Accept wildcard characters: False
 
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable,
 -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose,
--WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+-WarningAction, and -WarningVariable. For more information, see
+[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
 

@@ -18,17 +18,19 @@ Connects to the WinRM service on a remote computer.
 ### ComputerName (Default)
 
 ```
-Connect-WSMan [-ApplicationName <String>] [[-ComputerName] <String>] [-OptionSet <Hashtable>]
-  [-Port <Int32>] [-SessionOption <SessionOption>] [-UseSSL] [-Credential <PSCredential>]
-  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
+Connect-WSMan [-ApplicationName <String>] [[-ComputerName] <String>]
+ [-OptionSet <Hashtable>] [-Port <Int32>] [-SessionOption <SessionOption>] [-UseSSL]
+ [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
 ### URI
 
 ```
 Connect-WSMan [-ConnectionURI <Uri>] [-OptionSet <Hashtable>] [-Port <Int32>]
-  [-SessionOption <SessionOption>] [-Credential <PSCredential>]
-  [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [<CommonParameters>]
+ [-SessionOption <SessionOption>] [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

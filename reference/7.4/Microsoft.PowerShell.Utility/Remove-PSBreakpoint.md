@@ -26,7 +26,8 @@ Remove-PSBreakpoint [-Breakpoint] <Breakpoint[]> [-WhatIf] [-Confirm] [<CommonPa
 ### Id
 
 ```
-Remove-PSBreakpoint [-Id] <Int32[]> [-Runspace <Runspace>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-PSBreakpoint [-Id] <Int32[]> [-Runspace <Runspace>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -161,6 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
@@ -176,6 +178,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
+
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 

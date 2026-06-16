@@ -65,8 +65,8 @@ Install-Module -Name PSReadLine -AllowClobber -Force
 
 Predictive IntelliSense is an addition to the concept of tab completion that
 assists the user in successfully completing commands. It enables users to
-discover, edit, and execute full commands based on matching predictions from the
-user's history and additional domain specific plugins.
+discover, edit, and execute full commands based on matching predictions from
+the user's history and additional domain specific plugins.
 
 ### Enable Predictive IntelliSense
 

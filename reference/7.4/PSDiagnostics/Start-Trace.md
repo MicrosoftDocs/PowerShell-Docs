@@ -16,9 +16,10 @@ Start an Event Trace logging session.
 ## SYNTAX
 
 ```
-Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>] [[-ProviderFilePath] <String>]
- [-ETS] [-Format <String>] [-MinBuffers <Int32>] [-MaxBuffers <Int32>]
- [-BufferSizeInKB <Int32>] [-MaxLogFileSizeInMB <Int32>] [<CommonParameters>]
+Start-Trace [-SessionName] <String> [[-OutputFilePath] <String>]
+ [[-ProviderFilePath] <String>] [-ETS] [-Format <String>] [-MinBuffers <Int32>]
+ [-MaxBuffers <Int32>] [-BufferSizeInKB <Int32>] [-MaxLogFileSizeInMB <Int32>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION

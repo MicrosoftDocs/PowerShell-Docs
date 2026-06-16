@@ -9,7 +9,6 @@ aliases:
   - ogv
 title: Out-GridView
 ---
-
 # Out-GridView
 
 ## SYNOPSIS
@@ -322,7 +321,7 @@ Deserialized output from remote commands might not be formatted correctly in the
 **To hide or show a column:**
 
 1. Right-click any column header and click **Select Columns**.
-2. In the **Select Columns** dialog box, use the arrow keys to move the columns between the Selected
+1. In the **Select Columns** dialog box, use the arrow keys to move the columns between the Selected
     columns to the Available columns boxes. Only columns in the **Select Columns** box appear in the
     grid view window.
 
@@ -331,7 +330,7 @@ Deserialized output from remote commands might not be formatted correctly in the
 You can drag and drop columns into the desired location. Or use the following steps:
 
 1. Right-click any column header and click **Select Columns**.
-2. In the **Select Columns** dialog box, use the **Move up** and **Move down** buttons to reorder
+1. In the **Select Columns** dialog box, use the **Move up** and **Move down** buttons to reorder
    the columns. Columns at the top of the list appear to the left of columns at the bottom of the
    list in the grid view window.
 
@@ -346,9 +345,10 @@ You can drag and drop columns into the desired location. Or use the following st
 
 - To select a row, select the row or use the up or down arrow to navigate to the row.
 - To select all rows (except for the header row), press <kbd>CTRL</kbd>+<kbd>A</kbd>.
-- To select consecutive rows, press and hold the <kbd>SHIFT</kbd> key while clicking the rows or using the
-  arrow keys.
-- To select nonconsecutive rows, press the <kbd>CTRL</kbd> key and click to add a row to the selection.
+- To select consecutive rows, press and hold the <kbd>SHIFT</kbd> key while clicking the rows or
+  using the arrow keys.
+- To select nonconsecutive rows, press the <kbd>CTRL</kbd> key and click to add a row to the
+  selection.
 - You cannot select columns, and you cannot select the entire column header row.
 
 **How to Copy Rows**
@@ -404,11 +404,11 @@ The criteria only affects the display. It does not delete items from the table.
 
 1. To display the **Add criteria** menu button, in the upper right corner of the window, click the
    Expand arrow.
-2. Click the **Add Criteria** menu button.
-3. Click to select columns (properties). You can select one or many properties.
-4. When you are finished selecting properties, click the **Add** button.
-5. To cancel the additions, click **Cancel**.
-6. To add more criteria, click the **Add Criteria** button again.
+1. Click the **Add Criteria** menu button.
+1. Click to select columns (properties). You can select one or many properties.
+1. When you are finished selecting properties, click the **Add** button.
+1. To cancel the additions, click **Cancel**.
+1. To add more criteria, click the **Add Criteria** button again.
 
 **How to Edit a Criterion**
 

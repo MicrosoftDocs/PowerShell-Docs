@@ -1170,8 +1170,8 @@ pressing the `#` key sends 10 `#` characters (`##########`) to the input line.
 Similarly, you can use this with other operations, like `<Delete>` or
 `Left-Arrow`.
 
-- Windows mode: `Alt+0`, `Alt+1`, `Alt+2`, `Alt+3`, `Alt+4`, `Alt+5`, `Alt+6`, `Alt+7`,
-  `Alt+8`, `Alt+9`, `Alt+-`
+- Windows mode: `Alt+0`, `Alt+1`, `Alt+2`, `Alt+3`, `Alt+4`, `Alt+5`, `Alt+6`,
+  `Alt+7`, `Alt+8`, `Alt+9`, `Alt+-`
 - Emacs mode: `Alt+0`, `Alt+1`, `Alt+2`, `Alt+3`, `Alt+4`, `Alt+5`, `Alt+6`,
   `Alt+7`, `Alt+8`, `Alt+9`, `Alt+-`
 - Vi command mode: `<0>`, `<1>`, `<2>`, `<3>`, `<4>`, `<5>`, `<6>`, `<7>`,
@@ -1672,7 +1672,7 @@ Behavior of the OnIdle event
 - [about_PSReadLine][02]
 
 <!-- link references -->
-[01]: /dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters
+[01]: xref:Microsoft.PowerShell.PSConsoleReadLineOptions.WordDelimiters%2A#microsoft-powershell-psconsolereadlineoptions-worddelimiters
 [02]: about_PSReadLine.md
 [03]: https://apps.microsoft.com/detail/9N0DX20HK701
 [04]: xref:PSReadLine.Get-PSReadLineOption

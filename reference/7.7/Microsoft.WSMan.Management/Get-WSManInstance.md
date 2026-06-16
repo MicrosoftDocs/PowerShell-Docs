@@ -32,10 +32,9 @@ Get-WSManInstance [-ApplicationName <String>] [-ComputerName <String>]
 Get-WSManInstance [-ApplicationName <String>] [-BasePropertiesOnly]
  [-ComputerName <String>] [-ConnectionURI <Uri>] [-Dialect <Uri>] [-Enumerate]
  [-Filter <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-Associations]
- [-ResourceURI] <Uri> [-ReturnType <String>] [-SessionOption <SessionOption>]
- [-Shallow] [-UseSSL] [-Credential <PSCredential>]
- [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
- [<CommonParameters>]
+ [-ResourceURI] <Uri> [-ReturnType <String>] [-SessionOption <SessionOption>] [-Shallow]
+ [-UseSSL] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+ [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

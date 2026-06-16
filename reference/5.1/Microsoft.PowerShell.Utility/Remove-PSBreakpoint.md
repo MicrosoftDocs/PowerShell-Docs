@@ -78,7 +78,7 @@ Remove-PSBreakpoint -Id 2
 
 ### Example 4: Use a function to remove all breakpoints
 
-This simple function deletes all of the breakpoints in the current console.
+This simple function deletes all the breakpoints in the current session.
 
 ```powershell
 function del-psb { Get-PSBreakpoint | Remove-PSBreakpoint }
