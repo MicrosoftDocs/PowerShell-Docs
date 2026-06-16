@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/16/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-variable?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -175,7 +175,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.String
 
-You can pipe a string that contains the variable name to this cmdlet.
+The **Name** parameter accepts string input from the pipeline by value or from objects with a
+**Name** property.
 
 ## OUTPUTS
 
