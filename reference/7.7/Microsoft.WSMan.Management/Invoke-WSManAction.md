@@ -95,7 +95,12 @@ The file, `Input.xml`, contains the following content:
 ### Example 3: Invoke a method with specified parameter values
 
 ```powershell
-Invoke-WSManAction -Action Create -ResourceURI wmicimv2/Win32_Process -ValueSet @{CommandLine="notepad.exe";CurrentDirectory="C:\"}
+$invokeWSManActionSplat = @{
+    Action = 'Create'
+    ResourceURI = 'wmicimv2/Win32_Process'
+    ValueSet = @{CommandLine="notepad.exe";CurrentDirectory="C:\"}
+}
+Invoke-WSManAction @invokeWSManActionSplat
 ```
 
 ```Output
@@ -114,7 +119,14 @@ the current directory of the new process is set to `C:\`.
 ### Example 4: Invoke a method on a remote computer
 
 ```powershell
-Invoke-WSManAction -Action StartService -ResourceURI wmicimv2/Win32_Service -SelectorSet @{name="spooler"} -ComputerName server01 -Authentication Default
+$invokeWSManActionSplat = @{
+    Action = 'StartService'
+    ResourceURI = 'wmicimv2/Win32_Service'
+    SelectorSet = @{name="spooler"}
+    ComputerName = 'server01'
+    Authentication = 'Default'
+}
+Invoke-WSManAction @invokeWSManActionSplat
 ```
 
 ```Output

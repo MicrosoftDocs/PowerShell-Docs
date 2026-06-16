@@ -36,9 +36,9 @@ Write-Error -Exception <Exception> [-Message <string>] [-Category <ErrorCategory
 ### ErrorRecord
 
 ```
-Write-Error -ErrorRecord <ErrorRecord> [-RecommendedAction <string>] [-CategoryActivity <string>]
- [-CategoryReason <string>] [-CategoryTargetName <string>] [-CategoryTargetType <string>]
- [<CommonParameters>]
+Write-Error -ErrorRecord <ErrorRecord> [-RecommendedAction <string>]
+ [-CategoryActivity <string>]  [-CategoryReason <string>] [-CategoryTargetName <string>]
+ [-CategoryTargetType <string>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -150,7 +150,8 @@ for this parameter are:
 - QuotaExceeded
 - NotEnabled
 
-For information about the error categories, see [ErrorCategory Enumeration](https://go.microsoft.com/fwlink/?LinkId=143600).
+For information about the error categories, see
+[ErrorCategory Enumeration](https://go.microsoft.com/fwlink/?LinkId=143600).
 
 ```yaml
 Type: System.Management.Automation.ErrorCategory

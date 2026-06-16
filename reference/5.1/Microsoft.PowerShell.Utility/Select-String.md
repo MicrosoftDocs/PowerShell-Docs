@@ -20,25 +20,25 @@ Finds text in strings and files.
 ### File (Default)
 
 ```
-Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
- [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Pattern] <String[]> [-Path] <String[]> [-SimpleMatch] [-CaseSensitive]
+ [-Quiet] [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches]
+ [-Encoding <String>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### Object
 
 ```
-Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
- [-Context <Int32[]>] [<CommonParameters>]
+Select-String -InputObject <PSObject> [-Pattern] <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
+ [-AllMatches] [-Encoding <String>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ### LiteralFile
 
 ```
-Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch] [-CaseSensitive] [-Quiet]
- [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch] [-AllMatches] [-Encoding <String>]
- [-Context <Int32[]>] [<CommonParameters>]
+Select-String [-Pattern] <String[]> -LiteralPath <String[]> [-SimpleMatch]
+ [-CaseSensitive] [-Quiet] [-List] [-Include <String[]>] [-Exclude <String[]>] [-NotMatch]
+ [-AllMatches] [-Encoding <String>] [-Context <Int32[]>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -190,7 +190,8 @@ matches in `$_.Message`. `Select-String` displays the output in the PowerShell c
 This example searches a directory and all of its subdirectories for a specific text string.
 
 ```powershell
-Get-ChildItem -Path C:\Windows\System32\*.txt -Recurse | Select-String -Pattern 'Microsoft' -CaseSensitive
+Get-ChildItem -Path C:\Windows\System32\*.txt -Recurse |
+    Select-String -Pattern 'Microsoft' -CaseSensitive
 ```
 
 `Get-ChildItem` uses the **Path** parameter to specify **C:\Windows\System32\*.txt**. The

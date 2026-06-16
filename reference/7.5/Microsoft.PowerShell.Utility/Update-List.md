@@ -18,8 +18,8 @@ Adds items to and removes items from a property value that contains a collection
 ### AddRemoveSet (Default)
 
 ```
-Update-List [-Add <Object[]>] [-Remove <Object[]>] [-InputObject <PSObject>] [[-Property] <String>]
- [<CommonParameters>]
+Update-List [-Add <Object[]>] [-Remove <Object[]>] [-InputObject <PSObject>]
+ [[-Property] <String>] [<CommonParameters>]
 ```
 
 ### ReplaceSet

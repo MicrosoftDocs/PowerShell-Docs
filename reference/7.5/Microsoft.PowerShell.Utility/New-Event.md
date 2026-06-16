@@ -16,8 +16,8 @@ Creates a new event.
 ## SYNTAX
 
 ```
-New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments] <PSObject[]>]
- [[-MessageData] <PSObject>] [<CommonParameters>]
+New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>]
+ [[-EventArguments] <PSObject[]>] [[-MessageData] <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

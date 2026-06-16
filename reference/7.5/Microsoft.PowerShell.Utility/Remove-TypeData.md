@@ -108,7 +108,8 @@ current session.
 Remove-TypeData -Path "$PSHOME\Modules\PSScheduledJob", "$PSHOME\Modules\PSWorkflow\PSWorkflow.types.ps1xml"
 ```
 
-For more information about modules, see [about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
+For more information about modules, see
+[about_Modules](../Microsoft.PowerShell.Core/About/about_Modules.md).
 
 ### Example 5: Remove extended types from a remote session
 

@@ -22,8 +22,8 @@ PowerShell 5.1 ships with PSReadLine 2.0.0. The current version is PSReadLine
 PowerShell 5.1 and newer. For some features, you need to be running PowerShell
 7.2 or higher.
 
-This article documents the functions provided by PSReadLine 2.0.0. These functions
-can be bound to keystrokes for easy access and invocation.
+This article documents the functions provided by PSReadLine 2.0.0. These
+functions can be bound to keystrokes for easy access and invocation.
 
 ## Using the Microsoft.PowerShell.PSConsoleReadLine class
 
@@ -627,11 +627,11 @@ of characters.
 - Vi command mode: `<Ctrl+LeftArrow>`
 
 The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+[WordDelimiters][01]
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Get-PSReadLineOption][03] and
+[Set-PSReadLineOption][04].
 
 ### BeginningOfLine
 
@@ -673,11 +673,11 @@ characters.
 - Emacs mode: `<Alt+f>`, `<Escape,f>`
 
 The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+[WordDelimiters][01]
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Get-PSReadLineOption][03] and
+[Set-PSReadLineOption][04].
 
 ### GotoBrace
 
@@ -721,11 +721,11 @@ defined by a configurable set of characters.
 - Vi command mode: `<Ctrl+RightArrow>`
 
 The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+[WordDelimiters][01]
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Get-PSReadLineOption][03] and
+[Set-PSReadLineOption][04].
 
 ### NextWordEnd
 
@@ -736,11 +736,11 @@ characters.
 - Vi command mode: `<e>`
 
 The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+[WordDelimiters][01]
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Get-PSReadLineOption][03] and
+[Set-PSReadLineOption][04].
 
 ### PreviousLine
 
@@ -778,11 +778,11 @@ set of characters.
 - Vi command mode: `<b>`
 
 The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+[WordDelimiters][01]
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Get-PSReadLineOption][03] and
+[Set-PSReadLineOption][04].
 
 ### ViEndOfGlob
 
@@ -817,11 +817,11 @@ defined by a configurable set of characters.
 - Vi command mode: `<w>`
 
 The characters that define word boundaries are configured in the
-[WordDelimiters](/dotnet/api/microsoft.powershell.psconsolereadlineoptions.worddelimiters#microsoft-powershell-psconsolereadlineoptions-worddelimiters)
+[WordDelimiters][01]
 property of the **PSConsoleReadLineOptions** object. To view or change the
 **WordDelimiters** property, see
-[Get-PSReadLineOption](xref:PSReadLine.Get-PSReadLineOption) and
-[Set-PSReadLineOption](xref:PSReadLine.Set-PSReadLineOption).
+[Get-PSReadLineOption][03] and
+[Set-PSReadLineOption][04].
 
 ## History functions
 
@@ -1396,4 +1396,10 @@ Behavior of the OnIdle event
 
 ## See also
 
-- [about_PSReadLine](about_PSReadLine.md)
+- [about_PSReadLine][02]
+
+<!-- link references -->
+[01]: xref:Microsoft.PowerShell.PSConsoleReadLineOptions.WordDelimiters%2A#microsoft-powershell-psconsolereadlineoptions-worddelimiters
+[02]: about_PSReadLine.md
+[03]: xref:PSReadLine.Get-PSReadLineOption
+[04]: xref:PSReadLine.Set-PSReadLineOption

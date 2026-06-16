@@ -18,19 +18,21 @@ Modifies the management information that is related to a resource.
 ### ComputerName (Default)
 
 ```
-Set-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Dialect <Uri>] [-FilePath <String>]
- [-Fragment <String>] [-OptionSet <Hashtable>] [-Port <Int32>] [-ResourceURI] <Uri>
- [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-UseSSL] [-ValueSet <Hashtable>]
- [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
+Set-WSManInstance [-ApplicationName <String>] [-ComputerName <String>] [-Dialect <Uri>]
+ [-FilePath <String>] [-Fragment <String>] [-OptionSet <Hashtable>] [-Port <Int32>]
+ [-ResourceURI] <Uri> [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]
+ [-UseSSL] [-ValueSet <Hashtable>] [-Credential <PSCredential>]
+ [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>]
  [<CommonParameters>]
 ```
 
 ### URI
 
 ```
-Set-WSManInstance [-ConnectionURI <Uri>] [-Dialect <Uri>] [-FilePath <String>] [-Fragment <String>]
- [-OptionSet <Hashtable>] [-ResourceURI] <Uri> [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>]
- [-ValueSet <Hashtable>] [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
+Set-WSManInstance [-ConnectionURI <Uri>] [-Dialect <Uri>] [-FilePath <String>]
+ [-Fragment <String>] [-OptionSet <Hashtable>] [-ResourceURI] <Uri>
+ [[-SelectorSet] <Hashtable>] [-SessionOption <SessionOption>] [-ValueSet <Hashtable>]
+ [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>]
  [-CertificateThumbprint <String>] [<CommonParameters>]
 ```
 
@@ -45,7 +47,12 @@ This cmdlet uses the WinRM connection/transport layer to modify the information.
 ### Example 1: Disable a listener on the local computer
 
 ```powershell
-Set-WSManInstance -ResourceURI winrm/config/listener -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
+$params = @{
+    ResourceURI = 'winrm/config/listener'
+    SelectorSet = @{address = '*'; transport = 'https'}
+    ValueSet    = @{Enabled = 'false'}
+}
+Set-WSManInstance @params
 ```
 
 ```Output
@@ -105,7 +112,13 @@ This succeeds: `-ValueSet @{MaxEnvelopeSizekb ="200"}`
 ### Example 3: Disable a listener on a remote computer
 
 ```powershell
-Set-WSManInstance -ResourceURI winrm/config/listener -ComputerName SERVER02 -SelectorSet @{address="*";transport="https"} -ValueSet @{Enabled="false"}
+$params = @{
+    ResourceURI  = 'winrm/config/listener'
+    ComputerName = 'SERVER02'
+    SelectorSet  = @{address = '*'; transport = 'https'}
+    ValueSet     = @{Enabled = 'false'}
+}
+Set-WSManInstance @params
 ```
 
 ```Output
@@ -132,6 +145,29 @@ For example, using the above command.
 This fails: `-ValueSet @{enabled="False"}`
 
 This succeeds: `-ValueSet @{Enabled="False"}`
+
+### Example 4: Manage a resource using an input file
+
+The following command uses the **FilePath** parameter to update a management resource. Specify the
+management resource using the **ResourceURI** and **SelectorSet** parameters.
+
+```powershell
+$params = @{
+    Action         = 'StopService'
+    ResourceUri    = 'wmicimv2/Win32_Service'
+    SelectorSet    = @{Name = 'spooler'}
+    FilePath       = 'C:\input.xml'
+    Authentication = 'Default'
+}
+Invoke-WSManAction @params
+```
+
+This command calls the **StopService** method on the Spooler service using input from a file. The
+`input.xml` file contains the following content:
+
+```xml
+<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />
+```
 
 ## PARAMETERS
 
@@ -313,16 +349,8 @@ Accept wildcard characters: False
 
 ### -FilePath
 
-Specifies the path of a file that is used to update a management resource. You specify the
-management resource by using the **ResourceURI** parameter and the **SelectorSet** parameter. For
-example, the following command uses the **FilePath** parameter:
-
-`Invoke-WSManAction -Action StopService -ResourceUri wmicimv2/Win32_Service -SelectorSet @{Name="spooler"} -FilePath:C:\input.xml -Authentication Default`
-
-This command calls the **StopService** method on the Spooler service by using input from a file.
-The file, `Input.xml`, contains the following content:
-
-`<p:StopService_INPUT xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_Service" />`
+Specifies the path of a file used to update a management resource. For more information, see
+[Example 4](#example-4-manage-a-resource-using-an-input-file).
 
 ```yaml
 Type: System.String

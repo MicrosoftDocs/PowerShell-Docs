@@ -19,9 +19,10 @@ Sets the value of a variable. Creates the variable if one with the requested nam
 ## SYNTAX
 
 ```
-Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>] [-Exclude <String[]>]
- [-Description <String>] [-Option <ScopedItemOptions>] [-Force] [-Visibility <SessionStateEntryVisibility>]
- [-PassThru] [-Scope <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Set-Variable [-Name] <String[]> [[-Value] <Object>] [-Include <String[]>]
+ [-Exclude <String[]>] [-Description <String>] [-Option <ScopedItemOptions>] [-Force]
+ [-Visibility <SessionStateEntryVisibility>] [-PassThru] [-Scope <String>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION

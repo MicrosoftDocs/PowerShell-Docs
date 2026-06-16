@@ -18,11 +18,12 @@ Sends an email message.
 ### All
 
 ```
-Send-MailMessage [-Attachments <String[]>] [-Bcc <String[]>] [[-Body] <String>] [-BodyAsHtml]
- [-Encoding <Encoding>] [-Cc <String[]>] [-DeliveryNotificationOption <DeliveryNotificationOptions>]
- -From <String> [[-SmtpServer] <String>] [-Priority <MailPriority>] [-ReplyTo <String[]>]
- [[-Subject] <String>] [-To] <String[]> [-Credential <PSCredential>] [-UseSsl] [-Port <Int32>]
- [<CommonParameters>]
+Send-MailMessage [-Attachments <String[]>] [-Bcc <String[]>] [[-Body] <String>]
+ [-BodyAsHtml] [-Encoding <Encoding>] [-Cc <String[]>]
+ [-DeliveryNotificationOption <DeliveryNotificationOptions>] -From <String>
+ [[-SmtpServer] <String>] [-Priority <MailPriority>] [-ReplyTo <String[]>]
+ [[-Subject] <String>] [-To] <String[]> [-Credential <PSCredential>] [-UseSsl]
+ [-Port <Int32>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -212,8 +213,8 @@ user.
 Type a user name, such as **User01** or **Domain01\User01**. Or, enter a **PSCredential** object,
 such as one from the `Get-Credential` cmdlet.
 
-Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential)
-object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).
+Credentials are stored in a [PSCredential](xref:System.Management.Automation.PSCredential)
+object and the password is stored as a [SecureString](xref:System.Security.SecureString).
 
 > [!NOTE]
 > For more information about **SecureString** data protection, see
@@ -287,7 +288,7 @@ The acceptable values for this parameter are as follows:
 Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code
 pages (like `-Encoding 1251`) or string names of registered code pages (like
 `-Encoding "windows-1251"`). For more information, see the .NET documentation for
-[Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).
+[Encoding.CodePage](xref:System.Text.Encoding.CodePage%2A).
 
 Starting with PowerShell 7.4, you can use the `Ansi` value for the **Encoding** parameter to pass
 the numeric ID for the current culture's ANSI code page without having to specify it manually.

@@ -138,8 +138,9 @@ Using the **InformationVariable** parameter, you can save information records to
 allows you to inspect the information stream messages later in the script.
 
 ```powershell
-$psproc = Get-Process -Id $PID | Select-Object ProcessName, CPU, Path
-Write-Information -MessageData $psproc -Tags 'PowerShell' -InformationVariable 'InfoMsg'
+Get-Process -Id $PID |
+    Select-Object ProcessName, CPU, Path |
+    Write-Information -Tags 'PowerShell' -InformationVariable 'InfoMsg'
 $InfoMsg | Select-Object *
 ```
 

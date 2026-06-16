@@ -70,11 +70,11 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
  [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
  [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
  [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>] -CustomMethod <String>
- [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
- [-Proxy <Uri>] [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials]
- [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
- [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
- [-SkipHttpErrorCheck] [<CommonParameters>]
+ [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>] [-Proxy <Uri>]
+ [-ProxyCredential <PSCredential>] [-ProxyUseDefaultCredentials] [-Body <Object>]
+ [-Form <IDictionary>] [-ContentType <String>] [-TransferEncoding <String>]
+ [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume] [-SkipHttpErrorCheck]
+ [<CommonParameters>]
 ```
 
 ### CustomMethodNoProxy
@@ -90,8 +90,8 @@ Invoke-WebRequest [-UseBasicParsing] [-Uri] <Uri> [-HttpVersion <Version>]
  [-Headers <IDictionary>] [-SkipHeaderValidation] [-AllowInsecureRedirect]
  [-MaximumRedirection <Int32>] [-MaximumRetryCount <Int32>]
  [-PreserveAuthorizationOnRedirect] [-RetryIntervalSec <Int32>] -CustomMethod <String>
- [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>]
- [-NoProxy] [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
+ [-PreserveHttpMethodOnRedirect] [-UnixSocket <UnixDomainSocketEndPoint>] [-NoProxy]
+ [-Body <Object>] [-Form <IDictionary>] [-ContentType <String>]
  [-TransferEncoding <String>] [-InFile <String>] [-OutFile <String>] [-PassThru] [-Resume]
  [-SkipHttpErrorCheck] [<CommonParameters>]
 ```
