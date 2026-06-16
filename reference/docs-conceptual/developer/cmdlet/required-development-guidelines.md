@@ -99,7 +99,7 @@ When you name cmdlets, do not use any of the following special characters.
 
 ### Parameters Names that cannot be Used (RD03)
 
-Windows PowerShell provides a common set a parameters to all cmdlets plus additional parameters that are added in specific situations. When designing your own cmdlets you cannot use the following names: Confirm, Debug, ErrorAction, ErrorVariable, OutBuffer, OutVariable, WarningAction, WarningVariable, WhatIf, UseTransaction, and Verbose. For more information about these parameters, see [Common Parameter Names](./common-parameter-names.md).
+Windows PowerShell provides a common set of parameters to all cmdlets plus additional parameters that are added in specific situations. When designing your own cmdlets you cannot use the following names: Confirm, Debug, ErrorAction, ErrorVariable, OutBuffer, OutVariable, WarningAction, WarningVariable, WhatIf, UseTransaction, and Verbose. For more information about these parameters, see [Common Parameter Names](./common-parameter-names.md).
 
 ### Support Confirmation Requests (RD04)
 
@@ -118,7 +118,7 @@ For more information about supporting these methods, see [Requesting Confirmatio
 
 ### Support Force Parameter for Interactive Sessions (RD05)
 
-If your cmdlet is used interactively, always provide a Force parameter to override the interactive actions, such as prompts or reading lines of input). This is important because it allows your cmdlet to be used in non-interactive scripts and hosts. The following methods can be implemented by an interactive host.
+If your cmdlet is used interactively, always provide a Force parameter to override the interactive actions, such as prompts or reading lines of input. This is important because it allows your cmdlet to be used in non-interactive scripts and hosts. The following methods can be implemented by an interactive host.
 
 - [System.Management.Automation.Host.PSHostUserInterface.Prompt*](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.Prompt)
 
