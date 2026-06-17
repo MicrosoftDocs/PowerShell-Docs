@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/18/2026
+ms.date: 06/17/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-typedata?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-TypeData
@@ -899,6 +899,12 @@ parameters to this cmdlet.
 This cmdlet returns no output.
 
 ## NOTES
+
+> [!WARNING]
+> Restricted endpoints, such as JEA, must not expose the `Update-TypeData` command. This command
+> allows you to add **ScriptProperty** members to types. The **ScriptProperty**` members are
+> evaluated in `FullLanguage` mode, even when the session is configured to use a more restrictive
+> language mode.
 
 ## RELATED LINKS
 

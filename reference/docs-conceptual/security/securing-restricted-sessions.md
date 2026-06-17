@@ -1,6 +1,6 @@
 ---
 description: This article explains how to secure a restricted PowerShell session that is used for secure remote access.
-ms.date: 01/26/2026
+ms.date: 06/17/2026
 title: Securing a restricted PowerShell remoting session
 ---
 # Securing a restricted PowerShell remoting session
@@ -42,6 +42,14 @@ restricted session implementation.
 > The Windows Compatibility feature in PowerShell 7 creates a new runspace to host Windows
 > PowerShell. Don't allow any commands that would run via the Windows Compatibility feature. The
 > `*-Job` cmdlets can create new runspaces without the restrictions.
+
+### Don't allow commands that add TypeData or FormatData
+
+Restricted endpoints must not expose the `Update-TypeData`, `Remove-TypeData`, or
+`Update-FormatData` commands. The `*-TypeData` commands allow you to add **ScriptProperty** members
+to types. The `Update-FormatData` command allows you to add **ScriptBlock** definitions to create
+custom formatting. The **ScriptProperty**` and **ScriptBlock** members are evaluated in
+`FullLanguage` mode, even when the session is configured to use a more restrictive language mode.
 
 ### Don't allow the `Trace-Command` cmdlet.
 
