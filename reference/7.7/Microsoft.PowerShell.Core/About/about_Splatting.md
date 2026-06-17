@@ -1,7 +1,7 @@
 ---
 description: Describes how to use splatting to pass parameters to commands in PowerShell.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 06/17/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Splatting
@@ -52,7 +52,7 @@ defining a parameter in a command.
 ## Splatting with hash tables
 
 Use a hash table to splat parameter name and value pairs. You can use this
-format for all parameter types, including positional and switch parameters.
+format for all parameter types, including positional and `[switch]` parameters.
 Positional parameters must be assigned by name.
 
 The following examples compare two `Copy-Item` commands that copy the Test.txt
@@ -71,7 +71,7 @@ table of parameter-name and parameter-value pairs and stores it in the
 variable in a command with splatting. The At symbol (`@HashArguments`) replaces
 the dollar sign (`$HashArguments`) in the command.
 
-To provide a value for the **WhatIf** switch parameter, use `$true` or
+To provide a value for the **WhatIf** `[switch]` parameter, use `$true` or
 `$false`.
 
 ```powershell
@@ -113,6 +113,49 @@ command.
 ```powershell
 $ArrayArguments = "test.txt", "test2.txt"
 Copy-Item @ArrayArguments -WhatIf
+```
+
+> [!NOTE]
+> Jagged array splatting is a special case of array splatting. In jagged array
+> splatting, the array contains other arrays. PowerShell handles splatting of
+> jagged arrays differently depending on whether the command being splatted is
+> a native command or a PowerShell command.
+
+For example, the following command splats a jagged array to a PowerShell
+script.
+
+```powershell
+$arguments = 1, (2, 3), 4
+D:\temp\testargs.ps1 @arguments
+```
+
+The script receives three arguments, the second of which is an array.
+
+```Output
+3 argument(s) received (enclosed in <...> for delineation):
+
+  <1>
+  <2 3>
+  <4>
+```
+
+In this example, the jagged array is splatted to a native command.
+
+```powershell
+$arguments = 1, (2, 3), 4
+echoargs.exe @arguments
+```
+
+The native command receives four arguments, the second and third items are
+the elements of the inner array.
+
+```Output
+4 argument(s) received (enclosed in <...> for delineation):
+
+  <1>
+  <2>
+  <3>
+  <4>
 ```
 
 ### Using the ArgumentList parameter
