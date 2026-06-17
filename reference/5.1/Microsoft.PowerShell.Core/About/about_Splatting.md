@@ -112,11 +112,9 @@ $ArrayArguments = "test.txt", "test2.txt"
 Copy-Item @ArrayArguments -WhatIf
 ```
 
-> [!NOTE]
-> Jagged array splatting is a special case of array splatting. In jagged array
-> splatting, the array contains other arrays. PowerShell handles splatting of
-> jagged arrays differently depending on whether the command being splatted is
-> a native command or a PowerShell command.
+A jagged array is an array that contains other arrays. PowerShell handles
+splatting of jagged arrays for native commands differently than for PowerShell
+commands.
 
 For example, the following command splats a jagged array to a PowerShell
 script.
