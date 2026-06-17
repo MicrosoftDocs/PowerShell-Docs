@@ -1,7 +1,7 @@
 ---
 description: Describes how to use splatting to pass parameters to commands in PowerShell.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 06/17/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Splatting
@@ -113,6 +113,47 @@ command.
 ```powershell
 $ArrayArguments = "test.txt", "test2.txt"
 Copy-Item @ArrayArguments -WhatIf
+```
+
+A jagged array is an array that contains other arrays. PowerShell handles
+splatting of jagged arrays for native commands differently than for PowerShell
+commands.
+
+For example, the following command splats a jagged array to a PowerShell
+script.
+
+```powershell
+$arguments = 1, (2, 3), 4
+D:\temp\testargs.ps1 @arguments
+```
+
+The script receives three arguments, the second of which is an array.
+
+```Output
+3 argument(s) received (enclosed in <...> for delineation):
+
+  <1>
+  <2 3>
+  <4>
+```
+
+In this example, the jagged array is splatted to a native command.
+
+```powershell
+$arguments = 1, (2, 3), 4
+echoargs.exe @arguments
+```
+
+The native command receives four arguments, the second and third items are
+the elements of the inner array.
+
+```Output
+4 argument(s) received (enclosed in <...> for delineation):
+
+  <1>
+  <2>
+  <3>
+  <4>
 ```
 
 ### Using the ArgumentList parameter
