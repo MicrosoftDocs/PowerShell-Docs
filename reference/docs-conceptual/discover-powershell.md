@@ -1,6 +1,6 @@
 ---
 description: Learn what PowerShell is and some essential commands used to discover more about PowerShell.
-ms.date: 09/02/2025
+ms.date: 06/27/2026
 ms.topic: overview
 title: Discover PowerShell
 ---
@@ -48,10 +48,9 @@ PowerShell is designed to help you learn a little at a time, as you need it.
 PowerShell includes cmdlets that help you discover PowerShell. Using these four cmdlets, you can
 discover what commands are available, what they do, and what types they operate on.
 
-- `Get-Verb`. Running this command returns a list of verbs that most commands adhere to. The
-  response includes a description of what these verbs do. Since most commands follow this naming
-  convention, it sets expectations on what a command does. This command helps you select the
-  appropriate verb and what to name a command when you create your own commands.
+- `Get-Verb`. Running this command returns a list of verbs that most commands adhere to. Since most
+  commands follow this naming convention, it sets expectations on what a command does. This command
+  helps you select the appropriate verb and what to name a command when you create your own commands.
 - `Get-Command`. This command retrieves a list of all commands installed on your machine.
 - `Get-Member`. It operates on object based output and is able to discover what object, properties
   and methods are available for a command.
@@ -71,18 +70,17 @@ standardized list of verbs. To get a full list of all possible verbs, use the `G
 Get-Verb
 ```
 
-The cmdlet returns a long list of verbs. The **Description** provides context for what the verb is
-meant to do. Here's the first few rows of output:
+The cmdlet returns a long list of verbs. Here's the first few rows of output:
 
 ```Output
-Verb    AliasPrefix   Group     Description
-----    -----------   -----     -----------
-Add     a             Common    Adds a resource to a container, or attaches an item to another item
-Clear   cl            Common    Removes all the resources from a container but does not delete the container
-Close   cs            Common    Changes the state of a resource to make it inaccessible, unavailable, or unusab…
-Copy    cp            Common    Copies a resource to another name or to another container
-Enter   et            Common    Specifies an action that allows the user to move into a resource
-Exit    ex            Common    Sets the current environment or context to the most recently used context
+Verb        Group
+----        -----
+Add         Common
+Clear       Common
+Close       Common
+Copy        Common
+Enter       Common
+Exit        Common
 ...
 ```
 
