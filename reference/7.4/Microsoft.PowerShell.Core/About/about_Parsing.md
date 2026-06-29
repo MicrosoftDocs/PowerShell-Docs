@@ -1,7 +1,7 @@
 ---
 description: Describes how PowerShell parses commands.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 06/29/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_parsing?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Parsing
@@ -323,6 +323,12 @@ PS> cmd /c --% echo "a|b"
 > designed to call a native command with those arguments.
 
 ### Passing arguments that contain quote characters
+
+> [!WARNING]
+> When passing arguments to batch files, the arguments are passed as raw
+> command-line strings to `cmd.exe`. PowerShell attempts to handle embedded
+> quotes correctly. However, you should ensure that the arguments don't contain
+> untrusted input to avoid potential security risks.
 
 Some native commands expect arguments that contain quote characters. PowerShell
 7.3 changed the way the command line is parsed for native commands.
