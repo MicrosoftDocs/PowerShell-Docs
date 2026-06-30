@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/30/2025
+ms.date: 06/30/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -556,13 +556,17 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
 > [!NOTE]
-> Windows PowerShell's behavior with `Get-Date -UFormat %s` is incorrect in two respects:
+> In Windows PowerShell, not all **UFormat** specifiers produce the same results as they Unix
+> equivalents. For example:
 >
-> - The return value is based on local time instead of UTC time.
-> - The string representation of the seconds value has a fractional part. The output is
->   culture-sensitive with respect to the decimal mark.
+> - `Get-Date -UFormat %s` is incorrect in two respects:
+>   - The return value is based on local time instead of UTC time.
+>   - The string representation of the seconds value has a fractional part. The output is
+>     culture-sensitive with respect to the decimal mark.
+> - The formats of `%c`, `%l`, `%k`, `%s`, `%j`, and `%V` aren't consistent with the ISO 8601
+>   standard.
 >
-> These behaviors have been fixed in PowerShell 6 and higher.
+> These behaviors are fixed in PowerShell 6.1 and higher.
 
 ## RELATED LINKS
 

@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 04/30/2025
+ms.date: 06/30/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
@@ -657,10 +657,13 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
 > [!NOTE]
-> The behavior of `-UFormat %s` was changed to fix problems with the behavior in Windows PowerShell.
+> Not all **UFormat** specifiers produce the same results as they Unix equivalents. For example:
 >
-> - The return value is based on UTC time.
-> - The value is a whole number of seconds value (no fractional part).
+> - In Unix-based systems, `%W` returns the week number of the year as a decimal number in the range
+>   00 to 53, starting with the first Monday as the first day of week 01. All days before the first
+>   Monday of the year are in week 00.
+> - In PowerShell, `%W` returns the week number of the year as a decimal number, range 1 to 53, with
+>   no leading zero and no week zero. The first week starts on the first day of the year.
 
 ## RELATED LINKS
 
