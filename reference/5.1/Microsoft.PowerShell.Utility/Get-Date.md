@@ -556,7 +556,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
 > [!NOTE]
-> In Windows PowerShell, not all **UFormat** specifiers produce the same results as they Unix
+> In Windows PowerShell, not all **UFormat** specifiers produce the same results as their Unix
 > equivalents. For example:
 >
 > - `Get-Date -UFormat %s` is incorrect in two respects:

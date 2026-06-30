@@ -657,7 +657,7 @@ The valid **UFormat specifiers** are displayed in the following table:
 | `%Z` | Time zone offset from Universal Time Coordinate (UTC)                   | -07                      |
 
 > [!NOTE]
-> Not all **UFormat** specifiers produce the same results as they Unix equivalents. For example:
+> Not all **UFormat** specifiers produce the same results as their Unix equivalents. For example:
 >
 > - In Unix-based systems, `%W` returns the week number of the year as a decimal number in the range
 >   00 to 53, starting with the first Monday as the first day of week 01. All days before the first
