@@ -1128,7 +1128,7 @@ The `$PSModuleAutoLoadingPreference` variable takes one of the
 For more information about automatic importing of modules, see
 [about_Modules][34].
 
-## `$PSNativeCommandArgumentPassing`
+## `$PSSessionApplicationName`
 
 Specifies the default application name for a remote command that uses Web
 Services for Management (WS-Management) technology. For more information, see
@@ -1145,7 +1145,7 @@ application name in the following sample URI is `WSMAN`.
 The default application name is used when the remote command doesn't specify a
 connection URI or an application name.
 
-The **WinRM** service uses the application name to select a listener to service
+The **WinRM** service uses  the application name to select a listener to service
 the connection request. The parameter's value should match the value of the
 **URLPrefix** property of a listener on the remote computer.
 

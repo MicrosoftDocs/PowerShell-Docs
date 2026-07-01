@@ -73,8 +73,9 @@ For more information, see the following articles:
 - [about_Parsing][03]
 - [about_Quoting_Rules][06]
 
-PowerShell 7.3 introduced a new feature `PSNativeCommandArgumentPassing` that improved native
-command handling. For more information, see [`$PSNativeCommandArgumentPassing`][04].
+ PowerShell 7.2 introduced the experimental feature `PSNativeCommandArgumentPassing` that improved
+ native command handling. PowerShell 7.3 made this feature mainstream. For more information, see
+ [`$PSNativeCommandArgumentPassing`][04].
 
 ### Handling output and errors
 

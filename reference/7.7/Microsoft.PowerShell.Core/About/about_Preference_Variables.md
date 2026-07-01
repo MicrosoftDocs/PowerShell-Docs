@@ -1085,10 +1085,10 @@ For more information about automatic importing of modules, see
 ## `$PSNativeCommandArgumentPassing`
 
 > [!WARNING]
-> When passing arguments to batch files, the arguments are passed as raw
-> command-line strings to `cmd.exe`. PowerShell attempts to handle embedded
-> quotes correctly. However, you should ensure that the arguments don't contain
-> untrusted input to avoid potential security risks.
+> On Windows, when passing arguments to batch files, the arguments are passed
+> as raw command-line strings to `cmd.exe`. Although PowerShell and the
+> underlying API attempt to interpret your parameters safely, untrusted input
+> should be passed another way.
 
 PowerShell 7.3 changed the way it parses the command line for native commands.
 The new `$PSNativeCommandArgumentPassing` preference variable controls this

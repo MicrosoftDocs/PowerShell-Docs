@@ -457,11 +457,10 @@ interpretation removes the outer quote characters.
 For more information about this behavior, see the [about_Parsing][03] article.
 
 > [!WARNING]
-> When passing arguments to batch files, the arguments are passed as raw
-> command-line strings to `cmd.exe`. PowerShell attempts to handle embedded
-> quotes correctly. However, you should ensure that the arguments don't contain
-> untrusted input to avoid potential security risks.
-
+> On Windows, when passing arguments to batch files, the arguments are passed
+> as raw command-line strings to `cmd.exe`. Although PowerShell and the
+> underlying API attempt to interpret your parameters safely, untrusted input
+> should be passed another way.
 ## See also
 
 - [about_Special_Characters][05]
