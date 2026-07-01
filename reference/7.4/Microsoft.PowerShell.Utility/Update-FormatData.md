@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 12/12/2022
+ms.date: 06/17/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/update-formatdata?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-FormatData
@@ -192,10 +192,16 @@ This cmdlet returns no output.
 
 ## NOTES
 
-- `Update-FormatData` also updates the formatting data for commands in the session that were
-  imported from modules. If the formatting file for a module changes, you can run an
-  `Update-FormatData` command to update the formatting data for imported commands. You do not need
-  to import the module again.
+`Update-FormatData` also updates the formatting data for commands in the session that were imported
+from modules. If the formatting file for a module changes, you can run an `Update-FormatData`
+command to update the formatting data for imported commands. You do not need to import the module
+again.
+
+> [!WARNING]
+> Restricted endpoints, such as JEA, must not expose the `Update-FormatData` command. This command
+> allows you to add **ScriptBlock** elements to the formatting for a type. The **ScriptBlock** might
+> be evaluated in `FullLanguage` mode, even when the session is configured to use a more restrictive
+> language mode.
 
 ## RELATED LINKS
 
