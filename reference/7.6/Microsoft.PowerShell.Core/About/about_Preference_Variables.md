@@ -1,7 +1,7 @@
 ---
 description: Variables that customize the behavior of PowerShell.
 Locale: en-US
-ms.date: 04/02/2026
+ms.date: 06/29/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Preference_Variables
@@ -1019,6 +1019,12 @@ For more information about automatic importing of modules, see
 [about_Modules][33].
 
 ## `$PSNativeCommandArgumentPassing`
+
+> [!WARNING]
+> On Windows, when passing arguments to batch files, the arguments are passed
+> as raw command-line strings to `cmd.exe`. Although PowerShell and the
+> underlying API attempt to interpret your parameters safely, untrusted input
+> should be passed another way.
 
 PowerShell 7.3 changed the way it parses the command line for native commands.
 The new `$PSNativeCommandArgumentPassing` preference variable controls this
