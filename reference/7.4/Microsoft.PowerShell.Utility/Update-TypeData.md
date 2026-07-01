@@ -902,7 +902,7 @@ This cmdlet returns no output.
 
 > [!WARNING]
 > Restricted endpoints, such as JEA, must not expose the `Update-TypeData` command. This command
-> allows you to add **ScriptProperty** members to types. The **ScriptProperty** members are
+> allows you to add **ScriptProperty** members to types. The **ScriptProperty** members might be
 > evaluated in `FullLanguage` mode, even when the session is configured to use a more restrictive
 > language mode.
 

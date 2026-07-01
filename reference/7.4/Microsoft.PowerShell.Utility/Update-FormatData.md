@@ -199,8 +199,8 @@ again.
 
 > [!WARNING]
 > Restricted endpoints, such as JEA, must not expose the `Update-FormatData` command. This command
-> allows you to add **ScriptBlock** elements to the formatting for a type. The **ScriptBlock** is
-> evaluated in `FullLanguage` mode, even when the session is configured to use a more restrictive
+> allows you to add **ScriptBlock** elements to the formatting for a type. The **ScriptBlock** might
+> be evaluated in `FullLanguage` mode, even when the session is configured to use a more restrictive
 > language mode.
 
 ## RELATED LINKS

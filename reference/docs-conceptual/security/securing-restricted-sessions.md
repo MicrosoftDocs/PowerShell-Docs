@@ -48,7 +48,7 @@ restricted session implementation.
 Restricted endpoints must not expose the `Update-TypeData`, `Remove-TypeData`, or
 `Update-FormatData` commands. The `*-TypeData` commands allow you to add **ScriptProperty** members
 to types. The `Update-FormatData` command allows you to add **ScriptBlock** definitions to create
-custom formatting. The **ScriptProperty** and **ScriptBlock** members are evaluated in
+custom formatting. The **ScriptProperty** and **ScriptBlock** members might be evaluated in
 `FullLanguage` mode, even when the session is configured to use a more restrictive language mode.
 
 ### Don't allow the `Trace-Command` cmdlet.
