@@ -1,7 +1,7 @@
 ---
 description: Describes rules for using single and double quotation marks in PowerShell.
 Locale: en-US
-ms.date: 09/09/2024
+ms.date: 06/29/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Quoting_Rules
@@ -456,6 +456,11 @@ interpretation removes the outer quote characters.
 
 For more information about this behavior, see the [about_Parsing][03] article.
 
+> [!WARNING]
+> On Windows, when passing arguments to batch files, the arguments are passed
+> as raw command-line strings to `cmd.exe`. Although PowerShell and the
+> underlying API attempt to interpret your parameters safely, untrusted input
+> should be passed another way.
 ## See also
 
 - [about_Special_Characters][05]
