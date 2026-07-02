@@ -2,7 +2,7 @@
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 05/02/2026
+ms.date: 07/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 aliases:
@@ -89,6 +89,11 @@ match is found.
 You can also specify that `Select-String` should expect a particular character encoding, such as
 when you're searching files of Unicode text. `Select-String` uses the byte-order-mark (BOM) to
 detect the encoding format of the file. If the file has no BOM, it assumes the encoding is UTF8.
+
+> [!NOTE]
+> Poorly designed or maliciously crafted regular expressions can create denial of service
+> conditions. For more information, see the _Regular expression safety_ section of
+> [about_Comparison_Operators](/powershell/module/microsoft.powershell.core/about/about_comparison_operators#regular-expression-safety).
 
 ## EXAMPLES
 
