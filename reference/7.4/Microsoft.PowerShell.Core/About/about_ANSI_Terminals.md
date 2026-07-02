@@ -1,7 +1,7 @@
 ---
 description: Describes the features of PowerShell that use ANSI escape sequences and the terminal hosts that support them.
 Locale: en-US
-ms.date: 12/09/2025
+ms.date: 07/02/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_ansi_terminals?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ANSI_Terminals
@@ -89,7 +89,9 @@ The following members control how or when ANSI formatting is used:
   - `PlainText`: ANSI escape sequences are always stripped so that it's only
     plain text. In remote sessions, if the remote host is set to `PlainText`,
     the output is stripped of ANSI escape sequences before sending it back to
-    the local client.
+    the local client. This mode removes text formatting rendering sequences.
+    It's not intended to be a comprehensive terminal-control sanitization
+    mechanism.
   - `Host`: This is the default behavior. The ANSI escape sequences are removed
     from redirected or piped output. For more information, see
     [Redirecting output][02].
