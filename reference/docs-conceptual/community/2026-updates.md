@@ -36,7 +36,7 @@ Top Community Contributors
 The following people contributed to PowerShell docs this month by submitting pull requests or
 filing issues. Thank you!
 
-Special thanks to @ArieHein for another large PR to cleanup 160 articles.
+Special thanks to @ArieHein for another large PR to clean up 160 articles.
 
 |       GitHub Id       | PRs merged | Issues opened |
 | --------------------- | :--------: | :-----------: |
