@@ -89,9 +89,9 @@ The following members control how or when ANSI formatting is used:
   - `PlainText`: ANSI escape sequences are always stripped so that it's only
     plain text. In remote sessions, if the remote host is set to `PlainText`,
     the output is stripped of ANSI escape sequences before sending it back to
-    the local client. This mode removes text formatting rendering sequences.
-    It's not intended to be a comprehensive terminal-control sanitization
-    mechanism.
+    the local client. This mode removes text formatting and rendering
+    sequences. It's not intended to be a comprehensive terminal-control
+    sanitization mechanism.
   - `Host`: This is the default behavior. The ANSI escape sequences are removed
     from redirected or piped output. For more information, see
     [Redirecting output][02].
