@@ -254,19 +254,19 @@ The scope of the escalated error depends on context:
   & {
       param()
       $ErrorActionPreference = 'Stop'
-      Get-Item 'NoSuchPath'
+      1/0  # Divide by zero error
   } 2>$null
   'after'
   ```
 
-- ADVANCED: statement-terminating ('after' does NOT print)
+- ADVANCED: statement-terminating ('after' DOES print)
 
   ```powershell
   & {
       [CmdletBinding()]
       param()
       $ErrorActionPreference = 'Stop'
-      Get-Item 'NoSuchPath'
+      1/0  # Divide by zero error
   } 2>$null
   'after'
   ```
