@@ -1,7 +1,7 @@
 ---
 description: Describes the operators that compare values in PowerShell.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 07/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
@@ -60,12 +60,12 @@ case-sensitive operator. To make a comparison operator case-sensitive, add a
 To make the case-insensitivity explicit, add an `i` after `-`. For example,
 `-ieq` is the explicitly case-insensitive version of `-eq`.
 
-String comparisons use the [InvariantCulture][01] for both case-sensitive and
+String comparisons use the [InvariantCulture][15] for both case-sensitive and
 case-insensitive comparisons. The comparisons are between unicode code points
 and don't use culture-specific collation ordering. The results are the same
 regardless of the current culture.
 
-When the left-hand value in the comparison expression is a [scalar][15] value,
+When the left-hand value in the comparison expression is a [scalar][03] value,
 the operator returns a **Boolean** value. When the left-hand value in the
 expression is a collection, the operator returns the elements of the collection
 that match the right-hand value of the expression. Right-hand values are always
@@ -176,9 +176,9 @@ False
 
 In this example, we created two objects with identical properties. Yet, the
 equality test result is **False** because they're different objects. To create
-comparable classes, you need to implement [System.IEquatable\<T>][03] in your
+comparable classes, you need to implement [System.IEquatable\<T>][17] in your
 class. The following example demonstrates the partial implementation of a
-**MyFileInfoSet** class that implements [System.IEquatable\<T>][03] and has two
+**MyFileInfoSet** class that implements [System.IEquatable\<T>][17] and has two
 properties, **File** and **Size**. The `Equals()` method returns **True** if
 the File and Size properties of two **MyFileInfoSet** objects are the same.
 
@@ -259,7 +259,7 @@ In the following examples, all statements return **True**.
 > [!NOTE]
 > In most programming languages the greater-than operator is `>`. In
 > PowerShell, this character is used for redirection. For details, see
-> [about_Redirection][09].
+> [about_Redirection][08].
 
 When the left-hand side is a collection, these operators compare each member of
 the collection with the right-hand side. Depending on their logic, they either
@@ -313,7 +313,7 @@ Members smaller than or equal to 7
 7
 ```
 
-These operators work with any class that implements [System.IComparable][02].
+These operators work with any class that implements [System.IComparable][16].
 
 Examples:
 
@@ -372,7 +372,7 @@ used for the comparison and is obtained by casting the member to a string.
 ### -like and -notlike
 
 `-like` and `-notlike` behave similarly to `-eq` and `-ne`, but the right-hand
-side could be a string containing [wildcards][11].
+side could be a string containing [wildcards][10].
 
 Example:
 
@@ -421,7 +421,12 @@ False
 `-match` and `-notmatch` use regular expressions to search for pattern in the
 left-hand side values. Regular expressions can match complex patterns like
 email addresses, UNC paths, or formatted phone numbers. The right-hand side
-string must adhere to the [regular expressions][10] rules.
+string must adhere to the [regular expressions][09] rules.
+
+> [!NOTE]
+> Poorly designed or maliciously crafted regular expressions can create denial
+> of service conditions. For more information, see the
+> [Regular expression safety][04] section of this article.
 
 Scalar examples:
 
@@ -510,16 +515,21 @@ if ('<version>1.0.0</version>' -match '<version>(.*?)</version>') {
 }
 ```
 
-For details, see [about_Regular_Expressions][10] and
-[about_Automatic_Variables][06].
+For details, see [about_Regular_Expressions][09] and
+[about_Automatic_Variables][05].
 
 ## Replacement operator
-
-### Replacement with regular expressions
 
 Like `-match`, the `-replace` operator uses regular expressions to find the
 specified pattern. But unlike `-match`, it replaces the matches with another
 specified value.
+
+> [!NOTE]
+> Poorly designed or maliciously crafted regular expressions can create denial
+> of service conditions. For more information, see the
+> [Regular expression safety][04] section of this article.
+
+### Replacement with regular expressions
 
 Syntax:
 
@@ -628,8 +638,8 @@ include a literal `$` in the resulting replacement. For example:
 '5.72' -replace '(.+)', '$$1'  # Output: $1
 ```
 
-To learn more, see [about_Regular_Expressions][10] and
-[Substitutions in Regular Expressions][05].
+To learn more, see [about_Regular_Expressions][09] and
+[Substitutions in Regular Expressions][02].
 
 ### Substituting in a collection
 
@@ -658,7 +668,7 @@ Syntax:
 
 Within the scriptblock, use the `$_` automatic variable to access the input
 text being replaced and other useful information. This variable's class type is
-[System.Text.RegularExpressions.Match][04].
+[System.Text.RegularExpressions.Match][18].
 
 The following example replaces each sequence of three digits with the character
 equivalents. The scriptblock runs for each set of three digits that needs to
@@ -804,30 +814,79 @@ $b -isnot [int]        # Output: True
 $a -isnot $b.GetType() # Output: True
 ```
 
+## Regular expression safety
+
+The number of comparison operations required to match a regular expression
+pattern can increase exponentially if the pattern includes a large number of
+alternation constructs, espcecially when it includes nested optional
+quantifiers. For example, the regular expression pattern `^(a+)+$` is designed
+to match a complete string that contains one or more "a" characters. The
+regular expression engine must use the regular expression to follow all
+possible paths through the data before it can conclude that the match is
+unsuccessful, and the nested parentheses create many additional paths through
+the data.
+
+> [!WARNING]
+> A malicious user can provide input to regular expressions causing a
+> [Denial-of-Service attack][11], also known as a ReDoS attack.
+
+To defend against ReDoS scenarios, create `[regex]` objects that specify a
+timeout. The regex engine terminates the search for a match when it exceeds the
+time limit. For example, the following code creates a regex object with a
+2-second timeout:
+
+```powershell
+$pattern = '^(a+)+$'
+$regexOptions = 'None'
+$matchTimeout = [timespan]::FromSeconds(2)
+$regex = [regex]::new($pattern, $regexOptions, $matchTimeout)
+$regex.IsMatch('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaX')
+```
+
+After 2 seconds, the regex engine terminates the search and returns the
+following error:
+
+```Output
+MethodInvocationException: Exception calling "IsMatch" with "1" argument(s):
+"The Regex engine has timed out while trying to match a pattern to an input
+string. This can occur for many reasons, including very large inputs or
+excessive backtracking caused by nested quantifiers, back-references and other
+factors."
+```
+
+For more information about the `[regex]` class and regex performance, see the
+following articles:
+
+- [System.Text.RegularExpressions.Regex][19]
+- [Backtracking in .NET regular expressions][01]
+
 ## See also
 
-- [about_Booleans][07]
-- [about_Operators][08]
-- [about_Regular_Expressions][10]
-- [about_Wildcards][11]
+- [about_Booleans][06]
+- [about_Operators][07]
+- [about_Regular_Expressions][09]
+- [about_Wildcards][10]
 - [Compare-Object][14]
 - [ForEach-Object][12]
 - [Where-Object][13]
 
 <!-- link references -->
-[01]: /dotnet/api/system.globalization.cultureinfo.invariantculture
-[02]: /dotnet/api/system.icomparable
-[03]: /dotnet/api/system.iequatable-1
-[04]: /dotnet/api/system.text.regularexpressions.match
-[05]: /dotnet/standard/base-types/substitutions-in-regular-expressions
-[06]: about_Automatic_Variables.md
-[07]: about_Booleans.md
-[08]: about_Operators.md
-[09]: about_Redirection.md#potential-confusion-with-comparison-operators
-[10]: about_Regular_Expressions.md
-[11]: about_Wildcards.md
+[01]: /dotnet/standard/base-types/backtracking-in-regular-expressions
+[02]: /dotnet/standard/base-types/substitutions-in-regular-expressions
+[03]: /powershell/scripting/learn/glossary#scalar-value
+[04]: #regular-expression-safety
+[05]: about_Automatic_Variables.md
+[06]: about_Booleans.md
+[07]: about_Operators.md
+[08]: about_Redirection.md#potential-confusion-with-comparison-operators
+[09]: about_Regular_Expressions.md
+[10]: about_Wildcards.md
+[11]: https://www.cisa.gov/news-events/news/understanding-denial-service-attacks
 [12]: xref:Microsoft.PowerShell.Core.ForEach-Object
 [13]: xref:Microsoft.PowerShell.Core.Where-Object
 [14]: xref:Microsoft.PowerShell.Utility.Compare-Object
-[15]: /powershell/scripting/learn/glossary#scalar-value
-
+[15]: xref:System.Globalization.CultureInfo.InvariantCulture%2A
+[16]: xref:System.IComparable
+[17]: xref:System.IEquatable%601
+[18]: xref:System.Text.RegularExpressions.Match
+[19]: xref:System.Text.RegularExpressions.Regex

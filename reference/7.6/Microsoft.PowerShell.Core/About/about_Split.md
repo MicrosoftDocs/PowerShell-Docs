@@ -1,7 +1,7 @@
 ---
 description: Explains how to use the Split operator to split one or more strings into substrings.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 07/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Split
@@ -28,9 +28,14 @@ change the following elements of the Split operation:
 - Options that specify the conditions under which the delimiter is matched,
   such as SimpleMatch and Multiline.
 
+> [!NOTE]
+> Poorly designed or maliciously crafted regular expressions can create denial
+> of service conditions. For more information, see the
+> _Regular expression safety_ section of [about_Comparison_Operators][01].
+
 ## Syntax
 
-The following diagram shows the syntax for the -split operator.
+The following diagram shows the syntax for the `-split` operator.
 
 The parameter names do not appear in the command. Include only the parameter
 values. The values must appear in the order specified in the syntax diagram.
@@ -506,7 +511,14 @@ LastName, FirstName
 
 ## See also
 
-- [Split-Path](xref:Microsoft.PowerShell.Management.Split-Path)
-- [about_Operators](about_Operators.md)
-- [about_Comparison_Operators](about_Comparison_Operators.md)
-- [about_Join](about_Join.md)
+- [Split-Path][05]
+- [about_Operators][04]
+- [about_Comparison_Operators][02]
+- [about_Join][03]
+
+<!-- link references -->
+[01]: about_Comparison_Operators.md#regular-expression-safety
+[02]: about_Comparison_Operators.md
+[03]: about_Join.md
+[04]: about_Operators.md
+[05]: xref:Microsoft.PowerShell.Management.Split-Path

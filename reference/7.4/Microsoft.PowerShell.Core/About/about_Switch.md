@@ -1,7 +1,7 @@
 ---
 description: Explains how to use a switch to handle multiple `if` statements.
 Locale: en-US
-ms.date: 01/18/2026
+ms.date: 07/01/2026
 online version: https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.4&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Switch
@@ -47,7 +47,7 @@ if ("$(<result2-to-be-matched>)") -eq ("$(<test-expression>)") {<action>}
 Expressions include literal values (strings or numbers), variables, and
 scriptblocks that return a boolean value. The `switch` statement converts all
 values to strings before comparison. For an example, see
-[Impact of string conversion][02] later in this article.
+[Impact of string conversion][01] later in this article.
 
 The `<test-expression>` is evaluated in expression mode. If the expression
 returns more than one value, such as an array or other enumerable type, the
@@ -110,7 +110,7 @@ conditions. It's equivalent to an `else` clause in an `if` statement. Only one
   default, the comparison is case-insensitive. The **File** parameter only
   supports one file. If multiple **File** parameters are included, only the
   last one is used. For more information see the
-  [**File** parameter examples][01].
+  [**File** parameter examples][02].
 - **Regex** - Performs regular expression matching of the value to the
   condition. If the match clause isn't a string, this parameter is ignored.
   The comparison is case-insensitive. The `$Matches` automatic variable is
@@ -392,6 +392,11 @@ switch ((Get-Date 1-Jan-2022), (Get-Date 25-Dec-2021)) {
 }
 ```
 
+> [!NOTE]
+> Poorly designed or maliciously crafted regular expressions can create denial
+> of service conditions. For more information, see the _Regular expression
+> safety_ section of [about_Comparison_Operators][05].
+
 ### Read the content of a file with `switch`
 
 Using the `switch` statement with the **File** parameter is an efficient way to
@@ -443,15 +448,16 @@ switch -File $fileEscaped { foo { 'Foo' } }
 ## See also
 
 - [about_Break][04]
-- [about_Continue][05]
-- [about_If][06]
-- [about_Script_Blocks][07]
+- [about_Continue][06]
+- [about_If][07]
+- [about_Script_Blocks][08]
 
 <!-- link references -->
-[01]: #read-the-content-of-a-file-with-switch
-[02]: #impact-of-string-conversion
+[01]: #impact-of-string-conversion
+[02]: #read-the-content-of-a-file-with-switch
 [03]: about_Automatic_Variables.md
 [04]: about_break.md
-[05]: about_Continue.md
-[06]: about_If.md
-[07]: about_Script_Blocks.md
+[05]: about_Comparison_Operators.md#regular-expression-safety
+[06]: about_Continue.md
+[07]: about_If.md
+[08]: about_Script_Blocks.md
